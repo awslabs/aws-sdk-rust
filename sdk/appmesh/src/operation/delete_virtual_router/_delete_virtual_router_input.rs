@@ -32,8 +32,8 @@ impl DeleteVirtualRouterInput {
 }
 
 /// A builder for [`DeleteVirtualRouterInput`](crate::operation::delete_virtual_router::DeleteVirtualRouterInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVirtualRouterInputBuilder {
     pub(crate) virtual_router_name: ::std::option::Option<::std::string::String>,
     pub(crate) mesh_name: ::std::option::Option<::std::string::String>,

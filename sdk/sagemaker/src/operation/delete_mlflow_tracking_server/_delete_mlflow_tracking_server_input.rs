@@ -20,8 +20,8 @@ impl DeleteMlflowTrackingServerInput {
 }
 
 /// A builder for [`DeleteMlflowTrackingServerInput`](crate::operation::delete_mlflow_tracking_server::DeleteMlflowTrackingServerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteMlflowTrackingServerInputBuilder {
     pub(crate) tracking_server_name: ::std::option::Option<::std::string::String>,
 }

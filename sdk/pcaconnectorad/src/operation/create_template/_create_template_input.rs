@@ -44,8 +44,8 @@ impl CreateTemplateInput {
 }
 
 /// A builder for [`CreateTemplateInput`](crate::operation::create_template::CreateTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateTemplateInputBuilder {
     pub(crate) connector_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

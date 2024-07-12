@@ -12,8 +12,8 @@ impl NoAuthentication {
 }
 
 /// A builder for [`NoAuthentication`](crate::types::NoAuthentication).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NoAuthenticationBuilder {}
 impl NoAuthenticationBuilder {
     /// Consumes the builder and constructs a [`NoAuthentication`](crate::types::NoAuthentication).

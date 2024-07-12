@@ -35,8 +35,8 @@ impl ListRemoteAccessSessionsOutput {
 }
 
 /// A builder for [`ListRemoteAccessSessionsOutput`](crate::operation::list_remote_access_sessions::ListRemoteAccessSessionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRemoteAccessSessionsOutputBuilder {
     pub(crate) remote_access_sessions: ::std::option::Option<::std::vec::Vec<crate::types::RemoteAccessSession>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

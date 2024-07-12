@@ -27,8 +27,8 @@ impl AssociateWirelessDeviceWithMulticastGroupInput {
 }
 
 /// A builder for [`AssociateWirelessDeviceWithMulticastGroupInput`](crate::operation::associate_wireless_device_with_multicast_group::AssociateWirelessDeviceWithMulticastGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateWirelessDeviceWithMulticastGroupInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) wireless_device_id: ::std::option::Option<::std::string::String>,

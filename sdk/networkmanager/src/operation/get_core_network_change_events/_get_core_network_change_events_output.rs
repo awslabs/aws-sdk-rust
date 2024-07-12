@@ -34,8 +34,8 @@ impl GetCoreNetworkChangeEventsOutput {
 }
 
 /// A builder for [`GetCoreNetworkChangeEventsOutput`](crate::operation::get_core_network_change_events::GetCoreNetworkChangeEventsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCoreNetworkChangeEventsOutputBuilder {
     pub(crate) core_network_change_events: ::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkChangeEvent>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

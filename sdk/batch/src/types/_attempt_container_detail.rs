@@ -53,8 +53,8 @@ impl AttemptContainerDetail {
 }
 
 /// A builder for [`AttemptContainerDetail`](crate::types::AttemptContainerDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttemptContainerDetailBuilder {
     pub(crate) container_instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) task_arn: ::std::option::Option<::std::string::String>,

@@ -32,8 +32,8 @@ impl GetGeneratedPolicyOutput {
 }
 
 /// A builder for [`GetGeneratedPolicyOutput`](crate::operation::get_generated_policy::GetGeneratedPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetGeneratedPolicyOutputBuilder {
     pub(crate) job_details: ::std::option::Option<crate::types::JobDetails>,
     pub(crate) generated_policy_result: ::std::option::Option<crate::types::GeneratedPolicyResult>,

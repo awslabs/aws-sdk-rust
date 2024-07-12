@@ -21,8 +21,8 @@ impl SectionAfterPageBreak {
 }
 
 /// A builder for [`SectionAfterPageBreak`](crate::types::SectionAfterPageBreak).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SectionAfterPageBreakBuilder {
     pub(crate) status: ::std::option::Option<crate::types::SectionPageBreakStatus>,
 }

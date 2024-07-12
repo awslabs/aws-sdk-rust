@@ -481,8 +481,8 @@ impl HumanLoopConfig {
 }
 
 /// A builder for [`HumanLoopConfig`](crate::types::HumanLoopConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HumanLoopConfigBuilder {
     pub(crate) workteam_arn: ::std::option::Option<::std::string::String>,
     pub(crate) human_task_ui_arn: ::std::option::Option<::std::string::String>,

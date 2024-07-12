@@ -46,8 +46,8 @@ impl ListAssetBundleExportJobsOutput {
 }
 
 /// A builder for [`ListAssetBundleExportJobsOutput`](crate::operation::list_asset_bundle_export_jobs::ListAssetBundleExportJobsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAssetBundleExportJobsOutputBuilder {
     pub(crate) asset_bundle_export_job_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

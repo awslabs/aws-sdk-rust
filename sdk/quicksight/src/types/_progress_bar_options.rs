@@ -21,8 +21,8 @@ impl ProgressBarOptions {
 }
 
 /// A builder for [`ProgressBarOptions`](crate::types::ProgressBarOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProgressBarOptionsBuilder {
     pub(crate) visibility: ::std::option::Option<crate::types::Visibility>,
 }

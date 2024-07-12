@@ -28,8 +28,8 @@ impl BatchEvaluateFeatureOutput {
 }
 
 /// A builder for [`BatchEvaluateFeatureOutput`](crate::operation::batch_evaluate_feature::BatchEvaluateFeatureOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchEvaluateFeatureOutputBuilder {
     pub(crate) results: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationResult>>,
     _request_id: Option<String>,

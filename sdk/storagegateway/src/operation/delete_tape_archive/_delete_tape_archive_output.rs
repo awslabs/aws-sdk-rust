@@ -27,8 +27,8 @@ impl DeleteTapeArchiveOutput {
 }
 
 /// A builder for [`DeleteTapeArchiveOutput`](crate::operation::delete_tape_archive::DeleteTapeArchiveOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTapeArchiveOutputBuilder {
     pub(crate) tape_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

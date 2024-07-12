@@ -21,8 +21,8 @@ impl ParameterConstraints {
 }
 
 /// A builder for [`ParameterConstraints`](crate::types::ParameterConstraints).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ParameterConstraintsBuilder {
     pub(crate) required: ::std::option::Option<bool>,
 }

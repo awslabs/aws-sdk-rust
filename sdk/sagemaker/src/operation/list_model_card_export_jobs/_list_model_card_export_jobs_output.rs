@@ -34,8 +34,8 @@ impl ListModelCardExportJobsOutput {
 }
 
 /// A builder for [`ListModelCardExportJobsOutput`](crate::operation::list_model_card_export_jobs::ListModelCardExportJobsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListModelCardExportJobsOutputBuilder {
     pub(crate) model_card_export_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ModelCardExportJobSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

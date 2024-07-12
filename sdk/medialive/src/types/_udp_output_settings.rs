@@ -39,8 +39,8 @@ impl UdpOutputSettings {
 }
 
 /// A builder for [`UdpOutputSettings`](crate::types::UdpOutputSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UdpOutputSettingsBuilder {
     pub(crate) buffer_msec: ::std::option::Option<i32>,
     pub(crate) container_settings: ::std::option::Option<crate::types::UdpContainerSettings>,

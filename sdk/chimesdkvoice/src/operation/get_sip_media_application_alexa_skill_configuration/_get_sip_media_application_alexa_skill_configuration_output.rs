@@ -30,8 +30,8 @@ impl GetSipMediaApplicationAlexaSkillConfigurationOutput {
 }
 
 /// A builder for [`GetSipMediaApplicationAlexaSkillConfigurationOutput`](crate::operation::get_sip_media_application_alexa_skill_configuration::GetSipMediaApplicationAlexaSkillConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSipMediaApplicationAlexaSkillConfigurationOutputBuilder {
     pub(crate) sip_media_application_alexa_skill_configuration: ::std::option::Option<crate::types::SipMediaApplicationAlexaSkillConfiguration>,
     _request_id: Option<String>,

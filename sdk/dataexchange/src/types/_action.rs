@@ -21,8 +21,8 @@ impl Action {
 }
 
 /// A builder for [`Action`](crate::types::Action).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ActionBuilder {
     pub(crate) export_revision_to_s3: ::std::option::Option<crate::types::AutoExportRevisionToS3RequestDetails>,
 }

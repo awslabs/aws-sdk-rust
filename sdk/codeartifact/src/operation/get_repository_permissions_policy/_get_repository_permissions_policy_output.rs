@@ -26,8 +26,8 @@ impl GetRepositoryPermissionsPolicyOutput {
 }
 
 /// A builder for [`GetRepositoryPermissionsPolicyOutput`](crate::operation::get_repository_permissions_policy::GetRepositoryPermissionsPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRepositoryPermissionsPolicyOutputBuilder {
     pub(crate) policy: ::std::option::Option<crate::types::ResourcePolicy>,
     _request_id: Option<String>,

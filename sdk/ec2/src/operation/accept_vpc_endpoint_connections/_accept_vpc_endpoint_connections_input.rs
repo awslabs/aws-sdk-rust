@@ -34,8 +34,8 @@ impl AcceptVpcEndpointConnectionsInput {
 }
 
 /// A builder for [`AcceptVpcEndpointConnectionsInput`](crate::operation::accept_vpc_endpoint_connections::AcceptVpcEndpointConnectionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AcceptVpcEndpointConnectionsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) service_id: ::std::option::Option<::std::string::String>,

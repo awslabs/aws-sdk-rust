@@ -28,8 +28,8 @@ impl ExperimentTemplateS3LogConfigurationInput {
 }
 
 /// A builder for [`ExperimentTemplateS3LogConfigurationInput`](crate::types::ExperimentTemplateS3LogConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExperimentTemplateS3LogConfigurationInputBuilder {
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) prefix: ::std::option::Option<::std::string::String>,

@@ -77,8 +77,8 @@ impl FindingFilter {
 }
 
 /// A builder for [`FindingFilter`](crate::types::FindingFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FindingFilterBuilder {
     pub(crate) agent_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) auto_scaling_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -26,8 +26,8 @@ impl CreateWhatIfForecastExportOutput {
 }
 
 /// A builder for [`CreateWhatIfForecastExportOutput`](crate::operation::create_what_if_forecast_export::CreateWhatIfForecastExportOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateWhatIfForecastExportOutputBuilder {
     pub(crate) what_if_forecast_export_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

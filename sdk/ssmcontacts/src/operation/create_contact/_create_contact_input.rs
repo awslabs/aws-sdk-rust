@@ -52,8 +52,8 @@ impl CreateContactInput {
 }
 
 /// A builder for [`CreateContactInput`](crate::operation::create_contact::CreateContactInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateContactInputBuilder {
     pub(crate) alias: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,

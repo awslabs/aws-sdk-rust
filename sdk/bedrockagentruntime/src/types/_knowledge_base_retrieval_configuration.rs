@@ -28,8 +28,8 @@ impl KnowledgeBaseRetrievalConfiguration {
 }
 
 /// A builder for [`KnowledgeBaseRetrievalConfiguration`](crate::types::KnowledgeBaseRetrievalConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KnowledgeBaseRetrievalConfigurationBuilder {
     pub(crate) vector_search_configuration: ::std::option::Option<crate::types::KnowledgeBaseVectorSearchConfiguration>,
 }

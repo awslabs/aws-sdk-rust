@@ -18,8 +18,8 @@ impl CreateTableOptimizerOutput {
 }
 
 /// A builder for [`CreateTableOptimizerOutput`](crate::operation::create_table_optimizer::CreateTableOptimizerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateTableOptimizerOutputBuilder {
     _request_id: Option<String>,
 }

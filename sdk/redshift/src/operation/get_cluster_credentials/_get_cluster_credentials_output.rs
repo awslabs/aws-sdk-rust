@@ -49,8 +49,8 @@ impl GetClusterCredentialsOutput {
 }
 
 /// A builder for [`GetClusterCredentialsOutput`](crate::operation::get_cluster_credentials::GetClusterCredentialsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetClusterCredentialsOutputBuilder {
     pub(crate) db_user: ::std::option::Option<::std::string::String>,
     pub(crate) db_password: ::std::option::Option<::std::string::String>,

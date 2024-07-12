@@ -28,8 +28,8 @@ impl BatchPutMessageOutput {
 }
 
 /// A builder for [`BatchPutMessageOutput`](crate::operation::batch_put_message::BatchPutMessageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchPutMessageOutputBuilder {
     pub(crate) batch_put_message_error_entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutMessageErrorEntry>>,
     _request_id: Option<String>,

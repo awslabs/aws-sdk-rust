@@ -34,8 +34,8 @@ impl ListSignalCatalogNodesOutput {
 }
 
 /// A builder for [`ListSignalCatalogNodesOutput`](crate::operation::list_signal_catalog_nodes::ListSignalCatalogNodesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSignalCatalogNodesOutputBuilder {
     pub(crate) nodes: ::std::option::Option<::std::vec::Vec<crate::types::Node>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

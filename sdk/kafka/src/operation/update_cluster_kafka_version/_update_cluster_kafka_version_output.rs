@@ -32,8 +32,8 @@ impl UpdateClusterKafkaVersionOutput {
 }
 
 /// A builder for [`UpdateClusterKafkaVersionOutput`](crate::operation::update_cluster_kafka_version::UpdateClusterKafkaVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateClusterKafkaVersionOutputBuilder {
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_operation_arn: ::std::option::Option<::std::string::String>,

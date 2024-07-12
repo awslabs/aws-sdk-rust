@@ -19,8 +19,8 @@ impl DeleteHealthCheckOutput {
 }
 
 /// A builder for [`DeleteHealthCheckOutput`](crate::operation::delete_health_check::DeleteHealthCheckOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteHealthCheckOutputBuilder {
     _request_id: Option<String>,
 }

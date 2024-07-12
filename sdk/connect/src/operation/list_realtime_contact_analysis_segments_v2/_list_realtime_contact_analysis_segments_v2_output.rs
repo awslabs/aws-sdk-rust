@@ -45,8 +45,8 @@ impl ListRealtimeContactAnalysisSegmentsV2Output {
 }
 
 /// A builder for [`ListRealtimeContactAnalysisSegmentsV2Output`](crate::operation::list_realtime_contact_analysis_segments_v2::ListRealtimeContactAnalysisSegmentsV2Output).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRealtimeContactAnalysisSegmentsV2OutputBuilder {
     pub(crate) channel: ::std::option::Option<crate::types::RealTimeContactAnalysisSupportedChannel>,
     pub(crate) status: ::std::option::Option<crate::types::RealTimeContactAnalysisStatus>,

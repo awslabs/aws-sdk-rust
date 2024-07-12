@@ -33,8 +33,8 @@ impl ListFarmsOutput {
 }
 
 /// A builder for [`ListFarmsOutput`](crate::operation::list_farms::ListFarmsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFarmsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) farms: ::std::option::Option<::std::vec::Vec<crate::types::FarmSummary>>,

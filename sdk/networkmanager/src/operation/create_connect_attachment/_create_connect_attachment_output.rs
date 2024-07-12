@@ -26,8 +26,8 @@ impl CreateConnectAttachmentOutput {
 }
 
 /// A builder for [`CreateConnectAttachmentOutput`](crate::operation::create_connect_attachment::CreateConnectAttachmentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateConnectAttachmentOutputBuilder {
     pub(crate) connect_attachment: ::std::option::Option<crate::types::ConnectAttachment>,
     _request_id: Option<String>,

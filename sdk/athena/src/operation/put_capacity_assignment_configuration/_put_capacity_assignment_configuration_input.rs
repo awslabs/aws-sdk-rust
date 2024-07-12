@@ -28,8 +28,8 @@ impl PutCapacityAssignmentConfigurationInput {
 }
 
 /// A builder for [`PutCapacityAssignmentConfigurationInput`](crate::operation::put_capacity_assignment_configuration::PutCapacityAssignmentConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutCapacityAssignmentConfigurationInputBuilder {
     pub(crate) capacity_reservation_name: ::std::option::Option<::std::string::String>,
     pub(crate) capacity_assignments: ::std::option::Option<::std::vec::Vec<crate::types::CapacityAssignment>>,

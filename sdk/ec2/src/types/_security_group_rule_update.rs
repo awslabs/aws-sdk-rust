@@ -27,8 +27,8 @@ impl SecurityGroupRuleUpdate {
 }
 
 /// A builder for [`SecurityGroupRuleUpdate`](crate::types::SecurityGroupRuleUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SecurityGroupRuleUpdateBuilder {
     pub(crate) security_group_rule_id: ::std::option::Option<::std::string::String>,
     pub(crate) security_group_rule: ::std::option::Option<crate::types::SecurityGroupRuleRequest>,

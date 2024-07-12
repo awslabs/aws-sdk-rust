@@ -39,8 +39,8 @@ impl ReservedInstancesPricing {
 }
 
 /// A builder for [`ReservedInstancesPricing`](crate::types::ReservedInstancesPricing).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReservedInstancesPricingBuilder {
     pub(crate) estimated_on_demand_cost: ::std::option::Option<f64>,
     pub(crate) monthly_reservation_eligible_cost: ::std::option::Option<f64>,

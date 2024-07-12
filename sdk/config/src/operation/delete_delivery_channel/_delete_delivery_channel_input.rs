@@ -21,8 +21,8 @@ impl DeleteDeliveryChannelInput {
 }
 
 /// A builder for [`DeleteDeliveryChannelInput`](crate::operation::delete_delivery_channel::DeleteDeliveryChannelInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDeliveryChannelInputBuilder {
     pub(crate) delivery_channel_name: ::std::option::Option<::std::string::String>,
 }

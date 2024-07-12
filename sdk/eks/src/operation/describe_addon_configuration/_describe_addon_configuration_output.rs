@@ -46,8 +46,8 @@ impl DescribeAddonConfigurationOutput {
 }
 
 /// A builder for [`DescribeAddonConfigurationOutput`](crate::operation::describe_addon_configuration::DescribeAddonConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAddonConfigurationOutputBuilder {
     pub(crate) addon_name: ::std::option::Option<::std::string::String>,
     pub(crate) addon_version: ::std::option::Option<::std::string::String>,

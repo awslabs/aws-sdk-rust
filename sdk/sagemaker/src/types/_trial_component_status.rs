@@ -27,8 +27,8 @@ impl TrialComponentStatus {
 }
 
 /// A builder for [`TrialComponentStatus`](crate::types::TrialComponentStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TrialComponentStatusBuilder {
     pub(crate) primary_status: ::std::option::Option<crate::types::TrialComponentPrimaryStatus>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

@@ -42,8 +42,8 @@ impl DisassociateFacesOutput {
 }
 
 /// A builder for [`DisassociateFacesOutput`](crate::operation::disassociate_faces::DisassociateFacesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateFacesOutputBuilder {
     pub(crate) disassociated_faces: ::std::option::Option<::std::vec::Vec<crate::types::DisassociatedFace>>,
     pub(crate) unsuccessful_face_disassociations: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceDisassociation>>,

@@ -53,8 +53,8 @@ impl ConditionalCheckFailedException {
 }
 
 /// A builder for [`ConditionalCheckFailedException`](crate::types::error::ConditionalCheckFailedException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConditionalCheckFailedExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) item: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,

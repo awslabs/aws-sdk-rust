@@ -21,8 +21,8 @@ impl GetDeliverabilityTestReportInput {
 }
 
 /// A builder for [`GetDeliverabilityTestReportInput`](crate::operation::get_deliverability_test_report::GetDeliverabilityTestReportInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDeliverabilityTestReportInputBuilder {
     pub(crate) report_id: ::std::option::Option<::std::string::String>,
 }

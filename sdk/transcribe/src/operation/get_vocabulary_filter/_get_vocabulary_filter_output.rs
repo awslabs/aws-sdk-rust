@@ -46,8 +46,8 @@ impl GetVocabularyFilterOutput {
 }
 
 /// A builder for [`GetVocabularyFilterOutput`](crate::operation::get_vocabulary_filter::GetVocabularyFilterOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetVocabularyFilterOutputBuilder {
     pub(crate) vocabulary_filter_name: ::std::option::Option<::std::string::String>,
     pub(crate) language_code: ::std::option::Option<crate::types::LanguageCode>,

@@ -44,8 +44,8 @@ impl CreateSolutionVersionInput {
 }
 
 /// A builder for [`CreateSolutionVersionInput`](crate::operation::create_solution_version::CreateSolutionVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSolutionVersionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) solution_arn: ::std::option::Option<::std::string::String>,

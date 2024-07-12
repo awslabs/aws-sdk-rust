@@ -29,8 +29,8 @@ impl FrontOfQueueDetail {
 }
 
 /// A builder for [`FrontOfQueueDetail`](crate::types::FrontOfQueueDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FrontOfQueueDetailBuilder {
     pub(crate) jobs: ::std::option::Option<::std::vec::Vec<crate::types::FrontOfQueueJobSummary>>,
     pub(crate) last_updated_at: ::std::option::Option<i64>,

@@ -20,8 +20,8 @@ impl DescribeOrganizationConfigurationInput {
 }
 
 /// A builder for [`DescribeOrganizationConfigurationInput`](crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeOrganizationConfigurationInputBuilder {
     pub(crate) graph_arn: ::std::option::Option<::std::string::String>,
 }

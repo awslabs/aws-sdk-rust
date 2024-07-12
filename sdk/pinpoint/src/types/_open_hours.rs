@@ -51,8 +51,8 @@ impl OpenHours {
 }
 
 /// A builder for [`OpenHours`](crate::types::OpenHours).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OpenHoursBuilder {
     pub(crate) email: ::std::option::Option<::std::collections::HashMap<crate::types::DayOfWeek, ::std::vec::Vec<crate::types::OpenHoursRule>>>,
     pub(crate) sms: ::std::option::Option<::std::collections::HashMap<crate::types::DayOfWeek, ::std::vec::Vec<crate::types::OpenHoursRule>>>,

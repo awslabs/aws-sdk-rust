@@ -33,8 +33,8 @@ impl ListGroupMembershipsForMemberOutput {
 }
 
 /// A builder for [`ListGroupMembershipsForMemberOutput`](crate::operation::list_group_memberships_for_member::ListGroupMembershipsForMemberOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListGroupMembershipsForMemberOutputBuilder {
     pub(crate) group_memberships: ::std::option::Option<::std::vec::Vec<crate::types::GroupMembership>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

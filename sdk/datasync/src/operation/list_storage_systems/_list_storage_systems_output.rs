@@ -34,8 +34,8 @@ impl ListStorageSystemsOutput {
 }
 
 /// A builder for [`ListStorageSystemsOutput`](crate::operation::list_storage_systems::ListStorageSystemsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListStorageSystemsOutputBuilder {
     pub(crate) storage_systems: ::std::option::Option<::std::vec::Vec<crate::types::StorageSystemListEntry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

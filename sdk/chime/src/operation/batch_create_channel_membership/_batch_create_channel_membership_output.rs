@@ -34,8 +34,8 @@ impl BatchCreateChannelMembershipOutput {
 }
 
 /// A builder for [`BatchCreateChannelMembershipOutput`](crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchCreateChannelMembershipOutputBuilder {
     pub(crate) batch_channel_memberships: ::std::option::Option<crate::types::BatchChannelMemberships>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchCreateChannelMembershipError>>,

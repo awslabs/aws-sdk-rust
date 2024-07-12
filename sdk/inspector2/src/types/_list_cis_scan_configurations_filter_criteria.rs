@@ -39,8 +39,8 @@ impl ListCisScanConfigurationsFilterCriteria {
 }
 
 /// A builder for [`ListCisScanConfigurationsFilterCriteria`](crate::types::ListCisScanConfigurationsFilterCriteria).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCisScanConfigurationsFilterCriteriaBuilder {
     pub(crate) scan_name_filters: ::std::option::Option<::std::vec::Vec<crate::types::CisStringFilter>>,
     pub(crate) target_resource_tag_filters: ::std::option::Option<::std::vec::Vec<crate::types::TagFilter>>,

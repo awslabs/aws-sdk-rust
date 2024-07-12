@@ -26,8 +26,8 @@ impl DisassociateHealthCheckInput {
 }
 
 /// A builder for [`DisassociateHealthCheckInput`](crate::operation::disassociate_health_check::DisassociateHealthCheckInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateHealthCheckInputBuilder {
     pub(crate) protection_id: ::std::option::Option<::std::string::String>,
     pub(crate) health_check_arn: ::std::option::Option<::std::string::String>,

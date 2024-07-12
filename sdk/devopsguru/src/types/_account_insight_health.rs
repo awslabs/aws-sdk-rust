@@ -27,8 +27,8 @@ impl AccountInsightHealth {
 }
 
 /// A builder for [`AccountInsightHealth`](crate::types::AccountInsightHealth).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AccountInsightHealthBuilder {
     pub(crate) open_proactive_insights: ::std::option::Option<i32>,
     pub(crate) open_reactive_insights: ::std::option::Option<i32>,

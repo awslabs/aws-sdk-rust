@@ -32,8 +32,8 @@ impl ListProjectPoliciesInput {
 }
 
 /// A builder for [`ListProjectPoliciesInput`](crate::operation::list_project_policies::ListProjectPoliciesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListProjectPoliciesInputBuilder {
     pub(crate) project_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

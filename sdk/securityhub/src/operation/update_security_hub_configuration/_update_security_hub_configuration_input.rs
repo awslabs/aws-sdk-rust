@@ -32,8 +32,8 @@ impl UpdateSecurityHubConfigurationInput {
 }
 
 /// A builder for [`UpdateSecurityHubConfigurationInput`](crate::operation::update_security_hub_configuration::UpdateSecurityHubConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSecurityHubConfigurationInputBuilder {
     pub(crate) auto_enable_controls: ::std::option::Option<bool>,
     pub(crate) control_finding_generator: ::std::option::Option<crate::types::ControlFindingGenerator>,

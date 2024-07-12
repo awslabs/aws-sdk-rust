@@ -51,8 +51,8 @@ impl PluginSummary {
 }
 
 /// A builder for [`PluginSummary`](crate::types::PluginSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PluginSummaryBuilder {
     pub(crate) plugin_id: ::std::option::Option<::std::string::String>,
     pub(crate) hostname: ::std::option::Option<::std::string::String>,

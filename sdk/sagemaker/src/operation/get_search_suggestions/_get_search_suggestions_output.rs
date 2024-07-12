@@ -28,8 +28,8 @@ impl GetSearchSuggestionsOutput {
 }
 
 /// A builder for [`GetSearchSuggestionsOutput`](crate::operation::get_search_suggestions::GetSearchSuggestionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSearchSuggestionsOutputBuilder {
     pub(crate) property_name_suggestions: ::std::option::Option<::std::vec::Vec<crate::types::PropertyNameSuggestion>>,
     _request_id: Option<String>,

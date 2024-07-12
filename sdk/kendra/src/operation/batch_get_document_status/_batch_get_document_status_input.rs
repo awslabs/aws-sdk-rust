@@ -28,8 +28,8 @@ impl BatchGetDocumentStatusInput {
 }
 
 /// A builder for [`BatchGetDocumentStatusInput`](crate::operation::batch_get_document_status::BatchGetDocumentStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetDocumentStatusInputBuilder {
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
     pub(crate) document_info_list: ::std::option::Option<::std::vec::Vec<crate::types::DocumentInfo>>,

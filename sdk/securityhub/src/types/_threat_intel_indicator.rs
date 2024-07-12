@@ -81,8 +81,8 @@ impl ThreatIntelIndicator {
 }
 
 /// A builder for [`ThreatIntelIndicator`](crate::types::ThreatIntelIndicator).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ThreatIntelIndicatorBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ThreatIntelIndicatorType>,
     pub(crate) value: ::std::option::Option<::std::string::String>,

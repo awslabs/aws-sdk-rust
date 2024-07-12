@@ -188,8 +188,8 @@ impl UpdateDataSourceOutput {
 }
 
 /// A builder for [`UpdateDataSourceOutput`](crate::operation::update_data_source::UpdateDataSourceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateDataSourceOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::DataSourceStatus>,

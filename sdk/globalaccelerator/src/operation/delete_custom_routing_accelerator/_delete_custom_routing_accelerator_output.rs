@@ -18,8 +18,8 @@ impl DeleteCustomRoutingAcceleratorOutput {
 }
 
 /// A builder for [`DeleteCustomRoutingAcceleratorOutput`](crate::operation::delete_custom_routing_accelerator::DeleteCustomRoutingAcceleratorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCustomRoutingAcceleratorOutputBuilder {
     _request_id: Option<String>,
 }

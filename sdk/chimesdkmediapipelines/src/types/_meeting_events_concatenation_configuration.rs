@@ -21,8 +21,8 @@ impl MeetingEventsConcatenationConfiguration {
 }
 
 /// A builder for [`MeetingEventsConcatenationConfiguration`](crate::types::MeetingEventsConcatenationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MeetingEventsConcatenationConfigurationBuilder {
     pub(crate) state: ::std::option::Option<crate::types::ArtifactsConcatenationState>,
 }

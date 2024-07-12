@@ -38,8 +38,8 @@ impl ListAnomalyGroupSummariesInput {
 }
 
 /// A builder for [`ListAnomalyGroupSummariesInput`](crate::operation::list_anomaly_group_summaries::ListAnomalyGroupSummariesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAnomalyGroupSummariesInputBuilder {
     pub(crate) anomaly_detector_arn: ::std::option::Option<::std::string::String>,
     pub(crate) sensitivity_threshold: ::std::option::Option<i32>,

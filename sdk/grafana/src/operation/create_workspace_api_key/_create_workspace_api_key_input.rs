@@ -40,8 +40,8 @@ impl CreateWorkspaceApiKeyInput {
 }
 
 /// A builder for [`CreateWorkspaceApiKeyInput`](crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateWorkspaceApiKeyInputBuilder {
     pub(crate) key_name: ::std::option::Option<::std::string::String>,
     pub(crate) key_role: ::std::option::Option<::std::string::String>,

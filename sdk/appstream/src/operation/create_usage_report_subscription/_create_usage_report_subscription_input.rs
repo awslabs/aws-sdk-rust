@@ -11,8 +11,8 @@ impl CreateUsageReportSubscriptionInput {
 }
 
 /// A builder for [`CreateUsageReportSubscriptionInput`](crate::operation::create_usage_report_subscription::CreateUsageReportSubscriptionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateUsageReportSubscriptionInputBuilder {}
 impl CreateUsageReportSubscriptionInputBuilder {
     /// Consumes the builder and constructs a [`CreateUsageReportSubscriptionInput`](crate::operation::create_usage_report_subscription::CreateUsageReportSubscriptionInput).

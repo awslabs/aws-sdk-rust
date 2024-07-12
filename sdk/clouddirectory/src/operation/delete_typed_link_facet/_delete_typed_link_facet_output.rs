@@ -18,8 +18,8 @@ impl DeleteTypedLinkFacetOutput {
 }
 
 /// A builder for [`DeleteTypedLinkFacetOutput`](crate::operation::delete_typed_link_facet::DeleteTypedLinkFacetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTypedLinkFacetOutputBuilder {
     _request_id: Option<String>,
 }

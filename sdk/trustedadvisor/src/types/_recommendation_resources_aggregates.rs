@@ -33,8 +33,8 @@ impl RecommendationResourcesAggregates {
 }
 
 /// A builder for [`RecommendationResourcesAggregates`](crate::types::RecommendationResourcesAggregates).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecommendationResourcesAggregatesBuilder {
     pub(crate) ok_count: ::std::option::Option<i64>,
     pub(crate) warning_count: ::std::option::Option<i64>,

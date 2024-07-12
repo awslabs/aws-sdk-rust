@@ -105,8 +105,8 @@ impl VideoDescription {
 }
 
 /// A builder for [`VideoDescription`](crate::types::VideoDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VideoDescriptionBuilder {
     pub(crate) afd_signaling: ::std::option::Option<crate::types::AfdSignaling>,
     pub(crate) anti_alias: ::std::option::Option<crate::types::AntiAlias>,

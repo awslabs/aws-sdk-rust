@@ -77,8 +77,8 @@ impl AwsDynamoDbTableReplica {
 }
 
 /// A builder for [`AwsDynamoDbTableReplica`](crate::types::AwsDynamoDbTableReplica).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsDynamoDbTableReplicaBuilder {
     pub(crate) global_secondary_indexes: ::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableReplicaGlobalSecondaryIndex>>,
     pub(crate) kms_master_key_id: ::std::option::Option<::std::string::String>,

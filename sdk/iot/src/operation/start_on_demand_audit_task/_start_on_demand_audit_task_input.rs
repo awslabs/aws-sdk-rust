@@ -22,8 +22,8 @@ impl StartOnDemandAuditTaskInput {
 }
 
 /// A builder for [`StartOnDemandAuditTaskInput`](crate::operation::start_on_demand_audit_task::StartOnDemandAuditTaskInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartOnDemandAuditTaskInputBuilder {
     pub(crate) target_check_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

@@ -35,8 +35,8 @@ impl DescribeReservedDbInstancesOutput {
 }
 
 /// A builder for [`DescribeReservedDbInstancesOutput`](crate::operation::describe_reserved_db_instances::DescribeReservedDbInstancesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeReservedDbInstancesOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) reserved_db_instances: ::std::option::Option<::std::vec::Vec<crate::types::ReservedDbInstance>>,

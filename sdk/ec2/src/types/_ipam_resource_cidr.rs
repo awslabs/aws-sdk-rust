@@ -129,8 +129,8 @@ impl IpamResourceCidr {
 }
 
 /// A builder for [`IpamResourceCidr`](crate::types::IpamResourceCidr).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IpamResourceCidrBuilder {
     pub(crate) ipam_id: ::std::option::Option<::std::string::String>,
     pub(crate) ipam_scope_id: ::std::option::Option<::std::string::String>,

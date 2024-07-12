@@ -45,8 +45,8 @@ impl Ec2DeleteRouteAction {
 }
 
 /// A builder for [`Ec2DeleteRouteAction`](crate::types::Ec2DeleteRouteAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Ec2DeleteRouteActionBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) destination_cidr_block: ::std::option::Option<::std::string::String>,

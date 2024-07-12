@@ -27,8 +27,8 @@ impl Segment {
 }
 
 /// A builder for [`Segment`](crate::types::Segment).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SegmentBuilder {
     pub(crate) segment_number: ::std::option::Option<i32>,
     pub(crate) total_segments: ::std::option::Option<i32>,

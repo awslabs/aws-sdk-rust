@@ -52,8 +52,8 @@ impl CreateRelayInput {
 }
 
 /// A builder for [`CreateRelayInput`](crate::operation::create_relay::CreateRelayInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateRelayInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) relay_name: ::std::option::Option<::std::string::String>,

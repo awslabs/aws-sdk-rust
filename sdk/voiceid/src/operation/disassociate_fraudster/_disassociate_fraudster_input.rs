@@ -41,8 +41,8 @@ impl DisassociateFraudsterInput {
 }
 
 /// A builder for [`DisassociateFraudsterInput`](crate::operation::disassociate_fraudster::DisassociateFraudsterInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DisassociateFraudsterInputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) watchlist_id: ::std::option::Option<::std::string::String>,

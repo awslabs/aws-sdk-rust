@@ -20,8 +20,8 @@ impl DeleteControlInput {
 }
 
 /// A builder for [`DeleteControlInput`](crate::operation::delete_control::DeleteControlInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteControlInputBuilder {
     pub(crate) control_id: ::std::option::Option<::std::string::String>,
 }

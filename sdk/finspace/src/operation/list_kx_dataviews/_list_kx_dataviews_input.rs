@@ -38,8 +38,8 @@ impl ListKxDataviewsInput {
 }
 
 /// A builder for [`ListKxDataviewsInput`](crate::operation::list_kx_dataviews::ListKxDataviewsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListKxDataviewsInputBuilder {
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,

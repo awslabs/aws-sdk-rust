@@ -104,8 +104,8 @@ impl CodegenJob {
 }
 
 /// A builder for [`CodegenJob`](crate::types::CodegenJob).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CodegenJobBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) app_id: ::std::option::Option<::std::string::String>,

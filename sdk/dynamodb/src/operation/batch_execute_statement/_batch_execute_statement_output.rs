@@ -36,8 +36,8 @@ impl BatchExecuteStatementOutput {
 }
 
 /// A builder for [`BatchExecuteStatementOutput`](crate::operation::batch_execute_statement::BatchExecuteStatementOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchExecuteStatementOutputBuilder {
     pub(crate) responses: ::std::option::Option<::std::vec::Vec<crate::types::BatchStatementResponse>>,
     pub(crate) consumed_capacity: ::std::option::Option<::std::vec::Vec<crate::types::ConsumedCapacity>>,

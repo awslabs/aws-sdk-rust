@@ -22,8 +22,8 @@ impl AudioEvent {
 }
 
 /// A builder for [`AudioEvent`](crate::types::AudioEvent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AudioEventBuilder {
     pub(crate) audio_chunk: ::std::option::Option<::aws_smithy_types::Blob>,
 }

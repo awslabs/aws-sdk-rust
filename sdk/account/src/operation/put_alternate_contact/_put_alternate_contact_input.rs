@@ -72,8 +72,8 @@ impl PutAlternateContactInput {
 }
 
 /// A builder for [`PutAlternateContactInput`](crate::operation::put_alternate_contact::PutAlternateContactInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PutAlternateContactInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) title: ::std::option::Option<::std::string::String>,

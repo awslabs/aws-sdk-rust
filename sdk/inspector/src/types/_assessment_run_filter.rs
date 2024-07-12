@@ -61,8 +61,8 @@ impl AssessmentRunFilter {
 }
 
 /// A builder for [`AssessmentRunFilter`](crate::types::AssessmentRunFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssessmentRunFilterBuilder {
     pub(crate) name_pattern: ::std::option::Option<::std::string::String>,
     pub(crate) states: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentRunState>>,

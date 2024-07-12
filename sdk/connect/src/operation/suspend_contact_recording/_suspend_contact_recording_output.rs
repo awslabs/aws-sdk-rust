@@ -18,8 +18,8 @@ impl SuspendContactRecordingOutput {
 }
 
 /// A builder for [`SuspendContactRecordingOutput`](crate::operation::suspend_contact_recording::SuspendContactRecordingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SuspendContactRecordingOutputBuilder {
     _request_id: Option<String>,
 }

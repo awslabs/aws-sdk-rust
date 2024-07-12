@@ -26,8 +26,8 @@ impl CreateGovCloudAccountOutput {
 }
 
 /// A builder for [`CreateGovCloudAccountOutput`](crate::operation::create_gov_cloud_account::CreateGovCloudAccountOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateGovCloudAccountOutputBuilder {
     pub(crate) create_account_status: ::std::option::Option<crate::types::CreateAccountStatus>,
     _request_id: Option<String>,

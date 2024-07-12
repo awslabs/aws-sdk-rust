@@ -22,8 +22,8 @@ impl ServiceNowSourceProperties {
 }
 
 /// A builder for [`ServiceNowSourceProperties`](crate::types::ServiceNowSourceProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServiceNowSourcePropertiesBuilder {
     pub(crate) object: ::std::option::Option<::std::string::String>,
 }

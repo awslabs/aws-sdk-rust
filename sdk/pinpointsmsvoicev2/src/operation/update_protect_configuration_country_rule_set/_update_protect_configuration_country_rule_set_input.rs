@@ -36,8 +36,8 @@ impl UpdateProtectConfigurationCountryRuleSetInput {
 }
 
 /// A builder for [`UpdateProtectConfigurationCountryRuleSetInput`](crate::operation::update_protect_configuration_country_rule_set::UpdateProtectConfigurationCountryRuleSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateProtectConfigurationCountryRuleSetInputBuilder {
     pub(crate) protect_configuration_id: ::std::option::Option<::std::string::String>,
     pub(crate) number_capability: ::std::option::Option<crate::types::NumberCapability>,

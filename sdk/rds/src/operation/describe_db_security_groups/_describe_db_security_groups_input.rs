@@ -45,8 +45,8 @@ impl DescribeDbSecurityGroupsInput {
 }
 
 /// A builder for [`DescribeDbSecurityGroupsInput`](crate::operation::describe_db_security_groups::DescribeDbSecurityGroupsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDbSecurityGroupsInputBuilder {
     pub(crate) db_security_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,

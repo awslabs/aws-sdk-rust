@@ -46,8 +46,8 @@ impl GetPositionEstimateInput {
 }
 
 /// A builder for [`GetPositionEstimateInput`](crate::operation::get_position_estimate::GetPositionEstimateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPositionEstimateInputBuilder {
     pub(crate) wi_fi_access_points: ::std::option::Option<::std::vec::Vec<crate::types::WiFiAccessPoint>>,
     pub(crate) cell_towers: ::std::option::Option<crate::types::CellTowers>,

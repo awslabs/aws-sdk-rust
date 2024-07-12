@@ -26,8 +26,8 @@ impl DeleteAccountLinkInvitationOutput {
 }
 
 /// A builder for [`DeleteAccountLinkInvitationOutput`](crate::operation::delete_account_link_invitation::DeleteAccountLinkInvitationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAccountLinkInvitationOutputBuilder {
     pub(crate) account_link: ::std::option::Option<crate::types::AccountLink>,
     _request_id: Option<String>,

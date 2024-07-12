@@ -32,8 +32,8 @@ impl DeleteKeyPairOutput {
 }
 
 /// A builder for [`DeleteKeyPairOutput`](crate::operation::delete_key_pair::DeleteKeyPairOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteKeyPairOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
     pub(crate) key_pair_id: ::std::option::Option<::std::string::String>,

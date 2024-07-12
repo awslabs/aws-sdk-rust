@@ -27,8 +27,8 @@ impl OutputLockingSettings {
 }
 
 /// A builder for [`OutputLockingSettings`](crate::types::OutputLockingSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OutputLockingSettingsBuilder {
     pub(crate) epoch_locking_settings: ::std::option::Option<crate::types::EpochLockingSettings>,
     pub(crate) pipeline_locking_settings: ::std::option::Option<crate::types::PipelineLockingSettings>,

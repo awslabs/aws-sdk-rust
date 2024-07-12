@@ -35,8 +35,8 @@ impl DescribeDbInstanceAutomatedBackupsOutput {
 }
 
 /// A builder for [`DescribeDbInstanceAutomatedBackupsOutput`](crate::operation::describe_db_instance_automated_backups::DescribeDbInstanceAutomatedBackupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDbInstanceAutomatedBackupsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) db_instance_automated_backups: ::std::option::Option<::std::vec::Vec<crate::types::DbInstanceAutomatedBackup>>,

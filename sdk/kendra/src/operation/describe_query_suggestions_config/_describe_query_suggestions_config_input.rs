@@ -20,8 +20,8 @@ impl DescribeQuerySuggestionsConfigInput {
 }
 
 /// A builder for [`DescribeQuerySuggestionsConfigInput`](crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeQuerySuggestionsConfigInputBuilder {
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
 }

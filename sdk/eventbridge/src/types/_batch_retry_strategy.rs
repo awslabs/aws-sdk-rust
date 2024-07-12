@@ -21,8 +21,8 @@ impl BatchRetryStrategy {
 }
 
 /// A builder for [`BatchRetryStrategy`](crate::types::BatchRetryStrategy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchRetryStrategyBuilder {
     pub(crate) attempts: ::std::option::Option<i32>,
 }

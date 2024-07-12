@@ -41,8 +41,8 @@ impl DescribeCertificatesOutput {
 }
 
 /// A builder for [`DescribeCertificatesOutput`](crate::operation::describe_certificates::DescribeCertificatesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCertificatesOutputBuilder {
     pub(crate) default_certificate_for_new_launches: ::std::option::Option<::std::string::String>,
     pub(crate) certificates: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,

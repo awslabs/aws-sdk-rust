@@ -34,8 +34,8 @@ impl ListInfrastructureConfigurationsInput {
 }
 
 /// A builder for [`ListInfrastructureConfigurationsInput`](crate::operation::list_infrastructure_configurations::ListInfrastructureConfigurationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListInfrastructureConfigurationsInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) max_results: ::std::option::Option<i32>,

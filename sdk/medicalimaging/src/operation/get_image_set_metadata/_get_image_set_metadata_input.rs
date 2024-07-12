@@ -32,8 +32,8 @@ impl GetImageSetMetadataInput {
 }
 
 /// A builder for [`GetImageSetMetadataInput`](crate::operation::get_image_set_metadata::GetImageSetMetadataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetImageSetMetadataInputBuilder {
     pub(crate) datastore_id: ::std::option::Option<::std::string::String>,
     pub(crate) image_set_id: ::std::option::Option<::std::string::String>,

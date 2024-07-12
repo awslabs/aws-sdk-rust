@@ -72,8 +72,8 @@ impl CreateDataRepositoryAssociationInput {
 }
 
 /// A builder for [`CreateDataRepositoryAssociationInput`](crate::operation::create_data_repository_association::CreateDataRepositoryAssociationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDataRepositoryAssociationInputBuilder {
     pub(crate) file_system_id: ::std::option::Option<::std::string::String>,
     pub(crate) file_system_path: ::std::option::Option<::std::string::String>,

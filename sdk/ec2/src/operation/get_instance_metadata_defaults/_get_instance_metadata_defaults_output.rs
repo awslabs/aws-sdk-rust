@@ -26,8 +26,8 @@ impl GetInstanceMetadataDefaultsOutput {
 }
 
 /// A builder for [`GetInstanceMetadataDefaultsOutput`](crate::operation::get_instance_metadata_defaults::GetInstanceMetadataDefaultsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetInstanceMetadataDefaultsOutputBuilder {
     pub(crate) account_level: ::std::option::Option<crate::types::InstanceMetadataDefaultsResponse>,
     _request_id: Option<String>,

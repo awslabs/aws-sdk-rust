@@ -20,8 +20,8 @@ impl GetVariantStoreInput {
 }
 
 /// A builder for [`GetVariantStoreInput`](crate::operation::get_variant_store::GetVariantStoreInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetVariantStoreInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

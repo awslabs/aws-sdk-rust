@@ -46,8 +46,8 @@ impl ListThemeVersionsOutput {
 }
 
 /// A builder for [`ListThemeVersionsOutput`](crate::operation::list_theme_versions::ListThemeVersionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListThemeVersionsOutputBuilder {
     pub(crate) theme_version_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ThemeVersionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

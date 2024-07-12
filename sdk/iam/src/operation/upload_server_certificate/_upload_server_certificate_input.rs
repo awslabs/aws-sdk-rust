@@ -130,8 +130,8 @@ impl UploadServerCertificateInput {
 }
 
 /// A builder for [`UploadServerCertificateInput`](crate::operation::upload_server_certificate::UploadServerCertificateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UploadServerCertificateInputBuilder {
     pub(crate) path: ::std::option::Option<::std::string::String>,
     pub(crate) server_certificate_name: ::std::option::Option<::std::string::String>,

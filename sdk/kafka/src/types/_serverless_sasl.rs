@@ -21,8 +21,8 @@ impl ServerlessSasl {
 }
 
 /// A builder for [`ServerlessSasl`](crate::types::ServerlessSasl).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServerlessSaslBuilder {
     pub(crate) iam: ::std::option::Option<crate::types::Iam>,
 }

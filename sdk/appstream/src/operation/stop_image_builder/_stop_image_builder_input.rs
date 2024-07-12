@@ -20,8 +20,8 @@ impl StopImageBuilderInput {
 }
 
 /// A builder for [`StopImageBuilderInput`](crate::operation::stop_image_builder::StopImageBuilderInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopImageBuilderInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

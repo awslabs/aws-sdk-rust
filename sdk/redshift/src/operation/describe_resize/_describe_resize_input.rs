@@ -23,8 +23,8 @@ impl DescribeResizeInput {
 }
 
 /// A builder for [`DescribeResizeInput`](crate::operation::describe_resize::DescribeResizeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeResizeInputBuilder {
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
 }

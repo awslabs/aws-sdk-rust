@@ -62,8 +62,8 @@ impl CreateAnomalyMonitorInput {
 }
 
 /// A builder for [`CreateAnomalyMonitorInput`](crate::operation::create_anomaly_monitor::CreateAnomalyMonitorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAnomalyMonitorInputBuilder {
     pub(crate) anomaly_monitor: ::std::option::Option<crate::types::AnomalyMonitor>,
     pub(crate) resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,

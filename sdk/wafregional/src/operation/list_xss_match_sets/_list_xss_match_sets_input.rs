@@ -27,8 +27,8 @@ impl ListXssMatchSetsInput {
 }
 
 /// A builder for [`ListXssMatchSetsInput`](crate::operation::list_xss_match_sets::ListXssMatchSetsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListXssMatchSetsInputBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,

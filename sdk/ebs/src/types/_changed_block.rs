@@ -42,8 +42,8 @@ impl ChangedBlock {
 }
 
 /// A builder for [`ChangedBlock`](crate::types::ChangedBlock).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ChangedBlockBuilder {
     pub(crate) block_index: ::std::option::Option<i32>,
     pub(crate) first_block_token: ::std::option::Option<::std::string::String>,

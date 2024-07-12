@@ -26,8 +26,8 @@ impl ListContainersInput {
 }
 
 /// A builder for [`ListContainersInput`](crate::operation::list_containers::ListContainersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListContainersInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

@@ -18,8 +18,8 @@ impl DeleteChatControlsConfigurationOutput {
 }
 
 /// A builder for [`DeleteChatControlsConfigurationOutput`](crate::operation::delete_chat_controls_configuration::DeleteChatControlsConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteChatControlsConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

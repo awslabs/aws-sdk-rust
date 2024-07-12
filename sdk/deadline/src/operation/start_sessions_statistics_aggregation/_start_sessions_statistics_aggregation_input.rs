@@ -66,8 +66,8 @@ impl StartSessionsStatisticsAggregationInput {
 }
 
 /// A builder for [`StartSessionsStatisticsAggregationInput`](crate::operation::start_sessions_statistics_aggregation::StartSessionsStatisticsAggregationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartSessionsStatisticsAggregationInputBuilder {
     pub(crate) farm_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_ids: ::std::option::Option<crate::types::SessionsStatisticsResources>,

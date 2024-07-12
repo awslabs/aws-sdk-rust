@@ -34,8 +34,8 @@ impl IotTopicPublishAction {
 }
 
 /// A builder for [`IotTopicPublishAction`](crate::types::IotTopicPublishAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IotTopicPublishActionBuilder {
     pub(crate) mqtt_topic: ::std::option::Option<::std::string::String>,
     pub(crate) payload: ::std::option::Option<crate::types::Payload>,

@@ -27,8 +27,8 @@ impl DeleteStreamingDistributionInput {
 }
 
 /// A builder for [`DeleteStreamingDistributionInput`](crate::operation::delete_streaming_distribution::DeleteStreamingDistributionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteStreamingDistributionInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) if_match: ::std::option::Option<::std::string::String>,

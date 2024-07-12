@@ -34,8 +34,8 @@ impl ListBackupVaultsOutput {
 }
 
 /// A builder for [`ListBackupVaultsOutput`](crate::operation::list_backup_vaults::ListBackupVaultsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListBackupVaultsOutputBuilder {
     pub(crate) backup_vault_list: ::std::option::Option<::std::vec::Vec<crate::types::BackupVaultListMember>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

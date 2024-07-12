@@ -46,8 +46,8 @@ impl S3DataAccessAssetSourceEntry {
 }
 
 /// A builder for [`S3DataAccessAssetSourceEntry`](crate::types::S3DataAccessAssetSourceEntry).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3DataAccessAssetSourceEntryBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) key_prefixes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -33,8 +33,8 @@ impl ReservationPlanSettings {
 }
 
 /// A builder for [`ReservationPlanSettings`](crate::types::ReservationPlanSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReservationPlanSettingsBuilder {
     pub(crate) commitment: ::std::option::Option<crate::types::Commitment>,
     pub(crate) renewal_type: ::std::option::Option<crate::types::RenewalType>,

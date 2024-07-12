@@ -23,8 +23,8 @@ impl GeospatialHeatmapColorScale {
 }
 
 /// A builder for [`GeospatialHeatmapColorScale`](crate::types::GeospatialHeatmapColorScale).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GeospatialHeatmapColorScaleBuilder {
     pub(crate) colors: ::std::option::Option<::std::vec::Vec<crate::types::GeospatialHeatmapDataColor>>,
 }

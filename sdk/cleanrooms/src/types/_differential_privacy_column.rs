@@ -22,8 +22,8 @@ impl DifferentialPrivacyColumn {
 }
 
 /// A builder for [`DifferentialPrivacyColumn`](crate::types::DifferentialPrivacyColumn).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DifferentialPrivacyColumnBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

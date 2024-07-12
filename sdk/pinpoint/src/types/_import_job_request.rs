@@ -77,8 +77,8 @@ impl ImportJobRequest {
 }
 
 /// A builder for [`ImportJobRequest`](crate::types::ImportJobRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportJobRequestBuilder {
     pub(crate) define_segment: ::std::option::Option<bool>,
     pub(crate) external_id: ::std::option::Option<::std::string::String>,

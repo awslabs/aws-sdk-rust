@@ -33,8 +33,8 @@ impl DeleteFleetSuccessItem {
 }
 
 /// A builder for [`DeleteFleetSuccessItem`](crate::types::DeleteFleetSuccessItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFleetSuccessItemBuilder {
     pub(crate) current_fleet_state: ::std::option::Option<crate::types::FleetStateCode>,
     pub(crate) previous_fleet_state: ::std::option::Option<crate::types::FleetStateCode>,

@@ -35,8 +35,8 @@ impl ListCertificatesByCaOutput {
 }
 
 /// A builder for [`ListCertificatesByCaOutput`](crate::operation::list_certificates_by_ca::ListCertificatesByCaOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCertificatesByCaOutputBuilder {
     pub(crate) certificates: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,

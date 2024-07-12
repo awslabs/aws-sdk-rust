@@ -21,8 +21,8 @@ impl AudioPidSelection {
 }
 
 /// A builder for [`AudioPidSelection`](crate::types::AudioPidSelection).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AudioPidSelectionBuilder {
     pub(crate) pid: ::std::option::Option<i32>,
 }

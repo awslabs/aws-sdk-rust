@@ -26,8 +26,8 @@ impl PutSchemaFromJsonOutput {
 }
 
 /// A builder for [`PutSchemaFromJsonOutput`](crate::operation::put_schema_from_json::PutSchemaFromJsonOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutSchemaFromJsonOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

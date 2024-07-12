@@ -23,8 +23,8 @@ impl TaskTemplateDefaults {
 }
 
 /// A builder for [`TaskTemplateDefaults`](crate::types::TaskTemplateDefaults).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TaskTemplateDefaultsBuilder {
     pub(crate) default_field_values: ::std::option::Option<::std::vec::Vec<crate::types::TaskTemplateDefaultFieldValue>>,
 }

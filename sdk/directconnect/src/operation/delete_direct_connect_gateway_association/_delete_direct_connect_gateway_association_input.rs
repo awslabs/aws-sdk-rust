@@ -32,8 +32,8 @@ impl DeleteDirectConnectGatewayAssociationInput {
 }
 
 /// A builder for [`DeleteDirectConnectGatewayAssociationInput`](crate::operation::delete_direct_connect_gateway_association::DeleteDirectConnectGatewayAssociationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDirectConnectGatewayAssociationInputBuilder {
     pub(crate) association_id: ::std::option::Option<::std::string::String>,
     pub(crate) direct_connect_gateway_id: ::std::option::Option<::std::string::String>,

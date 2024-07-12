@@ -21,8 +21,8 @@ impl IncrementalPullConfig {
 }
 
 /// A builder for [`IncrementalPullConfig`](crate::types::IncrementalPullConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IncrementalPullConfigBuilder {
     pub(crate) datetime_type_field_name: ::std::option::Option<::std::string::String>,
 }

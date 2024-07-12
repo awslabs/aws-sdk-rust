@@ -87,8 +87,8 @@ impl UpdateGlossaryTermOutput {
 }
 
 /// A builder for [`UpdateGlossaryTermOutput`](crate::operation::update_glossary_term::UpdateGlossaryTermOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateGlossaryTermOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,

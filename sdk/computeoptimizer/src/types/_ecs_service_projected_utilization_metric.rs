@@ -58,8 +58,8 @@ impl EcsServiceProjectedUtilizationMetric {
 }
 
 /// A builder for [`EcsServiceProjectedUtilizationMetric`](crate::types::EcsServiceProjectedUtilizationMetric).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EcsServiceProjectedUtilizationMetricBuilder {
     pub(crate) name: ::std::option::Option<crate::types::EcsServiceMetricName>,
     pub(crate) statistic: ::std::option::Option<crate::types::EcsServiceMetricStatistic>,

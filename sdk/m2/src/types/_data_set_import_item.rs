@@ -27,8 +27,8 @@ impl DataSetImportItem {
 }
 
 /// A builder for [`DataSetImportItem`](crate::types::DataSetImportItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataSetImportItemBuilder {
     pub(crate) data_set: ::std::option::Option<crate::types::DataSet>,
     pub(crate) external_location: ::std::option::Option<crate::types::ExternalLocation>,

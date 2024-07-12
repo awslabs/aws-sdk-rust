@@ -34,8 +34,8 @@ impl ListInstanceFleetsOutput {
 }
 
 /// A builder for [`ListInstanceFleetsOutput`](crate::operation::list_instance_fleets::ListInstanceFleetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListInstanceFleetsOutputBuilder {
     pub(crate) instance_fleets: ::std::option::Option<::std::vec::Vec<crate::types::InstanceFleet>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

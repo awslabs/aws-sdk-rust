@@ -43,8 +43,8 @@ impl ImageResponseCard {
 }
 
 /// A builder for [`ImageResponseCard`](crate::types::ImageResponseCard).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImageResponseCardBuilder {
     pub(crate) title: ::std::option::Option<::std::string::String>,
     pub(crate) subtitle: ::std::option::Option<::std::string::String>,

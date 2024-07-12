@@ -34,8 +34,8 @@ impl AssociateRoutingProfileQueuesInput {
 }
 
 /// A builder for [`AssociateRoutingProfileQueuesInput`](crate::operation::associate_routing_profile_queues::AssociateRoutingProfileQueuesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateRoutingProfileQueuesInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) routing_profile_id: ::std::option::Option<::std::string::String>,

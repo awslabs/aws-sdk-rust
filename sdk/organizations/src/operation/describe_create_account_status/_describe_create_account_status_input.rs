@@ -22,8 +22,8 @@ impl DescribeCreateAccountStatusInput {
 }
 
 /// A builder for [`DescribeCreateAccountStatusInput`](crate::operation::describe_create_account_status::DescribeCreateAccountStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCreateAccountStatusInputBuilder {
     pub(crate) create_account_request_id: ::std::option::Option<::std::string::String>,
 }

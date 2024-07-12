@@ -38,8 +38,8 @@ impl ListRealtimeContactAnalysisSegmentsInput {
 }
 
 /// A builder for [`ListRealtimeContactAnalysisSegmentsInput`](crate::operation::list_realtime_contact_analysis_segments::ListRealtimeContactAnalysisSegmentsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRealtimeContactAnalysisSegmentsInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) contact_id: ::std::option::Option<::std::string::String>,

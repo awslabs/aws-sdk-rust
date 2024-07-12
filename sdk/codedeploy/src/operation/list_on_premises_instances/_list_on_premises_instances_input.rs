@@ -47,8 +47,8 @@ impl ListOnPremisesInstancesInput {
 }
 
 /// A builder for [`ListOnPremisesInstancesInput`](crate::operation::list_on_premises_instances::ListOnPremisesInstancesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListOnPremisesInstancesInputBuilder {
     pub(crate) registration_status: ::std::option::Option<crate::types::RegistrationStatus>,
     pub(crate) tag_filters: ::std::option::Option<::std::vec::Vec<crate::types::TagFilter>>,

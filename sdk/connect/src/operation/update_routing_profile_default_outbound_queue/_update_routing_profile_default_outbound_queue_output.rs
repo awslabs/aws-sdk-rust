@@ -19,8 +19,8 @@ impl UpdateRoutingProfileDefaultOutboundQueueOutput {
 }
 
 /// A builder for [`UpdateRoutingProfileDefaultOutboundQueueOutput`](crate::operation::update_routing_profile_default_outbound_queue::UpdateRoutingProfileDefaultOutboundQueueOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRoutingProfileDefaultOutboundQueueOutputBuilder {
     _request_id: Option<String>,
 }

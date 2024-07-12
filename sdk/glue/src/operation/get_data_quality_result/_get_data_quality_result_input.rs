@@ -20,8 +20,8 @@ impl GetDataQualityResultInput {
 }
 
 /// A builder for [`GetDataQualityResultInput`](crate::operation::get_data_quality_result::GetDataQualityResultInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDataQualityResultInputBuilder {
     pub(crate) result_id: ::std::option::Option<::std::string::String>,
 }

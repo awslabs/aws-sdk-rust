@@ -59,8 +59,8 @@ impl CreateDbSecurityGroupInput {
 }
 
 /// A builder for [`CreateDbSecurityGroupInput`](crate::operation::create_db_security_group::CreateDbSecurityGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDbSecurityGroupInputBuilder {
     pub(crate) db_security_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) db_security_group_description: ::std::option::Option<::std::string::String>,

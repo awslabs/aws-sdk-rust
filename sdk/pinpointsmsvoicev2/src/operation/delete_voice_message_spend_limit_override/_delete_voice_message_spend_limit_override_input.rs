@@ -11,8 +11,8 @@ impl DeleteVoiceMessageSpendLimitOverrideInput {
 }
 
 /// A builder for [`DeleteVoiceMessageSpendLimitOverrideInput`](crate::operation::delete_voice_message_spend_limit_override::DeleteVoiceMessageSpendLimitOverrideInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVoiceMessageSpendLimitOverrideInputBuilder {}
 impl DeleteVoiceMessageSpendLimitOverrideInputBuilder {
     /// Consumes the builder and constructs a [`DeleteVoiceMessageSpendLimitOverrideInput`](crate::operation::delete_voice_message_spend_limit_override::DeleteVoiceMessageSpendLimitOverrideInput).

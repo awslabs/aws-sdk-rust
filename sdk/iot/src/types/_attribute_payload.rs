@@ -35,8 +35,8 @@ impl AttributePayload {
 }
 
 /// A builder for [`AttributePayload`](crate::types::AttributePayload).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttributePayloadBuilder {
     pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) merge: ::std::option::Option<bool>,

@@ -27,8 +27,8 @@ impl PipelineInfo {
 }
 
 /// A builder for [`PipelineInfo`](crate::types::PipelineInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PipelineInfoBuilder {
     pub(crate) pipeline_type: ::std::option::Option<crate::types::PipelineType>,
     pub(crate) pipeline_configuration_time_stamp: ::std::option::Option<::std::string::String>,

@@ -38,8 +38,8 @@ impl ProvisionDeviceInput {
 }
 
 /// A builder for [`ProvisionDeviceInput`](crate::operation::provision_device::ProvisionDeviceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProvisionDeviceInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

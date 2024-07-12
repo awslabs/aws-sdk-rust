@@ -73,8 +73,8 @@ impl AnalyticsIntentMetric {
 }
 
 /// A builder for [`AnalyticsIntentMetric`](crate::types::AnalyticsIntentMetric).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AnalyticsIntentMetricBuilder {
     pub(crate) name: ::std::option::Option<crate::types::AnalyticsIntentMetricName>,
     pub(crate) statistic: ::std::option::Option<crate::types::AnalyticsMetricStatistic>,

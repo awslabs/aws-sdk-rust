@@ -39,8 +39,8 @@ impl LoRaWanUpdateGatewayTaskCreate {
 }
 
 /// A builder for [`LoRaWanUpdateGatewayTaskCreate`](crate::types::LoRaWanUpdateGatewayTaskCreate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LoRaWanUpdateGatewayTaskCreateBuilder {
     pub(crate) update_signature: ::std::option::Option<::std::string::String>,
     pub(crate) sig_key_crc: ::std::option::Option<i64>,

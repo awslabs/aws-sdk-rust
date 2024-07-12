@@ -21,8 +21,8 @@ impl MeshServiceDiscovery {
 }
 
 /// A builder for [`MeshServiceDiscovery`](crate::types::MeshServiceDiscovery).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MeshServiceDiscoveryBuilder {
     pub(crate) ip_preference: ::std::option::Option<crate::types::IpPreference>,
 }

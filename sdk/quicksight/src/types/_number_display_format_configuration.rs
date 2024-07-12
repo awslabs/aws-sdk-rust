@@ -70,8 +70,8 @@ impl NumberDisplayFormatConfiguration {
 }
 
 /// A builder for [`NumberDisplayFormatConfiguration`](crate::types::NumberDisplayFormatConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct NumberDisplayFormatConfigurationBuilder {
     pub(crate) prefix: ::std::option::Option<::std::string::String>,
     pub(crate) suffix: ::std::option::Option<::std::string::String>,

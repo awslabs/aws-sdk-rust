@@ -26,8 +26,8 @@ impl CreateBillingGroupOutput {
 }
 
 /// A builder for [`CreateBillingGroupOutput`](crate::operation::create_billing_group::CreateBillingGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateBillingGroupOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

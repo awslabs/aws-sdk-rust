@@ -153,8 +153,8 @@ impl UpdateBranchInput {
 }
 
 /// A builder for [`UpdateBranchInput`](crate::operation::update_branch::UpdateBranchInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateBranchInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) branch_name: ::std::option::Option<::std::string::String>,

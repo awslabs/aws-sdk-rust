@@ -26,8 +26,8 @@ impl AssociateUserOutput {
 }
 
 /// A builder for [`AssociateUserOutput`](crate::operation::associate_user::AssociateUserOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateUserOutputBuilder {
     pub(crate) instance_user_summary: ::std::option::Option<crate::types::InstanceUserSummary>,
     _request_id: Option<String>,

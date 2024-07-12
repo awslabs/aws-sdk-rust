@@ -18,8 +18,8 @@ impl UpdateFailbackReplicationConfigurationOutput {
 }
 
 /// A builder for [`UpdateFailbackReplicationConfigurationOutput`](crate::operation::update_failback_replication_configuration::UpdateFailbackReplicationConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateFailbackReplicationConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

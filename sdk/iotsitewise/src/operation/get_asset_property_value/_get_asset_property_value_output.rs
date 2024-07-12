@@ -26,8 +26,8 @@ impl GetAssetPropertyValueOutput {
 }
 
 /// A builder for [`GetAssetPropertyValueOutput`](crate::operation::get_asset_property_value::GetAssetPropertyValueOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAssetPropertyValueOutputBuilder {
     pub(crate) property_value: ::std::option::Option<crate::types::AssetPropertyValue>,
     _request_id: Option<String>,

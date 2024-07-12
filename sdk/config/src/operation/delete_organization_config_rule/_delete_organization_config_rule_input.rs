@@ -20,8 +20,8 @@ impl DeleteOrganizationConfigRuleInput {
 }
 
 /// A builder for [`DeleteOrganizationConfigRuleInput`](crate::operation::delete_organization_config_rule::DeleteOrganizationConfigRuleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteOrganizationConfigRuleInputBuilder {
     pub(crate) organization_config_rule_name: ::std::option::Option<::std::string::String>,
 }

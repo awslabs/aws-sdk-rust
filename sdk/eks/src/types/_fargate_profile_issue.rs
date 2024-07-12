@@ -35,8 +35,8 @@ impl FargateProfileIssue {
 }
 
 /// A builder for [`FargateProfileIssue`](crate::types::FargateProfileIssue).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FargateProfileIssueBuilder {
     pub(crate) code: ::std::option::Option<crate::types::FargateProfileIssueCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

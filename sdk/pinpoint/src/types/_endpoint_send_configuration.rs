@@ -49,8 +49,8 @@ impl EndpointSendConfiguration {
 }
 
 /// A builder for [`EndpointSendConfiguration`](crate::types::EndpointSendConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EndpointSendConfigurationBuilder {
     pub(crate) body_override: ::std::option::Option<::std::string::String>,
     pub(crate) context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

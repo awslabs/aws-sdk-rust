@@ -20,8 +20,8 @@ impl DeleteVoiceConnectorEmergencyCallingConfigurationInput {
 }
 
 /// A builder for [`DeleteVoiceConnectorEmergencyCallingConfigurationInput`](crate::operation::delete_voice_connector_emergency_calling_configuration::DeleteVoiceConnectorEmergencyCallingConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVoiceConnectorEmergencyCallingConfigurationInputBuilder {
     pub(crate) voice_connector_id: ::std::option::Option<::std::string::String>,
 }

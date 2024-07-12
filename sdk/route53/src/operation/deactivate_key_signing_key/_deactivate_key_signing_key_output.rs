@@ -26,8 +26,8 @@ impl DeactivateKeySigningKeyOutput {
 }
 
 /// A builder for [`DeactivateKeySigningKeyOutput`](crate::operation::deactivate_key_signing_key::DeactivateKeySigningKeyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeactivateKeySigningKeyOutputBuilder {
     pub(crate) change_info: ::std::option::Option<crate::types::ChangeInfo>,
     _request_id: Option<String>,

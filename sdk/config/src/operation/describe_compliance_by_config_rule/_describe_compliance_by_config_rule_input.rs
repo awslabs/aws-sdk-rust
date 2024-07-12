@@ -37,8 +37,8 @@ impl DescribeComplianceByConfigRuleInput {
 }
 
 /// A builder for [`DescribeComplianceByConfigRuleInput`](crate::operation::describe_compliance_by_config_rule::DescribeComplianceByConfigRuleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeComplianceByConfigRuleInputBuilder {
     pub(crate) config_rule_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) compliance_types: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceType>>,

@@ -32,8 +32,8 @@ impl ProvisioningHook {
 }
 
 /// A builder for [`ProvisioningHook`](crate::types::ProvisioningHook).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProvisioningHookBuilder {
     pub(crate) payload_version: ::std::option::Option<::std::string::String>,
     pub(crate) target_arn: ::std::option::Option<::std::string::String>,

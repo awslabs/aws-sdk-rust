@@ -18,8 +18,8 @@ impl DeleteDocumentationVersionOutput {
 }
 
 /// A builder for [`DeleteDocumentationVersionOutput`](crate::operation::delete_documentation_version::DeleteDocumentationVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDocumentationVersionOutputBuilder {
     _request_id: Option<String>,
 }

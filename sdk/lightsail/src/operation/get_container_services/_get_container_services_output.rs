@@ -28,8 +28,8 @@ impl GetContainerServicesOutput {
 }
 
 /// A builder for [`GetContainerServicesOutput`](crate::operation::get_container_services::GetContainerServicesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetContainerServicesOutputBuilder {
     pub(crate) container_services: ::std::option::Option<::std::vec::Vec<crate::types::ContainerService>>,
     _request_id: Option<String>,

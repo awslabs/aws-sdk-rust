@@ -59,8 +59,8 @@ impl VirtualMachineDetails {
 }
 
 /// A builder for [`VirtualMachineDetails`](crate::types::VirtualMachineDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VirtualMachineDetailsBuilder {
     pub(crate) host_name: ::std::option::Option<::std::string::String>,
     pub(crate) hypervisor_id: ::std::option::Option<::std::string::String>,

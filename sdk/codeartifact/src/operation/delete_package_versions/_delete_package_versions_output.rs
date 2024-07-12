@@ -62,8 +62,8 @@ impl DeletePackageVersionsOutput {
 }
 
 /// A builder for [`DeletePackageVersionsOutput`](crate::operation::delete_package_versions::DeletePackageVersionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePackageVersionsOutputBuilder {
     pub(crate) successful_versions:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SuccessfulPackageVersionInfo>>,

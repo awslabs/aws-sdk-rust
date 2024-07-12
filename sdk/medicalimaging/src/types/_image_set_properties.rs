@@ -65,8 +65,8 @@ impl ImageSetProperties {
 }
 
 /// A builder for [`ImageSetProperties`](crate::types::ImageSetProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImageSetPropertiesBuilder {
     pub(crate) image_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) version_id: ::std::option::Option<::std::string::String>,

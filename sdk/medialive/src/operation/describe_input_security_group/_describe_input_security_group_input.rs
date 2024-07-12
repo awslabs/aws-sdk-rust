@@ -21,8 +21,8 @@ impl DescribeInputSecurityGroupInput {
 }
 
 /// A builder for [`DescribeInputSecurityGroupInput`](crate::operation::describe_input_security_group::DescribeInputSecurityGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeInputSecurityGroupInputBuilder {
     pub(crate) input_security_group_id: ::std::option::Option<::std::string::String>,
 }

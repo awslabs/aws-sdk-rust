@@ -18,8 +18,8 @@ impl CreateListOutput {
 }
 
 /// A builder for [`CreateListOutput`](crate::operation::create_list::CreateListOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateListOutputBuilder {
     _request_id: Option<String>,
 }

@@ -18,8 +18,8 @@ impl PutEventTypeOutput {
 }
 
 /// A builder for [`PutEventTypeOutput`](crate::operation::put_event_type::PutEventTypeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutEventTypeOutputBuilder {
     _request_id: Option<String>,
 }

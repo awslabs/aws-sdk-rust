@@ -33,8 +33,8 @@ impl ListMonitoredResourcesOutput {
 }
 
 /// A builder for [`ListMonitoredResourcesOutput`](crate::operation::list_monitored_resources::ListMonitoredResourcesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListMonitoredResourcesOutputBuilder {
     pub(crate) monitored_resource_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::MonitoredResourceIdentifier>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

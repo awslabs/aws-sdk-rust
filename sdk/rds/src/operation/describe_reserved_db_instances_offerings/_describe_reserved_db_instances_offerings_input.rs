@@ -85,8 +85,8 @@ impl DescribeReservedDbInstancesOfferingsInput {
 }
 
 /// A builder for [`DescribeReservedDbInstancesOfferingsInput`](crate::operation::describe_reserved_db_instances_offerings::DescribeReservedDbInstancesOfferingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeReservedDbInstancesOfferingsInputBuilder {
     pub(crate) reserved_db_instances_offering_id: ::std::option::Option<::std::string::String>,
     pub(crate) db_instance_class: ::std::option::Option<::std::string::String>,

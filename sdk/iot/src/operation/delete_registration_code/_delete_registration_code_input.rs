@@ -12,8 +12,8 @@ impl DeleteRegistrationCodeInput {
 }
 
 /// A builder for [`DeleteRegistrationCodeInput`](crate::operation::delete_registration_code::DeleteRegistrationCodeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRegistrationCodeInputBuilder {}
 impl DeleteRegistrationCodeInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRegistrationCodeInput`](crate::operation::delete_registration_code::DeleteRegistrationCodeInput).

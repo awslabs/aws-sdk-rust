@@ -46,8 +46,8 @@ impl ValidateE911AddressOutput {
 }
 
 /// A builder for [`ValidateE911AddressOutput`](crate::operation::validate_e911_address::ValidateE911AddressOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ValidateE911AddressOutputBuilder {
     pub(crate) validation_result: ::std::option::Option<i32>,
     pub(crate) address_external_id: ::std::option::Option<::std::string::String>,

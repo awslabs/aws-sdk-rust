@@ -34,8 +34,8 @@ impl RuleVerdictExpression {
 }
 
 /// A builder for [`RuleVerdictExpression`](crate::types::RuleVerdictExpression).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RuleVerdictExpressionBuilder {
     pub(crate) evaluate: ::std::option::Option<crate::types::RuleVerdictToEvaluate>,
     pub(crate) operator: ::std::option::Option<crate::types::RuleVerdictOperator>,

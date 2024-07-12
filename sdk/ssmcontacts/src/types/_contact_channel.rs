@@ -70,8 +70,8 @@ impl ContactChannel {
 }
 
 /// A builder for [`ContactChannel`](crate::types::ContactChannel).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ContactChannelBuilder {
     pub(crate) contact_channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) contact_arn: ::std::option::Option<::std::string::String>,

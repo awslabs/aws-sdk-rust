@@ -57,8 +57,8 @@ impl CreateDelegationRequest {
 }
 
 /// A builder for [`CreateDelegationRequest`](crate::types::CreateDelegationRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateDelegationRequestBuilder {
     pub(crate) comment: ::std::option::Option<::std::string::String>,
     pub(crate) control_set_id: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl AggregateComplianceCount {
 }
 
 /// A builder for [`AggregateComplianceCount`](crate::types::AggregateComplianceCount).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AggregateComplianceCountBuilder {
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
     pub(crate) compliance_summary: ::std::option::Option<crate::types::ComplianceSummary>,

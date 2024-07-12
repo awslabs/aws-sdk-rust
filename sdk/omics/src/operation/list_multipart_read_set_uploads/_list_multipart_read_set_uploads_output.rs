@@ -34,8 +34,8 @@ impl ListMultipartReadSetUploadsOutput {
 }
 
 /// A builder for [`ListMultipartReadSetUploadsOutput`](crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListMultipartReadSetUploadsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) uploads: ::std::option::Option<::std::vec::Vec<crate::types::MultipartReadSetUploadListItem>>,

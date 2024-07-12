@@ -34,8 +34,8 @@ impl GetBotAliasesOutput {
 }
 
 /// A builder for [`GetBotAliasesOutput`](crate::operation::get_bot_aliases::GetBotAliasesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBotAliasesOutputBuilder {
     pub(crate) bot_aliases: ::std::option::Option<::std::vec::Vec<crate::types::BotAliasMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

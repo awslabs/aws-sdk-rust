@@ -27,8 +27,8 @@ impl SnapshotSortingEntity {
 }
 
 /// A builder for [`SnapshotSortingEntity`](crate::types::SnapshotSortingEntity).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SnapshotSortingEntityBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::SnapshotAttributeToSortBy>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortByOrder>,

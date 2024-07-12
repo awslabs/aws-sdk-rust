@@ -41,8 +41,8 @@ impl ActivateDeviceIdentifierOutput {
 }
 
 /// A builder for [`ActivateDeviceIdentifierOutput`](crate::operation::activate_device_identifier::ActivateDeviceIdentifierOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ActivateDeviceIdentifierOutputBuilder {
     pub(crate) device_identifier: ::std::option::Option<crate::types::DeviceIdentifier>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

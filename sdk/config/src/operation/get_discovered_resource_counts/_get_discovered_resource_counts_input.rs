@@ -40,8 +40,8 @@ impl GetDiscoveredResourceCountsInput {
 }
 
 /// A builder for [`GetDiscoveredResourceCountsInput`](crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDiscoveredResourceCountsInputBuilder {
     pub(crate) resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) limit: ::std::option::Option<i32>,

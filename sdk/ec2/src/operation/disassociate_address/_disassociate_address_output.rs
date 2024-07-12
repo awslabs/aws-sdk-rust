@@ -18,8 +18,8 @@ impl DisassociateAddressOutput {
 }
 
 /// A builder for [`DisassociateAddressOutput`](crate::operation::disassociate_address::DisassociateAddressOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateAddressOutputBuilder {
     _request_id: Option<String>,
 }

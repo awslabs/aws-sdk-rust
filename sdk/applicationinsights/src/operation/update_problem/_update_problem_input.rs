@@ -32,8 +32,8 @@ impl UpdateProblemInput {
 }
 
 /// A builder for [`UpdateProblemInput`](crate::operation::update_problem::UpdateProblemInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateProblemInputBuilder {
     pub(crate) problem_id: ::std::option::Option<::std::string::String>,
     pub(crate) update_status: ::std::option::Option<crate::types::UpdateStatus>,

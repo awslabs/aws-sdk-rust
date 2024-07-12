@@ -21,8 +21,8 @@ impl IncrementalRunConfig {
 }
 
 /// A builder for [`IncrementalRunConfig`](crate::types::IncrementalRunConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IncrementalRunConfigBuilder {
     pub(crate) incremental_run_type: ::std::option::Option<crate::types::IncrementalRunType>,
 }

@@ -18,8 +18,8 @@ impl UpdateContactRoutingDataOutput {
 }
 
 /// A builder for [`UpdateContactRoutingDataOutput`](crate::operation::update_contact_routing_data::UpdateContactRoutingDataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateContactRoutingDataOutputBuilder {
     _request_id: Option<String>,
 }

@@ -28,8 +28,8 @@ impl DifferentialPrivacyPrivacyBudget {
 }
 
 /// A builder for [`DifferentialPrivacyPrivacyBudget`](crate::types::DifferentialPrivacyPrivacyBudget).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DifferentialPrivacyPrivacyBudgetBuilder {
     pub(crate) aggregations: ::std::option::Option<::std::vec::Vec<crate::types::DifferentialPrivacyPrivacyBudgetAggregation>>,
     pub(crate) epsilon: ::std::option::Option<i32>,

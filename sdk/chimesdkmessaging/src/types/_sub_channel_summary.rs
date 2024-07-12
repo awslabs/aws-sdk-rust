@@ -27,8 +27,8 @@ impl SubChannelSummary {
 }
 
 /// A builder for [`SubChannelSummary`](crate::types::SubChannelSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SubChannelSummaryBuilder {
     pub(crate) sub_channel_id: ::std::option::Option<::std::string::String>,
     pub(crate) membership_count: ::std::option::Option<i32>,

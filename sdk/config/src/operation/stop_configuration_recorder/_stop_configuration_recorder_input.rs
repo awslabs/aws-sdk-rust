@@ -21,8 +21,8 @@ impl StopConfigurationRecorderInput {
 }
 
 /// A builder for [`StopConfigurationRecorderInput`](crate::operation::stop_configuration_recorder::StopConfigurationRecorderInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopConfigurationRecorderInputBuilder {
     pub(crate) configuration_recorder_name: ::std::option::Option<::std::string::String>,
 }

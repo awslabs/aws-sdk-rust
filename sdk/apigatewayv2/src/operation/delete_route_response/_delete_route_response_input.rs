@@ -32,8 +32,8 @@ impl DeleteRouteResponseInput {
 }
 
 /// A builder for [`DeleteRouteResponseInput`](crate::operation::delete_route_response::DeleteRouteResponseInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRouteResponseInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) route_id: ::std::option::Option<::std::string::String>,

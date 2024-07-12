@@ -57,8 +57,8 @@ impl JobBookmarkEntry {
 }
 
 /// A builder for [`JobBookmarkEntry`](crate::types::JobBookmarkEntry).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JobBookmarkEntryBuilder {
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<i32>,

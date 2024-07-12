@@ -169,8 +169,8 @@ impl InstanceNetworkInterfaceSpecification {
 }
 
 /// A builder for [`InstanceNetworkInterfaceSpecification`](crate::types::InstanceNetworkInterfaceSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceNetworkInterfaceSpecificationBuilder {
     pub(crate) associate_public_ip_address: ::std::option::Option<bool>,
     pub(crate) delete_on_termination: ::std::option::Option<bool>,

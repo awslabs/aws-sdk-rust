@@ -115,8 +115,8 @@ impl GetAnnotationStoreOutput {
 }
 
 /// A builder for [`GetAnnotationStoreOutput`](crate::operation::get_annotation_store::GetAnnotationStoreOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAnnotationStoreOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) reference: ::std::option::Option<crate::types::ReferenceItem>,

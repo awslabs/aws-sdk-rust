@@ -43,8 +43,8 @@ impl RdsFieldMapping {
 }
 
 /// A builder for [`RdsFieldMapping`](crate::types::RdsFieldMapping).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RdsFieldMappingBuilder {
     pub(crate) primary_key_field: ::std::option::Option<::std::string::String>,
     pub(crate) vector_field: ::std::option::Option<::std::string::String>,

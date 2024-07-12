@@ -21,8 +21,8 @@ impl DeleteInstanceOnboardingJobInput {
 }
 
 /// A builder for [`DeleteInstanceOnboardingJobInput`](crate::operation::delete_instance_onboarding_job::DeleteInstanceOnboardingJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteInstanceOnboardingJobInputBuilder {
     pub(crate) connect_instance_id: ::std::option::Option<::std::string::String>,
 }

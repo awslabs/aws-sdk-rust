@@ -29,8 +29,8 @@ impl EncryptionConfig {
 }
 
 /// A builder for [`EncryptionConfig`](crate::types::EncryptionConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EncryptionConfigBuilder {
     pub(crate) resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) provider: ::std::option::Option<crate::types::Provider>,

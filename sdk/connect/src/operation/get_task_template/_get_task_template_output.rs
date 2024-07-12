@@ -103,8 +103,8 @@ impl GetTaskTemplateOutput {
 }
 
 /// A builder for [`GetTaskTemplateOutput`](crate::operation::get_task_template::GetTaskTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTaskTemplateOutputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,

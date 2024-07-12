@@ -20,8 +20,8 @@ impl ListOpenCypherQueriesInput {
 }
 
 /// A builder for [`ListOpenCypherQueriesInput`](crate::operation::list_open_cypher_queries::ListOpenCypherQueriesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListOpenCypherQueriesInputBuilder {
     pub(crate) include_waiting: ::std::option::Option<bool>,
 }

@@ -51,8 +51,8 @@ impl CreateAssetInput {
 }
 
 /// A builder for [`CreateAssetInput`](crate::operation::create_asset::CreateAssetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAssetInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) packaging_group_id: ::std::option::Option<::std::string::String>,

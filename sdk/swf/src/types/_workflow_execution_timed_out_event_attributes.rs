@@ -45,8 +45,8 @@ impl WorkflowExecutionTimedOutEventAttributes {
 }
 
 /// A builder for [`WorkflowExecutionTimedOutEventAttributes`](crate::types::WorkflowExecutionTimedOutEventAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WorkflowExecutionTimedOutEventAttributesBuilder {
     pub(crate) timeout_type: ::std::option::Option<crate::types::WorkflowExecutionTimeoutType>,
     pub(crate) child_policy: ::std::option::Option<crate::types::ChildPolicy>,

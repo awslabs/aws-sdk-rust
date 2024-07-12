@@ -25,8 +25,8 @@ impl PathPatternConditionConfig {
 }
 
 /// A builder for [`PathPatternConditionConfig`](crate::types::PathPatternConditionConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PathPatternConditionConfigBuilder {
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

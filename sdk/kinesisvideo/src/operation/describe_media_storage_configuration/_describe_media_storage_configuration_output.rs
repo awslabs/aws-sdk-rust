@@ -26,8 +26,8 @@ impl DescribeMediaStorageConfigurationOutput {
 }
 
 /// A builder for [`DescribeMediaStorageConfigurationOutput`](crate::operation::describe_media_storage_configuration::DescribeMediaStorageConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeMediaStorageConfigurationOutputBuilder {
     pub(crate) media_storage_configuration: ::std::option::Option<crate::types::MediaStorageConfiguration>,
     _request_id: Option<String>,

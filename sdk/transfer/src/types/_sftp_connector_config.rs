@@ -57,8 +57,8 @@ impl SftpConnectorConfig {
 }
 
 /// A builder for [`SftpConnectorConfig`](crate::types::SftpConnectorConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SftpConnectorConfigBuilder {
     pub(crate) user_secret_id: ::std::option::Option<::std::string::String>,
     pub(crate) trusted_host_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

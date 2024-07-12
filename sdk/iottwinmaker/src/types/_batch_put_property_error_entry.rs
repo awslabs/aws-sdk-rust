@@ -22,8 +22,8 @@ impl BatchPutPropertyErrorEntry {
 }
 
 /// A builder for [`BatchPutPropertyErrorEntry`](crate::types::BatchPutPropertyErrorEntry).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchPutPropertyErrorEntryBuilder {
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutPropertyError>>,
 }

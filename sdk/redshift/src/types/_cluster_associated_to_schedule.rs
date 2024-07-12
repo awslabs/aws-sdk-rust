@@ -27,8 +27,8 @@ impl ClusterAssociatedToSchedule {
 }
 
 /// A builder for [`ClusterAssociatedToSchedule`](crate::types::ClusterAssociatedToSchedule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ClusterAssociatedToScheduleBuilder {
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) schedule_association_state: ::std::option::Option<crate::types::ScheduleState>,

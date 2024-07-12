@@ -32,8 +32,8 @@ impl ListApplicationVersionsInput {
 }
 
 /// A builder for [`ListApplicationVersionsInput`](crate::operation::list_application_versions::ListApplicationVersionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListApplicationVersionsInputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,

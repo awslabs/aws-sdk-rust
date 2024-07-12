@@ -33,8 +33,8 @@ impl SuppressionListDestination {
 }
 
 /// A builder for [`SuppressionListDestination`](crate::types::SuppressionListDestination).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SuppressionListDestinationBuilder {
     pub(crate) suppression_list_import_action: ::std::option::Option<crate::types::SuppressionListImportAction>,
 }

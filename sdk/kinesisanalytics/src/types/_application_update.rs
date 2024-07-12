@@ -53,8 +53,8 @@ impl ApplicationUpdate {
 }
 
 /// A builder for [`ApplicationUpdate`](crate::types::ApplicationUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ApplicationUpdateBuilder {
     pub(crate) input_updates: ::std::option::Option<::std::vec::Vec<crate::types::InputUpdate>>,
     pub(crate) application_code_update: ::std::option::Option<::std::string::String>,

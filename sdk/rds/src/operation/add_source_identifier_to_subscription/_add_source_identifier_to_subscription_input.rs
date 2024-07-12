@@ -61,8 +61,8 @@ impl AddSourceIdentifierToSubscriptionInput {
 }
 
 /// A builder for [`AddSourceIdentifierToSubscriptionInput`](crate::operation::add_source_identifier_to_subscription::AddSourceIdentifierToSubscriptionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddSourceIdentifierToSubscriptionInputBuilder {
     pub(crate) subscription_name: ::std::option::Option<::std::string::String>,
     pub(crate) source_identifier: ::std::option::Option<::std::string::String>,

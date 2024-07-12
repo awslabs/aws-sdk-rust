@@ -34,8 +34,8 @@ impl ListContainerGroupDefinitionsOutput {
 }
 
 /// A builder for [`ListContainerGroupDefinitionsOutput`](crate::operation::list_container_group_definitions::ListContainerGroupDefinitionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListContainerGroupDefinitionsOutputBuilder {
     pub(crate) container_group_definitions: ::std::option::Option<::std::vec::Vec<crate::types::ContainerGroupDefinition>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

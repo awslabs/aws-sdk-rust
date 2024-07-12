@@ -33,8 +33,8 @@ impl AdditionalS3DataSource {
 }
 
 /// A builder for [`AdditionalS3DataSource`](crate::types::AdditionalS3DataSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AdditionalS3DataSourceBuilder {
     pub(crate) s3_data_type: ::std::option::Option<crate::types::AdditionalS3DataSourceDataType>,
     pub(crate) s3_uri: ::std::option::Option<::std::string::String>,

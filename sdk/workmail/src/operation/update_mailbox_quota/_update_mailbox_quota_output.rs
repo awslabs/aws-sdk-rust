@@ -18,8 +18,8 @@ impl UpdateMailboxQuotaOutput {
 }
 
 /// A builder for [`UpdateMailboxQuotaOutput`](crate::operation::update_mailbox_quota::UpdateMailboxQuotaOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateMailboxQuotaOutputBuilder {
     _request_id: Option<String>,
 }

@@ -51,8 +51,8 @@ impl UnsearchedFace {
 }
 
 /// A builder for [`UnsearchedFace`](crate::types::UnsearchedFace).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UnsearchedFaceBuilder {
     pub(crate) face_details: ::std::option::Option<crate::types::FaceDetail>,
     pub(crate) reasons: ::std::option::Option<::std::vec::Vec<crate::types::UnsearchedFaceReason>>,

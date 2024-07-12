@@ -20,8 +20,8 @@ impl DeleteVpcIngressConnectionInput {
 }
 
 /// A builder for [`DeleteVpcIngressConnectionInput`](crate::operation::delete_vpc_ingress_connection::DeleteVpcIngressConnectionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVpcIngressConnectionInputBuilder {
     pub(crate) vpc_ingress_connection_arn: ::std::option::Option<::std::string::String>,
 }

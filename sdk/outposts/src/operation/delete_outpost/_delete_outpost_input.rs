@@ -20,8 +20,8 @@ impl DeleteOutpostInput {
 }
 
 /// A builder for [`DeleteOutpostInput`](crate::operation::delete_outpost::DeleteOutpostInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteOutpostInputBuilder {
     pub(crate) outpost_id: ::std::option::Option<::std::string::String>,
 }

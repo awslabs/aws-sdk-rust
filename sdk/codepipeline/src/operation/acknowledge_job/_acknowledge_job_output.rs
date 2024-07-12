@@ -27,8 +27,8 @@ impl AcknowledgeJobOutput {
 }
 
 /// A builder for [`AcknowledgeJobOutput`](crate::operation::acknowledge_job::AcknowledgeJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AcknowledgeJobOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::JobStatus>,
     _request_id: Option<String>,

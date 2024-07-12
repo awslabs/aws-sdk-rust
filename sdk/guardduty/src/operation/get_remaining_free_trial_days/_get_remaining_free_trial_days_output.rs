@@ -36,8 +36,8 @@ impl GetRemainingFreeTrialDaysOutput {
 }
 
 /// A builder for [`GetRemainingFreeTrialDaysOutput`](crate::operation::get_remaining_free_trial_days::GetRemainingFreeTrialDaysOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRemainingFreeTrialDaysOutputBuilder {
     pub(crate) accounts: ::std::option::Option<::std::vec::Vec<crate::types::AccountFreeTrialInfo>>,
     pub(crate) unprocessed_accounts: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>,

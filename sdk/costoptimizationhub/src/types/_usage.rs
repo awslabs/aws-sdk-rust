@@ -45,8 +45,8 @@ impl Usage {
 }
 
 /// A builder for [`Usage`](crate::types::Usage).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UsageBuilder {
     pub(crate) usage_type: ::std::option::Option<::std::string::String>,
     pub(crate) usage_amount: ::std::option::Option<f64>,

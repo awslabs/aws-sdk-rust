@@ -26,8 +26,8 @@ impl CreateAgentOutput {
 }
 
 /// A builder for [`CreateAgentOutput`](crate::operation::create_agent::CreateAgentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAgentOutputBuilder {
     pub(crate) agent: ::std::option::Option<crate::types::Agent>,
     _request_id: Option<String>,

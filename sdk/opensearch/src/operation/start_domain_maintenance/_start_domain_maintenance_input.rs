@@ -33,8 +33,8 @@ impl StartDomainMaintenanceInput {
 }
 
 /// A builder for [`StartDomainMaintenanceInput`](crate::operation::start_domain_maintenance::StartDomainMaintenanceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartDomainMaintenanceInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) action: ::std::option::Option<crate::types::MaintenanceType>,

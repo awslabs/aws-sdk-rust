@@ -81,8 +81,8 @@ impl Offering {
 }
 
 /// A builder for [`Offering`](crate::types::Offering).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OfferingBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) currency_code: ::std::option::Option<::std::string::String>,

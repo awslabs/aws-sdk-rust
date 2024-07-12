@@ -56,8 +56,8 @@ impl EnabledBaselineDetails {
 }
 
 /// A builder for [`EnabledBaselineDetails`](crate::types::EnabledBaselineDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnabledBaselineDetailsBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) baseline_identifier: ::std::option::Option<::std::string::String>,

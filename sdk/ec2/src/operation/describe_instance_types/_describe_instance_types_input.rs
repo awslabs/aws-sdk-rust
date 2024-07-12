@@ -252,8 +252,8 @@ impl DescribeInstanceTypesInput {
 }
 
 /// A builder for [`DescribeInstanceTypesInput`](crate::operation::describe_instance_types::DescribeInstanceTypesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeInstanceTypesInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) instance_types: ::std::option::Option<::std::vec::Vec<crate::types::InstanceType>>,

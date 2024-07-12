@@ -70,8 +70,8 @@ impl CreateWirelessDeviceInput {
 }
 
 /// A builder for [`CreateWirelessDeviceInput`](crate::operation::create_wireless_device::CreateWirelessDeviceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateWirelessDeviceInputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::WirelessDeviceType>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

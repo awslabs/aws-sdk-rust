@@ -38,8 +38,8 @@ impl ListImportsInput {
 }
 
 /// A builder for [`ListImportsInput`](crate::operation::list_imports::ListImportsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListImportsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) destination: ::std::option::Option<::std::string::String>,

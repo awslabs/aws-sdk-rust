@@ -18,8 +18,8 @@ impl AssociateWirelessDeviceWithFuotaTaskOutput {
 }
 
 /// A builder for [`AssociateWirelessDeviceWithFuotaTaskOutput`](crate::operation::associate_wireless_device_with_fuota_task::AssociateWirelessDeviceWithFuotaTaskOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateWirelessDeviceWithFuotaTaskOutputBuilder {
     _request_id: Option<String>,
 }

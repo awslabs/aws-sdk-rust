@@ -34,8 +34,8 @@ impl ListDataQualityRuleRecommendationRunsOutput {
 }
 
 /// A builder for [`ListDataQualityRuleRecommendationRunsOutput`](crate::operation::list_data_quality_rule_recommendation_runs::ListDataQualityRuleRecommendationRunsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDataQualityRuleRecommendationRunsOutputBuilder {
     pub(crate) runs: ::std::option::Option<::std::vec::Vec<crate::types::DataQualityRuleRecommendationRunDescription>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

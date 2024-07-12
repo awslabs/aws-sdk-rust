@@ -11,8 +11,8 @@ impl GetEncryptionConfigurationInput {
 }
 
 /// A builder for [`GetEncryptionConfigurationInput`](crate::operation::get_encryption_configuration::GetEncryptionConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEncryptionConfigurationInputBuilder {}
 impl GetEncryptionConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`GetEncryptionConfigurationInput`](crate::operation::get_encryption_configuration::GetEncryptionConfigurationInput).

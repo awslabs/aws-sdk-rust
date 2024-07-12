@@ -20,8 +20,8 @@ impl DeleteProjectInput {
 }
 
 /// A builder for [`DeleteProjectInput`](crate::operation::delete_project::DeleteProjectInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteProjectInputBuilder {
     pub(crate) project: ::std::option::Option<::std::string::String>,
 }

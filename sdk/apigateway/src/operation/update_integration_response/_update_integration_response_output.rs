@@ -53,8 +53,8 @@ impl UpdateIntegrationResponseOutput {
 }
 
 /// A builder for [`UpdateIntegrationResponseOutput`](crate::operation::update_integration_response::UpdateIntegrationResponseOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateIntegrationResponseOutputBuilder {
     pub(crate) status_code: ::std::option::Option<::std::string::String>,
     pub(crate) selection_pattern: ::std::option::Option<::std::string::String>,

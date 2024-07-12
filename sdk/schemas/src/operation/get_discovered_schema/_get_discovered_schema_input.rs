@@ -28,8 +28,8 @@ impl GetDiscoveredSchemaInput {
 }
 
 /// A builder for [`GetDiscoveredSchemaInput`](crate::operation::get_discovered_schema::GetDiscoveredSchemaInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDiscoveredSchemaInputBuilder {
     pub(crate) events: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) r#type: ::std::option::Option<crate::types::Type>,

@@ -26,8 +26,8 @@ impl CreatePlayerSessionOutput {
 }
 
 /// A builder for [`CreatePlayerSessionOutput`](crate::operation::create_player_session::CreatePlayerSessionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePlayerSessionOutputBuilder {
     pub(crate) player_session: ::std::option::Option<crate::types::PlayerSession>,
     _request_id: Option<String>,

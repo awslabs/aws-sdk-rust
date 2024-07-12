@@ -63,8 +63,8 @@ impl StopCisMessageProgress {
 }
 
 /// A builder for [`StopCisMessageProgress`](crate::types::StopCisMessageProgress).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopCisMessageProgressBuilder {
     pub(crate) total_checks: ::std::option::Option<i32>,
     pub(crate) successful_checks: ::std::option::Option<i32>,

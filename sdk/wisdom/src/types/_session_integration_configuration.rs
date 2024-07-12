@@ -21,8 +21,8 @@ impl SessionIntegrationConfiguration {
 }
 
 /// A builder for [`SessionIntegrationConfiguration`](crate::types::SessionIntegrationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SessionIntegrationConfigurationBuilder {
     pub(crate) topic_integration_arn: ::std::option::Option<::std::string::String>,
 }

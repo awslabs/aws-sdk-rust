@@ -18,8 +18,8 @@ impl DeleteContactListOutput {
 }
 
 /// A builder for [`DeleteContactListOutput`](crate::operation::delete_contact_list::DeleteContactListOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteContactListOutputBuilder {
     _request_id: Option<String>,
 }

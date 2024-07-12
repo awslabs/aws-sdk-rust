@@ -23,8 +23,8 @@ impl TrackingFilterGeometry {
 }
 
 /// A builder for [`TrackingFilterGeometry`](crate::types::TrackingFilterGeometry).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TrackingFilterGeometryBuilder {
     pub(crate) polygon: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<f64>>>>,
 }

@@ -44,8 +44,8 @@ impl ListCachePoliciesInput {
 }
 
 /// A builder for [`ListCachePoliciesInput`](crate::operation::list_cache_policies::ListCachePoliciesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCachePoliciesInputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::CachePolicyType>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

@@ -78,8 +78,8 @@ impl CreateDatasetGroupInput {
 }
 
 /// A builder for [`CreateDatasetGroupInput`](crate::operation::create_dataset_group::CreateDatasetGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDatasetGroupInputBuilder {
     pub(crate) dataset_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) domain: ::std::option::Option<crate::types::Domain>,

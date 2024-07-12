@@ -29,8 +29,8 @@ impl DescribeVpnConnectionsOutput {
 }
 
 /// A builder for [`DescribeVpnConnectionsOutput`](crate::operation::describe_vpn_connections::DescribeVpnConnectionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeVpnConnectionsOutputBuilder {
     pub(crate) vpn_connections: ::std::option::Option<::std::vec::Vec<crate::types::VpnConnection>>,
     _request_id: Option<String>,

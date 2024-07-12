@@ -21,8 +21,8 @@ impl HyperParameterTuningJobStrategyConfig {
 }
 
 /// A builder for [`HyperParameterTuningJobStrategyConfig`](crate::types::HyperParameterTuningJobStrategyConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HyperParameterTuningJobStrategyConfigBuilder {
     pub(crate) hyperband_strategy_config: ::std::option::Option<crate::types::HyperbandStrategyConfig>,
 }

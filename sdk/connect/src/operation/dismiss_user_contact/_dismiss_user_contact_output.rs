@@ -18,8 +18,8 @@ impl DismissUserContactOutput {
 }
 
 /// A builder for [`DismissUserContactOutput`](crate::operation::dismiss_user_contact::DismissUserContactOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DismissUserContactOutputBuilder {
     _request_id: Option<String>,
 }

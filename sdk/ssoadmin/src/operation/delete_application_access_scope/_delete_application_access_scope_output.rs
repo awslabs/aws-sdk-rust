@@ -18,8 +18,8 @@ impl DeleteApplicationAccessScopeOutput {
 }
 
 /// A builder for [`DeleteApplicationAccessScopeOutput`](crate::operation::delete_application_access_scope::DeleteApplicationAccessScopeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteApplicationAccessScopeOutputBuilder {
     _request_id: Option<String>,
 }

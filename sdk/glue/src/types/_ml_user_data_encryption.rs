@@ -39,8 +39,8 @@ impl MlUserDataEncryption {
 }
 
 /// A builder for [`MlUserDataEncryption`](crate::types::MlUserDataEncryption).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MlUserDataEncryptionBuilder {
     pub(crate) ml_user_data_encryption_mode: ::std::option::Option<crate::types::MlUserDataEncryptionModeString>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,

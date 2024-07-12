@@ -40,8 +40,8 @@ impl EvaluateCodeOutput {
 }
 
 /// A builder for [`EvaluateCodeOutput`](crate::operation::evaluate_code::EvaluateCodeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EvaluateCodeOutputBuilder {
     pub(crate) evaluation_result: ::std::option::Option<::std::string::String>,
     pub(crate) error: ::std::option::Option<crate::types::EvaluateCodeErrorDetail>,

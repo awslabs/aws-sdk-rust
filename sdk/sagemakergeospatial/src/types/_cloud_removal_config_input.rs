@@ -35,8 +35,8 @@ impl CloudRemovalConfigInput {
 }
 
 /// A builder for [`CloudRemovalConfigInput`](crate::types::CloudRemovalConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CloudRemovalConfigInputBuilder {
     pub(crate) algorithm_name: ::std::option::Option<crate::types::AlgorithmNameCloudRemoval>,
     pub(crate) interpolation_value: ::std::option::Option<::std::string::String>,

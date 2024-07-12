@@ -44,8 +44,8 @@ impl GenerateDataKeyPairWithoutPlaintextOutput {
 }
 
 /// A builder for [`GenerateDataKeyPairWithoutPlaintextOutput`](crate::operation::generate_data_key_pair_without_plaintext::GenerateDataKeyPairWithoutPlaintextOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GenerateDataKeyPairWithoutPlaintextOutputBuilder {
     pub(crate) private_key_ciphertext_blob: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) public_key: ::std::option::Option<::aws_smithy_types::Blob>,

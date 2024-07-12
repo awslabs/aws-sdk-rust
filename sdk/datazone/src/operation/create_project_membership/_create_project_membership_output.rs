@@ -18,8 +18,8 @@ impl CreateProjectMembershipOutput {
 }
 
 /// A builder for [`CreateProjectMembershipOutput`](crate::operation::create_project_membership::CreateProjectMembershipOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateProjectMembershipOutputBuilder {
     _request_id: Option<String>,
 }

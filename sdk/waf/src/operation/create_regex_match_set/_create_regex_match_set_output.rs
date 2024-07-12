@@ -32,8 +32,8 @@ impl CreateRegexMatchSetOutput {
 }
 
 /// A builder for [`CreateRegexMatchSetOutput`](crate::operation::create_regex_match_set::CreateRegexMatchSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateRegexMatchSetOutputBuilder {
     pub(crate) regex_match_set: ::std::option::Option<crate::types::RegexMatchSet>,
     pub(crate) change_token: ::std::option::Option<::std::string::String>,

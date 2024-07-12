@@ -29,8 +29,8 @@ impl PoDetailAttributes {
 }
 
 /// A builder for [`PoDetailAttributes`](crate::types::PoDetailAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PoDetailAttributesBuilder {
     pub(crate) format: ::std::option::Option<::std::string::String>,
     pub(crate) encoding: ::std::option::Option<::std::string::String>,

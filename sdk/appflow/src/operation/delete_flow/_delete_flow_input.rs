@@ -26,8 +26,8 @@ impl DeleteFlowInput {
 }
 
 /// A builder for [`DeleteFlowInput`](crate::operation::delete_flow::DeleteFlowInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFlowInputBuilder {
     pub(crate) flow_name: ::std::option::Option<::std::string::String>,
     pub(crate) force_delete: ::std::option::Option<bool>,

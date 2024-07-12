@@ -23,8 +23,8 @@ impl DataSetSchema {
 }
 
 /// A builder for [`DataSetSchema`](crate::types::DataSetSchema).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataSetSchemaBuilder {
     pub(crate) column_schema_list: ::std::option::Option<::std::vec::Vec<crate::types::ColumnSchema>>,
 }

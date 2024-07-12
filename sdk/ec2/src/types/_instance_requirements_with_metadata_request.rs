@@ -38,8 +38,8 @@ impl InstanceRequirementsWithMetadataRequest {
 }
 
 /// A builder for [`InstanceRequirementsWithMetadataRequest`](crate::types::InstanceRequirementsWithMetadataRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceRequirementsWithMetadataRequestBuilder {
     pub(crate) architecture_types: ::std::option::Option<::std::vec::Vec<crate::types::ArchitectureType>>,
     pub(crate) virtualization_types: ::std::option::Option<::std::vec::Vec<crate::types::VirtualizationType>>,

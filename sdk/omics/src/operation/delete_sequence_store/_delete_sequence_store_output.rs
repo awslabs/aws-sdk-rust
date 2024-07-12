@@ -18,8 +18,8 @@ impl DeleteSequenceStoreOutput {
 }
 
 /// A builder for [`DeleteSequenceStoreOutput`](crate::operation::delete_sequence_store::DeleteSequenceStoreOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSequenceStoreOutputBuilder {
     _request_id: Option<String>,
 }

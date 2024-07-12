@@ -34,8 +34,8 @@ impl DescribeConformancePacksInput {
 }
 
 /// A builder for [`DescribeConformancePacksInput`](crate::operation::describe_conformance_packs::DescribeConformancePacksInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeConformancePacksInputBuilder {
     pub(crate) conformance_pack_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) limit: ::std::option::Option<i32>,

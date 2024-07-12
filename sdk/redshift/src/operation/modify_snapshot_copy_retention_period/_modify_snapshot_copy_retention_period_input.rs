@@ -47,8 +47,8 @@ impl ModifySnapshotCopyRetentionPeriodInput {
 }
 
 /// A builder for [`ModifySnapshotCopyRetentionPeriodInput`](crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifySnapshotCopyRetentionPeriodInputBuilder {
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) retention_period: ::std::option::Option<i32>,

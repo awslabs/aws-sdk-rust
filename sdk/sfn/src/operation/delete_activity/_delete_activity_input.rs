@@ -20,8 +20,8 @@ impl DeleteActivityInput {
 }
 
 /// A builder for [`DeleteActivityInput`](crate::operation::delete_activity::DeleteActivityInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteActivityInputBuilder {
     pub(crate) activity_arn: ::std::option::Option<::std::string::String>,
 }

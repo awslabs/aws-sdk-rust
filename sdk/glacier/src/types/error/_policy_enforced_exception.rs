@@ -59,8 +59,8 @@ impl PolicyEnforcedException {
 }
 
 /// A builder for [`PolicyEnforcedException`](crate::types::error::PolicyEnforcedException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PolicyEnforcedExceptionBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) code: ::std::option::Option<::std::string::String>,

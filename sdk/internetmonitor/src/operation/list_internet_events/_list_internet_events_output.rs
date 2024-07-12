@@ -33,8 +33,8 @@ impl ListInternetEventsOutput {
 }
 
 /// A builder for [`ListInternetEventsOutput`](crate::operation::list_internet_events::ListInternetEventsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListInternetEventsOutputBuilder {
     pub(crate) internet_events: ::std::option::Option<::std::vec::Vec<crate::types::InternetEventSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

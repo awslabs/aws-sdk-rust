@@ -27,8 +27,8 @@ impl ListApplicationsInput {
 }
 
 /// A builder for [`ListApplicationsInput`](crate::operation::list_applications::ListApplicationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListApplicationsInputBuilder {
     pub(crate) limit: ::std::option::Option<i32>,
     pub(crate) exclusive_start_application_name: ::std::option::Option<::std::string::String>,

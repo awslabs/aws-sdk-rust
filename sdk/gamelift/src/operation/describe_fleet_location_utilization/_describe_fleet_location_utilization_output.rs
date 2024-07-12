@@ -26,8 +26,8 @@ impl DescribeFleetLocationUtilizationOutput {
 }
 
 /// A builder for [`DescribeFleetLocationUtilizationOutput`](crate::operation::describe_fleet_location_utilization::DescribeFleetLocationUtilizationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFleetLocationUtilizationOutputBuilder {
     pub(crate) fleet_utilization: ::std::option::Option<crate::types::FleetUtilization>,
     _request_id: Option<String>,

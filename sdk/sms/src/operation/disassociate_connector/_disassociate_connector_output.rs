@@ -18,8 +18,8 @@ impl DisassociateConnectorOutput {
 }
 
 /// A builder for [`DisassociateConnectorOutput`](crate::operation::disassociate_connector::DisassociateConnectorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateConnectorOutputBuilder {
     _request_id: Option<String>,
 }

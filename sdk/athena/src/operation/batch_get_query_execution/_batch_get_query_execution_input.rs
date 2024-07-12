@@ -23,8 +23,8 @@ impl BatchGetQueryExecutionInput {
 }
 
 /// A builder for [`BatchGetQueryExecutionInput`](crate::operation::batch_get_query_execution::BatchGetQueryExecutionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetQueryExecutionInputBuilder {
     pub(crate) query_execution_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

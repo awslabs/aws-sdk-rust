@@ -72,8 +72,8 @@ impl GetProtectionStatusOutput {
 }
 
 /// A builder for [`GetProtectionStatusOutput`](crate::operation::get_protection_status::GetProtectionStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetProtectionStatusOutputBuilder {
     pub(crate) admin_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) service_type: ::std::option::Option<crate::types::SecurityServiceType>,

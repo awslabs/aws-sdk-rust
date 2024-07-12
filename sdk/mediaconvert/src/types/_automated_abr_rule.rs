@@ -49,8 +49,8 @@ impl AutomatedAbrRule {
 }
 
 /// A builder for [`AutomatedAbrRule`](crate::types::AutomatedAbrRule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AutomatedAbrRuleBuilder {
     pub(crate) allowed_renditions: ::std::option::Option<::std::vec::Vec<crate::types::AllowedRenditionSize>>,
     pub(crate) force_include_renditions: ::std::option::Option<::std::vec::Vec<crate::types::ForceIncludeRenditionSize>>,

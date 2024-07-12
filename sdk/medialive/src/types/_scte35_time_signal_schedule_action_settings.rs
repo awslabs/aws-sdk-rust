@@ -23,8 +23,8 @@ impl Scte35TimeSignalScheduleActionSettings {
 }
 
 /// A builder for [`Scte35TimeSignalScheduleActionSettings`](crate::types::Scte35TimeSignalScheduleActionSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Scte35TimeSignalScheduleActionSettingsBuilder {
     pub(crate) scte35_descriptors: ::std::option::Option<::std::vec::Vec<crate::types::Scte35Descriptor>>,
 }

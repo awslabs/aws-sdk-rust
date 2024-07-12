@@ -115,8 +115,8 @@ impl Cluster {
 }
 
 /// A builder for [`Cluster`](crate::types::Cluster).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ClusterBuilder {
     pub(crate) backup_policy: ::std::option::Option<crate::types::BackupPolicy>,
     pub(crate) backup_retention_policy: ::std::option::Option<crate::types::BackupRetentionPolicy>,

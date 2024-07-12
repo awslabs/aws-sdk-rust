@@ -224,8 +224,8 @@ impl DescribeClassificationJobOutput {
 }
 
 /// A builder for [`DescribeClassificationJobOutput`](crate::operation::describe_classification_job::DescribeClassificationJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeClassificationJobOutputBuilder {
     pub(crate) allow_list_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

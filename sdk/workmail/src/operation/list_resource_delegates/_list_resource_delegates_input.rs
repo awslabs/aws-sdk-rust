@@ -56,8 +56,8 @@ impl ListResourceDelegatesInput {
 }
 
 /// A builder for [`ListResourceDelegatesInput`](crate::operation::list_resource_delegates::ListResourceDelegatesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListResourceDelegatesInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,

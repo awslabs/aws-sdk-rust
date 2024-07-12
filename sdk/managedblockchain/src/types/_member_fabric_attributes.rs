@@ -27,8 +27,8 @@ impl MemberFabricAttributes {
 }
 
 /// A builder for [`MemberFabricAttributes`](crate::types::MemberFabricAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MemberFabricAttributesBuilder {
     pub(crate) admin_username: ::std::option::Option<::std::string::String>,
     pub(crate) ca_endpoint: ::std::option::Option<::std::string::String>,

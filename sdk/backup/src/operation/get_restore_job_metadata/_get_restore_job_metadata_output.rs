@@ -41,8 +41,8 @@ impl GetRestoreJobMetadataOutput {
 }
 
 /// A builder for [`GetRestoreJobMetadataOutput`](crate::operation::get_restore_job_metadata::GetRestoreJobMetadataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetRestoreJobMetadataOutputBuilder {
     pub(crate) restore_job_id: ::std::option::Option<::std::string::String>,
     pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

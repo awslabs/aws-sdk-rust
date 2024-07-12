@@ -26,8 +26,8 @@ impl CopyJobTemplateOutput {
 }
 
 /// A builder for [`CopyJobTemplateOutput`](crate::operation::copy_job_template::CopyJobTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CopyJobTemplateOutputBuilder {
     pub(crate) template_type: ::std::option::Option<crate::types::JobTemplateType>,
     _request_id: Option<String>,

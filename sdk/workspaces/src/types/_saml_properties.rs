@@ -51,8 +51,8 @@ impl SamlProperties {
 }
 
 /// A builder for [`SamlProperties`](crate::types::SamlProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SamlPropertiesBuilder {
     pub(crate) status: ::std::option::Option<crate::types::SamlStatusEnum>,
     pub(crate) user_access_url: ::std::option::Option<::std::string::String>,

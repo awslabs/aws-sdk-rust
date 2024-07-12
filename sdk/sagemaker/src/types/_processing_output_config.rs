@@ -29,8 +29,8 @@ impl ProcessingOutputConfig {
 }
 
 /// A builder for [`ProcessingOutputConfig`](crate::types::ProcessingOutputConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProcessingOutputConfigBuilder {
     pub(crate) outputs: ::std::option::Option<::std::vec::Vec<crate::types::ProcessingOutput>>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,

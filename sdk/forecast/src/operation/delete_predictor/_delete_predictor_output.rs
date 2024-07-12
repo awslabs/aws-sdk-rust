@@ -18,8 +18,8 @@ impl DeletePredictorOutput {
 }
 
 /// A builder for [`DeletePredictorOutput`](crate::operation::delete_predictor::DeletePredictorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePredictorOutputBuilder {
     _request_id: Option<String>,
 }

@@ -150,8 +150,8 @@ impl DescribeAutoMlJobOutput {
 }
 
 /// A builder for [`DescribeAutoMlJobOutput`](crate::operation::describe_auto_ml_job::DescribeAutoMlJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAutoMlJobOutputBuilder {
     pub(crate) auto_ml_job_name: ::std::option::Option<::std::string::String>,
     pub(crate) auto_ml_job_arn: ::std::option::Option<::std::string::String>,

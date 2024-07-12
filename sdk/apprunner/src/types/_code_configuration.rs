@@ -39,8 +39,8 @@ impl CodeConfiguration {
 }
 
 /// A builder for [`CodeConfiguration`](crate::types::CodeConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CodeConfigurationBuilder {
     pub(crate) configuration_source: ::std::option::Option<crate::types::ConfigurationSource>,
     pub(crate) code_configuration_values: ::std::option::Option<crate::types::CodeConfigurationValues>,

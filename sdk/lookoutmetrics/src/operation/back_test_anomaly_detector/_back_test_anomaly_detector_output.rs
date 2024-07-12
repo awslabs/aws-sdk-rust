@@ -18,8 +18,8 @@ impl BackTestAnomalyDetectorOutput {
 }
 
 /// A builder for [`BackTestAnomalyDetectorOutput`](crate::operation::back_test_anomaly_detector::BackTestAnomalyDetectorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BackTestAnomalyDetectorOutputBuilder {
     _request_id: Option<String>,
 }

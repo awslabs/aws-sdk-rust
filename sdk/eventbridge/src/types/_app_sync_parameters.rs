@@ -30,8 +30,8 @@ impl AppSyncParameters {
 }
 
 /// A builder for [`AppSyncParameters`](crate::types::AppSyncParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AppSyncParametersBuilder {
     pub(crate) graph_ql_operation: ::std::option::Option<::std::string::String>,
 }

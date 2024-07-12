@@ -65,8 +65,8 @@ impl LineItem {
 }
 
 /// A builder for [`LineItem`](crate::types::LineItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LineItemBuilder {
     pub(crate) catalog_item_id: ::std::option::Option<::std::string::String>,
     pub(crate) line_item_id: ::std::option::Option<::std::string::String>,

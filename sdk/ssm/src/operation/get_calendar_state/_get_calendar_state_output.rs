@@ -38,8 +38,8 @@ impl GetCalendarStateOutput {
 }
 
 /// A builder for [`GetCalendarStateOutput`](crate::operation::get_calendar_state::GetCalendarStateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCalendarStateOutputBuilder {
     pub(crate) state: ::std::option::Option<crate::types::CalendarState>,
     pub(crate) at_time: ::std::option::Option<::std::string::String>,

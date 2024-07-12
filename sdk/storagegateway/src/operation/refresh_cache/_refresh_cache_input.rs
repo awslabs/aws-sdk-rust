@@ -39,8 +39,8 @@ impl RefreshCacheInput {
 }
 
 /// A builder for [`RefreshCacheInput`](crate::operation::refresh_cache::RefreshCacheInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RefreshCacheInputBuilder {
     pub(crate) file_share_arn: ::std::option::Option<::std::string::String>,
     pub(crate) folder_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

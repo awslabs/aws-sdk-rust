@@ -21,8 +21,8 @@ impl MonitoringResources {
 }
 
 /// A builder for [`MonitoringResources`](crate::types::MonitoringResources).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MonitoringResourcesBuilder {
     pub(crate) cluster_config: ::std::option::Option<crate::types::MonitoringClusterConfig>,
 }

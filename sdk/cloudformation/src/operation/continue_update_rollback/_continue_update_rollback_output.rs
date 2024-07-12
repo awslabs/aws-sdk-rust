@@ -19,8 +19,8 @@ impl ContinueUpdateRollbackOutput {
 }
 
 /// A builder for [`ContinueUpdateRollbackOutput`](crate::operation::continue_update_rollback::ContinueUpdateRollbackOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ContinueUpdateRollbackOutputBuilder {
     _request_id: Option<String>,
 }

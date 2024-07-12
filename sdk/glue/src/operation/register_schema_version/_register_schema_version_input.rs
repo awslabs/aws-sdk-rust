@@ -38,8 +38,8 @@ impl RegisterSchemaVersionInput {
 }
 
 /// A builder for [`RegisterSchemaVersionInput`](crate::operation::register_schema_version::RegisterSchemaVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterSchemaVersionInputBuilder {
     pub(crate) schema_id: ::std::option::Option<crate::types::SchemaId>,
     pub(crate) schema_definition: ::std::option::Option<::std::string::String>,

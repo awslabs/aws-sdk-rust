@@ -22,8 +22,8 @@ impl BatchDisableStandardsInput {
 }
 
 /// A builder for [`BatchDisableStandardsInput`](crate::operation::batch_disable_standards::BatchDisableStandardsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDisableStandardsInputBuilder {
     pub(crate) standards_subscription_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

@@ -33,8 +33,8 @@ impl ListAudienceModelsOutput {
 }
 
 /// A builder for [`ListAudienceModelsOutput`](crate::operation::list_audience_models::ListAudienceModelsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAudienceModelsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) audience_models: ::std::option::Option<::std::vec::Vec<crate::types::AudienceModelSummary>>,

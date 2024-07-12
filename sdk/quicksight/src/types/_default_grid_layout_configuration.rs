@@ -21,8 +21,8 @@ impl DefaultGridLayoutConfiguration {
 }
 
 /// A builder for [`DefaultGridLayoutConfiguration`](crate::types::DefaultGridLayoutConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DefaultGridLayoutConfigurationBuilder {
     pub(crate) canvas_size_options: ::std::option::Option<crate::types::GridLayoutCanvasSizeOptions>,
 }

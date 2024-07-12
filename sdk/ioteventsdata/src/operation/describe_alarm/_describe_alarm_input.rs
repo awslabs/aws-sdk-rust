@@ -26,8 +26,8 @@ impl DescribeAlarmInput {
 }
 
 /// A builder for [`DescribeAlarmInput`](crate::operation::describe_alarm::DescribeAlarmInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAlarmInputBuilder {
     pub(crate) alarm_model_name: ::std::option::Option<::std::string::String>,
     pub(crate) key_value: ::std::option::Option<::std::string::String>,

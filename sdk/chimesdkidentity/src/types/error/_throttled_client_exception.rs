@@ -53,8 +53,8 @@ impl ThrottledClientException {
 }
 
 /// A builder for [`ThrottledClientException`](crate::types::error::ThrottledClientException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ThrottledClientExceptionBuilder {
     pub(crate) code: ::std::option::Option<crate::types::ErrorCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

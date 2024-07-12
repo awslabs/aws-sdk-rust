@@ -33,8 +33,8 @@ impl RowInfo {
 }
 
 /// A builder for [`RowInfo`](crate::types::RowInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RowInfoBuilder {
     pub(crate) rows_ingested: ::std::option::Option<i64>,
     pub(crate) rows_dropped: ::std::option::Option<i64>,

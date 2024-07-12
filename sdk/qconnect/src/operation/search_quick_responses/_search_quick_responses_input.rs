@@ -55,8 +55,8 @@ impl SearchQuickResponsesInput {
 }
 
 /// A builder for [`SearchQuickResponsesInput`](crate::operation::search_quick_responses::SearchQuickResponsesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SearchQuickResponsesInputBuilder {
     pub(crate) knowledge_base_id: ::std::option::Option<::std::string::String>,
     pub(crate) search_expression: ::std::option::Option<crate::types::QuickResponseSearchExpression>,

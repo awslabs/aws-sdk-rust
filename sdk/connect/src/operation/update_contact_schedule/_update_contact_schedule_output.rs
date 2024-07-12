@@ -18,8 +18,8 @@ impl UpdateContactScheduleOutput {
 }
 
 /// A builder for [`UpdateContactScheduleOutput`](crate::operation::update_contact_schedule::UpdateContactScheduleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateContactScheduleOutputBuilder {
     _request_id: Option<String>,
 }

@@ -48,8 +48,8 @@ impl UpdateStorageVirtualMachineInput {
 }
 
 /// A builder for [`UpdateStorageVirtualMachineInput`](crate::operation::update_storage_virtual_machine::UpdateStorageVirtualMachineInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateStorageVirtualMachineInputBuilder {
     pub(crate) active_directory_configuration: ::std::option::Option<crate::types::UpdateSvmActiveDirectoryConfiguration>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,

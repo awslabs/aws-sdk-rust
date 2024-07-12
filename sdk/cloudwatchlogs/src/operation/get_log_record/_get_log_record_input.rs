@@ -28,8 +28,8 @@ impl GetLogRecordInput {
 }
 
 /// A builder for [`GetLogRecordInput`](crate::operation::get_log_record::GetLogRecordInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLogRecordInputBuilder {
     pub(crate) log_record_pointer: ::std::option::Option<::std::string::String>,
     pub(crate) unmask: ::std::option::Option<bool>,

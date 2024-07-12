@@ -20,8 +20,8 @@ impl GetUserSettingsInput {
 }
 
 /// A builder for [`GetUserSettingsInput`](crate::operation::get_user_settings::GetUserSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetUserSettingsInputBuilder {
     pub(crate) user_settings_arn: ::std::option::Option<::std::string::String>,
 }

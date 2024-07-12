@@ -61,8 +61,8 @@ impl InviteAccountToOrganizationInput {
 }
 
 /// A builder for [`InviteAccountToOrganizationInput`](crate::operation::invite_account_to_organization::InviteAccountToOrganizationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct InviteAccountToOrganizationInputBuilder {
     pub(crate) target: ::std::option::Option<crate::types::HandshakeParty>,
     pub(crate) notes: ::std::option::Option<::std::string::String>,

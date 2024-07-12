@@ -18,8 +18,8 @@ impl UpdateAppMonitorOutput {
 }
 
 /// A builder for [`UpdateAppMonitorOutput`](crate::operation::update_app_monitor::UpdateAppMonitorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAppMonitorOutputBuilder {
     _request_id: Option<String>,
 }

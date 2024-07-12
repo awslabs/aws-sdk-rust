@@ -27,8 +27,8 @@ impl SnapStartResponse {
 }
 
 /// A builder for [`SnapStartResponse`](crate::types::SnapStartResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SnapStartResponseBuilder {
     pub(crate) apply_on: ::std::option::Option<crate::types::SnapStartApplyOn>,
     pub(crate) optimization_status: ::std::option::Option<crate::types::SnapStartOptimizationStatus>,

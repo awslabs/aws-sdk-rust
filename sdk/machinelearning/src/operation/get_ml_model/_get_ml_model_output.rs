@@ -225,8 +225,8 @@ impl GetMlModelOutput {
 }
 
 /// A builder for [`GetMlModelOutput`](crate::operation::get_ml_model::GetMlModelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMlModelOutputBuilder {
     pub(crate) ml_model_id: ::std::option::Option<::std::string::String>,
     pub(crate) training_data_source_id: ::std::option::Option<::std::string::String>,

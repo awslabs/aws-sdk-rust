@@ -29,8 +29,8 @@ impl ContainerInstanceHealthStatus {
 }
 
 /// A builder for [`ContainerInstanceHealthStatus`](crate::types::ContainerInstanceHealthStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ContainerInstanceHealthStatusBuilder {
     pub(crate) overall_status: ::std::option::Option<crate::types::InstanceHealthCheckState>,
     pub(crate) details: ::std::option::Option<::std::vec::Vec<crate::types::InstanceHealthCheckResult>>,

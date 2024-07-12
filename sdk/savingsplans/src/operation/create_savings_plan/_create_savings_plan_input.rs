@@ -50,8 +50,8 @@ impl CreateSavingsPlanInput {
 }
 
 /// A builder for [`CreateSavingsPlanInput`](crate::operation::create_savings_plan::CreateSavingsPlanInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSavingsPlanInputBuilder {
     pub(crate) savings_plan_offering_id: ::std::option::Option<::std::string::String>,
     pub(crate) commitment: ::std::option::Option<::std::string::String>,

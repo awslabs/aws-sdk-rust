@@ -101,8 +101,8 @@ impl ProtectedQuery {
 }
 
 /// A builder for [`ProtectedQuery`](crate::types::ProtectedQuery).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ProtectedQueryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) membership_id: ::std::option::Option<::std::string::String>,

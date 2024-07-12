@@ -26,8 +26,8 @@ impl GetVpceConfigurationOutput {
 }
 
 /// A builder for [`GetVpceConfigurationOutput`](crate::operation::get_vpce_configuration::GetVpceConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetVpceConfigurationOutputBuilder {
     pub(crate) vpce_configuration: ::std::option::Option<crate::types::VpceConfiguration>,
     _request_id: Option<String>,

@@ -21,8 +21,8 @@ impl AutoMlDataSource {
 }
 
 /// A builder for [`AutoMlDataSource`](crate::types::AutoMlDataSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AutoMlDataSourceBuilder {
     pub(crate) s3_data_source: ::std::option::Option<crate::types::AutoMls3DataSource>,
 }

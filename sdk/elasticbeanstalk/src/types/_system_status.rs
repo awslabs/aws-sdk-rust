@@ -29,8 +29,8 @@ impl SystemStatus {
 }
 
 /// A builder for [`SystemStatus`](crate::types::SystemStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SystemStatusBuilder {
     pub(crate) cpu_utilization: ::std::option::Option<crate::types::CpuUtilization>,
     pub(crate) load_average: ::std::option::Option<::std::vec::Vec<f64>>,

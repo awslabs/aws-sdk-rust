@@ -20,8 +20,8 @@ impl DisassociateConnectorInput {
 }
 
 /// A builder for [`DisassociateConnectorInput`](crate::operation::disassociate_connector::DisassociateConnectorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateConnectorInputBuilder {
     pub(crate) connector_id: ::std::option::Option<::std::string::String>,
 }

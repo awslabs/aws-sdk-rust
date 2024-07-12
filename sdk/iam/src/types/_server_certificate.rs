@@ -43,8 +43,8 @@ impl ServerCertificate {
 }
 
 /// A builder for [`ServerCertificate`](crate::types::ServerCertificate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServerCertificateBuilder {
     pub(crate) server_certificate_metadata: ::std::option::Option<crate::types::ServerCertificateMetadata>,
     pub(crate) certificate_body: ::std::option::Option<::std::string::String>,

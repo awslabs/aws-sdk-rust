@@ -29,8 +29,8 @@ impl DescribeReservedInstancesListingsOutput {
 }
 
 /// A builder for [`DescribeReservedInstancesListingsOutput`](crate::operation::describe_reserved_instances_listings::DescribeReservedInstancesListingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeReservedInstancesListingsOutputBuilder {
     pub(crate) reserved_instances_listings: ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstancesListing>>,
     _request_id: Option<String>,

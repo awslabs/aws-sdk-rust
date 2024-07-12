@@ -18,8 +18,8 @@ impl DeleteLensShareOutput {
 }
 
 /// A builder for [`DeleteLensShareOutput`](crate::operation::delete_lens_share::DeleteLensShareOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteLensShareOutputBuilder {
     _request_id: Option<String>,
 }

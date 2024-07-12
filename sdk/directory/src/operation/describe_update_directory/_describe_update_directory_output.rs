@@ -34,8 +34,8 @@ impl DescribeUpdateDirectoryOutput {
 }
 
 /// A builder for [`DescribeUpdateDirectoryOutput`](crate::operation::describe_update_directory::DescribeUpdateDirectoryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeUpdateDirectoryOutputBuilder {
     pub(crate) update_activities: ::std::option::Option<::std::vec::Vec<crate::types::UpdateInfoEntry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

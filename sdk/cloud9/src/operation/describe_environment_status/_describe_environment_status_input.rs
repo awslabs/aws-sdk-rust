@@ -20,8 +20,8 @@ impl DescribeEnvironmentStatusInput {
 }
 
 /// A builder for [`DescribeEnvironmentStatusInput`](crate::operation::describe_environment_status::DescribeEnvironmentStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEnvironmentStatusInputBuilder {
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
 }

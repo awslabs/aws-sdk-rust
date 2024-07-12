@@ -245,8 +245,8 @@ impl GetFunctionConfigurationOutput {
 }
 
 /// A builder for [`GetFunctionConfigurationOutput`](crate::operation::get_function_configuration::GetFunctionConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetFunctionConfigurationOutputBuilder {
     pub(crate) function_name: ::std::option::Option<::std::string::String>,
     pub(crate) function_arn: ::std::option::Option<::std::string::String>,

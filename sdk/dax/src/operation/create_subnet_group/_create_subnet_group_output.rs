@@ -26,8 +26,8 @@ impl CreateSubnetGroupOutput {
 }
 
 /// A builder for [`CreateSubnetGroupOutput`](crate::operation::create_subnet_group::CreateSubnetGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSubnetGroupOutputBuilder {
     pub(crate) subnet_group: ::std::option::Option<crate::types::SubnetGroup>,
     _request_id: Option<String>,

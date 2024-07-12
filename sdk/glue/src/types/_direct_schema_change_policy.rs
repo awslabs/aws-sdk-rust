@@ -39,8 +39,8 @@ impl DirectSchemaChangePolicy {
 }
 
 /// A builder for [`DirectSchemaChangePolicy`](crate::types::DirectSchemaChangePolicy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DirectSchemaChangePolicyBuilder {
     pub(crate) enable_update_catalog: ::std::option::Option<bool>,
     pub(crate) update_behavior: ::std::option::Option<crate::types::UpdateCatalogBehavior>,

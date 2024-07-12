@@ -27,8 +27,8 @@ impl BuildNotDeleted {
 }
 
 /// A builder for [`BuildNotDeleted`](crate::types::BuildNotDeleted).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BuildNotDeletedBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) status_code: ::std::option::Option<::std::string::String>,

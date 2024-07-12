@@ -28,8 +28,8 @@ impl UpdateAutomaticTapeCreationPolicyInput {
 }
 
 /// A builder for [`UpdateAutomaticTapeCreationPolicyInput`](crate::operation::update_automatic_tape_creation_policy::UpdateAutomaticTapeCreationPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAutomaticTapeCreationPolicyInputBuilder {
     pub(crate) automatic_tape_creation_rules: ::std::option::Option<::std::vec::Vec<crate::types::AutomaticTapeCreationRule>>,
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,

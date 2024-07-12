@@ -46,8 +46,8 @@ impl UpgradeProfileVersionInput {
 }
 
 /// A builder for [`UpgradeProfileVersionInput`](crate::operation::upgrade_profile_version::UpgradeProfileVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpgradeProfileVersionInputBuilder {
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,
     pub(crate) profile_arn: ::std::option::Option<::std::string::String>,

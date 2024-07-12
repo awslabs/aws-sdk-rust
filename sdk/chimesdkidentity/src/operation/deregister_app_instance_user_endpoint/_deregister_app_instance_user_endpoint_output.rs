@@ -18,8 +18,8 @@ impl DeregisterAppInstanceUserEndpointOutput {
 }
 
 /// A builder for [`DeregisterAppInstanceUserEndpointOutput`](crate::operation::deregister_app_instance_user_endpoint::DeregisterAppInstanceUserEndpointOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeregisterAppInstanceUserEndpointOutputBuilder {
     _request_id: Option<String>,
 }

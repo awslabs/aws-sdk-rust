@@ -26,8 +26,8 @@ impl CreateDataQualityJobDefinitionOutput {
 }
 
 /// A builder for [`CreateDataQualityJobDefinitionOutput`](crate::operation::create_data_quality_job_definition::CreateDataQualityJobDefinitionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDataQualityJobDefinitionOutputBuilder {
     pub(crate) job_definition_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

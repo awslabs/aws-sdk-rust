@@ -27,8 +27,8 @@ impl CidrBlockSummary {
 }
 
 /// A builder for [`CidrBlockSummary`](crate::types::CidrBlockSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CidrBlockSummaryBuilder {
     pub(crate) cidr_block: ::std::option::Option<::std::string::String>,
     pub(crate) location_name: ::std::option::Option<::std::string::String>,

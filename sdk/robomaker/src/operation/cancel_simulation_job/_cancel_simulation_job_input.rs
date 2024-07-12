@@ -20,8 +20,8 @@ impl CancelSimulationJobInput {
 }
 
 /// A builder for [`CancelSimulationJobInput`](crate::operation::cancel_simulation_job::CancelSimulationJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelSimulationJobInputBuilder {
     pub(crate) job: ::std::option::Option<::std::string::String>,
 }

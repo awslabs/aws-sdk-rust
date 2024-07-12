@@ -94,8 +94,8 @@ impl DescribeTrafficMirrorFilterRulesInput {
 }
 
 /// A builder for [`DescribeTrafficMirrorFilterRulesInput`](crate::operation::describe_traffic_mirror_filter_rules::DescribeTrafficMirrorFilterRulesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTrafficMirrorFilterRulesInputBuilder {
     pub(crate) traffic_mirror_filter_rule_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) traffic_mirror_filter_id: ::std::option::Option<::std::string::String>,

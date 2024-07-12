@@ -45,8 +45,8 @@ impl GetAccountLimitInput {
 }
 
 /// A builder for [`GetAccountLimitInput`](crate::operation::get_account_limit::GetAccountLimitInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAccountLimitInputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::AccountLimitType>,
 }

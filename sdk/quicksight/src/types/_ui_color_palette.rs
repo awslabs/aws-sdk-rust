@@ -111,8 +111,8 @@ impl UiColorPalette {
 }
 
 /// A builder for [`UiColorPalette`](crate::types::UiColorPalette).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UiColorPaletteBuilder {
     pub(crate) primary_foreground: ::std::option::Option<::std::string::String>,
     pub(crate) primary_background: ::std::option::Option<::std::string::String>,

@@ -43,8 +43,8 @@ impl StartSourceNetworkRecoveryInput {
 }
 
 /// A builder for [`StartSourceNetworkRecoveryInput`](crate::operation::start_source_network_recovery::StartSourceNetworkRecoveryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct StartSourceNetworkRecoveryInputBuilder {
     pub(crate) source_networks: ::std::option::Option<::std::vec::Vec<crate::types::StartSourceNetworkRecoveryRequestNetworkEntry>>,
     pub(crate) deploy_as_new: ::std::option::Option<bool>,

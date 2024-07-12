@@ -20,8 +20,8 @@ impl CancelSimulationJobBatchInput {
 }
 
 /// A builder for [`CancelSimulationJobBatchInput`](crate::operation::cancel_simulation_job_batch::CancelSimulationJobBatchInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelSimulationJobBatchInputBuilder {
     pub(crate) batch: ::std::option::Option<::std::string::String>,
 }

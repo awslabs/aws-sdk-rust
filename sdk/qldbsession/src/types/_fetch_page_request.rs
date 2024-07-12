@@ -29,8 +29,8 @@ impl FetchPageRequest {
 }
 
 /// A builder for [`FetchPageRequest`](crate::types::FetchPageRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FetchPageRequestBuilder {
     pub(crate) transaction_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,

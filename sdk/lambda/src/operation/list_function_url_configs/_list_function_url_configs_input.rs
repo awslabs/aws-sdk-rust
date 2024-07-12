@@ -52,8 +52,8 @@ impl ListFunctionUrlConfigsInput {
 }
 
 /// A builder for [`ListFunctionUrlConfigsInput`](crate::operation::list_function_url_configs::ListFunctionUrlConfigsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFunctionUrlConfigsInputBuilder {
     pub(crate) function_name: ::std::option::Option<::std::string::String>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

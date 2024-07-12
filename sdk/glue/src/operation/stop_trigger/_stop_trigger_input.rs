@@ -20,8 +20,8 @@ impl StopTriggerInput {
 }
 
 /// A builder for [`StopTriggerInput`](crate::operation::stop_trigger::StopTriggerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopTriggerInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

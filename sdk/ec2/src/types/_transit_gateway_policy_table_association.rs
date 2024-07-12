@@ -45,8 +45,8 @@ impl TransitGatewayPolicyTableAssociation {
 }
 
 /// A builder for [`TransitGatewayPolicyTableAssociation`](crate::types::TransitGatewayPolicyTableAssociation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TransitGatewayPolicyTableAssociationBuilder {
     pub(crate) transit_gateway_policy_table_id: ::std::option::Option<::std::string::String>,
     pub(crate) transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,

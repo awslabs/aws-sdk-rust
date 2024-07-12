@@ -21,8 +21,8 @@ impl SubnetOutpost {
 }
 
 /// A builder for [`SubnetOutpost`](crate::types::SubnetOutpost).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SubnetOutpostBuilder {
     pub(crate) subnet_outpost_arn: ::std::option::Option<::std::string::String>,
 }

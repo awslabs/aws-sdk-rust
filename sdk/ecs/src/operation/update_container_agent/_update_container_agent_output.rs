@@ -26,8 +26,8 @@ impl UpdateContainerAgentOutput {
 }
 
 /// A builder for [`UpdateContainerAgentOutput`](crate::operation::update_container_agent::UpdateContainerAgentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateContainerAgentOutputBuilder {
     pub(crate) container_instance: ::std::option::Option<crate::types::ContainerInstance>,
     _request_id: Option<String>,

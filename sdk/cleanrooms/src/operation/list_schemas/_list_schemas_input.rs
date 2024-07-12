@@ -38,8 +38,8 @@ impl ListSchemasInput {
 }
 
 /// A builder for [`ListSchemasInput`](crate::operation::list_schemas::ListSchemasInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSchemasInputBuilder {
     pub(crate) collaboration_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) schema_type: ::std::option::Option<crate::types::SchemaType>,

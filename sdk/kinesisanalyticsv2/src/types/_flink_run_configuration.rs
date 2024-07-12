@@ -25,8 +25,8 @@ impl FlinkRunConfiguration {
 }
 
 /// A builder for [`FlinkRunConfiguration`](crate::types::FlinkRunConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FlinkRunConfigurationBuilder {
     pub(crate) allow_non_restored_state: ::std::option::Option<bool>,
 }

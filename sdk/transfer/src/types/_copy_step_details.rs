@@ -81,8 +81,8 @@ impl CopyStepDetails {
 }
 
 /// A builder for [`CopyStepDetails`](crate::types::CopyStepDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CopyStepDetailsBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) destination_file_location: ::std::option::Option<crate::types::InputFileLocation>,

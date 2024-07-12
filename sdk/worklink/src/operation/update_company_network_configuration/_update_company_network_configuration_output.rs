@@ -18,8 +18,8 @@ impl UpdateCompanyNetworkConfigurationOutput {
 }
 
 /// A builder for [`UpdateCompanyNetworkConfigurationOutput`](crate::operation::update_company_network_configuration::UpdateCompanyNetworkConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateCompanyNetworkConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

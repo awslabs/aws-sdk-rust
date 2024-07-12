@@ -21,8 +21,8 @@ impl DescribeScraperInput {
 }
 
 /// A builder for [`DescribeScraperInput`](crate::operation::describe_scraper::DescribeScraperInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeScraperInputBuilder {
     pub(crate) scraper_id: ::std::option::Option<::std::string::String>,
 }

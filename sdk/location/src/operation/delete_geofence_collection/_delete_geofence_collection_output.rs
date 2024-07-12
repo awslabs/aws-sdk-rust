@@ -18,8 +18,8 @@ impl DeleteGeofenceCollectionOutput {
 }
 
 /// A builder for [`DeleteGeofenceCollectionOutput`](crate::operation::delete_geofence_collection::DeleteGeofenceCollectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteGeofenceCollectionOutputBuilder {
     _request_id: Option<String>,
 }

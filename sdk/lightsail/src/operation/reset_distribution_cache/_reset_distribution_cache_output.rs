@@ -38,8 +38,8 @@ impl ResetDistributionCacheOutput {
 }
 
 /// A builder for [`ResetDistributionCacheOutput`](crate::operation::reset_distribution_cache::ResetDistributionCacheOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResetDistributionCacheOutputBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,

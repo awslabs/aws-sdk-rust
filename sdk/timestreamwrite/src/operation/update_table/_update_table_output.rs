@@ -26,8 +26,8 @@ impl UpdateTableOutput {
 }
 
 /// A builder for [`UpdateTableOutput`](crate::operation::update_table::UpdateTableOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateTableOutputBuilder {
     pub(crate) table: ::std::option::Option<crate::types::Table>,
     _request_id: Option<String>,

@@ -33,8 +33,8 @@ impl VorbisSettings {
 }
 
 /// A builder for [`VorbisSettings`](crate::types::VorbisSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VorbisSettingsBuilder {
     pub(crate) channels: ::std::option::Option<i32>,
     pub(crate) sample_rate: ::std::option::Option<i32>,

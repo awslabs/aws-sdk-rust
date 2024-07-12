@@ -69,8 +69,8 @@ impl XavcHdProfileSettings {
 }
 
 /// A builder for [`XavcHdProfileSettings`](crate::types::XavcHdProfileSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct XavcHdProfileSettingsBuilder {
     pub(crate) bitrate_class: ::std::option::Option<crate::types::XavcHdProfileBitrateClass>,
     pub(crate) flicker_adaptive_quantization: ::std::option::Option<crate::types::XavcFlickerAdaptiveQuantization>,

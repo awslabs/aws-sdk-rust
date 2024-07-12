@@ -210,8 +210,8 @@ impl MlModel {
 }
 
 /// A builder for [`MlModel`](crate::types::MlModel).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MlModelBuilder {
     pub(crate) ml_model_id: ::std::option::Option<::std::string::String>,
     pub(crate) training_data_source_id: ::std::option::Option<::std::string::String>,

@@ -28,8 +28,8 @@ impl PutServiceQuotaIncreaseRequestIntoTemplateOutput {
 }
 
 /// A builder for [`PutServiceQuotaIncreaseRequestIntoTemplateOutput`](crate::operation::put_service_quota_increase_request_into_template::PutServiceQuotaIncreaseRequestIntoTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutServiceQuotaIncreaseRequestIntoTemplateOutputBuilder {
     pub(crate) service_quota_increase_request_in_template: ::std::option::Option<crate::types::ServiceQuotaIncreaseRequestInTemplate>,
     _request_id: Option<String>,

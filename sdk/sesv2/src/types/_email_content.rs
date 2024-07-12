@@ -65,8 +65,8 @@ impl EmailContent {
 }
 
 /// A builder for [`EmailContent`](crate::types::EmailContent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EmailContentBuilder {
     pub(crate) simple: ::std::option::Option<crate::types::Message>,
     pub(crate) raw: ::std::option::Option<crate::types::RawMessage>,

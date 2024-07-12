@@ -47,8 +47,8 @@ impl HlsPackage {
 }
 
 /// A builder for [`HlsPackage`](crate::types::HlsPackage).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HlsPackageBuilder {
     pub(crate) encryption: ::std::option::Option<crate::types::HlsEncryption>,
     pub(crate) hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::HlsManifest>>,

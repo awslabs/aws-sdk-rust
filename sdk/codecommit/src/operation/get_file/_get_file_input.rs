@@ -32,8 +32,8 @@ impl GetFileInput {
 }
 
 /// A builder for [`GetFileInput`](crate::operation::get_file::GetFileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetFileInputBuilder {
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
     pub(crate) commit_specifier: ::std::option::Option<::std::string::String>,

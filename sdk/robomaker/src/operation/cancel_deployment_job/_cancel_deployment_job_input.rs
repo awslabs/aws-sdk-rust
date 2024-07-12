@@ -23,8 +23,8 @@ impl CancelDeploymentJobInput {
 }
 
 /// A builder for [`CancelDeploymentJobInput`](crate::operation::cancel_deployment_job::CancelDeploymentJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelDeploymentJobInputBuilder {
     pub(crate) job: ::std::option::Option<::std::string::String>,
 }

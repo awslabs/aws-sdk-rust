@@ -21,8 +21,8 @@ impl PutRequest {
 }
 
 /// A builder for [`PutRequest`](crate::types::PutRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutRequestBuilder {
     pub(crate) item: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
 }

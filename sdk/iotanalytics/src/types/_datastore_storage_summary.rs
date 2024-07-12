@@ -33,8 +33,8 @@ impl DatastoreStorageSummary {
 }
 
 /// A builder for [`DatastoreStorageSummary`](crate::types::DatastoreStorageSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DatastoreStorageSummaryBuilder {
     pub(crate) service_managed_s3: ::std::option::Option<crate::types::ServiceManagedDatastoreS3StorageSummary>,
     pub(crate) customer_managed_s3: ::std::option::Option<crate::types::CustomerManagedDatastoreS3StorageSummary>,

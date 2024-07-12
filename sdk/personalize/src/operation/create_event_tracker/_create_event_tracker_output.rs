@@ -32,8 +32,8 @@ impl CreateEventTrackerOutput {
 }
 
 /// A builder for [`CreateEventTrackerOutput`](crate::operation::create_event_tracker::CreateEventTrackerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateEventTrackerOutputBuilder {
     pub(crate) event_tracker_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tracking_id: ::std::option::Option<::std::string::String>,

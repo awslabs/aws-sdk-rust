@@ -33,8 +33,8 @@ impl ListDevEnvironmentSessionsOutput {
 }
 
 /// A builder for [`ListDevEnvironmentSessionsOutput`](crate::operation::list_dev_environment_sessions::ListDevEnvironmentSessionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDevEnvironmentSessionsOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::DevEnvironmentSessionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

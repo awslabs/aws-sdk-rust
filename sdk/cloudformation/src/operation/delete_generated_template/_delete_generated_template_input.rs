@@ -20,8 +20,8 @@ impl DeleteGeneratedTemplateInput {
 }
 
 /// A builder for [`DeleteGeneratedTemplateInput`](crate::operation::delete_generated_template::DeleteGeneratedTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteGeneratedTemplateInputBuilder {
     pub(crate) generated_template_name: ::std::option::Option<::std::string::String>,
 }

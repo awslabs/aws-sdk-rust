@@ -12,8 +12,8 @@ impl GetDirectoryLimitsInput {
 }
 
 /// A builder for [`GetDirectoryLimitsInput`](crate::operation::get_directory_limits::GetDirectoryLimitsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDirectoryLimitsInputBuilder {}
 impl GetDirectoryLimitsInputBuilder {
     /// Consumes the builder and constructs a [`GetDirectoryLimitsInput`](crate::operation::get_directory_limits::GetDirectoryLimitsInput).

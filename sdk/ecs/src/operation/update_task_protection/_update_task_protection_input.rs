@@ -42,8 +42,8 @@ impl UpdateTaskProtectionInput {
 }
 
 /// A builder for [`UpdateTaskProtectionInput`](crate::operation::update_task_protection::UpdateTaskProtectionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateTaskProtectionInputBuilder {
     pub(crate) cluster: ::std::option::Option<::std::string::String>,
     pub(crate) tasks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

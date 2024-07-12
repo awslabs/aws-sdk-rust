@@ -56,8 +56,8 @@ impl GetOpsSummaryInput {
 }
 
 /// A builder for [`GetOpsSummaryInput`](crate::operation::get_ops_summary::GetOpsSummaryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetOpsSummaryInputBuilder {
     pub(crate) sync_name: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::OpsFilter>>,

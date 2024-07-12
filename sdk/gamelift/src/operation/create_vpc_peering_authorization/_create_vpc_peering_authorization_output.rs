@@ -26,8 +26,8 @@ impl CreateVpcPeeringAuthorizationOutput {
 }
 
 /// A builder for [`CreateVpcPeeringAuthorizationOutput`](crate::operation::create_vpc_peering_authorization::CreateVpcPeeringAuthorizationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateVpcPeeringAuthorizationOutputBuilder {
     pub(crate) vpc_peering_authorization: ::std::option::Option<crate::types::VpcPeeringAuthorization>,
     _request_id: Option<String>,

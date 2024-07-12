@@ -34,8 +34,8 @@ impl ListVirtualClustersOutput {
 }
 
 /// A builder for [`ListVirtualClustersOutput`](crate::operation::list_virtual_clusters::ListVirtualClustersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListVirtualClustersOutputBuilder {
     pub(crate) virtual_clusters: ::std::option::Option<::std::vec::Vec<crate::types::VirtualCluster>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

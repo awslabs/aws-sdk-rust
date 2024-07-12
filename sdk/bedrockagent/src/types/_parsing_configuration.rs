@@ -35,8 +35,8 @@ impl ParsingConfiguration {
 }
 
 /// A builder for [`ParsingConfiguration`](crate::types::ParsingConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ParsingConfigurationBuilder {
     pub(crate) parsing_strategy: ::std::option::Option<crate::types::ParsingStrategy>,
     pub(crate) bedrock_foundation_model_configuration: ::std::option::Option<crate::types::BedrockFoundationModelConfiguration>,

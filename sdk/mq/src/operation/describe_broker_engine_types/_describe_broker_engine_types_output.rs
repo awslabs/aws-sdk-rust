@@ -40,8 +40,8 @@ impl DescribeBrokerEngineTypesOutput {
 }
 
 /// A builder for [`DescribeBrokerEngineTypesOutput`](crate::operation::describe_broker_engine_types::DescribeBrokerEngineTypesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeBrokerEngineTypesOutputBuilder {
     pub(crate) broker_engine_types: ::std::option::Option<::std::vec::Vec<crate::types::BrokerEngineType>>,
     pub(crate) max_results: ::std::option::Option<i32>,

@@ -32,8 +32,8 @@ impl ListSpeakersInput {
 }
 
 /// A builder for [`ListSpeakersInput`](crate::operation::list_speakers::ListSpeakersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSpeakersInputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

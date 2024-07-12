@@ -39,8 +39,8 @@ impl CreateFleetError {
 }
 
 /// A builder for [`CreateFleetError`](crate::types::CreateFleetError).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateFleetErrorBuilder {
     pub(crate) launch_template_and_overrides: ::std::option::Option<crate::types::LaunchTemplateAndOverridesResponse>,
     pub(crate) lifecycle: ::std::option::Option<crate::types::InstanceLifecycle>,

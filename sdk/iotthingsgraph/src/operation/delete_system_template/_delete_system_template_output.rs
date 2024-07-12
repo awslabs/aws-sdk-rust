@@ -18,8 +18,8 @@ impl DeleteSystemTemplateOutput {
 }
 
 /// A builder for [`DeleteSystemTemplateOutput`](crate::operation::delete_system_template::DeleteSystemTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSystemTemplateOutputBuilder {
     _request_id: Option<String>,
 }

@@ -35,8 +35,8 @@ impl IngestedFilesSummary {
 }
 
 /// A builder for [`IngestedFilesSummary`](crate::types::IngestedFilesSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IngestedFilesSummaryBuilder {
     pub(crate) total_number_of_files: ::std::option::Option<i32>,
     pub(crate) ingested_number_of_files: ::std::option::Option<i32>,

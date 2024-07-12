@@ -28,8 +28,8 @@ impl UpdateJsonClassifierRequest {
 }
 
 /// A builder for [`UpdateJsonClassifierRequest`](crate::types::UpdateJsonClassifierRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateJsonClassifierRequestBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) json_path: ::std::option::Option<::std::string::String>,

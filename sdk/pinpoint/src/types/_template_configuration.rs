@@ -45,8 +45,8 @@ impl TemplateConfiguration {
 }
 
 /// A builder for [`TemplateConfiguration`](crate::types::TemplateConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TemplateConfigurationBuilder {
     pub(crate) email_template: ::std::option::Option<crate::types::Template>,
     pub(crate) push_template: ::std::option::Option<crate::types::Template>,

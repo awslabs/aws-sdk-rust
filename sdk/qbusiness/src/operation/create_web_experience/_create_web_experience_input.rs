@@ -64,8 +64,8 @@ impl CreateWebExperienceInput {
 }
 
 /// A builder for [`CreateWebExperienceInput`](crate::operation::create_web_experience::CreateWebExperienceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateWebExperienceInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) title: ::std::option::Option<::std::string::String>,

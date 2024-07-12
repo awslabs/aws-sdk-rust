@@ -37,8 +37,8 @@ impl AppSpecification {
 }
 
 /// A builder for [`AppSpecification`](crate::types::AppSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AppSpecificationBuilder {
     pub(crate) image_uri: ::std::option::Option<::std::string::String>,
     pub(crate) container_entrypoint: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

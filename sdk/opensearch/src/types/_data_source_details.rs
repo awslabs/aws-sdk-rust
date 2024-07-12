@@ -39,8 +39,8 @@ impl DataSourceDetails {
 }
 
 /// A builder for [`DataSourceDetails`](crate::types::DataSourceDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataSourceDetailsBuilder {
     pub(crate) data_source_type: ::std::option::Option<crate::types::DataSourceType>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

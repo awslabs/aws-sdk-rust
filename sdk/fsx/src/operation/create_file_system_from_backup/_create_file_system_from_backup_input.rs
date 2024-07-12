@@ -165,8 +165,8 @@ impl CreateFileSystemFromBackupInput {
 }
 
 /// A builder for [`CreateFileSystemFromBackupInput`](crate::operation::create_file_system_from_backup::CreateFileSystemFromBackupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateFileSystemFromBackupInputBuilder {
     pub(crate) backup_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,

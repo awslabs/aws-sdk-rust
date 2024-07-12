@@ -26,8 +26,8 @@ impl DeletePublicIpv4PoolOutput {
 }
 
 /// A builder for [`DeletePublicIpv4PoolOutput`](crate::operation::delete_public_ipv4_pool::DeletePublicIpv4PoolOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePublicIpv4PoolOutputBuilder {
     pub(crate) return_value: ::std::option::Option<bool>,
     _request_id: Option<String>,

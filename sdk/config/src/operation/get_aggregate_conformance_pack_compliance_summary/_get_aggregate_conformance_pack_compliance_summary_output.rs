@@ -43,8 +43,8 @@ impl GetAggregateConformancePackComplianceSummaryOutput {
 }
 
 /// A builder for [`GetAggregateConformancePackComplianceSummaryOutput`](crate::operation::get_aggregate_conformance_pack_compliance_summary::GetAggregateConformancePackComplianceSummaryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAggregateConformancePackComplianceSummaryOutputBuilder {
     pub(crate) aggregate_conformance_pack_compliance_summaries:
         ::std::option::Option<::std::vec::Vec<crate::types::AggregateConformancePackComplianceSummary>>,

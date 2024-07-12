@@ -52,8 +52,8 @@ impl RecognizeCelebritiesOutput {
 }
 
 /// A builder for [`RecognizeCelebritiesOutput`](crate::operation::recognize_celebrities::RecognizeCelebritiesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecognizeCelebritiesOutputBuilder {
     pub(crate) celebrity_faces: ::std::option::Option<::std::vec::Vec<crate::types::Celebrity>>,
     pub(crate) unrecognized_faces: ::std::option::Option<::std::vec::Vec<crate::types::ComparedFace>>,

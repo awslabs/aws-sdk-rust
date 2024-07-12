@@ -33,8 +33,8 @@ impl TimecodeBurnin {
 }
 
 /// A builder for [`TimecodeBurnin`](crate::types::TimecodeBurnin).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TimecodeBurninBuilder {
     pub(crate) font_size: ::std::option::Option<i32>,
     pub(crate) position: ::std::option::Option<crate::types::TimecodeBurninPosition>,

@@ -84,8 +84,8 @@ impl GetTransformerOutput {
 }
 
 /// A builder for [`GetTransformerOutput`](crate::operation::get_transformer::GetTransformerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTransformerOutputBuilder {
     pub(crate) transformer_id: ::std::option::Option<::std::string::String>,
     pub(crate) transformer_arn: ::std::option::Option<::std::string::String>,

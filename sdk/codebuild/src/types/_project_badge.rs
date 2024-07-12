@@ -27,8 +27,8 @@ impl ProjectBadge {
 }
 
 /// A builder for [`ProjectBadge`](crate::types::ProjectBadge).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProjectBadgeBuilder {
     pub(crate) badge_enabled: ::std::option::Option<bool>,
     pub(crate) badge_request_url: ::std::option::Option<::std::string::String>,

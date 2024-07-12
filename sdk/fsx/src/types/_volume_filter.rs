@@ -29,8 +29,8 @@ impl VolumeFilter {
 }
 
 /// A builder for [`VolumeFilter`](crate::types::VolumeFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VolumeFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::VolumeFilterName>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

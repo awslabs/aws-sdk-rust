@@ -21,8 +21,8 @@ impl OwnershipSettingsSummary {
 }
 
 /// A builder for [`OwnershipSettingsSummary`](crate::types::OwnershipSettingsSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OwnershipSettingsSummaryBuilder {
     pub(crate) owner_user_profile_name: ::std::option::Option<::std::string::String>,
 }

@@ -46,8 +46,8 @@ impl KxCacheStorageConfiguration {
 }
 
 /// A builder for [`KxCacheStorageConfiguration`](crate::types::KxCacheStorageConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KxCacheStorageConfigurationBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) size: ::std::option::Option<i32>,

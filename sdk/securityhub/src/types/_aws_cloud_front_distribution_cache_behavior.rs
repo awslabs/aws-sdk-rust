@@ -37,8 +37,8 @@ impl AwsCloudFrontDistributionCacheBehavior {
 }
 
 /// A builder for [`AwsCloudFrontDistributionCacheBehavior`](crate::types::AwsCloudFrontDistributionCacheBehavior).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsCloudFrontDistributionCacheBehaviorBuilder {
     pub(crate) viewer_protocol_policy: ::std::option::Option<::std::string::String>,
 }

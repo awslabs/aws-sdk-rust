@@ -35,8 +35,8 @@ impl DescribeReportDefinitionsOutput {
 }
 
 /// A builder for [`DescribeReportDefinitionsOutput`](crate::operation::describe_report_definitions::DescribeReportDefinitionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeReportDefinitionsOutputBuilder {
     pub(crate) report_definitions: ::std::option::Option<::std::vec::Vec<crate::types::ReportDefinition>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

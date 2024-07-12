@@ -26,8 +26,8 @@ impl RegisterScalableTargetOutput {
 }
 
 /// A builder for [`RegisterScalableTargetOutput`](crate::operation::register_scalable_target::RegisterScalableTargetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterScalableTargetOutputBuilder {
     pub(crate) scalable_target_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

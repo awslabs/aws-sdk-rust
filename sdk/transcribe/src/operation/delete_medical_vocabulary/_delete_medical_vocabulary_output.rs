@@ -18,8 +18,8 @@ impl DeleteMedicalVocabularyOutput {
 }
 
 /// A builder for [`DeleteMedicalVocabularyOutput`](crate::operation::delete_medical_vocabulary::DeleteMedicalVocabularyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteMedicalVocabularyOutputBuilder {
     _request_id: Option<String>,
 }

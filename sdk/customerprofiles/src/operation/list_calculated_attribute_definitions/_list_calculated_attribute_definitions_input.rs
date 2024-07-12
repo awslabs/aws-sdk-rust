@@ -32,8 +32,8 @@ impl ListCalculatedAttributeDefinitionsInput {
 }
 
 /// A builder for [`ListCalculatedAttributeDefinitionsInput`](crate::operation::list_calculated_attribute_definitions::ListCalculatedAttributeDefinitionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCalculatedAttributeDefinitionsInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

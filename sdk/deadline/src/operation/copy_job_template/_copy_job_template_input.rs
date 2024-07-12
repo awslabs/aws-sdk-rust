@@ -38,8 +38,8 @@ impl CopyJobTemplateInput {
 }
 
 /// A builder for [`CopyJobTemplateInput`](crate::operation::copy_job_template::CopyJobTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CopyJobTemplateInputBuilder {
     pub(crate) farm_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_id: ::std::option::Option<::std::string::String>,

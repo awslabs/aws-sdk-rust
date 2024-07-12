@@ -27,8 +27,8 @@ impl ListContactsFilter {
 }
 
 /// A builder for [`ListContactsFilter`](crate::types::ListContactsFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListContactsFilterBuilder {
     pub(crate) filtered_status: ::std::option::Option<crate::types::SubscriptionStatus>,
     pub(crate) topic_filter: ::std::option::Option<crate::types::TopicFilter>,

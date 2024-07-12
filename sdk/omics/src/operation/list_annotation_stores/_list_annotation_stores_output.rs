@@ -34,8 +34,8 @@ impl ListAnnotationStoresOutput {
 }
 
 /// A builder for [`ListAnnotationStoresOutput`](crate::operation::list_annotation_stores::ListAnnotationStoresOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAnnotationStoresOutputBuilder {
     pub(crate) annotation_stores: ::std::option::Option<::std::vec::Vec<crate::types::AnnotationStoreItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

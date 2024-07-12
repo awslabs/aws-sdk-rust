@@ -163,8 +163,8 @@ impl MaintenanceWindowTask {
 }
 
 /// A builder for [`MaintenanceWindowTask`](crate::types::MaintenanceWindowTask).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct MaintenanceWindowTaskBuilder {
     pub(crate) window_id: ::std::option::Option<::std::string::String>,
     pub(crate) window_task_id: ::std::option::Option<::std::string::String>,

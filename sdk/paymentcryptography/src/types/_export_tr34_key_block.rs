@@ -69,8 +69,8 @@ impl ExportTr34KeyBlock {
 }
 
 /// A builder for [`ExportTr34KeyBlock`](crate::types::ExportTr34KeyBlock).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ExportTr34KeyBlockBuilder {
     pub(crate) certificate_authority_public_key_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) wrapping_key_certificate: ::std::option::Option<::std::string::String>,

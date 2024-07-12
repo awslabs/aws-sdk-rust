@@ -44,8 +44,8 @@ impl ExchangeCodeForTokenRequestBody {
 }
 
 /// A builder for [`ExchangeCodeForTokenRequestBody`](crate::types::ExchangeCodeForTokenRequestBody).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ExchangeCodeForTokenRequestBodyBuilder {
     pub(crate) code: ::std::option::Option<::std::string::String>,
     pub(crate) redirect_uri: ::std::option::Option<::std::string::String>,

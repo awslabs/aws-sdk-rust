@@ -34,8 +34,8 @@ impl DescribeInstanceStatusOutput {
 }
 
 /// A builder for [`DescribeInstanceStatusOutput`](crate::operation::describe_instance_status::DescribeInstanceStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeInstanceStatusOutputBuilder {
     pub(crate) instance_statuses: ::std::option::Option<::std::vec::Vec<crate::types::InstanceStatus>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl CancelResourceRequestOutput {
 }
 
 /// A builder for [`CancelResourceRequestOutput`](crate::operation::cancel_resource_request::CancelResourceRequestOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelResourceRequestOutputBuilder {
     pub(crate) progress_event: ::std::option::Option<crate::types::ProgressEvent>,
     _request_id: Option<String>,

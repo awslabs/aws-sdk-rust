@@ -27,8 +27,8 @@ impl FailedEntity {
 }
 
 /// A builder for [`FailedEntity`](crate::types::FailedEntity).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FailedEntityBuilder {
     pub(crate) entity_id: ::std::option::Option<::std::string::String>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,

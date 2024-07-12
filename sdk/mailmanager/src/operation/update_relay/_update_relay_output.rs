@@ -18,8 +18,8 @@ impl UpdateRelayOutput {
 }
 
 /// A builder for [`UpdateRelayOutput`](crate::operation::update_relay::UpdateRelayOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRelayOutputBuilder {
     _request_id: Option<String>,
 }

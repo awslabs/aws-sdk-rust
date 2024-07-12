@@ -77,8 +77,8 @@ impl UpdateAnnotationStoreOutput {
 }
 
 /// A builder for [`UpdateAnnotationStoreOutput`](crate::operation::update_annotation_store::UpdateAnnotationStoreOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAnnotationStoreOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) reference: ::std::option::Option<crate::types::ReferenceItem>,

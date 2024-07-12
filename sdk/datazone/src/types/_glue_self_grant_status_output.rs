@@ -22,8 +22,8 @@ impl GlueSelfGrantStatusOutput {
 }
 
 /// A builder for [`GlueSelfGrantStatusOutput`](crate::types::GlueSelfGrantStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GlueSelfGrantStatusOutputBuilder {
     pub(crate) self_grant_status_details: ::std::option::Option<::std::vec::Vec<crate::types::SelfGrantStatusDetail>>,
 }

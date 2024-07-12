@@ -59,8 +59,8 @@ impl TransitGatewayConnect {
 }
 
 /// A builder for [`TransitGatewayConnect`](crate::types::TransitGatewayConnect).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TransitGatewayConnectBuilder {
     pub(crate) transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
     pub(crate) transport_transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,

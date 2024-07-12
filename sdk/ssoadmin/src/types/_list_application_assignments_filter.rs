@@ -21,8 +21,8 @@ impl ListApplicationAssignmentsFilter {
 }
 
 /// A builder for [`ListApplicationAssignmentsFilter`](crate::types::ListApplicationAssignmentsFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListApplicationAssignmentsFilterBuilder {
     pub(crate) application_arn: ::std::option::Option<::std::string::String>,
 }

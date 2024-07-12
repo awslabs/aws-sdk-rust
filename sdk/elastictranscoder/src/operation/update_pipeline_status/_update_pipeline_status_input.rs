@@ -39,8 +39,8 @@ impl UpdatePipelineStatusInput {
 }
 
 /// A builder for [`UpdatePipelineStatusInput`](crate::operation::update_pipeline_status::UpdatePipelineStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePipelineStatusInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,

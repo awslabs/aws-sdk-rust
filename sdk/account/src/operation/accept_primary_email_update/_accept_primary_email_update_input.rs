@@ -47,8 +47,8 @@ impl AcceptPrimaryEmailUpdateInput {
 }
 
 /// A builder for [`AcceptPrimaryEmailUpdateInput`](crate::operation::accept_primary_email_update::AcceptPrimaryEmailUpdateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AcceptPrimaryEmailUpdateInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) primary_email: ::std::option::Option<::std::string::String>,

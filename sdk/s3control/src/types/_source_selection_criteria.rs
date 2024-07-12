@@ -37,8 +37,8 @@ impl SourceSelectionCriteria {
 }
 
 /// A builder for [`SourceSelectionCriteria`](crate::types::SourceSelectionCriteria).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SourceSelectionCriteriaBuilder {
     pub(crate) sse_kms_encrypted_objects: ::std::option::Option<crate::types::SseKmsEncryptedObjects>,
     pub(crate) replica_modifications: ::std::option::Option<crate::types::ReplicaModifications>,

@@ -32,8 +32,8 @@ impl DescribeChimeWebhookConfigurationsInput {
 }
 
 /// A builder for [`DescribeChimeWebhookConfigurationsInput`](crate::operation::describe_chime_webhook_configurations::DescribeChimeWebhookConfigurationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeChimeWebhookConfigurationsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -50,8 +50,8 @@ impl GetPoliciesStatsOutput {
 }
 
 /// A builder for [`GetPoliciesStatsOutput`](crate::operation::get_policies_stats::GetPoliciesStatsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPoliciesStatsOutputBuilder {
     pub(crate) access_policy_stats: ::std::option::Option<crate::types::AccessPolicyStats>,
     pub(crate) security_policy_stats: ::std::option::Option<crate::types::SecurityPolicyStats>,

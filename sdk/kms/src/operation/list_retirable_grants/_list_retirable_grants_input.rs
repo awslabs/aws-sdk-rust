@@ -36,8 +36,8 @@ impl ListRetirableGrantsInput {
 }
 
 /// A builder for [`ListRetirableGrantsInput`](crate::operation::list_retirable_grants::ListRetirableGrantsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRetirableGrantsInputBuilder {
     pub(crate) limit: ::std::option::Option<i32>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

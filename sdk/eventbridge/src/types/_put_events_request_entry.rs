@@ -77,8 +77,8 @@ impl PutEventsRequestEntry {
 }
 
 /// A builder for [`PutEventsRequestEntry`](crate::types::PutEventsRequestEntry).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutEventsRequestEntryBuilder {
     pub(crate) time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) source: ::std::option::Option<::std::string::String>,

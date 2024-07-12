@@ -44,8 +44,8 @@ impl GetAccessControlEffectInput {
 }
 
 /// A builder for [`GetAccessControlEffectInput`](crate::operation::get_access_control_effect::GetAccessControlEffectInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAccessControlEffectInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) ip_address: ::std::option::Option<::std::string::String>,

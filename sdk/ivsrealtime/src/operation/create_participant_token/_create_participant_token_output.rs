@@ -26,8 +26,8 @@ impl CreateParticipantTokenOutput {
 }
 
 /// A builder for [`CreateParticipantTokenOutput`](crate::operation::create_participant_token::CreateParticipantTokenOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateParticipantTokenOutputBuilder {
     pub(crate) participant_token: ::std::option::Option<crate::types::ParticipantToken>,
     _request_id: Option<String>,

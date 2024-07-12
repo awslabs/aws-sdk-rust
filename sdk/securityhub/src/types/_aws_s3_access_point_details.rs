@@ -63,8 +63,8 @@ impl AwsS3AccessPointDetails {
 }
 
 /// A builder for [`AwsS3AccessPointDetails`](crate::types::AwsS3AccessPointDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsS3AccessPointDetailsBuilder {
     pub(crate) access_point_arn: ::std::option::Option<::std::string::String>,
     pub(crate) alias: ::std::option::Option<::std::string::String>,

@@ -61,8 +61,8 @@ impl QQueryCard {
 }
 
 /// A builder for [`QQueryCard`](crate::types::QQueryCard).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct QQueryCardBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) title: ::std::option::Option<::std::string::String>,

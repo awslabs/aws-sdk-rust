@@ -18,8 +18,8 @@ impl ModifyVolumeAttributeOutput {
 }
 
 /// A builder for [`ModifyVolumeAttributeOutput`](crate::operation::modify_volume_attribute::ModifyVolumeAttributeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyVolumeAttributeOutputBuilder {
     _request_id: Option<String>,
 }

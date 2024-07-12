@@ -38,8 +38,8 @@ impl UpdateConstraintOutput {
 }
 
 /// A builder for [`UpdateConstraintOutput`](crate::operation::update_constraint::UpdateConstraintOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateConstraintOutputBuilder {
     pub(crate) constraint_detail: ::std::option::Option<crate::types::ConstraintDetail>,
     pub(crate) constraint_parameters: ::std::option::Option<::std::string::String>,

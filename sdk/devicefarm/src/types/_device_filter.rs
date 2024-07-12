@@ -247,8 +247,8 @@ impl DeviceFilter {
 }
 
 /// A builder for [`DeviceFilter`](crate::types::DeviceFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeviceFilterBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::DeviceFilterAttribute>,
     pub(crate) operator: ::std::option::Option<crate::types::RuleOperator>,

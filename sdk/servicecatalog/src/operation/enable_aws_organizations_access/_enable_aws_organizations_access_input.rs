@@ -11,8 +11,8 @@ impl EnableAwsOrganizationsAccessInput {
 }
 
 /// A builder for [`EnableAwsOrganizationsAccessInput`](crate::operation::enable_aws_organizations_access::EnableAwsOrganizationsAccessInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnableAwsOrganizationsAccessInputBuilder {}
 impl EnableAwsOrganizationsAccessInputBuilder {
     /// Consumes the builder and constructs a [`EnableAwsOrganizationsAccessInput`](crate::operation::enable_aws_organizations_access::EnableAwsOrganizationsAccessInput).

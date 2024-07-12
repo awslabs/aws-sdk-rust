@@ -33,8 +33,8 @@ impl PropertyResponse {
 }
 
 /// A builder for [`PropertyResponse`](crate::types::PropertyResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PropertyResponseBuilder {
     pub(crate) definition: ::std::option::Option<crate::types::PropertyDefinitionResponse>,
     pub(crate) value: ::std::option::Option<crate::types::DataValue>,

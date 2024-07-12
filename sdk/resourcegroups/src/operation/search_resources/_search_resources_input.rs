@@ -32,8 +32,8 @@ impl SearchResourcesInput {
 }
 
 /// A builder for [`SearchResourcesInput`](crate::operation::search_resources::SearchResourcesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchResourcesInputBuilder {
     pub(crate) resource_query: ::std::option::Option<crate::types::ResourceQuery>,
     pub(crate) max_results: ::std::option::Option<i32>,

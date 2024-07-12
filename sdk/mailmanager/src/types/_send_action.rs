@@ -28,8 +28,8 @@ impl SendAction {
 }
 
 /// A builder for [`SendAction`](crate::types::SendAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendActionBuilder {
     pub(crate) action_failure_policy: ::std::option::Option<crate::types::ActionFailurePolicy>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,

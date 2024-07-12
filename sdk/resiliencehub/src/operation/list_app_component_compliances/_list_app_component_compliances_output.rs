@@ -33,8 +33,8 @@ impl ListAppComponentCompliancesOutput {
 }
 
 /// A builder for [`ListAppComponentCompliancesOutput`](crate::operation::list_app_component_compliances::ListAppComponentCompliancesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAppComponentCompliancesOutputBuilder {
     pub(crate) component_compliances: ::std::option::Option<::std::vec::Vec<crate::types::AppComponentCompliance>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

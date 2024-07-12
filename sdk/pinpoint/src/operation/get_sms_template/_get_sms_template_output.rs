@@ -26,8 +26,8 @@ impl GetSmsTemplateOutput {
 }
 
 /// A builder for [`GetSmsTemplateOutput`](crate::operation::get_sms_template::GetSmsTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSmsTemplateOutputBuilder {
     pub(crate) sms_template_response: ::std::option::Option<crate::types::SmsTemplateResponse>,
     _request_id: Option<String>,

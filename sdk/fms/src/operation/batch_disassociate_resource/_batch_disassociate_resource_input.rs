@@ -28,8 +28,8 @@ impl BatchDisassociateResourceInput {
 }
 
 /// A builder for [`BatchDisassociateResourceInput`](crate::operation::batch_disassociate_resource::BatchDisassociateResourceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDisassociateResourceInputBuilder {
     pub(crate) resource_set_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) items: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

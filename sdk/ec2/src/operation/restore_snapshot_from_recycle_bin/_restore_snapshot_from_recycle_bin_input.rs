@@ -26,8 +26,8 @@ impl RestoreSnapshotFromRecycleBinInput {
 }
 
 /// A builder for [`RestoreSnapshotFromRecycleBinInput`](crate::operation::restore_snapshot_from_recycle_bin::RestoreSnapshotFromRecycleBinInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RestoreSnapshotFromRecycleBinInputBuilder {
     pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,

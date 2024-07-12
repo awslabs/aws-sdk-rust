@@ -45,8 +45,8 @@ impl LambdaVolumeMount {
 }
 
 /// A builder for [`LambdaVolumeMount`](crate::types::LambdaVolumeMount).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LambdaVolumeMountBuilder {
     pub(crate) source_path: ::std::option::Option<::std::string::String>,
     pub(crate) destination_path: ::std::option::Option<::std::string::String>,

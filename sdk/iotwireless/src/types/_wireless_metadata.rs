@@ -27,8 +27,8 @@ impl WirelessMetadata {
 }
 
 /// A builder for [`WirelessMetadata`](crate::types::WirelessMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WirelessMetadataBuilder {
     pub(crate) lo_ra_wan: ::std::option::Option<crate::types::LoRaWanSendDataToDevice>,
     pub(crate) sidewalk: ::std::option::Option<crate::types::SidewalkSendDataToDevice>,

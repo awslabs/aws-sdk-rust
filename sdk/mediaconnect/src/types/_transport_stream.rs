@@ -63,8 +63,8 @@ impl TransportStream {
 }
 
 /// A builder for [`TransportStream`](crate::types::TransportStream).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TransportStreamBuilder {
     pub(crate) channels: ::std::option::Option<i32>,
     pub(crate) codec: ::std::option::Option<::std::string::String>,

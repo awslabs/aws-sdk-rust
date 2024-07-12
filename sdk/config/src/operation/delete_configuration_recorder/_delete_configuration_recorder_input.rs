@@ -21,8 +21,8 @@ impl DeleteConfigurationRecorderInput {
 }
 
 /// A builder for [`DeleteConfigurationRecorderInput`](crate::operation::delete_configuration_recorder::DeleteConfigurationRecorderInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteConfigurationRecorderInputBuilder {
     pub(crate) configuration_recorder_name: ::std::option::Option<::std::string::String>,
 }

@@ -50,8 +50,8 @@ impl GetProtectionStatusInput {
 }
 
 /// A builder for [`GetProtectionStatusInput`](crate::operation::get_protection_status::GetProtectionStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetProtectionStatusInputBuilder {
     pub(crate) policy_id: ::std::option::Option<::std::string::String>,
     pub(crate) member_account_id: ::std::option::Option<::std::string::String>,

@@ -39,8 +39,8 @@ impl DataQualityMetricValues {
 }
 
 /// A builder for [`DataQualityMetricValues`](crate::types::DataQualityMetricValues).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataQualityMetricValuesBuilder {
     pub(crate) actual_value: ::std::option::Option<f64>,
     pub(crate) expected_value: ::std::option::Option<f64>,

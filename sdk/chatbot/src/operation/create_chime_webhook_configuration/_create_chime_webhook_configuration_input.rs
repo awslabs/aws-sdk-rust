@@ -60,8 +60,8 @@ impl CreateChimeWebhookConfigurationInput {
 }
 
 /// A builder for [`CreateChimeWebhookConfigurationInput`](crate::operation::create_chime_webhook_configuration::CreateChimeWebhookConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateChimeWebhookConfigurationInputBuilder {
     pub(crate) webhook_description: ::std::option::Option<::std::string::String>,
     pub(crate) webhook_url: ::std::option::Option<::std::string::String>,

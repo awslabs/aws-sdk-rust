@@ -21,8 +21,8 @@ impl BatchAttachToIndexResponse {
 }
 
 /// A builder for [`BatchAttachToIndexResponse`](crate::types::BatchAttachToIndexResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchAttachToIndexResponseBuilder {
     pub(crate) attached_object_identifier: ::std::option::Option<::std::string::String>,
 }

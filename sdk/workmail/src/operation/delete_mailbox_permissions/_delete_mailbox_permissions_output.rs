@@ -18,8 +18,8 @@ impl DeleteMailboxPermissionsOutput {
 }
 
 /// A builder for [`DeleteMailboxPermissionsOutput`](crate::operation::delete_mailbox_permissions::DeleteMailboxPermissionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteMailboxPermissionsOutputBuilder {
     _request_id: Option<String>,
 }

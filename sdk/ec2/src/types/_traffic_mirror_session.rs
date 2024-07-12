@@ -79,8 +79,8 @@ impl TrafficMirrorSession {
 }
 
 /// A builder for [`TrafficMirrorSession`](crate::types::TrafficMirrorSession).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TrafficMirrorSessionBuilder {
     pub(crate) traffic_mirror_session_id: ::std::option::Option<::std::string::String>,
     pub(crate) traffic_mirror_target_id: ::std::option::Option<::std::string::String>,

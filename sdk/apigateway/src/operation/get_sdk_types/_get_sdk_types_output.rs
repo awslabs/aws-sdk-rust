@@ -29,8 +29,8 @@ impl GetSdkTypesOutput {
 }
 
 /// A builder for [`GetSdkTypesOutput`](crate::operation::get_sdk_types::GetSdkTypesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSdkTypesOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::SdkType>>,
     _request_id: Option<String>,

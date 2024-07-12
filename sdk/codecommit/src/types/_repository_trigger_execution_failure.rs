@@ -27,8 +27,8 @@ impl RepositoryTriggerExecutionFailure {
 }
 
 /// A builder for [`RepositoryTriggerExecutionFailure`](crate::types::RepositoryTriggerExecutionFailure).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RepositoryTriggerExecutionFailureBuilder {
     pub(crate) trigger: ::std::option::Option<::std::string::String>,
     pub(crate) failure_message: ::std::option::Option<::std::string::String>,

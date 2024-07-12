@@ -38,8 +38,8 @@ impl BatchGetAttachedFileMetadataInput {
 }
 
 /// A builder for [`BatchGetAttachedFileMetadataInput`](crate::operation::batch_get_attached_file_metadata::BatchGetAttachedFileMetadataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetAttachedFileMetadataInputBuilder {
     pub(crate) file_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,

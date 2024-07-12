@@ -34,8 +34,8 @@ impl AssumeFleetRoleForWorkerOutput {
 }
 
 /// A builder for [`AssumeFleetRoleForWorkerOutput`](crate::operation::assume_fleet_role_for_worker::AssumeFleetRoleForWorkerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AssumeFleetRoleForWorkerOutputBuilder {
     pub(crate) credentials: ::std::option::Option<crate::types::AwsCredentials>,
     _request_id: Option<String>,

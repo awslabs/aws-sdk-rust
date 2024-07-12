@@ -34,8 +34,8 @@ impl ListConfigurationRevisionsOutput {
 }
 
 /// A builder for [`ListConfigurationRevisionsOutput`](crate::operation::list_configuration_revisions::ListConfigurationRevisionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListConfigurationRevisionsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) revisions: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationRevision>>,

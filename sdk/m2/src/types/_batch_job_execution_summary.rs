@@ -77,8 +77,8 @@ impl BatchJobExecutionSummary {
 }
 
 /// A builder for [`BatchJobExecutionSummary`](crate::types::BatchJobExecutionSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchJobExecutionSummaryBuilder {
     pub(crate) execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) application_id: ::std::option::Option<::std::string::String>,

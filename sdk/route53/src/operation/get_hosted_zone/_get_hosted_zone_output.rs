@@ -41,8 +41,8 @@ impl GetHostedZoneOutput {
 }
 
 /// A builder for [`GetHostedZoneOutput`](crate::operation::get_hosted_zone::GetHostedZoneOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetHostedZoneOutputBuilder {
     pub(crate) hosted_zone: ::std::option::Option<crate::types::HostedZone>,
     pub(crate) delegation_set: ::std::option::Option<crate::types::DelegationSet>,

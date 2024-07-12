@@ -41,8 +41,8 @@ impl IotAnalyticsAction {
 }
 
 /// A builder for [`IotAnalyticsAction`](crate::types::IotAnalyticsAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IotAnalyticsActionBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) channel_name: ::std::option::Option<::std::string::String>,

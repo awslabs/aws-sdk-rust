@@ -20,8 +20,8 @@ impl GetFlowInput {
 }
 
 /// A builder for [`GetFlowInput`](crate::operation::get_flow::GetFlowInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetFlowInputBuilder {
     pub(crate) flow_identifier: ::std::option::Option<::std::string::String>,
 }

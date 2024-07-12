@@ -18,8 +18,8 @@ impl AssociateQueueQuickConnectsOutput {
 }
 
 /// A builder for [`AssociateQueueQuickConnectsOutput`](crate::operation::associate_queue_quick_connects::AssociateQueueQuickConnectsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateQueueQuickConnectsOutputBuilder {
     _request_id: Option<String>,
 }

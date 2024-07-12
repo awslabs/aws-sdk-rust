@@ -26,8 +26,8 @@ impl GetSyncConfigurationOutput {
 }
 
 /// A builder for [`GetSyncConfigurationOutput`](crate::operation::get_sync_configuration::GetSyncConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSyncConfigurationOutputBuilder {
     pub(crate) sync_configuration: ::std::option::Option<crate::types::SyncConfiguration>,
     _request_id: Option<String>,

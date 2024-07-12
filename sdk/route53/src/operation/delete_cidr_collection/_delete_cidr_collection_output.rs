@@ -18,8 +18,8 @@ impl DeleteCidrCollectionOutput {
 }
 
 /// A builder for [`DeleteCidrCollectionOutput`](crate::operation::delete_cidr_collection::DeleteCidrCollectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCidrCollectionOutputBuilder {
     _request_id: Option<String>,
 }

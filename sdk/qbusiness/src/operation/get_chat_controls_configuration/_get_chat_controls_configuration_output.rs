@@ -52,8 +52,8 @@ impl GetChatControlsConfigurationOutput {
 }
 
 /// A builder for [`GetChatControlsConfigurationOutput`](crate::operation::get_chat_controls_configuration::GetChatControlsConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetChatControlsConfigurationOutputBuilder {
     pub(crate) response_scope: ::std::option::Option<crate::types::ResponseScope>,
     pub(crate) blocked_phrases: ::std::option::Option<crate::types::BlockedPhrasesConfiguration>,

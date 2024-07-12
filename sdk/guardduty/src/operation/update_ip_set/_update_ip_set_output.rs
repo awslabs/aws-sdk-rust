@@ -18,8 +18,8 @@ impl UpdateIpSetOutput {
 }
 
 /// A builder for [`UpdateIpSetOutput`](crate::operation::update_ip_set::UpdateIpSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateIpSetOutputBuilder {
     _request_id: Option<String>,
 }

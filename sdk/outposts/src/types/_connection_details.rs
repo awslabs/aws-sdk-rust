@@ -53,8 +53,8 @@ impl ConnectionDetails {
 }
 
 /// A builder for [`ConnectionDetails`](crate::types::ConnectionDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConnectionDetailsBuilder {
     pub(crate) client_public_key: ::std::option::Option<::std::string::String>,
     pub(crate) server_public_key: ::std::option::Option<::std::string::String>,

@@ -195,8 +195,8 @@ impl RefreshPreferences {
 }
 
 /// A builder for [`RefreshPreferences`](crate::types::RefreshPreferences).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RefreshPreferencesBuilder {
     pub(crate) min_healthy_percentage: ::std::option::Option<i32>,
     pub(crate) instance_warmup: ::std::option::Option<i32>,

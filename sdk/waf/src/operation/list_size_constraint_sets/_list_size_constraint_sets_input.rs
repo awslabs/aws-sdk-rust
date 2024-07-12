@@ -26,8 +26,8 @@ impl ListSizeConstraintSetsInput {
 }
 
 /// A builder for [`ListSizeConstraintSetsInput`](crate::operation::list_size_constraint_sets::ListSizeConstraintSetsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSizeConstraintSetsInputBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,

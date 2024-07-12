@@ -11,8 +11,8 @@ impl DeleteAccountPasswordPolicyInput {
 }
 
 /// A builder for [`DeleteAccountPasswordPolicyInput`](crate::operation::delete_account_password_policy::DeleteAccountPasswordPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAccountPasswordPolicyInputBuilder {}
 impl DeleteAccountPasswordPolicyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAccountPasswordPolicyInput`](crate::operation::delete_account_password_policy::DeleteAccountPasswordPolicyInput).

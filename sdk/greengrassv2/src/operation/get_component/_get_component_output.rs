@@ -38,8 +38,8 @@ impl GetComponentOutput {
 }
 
 /// A builder for [`GetComponentOutput`](crate::operation::get_component::GetComponentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetComponentOutputBuilder {
     pub(crate) recipe_output_format: ::std::option::Option<crate::types::RecipeOutputFormat>,
     pub(crate) recipe: ::std::option::Option<::aws_smithy_types::Blob>,

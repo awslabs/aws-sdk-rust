@@ -42,8 +42,8 @@ impl Location {
 }
 
 /// A builder for [`Location`](crate::types::Location).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct LocationBuilder {
     pub(crate) address: ::std::option::Option<::std::string::String>,
     pub(crate) latitude: ::std::option::Option<::std::string::String>,

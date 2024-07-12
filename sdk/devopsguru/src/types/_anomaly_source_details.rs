@@ -31,8 +31,8 @@ impl AnomalySourceDetails {
 }
 
 /// A builder for [`AnomalySourceDetails`](crate::types::AnomalySourceDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AnomalySourceDetailsBuilder {
     pub(crate) cloud_watch_metrics: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchMetricsDetail>>,
     pub(crate) performance_insights_metrics: ::std::option::Option<::std::vec::Vec<crate::types::PerformanceInsightsMetricsDetail>>,

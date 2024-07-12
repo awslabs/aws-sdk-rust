@@ -34,8 +34,8 @@ impl DescribeDbClusterParameterGroupsOutput {
 }
 
 /// A builder for [`DescribeDbClusterParameterGroupsOutput`](crate::operation::describe_db_cluster_parameter_groups::DescribeDbClusterParameterGroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDbClusterParameterGroupsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) db_cluster_parameter_groups: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterParameterGroup>>,

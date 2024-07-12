@@ -18,8 +18,8 @@ impl DeleteCapabilityOutput {
 }
 
 /// A builder for [`DeleteCapabilityOutput`](crate::operation::delete_capability::DeleteCapabilityOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCapabilityOutputBuilder {
     _request_id: Option<String>,
 }

@@ -33,8 +33,8 @@ impl KubernetesNetworkConfigResponse {
 }
 
 /// A builder for [`KubernetesNetworkConfigResponse`](crate::types::KubernetesNetworkConfigResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KubernetesNetworkConfigResponseBuilder {
     pub(crate) service_ipv4_cidr: ::std::option::Option<::std::string::String>,
     pub(crate) service_ipv6_cidr: ::std::option::Option<::std::string::String>,

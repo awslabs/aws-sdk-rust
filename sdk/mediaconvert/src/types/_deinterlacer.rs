@@ -33,8 +33,8 @@ impl Deinterlacer {
 }
 
 /// A builder for [`Deinterlacer`](crate::types::Deinterlacer).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeinterlacerBuilder {
     pub(crate) algorithm: ::std::option::Option<crate::types::DeinterlaceAlgorithm>,
     pub(crate) control: ::std::option::Option<crate::types::DeinterlacerControl>,

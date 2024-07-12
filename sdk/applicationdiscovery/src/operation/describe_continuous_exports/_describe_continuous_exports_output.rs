@@ -34,8 +34,8 @@ impl DescribeContinuousExportsOutput {
 }
 
 /// A builder for [`DescribeContinuousExportsOutput`](crate::operation::describe_continuous_exports::DescribeContinuousExportsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeContinuousExportsOutputBuilder {
     pub(crate) descriptions: ::std::option::Option<::std::vec::Vec<crate::types::ContinuousExportDescription>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

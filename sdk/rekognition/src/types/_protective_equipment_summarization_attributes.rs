@@ -32,8 +32,8 @@ impl ProtectiveEquipmentSummarizationAttributes {
 }
 
 /// A builder for [`ProtectiveEquipmentSummarizationAttributes`](crate::types::ProtectiveEquipmentSummarizationAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProtectiveEquipmentSummarizationAttributesBuilder {
     pub(crate) min_confidence: ::std::option::Option<f32>,
     pub(crate) required_equipment_types: ::std::option::Option<::std::vec::Vec<crate::types::ProtectiveEquipmentType>>,

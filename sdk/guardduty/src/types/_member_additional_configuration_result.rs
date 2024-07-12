@@ -33,8 +33,8 @@ impl MemberAdditionalConfigurationResult {
 }
 
 /// A builder for [`MemberAdditionalConfigurationResult`](crate::types::MemberAdditionalConfigurationResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MemberAdditionalConfigurationResultBuilder {
     pub(crate) name: ::std::option::Option<crate::types::OrgFeatureAdditionalConfiguration>,
     pub(crate) status: ::std::option::Option<crate::types::FeatureStatus>,

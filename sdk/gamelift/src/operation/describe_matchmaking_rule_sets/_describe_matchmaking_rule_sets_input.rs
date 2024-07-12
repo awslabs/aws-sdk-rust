@@ -34,8 +34,8 @@ impl DescribeMatchmakingRuleSetsInput {
 }
 
 /// A builder for [`DescribeMatchmakingRuleSetsInput`](crate::operation::describe_matchmaking_rule_sets::DescribeMatchmakingRuleSetsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeMatchmakingRuleSetsInputBuilder {
     pub(crate) names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) limit: ::std::option::Option<i32>,

@@ -34,8 +34,8 @@ impl ListRuleGroupsNamespacesOutput {
 }
 
 /// A builder for [`ListRuleGroupsNamespacesOutput`](crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRuleGroupsNamespacesOutputBuilder {
     pub(crate) rule_groups_namespaces: ::std::option::Option<::std::vec::Vec<crate::types::RuleGroupsNamespaceSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

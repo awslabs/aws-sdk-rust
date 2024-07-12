@@ -48,8 +48,8 @@ impl CreateChatTokenOutput {
 }
 
 /// A builder for [`CreateChatTokenOutput`](crate::operation::create_chat_token::CreateChatTokenOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateChatTokenOutputBuilder {
     pub(crate) token: ::std::option::Option<::std::string::String>,
     pub(crate) token_expiration_time: ::std::option::Option<::aws_smithy_types::DateTime>,

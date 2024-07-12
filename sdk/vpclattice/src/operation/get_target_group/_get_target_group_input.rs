@@ -20,8 +20,8 @@ impl GetTargetGroupInput {
 }
 
 /// A builder for [`GetTargetGroupInput`](crate::operation::get_target_group::GetTargetGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTargetGroupInputBuilder {
     pub(crate) target_group_identifier: ::std::option::Option<::std::string::String>,
 }

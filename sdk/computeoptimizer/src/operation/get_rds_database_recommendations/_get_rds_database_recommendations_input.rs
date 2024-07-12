@@ -70,8 +70,8 @@ impl GetRdsDatabaseRecommendationsInput {
 }
 
 /// A builder for [`GetRdsDatabaseRecommendationsInput`](crate::operation::get_rds_database_recommendations::GetRdsDatabaseRecommendationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRdsDatabaseRecommendationsInputBuilder {
     pub(crate) resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

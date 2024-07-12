@@ -26,8 +26,8 @@ impl UpdateSlackChannelConfigurationOutput {
 }
 
 /// A builder for [`UpdateSlackChannelConfigurationOutput`](crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSlackChannelConfigurationOutputBuilder {
     pub(crate) channel_configuration: ::std::option::Option<crate::types::SlackChannelConfiguration>,
     _request_id: Option<String>,

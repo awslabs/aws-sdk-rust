@@ -18,8 +18,8 @@ impl AllowCustomRoutingTrafficOutput {
 }
 
 /// A builder for [`AllowCustomRoutingTrafficOutput`](crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTrafficOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AllowCustomRoutingTrafficOutputBuilder {
     _request_id: Option<String>,
 }

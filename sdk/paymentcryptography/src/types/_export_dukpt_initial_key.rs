@@ -24,8 +24,8 @@ impl ExportDukptInitialKey {
 }
 
 /// A builder for [`ExportDukptInitialKey`](crate::types::ExportDukptInitialKey).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExportDukptInitialKeyBuilder {
     pub(crate) key_serial_number: ::std::option::Option<::std::string::String>,
 }

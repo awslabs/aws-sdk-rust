@@ -54,8 +54,8 @@ impl BatchGetDeploymentTargetsInput {
 }
 
 /// A builder for [`BatchGetDeploymentTargetsInput`](crate::operation::batch_get_deployment_targets::BatchGetDeploymentTargetsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetDeploymentTargetsInputBuilder {
     pub(crate) deployment_id: ::std::option::Option<::std::string::String>,
     pub(crate) target_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

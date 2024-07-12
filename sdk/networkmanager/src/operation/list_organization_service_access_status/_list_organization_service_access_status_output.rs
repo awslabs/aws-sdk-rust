@@ -32,8 +32,8 @@ impl ListOrganizationServiceAccessStatusOutput {
 }
 
 /// A builder for [`ListOrganizationServiceAccessStatusOutput`](crate::operation::list_organization_service_access_status::ListOrganizationServiceAccessStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListOrganizationServiceAccessStatusOutputBuilder {
     pub(crate) organization_status: ::std::option::Option<crate::types::OrganizationStatus>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

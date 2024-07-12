@@ -59,8 +59,8 @@ impl TransformInput {
 }
 
 /// A builder for [`TransformInput`](crate::types::TransformInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TransformInputBuilder {
     pub(crate) data_source: ::std::option::Option<crate::types::TransformDataSource>,
     pub(crate) content_type: ::std::option::Option<::std::string::String>,

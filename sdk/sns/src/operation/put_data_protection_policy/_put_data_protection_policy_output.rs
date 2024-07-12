@@ -18,8 +18,8 @@ impl PutDataProtectionPolicyOutput {
 }
 
 /// A builder for [`PutDataProtectionPolicyOutput`](crate::operation::put_data_protection_policy::PutDataProtectionPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutDataProtectionPolicyOutputBuilder {
     _request_id: Option<String>,
 }

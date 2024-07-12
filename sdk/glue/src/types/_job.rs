@@ -300,8 +300,8 @@ impl Job {
 }
 
 /// A builder for [`Job`](crate::types::Job).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct JobBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) job_mode: ::std::option::Option<crate::types::JobMode>,

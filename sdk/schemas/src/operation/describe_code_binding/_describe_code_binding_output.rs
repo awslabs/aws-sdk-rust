@@ -44,8 +44,8 @@ impl DescribeCodeBindingOutput {
 }
 
 /// A builder for [`DescribeCodeBindingOutput`](crate::operation::describe_code_binding::DescribeCodeBindingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCodeBindingOutputBuilder {
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,

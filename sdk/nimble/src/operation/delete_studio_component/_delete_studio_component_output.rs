@@ -26,8 +26,8 @@ impl DeleteStudioComponentOutput {
 }
 
 /// A builder for [`DeleteStudioComponentOutput`](crate::operation::delete_studio_component::DeleteStudioComponentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteStudioComponentOutputBuilder {
     pub(crate) studio_component: ::std::option::Option<crate::types::StudioComponent>,
     _request_id: Option<String>,

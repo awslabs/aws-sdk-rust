@@ -82,8 +82,8 @@ impl DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsInput {
 }
 
 /// A builder for [`DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsInput`](crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsInputBuilder {
     pub(crate) local_gateway_route_table_virtual_interface_group_association_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,

@@ -18,8 +18,8 @@ impl PutAlternateContactOutput {
 }
 
 /// A builder for [`PutAlternateContactOutput`](crate::operation::put_alternate_contact::PutAlternateContactOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutAlternateContactOutputBuilder {
     _request_id: Option<String>,
 }

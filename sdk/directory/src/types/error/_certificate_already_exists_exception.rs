@@ -53,8 +53,8 @@ impl CertificateAlreadyExistsException {
 }
 
 /// A builder for [`CertificateAlreadyExistsException`](crate::types::error::CertificateAlreadyExistsException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CertificateAlreadyExistsExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,

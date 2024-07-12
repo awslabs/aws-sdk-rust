@@ -59,8 +59,8 @@ impl CreateSubscriptionRequestInput {
 }
 
 /// A builder for [`CreateSubscriptionRequestInput`](crate::operation::create_subscription_request::CreateSubscriptionRequestInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateSubscriptionRequestInputBuilder {
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) subscribed_principals: ::std::option::Option<::std::vec::Vec<crate::types::SubscribedPrincipalInput>>,

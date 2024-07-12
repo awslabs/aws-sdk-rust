@@ -54,8 +54,8 @@ impl StartCopyJobInput {
 }
 
 /// A builder for [`StartCopyJobInput`](crate::operation::start_copy_job::StartCopyJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartCopyJobInputBuilder {
     pub(crate) recovery_point_arn: ::std::option::Option<::std::string::String>,
     pub(crate) source_backup_vault_name: ::std::option::Option<::std::string::String>,

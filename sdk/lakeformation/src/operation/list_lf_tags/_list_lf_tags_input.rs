@@ -38,8 +38,8 @@ impl ListLfTagsInput {
 }
 
 /// A builder for [`ListLfTagsInput`](crate::operation::list_lf_tags::ListLfTagsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListLfTagsInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_share_type: ::std::option::Option<crate::types::ResourceShareType>,

@@ -34,8 +34,8 @@ impl ListRunGroupsOutput {
 }
 
 /// A builder for [`ListRunGroupsOutput`](crate::operation::list_run_groups::ListRunGroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRunGroupsOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::RunGroupListItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

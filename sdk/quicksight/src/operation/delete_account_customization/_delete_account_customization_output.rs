@@ -32,8 +32,8 @@ impl DeleteAccountCustomizationOutput {
 }
 
 /// A builder for [`DeleteAccountCustomizationOutput`](crate::operation::delete_account_customization::DeleteAccountCustomizationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAccountCustomizationOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<i32>,

@@ -34,8 +34,8 @@ impl ListAggregateDiscoveredResourcesOutput {
 }
 
 /// A builder for [`ListAggregateDiscoveredResourcesOutput`](crate::operation::list_aggregate_discovered_resources::ListAggregateDiscoveredResourcesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAggregateDiscoveredResourcesOutputBuilder {
     pub(crate) resource_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::AggregateResourceIdentifier>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

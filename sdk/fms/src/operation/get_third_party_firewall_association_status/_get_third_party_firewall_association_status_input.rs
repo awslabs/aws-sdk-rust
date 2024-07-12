@@ -20,8 +20,8 @@ impl GetThirdPartyFirewallAssociationStatusInput {
 }
 
 /// A builder for [`GetThirdPartyFirewallAssociationStatusInput`](crate::operation::get_third_party_firewall_association_status::GetThirdPartyFirewallAssociationStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetThirdPartyFirewallAssociationStatusInputBuilder {
     pub(crate) third_party_firewall: ::std::option::Option<crate::types::ThirdPartyFirewall>,
 }

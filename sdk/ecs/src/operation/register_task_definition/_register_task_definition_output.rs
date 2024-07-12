@@ -34,8 +34,8 @@ impl RegisterTaskDefinitionOutput {
 }
 
 /// A builder for [`RegisterTaskDefinitionOutput`](crate::operation::register_task_definition::RegisterTaskDefinitionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterTaskDefinitionOutputBuilder {
     pub(crate) task_definition: ::std::option::Option<crate::types::TaskDefinition>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,

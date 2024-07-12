@@ -58,8 +58,8 @@ impl SentimentFilter {
 }
 
 /// A builder for [`SentimentFilter`](crate::types::SentimentFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SentimentFilterBuilder {
     pub(crate) sentiments: ::std::option::Option<::std::vec::Vec<crate::types::SentimentValue>>,
     pub(crate) absolute_time_range: ::std::option::Option<crate::types::AbsoluteTimeRange>,

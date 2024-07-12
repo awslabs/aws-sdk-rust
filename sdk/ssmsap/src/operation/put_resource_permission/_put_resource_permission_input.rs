@@ -32,8 +32,8 @@ impl PutResourcePermissionInput {
 }
 
 /// A builder for [`PutResourcePermissionInput`](crate::operation::put_resource_permission::PutResourcePermissionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutResourcePermissionInputBuilder {
     pub(crate) action_type: ::std::option::Option<crate::types::PermissionActionType>,
     pub(crate) source_resource_arn: ::std::option::Option<::std::string::String>,

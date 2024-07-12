@@ -20,8 +20,8 @@ impl DeleteResourceTreeInput {
 }
 
 /// A builder for [`DeleteResourceTreeInput`](crate::operation::delete_resource_tree::DeleteResourceTreeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteResourceTreeInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
 }

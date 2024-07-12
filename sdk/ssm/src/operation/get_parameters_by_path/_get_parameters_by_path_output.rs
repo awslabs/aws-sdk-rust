@@ -34,8 +34,8 @@ impl GetParametersByPathOutput {
 }
 
 /// A builder for [`GetParametersByPathOutput`](crate::operation::get_parameters_by_path::GetParametersByPathOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetParametersByPathOutputBuilder {
     pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -32,8 +32,8 @@ impl GetStreamingSessionStreamInput {
 }
 
 /// A builder for [`GetStreamingSessionStreamInput`](crate::operation::get_streaming_session_stream::GetStreamingSessionStreamInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetStreamingSessionStreamInputBuilder {
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
     pub(crate) stream_id: ::std::option::Option<::std::string::String>,

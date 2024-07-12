@@ -65,8 +65,8 @@ impl ExecutionRecord {
 }
 
 /// A builder for [`ExecutionRecord`](crate::types::ExecutionRecord).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExecutionRecordBuilder {
     pub(crate) execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) execution_status: ::std::option::Option<crate::types::ExecutionStatus>,

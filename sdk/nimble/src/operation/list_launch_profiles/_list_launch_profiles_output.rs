@@ -34,8 +34,8 @@ impl ListLaunchProfilesOutput {
 }
 
 /// A builder for [`ListLaunchProfilesOutput`](crate::operation::list_launch_profiles::ListLaunchProfilesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListLaunchProfilesOutputBuilder {
     pub(crate) launch_profiles: ::std::option::Option<::std::vec::Vec<crate::types::LaunchProfile>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

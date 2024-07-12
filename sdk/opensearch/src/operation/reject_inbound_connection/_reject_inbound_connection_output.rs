@@ -27,8 +27,8 @@ impl RejectInboundConnectionOutput {
 }
 
 /// A builder for [`RejectInboundConnectionOutput`](crate::operation::reject_inbound_connection::RejectInboundConnectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RejectInboundConnectionOutputBuilder {
     pub(crate) connection: ::std::option::Option<crate::types::InboundConnection>,
     _request_id: Option<String>,

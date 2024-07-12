@@ -34,8 +34,8 @@ impl UpdateLiveSourceInput {
 }
 
 /// A builder for [`UpdateLiveSourceInput`](crate::operation::update_live_source::UpdateLiveSourceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateLiveSourceInputBuilder {
     pub(crate) http_package_configurations: ::std::option::Option<::std::vec::Vec<crate::types::HttpPackageConfiguration>>,
     pub(crate) live_source_name: ::std::option::Option<::std::string::String>,

@@ -35,8 +35,8 @@ impl ConfluenceAttachmentToIndexFieldMapping {
 }
 
 /// A builder for [`ConfluenceAttachmentToIndexFieldMapping`](crate::types::ConfluenceAttachmentToIndexFieldMapping).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConfluenceAttachmentToIndexFieldMappingBuilder {
     pub(crate) data_source_field_name: ::std::option::Option<crate::types::ConfluenceAttachmentFieldName>,
     pub(crate) date_field_format: ::std::option::Option<::std::string::String>,

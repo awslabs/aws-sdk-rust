@@ -27,8 +27,8 @@ impl NodeDetails {
 }
 
 /// A builder for [`NodeDetails`](crate::types::NodeDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NodeDetailsBuilder {
     pub(crate) node_index: ::std::option::Option<i32>,
     pub(crate) is_main_node: ::std::option::Option<bool>,

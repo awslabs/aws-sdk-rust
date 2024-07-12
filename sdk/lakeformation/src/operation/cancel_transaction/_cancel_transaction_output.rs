@@ -18,8 +18,8 @@ impl CancelTransactionOutput {
 }
 
 /// A builder for [`CancelTransactionOutput`](crate::operation::cancel_transaction::CancelTransactionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelTransactionOutputBuilder {
     _request_id: Option<String>,
 }

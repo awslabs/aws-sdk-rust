@@ -155,8 +155,8 @@ impl UpdateNfsFileShareInput {
 }
 
 /// A builder for [`UpdateNfsFileShareInput`](crate::operation::update_nfs_file_share::UpdateNfsFileShareInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateNfsFileShareInputBuilder {
     pub(crate) file_share_arn: ::std::option::Option<::std::string::String>,
     pub(crate) kms_encrypted: ::std::option::Option<bool>,

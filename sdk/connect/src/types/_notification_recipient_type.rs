@@ -29,8 +29,8 @@ impl NotificationRecipientType {
 }
 
 /// A builder for [`NotificationRecipientType`](crate::types::NotificationRecipientType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NotificationRecipientTypeBuilder {
     pub(crate) user_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) user_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -174,8 +174,8 @@ impl DescribeLabelingJobOutput {
 }
 
 /// A builder for [`DescribeLabelingJobOutput`](crate::operation::describe_labeling_job::DescribeLabelingJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeLabelingJobOutputBuilder {
     pub(crate) labeling_job_status: ::std::option::Option<crate::types::LabelingJobStatus>,
     pub(crate) label_counters: ::std::option::Option<crate::types::LabelCounters>,

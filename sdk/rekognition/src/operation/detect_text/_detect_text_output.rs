@@ -34,8 +34,8 @@ impl DetectTextOutput {
 }
 
 /// A builder for [`DetectTextOutput`](crate::operation::detect_text::DetectTextOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetectTextOutputBuilder {
     pub(crate) text_detections: ::std::option::Option<::std::vec::Vec<crate::types::TextDetection>>,
     pub(crate) text_model_version: ::std::option::Option<::std::string::String>,

@@ -76,8 +76,8 @@ impl StopImportOutput {
 }
 
 /// A builder for [`StopImportOutput`](crate::operation::stop_import::StopImportOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopImportOutputBuilder {
     pub(crate) import_id: ::std::option::Option<::std::string::String>,
     pub(crate) import_source: ::std::option::Option<crate::types::ImportSource>,

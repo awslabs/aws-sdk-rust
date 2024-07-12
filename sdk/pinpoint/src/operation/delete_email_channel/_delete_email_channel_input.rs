@@ -20,8 +20,8 @@ impl DeleteEmailChannelInput {
 }
 
 /// A builder for [`DeleteEmailChannelInput`](crate::operation::delete_email_channel::DeleteEmailChannelInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteEmailChannelInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
 }

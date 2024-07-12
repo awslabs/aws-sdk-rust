@@ -74,8 +74,8 @@ impl PutConformancePackInput {
 }
 
 /// A builder for [`PutConformancePackInput`](crate::operation::put_conformance_pack::PutConformancePackInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutConformancePackInputBuilder {
     pub(crate) conformance_pack_name: ::std::option::Option<::std::string::String>,
     pub(crate) template_s3_uri: ::std::option::Option<::std::string::String>,

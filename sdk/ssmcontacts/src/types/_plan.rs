@@ -31,8 +31,8 @@ impl Plan {
 }
 
 /// A builder for [`Plan`](crate::types::Plan).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PlanBuilder {
     pub(crate) stages: ::std::option::Option<::std::vec::Vec<crate::types::Stage>>,
     pub(crate) rotation_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -27,8 +27,8 @@ impl ChangeResourceRecordSetsInput {
 }
 
 /// A builder for [`ChangeResourceRecordSetsInput`](crate::operation::change_resource_record_sets::ChangeResourceRecordSetsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ChangeResourceRecordSetsInputBuilder {
     pub(crate) hosted_zone_id: ::std::option::Option<::std::string::String>,
     pub(crate) change_batch: ::std::option::Option<crate::types::ChangeBatch>,

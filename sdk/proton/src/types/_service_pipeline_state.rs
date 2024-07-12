@@ -52,8 +52,8 @@ impl ServicePipelineState {
 }
 
 /// A builder for [`ServicePipelineState`](crate::types::ServicePipelineState).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ServicePipelineStateBuilder {
     pub(crate) spec: ::std::option::Option<::std::string::String>,
     pub(crate) template_name: ::std::option::Option<::std::string::String>,

@@ -35,8 +35,8 @@ impl DeploymentApplicationConfig {
 }
 
 /// A builder for [`DeploymentApplicationConfig`](crate::types::DeploymentApplicationConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeploymentApplicationConfigBuilder {
     pub(crate) application: ::std::option::Option<::std::string::String>,
     pub(crate) application_version: ::std::option::Option<::std::string::String>,

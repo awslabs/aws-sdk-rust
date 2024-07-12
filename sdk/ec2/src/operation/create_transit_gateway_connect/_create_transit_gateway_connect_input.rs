@@ -40,8 +40,8 @@ impl CreateTransitGatewayConnectInput {
 }
 
 /// A builder for [`CreateTransitGatewayConnectInput`](crate::operation::create_transit_gateway_connect::CreateTransitGatewayConnectInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateTransitGatewayConnectInputBuilder {
     pub(crate) transport_transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
     pub(crate) options: ::std::option::Option<crate::types::CreateTransitGatewayConnectRequestOptions>,

@@ -19,8 +19,8 @@ impl PutEmailIdentityMailFromAttributesOutput {
 }
 
 /// A builder for [`PutEmailIdentityMailFromAttributesOutput`](crate::operation::put_email_identity_mail_from_attributes::PutEmailIdentityMailFromAttributesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutEmailIdentityMailFromAttributesOutputBuilder {
     _request_id: Option<String>,
 }

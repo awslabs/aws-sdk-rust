@@ -45,8 +45,8 @@ impl UploadSettings {
 }
 
 /// A builder for [`UploadSettings`](crate::types::UploadSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UploadSettingsBuilder {
     pub(crate) format: ::std::option::Option<crate::types::FileFormat>,
     pub(crate) start_from_row: ::std::option::Option<i32>,

@@ -26,8 +26,8 @@ impl DescribeFhirExportJobInput {
 }
 
 /// A builder for [`DescribeFhirExportJobInput`](crate::operation::describe_fhir_export_job::DescribeFhirExportJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFhirExportJobInputBuilder {
     pub(crate) datastore_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_id: ::std::option::Option<::std::string::String>,

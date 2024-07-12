@@ -23,8 +23,8 @@ impl TrainingData {
 }
 
 /// A builder for [`TrainingData`](crate::types::TrainingData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TrainingDataBuilder {
     pub(crate) assets: ::std::option::Option<::std::vec::Vec<crate::types::Asset>>,
 }

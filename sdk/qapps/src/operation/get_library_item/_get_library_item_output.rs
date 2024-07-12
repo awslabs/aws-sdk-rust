@@ -97,8 +97,8 @@ impl GetLibraryItemOutput {
 }
 
 /// A builder for [`GetLibraryItemOutput`](crate::operation::get_library_item::GetLibraryItemOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLibraryItemOutputBuilder {
     pub(crate) library_item_id: ::std::option::Option<::std::string::String>,
     pub(crate) app_id: ::std::option::Option<::std::string::String>,

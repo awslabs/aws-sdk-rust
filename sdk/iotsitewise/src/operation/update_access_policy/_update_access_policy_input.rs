@@ -44,8 +44,8 @@ impl UpdateAccessPolicyInput {
 }
 
 /// A builder for [`UpdateAccessPolicyInput`](crate::operation::update_access_policy::UpdateAccessPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAccessPolicyInputBuilder {
     pub(crate) access_policy_id: ::std::option::Option<::std::string::String>,
     pub(crate) access_policy_identity: ::std::option::Option<crate::types::Identity>,

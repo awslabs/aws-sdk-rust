@@ -43,8 +43,8 @@ impl FirewallStatus {
 }
 
 /// A builder for [`FirewallStatus`](crate::types::FirewallStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FirewallStatusBuilder {
     pub(crate) status: ::std::option::Option<crate::types::FirewallStatusValue>,
     pub(crate) configuration_sync_state_summary: ::std::option::Option<crate::types::ConfigurationSyncState>,

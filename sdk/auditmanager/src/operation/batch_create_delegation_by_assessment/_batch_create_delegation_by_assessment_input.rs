@@ -36,8 +36,8 @@ impl BatchCreateDelegationByAssessmentInput {
 }
 
 /// A builder for [`BatchCreateDelegationByAssessmentInput`](crate::operation::batch_create_delegation_by_assessment::BatchCreateDelegationByAssessmentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct BatchCreateDelegationByAssessmentInputBuilder {
     pub(crate) create_delegation_requests: ::std::option::Option<::std::vec::Vec<crate::types::CreateDelegationRequest>>,
     pub(crate) assessment_id: ::std::option::Option<::std::string::String>,

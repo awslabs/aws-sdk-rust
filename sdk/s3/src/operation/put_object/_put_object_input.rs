@@ -478,8 +478,8 @@ impl PutObjectInput {
 }
 
 /// A builder for [`PutObjectInput`](crate::operation::put_object::PutObjectInput).
-#[non_exhaustive]
 #[derive(::std::default::Default)]
+#[non_exhaustive]
 pub struct PutObjectInputBuilder {
     pub(crate) acl: ::std::option::Option<crate::types::ObjectCannedAcl>,
     pub(crate) body: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>,

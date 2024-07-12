@@ -34,8 +34,8 @@ impl ListIpAccessSettingsOutput {
 }
 
 /// A builder for [`ListIpAccessSettingsOutput`](crate::operation::list_ip_access_settings::ListIpAccessSettingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListIpAccessSettingsOutputBuilder {
     pub(crate) ip_access_settings: ::std::option::Option<::std::vec::Vec<crate::types::IpAccessSettingsSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -43,8 +43,8 @@ impl DescribeAffectedEntitiesForOrganizationOutput {
 }
 
 /// A builder for [`DescribeAffectedEntitiesForOrganizationOutput`](crate::operation::describe_affected_entities_for_organization::DescribeAffectedEntitiesForOrganizationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAffectedEntitiesForOrganizationOutputBuilder {
     pub(crate) entities: ::std::option::Option<::std::vec::Vec<crate::types::AffectedEntity>>,
     pub(crate) failed_set: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationAffectedEntitiesErrorItem>>,

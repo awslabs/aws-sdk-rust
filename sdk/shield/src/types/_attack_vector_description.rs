@@ -98,8 +98,8 @@ impl AttackVectorDescription {
 }
 
 /// A builder for [`AttackVectorDescription`](crate::types::AttackVectorDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttackVectorDescriptionBuilder {
     pub(crate) vector_type: ::std::option::Option<::std::string::String>,
 }

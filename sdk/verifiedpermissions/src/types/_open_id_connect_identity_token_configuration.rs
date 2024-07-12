@@ -39,8 +39,8 @@ impl OpenIdConnectIdentityTokenConfiguration {
 }
 
 /// A builder for [`OpenIdConnectIdentityTokenConfiguration`](crate::types::OpenIdConnectIdentityTokenConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct OpenIdConnectIdentityTokenConfigurationBuilder {
     pub(crate) principal_id_claim: ::std::option::Option<::std::string::String>,
     pub(crate) client_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

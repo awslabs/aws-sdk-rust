@@ -32,8 +32,8 @@ impl UpdateGlobalSettingsInput {
 }
 
 /// A builder for [`UpdateGlobalSettingsInput`](crate::operation::update_global_settings::UpdateGlobalSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateGlobalSettingsInputBuilder {
     pub(crate) organization_sharing_status: ::std::option::Option<crate::types::OrganizationSharingStatus>,
     pub(crate) discovery_integration_status: ::std::option::Option<crate::types::DiscoveryIntegrationStatus>,

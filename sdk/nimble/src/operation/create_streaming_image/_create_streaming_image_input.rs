@@ -62,8 +62,8 @@ impl CreateStreamingImageInput {
 }
 
 /// A builder for [`CreateStreamingImageInput`](crate::operation::create_streaming_image::CreateStreamingImageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateStreamingImageInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

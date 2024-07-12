@@ -114,8 +114,8 @@ impl CreateElasticsearchDomainInput {
 }
 
 /// A builder for [`CreateElasticsearchDomainInput`](crate::operation::create_elasticsearch_domain::CreateElasticsearchDomainInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateElasticsearchDomainInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) elasticsearch_version: ::std::option::Option<::std::string::String>,

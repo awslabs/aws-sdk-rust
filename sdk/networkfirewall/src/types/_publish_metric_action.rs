@@ -22,8 +22,8 @@ impl PublishMetricAction {
 }
 
 /// A builder for [`PublishMetricAction`](crate::types::PublishMetricAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PublishMetricActionBuilder {
     pub(crate) dimensions: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
 }

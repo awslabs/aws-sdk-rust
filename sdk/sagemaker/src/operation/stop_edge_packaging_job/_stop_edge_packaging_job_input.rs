@@ -20,8 +20,8 @@ impl StopEdgePackagingJobInput {
 }
 
 /// A builder for [`StopEdgePackagingJobInput`](crate::operation::stop_edge_packaging_job::StopEdgePackagingJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopEdgePackagingJobInputBuilder {
     pub(crate) edge_packaging_job_name: ::std::option::Option<::std::string::String>,
 }

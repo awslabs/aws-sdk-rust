@@ -26,8 +26,8 @@ impl GetPullRequestOutput {
 }
 
 /// A builder for [`GetPullRequestOutput`](crate::operation::get_pull_request::GetPullRequestOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPullRequestOutputBuilder {
     pub(crate) pull_request: ::std::option::Option<crate::types::PullRequest>,
     _request_id: Option<String>,

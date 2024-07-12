@@ -18,8 +18,8 @@ impl DisassociateBotOutput {
 }
 
 /// A builder for [`DisassociateBotOutput`](crate::operation::disassociate_bot::DisassociateBotOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateBotOutputBuilder {
     _request_id: Option<String>,
 }

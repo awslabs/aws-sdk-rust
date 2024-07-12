@@ -27,8 +27,8 @@ impl AccessDescription {
 }
 
 /// A builder for [`AccessDescription`](crate::types::AccessDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AccessDescriptionBuilder {
     pub(crate) access_method: ::std::option::Option<crate::types::AccessMethod>,
     pub(crate) access_location: ::std::option::Option<crate::types::GeneralName>,

@@ -21,8 +21,8 @@ impl IngestedEventsDetail {
 }
 
 /// A builder for [`IngestedEventsDetail`](crate::types::IngestedEventsDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IngestedEventsDetailBuilder {
     pub(crate) ingested_events_time_window: ::std::option::Option<crate::types::IngestedEventsTimeWindow>,
 }

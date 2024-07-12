@@ -27,8 +27,8 @@ impl AsyncInferenceConfig {
 }
 
 /// A builder for [`AsyncInferenceConfig`](crate::types::AsyncInferenceConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AsyncInferenceConfigBuilder {
     pub(crate) client_config: ::std::option::Option<crate::types::AsyncInferenceClientConfig>,
     pub(crate) output_config: ::std::option::Option<crate::types::AsyncInferenceOutputConfig>,

@@ -23,8 +23,8 @@ impl ManifestProcessingRules {
 }
 
 /// A builder for [`ManifestProcessingRules`](crate::types::ManifestProcessingRules).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ManifestProcessingRulesBuilder {
     pub(crate) ad_marker_passthrough: ::std::option::Option<crate::types::AdMarkerPassthrough>,
 }

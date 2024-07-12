@@ -38,8 +38,8 @@ impl AssociateQualificationWithWorkerInput {
 }
 
 /// A builder for [`AssociateQualificationWithWorkerInput`](crate::operation::associate_qualification_with_worker::AssociateQualificationWithWorkerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateQualificationWithWorkerInputBuilder {
     pub(crate) qualification_type_id: ::std::option::Option<::std::string::String>,
     pub(crate) worker_id: ::std::option::Option<::std::string::String>,

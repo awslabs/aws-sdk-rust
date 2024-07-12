@@ -18,8 +18,8 @@ impl StopSuiteRunOutput {
 }
 
 /// A builder for [`StopSuiteRunOutput`](crate::operation::stop_suite_run::StopSuiteRunOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopSuiteRunOutputBuilder {
     _request_id: Option<String>,
 }

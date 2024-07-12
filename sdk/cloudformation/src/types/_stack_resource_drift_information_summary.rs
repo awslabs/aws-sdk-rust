@@ -49,8 +49,8 @@ impl StackResourceDriftInformationSummary {
 }
 
 /// A builder for [`StackResourceDriftInformationSummary`](crate::types::StackResourceDriftInformationSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StackResourceDriftInformationSummaryBuilder {
     pub(crate) stack_resource_drift_status: ::std::option::Option<crate::types::StackResourceDriftStatus>,
     pub(crate) last_check_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,

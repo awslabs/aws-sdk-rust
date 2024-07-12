@@ -27,8 +27,8 @@ impl NumericRangeFilterValue {
 }
 
 /// A builder for [`NumericRangeFilterValue`](crate::types::NumericRangeFilterValue).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NumericRangeFilterValueBuilder {
     pub(crate) static_value: ::std::option::Option<f64>,
     pub(crate) parameter: ::std::option::Option<::std::string::String>,

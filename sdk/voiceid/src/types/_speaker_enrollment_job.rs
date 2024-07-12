@@ -105,8 +105,8 @@ impl SpeakerEnrollmentJob {
 }
 
 /// A builder for [`SpeakerEnrollmentJob`](crate::types::SpeakerEnrollmentJob).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SpeakerEnrollmentJobBuilder {
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
     pub(crate) job_id: ::std::option::Option<::std::string::String>,

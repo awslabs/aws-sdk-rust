@@ -33,8 +33,8 @@ impl PendingMaintenanceAction {
 }
 
 /// A builder for [`PendingMaintenanceAction`](crate::types::PendingMaintenanceAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PendingMaintenanceActionBuilder {
     pub(crate) action: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl DisassociateWorkspaceApplicationInput {
 }
 
 /// A builder for [`DisassociateWorkspaceApplicationInput`](crate::operation::disassociate_workspace_application::DisassociateWorkspaceApplicationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateWorkspaceApplicationInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) application_id: ::std::option::Option<::std::string::String>,

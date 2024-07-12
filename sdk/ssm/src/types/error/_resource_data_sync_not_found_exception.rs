@@ -59,8 +59,8 @@ impl ResourceDataSyncNotFoundException {
 }
 
 /// A builder for [`ResourceDataSyncNotFoundException`](crate::types::error::ResourceDataSyncNotFoundException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResourceDataSyncNotFoundExceptionBuilder {
     pub(crate) sync_name: ::std::option::Option<::std::string::String>,
     pub(crate) sync_type: ::std::option::Option<::std::string::String>,

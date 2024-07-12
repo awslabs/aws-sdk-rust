@@ -32,8 +32,8 @@ impl DisableHttpEndpointOutput {
 }
 
 /// A builder for [`DisableHttpEndpointOutput`](crate::operation::disable_http_endpoint::DisableHttpEndpointOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableHttpEndpointOutputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) http_endpoint_enabled: ::std::option::Option<bool>,

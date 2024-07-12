@@ -33,8 +33,8 @@ impl UserPausedDetails {
 }
 
 /// A builder for [`UserPausedDetails`](crate::types::UserPausedDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UserPausedDetailsBuilder {
     pub(crate) job_expires_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) job_imminent_expiration_health_event_arn: ::std::option::Option<::std::string::String>,

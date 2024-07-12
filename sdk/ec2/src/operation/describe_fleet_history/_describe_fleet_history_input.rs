@@ -50,8 +50,8 @@ impl DescribeFleetHistoryInput {
 }
 
 /// A builder for [`DescribeFleetHistoryInput`](crate::operation::describe_fleet_history::DescribeFleetHistoryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFleetHistoryInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) event_type: ::std::option::Option<crate::types::FleetEventType>,

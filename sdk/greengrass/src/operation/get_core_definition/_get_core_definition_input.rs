@@ -20,8 +20,8 @@ impl GetCoreDefinitionInput {
 }
 
 /// A builder for [`GetCoreDefinitionInput`](crate::operation::get_core_definition::GetCoreDefinitionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCoreDefinitionInputBuilder {
     pub(crate) core_definition_id: ::std::option::Option<::std::string::String>,
 }

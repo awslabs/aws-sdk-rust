@@ -40,8 +40,8 @@ impl WriteRecordsInput {
 }
 
 /// A builder for [`WriteRecordsInput`](crate::operation::write_records::WriteRecordsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WriteRecordsInputBuilder {
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) table_name: ::std::option::Option<::std::string::String>,

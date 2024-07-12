@@ -26,8 +26,8 @@ impl GetTermForReportInput {
 }
 
 /// A builder for [`GetTermForReportInput`](crate::operation::get_term_for_report::GetTermForReportInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTermForReportInputBuilder {
     pub(crate) report_id: ::std::option::Option<::std::string::String>,
     pub(crate) report_version: ::std::option::Option<i64>,

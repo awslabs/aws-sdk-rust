@@ -34,8 +34,8 @@ impl DescribeClientAuthenticationSettingsOutput {
 }
 
 /// A builder for [`DescribeClientAuthenticationSettingsOutput`](crate::operation::describe_client_authentication_settings::DescribeClientAuthenticationSettingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeClientAuthenticationSettingsOutputBuilder {
     pub(crate) client_authentication_settings_info: ::std::option::Option<::std::vec::Vec<crate::types::ClientAuthenticationSettingInfo>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

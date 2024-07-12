@@ -67,8 +67,8 @@ impl SidewalkDevice {
 }
 
 /// A builder for [`SidewalkDevice`](crate::types::SidewalkDevice).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SidewalkDeviceBuilder {
     pub(crate) amazon_id: ::std::option::Option<::std::string::String>,
     pub(crate) sidewalk_id: ::std::option::Option<::std::string::String>,

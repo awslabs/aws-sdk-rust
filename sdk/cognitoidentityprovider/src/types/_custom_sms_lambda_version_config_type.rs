@@ -30,8 +30,8 @@ impl CustomSmsLambdaVersionConfigType {
 }
 
 /// A builder for [`CustomSmsLambdaVersionConfigType`](crate::types::CustomSmsLambdaVersionConfigType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CustomSmsLambdaVersionConfigTypeBuilder {
     pub(crate) lambda_version: ::std::option::Option<crate::types::CustomSmsSenderLambdaVersionType>,
     pub(crate) lambda_arn: ::std::option::Option<::std::string::String>,

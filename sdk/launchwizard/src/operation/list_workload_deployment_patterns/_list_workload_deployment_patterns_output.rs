@@ -34,8 +34,8 @@ impl ListWorkloadDeploymentPatternsOutput {
 }
 
 /// A builder for [`ListWorkloadDeploymentPatternsOutput`](crate::operation::list_workload_deployment_patterns::ListWorkloadDeploymentPatternsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListWorkloadDeploymentPatternsOutputBuilder {
     pub(crate) workload_deployment_patterns: ::std::option::Option<::std::vec::Vec<crate::types::WorkloadDeploymentPatternDataSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -21,8 +21,8 @@ impl TableFieldImageConfiguration {
 }
 
 /// A builder for [`TableFieldImageConfiguration`](crate::types::TableFieldImageConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TableFieldImageConfigurationBuilder {
     pub(crate) sizing_options: ::std::option::Option<crate::types::TableCellImageSizingConfiguration>,
 }

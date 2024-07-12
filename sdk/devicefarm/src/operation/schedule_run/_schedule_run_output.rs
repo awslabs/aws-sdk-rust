@@ -27,8 +27,8 @@ impl ScheduleRunOutput {
 }
 
 /// A builder for [`ScheduleRunOutput`](crate::operation::schedule_run::ScheduleRunOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScheduleRunOutputBuilder {
     pub(crate) run: ::std::option::Option<crate::types::Run>,
     _request_id: Option<String>,

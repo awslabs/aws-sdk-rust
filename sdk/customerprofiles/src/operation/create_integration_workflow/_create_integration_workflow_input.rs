@@ -50,8 +50,8 @@ impl CreateIntegrationWorkflowInput {
 }
 
 /// A builder for [`CreateIntegrationWorkflowInput`](crate::operation::create_integration_workflow::CreateIntegrationWorkflowInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateIntegrationWorkflowInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) workflow_type: ::std::option::Option<crate::types::WorkflowType>,

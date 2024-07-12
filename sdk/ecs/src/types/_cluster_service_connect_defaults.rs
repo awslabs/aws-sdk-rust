@@ -22,8 +22,8 @@ impl ClusterServiceConnectDefaults {
 }
 
 /// A builder for [`ClusterServiceConnectDefaults`](crate::types::ClusterServiceConnectDefaults).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ClusterServiceConnectDefaultsBuilder {
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
 }

@@ -26,8 +26,8 @@ impl AssociateInstanceStorageConfigOutput {
 }
 
 /// A builder for [`AssociateInstanceStorageConfigOutput`](crate::operation::associate_instance_storage_config::AssociateInstanceStorageConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateInstanceStorageConfigOutputBuilder {
     pub(crate) association_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

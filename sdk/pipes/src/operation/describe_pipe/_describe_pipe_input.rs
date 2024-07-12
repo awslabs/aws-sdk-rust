@@ -20,8 +20,8 @@ impl DescribePipeInput {
 }
 
 /// A builder for [`DescribePipeInput`](crate::operation::describe_pipe::DescribePipeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribePipeInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

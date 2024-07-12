@@ -50,8 +50,8 @@ impl NotifyMigrationTaskStateInput {
 }
 
 /// A builder for [`NotifyMigrationTaskStateInput`](crate::operation::notify_migration_task_state::NotifyMigrationTaskStateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NotifyMigrationTaskStateInputBuilder {
     pub(crate) progress_update_stream: ::std::option::Option<::std::string::String>,
     pub(crate) migration_task_name: ::std::option::Option<::std::string::String>,

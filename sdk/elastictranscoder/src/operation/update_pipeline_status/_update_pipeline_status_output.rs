@@ -27,8 +27,8 @@ impl UpdatePipelineStatusOutput {
 }
 
 /// A builder for [`UpdatePipelineStatusOutput`](crate::operation::update_pipeline_status::UpdatePipelineStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePipelineStatusOutputBuilder {
     pub(crate) pipeline: ::std::option::Option<crate::types::Pipeline>,
     _request_id: Option<String>,

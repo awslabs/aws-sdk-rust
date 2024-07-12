@@ -21,8 +21,8 @@ impl PrefixLevel {
 }
 
 /// A builder for [`PrefixLevel`](crate::types::PrefixLevel).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PrefixLevelBuilder {
     pub(crate) storage_metrics: ::std::option::Option<crate::types::PrefixLevelStorageMetrics>,
 }

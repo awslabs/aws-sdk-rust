@@ -66,8 +66,8 @@ impl DescribeHostReservationsInput {
 }
 
 /// A builder for [`DescribeHostReservationsInput`](crate::operation::describe_host_reservations::DescribeHostReservationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeHostReservationsInputBuilder {
     pub(crate) filter: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) host_reservation_id_set: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

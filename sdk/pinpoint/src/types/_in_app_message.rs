@@ -35,8 +35,8 @@ impl InAppMessage {
 }
 
 /// A builder for [`InAppMessage`](crate::types::InAppMessage).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InAppMessageBuilder {
     pub(crate) content: ::std::option::Option<::std::vec::Vec<crate::types::InAppMessageContent>>,
     pub(crate) custom_config: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

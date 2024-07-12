@@ -27,8 +27,8 @@ impl UnlockDelay {
 }
 
 /// A builder for [`UnlockDelay`](crate::types::UnlockDelay).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UnlockDelayBuilder {
     pub(crate) unlock_delay_value: ::std::option::Option<i32>,
     pub(crate) unlock_delay_unit: ::std::option::Option<crate::types::UnlockDelayUnit>,

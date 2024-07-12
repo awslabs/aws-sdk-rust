@@ -22,8 +22,8 @@ impl RedshiftCredentialConfiguration {
 }
 
 /// A builder for [`RedshiftCredentialConfiguration`](crate::types::RedshiftCredentialConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RedshiftCredentialConfigurationBuilder {
     pub(crate) secret_manager_arn: ::std::option::Option<::std::string::String>,
 }

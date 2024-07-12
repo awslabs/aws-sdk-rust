@@ -26,8 +26,8 @@ impl AssociateLexBotInput {
 }
 
 /// A builder for [`AssociateLexBotInput`](crate::operation::associate_lex_bot::AssociateLexBotInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateLexBotInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) lex_bot: ::std::option::Option<crate::types::LexBot>,

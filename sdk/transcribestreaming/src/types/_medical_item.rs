@@ -53,8 +53,8 @@ impl MedicalItem {
 }
 
 /// A builder for [`MedicalItem`](crate::types::MedicalItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MedicalItemBuilder {
     pub(crate) start_time: ::std::option::Option<f64>,
     pub(crate) end_time: ::std::option::Option<f64>,

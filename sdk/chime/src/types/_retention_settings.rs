@@ -27,8 +27,8 @@ impl RetentionSettings {
 }
 
 /// A builder for [`RetentionSettings`](crate::types::RetentionSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RetentionSettingsBuilder {
     pub(crate) room_retention_settings: ::std::option::Option<crate::types::RoomRetentionSettings>,
     pub(crate) conversation_retention_settings: ::std::option::Option<crate::types::ConversationRetentionSettings>,

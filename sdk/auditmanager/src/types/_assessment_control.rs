@@ -88,8 +88,8 @@ impl AssessmentControl {
 }
 
 /// A builder for [`AssessmentControl`](crate::types::AssessmentControl).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AssessmentControlBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

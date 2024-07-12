@@ -19,8 +19,8 @@ impl ReorderReceiptRuleSetOutput {
 }
 
 /// A builder for [`ReorderReceiptRuleSetOutput`](crate::operation::reorder_receipt_rule_set::ReorderReceiptRuleSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReorderReceiptRuleSetOutputBuilder {
     _request_id: Option<String>,
 }

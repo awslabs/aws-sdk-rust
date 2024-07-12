@@ -33,8 +33,8 @@ impl ReadSetFiles {
 }
 
 /// A builder for [`ReadSetFiles`](crate::types::ReadSetFiles).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReadSetFilesBuilder {
     pub(crate) source1: ::std::option::Option<crate::types::FileInformation>,
     pub(crate) source2: ::std::option::Option<crate::types::FileInformation>,

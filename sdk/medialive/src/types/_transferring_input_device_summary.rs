@@ -39,8 +39,8 @@ impl TransferringInputDeviceSummary {
 }
 
 /// A builder for [`TransferringInputDeviceSummary`](crate::types::TransferringInputDeviceSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TransferringInputDeviceSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

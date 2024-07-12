@@ -18,8 +18,8 @@ impl CreatePlacementOutput {
 }
 
 /// A builder for [`CreatePlacementOutput`](crate::operation::create_placement::CreatePlacementOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePlacementOutputBuilder {
     _request_id: Option<String>,
 }

@@ -33,8 +33,8 @@ impl GetAnomalyMonitorsOutput {
 }
 
 /// A builder for [`GetAnomalyMonitorsOutput`](crate::operation::get_anomaly_monitors::GetAnomalyMonitorsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAnomalyMonitorsOutputBuilder {
     pub(crate) anomaly_monitors: ::std::option::Option<::std::vec::Vec<crate::types::AnomalyMonitor>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,

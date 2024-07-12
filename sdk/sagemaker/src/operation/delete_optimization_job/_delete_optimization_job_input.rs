@@ -20,8 +20,8 @@ impl DeleteOptimizationJobInput {
 }
 
 /// A builder for [`DeleteOptimizationJobInput`](crate::operation::delete_optimization_job::DeleteOptimizationJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteOptimizationJobInputBuilder {
     pub(crate) optimization_job_name: ::std::option::Option<::std::string::String>,
 }

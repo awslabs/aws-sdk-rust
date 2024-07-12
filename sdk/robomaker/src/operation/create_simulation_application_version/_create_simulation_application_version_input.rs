@@ -40,8 +40,8 @@ impl CreateSimulationApplicationVersionInput {
 }
 
 /// A builder for [`CreateSimulationApplicationVersionInput`](crate::operation::create_simulation_application_version::CreateSimulationApplicationVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSimulationApplicationVersionInputBuilder {
     pub(crate) application: ::std::option::Option<::std::string::String>,
     pub(crate) current_revision_id: ::std::option::Option<::std::string::String>,

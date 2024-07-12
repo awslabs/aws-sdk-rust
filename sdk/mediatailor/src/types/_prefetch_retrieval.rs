@@ -35,8 +35,8 @@ impl PrefetchRetrieval {
 }
 
 /// A builder for [`PrefetchRetrieval`](crate::types::PrefetchRetrieval).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PrefetchRetrievalBuilder {
     pub(crate) dynamic_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,

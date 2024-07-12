@@ -32,8 +32,8 @@ impl DisassociateAnalyticsDataSetInput {
 }
 
 /// A builder for [`DisassociateAnalyticsDataSetInput`](crate::operation::disassociate_analytics_data_set::DisassociateAnalyticsDataSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateAnalyticsDataSetInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,

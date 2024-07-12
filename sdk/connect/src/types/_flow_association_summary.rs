@@ -33,8 +33,8 @@ impl FlowAssociationSummary {
 }
 
 /// A builder for [`FlowAssociationSummary`](crate::types::FlowAssociationSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FlowAssociationSummaryBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) flow_id: ::std::option::Option<::std::string::String>,

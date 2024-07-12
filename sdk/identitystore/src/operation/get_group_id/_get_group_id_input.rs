@@ -26,8 +26,8 @@ impl GetGroupIdInput {
 }
 
 /// A builder for [`GetGroupIdInput`](crate::operation::get_group_id::GetGroupIdInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetGroupIdInputBuilder {
     pub(crate) identity_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) alternate_identifier: ::std::option::Option<crate::types::AlternateIdentifier>,

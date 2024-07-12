@@ -74,8 +74,8 @@ impl GetAttributeGroupOutput {
 }
 
 /// A builder for [`GetAttributeGroupOutput`](crate::operation::get_attribute_group::GetAttributeGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAttributeGroupOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

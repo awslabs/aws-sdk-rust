@@ -27,8 +27,8 @@ impl PlatformCommand {
 }
 
 /// A builder for [`PlatformCommand`](crate::types::PlatformCommand).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PlatformCommandBuilder {
     pub(crate) linux: ::std::option::Option<::std::string::String>,
     pub(crate) windows: ::std::option::Option<::std::string::String>,

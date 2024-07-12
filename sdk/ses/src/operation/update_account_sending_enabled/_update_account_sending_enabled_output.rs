@@ -18,8 +18,8 @@ impl UpdateAccountSendingEnabledOutput {
 }
 
 /// A builder for [`UpdateAccountSendingEnabledOutput`](crate::operation::update_account_sending_enabled::UpdateAccountSendingEnabledOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAccountSendingEnabledOutputBuilder {
     _request_id: Option<String>,
 }

@@ -19,8 +19,8 @@ impl PutDeliverabilityDashboardOptionOutput {
 }
 
 /// A builder for [`PutDeliverabilityDashboardOptionOutput`](crate::operation::put_deliverability_dashboard_option::PutDeliverabilityDashboardOptionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutDeliverabilityDashboardOptionOutputBuilder {
     _request_id: Option<String>,
 }

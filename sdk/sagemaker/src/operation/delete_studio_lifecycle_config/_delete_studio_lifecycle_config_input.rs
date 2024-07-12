@@ -20,8 +20,8 @@ impl DeleteStudioLifecycleConfigInput {
 }
 
 /// A builder for [`DeleteStudioLifecycleConfigInput`](crate::operation::delete_studio_lifecycle_config::DeleteStudioLifecycleConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteStudioLifecycleConfigInputBuilder {
     pub(crate) studio_lifecycle_config_name: ::std::option::Option<::std::string::String>,
 }

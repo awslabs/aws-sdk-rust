@@ -18,8 +18,8 @@ impl AssociateMulticastGroupWithFuotaTaskOutput {
 }
 
 /// A builder for [`AssociateMulticastGroupWithFuotaTaskOutput`](crate::operation::associate_multicast_group_with_fuota_task::AssociateMulticastGroupWithFuotaTaskOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateMulticastGroupWithFuotaTaskOutputBuilder {
     _request_id: Option<String>,
 }

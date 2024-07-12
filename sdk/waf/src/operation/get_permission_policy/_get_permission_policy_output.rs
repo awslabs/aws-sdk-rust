@@ -26,8 +26,8 @@ impl GetPermissionPolicyOutput {
 }
 
 /// A builder for [`GetPermissionPolicyOutput`](crate::operation::get_permission_policy::GetPermissionPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPermissionPolicyOutputBuilder {
     pub(crate) policy: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

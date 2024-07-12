@@ -21,8 +21,8 @@ impl DataSource {
 }
 
 /// A builder for [`DataSource`](crate::types::DataSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataSourceBuilder {
     pub(crate) glue_table: ::std::option::Option<crate::types::GlueTable>,
 }

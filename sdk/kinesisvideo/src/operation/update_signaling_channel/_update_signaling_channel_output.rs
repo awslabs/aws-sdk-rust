@@ -18,8 +18,8 @@ impl UpdateSignalingChannelOutput {
 }
 
 /// A builder for [`UpdateSignalingChannelOutput`](crate::operation::update_signaling_channel::UpdateSignalingChannelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSignalingChannelOutputBuilder {
     _request_id: Option<String>,
 }

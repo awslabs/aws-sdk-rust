@@ -33,8 +33,8 @@ impl RepositoryScanningConfigurationFailure {
 }
 
 /// A builder for [`RepositoryScanningConfigurationFailure`](crate::types::RepositoryScanningConfigurationFailure).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RepositoryScanningConfigurationFailureBuilder {
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
     pub(crate) failure_code: ::std::option::Option<crate::types::ScanningConfigurationFailureCode>,

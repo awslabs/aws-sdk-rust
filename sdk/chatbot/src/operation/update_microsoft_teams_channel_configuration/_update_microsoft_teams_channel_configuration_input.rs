@@ -67,8 +67,8 @@ impl UpdateMicrosoftTeamsChannelConfigurationInput {
 }
 
 /// A builder for [`UpdateMicrosoftTeamsChannelConfigurationInput`](crate::operation::update_microsoft_teams_channel_configuration::UpdateMicrosoftTeamsChannelConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateMicrosoftTeamsChannelConfigurationInputBuilder {
     pub(crate) chat_configuration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) channel_id: ::std::option::Option<::std::string::String>,

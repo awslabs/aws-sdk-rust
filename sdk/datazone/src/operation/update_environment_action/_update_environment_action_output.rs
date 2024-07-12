@@ -60,8 +60,8 @@ impl UpdateEnvironmentActionOutput {
 }
 
 /// A builder for [`UpdateEnvironmentActionOutput`](crate::operation::update_environment_action::UpdateEnvironmentActionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateEnvironmentActionOutputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,

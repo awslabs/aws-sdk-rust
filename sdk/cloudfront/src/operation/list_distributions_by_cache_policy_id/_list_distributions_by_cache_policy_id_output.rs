@@ -26,8 +26,8 @@ impl ListDistributionsByCachePolicyIdOutput {
 }
 
 /// A builder for [`ListDistributionsByCachePolicyIdOutput`](crate::operation::list_distributions_by_cache_policy_id::ListDistributionsByCachePolicyIdOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDistributionsByCachePolicyIdOutputBuilder {
     pub(crate) distribution_id_list: ::std::option::Option<crate::types::DistributionIdList>,
     _request_id: Option<String>,

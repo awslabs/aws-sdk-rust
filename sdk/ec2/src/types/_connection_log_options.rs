@@ -33,8 +33,8 @@ impl ConnectionLogOptions {
 }
 
 /// A builder for [`ConnectionLogOptions`](crate::types::ConnectionLogOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConnectionLogOptionsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) cloudwatch_log_group: ::std::option::Option<::std::string::String>,

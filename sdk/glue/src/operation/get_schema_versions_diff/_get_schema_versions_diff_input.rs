@@ -50,8 +50,8 @@ impl GetSchemaVersionsDiffInput {
 }
 
 /// A builder for [`GetSchemaVersionsDiffInput`](crate::operation::get_schema_versions_diff::GetSchemaVersionsDiffInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSchemaVersionsDiffInputBuilder {
     pub(crate) schema_id: ::std::option::Option<crate::types::SchemaId>,
     pub(crate) first_schema_version_number: ::std::option::Option<crate::types::SchemaVersionNumber>,

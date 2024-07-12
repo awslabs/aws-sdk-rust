@@ -44,8 +44,8 @@ impl GetBackendStorageOutput {
 }
 
 /// A builder for [`GetBackendStorageOutput`](crate::operation::get_backend_storage::GetBackendStorageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBackendStorageOutputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) backend_environment_name: ::std::option::Option<::std::string::String>,

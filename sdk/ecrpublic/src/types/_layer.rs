@@ -39,8 +39,8 @@ impl Layer {
 }
 
 /// A builder for [`Layer`](crate::types::Layer).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LayerBuilder {
     pub(crate) layer_digest: ::std::option::Option<::std::string::String>,
     pub(crate) layer_availability: ::std::option::Option<crate::types::LayerAvailability>,

@@ -34,8 +34,8 @@ impl ListPhoneNumbersOutput {
 }
 
 /// A builder for [`ListPhoneNumbersOutput`](crate::operation::list_phone_numbers::ListPhoneNumbersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPhoneNumbersOutputBuilder {
     pub(crate) phone_numbers: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumber>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

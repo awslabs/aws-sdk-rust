@@ -37,8 +37,8 @@ impl DescribeCacheSubnetGroupsInput {
 }
 
 /// A builder for [`DescribeCacheSubnetGroupsInput`](crate::operation::describe_cache_subnet_groups::DescribeCacheSubnetGroupsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCacheSubnetGroupsInputBuilder {
     pub(crate) cache_subnet_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,

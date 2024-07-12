@@ -143,8 +143,8 @@ impl AwsSageMakerNotebookInstanceDetails {
 }
 
 /// A builder for [`AwsSageMakerNotebookInstanceDetails`](crate::types::AwsSageMakerNotebookInstanceDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsSageMakerNotebookInstanceDetailsBuilder {
     pub(crate) accelerator_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) additional_code_repositories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

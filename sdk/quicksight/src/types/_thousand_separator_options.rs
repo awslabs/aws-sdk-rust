@@ -27,8 +27,8 @@ impl ThousandSeparatorOptions {
 }
 
 /// A builder for [`ThousandSeparatorOptions`](crate::types::ThousandSeparatorOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ThousandSeparatorOptionsBuilder {
     pub(crate) symbol: ::std::option::Option<crate::types::NumericSeparatorSymbol>,
     pub(crate) visibility: ::std::option::Option<crate::types::Visibility>,

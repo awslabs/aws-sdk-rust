@@ -83,8 +83,8 @@ impl ClassifyDocumentOutput {
 }
 
 /// A builder for [`ClassifyDocumentOutput`](crate::operation::classify_document::ClassifyDocumentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ClassifyDocumentOutputBuilder {
     pub(crate) classes: ::std::option::Option<::std::vec::Vec<crate::types::DocumentClass>>,
     pub(crate) labels: ::std::option::Option<::std::vec::Vec<crate::types::DocumentLabel>>,

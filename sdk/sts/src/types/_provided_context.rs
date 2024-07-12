@@ -27,8 +27,8 @@ impl ProvidedContext {
 }
 
 /// A builder for [`ProvidedContext`](crate::types::ProvidedContext).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProvidedContextBuilder {
     pub(crate) provider_arn: ::std::option::Option<::std::string::String>,
     pub(crate) context_assertion: ::std::option::Option<::std::string::String>,

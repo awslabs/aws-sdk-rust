@@ -37,8 +37,8 @@ impl ChoiceImprovementPlan {
 }
 
 /// A builder for [`ChoiceImprovementPlan`](crate::types::ChoiceImprovementPlan).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ChoiceImprovementPlanBuilder {
     pub(crate) choice_id: ::std::option::Option<::std::string::String>,
     pub(crate) display_text: ::std::option::Option<::std::string::String>,

@@ -330,8 +330,8 @@ impl StartBuildInput {
 }
 
 /// A builder for [`StartBuildInput`](crate::operation::start_build::StartBuildInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartBuildInputBuilder {
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
     pub(crate) secondary_sources_override: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSource>>,

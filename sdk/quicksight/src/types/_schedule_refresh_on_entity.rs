@@ -27,8 +27,8 @@ impl ScheduleRefreshOnEntity {
 }
 
 /// A builder for [`ScheduleRefreshOnEntity`](crate::types::ScheduleRefreshOnEntity).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScheduleRefreshOnEntityBuilder {
     pub(crate) day_of_week: ::std::option::Option<crate::types::DayOfWeek>,
     pub(crate) day_of_month: ::std::option::Option<::std::string::String>,

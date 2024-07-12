@@ -26,8 +26,8 @@ impl GetDeploymentTargetOutput {
 }
 
 /// A builder for [`GetDeploymentTargetOutput`](crate::operation::get_deployment_target::GetDeploymentTargetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDeploymentTargetOutputBuilder {
     pub(crate) deployment_target: ::std::option::Option<crate::types::DeploymentTarget>,
     _request_id: Option<String>,

@@ -63,8 +63,8 @@ impl EndpointDemographic {
 }
 
 /// A builder for [`EndpointDemographic`](crate::types::EndpointDemographic).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EndpointDemographicBuilder {
     pub(crate) app_version: ::std::option::Option<::std::string::String>,
     pub(crate) locale: ::std::option::Option<::std::string::String>,

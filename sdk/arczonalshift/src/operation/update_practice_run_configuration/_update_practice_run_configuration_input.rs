@@ -60,8 +60,8 @@ impl UpdatePracticeRunConfigurationInput {
 }
 
 /// A builder for [`UpdatePracticeRunConfigurationInput`](crate::operation::update_practice_run_configuration::UpdatePracticeRunConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePracticeRunConfigurationInputBuilder {
     pub(crate) resource_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) blocked_windows: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

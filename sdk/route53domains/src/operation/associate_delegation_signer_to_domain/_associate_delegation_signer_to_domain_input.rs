@@ -26,8 +26,8 @@ impl AssociateDelegationSignerToDomainInput {
 }
 
 /// A builder for [`AssociateDelegationSignerToDomainInput`](crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateDelegationSignerToDomainInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) signing_attributes: ::std::option::Option<crate::types::DnssecSigningAttributes>,

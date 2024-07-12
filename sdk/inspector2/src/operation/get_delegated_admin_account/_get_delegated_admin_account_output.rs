@@ -26,8 +26,8 @@ impl GetDelegatedAdminAccountOutput {
 }
 
 /// A builder for [`GetDelegatedAdminAccountOutput`](crate::operation::get_delegated_admin_account::GetDelegatedAdminAccountOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDelegatedAdminAccountOutputBuilder {
     pub(crate) delegated_admin: ::std::option::Option<crate::types::DelegatedAdmin>,
     _request_id: Option<String>,

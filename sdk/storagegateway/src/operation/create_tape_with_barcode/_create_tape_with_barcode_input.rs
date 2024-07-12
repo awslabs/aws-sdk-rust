@@ -79,8 +79,8 @@ impl CreateTapeWithBarcodeInput {
 }
 
 /// A builder for [`CreateTapeWithBarcodeInput`](crate::operation::create_tape_with_barcode::CreateTapeWithBarcodeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateTapeWithBarcodeInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tape_size_in_bytes: ::std::option::Option<i64>,

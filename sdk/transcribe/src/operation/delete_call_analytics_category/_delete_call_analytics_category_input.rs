@@ -20,8 +20,8 @@ impl DeleteCallAnalyticsCategoryInput {
 }
 
 /// A builder for [`DeleteCallAnalyticsCategoryInput`](crate::operation::delete_call_analytics_category::DeleteCallAnalyticsCategoryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCallAnalyticsCategoryInputBuilder {
     pub(crate) category_name: ::std::option::Option<::std::string::String>,
 }

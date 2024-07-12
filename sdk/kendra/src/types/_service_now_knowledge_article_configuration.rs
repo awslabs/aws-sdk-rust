@@ -66,8 +66,8 @@ impl ServiceNowKnowledgeArticleConfiguration {
 }
 
 /// A builder for [`ServiceNowKnowledgeArticleConfiguration`](crate::types::ServiceNowKnowledgeArticleConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServiceNowKnowledgeArticleConfigurationBuilder {
     pub(crate) crawl_attachments: ::std::option::Option<bool>,
     pub(crate) include_attachment_file_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

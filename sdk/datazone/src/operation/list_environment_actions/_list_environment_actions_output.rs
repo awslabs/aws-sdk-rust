@@ -34,8 +34,8 @@ impl ListEnvironmentActionsOutput {
 }
 
 /// A builder for [`ListEnvironmentActionsOutput`](crate::operation::list_environment_actions::ListEnvironmentActionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEnvironmentActionsOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentActionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

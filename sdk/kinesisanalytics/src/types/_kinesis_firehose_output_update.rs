@@ -27,8 +27,8 @@ impl KinesisFirehoseOutputUpdate {
 }
 
 /// A builder for [`KinesisFirehoseOutputUpdate`](crate::types::KinesisFirehoseOutputUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KinesisFirehoseOutputUpdateBuilder {
     pub(crate) resource_arn_update: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn_update: ::std::option::Option<::std::string::String>,

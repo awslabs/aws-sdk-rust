@@ -67,8 +67,8 @@ impl GetObjectAttributesParts {
 }
 
 /// A builder for [`GetObjectAttributesParts`](crate::types::GetObjectAttributesParts).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetObjectAttributesPartsBuilder {
     pub(crate) total_parts_count: ::std::option::Option<i32>,
     pub(crate) part_number_marker: ::std::option::Option<::std::string::String>,

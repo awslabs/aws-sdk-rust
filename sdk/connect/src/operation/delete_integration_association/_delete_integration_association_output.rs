@@ -18,8 +18,8 @@ impl DeleteIntegrationAssociationOutput {
 }
 
 /// A builder for [`DeleteIntegrationAssociationOutput`](crate::operation::delete_integration_association::DeleteIntegrationAssociationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteIntegrationAssociationOutputBuilder {
     _request_id: Option<String>,
 }

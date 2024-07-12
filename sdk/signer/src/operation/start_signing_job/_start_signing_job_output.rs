@@ -32,8 +32,8 @@ impl StartSigningJobOutput {
 }
 
 /// A builder for [`StartSigningJobOutput`](crate::operation::start_signing_job::StartSigningJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartSigningJobOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_owner: ::std::option::Option<::std::string::String>,

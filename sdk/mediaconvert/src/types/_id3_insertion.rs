@@ -27,8 +27,8 @@ impl Id3Insertion {
 }
 
 /// A builder for [`Id3Insertion`](crate::types::Id3Insertion).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Id3InsertionBuilder {
     pub(crate) id3: ::std::option::Option<::std::string::String>,
     pub(crate) timecode: ::std::option::Option<::std::string::String>,

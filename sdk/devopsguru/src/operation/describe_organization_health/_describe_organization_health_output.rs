@@ -44,8 +44,8 @@ impl DescribeOrganizationHealthOutput {
 }
 
 /// A builder for [`DescribeOrganizationHealthOutput`](crate::operation::describe_organization_health::DescribeOrganizationHealthOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeOrganizationHealthOutputBuilder {
     pub(crate) open_reactive_insights: ::std::option::Option<i32>,
     pub(crate) open_proactive_insights: ::std::option::Option<i32>,

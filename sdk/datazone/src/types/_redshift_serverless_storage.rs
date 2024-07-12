@@ -22,8 +22,8 @@ impl RedshiftServerlessStorage {
 }
 
 /// A builder for [`RedshiftServerlessStorage`](crate::types::RedshiftServerlessStorage).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RedshiftServerlessStorageBuilder {
     pub(crate) workgroup_name: ::std::option::Option<::std::string::String>,
 }

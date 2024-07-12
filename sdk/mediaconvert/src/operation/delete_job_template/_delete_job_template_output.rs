@@ -18,8 +18,8 @@ impl DeleteJobTemplateOutput {
 }
 
 /// A builder for [`DeleteJobTemplateOutput`](crate::operation::delete_job_template::DeleteJobTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteJobTemplateOutputBuilder {
     _request_id: Option<String>,
 }

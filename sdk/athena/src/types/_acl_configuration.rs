@@ -21,8 +21,8 @@ impl AclConfiguration {
 }
 
 /// A builder for [`AclConfiguration`](crate::types::AclConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AclConfigurationBuilder {
     pub(crate) s3_acl_option: ::std::option::Option<crate::types::S3AclOption>,
 }

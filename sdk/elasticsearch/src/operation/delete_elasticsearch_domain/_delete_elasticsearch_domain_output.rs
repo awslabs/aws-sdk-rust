@@ -27,8 +27,8 @@ impl DeleteElasticsearchDomainOutput {
 }
 
 /// A builder for [`DeleteElasticsearchDomainOutput`](crate::operation::delete_elasticsearch_domain::DeleteElasticsearchDomainOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteElasticsearchDomainOutputBuilder {
     pub(crate) domain_status: ::std::option::Option<crate::types::ElasticsearchDomainStatus>,
     _request_id: Option<String>,

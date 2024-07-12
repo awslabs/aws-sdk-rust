@@ -383,8 +383,8 @@ impl WriteGetObjectResponseInput {
 }
 
 /// A builder for [`WriteGetObjectResponseInput`](crate::operation::write_get_object_response::WriteGetObjectResponseInput).
-#[non_exhaustive]
 #[derive(::std::default::Default)]
+#[non_exhaustive]
 pub struct WriteGetObjectResponseInputBuilder {
     pub(crate) request_route: ::std::option::Option<::std::string::String>,
     pub(crate) request_token: ::std::option::Option<::std::string::String>,

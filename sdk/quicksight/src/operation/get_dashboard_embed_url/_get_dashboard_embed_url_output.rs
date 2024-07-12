@@ -49,8 +49,8 @@ impl GetDashboardEmbedUrlOutput {
 }
 
 /// A builder for [`GetDashboardEmbedUrlOutput`](crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetDashboardEmbedUrlOutputBuilder {
     pub(crate) embed_url: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<i32>,

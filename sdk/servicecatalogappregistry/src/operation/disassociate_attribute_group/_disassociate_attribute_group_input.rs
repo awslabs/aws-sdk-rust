@@ -26,8 +26,8 @@ impl DisassociateAttributeGroupInput {
 }
 
 /// A builder for [`DisassociateAttributeGroupInput`](crate::operation::disassociate_attribute_group::DisassociateAttributeGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateAttributeGroupInputBuilder {
     pub(crate) application: ::std::option::Option<::std::string::String>,
     pub(crate) attribute_group: ::std::option::Option<::std::string::String>,

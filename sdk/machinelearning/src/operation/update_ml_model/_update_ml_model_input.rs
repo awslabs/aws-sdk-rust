@@ -34,8 +34,8 @@ impl UpdateMlModelInput {
 }
 
 /// A builder for [`UpdateMlModelInput`](crate::operation::update_ml_model::UpdateMlModelInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateMlModelInputBuilder {
     pub(crate) ml_model_id: ::std::option::Option<::std::string::String>,
     pub(crate) ml_model_name: ::std::option::Option<::std::string::String>,

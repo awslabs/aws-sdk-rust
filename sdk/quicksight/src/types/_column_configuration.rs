@@ -39,8 +39,8 @@ impl ColumnConfiguration {
 }
 
 /// A builder for [`ColumnConfiguration`](crate::types::ColumnConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ColumnConfigurationBuilder {
     pub(crate) column: ::std::option::Option<crate::types::ColumnIdentifier>,
     pub(crate) format_configuration: ::std::option::Option<crate::types::FormatConfiguration>,

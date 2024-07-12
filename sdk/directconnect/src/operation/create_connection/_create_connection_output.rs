@@ -201,8 +201,8 @@ impl CreateConnectionOutput {
 }
 
 /// A builder for [`CreateConnectionOutput`](crate::operation::create_connection::CreateConnectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateConnectionOutputBuilder {
     pub(crate) owner_account: ::std::option::Option<::std::string::String>,
     pub(crate) connection_id: ::std::option::Option<::std::string::String>,

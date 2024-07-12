@@ -27,8 +27,8 @@ impl DescribeRefreshSchemasStatusOutput {
 }
 
 /// A builder for [`DescribeRefreshSchemasStatusOutput`](crate::operation::describe_refresh_schemas_status::DescribeRefreshSchemasStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRefreshSchemasStatusOutputBuilder {
     pub(crate) refresh_schemas_status: ::std::option::Option<crate::types::RefreshSchemasStatus>,
     _request_id: Option<String>,

@@ -139,8 +139,8 @@ impl XssMatchTuple {
 }
 
 /// A builder for [`XssMatchTuple`](crate::types::XssMatchTuple).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct XssMatchTupleBuilder {
     pub(crate) field_to_match: ::std::option::Option<crate::types::FieldToMatch>,
     pub(crate) text_transformation: ::std::option::Option<crate::types::TextTransformation>,

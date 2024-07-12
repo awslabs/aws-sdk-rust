@@ -12,8 +12,8 @@ impl BatchDetachTypedLinkResponse {
 }
 
 /// A builder for [`BatchDetachTypedLinkResponse`](crate::types::BatchDetachTypedLinkResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDetachTypedLinkResponseBuilder {}
 impl BatchDetachTypedLinkResponseBuilder {
     /// Consumes the builder and constructs a [`BatchDetachTypedLinkResponse`](crate::types::BatchDetachTypedLinkResponse).

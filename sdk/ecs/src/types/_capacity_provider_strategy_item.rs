@@ -43,8 +43,8 @@ impl CapacityProviderStrategyItem {
 }
 
 /// A builder for [`CapacityProviderStrategyItem`](crate::types::CapacityProviderStrategyItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CapacityProviderStrategyItemBuilder {
     pub(crate) capacity_provider: ::std::option::Option<::std::string::String>,
     pub(crate) weight: ::std::option::Option<i32>,

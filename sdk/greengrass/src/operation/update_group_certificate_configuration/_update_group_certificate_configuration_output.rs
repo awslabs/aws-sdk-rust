@@ -38,8 +38,8 @@ impl UpdateGroupCertificateConfigurationOutput {
 }
 
 /// A builder for [`UpdateGroupCertificateConfigurationOutput`](crate::operation::update_group_certificate_configuration::UpdateGroupCertificateConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateGroupCertificateConfigurationOutputBuilder {
     pub(crate) certificate_authority_expiry_in_milliseconds: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_expiry_in_milliseconds: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl StartingEventBatchCondition {
 }
 
 /// A builder for [`StartingEventBatchCondition`](crate::types::StartingEventBatchCondition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartingEventBatchConditionBuilder {
     pub(crate) batch_size: ::std::option::Option<i32>,
     pub(crate) batch_window: ::std::option::Option<i32>,

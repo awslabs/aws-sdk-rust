@@ -111,8 +111,8 @@ impl RadarChartConfiguration {
 }
 
 /// A builder for [`RadarChartConfiguration`](crate::types::RadarChartConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RadarChartConfigurationBuilder {
     pub(crate) field_wells: ::std::option::Option<crate::types::RadarChartFieldWells>,
     pub(crate) sort_configuration: ::std::option::Option<crate::types::RadarChartSortConfiguration>,

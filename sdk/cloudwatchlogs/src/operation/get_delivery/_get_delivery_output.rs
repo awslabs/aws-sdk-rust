@@ -26,8 +26,8 @@ impl GetDeliveryOutput {
 }
 
 /// A builder for [`GetDeliveryOutput`](crate::operation::get_delivery::GetDeliveryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDeliveryOutputBuilder {
     pub(crate) delivery: ::std::option::Option<crate::types::Delivery>,
     _request_id: Option<String>,

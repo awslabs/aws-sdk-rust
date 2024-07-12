@@ -48,8 +48,8 @@ impl UpdateServerInput {
 }
 
 /// A builder for [`UpdateServerInput`](crate::operation::update_server::UpdateServerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateServerInputBuilder {
     pub(crate) disable_automated_backup: ::std::option::Option<bool>,
     pub(crate) backup_retention_count: ::std::option::Option<i32>,

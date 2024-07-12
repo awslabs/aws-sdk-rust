@@ -78,8 +78,8 @@ impl DashboardVersionDefinition {
 }
 
 /// A builder for [`DashboardVersionDefinition`](crate::types::DashboardVersionDefinition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DashboardVersionDefinitionBuilder {
     pub(crate) data_set_identifier_declarations: ::std::option::Option<::std::vec::Vec<crate::types::DataSetIdentifierDeclaration>>,
     pub(crate) sheets: ::std::option::Option<::std::vec::Vec<crate::types::SheetDefinition>>,

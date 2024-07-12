@@ -61,8 +61,8 @@ impl CreateBridgeInput {
 }
 
 /// A builder for [`CreateBridgeInput`](crate::operation::create_bridge::CreateBridgeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateBridgeInputBuilder {
     pub(crate) egress_gateway_bridge: ::std::option::Option<crate::types::AddEgressGatewayBridgeRequest>,
     pub(crate) ingress_gateway_bridge: ::std::option::Option<crate::types::AddIngressGatewayBridgeRequest>,

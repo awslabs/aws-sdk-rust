@@ -26,8 +26,8 @@ impl UpdateApnsSandboxChannelOutput {
 }
 
 /// A builder for [`UpdateApnsSandboxChannelOutput`](crate::operation::update_apns_sandbox_channel::UpdateApnsSandboxChannelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateApnsSandboxChannelOutputBuilder {
     pub(crate) apns_sandbox_channel_response: ::std::option::Option<crate::types::ApnsSandboxChannelResponse>,
     _request_id: Option<String>,

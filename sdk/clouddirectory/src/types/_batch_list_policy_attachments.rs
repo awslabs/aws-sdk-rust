@@ -33,8 +33,8 @@ impl BatchListPolicyAttachments {
 }
 
 /// A builder for [`BatchListPolicyAttachments`](crate::types::BatchListPolicyAttachments).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchListPolicyAttachmentsBuilder {
     pub(crate) policy_reference: ::std::option::Option<crate::types::ObjectReference>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

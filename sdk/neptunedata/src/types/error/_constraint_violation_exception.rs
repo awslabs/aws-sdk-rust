@@ -72,8 +72,8 @@ impl ConstraintViolationException {
 }
 
 /// A builder for [`ConstraintViolationException`](crate::types::error::ConstraintViolationException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConstraintViolationExceptionBuilder {
     pub(crate) detailed_message: ::std::option::Option<::std::string::String>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,

@@ -46,8 +46,8 @@ impl MetricsDataSource {
 }
 
 /// A builder for [`MetricsDataSource`](crate::types::MetricsDataSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MetricsDataSourceBuilder {
     pub(crate) dimensions:
         ::std::option::Option<::std::collections::HashMap<crate::types::MetricDimensionName, ::std::vec::Vec<::std::string::String>>>,

@@ -26,8 +26,8 @@ impl CreateSipMediaApplicationOutput {
 }
 
 /// A builder for [`CreateSipMediaApplicationOutput`](crate::operation::create_sip_media_application::CreateSipMediaApplicationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSipMediaApplicationOutputBuilder {
     pub(crate) sip_media_application: ::std::option::Option<crate::types::SipMediaApplication>,
     _request_id: Option<String>,

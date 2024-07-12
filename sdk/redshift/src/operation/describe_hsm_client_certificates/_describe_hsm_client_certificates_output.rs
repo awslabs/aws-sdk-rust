@@ -35,8 +35,8 @@ impl DescribeHsmClientCertificatesOutput {
 }
 
 /// A builder for [`DescribeHsmClientCertificatesOutput`](crate::operation::describe_hsm_client_certificates::DescribeHsmClientCertificatesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeHsmClientCertificatesOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) hsm_client_certificates: ::std::option::Option<::std::vec::Vec<crate::types::HsmClientCertificate>>,

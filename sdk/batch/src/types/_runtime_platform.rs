@@ -47,8 +47,8 @@ impl RuntimePlatform {
 }
 
 /// A builder for [`RuntimePlatform`](crate::types::RuntimePlatform).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RuntimePlatformBuilder {
     pub(crate) operating_system_family: ::std::option::Option<::std::string::String>,
     pub(crate) cpu_architecture: ::std::option::Option<::std::string::String>,

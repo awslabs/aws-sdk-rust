@@ -63,8 +63,8 @@ impl SourceControlDetails {
 }
 
 /// A builder for [`SourceControlDetails`](crate::types::SourceControlDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SourceControlDetailsBuilder {
     pub(crate) provider: ::std::option::Option<crate::types::SourceControlProvider>,
     pub(crate) repository: ::std::option::Option<::std::string::String>,

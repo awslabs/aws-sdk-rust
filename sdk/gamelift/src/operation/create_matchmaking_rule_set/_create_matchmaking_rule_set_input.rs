@@ -34,8 +34,8 @@ impl CreateMatchmakingRuleSetInput {
 }
 
 /// A builder for [`CreateMatchmakingRuleSetInput`](crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateMatchmakingRuleSetInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) rule_set_body: ::std::option::Option<::std::string::String>,

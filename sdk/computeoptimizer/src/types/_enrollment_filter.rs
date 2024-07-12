@@ -33,8 +33,8 @@ impl EnrollmentFilter {
 }
 
 /// A builder for [`EnrollmentFilter`](crate::types::EnrollmentFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnrollmentFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::EnrollmentFilterName>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -33,8 +33,8 @@ impl GetReservedNodeExchangeOfferingsInput {
 }
 
 /// A builder for [`GetReservedNodeExchangeOfferingsInput`](crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetReservedNodeExchangeOfferingsInputBuilder {
     pub(crate) reserved_node_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,

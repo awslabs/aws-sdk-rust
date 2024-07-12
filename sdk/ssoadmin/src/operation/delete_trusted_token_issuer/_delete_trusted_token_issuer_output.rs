@@ -18,8 +18,8 @@ impl DeleteTrustedTokenIssuerOutput {
 }
 
 /// A builder for [`DeleteTrustedTokenIssuerOutput`](crate::operation::delete_trusted_token_issuer::DeleteTrustedTokenIssuerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTrustedTokenIssuerOutputBuilder {
     _request_id: Option<String>,
 }

@@ -27,8 +27,8 @@ impl AwsEc2ClientVpnEndpointClientLoginBannerOptionsDetails {
 }
 
 /// A builder for [`AwsEc2ClientVpnEndpointClientLoginBannerOptionsDetails`](crate::types::AwsEc2ClientVpnEndpointClientLoginBannerOptionsDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEc2ClientVpnEndpointClientLoginBannerOptionsDetailsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) banner_text: ::std::option::Option<::std::string::String>,

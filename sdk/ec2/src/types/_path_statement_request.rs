@@ -27,8 +27,8 @@ impl PathStatementRequest {
 }
 
 /// A builder for [`PathStatementRequest`](crate::types::PathStatementRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PathStatementRequestBuilder {
     pub(crate) packet_header_statement: ::std::option::Option<crate::types::PacketHeaderStatementRequest>,
     pub(crate) resource_statement: ::std::option::Option<crate::types::ResourceStatementRequest>,

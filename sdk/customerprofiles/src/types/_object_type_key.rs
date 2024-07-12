@@ -31,8 +31,8 @@ impl ObjectTypeKey {
 }
 
 /// A builder for [`ObjectTypeKey`](crate::types::ObjectTypeKey).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ObjectTypeKeyBuilder {
     pub(crate) standard_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::StandardIdentifier>>,
     pub(crate) field_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

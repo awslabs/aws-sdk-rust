@@ -33,8 +33,8 @@ impl VerifyOtpMessageRequestParameters {
 }
 
 /// A builder for [`VerifyOtpMessageRequestParameters`](crate::types::VerifyOtpMessageRequestParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VerifyOtpMessageRequestParametersBuilder {
     pub(crate) destination_identity: ::std::option::Option<::std::string::String>,
     pub(crate) otp: ::std::option::Option<::std::string::String>,

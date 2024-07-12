@@ -36,8 +36,8 @@ impl DescribeOrganizationConformancePackStatusesInput {
 }
 
 /// A builder for [`DescribeOrganizationConformancePackStatusesInput`](crate::operation::describe_organization_conformance_pack_statuses::DescribeOrganizationConformancePackStatusesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeOrganizationConformancePackStatusesInputBuilder {
     pub(crate) organization_conformance_pack_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) limit: ::std::option::Option<i32>,

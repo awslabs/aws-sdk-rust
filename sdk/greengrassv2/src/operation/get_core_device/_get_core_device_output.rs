@@ -74,8 +74,8 @@ impl GetCoreDeviceOutput {
 }
 
 /// A builder for [`GetCoreDeviceOutput`](crate::operation::get_core_device::GetCoreDeviceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCoreDeviceOutputBuilder {
     pub(crate) core_device_thing_name: ::std::option::Option<::std::string::String>,
     pub(crate) core_version: ::std::option::Option<::std::string::String>,

@@ -28,8 +28,8 @@ impl GetFindingStatisticsOutput {
 }
 
 /// A builder for [`GetFindingStatisticsOutput`](crate::operation::get_finding_statistics::GetFindingStatisticsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetFindingStatisticsOutputBuilder {
     pub(crate) counts_by_group: ::std::option::Option<::std::vec::Vec<crate::types::GroupCount>>,
     _request_id: Option<String>,

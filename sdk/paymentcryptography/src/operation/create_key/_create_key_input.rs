@@ -58,8 +58,8 @@ impl CreateKeyInput {
 }
 
 /// A builder for [`CreateKeyInput`](crate::operation::create_key::CreateKeyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateKeyInputBuilder {
     pub(crate) key_attributes: ::std::option::Option<crate::types::KeyAttributes>,
     pub(crate) key_check_value_algorithm: ::std::option::Option<crate::types::KeyCheckValueAlgorithm>,

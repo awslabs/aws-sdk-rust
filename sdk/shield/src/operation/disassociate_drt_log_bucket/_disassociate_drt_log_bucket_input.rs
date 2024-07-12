@@ -20,8 +20,8 @@ impl DisassociateDrtLogBucketInput {
 }
 
 /// A builder for [`DisassociateDrtLogBucketInput`](crate::operation::disassociate_drt_log_bucket::DisassociateDrtLogBucketInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateDrtLogBucketInputBuilder {
     pub(crate) log_bucket: ::std::option::Option<::std::string::String>,
 }

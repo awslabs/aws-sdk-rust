@@ -33,8 +33,8 @@ impl BatchPutTaxRegistrationOutput {
 }
 
 /// A builder for [`BatchPutTaxRegistrationOutput`](crate::operation::batch_put_tax_registration::BatchPutTaxRegistrationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchPutTaxRegistrationOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::TaxRegistrationStatus>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutTaxRegistrationError>>,

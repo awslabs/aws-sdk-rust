@@ -20,8 +20,8 @@ impl DeleteExplainabilityExportInput {
 }
 
 /// A builder for [`DeleteExplainabilityExportInput`](crate::operation::delete_explainability_export::DeleteExplainabilityExportInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteExplainabilityExportInputBuilder {
     pub(crate) explainability_export_arn: ::std::option::Option<::std::string::String>,
 }

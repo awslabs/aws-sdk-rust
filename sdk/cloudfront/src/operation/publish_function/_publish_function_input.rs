@@ -26,8 +26,8 @@ impl PublishFunctionInput {
 }
 
 /// A builder for [`PublishFunctionInput`](crate::operation::publish_function::PublishFunctionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PublishFunctionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) if_match: ::std::option::Option<::std::string::String>,

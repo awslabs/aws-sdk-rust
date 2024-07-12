@@ -18,8 +18,8 @@ impl RejectClientVpcConnectionOutput {
 }
 
 /// A builder for [`RejectClientVpcConnectionOutput`](crate::operation::reject_client_vpc_connection::RejectClientVpcConnectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RejectClientVpcConnectionOutputBuilder {
     _request_id: Option<String>,
 }

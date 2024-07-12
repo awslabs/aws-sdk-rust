@@ -29,8 +29,8 @@ impl CreateLoadBalancerListenersInput {
 }
 
 /// A builder for [`CreateLoadBalancerListenersInput`](crate::operation::create_load_balancer_listeners::CreateLoadBalancerListenersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLoadBalancerListenersInputBuilder {
     pub(crate) load_balancer_name: ::std::option::Option<::std::string::String>,
     pub(crate) listeners: ::std::option::Option<::std::vec::Vec<crate::types::Listener>>,

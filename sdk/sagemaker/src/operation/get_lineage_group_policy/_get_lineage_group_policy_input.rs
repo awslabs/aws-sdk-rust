@@ -20,8 +20,8 @@ impl GetLineageGroupPolicyInput {
 }
 
 /// A builder for [`GetLineageGroupPolicyInput`](crate::operation::get_lineage_group_policy::GetLineageGroupPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLineageGroupPolicyInputBuilder {
     pub(crate) lineage_group_name: ::std::option::Option<::std::string::String>,
 }

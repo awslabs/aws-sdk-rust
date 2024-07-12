@@ -29,8 +29,8 @@ impl ApiGatewayProxyInput {
 }
 
 /// A builder for [`ApiGatewayProxyInput`](crate::types::ApiGatewayProxyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ApiGatewayProxyInputBuilder {
     pub(crate) endpoint_type: ::std::option::Option<crate::types::ApiGatewayEndpointType>,
     pub(crate) stage_name: ::std::option::Option<::std::string::String>,

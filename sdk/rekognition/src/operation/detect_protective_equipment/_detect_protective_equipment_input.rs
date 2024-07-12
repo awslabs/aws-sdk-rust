@@ -26,8 +26,8 @@ impl DetectProtectiveEquipmentInput {
 }
 
 /// A builder for [`DetectProtectiveEquipmentInput`](crate::operation::detect_protective_equipment::DetectProtectiveEquipmentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetectProtectiveEquipmentInputBuilder {
     pub(crate) image: ::std::option::Option<crate::types::Image>,
     pub(crate) summarization_attributes: ::std::option::Option<crate::types::ProtectiveEquipmentSummarizationAttributes>,

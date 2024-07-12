@@ -20,8 +20,8 @@ impl DeleteImportInput {
 }
 
 /// A builder for [`DeleteImportInput`](crate::operation::delete_import::DeleteImportInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteImportInputBuilder {
     pub(crate) import_id: ::std::option::Option<::std::string::String>,
 }

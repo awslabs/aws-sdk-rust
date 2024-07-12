@@ -81,8 +81,8 @@ impl IpamAddressHistoryRecord {
 }
 
 /// A builder for [`IpamAddressHistoryRecord`](crate::types::IpamAddressHistoryRecord).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IpamAddressHistoryRecordBuilder {
     pub(crate) resource_owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_region: ::std::option::Option<::std::string::String>,

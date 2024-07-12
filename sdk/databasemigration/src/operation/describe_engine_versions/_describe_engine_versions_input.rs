@@ -26,8 +26,8 @@ impl DescribeEngineVersionsInput {
 }
 
 /// A builder for [`DescribeEngineVersionsInput`](crate::operation::describe_engine_versions::DescribeEngineVersionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEngineVersionsInputBuilder {
     pub(crate) max_records: ::std::option::Option<i32>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

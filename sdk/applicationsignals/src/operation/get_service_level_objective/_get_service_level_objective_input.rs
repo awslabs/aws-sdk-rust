@@ -20,8 +20,8 @@ impl GetServiceLevelObjectiveInput {
 }
 
 /// A builder for [`GetServiceLevelObjectiveInput`](crate::operation::get_service_level_objective::GetServiceLevelObjectiveInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetServiceLevelObjectiveInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }

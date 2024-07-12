@@ -26,8 +26,8 @@ impl DeleteByteMatchSetOutput {
 }
 
 /// A builder for [`DeleteByteMatchSetOutput`](crate::operation::delete_byte_match_set::DeleteByteMatchSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteByteMatchSetOutputBuilder {
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

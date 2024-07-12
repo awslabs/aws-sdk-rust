@@ -32,8 +32,8 @@ impl UpdateRevealConfigurationOutput {
 }
 
 /// A builder for [`UpdateRevealConfigurationOutput`](crate::operation::update_reveal_configuration::UpdateRevealConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRevealConfigurationOutputBuilder {
     pub(crate) configuration: ::std::option::Option<crate::types::RevealConfiguration>,
     pub(crate) retrieval_configuration: ::std::option::Option<crate::types::RetrievalConfiguration>,

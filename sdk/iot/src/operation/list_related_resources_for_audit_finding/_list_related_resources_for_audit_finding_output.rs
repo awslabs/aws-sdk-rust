@@ -34,8 +34,8 @@ impl ListRelatedResourcesForAuditFindingOutput {
 }
 
 /// A builder for [`ListRelatedResourcesForAuditFindingOutput`](crate::operation::list_related_resources_for_audit_finding::ListRelatedResourcesForAuditFindingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRelatedResourcesForAuditFindingOutputBuilder {
     pub(crate) related_resources: ::std::option::Option<::std::vec::Vec<crate::types::RelatedResource>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

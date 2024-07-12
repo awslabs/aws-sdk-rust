@@ -39,8 +39,8 @@ impl DownloadDbLogFilePortionOutput {
 }
 
 /// A builder for [`DownloadDbLogFilePortionOutput`](crate::operation::download_db_log_file_portion::DownloadDbLogFilePortionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DownloadDbLogFilePortionOutputBuilder {
     pub(crate) log_file_data: ::std::option::Option<::std::string::String>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

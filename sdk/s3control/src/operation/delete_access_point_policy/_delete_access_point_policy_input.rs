@@ -48,8 +48,8 @@ impl DeleteAccessPointPolicyInput {
 }
 
 /// A builder for [`DeleteAccessPointPolicyInput`](crate::operation::delete_access_point_policy::DeleteAccessPointPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAccessPointPolicyInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

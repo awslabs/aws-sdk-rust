@@ -28,8 +28,8 @@ impl SmsSettings {
 }
 
 /// A builder for [`SmsSettings`](crate::types::SmsSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SmsSettingsBuilder {
     pub(crate) sms_message: ::std::option::Option<::std::string::String>,
 }

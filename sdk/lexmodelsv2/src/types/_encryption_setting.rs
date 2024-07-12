@@ -42,8 +42,8 @@ impl EncryptionSetting {
 }
 
 /// A builder for [`EncryptionSetting`](crate::types::EncryptionSetting).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct EncryptionSettingBuilder {
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) bot_locale_export_password: ::std::option::Option<::std::string::String>,

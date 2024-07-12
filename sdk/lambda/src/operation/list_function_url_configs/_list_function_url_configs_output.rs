@@ -33,8 +33,8 @@ impl ListFunctionUrlConfigsOutput {
 }
 
 /// A builder for [`ListFunctionUrlConfigsOutput`](crate::operation::list_function_url_configs::ListFunctionUrlConfigsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFunctionUrlConfigsOutputBuilder {
     pub(crate) function_url_configs: ::std::option::Option<::std::vec::Vec<crate::types::FunctionUrlConfig>>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,

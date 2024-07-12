@@ -20,8 +20,8 @@ impl GetFleetInput {
 }
 
 /// A builder for [`GetFleetInput`](crate::operation::get_fleet::GetFleetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetFleetInputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
 }

@@ -34,8 +34,8 @@ impl DescribeNotificationConfigurationsInput {
 }
 
 /// A builder for [`DescribeNotificationConfigurationsInput`](crate::operation::describe_notification_configurations::DescribeNotificationConfigurationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeNotificationConfigurationsInputBuilder {
     pub(crate) auto_scaling_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

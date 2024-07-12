@@ -111,8 +111,8 @@ impl UpdateMaintenanceWindowOutput {
 }
 
 /// A builder for [`UpdateMaintenanceWindowOutput`](crate::operation::update_maintenance_window::UpdateMaintenanceWindowOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateMaintenanceWindowOutputBuilder {
     pub(crate) window_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

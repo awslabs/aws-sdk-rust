@@ -38,8 +38,8 @@ impl DescribeServiceActionInput {
 }
 
 /// A builder for [`DescribeServiceActionInput`](crate::operation::describe_service_action::DescribeServiceActionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeServiceActionInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,

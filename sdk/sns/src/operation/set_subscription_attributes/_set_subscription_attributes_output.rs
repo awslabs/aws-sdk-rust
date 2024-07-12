@@ -18,8 +18,8 @@ impl SetSubscriptionAttributesOutput {
 }
 
 /// A builder for [`SetSubscriptionAttributesOutput`](crate::operation::set_subscription_attributes::SetSubscriptionAttributesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetSubscriptionAttributesOutputBuilder {
     _request_id: Option<String>,
 }

@@ -40,8 +40,8 @@ impl StopCalculationExecutionOutput {
 }
 
 /// A builder for [`StopCalculationExecutionOutput`](crate::operation::stop_calculation_execution::StopCalculationExecutionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopCalculationExecutionOutputBuilder {
     pub(crate) state: ::std::option::Option<crate::types::CalculationExecutionState>,
     _request_id: Option<String>,

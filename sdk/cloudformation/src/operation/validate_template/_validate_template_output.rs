@@ -59,8 +59,8 @@ impl ValidateTemplateOutput {
 }
 
 /// A builder for [`ValidateTemplateOutput`](crate::operation::validate_template::ValidateTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ValidateTemplateOutputBuilder {
     pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::TemplateParameter>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

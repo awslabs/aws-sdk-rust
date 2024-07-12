@@ -46,8 +46,8 @@ impl TrackedActionLastAccessed {
 }
 
 /// A builder for [`TrackedActionLastAccessed`](crate::types::TrackedActionLastAccessed).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TrackedActionLastAccessedBuilder {
     pub(crate) action_name: ::std::option::Option<::std::string::String>,
     pub(crate) last_accessed_entity: ::std::option::Option<::std::string::String>,

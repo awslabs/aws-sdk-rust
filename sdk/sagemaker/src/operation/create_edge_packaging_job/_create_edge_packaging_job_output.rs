@@ -18,8 +18,8 @@ impl CreateEdgePackagingJobOutput {
 }
 
 /// A builder for [`CreateEdgePackagingJobOutput`](crate::operation::create_edge_packaging_job::CreateEdgePackagingJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateEdgePackagingJobOutputBuilder {
     _request_id: Option<String>,
 }

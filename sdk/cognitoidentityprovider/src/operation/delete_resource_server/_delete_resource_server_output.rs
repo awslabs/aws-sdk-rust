@@ -18,8 +18,8 @@ impl DeleteResourceServerOutput {
 }
 
 /// A builder for [`DeleteResourceServerOutput`](crate::operation::delete_resource_server::DeleteResourceServerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteResourceServerOutputBuilder {
     _request_id: Option<String>,
 }

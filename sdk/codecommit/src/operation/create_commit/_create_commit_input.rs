@@ -80,8 +80,8 @@ impl CreateCommitInput {
 }
 
 /// A builder for [`CreateCommitInput`](crate::operation::create_commit::CreateCommitInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCommitInputBuilder {
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
     pub(crate) branch_name: ::std::option::Option<::std::string::String>,

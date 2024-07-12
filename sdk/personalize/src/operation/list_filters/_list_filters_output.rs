@@ -34,8 +34,8 @@ impl ListFiltersOutput {
 }
 
 /// A builder for [`ListFiltersOutput`](crate::operation::list_filters::ListFiltersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFiltersOutputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::FilterSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

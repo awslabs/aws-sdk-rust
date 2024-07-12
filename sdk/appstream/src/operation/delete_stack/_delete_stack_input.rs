@@ -20,8 +20,8 @@ impl DeleteStackInput {
 }
 
 /// A builder for [`DeleteStackInput`](crate::operation::delete_stack::DeleteStackInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteStackInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

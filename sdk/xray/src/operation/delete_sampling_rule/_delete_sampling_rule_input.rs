@@ -26,8 +26,8 @@ impl DeleteSamplingRuleInput {
 }
 
 /// A builder for [`DeleteSamplingRuleInput`](crate::operation::delete_sampling_rule::DeleteSamplingRuleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSamplingRuleInputBuilder {
     pub(crate) rule_name: ::std::option::Option<::std::string::String>,
     pub(crate) rule_arn: ::std::option::Option<::std::string::String>,

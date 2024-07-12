@@ -21,8 +21,8 @@ impl UtteranceAggregationDuration {
 }
 
 /// A builder for [`UtteranceAggregationDuration`](crate::types::UtteranceAggregationDuration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UtteranceAggregationDurationBuilder {
     pub(crate) relative_aggregation_duration: ::std::option::Option<crate::types::RelativeAggregationDuration>,
 }

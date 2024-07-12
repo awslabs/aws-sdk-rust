@@ -22,8 +22,8 @@ impl CustomDomainConfigType {
 }
 
 /// A builder for [`CustomDomainConfigType`](crate::types::CustomDomainConfigType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CustomDomainConfigTypeBuilder {
     pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
 }

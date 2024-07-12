@@ -18,8 +18,8 @@ impl PutManagedScalingPolicyOutput {
 }
 
 /// A builder for [`PutManagedScalingPolicyOutput`](crate::operation::put_managed_scaling_policy::PutManagedScalingPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutManagedScalingPolicyOutputBuilder {
     _request_id: Option<String>,
 }

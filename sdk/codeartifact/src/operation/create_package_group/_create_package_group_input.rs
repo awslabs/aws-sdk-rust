@@ -52,8 +52,8 @@ impl CreatePackageGroupInput {
 }
 
 /// A builder for [`CreatePackageGroupInput`](crate::operation::create_package_group::CreatePackageGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePackageGroupInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) domain_owner: ::std::option::Option<::std::string::String>,

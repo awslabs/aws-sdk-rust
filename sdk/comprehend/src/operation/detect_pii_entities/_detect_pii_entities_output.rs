@@ -28,8 +28,8 @@ impl DetectPiiEntitiesOutput {
 }
 
 /// A builder for [`DetectPiiEntitiesOutput`](crate::operation::detect_pii_entities::DetectPiiEntitiesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetectPiiEntitiesOutputBuilder {
     pub(crate) entities: ::std::option::Option<::std::vec::Vec<crate::types::PiiEntity>>,
     _request_id: Option<String>,

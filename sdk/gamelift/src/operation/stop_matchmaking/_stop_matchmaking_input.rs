@@ -20,8 +20,8 @@ impl StopMatchmakingInput {
 }
 
 /// A builder for [`StopMatchmakingInput`](crate::operation::stop_matchmaking::StopMatchmakingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopMatchmakingInputBuilder {
     pub(crate) ticket_id: ::std::option::Option<::std::string::String>,
 }

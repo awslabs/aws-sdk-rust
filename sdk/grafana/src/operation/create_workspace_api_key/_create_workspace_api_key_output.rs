@@ -51,8 +51,8 @@ impl CreateWorkspaceApiKeyOutput {
 }
 
 /// A builder for [`CreateWorkspaceApiKeyOutput`](crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateWorkspaceApiKeyOutputBuilder {
     pub(crate) key_name: ::std::option::Option<::std::string::String>,
     pub(crate) key: ::std::option::Option<::std::string::String>,

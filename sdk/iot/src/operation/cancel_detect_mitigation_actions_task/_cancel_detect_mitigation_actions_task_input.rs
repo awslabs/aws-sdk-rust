@@ -20,8 +20,8 @@ impl CancelDetectMitigationActionsTaskInput {
 }
 
 /// A builder for [`CancelDetectMitigationActionsTaskInput`](crate::operation::cancel_detect_mitigation_actions_task::CancelDetectMitigationActionsTaskInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelDetectMitigationActionsTaskInputBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
 }

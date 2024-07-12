@@ -34,8 +34,8 @@ impl ListRetrieversOutput {
 }
 
 /// A builder for [`ListRetrieversOutput`](crate::operation::list_retrievers::ListRetrieversOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRetrieversOutputBuilder {
     pub(crate) retrievers: ::std::option::Option<::std::vec::Vec<crate::types::Retriever>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

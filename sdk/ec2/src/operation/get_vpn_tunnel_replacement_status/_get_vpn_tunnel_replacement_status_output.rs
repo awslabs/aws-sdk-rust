@@ -56,8 +56,8 @@ impl GetVpnTunnelReplacementStatusOutput {
 }
 
 /// A builder for [`GetVpnTunnelReplacementStatusOutput`](crate::operation::get_vpn_tunnel_replacement_status::GetVpnTunnelReplacementStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetVpnTunnelReplacementStatusOutputBuilder {
     pub(crate) vpn_connection_id: ::std::option::Option<::std::string::String>,
     pub(crate) transit_gateway_id: ::std::option::Option<::std::string::String>,

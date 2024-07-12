@@ -34,8 +34,8 @@ impl NotifyWorkersInput {
 }
 
 /// A builder for [`NotifyWorkersInput`](crate::operation::notify_workers::NotifyWorkersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NotifyWorkersInputBuilder {
     pub(crate) subject: ::std::option::Option<::std::string::String>,
     pub(crate) message_text: ::std::option::Option<::std::string::String>,

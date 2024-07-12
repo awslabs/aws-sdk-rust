@@ -34,8 +34,8 @@ impl DescribeDbProxyTargetGroupsOutput {
 }
 
 /// A builder for [`DescribeDbProxyTargetGroupsOutput`](crate::operation::describe_db_proxy_target_groups::DescribeDbProxyTargetGroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDbProxyTargetGroupsOutputBuilder {
     pub(crate) target_groups: ::std::option::Option<::std::vec::Vec<crate::types::DbProxyTargetGroup>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

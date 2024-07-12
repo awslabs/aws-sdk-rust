@@ -32,8 +32,8 @@ impl DescribeIamPolicyAssignmentInput {
 }
 
 /// A builder for [`DescribeIamPolicyAssignmentInput`](crate::operation::describe_iam_policy_assignment::DescribeIamPolicyAssignmentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeIamPolicyAssignmentInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) assignment_name: ::std::option::Option<::std::string::String>,

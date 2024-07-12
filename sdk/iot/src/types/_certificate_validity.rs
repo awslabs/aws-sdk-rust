@@ -27,8 +27,8 @@ impl CertificateValidity {
 }
 
 /// A builder for [`CertificateValidity`](crate::types::CertificateValidity).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CertificateValidityBuilder {
     pub(crate) not_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) not_after: ::std::option::Option<::aws_smithy_types::DateTime>,

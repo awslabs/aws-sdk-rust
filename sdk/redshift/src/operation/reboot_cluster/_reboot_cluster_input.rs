@@ -21,8 +21,8 @@ impl RebootClusterInput {
 }
 
 /// A builder for [`RebootClusterInput`](crate::operation::reboot_cluster::RebootClusterInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RebootClusterInputBuilder {
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
 }

@@ -26,8 +26,8 @@ impl DisassociateNodeOutput {
 }
 
 /// A builder for [`DisassociateNodeOutput`](crate::operation::disassociate_node::DisassociateNodeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateNodeOutputBuilder {
     pub(crate) node_association_status_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

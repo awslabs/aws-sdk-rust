@@ -27,8 +27,8 @@ impl AwsS3BucketServerSideEncryptionByDefault {
 }
 
 /// A builder for [`AwsS3BucketServerSideEncryptionByDefault`](crate::types::AwsS3BucketServerSideEncryptionByDefault).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsS3BucketServerSideEncryptionByDefaultBuilder {
     pub(crate) sse_algorithm: ::std::option::Option<::std::string::String>,
     pub(crate) kms_master_key_id: ::std::option::Option<::std::string::String>,

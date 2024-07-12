@@ -29,8 +29,8 @@ impl ReverseGeocodingConfig {
 }
 
 /// A builder for [`ReverseGeocodingConfig`](crate::types::ReverseGeocodingConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReverseGeocodingConfigBuilder {
     pub(crate) y_attribute_name: ::std::option::Option<::std::string::String>,
     pub(crate) x_attribute_name: ::std::option::Option<::std::string::String>,

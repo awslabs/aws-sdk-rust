@@ -34,8 +34,8 @@ impl DescribeNotificationSubscriptionsOutput {
 }
 
 /// A builder for [`DescribeNotificationSubscriptionsOutput`](crate::operation::describe_notification_subscriptions::DescribeNotificationSubscriptionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeNotificationSubscriptionsOutputBuilder {
     pub(crate) subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::Subscription>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

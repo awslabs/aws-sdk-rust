@@ -27,8 +27,8 @@ impl TaskTemplateDefaultFieldValue {
 }
 
 /// A builder for [`TaskTemplateDefaultFieldValue`](crate::types::TaskTemplateDefaultFieldValue).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TaskTemplateDefaultFieldValueBuilder {
     pub(crate) id: ::std::option::Option<crate::types::TaskTemplateFieldIdentifier>,
     pub(crate) default_value: ::std::option::Option<::std::string::String>,

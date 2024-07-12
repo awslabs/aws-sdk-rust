@@ -34,8 +34,8 @@ impl ListAuthorizersOutput {
 }
 
 /// A builder for [`ListAuthorizersOutput`](crate::operation::list_authorizers::ListAuthorizersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAuthorizersOutputBuilder {
     pub(crate) authorizers: ::std::option::Option<::std::vec::Vec<crate::types::AuthorizerSummary>>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,

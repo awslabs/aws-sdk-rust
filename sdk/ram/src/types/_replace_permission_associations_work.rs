@@ -85,8 +85,8 @@ impl ReplacePermissionAssociationsWork {
 }
 
 /// A builder for [`ReplacePermissionAssociationsWork`](crate::types::ReplacePermissionAssociationsWork).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReplacePermissionAssociationsWorkBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) from_permission_arn: ::std::option::Option<::std::string::String>,

@@ -20,8 +20,8 @@ impl PutConfigurationInput {
 }
 
 /// A builder for [`PutConfigurationInput`](crate::operation::put_configuration::PutConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutConfigurationInputBuilder {
     pub(crate) configuration: ::std::option::Option<crate::types::AppRegistryConfiguration>,
 }

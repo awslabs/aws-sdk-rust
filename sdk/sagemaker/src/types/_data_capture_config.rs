@@ -75,8 +75,8 @@ impl DataCaptureConfig {
 }
 
 /// A builder for [`DataCaptureConfig`](crate::types::DataCaptureConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataCaptureConfigBuilder {
     pub(crate) enable_capture: ::std::option::Option<bool>,
     pub(crate) initial_sampling_percentage: ::std::option::Option<i32>,

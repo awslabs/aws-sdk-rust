@@ -31,8 +31,8 @@ impl AlertFilters {
 }
 
 /// A builder for [`AlertFilters`](crate::types::AlertFilters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AlertFiltersBuilder {
     pub(crate) metric_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) dimension_filter_list: ::std::option::Option<::std::vec::Vec<crate::types::DimensionFilter>>,

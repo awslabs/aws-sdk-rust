@@ -33,8 +33,8 @@ impl ClientStat {
 }
 
 /// A builder for [`ClientStat`](crate::types::ClientStat).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ClientStatBuilder {
     pub(crate) user_agent: ::std::option::Option<::std::string::String>,
     pub(crate) number_of_requests_last30_days: ::std::option::Option<i32>,

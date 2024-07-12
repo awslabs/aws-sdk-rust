@@ -63,8 +63,8 @@ impl TimestreamConfiguration {
 }
 
 /// A builder for [`TimestreamConfiguration`](crate::types::TimestreamConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TimestreamConfigurationBuilder {
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) table_name: ::std::option::Option<::std::string::String>,

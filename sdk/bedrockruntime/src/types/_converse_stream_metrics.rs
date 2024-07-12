@@ -21,8 +21,8 @@ impl ConverseStreamMetrics {
 }
 
 /// A builder for [`ConverseStreamMetrics`](crate::types::ConverseStreamMetrics).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConverseStreamMetricsBuilder {
     pub(crate) latency_ms: ::std::option::Option<i64>,
 }

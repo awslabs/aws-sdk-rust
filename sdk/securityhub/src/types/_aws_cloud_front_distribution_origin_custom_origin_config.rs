@@ -51,8 +51,8 @@ impl AwsCloudFrontDistributionOriginCustomOriginConfig {
 }
 
 /// A builder for [`AwsCloudFrontDistributionOriginCustomOriginConfig`](crate::types::AwsCloudFrontDistributionOriginCustomOriginConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsCloudFrontDistributionOriginCustomOriginConfigBuilder {
     pub(crate) http_port: ::std::option::Option<i32>,
     pub(crate) https_port: ::std::option::Option<i32>,

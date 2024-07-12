@@ -26,8 +26,8 @@ impl AssociateSourceGraphqlApiOutput {
 }
 
 /// A builder for [`AssociateSourceGraphqlApiOutput`](crate::operation::associate_source_graphql_api::AssociateSourceGraphqlApiOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateSourceGraphqlApiOutputBuilder {
     pub(crate) source_api_association: ::std::option::Option<crate::types::SourceApiAssociation>,
     _request_id: Option<String>,

@@ -109,8 +109,8 @@ impl SearchPlaceIndexForSuggestionsSummary {
 }
 
 /// A builder for [`SearchPlaceIndexForSuggestionsSummary`](crate::types::SearchPlaceIndexForSuggestionsSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SearchPlaceIndexForSuggestionsSummaryBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
     pub(crate) bias_position: ::std::option::Option<::std::vec::Vec<f64>>,

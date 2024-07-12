@@ -20,8 +20,8 @@ impl DeleteEventTrackerInput {
 }
 
 /// A builder for [`DeleteEventTrackerInput`](crate::operation::delete_event_tracker::DeleteEventTrackerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteEventTrackerInputBuilder {
     pub(crate) event_tracker_arn: ::std::option::Option<::std::string::String>,
 }

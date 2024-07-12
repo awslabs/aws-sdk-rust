@@ -56,8 +56,8 @@ impl DescribeAuditTaskOutput {
 }
 
 /// A builder for [`DescribeAuditTaskOutput`](crate::operation::describe_audit_task::DescribeAuditTaskOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAuditTaskOutputBuilder {
     pub(crate) task_status: ::std::option::Option<crate::types::AuditTaskStatus>,
     pub(crate) task_type: ::std::option::Option<crate::types::AuditTaskType>,

@@ -34,8 +34,8 @@ impl ListApplicationComponentsOutput {
 }
 
 /// A builder for [`ListApplicationComponentsOutput`](crate::operation::list_application_components::ListApplicationComponentsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListApplicationComponentsOutputBuilder {
     pub(crate) application_component_infos: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationComponentDetail>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

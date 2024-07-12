@@ -18,8 +18,8 @@ impl DeletePlaybackConfigurationOutput {
 }
 
 /// A builder for [`DeletePlaybackConfigurationOutput`](crate::operation::delete_playback_configuration::DeletePlaybackConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePlaybackConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

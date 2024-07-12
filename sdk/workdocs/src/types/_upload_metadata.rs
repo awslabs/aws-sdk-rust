@@ -35,8 +35,8 @@ impl UploadMetadata {
 }
 
 /// A builder for [`UploadMetadata`](crate::types::UploadMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UploadMetadataBuilder {
     pub(crate) upload_url: ::std::option::Option<::std::string::String>,
     pub(crate) signed_headers: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

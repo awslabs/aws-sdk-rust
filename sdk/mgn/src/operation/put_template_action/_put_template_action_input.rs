@@ -103,8 +103,8 @@ impl PutTemplateActionInput {
 }
 
 /// A builder for [`PutTemplateActionInput`](crate::operation::put_template_action::PutTemplateActionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutTemplateActionInputBuilder {
     pub(crate) launch_configuration_template_id: ::std::option::Option<::std::string::String>,
     pub(crate) action_name: ::std::option::Option<::std::string::String>,

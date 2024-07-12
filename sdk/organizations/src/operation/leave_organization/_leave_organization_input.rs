@@ -11,8 +11,8 @@ impl LeaveOrganizationInput {
 }
 
 /// A builder for [`LeaveOrganizationInput`](crate::operation::leave_organization::LeaveOrganizationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LeaveOrganizationInputBuilder {}
 impl LeaveOrganizationInputBuilder {
     /// Consumes the builder and constructs a [`LeaveOrganizationInput`](crate::operation::leave_organization::LeaveOrganizationInput).

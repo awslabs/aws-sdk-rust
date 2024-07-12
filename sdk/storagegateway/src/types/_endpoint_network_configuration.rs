@@ -27,8 +27,8 @@ impl EndpointNetworkConfiguration {
 }
 
 /// A builder for [`EndpointNetworkConfiguration`](crate::types::EndpointNetworkConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EndpointNetworkConfigurationBuilder {
     pub(crate) ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

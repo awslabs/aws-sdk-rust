@@ -29,8 +29,8 @@ impl RebootCacheClusterInput {
 }
 
 /// A builder for [`RebootCacheClusterInput`](crate::operation::reboot_cache_cluster::RebootCacheClusterInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RebootCacheClusterInputBuilder {
     pub(crate) cache_cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) cache_node_ids_to_reboot: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

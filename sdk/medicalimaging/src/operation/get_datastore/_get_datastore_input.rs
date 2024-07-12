@@ -20,8 +20,8 @@ impl GetDatastoreInput {
 }
 
 /// A builder for [`GetDatastoreInput`](crate::operation::get_datastore::GetDatastoreInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDatastoreInputBuilder {
     pub(crate) datastore_id: ::std::option::Option<::std::string::String>,
 }

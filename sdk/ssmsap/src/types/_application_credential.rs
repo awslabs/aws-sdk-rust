@@ -44,8 +44,8 @@ impl ApplicationCredential {
 }
 
 /// A builder for [`ApplicationCredential`](crate::types::ApplicationCredential).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ApplicationCredentialBuilder {
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) credential_type: ::std::option::Option<crate::types::CredentialType>,

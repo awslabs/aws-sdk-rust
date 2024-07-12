@@ -38,8 +38,8 @@ impl GetServiceInstanceSyncStatusOutput {
 }
 
 /// A builder for [`GetServiceInstanceSyncStatusOutput`](crate::operation::get_service_instance_sync_status::GetServiceInstanceSyncStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetServiceInstanceSyncStatusOutputBuilder {
     pub(crate) latest_sync: ::std::option::Option<crate::types::ResourceSyncAttempt>,
     pub(crate) latest_successful_sync: ::std::option::Option<crate::types::ResourceSyncAttempt>,

@@ -34,8 +34,8 @@ impl ListUsageTotalsOutput {
 }
 
 /// A builder for [`ListUsageTotalsOutput`](crate::operation::list_usage_totals::ListUsageTotalsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListUsageTotalsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) totals: ::std::option::Option<::std::vec::Vec<crate::types::UsageTotal>>,

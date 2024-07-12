@@ -37,8 +37,8 @@ impl Limits {
 }
 
 /// A builder for [`Limits`](crate::types::Limits).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LimitsBuilder {
     pub(crate) storage_types: ::std::option::Option<::std::vec::Vec<crate::types::StorageType>>,
     pub(crate) instance_limits: ::std::option::Option<crate::types::InstanceLimits>,

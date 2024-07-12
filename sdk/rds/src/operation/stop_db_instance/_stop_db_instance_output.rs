@@ -28,8 +28,8 @@ impl StopDbInstanceOutput {
 }
 
 /// A builder for [`StopDbInstanceOutput`](crate::operation::stop_db_instance::StopDbInstanceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopDbInstanceOutputBuilder {
     pub(crate) db_instance: ::std::option::Option<crate::types::DbInstance>,
     _request_id: Option<String>,

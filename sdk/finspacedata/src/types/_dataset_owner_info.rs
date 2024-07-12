@@ -42,8 +42,8 @@ impl DatasetOwnerInfo {
 }
 
 /// A builder for [`DatasetOwnerInfo`](crate::types::DatasetOwnerInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DatasetOwnerInfoBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) phone_number: ::std::option::Option<::std::string::String>,

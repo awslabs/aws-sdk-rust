@@ -26,8 +26,8 @@ impl DeleteVariantStoreOutput {
 }
 
 /// A builder for [`DeleteVariantStoreOutput`](crate::operation::delete_variant_store::DeleteVariantStoreOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVariantStoreOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::StoreStatus>,
     _request_id: Option<String>,

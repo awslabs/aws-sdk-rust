@@ -20,8 +20,8 @@ impl DescribeDatabaseInput {
 }
 
 /// A builder for [`DescribeDatabaseInput`](crate::operation::describe_database::DescribeDatabaseInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDatabaseInputBuilder {
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
 }

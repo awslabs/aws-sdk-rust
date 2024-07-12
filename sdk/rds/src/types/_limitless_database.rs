@@ -27,8 +27,8 @@ impl LimitlessDatabase {
 }
 
 /// A builder for [`LimitlessDatabase`](crate::types::LimitlessDatabase).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LimitlessDatabaseBuilder {
     pub(crate) status: ::std::option::Option<crate::types::LimitlessDatabaseStatus>,
     pub(crate) min_required_acu: ::std::option::Option<f64>,

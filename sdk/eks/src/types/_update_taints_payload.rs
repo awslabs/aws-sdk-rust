@@ -31,8 +31,8 @@ impl UpdateTaintsPayload {
 }
 
 /// A builder for [`UpdateTaintsPayload`](crate::types::UpdateTaintsPayload).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateTaintsPayloadBuilder {
     pub(crate) add_or_update_taints: ::std::option::Option<::std::vec::Vec<crate::types::Taint>>,
     pub(crate) remove_taints: ::std::option::Option<::std::vec::Vec<crate::types::Taint>>,

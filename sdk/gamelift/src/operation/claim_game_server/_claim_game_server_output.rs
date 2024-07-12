@@ -26,8 +26,8 @@ impl ClaimGameServerOutput {
 }
 
 /// A builder for [`ClaimGameServerOutput`](crate::operation::claim_game_server::ClaimGameServerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ClaimGameServerOutputBuilder {
     pub(crate) game_server: ::std::option::Option<crate::types::GameServer>,
     _request_id: Option<String>,

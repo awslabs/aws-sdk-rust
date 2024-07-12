@@ -35,8 +35,8 @@ impl DescribeAnalysisSchemesInput {
 }
 
 /// A builder for [`DescribeAnalysisSchemesInput`](crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAnalysisSchemesInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) analysis_scheme_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -35,8 +35,8 @@ impl DeviceSelectionResult {
 }
 
 /// A builder for [`DeviceSelectionResult`](crate::types::DeviceSelectionResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeviceSelectionResultBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::DeviceFilter>>,
     pub(crate) matched_devices_count: ::std::option::Option<i32>,

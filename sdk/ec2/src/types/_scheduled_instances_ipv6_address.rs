@@ -21,8 +21,8 @@ impl ScheduledInstancesIpv6Address {
 }
 
 /// A builder for [`ScheduledInstancesIpv6Address`](crate::types::ScheduledInstancesIpv6Address).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScheduledInstancesIpv6AddressBuilder {
     pub(crate) ipv6_address: ::std::option::Option<::std::string::String>,
 }

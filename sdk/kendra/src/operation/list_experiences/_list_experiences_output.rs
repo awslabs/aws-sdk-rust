@@ -34,8 +34,8 @@ impl ListExperiencesOutput {
 }
 
 /// A builder for [`ListExperiencesOutput`](crate::operation::list_experiences::ListExperiencesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListExperiencesOutputBuilder {
     pub(crate) summary_items: ::std::option::Option<::std::vec::Vec<crate::types::ExperiencesSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

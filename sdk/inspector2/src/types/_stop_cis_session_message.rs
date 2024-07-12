@@ -51,8 +51,8 @@ impl StopCisSessionMessage {
 }
 
 /// A builder for [`StopCisSessionMessage`](crate::types::StopCisSessionMessage).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopCisSessionMessageBuilder {
     pub(crate) status: ::std::option::Option<crate::types::StopCisSessionStatus>,
     pub(crate) reason: ::std::option::Option<::std::string::String>,

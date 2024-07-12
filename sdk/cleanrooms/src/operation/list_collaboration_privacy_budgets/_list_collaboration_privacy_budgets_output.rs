@@ -33,8 +33,8 @@ impl ListCollaborationPrivacyBudgetsOutput {
 }
 
 /// A builder for [`ListCollaborationPrivacyBudgetsOutput`](crate::operation::list_collaboration_privacy_budgets::ListCollaborationPrivacyBudgetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCollaborationPrivacyBudgetsOutputBuilder {
     pub(crate) collaboration_privacy_budget_summaries: ::std::option::Option<::std::vec::Vec<crate::types::CollaborationPrivacyBudgetSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

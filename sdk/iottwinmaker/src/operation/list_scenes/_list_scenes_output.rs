@@ -34,8 +34,8 @@ impl ListScenesOutput {
 }
 
 /// A builder for [`ListScenesOutput`](crate::operation::list_scenes::ListScenesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListScenesOutputBuilder {
     pub(crate) scene_summaries: ::std::option::Option<::std::vec::Vec<crate::types::SceneSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

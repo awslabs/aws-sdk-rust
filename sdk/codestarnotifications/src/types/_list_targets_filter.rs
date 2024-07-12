@@ -28,8 +28,8 @@ impl ListTargetsFilter {
 }
 
 /// A builder for [`ListTargetsFilter`](crate::types::ListTargetsFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTargetsFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::ListTargetsFilterName>,
     pub(crate) value: ::std::option::Option<::std::string::String>,

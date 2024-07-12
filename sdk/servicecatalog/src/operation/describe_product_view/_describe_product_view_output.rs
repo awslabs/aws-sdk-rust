@@ -34,8 +34,8 @@ impl DescribeProductViewOutput {
 }
 
 /// A builder for [`DescribeProductViewOutput`](crate::operation::describe_product_view::DescribeProductViewOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeProductViewOutputBuilder {
     pub(crate) product_view_summary: ::std::option::Option<crate::types::ProductViewSummary>,
     pub(crate) provisioning_artifacts: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningArtifact>>,

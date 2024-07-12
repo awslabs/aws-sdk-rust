@@ -34,8 +34,8 @@ impl ListApplicationAuthenticationMethodsOutput {
 }
 
 /// A builder for [`ListApplicationAuthenticationMethodsOutput`](crate::operation::list_application_authentication_methods::ListApplicationAuthenticationMethodsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListApplicationAuthenticationMethodsOutputBuilder {
     pub(crate) authentication_methods: ::std::option::Option<::std::vec::Vec<crate::types::AuthenticationMethodItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

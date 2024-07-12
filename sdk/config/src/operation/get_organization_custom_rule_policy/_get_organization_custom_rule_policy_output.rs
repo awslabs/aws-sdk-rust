@@ -26,8 +26,8 @@ impl GetOrganizationCustomRulePolicyOutput {
 }
 
 /// A builder for [`GetOrganizationCustomRulePolicyOutput`](crate::operation::get_organization_custom_rule_policy::GetOrganizationCustomRulePolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetOrganizationCustomRulePolicyOutputBuilder {
     pub(crate) policy_text: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

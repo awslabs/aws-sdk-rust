@@ -26,8 +26,8 @@ impl AssociateNodeOutput {
 }
 
 /// A builder for [`AssociateNodeOutput`](crate::operation::associate_node::AssociateNodeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateNodeOutputBuilder {
     pub(crate) node_association_status_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

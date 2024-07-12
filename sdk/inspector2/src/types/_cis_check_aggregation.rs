@@ -64,8 +64,8 @@ impl CisCheckAggregation {
 }
 
 /// A builder for [`CisCheckAggregation`](crate::types::CisCheckAggregation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CisCheckAggregationBuilder {
     pub(crate) scan_arn: ::std::option::Option<::std::string::String>,
     pub(crate) check_id: ::std::option::Option<::std::string::String>,

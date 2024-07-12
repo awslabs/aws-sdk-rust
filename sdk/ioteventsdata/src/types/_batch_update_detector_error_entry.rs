@@ -33,8 +33,8 @@ impl BatchUpdateDetectorErrorEntry {
 }
 
 /// A builder for [`BatchUpdateDetectorErrorEntry`](crate::types::BatchUpdateDetectorErrorEntry).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchUpdateDetectorErrorEntryBuilder {
     pub(crate) message_id: ::std::option::Option<::std::string::String>,
     pub(crate) error_code: ::std::option::Option<crate::types::ErrorCode>,

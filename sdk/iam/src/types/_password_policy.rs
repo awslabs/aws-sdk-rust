@@ -78,8 +78,8 @@ impl PasswordPolicy {
 }
 
 /// A builder for [`PasswordPolicy`](crate::types::PasswordPolicy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PasswordPolicyBuilder {
     pub(crate) minimum_password_length: ::std::option::Option<i32>,
     pub(crate) require_symbols: ::std::option::Option<bool>,

@@ -26,8 +26,8 @@ impl RemoveSourceIdentifierFromSubscriptionInput {
 }
 
 /// A builder for [`RemoveSourceIdentifierFromSubscriptionInput`](crate::operation::remove_source_identifier_from_subscription::RemoveSourceIdentifierFromSubscriptionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoveSourceIdentifierFromSubscriptionInputBuilder {
     pub(crate) subscription_name: ::std::option::Option<::std::string::String>,
     pub(crate) source_identifier: ::std::option::Option<::std::string::String>,

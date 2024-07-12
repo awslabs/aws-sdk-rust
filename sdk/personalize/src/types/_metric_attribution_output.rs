@@ -28,8 +28,8 @@ impl MetricAttributionOutput {
 }
 
 /// A builder for [`MetricAttributionOutput`](crate::types::MetricAttributionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MetricAttributionOutputBuilder {
     pub(crate) s3_data_destination: ::std::option::Option<crate::types::S3DataConfig>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,

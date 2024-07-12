@@ -26,8 +26,8 @@ impl DeleteLfTagInput {
 }
 
 /// A builder for [`DeleteLfTagInput`](crate::operation::delete_lf_tag::DeleteLfTagInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteLfTagInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) tag_key: ::std::option::Option<::std::string::String>,

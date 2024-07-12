@@ -18,8 +18,8 @@ impl SwapEnvironmentCnamEsOutput {
 }
 
 /// A builder for [`SwapEnvironmentCnamEsOutput`](crate::operation::swap_environment_cnames::SwapEnvironmentCnamEsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SwapEnvironmentCnamEsOutputBuilder {
     _request_id: Option<String>,
 }

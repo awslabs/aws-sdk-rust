@@ -45,8 +45,8 @@ impl CustomConnectorProfileCredentials {
 }
 
 /// A builder for [`CustomConnectorProfileCredentials`](crate::types::CustomConnectorProfileCredentials).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CustomConnectorProfileCredentialsBuilder {
     pub(crate) authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
     pub(crate) basic: ::std::option::Option<crate::types::BasicAuthCredentials>,

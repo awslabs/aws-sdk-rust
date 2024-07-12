@@ -39,8 +39,8 @@ impl PublicKey {
 }
 
 /// A builder for [`PublicKey`](crate::types::PublicKey).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PublicKeyBuilder {
     pub(crate) value: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) validity_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,

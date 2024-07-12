@@ -34,8 +34,8 @@ impl GetIpamPoolAllocationsOutput {
 }
 
 /// A builder for [`GetIpamPoolAllocationsOutput`](crate::operation::get_ipam_pool_allocations::GetIpamPoolAllocationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetIpamPoolAllocationsOutputBuilder {
     pub(crate) ipam_pool_allocations: ::std::option::Option<::std::vec::Vec<crate::types::IpamPoolAllocation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

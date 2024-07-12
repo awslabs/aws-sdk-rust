@@ -40,8 +40,8 @@ impl DescribeConnectionAliasesInput {
 }
 
 /// A builder for [`DescribeConnectionAliasesInput`](crate::operation::describe_connection_aliases::DescribeConnectionAliasesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeConnectionAliasesInputBuilder {
     pub(crate) alias_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,

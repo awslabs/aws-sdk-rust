@@ -18,8 +18,8 @@ impl DeleteAudienceModelOutput {
 }
 
 /// A builder for [`DeleteAudienceModelOutput`](crate::operation::delete_audience_model::DeleteAudienceModelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAudienceModelOutputBuilder {
     _request_id: Option<String>,
 }

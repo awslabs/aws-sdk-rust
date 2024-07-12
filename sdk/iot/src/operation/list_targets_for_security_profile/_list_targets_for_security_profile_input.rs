@@ -32,8 +32,8 @@ impl ListTargetsForSecurityProfileInput {
 }
 
 /// A builder for [`ListTargetsForSecurityProfileInput`](crate::operation::list_targets_for_security_profile::ListTargetsForSecurityProfileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTargetsForSecurityProfileInputBuilder {
     pub(crate) security_profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

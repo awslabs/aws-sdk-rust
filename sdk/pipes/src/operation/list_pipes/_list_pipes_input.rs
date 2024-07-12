@@ -69,8 +69,8 @@ impl ListPipesInput {
 }
 
 /// A builder for [`ListPipesInput`](crate::operation::list_pipes::ListPipesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ListPipesInputBuilder {
     pub(crate) name_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) desired_state: ::std::option::Option<crate::types::RequestedPipeState>,

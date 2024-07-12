@@ -39,8 +39,8 @@ impl AwsAppSyncGraphQlApiOpenIdConnectConfigDetails {
 }
 
 /// A builder for [`AwsAppSyncGraphQlApiOpenIdConnectConfigDetails`](crate::types::AwsAppSyncGraphQlApiOpenIdConnectConfigDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsAppSyncGraphQlApiOpenIdConnectConfigDetailsBuilder {
     pub(crate) auth_ttl: ::std::option::Option<i64>,
     pub(crate) client_id: ::std::option::Option<::std::string::String>,

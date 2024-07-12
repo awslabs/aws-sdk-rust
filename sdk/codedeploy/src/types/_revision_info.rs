@@ -27,8 +27,8 @@ impl RevisionInfo {
 }
 
 /// A builder for [`RevisionInfo`](crate::types::RevisionInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RevisionInfoBuilder {
     pub(crate) revision_location: ::std::option::Option<crate::types::RevisionLocation>,
     pub(crate) generic_revision_info: ::std::option::Option<crate::types::GenericRevisionInfo>,

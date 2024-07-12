@@ -18,8 +18,8 @@ impl DeleteConversationOutput {
 }
 
 /// A builder for [`DeleteConversationOutput`](crate::operation::delete_conversation::DeleteConversationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteConversationOutputBuilder {
     _request_id: Option<String>,
 }

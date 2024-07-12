@@ -32,8 +32,8 @@ impl ListKeyValueStoresInput {
 }
 
 /// A builder for [`ListKeyValueStoresInput`](crate::operation::list_key_value_stores::ListKeyValueStoresInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListKeyValueStoresInputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,

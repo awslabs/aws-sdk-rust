@@ -27,8 +27,8 @@ impl IngressBooleanExpression {
 }
 
 /// A builder for [`IngressBooleanExpression`](crate::types::IngressBooleanExpression).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IngressBooleanExpressionBuilder {
     pub(crate) evaluate: ::std::option::Option<crate::types::IngressBooleanToEvaluate>,
     pub(crate) operator: ::std::option::Option<crate::types::IngressBooleanOperator>,

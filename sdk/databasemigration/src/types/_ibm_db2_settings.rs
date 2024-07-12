@@ -125,8 +125,8 @@ impl IbmDb2Settings {
 }
 
 /// A builder for [`IbmDb2Settings`](crate::types::IbmDb2Settings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct IbmDb2SettingsBuilder {
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) password: ::std::option::Option<::std::string::String>,

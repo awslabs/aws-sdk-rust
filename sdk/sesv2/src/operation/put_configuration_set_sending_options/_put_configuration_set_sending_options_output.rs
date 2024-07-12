@@ -19,8 +19,8 @@ impl PutConfigurationSetSendingOptionsOutput {
 }
 
 /// A builder for [`PutConfigurationSetSendingOptionsOutput`](crate::operation::put_configuration_set_sending_options::PutConfigurationSetSendingOptionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutConfigurationSetSendingOptionsOutputBuilder {
     _request_id: Option<String>,
 }

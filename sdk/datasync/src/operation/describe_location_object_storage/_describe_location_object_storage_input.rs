@@ -21,8 +21,8 @@ impl DescribeLocationObjectStorageInput {
 }
 
 /// A builder for [`DescribeLocationObjectStorageInput`](crate::operation::describe_location_object_storage::DescribeLocationObjectStorageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeLocationObjectStorageInputBuilder {
     pub(crate) location_arn: ::std::option::Option<::std::string::String>,
 }

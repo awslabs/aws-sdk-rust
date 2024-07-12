@@ -40,8 +40,8 @@ impl StartSimulationJobBatchInput {
 }
 
 /// A builder for [`StartSimulationJobBatchInput`](crate::operation::start_simulation_job_batch::StartSimulationJobBatchInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartSimulationJobBatchInputBuilder {
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) batch_policy: ::std::option::Option<crate::types::BatchPolicy>,

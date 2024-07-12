@@ -26,8 +26,8 @@ impl SwitchoverGlobalClusterOutput {
 }
 
 /// A builder for [`SwitchoverGlobalClusterOutput`](crate::operation::switchover_global_cluster::SwitchoverGlobalClusterOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SwitchoverGlobalClusterOutputBuilder {
     pub(crate) global_cluster: ::std::option::Option<crate::types::GlobalCluster>,
     _request_id: Option<String>,

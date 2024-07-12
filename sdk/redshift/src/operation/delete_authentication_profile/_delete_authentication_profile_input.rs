@@ -20,8 +20,8 @@ impl DeleteAuthenticationProfileInput {
 }
 
 /// A builder for [`DeleteAuthenticationProfileInput`](crate::operation::delete_authentication_profile::DeleteAuthenticationProfileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAuthenticationProfileInputBuilder {
     pub(crate) authentication_profile_name: ::std::option::Option<::std::string::String>,
 }

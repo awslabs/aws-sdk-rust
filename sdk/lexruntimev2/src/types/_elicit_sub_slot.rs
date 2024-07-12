@@ -28,8 +28,8 @@ impl ElicitSubSlot {
 }
 
 /// A builder for [`ElicitSubSlot`](crate::types::ElicitSubSlot).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ElicitSubSlotBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) sub_slot_to_elicit: ::std::option::Option<::std::boxed::Box<crate::types::ElicitSubSlot>>,

@@ -32,8 +32,8 @@ impl GetOriginEndpointPolicyInput {
 }
 
 /// A builder for [`GetOriginEndpointPolicyInput`](crate::operation::get_origin_endpoint_policy::GetOriginEndpointPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetOriginEndpointPolicyInputBuilder {
     pub(crate) channel_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) channel_name: ::std::option::Option<::std::string::String>,

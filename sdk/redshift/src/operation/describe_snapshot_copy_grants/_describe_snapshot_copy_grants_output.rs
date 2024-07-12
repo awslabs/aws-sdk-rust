@@ -37,8 +37,8 @@ impl DescribeSnapshotCopyGrantsOutput {
 }
 
 /// A builder for [`DescribeSnapshotCopyGrantsOutput`](crate::operation::describe_snapshot_copy_grants::DescribeSnapshotCopyGrantsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSnapshotCopyGrantsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) snapshot_copy_grants: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotCopyGrant>>,

@@ -26,8 +26,8 @@ impl UpdateNodegroupConfigOutput {
 }
 
 /// A builder for [`UpdateNodegroupConfigOutput`](crate::operation::update_nodegroup_config::UpdateNodegroupConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateNodegroupConfigOutputBuilder {
     pub(crate) update: ::std::option::Option<crate::types::Update>,
     _request_id: Option<String>,

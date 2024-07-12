@@ -32,8 +32,8 @@ impl CreateSecurityProfileOutput {
 }
 
 /// A builder for [`CreateSecurityProfileOutput`](crate::operation::create_security_profile::CreateSecurityProfileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSecurityProfileOutputBuilder {
     pub(crate) security_profile_id: ::std::option::Option<::std::string::String>,
     pub(crate) security_profile_arn: ::std::option::Option<::std::string::String>,

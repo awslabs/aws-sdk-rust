@@ -53,8 +53,8 @@ impl ServiceUnavailableException {
 }
 
 /// A builder for [`ServiceUnavailableException`](crate::types::error::ServiceUnavailableException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServiceUnavailableExceptionBuilder {
     pub(crate) retry_after_seconds: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

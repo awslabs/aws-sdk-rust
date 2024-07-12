@@ -18,8 +18,8 @@ impl StopDataSourceSyncJobOutput {
 }
 
 /// A builder for [`StopDataSourceSyncJobOutput`](crate::operation::stop_data_source_sync_job::StopDataSourceSyncJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopDataSourceSyncJobOutputBuilder {
     _request_id: Option<String>,
 }

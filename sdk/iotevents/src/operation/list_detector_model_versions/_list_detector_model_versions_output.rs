@@ -34,8 +34,8 @@ impl ListDetectorModelVersionsOutput {
 }
 
 /// A builder for [`ListDetectorModelVersionsOutput`](crate::operation::list_detector_model_versions::ListDetectorModelVersionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDetectorModelVersionsOutputBuilder {
     pub(crate) detector_model_version_summaries: ::std::option::Option<::std::vec::Vec<crate::types::DetectorModelVersionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

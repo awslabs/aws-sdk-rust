@@ -129,8 +129,8 @@ impl AwsAmazonMqBrokerDetails {
 }
 
 /// A builder for [`AwsAmazonMqBrokerDetails`](crate::types::AwsAmazonMqBrokerDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsAmazonMqBrokerDetailsBuilder {
     pub(crate) authentication_strategy: ::std::option::Option<::std::string::String>,
     pub(crate) auto_minor_version_upgrade: ::std::option::Option<bool>,

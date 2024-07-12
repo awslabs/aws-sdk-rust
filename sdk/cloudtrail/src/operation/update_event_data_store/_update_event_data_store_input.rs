@@ -130,8 +130,8 @@ impl UpdateEventDataStoreInput {
 }
 
 /// A builder for [`UpdateEventDataStoreInput`](crate::operation::update_event_data_store::UpdateEventDataStoreInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateEventDataStoreInputBuilder {
     pub(crate) event_data_store: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

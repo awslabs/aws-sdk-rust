@@ -26,8 +26,8 @@ impl DeleteVpcConnectorOutput {
 }
 
 /// A builder for [`DeleteVpcConnectorOutput`](crate::operation::delete_vpc_connector::DeleteVpcConnectorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVpcConnectorOutputBuilder {
     pub(crate) vpc_connector: ::std::option::Option<crate::types::VpcConnector>,
     _request_id: Option<String>,

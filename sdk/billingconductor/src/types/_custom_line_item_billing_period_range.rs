@@ -28,8 +28,8 @@ impl CustomLineItemBillingPeriodRange {
 }
 
 /// A builder for [`CustomLineItemBillingPeriodRange`](crate::types::CustomLineItemBillingPeriodRange).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CustomLineItemBillingPeriodRangeBuilder {
     pub(crate) inclusive_start_billing_period: ::std::option::Option<::std::string::String>,
     pub(crate) exclusive_end_billing_period: ::std::option::Option<::std::string::String>,

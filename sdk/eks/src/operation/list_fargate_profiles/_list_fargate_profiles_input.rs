@@ -36,8 +36,8 @@ impl ListFargateProfilesInput {
 }
 
 /// A builder for [`ListFargateProfilesInput`](crate::operation::list_fargate_profiles::ListFargateProfilesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFargateProfilesInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

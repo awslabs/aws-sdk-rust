@@ -18,8 +18,8 @@ impl DeleteServerOutput {
 }
 
 /// A builder for [`DeleteServerOutput`](crate::operation::delete_server::DeleteServerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteServerOutputBuilder {
     _request_id: Option<String>,
 }

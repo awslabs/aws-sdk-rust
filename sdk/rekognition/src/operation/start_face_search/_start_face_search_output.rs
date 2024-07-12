@@ -26,8 +26,8 @@ impl StartFaceSearchOutput {
 }
 
 /// A builder for [`StartFaceSearchOutput`](crate::operation::start_face_search::StartFaceSearchOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartFaceSearchOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

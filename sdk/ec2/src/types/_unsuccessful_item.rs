@@ -27,8 +27,8 @@ impl UnsuccessfulItem {
 }
 
 /// A builder for [`UnsuccessfulItem`](crate::types::UnsuccessfulItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UnsuccessfulItemBuilder {
     pub(crate) error: ::std::option::Option<crate::types::UnsuccessfulItemError>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,

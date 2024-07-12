@@ -20,8 +20,8 @@ impl DeleteLakeFormationIdentityCenterConfigurationOutput {
 }
 
 /// A builder for [`DeleteLakeFormationIdentityCenterConfigurationOutput`](crate::operation::delete_lake_formation_identity_center_configuration::DeleteLakeFormationIdentityCenterConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteLakeFormationIdentityCenterConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

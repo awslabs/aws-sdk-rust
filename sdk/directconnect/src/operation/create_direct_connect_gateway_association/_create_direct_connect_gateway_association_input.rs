@@ -44,8 +44,8 @@ impl CreateDirectConnectGatewayAssociationInput {
 }
 
 /// A builder for [`CreateDirectConnectGatewayAssociationInput`](crate::operation::create_direct_connect_gateway_association::CreateDirectConnectGatewayAssociationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDirectConnectGatewayAssociationInputBuilder {
     pub(crate) direct_connect_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) gateway_id: ::std::option::Option<::std::string::String>,

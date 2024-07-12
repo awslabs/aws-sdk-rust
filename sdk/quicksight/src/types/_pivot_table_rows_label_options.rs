@@ -27,8 +27,8 @@ impl PivotTableRowsLabelOptions {
 }
 
 /// A builder for [`PivotTableRowsLabelOptions`](crate::types::PivotTableRowsLabelOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PivotTableRowsLabelOptionsBuilder {
     pub(crate) visibility: ::std::option::Option<crate::types::Visibility>,
     pub(crate) custom_label: ::std::option::Option<::std::string::String>,

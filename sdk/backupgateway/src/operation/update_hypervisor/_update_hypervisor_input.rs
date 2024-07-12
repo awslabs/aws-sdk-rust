@@ -62,8 +62,8 @@ impl UpdateHypervisorInput {
 }
 
 /// A builder for [`UpdateHypervisorInput`](crate::operation::update_hypervisor::UpdateHypervisorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateHypervisorInputBuilder {
     pub(crate) hypervisor_arn: ::std::option::Option<::std::string::String>,
     pub(crate) host: ::std::option::Option<::std::string::String>,

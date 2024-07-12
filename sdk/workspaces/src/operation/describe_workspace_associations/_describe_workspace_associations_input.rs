@@ -28,8 +28,8 @@ impl DescribeWorkspaceAssociationsInput {
 }
 
 /// A builder for [`DescribeWorkspaceAssociationsInput`](crate::operation::describe_workspace_associations::DescribeWorkspaceAssociationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeWorkspaceAssociationsInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) associated_resource_types: ::std::option::Option<::std::vec::Vec<crate::types::WorkSpaceAssociatedResourceType>>,

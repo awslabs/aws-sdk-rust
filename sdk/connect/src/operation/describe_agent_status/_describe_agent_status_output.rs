@@ -26,8 +26,8 @@ impl DescribeAgentStatusOutput {
 }
 
 /// A builder for [`DescribeAgentStatusOutput`](crate::operation::describe_agent_status::DescribeAgentStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAgentStatusOutputBuilder {
     pub(crate) agent_status: ::std::option::Option<crate::types::AgentStatus>,
     _request_id: Option<String>,

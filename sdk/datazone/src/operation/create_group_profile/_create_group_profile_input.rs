@@ -32,8 +32,8 @@ impl CreateGroupProfileInput {
 }
 
 /// A builder for [`CreateGroupProfileInput`](crate::operation::create_group_profile::CreateGroupProfileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateGroupProfileInputBuilder {
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) group_identifier: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl DisassociateIdentityProviderConfigOutput {
 }
 
 /// A builder for [`DisassociateIdentityProviderConfigOutput`](crate::operation::disassociate_identity_provider_config::DisassociateIdentityProviderConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateIdentityProviderConfigOutputBuilder {
     pub(crate) update: ::std::option::Option<crate::types::Update>,
     _request_id: Option<String>,

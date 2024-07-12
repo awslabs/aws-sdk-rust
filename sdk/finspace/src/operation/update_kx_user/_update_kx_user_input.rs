@@ -38,8 +38,8 @@ impl UpdateKxUserInput {
 }
 
 /// A builder for [`UpdateKxUserInput`](crate::operation::update_kx_user::UpdateKxUserInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateKxUserInputBuilder {
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_name: ::std::option::Option<::std::string::String>,

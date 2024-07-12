@@ -26,8 +26,8 @@ impl CreateTransitVirtualInterfaceInput {
 }
 
 /// A builder for [`CreateTransitVirtualInterfaceInput`](crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateTransitVirtualInterfaceInputBuilder {
     pub(crate) connection_id: ::std::option::Option<::std::string::String>,
     pub(crate) new_transit_virtual_interface: ::std::option::Option<crate::types::NewTransitVirtualInterface>,

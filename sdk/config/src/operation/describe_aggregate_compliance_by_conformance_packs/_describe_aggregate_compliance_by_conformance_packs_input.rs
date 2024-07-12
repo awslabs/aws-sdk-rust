@@ -40,8 +40,8 @@ impl DescribeAggregateComplianceByConformancePacksInput {
 }
 
 /// A builder for [`DescribeAggregateComplianceByConformancePacksInput`](crate::operation::describe_aggregate_compliance_by_conformance_packs::DescribeAggregateComplianceByConformancePacksInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAggregateComplianceByConformancePacksInputBuilder {
     pub(crate) configuration_aggregator_name: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<crate::types::AggregateConformancePackComplianceFilters>,

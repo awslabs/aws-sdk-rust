@@ -27,8 +27,8 @@ impl FollowModeScheduleActionStartSettings {
 }
 
 /// A builder for [`FollowModeScheduleActionStartSettings`](crate::types::FollowModeScheduleActionStartSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FollowModeScheduleActionStartSettingsBuilder {
     pub(crate) follow_point: ::std::option::Option<crate::types::FollowPoint>,
     pub(crate) reference_action_name: ::std::option::Option<::std::string::String>,

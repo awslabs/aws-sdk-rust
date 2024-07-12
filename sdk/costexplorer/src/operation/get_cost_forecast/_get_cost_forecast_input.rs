@@ -168,8 +168,8 @@ impl GetCostForecastInput {
 }
 
 /// A builder for [`GetCostForecastInput`](crate::operation::get_cost_forecast::GetCostForecastInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCostForecastInputBuilder {
     pub(crate) time_period: ::std::option::Option<crate::types::DateInterval>,
     pub(crate) metric: ::std::option::Option<crate::types::Metric>,

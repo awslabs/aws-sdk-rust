@@ -26,8 +26,8 @@ impl GetContentSummaryInput {
 }
 
 /// A builder for [`GetContentSummaryInput`](crate::operation::get_content_summary::GetContentSummaryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetContentSummaryInputBuilder {
     pub(crate) content_id: ::std::option::Option<::std::string::String>,
     pub(crate) knowledge_base_id: ::std::option::Option<::std::string::String>,

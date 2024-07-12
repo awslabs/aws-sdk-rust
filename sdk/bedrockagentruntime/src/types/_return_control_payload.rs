@@ -42,8 +42,8 @@ impl ReturnControlPayload {
 }
 
 /// A builder for [`ReturnControlPayload`](crate::types::ReturnControlPayload).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ReturnControlPayloadBuilder {
     pub(crate) invocation_inputs: ::std::option::Option<::std::vec::Vec<crate::types::InvocationInputMember>>,
     pub(crate) invocation_id: ::std::option::Option<::std::string::String>,

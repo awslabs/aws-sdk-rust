@@ -20,8 +20,8 @@ impl UpdateActionTypeInput {
 }
 
 /// A builder for [`UpdateActionTypeInput`](crate::operation::update_action_type::UpdateActionTypeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateActionTypeInputBuilder {
     pub(crate) action_type: ::std::option::Option<crate::types::ActionTypeDeclaration>,
 }

@@ -19,8 +19,8 @@ impl DeleteRemoteAccessSessionOutput {
 }
 
 /// A builder for [`DeleteRemoteAccessSessionOutput`](crate::operation::delete_remote_access_session::DeleteRemoteAccessSessionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRemoteAccessSessionOutputBuilder {
     _request_id: Option<String>,
 }

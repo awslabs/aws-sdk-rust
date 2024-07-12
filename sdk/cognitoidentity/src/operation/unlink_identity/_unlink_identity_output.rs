@@ -18,8 +18,8 @@ impl UnlinkIdentityOutput {
 }
 
 /// A builder for [`UnlinkIdentityOutput`](crate::operation::unlink_identity::UnlinkIdentityOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UnlinkIdentityOutputBuilder {
     _request_id: Option<String>,
 }

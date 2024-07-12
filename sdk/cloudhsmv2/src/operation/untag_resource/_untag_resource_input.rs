@@ -28,8 +28,8 @@ impl UntagResourceInput {
 }
 
 /// A builder for [`UntagResourceInput`](crate::operation::untag_resource::UntagResourceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UntagResourceInputBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) tag_key_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

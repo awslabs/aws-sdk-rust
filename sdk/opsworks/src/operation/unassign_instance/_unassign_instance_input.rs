@@ -20,8 +20,8 @@ impl UnassignInstanceInput {
 }
 
 /// A builder for [`UnassignInstanceInput`](crate::operation::unassign_instance::UnassignInstanceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UnassignInstanceInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
 }

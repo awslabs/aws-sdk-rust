@@ -43,8 +43,8 @@ impl EntityIdentifier {
 }
 
 /// A builder for [`EntityIdentifier`](crate::types::EntityIdentifier).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct EntityIdentifierBuilder {
     pub(crate) entity_type: ::std::option::Option<::std::string::String>,
     pub(crate) entity_id: ::std::option::Option<::std::string::String>,

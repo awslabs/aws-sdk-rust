@@ -59,8 +59,8 @@ impl LambdaFunctionAggregation {
 }
 
 /// A builder for [`LambdaFunctionAggregation`](crate::types::LambdaFunctionAggregation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LambdaFunctionAggregationBuilder {
     pub(crate) resource_ids: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) function_names: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,

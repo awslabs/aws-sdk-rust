@@ -35,8 +35,8 @@ impl CreateCustomActionTypeOutput {
 }
 
 /// A builder for [`CreateCustomActionTypeOutput`](crate::operation::create_custom_action_type::CreateCustomActionTypeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCustomActionTypeOutputBuilder {
     pub(crate) action_type: ::std::option::Option<crate::types::ActionType>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,

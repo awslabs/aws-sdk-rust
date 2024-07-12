@@ -26,8 +26,8 @@ impl DescribeModelVersionInput {
 }
 
 /// A builder for [`DescribeModelVersionInput`](crate::operation::describe_model_version::DescribeModelVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeModelVersionInputBuilder {
     pub(crate) model_name: ::std::option::Option<::std::string::String>,
     pub(crate) model_version: ::std::option::Option<i64>,

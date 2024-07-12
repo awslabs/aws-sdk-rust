@@ -18,8 +18,8 @@ impl DeleteResolverOutput {
 }
 
 /// A builder for [`DeleteResolverOutput`](crate::operation::delete_resolver::DeleteResolverOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteResolverOutputBuilder {
     _request_id: Option<String>,
 }

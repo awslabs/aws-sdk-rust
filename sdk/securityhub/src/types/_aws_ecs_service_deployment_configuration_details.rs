@@ -43,8 +43,8 @@ impl AwsEcsServiceDeploymentConfigurationDetails {
 }
 
 /// A builder for [`AwsEcsServiceDeploymentConfigurationDetails`](crate::types::AwsEcsServiceDeploymentConfigurationDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEcsServiceDeploymentConfigurationDetailsBuilder {
     pub(crate) deployment_circuit_breaker: ::std::option::Option<crate::types::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails>,
     pub(crate) maximum_percent: ::std::option::Option<i32>,

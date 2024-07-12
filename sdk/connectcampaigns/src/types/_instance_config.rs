@@ -35,8 +35,8 @@ impl InstanceConfig {
 }
 
 /// A builder for [`InstanceConfig`](crate::types::InstanceConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceConfigBuilder {
     pub(crate) connect_instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) service_linked_role_arn: ::std::option::Option<::std::string::String>,

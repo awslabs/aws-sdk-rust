@@ -84,8 +84,8 @@ impl GetSessionEmbedUrlInput {
 }
 
 /// A builder for [`GetSessionEmbedUrlInput`](crate::operation::get_session_embed_url::GetSessionEmbedUrlInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSessionEmbedUrlInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) entry_point: ::std::option::Option<::std::string::String>,

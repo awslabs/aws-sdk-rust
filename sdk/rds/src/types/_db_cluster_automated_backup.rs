@@ -187,8 +187,8 @@ impl DbClusterAutomatedBackup {
 }
 
 /// A builder for [`DbClusterAutomatedBackup`](crate::types::DbClusterAutomatedBackup).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DbClusterAutomatedBackupBuilder {
     pub(crate) engine: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,

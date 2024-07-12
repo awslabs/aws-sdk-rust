@@ -31,8 +31,8 @@ impl UserGroupsUpdateStatus {
 }
 
 /// A builder for [`UserGroupsUpdateStatus`](crate::types::UserGroupsUpdateStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UserGroupsUpdateStatusBuilder {
     pub(crate) user_group_ids_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) user_group_ids_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

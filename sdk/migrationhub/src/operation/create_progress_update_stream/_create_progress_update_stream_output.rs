@@ -18,8 +18,8 @@ impl CreateProgressUpdateStreamOutput {
 }
 
 /// A builder for [`CreateProgressUpdateStreamOutput`](crate::operation::create_progress_update_stream::CreateProgressUpdateStreamOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateProgressUpdateStreamOutputBuilder {
     _request_id: Option<String>,
 }

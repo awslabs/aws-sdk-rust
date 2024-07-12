@@ -38,8 +38,8 @@ impl ListStreamConsumersOutput {
 }
 
 /// A builder for [`ListStreamConsumersOutput`](crate::operation::list_stream_consumers::ListStreamConsumersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListStreamConsumersOutputBuilder {
     pub(crate) consumers: ::std::option::Option<::std::vec::Vec<crate::types::Consumer>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

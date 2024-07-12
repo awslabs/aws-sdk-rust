@@ -63,8 +63,8 @@ impl FunctionConfiguration {
 }
 
 /// A builder for [`FunctionConfiguration`](crate::types::FunctionConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FunctionConfigurationBuilder {
     pub(crate) encoding_type: ::std::option::Option<crate::types::EncodingType>,
     pub(crate) environment: ::std::option::Option<crate::types::FunctionConfigurationEnvironment>,

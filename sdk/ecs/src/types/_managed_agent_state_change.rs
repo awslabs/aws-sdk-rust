@@ -41,8 +41,8 @@ impl ManagedAgentStateChange {
 }
 
 /// A builder for [`ManagedAgentStateChange`](crate::types::ManagedAgentStateChange).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ManagedAgentStateChangeBuilder {
     pub(crate) container_name: ::std::option::Option<::std::string::String>,
     pub(crate) managed_agent_name: ::std::option::Option<crate::types::ManagedAgentName>,

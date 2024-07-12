@@ -26,8 +26,8 @@ impl CreateCollectionOutput {
 }
 
 /// A builder for [`CreateCollectionOutput`](crate::operation::create_collection::CreateCollectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCollectionOutputBuilder {
     pub(crate) create_collection_detail: ::std::option::Option<crate::types::CreateCollectionDetail>,
     _request_id: Option<String>,

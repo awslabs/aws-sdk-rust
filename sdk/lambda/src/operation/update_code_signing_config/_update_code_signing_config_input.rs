@@ -38,8 +38,8 @@ impl UpdateCodeSigningConfigInput {
 }
 
 /// A builder for [`UpdateCodeSigningConfigInput`](crate::operation::update_code_signing_config::UpdateCodeSigningConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateCodeSigningConfigInputBuilder {
     pub(crate) code_signing_config_arn: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

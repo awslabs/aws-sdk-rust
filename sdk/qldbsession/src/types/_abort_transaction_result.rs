@@ -21,8 +21,8 @@ impl AbortTransactionResult {
 }
 
 /// A builder for [`AbortTransactionResult`](crate::types::AbortTransactionResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AbortTransactionResultBuilder {
     pub(crate) timing_information: ::std::option::Option<crate::types::TimingInformation>,
 }

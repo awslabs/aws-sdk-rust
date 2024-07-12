@@ -27,8 +27,8 @@ impl NetworkAccessConfiguration {
 }
 
 /// A builder for [`NetworkAccessConfiguration`](crate::types::NetworkAccessConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NetworkAccessConfigurationBuilder {
     pub(crate) eni_private_ip_address: ::std::option::Option<::std::string::String>,
     pub(crate) eni_id: ::std::option::Option<::std::string::String>,

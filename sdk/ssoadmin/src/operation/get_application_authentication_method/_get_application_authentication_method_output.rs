@@ -26,8 +26,8 @@ impl GetApplicationAuthenticationMethodOutput {
 }
 
 /// A builder for [`GetApplicationAuthenticationMethodOutput`](crate::operation::get_application_authentication_method::GetApplicationAuthenticationMethodOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetApplicationAuthenticationMethodOutputBuilder {
     pub(crate) authentication_method: ::std::option::Option<crate::types::AuthenticationMethod>,
     _request_id: Option<String>,

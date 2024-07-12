@@ -46,8 +46,8 @@ impl StartImportInput {
 }
 
 /// A builder for [`StartImportInput`](crate::operation::start_import::StartImportInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartImportInputBuilder {
     pub(crate) destinations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) import_source: ::std::option::Option<crate::types::ImportSource>,

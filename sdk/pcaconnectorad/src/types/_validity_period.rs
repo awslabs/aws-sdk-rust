@@ -27,8 +27,8 @@ impl ValidityPeriod {
 }
 
 /// A builder for [`ValidityPeriod`](crate::types::ValidityPeriod).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ValidityPeriodBuilder {
     pub(crate) period_type: ::std::option::Option<crate::types::ValidityPeriodType>,
     pub(crate) period: ::std::option::Option<i64>,

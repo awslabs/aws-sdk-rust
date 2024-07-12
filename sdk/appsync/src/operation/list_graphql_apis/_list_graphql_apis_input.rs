@@ -38,8 +38,8 @@ impl ListGraphqlApisInput {
 }
 
 /// A builder for [`ListGraphqlApisInput`](crate::operation::list_graphql_apis::ListGraphqlApisInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListGraphqlApisInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

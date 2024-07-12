@@ -26,8 +26,8 @@ impl UpdateCollectionOutput {
 }
 
 /// A builder for [`UpdateCollectionOutput`](crate::operation::update_collection::UpdateCollectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateCollectionOutputBuilder {
     pub(crate) update_collection_detail: ::std::option::Option<crate::types::UpdateCollectionDetail>,
     _request_id: Option<String>,

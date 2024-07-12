@@ -38,8 +38,8 @@ impl UpdateKxEnvironmentInput {
 }
 
 /// A builder for [`UpdateKxEnvironmentInput`](crate::operation::update_kx_environment::UpdateKxEnvironmentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateKxEnvironmentInputBuilder {
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

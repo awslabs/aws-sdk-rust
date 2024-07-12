@@ -26,8 +26,8 @@ impl GetIngestionJobOutput {
 }
 
 /// A builder for [`GetIngestionJobOutput`](crate::operation::get_ingestion_job::GetIngestionJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetIngestionJobOutputBuilder {
     pub(crate) ingestion_job: ::std::option::Option<crate::types::IngestionJob>,
     _request_id: Option<String>,

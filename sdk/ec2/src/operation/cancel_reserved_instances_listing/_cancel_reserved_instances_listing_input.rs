@@ -21,8 +21,8 @@ impl CancelReservedInstancesListingInput {
 }
 
 /// A builder for [`CancelReservedInstancesListingInput`](crate::operation::cancel_reserved_instances_listing::CancelReservedInstancesListingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelReservedInstancesListingInputBuilder {
     pub(crate) reserved_instances_listing_id: ::std::option::Option<::std::string::String>,
 }

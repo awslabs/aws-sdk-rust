@@ -28,8 +28,8 @@ impl BundleInformation {
 }
 
 /// A builder for [`BundleInformation`](crate::types::BundleInformation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BundleInformationBuilder {
     pub(crate) bundle_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) pricing_tier: ::std::option::Option<crate::types::PricingTier>,

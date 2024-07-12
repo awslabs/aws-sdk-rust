@@ -18,8 +18,8 @@ impl DeleteIdentitySourceOutput {
 }
 
 /// A builder for [`DeleteIdentitySourceOutput`](crate::operation::delete_identity_source::DeleteIdentitySourceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteIdentitySourceOutputBuilder {
     _request_id: Option<String>,
 }

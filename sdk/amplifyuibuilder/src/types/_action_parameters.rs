@@ -69,8 +69,8 @@ impl ActionParameters {
 }
 
 /// A builder for [`ActionParameters`](crate::types::ActionParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ActionParametersBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ComponentProperty>,
     pub(crate) url: ::std::option::Option<crate::types::ComponentProperty>,

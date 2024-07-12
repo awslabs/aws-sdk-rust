@@ -26,8 +26,8 @@ impl StartImportLabelsTaskRunOutput {
 }
 
 /// A builder for [`StartImportLabelsTaskRunOutput`](crate::operation::start_import_labels_task_run::StartImportLabelsTaskRunOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartImportLabelsTaskRunOutputBuilder {
     pub(crate) task_run_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

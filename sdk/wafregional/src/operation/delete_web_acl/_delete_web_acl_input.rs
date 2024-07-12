@@ -26,8 +26,8 @@ impl DeleteWebAclInput {
 }
 
 /// A builder for [`DeleteWebAclInput`](crate::operation::delete_web_acl::DeleteWebAclInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteWebAclInputBuilder {
     pub(crate) web_acl_id: ::std::option::Option<::std::string::String>,
     pub(crate) change_token: ::std::option::Option<::std::string::String>,

@@ -37,8 +37,8 @@ impl CampaignConfig {
 }
 
 /// A builder for [`CampaignConfig`](crate::types::CampaignConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CampaignConfigBuilder {
     pub(crate) item_exploration_config: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) enable_metadata_with_recommendations: ::std::option::Option<bool>,

@@ -20,8 +20,8 @@ impl DescribeWorkflowInput {
 }
 
 /// A builder for [`DescribeWorkflowInput`](crate::operation::describe_workflow::DescribeWorkflowInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeWorkflowInputBuilder {
     pub(crate) workflow_id: ::std::option::Option<::std::string::String>,
 }

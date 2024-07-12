@@ -40,8 +40,8 @@ impl ListAccessKeysOutput {
 }
 
 /// A builder for [`ListAccessKeysOutput`](crate::operation::list_access_keys::ListAccessKeysOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAccessKeysOutputBuilder {
     pub(crate) access_key_metadata: ::std::option::Option<::std::vec::Vec<crate::types::AccessKeyMetadata>>,
     pub(crate) is_truncated: ::std::option::Option<bool>,

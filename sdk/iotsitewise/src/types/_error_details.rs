@@ -36,8 +36,8 @@ impl ErrorDetails {
 }
 
 /// A builder for [`ErrorDetails`](crate::types::ErrorDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ErrorDetailsBuilder {
     pub(crate) code: ::std::option::Option<crate::types::ErrorCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

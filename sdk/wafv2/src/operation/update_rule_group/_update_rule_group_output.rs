@@ -26,8 +26,8 @@ impl UpdateRuleGroupOutput {
 }
 
 /// A builder for [`UpdateRuleGroupOutput`](crate::operation::update_rule_group::UpdateRuleGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRuleGroupOutputBuilder {
     pub(crate) next_lock_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

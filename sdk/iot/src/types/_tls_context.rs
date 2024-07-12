@@ -21,8 +21,8 @@ impl TlsContext {
 }
 
 /// A builder for [`TlsContext`](crate::types::TlsContext).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TlsContextBuilder {
     pub(crate) server_name: ::std::option::Option<::std::string::String>,
 }

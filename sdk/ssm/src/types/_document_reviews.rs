@@ -29,8 +29,8 @@ impl DocumentReviews {
 }
 
 /// A builder for [`DocumentReviews`](crate::types::DocumentReviews).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DocumentReviewsBuilder {
     pub(crate) action: ::std::option::Option<crate::types::DocumentReviewAction>,
     pub(crate) comment: ::std::option::Option<::std::vec::Vec<crate::types::DocumentReviewCommentSource>>,

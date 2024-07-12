@@ -53,8 +53,8 @@ impl DirectoryDoesNotExistException {
 }
 
 /// A builder for [`DirectoryDoesNotExistException`](crate::types::error::DirectoryDoesNotExistException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DirectoryDoesNotExistExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,

@@ -28,8 +28,8 @@ impl DescribeMatchmakingOutput {
 }
 
 /// A builder for [`DescribeMatchmakingOutput`](crate::operation::describe_matchmaking::DescribeMatchmakingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeMatchmakingOutputBuilder {
     pub(crate) ticket_list: ::std::option::Option<::std::vec::Vec<crate::types::MatchmakingTicket>>,
     _request_id: Option<String>,

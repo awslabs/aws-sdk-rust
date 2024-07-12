@@ -26,8 +26,8 @@ impl DeleteTransitGatewayConnectPeerOutput {
 }
 
 /// A builder for [`DeleteTransitGatewayConnectPeerOutput`](crate::operation::delete_transit_gateway_connect_peer::DeleteTransitGatewayConnectPeerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTransitGatewayConnectPeerOutputBuilder {
     pub(crate) transit_gateway_connect_peer: ::std::option::Option<crate::types::TransitGatewayConnectPeer>,
     _request_id: Option<String>,

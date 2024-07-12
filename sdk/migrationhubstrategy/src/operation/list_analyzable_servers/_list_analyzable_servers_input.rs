@@ -33,8 +33,8 @@ impl ListAnalyzableServersInput {
 }
 
 /// A builder for [`ListAnalyzableServersInput`](crate::operation::list_analyzable_servers::ListAnalyzableServersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAnalyzableServersInputBuilder {
     pub(crate) sort: ::std::option::Option<crate::types::SortOrder>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

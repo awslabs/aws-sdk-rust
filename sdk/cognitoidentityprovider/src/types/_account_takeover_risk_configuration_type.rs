@@ -27,8 +27,8 @@ impl AccountTakeoverRiskConfigurationType {
 }
 
 /// A builder for [`AccountTakeoverRiskConfigurationType`](crate::types::AccountTakeoverRiskConfigurationType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AccountTakeoverRiskConfigurationTypeBuilder {
     pub(crate) notify_configuration: ::std::option::Option<crate::types::NotifyConfigurationType>,
     pub(crate) actions: ::std::option::Option<crate::types::AccountTakeoverActionsType>,

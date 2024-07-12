@@ -12,8 +12,8 @@ impl EndSessionRequest {
 }
 
 /// A builder for [`EndSessionRequest`](crate::types::EndSessionRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EndSessionRequestBuilder {}
 impl EndSessionRequestBuilder {
     /// Consumes the builder and constructs a [`EndSessionRequest`](crate::types::EndSessionRequest).

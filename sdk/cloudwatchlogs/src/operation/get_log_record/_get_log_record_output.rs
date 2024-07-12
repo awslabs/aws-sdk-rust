@@ -26,8 +26,8 @@ impl GetLogRecordOutput {
 }
 
 /// A builder for [`GetLogRecordOutput`](crate::operation::get_log_record::GetLogRecordOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLogRecordOutputBuilder {
     pub(crate) log_record: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,

@@ -34,8 +34,8 @@ impl RebootDbClusterOutput {
 }
 
 /// A builder for [`RebootDbClusterOutput`](crate::operation::reboot_db_cluster::RebootDbClusterOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RebootDbClusterOutputBuilder {
     pub(crate) db_cluster: ::std::option::Option<crate::types::DbCluster>,
     _request_id: Option<String>,

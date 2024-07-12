@@ -23,8 +23,8 @@ impl DocumentMetadataResponseInfo {
 }
 
 /// A builder for [`DocumentMetadataResponseInfo`](crate::types::DocumentMetadataResponseInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DocumentMetadataResponseInfoBuilder {
     pub(crate) reviewer_response: ::std::option::Option<::std::vec::Vec<crate::types::DocumentReviewerResponseSource>>,
 }

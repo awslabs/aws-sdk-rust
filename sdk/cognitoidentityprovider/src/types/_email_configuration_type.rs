@@ -125,8 +125,8 @@ impl EmailConfigurationType {
 }
 
 /// A builder for [`EmailConfigurationType`](crate::types::EmailConfigurationType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EmailConfigurationTypeBuilder {
     pub(crate) source_arn: ::std::option::Option<::std::string::String>,
     pub(crate) reply_to_email_address: ::std::option::Option<::std::string::String>,

@@ -32,8 +32,8 @@ impl DescribeQueryDefinitionsInput {
 }
 
 /// A builder for [`DescribeQueryDefinitionsInput`](crate::operation::describe_query_definitions::DescribeQueryDefinitionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeQueryDefinitionsInputBuilder {
     pub(crate) query_definition_name_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

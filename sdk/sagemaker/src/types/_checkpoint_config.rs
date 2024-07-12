@@ -27,8 +27,8 @@ impl CheckpointConfig {
 }
 
 /// A builder for [`CheckpointConfig`](crate::types::CheckpointConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CheckpointConfigBuilder {
     pub(crate) s3_uri: ::std::option::Option<::std::string::String>,
     pub(crate) local_path: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl PutExternalEvaluationInput {
 }
 
 /// A builder for [`PutExternalEvaluationInput`](crate::operation::put_external_evaluation::PutExternalEvaluationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutExternalEvaluationInputBuilder {
     pub(crate) config_rule_name: ::std::option::Option<::std::string::String>,
     pub(crate) external_evaluation: ::std::option::Option<crate::types::ExternalEvaluation>,

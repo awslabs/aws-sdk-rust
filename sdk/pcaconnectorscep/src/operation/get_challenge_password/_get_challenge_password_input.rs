@@ -20,8 +20,8 @@ impl GetChallengePasswordInput {
 }
 
 /// A builder for [`GetChallengePasswordInput`](crate::operation::get_challenge_password::GetChallengePasswordInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetChallengePasswordInputBuilder {
     pub(crate) challenge_arn: ::std::option::Option<::std::string::String>,
 }

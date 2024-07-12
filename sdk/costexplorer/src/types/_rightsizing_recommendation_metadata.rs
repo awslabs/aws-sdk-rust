@@ -39,8 +39,8 @@ impl RightsizingRecommendationMetadata {
 }
 
 /// A builder for [`RightsizingRecommendationMetadata`](crate::types::RightsizingRecommendationMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RightsizingRecommendationMetadataBuilder {
     pub(crate) recommendation_id: ::std::option::Option<::std::string::String>,
     pub(crate) generation_timestamp: ::std::option::Option<::std::string::String>,

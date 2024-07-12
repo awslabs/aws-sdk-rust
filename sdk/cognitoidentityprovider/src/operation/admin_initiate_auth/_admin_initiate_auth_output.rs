@@ -110,8 +110,8 @@ impl AdminInitiateAuthOutput {
 }
 
 /// A builder for [`AdminInitiateAuthOutput`](crate::operation::admin_initiate_auth::AdminInitiateAuthOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AdminInitiateAuthOutputBuilder {
     pub(crate) challenge_name: ::std::option::Option<crate::types::ChallengeNameType>,
     pub(crate) session: ::std::option::Option<::std::string::String>,

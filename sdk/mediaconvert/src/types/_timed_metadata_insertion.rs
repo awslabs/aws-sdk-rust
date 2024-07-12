@@ -23,8 +23,8 @@ impl TimedMetadataInsertion {
 }
 
 /// A builder for [`TimedMetadataInsertion`](crate::types::TimedMetadataInsertion).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TimedMetadataInsertionBuilder {
     pub(crate) id3_insertions: ::std::option::Option<::std::vec::Vec<crate::types::Id3Insertion>>,
 }

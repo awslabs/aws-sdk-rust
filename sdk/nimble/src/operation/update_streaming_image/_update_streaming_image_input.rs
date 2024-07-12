@@ -55,8 +55,8 @@ impl UpdateStreamingImageInput {
 }
 
 /// A builder for [`UpdateStreamingImageInput`](crate::operation::update_streaming_image::UpdateStreamingImageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateStreamingImageInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

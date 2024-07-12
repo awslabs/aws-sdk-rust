@@ -39,8 +39,8 @@ impl CreatePackagingGroupInput {
 }
 
 /// A builder for [`CreatePackagingGroupInput`](crate::operation::create_packaging_group::CreatePackagingGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePackagingGroupInputBuilder {
     pub(crate) authorization: ::std::option::Option<crate::types::Authorization>,
     pub(crate) egress_access_logs: ::std::option::Option<crate::types::EgressAccessLogs>,

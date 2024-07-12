@@ -34,8 +34,8 @@ impl ListFlowExecutionMessagesOutput {
 }
 
 /// A builder for [`ListFlowExecutionMessagesOutput`](crate::operation::list_flow_execution_messages::ListFlowExecutionMessagesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFlowExecutionMessagesOutputBuilder {
     pub(crate) messages: ::std::option::Option<::std::vec::Vec<crate::types::FlowExecutionMessage>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

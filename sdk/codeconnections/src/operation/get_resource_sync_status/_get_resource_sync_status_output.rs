@@ -38,8 +38,8 @@ impl GetResourceSyncStatusOutput {
 }
 
 /// A builder for [`GetResourceSyncStatusOutput`](crate::operation::get_resource_sync_status::GetResourceSyncStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetResourceSyncStatusOutputBuilder {
     pub(crate) desired_state: ::std::option::Option<crate::types::Revision>,
     pub(crate) latest_successful_sync: ::std::option::Option<crate::types::ResourceSyncAttempt>,

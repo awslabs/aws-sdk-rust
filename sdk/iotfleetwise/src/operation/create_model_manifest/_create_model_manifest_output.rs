@@ -34,8 +34,8 @@ impl CreateModelManifestOutput {
 }
 
 /// A builder for [`CreateModelManifestOutput`](crate::operation::create_model_manifest::CreateModelManifestOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateModelManifestOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

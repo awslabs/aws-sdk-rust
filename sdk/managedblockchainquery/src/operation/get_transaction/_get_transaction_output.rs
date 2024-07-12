@@ -26,8 +26,8 @@ impl GetTransactionOutput {
 }
 
 /// A builder for [`GetTransactionOutput`](crate::operation::get_transaction::GetTransactionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTransactionOutputBuilder {
     pub(crate) transaction: ::std::option::Option<crate::types::Transaction>,
     _request_id: Option<String>,

@@ -38,8 +38,8 @@ impl CreateResponseHeadersPolicyOutput {
 }
 
 /// A builder for [`CreateResponseHeadersPolicyOutput`](crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateResponseHeadersPolicyOutputBuilder {
     pub(crate) response_headers_policy: ::std::option::Option<crate::types::ResponseHeadersPolicy>,
     pub(crate) location: ::std::option::Option<::std::string::String>,

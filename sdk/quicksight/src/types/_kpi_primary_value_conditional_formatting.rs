@@ -27,8 +27,8 @@ impl KpiPrimaryValueConditionalFormatting {
 }
 
 /// A builder for [`KpiPrimaryValueConditionalFormatting`](crate::types::KpiPrimaryValueConditionalFormatting).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KpiPrimaryValueConditionalFormattingBuilder {
     pub(crate) text_color: ::std::option::Option<crate::types::ConditionalFormattingColor>,
     pub(crate) icon: ::std::option::Option<crate::types::ConditionalFormattingIcon>,

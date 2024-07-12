@@ -20,8 +20,8 @@ impl DescribeEntityRecognizerInput {
 }
 
 /// A builder for [`DescribeEntityRecognizerInput`](crate::operation::describe_entity_recognizer::DescribeEntityRecognizerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEntityRecognizerInputBuilder {
     pub(crate) entity_recognizer_arn: ::std::option::Option<::std::string::String>,
 }

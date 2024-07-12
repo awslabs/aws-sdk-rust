@@ -54,8 +54,8 @@ impl ListAnomalyGroupTimeSeriesOutput {
 }
 
 /// A builder for [`ListAnomalyGroupTimeSeriesOutput`](crate::operation::list_anomaly_group_time_series::ListAnomalyGroupTimeSeriesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAnomalyGroupTimeSeriesOutputBuilder {
     pub(crate) anomaly_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,

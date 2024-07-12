@@ -24,8 +24,8 @@ impl DataPreProcessingConfiguration {
 }
 
 /// A builder for [`DataPreProcessingConfiguration`](crate::types::DataPreProcessingConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataPreProcessingConfigurationBuilder {
     pub(crate) target_sampling_rate: ::std::option::Option<crate::types::TargetSamplingRate>,
 }

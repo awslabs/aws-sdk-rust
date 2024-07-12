@@ -22,8 +22,8 @@ impl DescribeTrustedAdvisorCheckSummariesInput {
 }
 
 /// A builder for [`DescribeTrustedAdvisorCheckSummariesInput`](crate::operation::describe_trusted_advisor_check_summaries::DescribeTrustedAdvisorCheckSummariesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTrustedAdvisorCheckSummariesInputBuilder {
     pub(crate) check_ids: ::std::option::Option<::std::vec::Vec<::std::option::Option<::std::string::String>>>,
 }

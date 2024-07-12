@@ -36,8 +36,8 @@ impl UpdateRoutingControlStateInput {
 }
 
 /// A builder for [`UpdateRoutingControlStateInput`](crate::operation::update_routing_control_state::UpdateRoutingControlStateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRoutingControlStateInputBuilder {
     pub(crate) routing_control_arn: ::std::option::Option<::std::string::String>,
     pub(crate) routing_control_state: ::std::option::Option<crate::types::RoutingControlState>,

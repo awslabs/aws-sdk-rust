@@ -54,8 +54,8 @@ impl CreateMediaConcatenationPipelineInput {
 }
 
 /// A builder for [`CreateMediaConcatenationPipelineInput`](crate::operation::create_media_concatenation_pipeline::CreateMediaConcatenationPipelineInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateMediaConcatenationPipelineInputBuilder {
     pub(crate) sources: ::std::option::Option<::std::vec::Vec<crate::types::ConcatenationSource>>,
     pub(crate) sinks: ::std::option::Option<::std::vec::Vec<crate::types::ConcatenationSink>>,

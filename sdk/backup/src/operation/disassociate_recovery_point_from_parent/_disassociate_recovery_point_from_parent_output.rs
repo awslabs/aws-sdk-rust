@@ -18,8 +18,8 @@ impl DisassociateRecoveryPointFromParentOutput {
 }
 
 /// A builder for [`DisassociateRecoveryPointFromParentOutput`](crate::operation::disassociate_recovery_point_from_parent::DisassociateRecoveryPointFromParentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateRecoveryPointFromParentOutputBuilder {
     _request_id: Option<String>,
 }

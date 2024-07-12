@@ -49,8 +49,8 @@ impl LaunchTemplateSpotMarketOptions {
 }
 
 /// A builder for [`LaunchTemplateSpotMarketOptions`](crate::types::LaunchTemplateSpotMarketOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LaunchTemplateSpotMarketOptionsBuilder {
     pub(crate) max_price: ::std::option::Option<::std::string::String>,
     pub(crate) spot_instance_type: ::std::option::Option<crate::types::SpotInstanceType>,

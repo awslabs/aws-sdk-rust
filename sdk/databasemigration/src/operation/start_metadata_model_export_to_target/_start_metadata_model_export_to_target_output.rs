@@ -26,8 +26,8 @@ impl StartMetadataModelExportToTargetOutput {
 }
 
 /// A builder for [`StartMetadataModelExportToTargetOutput`](crate::operation::start_metadata_model_export_to_target::StartMetadataModelExportToTargetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartMetadataModelExportToTargetOutputBuilder {
     pub(crate) request_identifier: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

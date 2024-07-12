@@ -27,8 +27,8 @@ impl CancelledSpotInstanceRequest {
 }
 
 /// A builder for [`CancelledSpotInstanceRequest`](crate::types::CancelledSpotInstanceRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelledSpotInstanceRequestBuilder {
     pub(crate) spot_instance_request_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::CancelSpotInstanceRequestState>,

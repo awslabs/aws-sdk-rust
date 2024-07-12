@@ -77,8 +77,8 @@ impl CreateIdentityPoolInput {
 }
 
 /// A builder for [`CreateIdentityPoolInput`](crate::operation::create_identity_pool::CreateIdentityPoolInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateIdentityPoolInputBuilder {
     pub(crate) identity_pool_name: ::std::option::Option<::std::string::String>,
     pub(crate) allow_unauthenticated_identities: ::std::option::Option<bool>,

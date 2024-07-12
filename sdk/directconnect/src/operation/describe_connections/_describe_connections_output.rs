@@ -28,8 +28,8 @@ impl DescribeConnectionsOutput {
 }
 
 /// A builder for [`DescribeConnectionsOutput`](crate::operation::describe_connections::DescribeConnectionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeConnectionsOutputBuilder {
     pub(crate) connections: ::std::option::Option<::std::vec::Vec<crate::types::Connection>>,
     _request_id: Option<String>,

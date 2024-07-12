@@ -62,8 +62,8 @@ impl CreateDynamicThingGroupInput {
 }
 
 /// A builder for [`CreateDynamicThingGroupInput`](crate::operation::create_dynamic_thing_group::CreateDynamicThingGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDynamicThingGroupInputBuilder {
     pub(crate) thing_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) thing_group_properties: ::std::option::Option<crate::types::ThingGroupProperties>,

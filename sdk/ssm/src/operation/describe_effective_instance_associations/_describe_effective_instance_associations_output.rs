@@ -34,8 +34,8 @@ impl DescribeEffectiveInstanceAssociationsOutput {
 }
 
 /// A builder for [`DescribeEffectiveInstanceAssociationsOutput`](crate::operation::describe_effective_instance_associations::DescribeEffectiveInstanceAssociationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEffectiveInstanceAssociationsOutputBuilder {
     pub(crate) associations: ::std::option::Option<::std::vec::Vec<crate::types::InstanceAssociation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

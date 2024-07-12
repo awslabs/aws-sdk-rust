@@ -35,8 +35,8 @@ impl ExecutionSucceededEventDetails {
 }
 
 /// A builder for [`ExecutionSucceededEventDetails`](crate::types::ExecutionSucceededEventDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ExecutionSucceededEventDetailsBuilder {
     pub(crate) output: ::std::option::Option<::std::string::String>,
     pub(crate) output_details: ::std::option::Option<crate::types::HistoryEventExecutionDataDetails>,

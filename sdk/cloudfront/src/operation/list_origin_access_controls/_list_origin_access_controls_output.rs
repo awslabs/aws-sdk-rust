@@ -26,8 +26,8 @@ impl ListOriginAccessControlsOutput {
 }
 
 /// A builder for [`ListOriginAccessControlsOutput`](crate::operation::list_origin_access_controls::ListOriginAccessControlsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListOriginAccessControlsOutputBuilder {
     pub(crate) origin_access_control_list: ::std::option::Option<crate::types::OriginAccessControlList>,
     _request_id: Option<String>,

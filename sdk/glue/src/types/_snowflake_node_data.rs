@@ -145,8 +145,8 @@ impl SnowflakeNodeData {
 }
 
 /// A builder for [`SnowflakeNodeData`](crate::types::SnowflakeNodeData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SnowflakeNodeDataBuilder {
     pub(crate) source_type: ::std::option::Option<::std::string::String>,
     pub(crate) connection: ::std::option::Option<crate::types::Option>,

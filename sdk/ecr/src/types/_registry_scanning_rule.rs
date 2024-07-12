@@ -28,8 +28,8 @@ impl RegistryScanningRule {
 }
 
 /// A builder for [`RegistryScanningRule`](crate::types::RegistryScanningRule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegistryScanningRuleBuilder {
     pub(crate) scan_frequency: ::std::option::Option<crate::types::ScanFrequency>,
     pub(crate) repository_filters: ::std::option::Option<::std::vec::Vec<crate::types::ScanningRepositoryFilter>>,

@@ -65,8 +65,8 @@ impl GatewayInstance {
 }
 
 /// A builder for [`GatewayInstance`](crate::types::GatewayInstance).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GatewayInstanceBuilder {
     pub(crate) bridge_placement: ::std::option::Option<crate::types::BridgePlacement>,
     pub(crate) connection_status: ::std::option::Option<crate::types::ConnectionStatus>,

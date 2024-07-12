@@ -26,8 +26,8 @@ impl ExportTransitGatewayRoutesOutput {
 }
 
 /// A builder for [`ExportTransitGatewayRoutesOutput`](crate::operation::export_transit_gateway_routes::ExportTransitGatewayRoutesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExportTransitGatewayRoutesOutputBuilder {
     pub(crate) s3_location: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

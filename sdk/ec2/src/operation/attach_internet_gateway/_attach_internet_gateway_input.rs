@@ -32,8 +32,8 @@ impl AttachInternetGatewayInput {
 }
 
 /// A builder for [`AttachInternetGatewayInput`](crate::operation::attach_internet_gateway::AttachInternetGatewayInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttachInternetGatewayInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) internet_gateway_id: ::std::option::Option<::std::string::String>,

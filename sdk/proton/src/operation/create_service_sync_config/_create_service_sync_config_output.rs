@@ -26,8 +26,8 @@ impl CreateServiceSyncConfigOutput {
 }
 
 /// A builder for [`CreateServiceSyncConfigOutput`](crate::operation::create_service_sync_config::CreateServiceSyncConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateServiceSyncConfigOutputBuilder {
     pub(crate) service_sync_config: ::std::option::Option<crate::types::ServiceSyncConfig>,
     _request_id: Option<String>,

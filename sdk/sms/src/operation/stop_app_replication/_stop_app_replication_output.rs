@@ -18,8 +18,8 @@ impl StopAppReplicationOutput {
 }
 
 /// A builder for [`StopAppReplicationOutput`](crate::operation::stop_app_replication::StopAppReplicationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopAppReplicationOutputBuilder {
     _request_id: Option<String>,
 }

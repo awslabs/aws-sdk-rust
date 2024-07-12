@@ -33,8 +33,8 @@ impl StartExecutionOutput {
 }
 
 /// A builder for [`StartExecutionOutput`](crate::operation::start_execution::StartExecutionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartExecutionOutputBuilder {
     pub(crate) execution_arn: ::std::option::Option<::std::string::String>,
     pub(crate) start_date: ::std::option::Option<::aws_smithy_types::DateTime>,

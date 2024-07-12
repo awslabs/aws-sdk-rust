@@ -32,8 +32,8 @@ impl CheckSchemaVersionValidityOutput {
 }
 
 /// A builder for [`CheckSchemaVersionValidityOutput`](crate::operation::check_schema_version_validity::CheckSchemaVersionValidityOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CheckSchemaVersionValidityOutputBuilder {
     pub(crate) valid: ::std::option::Option<bool>,
     pub(crate) error: ::std::option::Option<::std::string::String>,

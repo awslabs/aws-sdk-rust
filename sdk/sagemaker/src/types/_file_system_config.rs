@@ -33,8 +33,8 @@ impl FileSystemConfig {
 }
 
 /// A builder for [`FileSystemConfig`](crate::types::FileSystemConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FileSystemConfigBuilder {
     pub(crate) mount_path: ::std::option::Option<::std::string::String>,
     pub(crate) default_uid: ::std::option::Option<i32>,

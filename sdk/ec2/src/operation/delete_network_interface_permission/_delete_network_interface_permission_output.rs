@@ -27,8 +27,8 @@ impl DeleteNetworkInterfacePermissionOutput {
 }
 
 /// A builder for [`DeleteNetworkInterfacePermissionOutput`](crate::operation::delete_network_interface_permission::DeleteNetworkInterfacePermissionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteNetworkInterfacePermissionOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,

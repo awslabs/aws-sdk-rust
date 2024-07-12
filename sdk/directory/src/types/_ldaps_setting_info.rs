@@ -33,8 +33,8 @@ impl LdapsSettingInfo {
 }
 
 /// A builder for [`LdapsSettingInfo`](crate::types::LdapsSettingInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LdapsSettingInfoBuilder {
     pub(crate) ldaps_status: ::std::option::Option<crate::types::LdapsStatus>,
     pub(crate) ldaps_status_reason: ::std::option::Option<::std::string::String>,

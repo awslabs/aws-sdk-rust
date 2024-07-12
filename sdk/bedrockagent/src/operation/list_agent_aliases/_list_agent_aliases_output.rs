@@ -33,8 +33,8 @@ impl ListAgentAliasesOutput {
 }
 
 /// A builder for [`ListAgentAliasesOutput`](crate::operation::list_agent_aliases::ListAgentAliasesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAgentAliasesOutputBuilder {
     pub(crate) agent_alias_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AgentAliasSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl ListResourcePoliciesOutput {
 }
 
 /// A builder for [`ListResourcePoliciesOutput`](crate::operation::list_resource_policies::ListResourcePoliciesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListResourcePoliciesOutputBuilder {
     pub(crate) resource_policies: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePolicy>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

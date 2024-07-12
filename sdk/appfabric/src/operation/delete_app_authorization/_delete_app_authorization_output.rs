@@ -18,8 +18,8 @@ impl DeleteAppAuthorizationOutput {
 }
 
 /// A builder for [`DeleteAppAuthorizationOutput`](crate::operation::delete_app_authorization::DeleteAppAuthorizationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAppAuthorizationOutputBuilder {
     _request_id: Option<String>,
 }

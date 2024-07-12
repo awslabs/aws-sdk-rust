@@ -27,8 +27,8 @@ impl ImageBuilderStateChangeReason {
 }
 
 /// A builder for [`ImageBuilderStateChangeReason`](crate::types::ImageBuilderStateChangeReason).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImageBuilderStateChangeReasonBuilder {
     pub(crate) code: ::std::option::Option<crate::types::ImageBuilderStateChangeReasonCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

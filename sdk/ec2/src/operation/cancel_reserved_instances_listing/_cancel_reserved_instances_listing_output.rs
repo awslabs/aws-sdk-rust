@@ -29,8 +29,8 @@ impl CancelReservedInstancesListingOutput {
 }
 
 /// A builder for [`CancelReservedInstancesListingOutput`](crate::operation::cancel_reserved_instances_listing::CancelReservedInstancesListingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelReservedInstancesListingOutputBuilder {
     pub(crate) reserved_instances_listings: ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstancesListing>>,
     _request_id: Option<String>,

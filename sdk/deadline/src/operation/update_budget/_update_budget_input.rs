@@ -106,8 +106,8 @@ impl UpdateBudgetInput {
 }
 
 /// A builder for [`UpdateBudgetInput`](crate::operation::update_budget::UpdateBudgetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateBudgetInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) farm_id: ::std::option::Option<::std::string::String>,

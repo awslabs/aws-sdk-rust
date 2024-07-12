@@ -32,8 +32,8 @@ impl TestMappingInput {
 }
 
 /// A builder for [`TestMappingInput`](crate::operation::test_mapping::TestMappingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TestMappingInputBuilder {
     pub(crate) input_file_content: ::std::option::Option<::std::string::String>,
     pub(crate) mapping_template: ::std::option::Option<::std::string::String>,

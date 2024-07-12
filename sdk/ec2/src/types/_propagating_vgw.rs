@@ -21,8 +21,8 @@ impl PropagatingVgw {
 }
 
 /// A builder for [`PropagatingVgw`](crate::types::PropagatingVgw).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PropagatingVgwBuilder {
     pub(crate) gateway_id: ::std::option::Option<::std::string::String>,
 }

@@ -18,8 +18,8 @@ impl CreateWorkerBlockOutput {
 }
 
 /// A builder for [`CreateWorkerBlockOutput`](crate::operation::create_worker_block::CreateWorkerBlockOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateWorkerBlockOutputBuilder {
     _request_id: Option<String>,
 }

@@ -34,8 +34,8 @@ impl StartQAppSessionOutput {
 }
 
 /// A builder for [`StartQAppSessionOutput`](crate::operation::start_q_app_session::StartQAppSessionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartQAppSessionOutputBuilder {
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
     pub(crate) session_arn: ::std::option::Option<::std::string::String>,

@@ -21,8 +21,8 @@ impl StopApplicationInput {
 }
 
 /// A builder for [`StopApplicationInput`](crate::operation::stop_application::StopApplicationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopApplicationInputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
 }

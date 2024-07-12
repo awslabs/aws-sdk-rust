@@ -27,8 +27,8 @@ impl EdgeAgentStatus {
 }
 
 /// A builder for [`EdgeAgentStatus`](crate::types::EdgeAgentStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EdgeAgentStatusBuilder {
     pub(crate) last_recorder_status: ::std::option::Option<crate::types::LastRecorderStatus>,
     pub(crate) last_uploader_status: ::std::option::Option<crate::types::LastUploaderStatus>,

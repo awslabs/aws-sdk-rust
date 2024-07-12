@@ -41,8 +41,8 @@ impl TimeSeriesConfig {
 }
 
 /// A builder for [`TimeSeriesConfig`](crate::types::TimeSeriesConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TimeSeriesConfigBuilder {
     pub(crate) target_attribute_name: ::std::option::Option<::std::string::String>,
     pub(crate) timestamp_attribute_name: ::std::option::Option<::std::string::String>,

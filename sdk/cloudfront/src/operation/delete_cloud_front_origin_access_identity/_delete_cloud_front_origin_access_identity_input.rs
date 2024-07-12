@@ -27,8 +27,8 @@ impl DeleteCloudFrontOriginAccessIdentityInput {
 }
 
 /// A builder for [`DeleteCloudFrontOriginAccessIdentityInput`](crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCloudFrontOriginAccessIdentityInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) if_match: ::std::option::Option<::std::string::String>,

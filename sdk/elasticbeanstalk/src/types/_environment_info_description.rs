@@ -41,8 +41,8 @@ impl EnvironmentInfoDescription {
 }
 
 /// A builder for [`EnvironmentInfoDescription`](crate::types::EnvironmentInfoDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnvironmentInfoDescriptionBuilder {
     pub(crate) info_type: ::std::option::Option<crate::types::EnvironmentInfoType>,
     pub(crate) ec2_instance_id: ::std::option::Option<::std::string::String>,

@@ -53,8 +53,8 @@ impl ConfigurationSummary {
 }
 
 /// A builder for [`ConfigurationSummary`](crate::types::ConfigurationSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConfigurationSummaryBuilder {
     pub(crate) vcenter_based_remote_info_list: ::std::option::Option<::std::vec::Vec<crate::types::VcenterBasedRemoteInfo>>,
     pub(crate) ip_address_based_remote_info_list: ::std::option::Option<::std::vec::Vec<crate::types::IpAddressBasedRemoteInfo>>,

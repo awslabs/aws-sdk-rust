@@ -36,8 +36,8 @@ impl BatchGetBlueprintsOutput {
 }
 
 /// A builder for [`BatchGetBlueprintsOutput`](crate::operation::batch_get_blueprints::BatchGetBlueprintsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetBlueprintsOutputBuilder {
     pub(crate) blueprints: ::std::option::Option<::std::vec::Vec<crate::types::Blueprint>>,
     pub(crate) missing_blueprints: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

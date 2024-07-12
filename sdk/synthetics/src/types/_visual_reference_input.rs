@@ -31,8 +31,8 @@ impl VisualReferenceInput {
 }
 
 /// A builder for [`VisualReferenceInput`](crate::types::VisualReferenceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VisualReferenceInputBuilder {
     pub(crate) base_screenshots: ::std::option::Option<::std::vec::Vec<crate::types::BaseScreenshot>>,
     pub(crate) base_canary_run_id: ::std::option::Option<::std::string::String>,

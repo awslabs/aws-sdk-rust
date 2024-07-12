@@ -45,8 +45,8 @@ impl CostAllocationTagBackfillRequest {
 }
 
 /// A builder for [`CostAllocationTagBackfillRequest`](crate::types::CostAllocationTagBackfillRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CostAllocationTagBackfillRequestBuilder {
     pub(crate) backfill_from: ::std::option::Option<::std::string::String>,
     pub(crate) requested_at: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl RegisterTransitGatewayMulticastGroupMembersOutput {
 }
 
 /// A builder for [`RegisterTransitGatewayMulticastGroupMembersOutput`](crate::operation::register_transit_gateway_multicast_group_members::RegisterTransitGatewayMulticastGroupMembersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterTransitGatewayMulticastGroupMembersOutputBuilder {
     pub(crate) registered_multicast_group_members: ::std::option::Option<crate::types::TransitGatewayMulticastRegisteredGroupMembers>,
     _request_id: Option<String>,

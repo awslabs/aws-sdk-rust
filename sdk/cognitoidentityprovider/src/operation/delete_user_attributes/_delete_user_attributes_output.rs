@@ -19,8 +19,8 @@ impl DeleteUserAttributesOutput {
 }
 
 /// A builder for [`DeleteUserAttributesOutput`](crate::operation::delete_user_attributes::DeleteUserAttributesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteUserAttributesOutputBuilder {
     _request_id: Option<String>,
 }

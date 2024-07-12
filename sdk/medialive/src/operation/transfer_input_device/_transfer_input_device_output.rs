@@ -19,8 +19,8 @@ impl TransferInputDeviceOutput {
 }
 
 /// A builder for [`TransferInputDeviceOutput`](crate::operation::transfer_input_device::TransferInputDeviceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TransferInputDeviceOutputBuilder {
     _request_id: Option<String>,
 }

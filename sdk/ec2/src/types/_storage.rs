@@ -21,8 +21,8 @@ impl Storage {
 }
 
 /// A builder for [`Storage`](crate::types::Storage).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StorageBuilder {
     pub(crate) s3: ::std::option::Option<crate::types::S3Storage>,
 }

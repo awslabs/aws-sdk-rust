@@ -32,8 +32,8 @@ impl ListVirtualMachinesInput {
 }
 
 /// A builder for [`ListVirtualMachinesInput`](crate::operation::list_virtual_machines::ListVirtualMachinesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListVirtualMachinesInputBuilder {
     pub(crate) hypervisor_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

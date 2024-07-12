@@ -55,8 +55,8 @@ impl CreateReplicatorInput {
 }
 
 /// A builder for [`CreateReplicatorInput`](crate::operation::create_replicator::CreateReplicatorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateReplicatorInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) kafka_clusters: ::std::option::Option<::std::vec::Vec<crate::types::KafkaCluster>>,

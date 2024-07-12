@@ -56,8 +56,8 @@ impl DescribeWorldOutput {
 }
 
 /// A builder for [`DescribeWorldOutput`](crate::operation::describe_world::DescribeWorldOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeWorldOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) generation_job: ::std::option::Option<::std::string::String>,

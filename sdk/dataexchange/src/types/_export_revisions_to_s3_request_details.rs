@@ -35,8 +35,8 @@ impl ExportRevisionsToS3RequestDetails {
 }
 
 /// A builder for [`ExportRevisionsToS3RequestDetails`](crate::types::ExportRevisionsToS3RequestDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExportRevisionsToS3RequestDetailsBuilder {
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) encryption: ::std::option::Option<crate::types::ExportServerSideEncryption>,

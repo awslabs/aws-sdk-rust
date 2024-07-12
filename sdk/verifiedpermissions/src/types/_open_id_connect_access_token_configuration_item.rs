@@ -39,8 +39,8 @@ impl OpenIdConnectAccessTokenConfigurationItem {
 }
 
 /// A builder for [`OpenIdConnectAccessTokenConfigurationItem`](crate::types::OpenIdConnectAccessTokenConfigurationItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct OpenIdConnectAccessTokenConfigurationItemBuilder {
     pub(crate) principal_id_claim: ::std::option::Option<::std::string::String>,
     pub(crate) audiences: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -22,8 +22,8 @@ impl DemodulationConfig {
 }
 
 /// A builder for [`DemodulationConfig`](crate::types::DemodulationConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DemodulationConfigBuilder {
     pub(crate) unvalidated_json: ::std::option::Option<::std::string::String>,
 }

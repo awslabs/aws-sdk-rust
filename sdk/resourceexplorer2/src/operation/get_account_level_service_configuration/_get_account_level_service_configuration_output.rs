@@ -26,8 +26,8 @@ impl GetAccountLevelServiceConfigurationOutput {
 }
 
 /// A builder for [`GetAccountLevelServiceConfigurationOutput`](crate::operation::get_account_level_service_configuration::GetAccountLevelServiceConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAccountLevelServiceConfigurationOutputBuilder {
     pub(crate) org_configuration: ::std::option::Option<crate::types::OrgConfiguration>,
     _request_id: Option<String>,

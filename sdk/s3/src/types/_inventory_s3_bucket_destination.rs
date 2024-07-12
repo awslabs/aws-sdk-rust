@@ -50,8 +50,8 @@ impl InventoryS3BucketDestination {
 }
 
 /// A builder for [`InventoryS3BucketDestination`](crate::types::InventoryS3BucketDestination).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InventoryS3BucketDestinationBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) bucket: ::std::option::Option<::std::string::String>,

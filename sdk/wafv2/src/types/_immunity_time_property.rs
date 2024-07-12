@@ -23,8 +23,8 @@ impl ImmunityTimeProperty {
 }
 
 /// A builder for [`ImmunityTimeProperty`](crate::types::ImmunityTimeProperty).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImmunityTimePropertyBuilder {
     pub(crate) immunity_time: ::std::option::Option<i64>,
 }

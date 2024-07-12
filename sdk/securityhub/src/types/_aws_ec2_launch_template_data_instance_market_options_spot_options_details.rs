@@ -45,8 +45,8 @@ impl AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails {
 }
 
 /// A builder for [`AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetailsBuilder {
     pub(crate) block_duration_minutes: ::std::option::Option<i32>,
     pub(crate) instance_interruption_behavior: ::std::option::Option<::std::string::String>,

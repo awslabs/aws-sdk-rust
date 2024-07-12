@@ -39,8 +39,8 @@ impl RetryStageExecutionInput {
 }
 
 /// A builder for [`RetryStageExecutionInput`](crate::operation::retry_stage_execution::RetryStageExecutionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RetryStageExecutionInputBuilder {
     pub(crate) pipeline_name: ::std::option::Option<::std::string::String>,
     pub(crate) stage_name: ::std::option::Option<::std::string::String>,

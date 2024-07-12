@@ -29,8 +29,8 @@ impl SourceConfig {
 }
 
 /// A builder for [`SourceConfig`](crate::types::SourceConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SourceConfigBuilder {
     pub(crate) apply_to_all_regions: ::std::option::Option<bool>,
     pub(crate) advanced_event_selectors: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>,

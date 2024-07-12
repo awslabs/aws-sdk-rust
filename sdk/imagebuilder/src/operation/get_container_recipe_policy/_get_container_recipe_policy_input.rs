@@ -20,8 +20,8 @@ impl GetContainerRecipePolicyInput {
 }
 
 /// A builder for [`GetContainerRecipePolicyInput`](crate::operation::get_container_recipe_policy::GetContainerRecipePolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetContainerRecipePolicyInputBuilder {
     pub(crate) container_recipe_arn: ::std::option::Option<::std::string::String>,
 }

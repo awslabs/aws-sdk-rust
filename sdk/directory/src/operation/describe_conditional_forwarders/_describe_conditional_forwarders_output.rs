@@ -29,8 +29,8 @@ impl DescribeConditionalForwardersOutput {
 }
 
 /// A builder for [`DescribeConditionalForwardersOutput`](crate::operation::describe_conditional_forwarders::DescribeConditionalForwardersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeConditionalForwardersOutputBuilder {
     pub(crate) conditional_forwarders: ::std::option::Option<::std::vec::Vec<crate::types::ConditionalForwarder>>,
     _request_id: Option<String>,

@@ -66,8 +66,8 @@ impl CreateBatchPredictionJobInput {
 }
 
 /// A builder for [`CreateBatchPredictionJobInput`](crate::operation::create_batch_prediction_job::CreateBatchPredictionJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateBatchPredictionJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) input_path: ::std::option::Option<::std::string::String>,

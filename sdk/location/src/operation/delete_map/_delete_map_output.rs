@@ -18,8 +18,8 @@ impl DeleteMapOutput {
 }
 
 /// A builder for [`DeleteMapOutput`](crate::operation::delete_map::DeleteMapOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteMapOutputBuilder {
     _request_id: Option<String>,
 }

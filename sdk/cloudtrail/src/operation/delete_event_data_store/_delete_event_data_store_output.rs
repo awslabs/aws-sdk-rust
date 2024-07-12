@@ -18,8 +18,8 @@ impl DeleteEventDataStoreOutput {
 }
 
 /// A builder for [`DeleteEventDataStoreOutput`](crate::operation::delete_event_data_store::DeleteEventDataStoreOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteEventDataStoreOutputBuilder {
     _request_id: Option<String>,
 }

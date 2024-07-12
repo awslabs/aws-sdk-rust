@@ -27,8 +27,8 @@ impl AutomationRulesAction {
 }
 
 /// A builder for [`AutomationRulesAction`](crate::types::AutomationRulesAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AutomationRulesActionBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::AutomationRulesActionType>,
     pub(crate) finding_fields_update: ::std::option::Option<crate::types::AutomationRulesFindingFieldsUpdate>,

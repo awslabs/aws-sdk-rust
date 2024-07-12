@@ -27,8 +27,8 @@ impl Dimension {
 }
 
 /// A builder for [`Dimension`](crate::types::Dimension).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DimensionBuilder {
     pub(crate) name: ::std::option::Option<crate::types::DimensionName>,
     pub(crate) value: ::std::option::Option<::std::string::String>,

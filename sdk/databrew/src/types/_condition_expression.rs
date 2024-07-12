@@ -37,8 +37,8 @@ impl ConditionExpression {
 }
 
 /// A builder for [`ConditionExpression`](crate::types::ConditionExpression).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConditionExpressionBuilder {
     pub(crate) condition: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,

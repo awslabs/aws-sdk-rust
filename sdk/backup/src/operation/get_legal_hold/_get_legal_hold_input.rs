@@ -20,8 +20,8 @@ impl GetLegalHoldInput {
 }
 
 /// A builder for [`GetLegalHoldInput`](crate::operation::get_legal_hold::GetLegalHoldInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLegalHoldInputBuilder {
     pub(crate) legal_hold_id: ::std::option::Option<::std::string::String>,
 }

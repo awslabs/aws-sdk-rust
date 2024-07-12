@@ -45,8 +45,8 @@ impl InvalidEc2TagCombinationException {
 }
 
 /// A builder for [`InvalidEc2TagCombinationException`](crate::types::error::InvalidEc2TagCombinationException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InvalidEc2TagCombinationExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,

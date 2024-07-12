@@ -27,8 +27,8 @@ impl SaaSProductLastModifiedDateFilterDateRange {
 }
 
 /// A builder for [`SaaSProductLastModifiedDateFilterDateRange`](crate::types::SaaSProductLastModifiedDateFilterDateRange).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SaaSProductLastModifiedDateFilterDateRangeBuilder {
     pub(crate) after_value: ::std::option::Option<::std::string::String>,
     pub(crate) before_value: ::std::option::Option<::std::string::String>,

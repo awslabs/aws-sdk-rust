@@ -50,8 +50,8 @@ impl ListReportsInput {
 }
 
 /// A builder for [`ListReportsInput`](crate::operation::list_reports::ListReportsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListReportsInputBuilder {
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrderType>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

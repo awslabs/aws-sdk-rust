@@ -28,8 +28,8 @@ impl BatchGetFieldInput {
 }
 
 /// A builder for [`BatchGetFieldInput`](crate::operation::batch_get_field::BatchGetFieldInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetFieldInputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>>,

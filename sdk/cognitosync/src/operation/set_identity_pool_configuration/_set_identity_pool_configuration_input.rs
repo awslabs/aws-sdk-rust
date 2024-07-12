@@ -33,8 +33,8 @@ impl SetIdentityPoolConfigurationInput {
 }
 
 /// A builder for [`SetIdentityPoolConfigurationInput`](crate::operation::set_identity_pool_configuration::SetIdentityPoolConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetIdentityPoolConfigurationInputBuilder {
     pub(crate) identity_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) push_sync: ::std::option::Option<crate::types::PushSync>,

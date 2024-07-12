@@ -55,8 +55,8 @@ impl Region {
 }
 
 /// A builder for [`Region`](crate::types::Region).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegionBuilder {
     pub(crate) continent_code: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

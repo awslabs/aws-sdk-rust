@@ -38,8 +38,8 @@ impl ListSuiteRunsInput {
 }
 
 /// A builder for [`ListSuiteRunsInput`](crate::operation::list_suite_runs::ListSuiteRunsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSuiteRunsInputBuilder {
     pub(crate) suite_definition_id: ::std::option::Option<::std::string::String>,
     pub(crate) suite_definition_version: ::std::option::Option<::std::string::String>,

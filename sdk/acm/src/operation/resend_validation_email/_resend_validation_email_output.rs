@@ -18,8 +18,8 @@ impl ResendValidationEmailOutput {
 }
 
 /// A builder for [`ResendValidationEmailOutput`](crate::operation::resend_validation_email::ResendValidationEmailOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResendValidationEmailOutputBuilder {
     _request_id: Option<String>,
 }

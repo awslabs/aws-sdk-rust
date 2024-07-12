@@ -45,8 +45,8 @@ impl QueryInfo {
 }
 
 /// A builder for [`QueryInfo`](crate::types::QueryInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct QueryInfoBuilder {
     pub(crate) query_id: ::std::option::Option<::std::string::String>,
     pub(crate) query_string: ::std::option::Option<::std::string::String>,

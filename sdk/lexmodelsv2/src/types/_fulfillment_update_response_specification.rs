@@ -34,8 +34,8 @@ impl FulfillmentUpdateResponseSpecification {
 }
 
 /// A builder for [`FulfillmentUpdateResponseSpecification`](crate::types::FulfillmentUpdateResponseSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FulfillmentUpdateResponseSpecificationBuilder {
     pub(crate) frequency_in_seconds: ::std::option::Option<i32>,
     pub(crate) message_groups: ::std::option::Option<::std::vec::Vec<crate::types::MessageGroup>>,

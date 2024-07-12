@@ -39,8 +39,8 @@ impl GetDocumentationPartOutput {
 }
 
 /// A builder for [`GetDocumentationPartOutput`](crate::operation::get_documentation_part::GetDocumentationPartOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDocumentationPartOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) location: ::std::option::Option<crate::types::DocumentationPartLocation>,

@@ -45,8 +45,8 @@ impl TagHealth {
 }
 
 /// A builder for [`TagHealth`](crate::types::TagHealth).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TagHealthBuilder {
     pub(crate) app_boundary_key: ::std::option::Option<::std::string::String>,
     pub(crate) tag_value: ::std::option::Option<::std::string::String>,

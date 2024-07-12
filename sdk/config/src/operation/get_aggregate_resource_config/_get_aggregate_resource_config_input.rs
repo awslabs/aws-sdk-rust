@@ -26,8 +26,8 @@ impl GetAggregateResourceConfigInput {
 }
 
 /// A builder for [`GetAggregateResourceConfigInput`](crate::operation::get_aggregate_resource_config::GetAggregateResourceConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAggregateResourceConfigInputBuilder {
     pub(crate) configuration_aggregator_name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_identifier: ::std::option::Option<crate::types::AggregateResourceIdentifier>,

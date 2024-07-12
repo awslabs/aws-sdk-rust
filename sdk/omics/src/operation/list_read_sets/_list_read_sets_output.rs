@@ -33,8 +33,8 @@ impl ListReadSetsOutput {
 }
 
 /// A builder for [`ListReadSetsOutput`](crate::operation::list_read_sets::ListReadSetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListReadSetsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) read_sets: ::std::option::Option<::std::vec::Vec<crate::types::ReadSetListItem>>,

@@ -86,8 +86,8 @@ impl GetIdMappingWorkflowOutput {
 }
 
 /// A builder for [`GetIdMappingWorkflowOutput`](crate::operation::get_id_mapping_workflow::GetIdMappingWorkflowOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetIdMappingWorkflowOutputBuilder {
     pub(crate) workflow_name: ::std::option::Option<::std::string::String>,
     pub(crate) workflow_arn: ::std::option::Option<::std::string::String>,

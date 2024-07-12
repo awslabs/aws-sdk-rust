@@ -39,8 +39,8 @@ impl TypedAttributeValueRange {
 }
 
 /// A builder for [`TypedAttributeValueRange`](crate::types::TypedAttributeValueRange).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TypedAttributeValueRangeBuilder {
     pub(crate) start_mode: ::std::option::Option<crate::types::RangeMode>,
     pub(crate) start_value: ::std::option::Option<crate::types::TypedAttributeValue>,

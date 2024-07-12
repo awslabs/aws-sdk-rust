@@ -93,8 +93,8 @@ impl Vp8Settings {
 }
 
 /// A builder for [`Vp8Settings`](crate::types::Vp8Settings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Vp8SettingsBuilder {
     pub(crate) bitrate: ::std::option::Option<i32>,
     pub(crate) framerate_control: ::std::option::Option<crate::types::Vp8FramerateControl>,

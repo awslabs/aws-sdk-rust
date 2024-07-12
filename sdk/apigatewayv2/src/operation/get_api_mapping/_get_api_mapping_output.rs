@@ -44,8 +44,8 @@ impl GetApiMappingOutput {
 }
 
 /// A builder for [`GetApiMappingOutput`](crate::operation::get_api_mapping::GetApiMappingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetApiMappingOutputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) api_mapping_id: ::std::option::Option<::std::string::String>,

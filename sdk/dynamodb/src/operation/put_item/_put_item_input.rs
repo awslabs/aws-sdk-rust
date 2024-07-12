@@ -221,8 +221,8 @@ impl PutItemInput {
 }
 
 /// A builder for [`PutItemInput`](crate::operation::put_item::PutItemInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutItemInputBuilder {
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
     pub(crate) item: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,

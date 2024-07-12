@@ -22,8 +22,8 @@ impl DatasetContentVersionValue {
 }
 
 /// A builder for [`DatasetContentVersionValue`](crate::types::DatasetContentVersionValue).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DatasetContentVersionValueBuilder {
     pub(crate) dataset_name: ::std::option::Option<::std::string::String>,
 }

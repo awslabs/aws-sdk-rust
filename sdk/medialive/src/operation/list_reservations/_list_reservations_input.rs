@@ -75,8 +75,8 @@ impl ListReservationsInput {
 }
 
 /// A builder for [`ListReservationsInput`](crate::operation::list_reservations::ListReservationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListReservationsInputBuilder {
     pub(crate) channel_class: ::std::option::Option<::std::string::String>,
     pub(crate) codec: ::std::option::Option<::std::string::String>,

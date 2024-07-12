@@ -33,8 +33,8 @@ impl ListGroundStationsInput {
 }
 
 /// A builder for [`ListGroundStationsInput`](crate::operation::list_ground_stations::ListGroundStationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListGroundStationsInputBuilder {
     pub(crate) satellite_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

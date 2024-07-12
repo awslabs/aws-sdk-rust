@@ -21,8 +21,8 @@ impl BackendDefaults {
 }
 
 /// A builder for [`BackendDefaults`](crate::types::BackendDefaults).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BackendDefaultsBuilder {
     pub(crate) client_policy: ::std::option::Option<crate::types::ClientPolicy>,
 }

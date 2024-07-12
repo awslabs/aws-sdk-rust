@@ -20,8 +20,8 @@ impl GetHostnameSuggestionInput {
 }
 
 /// A builder for [`GetHostnameSuggestionInput`](crate::operation::get_hostname_suggestion::GetHostnameSuggestionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetHostnameSuggestionInputBuilder {
     pub(crate) layer_id: ::std::option::Option<::std::string::String>,
 }

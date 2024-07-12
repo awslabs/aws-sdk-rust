@@ -35,8 +35,8 @@ impl LocationAttributes {
 }
 
 /// A builder for [`LocationAttributes`](crate::types::LocationAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LocationAttributesBuilder {
     pub(crate) location_state: ::std::option::Option<crate::types::LocationState>,
     pub(crate) stopped_actions: ::std::option::Option<::std::vec::Vec<crate::types::FleetAction>>,

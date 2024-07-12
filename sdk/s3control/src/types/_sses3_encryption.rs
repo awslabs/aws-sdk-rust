@@ -12,8 +12,8 @@ impl Sses3Encryption {
 }
 
 /// A builder for [`Sses3Encryption`](crate::types::Sses3Encryption).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Sses3EncryptionBuilder {}
 impl Sses3EncryptionBuilder {
     /// Consumes the builder and constructs a [`Sses3Encryption`](crate::types::Sses3Encryption).

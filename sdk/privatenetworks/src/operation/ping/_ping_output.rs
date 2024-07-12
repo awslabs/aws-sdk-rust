@@ -26,8 +26,8 @@ impl PingOutput {
 }
 
 /// A builder for [`PingOutput`](crate::operation::ping::PingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PingOutputBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

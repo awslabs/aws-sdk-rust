@@ -26,8 +26,8 @@ impl DescribeMigrationTaskInput {
 }
 
 /// A builder for [`DescribeMigrationTaskInput`](crate::operation::describe_migration_task::DescribeMigrationTaskInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeMigrationTaskInputBuilder {
     pub(crate) progress_update_stream: ::std::option::Option<::std::string::String>,
     pub(crate) migration_task_name: ::std::option::Option<::std::string::String>,

@@ -33,8 +33,8 @@ impl RouteMatrixEntry {
 }
 
 /// A builder for [`RouteMatrixEntry`](crate::types::RouteMatrixEntry).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RouteMatrixEntryBuilder {
     pub(crate) distance: ::std::option::Option<f64>,
     pub(crate) duration_seconds: ::std::option::Option<f64>,

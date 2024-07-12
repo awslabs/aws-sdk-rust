@@ -34,8 +34,8 @@ impl ListConnectorDefinitionsOutput {
 }
 
 /// A builder for [`ListConnectorDefinitionsOutput`](crate::operation::list_connector_definitions::ListConnectorDefinitionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListConnectorDefinitionsOutputBuilder {
     pub(crate) definitions: ::std::option::Option<::std::vec::Vec<crate::types::DefinitionInformation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

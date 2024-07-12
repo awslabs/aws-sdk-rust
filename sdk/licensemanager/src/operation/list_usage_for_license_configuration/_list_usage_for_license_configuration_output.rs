@@ -34,8 +34,8 @@ impl ListUsageForLicenseConfigurationOutput {
 }
 
 /// A builder for [`ListUsageForLicenseConfigurationOutput`](crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListUsageForLicenseConfigurationOutputBuilder {
     pub(crate) license_configuration_usage_list: ::std::option::Option<::std::vec::Vec<crate::types::LicenseConfigurationUsage>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

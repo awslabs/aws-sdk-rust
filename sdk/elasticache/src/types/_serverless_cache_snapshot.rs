@@ -69,8 +69,8 @@ impl ServerlessCacheSnapshot {
 }
 
 /// A builder for [`ServerlessCacheSnapshot`](crate::types::ServerlessCacheSnapshot).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServerlessCacheSnapshotBuilder {
     pub(crate) serverless_cache_snapshot_name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

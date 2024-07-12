@@ -36,8 +36,8 @@ impl GetParametersInput {
 }
 
 /// A builder for [`GetParametersInput`](crate::operation::get_parameters::GetParametersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetParametersInputBuilder {
     pub(crate) names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) with_decryption: ::std::option::Option<bool>,

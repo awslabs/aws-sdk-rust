@@ -26,8 +26,8 @@ impl DeleteEventDestinationInput {
 }
 
 /// A builder for [`DeleteEventDestinationInput`](crate::operation::delete_event_destination::DeleteEventDestinationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteEventDestinationInputBuilder {
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) event_destination_name: ::std::option::Option<::std::string::String>,

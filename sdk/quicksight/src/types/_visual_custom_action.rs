@@ -64,8 +64,8 @@ impl VisualCustomAction {
 }
 
 /// A builder for [`VisualCustomAction`](crate::types::VisualCustomAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VisualCustomActionBuilder {
     pub(crate) custom_action_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

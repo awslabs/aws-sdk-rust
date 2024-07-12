@@ -29,8 +29,8 @@ impl LaunchTemplate {
 }
 
 /// A builder for [`LaunchTemplate`](crate::types::LaunchTemplate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LaunchTemplateBuilder {
     pub(crate) launch_template_specification: ::std::option::Option<crate::types::LaunchTemplateSpecification>,
     pub(crate) overrides: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateOverrides>>,

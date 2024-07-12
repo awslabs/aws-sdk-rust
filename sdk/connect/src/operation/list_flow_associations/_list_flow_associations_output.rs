@@ -34,8 +34,8 @@ impl ListFlowAssociationsOutput {
 }
 
 /// A builder for [`ListFlowAssociationsOutput`](crate::operation::list_flow_associations::ListFlowAssociationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFlowAssociationsOutputBuilder {
     pub(crate) flow_association_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::FlowAssociationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

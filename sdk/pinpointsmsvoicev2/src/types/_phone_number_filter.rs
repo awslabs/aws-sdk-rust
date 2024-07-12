@@ -28,8 +28,8 @@ impl PhoneNumberFilter {
 }
 
 /// A builder for [`PhoneNumberFilter`](crate::types::PhoneNumberFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PhoneNumberFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::PhoneNumberFilterName>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

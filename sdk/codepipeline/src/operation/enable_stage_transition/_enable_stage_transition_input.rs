@@ -33,8 +33,8 @@ impl EnableStageTransitionInput {
 }
 
 /// A builder for [`EnableStageTransitionInput`](crate::operation::enable_stage_transition::EnableStageTransitionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnableStageTransitionInputBuilder {
     pub(crate) pipeline_name: ::std::option::Option<::std::string::String>,
     pub(crate) stage_name: ::std::option::Option<::std::string::String>,

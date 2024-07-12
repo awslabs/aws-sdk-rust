@@ -34,8 +34,8 @@ impl ListDistributionsByResponseHeadersPolicyIdInput {
 }
 
 /// A builder for [`ListDistributionsByResponseHeadersPolicyIdInput`](crate::operation::list_distributions_by_response_headers_policy_id::ListDistributionsByResponseHeadersPolicyIdInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDistributionsByResponseHeadersPolicyIdInputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,

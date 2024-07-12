@@ -24,8 +24,8 @@ impl CountAction {
 }
 
 /// A builder for [`CountAction`](crate::types::CountAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CountActionBuilder {
     pub(crate) custom_request_handling: ::std::option::Option<crate::types::CustomRequestHandling>,
 }

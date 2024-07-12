@@ -33,8 +33,8 @@ impl VersionInfo {
 }
 
 /// A builder for [`VersionInfo`](crate::types::VersionInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VersionInfoBuilder {
     pub(crate) agent_version: ::std::option::Option<::std::string::String>,
     pub(crate) agent_hash: ::std::option::Option<::std::string::String>,

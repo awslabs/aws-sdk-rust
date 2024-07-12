@@ -27,8 +27,8 @@ impl DeleteEnvironmentConfigurationInput {
 }
 
 /// A builder for [`DeleteEnvironmentConfigurationInput`](crate::operation::delete_environment_configuration::DeleteEnvironmentConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteEnvironmentConfigurationInputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
     pub(crate) environment_name: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl FindingTypeAggregationResponse {
 }
 
 /// A builder for [`FindingTypeAggregationResponse`](crate::types::FindingTypeAggregationResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FindingTypeAggregationResponseBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) severity_counts: ::std::option::Option<crate::types::SeverityCounts>,

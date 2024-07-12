@@ -28,8 +28,8 @@ impl BatchPutFieldOptionsOutput {
 }
 
 /// A builder for [`BatchPutFieldOptionsOutput`](crate::operation::batch_put_field_options::BatchPutFieldOptionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchPutFieldOptionsOutputBuilder {
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::FieldOptionError>>,
     _request_id: Option<String>,

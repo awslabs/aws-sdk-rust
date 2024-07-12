@@ -30,8 +30,8 @@ impl DescribeFirewallPolicyInput {
 }
 
 /// A builder for [`DescribeFirewallPolicyInput`](crate::operation::describe_firewall_policy::DescribeFirewallPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFirewallPolicyInputBuilder {
     pub(crate) firewall_policy_name: ::std::option::Option<::std::string::String>,
     pub(crate) firewall_policy_arn: ::std::option::Option<::std::string::String>,

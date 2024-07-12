@@ -18,8 +18,8 @@ impl AddThingToThingGroupOutput {
 }
 
 /// A builder for [`AddThingToThingGroupOutput`](crate::operation::add_thing_to_thing_group::AddThingToThingGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddThingToThingGroupOutputBuilder {
     _request_id: Option<String>,
 }

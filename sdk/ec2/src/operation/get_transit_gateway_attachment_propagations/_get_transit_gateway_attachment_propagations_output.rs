@@ -35,8 +35,8 @@ impl GetTransitGatewayAttachmentPropagationsOutput {
 }
 
 /// A builder for [`GetTransitGatewayAttachmentPropagationsOutput`](crate::operation::get_transit_gateway_attachment_propagations::GetTransitGatewayAttachmentPropagationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTransitGatewayAttachmentPropagationsOutputBuilder {
     pub(crate) transit_gateway_attachment_propagations: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayAttachmentPropagation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -60,8 +60,8 @@ impl CreateConnectionInput {
 }
 
 /// A builder for [`CreateConnectionInput`](crate::operation::create_connection::CreateConnectionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateConnectionInputBuilder {
     pub(crate) location: ::std::option::Option<::std::string::String>,
     pub(crate) bandwidth: ::std::option::Option<::std::string::String>,

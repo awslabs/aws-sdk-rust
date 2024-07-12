@@ -12,8 +12,8 @@ impl Sses3 {
 }
 
 /// A builder for [`Sses3`](crate::types::Sses3).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Sses3Builder {}
 impl Sses3Builder {
     /// Consumes the builder and constructs a [`Sses3`](crate::types::Sses3).

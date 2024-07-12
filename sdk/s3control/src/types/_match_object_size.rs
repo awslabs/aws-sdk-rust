@@ -27,8 +27,8 @@ impl MatchObjectSize {
 }
 
 /// A builder for [`MatchObjectSize`](crate::types::MatchObjectSize).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MatchObjectSizeBuilder {
     pub(crate) bytes_greater_than: ::std::option::Option<i64>,
     pub(crate) bytes_less_than: ::std::option::Option<i64>,

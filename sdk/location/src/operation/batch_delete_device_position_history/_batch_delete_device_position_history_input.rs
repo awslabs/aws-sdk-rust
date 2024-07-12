@@ -36,8 +36,8 @@ impl BatchDeleteDevicePositionHistoryInput {
 }
 
 /// A builder for [`BatchDeleteDevicePositionHistoryInput`](crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDeleteDevicePositionHistoryInputBuilder {
     pub(crate) tracker_name: ::std::option::Option<::std::string::String>,
     pub(crate) device_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -78,8 +78,8 @@ impl CopyBackupInput {
 }
 
 /// A builder for [`CopyBackupInput`](crate::operation::copy_backup::CopyBackupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CopyBackupInputBuilder {
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) source_backup_id: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl GetStreamingSessionStreamOutput {
 }
 
 /// A builder for [`GetStreamingSessionStreamOutput`](crate::operation::get_streaming_session_stream::GetStreamingSessionStreamOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetStreamingSessionStreamOutputBuilder {
     pub(crate) stream: ::std::option::Option<crate::types::StreamingSessionStream>,
     _request_id: Option<String>,

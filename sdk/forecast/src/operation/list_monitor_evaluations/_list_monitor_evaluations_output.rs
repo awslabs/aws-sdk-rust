@@ -36,8 +36,8 @@ impl ListMonitorEvaluationsOutput {
 }
 
 /// A builder for [`ListMonitorEvaluationsOutput`](crate::operation::list_monitor_evaluations::ListMonitorEvaluationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListMonitorEvaluationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) predictor_monitor_evaluations: ::std::option::Option<::std::vec::Vec<crate::types::PredictorMonitorEvaluation>>,

@@ -18,8 +18,8 @@ impl DeleteClientCertificateOutput {
 }
 
 /// A builder for [`DeleteClientCertificateOutput`](crate::operation::delete_client_certificate::DeleteClientCertificateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteClientCertificateOutputBuilder {
     _request_id: Option<String>,
 }

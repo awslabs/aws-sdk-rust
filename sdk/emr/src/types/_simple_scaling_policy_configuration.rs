@@ -33,8 +33,8 @@ impl SimpleScalingPolicyConfiguration {
 }
 
 /// A builder for [`SimpleScalingPolicyConfiguration`](crate::types::SimpleScalingPolicyConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SimpleScalingPolicyConfigurationBuilder {
     pub(crate) adjustment_type: ::std::option::Option<crate::types::AdjustmentType>,
     pub(crate) scaling_adjustment: ::std::option::Option<i32>,

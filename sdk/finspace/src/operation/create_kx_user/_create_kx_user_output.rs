@@ -44,8 +44,8 @@ impl CreateKxUserOutput {
 }
 
 /// A builder for [`CreateKxUserOutput`](crate::operation::create_kx_user::CreateKxUserOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateKxUserOutputBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) user_arn: ::std::option::Option<::std::string::String>,

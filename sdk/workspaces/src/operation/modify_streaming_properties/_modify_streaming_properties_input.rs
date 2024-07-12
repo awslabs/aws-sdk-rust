@@ -26,8 +26,8 @@ impl ModifyStreamingPropertiesInput {
 }
 
 /// A builder for [`ModifyStreamingPropertiesInput`](crate::operation::modify_streaming_properties::ModifyStreamingPropertiesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyStreamingPropertiesInputBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) streaming_properties: ::std::option::Option<crate::types::StreamingProperties>,

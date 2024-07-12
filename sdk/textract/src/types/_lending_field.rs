@@ -35,8 +35,8 @@ impl LendingField {
 }
 
 /// A builder for [`LendingField`](crate::types::LendingField).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LendingFieldBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) key_detection: ::std::option::Option<crate::types::LendingDetection>,

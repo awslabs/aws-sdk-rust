@@ -28,8 +28,8 @@ impl BatchGetFlowAssociationOutput {
 }
 
 /// A builder for [`BatchGetFlowAssociationOutput`](crate::operation::batch_get_flow_association::BatchGetFlowAssociationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetFlowAssociationOutputBuilder {
     pub(crate) flow_association_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::FlowAssociationSummary>>,
     _request_id: Option<String>,

@@ -45,8 +45,8 @@ impl DataSetImportSummary {
 }
 
 /// A builder for [`DataSetImportSummary`](crate::types::DataSetImportSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataSetImportSummaryBuilder {
     pub(crate) total: ::std::option::Option<i32>,
     pub(crate) succeeded: ::std::option::Option<i32>,

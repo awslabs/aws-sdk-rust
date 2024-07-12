@@ -33,8 +33,8 @@ impl GetReusableDelegationSetLimitOutput {
 }
 
 /// A builder for [`GetReusableDelegationSetLimitOutput`](crate::operation::get_reusable_delegation_set_limit::GetReusableDelegationSetLimitOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetReusableDelegationSetLimitOutputBuilder {
     pub(crate) limit: ::std::option::Option<crate::types::ReusableDelegationSetLimit>,
     pub(crate) count: ::std::option::Option<i64>,

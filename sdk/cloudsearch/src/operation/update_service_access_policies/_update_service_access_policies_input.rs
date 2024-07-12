@@ -27,8 +27,8 @@ impl UpdateServiceAccessPoliciesInput {
 }
 
 /// A builder for [`UpdateServiceAccessPoliciesInput`](crate::operation::update_service_access_policies::UpdateServiceAccessPoliciesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateServiceAccessPoliciesInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) access_policies: ::std::option::Option<::std::string::String>,

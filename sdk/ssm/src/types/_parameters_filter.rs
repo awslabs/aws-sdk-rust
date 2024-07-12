@@ -28,8 +28,8 @@ impl ParametersFilter {
 }
 
 /// A builder for [`ParametersFilter`](crate::types::ParametersFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ParametersFilterBuilder {
     pub(crate) key: ::std::option::Option<crate::types::ParametersFilterKey>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -81,8 +81,8 @@ impl RepositoryMetadata {
 }
 
 /// A builder for [`RepositoryMetadata`](crate::types::RepositoryMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RepositoryMetadataBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) repository_id: ::std::option::Option<::std::string::String>,

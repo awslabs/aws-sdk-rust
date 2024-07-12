@@ -41,8 +41,8 @@ impl CodeInterpreterInvocationOutput {
 }
 
 /// A builder for [`CodeInterpreterInvocationOutput`](crate::types::CodeInterpreterInvocationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CodeInterpreterInvocationOutputBuilder {
     pub(crate) execution_output: ::std::option::Option<::std::string::String>,
     pub(crate) execution_error: ::std::option::Option<::std::string::String>,

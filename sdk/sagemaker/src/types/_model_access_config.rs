@@ -27,8 +27,8 @@ impl ModelAccessConfig {
 }
 
 /// A builder for [`ModelAccessConfig`](crate::types::ModelAccessConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModelAccessConfigBuilder {
     pub(crate) accept_eula: ::std::option::Option<bool>,
 }

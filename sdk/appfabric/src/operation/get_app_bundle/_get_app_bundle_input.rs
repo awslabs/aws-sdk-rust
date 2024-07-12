@@ -20,8 +20,8 @@ impl GetAppBundleInput {
 }
 
 /// A builder for [`GetAppBundleInput`](crate::operation::get_app_bundle::GetAppBundleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAppBundleInputBuilder {
     pub(crate) app_bundle_identifier: ::std::option::Option<::std::string::String>,
 }

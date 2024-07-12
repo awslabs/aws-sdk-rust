@@ -26,8 +26,8 @@ impl UpdateDatabaseOutput {
 }
 
 /// A builder for [`UpdateDatabaseOutput`](crate::operation::update_database::UpdateDatabaseOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDatabaseOutputBuilder {
     pub(crate) database: ::std::option::Option<crate::types::Database>,
     _request_id: Option<String>,

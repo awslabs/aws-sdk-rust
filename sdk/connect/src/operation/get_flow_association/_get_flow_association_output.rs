@@ -38,8 +38,8 @@ impl GetFlowAssociationOutput {
 }
 
 /// A builder for [`GetFlowAssociationOutput`](crate::operation::get_flow_association::GetFlowAssociationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetFlowAssociationOutputBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) flow_id: ::std::option::Option<::std::string::String>,

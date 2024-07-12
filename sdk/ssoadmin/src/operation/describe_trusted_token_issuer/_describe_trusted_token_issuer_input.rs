@@ -20,8 +20,8 @@ impl DescribeTrustedTokenIssuerInput {
 }
 
 /// A builder for [`DescribeTrustedTokenIssuerInput`](crate::operation::describe_trusted_token_issuer::DescribeTrustedTokenIssuerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTrustedTokenIssuerInputBuilder {
     pub(crate) trusted_token_issuer_arn: ::std::option::Option<::std::string::String>,
 }

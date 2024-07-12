@@ -28,8 +28,8 @@ impl GlobalSignOutInput {
 }
 
 /// A builder for [`GlobalSignOutInput`](crate::operation::global_sign_out::GlobalSignOutInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GlobalSignOutInputBuilder {
     pub(crate) access_token: ::std::option::Option<::std::string::String>,
 }

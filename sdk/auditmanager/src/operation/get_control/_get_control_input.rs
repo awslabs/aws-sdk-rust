@@ -20,8 +20,8 @@ impl GetControlInput {
 }
 
 /// A builder for [`GetControlInput`](crate::operation::get_control::GetControlInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetControlInputBuilder {
     pub(crate) control_id: ::std::option::Option<::std::string::String>,
 }

@@ -98,8 +98,8 @@ impl DataRepositoryConfiguration {
 }
 
 /// A builder for [`DataRepositoryConfiguration`](crate::types::DataRepositoryConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataRepositoryConfigurationBuilder {
     pub(crate) lifecycle: ::std::option::Option<crate::types::DataRepositoryLifecycle>,
     pub(crate) import_path: ::std::option::Option<::std::string::String>,

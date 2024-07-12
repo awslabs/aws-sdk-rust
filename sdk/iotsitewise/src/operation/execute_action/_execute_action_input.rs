@@ -38,8 +38,8 @@ impl ExecuteActionInput {
 }
 
 /// A builder for [`ExecuteActionInput`](crate::operation::execute_action::ExecuteActionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExecuteActionInputBuilder {
     pub(crate) target_resource: ::std::option::Option<crate::types::TargetResource>,
     pub(crate) action_definition_id: ::std::option::Option<::std::string::String>,

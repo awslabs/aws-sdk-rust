@@ -62,8 +62,8 @@ impl GetLensVersionDifferenceOutput {
 }
 
 /// A builder for [`GetLensVersionDifferenceOutput`](crate::operation::get_lens_version_difference::GetLensVersionDifferenceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLensVersionDifferenceOutputBuilder {
     pub(crate) lens_alias: ::std::option::Option<::std::string::String>,
     pub(crate) lens_arn: ::std::option::Option<::std::string::String>,

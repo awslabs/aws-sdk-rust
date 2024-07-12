@@ -45,8 +45,8 @@ impl InvalidPublicKeyVersionException {
 }
 
 /// A builder for [`InvalidPublicKeyVersionException`](crate::types::error::InvalidPublicKeyVersionException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InvalidPublicKeyVersionExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,

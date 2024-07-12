@@ -29,8 +29,8 @@ impl ClientLoginBannerResponseOptions {
 }
 
 /// A builder for [`ClientLoginBannerResponseOptions`](crate::types::ClientLoginBannerResponseOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ClientLoginBannerResponseOptionsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) banner_text: ::std::option::Option<::std::string::String>,

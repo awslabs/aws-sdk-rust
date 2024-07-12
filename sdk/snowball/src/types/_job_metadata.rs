@@ -167,8 +167,8 @@ impl JobMetadata {
 }
 
 /// A builder for [`JobMetadata`](crate::types::JobMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JobMetadataBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_state: ::std::option::Option<crate::types::JobState>,

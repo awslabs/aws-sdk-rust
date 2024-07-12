@@ -65,8 +65,8 @@ impl ListPartsOutput {
 }
 
 /// A builder for [`ListPartsOutput`](crate::operation::list_parts::ListPartsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPartsOutputBuilder {
     pub(crate) multipart_upload_id: ::std::option::Option<::std::string::String>,
     pub(crate) vault_arn: ::std::option::Option<::std::string::String>,

@@ -18,8 +18,8 @@ impl DeleteFieldLevelEncryptionProfileOutput {
 }
 
 /// A builder for [`DeleteFieldLevelEncryptionProfileOutput`](crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFieldLevelEncryptionProfileOutputBuilder {
     _request_id: Option<String>,
 }

@@ -19,8 +19,8 @@ impl SetActiveReceiptRuleSetOutput {
 }
 
 /// A builder for [`SetActiveReceiptRuleSetOutput`](crate::operation::set_active_receipt_rule_set::SetActiveReceiptRuleSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetActiveReceiptRuleSetOutputBuilder {
     _request_id: Option<String>,
 }

@@ -21,8 +21,8 @@ impl StopInputDeviceInput {
 }
 
 /// A builder for [`StopInputDeviceInput`](crate::operation::stop_input_device::StopInputDeviceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopInputDeviceInputBuilder {
     pub(crate) input_device_id: ::std::option::Option<::std::string::String>,
 }

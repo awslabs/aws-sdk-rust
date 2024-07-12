@@ -43,8 +43,8 @@ impl ListBillingGroupsFilter {
 }
 
 /// A builder for [`ListBillingGroupsFilter`](crate::types::ListBillingGroupsFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListBillingGroupsFilterBuilder {
     pub(crate) arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) pricing_plan: ::std::option::Option<::std::string::String>,

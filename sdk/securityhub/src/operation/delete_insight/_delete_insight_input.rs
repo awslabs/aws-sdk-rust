@@ -20,8 +20,8 @@ impl DeleteInsightInput {
 }
 
 /// A builder for [`DeleteInsightInput`](crate::operation::delete_insight::DeleteInsightInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteInsightInputBuilder {
     pub(crate) insight_arn: ::std::option::Option<::std::string::String>,
 }

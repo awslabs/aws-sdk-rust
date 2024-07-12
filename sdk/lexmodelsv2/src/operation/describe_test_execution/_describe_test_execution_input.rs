@@ -20,8 +20,8 @@ impl DescribeTestExecutionInput {
 }
 
 /// A builder for [`DescribeTestExecutionInput`](crate::operation::describe_test_execution::DescribeTestExecutionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTestExecutionInputBuilder {
     pub(crate) test_execution_id: ::std::option::Option<::std::string::String>,
 }

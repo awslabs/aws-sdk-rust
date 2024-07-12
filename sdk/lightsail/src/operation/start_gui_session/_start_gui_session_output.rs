@@ -28,8 +28,8 @@ impl StartGuiSessionOutput {
 }
 
 /// A builder for [`StartGuiSessionOutput`](crate::operation::start_gui_session::StartGuiSessionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartGuiSessionOutputBuilder {
     pub(crate) operations: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>,
     _request_id: Option<String>,

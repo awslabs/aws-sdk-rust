@@ -18,8 +18,8 @@ impl ModifyWorkspaceAccessPropertiesOutput {
 }
 
 /// A builder for [`ModifyWorkspaceAccessPropertiesOutput`](crate::operation::modify_workspace_access_properties::ModifyWorkspaceAccessPropertiesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyWorkspaceAccessPropertiesOutputBuilder {
     _request_id: Option<String>,
 }

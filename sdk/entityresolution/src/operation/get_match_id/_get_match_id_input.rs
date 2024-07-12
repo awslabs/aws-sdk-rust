@@ -41,8 +41,8 @@ impl GetMatchIdInput {
 }
 
 /// A builder for [`GetMatchIdInput`](crate::operation::get_match_id::GetMatchIdInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetMatchIdInputBuilder {
     pub(crate) workflow_name: ::std::option::Option<::std::string::String>,
     pub(crate) record: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

@@ -36,8 +36,8 @@ impl ListStateMachineAliasesInput {
 }
 
 /// A builder for [`ListStateMachineAliasesInput`](crate::operation::list_state_machine_aliases::ListStateMachineAliasesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListStateMachineAliasesInputBuilder {
     pub(crate) state_machine_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

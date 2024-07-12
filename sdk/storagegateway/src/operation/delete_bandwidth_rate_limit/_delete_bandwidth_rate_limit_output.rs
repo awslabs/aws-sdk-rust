@@ -27,8 +27,8 @@ impl DeleteBandwidthRateLimitOutput {
 }
 
 /// A builder for [`DeleteBandwidthRateLimitOutput`](crate::operation::delete_bandwidth_rate_limit::DeleteBandwidthRateLimitOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteBandwidthRateLimitOutputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

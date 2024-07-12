@@ -26,8 +26,8 @@ impl ListContinuousDeploymentPoliciesOutput {
 }
 
 /// A builder for [`ListContinuousDeploymentPoliciesOutput`](crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPoliciesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListContinuousDeploymentPoliciesOutputBuilder {
     pub(crate) continuous_deployment_policy_list: ::std::option::Option<crate::types::ContinuousDeploymentPolicyList>,
     _request_id: Option<String>,

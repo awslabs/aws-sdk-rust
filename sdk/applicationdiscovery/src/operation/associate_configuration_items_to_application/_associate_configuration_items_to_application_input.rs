@@ -29,8 +29,8 @@ impl AssociateConfigurationItemsToApplicationInput {
 }
 
 /// A builder for [`AssociateConfigurationItemsToApplicationInput`](crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateConfigurationItemsToApplicationInputBuilder {
     pub(crate) application_configuration_id: ::std::option::Option<::std::string::String>,
     pub(crate) configuration_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -186,8 +186,8 @@ impl GetLoadBalancerMetricDataInput {
 }
 
 /// A builder for [`GetLoadBalancerMetricDataInput`](crate::operation::get_load_balancer_metric_data::GetLoadBalancerMetricDataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLoadBalancerMetricDataInputBuilder {
     pub(crate) load_balancer_name: ::std::option::Option<::std::string::String>,
     pub(crate) metric_name: ::std::option::Option<crate::types::LoadBalancerMetricName>,

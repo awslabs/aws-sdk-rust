@@ -36,8 +36,8 @@ impl CardHolderVerificationValue {
 }
 
 /// A builder for [`CardHolderVerificationValue`](crate::types::CardHolderVerificationValue).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CardHolderVerificationValueBuilder {
     pub(crate) unpredictable_number: ::std::option::Option<::std::string::String>,
     pub(crate) pan_sequence_number: ::std::option::Option<::std::string::String>,

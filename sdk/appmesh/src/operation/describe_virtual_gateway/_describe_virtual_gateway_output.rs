@@ -26,8 +26,8 @@ impl DescribeVirtualGatewayOutput {
 }
 
 /// A builder for [`DescribeVirtualGatewayOutput`](crate::operation::describe_virtual_gateway::DescribeVirtualGatewayOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeVirtualGatewayOutputBuilder {
     pub(crate) virtual_gateway: ::std::option::Option<crate::types::VirtualGatewayData>,
     _request_id: Option<String>,

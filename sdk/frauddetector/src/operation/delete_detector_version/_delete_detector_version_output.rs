@@ -18,8 +18,8 @@ impl DeleteDetectorVersionOutput {
 }
 
 /// A builder for [`DeleteDetectorVersionOutput`](crate::operation::delete_detector_version::DeleteDetectorVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDetectorVersionOutputBuilder {
     _request_id: Option<String>,
 }

@@ -32,8 +32,8 @@ impl GetPlanOutput {
 }
 
 /// A builder for [`GetPlanOutput`](crate::operation::get_plan::GetPlanOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPlanOutputBuilder {
     pub(crate) python_script: ::std::option::Option<::std::string::String>,
     pub(crate) scala_code: ::std::option::Option<::std::string::String>,

@@ -43,8 +43,8 @@ impl Transcript {
 }
 
 /// A builder for [`Transcript`](crate::types::Transcript).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TranscriptBuilder {
     pub(crate) transcript_file_uri: ::std::option::Option<::std::string::String>,
     pub(crate) redacted_transcript_file_uri: ::std::option::Option<::std::string::String>,

@@ -40,8 +40,8 @@ impl GetTransformerJobOutput {
 }
 
 /// A builder for [`GetTransformerJobOutput`](crate::operation::get_transformer_job::GetTransformerJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTransformerJobOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::TransformerJobStatus>,
     pub(crate) output_files: ::std::option::Option<::std::vec::Vec<crate::types::S3Location>>,

@@ -20,8 +20,8 @@ impl GetNetworkSettingsInput {
 }
 
 /// A builder for [`GetNetworkSettingsInput`](crate::operation::get_network_settings::GetNetworkSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetNetworkSettingsInputBuilder {
     pub(crate) network_settings_arn: ::std::option::Option<::std::string::String>,
 }

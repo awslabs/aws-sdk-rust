@@ -56,8 +56,8 @@ impl ListRestoreJobSummariesOutput {
 }
 
 /// A builder for [`ListRestoreJobSummariesOutput`](crate::operation::list_restore_job_summaries::ListRestoreJobSummariesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRestoreJobSummariesOutputBuilder {
     pub(crate) restore_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::RestoreJobSummary>>,
     pub(crate) aggregation_period: ::std::option::Option<::std::string::String>,

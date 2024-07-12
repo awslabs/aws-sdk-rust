@@ -33,8 +33,8 @@ impl ListRecordingConfigurationsOutput {
 }
 
 /// A builder for [`ListRecordingConfigurationsOutput`](crate::operation::list_recording_configurations::ListRecordingConfigurationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRecordingConfigurationsOutputBuilder {
     pub(crate) recording_configurations: ::std::option::Option<::std::vec::Vec<crate::types::RecordingConfigurationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

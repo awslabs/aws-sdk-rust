@@ -47,8 +47,8 @@ impl ImportsListItem {
 }
 
 /// A builder for [`ImportsListItem`](crate::types::ImportsListItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportsListItemBuilder {
     pub(crate) import_id: ::std::option::Option<::std::string::String>,
     pub(crate) import_status: ::std::option::Option<crate::types::ImportStatus>,

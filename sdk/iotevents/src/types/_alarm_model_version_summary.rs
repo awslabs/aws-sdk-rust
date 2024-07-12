@@ -83,8 +83,8 @@ impl AlarmModelVersionSummary {
 }
 
 /// A builder for [`AlarmModelVersionSummary`](crate::types::AlarmModelVersionSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AlarmModelVersionSummaryBuilder {
     pub(crate) alarm_model_name: ::std::option::Option<::std::string::String>,
     pub(crate) alarm_model_arn: ::std::option::Option<::std::string::String>,

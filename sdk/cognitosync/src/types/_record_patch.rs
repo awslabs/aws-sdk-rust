@@ -46,8 +46,8 @@ impl RecordPatch {
 }
 
 /// A builder for [`RecordPatch`](crate::types::RecordPatch).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecordPatchBuilder {
     pub(crate) op: ::std::option::Option<crate::types::Operation>,
     pub(crate) key: ::std::option::Option<::std::string::String>,

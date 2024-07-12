@@ -32,8 +32,8 @@ impl RemoveFlowMediaStreamOutput {
 }
 
 /// A builder for [`RemoveFlowMediaStreamOutput`](crate::operation::remove_flow_media_stream::RemoveFlowMediaStreamOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoveFlowMediaStreamOutputBuilder {
     pub(crate) flow_arn: ::std::option::Option<::std::string::String>,
     pub(crate) media_stream_name: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl ListManagedAccountsOutput {
 }
 
 /// A builder for [`ListManagedAccountsOutput`](crate::operation::list_managed_accounts::ListManagedAccountsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListManagedAccountsOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ManagedAccount>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

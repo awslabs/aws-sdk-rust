@@ -34,8 +34,8 @@ impl RetrieveAndGenerateOutput {
 }
 
 /// A builder for [`RetrieveAndGenerateOutput`](crate::types::RetrieveAndGenerateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct RetrieveAndGenerateOutputBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
 }

@@ -35,8 +35,8 @@ impl CreateFirewallPolicyOutput {
 }
 
 /// A builder for [`CreateFirewallPolicyOutput`](crate::operation::create_firewall_policy::CreateFirewallPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateFirewallPolicyOutputBuilder {
     pub(crate) update_token: ::std::option::Option<::std::string::String>,
     pub(crate) firewall_policy_response: ::std::option::Option<crate::types::FirewallPolicyResponse>,

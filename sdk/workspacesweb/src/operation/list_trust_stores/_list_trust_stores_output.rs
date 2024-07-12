@@ -34,8 +34,8 @@ impl ListTrustStoresOutput {
 }
 
 /// A builder for [`ListTrustStoresOutput`](crate::operation::list_trust_stores::ListTrustStoresOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTrustStoresOutputBuilder {
     pub(crate) trust_stores: ::std::option::Option<::std::vec::Vec<crate::types::TrustStoreSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

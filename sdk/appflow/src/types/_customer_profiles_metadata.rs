@@ -12,8 +12,8 @@ impl CustomerProfilesMetadata {
 }
 
 /// A builder for [`CustomerProfilesMetadata`](crate::types::CustomerProfilesMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CustomerProfilesMetadataBuilder {}
 impl CustomerProfilesMetadataBuilder {
     /// Consumes the builder and constructs a [`CustomerProfilesMetadata`](crate::types::CustomerProfilesMetadata).

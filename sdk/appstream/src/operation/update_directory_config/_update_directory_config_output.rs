@@ -26,8 +26,8 @@ impl UpdateDirectoryConfigOutput {
 }
 
 /// A builder for [`UpdateDirectoryConfigOutput`](crate::operation::update_directory_config::UpdateDirectoryConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDirectoryConfigOutputBuilder {
     pub(crate) directory_config: ::std::option::Option<crate::types::DirectoryConfig>,
     _request_id: Option<String>,

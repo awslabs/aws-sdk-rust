@@ -27,8 +27,8 @@ impl SignalApplicationInstanceNodeInstancesOutput {
 }
 
 /// A builder for [`SignalApplicationInstanceNodeInstancesOutput`](crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SignalApplicationInstanceNodeInstancesOutputBuilder {
     pub(crate) application_instance_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

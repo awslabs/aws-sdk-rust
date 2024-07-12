@@ -35,8 +35,8 @@ impl ComputeFarmConfiguration {
 }
 
 /// A builder for [`ComputeFarmConfiguration`](crate::types::ComputeFarmConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ComputeFarmConfigurationBuilder {
     pub(crate) active_directory_user: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,

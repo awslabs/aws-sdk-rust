@@ -95,8 +95,8 @@ impl OrganizationEvent {
 }
 
 /// A builder for [`OrganizationEvent`](crate::types::OrganizationEvent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OrganizationEventBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) service: ::std::option::Option<::std::string::String>,

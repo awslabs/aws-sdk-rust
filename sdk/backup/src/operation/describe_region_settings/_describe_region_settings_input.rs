@@ -11,8 +11,8 @@ impl DescribeRegionSettingsInput {
 }
 
 /// A builder for [`DescribeRegionSettingsInput`](crate::operation::describe_region_settings::DescribeRegionSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRegionSettingsInputBuilder {}
 impl DescribeRegionSettingsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeRegionSettingsInput`](crate::operation::describe_region_settings::DescribeRegionSettingsInput).

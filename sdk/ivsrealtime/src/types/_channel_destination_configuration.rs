@@ -28,8 +28,8 @@ impl ChannelDestinationConfiguration {
 }
 
 /// A builder for [`ChannelDestinationConfiguration`](crate::types::ChannelDestinationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ChannelDestinationConfigurationBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) encoder_configuration_arn: ::std::option::Option<::std::string::String>,

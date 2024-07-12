@@ -28,8 +28,8 @@ impl DescribeIdFormatOutput {
 }
 
 /// A builder for [`DescribeIdFormatOutput`](crate::operation::describe_id_format::DescribeIdFormatOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeIdFormatOutputBuilder {
     pub(crate) statuses: ::std::option::Option<::std::vec::Vec<crate::types::IdFormat>>,
     _request_id: Option<String>,

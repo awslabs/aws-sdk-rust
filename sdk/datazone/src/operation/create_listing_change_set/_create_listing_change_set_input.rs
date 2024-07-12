@@ -50,8 +50,8 @@ impl CreateListingChangeSetInput {
 }
 
 /// A builder for [`CreateListingChangeSetInput`](crate::operation::create_listing_change_set::CreateListingChangeSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateListingChangeSetInputBuilder {
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) entity_identifier: ::std::option::Option<::std::string::String>,

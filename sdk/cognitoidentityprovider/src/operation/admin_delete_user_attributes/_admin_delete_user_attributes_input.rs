@@ -46,8 +46,8 @@ impl AdminDeleteUserAttributesInput {
 }
 
 /// A builder for [`AdminDeleteUserAttributesInput`](crate::operation::admin_delete_user_attributes::AdminDeleteUserAttributesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AdminDeleteUserAttributesInputBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) username: ::std::option::Option<::std::string::String>,

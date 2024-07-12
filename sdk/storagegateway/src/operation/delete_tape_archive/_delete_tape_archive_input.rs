@@ -27,8 +27,8 @@ impl DeleteTapeArchiveInput {
 }
 
 /// A builder for [`DeleteTapeArchiveInput`](crate::operation::delete_tape_archive::DeleteTapeArchiveInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTapeArchiveInputBuilder {
     pub(crate) tape_arn: ::std::option::Option<::std::string::String>,
     pub(crate) bypass_governance_retention: ::std::option::Option<bool>,

@@ -76,8 +76,8 @@ impl UpdateFunctionUrlConfigInput {
 }
 
 /// A builder for [`UpdateFunctionUrlConfigInput`](crate::operation::update_function_url_config::UpdateFunctionUrlConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateFunctionUrlConfigInputBuilder {
     pub(crate) function_name: ::std::option::Option<::std::string::String>,
     pub(crate) qualifier: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl GetResolverQueryLogConfigAssociationOutput {
 }
 
 /// A builder for [`GetResolverQueryLogConfigAssociationOutput`](crate::operation::get_resolver_query_log_config_association::GetResolverQueryLogConfigAssociationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetResolverQueryLogConfigAssociationOutputBuilder {
     pub(crate) resolver_query_log_config_association: ::std::option::Option<crate::types::ResolverQueryLogConfigAssociation>,
     _request_id: Option<String>,

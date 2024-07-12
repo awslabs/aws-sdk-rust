@@ -27,8 +27,8 @@ impl GetApiKeyInput {
 }
 
 /// A builder for [`GetApiKeyInput`](crate::operation::get_api_key::GetApiKeyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetApiKeyInputBuilder {
     pub(crate) api_key: ::std::option::Option<::std::string::String>,
     pub(crate) include_value: ::std::option::Option<bool>,

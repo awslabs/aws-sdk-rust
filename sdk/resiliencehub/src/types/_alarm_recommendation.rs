@@ -88,8 +88,8 @@ impl AlarmRecommendation {
 }
 
 /// A builder for [`AlarmRecommendation`](crate::types::AlarmRecommendation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AlarmRecommendationBuilder {
     pub(crate) recommendation_id: ::std::option::Option<::std::string::String>,
     pub(crate) reference_id: ::std::option::Option<::std::string::String>,

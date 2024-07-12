@@ -49,8 +49,8 @@ impl DisableEnhancedMonitoringOutput {
 }
 
 /// A builder for [`DisableEnhancedMonitoringOutput`](crate::operation::disable_enhanced_monitoring::DisableEnhancedMonitoringOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableEnhancedMonitoringOutputBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) current_shard_level_metrics: ::std::option::Option<::std::vec::Vec<crate::types::MetricsName>>,

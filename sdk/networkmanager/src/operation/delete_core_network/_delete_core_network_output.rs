@@ -26,8 +26,8 @@ impl DeleteCoreNetworkOutput {
 }
 
 /// A builder for [`DeleteCoreNetworkOutput`](crate::operation::delete_core_network::DeleteCoreNetworkOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCoreNetworkOutputBuilder {
     pub(crate) core_network: ::std::option::Option<crate::types::CoreNetwork>,
     _request_id: Option<String>,

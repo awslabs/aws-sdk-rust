@@ -35,8 +35,8 @@ impl EnrollmentJobFraudDetectionConfig {
 }
 
 /// A builder for [`EnrollmentJobFraudDetectionConfig`](crate::types::EnrollmentJobFraudDetectionConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnrollmentJobFraudDetectionConfigBuilder {
     pub(crate) fraud_detection_action: ::std::option::Option<crate::types::FraudDetectionAction>,
     pub(crate) risk_threshold: ::std::option::Option<i32>,

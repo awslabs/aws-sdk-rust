@@ -55,8 +55,8 @@ impl UpdateFileSystemAssociationInput {
 }
 
 /// A builder for [`UpdateFileSystemAssociationInput`](crate::operation::update_file_system_association::UpdateFileSystemAssociationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateFileSystemAssociationInputBuilder {
     pub(crate) file_system_association_arn: ::std::option::Option<::std::string::String>,
     pub(crate) user_name: ::std::option::Option<::std::string::String>,

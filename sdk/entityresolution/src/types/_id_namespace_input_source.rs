@@ -28,8 +28,8 @@ impl IdNamespaceInputSource {
 }
 
 /// A builder for [`IdNamespaceInputSource`](crate::types::IdNamespaceInputSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IdNamespaceInputSourceBuilder {
     pub(crate) input_source_arn: ::std::option::Option<::std::string::String>,
     pub(crate) schema_name: ::std::option::Option<::std::string::String>,

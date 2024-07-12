@@ -26,8 +26,8 @@ impl ModifySnapshotCopyRetentionPeriodOutput {
 }
 
 /// A builder for [`ModifySnapshotCopyRetentionPeriodOutput`](crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifySnapshotCopyRetentionPeriodOutputBuilder {
     pub(crate) cluster: ::std::option::Option<crate::types::Cluster>,
     _request_id: Option<String>,

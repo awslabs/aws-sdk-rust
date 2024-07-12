@@ -27,8 +27,8 @@ impl ConfigRuleComplianceSummaryFilters {
 }
 
 /// A builder for [`ConfigRuleComplianceSummaryFilters`](crate::types::ConfigRuleComplianceSummaryFilters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConfigRuleComplianceSummaryFiltersBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) aws_region: ::std::option::Option<::std::string::String>,

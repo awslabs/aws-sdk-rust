@@ -76,8 +76,8 @@ impl UpdateEndpointOutput {
 }
 
 /// A builder for [`UpdateEndpointOutput`](crate::operation::update_endpoint::UpdateEndpointOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateEndpointOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl DescribePromptInput {
 }
 
 /// A builder for [`DescribePromptInput`](crate::operation::describe_prompt::DescribePromptInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribePromptInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) prompt_id: ::std::option::Option<::std::string::String>,

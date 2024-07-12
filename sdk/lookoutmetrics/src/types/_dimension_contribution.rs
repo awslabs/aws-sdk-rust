@@ -29,8 +29,8 @@ impl DimensionContribution {
 }
 
 /// A builder for [`DimensionContribution`](crate::types::DimensionContribution).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DimensionContributionBuilder {
     pub(crate) dimension_name: ::std::option::Option<::std::string::String>,
     pub(crate) dimension_value_contribution_list: ::std::option::Option<::std::vec::Vec<crate::types::DimensionValueContribution>>,

@@ -27,8 +27,8 @@ impl UpdateCisScanConfigurationOutput {
 }
 
 /// A builder for [`UpdateCisScanConfigurationOutput`](crate::operation::update_cis_scan_configuration::UpdateCisScanConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateCisScanConfigurationOutputBuilder {
     pub(crate) scan_configuration_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

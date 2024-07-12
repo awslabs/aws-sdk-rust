@@ -26,8 +26,8 @@ impl TestSegmentPatternInput {
 }
 
 /// A builder for [`TestSegmentPatternInput`](crate::operation::test_segment_pattern::TestSegmentPatternInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TestSegmentPatternInputBuilder {
     pub(crate) pattern: ::std::option::Option<::std::string::String>,
     pub(crate) payload: ::std::option::Option<::std::string::String>,

@@ -38,8 +38,8 @@ impl PutCodeBindingInput {
 }
 
 /// A builder for [`PutCodeBindingInput`](crate::operation::put_code_binding::PutCodeBindingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutCodeBindingInputBuilder {
     pub(crate) language: ::std::option::Option<::std::string::String>,
     pub(crate) registry_name: ::std::option::Option<::std::string::String>,

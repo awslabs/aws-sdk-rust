@@ -21,8 +21,8 @@ impl NotStatement {
 }
 
 /// A builder for [`NotStatement`](crate::types::NotStatement).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NotStatementBuilder {
     pub(crate) statement: ::std::option::Option<::std::boxed::Box<crate::types::Statement>>,
 }

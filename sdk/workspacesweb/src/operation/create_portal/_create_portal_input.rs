@@ -84,8 +84,8 @@ impl CreatePortalInput {
 }
 
 /// A builder for [`CreatePortalInput`](crate::operation::create_portal::CreatePortalInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreatePortalInputBuilder {
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,

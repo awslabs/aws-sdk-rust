@@ -26,8 +26,8 @@ impl StartQueryExecutionOutput {
 }
 
 /// A builder for [`StartQueryExecutionOutput`](crate::operation::start_query_execution::StartQueryExecutionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartQueryExecutionOutputBuilder {
     pub(crate) query_execution_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

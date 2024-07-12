@@ -40,8 +40,8 @@ impl AssociateTransitGatewayMulticastDomainInput {
 }
 
 /// A builder for [`AssociateTransitGatewayMulticastDomainInput`](crate::operation::associate_transit_gateway_multicast_domain::AssociateTransitGatewayMulticastDomainInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateTransitGatewayMulticastDomainInputBuilder {
     pub(crate) transit_gateway_multicast_domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,

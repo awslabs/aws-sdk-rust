@@ -27,8 +27,8 @@ impl StartTransformerJobOutput {
 }
 
 /// A builder for [`StartTransformerJobOutput`](crate::operation::start_transformer_job::StartTransformerJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartTransformerJobOutputBuilder {
     pub(crate) transformer_job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

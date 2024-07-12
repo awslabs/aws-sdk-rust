@@ -27,8 +27,8 @@ impl LateDataRule {
 }
 
 /// A builder for [`LateDataRule`](crate::types::LateDataRule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LateDataRuleBuilder {
     pub(crate) rule_name: ::std::option::Option<::std::string::String>,
     pub(crate) rule_configuration: ::std::option::Option<crate::types::LateDataRuleConfiguration>,

@@ -38,8 +38,8 @@ impl ListGroupMembershipsForMemberInput {
 }
 
 /// A builder for [`ListGroupMembershipsForMemberInput`](crate::operation::list_group_memberships_for_member::ListGroupMembershipsForMemberInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListGroupMembershipsForMemberInputBuilder {
     pub(crate) identity_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) member_id: ::std::option::Option<crate::types::MemberId>,

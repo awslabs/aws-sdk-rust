@@ -24,8 +24,8 @@ impl ReleaseConfiguration {
 }
 
 /// A builder for [`ReleaseConfiguration`](crate::types::ReleaseConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReleaseConfigurationBuilder {
     pub(crate) duration_since_last_access: ::std::option::Option<crate::types::DurationSinceLastAccess>,
 }

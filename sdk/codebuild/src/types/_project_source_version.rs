@@ -55,8 +55,8 @@ impl ProjectSourceVersion {
 }
 
 /// A builder for [`ProjectSourceVersion`](crate::types::ProjectSourceVersion).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProjectSourceVersionBuilder {
     pub(crate) source_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) source_version: ::std::option::Option<::std::string::String>,

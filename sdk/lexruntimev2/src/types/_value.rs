@@ -36,8 +36,8 @@ impl Value {
 }
 
 /// A builder for [`Value`](crate::types::Value).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ValueBuilder {
     pub(crate) original_value: ::std::option::Option<::std::string::String>,
     pub(crate) interpreted_value: ::std::option::Option<::std::string::String>,

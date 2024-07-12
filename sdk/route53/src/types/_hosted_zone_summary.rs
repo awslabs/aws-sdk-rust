@@ -35,8 +35,8 @@ impl HostedZoneSummary {
 }
 
 /// A builder for [`HostedZoneSummary`](crate::types::HostedZoneSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HostedZoneSummaryBuilder {
     pub(crate) hosted_zone_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

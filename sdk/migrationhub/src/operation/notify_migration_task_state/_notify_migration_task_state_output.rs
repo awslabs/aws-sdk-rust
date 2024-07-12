@@ -18,8 +18,8 @@ impl NotifyMigrationTaskStateOutput {
 }
 
 /// A builder for [`NotifyMigrationTaskStateOutput`](crate::operation::notify_migration_task_state::NotifyMigrationTaskStateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NotifyMigrationTaskStateOutputBuilder {
     _request_id: Option<String>,
 }

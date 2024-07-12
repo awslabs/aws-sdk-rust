@@ -33,8 +33,8 @@ impl DescribeRegistrationTypeDefinitionsOutput {
 }
 
 /// A builder for [`DescribeRegistrationTypeDefinitionsOutput`](crate::operation::describe_registration_type_definitions::DescribeRegistrationTypeDefinitionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRegistrationTypeDefinitionsOutputBuilder {
     pub(crate) registration_type_definitions: ::std::option::Option<::std::vec::Vec<crate::types::RegistrationTypeDefinition>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

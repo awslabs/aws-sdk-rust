@@ -20,8 +20,8 @@ impl ExportNotebookInput {
 }
 
 /// A builder for [`ExportNotebookInput`](crate::operation::export_notebook::ExportNotebookInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExportNotebookInputBuilder {
     pub(crate) notebook_id: ::std::option::Option<::std::string::String>,
 }

@@ -38,8 +38,8 @@ impl ListEndpointsInput {
 }
 
 /// A builder for [`ListEndpointsInput`](crate::operation::list_endpoints::ListEndpointsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEndpointsInputBuilder {
     pub(crate) name_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) home_region: ::std::option::Option<::std::string::String>,

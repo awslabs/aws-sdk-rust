@@ -45,8 +45,8 @@ impl AwsNetworkFirewallFirewallPolicyDetails {
 }
 
 /// A builder for [`AwsNetworkFirewallFirewallPolicyDetails`](crate::types::AwsNetworkFirewallFirewallPolicyDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsNetworkFirewallFirewallPolicyDetailsBuilder {
     pub(crate) firewall_policy: ::std::option::Option<crate::types::FirewallPolicyDetails>,
     pub(crate) firewall_policy_arn: ::std::option::Option<::std::string::String>,

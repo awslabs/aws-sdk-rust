@@ -46,8 +46,8 @@ impl CreateLakeFormationIdentityCenterConfigurationInput {
 }
 
 /// A builder for [`CreateLakeFormationIdentityCenterConfigurationInput`](crate::operation::create_lake_formation_identity_center_configuration::CreateLakeFormationIdentityCenterConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLakeFormationIdentityCenterConfigurationInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_arn: ::std::option::Option<::std::string::String>,

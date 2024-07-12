@@ -44,8 +44,8 @@ impl ListRecommendationsInput {
 }
 
 /// A builder for [`ListRecommendationsInput`](crate::operation::list_recommendations::ListRecommendationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRecommendationsInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::Filter>,
     pub(crate) order_by: ::std::option::Option<crate::types::OrderBy>,

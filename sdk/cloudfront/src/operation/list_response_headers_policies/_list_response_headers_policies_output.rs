@@ -26,8 +26,8 @@ impl ListResponseHeadersPoliciesOutput {
 }
 
 /// A builder for [`ListResponseHeadersPoliciesOutput`](crate::operation::list_response_headers_policies::ListResponseHeadersPoliciesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListResponseHeadersPoliciesOutputBuilder {
     pub(crate) response_headers_policy_list: ::std::option::Option<crate::types::ResponseHeadersPolicyList>,
     _request_id: Option<String>,

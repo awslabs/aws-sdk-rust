@@ -20,8 +20,8 @@ impl DescribePatchGroupStateInput {
 }
 
 /// A builder for [`DescribePatchGroupStateInput`](crate::operation::describe_patch_group_state::DescribePatchGroupStateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribePatchGroupStateInputBuilder {
     pub(crate) patch_group: ::std::option::Option<::std::string::String>,
 }

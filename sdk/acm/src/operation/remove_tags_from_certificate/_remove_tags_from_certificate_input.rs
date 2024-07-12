@@ -32,8 +32,8 @@ impl RemoveTagsFromCertificateInput {
 }
 
 /// A builder for [`RemoveTagsFromCertificateInput`](crate::operation::remove_tags_from_certificate::RemoveTagsFromCertificateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoveTagsFromCertificateInputBuilder {
     pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,

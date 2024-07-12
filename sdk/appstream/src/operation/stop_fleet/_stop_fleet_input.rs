@@ -20,8 +20,8 @@ impl StopFleetInput {
 }
 
 /// A builder for [`StopFleetInput`](crate::operation::stop_fleet::StopFleetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopFleetInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

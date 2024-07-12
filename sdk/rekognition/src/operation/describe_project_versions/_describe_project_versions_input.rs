@@ -40,8 +40,8 @@ impl DescribeProjectVersionsInput {
 }
 
 /// A builder for [`DescribeProjectVersionsInput`](crate::operation::describe_project_versions::DescribeProjectVersionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeProjectVersionsInputBuilder {
     pub(crate) project_arn: ::std::option::Option<::std::string::String>,
     pub(crate) version_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

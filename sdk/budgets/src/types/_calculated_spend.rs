@@ -28,8 +28,8 @@ impl CalculatedSpend {
 }
 
 /// A builder for [`CalculatedSpend`](crate::types::CalculatedSpend).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CalculatedSpendBuilder {
     pub(crate) actual_spend: ::std::option::Option<crate::types::Spend>,
     pub(crate) forecasted_spend: ::std::option::Option<crate::types::Spend>,

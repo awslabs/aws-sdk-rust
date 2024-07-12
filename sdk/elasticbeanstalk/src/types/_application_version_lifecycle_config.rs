@@ -28,8 +28,8 @@ impl ApplicationVersionLifecycleConfig {
 }
 
 /// A builder for [`ApplicationVersionLifecycleConfig`](crate::types::ApplicationVersionLifecycleConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ApplicationVersionLifecycleConfigBuilder {
     pub(crate) max_count_rule: ::std::option::Option<crate::types::MaxCountRule>,
     pub(crate) max_age_rule: ::std::option::Option<crate::types::MaxAgeRule>,

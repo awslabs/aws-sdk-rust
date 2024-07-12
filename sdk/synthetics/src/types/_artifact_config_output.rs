@@ -21,8 +21,8 @@ impl ArtifactConfigOutput {
 }
 
 /// A builder for [`ArtifactConfigOutput`](crate::types::ArtifactConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ArtifactConfigOutputBuilder {
     pub(crate) s3_encryption: ::std::option::Option<crate::types::S3EncryptionConfig>,
 }

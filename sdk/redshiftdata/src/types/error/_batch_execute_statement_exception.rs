@@ -52,8 +52,8 @@ impl BatchExecuteStatementException {
 }
 
 /// A builder for [`BatchExecuteStatementException`](crate::types::error::BatchExecuteStatementException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchExecuteStatementExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) statement_id: ::std::option::Option<::std::string::String>,

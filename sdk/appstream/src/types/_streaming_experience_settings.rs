@@ -21,8 +21,8 @@ impl StreamingExperienceSettings {
 }
 
 /// A builder for [`StreamingExperienceSettings`](crate::types::StreamingExperienceSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StreamingExperienceSettingsBuilder {
     pub(crate) preferred_protocol: ::std::option::Option<crate::types::PreferredProtocol>,
 }

@@ -22,8 +22,8 @@ impl BatchUpdatePhoneNumberInput {
 }
 
 /// A builder for [`BatchUpdatePhoneNumberInput`](crate::operation::batch_update_phone_number::BatchUpdatePhoneNumberInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchUpdatePhoneNumberInputBuilder {
     pub(crate) update_phone_number_request_items: ::std::option::Option<::std::vec::Vec<crate::types::UpdatePhoneNumberRequestItem>>,
 }

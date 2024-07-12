@@ -26,8 +26,8 @@ impl CreateLocationFsxOntapOutput {
 }
 
 /// A builder for [`CreateLocationFsxOntapOutput`](crate::operation::create_location_fsx_ontap::CreateLocationFsxOntapOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLocationFsxOntapOutputBuilder {
     pub(crate) location_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

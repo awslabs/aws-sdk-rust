@@ -26,8 +26,8 @@ impl GetFolderPathOutput {
 }
 
 /// A builder for [`GetFolderPathOutput`](crate::operation::get_folder_path::GetFolderPathOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetFolderPathOutputBuilder {
     pub(crate) path: ::std::option::Option<crate::types::ResourcePath>,
     _request_id: Option<String>,

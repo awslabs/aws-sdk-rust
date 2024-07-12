@@ -62,8 +62,8 @@ impl AssociateRepositoryInput {
 }
 
 /// A builder for [`AssociateRepositoryInput`](crate::operation::associate_repository::AssociateRepositoryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateRepositoryInputBuilder {
     pub(crate) repository: ::std::option::Option<crate::types::Repository>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,

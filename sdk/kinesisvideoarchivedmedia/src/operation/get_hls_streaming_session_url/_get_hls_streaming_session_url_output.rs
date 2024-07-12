@@ -26,8 +26,8 @@ impl GetHlsStreamingSessionUrlOutput {
 }
 
 /// A builder for [`GetHlsStreamingSessionUrlOutput`](crate::operation::get_hls_streaming_session_url::GetHlsStreamingSessionUrlOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetHlsStreamingSessionUrlOutputBuilder {
     pub(crate) hls_streaming_session_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

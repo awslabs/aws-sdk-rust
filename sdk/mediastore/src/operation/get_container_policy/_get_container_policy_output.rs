@@ -27,8 +27,8 @@ impl GetContainerPolicyOutput {
 }
 
 /// A builder for [`GetContainerPolicyOutput`](crate::operation::get_container_policy::GetContainerPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetContainerPolicyOutputBuilder {
     pub(crate) policy: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

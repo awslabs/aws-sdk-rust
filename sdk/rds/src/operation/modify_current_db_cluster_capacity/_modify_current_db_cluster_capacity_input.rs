@@ -70,8 +70,8 @@ impl ModifyCurrentDbClusterCapacityInput {
 }
 
 /// A builder for [`ModifyCurrentDbClusterCapacityInput`](crate::operation::modify_current_db_cluster_capacity::ModifyCurrentDbClusterCapacityInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyCurrentDbClusterCapacityInputBuilder {
     pub(crate) db_cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) capacity: ::std::option::Option<i32>,

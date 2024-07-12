@@ -21,8 +21,8 @@ impl DeleteDeploymentConfigInput {
 }
 
 /// A builder for [`DeleteDeploymentConfigInput`](crate::operation::delete_deployment_config::DeleteDeploymentConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDeploymentConfigInputBuilder {
     pub(crate) deployment_config_name: ::std::option::Option<::std::string::String>,
 }

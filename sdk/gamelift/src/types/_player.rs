@@ -53,8 +53,8 @@ impl Player {
 }
 
 /// A builder for [`Player`](crate::types::Player).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PlayerBuilder {
     pub(crate) player_id: ::std::option::Option<::std::string::String>,
     pub(crate) player_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,

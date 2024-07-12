@@ -35,8 +35,8 @@ impl UploadServerCertificateOutput {
 }
 
 /// A builder for [`UploadServerCertificateOutput`](crate::operation::upload_server_certificate::UploadServerCertificateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UploadServerCertificateOutputBuilder {
     pub(crate) server_certificate_metadata: ::std::option::Option<crate::types::ServerCertificateMetadata>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,

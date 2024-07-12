@@ -21,8 +21,8 @@ impl AccountLevelPermissions {
 }
 
 /// A builder for [`AccountLevelPermissions`](crate::types::AccountLevelPermissions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AccountLevelPermissionsBuilder {
     pub(crate) block_public_access: ::std::option::Option<crate::types::BlockPublicAccess>,
 }

@@ -40,8 +40,8 @@ impl WorkflowExecutionSignaledEventAttributes {
 }
 
 /// A builder for [`WorkflowExecutionSignaledEventAttributes`](crate::types::WorkflowExecutionSignaledEventAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WorkflowExecutionSignaledEventAttributesBuilder {
     pub(crate) signal_name: ::std::option::Option<::std::string::String>,
     pub(crate) input: ::std::option::Option<::std::string::String>,

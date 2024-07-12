@@ -32,8 +32,8 @@ impl CancelMlDataProcessingJobInput {
 }
 
 /// A builder for [`CancelMlDataProcessingJobInput`](crate::operation::cancel_ml_data_processing_job::CancelMlDataProcessingJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelMlDataProcessingJobInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) neptune_iam_role_arn: ::std::option::Option<::std::string::String>,

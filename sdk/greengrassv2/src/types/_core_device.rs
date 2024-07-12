@@ -45,8 +45,8 @@ impl CoreDevice {
 }
 
 /// A builder for [`CoreDevice`](crate::types::CoreDevice).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CoreDeviceBuilder {
     pub(crate) core_device_thing_name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::CoreDeviceStatus>,

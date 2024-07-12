@@ -27,8 +27,8 @@ impl CrossRegionCopyDeprecateRule {
 }
 
 /// A builder for [`CrossRegionCopyDeprecateRule`](crate::types::CrossRegionCopyDeprecateRule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CrossRegionCopyDeprecateRuleBuilder {
     pub(crate) interval: ::std::option::Option<i32>,
     pub(crate) interval_unit: ::std::option::Option<crate::types::RetentionIntervalUnitValues>,

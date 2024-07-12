@@ -75,8 +75,8 @@ impl CandidateGenerationConfig {
 }
 
 /// A builder for [`CandidateGenerationConfig`](crate::types::CandidateGenerationConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CandidateGenerationConfigBuilder {
     pub(crate) algorithms_config: ::std::option::Option<::std::vec::Vec<crate::types::AutoMlAlgorithmConfig>>,
 }

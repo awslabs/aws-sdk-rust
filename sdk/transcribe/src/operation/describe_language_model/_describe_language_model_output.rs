@@ -30,8 +30,8 @@ impl DescribeLanguageModelOutput {
 }
 
 /// A builder for [`DescribeLanguageModelOutput`](crate::operation::describe_language_model::DescribeLanguageModelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeLanguageModelOutputBuilder {
     pub(crate) language_model: ::std::option::Option<crate::types::LanguageModel>,
     _request_id: Option<String>,

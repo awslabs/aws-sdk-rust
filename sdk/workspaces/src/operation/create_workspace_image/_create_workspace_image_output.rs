@@ -68,8 +68,8 @@ impl CreateWorkspaceImageOutput {
 }
 
 /// A builder for [`CreateWorkspaceImageOutput`](crate::operation::create_workspace_image::CreateWorkspaceImageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateWorkspaceImageOutputBuilder {
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

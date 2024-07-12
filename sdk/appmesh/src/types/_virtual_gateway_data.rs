@@ -47,8 +47,8 @@ impl VirtualGatewayData {
 }
 
 /// A builder for [`VirtualGatewayData`](crate::types::VirtualGatewayData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VirtualGatewayDataBuilder {
     pub(crate) mesh_name: ::std::option::Option<::std::string::String>,
     pub(crate) virtual_gateway_name: ::std::option::Option<::std::string::String>,

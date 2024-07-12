@@ -32,8 +32,8 @@ impl ListRepositoriesInput {
 }
 
 /// A builder for [`ListRepositoriesInput`](crate::operation::list_repositories::ListRepositoriesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRepositoriesInputBuilder {
     pub(crate) repository_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

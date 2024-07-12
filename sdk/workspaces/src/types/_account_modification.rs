@@ -51,8 +51,8 @@ impl AccountModification {
 }
 
 /// A builder for [`AccountModification`](crate::types::AccountModification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AccountModificationBuilder {
     pub(crate) modification_state: ::std::option::Option<crate::types::DedicatedTenancyModificationStateEnum>,
     pub(crate) dedicated_tenancy_support: ::std::option::Option<crate::types::DedicatedTenancySupportResultEnum>,

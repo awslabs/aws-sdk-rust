@@ -20,8 +20,8 @@ impl DeleteProvisioningTemplateInput {
 }
 
 /// A builder for [`DeleteProvisioningTemplateInput`](crate::operation::delete_provisioning_template::DeleteProvisioningTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteProvisioningTemplateInputBuilder {
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
 }

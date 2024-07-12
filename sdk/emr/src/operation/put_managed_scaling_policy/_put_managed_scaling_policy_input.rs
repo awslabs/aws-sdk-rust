@@ -26,8 +26,8 @@ impl PutManagedScalingPolicyInput {
 }
 
 /// A builder for [`PutManagedScalingPolicyInput`](crate::operation::put_managed_scaling_policy::PutManagedScalingPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutManagedScalingPolicyInputBuilder {
     pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) managed_scaling_policy: ::std::option::Option<crate::types::ManagedScalingPolicy>,

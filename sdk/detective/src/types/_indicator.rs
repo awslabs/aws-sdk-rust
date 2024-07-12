@@ -27,8 +27,8 @@ impl Indicator {
 }
 
 /// A builder for [`Indicator`](crate::types::Indicator).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IndicatorBuilder {
     pub(crate) indicator_type: ::std::option::Option<crate::types::IndicatorType>,
     pub(crate) indicator_detail: ::std::option::Option<crate::types::IndicatorDetail>,

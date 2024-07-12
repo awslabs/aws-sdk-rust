@@ -49,8 +49,8 @@ impl UserProfileSummary {
 }
 
 /// A builder for [`UserProfileSummary`](crate::types::UserProfileSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UserProfileSummaryBuilder {
     pub(crate) user_arn: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,

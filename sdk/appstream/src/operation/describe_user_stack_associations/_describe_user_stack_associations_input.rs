@@ -59,8 +59,8 @@ impl DescribeUserStackAssociationsInput {
 }
 
 /// A builder for [`DescribeUserStackAssociationsInput`](crate::operation::describe_user_stack_associations::DescribeUserStackAssociationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DescribeUserStackAssociationsInputBuilder {
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
     pub(crate) user_name: ::std::option::Option<::std::string::String>,

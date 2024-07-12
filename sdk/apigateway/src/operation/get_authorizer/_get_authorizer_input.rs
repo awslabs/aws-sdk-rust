@@ -27,8 +27,8 @@ impl GetAuthorizerInput {
 }
 
 /// A builder for [`GetAuthorizerInput`](crate::operation::get_authorizer::GetAuthorizerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAuthorizerInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
     pub(crate) authorizer_id: ::std::option::Option<::std::string::String>,

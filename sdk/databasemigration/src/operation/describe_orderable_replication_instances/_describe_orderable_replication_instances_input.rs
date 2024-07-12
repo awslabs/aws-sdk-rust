@@ -31,8 +31,8 @@ impl DescribeOrderableReplicationInstancesInput {
 }
 
 /// A builder for [`DescribeOrderableReplicationInstancesInput`](crate::operation::describe_orderable_replication_instances::DescribeOrderableReplicationInstancesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeOrderableReplicationInstancesInputBuilder {
     pub(crate) max_records: ::std::option::Option<i32>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

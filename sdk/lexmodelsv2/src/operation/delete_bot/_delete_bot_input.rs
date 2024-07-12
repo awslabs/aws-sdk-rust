@@ -26,8 +26,8 @@ impl DeleteBotInput {
 }
 
 /// A builder for [`DeleteBotInput`](crate::operation::delete_bot::DeleteBotInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteBotInputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) skip_resource_in_use_check: ::std::option::Option<bool>,

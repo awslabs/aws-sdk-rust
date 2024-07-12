@@ -20,8 +20,8 @@ impl GetBucketStatisticsInput {
 }
 
 /// A builder for [`GetBucketStatisticsInput`](crate::operation::get_bucket_statistics::GetBucketStatisticsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBucketStatisticsInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }

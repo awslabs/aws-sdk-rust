@@ -27,8 +27,8 @@ impl SavingsPlanRateProperty {
 }
 
 /// A builder for [`SavingsPlanRateProperty`](crate::types::SavingsPlanRateProperty).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SavingsPlanRatePropertyBuilder {
     pub(crate) name: ::std::option::Option<crate::types::SavingsPlanRatePropertyKey>,
     pub(crate) value: ::std::option::Option<::std::string::String>,

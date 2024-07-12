@@ -34,8 +34,8 @@ impl DescribeSpeakerInput {
 }
 
 /// A builder for [`DescribeSpeakerInput`](crate::operation::describe_speaker::DescribeSpeakerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DescribeSpeakerInputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) speaker_id: ::std::option::Option<::std::string::String>,

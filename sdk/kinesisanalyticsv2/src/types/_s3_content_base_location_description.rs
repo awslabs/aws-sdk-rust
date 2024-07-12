@@ -28,8 +28,8 @@ impl S3ContentBaseLocationDescription {
 }
 
 /// A builder for [`S3ContentBaseLocationDescription`](crate::types::S3ContentBaseLocationDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3ContentBaseLocationDescriptionBuilder {
     pub(crate) bucket_arn: ::std::option::Option<::std::string::String>,
     pub(crate) base_path: ::std::option::Option<::std::string::String>,

@@ -32,8 +32,8 @@ impl DescribeUsersInput {
 }
 
 /// A builder for [`DescribeUsersInput`](crate::operation::describe_users::DescribeUsersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeUsersInputBuilder {
     pub(crate) authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
     pub(crate) max_results: ::std::option::Option<i32>,

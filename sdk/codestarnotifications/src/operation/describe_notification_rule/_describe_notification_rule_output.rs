@@ -109,8 +109,8 @@ impl DescribeNotificationRuleOutput {
 }
 
 /// A builder for [`DescribeNotificationRuleOutput`](crate::operation::describe_notification_rule::DescribeNotificationRuleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DescribeNotificationRuleOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

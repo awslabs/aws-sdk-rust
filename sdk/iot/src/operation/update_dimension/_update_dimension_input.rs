@@ -28,8 +28,8 @@ impl UpdateDimensionInput {
 }
 
 /// A builder for [`UpdateDimensionInput`](crate::operation::update_dimension::UpdateDimensionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDimensionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) string_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

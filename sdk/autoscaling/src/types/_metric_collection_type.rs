@@ -105,8 +105,8 @@ impl MetricCollectionType {
 }
 
 /// A builder for [`MetricCollectionType`](crate::types::MetricCollectionType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MetricCollectionTypeBuilder {
     pub(crate) metric: ::std::option::Option<::std::string::String>,
 }

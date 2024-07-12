@@ -44,8 +44,8 @@ impl UpdateWorkflowStepOutput {
 }
 
 /// A builder for [`UpdateWorkflowStepOutput`](crate::operation::update_workflow_step::UpdateWorkflowStepOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateWorkflowStepOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) step_group_id: ::std::option::Option<::std::string::String>,

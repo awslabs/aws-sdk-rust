@@ -27,8 +27,8 @@ impl ConsumedLicenseSummary {
 }
 
 /// A builder for [`ConsumedLicenseSummary`](crate::types::ConsumedLicenseSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConsumedLicenseSummaryBuilder {
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
     pub(crate) consumed_licenses: ::std::option::Option<i64>,

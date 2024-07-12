@@ -18,8 +18,8 @@ impl VerifyEmailAddressOutput {
 }
 
 /// A builder for [`VerifyEmailAddressOutput`](crate::operation::verify_email_address::VerifyEmailAddressOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VerifyEmailAddressOutputBuilder {
     _request_id: Option<String>,
 }

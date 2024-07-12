@@ -35,8 +35,8 @@ impl StartPosition {
 }
 
 /// A builder for [`StartPosition`](crate::types::StartPosition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartPositionBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) absolute_time: ::std::option::Option<::std::string::String>,

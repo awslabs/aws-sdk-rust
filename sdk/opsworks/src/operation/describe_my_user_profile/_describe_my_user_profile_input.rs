@@ -11,8 +11,8 @@ impl DescribeMyUserProfileInput {
 }
 
 /// A builder for [`DescribeMyUserProfileInput`](crate::operation::describe_my_user_profile::DescribeMyUserProfileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeMyUserProfileInputBuilder {}
 impl DescribeMyUserProfileInputBuilder {
     /// Consumes the builder and constructs a [`DescribeMyUserProfileInput`](crate::operation::describe_my_user_profile::DescribeMyUserProfileInput).

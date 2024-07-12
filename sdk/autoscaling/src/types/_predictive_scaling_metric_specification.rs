@@ -76,8 +76,8 @@ impl PredictiveScalingMetricSpecification {
 }
 
 /// A builder for [`PredictiveScalingMetricSpecification`](crate::types::PredictiveScalingMetricSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PredictiveScalingMetricSpecificationBuilder {
     pub(crate) target_value: ::std::option::Option<f64>,
     pub(crate) predefined_metric_pair_specification: ::std::option::Option<crate::types::PredictiveScalingPredefinedMetricPair>,

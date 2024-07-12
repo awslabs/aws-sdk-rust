@@ -168,8 +168,8 @@ impl CreateClientVpnEndpointInput {
 }
 
 /// A builder for [`CreateClientVpnEndpointInput`](crate::operation::create_client_vpn_endpoint::CreateClientVpnEndpointInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateClientVpnEndpointInputBuilder {
     pub(crate) client_cidr_block: ::std::option::Option<::std::string::String>,
     pub(crate) server_certificate_arn: ::std::option::Option<::std::string::String>,

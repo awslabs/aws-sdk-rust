@@ -26,8 +26,8 @@ impl CreateChallengeOutput {
 }
 
 /// A builder for [`CreateChallengeOutput`](crate::operation::create_challenge::CreateChallengeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateChallengeOutputBuilder {
     pub(crate) challenge: ::std::option::Option<crate::types::Challenge>,
     _request_id: Option<String>,

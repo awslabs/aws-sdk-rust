@@ -26,8 +26,8 @@ impl ListPlaybackKeyPairsInput {
 }
 
 /// A builder for [`ListPlaybackKeyPairsInput`](crate::operation::list_playback_key_pairs::ListPlaybackKeyPairsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPlaybackKeyPairsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

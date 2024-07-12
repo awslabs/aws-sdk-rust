@@ -47,8 +47,8 @@ impl PlacementDescription {
 }
 
 /// A builder for [`PlacementDescription`](crate::types::PlacementDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PlacementDescriptionBuilder {
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
     pub(crate) placement_name: ::std::option::Option<::std::string::String>,

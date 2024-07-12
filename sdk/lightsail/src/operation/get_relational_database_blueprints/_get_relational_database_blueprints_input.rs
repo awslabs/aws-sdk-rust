@@ -22,8 +22,8 @@ impl GetRelationalDatabaseBlueprintsInput {
 }
 
 /// A builder for [`GetRelationalDatabaseBlueprintsInput`](crate::operation::get_relational_database_blueprints::GetRelationalDatabaseBlueprintsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRelationalDatabaseBlueprintsInputBuilder {
     pub(crate) page_token: ::std::option::Option<::std::string::String>,
 }

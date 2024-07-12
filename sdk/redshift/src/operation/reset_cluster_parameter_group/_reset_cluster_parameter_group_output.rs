@@ -33,8 +33,8 @@ impl ResetClusterParameterGroupOutput {
 }
 
 /// A builder for [`ResetClusterParameterGroupOutput`](crate::operation::reset_cluster_parameter_group::ResetClusterParameterGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResetClusterParameterGroupOutputBuilder {
     pub(crate) parameter_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) parameter_group_status: ::std::option::Option<::std::string::String>,

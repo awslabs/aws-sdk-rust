@@ -70,8 +70,8 @@ impl CreateLocationFsxOntapInput {
 }
 
 /// A builder for [`CreateLocationFsxOntapInput`](crate::operation::create_location_fsx_ontap::CreateLocationFsxOntapInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLocationFsxOntapInputBuilder {
     pub(crate) protocol: ::std::option::Option<crate::types::FsxProtocol>,
     pub(crate) security_group_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

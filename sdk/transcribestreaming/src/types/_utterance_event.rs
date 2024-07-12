@@ -81,8 +81,8 @@ impl UtteranceEvent {
 }
 
 /// A builder for [`UtteranceEvent`](crate::types::UtteranceEvent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UtteranceEventBuilder {
     pub(crate) utterance_id: ::std::option::Option<::std::string::String>,
     pub(crate) is_partial: ::std::option::Option<bool>,

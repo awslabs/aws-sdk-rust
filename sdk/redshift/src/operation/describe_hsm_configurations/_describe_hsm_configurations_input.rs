@@ -53,8 +53,8 @@ impl DescribeHsmConfigurationsInput {
 }
 
 /// A builder for [`DescribeHsmConfigurationsInput`](crate::operation::describe_hsm_configurations::DescribeHsmConfigurationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeHsmConfigurationsInputBuilder {
     pub(crate) hsm_configuration_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,

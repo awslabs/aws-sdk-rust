@@ -29,8 +29,8 @@ impl IotSiteWiseAction {
 }
 
 /// A builder for [`IotSiteWiseAction`](crate::types::IotSiteWiseAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IotSiteWiseActionBuilder {
     pub(crate) put_asset_property_value_entries: ::std::option::Option<::std::vec::Vec<crate::types::PutAssetPropertyValueEntry>>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,

@@ -33,8 +33,8 @@ impl CreateBackendStorageResourceConfig {
 }
 
 /// A builder for [`CreateBackendStorageResourceConfig`](crate::types::CreateBackendStorageResourceConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateBackendStorageResourceConfigBuilder {
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) permissions: ::std::option::Option<crate::types::BackendStoragePermissions>,

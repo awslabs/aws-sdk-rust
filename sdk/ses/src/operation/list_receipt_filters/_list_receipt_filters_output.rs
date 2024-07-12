@@ -29,8 +29,8 @@ impl ListReceiptFiltersOutput {
 }
 
 /// A builder for [`ListReceiptFiltersOutput`](crate::operation::list_receipt_filters::ListReceiptFiltersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListReceiptFiltersOutputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::ReceiptFilter>>,
     _request_id: Option<String>,

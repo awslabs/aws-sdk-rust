@@ -26,8 +26,8 @@ impl ModifyVolumeOutput {
 }
 
 /// A builder for [`ModifyVolumeOutput`](crate::operation::modify_volume::ModifyVolumeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyVolumeOutputBuilder {
     pub(crate) volume_modification: ::std::option::Option<crate::types::VolumeModification>,
     _request_id: Option<String>,

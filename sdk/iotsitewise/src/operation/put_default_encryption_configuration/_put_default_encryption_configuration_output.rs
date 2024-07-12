@@ -38,8 +38,8 @@ impl PutDefaultEncryptionConfigurationOutput {
 }
 
 /// A builder for [`PutDefaultEncryptionConfigurationOutput`](crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutDefaultEncryptionConfigurationOutputBuilder {
     pub(crate) encryption_type: ::std::option::Option<crate::types::EncryptionType>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,

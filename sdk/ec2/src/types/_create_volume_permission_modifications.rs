@@ -31,8 +31,8 @@ impl CreateVolumePermissionModifications {
 }
 
 /// A builder for [`CreateVolumePermissionModifications`](crate::types::CreateVolumePermissionModifications).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateVolumePermissionModificationsBuilder {
     pub(crate) add: ::std::option::Option<::std::vec::Vec<crate::types::CreateVolumePermission>>,
     pub(crate) remove: ::std::option::Option<::std::vec::Vec<crate::types::CreateVolumePermission>>,

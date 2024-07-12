@@ -27,8 +27,8 @@ impl PublicAccess {
 }
 
 /// A builder for [`PublicAccess`](crate::types::PublicAccess).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PublicAccessBuilder {
     pub(crate) permission_configuration: ::std::option::Option<crate::types::PermissionConfiguration>,
     pub(crate) effective_permission: ::std::option::Option<::std::string::String>,

@@ -32,8 +32,8 @@ impl UpdateGatewayCapabilityConfigurationInput {
 }
 
 /// A builder for [`UpdateGatewayCapabilityConfigurationInput`](crate::operation::update_gateway_capability_configuration::UpdateGatewayCapabilityConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateGatewayCapabilityConfigurationInputBuilder {
     pub(crate) gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) capability_namespace: ::std::option::Option<::std::string::String>,

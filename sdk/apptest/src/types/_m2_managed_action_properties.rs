@@ -27,8 +27,8 @@ impl M2ManagedActionProperties {
 }
 
 /// A builder for [`M2ManagedActionProperties`](crate::types::M2ManagedActionProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct M2ManagedActionPropertiesBuilder {
     pub(crate) force_stop: ::std::option::Option<bool>,
     pub(crate) import_data_set_location: ::std::option::Option<::std::string::String>,

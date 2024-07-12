@@ -69,8 +69,8 @@ impl PendingModifiedValues {
 }
 
 /// A builder for [`PendingModifiedValues`](crate::types::PendingModifiedValues).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PendingModifiedValuesBuilder {
     pub(crate) num_cache_nodes: ::std::option::Option<i32>,
     pub(crate) cache_node_ids_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -51,8 +51,8 @@ impl InstanceDetails {
 }
 
 /// A builder for [`InstanceDetails`](crate::types::InstanceDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceDetailsBuilder {
     pub(crate) ec2_instance_details: ::std::option::Option<crate::types::Ec2InstanceDetails>,
     pub(crate) rds_instance_details: ::std::option::Option<crate::types::RdsInstanceDetails>,

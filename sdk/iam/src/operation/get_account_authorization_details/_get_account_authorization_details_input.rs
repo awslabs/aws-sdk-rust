@@ -38,8 +38,8 @@ impl GetAccountAuthorizationDetailsInput {
 }
 
 /// A builder for [`GetAccountAuthorizationDetailsInput`](crate::operation::get_account_authorization_details::GetAccountAuthorizationDetailsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAccountAuthorizationDetailsInputBuilder {
     pub(crate) filter: ::std::option::Option<::std::vec::Vec<crate::types::EntityType>>,
     pub(crate) max_items: ::std::option::Option<i32>,

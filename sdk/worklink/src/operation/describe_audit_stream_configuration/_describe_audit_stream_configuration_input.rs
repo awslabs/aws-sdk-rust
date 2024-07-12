@@ -20,8 +20,8 @@ impl DescribeAuditStreamConfigurationInput {
 }
 
 /// A builder for [`DescribeAuditStreamConfigurationInput`](crate::operation::describe_audit_stream_configuration::DescribeAuditStreamConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAuditStreamConfigurationInputBuilder {
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,
 }

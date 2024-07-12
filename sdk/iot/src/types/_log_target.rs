@@ -27,8 +27,8 @@ impl LogTarget {
 }
 
 /// A builder for [`LogTarget`](crate::types::LogTarget).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LogTargetBuilder {
     pub(crate) target_type: ::std::option::Option<crate::types::LogTargetType>,
     pub(crate) target_name: ::std::option::Option<::std::string::String>,

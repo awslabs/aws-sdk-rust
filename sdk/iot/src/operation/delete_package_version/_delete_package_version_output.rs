@@ -18,8 +18,8 @@ impl DeletePackageVersionOutput {
 }
 
 /// A builder for [`DeletePackageVersionOutput`](crate::operation::delete_package_version::DeletePackageVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePackageVersionOutputBuilder {
     _request_id: Option<String>,
 }

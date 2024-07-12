@@ -18,8 +18,8 @@ impl AssociateDrtRoleOutput {
 }
 
 /// A builder for [`AssociateDrtRoleOutput`](crate::operation::associate_drt_role::AssociateDrtRoleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateDrtRoleOutputBuilder {
     _request_id: Option<String>,
 }

@@ -19,8 +19,8 @@ impl RegisterOrganizationDelegatedAdminOutput {
 }
 
 /// A builder for [`RegisterOrganizationDelegatedAdminOutput`](crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterOrganizationDelegatedAdminOutputBuilder {
     _request_id: Option<String>,
 }

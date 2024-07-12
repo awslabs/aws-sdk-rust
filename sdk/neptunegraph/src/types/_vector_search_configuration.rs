@@ -21,8 +21,8 @@ impl VectorSearchConfiguration {
 }
 
 /// A builder for [`VectorSearchConfiguration`](crate::types::VectorSearchConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VectorSearchConfigurationBuilder {
     pub(crate) dimension: ::std::option::Option<i32>,
 }

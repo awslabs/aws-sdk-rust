@@ -40,8 +40,8 @@ impl DescribeDomainControllersInput {
 }
 
 /// A builder for [`DescribeDomainControllersInput`](crate::operation::describe_domain_controllers::DescribeDomainControllersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDomainControllersInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) domain_controller_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

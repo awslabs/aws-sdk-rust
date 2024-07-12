@@ -27,8 +27,8 @@ impl ListInsightsClosedStatusFilter {
 }
 
 /// A builder for [`ListInsightsClosedStatusFilter`](crate::types::ListInsightsClosedStatusFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListInsightsClosedStatusFilterBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::InsightType>,
     pub(crate) end_time_range: ::std::option::Option<crate::types::EndTimeRange>,

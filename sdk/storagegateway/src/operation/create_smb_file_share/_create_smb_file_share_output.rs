@@ -27,8 +27,8 @@ impl CreateSmbFileShareOutput {
 }
 
 /// A builder for [`CreateSmbFileShareOutput`](crate::operation::create_smb_file_share::CreateSmbFileShareOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSmbFileShareOutputBuilder {
     pub(crate) file_share_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

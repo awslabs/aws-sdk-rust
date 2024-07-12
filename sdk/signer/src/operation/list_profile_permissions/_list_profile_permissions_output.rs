@@ -46,8 +46,8 @@ impl ListProfilePermissionsOutput {
 }
 
 /// A builder for [`ListProfilePermissionsOutput`](crate::operation::list_profile_permissions::ListProfilePermissionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListProfilePermissionsOutputBuilder {
     pub(crate) revision_id: ::std::option::Option<::std::string::String>,
     pub(crate) policy_size_bytes: ::std::option::Option<i32>,

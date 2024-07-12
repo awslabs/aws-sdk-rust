@@ -27,8 +27,8 @@ impl CostCategoryProcessingStatus {
 }
 
 /// A builder for [`CostCategoryProcessingStatus`](crate::types::CostCategoryProcessingStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CostCategoryProcessingStatusBuilder {
     pub(crate) component: ::std::option::Option<crate::types::CostCategoryStatusComponent>,
     pub(crate) status: ::std::option::Option<crate::types::CostCategoryStatus>,

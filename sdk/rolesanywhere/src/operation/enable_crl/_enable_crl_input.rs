@@ -20,8 +20,8 @@ impl EnableCrlInput {
 }
 
 /// A builder for [`EnableCrlInput`](crate::operation::enable_crl::EnableCrlInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnableCrlInputBuilder {
     pub(crate) crl_id: ::std::option::Option<::std::string::String>,
 }

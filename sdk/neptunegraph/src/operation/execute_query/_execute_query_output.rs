@@ -26,8 +26,8 @@ impl ExecuteQueryOutput {
 }
 
 /// A builder for [`ExecuteQueryOutput`](crate::operation::execute_query::ExecuteQueryOutput).
-#[non_exhaustive]
 #[derive(::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExecuteQueryOutputBuilder {
     pub(crate) payload: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>,
     _request_id: Option<String>,

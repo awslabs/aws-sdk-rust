@@ -33,8 +33,8 @@ impl Subtitles {
 }
 
 /// A builder for [`Subtitles`](crate::types::Subtitles).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SubtitlesBuilder {
     pub(crate) formats: ::std::option::Option<::std::vec::Vec<crate::types::SubtitleFormat>>,
     pub(crate) output_start_index: ::std::option::Option<i32>,

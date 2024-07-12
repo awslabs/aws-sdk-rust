@@ -26,8 +26,8 @@ impl GetChallengeMetadataOutput {
 }
 
 /// A builder for [`GetChallengeMetadataOutput`](crate::operation::get_challenge_metadata::GetChallengeMetadataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetChallengeMetadataOutputBuilder {
     pub(crate) challenge_metadata: ::std::option::Option<crate::types::ChallengeMetadata>,
     _request_id: Option<String>,

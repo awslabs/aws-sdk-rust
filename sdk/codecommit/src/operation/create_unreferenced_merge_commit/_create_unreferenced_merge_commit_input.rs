@@ -80,8 +80,8 @@ impl CreateUnreferencedMergeCommitInput {
 }
 
 /// A builder for [`CreateUnreferencedMergeCommitInput`](crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateUnreferencedMergeCommitInputBuilder {
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
     pub(crate) source_commit_specifier: ::std::option::Option<::std::string::String>,

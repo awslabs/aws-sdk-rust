@@ -50,8 +50,8 @@ impl SearchEntitiesInput {
 }
 
 /// A builder for [`SearchEntitiesInput`](crate::operation::search_entities::SearchEntitiesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchEntitiesInputBuilder {
     pub(crate) entity_types: ::std::option::Option<::std::vec::Vec<crate::types::EntityType>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::EntityFilter>>,

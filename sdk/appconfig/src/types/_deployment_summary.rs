@@ -87,8 +87,8 @@ impl DeploymentSummary {
 }
 
 /// A builder for [`DeploymentSummary`](crate::types::DeploymentSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeploymentSummaryBuilder {
     pub(crate) deployment_number: ::std::option::Option<i32>,
     pub(crate) configuration_name: ::std::option::Option<::std::string::String>,

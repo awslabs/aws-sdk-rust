@@ -40,8 +40,8 @@ impl DescribeReplicationInstanceTaskLogsOutput {
 }
 
 /// A builder for [`DescribeReplicationInstanceTaskLogsOutput`](crate::operation::describe_replication_instance_task_logs::DescribeReplicationInstanceTaskLogsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeReplicationInstanceTaskLogsOutputBuilder {
     pub(crate) replication_instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) replication_instance_task_logs: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationInstanceTaskLog>>,

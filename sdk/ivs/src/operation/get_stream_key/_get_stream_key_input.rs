@@ -20,8 +20,8 @@ impl GetStreamKeyInput {
 }
 
 /// A builder for [`GetStreamKeyInput`](crate::operation::get_stream_key::GetStreamKeyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetStreamKeyInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }

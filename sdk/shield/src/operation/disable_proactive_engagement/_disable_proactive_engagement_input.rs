@@ -11,8 +11,8 @@ impl DisableProactiveEngagementInput {
 }
 
 /// A builder for [`DisableProactiveEngagementInput`](crate::operation::disable_proactive_engagement::DisableProactiveEngagementInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableProactiveEngagementInputBuilder {}
 impl DisableProactiveEngagementInputBuilder {
     /// Consumes the builder and constructs a [`DisableProactiveEngagementInput`](crate::operation::disable_proactive_engagement::DisableProactiveEngagementInput).

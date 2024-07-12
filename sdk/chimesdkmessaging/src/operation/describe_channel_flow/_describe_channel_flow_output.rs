@@ -26,8 +26,8 @@ impl DescribeChannelFlowOutput {
 }
 
 /// A builder for [`DescribeChannelFlowOutput`](crate::operation::describe_channel_flow::DescribeChannelFlowOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeChannelFlowOutputBuilder {
     pub(crate) channel_flow: ::std::option::Option<crate::types::ChannelFlow>,
     _request_id: Option<String>,

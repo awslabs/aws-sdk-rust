@@ -26,8 +26,8 @@ impl AssociateIpAccessSettingsInput {
 }
 
 /// A builder for [`AssociateIpAccessSettingsInput`](crate::operation::associate_ip_access_settings::AssociateIpAccessSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateIpAccessSettingsInputBuilder {
     pub(crate) portal_arn: ::std::option::Option<::std::string::String>,
     pub(crate) ip_access_settings_arn: ::std::option::Option<::std::string::String>,

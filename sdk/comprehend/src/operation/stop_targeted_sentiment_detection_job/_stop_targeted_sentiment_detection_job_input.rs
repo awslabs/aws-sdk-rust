@@ -20,8 +20,8 @@ impl StopTargetedSentimentDetectionJobInput {
 }
 
 /// A builder for [`StopTargetedSentimentDetectionJobInput`](crate::operation::stop_targeted_sentiment_detection_job::StopTargetedSentimentDetectionJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopTargetedSentimentDetectionJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }

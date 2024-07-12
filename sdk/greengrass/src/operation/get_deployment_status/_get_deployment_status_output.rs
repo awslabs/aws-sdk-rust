@@ -52,8 +52,8 @@ impl GetDeploymentStatusOutput {
 }
 
 /// A builder for [`GetDeploymentStatusOutput`](crate::operation::get_deployment_status::GetDeploymentStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDeploymentStatusOutputBuilder {
     pub(crate) deployment_status: ::std::option::Option<::std::string::String>,
     pub(crate) deployment_type: ::std::option::Option<crate::types::DeploymentType>,

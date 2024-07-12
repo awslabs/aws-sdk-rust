@@ -36,8 +36,8 @@ impl S3RecordingSinkRuntimeConfiguration {
 }
 
 /// A builder for [`S3RecordingSinkRuntimeConfiguration`](crate::types::S3RecordingSinkRuntimeConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct S3RecordingSinkRuntimeConfigurationBuilder {
     pub(crate) destination: ::std::option::Option<::std::string::String>,
     pub(crate) recording_file_format: ::std::option::Option<crate::types::RecordingFileFormat>,

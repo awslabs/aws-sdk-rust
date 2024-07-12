@@ -75,8 +75,8 @@ impl ImportAssetFromApiGatewayApiRequestDetails {
 }
 
 /// A builder for [`ImportAssetFromApiGatewayApiRequestDetails`](crate::types::ImportAssetFromApiGatewayApiRequestDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportAssetFromApiGatewayApiRequestDetailsBuilder {
     pub(crate) api_description: ::std::option::Option<::std::string::String>,
     pub(crate) api_id: ::std::option::Option<::std::string::String>,

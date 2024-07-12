@@ -27,8 +27,8 @@ impl AcceptReservedInstancesExchangeQuoteOutput {
 }
 
 /// A builder for [`AcceptReservedInstancesExchangeQuoteOutput`](crate::operation::accept_reserved_instances_exchange_quote::AcceptReservedInstancesExchangeQuoteOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AcceptReservedInstancesExchangeQuoteOutputBuilder {
     pub(crate) exchange_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

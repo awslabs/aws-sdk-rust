@@ -26,8 +26,8 @@ impl GetCaseEventConfigurationOutput {
 }
 
 /// A builder for [`GetCaseEventConfigurationOutput`](crate::operation::get_case_event_configuration::GetCaseEventConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCaseEventConfigurationOutputBuilder {
     pub(crate) event_bridge: ::std::option::Option<crate::types::EventBridgeConfiguration>,
     _request_id: Option<String>,

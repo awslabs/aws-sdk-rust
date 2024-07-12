@@ -50,8 +50,8 @@ impl AssociateMemberToQueueInput {
 }
 
 /// A builder for [`AssociateMemberToQueueInput`](crate::operation::associate_member_to_queue::AssociateMemberToQueueInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateMemberToQueueInputBuilder {
     pub(crate) farm_id: ::std::option::Option<::std::string::String>,
     pub(crate) queue_id: ::std::option::Option<::std::string::String>,

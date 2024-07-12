@@ -33,8 +33,8 @@ impl UpdateTestConfigurationOutput {
 }
 
 /// A builder for [`UpdateTestConfigurationOutput`](crate::operation::update_test_configuration::UpdateTestConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateTestConfigurationOutputBuilder {
     pub(crate) test_configuration_id: ::std::option::Option<::std::string::String>,
     pub(crate) test_configuration_version: ::std::option::Option<i32>,

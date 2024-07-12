@@ -27,8 +27,8 @@ impl LandsatCloudCoverLandInput {
 }
 
 /// A builder for [`LandsatCloudCoverLandInput`](crate::types::LandsatCloudCoverLandInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LandsatCloudCoverLandInputBuilder {
     pub(crate) lower_bound: ::std::option::Option<f32>,
     pub(crate) upper_bound: ::std::option::Option<f32>,

@@ -49,8 +49,8 @@ impl FeatureMetadata {
 }
 
 /// A builder for [`FeatureMetadata`](crate::types::FeatureMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FeatureMetadataBuilder {
     pub(crate) status: ::std::option::Option<crate::types::FeatureStatus>,
 }

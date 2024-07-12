@@ -27,8 +27,8 @@ impl Ec2ReservedInstances {
 }
 
 /// A builder for [`Ec2ReservedInstances`](crate::types::Ec2ReservedInstances).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Ec2ReservedInstancesBuilder {
     pub(crate) configuration: ::std::option::Option<crate::types::Ec2ReservedInstancesConfiguration>,
     pub(crate) cost_calculation: ::std::option::Option<crate::types::ReservedInstancesCostCalculation>,

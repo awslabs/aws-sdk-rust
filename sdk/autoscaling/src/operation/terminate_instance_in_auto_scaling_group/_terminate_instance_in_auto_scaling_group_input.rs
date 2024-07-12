@@ -26,8 +26,8 @@ impl TerminateInstanceInAutoScalingGroupInput {
 }
 
 /// A builder for [`TerminateInstanceInAutoScalingGroupInput`](crate::operation::terminate_instance_in_auto_scaling_group::TerminateInstanceInAutoScalingGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TerminateInstanceInAutoScalingGroupInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) should_decrement_desired_capacity: ::std::option::Option<bool>,

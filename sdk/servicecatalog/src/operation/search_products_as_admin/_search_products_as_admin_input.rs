@@ -76,8 +76,8 @@ impl SearchProductsAsAdminInput {
 }
 
 /// A builder for [`SearchProductsAsAdminInput`](crate::operation::search_products_as_admin::SearchProductsAsAdminInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchProductsAsAdminInputBuilder {
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,
     pub(crate) portfolio_id: ::std::option::Option<::std::string::String>,

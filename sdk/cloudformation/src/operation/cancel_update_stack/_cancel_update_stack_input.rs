@@ -37,8 +37,8 @@ impl CancelUpdateStackInput {
 }
 
 /// A builder for [`CancelUpdateStackInput`](crate::operation::cancel_update_stack::CancelUpdateStackInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelUpdateStackInputBuilder {
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,

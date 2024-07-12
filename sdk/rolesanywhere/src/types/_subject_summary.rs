@@ -57,8 +57,8 @@ impl SubjectSummary {
 }
 
 /// A builder for [`SubjectSummary`](crate::types::SubjectSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SubjectSummaryBuilder {
     pub(crate) subject_arn: ::std::option::Option<::std::string::String>,
     pub(crate) subject_id: ::std::option::Option<::std::string::String>,

@@ -53,8 +53,8 @@ impl UserStackAssociation {
 }
 
 /// A builder for [`UserStackAssociation`](crate::types::UserStackAssociation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UserStackAssociationBuilder {
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
     pub(crate) user_name: ::std::option::Option<::std::string::String>,

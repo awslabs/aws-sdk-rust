@@ -51,8 +51,8 @@ impl CredentialSummary {
 }
 
 /// A builder for [`CredentialSummary`](crate::types::CredentialSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CredentialSummaryBuilder {
     pub(crate) seen_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) serial_number: ::std::option::Option<::std::string::String>,

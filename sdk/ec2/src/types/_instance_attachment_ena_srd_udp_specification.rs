@@ -21,8 +21,8 @@ impl InstanceAttachmentEnaSrdUdpSpecification {
 }
 
 /// A builder for [`InstanceAttachmentEnaSrdUdpSpecification`](crate::types::InstanceAttachmentEnaSrdUdpSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceAttachmentEnaSrdUdpSpecificationBuilder {
     pub(crate) ena_srd_udp_enabled: ::std::option::Option<bool>,
 }

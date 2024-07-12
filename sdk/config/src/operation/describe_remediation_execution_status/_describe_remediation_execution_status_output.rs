@@ -34,8 +34,8 @@ impl DescribeRemediationExecutionStatusOutput {
 }
 
 /// A builder for [`DescribeRemediationExecutionStatusOutput`](crate::operation::describe_remediation_execution_status::DescribeRemediationExecutionStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRemediationExecutionStatusOutputBuilder {
     pub(crate) remediation_execution_statuses: ::std::option::Option<::std::vec::Vec<crate::types::RemediationExecutionStatus>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

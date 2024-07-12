@@ -21,8 +21,8 @@ impl VectorConfig {
 }
 
 /// A builder for [`VectorConfig`](crate::types::VectorConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VectorConfigBuilder {
     pub(crate) dimension: ::std::option::Option<i32>,
 }

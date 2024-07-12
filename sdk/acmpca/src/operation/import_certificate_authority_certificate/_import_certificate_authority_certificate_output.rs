@@ -18,8 +18,8 @@ impl ImportCertificateAuthorityCertificateOutput {
 }
 
 /// A builder for [`ImportCertificateAuthorityCertificateOutput`](crate::operation::import_certificate_authority_certificate::ImportCertificateAuthorityCertificateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportCertificateAuthorityCertificateOutputBuilder {
     _request_id: Option<String>,
 }

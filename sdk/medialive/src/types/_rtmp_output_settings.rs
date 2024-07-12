@@ -39,8 +39,8 @@ impl RtmpOutputSettings {
 }
 
 /// A builder for [`RtmpOutputSettings`](crate::types::RtmpOutputSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RtmpOutputSettingsBuilder {
     pub(crate) certificate_mode: ::std::option::Option<crate::types::RtmpOutputCertificateMode>,
     pub(crate) connection_retry_interval: ::std::option::Option<i32>,

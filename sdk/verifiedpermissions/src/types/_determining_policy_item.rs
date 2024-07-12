@@ -26,8 +26,8 @@ impl DeterminingPolicyItem {
 }
 
 /// A builder for [`DeterminingPolicyItem`](crate::types::DeterminingPolicyItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeterminingPolicyItemBuilder {
     pub(crate) policy_id: ::std::option::Option<::std::string::String>,
 }

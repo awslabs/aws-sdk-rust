@@ -44,8 +44,8 @@ impl GetMobileDeviceAccessEffectInput {
 }
 
 /// A builder for [`GetMobileDeviceAccessEffectInput`](crate::operation::get_mobile_device_access_effect::GetMobileDeviceAccessEffectInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMobileDeviceAccessEffectInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) device_type: ::std::option::Option<::std::string::String>,

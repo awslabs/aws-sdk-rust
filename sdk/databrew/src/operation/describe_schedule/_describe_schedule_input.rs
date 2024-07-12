@@ -20,8 +20,8 @@ impl DescribeScheduleInput {
 }
 
 /// A builder for [`DescribeScheduleInput`](crate::operation::describe_schedule::DescribeScheduleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeScheduleInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

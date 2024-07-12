@@ -33,8 +33,8 @@ impl QueryResultsS3AccessGrantsConfiguration {
 }
 
 /// A builder for [`QueryResultsS3AccessGrantsConfiguration`](crate::types::QueryResultsS3AccessGrantsConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct QueryResultsS3AccessGrantsConfigurationBuilder {
     pub(crate) enable_s3_access_grants: ::std::option::Option<bool>,
     pub(crate) create_user_level_prefix: ::std::option::Option<bool>,

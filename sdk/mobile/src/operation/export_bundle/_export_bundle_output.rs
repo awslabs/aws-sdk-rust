@@ -27,8 +27,8 @@ impl ExportBundleOutput {
 }
 
 /// A builder for [`ExportBundleOutput`](crate::operation::export_bundle::ExportBundleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExportBundleOutputBuilder {
     pub(crate) download_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

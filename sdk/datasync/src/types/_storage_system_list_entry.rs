@@ -27,8 +27,8 @@ impl StorageSystemListEntry {
 }
 
 /// A builder for [`StorageSystemListEntry`](crate::types::StorageSystemListEntry).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StorageSystemListEntryBuilder {
     pub(crate) storage_system_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

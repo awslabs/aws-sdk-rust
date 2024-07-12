@@ -29,8 +29,8 @@ impl BatchDisassociateScramSecretInput {
 }
 
 /// A builder for [`BatchDisassociateScramSecretInput`](crate::operation::batch_disassociate_scram_secret::BatchDisassociateScramSecretInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDisassociateScramSecretInputBuilder {
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) secret_arn_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

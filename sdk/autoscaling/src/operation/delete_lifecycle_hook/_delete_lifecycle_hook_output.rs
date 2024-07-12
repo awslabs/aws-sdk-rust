@@ -18,8 +18,8 @@ impl DeleteLifecycleHookOutput {
 }
 
 /// A builder for [`DeleteLifecycleHookOutput`](crate::operation::delete_lifecycle_hook::DeleteLifecycleHookOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteLifecycleHookOutputBuilder {
     _request_id: Option<String>,
 }

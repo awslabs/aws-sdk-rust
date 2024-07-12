@@ -78,8 +78,8 @@ impl MountTargetDescription {
 }
 
 /// A builder for [`MountTargetDescription`](crate::types::MountTargetDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MountTargetDescriptionBuilder {
     pub(crate) owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) mount_target_id: ::std::option::Option<::std::string::String>,

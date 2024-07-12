@@ -27,8 +27,8 @@ impl CreateModelCustomizationJobOutput {
 }
 
 /// A builder for [`CreateModelCustomizationJobOutput`](crate::operation::create_model_customization_job::CreateModelCustomizationJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateModelCustomizationJobOutputBuilder {
     pub(crate) job_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

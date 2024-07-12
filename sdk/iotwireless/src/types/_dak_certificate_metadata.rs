@@ -46,8 +46,8 @@ impl DakCertificateMetadata {
 }
 
 /// A builder for [`DakCertificateMetadata`](crate::types::DakCertificateMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DakCertificateMetadataBuilder {
     pub(crate) certificate_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_allowed_signature: ::std::option::Option<i32>,

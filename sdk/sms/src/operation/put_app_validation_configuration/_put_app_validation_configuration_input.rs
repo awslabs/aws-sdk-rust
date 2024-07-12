@@ -36,8 +36,8 @@ impl PutAppValidationConfigurationInput {
 }
 
 /// A builder for [`PutAppValidationConfigurationInput`](crate::operation::put_app_validation_configuration::PutAppValidationConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutAppValidationConfigurationInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) app_validation_configurations: ::std::option::Option<::std::vec::Vec<crate::types::AppValidationConfiguration>>,

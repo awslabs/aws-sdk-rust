@@ -167,8 +167,8 @@ impl StartStreamTranscriptionOutput {
 }
 
 /// A builder for [`StartStreamTranscriptionOutput`](crate::operation::start_stream_transcription::StartStreamTranscriptionOutput).
-#[non_exhaustive]
 #[derive(::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartStreamTranscriptionOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) language_code: ::std::option::Option<crate::types::LanguageCode>,

@@ -137,8 +137,8 @@ impl LustreFileSystemConfiguration {
 }
 
 /// A builder for [`LustreFileSystemConfiguration`](crate::types::LustreFileSystemConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LustreFileSystemConfigurationBuilder {
     pub(crate) weekly_maintenance_start_time: ::std::option::Option<::std::string::String>,
     pub(crate) data_repository_configuration: ::std::option::Option<crate::types::DataRepositoryConfiguration>,

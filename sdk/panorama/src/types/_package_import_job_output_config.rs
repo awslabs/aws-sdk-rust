@@ -21,8 +21,8 @@ impl PackageImportJobOutputConfig {
 }
 
 /// A builder for [`PackageImportJobOutputConfig`](crate::types::PackageImportJobOutputConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PackageImportJobOutputConfigBuilder {
     pub(crate) package_version_output_config: ::std::option::Option<crate::types::PackageVersionOutputConfig>,
 }

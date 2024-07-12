@@ -34,8 +34,8 @@ impl GetAwsNetworkPerformanceDataOutput {
 }
 
 /// A builder for [`GetAwsNetworkPerformanceDataOutput`](crate::operation::get_aws_network_performance_data::GetAwsNetworkPerformanceDataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAwsNetworkPerformanceDataOutputBuilder {
     pub(crate) data_responses: ::std::option::Option<::std::vec::Vec<crate::types::DataResponse>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

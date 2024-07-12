@@ -38,8 +38,8 @@ impl ListEntitledApplicationsInput {
 }
 
 /// A builder for [`ListEntitledApplicationsInput`](crate::operation::list_entitled_applications::ListEntitledApplicationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEntitledApplicationsInputBuilder {
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
     pub(crate) entitlement_name: ::std::option::Option<::std::string::String>,

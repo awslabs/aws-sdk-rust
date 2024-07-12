@@ -43,8 +43,8 @@ impl TerminateTargetInstancesInput {
 }
 
 /// A builder for [`TerminateTargetInstancesInput`](crate::operation::terminate_target_instances::TerminateTargetInstancesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct TerminateTargetInstancesInputBuilder {
     pub(crate) source_server_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

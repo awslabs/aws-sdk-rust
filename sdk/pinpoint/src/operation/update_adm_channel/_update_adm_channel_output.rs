@@ -26,8 +26,8 @@ impl UpdateAdmChannelOutput {
 }
 
 /// A builder for [`UpdateAdmChannelOutput`](crate::operation::update_adm_channel::UpdateAdmChannelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAdmChannelOutputBuilder {
     pub(crate) adm_channel_response: ::std::option::Option<crate::types::AdmChannelResponse>,
     _request_id: Option<String>,

@@ -33,8 +33,8 @@ impl DestinationOptionsRequest {
 }
 
 /// A builder for [`DestinationOptionsRequest`](crate::types::DestinationOptionsRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DestinationOptionsRequestBuilder {
     pub(crate) file_format: ::std::option::Option<crate::types::DestinationFileFormat>,
     pub(crate) hive_compatible_partitions: ::std::option::Option<bool>,

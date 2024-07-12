@@ -35,8 +35,8 @@ impl DescribeNetworkInterfacePermissionsOutput {
 }
 
 /// A builder for [`DescribeNetworkInterfacePermissionsOutput`](crate::operation::describe_network_interface_permissions::DescribeNetworkInterfacePermissionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeNetworkInterfacePermissionsOutputBuilder {
     pub(crate) network_interface_permissions: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterfacePermission>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

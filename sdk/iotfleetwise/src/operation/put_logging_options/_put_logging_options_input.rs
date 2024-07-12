@@ -20,8 +20,8 @@ impl PutLoggingOptionsInput {
 }
 
 /// A builder for [`PutLoggingOptionsInput`](crate::operation::put_logging_options::PutLoggingOptionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutLoggingOptionsInputBuilder {
     pub(crate) cloud_watch_log_delivery: ::std::option::Option<crate::types::CloudWatchLogDeliveryOptions>,
 }

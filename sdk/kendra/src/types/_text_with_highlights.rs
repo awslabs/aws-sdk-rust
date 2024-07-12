@@ -29,8 +29,8 @@ impl TextWithHighlights {
 }
 
 /// A builder for [`TextWithHighlights`](crate::types::TextWithHighlights).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TextWithHighlightsBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
     pub(crate) highlights: ::std::option::Option<::std::vec::Vec<crate::types::Highlight>>,

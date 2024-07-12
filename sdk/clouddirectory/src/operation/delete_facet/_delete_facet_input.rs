@@ -26,8 +26,8 @@ impl DeleteFacetInput {
 }
 
 /// A builder for [`DeleteFacetInput`](crate::operation::delete_facet::DeleteFacetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFacetInputBuilder {
     pub(crate) schema_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

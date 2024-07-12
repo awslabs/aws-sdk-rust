@@ -21,8 +21,8 @@ impl TlsConfigInput {
 }
 
 /// A builder for [`TlsConfigInput`](crate::types::TlsConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TlsConfigInputBuilder {
     pub(crate) server_name_to_verify: ::std::option::Option<::std::string::String>,
 }

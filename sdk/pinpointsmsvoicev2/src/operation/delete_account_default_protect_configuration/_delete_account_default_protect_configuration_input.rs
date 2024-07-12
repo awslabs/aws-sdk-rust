@@ -12,8 +12,8 @@ impl DeleteAccountDefaultProtectConfigurationInput {
 }
 
 /// A builder for [`DeleteAccountDefaultProtectConfigurationInput`](crate::operation::delete_account_default_protect_configuration::DeleteAccountDefaultProtectConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAccountDefaultProtectConfigurationInputBuilder {}
 impl DeleteAccountDefaultProtectConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAccountDefaultProtectConfigurationInput`](crate::operation::delete_account_default_protect_configuration::DeleteAccountDefaultProtectConfigurationInput).

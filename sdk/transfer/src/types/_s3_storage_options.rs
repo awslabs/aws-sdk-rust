@@ -23,8 +23,8 @@ impl S3StorageOptions {
 }
 
 /// A builder for [`S3StorageOptions`](crate::types::S3StorageOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3StorageOptionsBuilder {
     pub(crate) directory_listing_optimization: ::std::option::Option<crate::types::DirectoryListingOptimization>,
 }

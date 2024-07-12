@@ -32,8 +32,8 @@ impl UpdateNetworkResourceMetadataInput {
 }
 
 /// A builder for [`UpdateNetworkResourceMetadataInput`](crate::operation::update_network_resource_metadata::UpdateNetworkResourceMetadataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateNetworkResourceMetadataInputBuilder {
     pub(crate) global_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,

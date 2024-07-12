@@ -34,8 +34,8 @@ impl ListGroupVersionsOutput {
 }
 
 /// A builder for [`ListGroupVersionsOutput`](crate::operation::list_group_versions::ListGroupVersionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListGroupVersionsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) versions: ::std::option::Option<::std::vec::Vec<crate::types::VersionInformation>>,

@@ -26,8 +26,8 @@ impl GetParametersForExportInput {
 }
 
 /// A builder for [`GetParametersForExportInput`](crate::operation::get_parameters_for_export::GetParametersForExportInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetParametersForExportInputBuilder {
     pub(crate) key_material_type: ::std::option::Option<crate::types::KeyMaterialType>,
     pub(crate) signing_key_algorithm: ::std::option::Option<crate::types::KeyAlgorithm>,

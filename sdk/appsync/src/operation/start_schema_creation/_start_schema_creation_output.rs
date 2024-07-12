@@ -26,8 +26,8 @@ impl StartSchemaCreationOutput {
 }
 
 /// A builder for [`StartSchemaCreationOutput`](crate::operation::start_schema_creation::StartSchemaCreationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartSchemaCreationOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::SchemaStatus>,
     _request_id: Option<String>,

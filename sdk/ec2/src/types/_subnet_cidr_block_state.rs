@@ -27,8 +27,8 @@ impl SubnetCidrBlockState {
 }
 
 /// A builder for [`SubnetCidrBlockState`](crate::types::SubnetCidrBlockState).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SubnetCidrBlockStateBuilder {
     pub(crate) state: ::std::option::Option<crate::types::SubnetCidrBlockStateCode>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,

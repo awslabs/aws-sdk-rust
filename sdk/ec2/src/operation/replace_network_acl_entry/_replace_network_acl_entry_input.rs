@@ -76,8 +76,8 @@ impl ReplaceNetworkAclEntryInput {
 }
 
 /// A builder for [`ReplaceNetworkAclEntryInput`](crate::operation::replace_network_acl_entry::ReplaceNetworkAclEntryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReplaceNetworkAclEntryInputBuilder {
     pub(crate) cidr_block: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,

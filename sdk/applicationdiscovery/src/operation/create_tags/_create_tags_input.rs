@@ -32,8 +32,8 @@ impl CreateTagsInput {
 }
 
 /// A builder for [`CreateTagsInput`](crate::operation::create_tags::CreateTagsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateTagsInputBuilder {
     pub(crate) configuration_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,

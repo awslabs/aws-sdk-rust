@@ -21,8 +21,8 @@ impl AwsDmsReplicationInstanceReplicationSubnetGroupDetails {
 }
 
 /// A builder for [`AwsDmsReplicationInstanceReplicationSubnetGroupDetails`](crate::types::AwsDmsReplicationInstanceReplicationSubnetGroupDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsDmsReplicationInstanceReplicationSubnetGroupDetailsBuilder {
     pub(crate) replication_subnet_group_identifier: ::std::option::Option<::std::string::String>,
 }

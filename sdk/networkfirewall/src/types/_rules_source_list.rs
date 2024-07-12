@@ -49,8 +49,8 @@ impl RulesSourceList {
 }
 
 /// A builder for [`RulesSourceList`](crate::types::RulesSourceList).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RulesSourceListBuilder {
     pub(crate) targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) target_types: ::std::option::Option<::std::vec::Vec<crate::types::TargetType>>,

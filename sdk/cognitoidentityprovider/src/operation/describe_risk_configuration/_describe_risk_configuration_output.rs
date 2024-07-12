@@ -26,8 +26,8 @@ impl DescribeRiskConfigurationOutput {
 }
 
 /// A builder for [`DescribeRiskConfigurationOutput`](crate::operation::describe_risk_configuration::DescribeRiskConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRiskConfigurationOutputBuilder {
     pub(crate) risk_configuration: ::std::option::Option<crate::types::RiskConfigurationType>,
     _request_id: Option<String>,

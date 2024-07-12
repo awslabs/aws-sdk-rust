@@ -11,8 +11,8 @@ impl DescribeTerminationPolicyTypesInput {
 }
 
 /// A builder for [`DescribeTerminationPolicyTypesInput`](crate::operation::describe_termination_policy_types::DescribeTerminationPolicyTypesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTerminationPolicyTypesInputBuilder {}
 impl DescribeTerminationPolicyTypesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTerminationPolicyTypesInput`](crate::operation::describe_termination_policy_types::DescribeTerminationPolicyTypesInput).

@@ -36,8 +36,8 @@ impl AssociateEntityToThingInput {
 }
 
 /// A builder for [`AssociateEntityToThingInput`](crate::operation::associate_entity_to_thing::AssociateEntityToThingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateEntityToThingInputBuilder {
     pub(crate) thing_name: ::std::option::Option<::std::string::String>,
     pub(crate) entity_id: ::std::option::Option<::std::string::String>,

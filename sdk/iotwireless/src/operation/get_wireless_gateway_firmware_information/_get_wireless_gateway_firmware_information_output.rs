@@ -26,8 +26,8 @@ impl GetWirelessGatewayFirmwareInformationOutput {
 }
 
 /// A builder for [`GetWirelessGatewayFirmwareInformationOutput`](crate::operation::get_wireless_gateway_firmware_information::GetWirelessGatewayFirmwareInformationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetWirelessGatewayFirmwareInformationOutputBuilder {
     pub(crate) lo_ra_wan: ::std::option::Option<crate::types::LoRaWanGatewayCurrentVersion>,
     _request_id: Option<String>,

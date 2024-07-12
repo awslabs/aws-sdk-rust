@@ -27,8 +27,8 @@ impl SourceDescription {
 }
 
 /// A builder for [`SourceDescription`](crate::types::SourceDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SourceDescriptionBuilder {
     pub(crate) kinesis_stream_source_description: ::std::option::Option<crate::types::KinesisStreamSourceDescription>,
     pub(crate) msk_source_description: ::std::option::Option<crate::types::MskSourceDescription>,

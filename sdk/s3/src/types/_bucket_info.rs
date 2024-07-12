@@ -29,8 +29,8 @@ impl BucketInfo {
 }
 
 /// A builder for [`BucketInfo`](crate::types::BucketInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BucketInfoBuilder {
     pub(crate) data_redundancy: ::std::option::Option<crate::types::DataRedundancy>,
     pub(crate) r#type: ::std::option::Option<crate::types::BucketType>,

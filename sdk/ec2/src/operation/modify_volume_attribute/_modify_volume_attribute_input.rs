@@ -32,8 +32,8 @@ impl ModifyVolumeAttributeInput {
 }
 
 /// A builder for [`ModifyVolumeAttributeInput`](crate::operation::modify_volume_attribute::ModifyVolumeAttributeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyVolumeAttributeInputBuilder {
     pub(crate) auto_enable_io: ::std::option::Option<crate::types::AttributeBooleanValue>,
     pub(crate) volume_id: ::std::option::Option<::std::string::String>,

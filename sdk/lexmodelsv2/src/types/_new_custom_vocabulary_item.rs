@@ -34,8 +34,8 @@ impl NewCustomVocabularyItem {
 }
 
 /// A builder for [`NewCustomVocabularyItem`](crate::types::NewCustomVocabularyItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NewCustomVocabularyItemBuilder {
     pub(crate) phrase: ::std::option::Option<::std::string::String>,
     pub(crate) weight: ::std::option::Option<i32>,

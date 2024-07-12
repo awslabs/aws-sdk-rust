@@ -21,8 +21,8 @@ impl AwsEc2ClientVpnEndpointAuthenticationOptionsActiveDirectoryDetails {
 }
 
 /// A builder for [`AwsEc2ClientVpnEndpointAuthenticationOptionsActiveDirectoryDetails`](crate::types::AwsEc2ClientVpnEndpointAuthenticationOptionsActiveDirectoryDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEc2ClientVpnEndpointAuthenticationOptionsActiveDirectoryDetailsBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
 }

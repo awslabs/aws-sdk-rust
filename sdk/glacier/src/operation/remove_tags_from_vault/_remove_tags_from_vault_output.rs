@@ -18,8 +18,8 @@ impl RemoveTagsFromVaultOutput {
 }
 
 /// A builder for [`RemoveTagsFromVaultOutput`](crate::operation::remove_tags_from_vault::RemoveTagsFromVaultOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoveTagsFromVaultOutputBuilder {
     _request_id: Option<String>,
 }

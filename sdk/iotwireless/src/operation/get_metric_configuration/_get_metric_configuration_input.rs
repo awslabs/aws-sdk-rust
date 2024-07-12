@@ -11,8 +11,8 @@ impl GetMetricConfigurationInput {
 }
 
 /// A builder for [`GetMetricConfigurationInput`](crate::operation::get_metric_configuration::GetMetricConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMetricConfigurationInputBuilder {}
 impl GetMetricConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`GetMetricConfigurationInput`](crate::operation::get_metric_configuration::GetMetricConfigurationInput).

@@ -27,8 +27,8 @@ impl GetAnalyzerOutput {
 }
 
 /// A builder for [`GetAnalyzerOutput`](crate::operation::get_analyzer::GetAnalyzerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAnalyzerOutputBuilder {
     pub(crate) analyzer: ::std::option::Option<crate::types::AnalyzerSummary>,
     _request_id: Option<String>,

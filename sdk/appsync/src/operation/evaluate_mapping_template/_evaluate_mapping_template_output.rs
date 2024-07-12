@@ -40,8 +40,8 @@ impl EvaluateMappingTemplateOutput {
 }
 
 /// A builder for [`EvaluateMappingTemplateOutput`](crate::operation::evaluate_mapping_template::EvaluateMappingTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EvaluateMappingTemplateOutputBuilder {
     pub(crate) evaluation_result: ::std::option::Option<::std::string::String>,
     pub(crate) error: ::std::option::Option<crate::types::ErrorDetail>,

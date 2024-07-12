@@ -111,8 +111,8 @@ impl GetEmailIdentityOutput {
 }
 
 /// A builder for [`GetEmailIdentityOutput`](crate::operation::get_email_identity::GetEmailIdentityOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEmailIdentityOutputBuilder {
     pub(crate) identity_type: ::std::option::Option<crate::types::IdentityType>,
     pub(crate) feedback_forwarding_status: ::std::option::Option<bool>,

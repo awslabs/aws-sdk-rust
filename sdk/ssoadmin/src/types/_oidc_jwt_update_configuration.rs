@@ -33,8 +33,8 @@ impl OidcJwtUpdateConfiguration {
 }
 
 /// A builder for [`OidcJwtUpdateConfiguration`](crate::types::OidcJwtUpdateConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OidcJwtUpdateConfigurationBuilder {
     pub(crate) claim_attribute_path: ::std::option::Option<::std::string::String>,
     pub(crate) identity_store_attribute_path: ::std::option::Option<::std::string::String>,

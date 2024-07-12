@@ -40,8 +40,8 @@ impl StartAssessmentInput {
 }
 
 /// A builder for [`StartAssessmentInput`](crate::operation::start_assessment::StartAssessmentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartAssessmentInputBuilder {
     pub(crate) s3bucket_for_analysis_data: ::std::option::Option<::std::string::String>,
     pub(crate) s3bucket_for_report_data: ::std::option::Option<::std::string::String>,

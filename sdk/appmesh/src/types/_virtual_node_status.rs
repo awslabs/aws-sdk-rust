@@ -21,8 +21,8 @@ impl VirtualNodeStatus {
 }
 
 /// A builder for [`VirtualNodeStatus`](crate::types::VirtualNodeStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VirtualNodeStatusBuilder {
     pub(crate) status: ::std::option::Option<crate::types::VirtualNodeStatusCode>,
 }

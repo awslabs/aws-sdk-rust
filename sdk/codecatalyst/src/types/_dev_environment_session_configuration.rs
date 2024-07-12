@@ -27,8 +27,8 @@ impl DevEnvironmentSessionConfiguration {
 }
 
 /// A builder for [`DevEnvironmentSessionConfiguration`](crate::types::DevEnvironmentSessionConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DevEnvironmentSessionConfigurationBuilder {
     pub(crate) session_type: ::std::option::Option<crate::types::DevEnvironmentSessionType>,
     pub(crate) execute_command_session_configuration: ::std::option::Option<crate::types::ExecuteCommandSessionConfiguration>,

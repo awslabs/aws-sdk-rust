@@ -35,8 +35,8 @@ impl ScheduleConfiguration {
 }
 
 /// A builder for [`ScheduleConfiguration`](crate::types::ScheduleConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ScheduleConfigurationBuilder {
     pub(crate) timezone: ::std::option::Option<crate::types::Timezone>,
     pub(crate) schedule: ::std::option::Option<::std::string::String>,

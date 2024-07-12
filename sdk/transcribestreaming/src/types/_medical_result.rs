@@ -56,8 +56,8 @@ impl MedicalResult {
 }
 
 /// A builder for [`MedicalResult`](crate::types::MedicalResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MedicalResultBuilder {
     pub(crate) result_id: ::std::option::Option<::std::string::String>,
     pub(crate) start_time: ::std::option::Option<f64>,

@@ -32,8 +32,8 @@ impl UpdateProtectedQueryInput {
 }
 
 /// A builder for [`UpdateProtectedQueryInput`](crate::operation::update_protected_query::UpdateProtectedQueryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateProtectedQueryInputBuilder {
     pub(crate) membership_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) protected_query_identifier: ::std::option::Option<::std::string::String>,

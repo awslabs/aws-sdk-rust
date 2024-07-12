@@ -18,8 +18,8 @@ impl UpdateFacetOutput {
 }
 
 /// A builder for [`UpdateFacetOutput`](crate::operation::update_facet::UpdateFacetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateFacetOutputBuilder {
     _request_id: Option<String>,
 }

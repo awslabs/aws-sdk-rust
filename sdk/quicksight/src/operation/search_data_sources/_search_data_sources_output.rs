@@ -46,8 +46,8 @@ impl SearchDataSourcesOutput {
 }
 
 /// A builder for [`SearchDataSourcesOutput`](crate::operation::search_data_sources::SearchDataSourcesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchDataSourcesOutputBuilder {
     pub(crate) data_source_summaries: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl ListReviewTemplatesInput {
 }
 
 /// A builder for [`ListReviewTemplatesInput`](crate::operation::list_review_templates::ListReviewTemplatesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListReviewTemplatesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

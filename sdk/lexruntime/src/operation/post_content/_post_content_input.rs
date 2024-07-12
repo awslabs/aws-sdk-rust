@@ -214,8 +214,8 @@ impl PostContentInput {
 }
 
 /// A builder for [`PostContentInput`](crate::operation::post_content::PostContentInput).
-#[non_exhaustive]
 #[derive(::std::default::Default)]
+#[non_exhaustive]
 pub struct PostContentInputBuilder {
     pub(crate) bot_name: ::std::option::Option<::std::string::String>,
     pub(crate) bot_alias: ::std::option::Option<::std::string::String>,

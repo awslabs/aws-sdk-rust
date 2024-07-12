@@ -26,8 +26,8 @@ impl CreateSiteToSiteVpnAttachmentOutput {
 }
 
 /// A builder for [`CreateSiteToSiteVpnAttachmentOutput`](crate::operation::create_site_to_site_vpn_attachment::CreateSiteToSiteVpnAttachmentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSiteToSiteVpnAttachmentOutputBuilder {
     pub(crate) site_to_site_vpn_attachment: ::std::option::Option<crate::types::SiteToSiteVpnAttachment>,
     _request_id: Option<String>,

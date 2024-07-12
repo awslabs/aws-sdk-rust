@@ -26,8 +26,8 @@ impl PutAttributeMappingOutput {
 }
 
 /// A builder for [`PutAttributeMappingOutput`](crate::operation::put_attribute_mapping::PutAttributeMappingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutAttributeMappingOutputBuilder {
     pub(crate) profile: ::std::option::Option<crate::types::ProfileDetail>,
     _request_id: Option<String>,

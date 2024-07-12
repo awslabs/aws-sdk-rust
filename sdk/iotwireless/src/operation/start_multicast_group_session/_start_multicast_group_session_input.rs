@@ -26,8 +26,8 @@ impl StartMulticastGroupSessionInput {
 }
 
 /// A builder for [`StartMulticastGroupSessionInput`](crate::operation::start_multicast_group_session::StartMulticastGroupSessionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartMulticastGroupSessionInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) lo_ra_wan: ::std::option::Option<crate::types::LoRaWanMulticastSession>,

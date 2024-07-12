@@ -19,8 +19,8 @@ impl AddApplicationInputProcessingConfigurationOutput {
 }
 
 /// A builder for [`AddApplicationInputProcessingConfigurationOutput`](crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddApplicationInputProcessingConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

@@ -27,8 +27,8 @@ impl DynamicPartitioningConfiguration {
 }
 
 /// A builder for [`DynamicPartitioningConfiguration`](crate::types::DynamicPartitioningConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DynamicPartitioningConfigurationBuilder {
     pub(crate) retry_options: ::std::option::Option<crate::types::RetryOptions>,
     pub(crate) enabled: ::std::option::Option<bool>,

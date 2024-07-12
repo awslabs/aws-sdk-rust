@@ -90,8 +90,8 @@ impl FirewallPolicyResponse {
 }
 
 /// A builder for [`FirewallPolicyResponse`](crate::types::FirewallPolicyResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FirewallPolicyResponseBuilder {
     pub(crate) firewall_policy_name: ::std::option::Option<::std::string::String>,
     pub(crate) firewall_policy_arn: ::std::option::Option<::std::string::String>,

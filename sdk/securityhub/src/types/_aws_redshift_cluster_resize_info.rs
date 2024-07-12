@@ -29,8 +29,8 @@ impl AwsRedshiftClusterResizeInfo {
 }
 
 /// A builder for [`AwsRedshiftClusterResizeInfo`](crate::types::AwsRedshiftClusterResizeInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsRedshiftClusterResizeInfoBuilder {
     pub(crate) allow_cancel_resize: ::std::option::Option<bool>,
     pub(crate) resize_type: ::std::option::Option<::std::string::String>,

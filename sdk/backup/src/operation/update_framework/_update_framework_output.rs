@@ -38,8 +38,8 @@ impl UpdateFrameworkOutput {
 }
 
 /// A builder for [`UpdateFrameworkOutput`](crate::operation::update_framework::UpdateFrameworkOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateFrameworkOutputBuilder {
     pub(crate) framework_name: ::std::option::Option<::std::string::String>,
     pub(crate) framework_arn: ::std::option::Option<::std::string::String>,

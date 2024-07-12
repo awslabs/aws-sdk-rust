@@ -35,8 +35,8 @@ impl DescribeFileSystemAliasesOutput {
 }
 
 /// A builder for [`DescribeFileSystemAliasesOutput`](crate::operation::describe_file_system_aliases::DescribeFileSystemAliasesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFileSystemAliasesOutputBuilder {
     pub(crate) aliases: ::std::option::Option<::std::vec::Vec<crate::types::Alias>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

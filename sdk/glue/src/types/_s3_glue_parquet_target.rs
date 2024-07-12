@@ -56,8 +56,8 @@ impl S3GlueParquetTarget {
 }
 
 /// A builder for [`S3GlueParquetTarget`](crate::types::S3GlueParquetTarget).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3GlueParquetTargetBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

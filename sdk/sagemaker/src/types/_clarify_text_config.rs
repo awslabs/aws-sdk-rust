@@ -31,8 +31,8 @@ impl ClarifyTextConfig {
 }
 
 /// A builder for [`ClarifyTextConfig`](crate::types::ClarifyTextConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ClarifyTextConfigBuilder {
     pub(crate) language: ::std::option::Option<crate::types::ClarifyTextLanguage>,
     pub(crate) granularity: ::std::option::Option<crate::types::ClarifyTextGranularity>,

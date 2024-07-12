@@ -26,8 +26,8 @@ impl CreateAssessmentTargetInput {
 }
 
 /// A builder for [`CreateAssessmentTargetInput`](crate::operation::create_assessment_target::CreateAssessmentTargetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAssessmentTargetInputBuilder {
     pub(crate) assessment_target_name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_group_arn: ::std::option::Option<::std::string::String>,

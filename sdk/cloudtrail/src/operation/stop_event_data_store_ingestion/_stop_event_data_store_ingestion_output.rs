@@ -18,8 +18,8 @@ impl StopEventDataStoreIngestionOutput {
 }
 
 /// A builder for [`StopEventDataStoreIngestionOutput`](crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopEventDataStoreIngestionOutputBuilder {
     _request_id: Option<String>,
 }

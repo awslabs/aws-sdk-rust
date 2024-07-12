@@ -26,8 +26,8 @@ impl CreateLaunchProfileOutput {
 }
 
 /// A builder for [`CreateLaunchProfileOutput`](crate::operation::create_launch_profile::CreateLaunchProfileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLaunchProfileOutputBuilder {
     pub(crate) launch_profile: ::std::option::Option<crate::types::LaunchProfile>,
     _request_id: Option<String>,

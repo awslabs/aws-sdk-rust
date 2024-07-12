@@ -26,8 +26,8 @@ impl DeleteWaveInput {
 }
 
 /// A builder for [`DeleteWaveInput`](crate::operation::delete_wave::DeleteWaveInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteWaveInputBuilder {
     pub(crate) wave_id: ::std::option::Option<::std::string::String>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,

@@ -47,8 +47,8 @@ impl CarrierGateway {
 }
 
 /// A builder for [`CarrierGateway`](crate::types::CarrierGateway).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CarrierGatewayBuilder {
     pub(crate) carrier_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,

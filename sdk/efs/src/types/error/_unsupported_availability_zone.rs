@@ -54,8 +54,8 @@ impl UnsupportedAvailabilityZone {
 }
 
 /// A builder for [`UnsupportedAvailabilityZone`](crate::types::error::UnsupportedAvailabilityZone).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UnsupportedAvailabilityZoneBuilder {
     pub(crate) error_code: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

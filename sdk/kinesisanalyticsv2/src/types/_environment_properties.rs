@@ -22,8 +22,8 @@ impl EnvironmentProperties {
 }
 
 /// A builder for [`EnvironmentProperties`](crate::types::EnvironmentProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnvironmentPropertiesBuilder {
     pub(crate) property_groups: ::std::option::Option<::std::vec::Vec<crate::types::PropertyGroup>>,
 }

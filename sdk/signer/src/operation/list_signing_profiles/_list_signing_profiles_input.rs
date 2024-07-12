@@ -46,8 +46,8 @@ impl ListSigningProfilesInput {
 }
 
 /// A builder for [`ListSigningProfilesInput`](crate::operation::list_signing_profiles::ListSigningProfilesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSigningProfilesInputBuilder {
     pub(crate) include_canceled: ::std::option::Option<bool>,
     pub(crate) max_results: ::std::option::Option<i32>,

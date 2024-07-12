@@ -35,8 +35,8 @@ impl AutoTuneOptionsInput {
 }
 
 /// A builder for [`AutoTuneOptionsInput`](crate::types::AutoTuneOptionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AutoTuneOptionsInputBuilder {
     pub(crate) desired_state: ::std::option::Option<crate::types::AutoTuneDesiredState>,
     pub(crate) maintenance_schedules: ::std::option::Option<::std::vec::Vec<crate::types::AutoTuneMaintenanceSchedule>>,

@@ -26,8 +26,8 @@ impl EnableSerialConsoleAccessOutput {
 }
 
 /// A builder for [`EnableSerialConsoleAccessOutput`](crate::operation::enable_serial_console_access::EnableSerialConsoleAccessOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnableSerialConsoleAccessOutputBuilder {
     pub(crate) serial_console_access_enabled: ::std::option::Option<bool>,
     _request_id: Option<String>,

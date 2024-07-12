@@ -145,8 +145,8 @@ impl DescribeDomainHealthOutput {
 }
 
 /// A builder for [`DescribeDomainHealthOutput`](crate::operation::describe_domain_health::DescribeDomainHealthOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDomainHealthOutputBuilder {
     pub(crate) domain_state: ::std::option::Option<crate::types::DomainState>,
     pub(crate) availability_zone_count: ::std::option::Option<::std::string::String>,

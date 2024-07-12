@@ -36,8 +36,8 @@ impl DescribeMetricCollectionTypesOutput {
 }
 
 /// A builder for [`DescribeMetricCollectionTypesOutput`](crate::operation::describe_metric_collection_types::DescribeMetricCollectionTypesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeMetricCollectionTypesOutputBuilder {
     pub(crate) metrics: ::std::option::Option<::std::vec::Vec<crate::types::MetricCollectionType>>,
     pub(crate) granularities: ::std::option::Option<::std::vec::Vec<crate::types::MetricGranularityType>>,

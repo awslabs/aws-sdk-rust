@@ -54,8 +54,8 @@ impl SearchJobsInput {
 }
 
 /// A builder for [`SearchJobsInput`](crate::operation::search_jobs::SearchJobsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchJobsInputBuilder {
     pub(crate) farm_id: ::std::option::Option<::std::string::String>,
     pub(crate) queue_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

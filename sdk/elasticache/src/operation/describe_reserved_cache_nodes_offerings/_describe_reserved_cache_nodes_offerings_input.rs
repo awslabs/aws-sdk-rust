@@ -181,8 +181,8 @@ impl DescribeReservedCacheNodesOfferingsInput {
 }
 
 /// A builder for [`DescribeReservedCacheNodesOfferingsInput`](crate::operation::describe_reserved_cache_nodes_offerings::DescribeReservedCacheNodesOfferingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeReservedCacheNodesOfferingsInputBuilder {
     pub(crate) reserved_cache_nodes_offering_id: ::std::option::Option<::std::string::String>,
     pub(crate) cache_node_type: ::std::option::Option<::std::string::String>,

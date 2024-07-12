@@ -18,8 +18,8 @@ impl AssociateQualificationWithWorkerOutput {
 }
 
 /// A builder for [`AssociateQualificationWithWorkerOutput`](crate::operation::associate_qualification_with_worker::AssociateQualificationWithWorkerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateQualificationWithWorkerOutputBuilder {
     _request_id: Option<String>,
 }

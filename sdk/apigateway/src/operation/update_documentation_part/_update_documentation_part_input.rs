@@ -35,8 +35,8 @@ impl UpdateDocumentationPartInput {
 }
 
 /// A builder for [`UpdateDocumentationPartInput`](crate::operation::update_documentation_part::UpdateDocumentationPartInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDocumentationPartInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
     pub(crate) documentation_part_id: ::std::option::Option<::std::string::String>,

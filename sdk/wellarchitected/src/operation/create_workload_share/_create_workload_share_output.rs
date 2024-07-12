@@ -33,8 +33,8 @@ impl CreateWorkloadShareOutput {
 }
 
 /// A builder for [`CreateWorkloadShareOutput`](crate::operation::create_workload_share::CreateWorkloadShareOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateWorkloadShareOutputBuilder {
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,
     pub(crate) share_id: ::std::option::Option<::std::string::String>,

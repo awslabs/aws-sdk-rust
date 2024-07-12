@@ -56,8 +56,8 @@ impl DescribeImageScanFindingsOutput {
 }
 
 /// A builder for [`DescribeImageScanFindingsOutput`](crate::operation::describe_image_scan_findings::DescribeImageScanFindingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeImageScanFindingsOutputBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,

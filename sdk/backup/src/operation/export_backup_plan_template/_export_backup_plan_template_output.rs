@@ -30,8 +30,8 @@ impl ExportBackupPlanTemplateOutput {
 }
 
 /// A builder for [`ExportBackupPlanTemplateOutput`](crate::operation::export_backup_plan_template::ExportBackupPlanTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExportBackupPlanTemplateOutputBuilder {
     pub(crate) backup_plan_template_json: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

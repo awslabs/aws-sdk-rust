@@ -18,8 +18,8 @@ impl DeleteContainerImageOutput {
 }
 
 /// A builder for [`DeleteContainerImageOutput`](crate::operation::delete_container_image::DeleteContainerImageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteContainerImageOutputBuilder {
     _request_id: Option<String>,
 }

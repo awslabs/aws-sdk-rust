@@ -32,8 +32,8 @@ impl CreateLaunchTemplateOutput {
 }
 
 /// A builder for [`CreateLaunchTemplateOutput`](crate::operation::create_launch_template::CreateLaunchTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLaunchTemplateOutputBuilder {
     pub(crate) launch_template: ::std::option::Option<crate::types::LaunchTemplate>,
     pub(crate) warning: ::std::option::Option<crate::types::ValidationWarning>,

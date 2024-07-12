@@ -21,8 +21,8 @@ impl VoiceSpoofingRisk {
 }
 
 /// A builder for [`VoiceSpoofingRisk`](crate::types::VoiceSpoofingRisk).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VoiceSpoofingRiskBuilder {
     pub(crate) risk_score: ::std::option::Option<i32>,
 }

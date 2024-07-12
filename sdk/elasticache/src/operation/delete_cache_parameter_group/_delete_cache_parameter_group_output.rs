@@ -18,8 +18,8 @@ impl DeleteCacheParameterGroupOutput {
 }
 
 /// A builder for [`DeleteCacheParameterGroupOutput`](crate::operation::delete_cache_parameter_group::DeleteCacheParameterGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCacheParameterGroupOutputBuilder {
     _request_id: Option<String>,
 }

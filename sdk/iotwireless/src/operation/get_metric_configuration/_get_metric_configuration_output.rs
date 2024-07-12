@@ -26,8 +26,8 @@ impl GetMetricConfigurationOutput {
 }
 
 /// A builder for [`GetMetricConfigurationOutput`](crate::operation::get_metric_configuration::GetMetricConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMetricConfigurationOutputBuilder {
     pub(crate) summary_metric: ::std::option::Option<crate::types::SummaryMetricConfiguration>,
     _request_id: Option<String>,

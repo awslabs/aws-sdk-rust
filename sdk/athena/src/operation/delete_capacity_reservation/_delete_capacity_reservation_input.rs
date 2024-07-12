@@ -20,8 +20,8 @@ impl DeleteCapacityReservationInput {
 }
 
 /// A builder for [`DeleteCapacityReservationInput`](crate::operation::delete_capacity_reservation::DeleteCapacityReservationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCapacityReservationInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

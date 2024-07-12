@@ -182,8 +182,8 @@ impl SpotFleetLaunchSpecification {
 }
 
 /// A builder for [`SpotFleetLaunchSpecification`](crate::types::SpotFleetLaunchSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SpotFleetLaunchSpecificationBuilder {
     pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>,
     pub(crate) addressing_type: ::std::option::Option<::std::string::String>,

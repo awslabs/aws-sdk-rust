@@ -146,8 +146,8 @@ impl PutSessionInput {
 }
 
 /// A builder for [`PutSessionInput`](crate::operation::put_session::PutSessionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PutSessionInputBuilder {
     pub(crate) bot_name: ::std::option::Option<::std::string::String>,
     pub(crate) bot_alias: ::std::option::Option<::std::string::String>,

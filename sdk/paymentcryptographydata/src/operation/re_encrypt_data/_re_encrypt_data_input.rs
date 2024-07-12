@@ -71,8 +71,8 @@ impl ReEncryptDataInput {
 }
 
 /// A builder for [`ReEncryptDataInput`](crate::operation::re_encrypt_data::ReEncryptDataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ReEncryptDataInputBuilder {
     pub(crate) incoming_key_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) outgoing_key_identifier: ::std::option::Option<::std::string::String>,

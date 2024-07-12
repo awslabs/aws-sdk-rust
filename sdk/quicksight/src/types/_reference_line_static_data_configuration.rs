@@ -28,8 +28,8 @@ impl ReferenceLineStaticDataConfiguration {
 }
 
 /// A builder for [`ReferenceLineStaticDataConfiguration`](crate::types::ReferenceLineStaticDataConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ReferenceLineStaticDataConfigurationBuilder {
     pub(crate) value: ::std::option::Option<f64>,
 }

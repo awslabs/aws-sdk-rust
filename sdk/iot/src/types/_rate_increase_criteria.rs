@@ -27,8 +27,8 @@ impl RateIncreaseCriteria {
 }
 
 /// A builder for [`RateIncreaseCriteria`](crate::types::RateIncreaseCriteria).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RateIncreaseCriteriaBuilder {
     pub(crate) number_of_notified_things: ::std::option::Option<i32>,
     pub(crate) number_of_succeeded_things: ::std::option::Option<i32>,

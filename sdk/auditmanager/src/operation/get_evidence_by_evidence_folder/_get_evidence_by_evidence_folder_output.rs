@@ -34,8 +34,8 @@ impl GetEvidenceByEvidenceFolderOutput {
 }
 
 /// A builder for [`GetEvidenceByEvidenceFolderOutput`](crate::operation::get_evidence_by_evidence_folder::GetEvidenceByEvidenceFolderOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEvidenceByEvidenceFolderOutputBuilder {
     pub(crate) evidence: ::std::option::Option<::std::vec::Vec<crate::types::Evidence>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

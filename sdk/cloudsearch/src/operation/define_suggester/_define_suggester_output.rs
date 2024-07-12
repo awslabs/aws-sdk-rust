@@ -27,8 +27,8 @@ impl DefineSuggesterOutput {
 }
 
 /// A builder for [`DefineSuggesterOutput`](crate::operation::define_suggester::DefineSuggesterOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DefineSuggesterOutputBuilder {
     pub(crate) suggester: ::std::option::Option<crate::types::SuggesterStatus>,
     _request_id: Option<String>,

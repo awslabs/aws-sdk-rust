@@ -20,8 +20,8 @@ impl DeleteAppMonitorInput {
 }
 
 /// A builder for [`DeleteAppMonitorInput`](crate::operation::delete_app_monitor::DeleteAppMonitorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAppMonitorInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

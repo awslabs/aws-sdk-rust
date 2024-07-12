@@ -42,8 +42,8 @@ impl CreateCustomEntityTypeInput {
 }
 
 /// A builder for [`CreateCustomEntityTypeInput`](crate::operation::create_custom_entity_type::CreateCustomEntityTypeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCustomEntityTypeInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) regex_string: ::std::option::Option<::std::string::String>,

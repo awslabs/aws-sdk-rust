@@ -34,8 +34,8 @@ impl DescribeSubnetsOutput {
 }
 
 /// A builder for [`DescribeSubnetsOutput`](crate::operation::describe_subnets::DescribeSubnetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSubnetsOutputBuilder {
     pub(crate) subnets: ::std::option::Option<::std::vec::Vec<crate::types::Subnet>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

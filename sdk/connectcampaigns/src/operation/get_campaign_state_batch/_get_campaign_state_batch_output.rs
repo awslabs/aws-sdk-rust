@@ -37,8 +37,8 @@ impl GetCampaignStateBatchOutput {
 }
 
 /// A builder for [`GetCampaignStateBatchOutput`](crate::operation::get_campaign_state_batch::GetCampaignStateBatchOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCampaignStateBatchOutputBuilder {
     pub(crate) successful_requests: ::std::option::Option<::std::vec::Vec<crate::types::SuccessfulCampaignStateResponse>>,
     pub(crate) failed_requests: ::std::option::Option<::std::vec::Vec<crate::types::FailedCampaignStateResponse>>,

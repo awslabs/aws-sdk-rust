@@ -21,8 +21,8 @@ impl DeleteScheduleInput {
 }
 
 /// A builder for [`DeleteScheduleInput`](crate::operation::delete_schedule::DeleteScheduleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteScheduleInputBuilder {
     pub(crate) channel_id: ::std::option::Option<::std::string::String>,
 }

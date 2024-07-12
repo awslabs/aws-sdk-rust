@@ -32,8 +32,8 @@ impl AssociateWebsiteCertificateAuthorityInput {
 }
 
 /// A builder for [`AssociateWebsiteCertificateAuthorityInput`](crate::operation::associate_website_certificate_authority::AssociateWebsiteCertificateAuthorityInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateWebsiteCertificateAuthorityInputBuilder {
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,
     pub(crate) certificate: ::std::option::Option<::std::string::String>,

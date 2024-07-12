@@ -26,8 +26,8 @@ impl CreateProfileOutput {
 }
 
 /// A builder for [`CreateProfileOutput`](crate::operation::create_profile::CreateProfileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateProfileOutputBuilder {
     pub(crate) profile: ::std::option::Option<crate::types::ProfileDetail>,
     _request_id: Option<String>,

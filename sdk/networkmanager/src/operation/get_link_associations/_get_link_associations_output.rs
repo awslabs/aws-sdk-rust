@@ -34,8 +34,8 @@ impl GetLinkAssociationsOutput {
 }
 
 /// A builder for [`GetLinkAssociationsOutput`](crate::operation::get_link_associations::GetLinkAssociationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLinkAssociationsOutputBuilder {
     pub(crate) link_associations: ::std::option::Option<::std::vec::Vec<crate::types::LinkAssociation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

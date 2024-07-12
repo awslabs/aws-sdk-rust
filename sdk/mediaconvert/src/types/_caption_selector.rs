@@ -33,8 +33,8 @@ impl CaptionSelector {
 }
 
 /// A builder for [`CaptionSelector`](crate::types::CaptionSelector).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CaptionSelectorBuilder {
     pub(crate) custom_language_code: ::std::option::Option<::std::string::String>,
     pub(crate) language_code: ::std::option::Option<crate::types::LanguageCode>,

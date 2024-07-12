@@ -20,8 +20,8 @@ impl DescribeResourceScanInput {
 }
 
 /// A builder for [`DescribeResourceScanInput`](crate::operation::describe_resource_scan::DescribeResourceScanInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeResourceScanInputBuilder {
     pub(crate) resource_scan_id: ::std::option::Option<::std::string::String>,
 }

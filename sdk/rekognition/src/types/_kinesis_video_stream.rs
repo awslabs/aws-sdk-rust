@@ -21,8 +21,8 @@ impl KinesisVideoStream {
 }
 
 /// A builder for [`KinesisVideoStream`](crate::types::KinesisVideoStream).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KinesisVideoStreamBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }

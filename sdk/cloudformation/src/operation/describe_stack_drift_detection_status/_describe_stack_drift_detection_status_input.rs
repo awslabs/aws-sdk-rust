@@ -22,8 +22,8 @@ impl DescribeStackDriftDetectionStatusInput {
 }
 
 /// A builder for [`DescribeStackDriftDetectionStatusInput`](crate::operation::describe_stack_drift_detection_status::DescribeStackDriftDetectionStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeStackDriftDetectionStatusInputBuilder {
     pub(crate) stack_drift_detection_id: ::std::option::Option<::std::string::String>,
 }

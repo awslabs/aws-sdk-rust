@@ -34,8 +34,8 @@ impl OriginShield {
 }
 
 /// A builder for [`OriginShield`](crate::types::OriginShield).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OriginShieldBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) origin_shield_region: ::std::option::Option<::std::string::String>,

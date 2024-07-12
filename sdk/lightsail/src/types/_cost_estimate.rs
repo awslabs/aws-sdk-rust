@@ -29,8 +29,8 @@ impl CostEstimate {
 }
 
 /// A builder for [`CostEstimate`](crate::types::CostEstimate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CostEstimateBuilder {
     pub(crate) usage_type: ::std::option::Option<::std::string::String>,
     pub(crate) results_by_time: ::std::option::Option<::std::vec::Vec<crate::types::EstimateByTime>>,

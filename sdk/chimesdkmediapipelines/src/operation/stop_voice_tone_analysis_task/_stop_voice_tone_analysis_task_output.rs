@@ -18,8 +18,8 @@ impl StopVoiceToneAnalysisTaskOutput {
 }
 
 /// A builder for [`StopVoiceToneAnalysisTaskOutput`](crate::operation::stop_voice_tone_analysis_task::StopVoiceToneAnalysisTaskOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopVoiceToneAnalysisTaskOutputBuilder {
     _request_id: Option<String>,
 }

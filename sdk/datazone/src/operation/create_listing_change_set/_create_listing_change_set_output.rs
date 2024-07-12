@@ -40,8 +40,8 @@ impl CreateListingChangeSetOutput {
 }
 
 /// A builder for [`CreateListingChangeSetOutput`](crate::operation::create_listing_change_set::CreateListingChangeSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateListingChangeSetOutputBuilder {
     pub(crate) listing_id: ::std::option::Option<::std::string::String>,
     pub(crate) listing_revision: ::std::option::Option<::std::string::String>,

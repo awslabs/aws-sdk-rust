@@ -27,8 +27,8 @@ impl StartReplicationOutput {
 }
 
 /// A builder for [`StartReplicationOutput`](crate::operation::start_replication::StartReplicationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartReplicationOutputBuilder {
     pub(crate) replication: ::std::option::Option<crate::types::Replication>,
     _request_id: Option<String>,

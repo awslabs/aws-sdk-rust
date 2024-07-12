@@ -34,8 +34,8 @@ impl ListDirectoryRegistrationsOutput {
 }
 
 /// A builder for [`ListDirectoryRegistrationsOutput`](crate::operation::list_directory_registrations::ListDirectoryRegistrationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDirectoryRegistrationsOutputBuilder {
     pub(crate) directory_registrations: ::std::option::Option<::std::vec::Vec<crate::types::DirectoryRegistrationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

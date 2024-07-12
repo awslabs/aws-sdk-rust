@@ -46,8 +46,8 @@ impl RegionalBucket {
 }
 
 /// A builder for [`RegionalBucket`](crate::types::RegionalBucket).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegionalBucketBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) bucket_arn: ::std::option::Option<::std::string::String>,

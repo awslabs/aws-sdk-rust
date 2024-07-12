@@ -47,8 +47,8 @@ impl DomainSettings {
 }
 
 /// A builder for [`DomainSettings`](crate::types::DomainSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DomainSettingsBuilder {
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) r_studio_server_pro_domain_settings: ::std::option::Option<crate::types::RStudioServerProDomainSettings>,

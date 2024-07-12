@@ -27,8 +27,8 @@ impl IsraelAdditionalInfo {
 }
 
 /// A builder for [`IsraelAdditionalInfo`](crate::types::IsraelAdditionalInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IsraelAdditionalInfoBuilder {
     pub(crate) dealer_type: ::std::option::Option<crate::types::IsraelDealerType>,
     pub(crate) customer_type: ::std::option::Option<crate::types::IsraelCustomerType>,

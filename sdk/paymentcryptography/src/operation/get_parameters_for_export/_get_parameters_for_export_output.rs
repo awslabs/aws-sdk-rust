@@ -65,8 +65,8 @@ impl GetParametersForExportOutput {
 }
 
 /// A builder for [`GetParametersForExportOutput`](crate::operation::get_parameters_for_export::GetParametersForExportOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetParametersForExportOutputBuilder {
     pub(crate) signing_key_certificate: ::std::option::Option<::std::string::String>,
     pub(crate) signing_key_certificate_chain: ::std::option::Option<::std::string::String>,

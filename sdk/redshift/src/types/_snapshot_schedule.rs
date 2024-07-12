@@ -65,8 +65,8 @@ impl SnapshotSchedule {
 }
 
 /// A builder for [`SnapshotSchedule`](crate::types::SnapshotSchedule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SnapshotScheduleBuilder {
     pub(crate) schedule_definitions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) schedule_identifier: ::std::option::Option<::std::string::String>,

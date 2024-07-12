@@ -30,8 +30,8 @@ impl IntuneConfiguration {
 }
 
 /// A builder for [`IntuneConfiguration`](crate::types::IntuneConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IntuneConfigurationBuilder {
     pub(crate) azure_application_id: ::std::option::Option<::std::string::String>,
     pub(crate) domain: ::std::option::Option<::std::string::String>,

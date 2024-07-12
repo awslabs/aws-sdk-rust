@@ -21,8 +21,8 @@ impl GetEmailIdentityInput {
 }
 
 /// A builder for [`GetEmailIdentityInput`](crate::operation::get_email_identity::GetEmailIdentityInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEmailIdentityInputBuilder {
     pub(crate) email_identity: ::std::option::Option<::std::string::String>,
 }

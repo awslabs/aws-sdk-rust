@@ -40,8 +40,8 @@ impl StartCapacityTaskInput {
 }
 
 /// A builder for [`StartCapacityTaskInput`](crate::operation::start_capacity_task::StartCapacityTaskInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartCapacityTaskInputBuilder {
     pub(crate) outpost_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) order_id: ::std::option::Option<::std::string::String>,

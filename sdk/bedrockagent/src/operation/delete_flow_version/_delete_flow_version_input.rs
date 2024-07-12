@@ -32,8 +32,8 @@ impl DeleteFlowVersionInput {
 }
 
 /// A builder for [`DeleteFlowVersionInput`](crate::operation::delete_flow_version::DeleteFlowVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFlowVersionInputBuilder {
     pub(crate) flow_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) flow_version: ::std::option::Option<::std::string::String>,

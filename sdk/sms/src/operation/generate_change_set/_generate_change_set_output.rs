@@ -26,8 +26,8 @@ impl GenerateChangeSetOutput {
 }
 
 /// A builder for [`GenerateChangeSetOutput`](crate::operation::generate_change_set::GenerateChangeSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GenerateChangeSetOutputBuilder {
     pub(crate) s3_location: ::std::option::Option<crate::types::S3Location>,
     _request_id: Option<String>,

@@ -21,8 +21,8 @@ impl TrustStoreAssociation {
 }
 
 /// A builder for [`TrustStoreAssociation`](crate::types::TrustStoreAssociation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TrustStoreAssociationBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
 }

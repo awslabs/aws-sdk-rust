@@ -32,8 +32,8 @@ impl CreateParticipantConnectionOutput {
 }
 
 /// A builder for [`CreateParticipantConnectionOutput`](crate::operation::create_participant_connection::CreateParticipantConnectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateParticipantConnectionOutputBuilder {
     pub(crate) websocket: ::std::option::Option<crate::types::Websocket>,
     pub(crate) connection_credentials: ::std::option::Option<crate::types::ConnectionCredentials>,

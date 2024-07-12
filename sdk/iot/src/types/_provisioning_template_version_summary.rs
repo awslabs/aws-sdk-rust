@@ -33,8 +33,8 @@ impl ProvisioningTemplateVersionSummary {
 }
 
 /// A builder for [`ProvisioningTemplateVersionSummary`](crate::types::ProvisioningTemplateVersionSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProvisioningTemplateVersionSummaryBuilder {
     pub(crate) version_id: ::std::option::Option<i32>,
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,

@@ -34,8 +34,8 @@ impl ListCostCategoryDefinitionsOutput {
 }
 
 /// A builder for [`ListCostCategoryDefinitionsOutput`](crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCostCategoryDefinitionsOutputBuilder {
     pub(crate) cost_category_references: ::std::option::Option<::std::vec::Vec<crate::types::CostCategoryReference>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

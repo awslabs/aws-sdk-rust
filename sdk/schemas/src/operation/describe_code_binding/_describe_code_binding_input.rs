@@ -38,8 +38,8 @@ impl DescribeCodeBindingInput {
 }
 
 /// A builder for [`DescribeCodeBindingInput`](crate::operation::describe_code_binding::DescribeCodeBindingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCodeBindingInputBuilder {
     pub(crate) language: ::std::option::Option<::std::string::String>,
     pub(crate) registry_name: ::std::option::Option<::std::string::String>,

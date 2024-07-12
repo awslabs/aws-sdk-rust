@@ -27,8 +27,8 @@ impl FreeTrialFeatureConfigurationResult {
 }
 
 /// A builder for [`FreeTrialFeatureConfigurationResult`](crate::types::FreeTrialFeatureConfigurationResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FreeTrialFeatureConfigurationResultBuilder {
     pub(crate) name: ::std::option::Option<crate::types::FreeTrialFeatureResult>,
     pub(crate) free_trial_days_remaining: ::std::option::Option<i32>,

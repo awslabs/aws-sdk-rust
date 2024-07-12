@@ -153,8 +153,8 @@ impl CopyJob {
 }
 
 /// A builder for [`CopyJob`](crate::types::CopyJob).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CopyJobBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) copy_job_id: ::std::option::Option<::std::string::String>,

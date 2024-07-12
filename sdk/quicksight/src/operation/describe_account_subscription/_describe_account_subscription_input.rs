@@ -20,8 +20,8 @@ impl DescribeAccountSubscriptionInput {
 }
 
 /// A builder for [`DescribeAccountSubscriptionInput`](crate::operation::describe_account_subscription::DescribeAccountSubscriptionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAccountSubscriptionInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
 }

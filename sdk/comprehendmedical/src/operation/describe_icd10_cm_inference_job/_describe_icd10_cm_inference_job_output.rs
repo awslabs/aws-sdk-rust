@@ -26,8 +26,8 @@ impl DescribeIcd10CmInferenceJobOutput {
 }
 
 /// A builder for [`DescribeIcd10CmInferenceJobOutput`](crate::operation::describe_icd10_cm_inference_job::DescribeIcd10CmInferenceJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeIcd10CmInferenceJobOutputBuilder {
     pub(crate) comprehend_medical_async_job_properties: ::std::option::Option<crate::types::ComprehendMedicalAsyncJobProperties>,
     _request_id: Option<String>,

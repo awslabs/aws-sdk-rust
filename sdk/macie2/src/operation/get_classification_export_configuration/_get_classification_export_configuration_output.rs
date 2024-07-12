@@ -26,8 +26,8 @@ impl GetClassificationExportConfigurationOutput {
 }
 
 /// A builder for [`GetClassificationExportConfigurationOutput`](crate::operation::get_classification_export_configuration::GetClassificationExportConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetClassificationExportConfigurationOutputBuilder {
     pub(crate) configuration: ::std::option::Option<crate::types::ClassificationExportConfiguration>,
     _request_id: Option<String>,

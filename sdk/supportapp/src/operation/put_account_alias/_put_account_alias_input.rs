@@ -20,8 +20,8 @@ impl PutAccountAliasInput {
 }
 
 /// A builder for [`PutAccountAliasInput`](crate::operation::put_account_alias::PutAccountAliasInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutAccountAliasInputBuilder {
     pub(crate) account_alias: ::std::option::Option<::std::string::String>,
 }

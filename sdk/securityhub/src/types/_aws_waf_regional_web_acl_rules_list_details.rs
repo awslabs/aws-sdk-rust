@@ -45,8 +45,8 @@ impl AwsWafRegionalWebAclRulesListDetails {
 }
 
 /// A builder for [`AwsWafRegionalWebAclRulesListDetails`](crate::types::AwsWafRegionalWebAclRulesListDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsWafRegionalWebAclRulesListDetailsBuilder {
     pub(crate) action: ::std::option::Option<crate::types::AwsWafRegionalWebAclRulesListActionDetails>,
     pub(crate) override_action: ::std::option::Option<crate::types::AwsWafRegionalWebAclRulesListOverrideActionDetails>,

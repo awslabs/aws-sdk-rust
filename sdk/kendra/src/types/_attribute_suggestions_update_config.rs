@@ -30,8 +30,8 @@ impl AttributeSuggestionsUpdateConfig {
 }
 
 /// A builder for [`AttributeSuggestionsUpdateConfig`](crate::types::AttributeSuggestionsUpdateConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttributeSuggestionsUpdateConfigBuilder {
     pub(crate) suggestable_config_list: ::std::option::Option<::std::vec::Vec<crate::types::SuggestableConfig>>,
     pub(crate) attribute_suggestions_mode: ::std::option::Option<crate::types::AttributeSuggestionsMode>,

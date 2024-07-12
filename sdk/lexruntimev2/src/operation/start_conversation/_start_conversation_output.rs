@@ -34,8 +34,8 @@ impl StartConversationOutput {
 }
 
 /// A builder for [`StartConversationOutput`](crate::operation::start_conversation::StartConversationOutput).
-#[non_exhaustive]
 #[derive(::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartConversationOutputBuilder {
     pub(crate) response_event_stream: ::std::option::Option<
         crate::event_receiver::EventReceiver<

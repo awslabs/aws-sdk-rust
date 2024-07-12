@@ -35,8 +35,8 @@ impl DetailedGlossaryTerm {
 }
 
 /// A builder for [`DetailedGlossaryTerm`](crate::types::DetailedGlossaryTerm).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DetailedGlossaryTermBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) short_description: ::std::option::Option<::std::string::String>,

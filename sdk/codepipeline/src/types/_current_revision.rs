@@ -41,8 +41,8 @@ impl CurrentRevision {
 }
 
 /// A builder for [`CurrentRevision`](crate::types::CurrentRevision).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CurrentRevisionBuilder {
     pub(crate) revision: ::std::option::Option<::std::string::String>,
     pub(crate) change_identifier: ::std::option::Option<::std::string::String>,

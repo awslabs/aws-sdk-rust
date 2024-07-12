@@ -18,8 +18,8 @@ impl AdminSetUserMfaPreferenceOutput {
 }
 
 /// A builder for [`AdminSetUserMfaPreferenceOutput`](crate::operation::admin_set_user_mfa_preference::AdminSetUserMfaPreferenceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AdminSetUserMfaPreferenceOutputBuilder {
     _request_id: Option<String>,
 }

@@ -27,8 +27,8 @@ impl CreateLunaClientInput {
 }
 
 /// A builder for [`CreateLunaClientInput`](crate::operation::create_luna_client::CreateLunaClientInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLunaClientInputBuilder {
     pub(crate) label: ::std::option::Option<::std::string::String>,
     pub(crate) certificate: ::std::option::Option<::std::string::String>,

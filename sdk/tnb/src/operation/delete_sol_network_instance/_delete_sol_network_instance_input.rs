@@ -20,8 +20,8 @@ impl DeleteSolNetworkInstanceInput {
 }
 
 /// A builder for [`DeleteSolNetworkInstanceInput`](crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSolNetworkInstanceInputBuilder {
     pub(crate) ns_instance_id: ::std::option::Option<::std::string::String>,
 }

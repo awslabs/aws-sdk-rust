@@ -38,8 +38,8 @@ impl ListShardsOutput {
 }
 
 /// A builder for [`ListShardsOutput`](crate::operation::list_shards::ListShardsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListShardsOutputBuilder {
     pub(crate) shards: ::std::option::Option<::std::vec::Vec<crate::types::Shard>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

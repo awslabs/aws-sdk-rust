@@ -34,8 +34,8 @@ impl ExportClientVpnClientCertificateRevocationListOutput {
 }
 
 /// A builder for [`ExportClientVpnClientCertificateRevocationListOutput`](crate::operation::export_client_vpn_client_certificate_revocation_list::ExportClientVpnClientCertificateRevocationListOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExportClientVpnClientCertificateRevocationListOutputBuilder {
     pub(crate) certificate_revocation_list: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ClientCertificateRevocationListStatus>,

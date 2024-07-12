@@ -33,8 +33,8 @@ impl AddTagsToOnPremisesInstancesInput {
 }
 
 /// A builder for [`AddTagsToOnPremisesInstancesInput`](crate::operation::add_tags_to_on_premises_instances::AddTagsToOnPremisesInstancesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddTagsToOnPremisesInstancesInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) instance_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

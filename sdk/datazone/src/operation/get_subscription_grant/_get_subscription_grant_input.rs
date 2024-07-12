@@ -26,8 +26,8 @@ impl GetSubscriptionGrantInput {
 }
 
 /// A builder for [`GetSubscriptionGrantInput`](crate::operation::get_subscription_grant::GetSubscriptionGrantInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSubscriptionGrantInputBuilder {
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) identifier: ::std::option::Option<::std::string::String>,

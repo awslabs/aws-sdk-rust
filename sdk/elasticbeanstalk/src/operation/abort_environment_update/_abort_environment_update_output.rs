@@ -18,8 +18,8 @@ impl AbortEnvironmentUpdateOutput {
 }
 
 /// A builder for [`AbortEnvironmentUpdateOutput`](crate::operation::abort_environment_update::AbortEnvironmentUpdateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AbortEnvironmentUpdateOutputBuilder {
     _request_id: Option<String>,
 }

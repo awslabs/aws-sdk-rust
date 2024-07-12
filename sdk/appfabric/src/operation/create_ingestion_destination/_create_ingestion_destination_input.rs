@@ -56,8 +56,8 @@ impl CreateIngestionDestinationInput {
 }
 
 /// A builder for [`CreateIngestionDestinationInput`](crate::operation::create_ingestion_destination::CreateIngestionDestinationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateIngestionDestinationInputBuilder {
     pub(crate) app_bundle_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) ingestion_identifier: ::std::option::Option<::std::string::String>,

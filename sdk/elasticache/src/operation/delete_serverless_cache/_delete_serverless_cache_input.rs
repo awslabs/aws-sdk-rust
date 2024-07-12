@@ -26,8 +26,8 @@ impl DeleteServerlessCacheInput {
 }
 
 /// A builder for [`DeleteServerlessCacheInput`](crate::operation::delete_serverless_cache::DeleteServerlessCacheInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteServerlessCacheInputBuilder {
     pub(crate) serverless_cache_name: ::std::option::Option<::std::string::String>,
     pub(crate) final_snapshot_name: ::std::option::Option<::std::string::String>,

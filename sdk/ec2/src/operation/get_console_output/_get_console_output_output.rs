@@ -38,8 +38,8 @@ impl GetConsoleOutputOutput {
 }
 
 /// A builder for [`GetConsoleOutputOutput`](crate::operation::get_console_output::GetConsoleOutputOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetConsoleOutputOutputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) output: ::std::option::Option<::std::string::String>,

@@ -25,8 +25,8 @@ impl Summarization {
 }
 
 /// A builder for [`Summarization`](crate::types::Summarization).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SummarizationBuilder {
     pub(crate) generate_abstractive_summary: ::std::option::Option<bool>,
 }

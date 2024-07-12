@@ -20,8 +20,8 @@ impl StopSimulationInput {
 }
 
 /// A builder for [`StopSimulationInput`](crate::operation::stop_simulation::StopSimulationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopSimulationInputBuilder {
     pub(crate) simulation: ::std::option::Option<::std::string::String>,
 }

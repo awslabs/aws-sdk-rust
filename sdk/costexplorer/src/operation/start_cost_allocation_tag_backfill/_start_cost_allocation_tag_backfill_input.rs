@@ -20,8 +20,8 @@ impl StartCostAllocationTagBackfillInput {
 }
 
 /// A builder for [`StartCostAllocationTagBackfillInput`](crate::operation::start_cost_allocation_tag_backfill::StartCostAllocationTagBackfillInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartCostAllocationTagBackfillInputBuilder {
     pub(crate) backfill_from: ::std::option::Option<::std::string::String>,
 }

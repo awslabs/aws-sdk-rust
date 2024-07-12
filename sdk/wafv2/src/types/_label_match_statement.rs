@@ -43,8 +43,8 @@ impl LabelMatchStatement {
 }
 
 /// A builder for [`LabelMatchStatement`](crate::types::LabelMatchStatement).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LabelMatchStatementBuilder {
     pub(crate) scope: ::std::option::Option<crate::types::LabelMatchScope>,
     pub(crate) key: ::std::option::Option<::std::string::String>,

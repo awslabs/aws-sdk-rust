@@ -27,8 +27,8 @@ impl TrialComponentSource {
 }
 
 /// A builder for [`TrialComponentSource`](crate::types::TrialComponentSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TrialComponentSourceBuilder {
     pub(crate) source_arn: ::std::option::Option<::std::string::String>,
     pub(crate) source_type: ::std::option::Option<::std::string::String>,

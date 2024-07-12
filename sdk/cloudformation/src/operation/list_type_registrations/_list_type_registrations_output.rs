@@ -36,8 +36,8 @@ impl ListTypeRegistrationsOutput {
 }
 
 /// A builder for [`ListTypeRegistrationsOutput`](crate::operation::list_type_registrations::ListTypeRegistrationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTypeRegistrationsOutputBuilder {
     pub(crate) registration_token_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

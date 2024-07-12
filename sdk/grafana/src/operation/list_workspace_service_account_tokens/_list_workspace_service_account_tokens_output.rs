@@ -47,8 +47,8 @@ impl ListWorkspaceServiceAccountTokensOutput {
 }
 
 /// A builder for [`ListWorkspaceServiceAccountTokensOutput`](crate::operation::list_workspace_service_account_tokens::ListWorkspaceServiceAccountTokensOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListWorkspaceServiceAccountTokensOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) service_account_tokens: ::std::option::Option<::std::vec::Vec<crate::types::ServiceAccountTokenSummary>>,

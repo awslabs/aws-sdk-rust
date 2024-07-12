@@ -18,8 +18,8 @@ impl ImportServerCatalogOutput {
 }
 
 /// A builder for [`ImportServerCatalogOutput`](crate::operation::import_server_catalog::ImportServerCatalogOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportServerCatalogOutputBuilder {
     _request_id: Option<String>,
 }

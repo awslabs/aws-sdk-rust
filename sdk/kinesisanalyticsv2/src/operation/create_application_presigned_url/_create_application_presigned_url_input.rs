@@ -32,8 +32,8 @@ impl CreateApplicationPresignedUrlInput {
 }
 
 /// A builder for [`CreateApplicationPresignedUrlInput`](crate::operation::create_application_presigned_url::CreateApplicationPresignedUrlInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateApplicationPresignedUrlInputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
     pub(crate) url_type: ::std::option::Option<crate::types::UrlType>,

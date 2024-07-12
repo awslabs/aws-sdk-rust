@@ -51,8 +51,8 @@ impl RdsMetadata {
 }
 
 /// A builder for [`RdsMetadata`](crate::types::RdsMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RdsMetadataBuilder {
     pub(crate) database: ::std::option::Option<crate::types::RdsDatabase>,
     pub(crate) database_user_name: ::std::option::Option<::std::string::String>,

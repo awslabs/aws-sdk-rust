@@ -18,8 +18,8 @@ impl UpdateContactFlowModuleMetadataOutput {
 }
 
 /// A builder for [`UpdateContactFlowModuleMetadataOutput`](crate::operation::update_contact_flow_module_metadata::UpdateContactFlowModuleMetadataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateContactFlowModuleMetadataOutputBuilder {
     _request_id: Option<String>,
 }

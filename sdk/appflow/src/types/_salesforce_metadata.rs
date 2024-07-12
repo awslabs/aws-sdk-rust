@@ -79,8 +79,8 @@ impl SalesforceMetadata {
 }
 
 /// A builder for [`SalesforceMetadata`](crate::types::SalesforceMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SalesforceMetadataBuilder {
     pub(crate) o_auth_scopes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) data_transfer_apis: ::std::option::Option<::std::vec::Vec<crate::types::SalesforceDataTransferApi>>,

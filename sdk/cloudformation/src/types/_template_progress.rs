@@ -39,8 +39,8 @@ impl TemplateProgress {
 }
 
 /// A builder for [`TemplateProgress`](crate::types::TemplateProgress).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TemplateProgressBuilder {
     pub(crate) resources_succeeded: ::std::option::Option<i32>,
     pub(crate) resources_failed: ::std::option::Option<i32>,

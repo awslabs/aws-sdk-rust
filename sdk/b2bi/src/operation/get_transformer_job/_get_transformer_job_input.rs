@@ -26,8 +26,8 @@ impl GetTransformerJobInput {
 }
 
 /// A builder for [`GetTransformerJobInput`](crate::operation::get_transformer_job::GetTransformerJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTransformerJobInputBuilder {
     pub(crate) transformer_job_id: ::std::option::Option<::std::string::String>,
     pub(crate) transformer_id: ::std::option::Option<::std::string::String>,

@@ -22,8 +22,8 @@ impl BatchGetStreamKeyInput {
 }
 
 /// A builder for [`BatchGetStreamKeyInput`](crate::operation::batch_get_stream_key::BatchGetStreamKeyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetStreamKeyInputBuilder {
     pub(crate) arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

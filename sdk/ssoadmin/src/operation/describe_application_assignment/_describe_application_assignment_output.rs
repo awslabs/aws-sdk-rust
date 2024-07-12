@@ -38,8 +38,8 @@ impl DescribeApplicationAssignmentOutput {
 }
 
 /// A builder for [`DescribeApplicationAssignmentOutput`](crate::operation::describe_application_assignment::DescribeApplicationAssignmentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeApplicationAssignmentOutputBuilder {
     pub(crate) principal_type: ::std::option::Option<crate::types::PrincipalType>,
     pub(crate) principal_id: ::std::option::Option<::std::string::String>,

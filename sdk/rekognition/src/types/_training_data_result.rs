@@ -33,8 +33,8 @@ impl TrainingDataResult {
 }
 
 /// A builder for [`TrainingDataResult`](crate::types::TrainingDataResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TrainingDataResultBuilder {
     pub(crate) input: ::std::option::Option<crate::types::TrainingData>,
     pub(crate) output: ::std::option::Option<crate::types::TrainingData>,

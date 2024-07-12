@@ -63,8 +63,8 @@ impl AwsEc2NetworkAclEntry {
 }
 
 /// A builder for [`AwsEc2NetworkAclEntry`](crate::types::AwsEc2NetworkAclEntry).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEc2NetworkAclEntryBuilder {
     pub(crate) cidr_block: ::std::option::Option<::std::string::String>,
     pub(crate) egress: ::std::option::Option<bool>,

@@ -56,8 +56,8 @@ impl Assessment {
 }
 
 /// A builder for [`Assessment`](crate::types::Assessment).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AssessmentBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) aws_account: ::std::option::Option<crate::types::AwsAccount>,

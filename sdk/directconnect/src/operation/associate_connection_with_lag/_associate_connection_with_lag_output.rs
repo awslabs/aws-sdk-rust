@@ -201,8 +201,8 @@ impl AssociateConnectionWithLagOutput {
 }
 
 /// A builder for [`AssociateConnectionWithLagOutput`](crate::operation::associate_connection_with_lag::AssociateConnectionWithLagOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateConnectionWithLagOutputBuilder {
     pub(crate) owner_account: ::std::option::Option<::std::string::String>,
     pub(crate) connection_id: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl DeauthorizeDataShareInput {
 }
 
 /// A builder for [`DeauthorizeDataShareInput`](crate::operation::deauthorize_data_share::DeauthorizeDataShareInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeauthorizeDataShareInputBuilder {
     pub(crate) data_share_arn: ::std::option::Option<::std::string::String>,
     pub(crate) consumer_identifier: ::std::option::Option<::std::string::String>,

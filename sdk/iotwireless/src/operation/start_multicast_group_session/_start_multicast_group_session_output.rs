@@ -18,8 +18,8 @@ impl StartMulticastGroupSessionOutput {
 }
 
 /// A builder for [`StartMulticastGroupSessionOutput`](crate::operation::start_multicast_group_session::StartMulticastGroupSessionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartMulticastGroupSessionOutputBuilder {
     _request_id: Option<String>,
 }

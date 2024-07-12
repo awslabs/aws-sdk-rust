@@ -34,8 +34,8 @@ impl RemoveTargetsOutput {
 }
 
 /// A builder for [`RemoveTargetsOutput`](crate::operation::remove_targets::RemoveTargetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoveTargetsOutputBuilder {
     pub(crate) failed_entry_count: ::std::option::Option<i32>,
     pub(crate) failed_entries: ::std::option::Option<::std::vec::Vec<crate::types::RemoveTargetsResultEntry>>,

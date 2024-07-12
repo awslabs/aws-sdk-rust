@@ -85,8 +85,8 @@ impl CreateEvaluationJobInput {
 }
 
 /// A builder for [`CreateEvaluationJobInput`](crate::operation::create_evaluation_job::CreateEvaluationJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateEvaluationJobInputBuilder {
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
     pub(crate) job_description: ::std::option::Option<::std::string::String>,

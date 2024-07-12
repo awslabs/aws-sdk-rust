@@ -40,8 +40,8 @@ impl StructuredMessageListDefinition {
 }
 
 /// A builder for [`StructuredMessageListDefinition`](crate::types::StructuredMessageListDefinition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StructuredMessageListDefinitionBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) member_type: ::std::option::Option<crate::types::StructuredMessage>,

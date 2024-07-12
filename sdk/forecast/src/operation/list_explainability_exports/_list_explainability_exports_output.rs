@@ -34,8 +34,8 @@ impl ListExplainabilityExportsOutput {
 }
 
 /// A builder for [`ListExplainabilityExportsOutput`](crate::operation::list_explainability_exports::ListExplainabilityExportsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListExplainabilityExportsOutputBuilder {
     pub(crate) explainability_exports: ::std::option::Option<::std::vec::Vec<crate::types::ExplainabilityExportSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

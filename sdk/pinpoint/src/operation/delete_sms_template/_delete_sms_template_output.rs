@@ -26,8 +26,8 @@ impl DeleteSmsTemplateOutput {
 }
 
 /// A builder for [`DeleteSmsTemplateOutput`](crate::operation::delete_sms_template::DeleteSmsTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSmsTemplateOutputBuilder {
     pub(crate) message_body: ::std::option::Option<crate::types::MessageBody>,
     _request_id: Option<String>,

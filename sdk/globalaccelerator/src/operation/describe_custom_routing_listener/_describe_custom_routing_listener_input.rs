@@ -20,8 +20,8 @@ impl DescribeCustomRoutingListenerInput {
 }
 
 /// A builder for [`DescribeCustomRoutingListenerInput`](crate::operation::describe_custom_routing_listener::DescribeCustomRoutingListenerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCustomRoutingListenerInputBuilder {
     pub(crate) listener_arn: ::std::option::Option<::std::string::String>,
 }

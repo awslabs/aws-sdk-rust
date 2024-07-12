@@ -11,8 +11,8 @@ impl DescribeSubscriptionInput {
 }
 
 /// A builder for [`DescribeSubscriptionInput`](crate::operation::describe_subscription::DescribeSubscriptionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSubscriptionInputBuilder {}
 impl DescribeSubscriptionInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSubscriptionInput`](crate::operation::describe_subscription::DescribeSubscriptionInput).

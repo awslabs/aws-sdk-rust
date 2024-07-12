@@ -29,8 +29,8 @@ impl DescribeThumbnailsOutput {
 }
 
 /// A builder for [`DescribeThumbnailsOutput`](crate::operation::describe_thumbnails::DescribeThumbnailsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeThumbnailsOutputBuilder {
     pub(crate) thumbnail_details: ::std::option::Option<::std::vec::Vec<crate::types::ThumbnailDetail>>,
     _request_id: Option<String>,

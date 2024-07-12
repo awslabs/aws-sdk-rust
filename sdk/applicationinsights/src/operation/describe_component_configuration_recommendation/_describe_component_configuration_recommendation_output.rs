@@ -27,8 +27,8 @@ impl DescribeComponentConfigurationRecommendationOutput {
 }
 
 /// A builder for [`DescribeComponentConfigurationRecommendationOutput`](crate::operation::describe_component_configuration_recommendation::DescribeComponentConfigurationRecommendationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeComponentConfigurationRecommendationOutputBuilder {
     pub(crate) component_configuration: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

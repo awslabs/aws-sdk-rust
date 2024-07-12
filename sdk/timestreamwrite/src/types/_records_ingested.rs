@@ -33,8 +33,8 @@ impl RecordsIngested {
 }
 
 /// A builder for [`RecordsIngested`](crate::types::RecordsIngested).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecordsIngestedBuilder {
     pub(crate) total: ::std::option::Option<i32>,
     pub(crate) memory_store: ::std::option::Option<i32>,

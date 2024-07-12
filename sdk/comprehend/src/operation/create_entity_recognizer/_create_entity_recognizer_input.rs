@@ -114,8 +114,8 @@ impl CreateEntityRecognizerInput {
 }
 
 /// A builder for [`CreateEntityRecognizerInput`](crate::operation::create_entity_recognizer::CreateEntityRecognizerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateEntityRecognizerInputBuilder {
     pub(crate) recognizer_name: ::std::option::Option<::std::string::String>,
     pub(crate) version_name: ::std::option::Option<::std::string::String>,

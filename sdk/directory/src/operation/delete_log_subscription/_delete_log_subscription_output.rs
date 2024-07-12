@@ -18,8 +18,8 @@ impl DeleteLogSubscriptionOutput {
 }
 
 /// A builder for [`DeleteLogSubscriptionOutput`](crate::operation::delete_log_subscription::DeleteLogSubscriptionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteLogSubscriptionOutputBuilder {
     _request_id: Option<String>,
 }

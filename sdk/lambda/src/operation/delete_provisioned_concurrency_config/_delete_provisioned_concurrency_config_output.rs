@@ -18,8 +18,8 @@ impl DeleteProvisionedConcurrencyConfigOutput {
 }
 
 /// A builder for [`DeleteProvisionedConcurrencyConfigOutput`](crate::operation::delete_provisioned_concurrency_config::DeleteProvisionedConcurrencyConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteProvisionedConcurrencyConfigOutputBuilder {
     _request_id: Option<String>,
 }

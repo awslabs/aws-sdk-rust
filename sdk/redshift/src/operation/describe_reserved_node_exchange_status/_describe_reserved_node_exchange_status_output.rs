@@ -34,8 +34,8 @@ impl DescribeReservedNodeExchangeStatusOutput {
 }
 
 /// A builder for [`DescribeReservedNodeExchangeStatusOutput`](crate::operation::describe_reserved_node_exchange_status::DescribeReservedNodeExchangeStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeReservedNodeExchangeStatusOutputBuilder {
     pub(crate) reserved_node_exchange_status_details: ::std::option::Option<::std::vec::Vec<crate::types::ReservedNodeExchangeStatus>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

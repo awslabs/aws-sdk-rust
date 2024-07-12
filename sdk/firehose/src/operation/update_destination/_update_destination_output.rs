@@ -18,8 +18,8 @@ impl UpdateDestinationOutput {
 }
 
 /// A builder for [`UpdateDestinationOutput`](crate::operation::update_destination::UpdateDestinationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDestinationOutputBuilder {
     _request_id: Option<String>,
 }

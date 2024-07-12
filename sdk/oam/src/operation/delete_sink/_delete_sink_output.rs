@@ -18,8 +18,8 @@ impl DeleteSinkOutput {
 }
 
 /// A builder for [`DeleteSinkOutput`](crate::operation::delete_sink::DeleteSinkOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSinkOutputBuilder {
     _request_id: Option<String>,
 }

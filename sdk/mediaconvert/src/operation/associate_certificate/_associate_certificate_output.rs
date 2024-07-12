@@ -18,8 +18,8 @@ impl AssociateCertificateOutput {
 }
 
 /// A builder for [`AssociateCertificateOutput`](crate::operation::associate_certificate::AssociateCertificateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateCertificateOutputBuilder {
     _request_id: Option<String>,
 }

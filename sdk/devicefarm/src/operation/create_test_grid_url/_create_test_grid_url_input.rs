@@ -26,8 +26,8 @@ impl CreateTestGridUrlInput {
 }
 
 /// A builder for [`CreateTestGridUrlInput`](crate::operation::create_test_grid_url::CreateTestGridUrlInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateTestGridUrlInputBuilder {
     pub(crate) project_arn: ::std::option::Option<::std::string::String>,
     pub(crate) expires_in_seconds: ::std::option::Option<i32>,

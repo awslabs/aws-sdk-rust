@@ -47,8 +47,8 @@ impl PromptModelInferenceConfiguration {
 }
 
 /// A builder for [`PromptModelInferenceConfiguration`](crate::types::PromptModelInferenceConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PromptModelInferenceConfigurationBuilder {
     pub(crate) temperature: ::std::option::Option<f32>,
     pub(crate) top_p: ::std::option::Option<f32>,

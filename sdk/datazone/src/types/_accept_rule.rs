@@ -27,8 +27,8 @@ impl AcceptRule {
 }
 
 /// A builder for [`AcceptRule`](crate::types::AcceptRule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AcceptRuleBuilder {
     pub(crate) rule: ::std::option::Option<crate::types::AcceptRuleBehavior>,
     pub(crate) threshold: ::std::option::Option<f32>,

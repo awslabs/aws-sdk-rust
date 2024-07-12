@@ -50,8 +50,8 @@ impl ListChannelMembershipsOutput {
 }
 
 /// A builder for [`ListChannelMembershipsOutput`](crate::operation::list_channel_memberships::ListChannelMembershipsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ListChannelMembershipsOutputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) channel_memberships: ::std::option::Option<::std::vec::Vec<crate::types::ChannelMembershipSummary>>,

@@ -52,8 +52,8 @@ impl OutputUpdate {
 }
 
 /// A builder for [`OutputUpdate`](crate::types::OutputUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OutputUpdateBuilder {
     pub(crate) output_id: ::std::option::Option<::std::string::String>,
     pub(crate) name_update: ::std::option::Option<::std::string::String>,

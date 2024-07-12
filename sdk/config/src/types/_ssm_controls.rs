@@ -27,8 +27,8 @@ impl SsmControls {
 }
 
 /// A builder for [`SsmControls`](crate::types::SsmControls).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SsmControlsBuilder {
     pub(crate) concurrent_execution_rate_percentage: ::std::option::Option<i32>,
     pub(crate) error_percentage: ::std::option::Option<i32>,

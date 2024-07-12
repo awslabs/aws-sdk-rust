@@ -20,8 +20,8 @@ impl GetAppMonitorInput {
 }
 
 /// A builder for [`GetAppMonitorInput`](crate::operation::get_app_monitor::GetAppMonitorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAppMonitorInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

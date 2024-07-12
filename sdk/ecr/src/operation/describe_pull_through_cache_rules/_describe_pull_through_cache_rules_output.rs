@@ -34,8 +34,8 @@ impl DescribePullThroughCacheRulesOutput {
 }
 
 /// A builder for [`DescribePullThroughCacheRulesOutput`](crate::operation::describe_pull_through_cache_rules::DescribePullThroughCacheRulesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribePullThroughCacheRulesOutputBuilder {
     pub(crate) pull_through_cache_rules: ::std::option::Option<::std::vec::Vec<crate::types::PullThroughCacheRule>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

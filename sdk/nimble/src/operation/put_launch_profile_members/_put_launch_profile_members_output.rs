@@ -18,8 +18,8 @@ impl PutLaunchProfileMembersOutput {
 }
 
 /// A builder for [`PutLaunchProfileMembersOutput`](crate::operation::put_launch_profile_members::PutLaunchProfileMembersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutLaunchProfileMembersOutputBuilder {
     _request_id: Option<String>,
 }

@@ -34,8 +34,8 @@ impl DescribeLaunchConfigurationTemplatesOutput {
 }
 
 /// A builder for [`DescribeLaunchConfigurationTemplatesOutput`](crate::operation::describe_launch_configuration_templates::DescribeLaunchConfigurationTemplatesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeLaunchConfigurationTemplatesOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::LaunchConfigurationTemplate>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -87,8 +87,8 @@ impl SegmentDetection {
 }
 
 /// A builder for [`SegmentDetection`](crate::types::SegmentDetection).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SegmentDetectionBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::SegmentType>,
     pub(crate) start_timestamp_millis: ::std::option::Option<i64>,

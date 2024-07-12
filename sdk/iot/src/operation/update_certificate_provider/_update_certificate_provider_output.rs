@@ -32,8 +32,8 @@ impl UpdateCertificateProviderOutput {
 }
 
 /// A builder for [`UpdateCertificateProviderOutput`](crate::operation::update_certificate_provider::UpdateCertificateProviderOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateCertificateProviderOutputBuilder {
     pub(crate) certificate_provider_name: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_provider_arn: ::std::option::Option<::std::string::String>,

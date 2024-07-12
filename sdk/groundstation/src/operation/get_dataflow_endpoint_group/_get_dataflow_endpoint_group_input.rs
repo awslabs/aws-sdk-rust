@@ -21,8 +21,8 @@ impl GetDataflowEndpointGroupInput {
 }
 
 /// A builder for [`GetDataflowEndpointGroupInput`](crate::operation::get_dataflow_endpoint_group::GetDataflowEndpointGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDataflowEndpointGroupInputBuilder {
     pub(crate) dataflow_endpoint_group_id: ::std::option::Option<::std::string::String>,
 }

@@ -40,8 +40,8 @@ impl DescribeWorkspaceImagePermissionsOutput {
 }
 
 /// A builder for [`DescribeWorkspaceImagePermissionsOutput`](crate::operation::describe_workspace_image_permissions::DescribeWorkspaceImagePermissionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeWorkspaceImagePermissionsOutputBuilder {
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
     pub(crate) image_permissions: ::std::option::Option<::std::vec::Vec<crate::types::ImagePermission>>,

@@ -18,8 +18,8 @@ impl UpdateIndexOutput {
 }
 
 /// A builder for [`UpdateIndexOutput`](crate::operation::update_index::UpdateIndexOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateIndexOutputBuilder {
     _request_id: Option<String>,
 }

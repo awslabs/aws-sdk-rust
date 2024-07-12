@@ -45,8 +45,8 @@ impl ExcludePeriodConfiguration {
 }
 
 /// A builder for [`ExcludePeriodConfiguration`](crate::types::ExcludePeriodConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExcludePeriodConfigurationBuilder {
     pub(crate) amount: ::std::option::Option<i32>,
     pub(crate) granularity: ::std::option::Option<crate::types::TimeGranularity>,

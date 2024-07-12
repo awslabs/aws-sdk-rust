@@ -20,8 +20,8 @@ impl GetDeliveryDestinationPolicyInput {
 }
 
 /// A builder for [`GetDeliveryDestinationPolicyInput`](crate::operation::get_delivery_destination_policy::GetDeliveryDestinationPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDeliveryDestinationPolicyInputBuilder {
     pub(crate) delivery_destination_name: ::std::option::Option<::std::string::String>,
 }

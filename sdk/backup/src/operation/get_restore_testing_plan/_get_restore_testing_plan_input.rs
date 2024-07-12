@@ -20,8 +20,8 @@ impl GetRestoreTestingPlanInput {
 }
 
 /// A builder for [`GetRestoreTestingPlanInput`](crate::operation::get_restore_testing_plan::GetRestoreTestingPlanInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRestoreTestingPlanInputBuilder {
     pub(crate) restore_testing_plan_name: ::std::option::Option<::std::string::String>,
 }

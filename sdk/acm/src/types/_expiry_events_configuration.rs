@@ -21,8 +21,8 @@ impl ExpiryEventsConfiguration {
 }
 
 /// A builder for [`ExpiryEventsConfiguration`](crate::types::ExpiryEventsConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExpiryEventsConfigurationBuilder {
     pub(crate) days_before_expiry: ::std::option::Option<i32>,
 }

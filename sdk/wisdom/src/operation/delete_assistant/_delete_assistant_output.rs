@@ -18,8 +18,8 @@ impl DeleteAssistantOutput {
 }
 
 /// A builder for [`DeleteAssistantOutput`](crate::operation::delete_assistant::DeleteAssistantOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAssistantOutputBuilder {
     _request_id: Option<String>,
 }

@@ -32,8 +32,8 @@ impl UpdateRefreshScheduleInput {
 }
 
 /// A builder for [`UpdateRefreshScheduleInput`](crate::operation::update_refresh_schedule::UpdateRefreshScheduleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRefreshScheduleInputBuilder {
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,

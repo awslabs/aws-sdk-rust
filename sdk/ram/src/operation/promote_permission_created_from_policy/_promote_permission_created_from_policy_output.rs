@@ -32,8 +32,8 @@ impl PromotePermissionCreatedFromPolicyOutput {
 }
 
 /// A builder for [`PromotePermissionCreatedFromPolicyOutput`](crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PromotePermissionCreatedFromPolicyOutputBuilder {
     pub(crate) permission: ::std::option::Option<crate::types::ResourceSharePermissionSummary>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

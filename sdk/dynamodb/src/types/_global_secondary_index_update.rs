@@ -65,8 +65,8 @@ impl GlobalSecondaryIndexUpdate {
 }
 
 /// A builder for [`GlobalSecondaryIndexUpdate`](crate::types::GlobalSecondaryIndexUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GlobalSecondaryIndexUpdateBuilder {
     pub(crate) update: ::std::option::Option<crate::types::UpdateGlobalSecondaryIndexAction>,
     pub(crate) create: ::std::option::Option<crate::types::CreateGlobalSecondaryIndexAction>,

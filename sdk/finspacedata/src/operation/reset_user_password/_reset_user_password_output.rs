@@ -41,8 +41,8 @@ impl ResetUserPasswordOutput {
 }
 
 /// A builder for [`ResetUserPasswordOutput`](crate::operation::reset_user_password::ResetUserPasswordOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ResetUserPasswordOutputBuilder {
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
     pub(crate) temporary_password: ::std::option::Option<::std::string::String>,

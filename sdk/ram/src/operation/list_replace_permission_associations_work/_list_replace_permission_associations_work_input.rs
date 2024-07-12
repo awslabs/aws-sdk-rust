@@ -40,8 +40,8 @@ impl ListReplacePermissionAssociationsWorkInput {
 }
 
 /// A builder for [`ListReplacePermissionAssociationsWorkInput`](crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWorkInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListReplacePermissionAssociationsWorkInputBuilder {
     pub(crate) work_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) status: ::std::option::Option<crate::types::ReplacePermissionAssociationsWorkStatus>,

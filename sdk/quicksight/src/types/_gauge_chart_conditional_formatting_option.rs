@@ -27,8 +27,8 @@ impl GaugeChartConditionalFormattingOption {
 }
 
 /// A builder for [`GaugeChartConditionalFormattingOption`](crate::types::GaugeChartConditionalFormattingOption).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GaugeChartConditionalFormattingOptionBuilder {
     pub(crate) primary_value: ::std::option::Option<crate::types::GaugeChartPrimaryValueConditionalFormatting>,
     pub(crate) arc: ::std::option::Option<crate::types::GaugeChartArcConditionalFormatting>,

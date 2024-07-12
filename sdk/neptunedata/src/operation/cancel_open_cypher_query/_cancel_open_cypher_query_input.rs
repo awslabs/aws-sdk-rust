@@ -26,8 +26,8 @@ impl CancelOpenCypherQueryInput {
 }
 
 /// A builder for [`CancelOpenCypherQueryInput`](crate::operation::cancel_open_cypher_query::CancelOpenCypherQueryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelOpenCypherQueryInputBuilder {
     pub(crate) query_id: ::std::option::Option<::std::string::String>,
     pub(crate) silent: ::std::option::Option<bool>,

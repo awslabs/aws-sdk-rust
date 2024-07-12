@@ -45,8 +45,8 @@ impl StartArchiveSearchInput {
 }
 
 /// A builder for [`StartArchiveSearchInput`](crate::operation::start_archive_search::StartArchiveSearchInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartArchiveSearchInputBuilder {
     pub(crate) archive_id: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<crate::types::ArchiveFilters>,

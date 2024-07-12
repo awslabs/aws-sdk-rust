@@ -52,8 +52,8 @@ impl ValidateAssessmentReportIntegrityOutput {
 }
 
 /// A builder for [`ValidateAssessmentReportIntegrityOutput`](crate::operation::validate_assessment_report_integrity::ValidateAssessmentReportIntegrityOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ValidateAssessmentReportIntegrityOutputBuilder {
     pub(crate) signature_valid: ::std::option::Option<bool>,
     pub(crate) signature_algorithm: ::std::option::Option<::std::string::String>,

@@ -69,8 +69,8 @@ impl KpiOptions {
 }
 
 /// A builder for [`KpiOptions`](crate::types::KpiOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KpiOptionsBuilder {
     pub(crate) progress_bar: ::std::option::Option<crate::types::ProgressBarOptions>,
     pub(crate) trend_arrows: ::std::option::Option<crate::types::TrendArrowOptions>,

@@ -27,8 +27,8 @@ impl LabelingJobOutput {
 }
 
 /// A builder for [`LabelingJobOutput`](crate::types::LabelingJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LabelingJobOutputBuilder {
     pub(crate) output_dataset_s3_uri: ::std::option::Option<::std::string::String>,
     pub(crate) final_active_learning_model_arn: ::std::option::Option<::std::string::String>,

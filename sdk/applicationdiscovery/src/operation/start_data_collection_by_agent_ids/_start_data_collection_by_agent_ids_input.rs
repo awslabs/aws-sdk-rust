@@ -22,8 +22,8 @@ impl StartDataCollectionByAgentIdsInput {
 }
 
 /// A builder for [`StartDataCollectionByAgentIdsInput`](crate::operation::start_data_collection_by_agent_ids::StartDataCollectionByAgentIdsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartDataCollectionByAgentIdsInputBuilder {
     pub(crate) agent_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

@@ -31,8 +31,8 @@ impl ServiceObservabilityConfiguration {
 }
 
 /// A builder for [`ServiceObservabilityConfiguration`](crate::types::ServiceObservabilityConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServiceObservabilityConfigurationBuilder {
     pub(crate) observability_enabled: ::std::option::Option<bool>,
     pub(crate) observability_configuration_arn: ::std::option::Option<::std::string::String>,

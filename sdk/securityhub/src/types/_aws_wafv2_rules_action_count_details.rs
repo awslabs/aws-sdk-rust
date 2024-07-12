@@ -21,8 +21,8 @@ impl AwsWafv2RulesActionCountDetails {
 }
 
 /// A builder for [`AwsWafv2RulesActionCountDetails`](crate::types::AwsWafv2RulesActionCountDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsWafv2RulesActionCountDetailsBuilder {
     pub(crate) custom_request_handling: ::std::option::Option<crate::types::AwsWafv2CustomRequestHandlingDetails>,
 }

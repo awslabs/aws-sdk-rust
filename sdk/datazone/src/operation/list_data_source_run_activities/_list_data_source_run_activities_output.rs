@@ -33,8 +33,8 @@ impl ListDataSourceRunActivitiesOutput {
 }
 
 /// A builder for [`ListDataSourceRunActivitiesOutput`](crate::operation::list_data_source_run_activities::ListDataSourceRunActivitiesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDataSourceRunActivitiesOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceRunActivity>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

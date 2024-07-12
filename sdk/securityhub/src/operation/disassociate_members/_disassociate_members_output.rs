@@ -18,8 +18,8 @@ impl DisassociateMembersOutput {
 }
 
 /// A builder for [`DisassociateMembersOutput`](crate::operation::disassociate_members::DisassociateMembersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateMembersOutputBuilder {
     _request_id: Option<String>,
 }

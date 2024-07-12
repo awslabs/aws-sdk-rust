@@ -35,8 +35,8 @@ impl ListStackResourcesOutput {
 }
 
 /// A builder for [`ListStackResourcesOutput`](crate::operation::list_stack_resources::ListStackResourcesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListStackResourcesOutputBuilder {
     pub(crate) stack_resource_summaries: ::std::option::Option<::std::vec::Vec<crate::types::StackResourceSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

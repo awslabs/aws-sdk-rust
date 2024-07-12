@@ -32,8 +32,8 @@ impl StartDiscovererOutput {
 }
 
 /// A builder for [`StartDiscovererOutput`](crate::operation::start_discoverer::StartDiscovererOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartDiscovererOutputBuilder {
     pub(crate) discoverer_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::DiscovererState>,

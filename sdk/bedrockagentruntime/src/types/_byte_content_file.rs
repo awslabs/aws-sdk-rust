@@ -36,8 +36,8 @@ impl ByteContentFile {
 }
 
 /// A builder for [`ByteContentFile`](crate::types::ByteContentFile).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ByteContentFileBuilder {
     pub(crate) media_type: ::std::option::Option<::std::string::String>,
     pub(crate) data: ::std::option::Option<::aws_smithy_types::Blob>,

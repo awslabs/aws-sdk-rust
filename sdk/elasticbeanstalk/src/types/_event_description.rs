@@ -69,8 +69,8 @@ impl EventDescription {
 }
 
 /// A builder for [`EventDescription`](crate::types::EventDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EventDescriptionBuilder {
     pub(crate) event_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

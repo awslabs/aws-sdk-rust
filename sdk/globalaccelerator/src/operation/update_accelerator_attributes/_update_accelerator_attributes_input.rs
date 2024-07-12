@@ -44,8 +44,8 @@ impl UpdateAcceleratorAttributesInput {
 }
 
 /// A builder for [`UpdateAcceleratorAttributesInput`](crate::operation::update_accelerator_attributes::UpdateAcceleratorAttributesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAcceleratorAttributesInputBuilder {
     pub(crate) accelerator_arn: ::std::option::Option<::std::string::String>,
     pub(crate) flow_logs_enabled: ::std::option::Option<bool>,

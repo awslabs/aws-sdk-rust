@@ -31,8 +31,8 @@ impl KafkaClusterClientVpcConfig {
 }
 
 /// A builder for [`KafkaClusterClientVpcConfig`](crate::types::KafkaClusterClientVpcConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KafkaClusterClientVpcConfigBuilder {
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

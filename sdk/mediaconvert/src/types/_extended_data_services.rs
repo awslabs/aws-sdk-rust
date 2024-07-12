@@ -27,8 +27,8 @@ impl ExtendedDataServices {
 }
 
 /// A builder for [`ExtendedDataServices`](crate::types::ExtendedDataServices).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExtendedDataServicesBuilder {
     pub(crate) copy_protection_action: ::std::option::Option<crate::types::CopyProtectionAction>,
     pub(crate) vchip_action: ::std::option::Option<crate::types::VchipAction>,

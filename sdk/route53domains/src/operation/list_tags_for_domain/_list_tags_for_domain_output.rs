@@ -29,8 +29,8 @@ impl ListTagsForDomainOutput {
 }
 
 /// A builder for [`ListTagsForDomainOutput`](crate::operation::list_tags_for_domain::ListTagsForDomainOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTagsForDomainOutputBuilder {
     pub(crate) tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     _request_id: Option<String>,

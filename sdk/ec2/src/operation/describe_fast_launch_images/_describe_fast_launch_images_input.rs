@@ -64,8 +64,8 @@ impl DescribeFastLaunchImagesInput {
 }
 
 /// A builder for [`DescribeFastLaunchImagesInput`](crate::operation::describe_fast_launch_images::DescribeFastLaunchImagesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFastLaunchImagesInputBuilder {
     pub(crate) image_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,

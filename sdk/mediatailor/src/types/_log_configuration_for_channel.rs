@@ -23,8 +23,8 @@ impl LogConfigurationForChannel {
 }
 
 /// A builder for [`LogConfigurationForChannel`](crate::types::LogConfigurationForChannel).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LogConfigurationForChannelBuilder {
     pub(crate) log_types: ::std::option::Option<::std::vec::Vec<crate::types::LogType>>,
 }

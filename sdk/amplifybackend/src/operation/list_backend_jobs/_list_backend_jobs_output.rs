@@ -34,8 +34,8 @@ impl ListBackendJobsOutput {
 }
 
 /// A builder for [`ListBackendJobsOutput`](crate::operation::list_backend_jobs::ListBackendJobsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListBackendJobsOutputBuilder {
     pub(crate) jobs: ::std::option::Option<::std::vec::Vec<crate::types::BackendJobRespObj>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl ExecuteGremlinProfileQueryOutput {
 }
 
 /// A builder for [`ExecuteGremlinProfileQueryOutput`](crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExecuteGremlinProfileQueryOutputBuilder {
     pub(crate) output: ::std::option::Option<::aws_smithy_types::Blob>,
     _request_id: Option<String>,

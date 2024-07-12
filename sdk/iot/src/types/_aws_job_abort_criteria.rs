@@ -41,8 +41,8 @@ impl AwsJobAbortCriteria {
 }
 
 /// A builder for [`AwsJobAbortCriteria`](crate::types::AwsJobAbortCriteria).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsJobAbortCriteriaBuilder {
     pub(crate) failure_type: ::std::option::Option<crate::types::AwsJobAbortCriteriaFailureType>,
     pub(crate) action: ::std::option::Option<crate::types::AwsJobAbortCriteriaAbortAction>,

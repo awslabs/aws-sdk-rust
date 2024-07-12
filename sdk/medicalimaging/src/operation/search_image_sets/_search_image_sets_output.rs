@@ -39,8 +39,8 @@ impl SearchImageSetsOutput {
 }
 
 /// A builder for [`SearchImageSetsOutput`](crate::operation::search_image_sets::SearchImageSetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchImageSetsOutputBuilder {
     pub(crate) image_sets_metadata_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ImageSetsMetadataSummary>>,
     pub(crate) sort: ::std::option::Option<crate::types::Sort>,

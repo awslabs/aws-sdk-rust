@@ -20,8 +20,8 @@ impl GetImportInput {
 }
 
 /// A builder for [`GetImportInput`](crate::operation::get_import::GetImportInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetImportInputBuilder {
     pub(crate) import_id: ::std::option::Option<::std::string::String>,
 }

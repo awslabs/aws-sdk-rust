@@ -46,8 +46,8 @@ impl DirectKinesisSource {
 }
 
 /// A builder for [`DirectKinesisSource`](crate::types::DirectKinesisSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DirectKinesisSourceBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) window_size: ::std::option::Option<i32>,

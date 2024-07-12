@@ -34,8 +34,8 @@ impl ListDevelopmentSchemaArnsOutput {
 }
 
 /// A builder for [`ListDevelopmentSchemaArnsOutput`](crate::operation::list_development_schema_arns::ListDevelopmentSchemaArnsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDevelopmentSchemaArnsOutputBuilder {
     pub(crate) schema_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

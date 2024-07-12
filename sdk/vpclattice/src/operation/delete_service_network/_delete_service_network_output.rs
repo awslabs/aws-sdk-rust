@@ -18,8 +18,8 @@ impl DeleteServiceNetworkOutput {
 }
 
 /// A builder for [`DeleteServiceNetworkOutput`](crate::operation::delete_service_network::DeleteServiceNetworkOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteServiceNetworkOutputBuilder {
     _request_id: Option<String>,
 }

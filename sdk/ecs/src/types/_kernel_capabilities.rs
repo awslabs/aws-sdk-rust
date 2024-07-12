@@ -39,8 +39,8 @@ impl KernelCapabilities {
 }
 
 /// A builder for [`KernelCapabilities`](crate::types::KernelCapabilities).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KernelCapabilitiesBuilder {
     pub(crate) add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) drop: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

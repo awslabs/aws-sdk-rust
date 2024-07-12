@@ -62,8 +62,8 @@ impl ConfigureAccessPointInput {
 }
 
 /// A builder for [`ConfigureAccessPointInput`](crate::operation::configure_access_point::ConfigureAccessPointInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ConfigureAccessPointInputBuilder {
     pub(crate) access_point_arn: ::std::option::Option<::std::string::String>,
     pub(crate) position: ::std::option::Option<crate::types::Position>,

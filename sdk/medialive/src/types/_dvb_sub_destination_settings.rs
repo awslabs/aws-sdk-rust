@@ -117,8 +117,8 @@ impl DvbSubDestinationSettings {
 }
 
 /// A builder for [`DvbSubDestinationSettings`](crate::types::DvbSubDestinationSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DvbSubDestinationSettingsBuilder {
     pub(crate) alignment: ::std::option::Option<crate::types::DvbSubDestinationAlignment>,
     pub(crate) background_color: ::std::option::Option<crate::types::DvbSubDestinationBackgroundColor>,

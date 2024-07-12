@@ -32,8 +32,8 @@ impl ListAssociatedRoute53HealthChecksInput {
 }
 
 /// A builder for [`ListAssociatedRoute53HealthChecksInput`](crate::operation::list_associated_route53_health_checks::ListAssociatedRoute53HealthChecksInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAssociatedRoute53HealthChecksInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

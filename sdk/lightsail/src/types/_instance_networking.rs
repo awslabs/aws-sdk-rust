@@ -29,8 +29,8 @@ impl InstanceNetworking {
 }
 
 /// A builder for [`InstanceNetworking`](crate::types::InstanceNetworking).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceNetworkingBuilder {
     pub(crate) monthly_transfer: ::std::option::Option<crate::types::MonthlyTransfer>,
     pub(crate) ports: ::std::option::Option<::std::vec::Vec<crate::types::InstancePortInfo>>,

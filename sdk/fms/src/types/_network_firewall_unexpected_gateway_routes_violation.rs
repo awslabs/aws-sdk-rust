@@ -41,8 +41,8 @@ impl NetworkFirewallUnexpectedGatewayRoutesViolation {
 }
 
 /// A builder for [`NetworkFirewallUnexpectedGatewayRoutesViolation`](crate::types::NetworkFirewallUnexpectedGatewayRoutesViolation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NetworkFirewallUnexpectedGatewayRoutesViolationBuilder {
     pub(crate) gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) violating_routes: ::std::option::Option<::std::vec::Vec<crate::types::Route>>,

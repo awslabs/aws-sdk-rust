@@ -34,8 +34,8 @@ impl GetCommentsForPullRequestOutput {
 }
 
 /// A builder for [`GetCommentsForPullRequestOutput`](crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCommentsForPullRequestOutputBuilder {
     pub(crate) comments_for_pull_request_data: ::std::option::Option<::std::vec::Vec<crate::types::CommentsForPullRequest>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -29,8 +29,8 @@ impl GetEcsServiceRecommendationProjectedMetricsOutput {
 }
 
 /// A builder for [`GetEcsServiceRecommendationProjectedMetricsOutput`](crate::operation::get_ecs_service_recommendation_projected_metrics::GetEcsServiceRecommendationProjectedMetricsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEcsServiceRecommendationProjectedMetricsOutputBuilder {
     pub(crate) recommended_option_projected_metrics: ::std::option::Option<::std::vec::Vec<crate::types::EcsServiceRecommendedOptionProjectedMetric>>,
     _request_id: Option<String>,

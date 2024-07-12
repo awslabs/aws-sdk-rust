@@ -38,8 +38,8 @@ impl GetInstanceTpmEkPubInput {
 }
 
 /// A builder for [`GetInstanceTpmEkPubInput`](crate::operation::get_instance_tpm_ek_pub::GetInstanceTpmEkPubInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetInstanceTpmEkPubInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) key_type: ::std::option::Option<crate::types::EkPubKeyType>,

@@ -33,8 +33,8 @@ impl UpdateBridgeOutputInput {
 }
 
 /// A builder for [`UpdateBridgeOutputInput`](crate::operation::update_bridge_output::UpdateBridgeOutputInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateBridgeOutputInputBuilder {
     pub(crate) bridge_arn: ::std::option::Option<::std::string::String>,
     pub(crate) network_output: ::std::option::Option<crate::types::UpdateBridgeNetworkOutputRequest>,

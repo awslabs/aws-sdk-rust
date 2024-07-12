@@ -23,8 +23,8 @@ impl UsageBasedRateCardItem {
 }
 
 /// A builder for [`UsageBasedRateCardItem`](crate::types::UsageBasedRateCardItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UsageBasedRateCardItemBuilder {
     pub(crate) rate_card: ::std::option::Option<::std::vec::Vec<crate::types::RateCardItem>>,
 }

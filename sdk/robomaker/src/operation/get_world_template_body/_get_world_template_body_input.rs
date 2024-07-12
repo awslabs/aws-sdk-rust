@@ -26,8 +26,8 @@ impl GetWorldTemplateBodyInput {
 }
 
 /// A builder for [`GetWorldTemplateBodyInput`](crate::operation::get_world_template_body::GetWorldTemplateBodyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetWorldTemplateBodyInputBuilder {
     pub(crate) template: ::std::option::Option<::std::string::String>,
     pub(crate) generation_job: ::std::option::Option<::std::string::String>,

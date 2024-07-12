@@ -68,8 +68,8 @@ impl BadRequestException {
 }
 
 /// A builder for [`BadRequestException`](crate::types::error::BadRequestException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BadRequestExceptionBuilder {
     pub(crate) detailed_message: ::std::option::Option<::std::string::String>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,

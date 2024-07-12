@@ -18,8 +18,8 @@ impl SetCognitoEventsOutput {
 }
 
 /// A builder for [`SetCognitoEventsOutput`](crate::operation::set_cognito_events::SetCognitoEventsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetCognitoEventsOutputBuilder {
     _request_id: Option<String>,
 }

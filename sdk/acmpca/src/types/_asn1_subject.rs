@@ -115,8 +115,8 @@ impl Asn1Subject {
 }
 
 /// A builder for [`Asn1Subject`](crate::types::Asn1Subject).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Asn1SubjectBuilder {
     pub(crate) country: ::std::option::Option<::std::string::String>,
     pub(crate) organization: ::std::option::Option<::std::string::String>,

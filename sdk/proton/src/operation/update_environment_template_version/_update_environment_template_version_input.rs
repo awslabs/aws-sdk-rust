@@ -55,8 +55,8 @@ impl UpdateEnvironmentTemplateVersionInput {
 }
 
 /// A builder for [`UpdateEnvironmentTemplateVersionInput`](crate::operation::update_environment_template_version::UpdateEnvironmentTemplateVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateEnvironmentTemplateVersionInputBuilder {
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
     pub(crate) major_version: ::std::option::Option<::std::string::String>,

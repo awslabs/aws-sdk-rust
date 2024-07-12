@@ -33,8 +33,8 @@ impl ErrorHandlingConfig {
 }
 
 /// A builder for [`ErrorHandlingConfig`](crate::types::ErrorHandlingConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ErrorHandlingConfigBuilder {
     pub(crate) fail_on_first_destination_error: ::std::option::Option<bool>,
     pub(crate) bucket_prefix: ::std::option::Option<::std::string::String>,

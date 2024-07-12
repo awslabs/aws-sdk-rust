@@ -105,8 +105,8 @@ impl SearchRecord {
 }
 
 /// A builder for [`SearchRecord`](crate::types::SearchRecord).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchRecordBuilder {
     pub(crate) training_job: ::std::option::Option<crate::types::TrainingJob>,
     pub(crate) experiment: ::std::option::Option<crate::types::Experiment>,

@@ -33,8 +33,8 @@ impl ListDicomImportJobsOutput {
 }
 
 /// A builder for [`ListDicomImportJobsOutput`](crate::operation::list_dicom_import_jobs::ListDicomImportJobsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDicomImportJobsOutputBuilder {
     pub(crate) job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::DicomImportJobSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

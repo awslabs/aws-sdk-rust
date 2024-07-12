@@ -35,8 +35,8 @@ impl ListPlatformApplicationsOutput {
 }
 
 /// A builder for [`ListPlatformApplicationsOutput`](crate::operation::list_platform_applications::ListPlatformApplicationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPlatformApplicationsOutputBuilder {
     pub(crate) platform_applications: ::std::option::Option<::std::vec::Vec<crate::types::PlatformApplication>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

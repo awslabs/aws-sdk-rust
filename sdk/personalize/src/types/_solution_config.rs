@@ -65,8 +65,8 @@ impl SolutionConfig {
 }
 
 /// A builder for [`SolutionConfig`](crate::types::SolutionConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SolutionConfigBuilder {
     pub(crate) event_value_threshold: ::std::option::Option<::std::string::String>,
     pub(crate) hpo_config: ::std::option::Option<crate::types::HpoConfig>,

@@ -33,8 +33,8 @@ impl UnprocessedNamedQueryId {
 }
 
 /// A builder for [`UnprocessedNamedQueryId`](crate::types::UnprocessedNamedQueryId).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UnprocessedNamedQueryIdBuilder {
     pub(crate) named_query_id: ::std::option::Option<::std::string::String>,
     pub(crate) error_code: ::std::option::Option<::std::string::String>,

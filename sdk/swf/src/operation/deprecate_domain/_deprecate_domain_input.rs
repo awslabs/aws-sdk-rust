@@ -20,8 +20,8 @@ impl DeprecateDomainInput {
 }
 
 /// A builder for [`DeprecateDomainInput`](crate::operation::deprecate_domain::DeprecateDomainInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeprecateDomainInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

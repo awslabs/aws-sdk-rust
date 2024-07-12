@@ -11,8 +11,8 @@ impl DeletePolicyInput {
 }
 
 /// A builder for [`DeletePolicyInput`](crate::operation::delete_policy::DeletePolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePolicyInputBuilder {}
 impl DeletePolicyInputBuilder {
     /// Consumes the builder and constructs a [`DeletePolicyInput`](crate::operation::delete_policy::DeletePolicyInput).

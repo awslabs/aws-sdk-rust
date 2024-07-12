@@ -39,8 +39,8 @@ impl NetworkResourceUtilization {
 }
 
 /// A builder for [`NetworkResourceUtilization`](crate::types::NetworkResourceUtilization).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NetworkResourceUtilizationBuilder {
     pub(crate) network_in_bytes_per_second: ::std::option::Option<::std::string::String>,
     pub(crate) network_out_bytes_per_second: ::std::option::Option<::std::string::String>,

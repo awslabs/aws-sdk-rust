@@ -32,8 +32,8 @@ impl UploadEntityDefinitionsInput {
 }
 
 /// A builder for [`UploadEntityDefinitionsInput`](crate::operation::upload_entity_definitions::UploadEntityDefinitionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UploadEntityDefinitionsInputBuilder {
     pub(crate) document: ::std::option::Option<crate::types::DefinitionDocument>,
     pub(crate) sync_with_public_namespace: ::std::option::Option<bool>,

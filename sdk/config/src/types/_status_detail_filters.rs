@@ -69,8 +69,8 @@ impl StatusDetailFilters {
 }
 
 /// A builder for [`StatusDetailFilters`](crate::types::StatusDetailFilters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StatusDetailFiltersBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) member_account_rule_status: ::std::option::Option<crate::types::MemberAccountRuleStatus>,

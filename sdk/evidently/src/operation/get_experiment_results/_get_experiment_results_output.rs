@@ -50,8 +50,8 @@ impl GetExperimentResultsOutput {
 }
 
 /// A builder for [`GetExperimentResultsOutput`](crate::operation::get_experiment_results::GetExperimentResultsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetExperimentResultsOutputBuilder {
     pub(crate) results_data: ::std::option::Option<::std::vec::Vec<crate::types::ExperimentResultsData>>,
     pub(crate) reports: ::std::option::Option<::std::vec::Vec<crate::types::ExperimentReport>>,

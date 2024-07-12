@@ -18,8 +18,8 @@ impl DeletePolicyStoreOutput {
 }
 
 /// A builder for [`DeletePolicyStoreOutput`](crate::operation::delete_policy_store::DeletePolicyStoreOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePolicyStoreOutputBuilder {
     _request_id: Option<String>,
 }

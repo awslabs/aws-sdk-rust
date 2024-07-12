@@ -34,8 +34,8 @@ impl GetCanaryRunsOutput {
 }
 
 /// A builder for [`GetCanaryRunsOutput`](crate::operation::get_canary_runs::GetCanaryRunsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCanaryRunsOutputBuilder {
     pub(crate) canary_runs: ::std::option::Option<::std::vec::Vec<crate::types::CanaryRun>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

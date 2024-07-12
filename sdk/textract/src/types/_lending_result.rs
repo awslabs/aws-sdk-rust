@@ -35,8 +35,8 @@ impl LendingResult {
 }
 
 /// A builder for [`LendingResult`](crate::types::LendingResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LendingResultBuilder {
     pub(crate) page: ::std::option::Option<i32>,
     pub(crate) page_classification: ::std::option::Option<crate::types::PageClassification>,

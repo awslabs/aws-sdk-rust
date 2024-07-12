@@ -21,8 +21,8 @@ impl RefreshStatisticsIdMap {
 }
 
 /// A builder for [`RefreshStatisticsIdMap`](crate::types::RefreshStatisticsIdMap).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RefreshStatisticsIdMapBuilder {
     pub(crate) statistics_id: ::std::option::Option<::std::string::String>,
 }

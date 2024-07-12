@@ -29,8 +29,8 @@ impl SlotTypeValue {
 }
 
 /// A builder for [`SlotTypeValue`](crate::types::SlotTypeValue).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SlotTypeValueBuilder {
     pub(crate) sample_value: ::std::option::Option<crate::types::SampleValue>,
     pub(crate) synonyms: ::std::option::Option<::std::vec::Vec<crate::types::SampleValue>>,

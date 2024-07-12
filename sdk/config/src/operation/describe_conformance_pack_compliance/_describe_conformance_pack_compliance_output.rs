@@ -40,8 +40,8 @@ impl DescribeConformancePackComplianceOutput {
 }
 
 /// A builder for [`DescribeConformancePackComplianceOutput`](crate::operation::describe_conformance_pack_compliance::DescribeConformancePackComplianceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeConformancePackComplianceOutputBuilder {
     pub(crate) conformance_pack_name: ::std::option::Option<::std::string::String>,
     pub(crate) conformance_pack_rule_compliance_list: ::std::option::Option<::std::vec::Vec<crate::types::ConformancePackRuleCompliance>>,

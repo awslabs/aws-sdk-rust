@@ -20,8 +20,8 @@ impl DeleteSimulationInput {
 }
 
 /// A builder for [`DeleteSimulationInput`](crate::operation::delete_simulation::DeleteSimulationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSimulationInputBuilder {
     pub(crate) simulation: ::std::option::Option<::std::string::String>,
 }

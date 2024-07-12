@@ -28,8 +28,8 @@ impl DescribeWorkspaceAssociationsOutput {
 }
 
 /// A builder for [`DescribeWorkspaceAssociationsOutput`](crate::operation::describe_workspace_associations::DescribeWorkspaceAssociationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeWorkspaceAssociationsOutputBuilder {
     pub(crate) associations: ::std::option::Option<::std::vec::Vec<crate::types::WorkspaceResourceAssociation>>,
     _request_id: Option<String>,

@@ -50,8 +50,8 @@ impl DeleteLabelsInput {
 }
 
 /// A builder for [`DeleteLabelsInput`](crate::operation::delete_labels::DeleteLabelsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DeleteLabelsInputBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) authentication_token: ::std::option::Option<::std::string::String>,

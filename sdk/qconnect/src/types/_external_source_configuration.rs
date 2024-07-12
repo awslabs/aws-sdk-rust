@@ -27,8 +27,8 @@ impl ExternalSourceConfiguration {
 }
 
 /// A builder for [`ExternalSourceConfiguration`](crate::types::ExternalSourceConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExternalSourceConfigurationBuilder {
     pub(crate) source: ::std::option::Option<crate::types::ExternalSource>,
     pub(crate) configuration: ::std::option::Option<crate::types::Configuration>,

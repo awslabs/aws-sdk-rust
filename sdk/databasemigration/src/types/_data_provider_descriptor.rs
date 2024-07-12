@@ -39,8 +39,8 @@ impl DataProviderDescriptor {
 }
 
 /// A builder for [`DataProviderDescriptor`](crate::types::DataProviderDescriptor).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataProviderDescriptorBuilder {
     pub(crate) secrets_manager_secret_id: ::std::option::Option<::std::string::String>,
     pub(crate) secrets_manager_access_role_arn: ::std::option::Option<::std::string::String>,

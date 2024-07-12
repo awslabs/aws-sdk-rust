@@ -110,8 +110,8 @@ impl RegisterContainerInstanceInput {
 }
 
 /// A builder for [`RegisterContainerInstanceInput`](crate::operation::register_container_instance::RegisterContainerInstanceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterContainerInstanceInputBuilder {
     pub(crate) cluster: ::std::option::Option<::std::string::String>,
     pub(crate) instance_identity_document: ::std::option::Option<::std::string::String>,

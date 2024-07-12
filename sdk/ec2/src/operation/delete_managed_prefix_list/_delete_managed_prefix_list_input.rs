@@ -26,8 +26,8 @@ impl DeleteManagedPrefixListInput {
 }
 
 /// A builder for [`DeleteManagedPrefixListInput`](crate::operation::delete_managed_prefix_list::DeleteManagedPrefixListInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteManagedPrefixListInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) prefix_list_id: ::std::option::Option<::std::string::String>,

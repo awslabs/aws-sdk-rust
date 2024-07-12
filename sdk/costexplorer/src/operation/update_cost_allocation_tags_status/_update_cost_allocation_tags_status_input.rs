@@ -22,8 +22,8 @@ impl UpdateCostAllocationTagsStatusInput {
 }
 
 /// A builder for [`UpdateCostAllocationTagsStatusInput`](crate::operation::update_cost_allocation_tags_status::UpdateCostAllocationTagsStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateCostAllocationTagsStatusInputBuilder {
     pub(crate) cost_allocation_tags_status: ::std::option::Option<::std::vec::Vec<crate::types::CostAllocationTagStatusEntry>>,
 }

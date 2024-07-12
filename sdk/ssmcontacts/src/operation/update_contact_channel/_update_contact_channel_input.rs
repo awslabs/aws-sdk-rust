@@ -32,8 +32,8 @@ impl UpdateContactChannelInput {
 }
 
 /// A builder for [`UpdateContactChannelInput`](crate::operation::update_contact_channel::UpdateContactChannelInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateContactChannelInputBuilder {
     pub(crate) contact_channel_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

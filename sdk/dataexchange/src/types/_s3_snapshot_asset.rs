@@ -21,8 +21,8 @@ impl S3SnapshotAsset {
 }
 
 /// A builder for [`S3SnapshotAsset`](crate::types::S3SnapshotAsset).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3SnapshotAssetBuilder {
     pub(crate) size: ::std::option::Option<f64>,
 }

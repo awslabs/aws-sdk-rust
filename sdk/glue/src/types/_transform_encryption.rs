@@ -28,8 +28,8 @@ impl TransformEncryption {
 }
 
 /// A builder for [`TransformEncryption`](crate::types::TransformEncryption).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TransformEncryptionBuilder {
     pub(crate) ml_user_data_encryption: ::std::option::Option<crate::types::MlUserDataEncryption>,
     pub(crate) task_run_security_configuration_name: ::std::option::Option<::std::string::String>,

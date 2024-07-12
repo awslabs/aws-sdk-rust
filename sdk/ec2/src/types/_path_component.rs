@@ -139,8 +139,8 @@ impl PathComponent {
 }
 
 /// A builder for [`PathComponent`](crate::types::PathComponent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PathComponentBuilder {
     pub(crate) sequence_number: ::std::option::Option<i32>,
     pub(crate) acl_rule: ::std::option::Option<crate::types::AnalysisAclRule>,

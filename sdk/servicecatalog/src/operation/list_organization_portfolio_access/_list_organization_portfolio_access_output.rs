@@ -34,8 +34,8 @@ impl ListOrganizationPortfolioAccessOutput {
 }
 
 /// A builder for [`ListOrganizationPortfolioAccessOutput`](crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListOrganizationPortfolioAccessOutputBuilder {
     pub(crate) organization_nodes: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationNode>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,

@@ -28,8 +28,8 @@ impl Timer {
 }
 
 /// A builder for [`Timer`](crate::types::Timer).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TimerBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,

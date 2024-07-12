@@ -38,8 +38,8 @@ impl ListLakeFormationOptInsInput {
 }
 
 /// A builder for [`ListLakeFormationOptInsInput`](crate::operation::list_lake_formation_opt_ins::ListLakeFormationOptInsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListLakeFormationOptInsInputBuilder {
     pub(crate) principal: ::std::option::Option<crate::types::DataLakePrincipal>,
     pub(crate) resource: ::std::option::Option<crate::types::Resource>,

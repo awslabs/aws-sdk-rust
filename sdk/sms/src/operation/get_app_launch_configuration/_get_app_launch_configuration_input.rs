@@ -20,8 +20,8 @@ impl GetAppLaunchConfigurationInput {
 }
 
 /// A builder for [`GetAppLaunchConfigurationInput`](crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAppLaunchConfigurationInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
 }

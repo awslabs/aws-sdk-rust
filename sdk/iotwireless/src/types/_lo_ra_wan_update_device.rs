@@ -45,8 +45,8 @@ impl LoRaWanUpdateDevice {
 }
 
 /// A builder for [`LoRaWanUpdateDevice`](crate::types::LoRaWanUpdateDevice).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LoRaWanUpdateDeviceBuilder {
     pub(crate) device_profile_id: ::std::option::Option<::std::string::String>,
     pub(crate) service_profile_id: ::std::option::Option<::std::string::String>,

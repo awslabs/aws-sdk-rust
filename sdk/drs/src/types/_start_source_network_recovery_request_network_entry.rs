@@ -36,8 +36,8 @@ impl StartSourceNetworkRecoveryRequestNetworkEntry {
 }
 
 /// A builder for [`StartSourceNetworkRecoveryRequestNetworkEntry`](crate::types::StartSourceNetworkRecoveryRequestNetworkEntry).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct StartSourceNetworkRecoveryRequestNetworkEntryBuilder {
     pub(crate) source_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) cfn_stack_name: ::std::option::Option<::std::string::String>,

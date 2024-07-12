@@ -44,8 +44,8 @@ impl ListChannelsModeratedByAppInstanceUserOutput {
 }
 
 /// A builder for [`ListChannelsModeratedByAppInstanceUserOutput`](crate::operation::list_channels_moderated_by_app_instance_user::ListChannelsModeratedByAppInstanceUserOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ListChannelsModeratedByAppInstanceUserOutputBuilder {
     pub(crate) channels: ::std::option::Option<::std::vec::Vec<crate::types::ChannelModeratedByAppInstanceUserSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

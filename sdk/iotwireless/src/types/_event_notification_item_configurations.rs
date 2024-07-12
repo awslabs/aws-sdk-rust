@@ -45,8 +45,8 @@ impl EventNotificationItemConfigurations {
 }
 
 /// A builder for [`EventNotificationItemConfigurations`](crate::types::EventNotificationItemConfigurations).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EventNotificationItemConfigurationsBuilder {
     pub(crate) device_registration_state: ::std::option::Option<crate::types::DeviceRegistrationStateEventConfiguration>,
     pub(crate) proximity: ::std::option::Option<crate::types::ProximityEventConfiguration>,

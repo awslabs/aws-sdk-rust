@@ -29,8 +29,8 @@ impl InstanceConfiguration {
 }
 
 /// A builder for [`InstanceConfiguration`](crate::types::InstanceConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceConfigurationBuilder {
     pub(crate) image: ::std::option::Option<::std::string::String>,
     pub(crate) block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>,

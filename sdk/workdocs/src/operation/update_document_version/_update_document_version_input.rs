@@ -48,8 +48,8 @@ impl UpdateDocumentVersionInput {
 }
 
 /// A builder for [`UpdateDocumentVersionInput`](crate::operation::update_document_version::UpdateDocumentVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateDocumentVersionInputBuilder {
     pub(crate) authentication_token: ::std::option::Option<::std::string::String>,
     pub(crate) document_id: ::std::option::Option<::std::string::String>,

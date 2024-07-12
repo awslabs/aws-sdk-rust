@@ -68,8 +68,8 @@ impl WorkflowRunSummary {
 }
 
 /// A builder for [`WorkflowRunSummary`](crate::types::WorkflowRunSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WorkflowRunSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) workflow_id: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl GetConnectInstanceConfigOutput {
 }
 
 /// A builder for [`GetConnectInstanceConfigOutput`](crate::operation::get_connect_instance_config::GetConnectInstanceConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetConnectInstanceConfigOutputBuilder {
     pub(crate) connect_instance_config: ::std::option::Option<crate::types::InstanceConfig>,
     _request_id: Option<String>,

@@ -56,8 +56,8 @@ impl DescribeBillingGroupOutput {
 }
 
 /// A builder for [`DescribeBillingGroupOutput`](crate::operation::describe_billing_group::DescribeBillingGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeBillingGroupOutputBuilder {
     pub(crate) billing_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) billing_group_id: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl CreateEventTrackerInput {
 }
 
 /// A builder for [`CreateEventTrackerInput`](crate::operation::create_event_tracker::CreateEventTrackerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateEventTrackerInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_group_arn: ::std::option::Option<::std::string::String>,

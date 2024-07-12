@@ -34,8 +34,8 @@ impl GetBucketMetricDataOutput {
 }
 
 /// A builder for [`GetBucketMetricDataOutput`](crate::operation::get_bucket_metric_data::GetBucketMetricDataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBucketMetricDataOutputBuilder {
     pub(crate) metric_name: ::std::option::Option<crate::types::BucketMetricName>,
     pub(crate) metric_data: ::std::option::Option<::std::vec::Vec<crate::types::MetricDatapoint>>,

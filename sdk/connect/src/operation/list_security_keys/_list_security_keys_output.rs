@@ -34,8 +34,8 @@ impl ListSecurityKeysOutput {
 }
 
 /// A builder for [`ListSecurityKeysOutput`](crate::operation::list_security_keys::ListSecurityKeysOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSecurityKeysOutputBuilder {
     pub(crate) security_keys: ::std::option::Option<::std::vec::Vec<crate::types::SecurityKey>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -32,8 +32,8 @@ impl GetBucketAnalyticsConfigurationOutput {
 }
 
 /// A builder for [`GetBucketAnalyticsConfigurationOutput`](crate::operation::get_bucket_analytics_configuration::GetBucketAnalyticsConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBucketAnalyticsConfigurationOutputBuilder {
     pub(crate) analytics_configuration: ::std::option::Option<crate::types::AnalyticsConfiguration>,
     _extended_request_id: Option<String>,

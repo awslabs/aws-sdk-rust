@@ -18,8 +18,8 @@ impl AssociateDomainOutput {
 }
 
 /// A builder for [`AssociateDomainOutput`](crate::operation::associate_domain::AssociateDomainOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateDomainOutputBuilder {
     _request_id: Option<String>,
 }

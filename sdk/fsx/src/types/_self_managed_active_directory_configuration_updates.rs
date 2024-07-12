@@ -67,8 +67,8 @@ impl SelfManagedActiveDirectoryConfigurationUpdates {
 }
 
 /// A builder for [`SelfManagedActiveDirectoryConfigurationUpdates`](crate::types::SelfManagedActiveDirectoryConfigurationUpdates).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SelfManagedActiveDirectoryConfigurationUpdatesBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) password: ::std::option::Option<::std::string::String>,

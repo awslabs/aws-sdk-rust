@@ -27,8 +27,8 @@ impl UnmappedAttribute {
 }
 
 /// A builder for [`UnmappedAttribute`](crate::types::UnmappedAttribute).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UnmappedAttributeBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::EntityType>,
     pub(crate) attribute: ::std::option::Option<crate::types::Attribute>,

@@ -41,8 +41,8 @@ impl AbortDocumentVersionUploadInput {
 }
 
 /// A builder for [`AbortDocumentVersionUploadInput`](crate::operation::abort_document_version_upload::AbortDocumentVersionUploadInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AbortDocumentVersionUploadInputBuilder {
     pub(crate) authentication_token: ::std::option::Option<::std::string::String>,
     pub(crate) document_id: ::std::option::Option<::std::string::String>,

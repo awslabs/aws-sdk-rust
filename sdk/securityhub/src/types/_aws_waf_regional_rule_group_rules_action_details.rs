@@ -21,8 +21,8 @@ impl AwsWafRegionalRuleGroupRulesActionDetails {
 }
 
 /// A builder for [`AwsWafRegionalRuleGroupRulesActionDetails`](crate::types::AwsWafRegionalRuleGroupRulesActionDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsWafRegionalRuleGroupRulesActionDetailsBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
 }

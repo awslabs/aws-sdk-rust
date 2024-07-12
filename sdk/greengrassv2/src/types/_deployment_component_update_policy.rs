@@ -44,8 +44,8 @@ impl DeploymentComponentUpdatePolicy {
 }
 
 /// A builder for [`DeploymentComponentUpdatePolicy`](crate::types::DeploymentComponentUpdatePolicy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeploymentComponentUpdatePolicyBuilder {
     pub(crate) timeout_in_seconds: ::std::option::Option<i32>,
     pub(crate) action: ::std::option::Option<crate::types::DeploymentComponentUpdatePolicyAction>,

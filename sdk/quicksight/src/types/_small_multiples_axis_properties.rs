@@ -27,8 +27,8 @@ impl SmallMultiplesAxisProperties {
 }
 
 /// A builder for [`SmallMultiplesAxisProperties`](crate::types::SmallMultiplesAxisProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SmallMultiplesAxisPropertiesBuilder {
     pub(crate) scale: ::std::option::Option<crate::types::SmallMultiplesAxisScale>,
     pub(crate) placement: ::std::option::Option<crate::types::SmallMultiplesAxisPlacement>,

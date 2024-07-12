@@ -18,8 +18,8 @@ impl PutMetadataFlagOutput {
 }
 
 /// A builder for [`PutMetadataFlagOutput`](crate::operation::put_metadata_flag::PutMetadataFlagOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutMetadataFlagOutputBuilder {
     _request_id: Option<String>,
 }

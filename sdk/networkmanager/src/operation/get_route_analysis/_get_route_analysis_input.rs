@@ -26,8 +26,8 @@ impl GetRouteAnalysisInput {
 }
 
 /// A builder for [`GetRouteAnalysisInput`](crate::operation::get_route_analysis::GetRouteAnalysisInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRouteAnalysisInputBuilder {
     pub(crate) global_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) route_analysis_id: ::std::option::Option<::std::string::String>,

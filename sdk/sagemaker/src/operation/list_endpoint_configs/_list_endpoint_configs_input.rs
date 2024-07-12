@@ -56,8 +56,8 @@ impl ListEndpointConfigsInput {
 }
 
 /// A builder for [`ListEndpointConfigsInput`](crate::operation::list_endpoint_configs::ListEndpointConfigsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEndpointConfigsInputBuilder {
     pub(crate) sort_by: ::std::option::Option<crate::types::EndpointConfigSortKey>,
     pub(crate) sort_order: ::std::option::Option<crate::types::OrderKey>,

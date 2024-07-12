@@ -20,8 +20,8 @@ impl AssociateDrtLogBucketInput {
 }
 
 /// A builder for [`AssociateDrtLogBucketInput`](crate::operation::associate_drt_log_bucket::AssociateDrtLogBucketInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateDrtLogBucketInputBuilder {
     pub(crate) log_bucket: ::std::option::Option<::std::string::String>,
 }

@@ -20,8 +20,8 @@ impl GetLoadBalancerTlsCertificatesInput {
 }
 
 /// A builder for [`GetLoadBalancerTlsCertificatesInput`](crate::operation::get_load_balancer_tls_certificates::GetLoadBalancerTlsCertificatesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLoadBalancerTlsCertificatesInputBuilder {
     pub(crate) load_balancer_name: ::std::option::Option<::std::string::String>,
 }

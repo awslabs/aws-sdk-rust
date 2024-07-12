@@ -32,8 +32,8 @@ impl EcsResourceRequirement {
 }
 
 /// A builder for [`EcsResourceRequirement`](crate::types::EcsResourceRequirement).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EcsResourceRequirementBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::EcsResourceRequirementType>,
     pub(crate) value: ::std::option::Option<::std::string::String>,

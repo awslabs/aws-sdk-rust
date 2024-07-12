@@ -48,8 +48,8 @@ impl ReplicateInstanceInput {
 }
 
 /// A builder for [`ReplicateInstanceInput`](crate::operation::replicate_instance::ReplicateInstanceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ReplicateInstanceInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) replica_region: ::std::option::Option<::std::string::String>,

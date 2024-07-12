@@ -39,8 +39,8 @@ impl DeleteMethodResponseInput {
 }
 
 /// A builder for [`DeleteMethodResponseInput`](crate::operation::delete_method_response::DeleteMethodResponseInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteMethodResponseInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,

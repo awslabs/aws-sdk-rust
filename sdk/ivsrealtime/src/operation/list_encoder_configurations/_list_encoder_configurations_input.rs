@@ -26,8 +26,8 @@ impl ListEncoderConfigurationsInput {
 }
 
 /// A builder for [`ListEncoderConfigurationsInput`](crate::operation::list_encoder_configurations::ListEncoderConfigurationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEncoderConfigurationsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

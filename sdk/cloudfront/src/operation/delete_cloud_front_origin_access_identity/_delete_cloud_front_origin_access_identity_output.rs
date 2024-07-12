@@ -18,8 +18,8 @@ impl DeleteCloudFrontOriginAccessIdentityOutput {
 }
 
 /// A builder for [`DeleteCloudFrontOriginAccessIdentityOutput`](crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCloudFrontOriginAccessIdentityOutputBuilder {
     _request_id: Option<String>,
 }

@@ -79,8 +79,8 @@ impl CreateCustomerGatewayInput {
 }
 
 /// A builder for [`CreateCustomerGatewayInput`](crate::operation::create_customer_gateway::CreateCustomerGatewayInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCustomerGatewayInputBuilder {
     pub(crate) bgp_asn: ::std::option::Option<i32>,
     pub(crate) public_ip: ::std::option::Option<::std::string::String>,

@@ -123,8 +123,8 @@ impl WorkflowStep {
 }
 
 /// A builder for [`WorkflowStep`](crate::types::WorkflowStep).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WorkflowStepBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::WorkflowStepType>,
     pub(crate) copy_step_details: ::std::option::Option<crate::types::CopyStepDetails>,

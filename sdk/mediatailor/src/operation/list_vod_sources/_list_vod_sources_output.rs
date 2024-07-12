@@ -34,8 +34,8 @@ impl ListVodSourcesOutput {
 }
 
 /// A builder for [`ListVodSourcesOutput`](crate::operation::list_vod_sources::ListVodSourcesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListVodSourcesOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::VodSource>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

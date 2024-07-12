@@ -20,8 +20,8 @@ impl DeleteAssessmentFrameworkInput {
 }
 
 /// A builder for [`DeleteAssessmentFrameworkInput`](crate::operation::delete_assessment_framework::DeleteAssessmentFrameworkInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAssessmentFrameworkInputBuilder {
     pub(crate) framework_id: ::std::option::Option<::std::string::String>,
 }

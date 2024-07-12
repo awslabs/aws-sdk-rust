@@ -45,8 +45,8 @@ impl ApplicationPolicyStatement {
 }
 
 /// A builder for [`ApplicationPolicyStatement`](crate::types::ApplicationPolicyStatement).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ApplicationPolicyStatementBuilder {
     pub(crate) actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) principal_org_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

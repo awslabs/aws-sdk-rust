@@ -26,8 +26,8 @@ impl CreateMlTransformOutput {
 }
 
 /// A builder for [`CreateMlTransformOutput`](crate::operation::create_ml_transform::CreateMlTransformOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateMlTransformOutputBuilder {
     pub(crate) transform_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

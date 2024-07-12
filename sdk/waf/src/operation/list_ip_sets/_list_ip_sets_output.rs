@@ -34,8 +34,8 @@ impl ListIpSetsOutput {
 }
 
 /// A builder for [`ListIpSetsOutput`](crate::operation::list_ip_sets::ListIpSetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListIpSetsOutputBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     pub(crate) ip_sets: ::std::option::Option<::std::vec::Vec<crate::types::IpSetSummary>>,

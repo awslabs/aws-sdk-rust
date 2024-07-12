@@ -68,8 +68,8 @@ impl CreateProfileInput {
 }
 
 /// A builder for [`CreateProfileInput`](crate::operation::create_profile::CreateProfileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateProfileInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) require_instance_properties: ::std::option::Option<bool>,

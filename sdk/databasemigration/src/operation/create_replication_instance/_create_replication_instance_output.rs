@@ -27,8 +27,8 @@ impl CreateReplicationInstanceOutput {
 }
 
 /// A builder for [`CreateReplicationInstanceOutput`](crate::operation::create_replication_instance::CreateReplicationInstanceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateReplicationInstanceOutputBuilder {
     pub(crate) replication_instance: ::std::option::Option<crate::types::ReplicationInstance>,
     _request_id: Option<String>,

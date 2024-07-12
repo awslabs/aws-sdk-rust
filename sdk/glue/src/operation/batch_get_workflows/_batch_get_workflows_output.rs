@@ -36,8 +36,8 @@ impl BatchGetWorkflowsOutput {
 }
 
 /// A builder for [`BatchGetWorkflowsOutput`](crate::operation::batch_get_workflows::BatchGetWorkflowsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetWorkflowsOutputBuilder {
     pub(crate) workflows: ::std::option::Option<::std::vec::Vec<crate::types::Workflow>>,
     pub(crate) missing_workflows: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

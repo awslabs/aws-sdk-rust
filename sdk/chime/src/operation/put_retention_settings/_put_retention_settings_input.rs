@@ -26,8 +26,8 @@ impl PutRetentionSettingsInput {
 }
 
 /// A builder for [`PutRetentionSettingsInput`](crate::operation::put_retention_settings::PutRetentionSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutRetentionSettingsInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) retention_settings: ::std::option::Option<crate::types::RetentionSettings>,

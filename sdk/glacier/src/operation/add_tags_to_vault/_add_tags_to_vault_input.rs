@@ -38,8 +38,8 @@ impl AddTagsToVaultInput {
 }
 
 /// A builder for [`AddTagsToVaultInput`](crate::operation::add_tags_to_vault::AddTagsToVaultInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddTagsToVaultInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) vault_name: ::std::option::Option<::std::string::String>,

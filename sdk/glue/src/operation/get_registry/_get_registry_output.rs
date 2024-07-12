@@ -56,8 +56,8 @@ impl GetRegistryOutput {
 }
 
 /// A builder for [`GetRegistryOutput`](crate::operation::get_registry::GetRegistryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRegistryOutputBuilder {
     pub(crate) registry_name: ::std::option::Option<::std::string::String>,
     pub(crate) registry_arn: ::std::option::Option<::std::string::String>,

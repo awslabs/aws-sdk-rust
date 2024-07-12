@@ -26,8 +26,8 @@ impl DeleteEnvironmentOutput {
 }
 
 /// A builder for [`DeleteEnvironmentOutput`](crate::operation::delete_environment::DeleteEnvironmentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteEnvironmentOutputBuilder {
     pub(crate) environment: ::std::option::Option<crate::types::Environment>,
     _request_id: Option<String>,

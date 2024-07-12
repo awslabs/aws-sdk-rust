@@ -21,8 +21,8 @@ impl AudioLogDestination {
 }
 
 /// A builder for [`AudioLogDestination`](crate::types::AudioLogDestination).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AudioLogDestinationBuilder {
     pub(crate) s3_bucket: ::std::option::Option<crate::types::S3BucketLogDestination>,
 }

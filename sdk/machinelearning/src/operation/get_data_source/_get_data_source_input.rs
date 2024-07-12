@@ -30,8 +30,8 @@ impl GetDataSourceInput {
 }
 
 /// A builder for [`GetDataSourceInput`](crate::operation::get_data_source::GetDataSourceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDataSourceInputBuilder {
     pub(crate) data_source_id: ::std::option::Option<::std::string::String>,
     pub(crate) verbose: ::std::option::Option<bool>,

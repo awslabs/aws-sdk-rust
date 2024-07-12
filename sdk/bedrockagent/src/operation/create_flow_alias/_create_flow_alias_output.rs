@@ -73,8 +73,8 @@ impl CreateFlowAliasOutput {
 }
 
 /// A builder for [`CreateFlowAliasOutput`](crate::operation::create_flow_alias::CreateFlowAliasOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateFlowAliasOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

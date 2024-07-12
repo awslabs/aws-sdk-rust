@@ -33,8 +33,8 @@ impl ListAgentActionGroupsOutput {
 }
 
 /// A builder for [`ListAgentActionGroupsOutput`](crate::operation::list_agent_action_groups::ListAgentActionGroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAgentActionGroupsOutputBuilder {
     pub(crate) action_group_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ActionGroupSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

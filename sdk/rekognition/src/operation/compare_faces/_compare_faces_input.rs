@@ -44,8 +44,8 @@ impl CompareFacesInput {
 }
 
 /// A builder for [`CompareFacesInput`](crate::operation::compare_faces::CompareFacesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CompareFacesInputBuilder {
     pub(crate) source_image: ::std::option::Option<crate::types::Image>,
     pub(crate) target_image: ::std::option::Option<crate::types::Image>,

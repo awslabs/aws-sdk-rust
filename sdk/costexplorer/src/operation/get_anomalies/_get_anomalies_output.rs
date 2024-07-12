@@ -33,8 +33,8 @@ impl GetAnomaliesOutput {
 }
 
 /// A builder for [`GetAnomaliesOutput`](crate::operation::get_anomalies::GetAnomaliesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAnomaliesOutputBuilder {
     pub(crate) anomalies: ::std::option::Option<::std::vec::Vec<crate::types::Anomaly>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,

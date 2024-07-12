@@ -22,8 +22,8 @@ impl AddressIdentifierFilter {
 }
 
 /// A builder for [`AddressIdentifierFilter`](crate::types::AddressIdentifierFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddressIdentifierFilterBuilder {
     pub(crate) transaction_event_to_address: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

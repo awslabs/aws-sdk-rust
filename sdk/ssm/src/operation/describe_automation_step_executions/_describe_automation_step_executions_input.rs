@@ -46,8 +46,8 @@ impl DescribeAutomationStepExecutionsInput {
 }
 
 /// A builder for [`DescribeAutomationStepExecutionsInput`](crate::operation::describe_automation_step_executions::DescribeAutomationStepExecutionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAutomationStepExecutionsInputBuilder {
     pub(crate) automation_execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::StepExecutionFilter>>,

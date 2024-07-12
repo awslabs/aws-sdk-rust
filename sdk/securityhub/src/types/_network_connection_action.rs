@@ -53,8 +53,8 @@ impl NetworkConnectionAction {
 }
 
 /// A builder for [`NetworkConnectionAction`](crate::types::NetworkConnectionAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NetworkConnectionActionBuilder {
     pub(crate) connection_direction: ::std::option::Option<::std::string::String>,
     pub(crate) remote_ip_details: ::std::option::Option<crate::types::ActionRemoteIpDetails>,

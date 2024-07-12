@@ -27,8 +27,8 @@ impl ActionThreshold {
 }
 
 /// A builder for [`ActionThreshold`](crate::types::ActionThreshold).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ActionThresholdBuilder {
     pub(crate) action_threshold_value: ::std::option::Option<f64>,
     pub(crate) action_threshold_type: ::std::option::Option<crate::types::ThresholdType>,

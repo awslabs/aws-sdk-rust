@@ -35,8 +35,8 @@ impl GrammarSlotTypeSource {
 }
 
 /// A builder for [`GrammarSlotTypeSource`](crate::types::GrammarSlotTypeSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GrammarSlotTypeSourceBuilder {
     pub(crate) s3_bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) s3_object_key: ::std::option::Option<::std::string::String>,

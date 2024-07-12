@@ -45,8 +45,8 @@ impl TransferData {
 }
 
 /// A builder for [`TransferData`](crate::types::TransferData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TransferDataBuilder {
     pub(crate) transfer_message: ::std::option::Option<::std::string::String>,
     pub(crate) reject_reason: ::std::option::Option<::std::string::String>,

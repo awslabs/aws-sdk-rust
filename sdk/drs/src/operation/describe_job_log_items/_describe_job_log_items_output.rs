@@ -34,8 +34,8 @@ impl DescribeJobLogItemsOutput {
 }
 
 /// A builder for [`DescribeJobLogItemsOutput`](crate::operation::describe_job_log_items::DescribeJobLogItemsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeJobLogItemsOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::JobLog>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

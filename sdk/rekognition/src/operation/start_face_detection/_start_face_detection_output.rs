@@ -26,8 +26,8 @@ impl StartFaceDetectionOutput {
 }
 
 /// A builder for [`StartFaceDetectionOutput`](crate::operation::start_face_detection::StartFaceDetectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartFaceDetectionOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

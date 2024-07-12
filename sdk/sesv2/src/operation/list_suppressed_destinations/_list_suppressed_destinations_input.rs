@@ -47,8 +47,8 @@ impl ListSuppressedDestinationsInput {
 }
 
 /// A builder for [`ListSuppressedDestinationsInput`](crate::operation::list_suppressed_destinations::ListSuppressedDestinationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSuppressedDestinationsInputBuilder {
     pub(crate) reasons: ::std::option::Option<::std::vec::Vec<crate::types::SuppressionListReason>>,
     pub(crate) start_date: ::std::option::Option<::aws_smithy_types::DateTime>,

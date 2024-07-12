@@ -35,8 +35,8 @@ impl PrivateKeyAttributesV2 {
 }
 
 /// A builder for [`PrivateKeyAttributesV2`](crate::types::PrivateKeyAttributesV2).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PrivateKeyAttributesV2Builder {
     pub(crate) minimal_key_length: ::std::option::Option<i32>,
     pub(crate) key_spec: ::std::option::Option<crate::types::KeySpec>,

@@ -39,8 +39,8 @@ impl StepStatus {
 }
 
 /// A builder for [`StepStatus`](crate::types::StepStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StepStatusBuilder {
     pub(crate) state: ::std::option::Option<crate::types::StepState>,
     pub(crate) state_change_reason: ::std::option::Option<crate::types::StepStateChangeReason>,

@@ -26,8 +26,8 @@ impl TestFunctionOutput {
 }
 
 /// A builder for [`TestFunctionOutput`](crate::operation::test_function::TestFunctionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TestFunctionOutputBuilder {
     pub(crate) test_result: ::std::option::Option<crate::types::TestResult>,
     _request_id: Option<String>,

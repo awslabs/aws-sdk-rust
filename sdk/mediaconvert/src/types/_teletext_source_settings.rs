@@ -21,8 +21,8 @@ impl TeletextSourceSettings {
 }
 
 /// A builder for [`TeletextSourceSettings`](crate::types::TeletextSourceSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TeletextSourceSettingsBuilder {
     pub(crate) page_number: ::std::option::Option<::std::string::String>,
 }

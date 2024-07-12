@@ -20,8 +20,8 @@ impl NotifyProvisionProductEngineWorkflowResultOutput {
 }
 
 /// A builder for [`NotifyProvisionProductEngineWorkflowResultOutput`](crate::operation::notify_provision_product_engine_workflow_result::NotifyProvisionProductEngineWorkflowResultOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NotifyProvisionProductEngineWorkflowResultOutputBuilder {
     _request_id: Option<String>,
 }

@@ -18,8 +18,8 @@ impl PutOutcomeOutput {
 }
 
 /// A builder for [`PutOutcomeOutput`](crate::operation::put_outcome::PutOutcomeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutOutcomeOutputBuilder {
     _request_id: Option<String>,
 }

@@ -28,8 +28,8 @@ impl CreateInternetGatewayInput {
 }
 
 /// A builder for [`CreateInternetGatewayInput`](crate::operation::create_internet_gateway::CreateInternetGatewayInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateInternetGatewayInputBuilder {
     pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) dry_run: ::std::option::Option<bool>,

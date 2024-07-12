@@ -26,8 +26,8 @@ impl ListRetainedMessagesInput {
 }
 
 /// A builder for [`ListRetainedMessagesInput`](crate::operation::list_retained_messages::ListRetainedMessagesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRetainedMessagesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

@@ -27,8 +27,8 @@ impl AcceleratorTotalMemoryMiBRange {
 }
 
 /// A builder for [`AcceleratorTotalMemoryMiBRange`](crate::types::AcceleratorTotalMemoryMiBRange).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AcceleratorTotalMemoryMiBRangeBuilder {
     pub(crate) min: ::std::option::Option<i32>,
     pub(crate) max: ::std::option::Option<i32>,

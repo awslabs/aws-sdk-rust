@@ -20,8 +20,8 @@ impl StopTextTranslationJobInput {
 }
 
 /// A builder for [`StopTextTranslationJobInput`](crate::operation::stop_text_translation_job::StopTextTranslationJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopTextTranslationJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }

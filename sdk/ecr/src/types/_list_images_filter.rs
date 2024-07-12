@@ -21,8 +21,8 @@ impl ListImagesFilter {
 }
 
 /// A builder for [`ListImagesFilter`](crate::types::ListImagesFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListImagesFilterBuilder {
     pub(crate) tag_status: ::std::option::Option<crate::types::TagStatus>,
 }

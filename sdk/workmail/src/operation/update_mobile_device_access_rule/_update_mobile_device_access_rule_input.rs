@@ -108,8 +108,8 @@ impl UpdateMobileDeviceAccessRuleInput {
 }
 
 /// A builder for [`UpdateMobileDeviceAccessRuleInput`](crate::operation::update_mobile_device_access_rule::UpdateMobileDeviceAccessRuleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateMobileDeviceAccessRuleInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) mobile_device_access_rule_id: ::std::option::Option<::std::string::String>,

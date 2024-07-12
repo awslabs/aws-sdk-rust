@@ -44,8 +44,8 @@ impl UpdateReviewTemplateAnswerOutput {
 }
 
 /// A builder for [`UpdateReviewTemplateAnswerOutput`](crate::operation::update_review_template_answer::UpdateReviewTemplateAnswerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateReviewTemplateAnswerOutputBuilder {
     pub(crate) template_arn: ::std::option::Option<::std::string::String>,
     pub(crate) lens_alias: ::std::option::Option<::std::string::String>,

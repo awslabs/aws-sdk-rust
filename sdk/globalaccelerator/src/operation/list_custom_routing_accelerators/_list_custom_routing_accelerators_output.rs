@@ -34,8 +34,8 @@ impl ListCustomRoutingAcceleratorsOutput {
 }
 
 /// A builder for [`ListCustomRoutingAcceleratorsOutput`](crate::operation::list_custom_routing_accelerators::ListCustomRoutingAcceleratorsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCustomRoutingAcceleratorsOutputBuilder {
     pub(crate) accelerators: ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingAccelerator>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -28,8 +28,8 @@ impl DetachStaticIpOutput {
 }
 
 /// A builder for [`DetachStaticIpOutput`](crate::operation::detach_static_ip::DetachStaticIpOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetachStaticIpOutputBuilder {
     pub(crate) operations: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>,
     _request_id: Option<String>,

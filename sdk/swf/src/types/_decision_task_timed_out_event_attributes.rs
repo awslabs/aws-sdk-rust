@@ -33,8 +33,8 @@ impl DecisionTaskTimedOutEventAttributes {
 }
 
 /// A builder for [`DecisionTaskTimedOutEventAttributes`](crate::types::DecisionTaskTimedOutEventAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DecisionTaskTimedOutEventAttributesBuilder {
     pub(crate) timeout_type: ::std::option::Option<crate::types::DecisionTaskTimeoutType>,
     pub(crate) scheduled_event_id: ::std::option::Option<i64>,

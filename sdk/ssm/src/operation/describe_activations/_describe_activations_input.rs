@@ -34,8 +34,8 @@ impl DescribeActivationsInput {
 }
 
 /// A builder for [`DescribeActivationsInput`](crate::operation::describe_activations::DescribeActivationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeActivationsInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::DescribeActivationsFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,

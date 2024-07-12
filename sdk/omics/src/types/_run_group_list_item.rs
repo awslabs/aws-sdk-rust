@@ -63,8 +63,8 @@ impl RunGroupListItem {
 }
 
 /// A builder for [`RunGroupListItem`](crate::types::RunGroupListItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RunGroupListItemBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,

@@ -21,8 +21,8 @@ impl GetJobDetailsInput {
 }
 
 /// A builder for [`GetJobDetailsInput`](crate::operation::get_job_details::GetJobDetailsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetJobDetailsInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }

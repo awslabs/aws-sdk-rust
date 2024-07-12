@@ -27,8 +27,8 @@ impl MetricsConfiguration {
 }
 
 /// A builder for [`MetricsConfiguration`](crate::types::MetricsConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MetricsConfigurationBuilder {
     pub(crate) cloud_metric_enabled: ::std::option::Option<bool>,
     pub(crate) metric_rule_role_arn: ::std::option::Option<::std::string::String>,

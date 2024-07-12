@@ -32,8 +32,8 @@ impl DeleteTopicRefreshScheduleInput {
 }
 
 /// A builder for [`DeleteTopicRefreshScheduleInput`](crate::operation::delete_topic_refresh_schedule::DeleteTopicRefreshScheduleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTopicRefreshScheduleInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) topic_id: ::std::option::Option<::std::string::String>,

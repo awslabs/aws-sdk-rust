@@ -27,8 +27,8 @@ impl LogoutInput {
 }
 
 /// A builder for [`LogoutInput`](crate::operation::logout::LogoutInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct LogoutInputBuilder {
     pub(crate) access_token: ::std::option::Option<::std::string::String>,
 }

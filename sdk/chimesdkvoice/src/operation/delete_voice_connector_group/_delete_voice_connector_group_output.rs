@@ -18,8 +18,8 @@ impl DeleteVoiceConnectorGroupOutput {
 }
 
 /// A builder for [`DeleteVoiceConnectorGroupOutput`](crate::operation::delete_voice_connector_group::DeleteVoiceConnectorGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVoiceConnectorGroupOutputBuilder {
     _request_id: Option<String>,
 }

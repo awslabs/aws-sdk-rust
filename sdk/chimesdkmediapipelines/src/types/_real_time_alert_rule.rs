@@ -39,8 +39,8 @@ impl RealTimeAlertRule {
 }
 
 /// A builder for [`RealTimeAlertRule`](crate::types::RealTimeAlertRule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RealTimeAlertRuleBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::RealTimeAlertRuleType>,
     pub(crate) keyword_match_configuration: ::std::option::Option<crate::types::KeywordMatchConfiguration>,

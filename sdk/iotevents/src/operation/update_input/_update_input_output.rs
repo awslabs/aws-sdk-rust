@@ -26,8 +26,8 @@ impl UpdateInputOutput {
 }
 
 /// A builder for [`UpdateInputOutput`](crate::operation::update_input::UpdateInputOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateInputOutputBuilder {
     pub(crate) input_configuration: ::std::option::Option<crate::types::InputConfiguration>,
     _request_id: Option<String>,

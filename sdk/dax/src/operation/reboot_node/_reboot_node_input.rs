@@ -26,8 +26,8 @@ impl RebootNodeInput {
 }
 
 /// A builder for [`RebootNodeInput`](crate::operation::reboot_node::RebootNodeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RebootNodeInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) node_id: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl DisassociateDelegationSignerFromDomainOutput {
 }
 
 /// A builder for [`DisassociateDelegationSignerFromDomainOutput`](crate::operation::disassociate_delegation_signer_from_domain::DisassociateDelegationSignerFromDomainOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateDelegationSignerFromDomainOutputBuilder {
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

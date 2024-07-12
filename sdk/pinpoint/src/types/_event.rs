@@ -75,8 +75,8 @@ impl Event {
 }
 
 /// A builder for [`Event`](crate::types::Event).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EventBuilder {
     pub(crate) app_package_name: ::std::option::Option<::std::string::String>,
     pub(crate) app_title: ::std::option::Option<::std::string::String>,

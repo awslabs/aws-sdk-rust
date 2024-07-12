@@ -27,8 +27,8 @@ impl AddNotificationChannelsOutput {
 }
 
 /// A builder for [`AddNotificationChannelsOutput`](crate::operation::add_notification_channels::AddNotificationChannelsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddNotificationChannelsOutputBuilder {
     pub(crate) notification_configuration: ::std::option::Option<crate::types::NotificationConfiguration>,
     _request_id: Option<String>,

@@ -23,8 +23,8 @@ impl Schema {
 }
 
 /// A builder for [`Schema`](crate::types::Schema).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SchemaBuilder {
     pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::SchemaAttribute>>,
 }

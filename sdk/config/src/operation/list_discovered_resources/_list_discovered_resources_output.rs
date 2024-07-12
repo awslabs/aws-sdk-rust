@@ -35,8 +35,8 @@ impl ListDiscoveredResourcesOutput {
 }
 
 /// A builder for [`ListDiscoveredResourcesOutput`](crate::operation::list_discovered_resources::ListDiscoveredResourcesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDiscoveredResourcesOutputBuilder {
     pub(crate) resource_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::ResourceIdentifier>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

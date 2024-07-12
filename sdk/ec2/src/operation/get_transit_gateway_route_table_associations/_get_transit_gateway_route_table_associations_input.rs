@@ -63,8 +63,8 @@ impl GetTransitGatewayRouteTableAssociationsInput {
 }
 
 /// A builder for [`GetTransitGatewayRouteTableAssociationsInput`](crate::operation::get_transit_gateway_route_table_associations::GetTransitGatewayRouteTableAssociationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTransitGatewayRouteTableAssociationsInputBuilder {
     pub(crate) transit_gateway_route_table_id: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,

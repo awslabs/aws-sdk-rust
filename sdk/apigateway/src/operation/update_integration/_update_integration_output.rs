@@ -121,8 +121,8 @@ impl UpdateIntegrationOutput {
 }
 
 /// A builder for [`UpdateIntegrationOutput`](crate::operation::update_integration::UpdateIntegrationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateIntegrationOutputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::IntegrationType>,
     pub(crate) http_method: ::std::option::Option<::std::string::String>,

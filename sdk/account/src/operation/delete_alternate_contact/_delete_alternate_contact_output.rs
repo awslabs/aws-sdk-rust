@@ -18,8 +18,8 @@ impl DeleteAlternateContactOutput {
 }
 
 /// A builder for [`DeleteAlternateContactOutput`](crate::operation::delete_alternate_contact::DeleteAlternateContactOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAlternateContactOutputBuilder {
     _request_id: Option<String>,
 }

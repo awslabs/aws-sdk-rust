@@ -26,8 +26,8 @@ impl StartModelOutput {
 }
 
 /// A builder for [`StartModelOutput`](crate::operation::start_model::StartModelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartModelOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ModelHostingStatus>,
     _request_id: Option<String>,

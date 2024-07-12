@@ -51,8 +51,8 @@ impl AutoMlJobConfig {
 }
 
 /// A builder for [`AutoMlJobConfig`](crate::types::AutoMlJobConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AutoMlJobConfigBuilder {
     pub(crate) completion_criteria: ::std::option::Option<crate::types::AutoMlJobCompletionCriteria>,
     pub(crate) security_config: ::std::option::Option<crate::types::AutoMlSecurityConfig>,

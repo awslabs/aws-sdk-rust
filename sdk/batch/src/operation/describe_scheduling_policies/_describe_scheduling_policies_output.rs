@@ -28,8 +28,8 @@ impl DescribeSchedulingPoliciesOutput {
 }
 
 /// A builder for [`DescribeSchedulingPoliciesOutput`](crate::operation::describe_scheduling_policies::DescribeSchedulingPoliciesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSchedulingPoliciesOutputBuilder {
     pub(crate) scheduling_policies: ::std::option::Option<::std::vec::Vec<crate::types::SchedulingPolicyDetail>>,
     _request_id: Option<String>,

@@ -39,8 +39,8 @@ impl RenderingConfiguration {
 }
 
 /// A builder for [`RenderingConfiguration`](crate::types::RenderingConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RenderingConfigurationBuilder {
     pub(crate) template_uri: ::std::option::Option<::std::string::String>,
 }

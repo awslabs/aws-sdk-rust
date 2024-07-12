@@ -118,8 +118,8 @@ impl EnvironmentSummary {
 }
 
 /// A builder for [`EnvironmentSummary`](crate::types::EnvironmentSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct EnvironmentSummaryBuilder {
     pub(crate) project_id: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl EncryptionMethod {
 }
 
 /// A builder for [`EncryptionMethod`](crate::types::EncryptionMethod).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EncryptionMethodBuilder {
     pub(crate) ts_encryption_method: ::std::option::Option<crate::types::TsEncryptionMethod>,
     pub(crate) cmaf_encryption_method: ::std::option::Option<crate::types::CmafEncryptionMethod>,

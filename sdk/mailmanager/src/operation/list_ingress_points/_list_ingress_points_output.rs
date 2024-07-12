@@ -34,8 +34,8 @@ impl ListIngressPointsOutput {
 }
 
 /// A builder for [`ListIngressPointsOutput`](crate::operation::list_ingress_points::ListIngressPointsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListIngressPointsOutputBuilder {
     pub(crate) ingress_points: ::std::option::Option<::std::vec::Vec<crate::types::IngressPoint>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

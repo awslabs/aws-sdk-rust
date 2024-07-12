@@ -36,8 +36,8 @@ impl MultiRegionConfiguration {
 }
 
 /// A builder for [`MultiRegionConfiguration`](crate::types::MultiRegionConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MultiRegionConfigurationBuilder {
     pub(crate) multi_region_key_type: ::std::option::Option<crate::types::MultiRegionKeyType>,
     pub(crate) primary_key: ::std::option::Option<crate::types::MultiRegionKey>,

@@ -27,8 +27,8 @@ impl LifecycleExecutionResourceAction {
 }
 
 /// A builder for [`LifecycleExecutionResourceAction`](crate::types::LifecycleExecutionResourceAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LifecycleExecutionResourceActionBuilder {
     pub(crate) name: ::std::option::Option<crate::types::LifecycleExecutionResourceActionName>,
     pub(crate) reason: ::std::option::Option<::std::string::String>,

@@ -18,8 +18,8 @@ impl DeregisterAdminOutput {
 }
 
 /// A builder for [`DeregisterAdminOutput`](crate::operation::deregister_admin::DeregisterAdminOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeregisterAdminOutputBuilder {
     _request_id: Option<String>,
 }

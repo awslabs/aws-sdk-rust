@@ -26,8 +26,8 @@ impl GetReferenceImportJobInput {
 }
 
 /// A builder for [`GetReferenceImportJobInput`](crate::operation::get_reference_import_job::GetReferenceImportJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetReferenceImportJobInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) reference_store_id: ::std::option::Option<::std::string::String>,

@@ -20,8 +20,8 @@ impl GetJobTemplateInput {
 }
 
 /// A builder for [`GetJobTemplateInput`](crate::operation::get_job_template::GetJobTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetJobTemplateInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

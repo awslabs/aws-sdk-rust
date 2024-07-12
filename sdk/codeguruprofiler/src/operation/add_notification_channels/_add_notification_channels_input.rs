@@ -29,8 +29,8 @@ impl AddNotificationChannelsInput {
 }
 
 /// A builder for [`AddNotificationChannelsInput`](crate::operation::add_notification_channels::AddNotificationChannelsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddNotificationChannelsInputBuilder {
     pub(crate) profiling_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) channels: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>,

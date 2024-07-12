@@ -26,8 +26,8 @@ impl UpdateUserHierarchyStructureInput {
 }
 
 /// A builder for [`UpdateUserHierarchyStructureInput`](crate::operation::update_user_hierarchy_structure::UpdateUserHierarchyStructureInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateUserHierarchyStructureInputBuilder {
     pub(crate) hierarchy_structure: ::std::option::Option<crate::types::HierarchyStructureUpdate>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,

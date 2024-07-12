@@ -41,8 +41,8 @@ impl CreateMilestoneInput {
 }
 
 /// A builder for [`CreateMilestoneInput`](crate::operation::create_milestone::CreateMilestoneInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateMilestoneInputBuilder {
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,
     pub(crate) milestone_name: ::std::option::Option<::std::string::String>,

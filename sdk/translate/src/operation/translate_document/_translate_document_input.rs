@@ -72,8 +72,8 @@ impl TranslateDocumentInput {
 }
 
 /// A builder for [`TranslateDocumentInput`](crate::operation::translate_document::TranslateDocumentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TranslateDocumentInputBuilder {
     pub(crate) document: ::std::option::Option<crate::types::Document>,
     pub(crate) terminology_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

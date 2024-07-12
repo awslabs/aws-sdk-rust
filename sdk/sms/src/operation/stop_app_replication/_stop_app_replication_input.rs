@@ -20,8 +20,8 @@ impl StopAppReplicationInput {
 }
 
 /// A builder for [`StopAppReplicationInput`](crate::operation::stop_app_replication::StopAppReplicationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopAppReplicationInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
 }

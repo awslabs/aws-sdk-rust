@@ -26,8 +26,8 @@ impl SuspendGameServerGroupOutput {
 }
 
 /// A builder for [`SuspendGameServerGroupOutput`](crate::operation::suspend_game_server_group::SuspendGameServerGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SuspendGameServerGroupOutputBuilder {
     pub(crate) game_server_group: ::std::option::Option<crate::types::GameServerGroup>,
     _request_id: Option<String>,

@@ -35,8 +35,8 @@ impl ForgetDeviceInput {
 }
 
 /// A builder for [`ForgetDeviceInput`](crate::operation::forget_device::ForgetDeviceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ForgetDeviceInputBuilder {
     pub(crate) access_token: ::std::option::Option<::std::string::String>,
     pub(crate) device_key: ::std::option::Option<::std::string::String>,

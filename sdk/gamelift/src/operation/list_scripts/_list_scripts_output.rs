@@ -34,8 +34,8 @@ impl ListScriptsOutput {
 }
 
 /// A builder for [`ListScriptsOutput`](crate::operation::list_scripts::ListScriptsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListScriptsOutputBuilder {
     pub(crate) scripts: ::std::option::Option<::std::vec::Vec<crate::types::Script>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

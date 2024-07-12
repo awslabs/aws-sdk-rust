@@ -18,8 +18,8 @@ impl AssociateAccessGrantsIdentityCenterOutput {
 }
 
 /// A builder for [`AssociateAccessGrantsIdentityCenterOutput`](crate::operation::associate_access_grants_identity_center::AssociateAccessGrantsIdentityCenterOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateAccessGrantsIdentityCenterOutputBuilder {
     _request_id: Option<String>,
 }

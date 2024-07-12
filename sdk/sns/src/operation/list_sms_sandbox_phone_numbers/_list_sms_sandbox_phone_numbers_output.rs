@@ -33,8 +33,8 @@ impl ListSmsSandboxPhoneNumbersOutput {
 }
 
 /// A builder for [`ListSmsSandboxPhoneNumbersOutput`](crate::operation::list_sms_sandbox_phone_numbers::ListSmsSandboxPhoneNumbersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSmsSandboxPhoneNumbersOutputBuilder {
     pub(crate) phone_numbers: ::std::option::Option<::std::vec::Vec<crate::types::SmsSandboxPhoneNumber>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -55,8 +55,8 @@ impl GeoRestriction {
 }
 
 /// A builder for [`GeoRestriction`](crate::types::GeoRestriction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GeoRestrictionBuilder {
     pub(crate) restriction_type: ::std::option::Option<crate::types::GeoRestrictionType>,
     pub(crate) quantity: ::std::option::Option<i32>,

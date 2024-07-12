@@ -26,8 +26,8 @@ impl CreateCollaborationOutput {
 }
 
 /// A builder for [`CreateCollaborationOutput`](crate::operation::create_collaboration::CreateCollaborationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCollaborationOutputBuilder {
     pub(crate) collaboration: ::std::option::Option<crate::types::Collaboration>,
     _request_id: Option<String>,

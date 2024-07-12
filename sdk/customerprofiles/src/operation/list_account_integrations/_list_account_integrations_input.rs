@@ -38,8 +38,8 @@ impl ListAccountIntegrationsInput {
 }
 
 /// A builder for [`ListAccountIntegrationsInput`](crate::operation::list_account_integrations::ListAccountIntegrationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAccountIntegrationsInputBuilder {
     pub(crate) uri: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

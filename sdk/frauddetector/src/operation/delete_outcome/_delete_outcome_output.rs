@@ -18,8 +18,8 @@ impl DeleteOutcomeOutput {
 }
 
 /// A builder for [`DeleteOutcomeOutput`](crate::operation::delete_outcome::DeleteOutcomeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteOutcomeOutputBuilder {
     _request_id: Option<String>,
 }

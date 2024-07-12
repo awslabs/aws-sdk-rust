@@ -22,8 +22,8 @@ impl BatchUpdateAutomatedDiscoveryAccountsInput {
 }
 
 /// A builder for [`BatchUpdateAutomatedDiscoveryAccountsInput`](crate::operation::batch_update_automated_discovery_accounts::BatchUpdateAutomatedDiscoveryAccountsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchUpdateAutomatedDiscoveryAccountsInputBuilder {
     pub(crate) accounts: ::std::option::Option<::std::vec::Vec<crate::types::AutomatedDiscoveryAccountUpdate>>,
 }

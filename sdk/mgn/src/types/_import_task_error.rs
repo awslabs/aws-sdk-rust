@@ -33,8 +33,8 @@ impl ImportTaskError {
 }
 
 /// A builder for [`ImportTaskError`](crate::types::ImportTaskError).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportTaskErrorBuilder {
     pub(crate) error_date_time: ::std::option::Option<::std::string::String>,
     pub(crate) error_type: ::std::option::Option<crate::types::ImportErrorType>,

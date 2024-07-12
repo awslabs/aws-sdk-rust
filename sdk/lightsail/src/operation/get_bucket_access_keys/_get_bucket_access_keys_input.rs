@@ -20,8 +20,8 @@ impl GetBucketAccessKeysInput {
 }
 
 /// A builder for [`GetBucketAccessKeysInput`](crate::operation::get_bucket_access_keys::GetBucketAccessKeysInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBucketAccessKeysInputBuilder {
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
 }

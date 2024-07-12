@@ -27,8 +27,8 @@ impl VideoArtifactsConfiguration {
 }
 
 /// A builder for [`VideoArtifactsConfiguration`](crate::types::VideoArtifactsConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VideoArtifactsConfigurationBuilder {
     pub(crate) state: ::std::option::Option<crate::types::ArtifactsState>,
     pub(crate) mux_type: ::std::option::Option<crate::types::VideoMuxType>,

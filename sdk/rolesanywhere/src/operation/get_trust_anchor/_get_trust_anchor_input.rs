@@ -20,8 +20,8 @@ impl GetTrustAnchorInput {
 }
 
 /// A builder for [`GetTrustAnchorInput`](crate::operation::get_trust_anchor::GetTrustAnchorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTrustAnchorInputBuilder {
     pub(crate) trust_anchor_id: ::std::option::Option<::std::string::String>,
 }

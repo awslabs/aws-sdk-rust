@@ -33,8 +33,8 @@ impl PathOptions {
 }
 
 /// A builder for [`PathOptions`](crate::types::PathOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PathOptionsBuilder {
     pub(crate) last_modified_date_condition: ::std::option::Option<crate::types::FilterExpression>,
     pub(crate) files_limit: ::std::option::Option<crate::types::FilesLimit>,

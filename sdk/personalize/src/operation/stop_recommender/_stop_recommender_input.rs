@@ -20,8 +20,8 @@ impl StopRecommenderInput {
 }
 
 /// A builder for [`StopRecommenderInput`](crate::operation::stop_recommender::StopRecommenderInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopRecommenderInputBuilder {
     pub(crate) recommender_arn: ::std::option::Option<::std::string::String>,
 }

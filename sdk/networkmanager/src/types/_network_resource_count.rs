@@ -27,8 +27,8 @@ impl NetworkResourceCount {
 }
 
 /// A builder for [`NetworkResourceCount`](crate::types::NetworkResourceCount).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NetworkResourceCountBuilder {
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
     pub(crate) count: ::std::option::Option<i32>,

@@ -38,8 +38,8 @@ impl ImportComponentOutput {
 }
 
 /// A builder for [`ImportComponentOutput`](crate::operation::import_component::ImportComponentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportComponentOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

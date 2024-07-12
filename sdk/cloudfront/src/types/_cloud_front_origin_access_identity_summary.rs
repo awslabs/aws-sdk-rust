@@ -36,8 +36,8 @@ impl CloudFrontOriginAccessIdentitySummary {
 }
 
 /// A builder for [`CloudFrontOriginAccessIdentitySummary`](crate::types::CloudFrontOriginAccessIdentitySummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CloudFrontOriginAccessIdentitySummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) s3_canonical_user_id: ::std::option::Option<::std::string::String>,

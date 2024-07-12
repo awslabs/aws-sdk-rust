@@ -45,8 +45,8 @@ impl NamedEntityDefinition {
 }
 
 /// A builder for [`NamedEntityDefinition`](crate::types::NamedEntityDefinition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NamedEntityDefinitionBuilder {
     pub(crate) field_name: ::std::option::Option<::std::string::String>,
     pub(crate) property_name: ::std::option::Option<::std::string::String>,

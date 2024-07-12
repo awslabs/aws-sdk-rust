@@ -90,8 +90,8 @@ impl UpdateCalculatedAttributeDefinitionOutput {
 }
 
 /// A builder for [`UpdateCalculatedAttributeDefinitionOutput`](crate::operation::update_calculated_attribute_definition::UpdateCalculatedAttributeDefinitionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateCalculatedAttributeDefinitionOutputBuilder {
     pub(crate) calculated_attribute_name: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,

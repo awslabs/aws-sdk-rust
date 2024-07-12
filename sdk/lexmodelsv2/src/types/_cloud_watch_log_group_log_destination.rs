@@ -29,8 +29,8 @@ impl CloudWatchLogGroupLogDestination {
 }
 
 /// A builder for [`CloudWatchLogGroupLogDestination`](crate::types::CloudWatchLogGroupLogDestination).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CloudWatchLogGroupLogDestinationBuilder {
     pub(crate) cloud_watch_log_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) log_prefix: ::std::option::Option<::std::string::String>,

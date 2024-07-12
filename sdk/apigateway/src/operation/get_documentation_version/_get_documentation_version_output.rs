@@ -39,8 +39,8 @@ impl GetDocumentationVersionOutput {
 }
 
 /// A builder for [`GetDocumentationVersionOutput`](crate::operation::get_documentation_version::GetDocumentationVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDocumentationVersionOutputBuilder {
     pub(crate) version: ::std::option::Option<::std::string::String>,
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,

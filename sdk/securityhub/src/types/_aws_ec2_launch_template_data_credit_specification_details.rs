@@ -21,8 +21,8 @@ impl AwsEc2LaunchTemplateDataCreditSpecificationDetails {
 }
 
 /// A builder for [`AwsEc2LaunchTemplateDataCreditSpecificationDetails`](crate::types::AwsEc2LaunchTemplateDataCreditSpecificationDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEc2LaunchTemplateDataCreditSpecificationDetailsBuilder {
     pub(crate) cpu_credits: ::std::option::Option<::std::string::String>,
 }

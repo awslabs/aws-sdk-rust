@@ -35,8 +35,8 @@ impl Association {
 }
 
 /// A builder for [`Association`](crate::types::Association).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociationBuilder {
     pub(crate) custom_domain_certificate_arn: ::std::option::Option<::std::string::String>,
     pub(crate) custom_domain_certificate_expiry_date: ::std::option::Option<::aws_smithy_types::DateTime>,

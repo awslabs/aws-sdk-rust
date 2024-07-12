@@ -27,8 +27,8 @@ impl GetDeploymentConfigOutput {
 }
 
 /// A builder for [`GetDeploymentConfigOutput`](crate::operation::get_deployment_config::GetDeploymentConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDeploymentConfigOutputBuilder {
     pub(crate) deployment_config_info: ::std::option::Option<crate::types::DeploymentConfigInfo>,
     _request_id: Option<String>,

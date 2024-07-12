@@ -28,8 +28,8 @@ impl Consent {
 }
 
 /// A builder for [`Consent`](crate::types::Consent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConsentBuilder {
     pub(crate) max_price: ::std::option::Option<f64>,
     pub(crate) currency: ::std::option::Option<::std::string::String>,

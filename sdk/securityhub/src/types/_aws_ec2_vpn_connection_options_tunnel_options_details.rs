@@ -125,8 +125,8 @@ impl AwsEc2VpnConnectionOptionsTunnelOptionsDetails {
 }
 
 /// A builder for [`AwsEc2VpnConnectionOptionsTunnelOptionsDetails`](crate::types::AwsEc2VpnConnectionOptionsTunnelOptionsDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEc2VpnConnectionOptionsTunnelOptionsDetailsBuilder {
     pub(crate) dpd_timeout_seconds: ::std::option::Option<i32>,
     pub(crate) ike_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

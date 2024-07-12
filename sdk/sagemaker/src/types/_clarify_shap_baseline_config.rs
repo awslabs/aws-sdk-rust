@@ -40,8 +40,8 @@ impl ClarifyShapBaselineConfig {
 }
 
 /// A builder for [`ClarifyShapBaselineConfig`](crate::types::ClarifyShapBaselineConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ClarifyShapBaselineConfigBuilder {
     pub(crate) mime_type: ::std::option::Option<::std::string::String>,
     pub(crate) shap_baseline: ::std::option::Option<::std::string::String>,

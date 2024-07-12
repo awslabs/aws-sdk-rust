@@ -34,8 +34,8 @@ impl ListProvisioningArtifactsOutput {
 }
 
 /// A builder for [`ListProvisioningArtifactsOutput`](crate::operation::list_provisioning_artifacts::ListProvisioningArtifactsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListProvisioningArtifactsOutputBuilder {
     pub(crate) provisioning_artifact_details: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningArtifactDetail>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,

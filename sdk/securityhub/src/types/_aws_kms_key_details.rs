@@ -119,8 +119,8 @@ impl AwsKmsKeyDetails {
 }
 
 /// A builder for [`AwsKmsKeyDetails`](crate::types::AwsKmsKeyDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsKmsKeyDetailsBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) creation_date: ::std::option::Option<f64>,

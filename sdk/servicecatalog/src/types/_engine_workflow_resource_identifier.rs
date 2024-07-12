@@ -21,8 +21,8 @@ impl EngineWorkflowResourceIdentifier {
 }
 
 /// A builder for [`EngineWorkflowResourceIdentifier`](crate::types::EngineWorkflowResourceIdentifier).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EngineWorkflowResourceIdentifierBuilder {
     pub(crate) unique_tag: ::std::option::Option<crate::types::UniqueTagResourceIdentifier>,
 }

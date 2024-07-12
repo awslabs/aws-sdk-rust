@@ -31,8 +31,8 @@ impl ResultSetOptions {
 }
 
 /// A builder for [`ResultSetOptions`](crate::types::ResultSetOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResultSetOptionsBuilder {
     pub(crate) decimal_return_type: ::std::option::Option<crate::types::DecimalReturnType>,
     pub(crate) long_return_type: ::std::option::Option<crate::types::LongReturnType>,

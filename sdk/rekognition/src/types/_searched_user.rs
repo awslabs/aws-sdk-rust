@@ -21,8 +21,8 @@ impl SearchedUser {
 }
 
 /// A builder for [`SearchedUser`](crate::types::SearchedUser).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchedUserBuilder {
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
 }

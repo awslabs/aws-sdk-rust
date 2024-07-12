@@ -33,8 +33,8 @@ impl P95Metrics {
 }
 
 /// A builder for [`P95Metrics`](crate::types::P95Metrics).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct P95MetricsBuilder {
     pub(crate) iops: ::std::option::Option<crate::types::Iops>,
     pub(crate) throughput: ::std::option::Option<crate::types::Throughput>,

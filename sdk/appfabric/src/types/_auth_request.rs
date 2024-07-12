@@ -37,8 +37,8 @@ impl AuthRequest {
 }
 
 /// A builder for [`AuthRequest`](crate::types::AuthRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AuthRequestBuilder {
     pub(crate) redirect_uri: ::std::option::Option<::std::string::String>,
     pub(crate) code: ::std::option::Option<::std::string::String>,

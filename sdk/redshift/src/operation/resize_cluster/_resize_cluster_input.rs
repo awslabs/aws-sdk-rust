@@ -57,8 +57,8 @@ impl ResizeClusterInput {
 }
 
 /// A builder for [`ResizeClusterInput`](crate::operation::resize_cluster::ResizeClusterInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResizeClusterInputBuilder {
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_type: ::std::option::Option<::std::string::String>,

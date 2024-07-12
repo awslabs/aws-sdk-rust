@@ -20,8 +20,8 @@ impl DeletePipeInput {
 }
 
 /// A builder for [`DeletePipeInput`](crate::operation::delete_pipe::DeletePipeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePipeInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

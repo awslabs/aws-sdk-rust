@@ -28,8 +28,8 @@ impl PlatformInput {
 }
 
 /// A builder for [`PlatformInput`](crate::types::PlatformInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PlatformInputBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
     pub(crate) comparison_operator: ::std::option::Option<crate::types::ComparisonOperator>,

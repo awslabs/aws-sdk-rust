@@ -33,8 +33,8 @@ impl ListMultiplexProgramsInput {
 }
 
 /// A builder for [`ListMultiplexProgramsInput`](crate::operation::list_multiplex_programs::ListMultiplexProgramsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListMultiplexProgramsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) multiplex_id: ::std::option::Option<::std::string::String>,

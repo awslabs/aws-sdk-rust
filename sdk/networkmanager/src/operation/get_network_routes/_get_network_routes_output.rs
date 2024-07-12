@@ -52,8 +52,8 @@ impl GetNetworkRoutesOutput {
 }
 
 /// A builder for [`GetNetworkRoutesOutput`](crate::operation::get_network_routes::GetNetworkRoutesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetNetworkRoutesOutputBuilder {
     pub(crate) route_table_arn: ::std::option::Option<::std::string::String>,
     pub(crate) core_network_segment_edge: ::std::option::Option<crate::types::CoreNetworkSegmentEdgeIdentifier>,

@@ -27,8 +27,8 @@ impl PendingAggregationRequest {
 }
 
 /// A builder for [`PendingAggregationRequest`](crate::types::PendingAggregationRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PendingAggregationRequestBuilder {
     pub(crate) requester_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) requester_aws_region: ::std::option::Option<::std::string::String>,

@@ -67,8 +67,8 @@ impl Statistics {
 }
 
 /// A builder for [`Statistics`](crate::types::Statistics).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StatisticsBuilder {
     pub(crate) auto_compute: ::std::option::Option<bool>,
     pub(crate) active: ::std::option::Option<bool>,

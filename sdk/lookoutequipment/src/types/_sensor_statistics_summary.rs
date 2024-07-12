@@ -93,8 +93,8 @@ impl SensorStatisticsSummary {
 }
 
 /// A builder for [`SensorStatisticsSummary`](crate::types::SensorStatisticsSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SensorStatisticsSummaryBuilder {
     pub(crate) component_name: ::std::option::Option<::std::string::String>,
     pub(crate) sensor_name: ::std::option::Option<::std::string::String>,

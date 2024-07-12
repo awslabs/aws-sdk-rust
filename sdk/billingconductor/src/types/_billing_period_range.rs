@@ -29,8 +29,8 @@ impl BillingPeriodRange {
 }
 
 /// A builder for [`BillingPeriodRange`](crate::types::BillingPeriodRange).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BillingPeriodRangeBuilder {
     pub(crate) inclusive_start_billing_period: ::std::option::Option<::std::string::String>,
     pub(crate) exclusive_end_billing_period: ::std::option::Option<::std::string::String>,

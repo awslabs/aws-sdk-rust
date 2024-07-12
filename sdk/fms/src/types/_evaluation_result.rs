@@ -33,8 +33,8 @@ impl EvaluationResult {
 }
 
 /// A builder for [`EvaluationResult`](crate::types::EvaluationResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EvaluationResultBuilder {
     pub(crate) compliance_status: ::std::option::Option<crate::types::PolicyComplianceStatusType>,
     pub(crate) violator_count: ::std::option::Option<i64>,

@@ -41,8 +41,8 @@ impl StarburstParameters {
 }
 
 /// A builder for [`StarburstParameters`](crate::types::StarburstParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StarburstParametersBuilder {
     pub(crate) host: ::std::option::Option<::std::string::String>,
     pub(crate) port: ::std::option::Option<i32>,

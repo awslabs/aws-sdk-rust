@@ -40,8 +40,8 @@ impl CreateThingGroupInput {
 }
 
 /// A builder for [`CreateThingGroupInput`](crate::operation::create_thing_group::CreateThingGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateThingGroupInputBuilder {
     pub(crate) thing_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) parent_group_name: ::std::option::Option<::std::string::String>,

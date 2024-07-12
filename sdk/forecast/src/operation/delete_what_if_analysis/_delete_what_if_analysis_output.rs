@@ -18,8 +18,8 @@ impl DeleteWhatIfAnalysisOutput {
 }
 
 /// A builder for [`DeleteWhatIfAnalysisOutput`](crate::operation::delete_what_if_analysis::DeleteWhatIfAnalysisOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteWhatIfAnalysisOutputBuilder {
     _request_id: Option<String>,
 }

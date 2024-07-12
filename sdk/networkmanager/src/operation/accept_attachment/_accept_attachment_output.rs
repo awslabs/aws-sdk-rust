@@ -26,8 +26,8 @@ impl AcceptAttachmentOutput {
 }
 
 /// A builder for [`AcceptAttachmentOutput`](crate::operation::accept_attachment::AcceptAttachmentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AcceptAttachmentOutputBuilder {
     pub(crate) attachment: ::std::option::Option<crate::types::Attachment>,
     _request_id: Option<String>,

@@ -33,8 +33,8 @@ impl LandingZoneOperationSummary {
 }
 
 /// A builder for [`LandingZoneOperationSummary`](crate::types::LandingZoneOperationSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LandingZoneOperationSummaryBuilder {
     pub(crate) operation_type: ::std::option::Option<crate::types::LandingZoneOperationType>,
     pub(crate) operation_identifier: ::std::option::Option<::std::string::String>,

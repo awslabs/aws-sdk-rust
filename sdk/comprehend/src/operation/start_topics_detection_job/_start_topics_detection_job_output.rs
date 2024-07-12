@@ -82,8 +82,8 @@ impl StartTopicsDetectionJobOutput {
 }
 
 /// A builder for [`StartTopicsDetectionJobOutput`](crate::operation::start_topics_detection_job::StartTopicsDetectionJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartTopicsDetectionJobOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_arn: ::std::option::Option<::std::string::String>,

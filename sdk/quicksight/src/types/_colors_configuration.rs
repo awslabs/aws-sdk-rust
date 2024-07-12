@@ -23,8 +23,8 @@ impl ColorsConfiguration {
 }
 
 /// A builder for [`ColorsConfiguration`](crate::types::ColorsConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ColorsConfigurationBuilder {
     pub(crate) custom_colors: ::std::option::Option<::std::vec::Vec<crate::types::CustomColor>>,
 }

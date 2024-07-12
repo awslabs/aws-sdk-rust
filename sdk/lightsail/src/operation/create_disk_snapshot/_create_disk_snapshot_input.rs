@@ -50,8 +50,8 @@ impl CreateDiskSnapshotInput {
 }
 
 /// A builder for [`CreateDiskSnapshotInput`](crate::operation::create_disk_snapshot::CreateDiskSnapshotInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDiskSnapshotInputBuilder {
     pub(crate) disk_name: ::std::option::Option<::std::string::String>,
     pub(crate) disk_snapshot_name: ::std::option::Option<::std::string::String>,

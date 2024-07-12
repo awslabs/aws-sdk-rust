@@ -27,8 +27,8 @@ impl FileFormatDescriptor {
 }
 
 /// A builder for [`FileFormatDescriptor`](crate::types::FileFormatDescriptor).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FileFormatDescriptorBuilder {
     pub(crate) csv_format_descriptor: ::std::option::Option<crate::types::CsvFormatDescriptor>,
     pub(crate) json_format_descriptor: ::std::option::Option<crate::types::JsonFormatDescriptor>,

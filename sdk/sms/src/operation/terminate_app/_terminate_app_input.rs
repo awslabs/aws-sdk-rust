@@ -20,8 +20,8 @@ impl TerminateAppInput {
 }
 
 /// A builder for [`TerminateAppInput`](crate::operation::terminate_app::TerminateAppInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TerminateAppInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
 }

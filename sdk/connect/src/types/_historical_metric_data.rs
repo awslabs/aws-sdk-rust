@@ -27,8 +27,8 @@ impl HistoricalMetricData {
 }
 
 /// A builder for [`HistoricalMetricData`](crate::types::HistoricalMetricData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HistoricalMetricDataBuilder {
     pub(crate) metric: ::std::option::Option<crate::types::HistoricalMetric>,
     pub(crate) value: ::std::option::Option<f64>,

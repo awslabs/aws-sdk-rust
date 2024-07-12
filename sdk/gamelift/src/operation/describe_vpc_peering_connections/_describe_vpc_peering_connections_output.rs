@@ -28,8 +28,8 @@ impl DescribeVpcPeeringConnectionsOutput {
 }
 
 /// A builder for [`DescribeVpcPeeringConnectionsOutput`](crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeVpcPeeringConnectionsOutputBuilder {
     pub(crate) vpc_peering_connections: ::std::option::Option<::std::vec::Vec<crate::types::VpcPeeringConnection>>,
     _request_id: Option<String>,

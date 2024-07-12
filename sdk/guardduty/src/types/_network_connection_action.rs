@@ -57,8 +57,8 @@ impl NetworkConnectionAction {
 }
 
 /// A builder for [`NetworkConnectionAction`](crate::types::NetworkConnectionAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NetworkConnectionActionBuilder {
     pub(crate) blocked: ::std::option::Option<bool>,
     pub(crate) connection_direction: ::std::option::Option<::std::string::String>,

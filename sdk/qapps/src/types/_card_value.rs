@@ -29,8 +29,8 @@ impl CardValue {
 }
 
 /// A builder for [`CardValue`](crate::types::CardValue).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CardValueBuilder {
     pub(crate) card_id: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,

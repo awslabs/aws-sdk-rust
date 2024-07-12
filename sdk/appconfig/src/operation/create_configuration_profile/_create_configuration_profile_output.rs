@@ -86,8 +86,8 @@ impl CreateConfigurationProfileOutput {
 }
 
 /// A builder for [`CreateConfigurationProfileOutput`](crate::operation::create_configuration_profile::CreateConfigurationProfileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateConfigurationProfileOutputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,

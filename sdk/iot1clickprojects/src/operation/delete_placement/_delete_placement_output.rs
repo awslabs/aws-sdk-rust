@@ -18,8 +18,8 @@ impl DeletePlacementOutput {
 }
 
 /// A builder for [`DeletePlacementOutput`](crate::operation::delete_placement::DeletePlacementOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePlacementOutputBuilder {
     _request_id: Option<String>,
 }

@@ -23,8 +23,8 @@ impl AwsWafv2CustomRequestHandlingDetails {
 }
 
 /// A builder for [`AwsWafv2CustomRequestHandlingDetails`](crate::types::AwsWafv2CustomRequestHandlingDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsWafv2CustomRequestHandlingDetailsBuilder {
     pub(crate) insert_headers: ::std::option::Option<::std::vec::Vec<crate::types::AwsWafv2CustomHttpHeader>>,
 }

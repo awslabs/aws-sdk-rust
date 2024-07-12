@@ -29,8 +29,8 @@ impl UpdateConfigurationSetReputationMetricsEnabledInput {
 }
 
 /// A builder for [`UpdateConfigurationSetReputationMetricsEnabledInput`](crate::operation::update_configuration_set_reputation_metrics_enabled::UpdateConfigurationSetReputationMetricsEnabledInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateConfigurationSetReputationMetricsEnabledInputBuilder {
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) enabled: ::std::option::Option<bool>,

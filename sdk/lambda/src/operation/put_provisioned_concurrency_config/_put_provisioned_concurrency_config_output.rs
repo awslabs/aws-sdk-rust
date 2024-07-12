@@ -56,8 +56,8 @@ impl PutProvisionedConcurrencyConfigOutput {
 }
 
 /// A builder for [`PutProvisionedConcurrencyConfigOutput`](crate::operation::put_provisioned_concurrency_config::PutProvisionedConcurrencyConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutProvisionedConcurrencyConfigOutputBuilder {
     pub(crate) requested_provisioned_concurrent_executions: ::std::option::Option<i32>,
     pub(crate) available_provisioned_concurrent_executions: ::std::option::Option<i32>,

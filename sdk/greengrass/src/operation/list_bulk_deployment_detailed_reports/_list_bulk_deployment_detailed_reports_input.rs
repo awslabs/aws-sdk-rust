@@ -32,8 +32,8 @@ impl ListBulkDeploymentDetailedReportsInput {
 }
 
 /// A builder for [`ListBulkDeploymentDetailedReportsInput`](crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListBulkDeploymentDetailedReportsInputBuilder {
     pub(crate) bulk_deployment_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<::std::string::String>,

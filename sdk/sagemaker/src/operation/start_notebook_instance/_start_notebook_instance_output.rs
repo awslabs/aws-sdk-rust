@@ -18,8 +18,8 @@ impl StartNotebookInstanceOutput {
 }
 
 /// A builder for [`StartNotebookInstanceOutput`](crate::operation::start_notebook_instance::StartNotebookInstanceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartNotebookInstanceOutputBuilder {
     _request_id: Option<String>,
 }

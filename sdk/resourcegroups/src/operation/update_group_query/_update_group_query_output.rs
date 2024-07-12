@@ -26,8 +26,8 @@ impl UpdateGroupQueryOutput {
 }
 
 /// A builder for [`UpdateGroupQueryOutput`](crate::operation::update_group_query::UpdateGroupQueryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateGroupQueryOutputBuilder {
     pub(crate) group_query: ::std::option::Option<crate::types::GroupQuery>,
     _request_id: Option<String>,

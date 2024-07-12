@@ -45,8 +45,8 @@ impl ValidateConfigurationSettingsInput {
 }
 
 /// A builder for [`ValidateConfigurationSettingsInput`](crate::operation::validate_configuration_settings::ValidateConfigurationSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ValidateConfigurationSettingsInputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
     pub(crate) template_name: ::std::option::Option<::std::string::String>,

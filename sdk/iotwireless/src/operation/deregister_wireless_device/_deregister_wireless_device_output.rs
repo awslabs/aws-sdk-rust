@@ -18,8 +18,8 @@ impl DeregisterWirelessDeviceOutput {
 }
 
 /// A builder for [`DeregisterWirelessDeviceOutput`](crate::operation::deregister_wireless_device::DeregisterWirelessDeviceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeregisterWirelessDeviceOutputBuilder {
     _request_id: Option<String>,
 }

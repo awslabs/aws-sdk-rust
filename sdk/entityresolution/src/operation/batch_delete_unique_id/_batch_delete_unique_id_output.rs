@@ -47,8 +47,8 @@ impl BatchDeleteUniqueIdOutput {
 }
 
 /// A builder for [`BatchDeleteUniqueIdOutput`](crate::operation::batch_delete_unique_id::BatchDeleteUniqueIdOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDeleteUniqueIdOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::DeleteUniqueIdStatus>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::DeleteUniqueIdError>>,

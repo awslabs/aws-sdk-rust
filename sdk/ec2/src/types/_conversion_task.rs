@@ -59,8 +59,8 @@ impl ConversionTask {
 }
 
 /// A builder for [`ConversionTask`](crate::types::ConversionTask).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConversionTaskBuilder {
     pub(crate) conversion_task_id: ::std::option::Option<::std::string::String>,
     pub(crate) expiration_time: ::std::option::Option<::std::string::String>,

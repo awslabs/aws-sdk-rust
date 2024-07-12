@@ -27,8 +27,8 @@ impl PackageVersionOrigin {
 }
 
 /// A builder for [`PackageVersionOrigin`](crate::types::PackageVersionOrigin).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PackageVersionOriginBuilder {
     pub(crate) domain_entry_point: ::std::option::Option<crate::types::DomainEntryPoint>,
     pub(crate) origin_type: ::std::option::Option<crate::types::PackageVersionOriginType>,

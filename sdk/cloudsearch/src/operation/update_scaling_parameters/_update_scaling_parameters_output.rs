@@ -27,8 +27,8 @@ impl UpdateScalingParametersOutput {
 }
 
 /// A builder for [`UpdateScalingParametersOutput`](crate::operation::update_scaling_parameters::UpdateScalingParametersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateScalingParametersOutputBuilder {
     pub(crate) scaling_parameters: ::std::option::Option<crate::types::ScalingParametersStatus>,
     _request_id: Option<String>,

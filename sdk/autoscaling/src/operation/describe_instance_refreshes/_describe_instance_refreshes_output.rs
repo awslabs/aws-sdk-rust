@@ -34,8 +34,8 @@ impl DescribeInstanceRefreshesOutput {
 }
 
 /// A builder for [`DescribeInstanceRefreshesOutput`](crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeInstanceRefreshesOutputBuilder {
     pub(crate) instance_refreshes: ::std::option::Option<::std::vec::Vec<crate::types::InstanceRefresh>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

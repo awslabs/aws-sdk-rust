@@ -39,8 +39,8 @@ impl ImportDocumentationPartsInput {
 }
 
 /// A builder for [`ImportDocumentationPartsInput`](crate::operation::import_documentation_parts::ImportDocumentationPartsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportDocumentationPartsInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
     pub(crate) mode: ::std::option::Option<crate::types::PutMode>,

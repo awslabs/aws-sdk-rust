@@ -26,8 +26,8 @@ impl GetInstanceAccessOutput {
 }
 
 /// A builder for [`GetInstanceAccessOutput`](crate::operation::get_instance_access::GetInstanceAccessOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetInstanceAccessOutputBuilder {
     pub(crate) instance_access: ::std::option::Option<crate::types::InstanceAccess>,
     _request_id: Option<String>,

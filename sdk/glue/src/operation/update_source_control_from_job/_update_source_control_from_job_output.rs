@@ -26,8 +26,8 @@ impl UpdateSourceControlFromJobOutput {
 }
 
 /// A builder for [`UpdateSourceControlFromJobOutput`](crate::operation::update_source_control_from_job::UpdateSourceControlFromJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSourceControlFromJobOutputBuilder {
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -26,8 +26,8 @@ impl StartNextPendingJobExecutionOutput {
 }
 
 /// A builder for [`StartNextPendingJobExecutionOutput`](crate::operation::start_next_pending_job_execution::StartNextPendingJobExecutionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartNextPendingJobExecutionOutputBuilder {
     pub(crate) execution: ::std::option::Option<crate::types::JobExecution>,
     _request_id: Option<String>,

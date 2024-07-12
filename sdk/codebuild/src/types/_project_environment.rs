@@ -272,8 +272,8 @@ impl ProjectEnvironment {
 }
 
 /// A builder for [`ProjectEnvironment`](crate::types::ProjectEnvironment).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProjectEnvironmentBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::EnvironmentType>,
     pub(crate) image: ::std::option::Option<::std::string::String>,

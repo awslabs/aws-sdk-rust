@@ -20,8 +20,8 @@ impl StopArchiveExportOutput {
 }
 
 /// A builder for [`StopArchiveExportOutput`](crate::operation::stop_archive_export::StopArchiveExportOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopArchiveExportOutputBuilder {
     _request_id: Option<String>,
 }

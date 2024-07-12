@@ -27,8 +27,8 @@ impl BatchReadOperationResponse {
 }
 
 /// A builder for [`BatchReadOperationResponse`](crate::types::BatchReadOperationResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchReadOperationResponseBuilder {
     pub(crate) successful_response: ::std::option::Option<crate::types::BatchReadSuccessfulResponse>,
     pub(crate) exception_response: ::std::option::Option<crate::types::BatchReadException>,

@@ -20,8 +20,8 @@ impl GetQueryRuntimeStatisticsInput {
 }
 
 /// A builder for [`GetQueryRuntimeStatisticsInput`](crate::operation::get_query_runtime_statistics::GetQueryRuntimeStatisticsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetQueryRuntimeStatisticsInputBuilder {
     pub(crate) query_execution_id: ::std::option::Option<::std::string::String>,
 }

@@ -26,8 +26,8 @@ impl CreateAppBundleOutput {
 }
 
 /// A builder for [`CreateAppBundleOutput`](crate::operation::create_app_bundle::CreateAppBundleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAppBundleOutputBuilder {
     pub(crate) app_bundle: ::std::option::Option<crate::types::AppBundle>,
     _request_id: Option<String>,

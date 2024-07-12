@@ -27,8 +27,8 @@ impl GetStackPolicyOutput {
 }
 
 /// A builder for [`GetStackPolicyOutput`](crate::operation::get_stack_policy::GetStackPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetStackPolicyOutputBuilder {
     pub(crate) stack_policy_body: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

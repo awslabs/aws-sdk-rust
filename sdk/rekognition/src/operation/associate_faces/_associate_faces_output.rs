@@ -42,8 +42,8 @@ impl AssociateFacesOutput {
 }
 
 /// A builder for [`AssociateFacesOutput`](crate::operation::associate_faces::AssociateFacesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateFacesOutputBuilder {
     pub(crate) associated_faces: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedFace>>,
     pub(crate) unsuccessful_face_associations: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceAssociation>>,

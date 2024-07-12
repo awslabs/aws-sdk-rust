@@ -26,8 +26,8 @@ impl RestoreServerOutput {
 }
 
 /// A builder for [`RestoreServerOutput`](crate::operation::restore_server::RestoreServerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RestoreServerOutputBuilder {
     pub(crate) server: ::std::option::Option<crate::types::Server>,
     _request_id: Option<String>,

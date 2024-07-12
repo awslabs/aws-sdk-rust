@@ -21,8 +21,8 @@ impl DescribeLocationEfsInput {
 }
 
 /// A builder for [`DescribeLocationEfsInput`](crate::operation::describe_location_efs::DescribeLocationEfsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeLocationEfsInputBuilder {
     pub(crate) location_arn: ::std::option::Option<::std::string::String>,
 }

@@ -26,8 +26,8 @@ impl GetPlaybackKeyPairOutput {
 }
 
 /// A builder for [`GetPlaybackKeyPairOutput`](crate::operation::get_playback_key_pair::GetPlaybackKeyPairOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPlaybackKeyPairOutputBuilder {
     pub(crate) key_pair: ::std::option::Option<crate::types::PlaybackKeyPair>,
     _request_id: Option<String>,

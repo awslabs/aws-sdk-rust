@@ -32,8 +32,8 @@ impl DeleteEntityInput {
 }
 
 /// A builder for [`DeleteEntityInput`](crate::operation::delete_entity::DeleteEntityInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteEntityInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) entity_id: ::std::option::Option<::std::string::String>,

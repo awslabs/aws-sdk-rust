@@ -20,8 +20,8 @@ impl GetDataCatalogEncryptionSettingsInput {
 }
 
 /// A builder for [`GetDataCatalogEncryptionSettingsInput`](crate::operation::get_data_catalog_encryption_settings::GetDataCatalogEncryptionSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDataCatalogEncryptionSettingsInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
 }

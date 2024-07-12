@@ -38,8 +38,8 @@ impl EnableFederationOutput {
 }
 
 /// A builder for [`EnableFederationOutput`](crate::operation::enable_federation::EnableFederationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnableFederationOutputBuilder {
     pub(crate) event_data_store_arn: ::std::option::Option<::std::string::String>,
     pub(crate) federation_status: ::std::option::Option<crate::types::FederationStatus>,

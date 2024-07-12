@@ -34,8 +34,8 @@ impl SelectOptionDescription {
 }
 
 /// A builder for [`SelectOptionDescription`](crate::types::SelectOptionDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SelectOptionDescriptionBuilder {
     pub(crate) option: ::std::option::Option<::std::string::String>,
     pub(crate) title: ::std::option::Option<::std::string::String>,

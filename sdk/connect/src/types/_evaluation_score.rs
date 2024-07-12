@@ -33,8 +33,8 @@ impl EvaluationScore {
 }
 
 /// A builder for [`EvaluationScore`](crate::types::EvaluationScore).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EvaluationScoreBuilder {
     pub(crate) percentage: ::std::option::Option<f64>,
     pub(crate) not_applicable: ::std::option::Option<bool>,

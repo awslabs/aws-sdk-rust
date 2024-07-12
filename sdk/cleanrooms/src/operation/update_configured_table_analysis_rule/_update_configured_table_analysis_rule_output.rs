@@ -26,8 +26,8 @@ impl UpdateConfiguredTableAnalysisRuleOutput {
 }
 
 /// A builder for [`UpdateConfiguredTableAnalysisRuleOutput`](crate::operation::update_configured_table_analysis_rule::UpdateConfiguredTableAnalysisRuleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateConfiguredTableAnalysisRuleOutputBuilder {
     pub(crate) analysis_rule: ::std::option::Option<crate::types::ConfiguredTableAnalysisRule>,
     _request_id: Option<String>,

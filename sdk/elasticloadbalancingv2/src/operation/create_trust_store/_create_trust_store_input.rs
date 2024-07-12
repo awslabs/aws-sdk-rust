@@ -48,8 +48,8 @@ impl CreateTrustStoreInput {
 }
 
 /// A builder for [`CreateTrustStoreInput`](crate::operation::create_trust_store::CreateTrustStoreInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateTrustStoreInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) ca_certificates_bundle_s3_bucket: ::std::option::Option<::std::string::String>,

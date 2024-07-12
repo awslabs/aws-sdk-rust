@@ -27,8 +27,8 @@ impl ImageScanState {
 }
 
 /// A builder for [`ImageScanState`](crate::types::ImageScanState).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImageScanStateBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ImageScanStatus>,
     pub(crate) reason: ::std::option::Option<::std::string::String>,

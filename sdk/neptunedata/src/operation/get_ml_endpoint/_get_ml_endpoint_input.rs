@@ -26,8 +26,8 @@ impl GetMlEndpointInput {
 }
 
 /// A builder for [`GetMlEndpointInput`](crate::operation::get_ml_endpoint::GetMlEndpointInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMlEndpointInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) neptune_iam_role_arn: ::std::option::Option<::std::string::String>,

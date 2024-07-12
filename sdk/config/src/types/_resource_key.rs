@@ -28,8 +28,8 @@ impl ResourceKey {
 }
 
 /// A builder for [`ResourceKey`](crate::types::ResourceKey).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResourceKeyBuilder {
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,

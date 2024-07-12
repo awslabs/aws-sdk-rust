@@ -32,8 +32,8 @@ impl UpdateBridgeStateOutput {
 }
 
 /// A builder for [`UpdateBridgeStateOutput`](crate::operation::update_bridge_state::UpdateBridgeStateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateBridgeStateOutputBuilder {
     pub(crate) bridge_arn: ::std::option::Option<::std::string::String>,
     pub(crate) desired_state: ::std::option::Option<crate::types::DesiredState>,

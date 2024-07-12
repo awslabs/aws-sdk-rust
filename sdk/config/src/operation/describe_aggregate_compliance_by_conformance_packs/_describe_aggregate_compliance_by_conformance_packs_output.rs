@@ -36,8 +36,8 @@ impl DescribeAggregateComplianceByConformancePacksOutput {
 }
 
 /// A builder for [`DescribeAggregateComplianceByConformancePacksOutput`](crate::operation::describe_aggregate_compliance_by_conformance_packs::DescribeAggregateComplianceByConformancePacksOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAggregateComplianceByConformancePacksOutputBuilder {
     pub(crate) aggregate_compliance_by_conformance_packs: ::std::option::Option<::std::vec::Vec<crate::types::AggregateComplianceByConformancePack>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

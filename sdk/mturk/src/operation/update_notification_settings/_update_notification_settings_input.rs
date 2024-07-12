@@ -32,8 +32,8 @@ impl UpdateNotificationSettingsInput {
 }
 
 /// A builder for [`UpdateNotificationSettingsInput`](crate::operation::update_notification_settings::UpdateNotificationSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateNotificationSettingsInputBuilder {
     pub(crate) hit_type_id: ::std::option::Option<::std::string::String>,
     pub(crate) notification: ::std::option::Option<crate::types::NotificationSpecification>,

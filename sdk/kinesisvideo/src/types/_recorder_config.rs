@@ -27,8 +27,8 @@ impl RecorderConfig {
 }
 
 /// A builder for [`RecorderConfig`](crate::types::RecorderConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecorderConfigBuilder {
     pub(crate) media_source_config: ::std::option::Option<crate::types::MediaSourceConfig>,
     pub(crate) schedule_config: ::std::option::Option<crate::types::ScheduleConfig>,

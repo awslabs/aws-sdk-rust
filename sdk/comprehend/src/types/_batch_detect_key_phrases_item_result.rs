@@ -29,8 +29,8 @@ impl BatchDetectKeyPhrasesItemResult {
 }
 
 /// A builder for [`BatchDetectKeyPhrasesItemResult`](crate::types::BatchDetectKeyPhrasesItemResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDetectKeyPhrasesItemResultBuilder {
     pub(crate) index: ::std::option::Option<i32>,
     pub(crate) key_phrases: ::std::option::Option<::std::vec::Vec<crate::types::KeyPhrase>>,

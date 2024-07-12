@@ -29,8 +29,8 @@ impl UpdateLabelsPayload {
 }
 
 /// A builder for [`UpdateLabelsPayload`](crate::types::UpdateLabelsPayload).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateLabelsPayloadBuilder {
     pub(crate) add_or_update_labels: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) remove_labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

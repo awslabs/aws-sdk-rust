@@ -56,8 +56,8 @@ impl LustreRootSquashConfiguration {
 }
 
 /// A builder for [`LustreRootSquashConfiguration`](crate::types::LustreRootSquashConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LustreRootSquashConfigurationBuilder {
     pub(crate) root_squash: ::std::option::Option<::std::string::String>,
     pub(crate) no_squash_nids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

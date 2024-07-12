@@ -18,8 +18,8 @@ impl UpdateSessionOutput {
 }
 
 /// A builder for [`UpdateSessionOutput`](crate::operation::update_session::UpdateSessionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSessionOutputBuilder {
     _request_id: Option<String>,
 }

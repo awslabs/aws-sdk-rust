@@ -27,8 +27,8 @@ impl UpdateGatewayBridgeSourceRequest {
 }
 
 /// A builder for [`UpdateGatewayBridgeSourceRequest`](crate::types::UpdateGatewayBridgeSourceRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateGatewayBridgeSourceRequestBuilder {
     pub(crate) bridge_arn: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_interface_attachment: ::std::option::Option<crate::types::VpcInterfaceAttachment>,

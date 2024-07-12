@@ -11,8 +11,8 @@ impl DeleteDataLakeExceptionSubscriptionInput {
 }
 
 /// A builder for [`DeleteDataLakeExceptionSubscriptionInput`](crate::operation::delete_data_lake_exception_subscription::DeleteDataLakeExceptionSubscriptionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDataLakeExceptionSubscriptionInputBuilder {}
 impl DeleteDataLakeExceptionSubscriptionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDataLakeExceptionSubscriptionInput`](crate::operation::delete_data_lake_exception_subscription::DeleteDataLakeExceptionSubscriptionInput).

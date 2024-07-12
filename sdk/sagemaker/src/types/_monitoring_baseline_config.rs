@@ -33,8 +33,8 @@ impl MonitoringBaselineConfig {
 }
 
 /// A builder for [`MonitoringBaselineConfig`](crate::types::MonitoringBaselineConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MonitoringBaselineConfigBuilder {
     pub(crate) baselining_job_name: ::std::option::Option<::std::string::String>,
     pub(crate) constraints_resource: ::std::option::Option<crate::types::MonitoringConstraintsResource>,

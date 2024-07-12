@@ -21,8 +21,8 @@ impl SharePointCrawlerConfiguration {
 }
 
 /// A builder for [`SharePointCrawlerConfiguration`](crate::types::SharePointCrawlerConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SharePointCrawlerConfigurationBuilder {
     pub(crate) filter_configuration: ::std::option::Option<crate::types::CrawlFilterConfiguration>,
 }

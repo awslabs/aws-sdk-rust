@@ -26,8 +26,8 @@ impl UpdateCallAnalyticsCategoryOutput {
 }
 
 /// A builder for [`UpdateCallAnalyticsCategoryOutput`](crate::operation::update_call_analytics_category::UpdateCallAnalyticsCategoryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateCallAnalyticsCategoryOutputBuilder {
     pub(crate) category_properties: ::std::option::Option<crate::types::CategoryProperties>,
     _request_id: Option<String>,

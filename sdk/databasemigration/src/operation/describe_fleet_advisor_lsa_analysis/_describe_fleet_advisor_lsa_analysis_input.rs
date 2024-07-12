@@ -26,8 +26,8 @@ impl DescribeFleetAdvisorLsaAnalysisInput {
 }
 
 /// A builder for [`DescribeFleetAdvisorLsaAnalysisInput`](crate::operation::describe_fleet_advisor_lsa_analysis::DescribeFleetAdvisorLsaAnalysisInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFleetAdvisorLsaAnalysisInputBuilder {
     pub(crate) max_records: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

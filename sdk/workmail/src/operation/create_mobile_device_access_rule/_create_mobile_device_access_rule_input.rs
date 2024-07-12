@@ -108,8 +108,8 @@ impl CreateMobileDeviceAccessRuleInput {
 }
 
 /// A builder for [`CreateMobileDeviceAccessRuleInput`](crate::operation::create_mobile_device_access_rule::CreateMobileDeviceAccessRuleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateMobileDeviceAccessRuleInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

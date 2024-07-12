@@ -26,8 +26,8 @@ impl DescribeFlywheelIterationOutput {
 }
 
 /// A builder for [`DescribeFlywheelIterationOutput`](crate::operation::describe_flywheel_iteration::DescribeFlywheelIterationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFlywheelIterationOutputBuilder {
     pub(crate) flywheel_iteration_properties: ::std::option::Option<crate::types::FlywheelIterationProperties>,
     _request_id: Option<String>,

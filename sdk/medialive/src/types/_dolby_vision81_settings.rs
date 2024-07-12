@@ -12,8 +12,8 @@ impl DolbyVision81Settings {
 }
 
 /// A builder for [`DolbyVision81Settings`](crate::types::DolbyVision81Settings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DolbyVision81SettingsBuilder {}
 impl DolbyVision81SettingsBuilder {
     /// Consumes the builder and constructs a [`DolbyVision81Settings`](crate::types::DolbyVision81Settings).

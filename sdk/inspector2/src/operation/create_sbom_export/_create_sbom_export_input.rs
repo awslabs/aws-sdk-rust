@@ -32,8 +32,8 @@ impl CreateSbomExportInput {
 }
 
 /// A builder for [`CreateSbomExportInput`](crate::operation::create_sbom_export::CreateSbomExportInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSbomExportInputBuilder {
     pub(crate) resource_filter_criteria: ::std::option::Option<crate::types::ResourceFilterCriteria>,
     pub(crate) report_format: ::std::option::Option<crate::types::SbomReportFormat>,

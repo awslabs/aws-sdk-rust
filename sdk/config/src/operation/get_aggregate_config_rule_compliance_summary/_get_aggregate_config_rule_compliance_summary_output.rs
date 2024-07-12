@@ -41,8 +41,8 @@ impl GetAggregateConfigRuleComplianceSummaryOutput {
 }
 
 /// A builder for [`GetAggregateConfigRuleComplianceSummaryOutput`](crate::operation::get_aggregate_config_rule_compliance_summary::GetAggregateConfigRuleComplianceSummaryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAggregateConfigRuleComplianceSummaryOutputBuilder {
     pub(crate) group_by_key: ::std::option::Option<::std::string::String>,
     pub(crate) aggregate_compliance_counts: ::std::option::Option<::std::vec::Vec<crate::types::AggregateComplianceCount>>,

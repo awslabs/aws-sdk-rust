@@ -28,8 +28,8 @@ impl StartMonitoringMembersInput {
 }
 
 /// A builder for [`StartMonitoringMembersInput`](crate::operation::start_monitoring_members::StartMonitoringMembersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartMonitoringMembersInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
     pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

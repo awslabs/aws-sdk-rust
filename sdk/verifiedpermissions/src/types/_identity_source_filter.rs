@@ -29,8 +29,8 @@ impl IdentitySourceFilter {
 }
 
 /// A builder for [`IdentitySourceFilter`](crate::types::IdentitySourceFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct IdentitySourceFilterBuilder {
     pub(crate) principal_entity_type: ::std::option::Option<::std::string::String>,
 }

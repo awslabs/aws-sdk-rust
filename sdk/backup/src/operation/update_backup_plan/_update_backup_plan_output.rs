@@ -52,8 +52,8 @@ impl UpdateBackupPlanOutput {
 }
 
 /// A builder for [`UpdateBackupPlanOutput`](crate::operation::update_backup_plan::UpdateBackupPlanOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateBackupPlanOutputBuilder {
     pub(crate) backup_plan_id: ::std::option::Option<::std::string::String>,
     pub(crate) backup_plan_arn: ::std::option::Option<::std::string::String>,

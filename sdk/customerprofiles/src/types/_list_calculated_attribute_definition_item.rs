@@ -63,8 +63,8 @@ impl ListCalculatedAttributeDefinitionItem {
 }
 
 /// A builder for [`ListCalculatedAttributeDefinitionItem`](crate::types::ListCalculatedAttributeDefinitionItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ListCalculatedAttributeDefinitionItemBuilder {
     pub(crate) calculated_attribute_name: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,

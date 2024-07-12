@@ -50,8 +50,8 @@ impl CreateContainerOutput {
 }
 
 /// A builder for [`CreateContainerOutput`](crate::operation::create_container::CreateContainerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateContainerOutputBuilder {
     pub(crate) container: ::std::option::Option<crate::types::Container>,
     _request_id: Option<String>,

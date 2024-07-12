@@ -20,8 +20,8 @@ impl DeleteChannelGroupInput {
 }
 
 /// A builder for [`DeleteChannelGroupInput`](crate::operation::delete_channel_group::DeleteChannelGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteChannelGroupInputBuilder {
     pub(crate) channel_group_name: ::std::option::Option<::std::string::String>,
 }

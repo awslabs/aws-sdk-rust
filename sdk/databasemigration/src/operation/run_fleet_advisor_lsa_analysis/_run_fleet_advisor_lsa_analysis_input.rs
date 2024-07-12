@@ -11,8 +11,8 @@ impl RunFleetAdvisorLsaAnalysisInput {
 }
 
 /// A builder for [`RunFleetAdvisorLsaAnalysisInput`](crate::operation::run_fleet_advisor_lsa_analysis::RunFleetAdvisorLsaAnalysisInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RunFleetAdvisorLsaAnalysisInputBuilder {}
 impl RunFleetAdvisorLsaAnalysisInputBuilder {
     /// Consumes the builder and constructs a [`RunFleetAdvisorLsaAnalysisInput`](crate::operation::run_fleet_advisor_lsa_analysis::RunFleetAdvisorLsaAnalysisInput).

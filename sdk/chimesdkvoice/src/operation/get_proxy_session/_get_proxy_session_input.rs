@@ -26,8 +26,8 @@ impl GetProxySessionInput {
 }
 
 /// A builder for [`GetProxySessionInput`](crate::operation::get_proxy_session::GetProxySessionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetProxySessionInputBuilder {
     pub(crate) voice_connector_id: ::std::option::Option<::std::string::String>,
     pub(crate) proxy_session_id: ::std::option::Option<::std::string::String>,

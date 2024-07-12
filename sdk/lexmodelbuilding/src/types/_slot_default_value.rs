@@ -38,8 +38,8 @@ impl SlotDefaultValue {
 }
 
 /// A builder for [`SlotDefaultValue`](crate::types::SlotDefaultValue).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SlotDefaultValueBuilder {
     pub(crate) default_value: ::std::option::Option<::std::string::String>,
 }

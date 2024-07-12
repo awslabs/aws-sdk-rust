@@ -20,8 +20,8 @@ impl DescribeForecastInput {
 }
 
 /// A builder for [`DescribeForecastInput`](crate::operation::describe_forecast::DescribeForecastInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeForecastInputBuilder {
     pub(crate) forecast_arn: ::std::option::Option<::std::string::String>,
 }

@@ -54,8 +54,8 @@ impl UpdateGeneratedTemplateInput {
 }
 
 /// A builder for [`UpdateGeneratedTemplateInput`](crate::operation::update_generated_template::UpdateGeneratedTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateGeneratedTemplateInputBuilder {
     pub(crate) generated_template_name: ::std::option::Option<::std::string::String>,
     pub(crate) new_generated_template_name: ::std::option::Option<::std::string::String>,

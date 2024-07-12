@@ -36,8 +36,8 @@ impl UpdateAccessKeyInput {
 }
 
 /// A builder for [`UpdateAccessKeyInput`](crate::operation::update_access_key::UpdateAccessKeyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAccessKeyInputBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) access_key_id: ::std::option::Option<::std::string::String>,

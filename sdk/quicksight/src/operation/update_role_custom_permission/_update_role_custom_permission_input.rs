@@ -38,8 +38,8 @@ impl UpdateRoleCustomPermissionInput {
 }
 
 /// A builder for [`UpdateRoleCustomPermissionInput`](crate::operation::update_role_custom_permission::UpdateRoleCustomPermissionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRoleCustomPermissionInputBuilder {
     pub(crate) custom_permissions_name: ::std::option::Option<::std::string::String>,
     pub(crate) role: ::std::option::Option<crate::types::Role>,

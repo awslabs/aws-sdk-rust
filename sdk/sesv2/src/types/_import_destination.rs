@@ -27,8 +27,8 @@ impl ImportDestination {
 }
 
 /// A builder for [`ImportDestination`](crate::types::ImportDestination).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportDestinationBuilder {
     pub(crate) suppression_list_destination: ::std::option::Option<crate::types::SuppressionListDestination>,
     pub(crate) contact_list_destination: ::std::option::Option<crate::types::ContactListDestination>,

@@ -20,8 +20,8 @@ impl DeleteVariableInput {
 }
 
 /// A builder for [`DeleteVariableInput`](crate::operation::delete_variable::DeleteVariableInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVariableInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

@@ -27,8 +27,8 @@ impl CancelBundleTaskOutput {
 }
 
 /// A builder for [`CancelBundleTaskOutput`](crate::operation::cancel_bundle_task::CancelBundleTaskOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelBundleTaskOutputBuilder {
     pub(crate) bundle_task: ::std::option::Option<crate::types::BundleTask>,
     _request_id: Option<String>,

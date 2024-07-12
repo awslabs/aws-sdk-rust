@@ -48,8 +48,8 @@ impl ListContainerInstancesInput {
 }
 
 /// A builder for [`ListContainerInstancesInput`](crate::operation::list_container_instances::ListContainerInstancesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListContainerInstancesInputBuilder {
     pub(crate) cluster: ::std::option::Option<::std::string::String>,
     pub(crate) filter: ::std::option::Option<::std::string::String>,

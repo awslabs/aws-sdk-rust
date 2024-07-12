@@ -26,8 +26,8 @@ impl GetRecommenderConfigurationsInput {
 }
 
 /// A builder for [`GetRecommenderConfigurationsInput`](crate::operation::get_recommender_configurations::GetRecommenderConfigurationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRecommenderConfigurationsInputBuilder {
     pub(crate) page_size: ::std::option::Option<::std::string::String>,
     pub(crate) token: ::std::option::Option<::std::string::String>,

@@ -54,8 +54,8 @@ impl DescribeDbShardGroupsInput {
 }
 
 /// A builder for [`DescribeDbShardGroupsInput`](crate::operation::describe_db_shard_groups::DescribeDbShardGroupsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDbShardGroupsInputBuilder {
     pub(crate) db_shard_group_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,

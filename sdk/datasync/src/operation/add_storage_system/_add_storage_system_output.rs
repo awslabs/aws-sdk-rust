@@ -27,8 +27,8 @@ impl AddStorageSystemOutput {
 }
 
 /// A builder for [`AddStorageSystemOutput`](crate::operation::add_storage_system::AddStorageSystemOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddStorageSystemOutputBuilder {
     pub(crate) storage_system_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

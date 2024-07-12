@@ -26,8 +26,8 @@ impl DisableVpcClassicLinkDnsSupportOutput {
 }
 
 /// A builder for [`DisableVpcClassicLinkDnsSupportOutput`](crate::operation::disable_vpc_classic_link_dns_support::DisableVpcClassicLinkDnsSupportOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableVpcClassicLinkDnsSupportOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,

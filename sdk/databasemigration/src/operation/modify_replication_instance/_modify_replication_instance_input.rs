@@ -121,8 +121,8 @@ impl ModifyReplicationInstanceInput {
 }
 
 /// A builder for [`ModifyReplicationInstanceInput`](crate::operation::modify_replication_instance::ModifyReplicationInstanceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyReplicationInstanceInputBuilder {
     pub(crate) replication_instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) allocated_storage: ::std::option::Option<i32>,

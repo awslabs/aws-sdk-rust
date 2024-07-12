@@ -44,8 +44,8 @@ impl DescribeEngineVersionsInput {
 }
 
 /// A builder for [`DescribeEngineVersionsInput`](crate::operation::describe_engine_versions::DescribeEngineVersionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEngineVersionsInputBuilder {
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,
     pub(crate) parameter_group_family: ::std::option::Option<::std::string::String>,

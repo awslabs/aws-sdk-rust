@@ -45,8 +45,8 @@ impl OfferingTransaction {
 }
 
 /// A builder for [`OfferingTransaction`](crate::types::OfferingTransaction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OfferingTransactionBuilder {
     pub(crate) offering_status: ::std::option::Option<crate::types::OfferingStatus>,
     pub(crate) transaction_id: ::std::option::Option<::std::string::String>,

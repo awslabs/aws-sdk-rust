@@ -62,8 +62,8 @@ impl RegisterComputeInput {
 }
 
 /// A builder for [`RegisterComputeInput`](crate::operation::register_compute::RegisterComputeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct RegisterComputeInputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) compute_name: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl PutModelPackageGroupPolicyInput {
 }
 
 /// A builder for [`PutModelPackageGroupPolicyInput`](crate::operation::put_model_package_group_policy::PutModelPackageGroupPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutModelPackageGroupPolicyInputBuilder {
     pub(crate) model_package_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_policy: ::std::option::Option<::std::string::String>,

@@ -41,8 +41,8 @@ impl Scope {
 }
 
 /// A builder for [`Scope`](crate::types::Scope).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScopeBuilder {
     pub(crate) compliance_resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) tag_key: ::std::option::Option<::std::string::String>,

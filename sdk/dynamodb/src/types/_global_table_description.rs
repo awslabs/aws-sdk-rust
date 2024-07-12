@@ -67,8 +67,8 @@ impl GlobalTableDescription {
 }
 
 /// A builder for [`GlobalTableDescription`](crate::types::GlobalTableDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GlobalTableDescriptionBuilder {
     pub(crate) replication_group: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaDescription>>,
     pub(crate) global_table_arn: ::std::option::Option<::std::string::String>,

@@ -36,8 +36,8 @@ impl DisableFastSnapshotRestoresOutput {
 }
 
 /// A builder for [`DisableFastSnapshotRestoresOutput`](crate::operation::disable_fast_snapshot_restores::DisableFastSnapshotRestoresOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableFastSnapshotRestoresOutputBuilder {
     pub(crate) successful: ::std::option::Option<::std::vec::Vec<crate::types::DisableFastSnapshotRestoreSuccessItem>>,
     pub(crate) unsuccessful: ::std::option::Option<::std::vec::Vec<crate::types::DisableFastSnapshotRestoreErrorItem>>,

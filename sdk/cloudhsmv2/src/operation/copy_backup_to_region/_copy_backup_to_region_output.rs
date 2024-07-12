@@ -28,8 +28,8 @@ impl CopyBackupToRegionOutput {
 }
 
 /// A builder for [`CopyBackupToRegionOutput`](crate::operation::copy_backup_to_region::CopyBackupToRegionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CopyBackupToRegionOutputBuilder {
     pub(crate) destination_backup: ::std::option::Option<crate::types::DestinationBackup>,
     _request_id: Option<String>,

@@ -32,8 +32,8 @@ impl ListLogSubscriptionsInput {
 }
 
 /// A builder for [`ListLogSubscriptionsInput`](crate::operation::list_log_subscriptions::ListLogSubscriptionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListLogSubscriptionsInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

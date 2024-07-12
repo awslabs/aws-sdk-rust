@@ -18,8 +18,8 @@ impl AssociateDhcpOptionsOutput {
 }
 
 /// A builder for [`AssociateDhcpOptionsOutput`](crate::operation::associate_dhcp_options::AssociateDhcpOptionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateDhcpOptionsOutputBuilder {
     _request_id: Option<String>,
 }

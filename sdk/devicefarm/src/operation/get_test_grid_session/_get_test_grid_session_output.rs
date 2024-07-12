@@ -26,8 +26,8 @@ impl GetTestGridSessionOutput {
 }
 
 /// A builder for [`GetTestGridSessionOutput`](crate::operation::get_test_grid_session::GetTestGridSessionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTestGridSessionOutputBuilder {
     pub(crate) test_grid_session: ::std::option::Option<crate::types::TestGridSession>,
     _request_id: Option<String>,

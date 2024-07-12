@@ -141,8 +141,8 @@ impl RegisterTargetWithMaintenanceWindowInput {
 }
 
 /// A builder for [`RegisterTargetWithMaintenanceWindowInput`](crate::operation::register_target_with_maintenance_window::RegisterTargetWithMaintenanceWindowInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct RegisterTargetWithMaintenanceWindowInputBuilder {
     pub(crate) window_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::MaintenanceWindowResourceType>,

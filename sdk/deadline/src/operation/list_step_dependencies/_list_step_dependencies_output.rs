@@ -33,8 +33,8 @@ impl ListStepDependenciesOutput {
 }
 
 /// A builder for [`ListStepDependenciesOutput`](crate::operation::list_step_dependencies::ListStepDependenciesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListStepDependenciesOutputBuilder {
     pub(crate) dependencies: ::std::option::Option<::std::vec::Vec<crate::types::StepDependency>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

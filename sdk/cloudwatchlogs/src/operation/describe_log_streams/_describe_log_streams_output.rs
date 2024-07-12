@@ -34,8 +34,8 @@ impl DescribeLogStreamsOutput {
 }
 
 /// A builder for [`DescribeLogStreamsOutput`](crate::operation::describe_log_streams::DescribeLogStreamsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeLogStreamsOutputBuilder {
     pub(crate) log_streams: ::std::option::Option<::std::vec::Vec<crate::types::LogStream>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -33,8 +33,8 @@ impl Landmark {
 }
 
 /// A builder for [`Landmark`](crate::types::Landmark).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LandmarkBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::LandmarkType>,
     pub(crate) x: ::std::option::Option<f32>,

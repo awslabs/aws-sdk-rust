@@ -23,8 +23,8 @@ impl DescribeNfsFileSharesInput {
 }
 
 /// A builder for [`DescribeNfsFileSharesInput`](crate::operation::describe_nfs_file_shares::DescribeNfsFileSharesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeNfsFileSharesInputBuilder {
     pub(crate) file_share_arn_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

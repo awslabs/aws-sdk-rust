@@ -57,8 +57,8 @@ impl PutRetentionPolicyInput {
 }
 
 /// A builder for [`PutRetentionPolicyInput`](crate::operation::put_retention_policy::PutRetentionPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PutRetentionPolicyInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl DescribePlatformVersionOutput {
 }
 
 /// A builder for [`DescribePlatformVersionOutput`](crate::operation::describe_platform_version::DescribePlatformVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribePlatformVersionOutputBuilder {
     pub(crate) platform_description: ::std::option::Option<crate::types::PlatformDescription>,
     _request_id: Option<String>,

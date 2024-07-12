@@ -27,8 +27,8 @@ impl ModelBiasBaselineConfig {
 }
 
 /// A builder for [`ModelBiasBaselineConfig`](crate::types::ModelBiasBaselineConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModelBiasBaselineConfigBuilder {
     pub(crate) baselining_job_name: ::std::option::Option<::std::string::String>,
     pub(crate) constraints_resource: ::std::option::Option<crate::types::MonitoringConstraintsResource>,

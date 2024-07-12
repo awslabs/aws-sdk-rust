@@ -58,8 +58,8 @@ impl UpdateCertificateAuthorityInput {
 }
 
 /// A builder for [`UpdateCertificateAuthorityInput`](crate::operation::update_certificate_authority::UpdateCertificateAuthorityInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateCertificateAuthorityInputBuilder {
     pub(crate) certificate_authority_arn: ::std::option::Option<::std::string::String>,
     pub(crate) revocation_configuration: ::std::option::Option<crate::types::RevocationConfiguration>,

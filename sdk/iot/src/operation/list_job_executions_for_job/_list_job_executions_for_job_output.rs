@@ -34,8 +34,8 @@ impl ListJobExecutionsForJobOutput {
 }
 
 /// A builder for [`ListJobExecutionsForJobOutput`](crate::operation::list_job_executions_for_job::ListJobExecutionsForJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListJobExecutionsForJobOutputBuilder {
     pub(crate) execution_summaries: ::std::option::Option<::std::vec::Vec<crate::types::JobExecutionSummaryForJob>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl GetExperimentTemplateOutput {
 }
 
 /// A builder for [`GetExperimentTemplateOutput`](crate::operation::get_experiment_template::GetExperimentTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetExperimentTemplateOutputBuilder {
     pub(crate) experiment_template: ::std::option::Option<crate::types::ExperimentTemplate>,
     _request_id: Option<String>,

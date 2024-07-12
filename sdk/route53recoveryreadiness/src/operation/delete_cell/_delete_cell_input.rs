@@ -20,8 +20,8 @@ impl DeleteCellInput {
 }
 
 /// A builder for [`DeleteCellInput`](crate::operation::delete_cell::DeleteCellInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCellInputBuilder {
     pub(crate) cell_name: ::std::option::Option<::std::string::String>,
 }

@@ -35,8 +35,8 @@ impl ListDataflowEndpointGroupsOutput {
 }
 
 /// A builder for [`ListDataflowEndpointGroupsOutput`](crate::operation::list_dataflow_endpoint_groups::ListDataflowEndpointGroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDataflowEndpointGroupsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) dataflow_endpoint_group_list: ::std::option::Option<::std::vec::Vec<crate::types::DataflowEndpointListItem>>,

@@ -35,8 +35,8 @@ impl AssetBundleImportJobRefreshScheduleOverrideParameters {
 }
 
 /// A builder for [`AssetBundleImportJobRefreshScheduleOverrideParameters`](crate::types::AssetBundleImportJobRefreshScheduleOverrideParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssetBundleImportJobRefreshScheduleOverrideParametersBuilder {
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) schedule_id: ::std::option::Option<::std::string::String>,

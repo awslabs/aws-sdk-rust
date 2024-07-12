@@ -60,8 +60,8 @@ impl SearchTasksInput {
 }
 
 /// A builder for [`SearchTasksInput`](crate::operation::search_tasks::SearchTasksInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchTasksInputBuilder {
     pub(crate) farm_id: ::std::option::Option<::std::string::String>,
     pub(crate) queue_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -20,8 +20,8 @@ impl DeleteRelayInput {
 }
 
 /// A builder for [`DeleteRelayInput`](crate::operation::delete_relay::DeleteRelayInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRelayInputBuilder {
     pub(crate) relay_id: ::std::option::Option<::std::string::String>,
 }

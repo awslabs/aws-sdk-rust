@@ -34,8 +34,8 @@ impl OptOutSpeakerInput {
 }
 
 /// A builder for [`OptOutSpeakerInput`](crate::operation::opt_out_speaker::OptOutSpeakerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct OptOutSpeakerInputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) speaker_id: ::std::option::Option<::std::string::String>,

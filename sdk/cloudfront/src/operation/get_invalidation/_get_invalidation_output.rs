@@ -27,8 +27,8 @@ impl GetInvalidationOutput {
 }
 
 /// A builder for [`GetInvalidationOutput`](crate::operation::get_invalidation::GetInvalidationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetInvalidationOutputBuilder {
     pub(crate) invalidation: ::std::option::Option<crate::types::Invalidation>,
     _request_id: Option<String>,

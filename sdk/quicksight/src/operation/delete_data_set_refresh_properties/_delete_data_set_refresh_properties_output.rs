@@ -32,8 +32,8 @@ impl DeleteDataSetRefreshPropertiesOutput {
 }
 
 /// A builder for [`DeleteDataSetRefreshPropertiesOutput`](crate::operation::delete_data_set_refresh_properties::DeleteDataSetRefreshPropertiesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDataSetRefreshPropertiesOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<i32>,

@@ -28,8 +28,8 @@ impl DocumentRelevanceConfiguration {
 }
 
 /// A builder for [`DocumentRelevanceConfiguration`](crate::types::DocumentRelevanceConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DocumentRelevanceConfigurationBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) relevance: ::std::option::Option<crate::types::Relevance>,

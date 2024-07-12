@@ -21,8 +21,8 @@ impl LoRaWanFuotaTask {
 }
 
 /// A builder for [`LoRaWanFuotaTask`](crate::types::LoRaWanFuotaTask).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LoRaWanFuotaTaskBuilder {
     pub(crate) rf_region: ::std::option::Option<crate::types::SupportedRfRegion>,
 }

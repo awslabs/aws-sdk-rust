@@ -26,8 +26,8 @@ impl UpdateServiceInstanceOutput {
 }
 
 /// A builder for [`UpdateServiceInstanceOutput`](crate::operation::update_service_instance::UpdateServiceInstanceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateServiceInstanceOutputBuilder {
     pub(crate) service_instance: ::std::option::Option<crate::types::ServiceInstance>,
     _request_id: Option<String>,

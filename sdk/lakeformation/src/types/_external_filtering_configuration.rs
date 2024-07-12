@@ -28,8 +28,8 @@ impl ExternalFilteringConfiguration {
 }
 
 /// A builder for [`ExternalFilteringConfiguration`](crate::types::ExternalFilteringConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExternalFilteringConfigurationBuilder {
     pub(crate) status: ::std::option::Option<crate::types::EnableStatus>,
     pub(crate) authorized_targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

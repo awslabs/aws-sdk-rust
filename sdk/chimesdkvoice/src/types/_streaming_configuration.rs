@@ -41,8 +41,8 @@ impl StreamingConfiguration {
 }
 
 /// A builder for [`StreamingConfiguration`](crate::types::StreamingConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StreamingConfigurationBuilder {
     pub(crate) data_retention_in_hours: ::std::option::Option<i32>,
     pub(crate) disabled: ::std::option::Option<bool>,

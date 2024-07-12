@@ -40,8 +40,8 @@ impl DeleteAgentVersionOutput {
 }
 
 /// A builder for [`DeleteAgentVersionOutput`](crate::operation::delete_agent_version::DeleteAgentVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAgentVersionOutputBuilder {
     pub(crate) agent_id: ::std::option::Option<::std::string::String>,
     pub(crate) agent_version: ::std::option::Option<::std::string::String>,

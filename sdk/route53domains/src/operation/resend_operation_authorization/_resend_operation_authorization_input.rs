@@ -20,8 +20,8 @@ impl ResendOperationAuthorizationInput {
 }
 
 /// A builder for [`ResendOperationAuthorizationInput`](crate::operation::resend_operation_authorization::ResendOperationAuthorizationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResendOperationAuthorizationInputBuilder {
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,
 }

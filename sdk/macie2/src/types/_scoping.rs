@@ -27,8 +27,8 @@ impl Scoping {
 }
 
 /// A builder for [`Scoping`](crate::types::Scoping).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScopingBuilder {
     pub(crate) excludes: ::std::option::Option<crate::types::JobScopingBlock>,
     pub(crate) includes: ::std::option::Option<crate::types::JobScopingBlock>,

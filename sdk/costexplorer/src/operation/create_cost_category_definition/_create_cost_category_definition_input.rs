@@ -96,8 +96,8 @@ impl CreateCostCategoryDefinitionInput {
 }
 
 /// A builder for [`CreateCostCategoryDefinitionInput`](crate::operation::create_cost_category_definition::CreateCostCategoryDefinitionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCostCategoryDefinitionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) effective_start: ::std::option::Option<::std::string::String>,

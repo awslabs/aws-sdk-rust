@@ -23,8 +23,8 @@ impl Scte {
 }
 
 /// A builder for [`Scte`](crate::types::Scte).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScteBuilder {
     pub(crate) scte_filter: ::std::option::Option<::std::vec::Vec<crate::types::ScteFilter>>,
 }

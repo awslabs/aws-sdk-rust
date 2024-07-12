@@ -53,8 +53,8 @@ impl ChangeSummary {
 }
 
 /// A builder for [`ChangeSummary`](crate::types::ChangeSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ChangeSummaryBuilder {
     pub(crate) change_type: ::std::option::Option<::std::string::String>,
     pub(crate) entity: ::std::option::Option<crate::types::Entity>,

@@ -26,8 +26,8 @@ impl GetViolationDetailsOutput {
 }
 
 /// A builder for [`GetViolationDetailsOutput`](crate::operation::get_violation_details::GetViolationDetailsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetViolationDetailsOutputBuilder {
     pub(crate) violation_detail: ::std::option::Option<crate::types::ViolationDetail>,
     _request_id: Option<String>,

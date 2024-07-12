@@ -33,8 +33,8 @@ impl TaskConfig {
 }
 
 /// A builder for [`TaskConfig`](crate::types::TaskConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TaskConfigBuilder {
     pub(crate) language_code: ::std::option::Option<crate::types::LanguageCode>,
     pub(crate) document_classification_config: ::std::option::Option<crate::types::DocumentClassificationConfig>,

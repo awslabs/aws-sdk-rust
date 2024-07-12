@@ -86,8 +86,8 @@ impl EnvironmentTemplate {
 }
 
 /// A builder for [`EnvironmentTemplate`](crate::types::EnvironmentTemplate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct EnvironmentTemplateBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

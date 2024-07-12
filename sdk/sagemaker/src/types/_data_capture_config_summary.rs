@@ -45,8 +45,8 @@ impl DataCaptureConfigSummary {
 }
 
 /// A builder for [`DataCaptureConfigSummary`](crate::types::DataCaptureConfigSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataCaptureConfigSummaryBuilder {
     pub(crate) enable_capture: ::std::option::Option<bool>,
     pub(crate) capture_status: ::std::option::Option<crate::types::CaptureStatus>,

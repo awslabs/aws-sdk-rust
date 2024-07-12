@@ -46,8 +46,8 @@ impl GetIpamPoolCidrsInput {
 }
 
 /// A builder for [`GetIpamPoolCidrsInput`](crate::operation::get_ipam_pool_cidrs::GetIpamPoolCidrsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetIpamPoolCidrsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) ipam_pool_id: ::std::option::Option<::std::string::String>,

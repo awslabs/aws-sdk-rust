@@ -26,8 +26,8 @@ impl GetStorageLensConfigurationInput {
 }
 
 /// A builder for [`GetStorageLensConfigurationInput`](crate::operation::get_storage_lens_configuration::GetStorageLensConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetStorageLensConfigurationInputBuilder {
     pub(crate) config_id: ::std::option::Option<::std::string::String>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,

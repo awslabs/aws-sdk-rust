@@ -38,8 +38,8 @@ impl SearchField {
 }
 
 /// A builder for [`SearchField`](crate::types::SearchField).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchFieldBuilder {
     pub(crate) key: ::std::option::Option<crate::types::SearchFieldKey>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

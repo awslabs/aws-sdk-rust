@@ -11,8 +11,8 @@ impl DeletePropertygraphStatisticsInput {
 }
 
 /// A builder for [`DeletePropertygraphStatisticsInput`](crate::operation::delete_propertygraph_statistics::DeletePropertygraphStatisticsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePropertygraphStatisticsInputBuilder {}
 impl DeletePropertygraphStatisticsInputBuilder {
     /// Consumes the builder and constructs a [`DeletePropertygraphStatisticsInput`](crate::operation::delete_propertygraph_statistics::DeletePropertygraphStatisticsInput).

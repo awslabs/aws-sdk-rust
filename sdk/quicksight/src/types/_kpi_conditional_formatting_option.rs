@@ -39,8 +39,8 @@ impl KpiConditionalFormattingOption {
 }
 
 /// A builder for [`KpiConditionalFormattingOption`](crate::types::KpiConditionalFormattingOption).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KpiConditionalFormattingOptionBuilder {
     pub(crate) primary_value: ::std::option::Option<crate::types::KpiPrimaryValueConditionalFormatting>,
     pub(crate) progress_bar: ::std::option::Option<crate::types::KpiProgressBarConditionalFormatting>,

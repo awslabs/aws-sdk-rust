@@ -87,8 +87,8 @@ impl PredefinedMetricSpecification {
 }
 
 /// A builder for [`PredefinedMetricSpecification`](crate::types::PredefinedMetricSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PredefinedMetricSpecificationBuilder {
     pub(crate) predefined_metric_type: ::std::option::Option<crate::types::MetricType>,
     pub(crate) resource_label: ::std::option::Option<::std::string::String>,

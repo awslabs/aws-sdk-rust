@@ -45,8 +45,8 @@ impl AwsEc2LaunchTemplateDetails {
 }
 
 /// A builder for [`AwsEc2LaunchTemplateDetails`](crate::types::AwsEc2LaunchTemplateDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEc2LaunchTemplateDetailsBuilder {
     pub(crate) launch_template_name: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,

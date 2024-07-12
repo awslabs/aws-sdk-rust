@@ -45,8 +45,8 @@ impl AwsWafv2RulesDetails {
 }
 
 /// A builder for [`AwsWafv2RulesDetails`](crate::types::AwsWafv2RulesDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsWafv2RulesDetailsBuilder {
     pub(crate) action: ::std::option::Option<crate::types::AwsWafv2RulesActionDetails>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

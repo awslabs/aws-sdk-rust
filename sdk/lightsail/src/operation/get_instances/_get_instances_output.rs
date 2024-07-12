@@ -38,8 +38,8 @@ impl GetInstancesOutput {
 }
 
 /// A builder for [`GetInstancesOutput`](crate::operation::get_instances::GetInstancesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetInstancesOutputBuilder {
     pub(crate) instances: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,

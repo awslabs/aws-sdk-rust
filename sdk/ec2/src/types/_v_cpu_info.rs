@@ -49,8 +49,8 @@ impl VCpuInfo {
 }
 
 /// A builder for [`VCpuInfo`](crate::types::VCpuInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VCpuInfoBuilder {
     pub(crate) default_v_cpus: ::std::option::Option<i32>,
     pub(crate) default_cores: ::std::option::Option<i32>,

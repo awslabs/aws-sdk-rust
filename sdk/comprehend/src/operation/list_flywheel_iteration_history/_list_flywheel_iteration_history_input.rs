@@ -38,8 +38,8 @@ impl ListFlywheelIterationHistoryInput {
 }
 
 /// A builder for [`ListFlywheelIterationHistoryInput`](crate::operation::list_flywheel_iteration_history::ListFlywheelIterationHistoryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFlywheelIterationHistoryInputBuilder {
     pub(crate) flywheel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) filter: ::std::option::Option<crate::types::FlywheelIterationFilter>,

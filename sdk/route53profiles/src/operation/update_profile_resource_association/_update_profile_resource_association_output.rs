@@ -26,8 +26,8 @@ impl UpdateProfileResourceAssociationOutput {
 }
 
 /// A builder for [`UpdateProfileResourceAssociationOutput`](crate::operation::update_profile_resource_association::UpdateProfileResourceAssociationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateProfileResourceAssociationOutputBuilder {
     pub(crate) profile_resource_association: ::std::option::Option<crate::types::ProfileResourceAssociation>,
     _request_id: Option<String>,

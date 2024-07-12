@@ -20,8 +20,8 @@ impl DescribeThingGroupInput {
 }
 
 /// A builder for [`DescribeThingGroupInput`](crate::operation::describe_thing_group::DescribeThingGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeThingGroupInputBuilder {
     pub(crate) thing_group_name: ::std::option::Option<::std::string::String>,
 }

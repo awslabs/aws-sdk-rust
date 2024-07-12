@@ -34,8 +34,8 @@ impl ListWorkspacesOutput {
 }
 
 /// A builder for [`ListWorkspacesOutput`](crate::operation::list_workspaces::ListWorkspacesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListWorkspacesOutputBuilder {
     pub(crate) workspaces: ::std::option::Option<::std::vec::Vec<crate::types::WorkspaceSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

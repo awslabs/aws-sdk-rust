@@ -32,8 +32,8 @@ impl GetInstanceUefiDataOutput {
 }
 
 /// A builder for [`GetInstanceUefiDataOutput`](crate::operation::get_instance_uefi_data::GetInstanceUefiDataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetInstanceUefiDataOutputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) uefi_data: ::std::option::Option<::std::string::String>,

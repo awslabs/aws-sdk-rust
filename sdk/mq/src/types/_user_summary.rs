@@ -27,8 +27,8 @@ impl UserSummary {
 }
 
 /// A builder for [`UserSummary`](crate::types::UserSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UserSummaryBuilder {
     pub(crate) pending_change: ::std::option::Option<crate::types::ChangeType>,
     pub(crate) username: ::std::option::Option<::std::string::String>,

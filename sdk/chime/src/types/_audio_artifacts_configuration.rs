@@ -21,8 +21,8 @@ impl AudioArtifactsConfiguration {
 }
 
 /// A builder for [`AudioArtifactsConfiguration`](crate::types::AudioArtifactsConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AudioArtifactsConfigurationBuilder {
     pub(crate) mux_type: ::std::option::Option<crate::types::AudioMuxType>,
 }

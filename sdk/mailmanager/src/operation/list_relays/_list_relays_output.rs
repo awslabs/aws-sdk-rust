@@ -33,8 +33,8 @@ impl ListRelaysOutput {
 }
 
 /// A builder for [`ListRelaysOutput`](crate::operation::list_relays::ListRelaysOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRelaysOutputBuilder {
     pub(crate) relays: ::std::option::Option<::std::vec::Vec<crate::types::Relay>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

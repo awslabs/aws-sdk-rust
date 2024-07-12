@@ -20,8 +20,8 @@ impl GetResolverRuleAssociationInput {
 }
 
 /// A builder for [`GetResolverRuleAssociationInput`](crate::operation::get_resolver_rule_association::GetResolverRuleAssociationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetResolverRuleAssociationInputBuilder {
     pub(crate) resolver_rule_association_id: ::std::option::Option<::std::string::String>,
 }

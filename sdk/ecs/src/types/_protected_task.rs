@@ -33,8 +33,8 @@ impl ProtectedTask {
 }
 
 /// A builder for [`ProtectedTask`](crate::types::ProtectedTask).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProtectedTaskBuilder {
     pub(crate) task_arn: ::std::option::Option<::std::string::String>,
     pub(crate) protection_enabled: ::std::option::Option<bool>,

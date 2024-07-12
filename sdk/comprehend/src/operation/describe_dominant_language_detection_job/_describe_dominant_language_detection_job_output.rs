@@ -26,8 +26,8 @@ impl DescribeDominantLanguageDetectionJobOutput {
 }
 
 /// A builder for [`DescribeDominantLanguageDetectionJobOutput`](crate::operation::describe_dominant_language_detection_job::DescribeDominantLanguageDetectionJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDominantLanguageDetectionJobOutputBuilder {
     pub(crate) dominant_language_detection_job_properties: ::std::option::Option<crate::types::DominantLanguageDetectionJobProperties>,
     _request_id: Option<String>,

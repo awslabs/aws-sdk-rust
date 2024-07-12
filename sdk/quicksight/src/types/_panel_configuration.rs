@@ -69,8 +69,8 @@ impl PanelConfiguration {
 }
 
 /// A builder for [`PanelConfiguration`](crate::types::PanelConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PanelConfigurationBuilder {
     pub(crate) title: ::std::option::Option<crate::types::PanelTitleOptions>,
     pub(crate) border_visibility: ::std::option::Option<crate::types::Visibility>,

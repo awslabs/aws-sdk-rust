@@ -53,8 +53,8 @@ impl EcsServiceRecommendationFilter {
 }
 
 /// A builder for [`EcsServiceRecommendationFilter`](crate::types::EcsServiceRecommendationFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EcsServiceRecommendationFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::EcsServiceRecommendationFilterName>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

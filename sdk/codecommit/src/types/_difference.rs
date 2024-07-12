@@ -33,8 +33,8 @@ impl Difference {
 }
 
 /// A builder for [`Difference`](crate::types::Difference).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DifferenceBuilder {
     pub(crate) before_blob: ::std::option::Option<crate::types::BlobMetadata>,
     pub(crate) after_blob: ::std::option::Option<crate::types::BlobMetadata>,

@@ -33,8 +33,8 @@ impl AddAttachmentsToSetOutput {
 }
 
 /// A builder for [`AddAttachmentsToSetOutput`](crate::operation::add_attachments_to_set::AddAttachmentsToSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddAttachmentsToSetOutputBuilder {
     pub(crate) attachment_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) expiry_time: ::std::option::Option<::std::string::String>,

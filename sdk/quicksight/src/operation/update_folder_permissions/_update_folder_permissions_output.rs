@@ -52,8 +52,8 @@ impl UpdateFolderPermissionsOutput {
 }
 
 /// A builder for [`UpdateFolderPermissionsOutput`](crate::operation::update_folder_permissions::UpdateFolderPermissionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateFolderPermissionsOutputBuilder {
     pub(crate) status: ::std::option::Option<i32>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

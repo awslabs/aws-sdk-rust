@@ -165,8 +165,8 @@ impl OntapVolumeConfiguration {
 }
 
 /// A builder for [`OntapVolumeConfiguration`](crate::types::OntapVolumeConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OntapVolumeConfigurationBuilder {
     pub(crate) flex_cache_endpoint_type: ::std::option::Option<crate::types::FlexCacheEndpointType>,
     pub(crate) junction_path: ::std::option::Option<::std::string::String>,

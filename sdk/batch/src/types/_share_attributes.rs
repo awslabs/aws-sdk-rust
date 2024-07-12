@@ -33,8 +33,8 @@ impl ShareAttributes {
 }
 
 /// A builder for [`ShareAttributes`](crate::types::ShareAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ShareAttributesBuilder {
     pub(crate) share_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) weight_factor: ::std::option::Option<f32>,

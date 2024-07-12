@@ -33,8 +33,8 @@ impl ClusterNode {
 }
 
 /// A builder for [`ClusterNode`](crate::types::ClusterNode).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ClusterNodeBuilder {
     pub(crate) node_role: ::std::option::Option<::std::string::String>,
     pub(crate) private_ip_address: ::std::option::Option<::std::string::String>,

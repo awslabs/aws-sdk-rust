@@ -32,8 +32,8 @@ impl AcceptResourceShareInvitationOutput {
 }
 
 /// A builder for [`AcceptResourceShareInvitationOutput`](crate::operation::accept_resource_share_invitation::AcceptResourceShareInvitationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AcceptResourceShareInvitationOutputBuilder {
     pub(crate) resource_share_invitation: ::std::option::Option<crate::types::ResourceShareInvitation>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

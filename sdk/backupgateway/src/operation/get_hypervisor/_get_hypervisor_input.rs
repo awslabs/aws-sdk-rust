@@ -20,8 +20,8 @@ impl GetHypervisorInput {
 }
 
 /// A builder for [`GetHypervisorInput`](crate::operation::get_hypervisor::GetHypervisorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetHypervisorInputBuilder {
     pub(crate) hypervisor_arn: ::std::option::Option<::std::string::String>,
 }

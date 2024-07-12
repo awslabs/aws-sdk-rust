@@ -38,8 +38,8 @@ impl GetKeyRotationStatusInput {
 }
 
 /// A builder for [`GetKeyRotationStatusInput`](crate::operation::get_key_rotation_status::GetKeyRotationStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetKeyRotationStatusInputBuilder {
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
 }

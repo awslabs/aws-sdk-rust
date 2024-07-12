@@ -27,8 +27,8 @@ impl StorageConfiguration {
 }
 
 /// A builder for [`StorageConfiguration`](crate::types::StorageConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StorageConfigurationBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) size_in_gb: ::std::option::Option<f64>,

@@ -43,8 +43,8 @@ impl SubSlotValueElicitationSetting {
 }
 
 /// A builder for [`SubSlotValueElicitationSetting`](crate::types::SubSlotValueElicitationSetting).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SubSlotValueElicitationSettingBuilder {
     pub(crate) default_value_specification: ::std::option::Option<crate::types::SlotDefaultValueSpecification>,
     pub(crate) prompt_specification: ::std::option::Option<crate::types::PromptSpecification>,

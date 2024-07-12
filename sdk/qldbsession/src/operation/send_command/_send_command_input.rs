@@ -64,8 +64,8 @@ impl SendCommandInput {
 }
 
 /// A builder for [`SendCommandInput`](crate::operation::send_command::SendCommandInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendCommandInputBuilder {
     pub(crate) session_token: ::std::option::Option<::std::string::String>,
     pub(crate) start_session: ::std::option::Option<crate::types::StartSessionRequest>,

@@ -34,8 +34,8 @@ impl ListSupportedInstanceTypesOutput {
 }
 
 /// A builder for [`ListSupportedInstanceTypesOutput`](crate::operation::list_supported_instance_types::ListSupportedInstanceTypesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSupportedInstanceTypesOutputBuilder {
     pub(crate) supported_instance_types: ::std::option::Option<::std::vec::Vec<crate::types::SupportedInstanceType>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

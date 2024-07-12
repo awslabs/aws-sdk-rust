@@ -26,8 +26,8 @@ impl GetSubscriptionStateOutput {
 }
 
 /// A builder for [`GetSubscriptionStateOutput`](crate::operation::get_subscription_state::GetSubscriptionStateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSubscriptionStateOutputBuilder {
     pub(crate) subscription_state: ::std::option::Option<crate::types::SubscriptionState>,
     _request_id: Option<String>,

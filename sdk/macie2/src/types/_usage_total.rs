@@ -33,8 +33,8 @@ impl UsageTotal {
 }
 
 /// A builder for [`UsageTotal`](crate::types::UsageTotal).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UsageTotalBuilder {
     pub(crate) currency: ::std::option::Option<crate::types::Currency>,
     pub(crate) estimated_cost: ::std::option::Option<::std::string::String>,

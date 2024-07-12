@@ -34,8 +34,8 @@ impl DescribeNotificationConfigurationsOutput {
 }
 
 /// A builder for [`DescribeNotificationConfigurationsOutput`](crate::operation::describe_notification_configurations::DescribeNotificationConfigurationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeNotificationConfigurationsOutputBuilder {
     pub(crate) notification_configurations: ::std::option::Option<::std::vec::Vec<crate::types::NotificationConfiguration>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

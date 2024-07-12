@@ -104,8 +104,8 @@ impl UpdateLocationObjectStorageInput {
 }
 
 /// A builder for [`UpdateLocationObjectStorageInput`](crate::operation::update_location_object_storage::UpdateLocationObjectStorageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateLocationObjectStorageInputBuilder {
     pub(crate) location_arn: ::std::option::Option<::std::string::String>,
     pub(crate) server_port: ::std::option::Option<i32>,

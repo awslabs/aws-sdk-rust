@@ -123,8 +123,8 @@ impl WorldExportJobSummary {
 }
 
 /// A builder for [`WorldExportJobSummary`](crate::types::WorldExportJobSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WorldExportJobSummaryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::WorldExportJobStatus>,

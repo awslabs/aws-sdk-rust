@@ -34,8 +34,8 @@ impl JobExecutionSettings {
 }
 
 /// A builder for [`JobExecutionSettings`](crate::types::JobExecutionSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JobExecutionSettingsBuilder {
     pub(crate) allow_deferred_execution: ::std::option::Option<bool>,
     pub(crate) data_access_role_arn: ::std::option::Option<::std::string::String>,

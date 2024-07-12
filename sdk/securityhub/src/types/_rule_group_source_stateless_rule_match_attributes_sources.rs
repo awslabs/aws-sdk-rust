@@ -21,8 +21,8 @@ impl RuleGroupSourceStatelessRuleMatchAttributesSources {
 }
 
 /// A builder for [`RuleGroupSourceStatelessRuleMatchAttributesSources`](crate::types::RuleGroupSourceStatelessRuleMatchAttributesSources).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RuleGroupSourceStatelessRuleMatchAttributesSourcesBuilder {
     pub(crate) address_definition: ::std::option::Option<::std::string::String>,
 }

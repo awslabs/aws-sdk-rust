@@ -103,8 +103,8 @@ impl CreateConfigurationTemplateOutput {
 }
 
 /// A builder for [`CreateConfigurationTemplateOutput`](crate::operation::create_configuration_template::CreateConfigurationTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateConfigurationTemplateOutputBuilder {
     pub(crate) solution_stack_name: ::std::option::Option<::std::string::String>,
     pub(crate) platform_arn: ::std::option::Option<::std::string::String>,

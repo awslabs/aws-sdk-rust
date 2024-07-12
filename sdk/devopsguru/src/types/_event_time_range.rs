@@ -27,8 +27,8 @@ impl EventTimeRange {
 }
 
 /// A builder for [`EventTimeRange`](crate::types::EventTimeRange).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EventTimeRangeBuilder {
     pub(crate) from_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) to_time: ::std::option::Option<::aws_smithy_types::DateTime>,

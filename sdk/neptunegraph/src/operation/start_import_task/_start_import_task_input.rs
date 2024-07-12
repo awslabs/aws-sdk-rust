@@ -50,8 +50,8 @@ impl StartImportTaskInput {
 }
 
 /// A builder for [`StartImportTaskInput`](crate::operation::start_import_task::StartImportTaskInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartImportTaskInputBuilder {
     pub(crate) import_options: ::std::option::Option<crate::types::ImportOptions>,
     pub(crate) fail_on_error: ::std::option::Option<bool>,

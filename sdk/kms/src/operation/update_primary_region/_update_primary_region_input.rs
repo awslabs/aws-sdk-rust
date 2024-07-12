@@ -46,8 +46,8 @@ impl UpdatePrimaryRegionInput {
 }
 
 /// A builder for [`UpdatePrimaryRegionInput`](crate::operation::update_primary_region::UpdatePrimaryRegionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePrimaryRegionInputBuilder {
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
     pub(crate) primary_region: ::std::option::Option<::std::string::String>,

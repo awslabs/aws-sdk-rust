@@ -34,8 +34,8 @@ impl DescribeWorkspaceImagesOutput {
 }
 
 /// A builder for [`DescribeWorkspaceImagesOutput`](crate::operation::describe_workspace_images::DescribeWorkspaceImagesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeWorkspaceImagesOutputBuilder {
     pub(crate) images: ::std::option::Option<::std::vec::Vec<crate::types::WorkspaceImage>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

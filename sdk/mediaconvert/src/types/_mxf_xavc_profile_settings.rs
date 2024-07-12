@@ -27,8 +27,8 @@ impl MxfXavcProfileSettings {
 }
 
 /// A builder for [`MxfXavcProfileSettings`](crate::types::MxfXavcProfileSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MxfXavcProfileSettingsBuilder {
     pub(crate) duration_mode: ::std::option::Option<crate::types::MxfXavcDurationMode>,
     pub(crate) max_anc_data_size: ::std::option::Option<i32>,

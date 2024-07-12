@@ -29,8 +29,8 @@ impl NeuronInfo {
 }
 
 /// A builder for [`NeuronInfo`](crate::types::NeuronInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NeuronInfoBuilder {
     pub(crate) neuron_devices: ::std::option::Option<::std::vec::Vec<crate::types::NeuronDeviceInfo>>,
     pub(crate) total_neuron_device_memory_in_mib: ::std::option::Option<i32>,

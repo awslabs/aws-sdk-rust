@@ -87,8 +87,8 @@ impl ForgotPasswordInput {
 }
 
 /// A builder for [`ForgotPasswordInput`](crate::operation::forgot_password::ForgotPasswordInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ForgotPasswordInputBuilder {
     pub(crate) client_id: ::std::option::Option<::std::string::String>,
     pub(crate) secret_hash: ::std::option::Option<::std::string::String>,

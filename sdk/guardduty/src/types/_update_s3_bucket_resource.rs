@@ -23,8 +23,8 @@ impl UpdateS3BucketResource {
 }
 
 /// A builder for [`UpdateS3BucketResource`](crate::types::UpdateS3BucketResource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateS3BucketResourceBuilder {
     pub(crate) object_prefixes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

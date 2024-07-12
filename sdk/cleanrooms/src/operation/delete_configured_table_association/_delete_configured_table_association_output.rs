@@ -18,8 +18,8 @@ impl DeleteConfiguredTableAssociationOutput {
 }
 
 /// A builder for [`DeleteConfiguredTableAssociationOutput`](crate::operation::delete_configured_table_association::DeleteConfiguredTableAssociationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteConfiguredTableAssociationOutputBuilder {
     _request_id: Option<String>,
 }

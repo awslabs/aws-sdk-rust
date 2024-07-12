@@ -26,8 +26,8 @@ impl ListStorageLensGroupsInput {
 }
 
 /// A builder for [`ListStorageLensGroupsInput`](crate::operation::list_storage_lens_groups::ListStorageLensGroupsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListStorageLensGroupsInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

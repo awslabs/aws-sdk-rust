@@ -41,8 +41,8 @@ impl BlockReference {
 }
 
 /// A builder for [`BlockReference`](crate::types::BlockReference).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BlockReferenceBuilder {
     pub(crate) block_id: ::std::option::Option<::std::string::String>,
     pub(crate) begin_offset: ::std::option::Option<i32>,

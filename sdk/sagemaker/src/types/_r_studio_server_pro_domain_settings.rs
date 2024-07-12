@@ -39,8 +39,8 @@ impl RStudioServerProDomainSettings {
 }
 
 /// A builder for [`RStudioServerProDomainSettings`](crate::types::RStudioServerProDomainSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RStudioServerProDomainSettingsBuilder {
     pub(crate) domain_execution_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) r_studio_connect_url: ::std::option::Option<::std::string::String>,

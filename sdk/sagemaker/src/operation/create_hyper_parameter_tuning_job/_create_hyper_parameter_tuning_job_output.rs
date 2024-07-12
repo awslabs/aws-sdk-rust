@@ -26,8 +26,8 @@ impl CreateHyperParameterTuningJobOutput {
 }
 
 /// A builder for [`CreateHyperParameterTuningJobOutput`](crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateHyperParameterTuningJobOutputBuilder {
     pub(crate) hyper_parameter_tuning_job_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

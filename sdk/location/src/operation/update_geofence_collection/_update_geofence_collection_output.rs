@@ -48,8 +48,8 @@ impl UpdateGeofenceCollectionOutput {
 }
 
 /// A builder for [`UpdateGeofenceCollectionOutput`](crate::operation::update_geofence_collection::UpdateGeofenceCollectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateGeofenceCollectionOutputBuilder {
     pub(crate) collection_name: ::std::option::Option<::std::string::String>,
     pub(crate) collection_arn: ::std::option::Option<::std::string::String>,

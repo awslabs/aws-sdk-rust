@@ -41,8 +41,8 @@ impl GetPropertyValueOutput {
 }
 
 /// A builder for [`GetPropertyValueOutput`](crate::operation::get_property_value::GetPropertyValueOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPropertyValueOutputBuilder {
     pub(crate) property_values: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PropertyLatestValue>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

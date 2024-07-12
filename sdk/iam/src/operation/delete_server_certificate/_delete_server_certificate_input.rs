@@ -22,8 +22,8 @@ impl DeleteServerCertificateInput {
 }
 
 /// A builder for [`DeleteServerCertificateInput`](crate::operation::delete_server_certificate::DeleteServerCertificateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteServerCertificateInputBuilder {
     pub(crate) server_certificate_name: ::std::option::Option<::std::string::String>,
 }

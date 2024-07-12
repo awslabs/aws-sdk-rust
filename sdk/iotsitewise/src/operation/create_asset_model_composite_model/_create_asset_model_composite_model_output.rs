@@ -40,8 +40,8 @@ impl CreateAssetModelCompositeModelOutput {
 }
 
 /// A builder for [`CreateAssetModelCompositeModelOutput`](crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAssetModelCompositeModelOutputBuilder {
     pub(crate) asset_model_composite_model_id: ::std::option::Option<::std::string::String>,
     pub(crate) asset_model_composite_model_path: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelCompositeModelPathSegment>>,

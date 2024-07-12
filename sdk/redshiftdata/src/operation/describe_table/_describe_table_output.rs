@@ -40,8 +40,8 @@ impl DescribeTableOutput {
 }
 
 /// A builder for [`DescribeTableOutput`](crate::operation::describe_table::DescribeTableOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTableOutputBuilder {
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
     pub(crate) column_list: ::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>>,

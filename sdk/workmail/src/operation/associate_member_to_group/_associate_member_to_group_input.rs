@@ -68,8 +68,8 @@ impl AssociateMemberToGroupInput {
 }
 
 /// A builder for [`AssociateMemberToGroupInput`](crate::operation::associate_member_to_group::AssociateMemberToGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateMemberToGroupInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) group_id: ::std::option::Option<::std::string::String>,

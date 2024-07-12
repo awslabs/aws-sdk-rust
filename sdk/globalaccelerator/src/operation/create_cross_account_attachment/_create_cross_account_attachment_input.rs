@@ -52,8 +52,8 @@ impl CreateCrossAccountAttachmentInput {
 }
 
 /// A builder for [`CreateCrossAccountAttachmentInput`](crate::operation::create_cross_account_attachment::CreateCrossAccountAttachmentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCrossAccountAttachmentInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) principals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

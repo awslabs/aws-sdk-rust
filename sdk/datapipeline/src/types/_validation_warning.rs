@@ -29,8 +29,8 @@ impl ValidationWarning {
 }
 
 /// A builder for [`ValidationWarning`](crate::types::ValidationWarning).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ValidationWarningBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) warnings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

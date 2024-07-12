@@ -29,8 +29,8 @@ impl UpdateRestApiInput {
 }
 
 /// A builder for [`UpdateRestApiInput`](crate::operation::update_rest_api::UpdateRestApiInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRestApiInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
     pub(crate) patch_operations: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>,

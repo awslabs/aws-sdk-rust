@@ -20,8 +20,8 @@ impl GetBulkDeploymentStatusInput {
 }
 
 /// A builder for [`GetBulkDeploymentStatusInput`](crate::operation::get_bulk_deployment_status::GetBulkDeploymentStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBulkDeploymentStatusInputBuilder {
     pub(crate) bulk_deployment_id: ::std::option::Option<::std::string::String>,
 }

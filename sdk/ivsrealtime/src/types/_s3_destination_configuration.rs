@@ -35,8 +35,8 @@ impl S3DestinationConfiguration {
 }
 
 /// A builder for [`S3DestinationConfiguration`](crate::types::S3DestinationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3DestinationConfigurationBuilder {
     pub(crate) storage_configuration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) encoder_configuration_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

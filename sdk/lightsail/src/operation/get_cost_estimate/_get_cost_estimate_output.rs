@@ -28,8 +28,8 @@ impl GetCostEstimateOutput {
 }
 
 /// A builder for [`GetCostEstimateOutput`](crate::operation::get_cost_estimate::GetCostEstimateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCostEstimateOutputBuilder {
     pub(crate) resources_budget_estimate: ::std::option::Option<::std::vec::Vec<crate::types::ResourceBudgetEstimate>>,
     _request_id: Option<String>,

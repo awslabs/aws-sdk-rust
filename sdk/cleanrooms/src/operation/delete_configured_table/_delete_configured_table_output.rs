@@ -19,8 +19,8 @@ impl DeleteConfiguredTableOutput {
 }
 
 /// A builder for [`DeleteConfiguredTableOutput`](crate::operation::delete_configured_table::DeleteConfiguredTableOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteConfiguredTableOutputBuilder {
     _request_id: Option<String>,
 }

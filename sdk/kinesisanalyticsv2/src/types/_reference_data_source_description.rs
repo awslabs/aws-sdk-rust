@@ -41,8 +41,8 @@ impl ReferenceDataSourceDescription {
 }
 
 /// A builder for [`ReferenceDataSourceDescription`](crate::types::ReferenceDataSourceDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReferenceDataSourceDescriptionBuilder {
     pub(crate) reference_id: ::std::option::Option<::std::string::String>,
     pub(crate) table_name: ::std::option::Option<::std::string::String>,

@@ -295,8 +295,8 @@ impl UploadPartCopyInput {
 }
 
 /// A builder for [`UploadPartCopyInput`](crate::operation::upload_part_copy::UploadPartCopyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UploadPartCopyInputBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) copy_source: ::std::option::Option<::std::string::String>,

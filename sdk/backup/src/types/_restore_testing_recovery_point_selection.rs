@@ -51,8 +51,8 @@ impl RestoreTestingRecoveryPointSelection {
 }
 
 /// A builder for [`RestoreTestingRecoveryPointSelection`](crate::types::RestoreTestingRecoveryPointSelection).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RestoreTestingRecoveryPointSelectionBuilder {
     pub(crate) algorithm: ::std::option::Option<crate::types::RestoreTestingRecoveryPointSelectionAlgorithm>,
     pub(crate) exclude_vaults: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

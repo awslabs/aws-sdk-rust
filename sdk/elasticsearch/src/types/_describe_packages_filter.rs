@@ -29,8 +29,8 @@ impl DescribePackagesFilter {
 }
 
 /// A builder for [`DescribePackagesFilter`](crate::types::DescribePackagesFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribePackagesFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::DescribePackagesFilterName>,
     pub(crate) value: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -18,8 +18,8 @@ impl DeleteEnvironmentBlueprintConfigurationOutput {
 }
 
 /// A builder for [`DeleteEnvironmentBlueprintConfigurationOutput`](crate::operation::delete_environment_blueprint_configuration::DeleteEnvironmentBlueprintConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteEnvironmentBlueprintConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

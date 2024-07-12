@@ -34,8 +34,8 @@ impl ListSyncResourcesOutput {
 }
 
 /// A builder for [`ListSyncResourcesOutput`](crate::operation::list_sync_resources::ListSyncResourcesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSyncResourcesOutputBuilder {
     pub(crate) sync_resources: ::std::option::Option<::std::vec::Vec<crate::types::SyncResourceSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

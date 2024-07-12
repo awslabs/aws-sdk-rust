@@ -69,8 +69,8 @@ impl CreateBatchLoadTaskInput {
 }
 
 /// A builder for [`CreateBatchLoadTaskInput`](crate::operation::create_batch_load_task::CreateBatchLoadTaskInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateBatchLoadTaskInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) data_model_configuration: ::std::option::Option<crate::types::DataModelConfiguration>,

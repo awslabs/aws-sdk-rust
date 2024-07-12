@@ -28,8 +28,8 @@ impl UpdateVtlDeviceTypeInput {
 }
 
 /// A builder for [`UpdateVtlDeviceTypeInput`](crate::operation::update_vtl_device_type::UpdateVtlDeviceTypeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateVtlDeviceTypeInputBuilder {
     pub(crate) vtl_device_arn: ::std::option::Option<::std::string::String>,
     pub(crate) device_type: ::std::option::Option<::std::string::String>,

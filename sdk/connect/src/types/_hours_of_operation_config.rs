@@ -33,8 +33,8 @@ impl HoursOfOperationConfig {
 }
 
 /// A builder for [`HoursOfOperationConfig`](crate::types::HoursOfOperationConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HoursOfOperationConfigBuilder {
     pub(crate) day: ::std::option::Option<crate::types::HoursOfOperationDays>,
     pub(crate) start_time: ::std::option::Option<crate::types::HoursOfOperationTimeSlice>,

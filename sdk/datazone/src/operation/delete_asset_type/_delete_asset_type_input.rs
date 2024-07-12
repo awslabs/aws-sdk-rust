@@ -26,8 +26,8 @@ impl DeleteAssetTypeInput {
 }
 
 /// A builder for [`DeleteAssetTypeInput`](crate::operation::delete_asset_type::DeleteAssetTypeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAssetTypeInputBuilder {
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) identifier: ::std::option::Option<::std::string::String>,

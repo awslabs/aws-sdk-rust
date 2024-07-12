@@ -26,8 +26,8 @@ impl GetAccessPolicyInput {
 }
 
 /// A builder for [`GetAccessPolicyInput`](crate::operation::get_access_policy::GetAccessPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAccessPolicyInputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::AccessPolicyType>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

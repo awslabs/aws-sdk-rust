@@ -20,8 +20,8 @@ impl GetChannelGroupInput {
 }
 
 /// A builder for [`GetChannelGroupInput`](crate::operation::get_channel_group::GetChannelGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetChannelGroupInputBuilder {
     pub(crate) channel_group_name: ::std::option::Option<::std::string::String>,
 }

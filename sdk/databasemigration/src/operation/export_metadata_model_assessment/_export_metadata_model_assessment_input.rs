@@ -40,8 +40,8 @@ impl ExportMetadataModelAssessmentInput {
 }
 
 /// A builder for [`ExportMetadataModelAssessmentInput`](crate::operation::export_metadata_model_assessment::ExportMetadataModelAssessmentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExportMetadataModelAssessmentInputBuilder {
     pub(crate) migration_project_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) selection_rules: ::std::option::Option<::std::string::String>,

@@ -18,8 +18,8 @@ impl DeleteAuthPolicyOutput {
 }
 
 /// A builder for [`DeleteAuthPolicyOutput`](crate::operation::delete_auth_policy::DeleteAuthPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAuthPolicyOutputBuilder {
     _request_id: Option<String>,
 }

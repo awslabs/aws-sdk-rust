@@ -59,8 +59,8 @@ impl InsufficientCapacityException {
 }
 
 /// A builder for [`InsufficientCapacityException`](crate::types::error::InsufficientCapacityException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InsufficientCapacityExceptionBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) code: ::std::option::Option<::std::string::String>,

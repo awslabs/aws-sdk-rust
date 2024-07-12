@@ -18,8 +18,8 @@ impl UpdateLogLevelsByResourceTypesOutput {
 }
 
 /// A builder for [`UpdateLogLevelsByResourceTypesOutput`](crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateLogLevelsByResourceTypesOutputBuilder {
     _request_id: Option<String>,
 }

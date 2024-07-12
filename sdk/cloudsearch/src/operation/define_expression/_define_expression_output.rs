@@ -27,8 +27,8 @@ impl DefineExpressionOutput {
 }
 
 /// A builder for [`DefineExpressionOutput`](crate::operation::define_expression::DefineExpressionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DefineExpressionOutputBuilder {
     pub(crate) expression: ::std::option::Option<crate::types::ExpressionStatus>,
     _request_id: Option<String>,

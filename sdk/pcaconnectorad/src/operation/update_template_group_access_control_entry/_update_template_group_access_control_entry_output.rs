@@ -18,8 +18,8 @@ impl UpdateTemplateGroupAccessControlEntryOutput {
 }
 
 /// A builder for [`UpdateTemplateGroupAccessControlEntryOutput`](crate::operation::update_template_group_access_control_entry::UpdateTemplateGroupAccessControlEntryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateTemplateGroupAccessControlEntryOutputBuilder {
     _request_id: Option<String>,
 }

@@ -71,8 +71,8 @@ impl UpdateUsagePlanOutput {
 }
 
 /// A builder for [`UpdateUsagePlanOutput`](crate::operation::update_usage_plan::UpdateUsagePlanOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateUsagePlanOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

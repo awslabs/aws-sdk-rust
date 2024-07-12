@@ -33,8 +33,8 @@ impl GetGatewayResponsesInput {
 }
 
 /// A builder for [`GetGatewayResponsesInput`](crate::operation::get_gateway_responses::GetGatewayResponsesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetGatewayResponsesInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
     pub(crate) position: ::std::option::Option<::std::string::String>,

@@ -18,8 +18,8 @@ impl SetVisibleToAllUsersOutput {
 }
 
 /// A builder for [`SetVisibleToAllUsersOutput`](crate::operation::set_visible_to_all_users::SetVisibleToAllUsersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetVisibleToAllUsersOutputBuilder {
     _request_id: Option<String>,
 }

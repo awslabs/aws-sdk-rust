@@ -23,8 +23,8 @@ impl DeviceDefinitionVersion {
 }
 
 /// A builder for [`DeviceDefinitionVersion`](crate::types::DeviceDefinitionVersion).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeviceDefinitionVersionBuilder {
     pub(crate) devices: ::std::option::Option<::std::vec::Vec<crate::types::Device>>,
 }

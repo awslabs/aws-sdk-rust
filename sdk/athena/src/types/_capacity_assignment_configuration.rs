@@ -29,8 +29,8 @@ impl CapacityAssignmentConfiguration {
 }
 
 /// A builder for [`CapacityAssignmentConfiguration`](crate::types::CapacityAssignmentConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CapacityAssignmentConfigurationBuilder {
     pub(crate) capacity_reservation_name: ::std::option::Option<::std::string::String>,
     pub(crate) capacity_assignments: ::std::option::Option<::std::vec::Vec<crate::types::CapacityAssignment>>,

@@ -33,8 +33,8 @@ impl ListStateMachinesOutput {
 }
 
 /// A builder for [`ListStateMachinesOutput`](crate::operation::list_state_machines::ListStateMachinesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListStateMachinesOutputBuilder {
     pub(crate) state_machines: ::std::option::Option<::std::vec::Vec<crate::types::StateMachineListItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

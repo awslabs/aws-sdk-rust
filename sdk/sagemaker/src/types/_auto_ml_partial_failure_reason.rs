@@ -21,8 +21,8 @@ impl AutoMlPartialFailureReason {
 }
 
 /// A builder for [`AutoMlPartialFailureReason`](crate::types::AutoMlPartialFailureReason).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AutoMlPartialFailureReasonBuilder {
     pub(crate) partial_failure_message: ::std::option::Option<::std::string::String>,
 }

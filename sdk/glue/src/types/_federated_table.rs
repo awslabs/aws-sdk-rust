@@ -33,8 +33,8 @@ impl FederatedTable {
 }
 
 /// A builder for [`FederatedTable`](crate::types::FederatedTable).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FederatedTableBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) database_identifier: ::std::option::Option<::std::string::String>,

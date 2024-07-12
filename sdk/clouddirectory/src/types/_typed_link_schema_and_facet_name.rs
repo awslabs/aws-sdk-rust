@@ -29,8 +29,8 @@ impl TypedLinkSchemaAndFacetName {
 }
 
 /// A builder for [`TypedLinkSchemaAndFacetName`](crate::types::TypedLinkSchemaAndFacetName).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TypedLinkSchemaAndFacetNameBuilder {
     pub(crate) schema_arn: ::std::option::Option<::std::string::String>,
     pub(crate) typed_link_name: ::std::option::Option<::std::string::String>,

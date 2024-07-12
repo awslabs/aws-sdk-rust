@@ -46,8 +46,8 @@ impl DisassociateKmsKeyInput {
 }
 
 /// A builder for [`DisassociateKmsKeyInput`](crate::operation::disassociate_kms_key::DisassociateKmsKeyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateKmsKeyInputBuilder {
     pub(crate) log_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_identifier: ::std::option::Option<::std::string::String>,

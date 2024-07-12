@@ -20,8 +20,8 @@ impl DeleteAttachmentInput {
 }
 
 /// A builder for [`DeleteAttachmentInput`](crate::operation::delete_attachment::DeleteAttachmentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAttachmentInputBuilder {
     pub(crate) attachment_id: ::std::option::Option<::std::string::String>,
 }

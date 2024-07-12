@@ -33,8 +33,8 @@ impl DisassociateVpcFromHostedZoneInput {
 }
 
 /// A builder for [`DisassociateVpcFromHostedZoneInput`](crate::operation::disassociate_vpc_from_hosted_zone::DisassociateVpcFromHostedZoneInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateVpcFromHostedZoneInputBuilder {
     pub(crate) hosted_zone_id: ::std::option::Option<::std::string::String>,
     pub(crate) vpc: ::std::option::Option<crate::types::Vpc>,

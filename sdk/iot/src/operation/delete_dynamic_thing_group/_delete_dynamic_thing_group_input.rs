@@ -26,8 +26,8 @@ impl DeleteDynamicThingGroupInput {
 }
 
 /// A builder for [`DeleteDynamicThingGroupInput`](crate::operation::delete_dynamic_thing_group::DeleteDynamicThingGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDynamicThingGroupInputBuilder {
     pub(crate) thing_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) expected_version: ::std::option::Option<i64>,

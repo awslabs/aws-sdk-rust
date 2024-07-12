@@ -268,8 +268,8 @@ impl StartLoaderJobInput {
 }
 
 /// A builder for [`StartLoaderJobInput`](crate::operation::start_loader_job::StartLoaderJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartLoaderJobInputBuilder {
     pub(crate) source: ::std::option::Option<::std::string::String>,
     pub(crate) format: ::std::option::Option<crate::types::Format>,

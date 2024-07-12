@@ -39,8 +39,8 @@ impl UpdateArchiveRuleInput {
 }
 
 /// A builder for [`UpdateArchiveRuleInput`](crate::operation::update_archive_rule::UpdateArchiveRuleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateArchiveRuleInputBuilder {
     pub(crate) analyzer_name: ::std::option::Option<::std::string::String>,
     pub(crate) rule_name: ::std::option::Option<::std::string::String>,

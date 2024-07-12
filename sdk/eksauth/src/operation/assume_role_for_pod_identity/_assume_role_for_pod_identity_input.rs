@@ -34,8 +34,8 @@ impl AssumeRoleForPodIdentityInput {
 }
 
 /// A builder for [`AssumeRoleForPodIdentityInput`](crate::operation::assume_role_for_pod_identity::AssumeRoleForPodIdentityInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AssumeRoleForPodIdentityInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) token: ::std::option::Option<::std::string::String>,

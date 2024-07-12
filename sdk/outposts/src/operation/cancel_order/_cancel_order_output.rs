@@ -18,8 +18,8 @@ impl CancelOrderOutput {
 }
 
 /// A builder for [`CancelOrderOutput`](crate::operation::cancel_order::CancelOrderOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelOrderOutputBuilder {
     _request_id: Option<String>,
 }

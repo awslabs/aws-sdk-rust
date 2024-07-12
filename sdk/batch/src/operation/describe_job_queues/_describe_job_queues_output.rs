@@ -34,8 +34,8 @@ impl DescribeJobQueuesOutput {
 }
 
 /// A builder for [`DescribeJobQueuesOutput`](crate::operation::describe_job_queues::DescribeJobQueuesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeJobQueuesOutputBuilder {
     pub(crate) job_queues: ::std::option::Option<::std::vec::Vec<crate::types::JobQueueDetail>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

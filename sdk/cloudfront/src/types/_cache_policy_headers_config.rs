@@ -39,8 +39,8 @@ impl CachePolicyHeadersConfig {
 }
 
 /// A builder for [`CachePolicyHeadersConfig`](crate::types::CachePolicyHeadersConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CachePolicyHeadersConfigBuilder {
     pub(crate) header_behavior: ::std::option::Option<crate::types::CachePolicyHeaderBehavior>,
     pub(crate) headers: ::std::option::Option<crate::types::Headers>,

@@ -27,8 +27,8 @@ impl Scte20SourceSettings {
 }
 
 /// A builder for [`Scte20SourceSettings`](crate::types::Scte20SourceSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Scte20SourceSettingsBuilder {
     pub(crate) convert608_to708: ::std::option::Option<crate::types::Scte20Convert608To708>,
     pub(crate) source608_channel_number: ::std::option::Option<i32>,

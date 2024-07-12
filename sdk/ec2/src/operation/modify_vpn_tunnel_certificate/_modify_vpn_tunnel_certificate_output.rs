@@ -26,8 +26,8 @@ impl ModifyVpnTunnelCertificateOutput {
 }
 
 /// A builder for [`ModifyVpnTunnelCertificateOutput`](crate::operation::modify_vpn_tunnel_certificate::ModifyVpnTunnelCertificateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyVpnTunnelCertificateOutputBuilder {
     pub(crate) vpn_connection: ::std::option::Option<crate::types::VpnConnection>,
     _request_id: Option<String>,

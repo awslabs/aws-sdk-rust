@@ -26,8 +26,8 @@ impl DeleteDistributionOutput {
 }
 
 /// A builder for [`DeleteDistributionOutput`](crate::operation::delete_distribution::DeleteDistributionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDistributionOutputBuilder {
     pub(crate) operation: ::std::option::Option<crate::types::Operation>,
     _request_id: Option<String>,

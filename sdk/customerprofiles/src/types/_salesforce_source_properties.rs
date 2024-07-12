@@ -34,8 +34,8 @@ impl SalesforceSourceProperties {
 }
 
 /// A builder for [`SalesforceSourceProperties`](crate::types::SalesforceSourceProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SalesforceSourcePropertiesBuilder {
     pub(crate) object: ::std::option::Option<::std::string::String>,
     pub(crate) enable_dynamic_field_update: ::std::option::Option<bool>,

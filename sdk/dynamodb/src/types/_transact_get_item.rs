@@ -21,8 +21,8 @@ impl TransactGetItem {
 }
 
 /// A builder for [`TransactGetItem`](crate::types::TransactGetItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TransactGetItemBuilder {
     pub(crate) get: ::std::option::Option<crate::types::Get>,
 }

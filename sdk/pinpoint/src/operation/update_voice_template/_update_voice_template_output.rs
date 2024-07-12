@@ -26,8 +26,8 @@ impl UpdateVoiceTemplateOutput {
 }
 
 /// A builder for [`UpdateVoiceTemplateOutput`](crate::operation::update_voice_template::UpdateVoiceTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateVoiceTemplateOutputBuilder {
     pub(crate) message_body: ::std::option::Option<crate::types::MessageBody>,
     _request_id: Option<String>,

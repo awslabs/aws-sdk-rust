@@ -53,8 +53,8 @@ impl InternalServerException {
 }
 
 /// A builder for [`InternalServerException`](crate::types::error::InternalServerException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct InternalServerExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,

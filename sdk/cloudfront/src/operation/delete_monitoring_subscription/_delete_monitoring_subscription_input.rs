@@ -20,8 +20,8 @@ impl DeleteMonitoringSubscriptionInput {
 }
 
 /// A builder for [`DeleteMonitoringSubscriptionInput`](crate::operation::delete_monitoring_subscription::DeleteMonitoringSubscriptionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteMonitoringSubscriptionInputBuilder {
     pub(crate) distribution_id: ::std::option::Option<::std::string::String>,
 }

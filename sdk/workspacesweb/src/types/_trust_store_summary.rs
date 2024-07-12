@@ -21,8 +21,8 @@ impl TrustStoreSummary {
 }
 
 /// A builder for [`TrustStoreSummary`](crate::types::TrustStoreSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TrustStoreSummaryBuilder {
     pub(crate) trust_store_arn: ::std::option::Option<::std::string::String>,
 }

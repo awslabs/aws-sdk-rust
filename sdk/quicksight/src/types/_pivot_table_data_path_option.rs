@@ -28,8 +28,8 @@ impl PivotTableDataPathOption {
 }
 
 /// A builder for [`PivotTableDataPathOption`](crate::types::PivotTableDataPathOption).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PivotTableDataPathOptionBuilder {
     pub(crate) data_path_list: ::std::option::Option<::std::vec::Vec<crate::types::DataPathValue>>,
     pub(crate) width: ::std::option::Option<::std::string::String>,

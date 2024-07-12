@@ -47,8 +47,8 @@ impl EndpointDetails {
 }
 
 /// A builder for [`EndpointDetails`](crate::types::EndpointDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EndpointDetailsBuilder {
     pub(crate) security_details: ::std::option::Option<crate::types::SecurityDetails>,
     pub(crate) endpoint: ::std::option::Option<crate::types::DataflowEndpoint>,

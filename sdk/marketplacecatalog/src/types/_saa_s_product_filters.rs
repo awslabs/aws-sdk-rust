@@ -39,8 +39,8 @@ impl SaaSProductFilters {
 }
 
 /// A builder for [`SaaSProductFilters`](crate::types::SaaSProductFilters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SaaSProductFiltersBuilder {
     pub(crate) entity_id: ::std::option::Option<crate::types::SaaSProductEntityIdFilter>,
     pub(crate) product_title: ::std::option::Option<crate::types::SaaSProductTitleFilter>,

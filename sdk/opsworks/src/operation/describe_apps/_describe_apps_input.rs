@@ -28,8 +28,8 @@ impl DescribeAppsInput {
 }
 
 /// A builder for [`DescribeAppsInput`](crate::operation::describe_apps::DescribeAppsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAppsInputBuilder {
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,
     pub(crate) app_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

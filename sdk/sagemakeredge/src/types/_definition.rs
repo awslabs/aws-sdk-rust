@@ -39,8 +39,8 @@ impl Definition {
 }
 
 /// A builder for [`Definition`](crate::types::Definition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DefinitionBuilder {
     pub(crate) model_handle: ::std::option::Option<::std::string::String>,
     pub(crate) s3_url: ::std::option::Option<::std::string::String>,

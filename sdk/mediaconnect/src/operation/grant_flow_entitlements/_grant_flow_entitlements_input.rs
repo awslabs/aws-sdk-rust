@@ -29,8 +29,8 @@ impl GrantFlowEntitlementsInput {
 }
 
 /// A builder for [`GrantFlowEntitlementsInput`](crate::operation::grant_flow_entitlements::GrantFlowEntitlementsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GrantFlowEntitlementsInputBuilder {
     pub(crate) entitlements: ::std::option::Option<::std::vec::Vec<crate::types::GrantEntitlementRequest>>,
     pub(crate) flow_arn: ::std::option::Option<::std::string::String>,

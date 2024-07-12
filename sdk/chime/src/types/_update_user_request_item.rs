@@ -40,8 +40,8 @@ impl UpdateUserRequestItem {
 }
 
 /// A builder for [`UpdateUserRequestItem`](crate::types::UpdateUserRequestItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateUserRequestItemBuilder {
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
     pub(crate) license_type: ::std::option::Option<crate::types::License>,

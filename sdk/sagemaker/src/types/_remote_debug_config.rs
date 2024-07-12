@@ -21,8 +21,8 @@ impl RemoteDebugConfig {
 }
 
 /// A builder for [`RemoteDebugConfig`](crate::types::RemoteDebugConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoteDebugConfigBuilder {
     pub(crate) enable_remote_debug: ::std::option::Option<bool>,
 }

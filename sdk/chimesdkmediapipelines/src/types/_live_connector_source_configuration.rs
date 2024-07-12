@@ -27,8 +27,8 @@ impl LiveConnectorSourceConfiguration {
 }
 
 /// A builder for [`LiveConnectorSourceConfiguration`](crate::types::LiveConnectorSourceConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LiveConnectorSourceConfigurationBuilder {
     pub(crate) source_type: ::std::option::Option<crate::types::LiveConnectorSourceType>,
     pub(crate) chime_sdk_meeting_live_connector_configuration: ::std::option::Option<crate::types::ChimeSdkMeetingLiveConnectorConfiguration>,

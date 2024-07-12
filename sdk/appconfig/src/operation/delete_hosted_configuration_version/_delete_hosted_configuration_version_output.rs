@@ -18,8 +18,8 @@ impl DeleteHostedConfigurationVersionOutput {
 }
 
 /// A builder for [`DeleteHostedConfigurationVersionOutput`](crate::operation::delete_hosted_configuration_version::DeleteHostedConfigurationVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteHostedConfigurationVersionOutputBuilder {
     _request_id: Option<String>,
 }

@@ -62,8 +62,8 @@ impl GetIpamAddressHistoryInput {
 }
 
 /// A builder for [`GetIpamAddressHistoryInput`](crate::operation::get_ipam_address_history::GetIpamAddressHistoryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetIpamAddressHistoryInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) cidr: ::std::option::Option<::std::string::String>,

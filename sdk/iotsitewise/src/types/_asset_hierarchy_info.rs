@@ -27,8 +27,8 @@ impl AssetHierarchyInfo {
 }
 
 /// A builder for [`AssetHierarchyInfo`](crate::types::AssetHierarchyInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssetHierarchyInfoBuilder {
     pub(crate) parent_asset_id: ::std::option::Option<::std::string::String>,
     pub(crate) child_asset_id: ::std::option::Option<::std::string::String>,

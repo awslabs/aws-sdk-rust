@@ -28,8 +28,8 @@ impl PutConfigRuleInput {
 }
 
 /// A builder for [`PutConfigRuleInput`](crate::operation::put_config_rule::PutConfigRuleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutConfigRuleInputBuilder {
     pub(crate) config_rule: ::std::option::Option<crate::types::ConfigRule>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,

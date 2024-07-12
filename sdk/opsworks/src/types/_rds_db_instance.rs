@@ -69,8 +69,8 @@ impl RdsDbInstance {
 }
 
 /// A builder for [`RdsDbInstance`](crate::types::RdsDbInstance).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RdsDbInstanceBuilder {
     pub(crate) rds_db_instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) db_instance_identifier: ::std::option::Option<::std::string::String>,

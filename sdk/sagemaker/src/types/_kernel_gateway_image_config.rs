@@ -29,8 +29,8 @@ impl KernelGatewayImageConfig {
 }
 
 /// A builder for [`KernelGatewayImageConfig`](crate::types::KernelGatewayImageConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KernelGatewayImageConfigBuilder {
     pub(crate) kernel_specs: ::std::option::Option<::std::vec::Vec<crate::types::KernelSpec>>,
     pub(crate) file_system_config: ::std::option::Option<crate::types::FileSystemConfig>,

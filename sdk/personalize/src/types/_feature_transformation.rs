@@ -61,8 +61,8 @@ impl FeatureTransformation {
 }
 
 /// A builder for [`FeatureTransformation`](crate::types::FeatureTransformation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FeatureTransformationBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) feature_transformation_arn: ::std::option::Option<::std::string::String>,

@@ -51,8 +51,8 @@ impl ReferenceLine {
 }
 
 /// A builder for [`ReferenceLine`](crate::types::ReferenceLine).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReferenceLineBuilder {
     pub(crate) status: ::std::option::Option<crate::types::WidgetStatus>,
     pub(crate) data_configuration: ::std::option::Option<crate::types::ReferenceLineDataConfiguration>,

@@ -26,8 +26,8 @@ impl UpdateVpcIngressConnectionInput {
 }
 
 /// A builder for [`UpdateVpcIngressConnectionInput`](crate::operation::update_vpc_ingress_connection::UpdateVpcIngressConnectionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateVpcIngressConnectionInputBuilder {
     pub(crate) vpc_ingress_connection_arn: ::std::option::Option<::std::string::String>,
     pub(crate) ingress_vpc_configuration: ::std::option::Option<crate::types::IngressVpcConfiguration>,

@@ -34,8 +34,8 @@ impl DeactivateUserInput {
 }
 
 /// A builder for [`DeactivateUserInput`](crate::operation::deactivate_user::DeactivateUserInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DeactivateUserInputBuilder {
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
     pub(crate) authentication_token: ::std::option::Option<::std::string::String>,

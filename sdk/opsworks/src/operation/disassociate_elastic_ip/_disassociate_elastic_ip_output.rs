@@ -18,8 +18,8 @@ impl DisassociateElasticIpOutput {
 }
 
 /// A builder for [`DisassociateElasticIpOutput`](crate::operation::disassociate_elastic_ip::DisassociateElasticIpOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateElasticIpOutputBuilder {
     _request_id: Option<String>,
 }

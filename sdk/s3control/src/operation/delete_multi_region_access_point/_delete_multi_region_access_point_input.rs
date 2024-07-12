@@ -32,8 +32,8 @@ impl DeleteMultiRegionAccessPointInput {
 }
 
 /// A builder for [`DeleteMultiRegionAccessPointInput`](crate::operation::delete_multi_region_access_point::DeleteMultiRegionAccessPointInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteMultiRegionAccessPointInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

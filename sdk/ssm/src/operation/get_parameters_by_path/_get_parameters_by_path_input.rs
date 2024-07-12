@@ -62,8 +62,8 @@ impl GetParametersByPathInput {
 }
 
 /// A builder for [`GetParametersByPathInput`](crate::operation::get_parameters_by_path::GetParametersByPathInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetParametersByPathInputBuilder {
     pub(crate) path: ::std::option::Option<::std::string::String>,
     pub(crate) recursive: ::std::option::Option<bool>,

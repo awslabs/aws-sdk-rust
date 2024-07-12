@@ -32,8 +32,8 @@ impl StopKeyPhrasesDetectionJobOutput {
 }
 
 /// A builder for [`StopKeyPhrasesDetectionJobOutput`](crate::operation::stop_key_phrases_detection_job::StopKeyPhrasesDetectionJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopKeyPhrasesDetectionJobOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_status: ::std::option::Option<crate::types::JobStatus>,

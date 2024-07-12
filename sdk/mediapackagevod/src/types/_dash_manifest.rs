@@ -51,8 +51,8 @@ impl DashManifest {
 }
 
 /// A builder for [`DashManifest`](crate::types::DashManifest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DashManifestBuilder {
     pub(crate) manifest_layout: ::std::option::Option<crate::types::ManifestLayout>,
     pub(crate) manifest_name: ::std::option::Option<::std::string::String>,

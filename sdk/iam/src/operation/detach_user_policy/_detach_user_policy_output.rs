@@ -18,8 +18,8 @@ impl DetachUserPolicyOutput {
 }
 
 /// A builder for [`DetachUserPolicyOutput`](crate::operation::detach_user_policy::DetachUserPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetachUserPolicyOutputBuilder {
     _request_id: Option<String>,
 }

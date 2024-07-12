@@ -33,8 +33,8 @@ impl UpdateDistributionInput {
 }
 
 /// A builder for [`UpdateDistributionInput`](crate::operation::update_distribution::UpdateDistributionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDistributionInputBuilder {
     pub(crate) distribution_config: ::std::option::Option<crate::types::DistributionConfig>,
     pub(crate) id: ::std::option::Option<::std::string::String>,

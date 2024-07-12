@@ -21,8 +21,8 @@ impl InputFormatOptions {
 }
 
 /// A builder for [`InputFormatOptions`](crate::types::InputFormatOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InputFormatOptionsBuilder {
     pub(crate) csv: ::std::option::Option<crate::types::CsvOptions>,
 }

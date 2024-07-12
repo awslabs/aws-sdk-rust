@@ -30,8 +30,8 @@ impl DeleteAutoScalingConfigurationInput {
 }
 
 /// A builder for [`DeleteAutoScalingConfigurationInput`](crate::operation::delete_auto_scaling_configuration::DeleteAutoScalingConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAutoScalingConfigurationInputBuilder {
     pub(crate) auto_scaling_configuration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) delete_all_revisions: ::std::option::Option<bool>,

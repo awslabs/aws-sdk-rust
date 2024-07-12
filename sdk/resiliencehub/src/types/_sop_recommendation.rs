@@ -73,8 +73,8 @@ impl SopRecommendation {
 }
 
 /// A builder for [`SopRecommendation`](crate::types::SopRecommendation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SopRecommendationBuilder {
     pub(crate) service_type: ::std::option::Option<crate::types::SopServiceType>,
     pub(crate) app_component_name: ::std::option::Option<::std::string::String>,

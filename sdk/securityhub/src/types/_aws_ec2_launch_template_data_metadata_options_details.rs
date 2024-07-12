@@ -45,8 +45,8 @@ impl AwsEc2LaunchTemplateDataMetadataOptionsDetails {
 }
 
 /// A builder for [`AwsEc2LaunchTemplateDataMetadataOptionsDetails`](crate::types::AwsEc2LaunchTemplateDataMetadataOptionsDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEc2LaunchTemplateDataMetadataOptionsDetailsBuilder {
     pub(crate) http_endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) http_protocol_ipv6: ::std::option::Option<::std::string::String>,

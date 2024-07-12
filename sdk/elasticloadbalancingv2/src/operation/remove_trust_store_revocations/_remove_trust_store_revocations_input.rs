@@ -28,8 +28,8 @@ impl RemoveTrustStoreRevocationsInput {
 }
 
 /// A builder for [`RemoveTrustStoreRevocationsInput`](crate::operation::remove_trust_store_revocations::RemoveTrustStoreRevocationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoveTrustStoreRevocationsInputBuilder {
     pub(crate) trust_store_arn: ::std::option::Option<::std::string::String>,
     pub(crate) revocation_ids: ::std::option::Option<::std::vec::Vec<i64>>,

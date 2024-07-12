@@ -60,8 +60,8 @@ impl BandwidthRateLimitInterval {
 }
 
 /// A builder for [`BandwidthRateLimitInterval`](crate::types::BandwidthRateLimitInterval).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BandwidthRateLimitIntervalBuilder {
     pub(crate) average_upload_rate_limit_in_bits_per_sec: ::std::option::Option<i64>,
     pub(crate) start_hour_of_day: ::std::option::Option<i32>,

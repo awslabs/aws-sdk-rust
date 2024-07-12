@@ -26,8 +26,8 @@ impl GenerateTemplateInput {
 }
 
 /// A builder for [`GenerateTemplateInput`](crate::operation::generate_template::GenerateTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GenerateTemplateInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) template_format: ::std::option::Option<crate::types::OutputFormat>,

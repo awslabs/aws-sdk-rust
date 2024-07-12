@@ -20,8 +20,8 @@ impl DeleteSequenceStoreInput {
 }
 
 /// A builder for [`DeleteSequenceStoreInput`](crate::operation::delete_sequence_store::DeleteSequenceStoreInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSequenceStoreInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }

@@ -26,8 +26,8 @@ impl DeleteProfileOutput {
 }
 
 /// A builder for [`DeleteProfileOutput`](crate::operation::delete_profile::DeleteProfileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteProfileOutputBuilder {
     pub(crate) profile: ::std::option::Option<crate::types::Profile>,
     _request_id: Option<String>,

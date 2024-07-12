@@ -21,8 +21,8 @@ impl AcknowledgeFlow {
 }
 
 /// A builder for [`AcknowledgeFlow`](crate::types::AcknowledgeFlow).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AcknowledgeFlowBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
 }

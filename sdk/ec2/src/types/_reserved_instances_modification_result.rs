@@ -27,8 +27,8 @@ impl ReservedInstancesModificationResult {
 }
 
 /// A builder for [`ReservedInstancesModificationResult`](crate::types::ReservedInstancesModificationResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReservedInstancesModificationResultBuilder {
     pub(crate) reserved_instances_id: ::std::option::Option<::std::string::String>,
     pub(crate) target_configuration: ::std::option::Option<crate::types::ReservedInstancesConfiguration>,

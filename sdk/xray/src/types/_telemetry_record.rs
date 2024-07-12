@@ -51,8 +51,8 @@ impl TelemetryRecord {
 }
 
 /// A builder for [`TelemetryRecord`](crate::types::TelemetryRecord).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TelemetryRecordBuilder {
     pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) segments_received_count: ::std::option::Option<i32>,

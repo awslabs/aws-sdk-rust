@@ -26,8 +26,8 @@ impl UpdateAgentOutput {
 }
 
 /// A builder for [`UpdateAgentOutput`](crate::operation::update_agent::UpdateAgentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAgentOutputBuilder {
     pub(crate) agent: ::std::option::Option<crate::types::Agent>,
     _request_id: Option<String>,

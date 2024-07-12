@@ -34,8 +34,8 @@ impl DescribeSubscriptionFiltersOutput {
 }
 
 /// A builder for [`DescribeSubscriptionFiltersOutput`](crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSubscriptionFiltersOutputBuilder {
     pub(crate) subscription_filters: ::std::option::Option<::std::vec::Vec<crate::types::SubscriptionFilter>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

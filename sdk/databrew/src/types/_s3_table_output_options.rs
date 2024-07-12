@@ -21,8 +21,8 @@ impl S3TableOutputOptions {
 }
 
 /// A builder for [`S3TableOutputOptions`](crate::types::S3TableOutputOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3TableOutputOptionsBuilder {
     pub(crate) location: ::std::option::Option<crate::types::S3Location>,
 }

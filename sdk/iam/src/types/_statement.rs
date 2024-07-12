@@ -40,8 +40,8 @@ impl Statement {
 }
 
 /// A builder for [`Statement`](crate::types::Statement).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StatementBuilder {
     pub(crate) source_policy_id: ::std::option::Option<::std::string::String>,
     pub(crate) source_policy_type: ::std::option::Option<crate::types::PolicySourceType>,

@@ -43,8 +43,8 @@ impl GetXssMatchSetOutput {
 }
 
 /// A builder for [`GetXssMatchSetOutput`](crate::operation::get_xss_match_set::GetXssMatchSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetXssMatchSetOutputBuilder {
     pub(crate) xss_match_set: ::std::option::Option<crate::types::XssMatchSet>,
     _request_id: Option<String>,

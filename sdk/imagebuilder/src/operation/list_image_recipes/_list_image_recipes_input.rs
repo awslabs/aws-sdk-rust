@@ -56,8 +56,8 @@ impl ListImageRecipesInput {
 }
 
 /// A builder for [`ListImageRecipesInput`](crate::operation::list_image_recipes::ListImageRecipesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListImageRecipesInputBuilder {
     pub(crate) owner: ::std::option::Option<crate::types::Ownership>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,

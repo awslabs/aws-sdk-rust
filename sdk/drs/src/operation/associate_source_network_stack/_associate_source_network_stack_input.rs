@@ -34,8 +34,8 @@ impl AssociateSourceNetworkStackInput {
 }
 
 /// A builder for [`AssociateSourceNetworkStackInput`](crate::operation::associate_source_network_stack::AssociateSourceNetworkStackInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AssociateSourceNetworkStackInputBuilder {
     pub(crate) source_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) cfn_stack_name: ::std::option::Option<::std::string::String>,

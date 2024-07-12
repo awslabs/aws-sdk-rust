@@ -39,8 +39,8 @@ impl ComputeConfiguration {
 }
 
 /// A builder for [`ComputeConfiguration`](crate::types::ComputeConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ComputeConfigurationBuilder {
     pub(crate) v_cpu: ::std::option::Option<f64>,
     pub(crate) memory_size_in_mb: ::std::option::Option<i32>,

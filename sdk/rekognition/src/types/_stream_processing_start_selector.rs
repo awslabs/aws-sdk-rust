@@ -21,8 +21,8 @@ impl StreamProcessingStartSelector {
 }
 
 /// A builder for [`StreamProcessingStartSelector`](crate::types::StreamProcessingStartSelector).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StreamProcessingStartSelectorBuilder {
     pub(crate) kvs_stream_start_selector: ::std::option::Option<crate::types::KinesisVideoStreamStartSelector>,
 }

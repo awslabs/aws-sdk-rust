@@ -67,8 +67,8 @@ impl InstanceTypeDetails {
 }
 
 /// A builder for [`InstanceTypeDetails`](crate::types::InstanceTypeDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceTypeDetailsBuilder {
     pub(crate) instance_type: ::std::option::Option<crate::types::OpenSearchPartitionInstanceType>,
     pub(crate) encryption_enabled: ::std::option::Option<bool>,

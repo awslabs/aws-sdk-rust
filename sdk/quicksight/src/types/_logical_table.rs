@@ -36,8 +36,8 @@ impl LogicalTable {
 }
 
 /// A builder for [`LogicalTable`](crate::types::LogicalTable).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LogicalTableBuilder {
     pub(crate) alias: ::std::option::Option<::std::string::String>,
     pub(crate) data_transforms: ::std::option::Option<::std::vec::Vec<crate::types::TransformOperation>>,

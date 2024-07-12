@@ -35,8 +35,8 @@ impl DescribeEvaluationsOutput {
 }
 
 /// A builder for [`DescribeEvaluationsOutput`](crate::operation::describe_evaluations::DescribeEvaluationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEvaluationsOutputBuilder {
     pub(crate) results: ::std::option::Option<::std::vec::Vec<crate::types::Evaluation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

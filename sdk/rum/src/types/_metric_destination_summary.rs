@@ -33,8 +33,8 @@ impl MetricDestinationSummary {
 }
 
 /// A builder for [`MetricDestinationSummary`](crate::types::MetricDestinationSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MetricDestinationSummaryBuilder {
     pub(crate) destination: ::std::option::Option<crate::types::MetricDestination>,
     pub(crate) destination_arn: ::std::option::Option<::std::string::String>,

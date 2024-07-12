@@ -40,8 +40,8 @@ impl GetSampledRequestsOutput {
 }
 
 /// A builder for [`GetSampledRequestsOutput`](crate::operation::get_sampled_requests::GetSampledRequestsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSampledRequestsOutputBuilder {
     pub(crate) sampled_requests: ::std::option::Option<::std::vec::Vec<crate::types::SampledHttpRequest>>,
     pub(crate) population_size: ::std::option::Option<i64>,

@@ -31,8 +31,8 @@ impl NotificationFilterConfig {
 }
 
 /// A builder for [`NotificationFilterConfig`](crate::types::NotificationFilterConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NotificationFilterConfigBuilder {
     pub(crate) severities: ::std::option::Option<::std::vec::Vec<crate::types::InsightSeverity>>,
     pub(crate) message_types: ::std::option::Option<::std::vec::Vec<crate::types::NotificationMessageType>>,

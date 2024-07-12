@@ -26,8 +26,8 @@ impl PutAccountConfigurationInput {
 }
 
 /// A builder for [`PutAccountConfigurationInput`](crate::operation::put_account_configuration::PutAccountConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutAccountConfigurationInputBuilder {
     pub(crate) expiry_events: ::std::option::Option<crate::types::ExpiryEventsConfiguration>,
     pub(crate) idempotency_token: ::std::option::Option<::std::string::String>,

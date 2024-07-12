@@ -20,8 +20,8 @@ impl StopAccessLoggingInput {
 }
 
 /// A builder for [`StopAccessLoggingInput`](crate::operation::stop_access_logging::StopAccessLoggingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopAccessLoggingInputBuilder {
     pub(crate) container_name: ::std::option::Option<::std::string::String>,
 }

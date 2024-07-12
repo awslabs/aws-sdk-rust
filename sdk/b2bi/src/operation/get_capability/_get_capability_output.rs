@@ -73,8 +73,8 @@ impl GetCapabilityOutput {
 }
 
 /// A builder for [`GetCapabilityOutput`](crate::operation::get_capability::GetCapabilityOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCapabilityOutputBuilder {
     pub(crate) capability_id: ::std::option::Option<::std::string::String>,
     pub(crate) capability_arn: ::std::option::Option<::std::string::String>,

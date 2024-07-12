@@ -26,8 +26,8 @@ impl UpdateDeviceStateInput {
 }
 
 /// A builder for [`UpdateDeviceStateInput`](crate::operation::update_device_state::UpdateDeviceStateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDeviceStateInputBuilder {
     pub(crate) device_id: ::std::option::Option<::std::string::String>,
     pub(crate) enabled: ::std::option::Option<bool>,

@@ -33,8 +33,8 @@ impl UpdateStreamingDistributionOutput {
 }
 
 /// A builder for [`UpdateStreamingDistributionOutput`](crate::operation::update_streaming_distribution::UpdateStreamingDistributionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateStreamingDistributionOutputBuilder {
     pub(crate) streaming_distribution: ::std::option::Option<crate::types::StreamingDistribution>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,

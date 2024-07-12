@@ -47,8 +47,8 @@ impl SatelliteListItem {
 }
 
 /// A builder for [`SatelliteListItem`](crate::types::SatelliteListItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SatelliteListItemBuilder {
     pub(crate) satellite_id: ::std::option::Option<::std::string::String>,
     pub(crate) satellite_arn: ::std::option::Option<::std::string::String>,

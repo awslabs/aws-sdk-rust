@@ -47,8 +47,8 @@ impl ListPricingRulesAssociatedToPricingPlanOutput {
 }
 
 /// A builder for [`ListPricingRulesAssociatedToPricingPlanOutput`](crate::operation::list_pricing_rules_associated_to_pricing_plan::ListPricingRulesAssociatedToPricingPlanOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPricingRulesAssociatedToPricingPlanOutputBuilder {
     pub(crate) billing_period: ::std::option::Option<::std::string::String>,
     pub(crate) pricing_plan_arn: ::std::option::Option<::std::string::String>,

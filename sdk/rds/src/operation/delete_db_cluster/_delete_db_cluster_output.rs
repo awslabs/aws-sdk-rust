@@ -34,8 +34,8 @@ impl DeleteDbClusterOutput {
 }
 
 /// A builder for [`DeleteDbClusterOutput`](crate::operation::delete_db_cluster::DeleteDbClusterOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDbClusterOutputBuilder {
     pub(crate) db_cluster: ::std::option::Option<crate::types::DbCluster>,
     _request_id: Option<String>,

@@ -26,8 +26,8 @@ impl StartEdgeDeploymentStageInput {
 }
 
 /// A builder for [`StartEdgeDeploymentStageInput`](crate::operation::start_edge_deployment_stage::StartEdgeDeploymentStageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartEdgeDeploymentStageInputBuilder {
     pub(crate) edge_deployment_plan_name: ::std::option::Option<::std::string::String>,
     pub(crate) stage_name: ::std::option::Option<::std::string::String>,

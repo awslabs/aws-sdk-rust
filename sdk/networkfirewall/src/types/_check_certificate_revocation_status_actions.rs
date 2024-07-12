@@ -59,8 +59,8 @@ impl CheckCertificateRevocationStatusActions {
 }
 
 /// A builder for [`CheckCertificateRevocationStatusActions`](crate::types::CheckCertificateRevocationStatusActions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CheckCertificateRevocationStatusActionsBuilder {
     pub(crate) revoked_status_action: ::std::option::Option<crate::types::RevocationCheckAction>,
     pub(crate) unknown_status_action: ::std::option::Option<crate::types::RevocationCheckAction>,

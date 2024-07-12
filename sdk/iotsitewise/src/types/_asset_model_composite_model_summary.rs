@@ -68,8 +68,8 @@ impl AssetModelCompositeModelSummary {
 }
 
 /// A builder for [`AssetModelCompositeModelSummary`](crate::types::AssetModelCompositeModelSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssetModelCompositeModelSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) external_id: ::std::option::Option<::std::string::String>,

@@ -21,8 +21,8 @@ impl FailStepMetadata {
 }
 
 /// A builder for [`FailStepMetadata`](crate::types::FailStepMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FailStepMetadataBuilder {
     pub(crate) error_message: ::std::option::Option<::std::string::String>,
 }

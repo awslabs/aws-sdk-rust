@@ -55,8 +55,8 @@ impl LoadBalancerAttributes {
 }
 
 /// A builder for [`LoadBalancerAttributes`](crate::types::LoadBalancerAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LoadBalancerAttributesBuilder {
     pub(crate) cross_zone_load_balancing: ::std::option::Option<crate::types::CrossZoneLoadBalancing>,
     pub(crate) access_log: ::std::option::Option<crate::types::AccessLog>,

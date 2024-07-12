@@ -24,8 +24,8 @@ impl ValidateSolFunctionPackageContentMetadata {
 }
 
 /// A builder for [`ValidateSolFunctionPackageContentMetadata`](crate::types::ValidateSolFunctionPackageContentMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ValidateSolFunctionPackageContentMetadataBuilder {
     pub(crate) vnfd: ::std::option::Option<crate::types::FunctionArtifactMeta>,
 }

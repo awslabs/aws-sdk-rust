@@ -29,8 +29,8 @@ impl DescribeCommandsOutput {
 }
 
 /// A builder for [`DescribeCommandsOutput`](crate::operation::describe_commands::DescribeCommandsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCommandsOutputBuilder {
     pub(crate) commands: ::std::option::Option<::std::vec::Vec<crate::types::Command>>,
     _request_id: Option<String>,

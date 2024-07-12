@@ -34,8 +34,8 @@ impl DescribeDbProxyEndpointsOutput {
 }
 
 /// A builder for [`DescribeDbProxyEndpointsOutput`](crate::operation::describe_db_proxy_endpoints::DescribeDbProxyEndpointsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDbProxyEndpointsOutputBuilder {
     pub(crate) db_proxy_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::DbProxyEndpoint>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

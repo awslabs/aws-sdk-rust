@@ -32,8 +32,8 @@ impl ListTagOptionsInput {
 }
 
 /// A builder for [`ListTagOptionsInput`](crate::operation::list_tag_options::ListTagOptionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTagOptionsInputBuilder {
     pub(crate) filters: ::std::option::Option<crate::types::ListTagOptionsFilters>,
     pub(crate) page_size: ::std::option::Option<i32>,

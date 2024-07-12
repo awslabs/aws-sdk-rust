@@ -34,8 +34,8 @@ impl ListVirtualMfaDevicesInput {
 }
 
 /// A builder for [`ListVirtualMfaDevicesInput`](crate::operation::list_virtual_mfa_devices::ListVirtualMfaDevicesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListVirtualMfaDevicesInputBuilder {
     pub(crate) assignment_status: ::std::option::Option<crate::types::AssignmentStatusType>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

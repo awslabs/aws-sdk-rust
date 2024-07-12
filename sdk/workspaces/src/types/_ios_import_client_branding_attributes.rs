@@ -95,8 +95,8 @@ impl IosImportClientBrandingAttributes {
 }
 
 /// A builder for [`IosImportClientBrandingAttributes`](crate::types::IosImportClientBrandingAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IosImportClientBrandingAttributesBuilder {
     pub(crate) logo: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) logo2x: ::std::option::Option<::aws_smithy_types::Blob>,

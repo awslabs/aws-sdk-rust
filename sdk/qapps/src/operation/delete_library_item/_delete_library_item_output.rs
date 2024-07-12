@@ -18,8 +18,8 @@ impl DeleteLibraryItemOutput {
 }
 
 /// A builder for [`DeleteLibraryItemOutput`](crate::operation::delete_library_item::DeleteLibraryItemOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteLibraryItemOutputBuilder {
     _request_id: Option<String>,
 }

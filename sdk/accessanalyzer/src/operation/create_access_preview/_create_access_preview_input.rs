@@ -32,8 +32,8 @@ impl CreateAccessPreviewInput {
 }
 
 /// A builder for [`CreateAccessPreviewInput`](crate::operation::create_access_preview::CreateAccessPreviewInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAccessPreviewInputBuilder {
     pub(crate) analyzer_arn: ::std::option::Option<::std::string::String>,
     pub(crate) configurations: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Configuration>>,

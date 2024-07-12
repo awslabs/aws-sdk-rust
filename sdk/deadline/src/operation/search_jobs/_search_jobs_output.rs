@@ -39,8 +39,8 @@ impl SearchJobsOutput {
 }
 
 /// A builder for [`SearchJobsOutput`](crate::operation::search_jobs::SearchJobsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchJobsOutputBuilder {
     pub(crate) jobs: ::std::option::Option<::std::vec::Vec<crate::types::JobSearchSummary>>,
     pub(crate) next_item_offset: ::std::option::Option<i32>,

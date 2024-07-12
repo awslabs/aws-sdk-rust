@@ -44,8 +44,8 @@ impl ListArchivesInput {
 }
 
 /// A builder for [`ListArchivesInput`](crate::operation::list_archives::ListArchivesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListArchivesInputBuilder {
     pub(crate) name_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) event_source_arn: ::std::option::Option<::std::string::String>,

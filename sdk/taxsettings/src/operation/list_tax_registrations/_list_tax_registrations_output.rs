@@ -33,8 +33,8 @@ impl ListTaxRegistrationsOutput {
 }
 
 /// A builder for [`ListTaxRegistrationsOutput`](crate::operation::list_tax_registrations::ListTaxRegistrationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTaxRegistrationsOutputBuilder {
     pub(crate) account_details: ::std::option::Option<::std::vec::Vec<crate::types::AccountDetails>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

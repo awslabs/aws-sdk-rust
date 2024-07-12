@@ -77,8 +77,8 @@ impl ScanStatus {
 }
 
 /// A builder for [`ScanStatus`](crate::types::ScanStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScanStatusBuilder {
     pub(crate) status_code: ::std::option::Option<crate::types::ScanStatusCode>,
     pub(crate) reason: ::std::option::Option<crate::types::ScanStatusReason>,

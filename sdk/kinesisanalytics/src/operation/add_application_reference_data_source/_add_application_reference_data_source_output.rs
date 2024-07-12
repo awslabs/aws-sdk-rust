@@ -19,8 +19,8 @@ impl AddApplicationReferenceDataSourceOutput {
 }
 
 /// A builder for [`AddApplicationReferenceDataSourceOutput`](crate::operation::add_application_reference_data_source::AddApplicationReferenceDataSourceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddApplicationReferenceDataSourceOutputBuilder {
     _request_id: Option<String>,
 }

@@ -26,8 +26,8 @@ impl StopBgpFailoverTestOutput {
 }
 
 /// A builder for [`StopBgpFailoverTestOutput`](crate::operation::stop_bgp_failover_test::StopBgpFailoverTestOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopBgpFailoverTestOutputBuilder {
     pub(crate) virtual_interface_test: ::std::option::Option<crate::types::VirtualInterfaceTestHistory>,
     _request_id: Option<String>,

@@ -56,8 +56,8 @@ impl GetDifferencesInput {
 }
 
 /// A builder for [`GetDifferencesInput`](crate::operation::get_differences::GetDifferencesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDifferencesInputBuilder {
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
     pub(crate) before_commit_specifier: ::std::option::Option<::std::string::String>,

@@ -29,8 +29,8 @@ impl AssetBundleResourcePermissions {
 }
 
 /// A builder for [`AssetBundleResourcePermissions`](crate::types::AssetBundleResourcePermissions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssetBundleResourcePermissionsBuilder {
     pub(crate) principals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

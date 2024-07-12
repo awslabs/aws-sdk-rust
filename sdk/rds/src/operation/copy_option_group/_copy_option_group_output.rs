@@ -26,8 +26,8 @@ impl CopyOptionGroupOutput {
 }
 
 /// A builder for [`CopyOptionGroupOutput`](crate::operation::copy_option_group::CopyOptionGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CopyOptionGroupOutputBuilder {
     pub(crate) option_group: ::std::option::Option<crate::types::OptionGroup>,
     _request_id: Option<String>,

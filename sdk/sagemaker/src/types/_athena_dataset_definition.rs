@@ -63,8 +63,8 @@ impl AthenaDatasetDefinition {
 }
 
 /// A builder for [`AthenaDatasetDefinition`](crate::types::AthenaDatasetDefinition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AthenaDatasetDefinitionBuilder {
     pub(crate) catalog: ::std::option::Option<::std::string::String>,
     pub(crate) database: ::std::option::Option<::std::string::String>,

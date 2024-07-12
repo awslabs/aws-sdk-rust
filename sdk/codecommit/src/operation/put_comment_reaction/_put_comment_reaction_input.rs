@@ -26,8 +26,8 @@ impl PutCommentReactionInput {
 }
 
 /// A builder for [`PutCommentReactionInput`](crate::operation::put_comment_reaction::PutCommentReactionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutCommentReactionInputBuilder {
     pub(crate) comment_id: ::std::option::Option<::std::string::String>,
     pub(crate) reaction_value: ::std::option::Option<::std::string::String>,

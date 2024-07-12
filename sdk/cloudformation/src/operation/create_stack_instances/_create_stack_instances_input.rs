@@ -120,8 +120,8 @@ impl CreateStackInstancesInput {
 }
 
 /// A builder for [`CreateStackInstancesInput`](crate::operation::create_stack_instances::CreateStackInstancesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateStackInstancesInputBuilder {
     pub(crate) stack_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

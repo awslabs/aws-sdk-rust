@@ -26,8 +26,8 @@ impl DeleteMemberInput {
 }
 
 /// A builder for [`DeleteMemberInput`](crate::operation::delete_member::DeleteMemberInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteMemberInputBuilder {
     pub(crate) network_id: ::std::option::Option<::std::string::String>,
     pub(crate) member_id: ::std::option::Option<::std::string::String>,

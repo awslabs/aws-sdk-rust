@@ -18,8 +18,8 @@ impl DisassociateWirelessDeviceFromThingOutput {
 }
 
 /// A builder for [`DisassociateWirelessDeviceFromThingOutput`](crate::operation::disassociate_wireless_device_from_thing::DisassociateWirelessDeviceFromThingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateWirelessDeviceFromThingOutputBuilder {
     _request_id: Option<String>,
 }

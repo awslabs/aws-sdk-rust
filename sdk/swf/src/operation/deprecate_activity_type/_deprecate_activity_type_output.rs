@@ -18,8 +18,8 @@ impl DeprecateActivityTypeOutput {
 }
 
 /// A builder for [`DeprecateActivityTypeOutput`](crate::operation::deprecate_activity_type::DeprecateActivityTypeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeprecateActivityTypeOutputBuilder {
     _request_id: Option<String>,
 }

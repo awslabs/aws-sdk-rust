@@ -28,8 +28,8 @@ impl BatchGetUserAccessTasksInput {
 }
 
 /// A builder for [`BatchGetUserAccessTasksInput`](crate::operation::batch_get_user_access_tasks::BatchGetUserAccessTasksInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetUserAccessTasksInputBuilder {
     pub(crate) app_bundle_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) task_id_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

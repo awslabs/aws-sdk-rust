@@ -22,8 +22,8 @@ impl DetachCertificateFromDistributionInput {
 }
 
 /// A builder for [`DetachCertificateFromDistributionInput`](crate::operation::detach_certificate_from_distribution::DetachCertificateFromDistributionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetachCertificateFromDistributionInputBuilder {
     pub(crate) distribution_name: ::std::option::Option<::std::string::String>,
 }

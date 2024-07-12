@@ -21,8 +21,8 @@ impl GetInfrastructureConfigurationInput {
 }
 
 /// A builder for [`GetInfrastructureConfigurationInput`](crate::operation::get_infrastructure_configuration::GetInfrastructureConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetInfrastructureConfigurationInputBuilder {
     pub(crate) infrastructure_configuration_arn: ::std::option::Option<::std::string::String>,
 }

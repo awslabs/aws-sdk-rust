@@ -46,8 +46,8 @@ impl ListFieldOptionsInput {
 }
 
 /// A builder for [`ListFieldOptionsInput`](crate::operation::list_field_options::ListFieldOptionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFieldOptionsInputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) field_id: ::std::option::Option<::std::string::String>,

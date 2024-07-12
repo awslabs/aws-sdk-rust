@@ -18,8 +18,8 @@ impl UpdateGatewayOutput {
 }
 
 /// A builder for [`UpdateGatewayOutput`](crate::operation::update_gateway::UpdateGatewayOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateGatewayOutputBuilder {
     _request_id: Option<String>,
 }

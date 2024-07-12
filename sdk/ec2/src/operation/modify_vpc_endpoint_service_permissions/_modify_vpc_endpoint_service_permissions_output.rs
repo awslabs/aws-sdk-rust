@@ -34,8 +34,8 @@ impl ModifyVpcEndpointServicePermissionsOutput {
 }
 
 /// A builder for [`ModifyVpcEndpointServicePermissionsOutput`](crate::operation::modify_vpc_endpoint_service_permissions::ModifyVpcEndpointServicePermissionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyVpcEndpointServicePermissionsOutputBuilder {
     pub(crate) added_principals: ::std::option::Option<::std::vec::Vec<crate::types::AddedPrincipal>>,
     pub(crate) return_value: ::std::option::Option<bool>,

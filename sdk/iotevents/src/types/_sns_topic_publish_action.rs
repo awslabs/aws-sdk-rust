@@ -28,8 +28,8 @@ impl SnsTopicPublishAction {
 }
 
 /// A builder for [`SnsTopicPublishAction`](crate::types::SnsTopicPublishAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SnsTopicPublishActionBuilder {
     pub(crate) target_arn: ::std::option::Option<::std::string::String>,
     pub(crate) payload: ::std::option::Option<crate::types::Payload>,

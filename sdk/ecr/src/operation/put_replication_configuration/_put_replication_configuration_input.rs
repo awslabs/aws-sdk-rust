@@ -20,8 +20,8 @@ impl PutReplicationConfigurationInput {
 }
 
 /// A builder for [`PutReplicationConfigurationInput`](crate::operation::put_replication_configuration::PutReplicationConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutReplicationConfigurationInputBuilder {
     pub(crate) replication_configuration: ::std::option::Option<crate::types::ReplicationConfiguration>,
 }

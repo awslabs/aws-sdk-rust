@@ -35,8 +35,8 @@ impl TransitGatewayMulticastDeregisteredGroupMembers {
 }
 
 /// A builder for [`TransitGatewayMulticastDeregisteredGroupMembers`](crate::types::TransitGatewayMulticastDeregisteredGroupMembers).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TransitGatewayMulticastDeregisteredGroupMembersBuilder {
     pub(crate) transit_gateway_multicast_domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) deregistered_network_interface_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

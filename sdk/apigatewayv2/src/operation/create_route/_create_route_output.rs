@@ -102,8 +102,8 @@ impl CreateRouteOutput {
 }
 
 /// A builder for [`CreateRouteOutput`](crate::operation::create_route::CreateRouteOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateRouteOutputBuilder {
     pub(crate) api_gateway_managed: ::std::option::Option<bool>,
     pub(crate) api_key_required: ::std::option::Option<bool>,

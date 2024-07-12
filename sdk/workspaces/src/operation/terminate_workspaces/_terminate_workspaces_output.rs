@@ -28,8 +28,8 @@ impl TerminateWorkspacesOutput {
 }
 
 /// A builder for [`TerminateWorkspacesOutput`](crate::operation::terminate_workspaces::TerminateWorkspacesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TerminateWorkspacesOutputBuilder {
     pub(crate) failed_requests: ::std::option::Option<::std::vec::Vec<crate::types::FailedWorkspaceChangeRequest>>,
     _request_id: Option<String>,

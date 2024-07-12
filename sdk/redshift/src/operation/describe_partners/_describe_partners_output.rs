@@ -28,8 +28,8 @@ impl DescribePartnersOutput {
 }
 
 /// A builder for [`DescribePartnersOutput`](crate::operation::describe_partners::DescribePartnersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribePartnersOutputBuilder {
     pub(crate) partner_integration_info_list: ::std::option::Option<::std::vec::Vec<crate::types::PartnerIntegrationInfo>>,
     _request_id: Option<String>,

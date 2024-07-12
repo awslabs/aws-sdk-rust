@@ -26,8 +26,8 @@ impl CreateRegexPatternSetInput {
 }
 
 /// A builder for [`CreateRegexPatternSetInput`](crate::operation::create_regex_pattern_set::CreateRegexPatternSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateRegexPatternSetInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) change_token: ::std::option::Option<::std::string::String>,

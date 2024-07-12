@@ -63,8 +63,8 @@ impl SendDataIntegrationEventInput {
 }
 
 /// A builder for [`SendDataIntegrationEventInput`](crate::operation::send_data_integration_event::SendDataIntegrationEventInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SendDataIntegrationEventInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) event_type: ::std::option::Option<crate::types::DataIntegrationEventType>,

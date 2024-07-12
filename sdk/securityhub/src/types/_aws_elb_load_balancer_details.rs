@@ -159,8 +159,8 @@ impl AwsElbLoadBalancerDetails {
 }
 
 /// A builder for [`AwsElbLoadBalancerDetails`](crate::types::AwsElbLoadBalancerDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsElbLoadBalancerDetailsBuilder {
     pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) backend_server_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::AwsElbLoadBalancerBackendServerDescription>>,

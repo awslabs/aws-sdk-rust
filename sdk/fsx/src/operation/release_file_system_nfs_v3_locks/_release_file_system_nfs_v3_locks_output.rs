@@ -26,8 +26,8 @@ impl ReleaseFileSystemNfsV3LocksOutput {
 }
 
 /// A builder for [`ReleaseFileSystemNfsV3LocksOutput`](crate::operation::release_file_system_nfs_v3_locks::ReleaseFileSystemNfsV3LocksOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReleaseFileSystemNfsV3LocksOutputBuilder {
     pub(crate) file_system: ::std::option::Option<crate::types::FileSystem>,
     _request_id: Option<String>,

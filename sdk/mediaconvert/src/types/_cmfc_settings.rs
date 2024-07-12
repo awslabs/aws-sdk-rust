@@ -99,8 +99,8 @@ impl CmfcSettings {
 }
 
 /// A builder for [`CmfcSettings`](crate::types::CmfcSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CmfcSettingsBuilder {
     pub(crate) audio_duration: ::std::option::Option<crate::types::CmfcAudioDuration>,
     pub(crate) audio_group_id: ::std::option::Option<::std::string::String>,

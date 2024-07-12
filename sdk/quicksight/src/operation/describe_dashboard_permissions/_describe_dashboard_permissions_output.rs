@@ -58,8 +58,8 @@ impl DescribeDashboardPermissionsOutput {
 }
 
 /// A builder for [`DescribeDashboardPermissionsOutput`](crate::operation::describe_dashboard_permissions::DescribeDashboardPermissionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDashboardPermissionsOutputBuilder {
     pub(crate) dashboard_id: ::std::option::Option<::std::string::String>,
     pub(crate) dashboard_arn: ::std::option::Option<::std::string::String>,

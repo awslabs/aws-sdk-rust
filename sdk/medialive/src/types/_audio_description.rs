@@ -95,8 +95,8 @@ impl AudioDescription {
 }
 
 /// A builder for [`AudioDescription`](crate::types::AudioDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AudioDescriptionBuilder {
     pub(crate) audio_normalization_settings: ::std::option::Option<crate::types::AudioNormalizationSettings>,
     pub(crate) audio_selector_name: ::std::option::Option<::std::string::String>,

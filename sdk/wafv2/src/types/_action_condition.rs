@@ -23,8 +23,8 @@ impl ActionCondition {
 }
 
 /// A builder for [`ActionCondition`](crate::types::ActionCondition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ActionConditionBuilder {
     pub(crate) action: ::std::option::Option<crate::types::ActionValue>,
 }

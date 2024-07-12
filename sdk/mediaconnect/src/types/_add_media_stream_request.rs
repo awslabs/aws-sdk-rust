@@ -57,8 +57,8 @@ impl AddMediaStreamRequest {
 }
 
 /// A builder for [`AddMediaStreamRequest`](crate::types::AddMediaStreamRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddMediaStreamRequestBuilder {
     pub(crate) attributes: ::std::option::Option<crate::types::MediaStreamAttributesRequest>,
     pub(crate) clock_rate: ::std::option::Option<i32>,

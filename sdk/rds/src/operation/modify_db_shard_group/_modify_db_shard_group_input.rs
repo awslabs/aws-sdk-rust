@@ -26,8 +26,8 @@ impl ModifyDbShardGroupInput {
 }
 
 /// A builder for [`ModifyDbShardGroupInput`](crate::operation::modify_db_shard_group::ModifyDbShardGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyDbShardGroupInputBuilder {
     pub(crate) db_shard_group_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) max_acu: ::std::option::Option<f64>,

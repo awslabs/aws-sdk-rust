@@ -27,8 +27,8 @@ impl DeleteOutboundConnectionOutput {
 }
 
 /// A builder for [`DeleteOutboundConnectionOutput`](crate::operation::delete_outbound_connection::DeleteOutboundConnectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteOutboundConnectionOutputBuilder {
     pub(crate) connection: ::std::option::Option<crate::types::OutboundConnection>,
     _request_id: Option<String>,

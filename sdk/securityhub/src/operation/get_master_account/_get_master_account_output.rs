@@ -26,8 +26,8 @@ impl GetMasterAccountOutput {
 }
 
 /// A builder for [`GetMasterAccountOutput`](crate::operation::get_master_account::GetMasterAccountOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMasterAccountOutputBuilder {
     pub(crate) master: ::std::option::Option<crate::types::Invitation>,
     _request_id: Option<String>,

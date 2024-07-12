@@ -28,8 +28,8 @@ impl SwitchoverReadReplicaOutput {
 }
 
 /// A builder for [`SwitchoverReadReplicaOutput`](crate::operation::switchover_read_replica::SwitchoverReadReplicaOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SwitchoverReadReplicaOutputBuilder {
     pub(crate) db_instance: ::std::option::Option<crate::types::DbInstance>,
     _request_id: Option<String>,

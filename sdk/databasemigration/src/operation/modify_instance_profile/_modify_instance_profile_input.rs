@@ -74,8 +74,8 @@ impl ModifyInstanceProfileInput {
 }
 
 /// A builder for [`ModifyInstanceProfileInput`](crate::operation::modify_instance_profile::ModifyInstanceProfileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyInstanceProfileInputBuilder {
     pub(crate) instance_profile_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,

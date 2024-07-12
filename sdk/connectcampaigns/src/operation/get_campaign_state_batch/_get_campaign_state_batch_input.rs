@@ -23,8 +23,8 @@ impl GetCampaignStateBatchInput {
 }
 
 /// A builder for [`GetCampaignStateBatchInput`](crate::operation::get_campaign_state_batch::GetCampaignStateBatchInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCampaignStateBatchInputBuilder {
     pub(crate) campaign_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

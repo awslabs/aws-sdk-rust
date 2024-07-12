@@ -27,8 +27,8 @@ impl GeospatialWindowOptions {
 }
 
 /// A builder for [`GeospatialWindowOptions`](crate::types::GeospatialWindowOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GeospatialWindowOptionsBuilder {
     pub(crate) bounds: ::std::option::Option<crate::types::GeospatialCoordinateBounds>,
     pub(crate) map_zoom_mode: ::std::option::Option<crate::types::MapZoomMode>,

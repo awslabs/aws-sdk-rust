@@ -11,8 +11,8 @@ impl EnableSagemakerServicecatalogPortfolioInput {
 }
 
 /// A builder for [`EnableSagemakerServicecatalogPortfolioInput`](crate::operation::enable_sagemaker_servicecatalog_portfolio::EnableSagemakerServicecatalogPortfolioInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnableSagemakerServicecatalogPortfolioInputBuilder {}
 impl EnableSagemakerServicecatalogPortfolioInputBuilder {
     /// Consumes the builder and constructs a [`EnableSagemakerServicecatalogPortfolioInput`](crate::operation::enable_sagemaker_servicecatalog_portfolio::EnableSagemakerServicecatalogPortfolioInput).

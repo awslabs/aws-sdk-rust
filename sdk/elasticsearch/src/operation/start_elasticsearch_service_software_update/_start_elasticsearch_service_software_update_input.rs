@@ -21,8 +21,8 @@ impl StartElasticsearchServiceSoftwareUpdateInput {
 }
 
 /// A builder for [`StartElasticsearchServiceSoftwareUpdateInput`](crate::operation::start_elasticsearch_service_software_update::StartElasticsearchServiceSoftwareUpdateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartElasticsearchServiceSoftwareUpdateInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
 }

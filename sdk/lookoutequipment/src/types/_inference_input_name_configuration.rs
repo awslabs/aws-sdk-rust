@@ -27,8 +27,8 @@ impl InferenceInputNameConfiguration {
 }
 
 /// A builder for [`InferenceInputNameConfiguration`](crate::types::InferenceInputNameConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InferenceInputNameConfigurationBuilder {
     pub(crate) timestamp_format: ::std::option::Option<::std::string::String>,
     pub(crate) component_timestamp_delimiter: ::std::option::Option<::std::string::String>,

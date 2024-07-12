@@ -59,8 +59,8 @@ impl InstanceInfo {
 }
 
 /// A builder for [`InstanceInfo`](crate::types::InstanceInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceInfoBuilder {
     pub(crate) instance_name: ::std::option::Option<::std::string::String>,
     pub(crate) iam_session_arn: ::std::option::Option<::std::string::String>,

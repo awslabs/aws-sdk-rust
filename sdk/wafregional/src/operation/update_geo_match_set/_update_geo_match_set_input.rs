@@ -48,8 +48,8 @@ impl UpdateGeoMatchSetInput {
 }
 
 /// A builder for [`UpdateGeoMatchSetInput`](crate::operation::update_geo_match_set::UpdateGeoMatchSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateGeoMatchSetInputBuilder {
     pub(crate) geo_match_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) change_token: ::std::option::Option<::std::string::String>,

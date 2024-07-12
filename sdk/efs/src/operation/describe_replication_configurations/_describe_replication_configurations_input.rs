@@ -32,8 +32,8 @@ impl DescribeReplicationConfigurationsInput {
 }
 
 /// A builder for [`DescribeReplicationConfigurationsInput`](crate::operation::describe_replication_configurations::DescribeReplicationConfigurationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeReplicationConfigurationsInputBuilder {
     pub(crate) file_system_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl SendVoiceMessageOutput {
 }
 
 /// A builder for [`SendVoiceMessageOutput`](crate::operation::send_voice_message::SendVoiceMessageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendVoiceMessageOutputBuilder {
     pub(crate) message_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

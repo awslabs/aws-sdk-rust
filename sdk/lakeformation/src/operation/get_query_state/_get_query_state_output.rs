@@ -53,8 +53,8 @@ impl GetQueryStateOutput {
 }
 
 /// A builder for [`GetQueryStateOutput`](crate::operation::get_query_state::GetQueryStateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetQueryStateOutputBuilder {
     pub(crate) error: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::QueryStateString>,

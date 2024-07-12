@@ -28,8 +28,8 @@ impl DescribeDeviceEc2InstancesOutput {
 }
 
 /// A builder for [`DescribeDeviceEc2InstancesOutput`](crate::operation::describe_device_ec2_instances::DescribeDeviceEc2InstancesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDeviceEc2InstancesOutputBuilder {
     pub(crate) instances: ::std::option::Option<::std::vec::Vec<crate::types::InstanceSummary>>,
     _request_id: Option<String>,

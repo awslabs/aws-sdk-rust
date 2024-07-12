@@ -38,8 +38,8 @@ impl ListResolverDnssecConfigsInput {
 }
 
 /// A builder for [`ListResolverDnssecConfigsInput`](crate::operation::list_resolver_dnssec_configs::ListResolverDnssecConfigsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListResolverDnssecConfigsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

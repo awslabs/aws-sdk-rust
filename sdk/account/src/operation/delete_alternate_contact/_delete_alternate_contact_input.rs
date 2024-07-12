@@ -36,8 +36,8 @@ impl DeleteAlternateContactInput {
 }
 
 /// A builder for [`DeleteAlternateContactInput`](crate::operation::delete_alternate_contact::DeleteAlternateContactInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAlternateContactInputBuilder {
     pub(crate) alternate_contact_type: ::std::option::Option<crate::types::AlternateContactType>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,

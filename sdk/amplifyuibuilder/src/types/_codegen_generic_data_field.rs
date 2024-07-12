@@ -52,8 +52,8 @@ impl CodegenGenericDataField {
 }
 
 /// A builder for [`CodegenGenericDataField`](crate::types::CodegenGenericDataField).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CodegenGenericDataFieldBuilder {
     pub(crate) data_type: ::std::option::Option<crate::types::CodegenGenericDataFieldDataType>,
     pub(crate) data_type_value: ::std::option::Option<::std::string::String>,

@@ -135,8 +135,8 @@ impl VerifyInput {
 }
 
 /// A builder for [`VerifyInput`](crate::operation::verify::VerifyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct VerifyInputBuilder {
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::aws_smithy_types::Blob>,

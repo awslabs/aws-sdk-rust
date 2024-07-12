@@ -33,8 +33,8 @@ impl VerifiedAccessEndpointEniOptions {
 }
 
 /// A builder for [`VerifiedAccessEndpointEniOptions`](crate::types::VerifiedAccessEndpointEniOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VerifiedAccessEndpointEniOptionsBuilder {
     pub(crate) network_interface_id: ::std::option::Option<::std::string::String>,
     pub(crate) protocol: ::std::option::Option<crate::types::VerifiedAccessEndpointProtocol>,

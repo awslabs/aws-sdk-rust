@@ -26,8 +26,8 @@ impl ListCachePoliciesOutput {
 }
 
 /// A builder for [`ListCachePoliciesOutput`](crate::operation::list_cache_policies::ListCachePoliciesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCachePoliciesOutputBuilder {
     pub(crate) cache_policy_list: ::std::option::Option<crate::types::CachePolicyList>,
     _request_id: Option<String>,

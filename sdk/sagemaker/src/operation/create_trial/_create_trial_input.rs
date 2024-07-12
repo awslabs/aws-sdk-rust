@@ -46,8 +46,8 @@ impl CreateTrialInput {
 }
 
 /// A builder for [`CreateTrialInput`](crate::operation::create_trial::CreateTrialInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateTrialInputBuilder {
     pub(crate) trial_name: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,

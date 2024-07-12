@@ -26,8 +26,8 @@ impl StartExtensionPackAssociationOutput {
 }
 
 /// A builder for [`StartExtensionPackAssociationOutput`](crate::operation::start_extension_pack_association::StartExtensionPackAssociationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartExtensionPackAssociationOutputBuilder {
     pub(crate) request_identifier: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

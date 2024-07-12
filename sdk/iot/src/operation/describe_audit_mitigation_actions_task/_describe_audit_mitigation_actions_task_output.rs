@@ -69,8 +69,8 @@ impl DescribeAuditMitigationActionsTaskOutput {
 }
 
 /// A builder for [`DescribeAuditMitigationActionsTaskOutput`](crate::operation::describe_audit_mitigation_actions_task::DescribeAuditMitigationActionsTaskOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAuditMitigationActionsTaskOutputBuilder {
     pub(crate) task_status: ::std::option::Option<crate::types::AuditMitigationActionsTaskStatus>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,

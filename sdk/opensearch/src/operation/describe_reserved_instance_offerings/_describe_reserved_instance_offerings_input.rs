@@ -33,8 +33,8 @@ impl DescribeReservedInstanceOfferingsInput {
 }
 
 /// A builder for [`DescribeReservedInstanceOfferingsInput`](crate::operation::describe_reserved_instance_offerings::DescribeReservedInstanceOfferingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeReservedInstanceOfferingsInputBuilder {
     pub(crate) reserved_instance_offering_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

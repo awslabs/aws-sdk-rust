@@ -26,8 +26,8 @@ impl DeclineHandshakeOutput {
 }
 
 /// A builder for [`DeclineHandshakeOutput`](crate::operation::decline_handshake::DeclineHandshakeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeclineHandshakeOutputBuilder {
     pub(crate) handshake: ::std::option::Option<crate::types::Handshake>,
     _request_id: Option<String>,

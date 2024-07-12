@@ -38,8 +38,8 @@ impl AssumeQueueRoleForWorkerInput {
 }
 
 /// A builder for [`AssumeQueueRoleForWorkerInput`](crate::operation::assume_queue_role_for_worker::AssumeQueueRoleForWorkerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssumeQueueRoleForWorkerInputBuilder {
     pub(crate) farm_id: ::std::option::Option<::std::string::String>,
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,

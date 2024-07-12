@@ -27,8 +27,8 @@ impl SourceServerConnectorAction {
 }
 
 /// A builder for [`SourceServerConnectorAction`](crate::types::SourceServerConnectorAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SourceServerConnectorActionBuilder {
     pub(crate) credentials_secret_arn: ::std::option::Option<::std::string::String>,
     pub(crate) connector_arn: ::std::option::Option<::std::string::String>,

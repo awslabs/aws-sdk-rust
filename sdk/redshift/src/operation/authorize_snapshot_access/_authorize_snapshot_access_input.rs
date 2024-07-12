@@ -53,8 +53,8 @@ impl AuthorizeSnapshotAccessInput {
 }
 
 /// A builder for [`AuthorizeSnapshotAccessInput`](crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AuthorizeSnapshotAccessInputBuilder {
     pub(crate) snapshot_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) snapshot_arn: ::std::option::Option<::std::string::String>,

@@ -19,8 +19,8 @@ impl DeleteApplicationCloudWatchLoggingOptionOutput {
 }
 
 /// A builder for [`DeleteApplicationCloudWatchLoggingOptionOutput`](crate::operation::delete_application_cloud_watch_logging_option::DeleteApplicationCloudWatchLoggingOptionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteApplicationCloudWatchLoggingOptionOutputBuilder {
     _request_id: Option<String>,
 }

@@ -11,8 +11,8 @@ impl DescribeStorageConfigurationInput {
 }
 
 /// A builder for [`DescribeStorageConfigurationInput`](crate::operation::describe_storage_configuration::DescribeStorageConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeStorageConfigurationInputBuilder {}
 impl DescribeStorageConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`DescribeStorageConfigurationInput`](crate::operation::describe_storage_configuration::DescribeStorageConfigurationInput).

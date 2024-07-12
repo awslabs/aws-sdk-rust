@@ -26,8 +26,8 @@ impl GetResourcePositionInput {
 }
 
 /// A builder for [`GetResourcePositionInput`](crate::operation::get_resource_position::GetResourcePositionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetResourcePositionInputBuilder {
     pub(crate) resource_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::PositionResourceType>,

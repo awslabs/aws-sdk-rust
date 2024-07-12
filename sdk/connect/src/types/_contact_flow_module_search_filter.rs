@@ -33,8 +33,8 @@ impl ContactFlowModuleSearchFilter {
 }
 
 /// A builder for [`ContactFlowModuleSearchFilter`](crate::types::ContactFlowModuleSearchFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ContactFlowModuleSearchFilterBuilder {
     pub(crate) tag_filter: ::std::option::Option<crate::types::ControlPlaneTagFilter>,
 }

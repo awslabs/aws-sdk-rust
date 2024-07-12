@@ -21,8 +21,8 @@ impl ScalingTrigger {
 }
 
 /// A builder for [`ScalingTrigger`](crate::types::ScalingTrigger).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScalingTriggerBuilder {
     pub(crate) cloud_watch_alarm_definition: ::std::option::Option<crate::types::CloudWatchAlarmDefinition>,
 }

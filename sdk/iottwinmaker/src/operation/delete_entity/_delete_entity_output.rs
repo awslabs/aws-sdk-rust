@@ -26,8 +26,8 @@ impl DeleteEntityOutput {
 }
 
 /// A builder for [`DeleteEntityOutput`](crate::operation::delete_entity::DeleteEntityOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteEntityOutputBuilder {
     pub(crate) state: ::std::option::Option<crate::types::State>,
     _request_id: Option<String>,

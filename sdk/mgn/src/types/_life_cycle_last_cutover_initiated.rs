@@ -27,8 +27,8 @@ impl LifeCycleLastCutoverInitiated {
 }
 
 /// A builder for [`LifeCycleLastCutoverInitiated`](crate::types::LifeCycleLastCutoverInitiated).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LifeCycleLastCutoverInitiatedBuilder {
     pub(crate) api_call_date_time: ::std::option::Option<::std::string::String>,
     pub(crate) job_id: ::std::option::Option<::std::string::String>,

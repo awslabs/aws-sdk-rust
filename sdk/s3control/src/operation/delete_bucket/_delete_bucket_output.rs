@@ -18,8 +18,8 @@ impl DeleteBucketOutput {
 }
 
 /// A builder for [`DeleteBucketOutput`](crate::operation::delete_bucket::DeleteBucketOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteBucketOutputBuilder {
     _request_id: Option<String>,
 }

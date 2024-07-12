@@ -228,8 +228,8 @@ impl BucketMetadata {
 }
 
 /// A builder for [`BucketMetadata`](crate::types::BucketMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BucketMetadataBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) allows_unencrypted_object_uploads: ::std::option::Option<crate::types::AllowsUnencryptedObjectUploads>,

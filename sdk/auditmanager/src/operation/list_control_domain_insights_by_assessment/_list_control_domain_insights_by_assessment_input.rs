@@ -32,8 +32,8 @@ impl ListControlDomainInsightsByAssessmentInput {
 }
 
 /// A builder for [`ListControlDomainInsightsByAssessmentInput`](crate::operation::list_control_domain_insights_by_assessment::ListControlDomainInsightsByAssessmentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListControlDomainInsightsByAssessmentInputBuilder {
     pub(crate) assessment_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl GetDataCellsFilterOutput {
 }
 
 /// A builder for [`GetDataCellsFilterOutput`](crate::operation::get_data_cells_filter::GetDataCellsFilterOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDataCellsFilterOutputBuilder {
     pub(crate) data_cells_filter: ::std::option::Option<crate::types::DataCellsFilter>,
     _request_id: Option<String>,

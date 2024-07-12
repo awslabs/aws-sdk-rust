@@ -33,8 +33,8 @@ impl AnalyticsBinBySpecification {
 }
 
 /// A builder for [`AnalyticsBinBySpecification`](crate::types::AnalyticsBinBySpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AnalyticsBinBySpecificationBuilder {
     pub(crate) name: ::std::option::Option<crate::types::AnalyticsBinByName>,
     pub(crate) interval: ::std::option::Option<crate::types::AnalyticsInterval>,

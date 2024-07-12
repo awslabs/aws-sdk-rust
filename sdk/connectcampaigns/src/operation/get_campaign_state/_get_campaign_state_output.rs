@@ -27,8 +27,8 @@ impl GetCampaignStateOutput {
 }
 
 /// A builder for [`GetCampaignStateOutput`](crate::operation::get_campaign_state::GetCampaignStateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCampaignStateOutputBuilder {
     pub(crate) state: ::std::option::Option<crate::types::CampaignState>,
     _request_id: Option<String>,

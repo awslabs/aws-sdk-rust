@@ -22,8 +22,8 @@ impl HttpUrlDestinationConfiguration {
 }
 
 /// A builder for [`HttpUrlDestinationConfiguration`](crate::types::HttpUrlDestinationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HttpUrlDestinationConfigurationBuilder {
     pub(crate) confirmation_url: ::std::option::Option<::std::string::String>,
 }

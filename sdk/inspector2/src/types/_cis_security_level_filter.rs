@@ -27,8 +27,8 @@ impl CisSecurityLevelFilter {
 }
 
 /// A builder for [`CisSecurityLevelFilter`](crate::types::CisSecurityLevelFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CisSecurityLevelFilterBuilder {
     pub(crate) comparison: ::std::option::Option<crate::types::CisSecurityLevelComparison>,
     pub(crate) value: ::std::option::Option<crate::types::CisSecurityLevel>,

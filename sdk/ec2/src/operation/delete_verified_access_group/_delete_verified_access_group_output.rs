@@ -26,8 +26,8 @@ impl DeleteVerifiedAccessGroupOutput {
 }
 
 /// A builder for [`DeleteVerifiedAccessGroupOutput`](crate::operation::delete_verified_access_group::DeleteVerifiedAccessGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVerifiedAccessGroupOutputBuilder {
     pub(crate) verified_access_group: ::std::option::Option<crate::types::VerifiedAccessGroup>,
     _request_id: Option<String>,

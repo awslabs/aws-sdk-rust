@@ -39,8 +39,8 @@ impl CreateMultiplexProgramInput {
 }
 
 /// A builder for [`CreateMultiplexProgramInput`](crate::operation::create_multiplex_program::CreateMultiplexProgramInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateMultiplexProgramInputBuilder {
     pub(crate) multiplex_id: ::std::option::Option<::std::string::String>,
     pub(crate) multiplex_program_settings: ::std::option::Option<crate::types::MultiplexProgramSettings>,

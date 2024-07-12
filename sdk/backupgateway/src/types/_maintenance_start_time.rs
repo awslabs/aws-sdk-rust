@@ -39,8 +39,8 @@ impl MaintenanceStartTime {
 }
 
 /// A builder for [`MaintenanceStartTime`](crate::types::MaintenanceStartTime).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MaintenanceStartTimeBuilder {
     pub(crate) day_of_month: ::std::option::Option<i32>,
     pub(crate) day_of_week: ::std::option::Option<i32>,

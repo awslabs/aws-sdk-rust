@@ -18,8 +18,8 @@ impl DeleteScalingPlanOutput {
 }
 
 /// A builder for [`DeleteScalingPlanOutput`](crate::operation::delete_scaling_plan::DeleteScalingPlanOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteScalingPlanOutputBuilder {
     _request_id: Option<String>,
 }

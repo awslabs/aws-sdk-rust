@@ -32,8 +32,8 @@ impl ListMetricSetsInput {
 }
 
 /// A builder for [`ListMetricSetsInput`](crate::operation::list_metric_sets::ListMetricSetsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListMetricSetsInputBuilder {
     pub(crate) anomaly_detector_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

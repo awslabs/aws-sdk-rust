@@ -21,8 +21,8 @@ impl GetUpgradeStatusInput {
 }
 
 /// A builder for [`GetUpgradeStatusInput`](crate::operation::get_upgrade_status::GetUpgradeStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetUpgradeStatusInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
 }

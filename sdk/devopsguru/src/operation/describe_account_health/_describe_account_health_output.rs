@@ -50,8 +50,8 @@ impl DescribeAccountHealthOutput {
 }
 
 /// A builder for [`DescribeAccountHealthOutput`](crate::operation::describe_account_health::DescribeAccountHealthOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAccountHealthOutputBuilder {
     pub(crate) open_reactive_insights: ::std::option::Option<i32>,
     pub(crate) open_proactive_insights: ::std::option::Option<i32>,

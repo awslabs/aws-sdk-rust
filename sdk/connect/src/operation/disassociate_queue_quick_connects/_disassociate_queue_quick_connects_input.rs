@@ -34,8 +34,8 @@ impl DisassociateQueueQuickConnectsInput {
 }
 
 /// A builder for [`DisassociateQueueQuickConnectsInput`](crate::operation::disassociate_queue_quick_connects::DisassociateQueueQuickConnectsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateQueueQuickConnectsInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) queue_id: ::std::option::Option<::std::string::String>,

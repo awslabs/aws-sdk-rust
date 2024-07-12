@@ -26,8 +26,8 @@ impl CreateAgentActionGroupOutput {
 }
 
 /// A builder for [`CreateAgentActionGroupOutput`](crate::operation::create_agent_action_group::CreateAgentActionGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAgentActionGroupOutputBuilder {
     pub(crate) agent_action_group: ::std::option::Option<crate::types::AgentActionGroup>,
     _request_id: Option<String>,

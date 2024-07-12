@@ -22,8 +22,8 @@ impl AssignedEnvironmentEnterSessionActionDefinition {
 }
 
 /// A builder for [`AssignedEnvironmentEnterSessionActionDefinition`](crate::types::AssignedEnvironmentEnterSessionActionDefinition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssignedEnvironmentEnterSessionActionDefinitionBuilder {
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
 }

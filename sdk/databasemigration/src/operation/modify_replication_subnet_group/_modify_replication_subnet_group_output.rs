@@ -27,8 +27,8 @@ impl ModifyReplicationSubnetGroupOutput {
 }
 
 /// A builder for [`ModifyReplicationSubnetGroupOutput`](crate::operation::modify_replication_subnet_group::ModifyReplicationSubnetGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyReplicationSubnetGroupOutputBuilder {
     pub(crate) replication_subnet_group: ::std::option::Option<crate::types::ReplicationSubnetGroup>,
     _request_id: Option<String>,

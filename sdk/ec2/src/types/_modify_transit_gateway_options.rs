@@ -93,8 +93,8 @@ impl ModifyTransitGatewayOptions {
 }
 
 /// A builder for [`ModifyTransitGatewayOptions`](crate::types::ModifyTransitGatewayOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyTransitGatewayOptionsBuilder {
     pub(crate) add_transit_gateway_cidr_blocks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) remove_transit_gateway_cidr_blocks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

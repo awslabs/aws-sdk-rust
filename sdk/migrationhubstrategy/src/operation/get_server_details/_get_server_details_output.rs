@@ -40,8 +40,8 @@ impl GetServerDetailsOutput {
 }
 
 /// A builder for [`GetServerDetailsOutput`](crate::operation::get_server_details::GetServerDetailsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetServerDetailsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) server_detail: ::std::option::Option<crate::types::ServerDetail>,

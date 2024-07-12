@@ -42,8 +42,8 @@ impl DescribeDetectorModelAnalysisOutput {
 }
 
 /// A builder for [`DescribeDetectorModelAnalysisOutput`](crate::operation::describe_detector_model_analysis::DescribeDetectorModelAnalysisOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDetectorModelAnalysisOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::AnalysisStatus>,
     _request_id: Option<String>,

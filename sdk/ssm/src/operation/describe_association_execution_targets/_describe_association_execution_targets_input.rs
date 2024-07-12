@@ -52,8 +52,8 @@ impl DescribeAssociationExecutionTargetsInput {
 }
 
 /// A builder for [`DescribeAssociationExecutionTargetsInput`](crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAssociationExecutionTargetsInputBuilder {
     pub(crate) association_id: ::std::option::Option<::std::string::String>,
     pub(crate) execution_id: ::std::option::Option<::std::string::String>,

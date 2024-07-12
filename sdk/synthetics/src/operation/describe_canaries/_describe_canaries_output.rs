@@ -34,8 +34,8 @@ impl DescribeCanariesOutput {
 }
 
 /// A builder for [`DescribeCanariesOutput`](crate::operation::describe_canaries::DescribeCanariesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCanariesOutputBuilder {
     pub(crate) canaries: ::std::option::Option<::std::vec::Vec<crate::types::Canary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

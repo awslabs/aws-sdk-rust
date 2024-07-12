@@ -116,8 +116,8 @@ impl DescribeSmbSettingsOutput {
 }
 
 /// A builder for [`DescribeSmbSettingsOutput`](crate::operation::describe_smb_settings::DescribeSmbSettingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSmbSettingsOutputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,

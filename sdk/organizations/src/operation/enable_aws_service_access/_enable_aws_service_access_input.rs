@@ -20,8 +20,8 @@ impl EnableAwsServiceAccessInput {
 }
 
 /// A builder for [`EnableAwsServiceAccessInput`](crate::operation::enable_aws_service_access::EnableAwsServiceAccessInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnableAwsServiceAccessInputBuilder {
     pub(crate) service_principal: ::std::option::Option<::std::string::String>,
 }

@@ -47,8 +47,8 @@ impl CreateWorkspaceServiceAccountOutput {
 }
 
 /// A builder for [`CreateWorkspaceServiceAccountOutput`](crate::operation::create_workspace_service_account::CreateWorkspaceServiceAccountOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateWorkspaceServiceAccountOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

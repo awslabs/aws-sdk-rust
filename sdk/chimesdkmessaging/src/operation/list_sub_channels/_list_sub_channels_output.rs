@@ -50,8 +50,8 @@ impl ListSubChannelsOutput {
 }
 
 /// A builder for [`ListSubChannelsOutput`](crate::operation::list_sub_channels::ListSubChannelsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ListSubChannelsOutputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) sub_channels: ::std::option::Option<::std::vec::Vec<crate::types::SubChannelSummary>>,

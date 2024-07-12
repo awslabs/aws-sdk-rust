@@ -21,8 +21,8 @@ impl HlsS3Settings {
 }
 
 /// A builder for [`HlsS3Settings`](crate::types::HlsS3Settings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HlsS3SettingsBuilder {
     pub(crate) canned_acl: ::std::option::Option<crate::types::S3CannedAcl>,
 }

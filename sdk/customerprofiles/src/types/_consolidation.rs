@@ -22,8 +22,8 @@ impl Consolidation {
 }
 
 /// A builder for [`Consolidation`](crate::types::Consolidation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConsolidationBuilder {
     pub(crate) matching_attributes_list: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
 }

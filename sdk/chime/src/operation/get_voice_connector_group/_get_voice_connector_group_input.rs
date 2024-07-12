@@ -20,8 +20,8 @@ impl GetVoiceConnectorGroupInput {
 }
 
 /// A builder for [`GetVoiceConnectorGroupInput`](crate::operation::get_voice_connector_group::GetVoiceConnectorGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetVoiceConnectorGroupInputBuilder {
     pub(crate) voice_connector_group_id: ::std::option::Option<::std::string::String>,
 }

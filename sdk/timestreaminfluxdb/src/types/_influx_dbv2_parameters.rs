@@ -69,8 +69,8 @@ impl InfluxDBv2Parameters {
 }
 
 /// A builder for [`InfluxDBv2Parameters`](crate::types::InfluxDBv2Parameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InfluxDBv2ParametersBuilder {
     pub(crate) flux_log_enabled: ::std::option::Option<bool>,
     pub(crate) log_level: ::std::option::Option<crate::types::LogLevel>,

@@ -21,8 +21,8 @@ impl MediaAnalysisModelVersions {
 }
 
 /// A builder for [`MediaAnalysisModelVersions`](crate::types::MediaAnalysisModelVersions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MediaAnalysisModelVersionsBuilder {
     pub(crate) moderation: ::std::option::Option<::std::string::String>,
 }

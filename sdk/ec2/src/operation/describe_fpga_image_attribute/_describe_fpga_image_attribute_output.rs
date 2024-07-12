@@ -26,8 +26,8 @@ impl DescribeFpgaImageAttributeOutput {
 }
 
 /// A builder for [`DescribeFpgaImageAttributeOutput`](crate::operation::describe_fpga_image_attribute::DescribeFpgaImageAttributeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFpgaImageAttributeOutputBuilder {
     pub(crate) fpga_image_attribute: ::std::option::Option<crate::types::FpgaImageAttribute>,
     _request_id: Option<String>,

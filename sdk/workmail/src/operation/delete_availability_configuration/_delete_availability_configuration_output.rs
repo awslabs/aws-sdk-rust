@@ -18,8 +18,8 @@ impl DeleteAvailabilityConfigurationOutput {
 }
 
 /// A builder for [`DeleteAvailabilityConfigurationOutput`](crate::operation::delete_availability_configuration::DeleteAvailabilityConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAvailabilityConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

@@ -26,8 +26,8 @@ impl GetImpersonationRoleInput {
 }
 
 /// A builder for [`GetImpersonationRoleInput`](crate::operation::get_impersonation_role::GetImpersonationRoleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetImpersonationRoleInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) impersonation_role_id: ::std::option::Option<::std::string::String>,

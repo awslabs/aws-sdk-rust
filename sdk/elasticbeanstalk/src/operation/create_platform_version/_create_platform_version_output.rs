@@ -36,8 +36,8 @@ impl CreatePlatformVersionOutput {
 }
 
 /// A builder for [`CreatePlatformVersionOutput`](crate::operation::create_platform_version::CreatePlatformVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePlatformVersionOutputBuilder {
     pub(crate) platform_summary: ::std::option::Option<crate::types::PlatformSummary>,
     pub(crate) builder_value: ::std::option::Option<crate::types::Builder>,

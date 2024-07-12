@@ -40,8 +40,8 @@ impl GetCustomerGatewayAssociationsInput {
 }
 
 /// A builder for [`GetCustomerGatewayAssociationsInput`](crate::operation::get_customer_gateway_associations::GetCustomerGatewayAssociationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCustomerGatewayAssociationsInputBuilder {
     pub(crate) global_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) customer_gateway_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

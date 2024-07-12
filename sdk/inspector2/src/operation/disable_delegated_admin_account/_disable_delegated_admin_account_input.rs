@@ -20,8 +20,8 @@ impl DisableDelegatedAdminAccountInput {
 }
 
 /// A builder for [`DisableDelegatedAdminAccountInput`](crate::operation::disable_delegated_admin_account::DisableDelegatedAdminAccountInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableDelegatedAdminAccountInputBuilder {
     pub(crate) delegated_admin_account_id: ::std::option::Option<::std::string::String>,
 }

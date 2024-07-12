@@ -20,8 +20,8 @@ impl JoinStorageSessionInput {
 }
 
 /// A builder for [`JoinStorageSessionInput`](crate::operation::join_storage_session::JoinStorageSessionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JoinStorageSessionInputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
 }

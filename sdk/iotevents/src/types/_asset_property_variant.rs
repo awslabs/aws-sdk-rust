@@ -53,8 +53,8 @@ impl AssetPropertyVariant {
 }
 
 /// A builder for [`AssetPropertyVariant`](crate::types::AssetPropertyVariant).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssetPropertyVariantBuilder {
     pub(crate) string_value: ::std::option::Option<::std::string::String>,
     pub(crate) integer_value: ::std::option::Option<::std::string::String>,

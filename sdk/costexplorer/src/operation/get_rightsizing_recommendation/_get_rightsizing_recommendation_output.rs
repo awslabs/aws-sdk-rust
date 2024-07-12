@@ -52,8 +52,8 @@ impl GetRightsizingRecommendationOutput {
 }
 
 /// A builder for [`GetRightsizingRecommendationOutput`](crate::operation::get_rightsizing_recommendation::GetRightsizingRecommendationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRightsizingRecommendationOutputBuilder {
     pub(crate) metadata: ::std::option::Option<crate::types::RightsizingRecommendationMetadata>,
     pub(crate) summary: ::std::option::Option<crate::types::RightsizingRecommendationSummary>,

@@ -18,8 +18,8 @@ impl CreateApplicationAssignmentOutput {
 }
 
 /// A builder for [`CreateApplicationAssignmentOutput`](crate::operation::create_application_assignment::CreateApplicationAssignmentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateApplicationAssignmentOutputBuilder {
     _request_id: Option<String>,
 }

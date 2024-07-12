@@ -45,8 +45,8 @@ impl QueryObjectsInput {
 }
 
 /// A builder for [`QueryObjectsInput`](crate::operation::query_objects::QueryObjectsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct QueryObjectsInputBuilder {
     pub(crate) pipeline_id: ::std::option::Option<::std::string::String>,
     pub(crate) query: ::std::option::Option<crate::types::Query>,

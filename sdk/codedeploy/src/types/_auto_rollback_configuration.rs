@@ -29,8 +29,8 @@ impl AutoRollbackConfiguration {
 }
 
 /// A builder for [`AutoRollbackConfiguration`](crate::types::AutoRollbackConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AutoRollbackConfigurationBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::AutoRollbackEvent>>,

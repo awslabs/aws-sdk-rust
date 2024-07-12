@@ -38,8 +38,8 @@ impl ListQuerySuggestionsBlockListsOutput {
 }
 
 /// A builder for [`ListQuerySuggestionsBlockListsOutput`](crate::operation::list_query_suggestions_block_lists::ListQuerySuggestionsBlockListsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListQuerySuggestionsBlockListsOutputBuilder {
     pub(crate) block_list_summary_items: ::std::option::Option<::std::vec::Vec<crate::types::QuerySuggestionsBlockListSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -89,8 +89,8 @@ impl SendTextMessageInput {
 }
 
 /// A builder for [`SendTextMessageInput`](crate::operation::send_text_message::SendTextMessageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendTextMessageInputBuilder {
     pub(crate) destination_phone_number: ::std::option::Option<::std::string::String>,
     pub(crate) origination_identity: ::std::option::Option<::std::string::String>,

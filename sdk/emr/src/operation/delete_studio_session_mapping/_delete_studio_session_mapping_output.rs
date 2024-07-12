@@ -18,8 +18,8 @@ impl DeleteStudioSessionMappingOutput {
 }
 
 /// A builder for [`DeleteStudioSessionMappingOutput`](crate::operation::delete_studio_session_mapping::DeleteStudioSessionMappingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteStudioSessionMappingOutputBuilder {
     _request_id: Option<String>,
 }

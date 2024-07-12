@@ -112,8 +112,8 @@ impl GetMapGlyphsInput {
 }
 
 /// A builder for [`GetMapGlyphsInput`](crate::operation::get_map_glyphs::GetMapGlyphsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetMapGlyphsInputBuilder {
     pub(crate) map_name: ::std::option::Option<::std::string::String>,
     pub(crate) font_stack: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl GetExperimentTargetAccountConfigurationOutput {
 }
 
 /// A builder for [`GetExperimentTargetAccountConfigurationOutput`](crate::operation::get_experiment_target_account_configuration::GetExperimentTargetAccountConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetExperimentTargetAccountConfigurationOutputBuilder {
     pub(crate) target_account_configuration: ::std::option::Option<crate::types::ExperimentTargetAccountConfiguration>,
     _request_id: Option<String>,

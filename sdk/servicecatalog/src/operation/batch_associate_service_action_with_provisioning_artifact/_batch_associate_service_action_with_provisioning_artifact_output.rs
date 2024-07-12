@@ -28,8 +28,8 @@ impl BatchAssociateServiceActionWithProvisioningArtifactOutput {
 }
 
 /// A builder for [`BatchAssociateServiceActionWithProvisioningArtifactOutput`](crate::operation::batch_associate_service_action_with_provisioning_artifact::BatchAssociateServiceActionWithProvisioningArtifactOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchAssociateServiceActionWithProvisioningArtifactOutputBuilder {
     pub(crate) failed_service_action_associations: ::std::option::Option<::std::vec::Vec<crate::types::FailedServiceActionAssociation>>,
     _request_id: Option<String>,

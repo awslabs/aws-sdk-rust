@@ -26,8 +26,8 @@ impl DescribeImageGenerationConfigurationOutput {
 }
 
 /// A builder for [`DescribeImageGenerationConfigurationOutput`](crate::operation::describe_image_generation_configuration::DescribeImageGenerationConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeImageGenerationConfigurationOutputBuilder {
     pub(crate) image_generation_configuration: ::std::option::Option<crate::types::ImageGenerationConfiguration>,
     _request_id: Option<String>,

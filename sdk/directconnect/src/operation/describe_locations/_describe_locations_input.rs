@@ -11,8 +11,8 @@ impl DescribeLocationsInput {
 }
 
 /// A builder for [`DescribeLocationsInput`](crate::operation::describe_locations::DescribeLocationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeLocationsInputBuilder {}
 impl DescribeLocationsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeLocationsInput`](crate::operation::describe_locations::DescribeLocationsInput).

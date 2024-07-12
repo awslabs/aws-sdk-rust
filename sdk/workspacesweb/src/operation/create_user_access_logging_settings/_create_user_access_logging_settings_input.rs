@@ -36,8 +36,8 @@ impl CreateUserAccessLoggingSettingsInput {
 }
 
 /// A builder for [`CreateUserAccessLoggingSettingsInput`](crate::operation::create_user_access_logging_settings::CreateUserAccessLoggingSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateUserAccessLoggingSettingsInputBuilder {
     pub(crate) kinesis_stream_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,

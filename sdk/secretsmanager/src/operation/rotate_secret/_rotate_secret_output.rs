@@ -38,8 +38,8 @@ impl RotateSecretOutput {
 }
 
 /// A builder for [`RotateSecretOutput`](crate::operation::rotate_secret::RotateSecretOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RotateSecretOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

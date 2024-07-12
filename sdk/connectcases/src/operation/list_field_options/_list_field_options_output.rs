@@ -33,8 +33,8 @@ impl ListFieldOptionsOutput {
 }
 
 /// A builder for [`ListFieldOptionsOutput`](crate::operation::list_field_options::ListFieldOptionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFieldOptionsOutputBuilder {
     pub(crate) options: ::std::option::Option<::std::vec::Vec<crate::types::FieldOption>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

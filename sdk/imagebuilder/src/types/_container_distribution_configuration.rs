@@ -35,8 +35,8 @@ impl ContainerDistributionConfiguration {
 }
 
 /// A builder for [`ContainerDistributionConfiguration`](crate::types::ContainerDistributionConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ContainerDistributionConfigurationBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) container_tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

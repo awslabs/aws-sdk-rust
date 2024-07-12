@@ -55,8 +55,8 @@ impl DescribeGroupsInput {
 }
 
 /// A builder for [`DescribeGroupsInput`](crate::operation::describe_groups::DescribeGroupsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DescribeGroupsInputBuilder {
     pub(crate) authentication_token: ::std::option::Option<::std::string::String>,
     pub(crate) search_query: ::std::option::Option<::std::string::String>,

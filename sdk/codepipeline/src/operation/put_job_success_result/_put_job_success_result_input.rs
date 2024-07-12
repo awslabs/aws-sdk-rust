@@ -45,8 +45,8 @@ impl PutJobSuccessResultInput {
 }
 
 /// A builder for [`PutJobSuccessResultInput`](crate::operation::put_job_success_result::PutJobSuccessResultInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutJobSuccessResultInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) current_revision: ::std::option::Option<crate::types::CurrentRevision>,

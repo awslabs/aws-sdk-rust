@@ -27,8 +27,8 @@ impl UpdateMissionProfileOutput {
 }
 
 /// A builder for [`UpdateMissionProfileOutput`](crate::operation::update_mission_profile::UpdateMissionProfileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateMissionProfileOutputBuilder {
     pub(crate) mission_profile_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

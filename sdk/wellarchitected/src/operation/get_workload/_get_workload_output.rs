@@ -27,8 +27,8 @@ impl GetWorkloadOutput {
 }
 
 /// A builder for [`GetWorkloadOutput`](crate::operation::get_workload::GetWorkloadOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetWorkloadOutputBuilder {
     pub(crate) workload: ::std::option::Option<crate::types::Workload>,
     _request_id: Option<String>,

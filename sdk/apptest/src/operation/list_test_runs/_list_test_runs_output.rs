@@ -33,8 +33,8 @@ impl ListTestRunsOutput {
 }
 
 /// A builder for [`ListTestRunsOutput`](crate::operation::list_test_runs::ListTestRunsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTestRunsOutputBuilder {
     pub(crate) test_runs: ::std::option::Option<::std::vec::Vec<crate::types::TestRunSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

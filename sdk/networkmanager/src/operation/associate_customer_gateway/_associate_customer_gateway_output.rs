@@ -26,8 +26,8 @@ impl AssociateCustomerGatewayOutput {
 }
 
 /// A builder for [`AssociateCustomerGatewayOutput`](crate::operation::associate_customer_gateway::AssociateCustomerGatewayOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateCustomerGatewayOutputBuilder {
     pub(crate) customer_gateway_association: ::std::option::Option<crate::types::CustomerGatewayAssociation>,
     _request_id: Option<String>,

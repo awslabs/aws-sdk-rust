@@ -38,8 +38,8 @@ impl DeleteSparqlStatisticsOutput {
 }
 
 /// A builder for [`DeleteSparqlStatisticsOutput`](crate::operation::delete_sparql_statistics::DeleteSparqlStatisticsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSparqlStatisticsOutputBuilder {
     pub(crate) status_code: ::std::option::Option<i32>,
     pub(crate) status: ::std::option::Option<::std::string::String>,

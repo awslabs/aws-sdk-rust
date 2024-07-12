@@ -27,8 +27,8 @@ impl DeleteHostedZoneOutput {
 }
 
 /// A builder for [`DeleteHostedZoneOutput`](crate::operation::delete_hosted_zone::DeleteHostedZoneOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteHostedZoneOutputBuilder {
     pub(crate) change_info: ::std::option::Option<crate::types::ChangeInfo>,
     _request_id: Option<String>,

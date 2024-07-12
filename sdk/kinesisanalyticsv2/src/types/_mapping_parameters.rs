@@ -27,8 +27,8 @@ impl MappingParameters {
 }
 
 /// A builder for [`MappingParameters`](crate::types::MappingParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MappingParametersBuilder {
     pub(crate) json_mapping_parameters: ::std::option::Option<crate::types::JsonMappingParameters>,
     pub(crate) csv_mapping_parameters: ::std::option::Option<crate::types::CsvMappingParameters>,

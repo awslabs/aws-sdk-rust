@@ -50,8 +50,8 @@ impl CreateFleetAdvisorCollectorOutput {
 }
 
 /// A builder for [`CreateFleetAdvisorCollectorOutput`](crate::operation::create_fleet_advisor_collector::CreateFleetAdvisorCollectorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateFleetAdvisorCollectorOutputBuilder {
     pub(crate) collector_referenced_id: ::std::option::Option<::std::string::String>,
     pub(crate) collector_name: ::std::option::Option<::std::string::String>,

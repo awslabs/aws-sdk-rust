@@ -20,8 +20,8 @@ impl StopAutoMlJobInput {
 }
 
 /// A builder for [`StopAutoMlJobInput`](crate::operation::stop_auto_ml_job::StopAutoMlJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopAutoMlJobInputBuilder {
     pub(crate) auto_ml_job_name: ::std::option::Option<::std::string::String>,
 }

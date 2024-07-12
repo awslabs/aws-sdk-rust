@@ -26,8 +26,8 @@ impl Summary {
 }
 
 /// A builder for [`Summary`](crate::types::Summary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SummaryBuilder {
     pub(crate) s3_object: ::std::option::Option<crate::types::S3Object>,
 }

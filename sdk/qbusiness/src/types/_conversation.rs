@@ -33,8 +33,8 @@ impl Conversation {
 }
 
 /// A builder for [`Conversation`](crate::types::Conversation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConversationBuilder {
     pub(crate) conversation_id: ::std::option::Option<::std::string::String>,
     pub(crate) title: ::std::option::Option<::std::string::String>,

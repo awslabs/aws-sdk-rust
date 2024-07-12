@@ -20,8 +20,8 @@ impl CreateBucketAccessKeyInput {
 }
 
 /// A builder for [`CreateBucketAccessKeyInput`](crate::operation::create_bucket_access_key::CreateBucketAccessKeyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateBucketAccessKeyInputBuilder {
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
 }

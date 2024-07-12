@@ -27,8 +27,8 @@ impl DefineIndexFieldOutput {
 }
 
 /// A builder for [`DefineIndexFieldOutput`](crate::operation::define_index_field::DefineIndexFieldOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DefineIndexFieldOutputBuilder {
     pub(crate) index_field: ::std::option::Option<crate::types::IndexFieldStatus>,
     _request_id: Option<String>,

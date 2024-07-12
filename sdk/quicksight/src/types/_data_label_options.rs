@@ -77,8 +77,8 @@ impl DataLabelOptions {
 }
 
 /// A builder for [`DataLabelOptions`](crate::types::DataLabelOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataLabelOptionsBuilder {
     pub(crate) visibility: ::std::option::Option<crate::types::Visibility>,
     pub(crate) category_label_visibility: ::std::option::Option<crate::types::Visibility>,

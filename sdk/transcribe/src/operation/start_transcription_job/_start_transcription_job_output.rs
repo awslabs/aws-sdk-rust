@@ -26,8 +26,8 @@ impl StartTranscriptionJobOutput {
 }
 
 /// A builder for [`StartTranscriptionJobOutput`](crate::operation::start_transcription_job::StartTranscriptionJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartTranscriptionJobOutputBuilder {
     pub(crate) transcription_job: ::std::option::Option<crate::types::TranscriptionJob>,
     _request_id: Option<String>,

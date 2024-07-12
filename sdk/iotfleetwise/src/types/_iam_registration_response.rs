@@ -34,8 +34,8 @@ impl IamRegistrationResponse {
 }
 
 /// A builder for [`IamRegistrationResponse`](crate::types::IamRegistrationResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IamRegistrationResponseBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) registration_status: ::std::option::Option<crate::types::RegistrationStatus>,

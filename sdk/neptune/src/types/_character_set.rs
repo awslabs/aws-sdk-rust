@@ -27,8 +27,8 @@ impl CharacterSet {
 }
 
 /// A builder for [`CharacterSet`](crate::types::CharacterSet).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CharacterSetBuilder {
     pub(crate) character_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) character_set_description: ::std::option::Option<::std::string::String>,

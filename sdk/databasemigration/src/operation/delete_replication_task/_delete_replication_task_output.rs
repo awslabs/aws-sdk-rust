@@ -27,8 +27,8 @@ impl DeleteReplicationTaskOutput {
 }
 
 /// A builder for [`DeleteReplicationTaskOutput`](crate::operation::delete_replication_task::DeleteReplicationTaskOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteReplicationTaskOutputBuilder {
     pub(crate) replication_task: ::std::option::Option<crate::types::ReplicationTask>,
     _request_id: Option<String>,

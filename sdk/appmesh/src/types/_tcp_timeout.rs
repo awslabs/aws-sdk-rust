@@ -21,8 +21,8 @@ impl TcpTimeout {
 }
 
 /// A builder for [`TcpTimeout`](crate::types::TcpTimeout).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TcpTimeoutBuilder {
     pub(crate) idle: ::std::option::Option<crate::types::Duration>,
 }

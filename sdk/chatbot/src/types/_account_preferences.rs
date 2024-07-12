@@ -27,8 +27,8 @@ impl AccountPreferences {
 }
 
 /// A builder for [`AccountPreferences`](crate::types::AccountPreferences).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AccountPreferencesBuilder {
     pub(crate) user_authorization_required: ::std::option::Option<bool>,
     pub(crate) training_data_collection_enabled: ::std::option::Option<bool>,

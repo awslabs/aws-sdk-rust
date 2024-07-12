@@ -18,8 +18,8 @@ impl DeleteResourcesByExternalIdOutput {
 }
 
 /// A builder for [`DeleteResourcesByExternalIdOutput`](crate::operation::delete_resources_by_external_id::DeleteResourcesByExternalIdOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteResourcesByExternalIdOutputBuilder {
     _request_id: Option<String>,
 }

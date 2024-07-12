@@ -70,8 +70,8 @@ impl GetFaceSearchOutput {
 }
 
 /// A builder for [`GetFaceSearchOutput`](crate::operation::get_face_search::GetFaceSearchOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetFaceSearchOutputBuilder {
     pub(crate) job_status: ::std::option::Option<crate::types::VideoJobStatus>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,

@@ -57,8 +57,8 @@ impl Fmtp {
 }
 
 /// A builder for [`Fmtp`](crate::types::Fmtp).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FmtpBuilder {
     pub(crate) channel_order: ::std::option::Option<::std::string::String>,
     pub(crate) colorimetry: ::std::option::Option<crate::types::Colorimetry>,

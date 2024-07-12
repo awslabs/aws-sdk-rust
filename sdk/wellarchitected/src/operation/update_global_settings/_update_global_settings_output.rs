@@ -18,8 +18,8 @@ impl UpdateGlobalSettingsOutput {
 }
 
 /// A builder for [`UpdateGlobalSettingsOutput`](crate::operation::update_global_settings::UpdateGlobalSettingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateGlobalSettingsOutputBuilder {
     _request_id: Option<String>,
 }

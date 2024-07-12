@@ -20,8 +20,8 @@ impl DeleteNetworkSettingsInput {
 }
 
 /// A builder for [`DeleteNetworkSettingsInput`](crate::operation::delete_network_settings::DeleteNetworkSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteNetworkSettingsInputBuilder {
     pub(crate) network_settings_arn: ::std::option::Option<::std::string::String>,
 }

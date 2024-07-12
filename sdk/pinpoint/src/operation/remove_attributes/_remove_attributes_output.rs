@@ -26,8 +26,8 @@ impl RemoveAttributesOutput {
 }
 
 /// A builder for [`RemoveAttributesOutput`](crate::operation::remove_attributes::RemoveAttributesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoveAttributesOutputBuilder {
     pub(crate) attributes_resource: ::std::option::Option<crate::types::AttributesResource>,
     _request_id: Option<String>,

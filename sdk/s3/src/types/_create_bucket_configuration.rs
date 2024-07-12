@@ -49,8 +49,8 @@ impl CreateBucketConfiguration {
 }
 
 /// A builder for [`CreateBucketConfiguration`](crate::types::CreateBucketConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateBucketConfigurationBuilder {
     pub(crate) location_constraint: ::std::option::Option<crate::types::BucketLocationConstraint>,
     pub(crate) location: ::std::option::Option<crate::types::LocationInfo>,

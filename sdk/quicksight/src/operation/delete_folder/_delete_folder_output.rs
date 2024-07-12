@@ -44,8 +44,8 @@ impl DeleteFolderOutput {
 }
 
 /// A builder for [`DeleteFolderOutput`](crate::operation::delete_folder::DeleteFolderOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFolderOutputBuilder {
     pub(crate) status: ::std::option::Option<i32>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

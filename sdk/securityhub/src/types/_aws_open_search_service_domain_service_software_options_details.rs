@@ -87,8 +87,8 @@ impl AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails {
 }
 
 /// A builder for [`AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails`](crate::types::AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsOpenSearchServiceDomainServiceSoftwareOptionsDetailsBuilder {
     pub(crate) automated_update_date: ::std::option::Option<::std::string::String>,
     pub(crate) cancellable: ::std::option::Option<bool>,

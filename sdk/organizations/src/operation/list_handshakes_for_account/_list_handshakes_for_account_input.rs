@@ -32,8 +32,8 @@ impl ListHandshakesForAccountInput {
 }
 
 /// A builder for [`ListHandshakesForAccountInput`](crate::operation::list_handshakes_for_account::ListHandshakesForAccountInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListHandshakesForAccountInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::HandshakeFilter>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -44,8 +44,8 @@ impl BatchDeleteTaxRegistrationError {
 }
 
 /// A builder for [`BatchDeleteTaxRegistrationError`](crate::types::BatchDeleteTaxRegistrationError).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct BatchDeleteTaxRegistrationErrorBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

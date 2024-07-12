@@ -23,8 +23,8 @@ impl Warnings {
 }
 
 /// A builder for [`Warnings`](crate::types::Warnings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WarningsBuilder {
     pub(crate) unrecognized_resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

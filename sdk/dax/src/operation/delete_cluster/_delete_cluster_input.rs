@@ -20,8 +20,8 @@ impl DeleteClusterInput {
 }
 
 /// A builder for [`DeleteClusterInput`](crate::operation::delete_cluster::DeleteClusterInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteClusterInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
 }

@@ -57,8 +57,8 @@ impl Prompt {
 }
 
 /// A builder for [`Prompt`](crate::types::Prompt).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PromptBuilder {
     pub(crate) prompt_arn: ::std::option::Option<::std::string::String>,
     pub(crate) prompt_id: ::std::option::Option<::std::string::String>,

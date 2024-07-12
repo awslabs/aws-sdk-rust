@@ -20,8 +20,8 @@ impl GetDeviceInput {
 }
 
 /// A builder for [`GetDeviceInput`](crate::operation::get_device::GetDeviceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDeviceInputBuilder {
     pub(crate) device_arn: ::std::option::Option<::std::string::String>,
 }

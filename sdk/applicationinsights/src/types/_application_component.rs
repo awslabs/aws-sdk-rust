@@ -63,8 +63,8 @@ impl ApplicationComponent {
 }
 
 /// A builder for [`ApplicationComponent`](crate::types::ApplicationComponent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ApplicationComponentBuilder {
     pub(crate) component_name: ::std::option::Option<::std::string::String>,
     pub(crate) component_remarks: ::std::option::Option<::std::string::String>,

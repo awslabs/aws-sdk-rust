@@ -32,8 +32,8 @@ impl ListSipRulesInput {
 }
 
 /// A builder for [`ListSipRulesInput`](crate::operation::list_sip_rules::ListSipRulesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSipRulesInputBuilder {
     pub(crate) sip_media_application_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

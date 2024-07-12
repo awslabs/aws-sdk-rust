@@ -52,8 +52,8 @@ impl ListReportJobsInput {
 }
 
 /// A builder for [`ListReportJobsInput`](crate::operation::list_report_jobs::ListReportJobsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListReportJobsInputBuilder {
     pub(crate) by_report_plan_name: ::std::option::Option<::std::string::String>,
     pub(crate) by_creation_before: ::std::option::Option<::aws_smithy_types::DateTime>,

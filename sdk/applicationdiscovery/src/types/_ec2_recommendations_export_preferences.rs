@@ -59,8 +59,8 @@ impl Ec2RecommendationsExportPreferences {
 }
 
 /// A builder for [`Ec2RecommendationsExportPreferences`](crate::types::Ec2RecommendationsExportPreferences).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Ec2RecommendationsExportPreferencesBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) cpu_performance_metric_basis: ::std::option::Option<crate::types::UsageMetricBasis>,

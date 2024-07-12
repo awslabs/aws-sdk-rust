@@ -38,8 +38,8 @@ impl ListAnalyticsDataAssociationsInput {
 }
 
 /// A builder for [`ListAnalyticsDataAssociationsInput`](crate::operation::list_analytics_data_associations::ListAnalyticsDataAssociationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAnalyticsDataAssociationsInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,

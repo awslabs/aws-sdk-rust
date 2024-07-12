@@ -33,8 +33,8 @@ impl SheetElementConfigurationOverrides {
 }
 
 /// A builder for [`SheetElementConfigurationOverrides`](crate::types::SheetElementConfigurationOverrides).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SheetElementConfigurationOverridesBuilder {
     pub(crate) visibility: ::std::option::Option<crate::types::Visibility>,
 }

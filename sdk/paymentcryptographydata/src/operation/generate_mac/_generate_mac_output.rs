@@ -53,8 +53,8 @@ impl GenerateMacOutput {
 }
 
 /// A builder for [`GenerateMacOutput`](crate::operation::generate_mac::GenerateMacOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GenerateMacOutputBuilder {
     pub(crate) key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) key_check_value: ::std::option::Option<::std::string::String>,

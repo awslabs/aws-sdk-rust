@@ -38,8 +38,8 @@ impl VerifyOutput {
 }
 
 /// A builder for [`VerifyOutput`](crate::operation::verify::VerifyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VerifyOutputBuilder {
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
     pub(crate) signature_valid: ::std::option::Option<bool>,

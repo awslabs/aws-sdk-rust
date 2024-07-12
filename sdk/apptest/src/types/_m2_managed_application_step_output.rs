@@ -21,8 +21,8 @@ impl M2ManagedApplicationStepOutput {
 }
 
 /// A builder for [`M2ManagedApplicationStepOutput`](crate::types::M2ManagedApplicationStepOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct M2ManagedApplicationStepOutputBuilder {
     pub(crate) import_data_set_summary: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }

@@ -29,8 +29,8 @@ impl BatchGetAssetPropertyAggregatesSuccessEntry {
 }
 
 /// A builder for [`BatchGetAssetPropertyAggregatesSuccessEntry`](crate::types::BatchGetAssetPropertyAggregatesSuccessEntry).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetAssetPropertyAggregatesSuccessEntryBuilder {
     pub(crate) entry_id: ::std::option::Option<::std::string::String>,
     pub(crate) aggregated_values: ::std::option::Option<::std::vec::Vec<crate::types::AggregatedValue>>,

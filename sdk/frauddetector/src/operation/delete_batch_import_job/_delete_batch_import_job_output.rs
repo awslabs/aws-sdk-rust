@@ -18,8 +18,8 @@ impl DeleteBatchImportJobOutput {
 }
 
 /// A builder for [`DeleteBatchImportJobOutput`](crate::operation::delete_batch_import_job::DeleteBatchImportJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteBatchImportJobOutputBuilder {
     _request_id: Option<String>,
 }

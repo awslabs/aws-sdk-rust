@@ -26,8 +26,8 @@ impl CancelJournalKinesisStreamOutput {
 }
 
 /// A builder for [`CancelJournalKinesisStreamOutput`](crate::operation::cancel_journal_kinesis_stream::CancelJournalKinesisStreamOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelJournalKinesisStreamOutputBuilder {
     pub(crate) stream_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

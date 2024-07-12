@@ -21,8 +21,8 @@ impl LayoutConfiguration {
 }
 
 /// A builder for [`LayoutConfiguration`](crate::types::LayoutConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LayoutConfigurationBuilder {
     pub(crate) default_layout: ::std::option::Option<::std::string::String>,
 }

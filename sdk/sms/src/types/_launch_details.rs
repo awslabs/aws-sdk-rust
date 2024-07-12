@@ -33,8 +33,8 @@ impl LaunchDetails {
 }
 
 /// A builder for [`LaunchDetails`](crate::types::LaunchDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LaunchDetailsBuilder {
     pub(crate) latest_launch_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,

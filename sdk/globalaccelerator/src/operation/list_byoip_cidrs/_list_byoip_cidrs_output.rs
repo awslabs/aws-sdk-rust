@@ -34,8 +34,8 @@ impl ListByoipCidrsOutput {
 }
 
 /// A builder for [`ListByoipCidrsOutput`](crate::operation::list_byoip_cidrs::ListByoipCidrsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListByoipCidrsOutputBuilder {
     pub(crate) byoip_cidrs: ::std::option::Option<::std::vec::Vec<crate::types::ByoipCidr>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

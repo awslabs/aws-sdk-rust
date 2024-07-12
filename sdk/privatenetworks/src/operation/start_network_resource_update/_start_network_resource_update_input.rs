@@ -86,8 +86,8 @@ impl StartNetworkResourceUpdateInput {
 }
 
 /// A builder for [`StartNetworkResourceUpdateInput`](crate::operation::start_network_resource_update::StartNetworkResourceUpdateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartNetworkResourceUpdateInputBuilder {
     pub(crate) network_resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) update_type: ::std::option::Option<crate::types::UpdateType>,

@@ -33,8 +33,8 @@ impl ListGeofencesOutput {
 }
 
 /// A builder for [`ListGeofencesOutput`](crate::operation::list_geofences::ListGeofencesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListGeofencesOutputBuilder {
     pub(crate) entries: ::std::option::Option<::std::vec::Vec<crate::types::ListGeofenceResponseEntry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

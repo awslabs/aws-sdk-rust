@@ -29,8 +29,8 @@ impl ParametricConfigurationOverrides {
 }
 
 /// A builder for [`ParametricConfigurationOverrides`](crate::types::ParametricConfigurationOverrides).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ParametricConfigurationOverridesBuilder {
     pub(crate) application_configuration: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
     pub(crate) monitoring_configuration: ::std::option::Option<crate::types::ParametricMonitoringConfiguration>,

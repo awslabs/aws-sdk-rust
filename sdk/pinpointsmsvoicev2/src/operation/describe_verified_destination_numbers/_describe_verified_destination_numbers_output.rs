@@ -33,8 +33,8 @@ impl DescribeVerifiedDestinationNumbersOutput {
 }
 
 /// A builder for [`DescribeVerifiedDestinationNumbersOutput`](crate::operation::describe_verified_destination_numbers::DescribeVerifiedDestinationNumbersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeVerifiedDestinationNumbersOutputBuilder {
     pub(crate) verified_destination_numbers: ::std::option::Option<::std::vec::Vec<crate::types::VerifiedDestinationNumberInformation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

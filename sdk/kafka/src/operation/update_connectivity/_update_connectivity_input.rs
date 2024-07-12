@@ -33,8 +33,8 @@ impl UpdateConnectivityInput {
 }
 
 /// A builder for [`UpdateConnectivityInput`](crate::operation::update_connectivity::UpdateConnectivityInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateConnectivityInputBuilder {
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) connectivity_info: ::std::option::Option<crate::types::ConnectivityInfo>,

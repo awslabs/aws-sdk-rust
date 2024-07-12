@@ -34,8 +34,8 @@ impl ListRepositoryAssociationsOutput {
 }
 
 /// A builder for [`ListRepositoryAssociationsOutput`](crate::operation::list_repository_associations::ListRepositoryAssociationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRepositoryAssociationsOutputBuilder {
     pub(crate) repository_association_summaries: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryAssociationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

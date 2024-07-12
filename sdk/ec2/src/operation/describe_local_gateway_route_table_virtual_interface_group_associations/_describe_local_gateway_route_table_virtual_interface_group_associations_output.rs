@@ -39,8 +39,8 @@ impl DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutput {
 }
 
 /// A builder for [`DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutput`](crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutputBuilder {
     pub(crate) local_gateway_route_table_virtual_interface_group_associations:
         ::std::option::Option<::std::vec::Vec<crate::types::LocalGatewayRouteTableVirtualInterfaceGroupAssociation>>,

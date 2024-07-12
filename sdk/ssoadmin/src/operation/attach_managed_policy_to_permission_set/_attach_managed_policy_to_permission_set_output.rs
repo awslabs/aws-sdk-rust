@@ -18,8 +18,8 @@ impl AttachManagedPolicyToPermissionSetOutput {
 }
 
 /// A builder for [`AttachManagedPolicyToPermissionSetOutput`](crate::operation::attach_managed_policy_to_permission_set::AttachManagedPolicyToPermissionSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttachManagedPolicyToPermissionSetOutputBuilder {
     _request_id: Option<String>,
 }

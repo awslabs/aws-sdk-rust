@@ -34,8 +34,8 @@ impl ListTapePoolsOutput {
 }
 
 /// A builder for [`ListTapePoolsOutput`](crate::operation::list_tape_pools::ListTapePoolsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTapePoolsOutputBuilder {
     pub(crate) pool_infos: ::std::option::Option<::std::vec::Vec<crate::types::PoolInfo>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

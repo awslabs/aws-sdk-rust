@@ -34,8 +34,8 @@ impl SearchResourcesOutput {
 }
 
 /// A builder for [`SearchResourcesOutput`](crate::operation::search_resources::SearchResourcesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchResourcesOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ResponseItem>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

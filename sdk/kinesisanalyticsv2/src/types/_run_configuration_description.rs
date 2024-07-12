@@ -27,8 +27,8 @@ impl RunConfigurationDescription {
 }
 
 /// A builder for [`RunConfigurationDescription`](crate::types::RunConfigurationDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RunConfigurationDescriptionBuilder {
     pub(crate) application_restore_configuration_description: ::std::option::Option<crate::types::ApplicationRestoreConfiguration>,
     pub(crate) flink_run_configuration_description: ::std::option::Option<crate::types::FlinkRunConfiguration>,

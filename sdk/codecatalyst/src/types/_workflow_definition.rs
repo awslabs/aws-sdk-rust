@@ -22,8 +22,8 @@ impl WorkflowDefinition {
 }
 
 /// A builder for [`WorkflowDefinition`](crate::types::WorkflowDefinition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WorkflowDefinitionBuilder {
     pub(crate) path: ::std::option::Option<::std::string::String>,
 }

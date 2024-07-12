@@ -27,8 +27,8 @@ impl Hdr10Settings {
 }
 
 /// A builder for [`Hdr10Settings`](crate::types::Hdr10Settings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Hdr10SettingsBuilder {
     pub(crate) max_cll: ::std::option::Option<i32>,
     pub(crate) max_fall: ::std::option::Option<i32>,

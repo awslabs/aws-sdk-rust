@@ -27,8 +27,8 @@ impl RetrieveTapeArchiveOutput {
 }
 
 /// A builder for [`RetrieveTapeArchiveOutput`](crate::operation::retrieve_tape_archive::RetrieveTapeArchiveOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RetrieveTapeArchiveOutputBuilder {
     pub(crate) tape_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

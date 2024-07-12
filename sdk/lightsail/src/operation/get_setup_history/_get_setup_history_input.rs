@@ -28,8 +28,8 @@ impl GetSetupHistoryInput {
 }
 
 /// A builder for [`GetSetupHistoryInput`](crate::operation::get_setup_history::GetSetupHistoryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSetupHistoryInputBuilder {
     pub(crate) resource_name: ::std::option::Option<::std::string::String>,
     pub(crate) page_token: ::std::option::Option<::std::string::String>,

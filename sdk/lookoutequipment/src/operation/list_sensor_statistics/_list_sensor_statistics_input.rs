@@ -38,8 +38,8 @@ impl ListSensorStatisticsInput {
 }
 
 /// A builder for [`ListSensorStatisticsInput`](crate::operation::list_sensor_statistics::ListSensorStatisticsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSensorStatisticsInputBuilder {
     pub(crate) dataset_name: ::std::option::Option<::std::string::String>,
     pub(crate) ingestion_job_id: ::std::option::Option<::std::string::String>,

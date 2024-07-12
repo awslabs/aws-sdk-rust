@@ -26,8 +26,8 @@ impl UpdateContinuousBackupsOutput {
 }
 
 /// A builder for [`UpdateContinuousBackupsOutput`](crate::operation::update_continuous_backups::UpdateContinuousBackupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateContinuousBackupsOutputBuilder {
     pub(crate) continuous_backups_description: ::std::option::Option<crate::types::ContinuousBackupsDescription>,
     _request_id: Option<String>,

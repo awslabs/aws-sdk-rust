@@ -32,8 +32,8 @@ impl GetObjectLockConfigurationOutput {
 }
 
 /// A builder for [`GetObjectLockConfigurationOutput`](crate::operation::get_object_lock_configuration::GetObjectLockConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetObjectLockConfigurationOutputBuilder {
     pub(crate) object_lock_configuration: ::std::option::Option<crate::types::ObjectLockConfiguration>,
     _extended_request_id: Option<String>,

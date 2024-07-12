@@ -19,8 +19,8 @@ impl DeleteEvaluationResultsOutput {
 }
 
 /// A builder for [`DeleteEvaluationResultsOutput`](crate::operation::delete_evaluation_results::DeleteEvaluationResultsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteEvaluationResultsOutputBuilder {
     _request_id: Option<String>,
 }

@@ -81,8 +81,8 @@ impl Icd10CmEntity {
 }
 
 /// A builder for [`Icd10CmEntity`](crate::types::Icd10CmEntity).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Icd10CmEntityBuilder {
     pub(crate) id: ::std::option::Option<i32>,
     pub(crate) text: ::std::option::Option<::std::string::String>,

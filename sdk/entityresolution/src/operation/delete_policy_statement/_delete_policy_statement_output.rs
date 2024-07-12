@@ -40,8 +40,8 @@ impl DeletePolicyStatementOutput {
 }
 
 /// A builder for [`DeletePolicyStatementOutput`](crate::operation::delete_policy_statement::DeletePolicyStatementOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePolicyStatementOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) token: ::std::option::Option<::std::string::String>,

@@ -29,8 +29,8 @@ impl PolicyGroup {
 }
 
 /// A builder for [`PolicyGroup`](crate::types::PolicyGroup).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PolicyGroupBuilder {
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
     pub(crate) group_id: ::std::option::Option<::std::string::String>,

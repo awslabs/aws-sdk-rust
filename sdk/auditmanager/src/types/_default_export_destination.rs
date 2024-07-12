@@ -27,8 +27,8 @@ impl DefaultExportDestination {
 }
 
 /// A builder for [`DefaultExportDestination`](crate::types::DefaultExportDestination).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DefaultExportDestinationBuilder {
     pub(crate) destination_type: ::std::option::Option<crate::types::ExportDestinationType>,
     pub(crate) destination: ::std::option::Option<::std::string::String>,

@@ -21,8 +21,8 @@ impl ProtectConfigurationCountryRuleSetInformation {
 }
 
 /// A builder for [`ProtectConfigurationCountryRuleSetInformation`](crate::types::ProtectConfigurationCountryRuleSetInformation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProtectConfigurationCountryRuleSetInformationBuilder {
     pub(crate) protect_status: ::std::option::Option<crate::types::ProtectStatus>,
 }

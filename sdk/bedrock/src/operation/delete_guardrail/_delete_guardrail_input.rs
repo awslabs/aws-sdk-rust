@@ -26,8 +26,8 @@ impl DeleteGuardrailInput {
 }
 
 /// A builder for [`DeleteGuardrailInput`](crate::operation::delete_guardrail::DeleteGuardrailInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteGuardrailInputBuilder {
     pub(crate) guardrail_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) guardrail_version: ::std::option::Option<::std::string::String>,

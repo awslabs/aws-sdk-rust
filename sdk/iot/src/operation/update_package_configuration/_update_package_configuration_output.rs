@@ -18,8 +18,8 @@ impl UpdatePackageConfigurationOutput {
 }
 
 /// A builder for [`UpdatePackageConfigurationOutput`](crate::operation::update_package_configuration::UpdatePackageConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePackageConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

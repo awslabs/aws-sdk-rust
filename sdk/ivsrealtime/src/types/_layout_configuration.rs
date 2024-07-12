@@ -27,8 +27,8 @@ impl LayoutConfiguration {
 }
 
 /// A builder for [`LayoutConfiguration`](crate::types::LayoutConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LayoutConfigurationBuilder {
     pub(crate) grid: ::std::option::Option<crate::types::GridConfiguration>,
     pub(crate) pip: ::std::option::Option<crate::types::PipConfiguration>,

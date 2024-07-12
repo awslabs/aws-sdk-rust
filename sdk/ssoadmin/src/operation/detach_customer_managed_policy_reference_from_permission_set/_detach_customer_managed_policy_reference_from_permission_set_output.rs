@@ -18,8 +18,8 @@ impl DetachCustomerManagedPolicyReferenceFromPermissionSetOutput {
 }
 
 /// A builder for [`DetachCustomerManagedPolicyReferenceFromPermissionSetOutput`](crate::operation::detach_customer_managed_policy_reference_from_permission_set::DetachCustomerManagedPolicyReferenceFromPermissionSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetachCustomerManagedPolicyReferenceFromPermissionSetOutputBuilder {
     _request_id: Option<String>,
 }

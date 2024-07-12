@@ -53,8 +53,8 @@ impl SessionState {
 }
 
 /// A builder for [`SessionState`](crate::types::SessionState).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SessionStateBuilder {
     pub(crate) dialog_action: ::std::option::Option<crate::types::DialogAction>,
     pub(crate) intent: ::std::option::Option<crate::types::Intent>,

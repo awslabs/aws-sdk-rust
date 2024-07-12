@@ -32,8 +32,8 @@ impl ListAppAssessmentResourceDriftsInput {
 }
 
 /// A builder for [`ListAppAssessmentResourceDriftsInput`](crate::operation::list_app_assessment_resource_drifts::ListAppAssessmentResourceDriftsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAppAssessmentResourceDriftsInputBuilder {
     pub(crate) assessment_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

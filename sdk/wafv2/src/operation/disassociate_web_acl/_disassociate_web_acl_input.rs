@@ -50,8 +50,8 @@ impl DisassociateWebAclInput {
 }
 
 /// A builder for [`DisassociateWebAclInput`](crate::operation::disassociate_web_acl::DisassociateWebAclInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateWebAclInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
 }

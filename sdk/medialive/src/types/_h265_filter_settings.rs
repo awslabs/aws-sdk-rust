@@ -21,8 +21,8 @@ impl H265FilterSettings {
 }
 
 /// A builder for [`H265FilterSettings`](crate::types::H265FilterSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct H265FilterSettingsBuilder {
     pub(crate) temporal_filter_settings: ::std::option::Option<crate::types::TemporalFilterSettings>,
 }

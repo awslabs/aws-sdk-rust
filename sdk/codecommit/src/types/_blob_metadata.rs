@@ -53,8 +53,8 @@ impl BlobMetadata {
 }
 
 /// A builder for [`BlobMetadata`](crate::types::BlobMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BlobMetadataBuilder {
     pub(crate) blob_id: ::std::option::Option<::std::string::String>,
     pub(crate) path: ::std::option::Option<::std::string::String>,

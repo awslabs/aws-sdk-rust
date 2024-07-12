@@ -59,8 +59,8 @@ impl ConflictingOperationException {
 }
 
 /// A builder for [`ConflictingOperationException`](crate::types::error::ConflictingOperationException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConflictingOperationExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,

@@ -380,8 +380,8 @@ impl GetObjectOutput {
 }
 
 /// A builder for [`GetObjectOutput`](crate::operation::get_object::GetObjectOutput).
-#[non_exhaustive]
 #[derive(::std::default::Default)]
+#[non_exhaustive]
 pub struct GetObjectOutputBuilder {
     pub(crate) body: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>,
     pub(crate) delete_marker: ::std::option::Option<bool>,

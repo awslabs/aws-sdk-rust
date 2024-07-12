@@ -45,8 +45,8 @@ impl SnapshotScheduleAlreadyExistsFault {
 }
 
 /// A builder for [`SnapshotScheduleAlreadyExistsFault`](crate::types::error::SnapshotScheduleAlreadyExistsFault).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SnapshotScheduleAlreadyExistsFaultBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,

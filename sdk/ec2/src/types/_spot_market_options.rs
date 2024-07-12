@@ -67,8 +67,8 @@ impl SpotMarketOptions {
 }
 
 /// A builder for [`SpotMarketOptions`](crate::types::SpotMarketOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SpotMarketOptionsBuilder {
     pub(crate) max_price: ::std::option::Option<::std::string::String>,
     pub(crate) spot_instance_type: ::std::option::Option<crate::types::SpotInstanceType>,

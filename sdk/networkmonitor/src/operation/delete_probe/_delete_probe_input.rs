@@ -26,8 +26,8 @@ impl DeleteProbeInput {
 }
 
 /// A builder for [`DeleteProbeInput`](crate::operation::delete_probe::DeleteProbeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteProbeInputBuilder {
     pub(crate) monitor_name: ::std::option::Option<::std::string::String>,
     pub(crate) probe_id: ::std::option::Option<::std::string::String>,

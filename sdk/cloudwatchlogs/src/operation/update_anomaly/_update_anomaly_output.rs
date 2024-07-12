@@ -18,8 +18,8 @@ impl UpdateAnomalyOutput {
 }
 
 /// A builder for [`UpdateAnomalyOutput`](crate::operation::update_anomaly::UpdateAnomalyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAnomalyOutputBuilder {
     _request_id: Option<String>,
 }

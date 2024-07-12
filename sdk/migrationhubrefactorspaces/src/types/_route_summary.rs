@@ -149,8 +149,8 @@ impl RouteSummary {
 }
 
 /// A builder for [`RouteSummary`](crate::types::RouteSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct RouteSummaryBuilder {
     pub(crate) route_id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl ListDatasetGroupsOutput {
 }
 
 /// A builder for [`ListDatasetGroupsOutput`](crate::operation::list_dataset_groups::ListDatasetGroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDatasetGroupsOutputBuilder {
     pub(crate) dataset_groups: ::std::option::Option<::std::vec::Vec<crate::types::DatasetGroupSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -38,8 +38,8 @@ impl GetRelationalDatabaseParametersOutput {
 }
 
 /// A builder for [`GetRelationalDatabaseParametersOutput`](crate::operation::get_relational_database_parameters::GetRelationalDatabaseParametersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRelationalDatabaseParametersOutputBuilder {
     pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabaseParameter>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,

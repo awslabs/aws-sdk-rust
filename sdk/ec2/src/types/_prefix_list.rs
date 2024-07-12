@@ -35,8 +35,8 @@ impl PrefixList {
 }
 
 /// A builder for [`PrefixList`](crate::types::PrefixList).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PrefixListBuilder {
     pub(crate) cidrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) prefix_list_id: ::std::option::Option<::std::string::String>,

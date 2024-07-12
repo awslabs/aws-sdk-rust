@@ -36,8 +36,8 @@ impl BatchGetDevEndpointsOutput {
 }
 
 /// A builder for [`BatchGetDevEndpointsOutput`](crate::operation::batch_get_dev_endpoints::BatchGetDevEndpointsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetDevEndpointsOutputBuilder {
     pub(crate) dev_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::DevEndpoint>>,
     pub(crate) dev_endpoints_not_found: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

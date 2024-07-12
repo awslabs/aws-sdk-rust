@@ -31,8 +31,8 @@ impl BackendStoragePermissions {
 }
 
 /// A builder for [`BackendStoragePermissions`](crate::types::BackendStoragePermissions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BackendStoragePermissionsBuilder {
     pub(crate) authenticated: ::std::option::Option<::std::vec::Vec<crate::types::AuthenticatedElement>>,
     pub(crate) un_authenticated: ::std::option::Option<::std::vec::Vec<crate::types::UnAuthenticatedElement>>,

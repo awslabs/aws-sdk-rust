@@ -34,8 +34,8 @@ impl ListExtensionsOutput {
 }
 
 /// A builder for [`ListExtensionsOutput`](crate::operation::list_extensions::ListExtensionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListExtensionsOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ExtensionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

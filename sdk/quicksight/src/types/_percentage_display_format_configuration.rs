@@ -63,8 +63,8 @@ impl PercentageDisplayFormatConfiguration {
 }
 
 /// A builder for [`PercentageDisplayFormatConfiguration`](crate::types::PercentageDisplayFormatConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PercentageDisplayFormatConfigurationBuilder {
     pub(crate) prefix: ::std::option::Option<::std::string::String>,
     pub(crate) suffix: ::std::option::Option<::std::string::String>,

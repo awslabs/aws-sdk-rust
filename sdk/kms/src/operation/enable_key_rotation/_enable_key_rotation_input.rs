@@ -50,8 +50,8 @@ impl EnableKeyRotationInput {
 }
 
 /// A builder for [`EnableKeyRotationInput`](crate::operation::enable_key_rotation::EnableKeyRotationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnableKeyRotationInputBuilder {
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
     pub(crate) rotation_period_in_days: ::std::option::Option<i32>,

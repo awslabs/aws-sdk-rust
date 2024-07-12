@@ -54,8 +54,8 @@ impl UpdateInstanceMetadataOptionsInput {
 }
 
 /// A builder for [`UpdateInstanceMetadataOptionsInput`](crate::operation::update_instance_metadata_options::UpdateInstanceMetadataOptionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateInstanceMetadataOptionsInputBuilder {
     pub(crate) instance_name: ::std::option::Option<::std::string::String>,
     pub(crate) http_tokens: ::std::option::Option<crate::types::HttpTokens>,

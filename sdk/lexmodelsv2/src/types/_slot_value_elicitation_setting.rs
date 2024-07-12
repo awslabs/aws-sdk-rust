@@ -59,8 +59,8 @@ impl SlotValueElicitationSetting {
 }
 
 /// A builder for [`SlotValueElicitationSetting`](crate::types::SlotValueElicitationSetting).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SlotValueElicitationSettingBuilder {
     pub(crate) default_value_specification: ::std::option::Option<crate::types::SlotDefaultValueSpecification>,
     pub(crate) slot_constraint: ::std::option::Option<crate::types::SlotConstraint>,

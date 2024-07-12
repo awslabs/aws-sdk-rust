@@ -34,8 +34,8 @@ impl ListCoreNetworksOutput {
 }
 
 /// A builder for [`ListCoreNetworksOutput`](crate::operation::list_core_networks::ListCoreNetworksOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCoreNetworksOutputBuilder {
     pub(crate) core_networks: ::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -48,8 +48,8 @@ impl AdminSetUserMfaPreferenceInput {
 }
 
 /// A builder for [`AdminSetUserMfaPreferenceInput`](crate::operation::admin_set_user_mfa_preference::AdminSetUserMfaPreferenceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AdminSetUserMfaPreferenceInputBuilder {
     pub(crate) sms_mfa_settings: ::std::option::Option<crate::types::SmsMfaSettingsType>,
     pub(crate) software_token_mfa_settings: ::std::option::Option<crate::types::SoftwareTokenMfaSettingsType>,

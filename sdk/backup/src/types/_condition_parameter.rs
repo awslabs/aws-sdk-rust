@@ -27,8 +27,8 @@ impl ConditionParameter {
 }
 
 /// A builder for [`ConditionParameter`](crate::types::ConditionParameter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConditionParameterBuilder {
     pub(crate) condition_key: ::std::option::Option<::std::string::String>,
     pub(crate) condition_value: ::std::option::Option<::std::string::String>,

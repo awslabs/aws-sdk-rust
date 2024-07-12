@@ -28,8 +28,8 @@ impl DescribeFileSystemAssociationsOutput {
 }
 
 /// A builder for [`DescribeFileSystemAssociationsOutput`](crate::operation::describe_file_system_associations::DescribeFileSystemAssociationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFileSystemAssociationsOutputBuilder {
     pub(crate) file_system_association_info_list: ::std::option::Option<::std::vec::Vec<crate::types::FileSystemAssociationInfo>>,
     _request_id: Option<String>,

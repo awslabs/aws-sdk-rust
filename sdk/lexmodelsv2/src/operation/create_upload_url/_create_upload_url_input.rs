@@ -11,8 +11,8 @@ impl CreateUploadUrlInput {
 }
 
 /// A builder for [`CreateUploadUrlInput`](crate::operation::create_upload_url::CreateUploadUrlInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateUploadUrlInputBuilder {}
 impl CreateUploadUrlInputBuilder {
     /// Consumes the builder and constructs a [`CreateUploadUrlInput`](crate::operation::create_upload_url::CreateUploadUrlInput).

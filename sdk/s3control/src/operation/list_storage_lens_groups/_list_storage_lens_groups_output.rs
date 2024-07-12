@@ -34,8 +34,8 @@ impl ListStorageLensGroupsOutput {
 }
 
 /// A builder for [`ListStorageLensGroupsOutput`](crate::operation::list_storage_lens_groups::ListStorageLensGroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListStorageLensGroupsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) storage_lens_group_list: ::std::option::Option<::std::vec::Vec<crate::types::ListStorageLensGroupEntry>>,

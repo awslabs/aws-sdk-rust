@@ -21,8 +21,8 @@ impl BootstrapActionDetail {
 }
 
 /// A builder for [`BootstrapActionDetail`](crate::types::BootstrapActionDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BootstrapActionDetailBuilder {
     pub(crate) bootstrap_action_config: ::std::option::Option<crate::types::BootstrapActionConfig>,
 }

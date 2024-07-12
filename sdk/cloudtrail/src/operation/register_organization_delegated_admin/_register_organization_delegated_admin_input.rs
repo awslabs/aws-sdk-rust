@@ -21,8 +21,8 @@ impl RegisterOrganizationDelegatedAdminInput {
 }
 
 /// A builder for [`RegisterOrganizationDelegatedAdminInput`](crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterOrganizationDelegatedAdminInputBuilder {
     pub(crate) member_account_id: ::std::option::Option<::std::string::String>,
 }

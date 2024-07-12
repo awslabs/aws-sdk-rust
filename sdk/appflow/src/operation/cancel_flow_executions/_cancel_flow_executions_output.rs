@@ -28,8 +28,8 @@ impl CancelFlowExecutionsOutput {
 }
 
 /// A builder for [`CancelFlowExecutionsOutput`](crate::operation::cancel_flow_executions::CancelFlowExecutionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelFlowExecutionsOutputBuilder {
     pub(crate) invalid_executions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,

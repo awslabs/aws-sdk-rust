@@ -19,8 +19,8 @@ impl SetUserSettingsOutput {
 }
 
 /// A builder for [`SetUserSettingsOutput`](crate::operation::set_user_settings::SetUserSettingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetUserSettingsOutputBuilder {
     _request_id: Option<String>,
 }

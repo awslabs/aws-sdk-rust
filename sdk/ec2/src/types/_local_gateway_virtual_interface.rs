@@ -71,8 +71,8 @@ impl LocalGatewayVirtualInterface {
 }
 
 /// A builder for [`LocalGatewayVirtualInterface`](crate::types::LocalGatewayVirtualInterface).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LocalGatewayVirtualInterfaceBuilder {
     pub(crate) local_gateway_virtual_interface_id: ::std::option::Option<::std::string::String>,
     pub(crate) local_gateway_id: ::std::option::Option<::std::string::String>,

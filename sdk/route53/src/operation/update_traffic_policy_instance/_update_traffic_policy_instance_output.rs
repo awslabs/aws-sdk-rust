@@ -27,8 +27,8 @@ impl UpdateTrafficPolicyInstanceOutput {
 }
 
 /// A builder for [`UpdateTrafficPolicyInstanceOutput`](crate::operation::update_traffic_policy_instance::UpdateTrafficPolicyInstanceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateTrafficPolicyInstanceOutputBuilder {
     pub(crate) traffic_policy_instance: ::std::option::Option<crate::types::TrafficPolicyInstance>,
     _request_id: Option<String>,

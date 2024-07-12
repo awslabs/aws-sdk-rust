@@ -25,8 +25,8 @@ impl SoftwareUpdatePreferences {
 }
 
 /// A builder for [`SoftwareUpdatePreferences`](crate::types::SoftwareUpdatePreferences).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SoftwareUpdatePreferencesBuilder {
     pub(crate) automatic_update_policy: ::std::option::Option<crate::types::AutomaticUpdatePolicy>,
 }

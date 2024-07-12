@@ -44,8 +44,8 @@ impl UpdateVpceConfigurationInput {
 }
 
 /// A builder for [`UpdateVpceConfigurationInput`](crate::operation::update_vpce_configuration::UpdateVpceConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateVpceConfigurationInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) vpce_configuration_name: ::std::option::Option<::std::string::String>,

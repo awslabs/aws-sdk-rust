@@ -51,8 +51,8 @@ impl PhoneNumberCapabilities {
 }
 
 /// A builder for [`PhoneNumberCapabilities`](crate::types::PhoneNumberCapabilities).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PhoneNumberCapabilitiesBuilder {
     pub(crate) inbound_call: ::std::option::Option<bool>,
     pub(crate) outbound_call: ::std::option::Option<bool>,

@@ -26,8 +26,8 @@ impl DeregisterTaskDefinitionOutput {
 }
 
 /// A builder for [`DeregisterTaskDefinitionOutput`](crate::operation::deregister_task_definition::DeregisterTaskDefinitionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeregisterTaskDefinitionOutputBuilder {
     pub(crate) task_definition: ::std::option::Option<crate::types::TaskDefinition>,
     _request_id: Option<String>,

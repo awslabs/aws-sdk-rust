@@ -42,8 +42,8 @@ impl MasterUserOptions {
 }
 
 /// A builder for [`MasterUserOptions`](crate::types::MasterUserOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct MasterUserOptionsBuilder {
     pub(crate) master_user_arn: ::std::option::Option<::std::string::String>,
     pub(crate) master_user_name: ::std::option::Option<::std::string::String>,

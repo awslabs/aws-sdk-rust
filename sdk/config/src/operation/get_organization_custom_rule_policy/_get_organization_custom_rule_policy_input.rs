@@ -20,8 +20,8 @@ impl GetOrganizationCustomRulePolicyInput {
 }
 
 /// A builder for [`GetOrganizationCustomRulePolicyInput`](crate::operation::get_organization_custom_rule_policy::GetOrganizationCustomRulePolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetOrganizationCustomRulePolicyInputBuilder {
     pub(crate) organization_config_rule_name: ::std::option::Option<::std::string::String>,
 }

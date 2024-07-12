@@ -26,8 +26,8 @@ impl PutFunctionConcurrencyOutput {
 }
 
 /// A builder for [`PutFunctionConcurrencyOutput`](crate::operation::put_function_concurrency::PutFunctionConcurrencyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutFunctionConcurrencyOutputBuilder {
     pub(crate) reserved_concurrent_executions: ::std::option::Option<i32>,
     _request_id: Option<String>,

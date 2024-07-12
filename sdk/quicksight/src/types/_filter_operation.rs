@@ -29,8 +29,8 @@ impl FilterOperation {
 }
 
 /// A builder for [`FilterOperation`](crate::types::FilterOperation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct FilterOperationBuilder {
     pub(crate) condition_expression: ::std::option::Option<::std::string::String>,
 }

@@ -18,8 +18,8 @@ impl DeleteNodeOutput {
 }
 
 /// A builder for [`DeleteNodeOutput`](crate::operation::delete_node::DeleteNodeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteNodeOutputBuilder {
     _request_id: Option<String>,
 }

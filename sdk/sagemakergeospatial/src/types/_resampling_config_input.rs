@@ -35,8 +35,8 @@ impl ResamplingConfigInput {
 }
 
 /// A builder for [`ResamplingConfigInput`](crate::types::ResamplingConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResamplingConfigInputBuilder {
     pub(crate) output_resolution: ::std::option::Option<crate::types::OutputResolutionResamplingInput>,
     pub(crate) algorithm_name: ::std::option::Option<crate::types::AlgorithmNameResampling>,

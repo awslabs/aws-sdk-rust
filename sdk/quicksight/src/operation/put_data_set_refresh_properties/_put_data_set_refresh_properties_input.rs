@@ -32,8 +32,8 @@ impl PutDataSetRefreshPropertiesInput {
 }
 
 /// A builder for [`PutDataSetRefreshPropertiesInput`](crate::operation::put_data_set_refresh_properties::PutDataSetRefreshPropertiesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutDataSetRefreshPropertiesInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,

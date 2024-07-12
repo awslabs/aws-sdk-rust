@@ -18,8 +18,8 @@ impl DeleteImpersonationRoleOutput {
 }
 
 /// A builder for [`DeleteImpersonationRoleOutput`](crate::operation::delete_impersonation_role::DeleteImpersonationRoleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteImpersonationRoleOutputBuilder {
     _request_id: Option<String>,
 }

@@ -21,8 +21,8 @@ impl OutputFormatConfiguration {
 }
 
 /// A builder for [`OutputFormatConfiguration`](crate::types::OutputFormatConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OutputFormatConfigurationBuilder {
     pub(crate) serializer: ::std::option::Option<crate::types::Serializer>,
 }

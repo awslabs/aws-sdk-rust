@@ -159,8 +159,8 @@ impl CaseDetails {
 }
 
 /// A builder for [`CaseDetails`](crate::types::CaseDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CaseDetailsBuilder {
     pub(crate) case_id: ::std::option::Option<::std::string::String>,
     pub(crate) display_id: ::std::option::Option<::std::string::String>,

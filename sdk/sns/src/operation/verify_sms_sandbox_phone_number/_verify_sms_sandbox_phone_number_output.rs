@@ -19,8 +19,8 @@ impl VerifySmsSandboxPhoneNumberOutput {
 }
 
 /// A builder for [`VerifySmsSandboxPhoneNumberOutput`](crate::operation::verify_sms_sandbox_phone_number::VerifySmsSandboxPhoneNumberOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VerifySmsSandboxPhoneNumberOutputBuilder {
     _request_id: Option<String>,
 }

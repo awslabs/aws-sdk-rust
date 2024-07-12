@@ -22,8 +22,8 @@ impl StartReadSetActivationJobSourceItem {
 }
 
 /// A builder for [`StartReadSetActivationJobSourceItem`](crate::types::StartReadSetActivationJobSourceItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartReadSetActivationJobSourceItemBuilder {
     pub(crate) read_set_id: ::std::option::Option<::std::string::String>,
 }

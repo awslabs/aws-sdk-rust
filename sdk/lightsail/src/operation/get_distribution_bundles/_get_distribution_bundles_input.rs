@@ -11,8 +11,8 @@ impl GetDistributionBundlesInput {
 }
 
 /// A builder for [`GetDistributionBundlesInput`](crate::operation::get_distribution_bundles::GetDistributionBundlesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDistributionBundlesInputBuilder {}
 impl GetDistributionBundlesInputBuilder {
     /// Consumes the builder and constructs a [`GetDistributionBundlesInput`](crate::operation::get_distribution_bundles::GetDistributionBundlesInput).

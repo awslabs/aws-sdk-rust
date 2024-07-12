@@ -34,8 +34,8 @@ impl ListFirewallConfigsOutput {
 }
 
 /// A builder for [`ListFirewallConfigsOutput`](crate::operation::list_firewall_configs::ListFirewallConfigsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFirewallConfigsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) firewall_configs: ::std::option::Option<::std::vec::Vec<crate::types::FirewallConfig>>,

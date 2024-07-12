@@ -11,8 +11,8 @@ impl GetLogLevelsByResourceTypesInput {
 }
 
 /// A builder for [`GetLogLevelsByResourceTypesInput`](crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLogLevelsByResourceTypesInputBuilder {}
 impl GetLogLevelsByResourceTypesInputBuilder {
     /// Consumes the builder and constructs a [`GetLogLevelsByResourceTypesInput`](crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesInput).

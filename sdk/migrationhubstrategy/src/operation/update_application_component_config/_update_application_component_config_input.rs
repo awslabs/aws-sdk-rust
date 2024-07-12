@@ -71,8 +71,8 @@ impl UpdateApplicationComponentConfigInput {
 }
 
 /// A builder for [`UpdateApplicationComponentConfigInput`](crate::operation::update_application_component_config::UpdateApplicationComponentConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateApplicationComponentConfigInputBuilder {
     pub(crate) application_component_id: ::std::option::Option<::std::string::String>,
     pub(crate) inclusion_status: ::std::option::Option<crate::types::InclusionStatus>,

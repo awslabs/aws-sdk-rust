@@ -29,8 +29,8 @@ impl ComponentConfigurationUpdate {
 }
 
 /// A builder for [`ComponentConfigurationUpdate`](crate::types::ComponentConfigurationUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ComponentConfigurationUpdateBuilder {
     pub(crate) merge: ::std::option::Option<::std::string::String>,
     pub(crate) reset: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

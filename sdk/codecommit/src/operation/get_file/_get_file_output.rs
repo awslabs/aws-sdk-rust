@@ -63,8 +63,8 @@ impl GetFileOutput {
 }
 
 /// A builder for [`GetFileOutput`](crate::operation::get_file::GetFileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetFileOutputBuilder {
     pub(crate) commit_id: ::std::option::Option<::std::string::String>,
     pub(crate) blob_id: ::std::option::Option<::std::string::String>,

@@ -50,8 +50,8 @@ impl ListAttachmentsInput {
 }
 
 /// A builder for [`ListAttachmentsInput`](crate::operation::list_attachments::ListAttachmentsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAttachmentsInputBuilder {
     pub(crate) core_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) attachment_type: ::std::option::Option<crate::types::AttachmentType>,

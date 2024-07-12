@@ -51,8 +51,8 @@ impl InAppMessageContent {
 }
 
 /// A builder for [`InAppMessageContent`](crate::types::InAppMessageContent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InAppMessageContentBuilder {
     pub(crate) background_color: ::std::option::Option<::std::string::String>,
     pub(crate) body_config: ::std::option::Option<crate::types::InAppMessageBodyConfig>,

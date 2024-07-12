@@ -64,8 +64,8 @@ impl DescribeHostReservationOfferingsInput {
 }
 
 /// A builder for [`DescribeHostReservationOfferingsInput`](crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeHostReservationOfferingsInputBuilder {
     pub(crate) filter: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) max_duration: ::std::option::Option<i32>,

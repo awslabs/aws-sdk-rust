@@ -38,8 +38,8 @@ impl ListProtectedResourcesByBackupVaultInput {
 }
 
 /// A builder for [`ListProtectedResourcesByBackupVaultInput`](crate::operation::list_protected_resources_by_backup_vault::ListProtectedResourcesByBackupVaultInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListProtectedResourcesByBackupVaultInputBuilder {
     pub(crate) backup_vault_name: ::std::option::Option<::std::string::String>,
     pub(crate) backup_vault_account_id: ::std::option::Option<::std::string::String>,

@@ -48,8 +48,8 @@ impl GetBucketPolicyInput {
 }
 
 /// A builder for [`GetBucketPolicyInput`](crate::operation::get_bucket_policy::GetBucketPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBucketPolicyInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) bucket: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl ListHumanLoopsOutput {
 }
 
 /// A builder for [`ListHumanLoopsOutput`](crate::operation::list_human_loops::ListHumanLoopsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListHumanLoopsOutputBuilder {
     pub(crate) human_loop_summaries: ::std::option::Option<::std::vec::Vec<crate::types::HumanLoopSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

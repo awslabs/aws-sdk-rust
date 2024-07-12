@@ -40,8 +40,8 @@ impl ImportKeyPairInput {
 }
 
 /// A builder for [`ImportKeyPairInput`](crate::operation::import_key_pair::ImportKeyPairInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportKeyPairInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) key_name: ::std::option::Option<::std::string::String>,

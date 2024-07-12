@@ -46,8 +46,8 @@ impl CreateTaskInput {
 }
 
 /// A builder for [`CreateTaskInput`](crate::operation::create_task::CreateTaskInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateTaskInputBuilder {
     pub(crate) targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) command: ::std::option::Option<crate::types::Command>,

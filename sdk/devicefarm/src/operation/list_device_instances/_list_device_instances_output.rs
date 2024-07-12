@@ -34,8 +34,8 @@ impl ListDeviceInstancesOutput {
 }
 
 /// A builder for [`ListDeviceInstancesOutput`](crate::operation::list_device_instances::ListDeviceInstancesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDeviceInstancesOutputBuilder {
     pub(crate) device_instances: ::std::option::Option<::std::vec::Vec<crate::types::DeviceInstance>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

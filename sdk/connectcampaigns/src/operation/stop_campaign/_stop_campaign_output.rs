@@ -18,8 +18,8 @@ impl StopCampaignOutput {
 }
 
 /// A builder for [`StopCampaignOutput`](crate::operation::stop_campaign::StopCampaignOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopCampaignOutputBuilder {
     _request_id: Option<String>,
 }

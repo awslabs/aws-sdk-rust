@@ -61,8 +61,8 @@ impl EmailMessage {
 }
 
 /// A builder for [`EmailMessage`](crate::types::EmailMessage).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EmailMessageBuilder {
     pub(crate) body: ::std::option::Option<::std::string::String>,
     pub(crate) feedback_forwarding_address: ::std::option::Option<::std::string::String>,

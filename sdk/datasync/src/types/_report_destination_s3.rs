@@ -35,8 +35,8 @@ impl ReportDestinationS3 {
 }
 
 /// A builder for [`ReportDestinationS3`](crate::types::ReportDestinationS3).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReportDestinationS3Builder {
     pub(crate) subdirectory: ::std::option::Option<::std::string::String>,
     pub(crate) s3_bucket_arn: ::std::option::Option<::std::string::String>,

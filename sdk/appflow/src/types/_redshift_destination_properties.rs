@@ -41,8 +41,8 @@ impl RedshiftDestinationProperties {
 }
 
 /// A builder for [`RedshiftDestinationProperties`](crate::types::RedshiftDestinationProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RedshiftDestinationPropertiesBuilder {
     pub(crate) object: ::std::option::Option<::std::string::String>,
     pub(crate) intermediate_bucket_name: ::std::option::Option<::std::string::String>,

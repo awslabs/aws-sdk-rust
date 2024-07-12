@@ -27,8 +27,8 @@ impl PackageOriginRestrictions {
 }
 
 /// A builder for [`PackageOriginRestrictions`](crate::types::PackageOriginRestrictions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PackageOriginRestrictionsBuilder {
     pub(crate) publish: ::std::option::Option<crate::types::AllowPublish>,
     pub(crate) upstream: ::std::option::Option<crate::types::AllowUpstream>,

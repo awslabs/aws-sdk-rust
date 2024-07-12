@@ -43,8 +43,8 @@ impl BatchDetectTargetedSentimentOutput {
 }
 
 /// A builder for [`BatchDetectTargetedSentimentOutput`](crate::operation::batch_detect_targeted_sentiment::BatchDetectTargetedSentimentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct BatchDetectTargetedSentimentOutputBuilder {
     pub(crate) result_list: ::std::option::Option<::std::vec::Vec<crate::types::BatchDetectTargetedSentimentItemResult>>,
     pub(crate) error_list: ::std::option::Option<::std::vec::Vec<crate::types::BatchItemError>>,

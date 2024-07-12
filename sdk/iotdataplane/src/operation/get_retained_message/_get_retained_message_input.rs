@@ -21,8 +21,8 @@ impl GetRetainedMessageInput {
 }
 
 /// A builder for [`GetRetainedMessageInput`](crate::operation::get_retained_message::GetRetainedMessageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRetainedMessageInputBuilder {
     pub(crate) topic: ::std::option::Option<::std::string::String>,
 }

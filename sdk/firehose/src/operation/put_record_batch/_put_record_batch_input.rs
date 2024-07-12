@@ -28,8 +28,8 @@ impl PutRecordBatchInput {
 }
 
 /// A builder for [`PutRecordBatchInput`](crate::operation::put_record_batch::PutRecordBatchInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutRecordBatchInputBuilder {
     pub(crate) delivery_stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) records: ::std::option::Option<::std::vec::Vec<crate::types::Record>>,

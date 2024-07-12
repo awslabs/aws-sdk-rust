@@ -33,8 +33,8 @@ impl RelatedResource {
 }
 
 /// A builder for [`RelatedResource`](crate::types::RelatedResource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RelatedResourceBuilder {
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
     pub(crate) resource_identifier: ::std::option::Option<crate::types::ResourceIdentifier>,

@@ -27,8 +27,8 @@ impl CreateVolumePermission {
 }
 
 /// A builder for [`CreateVolumePermission`](crate::types::CreateVolumePermission).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateVolumePermissionBuilder {
     pub(crate) group: ::std::option::Option<crate::types::PermissionGroup>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,

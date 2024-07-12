@@ -20,8 +20,8 @@ impl DescribePlaceIndexInput {
 }
 
 /// A builder for [`DescribePlaceIndexInput`](crate::operation::describe_place_index::DescribePlaceIndexInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribePlaceIndexInputBuilder {
     pub(crate) index_name: ::std::option::Option<::std::string::String>,
 }

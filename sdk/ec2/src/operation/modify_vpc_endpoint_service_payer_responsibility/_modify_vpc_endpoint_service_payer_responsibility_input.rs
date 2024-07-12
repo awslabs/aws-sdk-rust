@@ -34,8 +34,8 @@ impl ModifyVpcEndpointServicePayerResponsibilityInput {
 }
 
 /// A builder for [`ModifyVpcEndpointServicePayerResponsibilityInput`](crate::operation::modify_vpc_endpoint_service_payer_responsibility::ModifyVpcEndpointServicePayerResponsibilityInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyVpcEndpointServicePayerResponsibilityInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) service_id: ::std::option::Option<::std::string::String>,

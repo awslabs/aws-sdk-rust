@@ -51,8 +51,8 @@ impl ListEventsFilters {
 }
 
 /// A builder for [`ListEventsFilters`](crate::types::ListEventsFilters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEventsFiltersBuilder {
     pub(crate) insight_id: ::std::option::Option<::std::string::String>,
     pub(crate) event_time_range: ::std::option::Option<crate::types::EventTimeRange>,

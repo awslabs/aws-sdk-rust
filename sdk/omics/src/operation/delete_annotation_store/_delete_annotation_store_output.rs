@@ -26,8 +26,8 @@ impl DeleteAnnotationStoreOutput {
 }
 
 /// A builder for [`DeleteAnnotationStoreOutput`](crate::operation::delete_annotation_store::DeleteAnnotationStoreOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAnnotationStoreOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::StoreStatus>,
     _request_id: Option<String>,

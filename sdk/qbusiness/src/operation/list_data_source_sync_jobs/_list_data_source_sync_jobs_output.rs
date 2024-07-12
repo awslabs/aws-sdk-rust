@@ -34,8 +34,8 @@ impl ListDataSourceSyncJobsOutput {
 }
 
 /// A builder for [`ListDataSourceSyncJobsOutput`](crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDataSourceSyncJobsOutputBuilder {
     pub(crate) history: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceSyncJob>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

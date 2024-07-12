@@ -20,8 +20,8 @@ impl GetIncidentRecordInput {
 }
 
 /// A builder for [`GetIncidentRecordInput`](crate::operation::get_incident_record::GetIncidentRecordInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetIncidentRecordInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }

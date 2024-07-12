@@ -56,8 +56,8 @@ impl ListDetectMitigationActionsExecutionsInput {
 }
 
 /// A builder for [`ListDetectMitigationActionsExecutionsInput`](crate::operation::list_detect_mitigation_actions_executions::ListDetectMitigationActionsExecutionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDetectMitigationActionsExecutionsInputBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
     pub(crate) violation_id: ::std::option::Option<::std::string::String>,

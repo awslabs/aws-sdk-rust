@@ -20,8 +20,8 @@ impl DescribeRuntimeConfigurationInput {
 }
 
 /// A builder for [`DescribeRuntimeConfigurationInput`](crate::operation::describe_runtime_configuration::DescribeRuntimeConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRuntimeConfigurationInputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
 }

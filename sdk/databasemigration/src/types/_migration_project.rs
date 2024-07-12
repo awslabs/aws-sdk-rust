@@ -79,8 +79,8 @@ impl MigrationProject {
 }
 
 /// A builder for [`MigrationProject`](crate::types::MigrationProject).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MigrationProjectBuilder {
     pub(crate) migration_project_name: ::std::option::Option<::std::string::String>,
     pub(crate) migration_project_arn: ::std::option::Option<::std::string::String>,

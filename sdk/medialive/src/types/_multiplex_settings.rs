@@ -39,8 +39,8 @@ impl MultiplexSettings {
 }
 
 /// A builder for [`MultiplexSettings`](crate::types::MultiplexSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MultiplexSettingsBuilder {
     pub(crate) maximum_video_buffer_delay_milliseconds: ::std::option::Option<i32>,
     pub(crate) transport_stream_bitrate: ::std::option::Option<i32>,

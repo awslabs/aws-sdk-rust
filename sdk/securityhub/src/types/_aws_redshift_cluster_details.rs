@@ -417,8 +417,8 @@ impl AwsRedshiftClusterDetails {
 }
 
 /// A builder for [`AwsRedshiftClusterDetails`](crate::types::AwsRedshiftClusterDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsRedshiftClusterDetailsBuilder {
     pub(crate) allow_version_upgrade: ::std::option::Option<bool>,
     pub(crate) automated_snapshot_retention_period: ::std::option::Option<i32>,

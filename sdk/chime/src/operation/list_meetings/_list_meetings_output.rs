@@ -34,8 +34,8 @@ impl ListMeetingsOutput {
 }
 
 /// A builder for [`ListMeetingsOutput`](crate::operation::list_meetings::ListMeetingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListMeetingsOutputBuilder {
     pub(crate) meetings: ::std::option::Option<::std::vec::Vec<crate::types::Meeting>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl ListDistributionsByWebAclIdOutput {
 }
 
 /// A builder for [`ListDistributionsByWebAclIdOutput`](crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebAclIdOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDistributionsByWebAclIdOutputBuilder {
     pub(crate) distribution_list: ::std::option::Option<crate::types::DistributionList>,
     _request_id: Option<String>,

@@ -34,8 +34,8 @@ impl ListHubsOutput {
 }
 
 /// A builder for [`ListHubsOutput`](crate::operation::list_hubs::ListHubsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListHubsOutputBuilder {
     pub(crate) hub_summaries: ::std::option::Option<::std::vec::Vec<crate::types::HubInfo>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

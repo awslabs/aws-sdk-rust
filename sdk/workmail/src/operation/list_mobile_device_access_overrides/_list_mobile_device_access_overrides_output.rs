@@ -34,8 +34,8 @@ impl ListMobileDeviceAccessOverridesOutput {
 }
 
 /// A builder for [`ListMobileDeviceAccessOverridesOutput`](crate::operation::list_mobile_device_access_overrides::ListMobileDeviceAccessOverridesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListMobileDeviceAccessOverridesOutputBuilder {
     pub(crate) overrides: ::std::option::Option<::std::vec::Vec<crate::types::MobileDeviceAccessOverride>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

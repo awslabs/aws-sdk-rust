@@ -45,8 +45,8 @@ impl SyntaxToken {
 }
 
 /// A builder for [`SyntaxToken`](crate::types::SyntaxToken).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SyntaxTokenBuilder {
     pub(crate) token_id: ::std::option::Option<i32>,
     pub(crate) text: ::std::option::Option<::std::string::String>,

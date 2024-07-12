@@ -40,8 +40,8 @@ impl ListBuiltInIntentsOutput {
 }
 
 /// A builder for [`ListBuiltInIntentsOutput`](crate::operation::list_built_in_intents::ListBuiltInIntentsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListBuiltInIntentsOutputBuilder {
     pub(crate) built_in_intent_summaries: ::std::option::Option<::std::vec::Vec<crate::types::BuiltInIntentSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

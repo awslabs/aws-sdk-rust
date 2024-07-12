@@ -20,8 +20,8 @@ impl StopSnomedctInferenceJobInput {
 }
 
 /// A builder for [`StopSnomedctInferenceJobInput`](crate::operation::stop_snomedct_inference_job::StopSnomedctInferenceJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopSnomedctInferenceJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }

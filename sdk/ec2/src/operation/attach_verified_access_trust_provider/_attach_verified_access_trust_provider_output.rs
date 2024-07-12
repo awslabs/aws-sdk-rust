@@ -32,8 +32,8 @@ impl AttachVerifiedAccessTrustProviderOutput {
 }
 
 /// A builder for [`AttachVerifiedAccessTrustProviderOutput`](crate::operation::attach_verified_access_trust_provider::AttachVerifiedAccessTrustProviderOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttachVerifiedAccessTrustProviderOutputBuilder {
     pub(crate) verified_access_trust_provider: ::std::option::Option<crate::types::VerifiedAccessTrustProvider>,
     pub(crate) verified_access_instance: ::std::option::Option<crate::types::VerifiedAccessInstance>,

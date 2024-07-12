@@ -36,8 +36,8 @@ impl BatchStopJobRunOutput {
 }
 
 /// A builder for [`BatchStopJobRunOutput`](crate::operation::batch_stop_job_run::BatchStopJobRunOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchStopJobRunOutputBuilder {
     pub(crate) successful_submissions: ::std::option::Option<::std::vec::Vec<crate::types::BatchStopJobRunSuccessfulSubmission>>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchStopJobRunError>>,

@@ -53,8 +53,8 @@ impl UpdateRestoreTestingSelectionOutput {
 }
 
 /// A builder for [`UpdateRestoreTestingSelectionOutput`](crate::operation::update_restore_testing_selection::UpdateRestoreTestingSelectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRestoreTestingSelectionOutputBuilder {
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) restore_testing_plan_arn: ::std::option::Option<::std::string::String>,

@@ -40,8 +40,8 @@ impl AddCommunicationToCaseInput {
 }
 
 /// A builder for [`AddCommunicationToCaseInput`](crate::operation::add_communication_to_case::AddCommunicationToCaseInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddCommunicationToCaseInputBuilder {
     pub(crate) case_id: ::std::option::Option<::std::string::String>,
     pub(crate) communication_body: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl UserBucketDetails {
 }
 
 /// A builder for [`UserBucketDetails`](crate::types::UserBucketDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UserBucketDetailsBuilder {
     pub(crate) s3_bucket: ::std::option::Option<::std::string::String>,
     pub(crate) s3_key: ::std::option::Option<::std::string::String>,

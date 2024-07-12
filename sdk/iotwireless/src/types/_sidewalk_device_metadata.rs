@@ -39,8 +39,8 @@ impl SidewalkDeviceMetadata {
 }
 
 /// A builder for [`SidewalkDeviceMetadata`](crate::types::SidewalkDeviceMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SidewalkDeviceMetadataBuilder {
     pub(crate) rssi: ::std::option::Option<i32>,
     pub(crate) battery_level: ::std::option::Option<crate::types::BatteryLevel>,

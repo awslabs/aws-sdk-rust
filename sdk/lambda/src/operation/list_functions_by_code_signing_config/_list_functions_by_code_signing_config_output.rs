@@ -34,8 +34,8 @@ impl ListFunctionsByCodeSigningConfigOutput {
 }
 
 /// A builder for [`ListFunctionsByCodeSigningConfigOutput`](crate::operation::list_functions_by_code_signing_config::ListFunctionsByCodeSigningConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFunctionsByCodeSigningConfigOutputBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     pub(crate) function_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

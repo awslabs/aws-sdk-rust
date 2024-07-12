@@ -32,8 +32,8 @@ impl CreateTemplateShareOutput {
 }
 
 /// A builder for [`CreateTemplateShareOutput`](crate::operation::create_template_share::CreateTemplateShareOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateTemplateShareOutputBuilder {
     pub(crate) template_arn: ::std::option::Option<::std::string::String>,
     pub(crate) share_id: ::std::option::Option<::std::string::String>,

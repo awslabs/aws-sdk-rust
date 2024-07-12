@@ -34,8 +34,8 @@ impl S3DestinationProperties {
 }
 
 /// A builder for [`S3DestinationProperties`](crate::types::S3DestinationProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3DestinationPropertiesBuilder {
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) bucket_prefix: ::std::option::Option<::std::string::String>,

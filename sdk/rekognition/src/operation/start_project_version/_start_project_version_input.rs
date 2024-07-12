@@ -34,8 +34,8 @@ impl StartProjectVersionInput {
 }
 
 /// A builder for [`StartProjectVersionInput`](crate::operation::start_project_version::StartProjectVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartProjectVersionInputBuilder {
     pub(crate) project_version_arn: ::std::option::Option<::std::string::String>,
     pub(crate) min_inference_units: ::std::option::Option<i32>,

@@ -85,8 +85,8 @@ impl FoundationModelSummary {
 }
 
 /// A builder for [`FoundationModelSummary`](crate::types::FoundationModelSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FoundationModelSummaryBuilder {
     pub(crate) model_arn: ::std::option::Option<::std::string::String>,
     pub(crate) model_id: ::std::option::Option<::std::string::String>,

@@ -86,8 +86,8 @@ impl DescribeStorageSystemOutput {
 }
 
 /// A builder for [`DescribeStorageSystemOutput`](crate::operation::describe_storage_system::DescribeStorageSystemOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeStorageSystemOutputBuilder {
     pub(crate) storage_system_arn: ::std::option::Option<::std::string::String>,
     pub(crate) server_configuration: ::std::option::Option<crate::types::DiscoveryServerConfiguration>,

@@ -49,8 +49,8 @@ impl ConformancePackEvaluationFilters {
 }
 
 /// A builder for [`ConformancePackEvaluationFilters`](crate::types::ConformancePackEvaluationFilters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConformancePackEvaluationFiltersBuilder {
     pub(crate) config_rule_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) compliance_type: ::std::option::Option<crate::types::ConformancePackComplianceType>,

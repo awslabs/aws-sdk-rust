@@ -26,8 +26,8 @@ impl UpdateTrustInput {
 }
 
 /// A builder for [`UpdateTrustInput`](crate::operation::update_trust::UpdateTrustInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateTrustInputBuilder {
     pub(crate) trust_id: ::std::option::Option<::std::string::String>,
     pub(crate) selective_auth: ::std::option::Option<crate::types::SelectiveAuth>,

@@ -20,8 +20,8 @@ impl GetServerStrategiesInput {
 }
 
 /// A builder for [`GetServerStrategiesInput`](crate::operation::get_server_strategies::GetServerStrategiesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetServerStrategiesInputBuilder {
     pub(crate) server_id: ::std::option::Option<::std::string::String>,
 }

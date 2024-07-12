@@ -27,8 +27,8 @@ impl QuickResponseContents {
 }
 
 /// A builder for [`QuickResponseContents`](crate::types::QuickResponseContents).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct QuickResponseContentsBuilder {
     pub(crate) plain_text: ::std::option::Option<crate::types::QuickResponseContentProvider>,
     pub(crate) markdown: ::std::option::Option<crate::types::QuickResponseContentProvider>,

@@ -66,8 +66,8 @@ impl CreateManagedPrefixListInput {
 }
 
 /// A builder for [`CreateManagedPrefixListInput`](crate::operation::create_managed_prefix_list::CreateManagedPrefixListInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateManagedPrefixListInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) prefix_list_name: ::std::option::Option<::std::string::String>,

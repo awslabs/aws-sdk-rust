@@ -27,8 +27,8 @@ impl ModifyReplicationTaskOutput {
 }
 
 /// A builder for [`ModifyReplicationTaskOutput`](crate::operation::modify_replication_task::ModifyReplicationTaskOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyReplicationTaskOutputBuilder {
     pub(crate) replication_task: ::std::option::Option<crate::types::ReplicationTask>,
     _request_id: Option<String>,

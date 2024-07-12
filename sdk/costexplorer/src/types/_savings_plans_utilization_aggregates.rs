@@ -33,8 +33,8 @@ impl SavingsPlansUtilizationAggregates {
 }
 
 /// A builder for [`SavingsPlansUtilizationAggregates`](crate::types::SavingsPlansUtilizationAggregates).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SavingsPlansUtilizationAggregatesBuilder {
     pub(crate) utilization: ::std::option::Option<crate::types::SavingsPlansUtilization>,
     pub(crate) savings: ::std::option::Option<crate::types::SavingsPlansSavings>,

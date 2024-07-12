@@ -29,8 +29,8 @@ impl LambdaResource {
 }
 
 /// A builder for [`LambdaResource`](crate::types::LambdaResource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LambdaResourceBuilder {
     pub(crate) lambda_arn: ::std::option::Option<::std::string::String>,
     pub(crate) event_triggers: ::std::option::Option<::std::vec::Vec<crate::types::EventTriggerDefinition>>,

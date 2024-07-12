@@ -21,8 +21,8 @@ impl DeprecationRequestDetails {
 }
 
 /// A builder for [`DeprecationRequestDetails`](crate::types::DeprecationRequestDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeprecationRequestDetailsBuilder {
     pub(crate) deprecation_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }

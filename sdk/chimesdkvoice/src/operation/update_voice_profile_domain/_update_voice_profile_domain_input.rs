@@ -32,8 +32,8 @@ impl UpdateVoiceProfileDomainInput {
 }
 
 /// A builder for [`UpdateVoiceProfileDomainInput`](crate::operation::update_voice_profile_domain::UpdateVoiceProfileDomainInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateVoiceProfileDomainInputBuilder {
     pub(crate) voice_profile_domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

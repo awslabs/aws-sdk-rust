@@ -20,8 +20,8 @@ impl GetThingRuntimeConfigurationInput {
 }
 
 /// A builder for [`GetThingRuntimeConfigurationInput`](crate::operation::get_thing_runtime_configuration::GetThingRuntimeConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetThingRuntimeConfigurationInputBuilder {
     pub(crate) thing_name: ::std::option::Option<::std::string::String>,
 }

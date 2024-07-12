@@ -39,8 +39,8 @@ impl FlowDefinition {
 }
 
 /// A builder for [`FlowDefinition`](crate::types::FlowDefinition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct FlowDefinitionBuilder {
     pub(crate) nodes: ::std::option::Option<::std::vec::Vec<crate::types::FlowNode>>,
     pub(crate) connections: ::std::option::Option<::std::vec::Vec<crate::types::FlowConnection>>,

@@ -76,8 +76,8 @@ impl ListDataSourcesInput {
 }
 
 /// A builder for [`ListDataSourcesInput`](crate::operation::list_data_sources::ListDataSourcesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ListDataSourcesInputBuilder {
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) project_identifier: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl ListResourceSharePermissionsOutput {
 }
 
 /// A builder for [`ListResourceSharePermissionsOutput`](crate::operation::list_resource_share_permissions::ListResourceSharePermissionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListResourceSharePermissionsOutputBuilder {
     pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourceSharePermissionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

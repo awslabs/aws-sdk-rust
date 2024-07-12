@@ -50,8 +50,8 @@ impl ListCisScanResultsAggregatedByChecksInput {
 }
 
 /// A builder for [`ListCisScanResultsAggregatedByChecksInput`](crate::operation::list_cis_scan_results_aggregated_by_checks::ListCisScanResultsAggregatedByChecksInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCisScanResultsAggregatedByChecksInputBuilder {
     pub(crate) scan_arn: ::std::option::Option<::std::string::String>,
     pub(crate) filter_criteria: ::std::option::Option<crate::types::CisScanResultsAggregatedByChecksFilterCriteria>,

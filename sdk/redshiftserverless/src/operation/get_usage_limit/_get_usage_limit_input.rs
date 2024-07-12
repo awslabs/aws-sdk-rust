@@ -20,8 +20,8 @@ impl GetUsageLimitInput {
 }
 
 /// A builder for [`GetUsageLimitInput`](crate::operation::get_usage_limit::GetUsageLimitInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetUsageLimitInputBuilder {
     pub(crate) usage_limit_id: ::std::option::Option<::std::string::String>,
 }

@@ -26,8 +26,8 @@ impl CreateTargetAccountConfigurationOutput {
 }
 
 /// A builder for [`CreateTargetAccountConfigurationOutput`](crate::operation::create_target_account_configuration::CreateTargetAccountConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateTargetAccountConfigurationOutputBuilder {
     pub(crate) target_account_configuration: ::std::option::Option<crate::types::TargetAccountConfiguration>,
     _request_id: Option<String>,

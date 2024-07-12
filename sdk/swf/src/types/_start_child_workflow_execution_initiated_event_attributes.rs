@@ -114,8 +114,8 @@ impl StartChildWorkflowExecutionInitiatedEventAttributes {
 }
 
 /// A builder for [`StartChildWorkflowExecutionInitiatedEventAttributes`](crate::types::StartChildWorkflowExecutionInitiatedEventAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartChildWorkflowExecutionInitiatedEventAttributesBuilder {
     pub(crate) workflow_id: ::std::option::Option<::std::string::String>,
     pub(crate) workflow_type: ::std::option::Option<crate::types::WorkflowType>,

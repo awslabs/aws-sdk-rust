@@ -20,8 +20,8 @@ impl DeleteDeviceDefinitionInput {
 }
 
 /// A builder for [`DeleteDeviceDefinitionInput`](crate::operation::delete_device_definition::DeleteDeviceDefinitionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDeviceDefinitionInputBuilder {
     pub(crate) device_definition_id: ::std::option::Option<::std::string::String>,
 }

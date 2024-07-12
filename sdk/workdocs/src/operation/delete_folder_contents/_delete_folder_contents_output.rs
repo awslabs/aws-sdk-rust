@@ -18,8 +18,8 @@ impl DeleteFolderContentsOutput {
 }
 
 /// A builder for [`DeleteFolderContentsOutput`](crate::operation::delete_folder_contents::DeleteFolderContentsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFolderContentsOutputBuilder {
     _request_id: Option<String>,
 }

@@ -28,8 +28,8 @@ impl StructuredMessageFieldNameAndDataTypePair {
 }
 
 /// A builder for [`StructuredMessageFieldNameAndDataTypePair`](crate::types::StructuredMessageFieldNameAndDataTypePair).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StructuredMessageFieldNameAndDataTypePairBuilder {
     pub(crate) field_name: ::std::option::Option<::std::string::String>,
     pub(crate) data_type: ::std::option::Option<crate::types::StructuredMessage>,

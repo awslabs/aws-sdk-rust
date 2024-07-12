@@ -152,8 +152,8 @@ impl DescribeModelCardOutput {
 }
 
 /// A builder for [`DescribeModelCardOutput`](crate::operation::describe_model_card::DescribeModelCardOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DescribeModelCardOutputBuilder {
     pub(crate) model_card_arn: ::std::option::Option<::std::string::String>,
     pub(crate) model_card_name: ::std::option::Option<::std::string::String>,

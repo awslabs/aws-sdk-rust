@@ -38,8 +38,8 @@ impl StartProductSubscriptionInput {
 }
 
 /// A builder for [`StartProductSubscriptionInput`](crate::operation::start_product_subscription::StartProductSubscriptionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartProductSubscriptionInputBuilder {
     pub(crate) username: ::std::option::Option<::std::string::String>,
     pub(crate) identity_provider: ::std::option::Option<crate::types::IdentityProvider>,

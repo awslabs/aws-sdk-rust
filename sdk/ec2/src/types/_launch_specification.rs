@@ -134,8 +134,8 @@ impl LaunchSpecification {
 }
 
 /// A builder for [`LaunchSpecification`](crate::types::LaunchSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct LaunchSpecificationBuilder {
     pub(crate) user_data: ::std::option::Option<::std::string::String>,
     pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>,

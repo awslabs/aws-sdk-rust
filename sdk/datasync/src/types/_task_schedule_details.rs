@@ -49,8 +49,8 @@ impl TaskScheduleDetails {
 }
 
 /// A builder for [`TaskScheduleDetails`](crate::types::TaskScheduleDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TaskScheduleDetailsBuilder {
     pub(crate) status_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) disabled_reason: ::std::option::Option<::std::string::String>,

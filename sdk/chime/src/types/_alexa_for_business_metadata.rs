@@ -35,8 +35,8 @@ impl AlexaForBusinessMetadata {
 }
 
 /// A builder for [`AlexaForBusinessMetadata`](crate::types::AlexaForBusinessMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AlexaForBusinessMetadataBuilder {
     pub(crate) is_alexa_for_business_enabled: ::std::option::Option<bool>,
     pub(crate) alexa_for_business_room_arn: ::std::option::Option<::std::string::String>,

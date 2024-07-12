@@ -26,8 +26,8 @@ impl AssociateFirewallRuleGroupOutput {
 }
 
 /// A builder for [`AssociateFirewallRuleGroupOutput`](crate::operation::associate_firewall_rule_group::AssociateFirewallRuleGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateFirewallRuleGroupOutputBuilder {
     pub(crate) firewall_rule_group_association: ::std::option::Option<crate::types::FirewallRuleGroupAssociation>,
     _request_id: Option<String>,

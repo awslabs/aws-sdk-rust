@@ -18,8 +18,8 @@ impl CreateQueueFleetAssociationOutput {
 }
 
 /// A builder for [`CreateQueueFleetAssociationOutput`](crate::operation::create_queue_fleet_association::CreateQueueFleetAssociationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateQueueFleetAssociationOutputBuilder {
     _request_id: Option<String>,
 }

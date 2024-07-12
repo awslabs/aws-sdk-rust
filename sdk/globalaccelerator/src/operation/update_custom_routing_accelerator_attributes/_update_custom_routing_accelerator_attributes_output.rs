@@ -27,8 +27,8 @@ impl UpdateCustomRoutingAcceleratorAttributesOutput {
 }
 
 /// A builder for [`UpdateCustomRoutingAcceleratorAttributesOutput`](crate::operation::update_custom_routing_accelerator_attributes::UpdateCustomRoutingAcceleratorAttributesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateCustomRoutingAcceleratorAttributesOutputBuilder {
     pub(crate) accelerator_attributes: ::std::option::Option<crate::types::CustomRoutingAcceleratorAttributes>,
     _request_id: Option<String>,

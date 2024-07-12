@@ -20,8 +20,8 @@ impl GetGremlinQueryStatusInput {
 }
 
 /// A builder for [`GetGremlinQueryStatusInput`](crate::operation::get_gremlin_query_status::GetGremlinQueryStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetGremlinQueryStatusInputBuilder {
     pub(crate) query_id: ::std::option::Option<::std::string::String>,
 }

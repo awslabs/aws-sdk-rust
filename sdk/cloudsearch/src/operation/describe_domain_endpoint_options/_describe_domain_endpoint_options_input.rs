@@ -27,8 +27,8 @@ impl DescribeDomainEndpointOptionsInput {
 }
 
 /// A builder for [`DescribeDomainEndpointOptionsInput`](crate::operation::describe_domain_endpoint_options::DescribeDomainEndpointOptionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDomainEndpointOptionsInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) deployed: ::std::option::Option<bool>,

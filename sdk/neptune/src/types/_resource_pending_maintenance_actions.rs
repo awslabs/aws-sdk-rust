@@ -29,8 +29,8 @@ impl ResourcePendingMaintenanceActions {
 }
 
 /// A builder for [`ResourcePendingMaintenanceActions`](crate::types::ResourcePendingMaintenanceActions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResourcePendingMaintenanceActionsBuilder {
     pub(crate) resource_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) pending_maintenance_action_details: ::std::option::Option<::std::vec::Vec<crate::types::PendingMaintenanceAction>>,

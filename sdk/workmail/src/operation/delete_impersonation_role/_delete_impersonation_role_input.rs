@@ -26,8 +26,8 @@ impl DeleteImpersonationRoleInput {
 }
 
 /// A builder for [`DeleteImpersonationRoleInput`](crate::operation::delete_impersonation_role::DeleteImpersonationRoleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteImpersonationRoleInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) impersonation_role_id: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl DescribeInsightRulesOutput {
 }
 
 /// A builder for [`DescribeInsightRulesOutput`](crate::operation::describe_insight_rules::DescribeInsightRulesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeInsightRulesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) insight_rules: ::std::option::Option<::std::vec::Vec<crate::types::InsightRule>>,

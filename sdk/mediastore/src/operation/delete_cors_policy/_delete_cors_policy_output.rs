@@ -18,8 +18,8 @@ impl DeleteCorsPolicyOutput {
 }
 
 /// A builder for [`DeleteCorsPolicyOutput`](crate::operation::delete_cors_policy::DeleteCorsPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCorsPolicyOutputBuilder {
     _request_id: Option<String>,
 }

@@ -50,8 +50,8 @@ impl NotificationSettingDetail {
 }
 
 /// A builder for [`NotificationSettingDetail`](crate::types::NotificationSettingDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NotificationSettingDetailBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) event: ::std::option::Option<crate::types::NotificationEvent>,

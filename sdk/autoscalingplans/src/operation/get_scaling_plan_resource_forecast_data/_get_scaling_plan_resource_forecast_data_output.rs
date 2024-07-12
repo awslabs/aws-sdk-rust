@@ -27,8 +27,8 @@ impl GetScalingPlanResourceForecastDataOutput {
 }
 
 /// A builder for [`GetScalingPlanResourceForecastDataOutput`](crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetScalingPlanResourceForecastDataOutputBuilder {
     pub(crate) datapoints: ::std::option::Option<::std::vec::Vec<crate::types::Datapoint>>,
     _request_id: Option<String>,

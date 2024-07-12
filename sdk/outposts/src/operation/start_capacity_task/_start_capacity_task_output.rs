@@ -82,8 +82,8 @@ impl StartCapacityTaskOutput {
 }
 
 /// A builder for [`StartCapacityTaskOutput`](crate::operation::start_capacity_task::StartCapacityTaskOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartCapacityTaskOutputBuilder {
     pub(crate) capacity_task_id: ::std::option::Option<::std::string::String>,
     pub(crate) outpost_id: ::std::option::Option<::std::string::String>,

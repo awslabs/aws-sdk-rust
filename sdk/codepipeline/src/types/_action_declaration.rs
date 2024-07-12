@@ -86,8 +86,8 @@ impl ActionDeclaration {
 }
 
 /// A builder for [`ActionDeclaration`](crate::types::ActionDeclaration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ActionDeclarationBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) action_type_id: ::std::option::Option<crate::types::ActionTypeId>,

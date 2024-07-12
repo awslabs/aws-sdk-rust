@@ -35,8 +35,8 @@ impl ListVaultsOutput {
 }
 
 /// A builder for [`ListVaultsOutput`](crate::operation::list_vaults::ListVaultsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListVaultsOutputBuilder {
     pub(crate) vault_list: ::std::option::Option<::std::vec::Vec<crate::types::DescribeVaultOutput>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

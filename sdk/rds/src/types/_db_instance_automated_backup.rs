@@ -225,8 +225,8 @@ impl DbInstanceAutomatedBackup {
 }
 
 /// A builder for [`DbInstanceAutomatedBackup`](crate::types::DbInstanceAutomatedBackup).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DbInstanceAutomatedBackupBuilder {
     pub(crate) db_instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) dbi_resource_id: ::std::option::Option<::std::string::String>,

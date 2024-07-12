@@ -42,8 +42,8 @@ impl ListDevicePositionsInput {
 }
 
 /// A builder for [`ListDevicePositionsInput`](crate::operation::list_device_positions::ListDevicePositionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDevicePositionsInputBuilder {
     pub(crate) tracker_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

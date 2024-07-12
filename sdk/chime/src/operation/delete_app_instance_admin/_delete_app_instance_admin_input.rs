@@ -26,8 +26,8 @@ impl DeleteAppInstanceAdminInput {
 }
 
 /// A builder for [`DeleteAppInstanceAdminInput`](crate::operation::delete_app_instance_admin::DeleteAppInstanceAdminInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAppInstanceAdminInputBuilder {
     pub(crate) app_instance_admin_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_instance_arn: ::std::option::Option<::std::string::String>,

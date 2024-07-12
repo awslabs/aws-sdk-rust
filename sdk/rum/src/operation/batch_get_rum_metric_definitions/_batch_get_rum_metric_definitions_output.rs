@@ -34,8 +34,8 @@ impl BatchGetRumMetricDefinitionsOutput {
 }
 
 /// A builder for [`BatchGetRumMetricDefinitionsOutput`](crate::operation::batch_get_rum_metric_definitions::BatchGetRumMetricDefinitionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetRumMetricDefinitionsOutputBuilder {
     pub(crate) metric_definitions: ::std::option::Option<::std::vec::Vec<crate::types::MetricDefinition>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -18,8 +18,8 @@ impl UpdatePackageVersionOutput {
 }
 
 /// A builder for [`UpdatePackageVersionOutput`](crate::operation::update_package_version::UpdatePackageVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePackageVersionOutputBuilder {
     _request_id: Option<String>,
 }

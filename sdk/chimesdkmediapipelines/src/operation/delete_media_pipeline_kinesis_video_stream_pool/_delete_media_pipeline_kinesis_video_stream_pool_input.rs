@@ -21,8 +21,8 @@ impl DeleteMediaPipelineKinesisVideoStreamPoolInput {
 }
 
 /// A builder for [`DeleteMediaPipelineKinesisVideoStreamPoolInput`](crate::operation::delete_media_pipeline_kinesis_video_stream_pool::DeleteMediaPipelineKinesisVideoStreamPoolInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteMediaPipelineKinesisVideoStreamPoolInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
 }

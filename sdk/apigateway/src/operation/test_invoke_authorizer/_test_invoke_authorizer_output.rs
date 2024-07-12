@@ -65,8 +65,8 @@ impl TestInvokeAuthorizerOutput {
 }
 
 /// A builder for [`TestInvokeAuthorizerOutput`](crate::operation::test_invoke_authorizer::TestInvokeAuthorizerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TestInvokeAuthorizerOutputBuilder {
     pub(crate) client_status: ::std::option::Option<i32>,
     pub(crate) log: ::std::option::Option<::std::string::String>,

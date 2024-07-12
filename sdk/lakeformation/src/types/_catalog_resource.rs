@@ -12,8 +12,8 @@ impl CatalogResource {
 }
 
 /// A builder for [`CatalogResource`](crate::types::CatalogResource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CatalogResourceBuilder {}
 impl CatalogResourceBuilder {
     /// Consumes the builder and constructs a [`CatalogResource`](crate::types::CatalogResource).

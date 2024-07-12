@@ -21,8 +21,8 @@ impl ViolationEventAdditionalInfo {
 }
 
 /// A builder for [`ViolationEventAdditionalInfo`](crate::types::ViolationEventAdditionalInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ViolationEventAdditionalInfoBuilder {
     pub(crate) confidence_level: ::std::option::Option<crate::types::ConfidenceLevel>,
 }

@@ -18,8 +18,8 @@ impl DeleteQueuedSavingsPlanOutput {
 }
 
 /// A builder for [`DeleteQueuedSavingsPlanOutput`](crate::operation::delete_queued_savings_plan::DeleteQueuedSavingsPlanOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteQueuedSavingsPlanOutputBuilder {
     _request_id: Option<String>,
 }

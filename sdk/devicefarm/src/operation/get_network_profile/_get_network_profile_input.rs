@@ -20,8 +20,8 @@ impl GetNetworkProfileInput {
 }
 
 /// A builder for [`GetNetworkProfileInput`](crate::operation::get_network_profile::GetNetworkProfileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetNetworkProfileInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }

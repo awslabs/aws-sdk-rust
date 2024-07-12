@@ -27,8 +27,8 @@ impl ParentEntityUpdateRequest {
 }
 
 /// A builder for [`ParentEntityUpdateRequest`](crate::types::ParentEntityUpdateRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ParentEntityUpdateRequestBuilder {
     pub(crate) update_type: ::std::option::Option<crate::types::ParentEntityUpdateType>,
     pub(crate) parent_entity_id: ::std::option::Option<::std::string::String>,

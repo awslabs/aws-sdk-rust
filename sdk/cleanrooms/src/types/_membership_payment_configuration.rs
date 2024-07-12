@@ -21,8 +21,8 @@ impl MembershipPaymentConfiguration {
 }
 
 /// A builder for [`MembershipPaymentConfiguration`](crate::types::MembershipPaymentConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MembershipPaymentConfigurationBuilder {
     pub(crate) query_compute: ::std::option::Option<crate::types::MembershipQueryComputePaymentConfig>,
 }

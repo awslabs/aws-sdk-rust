@@ -34,8 +34,8 @@ impl ListAssessmentTargetsInput {
 }
 
 /// A builder for [`ListAssessmentTargetsInput`](crate::operation::list_assessment_targets::ListAssessmentTargetsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAssessmentTargetsInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::AssessmentTargetFilter>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl CreateCustomKeyStoreOutput {
 }
 
 /// A builder for [`CreateCustomKeyStoreOutput`](crate::operation::create_custom_key_store::CreateCustomKeyStoreOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCustomKeyStoreOutputBuilder {
     pub(crate) custom_key_store_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

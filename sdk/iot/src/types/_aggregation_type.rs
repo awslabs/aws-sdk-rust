@@ -29,8 +29,8 @@ impl AggregationType {
 }
 
 /// A builder for [`AggregationType`](crate::types::AggregationType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AggregationTypeBuilder {
     pub(crate) name: ::std::option::Option<crate::types::AggregationTypeName>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

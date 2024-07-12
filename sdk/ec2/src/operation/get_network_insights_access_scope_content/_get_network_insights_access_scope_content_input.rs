@@ -26,8 +26,8 @@ impl GetNetworkInsightsAccessScopeContentInput {
 }
 
 /// A builder for [`GetNetworkInsightsAccessScopeContentInput`](crate::operation::get_network_insights_access_scope_content::GetNetworkInsightsAccessScopeContentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetNetworkInsightsAccessScopeContentInputBuilder {
     pub(crate) network_insights_access_scope_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,

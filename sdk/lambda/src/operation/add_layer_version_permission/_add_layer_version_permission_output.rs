@@ -32,8 +32,8 @@ impl AddLayerVersionPermissionOutput {
 }
 
 /// A builder for [`AddLayerVersionPermissionOutput`](crate::operation::add_layer_version_permission::AddLayerVersionPermissionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddLayerVersionPermissionOutputBuilder {
     pub(crate) statement: ::std::option::Option<::std::string::String>,
     pub(crate) revision_id: ::std::option::Option<::std::string::String>,

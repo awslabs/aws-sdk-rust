@@ -27,8 +27,8 @@ impl UpdateHostedZoneCommentOutput {
 }
 
 /// A builder for [`UpdateHostedZoneCommentOutput`](crate::operation::update_hosted_zone_comment::UpdateHostedZoneCommentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateHostedZoneCommentOutputBuilder {
     pub(crate) hosted_zone: ::std::option::Option<crate::types::HostedZone>,
     _request_id: Option<String>,

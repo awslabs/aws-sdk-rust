@@ -20,8 +20,8 @@ impl DeleteGlobalNetworkInput {
 }
 
 /// A builder for [`DeleteGlobalNetworkInput`](crate::operation::delete_global_network::DeleteGlobalNetworkInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteGlobalNetworkInputBuilder {
     pub(crate) global_network_id: ::std::option::Option<::std::string::String>,
 }

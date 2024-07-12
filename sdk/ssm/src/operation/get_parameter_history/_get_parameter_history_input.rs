@@ -38,8 +38,8 @@ impl GetParameterHistoryInput {
 }
 
 /// A builder for [`GetParameterHistoryInput`](crate::operation::get_parameter_history::GetParameterHistoryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetParameterHistoryInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) with_decryption: ::std::option::Option<bool>,

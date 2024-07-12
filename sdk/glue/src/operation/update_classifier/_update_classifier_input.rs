@@ -38,8 +38,8 @@ impl UpdateClassifierInput {
 }
 
 /// A builder for [`UpdateClassifierInput`](crate::operation::update_classifier::UpdateClassifierInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateClassifierInputBuilder {
     pub(crate) grok_classifier: ::std::option::Option<crate::types::UpdateGrokClassifierRequest>,
     pub(crate) xml_classifier: ::std::option::Option<crate::types::UpdateXmlClassifierRequest>,

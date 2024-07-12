@@ -28,8 +28,8 @@ impl Location {
 }
 
 /// A builder for [`Location`](crate::types::Location).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LocationBuilder {
     pub(crate) path: ::std::option::Option<::std::vec::Vec<crate::types::PathElement>>,
     pub(crate) span: ::std::option::Option<crate::types::Span>,

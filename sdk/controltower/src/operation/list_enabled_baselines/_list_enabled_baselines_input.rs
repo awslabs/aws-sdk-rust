@@ -32,8 +32,8 @@ impl ListEnabledBaselinesInput {
 }
 
 /// A builder for [`ListEnabledBaselinesInput`](crate::operation::list_enabled_baselines::ListEnabledBaselinesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEnabledBaselinesInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::EnabledBaselineFilter>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

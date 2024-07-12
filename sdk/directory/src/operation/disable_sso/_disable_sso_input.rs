@@ -44,8 +44,8 @@ impl DisableSsoInput {
 }
 
 /// A builder for [`DisableSsoInput`](crate::operation::disable_sso::DisableSsoInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DisableSsoInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_name: ::std::option::Option<::std::string::String>,

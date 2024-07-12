@@ -57,8 +57,8 @@ impl DescribeClusterSecurityGroupsInput {
 }
 
 /// A builder for [`DescribeClusterSecurityGroupsInput`](crate::operation::describe_cluster_security_groups::DescribeClusterSecurityGroupsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeClusterSecurityGroupsInputBuilder {
     pub(crate) cluster_security_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,

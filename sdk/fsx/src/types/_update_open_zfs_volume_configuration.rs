@@ -77,8 +77,8 @@ impl UpdateOpenZfsVolumeConfiguration {
 }
 
 /// A builder for [`UpdateOpenZfsVolumeConfiguration`](crate::types::UpdateOpenZfsVolumeConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateOpenZfsVolumeConfigurationBuilder {
     pub(crate) storage_capacity_reservation_gib: ::std::option::Option<i32>,
     pub(crate) storage_capacity_quota_gib: ::std::option::Option<i32>,

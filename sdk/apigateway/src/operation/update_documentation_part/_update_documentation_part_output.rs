@@ -39,8 +39,8 @@ impl UpdateDocumentationPartOutput {
 }
 
 /// A builder for [`UpdateDocumentationPartOutput`](crate::operation::update_documentation_part::UpdateDocumentationPartOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDocumentationPartOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) location: ::std::option::Option<crate::types::DocumentationPartLocation>,

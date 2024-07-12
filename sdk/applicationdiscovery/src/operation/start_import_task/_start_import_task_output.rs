@@ -26,8 +26,8 @@ impl StartImportTaskOutput {
 }
 
 /// A builder for [`StartImportTaskOutput`](crate::operation::start_import_task::StartImportTaskOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartImportTaskOutputBuilder {
     pub(crate) task: ::std::option::Option<crate::types::ImportTask>,
     _request_id: Option<String>,

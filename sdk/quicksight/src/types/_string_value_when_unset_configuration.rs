@@ -47,8 +47,8 @@ impl StringValueWhenUnsetConfiguration {
 }
 
 /// A builder for [`StringValueWhenUnsetConfiguration`](crate::types::StringValueWhenUnsetConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct StringValueWhenUnsetConfigurationBuilder {
     pub(crate) value_when_unset_option: ::std::option::Option<crate::types::ValueWhenUnsetOption>,
     pub(crate) custom_value: ::std::option::Option<::std::string::String>,

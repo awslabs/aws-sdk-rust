@@ -26,8 +26,8 @@ impl DescribeStackSetOutput {
 }
 
 /// A builder for [`DescribeStackSetOutput`](crate::operation::describe_stack_set::DescribeStackSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeStackSetOutputBuilder {
     pub(crate) stack_set: ::std::option::Option<crate::types::StackSet>,
     _request_id: Option<String>,

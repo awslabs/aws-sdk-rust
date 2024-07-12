@@ -20,8 +20,8 @@ impl GetSubscriptionDefinitionInput {
 }
 
 /// A builder for [`GetSubscriptionDefinitionInput`](crate::operation::get_subscription_definition::GetSubscriptionDefinitionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSubscriptionDefinitionInputBuilder {
     pub(crate) subscription_definition_id: ::std::option::Option<::std::string::String>,
 }

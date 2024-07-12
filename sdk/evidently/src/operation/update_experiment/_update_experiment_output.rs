@@ -26,8 +26,8 @@ impl UpdateExperimentOutput {
 }
 
 /// A builder for [`UpdateExperimentOutput`](crate::operation::update_experiment::UpdateExperimentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateExperimentOutputBuilder {
     pub(crate) experiment: ::std::option::Option<crate::types::Experiment>,
     _request_id: Option<String>,

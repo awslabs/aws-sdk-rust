@@ -33,8 +33,8 @@ impl UpdateTestCaseOutput {
 }
 
 /// A builder for [`UpdateTestCaseOutput`](crate::operation::update_test_case::UpdateTestCaseOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateTestCaseOutputBuilder {
     pub(crate) test_case_id: ::std::option::Option<::std::string::String>,
     pub(crate) test_case_version: ::std::option::Option<i32>,

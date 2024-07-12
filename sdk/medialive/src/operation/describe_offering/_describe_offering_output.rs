@@ -87,8 +87,8 @@ impl DescribeOfferingOutput {
 }
 
 /// A builder for [`DescribeOfferingOutput`](crate::operation::describe_offering::DescribeOfferingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeOfferingOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) currency_code: ::std::option::Option<::std::string::String>,

@@ -39,8 +39,8 @@ impl DatasetStats {
 }
 
 /// A builder for [`DatasetStats`](crate::types::DatasetStats).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DatasetStatsBuilder {
     pub(crate) labeled_entries: ::std::option::Option<i32>,
     pub(crate) total_entries: ::std::option::Option<i32>,

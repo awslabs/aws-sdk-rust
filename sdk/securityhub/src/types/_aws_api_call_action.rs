@@ -119,8 +119,8 @@ impl AwsApiCallAction {
 }
 
 /// A builder for [`AwsApiCallAction`](crate::types::AwsApiCallAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsApiCallActionBuilder {
     pub(crate) api: ::std::option::Option<::std::string::String>,
     pub(crate) service_name: ::std::option::Option<::std::string::String>,

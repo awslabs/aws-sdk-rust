@@ -26,8 +26,8 @@ impl GetLicenseManagerReportGeneratorOutput {
 }
 
 /// A builder for [`GetLicenseManagerReportGeneratorOutput`](crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLicenseManagerReportGeneratorOutputBuilder {
     pub(crate) report_generator: ::std::option::Option<crate::types::ReportGenerator>,
     _request_id: Option<String>,

@@ -102,8 +102,8 @@ impl UpdatePartnershipOutput {
 }
 
 /// A builder for [`UpdatePartnershipOutput`](crate::operation::update_partnership::UpdatePartnershipOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdatePartnershipOutputBuilder {
     pub(crate) profile_id: ::std::option::Option<::std::string::String>,
     pub(crate) partnership_id: ::std::option::Option<::std::string::String>,

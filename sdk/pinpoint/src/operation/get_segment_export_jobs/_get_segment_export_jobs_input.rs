@@ -38,8 +38,8 @@ impl GetSegmentExportJobsInput {
 }
 
 /// A builder for [`GetSegmentExportJobsInput`](crate::operation::get_segment_export_jobs::GetSegmentExportJobsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSegmentExportJobsInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) page_size: ::std::option::Option<::std::string::String>,

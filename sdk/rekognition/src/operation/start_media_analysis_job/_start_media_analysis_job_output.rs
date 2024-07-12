@@ -27,8 +27,8 @@ impl StartMediaAnalysisJobOutput {
 }
 
 /// A builder for [`StartMediaAnalysisJobOutput`](crate::operation::start_media_analysis_job::StartMediaAnalysisJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartMediaAnalysisJobOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

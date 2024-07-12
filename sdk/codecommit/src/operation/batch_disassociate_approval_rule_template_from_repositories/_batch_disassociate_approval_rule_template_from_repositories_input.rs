@@ -32,8 +32,8 @@ impl BatchDisassociateApprovalRuleTemplateFromRepositoriesInput {
 }
 
 /// A builder for [`BatchDisassociateApprovalRuleTemplateFromRepositoriesInput`](crate::operation::batch_disassociate_approval_rule_template_from_repositories::BatchDisassociateApprovalRuleTemplateFromRepositoriesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDisassociateApprovalRuleTemplateFromRepositoriesInputBuilder {
     pub(crate) approval_rule_template_name: ::std::option::Option<::std::string::String>,
     pub(crate) repository_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

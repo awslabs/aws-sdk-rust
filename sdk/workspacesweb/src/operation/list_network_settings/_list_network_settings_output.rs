@@ -34,8 +34,8 @@ impl ListNetworkSettingsOutput {
 }
 
 /// A builder for [`ListNetworkSettingsOutput`](crate::operation::list_network_settings::ListNetworkSettingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListNetworkSettingsOutputBuilder {
     pub(crate) network_settings: ::std::option::Option<::std::vec::Vec<crate::types::NetworkSettingsSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

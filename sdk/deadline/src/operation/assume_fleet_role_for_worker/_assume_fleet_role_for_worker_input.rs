@@ -32,8 +32,8 @@ impl AssumeFleetRoleForWorkerInput {
 }
 
 /// A builder for [`AssumeFleetRoleForWorkerInput`](crate::operation::assume_fleet_role_for_worker::AssumeFleetRoleForWorkerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssumeFleetRoleForWorkerInputBuilder {
     pub(crate) farm_id: ::std::option::Option<::std::string::String>,
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,

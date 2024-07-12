@@ -21,8 +21,8 @@ impl DocumentsMetadataConfiguration {
 }
 
 /// A builder for [`DocumentsMetadataConfiguration`](crate::types::DocumentsMetadataConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DocumentsMetadataConfigurationBuilder {
     pub(crate) s3_prefix: ::std::option::Option<::std::string::String>,
 }

@@ -18,8 +18,8 @@ impl CreateBatchImportJobOutput {
 }
 
 /// A builder for [`CreateBatchImportJobOutput`](crate::operation::create_batch_import_job::CreateBatchImportJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateBatchImportJobOutputBuilder {
     _request_id: Option<String>,
 }

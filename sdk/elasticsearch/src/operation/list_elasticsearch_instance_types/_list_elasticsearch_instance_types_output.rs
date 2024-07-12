@@ -35,8 +35,8 @@ impl ListElasticsearchInstanceTypesOutput {
 }
 
 /// A builder for [`ListElasticsearchInstanceTypesOutput`](crate::operation::list_elasticsearch_instance_types::ListElasticsearchInstanceTypesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListElasticsearchInstanceTypesOutputBuilder {
     pub(crate) elasticsearch_instance_types: ::std::option::Option<::std::vec::Vec<crate::types::EsPartitionInstanceType>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

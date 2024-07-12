@@ -39,8 +39,8 @@ impl EstimateTemplateCostInput {
 }
 
 /// A builder for [`EstimateTemplateCostInput`](crate::operation::estimate_template_cost::EstimateTemplateCostInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EstimateTemplateCostInputBuilder {
     pub(crate) template_body: ::std::option::Option<::std::string::String>,
     pub(crate) template_url: ::std::option::Option<::std::string::String>,

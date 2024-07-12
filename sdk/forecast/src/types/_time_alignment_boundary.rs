@@ -40,8 +40,8 @@ impl TimeAlignmentBoundary {
 }
 
 /// A builder for [`TimeAlignmentBoundary`](crate::types::TimeAlignmentBoundary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TimeAlignmentBoundaryBuilder {
     pub(crate) month: ::std::option::Option<crate::types::Month>,
     pub(crate) day_of_month: ::std::option::Option<i32>,

@@ -34,8 +34,8 @@ impl DescribeServerlessCacheSnapshotsOutput {
 }
 
 /// A builder for [`DescribeServerlessCacheSnapshotsOutput`](crate::operation::describe_serverless_cache_snapshots::DescribeServerlessCacheSnapshotsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeServerlessCacheSnapshotsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) serverless_cache_snapshots: ::std::option::Option<::std::vec::Vec<crate::types::ServerlessCacheSnapshot>>,

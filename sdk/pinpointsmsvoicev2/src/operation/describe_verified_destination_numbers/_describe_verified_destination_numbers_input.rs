@@ -50,8 +50,8 @@ impl DescribeVerifiedDestinationNumbersInput {
 }
 
 /// A builder for [`DescribeVerifiedDestinationNumbersInput`](crate::operation::describe_verified_destination_numbers::DescribeVerifiedDestinationNumbersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeVerifiedDestinationNumbersInputBuilder {
     pub(crate) verified_destination_number_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) destination_phone_numbers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

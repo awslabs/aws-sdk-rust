@@ -74,8 +74,8 @@ impl CreateMicrosoftAdInput {
 }
 
 /// A builder for [`CreateMicrosoftAdInput`](crate::operation::create_microsoft_ad::CreateMicrosoftAdInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateMicrosoftAdInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) short_name: ::std::option::Option<::std::string::String>,

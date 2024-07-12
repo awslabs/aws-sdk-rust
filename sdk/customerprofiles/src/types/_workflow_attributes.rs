@@ -21,8 +21,8 @@ impl WorkflowAttributes {
 }
 
 /// A builder for [`WorkflowAttributes`](crate::types::WorkflowAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WorkflowAttributesBuilder {
     pub(crate) appflow_integration: ::std::option::Option<crate::types::AppflowIntegrationWorkflowAttributes>,
 }

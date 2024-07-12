@@ -38,8 +38,8 @@ impl DescribeEventsInput {
 }
 
 /// A builder for [`DescribeEventsInput`](crate::operation::describe_events::DescribeEventsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEventsInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::EventFilter>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

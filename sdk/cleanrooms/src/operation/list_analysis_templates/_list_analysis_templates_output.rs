@@ -33,8 +33,8 @@ impl ListAnalysisTemplatesOutput {
 }
 
 /// A builder for [`ListAnalysisTemplatesOutput`](crate::operation::list_analysis_templates::ListAnalysisTemplatesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAnalysisTemplatesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) analysis_template_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisTemplateSummary>>,

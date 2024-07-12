@@ -28,8 +28,8 @@ impl BatchGetDevicePositionError {
 }
 
 /// A builder for [`BatchGetDevicePositionError`](crate::types::BatchGetDevicePositionError).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetDevicePositionErrorBuilder {
     pub(crate) device_id: ::std::option::Option<::std::string::String>,
     pub(crate) error: ::std::option::Option<crate::types::BatchItemError>,

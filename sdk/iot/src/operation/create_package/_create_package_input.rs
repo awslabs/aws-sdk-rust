@@ -48,8 +48,8 @@ impl CreatePackageInput {
 }
 
 /// A builder for [`CreatePackageInput`](crate::operation::create_package::CreatePackageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreatePackageInputBuilder {
     pub(crate) package_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

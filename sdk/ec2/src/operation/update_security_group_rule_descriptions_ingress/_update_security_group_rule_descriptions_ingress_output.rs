@@ -28,8 +28,8 @@ impl UpdateSecurityGroupRuleDescriptionsIngressOutput {
 }
 
 /// A builder for [`UpdateSecurityGroupRuleDescriptionsIngressOutput`](crate::operation::update_security_group_rule_descriptions_ingress::UpdateSecurityGroupRuleDescriptionsIngressOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSecurityGroupRuleDescriptionsIngressOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,

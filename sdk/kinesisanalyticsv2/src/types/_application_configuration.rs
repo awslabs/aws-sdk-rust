@@ -65,8 +65,8 @@ impl ApplicationConfiguration {
 }
 
 /// A builder for [`ApplicationConfiguration`](crate::types::ApplicationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ApplicationConfigurationBuilder {
     pub(crate) sql_application_configuration: ::std::option::Option<crate::types::SqlApplicationConfiguration>,
     pub(crate) flink_application_configuration: ::std::option::Option<crate::types::FlinkApplicationConfiguration>,

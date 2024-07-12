@@ -18,8 +18,8 @@ impl DisassociateDiscoveredResourceOutput {
 }
 
 /// A builder for [`DisassociateDiscoveredResourceOutput`](crate::operation::disassociate_discovered_resource::DisassociateDiscoveredResourceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateDiscoveredResourceOutputBuilder {
     _request_id: Option<String>,
 }

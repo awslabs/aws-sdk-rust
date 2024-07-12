@@ -22,8 +22,8 @@ impl StopProjectVersionInput {
 }
 
 /// A builder for [`StopProjectVersionInput`](crate::operation::stop_project_version::StopProjectVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopProjectVersionInputBuilder {
     pub(crate) project_version_arn: ::std::option::Option<::std::string::String>,
 }

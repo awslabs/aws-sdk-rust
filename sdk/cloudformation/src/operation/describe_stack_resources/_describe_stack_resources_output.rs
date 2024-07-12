@@ -29,8 +29,8 @@ impl DescribeStackResourcesOutput {
 }
 
 /// A builder for [`DescribeStackResourcesOutput`](crate::operation::describe_stack_resources::DescribeStackResourcesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeStackResourcesOutputBuilder {
     pub(crate) stack_resources: ::std::option::Option<::std::vec::Vec<crate::types::StackResource>>,
     _request_id: Option<String>,

@@ -83,8 +83,8 @@ impl ModifyEndpointAccessOutput {
 }
 
 /// A builder for [`ModifyEndpointAccessOutput`](crate::operation::modify_endpoint_access::ModifyEndpointAccessOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyEndpointAccessOutputBuilder {
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) resource_owner: ::std::option::Option<::std::string::String>,

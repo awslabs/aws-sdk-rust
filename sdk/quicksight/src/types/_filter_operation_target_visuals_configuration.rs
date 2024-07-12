@@ -22,8 +22,8 @@ impl FilterOperationTargetVisualsConfiguration {
 }
 
 /// A builder for [`FilterOperationTargetVisualsConfiguration`](crate::types::FilterOperationTargetVisualsConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FilterOperationTargetVisualsConfigurationBuilder {
     pub(crate) same_sheet_target_visual_configuration: ::std::option::Option<crate::types::SameSheetTargetVisualConfiguration>,
 }

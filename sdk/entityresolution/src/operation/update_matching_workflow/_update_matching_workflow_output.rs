@@ -66,8 +66,8 @@ impl UpdateMatchingWorkflowOutput {
 }
 
 /// A builder for [`UpdateMatchingWorkflowOutput`](crate::operation::update_matching_workflow::UpdateMatchingWorkflowOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateMatchingWorkflowOutputBuilder {
     pub(crate) workflow_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

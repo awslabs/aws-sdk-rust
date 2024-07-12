@@ -34,8 +34,8 @@ impl BatchUpdateAttendeeCapabilitiesExceptInput {
 }
 
 /// A builder for [`BatchUpdateAttendeeCapabilitiesExceptInput`](crate::operation::batch_update_attendee_capabilities_except::BatchUpdateAttendeeCapabilitiesExceptInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchUpdateAttendeeCapabilitiesExceptInputBuilder {
     pub(crate) meeting_id: ::std::option::Option<::std::string::String>,
     pub(crate) excluded_attendee_ids: ::std::option::Option<::std::vec::Vec<crate::types::AttendeeIdItem>>,

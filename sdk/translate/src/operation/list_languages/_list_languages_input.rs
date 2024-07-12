@@ -32,8 +32,8 @@ impl ListLanguagesInput {
 }
 
 /// A builder for [`ListLanguagesInput`](crate::operation::list_languages::ListLanguagesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListLanguagesInputBuilder {
     pub(crate) display_language_code: ::std::option::Option<crate::types::DisplayLanguageCode>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

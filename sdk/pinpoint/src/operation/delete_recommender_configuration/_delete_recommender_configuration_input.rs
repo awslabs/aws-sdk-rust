@@ -20,8 +20,8 @@ impl DeleteRecommenderConfigurationInput {
 }
 
 /// A builder for [`DeleteRecommenderConfigurationInput`](crate::operation::delete_recommender_configuration::DeleteRecommenderConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRecommenderConfigurationInputBuilder {
     pub(crate) recommender_id: ::std::option::Option<::std::string::String>,
 }

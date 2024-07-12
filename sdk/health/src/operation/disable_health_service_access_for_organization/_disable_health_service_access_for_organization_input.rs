@@ -12,8 +12,8 @@ impl DisableHealthServiceAccessForOrganizationInput {
 }
 
 /// A builder for [`DisableHealthServiceAccessForOrganizationInput`](crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganizationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableHealthServiceAccessForOrganizationInputBuilder {}
 impl DisableHealthServiceAccessForOrganizationInputBuilder {
     /// Consumes the builder and constructs a [`DisableHealthServiceAccessForOrganizationInput`](crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganizationInput).

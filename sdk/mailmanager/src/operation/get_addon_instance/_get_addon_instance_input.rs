@@ -20,8 +20,8 @@ impl GetAddonInstanceInput {
 }
 
 /// A builder for [`GetAddonInstanceInput`](crate::operation::get_addon_instance::GetAddonInstanceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAddonInstanceInputBuilder {
     pub(crate) addon_instance_id: ::std::option::Option<::std::string::String>,
 }

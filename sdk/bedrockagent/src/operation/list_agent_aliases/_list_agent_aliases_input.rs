@@ -32,8 +32,8 @@ impl ListAgentAliasesInput {
 }
 
 /// A builder for [`ListAgentAliasesInput`](crate::operation::list_agent_aliases::ListAgentAliasesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAgentAliasesInputBuilder {
     pub(crate) agent_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

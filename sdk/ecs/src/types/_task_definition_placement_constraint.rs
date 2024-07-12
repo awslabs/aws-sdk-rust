@@ -29,8 +29,8 @@ impl TaskDefinitionPlacementConstraint {
 }
 
 /// A builder for [`TaskDefinitionPlacementConstraint`](crate::types::TaskDefinitionPlacementConstraint).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TaskDefinitionPlacementConstraintBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::TaskDefinitionPlacementConstraintType>,
     pub(crate) expression: ::std::option::Option<::std::string::String>,

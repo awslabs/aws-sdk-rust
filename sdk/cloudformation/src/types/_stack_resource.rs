@@ -81,8 +81,8 @@ impl StackResource {
 }
 
 /// A builder for [`StackResource`](crate::types::StackResource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StackResourceBuilder {
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,

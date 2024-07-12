@@ -21,8 +21,8 @@ impl DeleteEventBridgeRuleTemplateInput {
 }
 
 /// A builder for [`DeleteEventBridgeRuleTemplateInput`](crate::operation::delete_event_bridge_rule_template::DeleteEventBridgeRuleTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteEventBridgeRuleTemplateInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
 }

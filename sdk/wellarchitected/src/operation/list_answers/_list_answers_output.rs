@@ -67,8 +67,8 @@ impl ListAnswersOutput {
 }
 
 /// A builder for [`ListAnswersOutput`](crate::operation::list_answers::ListAnswersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAnswersOutputBuilder {
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,
     pub(crate) milestone_number: ::std::option::Option<i32>,

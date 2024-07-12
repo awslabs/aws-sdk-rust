@@ -20,8 +20,8 @@ impl GetSamplingStatisticSummariesInput {
 }
 
 /// A builder for [`GetSamplingStatisticSummariesInput`](crate::operation::get_sampling_statistic_summaries::GetSamplingStatisticSummariesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSamplingStatisticSummariesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }

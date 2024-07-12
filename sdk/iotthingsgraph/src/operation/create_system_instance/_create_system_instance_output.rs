@@ -26,8 +26,8 @@ impl CreateSystemInstanceOutput {
 }
 
 /// A builder for [`CreateSystemInstanceOutput`](crate::operation::create_system_instance::CreateSystemInstanceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSystemInstanceOutputBuilder {
     pub(crate) summary: ::std::option::Option<crate::types::SystemInstanceSummary>,
     _request_id: Option<String>,

@@ -26,8 +26,8 @@ impl DescribeServerOutput {
 }
 
 /// A builder for [`DescribeServerOutput`](crate::operation::describe_server::DescribeServerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeServerOutputBuilder {
     pub(crate) server: ::std::option::Option<crate::types::DescribedServer>,
     _request_id: Option<String>,

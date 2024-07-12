@@ -38,8 +38,8 @@ impl QuerySchemaVersionMetadataOutput {
 }
 
 /// A builder for [`QuerySchemaVersionMetadataOutput`](crate::operation::query_schema_version_metadata::QuerySchemaVersionMetadataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct QuerySchemaVersionMetadataOutputBuilder {
     pub(crate) metadata_info_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataInfo>>,
     pub(crate) schema_version_id: ::std::option::Option<::std::string::String>,

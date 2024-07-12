@@ -20,8 +20,8 @@ impl GetBrowserSettingsInput {
 }
 
 /// A builder for [`GetBrowserSettingsInput`](crate::operation::get_browser_settings::GetBrowserSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBrowserSettingsInputBuilder {
     pub(crate) browser_settings_arn: ::std::option::Option<::std::string::String>,
 }

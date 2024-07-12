@@ -41,8 +41,8 @@ impl ExternalSourcesGenerationConfiguration {
 }
 
 /// A builder for [`ExternalSourcesGenerationConfiguration`](crate::types::ExternalSourcesGenerationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExternalSourcesGenerationConfigurationBuilder {
     pub(crate) prompt_template: ::std::option::Option<crate::types::PromptTemplate>,
     pub(crate) guardrail_configuration: ::std::option::Option<crate::types::GuardrailConfiguration>,

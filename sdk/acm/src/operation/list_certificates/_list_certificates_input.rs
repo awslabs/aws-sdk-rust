@@ -52,8 +52,8 @@ impl ListCertificatesInput {
 }
 
 /// A builder for [`ListCertificatesInput`](crate::operation::list_certificates::ListCertificatesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCertificatesInputBuilder {
     pub(crate) certificate_statuses: ::std::option::Option<::std::vec::Vec<crate::types::CertificateStatus>>,
     pub(crate) includes: ::std::option::Option<crate::types::Filters>,

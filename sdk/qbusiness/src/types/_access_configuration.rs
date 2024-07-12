@@ -28,8 +28,8 @@ impl AccessConfiguration {
 }
 
 /// A builder for [`AccessConfiguration`](crate::types::AccessConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AccessConfigurationBuilder {
     pub(crate) access_controls: ::std::option::Option<::std::vec::Vec<crate::types::AccessControl>>,
     pub(crate) member_relation: ::std::option::Option<crate::types::MemberRelation>,

@@ -41,8 +41,8 @@ impl SqlInjectionMatchSet {
 }
 
 /// A builder for [`SqlInjectionMatchSet`](crate::types::SqlInjectionMatchSet).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SqlInjectionMatchSetBuilder {
     pub(crate) sql_injection_match_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

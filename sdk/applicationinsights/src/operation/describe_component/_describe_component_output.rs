@@ -34,8 +34,8 @@ impl DescribeComponentOutput {
 }
 
 /// A builder for [`DescribeComponentOutput`](crate::operation::describe_component::DescribeComponentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeComponentOutputBuilder {
     pub(crate) application_component: ::std::option::Option<crate::types::ApplicationComponent>,
     pub(crate) resource_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

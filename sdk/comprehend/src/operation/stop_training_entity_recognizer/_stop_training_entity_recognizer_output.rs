@@ -18,8 +18,8 @@ impl StopTrainingEntityRecognizerOutput {
 }
 
 /// A builder for [`StopTrainingEntityRecognizerOutput`](crate::operation::stop_training_entity_recognizer::StopTrainingEntityRecognizerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopTrainingEntityRecognizerOutputBuilder {
     _request_id: Option<String>,
 }

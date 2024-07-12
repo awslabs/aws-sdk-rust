@@ -45,8 +45,8 @@ impl HierarchyGroups {
 }
 
 /// A builder for [`HierarchyGroups`](crate::types::HierarchyGroups).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HierarchyGroupsBuilder {
     pub(crate) level1: ::std::option::Option<crate::types::AgentHierarchyGroup>,
     pub(crate) level2: ::std::option::Option<crate::types::AgentHierarchyGroup>,

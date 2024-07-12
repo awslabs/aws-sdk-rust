@@ -21,8 +21,8 @@ impl KafkaClusterEncryptionInTransit {
 }
 
 /// A builder for [`KafkaClusterEncryptionInTransit`](crate::types::KafkaClusterEncryptionInTransit).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KafkaClusterEncryptionInTransitBuilder {
     pub(crate) encryption_type: ::std::option::Option<crate::types::KafkaClusterEncryptionInTransitType>,
 }

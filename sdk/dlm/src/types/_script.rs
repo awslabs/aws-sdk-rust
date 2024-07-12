@@ -139,8 +139,8 @@ impl Script {
 }
 
 /// A builder for [`Script`](crate::types::Script).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScriptBuilder {
     pub(crate) stages: ::std::option::Option<::std::vec::Vec<crate::types::StageValues>>,
     pub(crate) execution_handler_service: ::std::option::Option<crate::types::ExecutionHandlerServiceValues>,

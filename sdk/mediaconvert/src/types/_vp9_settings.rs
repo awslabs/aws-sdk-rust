@@ -93,8 +93,8 @@ impl Vp9Settings {
 }
 
 /// A builder for [`Vp9Settings`](crate::types::Vp9Settings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Vp9SettingsBuilder {
     pub(crate) bitrate: ::std::option::Option<i32>,
     pub(crate) framerate_control: ::std::option::Option<crate::types::Vp9FramerateControl>,

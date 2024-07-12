@@ -48,8 +48,8 @@ impl CreateSourceNetworkInput {
 }
 
 /// A builder for [`CreateSourceNetworkInput`](crate::operation::create_source_network::CreateSourceNetworkInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateSourceNetworkInputBuilder {
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) origin_account_id: ::std::option::Option<::std::string::String>,

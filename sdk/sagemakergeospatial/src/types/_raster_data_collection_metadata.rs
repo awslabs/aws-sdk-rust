@@ -61,8 +61,8 @@ impl RasterDataCollectionMetadata {
 }
 
 /// A builder for [`RasterDataCollectionMetadata`](crate::types::RasterDataCollectionMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RasterDataCollectionMetadataBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

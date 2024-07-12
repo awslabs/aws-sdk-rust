@@ -41,8 +41,8 @@ impl EntitlementUsage {
 }
 
 /// A builder for [`EntitlementUsage`](crate::types::EntitlementUsage).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EntitlementUsageBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) consumed_value: ::std::option::Option<::std::string::String>,

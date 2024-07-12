@@ -23,8 +23,8 @@ impl ConnectionsList {
 }
 
 /// A builder for [`ConnectionsList`](crate::types::ConnectionsList).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConnectionsListBuilder {
     pub(crate) connections: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

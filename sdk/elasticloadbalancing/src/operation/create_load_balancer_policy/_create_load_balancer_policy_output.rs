@@ -19,8 +19,8 @@ impl CreateLoadBalancerPolicyOutput {
 }
 
 /// A builder for [`CreateLoadBalancerPolicyOutput`](crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLoadBalancerPolicyOutputBuilder {
     _request_id: Option<String>,
 }

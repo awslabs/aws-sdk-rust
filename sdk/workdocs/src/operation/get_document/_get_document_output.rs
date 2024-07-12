@@ -32,8 +32,8 @@ impl GetDocumentOutput {
 }
 
 /// A builder for [`GetDocumentOutput`](crate::operation::get_document::GetDocumentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDocumentOutputBuilder {
     pub(crate) metadata: ::std::option::Option<crate::types::DocumentMetadata>,
     pub(crate) custom_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

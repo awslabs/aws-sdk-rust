@@ -26,8 +26,8 @@ impl RegisterComputeOutput {
 }
 
 /// A builder for [`RegisterComputeOutput`](crate::operation::register_compute::RegisterComputeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterComputeOutputBuilder {
     pub(crate) compute: ::std::option::Option<crate::types::Compute>,
     _request_id: Option<String>,

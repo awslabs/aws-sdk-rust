@@ -213,8 +213,8 @@ impl SetQueueAttributesInput {
 }
 
 /// A builder for [`SetQueueAttributesInput`](crate::operation::set_queue_attributes::SetQueueAttributesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetQueueAttributesInputBuilder {
     pub(crate) queue_url: ::std::option::Option<::std::string::String>,
     pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<crate::types::QueueAttributeName, ::std::string::String>>,

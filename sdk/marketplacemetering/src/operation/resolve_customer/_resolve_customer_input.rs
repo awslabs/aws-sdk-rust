@@ -21,8 +21,8 @@ impl ResolveCustomerInput {
 }
 
 /// A builder for [`ResolveCustomerInput`](crate::operation::resolve_customer::ResolveCustomerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResolveCustomerInputBuilder {
     pub(crate) registration_token: ::std::option::Option<::std::string::String>,
 }

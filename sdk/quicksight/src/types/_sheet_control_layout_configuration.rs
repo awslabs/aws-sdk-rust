@@ -21,8 +21,8 @@ impl SheetControlLayoutConfiguration {
 }
 
 /// A builder for [`SheetControlLayoutConfiguration`](crate::types::SheetControlLayoutConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SheetControlLayoutConfigurationBuilder {
     pub(crate) grid_layout: ::std::option::Option<crate::types::GridLayoutConfiguration>,
 }

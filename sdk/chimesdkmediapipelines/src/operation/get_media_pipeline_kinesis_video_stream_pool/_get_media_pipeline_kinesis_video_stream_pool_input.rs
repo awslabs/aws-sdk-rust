@@ -20,8 +20,8 @@ impl GetMediaPipelineKinesisVideoStreamPoolInput {
 }
 
 /// A builder for [`GetMediaPipelineKinesisVideoStreamPoolInput`](crate::operation::get_media_pipeline_kinesis_video_stream_pool::GetMediaPipelineKinesisVideoStreamPoolInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMediaPipelineKinesisVideoStreamPoolInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
 }

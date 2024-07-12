@@ -27,8 +27,8 @@ impl GetDomainAssociationOutput {
 }
 
 /// A builder for [`GetDomainAssociationOutput`](crate::operation::get_domain_association::GetDomainAssociationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDomainAssociationOutputBuilder {
     pub(crate) domain_association: ::std::option::Option<crate::types::DomainAssociation>,
     _request_id: Option<String>,

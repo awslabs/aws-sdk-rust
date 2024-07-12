@@ -27,8 +27,8 @@ impl DataColor {
 }
 
 /// A builder for [`DataColor`](crate::types::DataColor).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataColorBuilder {
     pub(crate) color: ::std::option::Option<::std::string::String>,
     pub(crate) data_value: ::std::option::Option<f64>,

@@ -27,8 +27,8 @@ impl OutputResolutionStackInput {
 }
 
 /// A builder for [`OutputResolutionStackInput`](crate::types::OutputResolutionStackInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OutputResolutionStackInputBuilder {
     pub(crate) predefined: ::std::option::Option<crate::types::PredefinedResolution>,
     pub(crate) user_defined: ::std::option::Option<crate::types::UserDefined>,

@@ -27,8 +27,8 @@ impl AdvancedSecurityOptionsStatus {
 }
 
 /// A builder for [`AdvancedSecurityOptionsStatus`](crate::types::AdvancedSecurityOptionsStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AdvancedSecurityOptionsStatusBuilder {
     pub(crate) options: ::std::option::Option<crate::types::AdvancedSecurityOptions>,
     pub(crate) status: ::std::option::Option<crate::types::OptionStatus>,

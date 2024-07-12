@@ -40,8 +40,8 @@ impl TitleAggregationResponse {
 }
 
 /// A builder for [`TitleAggregationResponse`](crate::types::TitleAggregationResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TitleAggregationResponseBuilder {
     pub(crate) title: ::std::option::Option<::std::string::String>,
     pub(crate) vulnerability_id: ::std::option::Option<::std::string::String>,

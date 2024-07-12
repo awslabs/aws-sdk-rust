@@ -28,8 +28,8 @@ impl TimeToLiveSpecification {
 }
 
 /// A builder for [`TimeToLiveSpecification`](crate::types::TimeToLiveSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TimeToLiveSpecificationBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) attribute_name: ::std::option::Option<::std::string::String>,

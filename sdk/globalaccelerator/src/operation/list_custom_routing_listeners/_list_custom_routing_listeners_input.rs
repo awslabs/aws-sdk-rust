@@ -32,8 +32,8 @@ impl ListCustomRoutingListenersInput {
 }
 
 /// A builder for [`ListCustomRoutingListenersInput`](crate::operation::list_custom_routing_listeners::ListCustomRoutingListenersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCustomRoutingListenersInputBuilder {
     pub(crate) accelerator_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

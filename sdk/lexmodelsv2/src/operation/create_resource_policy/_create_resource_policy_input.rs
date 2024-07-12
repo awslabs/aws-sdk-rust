@@ -28,8 +28,8 @@ impl CreateResourcePolicyInput {
 }
 
 /// A builder for [`CreateResourcePolicyInput`](crate::operation::create_resource_policy::CreateResourcePolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateResourcePolicyInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) policy: ::std::option::Option<::std::string::String>,

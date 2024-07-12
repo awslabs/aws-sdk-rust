@@ -40,8 +40,8 @@ impl ListOpsItemRelatedItemsInput {
 }
 
 /// A builder for [`ListOpsItemRelatedItemsInput`](crate::operation::list_ops_item_related_items::ListOpsItemRelatedItemsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListOpsItemRelatedItemsInputBuilder {
     pub(crate) ops_item_id: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::OpsItemRelatedItemsFilter>>,

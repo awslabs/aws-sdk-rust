@@ -33,8 +33,8 @@ impl AllowedRenditionSize {
 }
 
 /// A builder for [`AllowedRenditionSize`](crate::types::AllowedRenditionSize).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AllowedRenditionSizeBuilder {
     pub(crate) height: ::std::option::Option<i32>,
     pub(crate) required: ::std::option::Option<crate::types::RequiredFlag>,

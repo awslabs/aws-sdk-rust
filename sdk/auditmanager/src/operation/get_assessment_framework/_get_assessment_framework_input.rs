@@ -20,8 +20,8 @@ impl GetAssessmentFrameworkInput {
 }
 
 /// A builder for [`GetAssessmentFrameworkInput`](crate::operation::get_assessment_framework::GetAssessmentFrameworkInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAssessmentFrameworkInputBuilder {
     pub(crate) framework_id: ::std::option::Option<::std::string::String>,
 }

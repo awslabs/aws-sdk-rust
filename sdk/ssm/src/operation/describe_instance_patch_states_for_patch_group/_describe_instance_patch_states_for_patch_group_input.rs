@@ -57,8 +57,8 @@ impl DescribeInstancePatchStatesForPatchGroupInput {
 }
 
 /// A builder for [`DescribeInstancePatchStatesForPatchGroupInput`](crate::operation::describe_instance_patch_states_for_patch_group::DescribeInstancePatchStatesForPatchGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeInstancePatchStatesForPatchGroupInputBuilder {
     pub(crate) patch_group: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::InstancePatchStateFilter>>,

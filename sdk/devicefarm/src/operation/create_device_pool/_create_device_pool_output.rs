@@ -27,8 +27,8 @@ impl CreateDevicePoolOutput {
 }
 
 /// A builder for [`CreateDevicePoolOutput`](crate::operation::create_device_pool::CreateDevicePoolOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDevicePoolOutputBuilder {
     pub(crate) device_pool: ::std::option::Option<crate::types::DevicePool>,
     _request_id: Option<String>,

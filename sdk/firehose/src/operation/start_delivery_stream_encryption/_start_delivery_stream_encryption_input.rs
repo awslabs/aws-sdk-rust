@@ -26,8 +26,8 @@ impl StartDeliveryStreamEncryptionInput {
 }
 
 /// A builder for [`StartDeliveryStreamEncryptionInput`](crate::operation::start_delivery_stream_encryption::StartDeliveryStreamEncryptionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartDeliveryStreamEncryptionInputBuilder {
     pub(crate) delivery_stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) delivery_stream_encryption_configuration_input: ::std::option::Option<crate::types::DeliveryStreamEncryptionConfigurationInput>,

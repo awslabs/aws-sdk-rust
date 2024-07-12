@@ -52,8 +52,8 @@ impl CreateHoursOfOperationInput {
 }
 
 /// A builder for [`CreateHoursOfOperationInput`](crate::operation::create_hours_of_operation::CreateHoursOfOperationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateHoursOfOperationInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

@@ -33,8 +33,8 @@ impl DeleteReplicationGroupInput {
 }
 
 /// A builder for [`DeleteReplicationGroupInput`](crate::operation::delete_replication_group::DeleteReplicationGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteReplicationGroupInputBuilder {
     pub(crate) replication_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) retain_primary_cluster: ::std::option::Option<bool>,

@@ -50,8 +50,8 @@ impl UpdateIngressPointInput {
 }
 
 /// A builder for [`UpdateIngressPointInput`](crate::operation::update_ingress_point::UpdateIngressPointInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateIngressPointInputBuilder {
     pub(crate) ingress_point_id: ::std::option::Option<::std::string::String>,
     pub(crate) ingress_point_name: ::std::option::Option<::std::string::String>,

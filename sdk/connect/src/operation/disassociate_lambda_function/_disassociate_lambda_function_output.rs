@@ -18,8 +18,8 @@ impl DisassociateLambdaFunctionOutput {
 }
 
 /// A builder for [`DisassociateLambdaFunctionOutput`](crate::operation::disassociate_lambda_function::DisassociateLambdaFunctionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateLambdaFunctionOutputBuilder {
     _request_id: Option<String>,
 }

@@ -28,8 +28,8 @@ impl GetContactMethodsOutput {
 }
 
 /// A builder for [`GetContactMethodsOutput`](crate::operation::get_contact_methods::GetContactMethodsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetContactMethodsOutputBuilder {
     pub(crate) contact_methods: ::std::option::Option<::std::vec::Vec<crate::types::ContactMethod>>,
     _request_id: Option<String>,

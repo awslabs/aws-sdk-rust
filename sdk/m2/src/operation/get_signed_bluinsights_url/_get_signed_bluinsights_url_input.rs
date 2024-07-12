@@ -11,8 +11,8 @@ impl GetSignedBluinsightsUrlInput {
 }
 
 /// A builder for [`GetSignedBluinsightsUrlInput`](crate::operation::get_signed_bluinsights_url::GetSignedBluinsightsUrlInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSignedBluinsightsUrlInputBuilder {}
 impl GetSignedBluinsightsUrlInputBuilder {
     /// Consumes the builder and constructs a [`GetSignedBluinsightsUrlInput`](crate::operation::get_signed_bluinsights_url::GetSignedBluinsightsUrlInput).

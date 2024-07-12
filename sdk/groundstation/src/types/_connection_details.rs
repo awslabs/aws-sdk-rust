@@ -27,8 +27,8 @@ impl ConnectionDetails {
 }
 
 /// A builder for [`ConnectionDetails`](crate::types::ConnectionDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConnectionDetailsBuilder {
     pub(crate) socket_address: ::std::option::Option<crate::types::SocketAddress>,
     pub(crate) mtu: ::std::option::Option<i32>,

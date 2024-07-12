@@ -20,8 +20,8 @@ impl ReleaseStaticIpInput {
 }
 
 /// A builder for [`ReleaseStaticIpInput`](crate::operation::release_static_ip::ReleaseStaticIpInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReleaseStaticIpInputBuilder {
     pub(crate) static_ip_name: ::std::option::Option<::std::string::String>,
 }

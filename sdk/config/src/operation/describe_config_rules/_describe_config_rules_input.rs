@@ -35,8 +35,8 @@ impl DescribeConfigRulesInput {
 }
 
 /// A builder for [`DescribeConfigRulesInput`](crate::operation::describe_config_rules::DescribeConfigRulesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeConfigRulesInputBuilder {
     pub(crate) config_rule_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

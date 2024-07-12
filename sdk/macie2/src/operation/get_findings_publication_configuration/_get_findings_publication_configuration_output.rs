@@ -26,8 +26,8 @@ impl GetFindingsPublicationConfigurationOutput {
 }
 
 /// A builder for [`GetFindingsPublicationConfigurationOutput`](crate::operation::get_findings_publication_configuration::GetFindingsPublicationConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetFindingsPublicationConfigurationOutputBuilder {
     pub(crate) security_hub_configuration: ::std::option::Option<crate::types::SecurityHubConfiguration>,
     _request_id: Option<String>,

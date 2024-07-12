@@ -82,8 +82,8 @@ impl StartKeyPhrasesDetectionJobOutput {
 }
 
 /// A builder for [`StartKeyPhrasesDetectionJobOutput`](crate::operation::start_key_phrases_detection_job::StartKeyPhrasesDetectionJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartKeyPhrasesDetectionJobOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_arn: ::std::option::Option<::std::string::String>,

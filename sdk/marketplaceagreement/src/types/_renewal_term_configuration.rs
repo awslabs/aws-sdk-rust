@@ -21,8 +21,8 @@ impl RenewalTermConfiguration {
 }
 
 /// A builder for [`RenewalTermConfiguration`](crate::types::RenewalTermConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RenewalTermConfigurationBuilder {
     pub(crate) enable_auto_renew: ::std::option::Option<bool>,
 }

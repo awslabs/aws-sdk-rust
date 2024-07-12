@@ -190,8 +190,8 @@ impl DescribeDbRecommendationsInput {
 }
 
 /// A builder for [`DescribeDbRecommendationsInput`](crate::operation::describe_db_recommendations::DescribeDbRecommendationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDbRecommendationsInputBuilder {
     pub(crate) last_updated_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_before: ::std::option::Option<::aws_smithy_types::DateTime>,

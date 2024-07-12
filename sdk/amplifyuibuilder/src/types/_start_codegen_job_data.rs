@@ -45,8 +45,8 @@ impl StartCodegenJobData {
 }
 
 /// A builder for [`StartCodegenJobData`](crate::types::StartCodegenJobData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartCodegenJobDataBuilder {
     pub(crate) render_config: ::std::option::Option<crate::types::CodegenJobRenderConfig>,
     pub(crate) generic_data_schema: ::std::option::Option<crate::types::CodegenJobGenericDataSchema>,

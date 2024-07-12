@@ -32,8 +32,8 @@ impl CancelIngestionInput {
 }
 
 /// A builder for [`CancelIngestionInput`](crate::operation::cancel_ingestion::CancelIngestionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelIngestionInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,

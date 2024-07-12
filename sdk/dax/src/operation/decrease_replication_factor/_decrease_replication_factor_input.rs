@@ -42,8 +42,8 @@ impl DecreaseReplicationFactorInput {
 }
 
 /// A builder for [`DecreaseReplicationFactorInput`](crate::operation::decrease_replication_factor::DecreaseReplicationFactorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DecreaseReplicationFactorInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) new_replication_factor: ::std::option::Option<i32>,

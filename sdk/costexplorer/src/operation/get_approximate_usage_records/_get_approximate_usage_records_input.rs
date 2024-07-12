@@ -34,8 +34,8 @@ impl GetApproximateUsageRecordsInput {
 }
 
 /// A builder for [`GetApproximateUsageRecordsInput`](crate::operation::get_approximate_usage_records::GetApproximateUsageRecordsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetApproximateUsageRecordsInputBuilder {
     pub(crate) granularity: ::std::option::Option<crate::types::Granularity>,
     pub(crate) services: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

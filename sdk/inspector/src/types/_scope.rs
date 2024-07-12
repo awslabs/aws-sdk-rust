@@ -27,8 +27,8 @@ impl Scope {
 }
 
 /// A builder for [`Scope`](crate::types::Scope).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScopeBuilder {
     pub(crate) key: ::std::option::Option<crate::types::ScopeType>,
     pub(crate) value: ::std::option::Option<::std::string::String>,

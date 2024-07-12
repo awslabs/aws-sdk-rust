@@ -57,8 +57,8 @@ impl ResetServiceSettingInput {
 }
 
 /// A builder for [`ResetServiceSettingInput`](crate::operation::reset_service_setting::ResetServiceSettingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResetServiceSettingInputBuilder {
     pub(crate) setting_id: ::std::option::Option<::std::string::String>,
 }

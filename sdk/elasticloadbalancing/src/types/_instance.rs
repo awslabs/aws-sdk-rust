@@ -21,8 +21,8 @@ impl Instance {
 }
 
 /// A builder for [`Instance`](crate::types::Instance).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
 }

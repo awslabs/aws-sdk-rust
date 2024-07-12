@@ -29,8 +29,8 @@ impl BatchAssociateClientDeviceWithCoreDeviceOutput {
 }
 
 /// A builder for [`BatchAssociateClientDeviceWithCoreDeviceOutput`](crate::operation::batch_associate_client_device_with_core_device::BatchAssociateClientDeviceWithCoreDeviceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchAssociateClientDeviceWithCoreDeviceOutputBuilder {
     pub(crate) error_entries: ::std::option::Option<::std::vec::Vec<crate::types::AssociateClientDeviceWithCoreDeviceErrorEntry>>,
     _request_id: Option<String>,

@@ -30,8 +30,8 @@ impl RemoveRoleFromInstanceProfileInput {
 }
 
 /// A builder for [`RemoveRoleFromInstanceProfileInput`](crate::operation::remove_role_from_instance_profile::RemoveRoleFromInstanceProfileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoveRoleFromInstanceProfileInputBuilder {
     pub(crate) instance_profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) role_name: ::std::option::Option<::std::string::String>,

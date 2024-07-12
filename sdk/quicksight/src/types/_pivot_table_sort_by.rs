@@ -33,8 +33,8 @@ impl PivotTableSortBy {
 }
 
 /// A builder for [`PivotTableSortBy`](crate::types::PivotTableSortBy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PivotTableSortByBuilder {
     pub(crate) field: ::std::option::Option<crate::types::FieldSort>,
     pub(crate) column: ::std::option::Option<crate::types::ColumnSort>,

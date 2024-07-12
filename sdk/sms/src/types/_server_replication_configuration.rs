@@ -27,8 +27,8 @@ impl ServerReplicationConfiguration {
 }
 
 /// A builder for [`ServerReplicationConfiguration`](crate::types::ServerReplicationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServerReplicationConfigurationBuilder {
     pub(crate) server: ::std::option::Option<crate::types::Server>,
     pub(crate) server_replication_parameters: ::std::option::Option<crate::types::ServerReplicationParameters>,

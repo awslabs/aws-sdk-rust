@@ -22,8 +22,8 @@ impl ClearTimerAction {
 }
 
 /// A builder for [`ClearTimerAction`](crate::types::ClearTimerAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ClearTimerActionBuilder {
     pub(crate) timer_name: ::std::option::Option<::std::string::String>,
 }

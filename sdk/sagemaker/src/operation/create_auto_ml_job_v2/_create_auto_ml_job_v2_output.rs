@@ -26,8 +26,8 @@ impl CreateAutoMlJobV2Output {
 }
 
 /// A builder for [`CreateAutoMlJobV2Output`](crate::operation::create_auto_ml_job_v2::CreateAutoMlJobV2Output).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAutoMlJobV2OutputBuilder {
     pub(crate) auto_ml_job_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

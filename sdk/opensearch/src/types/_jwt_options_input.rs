@@ -39,8 +39,8 @@ impl JwtOptionsInput {
 }
 
 /// A builder for [`JwtOptionsInput`](crate::types::JwtOptionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JwtOptionsInputBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) subject_key: ::std::option::Option<::std::string::String>,

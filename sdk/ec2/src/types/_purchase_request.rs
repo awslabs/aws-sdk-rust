@@ -27,8 +27,8 @@ impl PurchaseRequest {
 }
 
 /// A builder for [`PurchaseRequest`](crate::types::PurchaseRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PurchaseRequestBuilder {
     pub(crate) instance_count: ::std::option::Option<i32>,
     pub(crate) purchase_token: ::std::option::Option<::std::string::String>,

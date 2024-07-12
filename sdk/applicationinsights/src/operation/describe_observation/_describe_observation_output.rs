@@ -26,8 +26,8 @@ impl DescribeObservationOutput {
 }
 
 /// A builder for [`DescribeObservationOutput`](crate::operation::describe_observation::DescribeObservationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeObservationOutputBuilder {
     pub(crate) observation: ::std::option::Option<crate::types::Observation>,
     _request_id: Option<String>,

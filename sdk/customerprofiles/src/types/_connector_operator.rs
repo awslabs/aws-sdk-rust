@@ -45,8 +45,8 @@ impl ConnectorOperator {
 }
 
 /// A builder for [`ConnectorOperator`](crate::types::ConnectorOperator).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConnectorOperatorBuilder {
     pub(crate) marketo: ::std::option::Option<crate::types::MarketoConnectorOperator>,
     pub(crate) s3: ::std::option::Option<crate::types::S3ConnectorOperator>,

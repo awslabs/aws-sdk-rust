@@ -41,8 +41,8 @@ impl DescribeStackEventsInput {
 }
 
 /// A builder for [`DescribeStackEventsInput`](crate::operation::describe_stack_events::DescribeStackEventsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeStackEventsInputBuilder {
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

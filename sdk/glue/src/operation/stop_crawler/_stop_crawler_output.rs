@@ -18,8 +18,8 @@ impl StopCrawlerOutput {
 }
 
 /// A builder for [`StopCrawlerOutput`](crate::operation::stop_crawler::StopCrawlerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopCrawlerOutputBuilder {
     _request_id: Option<String>,
 }

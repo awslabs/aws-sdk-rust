@@ -39,8 +39,8 @@ impl ReturnInformation {
 }
 
 /// A builder for [`ReturnInformation`](crate::types::ReturnInformation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReturnInformationBuilder {
     pub(crate) shipping_address: ::std::option::Option<crate::types::Address>,
     pub(crate) return_reason: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl GetExtensionInput {
 }
 
 /// A builder for [`GetExtensionInput`](crate::operation::get_extension::GetExtensionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetExtensionInputBuilder {
     pub(crate) extension_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) version_number: ::std::option::Option<i32>,

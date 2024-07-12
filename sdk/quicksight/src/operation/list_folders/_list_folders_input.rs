@@ -32,8 +32,8 @@ impl ListFoldersInput {
 }
 
 /// A builder for [`ListFoldersInput`](crate::operation::list_folders::ListFoldersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFoldersInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

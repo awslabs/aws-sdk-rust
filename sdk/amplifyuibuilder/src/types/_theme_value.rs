@@ -29,8 +29,8 @@ impl ThemeValue {
 }
 
 /// A builder for [`ThemeValue`](crate::types::ThemeValue).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ThemeValueBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
     pub(crate) children: ::std::option::Option<::std::vec::Vec<crate::types::ThemeValues>>,

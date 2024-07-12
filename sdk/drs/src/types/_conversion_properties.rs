@@ -60,8 +60,8 @@ impl ConversionProperties {
 }
 
 /// A builder for [`ConversionProperties`](crate::types::ConversionProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConversionPropertiesBuilder {
     pub(crate) volume_to_conversion_map: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,

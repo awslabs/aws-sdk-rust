@@ -21,8 +21,8 @@ impl RenderableTask {
 }
 
 /// A builder for [`RenderableTask`](crate::types::RenderableTask).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RenderableTaskBuilder {
     pub(crate) input: ::std::option::Option<::std::string::String>,
 }

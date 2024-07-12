@@ -54,8 +54,8 @@ impl DescribeMacHostsInput {
 }
 
 /// A builder for [`DescribeMacHostsInput`](crate::operation::describe_mac_hosts::DescribeMacHostsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeMacHostsInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) host_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

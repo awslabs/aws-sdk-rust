@@ -20,8 +20,8 @@ impl CancelMessageMoveTaskInput {
 }
 
 /// A builder for [`CancelMessageMoveTaskInput`](crate::operation::cancel_message_move_task::CancelMessageMoveTaskInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelMessageMoveTaskInputBuilder {
     pub(crate) task_handle: ::std::option::Option<::std::string::String>,
 }

@@ -18,8 +18,8 @@ impl UpdateRulesOfIpGroupOutput {
 }
 
 /// A builder for [`UpdateRulesOfIpGroupOutput`](crate::operation::update_rules_of_ip_group::UpdateRulesOfIpGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRulesOfIpGroupOutputBuilder {
     _request_id: Option<String>,
 }

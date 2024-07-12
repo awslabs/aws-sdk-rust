@@ -59,8 +59,8 @@ impl OAuth2CustomParameter {
 }
 
 /// A builder for [`OAuth2CustomParameter`](crate::types::OAuth2CustomParameter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OAuth2CustomParameterBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) is_required: ::std::option::Option<bool>,

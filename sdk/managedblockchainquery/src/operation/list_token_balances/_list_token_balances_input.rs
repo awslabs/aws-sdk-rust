@@ -50,8 +50,8 @@ impl ListTokenBalancesInput {
 }
 
 /// A builder for [`ListTokenBalancesInput`](crate::operation::list_token_balances::ListTokenBalancesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTokenBalancesInputBuilder {
     pub(crate) owner_filter: ::std::option::Option<crate::types::OwnerFilter>,
     pub(crate) token_filter: ::std::option::Option<crate::types::TokenFilter>,

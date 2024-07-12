@@ -34,8 +34,8 @@ impl ResumeWorkflowRunOutput {
 }
 
 /// A builder for [`ResumeWorkflowRunOutput`](crate::operation::resume_workflow_run::ResumeWorkflowRunOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResumeWorkflowRunOutputBuilder {
     pub(crate) run_id: ::std::option::Option<::std::string::String>,
     pub(crate) node_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

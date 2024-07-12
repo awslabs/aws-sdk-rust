@@ -26,8 +26,8 @@ impl UpdateServerEngineAttributesOutput {
 }
 
 /// A builder for [`UpdateServerEngineAttributesOutput`](crate::operation::update_server_engine_attributes::UpdateServerEngineAttributesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateServerEngineAttributesOutputBuilder {
     pub(crate) server: ::std::option::Option<crate::types::Server>,
     _request_id: Option<String>,

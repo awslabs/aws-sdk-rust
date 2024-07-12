@@ -46,8 +46,8 @@ impl GetAliasInput {
 }
 
 /// A builder for [`GetAliasInput`](crate::operation::get_alias::GetAliasInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAliasInputBuilder {
     pub(crate) function_name: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

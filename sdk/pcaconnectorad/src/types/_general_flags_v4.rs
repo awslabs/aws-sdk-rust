@@ -27,8 +27,8 @@ impl GeneralFlagsV4 {
 }
 
 /// A builder for [`GeneralFlagsV4`](crate::types::GeneralFlagsV4).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GeneralFlagsV4Builder {
     pub(crate) auto_enrollment: ::std::option::Option<bool>,
     pub(crate) machine_type: ::std::option::Option<bool>,

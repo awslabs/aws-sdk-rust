@@ -18,8 +18,8 @@ impl DeleteConnectorProfileOutput {
 }
 
 /// A builder for [`DeleteConnectorProfileOutput`](crate::operation::delete_connector_profile::DeleteConnectorProfileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteConnectorProfileOutputBuilder {
     _request_id: Option<String>,
 }

@@ -33,8 +33,8 @@ impl ETag {
 }
 
 /// A builder for [`ETag`](crate::types::ETag).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ETagBuilder {
     pub(crate) algorithm: ::std::option::Option<crate::types::ETagAlgorithm>,
     pub(crate) source1: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl UpdateSchedulingPolicyInput {
 }
 
 /// A builder for [`UpdateSchedulingPolicyInput`](crate::operation::update_scheduling_policy::UpdateSchedulingPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSchedulingPolicyInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) fairshare_policy: ::std::option::Option<crate::types::FairsharePolicy>,

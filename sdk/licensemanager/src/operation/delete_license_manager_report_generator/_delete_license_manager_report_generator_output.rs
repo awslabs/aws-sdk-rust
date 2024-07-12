@@ -18,8 +18,8 @@ impl DeleteLicenseManagerReportGeneratorOutput {
 }
 
 /// A builder for [`DeleteLicenseManagerReportGeneratorOutput`](crate::operation::delete_license_manager_report_generator::DeleteLicenseManagerReportGeneratorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteLicenseManagerReportGeneratorOutputBuilder {
     _request_id: Option<String>,
 }

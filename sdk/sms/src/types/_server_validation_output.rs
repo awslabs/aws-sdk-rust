@@ -21,8 +21,8 @@ impl ServerValidationOutput {
 }
 
 /// A builder for [`ServerValidationOutput`](crate::types::ServerValidationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServerValidationOutputBuilder {
     pub(crate) server: ::std::option::Option<crate::types::Server>,
 }

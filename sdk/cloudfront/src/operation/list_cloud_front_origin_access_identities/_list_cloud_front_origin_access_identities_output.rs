@@ -27,8 +27,8 @@ impl ListCloudFrontOriginAccessIdentitiesOutput {
 }
 
 /// A builder for [`ListCloudFrontOriginAccessIdentitiesOutput`](crate::operation::list_cloud_front_origin_access_identities::ListCloudFrontOriginAccessIdentitiesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCloudFrontOriginAccessIdentitiesOutputBuilder {
     pub(crate) cloud_front_origin_access_identity_list: ::std::option::Option<crate::types::CloudFrontOriginAccessIdentityList>,
     _request_id: Option<String>,

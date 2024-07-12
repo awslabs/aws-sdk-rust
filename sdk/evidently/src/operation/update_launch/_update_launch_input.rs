@@ -60,8 +60,8 @@ impl UpdateLaunchInput {
 }
 
 /// A builder for [`UpdateLaunchInput`](crate::operation::update_launch::UpdateLaunchInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateLaunchInputBuilder {
     pub(crate) project: ::std::option::Option<::std::string::String>,
     pub(crate) launch: ::std::option::Option<::std::string::String>,

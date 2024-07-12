@@ -32,8 +32,8 @@ impl UpdateFindingsInput {
 }
 
 /// A builder for [`UpdateFindingsInput`](crate::operation::update_findings::UpdateFindingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateFindingsInputBuilder {
     pub(crate) filters: ::std::option::Option<crate::types::AwsSecurityFindingFilters>,
     pub(crate) note: ::std::option::Option<crate::types::NoteUpdate>,

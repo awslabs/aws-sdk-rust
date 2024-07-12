@@ -27,8 +27,8 @@ impl IntegerRange {
 }
 
 /// A builder for [`IntegerRange`](crate::types::IntegerRange).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IntegerRangeBuilder {
     pub(crate) minimum: ::std::option::Option<i32>,
     pub(crate) maximum: ::std::option::Option<i32>,

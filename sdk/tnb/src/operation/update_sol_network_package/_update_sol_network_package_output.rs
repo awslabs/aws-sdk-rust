@@ -26,8 +26,8 @@ impl UpdateSolNetworkPackageOutput {
 }
 
 /// A builder for [`UpdateSolNetworkPackageOutput`](crate::operation::update_sol_network_package::UpdateSolNetworkPackageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSolNetworkPackageOutputBuilder {
     pub(crate) nsd_operational_state: ::std::option::Option<crate::types::NsdOperationalState>,
     _request_id: Option<String>,

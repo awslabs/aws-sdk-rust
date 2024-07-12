@@ -60,8 +60,8 @@ impl DescribePrefixListsInput {
 }
 
 /// A builder for [`DescribePrefixListsInput`](crate::operation::describe_prefix_lists::DescribePrefixListsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribePrefixListsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,

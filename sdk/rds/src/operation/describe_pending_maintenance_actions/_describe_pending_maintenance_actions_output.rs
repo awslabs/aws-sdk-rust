@@ -35,8 +35,8 @@ impl DescribePendingMaintenanceActionsOutput {
 }
 
 /// A builder for [`DescribePendingMaintenanceActionsOutput`](crate::operation::describe_pending_maintenance_actions::DescribePendingMaintenanceActionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribePendingMaintenanceActionsOutputBuilder {
     pub(crate) pending_maintenance_actions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePendingMaintenanceActions>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

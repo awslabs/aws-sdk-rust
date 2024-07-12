@@ -91,8 +91,8 @@ impl RecommendationPreferencesDetail {
 }
 
 /// A builder for [`RecommendationPreferencesDetail`](crate::types::RecommendationPreferencesDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecommendationPreferencesDetailBuilder {
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,

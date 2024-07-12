@@ -42,8 +42,8 @@ impl ProtectedQuerySqlParameters {
 }
 
 /// A builder for [`ProtectedQuerySqlParameters`](crate::types::ProtectedQuerySqlParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ProtectedQuerySqlParametersBuilder {
     pub(crate) query_string: ::std::option::Option<::std::string::String>,
     pub(crate) analysis_template_arn: ::std::option::Option<::std::string::String>,

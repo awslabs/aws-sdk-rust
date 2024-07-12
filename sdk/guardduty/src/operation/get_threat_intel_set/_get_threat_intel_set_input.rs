@@ -26,8 +26,8 @@ impl GetThreatIntelSetInput {
 }
 
 /// A builder for [`GetThreatIntelSetInput`](crate::operation::get_threat_intel_set::GetThreatIntelSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetThreatIntelSetInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
     pub(crate) threat_intel_set_id: ::std::option::Option<::std::string::String>,

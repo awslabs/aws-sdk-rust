@@ -29,8 +29,8 @@ impl DescribeDeploymentsOutput {
 }
 
 /// A builder for [`DescribeDeploymentsOutput`](crate::operation::describe_deployments::DescribeDeploymentsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDeploymentsOutputBuilder {
     pub(crate) deployments: ::std::option::Option<::std::vec::Vec<crate::types::Deployment>>,
     _request_id: Option<String>,

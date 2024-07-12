@@ -21,8 +21,8 @@ impl SupportedOperation {
 }
 
 /// A builder for [`SupportedOperation`](crate::types::SupportedOperation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SupportedOperationBuilder {
     pub(crate) operation_name: ::std::option::Option<::std::string::String>,
 }

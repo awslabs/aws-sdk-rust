@@ -44,8 +44,8 @@ impl CreateVariantStoreInput {
 }
 
 /// A builder for [`CreateVariantStoreInput`](crate::operation::create_variant_store::CreateVariantStoreInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateVariantStoreInputBuilder {
     pub(crate) reference: ::std::option::Option<crate::types::ReferenceItem>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

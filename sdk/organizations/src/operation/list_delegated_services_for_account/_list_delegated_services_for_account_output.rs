@@ -34,8 +34,8 @@ impl ListDelegatedServicesForAccountOutput {
 }
 
 /// A builder for [`ListDelegatedServicesForAccountOutput`](crate::operation::list_delegated_services_for_account::ListDelegatedServicesForAccountOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDelegatedServicesForAccountOutputBuilder {
     pub(crate) delegated_services: ::std::option::Option<::std::vec::Vec<crate::types::DelegatedService>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

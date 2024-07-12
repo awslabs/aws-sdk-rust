@@ -20,8 +20,8 @@ impl UpdateEventSourcesConfigInput {
 }
 
 /// A builder for [`UpdateEventSourcesConfigInput`](crate::operation::update_event_sources_config::UpdateEventSourcesConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateEventSourcesConfigInputBuilder {
     pub(crate) event_sources: ::std::option::Option<crate::types::EventSourcesConfig>,
 }

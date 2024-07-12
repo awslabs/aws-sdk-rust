@@ -34,8 +34,8 @@ impl DescribeVpcEndpointConnectionsOutput {
 }
 
 /// A builder for [`DescribeVpcEndpointConnectionsOutput`](crate::operation::describe_vpc_endpoint_connections::DescribeVpcEndpointConnectionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeVpcEndpointConnectionsOutputBuilder {
     pub(crate) vpc_endpoint_connections: ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpointConnection>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

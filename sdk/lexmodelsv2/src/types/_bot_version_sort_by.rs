@@ -27,8 +27,8 @@ impl BotVersionSortBy {
 }
 
 /// A builder for [`BotVersionSortBy`](crate::types::BotVersionSortBy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BotVersionSortByBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::BotVersionSortAttribute>,
     pub(crate) order: ::std::option::Option<crate::types::SortOrder>,

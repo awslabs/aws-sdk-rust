@@ -53,8 +53,8 @@ impl EfsMountFailureException {
 }
 
 /// A builder for [`EfsMountFailureException`](crate::types::error::EfsMountFailureException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EfsMountFailureExceptionBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

@@ -20,8 +20,8 @@ impl GetEnvironmentTemplateInput {
 }
 
 /// A builder for [`GetEnvironmentTemplateInput`](crate::operation::get_environment_template::GetEnvironmentTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEnvironmentTemplateInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

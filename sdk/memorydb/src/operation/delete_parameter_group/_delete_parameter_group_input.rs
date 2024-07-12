@@ -20,8 +20,8 @@ impl DeleteParameterGroupInput {
 }
 
 /// A builder for [`DeleteParameterGroupInput`](crate::operation::delete_parameter_group::DeleteParameterGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteParameterGroupInputBuilder {
     pub(crate) parameter_group_name: ::std::option::Option<::std::string::String>,
 }

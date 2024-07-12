@@ -45,8 +45,8 @@ impl RecommendationDetailHourlyMetrics {
 }
 
 /// A builder for [`RecommendationDetailHourlyMetrics`](crate::types::RecommendationDetailHourlyMetrics).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecommendationDetailHourlyMetricsBuilder {
     pub(crate) start_time: ::std::option::Option<::std::string::String>,
     pub(crate) estimated_on_demand_cost: ::std::option::Option<::std::string::String>,

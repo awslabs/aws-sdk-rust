@@ -34,8 +34,8 @@ impl DescribeSessionsOutput {
 }
 
 /// A builder for [`DescribeSessionsOutput`](crate::operation::describe_sessions::DescribeSessionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSessionsOutputBuilder {
     pub(crate) sessions: ::std::option::Option<::std::vec::Vec<crate::types::Session>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

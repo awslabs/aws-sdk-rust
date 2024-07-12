@@ -24,8 +24,8 @@ impl CreateResourceGroupInput {
 }
 
 /// A builder for [`CreateResourceGroupInput`](crate::operation::create_resource_group::CreateResourceGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateResourceGroupInputBuilder {
     pub(crate) resource_group_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceGroupTag>>,
 }

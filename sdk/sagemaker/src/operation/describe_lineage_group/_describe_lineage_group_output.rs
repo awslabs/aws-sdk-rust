@@ -68,8 +68,8 @@ impl DescribeLineageGroupOutput {
 }
 
 /// A builder for [`DescribeLineageGroupOutput`](crate::operation::describe_lineage_group::DescribeLineageGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeLineageGroupOutputBuilder {
     pub(crate) lineage_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) lineage_group_arn: ::std::option::Option<::std::string::String>,

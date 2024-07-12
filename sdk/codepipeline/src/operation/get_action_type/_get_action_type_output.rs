@@ -26,8 +26,8 @@ impl GetActionTypeOutput {
 }
 
 /// A builder for [`GetActionTypeOutput`](crate::operation::get_action_type::GetActionTypeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetActionTypeOutputBuilder {
     pub(crate) action_type: ::std::option::Option<crate::types::ActionTypeDeclaration>,
     _request_id: Option<String>,

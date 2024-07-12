@@ -27,8 +27,8 @@ impl EmbeddedDestinationSettings {
 }
 
 /// A builder for [`EmbeddedDestinationSettings`](crate::types::EmbeddedDestinationSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EmbeddedDestinationSettingsBuilder {
     pub(crate) destination608_channel_number: ::std::option::Option<i32>,
     pub(crate) destination708_service_number: ::std::option::Option<i32>,

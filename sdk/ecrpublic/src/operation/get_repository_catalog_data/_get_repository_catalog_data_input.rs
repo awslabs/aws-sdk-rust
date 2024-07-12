@@ -26,8 +26,8 @@ impl GetRepositoryCatalogDataInput {
 }
 
 /// A builder for [`GetRepositoryCatalogDataInput`](crate::operation::get_repository_catalog_data::GetRepositoryCatalogDataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRepositoryCatalogDataInputBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,

@@ -20,8 +20,8 @@ impl DeleteMedicalScribeJobInput {
 }
 
 /// A builder for [`DeleteMedicalScribeJobInput`](crate::operation::delete_medical_scribe_job::DeleteMedicalScribeJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteMedicalScribeJobInputBuilder {
     pub(crate) medical_scribe_job_name: ::std::option::Option<::std::string::String>,
 }

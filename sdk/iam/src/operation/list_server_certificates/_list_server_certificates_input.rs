@@ -36,8 +36,8 @@ impl ListServerCertificatesInput {
 }
 
 /// A builder for [`ListServerCertificatesInput`](crate::operation::list_server_certificates::ListServerCertificatesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListServerCertificatesInputBuilder {
     pub(crate) path_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

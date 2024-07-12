@@ -54,8 +54,8 @@ impl GetResourceSetOutput {
 }
 
 /// A builder for [`GetResourceSetOutput`](crate::operation::get_resource_set::GetResourceSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetResourceSetOutputBuilder {
     pub(crate) resource_set_arn: ::std::option::Option<::std::string::String>,
     pub(crate) resource_set_name: ::std::option::Option<::std::string::String>,

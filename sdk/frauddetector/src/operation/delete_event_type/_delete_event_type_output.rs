@@ -18,8 +18,8 @@ impl DeleteEventTypeOutput {
 }
 
 /// A builder for [`DeleteEventTypeOutput`](crate::operation::delete_event_type::DeleteEventTypeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteEventTypeOutputBuilder {
     _request_id: Option<String>,
 }

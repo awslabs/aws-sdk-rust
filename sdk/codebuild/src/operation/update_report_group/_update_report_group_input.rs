@@ -48,8 +48,8 @@ impl UpdateReportGroupInput {
 }
 
 /// A builder for [`UpdateReportGroupInput`](crate::operation::update_report_group::UpdateReportGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateReportGroupInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) export_config: ::std::option::Option<crate::types::ReportExportConfig>,

@@ -18,8 +18,8 @@ impl AssociatePhoneNumberContactFlowOutput {
 }
 
 /// A builder for [`AssociatePhoneNumberContactFlowOutput`](crate::operation::associate_phone_number_contact_flow::AssociatePhoneNumberContactFlowOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociatePhoneNumberContactFlowOutputBuilder {
     _request_id: Option<String>,
 }

@@ -20,8 +20,8 @@ impl GetResolverDnssecConfigInput {
 }
 
 /// A builder for [`GetResolverDnssecConfigInput`](crate::operation::get_resolver_dnssec_config::GetResolverDnssecConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetResolverDnssecConfigInputBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
 }

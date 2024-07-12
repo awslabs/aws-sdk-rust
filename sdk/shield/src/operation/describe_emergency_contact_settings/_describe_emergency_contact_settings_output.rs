@@ -28,8 +28,8 @@ impl DescribeEmergencyContactSettingsOutput {
 }
 
 /// A builder for [`DescribeEmergencyContactSettingsOutput`](crate::operation::describe_emergency_contact_settings::DescribeEmergencyContactSettingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEmergencyContactSettingsOutputBuilder {
     pub(crate) emergency_contact_list: ::std::option::Option<::std::vec::Vec<crate::types::EmergencyContact>>,
     _request_id: Option<String>,

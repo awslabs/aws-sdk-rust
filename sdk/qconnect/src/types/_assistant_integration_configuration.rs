@@ -21,8 +21,8 @@ impl AssistantIntegrationConfiguration {
 }
 
 /// A builder for [`AssistantIntegrationConfiguration`](crate::types::AssistantIntegrationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssistantIntegrationConfigurationBuilder {
     pub(crate) topic_integration_arn: ::std::option::Option<::std::string::String>,
 }

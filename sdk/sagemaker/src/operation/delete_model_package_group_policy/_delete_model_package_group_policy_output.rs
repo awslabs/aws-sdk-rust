@@ -18,8 +18,8 @@ impl DeleteModelPackageGroupPolicyOutput {
 }
 
 /// A builder for [`DeleteModelPackageGroupPolicyOutput`](crate::operation::delete_model_package_group_policy::DeleteModelPackageGroupPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteModelPackageGroupPolicyOutputBuilder {
     _request_id: Option<String>,
 }

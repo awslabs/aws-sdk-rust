@@ -29,8 +29,8 @@ impl ComputeCapacity {
 }
 
 /// A builder for [`ComputeCapacity`](crate::types::ComputeCapacity).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ComputeCapacityBuilder {
     pub(crate) desired_instances: ::std::option::Option<i32>,
     pub(crate) desired_sessions: ::std::option::Option<i32>,

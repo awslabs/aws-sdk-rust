@@ -20,8 +20,8 @@ impl DescribeTopicsDetectionJobInput {
 }
 
 /// A builder for [`DescribeTopicsDetectionJobInput`](crate::operation::describe_topics_detection_job::DescribeTopicsDetectionJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTopicsDetectionJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }

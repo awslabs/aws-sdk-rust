@@ -11,8 +11,8 @@ impl DescribeLimitsInput {
 }
 
 /// A builder for [`DescribeLimitsInput`](crate::operation::describe_limits::DescribeLimitsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeLimitsInputBuilder {}
 impl DescribeLimitsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeLimitsInput`](crate::operation::describe_limits::DescribeLimitsInput).

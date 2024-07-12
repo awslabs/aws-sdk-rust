@@ -38,8 +38,8 @@ impl CancelKeyDeletionInput {
 }
 
 /// A builder for [`CancelKeyDeletionInput`](crate::operation::cancel_key_deletion::CancelKeyDeletionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelKeyDeletionInputBuilder {
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
 }

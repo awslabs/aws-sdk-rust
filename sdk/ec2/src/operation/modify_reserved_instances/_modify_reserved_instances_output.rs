@@ -27,8 +27,8 @@ impl ModifyReservedInstancesOutput {
 }
 
 /// A builder for [`ModifyReservedInstancesOutput`](crate::operation::modify_reserved_instances::ModifyReservedInstancesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyReservedInstancesOutputBuilder {
     pub(crate) reserved_instances_modification_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

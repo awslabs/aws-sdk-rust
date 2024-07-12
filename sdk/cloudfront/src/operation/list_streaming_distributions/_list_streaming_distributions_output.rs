@@ -27,8 +27,8 @@ impl ListStreamingDistributionsOutput {
 }
 
 /// A builder for [`ListStreamingDistributionsOutput`](crate::operation::list_streaming_distributions::ListStreamingDistributionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListStreamingDistributionsOutputBuilder {
     pub(crate) streaming_distribution_list: ::std::option::Option<crate::types::StreamingDistributionList>,
     _request_id: Option<String>,

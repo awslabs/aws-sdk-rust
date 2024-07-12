@@ -26,8 +26,8 @@ impl CreatePricingPlanOutput {
 }
 
 /// A builder for [`CreatePricingPlanOutput`](crate::operation::create_pricing_plan::CreatePricingPlanOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePricingPlanOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

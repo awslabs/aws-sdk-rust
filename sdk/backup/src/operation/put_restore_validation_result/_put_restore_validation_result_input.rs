@@ -32,8 +32,8 @@ impl PutRestoreValidationResultInput {
 }
 
 /// A builder for [`PutRestoreValidationResultInput`](crate::operation::put_restore_validation_result::PutRestoreValidationResultInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutRestoreValidationResultInputBuilder {
     pub(crate) restore_job_id: ::std::option::Option<::std::string::String>,
     pub(crate) validation_status: ::std::option::Option<crate::types::RestoreValidationStatus>,

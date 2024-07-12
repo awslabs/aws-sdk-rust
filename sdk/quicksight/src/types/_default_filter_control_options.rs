@@ -57,8 +57,8 @@ impl DefaultFilterControlOptions {
 }
 
 /// A builder for [`DefaultFilterControlOptions`](crate::types::DefaultFilterControlOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DefaultFilterControlOptionsBuilder {
     pub(crate) default_date_time_picker_options: ::std::option::Option<crate::types::DefaultDateTimePickerControlOptions>,
     pub(crate) default_list_options: ::std::option::Option<crate::types::DefaultFilterListControlOptions>,

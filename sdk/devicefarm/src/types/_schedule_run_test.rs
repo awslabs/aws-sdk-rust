@@ -287,8 +287,8 @@ impl ScheduleRunTest {
 }
 
 /// A builder for [`ScheduleRunTest`](crate::types::ScheduleRunTest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScheduleRunTestBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::TestType>,
     pub(crate) test_package_arn: ::std::option::Option<::std::string::String>,

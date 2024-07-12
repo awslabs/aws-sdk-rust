@@ -49,8 +49,8 @@ impl ModifyDbClusterParameterGroupOutput {
 }
 
 /// A builder for [`ModifyDbClusterParameterGroupOutput`](crate::operation::modify_db_cluster_parameter_group::ModifyDbClusterParameterGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyDbClusterParameterGroupOutputBuilder {
     pub(crate) db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

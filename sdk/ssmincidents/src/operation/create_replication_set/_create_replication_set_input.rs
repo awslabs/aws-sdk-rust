@@ -32,8 +32,8 @@ impl CreateReplicationSetInput {
 }
 
 /// A builder for [`CreateReplicationSetInput`](crate::operation::create_replication_set::CreateReplicationSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateReplicationSetInputBuilder {
     pub(crate) regions: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RegionMapInputValue>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

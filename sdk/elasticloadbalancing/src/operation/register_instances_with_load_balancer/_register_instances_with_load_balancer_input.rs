@@ -29,8 +29,8 @@ impl RegisterInstancesWithLoadBalancerInput {
 }
 
 /// A builder for [`RegisterInstancesWithLoadBalancerInput`](crate::operation::register_instances_with_load_balancer::RegisterInstancesWithLoadBalancerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterInstancesWithLoadBalancerInputBuilder {
     pub(crate) load_balancer_name: ::std::option::Option<::std::string::String>,
     pub(crate) instances: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,

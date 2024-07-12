@@ -19,8 +19,8 @@ impl CreateReceiptRuleOutput {
 }
 
 /// A builder for [`CreateReceiptRuleOutput`](crate::operation::create_receipt_rule::CreateReceiptRuleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateReceiptRuleOutputBuilder {
     _request_id: Option<String>,
 }

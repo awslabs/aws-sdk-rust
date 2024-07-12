@@ -28,8 +28,8 @@ impl StartMigrationInput {
 }
 
 /// A builder for [`StartMigrationInput`](crate::operation::start_migration::StartMigrationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartMigrationInputBuilder {
     pub(crate) replication_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) customer_node_endpoint_list: ::std::option::Option<::std::vec::Vec<crate::types::CustomerNodeEndpoint>>,

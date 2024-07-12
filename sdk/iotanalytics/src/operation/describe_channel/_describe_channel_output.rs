@@ -32,8 +32,8 @@ impl DescribeChannelOutput {
 }
 
 /// A builder for [`DescribeChannelOutput`](crate::operation::describe_channel::DescribeChannelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeChannelOutputBuilder {
     pub(crate) channel: ::std::option::Option<crate::types::Channel>,
     pub(crate) statistics: ::std::option::Option<crate::types::ChannelStatistics>,

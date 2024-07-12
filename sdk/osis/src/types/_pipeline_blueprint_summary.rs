@@ -45,8 +45,8 @@ impl PipelineBlueprintSummary {
 }
 
 /// A builder for [`PipelineBlueprintSummary`](crate::types::PipelineBlueprintSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PipelineBlueprintSummaryBuilder {
     pub(crate) blueprint_name: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,

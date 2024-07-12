@@ -29,8 +29,8 @@ impl RestartChannelPipelinesInput {
 }
 
 /// A builder for [`RestartChannelPipelinesInput`](crate::operation::restart_channel_pipelines::RestartChannelPipelinesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RestartChannelPipelinesInputBuilder {
     pub(crate) channel_id: ::std::option::Option<::std::string::String>,
     pub(crate) pipeline_ids: ::std::option::Option<::std::vec::Vec<crate::types::ChannelPipelineIdToRestart>>,

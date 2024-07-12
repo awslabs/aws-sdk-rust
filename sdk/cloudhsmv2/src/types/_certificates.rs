@@ -45,8 +45,8 @@ impl Certificates {
 }
 
 /// A builder for [`Certificates`](crate::types::Certificates).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CertificatesBuilder {
     pub(crate) cluster_csr: ::std::option::Option<::std::string::String>,
     pub(crate) hsm_certificate: ::std::option::Option<::std::string::String>,

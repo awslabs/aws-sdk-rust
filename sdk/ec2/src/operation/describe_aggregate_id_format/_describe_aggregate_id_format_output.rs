@@ -34,8 +34,8 @@ impl DescribeAggregateIdFormatOutput {
 }
 
 /// A builder for [`DescribeAggregateIdFormatOutput`](crate::operation::describe_aggregate_id_format::DescribeAggregateIdFormatOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAggregateIdFormatOutputBuilder {
     pub(crate) use_long_ids_aggregated: ::std::option::Option<bool>,
     pub(crate) statuses: ::std::option::Option<::std::vec::Vec<crate::types::IdFormat>>,

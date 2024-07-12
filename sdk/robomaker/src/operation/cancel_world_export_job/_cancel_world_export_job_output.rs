@@ -18,8 +18,8 @@ impl CancelWorldExportJobOutput {
 }
 
 /// A builder for [`CancelWorldExportJobOutput`](crate::operation::cancel_world_export_job::CancelWorldExportJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelWorldExportJobOutputBuilder {
     _request_id: Option<String>,
 }

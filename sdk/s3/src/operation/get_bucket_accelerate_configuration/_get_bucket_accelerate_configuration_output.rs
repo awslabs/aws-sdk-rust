@@ -42,8 +42,8 @@ impl GetBucketAccelerateConfigurationOutput {
 }
 
 /// A builder for [`GetBucketAccelerateConfigurationOutput`](crate::operation::get_bucket_accelerate_configuration::GetBucketAccelerateConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBucketAccelerateConfigurationOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::BucketAccelerateStatus>,
     pub(crate) request_charged: ::std::option::Option<crate::types::RequestCharged>,

@@ -26,8 +26,8 @@ impl DeleteOptedOutNumberInput {
 }
 
 /// A builder for [`DeleteOptedOutNumberInput`](crate::operation::delete_opted_out_number::DeleteOptedOutNumberInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteOptedOutNumberInputBuilder {
     pub(crate) opt_out_list_name: ::std::option::Option<::std::string::String>,
     pub(crate) opted_out_number: ::std::option::Option<::std::string::String>,

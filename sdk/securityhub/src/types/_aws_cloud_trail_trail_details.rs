@@ -105,8 +105,8 @@ impl AwsCloudTrailTrailDetails {
 }
 
 /// A builder for [`AwsCloudTrailTrailDetails`](crate::types::AwsCloudTrailTrailDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsCloudTrailTrailDetailsBuilder {
     pub(crate) cloud_watch_logs_log_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) cloud_watch_logs_role_arn: ::std::option::Option<::std::string::String>,

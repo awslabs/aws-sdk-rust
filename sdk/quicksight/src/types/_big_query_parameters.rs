@@ -28,8 +28,8 @@ impl BigQueryParameters {
 }
 
 /// A builder for [`BigQueryParameters`](crate::types::BigQueryParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BigQueryParametersBuilder {
     pub(crate) project_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_set_region: ::std::option::Option<::std::string::String>,

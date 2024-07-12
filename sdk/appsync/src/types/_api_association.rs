@@ -55,8 +55,8 @@ impl ApiAssociation {
 }
 
 /// A builder for [`ApiAssociation`](crate::types::ApiAssociation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ApiAssociationBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) api_id: ::std::option::Option<::std::string::String>,

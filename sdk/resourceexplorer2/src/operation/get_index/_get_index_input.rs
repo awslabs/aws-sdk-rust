@@ -11,8 +11,8 @@ impl GetIndexInput {
 }
 
 /// A builder for [`GetIndexInput`](crate::operation::get_index::GetIndexInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetIndexInputBuilder {}
 impl GetIndexInputBuilder {
     /// Consumes the builder and constructs a [`GetIndexInput`](crate::operation::get_index::GetIndexInput).

@@ -29,8 +29,8 @@ impl ConversationLogsResponse {
 }
 
 /// A builder for [`ConversationLogsResponse`](crate::types::ConversationLogsResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConversationLogsResponseBuilder {
     pub(crate) log_settings: ::std::option::Option<::std::vec::Vec<crate::types::LogSettingsResponse>>,
     pub(crate) iam_role_arn: ::std::option::Option<::std::string::String>,

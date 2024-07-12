@@ -11,8 +11,8 @@ impl GetAccountAliasInput {
 }
 
 /// A builder for [`GetAccountAliasInput`](crate::operation::get_account_alias::GetAccountAliasInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAccountAliasInputBuilder {}
 impl GetAccountAliasInputBuilder {
     /// Consumes the builder and constructs a [`GetAccountAliasInput`](crate::operation::get_account_alias::GetAccountAliasInput).

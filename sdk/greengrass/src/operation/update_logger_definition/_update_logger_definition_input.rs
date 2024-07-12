@@ -26,8 +26,8 @@ impl UpdateLoggerDefinitionInput {
 }
 
 /// A builder for [`UpdateLoggerDefinitionInput`](crate::operation::update_logger_definition::UpdateLoggerDefinitionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateLoggerDefinitionInputBuilder {
     pub(crate) logger_definition_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

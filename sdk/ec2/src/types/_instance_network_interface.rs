@@ -141,8 +141,8 @@ impl InstanceNetworkInterface {
 }
 
 /// A builder for [`InstanceNetworkInterface`](crate::types::InstanceNetworkInterface).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceNetworkInterfaceBuilder {
     pub(crate) association: ::std::option::Option<crate::types::InstanceNetworkInterfaceAssociation>,
     pub(crate) attachment: ::std::option::Option<crate::types::InstanceNetworkInterfaceAttachment>,

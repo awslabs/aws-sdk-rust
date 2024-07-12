@@ -26,8 +26,8 @@ impl GetShareOutput {
 }
 
 /// A builder for [`GetShareOutput`](crate::operation::get_share::GetShareOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetShareOutputBuilder {
     pub(crate) share: ::std::option::Option<crate::types::ShareDetails>,
     _request_id: Option<String>,

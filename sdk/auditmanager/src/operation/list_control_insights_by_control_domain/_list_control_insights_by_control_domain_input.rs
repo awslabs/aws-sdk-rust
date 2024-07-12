@@ -34,8 +34,8 @@ impl ListControlInsightsByControlDomainInput {
 }
 
 /// A builder for [`ListControlInsightsByControlDomainInput`](crate::operation::list_control_insights_by_control_domain::ListControlInsightsByControlDomainInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListControlInsightsByControlDomainInputBuilder {
     pub(crate) control_domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -11,8 +11,8 @@ impl GetProfileTemplateInput {
 }
 
 /// A builder for [`GetProfileTemplateInput`](crate::operation::get_profile_template::GetProfileTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetProfileTemplateInputBuilder {}
 impl GetProfileTemplateInputBuilder {
     /// Consumes the builder and constructs a [`GetProfileTemplateInput`](crate::operation::get_profile_template::GetProfileTemplateInput).

@@ -18,8 +18,8 @@ impl StopEarthObservationJobOutput {
 }
 
 /// A builder for [`StopEarthObservationJobOutput`](crate::operation::stop_earth_observation_job::StopEarthObservationJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopEarthObservationJobOutputBuilder {
     _request_id: Option<String>,
 }

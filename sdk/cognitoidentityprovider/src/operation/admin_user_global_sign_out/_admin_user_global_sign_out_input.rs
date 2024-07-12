@@ -35,8 +35,8 @@ impl AdminUserGlobalSignOutInput {
 }
 
 /// A builder for [`AdminUserGlobalSignOutInput`](crate::operation::admin_user_global_sign_out::AdminUserGlobalSignOutInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AdminUserGlobalSignOutInputBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) username: ::std::option::Option<::std::string::String>,

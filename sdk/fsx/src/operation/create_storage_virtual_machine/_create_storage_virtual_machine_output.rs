@@ -26,8 +26,8 @@ impl CreateStorageVirtualMachineOutput {
 }
 
 /// A builder for [`CreateStorageVirtualMachineOutput`](crate::operation::create_storage_virtual_machine::CreateStorageVirtualMachineOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateStorageVirtualMachineOutputBuilder {
     pub(crate) storage_virtual_machine: ::std::option::Option<crate::types::StorageVirtualMachine>,
     _request_id: Option<String>,

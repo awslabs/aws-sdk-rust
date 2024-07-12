@@ -20,8 +20,8 @@ impl DeleteRedshiftIdcApplicationInput {
 }
 
 /// A builder for [`DeleteRedshiftIdcApplicationInput`](crate::operation::delete_redshift_idc_application::DeleteRedshiftIdcApplicationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRedshiftIdcApplicationInputBuilder {
     pub(crate) redshift_idc_application_arn: ::std::option::Option<::std::string::String>,
 }

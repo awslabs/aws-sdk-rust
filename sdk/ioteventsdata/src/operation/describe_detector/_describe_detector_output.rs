@@ -26,8 +26,8 @@ impl DescribeDetectorOutput {
 }
 
 /// A builder for [`DescribeDetectorOutput`](crate::operation::describe_detector::DescribeDetectorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDetectorOutputBuilder {
     pub(crate) detector: ::std::option::Option<crate::types::Detector>,
     _request_id: Option<String>,

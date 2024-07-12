@@ -12,8 +12,8 @@ impl M2NonManagedApplicationStepOutput {
 }
 
 /// A builder for [`M2NonManagedApplicationStepOutput`](crate::types::M2NonManagedApplicationStepOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct M2NonManagedApplicationStepOutputBuilder {}
 impl M2NonManagedApplicationStepOutputBuilder {
     /// Consumes the builder and constructs a [`M2NonManagedApplicationStepOutput`](crate::types::M2NonManagedApplicationStepOutput).

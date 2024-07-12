@@ -70,8 +70,8 @@ impl UpdateFleetAttributesInput {
 }
 
 /// A builder for [`UpdateFleetAttributesInput`](crate::operation::update_fleet_attributes::UpdateFleetAttributesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateFleetAttributesInputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

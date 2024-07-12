@@ -21,8 +21,8 @@ impl Ipv4PrefixSpecificationRequest {
 }
 
 /// A builder for [`Ipv4PrefixSpecificationRequest`](crate::types::Ipv4PrefixSpecificationRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Ipv4PrefixSpecificationRequestBuilder {
     pub(crate) ipv4_prefix: ::std::option::Option<::std::string::String>,
 }

@@ -89,8 +89,8 @@ impl GetSubscriptionOutput {
 }
 
 /// A builder for [`GetSubscriptionOutput`](crate::operation::get_subscription::GetSubscriptionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSubscriptionOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,

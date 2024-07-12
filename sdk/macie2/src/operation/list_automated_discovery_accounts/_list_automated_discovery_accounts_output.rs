@@ -34,8 +34,8 @@ impl ListAutomatedDiscoveryAccountsOutput {
 }
 
 /// A builder for [`ListAutomatedDiscoveryAccountsOutput`](crate::operation::list_automated_discovery_accounts::ListAutomatedDiscoveryAccountsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAutomatedDiscoveryAccountsOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::AutomatedDiscoveryAccount>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

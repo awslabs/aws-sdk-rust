@@ -32,8 +32,8 @@ impl PutFileSystemPolicyInput {
 }
 
 /// A builder for [`PutFileSystemPolicyInput`](crate::operation::put_file_system_policy::PutFileSystemPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutFileSystemPolicyInputBuilder {
     pub(crate) file_system_id: ::std::option::Option<::std::string::String>,
     pub(crate) policy: ::std::option::Option<::std::string::String>,

@@ -18,8 +18,8 @@ impl DeleteTrustStoreOutput {
 }
 
 /// A builder for [`DeleteTrustStoreOutput`](crate::operation::delete_trust_store::DeleteTrustStoreOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTrustStoreOutputBuilder {
     _request_id: Option<String>,
 }

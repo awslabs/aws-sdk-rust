@@ -34,8 +34,8 @@ impl ListExtensionAssociationsOutput {
 }
 
 /// A builder for [`ListExtensionAssociationsOutput`](crate::operation::list_extension_associations::ListExtensionAssociationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListExtensionAssociationsOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ExtensionAssociationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

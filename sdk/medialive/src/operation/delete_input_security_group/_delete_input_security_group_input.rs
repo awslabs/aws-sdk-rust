@@ -21,8 +21,8 @@ impl DeleteInputSecurityGroupInput {
 }
 
 /// A builder for [`DeleteInputSecurityGroupInput`](crate::operation::delete_input_security_group::DeleteInputSecurityGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteInputSecurityGroupInputBuilder {
     pub(crate) input_security_group_id: ::std::option::Option<::std::string::String>,
 }

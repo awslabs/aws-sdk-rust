@@ -33,8 +33,8 @@ impl StartCondition {
 }
 
 /// A builder for [`StartCondition`](crate::types::StartCondition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartConditionBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) event_start_condition: ::std::option::Option<crate::types::EventStartCondition>,

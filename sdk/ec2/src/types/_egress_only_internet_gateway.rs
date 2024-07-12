@@ -37,8 +37,8 @@ impl EgressOnlyInternetGateway {
 }
 
 /// A builder for [`EgressOnlyInternetGateway`](crate::types::EgressOnlyInternetGateway).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EgressOnlyInternetGatewayBuilder {
     pub(crate) attachments: ::std::option::Option<::std::vec::Vec<crate::types::InternetGatewayAttachment>>,
     pub(crate) egress_only_internet_gateway_id: ::std::option::Option<::std::string::String>,

@@ -33,8 +33,8 @@ impl ResourceStateUpdateIncludeResources {
 }
 
 /// A builder for [`ResourceStateUpdateIncludeResources`](crate::types::ResourceStateUpdateIncludeResources).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResourceStateUpdateIncludeResourcesBuilder {
     pub(crate) amis: ::std::option::Option<bool>,
     pub(crate) snapshots: ::std::option::Option<bool>,

@@ -18,8 +18,8 @@ impl PutNotificationChannelOutput {
 }
 
 /// A builder for [`PutNotificationChannelOutput`](crate::operation::put_notification_channel::PutNotificationChannelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutNotificationChannelOutputBuilder {
     _request_id: Option<String>,
 }

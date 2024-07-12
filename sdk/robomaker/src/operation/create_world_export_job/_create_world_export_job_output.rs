@@ -222,8 +222,8 @@ impl CreateWorldExportJobOutput {
 }
 
 /// A builder for [`CreateWorldExportJobOutput`](crate::operation::create_world_export_job::CreateWorldExportJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateWorldExportJobOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::WorldExportJobStatus>,

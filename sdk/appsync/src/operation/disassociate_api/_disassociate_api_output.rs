@@ -18,8 +18,8 @@ impl DisassociateApiOutput {
 }
 
 /// A builder for [`DisassociateApiOutput`](crate::operation::disassociate_api::DisassociateApiOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateApiOutputBuilder {
     _request_id: Option<String>,
 }

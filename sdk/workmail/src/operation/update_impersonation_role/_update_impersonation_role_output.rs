@@ -18,8 +18,8 @@ impl UpdateImpersonationRoleOutput {
 }
 
 /// A builder for [`UpdateImpersonationRoleOutput`](crate::operation::update_impersonation_role::UpdateImpersonationRoleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateImpersonationRoleOutputBuilder {
     _request_id: Option<String>,
 }

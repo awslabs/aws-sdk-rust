@@ -22,8 +22,8 @@ impl AcceptInvitationInput {
 }
 
 /// A builder for [`AcceptInvitationInput`](crate::operation::accept_invitation::AcceptInvitationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AcceptInvitationInputBuilder {
     pub(crate) graph_arn: ::std::option::Option<::std::string::String>,
 }

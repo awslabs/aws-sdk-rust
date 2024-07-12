@@ -20,8 +20,8 @@ impl GetAppliedSchemaVersionInput {
 }
 
 /// A builder for [`GetAppliedSchemaVersionInput`](crate::operation::get_applied_schema_version::GetAppliedSchemaVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAppliedSchemaVersionInputBuilder {
     pub(crate) schema_arn: ::std::option::Option<::std::string::String>,
 }

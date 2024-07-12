@@ -170,8 +170,8 @@ impl GetAssetOutput {
 }
 
 /// A builder for [`GetAssetOutput`](crate::operation::get_asset::GetAssetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetAssetOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

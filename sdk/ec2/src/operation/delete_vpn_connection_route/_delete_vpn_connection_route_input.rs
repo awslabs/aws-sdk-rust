@@ -27,8 +27,8 @@ impl DeleteVpnConnectionRouteInput {
 }
 
 /// A builder for [`DeleteVpnConnectionRouteInput`](crate::operation::delete_vpn_connection_route::DeleteVpnConnectionRouteInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVpnConnectionRouteInputBuilder {
     pub(crate) destination_cidr_block: ::std::option::Option<::std::string::String>,
     pub(crate) vpn_connection_id: ::std::option::Option<::std::string::String>,

@@ -32,8 +32,8 @@ impl DeleteOtaUpdateInput {
 }
 
 /// A builder for [`DeleteOtaUpdateInput`](crate::operation::delete_ota_update::DeleteOtaUpdateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteOtaUpdateInputBuilder {
     pub(crate) ota_update_id: ::std::option::Option<::std::string::String>,
     pub(crate) delete_stream: ::std::option::Option<bool>,

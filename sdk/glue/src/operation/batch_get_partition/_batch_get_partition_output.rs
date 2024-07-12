@@ -36,8 +36,8 @@ impl BatchGetPartitionOutput {
 }
 
 /// A builder for [`BatchGetPartitionOutput`](crate::operation::batch_get_partition::BatchGetPartitionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetPartitionOutputBuilder {
     pub(crate) partitions: ::std::option::Option<::std::vec::Vec<crate::types::Partition>>,
     pub(crate) unprocessed_keys: ::std::option::Option<::std::vec::Vec<crate::types::PartitionValueList>>,

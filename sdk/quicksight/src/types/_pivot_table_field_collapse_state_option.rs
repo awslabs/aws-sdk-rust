@@ -39,8 +39,8 @@ impl PivotTableFieldCollapseStateOption {
 }
 
 /// A builder for [`PivotTableFieldCollapseStateOption`](crate::types::PivotTableFieldCollapseStateOption).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PivotTableFieldCollapseStateOptionBuilder {
     pub(crate) target: ::std::option::Option<crate::types::PivotTableFieldCollapseStateTarget>,
     pub(crate) state: ::std::option::Option<crate::types::PivotTableFieldCollapseState>,

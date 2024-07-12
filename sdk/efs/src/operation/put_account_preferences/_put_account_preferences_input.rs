@@ -24,8 +24,8 @@ impl PutAccountPreferencesInput {
 }
 
 /// A builder for [`PutAccountPreferencesInput`](crate::operation::put_account_preferences::PutAccountPreferencesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutAccountPreferencesInputBuilder {
     pub(crate) resource_id_type: ::std::option::Option<crate::types::ResourceIdType>,
 }

@@ -20,8 +20,8 @@ impl GetUserAccessLoggingSettingsInput {
 }
 
 /// A builder for [`GetUserAccessLoggingSettingsInput`](crate::operation::get_user_access_logging_settings::GetUserAccessLoggingSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetUserAccessLoggingSettingsInputBuilder {
     pub(crate) user_access_logging_settings_arn: ::std::option::Option<::std::string::String>,
 }

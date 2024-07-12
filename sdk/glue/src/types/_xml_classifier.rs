@@ -53,8 +53,8 @@ impl XmlClassifier {
 }
 
 /// A builder for [`XmlClassifier`](crate::types::XmlClassifier).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct XmlClassifierBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) classification: ::std::option::Option<::std::string::String>,

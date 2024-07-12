@@ -28,8 +28,8 @@ impl SourceFiles {
 }
 
 /// A builder for [`SourceFiles`](crate::types::SourceFiles).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SourceFilesBuilder {
     pub(crate) source1: ::std::option::Option<::std::string::String>,
     pub(crate) source2: ::std::option::Option<::std::string::String>,

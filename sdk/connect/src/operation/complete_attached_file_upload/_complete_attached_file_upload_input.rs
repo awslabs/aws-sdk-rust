@@ -37,8 +37,8 @@ impl CompleteAttachedFileUploadInput {
 }
 
 /// A builder for [`CompleteAttachedFileUploadInput`](crate::operation::complete_attached_file_upload::CompleteAttachedFileUploadInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CompleteAttachedFileUploadInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) file_id: ::std::option::Option<::std::string::String>,

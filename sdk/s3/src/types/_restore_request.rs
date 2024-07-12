@@ -59,8 +59,8 @@ impl RestoreRequest {
 }
 
 /// A builder for [`RestoreRequest`](crate::types::RestoreRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RestoreRequestBuilder {
     pub(crate) days: ::std::option::Option<i32>,
     pub(crate) glacier_job_parameters: ::std::option::Option<crate::types::GlacierJobParameters>,

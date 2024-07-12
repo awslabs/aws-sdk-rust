@@ -18,8 +18,8 @@ impl CancelMailboxExportJobOutput {
 }
 
 /// A builder for [`CancelMailboxExportJobOutput`](crate::operation::cancel_mailbox_export_job::CancelMailboxExportJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelMailboxExportJobOutputBuilder {
     _request_id: Option<String>,
 }

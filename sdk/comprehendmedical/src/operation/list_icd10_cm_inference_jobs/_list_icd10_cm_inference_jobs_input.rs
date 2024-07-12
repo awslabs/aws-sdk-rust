@@ -32,8 +32,8 @@ impl ListIcd10CmInferenceJobsInput {
 }
 
 /// A builder for [`ListIcd10CmInferenceJobsInput`](crate::operation::list_icd10_cm_inference_jobs::ListIcd10CmInferenceJobsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListIcd10CmInferenceJobsInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::ComprehendMedicalAsyncJobFilter>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

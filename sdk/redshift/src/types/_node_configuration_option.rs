@@ -39,8 +39,8 @@ impl NodeConfigurationOption {
 }
 
 /// A builder for [`NodeConfigurationOption`](crate::types::NodeConfigurationOption).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NodeConfigurationOptionBuilder {
     pub(crate) node_type: ::std::option::Option<::std::string::String>,
     pub(crate) number_of_nodes: ::std::option::Option<i32>,

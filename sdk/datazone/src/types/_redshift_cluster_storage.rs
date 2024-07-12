@@ -22,8 +22,8 @@ impl RedshiftClusterStorage {
 }
 
 /// A builder for [`RedshiftClusterStorage`](crate::types::RedshiftClusterStorage).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RedshiftClusterStorageBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
 }

@@ -12,8 +12,8 @@ impl AmplitudeConnectorProfileProperties {
 }
 
 /// A builder for [`AmplitudeConnectorProfileProperties`](crate::types::AmplitudeConnectorProfileProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AmplitudeConnectorProfilePropertiesBuilder {}
 impl AmplitudeConnectorProfilePropertiesBuilder {
     /// Consumes the builder and constructs a [`AmplitudeConnectorProfileProperties`](crate::types::AmplitudeConnectorProfileProperties).

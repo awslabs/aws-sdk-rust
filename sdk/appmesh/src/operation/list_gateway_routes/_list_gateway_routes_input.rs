@@ -44,8 +44,8 @@ impl ListGatewayRoutesInput {
 }
 
 /// A builder for [`ListGatewayRoutesInput`](crate::operation::list_gateway_routes::ListGatewayRoutesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListGatewayRoutesInputBuilder {
     pub(crate) mesh_name: ::std::option::Option<::std::string::String>,
     pub(crate) virtual_gateway_name: ::std::option::Option<::std::string::String>,

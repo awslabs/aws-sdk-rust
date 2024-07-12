@@ -21,8 +21,8 @@ impl StartExperimentExperimentOptionsInput {
 }
 
 /// A builder for [`StartExperimentExperimentOptionsInput`](crate::types::StartExperimentExperimentOptionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartExperimentExperimentOptionsInputBuilder {
     pub(crate) actions_mode: ::std::option::Option<crate::types::ActionsMode>,
 }

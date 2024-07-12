@@ -43,8 +43,8 @@ impl StatefulEngineOptions {
 }
 
 /// A builder for [`StatefulEngineOptions`](crate::types::StatefulEngineOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StatefulEngineOptionsBuilder {
     pub(crate) rule_order: ::std::option::Option<crate::types::RuleOrder>,
     pub(crate) stream_exception_policy: ::std::option::Option<crate::types::StreamExceptionPolicy>,

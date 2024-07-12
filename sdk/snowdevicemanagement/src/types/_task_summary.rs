@@ -40,8 +40,8 @@ impl TaskSummary {
 }
 
 /// A builder for [`TaskSummary`](crate::types::TaskSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TaskSummaryBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
     pub(crate) task_arn: ::std::option::Option<::std::string::String>,

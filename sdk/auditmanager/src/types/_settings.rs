@@ -79,8 +79,8 @@ impl Settings {
 }
 
 /// A builder for [`Settings`](crate::types::Settings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SettingsBuilder {
     pub(crate) is_aws_org_enabled: ::std::option::Option<bool>,
     pub(crate) sns_topic: ::std::option::Option<::std::string::String>,

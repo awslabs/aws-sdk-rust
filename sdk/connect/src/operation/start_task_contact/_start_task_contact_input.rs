@@ -108,8 +108,8 @@ impl StartTaskContactInput {
 }
 
 /// A builder for [`StartTaskContactInput`](crate::operation::start_task_contact::StartTaskContactInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct StartTaskContactInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) previous_contact_id: ::std::option::Option<::std::string::String>,

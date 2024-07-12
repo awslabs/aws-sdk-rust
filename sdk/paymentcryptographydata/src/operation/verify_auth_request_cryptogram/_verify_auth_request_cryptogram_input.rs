@@ -62,8 +62,8 @@ impl VerifyAuthRequestCryptogramInput {
 }
 
 /// A builder for [`VerifyAuthRequestCryptogramInput`](crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct VerifyAuthRequestCryptogramInputBuilder {
     pub(crate) key_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) transaction_data: ::std::option::Option<::std::string::String>,

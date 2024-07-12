@@ -22,8 +22,8 @@ impl DeleteInsightRulesInput {
 }
 
 /// A builder for [`DeleteInsightRulesInput`](crate::operation::delete_insight_rules::DeleteInsightRulesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteInsightRulesInputBuilder {
     pub(crate) rule_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

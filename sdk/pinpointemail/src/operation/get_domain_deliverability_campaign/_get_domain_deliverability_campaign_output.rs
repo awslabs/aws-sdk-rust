@@ -27,8 +27,8 @@ impl GetDomainDeliverabilityCampaignOutput {
 }
 
 /// A builder for [`GetDomainDeliverabilityCampaignOutput`](crate::operation::get_domain_deliverability_campaign::GetDomainDeliverabilityCampaignOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDomainDeliverabilityCampaignOutputBuilder {
     pub(crate) domain_deliverability_campaign: ::std::option::Option<crate::types::DomainDeliverabilityCampaign>,
     _request_id: Option<String>,

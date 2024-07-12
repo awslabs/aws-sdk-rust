@@ -29,8 +29,8 @@ impl CustomValuesConfiguration {
 }
 
 /// A builder for [`CustomValuesConfiguration`](crate::types::CustomValuesConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CustomValuesConfigurationBuilder {
     pub(crate) include_null_value: ::std::option::Option<bool>,
     pub(crate) custom_values: ::std::option::Option<crate::types::CustomParameterValues>,

@@ -22,8 +22,8 @@ impl DeleteDbClusterSnapshotInput {
 }
 
 /// A builder for [`DeleteDbClusterSnapshotInput`](crate::operation::delete_db_cluster_snapshot::DeleteDbClusterSnapshotInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDbClusterSnapshotInputBuilder {
     pub(crate) db_cluster_snapshot_identifier: ::std::option::Option<::std::string::String>,
 }

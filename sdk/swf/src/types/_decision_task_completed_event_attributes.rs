@@ -45,8 +45,8 @@ impl DecisionTaskCompletedEventAttributes {
 }
 
 /// A builder for [`DecisionTaskCompletedEventAttributes`](crate::types::DecisionTaskCompletedEventAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DecisionTaskCompletedEventAttributesBuilder {
     pub(crate) execution_context: ::std::option::Option<::std::string::String>,
     pub(crate) scheduled_event_id: ::std::option::Option<i64>,

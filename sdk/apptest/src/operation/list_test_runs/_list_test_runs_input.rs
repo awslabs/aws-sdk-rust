@@ -40,8 +40,8 @@ impl ListTestRunsInput {
 }
 
 /// A builder for [`ListTestRunsInput`](crate::operation::list_test_runs::ListTestRunsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTestRunsInputBuilder {
     pub(crate) test_suite_id: ::std::option::Option<::std::string::String>,
     pub(crate) test_run_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

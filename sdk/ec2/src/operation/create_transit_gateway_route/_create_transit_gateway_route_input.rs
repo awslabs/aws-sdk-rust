@@ -44,8 +44,8 @@ impl CreateTransitGatewayRouteInput {
 }
 
 /// A builder for [`CreateTransitGatewayRouteInput`](crate::operation::create_transit_gateway_route::CreateTransitGatewayRouteInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateTransitGatewayRouteInputBuilder {
     pub(crate) destination_cidr_block: ::std::option::Option<::std::string::String>,
     pub(crate) transit_gateway_route_table_id: ::std::option::Option<::std::string::String>,

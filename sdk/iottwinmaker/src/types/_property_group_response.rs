@@ -34,8 +34,8 @@ impl PropertyGroupResponse {
 }
 
 /// A builder for [`PropertyGroupResponse`](crate::types::PropertyGroupResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PropertyGroupResponseBuilder {
     pub(crate) group_type: ::std::option::Option<crate::types::GroupType>,
     pub(crate) property_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

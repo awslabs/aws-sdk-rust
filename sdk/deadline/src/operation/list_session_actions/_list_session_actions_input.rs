@@ -56,8 +56,8 @@ impl ListSessionActionsInput {
 }
 
 /// A builder for [`ListSessionActionsInput`](crate::operation::list_session_actions::ListSessionActionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSessionActionsInputBuilder {
     pub(crate) farm_id: ::std::option::Option<::std::string::String>,
     pub(crate) queue_id: ::std::option::Option<::std::string::String>,

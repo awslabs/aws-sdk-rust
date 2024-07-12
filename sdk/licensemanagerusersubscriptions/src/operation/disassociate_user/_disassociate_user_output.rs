@@ -26,8 +26,8 @@ impl DisassociateUserOutput {
 }
 
 /// A builder for [`DisassociateUserOutput`](crate::operation::disassociate_user::DisassociateUserOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateUserOutputBuilder {
     pub(crate) instance_user_summary: ::std::option::Option<crate::types::InstanceUserSummary>,
     _request_id: Option<String>,

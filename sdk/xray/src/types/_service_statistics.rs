@@ -45,8 +45,8 @@ impl ServiceStatistics {
 }
 
 /// A builder for [`ServiceStatistics`](crate::types::ServiceStatistics).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServiceStatisticsBuilder {
     pub(crate) ok_count: ::std::option::Option<i64>,
     pub(crate) error_statistics: ::std::option::Option<crate::types::ErrorStatistics>,

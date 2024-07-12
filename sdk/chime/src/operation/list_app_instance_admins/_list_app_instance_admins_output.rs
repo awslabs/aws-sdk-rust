@@ -50,8 +50,8 @@ impl ListAppInstanceAdminsOutput {
 }
 
 /// A builder for [`ListAppInstanceAdminsOutput`](crate::operation::list_app_instance_admins::ListAppInstanceAdminsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ListAppInstanceAdminsOutputBuilder {
     pub(crate) app_instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_instance_admins: ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceAdminSummary>>,

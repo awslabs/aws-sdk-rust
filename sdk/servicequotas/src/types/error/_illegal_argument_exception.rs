@@ -45,8 +45,8 @@ impl IllegalArgumentException {
 }
 
 /// A builder for [`IllegalArgumentException`](crate::types::error::IllegalArgumentException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IllegalArgumentExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,

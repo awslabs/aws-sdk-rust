@@ -40,8 +40,8 @@ impl GetConnectPeerAssociationsInput {
 }
 
 /// A builder for [`GetConnectPeerAssociationsInput`](crate::operation::get_connect_peer_associations::GetConnectPeerAssociationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetConnectPeerAssociationsInputBuilder {
     pub(crate) global_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) connect_peer_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

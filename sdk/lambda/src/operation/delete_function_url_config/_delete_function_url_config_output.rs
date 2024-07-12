@@ -18,8 +18,8 @@ impl DeleteFunctionUrlConfigOutput {
 }
 
 /// A builder for [`DeleteFunctionUrlConfigOutput`](crate::operation::delete_function_url_config::DeleteFunctionUrlConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFunctionUrlConfigOutputBuilder {
     _request_id: Option<String>,
 }

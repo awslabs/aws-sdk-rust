@@ -18,8 +18,8 @@ impl PutAccessPointPolicyForObjectLambdaOutput {
 }
 
 /// A builder for [`PutAccessPointPolicyForObjectLambdaOutput`](crate::operation::put_access_point_policy_for_object_lambda::PutAccessPointPolicyForObjectLambdaOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutAccessPointPolicyForObjectLambdaOutputBuilder {
     _request_id: Option<String>,
 }

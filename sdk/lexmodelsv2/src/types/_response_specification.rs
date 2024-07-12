@@ -28,8 +28,8 @@ impl ResponseSpecification {
 }
 
 /// A builder for [`ResponseSpecification`](crate::types::ResponseSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResponseSpecificationBuilder {
     pub(crate) message_groups: ::std::option::Option<::std::vec::Vec<crate::types::MessageGroup>>,
     pub(crate) allow_interrupt: ::std::option::Option<bool>,

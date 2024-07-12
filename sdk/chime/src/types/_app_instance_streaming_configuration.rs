@@ -36,8 +36,8 @@ impl AppInstanceStreamingConfiguration {
 }
 
 /// A builder for [`AppInstanceStreamingConfiguration`](crate::types::AppInstanceStreamingConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AppInstanceStreamingConfigurationBuilder {
     pub(crate) app_instance_data_type: ::std::option::Option<crate::types::AppInstanceDataType>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,

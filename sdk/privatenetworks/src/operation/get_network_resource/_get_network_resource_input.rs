@@ -20,8 +20,8 @@ impl GetNetworkResourceInput {
 }
 
 /// A builder for [`GetNetworkResourceInput`](crate::operation::get_network_resource::GetNetworkResourceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetNetworkResourceInputBuilder {
     pub(crate) network_resource_arn: ::std::option::Option<::std::string::String>,
 }

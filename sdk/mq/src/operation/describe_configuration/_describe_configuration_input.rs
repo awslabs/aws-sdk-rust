@@ -20,8 +20,8 @@ impl DescribeConfigurationInput {
 }
 
 /// A builder for [`DescribeConfigurationInput`](crate::operation::describe_configuration::DescribeConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeConfigurationInputBuilder {
     pub(crate) configuration_id: ::std::option::Option<::std::string::String>,
 }

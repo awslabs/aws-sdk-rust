@@ -47,8 +47,8 @@ impl CreateGuardrailOutput {
 }
 
 /// A builder for [`CreateGuardrailOutput`](crate::operation::create_guardrail::CreateGuardrailOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateGuardrailOutputBuilder {
     pub(crate) guardrail_id: ::std::option::Option<::std::string::String>,
     pub(crate) guardrail_arn: ::std::option::Option<::std::string::String>,

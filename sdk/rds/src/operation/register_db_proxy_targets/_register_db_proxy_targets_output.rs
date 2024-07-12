@@ -28,8 +28,8 @@ impl RegisterDbProxyTargetsOutput {
 }
 
 /// A builder for [`RegisterDbProxyTargetsOutput`](crate::operation::register_db_proxy_targets::RegisterDbProxyTargetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterDbProxyTargetsOutputBuilder {
     pub(crate) db_proxy_targets: ::std::option::Option<::std::vec::Vec<crate::types::DbProxyTarget>>,
     _request_id: Option<String>,

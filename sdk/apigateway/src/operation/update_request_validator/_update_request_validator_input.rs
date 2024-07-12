@@ -35,8 +35,8 @@ impl UpdateRequestValidatorInput {
 }
 
 /// A builder for [`UpdateRequestValidatorInput`](crate::operation::update_request_validator::UpdateRequestValidatorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRequestValidatorInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
     pub(crate) request_validator_id: ::std::option::Option<::std::string::String>,

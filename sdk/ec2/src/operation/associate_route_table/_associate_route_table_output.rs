@@ -32,8 +32,8 @@ impl AssociateRouteTableOutput {
 }
 
 /// A builder for [`AssociateRouteTableOutput`](crate::operation::associate_route_table::AssociateRouteTableOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateRouteTableOutputBuilder {
     pub(crate) association_id: ::std::option::Option<::std::string::String>,
     pub(crate) association_state: ::std::option::Option<crate::types::RouteTableAssociationState>,

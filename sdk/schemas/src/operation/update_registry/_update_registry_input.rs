@@ -27,8 +27,8 @@ impl UpdateRegistryInput {
 }
 
 /// A builder for [`UpdateRegistryInput`](crate::operation::update_registry::UpdateRegistryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRegistryInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) registry_name: ::std::option::Option<::std::string::String>,

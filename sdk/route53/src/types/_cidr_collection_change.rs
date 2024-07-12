@@ -35,8 +35,8 @@ impl CidrCollectionChange {
 }
 
 /// A builder for [`CidrCollectionChange`](crate::types::CidrCollectionChange).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CidrCollectionChangeBuilder {
     pub(crate) location_name: ::std::option::Option<::std::string::String>,
     pub(crate) action: ::std::option::Option<crate::types::CidrCollectionChangeAction>,

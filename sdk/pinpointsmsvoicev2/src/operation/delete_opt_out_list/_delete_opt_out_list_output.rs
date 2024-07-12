@@ -38,8 +38,8 @@ impl DeleteOptOutListOutput {
 }
 
 /// A builder for [`DeleteOptOutListOutput`](crate::operation::delete_opt_out_list::DeleteOptOutListOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteOptOutListOutputBuilder {
     pub(crate) opt_out_list_arn: ::std::option::Option<::std::string::String>,
     pub(crate) opt_out_list_name: ::std::option::Option<::std::string::String>,

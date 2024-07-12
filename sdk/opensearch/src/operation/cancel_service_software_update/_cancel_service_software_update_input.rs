@@ -21,8 +21,8 @@ impl CancelServiceSoftwareUpdateInput {
 }
 
 /// A builder for [`CancelServiceSoftwareUpdateInput`](crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelServiceSoftwareUpdateInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
 }

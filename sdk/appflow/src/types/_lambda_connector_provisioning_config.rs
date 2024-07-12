@@ -22,8 +22,8 @@ impl LambdaConnectorProvisioningConfig {
 }
 
 /// A builder for [`LambdaConnectorProvisioningConfig`](crate::types::LambdaConnectorProvisioningConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LambdaConnectorProvisioningConfigBuilder {
     pub(crate) lambda_arn: ::std::option::Option<::std::string::String>,
 }

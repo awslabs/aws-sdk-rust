@@ -23,8 +23,8 @@ impl TrafficRoute {
 }
 
 /// A builder for [`TrafficRoute`](crate::types::TrafficRoute).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TrafficRouteBuilder {
     pub(crate) listener_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

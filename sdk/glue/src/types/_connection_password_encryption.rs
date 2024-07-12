@@ -33,8 +33,8 @@ impl ConnectionPasswordEncryption {
 }
 
 /// A builder for [`ConnectionPasswordEncryption`](crate::types::ConnectionPasswordEncryption).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConnectionPasswordEncryptionBuilder {
     pub(crate) return_connection_password_encrypted: ::std::option::Option<bool>,
     pub(crate) aws_kms_key_id: ::std::option::Option<::std::string::String>,

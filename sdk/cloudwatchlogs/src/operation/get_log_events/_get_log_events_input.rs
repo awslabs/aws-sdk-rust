@@ -80,8 +80,8 @@ impl GetLogEventsInput {
 }
 
 /// A builder for [`GetLogEventsInput`](crate::operation::get_log_events::GetLogEventsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLogEventsInputBuilder {
     pub(crate) log_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) log_group_identifier: ::std::option::Option<::std::string::String>,

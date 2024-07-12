@@ -26,8 +26,8 @@ impl DisassociateIpamResourceDiscoveryInput {
 }
 
 /// A builder for [`DisassociateIpamResourceDiscoveryInput`](crate::operation::disassociate_ipam_resource_discovery::DisassociateIpamResourceDiscoveryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateIpamResourceDiscoveryInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) ipam_resource_discovery_association_id: ::std::option::Option<::std::string::String>,

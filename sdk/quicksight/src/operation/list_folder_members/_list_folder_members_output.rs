@@ -46,8 +46,8 @@ impl ListFolderMembersOutput {
 }
 
 /// A builder for [`ListFolderMembersOutput`](crate::operation::list_folder_members::ListFolderMembersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFolderMembersOutputBuilder {
     pub(crate) status: ::std::option::Option<i32>,
     pub(crate) folder_member_list: ::std::option::Option<::std::vec::Vec<crate::types::MemberIdArnPair>>,

@@ -18,8 +18,8 @@ impl DeleteRescoreExecutionPlanOutput {
 }
 
 /// A builder for [`DeleteRescoreExecutionPlanOutput`](crate::operation::delete_rescore_execution_plan::DeleteRescoreExecutionPlanOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRescoreExecutionPlanOutputBuilder {
     _request_id: Option<String>,
 }

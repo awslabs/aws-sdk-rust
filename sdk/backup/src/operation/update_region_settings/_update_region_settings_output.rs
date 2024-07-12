@@ -18,8 +18,8 @@ impl UpdateRegionSettingsOutput {
 }
 
 /// A builder for [`UpdateRegionSettingsOutput`](crate::operation::update_region_settings::UpdateRegionSettingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRegionSettingsOutputBuilder {
     _request_id: Option<String>,
 }

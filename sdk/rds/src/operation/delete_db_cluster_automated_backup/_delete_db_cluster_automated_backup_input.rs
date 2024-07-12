@@ -20,8 +20,8 @@ impl DeleteDbClusterAutomatedBackupInput {
 }
 
 /// A builder for [`DeleteDbClusterAutomatedBackupInput`](crate::operation::delete_db_cluster_automated_backup::DeleteDbClusterAutomatedBackupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDbClusterAutomatedBackupInputBuilder {
     pub(crate) db_cluster_resource_id: ::std::option::Option<::std::string::String>,
 }

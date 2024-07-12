@@ -26,8 +26,8 @@ impl DescribeEffectivePolicyOutput {
 }
 
 /// A builder for [`DescribeEffectivePolicyOutput`](crate::operation::describe_effective_policy::DescribeEffectivePolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEffectivePolicyOutputBuilder {
     pub(crate) effective_policy: ::std::option::Option<crate::types::EffectivePolicy>,
     _request_id: Option<String>,

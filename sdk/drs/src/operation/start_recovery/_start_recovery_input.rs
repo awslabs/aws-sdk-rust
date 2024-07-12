@@ -43,8 +43,8 @@ impl StartRecoveryInput {
 }
 
 /// A builder for [`StartRecoveryInput`](crate::operation::start_recovery::StartRecoveryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct StartRecoveryInputBuilder {
     pub(crate) source_servers: ::std::option::Option<::std::vec::Vec<crate::types::StartRecoveryRequestSourceServer>>,
     pub(crate) is_drill: ::std::option::Option<bool>,

@@ -26,8 +26,8 @@ impl UpdateJourneyStateOutput {
 }
 
 /// A builder for [`UpdateJourneyStateOutput`](crate::operation::update_journey_state::UpdateJourneyStateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateJourneyStateOutputBuilder {
     pub(crate) journey_response: ::std::option::Option<crate::types::JourneyResponse>,
     _request_id: Option<String>,

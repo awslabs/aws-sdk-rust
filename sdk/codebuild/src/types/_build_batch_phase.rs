@@ -217,8 +217,8 @@ impl BuildBatchPhase {
 }
 
 /// A builder for [`BuildBatchPhase`](crate::types::BuildBatchPhase).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BuildBatchPhaseBuilder {
     pub(crate) phase_type: ::std::option::Option<crate::types::BuildBatchPhaseType>,
     pub(crate) phase_status: ::std::option::Option<crate::types::StatusType>,

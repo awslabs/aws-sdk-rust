@@ -342,8 +342,8 @@ impl BatchResourceRequirement {
 }
 
 /// A builder for [`BatchResourceRequirement`](crate::types::BatchResourceRequirement).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchResourceRequirementBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::BatchResourceRequirementType>,
     pub(crate) value: ::std::option::Option<::std::string::String>,

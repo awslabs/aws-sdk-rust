@@ -18,8 +18,8 @@ impl AcceptQualificationRequestOutput {
 }
 
 /// A builder for [`AcceptQualificationRequestOutput`](crate::operation::accept_qualification_request::AcceptQualificationRequestOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AcceptQualificationRequestOutputBuilder {
     _request_id: Option<String>,
 }

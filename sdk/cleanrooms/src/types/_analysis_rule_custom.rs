@@ -36,8 +36,8 @@ impl AnalysisRuleCustom {
 }
 
 /// A builder for [`AnalysisRuleCustom`](crate::types::AnalysisRuleCustom).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AnalysisRuleCustomBuilder {
     pub(crate) allowed_analyses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) allowed_analysis_providers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -20,8 +20,8 @@ impl DescribePhiDetectionJobInput {
 }
 
 /// A builder for [`DescribePhiDetectionJobInput`](crate::operation::describe_phi_detection_job::DescribePhiDetectionJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribePhiDetectionJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }

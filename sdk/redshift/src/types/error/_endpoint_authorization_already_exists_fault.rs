@@ -45,8 +45,8 @@ impl EndpointAuthorizationAlreadyExistsFault {
 }
 
 /// A builder for [`EndpointAuthorizationAlreadyExistsFault`](crate::types::error::EndpointAuthorizationAlreadyExistsFault).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EndpointAuthorizationAlreadyExistsFaultBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,

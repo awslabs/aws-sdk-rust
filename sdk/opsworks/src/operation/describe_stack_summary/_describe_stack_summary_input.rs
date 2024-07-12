@@ -20,8 +20,8 @@ impl DescribeStackSummaryInput {
 }
 
 /// A builder for [`DescribeStackSummaryInput`](crate::operation::describe_stack_summary::DescribeStackSummaryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeStackSummaryInputBuilder {
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,
 }

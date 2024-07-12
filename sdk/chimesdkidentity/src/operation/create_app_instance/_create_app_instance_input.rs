@@ -50,8 +50,8 @@ impl CreateAppInstanceInput {
 }
 
 /// A builder for [`CreateAppInstanceInput`](crate::operation::create_app_instance::CreateAppInstanceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateAppInstanceInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) metadata: ::std::option::Option<::std::string::String>,

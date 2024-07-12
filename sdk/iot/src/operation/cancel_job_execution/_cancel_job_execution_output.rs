@@ -18,8 +18,8 @@ impl CancelJobExecutionOutput {
 }
 
 /// A builder for [`CancelJobExecutionOutput`](crate::operation::cancel_job_execution::CancelJobExecutionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelJobExecutionOutputBuilder {
     _request_id: Option<String>,
 }

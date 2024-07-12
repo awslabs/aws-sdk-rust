@@ -26,8 +26,8 @@ impl UpdateRoomMembershipOutput {
 }
 
 /// A builder for [`UpdateRoomMembershipOutput`](crate::operation::update_room_membership::UpdateRoomMembershipOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRoomMembershipOutputBuilder {
     pub(crate) room_membership: ::std::option::Option<crate::types::RoomMembership>,
     _request_id: Option<String>,

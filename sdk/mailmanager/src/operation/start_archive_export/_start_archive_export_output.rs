@@ -27,8 +27,8 @@ impl StartArchiveExportOutput {
 }
 
 /// A builder for [`StartArchiveExportOutput`](crate::operation::start_archive_export::StartArchiveExportOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartArchiveExportOutputBuilder {
     pub(crate) export_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

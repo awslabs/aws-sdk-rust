@@ -21,8 +21,8 @@ impl DetectedMetricSource {
 }
 
 /// A builder for [`DetectedMetricSource`](crate::types::DetectedMetricSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetectedMetricSourceBuilder {
     pub(crate) s3_source_config: ::std::option::Option<crate::types::DetectedS3SourceConfig>,
 }

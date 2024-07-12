@@ -62,8 +62,8 @@ impl UpdatePushTemplateInput {
 }
 
 /// A builder for [`UpdatePushTemplateInput`](crate::operation::update_push_template::UpdatePushTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePushTemplateInputBuilder {
     pub(crate) create_new_version: ::std::option::Option<bool>,
     pub(crate) push_notification_template_request: ::std::option::Option<crate::types::PushNotificationTemplateRequest>,

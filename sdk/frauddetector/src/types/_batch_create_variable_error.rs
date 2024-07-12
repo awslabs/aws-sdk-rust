@@ -33,8 +33,8 @@ impl BatchCreateVariableError {
 }
 
 /// A builder for [`BatchCreateVariableError`](crate::types::BatchCreateVariableError).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchCreateVariableErrorBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) code: ::std::option::Option<i32>,

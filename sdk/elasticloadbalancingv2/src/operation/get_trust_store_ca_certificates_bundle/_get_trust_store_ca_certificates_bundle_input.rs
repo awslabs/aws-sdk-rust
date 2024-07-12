@@ -20,8 +20,8 @@ impl GetTrustStoreCaCertificatesBundleInput {
 }
 
 /// A builder for [`GetTrustStoreCaCertificatesBundleInput`](crate::operation::get_trust_store_ca_certificates_bundle::GetTrustStoreCaCertificatesBundleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTrustStoreCaCertificatesBundleInputBuilder {
     pub(crate) trust_store_arn: ::std::option::Option<::std::string::String>,
 }

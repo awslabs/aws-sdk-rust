@@ -26,8 +26,8 @@ impl AssociateTransitGatewayRouteTableOutput {
 }
 
 /// A builder for [`AssociateTransitGatewayRouteTableOutput`](crate::operation::associate_transit_gateway_route_table::AssociateTransitGatewayRouteTableOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateTransitGatewayRouteTableOutputBuilder {
     pub(crate) association: ::std::option::Option<crate::types::TransitGatewayAssociation>,
     _request_id: Option<String>,

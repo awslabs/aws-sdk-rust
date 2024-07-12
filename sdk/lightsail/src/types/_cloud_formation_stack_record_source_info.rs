@@ -33,8 +33,8 @@ impl CloudFormationStackRecordSourceInfo {
 }
 
 /// A builder for [`CloudFormationStackRecordSourceInfo`](crate::types::CloudFormationStackRecordSourceInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CloudFormationStackRecordSourceInfoBuilder {
     pub(crate) resource_type: ::std::option::Option<crate::types::CloudFormationStackRecordSourceType>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

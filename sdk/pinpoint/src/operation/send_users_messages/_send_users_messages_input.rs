@@ -26,8 +26,8 @@ impl SendUsersMessagesInput {
 }
 
 /// A builder for [`SendUsersMessagesInput`](crate::operation::send_users_messages::SendUsersMessagesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendUsersMessagesInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) send_users_message_request: ::std::option::Option<crate::types::SendUsersMessageRequest>,

@@ -38,8 +38,8 @@ impl DescribeMappedResourceConfigurationInput {
 }
 
 /// A builder for [`DescribeMappedResourceConfigurationInput`](crate::operation::describe_mapped_resource_configuration::DescribeMappedResourceConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeMappedResourceConfigurationInputBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,

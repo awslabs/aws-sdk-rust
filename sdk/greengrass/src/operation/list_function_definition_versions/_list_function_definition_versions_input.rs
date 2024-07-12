@@ -32,8 +32,8 @@ impl ListFunctionDefinitionVersionsInput {
 }
 
 /// A builder for [`ListFunctionDefinitionVersionsInput`](crate::operation::list_function_definition_versions::ListFunctionDefinitionVersionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFunctionDefinitionVersionsInputBuilder {
     pub(crate) function_definition_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<::std::string::String>,

@@ -40,8 +40,8 @@ impl ListVocabulariesOutput {
 }
 
 /// A builder for [`ListVocabulariesOutput`](crate::operation::list_vocabularies::ListVocabulariesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListVocabulariesOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::VocabularyState>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

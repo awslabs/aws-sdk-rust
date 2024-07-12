@@ -44,8 +44,8 @@ impl DescribeRouterConfigurationOutput {
 }
 
 /// A builder for [`DescribeRouterConfigurationOutput`](crate::operation::describe_router_configuration::DescribeRouterConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRouterConfigurationOutputBuilder {
     pub(crate) customer_router_config: ::std::option::Option<::std::string::String>,
     pub(crate) router: ::std::option::Option<crate::types::RouterType>,

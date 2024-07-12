@@ -71,8 +71,8 @@ impl SearchPlaceIndexForPositionInput {
 }
 
 /// A builder for [`SearchPlaceIndexForPositionInput`](crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SearchPlaceIndexForPositionInputBuilder {
     pub(crate) index_name: ::std::option::Option<::std::string::String>,
     pub(crate) position: ::std::option::Option<::std::vec::Vec<f64>>,

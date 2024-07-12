@@ -21,8 +21,8 @@ impl GetIdentityPoolRolesInput {
 }
 
 /// A builder for [`GetIdentityPoolRolesInput`](crate::operation::get_identity_pool_roles::GetIdentityPoolRolesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetIdentityPoolRolesInputBuilder {
     pub(crate) identity_pool_id: ::std::option::Option<::std::string::String>,
 }

@@ -26,8 +26,8 @@ impl GetStorageLensConfigurationOutput {
 }
 
 /// A builder for [`GetStorageLensConfigurationOutput`](crate::operation::get_storage_lens_configuration::GetStorageLensConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetStorageLensConfigurationOutputBuilder {
     pub(crate) storage_lens_configuration: ::std::option::Option<crate::types::StorageLensConfiguration>,
     _request_id: Option<String>,

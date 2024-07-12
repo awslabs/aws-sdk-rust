@@ -33,8 +33,8 @@ impl ListPlacementsOutput {
 }
 
 /// A builder for [`ListPlacementsOutput`](crate::operation::list_placements::ListPlacementsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPlacementsOutputBuilder {
     pub(crate) placements: ::std::option::Option<::std::vec::Vec<crate::types::PlacementSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

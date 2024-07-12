@@ -26,8 +26,8 @@ impl CreateStackSetOutput {
 }
 
 /// A builder for [`CreateStackSetOutput`](crate::operation::create_stack_set::CreateStackSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateStackSetOutputBuilder {
     pub(crate) stack_set_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

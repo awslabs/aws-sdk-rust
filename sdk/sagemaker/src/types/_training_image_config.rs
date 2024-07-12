@@ -27,8 +27,8 @@ impl TrainingImageConfig {
 }
 
 /// A builder for [`TrainingImageConfig`](crate::types::TrainingImageConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TrainingImageConfigBuilder {
     pub(crate) training_repository_access_mode: ::std::option::Option<crate::types::TrainingRepositoryAccessMode>,
     pub(crate) training_repository_auth_config: ::std::option::Option<crate::types::TrainingRepositoryAuthConfig>,

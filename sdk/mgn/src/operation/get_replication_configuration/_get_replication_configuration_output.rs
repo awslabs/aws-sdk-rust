@@ -143,8 +143,8 @@ impl GetReplicationConfigurationOutput {
 }
 
 /// A builder for [`GetReplicationConfigurationOutput`](crate::operation::get_replication_configuration::GetReplicationConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetReplicationConfigurationOutputBuilder {
     pub(crate) source_server_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

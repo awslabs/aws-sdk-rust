@@ -63,8 +63,8 @@ impl EcsServiceRecommendationOption {
 }
 
 /// A builder for [`EcsServiceRecommendationOption`](crate::types::EcsServiceRecommendationOption).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EcsServiceRecommendationOptionBuilder {
     pub(crate) memory: ::std::option::Option<i32>,
     pub(crate) cpu: ::std::option::Option<i32>,

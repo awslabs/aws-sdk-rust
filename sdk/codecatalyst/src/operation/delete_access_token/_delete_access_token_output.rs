@@ -18,8 +18,8 @@ impl DeleteAccessTokenOutput {
 }
 
 /// A builder for [`DeleteAccessTokenOutput`](crate::operation::delete_access_token::DeleteAccessTokenOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAccessTokenOutputBuilder {
     _request_id: Option<String>,
 }

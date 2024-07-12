@@ -18,8 +18,8 @@ impl DeleteInferenceSchedulerOutput {
 }
 
 /// A builder for [`DeleteInferenceSchedulerOutput`](crate::operation::delete_inference_scheduler::DeleteInferenceSchedulerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteInferenceSchedulerOutputBuilder {
     _request_id: Option<String>,
 }

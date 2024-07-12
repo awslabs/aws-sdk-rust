@@ -45,8 +45,8 @@ impl FilteredLogEvent {
 }
 
 /// A builder for [`FilteredLogEvent`](crate::types::FilteredLogEvent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FilteredLogEventBuilder {
     pub(crate) log_stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) timestamp: ::std::option::Option<i64>,

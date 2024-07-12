@@ -45,8 +45,8 @@ impl StoppingCondition {
 }
 
 /// A builder for [`StoppingCondition`](crate::types::StoppingCondition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StoppingConditionBuilder {
     pub(crate) max_runtime_in_seconds: ::std::option::Option<i32>,
     pub(crate) max_wait_time_in_seconds: ::std::option::Option<i32>,

@@ -39,8 +39,8 @@ impl CustomRoutingAcceleratorAttributes {
 }
 
 /// A builder for [`CustomRoutingAcceleratorAttributes`](crate::types::CustomRoutingAcceleratorAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CustomRoutingAcceleratorAttributesBuilder {
     pub(crate) flow_logs_enabled: ::std::option::Option<bool>,
     pub(crate) flow_logs_s3_bucket: ::std::option::Option<::std::string::String>,

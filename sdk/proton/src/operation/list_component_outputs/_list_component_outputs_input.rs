@@ -32,8 +32,8 @@ impl ListComponentOutputsInput {
 }
 
 /// A builder for [`ListComponentOutputsInput`](crate::operation::list_component_outputs::ListComponentOutputsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListComponentOutputsInputBuilder {
     pub(crate) component_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

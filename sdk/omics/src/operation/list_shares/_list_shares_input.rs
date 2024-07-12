@@ -38,8 +38,8 @@ impl ListSharesInput {
 }
 
 /// A builder for [`ListSharesInput`](crate::operation::list_shares::ListSharesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSharesInputBuilder {
     pub(crate) resource_owner: ::std::option::Option<crate::types::ResourceOwner>,
     pub(crate) filter: ::std::option::Option<crate::types::Filter>,

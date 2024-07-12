@@ -35,8 +35,8 @@ impl DescribeEffectivePatchesForPatchBaselineOutput {
 }
 
 /// A builder for [`DescribeEffectivePatchesForPatchBaselineOutput`](crate::operation::describe_effective_patches_for_patch_baseline::DescribeEffectivePatchesForPatchBaselineOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEffectivePatchesForPatchBaselineOutputBuilder {
     pub(crate) effective_patches: ::std::option::Option<::std::vec::Vec<crate::types::EffectivePatch>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

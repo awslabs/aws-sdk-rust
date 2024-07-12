@@ -33,8 +33,8 @@ impl ListWorkflowStepGroupsOutput {
 }
 
 /// A builder for [`ListWorkflowStepGroupsOutput`](crate::operation::list_workflow_step_groups::ListWorkflowStepGroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListWorkflowStepGroupsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) workflow_step_groups_summary: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepGroupSummary>>,

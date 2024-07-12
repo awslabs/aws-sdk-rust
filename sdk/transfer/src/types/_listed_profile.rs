@@ -39,8 +39,8 @@ impl ListedProfile {
 }
 
 /// A builder for [`ListedProfile`](crate::types::ListedProfile).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListedProfileBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) profile_id: ::std::option::Option<::std::string::String>,

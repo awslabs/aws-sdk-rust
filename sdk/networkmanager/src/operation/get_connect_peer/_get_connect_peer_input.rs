@@ -20,8 +20,8 @@ impl GetConnectPeerInput {
 }
 
 /// A builder for [`GetConnectPeerInput`](crate::operation::get_connect_peer::GetConnectPeerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetConnectPeerInputBuilder {
     pub(crate) connect_peer_id: ::std::option::Option<::std::string::String>,
 }

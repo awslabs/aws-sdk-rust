@@ -62,8 +62,8 @@ impl UpdateEventDestinationInput {
 }
 
 /// A builder for [`UpdateEventDestinationInput`](crate::operation::update_event_destination::UpdateEventDestinationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateEventDestinationInputBuilder {
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) event_destination_name: ::std::option::Option<::std::string::String>,

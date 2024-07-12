@@ -33,8 +33,8 @@ impl InsightResourceDetail {
 }
 
 /// A builder for [`InsightResourceDetail`](crate::types::InsightResourceDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InsightResourceDetailBuilder {
     pub(crate) insight_status: ::std::option::Option<crate::types::InsightStatus>,
     pub(crate) kubernetes_resource_uri: ::std::option::Option<::std::string::String>,

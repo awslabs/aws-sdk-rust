@@ -37,8 +37,8 @@ impl NotificationAction {
 }
 
 /// A builder for [`NotificationAction`](crate::types::NotificationAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NotificationActionBuilder {
     pub(crate) action: ::std::option::Option<crate::types::NotificationTargetActions>,
     pub(crate) sms_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SmsConfiguration>>,

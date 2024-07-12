@@ -33,8 +33,8 @@ impl AnomalyObject {
 }
 
 /// A builder for [`AnomalyObject`](crate::types::AnomalyObject).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AnomalyObjectBuilder {
     pub(crate) profile_type: ::std::option::Option<crate::types::ProfileType>,
     pub(crate) profile_subtype: ::std::option::Option<crate::types::ProfileSubtype>,

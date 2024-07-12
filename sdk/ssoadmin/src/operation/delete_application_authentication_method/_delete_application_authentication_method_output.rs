@@ -18,8 +18,8 @@ impl DeleteApplicationAuthenticationMethodOutput {
 }
 
 /// A builder for [`DeleteApplicationAuthenticationMethodOutput`](crate::operation::delete_application_authentication_method::DeleteApplicationAuthenticationMethodOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteApplicationAuthenticationMethodOutputBuilder {
     _request_id: Option<String>,
 }

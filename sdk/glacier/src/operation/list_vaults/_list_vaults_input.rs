@@ -38,8 +38,8 @@ impl ListVaultsInput {
 }
 
 /// A builder for [`ListVaultsInput`](crate::operation::list_vaults::ListVaultsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListVaultsInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

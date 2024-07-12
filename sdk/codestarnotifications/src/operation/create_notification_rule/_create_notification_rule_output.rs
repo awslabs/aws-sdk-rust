@@ -26,8 +26,8 @@ impl CreateNotificationRuleOutput {
 }
 
 /// A builder for [`CreateNotificationRuleOutput`](crate::operation::create_notification_rule::CreateNotificationRuleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateNotificationRuleOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

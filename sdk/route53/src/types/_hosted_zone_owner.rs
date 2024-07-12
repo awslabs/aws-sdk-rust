@@ -27,8 +27,8 @@ impl HostedZoneOwner {
 }
 
 /// A builder for [`HostedZoneOwner`](crate::types::HostedZoneOwner).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HostedZoneOwnerBuilder {
     pub(crate) owning_account: ::std::option::Option<::std::string::String>,
     pub(crate) owning_service: ::std::option::Option<::std::string::String>,

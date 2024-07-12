@@ -26,8 +26,8 @@ impl ContentBody {
 }
 
 /// A builder for [`ContentBody`](crate::types::ContentBody).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ContentBodyBuilder {
     pub(crate) body: ::std::option::Option<::std::string::String>,
 }

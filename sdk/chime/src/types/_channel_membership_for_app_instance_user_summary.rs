@@ -27,8 +27,8 @@ impl ChannelMembershipForAppInstanceUserSummary {
 }
 
 /// A builder for [`ChannelMembershipForAppInstanceUserSummary`](crate::types::ChannelMembershipForAppInstanceUserSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ChannelMembershipForAppInstanceUserSummaryBuilder {
     pub(crate) channel_summary: ::std::option::Option<crate::types::ChannelSummary>,
     pub(crate) app_instance_user_membership_summary: ::std::option::Option<crate::types::AppInstanceUserMembershipSummary>,

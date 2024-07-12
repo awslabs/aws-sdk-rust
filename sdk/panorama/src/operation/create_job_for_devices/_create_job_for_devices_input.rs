@@ -34,8 +34,8 @@ impl CreateJobForDevicesInput {
 }
 
 /// A builder for [`CreateJobForDevicesInput`](crate::operation::create_job_for_devices::CreateJobForDevicesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateJobForDevicesInputBuilder {
     pub(crate) device_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) device_job_config: ::std::option::Option<crate::types::DeviceJobConfig>,

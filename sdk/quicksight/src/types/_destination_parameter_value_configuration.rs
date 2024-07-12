@@ -46,8 +46,8 @@ impl DestinationParameterValueConfiguration {
 }
 
 /// A builder for [`DestinationParameterValueConfiguration`](crate::types::DestinationParameterValueConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DestinationParameterValueConfigurationBuilder {
     pub(crate) custom_values_configuration: ::std::option::Option<crate::types::CustomValuesConfiguration>,
     pub(crate) select_all_value_options: ::std::option::Option<crate::types::SelectAllValueOptions>,

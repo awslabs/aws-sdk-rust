@@ -18,8 +18,8 @@ impl UpdateResourceProfileOutput {
 }
 
 /// A builder for [`UpdateResourceProfileOutput`](crate::operation::update_resource_profile::UpdateResourceProfileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateResourceProfileOutputBuilder {
     _request_id: Option<String>,
 }

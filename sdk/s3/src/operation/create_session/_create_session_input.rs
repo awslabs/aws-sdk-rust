@@ -26,8 +26,8 @@ impl CreateSessionInput {
 }
 
 /// A builder for [`CreateSessionInput`](crate::operation::create_session::CreateSessionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSessionInputBuilder {
     pub(crate) session_mode: ::std::option::Option<crate::types::SessionMode>,
     pub(crate) bucket: ::std::option::Option<::std::string::String>,

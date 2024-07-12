@@ -27,8 +27,8 @@ impl DeleteChangeSetInput {
 }
 
 /// A builder for [`DeleteChangeSetInput`](crate::operation::delete_change_set::DeleteChangeSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteChangeSetInputBuilder {
     pub(crate) change_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,

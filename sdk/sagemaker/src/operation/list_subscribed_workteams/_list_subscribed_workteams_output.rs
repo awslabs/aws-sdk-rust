@@ -34,8 +34,8 @@ impl ListSubscribedWorkteamsOutput {
 }
 
 /// A builder for [`ListSubscribedWorkteamsOutput`](crate::operation::list_subscribed_workteams::ListSubscribedWorkteamsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSubscribedWorkteamsOutputBuilder {
     pub(crate) subscribed_workteams: ::std::option::Option<::std::vec::Vec<crate::types::SubscribedWorkteam>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

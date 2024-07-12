@@ -77,8 +77,8 @@ impl WindowsAuditLogConfiguration {
 }
 
 /// A builder for [`WindowsAuditLogConfiguration`](crate::types::WindowsAuditLogConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WindowsAuditLogConfigurationBuilder {
     pub(crate) file_access_audit_log_level: ::std::option::Option<crate::types::WindowsAccessAuditLogLevel>,
     pub(crate) file_share_access_audit_log_level: ::std::option::Option<crate::types::WindowsAccessAuditLogLevel>,

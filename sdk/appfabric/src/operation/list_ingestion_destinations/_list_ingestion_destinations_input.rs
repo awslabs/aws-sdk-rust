@@ -40,8 +40,8 @@ impl ListIngestionDestinationsInput {
 }
 
 /// A builder for [`ListIngestionDestinationsInput`](crate::operation::list_ingestion_destinations::ListIngestionDestinationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListIngestionDestinationsInputBuilder {
     pub(crate) app_bundle_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) ingestion_identifier: ::std::option::Option<::std::string::String>,

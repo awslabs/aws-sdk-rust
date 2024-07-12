@@ -39,8 +39,8 @@ impl DescribeEngineDefaultParametersInput {
 }
 
 /// A builder for [`DescribeEngineDefaultParametersInput`](crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParametersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEngineDefaultParametersInputBuilder {
     pub(crate) cache_parameter_group_family: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,

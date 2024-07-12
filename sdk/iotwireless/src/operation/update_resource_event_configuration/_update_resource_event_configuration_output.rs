@@ -18,8 +18,8 @@ impl UpdateResourceEventConfigurationOutput {
 }
 
 /// A builder for [`UpdateResourceEventConfigurationOutput`](crate::operation::update_resource_event_configuration::UpdateResourceEventConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateResourceEventConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

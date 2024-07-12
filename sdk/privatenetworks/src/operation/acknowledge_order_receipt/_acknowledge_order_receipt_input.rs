@@ -20,8 +20,8 @@ impl AcknowledgeOrderReceiptInput {
 }
 
 /// A builder for [`AcknowledgeOrderReceiptInput`](crate::operation::acknowledge_order_receipt::AcknowledgeOrderReceiptInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AcknowledgeOrderReceiptInputBuilder {
     pub(crate) order_arn: ::std::option::Option<::std::string::String>,
 }

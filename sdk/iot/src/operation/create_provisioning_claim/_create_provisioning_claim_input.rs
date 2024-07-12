@@ -20,8 +20,8 @@ impl CreateProvisioningClaimInput {
 }
 
 /// A builder for [`CreateProvisioningClaimInput`](crate::operation::create_provisioning_claim::CreateProvisioningClaimInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateProvisioningClaimInputBuilder {
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
 }

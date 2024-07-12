@@ -18,8 +18,8 @@ impl DeleteCustomRoutingEndpointGroupOutput {
 }
 
 /// A builder for [`DeleteCustomRoutingEndpointGroupOutput`](crate::operation::delete_custom_routing_endpoint_group::DeleteCustomRoutingEndpointGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCustomRoutingEndpointGroupOutputBuilder {
     _request_id: Option<String>,
 }

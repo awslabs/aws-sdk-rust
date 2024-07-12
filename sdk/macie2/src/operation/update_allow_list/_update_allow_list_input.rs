@@ -40,8 +40,8 @@ impl UpdateAllowListInput {
 }
 
 /// A builder for [`UpdateAllowListInput`](crate::operation::update_allow_list::UpdateAllowListInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAllowListInputBuilder {
     pub(crate) criteria: ::std::option::Option<crate::types::AllowListCriteria>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

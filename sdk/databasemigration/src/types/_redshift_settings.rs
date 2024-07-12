@@ -262,8 +262,8 @@ impl RedshiftSettings {
 }
 
 /// A builder for [`RedshiftSettings`](crate::types::RedshiftSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct RedshiftSettingsBuilder {
     pub(crate) accept_any_date: ::std::option::Option<bool>,
     pub(crate) after_connect_script: ::std::option::Option<::std::string::String>,

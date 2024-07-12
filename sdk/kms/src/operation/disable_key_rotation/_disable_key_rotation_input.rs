@@ -38,8 +38,8 @@ impl DisableKeyRotationInput {
 }
 
 /// A builder for [`DisableKeyRotationInput`](crate::operation::disable_key_rotation::DisableKeyRotationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableKeyRotationInputBuilder {
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
 }

@@ -32,8 +32,8 @@ impl UpdateSiteAddressInput {
 }
 
 /// A builder for [`UpdateSiteAddressInput`](crate::operation::update_site_address::UpdateSiteAddressInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSiteAddressInputBuilder {
     pub(crate) site_id: ::std::option::Option<::std::string::String>,
     pub(crate) address_type: ::std::option::Option<crate::types::AddressType>,

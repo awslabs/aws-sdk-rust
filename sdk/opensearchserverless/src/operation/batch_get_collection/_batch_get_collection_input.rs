@@ -30,8 +30,8 @@ impl BatchGetCollectionInput {
 }
 
 /// A builder for [`BatchGetCollectionInput`](crate::operation::batch_get_collection::BatchGetCollectionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetCollectionInputBuilder {
     pub(crate) ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

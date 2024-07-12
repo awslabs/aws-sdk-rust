@@ -33,8 +33,8 @@ impl SoaRecord {
 }
 
 /// A builder for [`SoaRecord`](crate::types::SoaRecord).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SoaRecordBuilder {
     pub(crate) primary_name_server: ::std::option::Option<::std::string::String>,
     pub(crate) admin_email: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl DescribeFargateProfileOutput {
 }
 
 /// A builder for [`DescribeFargateProfileOutput`](crate::operation::describe_fargate_profile::DescribeFargateProfileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFargateProfileOutputBuilder {
     pub(crate) fargate_profile: ::std::option::Option<crate::types::FargateProfile>,
     _request_id: Option<String>,

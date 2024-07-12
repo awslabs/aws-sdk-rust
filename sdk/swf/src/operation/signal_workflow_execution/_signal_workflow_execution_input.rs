@@ -44,8 +44,8 @@ impl SignalWorkflowExecutionInput {
 }
 
 /// A builder for [`SignalWorkflowExecutionInput`](crate::operation::signal_workflow_execution::SignalWorkflowExecutionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SignalWorkflowExecutionInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) workflow_id: ::std::option::Option<::std::string::String>,

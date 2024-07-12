@@ -27,8 +27,8 @@ impl StartTransactionResult {
 }
 
 /// A builder for [`StartTransactionResult`](crate::types::StartTransactionResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartTransactionResultBuilder {
     pub(crate) transaction_id: ::std::option::Option<::std::string::String>,
     pub(crate) timing_information: ::std::option::Option<crate::types::TimingInformation>,

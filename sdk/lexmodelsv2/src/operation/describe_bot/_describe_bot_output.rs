@@ -96,8 +96,8 @@ impl DescribeBotOutput {
 }
 
 /// A builder for [`DescribeBotOutput`](crate::operation::describe_bot::DescribeBotOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeBotOutputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_name: ::std::option::Option<::std::string::String>,

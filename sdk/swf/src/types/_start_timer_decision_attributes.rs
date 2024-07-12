@@ -50,8 +50,8 @@ impl StartTimerDecisionAttributes {
 }
 
 /// A builder for [`StartTimerDecisionAttributes`](crate::types::StartTimerDecisionAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartTimerDecisionAttributesBuilder {
     pub(crate) timer_id: ::std::option::Option<::std::string::String>,
     pub(crate) control: ::std::option::Option<::std::string::String>,

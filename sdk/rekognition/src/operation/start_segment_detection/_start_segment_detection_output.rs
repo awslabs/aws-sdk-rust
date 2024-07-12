@@ -26,8 +26,8 @@ impl StartSegmentDetectionOutput {
 }
 
 /// A builder for [`StartSegmentDetectionOutput`](crate::operation::start_segment_detection::StartSegmentDetectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartSegmentDetectionOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

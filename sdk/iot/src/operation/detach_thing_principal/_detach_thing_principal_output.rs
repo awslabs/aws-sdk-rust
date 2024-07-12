@@ -19,8 +19,8 @@ impl DetachThingPrincipalOutput {
 }
 
 /// A builder for [`DetachThingPrincipalOutput`](crate::operation::detach_thing_principal::DetachThingPrincipalOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetachThingPrincipalOutputBuilder {
     _request_id: Option<String>,
 }

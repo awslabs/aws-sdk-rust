@@ -20,8 +20,8 @@ impl GetFarmInput {
 }
 
 /// A builder for [`GetFarmInput`](crate::operation::get_farm::GetFarmInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetFarmInputBuilder {
     pub(crate) farm_id: ::std::option::Option<::std::string::String>,
 }

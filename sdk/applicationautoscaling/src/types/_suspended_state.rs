@@ -33,8 +33,8 @@ impl SuspendedState {
 }
 
 /// A builder for [`SuspendedState`](crate::types::SuspendedState).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SuspendedStateBuilder {
     pub(crate) dynamic_scaling_in_suspended: ::std::option::Option<bool>,
     pub(crate) dynamic_scaling_out_suspended: ::std::option::Option<bool>,

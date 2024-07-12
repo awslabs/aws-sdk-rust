@@ -66,8 +66,8 @@ impl CreatePlacementGroupInput {
 }
 
 /// A builder for [`CreatePlacementGroupInput`](crate::operation::create_placement_group::CreatePlacementGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePlacementGroupInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) group_name: ::std::option::Option<::std::string::String>,

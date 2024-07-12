@@ -21,8 +21,8 @@ impl GeorgiaAdditionalInfo {
 }
 
 /// A builder for [`GeorgiaAdditionalInfo`](crate::types::GeorgiaAdditionalInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GeorgiaAdditionalInfoBuilder {
     pub(crate) person_type: ::std::option::Option<crate::types::PersonType>,
 }

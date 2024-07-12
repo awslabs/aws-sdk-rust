@@ -34,8 +34,8 @@ impl StartQueryPlanningInput {
 }
 
 /// A builder for [`StartQueryPlanningInput`](crate::operation::start_query_planning::StartQueryPlanningInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct StartQueryPlanningInputBuilder {
     pub(crate) query_planning_context: ::std::option::Option<crate::types::QueryPlanningContext>,
     pub(crate) query_string: ::std::option::Option<::std::string::String>,

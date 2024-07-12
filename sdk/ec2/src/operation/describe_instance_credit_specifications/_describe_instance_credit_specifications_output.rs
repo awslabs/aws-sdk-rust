@@ -34,8 +34,8 @@ impl DescribeInstanceCreditSpecificationsOutput {
 }
 
 /// A builder for [`DescribeInstanceCreditSpecificationsOutput`](crate::operation::describe_instance_credit_specifications::DescribeInstanceCreditSpecificationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeInstanceCreditSpecificationsOutputBuilder {
     pub(crate) instance_credit_specifications: ::std::option::Option<::std::vec::Vec<crate::types::InstanceCreditSpecification>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

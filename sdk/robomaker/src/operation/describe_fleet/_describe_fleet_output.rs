@@ -73,8 +73,8 @@ impl DescribeFleetOutput {
 }
 
 /// A builder for [`DescribeFleetOutput`](crate::operation::describe_fleet::DescribeFleetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFleetOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

@@ -49,8 +49,8 @@ impl LambdaFunctionMemoryRecommendationOption {
 }
 
 /// A builder for [`LambdaFunctionMemoryRecommendationOption`](crate::types::LambdaFunctionMemoryRecommendationOption).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LambdaFunctionMemoryRecommendationOptionBuilder {
     pub(crate) rank: ::std::option::Option<i32>,
     pub(crate) memory_size: ::std::option::Option<i32>,

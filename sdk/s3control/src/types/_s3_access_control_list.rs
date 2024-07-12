@@ -29,8 +29,8 @@ impl S3AccessControlList {
 }
 
 /// A builder for [`S3AccessControlList`](crate::types::S3AccessControlList).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3AccessControlListBuilder {
     pub(crate) owner: ::std::option::Option<crate::types::S3ObjectOwner>,
     pub(crate) grants: ::std::option::Option<::std::vec::Vec<crate::types::S3Grant>>,

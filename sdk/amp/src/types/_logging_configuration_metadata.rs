@@ -47,8 +47,8 @@ impl LoggingConfigurationMetadata {
 }
 
 /// A builder for [`LoggingConfigurationMetadata`](crate::types::LoggingConfigurationMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LoggingConfigurationMetadataBuilder {
     pub(crate) status: ::std::option::Option<crate::types::LoggingConfigurationStatus>,
     pub(crate) workspace: ::std::option::Option<::std::string::String>,

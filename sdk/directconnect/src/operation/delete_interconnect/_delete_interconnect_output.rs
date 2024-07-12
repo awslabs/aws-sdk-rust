@@ -58,8 +58,8 @@ impl DeleteInterconnectOutput {
 }
 
 /// A builder for [`DeleteInterconnectOutput`](crate::operation::delete_interconnect::DeleteInterconnectOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteInterconnectOutputBuilder {
     pub(crate) interconnect_state: ::std::option::Option<crate::types::InterconnectState>,
     _request_id: Option<String>,

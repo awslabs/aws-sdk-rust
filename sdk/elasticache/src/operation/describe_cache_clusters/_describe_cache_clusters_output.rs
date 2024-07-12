@@ -35,8 +35,8 @@ impl DescribeCacheClustersOutput {
 }
 
 /// A builder for [`DescribeCacheClustersOutput`](crate::operation::describe_cache_clusters::DescribeCacheClustersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCacheClustersOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) cache_clusters: ::std::option::Option<::std::vec::Vec<crate::types::CacheCluster>>,

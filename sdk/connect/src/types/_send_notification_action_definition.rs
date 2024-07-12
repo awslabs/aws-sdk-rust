@@ -46,8 +46,8 @@ impl SendNotificationActionDefinition {
 }
 
 /// A builder for [`SendNotificationActionDefinition`](crate::types::SendNotificationActionDefinition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendNotificationActionDefinitionBuilder {
     pub(crate) delivery_method: ::std::option::Option<crate::types::NotificationDeliveryType>,
     pub(crate) subject: ::std::option::Option<::std::string::String>,

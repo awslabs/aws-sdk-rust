@@ -32,8 +32,8 @@ impl CreateQueueFleetAssociationInput {
 }
 
 /// A builder for [`CreateQueueFleetAssociationInput`](crate::operation::create_queue_fleet_association::CreateQueueFleetAssociationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateQueueFleetAssociationInputBuilder {
     pub(crate) farm_id: ::std::option::Option<::std::string::String>,
     pub(crate) queue_id: ::std::option::Option<::std::string::String>,

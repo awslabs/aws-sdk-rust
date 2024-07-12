@@ -156,8 +156,8 @@ impl GetUsageForecastInput {
 }
 
 /// A builder for [`GetUsageForecastInput`](crate::operation::get_usage_forecast::GetUsageForecastInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetUsageForecastInputBuilder {
     pub(crate) time_period: ::std::option::Option<crate::types::DateInterval>,
     pub(crate) metric: ::std::option::Option<crate::types::Metric>,

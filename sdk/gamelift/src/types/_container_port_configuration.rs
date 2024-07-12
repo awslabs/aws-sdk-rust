@@ -24,8 +24,8 @@ impl ContainerPortConfiguration {
 }
 
 /// A builder for [`ContainerPortConfiguration`](crate::types::ContainerPortConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ContainerPortConfigurationBuilder {
     pub(crate) container_port_ranges: ::std::option::Option<::std::vec::Vec<crate::types::ContainerPortRange>>,
 }

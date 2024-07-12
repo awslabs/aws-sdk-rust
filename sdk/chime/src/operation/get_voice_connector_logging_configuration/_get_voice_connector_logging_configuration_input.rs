@@ -20,8 +20,8 @@ impl GetVoiceConnectorLoggingConfigurationInput {
 }
 
 /// A builder for [`GetVoiceConnectorLoggingConfigurationInput`](crate::operation::get_voice_connector_logging_configuration::GetVoiceConnectorLoggingConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetVoiceConnectorLoggingConfigurationInputBuilder {
     pub(crate) voice_connector_id: ::std::option::Option<::std::string::String>,
 }

@@ -20,8 +20,8 @@ impl GetKeyGroupConfigInput {
 }
 
 /// A builder for [`GetKeyGroupConfigInput`](crate::operation::get_key_group_config::GetKeyGroupConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetKeyGroupConfigInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }

@@ -49,8 +49,8 @@ impl ElasticsearchSettings {
 }
 
 /// A builder for [`ElasticsearchSettings`](crate::types::ElasticsearchSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ElasticsearchSettingsBuilder {
     pub(crate) service_access_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint_uri: ::std::option::Option<::std::string::String>,

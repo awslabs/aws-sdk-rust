@@ -34,8 +34,8 @@ impl GetSavingsPlansUtilizationOutput {
 }
 
 /// A builder for [`GetSavingsPlansUtilizationOutput`](crate::operation::get_savings_plans_utilization::GetSavingsPlansUtilizationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSavingsPlansUtilizationOutputBuilder {
     pub(crate) savings_plans_utilizations_by_time: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlansUtilizationByTime>>,
     pub(crate) total: ::std::option::Option<crate::types::SavingsPlansUtilizationAggregates>,

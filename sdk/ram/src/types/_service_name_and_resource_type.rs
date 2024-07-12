@@ -45,8 +45,8 @@ impl ServiceNameAndResourceType {
 }
 
 /// A builder for [`ServiceNameAndResourceType`](crate::types::ServiceNameAndResourceType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServiceNameAndResourceTypeBuilder {
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
     pub(crate) service_name: ::std::option::Option<::std::string::String>,

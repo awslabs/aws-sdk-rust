@@ -34,8 +34,8 @@ impl MutualTlsAuthenticationInput {
 }
 
 /// A builder for [`MutualTlsAuthenticationInput`](crate::types::MutualTlsAuthenticationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MutualTlsAuthenticationInputBuilder {
     pub(crate) truststore_uri: ::std::option::Option<::std::string::String>,
     pub(crate) truststore_version: ::std::option::Option<::std::string::String>,

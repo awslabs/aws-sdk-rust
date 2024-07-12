@@ -54,8 +54,8 @@ impl CreateMediaStreamPipelineInput {
 }
 
 /// A builder for [`CreateMediaStreamPipelineInput`](crate::operation::create_media_stream_pipeline::CreateMediaStreamPipelineInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateMediaStreamPipelineInputBuilder {
     pub(crate) sources: ::std::option::Option<::std::vec::Vec<crate::types::MediaStreamSource>>,
     pub(crate) sinks: ::std::option::Option<::std::vec::Vec<crate::types::MediaStreamSink>>,

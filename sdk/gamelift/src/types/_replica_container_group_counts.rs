@@ -41,8 +41,8 @@ impl ReplicaContainerGroupCounts {
 }
 
 /// A builder for [`ReplicaContainerGroupCounts`](crate::types::ReplicaContainerGroupCounts).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReplicaContainerGroupCountsBuilder {
     pub(crate) pending: ::std::option::Option<i32>,
     pub(crate) active: ::std::option::Option<i32>,

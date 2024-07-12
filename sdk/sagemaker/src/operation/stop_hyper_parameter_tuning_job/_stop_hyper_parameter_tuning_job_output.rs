@@ -18,8 +18,8 @@ impl StopHyperParameterTuningJobOutput {
 }
 
 /// A builder for [`StopHyperParameterTuningJobOutput`](crate::operation::stop_hyper_parameter_tuning_job::StopHyperParameterTuningJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopHyperParameterTuningJobOutputBuilder {
     _request_id: Option<String>,
 }

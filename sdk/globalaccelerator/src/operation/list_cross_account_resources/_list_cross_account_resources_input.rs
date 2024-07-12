@@ -38,8 +38,8 @@ impl ListCrossAccountResourcesInput {
 }
 
 /// A builder for [`ListCrossAccountResourcesInput`](crate::operation::list_cross_account_resources::ListCrossAccountResourcesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCrossAccountResourcesInputBuilder {
     pub(crate) accelerator_arn: ::std::option::Option<::std::string::String>,
     pub(crate) resource_owner_aws_account_id: ::std::option::Option<::std::string::String>,

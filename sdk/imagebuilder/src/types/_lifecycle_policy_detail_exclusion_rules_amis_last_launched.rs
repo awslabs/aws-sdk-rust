@@ -27,8 +27,8 @@ impl LifecyclePolicyDetailExclusionRulesAmisLastLaunched {
 }
 
 /// A builder for [`LifecyclePolicyDetailExclusionRulesAmisLastLaunched`](crate::types::LifecyclePolicyDetailExclusionRulesAmisLastLaunched).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LifecyclePolicyDetailExclusionRulesAmisLastLaunchedBuilder {
     pub(crate) value: ::std::option::Option<i32>,
     pub(crate) unit: ::std::option::Option<crate::types::LifecyclePolicyTimeUnit>,

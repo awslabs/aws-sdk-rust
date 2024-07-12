@@ -11,8 +11,8 @@ impl GetMessagingSessionEndpointInput {
 }
 
 /// A builder for [`GetMessagingSessionEndpointInput`](crate::operation::get_messaging_session_endpoint::GetMessagingSessionEndpointInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMessagingSessionEndpointInputBuilder {}
 impl GetMessagingSessionEndpointInputBuilder {
     /// Consumes the builder and constructs a [`GetMessagingSessionEndpointInput`](crate::operation::get_messaging_session_endpoint::GetMessagingSessionEndpointInput).

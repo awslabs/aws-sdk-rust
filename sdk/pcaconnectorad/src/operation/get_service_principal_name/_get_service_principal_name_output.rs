@@ -26,8 +26,8 @@ impl GetServicePrincipalNameOutput {
 }
 
 /// A builder for [`GetServicePrincipalNameOutput`](crate::operation::get_service_principal_name::GetServicePrincipalNameOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetServicePrincipalNameOutputBuilder {
     pub(crate) service_principal_name: ::std::option::Option<crate::types::ServicePrincipalName>,
     _request_id: Option<String>,

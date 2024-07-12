@@ -20,8 +20,8 @@ impl GetSnapshotBlockPublicAccessStateInput {
 }
 
 /// A builder for [`GetSnapshotBlockPublicAccessStateInput`](crate::operation::get_snapshot_block_public_access_state::GetSnapshotBlockPublicAccessStateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSnapshotBlockPublicAccessStateInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
 }

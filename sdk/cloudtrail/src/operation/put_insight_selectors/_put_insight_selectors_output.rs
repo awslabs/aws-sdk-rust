@@ -46,8 +46,8 @@ impl PutInsightSelectorsOutput {
 }
 
 /// A builder for [`PutInsightSelectorsOutput`](crate::operation::put_insight_selectors::PutInsightSelectorsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutInsightSelectorsOutputBuilder {
     pub(crate) trail_arn: ::std::option::Option<::std::string::String>,
     pub(crate) insight_selectors: ::std::option::Option<::std::vec::Vec<crate::types::InsightSelector>>,

@@ -34,8 +34,8 @@ impl DescribeRulesOutput {
 }
 
 /// A builder for [`DescribeRulesOutput`](crate::operation::describe_rules::DescribeRulesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRulesOutputBuilder {
     pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,

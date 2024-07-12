@@ -29,8 +29,8 @@ impl DescribeEnvironmentManagedActionsOutput {
 }
 
 /// A builder for [`DescribeEnvironmentManagedActionsOutput`](crate::operation::describe_environment_managed_actions::DescribeEnvironmentManagedActionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEnvironmentManagedActionsOutputBuilder {
     pub(crate) managed_actions: ::std::option::Option<::std::vec::Vec<crate::types::ManagedAction>>,
     _request_id: Option<String>,

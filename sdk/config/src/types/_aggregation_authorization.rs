@@ -39,8 +39,8 @@ impl AggregationAuthorization {
 }
 
 /// A builder for [`AggregationAuthorization`](crate::types::AggregationAuthorization).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AggregationAuthorizationBuilder {
     pub(crate) aggregation_authorization_arn: ::std::option::Option<::std::string::String>,
     pub(crate) authorized_account_id: ::std::option::Option<::std::string::String>,

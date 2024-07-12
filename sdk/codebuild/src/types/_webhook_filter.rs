@@ -196,8 +196,8 @@ impl WebhookFilter {
 }
 
 /// A builder for [`WebhookFilter`](crate::types::WebhookFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WebhookFilterBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::WebhookFilterType>,
     pub(crate) pattern: ::std::option::Option<::std::string::String>,

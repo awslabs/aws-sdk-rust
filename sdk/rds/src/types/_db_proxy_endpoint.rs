@@ -86,8 +86,8 @@ impl DbProxyEndpoint {
 }
 
 /// A builder for [`DbProxyEndpoint`](crate::types::DbProxyEndpoint).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DbProxyEndpointBuilder {
     pub(crate) db_proxy_endpoint_name: ::std::option::Option<::std::string::String>,
     pub(crate) db_proxy_endpoint_arn: ::std::option::Option<::std::string::String>,

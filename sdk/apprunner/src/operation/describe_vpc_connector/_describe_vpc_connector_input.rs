@@ -22,8 +22,8 @@ impl DescribeVpcConnectorInput {
 }
 
 /// A builder for [`DescribeVpcConnectorInput`](crate::operation::describe_vpc_connector::DescribeVpcConnectorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeVpcConnectorInputBuilder {
     pub(crate) vpc_connector_arn: ::std::option::Option<::std::string::String>,
 }

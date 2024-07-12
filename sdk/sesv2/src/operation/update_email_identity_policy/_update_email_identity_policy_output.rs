@@ -19,8 +19,8 @@ impl UpdateEmailIdentityPolicyOutput {
 }
 
 /// A builder for [`UpdateEmailIdentityPolicyOutput`](crate::operation::update_email_identity_policy::UpdateEmailIdentityPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateEmailIdentityPolicyOutputBuilder {
     _request_id: Option<String>,
 }

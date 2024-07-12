@@ -33,8 +33,8 @@ impl ListIncidentFindingsOutput {
 }
 
 /// A builder for [`ListIncidentFindingsOutput`](crate::operation::list_incident_findings::ListIncidentFindingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListIncidentFindingsOutputBuilder {
     pub(crate) findings: ::std::option::Option<::std::vec::Vec<crate::types::FindingSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

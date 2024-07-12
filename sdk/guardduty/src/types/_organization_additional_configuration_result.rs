@@ -45,8 +45,8 @@ impl OrganizationAdditionalConfigurationResult {
 }
 
 /// A builder for [`OrganizationAdditionalConfigurationResult`](crate::types::OrganizationAdditionalConfigurationResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OrganizationAdditionalConfigurationResultBuilder {
     pub(crate) name: ::std::option::Option<crate::types::OrgFeatureAdditionalConfiguration>,
     pub(crate) auto_enable: ::std::option::Option<crate::types::OrgFeatureStatus>,

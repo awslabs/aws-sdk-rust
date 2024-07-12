@@ -26,8 +26,8 @@ impl DescribeRxNormInferenceJobOutput {
 }
 
 /// A builder for [`DescribeRxNormInferenceJobOutput`](crate::operation::describe_rx_norm_inference_job::DescribeRxNormInferenceJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRxNormInferenceJobOutputBuilder {
     pub(crate) comprehend_medical_async_job_properties: ::std::option::Option<crate::types::ComprehendMedicalAsyncJobProperties>,
     _request_id: Option<String>,

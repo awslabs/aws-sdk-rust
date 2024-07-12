@@ -33,8 +33,8 @@ impl ListReplicationSetsOutput {
 }
 
 /// A builder for [`ListReplicationSetsOutput`](crate::operation::list_replication_sets::ListReplicationSetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListReplicationSetsOutputBuilder {
     pub(crate) replication_set_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

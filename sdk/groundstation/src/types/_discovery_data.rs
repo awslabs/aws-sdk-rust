@@ -36,8 +36,8 @@ impl DiscoveryData {
 }
 
 /// A builder for [`DiscoveryData`](crate::types::DiscoveryData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DiscoveryDataBuilder {
     pub(crate) public_ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) private_ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

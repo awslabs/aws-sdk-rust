@@ -27,8 +27,8 @@ impl RecoveryInstanceDataReplicationInitiationStep {
 }
 
 /// A builder for [`RecoveryInstanceDataReplicationInitiationStep`](crate::types::RecoveryInstanceDataReplicationInitiationStep).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecoveryInstanceDataReplicationInitiationStepBuilder {
     pub(crate) name: ::std::option::Option<crate::types::RecoveryInstanceDataReplicationInitiationStepName>,
     pub(crate) status: ::std::option::Option<crate::types::RecoveryInstanceDataReplicationInitiationStepStatus>,

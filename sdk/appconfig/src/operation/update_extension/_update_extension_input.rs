@@ -44,8 +44,8 @@ impl UpdateExtensionInput {
 }
 
 /// A builder for [`UpdateExtensionInput`](crate::operation::update_extension::UpdateExtensionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateExtensionInputBuilder {
     pub(crate) extension_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

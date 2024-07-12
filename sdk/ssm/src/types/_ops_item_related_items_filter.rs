@@ -34,8 +34,8 @@ impl OpsItemRelatedItemsFilter {
 }
 
 /// A builder for [`OpsItemRelatedItemsFilter`](crate::types::OpsItemRelatedItemsFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OpsItemRelatedItemsFilterBuilder {
     pub(crate) key: ::std::option::Option<crate::types::OpsItemRelatedItemsFilterKey>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

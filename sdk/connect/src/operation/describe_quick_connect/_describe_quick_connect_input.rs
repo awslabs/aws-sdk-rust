@@ -26,8 +26,8 @@ impl DescribeQuickConnectInput {
 }
 
 /// A builder for [`DescribeQuickConnectInput`](crate::operation::describe_quick_connect::DescribeQuickConnectInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeQuickConnectInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) quick_connect_id: ::std::option::Option<::std::string::String>,

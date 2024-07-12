@@ -40,8 +40,8 @@ impl CreateDeploymentOutput {
 }
 
 /// A builder for [`CreateDeploymentOutput`](crate::operation::create_deployment::CreateDeploymentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDeploymentOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) file_upload_urls: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

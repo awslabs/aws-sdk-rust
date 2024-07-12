@@ -89,8 +89,8 @@ impl BatchUpdateFindingsUnprocessedFinding {
 }
 
 /// A builder for [`BatchUpdateFindingsUnprocessedFinding`](crate::types::BatchUpdateFindingsUnprocessedFinding).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchUpdateFindingsUnprocessedFindingBuilder {
     pub(crate) finding_identifier: ::std::option::Option<crate::types::AwsSecurityFindingIdentifier>,
     pub(crate) error_code: ::std::option::Option<::std::string::String>,

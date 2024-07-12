@@ -32,8 +32,8 @@ impl GetLibraryItemInput {
 }
 
 /// A builder for [`GetLibraryItemInput`](crate::operation::get_library_item::GetLibraryItemInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLibraryItemInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) library_item_id: ::std::option::Option<::std::string::String>,

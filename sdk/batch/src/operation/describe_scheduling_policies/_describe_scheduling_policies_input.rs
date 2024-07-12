@@ -23,8 +23,8 @@ impl DescribeSchedulingPoliciesInput {
 }
 
 /// A builder for [`DescribeSchedulingPoliciesInput`](crate::operation::describe_scheduling_policies::DescribeSchedulingPoliciesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSchedulingPoliciesInputBuilder {
     pub(crate) arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

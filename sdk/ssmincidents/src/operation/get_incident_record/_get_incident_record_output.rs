@@ -26,8 +26,8 @@ impl GetIncidentRecordOutput {
 }
 
 /// A builder for [`GetIncidentRecordOutput`](crate::operation::get_incident_record::GetIncidentRecordOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetIncidentRecordOutputBuilder {
     pub(crate) incident_record: ::std::option::Option<crate::types::IncidentRecord>,
     _request_id: Option<String>,

@@ -74,8 +74,8 @@ impl UpdateFleetMetricInput {
 }
 
 /// A builder for [`UpdateFleetMetricInput`](crate::operation::update_fleet_metric::UpdateFleetMetricInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateFleetMetricInputBuilder {
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
     pub(crate) query_string: ::std::option::Option<::std::string::String>,

@@ -33,8 +33,8 @@ impl ListLicenseEndpointsOutput {
 }
 
 /// A builder for [`ListLicenseEndpointsOutput`](crate::operation::list_license_endpoints::ListLicenseEndpointsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListLicenseEndpointsOutputBuilder {
     pub(crate) license_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::LicenseEndpointSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

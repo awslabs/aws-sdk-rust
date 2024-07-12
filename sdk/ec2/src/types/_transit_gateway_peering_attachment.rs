@@ -71,8 +71,8 @@ impl TransitGatewayPeeringAttachment {
 }
 
 /// A builder for [`TransitGatewayPeeringAttachment`](crate::types::TransitGatewayPeeringAttachment).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TransitGatewayPeeringAttachmentBuilder {
     pub(crate) transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
     pub(crate) accepter_transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,

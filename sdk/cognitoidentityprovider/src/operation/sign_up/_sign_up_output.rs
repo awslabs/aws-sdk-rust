@@ -40,8 +40,8 @@ impl SignUpOutput {
 }
 
 /// A builder for [`SignUpOutput`](crate::operation::sign_up::SignUpOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SignUpOutputBuilder {
     pub(crate) user_confirmed: ::std::option::Option<bool>,
     pub(crate) code_delivery_details: ::std::option::Option<crate::types::CodeDeliveryDetailsType>,

@@ -32,8 +32,8 @@ impl DescribeListenerCertificatesInput {
 }
 
 /// A builder for [`DescribeListenerCertificatesInput`](crate::operation::describe_listener_certificates::DescribeListenerCertificatesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeListenerCertificatesInputBuilder {
     pub(crate) listener_arn: ::std::option::Option<::std::string::String>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

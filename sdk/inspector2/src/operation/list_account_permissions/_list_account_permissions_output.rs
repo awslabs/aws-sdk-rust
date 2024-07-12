@@ -33,8 +33,8 @@ impl ListAccountPermissionsOutput {
 }
 
 /// A builder for [`ListAccountPermissionsOutput`](crate::operation::list_account_permissions::ListAccountPermissionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAccountPermissionsOutputBuilder {
     pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

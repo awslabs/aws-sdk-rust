@@ -20,8 +20,8 @@ impl DeleteRelationalDatabaseSnapshotInput {
 }
 
 /// A builder for [`DeleteRelationalDatabaseSnapshotInput`](crate::operation::delete_relational_database_snapshot::DeleteRelationalDatabaseSnapshotInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRelationalDatabaseSnapshotInputBuilder {
     pub(crate) relational_database_snapshot_name: ::std::option::Option<::std::string::String>,
 }

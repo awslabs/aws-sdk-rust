@@ -26,8 +26,8 @@ impl AssociateNetworkSettingsInput {
 }
 
 /// A builder for [`AssociateNetworkSettingsInput`](crate::operation::associate_network_settings::AssociateNetworkSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateNetworkSettingsInputBuilder {
     pub(crate) portal_arn: ::std::option::Option<::std::string::String>,
     pub(crate) network_settings_arn: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl GenerateMobileSdkReleaseUrlOutput {
 }
 
 /// A builder for [`GenerateMobileSdkReleaseUrlOutput`](crate::operation::generate_mobile_sdk_release_url::GenerateMobileSdkReleaseUrlOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GenerateMobileSdkReleaseUrlOutputBuilder {
     pub(crate) url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

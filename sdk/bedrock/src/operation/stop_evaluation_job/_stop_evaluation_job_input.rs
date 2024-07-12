@@ -27,8 +27,8 @@ impl StopEvaluationJobInput {
 }
 
 /// A builder for [`StopEvaluationJobInput`](crate::operation::stop_evaluation_job::StopEvaluationJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct StopEvaluationJobInputBuilder {
     pub(crate) job_identifier: ::std::option::Option<::std::string::String>,
 }

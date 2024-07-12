@@ -26,8 +26,8 @@ impl CreateCapacityProviderOutput {
 }
 
 /// A builder for [`CreateCapacityProviderOutput`](crate::operation::create_capacity_provider::CreateCapacityProviderOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCapacityProviderOutputBuilder {
     pub(crate) capacity_provider: ::std::option::Option<crate::types::CapacityProvider>,
     _request_id: Option<String>,

@@ -32,8 +32,8 @@ impl UpdateResourceShareOutput {
 }
 
 /// A builder for [`UpdateResourceShareOutput`](crate::operation::update_resource_share::UpdateResourceShareOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateResourceShareOutputBuilder {
     pub(crate) resource_share: ::std::option::Option<crate::types::ResourceShare>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

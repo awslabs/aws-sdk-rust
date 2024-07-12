@@ -12,8 +12,8 @@ impl CollectorFlowNodeConfiguration {
 }
 
 /// A builder for [`CollectorFlowNodeConfiguration`](crate::types::CollectorFlowNodeConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CollectorFlowNodeConfigurationBuilder {}
 impl CollectorFlowNodeConfigurationBuilder {
     /// Consumes the builder and constructs a [`CollectorFlowNodeConfiguration`](crate::types::CollectorFlowNodeConfiguration).

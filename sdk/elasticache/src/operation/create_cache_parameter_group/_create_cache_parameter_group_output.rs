@@ -26,8 +26,8 @@ impl CreateCacheParameterGroupOutput {
 }
 
 /// A builder for [`CreateCacheParameterGroupOutput`](crate::operation::create_cache_parameter_group::CreateCacheParameterGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCacheParameterGroupOutputBuilder {
     pub(crate) cache_parameter_group: ::std::option::Option<crate::types::CacheParameterGroup>,
     _request_id: Option<String>,

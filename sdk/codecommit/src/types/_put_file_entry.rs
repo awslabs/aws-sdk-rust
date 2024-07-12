@@ -40,8 +40,8 @@ impl PutFileEntry {
 }
 
 /// A builder for [`PutFileEntry`](crate::types::PutFileEntry).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutFileEntryBuilder {
     pub(crate) file_path: ::std::option::Option<::std::string::String>,
     pub(crate) file_mode: ::std::option::Option<crate::types::FileModeTypeEnum>,

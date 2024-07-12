@@ -20,8 +20,8 @@ impl RemoveBackendConfigInput {
 }
 
 /// A builder for [`RemoveBackendConfigInput`](crate::operation::remove_backend_config::RemoveBackendConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoveBackendConfigInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
 }

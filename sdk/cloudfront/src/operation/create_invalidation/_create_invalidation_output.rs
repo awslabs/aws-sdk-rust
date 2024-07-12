@@ -33,8 +33,8 @@ impl CreateInvalidationOutput {
 }
 
 /// A builder for [`CreateInvalidationOutput`](crate::operation::create_invalidation::CreateInvalidationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateInvalidationOutputBuilder {
     pub(crate) location: ::std::option::Option<::std::string::String>,
     pub(crate) invalidation: ::std::option::Option<crate::types::Invalidation>,

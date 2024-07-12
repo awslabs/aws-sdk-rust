@@ -51,8 +51,8 @@ impl StreamSummary {
 }
 
 /// A builder for [`StreamSummary`](crate::types::StreamSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StreamSummaryBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) stream_id: ::std::option::Option<::std::string::String>,

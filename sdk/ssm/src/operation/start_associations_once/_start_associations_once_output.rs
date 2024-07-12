@@ -18,8 +18,8 @@ impl StartAssociationsOnceOutput {
 }
 
 /// A builder for [`StartAssociationsOnceOutput`](crate::operation::start_associations_once::StartAssociationsOnceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartAssociationsOnceOutputBuilder {
     _request_id: Option<String>,
 }

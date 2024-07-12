@@ -46,8 +46,8 @@ impl CreateHubContentReferenceInput {
 }
 
 /// A builder for [`CreateHubContentReferenceInput`](crate::operation::create_hub_content_reference::CreateHubContentReferenceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateHubContentReferenceInputBuilder {
     pub(crate) hub_name: ::std::option::Option<::std::string::String>,
     pub(crate) sage_maker_public_hub_content_arn: ::std::option::Option<::std::string::String>,

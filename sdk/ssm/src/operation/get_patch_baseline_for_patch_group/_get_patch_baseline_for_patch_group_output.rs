@@ -38,8 +38,8 @@ impl GetPatchBaselineForPatchGroupOutput {
 }
 
 /// A builder for [`GetPatchBaselineForPatchGroupOutput`](crate::operation::get_patch_baseline_for_patch_group::GetPatchBaselineForPatchGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPatchBaselineForPatchGroupOutputBuilder {
     pub(crate) baseline_id: ::std::option::Option<::std::string::String>,
     pub(crate) patch_group: ::std::option::Option<::std::string::String>,

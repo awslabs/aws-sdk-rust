@@ -241,8 +241,8 @@ impl SecurityServicePolicyData {
 }
 
 /// A builder for [`SecurityServicePolicyData`](crate::types::SecurityServicePolicyData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SecurityServicePolicyDataBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::SecurityServiceType>,
     pub(crate) managed_service_data: ::std::option::Option<::std::string::String>,

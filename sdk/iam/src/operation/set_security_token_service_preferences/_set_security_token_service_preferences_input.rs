@@ -22,8 +22,8 @@ impl SetSecurityTokenServicePreferencesInput {
 }
 
 /// A builder for [`SetSecurityTokenServicePreferencesInput`](crate::operation::set_security_token_service_preferences::SetSecurityTokenServicePreferencesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetSecurityTokenServicePreferencesInputBuilder {
     pub(crate) global_endpoint_token_version: ::std::option::Option<crate::types::GlobalEndpointTokenVersion>,
 }

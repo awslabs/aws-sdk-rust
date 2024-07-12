@@ -46,8 +46,8 @@ impl UpdateLedgerPermissionsModeInput {
 }
 
 /// A builder for [`UpdateLedgerPermissionsModeInput`](crate::operation::update_ledger_permissions_mode::UpdateLedgerPermissionsModeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateLedgerPermissionsModeInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) permissions_mode: ::std::option::Option<crate::types::PermissionsMode>,

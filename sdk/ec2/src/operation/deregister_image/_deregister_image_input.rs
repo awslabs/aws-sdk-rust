@@ -27,8 +27,8 @@ impl DeregisterImageInput {
 }
 
 /// A builder for [`DeregisterImageInput`](crate::operation::deregister_image::DeregisterImageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeregisterImageInputBuilder {
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,

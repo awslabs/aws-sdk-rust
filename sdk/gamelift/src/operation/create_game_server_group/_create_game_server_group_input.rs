@@ -106,8 +106,8 @@ impl CreateGameServerGroupInput {
 }
 
 /// A builder for [`CreateGameServerGroupInput`](crate::operation::create_game_server_group::CreateGameServerGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateGameServerGroupInputBuilder {
     pub(crate) game_server_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,

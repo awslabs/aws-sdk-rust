@@ -26,8 +26,8 @@ impl AssociateWirelessGatewayWithCertificateInput {
 }
 
 /// A builder for [`AssociateWirelessGatewayWithCertificateInput`](crate::operation::associate_wireless_gateway_with_certificate::AssociateWirelessGatewayWithCertificateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateWirelessGatewayWithCertificateInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) iot_certificate_id: ::std::option::Option<::std::string::String>,

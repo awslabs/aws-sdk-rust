@@ -35,8 +35,8 @@ impl LiveSimulationState {
 }
 
 /// A builder for [`LiveSimulationState`](crate::types::LiveSimulationState).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LiveSimulationStateBuilder {
     pub(crate) domains: ::std::option::Option<::std::vec::Vec<crate::types::Domain>>,
     pub(crate) clocks: ::std::option::Option<::std::vec::Vec<crate::types::SimulationClock>>,

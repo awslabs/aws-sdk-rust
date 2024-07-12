@@ -28,8 +28,8 @@ impl TestMetricFilterInput {
 }
 
 /// A builder for [`TestMetricFilterInput`](crate::operation::test_metric_filter::TestMetricFilterInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TestMetricFilterInputBuilder {
     pub(crate) filter_pattern: ::std::option::Option<::std::string::String>,
     pub(crate) log_event_messages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

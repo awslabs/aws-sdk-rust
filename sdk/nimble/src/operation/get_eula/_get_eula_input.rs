@@ -20,8 +20,8 @@ impl GetEulaInput {
 }
 
 /// A builder for [`GetEulaInput`](crate::operation::get_eula::GetEulaInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEulaInputBuilder {
     pub(crate) eula_id: ::std::option::Option<::std::string::String>,
 }

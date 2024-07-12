@@ -27,8 +27,8 @@ impl NetworkInputSettings {
 }
 
 /// A builder for [`NetworkInputSettings`](crate::types::NetworkInputSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NetworkInputSettingsBuilder {
     pub(crate) hls_input_settings: ::std::option::Option<crate::types::HlsInputSettings>,
     pub(crate) server_validation: ::std::option::Option<crate::types::NetworkInputServerValidation>,

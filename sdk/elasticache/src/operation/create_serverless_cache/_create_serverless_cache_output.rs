@@ -26,8 +26,8 @@ impl CreateServerlessCacheOutput {
 }
 
 /// A builder for [`CreateServerlessCacheOutput`](crate::operation::create_serverless_cache::CreateServerlessCacheOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateServerlessCacheOutputBuilder {
     pub(crate) serverless_cache: ::std::option::Option<crate::types::ServerlessCache>,
     _request_id: Option<String>,

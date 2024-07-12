@@ -42,8 +42,8 @@ impl DescribeTaskSetsInput {
 }
 
 /// A builder for [`DescribeTaskSetsInput`](crate::operation::describe_task_sets::DescribeTaskSetsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTaskSetsInputBuilder {
     pub(crate) cluster: ::std::option::Option<::std::string::String>,
     pub(crate) service: ::std::option::Option<::std::string::String>,

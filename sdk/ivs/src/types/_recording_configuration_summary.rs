@@ -46,8 +46,8 @@ impl RecordingConfigurationSummary {
 }
 
 /// A builder for [`RecordingConfigurationSummary`](crate::types::RecordingConfigurationSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecordingConfigurationSummaryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

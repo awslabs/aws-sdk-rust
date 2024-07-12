@@ -41,8 +41,8 @@ impl UpdatePolicyStoreInput {
 }
 
 /// A builder for [`UpdatePolicyStoreInput`](crate::operation::update_policy_store::UpdatePolicyStoreInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdatePolicyStoreInputBuilder {
     pub(crate) policy_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) validation_settings: ::std::option::Option<crate::types::ValidationSettings>,

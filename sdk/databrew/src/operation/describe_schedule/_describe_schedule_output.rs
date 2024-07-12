@@ -77,8 +77,8 @@ impl DescribeScheduleOutput {
 }
 
 /// A builder for [`DescribeScheduleOutput`](crate::operation::describe_schedule::DescribeScheduleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeScheduleOutputBuilder {
     pub(crate) create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,

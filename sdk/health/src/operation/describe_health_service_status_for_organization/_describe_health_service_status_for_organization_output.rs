@@ -30,8 +30,8 @@ impl DescribeHealthServiceStatusForOrganizationOutput {
 }
 
 /// A builder for [`DescribeHealthServiceStatusForOrganizationOutput`](crate::operation::describe_health_service_status_for_organization::DescribeHealthServiceStatusForOrganizationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeHealthServiceStatusForOrganizationOutputBuilder {
     pub(crate) health_service_access_status_for_organization: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

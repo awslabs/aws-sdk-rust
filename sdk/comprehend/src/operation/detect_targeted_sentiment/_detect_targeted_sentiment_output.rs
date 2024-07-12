@@ -36,8 +36,8 @@ impl DetectTargetedSentimentOutput {
 }
 
 /// A builder for [`DetectTargetedSentimentOutput`](crate::operation::detect_targeted_sentiment::DetectTargetedSentimentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DetectTargetedSentimentOutputBuilder {
     pub(crate) entities: ::std::option::Option<::std::vec::Vec<crate::types::TargetedSentimentEntity>>,
     _request_id: Option<String>,

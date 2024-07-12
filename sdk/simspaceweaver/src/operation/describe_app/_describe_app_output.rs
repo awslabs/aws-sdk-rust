@@ -68,8 +68,8 @@ impl DescribeAppOutput {
 }
 
 /// A builder for [`DescribeAppOutput`](crate::operation::describe_app::DescribeAppOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAppOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) simulation: ::std::option::Option<::std::string::String>,

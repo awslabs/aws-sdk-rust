@@ -35,8 +35,8 @@ impl ModelInfrastructureConfig {
 }
 
 /// A builder for [`ModelInfrastructureConfig`](crate::types::ModelInfrastructureConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModelInfrastructureConfigBuilder {
     pub(crate) infrastructure_type: ::std::option::Option<crate::types::ModelInfrastructureType>,
     pub(crate) real_time_inference_config: ::std::option::Option<crate::types::RealTimeInferenceConfig>,

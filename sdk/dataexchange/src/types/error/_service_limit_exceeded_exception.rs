@@ -57,8 +57,8 @@ impl ServiceLimitExceededException {
 }
 
 /// A builder for [`ServiceLimitExceededException`](crate::types::error::ServiceLimitExceededException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServiceLimitExceededExceptionBuilder {
     pub(crate) limit_name: ::std::option::Option<crate::types::LimitName>,
     pub(crate) limit_value: ::std::option::Option<f64>,

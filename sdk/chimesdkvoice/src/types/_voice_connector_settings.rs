@@ -21,8 +21,8 @@ impl VoiceConnectorSettings {
 }
 
 /// A builder for [`VoiceConnectorSettings`](crate::types::VoiceConnectorSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VoiceConnectorSettingsBuilder {
     pub(crate) cdr_bucket: ::std::option::Option<::std::string::String>,
 }

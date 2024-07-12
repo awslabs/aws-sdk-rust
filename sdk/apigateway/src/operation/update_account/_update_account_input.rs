@@ -23,8 +23,8 @@ impl UpdateAccountInput {
 }
 
 /// A builder for [`UpdateAccountInput`](crate::operation::update_account::UpdateAccountInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAccountInputBuilder {
     pub(crate) patch_operations: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>,
 }

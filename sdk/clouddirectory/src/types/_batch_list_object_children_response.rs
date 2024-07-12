@@ -27,8 +27,8 @@ impl BatchListObjectChildrenResponse {
 }
 
 /// A builder for [`BatchListObjectChildrenResponse`](crate::types::BatchListObjectChildrenResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchListObjectChildrenResponseBuilder {
     pub(crate) children: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

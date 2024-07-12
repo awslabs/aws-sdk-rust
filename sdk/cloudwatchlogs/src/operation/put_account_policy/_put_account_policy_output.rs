@@ -26,8 +26,8 @@ impl PutAccountPolicyOutput {
 }
 
 /// A builder for [`PutAccountPolicyOutput`](crate::operation::put_account_policy::PutAccountPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutAccountPolicyOutputBuilder {
     pub(crate) account_policy: ::std::option::Option<crate::types::AccountPolicy>,
     _request_id: Option<String>,

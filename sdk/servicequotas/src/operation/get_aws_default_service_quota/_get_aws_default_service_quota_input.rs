@@ -26,8 +26,8 @@ impl GetAwsDefaultServiceQuotaInput {
 }
 
 /// A builder for [`GetAwsDefaultServiceQuotaInput`](crate::operation::get_aws_default_service_quota::GetAwsDefaultServiceQuotaInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAwsDefaultServiceQuotaInputBuilder {
     pub(crate) service_code: ::std::option::Option<::std::string::String>,
     pub(crate) quota_code: ::std::option::Option<::std::string::String>,

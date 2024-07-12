@@ -33,8 +33,8 @@ impl DescribeDomainAutoTunesInput {
 }
 
 /// A builder for [`DescribeDomainAutoTunesInput`](crate::operation::describe_domain_auto_tunes::DescribeDomainAutoTunesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDomainAutoTunesInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

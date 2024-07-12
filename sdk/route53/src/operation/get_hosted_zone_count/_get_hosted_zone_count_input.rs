@@ -12,8 +12,8 @@ impl GetHostedZoneCountInput {
 }
 
 /// A builder for [`GetHostedZoneCountInput`](crate::operation::get_hosted_zone_count::GetHostedZoneCountInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetHostedZoneCountInputBuilder {}
 impl GetHostedZoneCountInputBuilder {
     /// Consumes the builder and constructs a [`GetHostedZoneCountInput`](crate::operation::get_hosted_zone_count::GetHostedZoneCountInput).

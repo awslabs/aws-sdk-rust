@@ -18,8 +18,8 @@ impl ModifyWorkspaceStateOutput {
 }
 
 /// A builder for [`ModifyWorkspaceStateOutput`](crate::operation::modify_workspace_state::ModifyWorkspaceStateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyWorkspaceStateOutputBuilder {
     _request_id: Option<String>,
 }

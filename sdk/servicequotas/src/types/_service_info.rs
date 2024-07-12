@@ -27,8 +27,8 @@ impl ServiceInfo {
 }
 
 /// A builder for [`ServiceInfo`](crate::types::ServiceInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServiceInfoBuilder {
     pub(crate) service_code: ::std::option::Option<::std::string::String>,
     pub(crate) service_name: ::std::option::Option<::std::string::String>,

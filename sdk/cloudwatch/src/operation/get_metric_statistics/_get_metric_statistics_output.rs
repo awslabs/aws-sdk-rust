@@ -34,8 +34,8 @@ impl GetMetricStatisticsOutput {
 }
 
 /// A builder for [`GetMetricStatisticsOutput`](crate::operation::get_metric_statistics::GetMetricStatisticsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMetricStatisticsOutputBuilder {
     pub(crate) label: ::std::option::Option<::std::string::String>,
     pub(crate) datapoints: ::std::option::Option<::std::vec::Vec<crate::types::Datapoint>>,

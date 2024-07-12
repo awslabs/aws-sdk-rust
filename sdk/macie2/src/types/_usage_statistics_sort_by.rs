@@ -27,8 +27,8 @@ impl UsageStatisticsSortBy {
 }
 
 /// A builder for [`UsageStatisticsSortBy`](crate::types::UsageStatisticsSortBy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UsageStatisticsSortByBuilder {
     pub(crate) key: ::std::option::Option<crate::types::UsageStatisticsSortKey>,
     pub(crate) order_by: ::std::option::Option<crate::types::OrderBy>,

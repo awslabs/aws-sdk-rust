@@ -26,8 +26,8 @@ impl UpdateDeviceDefinitionInput {
 }
 
 /// A builder for [`UpdateDeviceDefinitionInput`](crate::operation::update_device_definition::UpdateDeviceDefinitionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDeviceDefinitionInputBuilder {
     pub(crate) device_definition_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

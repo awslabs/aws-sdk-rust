@@ -884,8 +884,8 @@ impl ExtraParam {
 }
 
 /// A builder for [`ExtraParam`](crate::types::ExtraParam).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ExtraParamBuilder {
     pub(crate) name: ::std::option::Option<crate::types::ExtraParamName>,
     pub(crate) value: ::std::option::Option<::std::string::String>,

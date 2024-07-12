@@ -32,8 +32,8 @@ impl PutChannelPolicyInput {
 }
 
 /// A builder for [`PutChannelPolicyInput`](crate::operation::put_channel_policy::PutChannelPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutChannelPolicyInputBuilder {
     pub(crate) channel_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) channel_name: ::std::option::Option<::std::string::String>,

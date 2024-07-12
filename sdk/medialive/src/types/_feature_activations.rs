@@ -29,8 +29,8 @@ impl FeatureActivations {
 }
 
 /// A builder for [`FeatureActivations`](crate::types::FeatureActivations).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FeatureActivationsBuilder {
     pub(crate) input_prepare_schedule_actions: ::std::option::Option<crate::types::FeatureActivationsInputPrepareScheduleActions>,
     pub(crate) output_static_image_overlay_schedule_actions:

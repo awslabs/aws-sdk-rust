@@ -48,8 +48,8 @@ impl BatchGetRumMetricDefinitionsInput {
 }
 
 /// A builder for [`BatchGetRumMetricDefinitionsInput`](crate::operation::batch_get_rum_metric_definitions::BatchGetRumMetricDefinitionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetRumMetricDefinitionsInputBuilder {
     pub(crate) app_monitor_name: ::std::option::Option<::std::string::String>,
     pub(crate) destination: ::std::option::Option<crate::types::MetricDestination>,

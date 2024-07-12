@@ -59,8 +59,8 @@ impl ScatterPlotCategoricallyAggregatedFieldWells {
 }
 
 /// A builder for [`ScatterPlotCategoricallyAggregatedFieldWells`](crate::types::ScatterPlotCategoricallyAggregatedFieldWells).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScatterPlotCategoricallyAggregatedFieldWellsBuilder {
     pub(crate) x_axis: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
     pub(crate) y_axis: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,

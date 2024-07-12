@@ -38,8 +38,8 @@ impl Parameters {
 }
 
 /// A builder for [`Parameters`](crate::types::Parameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ParametersBuilder {
     pub(crate) exclude_boot_volume: ::std::option::Option<bool>,
     pub(crate) no_reboot: ::std::option::Option<bool>,

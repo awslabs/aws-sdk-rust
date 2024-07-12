@@ -58,8 +58,8 @@ impl CreateRuleInput {
 }
 
 /// A builder for [`CreateRuleInput`](crate::operation::create_rule::CreateRuleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateRuleInputBuilder {
     pub(crate) retention_period: ::std::option::Option<crate::types::RetentionPeriod>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl GetProxySessionOutput {
 }
 
 /// A builder for [`GetProxySessionOutput`](crate::operation::get_proxy_session::GetProxySessionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetProxySessionOutputBuilder {
     pub(crate) proxy_session: ::std::option::Option<crate::types::ProxySession>,
     _request_id: Option<String>,

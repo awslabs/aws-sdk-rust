@@ -53,8 +53,8 @@ impl ResourceSyncAttempt {
 }
 
 /// A builder for [`ResourceSyncAttempt`](crate::types::ResourceSyncAttempt).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResourceSyncAttemptBuilder {
     pub(crate) initial_revision: ::std::option::Option<crate::types::Revision>,
     pub(crate) target_revision: ::std::option::Option<crate::types::Revision>,

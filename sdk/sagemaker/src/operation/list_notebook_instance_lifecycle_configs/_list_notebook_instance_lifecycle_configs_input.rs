@@ -68,8 +68,8 @@ impl ListNotebookInstanceLifecycleConfigsInput {
 }
 
 /// A builder for [`ListNotebookInstanceLifecycleConfigsInput`](crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListNotebookInstanceLifecycleConfigsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

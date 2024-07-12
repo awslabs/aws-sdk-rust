@@ -45,8 +45,8 @@ impl WafAssociatedItemException {
 }
 
 /// A builder for [`WafAssociatedItemException`](crate::types::error::WafAssociatedItemException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WafAssociatedItemExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,

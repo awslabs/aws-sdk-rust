@@ -113,8 +113,8 @@ impl BudgetSummary {
 }
 
 /// A builder for [`BudgetSummary`](crate::types::BudgetSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct BudgetSummaryBuilder {
     pub(crate) budget_id: ::std::option::Option<::std::string::String>,
     pub(crate) usage_tracking_resource: ::std::option::Option<crate::types::UsageTrackingResource>,

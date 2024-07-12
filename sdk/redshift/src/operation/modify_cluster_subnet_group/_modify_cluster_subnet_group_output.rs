@@ -26,8 +26,8 @@ impl ModifyClusterSubnetGroupOutput {
 }
 
 /// A builder for [`ModifyClusterSubnetGroupOutput`](crate::operation::modify_cluster_subnet_group::ModifyClusterSubnetGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyClusterSubnetGroupOutputBuilder {
     pub(crate) cluster_subnet_group: ::std::option::Option<crate::types::ClusterSubnetGroup>,
     _request_id: Option<String>,

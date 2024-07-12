@@ -51,8 +51,8 @@ impl SmsTemplateRequest {
 }
 
 /// A builder for [`SmsTemplateRequest`](crate::types::SmsTemplateRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SmsTemplateRequestBuilder {
     pub(crate) body: ::std::option::Option<::std::string::String>,
     pub(crate) default_substitutions: ::std::option::Option<::std::string::String>,

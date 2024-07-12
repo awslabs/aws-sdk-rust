@@ -20,8 +20,8 @@ impl GetMicrosoftTeamsChannelConfigurationInput {
 }
 
 /// A builder for [`GetMicrosoftTeamsChannelConfigurationInput`](crate::operation::get_microsoft_teams_channel_configuration::GetMicrosoftTeamsChannelConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMicrosoftTeamsChannelConfigurationInputBuilder {
     pub(crate) chat_configuration_arn: ::std::option::Option<::std::string::String>,
 }

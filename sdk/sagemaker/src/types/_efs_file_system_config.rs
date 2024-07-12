@@ -27,8 +27,8 @@ impl EfsFileSystemConfig {
 }
 
 /// A builder for [`EfsFileSystemConfig`](crate::types::EfsFileSystemConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EfsFileSystemConfigBuilder {
     pub(crate) file_system_id: ::std::option::Option<::std::string::String>,
     pub(crate) file_system_path: ::std::option::Option<::std::string::String>,

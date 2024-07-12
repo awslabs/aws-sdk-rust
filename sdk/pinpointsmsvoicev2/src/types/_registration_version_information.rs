@@ -77,8 +77,8 @@ impl RegistrationVersionInformation {
 }
 
 /// A builder for [`RegistrationVersionInformation`](crate::types::RegistrationVersionInformation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegistrationVersionInformationBuilder {
     pub(crate) version_number: ::std::option::Option<i64>,
     pub(crate) registration_version_status: ::std::option::Option<crate::types::RegistrationVersionStatus>,

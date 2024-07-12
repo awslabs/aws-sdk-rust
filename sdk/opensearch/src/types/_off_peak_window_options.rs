@@ -29,8 +29,8 @@ impl OffPeakWindowOptions {
 }
 
 /// A builder for [`OffPeakWindowOptions`](crate::types::OffPeakWindowOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OffPeakWindowOptionsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) off_peak_window: ::std::option::Option<crate::types::OffPeakWindow>,

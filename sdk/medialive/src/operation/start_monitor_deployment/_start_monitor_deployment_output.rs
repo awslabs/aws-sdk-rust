@@ -135,8 +135,8 @@ impl StartMonitorDeploymentOutput {
 }
 
 /// A builder for [`StartMonitorDeploymentOutput`](crate::operation::start_monitor_deployment::StartMonitorDeploymentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartMonitorDeploymentOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) cloud_watch_alarm_template_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

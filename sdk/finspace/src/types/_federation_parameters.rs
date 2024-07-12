@@ -51,8 +51,8 @@ impl FederationParameters {
 }
 
 /// A builder for [`FederationParameters`](crate::types::FederationParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FederationParametersBuilder {
     pub(crate) saml_metadata_document: ::std::option::Option<::std::string::String>,
     pub(crate) saml_metadata_url: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl GetVirtualMachineOutput {
 }
 
 /// A builder for [`GetVirtualMachineOutput`](crate::operation::get_virtual_machine::GetVirtualMachineOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetVirtualMachineOutputBuilder {
     pub(crate) virtual_machine: ::std::option::Option<crate::types::VirtualMachineDetails>,
     _request_id: Option<String>,

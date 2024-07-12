@@ -24,8 +24,8 @@ impl ElasticGpuHealth {
 }
 
 /// A builder for [`ElasticGpuHealth`](crate::types::ElasticGpuHealth).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ElasticGpuHealthBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ElasticGpuStatus>,
 }

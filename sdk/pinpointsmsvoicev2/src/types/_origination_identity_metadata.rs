@@ -49,8 +49,8 @@ impl OriginationIdentityMetadata {
 }
 
 /// A builder for [`OriginationIdentityMetadata`](crate::types::OriginationIdentityMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OriginationIdentityMetadataBuilder {
     pub(crate) origination_identity_arn: ::std::option::Option<::std::string::String>,
     pub(crate) origination_identity: ::std::option::Option<::std::string::String>,

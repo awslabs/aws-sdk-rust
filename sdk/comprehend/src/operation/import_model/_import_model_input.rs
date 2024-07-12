@@ -64,8 +64,8 @@ impl ImportModelInput {
 }
 
 /// A builder for [`ImportModelInput`](crate::operation::import_model::ImportModelInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportModelInputBuilder {
     pub(crate) source_model_arn: ::std::option::Option<::std::string::String>,
     pub(crate) model_name: ::std::option::Option<::std::string::String>,

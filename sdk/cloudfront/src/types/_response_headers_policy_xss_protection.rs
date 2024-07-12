@@ -48,8 +48,8 @@ impl ResponseHeadersPolicyXssProtection {
 }
 
 /// A builder for [`ResponseHeadersPolicyXssProtection`](crate::types::ResponseHeadersPolicyXssProtection).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResponseHeadersPolicyXssProtectionBuilder {
     pub(crate) r#override: ::std::option::Option<bool>,
     pub(crate) protection: ::std::option::Option<bool>,

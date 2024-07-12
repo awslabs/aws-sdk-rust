@@ -27,8 +27,8 @@ impl EventInfo {
 }
 
 /// A builder for [`EventInfo`](crate::types::EventInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EventInfoBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<::std::string::String>,

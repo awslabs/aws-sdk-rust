@@ -26,8 +26,8 @@ impl DisassociateTagOptionFromResourceInput {
 }
 
 /// A builder for [`DisassociateTagOptionFromResourceInput`](crate::operation::disassociate_tag_option_from_resource::DisassociateTagOptionFromResourceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateTagOptionFromResourceInputBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) tag_option_id: ::std::option::Option<::std::string::String>,

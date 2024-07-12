@@ -33,8 +33,8 @@ impl ListAssetContractsOutput {
 }
 
 /// A builder for [`ListAssetContractsOutput`](crate::operation::list_asset_contracts::ListAssetContractsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAssetContractsOutputBuilder {
     pub(crate) contracts: ::std::option::Option<::std::vec::Vec<crate::types::AssetContract>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

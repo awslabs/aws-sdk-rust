@@ -122,8 +122,8 @@ impl AdminGetUserOutput {
 }
 
 /// A builder for [`AdminGetUserOutput`](crate::operation::admin_get_user::AdminGetUserOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AdminGetUserOutputBuilder {
     pub(crate) username: ::std::option::Option<::std::string::String>,
     pub(crate) user_attributes: ::std::option::Option<::std::vec::Vec<crate::types::AttributeType>>,

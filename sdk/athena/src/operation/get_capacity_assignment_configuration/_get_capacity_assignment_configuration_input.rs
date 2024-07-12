@@ -20,8 +20,8 @@ impl GetCapacityAssignmentConfigurationInput {
 }
 
 /// A builder for [`GetCapacityAssignmentConfigurationInput`](crate::operation::get_capacity_assignment_configuration::GetCapacityAssignmentConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCapacityAssignmentConfigurationInputBuilder {
     pub(crate) capacity_reservation_name: ::std::option::Option<::std::string::String>,
 }

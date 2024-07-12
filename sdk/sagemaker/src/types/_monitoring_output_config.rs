@@ -29,8 +29,8 @@ impl MonitoringOutputConfig {
 }
 
 /// A builder for [`MonitoringOutputConfig`](crate::types::MonitoringOutputConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MonitoringOutputConfigBuilder {
     pub(crate) monitoring_outputs: ::std::option::Option<::std::vec::Vec<crate::types::MonitoringOutput>>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,

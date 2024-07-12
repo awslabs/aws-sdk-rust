@@ -18,8 +18,8 @@ impl DeletePerformanceAnalysisReportOutput {
 }
 
 /// A builder for [`DeletePerformanceAnalysisReportOutput`](crate::operation::delete_performance_analysis_report::DeletePerformanceAnalysisReportOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePerformanceAnalysisReportOutputBuilder {
     _request_id: Option<String>,
 }

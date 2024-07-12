@@ -47,8 +47,8 @@ impl SwapEnvironmentCnamEsInput {
 }
 
 /// A builder for [`SwapEnvironmentCnamEsInput`](crate::operation::swap_environment_cnames::SwapEnvironmentCnamEsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SwapEnvironmentCnamEsInputBuilder {
     pub(crate) source_environment_id: ::std::option::Option<::std::string::String>,
     pub(crate) source_environment_name: ::std::option::Option<::std::string::String>,

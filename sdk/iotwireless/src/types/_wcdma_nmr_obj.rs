@@ -45,8 +45,8 @@ impl WcdmaNmrObj {
 }
 
 /// A builder for [`WcdmaNmrObj`](crate::types::WcdmaNmrObj).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WcdmaNmrObjBuilder {
     pub(crate) uarfcndl: ::std::option::Option<i32>,
     pub(crate) psc: ::std::option::Option<i32>,

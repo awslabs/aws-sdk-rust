@@ -72,8 +72,8 @@ impl GoogleDriveConfiguration {
 }
 
 /// A builder for [`GoogleDriveConfiguration`](crate::types::GoogleDriveConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GoogleDriveConfigurationBuilder {
     pub(crate) secret_arn: ::std::option::Option<::std::string::String>,
     pub(crate) inclusion_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

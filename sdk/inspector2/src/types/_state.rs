@@ -34,8 +34,8 @@ impl State {
 }
 
 /// A builder for [`State`](crate::types::State).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StateBuilder {
     pub(crate) status: ::std::option::Option<crate::types::Status>,
     pub(crate) error_code: ::std::option::Option<crate::types::ErrorCode>,

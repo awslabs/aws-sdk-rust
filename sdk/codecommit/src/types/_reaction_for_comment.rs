@@ -35,8 +35,8 @@ impl ReactionForComment {
 }
 
 /// A builder for [`ReactionForComment`](crate::types::ReactionForComment).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReactionForCommentBuilder {
     pub(crate) reaction: ::std::option::Option<crate::types::ReactionValueFormats>,
     pub(crate) reaction_users: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

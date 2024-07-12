@@ -42,8 +42,8 @@ impl CreateMeetingWithAttendeesOutput {
 }
 
 /// A builder for [`CreateMeetingWithAttendeesOutput`](crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendeesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateMeetingWithAttendeesOutputBuilder {
     pub(crate) meeting: ::std::option::Option<crate::types::Meeting>,
     pub(crate) attendees: ::std::option::Option<::std::vec::Vec<crate::types::Attendee>>,

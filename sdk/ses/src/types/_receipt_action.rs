@@ -58,8 +58,8 @@ impl ReceiptAction {
 }
 
 /// A builder for [`ReceiptAction`](crate::types::ReceiptAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReceiptActionBuilder {
     pub(crate) s3_action: ::std::option::Option<crate::types::S3Action>,
     pub(crate) bounce_action: ::std::option::Option<crate::types::BounceAction>,

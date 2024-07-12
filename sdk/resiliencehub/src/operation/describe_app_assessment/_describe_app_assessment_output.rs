@@ -26,8 +26,8 @@ impl DescribeAppAssessmentOutput {
 }
 
 /// A builder for [`DescribeAppAssessmentOutput`](crate::operation::describe_app_assessment::DescribeAppAssessmentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAppAssessmentOutputBuilder {
     pub(crate) assessment: ::std::option::Option<crate::types::AppAssessment>,
     _request_id: Option<String>,

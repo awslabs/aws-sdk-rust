@@ -27,8 +27,8 @@ impl CwLog {
 }
 
 /// A builder for [`CwLog`](crate::types::CwLog).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CwLogBuilder {
     pub(crate) cw_log_enabled: ::std::option::Option<bool>,
     pub(crate) cw_log_group: ::std::option::Option<::std::string::String>,

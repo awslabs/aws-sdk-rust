@@ -21,8 +21,8 @@ impl ListCustomLineItemVersionsFilter {
 }
 
 /// A builder for [`ListCustomLineItemVersionsFilter`](crate::types::ListCustomLineItemVersionsFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCustomLineItemVersionsFilterBuilder {
     pub(crate) billing_period_range: ::std::option::Option<crate::types::ListCustomLineItemVersionsBillingPeriodRangeFilter>,
 }

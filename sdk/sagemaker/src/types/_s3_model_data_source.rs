@@ -105,8 +105,8 @@ impl S3ModelDataSource {
 }
 
 /// A builder for [`S3ModelDataSource`](crate::types::S3ModelDataSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3ModelDataSourceBuilder {
     pub(crate) s3_uri: ::std::option::Option<::std::string::String>,
     pub(crate) s3_data_type: ::std::option::Option<crate::types::S3ModelDataType>,

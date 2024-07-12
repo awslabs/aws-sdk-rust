@@ -194,8 +194,8 @@ impl UpdateSiteRackPhysicalPropertiesInput {
 }
 
 /// A builder for [`UpdateSiteRackPhysicalPropertiesInput`](crate::operation::update_site_rack_physical_properties::UpdateSiteRackPhysicalPropertiesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSiteRackPhysicalPropertiesInputBuilder {
     pub(crate) site_id: ::std::option::Option<::std::string::String>,
     pub(crate) power_draw_kva: ::std::option::Option<crate::types::PowerDrawKva>,

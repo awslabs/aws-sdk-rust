@@ -20,8 +20,8 @@ impl GetSubscriberInput {
 }
 
 /// A builder for [`GetSubscriberInput`](crate::operation::get_subscriber::GetSubscriberInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSubscriberInputBuilder {
     pub(crate) subscriber_id: ::std::option::Option<::std::string::String>,
 }

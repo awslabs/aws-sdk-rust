@@ -39,8 +39,8 @@ impl TableOptions {
 }
 
 /// A builder for [`TableOptions`](crate::types::TableOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TableOptionsBuilder {
     pub(crate) orientation: ::std::option::Option<crate::types::TableOrientation>,
     pub(crate) header_style: ::std::option::Option<crate::types::TableCellStyle>,

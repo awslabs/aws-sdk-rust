@@ -27,8 +27,8 @@ impl SupportTerm {
 }
 
 /// A builder for [`SupportTerm`](crate::types::SupportTerm).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SupportTermBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) refund_policy: ::std::option::Option<::std::string::String>,

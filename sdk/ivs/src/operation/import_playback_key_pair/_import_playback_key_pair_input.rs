@@ -32,8 +32,8 @@ impl ImportPlaybackKeyPairInput {
 }
 
 /// A builder for [`ImportPlaybackKeyPairInput`](crate::operation::import_playback_key_pair::ImportPlaybackKeyPairInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportPlaybackKeyPairInputBuilder {
     pub(crate) public_key_material: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl CancelMetadataGenerationRunInput {
 }
 
 /// A builder for [`CancelMetadataGenerationRunInput`](crate::operation::cancel_metadata_generation_run::CancelMetadataGenerationRunInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelMetadataGenerationRunInputBuilder {
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) identifier: ::std::option::Option<::std::string::String>,

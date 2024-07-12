@@ -76,8 +76,8 @@ impl CreateModelExplainabilityJobDefinitionInput {
 }
 
 /// A builder for [`CreateModelExplainabilityJobDefinitionInput`](crate::operation::create_model_explainability_job_definition::CreateModelExplainabilityJobDefinitionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateModelExplainabilityJobDefinitionInputBuilder {
     pub(crate) job_definition_name: ::std::option::Option<::std::string::String>,
     pub(crate) model_explainability_baseline_config: ::std::option::Option<crate::types::ModelExplainabilityBaselineConfig>,

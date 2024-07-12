@@ -38,8 +38,8 @@ impl AddPartnerInput {
 }
 
 /// A builder for [`AddPartnerInput`](crate::operation::add_partner::AddPartnerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddPartnerInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,

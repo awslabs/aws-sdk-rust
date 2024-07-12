@@ -68,8 +68,8 @@ impl GetNetworkAnalyzerConfigurationOutput {
 }
 
 /// A builder for [`GetNetworkAnalyzerConfigurationOutput`](crate::operation::get_network_analyzer_configuration::GetNetworkAnalyzerConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetNetworkAnalyzerConfigurationOutputBuilder {
     pub(crate) trace_content: ::std::option::Option<crate::types::TraceContent>,
     pub(crate) wireless_devices: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

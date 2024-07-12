@@ -27,8 +27,8 @@ impl StreamProcessorOutput {
 }
 
 /// A builder for [`StreamProcessorOutput`](crate::types::StreamProcessorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StreamProcessorOutputBuilder {
     pub(crate) kinesis_data_stream: ::std::option::Option<crate::types::KinesisDataStream>,
     pub(crate) s3_destination: ::std::option::Option<crate::types::S3Destination>,

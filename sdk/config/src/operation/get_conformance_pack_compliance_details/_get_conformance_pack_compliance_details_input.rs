@@ -38,8 +38,8 @@ impl GetConformancePackComplianceDetailsInput {
 }
 
 /// A builder for [`GetConformancePackComplianceDetailsInput`](crate::operation::get_conformance_pack_compliance_details::GetConformancePackComplianceDetailsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetConformancePackComplianceDetailsInputBuilder {
     pub(crate) conformance_pack_name: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<crate::types::ConformancePackEvaluationFilters>,

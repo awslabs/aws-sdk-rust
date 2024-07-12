@@ -18,8 +18,8 @@ impl DeleteProvisioningTemplateOutput {
 }
 
 /// A builder for [`DeleteProvisioningTemplateOutput`](crate::operation::delete_provisioning_template::DeleteProvisioningTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteProvisioningTemplateOutputBuilder {
     _request_id: Option<String>,
 }

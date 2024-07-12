@@ -20,8 +20,8 @@ impl DisableImageBlockPublicAccessInput {
 }
 
 /// A builder for [`DisableImageBlockPublicAccessInput`](crate::operation::disable_image_block_public_access::DisableImageBlockPublicAccessInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableImageBlockPublicAccessInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
 }

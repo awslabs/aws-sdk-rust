@@ -27,8 +27,8 @@ impl PendingLogs {
 }
 
 /// A builder for [`PendingLogs`](crate::types::PendingLogs).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PendingLogsBuilder {
     pub(crate) audit: ::std::option::Option<bool>,
     pub(crate) general: ::std::option::Option<bool>,

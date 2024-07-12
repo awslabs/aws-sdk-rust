@@ -34,8 +34,8 @@ impl SearchResourceTagsOutput {
 }
 
 /// A builder for [`SearchResourceTagsOutput`](crate::operation::search_resource_tags::SearchResourceTagsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchResourceTagsOutputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::TagSet>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

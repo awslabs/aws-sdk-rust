@@ -33,8 +33,8 @@ impl ListOutgoingCertificatesInput {
 }
 
 /// A builder for [`ListOutgoingCertificatesInput`](crate::operation::list_outgoing_certificates::ListOutgoingCertificatesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListOutgoingCertificatesInputBuilder {
     pub(crate) page_size: ::std::option::Option<i32>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

@@ -33,8 +33,8 @@ impl DescribeCaCertificateOutput {
 }
 
 /// A builder for [`DescribeCaCertificateOutput`](crate::operation::describe_ca_certificate::DescribeCaCertificateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCaCertificateOutputBuilder {
     pub(crate) certificate_description: ::std::option::Option<crate::types::CaCertificateDescription>,
     pub(crate) registration_config: ::std::option::Option<crate::types::RegistrationConfig>,

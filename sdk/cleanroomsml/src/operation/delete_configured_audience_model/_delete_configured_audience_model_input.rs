@@ -20,8 +20,8 @@ impl DeleteConfiguredAudienceModelInput {
 }
 
 /// A builder for [`DeleteConfiguredAudienceModelInput`](crate::operation::delete_configured_audience_model::DeleteConfiguredAudienceModelInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteConfiguredAudienceModelInputBuilder {
     pub(crate) configured_audience_model_arn: ::std::option::Option<::std::string::String>,
 }

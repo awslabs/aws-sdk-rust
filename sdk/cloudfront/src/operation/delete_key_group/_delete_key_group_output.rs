@@ -18,8 +18,8 @@ impl DeleteKeyGroupOutput {
 }
 
 /// A builder for [`DeleteKeyGroupOutput`](crate::operation::delete_key_group::DeleteKeyGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteKeyGroupOutputBuilder {
     _request_id: Option<String>,
 }

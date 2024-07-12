@@ -39,8 +39,8 @@ impl SvmEndpoints {
 }
 
 /// A builder for [`SvmEndpoints`](crate::types::SvmEndpoints).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SvmEndpointsBuilder {
     pub(crate) iscsi: ::std::option::Option<crate::types::SvmEndpoint>,
     pub(crate) management: ::std::option::Option<crate::types::SvmEndpoint>,

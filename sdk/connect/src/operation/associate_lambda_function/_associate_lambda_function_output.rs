@@ -18,8 +18,8 @@ impl AssociateLambdaFunctionOutput {
 }
 
 /// A builder for [`AssociateLambdaFunctionOutput`](crate::operation::associate_lambda_function::AssociateLambdaFunctionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateLambdaFunctionOutputBuilder {
     _request_id: Option<String>,
 }

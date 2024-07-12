@@ -53,8 +53,8 @@ impl InvalidJobIdException {
 }
 
 /// A builder for [`InvalidJobIdException`](crate::types::error::InvalidJobIdException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InvalidJobIdExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) code: ::std::option::Option<::std::string::String>,

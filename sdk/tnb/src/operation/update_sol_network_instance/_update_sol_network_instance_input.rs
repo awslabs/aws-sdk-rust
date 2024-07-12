@@ -48,8 +48,8 @@ impl UpdateSolNetworkInstanceInput {
 }
 
 /// A builder for [`UpdateSolNetworkInstanceInput`](crate::operation::update_sol_network_instance::UpdateSolNetworkInstanceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateSolNetworkInstanceInputBuilder {
     pub(crate) ns_instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) update_type: ::std::option::Option<crate::types::UpdateSolNetworkType>,

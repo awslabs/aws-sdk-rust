@@ -26,8 +26,8 @@ impl GetLicenseUsageOutput {
 }
 
 /// A builder for [`GetLicenseUsageOutput`](crate::operation::get_license_usage::GetLicenseUsageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLicenseUsageOutputBuilder {
     pub(crate) license_usage: ::std::option::Option<crate::types::LicenseUsage>,
     _request_id: Option<String>,

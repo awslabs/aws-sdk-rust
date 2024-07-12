@@ -39,8 +39,8 @@ impl OutlierDetection {
 }
 
 /// A builder for [`OutlierDetection`](crate::types::OutlierDetection).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OutlierDetectionBuilder {
     pub(crate) max_server_errors: ::std::option::Option<i64>,
     pub(crate) interval: ::std::option::Option<crate::types::Duration>,

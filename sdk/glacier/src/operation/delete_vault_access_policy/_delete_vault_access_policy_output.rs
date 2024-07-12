@@ -18,8 +18,8 @@ impl DeleteVaultAccessPolicyOutput {
 }
 
 /// A builder for [`DeleteVaultAccessPolicyOutput`](crate::operation::delete_vault_access_policy::DeleteVaultAccessPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVaultAccessPolicyOutputBuilder {
     _request_id: Option<String>,
 }

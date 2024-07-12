@@ -77,8 +77,8 @@ impl RevokeEndpointAccessOutput {
 }
 
 /// A builder for [`RevokeEndpointAccessOutput`](crate::operation::revoke_endpoint_access::RevokeEndpointAccessOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RevokeEndpointAccessOutputBuilder {
     pub(crate) grantor: ::std::option::Option<::std::string::String>,
     pub(crate) grantee: ::std::option::Option<::std::string::String>,

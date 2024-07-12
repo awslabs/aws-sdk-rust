@@ -35,8 +35,8 @@ impl SearchPlaceIndexForTextOutput {
 }
 
 /// A builder for [`SearchPlaceIndexForTextOutput`](crate::operation::search_place_index_for_text::SearchPlaceIndexForTextOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchPlaceIndexForTextOutputBuilder {
     pub(crate) summary: ::std::option::Option<crate::types::SearchPlaceIndexForTextSummary>,
     pub(crate) results: ::std::option::Option<::std::vec::Vec<crate::types::SearchForTextResult>>,

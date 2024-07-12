@@ -33,8 +33,8 @@ impl BatchDeleteImportDataError {
 }
 
 /// A builder for [`BatchDeleteImportDataError`](crate::types::BatchDeleteImportDataError).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDeleteImportDataErrorBuilder {
     pub(crate) import_task_id: ::std::option::Option<::std::string::String>,
     pub(crate) error_code: ::std::option::Option<crate::types::BatchDeleteImportDataErrorCode>,

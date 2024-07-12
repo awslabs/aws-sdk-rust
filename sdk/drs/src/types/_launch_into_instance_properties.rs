@@ -21,8 +21,8 @@ impl LaunchIntoInstanceProperties {
 }
 
 /// A builder for [`LaunchIntoInstanceProperties`](crate::types::LaunchIntoInstanceProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LaunchIntoInstancePropertiesBuilder {
     pub(crate) launch_into_ec2_instance_id: ::std::option::Option<::std::string::String>,
 }

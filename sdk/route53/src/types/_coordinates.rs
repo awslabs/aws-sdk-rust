@@ -29,8 +29,8 @@ impl Coordinates {
 }
 
 /// A builder for [`Coordinates`](crate::types::Coordinates).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CoordinatesBuilder {
     pub(crate) latitude: ::std::option::Option<::std::string::String>,
     pub(crate) longitude: ::std::option::Option<::std::string::String>,

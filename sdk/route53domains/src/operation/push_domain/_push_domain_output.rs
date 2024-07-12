@@ -18,8 +18,8 @@ impl PushDomainOutput {
 }
 
 /// A builder for [`PushDomainOutput`](crate::operation::push_domain::PushDomainOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PushDomainOutputBuilder {
     _request_id: Option<String>,
 }

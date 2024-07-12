@@ -34,8 +34,8 @@ impl ListSubscriptionDefinitionsOutput {
 }
 
 /// A builder for [`ListSubscriptionDefinitionsOutput`](crate::operation::list_subscription_definitions::ListSubscriptionDefinitionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSubscriptionDefinitionsOutputBuilder {
     pub(crate) definitions: ::std::option::Option<::std::vec::Vec<crate::types::DefinitionInformation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

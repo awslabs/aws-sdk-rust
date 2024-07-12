@@ -11,8 +11,8 @@ impl DescribeEventConfigurationsInput {
 }
 
 /// A builder for [`DescribeEventConfigurationsInput`](crate::operation::describe_event_configurations::DescribeEventConfigurationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEventConfigurationsInputBuilder {}
 impl DescribeEventConfigurationsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEventConfigurationsInput`](crate::operation::describe_event_configurations::DescribeEventConfigurationsInput).

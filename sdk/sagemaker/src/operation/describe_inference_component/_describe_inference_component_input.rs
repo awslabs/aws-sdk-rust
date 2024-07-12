@@ -20,8 +20,8 @@ impl DescribeInferenceComponentInput {
 }
 
 /// A builder for [`DescribeInferenceComponentInput`](crate::operation::describe_inference_component::DescribeInferenceComponentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeInferenceComponentInputBuilder {
     pub(crate) inference_component_name: ::std::option::Option<::std::string::String>,
 }

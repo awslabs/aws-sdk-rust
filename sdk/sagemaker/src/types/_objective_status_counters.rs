@@ -33,8 +33,8 @@ impl ObjectiveStatusCounters {
 }
 
 /// A builder for [`ObjectiveStatusCounters`](crate::types::ObjectiveStatusCounters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ObjectiveStatusCountersBuilder {
     pub(crate) succeeded: ::std::option::Option<i32>,
     pub(crate) pending: ::std::option::Option<i32>,

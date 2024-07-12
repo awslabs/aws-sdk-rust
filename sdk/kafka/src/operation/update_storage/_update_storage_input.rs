@@ -45,8 +45,8 @@ impl UpdateStorageInput {
 }
 
 /// A builder for [`UpdateStorageInput`](crate::operation::update_storage::UpdateStorageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateStorageInputBuilder {
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) current_version: ::std::option::Option<::std::string::String>,

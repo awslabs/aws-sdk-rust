@@ -20,8 +20,8 @@ impl RestoreBackupInput {
 }
 
 /// A builder for [`RestoreBackupInput`](crate::operation::restore_backup::RestoreBackupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RestoreBackupInputBuilder {
     pub(crate) backup_id: ::std::option::Option<::std::string::String>,
 }

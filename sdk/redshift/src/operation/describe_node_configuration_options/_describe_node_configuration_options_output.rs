@@ -34,8 +34,8 @@ impl DescribeNodeConfigurationOptionsOutput {
 }
 
 /// A builder for [`DescribeNodeConfigurationOptionsOutput`](crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeNodeConfigurationOptionsOutputBuilder {
     pub(crate) node_configuration_option_list: ::std::option::Option<::std::vec::Vec<crate::types::NodeConfigurationOption>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

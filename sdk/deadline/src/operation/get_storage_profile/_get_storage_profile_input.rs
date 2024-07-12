@@ -26,8 +26,8 @@ impl GetStorageProfileInput {
 }
 
 /// A builder for [`GetStorageProfileInput`](crate::operation::get_storage_profile::GetStorageProfileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetStorageProfileInputBuilder {
     pub(crate) farm_id: ::std::option::Option<::std::string::String>,
     pub(crate) storage_profile_id: ::std::option::Option<::std::string::String>,

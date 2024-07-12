@@ -21,8 +21,8 @@ impl VpnTunnelLogOptionsSpecification {
 }
 
 /// A builder for [`VpnTunnelLogOptionsSpecification`](crate::types::VpnTunnelLogOptionsSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VpnTunnelLogOptionsSpecificationBuilder {
     pub(crate) cloud_watch_log_options: ::std::option::Option<crate::types::CloudWatchLogOptionsSpecification>,
 }

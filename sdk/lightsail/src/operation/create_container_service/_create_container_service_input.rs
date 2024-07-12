@@ -124,8 +124,8 @@ impl CreateContainerServiceInput {
 }
 
 /// A builder for [`CreateContainerServiceInput`](crate::operation::create_container_service::CreateContainerServiceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateContainerServiceInputBuilder {
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
     pub(crate) power: ::std::option::Option<crate::types::ContainerServicePowerName>,

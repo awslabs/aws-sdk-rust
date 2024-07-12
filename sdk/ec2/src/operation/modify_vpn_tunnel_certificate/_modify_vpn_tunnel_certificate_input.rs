@@ -32,8 +32,8 @@ impl ModifyVpnTunnelCertificateInput {
 }
 
 /// A builder for [`ModifyVpnTunnelCertificateInput`](crate::operation::modify_vpn_tunnel_certificate::ModifyVpnTunnelCertificateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyVpnTunnelCertificateInputBuilder {
     pub(crate) vpn_connection_id: ::std::option::Option<::std::string::String>,
     pub(crate) vpn_tunnel_outside_ip_address: ::std::option::Option<::std::string::String>,

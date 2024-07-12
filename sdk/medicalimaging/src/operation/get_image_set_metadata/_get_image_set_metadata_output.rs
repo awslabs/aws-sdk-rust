@@ -38,8 +38,8 @@ impl GetImageSetMetadataOutput {
 }
 
 /// A builder for [`GetImageSetMetadataOutput`](crate::operation::get_image_set_metadata::GetImageSetMetadataOutput).
-#[non_exhaustive]
 #[derive(::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetImageSetMetadataOutputBuilder {
     pub(crate) image_set_metadata_blob: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>,
     pub(crate) content_type: ::std::option::Option<::std::string::String>,

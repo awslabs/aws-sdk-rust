@@ -28,8 +28,8 @@ impl RuleBasedProperties {
 }
 
 /// A builder for [`RuleBasedProperties`](crate::types::RuleBasedProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RuleBasedPropertiesBuilder {
     pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
     pub(crate) attribute_matching_model: ::std::option::Option<crate::types::AttributeMatchingModel>,

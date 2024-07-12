@@ -32,8 +32,8 @@ impl DeleteAgentMemoryInput {
 }
 
 /// A builder for [`DeleteAgentMemoryInput`](crate::operation::delete_agent_memory::DeleteAgentMemoryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAgentMemoryInputBuilder {
     pub(crate) agent_id: ::std::option::Option<::std::string::String>,
     pub(crate) agent_alias_id: ::std::option::Option<::std::string::String>,

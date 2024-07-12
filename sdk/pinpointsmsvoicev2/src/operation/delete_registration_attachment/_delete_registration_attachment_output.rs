@@ -72,8 +72,8 @@ impl DeleteRegistrationAttachmentOutput {
 }
 
 /// A builder for [`DeleteRegistrationAttachmentOutput`](crate::operation::delete_registration_attachment::DeleteRegistrationAttachmentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRegistrationAttachmentOutputBuilder {
     pub(crate) registration_attachment_arn: ::std::option::Option<::std::string::String>,
     pub(crate) registration_attachment_id: ::std::option::Option<::std::string::String>,

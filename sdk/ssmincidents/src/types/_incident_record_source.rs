@@ -41,8 +41,8 @@ impl IncidentRecordSource {
 }
 
 /// A builder for [`IncidentRecordSource`](crate::types::IncidentRecordSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IncidentRecordSourceBuilder {
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
     pub(crate) invoked_by: ::std::option::Option<::std::string::String>,

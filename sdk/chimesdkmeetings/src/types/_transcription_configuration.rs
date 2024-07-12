@@ -27,8 +27,8 @@ impl TranscriptionConfiguration {
 }
 
 /// A builder for [`TranscriptionConfiguration`](crate::types::TranscriptionConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TranscriptionConfigurationBuilder {
     pub(crate) engine_transcribe_settings: ::std::option::Option<crate::types::EngineTranscribeSettings>,
     pub(crate) engine_transcribe_medical_settings: ::std::option::Option<crate::types::EngineTranscribeMedicalSettings>,

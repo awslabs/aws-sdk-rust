@@ -78,8 +78,8 @@ impl GeneratePinDataOutput {
 }
 
 /// A builder for [`GeneratePinDataOutput`](crate::operation::generate_pin_data::GeneratePinDataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GeneratePinDataOutputBuilder {
     pub(crate) generation_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) generation_key_check_value: ::std::option::Option<::std::string::String>,

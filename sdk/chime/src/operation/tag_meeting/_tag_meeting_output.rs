@@ -18,8 +18,8 @@ impl TagMeetingOutput {
 }
 
 /// A builder for [`TagMeetingOutput`](crate::operation::tag_meeting::TagMeetingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TagMeetingOutputBuilder {
     _request_id: Option<String>,
 }

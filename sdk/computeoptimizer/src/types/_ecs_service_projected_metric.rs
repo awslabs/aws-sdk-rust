@@ -60,8 +60,8 @@ impl EcsServiceProjectedMetric {
 }
 
 /// A builder for [`EcsServiceProjectedMetric`](crate::types::EcsServiceProjectedMetric).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EcsServiceProjectedMetricBuilder {
     pub(crate) name: ::std::option::Option<crate::types::EcsServiceMetricName>,
     pub(crate) timestamps: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,

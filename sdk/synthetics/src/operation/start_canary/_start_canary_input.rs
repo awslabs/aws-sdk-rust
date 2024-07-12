@@ -20,8 +20,8 @@ impl StartCanaryInput {
 }
 
 /// A builder for [`StartCanaryInput`](crate::operation::start_canary::StartCanaryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartCanaryInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

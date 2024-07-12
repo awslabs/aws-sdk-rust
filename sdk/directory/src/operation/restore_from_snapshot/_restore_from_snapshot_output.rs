@@ -19,8 +19,8 @@ impl RestoreFromSnapshotOutput {
 }
 
 /// A builder for [`RestoreFromSnapshotOutput`](crate::operation::restore_from_snapshot::RestoreFromSnapshotOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RestoreFromSnapshotOutputBuilder {
     _request_id: Option<String>,
 }

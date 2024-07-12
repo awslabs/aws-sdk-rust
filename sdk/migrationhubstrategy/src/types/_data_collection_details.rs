@@ -63,8 +63,8 @@ impl DataCollectionDetails {
 }
 
 /// A builder for [`DataCollectionDetails`](crate::types::DataCollectionDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataCollectionDetailsBuilder {
     pub(crate) status: ::std::option::Option<crate::types::AssessmentStatus>,
     pub(crate) servers: ::std::option::Option<i32>,

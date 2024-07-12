@@ -27,8 +27,8 @@ impl OutputNotebookS3LocationForOutput {
 }
 
 /// A builder for [`OutputNotebookS3LocationForOutput`](crate::types::OutputNotebookS3LocationForOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OutputNotebookS3LocationForOutputBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) key: ::std::option::Option<::std::string::String>,

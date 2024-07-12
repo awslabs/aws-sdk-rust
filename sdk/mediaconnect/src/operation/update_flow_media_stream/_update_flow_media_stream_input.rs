@@ -57,8 +57,8 @@ impl UpdateFlowMediaStreamInput {
 }
 
 /// A builder for [`UpdateFlowMediaStreamInput`](crate::operation::update_flow_media_stream::UpdateFlowMediaStreamInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateFlowMediaStreamInputBuilder {
     pub(crate) attributes: ::std::option::Option<crate::types::MediaStreamAttributesRequest>,
     pub(crate) clock_rate: ::std::option::Option<i32>,

@@ -43,8 +43,8 @@ impl ListPipesOutput {
 }
 
 /// A builder for [`ListPipesOutput`](crate::operation::list_pipes::ListPipesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ListPipesOutputBuilder {
     pub(crate) pipes: ::std::option::Option<::std::vec::Vec<crate::types::Pipe>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

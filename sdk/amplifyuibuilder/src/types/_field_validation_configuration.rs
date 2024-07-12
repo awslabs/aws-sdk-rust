@@ -44,8 +44,8 @@ impl FieldValidationConfiguration {
 }
 
 /// A builder for [`FieldValidationConfiguration`](crate::types::FieldValidationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FieldValidationConfigurationBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) str_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

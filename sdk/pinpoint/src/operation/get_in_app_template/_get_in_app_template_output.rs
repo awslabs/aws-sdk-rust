@@ -26,8 +26,8 @@ impl GetInAppTemplateOutput {
 }
 
 /// A builder for [`GetInAppTemplateOutput`](crate::operation::get_in_app_template::GetInAppTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetInAppTemplateOutputBuilder {
     pub(crate) in_app_template_response: ::std::option::Option<crate::types::InAppTemplateResponse>,
     _request_id: Option<String>,

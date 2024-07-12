@@ -21,8 +21,8 @@ impl MonitoringAlertActions {
 }
 
 /// A builder for [`MonitoringAlertActions`](crate::types::MonitoringAlertActions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MonitoringAlertActionsBuilder {
     pub(crate) model_dashboard_indicator: ::std::option::Option<crate::types::ModelDashboardIndicatorAction>,
 }

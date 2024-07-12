@@ -26,8 +26,8 @@ impl ListSchemaMappingsInput {
 }
 
 /// A builder for [`ListSchemaMappingsInput`](crate::operation::list_schema_mappings::ListSchemaMappingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSchemaMappingsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

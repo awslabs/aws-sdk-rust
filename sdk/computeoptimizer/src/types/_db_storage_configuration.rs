@@ -45,8 +45,8 @@ impl DbStorageConfiguration {
 }
 
 /// A builder for [`DbStorageConfiguration`](crate::types::DbStorageConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DbStorageConfigurationBuilder {
     pub(crate) storage_type: ::std::option::Option<::std::string::String>,
     pub(crate) allocated_storage: ::std::option::Option<i32>,

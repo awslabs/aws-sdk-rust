@@ -65,8 +65,8 @@ impl GetAccountAuthorizationDetailsOutput {
 }
 
 /// A builder for [`GetAccountAuthorizationDetailsOutput`](crate::operation::get_account_authorization_details::GetAccountAuthorizationDetailsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAccountAuthorizationDetailsOutputBuilder {
     pub(crate) user_detail_list: ::std::option::Option<::std::vec::Vec<crate::types::UserDetail>>,
     pub(crate) group_detail_list: ::std::option::Option<::std::vec::Vec<crate::types::GroupDetail>>,

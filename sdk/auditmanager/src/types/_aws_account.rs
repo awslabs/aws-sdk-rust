@@ -42,8 +42,8 @@ impl AwsAccount {
 }
 
 /// A builder for [`AwsAccount`](crate::types::AwsAccount).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AwsAccountBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) email_address: ::std::option::Option<::std::string::String>,

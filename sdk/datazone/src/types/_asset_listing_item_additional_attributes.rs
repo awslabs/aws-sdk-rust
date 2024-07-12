@@ -29,8 +29,8 @@ impl AssetListingItemAdditionalAttributes {
 }
 
 /// A builder for [`AssetListingItemAdditionalAttributes`](crate::types::AssetListingItemAdditionalAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssetListingItemAdditionalAttributesBuilder {
     pub(crate) forms: ::std::option::Option<::std::string::String>,
     pub(crate) latest_time_series_data_point_forms: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesDataPointSummaryFormOutput>>,

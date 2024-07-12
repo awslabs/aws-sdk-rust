@@ -26,8 +26,8 @@ impl UpdateStateMachineAliasOutput {
 }
 
 /// A builder for [`UpdateStateMachineAliasOutput`](crate::operation::update_state_machine_alias::UpdateStateMachineAliasOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateStateMachineAliasOutputBuilder {
     pub(crate) update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,

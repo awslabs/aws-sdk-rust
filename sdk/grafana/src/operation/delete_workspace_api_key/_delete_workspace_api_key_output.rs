@@ -34,8 +34,8 @@ impl DeleteWorkspaceApiKeyOutput {
 }
 
 /// A builder for [`DeleteWorkspaceApiKeyOutput`](crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteWorkspaceApiKeyOutputBuilder {
     pub(crate) key_name: ::std::option::Option<::std::string::String>,
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,

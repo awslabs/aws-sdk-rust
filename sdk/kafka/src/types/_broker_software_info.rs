@@ -33,8 +33,8 @@ impl BrokerSoftwareInfo {
 }
 
 /// A builder for [`BrokerSoftwareInfo`](crate::types::BrokerSoftwareInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BrokerSoftwareInfoBuilder {
     pub(crate) configuration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) configuration_revision: ::std::option::Option<i64>,

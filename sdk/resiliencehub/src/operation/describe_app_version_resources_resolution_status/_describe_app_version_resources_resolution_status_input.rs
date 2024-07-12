@@ -34,8 +34,8 @@ impl DescribeAppVersionResourcesResolutionStatusInput {
 }
 
 /// A builder for [`DescribeAppVersionResourcesResolutionStatusInput`](crate::operation::describe_app_version_resources_resolution_status::DescribeAppVersionResourcesResolutionStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAppVersionResourcesResolutionStatusInputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_version: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl TimestampMetricValuePair {
 }
 
 /// A builder for [`TimestampMetricValuePair`](crate::types::TimestampMetricValuePair).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TimestampMetricValuePairBuilder {
     pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) metric_value: ::std::option::Option<f64>,

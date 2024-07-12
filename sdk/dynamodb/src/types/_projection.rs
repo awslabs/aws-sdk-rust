@@ -49,8 +49,8 @@ impl Projection {
 }
 
 /// A builder for [`Projection`](crate::types::Projection).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProjectionBuilder {
     pub(crate) projection_type: ::std::option::Option<crate::types::ProjectionType>,
     pub(crate) non_key_attributes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

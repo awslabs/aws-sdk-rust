@@ -21,8 +21,8 @@ impl TrainingRepositoryAuthConfig {
 }
 
 /// A builder for [`TrainingRepositoryAuthConfig`](crate::types::TrainingRepositoryAuthConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TrainingRepositoryAuthConfigBuilder {
     pub(crate) training_repository_credentials_provider_arn: ::std::option::Option<::std::string::String>,
 }

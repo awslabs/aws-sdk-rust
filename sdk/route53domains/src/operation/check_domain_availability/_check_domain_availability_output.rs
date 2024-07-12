@@ -157,8 +157,8 @@ impl CheckDomainAvailabilityOutput {
 }
 
 /// A builder for [`CheckDomainAvailabilityOutput`](crate::operation::check_domain_availability::CheckDomainAvailabilityOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CheckDomainAvailabilityOutputBuilder {
     pub(crate) availability: ::std::option::Option<crate::types::DomainAvailability>,
     _request_id: Option<String>,

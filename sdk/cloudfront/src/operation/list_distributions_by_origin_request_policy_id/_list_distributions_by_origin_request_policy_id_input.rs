@@ -33,8 +33,8 @@ impl ListDistributionsByOriginRequestPolicyIdInput {
 }
 
 /// A builder for [`ListDistributionsByOriginRequestPolicyIdInput`](crate::operation::list_distributions_by_origin_request_policy_id::ListDistributionsByOriginRequestPolicyIdInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDistributionsByOriginRequestPolicyIdInputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,

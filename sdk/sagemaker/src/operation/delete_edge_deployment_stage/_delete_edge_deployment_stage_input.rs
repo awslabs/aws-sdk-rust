@@ -26,8 +26,8 @@ impl DeleteEdgeDeploymentStageInput {
 }
 
 /// A builder for [`DeleteEdgeDeploymentStageInput`](crate::operation::delete_edge_deployment_stage::DeleteEdgeDeploymentStageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteEdgeDeploymentStageInputBuilder {
     pub(crate) edge_deployment_plan_name: ::std::option::Option<::std::string::String>,
     pub(crate) stage_name: ::std::option::Option<::std::string::String>,

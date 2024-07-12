@@ -19,8 +19,8 @@ impl PutEmailIdentityFeedbackAttributesOutput {
 }
 
 /// A builder for [`PutEmailIdentityFeedbackAttributesOutput`](crate::operation::put_email_identity_feedback_attributes::PutEmailIdentityFeedbackAttributesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutEmailIdentityFeedbackAttributesOutputBuilder {
     _request_id: Option<String>,
 }

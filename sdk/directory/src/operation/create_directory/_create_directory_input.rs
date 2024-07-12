@@ -108,8 +108,8 @@ impl CreateDirectoryInput {
 }
 
 /// A builder for [`CreateDirectoryInput`](crate::operation::create_directory::CreateDirectoryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateDirectoryInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) short_name: ::std::option::Option<::std::string::String>,

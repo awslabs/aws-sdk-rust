@@ -30,8 +30,8 @@ impl InstanceMaintenancePolicy {
 }
 
 /// A builder for [`InstanceMaintenancePolicy`](crate::types::InstanceMaintenancePolicy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceMaintenancePolicyBuilder {
     pub(crate) min_healthy_percentage: ::std::option::Option<i32>,
     pub(crate) max_healthy_percentage: ::std::option::Option<i32>,

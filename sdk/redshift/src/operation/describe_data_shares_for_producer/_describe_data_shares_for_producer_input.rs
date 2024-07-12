@@ -38,8 +38,8 @@ impl DescribeDataSharesForProducerInput {
 }
 
 /// A builder for [`DescribeDataSharesForProducerInput`](crate::operation::describe_data_shares_for_producer::DescribeDataSharesForProducerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDataSharesForProducerInputBuilder {
     pub(crate) producer_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::DataShareStatusForProducer>,

@@ -41,8 +41,8 @@ impl CreateRobotInput {
 }
 
 /// A builder for [`CreateRobotInput`](crate::operation::create_robot::CreateRobotInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateRobotInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) architecture: ::std::option::Option<crate::types::Architecture>,

@@ -66,8 +66,8 @@ impl TestCaseSummary {
 }
 
 /// A builder for [`TestCaseSummary`](crate::types::TestCaseSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TestCaseSummaryBuilder {
     pub(crate) test_case_id: ::std::option::Option<::std::string::String>,
     pub(crate) test_case_arn: ::std::option::Option<::std::string::String>,

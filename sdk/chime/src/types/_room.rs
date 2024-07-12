@@ -63,8 +63,8 @@ impl Room {
 }
 
 /// A builder for [`Room`](crate::types::Room).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct RoomBuilder {
     pub(crate) room_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

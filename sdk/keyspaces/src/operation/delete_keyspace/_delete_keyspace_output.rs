@@ -18,8 +18,8 @@ impl DeleteKeyspaceOutput {
 }
 
 /// A builder for [`DeleteKeyspaceOutput`](crate::operation::delete_keyspace::DeleteKeyspaceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteKeyspaceOutputBuilder {
     _request_id: Option<String>,
 }

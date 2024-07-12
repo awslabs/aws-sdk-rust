@@ -27,8 +27,8 @@ impl DatasetContentDeliveryDestination {
 }
 
 /// A builder for [`DatasetContentDeliveryDestination`](crate::types::DatasetContentDeliveryDestination).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DatasetContentDeliveryDestinationBuilder {
     pub(crate) iot_events_destination_configuration: ::std::option::Option<crate::types::IotEventsDestinationConfiguration>,
     pub(crate) s3_destination_configuration: ::std::option::Option<crate::types::S3DestinationConfiguration>,

@@ -18,8 +18,8 @@ impl StopIngestionOutput {
 }
 
 /// A builder for [`StopIngestionOutput`](crate::operation::stop_ingestion::StopIngestionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopIngestionOutputBuilder {
     _request_id: Option<String>,
 }

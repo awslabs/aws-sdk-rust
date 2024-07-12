@@ -118,8 +118,8 @@ impl SearchGameSessionsInput {
 }
 
 /// A builder for [`SearchGameSessionsInput`](crate::operation::search_game_sessions::SearchGameSessionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchGameSessionsInputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) alias_id: ::std::option::Option<::std::string::String>,

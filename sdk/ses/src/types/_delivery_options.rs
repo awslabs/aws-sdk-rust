@@ -21,8 +21,8 @@ impl DeliveryOptions {
 }
 
 /// A builder for [`DeliveryOptions`](crate::types::DeliveryOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeliveryOptionsBuilder {
     pub(crate) tls_policy: ::std::option::Option<crate::types::TlsPolicy>,
 }

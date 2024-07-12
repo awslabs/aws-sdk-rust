@@ -57,8 +57,8 @@ impl AssociateFileSystemAliasesInput {
 }
 
 /// A builder for [`AssociateFileSystemAliasesInput`](crate::operation::associate_file_system_aliases::AssociateFileSystemAliasesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateFileSystemAliasesInputBuilder {
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) file_system_id: ::std::option::Option<::std::string::String>,

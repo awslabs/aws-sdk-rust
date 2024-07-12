@@ -71,8 +71,8 @@ impl GetLayoutOutput {
 }
 
 /// A builder for [`GetLayoutOutput`](crate::operation::get_layout::GetLayoutOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLayoutOutputBuilder {
     pub(crate) layout_id: ::std::option::Option<::std::string::String>,
     pub(crate) layout_arn: ::std::option::Option<::std::string::String>,

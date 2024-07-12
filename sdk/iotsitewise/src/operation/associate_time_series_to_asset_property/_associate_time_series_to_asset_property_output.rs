@@ -18,8 +18,8 @@ impl AssociateTimeSeriesToAssetPropertyOutput {
 }
 
 /// A builder for [`AssociateTimeSeriesToAssetPropertyOutput`](crate::operation::associate_time_series_to_asset_property::AssociateTimeSeriesToAssetPropertyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateTimeSeriesToAssetPropertyOutputBuilder {
     _request_id: Option<String>,
 }

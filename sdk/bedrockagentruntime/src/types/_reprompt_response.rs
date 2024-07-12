@@ -35,8 +35,8 @@ impl RepromptResponse {
 }
 
 /// A builder for [`RepromptResponse`](crate::types::RepromptResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct RepromptResponseBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
     pub(crate) source: ::std::option::Option<crate::types::Source>,

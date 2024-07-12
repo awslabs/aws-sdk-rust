@@ -34,8 +34,8 @@ impl ListPackageVersionsOutput {
 }
 
 /// A builder for [`ListPackageVersionsOutput`](crate::operation::list_package_versions::ListPackageVersionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPackageVersionsOutputBuilder {
     pub(crate) package_version_summaries: ::std::option::Option<::std::vec::Vec<crate::types::PackageVersionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

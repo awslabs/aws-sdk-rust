@@ -27,8 +27,8 @@ impl InventoryData {
 }
 
 /// A builder for [`InventoryData`](crate::types::InventoryData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InventoryDataBuilder {
     pub(crate) number_of_databases: ::std::option::Option<i32>,
     pub(crate) number_of_schemas: ::std::option::Option<i32>,

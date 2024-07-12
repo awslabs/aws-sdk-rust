@@ -104,8 +104,8 @@ impl ListBackupJobSummariesInput {
 }
 
 /// A builder for [`ListBackupJobSummariesInput`](crate::operation::list_backup_job_summaries::ListBackupJobSummariesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListBackupJobSummariesInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::BackupJobStatus>,

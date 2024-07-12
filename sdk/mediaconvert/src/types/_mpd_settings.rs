@@ -87,8 +87,8 @@ impl MpdSettings {
 }
 
 /// A builder for [`MpdSettings`](crate::types::MpdSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MpdSettingsBuilder {
     pub(crate) accessibility_caption_hints: ::std::option::Option<crate::types::MpdAccessibilityCaptionHints>,
     pub(crate) audio_duration: ::std::option::Option<crate::types::MpdAudioDuration>,

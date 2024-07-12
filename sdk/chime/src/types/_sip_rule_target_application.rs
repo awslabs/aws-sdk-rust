@@ -33,8 +33,8 @@ impl SipRuleTargetApplication {
 }
 
 /// A builder for [`SipRuleTargetApplication`](crate::types::SipRuleTargetApplication).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SipRuleTargetApplicationBuilder {
     pub(crate) sip_media_application_id: ::std::option::Option<::std::string::String>,
     pub(crate) priority: ::std::option::Option<i32>,

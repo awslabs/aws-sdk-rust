@@ -20,8 +20,8 @@ impl DescribeIcd10CmInferenceJobInput {
 }
 
 /// A builder for [`DescribeIcd10CmInferenceJobInput`](crate::operation::describe_icd10_cm_inference_job::DescribeIcd10CmInferenceJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeIcd10CmInferenceJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }

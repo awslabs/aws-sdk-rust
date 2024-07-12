@@ -63,8 +63,8 @@ impl AwsRedshiftClusterRestoreStatus {
 }
 
 /// A builder for [`AwsRedshiftClusterRestoreStatus`](crate::types::AwsRedshiftClusterRestoreStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsRedshiftClusterRestoreStatusBuilder {
     pub(crate) current_restore_rate_in_mega_bytes_per_second: ::std::option::Option<f64>,
     pub(crate) elapsed_time_in_seconds: ::std::option::Option<i64>,

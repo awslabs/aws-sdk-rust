@@ -33,8 +33,8 @@ impl ListUserImportJobsInput {
 }
 
 /// A builder for [`ListUserImportJobsInput`](crate::operation::list_user_import_jobs::ListUserImportJobsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListUserImportJobsInputBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

@@ -45,8 +45,8 @@ impl JobPostLaunchActionsLaunchStatus {
 }
 
 /// A builder for [`JobPostLaunchActionsLaunchStatus`](crate::types::JobPostLaunchActionsLaunchStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JobPostLaunchActionsLaunchStatusBuilder {
     pub(crate) ssm_document: ::std::option::Option<crate::types::SsmDocument>,
     pub(crate) ssm_document_type: ::std::option::Option<crate::types::SsmDocumentType>,

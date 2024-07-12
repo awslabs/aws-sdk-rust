@@ -38,8 +38,8 @@ impl GetDataCellsFilterInput {
 }
 
 /// A builder for [`GetDataCellsFilterInput`](crate::operation::get_data_cells_filter::GetDataCellsFilterInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDataCellsFilterInputBuilder {
     pub(crate) table_catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,

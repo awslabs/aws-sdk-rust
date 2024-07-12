@@ -37,8 +37,8 @@ impl TransitGatewayConfiguration {
 }
 
 /// A builder for [`TransitGatewayConfiguration`](crate::types::TransitGatewayConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TransitGatewayConfigurationBuilder {
     pub(crate) transit_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) routable_cidr_space: ::std::option::Option<::std::string::String>,

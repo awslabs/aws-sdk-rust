@@ -73,8 +73,8 @@ impl Entity {
 }
 
 /// A builder for [`Entity`](crate::types::Entity).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EntityBuilder {
     pub(crate) id: ::std::option::Option<i32>,
     pub(crate) begin_offset: ::std::option::Option<i32>,

@@ -22,8 +22,8 @@ impl GroupDetails {
 }
 
 /// A builder for [`GroupDetails`](crate::types::GroupDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GroupDetailsBuilder {
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
 }

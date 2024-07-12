@@ -21,8 +21,8 @@ impl MetricCharacteristics {
 }
 
 /// A builder for [`MetricCharacteristics`](crate::types::MetricCharacteristics).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MetricCharacteristicsBuilder {
     pub(crate) periodic_spikes: ::std::option::Option<bool>,
 }

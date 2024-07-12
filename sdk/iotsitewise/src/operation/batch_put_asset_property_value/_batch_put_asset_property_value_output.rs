@@ -27,8 +27,8 @@ impl BatchPutAssetPropertyValueOutput {
 }
 
 /// A builder for [`BatchPutAssetPropertyValueOutput`](crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchPutAssetPropertyValueOutputBuilder {
     pub(crate) error_entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutAssetPropertyErrorEntry>>,
     _request_id: Option<String>,

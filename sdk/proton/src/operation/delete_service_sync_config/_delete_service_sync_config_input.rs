@@ -20,8 +20,8 @@ impl DeleteServiceSyncConfigInput {
 }
 
 /// A builder for [`DeleteServiceSyncConfigInput`](crate::operation::delete_service_sync_config::DeleteServiceSyncConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteServiceSyncConfigInputBuilder {
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
 }

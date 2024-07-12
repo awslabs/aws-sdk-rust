@@ -32,8 +32,8 @@ impl AssociateTransitGatewayPolicyTableInput {
 }
 
 /// A builder for [`AssociateTransitGatewayPolicyTableInput`](crate::operation::associate_transit_gateway_policy_table::AssociateTransitGatewayPolicyTableInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateTransitGatewayPolicyTableInputBuilder {
     pub(crate) transit_gateway_policy_table_id: ::std::option::Option<::std::string::String>,
     pub(crate) transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,

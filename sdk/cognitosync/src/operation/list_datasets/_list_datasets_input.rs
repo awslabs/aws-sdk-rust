@@ -39,8 +39,8 @@ impl ListDatasetsInput {
 }
 
 /// A builder for [`ListDatasetsInput`](crate::operation::list_datasets::ListDatasetsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDatasetsInputBuilder {
     pub(crate) identity_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) identity_id: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl BudgetActionToRemove {
 }
 
 /// A builder for [`BudgetActionToRemove`](crate::types::BudgetActionToRemove).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BudgetActionToRemoveBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::BudgetActionType>,
     pub(crate) threshold_percentage: ::std::option::Option<f32>,

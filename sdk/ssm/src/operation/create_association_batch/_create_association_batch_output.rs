@@ -36,8 +36,8 @@ impl CreateAssociationBatchOutput {
 }
 
 /// A builder for [`CreateAssociationBatchOutput`](crate::operation::create_association_batch::CreateAssociationBatchOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAssociationBatchOutputBuilder {
     pub(crate) successful: ::std::option::Option<::std::vec::Vec<crate::types::AssociationDescription>>,
     pub(crate) failed: ::std::option::Option<::std::vec::Vec<crate::types::FailedCreateAssociation>>,

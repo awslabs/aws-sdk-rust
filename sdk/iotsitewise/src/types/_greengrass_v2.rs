@@ -22,8 +22,8 @@ impl GreengrassV2 {
 }
 
 /// A builder for [`GreengrassV2`](crate::types::GreengrassV2).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GreengrassV2Builder {
     pub(crate) core_device_thing_name: ::std::option::Option<::std::string::String>,
 }

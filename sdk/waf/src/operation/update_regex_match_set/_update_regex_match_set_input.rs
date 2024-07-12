@@ -34,8 +34,8 @@ impl UpdateRegexMatchSetInput {
 }
 
 /// A builder for [`UpdateRegexMatchSetInput`](crate::operation::update_regex_match_set::UpdateRegexMatchSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRegexMatchSetInputBuilder {
     pub(crate) regex_match_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) updates: ::std::option::Option<::std::vec::Vec<crate::types::RegexMatchSetUpdate>>,

@@ -32,8 +32,8 @@ impl UpdateChannelGroupInput {
 }
 
 /// A builder for [`UpdateChannelGroupInput`](crate::operation::update_channel_group::UpdateChannelGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateChannelGroupInputBuilder {
     pub(crate) channel_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,

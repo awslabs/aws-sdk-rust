@@ -21,8 +21,8 @@ impl UpdateCaCertificateParams {
 }
 
 /// A builder for [`UpdateCaCertificateParams`](crate::types::UpdateCaCertificateParams).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateCaCertificateParamsBuilder {
     pub(crate) action: ::std::option::Option<crate::types::CaCertificateUpdateAction>,
 }

@@ -49,8 +49,8 @@ impl LayerVersionContentInput {
 }
 
 /// A builder for [`LayerVersionContentInput`](crate::types::LayerVersionContentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct LayerVersionContentInputBuilder {
     pub(crate) s3_bucket: ::std::option::Option<::std::string::String>,
     pub(crate) s3_key: ::std::option::Option<::std::string::String>,

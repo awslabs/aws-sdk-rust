@@ -35,8 +35,8 @@ impl CoreNetworkEdge {
 }
 
 /// A builder for [`CoreNetworkEdge`](crate::types::CoreNetworkEdge).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CoreNetworkEdgeBuilder {
     pub(crate) edge_location: ::std::option::Option<::std::string::String>,
     pub(crate) asn: ::std::option::Option<i64>,

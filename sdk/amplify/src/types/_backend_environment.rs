@@ -53,8 +53,8 @@ impl BackendEnvironment {
 }
 
 /// A builder for [`BackendEnvironment`](crate::types::BackendEnvironment).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BackendEnvironmentBuilder {
     pub(crate) backend_environment_arn: ::std::option::Option<::std::string::String>,
     pub(crate) environment_name: ::std::option::Option<::std::string::String>,

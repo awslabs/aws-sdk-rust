@@ -26,8 +26,8 @@ impl DeleteSizeConstraintSetOutput {
 }
 
 /// A builder for [`DeleteSizeConstraintSetOutput`](crate::operation::delete_size_constraint_set::DeleteSizeConstraintSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSizeConstraintSetOutputBuilder {
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

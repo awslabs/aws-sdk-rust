@@ -33,8 +33,8 @@ impl IngressTlsProtocolExpression {
 }
 
 /// A builder for [`IngressTlsProtocolExpression`](crate::types::IngressTlsProtocolExpression).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IngressTlsProtocolExpressionBuilder {
     pub(crate) evaluate: ::std::option::Option<crate::types::IngressTlsProtocolToEvaluate>,
     pub(crate) operator: ::std::option::Option<crate::types::IngressTlsProtocolOperator>,

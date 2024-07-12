@@ -21,8 +21,8 @@ impl DeleteHsmInput {
 }
 
 /// A builder for [`DeleteHsmInput`](crate::operation::delete_hsm::DeleteHsmInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteHsmInputBuilder {
     pub(crate) hsm_arn: ::std::option::Option<::std::string::String>,
 }

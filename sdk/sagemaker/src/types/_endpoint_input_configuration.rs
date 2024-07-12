@@ -39,8 +39,8 @@ impl EndpointInputConfiguration {
 }
 
 /// A builder for [`EndpointInputConfiguration`](crate::types::EndpointInputConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EndpointInputConfigurationBuilder {
     pub(crate) instance_type: ::std::option::Option<crate::types::ProductionVariantInstanceType>,
     pub(crate) serverless_config: ::std::option::Option<crate::types::ProductionVariantServerlessConfig>,

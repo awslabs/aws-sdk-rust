@@ -27,8 +27,8 @@ impl TestRenderEmailTemplateInput {
 }
 
 /// A builder for [`TestRenderEmailTemplateInput`](crate::operation::test_render_email_template::TestRenderEmailTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TestRenderEmailTemplateInputBuilder {
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
     pub(crate) template_data: ::std::option::Option<::std::string::String>,

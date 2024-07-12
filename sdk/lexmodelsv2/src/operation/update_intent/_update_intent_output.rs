@@ -148,8 +148,8 @@ impl UpdateIntentOutput {
 }
 
 /// A builder for [`UpdateIntentOutput`](crate::operation::update_intent::UpdateIntentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateIntentOutputBuilder {
     pub(crate) intent_id: ::std::option::Option<::std::string::String>,
     pub(crate) intent_name: ::std::option::Option<::std::string::String>,

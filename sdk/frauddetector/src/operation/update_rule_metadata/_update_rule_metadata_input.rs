@@ -26,8 +26,8 @@ impl UpdateRuleMetadataInput {
 }
 
 /// A builder for [`UpdateRuleMetadataInput`](crate::operation::update_rule_metadata::UpdateRuleMetadataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRuleMetadataInputBuilder {
     pub(crate) rule: ::std::option::Option<crate::types::Rule>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

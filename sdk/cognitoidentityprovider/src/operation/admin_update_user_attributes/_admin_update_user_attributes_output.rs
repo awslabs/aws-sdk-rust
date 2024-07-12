@@ -19,8 +19,8 @@ impl AdminUpdateUserAttributesOutput {
 }
 
 /// A builder for [`AdminUpdateUserAttributesOutput`](crate::operation::admin_update_user_attributes::AdminUpdateUserAttributesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AdminUpdateUserAttributesOutputBuilder {
     _request_id: Option<String>,
 }

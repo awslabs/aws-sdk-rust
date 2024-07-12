@@ -22,8 +22,8 @@ impl DeleteLakeFormationIdentityCenterConfigurationInput {
 }
 
 /// A builder for [`DeleteLakeFormationIdentityCenterConfigurationInput`](crate::operation::delete_lake_formation_identity_center_configuration::DeleteLakeFormationIdentityCenterConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteLakeFormationIdentityCenterConfigurationInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
 }

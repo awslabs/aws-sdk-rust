@@ -32,8 +32,8 @@ impl UpdateLongTermPricingInput {
 }
 
 /// A builder for [`UpdateLongTermPricingInput`](crate::operation::update_long_term_pricing::UpdateLongTermPricingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateLongTermPricingInputBuilder {
     pub(crate) long_term_pricing_id: ::std::option::Option<::std::string::String>,
     pub(crate) replacement_job: ::std::option::Option<::std::string::String>,

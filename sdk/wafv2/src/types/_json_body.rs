@@ -103,8 +103,8 @@ impl JsonBody {
 }
 
 /// A builder for [`JsonBody`](crate::types::JsonBody).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JsonBodyBuilder {
     pub(crate) match_pattern: ::std::option::Option<crate::types::JsonMatchPattern>,
     pub(crate) match_scope: ::std::option::Option<crate::types::JsonMatchScope>,

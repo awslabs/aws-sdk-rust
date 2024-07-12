@@ -20,8 +20,8 @@ impl DescribeCustomMetricInput {
 }
 
 /// A builder for [`DescribeCustomMetricInput`](crate::operation::describe_custom_metric::DescribeCustomMetricInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCustomMetricInputBuilder {
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
 }

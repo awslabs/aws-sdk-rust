@@ -47,8 +47,8 @@ impl ClientVpnEndpointStatus {
 }
 
 /// A builder for [`ClientVpnEndpointStatus`](crate::types::ClientVpnEndpointStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ClientVpnEndpointStatusBuilder {
     pub(crate) code: ::std::option::Option<crate::types::ClientVpnEndpointStatusCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

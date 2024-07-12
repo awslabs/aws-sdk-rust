@@ -27,8 +27,8 @@ impl SyncJobStatus {
 }
 
 /// A builder for [`SyncJobStatus`](crate::types::SyncJobStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SyncJobStatusBuilder {
     pub(crate) state: ::std::option::Option<crate::types::SyncJobState>,
     pub(crate) error: ::std::option::Option<crate::types::ErrorDetails>,

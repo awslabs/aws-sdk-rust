@@ -26,8 +26,8 @@ impl PutDeliveryDestinationPolicyInput {
 }
 
 /// A builder for [`PutDeliveryDestinationPolicyInput`](crate::operation::put_delivery_destination_policy::PutDeliveryDestinationPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutDeliveryDestinationPolicyInputBuilder {
     pub(crate) delivery_destination_name: ::std::option::Option<::std::string::String>,
     pub(crate) delivery_destination_policy: ::std::option::Option<::std::string::String>,

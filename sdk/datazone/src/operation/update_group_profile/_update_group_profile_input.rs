@@ -32,8 +32,8 @@ impl UpdateGroupProfileInput {
 }
 
 /// A builder for [`UpdateGroupProfileInput`](crate::operation::update_group_profile::UpdateGroupProfileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateGroupProfileInputBuilder {
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) group_identifier: ::std::option::Option<::std::string::String>,

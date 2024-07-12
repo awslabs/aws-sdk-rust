@@ -21,8 +21,8 @@ impl CacheHitResult {
 }
 
 /// A builder for [`CacheHitResult`](crate::types::CacheHitResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CacheHitResultBuilder {
     pub(crate) source_pipeline_execution_arn: ::std::option::Option<::std::string::String>,
 }

@@ -48,8 +48,8 @@ impl ConversationLevelTestResultItem {
 }
 
 /// A builder for [`ConversationLevelTestResultItem`](crate::types::ConversationLevelTestResultItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConversationLevelTestResultItemBuilder {
     pub(crate) conversation_id: ::std::option::Option<::std::string::String>,
     pub(crate) end_to_end_result: ::std::option::Option<crate::types::TestResultMatchStatus>,

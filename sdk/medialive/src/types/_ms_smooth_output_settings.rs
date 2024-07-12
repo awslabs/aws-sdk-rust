@@ -27,8 +27,8 @@ impl MsSmoothOutputSettings {
 }
 
 /// A builder for [`MsSmoothOutputSettings`](crate::types::MsSmoothOutputSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MsSmoothOutputSettingsBuilder {
     pub(crate) h265_packaging_type: ::std::option::Option<crate::types::MsSmoothH265PackagingType>,
     pub(crate) name_modifier: ::std::option::Option<::std::string::String>,

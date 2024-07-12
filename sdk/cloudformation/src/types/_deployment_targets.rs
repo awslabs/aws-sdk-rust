@@ -68,8 +68,8 @@ impl DeploymentTargets {
 }
 
 /// A builder for [`DeploymentTargets`](crate::types::DeploymentTargets).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeploymentTargetsBuilder {
     pub(crate) accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) accounts_url: ::std::option::Option<::std::string::String>,

@@ -39,8 +39,8 @@ impl SelfUserProfile {
 }
 
 /// A builder for [`SelfUserProfile`](crate::types::SelfUserProfile).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SelfUserProfileBuilder {
     pub(crate) iam_user_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

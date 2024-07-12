@@ -99,8 +99,8 @@ impl EncryptionContractConfiguration {
 }
 
 /// A builder for [`EncryptionContractConfiguration`](crate::types::EncryptionContractConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EncryptionContractConfigurationBuilder {
     pub(crate) preset_speke20_audio: ::std::option::Option<crate::types::PresetSpeke20Audio>,
     pub(crate) preset_speke20_video: ::std::option::Option<crate::types::PresetSpeke20Video>,

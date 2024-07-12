@@ -36,8 +36,8 @@ impl BatchUpdateClusterOutput {
 }
 
 /// A builder for [`BatchUpdateClusterOutput`](crate::operation::batch_update_cluster::BatchUpdateClusterOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchUpdateClusterOutputBuilder {
     pub(crate) processed_clusters: ::std::option::Option<::std::vec::Vec<crate::types::Cluster>>,
     pub(crate) unprocessed_clusters: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedCluster>>,

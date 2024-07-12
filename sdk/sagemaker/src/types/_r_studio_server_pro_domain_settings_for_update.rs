@@ -39,8 +39,8 @@ impl RStudioServerProDomainSettingsForUpdate {
 }
 
 /// A builder for [`RStudioServerProDomainSettingsForUpdate`](crate::types::RStudioServerProDomainSettingsForUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RStudioServerProDomainSettingsForUpdateBuilder {
     pub(crate) domain_execution_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) default_resource_spec: ::std::option::Option<crate::types::ResourceSpec>,

@@ -34,8 +34,8 @@ impl AuthorizeSecurityGroupEgressOutput {
 }
 
 /// A builder for [`AuthorizeSecurityGroupEgressOutput`](crate::operation::authorize_security_group_egress::AuthorizeSecurityGroupEgressOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AuthorizeSecurityGroupEgressOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
     pub(crate) security_group_rules: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupRule>>,

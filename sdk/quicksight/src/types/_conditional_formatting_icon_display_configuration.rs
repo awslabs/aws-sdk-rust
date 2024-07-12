@@ -21,8 +21,8 @@ impl ConditionalFormattingIconDisplayConfiguration {
 }
 
 /// A builder for [`ConditionalFormattingIconDisplayConfiguration`](crate::types::ConditionalFormattingIconDisplayConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConditionalFormattingIconDisplayConfigurationBuilder {
     pub(crate) icon_display_option: ::std::option::Option<crate::types::ConditionalFormattingIconDisplayOption>,
 }

@@ -59,8 +59,8 @@ impl CanvasAppSettings {
 }
 
 /// A builder for [`CanvasAppSettings`](crate::types::CanvasAppSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CanvasAppSettingsBuilder {
     pub(crate) time_series_forecasting_settings: ::std::option::Option<crate::types::TimeSeriesForecastingSettings>,
     pub(crate) model_register_settings: ::std::option::Option<crate::types::ModelRegisterSettings>,

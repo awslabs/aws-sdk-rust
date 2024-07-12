@@ -32,8 +32,8 @@ impl ListTestExecutionResultItemsOutput {
 }
 
 /// A builder for [`ListTestExecutionResultItemsOutput`](crate::operation::list_test_execution_result_items::ListTestExecutionResultItemsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTestExecutionResultItemsOutputBuilder {
     pub(crate) test_execution_results: ::std::option::Option<crate::types::TestExecutionResultItems>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

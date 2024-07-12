@@ -78,8 +78,8 @@ impl SendMediaMessageInput {
 }
 
 /// A builder for [`SendMediaMessageInput`](crate::operation::send_media_message::SendMediaMessageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendMediaMessageInputBuilder {
     pub(crate) destination_phone_number: ::std::option::Option<::std::string::String>,
     pub(crate) origination_identity: ::std::option::Option<::std::string::String>,

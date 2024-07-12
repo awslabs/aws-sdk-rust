@@ -21,8 +21,8 @@ impl AgentQualityMetrics {
 }
 
 /// A builder for [`AgentQualityMetrics`](crate::types::AgentQualityMetrics).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AgentQualityMetricsBuilder {
     pub(crate) audio: ::std::option::Option<crate::types::AudioQualityMetricsInfo>,
 }

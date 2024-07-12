@@ -38,8 +38,8 @@ impl ListAssociationsInput {
 }
 
 /// A builder for [`ListAssociationsInput`](crate::operation::list_associations::ListAssociationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAssociationsInputBuilder {
     pub(crate) association_filter_list: ::std::option::Option<::std::vec::Vec<crate::types::AssociationFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,

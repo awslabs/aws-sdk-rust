@@ -44,8 +44,8 @@ impl ListSubPackageGroupsInput {
 }
 
 /// A builder for [`ListSubPackageGroupsInput`](crate::operation::list_sub_package_groups::ListSubPackageGroupsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSubPackageGroupsInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) domain_owner: ::std::option::Option<::std::string::String>,

@@ -21,8 +21,8 @@ impl ScanEc2InstanceWithFindingsResult {
 }
 
 /// A builder for [`ScanEc2InstanceWithFindingsResult`](crate::types::ScanEc2InstanceWithFindingsResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScanEc2InstanceWithFindingsResultBuilder {
     pub(crate) ebs_volumes: ::std::option::Option<crate::types::EbsVolumesResult>,
 }

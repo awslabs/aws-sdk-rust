@@ -20,8 +20,8 @@ impl ValidateMatchmakingRuleSetInput {
 }
 
 /// A builder for [`ValidateMatchmakingRuleSetInput`](crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ValidateMatchmakingRuleSetInputBuilder {
     pub(crate) rule_set_body: ::std::option::Option<::std::string::String>,
 }

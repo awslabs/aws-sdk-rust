@@ -44,8 +44,8 @@ impl UpdateLaunchProfileMemberInput {
 }
 
 /// A builder for [`UpdateLaunchProfileMemberInput`](crate::operation::update_launch_profile_member::UpdateLaunchProfileMemberInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateLaunchProfileMemberInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) launch_profile_id: ::std::option::Option<::std::string::String>,

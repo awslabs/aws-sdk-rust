@@ -26,8 +26,8 @@ impl DeleteApnsChannelOutput {
 }
 
 /// A builder for [`DeleteApnsChannelOutput`](crate::operation::delete_apns_channel::DeleteApnsChannelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteApnsChannelOutputBuilder {
     pub(crate) apns_channel_response: ::std::option::Option<crate::types::ApnsChannelResponse>,
     _request_id: Option<String>,

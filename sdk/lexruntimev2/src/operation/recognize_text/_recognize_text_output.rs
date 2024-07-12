@@ -64,8 +64,8 @@ impl RecognizeTextOutput {
 }
 
 /// A builder for [`RecognizeTextOutput`](crate::operation::recognize_text::RecognizeTextOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecognizeTextOutputBuilder {
     pub(crate) messages: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
     pub(crate) session_state: ::std::option::Option<crate::types::SessionState>,

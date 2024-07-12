@@ -27,8 +27,8 @@ impl LocalDeviceResourceData {
 }
 
 /// A builder for [`LocalDeviceResourceData`](crate::types::LocalDeviceResourceData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LocalDeviceResourceDataBuilder {
     pub(crate) group_owner_setting: ::std::option::Option<crate::types::GroupOwnerSetting>,
     pub(crate) source_path: ::std::option::Option<::std::string::String>,

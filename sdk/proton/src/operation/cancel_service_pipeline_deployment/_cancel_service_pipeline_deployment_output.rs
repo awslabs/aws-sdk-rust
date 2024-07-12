@@ -26,8 +26,8 @@ impl CancelServicePipelineDeploymentOutput {
 }
 
 /// A builder for [`CancelServicePipelineDeploymentOutput`](crate::operation::cancel_service_pipeline_deployment::CancelServicePipelineDeploymentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelServicePipelineDeploymentOutputBuilder {
     pub(crate) pipeline: ::std::option::Option<crate::types::ServicePipeline>,
     _request_id: Option<String>,

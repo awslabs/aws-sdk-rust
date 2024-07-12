@@ -22,8 +22,8 @@ impl DescribeEntityAggregatesInput {
 }
 
 /// A builder for [`DescribeEntityAggregatesInput`](crate::operation::describe_entity_aggregates::DescribeEntityAggregatesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEntityAggregatesInputBuilder {
     pub(crate) event_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

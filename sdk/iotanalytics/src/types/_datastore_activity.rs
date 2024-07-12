@@ -29,8 +29,8 @@ impl DatastoreActivity {
 }
 
 /// A builder for [`DatastoreActivity`](crate::types::DatastoreActivity).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DatastoreActivityBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) datastore_name: ::std::option::Option<::std::string::String>,

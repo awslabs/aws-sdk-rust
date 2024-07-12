@@ -34,8 +34,8 @@ impl ListOfferingPromotionsOutput {
 }
 
 /// A builder for [`ListOfferingPromotionsOutput`](crate::operation::list_offering_promotions::ListOfferingPromotionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListOfferingPromotionsOutputBuilder {
     pub(crate) offering_promotions: ::std::option::Option<::std::vec::Vec<crate::types::OfferingPromotion>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

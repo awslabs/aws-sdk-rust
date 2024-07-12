@@ -18,8 +18,8 @@ impl UpdateTrustedTokenIssuerOutput {
 }
 
 /// A builder for [`UpdateTrustedTokenIssuerOutput`](crate::operation::update_trusted_token_issuer::UpdateTrustedTokenIssuerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateTrustedTokenIssuerOutputBuilder {
     _request_id: Option<String>,
 }

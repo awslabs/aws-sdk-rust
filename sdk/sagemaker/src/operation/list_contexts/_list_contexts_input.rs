@@ -62,8 +62,8 @@ impl ListContextsInput {
 }
 
 /// A builder for [`ListContextsInput`](crate::operation::list_contexts::ListContextsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListContextsInputBuilder {
     pub(crate) source_uri: ::std::option::Option<::std::string::String>,
     pub(crate) context_type: ::std::option::Option<::std::string::String>,

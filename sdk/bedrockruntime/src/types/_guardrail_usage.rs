@@ -51,8 +51,8 @@ impl GuardrailUsage {
 }
 
 /// A builder for [`GuardrailUsage`](crate::types::GuardrailUsage).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GuardrailUsageBuilder {
     pub(crate) topic_policy_units: ::std::option::Option<i32>,
     pub(crate) content_policy_units: ::std::option::Option<i32>,

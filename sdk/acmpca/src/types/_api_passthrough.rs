@@ -28,8 +28,8 @@ impl ApiPassthrough {
 }
 
 /// A builder for [`ApiPassthrough`](crate::types::ApiPassthrough).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ApiPassthroughBuilder {
     pub(crate) extensions: ::std::option::Option<crate::types::Extensions>,
     pub(crate) subject: ::std::option::Option<crate::types::Asn1Subject>,

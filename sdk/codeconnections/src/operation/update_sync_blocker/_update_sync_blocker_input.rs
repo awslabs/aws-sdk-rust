@@ -38,8 +38,8 @@ impl UpdateSyncBlockerInput {
 }
 
 /// A builder for [`UpdateSyncBlockerInput`](crate::operation::update_sync_blocker::UpdateSyncBlockerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSyncBlockerInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) sync_type: ::std::option::Option<crate::types::SyncConfigurationType>,

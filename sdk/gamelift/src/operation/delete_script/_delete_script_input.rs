@@ -20,8 +20,8 @@ impl DeleteScriptInput {
 }
 
 /// A builder for [`DeleteScriptInput`](crate::operation::delete_script::DeleteScriptInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteScriptInputBuilder {
     pub(crate) script_id: ::std::option::Option<::std::string::String>,
 }

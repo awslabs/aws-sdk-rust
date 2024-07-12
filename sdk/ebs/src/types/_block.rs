@@ -27,8 +27,8 @@ impl Block {
 }
 
 /// A builder for [`Block`](crate::types::Block).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BlockBuilder {
     pub(crate) block_index: ::std::option::Option<i32>,
     pub(crate) block_token: ::std::option::Option<::std::string::String>,

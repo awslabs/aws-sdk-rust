@@ -34,8 +34,8 @@ impl GetDeploymentsOutput {
 }
 
 /// A builder for [`GetDeploymentsOutput`](crate::operation::get_deployments::GetDeploymentsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDeploymentsOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::Deployment>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

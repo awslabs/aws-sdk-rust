@@ -24,8 +24,8 @@ impl GetLatestConfigurationInput {
 }
 
 /// A builder for [`GetLatestConfigurationInput`](crate::operation::get_latest_configuration::GetLatestConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLatestConfigurationInputBuilder {
     pub(crate) configuration_token: ::std::option::Option<::std::string::String>,
 }

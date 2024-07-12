@@ -49,8 +49,8 @@ impl SourceTableFeatureDetails {
 }
 
 /// A builder for [`SourceTableFeatureDetails`](crate::types::SourceTableFeatureDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SourceTableFeatureDetailsBuilder {
     pub(crate) local_secondary_indexes: ::std::option::Option<::std::vec::Vec<crate::types::LocalSecondaryIndexInfo>>,
     pub(crate) global_secondary_indexes: ::std::option::Option<::std::vec::Vec<crate::types::GlobalSecondaryIndexInfo>>,

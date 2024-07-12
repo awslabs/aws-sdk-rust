@@ -18,8 +18,8 @@ impl DeregisterStreamConsumerOutput {
 }
 
 /// A builder for [`DeregisterStreamConsumerOutput`](crate::operation::deregister_stream_consumer::DeregisterStreamConsumerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeregisterStreamConsumerOutputBuilder {
     _request_id: Option<String>,
 }

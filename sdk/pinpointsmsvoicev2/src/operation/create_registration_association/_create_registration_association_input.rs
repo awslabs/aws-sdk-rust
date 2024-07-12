@@ -26,8 +26,8 @@ impl CreateRegistrationAssociationInput {
 }
 
 /// A builder for [`CreateRegistrationAssociationInput`](crate::operation::create_registration_association::CreateRegistrationAssociationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateRegistrationAssociationInputBuilder {
     pub(crate) registration_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,

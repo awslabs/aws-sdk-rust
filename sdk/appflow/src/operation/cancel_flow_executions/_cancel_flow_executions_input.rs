@@ -30,8 +30,8 @@ impl CancelFlowExecutionsInput {
 }
 
 /// A builder for [`CancelFlowExecutionsInput`](crate::operation::cancel_flow_executions::CancelFlowExecutionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelFlowExecutionsInputBuilder {
     pub(crate) flow_name: ::std::option::Option<::std::string::String>,
     pub(crate) execution_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

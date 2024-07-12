@@ -21,8 +21,8 @@ impl FileFilter {
 }
 
 /// A builder for [`FileFilter`](crate::types::FileFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FileFilterBuilder {
     pub(crate) file_arn: ::std::option::Option<::std::string::String>,
 }

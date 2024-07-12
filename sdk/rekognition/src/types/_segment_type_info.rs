@@ -27,8 +27,8 @@ impl SegmentTypeInfo {
 }
 
 /// A builder for [`SegmentTypeInfo`](crate::types::SegmentTypeInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SegmentTypeInfoBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::SegmentType>,
     pub(crate) model_version: ::std::option::Option<::std::string::String>,

@@ -20,8 +20,8 @@ impl CloseAccountInput {
 }
 
 /// A builder for [`CloseAccountInput`](crate::operation::close_account::CloseAccountInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CloseAccountInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }

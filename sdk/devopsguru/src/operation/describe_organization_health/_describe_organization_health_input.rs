@@ -30,8 +30,8 @@ impl DescribeOrganizationHealthInput {
 }
 
 /// A builder for [`DescribeOrganizationHealthInput`](crate::operation::describe_organization_health::DescribeOrganizationHealthInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeOrganizationHealthInputBuilder {
     pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) organizational_unit_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -39,8 +39,8 @@ impl CvssScore {
 }
 
 /// A builder for [`CvssScore`](crate::types::CvssScore).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CvssScoreBuilder {
     pub(crate) base_score: ::std::option::Option<f64>,
     pub(crate) scoring_vector: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl DescribeDomainControllersOutput {
 }
 
 /// A builder for [`DescribeDomainControllersOutput`](crate::operation::describe_domain_controllers::DescribeDomainControllersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDomainControllersOutputBuilder {
     pub(crate) domain_controllers: ::std::option::Option<::std::vec::Vec<crate::types::DomainController>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

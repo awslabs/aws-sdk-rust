@@ -62,8 +62,8 @@ impl HyperParameterTuningJobWarmStartConfig {
 }
 
 /// A builder for [`HyperParameterTuningJobWarmStartConfig`](crate::types::HyperParameterTuningJobWarmStartConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HyperParameterTuningJobWarmStartConfigBuilder {
     pub(crate) parent_hyper_parameter_tuning_jobs: ::std::option::Option<::std::vec::Vec<crate::types::ParentHyperParameterTuningJob>>,
     pub(crate) warm_start_type: ::std::option::Option<crate::types::HyperParameterTuningJobWarmStartType>,

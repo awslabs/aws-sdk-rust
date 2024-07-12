@@ -27,8 +27,8 @@ impl BlockStoragePerformanceConfiguration {
 }
 
 /// A builder for [`BlockStoragePerformanceConfiguration`](crate::types::BlockStoragePerformanceConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BlockStoragePerformanceConfigurationBuilder {
     pub(crate) iops: ::std::option::Option<f64>,
     pub(crate) throughput: ::std::option::Option<f64>,

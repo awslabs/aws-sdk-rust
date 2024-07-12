@@ -33,8 +33,8 @@ impl GradientStop {
 }
 
 /// A builder for [`GradientStop`](crate::types::GradientStop).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GradientStopBuilder {
     pub(crate) gradient_offset: ::std::option::Option<f64>,
     pub(crate) data_value: ::std::option::Option<f64>,

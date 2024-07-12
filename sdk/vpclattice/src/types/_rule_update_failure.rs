@@ -33,8 +33,8 @@ impl RuleUpdateFailure {
 }
 
 /// A builder for [`RuleUpdateFailure`](crate::types::RuleUpdateFailure).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RuleUpdateFailureBuilder {
     pub(crate) rule_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) failure_code: ::std::option::Option<::std::string::String>,

@@ -51,8 +51,8 @@ impl ResourceSpec {
 }
 
 /// A builder for [`ResourceSpec`](crate::types::ResourceSpec).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResourceSpecBuilder {
     pub(crate) sage_maker_image_arn: ::std::option::Option<::std::string::String>,
     pub(crate) sage_maker_image_version_arn: ::std::option::Option<::std::string::String>,

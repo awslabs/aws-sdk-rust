@@ -38,8 +38,8 @@ impl BatchDescribeModelPackageOutput {
 }
 
 /// A builder for [`BatchDescribeModelPackageOutput`](crate::operation::batch_describe_model_package::BatchDescribeModelPackageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDescribeModelPackageOutputBuilder {
     pub(crate) model_package_summaries:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::BatchDescribeModelPackageSummary>>,

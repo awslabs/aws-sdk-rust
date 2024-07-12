@@ -34,8 +34,8 @@ impl DescribeParameterGroupsOutput {
 }
 
 /// A builder for [`DescribeParameterGroupsOutput`](crate::operation::describe_parameter_groups::DescribeParameterGroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeParameterGroupsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) parameter_groups: ::std::option::Option<::std::vec::Vec<crate::types::ParameterGroup>>,

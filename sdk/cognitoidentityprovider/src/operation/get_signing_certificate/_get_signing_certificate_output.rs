@@ -27,8 +27,8 @@ impl GetSigningCertificateOutput {
 }
 
 /// A builder for [`GetSigningCertificateOutput`](crate::operation::get_signing_certificate::GetSigningCertificateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSigningCertificateOutputBuilder {
     pub(crate) certificate: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

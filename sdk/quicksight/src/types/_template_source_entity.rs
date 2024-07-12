@@ -27,8 +27,8 @@ impl TemplateSourceEntity {
 }
 
 /// A builder for [`TemplateSourceEntity`](crate::types::TemplateSourceEntity).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TemplateSourceEntityBuilder {
     pub(crate) source_analysis: ::std::option::Option<crate::types::TemplateSourceAnalysis>,
     pub(crate) source_template: ::std::option::Option<crate::types::TemplateSourceTemplate>,

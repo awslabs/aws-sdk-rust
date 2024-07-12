@@ -27,8 +27,8 @@ impl GetDeploymentInstanceOutput {
 }
 
 /// A builder for [`GetDeploymentInstanceOutput`](crate::operation::get_deployment_instance::GetDeploymentInstanceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDeploymentInstanceOutputBuilder {
     pub(crate) instance_summary: ::std::option::Option<crate::types::InstanceSummary>,
     _request_id: Option<String>,

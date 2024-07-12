@@ -26,8 +26,8 @@ impl PutVoiceConnectorLoggingConfigurationOutput {
 }
 
 /// A builder for [`PutVoiceConnectorLoggingConfigurationOutput`](crate::operation::put_voice_connector_logging_configuration::PutVoiceConnectorLoggingConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutVoiceConnectorLoggingConfigurationOutputBuilder {
     pub(crate) logging_configuration: ::std::option::Option<crate::types::LoggingConfiguration>,
     _request_id: Option<String>,

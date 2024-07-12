@@ -78,8 +78,8 @@ impl CreateTransformerOutput {
 }
 
 /// A builder for [`CreateTransformerOutput`](crate::operation::create_transformer::CreateTransformerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateTransformerOutputBuilder {
     pub(crate) transformer_id: ::std::option::Option<::std::string::String>,
     pub(crate) transformer_arn: ::std::option::Option<::std::string::String>,

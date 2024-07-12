@@ -97,8 +97,8 @@ impl ArchiveApplicationOutput {
 }
 
 /// A builder for [`ArchiveApplicationOutput`](crate::operation::archive_application::ArchiveApplicationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ArchiveApplicationOutputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

@@ -20,8 +20,8 @@ impl DescribeBackupInput {
 }
 
 /// A builder for [`DescribeBackupInput`](crate::operation::describe_backup::DescribeBackupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeBackupInputBuilder {
     pub(crate) backup_arn: ::std::option::Option<::std::string::String>,
 }

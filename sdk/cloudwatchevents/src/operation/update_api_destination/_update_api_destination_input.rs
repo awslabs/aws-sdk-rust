@@ -50,8 +50,8 @@ impl UpdateApiDestinationInput {
 }
 
 /// A builder for [`UpdateApiDestinationInput`](crate::operation::update_api_destination::UpdateApiDestinationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateApiDestinationInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

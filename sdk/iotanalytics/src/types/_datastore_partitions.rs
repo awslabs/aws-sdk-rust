@@ -23,8 +23,8 @@ impl DatastorePartitions {
 }
 
 /// A builder for [`DatastorePartitions`](crate::types::DatastorePartitions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DatastorePartitionsBuilder {
     pub(crate) partitions: ::std::option::Option<::std::vec::Vec<crate::types::DatastorePartition>>,
 }

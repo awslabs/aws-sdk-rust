@@ -61,8 +61,8 @@ impl AwsEc2VpcPeeringConnectionVpcInfoDetails {
 }
 
 /// A builder for [`AwsEc2VpcPeeringConnectionVpcInfoDetails`](crate::types::AwsEc2VpcPeeringConnectionVpcInfoDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEc2VpcPeeringConnectionVpcInfoDetailsBuilder {
     pub(crate) cidr_block: ::std::option::Option<::std::string::String>,
     pub(crate) cidr_block_set: ::std::option::Option<::std::vec::Vec<crate::types::VpcInfoCidrBlockSetDetails>>,

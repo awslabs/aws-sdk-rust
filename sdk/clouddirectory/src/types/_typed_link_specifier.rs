@@ -40,8 +40,8 @@ impl TypedLinkSpecifier {
 }
 
 /// A builder for [`TypedLinkSpecifier`](crate::types::TypedLinkSpecifier).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TypedLinkSpecifierBuilder {
     pub(crate) typed_link_facet: ::std::option::Option<crate::types::TypedLinkSchemaAndFacetName>,
     pub(crate) source_object_reference: ::std::option::Option<crate::types::ObjectReference>,

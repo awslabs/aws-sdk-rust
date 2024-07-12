@@ -54,8 +54,8 @@ impl PutGeofenceInput {
 }
 
 /// A builder for [`PutGeofenceInput`](crate::operation::put_geofence::PutGeofenceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PutGeofenceInputBuilder {
     pub(crate) collection_name: ::std::option::Option<::std::string::String>,
     pub(crate) geofence_id: ::std::option::Option<::std::string::String>,

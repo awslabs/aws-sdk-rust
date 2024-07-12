@@ -26,8 +26,8 @@ impl DeleteThingGroupInput {
 }
 
 /// A builder for [`DeleteThingGroupInput`](crate::operation::delete_thing_group::DeleteThingGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteThingGroupInputBuilder {
     pub(crate) thing_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) expected_version: ::std::option::Option<i64>,

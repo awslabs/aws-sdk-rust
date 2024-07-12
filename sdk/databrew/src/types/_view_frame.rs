@@ -53,8 +53,8 @@ impl ViewFrame {
 }
 
 /// A builder for [`ViewFrame`](crate::types::ViewFrame).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ViewFrameBuilder {
     pub(crate) start_column_index: ::std::option::Option<i32>,
     pub(crate) column_range: ::std::option::Option<i32>,

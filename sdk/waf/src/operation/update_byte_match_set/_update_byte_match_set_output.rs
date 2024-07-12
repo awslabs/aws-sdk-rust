@@ -26,8 +26,8 @@ impl UpdateByteMatchSetOutput {
 }
 
 /// A builder for [`UpdateByteMatchSetOutput`](crate::operation::update_byte_match_set::UpdateByteMatchSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateByteMatchSetOutputBuilder {
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

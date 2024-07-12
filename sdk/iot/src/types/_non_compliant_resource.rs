@@ -33,8 +33,8 @@ impl NonCompliantResource {
 }
 
 /// A builder for [`NonCompliantResource`](crate::types::NonCompliantResource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NonCompliantResourceBuilder {
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
     pub(crate) resource_identifier: ::std::option::Option<crate::types::ResourceIdentifier>,

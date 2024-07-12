@@ -26,8 +26,8 @@ impl DescribeBatchInferenceJobOutput {
 }
 
 /// A builder for [`DescribeBatchInferenceJobOutput`](crate::operation::describe_batch_inference_job::DescribeBatchInferenceJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeBatchInferenceJobOutputBuilder {
     pub(crate) batch_inference_job: ::std::option::Option<crate::types::BatchInferenceJob>,
     _request_id: Option<String>,

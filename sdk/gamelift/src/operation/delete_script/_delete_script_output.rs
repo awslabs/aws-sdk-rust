@@ -18,8 +18,8 @@ impl DeleteScriptOutput {
 }
 
 /// A builder for [`DeleteScriptOutput`](crate::operation::delete_script::DeleteScriptOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteScriptOutputBuilder {
     _request_id: Option<String>,
 }

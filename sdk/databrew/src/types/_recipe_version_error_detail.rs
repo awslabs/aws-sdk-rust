@@ -33,8 +33,8 @@ impl RecipeVersionErrorDetail {
 }
 
 /// A builder for [`RecipeVersionErrorDetail`](crate::types::RecipeVersionErrorDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecipeVersionErrorDetailBuilder {
     pub(crate) error_code: ::std::option::Option<::std::string::String>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,

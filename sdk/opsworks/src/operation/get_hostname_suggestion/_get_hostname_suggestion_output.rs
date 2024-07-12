@@ -33,8 +33,8 @@ impl GetHostnameSuggestionOutput {
 }
 
 /// A builder for [`GetHostnameSuggestionOutput`](crate::operation::get_hostname_suggestion::GetHostnameSuggestionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetHostnameSuggestionOutputBuilder {
     pub(crate) layer_id: ::std::option::Option<::std::string::String>,
     pub(crate) hostname: ::std::option::Option<::std::string::String>,

@@ -75,8 +75,8 @@ impl SubjectNameFlagsV2 {
 }
 
 /// A builder for [`SubjectNameFlagsV2`](crate::types::SubjectNameFlagsV2).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SubjectNameFlagsV2Builder {
     pub(crate) san_require_domain_dns: ::std::option::Option<bool>,
     pub(crate) san_require_spn: ::std::option::Option<bool>,

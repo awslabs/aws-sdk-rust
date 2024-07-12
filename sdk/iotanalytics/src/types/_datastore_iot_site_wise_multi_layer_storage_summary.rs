@@ -21,8 +21,8 @@ impl DatastoreIotSiteWiseMultiLayerStorageSummary {
 }
 
 /// A builder for [`DatastoreIotSiteWiseMultiLayerStorageSummary`](crate::types::DatastoreIotSiteWiseMultiLayerStorageSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DatastoreIotSiteWiseMultiLayerStorageSummaryBuilder {
     pub(crate) customer_managed_s3_storage: ::std::option::Option<crate::types::IotSiteWiseCustomerManagedDatastoreS3StorageSummary>,
 }

@@ -32,8 +32,8 @@ impl ListModelMetadataInput {
 }
 
 /// A builder for [`ListModelMetadataInput`](crate::operation::list_model_metadata::ListModelMetadataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListModelMetadataInputBuilder {
     pub(crate) search_expression: ::std::option::Option<crate::types::ModelMetadataSearchExpression>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

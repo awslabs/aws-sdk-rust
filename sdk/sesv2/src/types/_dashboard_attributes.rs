@@ -33,8 +33,8 @@ impl DashboardAttributes {
 }
 
 /// A builder for [`DashboardAttributes`](crate::types::DashboardAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DashboardAttributesBuilder {
     pub(crate) engagement_metrics: ::std::option::Option<crate::types::FeatureStatus>,
 }

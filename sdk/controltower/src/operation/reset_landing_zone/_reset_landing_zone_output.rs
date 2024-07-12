@@ -27,8 +27,8 @@ impl ResetLandingZoneOutput {
 }
 
 /// A builder for [`ResetLandingZoneOutput`](crate::operation::reset_landing_zone::ResetLandingZoneOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResetLandingZoneOutputBuilder {
     pub(crate) operation_identifier: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -62,8 +62,8 @@ impl CreateReplicationConfigurationOutput {
 }
 
 /// A builder for [`CreateReplicationConfigurationOutput`](crate::operation::create_replication_configuration::CreateReplicationConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateReplicationConfigurationOutputBuilder {
     pub(crate) source_file_system_id: ::std::option::Option<::std::string::String>,
     pub(crate) source_file_system_region: ::std::option::Option<::std::string::String>,

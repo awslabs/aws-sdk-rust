@@ -18,8 +18,8 @@ impl DeleteCachePolicyOutput {
 }
 
 /// A builder for [`DeleteCachePolicyOutput`](crate::operation::delete_cache_policy::DeleteCachePolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCachePolicyOutputBuilder {
     _request_id: Option<String>,
 }

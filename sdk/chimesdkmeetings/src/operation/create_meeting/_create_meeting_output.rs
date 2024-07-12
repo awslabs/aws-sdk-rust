@@ -26,8 +26,8 @@ impl CreateMeetingOutput {
 }
 
 /// A builder for [`CreateMeetingOutput`](crate::operation::create_meeting::CreateMeetingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateMeetingOutputBuilder {
     pub(crate) meeting: ::std::option::Option<crate::types::Meeting>,
     _request_id: Option<String>,

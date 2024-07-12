@@ -20,8 +20,8 @@ impl GetBaselineOperationInput {
 }
 
 /// A builder for [`GetBaselineOperationInput`](crate::operation::get_baseline_operation::GetBaselineOperationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBaselineOperationInputBuilder {
     pub(crate) operation_identifier: ::std::option::Option<::std::string::String>,
 }

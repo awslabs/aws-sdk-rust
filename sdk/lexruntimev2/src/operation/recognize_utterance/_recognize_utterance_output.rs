@@ -96,8 +96,8 @@ impl RecognizeUtteranceOutput {
 }
 
 /// A builder for [`RecognizeUtteranceOutput`](crate::operation::recognize_utterance::RecognizeUtteranceOutput).
-#[non_exhaustive]
 #[derive(::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecognizeUtteranceOutputBuilder {
     pub(crate) input_mode: ::std::option::Option<::std::string::String>,
     pub(crate) content_type: ::std::option::Option<::std::string::String>,

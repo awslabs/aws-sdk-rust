@@ -160,8 +160,8 @@ impl GetRecommendationOutput {
 }
 
 /// A builder for [`GetRecommendationOutput`](crate::operation::get_recommendation::GetRecommendationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRecommendationOutputBuilder {
     pub(crate) recommendation_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,

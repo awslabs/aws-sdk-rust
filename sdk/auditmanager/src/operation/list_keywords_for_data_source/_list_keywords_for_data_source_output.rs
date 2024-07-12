@@ -34,8 +34,8 @@ impl ListKeywordsForDataSourceOutput {
 }
 
 /// A builder for [`ListKeywordsForDataSourceOutput`](crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListKeywordsForDataSourceOutputBuilder {
     pub(crate) keywords: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

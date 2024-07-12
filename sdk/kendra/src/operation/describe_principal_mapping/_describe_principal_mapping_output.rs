@@ -70,8 +70,8 @@ impl DescribePrincipalMappingOutput {
 }
 
 /// A builder for [`DescribePrincipalMappingOutput`](crate::operation::describe_principal_mapping::DescribePrincipalMappingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribePrincipalMappingOutputBuilder {
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_source_id: ::std::option::Option<::std::string::String>,

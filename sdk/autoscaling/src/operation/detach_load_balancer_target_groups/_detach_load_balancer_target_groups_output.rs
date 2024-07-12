@@ -18,8 +18,8 @@ impl DetachLoadBalancerTargetGroupsOutput {
 }
 
 /// A builder for [`DetachLoadBalancerTargetGroupsOutput`](crate::operation::detach_load_balancer_target_groups::DetachLoadBalancerTargetGroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetachLoadBalancerTargetGroupsOutputBuilder {
     _request_id: Option<String>,
 }

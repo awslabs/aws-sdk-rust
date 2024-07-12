@@ -109,8 +109,8 @@ impl DataLakeSettings {
 }
 
 /// A builder for [`DataLakeSettings`](crate::types::DataLakeSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataLakeSettingsBuilder {
     pub(crate) data_lake_admins: ::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>>,
     pub(crate) read_only_admins: ::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>>,

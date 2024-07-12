@@ -34,8 +34,8 @@ impl ListExportsOutput {
 }
 
 /// A builder for [`ListExportsOutput`](crate::operation::list_exports::ListExportsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListExportsOutputBuilder {
     pub(crate) export_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ExportSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

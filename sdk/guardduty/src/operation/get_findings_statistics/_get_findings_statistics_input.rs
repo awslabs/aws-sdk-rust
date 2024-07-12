@@ -34,8 +34,8 @@ impl GetFindingsStatisticsInput {
 }
 
 /// A builder for [`GetFindingsStatisticsInput`](crate::operation::get_findings_statistics::GetFindingsStatisticsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetFindingsStatisticsInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
     pub(crate) finding_statistic_types: ::std::option::Option<::std::vec::Vec<crate::types::FindingStatisticType>>,

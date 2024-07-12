@@ -41,8 +41,8 @@ impl BatchUpdateRecommendationStatusOutput {
 }
 
 /// A builder for [`BatchUpdateRecommendationStatusOutput`](crate::operation::batch_update_recommendation_status::BatchUpdateRecommendationStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchUpdateRecommendationStatusOutputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
     pub(crate) successful_entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchUpdateRecommendationStatusSuccessfulEntry>>,

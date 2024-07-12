@@ -67,8 +67,8 @@ impl GetMapSpritesInput {
 }
 
 /// A builder for [`GetMapSpritesInput`](crate::operation::get_map_sprites::GetMapSpritesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetMapSpritesInputBuilder {
     pub(crate) map_name: ::std::option::Option<::std::string::String>,
     pub(crate) file_name: ::std::option::Option<::std::string::String>,

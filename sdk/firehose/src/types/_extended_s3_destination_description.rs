@@ -107,8 +107,8 @@ impl ExtendedS3DestinationDescription {
 }
 
 /// A builder for [`ExtendedS3DestinationDescription`](crate::types::ExtendedS3DestinationDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExtendedS3DestinationDescriptionBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) bucket_arn: ::std::option::Option<::std::string::String>,

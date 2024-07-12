@@ -40,8 +40,8 @@ impl ListVariantStoresInput {
 }
 
 /// A builder for [`ListVariantStoresInput`](crate::operation::list_variant_stores::ListVariantStoresInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListVariantStoresInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

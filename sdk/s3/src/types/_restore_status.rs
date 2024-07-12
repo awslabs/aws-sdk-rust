@@ -39,8 +39,8 @@ impl RestoreStatus {
 }
 
 /// A builder for [`RestoreStatus`](crate::types::RestoreStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RestoreStatusBuilder {
     pub(crate) is_restore_in_progress: ::std::option::Option<bool>,
     pub(crate) restore_expiry_date: ::std::option::Option<::aws_smithy_types::DateTime>,

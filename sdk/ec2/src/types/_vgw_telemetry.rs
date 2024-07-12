@@ -51,8 +51,8 @@ impl VgwTelemetry {
 }
 
 /// A builder for [`VgwTelemetry`](crate::types::VgwTelemetry).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VgwTelemetryBuilder {
     pub(crate) accepted_route_count: ::std::option::Option<i32>,
     pub(crate) last_status_change: ::std::option::Option<::aws_smithy_types::DateTime>,

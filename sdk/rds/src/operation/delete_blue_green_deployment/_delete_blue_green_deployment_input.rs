@@ -36,8 +36,8 @@ impl DeleteBlueGreenDeploymentInput {
 }
 
 /// A builder for [`DeleteBlueGreenDeploymentInput`](crate::operation::delete_blue_green_deployment::DeleteBlueGreenDeploymentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteBlueGreenDeploymentInputBuilder {
     pub(crate) blue_green_deployment_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) delete_target: ::std::option::Option<bool>,

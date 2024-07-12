@@ -34,8 +34,8 @@ impl OcspConfiguration {
 }
 
 /// A builder for [`OcspConfiguration`](crate::types::OcspConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OcspConfigurationBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) ocsp_custom_cname: ::std::option::Option<::std::string::String>,

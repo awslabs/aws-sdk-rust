@@ -36,8 +36,8 @@ impl GetSystemTemplateRevisionsInput {
 }
 
 /// A builder for [`GetSystemTemplateRevisionsInput`](crate::operation::get_system_template_revisions::GetSystemTemplateRevisionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSystemTemplateRevisionsInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

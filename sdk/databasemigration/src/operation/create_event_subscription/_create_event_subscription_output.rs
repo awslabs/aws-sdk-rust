@@ -27,8 +27,8 @@ impl CreateEventSubscriptionOutput {
 }
 
 /// A builder for [`CreateEventSubscriptionOutput`](crate::operation::create_event_subscription::CreateEventSubscriptionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateEventSubscriptionOutputBuilder {
     pub(crate) event_subscription: ::std::option::Option<crate::types::EventSubscription>,
     _request_id: Option<String>,

@@ -23,8 +23,8 @@ impl ListImportsRequestFilters {
 }
 
 /// A builder for [`ListImportsRequestFilters`](crate::types::ListImportsRequestFilters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListImportsRequestFiltersBuilder {
     pub(crate) import_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

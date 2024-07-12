@@ -33,8 +33,8 @@ impl AwsManagedRulesBotControlRuleSet {
 }
 
 /// A builder for [`AwsManagedRulesBotControlRuleSet`](crate::types::AwsManagedRulesBotControlRuleSet).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsManagedRulesBotControlRuleSetBuilder {
     pub(crate) inspection_level: ::std::option::Option<crate::types::InspectionLevel>,
     pub(crate) enable_machine_learning: ::std::option::Option<bool>,

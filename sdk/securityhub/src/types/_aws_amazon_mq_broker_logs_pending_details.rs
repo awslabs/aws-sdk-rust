@@ -27,8 +27,8 @@ impl AwsAmazonMqBrokerLogsPendingDetails {
 }
 
 /// A builder for [`AwsAmazonMqBrokerLogsPendingDetails`](crate::types::AwsAmazonMqBrokerLogsPendingDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsAmazonMqBrokerLogsPendingDetailsBuilder {
     pub(crate) audit: ::std::option::Option<bool>,
     pub(crate) general: ::std::option::Option<bool>,

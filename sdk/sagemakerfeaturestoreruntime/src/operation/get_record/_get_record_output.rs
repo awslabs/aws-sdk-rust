@@ -34,8 +34,8 @@ impl GetRecordOutput {
 }
 
 /// A builder for [`GetRecordOutput`](crate::operation::get_record::GetRecordOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRecordOutputBuilder {
     pub(crate) record: ::std::option::Option<::std::vec::Vec<crate::types::FeatureValue>>,
     pub(crate) expires_at: ::std::option::Option<::std::string::String>,

@@ -51,8 +51,8 @@ impl RouterType {
 }
 
 /// A builder for [`RouterType`](crate::types::RouterType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RouterTypeBuilder {
     pub(crate) vendor: ::std::option::Option<::std::string::String>,
     pub(crate) platform: ::std::option::Option<::std::string::String>,

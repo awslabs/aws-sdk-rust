@@ -38,8 +38,8 @@ impl ListContactsInput {
 }
 
 /// A builder for [`ListContactsInput`](crate::operation::list_contacts::ListContactsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListContactsInputBuilder {
     pub(crate) contact_list_name: ::std::option::Option<::std::string::String>,
     pub(crate) filter: ::std::option::Option<crate::types::ListContactsFilter>,

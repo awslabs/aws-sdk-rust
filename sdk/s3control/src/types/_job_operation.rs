@@ -97,8 +97,8 @@ impl JobOperation {
 }
 
 /// A builder for [`JobOperation`](crate::types::JobOperation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JobOperationBuilder {
     pub(crate) lambda_invoke: ::std::option::Option<crate::types::LambdaInvokeOperation>,
     pub(crate) s3_put_object_copy: ::std::option::Option<crate::types::S3CopyObjectOperation>,

@@ -27,8 +27,8 @@ impl ConfirmSubscriptionOutput {
 }
 
 /// A builder for [`ConfirmSubscriptionOutput`](crate::operation::confirm_subscription::ConfirmSubscriptionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConfirmSubscriptionOutputBuilder {
     pub(crate) subscription_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

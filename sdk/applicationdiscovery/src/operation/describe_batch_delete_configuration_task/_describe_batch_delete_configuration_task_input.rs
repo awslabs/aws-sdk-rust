@@ -20,8 +20,8 @@ impl DescribeBatchDeleteConfigurationTaskInput {
 }
 
 /// A builder for [`DescribeBatchDeleteConfigurationTaskInput`](crate::operation::describe_batch_delete_configuration_task::DescribeBatchDeleteConfigurationTaskInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeBatchDeleteConfigurationTaskInputBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
 }

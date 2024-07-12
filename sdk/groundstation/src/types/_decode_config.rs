@@ -22,8 +22,8 @@ impl DecodeConfig {
 }
 
 /// A builder for [`DecodeConfig`](crate::types::DecodeConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DecodeConfigBuilder {
     pub(crate) unvalidated_json: ::std::option::Option<::std::string::String>,
 }

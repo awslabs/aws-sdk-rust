@@ -18,8 +18,8 @@ impl UpdateJobOutput {
 }
 
 /// A builder for [`UpdateJobOutput`](crate::operation::update_job::UpdateJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateJobOutputBuilder {
     _request_id: Option<String>,
 }

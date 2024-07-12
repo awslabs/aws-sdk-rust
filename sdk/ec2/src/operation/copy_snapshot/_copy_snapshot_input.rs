@@ -122,8 +122,8 @@ impl CopySnapshotInput {
 }
 
 /// A builder for [`CopySnapshotInput`](crate::operation::copy_snapshot::CopySnapshotInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CopySnapshotInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) destination_outpost_arn: ::std::option::Option<::std::string::String>,

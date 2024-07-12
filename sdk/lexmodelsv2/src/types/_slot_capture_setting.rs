@@ -63,8 +63,8 @@ impl SlotCaptureSetting {
 }
 
 /// A builder for [`SlotCaptureSetting`](crate::types::SlotCaptureSetting).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SlotCaptureSettingBuilder {
     pub(crate) capture_response: ::std::option::Option<crate::types::ResponseSpecification>,
     pub(crate) capture_next_step: ::std::option::Option<crate::types::DialogState>,

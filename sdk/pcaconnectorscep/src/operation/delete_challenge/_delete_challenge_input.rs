@@ -20,8 +20,8 @@ impl DeleteChallengeInput {
 }
 
 /// A builder for [`DeleteChallengeInput`](crate::operation::delete_challenge::DeleteChallengeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteChallengeInputBuilder {
     pub(crate) challenge_arn: ::std::option::Option<::std::string::String>,
 }

@@ -11,8 +11,8 @@ impl DeregisterAccountInput {
 }
 
 /// A builder for [`DeregisterAccountInput`](crate::operation::deregister_account::DeregisterAccountInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeregisterAccountInputBuilder {}
 impl DeregisterAccountInputBuilder {
     /// Consumes the builder and constructs a [`DeregisterAccountInput`](crate::operation::deregister_account::DeregisterAccountInput).

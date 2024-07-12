@@ -38,8 +38,8 @@ impl GetIpSetOutput {
 }
 
 /// A builder for [`GetIpSetOutput`](crate::operation::get_ip_set::GetIpSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetIpSetOutputBuilder {
     pub(crate) ip_set: ::std::option::Option<crate::types::IpSet>,
     _request_id: Option<String>,

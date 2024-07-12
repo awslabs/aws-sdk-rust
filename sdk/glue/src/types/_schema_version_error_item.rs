@@ -27,8 +27,8 @@ impl SchemaVersionErrorItem {
 }
 
 /// A builder for [`SchemaVersionErrorItem`](crate::types::SchemaVersionErrorItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SchemaVersionErrorItemBuilder {
     pub(crate) version_number: ::std::option::Option<i64>,
     pub(crate) error_details: ::std::option::Option<crate::types::ErrorDetails>,

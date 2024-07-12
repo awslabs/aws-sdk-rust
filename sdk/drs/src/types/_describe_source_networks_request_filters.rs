@@ -35,8 +35,8 @@ impl DescribeSourceNetworksRequestFilters {
 }
 
 /// A builder for [`DescribeSourceNetworksRequestFilters`](crate::types::DescribeSourceNetworksRequestFilters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSourceNetworksRequestFiltersBuilder {
     pub(crate) source_network_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) origin_account_id: ::std::option::Option<::std::string::String>,

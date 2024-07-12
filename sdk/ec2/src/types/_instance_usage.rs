@@ -27,8 +27,8 @@ impl InstanceUsage {
 }
 
 /// A builder for [`InstanceUsage`](crate::types::InstanceUsage).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceUsageBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) used_instance_count: ::std::option::Option<i32>,

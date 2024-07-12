@@ -26,8 +26,8 @@ impl UpdateCoreNetworkInput {
 }
 
 /// A builder for [`UpdateCoreNetworkInput`](crate::operation::update_core_network::UpdateCoreNetworkInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateCoreNetworkInputBuilder {
     pub(crate) core_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

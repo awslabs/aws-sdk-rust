@@ -26,8 +26,8 @@ impl DisableImageBlockPublicAccessOutput {
 }
 
 /// A builder for [`DisableImageBlockPublicAccessOutput`](crate::operation::disable_image_block_public_access::DisableImageBlockPublicAccessOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableImageBlockPublicAccessOutputBuilder {
     pub(crate) image_block_public_access_state: ::std::option::Option<crate::types::ImageBlockPublicAccessDisabledState>,
     _request_id: Option<String>,

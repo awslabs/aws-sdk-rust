@@ -27,8 +27,8 @@ impl SendBounceOutput {
 }
 
 /// A builder for [`SendBounceOutput`](crate::operation::send_bounce::SendBounceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendBounceOutputBuilder {
     pub(crate) message_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

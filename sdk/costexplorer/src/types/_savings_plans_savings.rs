@@ -27,8 +27,8 @@ impl SavingsPlansSavings {
 }
 
 /// A builder for [`SavingsPlansSavings`](crate::types::SavingsPlansSavings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SavingsPlansSavingsBuilder {
     pub(crate) net_savings: ::std::option::Option<::std::string::String>,
     pub(crate) on_demand_cost_equivalent: ::std::option::Option<::std::string::String>,

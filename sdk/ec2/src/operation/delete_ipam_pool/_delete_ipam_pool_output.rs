@@ -26,8 +26,8 @@ impl DeleteIpamPoolOutput {
 }
 
 /// A builder for [`DeleteIpamPoolOutput`](crate::operation::delete_ipam_pool::DeleteIpamPoolOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteIpamPoolOutputBuilder {
     pub(crate) ipam_pool: ::std::option::Option<crate::types::IpamPool>,
     _request_id: Option<String>,

@@ -21,8 +21,8 @@ impl OrganizationScanEc2InstanceWithFindingsResult {
 }
 
 /// A builder for [`OrganizationScanEc2InstanceWithFindingsResult`](crate::types::OrganizationScanEc2InstanceWithFindingsResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OrganizationScanEc2InstanceWithFindingsResultBuilder {
     pub(crate) ebs_volumes: ::std::option::Option<crate::types::OrganizationEbsVolumesResult>,
 }

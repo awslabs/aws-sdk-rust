@@ -27,8 +27,8 @@ impl PricingDetail {
 }
 
 /// A builder for [`PricingDetail`](crate::types::PricingDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PricingDetailBuilder {
     pub(crate) count: ::std::option::Option<i32>,
     pub(crate) price: ::std::option::Option<f64>,

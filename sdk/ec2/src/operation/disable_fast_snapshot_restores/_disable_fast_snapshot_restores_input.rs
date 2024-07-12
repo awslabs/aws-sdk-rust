@@ -36,8 +36,8 @@ impl DisableFastSnapshotRestoresInput {
 }
 
 /// A builder for [`DisableFastSnapshotRestoresInput`](crate::operation::disable_fast_snapshot_restores::DisableFastSnapshotRestoresInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableFastSnapshotRestoresInputBuilder {
     pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) source_snapshot_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

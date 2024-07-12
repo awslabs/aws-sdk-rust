@@ -18,8 +18,8 @@ impl AddTagsToCertificateOutput {
 }
 
 /// A builder for [`AddTagsToCertificateOutput`](crate::operation::add_tags_to_certificate::AddTagsToCertificateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddTagsToCertificateOutputBuilder {
     _request_id: Option<String>,
 }

@@ -34,8 +34,8 @@ impl ListPartnerAccountsOutput {
 }
 
 /// A builder for [`ListPartnerAccountsOutput`](crate::operation::list_partner_accounts::ListPartnerAccountsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPartnerAccountsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) sidewalk: ::std::option::Option<::std::vec::Vec<crate::types::SidewalkAccountInfoWithFingerprint>>,

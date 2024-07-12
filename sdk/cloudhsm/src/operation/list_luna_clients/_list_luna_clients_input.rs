@@ -20,8 +20,8 @@ impl ListLunaClientsInput {
 }
 
 /// A builder for [`ListLunaClientsInput`](crate::operation::list_luna_clients::ListLunaClientsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListLunaClientsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }

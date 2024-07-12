@@ -12,8 +12,8 @@ impl ListReceiptFiltersInput {
 }
 
 /// A builder for [`ListReceiptFiltersInput`](crate::operation::list_receipt_filters::ListReceiptFiltersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListReceiptFiltersInputBuilder {}
 impl ListReceiptFiltersInputBuilder {
     /// Consumes the builder and constructs a [`ListReceiptFiltersInput`](crate::operation::list_receipt_filters::ListReceiptFiltersInput).

@@ -38,8 +38,8 @@ impl CreatePromptVersionInput {
 }
 
 /// A builder for [`CreatePromptVersionInput`](crate::operation::create_prompt_version::CreatePromptVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePromptVersionInputBuilder {
     pub(crate) prompt_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

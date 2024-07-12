@@ -51,8 +51,8 @@ impl InferredState {
 }
 
 /// A builder for [`InferredState`](crate::types::InferredState).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct InferredStateBuilder {
     pub(crate) position: ::std::option::Option<::std::vec::Vec<f64>>,
     pub(crate) accuracy: ::std::option::Option<crate::types::PositionalAccuracy>,

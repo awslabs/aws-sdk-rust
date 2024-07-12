@@ -59,8 +59,8 @@ impl DataReplicationInfo {
 }
 
 /// A builder for [`DataReplicationInfo`](crate::types::DataReplicationInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataReplicationInfoBuilder {
     pub(crate) lag_duration: ::std::option::Option<::std::string::String>,
     pub(crate) eta_date_time: ::std::option::Option<::std::string::String>,

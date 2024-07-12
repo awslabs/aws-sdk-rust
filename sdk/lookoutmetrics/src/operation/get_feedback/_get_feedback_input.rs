@@ -38,8 +38,8 @@ impl GetFeedbackInput {
 }
 
 /// A builder for [`GetFeedbackInput`](crate::operation::get_feedback::GetFeedbackInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetFeedbackInputBuilder {
     pub(crate) anomaly_detector_arn: ::std::option::Option<::std::string::String>,
     pub(crate) anomaly_group_time_series_feedback: ::std::option::Option<crate::types::AnomalyGroupTimeSeries>,

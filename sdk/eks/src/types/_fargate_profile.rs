@@ -79,8 +79,8 @@ impl FargateProfile {
 }
 
 /// A builder for [`FargateProfile`](crate::types::FargateProfile).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FargateProfileBuilder {
     pub(crate) fargate_profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) fargate_profile_arn: ::std::option::Option<::std::string::String>,

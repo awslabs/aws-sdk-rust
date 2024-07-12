@@ -26,8 +26,8 @@ impl GetAppliedSchemaVersionOutput {
 }
 
 /// A builder for [`GetAppliedSchemaVersionOutput`](crate::operation::get_applied_schema_version::GetAppliedSchemaVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAppliedSchemaVersionOutputBuilder {
     pub(crate) applied_schema_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

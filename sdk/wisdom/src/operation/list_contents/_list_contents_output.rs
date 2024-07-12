@@ -33,8 +33,8 @@ impl ListContentsOutput {
 }
 
 /// A builder for [`ListContentsOutput`](crate::operation::list_contents::ListContentsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListContentsOutputBuilder {
     pub(crate) content_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ContentSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

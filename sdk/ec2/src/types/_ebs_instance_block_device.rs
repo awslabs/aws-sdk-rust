@@ -53,8 +53,8 @@ impl EbsInstanceBlockDevice {
 }
 
 /// A builder for [`EbsInstanceBlockDevice`](crate::types::EbsInstanceBlockDevice).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EbsInstanceBlockDeviceBuilder {
     pub(crate) attach_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) delete_on_termination: ::std::option::Option<bool>,

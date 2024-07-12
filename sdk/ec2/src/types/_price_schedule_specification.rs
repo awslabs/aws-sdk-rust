@@ -33,8 +33,8 @@ impl PriceScheduleSpecification {
 }
 
 /// A builder for [`PriceScheduleSpecification`](crate::types::PriceScheduleSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PriceScheduleSpecificationBuilder {
     pub(crate) currency_code: ::std::option::Option<crate::types::CurrencyCodeValues>,
     pub(crate) price: ::std::option::Option<f64>,

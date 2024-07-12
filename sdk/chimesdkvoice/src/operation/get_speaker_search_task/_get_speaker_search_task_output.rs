@@ -26,8 +26,8 @@ impl GetSpeakerSearchTaskOutput {
 }
 
 /// A builder for [`GetSpeakerSearchTaskOutput`](crate::operation::get_speaker_search_task::GetSpeakerSearchTaskOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSpeakerSearchTaskOutputBuilder {
     pub(crate) speaker_search_task: ::std::option::Option<crate::types::SpeakerSearchTask>,
     _request_id: Option<String>,

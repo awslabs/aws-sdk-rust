@@ -103,8 +103,8 @@ impl SendBulkTemplatedEmailInput {
 }
 
 /// A builder for [`SendBulkTemplatedEmailInput`](crate::operation::send_bulk_templated_email::SendBulkTemplatedEmailInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendBulkTemplatedEmailInputBuilder {
     pub(crate) source: ::std::option::Option<::std::string::String>,
     pub(crate) source_arn: ::std::option::Option<::std::string::String>,

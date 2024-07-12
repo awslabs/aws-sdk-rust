@@ -33,8 +33,8 @@ impl InputClippingSettings {
 }
 
 /// A builder for [`InputClippingSettings`](crate::types::InputClippingSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InputClippingSettingsBuilder {
     pub(crate) input_timecode_source: ::std::option::Option<crate::types::InputTimecodeSource>,
     pub(crate) start_timecode: ::std::option::Option<crate::types::StartTimecode>,

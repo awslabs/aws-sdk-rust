@@ -33,8 +33,8 @@ impl GeoMatchSetSummary {
 }
 
 /// A builder for [`GeoMatchSetSummary`](crate::types::GeoMatchSetSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GeoMatchSetSummaryBuilder {
     pub(crate) geo_match_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

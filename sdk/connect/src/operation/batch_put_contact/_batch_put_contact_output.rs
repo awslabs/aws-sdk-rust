@@ -36,8 +36,8 @@ impl BatchPutContactOutput {
 }
 
 /// A builder for [`BatchPutContactOutput`](crate::operation::batch_put_contact::BatchPutContactOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchPutContactOutputBuilder {
     pub(crate) successful_request_list: ::std::option::Option<::std::vec::Vec<crate::types::SuccessfulRequest>>,
     pub(crate) failed_request_list: ::std::option::Option<::std::vec::Vec<crate::types::FailedRequest>>,

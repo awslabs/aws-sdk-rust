@@ -26,8 +26,8 @@ impl DescribeAssociationOutput {
 }
 
 /// A builder for [`DescribeAssociationOutput`](crate::operation::describe_association::DescribeAssociationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAssociationOutputBuilder {
     pub(crate) association_description: ::std::option::Option<crate::types::AssociationDescription>,
     _request_id: Option<String>,

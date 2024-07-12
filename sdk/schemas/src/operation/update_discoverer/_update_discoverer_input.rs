@@ -32,8 +32,8 @@ impl UpdateDiscovererInput {
 }
 
 /// A builder for [`UpdateDiscovererInput`](crate::operation::update_discoverer::UpdateDiscovererInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDiscovererInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) discoverer_id: ::std::option::Option<::std::string::String>,

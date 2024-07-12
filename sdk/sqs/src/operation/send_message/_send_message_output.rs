@@ -55,8 +55,8 @@ impl SendMessageOutput {
 }
 
 /// A builder for [`SendMessageOutput`](crate::operation::send_message::SendMessageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendMessageOutputBuilder {
     pub(crate) md5_of_message_body: ::std::option::Option<::std::string::String>,
     pub(crate) md5_of_message_attributes: ::std::option::Option<::std::string::String>,

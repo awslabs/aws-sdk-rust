@@ -22,8 +22,8 @@ impl AdvancedDataProtectionMetrics {
 }
 
 /// A builder for [`AdvancedDataProtectionMetrics`](crate::types::AdvancedDataProtectionMetrics).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AdvancedDataProtectionMetricsBuilder {
     pub(crate) is_enabled: ::std::option::Option<bool>,
 }

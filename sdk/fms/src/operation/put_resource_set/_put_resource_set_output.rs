@@ -33,8 +33,8 @@ impl PutResourceSetOutput {
 }
 
 /// A builder for [`PutResourceSetOutput`](crate::operation::put_resource_set::PutResourceSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutResourceSetOutputBuilder {
     pub(crate) resource_set: ::std::option::Option<crate::types::ResourceSet>,
     pub(crate) resource_set_arn: ::std::option::Option<::std::string::String>,

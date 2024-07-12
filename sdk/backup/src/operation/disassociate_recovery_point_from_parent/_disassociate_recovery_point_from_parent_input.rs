@@ -26,8 +26,8 @@ impl DisassociateRecoveryPointFromParentInput {
 }
 
 /// A builder for [`DisassociateRecoveryPointFromParentInput`](crate::operation::disassociate_recovery_point_from_parent::DisassociateRecoveryPointFromParentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateRecoveryPointFromParentInputBuilder {
     pub(crate) backup_vault_name: ::std::option::Option<::std::string::String>,
     pub(crate) recovery_point_arn: ::std::option::Option<::std::string::String>,

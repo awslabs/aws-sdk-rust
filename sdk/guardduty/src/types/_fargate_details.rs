@@ -45,8 +45,8 @@ impl FargateDetails {
 }
 
 /// A builder for [`FargateDetails`](crate::types::FargateDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FargateDetailsBuilder {
     pub(crate) issues: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) management_type: ::std::option::Option<crate::types::ManagementType>,

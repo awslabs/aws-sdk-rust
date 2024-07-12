@@ -48,8 +48,8 @@ impl GetNetworkInsightsAccessScopeAnalysisFindingsOutput {
 }
 
 /// A builder for [`GetNetworkInsightsAccessScopeAnalysisFindingsOutput`](crate::operation::get_network_insights_access_scope_analysis_findings::GetNetworkInsightsAccessScopeAnalysisFindingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetNetworkInsightsAccessScopeAnalysisFindingsOutputBuilder {
     pub(crate) network_insights_access_scope_analysis_id: ::std::option::Option<::std::string::String>,
     pub(crate) analysis_status: ::std::option::Option<crate::types::AnalysisStatus>,

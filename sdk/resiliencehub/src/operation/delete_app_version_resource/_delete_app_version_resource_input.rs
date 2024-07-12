@@ -56,8 +56,8 @@ impl DeleteAppVersionResourceInput {
 }
 
 /// A builder for [`DeleteAppVersionResourceInput`](crate::operation::delete_app_version_resource::DeleteAppVersionResourceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAppVersionResourceInputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
     pub(crate) resource_name: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl GlobalIdentity {
 }
 
 /// A builder for [`GlobalIdentity`](crate::types::GlobalIdentity).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GlobalIdentityBuilder {
     pub(crate) lac: ::std::option::Option<i32>,
     pub(crate) geran_cid: ::std::option::Option<i32>,

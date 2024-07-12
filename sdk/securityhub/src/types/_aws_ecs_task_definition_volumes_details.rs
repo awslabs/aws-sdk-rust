@@ -39,8 +39,8 @@ impl AwsEcsTaskDefinitionVolumesDetails {
 }
 
 /// A builder for [`AwsEcsTaskDefinitionVolumesDetails`](crate::types::AwsEcsTaskDefinitionVolumesDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEcsTaskDefinitionVolumesDetailsBuilder {
     pub(crate) docker_volume_configuration: ::std::option::Option<crate::types::AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails>,
     pub(crate) efs_volume_configuration: ::std::option::Option<crate::types::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails>,

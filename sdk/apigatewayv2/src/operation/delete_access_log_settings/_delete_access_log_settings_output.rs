@@ -18,8 +18,8 @@ impl DeleteAccessLogSettingsOutput {
 }
 
 /// A builder for [`DeleteAccessLogSettingsOutput`](crate::operation::delete_access_log_settings::DeleteAccessLogSettingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAccessLogSettingsOutputBuilder {
     _request_id: Option<String>,
 }

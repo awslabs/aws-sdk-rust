@@ -47,8 +47,8 @@ impl IngressPoint {
 }
 
 /// A builder for [`IngressPoint`](crate::types::IngressPoint).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IngressPointBuilder {
     pub(crate) ingress_point_name: ::std::option::Option<::std::string::String>,
     pub(crate) ingress_point_id: ::std::option::Option<::std::string::String>,

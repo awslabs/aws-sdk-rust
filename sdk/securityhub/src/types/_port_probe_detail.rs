@@ -33,8 +33,8 @@ impl PortProbeDetail {
 }
 
 /// A builder for [`PortProbeDetail`](crate::types::PortProbeDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PortProbeDetailBuilder {
     pub(crate) local_port_details: ::std::option::Option<crate::types::ActionLocalPortDetails>,
     pub(crate) local_ip_details: ::std::option::Option<crate::types::ActionLocalIpDetails>,

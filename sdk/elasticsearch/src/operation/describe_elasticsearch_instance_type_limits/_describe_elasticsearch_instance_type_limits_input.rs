@@ -33,8 +33,8 @@ impl DescribeElasticsearchInstanceTypeLimitsInput {
 }
 
 /// A builder for [`DescribeElasticsearchInstanceTypeLimitsInput`](crate::operation::describe_elasticsearch_instance_type_limits::DescribeElasticsearchInstanceTypeLimitsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeElasticsearchInstanceTypeLimitsInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) instance_type: ::std::option::Option<crate::types::EsPartitionInstanceType>,

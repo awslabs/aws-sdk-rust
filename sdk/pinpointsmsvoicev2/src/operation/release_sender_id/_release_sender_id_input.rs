@@ -26,8 +26,8 @@ impl ReleaseSenderIdInput {
 }
 
 /// A builder for [`ReleaseSenderIdInput`](crate::operation::release_sender_id::ReleaseSenderIdInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReleaseSenderIdInputBuilder {
     pub(crate) sender_id: ::std::option::Option<::std::string::String>,
     pub(crate) iso_country_code: ::std::option::Option<::std::string::String>,

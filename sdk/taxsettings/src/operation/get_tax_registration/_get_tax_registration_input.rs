@@ -20,8 +20,8 @@ impl GetTaxRegistrationInput {
 }
 
 /// A builder for [`GetTaxRegistrationInput`](crate::operation::get_tax_registration::GetTaxRegistrationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTaxRegistrationInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }

@@ -77,8 +77,8 @@ impl AwsS3ObjectDetails {
 }
 
 /// A builder for [`AwsS3ObjectDetails`](crate::types::AwsS3ObjectDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsS3ObjectDetailsBuilder {
     pub(crate) last_modified: ::std::option::Option<::std::string::String>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,

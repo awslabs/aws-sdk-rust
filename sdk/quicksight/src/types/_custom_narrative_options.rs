@@ -22,8 +22,8 @@ impl CustomNarrativeOptions {
 }
 
 /// A builder for [`CustomNarrativeOptions`](crate::types::CustomNarrativeOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CustomNarrativeOptionsBuilder {
     pub(crate) narrative: ::std::option::Option<::std::string::String>,
 }

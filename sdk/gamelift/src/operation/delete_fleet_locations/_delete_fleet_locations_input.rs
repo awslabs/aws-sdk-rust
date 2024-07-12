@@ -28,8 +28,8 @@ impl DeleteFleetLocationsInput {
 }
 
 /// A builder for [`DeleteFleetLocationsInput`](crate::operation::delete_fleet_locations::DeleteFleetLocationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFleetLocationsInputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) locations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

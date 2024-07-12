@@ -18,8 +18,8 @@ impl DeleteFindingAggregatorOutput {
 }
 
 /// A builder for [`DeleteFindingAggregatorOutput`](crate::operation::delete_finding_aggregator::DeleteFindingAggregatorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFindingAggregatorOutputBuilder {
     _request_id: Option<String>,
 }

@@ -21,8 +21,8 @@ impl TaskCredentials {
 }
 
 /// A builder for [`TaskCredentials`](crate::types::TaskCredentials).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TaskCredentialsBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
 }

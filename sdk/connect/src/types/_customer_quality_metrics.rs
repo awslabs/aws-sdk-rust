@@ -21,8 +21,8 @@ impl CustomerQualityMetrics {
 }
 
 /// A builder for [`CustomerQualityMetrics`](crate::types::CustomerQualityMetrics).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CustomerQualityMetricsBuilder {
     pub(crate) audio: ::std::option::Option<crate::types::AudioQualityMetricsInfo>,
 }

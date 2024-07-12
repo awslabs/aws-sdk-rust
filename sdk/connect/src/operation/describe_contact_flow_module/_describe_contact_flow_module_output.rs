@@ -26,8 +26,8 @@ impl DescribeContactFlowModuleOutput {
 }
 
 /// A builder for [`DescribeContactFlowModuleOutput`](crate::operation::describe_contact_flow_module::DescribeContactFlowModuleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeContactFlowModuleOutputBuilder {
     pub(crate) contact_flow_module: ::std::option::Option<crate::types::ContactFlowModule>,
     _request_id: Option<String>,

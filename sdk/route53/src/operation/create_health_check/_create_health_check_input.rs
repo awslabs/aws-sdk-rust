@@ -49,8 +49,8 @@ impl CreateHealthCheckInput {
 }
 
 /// A builder for [`CreateHealthCheckInput`](crate::operation::create_health_check::CreateHealthCheckInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateHealthCheckInputBuilder {
     pub(crate) caller_reference: ::std::option::Option<::std::string::String>,
     pub(crate) health_check_config: ::std::option::Option<crate::types::HealthCheckConfig>,

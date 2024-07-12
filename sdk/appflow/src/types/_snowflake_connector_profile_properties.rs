@@ -64,8 +64,8 @@ impl SnowflakeConnectorProfileProperties {
 }
 
 /// A builder for [`SnowflakeConnectorProfileProperties`](crate::types::SnowflakeConnectorProfileProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SnowflakeConnectorProfilePropertiesBuilder {
     pub(crate) warehouse: ::std::option::Option<::std::string::String>,
     pub(crate) stage: ::std::option::Option<::std::string::String>,

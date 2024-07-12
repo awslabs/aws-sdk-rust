@@ -40,8 +40,8 @@ impl ListConfigurationsOutput {
 }
 
 /// A builder for [`ListConfigurationsOutput`](crate::operation::list_configurations::ListConfigurationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListConfigurationsOutputBuilder {
     pub(crate) configurations: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
     pub(crate) max_results: ::std::option::Option<i32>,

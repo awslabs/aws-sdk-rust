@@ -11,8 +11,8 @@ impl GetClassificationExportConfigurationInput {
 }
 
 /// A builder for [`GetClassificationExportConfigurationInput`](crate::operation::get_classification_export_configuration::GetClassificationExportConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetClassificationExportConfigurationInputBuilder {}
 impl GetClassificationExportConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`GetClassificationExportConfigurationInput`](crate::operation::get_classification_export_configuration::GetClassificationExportConfigurationInput).

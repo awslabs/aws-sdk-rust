@@ -45,8 +45,8 @@ impl SuperuserParameters {
 }
 
 /// A builder for [`SuperuserParameters`](crate::types::SuperuserParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SuperuserParametersBuilder {
     pub(crate) email_address: ::std::option::Option<::std::string::String>,
     pub(crate) first_name: ::std::option::Option<::std::string::String>,

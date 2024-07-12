@@ -26,8 +26,8 @@ impl CreateEmailTemplateInput {
 }
 
 /// A builder for [`CreateEmailTemplateInput`](crate::operation::create_email_template::CreateEmailTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateEmailTemplateInputBuilder {
     pub(crate) email_template_request: ::std::option::Option<crate::types::EmailTemplateRequest>,
     pub(crate) template_name: ::std::option::Option<::std::string::String>,

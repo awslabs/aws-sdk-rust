@@ -27,8 +27,8 @@ impl MultiConditionalBranch {
 }
 
 /// A builder for [`MultiConditionalBranch`](crate::types::MultiConditionalBranch).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MultiConditionalBranchBuilder {
     pub(crate) condition: ::std::option::Option<crate::types::SimpleCondition>,
     pub(crate) next_activity: ::std::option::Option<::std::string::String>,

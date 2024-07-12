@@ -39,8 +39,8 @@ impl GetIdentityPoolRolesOutput {
 }
 
 /// A builder for [`GetIdentityPoolRolesOutput`](crate::operation::get_identity_pool_roles::GetIdentityPoolRolesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetIdentityPoolRolesOutputBuilder {
     pub(crate) identity_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) roles: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

@@ -50,8 +50,8 @@ impl CreateLanguageModelOutput {
 }
 
 /// A builder for [`CreateLanguageModelOutput`](crate::operation::create_language_model::CreateLanguageModelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLanguageModelOutputBuilder {
     pub(crate) language_code: ::std::option::Option<crate::types::ClmLanguageCode>,
     pub(crate) base_model_name: ::std::option::Option<crate::types::BaseModelName>,

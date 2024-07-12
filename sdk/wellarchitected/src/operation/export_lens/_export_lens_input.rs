@@ -32,8 +32,8 @@ impl ExportLensInput {
 }
 
 /// A builder for [`ExportLensInput`](crate::operation::export_lens::ExportLensInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExportLensInputBuilder {
     pub(crate) lens_alias: ::std::option::Option<::std::string::String>,
     pub(crate) lens_version: ::std::option::Option<::std::string::String>,

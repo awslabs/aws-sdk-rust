@@ -20,8 +20,8 @@ impl DescribeAccessPolicyInput {
 }
 
 /// A builder for [`DescribeAccessPolicyInput`](crate::operation::describe_access_policy::DescribeAccessPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAccessPolicyInputBuilder {
     pub(crate) access_policy_id: ::std::option::Option<::std::string::String>,
 }

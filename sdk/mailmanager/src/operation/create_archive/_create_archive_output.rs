@@ -28,8 +28,8 @@ impl CreateArchiveOutput {
 }
 
 /// A builder for [`CreateArchiveOutput`](crate::operation::create_archive::CreateArchiveOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateArchiveOutputBuilder {
     pub(crate) archive_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

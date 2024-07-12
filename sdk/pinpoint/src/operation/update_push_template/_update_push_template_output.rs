@@ -26,8 +26,8 @@ impl UpdatePushTemplateOutput {
 }
 
 /// A builder for [`UpdatePushTemplateOutput`](crate::operation::update_push_template::UpdatePushTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePushTemplateOutputBuilder {
     pub(crate) message_body: ::std::option::Option<crate::types::MessageBody>,
     _request_id: Option<String>,

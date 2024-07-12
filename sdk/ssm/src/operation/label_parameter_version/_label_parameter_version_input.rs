@@ -38,8 +38,8 @@ impl LabelParameterVersionInput {
 }
 
 /// A builder for [`LabelParameterVersionInput`](crate::operation::label_parameter_version::LabelParameterVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LabelParameterVersionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) parameter_version: ::std::option::Option<i64>,

@@ -37,8 +37,8 @@ impl DocumentText {
 }
 
 /// A builder for [`DocumentText`](crate::types::DocumentText).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DocumentTextBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
     pub(crate) highlights: ::std::option::Option<::std::vec::Vec<crate::types::Highlight>>,

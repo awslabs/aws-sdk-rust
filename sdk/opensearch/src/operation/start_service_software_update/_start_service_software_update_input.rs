@@ -51,8 +51,8 @@ impl StartServiceSoftwareUpdateInput {
 }
 
 /// A builder for [`StartServiceSoftwareUpdateInput`](crate::operation::start_service_software_update::StartServiceSoftwareUpdateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartServiceSoftwareUpdateInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) schedule_at: ::std::option::Option<crate::types::ScheduleAt>,

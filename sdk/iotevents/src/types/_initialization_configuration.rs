@@ -21,8 +21,8 @@ impl InitializationConfiguration {
 }
 
 /// A builder for [`InitializationConfiguration`](crate::types::InitializationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InitializationConfigurationBuilder {
     pub(crate) disabled_on_initialization: ::std::option::Option<bool>,
 }

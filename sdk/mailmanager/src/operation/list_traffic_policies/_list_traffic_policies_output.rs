@@ -34,8 +34,8 @@ impl ListTrafficPoliciesOutput {
 }
 
 /// A builder for [`ListTrafficPoliciesOutput`](crate::operation::list_traffic_policies::ListTrafficPoliciesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTrafficPoliciesOutputBuilder {
     pub(crate) traffic_policies: ::std::option::Option<::std::vec::Vec<crate::types::TrafficPolicy>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

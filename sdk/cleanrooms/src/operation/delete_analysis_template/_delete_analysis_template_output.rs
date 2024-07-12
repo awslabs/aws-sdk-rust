@@ -18,8 +18,8 @@ impl DeleteAnalysisTemplateOutput {
 }
 
 /// A builder for [`DeleteAnalysisTemplateOutput`](crate::operation::delete_analysis_template::DeleteAnalysisTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAnalysisTemplateOutputBuilder {
     _request_id: Option<String>,
 }

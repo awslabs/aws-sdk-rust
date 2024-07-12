@@ -20,8 +20,8 @@ impl DeleteIngressPointInput {
 }
 
 /// A builder for [`DeleteIngressPointInput`](crate::operation::delete_ingress_point::DeleteIngressPointInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteIngressPointInputBuilder {
     pub(crate) ingress_point_id: ::std::option::Option<::std::string::String>,
 }

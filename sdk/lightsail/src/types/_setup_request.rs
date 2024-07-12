@@ -35,8 +35,8 @@ impl SetupRequest {
 }
 
 /// A builder for [`SetupRequest`](crate::types::SetupRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetupRequestBuilder {
     pub(crate) instance_name: ::std::option::Option<::std::string::String>,
     pub(crate) domain_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

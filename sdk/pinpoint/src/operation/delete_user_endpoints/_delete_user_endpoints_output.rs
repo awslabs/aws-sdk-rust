@@ -26,8 +26,8 @@ impl DeleteUserEndpointsOutput {
 }
 
 /// A builder for [`DeleteUserEndpointsOutput`](crate::operation::delete_user_endpoints::DeleteUserEndpointsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteUserEndpointsOutputBuilder {
     pub(crate) endpoints_response: ::std::option::Option<crate::types::EndpointsResponse>,
     _request_id: Option<String>,

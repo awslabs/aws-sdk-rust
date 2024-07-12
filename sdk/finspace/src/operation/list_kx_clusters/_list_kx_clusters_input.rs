@@ -62,8 +62,8 @@ impl ListKxClustersInput {
 }
 
 /// A builder for [`ListKxClustersInput`](crate::operation::list_kx_clusters::ListKxClustersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListKxClustersInputBuilder {
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_type: ::std::option::Option<crate::types::KxClusterType>,

@@ -26,8 +26,8 @@ impl CreatePlacementGroupOutput {
 }
 
 /// A builder for [`CreatePlacementGroupOutput`](crate::operation::create_placement_group::CreatePlacementGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePlacementGroupOutputBuilder {
     pub(crate) placement_group: ::std::option::Option<crate::types::PlacementGroup>,
     _request_id: Option<String>,

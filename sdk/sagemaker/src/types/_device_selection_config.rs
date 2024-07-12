@@ -41,8 +41,8 @@ impl DeviceSelectionConfig {
 }
 
 /// A builder for [`DeviceSelectionConfig`](crate::types::DeviceSelectionConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeviceSelectionConfigBuilder {
     pub(crate) device_subset_type: ::std::option::Option<crate::types::DeviceSubsetType>,
     pub(crate) percentage: ::std::option::Option<i32>,

@@ -26,8 +26,8 @@ impl StartDataQualityRuleRecommendationRunOutput {
 }
 
 /// A builder for [`StartDataQualityRuleRecommendationRunOutput`](crate::operation::start_data_quality_rule_recommendation_run::StartDataQualityRuleRecommendationRunOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartDataQualityRuleRecommendationRunOutputBuilder {
     pub(crate) run_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

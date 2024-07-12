@@ -89,8 +89,8 @@ impl ScheduleEntry {
 }
 
 /// A builder for [`ScheduleEntry`](crate::types::ScheduleEntry).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScheduleEntryBuilder {
     pub(crate) approximate_duration_seconds: ::std::option::Option<i64>,
     pub(crate) approximate_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,

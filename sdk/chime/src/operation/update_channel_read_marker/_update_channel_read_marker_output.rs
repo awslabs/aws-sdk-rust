@@ -26,8 +26,8 @@ impl UpdateChannelReadMarkerOutput {
 }
 
 /// A builder for [`UpdateChannelReadMarkerOutput`](crate::operation::update_channel_read_marker::UpdateChannelReadMarkerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateChannelReadMarkerOutputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

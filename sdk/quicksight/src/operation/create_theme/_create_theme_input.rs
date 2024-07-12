@@ -66,8 +66,8 @@ impl CreateThemeInput {
 }
 
 /// A builder for [`CreateThemeInput`](crate::operation::create_theme::CreateThemeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateThemeInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) theme_id: ::std::option::Option<::std::string::String>,

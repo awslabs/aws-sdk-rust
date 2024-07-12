@@ -23,8 +23,8 @@ impl ZendeskMetadata {
 }
 
 /// A builder for [`ZendeskMetadata`](crate::types::ZendeskMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ZendeskMetadataBuilder {
     pub(crate) o_auth_scopes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

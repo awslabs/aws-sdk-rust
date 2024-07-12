@@ -60,8 +60,8 @@ impl CreateRedshiftIdcApplicationInput {
 }
 
 /// A builder for [`CreateRedshiftIdcApplicationInput`](crate::operation::create_redshift_idc_application::CreateRedshiftIdcApplicationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateRedshiftIdcApplicationInputBuilder {
     pub(crate) idc_instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) redshift_idc_application_name: ::std::option::Option<::std::string::String>,

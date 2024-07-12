@@ -27,8 +27,8 @@ impl SessionManagerOutputUrl {
 }
 
 /// A builder for [`SessionManagerOutputUrl`](crate::types::SessionManagerOutputUrl).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SessionManagerOutputUrlBuilder {
     pub(crate) s3_output_url: ::std::option::Option<::std::string::String>,
     pub(crate) cloud_watch_output_url: ::std::option::Option<::std::string::String>,

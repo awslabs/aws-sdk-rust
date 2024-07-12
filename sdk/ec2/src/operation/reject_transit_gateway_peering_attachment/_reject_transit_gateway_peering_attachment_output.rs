@@ -26,8 +26,8 @@ impl RejectTransitGatewayPeeringAttachmentOutput {
 }
 
 /// A builder for [`RejectTransitGatewayPeeringAttachmentOutput`](crate::operation::reject_transit_gateway_peering_attachment::RejectTransitGatewayPeeringAttachmentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RejectTransitGatewayPeeringAttachmentOutputBuilder {
     pub(crate) transit_gateway_peering_attachment: ::std::option::Option<crate::types::TransitGatewayPeeringAttachment>,
     _request_id: Option<String>,

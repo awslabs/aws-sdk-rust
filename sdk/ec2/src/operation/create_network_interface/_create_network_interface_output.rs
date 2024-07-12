@@ -32,8 +32,8 @@ impl CreateNetworkInterfaceOutput {
 }
 
 /// A builder for [`CreateNetworkInterfaceOutput`](crate::operation::create_network_interface::CreateNetworkInterfaceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateNetworkInterfaceOutputBuilder {
     pub(crate) network_interface: ::std::option::Option<crate::types::NetworkInterface>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

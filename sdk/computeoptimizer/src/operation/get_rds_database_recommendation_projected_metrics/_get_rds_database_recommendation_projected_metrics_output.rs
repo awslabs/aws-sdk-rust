@@ -30,8 +30,8 @@ impl GetRdsDatabaseRecommendationProjectedMetricsOutput {
 }
 
 /// A builder for [`GetRdsDatabaseRecommendationProjectedMetricsOutput`](crate::operation::get_rds_database_recommendation_projected_metrics::GetRdsDatabaseRecommendationProjectedMetricsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRdsDatabaseRecommendationProjectedMetricsOutputBuilder {
     pub(crate) recommended_option_projected_metrics:
         ::std::option::Option<::std::vec::Vec<crate::types::RdsDatabaseRecommendedOptionProjectedMetric>>,

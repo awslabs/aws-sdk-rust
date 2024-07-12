@@ -38,8 +38,8 @@ impl ListReferenceImportJobsInput {
 }
 
 /// A builder for [`ListReferenceImportJobsInput`](crate::operation::list_reference_import_jobs::ListReferenceImportJobsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListReferenceImportJobsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

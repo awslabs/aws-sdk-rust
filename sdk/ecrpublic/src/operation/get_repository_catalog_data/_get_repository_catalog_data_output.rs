@@ -26,8 +26,8 @@ impl GetRepositoryCatalogDataOutput {
 }
 
 /// A builder for [`GetRepositoryCatalogDataOutput`](crate::operation::get_repository_catalog_data::GetRepositoryCatalogDataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRepositoryCatalogDataOutputBuilder {
     pub(crate) catalog_data: ::std::option::Option<crate::types::RepositoryCatalogData>,
     _request_id: Option<String>,

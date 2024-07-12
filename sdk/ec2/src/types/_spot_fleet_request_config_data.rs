@@ -261,8 +261,8 @@ impl SpotFleetRequestConfigData {
 }
 
 /// A builder for [`SpotFleetRequestConfigData`](crate::types::SpotFleetRequestConfigData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SpotFleetRequestConfigDataBuilder {
     pub(crate) allocation_strategy: ::std::option::Option<crate::types::AllocationStrategy>,
     pub(crate) on_demand_allocation_strategy: ::std::option::Option<crate::types::OnDemandAllocationStrategy>,

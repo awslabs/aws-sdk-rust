@@ -33,8 +33,8 @@ impl DeltaSyncConfig {
 }
 
 /// A builder for [`DeltaSyncConfig`](crate::types::DeltaSyncConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeltaSyncConfigBuilder {
     pub(crate) base_table_ttl: ::std::option::Option<i64>,
     pub(crate) delta_sync_table_name: ::std::option::Option<::std::string::String>,

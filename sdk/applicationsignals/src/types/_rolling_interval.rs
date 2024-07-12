@@ -27,8 +27,8 @@ impl RollingInterval {
 }
 
 /// A builder for [`RollingInterval`](crate::types::RollingInterval).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RollingIntervalBuilder {
     pub(crate) duration_unit: ::std::option::Option<crate::types::DurationUnit>,
     pub(crate) duration: ::std::option::Option<i32>,

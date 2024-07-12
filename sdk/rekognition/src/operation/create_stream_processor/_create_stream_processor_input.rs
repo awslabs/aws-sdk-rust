@@ -82,8 +82,8 @@ impl CreateStreamProcessorInput {
 }
 
 /// A builder for [`CreateStreamProcessorInput`](crate::operation::create_stream_processor::CreateStreamProcessorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateStreamProcessorInputBuilder {
     pub(crate) input: ::std::option::Option<crate::types::StreamProcessorInput>,
     pub(crate) output: ::std::option::Option<crate::types::StreamProcessorOutput>,

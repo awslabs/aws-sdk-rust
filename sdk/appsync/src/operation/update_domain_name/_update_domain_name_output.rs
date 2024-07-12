@@ -26,8 +26,8 @@ impl UpdateDomainNameOutput {
 }
 
 /// A builder for [`UpdateDomainNameOutput`](crate::operation::update_domain_name::UpdateDomainNameOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDomainNameOutputBuilder {
     pub(crate) domain_name_config: ::std::option::Option<crate::types::DomainNameConfig>,
     _request_id: Option<String>,

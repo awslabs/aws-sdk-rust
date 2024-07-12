@@ -33,8 +33,8 @@ impl ResetImageAttributeInput {
 }
 
 /// A builder for [`ResetImageAttributeInput`](crate::operation::reset_image_attribute::ResetImageAttributeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResetImageAttributeInputBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::ResetImageAttributeName>,
     pub(crate) image_id: ::std::option::Option<::std::string::String>,

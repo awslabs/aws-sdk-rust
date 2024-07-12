@@ -27,8 +27,8 @@ impl LineItemRequest {
 }
 
 /// A builder for [`LineItemRequest`](crate::types::LineItemRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LineItemRequestBuilder {
     pub(crate) catalog_item_id: ::std::option::Option<::std::string::String>,
     pub(crate) quantity: ::std::option::Option<i32>,

@@ -44,8 +44,8 @@ impl ListAdapterVersionsInput {
 }
 
 /// A builder for [`ListAdapterVersionsInput`](crate::operation::list_adapter_versions::ListAdapterVersionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAdapterVersionsInputBuilder {
     pub(crate) adapter_id: ::std::option::Option<::std::string::String>,
     pub(crate) after_creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,

@@ -33,8 +33,8 @@ impl ListTestSuitesOutput {
 }
 
 /// A builder for [`ListTestSuitesOutput`](crate::operation::list_test_suites::ListTestSuitesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTestSuitesOutputBuilder {
     pub(crate) test_suites: ::std::option::Option<::std::vec::Vec<crate::types::TestSuiteSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

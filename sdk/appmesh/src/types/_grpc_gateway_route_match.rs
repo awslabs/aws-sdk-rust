@@ -41,8 +41,8 @@ impl GrpcGatewayRouteMatch {
 }
 
 /// A builder for [`GrpcGatewayRouteMatch`](crate::types::GrpcGatewayRouteMatch).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GrpcGatewayRouteMatchBuilder {
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
     pub(crate) hostname: ::std::option::Option<crate::types::GatewayRouteHostnameMatch>,

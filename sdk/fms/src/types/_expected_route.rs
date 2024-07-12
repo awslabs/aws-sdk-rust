@@ -55,8 +55,8 @@ impl ExpectedRoute {
 }
 
 /// A builder for [`ExpectedRoute`](crate::types::ExpectedRoute).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExpectedRouteBuilder {
     pub(crate) ipv4_cidr: ::std::option::Option<::std::string::String>,
     pub(crate) prefix_list_id: ::std::option::Option<::std::string::String>,

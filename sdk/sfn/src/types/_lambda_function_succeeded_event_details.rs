@@ -35,8 +35,8 @@ impl LambdaFunctionSucceededEventDetails {
 }
 
 /// A builder for [`LambdaFunctionSucceededEventDetails`](crate::types::LambdaFunctionSucceededEventDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct LambdaFunctionSucceededEventDetailsBuilder {
     pub(crate) output: ::std::option::Option<::std::string::String>,
     pub(crate) output_details: ::std::option::Option<crate::types::HistoryEventExecutionDataDetails>,

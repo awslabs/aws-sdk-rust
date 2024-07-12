@@ -37,8 +37,8 @@ impl RecommendationRelatedAnomaly {
 }
 
 /// A builder for [`RecommendationRelatedAnomaly`](crate::types::RecommendationRelatedAnomaly).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecommendationRelatedAnomalyBuilder {
     pub(crate) resources: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedAnomalyResource>>,
     pub(crate) source_details: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedAnomalySourceDetail>>,

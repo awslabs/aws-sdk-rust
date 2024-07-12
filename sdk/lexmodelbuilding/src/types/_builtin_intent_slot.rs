@@ -21,8 +21,8 @@ impl BuiltinIntentSlot {
 }
 
 /// A builder for [`BuiltinIntentSlot`](crate::types::BuiltinIntentSlot).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BuiltinIntentSlotBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

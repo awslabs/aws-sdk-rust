@@ -18,8 +18,8 @@ impl RevokeDomainAccessOutput {
 }
 
 /// A builder for [`RevokeDomainAccessOutput`](crate::operation::revoke_domain_access::RevokeDomainAccessOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RevokeDomainAccessOutputBuilder {
     _request_id: Option<String>,
 }

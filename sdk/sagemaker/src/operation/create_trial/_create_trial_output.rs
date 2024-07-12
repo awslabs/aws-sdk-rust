@@ -26,8 +26,8 @@ impl CreateTrialOutput {
 }
 
 /// A builder for [`CreateTrialOutput`](crate::operation::create_trial::CreateTrialOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateTrialOutputBuilder {
     pub(crate) trial_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

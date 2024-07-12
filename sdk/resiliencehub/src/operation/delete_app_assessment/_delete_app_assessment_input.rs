@@ -26,8 +26,8 @@ impl DeleteAppAssessmentInput {
 }
 
 /// A builder for [`DeleteAppAssessmentInput`](crate::operation::delete_app_assessment::DeleteAppAssessmentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAppAssessmentInputBuilder {
     pub(crate) assessment_arn: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

@@ -56,8 +56,8 @@ impl CreateDashboardOutput {
 }
 
 /// A builder for [`CreateDashboardOutput`](crate::operation::create_dashboard::CreateDashboardOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDashboardOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) version_arn: ::std::option::Option<::std::string::String>,

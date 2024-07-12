@@ -167,8 +167,8 @@ impl AwsSsmComplianceSummary {
 }
 
 /// A builder for [`AwsSsmComplianceSummary`](crate::types::AwsSsmComplianceSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsSsmComplianceSummaryBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) compliant_critical_count: ::std::option::Option<i32>,

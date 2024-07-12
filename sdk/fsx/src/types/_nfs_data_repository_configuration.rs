@@ -35,8 +35,8 @@ impl NfsDataRepositoryConfiguration {
 }
 
 /// A builder for [`NfsDataRepositoryConfiguration`](crate::types::NfsDataRepositoryConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NfsDataRepositoryConfigurationBuilder {
     pub(crate) version: ::std::option::Option<crate::types::NfsVersion>,
     pub(crate) dns_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

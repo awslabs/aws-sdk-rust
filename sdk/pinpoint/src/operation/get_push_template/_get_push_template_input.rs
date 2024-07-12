@@ -48,8 +48,8 @@ impl GetPushTemplateInput {
 }
 
 /// A builder for [`GetPushTemplateInput`](crate::operation::get_push_template::GetPushTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPushTemplateInputBuilder {
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,

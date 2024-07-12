@@ -53,8 +53,8 @@ impl DbSubnetGroup {
 }
 
 /// A builder for [`DbSubnetGroup`](crate::types::DbSubnetGroup).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DbSubnetGroupBuilder {
     pub(crate) db_subnet_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) db_subnet_group_description: ::std::option::Option<::std::string::String>,

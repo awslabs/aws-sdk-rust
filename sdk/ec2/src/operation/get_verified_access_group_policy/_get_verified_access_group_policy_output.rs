@@ -32,8 +32,8 @@ impl GetVerifiedAccessGroupPolicyOutput {
 }
 
 /// A builder for [`GetVerifiedAccessGroupPolicyOutput`](crate::operation::get_verified_access_group_policy::GetVerifiedAccessGroupPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetVerifiedAccessGroupPolicyOutputBuilder {
     pub(crate) policy_enabled: ::std::option::Option<bool>,
     pub(crate) policy_document: ::std::option::Option<::std::string::String>,

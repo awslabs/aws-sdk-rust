@@ -26,8 +26,8 @@ impl CreateImageVersionOutput {
 }
 
 /// A builder for [`CreateImageVersionOutput`](crate::operation::create_image_version::CreateImageVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateImageVersionOutputBuilder {
     pub(crate) image_version_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

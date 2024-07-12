@@ -18,8 +18,8 @@ impl DeleteResourceTreeOutput {
 }
 
 /// A builder for [`DeleteResourceTreeOutput`](crate::operation::delete_resource_tree::DeleteResourceTreeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteResourceTreeOutputBuilder {
     _request_id: Option<String>,
 }

@@ -21,8 +21,8 @@ impl LicenseConversionContext {
 }
 
 /// A builder for [`LicenseConversionContext`](crate::types::LicenseConversionContext).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LicenseConversionContextBuilder {
     pub(crate) usage_operation: ::std::option::Option<::std::string::String>,
 }

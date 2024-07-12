@@ -28,8 +28,8 @@ impl TimestampPartition {
 }
 
 /// A builder for [`TimestampPartition`](crate::types::TimestampPartition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TimestampPartitionBuilder {
     pub(crate) attribute_name: ::std::option::Option<::std::string::String>,
     pub(crate) timestamp_format: ::std::option::Option<::std::string::String>,

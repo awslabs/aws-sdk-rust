@@ -34,8 +34,8 @@ impl LineItemFilter {
 }
 
 /// A builder for [`LineItemFilter`](crate::types::LineItemFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LineItemFilterBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::LineItemFilterAttributeName>,
     pub(crate) match_option: ::std::option::Option<crate::types::MatchOption>,

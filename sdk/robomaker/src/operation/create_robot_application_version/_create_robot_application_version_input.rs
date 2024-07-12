@@ -40,8 +40,8 @@ impl CreateRobotApplicationVersionInput {
 }
 
 /// A builder for [`CreateRobotApplicationVersionInput`](crate::operation::create_robot_application_version::CreateRobotApplicationVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateRobotApplicationVersionInputBuilder {
     pub(crate) application: ::std::option::Option<::std::string::String>,
     pub(crate) current_revision_id: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl DescribeAnomalyDetectorsOutput {
 }
 
 /// A builder for [`DescribeAnomalyDetectorsOutput`](crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectorsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAnomalyDetectorsOutputBuilder {
     pub(crate) anomaly_detectors: ::std::option::Option<::std::vec::Vec<crate::types::AnomalyDetector>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

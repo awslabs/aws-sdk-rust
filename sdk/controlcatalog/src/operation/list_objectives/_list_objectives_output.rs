@@ -33,8 +33,8 @@ impl ListObjectivesOutput {
 }
 
 /// A builder for [`ListObjectivesOutput`](crate::operation::list_objectives::ListObjectivesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListObjectivesOutputBuilder {
     pub(crate) objectives: ::std::option::Option<::std::vec::Vec<crate::types::ObjectiveSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -55,8 +55,8 @@ impl AwsEc2NetworkAclDetails {
 }
 
 /// A builder for [`AwsEc2NetworkAclDetails`](crate::types::AwsEc2NetworkAclDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEc2NetworkAclDetailsBuilder {
     pub(crate) is_default: ::std::option::Option<bool>,
     pub(crate) network_acl_id: ::std::option::Option<::std::string::String>,

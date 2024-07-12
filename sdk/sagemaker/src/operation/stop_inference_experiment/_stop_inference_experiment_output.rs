@@ -26,8 +26,8 @@ impl StopInferenceExperimentOutput {
 }
 
 /// A builder for [`StopInferenceExperimentOutput`](crate::operation::stop_inference_experiment::StopInferenceExperimentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopInferenceExperimentOutputBuilder {
     pub(crate) inference_experiment_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

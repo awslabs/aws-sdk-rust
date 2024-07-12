@@ -57,8 +57,8 @@ impl GetCustomVerificationEmailTemplateOutput {
 }
 
 /// A builder for [`GetCustomVerificationEmailTemplateOutput`](crate::operation::get_custom_verification_email_template::GetCustomVerificationEmailTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCustomVerificationEmailTemplateOutputBuilder {
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
     pub(crate) from_email_address: ::std::option::Option<::std::string::String>,

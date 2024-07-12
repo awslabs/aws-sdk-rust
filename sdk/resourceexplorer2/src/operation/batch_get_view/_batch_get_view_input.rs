@@ -22,8 +22,8 @@ impl BatchGetViewInput {
 }
 
 /// A builder for [`BatchGetViewInput`](crate::operation::batch_get_view::BatchGetViewInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetViewInputBuilder {
     pub(crate) view_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

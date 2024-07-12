@@ -81,8 +81,8 @@ impl InstanceProfile {
 }
 
 /// A builder for [`InstanceProfile`](crate::types::InstanceProfile).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceProfileBuilder {
     pub(crate) instance_profile_arn: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,

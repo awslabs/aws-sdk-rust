@@ -32,8 +32,8 @@ impl GetPublicKeyConfigOutput {
 }
 
 /// A builder for [`GetPublicKeyConfigOutput`](crate::operation::get_public_key_config::GetPublicKeyConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPublicKeyConfigOutputBuilder {
     pub(crate) public_key_config: ::std::option::Option<crate::types::PublicKeyConfig>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,

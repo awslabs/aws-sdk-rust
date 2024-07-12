@@ -52,8 +52,8 @@ impl ListProvisionedConcurrencyConfigsInput {
 }
 
 /// A builder for [`ListProvisionedConcurrencyConfigsInput`](crate::operation::list_provisioned_concurrency_configs::ListProvisionedConcurrencyConfigsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListProvisionedConcurrencyConfigsInputBuilder {
     pub(crate) function_name: ::std::option::Option<::std::string::String>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

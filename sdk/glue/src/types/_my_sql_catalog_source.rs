@@ -36,8 +36,8 @@ impl MySqlCatalogSource {
 }
 
 /// A builder for [`MySqlCatalogSource`](crate::types::MySqlCatalogSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MySqlCatalogSourceBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) database: ::std::option::Option<::std::string::String>,

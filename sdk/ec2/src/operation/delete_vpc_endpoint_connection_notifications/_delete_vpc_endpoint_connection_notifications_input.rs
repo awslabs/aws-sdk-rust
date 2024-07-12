@@ -29,8 +29,8 @@ impl DeleteVpcEndpointConnectionNotificationsInput {
 }
 
 /// A builder for [`DeleteVpcEndpointConnectionNotificationsInput`](crate::operation::delete_vpc_endpoint_connection_notifications::DeleteVpcEndpointConnectionNotificationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVpcEndpointConnectionNotificationsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) connection_notification_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

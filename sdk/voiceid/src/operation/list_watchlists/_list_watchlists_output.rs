@@ -34,8 +34,8 @@ impl ListWatchlistsOutput {
 }
 
 /// A builder for [`ListWatchlistsOutput`](crate::operation::list_watchlists::ListWatchlistsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListWatchlistsOutputBuilder {
     pub(crate) watchlist_summaries: ::std::option::Option<::std::vec::Vec<crate::types::WatchlistSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

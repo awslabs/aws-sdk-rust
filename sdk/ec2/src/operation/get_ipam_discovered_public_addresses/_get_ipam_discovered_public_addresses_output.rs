@@ -40,8 +40,8 @@ impl GetIpamDiscoveredPublicAddressesOutput {
 }
 
 /// A builder for [`GetIpamDiscoveredPublicAddressesOutput`](crate::operation::get_ipam_discovered_public_addresses::GetIpamDiscoveredPublicAddressesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetIpamDiscoveredPublicAddressesOutputBuilder {
     pub(crate) ipam_discovered_public_addresses: ::std::option::Option<::std::vec::Vec<crate::types::IpamDiscoveredPublicAddress>>,
     pub(crate) oldest_sample_time: ::std::option::Option<::aws_smithy_types::DateTime>,

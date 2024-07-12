@@ -21,8 +21,8 @@ impl DescribeDomainInput {
 }
 
 /// A builder for [`DescribeDomainInput`](crate::operation::describe_domain::DescribeDomainInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDomainInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
 }

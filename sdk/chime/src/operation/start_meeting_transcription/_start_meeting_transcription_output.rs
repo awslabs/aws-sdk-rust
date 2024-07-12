@@ -18,8 +18,8 @@ impl StartMeetingTranscriptionOutput {
 }
 
 /// A builder for [`StartMeetingTranscriptionOutput`](crate::operation::start_meeting_transcription::StartMeetingTranscriptionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartMeetingTranscriptionOutputBuilder {
     _request_id: Option<String>,
 }

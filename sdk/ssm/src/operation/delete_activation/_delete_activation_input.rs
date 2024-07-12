@@ -20,8 +20,8 @@ impl DeleteActivationInput {
 }
 
 /// A builder for [`DeleteActivationInput`](crate::operation::delete_activation::DeleteActivationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteActivationInputBuilder {
     pub(crate) activation_id: ::std::option::Option<::std::string::String>,
 }

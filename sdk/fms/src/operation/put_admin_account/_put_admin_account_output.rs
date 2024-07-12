@@ -18,8 +18,8 @@ impl PutAdminAccountOutput {
 }
 
 /// A builder for [`PutAdminAccountOutput`](crate::operation::put_admin_account::PutAdminAccountOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutAdminAccountOutputBuilder {
     _request_id: Option<String>,
 }

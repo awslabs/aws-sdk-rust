@@ -26,8 +26,8 @@ impl GetRepositoryLinkOutput {
 }
 
 /// A builder for [`GetRepositoryLinkOutput`](crate::operation::get_repository_link::GetRepositoryLinkOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRepositoryLinkOutputBuilder {
     pub(crate) repository_link_info: ::std::option::Option<crate::types::RepositoryLinkInfo>,
     _request_id: Option<String>,

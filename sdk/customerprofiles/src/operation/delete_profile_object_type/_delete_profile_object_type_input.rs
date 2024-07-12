@@ -26,8 +26,8 @@ impl DeleteProfileObjectTypeInput {
 }
 
 /// A builder for [`DeleteProfileObjectTypeInput`](crate::operation::delete_profile_object_type::DeleteProfileObjectTypeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteProfileObjectTypeInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) object_type_name: ::std::option::Option<::std::string::String>,

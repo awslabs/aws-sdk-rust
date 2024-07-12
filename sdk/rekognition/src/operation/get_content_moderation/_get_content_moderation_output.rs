@@ -82,8 +82,8 @@ impl GetContentModerationOutput {
 }
 
 /// A builder for [`GetContentModerationOutput`](crate::operation::get_content_moderation::GetContentModerationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetContentModerationOutputBuilder {
     pub(crate) job_status: ::std::option::Option<crate::types::VideoJobStatus>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,

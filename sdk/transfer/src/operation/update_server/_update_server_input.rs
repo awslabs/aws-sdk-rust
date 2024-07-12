@@ -287,8 +287,8 @@ impl UpdateServerInput {
 }
 
 /// A builder for [`UpdateServerInput`](crate::operation::update_server::UpdateServerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateServerInputBuilder {
     pub(crate) certificate: ::std::option::Option<::std::string::String>,
     pub(crate) protocol_details: ::std::option::Option<crate::types::ProtocolDetails>,

@@ -28,8 +28,8 @@ impl TestMetricFilterOutput {
 }
 
 /// A builder for [`TestMetricFilterOutput`](crate::operation::test_metric_filter::TestMetricFilterOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TestMetricFilterOutputBuilder {
     pub(crate) matches: ::std::option::Option<::std::vec::Vec<crate::types::MetricFilterMatchRecord>>,
     _request_id: Option<String>,

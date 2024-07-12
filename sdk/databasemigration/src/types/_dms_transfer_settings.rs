@@ -27,8 +27,8 @@ impl DmsTransferSettings {
 }
 
 /// A builder for [`DmsTransferSettings`](crate::types::DmsTransferSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DmsTransferSettingsBuilder {
     pub(crate) service_access_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,

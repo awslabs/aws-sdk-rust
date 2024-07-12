@@ -43,8 +43,8 @@ impl LiveConnectorRtmpConfiguration {
 }
 
 /// A builder for [`LiveConnectorRtmpConfiguration`](crate::types::LiveConnectorRtmpConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct LiveConnectorRtmpConfigurationBuilder {
     pub(crate) url: ::std::option::Option<::std::string::String>,
     pub(crate) audio_channels: ::std::option::Option<crate::types::AudioChannelsOption>,

@@ -29,8 +29,8 @@ impl TrendmicroConnectorProfileCredentials {
 }
 
 /// A builder for [`TrendmicroConnectorProfileCredentials`](crate::types::TrendmicroConnectorProfileCredentials).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct TrendmicroConnectorProfileCredentialsBuilder {
     pub(crate) api_secret_key: ::std::option::Option<::std::string::String>,
 }

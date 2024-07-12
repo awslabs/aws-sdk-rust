@@ -19,8 +19,8 @@ impl DeleteReceiptFilterOutput {
 }
 
 /// A builder for [`DeleteReceiptFilterOutput`](crate::operation::delete_receipt_filter::DeleteReceiptFilterOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteReceiptFilterOutputBuilder {
     _request_id: Option<String>,
 }

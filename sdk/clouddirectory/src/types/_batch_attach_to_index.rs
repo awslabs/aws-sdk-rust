@@ -27,8 +27,8 @@ impl BatchAttachToIndex {
 }
 
 /// A builder for [`BatchAttachToIndex`](crate::types::BatchAttachToIndex).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchAttachToIndexBuilder {
     pub(crate) index_reference: ::std::option::Option<crate::types::ObjectReference>,
     pub(crate) target_reference: ::std::option::Option<crate::types::ObjectReference>,

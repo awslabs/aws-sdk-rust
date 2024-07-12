@@ -32,8 +32,8 @@ impl GetSnowballUsageOutput {
 }
 
 /// A builder for [`GetSnowballUsageOutput`](crate::operation::get_snowball_usage::GetSnowballUsageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSnowballUsageOutputBuilder {
     pub(crate) snowball_limit: ::std::option::Option<i32>,
     pub(crate) snowballs_in_use: ::std::option::Option<i32>,

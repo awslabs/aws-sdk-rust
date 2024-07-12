@@ -34,8 +34,8 @@ impl ListApplicationInstanceNodeInstancesOutput {
 }
 
 /// A builder for [`ListApplicationInstanceNodeInstancesOutput`](crate::operation::list_application_instance_node_instances::ListApplicationInstanceNodeInstancesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListApplicationInstanceNodeInstancesOutputBuilder {
     pub(crate) node_instances: ::std::option::Option<::std::vec::Vec<crate::types::NodeInstance>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

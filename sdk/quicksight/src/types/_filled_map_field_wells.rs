@@ -22,8 +22,8 @@ impl FilledMapFieldWells {
 }
 
 /// A builder for [`FilledMapFieldWells`](crate::types::FilledMapFieldWells).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FilledMapFieldWellsBuilder {
     pub(crate) filled_map_aggregated_field_wells: ::std::option::Option<crate::types::FilledMapAggregatedFieldWells>,
 }

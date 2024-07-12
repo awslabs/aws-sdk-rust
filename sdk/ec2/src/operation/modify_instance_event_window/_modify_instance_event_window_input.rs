@@ -78,8 +78,8 @@ impl ModifyInstanceEventWindowInput {
 }
 
 /// A builder for [`ModifyInstanceEventWindowInput`](crate::operation::modify_instance_event_window::ModifyInstanceEventWindowInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyInstanceEventWindowInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

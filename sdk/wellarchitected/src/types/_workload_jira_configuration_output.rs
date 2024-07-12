@@ -39,8 +39,8 @@ impl WorkloadJiraConfigurationOutput {
 }
 
 /// A builder for [`WorkloadJiraConfigurationOutput`](crate::types::WorkloadJiraConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WorkloadJiraConfigurationOutputBuilder {
     pub(crate) issue_management_status: ::std::option::Option<crate::types::WorkloadIssueManagementStatus>,
     pub(crate) issue_management_type: ::std::option::Option<crate::types::IssueManagementType>,

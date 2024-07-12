@@ -26,8 +26,8 @@ impl UpdateThingGroupOutput {
 }
 
 /// A builder for [`UpdateThingGroupOutput`](crate::operation::update_thing_group::UpdateThingGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateThingGroupOutputBuilder {
     pub(crate) version: ::std::option::Option<i64>,
     _request_id: Option<String>,

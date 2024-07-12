@@ -27,8 +27,8 @@ impl EnableDirectoryOutput {
 }
 
 /// A builder for [`EnableDirectoryOutput`](crate::operation::enable_directory::EnableDirectoryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnableDirectoryOutputBuilder {
     pub(crate) directory_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

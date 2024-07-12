@@ -18,8 +18,8 @@ impl DeleteStorageLensConfigurationTaggingOutput {
 }
 
 /// A builder for [`DeleteStorageLensConfigurationTaggingOutput`](crate::operation::delete_storage_lens_configuration_tagging::DeleteStorageLensConfigurationTaggingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteStorageLensConfigurationTaggingOutputBuilder {
     _request_id: Option<String>,
 }

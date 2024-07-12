@@ -39,8 +39,8 @@ impl Scte35DeliveryRestrictions {
 }
 
 /// A builder for [`Scte35DeliveryRestrictions`](crate::types::Scte35DeliveryRestrictions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Scte35DeliveryRestrictionsBuilder {
     pub(crate) archive_allowed_flag: ::std::option::Option<crate::types::Scte35ArchiveAllowedFlag>,
     pub(crate) device_restrictions: ::std::option::Option<crate::types::Scte35DeviceRestrictions>,

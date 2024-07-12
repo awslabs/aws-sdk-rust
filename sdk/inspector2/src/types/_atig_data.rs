@@ -43,8 +43,8 @@ impl AtigData {
 }
 
 /// A builder for [`AtigData`](crate::types::AtigData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AtigDataBuilder {
     pub(crate) first_seen: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_seen: ::std::option::Option<::aws_smithy_types::DateTime>,

@@ -32,8 +32,8 @@ impl DeleteImportOutput {
 }
 
 /// A builder for [`DeleteImportOutput`](crate::operation::delete_import::DeleteImportOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteImportOutputBuilder {
     pub(crate) import_id: ::std::option::Option<::std::string::String>,
     pub(crate) import_status: ::std::option::Option<crate::types::ImportStatus>,

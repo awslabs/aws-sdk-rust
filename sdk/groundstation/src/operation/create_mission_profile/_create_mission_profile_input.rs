@@ -71,8 +71,8 @@ impl CreateMissionProfileInput {
 }
 
 /// A builder for [`CreateMissionProfileInput`](crate::operation::create_mission_profile::CreateMissionProfileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateMissionProfileInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) contact_pre_pass_duration_seconds: ::std::option::Option<i32>,

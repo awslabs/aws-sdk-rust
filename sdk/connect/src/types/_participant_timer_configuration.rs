@@ -34,8 +34,8 @@ impl ParticipantTimerConfiguration {
 }
 
 /// A builder for [`ParticipantTimerConfiguration`](crate::types::ParticipantTimerConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ParticipantTimerConfigurationBuilder {
     pub(crate) participant_role: ::std::option::Option<crate::types::TimerEligibleParticipantRoles>,
     pub(crate) timer_type: ::std::option::Option<crate::types::ParticipantTimerType>,

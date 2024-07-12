@@ -69,8 +69,8 @@ impl StartFraudsterRegistrationJobInput {
 }
 
 /// A builder for [`StartFraudsterRegistrationJobInput`](crate::operation::start_fraudster_registration_job::StartFraudsterRegistrationJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct StartFraudsterRegistrationJobInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) job_name: ::std::option::Option<::std::string::String>,

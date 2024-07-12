@@ -28,8 +28,8 @@ impl StartIdMappingJobInput {
 }
 
 /// A builder for [`StartIdMappingJobInput`](crate::operation::start_id_mapping_job::StartIdMappingJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartIdMappingJobInputBuilder {
     pub(crate) workflow_name: ::std::option::Option<::std::string::String>,
     pub(crate) output_source_config: ::std::option::Option<::std::vec::Vec<crate::types::IdMappingJobOutputSource>>,

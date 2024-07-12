@@ -32,8 +32,8 @@ impl CreateImageBuilderStreamingUrlOutput {
 }
 
 /// A builder for [`CreateImageBuilderStreamingUrlOutput`](crate::operation::create_image_builder_streaming_url::CreateImageBuilderStreamingUrlOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateImageBuilderStreamingUrlOutputBuilder {
     pub(crate) streaming_url: ::std::option::Option<::std::string::String>,
     pub(crate) expires: ::std::option::Option<::aws_smithy_types::DateTime>,

@@ -20,8 +20,8 @@ impl StartMlEvaluationTaskRunInput {
 }
 
 /// A builder for [`StartMlEvaluationTaskRunInput`](crate::operation::start_ml_evaluation_task_run::StartMlEvaluationTaskRunInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartMlEvaluationTaskRunInputBuilder {
     pub(crate) transform_id: ::std::option::Option<::std::string::String>,
 }

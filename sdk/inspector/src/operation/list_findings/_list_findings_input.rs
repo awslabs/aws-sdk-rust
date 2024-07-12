@@ -42,8 +42,8 @@ impl ListFindingsInput {
 }
 
 /// A builder for [`ListFindingsInput`](crate::operation::list_findings::ListFindingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFindingsInputBuilder {
     pub(crate) assessment_run_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filter: ::std::option::Option<crate::types::FindingFilter>,

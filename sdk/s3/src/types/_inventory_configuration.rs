@@ -60,8 +60,8 @@ impl InventoryConfiguration {
 }
 
 /// A builder for [`InventoryConfiguration`](crate::types::InventoryConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InventoryConfigurationBuilder {
     pub(crate) destination: ::std::option::Option<crate::types::InventoryDestination>,
     pub(crate) is_enabled: ::std::option::Option<bool>,

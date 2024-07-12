@@ -26,8 +26,8 @@ impl GetRelationalDatabaseOutput {
 }
 
 /// A builder for [`GetRelationalDatabaseOutput`](crate::operation::get_relational_database::GetRelationalDatabaseOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRelationalDatabaseOutputBuilder {
     pub(crate) relational_database: ::std::option::Option<crate::types::RelationalDatabase>,
     _request_id: Option<String>,

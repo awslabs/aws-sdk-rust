@@ -19,8 +19,8 @@ impl DisassociateWirelessDeviceFromFuotaTaskOutput {
 }
 
 /// A builder for [`DisassociateWirelessDeviceFromFuotaTaskOutput`](crate::operation::disassociate_wireless_device_from_fuota_task::DisassociateWirelessDeviceFromFuotaTaskOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateWirelessDeviceFromFuotaTaskOutputBuilder {
     _request_id: Option<String>,
 }

@@ -27,8 +27,8 @@ impl BandwidthReductionFilter {
 }
 
 /// A builder for [`BandwidthReductionFilter`](crate::types::BandwidthReductionFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BandwidthReductionFilterBuilder {
     pub(crate) sharpening: ::std::option::Option<crate::types::BandwidthReductionFilterSharpening>,
     pub(crate) strength: ::std::option::Option<crate::types::BandwidthReductionFilterStrength>,

@@ -70,8 +70,8 @@ impl GetDecoderManifestOutput {
 }
 
 /// A builder for [`GetDecoderManifestOutput`](crate::operation::get_decoder_manifest::GetDecoderManifestOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDecoderManifestOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

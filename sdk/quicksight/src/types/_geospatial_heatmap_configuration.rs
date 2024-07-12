@@ -21,8 +21,8 @@ impl GeospatialHeatmapConfiguration {
 }
 
 /// A builder for [`GeospatialHeatmapConfiguration`](crate::types::GeospatialHeatmapConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GeospatialHeatmapConfigurationBuilder {
     pub(crate) heatmap_color: ::std::option::Option<crate::types::GeospatialHeatmapColorScale>,
 }

@@ -26,8 +26,8 @@ impl DeleteContactFlowModuleInput {
 }
 
 /// A builder for [`DeleteContactFlowModuleInput`](crate::operation::delete_contact_flow_module::DeleteContactFlowModuleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteContactFlowModuleInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) contact_flow_module_id: ::std::option::Option<::std::string::String>,

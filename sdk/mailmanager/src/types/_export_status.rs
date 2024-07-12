@@ -39,8 +39,8 @@ impl ExportStatus {
 }
 
 /// A builder for [`ExportStatus`](crate::types::ExportStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExportStatusBuilder {
     pub(crate) submission_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) completion_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,

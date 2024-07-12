@@ -92,8 +92,8 @@ impl UpdatePipeInput {
 }
 
 /// A builder for [`UpdatePipeInput`](crate::operation::update_pipe::UpdatePipeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdatePipeInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

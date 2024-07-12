@@ -21,8 +21,8 @@ impl DefaultTextFieldControlOptions {
 }
 
 /// A builder for [`DefaultTextFieldControlOptions`](crate::types::DefaultTextFieldControlOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DefaultTextFieldControlOptionsBuilder {
     pub(crate) display_options: ::std::option::Option<crate::types::TextFieldControlDisplayOptions>,
 }

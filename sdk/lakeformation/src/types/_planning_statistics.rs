@@ -39,8 +39,8 @@ impl PlanningStatistics {
 }
 
 /// A builder for [`PlanningStatistics`](crate::types::PlanningStatistics).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PlanningStatisticsBuilder {
     pub(crate) estimated_data_to_scan_bytes: ::std::option::Option<i64>,
     pub(crate) planning_time_millis: ::std::option::Option<i64>,

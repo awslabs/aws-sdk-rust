@@ -34,8 +34,8 @@ impl DescribeTrafficMirrorFilterRulesOutput {
 }
 
 /// A builder for [`DescribeTrafficMirrorFilterRulesOutput`](crate::operation::describe_traffic_mirror_filter_rules::DescribeTrafficMirrorFilterRulesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTrafficMirrorFilterRulesOutputBuilder {
     pub(crate) traffic_mirror_filter_rules: ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorFilterRule>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

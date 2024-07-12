@@ -21,8 +21,8 @@ impl TestSetGenerationDataSource {
 }
 
 /// A builder for [`TestSetGenerationDataSource`](crate::types::TestSetGenerationDataSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TestSetGenerationDataSourceBuilder {
     pub(crate) conversation_logs_data_source: ::std::option::Option<crate::types::ConversationLogsDataSource>,
 }

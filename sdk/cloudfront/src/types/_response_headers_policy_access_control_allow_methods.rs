@@ -67,8 +67,8 @@ impl ResponseHeadersPolicyAccessControlAllowMethods {
 }
 
 /// A builder for [`ResponseHeadersPolicyAccessControlAllowMethods`](crate::types::ResponseHeadersPolicyAccessControlAllowMethods).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResponseHeadersPolicyAccessControlAllowMethodsBuilder {
     pub(crate) quantity: ::std::option::Option<i32>,
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ResponseHeadersPolicyAccessControlAllowMethodsValues>>,

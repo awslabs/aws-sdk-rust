@@ -20,8 +20,8 @@ impl DescribePackagingGroupInput {
 }
 
 /// A builder for [`DescribePackagingGroupInput`](crate::operation::describe_packaging_group::DescribePackagingGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribePackagingGroupInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }

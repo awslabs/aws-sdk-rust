@@ -34,8 +34,8 @@ impl AcceptEulasInput {
 }
 
 /// A builder for [`AcceptEulasInput`](crate::operation::accept_eulas::AcceptEulasInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AcceptEulasInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) eula_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

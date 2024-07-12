@@ -21,8 +21,8 @@ impl FaqStatistics {
 }
 
 /// A builder for [`FaqStatistics`](crate::types::FaqStatistics).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FaqStatisticsBuilder {
     pub(crate) indexed_question_answers_count: ::std::option::Option<i32>,
 }

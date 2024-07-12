@@ -42,8 +42,8 @@ impl ParameterDateTimePickerControl {
 }
 
 /// A builder for [`ParameterDateTimePickerControl`](crate::types::ParameterDateTimePickerControl).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ParameterDateTimePickerControlBuilder {
     pub(crate) parameter_control_id: ::std::option::Option<::std::string::String>,
     pub(crate) title: ::std::option::Option<::std::string::String>,

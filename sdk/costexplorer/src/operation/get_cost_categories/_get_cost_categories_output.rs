@@ -56,8 +56,8 @@ impl GetCostCategoriesOutput {
 }
 
 /// A builder for [`GetCostCategoriesOutput`](crate::operation::get_cost_categories::GetCostCategoriesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCostCategoriesOutputBuilder {
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
     pub(crate) cost_category_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

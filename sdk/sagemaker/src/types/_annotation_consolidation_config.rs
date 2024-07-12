@@ -1219,8 +1219,8 @@ impl AnnotationConsolidationConfig {
 }
 
 /// A builder for [`AnnotationConsolidationConfig`](crate::types::AnnotationConsolidationConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AnnotationConsolidationConfigBuilder {
     pub(crate) annotation_consolidation_lambda_arn: ::std::option::Option<::std::string::String>,
 }

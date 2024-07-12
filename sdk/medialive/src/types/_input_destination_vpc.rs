@@ -27,8 +27,8 @@ impl InputDestinationVpc {
 }
 
 /// A builder for [`InputDestinationVpc`](crate::types::InputDestinationVpc).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InputDestinationVpcBuilder {
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) network_interface_id: ::std::option::Option<::std::string::String>,

@@ -20,8 +20,8 @@ impl DisassociateApiInput {
 }
 
 /// A builder for [`DisassociateApiInput`](crate::operation::disassociate_api::DisassociateApiInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateApiInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
 }

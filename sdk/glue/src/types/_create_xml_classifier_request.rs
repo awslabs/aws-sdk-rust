@@ -35,8 +35,8 @@ impl CreateXmlClassifierRequest {
 }
 
 /// A builder for [`CreateXmlClassifierRequest`](crate::types::CreateXmlClassifierRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateXmlClassifierRequestBuilder {
     pub(crate) classification: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

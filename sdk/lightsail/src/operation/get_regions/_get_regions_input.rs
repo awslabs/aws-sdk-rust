@@ -26,8 +26,8 @@ impl GetRegionsInput {
 }
 
 /// A builder for [`GetRegionsInput`](crate::operation::get_regions::GetRegionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRegionsInputBuilder {
     pub(crate) include_availability_zones: ::std::option::Option<bool>,
     pub(crate) include_relational_database_availability_zones: ::std::option::Option<bool>,

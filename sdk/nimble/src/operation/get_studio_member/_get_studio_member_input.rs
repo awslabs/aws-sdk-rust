@@ -26,8 +26,8 @@ impl GetStudioMemberInput {
 }
 
 /// A builder for [`GetStudioMemberInput`](crate::operation::get_studio_member::GetStudioMemberInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetStudioMemberInputBuilder {
     pub(crate) principal_id: ::std::option::Option<::std::string::String>,
     pub(crate) studio_id: ::std::option::Option<::std::string::String>,

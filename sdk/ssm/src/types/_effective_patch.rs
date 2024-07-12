@@ -27,8 +27,8 @@ impl EffectivePatch {
 }
 
 /// A builder for [`EffectivePatch`](crate::types::EffectivePatch).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EffectivePatchBuilder {
     pub(crate) patch: ::std::option::Option<crate::types::Patch>,
     pub(crate) patch_status: ::std::option::Option<crate::types::PatchStatus>,

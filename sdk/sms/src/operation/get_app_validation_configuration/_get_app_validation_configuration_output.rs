@@ -36,8 +36,8 @@ impl GetAppValidationConfigurationOutput {
 }
 
 /// A builder for [`GetAppValidationConfigurationOutput`](crate::operation::get_app_validation_configuration::GetAppValidationConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAppValidationConfigurationOutputBuilder {
     pub(crate) app_validation_configurations: ::std::option::Option<::std::vec::Vec<crate::types::AppValidationConfiguration>>,
     pub(crate) server_group_validation_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ServerGroupValidationConfiguration>>,

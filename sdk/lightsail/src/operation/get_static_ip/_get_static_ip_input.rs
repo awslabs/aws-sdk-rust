@@ -20,8 +20,8 @@ impl GetStaticIpInput {
 }
 
 /// A builder for [`GetStaticIpInput`](crate::operation::get_static_ip::GetStaticIpInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetStaticIpInputBuilder {
     pub(crate) static_ip_name: ::std::option::Option<::std::string::String>,
 }

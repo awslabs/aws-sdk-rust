@@ -29,8 +29,8 @@ impl AttachedPermissionsBoundary {
 }
 
 /// A builder for [`AttachedPermissionsBoundary`](crate::types::AttachedPermissionsBoundary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttachedPermissionsBoundaryBuilder {
     pub(crate) permissions_boundary_type: ::std::option::Option<crate::types::PermissionsBoundaryAttachmentType>,
     pub(crate) permissions_boundary_arn: ::std::option::Option<::std::string::String>,

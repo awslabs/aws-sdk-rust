@@ -35,8 +35,8 @@ impl DescribeScheduledInstanceAvailabilityOutput {
 }
 
 /// A builder for [`DescribeScheduledInstanceAvailabilityOutput`](crate::operation::describe_scheduled_instance_availability::DescribeScheduledInstanceAvailabilityOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeScheduledInstanceAvailabilityOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) scheduled_instance_availability_set: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledInstanceAvailability>>,

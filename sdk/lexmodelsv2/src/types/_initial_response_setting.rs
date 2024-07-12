@@ -39,8 +39,8 @@ impl InitialResponseSetting {
 }
 
 /// A builder for [`InitialResponseSetting`](crate::types::InitialResponseSetting).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InitialResponseSettingBuilder {
     pub(crate) initial_response: ::std::option::Option<crate::types::ResponseSpecification>,
     pub(crate) next_step: ::std::option::Option<crate::types::DialogState>,

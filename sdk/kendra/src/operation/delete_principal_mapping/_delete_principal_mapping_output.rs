@@ -18,8 +18,8 @@ impl DeletePrincipalMappingOutput {
 }
 
 /// A builder for [`DeletePrincipalMappingOutput`](crate::operation::delete_principal_mapping::DeletePrincipalMappingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePrincipalMappingOutputBuilder {
     _request_id: Option<String>,
 }

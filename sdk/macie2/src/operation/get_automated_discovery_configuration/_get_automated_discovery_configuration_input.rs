@@ -11,8 +11,8 @@ impl GetAutomatedDiscoveryConfigurationInput {
 }
 
 /// A builder for [`GetAutomatedDiscoveryConfigurationInput`](crate::operation::get_automated_discovery_configuration::GetAutomatedDiscoveryConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAutomatedDiscoveryConfigurationInputBuilder {}
 impl GetAutomatedDiscoveryConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`GetAutomatedDiscoveryConfigurationInput`](crate::operation::get_automated_discovery_configuration::GetAutomatedDiscoveryConfigurationInput).

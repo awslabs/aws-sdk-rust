@@ -20,8 +20,8 @@ impl GetCustomDataIdentifierInput {
 }
 
 /// A builder for [`GetCustomDataIdentifierInput`](crate::operation::get_custom_data_identifier::GetCustomDataIdentifierInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCustomDataIdentifierInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }

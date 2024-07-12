@@ -81,8 +81,8 @@ impl AwsRedshiftClusterPendingModifiedValues {
 }
 
 /// A builder for [`AwsRedshiftClusterPendingModifiedValues`](crate::types::AwsRedshiftClusterPendingModifiedValues).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsRedshiftClusterPendingModifiedValuesBuilder {
     pub(crate) automated_snapshot_retention_period: ::std::option::Option<i32>,
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,

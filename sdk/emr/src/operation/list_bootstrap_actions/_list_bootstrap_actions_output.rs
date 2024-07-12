@@ -35,8 +35,8 @@ impl ListBootstrapActionsOutput {
 }
 
 /// A builder for [`ListBootstrapActionsOutput`](crate::operation::list_bootstrap_actions::ListBootstrapActionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListBootstrapActionsOutputBuilder {
     pub(crate) bootstrap_actions: ::std::option::Option<::std::vec::Vec<crate::types::Command>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

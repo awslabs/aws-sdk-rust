@@ -27,8 +27,8 @@ impl Scte35InputScheduleActionSettings {
 }
 
 /// A builder for [`Scte35InputScheduleActionSettings`](crate::types::Scte35InputScheduleActionSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Scte35InputScheduleActionSettingsBuilder {
     pub(crate) input_attachment_name_reference: ::std::option::Option<::std::string::String>,
     pub(crate) mode: ::std::option::Option<crate::types::Scte35InputMode>,

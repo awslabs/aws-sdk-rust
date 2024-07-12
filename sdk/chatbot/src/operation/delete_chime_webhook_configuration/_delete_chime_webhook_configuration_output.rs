@@ -18,8 +18,8 @@ impl DeleteChimeWebhookConfigurationOutput {
 }
 
 /// A builder for [`DeleteChimeWebhookConfigurationOutput`](crate::operation::delete_chime_webhook_configuration::DeleteChimeWebhookConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteChimeWebhookConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

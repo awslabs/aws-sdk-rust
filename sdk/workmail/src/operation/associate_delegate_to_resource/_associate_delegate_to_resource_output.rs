@@ -18,8 +18,8 @@ impl AssociateDelegateToResourceOutput {
 }
 
 /// A builder for [`AssociateDelegateToResourceOutput`](crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateDelegateToResourceOutputBuilder {
     _request_id: Option<String>,
 }

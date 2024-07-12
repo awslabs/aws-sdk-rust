@@ -41,8 +41,8 @@ impl RuleResult {
 }
 
 /// A builder for [`RuleResult`](crate::types::RuleResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RuleResultBuilder {
     pub(crate) last_checked_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) messages: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,

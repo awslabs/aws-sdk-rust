@@ -104,8 +104,8 @@ impl ListRepositoryAssociationsInput {
 }
 
 /// A builder for [`ListRepositoryAssociationsInput`](crate::operation::list_repository_associations::ListRepositoryAssociationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRepositoryAssociationsInputBuilder {
     pub(crate) provider_types: ::std::option::Option<::std::vec::Vec<crate::types::ProviderType>>,
     pub(crate) states: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryAssociationState>>,

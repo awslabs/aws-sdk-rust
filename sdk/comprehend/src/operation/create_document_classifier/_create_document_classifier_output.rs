@@ -26,8 +26,8 @@ impl CreateDocumentClassifierOutput {
 }
 
 /// A builder for [`CreateDocumentClassifierOutput`](crate::operation::create_document_classifier::CreateDocumentClassifierOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDocumentClassifierOutputBuilder {
     pub(crate) document_classifier_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

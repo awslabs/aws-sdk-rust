@@ -21,8 +21,8 @@ impl ModelDigests {
 }
 
 /// A builder for [`ModelDigests`](crate::types::ModelDigests).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModelDigestsBuilder {
     pub(crate) artifact_digest: ::std::option::Option<::std::string::String>,
 }

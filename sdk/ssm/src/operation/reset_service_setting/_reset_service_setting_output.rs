@@ -27,8 +27,8 @@ impl ResetServiceSettingOutput {
 }
 
 /// A builder for [`ResetServiceSettingOutput`](crate::operation::reset_service_setting::ResetServiceSettingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResetServiceSettingOutputBuilder {
     pub(crate) service_setting: ::std::option::Option<crate::types::ServiceSetting>,
     _request_id: Option<String>,

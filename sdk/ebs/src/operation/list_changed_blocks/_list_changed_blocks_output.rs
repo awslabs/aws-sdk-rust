@@ -52,8 +52,8 @@ impl ListChangedBlocksOutput {
 }
 
 /// A builder for [`ListChangedBlocksOutput`](crate::operation::list_changed_blocks::ListChangedBlocksOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListChangedBlocksOutputBuilder {
     pub(crate) changed_blocks: ::std::option::Option<::std::vec::Vec<crate::types::ChangedBlock>>,
     pub(crate) expiry_time: ::std::option::Option<::aws_smithy_types::DateTime>,

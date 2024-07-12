@@ -28,8 +28,8 @@ impl GetCollaborationConfiguredAudienceModelAssociationOutput {
 }
 
 /// A builder for [`GetCollaborationConfiguredAudienceModelAssociationOutput`](crate::operation::get_collaboration_configured_audience_model_association::GetCollaborationConfiguredAudienceModelAssociationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCollaborationConfiguredAudienceModelAssociationOutputBuilder {
     pub(crate) collaboration_configured_audience_model_association:
         ::std::option::Option<crate::types::CollaborationConfiguredAudienceModelAssociation>,

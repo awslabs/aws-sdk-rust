@@ -35,8 +35,8 @@ impl DescribeReservedDbInstancesOfferingsOutput {
 }
 
 /// A builder for [`DescribeReservedDbInstancesOfferingsOutput`](crate::operation::describe_reserved_db_instances_offerings::DescribeReservedDbInstancesOfferingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeReservedDbInstancesOfferingsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) reserved_db_instances_offerings: ::std::option::Option<::std::vec::Vec<crate::types::ReservedDbInstancesOffering>>,

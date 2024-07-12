@@ -35,8 +35,8 @@ impl NetworkImpairment {
 }
 
 /// A builder for [`NetworkImpairment`](crate::types::NetworkImpairment).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NetworkImpairmentBuilder {
     pub(crate) networks: ::std::option::Option<::std::vec::Vec<crate::types::Network>>,
     pub(crate) as_path: ::std::option::Option<::std::vec::Vec<crate::types::Network>>,

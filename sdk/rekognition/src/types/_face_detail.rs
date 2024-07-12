@@ -132,8 +132,8 @@ impl FaceDetail {
 }
 
 /// A builder for [`FaceDetail`](crate::types::FaceDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FaceDetailBuilder {
     pub(crate) bounding_box: ::std::option::Option<crate::types::BoundingBox>,
     pub(crate) age_range: ::std::option::Option<crate::types::AgeRange>,

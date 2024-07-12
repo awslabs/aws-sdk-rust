@@ -27,8 +27,8 @@ impl GetSagemakerServicecatalogPortfolioStatusOutput {
 }
 
 /// A builder for [`GetSagemakerServicecatalogPortfolioStatusOutput`](crate::operation::get_sagemaker_servicecatalog_portfolio_status::GetSagemakerServicecatalogPortfolioStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSagemakerServicecatalogPortfolioStatusOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::SagemakerServicecatalogStatus>,
     _request_id: Option<String>,

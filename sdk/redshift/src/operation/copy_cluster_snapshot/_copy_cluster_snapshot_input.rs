@@ -89,8 +89,8 @@ impl CopyClusterSnapshotInput {
 }
 
 /// A builder for [`CopyClusterSnapshotInput`](crate::operation::copy_cluster_snapshot::CopyClusterSnapshotInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CopyClusterSnapshotInputBuilder {
     pub(crate) source_snapshot_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) source_snapshot_cluster_identifier: ::std::option::Option<::std::string::String>,

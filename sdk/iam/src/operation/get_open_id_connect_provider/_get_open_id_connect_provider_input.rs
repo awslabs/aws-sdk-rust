@@ -22,8 +22,8 @@ impl GetOpenIdConnectProviderInput {
 }
 
 /// A builder for [`GetOpenIdConnectProviderInput`](crate::operation::get_open_id_connect_provider::GetOpenIdConnectProviderInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetOpenIdConnectProviderInputBuilder {
     pub(crate) open_id_connect_provider_arn: ::std::option::Option<::std::string::String>,
 }

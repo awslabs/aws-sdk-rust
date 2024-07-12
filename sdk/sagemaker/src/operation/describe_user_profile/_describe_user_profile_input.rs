@@ -26,8 +26,8 @@ impl DescribeUserProfileInput {
 }
 
 /// A builder for [`DescribeUserProfileInput`](crate::operation::describe_user_profile::DescribeUserProfileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeUserProfileInputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_profile_name: ::std::option::Option<::std::string::String>,

@@ -18,8 +18,8 @@ impl DeleteRecoveryPointOutput {
 }
 
 /// A builder for [`DeleteRecoveryPointOutput`](crate::operation::delete_recovery_point::DeleteRecoveryPointOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRecoveryPointOutputBuilder {
     _request_id: Option<String>,
 }

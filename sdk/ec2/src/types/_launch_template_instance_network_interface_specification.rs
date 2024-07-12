@@ -161,8 +161,8 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecification {
 }
 
 /// A builder for [`LaunchTemplateInstanceNetworkInterfaceSpecification`](crate::types::LaunchTemplateInstanceNetworkInterfaceSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LaunchTemplateInstanceNetworkInterfaceSpecificationBuilder {
     pub(crate) associate_carrier_ip_address: ::std::option::Option<bool>,
     pub(crate) associate_public_ip_address: ::std::option::Option<bool>,

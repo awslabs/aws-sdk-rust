@@ -52,8 +52,8 @@ impl ListBotVersionReplicasOutput {
 }
 
 /// A builder for [`ListBotVersionReplicasOutput`](crate::operation::list_bot_version_replicas::ListBotVersionReplicasOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListBotVersionReplicasOutputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) source_region: ::std::option::Option<::std::string::String>,

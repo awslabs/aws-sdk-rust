@@ -32,8 +32,8 @@ impl ListDataIntegrationAssociationsInput {
 }
 
 /// A builder for [`ListDataIntegrationAssociationsInput`](crate::operation::list_data_integration_associations::ListDataIntegrationAssociationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDataIntegrationAssociationsInputBuilder {
     pub(crate) data_integration_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

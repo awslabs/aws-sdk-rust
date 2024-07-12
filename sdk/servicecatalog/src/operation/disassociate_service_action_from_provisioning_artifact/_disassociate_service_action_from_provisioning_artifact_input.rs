@@ -56,8 +56,8 @@ impl DisassociateServiceActionFromProvisioningArtifactInput {
 }
 
 /// A builder for [`DisassociateServiceActionFromProvisioningArtifactInput`](crate::operation::disassociate_service_action_from_provisioning_artifact::DisassociateServiceActionFromProvisioningArtifactInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateServiceActionFromProvisioningArtifactInputBuilder {
     pub(crate) product_id: ::std::option::Option<::std::string::String>,
     pub(crate) provisioning_artifact_id: ::std::option::Option<::std::string::String>,

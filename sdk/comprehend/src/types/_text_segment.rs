@@ -29,8 +29,8 @@ impl TextSegment {
 }
 
 /// A builder for [`TextSegment`](crate::types::TextSegment).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct TextSegmentBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
 }

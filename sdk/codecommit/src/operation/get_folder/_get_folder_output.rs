@@ -72,8 +72,8 @@ impl GetFolderOutput {
 }
 
 /// A builder for [`GetFolderOutput`](crate::operation::get_folder::GetFolderOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetFolderOutputBuilder {
     pub(crate) commit_id: ::std::option::Option<::std::string::String>,
     pub(crate) folder_path: ::std::option::Option<::std::string::String>,

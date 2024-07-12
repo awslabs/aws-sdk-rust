@@ -64,8 +64,8 @@ impl ListWorkflowStepExecutionsOutput {
 }
 
 /// A builder for [`ListWorkflowStepExecutionsOutput`](crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListWorkflowStepExecutionsOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) steps: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepMetadata>>,

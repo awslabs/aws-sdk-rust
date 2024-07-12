@@ -32,8 +32,8 @@ impl AddRoleToDbInstanceInput {
 }
 
 /// A builder for [`AddRoleToDbInstanceInput`](crate::operation::add_role_to_db_instance::AddRoleToDbInstanceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddRoleToDbInstanceInputBuilder {
     pub(crate) db_instance_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,

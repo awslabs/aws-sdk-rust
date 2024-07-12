@@ -23,8 +23,8 @@ impl UpdateResult {
 }
 
 /// A builder for [`UpdateResult`](crate::types::UpdateResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateResultBuilder {
     pub(crate) generated_fields: ::std::option::Option<::std::vec::Vec<crate::types::Field>>,
 }

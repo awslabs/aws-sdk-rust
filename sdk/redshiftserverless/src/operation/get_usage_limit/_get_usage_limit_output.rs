@@ -26,8 +26,8 @@ impl GetUsageLimitOutput {
 }
 
 /// A builder for [`GetUsageLimitOutput`](crate::operation::get_usage_limit::GetUsageLimitOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetUsageLimitOutputBuilder {
     pub(crate) usage_limit: ::std::option::Option<crate::types::UsageLimit>,
     _request_id: Option<String>,

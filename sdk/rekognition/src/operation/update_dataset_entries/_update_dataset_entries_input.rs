@@ -26,8 +26,8 @@ impl UpdateDatasetEntriesInput {
 }
 
 /// A builder for [`UpdateDatasetEntriesInput`](crate::operation::update_dataset_entries::UpdateDatasetEntriesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDatasetEntriesInputBuilder {
     pub(crate) dataset_arn: ::std::option::Option<::std::string::String>,
     pub(crate) changes: ::std::option::Option<crate::types::DatasetChanges>,

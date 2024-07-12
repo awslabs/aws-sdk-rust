@@ -25,8 +25,8 @@ impl QueryComputePaymentConfig {
 }
 
 /// A builder for [`QueryComputePaymentConfig`](crate::types::QueryComputePaymentConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct QueryComputePaymentConfigBuilder {
     pub(crate) is_responsible: ::std::option::Option<bool>,
 }

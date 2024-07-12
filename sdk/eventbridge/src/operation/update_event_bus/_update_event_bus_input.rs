@@ -66,8 +66,8 @@ impl UpdateEventBusInput {
 }
 
 /// A builder for [`UpdateEventBusInput`](crate::operation::update_event_bus::UpdateEventBusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateEventBusInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_identifier: ::std::option::Option<::std::string::String>,

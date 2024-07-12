@@ -27,8 +27,8 @@ impl ClientVpnAuthorizationRuleStatus {
 }
 
 /// A builder for [`ClientVpnAuthorizationRuleStatus`](crate::types::ClientVpnAuthorizationRuleStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ClientVpnAuthorizationRuleStatusBuilder {
     pub(crate) code: ::std::option::Option<crate::types::ClientVpnAuthorizationRuleStatusCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

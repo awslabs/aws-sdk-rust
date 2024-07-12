@@ -18,8 +18,8 @@ impl StopAutomationExecutionOutput {
 }
 
 /// A builder for [`StopAutomationExecutionOutput`](crate::operation::stop_automation_execution::StopAutomationExecutionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopAutomationExecutionOutputBuilder {
     _request_id: Option<String>,
 }

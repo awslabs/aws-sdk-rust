@@ -40,8 +40,8 @@ impl GetRecoveryGroupReadinessSummaryOutput {
 }
 
 /// A builder for [`GetRecoveryGroupReadinessSummaryOutput`](crate::operation::get_recovery_group_readiness_summary::GetRecoveryGroupReadinessSummaryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRecoveryGroupReadinessSummaryOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) readiness: ::std::option::Option<crate::types::Readiness>,

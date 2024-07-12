@@ -31,8 +31,8 @@ impl NumericQuestionPropertyValueAutomation {
 }
 
 /// A builder for [`NumericQuestionPropertyValueAutomation`](crate::types::NumericQuestionPropertyValueAutomation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NumericQuestionPropertyValueAutomationBuilder {
     pub(crate) label: ::std::option::Option<crate::types::NumericQuestionPropertyAutomationLabel>,
 }

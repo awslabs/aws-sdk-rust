@@ -93,8 +93,8 @@ impl CreateApiInput {
 }
 
 /// A builder for [`CreateApiInput`](crate::operation::create_api::CreateApiInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateApiInputBuilder {
     pub(crate) api_key_selection_expression: ::std::option::Option<::std::string::String>,
     pub(crate) cors_configuration: ::std::option::Option<crate::types::Cors>,

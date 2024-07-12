@@ -36,8 +36,8 @@ impl ListActivityTypesOutput {
 }
 
 /// A builder for [`ListActivityTypesOutput`](crate::operation::list_activity_types::ListActivityTypesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListActivityTypesOutputBuilder {
     pub(crate) type_infos: ::std::option::Option<::std::vec::Vec<crate::types::ActivityTypeInfo>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,

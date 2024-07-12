@@ -63,8 +63,8 @@ impl PricingPlanListElement {
 }
 
 /// A builder for [`PricingPlanListElement`](crate::types::PricingPlanListElement).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PricingPlanListElementBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

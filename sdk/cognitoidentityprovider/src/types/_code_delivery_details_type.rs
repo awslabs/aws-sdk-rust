@@ -33,8 +33,8 @@ impl CodeDeliveryDetailsType {
 }
 
 /// A builder for [`CodeDeliveryDetailsType`](crate::types::CodeDeliveryDetailsType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CodeDeliveryDetailsTypeBuilder {
     pub(crate) destination: ::std::option::Option<::std::string::String>,
     pub(crate) delivery_medium: ::std::option::Option<crate::types::DeliveryMediumType>,

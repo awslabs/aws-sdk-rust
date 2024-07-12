@@ -36,8 +36,8 @@ impl BatchGetNamedQueryOutput {
 }
 
 /// A builder for [`BatchGetNamedQueryOutput`](crate::operation::batch_get_named_query::BatchGetNamedQueryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetNamedQueryOutputBuilder {
     pub(crate) named_queries: ::std::option::Option<::std::vec::Vec<crate::types::NamedQuery>>,
     pub(crate) unprocessed_named_query_ids: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedNamedQueryId>>,

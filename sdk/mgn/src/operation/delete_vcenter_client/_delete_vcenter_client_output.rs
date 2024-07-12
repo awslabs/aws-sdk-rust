@@ -18,8 +18,8 @@ impl DeleteVcenterClientOutput {
 }
 
 /// A builder for [`DeleteVcenterClientOutput`](crate::operation::delete_vcenter_client::DeleteVcenterClientOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVcenterClientOutputBuilder {
     _request_id: Option<String>,
 }

@@ -192,8 +192,8 @@ impl UpdateIntegrationOutput {
 }
 
 /// A builder for [`UpdateIntegrationOutput`](crate::operation::update_integration::UpdateIntegrationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateIntegrationOutputBuilder {
     pub(crate) api_gateway_managed: ::std::option::Option<bool>,
     pub(crate) connection_id: ::std::option::Option<::std::string::String>,

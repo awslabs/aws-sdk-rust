@@ -69,8 +69,8 @@ impl ContainerSettings {
 }
 
 /// A builder for [`ContainerSettings`](crate::types::ContainerSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ContainerSettingsBuilder {
     pub(crate) cmfc_settings: ::std::option::Option<crate::types::CmfcSettings>,
     pub(crate) container: ::std::option::Option<crate::types::ContainerType>,

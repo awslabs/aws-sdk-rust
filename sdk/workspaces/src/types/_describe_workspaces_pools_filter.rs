@@ -34,8 +34,8 @@ impl DescribeWorkspacesPoolsFilter {
 }
 
 /// A builder for [`DescribeWorkspacesPoolsFilter`](crate::types::DescribeWorkspacesPoolsFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeWorkspacesPoolsFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::DescribeWorkspacesPoolsFilterName>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

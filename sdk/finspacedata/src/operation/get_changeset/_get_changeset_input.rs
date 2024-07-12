@@ -27,8 +27,8 @@ impl GetChangesetInput {
 }
 
 /// A builder for [`GetChangesetInput`](crate::operation::get_changeset::GetChangesetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetChangesetInputBuilder {
     pub(crate) dataset_id: ::std::option::Option<::std::string::String>,
     pub(crate) changeset_id: ::std::option::Option<::std::string::String>,

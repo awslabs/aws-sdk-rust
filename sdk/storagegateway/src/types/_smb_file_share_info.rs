@@ -265,8 +265,8 @@ impl SmbFileShareInfo {
 }
 
 /// A builder for [`SmbFileShareInfo`](crate::types::SmbFileShareInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SmbFileShareInfoBuilder {
     pub(crate) file_share_arn: ::std::option::Option<::std::string::String>,
     pub(crate) file_share_id: ::std::option::Option<::std::string::String>,

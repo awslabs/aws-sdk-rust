@@ -26,8 +26,8 @@ impl RegenerateSecurityTokenOutput {
 }
 
 /// A builder for [`RegenerateSecurityTokenOutput`](crate::operation::regenerate_security_token::RegenerateSecurityTokenOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegenerateSecurityTokenOutputBuilder {
     pub(crate) bot: ::std::option::Option<crate::types::Bot>,
     _request_id: Option<String>,

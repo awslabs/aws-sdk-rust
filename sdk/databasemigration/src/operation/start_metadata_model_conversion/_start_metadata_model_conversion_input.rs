@@ -26,8 +26,8 @@ impl StartMetadataModelConversionInput {
 }
 
 /// A builder for [`StartMetadataModelConversionInput`](crate::operation::start_metadata_model_conversion::StartMetadataModelConversionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartMetadataModelConversionInputBuilder {
     pub(crate) migration_project_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) selection_rules: ::std::option::Option<::std::string::String>,

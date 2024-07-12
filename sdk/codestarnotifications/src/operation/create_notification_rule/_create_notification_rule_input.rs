@@ -84,8 +84,8 @@ impl CreateNotificationRuleInput {
 }
 
 /// A builder for [`CreateNotificationRuleInput`](crate::operation::create_notification_rule::CreateNotificationRuleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateNotificationRuleInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) event_type_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

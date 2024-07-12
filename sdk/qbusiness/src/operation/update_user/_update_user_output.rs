@@ -44,8 +44,8 @@ impl UpdateUserOutput {
 }
 
 /// A builder for [`UpdateUserOutput`](crate::operation::update_user::UpdateUserOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateUserOutputBuilder {
     pub(crate) user_aliases_added: ::std::option::Option<::std::vec::Vec<crate::types::UserAlias>>,
     pub(crate) user_aliases_updated: ::std::option::Option<::std::vec::Vec<crate::types::UserAlias>>,

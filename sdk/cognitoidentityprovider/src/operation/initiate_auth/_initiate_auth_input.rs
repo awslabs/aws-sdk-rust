@@ -193,8 +193,8 @@ impl InitiateAuthInput {
 }
 
 /// A builder for [`InitiateAuthInput`](crate::operation::initiate_auth::InitiateAuthInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct InitiateAuthInputBuilder {
     pub(crate) auth_flow: ::std::option::Option<crate::types::AuthFlowType>,
     pub(crate) auth_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

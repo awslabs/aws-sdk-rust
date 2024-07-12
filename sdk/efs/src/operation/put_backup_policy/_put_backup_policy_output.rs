@@ -26,8 +26,8 @@ impl PutBackupPolicyOutput {
 }
 
 /// A builder for [`PutBackupPolicyOutput`](crate::operation::put_backup_policy::PutBackupPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutBackupPolicyOutputBuilder {
     pub(crate) backup_policy: ::std::option::Option<crate::types::BackupPolicy>,
     _request_id: Option<String>,

@@ -18,8 +18,8 @@ impl AcceptCertificateTransferOutput {
 }
 
 /// A builder for [`AcceptCertificateTransferOutput`](crate::operation::accept_certificate_transfer::AcceptCertificateTransferOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AcceptCertificateTransferOutputBuilder {
     _request_id: Option<String>,
 }

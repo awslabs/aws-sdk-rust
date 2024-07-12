@@ -26,8 +26,8 @@ impl ProvisionIpamPoolCidrOutput {
 }
 
 /// A builder for [`ProvisionIpamPoolCidrOutput`](crate::operation::provision_ipam_pool_cidr::ProvisionIpamPoolCidrOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProvisionIpamPoolCidrOutputBuilder {
     pub(crate) ipam_pool_cidr: ::std::option::Option<crate::types::IpamPoolCidr>,
     _request_id: Option<String>,

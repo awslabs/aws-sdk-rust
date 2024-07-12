@@ -38,8 +38,8 @@ impl DescribeChangeSetHooksInput {
 }
 
 /// A builder for [`DescribeChangeSetHooksInput`](crate::operation::describe_change_set_hooks::DescribeChangeSetHooksInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeChangeSetHooksInputBuilder {
     pub(crate) change_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,

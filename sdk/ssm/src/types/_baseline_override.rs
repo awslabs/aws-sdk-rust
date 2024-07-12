@@ -79,8 +79,8 @@ impl BaselineOverride {
 }
 
 /// A builder for [`BaselineOverride`](crate::types::BaselineOverride).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BaselineOverrideBuilder {
     pub(crate) operating_system: ::std::option::Option<crate::types::OperatingSystem>,
     pub(crate) global_filters: ::std::option::Option<crate::types::PatchFilterGroup>,

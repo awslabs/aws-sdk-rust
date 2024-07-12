@@ -18,8 +18,8 @@ impl DeleteSyncConfigurationOutput {
 }
 
 /// A builder for [`DeleteSyncConfigurationOutput`](crate::operation::delete_sync_configuration::DeleteSyncConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSyncConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

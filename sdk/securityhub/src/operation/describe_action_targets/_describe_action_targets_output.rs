@@ -34,8 +34,8 @@ impl DescribeActionTargetsOutput {
 }
 
 /// A builder for [`DescribeActionTargetsOutput`](crate::operation::describe_action_targets::DescribeActionTargetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeActionTargetsOutputBuilder {
     pub(crate) action_targets: ::std::option::Option<::std::vec::Vec<crate::types::ActionTarget>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

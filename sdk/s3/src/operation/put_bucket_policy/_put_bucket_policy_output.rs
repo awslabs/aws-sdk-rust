@@ -24,8 +24,8 @@ impl PutBucketPolicyOutput {
 }
 
 /// A builder for [`PutBucketPolicyOutput`](crate::operation::put_bucket_policy::PutBucketPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutBucketPolicyOutputBuilder {
     _extended_request_id: Option<String>,
     _request_id: Option<String>,

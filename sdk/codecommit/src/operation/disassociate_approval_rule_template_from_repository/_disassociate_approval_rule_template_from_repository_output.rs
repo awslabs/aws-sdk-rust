@@ -20,8 +20,8 @@ impl DisassociateApprovalRuleTemplateFromRepositoryOutput {
 }
 
 /// A builder for [`DisassociateApprovalRuleTemplateFromRepositoryOutput`](crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateApprovalRuleTemplateFromRepositoryOutputBuilder {
     _request_id: Option<String>,
 }

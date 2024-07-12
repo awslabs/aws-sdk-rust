@@ -71,8 +71,8 @@ impl GetPolicyStoreOutput {
 }
 
 /// A builder for [`GetPolicyStoreOutput`](crate::operation::get_policy_store::GetPolicyStoreOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetPolicyStoreOutputBuilder {
     pub(crate) policy_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

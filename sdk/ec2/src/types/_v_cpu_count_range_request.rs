@@ -27,8 +27,8 @@ impl VCpuCountRangeRequest {
 }
 
 /// A builder for [`VCpuCountRangeRequest`](crate::types::VCpuCountRangeRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VCpuCountRangeRequestBuilder {
     pub(crate) min: ::std::option::Option<i32>,
     pub(crate) max: ::std::option::Option<i32>,

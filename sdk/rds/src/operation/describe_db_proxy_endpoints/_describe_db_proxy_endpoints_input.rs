@@ -50,8 +50,8 @@ impl DescribeDbProxyEndpointsInput {
 }
 
 /// A builder for [`DescribeDbProxyEndpointsInput`](crate::operation::describe_db_proxy_endpoints::DescribeDbProxyEndpointsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDbProxyEndpointsInputBuilder {
     pub(crate) db_proxy_name: ::std::option::Option<::std::string::String>,
     pub(crate) db_proxy_endpoint_name: ::std::option::Option<::std::string::String>,

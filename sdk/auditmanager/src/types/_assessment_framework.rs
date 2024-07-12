@@ -51,8 +51,8 @@ impl AssessmentFramework {
 }
 
 /// A builder for [`AssessmentFramework`](crate::types::AssessmentFramework).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AssessmentFrameworkBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

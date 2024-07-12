@@ -27,8 +27,8 @@ impl CreateLoginProfileOutput {
 }
 
 /// A builder for [`CreateLoginProfileOutput`](crate::operation::create_login_profile::CreateLoginProfileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLoginProfileOutputBuilder {
     pub(crate) login_profile: ::std::option::Option<crate::types::LoginProfile>,
     _request_id: Option<String>,

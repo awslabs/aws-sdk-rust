@@ -28,8 +28,8 @@ impl DescribeVirtualInterfacesOutput {
 }
 
 /// A builder for [`DescribeVirtualInterfacesOutput`](crate::operation::describe_virtual_interfaces::DescribeVirtualInterfacesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeVirtualInterfacesOutputBuilder {
     pub(crate) virtual_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::VirtualInterface>>,
     _request_id: Option<String>,

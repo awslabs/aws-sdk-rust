@@ -32,8 +32,8 @@ impl UpdateFieldLevelEncryptionProfileOutput {
 }
 
 /// A builder for [`UpdateFieldLevelEncryptionProfileOutput`](crate::operation::update_field_level_encryption_profile::UpdateFieldLevelEncryptionProfileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateFieldLevelEncryptionProfileOutputBuilder {
     pub(crate) field_level_encryption_profile: ::std::option::Option<crate::types::FieldLevelEncryptionProfile>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,

@@ -28,8 +28,8 @@ impl EndPoint {
 }
 
 /// A builder for [`EndPoint`](crate::types::EndPoint).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EndPointBuilder {
     pub(crate) stream_type: ::std::option::Option<::std::string::String>,
     pub(crate) kinesis_stream_config: ::std::option::Option<crate::types::KinesisStreamConfig>,

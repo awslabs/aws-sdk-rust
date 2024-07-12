@@ -34,8 +34,8 @@ impl DescribeQueryDefinitionsOutput {
 }
 
 /// A builder for [`DescribeQueryDefinitionsOutput`](crate::operation::describe_query_definitions::DescribeQueryDefinitionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeQueryDefinitionsOutputBuilder {
     pub(crate) query_definitions: ::std::option::Option<::std::vec::Vec<crate::types::QueryDefinition>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

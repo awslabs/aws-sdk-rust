@@ -18,8 +18,8 @@ impl UpdateIndexingConfigurationOutput {
 }
 
 /// A builder for [`UpdateIndexingConfigurationOutput`](crate::operation::update_indexing_configuration::UpdateIndexingConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateIndexingConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

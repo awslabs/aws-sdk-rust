@@ -21,8 +21,8 @@ impl Video {
 }
 
 /// A builder for [`Video`](crate::types::Video).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VideoBuilder {
     pub(crate) s3_object: ::std::option::Option<crate::types::S3Object>,
 }

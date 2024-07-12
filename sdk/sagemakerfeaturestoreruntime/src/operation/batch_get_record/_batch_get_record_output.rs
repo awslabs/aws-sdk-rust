@@ -44,8 +44,8 @@ impl BatchGetRecordOutput {
 }
 
 /// A builder for [`BatchGetRecordOutput`](crate::operation::batch_get_record::BatchGetRecordOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetRecordOutputBuilder {
     pub(crate) records: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetRecordResultDetail>>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetRecordError>>,

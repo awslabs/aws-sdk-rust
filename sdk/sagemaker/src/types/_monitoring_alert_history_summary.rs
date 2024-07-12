@@ -39,8 +39,8 @@ impl MonitoringAlertHistorySummary {
 }
 
 /// A builder for [`MonitoringAlertHistorySummary`](crate::types::MonitoringAlertHistorySummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MonitoringAlertHistorySummaryBuilder {
     pub(crate) monitoring_schedule_name: ::std::option::Option<::std::string::String>,
     pub(crate) monitoring_alert_name: ::std::option::Option<::std::string::String>,

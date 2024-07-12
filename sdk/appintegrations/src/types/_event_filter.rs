@@ -22,8 +22,8 @@ impl EventFilter {
 }
 
 /// A builder for [`EventFilter`](crate::types::EventFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EventFilterBuilder {
     pub(crate) source: ::std::option::Option<::std::string::String>,
 }

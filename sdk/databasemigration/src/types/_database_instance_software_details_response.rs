@@ -57,8 +57,8 @@ impl DatabaseInstanceSoftwareDetailsResponse {
 }
 
 /// A builder for [`DatabaseInstanceSoftwareDetailsResponse`](crate::types::DatabaseInstanceSoftwareDetailsResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DatabaseInstanceSoftwareDetailsResponseBuilder {
     pub(crate) engine: ::std::option::Option<::std::string::String>,
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,

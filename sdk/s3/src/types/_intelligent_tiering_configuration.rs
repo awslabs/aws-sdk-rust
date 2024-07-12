@@ -42,8 +42,8 @@ impl IntelligentTieringConfiguration {
 }
 
 /// A builder for [`IntelligentTieringConfiguration`](crate::types::IntelligentTieringConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IntelligentTieringConfigurationBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) filter: ::std::option::Option<crate::types::IntelligentTieringFilter>,

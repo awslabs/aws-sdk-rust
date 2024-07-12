@@ -18,8 +18,8 @@ impl DeleteIngressPointOutput {
 }
 
 /// A builder for [`DeleteIngressPointOutput`](crate::operation::delete_ingress_point::DeleteIngressPointOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteIngressPointOutputBuilder {
     _request_id: Option<String>,
 }

@@ -40,8 +40,8 @@ impl UpdateAttributeGroupInput {
 }
 
 /// A builder for [`UpdateAttributeGroupInput`](crate::operation::update_attribute_group::UpdateAttributeGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAttributeGroupInputBuilder {
     pub(crate) attribute_group: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

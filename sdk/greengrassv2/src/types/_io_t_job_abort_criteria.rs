@@ -48,8 +48,8 @@ impl IoTJobAbortCriteria {
 }
 
 /// A builder for [`IoTJobAbortCriteria`](crate::types::IoTJobAbortCriteria).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IoTJobAbortCriteriaBuilder {
     pub(crate) failure_type: ::std::option::Option<crate::types::IoTJobExecutionFailureType>,
     pub(crate) action: ::std::option::Option<crate::types::IoTJobAbortAction>,

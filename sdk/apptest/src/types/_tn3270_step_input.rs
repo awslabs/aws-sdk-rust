@@ -41,8 +41,8 @@ impl Tn3270StepInput {
 }
 
 /// A builder for [`Tn3270StepInput`](crate::types::Tn3270StepInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Tn3270StepInputBuilder {
     pub(crate) resource: ::std::option::Option<crate::types::MainframeResourceSummary>,
     pub(crate) script: ::std::option::Option<crate::types::ScriptSummary>,

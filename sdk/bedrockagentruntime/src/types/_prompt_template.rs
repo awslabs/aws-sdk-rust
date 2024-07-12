@@ -47,8 +47,8 @@ impl PromptTemplate {
 }
 
 /// A builder for [`PromptTemplate`](crate::types::PromptTemplate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PromptTemplateBuilder {
     pub(crate) text_prompt_template: ::std::option::Option<::std::string::String>,
 }

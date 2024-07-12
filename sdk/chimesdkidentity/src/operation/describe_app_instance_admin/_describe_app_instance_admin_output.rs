@@ -26,8 +26,8 @@ impl DescribeAppInstanceAdminOutput {
 }
 
 /// A builder for [`DescribeAppInstanceAdminOutput`](crate::operation::describe_app_instance_admin::DescribeAppInstanceAdminOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAppInstanceAdminOutputBuilder {
     pub(crate) app_instance_admin: ::std::option::Option<crate::types::AppInstanceAdmin>,
     _request_id: Option<String>,

@@ -20,8 +20,8 @@ impl AcceptGrantInput {
 }
 
 /// A builder for [`AcceptGrantInput`](crate::operation::accept_grant::AcceptGrantInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AcceptGrantInputBuilder {
     pub(crate) grant_arn: ::std::option::Option<::std::string::String>,
 }

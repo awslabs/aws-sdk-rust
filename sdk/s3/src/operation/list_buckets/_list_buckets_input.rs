@@ -11,8 +11,8 @@ impl ListBucketsInput {
 }
 
 /// A builder for [`ListBucketsInput`](crate::operation::list_buckets::ListBucketsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListBucketsInputBuilder {}
 impl ListBucketsInputBuilder {
     /// Consumes the builder and constructs a [`ListBucketsInput`](crate::operation::list_buckets::ListBucketsInput).

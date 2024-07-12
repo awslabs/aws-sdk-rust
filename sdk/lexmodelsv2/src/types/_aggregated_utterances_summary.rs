@@ -51,8 +51,8 @@ impl AggregatedUtterancesSummary {
 }
 
 /// A builder for [`AggregatedUtterancesSummary`](crate::types::AggregatedUtterancesSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AggregatedUtterancesSummaryBuilder {
     pub(crate) utterance: ::std::option::Option<::std::string::String>,
     pub(crate) hit_count: ::std::option::Option<i32>,

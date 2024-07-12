@@ -20,8 +20,8 @@ impl GetComponentPolicyInput {
 }
 
 /// A builder for [`GetComponentPolicyInput`](crate::operation::get_component_policy::GetComponentPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetComponentPolicyInputBuilder {
     pub(crate) component_arn: ::std::option::Option<::std::string::String>,
 }

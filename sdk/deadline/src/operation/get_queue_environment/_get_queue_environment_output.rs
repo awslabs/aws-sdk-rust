@@ -94,8 +94,8 @@ impl GetQueueEnvironmentOutput {
 }
 
 /// A builder for [`GetQueueEnvironmentOutput`](crate::operation::get_queue_environment::GetQueueEnvironmentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetQueueEnvironmentOutputBuilder {
     pub(crate) queue_environment_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

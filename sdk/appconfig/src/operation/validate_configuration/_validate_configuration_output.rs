@@ -18,8 +18,8 @@ impl ValidateConfigurationOutput {
 }
 
 /// A builder for [`ValidateConfigurationOutput`](crate::operation::validate_configuration::ValidateConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ValidateConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

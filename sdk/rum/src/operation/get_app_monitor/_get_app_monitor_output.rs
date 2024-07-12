@@ -26,8 +26,8 @@ impl GetAppMonitorOutput {
 }
 
 /// A builder for [`GetAppMonitorOutput`](crate::operation::get_app_monitor::GetAppMonitorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAppMonitorOutputBuilder {
     pub(crate) app_monitor: ::std::option::Option<crate::types::AppMonitor>,
     _request_id: Option<String>,

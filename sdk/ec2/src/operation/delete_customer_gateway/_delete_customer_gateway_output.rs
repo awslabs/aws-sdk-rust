@@ -18,8 +18,8 @@ impl DeleteCustomerGatewayOutput {
 }
 
 /// A builder for [`DeleteCustomerGatewayOutput`](crate::operation::delete_customer_gateway::DeleteCustomerGatewayOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCustomerGatewayOutputBuilder {
     _request_id: Option<String>,
 }

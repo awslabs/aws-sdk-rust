@@ -87,8 +87,8 @@ impl KeyPairInfo {
 }
 
 /// A builder for [`KeyPairInfo`](crate::types::KeyPairInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KeyPairInfoBuilder {
     pub(crate) key_pair_id: ::std::option::Option<::std::string::String>,
     pub(crate) key_fingerprint: ::std::option::Option<::std::string::String>,

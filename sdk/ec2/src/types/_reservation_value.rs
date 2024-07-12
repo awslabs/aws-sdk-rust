@@ -33,8 +33,8 @@ impl ReservationValue {
 }
 
 /// A builder for [`ReservationValue`](crate::types::ReservationValue).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReservationValueBuilder {
     pub(crate) hourly_price: ::std::option::Option<::std::string::String>,
     pub(crate) remaining_total_value: ::std::option::Option<::std::string::String>,

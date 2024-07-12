@@ -77,8 +77,8 @@ impl AuthenticationResult {
 }
 
 /// A builder for [`AuthenticationResult`](crate::types::AuthenticationResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AuthenticationResultBuilder {
     pub(crate) authentication_result_id: ::std::option::Option<::std::string::String>,
     pub(crate) audio_aggregation_started_at: ::std::option::Option<::aws_smithy_types::DateTime>,

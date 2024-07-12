@@ -32,8 +32,8 @@ impl RemoveFlowOutputOutput {
 }
 
 /// A builder for [`RemoveFlowOutputOutput`](crate::operation::remove_flow_output::RemoveFlowOutputOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoveFlowOutputOutputBuilder {
     pub(crate) flow_arn: ::std::option::Option<::std::string::String>,
     pub(crate) output_arn: ::std::option::Option<::std::string::String>,

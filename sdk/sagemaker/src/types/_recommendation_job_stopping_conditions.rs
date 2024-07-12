@@ -35,8 +35,8 @@ impl RecommendationJobStoppingConditions {
 }
 
 /// A builder for [`RecommendationJobStoppingConditions`](crate::types::RecommendationJobStoppingConditions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecommendationJobStoppingConditionsBuilder {
     pub(crate) max_invocations: ::std::option::Option<i32>,
     pub(crate) model_latency_thresholds: ::std::option::Option<::std::vec::Vec<crate::types::ModelLatencyThreshold>>,

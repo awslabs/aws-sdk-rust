@@ -27,8 +27,8 @@ impl UpdateBackendConfigInput {
 }
 
 /// A builder for [`UpdateBackendConfigInput`](crate::operation::update_backend_config::UpdateBackendConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateBackendConfigInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) login_auth_config: ::std::option::Option<crate::types::LoginAuthConfigReqObj>,

@@ -86,8 +86,8 @@ impl GetImportFileTaskOutput {
 }
 
 /// A builder for [`GetImportFileTaskOutput`](crate::operation::get_import_file_task::GetImportFileTaskOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetImportFileTaskOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ImportFileTaskStatus>,

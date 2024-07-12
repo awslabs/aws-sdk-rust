@@ -23,8 +23,8 @@ impl SourceApiAssociationConfig {
 }
 
 /// A builder for [`SourceApiAssociationConfig`](crate::types::SourceApiAssociationConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SourceApiAssociationConfigBuilder {
     pub(crate) merge_type: ::std::option::Option<crate::types::MergeType>,
 }

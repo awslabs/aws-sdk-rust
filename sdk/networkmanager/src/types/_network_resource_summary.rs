@@ -51,8 +51,8 @@ impl NetworkResourceSummary {
 }
 
 /// A builder for [`NetworkResourceSummary`](crate::types::NetworkResourceSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NetworkResourceSummaryBuilder {
     pub(crate) registered_gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,

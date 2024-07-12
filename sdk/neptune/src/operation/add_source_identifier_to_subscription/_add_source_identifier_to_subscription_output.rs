@@ -26,8 +26,8 @@ impl AddSourceIdentifierToSubscriptionOutput {
 }
 
 /// A builder for [`AddSourceIdentifierToSubscriptionOutput`](crate::operation::add_source_identifier_to_subscription::AddSourceIdentifierToSubscriptionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddSourceIdentifierToSubscriptionOutputBuilder {
     pub(crate) event_subscription: ::std::option::Option<crate::types::EventSubscription>,
     _request_id: Option<String>,

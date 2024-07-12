@@ -33,8 +33,8 @@ impl StartTestRunOutput {
 }
 
 /// A builder for [`StartTestRunOutput`](crate::operation::start_test_run::StartTestRunOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartTestRunOutputBuilder {
     pub(crate) test_run_id: ::std::option::Option<::std::string::String>,
     pub(crate) test_run_status: ::std::option::Option<crate::types::TestRunStatus>,

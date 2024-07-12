@@ -136,8 +136,8 @@ impl DescribeDbSnapshotTenantDatabasesInput {
 }
 
 /// A builder for [`DescribeDbSnapshotTenantDatabasesInput`](crate::operation::describe_db_snapshot_tenant_databases::DescribeDbSnapshotTenantDatabasesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDbSnapshotTenantDatabasesInputBuilder {
     pub(crate) db_instance_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) db_snapshot_identifier: ::std::option::Option<::std::string::String>,

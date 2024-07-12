@@ -56,8 +56,8 @@ impl ModifyIpamResourceCidrInput {
 }
 
 /// A builder for [`ModifyIpamResourceCidrInput`](crate::operation::modify_ipam_resource_cidr::ModifyIpamResourceCidrInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyIpamResourceCidrInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,

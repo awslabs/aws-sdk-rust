@@ -19,8 +19,8 @@ impl SetLoadBalancerPoliciesOfListenerOutput {
 }
 
 /// A builder for [`SetLoadBalancerPoliciesOfListenerOutput`](crate::operation::set_load_balancer_policies_of_listener::SetLoadBalancerPoliciesOfListenerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetLoadBalancerPoliciesOfListenerOutputBuilder {
     _request_id: Option<String>,
 }

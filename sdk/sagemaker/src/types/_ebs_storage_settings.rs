@@ -21,8 +21,8 @@ impl EbsStorageSettings {
 }
 
 /// A builder for [`EbsStorageSettings`](crate::types::EbsStorageSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EbsStorageSettingsBuilder {
     pub(crate) ebs_volume_size_in_gb: ::std::option::Option<i32>,
 }

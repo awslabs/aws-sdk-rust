@@ -20,8 +20,8 @@ impl GetSecurityControlDefinitionInput {
 }
 
 /// A builder for [`GetSecurityControlDefinitionInput`](crate::operation::get_security_control_definition::GetSecurityControlDefinitionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSecurityControlDefinitionInputBuilder {
     pub(crate) security_control_id: ::std::option::Option<::std::string::String>,
 }

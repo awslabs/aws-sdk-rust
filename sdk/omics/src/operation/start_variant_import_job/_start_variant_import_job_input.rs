@@ -46,8 +46,8 @@ impl StartVariantImportJobInput {
 }
 
 /// A builder for [`StartVariantImportJobInput`](crate::operation::start_variant_import_job::StartVariantImportJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartVariantImportJobInputBuilder {
     pub(crate) destination_name: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,

@@ -57,8 +57,8 @@ impl EnvironmentLifecycle {
 }
 
 /// A builder for [`EnvironmentLifecycle`](crate::types::EnvironmentLifecycle).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnvironmentLifecycleBuilder {
     pub(crate) status: ::std::option::Option<crate::types::EnvironmentLifecycleStatus>,
     pub(crate) reason: ::std::option::Option<::std::string::String>,

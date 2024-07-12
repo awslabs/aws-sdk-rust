@@ -32,8 +32,8 @@ impl GetIntrospectionSchemaInput {
 }
 
 /// A builder for [`GetIntrospectionSchemaInput`](crate::operation::get_introspection_schema::GetIntrospectionSchemaInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetIntrospectionSchemaInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) format: ::std::option::Option<crate::types::OutputType>,

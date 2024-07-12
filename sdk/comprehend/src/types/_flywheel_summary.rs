@@ -69,8 +69,8 @@ impl FlywheelSummary {
 }
 
 /// A builder for [`FlywheelSummary`](crate::types::FlywheelSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FlywheelSummaryBuilder {
     pub(crate) flywheel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) active_model_arn: ::std::option::Option<::std::string::String>,

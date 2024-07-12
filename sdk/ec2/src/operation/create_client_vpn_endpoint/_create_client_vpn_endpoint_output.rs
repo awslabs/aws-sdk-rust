@@ -38,8 +38,8 @@ impl CreateClientVpnEndpointOutput {
 }
 
 /// A builder for [`CreateClientVpnEndpointOutput`](crate::operation::create_client_vpn_endpoint::CreateClientVpnEndpointOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateClientVpnEndpointOutputBuilder {
     pub(crate) client_vpn_endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ClientVpnEndpointStatus>,

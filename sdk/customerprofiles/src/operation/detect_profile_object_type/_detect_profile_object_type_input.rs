@@ -36,8 +36,8 @@ impl DetectProfileObjectTypeInput {
 }
 
 /// A builder for [`DetectProfileObjectTypeInput`](crate::operation::detect_profile_object_type::DetectProfileObjectTypeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DetectProfileObjectTypeInputBuilder {
     pub(crate) objects: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,

@@ -39,8 +39,8 @@ impl UsageProfileDefinition {
 }
 
 /// A builder for [`UsageProfileDefinition`](crate::types::UsageProfileDefinition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UsageProfileDefinitionBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

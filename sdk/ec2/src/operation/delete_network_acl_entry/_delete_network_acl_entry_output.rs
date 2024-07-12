@@ -18,8 +18,8 @@ impl DeleteNetworkAclEntryOutput {
 }
 
 /// A builder for [`DeleteNetworkAclEntryOutput`](crate::operation::delete_network_acl_entry::DeleteNetworkAclEntryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteNetworkAclEntryOutputBuilder {
     _request_id: Option<String>,
 }

@@ -21,8 +21,8 @@ impl EcsEffectiveRecommendationPreferences {
 }
 
 /// A builder for [`EcsEffectiveRecommendationPreferences`](crate::types::EcsEffectiveRecommendationPreferences).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EcsEffectiveRecommendationPreferencesBuilder {
     pub(crate) savings_estimation_mode: ::std::option::Option<crate::types::EcsSavingsEstimationMode>,
 }

@@ -48,8 +48,8 @@ impl ChangeCidrCollectionInput {
 }
 
 /// A builder for [`ChangeCidrCollectionInput`](crate::operation::change_cidr_collection::ChangeCidrCollectionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ChangeCidrCollectionInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) collection_version: ::std::option::Option<i64>,

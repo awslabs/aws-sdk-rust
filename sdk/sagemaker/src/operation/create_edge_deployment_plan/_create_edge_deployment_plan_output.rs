@@ -26,8 +26,8 @@ impl CreateEdgeDeploymentPlanOutput {
 }
 
 /// A builder for [`CreateEdgeDeploymentPlanOutput`](crate::operation::create_edge_deployment_plan::CreateEdgeDeploymentPlanOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateEdgeDeploymentPlanOutputBuilder {
     pub(crate) edge_deployment_plan_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

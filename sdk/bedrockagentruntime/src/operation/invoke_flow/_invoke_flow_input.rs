@@ -34,8 +34,8 @@ impl InvokeFlowInput {
 }
 
 /// A builder for [`InvokeFlowInput`](crate::operation::invoke_flow::InvokeFlowInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InvokeFlowInputBuilder {
     pub(crate) flow_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) flow_alias_identifier: ::std::option::Option<::std::string::String>,

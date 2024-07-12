@@ -52,8 +52,8 @@ impl CreateHostedZoneOutput {
 }
 
 /// A builder for [`CreateHostedZoneOutput`](crate::operation::create_hosted_zone::CreateHostedZoneOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateHostedZoneOutputBuilder {
     pub(crate) hosted_zone: ::std::option::Option<crate::types::HostedZone>,
     pub(crate) change_info: ::std::option::Option<crate::types::ChangeInfo>,

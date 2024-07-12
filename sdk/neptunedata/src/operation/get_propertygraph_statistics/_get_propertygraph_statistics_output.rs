@@ -33,8 +33,8 @@ impl GetPropertygraphStatisticsOutput {
 }
 
 /// A builder for [`GetPropertygraphStatisticsOutput`](crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPropertygraphStatisticsOutputBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) payload: ::std::option::Option<crate::types::Statistics>,

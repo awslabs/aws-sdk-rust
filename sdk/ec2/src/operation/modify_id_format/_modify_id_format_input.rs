@@ -28,8 +28,8 @@ impl ModifyIdFormatInput {
 }
 
 /// A builder for [`ModifyIdFormatInput`](crate::operation::modify_id_format::ModifyIdFormatInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyIdFormatInputBuilder {
     pub(crate) resource: ::std::option::Option<::std::string::String>,
     pub(crate) use_long_ids: ::std::option::Option<bool>,

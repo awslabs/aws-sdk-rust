@@ -18,8 +18,8 @@ impl UpdateScheduledQueryOutput {
 }
 
 /// A builder for [`UpdateScheduledQueryOutput`](crate::operation::update_scheduled_query::UpdateScheduledQueryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateScheduledQueryOutputBuilder {
     _request_id: Option<String>,
 }

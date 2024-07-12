@@ -46,8 +46,8 @@ impl UpdateSubscriberInput {
 }
 
 /// A builder for [`UpdateSubscriberInput`](crate::operation::update_subscriber::UpdateSubscriberInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSubscriberInputBuilder {
     pub(crate) subscriber_id: ::std::option::Option<::std::string::String>,
     pub(crate) subscriber_identity: ::std::option::Option<crate::types::AwsIdentity>,

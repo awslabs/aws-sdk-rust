@@ -28,8 +28,8 @@ impl PutAttributesOutput {
 }
 
 /// A builder for [`PutAttributesOutput`](crate::operation::put_attributes::PutAttributesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutAttributesOutputBuilder {
     pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
     _request_id: Option<String>,

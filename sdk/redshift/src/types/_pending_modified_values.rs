@@ -102,8 +102,8 @@ impl PendingModifiedValues {
 }
 
 /// A builder for [`PendingModifiedValues`](crate::types::PendingModifiedValues).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PendingModifiedValuesBuilder {
     pub(crate) master_user_password: ::std::option::Option<::std::string::String>,
     pub(crate) node_type: ::std::option::Option<::std::string::String>,

@@ -51,8 +51,8 @@ impl StorageLensGroupAndOperator {
 }
 
 /// A builder for [`StorageLensGroupAndOperator`](crate::types::StorageLensGroupAndOperator).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StorageLensGroupAndOperatorBuilder {
     pub(crate) match_any_prefix: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) match_any_suffix: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -35,8 +35,8 @@ impl KxDeploymentConfiguration {
 }
 
 /// A builder for [`KxDeploymentConfiguration`](crate::types::KxDeploymentConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KxDeploymentConfigurationBuilder {
     pub(crate) deployment_strategy: ::std::option::Option<crate::types::KxDeploymentStrategy>,
 }

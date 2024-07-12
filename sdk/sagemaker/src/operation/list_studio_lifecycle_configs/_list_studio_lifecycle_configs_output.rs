@@ -34,8 +34,8 @@ impl ListStudioLifecycleConfigsOutput {
 }
 
 /// A builder for [`ListStudioLifecycleConfigsOutput`](crate::operation::list_studio_lifecycle_configs::ListStudioLifecycleConfigsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListStudioLifecycleConfigsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) studio_lifecycle_configs: ::std::option::Option<::std::vec::Vec<crate::types::StudioLifecycleConfigDetails>>,

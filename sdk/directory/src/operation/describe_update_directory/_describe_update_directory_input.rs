@@ -38,8 +38,8 @@ impl DescribeUpdateDirectoryInput {
 }
 
 /// A builder for [`DescribeUpdateDirectoryInput`](crate::operation::describe_update_directory::DescribeUpdateDirectoryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeUpdateDirectoryInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) update_type: ::std::option::Option<crate::types::UpdateType>,

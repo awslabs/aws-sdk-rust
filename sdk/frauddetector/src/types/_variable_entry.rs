@@ -53,8 +53,8 @@ impl VariableEntry {
 }
 
 /// A builder for [`VariableEntry`](crate::types::VariableEntry).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VariableEntryBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) data_type: ::std::option::Option<::std::string::String>,

@@ -59,8 +59,8 @@ impl CanadaAdditionalInfo {
 }
 
 /// A builder for [`CanadaAdditionalInfo`](crate::types::CanadaAdditionalInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CanadaAdditionalInfoBuilder {
     pub(crate) provincial_sales_tax_id: ::std::option::Option<::std::string::String>,
     pub(crate) canada_quebec_sales_tax_number: ::std::option::Option<::std::string::String>,

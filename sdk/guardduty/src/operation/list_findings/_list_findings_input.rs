@@ -248,8 +248,8 @@ impl ListFindingsInput {
 }
 
 /// A builder for [`ListFindingsInput`](crate::operation::list_findings::ListFindingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFindingsInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
     pub(crate) finding_criteria: ::std::option::Option<crate::types::FindingCriteria>,

@@ -42,8 +42,8 @@ impl DescribeEffectivePolicyInput {
 }
 
 /// A builder for [`DescribeEffectivePolicyInput`](crate::operation::describe_effective_policy::DescribeEffectivePolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEffectivePolicyInputBuilder {
     pub(crate) policy_type: ::std::option::Option<crate::types::EffectivePolicyType>,
     pub(crate) target_id: ::std::option::Option<::std::string::String>,

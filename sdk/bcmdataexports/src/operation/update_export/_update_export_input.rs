@@ -26,8 +26,8 @@ impl UpdateExportInput {
 }
 
 /// A builder for [`UpdateExportInput`](crate::operation::update_export::UpdateExportInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateExportInputBuilder {
     pub(crate) export_arn: ::std::option::Option<::std::string::String>,
     pub(crate) export: ::std::option::Option<crate::types::Export>,

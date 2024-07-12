@@ -26,8 +26,8 @@ impl GetVoiceTemplateOutput {
 }
 
 /// A builder for [`GetVoiceTemplateOutput`](crate::operation::get_voice_template::GetVoiceTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetVoiceTemplateOutputBuilder {
     pub(crate) voice_template_response: ::std::option::Option<crate::types::VoiceTemplateResponse>,
     _request_id: Option<String>,

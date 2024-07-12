@@ -21,8 +21,8 @@ impl StreamProcessingStopSelector {
 }
 
 /// A builder for [`StreamProcessingStopSelector`](crate::types::StreamProcessingStopSelector).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StreamProcessingStopSelectorBuilder {
     pub(crate) max_duration_in_seconds: ::std::option::Option<i64>,
 }

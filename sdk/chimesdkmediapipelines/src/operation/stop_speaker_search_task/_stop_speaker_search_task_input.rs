@@ -26,8 +26,8 @@ impl StopSpeakerSearchTaskInput {
 }
 
 /// A builder for [`StopSpeakerSearchTaskInput`](crate::operation::stop_speaker_search_task::StopSpeakerSearchTaskInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopSpeakerSearchTaskInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) speaker_search_task_id: ::std::option::Option<::std::string::String>,

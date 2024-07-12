@@ -23,8 +23,8 @@ impl VersionDifferences {
 }
 
 /// A builder for [`VersionDifferences`](crate::types::VersionDifferences).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VersionDifferencesBuilder {
     pub(crate) pillar_differences: ::std::option::Option<::std::vec::Vec<crate::types::PillarDifference>>,
 }

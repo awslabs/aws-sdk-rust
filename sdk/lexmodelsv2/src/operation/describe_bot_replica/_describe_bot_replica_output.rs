@@ -58,8 +58,8 @@ impl DescribeBotReplicaOutput {
 }
 
 /// A builder for [`DescribeBotReplicaOutput`](crate::operation::describe_bot_replica::DescribeBotReplicaOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeBotReplicaOutputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) replica_region: ::std::option::Option<::std::string::String>,

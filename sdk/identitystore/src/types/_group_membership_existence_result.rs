@@ -42,8 +42,8 @@ impl GroupMembershipExistenceResult {
 }
 
 /// A builder for [`GroupMembershipExistenceResult`](crate::types::GroupMembershipExistenceResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GroupMembershipExistenceResultBuilder {
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
     pub(crate) member_id: ::std::option::Option<crate::types::MemberId>,

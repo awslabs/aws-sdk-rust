@@ -21,8 +21,8 @@ impl ResaleAuthorizationLastModifiedDateFilter {
 }
 
 /// A builder for [`ResaleAuthorizationLastModifiedDateFilter`](crate::types::ResaleAuthorizationLastModifiedDateFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResaleAuthorizationLastModifiedDateFilterBuilder {
     pub(crate) date_range: ::std::option::Option<crate::types::ResaleAuthorizationLastModifiedDateFilterDateRange>,
 }

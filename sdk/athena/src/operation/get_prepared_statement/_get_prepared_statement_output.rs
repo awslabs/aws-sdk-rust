@@ -26,8 +26,8 @@ impl GetPreparedStatementOutput {
 }
 
 /// A builder for [`GetPreparedStatementOutput`](crate::operation::get_prepared_statement::GetPreparedStatementOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPreparedStatementOutputBuilder {
     pub(crate) prepared_statement: ::std::option::Option<crate::types::PreparedStatement>,
     _request_id: Option<String>,

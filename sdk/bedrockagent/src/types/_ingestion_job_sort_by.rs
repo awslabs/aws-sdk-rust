@@ -27,8 +27,8 @@ impl IngestionJobSortBy {
 }
 
 /// A builder for [`IngestionJobSortBy`](crate::types::IngestionJobSortBy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IngestionJobSortByBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::IngestionJobSortByAttribute>,
     pub(crate) order: ::std::option::Option<crate::types::SortOrder>,

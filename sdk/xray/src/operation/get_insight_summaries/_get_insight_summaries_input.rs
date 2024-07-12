@@ -58,8 +58,8 @@ impl GetInsightSummariesInput {
 }
 
 /// A builder for [`GetInsightSummariesInput`](crate::operation::get_insight_summaries::GetInsightSummariesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetInsightSummariesInputBuilder {
     pub(crate) states: ::std::option::Option<::std::vec::Vec<crate::types::InsightState>>,
     pub(crate) group_arn: ::std::option::Option<::std::string::String>,

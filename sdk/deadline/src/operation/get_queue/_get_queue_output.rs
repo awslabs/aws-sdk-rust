@@ -163,8 +163,8 @@ impl GetQueueOutput {
 }
 
 /// A builder for [`GetQueueOutput`](crate::operation::get_queue::GetQueueOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetQueueOutputBuilder {
     pub(crate) queue_id: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,

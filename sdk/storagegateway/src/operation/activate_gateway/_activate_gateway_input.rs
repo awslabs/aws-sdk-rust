@@ -95,8 +95,8 @@ impl ActivateGatewayInput {
 }
 
 /// A builder for [`ActivateGatewayInput`](crate::operation::activate_gateway::ActivateGatewayInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ActivateGatewayInputBuilder {
     pub(crate) activation_key: ::std::option::Option<::std::string::String>,
     pub(crate) gateway_name: ::std::option::Option<::std::string::String>,

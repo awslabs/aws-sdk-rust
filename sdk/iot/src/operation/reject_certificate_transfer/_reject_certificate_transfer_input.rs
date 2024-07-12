@@ -27,8 +27,8 @@ impl RejectCertificateTransferInput {
 }
 
 /// A builder for [`RejectCertificateTransferInput`](crate::operation::reject_certificate_transfer::RejectCertificateTransferInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RejectCertificateTransferInputBuilder {
     pub(crate) certificate_id: ::std::option::Option<::std::string::String>,
     pub(crate) reject_reason: ::std::option::Option<::std::string::String>,

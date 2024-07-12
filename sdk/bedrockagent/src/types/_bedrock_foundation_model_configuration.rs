@@ -28,8 +28,8 @@ impl BedrockFoundationModelConfiguration {
 }
 
 /// A builder for [`BedrockFoundationModelConfiguration`](crate::types::BedrockFoundationModelConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BedrockFoundationModelConfigurationBuilder {
     pub(crate) model_arn: ::std::option::Option<::std::string::String>,
     pub(crate) parsing_prompt: ::std::option::Option<crate::types::ParsingPrompt>,

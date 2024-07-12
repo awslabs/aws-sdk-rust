@@ -42,8 +42,8 @@ impl UpdateMetricAttributionInput {
 }
 
 /// A builder for [`UpdateMetricAttributionInput`](crate::operation::update_metric_attribution::UpdateMetricAttributionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateMetricAttributionInputBuilder {
     pub(crate) add_metrics: ::std::option::Option<::std::vec::Vec<crate::types::MetricAttribute>>,
     pub(crate) remove_metrics: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

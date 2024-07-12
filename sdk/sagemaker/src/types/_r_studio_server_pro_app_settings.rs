@@ -27,8 +27,8 @@ impl RStudioServerProAppSettings {
 }
 
 /// A builder for [`RStudioServerProAppSettings`](crate::types::RStudioServerProAppSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RStudioServerProAppSettingsBuilder {
     pub(crate) access_status: ::std::option::Option<crate::types::RStudioServerProAccessStatus>,
     pub(crate) user_group: ::std::option::Option<crate::types::RStudioServerProUserGroup>,

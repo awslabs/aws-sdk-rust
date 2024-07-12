@@ -38,8 +38,8 @@ impl GetBlueprintsInput {
 }
 
 /// A builder for [`GetBlueprintsInput`](crate::operation::get_blueprints::GetBlueprintsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBlueprintsInputBuilder {
     pub(crate) include_inactive: ::std::option::Option<bool>,
     pub(crate) page_token: ::std::option::Option<::std::string::String>,

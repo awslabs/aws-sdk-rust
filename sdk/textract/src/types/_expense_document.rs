@@ -45,8 +45,8 @@ impl ExpenseDocument {
 }
 
 /// A builder for [`ExpenseDocument`](crate::types::ExpenseDocument).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExpenseDocumentBuilder {
     pub(crate) expense_index: ::std::option::Option<i32>,
     pub(crate) summary_fields: ::std::option::Option<::std::vec::Vec<crate::types::ExpenseField>>,

@@ -26,8 +26,8 @@ impl ListTrustAnchorsInput {
 }
 
 /// A builder for [`ListTrustAnchorsInput`](crate::operation::list_trust_anchors::ListTrustAnchorsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTrustAnchorsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) page_size: ::std::option::Option<i32>,

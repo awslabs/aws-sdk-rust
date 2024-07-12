@@ -35,8 +35,8 @@ impl DescribeDomainAutoTunesOutput {
 }
 
 /// A builder for [`DescribeDomainAutoTunesOutput`](crate::operation::describe_domain_auto_tunes::DescribeDomainAutoTunesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDomainAutoTunesOutputBuilder {
     pub(crate) auto_tunes: ::std::option::Option<::std::vec::Vec<crate::types::AutoTune>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

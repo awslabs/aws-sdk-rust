@@ -27,8 +27,8 @@ impl TensorBoardOutputConfig {
 }
 
 /// A builder for [`TensorBoardOutputConfig`](crate::types::TensorBoardOutputConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TensorBoardOutputConfigBuilder {
     pub(crate) local_path: ::std::option::Option<::std::string::String>,
     pub(crate) s3_output_path: ::std::option::Option<::std::string::String>,

@@ -52,8 +52,8 @@ impl AssociateKmsKeyInput {
 }
 
 /// A builder for [`AssociateKmsKeyInput`](crate::operation::associate_kms_key::AssociateKmsKeyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateKmsKeyInputBuilder {
     pub(crate) log_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,

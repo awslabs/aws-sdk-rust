@@ -38,8 +38,8 @@ impl RestoreManagedPrefixListVersionInput {
 }
 
 /// A builder for [`RestoreManagedPrefixListVersionInput`](crate::operation::restore_managed_prefix_list_version::RestoreManagedPrefixListVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RestoreManagedPrefixListVersionInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) prefix_list_id: ::std::option::Option<::std::string::String>,

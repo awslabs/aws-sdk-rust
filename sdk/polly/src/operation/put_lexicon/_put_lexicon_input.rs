@@ -34,8 +34,8 @@ impl PutLexiconInput {
 }
 
 /// A builder for [`PutLexiconInput`](crate::operation::put_lexicon::PutLexiconInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PutLexiconInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) content: ::std::option::Option<::std::string::String>,

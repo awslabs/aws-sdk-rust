@@ -95,8 +95,8 @@ impl NetworkInfo {
 }
 
 /// A builder for [`NetworkInfo`](crate::types::NetworkInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NetworkInfoBuilder {
     pub(crate) network_performance: ::std::option::Option<::std::string::String>,
     pub(crate) maximum_network_interfaces: ::std::option::Option<i32>,

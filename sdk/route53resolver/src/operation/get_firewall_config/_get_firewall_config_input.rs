@@ -20,8 +20,8 @@ impl GetFirewallConfigInput {
 }
 
 /// A builder for [`GetFirewallConfigInput`](crate::operation::get_firewall_config::GetFirewallConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetFirewallConfigInputBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
 }

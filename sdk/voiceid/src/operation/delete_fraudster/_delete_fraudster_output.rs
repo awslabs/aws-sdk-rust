@@ -18,8 +18,8 @@ impl DeleteFraudsterOutput {
 }
 
 /// A builder for [`DeleteFraudsterOutput`](crate::operation::delete_fraudster::DeleteFraudsterOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFraudsterOutputBuilder {
     _request_id: Option<String>,
 }

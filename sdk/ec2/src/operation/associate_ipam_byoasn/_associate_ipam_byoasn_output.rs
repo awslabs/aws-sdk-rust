@@ -26,8 +26,8 @@ impl AssociateIpamByoasnOutput {
 }
 
 /// A builder for [`AssociateIpamByoasnOutput`](crate::operation::associate_ipam_byoasn::AssociateIpamByoasnOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateIpamByoasnOutputBuilder {
     pub(crate) asn_association: ::std::option::Option<crate::types::AsnAssociation>,
     _request_id: Option<String>,

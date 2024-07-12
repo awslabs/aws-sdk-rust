@@ -58,8 +58,8 @@ impl GetLambdaFunctionRecommendationsInput {
 }
 
 /// A builder for [`GetLambdaFunctionRecommendationsInput`](crate::operation::get_lambda_function_recommendations::GetLambdaFunctionRecommendationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLambdaFunctionRecommendationsInputBuilder {
     pub(crate) function_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

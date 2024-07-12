@@ -33,8 +33,8 @@ impl DetectorAdditionalConfigurationResult {
 }
 
 /// A builder for [`DetectorAdditionalConfigurationResult`](crate::types::DetectorAdditionalConfigurationResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetectorAdditionalConfigurationResultBuilder {
     pub(crate) name: ::std::option::Option<crate::types::FeatureAdditionalConfiguration>,
     pub(crate) status: ::std::option::Option<crate::types::FeatureStatus>,

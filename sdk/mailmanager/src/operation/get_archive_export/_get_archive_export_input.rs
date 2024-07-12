@@ -21,8 +21,8 @@ impl GetArchiveExportInput {
 }
 
 /// A builder for [`GetArchiveExportInput`](crate::operation::get_archive_export::GetArchiveExportInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetArchiveExportInputBuilder {
     pub(crate) export_id: ::std::option::Option<::std::string::String>,
 }

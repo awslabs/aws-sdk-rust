@@ -24,8 +24,8 @@ impl PutSolFunctionPackageContentMetadata {
 }
 
 /// A builder for [`PutSolFunctionPackageContentMetadata`](crate::types::PutSolFunctionPackageContentMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutSolFunctionPackageContentMetadataBuilder {
     pub(crate) vnfd: ::std::option::Option<crate::types::FunctionArtifactMeta>,
 }

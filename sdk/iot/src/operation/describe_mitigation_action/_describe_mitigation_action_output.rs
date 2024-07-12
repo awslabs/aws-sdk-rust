@@ -68,8 +68,8 @@ impl DescribeMitigationActionOutput {
 }
 
 /// A builder for [`DescribeMitigationActionOutput`](crate::operation::describe_mitigation_action::DescribeMitigationActionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeMitigationActionOutputBuilder {
     pub(crate) action_name: ::std::option::Option<::std::string::String>,
     pub(crate) action_type: ::std::option::Option<crate::types::MitigationActionType>,

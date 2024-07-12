@@ -46,8 +46,8 @@ impl DeleteImageSetOutput {
 }
 
 /// A builder for [`DeleteImageSetOutput`](crate::operation::delete_image_set::DeleteImageSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteImageSetOutputBuilder {
     pub(crate) datastore_id: ::std::option::Option<::std::string::String>,
     pub(crate) image_set_id: ::std::option::Option<::std::string::String>,

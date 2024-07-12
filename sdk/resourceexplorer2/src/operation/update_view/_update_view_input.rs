@@ -51,8 +51,8 @@ impl UpdateViewInput {
 }
 
 /// A builder for [`UpdateViewInput`](crate::operation::update_view::UpdateViewInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateViewInputBuilder {
     pub(crate) view_arn: ::std::option::Option<::std::string::String>,
     pub(crate) included_properties: ::std::option::Option<::std::vec::Vec<crate::types::IncludedProperty>>,

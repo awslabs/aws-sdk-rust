@@ -20,8 +20,8 @@ impl ValidatePipelineInput {
 }
 
 /// A builder for [`ValidatePipelineInput`](crate::operation::validate_pipeline::ValidatePipelineInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ValidatePipelineInputBuilder {
     pub(crate) pipeline_configuration_body: ::std::option::Option<::std::string::String>,
 }

@@ -29,8 +29,8 @@ impl SnowflakeVpcConfiguration {
 }
 
 /// A builder for [`SnowflakeVpcConfiguration`](crate::types::SnowflakeVpcConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SnowflakeVpcConfigurationBuilder {
     pub(crate) private_link_vpce_id: ::std::option::Option<::std::string::String>,
 }

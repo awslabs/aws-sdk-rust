@@ -42,8 +42,8 @@ impl DescribeTrustStoresInput {
 }
 
 /// A builder for [`DescribeTrustStoresInput`](crate::operation::describe_trust_stores::DescribeTrustStoresInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTrustStoresInputBuilder {
     pub(crate) trust_store_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

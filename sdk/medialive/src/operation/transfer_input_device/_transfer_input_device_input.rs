@@ -39,8 +39,8 @@ impl TransferInputDeviceInput {
 }
 
 /// A builder for [`TransferInputDeviceInput`](crate::operation::transfer_input_device::TransferInputDeviceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TransferInputDeviceInputBuilder {
     pub(crate) input_device_id: ::std::option::Option<::std::string::String>,
     pub(crate) target_customer_id: ::std::option::Option<::std::string::String>,

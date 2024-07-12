@@ -46,8 +46,8 @@ impl StartBackupJobOutput {
 }
 
 /// A builder for [`StartBackupJobOutput`](crate::operation::start_backup_job::StartBackupJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartBackupJobOutputBuilder {
     pub(crate) backup_job_id: ::std::option::Option<::std::string::String>,
     pub(crate) recovery_point_arn: ::std::option::Option<::std::string::String>,

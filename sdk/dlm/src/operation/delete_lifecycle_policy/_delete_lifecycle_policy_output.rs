@@ -18,8 +18,8 @@ impl DeleteLifecyclePolicyOutput {
 }
 
 /// A builder for [`DeleteLifecyclePolicyOutput`](crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteLifecyclePolicyOutputBuilder {
     _request_id: Option<String>,
 }

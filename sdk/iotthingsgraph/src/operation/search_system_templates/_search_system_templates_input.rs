@@ -34,8 +34,8 @@ impl SearchSystemTemplatesInput {
 }
 
 /// A builder for [`SearchSystemTemplatesInput`](crate::operation::search_system_templates::SearchSystemTemplatesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchSystemTemplatesInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::SystemTemplateFilter>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

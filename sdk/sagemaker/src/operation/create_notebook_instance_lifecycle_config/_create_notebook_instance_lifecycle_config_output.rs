@@ -26,8 +26,8 @@ impl CreateNotebookInstanceLifecycleConfigOutput {
 }
 
 /// A builder for [`CreateNotebookInstanceLifecycleConfigOutput`](crate::operation::create_notebook_instance_lifecycle_config::CreateNotebookInstanceLifecycleConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateNotebookInstanceLifecycleConfigOutputBuilder {
     pub(crate) notebook_instance_lifecycle_config_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

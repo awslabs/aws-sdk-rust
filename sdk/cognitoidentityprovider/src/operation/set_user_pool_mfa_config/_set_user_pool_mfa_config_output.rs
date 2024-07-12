@@ -54,8 +54,8 @@ impl SetUserPoolMfaConfigOutput {
 }
 
 /// A builder for [`SetUserPoolMfaConfigOutput`](crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetUserPoolMfaConfigOutputBuilder {
     pub(crate) sms_mfa_configuration: ::std::option::Option<crate::types::SmsMfaConfigType>,
     pub(crate) software_token_mfa_configuration: ::std::option::Option<crate::types::SoftwareTokenMfaConfigType>,

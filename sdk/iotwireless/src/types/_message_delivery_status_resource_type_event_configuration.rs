@@ -21,8 +21,8 @@ impl MessageDeliveryStatusResourceTypeEventConfiguration {
 }
 
 /// A builder for [`MessageDeliveryStatusResourceTypeEventConfiguration`](crate::types::MessageDeliveryStatusResourceTypeEventConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MessageDeliveryStatusResourceTypeEventConfigurationBuilder {
     pub(crate) sidewalk: ::std::option::Option<crate::types::SidewalkResourceTypeEventConfiguration>,
 }

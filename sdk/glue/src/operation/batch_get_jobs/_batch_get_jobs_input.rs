@@ -22,8 +22,8 @@ impl BatchGetJobsInput {
 }
 
 /// A builder for [`BatchGetJobsInput`](crate::operation::batch_get_jobs::BatchGetJobsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetJobsInputBuilder {
     pub(crate) job_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

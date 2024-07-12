@@ -18,8 +18,8 @@ impl RemoveAccountFromOrganizationOutput {
 }
 
 /// A builder for [`RemoveAccountFromOrganizationOutput`](crate::operation::remove_account_from_organization::RemoveAccountFromOrganizationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoveAccountFromOrganizationOutputBuilder {
     _request_id: Option<String>,
 }

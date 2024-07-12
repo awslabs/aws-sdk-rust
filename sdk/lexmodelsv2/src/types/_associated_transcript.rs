@@ -21,8 +21,8 @@ impl AssociatedTranscript {
 }
 
 /// A builder for [`AssociatedTranscript`](crate::types::AssociatedTranscript).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociatedTranscriptBuilder {
     pub(crate) transcript: ::std::option::Option<::std::string::String>,
 }

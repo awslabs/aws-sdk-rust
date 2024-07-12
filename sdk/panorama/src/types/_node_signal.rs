@@ -28,8 +28,8 @@ impl NodeSignal {
 }
 
 /// A builder for [`NodeSignal`](crate::types::NodeSignal).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NodeSignalBuilder {
     pub(crate) node_instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) signal: ::std::option::Option<crate::types::NodeSignalValue>,

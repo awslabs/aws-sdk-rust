@@ -26,8 +26,8 @@ impl ConnectAppAuthorizationOutput {
 }
 
 /// A builder for [`ConnectAppAuthorizationOutput`](crate::operation::connect_app_authorization::ConnectAppAuthorizationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConnectAppAuthorizationOutputBuilder {
     pub(crate) app_authorization_summary: ::std::option::Option<crate::types::AppAuthorizationSummary>,
     _request_id: Option<String>,

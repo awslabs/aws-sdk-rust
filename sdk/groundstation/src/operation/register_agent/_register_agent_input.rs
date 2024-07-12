@@ -26,8 +26,8 @@ impl RegisterAgentInput {
 }
 
 /// A builder for [`RegisterAgentInput`](crate::operation::register_agent::RegisterAgentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterAgentInputBuilder {
     pub(crate) discovery_data: ::std::option::Option<crate::types::DiscoveryData>,
     pub(crate) agent_details: ::std::option::Option<crate::types::AgentDetails>,

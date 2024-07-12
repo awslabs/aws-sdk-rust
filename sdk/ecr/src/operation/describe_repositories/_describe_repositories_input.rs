@@ -44,8 +44,8 @@ impl DescribeRepositoriesInput {
 }
 
 /// A builder for [`DescribeRepositoriesInput`](crate::operation::describe_repositories::DescribeRepositoriesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRepositoriesInputBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
     pub(crate) repository_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

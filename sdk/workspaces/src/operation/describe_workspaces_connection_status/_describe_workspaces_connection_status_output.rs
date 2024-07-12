@@ -34,8 +34,8 @@ impl DescribeWorkspacesConnectionStatusOutput {
 }
 
 /// A builder for [`DescribeWorkspacesConnectionStatusOutput`](crate::operation::describe_workspaces_connection_status::DescribeWorkspacesConnectionStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeWorkspacesConnectionStatusOutputBuilder {
     pub(crate) workspaces_connection_status: ::std::option::Option<::std::vec::Vec<crate::types::WorkspaceConnectionStatus>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

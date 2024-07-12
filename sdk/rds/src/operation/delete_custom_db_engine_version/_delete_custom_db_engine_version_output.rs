@@ -265,8 +265,8 @@ impl DeleteCustomDbEngineVersionOutput {
 }
 
 /// A builder for [`DeleteCustomDbEngineVersionOutput`](crate::operation::delete_custom_db_engine_version::DeleteCustomDbEngineVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCustomDbEngineVersionOutputBuilder {
     pub(crate) engine: ::std::option::Option<::std::string::String>,
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,

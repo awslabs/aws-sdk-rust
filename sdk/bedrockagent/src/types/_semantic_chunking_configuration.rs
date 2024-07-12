@@ -35,8 +35,8 @@ impl SemanticChunkingConfiguration {
 }
 
 /// A builder for [`SemanticChunkingConfiguration`](crate::types::SemanticChunkingConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SemanticChunkingConfigurationBuilder {
     pub(crate) max_tokens: ::std::option::Option<i32>,
     pub(crate) buffer_size: ::std::option::Option<i32>,

@@ -26,8 +26,8 @@ impl DeleteEventsConfigurationInput {
 }
 
 /// A builder for [`DeleteEventsConfigurationInput`](crate::operation::delete_events_configuration::DeleteEventsConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteEventsConfigurationInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,

@@ -91,8 +91,8 @@ impl CreateInputInput {
 }
 
 /// A builder for [`CreateInputInput`](crate::operation::create_input::CreateInputInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateInputInputBuilder {
     pub(crate) destinations: ::std::option::Option<::std::vec::Vec<crate::types::InputDestinationRequest>>,
     pub(crate) input_devices: ::std::option::Option<::std::vec::Vec<crate::types::InputDeviceSettings>>,

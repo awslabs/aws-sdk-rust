@@ -11,8 +11,8 @@ impl ImportServerCatalogInput {
 }
 
 /// A builder for [`ImportServerCatalogInput`](crate::operation::import_server_catalog::ImportServerCatalogInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportServerCatalogInputBuilder {}
 impl ImportServerCatalogInputBuilder {
     /// Consumes the builder and constructs a [`ImportServerCatalogInput`](crate::operation::import_server_catalog::ImportServerCatalogInput).

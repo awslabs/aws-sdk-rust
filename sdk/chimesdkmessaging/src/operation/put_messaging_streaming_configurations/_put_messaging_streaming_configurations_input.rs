@@ -28,8 +28,8 @@ impl PutMessagingStreamingConfigurationsInput {
 }
 
 /// A builder for [`PutMessagingStreamingConfigurationsInput`](crate::operation::put_messaging_streaming_configurations::PutMessagingStreamingConfigurationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutMessagingStreamingConfigurationsInputBuilder {
     pub(crate) app_instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) streaming_configurations: ::std::option::Option<::std::vec::Vec<crate::types::StreamingConfiguration>>,

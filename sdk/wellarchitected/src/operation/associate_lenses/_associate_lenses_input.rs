@@ -31,8 +31,8 @@ impl AssociateLensesInput {
 }
 
 /// A builder for [`AssociateLensesInput`](crate::operation::associate_lenses::AssociateLensesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateLensesInputBuilder {
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,
     pub(crate) lens_aliases: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

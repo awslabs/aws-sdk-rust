@@ -34,8 +34,8 @@ impl ListEdgeAgentConfigurationsOutput {
 }
 
 /// A builder for [`ListEdgeAgentConfigurationsOutput`](crate::operation::list_edge_agent_configurations::ListEdgeAgentConfigurationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEdgeAgentConfigurationsOutputBuilder {
     pub(crate) edge_configs: ::std::option::Option<::std::vec::Vec<crate::types::ListEdgeAgentConfigurationsEdgeConfig>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

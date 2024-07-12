@@ -29,8 +29,8 @@ impl S3DataRepositoryConfiguration {
 }
 
 /// A builder for [`S3DataRepositoryConfiguration`](crate::types::S3DataRepositoryConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3DataRepositoryConfigurationBuilder {
     pub(crate) auto_import_policy: ::std::option::Option<crate::types::AutoImportPolicy>,
     pub(crate) auto_export_policy: ::std::option::Option<crate::types::AutoExportPolicy>,

@@ -42,8 +42,8 @@ impl UpdateEnvironmentAccountConnectionInput {
 }
 
 /// A builder for [`UpdateEnvironmentAccountConnectionInput`](crate::operation::update_environment_account_connection::UpdateEnvironmentAccountConnectionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateEnvironmentAccountConnectionInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,

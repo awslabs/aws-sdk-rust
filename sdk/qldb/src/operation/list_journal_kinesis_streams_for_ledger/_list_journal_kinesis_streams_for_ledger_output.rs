@@ -44,8 +44,8 @@ impl ListJournalKinesisStreamsForLedgerOutput {
 }
 
 /// A builder for [`ListJournalKinesisStreamsForLedgerOutput`](crate::operation::list_journal_kinesis_streams_for_ledger::ListJournalKinesisStreamsForLedgerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListJournalKinesisStreamsForLedgerOutputBuilder {
     pub(crate) streams: ::std::option::Option<::std::vec::Vec<crate::types::JournalKinesisStreamDescription>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

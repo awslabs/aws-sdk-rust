@@ -83,8 +83,8 @@ impl ClusterNodeDetails {
 }
 
 /// A builder for [`ClusterNodeDetails`](crate::types::ClusterNodeDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ClusterNodeDetailsBuilder {
     pub(crate) instance_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,

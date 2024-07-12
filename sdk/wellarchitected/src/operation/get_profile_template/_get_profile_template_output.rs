@@ -26,8 +26,8 @@ impl GetProfileTemplateOutput {
 }
 
 /// A builder for [`GetProfileTemplateOutput`](crate::operation::get_profile_template::GetProfileTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetProfileTemplateOutputBuilder {
     pub(crate) profile_template: ::std::option::Option<crate::types::ProfileTemplate>,
     _request_id: Option<String>,

@@ -26,8 +26,8 @@ impl ExecuteOpenCypherExplainQueryOutput {
 }
 
 /// A builder for [`ExecuteOpenCypherExplainQueryOutput`](crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExecuteOpenCypherExplainQueryOutputBuilder {
     pub(crate) results: ::std::option::Option<::aws_smithy_types::Blob>,
     _request_id: Option<String>,

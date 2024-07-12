@@ -28,8 +28,8 @@ impl DescribeBundleTasksOutput {
 }
 
 /// A builder for [`DescribeBundleTasksOutput`](crate::operation::describe_bundle_tasks::DescribeBundleTasksOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeBundleTasksOutputBuilder {
     pub(crate) bundle_tasks: ::std::option::Option<::std::vec::Vec<crate::types::BundleTask>>,
     _request_id: Option<String>,

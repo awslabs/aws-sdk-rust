@@ -67,8 +67,8 @@ impl AssumeRoleForPodIdentityOutput {
 }
 
 /// A builder for [`AssumeRoleForPodIdentityOutput`](crate::operation::assume_role_for_pod_identity::AssumeRoleForPodIdentityOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AssumeRoleForPodIdentityOutputBuilder {
     pub(crate) subject: ::std::option::Option<crate::types::Subject>,
     pub(crate) audience: ::std::option::Option<::std::string::String>,

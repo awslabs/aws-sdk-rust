@@ -123,8 +123,8 @@ impl StorageVirtualMachine {
 }
 
 /// A builder for [`StorageVirtualMachine`](crate::types::StorageVirtualMachine).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StorageVirtualMachineBuilder {
     pub(crate) active_directory_configuration: ::std::option::Option<crate::types::SvmActiveDirectoryConfiguration>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,

@@ -11,8 +11,8 @@ impl DescribeCrossAccountAccessRoleInput {
 }
 
 /// A builder for [`DescribeCrossAccountAccessRoleInput`](crate::operation::describe_cross_account_access_role::DescribeCrossAccountAccessRoleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCrossAccountAccessRoleInputBuilder {}
 impl DescribeCrossAccountAccessRoleInputBuilder {
     /// Consumes the builder and constructs a [`DescribeCrossAccountAccessRoleInput`](crate::operation::describe_cross_account_access_role::DescribeCrossAccountAccessRoleInput).

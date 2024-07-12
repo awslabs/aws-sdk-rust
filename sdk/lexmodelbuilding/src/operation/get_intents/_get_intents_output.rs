@@ -34,8 +34,8 @@ impl GetIntentsOutput {
 }
 
 /// A builder for [`GetIntentsOutput`](crate::operation::get_intents::GetIntentsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetIntentsOutputBuilder {
     pub(crate) intents: ::std::option::Option<::std::vec::Vec<crate::types::IntentMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

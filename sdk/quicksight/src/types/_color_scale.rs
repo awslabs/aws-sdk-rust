@@ -34,8 +34,8 @@ impl ColorScale {
 }
 
 /// A builder for [`ColorScale`](crate::types::ColorScale).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ColorScaleBuilder {
     pub(crate) colors: ::std::option::Option<::std::vec::Vec<crate::types::DataColor>>,
     pub(crate) color_fill_type: ::std::option::Option<crate::types::ColorFillType>,

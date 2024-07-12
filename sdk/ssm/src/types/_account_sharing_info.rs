@@ -27,8 +27,8 @@ impl AccountSharingInfo {
 }
 
 /// A builder for [`AccountSharingInfo`](crate::types::AccountSharingInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AccountSharingInfoBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) shared_document_version: ::std::option::Option<::std::string::String>,

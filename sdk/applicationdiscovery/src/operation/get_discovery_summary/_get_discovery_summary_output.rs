@@ -68,8 +68,8 @@ impl GetDiscoverySummaryOutput {
 }
 
 /// A builder for [`GetDiscoverySummaryOutput`](crate::operation::get_discovery_summary::GetDiscoverySummaryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDiscoverySummaryOutputBuilder {
     pub(crate) servers: ::std::option::Option<i64>,
     pub(crate) applications: ::std::option::Option<i64>,

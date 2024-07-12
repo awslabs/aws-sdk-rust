@@ -18,8 +18,8 @@ impl DeleteConfigurationProfileOutput {
 }
 
 /// A builder for [`DeleteConfigurationProfileOutput`](crate::operation::delete_configuration_profile::DeleteConfigurationProfileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteConfigurationProfileOutputBuilder {
     _request_id: Option<String>,
 }

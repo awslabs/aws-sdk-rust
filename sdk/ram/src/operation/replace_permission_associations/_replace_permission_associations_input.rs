@@ -44,8 +44,8 @@ impl ReplacePermissionAssociationsInput {
 }
 
 /// A builder for [`ReplacePermissionAssociationsInput`](crate::operation::replace_permission_associations::ReplacePermissionAssociationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReplacePermissionAssociationsInputBuilder {
     pub(crate) from_permission_arn: ::std::option::Option<::std::string::String>,
     pub(crate) from_permission_version: ::std::option::Option<i32>,

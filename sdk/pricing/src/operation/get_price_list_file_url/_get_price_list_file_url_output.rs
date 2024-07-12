@@ -26,8 +26,8 @@ impl GetPriceListFileUrlOutput {
 }
 
 /// A builder for [`GetPriceListFileUrlOutput`](crate::operation::get_price_list_file_url::GetPriceListFileUrlOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPriceListFileUrlOutputBuilder {
     pub(crate) url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

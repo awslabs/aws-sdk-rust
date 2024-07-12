@@ -27,8 +27,8 @@ impl AddonDetails {
 }
 
 /// A builder for [`AddonDetails`](crate::types::AddonDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddonDetailsBuilder {
     pub(crate) addon_version: ::std::option::Option<::std::string::String>,
     pub(crate) addon_status: ::std::option::Option<::std::string::String>,

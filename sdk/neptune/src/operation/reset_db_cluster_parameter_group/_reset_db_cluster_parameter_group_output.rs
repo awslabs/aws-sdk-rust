@@ -48,8 +48,8 @@ impl ResetDbClusterParameterGroupOutput {
 }
 
 /// A builder for [`ResetDbClusterParameterGroupOutput`](crate::operation::reset_db_cluster_parameter_group::ResetDbClusterParameterGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResetDbClusterParameterGroupOutputBuilder {
     pub(crate) db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

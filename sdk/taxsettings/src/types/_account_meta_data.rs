@@ -56,8 +56,8 @@ impl AccountMetaData {
 }
 
 /// A builder for [`AccountMetaData`](crate::types::AccountMetaData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AccountMetaDataBuilder {
     pub(crate) account_name: ::std::option::Option<::std::string::String>,
     pub(crate) seller: ::std::option::Option<::std::string::String>,

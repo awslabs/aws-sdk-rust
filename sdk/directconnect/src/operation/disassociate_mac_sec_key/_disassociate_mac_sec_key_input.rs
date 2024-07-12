@@ -30,8 +30,8 @@ impl DisassociateMacSecKeyInput {
 }
 
 /// A builder for [`DisassociateMacSecKeyInput`](crate::operation::disassociate_mac_sec_key::DisassociateMacSecKeyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateMacSecKeyInputBuilder {
     pub(crate) connection_id: ::std::option::Option<::std::string::String>,
     pub(crate) secret_arn: ::std::option::Option<::std::string::String>,

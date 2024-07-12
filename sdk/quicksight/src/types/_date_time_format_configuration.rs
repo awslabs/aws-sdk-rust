@@ -33,8 +33,8 @@ impl DateTimeFormatConfiguration {
 }
 
 /// A builder for [`DateTimeFormatConfiguration`](crate::types::DateTimeFormatConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DateTimeFormatConfigurationBuilder {
     pub(crate) date_time_format: ::std::option::Option<::std::string::String>,
     pub(crate) null_value_format_configuration: ::std::option::Option<crate::types::NullValueFormatConfiguration>,

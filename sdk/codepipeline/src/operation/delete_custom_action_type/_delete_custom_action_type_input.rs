@@ -33,8 +33,8 @@ impl DeleteCustomActionTypeInput {
 }
 
 /// A builder for [`DeleteCustomActionTypeInput`](crate::operation::delete_custom_action_type::DeleteCustomActionTypeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCustomActionTypeInputBuilder {
     pub(crate) category: ::std::option::Option<crate::types::ActionCategory>,
     pub(crate) provider: ::std::option::Option<::std::string::String>,

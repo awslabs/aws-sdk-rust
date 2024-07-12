@@ -58,8 +58,8 @@ impl GetFindingStatisticsInput {
 }
 
 /// A builder for [`GetFindingStatisticsInput`](crate::operation::get_finding_statistics::GetFindingStatisticsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetFindingStatisticsInputBuilder {
     pub(crate) finding_criteria: ::std::option::Option<crate::types::FindingCriteria>,
     pub(crate) group_by: ::std::option::Option<crate::types::GroupBy>,

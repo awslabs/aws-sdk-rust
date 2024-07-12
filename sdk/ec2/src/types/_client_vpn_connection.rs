@@ -101,8 +101,8 @@ impl ClientVpnConnection {
 }
 
 /// A builder for [`ClientVpnConnection`](crate::types::ClientVpnConnection).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ClientVpnConnectionBuilder {
     pub(crate) client_vpn_endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) timestamp: ::std::option::Option<::std::string::String>,

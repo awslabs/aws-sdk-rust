@@ -64,8 +64,8 @@ impl RestoreTestingSelectionForUpdate {
 }
 
 /// A builder for [`RestoreTestingSelectionForUpdate`](crate::types::RestoreTestingSelectionForUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct RestoreTestingSelectionForUpdateBuilder {
     pub(crate) iam_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) protected_resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

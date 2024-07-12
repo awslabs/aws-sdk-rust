@@ -39,8 +39,8 @@ impl DolbyVision {
 }
 
 /// A builder for [`DolbyVision`](crate::types::DolbyVision).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DolbyVisionBuilder {
     pub(crate) l6_metadata: ::std::option::Option<crate::types::DolbyVisionLevel6Metadata>,
     pub(crate) l6_mode: ::std::option::Option<crate::types::DolbyVisionLevel6Mode>,

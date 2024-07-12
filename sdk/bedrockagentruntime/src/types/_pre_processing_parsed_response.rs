@@ -35,8 +35,8 @@ impl PreProcessingParsedResponse {
 }
 
 /// A builder for [`PreProcessingParsedResponse`](crate::types::PreProcessingParsedResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PreProcessingParsedResponseBuilder {
     pub(crate) rationale: ::std::option::Option<::std::string::String>,
     pub(crate) is_valid: ::std::option::Option<bool>,

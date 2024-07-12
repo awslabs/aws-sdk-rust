@@ -34,8 +34,8 @@ impl ListIdMappingWorkflowsOutput {
 }
 
 /// A builder for [`ListIdMappingWorkflowsOutput`](crate::operation::list_id_mapping_workflows::ListIdMappingWorkflowsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListIdMappingWorkflowsOutputBuilder {
     pub(crate) workflow_summaries: ::std::option::Option<::std::vec::Vec<crate::types::IdMappingWorkflowSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

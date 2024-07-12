@@ -136,8 +136,8 @@ impl CreatePersistentContactAssociationInput {
 }
 
 /// A builder for [`CreatePersistentContactAssociationInput`](crate::operation::create_persistent_contact_association::CreatePersistentContactAssociationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePersistentContactAssociationInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) initial_contact_id: ::std::option::Option<::std::string::String>,

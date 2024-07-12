@@ -26,8 +26,8 @@ impl QueryWhatIfForecastOutput {
 }
 
 /// A builder for [`QueryWhatIfForecastOutput`](crate::operation::query_what_if_forecast::QueryWhatIfForecastOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct QueryWhatIfForecastOutputBuilder {
     pub(crate) forecast: ::std::option::Option<crate::types::Forecast>,
     _request_id: Option<String>,

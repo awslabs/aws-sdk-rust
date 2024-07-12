@@ -20,8 +20,8 @@ impl GetAddonSubscriptionInput {
 }
 
 /// A builder for [`GetAddonSubscriptionInput`](crate::operation::get_addon_subscription::GetAddonSubscriptionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAddonSubscriptionInputBuilder {
     pub(crate) addon_subscription_id: ::std::option::Option<::std::string::String>,
 }

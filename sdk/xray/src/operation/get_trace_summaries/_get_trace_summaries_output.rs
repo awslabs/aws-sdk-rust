@@ -46,8 +46,8 @@ impl GetTraceSummariesOutput {
 }
 
 /// A builder for [`GetTraceSummariesOutput`](crate::operation::get_trace_summaries::GetTraceSummariesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTraceSummariesOutputBuilder {
     pub(crate) trace_summaries: ::std::option::Option<::std::vec::Vec<crate::types::TraceSummary>>,
     pub(crate) approximate_time: ::std::option::Option<::aws_smithy_types::DateTime>,

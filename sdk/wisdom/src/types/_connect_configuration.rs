@@ -21,8 +21,8 @@ impl ConnectConfiguration {
 }
 
 /// A builder for [`ConnectConfiguration`](crate::types::ConnectConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConnectConfigurationBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
 }

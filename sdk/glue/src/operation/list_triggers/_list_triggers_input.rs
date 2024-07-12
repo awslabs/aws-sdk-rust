@@ -38,8 +38,8 @@ impl ListTriggersInput {
 }
 
 /// A builder for [`ListTriggersInput`](crate::operation::list_triggers::ListTriggersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTriggersInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) dependent_job_name: ::std::option::Option<::std::string::String>,

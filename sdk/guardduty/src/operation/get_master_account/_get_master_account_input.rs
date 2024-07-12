@@ -21,8 +21,8 @@ impl GetMasterAccountInput {
 }
 
 /// A builder for [`GetMasterAccountInput`](crate::operation::get_master_account::GetMasterAccountInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMasterAccountInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
 }

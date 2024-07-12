@@ -26,8 +26,8 @@ impl GetRepositoryEndpointOutput {
 }
 
 /// A builder for [`GetRepositoryEndpointOutput`](crate::operation::get_repository_endpoint::GetRepositoryEndpointOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRepositoryEndpointOutputBuilder {
     pub(crate) repository_endpoint: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

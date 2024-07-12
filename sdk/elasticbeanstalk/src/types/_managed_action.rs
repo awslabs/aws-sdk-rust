@@ -45,8 +45,8 @@ impl ManagedAction {
 }
 
 /// A builder for [`ManagedAction`](crate::types::ManagedAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ManagedActionBuilder {
     pub(crate) action_id: ::std::option::Option<::std::string::String>,
     pub(crate) action_description: ::std::option::Option<::std::string::String>,

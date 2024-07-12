@@ -45,8 +45,8 @@ impl Position {
 }
 
 /// A builder for [`Position`](crate::types::Position).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PositionBuilder {
     pub(crate) latitude: ::std::option::Option<f64>,
     pub(crate) longitude: ::std::option::Option<f64>,

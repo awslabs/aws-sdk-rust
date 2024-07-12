@@ -23,8 +23,8 @@ impl RegisteredUserQSearchBarEmbeddingConfiguration {
 }
 
 /// A builder for [`RegisteredUserQSearchBarEmbeddingConfiguration`](crate::types::RegisteredUserQSearchBarEmbeddingConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisteredUserQSearchBarEmbeddingConfigurationBuilder {
     pub(crate) initial_topic_id: ::std::option::Option<::std::string::String>,
 }

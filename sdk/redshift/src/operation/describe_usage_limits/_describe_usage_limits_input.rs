@@ -64,8 +64,8 @@ impl DescribeUsageLimitsInput {
 }
 
 /// A builder for [`DescribeUsageLimitsInput`](crate::operation::describe_usage_limits::DescribeUsageLimitsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeUsageLimitsInputBuilder {
     pub(crate) usage_limit_id: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,

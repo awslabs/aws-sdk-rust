@@ -28,8 +28,8 @@ impl PutActionInteractionsInput {
 }
 
 /// A builder for [`PutActionInteractionsInput`](crate::operation::put_action_interactions::PutActionInteractionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutActionInteractionsInputBuilder {
     pub(crate) tracking_id: ::std::option::Option<::std::string::String>,
     pub(crate) action_interactions: ::std::option::Option<::std::vec::Vec<crate::types::ActionInteraction>>,

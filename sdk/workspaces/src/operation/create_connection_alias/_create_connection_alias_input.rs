@@ -32,8 +32,8 @@ impl CreateConnectionAliasInput {
 }
 
 /// A builder for [`CreateConnectionAliasInput`](crate::operation::create_connection_alias::CreateConnectionAliasInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateConnectionAliasInputBuilder {
     pub(crate) connection_string: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,

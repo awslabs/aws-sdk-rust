@@ -86,8 +86,8 @@ impl AssociateResourceShareInput {
 }
 
 /// A builder for [`AssociateResourceShareInput`](crate::operation::associate_resource_share::AssociateResourceShareInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateResourceShareInputBuilder {
     pub(crate) resource_share_arn: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

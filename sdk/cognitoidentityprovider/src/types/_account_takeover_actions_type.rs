@@ -33,8 +33,8 @@ impl AccountTakeoverActionsType {
 }
 
 /// A builder for [`AccountTakeoverActionsType`](crate::types::AccountTakeoverActionsType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AccountTakeoverActionsTypeBuilder {
     pub(crate) low_action: ::std::option::Option<crate::types::AccountTakeoverActionType>,
     pub(crate) medium_action: ::std::option::Option<crate::types::AccountTakeoverActionType>,

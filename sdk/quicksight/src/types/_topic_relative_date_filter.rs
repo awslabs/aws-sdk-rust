@@ -42,8 +42,8 @@ impl TopicRelativeDateFilter {
 }
 
 /// A builder for [`TopicRelativeDateFilter`](crate::types::TopicRelativeDateFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct TopicRelativeDateFilterBuilder {
     pub(crate) time_granularity: ::std::option::Option<crate::types::TopicTimeGranularity>,
     pub(crate) relative_date_filter_function: ::std::option::Option<crate::types::TopicRelativeDateFilterFunction>,

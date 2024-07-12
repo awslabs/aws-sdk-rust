@@ -28,8 +28,8 @@ impl GetJobTaggingOutput {
 }
 
 /// A builder for [`GetJobTaggingOutput`](crate::operation::get_job_tagging::GetJobTaggingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetJobTaggingOutputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::S3Tag>>,
     _request_id: Option<String>,

@@ -38,8 +38,8 @@ impl DescribeStaleSecurityGroupsInput {
 }
 
 /// A builder for [`DescribeStaleSecurityGroupsInput`](crate::operation::describe_stale_security_groups::DescribeStaleSecurityGroupsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeStaleSecurityGroupsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) max_results: ::std::option::Option<i32>,

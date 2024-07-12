@@ -133,8 +133,8 @@ impl BarChartConfiguration {
 }
 
 /// A builder for [`BarChartConfiguration`](crate::types::BarChartConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BarChartConfigurationBuilder {
     pub(crate) field_wells: ::std::option::Option<crate::types::BarChartFieldWells>,
     pub(crate) sort_configuration: ::std::option::Option<crate::types::BarChartSortConfiguration>,

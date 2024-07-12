@@ -32,8 +32,8 @@ impl ListConnectorDefinitionVersionsInput {
 }
 
 /// A builder for [`ListConnectorDefinitionVersionsInput`](crate::operation::list_connector_definition_versions::ListConnectorDefinitionVersionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListConnectorDefinitionVersionsInputBuilder {
     pub(crate) connector_definition_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<::std::string::String>,

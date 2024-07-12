@@ -101,8 +101,8 @@ impl Row {
 }
 
 /// A builder for [`Row`](crate::types::Row).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RowBuilder {
     pub(crate) archived_message_id: ::std::option::Option<::std::string::String>,
     pub(crate) received_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,

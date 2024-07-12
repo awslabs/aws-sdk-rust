@@ -39,8 +39,8 @@ impl GetRoutingControlStateOutput {
 }
 
 /// A builder for [`GetRoutingControlStateOutput`](crate::operation::get_routing_control_state::GetRoutingControlStateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRoutingControlStateOutputBuilder {
     pub(crate) routing_control_arn: ::std::option::Option<::std::string::String>,
     pub(crate) routing_control_state: ::std::option::Option<crate::types::RoutingControlState>,

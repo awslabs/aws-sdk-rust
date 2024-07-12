@@ -33,8 +33,8 @@ impl ManageSparqlStatisticsOutput {
 }
 
 /// A builder for [`ManageSparqlStatisticsOutput`](crate::operation::manage_sparql_statistics::ManageSparqlStatisticsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ManageSparqlStatisticsOutputBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) payload: ::std::option::Option<crate::types::RefreshStatisticsIdMap>,

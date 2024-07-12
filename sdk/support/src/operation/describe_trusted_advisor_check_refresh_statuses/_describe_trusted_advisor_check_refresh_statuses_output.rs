@@ -30,8 +30,8 @@ impl DescribeTrustedAdvisorCheckRefreshStatusesOutput {
 }
 
 /// A builder for [`DescribeTrustedAdvisorCheckRefreshStatusesOutput`](crate::operation::describe_trusted_advisor_check_refresh_statuses::DescribeTrustedAdvisorCheckRefreshStatusesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTrustedAdvisorCheckRefreshStatusesOutputBuilder {
     pub(crate) statuses: ::std::option::Option<::std::vec::Vec<crate::types::TrustedAdvisorCheckRefreshStatus>>,
     _request_id: Option<String>,

@@ -52,8 +52,8 @@ impl ListReceivedGrantsForOrganizationInput {
 }
 
 /// A builder for [`ListReceivedGrantsForOrganizationInput`](crate::operation::list_received_grants_for_organization::ListReceivedGrantsForOrganizationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListReceivedGrantsForOrganizationInputBuilder {
     pub(crate) license_arn: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,

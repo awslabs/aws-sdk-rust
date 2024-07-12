@@ -35,8 +35,8 @@ impl GitConfig {
 }
 
 /// A builder for [`GitConfig`](crate::types::GitConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GitConfigBuilder {
     pub(crate) repository_url: ::std::option::Option<::std::string::String>,
     pub(crate) branch: ::std::option::Option<::std::string::String>,

@@ -56,8 +56,8 @@ impl SetTypeConfigurationInput {
 }
 
 /// A builder for [`SetTypeConfigurationInput`](crate::operation::set_type_configuration::SetTypeConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetTypeConfigurationInputBuilder {
     pub(crate) type_arn: ::std::option::Option<::std::string::String>,
     pub(crate) configuration: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl ListRuleNamesByTargetOutput {
 }
 
 /// A builder for [`ListRuleNamesByTargetOutput`](crate::operation::list_rule_names_by_target::ListRuleNamesByTargetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRuleNamesByTargetOutputBuilder {
     pub(crate) rule_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

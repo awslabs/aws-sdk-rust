@@ -80,8 +80,8 @@ impl ExportRdsDatabaseRecommendationsInput {
 }
 
 /// A builder for [`ExportRdsDatabaseRecommendationsInput`](crate::operation::export_rds_database_recommendations::ExportRdsDatabaseRecommendationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExportRdsDatabaseRecommendationsInputBuilder {
     pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::RdsdbRecommendationFilter>>,

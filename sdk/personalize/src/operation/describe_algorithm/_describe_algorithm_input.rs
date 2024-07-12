@@ -20,8 +20,8 @@ impl DescribeAlgorithmInput {
 }
 
 /// A builder for [`DescribeAlgorithmInput`](crate::operation::describe_algorithm::DescribeAlgorithmInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAlgorithmInputBuilder {
     pub(crate) algorithm_arn: ::std::option::Option<::std::string::String>,
 }

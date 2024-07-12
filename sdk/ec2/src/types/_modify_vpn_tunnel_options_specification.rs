@@ -259,8 +259,8 @@ impl ModifyVpnTunnelOptionsSpecification {
 }
 
 /// A builder for [`ModifyVpnTunnelOptionsSpecification`](crate::types::ModifyVpnTunnelOptionsSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ModifyVpnTunnelOptionsSpecificationBuilder {
     pub(crate) tunnel_inside_cidr: ::std::option::Option<::std::string::String>,
     pub(crate) tunnel_inside_ipv6_cidr: ::std::option::Option<::std::string::String>,

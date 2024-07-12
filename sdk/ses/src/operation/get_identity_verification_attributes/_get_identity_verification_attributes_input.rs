@@ -23,8 +23,8 @@ impl GetIdentityVerificationAttributesInput {
 }
 
 /// A builder for [`GetIdentityVerificationAttributesInput`](crate::operation::get_identity_verification_attributes::GetIdentityVerificationAttributesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetIdentityVerificationAttributesInputBuilder {
     pub(crate) identities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

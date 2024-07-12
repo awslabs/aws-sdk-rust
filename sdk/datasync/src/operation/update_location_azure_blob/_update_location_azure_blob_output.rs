@@ -18,8 +18,8 @@ impl UpdateLocationAzureBlobOutput {
 }
 
 /// A builder for [`UpdateLocationAzureBlobOutput`](crate::operation::update_location_azure_blob::UpdateLocationAzureBlobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateLocationAzureBlobOutputBuilder {
     _request_id: Option<String>,
 }

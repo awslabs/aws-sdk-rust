@@ -54,8 +54,8 @@ impl AuditImage {
 }
 
 /// A builder for [`AuditImage`](crate::types::AuditImage).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AuditImageBuilder {
     pub(crate) bytes: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) s3_object: ::std::option::Option<crate::types::S3Object>,

@@ -12,8 +12,8 @@ impl TeletextDestinationSettings {
 }
 
 /// A builder for [`TeletextDestinationSettings`](crate::types::TeletextDestinationSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TeletextDestinationSettingsBuilder {}
 impl TeletextDestinationSettingsBuilder {
     /// Consumes the builder and constructs a [`TeletextDestinationSettings`](crate::types::TeletextDestinationSettings).

@@ -33,8 +33,8 @@ impl AwsRedshiftClusterClusterNode {
 }
 
 /// A builder for [`AwsRedshiftClusterClusterNode`](crate::types::AwsRedshiftClusterClusterNode).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsRedshiftClusterClusterNodeBuilder {
     pub(crate) node_role: ::std::option::Option<::std::string::String>,
     pub(crate) private_ip_address: ::std::option::Option<::std::string::String>,

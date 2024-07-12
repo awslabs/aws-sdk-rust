@@ -21,8 +21,8 @@ impl VideoSelectorColorSpaceSettings {
 }
 
 /// A builder for [`VideoSelectorColorSpaceSettings`](crate::types::VideoSelectorColorSpaceSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VideoSelectorColorSpaceSettingsBuilder {
     pub(crate) hdr10_settings: ::std::option::Option<crate::types::Hdr10Settings>,
 }

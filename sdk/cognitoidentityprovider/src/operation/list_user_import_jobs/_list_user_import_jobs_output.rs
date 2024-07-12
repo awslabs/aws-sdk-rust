@@ -35,8 +35,8 @@ impl ListUserImportJobsOutput {
 }
 
 /// A builder for [`ListUserImportJobsOutput`](crate::operation::list_user_import_jobs::ListUserImportJobsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListUserImportJobsOutputBuilder {
     pub(crate) user_import_jobs: ::std::option::Option<::std::vec::Vec<crate::types::UserImportJobType>>,
     pub(crate) pagination_token: ::std::option::Option<::std::string::String>,

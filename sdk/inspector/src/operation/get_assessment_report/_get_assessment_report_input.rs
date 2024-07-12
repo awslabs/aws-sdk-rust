@@ -32,8 +32,8 @@ impl GetAssessmentReportInput {
 }
 
 /// A builder for [`GetAssessmentReportInput`](crate::operation::get_assessment_report::GetAssessmentReportInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAssessmentReportInputBuilder {
     pub(crate) assessment_run_arn: ::std::option::Option<::std::string::String>,
     pub(crate) report_file_format: ::std::option::Option<crate::types::ReportFileFormat>,

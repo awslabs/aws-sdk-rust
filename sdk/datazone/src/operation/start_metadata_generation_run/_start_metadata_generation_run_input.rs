@@ -44,8 +44,8 @@ impl StartMetadataGenerationRunInput {
 }
 
 /// A builder for [`StartMetadataGenerationRunInput`](crate::operation::start_metadata_generation_run::StartMetadataGenerationRunInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartMetadataGenerationRunInputBuilder {
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::MetadataGenerationRunType>,

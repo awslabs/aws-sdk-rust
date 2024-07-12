@@ -101,8 +101,8 @@ impl JobFlowInstancesDetail {
 }
 
 /// A builder for [`JobFlowInstancesDetail`](crate::types::JobFlowInstancesDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JobFlowInstancesDetailBuilder {
     pub(crate) master_instance_type: ::std::option::Option<::std::string::String>,
     pub(crate) master_public_dns_name: ::std::option::Option<::std::string::String>,

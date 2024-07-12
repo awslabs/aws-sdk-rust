@@ -21,8 +21,8 @@ impl DataDestination {
 }
 
 /// A builder for [`DataDestination`](crate::types::DataDestination).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataDestinationBuilder {
     pub(crate) s3_config: ::std::option::Option<crate::types::S3Config>,
 }

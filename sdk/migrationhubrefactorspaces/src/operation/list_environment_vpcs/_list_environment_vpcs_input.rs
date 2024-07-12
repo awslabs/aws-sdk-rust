@@ -32,8 +32,8 @@ impl ListEnvironmentVpcsInput {
 }
 
 /// A builder for [`ListEnvironmentVpcsInput`](crate::operation::list_environment_vpcs::ListEnvironmentVpcsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEnvironmentVpcsInputBuilder {
     pub(crate) environment_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

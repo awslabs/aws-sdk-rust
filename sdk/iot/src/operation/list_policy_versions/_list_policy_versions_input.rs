@@ -21,8 +21,8 @@ impl ListPolicyVersionsInput {
 }
 
 /// A builder for [`ListPolicyVersionsInput`](crate::operation::list_policy_versions::ListPolicyVersionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPolicyVersionsInputBuilder {
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,
 }

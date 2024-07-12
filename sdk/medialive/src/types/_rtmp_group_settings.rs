@@ -65,8 +65,8 @@ impl RtmpGroupSettings {
 }
 
 /// A builder for [`RtmpGroupSettings`](crate::types::RtmpGroupSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RtmpGroupSettingsBuilder {
     pub(crate) ad_markers: ::std::option::Option<::std::vec::Vec<crate::types::RtmpAdMarkers>>,
     pub(crate) authentication_scheme: ::std::option::Option<crate::types::AuthenticationScheme>,

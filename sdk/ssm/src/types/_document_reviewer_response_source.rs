@@ -51,8 +51,8 @@ impl DocumentReviewerResponseSource {
 }
 
 /// A builder for [`DocumentReviewerResponseSource`](crate::types::DocumentReviewerResponseSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DocumentReviewerResponseSourceBuilder {
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,

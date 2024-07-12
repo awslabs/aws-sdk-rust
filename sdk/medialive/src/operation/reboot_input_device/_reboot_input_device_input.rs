@@ -27,8 +27,8 @@ impl RebootInputDeviceInput {
 }
 
 /// A builder for [`RebootInputDeviceInput`](crate::operation::reboot_input_device::RebootInputDeviceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RebootInputDeviceInputBuilder {
     pub(crate) force: ::std::option::Option<crate::types::RebootInputDeviceForce>,
     pub(crate) input_device_id: ::std::option::Option<::std::string::String>,

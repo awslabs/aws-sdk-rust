@@ -92,8 +92,8 @@ impl GetSceneOutput {
 }
 
 /// A builder for [`GetSceneOutput`](crate::operation::get_scene::GetSceneOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSceneOutputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) scene_id: ::std::option::Option<::std::string::String>,

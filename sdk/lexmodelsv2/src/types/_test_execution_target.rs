@@ -21,8 +21,8 @@ impl TestExecutionTarget {
 }
 
 /// A builder for [`TestExecutionTarget`](crate::types::TestExecutionTarget).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TestExecutionTargetBuilder {
     pub(crate) bot_alias_target: ::std::option::Option<crate::types::BotAliasTestExecutionTarget>,
 }

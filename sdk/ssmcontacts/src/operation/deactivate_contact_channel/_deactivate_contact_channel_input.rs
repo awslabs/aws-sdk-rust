@@ -20,8 +20,8 @@ impl DeactivateContactChannelInput {
 }
 
 /// A builder for [`DeactivateContactChannelInput`](crate::operation::deactivate_contact_channel::DeactivateContactChannelInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeactivateContactChannelInputBuilder {
     pub(crate) contact_channel_id: ::std::option::Option<::std::string::String>,
 }

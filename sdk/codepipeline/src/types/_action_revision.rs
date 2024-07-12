@@ -35,8 +35,8 @@ impl ActionRevision {
 }
 
 /// A builder for [`ActionRevision`](crate::types::ActionRevision).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ActionRevisionBuilder {
     pub(crate) revision_id: ::std::option::Option<::std::string::String>,
     pub(crate) revision_change_id: ::std::option::Option<::std::string::String>,

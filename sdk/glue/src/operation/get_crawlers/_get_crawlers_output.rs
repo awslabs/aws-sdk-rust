@@ -34,8 +34,8 @@ impl GetCrawlersOutput {
 }
 
 /// A builder for [`GetCrawlersOutput`](crate::operation::get_crawlers::GetCrawlersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCrawlersOutputBuilder {
     pub(crate) crawlers: ::std::option::Option<::std::vec::Vec<crate::types::Crawler>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

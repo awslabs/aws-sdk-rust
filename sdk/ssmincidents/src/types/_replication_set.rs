@@ -65,8 +65,8 @@ impl ReplicationSet {
 }
 
 /// A builder for [`ReplicationSet`](crate::types::ReplicationSet).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReplicationSetBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) region_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RegionInfo>>,

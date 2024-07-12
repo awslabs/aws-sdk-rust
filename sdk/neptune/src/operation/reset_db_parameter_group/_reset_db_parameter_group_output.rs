@@ -26,8 +26,8 @@ impl ResetDbParameterGroupOutput {
 }
 
 /// A builder for [`ResetDbParameterGroupOutput`](crate::operation::reset_db_parameter_group::ResetDbParameterGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResetDbParameterGroupOutputBuilder {
     pub(crate) db_parameter_group_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -33,8 +33,8 @@ impl DriftCheckBias {
 }
 
 /// A builder for [`DriftCheckBias`](crate::types::DriftCheckBias).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DriftCheckBiasBuilder {
     pub(crate) config_file: ::std::option::Option<crate::types::FileSource>,
     pub(crate) pre_training_constraints: ::std::option::Option<crate::types::MetricsSource>,

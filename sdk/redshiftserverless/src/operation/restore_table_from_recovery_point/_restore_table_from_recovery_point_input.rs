@@ -74,8 +74,8 @@ impl RestoreTableFromRecoveryPointInput {
 }
 
 /// A builder for [`RestoreTableFromRecoveryPointInput`](crate::operation::restore_table_from_recovery_point::RestoreTableFromRecoveryPointInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RestoreTableFromRecoveryPointInputBuilder {
     pub(crate) namespace_name: ::std::option::Option<::std::string::String>,
     pub(crate) workgroup_name: ::std::option::Option<::std::string::String>,

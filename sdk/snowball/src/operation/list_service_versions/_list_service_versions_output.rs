@@ -47,8 +47,8 @@ impl ListServiceVersionsOutput {
 }
 
 /// A builder for [`ListServiceVersionsOutput`](crate::operation::list_service_versions::ListServiceVersionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListServiceVersionsOutputBuilder {
     pub(crate) service_versions: ::std::option::Option<::std::vec::Vec<crate::types::ServiceVersion>>,
     pub(crate) service_name: ::std::option::Option<crate::types::ServiceName>,

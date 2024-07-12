@@ -20,8 +20,8 @@ impl GetBootstrapBrokersInput {
 }
 
 /// A builder for [`GetBootstrapBrokersInput`](crate::operation::get_bootstrap_brokers::GetBootstrapBrokersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBootstrapBrokersInputBuilder {
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
 }

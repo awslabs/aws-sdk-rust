@@ -50,8 +50,8 @@ impl ListCoreDevicesInput {
 }
 
 /// A builder for [`ListCoreDevicesInput`](crate::operation::list_core_devices::ListCoreDevicesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCoreDevicesInputBuilder {
     pub(crate) thing_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::CoreDeviceStatus>,

@@ -58,8 +58,8 @@ impl WindowSummary {
 }
 
 /// A builder for [`WindowSummary`](crate::types::WindowSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WindowSummaryBuilder {
     pub(crate) test_window_start: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) test_window_end: ::std::option::Option<::aws_smithy_types::DateTime>,

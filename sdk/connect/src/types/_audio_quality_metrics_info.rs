@@ -31,8 +31,8 @@ impl AudioQualityMetricsInfo {
 }
 
 /// A builder for [`AudioQualityMetricsInfo`](crate::types::AudioQualityMetricsInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AudioQualityMetricsInfoBuilder {
     pub(crate) quality_score: ::std::option::Option<f32>,
     pub(crate) potential_quality_issues: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -56,8 +56,8 @@ impl ListNodesInput {
 }
 
 /// A builder for [`ListNodesInput`](crate::operation::list_nodes::ListNodesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListNodesInputBuilder {
     pub(crate) category: ::std::option::Option<crate::types::NodeCategory>,
     pub(crate) owner_account: ::std::option::Option<::std::string::String>,

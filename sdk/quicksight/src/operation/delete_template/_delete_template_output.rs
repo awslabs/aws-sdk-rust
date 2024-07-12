@@ -44,8 +44,8 @@ impl DeleteTemplateOutput {
 }
 
 /// A builder for [`DeleteTemplateOutput`](crate::operation::delete_template::DeleteTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTemplateOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

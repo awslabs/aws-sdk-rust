@@ -38,8 +38,8 @@ impl UpdateTypeInput {
 }
 
 /// A builder for [`UpdateTypeInput`](crate::operation::update_type::UpdateTypeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateTypeInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) type_name: ::std::option::Option<::std::string::String>,

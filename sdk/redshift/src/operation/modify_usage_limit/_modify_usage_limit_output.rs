@@ -87,8 +87,8 @@ impl ModifyUsageLimitOutput {
 }
 
 /// A builder for [`ModifyUsageLimitOutput`](crate::operation::modify_usage_limit::ModifyUsageLimitOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyUsageLimitOutputBuilder {
     pub(crate) usage_limit_id: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,

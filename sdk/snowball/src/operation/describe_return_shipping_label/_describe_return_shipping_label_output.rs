@@ -38,8 +38,8 @@ impl DescribeReturnShippingLabelOutput {
 }
 
 /// A builder for [`DescribeReturnShippingLabelOutput`](crate::operation::describe_return_shipping_label::DescribeReturnShippingLabelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeReturnShippingLabelOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ShippingLabelStatus>,
     pub(crate) expiration_date: ::std::option::Option<::aws_smithy_types::DateTime>,

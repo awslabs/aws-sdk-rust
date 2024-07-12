@@ -21,8 +21,8 @@ impl DisableDomainTransferLockInput {
 }
 
 /// A builder for [`DisableDomainTransferLockInput`](crate::operation::disable_domain_transfer_lock::DisableDomainTransferLockInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableDomainTransferLockInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
 }

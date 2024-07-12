@@ -18,8 +18,8 @@ impl DeleteRuleSetOutput {
 }
 
 /// A builder for [`DeleteRuleSetOutput`](crate::operation::delete_rule_set::DeleteRuleSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRuleSetOutputBuilder {
     _request_id: Option<String>,
 }

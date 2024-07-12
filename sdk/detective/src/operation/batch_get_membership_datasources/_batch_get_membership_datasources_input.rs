@@ -22,8 +22,8 @@ impl BatchGetMembershipDatasourcesInput {
 }
 
 /// A builder for [`BatchGetMembershipDatasourcesInput`](crate::operation::batch_get_membership_datasources::BatchGetMembershipDatasourcesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetMembershipDatasourcesInputBuilder {
     pub(crate) graph_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

@@ -18,8 +18,8 @@ impl AssociateTagOptionWithResourceOutput {
 }
 
 /// A builder for [`AssociateTagOptionWithResourceOutput`](crate::operation::associate_tag_option_with_resource::AssociateTagOptionWithResourceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateTagOptionWithResourceOutputBuilder {
     _request_id: Option<String>,
 }

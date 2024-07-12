@@ -26,8 +26,8 @@ impl UpdateAddonOutput {
 }
 
 /// A builder for [`UpdateAddonOutput`](crate::operation::update_addon::UpdateAddonOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAddonOutputBuilder {
     pub(crate) update: ::std::option::Option<crate::types::Update>,
     _request_id: Option<String>,

@@ -34,8 +34,8 @@ impl ResetParameterGroupInput {
 }
 
 /// A builder for [`ResetParameterGroupInput`](crate::operation::reset_parameter_group::ResetParameterGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResetParameterGroupInputBuilder {
     pub(crate) parameter_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) all_parameters: ::std::option::Option<bool>,

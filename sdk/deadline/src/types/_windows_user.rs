@@ -29,8 +29,8 @@ impl WindowsUser {
 }
 
 /// A builder for [`WindowsUser`](crate::types::WindowsUser).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WindowsUserBuilder {
     pub(crate) user: ::std::option::Option<::std::string::String>,
     pub(crate) password_arn: ::std::option::Option<::std::string::String>,

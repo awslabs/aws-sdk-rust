@@ -27,8 +27,8 @@ impl TextDocumentStatistics {
 }
 
 /// A builder for [`TextDocumentStatistics`](crate::types::TextDocumentStatistics).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TextDocumentStatisticsBuilder {
     pub(crate) indexed_text_bytes: ::std::option::Option<i64>,
     pub(crate) indexed_text_document_count: ::std::option::Option<i32>,

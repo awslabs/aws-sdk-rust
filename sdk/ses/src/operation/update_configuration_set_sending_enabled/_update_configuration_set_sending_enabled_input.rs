@@ -27,8 +27,8 @@ impl UpdateConfigurationSetSendingEnabledInput {
 }
 
 /// A builder for [`UpdateConfigurationSetSendingEnabledInput`](crate::operation::update_configuration_set_sending_enabled::UpdateConfigurationSetSendingEnabledInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateConfigurationSetSendingEnabledInputBuilder {
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) enabled: ::std::option::Option<bool>,

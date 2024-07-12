@@ -33,8 +33,8 @@ impl LifecyclePolicyDetailActionIncludeResources {
 }
 
 /// A builder for [`LifecyclePolicyDetailActionIncludeResources`](crate::types::LifecyclePolicyDetailActionIncludeResources).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LifecyclePolicyDetailActionIncludeResourcesBuilder {
     pub(crate) amis: ::std::option::Option<bool>,
     pub(crate) snapshots: ::std::option::Option<bool>,

@@ -39,8 +39,8 @@ impl DecimalColumnStatisticsData {
 }
 
 /// A builder for [`DecimalColumnStatisticsData`](crate::types::DecimalColumnStatisticsData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DecimalColumnStatisticsDataBuilder {
     pub(crate) minimum_value: ::std::option::Option<crate::types::DecimalNumber>,
     pub(crate) maximum_value: ::std::option::Option<crate::types::DecimalNumber>,

@@ -33,8 +33,8 @@ impl LaunchedInstance {
 }
 
 /// A builder for [`LaunchedInstance`](crate::types::LaunchedInstance).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LaunchedInstanceBuilder {
     pub(crate) ec2_instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_id: ::std::option::Option<::std::string::String>,

@@ -37,8 +37,8 @@ impl HttpEndpointCommonAttribute {
 }
 
 /// A builder for [`HttpEndpointCommonAttribute`](crate::types::HttpEndpointCommonAttribute).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct HttpEndpointCommonAttributeBuilder {
     pub(crate) attribute_name: ::std::option::Option<::std::string::String>,
     pub(crate) attribute_value: ::std::option::Option<::std::string::String>,

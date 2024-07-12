@@ -41,8 +41,8 @@ impl DescribeRootFoldersInput {
 }
 
 /// A builder for [`DescribeRootFoldersInput`](crate::operation::describe_root_folders::DescribeRootFoldersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DescribeRootFoldersInputBuilder {
     pub(crate) authentication_token: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,

@@ -26,8 +26,8 @@ impl DeleteLifecycleHookInput {
 }
 
 /// A builder for [`DeleteLifecycleHookInput`](crate::operation::delete_lifecycle_hook::DeleteLifecycleHookInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteLifecycleHookInputBuilder {
     pub(crate) lifecycle_hook_name: ::std::option::Option<::std::string::String>,
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,

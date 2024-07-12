@@ -32,8 +32,8 @@ impl ListSubscriptionDefinitionVersionsInput {
 }
 
 /// A builder for [`ListSubscriptionDefinitionVersionsInput`](crate::operation::list_subscription_definition_versions::ListSubscriptionDefinitionVersionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSubscriptionDefinitionVersionsInputBuilder {
     pub(crate) max_results: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

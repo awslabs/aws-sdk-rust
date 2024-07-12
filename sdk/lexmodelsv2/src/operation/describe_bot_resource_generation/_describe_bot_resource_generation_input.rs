@@ -38,8 +38,8 @@ impl DescribeBotResourceGenerationInput {
 }
 
 /// A builder for [`DescribeBotResourceGenerationInput`](crate::operation::describe_bot_resource_generation::DescribeBotResourceGenerationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeBotResourceGenerationInputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,

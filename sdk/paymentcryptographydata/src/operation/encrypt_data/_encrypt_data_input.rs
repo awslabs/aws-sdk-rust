@@ -54,8 +54,8 @@ impl EncryptDataInput {
 }
 
 /// A builder for [`EncryptDataInput`](crate::operation::encrypt_data::EncryptDataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct EncryptDataInputBuilder {
     pub(crate) key_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) plain_text: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl StartApplicationRefreshOutput {
 }
 
 /// A builder for [`StartApplicationRefreshOutput`](crate::operation::start_application_refresh::StartApplicationRefreshOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartApplicationRefreshOutputBuilder {
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

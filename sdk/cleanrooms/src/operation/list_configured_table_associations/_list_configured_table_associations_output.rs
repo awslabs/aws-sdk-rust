@@ -33,8 +33,8 @@ impl ListConfiguredTableAssociationsOutput {
 }
 
 /// A builder for [`ListConfiguredTableAssociationsOutput`](crate::operation::list_configured_table_associations::ListConfiguredTableAssociationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListConfiguredTableAssociationsOutputBuilder {
     pub(crate) configured_table_association_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTableAssociationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

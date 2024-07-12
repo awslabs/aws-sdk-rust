@@ -32,8 +32,8 @@ impl ListAssociatedAttributeGroupsInput {
 }
 
 /// A builder for [`ListAssociatedAttributeGroupsInput`](crate::operation::list_associated_attribute_groups::ListAssociatedAttributeGroupsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAssociatedAttributeGroupsInputBuilder {
     pub(crate) application: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

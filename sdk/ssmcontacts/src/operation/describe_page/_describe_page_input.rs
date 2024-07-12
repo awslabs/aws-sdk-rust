@@ -20,8 +20,8 @@ impl DescribePageInput {
 }
 
 /// A builder for [`DescribePageInput`](crate::operation::describe_page::DescribePageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribePageInputBuilder {
     pub(crate) page_id: ::std::option::Option<::std::string::String>,
 }

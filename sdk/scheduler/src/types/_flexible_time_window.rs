@@ -27,8 +27,8 @@ impl FlexibleTimeWindow {
 }
 
 /// A builder for [`FlexibleTimeWindow`](crate::types::FlexibleTimeWindow).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FlexibleTimeWindowBuilder {
     pub(crate) mode: ::std::option::Option<crate::types::FlexibleTimeWindowMode>,
     pub(crate) maximum_window_in_minutes: ::std::option::Option<i32>,

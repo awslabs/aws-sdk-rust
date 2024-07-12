@@ -18,8 +18,8 @@ impl UpdateAccessControlConfigurationOutput {
 }
 
 /// A builder for [`UpdateAccessControlConfigurationOutput`](crate::operation::update_access_control_configuration::UpdateAccessControlConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAccessControlConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

@@ -70,8 +70,8 @@ impl ResponseHeadersPolicyCorsConfig {
 }
 
 /// A builder for [`ResponseHeadersPolicyCorsConfig`](crate::types::ResponseHeadersPolicyCorsConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResponseHeadersPolicyCorsConfigBuilder {
     pub(crate) access_control_allow_origins: ::std::option::Option<crate::types::ResponseHeadersPolicyAccessControlAllowOrigins>,
     pub(crate) access_control_allow_headers: ::std::option::Option<crate::types::ResponseHeadersPolicyAccessControlAllowHeaders>,

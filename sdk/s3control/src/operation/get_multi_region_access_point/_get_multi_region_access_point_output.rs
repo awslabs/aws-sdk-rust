@@ -26,8 +26,8 @@ impl GetMultiRegionAccessPointOutput {
 }
 
 /// A builder for [`GetMultiRegionAccessPointOutput`](crate::operation::get_multi_region_access_point::GetMultiRegionAccessPointOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMultiRegionAccessPointOutputBuilder {
     pub(crate) access_point: ::std::option::Option<crate::types::MultiRegionAccessPointReport>,
     _request_id: Option<String>,

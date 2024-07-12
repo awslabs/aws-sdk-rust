@@ -20,8 +20,8 @@ impl DeleteShareInput {
 }
 
 /// A builder for [`DeleteShareInput`](crate::operation::delete_share::DeleteShareInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteShareInputBuilder {
     pub(crate) share_id: ::std::option::Option<::std::string::String>,
 }

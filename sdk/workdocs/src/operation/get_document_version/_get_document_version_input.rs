@@ -55,8 +55,8 @@ impl GetDocumentVersionInput {
 }
 
 /// A builder for [`GetDocumentVersionInput`](crate::operation::get_document_version::GetDocumentVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetDocumentVersionInputBuilder {
     pub(crate) authentication_token: ::std::option::Option<::std::string::String>,
     pub(crate) document_id: ::std::option::Option<::std::string::String>,

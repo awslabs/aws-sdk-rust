@@ -39,8 +39,8 @@ impl FreeTrialInfo {
 }
 
 /// A builder for [`FreeTrialInfo`](crate::types::FreeTrialInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FreeTrialInfoBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::FreeTrialType>,
     pub(crate) start: ::std::option::Option<::aws_smithy_types::DateTime>,

@@ -32,8 +32,8 @@ impl CreateCodeSigningConfigInput {
 }
 
 /// A builder for [`CreateCodeSigningConfigInput`](crate::operation::create_code_signing_config::CreateCodeSigningConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCodeSigningConfigInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) allowed_publishers: ::std::option::Option<crate::types::AllowedPublishers>,

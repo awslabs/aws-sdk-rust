@@ -28,8 +28,8 @@ impl DescribeLayersInput {
 }
 
 /// A builder for [`DescribeLayersInput`](crate::operation::describe_layers::DescribeLayersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeLayersInputBuilder {
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,
     pub(crate) layer_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

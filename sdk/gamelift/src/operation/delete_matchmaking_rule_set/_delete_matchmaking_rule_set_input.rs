@@ -20,8 +20,8 @@ impl DeleteMatchmakingRuleSetInput {
 }
 
 /// A builder for [`DeleteMatchmakingRuleSetInput`](crate::operation::delete_matchmaking_rule_set::DeleteMatchmakingRuleSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteMatchmakingRuleSetInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

@@ -105,8 +105,8 @@ impl FraudsterRegistrationJob {
 }
 
 /// A builder for [`FraudsterRegistrationJob`](crate::types::FraudsterRegistrationJob).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct FraudsterRegistrationJobBuilder {
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
     pub(crate) job_id: ::std::option::Option<::std::string::String>,

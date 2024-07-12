@@ -26,8 +26,8 @@ impl DescribeOrganizationsAccessOutput {
 }
 
 /// A builder for [`DescribeOrganizationsAccessOutput`](crate::operation::describe_organizations_access::DescribeOrganizationsAccessOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeOrganizationsAccessOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::OrganizationStatus>,
     _request_id: Option<String>,

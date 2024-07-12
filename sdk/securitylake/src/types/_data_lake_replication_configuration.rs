@@ -31,8 +31,8 @@ impl DataLakeReplicationConfiguration {
 }
 
 /// A builder for [`DataLakeReplicationConfiguration`](crate::types::DataLakeReplicationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataLakeReplicationConfigurationBuilder {
     pub(crate) regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,

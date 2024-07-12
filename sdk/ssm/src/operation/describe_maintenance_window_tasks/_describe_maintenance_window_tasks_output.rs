@@ -34,8 +34,8 @@ impl DescribeMaintenanceWindowTasksOutput {
 }
 
 /// A builder for [`DescribeMaintenanceWindowTasksOutput`](crate::operation::describe_maintenance_window_tasks::DescribeMaintenanceWindowTasksOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeMaintenanceWindowTasksOutputBuilder {
     pub(crate) tasks: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowTask>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

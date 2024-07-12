@@ -49,8 +49,8 @@ impl ConnectPeerConfiguration {
 }
 
 /// A builder for [`ConnectPeerConfiguration`](crate::types::ConnectPeerConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConnectPeerConfigurationBuilder {
     pub(crate) core_network_address: ::std::option::Option<::std::string::String>,
     pub(crate) peer_address: ::std::option::Option<::std::string::String>,

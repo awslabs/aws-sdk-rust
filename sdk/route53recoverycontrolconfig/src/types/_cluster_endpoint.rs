@@ -29,8 +29,8 @@ impl ClusterEndpoint {
 }
 
 /// A builder for [`ClusterEndpoint`](crate::types::ClusterEndpoint).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ClusterEndpointBuilder {
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) region: ::std::option::Option<::std::string::String>,

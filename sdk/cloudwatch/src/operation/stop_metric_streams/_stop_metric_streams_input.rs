@@ -24,8 +24,8 @@ impl StopMetricStreamsInput {
 }
 
 /// A builder for [`StopMetricStreamsInput`](crate::operation::stop_metric_streams::StopMetricStreamsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopMetricStreamsInputBuilder {
     pub(crate) names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

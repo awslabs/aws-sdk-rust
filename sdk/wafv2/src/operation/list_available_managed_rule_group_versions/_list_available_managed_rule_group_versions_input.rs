@@ -58,8 +58,8 @@ impl ListAvailableManagedRuleGroupVersionsInput {
 }
 
 /// A builder for [`ListAvailableManagedRuleGroupVersionsInput`](crate::operation::list_available_managed_rule_group_versions::ListAvailableManagedRuleGroupVersionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAvailableManagedRuleGroupVersionsInputBuilder {
     pub(crate) vendor_name: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

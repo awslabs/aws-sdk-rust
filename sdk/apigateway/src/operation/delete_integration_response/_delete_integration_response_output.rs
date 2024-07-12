@@ -18,8 +18,8 @@ impl DeleteIntegrationResponseOutput {
 }
 
 /// A builder for [`DeleteIntegrationResponseOutput`](crate::operation::delete_integration_response::DeleteIntegrationResponseOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteIntegrationResponseOutputBuilder {
     _request_id: Option<String>,
 }

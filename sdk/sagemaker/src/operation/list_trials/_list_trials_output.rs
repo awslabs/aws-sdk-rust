@@ -34,8 +34,8 @@ impl ListTrialsOutput {
 }
 
 /// A builder for [`ListTrialsOutput`](crate::operation::list_trials::ListTrialsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTrialsOutputBuilder {
     pub(crate) trial_summaries: ::std::option::Option<::std::vec::Vec<crate::types::TrialSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

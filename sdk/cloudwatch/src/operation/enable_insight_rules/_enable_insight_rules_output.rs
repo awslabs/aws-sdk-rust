@@ -28,8 +28,8 @@ impl EnableInsightRulesOutput {
 }
 
 /// A builder for [`EnableInsightRulesOutput`](crate::operation::enable_insight_rules::EnableInsightRulesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnableInsightRulesOutputBuilder {
     pub(crate) failures: ::std::option::Option<::std::vec::Vec<crate::types::PartialFailure>>,
     _request_id: Option<String>,

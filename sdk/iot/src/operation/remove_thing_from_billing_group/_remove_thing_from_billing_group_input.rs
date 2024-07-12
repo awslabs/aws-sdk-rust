@@ -38,8 +38,8 @@ impl RemoveThingFromBillingGroupInput {
 }
 
 /// A builder for [`RemoveThingFromBillingGroupInput`](crate::operation::remove_thing_from_billing_group::RemoveThingFromBillingGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoveThingFromBillingGroupInputBuilder {
     pub(crate) billing_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) billing_group_arn: ::std::option::Option<::std::string::String>,

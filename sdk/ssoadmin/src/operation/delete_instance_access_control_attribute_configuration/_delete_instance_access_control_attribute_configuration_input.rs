@@ -20,8 +20,8 @@ impl DeleteInstanceAccessControlAttributeConfigurationInput {
 }
 
 /// A builder for [`DeleteInstanceAccessControlAttributeConfigurationInput`](crate::operation::delete_instance_access_control_attribute_configuration::DeleteInstanceAccessControlAttributeConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteInstanceAccessControlAttributeConfigurationInputBuilder {
     pub(crate) instance_arn: ::std::option::Option<::std::string::String>,
 }

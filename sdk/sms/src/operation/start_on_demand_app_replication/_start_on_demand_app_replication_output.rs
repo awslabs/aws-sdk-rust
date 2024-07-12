@@ -18,8 +18,8 @@ impl StartOnDemandAppReplicationOutput {
 }
 
 /// A builder for [`StartOnDemandAppReplicationOutput`](crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartOnDemandAppReplicationOutputBuilder {
     _request_id: Option<String>,
 }

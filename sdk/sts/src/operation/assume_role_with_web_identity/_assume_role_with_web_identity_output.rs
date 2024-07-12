@@ -85,8 +85,8 @@ impl AssumeRoleWithWebIdentityOutput {
 }
 
 /// A builder for [`AssumeRoleWithWebIdentityOutput`](crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AssumeRoleWithWebIdentityOutputBuilder {
     pub(crate) credentials: ::std::option::Option<crate::types::Credentials>,
     pub(crate) subject_from_web_identity_token: ::std::option::Option<::std::string::String>,

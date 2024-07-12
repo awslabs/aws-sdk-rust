@@ -39,8 +39,8 @@ impl ListElasticsearchInstanceTypesInput {
 }
 
 /// A builder for [`ListElasticsearchInstanceTypesInput`](crate::operation::list_elasticsearch_instance_types::ListElasticsearchInstanceTypesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListElasticsearchInstanceTypesInputBuilder {
     pub(crate) elasticsearch_version: ::std::option::Option<::std::string::String>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,

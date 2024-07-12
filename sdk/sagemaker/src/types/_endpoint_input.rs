@@ -81,8 +81,8 @@ impl EndpointInput {
 }
 
 /// A builder for [`EndpointInput`](crate::types::EndpointInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EndpointInputBuilder {
     pub(crate) endpoint_name: ::std::option::Option<::std::string::String>,
     pub(crate) local_path: ::std::option::Option<::std::string::String>,

@@ -41,8 +41,8 @@ impl CreateTransitGatewayRouteTableAttachmentInput {
 }
 
 /// A builder for [`CreateTransitGatewayRouteTableAttachmentInput`](crate::operation::create_transit_gateway_route_table_attachment::CreateTransitGatewayRouteTableAttachmentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateTransitGatewayRouteTableAttachmentInputBuilder {
     pub(crate) peering_id: ::std::option::Option<::std::string::String>,
     pub(crate) transit_gateway_route_table_arn: ::std::option::Option<::std::string::String>,

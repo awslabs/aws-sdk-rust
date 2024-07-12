@@ -20,8 +20,8 @@ impl DisassociateIpAccessSettingsInput {
 }
 
 /// A builder for [`DisassociateIpAccessSettingsInput`](crate::operation::disassociate_ip_access_settings::DisassociateIpAccessSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateIpAccessSettingsInputBuilder {
     pub(crate) portal_arn: ::std::option::Option<::std::string::String>,
 }

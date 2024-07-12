@@ -44,8 +44,8 @@ impl DiskImageDetail {
 }
 
 /// A builder for [`DiskImageDetail`](crate::types::DiskImageDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DiskImageDetailBuilder {
     pub(crate) bytes: ::std::option::Option<i64>,
     pub(crate) format: ::std::option::Option<crate::types::DiskImageFormat>,

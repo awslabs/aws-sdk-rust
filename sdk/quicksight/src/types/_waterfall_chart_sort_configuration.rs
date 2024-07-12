@@ -29,8 +29,8 @@ impl WaterfallChartSortConfiguration {
 }
 
 /// A builder for [`WaterfallChartSortConfiguration`](crate::types::WaterfallChartSortConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WaterfallChartSortConfigurationBuilder {
     pub(crate) category_sort: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
     pub(crate) breakdown_items_limit: ::std::option::Option<crate::types::ItemsLimitConfiguration>,

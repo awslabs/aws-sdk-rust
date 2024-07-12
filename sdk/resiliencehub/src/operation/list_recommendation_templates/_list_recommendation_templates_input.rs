@@ -58,8 +58,8 @@ impl ListRecommendationTemplatesInput {
 }
 
 /// A builder for [`ListRecommendationTemplatesInput`](crate::operation::list_recommendation_templates::ListRecommendationTemplatesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRecommendationTemplatesInputBuilder {
     pub(crate) assessment_arn: ::std::option::Option<::std::string::String>,
     pub(crate) reverse_order: ::std::option::Option<bool>,

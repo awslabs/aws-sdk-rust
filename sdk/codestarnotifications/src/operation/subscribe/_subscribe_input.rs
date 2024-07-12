@@ -32,8 +32,8 @@ impl SubscribeInput {
 }
 
 /// A builder for [`SubscribeInput`](crate::operation::subscribe::SubscribeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SubscribeInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) target: ::std::option::Option<crate::types::Target>,

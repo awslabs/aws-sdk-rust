@@ -33,8 +33,8 @@ impl ListEnabledControlsOutput {
 }
 
 /// A builder for [`ListEnabledControlsOutput`](crate::operation::list_enabled_controls::ListEnabledControlsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEnabledControlsOutputBuilder {
     pub(crate) enabled_controls: ::std::option::Option<::std::vec::Vec<crate::types::EnabledControlSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

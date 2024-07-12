@@ -72,8 +72,8 @@ impl ConcurrentModificationException {
 }
 
 /// A builder for [`ConcurrentModificationException`](crate::types::error::ConcurrentModificationException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConcurrentModificationExceptionBuilder {
     pub(crate) detailed_message: ::std::option::Option<::std::string::String>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,

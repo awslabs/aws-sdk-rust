@@ -32,8 +32,8 @@ impl CreateVpcEndpointServiceConfigurationOutput {
 }
 
 /// A builder for [`CreateVpcEndpointServiceConfigurationOutput`](crate::operation::create_vpc_endpoint_service_configuration::CreateVpcEndpointServiceConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateVpcEndpointServiceConfigurationOutputBuilder {
     pub(crate) service_configuration: ::std::option::Option<crate::types::ServiceConfiguration>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

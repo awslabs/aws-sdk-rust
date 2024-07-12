@@ -20,8 +20,8 @@ impl UnclaimDeviceInput {
 }
 
 /// A builder for [`UnclaimDeviceInput`](crate::operation::unclaim_device::UnclaimDeviceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UnclaimDeviceInputBuilder {
     pub(crate) device_id: ::std::option::Option<::std::string::String>,
 }

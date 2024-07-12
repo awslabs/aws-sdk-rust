@@ -44,8 +44,8 @@ impl DnisEmergencyCallingConfiguration {
 }
 
 /// A builder for [`DnisEmergencyCallingConfiguration`](crate::types::DnisEmergencyCallingConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DnisEmergencyCallingConfigurationBuilder {
     pub(crate) emergency_phone_number: ::std::option::Option<::std::string::String>,
     pub(crate) test_phone_number: ::std::option::Option<::std::string::String>,

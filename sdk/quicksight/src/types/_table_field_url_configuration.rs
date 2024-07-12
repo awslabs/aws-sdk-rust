@@ -27,8 +27,8 @@ impl TableFieldUrlConfiguration {
 }
 
 /// A builder for [`TableFieldUrlConfiguration`](crate::types::TableFieldUrlConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TableFieldUrlConfigurationBuilder {
     pub(crate) link_configuration: ::std::option::Option<crate::types::TableFieldLinkConfiguration>,
     pub(crate) image_configuration: ::std::option::Option<crate::types::TableFieldImageConfiguration>,

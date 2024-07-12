@@ -35,8 +35,8 @@ impl GetDeviceInput {
 }
 
 /// A builder for [`GetDeviceInput`](crate::operation::get_device::GetDeviceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetDeviceInputBuilder {
     pub(crate) device_key: ::std::option::Option<::std::string::String>,
     pub(crate) access_token: ::std::option::Option<::std::string::String>,

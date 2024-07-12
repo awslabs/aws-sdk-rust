@@ -44,8 +44,8 @@ impl DetachVolumeInput {
 }
 
 /// A builder for [`DetachVolumeInput`](crate::operation::detach_volume::DetachVolumeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetachVolumeInputBuilder {
     pub(crate) device: ::std::option::Option<::std::string::String>,
     pub(crate) force: ::std::option::Option<bool>,

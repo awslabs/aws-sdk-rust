@@ -49,8 +49,8 @@ impl DescribeTableStatisticsInput {
 }
 
 /// A builder for [`DescribeTableStatisticsInput`](crate::operation::describe_table_statistics::DescribeTableStatisticsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTableStatisticsInputBuilder {
     pub(crate) replication_task_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,

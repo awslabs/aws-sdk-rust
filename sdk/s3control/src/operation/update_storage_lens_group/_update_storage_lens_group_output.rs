@@ -18,8 +18,8 @@ impl UpdateStorageLensGroupOutput {
 }
 
 /// A builder for [`UpdateStorageLensGroupOutput`](crate::operation::update_storage_lens_group::UpdateStorageLensGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateStorageLensGroupOutputBuilder {
     _request_id: Option<String>,
 }

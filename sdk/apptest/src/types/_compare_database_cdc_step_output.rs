@@ -28,8 +28,8 @@ impl CompareDatabaseCdcStepOutput {
 }
 
 /// A builder for [`CompareDatabaseCdcStepOutput`](crate::types::CompareDatabaseCdcStepOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CompareDatabaseCdcStepOutputBuilder {
     pub(crate) comparison_output_location: ::std::option::Option<::std::string::String>,
     pub(crate) comparison_status: ::std::option::Option<crate::types::ComparisonStatusEnum>,

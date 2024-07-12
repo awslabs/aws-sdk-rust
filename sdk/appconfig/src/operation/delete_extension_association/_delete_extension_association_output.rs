@@ -18,8 +18,8 @@ impl DeleteExtensionAssociationOutput {
 }
 
 /// A builder for [`DeleteExtensionAssociationOutput`](crate::operation::delete_extension_association::DeleteExtensionAssociationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteExtensionAssociationOutputBuilder {
     _request_id: Option<String>,
 }

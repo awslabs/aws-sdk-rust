@@ -155,8 +155,8 @@ impl CreateEnvironmentEc2Input {
 }
 
 /// A builder for [`CreateEnvironmentEc2Input`](crate::operation::create_environment_ec2::CreateEnvironmentEc2Input).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateEnvironmentEc2InputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

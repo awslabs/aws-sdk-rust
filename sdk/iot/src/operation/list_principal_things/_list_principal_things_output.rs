@@ -35,8 +35,8 @@ impl ListPrincipalThingsOutput {
 }
 
 /// A builder for [`ListPrincipalThingsOutput`](crate::operation::list_principal_things::ListPrincipalThingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPrincipalThingsOutputBuilder {
     pub(crate) things: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

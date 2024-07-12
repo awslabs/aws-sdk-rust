@@ -37,8 +37,8 @@ impl DescribeTapesOutput {
 }
 
 /// A builder for [`DescribeTapesOutput`](crate::operation::describe_tapes::DescribeTapesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTapesOutputBuilder {
     pub(crate) tapes: ::std::option::Option<::std::vec::Vec<crate::types::Tape>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

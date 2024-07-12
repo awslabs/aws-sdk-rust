@@ -111,8 +111,8 @@ impl AwsCloudFormationStackDetails {
 }
 
 /// A builder for [`AwsCloudFormationStackDetails`](crate::types::AwsCloudFormationStackDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsCloudFormationStackDetailsBuilder {
     pub(crate) capabilities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) creation_time: ::std::option::Option<::std::string::String>,

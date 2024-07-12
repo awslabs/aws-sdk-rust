@@ -21,8 +21,8 @@ impl Phase2EncryptionAlgorithmsListValue {
 }
 
 /// A builder for [`Phase2EncryptionAlgorithmsListValue`](crate::types::Phase2EncryptionAlgorithmsListValue).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Phase2EncryptionAlgorithmsListValueBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
 }

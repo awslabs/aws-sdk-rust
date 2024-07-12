@@ -26,8 +26,8 @@ impl TestRenderTemplateInput {
 }
 
 /// A builder for [`TestRenderTemplateInput`](crate::operation::test_render_template::TestRenderTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TestRenderTemplateInputBuilder {
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
     pub(crate) template_data: ::std::option::Option<::std::string::String>,

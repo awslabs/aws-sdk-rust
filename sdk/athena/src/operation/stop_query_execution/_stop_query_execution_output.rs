@@ -18,8 +18,8 @@ impl StopQueryExecutionOutput {
 }
 
 /// A builder for [`StopQueryExecutionOutput`](crate::operation::stop_query_execution::StopQueryExecutionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopQueryExecutionOutputBuilder {
     _request_id: Option<String>,
 }

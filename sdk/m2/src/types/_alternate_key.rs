@@ -39,8 +39,8 @@ impl AlternateKey {
 }
 
 /// A builder for [`AlternateKey`](crate::types::AlternateKey).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AlternateKeyBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) offset: ::std::option::Option<i32>,

@@ -18,8 +18,8 @@ impl AssociateMemberToFarmOutput {
 }
 
 /// A builder for [`AssociateMemberToFarmOutput`](crate::operation::associate_member_to_farm::AssociateMemberToFarmOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateMemberToFarmOutputBuilder {
     _request_id: Option<String>,
 }

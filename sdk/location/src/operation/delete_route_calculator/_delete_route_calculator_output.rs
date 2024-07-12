@@ -18,8 +18,8 @@ impl DeleteRouteCalculatorOutput {
 }
 
 /// A builder for [`DeleteRouteCalculatorOutput`](crate::operation::delete_route_calculator::DeleteRouteCalculatorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRouteCalculatorOutputBuilder {
     _request_id: Option<String>,
 }

@@ -42,8 +42,8 @@ impl CreateContactListInput {
 }
 
 /// A builder for [`CreateContactListInput`](crate::operation::create_contact_list::CreateContactListInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateContactListInputBuilder {
     pub(crate) contact_list_name: ::std::option::Option<::std::string::String>,
     pub(crate) topics: ::std::option::Option<::std::vec::Vec<crate::types::Topic>>,

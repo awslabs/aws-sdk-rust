@@ -44,8 +44,8 @@ impl ListOperationEventsInput {
 }
 
 /// A builder for [`ListOperationEventsInput`](crate::operation::list_operation_events::ListOperationEventsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListOperationEventsInputBuilder {
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

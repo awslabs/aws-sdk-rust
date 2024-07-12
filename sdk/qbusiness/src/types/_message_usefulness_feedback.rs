@@ -39,8 +39,8 @@ impl MessageUsefulnessFeedback {
 }
 
 /// A builder for [`MessageUsefulnessFeedback`](crate::types::MessageUsefulnessFeedback).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MessageUsefulnessFeedbackBuilder {
     pub(crate) usefulness: ::std::option::Option<crate::types::MessageUsefulness>,
     pub(crate) reason: ::std::option::Option<crate::types::MessageUsefulnessReason>,

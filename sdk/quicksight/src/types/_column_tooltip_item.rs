@@ -45,8 +45,8 @@ impl ColumnTooltipItem {
 }
 
 /// A builder for [`ColumnTooltipItem`](crate::types::ColumnTooltipItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ColumnTooltipItemBuilder {
     pub(crate) column: ::std::option::Option<crate::types::ColumnIdentifier>,
     pub(crate) label: ::std::option::Option<::std::string::String>,

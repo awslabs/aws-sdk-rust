@@ -29,8 +29,8 @@ impl BufferingHints {
 }
 
 /// A builder for [`BufferingHints`](crate::types::BufferingHints).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BufferingHintsBuilder {
     pub(crate) size_in_mbs: ::std::option::Option<i32>,
     pub(crate) interval_in_seconds: ::std::option::Option<i32>,

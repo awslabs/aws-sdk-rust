@@ -84,8 +84,8 @@ impl ChannelMessageSummary {
 }
 
 /// A builder for [`ChannelMessageSummary`](crate::types::ChannelMessageSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ChannelMessageSummaryBuilder {
     pub(crate) message_id: ::std::option::Option<::std::string::String>,
     pub(crate) content: ::std::option::Option<::std::string::String>,

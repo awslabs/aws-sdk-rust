@@ -71,8 +71,8 @@ impl DisableLoggingOutput {
 }
 
 /// A builder for [`DisableLoggingOutput`](crate::operation::disable_logging::DisableLoggingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableLoggingOutputBuilder {
     pub(crate) logging_enabled: ::std::option::Option<bool>,
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,

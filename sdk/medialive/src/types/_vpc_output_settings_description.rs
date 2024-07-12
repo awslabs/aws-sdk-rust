@@ -47,8 +47,8 @@ impl VpcOutputSettingsDescription {
 }
 
 /// A builder for [`VpcOutputSettingsDescription`](crate::types::VpcOutputSettingsDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VpcOutputSettingsDescriptionBuilder {
     pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) network_interface_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -35,8 +35,8 @@ impl App {
 }
 
 /// A builder for [`App`](crate::types::App).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AppBuilder {
     pub(crate) app_name: ::std::option::Option<::std::string::String>,
     pub(crate) protocol: ::std::option::Option<::std::string::String>,

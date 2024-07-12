@@ -29,8 +29,8 @@ impl ImageGenerationDestinationConfig {
 }
 
 /// A builder for [`ImageGenerationDestinationConfig`](crate::types::ImageGenerationDestinationConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImageGenerationDestinationConfigBuilder {
     pub(crate) uri: ::std::option::Option<::std::string::String>,
     pub(crate) destination_region: ::std::option::Option<::std::string::String>,

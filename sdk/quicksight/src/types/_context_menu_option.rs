@@ -21,8 +21,8 @@ impl ContextMenuOption {
 }
 
 /// A builder for [`ContextMenuOption`](crate::types::ContextMenuOption).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ContextMenuOptionBuilder {
     pub(crate) availability_status: ::std::option::Option<crate::types::DashboardBehavior>,
 }

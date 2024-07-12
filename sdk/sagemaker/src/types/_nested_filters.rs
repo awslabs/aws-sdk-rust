@@ -36,8 +36,8 @@ impl NestedFilters {
 }
 
 /// A builder for [`NestedFilters`](crate::types::NestedFilters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NestedFiltersBuilder {
     pub(crate) nested_property_name: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,

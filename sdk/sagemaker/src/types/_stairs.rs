@@ -34,8 +34,8 @@ impl Stairs {
 }
 
 /// A builder for [`Stairs`](crate::types::Stairs).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StairsBuilder {
     pub(crate) duration_in_seconds: ::std::option::Option<i32>,
     pub(crate) number_of_steps: ::std::option::Option<i32>,

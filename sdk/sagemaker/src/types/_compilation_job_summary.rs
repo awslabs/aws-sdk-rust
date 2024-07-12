@@ -81,8 +81,8 @@ impl CompilationJobSummary {
 }
 
 /// A builder for [`CompilationJobSummary`](crate::types::CompilationJobSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CompilationJobSummaryBuilder {
     pub(crate) compilation_job_name: ::std::option::Option<::std::string::String>,
     pub(crate) compilation_job_arn: ::std::option::Option<::std::string::String>,

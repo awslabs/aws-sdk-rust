@@ -39,8 +39,8 @@ impl MultiplexProgramSettings {
 }
 
 /// A builder for [`MultiplexProgramSettings`](crate::types::MultiplexProgramSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MultiplexProgramSettingsBuilder {
     pub(crate) preferred_channel_pipeline: ::std::option::Option<crate::types::PreferredChannelPipeline>,
     pub(crate) program_number: ::std::option::Option<i32>,

@@ -22,8 +22,8 @@ impl GetContainerServicesInput {
 }
 
 /// A builder for [`GetContainerServicesInput`](crate::operation::get_container_services::GetContainerServicesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetContainerServicesInputBuilder {
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
 }

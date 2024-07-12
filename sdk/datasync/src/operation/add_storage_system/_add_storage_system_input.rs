@@ -70,8 +70,8 @@ impl AddStorageSystemInput {
 }
 
 /// A builder for [`AddStorageSystemInput`](crate::operation::add_storage_system::AddStorageSystemInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddStorageSystemInputBuilder {
     pub(crate) server_configuration: ::std::option::Option<crate::types::DiscoveryServerConfiguration>,
     pub(crate) system_type: ::std::option::Option<crate::types::DiscoverySystemType>,

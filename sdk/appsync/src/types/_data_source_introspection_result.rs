@@ -29,8 +29,8 @@ impl DataSourceIntrospectionResult {
 }
 
 /// A builder for [`DataSourceIntrospectionResult`](crate::types::DataSourceIntrospectionResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataSourceIntrospectionResultBuilder {
     pub(crate) models: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceIntrospectionModel>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

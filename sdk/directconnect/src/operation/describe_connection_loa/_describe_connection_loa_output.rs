@@ -26,8 +26,8 @@ impl DescribeConnectionLoaOutput {
 }
 
 /// A builder for [`DescribeConnectionLoaOutput`](crate::operation::describe_connection_loa::DescribeConnectionLoaOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeConnectionLoaOutputBuilder {
     pub(crate) loa: ::std::option::Option<crate::types::Loa>,
     _request_id: Option<String>,

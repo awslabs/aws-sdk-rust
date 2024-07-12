@@ -58,8 +58,8 @@ impl Body {
 }
 
 /// A builder for [`Body`](crate::types::Body).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BodyBuilder {
     pub(crate) oversize_handling: ::std::option::Option<crate::types::OversizeHandling>,
 }

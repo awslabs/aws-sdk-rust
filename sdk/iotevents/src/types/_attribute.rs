@@ -34,8 +34,8 @@ impl Attribute {
 }
 
 /// A builder for [`Attribute`](crate::types::Attribute).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttributeBuilder {
     pub(crate) json_path: ::std::option::Option<::std::string::String>,
 }

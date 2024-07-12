@@ -18,8 +18,8 @@ impl CreatePartitionIndexOutput {
 }
 
 /// A builder for [`CreatePartitionIndexOutput`](crate::operation::create_partition_index::CreatePartitionIndexOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePartitionIndexOutputBuilder {
     _request_id: Option<String>,
 }

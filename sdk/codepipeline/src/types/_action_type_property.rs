@@ -52,8 +52,8 @@ impl ActionTypeProperty {
 }
 
 /// A builder for [`ActionTypeProperty`](crate::types::ActionTypeProperty).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ActionTypePropertyBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) optional: ::std::option::Option<bool>,

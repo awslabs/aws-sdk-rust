@@ -22,8 +22,8 @@ impl DatadogConnectorProfileProperties {
 }
 
 /// A builder for [`DatadogConnectorProfileProperties`](crate::types::DatadogConnectorProfileProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DatadogConnectorProfilePropertiesBuilder {
     pub(crate) instance_url: ::std::option::Option<::std::string::String>,
 }

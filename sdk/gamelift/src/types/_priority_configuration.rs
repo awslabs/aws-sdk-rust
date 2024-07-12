@@ -58,8 +58,8 @@ impl PriorityConfiguration {
 }
 
 /// A builder for [`PriorityConfiguration`](crate::types::PriorityConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PriorityConfigurationBuilder {
     pub(crate) priority_order: ::std::option::Option<::std::vec::Vec<crate::types::PriorityType>>,
     pub(crate) location_order: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -31,8 +31,8 @@ impl LoadPermissionModifications {
 }
 
 /// A builder for [`LoadPermissionModifications`](crate::types::LoadPermissionModifications).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LoadPermissionModificationsBuilder {
     pub(crate) add: ::std::option::Option<::std::vec::Vec<crate::types::LoadPermissionRequest>>,
     pub(crate) remove: ::std::option::Option<::std::vec::Vec<crate::types::LoadPermissionRequest>>,

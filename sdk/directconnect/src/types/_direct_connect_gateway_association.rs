@@ -101,8 +101,8 @@ impl DirectConnectGatewayAssociation {
 }
 
 /// A builder for [`DirectConnectGatewayAssociation`](crate::types::DirectConnectGatewayAssociation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DirectConnectGatewayAssociationBuilder {
     pub(crate) direct_connect_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) direct_connect_gateway_owner_account: ::std::option::Option<::std::string::String>,

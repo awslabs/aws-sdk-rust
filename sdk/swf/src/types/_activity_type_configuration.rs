@@ -65,8 +65,8 @@ impl ActivityTypeConfiguration {
 }
 
 /// A builder for [`ActivityTypeConfiguration`](crate::types::ActivityTypeConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ActivityTypeConfigurationBuilder {
     pub(crate) default_task_start_to_close_timeout: ::std::option::Option<::std::string::String>,
     pub(crate) default_task_heartbeat_timeout: ::std::option::Option<::std::string::String>,

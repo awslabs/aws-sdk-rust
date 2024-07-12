@@ -33,8 +33,8 @@ impl AttachVpnGatewayInput {
 }
 
 /// A builder for [`AttachVpnGatewayInput`](crate::operation::attach_vpn_gateway::AttachVpnGatewayInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttachVpnGatewayInputBuilder {
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) vpn_gateway_id: ::std::option::Option<::std::string::String>,

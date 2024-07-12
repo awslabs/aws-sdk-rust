@@ -40,8 +40,8 @@ impl PutDestinationInput {
 }
 
 /// A builder for [`PutDestinationInput`](crate::operation::put_destination::PutDestinationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutDestinationInputBuilder {
     pub(crate) destination_name: ::std::option::Option<::std::string::String>,
     pub(crate) target_arn: ::std::option::Option<::std::string::String>,

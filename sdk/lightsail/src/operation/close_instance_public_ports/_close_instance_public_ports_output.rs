@@ -26,8 +26,8 @@ impl CloseInstancePublicPortsOutput {
 }
 
 /// A builder for [`CloseInstancePublicPortsOutput`](crate::operation::close_instance_public_ports::CloseInstancePublicPortsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CloseInstancePublicPortsOutputBuilder {
     pub(crate) operation: ::std::option::Option<crate::types::Operation>,
     _request_id: Option<String>,

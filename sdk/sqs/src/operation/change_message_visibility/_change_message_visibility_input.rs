@@ -34,8 +34,8 @@ impl ChangeMessageVisibilityInput {
 }
 
 /// A builder for [`ChangeMessageVisibilityInput`](crate::operation::change_message_visibility::ChangeMessageVisibilityInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ChangeMessageVisibilityInputBuilder {
     pub(crate) queue_url: ::std::option::Option<::std::string::String>,
     pub(crate) receipt_handle: ::std::option::Option<::std::string::String>,

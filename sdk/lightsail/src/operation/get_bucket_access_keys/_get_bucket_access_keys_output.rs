@@ -28,8 +28,8 @@ impl GetBucketAccessKeysOutput {
 }
 
 /// A builder for [`GetBucketAccessKeysOutput`](crate::operation::get_bucket_access_keys::GetBucketAccessKeysOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBucketAccessKeysOutputBuilder {
     pub(crate) access_keys: ::std::option::Option<::std::vec::Vec<crate::types::AccessKey>>,
     _request_id: Option<String>,

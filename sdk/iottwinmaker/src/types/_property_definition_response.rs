@@ -81,8 +81,8 @@ impl PropertyDefinitionResponse {
 }
 
 /// A builder for [`PropertyDefinitionResponse`](crate::types::PropertyDefinitionResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PropertyDefinitionResponseBuilder {
     pub(crate) data_type: ::std::option::Option<crate::types::DataType>,
     pub(crate) is_time_series: ::std::option::Option<bool>,

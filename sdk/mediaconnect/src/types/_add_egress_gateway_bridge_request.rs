@@ -20,8 +20,8 @@ impl AddEgressGatewayBridgeRequest {
 }
 
 /// A builder for [`AddEgressGatewayBridgeRequest`](crate::types::AddEgressGatewayBridgeRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddEgressGatewayBridgeRequestBuilder {
     pub(crate) max_bitrate: ::std::option::Option<i32>,
 }

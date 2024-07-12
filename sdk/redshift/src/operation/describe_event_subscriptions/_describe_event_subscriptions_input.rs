@@ -53,8 +53,8 @@ impl DescribeEventSubscriptionsInput {
 }
 
 /// A builder for [`DescribeEventSubscriptionsInput`](crate::operation::describe_event_subscriptions::DescribeEventSubscriptionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEventSubscriptionsInputBuilder {
     pub(crate) subscription_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,

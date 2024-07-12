@@ -34,8 +34,8 @@ impl ListManagedJobTemplatesOutput {
 }
 
 /// A builder for [`ListManagedJobTemplatesOutput`](crate::operation::list_managed_job_templates::ListManagedJobTemplatesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListManagedJobTemplatesOutputBuilder {
     pub(crate) managed_job_templates: ::std::option::Option<::std::vec::Vec<crate::types::ManagedJobTemplateSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

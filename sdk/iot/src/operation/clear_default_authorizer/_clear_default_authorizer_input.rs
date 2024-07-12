@@ -11,8 +11,8 @@ impl ClearDefaultAuthorizerInput {
 }
 
 /// A builder for [`ClearDefaultAuthorizerInput`](crate::operation::clear_default_authorizer::ClearDefaultAuthorizerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ClearDefaultAuthorizerInputBuilder {}
 impl ClearDefaultAuthorizerInputBuilder {
     /// Consumes the builder and constructs a [`ClearDefaultAuthorizerInput`](crate::operation::clear_default_authorizer::ClearDefaultAuthorizerInput).

@@ -81,8 +81,8 @@ impl FlywheelIterationProperties {
 }
 
 /// A builder for [`FlywheelIterationProperties`](crate::types::FlywheelIterationProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FlywheelIterationPropertiesBuilder {
     pub(crate) flywheel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) flywheel_iteration_id: ::std::option::Option<::std::string::String>,

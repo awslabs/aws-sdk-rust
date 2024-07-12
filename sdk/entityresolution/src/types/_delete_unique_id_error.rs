@@ -28,8 +28,8 @@ impl DeleteUniqueIdError {
 }
 
 /// A builder for [`DeleteUniqueIdError`](crate::types::DeleteUniqueIdError).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteUniqueIdErrorBuilder {
     pub(crate) unique_id: ::std::option::Option<::std::string::String>,
     pub(crate) error_type: ::std::option::Option<crate::types::DeleteUniqueIdErrorType>,

@@ -32,8 +32,8 @@ impl DeleteExportOutput {
 }
 
 /// A builder for [`DeleteExportOutput`](crate::operation::delete_export::DeleteExportOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteExportOutputBuilder {
     pub(crate) export_id: ::std::option::Option<::std::string::String>,
     pub(crate) export_status: ::std::option::Option<crate::types::ExportStatus>,

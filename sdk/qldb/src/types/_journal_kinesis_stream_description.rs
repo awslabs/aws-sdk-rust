@@ -85,8 +85,8 @@ impl JournalKinesisStreamDescription {
 }
 
 /// A builder for [`JournalKinesisStreamDescription`](crate::types::JournalKinesisStreamDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JournalKinesisStreamDescriptionBuilder {
     pub(crate) ledger_name: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,

@@ -20,8 +20,8 @@ impl LaunchAppInput {
 }
 
 /// A builder for [`LaunchAppInput`](crate::operation::launch_app::LaunchAppInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LaunchAppInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
 }

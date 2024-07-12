@@ -34,8 +34,8 @@ impl GetSamplingRulesOutput {
 }
 
 /// A builder for [`GetSamplingRulesOutput`](crate::operation::get_sampling_rules::GetSamplingRulesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSamplingRulesOutputBuilder {
     pub(crate) sampling_rule_records: ::std::option::Option<::std::vec::Vec<crate::types::SamplingRuleRecord>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

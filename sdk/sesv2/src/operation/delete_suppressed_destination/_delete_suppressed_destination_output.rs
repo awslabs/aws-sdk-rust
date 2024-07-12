@@ -19,8 +19,8 @@ impl DeleteSuppressedDestinationOutput {
 }
 
 /// A builder for [`DeleteSuppressedDestinationOutput`](crate::operation::delete_suppressed_destination::DeleteSuppressedDestinationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSuppressedDestinationOutputBuilder {
     _request_id: Option<String>,
 }

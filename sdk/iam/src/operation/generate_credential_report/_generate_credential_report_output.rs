@@ -33,8 +33,8 @@ impl GenerateCredentialReportOutput {
 }
 
 /// A builder for [`GenerateCredentialReportOutput`](crate::operation::generate_credential_report::GenerateCredentialReportOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GenerateCredentialReportOutputBuilder {
     pub(crate) state: ::std::option::Option<crate::types::ReportStateType>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

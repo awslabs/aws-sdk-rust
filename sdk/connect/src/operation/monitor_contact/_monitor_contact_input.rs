@@ -46,8 +46,8 @@ impl MonitorContactInput {
 }
 
 /// A builder for [`MonitorContactInput`](crate::operation::monitor_contact::MonitorContactInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MonitorContactInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) contact_id: ::std::option::Option<::std::string::String>,

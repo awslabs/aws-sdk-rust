@@ -20,8 +20,8 @@ impl DescribeWorldTemplateInput {
 }
 
 /// A builder for [`DescribeWorldTemplateInput`](crate::operation::describe_world_template::DescribeWorldTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeWorldTemplateInputBuilder {
     pub(crate) template: ::std::option::Option<::std::string::String>,
 }

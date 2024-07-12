@@ -26,8 +26,8 @@ impl CreateAppBlockBuilderStreamingUrlInput {
 }
 
 /// A builder for [`CreateAppBlockBuilderStreamingUrlInput`](crate::operation::create_app_block_builder_streaming_url::CreateAppBlockBuilderStreamingUrlInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAppBlockBuilderStreamingUrlInputBuilder {
     pub(crate) app_block_builder_name: ::std::option::Option<::std::string::String>,
     pub(crate) validity: ::std::option::Option<i64>,

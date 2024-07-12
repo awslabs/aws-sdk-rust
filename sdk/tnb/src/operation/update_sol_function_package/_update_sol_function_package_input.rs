@@ -26,8 +26,8 @@ impl UpdateSolFunctionPackageInput {
 }
 
 /// A builder for [`UpdateSolFunctionPackageInput`](crate::operation::update_sol_function_package::UpdateSolFunctionPackageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSolFunctionPackageInputBuilder {
     pub(crate) vnf_pkg_id: ::std::option::Option<::std::string::String>,
     pub(crate) operational_state: ::std::option::Option<crate::types::OperationalState>,

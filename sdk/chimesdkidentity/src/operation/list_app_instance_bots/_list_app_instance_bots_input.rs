@@ -41,8 +41,8 @@ impl ListAppInstanceBotsInput {
 }
 
 /// A builder for [`ListAppInstanceBotsInput`](crate::operation::list_app_instance_bots::ListAppInstanceBotsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ListAppInstanceBotsInputBuilder {
     pub(crate) app_instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

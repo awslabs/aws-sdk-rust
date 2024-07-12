@@ -35,8 +35,8 @@ impl ReplicationDetails {
 }
 
 /// A builder for [`ReplicationDetails`](crate::types::ReplicationDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReplicationDetailsBuilder {
     pub(crate) replicated: ::std::option::Option<bool>,
     pub(crate) replicated_externally: ::std::option::Option<bool>,

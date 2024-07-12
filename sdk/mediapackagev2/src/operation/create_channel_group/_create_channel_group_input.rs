@@ -42,8 +42,8 @@ impl CreateChannelGroupInput {
 }
 
 /// A builder for [`CreateChannelGroupInput`](crate::operation::create_channel_group::CreateChannelGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateChannelGroupInputBuilder {
     pub(crate) channel_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

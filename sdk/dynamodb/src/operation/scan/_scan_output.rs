@@ -63,8 +63,8 @@ impl ScanOutput {
 }
 
 /// A builder for [`ScanOutput`](crate::operation::scan::ScanOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScanOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>>,
     pub(crate) count: ::std::option::Option<i32>,

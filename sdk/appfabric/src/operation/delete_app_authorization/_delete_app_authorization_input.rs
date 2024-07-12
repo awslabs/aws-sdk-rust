@@ -26,8 +26,8 @@ impl DeleteAppAuthorizationInput {
 }
 
 /// A builder for [`DeleteAppAuthorizationInput`](crate::operation::delete_app_authorization::DeleteAppAuthorizationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAppAuthorizationInputBuilder {
     pub(crate) app_bundle_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) app_authorization_identifier: ::std::option::Option<::std::string::String>,

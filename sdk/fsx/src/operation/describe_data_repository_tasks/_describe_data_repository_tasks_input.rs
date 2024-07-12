@@ -42,8 +42,8 @@ impl DescribeDataRepositoryTasksInput {
 }
 
 /// A builder for [`DescribeDataRepositoryTasksInput`](crate::operation::describe_data_repository_tasks::DescribeDataRepositoryTasksInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDataRepositoryTasksInputBuilder {
     pub(crate) task_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::DataRepositoryTaskFilter>>,

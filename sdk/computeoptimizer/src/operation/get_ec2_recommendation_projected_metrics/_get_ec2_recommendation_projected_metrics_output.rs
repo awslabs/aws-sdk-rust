@@ -28,8 +28,8 @@ impl GetEc2RecommendationProjectedMetricsOutput {
 }
 
 /// A builder for [`GetEc2RecommendationProjectedMetricsOutput`](crate::operation::get_ec2_recommendation_projected_metrics::GetEc2RecommendationProjectedMetricsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEc2RecommendationProjectedMetricsOutputBuilder {
     pub(crate) recommended_option_projected_metrics: ::std::option::Option<::std::vec::Vec<crate::types::RecommendedOptionProjectedMetric>>,
     _request_id: Option<String>,

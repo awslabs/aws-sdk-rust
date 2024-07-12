@@ -27,8 +27,8 @@ impl LanguageCodeItem {
 }
 
 /// A builder for [`LanguageCodeItem`](crate::types::LanguageCodeItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LanguageCodeItemBuilder {
     pub(crate) language_code: ::std::option::Option<crate::types::LanguageCode>,
     pub(crate) duration_in_seconds: ::std::option::Option<f32>,

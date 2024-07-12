@@ -26,8 +26,8 @@ impl DeleteSmsChannelOutput {
 }
 
 /// A builder for [`DeleteSmsChannelOutput`](crate::operation::delete_sms_channel::DeleteSmsChannelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSmsChannelOutputBuilder {
     pub(crate) sms_channel_response: ::std::option::Option<crate::types::SmsChannelResponse>,
     _request_id: Option<String>,

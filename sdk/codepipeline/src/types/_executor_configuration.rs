@@ -27,8 +27,8 @@ impl ExecutorConfiguration {
 }
 
 /// A builder for [`ExecutorConfiguration`](crate::types::ExecutorConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExecutorConfigurationBuilder {
     pub(crate) lambda_executor_configuration: ::std::option::Option<crate::types::LambdaExecutorConfiguration>,
     pub(crate) job_worker_executor_configuration: ::std::option::Option<crate::types::JobWorkerExecutorConfiguration>,

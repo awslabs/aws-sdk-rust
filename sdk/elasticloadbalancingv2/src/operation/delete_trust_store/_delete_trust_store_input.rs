@@ -20,8 +20,8 @@ impl DeleteTrustStoreInput {
 }
 
 /// A builder for [`DeleteTrustStoreInput`](crate::operation::delete_trust_store::DeleteTrustStoreInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTrustStoreInputBuilder {
     pub(crate) trust_store_arn: ::std::option::Option<::std::string::String>,
 }

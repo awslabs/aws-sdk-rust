@@ -37,8 +37,8 @@ impl DescribeReservedNodeOfferingsInput {
 }
 
 /// A builder for [`DescribeReservedNodeOfferingsInput`](crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeReservedNodeOfferingsInputBuilder {
     pub(crate) reserved_node_offering_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,

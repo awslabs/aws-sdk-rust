@@ -26,8 +26,8 @@ impl DeleteNetworkInsightsPathOutput {
 }
 
 /// A builder for [`DeleteNetworkInsightsPathOutput`](crate::operation::delete_network_insights_path::DeleteNetworkInsightsPathOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteNetworkInsightsPathOutputBuilder {
     pub(crate) network_insights_path_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

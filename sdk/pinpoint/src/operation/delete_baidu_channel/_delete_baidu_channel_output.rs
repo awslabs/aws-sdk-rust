@@ -26,8 +26,8 @@ impl DeleteBaiduChannelOutput {
 }
 
 /// A builder for [`DeleteBaiduChannelOutput`](crate::operation::delete_baidu_channel::DeleteBaiduChannelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteBaiduChannelOutputBuilder {
     pub(crate) baidu_channel_response: ::std::option::Option<crate::types::BaiduChannelResponse>,
     _request_id: Option<String>,

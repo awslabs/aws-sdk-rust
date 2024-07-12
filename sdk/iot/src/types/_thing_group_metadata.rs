@@ -35,8 +35,8 @@ impl ThingGroupMetadata {
 }
 
 /// A builder for [`ThingGroupMetadata`](crate::types::ThingGroupMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ThingGroupMetadataBuilder {
     pub(crate) parent_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) root_to_parent_thing_groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupNameAndArn>>,

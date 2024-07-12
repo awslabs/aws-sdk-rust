@@ -26,8 +26,8 @@ impl DescribeVpcConnectorOutput {
 }
 
 /// A builder for [`DescribeVpcConnectorOutput`](crate::operation::describe_vpc_connector::DescribeVpcConnectorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeVpcConnectorOutputBuilder {
     pub(crate) vpc_connector: ::std::option::Option<crate::types::VpcConnector>,
     _request_id: Option<String>,

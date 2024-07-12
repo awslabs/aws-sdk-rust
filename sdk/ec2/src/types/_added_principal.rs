@@ -39,8 +39,8 @@ impl AddedPrincipal {
 }
 
 /// A builder for [`AddedPrincipal`](crate::types::AddedPrincipal).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddedPrincipalBuilder {
     pub(crate) principal_type: ::std::option::Option<crate::types::PrincipalType>,
     pub(crate) principal: ::std::option::Option<::std::string::String>,

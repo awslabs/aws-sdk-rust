@@ -26,8 +26,8 @@ impl DeleteAttributeGroupOutput {
 }
 
 /// A builder for [`DeleteAttributeGroupOutput`](crate::operation::delete_attribute_group::DeleteAttributeGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAttributeGroupOutputBuilder {
     pub(crate) attribute_group: ::std::option::Option<crate::types::AttributeGroupSummary>,
     _request_id: Option<String>,

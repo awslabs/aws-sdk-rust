@@ -47,8 +47,8 @@ impl AuthResult {
 }
 
 /// A builder for [`AuthResult`](crate::types::AuthResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AuthResultBuilder {
     pub(crate) auth_info: ::std::option::Option<crate::types::AuthInfo>,
     pub(crate) allowed: ::std::option::Option<crate::types::Allowed>,

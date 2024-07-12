@@ -26,8 +26,8 @@ impl AssociateQAppWithUserInput {
 }
 
 /// A builder for [`AssociateQAppWithUserInput`](crate::operation::associate_q_app_with_user::AssociateQAppWithUserInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateQAppWithUserInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) app_id: ::std::option::Option<::std::string::String>,

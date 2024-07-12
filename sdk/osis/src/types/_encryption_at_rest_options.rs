@@ -22,8 +22,8 @@ impl EncryptionAtRestOptions {
 }
 
 /// A builder for [`EncryptionAtRestOptions`](crate::types::EncryptionAtRestOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EncryptionAtRestOptionsBuilder {
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
 }

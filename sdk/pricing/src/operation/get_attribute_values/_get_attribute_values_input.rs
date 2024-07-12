@@ -38,8 +38,8 @@ impl GetAttributeValuesInput {
 }
 
 /// A builder for [`GetAttributeValuesInput`](crate::operation::get_attribute_values::GetAttributeValuesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAttributeValuesInputBuilder {
     pub(crate) service_code: ::std::option::Option<::std::string::String>,
     pub(crate) attribute_name: ::std::option::Option<::std::string::String>,

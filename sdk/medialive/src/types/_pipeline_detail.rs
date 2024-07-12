@@ -45,8 +45,8 @@ impl PipelineDetail {
 }
 
 /// A builder for [`PipelineDetail`](crate::types::PipelineDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PipelineDetailBuilder {
     pub(crate) active_input_attachment_name: ::std::option::Option<::std::string::String>,
     pub(crate) active_input_switch_action_name: ::std::option::Option<::std::string::String>,

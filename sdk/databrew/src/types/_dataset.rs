@@ -94,8 +94,8 @@ impl Dataset {
 }
 
 /// A builder for [`Dataset`](crate::types::Dataset).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DatasetBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,

@@ -38,8 +38,8 @@ impl ListTargetsByRuleInput {
 }
 
 /// A builder for [`ListTargetsByRuleInput`](crate::operation::list_targets_by_rule::ListTargetsByRuleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTargetsByRuleInputBuilder {
     pub(crate) rule: ::std::option::Option<::std::string::String>,
     pub(crate) event_bus_name: ::std::option::Option<::std::string::String>,

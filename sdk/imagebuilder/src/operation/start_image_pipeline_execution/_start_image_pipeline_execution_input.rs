@@ -26,8 +26,8 @@ impl StartImagePipelineExecutionInput {
 }
 
 /// A builder for [`StartImagePipelineExecutionInput`](crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartImagePipelineExecutionInputBuilder {
     pub(crate) image_pipeline_arn: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

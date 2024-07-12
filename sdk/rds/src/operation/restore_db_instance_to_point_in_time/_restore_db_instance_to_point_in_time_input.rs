@@ -773,8 +773,8 @@ impl RestoreDbInstanceToPointInTimeInput {
 }
 
 /// A builder for [`RestoreDbInstanceToPointInTimeInput`](crate::operation::restore_db_instance_to_point_in_time::RestoreDbInstanceToPointInTimeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RestoreDbInstanceToPointInTimeInputBuilder {
     pub(crate) source_db_instance_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) target_db_instance_identifier: ::std::option::Option<::std::string::String>,

@@ -38,8 +38,8 @@ impl CreateUsageProfileInput {
 }
 
 /// A builder for [`CreateUsageProfileInput`](crate::operation::create_usage_profile::CreateUsageProfileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateUsageProfileInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

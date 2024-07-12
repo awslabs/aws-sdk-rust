@@ -77,8 +77,8 @@ impl JobParameters {
 }
 
 /// A builder for [`JobParameters`](crate::types::JobParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JobParametersBuilder {
     pub(crate) format: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,

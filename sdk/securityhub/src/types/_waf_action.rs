@@ -39,8 +39,8 @@ impl WafAction {
 }
 
 /// A builder for [`WafAction`](crate::types::WafAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WafActionBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
 }

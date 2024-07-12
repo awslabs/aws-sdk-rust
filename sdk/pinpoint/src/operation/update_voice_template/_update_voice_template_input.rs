@@ -62,8 +62,8 @@ impl UpdateVoiceTemplateInput {
 }
 
 /// A builder for [`UpdateVoiceTemplateInput`](crate::operation::update_voice_template::UpdateVoiceTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateVoiceTemplateInputBuilder {
     pub(crate) create_new_version: ::std::option::Option<bool>,
     pub(crate) template_name: ::std::option::Option<::std::string::String>,

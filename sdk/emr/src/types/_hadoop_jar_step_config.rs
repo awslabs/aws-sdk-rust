@@ -43,8 +43,8 @@ impl HadoopJarStepConfig {
 }
 
 /// A builder for [`HadoopJarStepConfig`](crate::types::HadoopJarStepConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HadoopJarStepConfigBuilder {
     pub(crate) properties: ::std::option::Option<::std::vec::Vec<crate::types::KeyValue>>,
     pub(crate) jar: ::std::option::Option<::std::string::String>,

@@ -18,8 +18,8 @@ impl SendDataSetNotificationOutput {
 }
 
 /// A builder for [`SendDataSetNotificationOutput`](crate::operation::send_data_set_notification::SendDataSetNotificationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendDataSetNotificationOutputBuilder {
     _request_id: Option<String>,
 }

@@ -67,8 +67,8 @@ impl DescribeNetworkInsightsAccessScopeAnalysesInput {
 }
 
 /// A builder for [`DescribeNetworkInsightsAccessScopeAnalysesInput`](crate::operation::describe_network_insights_access_scope_analyses::DescribeNetworkInsightsAccessScopeAnalysesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeNetworkInsightsAccessScopeAnalysesInputBuilder {
     pub(crate) network_insights_access_scope_analysis_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) network_insights_access_scope_id: ::std::option::Option<::std::string::String>,

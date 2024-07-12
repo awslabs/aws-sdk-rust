@@ -18,8 +18,8 @@ impl DeregisterDevicesOutput {
 }
 
 /// A builder for [`DeregisterDevicesOutput`](crate::operation::deregister_devices::DeregisterDevicesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeregisterDevicesOutputBuilder {
     _request_id: Option<String>,
 }

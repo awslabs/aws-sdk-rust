@@ -12,8 +12,8 @@ impl MotionGraphicsDeactivateScheduleActionSettings {
 }
 
 /// A builder for [`MotionGraphicsDeactivateScheduleActionSettings`](crate::types::MotionGraphicsDeactivateScheduleActionSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MotionGraphicsDeactivateScheduleActionSettingsBuilder {}
 impl MotionGraphicsDeactivateScheduleActionSettingsBuilder {
     /// Consumes the builder and constructs a [`MotionGraphicsDeactivateScheduleActionSettings`](crate::types::MotionGraphicsDeactivateScheduleActionSettings).

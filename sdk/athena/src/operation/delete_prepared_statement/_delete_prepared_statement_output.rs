@@ -18,8 +18,8 @@ impl DeletePreparedStatementOutput {
 }
 
 /// A builder for [`DeletePreparedStatementOutput`](crate::operation::delete_prepared_statement::DeletePreparedStatementOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePreparedStatementOutputBuilder {
     _request_id: Option<String>,
 }

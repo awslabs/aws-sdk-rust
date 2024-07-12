@@ -38,8 +38,8 @@ impl UpdateModelInput {
 }
 
 /// A builder for [`UpdateModelInput`](crate::operation::update_model::UpdateModelInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateModelInputBuilder {
     pub(crate) model_name: ::std::option::Option<::std::string::String>,
     pub(crate) labels_input_configuration: ::std::option::Option<crate::types::LabelsInputConfiguration>,

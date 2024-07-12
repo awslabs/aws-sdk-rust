@@ -58,8 +58,8 @@ impl GetDiscoveredResourceCountsOutput {
 }
 
 /// A builder for [`GetDiscoveredResourceCountsOutput`](crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDiscoveredResourceCountsOutputBuilder {
     pub(crate) total_discovered_resources: ::std::option::Option<i64>,
     pub(crate) resource_counts: ::std::option::Option<::std::vec::Vec<crate::types::ResourceCount>>,

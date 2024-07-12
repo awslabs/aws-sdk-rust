@@ -136,8 +136,8 @@ impl GetIntentOutput {
 }
 
 /// A builder for [`GetIntentOutput`](crate::operation::get_intent::GetIntentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetIntentOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

@@ -21,8 +21,8 @@ impl InstanceMonitoring {
 }
 
 /// A builder for [`InstanceMonitoring`](crate::types::InstanceMonitoring).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceMonitoringBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
 }

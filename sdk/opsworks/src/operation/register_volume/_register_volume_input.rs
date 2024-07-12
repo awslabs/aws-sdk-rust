@@ -26,8 +26,8 @@ impl RegisterVolumeInput {
 }
 
 /// A builder for [`RegisterVolumeInput`](crate::operation::register_volume::RegisterVolumeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterVolumeInputBuilder {
     pub(crate) ec2_volume_id: ::std::option::Option<::std::string::String>,
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,

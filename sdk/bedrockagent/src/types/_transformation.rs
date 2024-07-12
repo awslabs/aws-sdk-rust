@@ -27,8 +27,8 @@ impl Transformation {
 }
 
 /// A builder for [`Transformation`](crate::types::Transformation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TransformationBuilder {
     pub(crate) transformation_function: ::std::option::Option<crate::types::TransformationFunction>,
     pub(crate) step_to_apply: ::std::option::Option<crate::types::StepType>,

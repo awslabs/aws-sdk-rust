@@ -32,8 +32,8 @@ impl GetSchemaCreationStatusOutput {
 }
 
 /// A builder for [`GetSchemaCreationStatusOutput`](crate::operation::get_schema_creation_status::GetSchemaCreationStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSchemaCreationStatusOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::SchemaStatus>,
     pub(crate) details: ::std::option::Option<::std::string::String>,

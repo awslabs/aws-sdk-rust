@@ -34,8 +34,8 @@ impl ListAccountsForParentOutput {
 }
 
 /// A builder for [`ListAccountsForParentOutput`](crate::operation::list_accounts_for_parent::ListAccountsForParentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAccountsForParentOutputBuilder {
     pub(crate) accounts: ::std::option::Option<::std::vec::Vec<crate::types::Account>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

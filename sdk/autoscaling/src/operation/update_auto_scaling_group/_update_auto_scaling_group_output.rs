@@ -18,8 +18,8 @@ impl UpdateAutoScalingGroupOutput {
 }
 
 /// A builder for [`UpdateAutoScalingGroupOutput`](crate::operation::update_auto_scaling_group::UpdateAutoScalingGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAutoScalingGroupOutputBuilder {
     _request_id: Option<String>,
 }

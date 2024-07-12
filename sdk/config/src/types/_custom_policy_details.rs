@@ -35,8 +35,8 @@ impl CustomPolicyDetails {
 }
 
 /// A builder for [`CustomPolicyDetails`](crate::types::CustomPolicyDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CustomPolicyDetailsBuilder {
     pub(crate) policy_runtime: ::std::option::Option<::std::string::String>,
     pub(crate) policy_text: ::std::option::Option<::std::string::String>,

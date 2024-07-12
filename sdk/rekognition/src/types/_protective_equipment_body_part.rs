@@ -35,8 +35,8 @@ impl ProtectiveEquipmentBodyPart {
 }
 
 /// A builder for [`ProtectiveEquipmentBodyPart`](crate::types::ProtectiveEquipmentBodyPart).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProtectiveEquipmentBodyPartBuilder {
     pub(crate) name: ::std::option::Option<crate::types::BodyPart>,
     pub(crate) confidence: ::std::option::Option<f32>,

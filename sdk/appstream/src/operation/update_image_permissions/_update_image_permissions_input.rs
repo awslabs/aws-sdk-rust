@@ -32,8 +32,8 @@ impl UpdateImagePermissionsInput {
 }
 
 /// A builder for [`UpdateImagePermissionsInput`](crate::operation::update_image_permissions::UpdateImagePermissionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateImagePermissionsInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) shared_account_id: ::std::option::Option<::std::string::String>,

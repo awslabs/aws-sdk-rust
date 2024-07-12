@@ -34,8 +34,8 @@ impl PutMetadataInput {
 }
 
 /// A builder for [`PutMetadataInput`](crate::operation::put_metadata::PutMetadataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PutMetadataInputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) metadata: ::std::option::Option<::std::string::String>,

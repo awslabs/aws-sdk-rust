@@ -26,8 +26,8 @@ impl SetMediaMessageSpendLimitOverrideOutput {
 }
 
 /// A builder for [`SetMediaMessageSpendLimitOverrideOutput`](crate::operation::set_media_message_spend_limit_override::SetMediaMessageSpendLimitOverrideOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetMediaMessageSpendLimitOverrideOutputBuilder {
     pub(crate) monthly_limit: ::std::option::Option<i64>,
     _request_id: Option<String>,

@@ -18,8 +18,8 @@ impl UpdateCrawlerScheduleOutput {
 }
 
 /// A builder for [`UpdateCrawlerScheduleOutput`](crate::operation::update_crawler_schedule::UpdateCrawlerScheduleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateCrawlerScheduleOutputBuilder {
     _request_id: Option<String>,
 }

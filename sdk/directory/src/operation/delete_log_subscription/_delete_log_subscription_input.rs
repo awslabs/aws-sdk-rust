@@ -20,8 +20,8 @@ impl DeleteLogSubscriptionInput {
 }
 
 /// A builder for [`DeleteLogSubscriptionInput`](crate::operation::delete_log_subscription::DeleteLogSubscriptionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteLogSubscriptionInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
 }

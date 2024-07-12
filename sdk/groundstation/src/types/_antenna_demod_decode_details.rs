@@ -21,8 +21,8 @@ impl AntennaDemodDecodeDetails {
 }
 
 /// A builder for [`AntennaDemodDecodeDetails`](crate::types::AntennaDemodDecodeDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AntennaDemodDecodeDetailsBuilder {
     pub(crate) output_node: ::std::option::Option<::std::string::String>,
 }

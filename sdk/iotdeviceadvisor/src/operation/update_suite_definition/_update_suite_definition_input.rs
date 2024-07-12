@@ -26,8 +26,8 @@ impl UpdateSuiteDefinitionInput {
 }
 
 /// A builder for [`UpdateSuiteDefinitionInput`](crate::operation::update_suite_definition::UpdateSuiteDefinitionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSuiteDefinitionInputBuilder {
     pub(crate) suite_definition_id: ::std::option::Option<::std::string::String>,
     pub(crate) suite_definition_configuration: ::std::option::Option<crate::types::SuiteDefinitionConfiguration>,

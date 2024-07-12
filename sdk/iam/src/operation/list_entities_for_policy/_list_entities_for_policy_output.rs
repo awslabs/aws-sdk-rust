@@ -57,8 +57,8 @@ impl ListEntitiesForPolicyOutput {
 }
 
 /// A builder for [`ListEntitiesForPolicyOutput`](crate::operation::list_entities_for_policy::ListEntitiesForPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEntitiesForPolicyOutputBuilder {
     pub(crate) policy_groups: ::std::option::Option<::std::vec::Vec<crate::types::PolicyGroup>>,
     pub(crate) policy_users: ::std::option::Option<::std::vec::Vec<crate::types::PolicyUser>>,

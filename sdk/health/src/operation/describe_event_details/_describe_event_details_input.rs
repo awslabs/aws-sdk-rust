@@ -28,8 +28,8 @@ impl DescribeEventDetailsInput {
 }
 
 /// A builder for [`DescribeEventDetailsInput`](crate::operation::describe_event_details::DescribeEventDetailsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEventDetailsInputBuilder {
     pub(crate) event_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) locale: ::std::option::Option<::std::string::String>,

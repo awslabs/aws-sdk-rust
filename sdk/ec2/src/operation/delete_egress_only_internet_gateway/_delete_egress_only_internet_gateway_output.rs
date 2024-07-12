@@ -26,8 +26,8 @@ impl DeleteEgressOnlyInternetGatewayOutput {
 }
 
 /// A builder for [`DeleteEgressOnlyInternetGatewayOutput`](crate::operation::delete_egress_only_internet_gateway::DeleteEgressOnlyInternetGatewayOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteEgressOnlyInternetGatewayOutputBuilder {
     pub(crate) return_code: ::std::option::Option<bool>,
     _request_id: Option<String>,

@@ -133,8 +133,8 @@ impl GetDataViewOutput {
 }
 
 /// A builder for [`GetDataViewOutput`](crate::operation::get_data_view::GetDataViewOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDataViewOutputBuilder {
     pub(crate) auto_update: ::std::option::Option<bool>,
     pub(crate) partition_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -34,8 +34,8 @@ impl ListTrailsOutput {
 }
 
 /// A builder for [`ListTrailsOutput`](crate::operation::list_trails::ListTrailsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTrailsOutputBuilder {
     pub(crate) trails: ::std::option::Option<::std::vec::Vec<crate::types::TrailInfo>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl TextTransformation {
 }
 
 /// A builder for [`TextTransformation`](crate::types::TextTransformation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TextTransformationBuilder {
     pub(crate) priority: ::std::option::Option<i32>,
     pub(crate) r#type: ::std::option::Option<crate::types::TextTransformationType>,

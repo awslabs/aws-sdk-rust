@@ -26,8 +26,8 @@ impl GetIdentityResolutionJobInput {
 }
 
 /// A builder for [`GetIdentityResolutionJobInput`](crate::operation::get_identity_resolution_job::GetIdentityResolutionJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetIdentityResolutionJobInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) job_id: ::std::option::Option<::std::string::String>,

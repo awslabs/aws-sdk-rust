@@ -57,8 +57,8 @@ impl GitHubDocumentCrawlProperties {
 }
 
 /// A builder for [`GitHubDocumentCrawlProperties`](crate::types::GitHubDocumentCrawlProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GitHubDocumentCrawlPropertiesBuilder {
     pub(crate) crawl_repository_documents: ::std::option::Option<bool>,
     pub(crate) crawl_issue: ::std::option::Option<bool>,

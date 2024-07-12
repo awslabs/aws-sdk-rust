@@ -126,8 +126,8 @@ impl DescribeOpsItemsInput {
 }
 
 /// A builder for [`DescribeOpsItemsInput`](crate::operation::describe_ops_items::DescribeOpsItemsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeOpsItemsInputBuilder {
     pub(crate) ops_item_filters: ::std::option::Option<::std::vec::Vec<crate::types::OpsItemFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,

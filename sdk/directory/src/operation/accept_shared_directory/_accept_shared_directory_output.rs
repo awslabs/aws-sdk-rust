@@ -26,8 +26,8 @@ impl AcceptSharedDirectoryOutput {
 }
 
 /// A builder for [`AcceptSharedDirectoryOutput`](crate::operation::accept_shared_directory::AcceptSharedDirectoryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AcceptSharedDirectoryOutputBuilder {
     pub(crate) shared_directory: ::std::option::Option<crate::types::SharedDirectory>,
     _request_id: Option<String>,

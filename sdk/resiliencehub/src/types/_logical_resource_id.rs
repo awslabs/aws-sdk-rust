@@ -50,8 +50,8 @@ impl LogicalResourceId {
 }
 
 /// A builder for [`LogicalResourceId`](crate::types::LogicalResourceId).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LogicalResourceIdBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) logical_stack_name: ::std::option::Option<::std::string::String>,

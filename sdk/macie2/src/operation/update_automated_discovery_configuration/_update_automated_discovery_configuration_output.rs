@@ -18,8 +18,8 @@ impl UpdateAutomatedDiscoveryConfigurationOutput {
 }
 
 /// A builder for [`UpdateAutomatedDiscoveryConfigurationOutput`](crate::operation::update_automated_discovery_configuration::UpdateAutomatedDiscoveryConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAutomatedDiscoveryConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

@@ -20,8 +20,8 @@ impl ImportCatalogToGlueInput {
 }
 
 /// A builder for [`ImportCatalogToGlueInput`](crate::operation::import_catalog_to_glue::ImportCatalogToGlueInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportCatalogToGlueInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
 }

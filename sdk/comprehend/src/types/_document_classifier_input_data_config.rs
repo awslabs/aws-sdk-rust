@@ -110,8 +110,8 @@ impl DocumentClassifierInputDataConfig {
 }
 
 /// A builder for [`DocumentClassifierInputDataConfig`](crate::types::DocumentClassifierInputDataConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DocumentClassifierInputDataConfigBuilder {
     pub(crate) data_format: ::std::option::Option<crate::types::DocumentClassifierDataFormat>,
     pub(crate) s3_uri: ::std::option::Option<::std::string::String>,

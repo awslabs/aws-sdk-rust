@@ -32,8 +32,8 @@ impl DescribeInterconnectLoaInput {
 }
 
 /// A builder for [`DescribeInterconnectLoaInput`](crate::operation::describe_interconnect_loa::DescribeInterconnectLoaInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeInterconnectLoaInputBuilder {
     pub(crate) interconnect_id: ::std::option::Option<::std::string::String>,
     pub(crate) provider_name: ::std::option::Option<::std::string::String>,

@@ -46,8 +46,8 @@ impl GetAppMonitorDataInput {
 }
 
 /// A builder for [`GetAppMonitorDataInput`](crate::operation::get_app_monitor_data::GetAppMonitorDataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAppMonitorDataInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) time_range: ::std::option::Option<crate::types::TimeRange>,

@@ -27,8 +27,8 @@ impl CreateVerifiedAccessTrustProviderDeviceOptions {
 }
 
 /// A builder for [`CreateVerifiedAccessTrustProviderDeviceOptions`](crate::types::CreateVerifiedAccessTrustProviderDeviceOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateVerifiedAccessTrustProviderDeviceOptionsBuilder {
     pub(crate) tenant_id: ::std::option::Option<::std::string::String>,
     pub(crate) public_signing_key_url: ::std::option::Option<::std::string::String>,

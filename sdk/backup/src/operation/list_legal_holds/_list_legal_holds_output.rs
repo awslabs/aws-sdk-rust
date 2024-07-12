@@ -34,8 +34,8 @@ impl ListLegalHoldsOutput {
 }
 
 /// A builder for [`ListLegalHoldsOutput`](crate::operation::list_legal_holds::ListLegalHoldsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListLegalHoldsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) legal_holds: ::std::option::Option<::std::vec::Vec<crate::types::LegalHold>>,

@@ -28,8 +28,8 @@ impl RemoveIpRoutesInput {
 }
 
 /// A builder for [`RemoveIpRoutesInput`](crate::operation::remove_ip_routes::RemoveIpRoutesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoveIpRoutesInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) cidr_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

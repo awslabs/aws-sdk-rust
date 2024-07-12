@@ -52,8 +52,8 @@ impl CreateConnectAttachmentInput {
 }
 
 /// A builder for [`CreateConnectAttachmentInput`](crate::operation::create_connect_attachment::CreateConnectAttachmentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateConnectAttachmentInputBuilder {
     pub(crate) core_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) edge_location: ::std::option::Option<::std::string::String>,

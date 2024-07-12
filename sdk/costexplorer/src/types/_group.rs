@@ -29,8 +29,8 @@ impl Group {
 }
 
 /// A builder for [`Group`](crate::types::Group).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GroupBuilder {
     pub(crate) keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) metrics: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetricValue>>,

@@ -41,8 +41,8 @@ impl SizeConstraintSet {
 }
 
 /// A builder for [`SizeConstraintSet`](crate::types::SizeConstraintSet).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SizeConstraintSetBuilder {
     pub(crate) size_constraint_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

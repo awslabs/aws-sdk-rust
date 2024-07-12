@@ -28,8 +28,8 @@ impl TransactGetItemsInput {
 }
 
 /// A builder for [`TransactGetItemsInput`](crate::operation::transact_get_items::TransactGetItemsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TransactGetItemsInputBuilder {
     pub(crate) transact_items: ::std::option::Option<::std::vec::Vec<crate::types::TransactGetItem>>,
     pub(crate) return_consumed_capacity: ::std::option::Option<crate::types::ReturnConsumedCapacity>,

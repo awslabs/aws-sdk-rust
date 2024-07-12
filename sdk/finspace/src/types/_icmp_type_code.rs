@@ -27,8 +27,8 @@ impl IcmpTypeCode {
 }
 
 /// A builder for [`IcmpTypeCode`](crate::types::IcmpTypeCode).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IcmpTypeCodeBuilder {
     pub(crate) r#type: ::std::option::Option<i32>,
     pub(crate) code: ::std::option::Option<i32>,

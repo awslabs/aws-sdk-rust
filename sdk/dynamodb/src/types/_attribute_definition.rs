@@ -44,8 +44,8 @@ impl AttributeDefinition {
 }
 
 /// A builder for [`AttributeDefinition`](crate::types::AttributeDefinition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttributeDefinitionBuilder {
     pub(crate) attribute_name: ::std::option::Option<::std::string::String>,
     pub(crate) attribute_type: ::std::option::Option<crate::types::ScalarAttributeType>,

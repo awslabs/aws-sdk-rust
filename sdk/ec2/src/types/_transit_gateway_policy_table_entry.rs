@@ -33,8 +33,8 @@ impl TransitGatewayPolicyTableEntry {
 }
 
 /// A builder for [`TransitGatewayPolicyTableEntry`](crate::types::TransitGatewayPolicyTableEntry).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TransitGatewayPolicyTableEntryBuilder {
     pub(crate) policy_rule_number: ::std::option::Option<::std::string::String>,
     pub(crate) policy_rule: ::std::option::Option<crate::types::TransitGatewayPolicyRule>,

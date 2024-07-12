@@ -34,8 +34,8 @@ impl DescribeBucketsOutput {
 }
 
 /// A builder for [`DescribeBucketsOutput`](crate::operation::describe_buckets::DescribeBucketsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeBucketsOutputBuilder {
     pub(crate) buckets: ::std::option::Option<::std::vec::Vec<crate::types::BucketMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

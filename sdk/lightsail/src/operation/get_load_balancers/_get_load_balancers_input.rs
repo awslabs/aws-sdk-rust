@@ -22,8 +22,8 @@ impl GetLoadBalancersInput {
 }
 
 /// A builder for [`GetLoadBalancersInput`](crate::operation::get_load_balancers::GetLoadBalancersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLoadBalancersInputBuilder {
     pub(crate) page_token: ::std::option::Option<::std::string::String>,
 }

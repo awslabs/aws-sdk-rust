@@ -34,8 +34,8 @@ impl GetCisScanResultDetailsOutput {
 }
 
 /// A builder for [`GetCisScanResultDetailsOutput`](crate::operation::get_cis_scan_result_details::GetCisScanResultDetailsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCisScanResultDetailsOutputBuilder {
     pub(crate) scan_result_details: ::std::option::Option<::std::vec::Vec<crate::types::CisScanResultDetails>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

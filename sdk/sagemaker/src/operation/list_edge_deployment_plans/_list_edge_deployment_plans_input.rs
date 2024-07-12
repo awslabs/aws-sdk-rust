@@ -74,8 +74,8 @@ impl ListEdgeDeploymentPlansInput {
 }
 
 /// A builder for [`ListEdgeDeploymentPlansInput`](crate::operation::list_edge_deployment_plans::ListEdgeDeploymentPlansInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEdgeDeploymentPlansInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

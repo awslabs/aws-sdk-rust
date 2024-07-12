@@ -39,8 +39,8 @@ impl FlowExecutionMessage {
 }
 
 /// A builder for [`FlowExecutionMessage`](crate::types::FlowExecutionMessage).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FlowExecutionMessageBuilder {
     pub(crate) message_id: ::std::option::Option<::std::string::String>,
     pub(crate) event_type: ::std::option::Option<crate::types::FlowExecutionEventType>,

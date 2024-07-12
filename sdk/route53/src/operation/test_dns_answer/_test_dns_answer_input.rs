@@ -65,8 +65,8 @@ impl TestDnsAnswerInput {
 }
 
 /// A builder for [`TestDnsAnswerInput`](crate::operation::test_dns_answer::TestDnsAnswerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TestDnsAnswerInputBuilder {
     pub(crate) hosted_zone_id: ::std::option::Option<::std::string::String>,
     pub(crate) record_name: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl ErrorInfo {
 }
 
 /// A builder for [`ErrorInfo`](crate::types::ErrorInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ErrorInfoBuilder {
     pub(crate) cause: ::std::option::Option<::std::string::String>,
     pub(crate) details: ::std::option::Option<::std::string::String>,

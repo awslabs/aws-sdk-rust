@@ -19,8 +19,8 @@ impl AdminConfirmSignUpOutput {
 }
 
 /// A builder for [`AdminConfirmSignUpOutput`](crate::operation::admin_confirm_sign_up::AdminConfirmSignUpOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AdminConfirmSignUpOutputBuilder {
     _request_id: Option<String>,
 }

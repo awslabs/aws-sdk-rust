@@ -21,8 +21,8 @@ impl FailoverCondition {
 }
 
 /// A builder for [`FailoverCondition`](crate::types::FailoverCondition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FailoverConditionBuilder {
     pub(crate) failover_condition_settings: ::std::option::Option<crate::types::FailoverConditionSettings>,
 }

@@ -409,8 +409,8 @@ impl RunInstancesInput {
 }
 
 /// A builder for [`RunInstancesInput`](crate::operation::run_instances::RunInstancesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct RunInstancesInputBuilder {
     pub(crate) block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>,
     pub(crate) image_id: ::std::option::Option<::std::string::String>,

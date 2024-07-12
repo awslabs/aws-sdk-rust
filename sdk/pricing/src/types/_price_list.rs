@@ -42,8 +42,8 @@ impl PriceList {
 }
 
 /// A builder for [`PriceList`](crate::types::PriceList).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PriceListBuilder {
     pub(crate) price_list_arn: ::std::option::Option<::std::string::String>,
     pub(crate) region_code: ::std::option::Option<::std::string::String>,

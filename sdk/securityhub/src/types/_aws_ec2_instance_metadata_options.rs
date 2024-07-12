@@ -45,8 +45,8 @@ impl AwsEc2InstanceMetadataOptions {
 }
 
 /// A builder for [`AwsEc2InstanceMetadataOptions`](crate::types::AwsEc2InstanceMetadataOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEc2InstanceMetadataOptionsBuilder {
     pub(crate) http_endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) http_protocol_ipv6: ::std::option::Option<::std::string::String>,

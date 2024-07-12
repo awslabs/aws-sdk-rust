@@ -45,8 +45,8 @@ impl DescribeVtlDevicesInput {
 }
 
 /// A builder for [`DescribeVtlDevicesInput`](crate::operation::describe_vtl_devices::DescribeVtlDevicesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeVtlDevicesInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) vtl_device_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

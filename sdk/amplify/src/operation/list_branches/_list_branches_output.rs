@@ -34,8 +34,8 @@ impl ListBranchesOutput {
 }
 
 /// A builder for [`ListBranchesOutput`](crate::operation::list_branches::ListBranchesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListBranchesOutputBuilder {
     pub(crate) branches: ::std::option::Option<::std::vec::Vec<crate::types::Branch>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -20,8 +20,8 @@ impl DescribeWorldInput {
 }
 
 /// A builder for [`DescribeWorldInput`](crate::operation::describe_world::DescribeWorldInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeWorldInputBuilder {
     pub(crate) world: ::std::option::Option<::std::string::String>,
 }

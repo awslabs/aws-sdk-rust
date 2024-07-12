@@ -34,8 +34,8 @@ impl DescribeMaintenanceWindowTargetsOutput {
 }
 
 /// A builder for [`DescribeMaintenanceWindowTargetsOutput`](crate::operation::describe_maintenance_window_targets::DescribeMaintenanceWindowTargetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeMaintenanceWindowTargetsOutputBuilder {
     pub(crate) targets: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowTarget>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

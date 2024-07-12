@@ -27,8 +27,8 @@ impl NumericEqualityDrillDownFilter {
 }
 
 /// A builder for [`NumericEqualityDrillDownFilter`](crate::types::NumericEqualityDrillDownFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NumericEqualityDrillDownFilterBuilder {
     pub(crate) column: ::std::option::Option<crate::types::ColumnIdentifier>,
     pub(crate) value: ::std::option::Option<f64>,

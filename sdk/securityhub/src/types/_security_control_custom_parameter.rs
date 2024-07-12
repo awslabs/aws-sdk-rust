@@ -27,8 +27,8 @@ impl SecurityControlCustomParameter {
 }
 
 /// A builder for [`SecurityControlCustomParameter`](crate::types::SecurityControlCustomParameter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SecurityControlCustomParameterBuilder {
     pub(crate) security_control_id: ::std::option::Option<::std::string::String>,
     pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ParameterConfiguration>>,

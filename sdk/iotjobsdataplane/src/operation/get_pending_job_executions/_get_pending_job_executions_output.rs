@@ -36,8 +36,8 @@ impl GetPendingJobExecutionsOutput {
 }
 
 /// A builder for [`GetPendingJobExecutionsOutput`](crate::operation::get_pending_job_executions::GetPendingJobExecutionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPendingJobExecutionsOutputBuilder {
     pub(crate) in_progress_jobs: ::std::option::Option<::std::vec::Vec<crate::types::JobExecutionSummary>>,
     pub(crate) queued_jobs: ::std::option::Option<::std::vec::Vec<crate::types::JobExecutionSummary>>,

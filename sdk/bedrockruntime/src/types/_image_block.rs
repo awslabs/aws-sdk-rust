@@ -27,8 +27,8 @@ impl ImageBlock {
 }
 
 /// A builder for [`ImageBlock`](crate::types::ImageBlock).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImageBlockBuilder {
     pub(crate) format: ::std::option::Option<crate::types::ImageFormat>,
     pub(crate) source: ::std::option::Option<crate::types::ImageSource>,

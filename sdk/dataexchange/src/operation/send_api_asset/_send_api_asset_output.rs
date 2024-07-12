@@ -32,8 +32,8 @@ impl SendApiAssetOutput {
 }
 
 /// A builder for [`SendApiAssetOutput`](crate::operation::send_api_asset::SendApiAssetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendApiAssetOutputBuilder {
     pub(crate) body: ::std::option::Option<::std::string::String>,
     pub(crate) response_headers: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

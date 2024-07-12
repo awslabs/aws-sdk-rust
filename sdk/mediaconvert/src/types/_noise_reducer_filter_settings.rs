@@ -21,8 +21,8 @@ impl NoiseReducerFilterSettings {
 }
 
 /// A builder for [`NoiseReducerFilterSettings`](crate::types::NoiseReducerFilterSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NoiseReducerFilterSettingsBuilder {
     pub(crate) strength: ::std::option::Option<i32>,
 }

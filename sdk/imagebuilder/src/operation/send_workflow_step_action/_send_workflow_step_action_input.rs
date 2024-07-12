@@ -44,8 +44,8 @@ impl SendWorkflowStepActionInput {
 }
 
 /// A builder for [`SendWorkflowStepActionInput`](crate::operation::send_workflow_step_action::SendWorkflowStepActionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendWorkflowStepActionInputBuilder {
     pub(crate) step_execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) image_build_version_arn: ::std::option::Option<::std::string::String>,

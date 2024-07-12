@@ -27,8 +27,8 @@ impl DeleteStatisticsValueMap {
 }
 
 /// A builder for [`DeleteStatisticsValueMap`](crate::types::DeleteStatisticsValueMap).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteStatisticsValueMapBuilder {
     pub(crate) active: ::std::option::Option<bool>,
     pub(crate) statistics_id: ::std::option::Option<::std::string::String>,

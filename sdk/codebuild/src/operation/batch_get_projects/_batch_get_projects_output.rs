@@ -36,8 +36,8 @@ impl BatchGetProjectsOutput {
 }
 
 /// A builder for [`BatchGetProjectsOutput`](crate::operation::batch_get_projects::BatchGetProjectsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetProjectsOutputBuilder {
     pub(crate) projects: ::std::option::Option<::std::vec::Vec<crate::types::Project>>,
     pub(crate) projects_not_found: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

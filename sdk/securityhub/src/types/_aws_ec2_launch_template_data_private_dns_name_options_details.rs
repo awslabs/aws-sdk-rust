@@ -33,8 +33,8 @@ impl AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails {
 }
 
 /// A builder for [`AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails`](crate::types::AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetailsBuilder {
     pub(crate) enable_resource_name_dns_aaaa_record: ::std::option::Option<bool>,
     pub(crate) enable_resource_name_dns_a_record: ::std::option::Option<bool>,

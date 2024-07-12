@@ -27,8 +27,8 @@ impl DurationRange {
 }
 
 /// A builder for [`DurationRange`](crate::types::DurationRange).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DurationRangeBuilder {
     pub(crate) min_seconds: ::std::option::Option<i32>,
     pub(crate) max_seconds: ::std::option::Option<i32>,

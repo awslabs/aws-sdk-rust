@@ -20,8 +20,8 @@ impl DeleteStateMachineInput {
 }
 
 /// A builder for [`DeleteStateMachineInput`](crate::operation::delete_state_machine::DeleteStateMachineInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteStateMachineInputBuilder {
     pub(crate) state_machine_arn: ::std::option::Option<::std::string::String>,
 }

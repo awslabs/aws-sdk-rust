@@ -28,8 +28,8 @@ impl ReleaseStaticIpOutput {
 }
 
 /// A builder for [`ReleaseStaticIpOutput`](crate::operation::release_static_ip::ReleaseStaticIpOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReleaseStaticIpOutputBuilder {
     pub(crate) operations: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>,
     _request_id: Option<String>,

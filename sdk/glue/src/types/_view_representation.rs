@@ -59,8 +59,8 @@ impl ViewRepresentation {
 }
 
 /// A builder for [`ViewRepresentation`](crate::types::ViewRepresentation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ViewRepresentationBuilder {
     pub(crate) dialect: ::std::option::Option<crate::types::ViewDialect>,
     pub(crate) dialect_version: ::std::option::Option<::std::string::String>,

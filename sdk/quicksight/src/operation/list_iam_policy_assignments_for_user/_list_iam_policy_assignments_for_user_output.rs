@@ -46,8 +46,8 @@ impl ListIamPolicyAssignmentsForUserOutput {
 }
 
 /// A builder for [`ListIamPolicyAssignmentsForUserOutput`](crate::operation::list_iam_policy_assignments_for_user::ListIamPolicyAssignmentsForUserOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListIamPolicyAssignmentsForUserOutputBuilder {
     pub(crate) active_assignments: ::std::option::Option<::std::vec::Vec<crate::types::ActiveIamPolicyAssignment>>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,

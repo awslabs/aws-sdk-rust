@@ -34,8 +34,8 @@ impl DetectSyntaxInput {
 }
 
 /// A builder for [`DetectSyntaxInput`](crate::operation::detect_syntax::DetectSyntaxInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DetectSyntaxInputBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
     pub(crate) language_code: ::std::option::Option<crate::types::SyntaxLanguageCode>,

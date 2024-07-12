@@ -36,8 +36,8 @@ impl BatchDeleteImageOutput {
 }
 
 /// A builder for [`BatchDeleteImageOutput`](crate::operation::batch_delete_image::BatchDeleteImageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDeleteImageOutputBuilder {
     pub(crate) image_ids: ::std::option::Option<::std::vec::Vec<crate::types::ImageIdentifier>>,
     pub(crate) failures: ::std::option::Option<::std::vec::Vec<crate::types::ImageFailure>>,

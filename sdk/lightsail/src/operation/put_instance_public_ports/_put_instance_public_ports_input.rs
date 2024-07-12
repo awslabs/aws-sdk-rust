@@ -28,8 +28,8 @@ impl PutInstancePublicPortsInput {
 }
 
 /// A builder for [`PutInstancePublicPortsInput`](crate::operation::put_instance_public_ports::PutInstancePublicPortsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutInstancePublicPortsInputBuilder {
     pub(crate) port_infos: ::std::option::Option<::std::vec::Vec<crate::types::PortInfo>>,
     pub(crate) instance_name: ::std::option::Option<::std::string::String>,

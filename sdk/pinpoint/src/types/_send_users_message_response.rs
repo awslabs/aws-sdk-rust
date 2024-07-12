@@ -39,8 +39,8 @@ impl SendUsersMessageResponse {
 }
 
 /// A builder for [`SendUsersMessageResponse`](crate::types::SendUsersMessageResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendUsersMessageResponseBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,

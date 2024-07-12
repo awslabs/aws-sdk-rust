@@ -57,8 +57,8 @@ impl GaugeChartConfiguration {
 }
 
 /// A builder for [`GaugeChartConfiguration`](crate::types::GaugeChartConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GaugeChartConfigurationBuilder {
     pub(crate) field_wells: ::std::option::Option<crate::types::GaugeChartFieldWells>,
     pub(crate) gauge_chart_options: ::std::option::Option<crate::types::GaugeChartOptions>,

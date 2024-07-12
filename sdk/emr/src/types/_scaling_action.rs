@@ -27,8 +27,8 @@ impl ScalingAction {
 }
 
 /// A builder for [`ScalingAction`](crate::types::ScalingAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScalingActionBuilder {
     pub(crate) market: ::std::option::Option<crate::types::MarketType>,
     pub(crate) simple_scaling_policy_configuration: ::std::option::Option<crate::types::SimpleScalingPolicyConfiguration>,

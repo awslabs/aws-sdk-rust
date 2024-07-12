@@ -26,8 +26,8 @@ impl AdvertiseByoipCidrOutput {
 }
 
 /// A builder for [`AdvertiseByoipCidrOutput`](crate::operation::advertise_byoip_cidr::AdvertiseByoipCidrOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AdvertiseByoipCidrOutputBuilder {
     pub(crate) byoip_cidr: ::std::option::Option<crate::types::ByoipCidr>,
     _request_id: Option<String>,

@@ -58,8 +58,8 @@ impl CreateFlowDefinitionInput {
 }
 
 /// A builder for [`CreateFlowDefinitionInput`](crate::operation::create_flow_definition::CreateFlowDefinitionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateFlowDefinitionInputBuilder {
     pub(crate) flow_definition_name: ::std::option::Option<::std::string::String>,
     pub(crate) human_loop_request_source: ::std::option::Option<crate::types::HumanLoopRequestSource>,

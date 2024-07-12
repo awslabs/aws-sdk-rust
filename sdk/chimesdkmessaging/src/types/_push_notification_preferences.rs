@@ -35,8 +35,8 @@ impl PushNotificationPreferences {
 }
 
 /// A builder for [`PushNotificationPreferences`](crate::types::PushNotificationPreferences).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PushNotificationPreferencesBuilder {
     pub(crate) allow_notifications: ::std::option::Option<crate::types::AllowNotifications>,
     pub(crate) filter_rule: ::std::option::Option<::std::string::String>,

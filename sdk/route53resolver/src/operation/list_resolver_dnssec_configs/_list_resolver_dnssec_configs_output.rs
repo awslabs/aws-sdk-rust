@@ -36,8 +36,8 @@ impl ListResolverDnssecConfigsOutput {
 }
 
 /// A builder for [`ListResolverDnssecConfigsOutput`](crate::operation::list_resolver_dnssec_configs::ListResolverDnssecConfigsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListResolverDnssecConfigsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) resolver_dnssec_configs: ::std::option::Option<::std::vec::Vec<crate::types::ResolverDnssecConfig>>,

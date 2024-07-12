@@ -27,8 +27,8 @@ impl InferenceOutputConfiguration {
 }
 
 /// A builder for [`InferenceOutputConfiguration`](crate::types::InferenceOutputConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InferenceOutputConfigurationBuilder {
     pub(crate) s3_output_configuration: ::std::option::Option<crate::types::InferenceS3OutputConfiguration>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,

@@ -19,8 +19,8 @@ impl DeleteConfigurationSetOutput {
 }
 
 /// A builder for [`DeleteConfigurationSetOutput`](crate::operation::delete_configuration_set::DeleteConfigurationSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteConfigurationSetOutputBuilder {
     _request_id: Option<String>,
 }

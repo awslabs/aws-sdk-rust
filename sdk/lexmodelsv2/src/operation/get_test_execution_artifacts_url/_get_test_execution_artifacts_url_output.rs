@@ -32,8 +32,8 @@ impl GetTestExecutionArtifactsUrlOutput {
 }
 
 /// A builder for [`GetTestExecutionArtifactsUrlOutput`](crate::operation::get_test_execution_artifacts_url::GetTestExecutionArtifactsUrlOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTestExecutionArtifactsUrlOutputBuilder {
     pub(crate) test_execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) download_artifacts_url: ::std::option::Option<::std::string::String>,

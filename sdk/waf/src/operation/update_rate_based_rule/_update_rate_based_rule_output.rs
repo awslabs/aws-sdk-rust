@@ -26,8 +26,8 @@ impl UpdateRateBasedRuleOutput {
 }
 
 /// A builder for [`UpdateRateBasedRuleOutput`](crate::operation::update_rate_based_rule::UpdateRateBasedRuleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRateBasedRuleOutputBuilder {
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

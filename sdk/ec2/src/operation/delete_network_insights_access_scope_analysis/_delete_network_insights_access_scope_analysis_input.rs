@@ -27,8 +27,8 @@ impl DeleteNetworkInsightsAccessScopeAnalysisInput {
 }
 
 /// A builder for [`DeleteNetworkInsightsAccessScopeAnalysisInput`](crate::operation::delete_network_insights_access_scope_analysis::DeleteNetworkInsightsAccessScopeAnalysisInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteNetworkInsightsAccessScopeAnalysisInputBuilder {
     pub(crate) network_insights_access_scope_analysis_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,

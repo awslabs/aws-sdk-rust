@@ -38,8 +38,8 @@ impl DescribeEventAggregatesInput {
 }
 
 /// A builder for [`DescribeEventAggregatesInput`](crate::operation::describe_event_aggregates::DescribeEventAggregatesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEventAggregatesInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::EventFilter>,
     pub(crate) aggregate_field: ::std::option::Option<crate::types::EventAggregateField>,

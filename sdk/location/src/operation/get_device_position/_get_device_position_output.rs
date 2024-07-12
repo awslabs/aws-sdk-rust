@@ -70,8 +70,8 @@ impl GetDevicePositionOutput {
 }
 
 /// A builder for [`GetDevicePositionOutput`](crate::operation::get_device_position::GetDevicePositionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetDevicePositionOutputBuilder {
     pub(crate) device_id: ::std::option::Option<::std::string::String>,
     pub(crate) sample_time: ::std::option::Option<::aws_smithy_types::DateTime>,

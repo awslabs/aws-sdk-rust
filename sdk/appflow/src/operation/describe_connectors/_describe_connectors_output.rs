@@ -43,8 +43,8 @@ impl DescribeConnectorsOutput {
 }
 
 /// A builder for [`DescribeConnectorsOutput`](crate::operation::describe_connectors::DescribeConnectorsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeConnectorsOutputBuilder {
     pub(crate) connector_configurations:
         ::std::option::Option<::std::collections::HashMap<crate::types::ConnectorType, crate::types::ConnectorConfiguration>>,

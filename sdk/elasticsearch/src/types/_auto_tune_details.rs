@@ -21,8 +21,8 @@ impl AutoTuneDetails {
 }
 
 /// A builder for [`AutoTuneDetails`](crate::types::AutoTuneDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AutoTuneDetailsBuilder {
     pub(crate) scheduled_auto_tune_details: ::std::option::Option<crate::types::ScheduledAutoTuneDetails>,
 }

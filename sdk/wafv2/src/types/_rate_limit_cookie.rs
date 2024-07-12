@@ -29,8 +29,8 @@ impl RateLimitCookie {
 }
 
 /// A builder for [`RateLimitCookie`](crate::types::RateLimitCookie).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RateLimitCookieBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) text_transformations: ::std::option::Option<::std::vec::Vec<crate::types::TextTransformation>>,

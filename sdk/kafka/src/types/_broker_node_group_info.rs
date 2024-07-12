@@ -65,8 +65,8 @@ impl BrokerNodeGroupInfo {
 }
 
 /// A builder for [`BrokerNodeGroupInfo`](crate::types::BrokerNodeGroupInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BrokerNodeGroupInfoBuilder {
     pub(crate) broker_az_distribution: ::std::option::Option<crate::types::BrokerAzDistribution>,
     pub(crate) client_subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

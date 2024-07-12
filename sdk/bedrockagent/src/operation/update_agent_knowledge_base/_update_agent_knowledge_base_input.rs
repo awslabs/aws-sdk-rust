@@ -44,8 +44,8 @@ impl UpdateAgentKnowledgeBaseInput {
 }
 
 /// A builder for [`UpdateAgentKnowledgeBaseInput`](crate::operation::update_agent_knowledge_base::UpdateAgentKnowledgeBaseInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAgentKnowledgeBaseInputBuilder {
     pub(crate) agent_id: ::std::option::Option<::std::string::String>,
     pub(crate) agent_version: ::std::option::Option<::std::string::String>,

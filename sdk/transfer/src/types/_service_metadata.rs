@@ -21,8 +21,8 @@ impl ServiceMetadata {
 }
 
 /// A builder for [`ServiceMetadata`](crate::types::ServiceMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServiceMetadataBuilder {
     pub(crate) user_details: ::std::option::Option<crate::types::UserDetails>,
 }

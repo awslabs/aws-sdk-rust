@@ -22,8 +22,8 @@ impl DescribeConfigurationsInput {
 }
 
 /// A builder for [`DescribeConfigurationsInput`](crate::operation::describe_configurations::DescribeConfigurationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeConfigurationsInputBuilder {
     pub(crate) configuration_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

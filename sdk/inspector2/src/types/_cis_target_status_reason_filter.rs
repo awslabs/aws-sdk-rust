@@ -27,8 +27,8 @@ impl CisTargetStatusReasonFilter {
 }
 
 /// A builder for [`CisTargetStatusReasonFilter`](crate::types::CisTargetStatusReasonFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CisTargetStatusReasonFilterBuilder {
     pub(crate) comparison: ::std::option::Option<crate::types::CisTargetStatusComparison>,
     pub(crate) value: ::std::option::Option<crate::types::CisTargetStatusReason>,

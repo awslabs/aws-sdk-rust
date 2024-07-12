@@ -37,8 +37,8 @@ impl IdentityDkimAttributes {
 }
 
 /// A builder for [`IdentityDkimAttributes`](crate::types::IdentityDkimAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IdentityDkimAttributesBuilder {
     pub(crate) dkim_enabled: ::std::option::Option<bool>,
     pub(crate) dkim_verification_status: ::std::option::Option<crate::types::VerificationStatus>,

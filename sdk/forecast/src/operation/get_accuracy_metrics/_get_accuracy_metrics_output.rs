@@ -54,8 +54,8 @@ impl GetAccuracyMetricsOutput {
 }
 
 /// A builder for [`GetAccuracyMetricsOutput`](crate::operation::get_accuracy_metrics::GetAccuracyMetricsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAccuracyMetricsOutputBuilder {
     pub(crate) predictor_evaluation_results: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationResult>>,
     pub(crate) is_auto_predictor: ::std::option::Option<bool>,

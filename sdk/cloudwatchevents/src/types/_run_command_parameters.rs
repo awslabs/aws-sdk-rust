@@ -22,8 +22,8 @@ impl RunCommandParameters {
 }
 
 /// A builder for [`RunCommandParameters`](crate::types::RunCommandParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RunCommandParametersBuilder {
     pub(crate) run_command_targets: ::std::option::Option<::std::vec::Vec<crate::types::RunCommandTarget>>,
 }

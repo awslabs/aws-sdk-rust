@@ -32,8 +32,8 @@ impl GetUserDefinedFunctionInput {
 }
 
 /// A builder for [`GetUserDefinedFunctionInput`](crate::operation::get_user_defined_function::GetUserDefinedFunctionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetUserDefinedFunctionInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,

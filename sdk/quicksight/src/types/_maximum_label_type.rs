@@ -21,8 +21,8 @@ impl MaximumLabelType {
 }
 
 /// A builder for [`MaximumLabelType`](crate::types::MaximumLabelType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MaximumLabelTypeBuilder {
     pub(crate) visibility: ::std::option::Option<crate::types::Visibility>,
 }

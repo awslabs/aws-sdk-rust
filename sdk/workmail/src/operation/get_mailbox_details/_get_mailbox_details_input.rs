@@ -44,8 +44,8 @@ impl GetMailboxDetailsInput {
 }
 
 /// A builder for [`GetMailboxDetailsInput`](crate::operation::get_mailbox_details::GetMailboxDetailsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMailboxDetailsInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,

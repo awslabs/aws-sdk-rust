@@ -28,8 +28,8 @@ impl UngroupResourcesInput {
 }
 
 /// A builder for [`UngroupResourcesInput`](crate::operation::ungroup_resources::UngroupResourcesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UngroupResourcesInputBuilder {
     pub(crate) group: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

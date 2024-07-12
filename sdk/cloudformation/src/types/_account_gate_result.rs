@@ -61,8 +61,8 @@ impl AccountGateResult {
 }
 
 /// A builder for [`AccountGateResult`](crate::types::AccountGateResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AccountGateResultBuilder {
     pub(crate) status: ::std::option::Option<crate::types::AccountGateStatus>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,

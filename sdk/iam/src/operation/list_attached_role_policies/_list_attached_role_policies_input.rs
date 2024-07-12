@@ -44,8 +44,8 @@ impl ListAttachedRolePoliciesInput {
 }
 
 /// A builder for [`ListAttachedRolePoliciesInput`](crate::operation::list_attached_role_policies::ListAttachedRolePoliciesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAttachedRolePoliciesInputBuilder {
     pub(crate) role_name: ::std::option::Option<::std::string::String>,
     pub(crate) path_prefix: ::std::option::Option<::std::string::String>,

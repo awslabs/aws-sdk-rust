@@ -34,8 +34,8 @@ impl DeprovisionPublicIpv4PoolCidrOutput {
 }
 
 /// A builder for [`DeprovisionPublicIpv4PoolCidrOutput`](crate::operation::deprovision_public_ipv4_pool_cidr::DeprovisionPublicIpv4PoolCidrOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeprovisionPublicIpv4PoolCidrOutputBuilder {
     pub(crate) pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) deprovisioned_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

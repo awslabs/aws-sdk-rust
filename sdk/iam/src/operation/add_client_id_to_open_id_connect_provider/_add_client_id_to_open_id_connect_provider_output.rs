@@ -18,8 +18,8 @@ impl AddClientIdToOpenIdConnectProviderOutput {
 }
 
 /// A builder for [`AddClientIdToOpenIdConnectProviderOutput`](crate::operation::add_client_id_to_open_id_connect_provider::AddClientIdToOpenIdConnectProviderOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddClientIdToOpenIdConnectProviderOutputBuilder {
     _request_id: Option<String>,
 }

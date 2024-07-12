@@ -26,8 +26,8 @@ impl DescribeAppInstanceAdminInput {
 }
 
 /// A builder for [`DescribeAppInstanceAdminInput`](crate::operation::describe_app_instance_admin::DescribeAppInstanceAdminInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAppInstanceAdminInputBuilder {
     pub(crate) app_instance_admin_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_instance_arn: ::std::option::Option<::std::string::String>,

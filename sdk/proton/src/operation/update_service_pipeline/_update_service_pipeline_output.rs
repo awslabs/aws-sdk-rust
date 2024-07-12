@@ -26,8 +26,8 @@ impl UpdateServicePipelineOutput {
 }
 
 /// A builder for [`UpdateServicePipelineOutput`](crate::operation::update_service_pipeline::UpdateServicePipelineOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateServicePipelineOutputBuilder {
     pub(crate) pipeline: ::std::option::Option<crate::types::ServicePipeline>,
     _request_id: Option<String>,

@@ -39,8 +39,8 @@ impl ApplicationMetrics {
 }
 
 /// A builder for [`ApplicationMetrics`](crate::types::ApplicationMetrics).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ApplicationMetricsBuilder {
     pub(crate) duration: ::std::option::Option<i32>,
     pub(crate) request_count: ::std::option::Option<i32>,

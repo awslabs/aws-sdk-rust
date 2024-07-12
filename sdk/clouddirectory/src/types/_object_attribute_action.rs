@@ -27,8 +27,8 @@ impl ObjectAttributeAction {
 }
 
 /// A builder for [`ObjectAttributeAction`](crate::types::ObjectAttributeAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ObjectAttributeActionBuilder {
     pub(crate) object_attribute_action_type: ::std::option::Option<crate::types::UpdateActionType>,
     pub(crate) object_attribute_update_value: ::std::option::Option<crate::types::TypedAttributeValue>,

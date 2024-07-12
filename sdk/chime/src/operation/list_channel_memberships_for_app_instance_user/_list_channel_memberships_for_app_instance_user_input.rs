@@ -49,8 +49,8 @@ impl ListChannelMembershipsForAppInstanceUserInput {
 }
 
 /// A builder for [`ListChannelMembershipsForAppInstanceUserInput`](crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUserInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ListChannelMembershipsForAppInstanceUserInputBuilder {
     pub(crate) app_instance_user_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

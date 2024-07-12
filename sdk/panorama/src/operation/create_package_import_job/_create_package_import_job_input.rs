@@ -46,8 +46,8 @@ impl CreatePackageImportJobInput {
 }
 
 /// A builder for [`CreatePackageImportJobInput`](crate::operation::create_package_import_job::CreatePackageImportJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePackageImportJobInputBuilder {
     pub(crate) job_type: ::std::option::Option<crate::types::PackageImportJobType>,
     pub(crate) input_config: ::std::option::Option<crate::types::PackageImportJobInputConfig>,

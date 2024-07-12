@@ -34,8 +34,8 @@ impl CreateHealthCheckOutput {
 }
 
 /// A builder for [`CreateHealthCheckOutput`](crate::operation::create_health_check::CreateHealthCheckOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateHealthCheckOutputBuilder {
     pub(crate) health_check: ::std::option::Option<crate::types::HealthCheck>,
     pub(crate) location: ::std::option::Option<::std::string::String>,

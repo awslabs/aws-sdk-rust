@@ -63,8 +63,8 @@ impl ClarifyCheckStepMetadata {
 }
 
 /// A builder for [`ClarifyCheckStepMetadata`](crate::types::ClarifyCheckStepMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ClarifyCheckStepMetadataBuilder {
     pub(crate) check_type: ::std::option::Option<::std::string::String>,
     pub(crate) baseline_used_for_drift_check_constraints: ::std::option::Option<::std::string::String>,

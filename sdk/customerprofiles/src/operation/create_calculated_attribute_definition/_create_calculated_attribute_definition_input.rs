@@ -76,8 +76,8 @@ impl CreateCalculatedAttributeDefinitionInput {
 }
 
 /// A builder for [`CreateCalculatedAttributeDefinitionInput`](crate::operation::create_calculated_attribute_definition::CreateCalculatedAttributeDefinitionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateCalculatedAttributeDefinitionInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) calculated_attribute_name: ::std::option::Option<::std::string::String>,

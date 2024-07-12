@@ -20,8 +20,8 @@ impl CancelInstanceRefreshInput {
 }
 
 /// A builder for [`CancelInstanceRefreshInput`](crate::operation::cancel_instance_refresh::CancelInstanceRefreshInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelInstanceRefreshInputBuilder {
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
 }

@@ -64,8 +64,8 @@ impl ListServiceLevelObjectivesInput {
 }
 
 /// A builder for [`ListServiceLevelObjectivesInput`](crate::operation::list_service_level_objectives::ListServiceLevelObjectivesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListServiceLevelObjectivesInputBuilder {
     pub(crate) key_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) operation_name: ::std::option::Option<::std::string::String>,

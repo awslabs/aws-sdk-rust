@@ -26,8 +26,8 @@ impl DeleteAuthenticationProfileOutput {
 }
 
 /// A builder for [`DeleteAuthenticationProfileOutput`](crate::operation::delete_authentication_profile::DeleteAuthenticationProfileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAuthenticationProfileOutputBuilder {
     pub(crate) authentication_profile_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

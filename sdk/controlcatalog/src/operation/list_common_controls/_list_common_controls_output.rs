@@ -33,8 +33,8 @@ impl ListCommonControlsOutput {
 }
 
 /// A builder for [`ListCommonControlsOutput`](crate::operation::list_common_controls::ListCommonControlsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCommonControlsOutputBuilder {
     pub(crate) common_controls: ::std::option::Option<::std::vec::Vec<crate::types::CommonControlSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

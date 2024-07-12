@@ -33,8 +33,8 @@ impl ListIdentitiesInput {
 }
 
 /// A builder for [`ListIdentitiesInput`](crate::operation::list_identities::ListIdentitiesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListIdentitiesInputBuilder {
     pub(crate) identity_type: ::std::option::Option<crate::types::IdentityType>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

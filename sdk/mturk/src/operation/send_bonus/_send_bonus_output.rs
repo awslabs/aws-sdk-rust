@@ -18,8 +18,8 @@ impl SendBonusOutput {
 }
 
 /// A builder for [`SendBonusOutput`](crate::operation::send_bonus::SendBonusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendBonusOutputBuilder {
     _request_id: Option<String>,
 }

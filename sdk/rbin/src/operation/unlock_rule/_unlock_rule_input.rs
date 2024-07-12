@@ -20,8 +20,8 @@ impl UnlockRuleInput {
 }
 
 /// A builder for [`UnlockRuleInput`](crate::operation::unlock_rule::UnlockRuleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UnlockRuleInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
 }

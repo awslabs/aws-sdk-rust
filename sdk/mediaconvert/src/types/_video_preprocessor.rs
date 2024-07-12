@@ -63,8 +63,8 @@ impl VideoPreprocessor {
 }
 
 /// A builder for [`VideoPreprocessor`](crate::types::VideoPreprocessor).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VideoPreprocessorBuilder {
     pub(crate) color_corrector: ::std::option::Option<crate::types::ColorCorrector>,
     pub(crate) deinterlacer: ::std::option::Option<crate::types::Deinterlacer>,

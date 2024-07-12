@@ -82,8 +82,8 @@ impl ScalingConfiguration {
 }
 
 /// A builder for [`ScalingConfiguration`](crate::types::ScalingConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScalingConfigurationBuilder {
     pub(crate) min_capacity: ::std::option::Option<i32>,
     pub(crate) max_capacity: ::std::option::Option<i32>,

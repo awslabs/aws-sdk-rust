@@ -27,8 +27,8 @@ impl CreateSpaceOutput {
 }
 
 /// A builder for [`CreateSpaceOutput`](crate::operation::create_space::CreateSpaceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSpaceOutputBuilder {
     pub(crate) space_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

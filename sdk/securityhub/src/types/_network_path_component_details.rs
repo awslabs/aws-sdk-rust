@@ -31,8 +31,8 @@ impl NetworkPathComponentDetails {
 }
 
 /// A builder for [`NetworkPathComponentDetails`](crate::types::NetworkPathComponentDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NetworkPathComponentDetailsBuilder {
     pub(crate) address: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) port_ranges: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,

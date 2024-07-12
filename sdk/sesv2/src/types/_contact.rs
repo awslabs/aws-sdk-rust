@@ -49,8 +49,8 @@ impl Contact {
 }
 
 /// A builder for [`Contact`](crate::types::Contact).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ContactBuilder {
     pub(crate) email_address: ::std::option::Option<::std::string::String>,
     pub(crate) topic_preferences: ::std::option::Option<::std::vec::Vec<crate::types::TopicPreference>>,

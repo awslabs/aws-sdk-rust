@@ -28,8 +28,8 @@ impl GetCheckerIpRangesOutput {
 }
 
 /// A builder for [`GetCheckerIpRangesOutput`](crate::operation::get_checker_ip_ranges::GetCheckerIpRangesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCheckerIpRangesOutputBuilder {
     pub(crate) checker_ip_ranges: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,

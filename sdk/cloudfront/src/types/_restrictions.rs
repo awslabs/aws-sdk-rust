@@ -21,8 +21,8 @@ impl Restrictions {
 }
 
 /// A builder for [`Restrictions`](crate::types::Restrictions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RestrictionsBuilder {
     pub(crate) geo_restriction: ::std::option::Option<crate::types::GeoRestriction>,
 }

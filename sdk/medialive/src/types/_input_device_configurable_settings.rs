@@ -53,8 +53,8 @@ impl InputDeviceConfigurableSettings {
 }
 
 /// A builder for [`InputDeviceConfigurableSettings`](crate::types::InputDeviceConfigurableSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InputDeviceConfigurableSettingsBuilder {
     pub(crate) configured_input: ::std::option::Option<crate::types::InputDeviceConfiguredInput>,
     pub(crate) max_bitrate: ::std::option::Option<i32>,

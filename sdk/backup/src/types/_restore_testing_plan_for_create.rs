@@ -49,8 +49,8 @@ impl RestoreTestingPlanForCreate {
 }
 
 /// A builder for [`RestoreTestingPlanForCreate`](crate::types::RestoreTestingPlanForCreate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RestoreTestingPlanForCreateBuilder {
     pub(crate) recovery_point_selection: ::std::option::Option<crate::types::RestoreTestingRecoveryPointSelection>,
     pub(crate) restore_testing_plan_name: ::std::option::Option<::std::string::String>,

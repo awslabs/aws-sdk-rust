@@ -27,8 +27,8 @@ impl LexiconDescription {
 }
 
 /// A builder for [`LexiconDescription`](crate::types::LexiconDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LexiconDescriptionBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) attributes: ::std::option::Option<crate::types::LexiconAttributes>,

@@ -26,8 +26,8 @@ impl CreateMobileDeviceAccessRuleOutput {
 }
 
 /// A builder for [`CreateMobileDeviceAccessRuleOutput`](crate::operation::create_mobile_device_access_rule::CreateMobileDeviceAccessRuleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateMobileDeviceAccessRuleOutputBuilder {
     pub(crate) mobile_device_access_rule_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -38,8 +38,8 @@ impl ListAccountAssociationsInput {
 }
 
 /// A builder for [`ListAccountAssociationsInput`](crate::operation::list_account_associations::ListAccountAssociationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAccountAssociationsInputBuilder {
     pub(crate) billing_period: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<crate::types::ListAccountAssociationsFilter>,

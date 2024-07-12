@@ -117,8 +117,8 @@ impl ImportJobData {
 }
 
 /// A builder for [`ImportJobData`](crate::types::ImportJobData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ImportJobDataBuilder {
     pub(crate) import_job_id: ::std::option::Option<::std::string::String>,
     pub(crate) knowledge_base_id: ::std::option::Option<::std::string::String>,

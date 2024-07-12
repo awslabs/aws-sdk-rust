@@ -38,8 +38,8 @@ impl SetLoadBasedAutoScalingInput {
 }
 
 /// A builder for [`SetLoadBasedAutoScalingInput`](crate::operation::set_load_based_auto_scaling::SetLoadBasedAutoScalingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetLoadBasedAutoScalingInputBuilder {
     pub(crate) layer_id: ::std::option::Option<::std::string::String>,
     pub(crate) enable: ::std::option::Option<bool>,

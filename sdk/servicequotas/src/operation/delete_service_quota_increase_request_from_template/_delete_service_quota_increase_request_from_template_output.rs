@@ -20,8 +20,8 @@ impl DeleteServiceQuotaIncreaseRequestFromTemplateOutput {
 }
 
 /// A builder for [`DeleteServiceQuotaIncreaseRequestFromTemplateOutput`](crate::operation::delete_service_quota_increase_request_from_template::DeleteServiceQuotaIncreaseRequestFromTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteServiceQuotaIncreaseRequestFromTemplateOutputBuilder {
     _request_id: Option<String>,
 }

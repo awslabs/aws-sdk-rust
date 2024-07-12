@@ -29,8 +29,8 @@ impl OfiTrainingMetricsValue {
 }
 
 /// A builder for [`OfiTrainingMetricsValue`](crate::types::OfiTrainingMetricsValue).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OfiTrainingMetricsValueBuilder {
     pub(crate) metric_data_points: ::std::option::Option<::std::vec::Vec<crate::types::OfiMetricDataPoint>>,
     pub(crate) model_performance: ::std::option::Option<crate::types::OfiModelPerformance>,

@@ -70,8 +70,8 @@ impl TranslateDocumentOutput {
 }
 
 /// A builder for [`TranslateDocumentOutput`](crate::operation::translate_document::TranslateDocumentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TranslateDocumentOutputBuilder {
     pub(crate) translated_document: ::std::option::Option<crate::types::TranslatedDocument>,
     pub(crate) source_language_code: ::std::option::Option<::std::string::String>,

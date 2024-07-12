@@ -58,8 +58,8 @@ impl TargetedSentimentMention {
 }
 
 /// A builder for [`TargetedSentimentMention`](crate::types::TargetedSentimentMention).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TargetedSentimentMentionBuilder {
     pub(crate) score: ::std::option::Option<f32>,
     pub(crate) group_score: ::std::option::Option<f32>,

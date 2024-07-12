@@ -50,8 +50,8 @@ impl MediaStreamSink {
 }
 
 /// A builder for [`MediaStreamSink`](crate::types::MediaStreamSink).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct MediaStreamSinkBuilder {
     pub(crate) sink_arn: ::std::option::Option<::std::string::String>,
     pub(crate) sink_type: ::std::option::Option<crate::types::MediaStreamPipelineSinkType>,

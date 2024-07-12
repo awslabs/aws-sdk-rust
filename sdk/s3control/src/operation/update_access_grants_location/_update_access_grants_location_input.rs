@@ -36,8 +36,8 @@ impl UpdateAccessGrantsLocationInput {
 }
 
 /// A builder for [`UpdateAccessGrantsLocationInput`](crate::operation::update_access_grants_location::UpdateAccessGrantsLocationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAccessGrantsLocationInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) access_grants_location_id: ::std::option::Option<::std::string::String>,

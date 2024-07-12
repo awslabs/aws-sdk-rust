@@ -26,8 +26,8 @@ impl AssociateLambdaFunctionInput {
 }
 
 /// A builder for [`AssociateLambdaFunctionInput`](crate::operation::associate_lambda_function::AssociateLambdaFunctionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateLambdaFunctionInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) function_arn: ::std::option::Option<::std::string::String>,

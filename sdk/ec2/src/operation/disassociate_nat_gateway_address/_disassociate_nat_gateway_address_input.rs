@@ -40,8 +40,8 @@ impl DisassociateNatGatewayAddressInput {
 }
 
 /// A builder for [`DisassociateNatGatewayAddressInput`](crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddressInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateNatGatewayAddressInputBuilder {
     pub(crate) nat_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) association_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

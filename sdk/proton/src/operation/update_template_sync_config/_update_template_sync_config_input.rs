@@ -50,8 +50,8 @@ impl UpdateTemplateSyncConfigInput {
 }
 
 /// A builder for [`UpdateTemplateSyncConfigInput`](crate::operation::update_template_sync_config::UpdateTemplateSyncConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateTemplateSyncConfigInputBuilder {
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
     pub(crate) template_type: ::std::option::Option<crate::types::TemplateType>,

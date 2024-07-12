@@ -26,8 +26,8 @@ impl GetSuiteRunReportOutput {
 }
 
 /// A builder for [`GetSuiteRunReportOutput`](crate::operation::get_suite_run_report::GetSuiteRunReportOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSuiteRunReportOutputBuilder {
     pub(crate) qualification_report_download_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -41,8 +41,8 @@ impl UpdateNetworkSiteOutput {
 }
 
 /// A builder for [`UpdateNetworkSiteOutput`](crate::operation::update_network_site::UpdateNetworkSiteOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateNetworkSiteOutputBuilder {
     pub(crate) network_site: ::std::option::Option<crate::types::NetworkSite>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

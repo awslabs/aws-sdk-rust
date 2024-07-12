@@ -53,8 +53,8 @@ impl SourceAttribution {
 }
 
 /// A builder for [`SourceAttribution`](crate::types::SourceAttribution).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SourceAttributionBuilder {
     pub(crate) title: ::std::option::Option<::std::string::String>,
     pub(crate) snippet: ::std::option::Option<::std::string::String>,

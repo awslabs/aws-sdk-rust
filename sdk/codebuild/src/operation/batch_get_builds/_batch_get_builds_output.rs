@@ -36,8 +36,8 @@ impl BatchGetBuildsOutput {
 }
 
 /// A builder for [`BatchGetBuildsOutput`](crate::operation::batch_get_builds::BatchGetBuildsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetBuildsOutputBuilder {
     pub(crate) builds: ::std::option::Option<::std::vec::Vec<crate::types::Build>>,
     pub(crate) builds_not_found: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

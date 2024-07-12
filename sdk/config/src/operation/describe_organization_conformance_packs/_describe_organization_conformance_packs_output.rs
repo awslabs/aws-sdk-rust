@@ -34,8 +34,8 @@ impl DescribeOrganizationConformancePacksOutput {
 }
 
 /// A builder for [`DescribeOrganizationConformancePacksOutput`](crate::operation::describe_organization_conformance_packs::DescribeOrganizationConformancePacksOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeOrganizationConformancePacksOutputBuilder {
     pub(crate) organization_conformance_packs: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationConformancePack>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

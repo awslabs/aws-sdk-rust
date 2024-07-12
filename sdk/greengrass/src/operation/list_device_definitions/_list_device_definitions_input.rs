@@ -26,8 +26,8 @@ impl ListDeviceDefinitionsInput {
 }
 
 /// A builder for [`ListDeviceDefinitionsInput`](crate::operation::list_device_definitions::ListDeviceDefinitionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDeviceDefinitionsInputBuilder {
     pub(crate) max_results: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

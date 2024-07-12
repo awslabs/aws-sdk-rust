@@ -45,8 +45,8 @@ impl ColorConversion3DlutSetting {
 }
 
 /// A builder for [`ColorConversion3DlutSetting`](crate::types::ColorConversion3DlutSetting).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ColorConversion3DlutSettingBuilder {
     pub(crate) file_input: ::std::option::Option<::std::string::String>,
     pub(crate) input_color_space: ::std::option::Option<crate::types::ColorSpace>,

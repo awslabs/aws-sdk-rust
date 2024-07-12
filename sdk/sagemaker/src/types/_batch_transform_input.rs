@@ -87,8 +87,8 @@ impl BatchTransformInput {
 }
 
 /// A builder for [`BatchTransformInput`](crate::types::BatchTransformInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchTransformInputBuilder {
     pub(crate) data_captured_destination_s3_uri: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_format: ::std::option::Option<crate::types::MonitoringDatasetFormat>,

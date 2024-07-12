@@ -44,8 +44,8 @@ impl ListServiceQuotaIncreaseRequestsInTemplateInput {
 }
 
 /// A builder for [`ListServiceQuotaIncreaseRequestsInTemplateInput`](crate::operation::list_service_quota_increase_requests_in_template::ListServiceQuotaIncreaseRequestsInTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListServiceQuotaIncreaseRequestsInTemplateInputBuilder {
     pub(crate) service_code: ::std::option::Option<::std::string::String>,
     pub(crate) aws_region: ::std::option::Option<::std::string::String>,

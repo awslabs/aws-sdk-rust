@@ -29,8 +29,8 @@ impl OneDriveUsers {
 }
 
 /// A builder for [`OneDriveUsers`](crate::types::OneDriveUsers).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OneDriveUsersBuilder {
     pub(crate) one_drive_user_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) one_drive_user_s3_path: ::std::option::Option<crate::types::S3Path>,

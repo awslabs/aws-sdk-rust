@@ -18,8 +18,8 @@ impl ResetPasswordOutput {
 }
 
 /// A builder for [`ResetPasswordOutput`](crate::operation::reset_password::ResetPasswordOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResetPasswordOutputBuilder {
     _request_id: Option<String>,
 }

@@ -22,8 +22,8 @@ impl OriginGroupMember {
 }
 
 /// A builder for [`OriginGroupMember`](crate::types::OriginGroupMember).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OriginGroupMemberBuilder {
     pub(crate) origin_id: ::std::option::Option<::std::string::String>,
 }

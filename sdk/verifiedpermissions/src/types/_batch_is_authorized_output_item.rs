@@ -41,8 +41,8 @@ impl BatchIsAuthorizedOutputItem {
 }
 
 /// A builder for [`BatchIsAuthorizedOutputItem`](crate::types::BatchIsAuthorizedOutputItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchIsAuthorizedOutputItemBuilder {
     pub(crate) request: ::std::option::Option<crate::types::BatchIsAuthorizedInputItem>,
     pub(crate) decision: ::std::option::Option<crate::types::Decision>,

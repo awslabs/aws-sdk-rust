@@ -32,8 +32,8 @@ impl DescribeWarmPoolInput {
 }
 
 /// A builder for [`DescribeWarmPoolInput`](crate::operation::describe_warm_pool::DescribeWarmPoolInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeWarmPoolInputBuilder {
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,

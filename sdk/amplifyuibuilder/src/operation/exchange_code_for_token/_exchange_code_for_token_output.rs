@@ -50,8 +50,8 @@ impl ExchangeCodeForTokenOutput {
 }
 
 /// A builder for [`ExchangeCodeForTokenOutput`](crate::operation::exchange_code_for_token::ExchangeCodeForTokenOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ExchangeCodeForTokenOutputBuilder {
     pub(crate) access_token: ::std::option::Option<::std::string::String>,
     pub(crate) expires_in: ::std::option::Option<i32>,

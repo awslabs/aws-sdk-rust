@@ -33,8 +33,8 @@ impl FailedRequest {
 }
 
 /// A builder for [`FailedRequest`](crate::types::FailedRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FailedRequestBuilder {
     pub(crate) request_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) failure_reason_code: ::std::option::Option<crate::types::FailureReasonCode>,

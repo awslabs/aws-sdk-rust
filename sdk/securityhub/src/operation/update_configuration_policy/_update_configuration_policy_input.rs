@@ -46,8 +46,8 @@ impl UpdateConfigurationPolicyInput {
 }
 
 /// A builder for [`UpdateConfigurationPolicyInput`](crate::operation::update_configuration_policy::UpdateConfigurationPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateConfigurationPolicyInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

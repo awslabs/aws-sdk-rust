@@ -39,8 +39,8 @@ impl MariaDbDataProviderSettings {
 }
 
 /// A builder for [`MariaDbDataProviderSettings`](crate::types::MariaDbDataProviderSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MariaDbDataProviderSettingsBuilder {
     pub(crate) server_name: ::std::option::Option<::std::string::String>,
     pub(crate) port: ::std::option::Option<i32>,

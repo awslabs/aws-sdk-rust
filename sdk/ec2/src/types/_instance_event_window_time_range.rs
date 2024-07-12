@@ -39,8 +39,8 @@ impl InstanceEventWindowTimeRange {
 }
 
 /// A builder for [`InstanceEventWindowTimeRange`](crate::types::InstanceEventWindowTimeRange).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceEventWindowTimeRangeBuilder {
     pub(crate) start_week_day: ::std::option::Option<crate::types::WeekDay>,
     pub(crate) start_hour: ::std::option::Option<i32>,

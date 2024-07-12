@@ -18,8 +18,8 @@ impl DeregisterResourceOutput {
 }
 
 /// A builder for [`DeregisterResourceOutput`](crate::operation::deregister_resource::DeregisterResourceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeregisterResourceOutputBuilder {
     _request_id: Option<String>,
 }

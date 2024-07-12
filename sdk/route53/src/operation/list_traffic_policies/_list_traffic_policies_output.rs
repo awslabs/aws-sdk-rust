@@ -47,8 +47,8 @@ impl ListTrafficPoliciesOutput {
 }
 
 /// A builder for [`ListTrafficPoliciesOutput`](crate::operation::list_traffic_policies::ListTrafficPoliciesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTrafficPoliciesOutputBuilder {
     pub(crate) traffic_policy_summaries: ::std::option::Option<::std::vec::Vec<crate::types::TrafficPolicySummary>>,
     pub(crate) is_truncated: ::std::option::Option<bool>,

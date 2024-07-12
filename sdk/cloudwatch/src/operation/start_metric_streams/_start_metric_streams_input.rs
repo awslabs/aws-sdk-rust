@@ -24,8 +24,8 @@ impl StartMetricStreamsInput {
 }
 
 /// A builder for [`StartMetricStreamsInput`](crate::operation::start_metric_streams::StartMetricStreamsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartMetricStreamsInputBuilder {
     pub(crate) names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

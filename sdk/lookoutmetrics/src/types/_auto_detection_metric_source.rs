@@ -21,8 +21,8 @@ impl AutoDetectionMetricSource {
 }
 
 /// A builder for [`AutoDetectionMetricSource`](crate::types::AutoDetectionMetricSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AutoDetectionMetricSourceBuilder {
     pub(crate) s3_source_config: ::std::option::Option<crate::types::AutoDetectionS3SourceConfig>,
 }

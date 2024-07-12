@@ -34,8 +34,8 @@ impl ListDomainsOutput {
 }
 
 /// A builder for [`ListDomainsOutput`](crate::operation::list_domains::ListDomainsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDomainsOutputBuilder {
     pub(crate) domain_summaries: ::std::option::Option<::std::vec::Vec<crate::types::DomainSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

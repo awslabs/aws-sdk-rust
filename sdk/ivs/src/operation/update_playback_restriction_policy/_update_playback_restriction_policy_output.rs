@@ -26,8 +26,8 @@ impl UpdatePlaybackRestrictionPolicyOutput {
 }
 
 /// A builder for [`UpdatePlaybackRestrictionPolicyOutput`](crate::operation::update_playback_restriction_policy::UpdatePlaybackRestrictionPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePlaybackRestrictionPolicyOutputBuilder {
     pub(crate) playback_restriction_policy: ::std::option::Option<crate::types::PlaybackRestrictionPolicy>,
     _request_id: Option<String>,

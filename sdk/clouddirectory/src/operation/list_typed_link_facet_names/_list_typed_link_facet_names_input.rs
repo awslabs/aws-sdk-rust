@@ -32,8 +32,8 @@ impl ListTypedLinkFacetNamesInput {
 }
 
 /// A builder for [`ListTypedLinkFacetNamesInput`](crate::operation::list_typed_link_facet_names::ListTypedLinkFacetNamesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTypedLinkFacetNamesInputBuilder {
     pub(crate) schema_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

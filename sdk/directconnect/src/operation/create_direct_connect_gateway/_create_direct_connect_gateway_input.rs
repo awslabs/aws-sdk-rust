@@ -26,8 +26,8 @@ impl CreateDirectConnectGatewayInput {
 }
 
 /// A builder for [`CreateDirectConnectGatewayInput`](crate::operation::create_direct_connect_gateway::CreateDirectConnectGatewayInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDirectConnectGatewayInputBuilder {
     pub(crate) direct_connect_gateway_name: ::std::option::Option<::std::string::String>,
     pub(crate) amazon_side_asn: ::std::option::Option<i64>,

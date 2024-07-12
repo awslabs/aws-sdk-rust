@@ -18,8 +18,8 @@ impl DeleteAddonSubscriptionOutput {
 }
 
 /// A builder for [`DeleteAddonSubscriptionOutput`](crate::operation::delete_addon_subscription::DeleteAddonSubscriptionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAddonSubscriptionOutputBuilder {
     _request_id: Option<String>,
 }

@@ -32,8 +32,8 @@ impl ListLogAnomalyDetectorsInput {
 }
 
 /// A builder for [`ListLogAnomalyDetectorsInput`](crate::operation::list_log_anomaly_detectors::ListLogAnomalyDetectorsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListLogAnomalyDetectorsInputBuilder {
     pub(crate) filter_log_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,

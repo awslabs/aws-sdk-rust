@@ -29,8 +29,8 @@ impl TestSetDiscrepancyErrors {
 }
 
 /// A builder for [`TestSetDiscrepancyErrors`](crate::types::TestSetDiscrepancyErrors).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TestSetDiscrepancyErrorsBuilder {
     pub(crate) intent_discrepancies: ::std::option::Option<::std::vec::Vec<crate::types::TestSetIntentDiscrepancyItem>>,
     pub(crate) slot_discrepancies: ::std::option::Option<::std::vec::Vec<crate::types::TestSetSlotDiscrepancyItem>>,

@@ -131,8 +131,8 @@ impl LoRaWanDeviceProfile {
 }
 
 /// A builder for [`LoRaWanDeviceProfile`](crate::types::LoRaWanDeviceProfile).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LoRaWanDeviceProfileBuilder {
     pub(crate) supports_class_b: ::std::option::Option<bool>,
     pub(crate) class_b_timeout: ::std::option::Option<i32>,

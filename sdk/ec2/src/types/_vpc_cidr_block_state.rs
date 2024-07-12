@@ -27,8 +27,8 @@ impl VpcCidrBlockState {
 }
 
 /// A builder for [`VpcCidrBlockState`](crate::types::VpcCidrBlockState).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VpcCidrBlockStateBuilder {
     pub(crate) state: ::std::option::Option<crate::types::VpcCidrBlockStateCode>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,

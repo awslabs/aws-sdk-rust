@@ -18,8 +18,8 @@ impl DeleteMessagingStreamingConfigurationsOutput {
 }
 
 /// A builder for [`DeleteMessagingStreamingConfigurationsOutput`](crate::operation::delete_messaging_streaming_configurations::DeleteMessagingStreamingConfigurationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteMessagingStreamingConfigurationsOutputBuilder {
     _request_id: Option<String>,
 }

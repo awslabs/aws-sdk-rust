@@ -29,8 +29,8 @@ impl CardVerificationValue2 {
 }
 
 /// A builder for [`CardVerificationValue2`](crate::types::CardVerificationValue2).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CardVerificationValue2Builder {
     pub(crate) card_expiry_date: ::std::option::Option<::std::string::String>,
 }

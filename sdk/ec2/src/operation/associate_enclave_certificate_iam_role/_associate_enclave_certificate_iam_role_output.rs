@@ -38,8 +38,8 @@ impl AssociateEnclaveCertificateIamRoleOutput {
 }
 
 /// A builder for [`AssociateEnclaveCertificateIamRoleOutput`](crate::operation::associate_enclave_certificate_iam_role::AssociateEnclaveCertificateIamRoleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateEnclaveCertificateIamRoleOutputBuilder {
     pub(crate) certificate_s3_bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_s3_object_key: ::std::option::Option<::std::string::String>,

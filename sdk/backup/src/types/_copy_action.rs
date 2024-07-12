@@ -32,8 +32,8 @@ impl CopyAction {
 }
 
 /// A builder for [`CopyAction`](crate::types::CopyAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CopyActionBuilder {
     pub(crate) lifecycle: ::std::option::Option<crate::types::Lifecycle>,
     pub(crate) destination_backup_vault_arn: ::std::option::Option<::std::string::String>,

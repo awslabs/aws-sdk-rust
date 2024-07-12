@@ -36,8 +36,8 @@ impl DescribeDataProvidersOutput {
 }
 
 /// A builder for [`DescribeDataProvidersOutput`](crate::operation::describe_data_providers::DescribeDataProvidersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDataProvidersOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) data_providers: ::std::option::Option<::std::vec::Vec<crate::types::DataProvider>>,

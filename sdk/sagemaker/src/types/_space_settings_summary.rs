@@ -27,8 +27,8 @@ impl SpaceSettingsSummary {
 }
 
 /// A builder for [`SpaceSettingsSummary`](crate::types::SpaceSettingsSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SpaceSettingsSummaryBuilder {
     pub(crate) app_type: ::std::option::Option<crate::types::AppType>,
     pub(crate) space_storage_settings: ::std::option::Option<crate::types::SpaceStorageSettings>,

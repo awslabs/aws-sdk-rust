@@ -33,8 +33,8 @@ impl QueryAssistantOutput {
 }
 
 /// A builder for [`QueryAssistantOutput`](crate::operation::query_assistant::QueryAssistantOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct QueryAssistantOutputBuilder {
     pub(crate) results: ::std::option::Option<::std::vec::Vec<crate::types::ResultData>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

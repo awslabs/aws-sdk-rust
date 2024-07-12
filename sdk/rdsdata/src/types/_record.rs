@@ -25,8 +25,8 @@ impl Record {
 }
 
 /// A builder for [`Record`](crate::types::Record).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecordBuilder {
     pub(crate) values: ::std::option::Option<::std::vec::Vec<crate::types::Value>>,
 }

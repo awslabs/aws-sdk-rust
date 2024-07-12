@@ -18,8 +18,8 @@ impl CancelDataQualityRulesetEvaluationRunOutput {
 }
 
 /// A builder for [`CancelDataQualityRulesetEvaluationRunOutput`](crate::operation::cancel_data_quality_ruleset_evaluation_run::CancelDataQualityRulesetEvaluationRunOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelDataQualityRulesetEvaluationRunOutputBuilder {
     _request_id: Option<String>,
 }

@@ -163,8 +163,8 @@ impl AnalyticsIntentFilter {
 }
 
 /// A builder for [`AnalyticsIntentFilter`](crate::types::AnalyticsIntentFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AnalyticsIntentFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::AnalyticsIntentFilterName>,
     pub(crate) operator: ::std::option::Option<crate::types::AnalyticsFilterOperator>,

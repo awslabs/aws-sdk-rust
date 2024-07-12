@@ -20,8 +20,8 @@ impl GetResolverQueryLogConfigInput {
 }
 
 /// A builder for [`GetResolverQueryLogConfigInput`](crate::operation::get_resolver_query_log_config::GetResolverQueryLogConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetResolverQueryLogConfigInputBuilder {
     pub(crate) resolver_query_log_config_id: ::std::option::Option<::std::string::String>,
 }

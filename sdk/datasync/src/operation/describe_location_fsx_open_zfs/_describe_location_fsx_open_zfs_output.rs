@@ -54,8 +54,8 @@ impl DescribeLocationFsxOpenZfsOutput {
 }
 
 /// A builder for [`DescribeLocationFsxOpenZfsOutput`](crate::operation::describe_location_fsx_open_zfs::DescribeLocationFsxOpenZfsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeLocationFsxOpenZfsOutputBuilder {
     pub(crate) location_arn: ::std::option::Option<::std::string::String>,
     pub(crate) location_uri: ::std::option::Option<::std::string::String>,

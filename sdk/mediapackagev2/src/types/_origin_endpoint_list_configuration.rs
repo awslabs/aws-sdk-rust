@@ -97,8 +97,8 @@ impl OriginEndpointListConfiguration {
 }
 
 /// A builder for [`OriginEndpointListConfiguration`](crate::types::OriginEndpointListConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OriginEndpointListConfigurationBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) channel_group_name: ::std::option::Option<::std::string::String>,

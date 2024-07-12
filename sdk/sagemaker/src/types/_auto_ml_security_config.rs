@@ -33,8 +33,8 @@ impl AutoMlSecurityConfig {
 }
 
 /// A builder for [`AutoMlSecurityConfig`](crate::types::AutoMlSecurityConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AutoMlSecurityConfigBuilder {
     pub(crate) volume_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) enable_inter_container_traffic_encryption: ::std::option::Option<bool>,

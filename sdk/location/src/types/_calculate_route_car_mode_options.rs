@@ -35,8 +35,8 @@ impl CalculateRouteCarModeOptions {
 }
 
 /// A builder for [`CalculateRouteCarModeOptions`](crate::types::CalculateRouteCarModeOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CalculateRouteCarModeOptionsBuilder {
     pub(crate) avoid_ferries: ::std::option::Option<bool>,
     pub(crate) avoid_tolls: ::std::option::Option<bool>,

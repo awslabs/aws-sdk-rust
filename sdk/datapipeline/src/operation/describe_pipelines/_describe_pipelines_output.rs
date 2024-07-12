@@ -28,8 +28,8 @@ impl DescribePipelinesOutput {
 }
 
 /// A builder for [`DescribePipelinesOutput`](crate::operation::describe_pipelines::DescribePipelinesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribePipelinesOutputBuilder {
     pub(crate) pipeline_description_list: ::std::option::Option<::std::vec::Vec<crate::types::PipelineDescription>>,
     _request_id: Option<String>,

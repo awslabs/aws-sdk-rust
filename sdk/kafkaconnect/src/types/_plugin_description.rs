@@ -21,8 +21,8 @@ impl PluginDescription {
 }
 
 /// A builder for [`PluginDescription`](crate::types::PluginDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PluginDescriptionBuilder {
     pub(crate) custom_plugin: ::std::option::Option<crate::types::CustomPluginDescription>,
 }

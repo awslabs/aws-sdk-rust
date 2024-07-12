@@ -51,8 +51,8 @@ impl ImageLayerAggregation {
 }
 
 /// A builder for [`ImageLayerAggregation`](crate::types::ImageLayerAggregation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImageLayerAggregationBuilder {
     pub(crate) repositories: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) resource_ids: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,

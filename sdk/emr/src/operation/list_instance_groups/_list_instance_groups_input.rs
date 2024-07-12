@@ -27,8 +27,8 @@ impl ListInstanceGroupsInput {
 }
 
 /// A builder for [`ListInstanceGroupsInput`](crate::operation::list_instance_groups::ListInstanceGroupsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListInstanceGroupsInputBuilder {
     pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

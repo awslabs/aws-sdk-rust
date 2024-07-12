@@ -26,8 +26,8 @@ impl GetAssistantAssociationInput {
 }
 
 /// A builder for [`GetAssistantAssociationInput`](crate::operation::get_assistant_association::GetAssistantAssociationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAssistantAssociationInputBuilder {
     pub(crate) assistant_association_id: ::std::option::Option<::std::string::String>,
     pub(crate) assistant_id: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl DescribeClientVpnTargetNetworksOutput {
 }
 
 /// A builder for [`DescribeClientVpnTargetNetworksOutput`](crate::operation::describe_client_vpn_target_networks::DescribeClientVpnTargetNetworksOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeClientVpnTargetNetworksOutputBuilder {
     pub(crate) client_vpn_target_networks: ::std::option::Option<::std::vec::Vec<crate::types::TargetNetwork>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

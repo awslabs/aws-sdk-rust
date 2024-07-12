@@ -34,8 +34,8 @@ impl ListUseCasesOutput {
 }
 
 /// A builder for [`ListUseCasesOutput`](crate::operation::list_use_cases::ListUseCasesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListUseCasesOutputBuilder {
     pub(crate) use_case_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::UseCase>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

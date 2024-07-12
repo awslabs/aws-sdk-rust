@@ -72,8 +72,8 @@ impl ListPreviewRotationShiftsInput {
 }
 
 /// A builder for [`ListPreviewRotationShiftsInput`](crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPreviewRotationShiftsInputBuilder {
     pub(crate) rotation_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,

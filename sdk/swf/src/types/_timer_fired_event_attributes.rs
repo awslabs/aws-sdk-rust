@@ -28,8 +28,8 @@ impl TimerFiredEventAttributes {
 }
 
 /// A builder for [`TimerFiredEventAttributes`](crate::types::TimerFiredEventAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TimerFiredEventAttributesBuilder {
     pub(crate) timer_id: ::std::option::Option<::std::string::String>,
     pub(crate) started_event_id: ::std::option::Option<i64>,

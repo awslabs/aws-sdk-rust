@@ -18,8 +18,8 @@ impl UpdateCustomKeyStoreOutput {
 }
 
 /// A builder for [`UpdateCustomKeyStoreOutput`](crate::operation::update_custom_key_store::UpdateCustomKeyStoreOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateCustomKeyStoreOutputBuilder {
     _request_id: Option<String>,
 }

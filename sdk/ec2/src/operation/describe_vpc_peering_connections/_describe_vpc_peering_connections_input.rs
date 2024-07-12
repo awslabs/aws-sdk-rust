@@ -114,8 +114,8 @@ impl DescribeVpcPeeringConnectionsInput {
 }
 
 /// A builder for [`DescribeVpcPeeringConnectionsInput`](crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeVpcPeeringConnectionsInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) dry_run: ::std::option::Option<bool>,

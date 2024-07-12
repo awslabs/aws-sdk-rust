@@ -20,8 +20,8 @@ impl DeleteCustomPluginInput {
 }
 
 /// A builder for [`DeleteCustomPluginInput`](crate::operation::delete_custom_plugin::DeleteCustomPluginInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCustomPluginInputBuilder {
     pub(crate) custom_plugin_arn: ::std::option::Option<::std::string::String>,
 }

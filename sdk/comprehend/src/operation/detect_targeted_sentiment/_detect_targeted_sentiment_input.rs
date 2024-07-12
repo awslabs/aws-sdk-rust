@@ -34,8 +34,8 @@ impl DetectTargetedSentimentInput {
 }
 
 /// A builder for [`DetectTargetedSentimentInput`](crate::operation::detect_targeted_sentiment::DetectTargetedSentimentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DetectTargetedSentimentInputBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
     pub(crate) language_code: ::std::option::Option<crate::types::LanguageCode>,

@@ -27,8 +27,8 @@ impl RelationalDatabaseEndpoint {
 }
 
 /// A builder for [`RelationalDatabaseEndpoint`](crate::types::RelationalDatabaseEndpoint).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RelationalDatabaseEndpointBuilder {
     pub(crate) port: ::std::option::Option<i32>,
     pub(crate) address: ::std::option::Option<::std::string::String>,

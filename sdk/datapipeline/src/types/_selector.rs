@@ -27,8 +27,8 @@ impl Selector {
 }
 
 /// A builder for [`Selector`](crate::types::Selector).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SelectorBuilder {
     pub(crate) field_name: ::std::option::Option<::std::string::String>,
     pub(crate) operator: ::std::option::Option<crate::types::Operator>,

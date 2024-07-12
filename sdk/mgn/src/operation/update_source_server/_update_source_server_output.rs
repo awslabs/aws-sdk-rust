@@ -125,8 +125,8 @@ impl UpdateSourceServerOutput {
 }
 
 /// A builder for [`UpdateSourceServerOutput`](crate::operation::update_source_server::UpdateSourceServerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateSourceServerOutputBuilder {
     pub(crate) source_server_id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

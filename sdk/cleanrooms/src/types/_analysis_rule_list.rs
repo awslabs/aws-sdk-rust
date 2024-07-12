@@ -37,8 +37,8 @@ impl AnalysisRuleList {
 }
 
 /// A builder for [`AnalysisRuleList`](crate::types::AnalysisRuleList).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AnalysisRuleListBuilder {
     pub(crate) join_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) allowed_join_operators: ::std::option::Option<::std::vec::Vec<crate::types::JoinOperator>>,

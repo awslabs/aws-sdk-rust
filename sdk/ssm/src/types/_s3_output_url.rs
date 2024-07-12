@@ -21,8 +21,8 @@ impl S3OutputUrl {
 }
 
 /// A builder for [`S3OutputUrl`](crate::types::S3OutputUrl).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3OutputUrlBuilder {
     pub(crate) output_url: ::std::option::Option<::std::string::String>,
 }

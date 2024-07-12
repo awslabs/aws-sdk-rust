@@ -44,8 +44,8 @@ impl GetReferenceInput {
 }
 
 /// A builder for [`GetReferenceInput`](crate::operation::get_reference::GetReferenceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetReferenceInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) reference_store_id: ::std::option::Option<::std::string::String>,

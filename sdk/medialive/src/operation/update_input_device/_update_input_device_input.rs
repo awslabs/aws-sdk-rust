@@ -45,8 +45,8 @@ impl UpdateInputDeviceInput {
 }
 
 /// A builder for [`UpdateInputDeviceInput`](crate::operation::update_input_device::UpdateInputDeviceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateInputDeviceInputBuilder {
     pub(crate) hd_device_settings: ::std::option::Option<crate::types::InputDeviceConfigurableSettings>,
     pub(crate) input_device_id: ::std::option::Option<::std::string::String>,

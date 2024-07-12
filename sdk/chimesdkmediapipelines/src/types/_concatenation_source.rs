@@ -27,8 +27,8 @@ impl ConcatenationSource {
 }
 
 /// A builder for [`ConcatenationSource`](crate::types::ConcatenationSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConcatenationSourceBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ConcatenationSourceType>,
     pub(crate) media_capture_pipeline_source_configuration: ::std::option::Option<crate::types::MediaCapturePipelineSourceConfiguration>,

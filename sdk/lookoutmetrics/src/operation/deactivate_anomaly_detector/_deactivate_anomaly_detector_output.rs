@@ -18,8 +18,8 @@ impl DeactivateAnomalyDetectorOutput {
 }
 
 /// A builder for [`DeactivateAnomalyDetectorOutput`](crate::operation::deactivate_anomaly_detector::DeactivateAnomalyDetectorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeactivateAnomalyDetectorOutputBuilder {
     _request_id: Option<String>,
 }

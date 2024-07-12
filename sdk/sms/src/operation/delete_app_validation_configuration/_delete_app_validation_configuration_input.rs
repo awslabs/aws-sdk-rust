@@ -20,8 +20,8 @@ impl DeleteAppValidationConfigurationInput {
 }
 
 /// A builder for [`DeleteAppValidationConfigurationInput`](crate::operation::delete_app_validation_configuration::DeleteAppValidationConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAppValidationConfigurationInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
 }

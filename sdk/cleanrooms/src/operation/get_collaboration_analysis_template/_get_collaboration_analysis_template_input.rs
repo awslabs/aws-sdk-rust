@@ -26,8 +26,8 @@ impl GetCollaborationAnalysisTemplateInput {
 }
 
 /// A builder for [`GetCollaborationAnalysisTemplateInput`](crate::operation::get_collaboration_analysis_template::GetCollaborationAnalysisTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCollaborationAnalysisTemplateInputBuilder {
     pub(crate) collaboration_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) analysis_template_arn: ::std::option::Option<::std::string::String>,

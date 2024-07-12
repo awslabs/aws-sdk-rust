@@ -26,8 +26,8 @@ impl UpdateGatewayRouteOutput {
 }
 
 /// A builder for [`UpdateGatewayRouteOutput`](crate::operation::update_gateway_route::UpdateGatewayRouteOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateGatewayRouteOutputBuilder {
     pub(crate) gateway_route: ::std::option::Option<crate::types::GatewayRouteData>,
     _request_id: Option<String>,

@@ -48,8 +48,8 @@ impl DescribeReleaseLabelOutput {
 }
 
 /// A builder for [`DescribeReleaseLabelOutput`](crate::operation::describe_release_label::DescribeReleaseLabelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeReleaseLabelOutputBuilder {
     pub(crate) release_label: ::std::option::Option<::std::string::String>,
     pub(crate) applications: ::std::option::Option<::std::vec::Vec<crate::types::SimplifiedApplication>>,

@@ -27,8 +27,8 @@ impl SecurityPolicyStats {
 }
 
 /// A builder for [`SecurityPolicyStats`](crate::types::SecurityPolicyStats).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SecurityPolicyStatsBuilder {
     pub(crate) encryption_policy_count: ::std::option::Option<i64>,
     pub(crate) network_policy_count: ::std::option::Option<i64>,

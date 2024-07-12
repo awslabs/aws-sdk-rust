@@ -40,8 +40,8 @@ impl CheckNoNewAccessOutput {
 }
 
 /// A builder for [`CheckNoNewAccessOutput`](crate::operation::check_no_new_access::CheckNoNewAccessOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CheckNoNewAccessOutputBuilder {
     pub(crate) result: ::std::option::Option<crate::types::CheckNoNewAccessResult>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

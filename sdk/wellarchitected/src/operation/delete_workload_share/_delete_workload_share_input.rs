@@ -39,8 +39,8 @@ impl DeleteWorkloadShareInput {
 }
 
 /// A builder for [`DeleteWorkloadShareInput`](crate::operation::delete_workload_share::DeleteWorkloadShareInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteWorkloadShareInputBuilder {
     pub(crate) share_id: ::std::option::Option<::std::string::String>,
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,

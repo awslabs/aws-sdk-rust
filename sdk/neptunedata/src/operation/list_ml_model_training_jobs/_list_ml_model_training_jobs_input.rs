@@ -26,8 +26,8 @@ impl ListMlModelTrainingJobsInput {
 }
 
 /// A builder for [`ListMlModelTrainingJobsInput`](crate::operation::list_ml_model_training_jobs::ListMlModelTrainingJobsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListMlModelTrainingJobsInputBuilder {
     pub(crate) max_items: ::std::option::Option<i32>,
     pub(crate) neptune_iam_role_arn: ::std::option::Option<::std::string::String>,

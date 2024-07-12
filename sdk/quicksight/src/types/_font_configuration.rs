@@ -45,8 +45,8 @@ impl FontConfiguration {
 }
 
 /// A builder for [`FontConfiguration`](crate::types::FontConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FontConfigurationBuilder {
     pub(crate) font_size: ::std::option::Option<crate::types::FontSize>,
     pub(crate) font_decoration: ::std::option::Option<crate::types::FontDecoration>,

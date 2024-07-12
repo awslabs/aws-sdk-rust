@@ -34,8 +34,8 @@ impl StartBulkDisassociateWirelessDeviceFromMulticastGroupInput {
 }
 
 /// A builder for [`StartBulkDisassociateWirelessDeviceFromMulticastGroupInput`](crate::operation::start_bulk_disassociate_wireless_device_from_multicast_group::StartBulkDisassociateWirelessDeviceFromMulticastGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartBulkDisassociateWirelessDeviceFromMulticastGroupInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) query_string: ::std::option::Option<::std::string::String>,

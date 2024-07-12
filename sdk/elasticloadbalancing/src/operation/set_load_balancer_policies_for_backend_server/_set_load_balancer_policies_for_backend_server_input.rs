@@ -36,8 +36,8 @@ impl SetLoadBalancerPoliciesForBackendServerInput {
 }
 
 /// A builder for [`SetLoadBalancerPoliciesForBackendServerInput`](crate::operation::set_load_balancer_policies_for_backend_server::SetLoadBalancerPoliciesForBackendServerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetLoadBalancerPoliciesForBackendServerInputBuilder {
     pub(crate) load_balancer_name: ::std::option::Option<::std::string::String>,
     pub(crate) instance_port: ::std::option::Option<i32>,

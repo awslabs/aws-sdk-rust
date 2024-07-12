@@ -83,8 +83,8 @@ impl InstalledComponent {
 }
 
 /// A builder for [`InstalledComponent`](crate::types::InstalledComponent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstalledComponentBuilder {
     pub(crate) component_name: ::std::option::Option<::std::string::String>,
     pub(crate) component_version: ::std::option::Option<::std::string::String>,

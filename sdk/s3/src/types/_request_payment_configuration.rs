@@ -21,8 +21,8 @@ impl RequestPaymentConfiguration {
 }
 
 /// A builder for [`RequestPaymentConfiguration`](crate::types::RequestPaymentConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RequestPaymentConfigurationBuilder {
     pub(crate) payer: ::std::option::Option<crate::types::Payer>,
 }

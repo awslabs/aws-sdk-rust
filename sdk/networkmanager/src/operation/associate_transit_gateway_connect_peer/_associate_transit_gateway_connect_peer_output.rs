@@ -26,8 +26,8 @@ impl AssociateTransitGatewayConnectPeerOutput {
 }
 
 /// A builder for [`AssociateTransitGatewayConnectPeerOutput`](crate::operation::associate_transit_gateway_connect_peer::AssociateTransitGatewayConnectPeerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateTransitGatewayConnectPeerOutputBuilder {
     pub(crate) transit_gateway_connect_peer_association: ::std::option::Option<crate::types::TransitGatewayConnectPeerAssociation>,
     _request_id: Option<String>,

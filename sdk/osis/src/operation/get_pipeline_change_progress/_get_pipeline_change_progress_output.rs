@@ -28,8 +28,8 @@ impl GetPipelineChangeProgressOutput {
 }
 
 /// A builder for [`GetPipelineChangeProgressOutput`](crate::operation::get_pipeline_change_progress::GetPipelineChangeProgressOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPipelineChangeProgressOutputBuilder {
     pub(crate) change_progress_statuses: ::std::option::Option<::std::vec::Vec<crate::types::ChangeProgressStatus>>,
     _request_id: Option<String>,

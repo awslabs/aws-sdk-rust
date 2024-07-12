@@ -38,8 +38,8 @@ impl PutSigningProfileOutput {
 }
 
 /// A builder for [`PutSigningProfileOutput`](crate::operation::put_signing_profile::PutSigningProfileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutSigningProfileOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) profile_version: ::std::option::Option<::std::string::String>,

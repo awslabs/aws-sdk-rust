@@ -32,8 +32,8 @@ impl SendSshPublicKeyOutput {
 }
 
 /// A builder for [`SendSshPublicKeyOutput`](crate::operation::send_ssh_public_key::SendSshPublicKeyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendSshPublicKeyOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) success: ::std::option::Option<bool>,

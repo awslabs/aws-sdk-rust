@@ -31,8 +31,8 @@ impl ClusterLifeCycleConfig {
 }
 
 /// A builder for [`ClusterLifeCycleConfig`](crate::types::ClusterLifeCycleConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ClusterLifeCycleConfigBuilder {
     pub(crate) source_s3_uri: ::std::option::Option<::std::string::String>,
     pub(crate) on_create: ::std::option::Option<::std::string::String>,

@@ -28,8 +28,8 @@ impl CreateExportInput {
 }
 
 /// A builder for [`CreateExportInput`](crate::operation::create_export::CreateExportInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateExportInputBuilder {
     pub(crate) export: ::std::option::Option<crate::types::Export>,
     pub(crate) resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,

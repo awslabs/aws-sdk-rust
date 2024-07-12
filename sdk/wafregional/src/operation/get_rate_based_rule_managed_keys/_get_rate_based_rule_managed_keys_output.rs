@@ -34,8 +34,8 @@ impl GetRateBasedRuleManagedKeysOutput {
 }
 
 /// A builder for [`GetRateBasedRuleManagedKeysOutput`](crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRateBasedRuleManagedKeysOutputBuilder {
     pub(crate) managed_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,

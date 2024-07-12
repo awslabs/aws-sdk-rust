@@ -26,8 +26,8 @@ impl GetKeyOutput {
 }
 
 /// A builder for [`GetKeyOutput`](crate::operation::get_key::GetKeyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetKeyOutputBuilder {
     pub(crate) key: ::std::option::Option<crate::types::Key>,
     _request_id: Option<String>,

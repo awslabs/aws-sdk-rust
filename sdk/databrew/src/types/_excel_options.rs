@@ -37,8 +37,8 @@ impl ExcelOptions {
 }
 
 /// A builder for [`ExcelOptions`](crate::types::ExcelOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExcelOptionsBuilder {
     pub(crate) sheet_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) sheet_indexes: ::std::option::Option<::std::vec::Vec<i32>>,

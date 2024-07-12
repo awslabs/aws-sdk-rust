@@ -27,8 +27,8 @@ impl ModifyTransitGatewayPrefixListReferenceOutput {
 }
 
 /// A builder for [`ModifyTransitGatewayPrefixListReferenceOutput`](crate::operation::modify_transit_gateway_prefix_list_reference::ModifyTransitGatewayPrefixListReferenceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyTransitGatewayPrefixListReferenceOutputBuilder {
     pub(crate) transit_gateway_prefix_list_reference: ::std::option::Option<crate::types::TransitGatewayPrefixListReference>,
     _request_id: Option<String>,

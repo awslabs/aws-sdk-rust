@@ -26,8 +26,8 @@ impl DeleteVpcPeeringAuthorizationInput {
 }
 
 /// A builder for [`DeleteVpcPeeringAuthorizationInput`](crate::operation::delete_vpc_peering_authorization::DeleteVpcPeeringAuthorizationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVpcPeeringAuthorizationInputBuilder {
     pub(crate) game_lift_aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) peer_vpc_id: ::std::option::Option<::std::string::String>,

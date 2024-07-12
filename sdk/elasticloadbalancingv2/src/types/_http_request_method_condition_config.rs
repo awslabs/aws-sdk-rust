@@ -26,8 +26,8 @@ impl HttpRequestMethodConditionConfig {
 }
 
 /// A builder for [`HttpRequestMethodConditionConfig`](crate::types::HttpRequestMethodConditionConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HttpRequestMethodConditionConfigBuilder {
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

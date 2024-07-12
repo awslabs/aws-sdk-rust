@@ -53,8 +53,8 @@ impl RecommendationReportDetails {
 }
 
 /// A builder for [`RecommendationReportDetails`](crate::types::RecommendationReportDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecommendationReportDetailsBuilder {
     pub(crate) status: ::std::option::Option<crate::types::RecommendationReportStatus>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,

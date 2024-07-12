@@ -33,8 +33,8 @@ impl PropertyRequest {
 }
 
 /// A builder for [`PropertyRequest`](crate::types::PropertyRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PropertyRequestBuilder {
     pub(crate) definition: ::std::option::Option<crate::types::PropertyDefinitionRequest>,
     pub(crate) value: ::std::option::Option<crate::types::DataValue>,

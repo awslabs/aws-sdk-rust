@@ -69,8 +69,8 @@ impl Ec2ResourceDetails {
 }
 
 /// A builder for [`Ec2ResourceDetails`](crate::types::Ec2ResourceDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Ec2ResourceDetailsBuilder {
     pub(crate) hourly_on_demand_rate: ::std::option::Option<::std::string::String>,
     pub(crate) instance_type: ::std::option::Option<::std::string::String>,

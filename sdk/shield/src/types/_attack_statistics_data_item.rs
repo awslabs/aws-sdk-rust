@@ -27,8 +27,8 @@ impl AttackStatisticsDataItem {
 }
 
 /// A builder for [`AttackStatisticsDataItem`](crate::types::AttackStatisticsDataItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttackStatisticsDataItemBuilder {
     pub(crate) attack_volume: ::std::option::Option<crate::types::AttackVolume>,
     pub(crate) attack_count: ::std::option::Option<i64>,

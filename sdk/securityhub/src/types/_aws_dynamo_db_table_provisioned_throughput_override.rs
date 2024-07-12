@@ -21,8 +21,8 @@ impl AwsDynamoDbTableProvisionedThroughputOverride {
 }
 
 /// A builder for [`AwsDynamoDbTableProvisionedThroughputOverride`](crate::types::AwsDynamoDbTableProvisionedThroughputOverride).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsDynamoDbTableProvisionedThroughputOverrideBuilder {
     pub(crate) read_capacity_units: ::std::option::Option<i32>,
 }

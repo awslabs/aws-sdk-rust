@@ -27,8 +27,8 @@ impl ChimeSdkMeetingConfiguration {
 }
 
 /// A builder for [`ChimeSdkMeetingConfiguration`](crate::types::ChimeSdkMeetingConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ChimeSdkMeetingConfigurationBuilder {
     pub(crate) source_configuration: ::std::option::Option<crate::types::SourceConfiguration>,
     pub(crate) artifacts_configuration: ::std::option::Option<crate::types::ArtifactsConfiguration>,

@@ -20,8 +20,8 @@ impl StopTrainingJobInput {
 }
 
 /// A builder for [`StopTrainingJobInput`](crate::operation::stop_training_job::StopTrainingJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopTrainingJobInputBuilder {
     pub(crate) training_job_name: ::std::option::Option<::std::string::String>,
 }

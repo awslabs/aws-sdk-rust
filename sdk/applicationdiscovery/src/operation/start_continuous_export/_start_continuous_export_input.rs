@@ -11,8 +11,8 @@ impl StartContinuousExportInput {
 }
 
 /// A builder for [`StartContinuousExportInput`](crate::operation::start_continuous_export::StartContinuousExportInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartContinuousExportInputBuilder {}
 impl StartContinuousExportInputBuilder {
     /// Consumes the builder and constructs a [`StartContinuousExportInput`](crate::operation::start_continuous_export::StartContinuousExportInput).

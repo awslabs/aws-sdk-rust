@@ -29,8 +29,8 @@ impl RunCommandTarget {
 }
 
 /// A builder for [`RunCommandTarget`](crate::types::RunCommandTarget).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RunCommandTargetBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

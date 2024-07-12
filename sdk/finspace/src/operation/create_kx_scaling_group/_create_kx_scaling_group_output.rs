@@ -98,8 +98,8 @@ impl CreateKxScalingGroupOutput {
 }
 
 /// A builder for [`CreateKxScalingGroupOutput`](crate::operation::create_kx_scaling_group::CreateKxScalingGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateKxScalingGroupOutputBuilder {
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
     pub(crate) scaling_group_name: ::std::option::Option<::std::string::String>,

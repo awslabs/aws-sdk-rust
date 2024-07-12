@@ -36,8 +36,8 @@ impl BatchUpdateFindingsOutput {
 }
 
 /// A builder for [`BatchUpdateFindingsOutput`](crate::operation::batch_update_findings::BatchUpdateFindingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchUpdateFindingsOutputBuilder {
     pub(crate) processed_findings: ::std::option::Option<::std::vec::Vec<crate::types::AwsSecurityFindingIdentifier>>,
     pub(crate) unprocessed_findings: ::std::option::Option<::std::vec::Vec<crate::types::BatchUpdateFindingsUnprocessedFinding>>,

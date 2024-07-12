@@ -20,8 +20,8 @@ impl DeleteCostCategoryDefinitionInput {
 }
 
 /// A builder for [`DeleteCostCategoryDefinitionInput`](crate::operation::delete_cost_category_definition::DeleteCostCategoryDefinitionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCostCategoryDefinitionInputBuilder {
     pub(crate) cost_category_arn: ::std::option::Option<::std::string::String>,
 }

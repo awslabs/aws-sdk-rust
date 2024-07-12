@@ -33,8 +33,8 @@ impl UpdateWirelessGatewayTaskCreate {
 }
 
 /// A builder for [`UpdateWirelessGatewayTaskCreate`](crate::types::UpdateWirelessGatewayTaskCreate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateWirelessGatewayTaskCreateBuilder {
     pub(crate) update_data_source: ::std::option::Option<::std::string::String>,
     pub(crate) update_data_role: ::std::option::Option<::std::string::String>,

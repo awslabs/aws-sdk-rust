@@ -33,8 +33,8 @@ impl Ec2Metadata {
 }
 
 /// A builder for [`Ec2Metadata`](crate::types::Ec2Metadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Ec2MetadataBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) ami_id: ::std::option::Option<::std::string::String>,

@@ -39,8 +39,8 @@ impl CoverageResourceDetails {
 }
 
 /// A builder for [`CoverageResourceDetails`](crate::types::CoverageResourceDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CoverageResourceDetailsBuilder {
     pub(crate) eks_cluster_details: ::std::option::Option<crate::types::CoverageEksClusterDetails>,
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,

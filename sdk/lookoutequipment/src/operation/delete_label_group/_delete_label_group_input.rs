@@ -20,8 +20,8 @@ impl DeleteLabelGroupInput {
 }
 
 /// A builder for [`DeleteLabelGroupInput`](crate::operation::delete_label_group::DeleteLabelGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteLabelGroupInputBuilder {
     pub(crate) label_group_name: ::std::option::Option<::std::string::String>,
 }

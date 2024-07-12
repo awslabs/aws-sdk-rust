@@ -40,8 +40,8 @@ impl ResponseHeadersPolicyStrictTransportSecurity {
 }
 
 /// A builder for [`ResponseHeadersPolicyStrictTransportSecurity`](crate::types::ResponseHeadersPolicyStrictTransportSecurity).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResponseHeadersPolicyStrictTransportSecurityBuilder {
     pub(crate) r#override: ::std::option::Option<bool>,
     pub(crate) include_subdomains: ::std::option::Option<bool>,

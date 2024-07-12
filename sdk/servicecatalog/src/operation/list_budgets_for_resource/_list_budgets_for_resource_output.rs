@@ -34,8 +34,8 @@ impl ListBudgetsForResourceOutput {
 }
 
 /// A builder for [`ListBudgetsForResourceOutput`](crate::operation::list_budgets_for_resource::ListBudgetsForResourceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListBudgetsForResourceOutputBuilder {
     pub(crate) budgets: ::std::option::Option<::std::vec::Vec<crate::types::BudgetDetail>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,

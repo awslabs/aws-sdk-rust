@@ -35,8 +35,8 @@ impl PrefetchConsumption {
 }
 
 /// A builder for [`PrefetchConsumption`](crate::types::PrefetchConsumption).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PrefetchConsumptionBuilder {
     pub(crate) avail_matching_criteria: ::std::option::Option<::std::vec::Vec<crate::types::AvailMatchingCriteria>>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,

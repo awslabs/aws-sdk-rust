@@ -52,8 +52,8 @@ impl PutWarmPoolInput {
 }
 
 /// A builder for [`PutWarmPoolInput`](crate::operation::put_warm_pool::PutWarmPoolInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutWarmPoolInputBuilder {
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_group_prepared_capacity: ::std::option::Option<i32>,

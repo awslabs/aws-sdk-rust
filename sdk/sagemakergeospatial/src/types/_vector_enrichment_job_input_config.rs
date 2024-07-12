@@ -27,8 +27,8 @@ impl VectorEnrichmentJobInputConfig {
 }
 
 /// A builder for [`VectorEnrichmentJobInputConfig`](crate::types::VectorEnrichmentJobInputConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VectorEnrichmentJobInputConfigBuilder {
     pub(crate) document_type: ::std::option::Option<crate::types::VectorEnrichmentJobDocumentType>,
     pub(crate) data_source_config: ::std::option::Option<crate::types::VectorEnrichmentJobDataSourceConfigInput>,

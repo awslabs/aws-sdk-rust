@@ -42,8 +42,8 @@ impl DescribeMetadataModelConversionsInput {
 }
 
 /// A builder for [`DescribeMetadataModelConversionsInput`](crate::operation::describe_metadata_model_conversions::DescribeMetadataModelConversionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeMetadataModelConversionsInputBuilder {
     pub(crate) migration_project_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,

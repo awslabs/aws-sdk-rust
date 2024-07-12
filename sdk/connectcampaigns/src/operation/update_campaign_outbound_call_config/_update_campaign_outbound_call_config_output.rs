@@ -18,8 +18,8 @@ impl UpdateCampaignOutboundCallConfigOutput {
 }
 
 /// A builder for [`UpdateCampaignOutboundCallConfigOutput`](crate::operation::update_campaign_outbound_call_config::UpdateCampaignOutboundCallConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateCampaignOutboundCallConfigOutputBuilder {
     _request_id: Option<String>,
 }

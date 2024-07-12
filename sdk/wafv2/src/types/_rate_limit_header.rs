@@ -29,8 +29,8 @@ impl RateLimitHeader {
 }
 
 /// A builder for [`RateLimitHeader`](crate::types::RateLimitHeader).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RateLimitHeaderBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) text_transformations: ::std::option::Option<::std::vec::Vec<crate::types::TextTransformation>>,

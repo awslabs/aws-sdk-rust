@@ -38,8 +38,8 @@ impl ModifyCacheSubnetGroupOutput {
 }
 
 /// A builder for [`ModifyCacheSubnetGroupOutput`](crate::operation::modify_cache_subnet_group::ModifyCacheSubnetGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyCacheSubnetGroupOutputBuilder {
     pub(crate) cache_subnet_group: ::std::option::Option<crate::types::CacheSubnetGroup>,
     _request_id: Option<String>,

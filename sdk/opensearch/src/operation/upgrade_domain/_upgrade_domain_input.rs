@@ -39,8 +39,8 @@ impl UpgradeDomainInput {
 }
 
 /// A builder for [`UpgradeDomainInput`](crate::operation::upgrade_domain::UpgradeDomainInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpgradeDomainInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) target_version: ::std::option::Option<::std::string::String>,

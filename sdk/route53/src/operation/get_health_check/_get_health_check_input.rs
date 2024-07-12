@@ -21,8 +21,8 @@ impl GetHealthCheckInput {
 }
 
 /// A builder for [`GetHealthCheckInput`](crate::operation::get_health_check::GetHealthCheckInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetHealthCheckInputBuilder {
     pub(crate) health_check_id: ::std::option::Option<::std::string::String>,
 }

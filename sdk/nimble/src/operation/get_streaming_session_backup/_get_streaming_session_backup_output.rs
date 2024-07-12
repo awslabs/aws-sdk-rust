@@ -26,8 +26,8 @@ impl GetStreamingSessionBackupOutput {
 }
 
 /// A builder for [`GetStreamingSessionBackupOutput`](crate::operation::get_streaming_session_backup::GetStreamingSessionBackupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetStreamingSessionBackupOutputBuilder {
     pub(crate) streaming_session_backup: ::std::option::Option<crate::types::StreamingSessionBackup>,
     _request_id: Option<String>,

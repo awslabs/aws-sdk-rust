@@ -26,8 +26,8 @@ impl PutEventStreamOutput {
 }
 
 /// A builder for [`PutEventStreamOutput`](crate::operation::put_event_stream::PutEventStreamOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutEventStreamOutputBuilder {
     pub(crate) event_stream: ::std::option::Option<crate::types::EventStream>,
     _request_id: Option<String>,

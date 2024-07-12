@@ -39,8 +39,8 @@ impl LaunchTemplateCapacityReservationSpecificationResponse {
 }
 
 /// A builder for [`LaunchTemplateCapacityReservationSpecificationResponse`](crate::types::LaunchTemplateCapacityReservationSpecificationResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LaunchTemplateCapacityReservationSpecificationResponseBuilder {
     pub(crate) capacity_reservation_preference: ::std::option::Option<crate::types::CapacityReservationPreference>,
     pub(crate) capacity_reservation_target: ::std::option::Option<crate::types::CapacityReservationTargetResponse>,

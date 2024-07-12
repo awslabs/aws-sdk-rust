@@ -34,8 +34,8 @@ impl ListWorkflowBuildVersionsOutput {
 }
 
 /// A builder for [`ListWorkflowBuildVersionsOutput`](crate::operation::list_workflow_build_versions::ListWorkflowBuildVersionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListWorkflowBuildVersionsOutputBuilder {
     pub(crate) workflow_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

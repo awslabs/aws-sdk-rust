@@ -20,8 +20,8 @@ impl DescribeLocationHdfsInput {
 }
 
 /// A builder for [`DescribeLocationHdfsInput`](crate::operation::describe_location_hdfs::DescribeLocationHdfsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeLocationHdfsInputBuilder {
     pub(crate) location_arn: ::std::option::Option<::std::string::String>,
 }

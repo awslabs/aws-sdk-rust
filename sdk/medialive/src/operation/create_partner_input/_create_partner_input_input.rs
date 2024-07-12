@@ -33,8 +33,8 @@ impl CreatePartnerInputInput {
 }
 
 /// A builder for [`CreatePartnerInputInput`](crate::operation::create_partner_input::CreatePartnerInputInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePartnerInputInputBuilder {
     pub(crate) input_id: ::std::option::Option<::std::string::String>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,

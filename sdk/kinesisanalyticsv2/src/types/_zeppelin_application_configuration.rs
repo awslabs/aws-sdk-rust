@@ -41,8 +41,8 @@ impl ZeppelinApplicationConfiguration {
 }
 
 /// A builder for [`ZeppelinApplicationConfiguration`](crate::types::ZeppelinApplicationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ZeppelinApplicationConfigurationBuilder {
     pub(crate) monitoring_configuration: ::std::option::Option<crate::types::ZeppelinMonitoringConfiguration>,
     pub(crate) catalog_configuration: ::std::option::Option<crate::types::CatalogConfiguration>,

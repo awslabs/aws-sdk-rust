@@ -26,8 +26,8 @@ impl ListPickupLocationsInput {
 }
 
 /// A builder for [`ListPickupLocationsInput`](crate::operation::list_pickup_locations::ListPickupLocationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPickupLocationsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

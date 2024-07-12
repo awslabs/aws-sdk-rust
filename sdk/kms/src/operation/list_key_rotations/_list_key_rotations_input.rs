@@ -52,8 +52,8 @@ impl ListKeyRotationsInput {
 }
 
 /// A builder for [`ListKeyRotationsInput`](crate::operation::list_key_rotations::ListKeyRotationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListKeyRotationsInputBuilder {
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,

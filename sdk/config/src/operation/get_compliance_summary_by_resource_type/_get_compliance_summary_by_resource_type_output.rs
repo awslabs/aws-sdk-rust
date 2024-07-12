@@ -29,8 +29,8 @@ impl GetComplianceSummaryByResourceTypeOutput {
 }
 
 /// A builder for [`GetComplianceSummaryByResourceTypeOutput`](crate::operation::get_compliance_summary_by_resource_type::GetComplianceSummaryByResourceTypeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetComplianceSummaryByResourceTypeOutputBuilder {
     pub(crate) compliance_summaries_by_resource_type: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceSummaryByResourceType>>,
     _request_id: Option<String>,

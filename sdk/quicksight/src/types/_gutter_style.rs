@@ -21,8 +21,8 @@ impl GutterStyle {
 }
 
 /// A builder for [`GutterStyle`](crate::types::GutterStyle).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GutterStyleBuilder {
     pub(crate) show: ::std::option::Option<bool>,
 }

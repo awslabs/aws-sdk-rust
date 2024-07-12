@@ -27,8 +27,8 @@ impl StartInstanceOnboardingJobOutput {
 }
 
 /// A builder for [`StartInstanceOnboardingJobOutput`](crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartInstanceOnboardingJobOutputBuilder {
     pub(crate) connect_instance_onboarding_job_status: ::std::option::Option<crate::types::InstanceOnboardingJobStatus>,
     _request_id: Option<String>,

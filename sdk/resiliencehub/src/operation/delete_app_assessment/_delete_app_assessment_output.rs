@@ -33,8 +33,8 @@ impl DeleteAppAssessmentOutput {
 }
 
 /// A builder for [`DeleteAppAssessmentOutput`](crate::operation::delete_app_assessment::DeleteAppAssessmentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAppAssessmentOutputBuilder {
     pub(crate) assessment_arn: ::std::option::Option<::std::string::String>,
     pub(crate) assessment_status: ::std::option::Option<crate::types::AssessmentStatus>,

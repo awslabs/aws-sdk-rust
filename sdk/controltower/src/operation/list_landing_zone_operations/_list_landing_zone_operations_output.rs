@@ -33,8 +33,8 @@ impl ListLandingZoneOperationsOutput {
 }
 
 /// A builder for [`ListLandingZoneOperationsOutput`](crate::operation::list_landing_zone_operations::ListLandingZoneOperationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListLandingZoneOperationsOutputBuilder {
     pub(crate) landing_zone_operations: ::std::option::Option<::std::vec::Vec<crate::types::LandingZoneOperationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

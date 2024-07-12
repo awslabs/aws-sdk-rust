@@ -32,8 +32,8 @@ impl DetachVerifiedAccessTrustProviderOutput {
 }
 
 /// A builder for [`DetachVerifiedAccessTrustProviderOutput`](crate::operation::detach_verified_access_trust_provider::DetachVerifiedAccessTrustProviderOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetachVerifiedAccessTrustProviderOutputBuilder {
     pub(crate) verified_access_trust_provider: ::std::option::Option<crate::types::VerifiedAccessTrustProvider>,
     pub(crate) verified_access_instance: ::std::option::Option<crate::types::VerifiedAccessInstance>,

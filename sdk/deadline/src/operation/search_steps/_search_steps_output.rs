@@ -39,8 +39,8 @@ impl SearchStepsOutput {
 }
 
 /// A builder for [`SearchStepsOutput`](crate::operation::search_steps::SearchStepsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchStepsOutputBuilder {
     pub(crate) steps: ::std::option::Option<::std::vec::Vec<crate::types::StepSearchSummary>>,
     pub(crate) next_item_offset: ::std::option::Option<i32>,

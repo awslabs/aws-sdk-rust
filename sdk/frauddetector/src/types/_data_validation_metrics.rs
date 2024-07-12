@@ -31,8 +31,8 @@ impl DataValidationMetrics {
 }
 
 /// A builder for [`DataValidationMetrics`](crate::types::DataValidationMetrics).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataValidationMetricsBuilder {
     pub(crate) file_level_messages: ::std::option::Option<::std::vec::Vec<crate::types::FileValidationMessage>>,
     pub(crate) field_level_messages: ::std::option::Option<::std::vec::Vec<crate::types::FieldValidationMessage>>,

@@ -104,8 +104,8 @@ impl CreateJobInput {
 }
 
 /// A builder for [`CreateJobInput`](crate::operation::create_job::CreateJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateJobInputBuilder {
     pub(crate) farm_id: ::std::option::Option<::std::string::String>,
     pub(crate) queue_id: ::std::option::Option<::std::string::String>,

@@ -22,8 +22,8 @@ impl GetSipMediaApplicationAlexaSkillConfigurationInput {
 }
 
 /// A builder for [`GetSipMediaApplicationAlexaSkillConfigurationInput`](crate::operation::get_sip_media_application_alexa_skill_configuration::GetSipMediaApplicationAlexaSkillConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSipMediaApplicationAlexaSkillConfigurationInputBuilder {
     pub(crate) sip_media_application_id: ::std::option::Option<::std::string::String>,
 }

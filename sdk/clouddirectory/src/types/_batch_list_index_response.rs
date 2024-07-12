@@ -29,8 +29,8 @@ impl BatchListIndexResponse {
 }
 
 /// A builder for [`BatchListIndexResponse`](crate::types::BatchListIndexResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchListIndexResponseBuilder {
     pub(crate) index_attachments: ::std::option::Option<::std::vec::Vec<crate::types::IndexAttachment>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

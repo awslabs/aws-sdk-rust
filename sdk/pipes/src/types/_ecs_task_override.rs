@@ -77,8 +77,8 @@ impl EcsTaskOverride {
 }
 
 /// A builder for [`EcsTaskOverride`](crate::types::EcsTaskOverride).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EcsTaskOverrideBuilder {
     pub(crate) container_overrides: ::std::option::Option<::std::vec::Vec<crate::types::EcsContainerOverride>>,
     pub(crate) cpu: ::std::option::Option<::std::string::String>,

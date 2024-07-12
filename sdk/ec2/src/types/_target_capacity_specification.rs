@@ -46,8 +46,8 @@ impl TargetCapacitySpecification {
 }
 
 /// A builder for [`TargetCapacitySpecification`](crate::types::TargetCapacitySpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TargetCapacitySpecificationBuilder {
     pub(crate) total_target_capacity: ::std::option::Option<i32>,
     pub(crate) on_demand_target_capacity: ::std::option::Option<i32>,

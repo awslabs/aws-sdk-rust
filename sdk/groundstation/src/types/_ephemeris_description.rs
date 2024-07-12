@@ -27,8 +27,8 @@ impl EphemerisDescription {
 }
 
 /// A builder for [`EphemerisDescription`](crate::types::EphemerisDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EphemerisDescriptionBuilder {
     pub(crate) source_s3_object: ::std::option::Option<crate::types::S3Object>,
     pub(crate) ephemeris_data: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl DescribeAcLsOutput {
 }
 
 /// A builder for [`DescribeAcLsOutput`](crate::operation::describe_acls::DescribeAcLsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAcLsOutputBuilder {
     pub(crate) acls: ::std::option::Option<::std::vec::Vec<crate::types::Acl>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

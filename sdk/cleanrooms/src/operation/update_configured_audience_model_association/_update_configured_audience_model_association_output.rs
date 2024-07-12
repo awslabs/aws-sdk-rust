@@ -27,8 +27,8 @@ impl UpdateConfiguredAudienceModelAssociationOutput {
 }
 
 /// A builder for [`UpdateConfiguredAudienceModelAssociationOutput`](crate::operation::update_configured_audience_model_association::UpdateConfiguredAudienceModelAssociationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateConfiguredAudienceModelAssociationOutputBuilder {
     pub(crate) configured_audience_model_association: ::std::option::Option<crate::types::ConfiguredAudienceModelAssociation>,
     _request_id: Option<String>,

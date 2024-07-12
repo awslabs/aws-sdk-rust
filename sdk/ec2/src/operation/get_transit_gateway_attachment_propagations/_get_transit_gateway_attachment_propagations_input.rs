@@ -54,8 +54,8 @@ impl GetTransitGatewayAttachmentPropagationsInput {
 }
 
 /// A builder for [`GetTransitGatewayAttachmentPropagationsInput`](crate::operation::get_transit_gateway_attachment_propagations::GetTransitGatewayAttachmentPropagationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTransitGatewayAttachmentPropagationsInputBuilder {
     pub(crate) transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,

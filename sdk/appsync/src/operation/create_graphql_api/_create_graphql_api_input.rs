@@ -124,8 +124,8 @@ impl CreateGraphqlApiInput {
 }
 
 /// A builder for [`CreateGraphqlApiInput`](crate::operation::create_graphql_api::CreateGraphqlApiInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateGraphqlApiInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) log_config: ::std::option::Option<crate::types::LogConfig>,

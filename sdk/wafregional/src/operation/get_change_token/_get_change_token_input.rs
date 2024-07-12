@@ -11,8 +11,8 @@ impl GetChangeTokenInput {
 }
 
 /// A builder for [`GetChangeTokenInput`](crate::operation::get_change_token::GetChangeTokenInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetChangeTokenInputBuilder {}
 impl GetChangeTokenInputBuilder {
     /// Consumes the builder and constructs a [`GetChangeTokenInput`](crate::operation::get_change_token::GetChangeTokenInput).

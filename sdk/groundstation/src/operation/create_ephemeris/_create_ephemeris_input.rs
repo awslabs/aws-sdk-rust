@@ -68,8 +68,8 @@ impl CreateEphemerisInput {
 }
 
 /// A builder for [`CreateEphemerisInput`](crate::operation::create_ephemeris::CreateEphemerisInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateEphemerisInputBuilder {
     pub(crate) satellite_id: ::std::option::Option<::std::string::String>,
     pub(crate) enabled: ::std::option::Option<bool>,

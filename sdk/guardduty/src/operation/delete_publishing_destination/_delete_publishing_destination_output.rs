@@ -18,8 +18,8 @@ impl DeletePublishingDestinationOutput {
 }
 
 /// A builder for [`DeletePublishingDestinationOutput`](crate::operation::delete_publishing_destination::DeletePublishingDestinationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePublishingDestinationOutputBuilder {
     _request_id: Option<String>,
 }

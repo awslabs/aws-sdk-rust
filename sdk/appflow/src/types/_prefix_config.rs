@@ -79,8 +79,8 @@ impl PrefixConfig {
 }
 
 /// A builder for [`PrefixConfig`](crate::types::PrefixConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PrefixConfigBuilder {
     pub(crate) prefix_type: ::std::option::Option<crate::types::PrefixType>,
     pub(crate) prefix_format: ::std::option::Option<crate::types::PrefixFormat>,

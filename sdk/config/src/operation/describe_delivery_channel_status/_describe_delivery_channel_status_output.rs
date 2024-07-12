@@ -29,8 +29,8 @@ impl DescribeDeliveryChannelStatusOutput {
 }
 
 /// A builder for [`DescribeDeliveryChannelStatusOutput`](crate::operation::describe_delivery_channel_status::DescribeDeliveryChannelStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDeliveryChannelStatusOutputBuilder {
     pub(crate) delivery_channels_status: ::std::option::Option<::std::vec::Vec<crate::types::DeliveryChannelStatus>>,
     _request_id: Option<String>,

@@ -34,8 +34,8 @@ impl DescribeConnectorsInput {
 }
 
 /// A builder for [`DescribeConnectorsInput`](crate::operation::describe_connectors::DescribeConnectorsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeConnectorsInputBuilder {
     pub(crate) connector_types: ::std::option::Option<::std::vec::Vec<crate::types::ConnectorType>>,
     pub(crate) max_results: ::std::option::Option<i32>,

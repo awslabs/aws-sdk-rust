@@ -20,8 +20,8 @@ impl GetClusterSnapshotInput {
 }
 
 /// A builder for [`GetClusterSnapshotInput`](crate::operation::get_cluster_snapshot::GetClusterSnapshotInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetClusterSnapshotInputBuilder {
     pub(crate) snapshot_arn: ::std::option::Option<::std::string::String>,
 }

@@ -32,8 +32,8 @@ impl ListPackagingConfigurationsInput {
 }
 
 /// A builder for [`ListPackagingConfigurationsInput`](crate::operation::list_packaging_configurations::ListPackagingConfigurationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPackagingConfigurationsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

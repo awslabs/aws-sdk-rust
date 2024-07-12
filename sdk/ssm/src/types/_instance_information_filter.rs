@@ -29,8 +29,8 @@ impl InstanceInformationFilter {
 }
 
 /// A builder for [`InstanceInformationFilter`](crate::types::InstanceInformationFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceInformationFilterBuilder {
     pub(crate) key: ::std::option::Option<crate::types::InstanceInformationFilterKey>,
     pub(crate) value_set: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -18,8 +18,8 @@ impl UntagInstanceProfileOutput {
 }
 
 /// A builder for [`UntagInstanceProfileOutput`](crate::operation::untag_instance_profile::UntagInstanceProfileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UntagInstanceProfileOutputBuilder {
     _request_id: Option<String>,
 }

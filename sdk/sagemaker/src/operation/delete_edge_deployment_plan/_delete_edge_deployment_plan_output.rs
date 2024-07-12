@@ -18,8 +18,8 @@ impl DeleteEdgeDeploymentPlanOutput {
 }
 
 /// A builder for [`DeleteEdgeDeploymentPlanOutput`](crate::operation::delete_edge_deployment_plan::DeleteEdgeDeploymentPlanOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteEdgeDeploymentPlanOutputBuilder {
     _request_id: Option<String>,
 }

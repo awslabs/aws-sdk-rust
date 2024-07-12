@@ -19,8 +19,8 @@ impl RemoveClientIdFromOpenIdConnectProviderOutput {
 }
 
 /// A builder for [`RemoveClientIdFromOpenIdConnectProviderOutput`](crate::operation::remove_client_id_from_open_id_connect_provider::RemoveClientIdFromOpenIdConnectProviderOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoveClientIdFromOpenIdConnectProviderOutputBuilder {
     _request_id: Option<String>,
 }

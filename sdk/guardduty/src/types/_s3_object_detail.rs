@@ -45,8 +45,8 @@ impl S3ObjectDetail {
 }
 
 /// A builder for [`S3ObjectDetail`](crate::types::S3ObjectDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3ObjectDetailBuilder {
     pub(crate) object_arn: ::std::option::Option<::std::string::String>,
     pub(crate) key: ::std::option::Option<::std::string::String>,

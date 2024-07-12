@@ -16,8 +16,8 @@ impl RateLimitForwardedIp {
 }
 
 /// A builder for [`RateLimitForwardedIp`](crate::types::RateLimitForwardedIp).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RateLimitForwardedIpBuilder {}
 impl RateLimitForwardedIpBuilder {
     /// Consumes the builder and constructs a [`RateLimitForwardedIp`](crate::types::RateLimitForwardedIp).

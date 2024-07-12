@@ -138,8 +138,8 @@ impl DescribeHubContentOutput {
 }
 
 /// A builder for [`DescribeHubContentOutput`](crate::operation::describe_hub_content::DescribeHubContentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeHubContentOutputBuilder {
     pub(crate) hub_content_name: ::std::option::Option<::std::string::String>,
     pub(crate) hub_content_arn: ::std::option::Option<::std::string::String>,

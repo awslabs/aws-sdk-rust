@@ -30,8 +30,8 @@ impl AutoParticipantRecordingConfiguration {
 }
 
 /// A builder for [`AutoParticipantRecordingConfiguration`](crate::types::AutoParticipantRecordingConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AutoParticipantRecordingConfigurationBuilder {
     pub(crate) storage_configuration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) media_types: ::std::option::Option<::std::vec::Vec<crate::types::ParticipantRecordingMediaType>>,

@@ -26,8 +26,8 @@ impl GetSoftwareSetOutput {
 }
 
 /// A builder for [`GetSoftwareSetOutput`](crate::operation::get_software_set::GetSoftwareSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSoftwareSetOutputBuilder {
     pub(crate) software_set: ::std::option::Option<crate::types::SoftwareSet>,
     _request_id: Option<String>,

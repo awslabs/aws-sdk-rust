@@ -20,8 +20,8 @@ impl GetDistributionConfigurationInput {
 }
 
 /// A builder for [`GetDistributionConfigurationInput`](crate::operation::get_distribution_configuration::GetDistributionConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDistributionConfigurationInputBuilder {
     pub(crate) distribution_configuration_arn: ::std::option::Option<::std::string::String>,
 }

@@ -41,8 +41,8 @@ impl GetWorkUnitsOutput {
 }
 
 /// A builder for [`GetWorkUnitsOutput`](crate::operation::get_work_units::GetWorkUnitsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetWorkUnitsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) query_id: ::std::option::Option<::std::string::String>,

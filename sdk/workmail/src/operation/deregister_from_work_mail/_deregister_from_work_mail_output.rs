@@ -18,8 +18,8 @@ impl DeregisterFromWorkMailOutput {
 }
 
 /// A builder for [`DeregisterFromWorkMailOutput`](crate::operation::deregister_from_work_mail::DeregisterFromWorkMailOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeregisterFromWorkMailOutputBuilder {
     _request_id: Option<String>,
 }

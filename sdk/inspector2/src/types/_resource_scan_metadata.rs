@@ -39,8 +39,8 @@ impl ResourceScanMetadata {
 }
 
 /// A builder for [`ResourceScanMetadata`](crate::types::ResourceScanMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResourceScanMetadataBuilder {
     pub(crate) ecr_repository: ::std::option::Option<crate::types::EcrRepositoryMetadata>,
     pub(crate) ecr_image: ::std::option::Option<crate::types::EcrContainerImageMetadata>,

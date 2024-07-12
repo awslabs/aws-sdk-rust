@@ -27,8 +27,8 @@ impl Metrics {
 }
 
 /// A builder for [`Metrics`](crate::types::Metrics).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MetricsBuilder {
     pub(crate) status: ::std::option::Option<crate::types::MetricsStatus>,
     pub(crate) event_threshold: ::std::option::Option<crate::types::ReplicationTimeValue>,

@@ -21,8 +21,8 @@ impl GetSuiteInput {
 }
 
 /// A builder for [`GetSuiteInput`](crate::operation::get_suite::GetSuiteInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSuiteInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }

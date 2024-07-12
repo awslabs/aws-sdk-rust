@@ -26,8 +26,8 @@ impl GetConnectPeerOutput {
 }
 
 /// A builder for [`GetConnectPeerOutput`](crate::operation::get_connect_peer::GetConnectPeerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetConnectPeerOutputBuilder {
     pub(crate) connect_peer: ::std::option::Option<crate::types::ConnectPeer>,
     _request_id: Option<String>,

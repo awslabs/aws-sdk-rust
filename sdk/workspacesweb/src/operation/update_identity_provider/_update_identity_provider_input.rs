@@ -205,8 +205,8 @@ impl UpdateIdentityProviderInput {
 }
 
 /// A builder for [`UpdateIdentityProviderInput`](crate::operation::update_identity_provider::UpdateIdentityProviderInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateIdentityProviderInputBuilder {
     pub(crate) identity_provider_arn: ::std::option::Option<::std::string::String>,
     pub(crate) identity_provider_name: ::std::option::Option<::std::string::String>,

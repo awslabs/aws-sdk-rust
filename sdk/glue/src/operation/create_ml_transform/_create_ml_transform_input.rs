@@ -172,8 +172,8 @@ impl CreateMlTransformInput {
 }
 
 /// A builder for [`CreateMlTransformInput`](crate::operation::create_ml_transform::CreateMlTransformInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateMlTransformInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

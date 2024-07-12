@@ -40,8 +40,8 @@ impl StartReferenceImportJobInput {
 }
 
 /// A builder for [`StartReferenceImportJobInput`](crate::operation::start_reference_import_job::StartReferenceImportJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartReferenceImportJobInputBuilder {
     pub(crate) reference_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,

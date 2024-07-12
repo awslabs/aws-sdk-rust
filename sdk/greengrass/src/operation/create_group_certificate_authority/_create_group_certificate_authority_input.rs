@@ -26,8 +26,8 @@ impl CreateGroupCertificateAuthorityInput {
 }
 
 /// A builder for [`CreateGroupCertificateAuthorityInput`](crate::operation::create_group_certificate_authority::CreateGroupCertificateAuthorityInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateGroupCertificateAuthorityInputBuilder {
     pub(crate) amzn_client_token: ::std::option::Option<::std::string::String>,
     pub(crate) group_id: ::std::option::Option<::std::string::String>,

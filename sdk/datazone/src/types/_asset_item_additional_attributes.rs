@@ -39,8 +39,8 @@ impl AssetItemAdditionalAttributes {
 }
 
 /// A builder for [`AssetItemAdditionalAttributes`](crate::types::AssetItemAdditionalAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssetItemAdditionalAttributesBuilder {
     pub(crate) forms_output: ::std::option::Option<::std::vec::Vec<crate::types::FormOutput>>,
     pub(crate) read_only_forms_output: ::std::option::Option<::std::vec::Vec<crate::types::FormOutput>>,

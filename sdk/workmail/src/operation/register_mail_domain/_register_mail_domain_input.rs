@@ -32,8 +32,8 @@ impl RegisterMailDomainInput {
 }
 
 /// A builder for [`RegisterMailDomainInput`](crate::operation::register_mail_domain::RegisterMailDomainInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterMailDomainInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,

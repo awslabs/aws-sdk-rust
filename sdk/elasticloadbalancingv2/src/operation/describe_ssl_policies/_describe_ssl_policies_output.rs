@@ -34,8 +34,8 @@ impl DescribeSslPoliciesOutput {
 }
 
 /// A builder for [`DescribeSslPoliciesOutput`](crate::operation::describe_ssl_policies::DescribeSslPoliciesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSslPoliciesOutputBuilder {
     pub(crate) ssl_policies: ::std::option::Option<::std::vec::Vec<crate::types::SslPolicy>>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,

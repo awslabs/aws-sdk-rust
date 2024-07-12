@@ -40,8 +40,8 @@ impl DescribeRemediationExceptionsInput {
 }
 
 /// A builder for [`DescribeRemediationExceptionsInput`](crate::operation::describe_remediation_exceptions::DescribeRemediationExceptionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRemediationExceptionsInputBuilder {
     pub(crate) config_rule_name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_keys: ::std::option::Option<::std::vec::Vec<crate::types::RemediationExceptionResourceKey>>,

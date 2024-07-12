@@ -36,8 +36,8 @@ impl BatchGetViewOutput {
 }
 
 /// A builder for [`BatchGetViewOutput`](crate::operation::batch_get_view::BatchGetViewOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetViewOutputBuilder {
     pub(crate) views: ::std::option::Option<::std::vec::Vec<crate::types::View>>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetViewError>>,

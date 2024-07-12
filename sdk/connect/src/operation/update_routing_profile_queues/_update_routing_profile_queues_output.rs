@@ -18,8 +18,8 @@ impl UpdateRoutingProfileQueuesOutput {
 }
 
 /// A builder for [`UpdateRoutingProfileQueuesOutput`](crate::operation::update_routing_profile_queues::UpdateRoutingProfileQueuesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRoutingProfileQueuesOutputBuilder {
     _request_id: Option<String>,
 }

@@ -45,8 +45,8 @@ impl SyncResourceSummary {
 }
 
 /// A builder for [`SyncResourceSummary`](crate::types::SyncResourceSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SyncResourceSummaryBuilder {
     pub(crate) resource_type: ::std::option::Option<crate::types::SyncResourceType>,
     pub(crate) external_id: ::std::option::Option<::std::string::String>,

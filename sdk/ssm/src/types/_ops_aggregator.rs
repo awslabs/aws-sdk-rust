@@ -55,8 +55,8 @@ impl OpsAggregator {
 }
 
 /// A builder for [`OpsAggregator`](crate::types::OpsAggregator).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OpsAggregatorBuilder {
     pub(crate) aggregator_type: ::std::option::Option<::std::string::String>,
     pub(crate) type_name: ::std::option::Option<::std::string::String>,

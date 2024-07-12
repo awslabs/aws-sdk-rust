@@ -27,8 +27,8 @@ impl VpcConnectivityClientAuthentication {
 }
 
 /// A builder for [`VpcConnectivityClientAuthentication`](crate::types::VpcConnectivityClientAuthentication).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VpcConnectivityClientAuthenticationBuilder {
     pub(crate) sasl: ::std::option::Option<crate::types::VpcConnectivitySasl>,
     pub(crate) tls: ::std::option::Option<crate::types::VpcConnectivityTls>,

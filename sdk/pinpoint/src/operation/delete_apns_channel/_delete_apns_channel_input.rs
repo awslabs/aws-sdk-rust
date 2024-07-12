@@ -20,8 +20,8 @@ impl DeleteApnsChannelInput {
 }
 
 /// A builder for [`DeleteApnsChannelInput`](crate::operation::delete_apns_channel::DeleteApnsChannelInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteApnsChannelInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
 }

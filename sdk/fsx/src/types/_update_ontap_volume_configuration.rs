@@ -89,8 +89,8 @@ impl UpdateOntapVolumeConfiguration {
 }
 
 /// A builder for [`UpdateOntapVolumeConfiguration`](crate::types::UpdateOntapVolumeConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateOntapVolumeConfigurationBuilder {
     pub(crate) junction_path: ::std::option::Option<::std::string::String>,
     pub(crate) security_style: ::std::option::Option<crate::types::SecurityStyle>,

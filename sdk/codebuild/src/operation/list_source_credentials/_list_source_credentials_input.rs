@@ -11,8 +11,8 @@ impl ListSourceCredentialsInput {
 }
 
 /// A builder for [`ListSourceCredentialsInput`](crate::operation::list_source_credentials::ListSourceCredentialsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSourceCredentialsInputBuilder {}
 impl ListSourceCredentialsInputBuilder {
     /// Consumes the builder and constructs a [`ListSourceCredentialsInput`](crate::operation::list_source_credentials::ListSourceCredentialsInput).

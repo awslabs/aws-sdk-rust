@@ -20,8 +20,8 @@ impl DeleteStreamProcessorInput {
 }
 
 /// A builder for [`DeleteStreamProcessorInput`](crate::operation::delete_stream_processor::DeleteStreamProcessorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteStreamProcessorInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

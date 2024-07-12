@@ -48,8 +48,8 @@ impl TargetCapacitySpecificationRequest {
 }
 
 /// A builder for [`TargetCapacitySpecificationRequest`](crate::types::TargetCapacitySpecificationRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TargetCapacitySpecificationRequestBuilder {
     pub(crate) total_target_capacity: ::std::option::Option<i32>,
     pub(crate) on_demand_target_capacity: ::std::option::Option<i32>,

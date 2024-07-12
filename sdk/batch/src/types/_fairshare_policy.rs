@@ -41,8 +41,8 @@ impl FairsharePolicy {
 }
 
 /// A builder for [`FairsharePolicy`](crate::types::FairsharePolicy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FairsharePolicyBuilder {
     pub(crate) share_decay_seconds: ::std::option::Option<i32>,
     pub(crate) compute_reservation: ::std::option::Option<i32>,

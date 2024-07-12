@@ -78,8 +78,8 @@ impl ExportJournalToS3Input {
 }
 
 /// A builder for [`ExportJournalToS3Input`](crate::operation::export_journal_to_s3::ExportJournalToS3Input).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExportJournalToS3InputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) inclusive_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,

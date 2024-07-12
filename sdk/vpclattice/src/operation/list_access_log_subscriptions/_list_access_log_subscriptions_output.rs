@@ -33,8 +33,8 @@ impl ListAccessLogSubscriptionsOutput {
 }
 
 /// A builder for [`ListAccessLogSubscriptionsOutput`](crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAccessLogSubscriptionsOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::AccessLogSubscriptionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

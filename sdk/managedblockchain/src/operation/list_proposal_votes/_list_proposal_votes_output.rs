@@ -34,8 +34,8 @@ impl ListProposalVotesOutput {
 }
 
 /// A builder for [`ListProposalVotesOutput`](crate::operation::list_proposal_votes::ListProposalVotesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListProposalVotesOutputBuilder {
     pub(crate) proposal_votes: ::std::option::Option<::std::vec::Vec<crate::types::VoteSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

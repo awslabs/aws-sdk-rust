@@ -18,8 +18,8 @@ impl DeleteTableVersionOutput {
 }
 
 /// A builder for [`DeleteTableVersionOutput`](crate::operation::delete_table_version::DeleteTableVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTableVersionOutputBuilder {
     _request_id: Option<String>,
 }

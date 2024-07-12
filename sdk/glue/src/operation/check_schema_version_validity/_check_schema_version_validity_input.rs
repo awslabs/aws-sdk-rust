@@ -26,8 +26,8 @@ impl CheckSchemaVersionValidityInput {
 }
 
 /// A builder for [`CheckSchemaVersionValidityInput`](crate::operation::check_schema_version_validity::CheckSchemaVersionValidityInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CheckSchemaVersionValidityInputBuilder {
     pub(crate) data_format: ::std::option::Option<crate::types::DataFormat>,
     pub(crate) schema_definition: ::std::option::Option<::std::string::String>,

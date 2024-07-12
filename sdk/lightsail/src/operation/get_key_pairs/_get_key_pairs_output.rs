@@ -38,8 +38,8 @@ impl GetKeyPairsOutput {
 }
 
 /// A builder for [`GetKeyPairsOutput`](crate::operation::get_key_pairs::GetKeyPairsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetKeyPairsOutputBuilder {
     pub(crate) key_pairs: ::std::option::Option<::std::vec::Vec<crate::types::KeyPair>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl DeleteJourneyInput {
 }
 
 /// A builder for [`DeleteJourneyInput`](crate::operation::delete_journey::DeleteJourneyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteJourneyInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) journey_id: ::std::option::Option<::std::string::String>,

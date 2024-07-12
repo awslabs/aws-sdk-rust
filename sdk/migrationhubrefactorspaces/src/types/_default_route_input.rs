@@ -21,8 +21,8 @@ impl DefaultRouteInput {
 }
 
 /// A builder for [`DefaultRouteInput`](crate::types::DefaultRouteInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DefaultRouteInputBuilder {
     pub(crate) activation_state: ::std::option::Option<crate::types::RouteActivationState>,
 }

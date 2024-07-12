@@ -28,8 +28,8 @@ impl PutItemsInput {
 }
 
 /// A builder for [`PutItemsInput`](crate::operation::put_items::PutItemsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutItemsInputBuilder {
     pub(crate) dataset_arn: ::std::option::Option<::std::string::String>,
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::Item>>,

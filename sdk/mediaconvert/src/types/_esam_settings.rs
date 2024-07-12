@@ -33,8 +33,8 @@ impl EsamSettings {
 }
 
 /// A builder for [`EsamSettings`](crate::types::EsamSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EsamSettingsBuilder {
     pub(crate) manifest_confirm_condition_notification: ::std::option::Option<crate::types::EsamManifestConfirmConditionNotification>,
     pub(crate) response_signal_preroll: ::std::option::Option<i32>,

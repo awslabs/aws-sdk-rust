@@ -51,8 +51,8 @@ impl JobLogEventData {
 }
 
 /// A builder for [`JobLogEventData`](crate::types::JobLogEventData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JobLogEventDataBuilder {
     pub(crate) source_server_id: ::std::option::Option<::std::string::String>,
     pub(crate) conversion_server_id: ::std::option::Option<::std::string::String>,

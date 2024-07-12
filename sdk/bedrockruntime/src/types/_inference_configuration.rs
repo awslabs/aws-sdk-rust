@@ -46,8 +46,8 @@ impl InferenceConfiguration {
 }
 
 /// A builder for [`InferenceConfiguration`](crate::types::InferenceConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InferenceConfigurationBuilder {
     pub(crate) max_tokens: ::std::option::Option<i32>,
     pub(crate) temperature: ::std::option::Option<f32>,

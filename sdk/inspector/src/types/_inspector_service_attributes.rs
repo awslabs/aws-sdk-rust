@@ -33,8 +33,8 @@ impl InspectorServiceAttributes {
 }
 
 /// A builder for [`InspectorServiceAttributes`](crate::types::InspectorServiceAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InspectorServiceAttributesBuilder {
     pub(crate) schema_version: ::std::option::Option<i32>,
     pub(crate) assessment_run_arn: ::std::option::Option<::std::string::String>,

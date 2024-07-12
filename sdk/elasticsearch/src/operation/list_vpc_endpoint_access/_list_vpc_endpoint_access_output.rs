@@ -35,8 +35,8 @@ impl ListVpcEndpointAccessOutput {
 }
 
 /// A builder for [`ListVpcEndpointAccessOutput`](crate::operation::list_vpc_endpoint_access::ListVpcEndpointAccessOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListVpcEndpointAccessOutputBuilder {
     pub(crate) authorized_principal_list: ::std::option::Option<::std::vec::Vec<crate::types::AuthorizedPrincipal>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

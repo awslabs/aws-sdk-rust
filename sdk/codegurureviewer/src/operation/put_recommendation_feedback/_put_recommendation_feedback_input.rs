@@ -34,8 +34,8 @@ impl PutRecommendationFeedbackInput {
 }
 
 /// A builder for [`PutRecommendationFeedbackInput`](crate::operation::put_recommendation_feedback::PutRecommendationFeedbackInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutRecommendationFeedbackInputBuilder {
     pub(crate) code_review_arn: ::std::option::Option<::std::string::String>,
     pub(crate) recommendation_id: ::std::option::Option<::std::string::String>,

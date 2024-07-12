@@ -32,8 +32,8 @@ impl Device {
 }
 
 /// A builder for [`Device`](crate::types::Device).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeviceBuilder {
     pub(crate) attributes: ::std::option::Option<crate::types::Attributes>,
     pub(crate) device_id: ::std::option::Option<::std::string::String>,

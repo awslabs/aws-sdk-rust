@@ -27,8 +27,8 @@ impl MemoryGiBPerVCpuRequest {
 }
 
 /// A builder for [`MemoryGiBPerVCpuRequest`](crate::types::MemoryGiBPerVCpuRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MemoryGiBPerVCpuRequestBuilder {
     pub(crate) min: ::std::option::Option<f64>,
     pub(crate) max: ::std::option::Option<f64>,

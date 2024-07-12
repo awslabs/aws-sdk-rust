@@ -46,8 +46,8 @@ impl PutFunctionCodeSigningConfigInput {
 }
 
 /// A builder for [`PutFunctionCodeSigningConfigInput`](crate::operation::put_function_code_signing_config::PutFunctionCodeSigningConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutFunctionCodeSigningConfigInputBuilder {
     pub(crate) code_signing_config_arn: ::std::option::Option<::std::string::String>,
     pub(crate) function_name: ::std::option::Option<::std::string::String>,

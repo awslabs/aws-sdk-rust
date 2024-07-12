@@ -32,8 +32,8 @@ impl GetLineageGroupPolicyOutput {
 }
 
 /// A builder for [`GetLineageGroupPolicyOutput`](crate::operation::get_lineage_group_policy::GetLineageGroupPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLineageGroupPolicyOutputBuilder {
     pub(crate) lineage_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) resource_policy: ::std::option::Option<::std::string::String>,

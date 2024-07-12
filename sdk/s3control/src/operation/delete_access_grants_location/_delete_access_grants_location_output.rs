@@ -18,8 +18,8 @@ impl DeleteAccessGrantsLocationOutput {
 }
 
 /// A builder for [`DeleteAccessGrantsLocationOutput`](crate::operation::delete_access_grants_location::DeleteAccessGrantsLocationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAccessGrantsLocationOutputBuilder {
     _request_id: Option<String>,
 }

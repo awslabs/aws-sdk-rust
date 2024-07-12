@@ -21,8 +21,8 @@ impl CloudWatchLogsDestinationDetails {
 }
 
 /// A builder for [`CloudWatchLogsDestinationDetails`](crate::types::CloudWatchLogsDestinationDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CloudWatchLogsDestinationDetailsBuilder {
     pub(crate) log_group: ::std::option::Option<::std::string::String>,
 }

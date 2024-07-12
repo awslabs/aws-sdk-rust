@@ -92,8 +92,8 @@ impl UpdateAccountPasswordPolicyInput {
 }
 
 /// A builder for [`UpdateAccountPasswordPolicyInput`](crate::operation::update_account_password_policy::UpdateAccountPasswordPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAccountPasswordPolicyInputBuilder {
     pub(crate) minimum_password_length: ::std::option::Option<i32>,
     pub(crate) require_symbols: ::std::option::Option<bool>,

@@ -33,8 +33,8 @@ impl ListIngestionJobsOutput {
 }
 
 /// A builder for [`ListIngestionJobsOutput`](crate::operation::list_ingestion_jobs::ListIngestionJobsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListIngestionJobsOutputBuilder {
     pub(crate) ingestion_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::IngestionJobSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

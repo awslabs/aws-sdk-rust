@@ -38,8 +38,8 @@ impl CreateConfigurationPolicyInput {
 }
 
 /// A builder for [`CreateConfigurationPolicyInput`](crate::operation::create_configuration_policy::CreateConfigurationPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateConfigurationPolicyInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

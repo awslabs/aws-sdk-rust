@@ -43,8 +43,8 @@ impl DescribeJobFlowsInput {
 }
 
 /// A builder for [`DescribeJobFlowsInput`](crate::operation::describe_job_flows::DescribeJobFlowsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeJobFlowsInputBuilder {
     pub(crate) created_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_before: ::std::option::Option<::aws_smithy_types::DateTime>,

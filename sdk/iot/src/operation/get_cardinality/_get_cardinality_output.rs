@@ -26,8 +26,8 @@ impl GetCardinalityOutput {
 }
 
 /// A builder for [`GetCardinalityOutput`](crate::operation::get_cardinality::GetCardinalityOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCardinalityOutputBuilder {
     pub(crate) cardinality: ::std::option::Option<i32>,
     _request_id: Option<String>,

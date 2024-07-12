@@ -56,8 +56,8 @@ impl AlternateContact {
 }
 
 /// A builder for [`AlternateContact`](crate::types::AlternateContact).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AlternateContactBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) title: ::std::option::Option<::std::string::String>,

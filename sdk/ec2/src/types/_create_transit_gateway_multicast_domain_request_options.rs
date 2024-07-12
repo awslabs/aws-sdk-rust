@@ -33,8 +33,8 @@ impl CreateTransitGatewayMulticastDomainRequestOptions {
 }
 
 /// A builder for [`CreateTransitGatewayMulticastDomainRequestOptions`](crate::types::CreateTransitGatewayMulticastDomainRequestOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateTransitGatewayMulticastDomainRequestOptionsBuilder {
     pub(crate) igmpv2_support: ::std::option::Option<crate::types::Igmpv2SupportValue>,
     pub(crate) static_sources_support: ::std::option::Option<crate::types::StaticSourcesSupportValue>,

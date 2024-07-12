@@ -39,8 +39,8 @@ impl UpdateBasePathMappingOutput {
 }
 
 /// A builder for [`UpdateBasePathMappingOutput`](crate::operation::update_base_path_mapping::UpdateBasePathMappingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateBasePathMappingOutputBuilder {
     pub(crate) base_path: ::std::option::Option<::std::string::String>,
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,

@@ -18,8 +18,8 @@ impl PutPermissionPolicyOutput {
 }
 
 /// A builder for [`PutPermissionPolicyOutput`](crate::operation::put_permission_policy::PutPermissionPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutPermissionPolicyOutputBuilder {
     _request_id: Option<String>,
 }

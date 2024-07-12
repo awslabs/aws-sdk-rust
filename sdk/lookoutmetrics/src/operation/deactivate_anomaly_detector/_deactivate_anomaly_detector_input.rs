@@ -20,8 +20,8 @@ impl DeactivateAnomalyDetectorInput {
 }
 
 /// A builder for [`DeactivateAnomalyDetectorInput`](crate::operation::deactivate_anomaly_detector::DeactivateAnomalyDetectorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeactivateAnomalyDetectorInputBuilder {
     pub(crate) anomaly_detector_arn: ::std::option::Option<::std::string::String>,
 }

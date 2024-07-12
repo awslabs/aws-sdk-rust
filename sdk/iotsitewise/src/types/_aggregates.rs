@@ -51,8 +51,8 @@ impl Aggregates {
 }
 
 /// A builder for [`Aggregates`](crate::types::Aggregates).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AggregatesBuilder {
     pub(crate) average: ::std::option::Option<f64>,
     pub(crate) count: ::std::option::Option<f64>,

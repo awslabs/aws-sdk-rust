@@ -49,8 +49,8 @@ impl UnprocessedPreparedStatementName {
 }
 
 /// A builder for [`UnprocessedPreparedStatementName`](crate::types::UnprocessedPreparedStatementName).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UnprocessedPreparedStatementNameBuilder {
     pub(crate) statement_name: ::std::option::Option<::std::string::String>,
     pub(crate) error_code: ::std::option::Option<::std::string::String>,

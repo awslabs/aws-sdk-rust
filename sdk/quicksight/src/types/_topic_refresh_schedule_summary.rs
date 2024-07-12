@@ -39,8 +39,8 @@ impl TopicRefreshScheduleSummary {
 }
 
 /// A builder for [`TopicRefreshScheduleSummary`](crate::types::TopicRefreshScheduleSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TopicRefreshScheduleSummaryBuilder {
     pub(crate) dataset_id: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_arn: ::std::option::Option<::std::string::String>,

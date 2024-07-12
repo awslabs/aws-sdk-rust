@@ -85,8 +85,8 @@ impl CreateFlowVersionOutput {
 }
 
 /// A builder for [`CreateFlowVersionOutput`](crate::operation::create_flow_version::CreateFlowVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateFlowVersionOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

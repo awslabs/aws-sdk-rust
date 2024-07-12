@@ -85,8 +85,8 @@ impl Placement {
 }
 
 /// A builder for [`Placement`](crate::types::Placement).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PlacementBuilder {
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) affinity: ::std::option::Option<::std::string::String>,

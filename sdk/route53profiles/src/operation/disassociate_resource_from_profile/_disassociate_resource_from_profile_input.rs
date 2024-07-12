@@ -26,8 +26,8 @@ impl DisassociateResourceFromProfileInput {
 }
 
 /// A builder for [`DisassociateResourceFromProfileInput`](crate::operation::disassociate_resource_from_profile::DisassociateResourceFromProfileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateResourceFromProfileInputBuilder {
     pub(crate) profile_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,

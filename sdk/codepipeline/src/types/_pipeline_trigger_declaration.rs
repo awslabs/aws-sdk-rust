@@ -31,8 +31,8 @@ impl PipelineTriggerDeclaration {
 }
 
 /// A builder for [`PipelineTriggerDeclaration`](crate::types::PipelineTriggerDeclaration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PipelineTriggerDeclarationBuilder {
     pub(crate) provider_type: ::std::option::Option<crate::types::PipelineTriggerProviderType>,
     pub(crate) git_configuration: ::std::option::Option<crate::types::GitConfiguration>,

@@ -33,8 +33,8 @@ impl ConnectionHealth {
 }
 
 /// A builder for [`ConnectionHealth`](crate::types::ConnectionHealth).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConnectionHealthBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ConnectionType>,
     pub(crate) status: ::std::option::Option<crate::types::ConnectionStatus>,

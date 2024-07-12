@@ -127,8 +127,8 @@ impl BatchGetItemInput {
 }
 
 /// A builder for [`BatchGetItemInput`](crate::operation::batch_get_item::BatchGetItemInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetItemInputBuilder {
     pub(crate) request_items: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::KeysAndAttributes>>,
     pub(crate) return_consumed_capacity: ::std::option::Option<crate::types::ReturnConsumedCapacity>,

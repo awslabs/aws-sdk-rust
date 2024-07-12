@@ -28,8 +28,8 @@ impl GetBucketBundlesOutput {
 }
 
 /// A builder for [`GetBucketBundlesOutput`](crate::operation::get_bucket_bundles::GetBucketBundlesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBucketBundlesOutputBuilder {
     pub(crate) bundles: ::std::option::Option<::std::vec::Vec<crate::types::BucketBundle>>,
     _request_id: Option<String>,

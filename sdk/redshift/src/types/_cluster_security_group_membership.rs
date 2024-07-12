@@ -27,8 +27,8 @@ impl ClusterSecurityGroupMembership {
 }
 
 /// A builder for [`ClusterSecurityGroupMembership`](crate::types::ClusterSecurityGroupMembership).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ClusterSecurityGroupMembershipBuilder {
     pub(crate) cluster_security_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl NonCompliantSummary {
 }
 
 /// A builder for [`NonCompliantSummary`](crate::types::NonCompliantSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NonCompliantSummaryBuilder {
     pub(crate) non_compliant_count: ::std::option::Option<i32>,
     pub(crate) severity_summary: ::std::option::Option<crate::types::SeveritySummary>,

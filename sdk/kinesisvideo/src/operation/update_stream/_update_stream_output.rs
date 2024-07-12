@@ -18,8 +18,8 @@ impl UpdateStreamOutput {
 }
 
 /// A builder for [`UpdateStreamOutput`](crate::operation::update_stream::UpdateStreamOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateStreamOutputBuilder {
     _request_id: Option<String>,
 }

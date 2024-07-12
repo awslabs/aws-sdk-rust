@@ -39,8 +39,8 @@ impl ActionTypeSettings {
 }
 
 /// A builder for [`ActionTypeSettings`](crate::types::ActionTypeSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ActionTypeSettingsBuilder {
     pub(crate) third_party_configuration_url: ::std::option::Option<::std::string::String>,
     pub(crate) entity_url_template: ::std::option::Option<::std::string::String>,

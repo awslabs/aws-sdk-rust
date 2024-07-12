@@ -20,8 +20,8 @@ impl DeleteWirelessDeviceImportTaskInput {
 }
 
 /// A builder for [`DeleteWirelessDeviceImportTaskInput`](crate::operation::delete_wireless_device_import_task::DeleteWirelessDeviceImportTaskInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteWirelessDeviceImportTaskInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }

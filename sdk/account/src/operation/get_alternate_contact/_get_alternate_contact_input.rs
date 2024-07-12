@@ -36,8 +36,8 @@ impl GetAlternateContactInput {
 }
 
 /// A builder for [`GetAlternateContactInput`](crate::operation::get_alternate_contact::GetAlternateContactInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAlternateContactInputBuilder {
     pub(crate) alternate_contact_type: ::std::option::Option<crate::types::AlternateContactType>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,

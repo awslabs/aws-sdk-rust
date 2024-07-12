@@ -49,8 +49,8 @@ impl ServerProcess {
 }
 
 /// A builder for [`ServerProcess`](crate::types::ServerProcess).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServerProcessBuilder {
     pub(crate) launch_path: ::std::option::Option<::std::string::String>,
     pub(crate) parameters: ::std::option::Option<::std::string::String>,

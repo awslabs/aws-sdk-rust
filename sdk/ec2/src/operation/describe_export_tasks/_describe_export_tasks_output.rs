@@ -28,8 +28,8 @@ impl DescribeExportTasksOutput {
 }
 
 /// A builder for [`DescribeExportTasksOutput`](crate::operation::describe_export_tasks::DescribeExportTasksOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeExportTasksOutputBuilder {
     pub(crate) export_tasks: ::std::option::Option<::std::vec::Vec<crate::types::ExportTask>>,
     _request_id: Option<String>,

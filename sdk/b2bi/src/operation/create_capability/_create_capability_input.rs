@@ -54,8 +54,8 @@ impl CreateCapabilityInput {
 }
 
 /// A builder for [`CreateCapabilityInput`](crate::operation::create_capability::CreateCapabilityInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCapabilityInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::CapabilityType>,

@@ -52,8 +52,8 @@ impl GetTemporaryGlueTableCredentialsOutput {
 }
 
 /// A builder for [`GetTemporaryGlueTableCredentialsOutput`](crate::operation::get_temporary_glue_table_credentials::GetTemporaryGlueTableCredentialsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTemporaryGlueTableCredentialsOutputBuilder {
     pub(crate) access_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) secret_access_key: ::std::option::Option<::std::string::String>,

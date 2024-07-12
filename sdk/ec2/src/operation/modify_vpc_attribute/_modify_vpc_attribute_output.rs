@@ -18,8 +18,8 @@ impl ModifyVpcAttributeOutput {
 }
 
 /// A builder for [`ModifyVpcAttributeOutput`](crate::operation::modify_vpc_attribute::ModifyVpcAttributeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyVpcAttributeOutputBuilder {
     _request_id: Option<String>,
 }

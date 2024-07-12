@@ -22,8 +22,8 @@ impl OutputFileUriValue {
 }
 
 /// A builder for [`OutputFileUriValue`](crate::types::OutputFileUriValue).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OutputFileUriValueBuilder {
     pub(crate) file_name: ::std::option::Option<::std::string::String>,
 }

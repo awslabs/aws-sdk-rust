@@ -23,8 +23,8 @@ impl OffPeakWindow {
 }
 
 /// A builder for [`OffPeakWindow`](crate::types::OffPeakWindow).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OffPeakWindowBuilder {
     pub(crate) window_start_time: ::std::option::Option<crate::types::WindowStartTime>,
 }

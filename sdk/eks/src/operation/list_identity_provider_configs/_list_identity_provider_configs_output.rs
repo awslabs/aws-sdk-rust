@@ -38,8 +38,8 @@ impl ListIdentityProviderConfigsOutput {
 }
 
 /// A builder for [`ListIdentityProviderConfigsOutput`](crate::operation::list_identity_provider_configs::ListIdentityProviderConfigsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListIdentityProviderConfigsOutputBuilder {
     pub(crate) identity_provider_configs: ::std::option::Option<::std::vec::Vec<crate::types::IdentityProviderConfig>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

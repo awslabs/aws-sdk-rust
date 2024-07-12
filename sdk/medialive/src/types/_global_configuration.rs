@@ -57,8 +57,8 @@ impl GlobalConfiguration {
 }
 
 /// A builder for [`GlobalConfiguration`](crate::types::GlobalConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GlobalConfigurationBuilder {
     pub(crate) initial_audio_gain: ::std::option::Option<i32>,
     pub(crate) input_end_action: ::std::option::Option<crate::types::GlobalConfigurationInputEndAction>,

@@ -43,8 +43,8 @@ impl DescribeInstancesHealthOutput {
 }
 
 /// A builder for [`DescribeInstancesHealthOutput`](crate::operation::describe_instances_health::DescribeInstancesHealthOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeInstancesHealthOutputBuilder {
     pub(crate) instance_health_list: ::std::option::Option<::std::vec::Vec<crate::types::SingleInstanceHealth>>,
     pub(crate) refreshed_at: ::std::option::Option<::aws_smithy_types::DateTime>,

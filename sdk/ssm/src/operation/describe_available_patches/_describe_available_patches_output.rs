@@ -34,8 +34,8 @@ impl DescribeAvailablePatchesOutput {
 }
 
 /// A builder for [`DescribeAvailablePatchesOutput`](crate::operation::describe_available_patches::DescribeAvailablePatchesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAvailablePatchesOutputBuilder {
     pub(crate) patches: ::std::option::Option<::std::vec::Vec<crate::types::Patch>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

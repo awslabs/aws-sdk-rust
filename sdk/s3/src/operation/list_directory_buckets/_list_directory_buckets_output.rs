@@ -40,8 +40,8 @@ impl ListDirectoryBucketsOutput {
 }
 
 /// A builder for [`ListDirectoryBucketsOutput`](crate::operation::list_directory_buckets::ListDirectoryBucketsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDirectoryBucketsOutputBuilder {
     pub(crate) buckets: ::std::option::Option<::std::vec::Vec<crate::types::Bucket>>,
     pub(crate) continuation_token: ::std::option::Option<::std::string::String>,

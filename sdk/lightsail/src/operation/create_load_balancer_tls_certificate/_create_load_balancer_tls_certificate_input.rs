@@ -52,8 +52,8 @@ impl CreateLoadBalancerTlsCertificateInput {
 }
 
 /// A builder for [`CreateLoadBalancerTlsCertificateInput`](crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLoadBalancerTlsCertificateInputBuilder {
     pub(crate) load_balancer_name: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_name: ::std::option::Option<::std::string::String>,

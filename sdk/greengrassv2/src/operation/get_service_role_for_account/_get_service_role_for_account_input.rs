@@ -11,8 +11,8 @@ impl GetServiceRoleForAccountInput {
 }
 
 /// A builder for [`GetServiceRoleForAccountInput`](crate::operation::get_service_role_for_account::GetServiceRoleForAccountInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetServiceRoleForAccountInputBuilder {}
 impl GetServiceRoleForAccountInputBuilder {
     /// Consumes the builder and constructs a [`GetServiceRoleForAccountInput`](crate::operation::get_service_role_for_account::GetServiceRoleForAccountInput).

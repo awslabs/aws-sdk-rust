@@ -28,8 +28,8 @@ impl GetRegionsOutput {
 }
 
 /// A builder for [`GetRegionsOutput`](crate::operation::get_regions::GetRegionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRegionsOutputBuilder {
     pub(crate) regions: ::std::option::Option<::std::vec::Vec<crate::types::Region>>,
     _request_id: Option<String>,

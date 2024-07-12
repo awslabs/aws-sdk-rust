@@ -34,8 +34,8 @@ impl StartDirectoryListingOutput {
 }
 
 /// A builder for [`StartDirectoryListingOutput`](crate::operation::start_directory_listing::StartDirectoryListingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartDirectoryListingOutputBuilder {
     pub(crate) listing_id: ::std::option::Option<::std::string::String>,
     pub(crate) output_file_name: ::std::option::Option<::std::string::String>,

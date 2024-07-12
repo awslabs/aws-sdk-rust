@@ -26,8 +26,8 @@ impl GetMlModelTransformJobInput {
 }
 
 /// A builder for [`GetMlModelTransformJobInput`](crate::operation::get_ml_model_transform_job::GetMlModelTransformJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMlModelTransformJobInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) neptune_iam_role_arn: ::std::option::Option<::std::string::String>,

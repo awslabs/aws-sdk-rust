@@ -39,8 +39,8 @@ impl EbsResourceUtilization {
 }
 
 /// A builder for [`EbsResourceUtilization`](crate::types::EbsResourceUtilization).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EbsResourceUtilizationBuilder {
     pub(crate) ebs_read_ops_per_second: ::std::option::Option<::std::string::String>,
     pub(crate) ebs_write_ops_per_second: ::std::option::Option<::std::string::String>,

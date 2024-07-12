@@ -11,8 +11,8 @@ impl GetV2LoggingOptionsInput {
 }
 
 /// A builder for [`GetV2LoggingOptionsInput`](crate::operation::get_v2_logging_options::GetV2LoggingOptionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetV2LoggingOptionsInputBuilder {}
 impl GetV2LoggingOptionsInputBuilder {
     /// Consumes the builder and constructs a [`GetV2LoggingOptionsInput`](crate::operation::get_v2_logging_options::GetV2LoggingOptionsInput).

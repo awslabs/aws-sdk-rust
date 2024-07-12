@@ -40,8 +40,8 @@ impl DeleteAppVersionResourceOutput {
 }
 
 /// A builder for [`DeleteAppVersionResourceOutput`](crate::operation::delete_app_version_resource::DeleteAppVersionResourceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAppVersionResourceOutputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_version: ::std::option::Option<::std::string::String>,

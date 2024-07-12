@@ -27,8 +27,8 @@ impl AuthorizationCodeProperties {
 }
 
 /// A builder for [`AuthorizationCodeProperties`](crate::types::AuthorizationCodeProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AuthorizationCodePropertiesBuilder {
     pub(crate) authorization_code: ::std::option::Option<::std::string::String>,
     pub(crate) redirect_uri: ::std::option::Option<::std::string::String>,

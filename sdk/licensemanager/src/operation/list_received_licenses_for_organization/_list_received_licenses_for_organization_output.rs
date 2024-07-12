@@ -34,8 +34,8 @@ impl ListReceivedLicensesForOrganizationOutput {
 }
 
 /// A builder for [`ListReceivedLicensesForOrganizationOutput`](crate::operation::list_received_licenses_for_organization::ListReceivedLicensesForOrganizationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListReceivedLicensesForOrganizationOutputBuilder {
     pub(crate) licenses: ::std::option::Option<::std::vec::Vec<crate::types::GrantedLicense>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

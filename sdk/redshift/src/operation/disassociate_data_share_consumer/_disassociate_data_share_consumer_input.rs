@@ -38,8 +38,8 @@ impl DisassociateDataShareConsumerInput {
 }
 
 /// A builder for [`DisassociateDataShareConsumerInput`](crate::operation::disassociate_data_share_consumer::DisassociateDataShareConsumerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateDataShareConsumerInputBuilder {
     pub(crate) data_share_arn: ::std::option::Option<::std::string::String>,
     pub(crate) disassociate_entire_account: ::std::option::Option<bool>,

@@ -178,8 +178,8 @@ impl EngineTranscribeSettings {
 }
 
 /// A builder for [`EngineTranscribeSettings`](crate::types::EngineTranscribeSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EngineTranscribeSettingsBuilder {
     pub(crate) language_code: ::std::option::Option<crate::types::TranscribeLanguageCode>,
     pub(crate) vocabulary_filter_method: ::std::option::Option<crate::types::TranscribeVocabularyFilterMethod>,

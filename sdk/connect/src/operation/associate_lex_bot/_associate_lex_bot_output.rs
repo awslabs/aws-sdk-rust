@@ -18,8 +18,8 @@ impl AssociateLexBotOutput {
 }
 
 /// A builder for [`AssociateLexBotOutput`](crate::operation::associate_lex_bot::AssociateLexBotOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateLexBotOutputBuilder {
     _request_id: Option<String>,
 }

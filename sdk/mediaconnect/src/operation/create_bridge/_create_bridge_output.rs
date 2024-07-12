@@ -26,8 +26,8 @@ impl CreateBridgeOutput {
 }
 
 /// A builder for [`CreateBridgeOutput`](crate::operation::create_bridge::CreateBridgeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateBridgeOutputBuilder {
     pub(crate) bridge: ::std::option::Option<crate::types::Bridge>,
     _request_id: Option<String>,

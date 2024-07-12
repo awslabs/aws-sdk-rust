@@ -50,8 +50,8 @@ impl ListWorkflowsInput {
 }
 
 /// A builder for [`ListWorkflowsInput`](crate::operation::list_workflows::ListWorkflowsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListWorkflowsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

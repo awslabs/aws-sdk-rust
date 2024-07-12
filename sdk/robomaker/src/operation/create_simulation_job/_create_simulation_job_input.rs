@@ -124,8 +124,8 @@ impl CreateSimulationJobInput {
 }
 
 /// A builder for [`CreateSimulationJobInput`](crate::operation::create_simulation_job::CreateSimulationJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSimulationJobInputBuilder {
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) output_location: ::std::option::Option<crate::types::OutputLocation>,

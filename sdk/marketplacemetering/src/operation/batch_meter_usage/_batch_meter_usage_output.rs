@@ -37,8 +37,8 @@ impl BatchMeterUsageOutput {
 }
 
 /// A builder for [`BatchMeterUsageOutput`](crate::operation::batch_meter_usage::BatchMeterUsageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchMeterUsageOutputBuilder {
     pub(crate) results: ::std::option::Option<::std::vec::Vec<crate::types::UsageRecordResult>>,
     pub(crate) unprocessed_records: ::std::option::Option<::std::vec::Vec<crate::types::UsageRecord>>,

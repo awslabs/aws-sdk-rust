@@ -42,8 +42,8 @@ impl ListProfileObjectsItem {
 }
 
 /// A builder for [`ListProfileObjectsItem`](crate::types::ListProfileObjectsItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ListProfileObjectsItemBuilder {
     pub(crate) object_type_name: ::std::option::Option<::std::string::String>,
     pub(crate) profile_object_unique_key: ::std::option::Option<::std::string::String>,

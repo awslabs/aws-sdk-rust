@@ -26,8 +26,8 @@ impl CreateExportOutput {
 }
 
 /// A builder for [`CreateExportOutput`](crate::operation::create_export::CreateExportOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateExportOutputBuilder {
     pub(crate) export_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

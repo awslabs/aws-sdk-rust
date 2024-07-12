@@ -35,8 +35,8 @@ impl BodySectionDynamicNumericDimensionConfiguration {
 }
 
 /// A builder for [`BodySectionDynamicNumericDimensionConfiguration`](crate::types::BodySectionDynamicNumericDimensionConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BodySectionDynamicNumericDimensionConfigurationBuilder {
     pub(crate) column: ::std::option::Option<crate::types::ColumnIdentifier>,
     pub(crate) limit: ::std::option::Option<i32>,

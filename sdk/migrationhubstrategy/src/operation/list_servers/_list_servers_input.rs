@@ -52,8 +52,8 @@ impl ListServersInput {
 }
 
 /// A builder for [`ListServersInput`](crate::operation::list_servers::ListServersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListServersInputBuilder {
     pub(crate) server_criteria: ::std::option::Option<crate::types::ServerCriteria>,
     pub(crate) filter_value: ::std::option::Option<::std::string::String>,

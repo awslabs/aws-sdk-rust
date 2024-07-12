@@ -27,8 +27,8 @@ impl DeleteDocumentationPartInput {
 }
 
 /// A builder for [`DeleteDocumentationPartInput`](crate::operation::delete_documentation_part::DeleteDocumentationPartInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDocumentationPartInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
     pub(crate) documentation_part_id: ::std::option::Option<::std::string::String>,

@@ -29,8 +29,8 @@ impl FunctionAssociations {
 }
 
 /// A builder for [`FunctionAssociations`](crate::types::FunctionAssociations).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FunctionAssociationsBuilder {
     pub(crate) quantity: ::std::option::Option<i32>,
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::FunctionAssociation>>,

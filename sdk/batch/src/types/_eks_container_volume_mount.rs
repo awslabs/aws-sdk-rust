@@ -33,8 +33,8 @@ impl EksContainerVolumeMount {
 }
 
 /// A builder for [`EksContainerVolumeMount`](crate::types::EksContainerVolumeMount).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EksContainerVolumeMountBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) mount_path: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl DescribeClientVpnEndpointsOutput {
 }
 
 /// A builder for [`DescribeClientVpnEndpointsOutput`](crate::operation::describe_client_vpn_endpoints::DescribeClientVpnEndpointsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeClientVpnEndpointsOutputBuilder {
     pub(crate) client_vpn_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::ClientVpnEndpoint>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

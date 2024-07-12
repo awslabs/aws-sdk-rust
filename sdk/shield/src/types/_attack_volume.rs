@@ -33,8 +33,8 @@ impl AttackVolume {
 }
 
 /// A builder for [`AttackVolume`](crate::types::AttackVolume).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttackVolumeBuilder {
     pub(crate) bits_per_second: ::std::option::Option<crate::types::AttackVolumeStatistics>,
     pub(crate) packets_per_second: ::std::option::Option<crate::types::AttackVolumeStatistics>,

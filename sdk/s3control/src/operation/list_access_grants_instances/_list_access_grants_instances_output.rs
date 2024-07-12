@@ -34,8 +34,8 @@ impl ListAccessGrantsInstancesOutput {
 }
 
 /// A builder for [`ListAccessGrantsInstancesOutput`](crate::operation::list_access_grants_instances::ListAccessGrantsInstancesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAccessGrantsInstancesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) access_grants_instances_list: ::std::option::Option<::std::vec::Vec<crate::types::ListAccessGrantsInstanceEntry>>,

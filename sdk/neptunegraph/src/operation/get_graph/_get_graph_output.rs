@@ -113,8 +113,8 @@ impl GetGraphOutput {
 }
 
 /// A builder for [`GetGraphOutput`](crate::operation::get_graph::GetGraphOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetGraphOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

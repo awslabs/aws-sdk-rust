@@ -26,8 +26,8 @@ impl GetDataSourceOutput {
 }
 
 /// A builder for [`GetDataSourceOutput`](crate::operation::get_data_source::GetDataSourceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDataSourceOutputBuilder {
     pub(crate) data_source: ::std::option::Option<crate::types::DataSource>,
     _request_id: Option<String>,

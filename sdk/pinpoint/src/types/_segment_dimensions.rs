@@ -51,8 +51,8 @@ impl SegmentDimensions {
 }
 
 /// A builder for [`SegmentDimensions`](crate::types::SegmentDimensions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SegmentDimensionsBuilder {
     pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeDimension>>,
     pub(crate) behavior: ::std::option::Option<crate::types::SegmentBehaviors>,

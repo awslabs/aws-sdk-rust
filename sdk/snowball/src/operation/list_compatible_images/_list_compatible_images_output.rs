@@ -34,8 +34,8 @@ impl ListCompatibleImagesOutput {
 }
 
 /// A builder for [`ListCompatibleImagesOutput`](crate::operation::list_compatible_images::ListCompatibleImagesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCompatibleImagesOutputBuilder {
     pub(crate) compatible_images: ::std::option::Option<::std::vec::Vec<crate::types::CompatibleImage>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -28,8 +28,8 @@ impl UpdateServiceNetworkVpcAssociationInput {
 }
 
 /// A builder for [`UpdateServiceNetworkVpcAssociationInput`](crate::operation::update_service_network_vpc_association::UpdateServiceNetworkVpcAssociationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateServiceNetworkVpcAssociationInputBuilder {
     pub(crate) service_network_vpc_association_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -36,8 +36,8 @@ impl BatchStopUpdateActionInput {
 }
 
 /// A builder for [`BatchStopUpdateActionInput`](crate::operation::batch_stop_update_action::BatchStopUpdateActionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchStopUpdateActionInputBuilder {
     pub(crate) replication_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) cache_cluster_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

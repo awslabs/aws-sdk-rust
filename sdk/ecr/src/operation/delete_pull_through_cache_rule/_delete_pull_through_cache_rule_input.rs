@@ -26,8 +26,8 @@ impl DeletePullThroughCacheRuleInput {
 }
 
 /// A builder for [`DeletePullThroughCacheRuleInput`](crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePullThroughCacheRuleInputBuilder {
     pub(crate) ecr_repository_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,

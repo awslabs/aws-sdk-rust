@@ -39,8 +39,8 @@ impl PublicIpv4PoolRange {
 }
 
 /// A builder for [`PublicIpv4PoolRange`](crate::types::PublicIpv4PoolRange).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PublicIpv4PoolRangeBuilder {
     pub(crate) first_address: ::std::option::Option<::std::string::String>,
     pub(crate) last_address: ::std::option::Option<::std::string::String>,

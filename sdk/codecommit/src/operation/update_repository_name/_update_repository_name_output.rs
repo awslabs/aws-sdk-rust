@@ -18,8 +18,8 @@ impl UpdateRepositoryNameOutput {
 }
 
 /// A builder for [`UpdateRepositoryNameOutput`](crate::operation::update_repository_name::UpdateRepositoryNameOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRepositoryNameOutputBuilder {
     _request_id: Option<String>,
 }

@@ -181,8 +181,8 @@ impl PolicyDetails {
 }
 
 /// A builder for [`PolicyDetails`](crate::types::PolicyDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PolicyDetailsBuilder {
     pub(crate) policy_type: ::std::option::Option<crate::types::PolicyTypeValues>,
     pub(crate) resource_types: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTypeValues>>,

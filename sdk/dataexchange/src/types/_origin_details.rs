@@ -21,8 +21,8 @@ impl OriginDetails {
 }
 
 /// A builder for [`OriginDetails`](crate::types::OriginDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OriginDetailsBuilder {
     pub(crate) product_id: ::std::option::Option<::std::string::String>,
 }

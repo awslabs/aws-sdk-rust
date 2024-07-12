@@ -26,8 +26,8 @@ impl DeleteAssetModelCompositeModelOutput {
 }
 
 /// A builder for [`DeleteAssetModelCompositeModelOutput`](crate::operation::delete_asset_model_composite_model::DeleteAssetModelCompositeModelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAssetModelCompositeModelOutputBuilder {
     pub(crate) asset_model_status: ::std::option::Option<crate::types::AssetModelStatus>,
     _request_id: Option<String>,

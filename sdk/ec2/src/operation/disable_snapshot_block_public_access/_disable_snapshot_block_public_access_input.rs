@@ -20,8 +20,8 @@ impl DisableSnapshotBlockPublicAccessInput {
 }
 
 /// A builder for [`DisableSnapshotBlockPublicAccessInput`](crate::operation::disable_snapshot_block_public_access::DisableSnapshotBlockPublicAccessInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableSnapshotBlockPublicAccessInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
 }

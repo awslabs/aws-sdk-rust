@@ -32,8 +32,8 @@ impl ListMobileSdkReleasesInput {
 }
 
 /// A builder for [`ListMobileSdkReleasesInput`](crate::operation::list_mobile_sdk_releases::ListMobileSdkReleasesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListMobileSdkReleasesInputBuilder {
     pub(crate) platform: ::std::option::Option<crate::types::Platform>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,

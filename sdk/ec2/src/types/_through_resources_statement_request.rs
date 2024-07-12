@@ -21,8 +21,8 @@ impl ThroughResourcesStatementRequest {
 }
 
 /// A builder for [`ThroughResourcesStatementRequest`](crate::types::ThroughResourcesStatementRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ThroughResourcesStatementRequestBuilder {
     pub(crate) resource_statement: ::std::option::Option<crate::types::ResourceStatementRequest>,
 }

@@ -22,8 +22,8 @@ impl DescribeTypeRegistrationInput {
 }
 
 /// A builder for [`DescribeTypeRegistrationInput`](crate::operation::describe_type_registration::DescribeTypeRegistrationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTypeRegistrationInputBuilder {
     pub(crate) registration_token: ::std::option::Option<::std::string::String>,
 }

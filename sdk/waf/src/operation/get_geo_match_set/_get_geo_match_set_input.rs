@@ -20,8 +20,8 @@ impl GetGeoMatchSetInput {
 }
 
 /// A builder for [`GetGeoMatchSetInput`](crate::operation::get_geo_match_set::GetGeoMatchSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetGeoMatchSetInputBuilder {
     pub(crate) geo_match_set_id: ::std::option::Option<::std::string::String>,
 }

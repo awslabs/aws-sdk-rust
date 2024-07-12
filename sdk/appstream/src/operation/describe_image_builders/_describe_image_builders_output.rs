@@ -34,8 +34,8 @@ impl DescribeImageBuildersOutput {
 }
 
 /// A builder for [`DescribeImageBuildersOutput`](crate::operation::describe_image_builders::DescribeImageBuildersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeImageBuildersOutputBuilder {
     pub(crate) image_builders: ::std::option::Option<::std::vec::Vec<crate::types::ImageBuilder>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

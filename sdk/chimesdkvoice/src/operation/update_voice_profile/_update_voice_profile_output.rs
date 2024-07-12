@@ -26,8 +26,8 @@ impl UpdateVoiceProfileOutput {
 }
 
 /// A builder for [`UpdateVoiceProfileOutput`](crate::operation::update_voice_profile::UpdateVoiceProfileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateVoiceProfileOutputBuilder {
     pub(crate) voice_profile: ::std::option::Option<crate::types::VoiceProfile>,
     _request_id: Option<String>,

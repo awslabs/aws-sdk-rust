@@ -20,8 +20,8 @@ impl DescribeTableReplicaAutoScalingInput {
 }
 
 /// A builder for [`DescribeTableReplicaAutoScalingInput`](crate::operation::describe_table_replica_auto_scaling::DescribeTableReplicaAutoScalingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTableReplicaAutoScalingInputBuilder {
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
 }

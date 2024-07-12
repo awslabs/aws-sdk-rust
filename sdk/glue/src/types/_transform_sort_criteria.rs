@@ -27,8 +27,8 @@ impl TransformSortCriteria {
 }
 
 /// A builder for [`TransformSortCriteria`](crate::types::TransformSortCriteria).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TransformSortCriteriaBuilder {
     pub(crate) column: ::std::option::Option<crate::types::TransformSortColumnType>,
     pub(crate) sort_direction: ::std::option::Option<crate::types::SortDirectionType>,

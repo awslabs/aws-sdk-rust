@@ -18,8 +18,8 @@ impl TerminateJobFlowsOutput {
 }
 
 /// A builder for [`TerminateJobFlowsOutput`](crate::operation::terminate_job_flows::TerminateJobFlowsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TerminateJobFlowsOutputBuilder {
     _request_id: Option<String>,
 }

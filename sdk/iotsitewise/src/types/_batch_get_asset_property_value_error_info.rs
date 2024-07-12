@@ -27,8 +27,8 @@ impl BatchGetAssetPropertyValueErrorInfo {
 }
 
 /// A builder for [`BatchGetAssetPropertyValueErrorInfo`](crate::types::BatchGetAssetPropertyValueErrorInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetAssetPropertyValueErrorInfoBuilder {
     pub(crate) error_code: ::std::option::Option<crate::types::BatchGetAssetPropertyValueErrorCode>,
     pub(crate) error_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,

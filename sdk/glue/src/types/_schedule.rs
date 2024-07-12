@@ -27,8 +27,8 @@ impl Schedule {
 }
 
 /// A builder for [`Schedule`](crate::types::Schedule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScheduleBuilder {
     pub(crate) schedule_expression: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::ScheduleState>,

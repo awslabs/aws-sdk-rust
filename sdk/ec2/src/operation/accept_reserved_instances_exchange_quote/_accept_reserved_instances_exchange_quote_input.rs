@@ -37,8 +37,8 @@ impl AcceptReservedInstancesExchangeQuoteInput {
 }
 
 /// A builder for [`AcceptReservedInstancesExchangeQuoteInput`](crate::operation::accept_reserved_instances_exchange_quote::AcceptReservedInstancesExchangeQuoteInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AcceptReservedInstancesExchangeQuoteInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) reserved_instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

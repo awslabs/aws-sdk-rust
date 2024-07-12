@@ -26,8 +26,8 @@ impl GetReportMetadataOutput {
 }
 
 /// A builder for [`GetReportMetadataOutput`](crate::operation::get_report_metadata::GetReportMetadataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetReportMetadataOutputBuilder {
     pub(crate) report_details: ::std::option::Option<crate::types::ReportDetail>,
     _request_id: Option<String>,

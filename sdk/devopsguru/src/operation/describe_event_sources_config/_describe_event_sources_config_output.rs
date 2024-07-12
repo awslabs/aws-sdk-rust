@@ -26,8 +26,8 @@ impl DescribeEventSourcesConfigOutput {
 }
 
 /// A builder for [`DescribeEventSourcesConfigOutput`](crate::operation::describe_event_sources_config::DescribeEventSourcesConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEventSourcesConfigOutputBuilder {
     pub(crate) event_sources: ::std::option::Option<crate::types::EventSourcesConfig>,
     _request_id: Option<String>,

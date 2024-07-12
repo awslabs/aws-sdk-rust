@@ -56,8 +56,8 @@ impl ImportDocumentInput {
 }
 
 /// A builder for [`ImportDocumentInput`](crate::operation::import_document::ImportDocumentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportDocumentInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) card_id: ::std::option::Option<::std::string::String>,

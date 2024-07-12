@@ -34,8 +34,8 @@ impl GetBatchPredictionJobsOutput {
 }
 
 /// A builder for [`GetBatchPredictionJobsOutput`](crate::operation::get_batch_prediction_jobs::GetBatchPredictionJobsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBatchPredictionJobsOutputBuilder {
     pub(crate) batch_predictions: ::std::option::Option<::std::vec::Vec<crate::types::BatchPrediction>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

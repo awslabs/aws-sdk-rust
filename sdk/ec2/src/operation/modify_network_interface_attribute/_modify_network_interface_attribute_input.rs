@@ -77,8 +77,8 @@ impl ModifyNetworkInterfaceAttributeInput {
 }
 
 /// A builder for [`ModifyNetworkInterfaceAttributeInput`](crate::operation::modify_network_interface_attribute::ModifyNetworkInterfaceAttributeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyNetworkInterfaceAttributeInputBuilder {
     pub(crate) attachment: ::std::option::Option<crate::types::NetworkInterfaceAttachmentChanges>,
     pub(crate) description: ::std::option::Option<crate::types::AttributeValue>,

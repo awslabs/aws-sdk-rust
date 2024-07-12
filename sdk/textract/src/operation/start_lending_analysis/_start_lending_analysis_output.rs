@@ -26,8 +26,8 @@ impl StartLendingAnalysisOutput {
 }
 
 /// A builder for [`StartLendingAnalysisOutput`](crate::operation::start_lending_analysis::StartLendingAnalysisOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartLendingAnalysisOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

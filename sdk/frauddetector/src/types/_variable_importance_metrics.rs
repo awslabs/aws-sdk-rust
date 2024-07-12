@@ -23,8 +23,8 @@ impl VariableImportanceMetrics {
 }
 
 /// A builder for [`VariableImportanceMetrics`](crate::types::VariableImportanceMetrics).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VariableImportanceMetricsBuilder {
     pub(crate) log_odds_metrics: ::std::option::Option<::std::vec::Vec<crate::types::LogOddsMetric>>,
 }

@@ -21,8 +21,8 @@ impl GetDomainDeliverabilityCampaignInput {
 }
 
 /// A builder for [`GetDomainDeliverabilityCampaignInput`](crate::operation::get_domain_deliverability_campaign::GetDomainDeliverabilityCampaignInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDomainDeliverabilityCampaignInputBuilder {
     pub(crate) campaign_id: ::std::option::Option<::std::string::String>,
 }

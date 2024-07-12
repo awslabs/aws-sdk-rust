@@ -40,8 +40,8 @@ impl Classifier {
 }
 
 /// A builder for [`Classifier`](crate::types::Classifier).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ClassifierBuilder {
     pub(crate) grok_classifier: ::std::option::Option<crate::types::GrokClassifier>,
     pub(crate) xml_classifier: ::std::option::Option<crate::types::XmlClassifier>,

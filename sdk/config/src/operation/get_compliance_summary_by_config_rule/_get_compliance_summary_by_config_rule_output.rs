@@ -27,8 +27,8 @@ impl GetComplianceSummaryByConfigRuleOutput {
 }
 
 /// A builder for [`GetComplianceSummaryByConfigRuleOutput`](crate::operation::get_compliance_summary_by_config_rule::GetComplianceSummaryByConfigRuleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetComplianceSummaryByConfigRuleOutputBuilder {
     pub(crate) compliance_summary: ::std::option::Option<crate::types::ComplianceSummary>,
     _request_id: Option<String>,

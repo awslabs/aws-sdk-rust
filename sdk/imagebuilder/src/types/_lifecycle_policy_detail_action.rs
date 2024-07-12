@@ -27,8 +27,8 @@ impl LifecyclePolicyDetailAction {
 }
 
 /// A builder for [`LifecyclePolicyDetailAction`](crate::types::LifecyclePolicyDetailAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LifecyclePolicyDetailActionBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::LifecyclePolicyDetailActionType>,
     pub(crate) include_resources: ::std::option::Option<crate::types::LifecyclePolicyDetailActionIncludeResources>,

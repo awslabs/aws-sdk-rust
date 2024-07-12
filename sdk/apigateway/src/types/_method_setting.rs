@@ -75,8 +75,8 @@ impl MethodSetting {
 }
 
 /// A builder for [`MethodSetting`](crate::types::MethodSetting).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MethodSettingBuilder {
     pub(crate) metrics_enabled: ::std::option::Option<bool>,
     pub(crate) logging_level: ::std::option::Option<::std::string::String>,

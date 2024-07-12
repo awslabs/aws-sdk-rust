@@ -22,8 +22,8 @@ impl DescribeUserProfilesInput {
 }
 
 /// A builder for [`DescribeUserProfilesInput`](crate::operation::describe_user_profiles::DescribeUserProfilesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeUserProfilesInputBuilder {
     pub(crate) iam_user_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

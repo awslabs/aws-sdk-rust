@@ -45,8 +45,8 @@ impl EstimateByTime {
 }
 
 /// A builder for [`EstimateByTime`](crate::types::EstimateByTime).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EstimateByTimeBuilder {
     pub(crate) usage_cost: ::std::option::Option<f64>,
     pub(crate) pricing_unit: ::std::option::Option<crate::types::PricingUnit>,

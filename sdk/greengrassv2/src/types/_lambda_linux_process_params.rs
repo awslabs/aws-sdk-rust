@@ -29,8 +29,8 @@ impl LambdaLinuxProcessParams {
 }
 
 /// A builder for [`LambdaLinuxProcessParams`](crate::types::LambdaLinuxProcessParams).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LambdaLinuxProcessParamsBuilder {
     pub(crate) isolation_mode: ::std::option::Option<crate::types::LambdaIsolationMode>,
     pub(crate) container_params: ::std::option::Option<crate::types::LambdaContainerParams>,

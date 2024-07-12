@@ -28,8 +28,8 @@ impl DiscoveryServerConfiguration {
 }
 
 /// A builder for [`DiscoveryServerConfiguration`](crate::types::DiscoveryServerConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DiscoveryServerConfigurationBuilder {
     pub(crate) server_hostname: ::std::option::Option<::std::string::String>,
     pub(crate) server_port: ::std::option::Option<i32>,

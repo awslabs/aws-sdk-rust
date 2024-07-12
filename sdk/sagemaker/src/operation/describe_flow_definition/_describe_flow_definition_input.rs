@@ -20,8 +20,8 @@ impl DescribeFlowDefinitionInput {
 }
 
 /// A builder for [`DescribeFlowDefinitionInput`](crate::operation::describe_flow_definition::DescribeFlowDefinitionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFlowDefinitionInputBuilder {
     pub(crate) flow_definition_name: ::std::option::Option<::std::string::String>,
 }

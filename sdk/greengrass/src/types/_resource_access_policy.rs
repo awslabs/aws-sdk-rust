@@ -27,8 +27,8 @@ impl ResourceAccessPolicy {
 }
 
 /// A builder for [`ResourceAccessPolicy`](crate::types::ResourceAccessPolicy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResourceAccessPolicyBuilder {
     pub(crate) permission: ::std::option::Option<crate::types::Permission>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,

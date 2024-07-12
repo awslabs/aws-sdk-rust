@@ -43,8 +43,8 @@ impl BatchDetectEntitiesOutput {
 }
 
 /// A builder for [`BatchDetectEntitiesOutput`](crate::operation::batch_detect_entities::BatchDetectEntitiesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct BatchDetectEntitiesOutputBuilder {
     pub(crate) result_list: ::std::option::Option<::std::vec::Vec<crate::types::BatchDetectEntitiesItemResult>>,
     pub(crate) error_list: ::std::option::Option<::std::vec::Vec<crate::types::BatchItemError>>,

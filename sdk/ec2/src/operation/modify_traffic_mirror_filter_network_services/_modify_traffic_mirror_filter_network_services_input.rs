@@ -43,8 +43,8 @@ impl ModifyTrafficMirrorFilterNetworkServicesInput {
 }
 
 /// A builder for [`ModifyTrafficMirrorFilterNetworkServicesInput`](crate::operation::modify_traffic_mirror_filter_network_services::ModifyTrafficMirrorFilterNetworkServicesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyTrafficMirrorFilterNetworkServicesInputBuilder {
     pub(crate) traffic_mirror_filter_id: ::std::option::Option<::std::string::String>,
     pub(crate) add_network_services: ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorNetworkService>>,

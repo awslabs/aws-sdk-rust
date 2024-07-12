@@ -32,8 +32,8 @@ impl ListConfigurationRevisionsInput {
 }
 
 /// A builder for [`ListConfigurationRevisionsInput`](crate::operation::list_configuration_revisions::ListConfigurationRevisionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListConfigurationRevisionsInputBuilder {
     pub(crate) configuration_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

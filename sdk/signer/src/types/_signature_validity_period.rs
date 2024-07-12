@@ -27,8 +27,8 @@ impl SignatureValidityPeriod {
 }
 
 /// A builder for [`SignatureValidityPeriod`](crate::types::SignatureValidityPeriod).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SignatureValidityPeriodBuilder {
     pub(crate) value: ::std::option::Option<i32>,
     pub(crate) r#type: ::std::option::Option<crate::types::ValidityType>,

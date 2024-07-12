@@ -58,8 +58,8 @@ impl ListGeoLocationsOutput {
 }
 
 /// A builder for [`ListGeoLocationsOutput`](crate::operation::list_geo_locations::ListGeoLocationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListGeoLocationsOutputBuilder {
     pub(crate) geo_location_details_list: ::std::option::Option<::std::vec::Vec<crate::types::GeoLocationDetails>>,
     pub(crate) is_truncated: ::std::option::Option<bool>,

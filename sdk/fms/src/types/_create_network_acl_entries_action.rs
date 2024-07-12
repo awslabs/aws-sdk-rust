@@ -41,8 +41,8 @@ impl CreateNetworkAclEntriesAction {
 }
 
 /// A builder for [`CreateNetworkAclEntriesAction`](crate::types::CreateNetworkAclEntriesAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateNetworkAclEntriesActionBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) network_acl_id: ::std::option::Option<crate::types::ActionTarget>,

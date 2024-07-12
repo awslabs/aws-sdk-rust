@@ -36,8 +36,8 @@ impl GetEnabledStandardsInput {
 }
 
 /// A builder for [`GetEnabledStandardsInput`](crate::operation::get_enabled_standards::GetEnabledStandardsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEnabledStandardsInputBuilder {
     pub(crate) standards_subscription_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

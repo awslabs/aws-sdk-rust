@@ -92,8 +92,8 @@ impl GetSubscriptionGrantOutput {
 }
 
 /// A builder for [`GetSubscriptionGrantOutput`](crate::operation::get_subscription_grant::GetSubscriptionGrantOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSubscriptionGrantOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,

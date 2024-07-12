@@ -27,8 +27,8 @@ impl CidrAuthorizationContext {
 }
 
 /// A builder for [`CidrAuthorizationContext`](crate::types::CidrAuthorizationContext).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CidrAuthorizationContextBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) signature: ::std::option::Option<::std::string::String>,

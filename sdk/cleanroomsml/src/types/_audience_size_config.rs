@@ -28,8 +28,8 @@ impl AudienceSizeConfig {
 }
 
 /// A builder for [`AudienceSizeConfig`](crate::types::AudienceSizeConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AudienceSizeConfigBuilder {
     pub(crate) audience_size_type: ::std::option::Option<crate::types::AudienceSizeType>,
     pub(crate) audience_size_bins: ::std::option::Option<::std::vec::Vec<i32>>,

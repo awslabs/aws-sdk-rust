@@ -79,8 +79,8 @@ impl CrawlerTargets {
 }
 
 /// A builder for [`CrawlerTargets`](crate::types::CrawlerTargets).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CrawlerTargetsBuilder {
     pub(crate) s3_targets: ::std::option::Option<::std::vec::Vec<crate::types::S3Target>>,
     pub(crate) jdbc_targets: ::std::option::Option<::std::vec::Vec<crate::types::JdbcTarget>>,

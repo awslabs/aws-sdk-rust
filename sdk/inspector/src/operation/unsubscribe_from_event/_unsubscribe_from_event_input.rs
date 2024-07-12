@@ -32,8 +32,8 @@ impl UnsubscribeFromEventInput {
 }
 
 /// A builder for [`UnsubscribeFromEventInput`](crate::operation::unsubscribe_from_event::UnsubscribeFromEventInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UnsubscribeFromEventInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) event: ::std::option::Option<crate::types::InspectorEvent>,

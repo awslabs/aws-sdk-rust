@@ -32,8 +32,8 @@ impl DeleteServiceTemplateVersionInput {
 }
 
 /// A builder for [`DeleteServiceTemplateVersionInput`](crate::operation::delete_service_template_version::DeleteServiceTemplateVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteServiceTemplateVersionInputBuilder {
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
     pub(crate) major_version: ::std::option::Option<::std::string::String>,

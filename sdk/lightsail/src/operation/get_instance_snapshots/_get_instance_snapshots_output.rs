@@ -38,8 +38,8 @@ impl GetInstanceSnapshotsOutput {
 }
 
 /// A builder for [`GetInstanceSnapshotsOutput`](crate::operation::get_instance_snapshots::GetInstanceSnapshotsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetInstanceSnapshotsOutputBuilder {
     pub(crate) instance_snapshots: ::std::option::Option<::std::vec::Vec<crate::types::InstanceSnapshot>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,

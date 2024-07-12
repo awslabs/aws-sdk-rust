@@ -44,8 +44,8 @@ impl ProvisionPublicIpv4PoolCidrInput {
 }
 
 /// A builder for [`ProvisionPublicIpv4PoolCidrInput`](crate::operation::provision_public_ipv4_pool_cidr::ProvisionPublicIpv4PoolCidrInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProvisionPublicIpv4PoolCidrInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) ipam_pool_id: ::std::option::Option<::std::string::String>,

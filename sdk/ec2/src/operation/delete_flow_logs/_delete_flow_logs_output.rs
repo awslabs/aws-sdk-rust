@@ -28,8 +28,8 @@ impl DeleteFlowLogsOutput {
 }
 
 /// A builder for [`DeleteFlowLogsOutput`](crate::operation::delete_flow_logs::DeleteFlowLogsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFlowLogsOutputBuilder {
     pub(crate) unsuccessful: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulItem>>,
     _request_id: Option<String>,

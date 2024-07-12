@@ -26,8 +26,8 @@ impl CreateBotReplicaInput {
 }
 
 /// A builder for [`CreateBotReplicaInput`](crate::operation::create_bot_replica::CreateBotReplicaInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateBotReplicaInputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) replica_region: ::std::option::Option<::std::string::String>,

@@ -41,8 +41,8 @@ impl InstanceFleetModifyConfig {
 }
 
 /// A builder for [`InstanceFleetModifyConfig`](crate::types::InstanceFleetModifyConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceFleetModifyConfigBuilder {
     pub(crate) instance_fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) target_on_demand_capacity: ::std::option::Option<i32>,

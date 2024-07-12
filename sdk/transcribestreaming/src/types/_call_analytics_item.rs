@@ -59,8 +59,8 @@ impl CallAnalyticsItem {
 }
 
 /// A builder for [`CallAnalyticsItem`](crate::types::CallAnalyticsItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CallAnalyticsItemBuilder {
     pub(crate) begin_offset_millis: ::std::option::Option<i64>,
     pub(crate) end_offset_millis: ::std::option::Option<i64>,

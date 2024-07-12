@@ -35,8 +35,8 @@ impl GetGatewayResponsesOutput {
 }
 
 /// A builder for [`GetGatewayResponsesOutput`](crate::operation::get_gateway_responses::GetGatewayResponsesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetGatewayResponsesOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::GatewayResponse>>,
     pub(crate) position: ::std::option::Option<::std::string::String>,

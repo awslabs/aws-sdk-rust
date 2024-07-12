@@ -37,8 +37,8 @@ impl ListKeysResponseListItem {
 }
 
 /// A builder for [`ListKeysResponseListItem`](crate::types::ListKeysResponseListItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ListKeysResponseListItemBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,

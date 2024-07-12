@@ -26,8 +26,8 @@ impl GetTableRestoreStatusOutput {
 }
 
 /// A builder for [`GetTableRestoreStatusOutput`](crate::operation::get_table_restore_status::GetTableRestoreStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTableRestoreStatusOutputBuilder {
     pub(crate) table_restore_status: ::std::option::Option<crate::types::TableRestoreStatus>,
     _request_id: Option<String>,

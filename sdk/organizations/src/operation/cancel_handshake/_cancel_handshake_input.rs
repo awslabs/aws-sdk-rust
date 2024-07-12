@@ -22,8 +22,8 @@ impl CancelHandshakeInput {
 }
 
 /// A builder for [`CancelHandshakeInput`](crate::operation::cancel_handshake::CancelHandshakeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelHandshakeInputBuilder {
     pub(crate) handshake_id: ::std::option::Option<::std::string::String>,
 }

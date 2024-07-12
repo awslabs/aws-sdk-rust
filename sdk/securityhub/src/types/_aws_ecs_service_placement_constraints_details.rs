@@ -29,8 +29,8 @@ impl AwsEcsServicePlacementConstraintsDetails {
 }
 
 /// A builder for [`AwsEcsServicePlacementConstraintsDetails`](crate::types::AwsEcsServicePlacementConstraintsDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEcsServicePlacementConstraintsDetailsBuilder {
     pub(crate) expression: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,

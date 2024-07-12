@@ -33,8 +33,8 @@ impl DoubleConfigurationOptions {
 }
 
 /// A builder for [`DoubleConfigurationOptions`](crate::types::DoubleConfigurationOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DoubleConfigurationOptionsBuilder {
     pub(crate) default_value: ::std::option::Option<f64>,
     pub(crate) min: ::std::option::Option<f64>,

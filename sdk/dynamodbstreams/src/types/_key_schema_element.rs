@@ -48,8 +48,8 @@ impl KeySchemaElement {
 }
 
 /// A builder for [`KeySchemaElement`](crate::types::KeySchemaElement).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KeySchemaElementBuilder {
     pub(crate) attribute_name: ::std::option::Option<::std::string::String>,
     pub(crate) key_type: ::std::option::Option<crate::types::KeyType>,

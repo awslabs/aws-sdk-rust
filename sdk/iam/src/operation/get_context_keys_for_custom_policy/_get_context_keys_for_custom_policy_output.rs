@@ -29,8 +29,8 @@ impl GetContextKeysForCustomPolicyOutput {
 }
 
 /// A builder for [`GetContextKeysForCustomPolicyOutput`](crate::operation::get_context_keys_for_custom_policy::GetContextKeysForCustomPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetContextKeysForCustomPolicyOutputBuilder {
     pub(crate) context_key_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,

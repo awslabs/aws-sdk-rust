@@ -77,8 +77,8 @@ impl AutoScalingGroupRecommendationOption {
 }
 
 /// A builder for [`AutoScalingGroupRecommendationOption`](crate::types::AutoScalingGroupRecommendationOption).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AutoScalingGroupRecommendationOptionBuilder {
     pub(crate) configuration: ::std::option::Option<crate::types::AutoScalingGroupConfiguration>,
     pub(crate) instance_gpu_info: ::std::option::Option<crate::types::GpuInfo>,

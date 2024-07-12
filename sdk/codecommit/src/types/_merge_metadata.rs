@@ -39,8 +39,8 @@ impl MergeMetadata {
 }
 
 /// A builder for [`MergeMetadata`](crate::types::MergeMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MergeMetadataBuilder {
     pub(crate) is_merged: ::std::option::Option<bool>,
     pub(crate) merged_by: ::std::option::Option<::std::string::String>,

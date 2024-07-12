@@ -74,8 +74,8 @@ impl ImportKeyMaterialInput {
 }
 
 /// A builder for [`ImportKeyMaterialInput`](crate::operation::import_key_material::ImportKeyMaterialInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportKeyMaterialInputBuilder {
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
     pub(crate) import_token: ::std::option::Option<::aws_smithy_types::Blob>,

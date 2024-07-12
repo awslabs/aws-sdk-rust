@@ -102,8 +102,8 @@ impl PutMetricStreamInput {
 }
 
 /// A builder for [`PutMetricStreamInput`](crate::operation::put_metric_stream::PutMetricStreamInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutMetricStreamInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) include_filters: ::std::option::Option<::std::vec::Vec<crate::types::MetricStreamFilter>>,

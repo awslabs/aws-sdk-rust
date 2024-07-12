@@ -21,8 +21,8 @@ impl SpaceSharingSettings {
 }
 
 /// A builder for [`SpaceSharingSettings`](crate::types::SpaceSharingSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SpaceSharingSettingsBuilder {
     pub(crate) sharing_type: ::std::option::Option<crate::types::SharingType>,
 }

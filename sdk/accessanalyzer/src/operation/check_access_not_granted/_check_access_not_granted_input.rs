@@ -45,8 +45,8 @@ impl CheckAccessNotGrantedInput {
 }
 
 /// A builder for [`CheckAccessNotGrantedInput`](crate::operation::check_access_not_granted::CheckAccessNotGrantedInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CheckAccessNotGrantedInputBuilder {
     pub(crate) policy_document: ::std::option::Option<::std::string::String>,
     pub(crate) access: ::std::option::Option<::std::vec::Vec<crate::types::Access>>,

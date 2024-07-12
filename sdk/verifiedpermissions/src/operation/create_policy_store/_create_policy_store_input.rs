@@ -53,8 +53,8 @@ impl CreatePolicyStoreInput {
 }
 
 /// A builder for [`CreatePolicyStoreInput`](crate::operation::create_policy_store::CreatePolicyStoreInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreatePolicyStoreInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) validation_settings: ::std::option::Option<crate::types::ValidationSettings>,

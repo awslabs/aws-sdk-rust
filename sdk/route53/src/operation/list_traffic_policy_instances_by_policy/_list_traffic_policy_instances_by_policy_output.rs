@@ -58,8 +58,8 @@ impl ListTrafficPolicyInstancesByPolicyOutput {
 }
 
 /// A builder for [`ListTrafficPolicyInstancesByPolicyOutput`](crate::operation::list_traffic_policy_instances_by_policy::ListTrafficPolicyInstancesByPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTrafficPolicyInstancesByPolicyOutputBuilder {
     pub(crate) traffic_policy_instances: ::std::option::Option<::std::vec::Vec<crate::types::TrafficPolicyInstance>>,
     pub(crate) hosted_zone_id_marker: ::std::option::Option<::std::string::String>,

@@ -44,8 +44,8 @@ impl UpdateScalingPlanInput {
 }
 
 /// A builder for [`UpdateScalingPlanInput`](crate::operation::update_scaling_plan::UpdateScalingPlanInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateScalingPlanInputBuilder {
     pub(crate) scaling_plan_name: ::std::option::Option<::std::string::String>,
     pub(crate) scaling_plan_version: ::std::option::Option<i64>,

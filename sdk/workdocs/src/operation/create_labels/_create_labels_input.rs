@@ -43,8 +43,8 @@ impl CreateLabelsInput {
 }
 
 /// A builder for [`CreateLabelsInput`](crate::operation::create_labels::CreateLabelsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateLabelsInputBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

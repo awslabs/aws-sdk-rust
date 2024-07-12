@@ -21,8 +21,8 @@ impl CloudWatchEventsExecutionDataDetails {
 }
 
 /// A builder for [`CloudWatchEventsExecutionDataDetails`](crate::types::CloudWatchEventsExecutionDataDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CloudWatchEventsExecutionDataDetailsBuilder {
     pub(crate) included: ::std::option::Option<bool>,
 }

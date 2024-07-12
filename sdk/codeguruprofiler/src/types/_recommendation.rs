@@ -52,8 +52,8 @@ impl Recommendation {
 }
 
 /// A builder for [`Recommendation`](crate::types::Recommendation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecommendationBuilder {
     pub(crate) all_matches_count: ::std::option::Option<i32>,
     pub(crate) all_matches_sum: ::std::option::Option<f64>,

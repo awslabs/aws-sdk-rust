@@ -83,8 +83,8 @@ impl PackageDependency {
 }
 
 /// A builder for [`PackageDependency`](crate::types::PackageDependency).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PackageDependencyBuilder {
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
     pub(crate) package: ::std::option::Option<::std::string::String>,

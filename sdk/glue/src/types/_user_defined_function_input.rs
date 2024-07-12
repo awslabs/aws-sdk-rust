@@ -47,8 +47,8 @@ impl UserDefinedFunctionInput {
 }
 
 /// A builder for [`UserDefinedFunctionInput`](crate::types::UserDefinedFunctionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UserDefinedFunctionInputBuilder {
     pub(crate) function_name: ::std::option::Option<::std::string::String>,
     pub(crate) class_name: ::std::option::Option<::std::string::String>,

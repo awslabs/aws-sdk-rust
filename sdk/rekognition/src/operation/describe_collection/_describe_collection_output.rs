@@ -52,8 +52,8 @@ impl DescribeCollectionOutput {
 }
 
 /// A builder for [`DescribeCollectionOutput`](crate::operation::describe_collection::DescribeCollectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCollectionOutputBuilder {
     pub(crate) face_count: ::std::option::Option<i64>,
     pub(crate) face_model_version: ::std::option::Option<::std::string::String>,

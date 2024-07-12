@@ -34,8 +34,8 @@ impl DescribeInstanceConnectEndpointsOutput {
 }
 
 /// A builder for [`DescribeInstanceConnectEndpointsOutput`](crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeInstanceConnectEndpointsOutputBuilder {
     pub(crate) instance_connect_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::Ec2InstanceConnectEndpoint>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

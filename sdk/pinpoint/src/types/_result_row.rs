@@ -31,8 +31,8 @@ impl ResultRow {
 }
 
 /// A builder for [`ResultRow`](crate::types::ResultRow).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResultRowBuilder {
     pub(crate) grouped_bys: ::std::option::Option<::std::vec::Vec<crate::types::ResultRowValue>>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<crate::types::ResultRowValue>>,

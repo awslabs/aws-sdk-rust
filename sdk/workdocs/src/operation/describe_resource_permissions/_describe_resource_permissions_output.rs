@@ -34,8 +34,8 @@ impl DescribeResourcePermissionsOutput {
 }
 
 /// A builder for [`DescribeResourcePermissionsOutput`](crate::operation::describe_resource_permissions::DescribeResourcePermissionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeResourcePermissionsOutputBuilder {
     pub(crate) principals: ::std::option::Option<::std::vec::Vec<crate::types::Principal>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

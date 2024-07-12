@@ -38,8 +38,8 @@ impl ListBonusPaymentsInput {
 }
 
 /// A builder for [`ListBonusPaymentsInput`](crate::operation::list_bonus_payments::ListBonusPaymentsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListBonusPaymentsInputBuilder {
     pub(crate) hit_id: ::std::option::Option<::std::string::String>,
     pub(crate) assignment_id: ::std::option::Option<::std::string::String>,

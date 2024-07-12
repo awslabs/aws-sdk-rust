@@ -27,8 +27,8 @@ impl Parent {
 }
 
 /// A builder for [`Parent`](crate::types::Parent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ParentBuilder {
     pub(crate) trial_name: ::std::option::Option<::std::string::String>,
     pub(crate) experiment_name: ::std::option::Option<::std::string::String>,

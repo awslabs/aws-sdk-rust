@@ -46,8 +46,8 @@ impl DirectKafkaSource {
 }
 
 /// A builder for [`DirectKafkaSource`](crate::types::DirectKafkaSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DirectKafkaSourceBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) streaming_options: ::std::option::Option<crate::types::KafkaStreamingSourceOptions>,

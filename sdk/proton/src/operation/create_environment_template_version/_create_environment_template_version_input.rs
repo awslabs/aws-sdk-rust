@@ -68,8 +68,8 @@ impl CreateEnvironmentTemplateVersionInput {
 }
 
 /// A builder for [`CreateEnvironmentTemplateVersionInput`](crate::operation::create_environment_template_version::CreateEnvironmentTemplateVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateEnvironmentTemplateVersionInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) template_name: ::std::option::Option<::std::string::String>,

@@ -62,8 +62,8 @@ impl PodIdentityAssociationSummary {
 }
 
 /// A builder for [`PodIdentityAssociationSummary`](crate::types::PodIdentityAssociationSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PodIdentityAssociationSummaryBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) namespace: ::std::option::Option<::std::string::String>,

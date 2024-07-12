@@ -203,8 +203,8 @@ impl InstanceTypeInfo {
 }
 
 /// A builder for [`InstanceTypeInfo`](crate::types::InstanceTypeInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceTypeInfoBuilder {
     pub(crate) instance_type: ::std::option::Option<crate::types::InstanceType>,
     pub(crate) current_generation: ::std::option::Option<bool>,

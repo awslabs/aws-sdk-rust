@@ -23,8 +23,8 @@ impl BatchScheduleActionCreateRequest {
 }
 
 /// A builder for [`BatchScheduleActionCreateRequest`](crate::types::BatchScheduleActionCreateRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchScheduleActionCreateRequestBuilder {
     pub(crate) schedule_actions: ::std::option::Option<::std::vec::Vec<crate::types::ScheduleAction>>,
 }

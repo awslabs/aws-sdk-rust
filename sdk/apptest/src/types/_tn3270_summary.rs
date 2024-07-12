@@ -27,8 +27,8 @@ impl Tn3270Summary {
 }
 
 /// A builder for [`Tn3270Summary`](crate::types::Tn3270Summary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Tn3270SummaryBuilder {
     pub(crate) step_input: ::std::option::Option<crate::types::Tn3270StepInput>,
     pub(crate) step_output: ::std::option::Option<crate::types::Tn3270StepOutput>,

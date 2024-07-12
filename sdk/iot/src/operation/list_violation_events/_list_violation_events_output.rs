@@ -34,8 +34,8 @@ impl ListViolationEventsOutput {
 }
 
 /// A builder for [`ListViolationEventsOutput`](crate::operation::list_violation_events::ListViolationEventsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListViolationEventsOutputBuilder {
     pub(crate) violation_events: ::std::option::Option<::std::vec::Vec<crate::types::ViolationEvent>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

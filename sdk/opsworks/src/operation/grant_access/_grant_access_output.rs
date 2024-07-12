@@ -27,8 +27,8 @@ impl GrantAccessOutput {
 }
 
 /// A builder for [`GrantAccessOutput`](crate::operation::grant_access::GrantAccessOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GrantAccessOutputBuilder {
     pub(crate) temporary_credential: ::std::option::Option<crate::types::TemporaryCredential>,
     _request_id: Option<String>,

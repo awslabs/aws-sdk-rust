@@ -38,8 +38,8 @@ impl GetExportSnapshotRecordsOutput {
 }
 
 /// A builder for [`GetExportSnapshotRecordsOutput`](crate::operation::get_export_snapshot_records::GetExportSnapshotRecordsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetExportSnapshotRecordsOutputBuilder {
     pub(crate) export_snapshot_records: ::std::option::Option<::std::vec::Vec<crate::types::ExportSnapshotRecord>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,

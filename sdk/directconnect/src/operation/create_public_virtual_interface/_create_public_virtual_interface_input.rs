@@ -26,8 +26,8 @@ impl CreatePublicVirtualInterfaceInput {
 }
 
 /// A builder for [`CreatePublicVirtualInterfaceInput`](crate::operation::create_public_virtual_interface::CreatePublicVirtualInterfaceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePublicVirtualInterfaceInputBuilder {
     pub(crate) connection_id: ::std::option::Option<::std::string::String>,
     pub(crate) new_public_virtual_interface: ::std::option::Option<crate::types::NewPublicVirtualInterface>,

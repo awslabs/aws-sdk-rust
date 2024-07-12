@@ -20,8 +20,8 @@ impl DeleteSolFunctionPackageInput {
 }
 
 /// A builder for [`DeleteSolFunctionPackageInput`](crate::operation::delete_sol_function_package::DeleteSolFunctionPackageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSolFunctionPackageInputBuilder {
     pub(crate) vnf_pkg_id: ::std::option::Option<::std::string::String>,
 }

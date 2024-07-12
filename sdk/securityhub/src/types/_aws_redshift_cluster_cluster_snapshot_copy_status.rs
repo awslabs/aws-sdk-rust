@@ -43,8 +43,8 @@ impl AwsRedshiftClusterClusterSnapshotCopyStatus {
 }
 
 /// A builder for [`AwsRedshiftClusterClusterSnapshotCopyStatus`](crate::types::AwsRedshiftClusterClusterSnapshotCopyStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsRedshiftClusterClusterSnapshotCopyStatusBuilder {
     pub(crate) destination_region: ::std::option::Option<::std::string::String>,
     pub(crate) manual_snapshot_retention_period: ::std::option::Option<i32>,

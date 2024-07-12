@@ -26,8 +26,8 @@ impl CreateInferenceRecommendationsJobOutput {
 }
 
 /// A builder for [`CreateInferenceRecommendationsJobOutput`](crate::operation::create_inference_recommendations_job::CreateInferenceRecommendationsJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateInferenceRecommendationsJobOutputBuilder {
     pub(crate) job_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

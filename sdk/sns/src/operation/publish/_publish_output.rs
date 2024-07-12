@@ -37,8 +37,8 @@ impl PublishOutput {
 }
 
 /// A builder for [`PublishOutput`](crate::operation::publish::PublishOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PublishOutputBuilder {
     pub(crate) message_id: ::std::option::Option<::std::string::String>,
     pub(crate) sequence_number: ::std::option::Option<::std::string::String>,

@@ -41,8 +41,8 @@ impl ResetUserPasswordInput {
 }
 
 /// A builder for [`ResetUserPasswordInput`](crate::operation::reset_user_password::ResetUserPasswordInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ResetUserPasswordInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_name: ::std::option::Option<::std::string::String>,

@@ -28,8 +28,8 @@ impl RegisterTypeOutput {
 }
 
 /// A builder for [`RegisterTypeOutput`](crate::operation::register_type::RegisterTypeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterTypeOutputBuilder {
     pub(crate) registration_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

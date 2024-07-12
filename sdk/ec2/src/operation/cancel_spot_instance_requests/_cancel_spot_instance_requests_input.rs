@@ -29,8 +29,8 @@ impl CancelSpotInstanceRequestsInput {
 }
 
 /// A builder for [`CancelSpotInstanceRequestsInput`](crate::operation::cancel_spot_instance_requests::CancelSpotInstanceRequestsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelSpotInstanceRequestsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) spot_instance_request_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

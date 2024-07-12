@@ -34,8 +34,8 @@ impl ListLaunchesOutput {
 }
 
 /// A builder for [`ListLaunchesOutput`](crate::operation::list_launches::ListLaunchesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListLaunchesOutputBuilder {
     pub(crate) launches: ::std::option::Option<::std::vec::Vec<crate::types::Launch>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

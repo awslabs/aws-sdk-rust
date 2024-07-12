@@ -28,8 +28,8 @@ impl PutTraceSegmentsOutput {
 }
 
 /// A builder for [`PutTraceSegmentsOutput`](crate::operation::put_trace_segments::PutTraceSegmentsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutTraceSegmentsOutputBuilder {
     pub(crate) unprocessed_trace_segments: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedTraceSegment>>,
     _request_id: Option<String>,

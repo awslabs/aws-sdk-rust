@@ -27,8 +27,8 @@ impl IpamPoolCidrFailureReason {
 }
 
 /// A builder for [`IpamPoolCidrFailureReason`](crate::types::IpamPoolCidrFailureReason).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IpamPoolCidrFailureReasonBuilder {
     pub(crate) code: ::std::option::Option<crate::types::IpamPoolCidrFailureCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

@@ -85,8 +85,8 @@ impl SnomedctAttribute {
 }
 
 /// A builder for [`SnomedctAttribute`](crate::types::SnomedctAttribute).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SnomedctAttributeBuilder {
     pub(crate) category: ::std::option::Option<crate::types::SnomedctEntityCategory>,
     pub(crate) r#type: ::std::option::Option<crate::types::SnomedctAttributeType>,

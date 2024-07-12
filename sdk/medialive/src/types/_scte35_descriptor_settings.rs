@@ -21,8 +21,8 @@ impl Scte35DescriptorSettings {
 }
 
 /// A builder for [`Scte35DescriptorSettings`](crate::types::Scte35DescriptorSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Scte35DescriptorSettingsBuilder {
     pub(crate) segmentation_descriptor_scte35_descriptor_settings: ::std::option::Option<crate::types::Scte35SegmentationDescriptor>,
 }

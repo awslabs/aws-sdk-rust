@@ -26,8 +26,8 @@ impl CreateWorkspaceOutput {
 }
 
 /// A builder for [`CreateWorkspaceOutput`](crate::operation::create_workspace::CreateWorkspaceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateWorkspaceOutputBuilder {
     pub(crate) workspace: ::std::option::Option<crate::types::WorkspaceDescription>,
     _request_id: Option<String>,

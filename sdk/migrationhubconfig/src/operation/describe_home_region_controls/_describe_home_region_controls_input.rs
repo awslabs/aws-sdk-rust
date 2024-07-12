@@ -44,8 +44,8 @@ impl DescribeHomeRegionControlsInput {
 }
 
 /// A builder for [`DescribeHomeRegionControlsInput`](crate::operation::describe_home_region_controls::DescribeHomeRegionControlsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeHomeRegionControlsInputBuilder {
     pub(crate) control_id: ::std::option::Option<::std::string::String>,
     pub(crate) home_region: ::std::option::Option<::std::string::String>,

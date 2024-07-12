@@ -28,8 +28,8 @@ impl DescribeAccountPoliciesOutput {
 }
 
 /// A builder for [`DescribeAccountPoliciesOutput`](crate::operation::describe_account_policies::DescribeAccountPoliciesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAccountPoliciesOutputBuilder {
     pub(crate) account_policies: ::std::option::Option<::std::vec::Vec<crate::types::AccountPolicy>>,
     _request_id: Option<String>,

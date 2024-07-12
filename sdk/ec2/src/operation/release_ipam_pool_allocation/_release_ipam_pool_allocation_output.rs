@@ -26,8 +26,8 @@ impl ReleaseIpamPoolAllocationOutput {
 }
 
 /// A builder for [`ReleaseIpamPoolAllocationOutput`](crate::operation::release_ipam_pool_allocation::ReleaseIpamPoolAllocationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReleaseIpamPoolAllocationOutputBuilder {
     pub(crate) success: ::std::option::Option<bool>,
     _request_id: Option<String>,

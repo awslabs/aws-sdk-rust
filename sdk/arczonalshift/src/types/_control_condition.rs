@@ -30,8 +30,8 @@ impl ControlCondition {
 }
 
 /// A builder for [`ControlCondition`](crate::types::ControlCondition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ControlConditionBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ControlConditionType>,
     pub(crate) alarm_identifier: ::std::option::Option<::std::string::String>,

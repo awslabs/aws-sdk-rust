@@ -26,8 +26,8 @@ impl DisassociateInstanceEventWindowOutput {
 }
 
 /// A builder for [`DisassociateInstanceEventWindowOutput`](crate::operation::disassociate_instance_event_window::DisassociateInstanceEventWindowOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateInstanceEventWindowOutputBuilder {
     pub(crate) instance_event_window: ::std::option::Option<crate::types::InstanceEventWindow>,
     _request_id: Option<String>,

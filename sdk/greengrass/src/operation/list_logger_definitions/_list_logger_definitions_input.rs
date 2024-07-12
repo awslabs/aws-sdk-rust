@@ -26,8 +26,8 @@ impl ListLoggerDefinitionsInput {
 }
 
 /// A builder for [`ListLoggerDefinitionsInput`](crate::operation::list_logger_definitions::ListLoggerDefinitionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListLoggerDefinitionsInputBuilder {
     pub(crate) max_results: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

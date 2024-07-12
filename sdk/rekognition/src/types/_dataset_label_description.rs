@@ -27,8 +27,8 @@ impl DatasetLabelDescription {
 }
 
 /// A builder for [`DatasetLabelDescription`](crate::types::DatasetLabelDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DatasetLabelDescriptionBuilder {
     pub(crate) label_name: ::std::option::Option<::std::string::String>,
     pub(crate) label_stats: ::std::option::Option<crate::types::DatasetLabelStats>,

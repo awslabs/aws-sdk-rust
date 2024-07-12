@@ -29,8 +29,8 @@ impl DeleteFileSystemOpenZfsResponse {
 }
 
 /// A builder for [`DeleteFileSystemOpenZfsResponse`](crate::types::DeleteFileSystemOpenZfsResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFileSystemOpenZfsResponseBuilder {
     pub(crate) final_backup_id: ::std::option::Option<::std::string::String>,
     pub(crate) final_backup_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,

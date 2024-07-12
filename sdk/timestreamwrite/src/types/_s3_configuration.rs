@@ -39,8 +39,8 @@ impl S3Configuration {
 }
 
 /// A builder for [`S3Configuration`](crate::types::S3Configuration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3ConfigurationBuilder {
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) object_key_prefix: ::std::option::Option<::std::string::String>,

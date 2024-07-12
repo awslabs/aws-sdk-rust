@@ -34,8 +34,8 @@ impl ListTestConfigurationsInput {
 }
 
 /// A builder for [`ListTestConfigurationsInput`](crate::operation::list_test_configurations::ListTestConfigurationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTestConfigurationsInputBuilder {
     pub(crate) test_configuration_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

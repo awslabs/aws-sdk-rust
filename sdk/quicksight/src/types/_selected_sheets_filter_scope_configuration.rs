@@ -24,8 +24,8 @@ impl SelectedSheetsFilterScopeConfiguration {
 }
 
 /// A builder for [`SelectedSheetsFilterScopeConfiguration`](crate::types::SelectedSheetsFilterScopeConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SelectedSheetsFilterScopeConfigurationBuilder {
     pub(crate) sheet_visual_scoping_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SheetVisualScopingConfiguration>>,
 }

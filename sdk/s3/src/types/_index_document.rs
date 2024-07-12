@@ -26,8 +26,8 @@ impl IndexDocument {
 }
 
 /// A builder for [`IndexDocument`](crate::types::IndexDocument).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IndexDocumentBuilder {
     pub(crate) suffix: ::std::option::Option<::std::string::String>,
 }

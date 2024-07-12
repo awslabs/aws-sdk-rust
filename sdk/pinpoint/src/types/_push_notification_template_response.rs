@@ -109,8 +109,8 @@ impl PushNotificationTemplateResponse {
 }
 
 /// A builder for [`PushNotificationTemplateResponse`](crate::types::PushNotificationTemplateResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PushNotificationTemplateResponseBuilder {
     pub(crate) adm: ::std::option::Option<crate::types::AndroidPushNotificationTemplate>,
     pub(crate) apns: ::std::option::Option<crate::types::ApnsPushNotificationTemplate>,

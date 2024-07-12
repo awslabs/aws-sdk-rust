@@ -26,8 +26,8 @@ impl CreateRoutingControlOutput {
 }
 
 /// A builder for [`CreateRoutingControlOutput`](crate::operation::create_routing_control::CreateRoutingControlOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateRoutingControlOutputBuilder {
     pub(crate) routing_control: ::std::option::Option<crate::types::RoutingControl>,
     _request_id: Option<String>,

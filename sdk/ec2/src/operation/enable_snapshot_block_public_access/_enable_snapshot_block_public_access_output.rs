@@ -26,8 +26,8 @@ impl EnableSnapshotBlockPublicAccessOutput {
 }
 
 /// A builder for [`EnableSnapshotBlockPublicAccessOutput`](crate::operation::enable_snapshot_block_public_access::EnableSnapshotBlockPublicAccessOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnableSnapshotBlockPublicAccessOutputBuilder {
     pub(crate) state: ::std::option::Option<crate::types::SnapshotBlockPublicAccessState>,
     _request_id: Option<String>,

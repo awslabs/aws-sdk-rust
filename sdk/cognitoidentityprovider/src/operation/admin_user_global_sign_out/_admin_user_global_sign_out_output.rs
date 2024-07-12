@@ -19,8 +19,8 @@ impl AdminUserGlobalSignOutOutput {
 }
 
 /// A builder for [`AdminUserGlobalSignOutOutput`](crate::operation::admin_user_global_sign_out::AdminUserGlobalSignOutOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AdminUserGlobalSignOutOutputBuilder {
     _request_id: Option<String>,
 }

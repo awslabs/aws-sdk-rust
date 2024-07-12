@@ -41,8 +41,8 @@ impl SimulateCustomPolicyOutput {
 }
 
 /// A builder for [`SimulateCustomPolicyOutput`](crate::operation::simulate_custom_policy::SimulateCustomPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SimulateCustomPolicyOutputBuilder {
     pub(crate) evaluation_results: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationResult>>,
     pub(crate) is_truncated: ::std::option::Option<bool>,

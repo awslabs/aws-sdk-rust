@@ -52,8 +52,8 @@ impl ListBucketMetricsConfigurationsOutput {
 }
 
 /// A builder for [`ListBucketMetricsConfigurationsOutput`](crate::operation::list_bucket_metrics_configurations::ListBucketMetricsConfigurationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListBucketMetricsConfigurationsOutputBuilder {
     pub(crate) is_truncated: ::std::option::Option<bool>,
     pub(crate) continuation_token: ::std::option::Option<::std::string::String>,

@@ -65,8 +65,8 @@ impl CreateGraphUsingImportTaskOutput {
 }
 
 /// A builder for [`CreateGraphUsingImportTaskOutput`](crate::operation::create_graph_using_import_task::CreateGraphUsingImportTaskOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateGraphUsingImportTaskOutputBuilder {
     pub(crate) graph_id: ::std::option::Option<::std::string::String>,
     pub(crate) task_id: ::std::option::Option<::std::string::String>,

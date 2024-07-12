@@ -85,8 +85,8 @@ impl UpdateChangesetInput {
 }
 
 /// A builder for [`UpdateChangesetInput`](crate::operation::update_changeset::UpdateChangesetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateChangesetInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_id: ::std::option::Option<::std::string::String>,

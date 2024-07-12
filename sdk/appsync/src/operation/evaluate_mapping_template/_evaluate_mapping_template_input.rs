@@ -26,8 +26,8 @@ impl EvaluateMappingTemplateInput {
 }
 
 /// A builder for [`EvaluateMappingTemplateInput`](crate::operation::evaluate_mapping_template::EvaluateMappingTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EvaluateMappingTemplateInputBuilder {
     pub(crate) template: ::std::option::Option<::std::string::String>,
     pub(crate) context: ::std::option::Option<::std::string::String>,

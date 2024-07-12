@@ -21,8 +21,8 @@ impl QueryTransformationConfiguration {
 }
 
 /// A builder for [`QueryTransformationConfiguration`](crate::types::QueryTransformationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct QueryTransformationConfigurationBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::QueryTransformationType>,
 }

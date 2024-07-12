@@ -22,8 +22,8 @@ impl TerminateRecoveryInstancesInput {
 }
 
 /// A builder for [`TerminateRecoveryInstancesInput`](crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TerminateRecoveryInstancesInputBuilder {
     pub(crate) recovery_instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

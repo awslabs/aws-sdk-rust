@@ -26,8 +26,8 @@ impl DisassociatePhoneNumberContactFlowInput {
 }
 
 /// A builder for [`DisassociatePhoneNumberContactFlowInput`](crate::operation::disassociate_phone_number_contact_flow::DisassociatePhoneNumberContactFlowInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociatePhoneNumberContactFlowInputBuilder {
     pub(crate) phone_number_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,

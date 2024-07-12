@@ -34,8 +34,8 @@ impl DescribeLoadBalancerTargetGroupsOutput {
 }
 
 /// A builder for [`DescribeLoadBalancerTargetGroupsOutput`](crate::operation::describe_load_balancer_target_groups::DescribeLoadBalancerTargetGroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeLoadBalancerTargetGroupsOutputBuilder {
     pub(crate) load_balancer_target_groups: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerTargetGroupState>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

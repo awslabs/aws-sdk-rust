@@ -77,8 +77,8 @@ impl SingleInstanceHealth {
 }
 
 /// A builder for [`SingleInstanceHealth`](crate::types::SingleInstanceHealth).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SingleInstanceHealthBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) health_status: ::std::option::Option<::std::string::String>,

@@ -22,8 +22,8 @@ impl AmpConfiguration {
 }
 
 /// A builder for [`AmpConfiguration`](crate::types::AmpConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AmpConfigurationBuilder {
     pub(crate) workspace_arn: ::std::option::Option<::std::string::String>,
 }

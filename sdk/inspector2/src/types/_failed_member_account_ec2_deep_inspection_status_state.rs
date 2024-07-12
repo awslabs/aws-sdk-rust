@@ -34,8 +34,8 @@ impl FailedMemberAccountEc2DeepInspectionStatusState {
 }
 
 /// A builder for [`FailedMemberAccountEc2DeepInspectionStatusState`](crate::types::FailedMemberAccountEc2DeepInspectionStatusState).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FailedMemberAccountEc2DeepInspectionStatusStateBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) ec2_scan_status: ::std::option::Option<crate::types::Status>,

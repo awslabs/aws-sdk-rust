@@ -56,8 +56,8 @@ impl CreateVehicleInput {
 }
 
 /// A builder for [`CreateVehicleInput`](crate::operation::create_vehicle::CreateVehicleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateVehicleInputBuilder {
     pub(crate) vehicle_name: ::std::option::Option<::std::string::String>,
     pub(crate) model_manifest_arn: ::std::option::Option<::std::string::String>,

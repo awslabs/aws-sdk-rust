@@ -50,8 +50,8 @@ impl ModifyLocalGatewayRouteInput {
 }
 
 /// A builder for [`ModifyLocalGatewayRouteInput`](crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyLocalGatewayRouteInputBuilder {
     pub(crate) destination_cidr_block: ::std::option::Option<::std::string::String>,
     pub(crate) local_gateway_route_table_id: ::std::option::Option<::std::string::String>,

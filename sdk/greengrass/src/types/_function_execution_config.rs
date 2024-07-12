@@ -27,8 +27,8 @@ impl FunctionExecutionConfig {
 }
 
 /// A builder for [`FunctionExecutionConfig`](crate::types::FunctionExecutionConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FunctionExecutionConfigBuilder {
     pub(crate) isolation_mode: ::std::option::Option<crate::types::FunctionIsolationMode>,
     pub(crate) run_as: ::std::option::Option<crate::types::FunctionRunAsConfig>,

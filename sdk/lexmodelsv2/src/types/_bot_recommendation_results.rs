@@ -33,8 +33,8 @@ impl BotRecommendationResults {
 }
 
 /// A builder for [`BotRecommendationResults`](crate::types::BotRecommendationResults).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BotRecommendationResultsBuilder {
     pub(crate) bot_locale_export_url: ::std::option::Option<::std::string::String>,
     pub(crate) associated_transcripts_url: ::std::option::Option<::std::string::String>,

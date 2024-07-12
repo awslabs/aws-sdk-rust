@@ -18,8 +18,8 @@ impl UpdatePullRequestApprovalStateOutput {
 }
 
 /// A builder for [`UpdatePullRequestApprovalStateOutput`](crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePullRequestApprovalStateOutputBuilder {
     _request_id: Option<String>,
 }

@@ -224,8 +224,8 @@ impl WorkspaceDescription {
 }
 
 /// A builder for [`WorkspaceDescription`](crate::types::WorkspaceDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct WorkspaceDescriptionBuilder {
     pub(crate) account_access_type: ::std::option::Option<crate::types::AccountAccessType>,
     pub(crate) created: ::std::option::Option<::aws_smithy_types::DateTime>,

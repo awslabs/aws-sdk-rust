@@ -39,8 +39,8 @@ impl AccountLink {
 }
 
 /// A builder for [`AccountLink`](crate::types::AccountLink).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AccountLinkBuilder {
     pub(crate) account_link_id: ::std::option::Option<::std::string::String>,
     pub(crate) account_link_status: ::std::option::Option<crate::types::AccountLinkStatusEnum>,

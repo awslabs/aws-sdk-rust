@@ -36,8 +36,8 @@ impl ConditionalFormattingIconSet {
 }
 
 /// A builder for [`ConditionalFormattingIconSet`](crate::types::ConditionalFormattingIconSet).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ConditionalFormattingIconSetBuilder {
     pub(crate) expression: ::std::option::Option<::std::string::String>,
     pub(crate) icon_set_type: ::std::option::Option<crate::types::ConditionalFormattingIconSetType>,

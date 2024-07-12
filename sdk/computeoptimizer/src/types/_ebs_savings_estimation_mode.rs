@@ -21,8 +21,8 @@ impl EbsSavingsEstimationMode {
 }
 
 /// A builder for [`EbsSavingsEstimationMode`](crate::types::EbsSavingsEstimationMode).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EbsSavingsEstimationModeBuilder {
     pub(crate) source: ::std::option::Option<crate::types::EbsSavingsEstimationModeSource>,
 }

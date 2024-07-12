@@ -18,8 +18,8 @@ impl DeleteResponsePlanOutput {
 }
 
 /// A builder for [`DeleteResponsePlanOutput`](crate::operation::delete_response_plan::DeleteResponsePlanOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteResponsePlanOutputBuilder {
     _request_id: Option<String>,
 }

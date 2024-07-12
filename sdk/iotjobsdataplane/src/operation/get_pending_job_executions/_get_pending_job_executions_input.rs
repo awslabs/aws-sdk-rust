@@ -20,8 +20,8 @@ impl GetPendingJobExecutionsInput {
 }
 
 /// A builder for [`GetPendingJobExecutionsInput`](crate::operation::get_pending_job_executions::GetPendingJobExecutionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPendingJobExecutionsInputBuilder {
     pub(crate) thing_name: ::std::option::Option<::std::string::String>,
 }

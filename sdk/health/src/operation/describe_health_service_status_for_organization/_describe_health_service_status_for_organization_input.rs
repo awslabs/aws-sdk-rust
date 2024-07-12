@@ -12,8 +12,8 @@ impl DescribeHealthServiceStatusForOrganizationInput {
 }
 
 /// A builder for [`DescribeHealthServiceStatusForOrganizationInput`](crate::operation::describe_health_service_status_for_organization::DescribeHealthServiceStatusForOrganizationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeHealthServiceStatusForOrganizationInputBuilder {}
 impl DescribeHealthServiceStatusForOrganizationInputBuilder {
     /// Consumes the builder and constructs a [`DescribeHealthServiceStatusForOrganizationInput`](crate::operation::describe_health_service_status_for_organization::DescribeHealthServiceStatusForOrganizationInput).

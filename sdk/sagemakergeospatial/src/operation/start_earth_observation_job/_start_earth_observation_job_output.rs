@@ -83,8 +83,8 @@ impl StartEarthObservationJobOutput {
 }
 
 /// A builder for [`StartEarthObservationJobOutput`](crate::operation::start_earth_observation_job::StartEarthObservationJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartEarthObservationJobOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

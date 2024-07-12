@@ -60,8 +60,8 @@ impl DescribeFastSnapshotRestoresInput {
 }
 
 /// A builder for [`DescribeFastSnapshotRestoresInput`](crate::operation::describe_fast_snapshot_restores::DescribeFastSnapshotRestoresInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFastSnapshotRestoresInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) max_results: ::std::option::Option<i32>,

@@ -151,8 +151,8 @@ impl RequestInspectionAcfp {
 }
 
 /// A builder for [`RequestInspectionAcfp`](crate::types::RequestInspectionAcfp).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RequestInspectionAcfpBuilder {
     pub(crate) payload_type: ::std::option::Option<crate::types::PayloadType>,
     pub(crate) username_field: ::std::option::Option<crate::types::UsernameField>,

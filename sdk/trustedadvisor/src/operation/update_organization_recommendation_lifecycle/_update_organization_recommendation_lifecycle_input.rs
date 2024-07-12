@@ -49,8 +49,8 @@ impl UpdateOrganizationRecommendationLifecycleInput {
 }
 
 /// A builder for [`UpdateOrganizationRecommendationLifecycleInput`](crate::operation::update_organization_recommendation_lifecycle::UpdateOrganizationRecommendationLifecycleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateOrganizationRecommendationLifecycleInputBuilder {
     pub(crate) lifecycle_stage: ::std::option::Option<crate::types::UpdateRecommendationLifecycleStage>,
     pub(crate) update_reason: ::std::option::Option<::std::string::String>,

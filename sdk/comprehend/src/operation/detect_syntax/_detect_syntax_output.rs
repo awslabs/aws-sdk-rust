@@ -36,8 +36,8 @@ impl DetectSyntaxOutput {
 }
 
 /// A builder for [`DetectSyntaxOutput`](crate::operation::detect_syntax::DetectSyntaxOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DetectSyntaxOutputBuilder {
     pub(crate) syntax_tokens: ::std::option::Option<::std::vec::Vec<crate::types::SyntaxToken>>,
     _request_id: Option<String>,

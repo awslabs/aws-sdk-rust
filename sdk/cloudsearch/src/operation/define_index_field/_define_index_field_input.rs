@@ -27,8 +27,8 @@ impl DefineIndexFieldInput {
 }
 
 /// A builder for [`DefineIndexFieldInput`](crate::operation::define_index_field::DefineIndexFieldInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DefineIndexFieldInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) index_field: ::std::option::Option<crate::types::IndexField>,

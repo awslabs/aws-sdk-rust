@@ -62,8 +62,8 @@ impl ListLabelingJobsForWorkteamInput {
 }
 
 /// A builder for [`ListLabelingJobsForWorkteamInput`](crate::operation::list_labeling_jobs_for_workteam::ListLabelingJobsForWorkteamInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListLabelingJobsForWorkteamInputBuilder {
     pub(crate) workteam_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

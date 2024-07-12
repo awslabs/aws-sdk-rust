@@ -33,8 +33,8 @@ impl TrainingResult {
 }
 
 /// A builder for [`TrainingResult`](crate::types::TrainingResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TrainingResultBuilder {
     pub(crate) data_validation_metrics: ::std::option::Option<crate::types::DataValidationMetrics>,
     pub(crate) training_metrics: ::std::option::Option<crate::types::TrainingMetrics>,

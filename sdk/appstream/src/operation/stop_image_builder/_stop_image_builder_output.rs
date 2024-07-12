@@ -26,8 +26,8 @@ impl StopImageBuilderOutput {
 }
 
 /// A builder for [`StopImageBuilderOutput`](crate::operation::stop_image_builder::StopImageBuilderOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopImageBuilderOutputBuilder {
     pub(crate) image_builder: ::std::option::Option<crate::types::ImageBuilder>,
     _request_id: Option<String>,

@@ -27,8 +27,8 @@ impl GetServerCertificateOutput {
 }
 
 /// A builder for [`GetServerCertificateOutput`](crate::operation::get_server_certificate::GetServerCertificateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetServerCertificateOutputBuilder {
     pub(crate) server_certificate: ::std::option::Option<crate::types::ServerCertificate>,
     _request_id: Option<String>,

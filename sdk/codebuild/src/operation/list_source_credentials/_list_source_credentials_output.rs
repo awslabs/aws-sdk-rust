@@ -28,8 +28,8 @@ impl ListSourceCredentialsOutput {
 }
 
 /// A builder for [`ListSourceCredentialsOutput`](crate::operation::list_source_credentials::ListSourceCredentialsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSourceCredentialsOutputBuilder {
     pub(crate) source_credentials_infos: ::std::option::Option<::std::vec::Vec<crate::types::SourceCredentialsInfo>>,
     _request_id: Option<String>,

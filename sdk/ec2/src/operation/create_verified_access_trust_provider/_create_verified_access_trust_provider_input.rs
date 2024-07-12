@@ -82,8 +82,8 @@ impl CreateVerifiedAccessTrustProviderInput {
 }
 
 /// A builder for [`CreateVerifiedAccessTrustProviderInput`](crate::operation::create_verified_access_trust_provider::CreateVerifiedAccessTrustProviderInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateVerifiedAccessTrustProviderInputBuilder {
     pub(crate) trust_provider_type: ::std::option::Option<crate::types::TrustProviderType>,
     pub(crate) user_trust_provider_type: ::std::option::Option<crate::types::UserTrustProviderType>,

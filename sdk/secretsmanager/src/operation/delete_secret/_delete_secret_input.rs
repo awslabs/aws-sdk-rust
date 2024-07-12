@@ -42,8 +42,8 @@ impl DeleteSecretInput {
 }
 
 /// A builder for [`DeleteSecretInput`](crate::operation::delete_secret::DeleteSecretInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSecretInputBuilder {
     pub(crate) secret_id: ::std::option::Option<::std::string::String>,
     pub(crate) recovery_window_in_days: ::std::option::Option<i64>,

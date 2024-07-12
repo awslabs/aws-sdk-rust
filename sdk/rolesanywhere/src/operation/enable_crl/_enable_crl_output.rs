@@ -26,8 +26,8 @@ impl EnableCrlOutput {
 }
 
 /// A builder for [`EnableCrlOutput`](crate::operation::enable_crl::EnableCrlOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnableCrlOutputBuilder {
     pub(crate) crl: ::std::option::Option<crate::types::CrlDetail>,
     _request_id: Option<String>,

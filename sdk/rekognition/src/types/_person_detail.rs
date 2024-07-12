@@ -33,8 +33,8 @@ impl PersonDetail {
 }
 
 /// A builder for [`PersonDetail`](crate::types::PersonDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PersonDetailBuilder {
     pub(crate) index: ::std::option::Option<i64>,
     pub(crate) bounding_box: ::std::option::Option<crate::types::BoundingBox>,

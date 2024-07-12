@@ -34,8 +34,8 @@ impl DescribeNetworkAclsOutput {
 }
 
 /// A builder for [`DescribeNetworkAclsOutput`](crate::operation::describe_network_acls::DescribeNetworkAclsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeNetworkAclsOutputBuilder {
     pub(crate) network_acls: ::std::option::Option<::std::vec::Vec<crate::types::NetworkAcl>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

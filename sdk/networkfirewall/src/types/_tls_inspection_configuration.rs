@@ -25,8 +25,8 @@ impl TlsInspectionConfiguration {
 }
 
 /// A builder for [`TlsInspectionConfiguration`](crate::types::TlsInspectionConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TlsInspectionConfigurationBuilder {
     pub(crate) server_certificate_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ServerCertificateConfiguration>>,
 }

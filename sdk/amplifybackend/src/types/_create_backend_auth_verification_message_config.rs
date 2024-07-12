@@ -42,8 +42,8 @@ impl CreateBackendAuthVerificationMessageConfig {
 }
 
 /// A builder for [`CreateBackendAuthVerificationMessageConfig`](crate::types::CreateBackendAuthVerificationMessageConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateBackendAuthVerificationMessageConfigBuilder {
     pub(crate) delivery_method: ::std::option::Option<crate::types::DeliveryMethod>,
     pub(crate) email_settings: ::std::option::Option<crate::types::EmailSettings>,

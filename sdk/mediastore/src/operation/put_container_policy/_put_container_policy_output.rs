@@ -18,8 +18,8 @@ impl PutContainerPolicyOutput {
 }
 
 /// A builder for [`PutContainerPolicyOutput`](crate::operation::put_container_policy::PutContainerPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutContainerPolicyOutputBuilder {
     _request_id: Option<String>,
 }

@@ -35,8 +35,8 @@ impl UserIdentityInfoLite {
 }
 
 /// A builder for [`UserIdentityInfoLite`](crate::types::UserIdentityInfoLite).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UserIdentityInfoLiteBuilder {
     pub(crate) first_name: ::std::option::Option<::std::string::String>,
     pub(crate) last_name: ::std::option::Option<::std::string::String>,

@@ -61,8 +61,8 @@ impl VerifiedAccessInstance {
 }
 
 /// A builder for [`VerifiedAccessInstance`](crate::types::VerifiedAccessInstance).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VerifiedAccessInstanceBuilder {
     pub(crate) verified_access_instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

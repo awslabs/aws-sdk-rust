@@ -287,8 +287,8 @@ impl RunJobFlowInput {
 }
 
 /// A builder for [`RunJobFlowInput`](crate::operation::run_job_flow::RunJobFlowInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RunJobFlowInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) log_uri: ::std::option::Option<::std::string::String>,

@@ -28,8 +28,8 @@ impl DisassociateEntitiesFromExperienceOutput {
 }
 
 /// A builder for [`DisassociateEntitiesFromExperienceOutput`](crate::operation::disassociate_entities_from_experience::DisassociateEntitiesFromExperienceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateEntitiesFromExperienceOutputBuilder {
     pub(crate) failed_entity_list: ::std::option::Option<::std::vec::Vec<crate::types::FailedEntity>>,
     _request_id: Option<String>,

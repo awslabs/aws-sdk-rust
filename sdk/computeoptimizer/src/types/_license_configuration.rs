@@ -65,8 +65,8 @@ impl LicenseConfiguration {
 }
 
 /// A builder for [`LicenseConfiguration`](crate::types::LicenseConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LicenseConfigurationBuilder {
     pub(crate) number_of_cores: ::std::option::Option<i32>,
     pub(crate) instance_type: ::std::option::Option<::std::string::String>,

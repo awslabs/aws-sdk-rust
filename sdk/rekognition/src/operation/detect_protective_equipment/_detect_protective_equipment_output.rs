@@ -40,8 +40,8 @@ impl DetectProtectiveEquipmentOutput {
 }
 
 /// A builder for [`DetectProtectiveEquipmentOutput`](crate::operation::detect_protective_equipment::DetectProtectiveEquipmentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetectProtectiveEquipmentOutputBuilder {
     pub(crate) protective_equipment_model_version: ::std::option::Option<::std::string::String>,
     pub(crate) persons: ::std::option::Option<::std::vec::Vec<crate::types::ProtectiveEquipmentPerson>>,

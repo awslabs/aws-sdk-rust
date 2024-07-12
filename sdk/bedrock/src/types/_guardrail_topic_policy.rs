@@ -27,8 +27,8 @@ impl GuardrailTopicPolicy {
 }
 
 /// A builder for [`GuardrailTopicPolicy`](crate::types::GuardrailTopicPolicy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GuardrailTopicPolicyBuilder {
     pub(crate) topics: ::std::option::Option<::std::vec::Vec<crate::types::GuardrailTopic>>,
 }

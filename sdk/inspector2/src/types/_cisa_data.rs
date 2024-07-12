@@ -33,8 +33,8 @@ impl CisaData {
 }
 
 /// A builder for [`CisaData`](crate::types::CisaData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CisaDataBuilder {
     pub(crate) date_added: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) date_due: ::std::option::Option<::aws_smithy_types::DateTime>,

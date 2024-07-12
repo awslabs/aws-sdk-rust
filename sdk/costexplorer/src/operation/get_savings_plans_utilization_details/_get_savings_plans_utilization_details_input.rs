@@ -114,8 +114,8 @@ impl GetSavingsPlansUtilizationDetailsInput {
 }
 
 /// A builder for [`GetSavingsPlansUtilizationDetailsInput`](crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSavingsPlansUtilizationDetailsInputBuilder {
     pub(crate) time_period: ::std::option::Option<crate::types::DateInterval>,
     pub(crate) filter: ::std::option::Option<crate::types::Expression>,

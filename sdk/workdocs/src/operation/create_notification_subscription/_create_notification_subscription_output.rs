@@ -26,8 +26,8 @@ impl CreateNotificationSubscriptionOutput {
 }
 
 /// A builder for [`CreateNotificationSubscriptionOutput`](crate::operation::create_notification_subscription::CreateNotificationSubscriptionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateNotificationSubscriptionOutputBuilder {
     pub(crate) subscription: ::std::option::Option<crate::types::Subscription>,
     _request_id: Option<String>,

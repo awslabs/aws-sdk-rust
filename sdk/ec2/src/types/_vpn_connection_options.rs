@@ -81,8 +81,8 @@ impl VpnConnectionOptions {
 }
 
 /// A builder for [`VpnConnectionOptions`](crate::types::VpnConnectionOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VpnConnectionOptionsBuilder {
     pub(crate) enable_acceleration: ::std::option::Option<bool>,
     pub(crate) static_routes_only: ::std::option::Option<bool>,

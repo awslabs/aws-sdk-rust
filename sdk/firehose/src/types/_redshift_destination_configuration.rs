@@ -109,8 +109,8 @@ impl RedshiftDestinationConfiguration {
 }
 
 /// A builder for [`RedshiftDestinationConfiguration`](crate::types::RedshiftDestinationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct RedshiftDestinationConfigurationBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_jdbcurl: ::std::option::Option<::std::string::String>,

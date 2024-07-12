@@ -27,8 +27,8 @@ impl JobScopeTerm {
 }
 
 /// A builder for [`JobScopeTerm`](crate::types::JobScopeTerm).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JobScopeTermBuilder {
     pub(crate) simple_scope_term: ::std::option::Option<crate::types::SimpleScopeTerm>,
     pub(crate) tag_scope_term: ::std::option::Option<crate::types::TagScopeTerm>,

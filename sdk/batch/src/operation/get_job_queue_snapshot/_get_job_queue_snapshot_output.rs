@@ -26,8 +26,8 @@ impl GetJobQueueSnapshotOutput {
 }
 
 /// A builder for [`GetJobQueueSnapshotOutput`](crate::operation::get_job_queue_snapshot::GetJobQueueSnapshotOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetJobQueueSnapshotOutputBuilder {
     pub(crate) front_of_queue: ::std::option::Option<crate::types::FrontOfQueueDetail>,
     _request_id: Option<String>,

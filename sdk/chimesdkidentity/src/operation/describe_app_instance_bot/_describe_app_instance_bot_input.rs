@@ -20,8 +20,8 @@ impl DescribeAppInstanceBotInput {
 }
 
 /// A builder for [`DescribeAppInstanceBotInput`](crate::operation::describe_app_instance_bot::DescribeAppInstanceBotInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAppInstanceBotInputBuilder {
     pub(crate) app_instance_bot_arn: ::std::option::Option<::std::string::String>,
 }

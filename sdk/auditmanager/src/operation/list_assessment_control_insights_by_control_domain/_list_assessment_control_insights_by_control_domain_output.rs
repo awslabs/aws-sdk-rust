@@ -36,8 +36,8 @@ impl ListAssessmentControlInsightsByControlDomainOutput {
 }
 
 /// A builder for [`ListAssessmentControlInsightsByControlDomainOutput`](crate::operation::list_assessment_control_insights_by_control_domain::ListAssessmentControlInsightsByControlDomainOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAssessmentControlInsightsByControlDomainOutputBuilder {
     pub(crate) control_insights_by_assessment: ::std::option::Option<::std::vec::Vec<crate::types::ControlInsightsMetadataByAssessmentItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

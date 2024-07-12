@@ -18,8 +18,8 @@ impl DisableRegionOutput {
 }
 
 /// A builder for [`DisableRegionOutput`](crate::operation::disable_region::DisableRegionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableRegionOutputBuilder {
     _request_id: Option<String>,
 }

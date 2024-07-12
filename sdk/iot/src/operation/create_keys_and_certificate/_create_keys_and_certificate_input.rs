@@ -22,8 +22,8 @@ impl CreateKeysAndCertificateInput {
 }
 
 /// A builder for [`CreateKeysAndCertificateInput`](crate::operation::create_keys_and_certificate::CreateKeysAndCertificateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateKeysAndCertificateInputBuilder {
     pub(crate) set_as_active: ::std::option::Option<bool>,
 }

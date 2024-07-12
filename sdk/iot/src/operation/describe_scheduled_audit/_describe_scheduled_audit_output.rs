@@ -58,8 +58,8 @@ impl DescribeScheduledAuditOutput {
 }
 
 /// A builder for [`DescribeScheduledAuditOutput`](crate::operation::describe_scheduled_audit::DescribeScheduledAuditOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeScheduledAuditOutputBuilder {
     pub(crate) frequency: ::std::option::Option<crate::types::AuditFrequency>,
     pub(crate) day_of_month: ::std::option::Option<::std::string::String>,

@@ -38,8 +38,8 @@ impl GetTestRunStepInput {
 }
 
 /// A builder for [`GetTestRunStepInput`](crate::operation::get_test_run_step::GetTestRunStepInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTestRunStepInputBuilder {
     pub(crate) test_run_id: ::std::option::Option<::std::string::String>,
     pub(crate) step_name: ::std::option::Option<::std::string::String>,

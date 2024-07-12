@@ -21,8 +21,8 @@ impl RefreshCadence {
 }
 
 /// A builder for [`RefreshCadence`](crate::types::RefreshCadence).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RefreshCadenceBuilder {
     pub(crate) frequency: ::std::option::Option<crate::types::FrequencyOption>,
 }

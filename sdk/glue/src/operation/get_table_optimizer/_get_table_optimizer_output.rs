@@ -44,8 +44,8 @@ impl GetTableOptimizerOutput {
 }
 
 /// A builder for [`GetTableOptimizerOutput`](crate::operation::get_table_optimizer::GetTableOptimizerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTableOptimizerOutputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,

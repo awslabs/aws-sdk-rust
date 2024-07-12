@@ -38,8 +38,8 @@ impl LocalHealthEventsConfig {
 }
 
 /// A builder for [`LocalHealthEventsConfig`](crate::types::LocalHealthEventsConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LocalHealthEventsConfigBuilder {
     pub(crate) status: ::std::option::Option<crate::types::LocalHealthEventsConfigStatus>,
     pub(crate) health_score_threshold: ::std::option::Option<f64>,

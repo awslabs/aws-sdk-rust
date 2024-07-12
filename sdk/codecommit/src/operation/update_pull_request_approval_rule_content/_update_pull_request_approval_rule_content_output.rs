@@ -26,8 +26,8 @@ impl UpdatePullRequestApprovalRuleContentOutput {
 }
 
 /// A builder for [`UpdatePullRequestApprovalRuleContentOutput`](crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePullRequestApprovalRuleContentOutputBuilder {
     pub(crate) approval_rule: ::std::option::Option<crate::types::ApprovalRule>,
     _request_id: Option<String>,

@@ -108,8 +108,8 @@ impl CreateControlMappingSource {
 }
 
 /// A builder for [`CreateControlMappingSource`](crate::types::CreateControlMappingSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateControlMappingSourceBuilder {
     pub(crate) source_name: ::std::option::Option<::std::string::String>,
     pub(crate) source_description: ::std::option::Option<::std::string::String>,

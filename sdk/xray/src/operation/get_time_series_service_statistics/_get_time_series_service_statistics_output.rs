@@ -40,8 +40,8 @@ impl GetTimeSeriesServiceStatisticsOutput {
 }
 
 /// A builder for [`GetTimeSeriesServiceStatisticsOutput`](crate::operation::get_time_series_service_statistics::GetTimeSeriesServiceStatisticsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTimeSeriesServiceStatisticsOutputBuilder {
     pub(crate) time_series_service_statistics: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesServiceStatistics>>,
     pub(crate) contains_old_group_versions: ::std::option::Option<bool>,

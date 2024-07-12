@@ -20,8 +20,8 @@ impl GetStorageConfigurationInput {
 }
 
 /// A builder for [`GetStorageConfigurationInput`](crate::operation::get_storage_configuration::GetStorageConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetStorageConfigurationInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }

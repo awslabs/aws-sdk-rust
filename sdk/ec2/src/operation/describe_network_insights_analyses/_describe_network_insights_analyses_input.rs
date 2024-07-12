@@ -78,8 +78,8 @@ impl DescribeNetworkInsightsAnalysesInput {
 }
 
 /// A builder for [`DescribeNetworkInsightsAnalysesInput`](crate::operation::describe_network_insights_analyses::DescribeNetworkInsightsAnalysesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeNetworkInsightsAnalysesInputBuilder {
     pub(crate) network_insights_analysis_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) network_insights_path_id: ::std::option::Option<::std::string::String>,

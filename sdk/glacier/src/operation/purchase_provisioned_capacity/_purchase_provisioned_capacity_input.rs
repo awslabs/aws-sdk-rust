@@ -25,8 +25,8 @@ impl PurchaseProvisionedCapacityInput {
 }
 
 /// A builder for [`PurchaseProvisionedCapacityInput`](crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PurchaseProvisionedCapacityInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }

@@ -18,8 +18,8 @@ impl DeleteHitOutput {
 }
 
 /// A builder for [`DeleteHitOutput`](crate::operation::delete_hit::DeleteHitOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteHitOutputBuilder {
     _request_id: Option<String>,
 }

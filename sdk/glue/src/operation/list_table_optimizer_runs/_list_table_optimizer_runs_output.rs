@@ -52,8 +52,8 @@ impl ListTableOptimizerRunsOutput {
 }
 
 /// A builder for [`ListTableOptimizerRunsOutput`](crate::operation::list_table_optimizer_runs::ListTableOptimizerRunsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTableOptimizerRunsOutputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,

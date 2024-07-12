@@ -26,8 +26,8 @@ impl PutEventsConfigurationOutput {
 }
 
 /// A builder for [`PutEventsConfigurationOutput`](crate::operation::put_events_configuration::PutEventsConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutEventsConfigurationOutputBuilder {
     pub(crate) events_configuration: ::std::option::Option<crate::types::EventsConfiguration>,
     _request_id: Option<String>,

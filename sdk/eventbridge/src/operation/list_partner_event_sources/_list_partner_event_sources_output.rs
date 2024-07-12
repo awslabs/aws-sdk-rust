@@ -34,8 +34,8 @@ impl ListPartnerEventSourcesOutput {
 }
 
 /// A builder for [`ListPartnerEventSourcesOutput`](crate::operation::list_partner_event_sources::ListPartnerEventSourcesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPartnerEventSourcesOutputBuilder {
     pub(crate) partner_event_sources: ::std::option::Option<::std::vec::Vec<crate::types::PartnerEventSource>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

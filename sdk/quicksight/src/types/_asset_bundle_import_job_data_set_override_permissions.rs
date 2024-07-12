@@ -28,8 +28,8 @@ impl AssetBundleImportJobDataSetOverridePermissions {
 }
 
 /// A builder for [`AssetBundleImportJobDataSetOverridePermissions`](crate::types::AssetBundleImportJobDataSetOverridePermissions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssetBundleImportJobDataSetOverridePermissionsBuilder {
     pub(crate) data_set_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) permissions: ::std::option::Option<crate::types::AssetBundleResourcePermissions>,

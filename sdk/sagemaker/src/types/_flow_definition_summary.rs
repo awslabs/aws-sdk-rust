@@ -45,8 +45,8 @@ impl FlowDefinitionSummary {
 }
 
 /// A builder for [`FlowDefinitionSummary`](crate::types::FlowDefinitionSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FlowDefinitionSummaryBuilder {
     pub(crate) flow_definition_name: ::std::option::Option<::std::string::String>,
     pub(crate) flow_definition_arn: ::std::option::Option<::std::string::String>,

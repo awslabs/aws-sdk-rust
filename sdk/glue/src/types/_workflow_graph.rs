@@ -31,8 +31,8 @@ impl WorkflowGraph {
 }
 
 /// A builder for [`WorkflowGraph`](crate::types::WorkflowGraph).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WorkflowGraphBuilder {
     pub(crate) nodes: ::std::option::Option<::std::vec::Vec<crate::types::Node>>,
     pub(crate) edges: ::std::option::Option<::std::vec::Vec<crate::types::Edge>>,

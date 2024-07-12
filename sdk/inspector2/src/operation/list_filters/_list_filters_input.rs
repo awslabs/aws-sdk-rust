@@ -40,8 +40,8 @@ impl ListFiltersInput {
 }
 
 /// A builder for [`ListFiltersInput`](crate::operation::list_filters::ListFiltersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFiltersInputBuilder {
     pub(crate) arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) action: ::std::option::Option<crate::types::FilterAction>,

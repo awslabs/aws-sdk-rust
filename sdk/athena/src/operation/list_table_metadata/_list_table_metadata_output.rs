@@ -34,8 +34,8 @@ impl ListTableMetadataOutput {
 }
 
 /// A builder for [`ListTableMetadataOutput`](crate::operation::list_table_metadata::ListTableMetadataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTableMetadataOutputBuilder {
     pub(crate) table_metadata_list: ::std::option::Option<::std::vec::Vec<crate::types::TableMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

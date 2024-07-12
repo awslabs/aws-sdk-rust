@@ -26,8 +26,8 @@ impl DeleteCoreNetworkPolicyVersionInput {
 }
 
 /// A builder for [`DeleteCoreNetworkPolicyVersionInput`](crate::operation::delete_core_network_policy_version::DeleteCoreNetworkPolicyVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCoreNetworkPolicyVersionInputBuilder {
     pub(crate) core_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) policy_version_id: ::std::option::Option<i32>,

@@ -45,8 +45,8 @@ impl EwsAvailabilityProvider {
 }
 
 /// A builder for [`EwsAvailabilityProvider`](crate::types::EwsAvailabilityProvider).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct EwsAvailabilityProviderBuilder {
     pub(crate) ews_endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) ews_username: ::std::option::Option<::std::string::String>,

@@ -39,8 +39,8 @@ impl AssociationConfig {
 }
 
 /// A builder for [`AssociationConfig`](crate::types::AssociationConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociationConfigBuilder {
     pub(crate) request_body: ::std::option::Option<
         ::std::collections::HashMap<crate::types::AssociatedResourceType, crate::types::RequestBodyAssociatedResourceTypeConfig>,

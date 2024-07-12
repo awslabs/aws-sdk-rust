@@ -33,8 +33,8 @@ impl ListLoaderJobsOutput {
 }
 
 /// A builder for [`ListLoaderJobsOutput`](crate::operation::list_loader_jobs::ListLoaderJobsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListLoaderJobsOutputBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) payload: ::std::option::Option<crate::types::LoaderIdResult>,

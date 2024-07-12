@@ -46,8 +46,8 @@ impl GetWorkflowExecutionHistoryInput {
 }
 
 /// A builder for [`GetWorkflowExecutionHistoryInput`](crate::operation::get_workflow_execution_history::GetWorkflowExecutionHistoryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetWorkflowExecutionHistoryInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) execution: ::std::option::Option<crate::types::WorkflowExecution>,

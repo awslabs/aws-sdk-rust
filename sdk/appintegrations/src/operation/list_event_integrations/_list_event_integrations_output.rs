@@ -34,8 +34,8 @@ impl ListEventIntegrationsOutput {
 }
 
 /// A builder for [`ListEventIntegrationsOutput`](crate::operation::list_event_integrations::ListEventIntegrationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEventIntegrationsOutputBuilder {
     pub(crate) event_integrations: ::std::option::Option<::std::vec::Vec<crate::types::EventIntegration>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

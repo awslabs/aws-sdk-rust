@@ -27,8 +27,8 @@ impl ForecastScenario {
 }
 
 /// A builder for [`ForecastScenario`](crate::types::ForecastScenario).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ForecastScenarioBuilder {
     pub(crate) what_if_point_scenario: ::std::option::Option<crate::types::WhatIfPointScenario>,
     pub(crate) what_if_range_scenario: ::std::option::Option<crate::types::WhatIfRangeScenario>,

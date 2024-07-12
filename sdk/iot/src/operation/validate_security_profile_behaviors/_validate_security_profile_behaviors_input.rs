@@ -22,8 +22,8 @@ impl ValidateSecurityProfileBehaviorsInput {
 }
 
 /// A builder for [`ValidateSecurityProfileBehaviorsInput`](crate::operation::validate_security_profile_behaviors::ValidateSecurityProfileBehaviorsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ValidateSecurityProfileBehaviorsInputBuilder {
     pub(crate) behaviors: ::std::option::Option<::std::vec::Vec<crate::types::Behavior>>,
 }

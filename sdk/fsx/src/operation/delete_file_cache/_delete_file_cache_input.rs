@@ -26,8 +26,8 @@ impl DeleteFileCacheInput {
 }
 
 /// A builder for [`DeleteFileCacheInput`](crate::operation::delete_file_cache::DeleteFileCacheInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFileCacheInputBuilder {
     pub(crate) file_cache_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,

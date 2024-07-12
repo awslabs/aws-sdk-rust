@@ -33,8 +33,8 @@ impl ContainerImage {
 }
 
 /// A builder for [`ContainerImage`](crate::types::ContainerImage).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ContainerImageBuilder {
     pub(crate) image: ::std::option::Option<::std::string::String>,
     pub(crate) digest: ::std::option::Option<::std::string::String>,

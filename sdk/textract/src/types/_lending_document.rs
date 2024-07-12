@@ -31,8 +31,8 @@ impl LendingDocument {
 }
 
 /// A builder for [`LendingDocument`](crate::types::LendingDocument).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LendingDocumentBuilder {
     pub(crate) lending_fields: ::std::option::Option<::std::vec::Vec<crate::types::LendingField>>,
     pub(crate) signature_detections: ::std::option::Option<::std::vec::Vec<crate::types::SignatureDetection>>,

@@ -26,8 +26,8 @@ impl AssociateResolverEndpointIpAddressInput {
 }
 
 /// A builder for [`AssociateResolverEndpointIpAddressInput`](crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddressInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateResolverEndpointIpAddressInputBuilder {
     pub(crate) resolver_endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) ip_address: ::std::option::Option<crate::types::IpAddressUpdate>,

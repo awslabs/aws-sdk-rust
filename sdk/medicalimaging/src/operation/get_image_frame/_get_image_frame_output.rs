@@ -32,8 +32,8 @@ impl GetImageFrameOutput {
 }
 
 /// A builder for [`GetImageFrameOutput`](crate::operation::get_image_frame::GetImageFrameOutput).
-#[non_exhaustive]
 #[derive(::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetImageFrameOutputBuilder {
     pub(crate) image_frame_blob: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>,
     pub(crate) content_type: ::std::option::Option<::std::string::String>,

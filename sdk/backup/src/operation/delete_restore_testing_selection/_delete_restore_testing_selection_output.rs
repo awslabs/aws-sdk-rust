@@ -18,8 +18,8 @@ impl DeleteRestoreTestingSelectionOutput {
 }
 
 /// A builder for [`DeleteRestoreTestingSelectionOutput`](crate::operation::delete_restore_testing_selection::DeleteRestoreTestingSelectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRestoreTestingSelectionOutputBuilder {
     _request_id: Option<String>,
 }

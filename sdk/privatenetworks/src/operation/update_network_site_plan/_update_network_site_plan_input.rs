@@ -32,8 +32,8 @@ impl UpdateNetworkSitePlanInput {
 }
 
 /// A builder for [`UpdateNetworkSitePlanInput`](crate::operation::update_network_site_plan::UpdateNetworkSitePlanInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateNetworkSitePlanInputBuilder {
     pub(crate) network_site_arn: ::std::option::Option<::std::string::String>,
     pub(crate) pending_plan: ::std::option::Option<crate::types::SitePlan>,

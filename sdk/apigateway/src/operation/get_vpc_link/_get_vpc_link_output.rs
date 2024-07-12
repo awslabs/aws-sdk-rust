@@ -65,8 +65,8 @@ impl GetVpcLinkOutput {
 }
 
 /// A builder for [`GetVpcLinkOutput`](crate::operation::get_vpc_link::GetVpcLinkOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetVpcLinkOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

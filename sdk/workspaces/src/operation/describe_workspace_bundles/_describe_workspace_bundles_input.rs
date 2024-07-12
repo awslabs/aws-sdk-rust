@@ -36,8 +36,8 @@ impl DescribeWorkspaceBundlesInput {
 }
 
 /// A builder for [`DescribeWorkspaceBundlesInput`](crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeWorkspaceBundlesInputBuilder {
     pub(crate) bundle_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) owner: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl ResourceDownloadOwnerSetting {
 }
 
 /// A builder for [`ResourceDownloadOwnerSetting`](crate::types::ResourceDownloadOwnerSetting).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResourceDownloadOwnerSettingBuilder {
     pub(crate) group_owner: ::std::option::Option<::std::string::String>,
     pub(crate) group_permission: ::std::option::Option<crate::types::Permission>,

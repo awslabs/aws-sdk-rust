@@ -33,8 +33,8 @@ impl AntennaDownlinkDemodDecodeConfig {
 }
 
 /// A builder for [`AntennaDownlinkDemodDecodeConfig`](crate::types::AntennaDownlinkDemodDecodeConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AntennaDownlinkDemodDecodeConfigBuilder {
     pub(crate) spectrum_config: ::std::option::Option<crate::types::SpectrumConfig>,
     pub(crate) demodulation_config: ::std::option::Option<crate::types::DemodulationConfig>,

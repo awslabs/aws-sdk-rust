@@ -45,8 +45,8 @@ impl Ibm3624RandomPin {
 }
 
 /// A builder for [`Ibm3624RandomPin`](crate::types::Ibm3624RandomPin).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct Ibm3624RandomPinBuilder {
     pub(crate) decimalization_table: ::std::option::Option<::std::string::String>,
     pub(crate) pin_validation_data_pad_character: ::std::option::Option<::std::string::String>,

@@ -64,8 +64,8 @@ impl RestoreGraphFromSnapshotInput {
 }
 
 /// A builder for [`RestoreGraphFromSnapshotInput`](crate::operation::restore_graph_from_snapshot::RestoreGraphFromSnapshotInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RestoreGraphFromSnapshotInputBuilder {
     pub(crate) snapshot_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) graph_name: ::std::option::Option<::std::string::String>,

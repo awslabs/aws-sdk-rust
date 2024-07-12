@@ -98,8 +98,8 @@ impl ListResourcesInput {
 }
 
 /// A builder for [`ListResourcesInput`](crate::operation::list_resources::ListResourcesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListResourcesInputBuilder {
     pub(crate) resource_owner: ::std::option::Option<crate::types::ResourceOwner>,
     pub(crate) principal: ::std::option::Option<::std::string::String>,

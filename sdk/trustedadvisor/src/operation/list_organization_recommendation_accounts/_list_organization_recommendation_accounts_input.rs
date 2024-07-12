@@ -38,8 +38,8 @@ impl ListOrganizationRecommendationAccountsInput {
 }
 
 /// A builder for [`ListOrganizationRecommendationAccountsInput`](crate::operation::list_organization_recommendation_accounts::ListOrganizationRecommendationAccountsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListOrganizationRecommendationAccountsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

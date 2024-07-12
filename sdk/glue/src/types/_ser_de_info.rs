@@ -33,8 +33,8 @@ impl SerDeInfo {
 }
 
 /// A builder for [`SerDeInfo`](crate::types::SerDeInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SerDeInfoBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) serialization_library: ::std::option::Option<::std::string::String>,

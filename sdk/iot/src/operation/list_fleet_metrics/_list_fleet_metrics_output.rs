@@ -34,8 +34,8 @@ impl ListFleetMetricsOutput {
 }
 
 /// A builder for [`ListFleetMetricsOutput`](crate::operation::list_fleet_metrics::ListFleetMetricsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFleetMetricsOutputBuilder {
     pub(crate) fleet_metrics: ::std::option::Option<::std::vec::Vec<crate::types::FleetMetricNameAndArn>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

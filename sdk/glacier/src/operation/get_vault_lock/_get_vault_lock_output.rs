@@ -45,8 +45,8 @@ impl GetVaultLockOutput {
 }
 
 /// A builder for [`GetVaultLockOutput`](crate::operation::get_vault_lock::GetVaultLockOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetVaultLockOutputBuilder {
     pub(crate) policy: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<::std::string::String>,

@@ -18,8 +18,8 @@ impl SubscribeToEventOutput {
 }
 
 /// A builder for [`SubscribeToEventOutput`](crate::operation::subscribe_to_event::SubscribeToEventOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SubscribeToEventOutputBuilder {
     _request_id: Option<String>,
 }

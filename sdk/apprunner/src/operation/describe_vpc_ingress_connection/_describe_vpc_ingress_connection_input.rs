@@ -20,8 +20,8 @@ impl DescribeVpcIngressConnectionInput {
 }
 
 /// A builder for [`DescribeVpcIngressConnectionInput`](crate::operation::describe_vpc_ingress_connection::DescribeVpcIngressConnectionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeVpcIngressConnectionInputBuilder {
     pub(crate) vpc_ingress_connection_arn: ::std::option::Option<::std::string::String>,
 }

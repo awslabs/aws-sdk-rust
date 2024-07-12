@@ -84,8 +84,8 @@ impl RevokeSecurityGroupIngressInput {
 }
 
 /// A builder for [`RevokeSecurityGroupIngressInput`](crate::operation::revoke_security_group_ingress::RevokeSecurityGroupIngressInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RevokeSecurityGroupIngressInputBuilder {
     pub(crate) cidr_ip: ::std::option::Option<::std::string::String>,
     pub(crate) from_port: ::std::option::Option<i32>,

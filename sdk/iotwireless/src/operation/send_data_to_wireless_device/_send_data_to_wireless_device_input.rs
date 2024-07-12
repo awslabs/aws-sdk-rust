@@ -38,8 +38,8 @@ impl SendDataToWirelessDeviceInput {
 }
 
 /// A builder for [`SendDataToWirelessDeviceInput`](crate::operation::send_data_to_wireless_device::SendDataToWirelessDeviceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendDataToWirelessDeviceInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) transmit_mode: ::std::option::Option<i32>,

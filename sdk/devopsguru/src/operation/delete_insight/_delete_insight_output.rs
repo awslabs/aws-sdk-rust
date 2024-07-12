@@ -18,8 +18,8 @@ impl DeleteInsightOutput {
 }
 
 /// A builder for [`DeleteInsightOutput`](crate::operation::delete_insight::DeleteInsightOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteInsightOutputBuilder {
     _request_id: Option<String>,
 }

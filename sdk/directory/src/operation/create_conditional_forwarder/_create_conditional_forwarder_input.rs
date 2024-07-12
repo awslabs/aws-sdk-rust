@@ -35,8 +35,8 @@ impl CreateConditionalForwarderInput {
 }
 
 /// A builder for [`CreateConditionalForwarderInput`](crate::operation::create_conditional_forwarder::CreateConditionalForwarderInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateConditionalForwarderInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) remote_domain_name: ::std::option::Option<::std::string::String>,

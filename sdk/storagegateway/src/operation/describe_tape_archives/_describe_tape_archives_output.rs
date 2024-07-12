@@ -35,8 +35,8 @@ impl DescribeTapeArchivesOutput {
 }
 
 /// A builder for [`DescribeTapeArchivesOutput`](crate::operation::describe_tape_archives::DescribeTapeArchivesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTapeArchivesOutputBuilder {
     pub(crate) tape_archives: ::std::option::Option<::std::vec::Vec<crate::types::TapeArchive>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

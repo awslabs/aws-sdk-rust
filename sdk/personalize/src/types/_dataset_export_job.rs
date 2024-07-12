@@ -92,8 +92,8 @@ impl DatasetExportJob {
 }
 
 /// A builder for [`DatasetExportJob`](crate::types::DatasetExportJob).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DatasetExportJobBuilder {
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_export_job_arn: ::std::option::Option<::std::string::String>,

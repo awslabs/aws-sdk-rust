@@ -28,8 +28,8 @@ impl AxisDataOptions {
 }
 
 /// A builder for [`AxisDataOptions`](crate::types::AxisDataOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AxisDataOptionsBuilder {
     pub(crate) numeric_axis_options: ::std::option::Option<crate::types::NumericAxisOptions>,
     pub(crate) date_axis_options: ::std::option::Option<crate::types::DateAxisOptions>,

@@ -22,8 +22,8 @@ impl BatchDescribeEntitiesInput {
 }
 
 /// A builder for [`BatchDescribeEntitiesInput`](crate::operation::batch_describe_entities::BatchDescribeEntitiesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDescribeEntitiesInputBuilder {
     pub(crate) entity_request_list: ::std::option::Option<::std::vec::Vec<crate::types::EntityRequest>>,
 }

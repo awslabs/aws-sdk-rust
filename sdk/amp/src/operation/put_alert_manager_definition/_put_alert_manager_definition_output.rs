@@ -27,8 +27,8 @@ impl PutAlertManagerDefinitionOutput {
 }
 
 /// A builder for [`PutAlertManagerDefinitionOutput`](crate::operation::put_alert_manager_definition::PutAlertManagerDefinitionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutAlertManagerDefinitionOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::AlertManagerDefinitionStatus>,
     _request_id: Option<String>,

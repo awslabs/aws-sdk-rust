@@ -18,8 +18,8 @@ impl AddTagsToOnPremisesInstancesOutput {
 }
 
 /// A builder for [`AddTagsToOnPremisesInstancesOutput`](crate::operation::add_tags_to_on_premises_instances::AddTagsToOnPremisesInstancesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddTagsToOnPremisesInstancesOutputBuilder {
     _request_id: Option<String>,
 }

@@ -624,8 +624,8 @@ impl RestoreDbInstanceFromS3Input {
 }
 
 /// A builder for [`RestoreDbInstanceFromS3Input`](crate::operation::restore_db_instance_from_s3::RestoreDbInstanceFromS3Input).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RestoreDbInstanceFromS3InputBuilder {
     pub(crate) db_name: ::std::option::Option<::std::string::String>,
     pub(crate) db_instance_identifier: ::std::option::Option<::std::string::String>,

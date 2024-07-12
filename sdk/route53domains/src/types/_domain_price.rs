@@ -51,8 +51,8 @@ impl DomainPrice {
 }
 
 /// A builder for [`DomainPrice`](crate::types::DomainPrice).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DomainPriceBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) registration_price: ::std::option::Option<crate::types::PriceWithCurrency>,

@@ -27,8 +27,8 @@ impl AwsEventsEndpointRoutingConfigFailoverConfigDetails {
 }
 
 /// A builder for [`AwsEventsEndpointRoutingConfigFailoverConfigDetails`](crate::types::AwsEventsEndpointRoutingConfigFailoverConfigDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEventsEndpointRoutingConfigFailoverConfigDetailsBuilder {
     pub(crate) primary: ::std::option::Option<crate::types::AwsEventsEndpointRoutingConfigFailoverConfigPrimaryDetails>,
     pub(crate) secondary: ::std::option::Option<crate::types::AwsEventsEndpointRoutingConfigFailoverConfigSecondaryDetails>,

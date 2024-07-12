@@ -40,8 +40,8 @@ impl CreateStageInput {
 }
 
 /// A builder for [`CreateStageInput`](crate::operation::create_stage::CreateStageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateStageInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) participant_token_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ParticipantTokenConfiguration>>,

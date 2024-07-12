@@ -28,8 +28,8 @@ impl GetRelationalDatabaseParametersInput {
 }
 
 /// A builder for [`GetRelationalDatabaseParametersInput`](crate::operation::get_relational_database_parameters::GetRelationalDatabaseParametersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRelationalDatabaseParametersInputBuilder {
     pub(crate) relational_database_name: ::std::option::Option<::std::string::String>,
     pub(crate) page_token: ::std::option::Option<::std::string::String>,

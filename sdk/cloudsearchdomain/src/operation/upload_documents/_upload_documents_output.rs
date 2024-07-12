@@ -47,8 +47,8 @@ impl UploadDocumentsOutput {
 }
 
 /// A builder for [`UploadDocumentsOutput`](crate::operation::upload_documents::UploadDocumentsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UploadDocumentsOutputBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) adds: ::std::option::Option<i64>,

@@ -26,8 +26,8 @@ impl AttachTypedLinkOutput {
 }
 
 /// A builder for [`AttachTypedLinkOutput`](crate::operation::attach_typed_link::AttachTypedLinkOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttachTypedLinkOutputBuilder {
     pub(crate) typed_link_specifier: ::std::option::Option<crate::types::TypedLinkSpecifier>,
     _request_id: Option<String>,

@@ -26,8 +26,8 @@ impl UpdateEndpointAccessOutput {
 }
 
 /// A builder for [`UpdateEndpointAccessOutput`](crate::operation::update_endpoint_access::UpdateEndpointAccessOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateEndpointAccessOutputBuilder {
     pub(crate) endpoint: ::std::option::Option<crate::types::EndpointAccess>,
     _request_id: Option<String>,

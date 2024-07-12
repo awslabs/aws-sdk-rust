@@ -51,8 +51,8 @@ impl DescribeThingTypeOutput {
 }
 
 /// A builder for [`DescribeThingTypeOutput`](crate::operation::describe_thing_type::DescribeThingTypeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeThingTypeOutputBuilder {
     pub(crate) thing_type_name: ::std::option::Option<::std::string::String>,
     pub(crate) thing_type_id: ::std::option::Option<::std::string::String>,

@@ -32,8 +32,8 @@ impl ListRotationsInput {
 }
 
 /// A builder for [`ListRotationsInput`](crate::operation::list_rotations::ListRotationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRotationsInputBuilder {
     pub(crate) rotation_name_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

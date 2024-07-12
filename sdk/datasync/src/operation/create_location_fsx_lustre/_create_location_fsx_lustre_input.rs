@@ -42,8 +42,8 @@ impl CreateLocationFsxLustreInput {
 }
 
 /// A builder for [`CreateLocationFsxLustreInput`](crate::operation::create_location_fsx_lustre::CreateLocationFsxLustreInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLocationFsxLustreInputBuilder {
     pub(crate) fsx_filesystem_arn: ::std::option::Option<::std::string::String>,
     pub(crate) security_group_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -28,8 +28,8 @@ impl TooltipItem {
 }
 
 /// A builder for [`TooltipItem`](crate::types::TooltipItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TooltipItemBuilder {
     pub(crate) field_tooltip_item: ::std::option::Option<crate::types::FieldTooltipItem>,
     pub(crate) column_tooltip_item: ::std::option::Option<crate::types::ColumnTooltipItem>,

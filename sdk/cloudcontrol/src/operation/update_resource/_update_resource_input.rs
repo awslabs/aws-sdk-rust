@@ -78,8 +78,8 @@ impl UpdateResourceInput {
 }
 
 /// A builder for [`UpdateResourceInput`](crate::operation::update_resource::UpdateResourceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateResourceInputBuilder {
     pub(crate) type_name: ::std::option::Option<::std::string::String>,
     pub(crate) type_version_id: ::std::option::Option<::std::string::String>,

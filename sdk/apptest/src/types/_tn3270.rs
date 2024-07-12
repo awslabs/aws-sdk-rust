@@ -29,8 +29,8 @@ impl Tn3270 {
 }
 
 /// A builder for [`Tn3270`](crate::types::Tn3270).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Tn3270Builder {
     pub(crate) script: ::std::option::Option<crate::types::Script>,
     pub(crate) export_data_set_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

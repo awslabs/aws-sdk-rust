@@ -32,8 +32,8 @@ impl GetConfigurationOutput {
 }
 
 /// A builder for [`GetConfigurationOutput`](crate::operation::get_configuration::GetConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetConfigurationOutputBuilder {
     pub(crate) ecr_configuration: ::std::option::Option<crate::types::EcrConfigurationState>,
     pub(crate) ec2_configuration: ::std::option::Option<crate::types::Ec2ConfigurationState>,

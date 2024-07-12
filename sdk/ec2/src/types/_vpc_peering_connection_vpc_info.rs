@@ -61,8 +61,8 @@ impl VpcPeeringConnectionVpcInfo {
 }
 
 /// A builder for [`VpcPeeringConnectionVpcInfo`](crate::types::VpcPeeringConnectionVpcInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VpcPeeringConnectionVpcInfoBuilder {
     pub(crate) cidr_block: ::std::option::Option<::std::string::String>,
     pub(crate) ipv6_cidr_block_set: ::std::option::Option<::std::vec::Vec<crate::types::Ipv6CidrBlock>>,

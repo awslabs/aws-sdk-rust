@@ -48,8 +48,8 @@ impl ListTaskDefinitionsInput {
 }
 
 /// A builder for [`ListTaskDefinitionsInput`](crate::operation::list_task_definitions::ListTaskDefinitionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTaskDefinitionsInputBuilder {
     pub(crate) family_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::TaskDefinitionStatus>,

@@ -45,8 +45,8 @@ impl InboundConnection {
 }
 
 /// A builder for [`InboundConnection`](crate::types::InboundConnection).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InboundConnectionBuilder {
     pub(crate) local_domain_info: ::std::option::Option<crate::types::DomainInformationContainer>,
     pub(crate) remote_domain_info: ::std::option::Option<crate::types::DomainInformationContainer>,

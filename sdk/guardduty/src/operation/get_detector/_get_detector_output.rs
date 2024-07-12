@@ -72,8 +72,8 @@ impl GetDetectorOutput {
 }
 
 /// A builder for [`GetDetectorOutput`](crate::operation::get_detector::GetDetectorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDetectorOutputBuilder {
     pub(crate) created_at: ::std::option::Option<::std::string::String>,
     pub(crate) finding_publishing_frequency: ::std::option::Option<crate::types::FindingPublishingFrequency>,

@@ -11,8 +11,8 @@ impl GetCredentialReportInput {
 }
 
 /// A builder for [`GetCredentialReportInput`](crate::operation::get_credential_report::GetCredentialReportInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCredentialReportInputBuilder {}
 impl GetCredentialReportInputBuilder {
     /// Consumes the builder and constructs a [`GetCredentialReportInput`](crate::operation::get_credential_report::GetCredentialReportInput).

@@ -20,8 +20,8 @@ impl GetKnowledgeBaseInput {
 }
 
 /// A builder for [`GetKnowledgeBaseInput`](crate::operation::get_knowledge_base::GetKnowledgeBaseInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetKnowledgeBaseInputBuilder {
     pub(crate) knowledge_base_id: ::std::option::Option<::std::string::String>,
 }

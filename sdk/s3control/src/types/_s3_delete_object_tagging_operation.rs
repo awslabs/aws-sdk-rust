@@ -12,8 +12,8 @@ impl S3DeleteObjectTaggingOperation {
 }
 
 /// A builder for [`S3DeleteObjectTaggingOperation`](crate::types::S3DeleteObjectTaggingOperation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3DeleteObjectTaggingOperationBuilder {}
 impl S3DeleteObjectTaggingOperationBuilder {
     /// Consumes the builder and constructs a [`S3DeleteObjectTaggingOperation`](crate::types::S3DeleteObjectTaggingOperation).

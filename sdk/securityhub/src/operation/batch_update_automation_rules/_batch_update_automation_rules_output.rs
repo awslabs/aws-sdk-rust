@@ -36,8 +36,8 @@ impl BatchUpdateAutomationRulesOutput {
 }
 
 /// A builder for [`BatchUpdateAutomationRulesOutput`](crate::operation::batch_update_automation_rules::BatchUpdateAutomationRulesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchUpdateAutomationRulesOutputBuilder {
     pub(crate) processed_automation_rules: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) unprocessed_automation_rules: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAutomationRule>>,

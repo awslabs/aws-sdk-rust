@@ -42,8 +42,8 @@ impl DescribeFirewallOutput {
 }
 
 /// A builder for [`DescribeFirewallOutput`](crate::operation::describe_firewall::DescribeFirewallOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFirewallOutputBuilder {
     pub(crate) update_token: ::std::option::Option<::std::string::String>,
     pub(crate) firewall: ::std::option::Option<crate::types::Firewall>,

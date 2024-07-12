@@ -29,8 +29,8 @@ impl BatchGetOnPremisesInstancesOutput {
 }
 
 /// A builder for [`BatchGetOnPremisesInstancesOutput`](crate::operation::batch_get_on_premises_instances::BatchGetOnPremisesInstancesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetOnPremisesInstancesOutputBuilder {
     pub(crate) instance_infos: ::std::option::Option<::std::vec::Vec<crate::types::InstanceInfo>>,
     _request_id: Option<String>,

@@ -26,8 +26,8 @@ impl DeleteVerifiedAccessEndpointOutput {
 }
 
 /// A builder for [`DeleteVerifiedAccessEndpointOutput`](crate::operation::delete_verified_access_endpoint::DeleteVerifiedAccessEndpointOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVerifiedAccessEndpointOutputBuilder {
     pub(crate) verified_access_endpoint: ::std::option::Option<crate::types::VerifiedAccessEndpoint>,
     _request_id: Option<String>,

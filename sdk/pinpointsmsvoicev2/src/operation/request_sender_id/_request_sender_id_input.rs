@@ -54,8 +54,8 @@ impl RequestSenderIdInput {
 }
 
 /// A builder for [`RequestSenderIdInput`](crate::operation::request_sender_id::RequestSenderIdInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RequestSenderIdInputBuilder {
     pub(crate) sender_id: ::std::option::Option<::std::string::String>,
     pub(crate) iso_country_code: ::std::option::Option<::std::string::String>,

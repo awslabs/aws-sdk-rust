@@ -34,8 +34,8 @@ impl ListSpeakersOutput {
 }
 
 /// A builder for [`ListSpeakersOutput`](crate::operation::list_speakers::ListSpeakersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSpeakersOutputBuilder {
     pub(crate) speaker_summaries: ::std::option::Option<::std::vec::Vec<crate::types::SpeakerSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

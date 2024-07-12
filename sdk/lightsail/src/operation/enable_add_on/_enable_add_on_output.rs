@@ -28,8 +28,8 @@ impl EnableAddOnOutput {
 }
 
 /// A builder for [`EnableAddOnOutput`](crate::operation::enable_add_on::EnableAddOnOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnableAddOnOutputBuilder {
     pub(crate) operations: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>,
     _request_id: Option<String>,

@@ -21,8 +21,8 @@ impl IngestionInputConfiguration {
 }
 
 /// A builder for [`IngestionInputConfiguration`](crate::types::IngestionInputConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IngestionInputConfigurationBuilder {
     pub(crate) s3_input_configuration: ::std::option::Option<crate::types::IngestionS3InputConfiguration>,
 }

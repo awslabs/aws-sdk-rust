@@ -28,8 +28,8 @@ impl AcceptTransitGatewayMulticastDomainAssociationsOutput {
 }
 
 /// A builder for [`AcceptTransitGatewayMulticastDomainAssociationsOutput`](crate::operation::accept_transit_gateway_multicast_domain_associations::AcceptTransitGatewayMulticastDomainAssociationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AcceptTransitGatewayMulticastDomainAssociationsOutputBuilder {
     pub(crate) associations: ::std::option::Option<crate::types::TransitGatewayMulticastDomainAssociations>,
     _request_id: Option<String>,

@@ -76,8 +76,8 @@ impl AppAuthorizationSummary {
 }
 
 /// A builder for [`AppAuthorizationSummary`](crate::types::AppAuthorizationSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AppAuthorizationSummaryBuilder {
     pub(crate) app_authorization_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_bundle_arn: ::std::option::Option<::std::string::String>,

@@ -74,8 +74,8 @@ impl GetResourceShareAssociationsInput {
 }
 
 /// A builder for [`GetResourceShareAssociationsInput`](crate::operation::get_resource_share_associations::GetResourceShareAssociationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetResourceShareAssociationsInputBuilder {
     pub(crate) association_type: ::std::option::Option<crate::types::ResourceShareAssociationType>,
     pub(crate) resource_share_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

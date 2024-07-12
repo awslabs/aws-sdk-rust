@@ -119,8 +119,8 @@ impl LicenseConfiguration {
 }
 
 /// A builder for [`LicenseConfiguration`](crate::types::LicenseConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LicenseConfigurationBuilder {
     pub(crate) license_configuration_id: ::std::option::Option<::std::string::String>,
     pub(crate) license_configuration_arn: ::std::option::Option<::std::string::String>,

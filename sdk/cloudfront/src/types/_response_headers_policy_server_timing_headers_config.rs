@@ -28,8 +28,8 @@ impl ResponseHeadersPolicyServerTimingHeadersConfig {
 }
 
 /// A builder for [`ResponseHeadersPolicyServerTimingHeadersConfig`](crate::types::ResponseHeadersPolicyServerTimingHeadersConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResponseHeadersPolicyServerTimingHeadersConfigBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) sampling_rate: ::std::option::Option<f64>,

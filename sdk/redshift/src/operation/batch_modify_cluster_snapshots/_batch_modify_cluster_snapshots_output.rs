@@ -36,8 +36,8 @@ impl BatchModifyClusterSnapshotsOutput {
 }
 
 /// A builder for [`BatchModifyClusterSnapshotsOutput`](crate::operation::batch_modify_cluster_snapshots::BatchModifyClusterSnapshotsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchModifyClusterSnapshotsOutputBuilder {
     pub(crate) resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotErrorMessage>>,

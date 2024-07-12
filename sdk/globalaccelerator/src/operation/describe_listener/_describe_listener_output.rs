@@ -26,8 +26,8 @@ impl DescribeListenerOutput {
 }
 
 /// A builder for [`DescribeListenerOutput`](crate::operation::describe_listener::DescribeListenerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeListenerOutputBuilder {
     pub(crate) listener: ::std::option::Option<crate::types::Listener>,
     _request_id: Option<String>,

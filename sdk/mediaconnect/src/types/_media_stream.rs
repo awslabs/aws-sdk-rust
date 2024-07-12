@@ -63,8 +63,8 @@ impl MediaStream {
 }
 
 /// A builder for [`MediaStream`](crate::types::MediaStream).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MediaStreamBuilder {
     pub(crate) attributes: ::std::option::Option<crate::types::MediaStreamAttributes>,
     pub(crate) clock_rate: ::std::option::Option<i32>,

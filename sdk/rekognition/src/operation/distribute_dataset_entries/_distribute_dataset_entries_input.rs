@@ -22,8 +22,8 @@ impl DistributeDatasetEntriesInput {
 }
 
 /// A builder for [`DistributeDatasetEntriesInput`](crate::operation::distribute_dataset_entries::DistributeDatasetEntriesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DistributeDatasetEntriesInputBuilder {
     pub(crate) datasets: ::std::option::Option<::std::vec::Vec<crate::types::DistributeDataset>>,
 }

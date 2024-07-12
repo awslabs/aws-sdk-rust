@@ -45,8 +45,8 @@ impl DatasetInputDataConfig {
 }
 
 /// A builder for [`DatasetInputDataConfig`](crate::types::DatasetInputDataConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DatasetInputDataConfigBuilder {
     pub(crate) augmented_manifests: ::std::option::Option<::std::vec::Vec<crate::types::DatasetAugmentedManifestsListItem>>,
     pub(crate) data_format: ::std::option::Option<crate::types::DatasetDataFormat>,

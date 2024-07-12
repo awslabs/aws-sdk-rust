@@ -26,8 +26,8 @@ impl InvokeDeviceMethodOutput {
 }
 
 /// A builder for [`InvokeDeviceMethodOutput`](crate::operation::invoke_device_method::InvokeDeviceMethodOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InvokeDeviceMethodOutputBuilder {
     pub(crate) device_method_response: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

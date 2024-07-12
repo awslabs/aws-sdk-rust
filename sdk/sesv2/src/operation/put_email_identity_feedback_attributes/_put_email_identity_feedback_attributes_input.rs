@@ -31,8 +31,8 @@ impl PutEmailIdentityFeedbackAttributesInput {
 }
 
 /// A builder for [`PutEmailIdentityFeedbackAttributesInput`](crate::operation::put_email_identity_feedback_attributes::PutEmailIdentityFeedbackAttributesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutEmailIdentityFeedbackAttributesInputBuilder {
     pub(crate) email_identity: ::std::option::Option<::std::string::String>,
     pub(crate) email_forwarding_enabled: ::std::option::Option<bool>,

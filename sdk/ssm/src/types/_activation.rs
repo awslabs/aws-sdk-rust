@@ -77,8 +77,8 @@ impl Activation {
 }
 
 /// A builder for [`Activation`](crate::types::Activation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ActivationBuilder {
     pub(crate) activation_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

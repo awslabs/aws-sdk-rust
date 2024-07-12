@@ -27,8 +27,8 @@ impl VectorEnrichmentJobErrorDetails {
 }
 
 /// A builder for [`VectorEnrichmentJobErrorDetails`](crate::types::VectorEnrichmentJobErrorDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VectorEnrichmentJobErrorDetailsBuilder {
     pub(crate) error_type: ::std::option::Option<crate::types::VectorEnrichmentJobErrorType>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,

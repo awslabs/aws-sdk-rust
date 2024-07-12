@@ -18,8 +18,8 @@ impl DisassociateUserSettingsOutput {
 }
 
 /// A builder for [`DisassociateUserSettingsOutput`](crate::operation::disassociate_user_settings::DisassociateUserSettingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateUserSettingsOutputBuilder {
     _request_id: Option<String>,
 }

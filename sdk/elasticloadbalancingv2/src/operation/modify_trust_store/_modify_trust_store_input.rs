@@ -38,8 +38,8 @@ impl ModifyTrustStoreInput {
 }
 
 /// A builder for [`ModifyTrustStoreInput`](crate::operation::modify_trust_store::ModifyTrustStoreInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyTrustStoreInputBuilder {
     pub(crate) trust_store_arn: ::std::option::Option<::std::string::String>,
     pub(crate) ca_certificates_bundle_s3_bucket: ::std::option::Option<::std::string::String>,

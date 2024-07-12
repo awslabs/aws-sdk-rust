@@ -21,8 +21,8 @@ impl AwsEcrRepositoryImageScanningConfigurationDetails {
 }
 
 /// A builder for [`AwsEcrRepositoryImageScanningConfigurationDetails`](crate::types::AwsEcrRepositoryImageScanningConfigurationDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEcrRepositoryImageScanningConfigurationDetailsBuilder {
     pub(crate) scan_on_push: ::std::option::Option<bool>,
 }

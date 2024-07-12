@@ -29,8 +29,8 @@ impl CreateBackendAuthPasswordPolicyConfig {
 }
 
 /// A builder for [`CreateBackendAuthPasswordPolicyConfig`](crate::types::CreateBackendAuthPasswordPolicyConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateBackendAuthPasswordPolicyConfigBuilder {
     pub(crate) additional_constraints: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalConstraintsElement>>,
     pub(crate) minimum_length: ::std::option::Option<f64>,

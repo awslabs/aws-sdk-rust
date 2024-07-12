@@ -34,8 +34,8 @@ impl AuditEventField {
 }
 
 /// A builder for [`AuditEventField`](crate::types::AuditEventField).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AuditEventFieldBuilder {
     pub(crate) event_field_id: ::std::option::Option<::std::string::String>,
     pub(crate) old_value: ::std::option::Option<crate::types::AuditEventFieldValueUnion>,

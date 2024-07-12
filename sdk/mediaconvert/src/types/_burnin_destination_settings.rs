@@ -165,8 +165,8 @@ impl BurninDestinationSettings {
 }
 
 /// A builder for [`BurninDestinationSettings`](crate::types::BurninDestinationSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BurninDestinationSettingsBuilder {
     pub(crate) alignment: ::std::option::Option<crate::types::BurninSubtitleAlignment>,
     pub(crate) apply_font_color: ::std::option::Option<crate::types::BurninSubtitleApplyFontColor>,

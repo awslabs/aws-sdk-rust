@@ -85,8 +85,8 @@ impl TopicFilter {
 }
 
 /// A builder for [`TopicFilter`](crate::types::TopicFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TopicFilterBuilder {
     pub(crate) filter_description: ::std::option::Option<::std::string::String>,
     pub(crate) filter_class: ::std::option::Option<crate::types::FilterClass>,

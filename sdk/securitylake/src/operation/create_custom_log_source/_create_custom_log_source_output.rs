@@ -26,8 +26,8 @@ impl CreateCustomLogSourceOutput {
 }
 
 /// A builder for [`CreateCustomLogSourceOutput`](crate::operation::create_custom_log_source::CreateCustomLogSourceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCustomLogSourceOutputBuilder {
     pub(crate) source: ::std::option::Option<crate::types::CustomLogSourceResource>,
     _request_id: Option<String>,

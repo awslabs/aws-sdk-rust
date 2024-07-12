@@ -38,8 +38,8 @@ impl KinesisVideoStreamSourceRuntimeConfiguration {
 }
 
 /// A builder for [`KinesisVideoStreamSourceRuntimeConfiguration`](crate::types::KinesisVideoStreamSourceRuntimeConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KinesisVideoStreamSourceRuntimeConfigurationBuilder {
     pub(crate) streams: ::std::option::Option<::std::vec::Vec<crate::types::StreamConfiguration>>,
     pub(crate) media_encoding: ::std::option::Option<crate::types::MediaEncoding>,

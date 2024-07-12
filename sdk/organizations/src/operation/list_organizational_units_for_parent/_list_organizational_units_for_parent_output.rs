@@ -34,8 +34,8 @@ impl ListOrganizationalUnitsForParentOutput {
 }
 
 /// A builder for [`ListOrganizationalUnitsForParentOutput`](crate::operation::list_organizational_units_for_parent::ListOrganizationalUnitsForParentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListOrganizationalUnitsForParentOutputBuilder {
     pub(crate) organizational_units: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationalUnit>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -18,8 +18,8 @@ impl DeleteDeviceFleetOutput {
 }
 
 /// A builder for [`DeleteDeviceFleetOutput`](crate::operation::delete_device_fleet::DeleteDeviceFleetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDeviceFleetOutputBuilder {
     _request_id: Option<String>,
 }

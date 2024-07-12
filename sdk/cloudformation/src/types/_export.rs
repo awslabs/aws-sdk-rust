@@ -33,8 +33,8 @@ impl Export {
 }
 
 /// A builder for [`Export`](crate::types::Export).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExportBuilder {
     pub(crate) exporting_stack_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

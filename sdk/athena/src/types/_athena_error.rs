@@ -45,8 +45,8 @@ impl AthenaError {
 }
 
 /// A builder for [`AthenaError`](crate::types::AthenaError).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AthenaErrorBuilder {
     pub(crate) error_category: ::std::option::Option<i32>,
     pub(crate) error_type: ::std::option::Option<i32>,

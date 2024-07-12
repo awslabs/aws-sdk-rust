@@ -46,8 +46,8 @@ impl DetachPolicyInput {
 }
 
 /// A builder for [`DetachPolicyInput`](crate::operation::detach_policy::DetachPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetachPolicyInputBuilder {
     pub(crate) policy_id: ::std::option::Option<::std::string::String>,
     pub(crate) target_id: ::std::option::Option<::std::string::String>,

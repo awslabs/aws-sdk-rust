@@ -34,8 +34,8 @@ impl ListProfileObjectTypeTemplatesOutput {
 }
 
 /// A builder for [`ListProfileObjectTypeTemplatesOutput`](crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListProfileObjectTypeTemplatesOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ListProfileObjectTypeTemplateItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

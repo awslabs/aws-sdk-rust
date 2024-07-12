@@ -38,8 +38,8 @@ impl GetDataLakeExceptionSubscriptionOutput {
 }
 
 /// A builder for [`GetDataLakeExceptionSubscriptionOutput`](crate::operation::get_data_lake_exception_subscription::GetDataLakeExceptionSubscriptionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDataLakeExceptionSubscriptionOutputBuilder {
     pub(crate) subscription_protocol: ::std::option::Option<::std::string::String>,
     pub(crate) notification_endpoint: ::std::option::Option<::std::string::String>,

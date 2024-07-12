@@ -20,8 +20,8 @@ impl CancelWorldGenerationJobInput {
 }
 
 /// A builder for [`CancelWorldGenerationJobInput`](crate::operation::cancel_world_generation_job::CancelWorldGenerationJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelWorldGenerationJobInputBuilder {
     pub(crate) job: ::std::option::Option<::std::string::String>,
 }

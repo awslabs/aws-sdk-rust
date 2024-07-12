@@ -21,8 +21,8 @@ impl StartTimecode {
 }
 
 /// A builder for [`StartTimecode`](crate::types::StartTimecode).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartTimecodeBuilder {
     pub(crate) timecode: ::std::option::Option<::std::string::String>,
 }

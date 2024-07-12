@@ -21,8 +21,8 @@ impl ArcOptions {
 }
 
 /// A builder for [`ArcOptions`](crate::types::ArcOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ArcOptionsBuilder {
     pub(crate) arc_thickness: ::std::option::Option<crate::types::ArcThickness>,
 }

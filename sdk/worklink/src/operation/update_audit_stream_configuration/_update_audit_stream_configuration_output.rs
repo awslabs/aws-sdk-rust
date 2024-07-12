@@ -18,8 +18,8 @@ impl UpdateAuditStreamConfigurationOutput {
 }
 
 /// A builder for [`UpdateAuditStreamConfigurationOutput`](crate::operation::update_audit_stream_configuration::UpdateAuditStreamConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAuditStreamConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

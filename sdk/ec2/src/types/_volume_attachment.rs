@@ -69,8 +69,8 @@ impl VolumeAttachment {
 }
 
 /// A builder for [`VolumeAttachment`](crate::types::VolumeAttachment).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VolumeAttachmentBuilder {
     pub(crate) attach_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) device: ::std::option::Option<::std::string::String>,

@@ -124,8 +124,8 @@ impl ListObjectVersionsOutput {
 }
 
 /// A builder for [`ListObjectVersionsOutput`](crate::operation::list_object_versions::ListObjectVersionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListObjectVersionsOutputBuilder {
     pub(crate) is_truncated: ::std::option::Option<bool>,
     pub(crate) key_marker: ::std::option::Option<::std::string::String>,

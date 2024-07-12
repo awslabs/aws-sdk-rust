@@ -51,8 +51,8 @@ impl LogDeliveryConfiguration {
 }
 
 /// A builder for [`LogDeliveryConfiguration`](crate::types::LogDeliveryConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LogDeliveryConfigurationBuilder {
     pub(crate) log_type: ::std::option::Option<crate::types::LogType>,
     pub(crate) destination_type: ::std::option::Option<crate::types::DestinationType>,

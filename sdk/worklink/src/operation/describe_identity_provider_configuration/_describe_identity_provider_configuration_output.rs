@@ -38,8 +38,8 @@ impl DescribeIdentityProviderConfigurationOutput {
 }
 
 /// A builder for [`DescribeIdentityProviderConfigurationOutput`](crate::operation::describe_identity_provider_configuration::DescribeIdentityProviderConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeIdentityProviderConfigurationOutputBuilder {
     pub(crate) identity_provider_type: ::std::option::Option<crate::types::IdentityProviderType>,
     pub(crate) service_provider_saml_metadata: ::std::option::Option<::std::string::String>,

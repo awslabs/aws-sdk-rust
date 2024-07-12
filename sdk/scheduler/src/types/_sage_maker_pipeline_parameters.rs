@@ -23,8 +23,8 @@ impl SageMakerPipelineParameters {
 }
 
 /// A builder for [`SageMakerPipelineParameters`](crate::types::SageMakerPipelineParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SageMakerPipelineParametersBuilder {
     pub(crate) pipeline_parameter_list: ::std::option::Option<::std::vec::Vec<crate::types::SageMakerPipelineParameter>>,
 }

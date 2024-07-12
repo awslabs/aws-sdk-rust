@@ -41,8 +41,8 @@ impl FailureInfo {
 }
 
 /// A builder for [`FailureInfo`](crate::types::FailureInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FailureInfoBuilder {
     pub(crate) status_code: ::std::option::Option<i32>,
     pub(crate) error_code: ::std::option::Option<crate::types::ErrorCode>,

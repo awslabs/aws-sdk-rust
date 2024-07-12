@@ -26,8 +26,8 @@ impl DescribeConnectorInput {
 }
 
 /// A builder for [`DescribeConnectorInput`](crate::operation::describe_connector::DescribeConnectorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeConnectorInputBuilder {
     pub(crate) connector_type: ::std::option::Option<crate::types::ConnectorType>,
     pub(crate) connector_label: ::std::option::Option<::std::string::String>,

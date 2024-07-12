@@ -37,8 +37,8 @@ impl BatchStopOutput {
 }
 
 /// A builder for [`BatchStopOutput`](crate::operation::batch_stop::BatchStopOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchStopOutputBuilder {
     pub(crate) failed: ::std::option::Option<::std::vec::Vec<crate::types::BatchFailedResultModel>>,
     pub(crate) successful: ::std::option::Option<::std::vec::Vec<crate::types::BatchSuccessfulResultModel>>,

@@ -33,8 +33,8 @@ impl ListSnapshotCopyConfigurationsOutput {
 }
 
 /// A builder for [`ListSnapshotCopyConfigurationsOutput`](crate::operation::list_snapshot_copy_configurations::ListSnapshotCopyConfigurationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSnapshotCopyConfigurationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) snapshot_copy_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotCopyConfiguration>>,

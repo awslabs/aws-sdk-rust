@@ -23,8 +23,8 @@ impl ContentRetrievalRule {
 }
 
 /// A builder for [`ContentRetrievalRule`](crate::types::ContentRetrievalRule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ContentRetrievalRuleBuilder {
     pub(crate) eligible_data_sources: ::std::option::Option<::std::vec::Vec<crate::types::EligibleDataSource>>,
 }

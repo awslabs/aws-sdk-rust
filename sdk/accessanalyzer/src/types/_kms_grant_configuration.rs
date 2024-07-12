@@ -48,8 +48,8 @@ impl KmsGrantConfiguration {
 }
 
 /// A builder for [`KmsGrantConfiguration`](crate::types::KmsGrantConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KmsGrantConfigurationBuilder {
     pub(crate) operations: ::std::option::Option<::std::vec::Vec<crate::types::KmsGrantOperation>>,
     pub(crate) grantee_principal: ::std::option::Option<::std::string::String>,

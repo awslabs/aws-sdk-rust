@@ -32,8 +32,8 @@ impl DescribeDocumentInput {
 }
 
 /// A builder for [`DescribeDocumentInput`](crate::operation::describe_document::DescribeDocumentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDocumentInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) document_version: ::std::option::Option<::std::string::String>,

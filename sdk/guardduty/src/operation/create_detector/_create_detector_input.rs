@@ -56,8 +56,8 @@ impl CreateDetectorInput {
 }
 
 /// A builder for [`CreateDetectorInput`](crate::operation::create_detector::CreateDetectorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDetectorInputBuilder {
     pub(crate) enable: ::std::option::Option<bool>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

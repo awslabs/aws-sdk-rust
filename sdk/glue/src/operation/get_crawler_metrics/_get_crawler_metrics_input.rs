@@ -34,8 +34,8 @@ impl GetCrawlerMetricsInput {
 }
 
 /// A builder for [`GetCrawlerMetricsInput`](crate::operation::get_crawler_metrics::GetCrawlerMetricsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCrawlerMetricsInputBuilder {
     pub(crate) crawler_name_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) max_results: ::std::option::Option<i32>,

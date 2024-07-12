@@ -18,8 +18,8 @@ impl UpdateImagePermissionsOutput {
 }
 
 /// A builder for [`UpdateImagePermissionsOutput`](crate::operation::update_image_permissions::UpdateImagePermissionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateImagePermissionsOutputBuilder {
     _request_id: Option<String>,
 }

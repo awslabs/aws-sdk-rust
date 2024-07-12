@@ -33,8 +33,8 @@ impl StatelessRuleGroup {
 }
 
 /// A builder for [`StatelessRuleGroup`](crate::types::StatelessRuleGroup).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StatelessRuleGroupBuilder {
     pub(crate) rule_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,

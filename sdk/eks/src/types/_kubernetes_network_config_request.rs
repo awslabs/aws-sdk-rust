@@ -49,8 +49,8 @@ impl KubernetesNetworkConfigRequest {
 }
 
 /// A builder for [`KubernetesNetworkConfigRequest`](crate::types::KubernetesNetworkConfigRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KubernetesNetworkConfigRequestBuilder {
     pub(crate) service_ipv4_cidr: ::std::option::Option<::std::string::String>,
     pub(crate) ip_family: ::std::option::Option<crate::types::IpFamily>,

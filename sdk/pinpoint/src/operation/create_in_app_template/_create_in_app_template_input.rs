@@ -26,8 +26,8 @@ impl CreateInAppTemplateInput {
 }
 
 /// A builder for [`CreateInAppTemplateInput`](crate::operation::create_in_app_template::CreateInAppTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateInAppTemplateInputBuilder {
     pub(crate) in_app_template_request: ::std::option::Option<crate::types::InAppTemplateRequest>,
     pub(crate) template_name: ::std::option::Option<::std::string::String>,

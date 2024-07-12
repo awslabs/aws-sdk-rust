@@ -68,8 +68,8 @@ impl CreateGroupVersionInput {
 }
 
 /// A builder for [`CreateGroupVersionInput`](crate::operation::create_group_version::CreateGroupVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateGroupVersionInputBuilder {
     pub(crate) amzn_client_token: ::std::option::Option<::std::string::String>,
     pub(crate) connector_definition_version_arn: ::std::option::Option<::std::string::String>,

@@ -41,8 +41,8 @@ impl DataRepositoryTaskFilter {
 }
 
 /// A builder for [`DataRepositoryTaskFilter`](crate::types::DataRepositoryTaskFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataRepositoryTaskFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::DataRepositoryTaskFilterName>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

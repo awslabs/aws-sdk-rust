@@ -26,8 +26,8 @@ impl UpdateRuntimeConfigurationInput {
 }
 
 /// A builder for [`UpdateRuntimeConfigurationInput`](crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRuntimeConfigurationInputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) runtime_configuration: ::std::option::Option<crate::types::RuntimeConfiguration>,

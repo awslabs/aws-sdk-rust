@@ -63,8 +63,8 @@ impl RdsSourceConfig {
 }
 
 /// A builder for [`RdsSourceConfig`](crate::types::RdsSourceConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RdsSourceConfigBuilder {
     pub(crate) db_instance_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) database_host: ::std::option::Option<::std::string::String>,

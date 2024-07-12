@@ -29,8 +29,8 @@ impl SpaceJupyterLabAppSettings {
 }
 
 /// A builder for [`SpaceJupyterLabAppSettings`](crate::types::SpaceJupyterLabAppSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SpaceJupyterLabAppSettingsBuilder {
     pub(crate) default_resource_spec: ::std::option::Option<crate::types::ResourceSpec>,
     pub(crate) code_repositories: ::std::option::Option<::std::vec::Vec<crate::types::CodeRepository>>,

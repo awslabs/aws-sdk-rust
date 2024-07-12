@@ -39,8 +39,8 @@ impl DestinationFlowConfig {
 }
 
 /// A builder for [`DestinationFlowConfig`](crate::types::DestinationFlowConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DestinationFlowConfigBuilder {
     pub(crate) connector_type: ::std::option::Option<crate::types::ConnectorType>,
     pub(crate) api_version: ::std::option::Option<::std::string::String>,

@@ -40,8 +40,8 @@ impl SelectParameters {
 }
 
 /// A builder for [`SelectParameters`](crate::types::SelectParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SelectParametersBuilder {
     pub(crate) input_serialization: ::std::option::Option<crate::types::InputSerialization>,
     pub(crate) expression_type: ::std::option::Option<crate::types::ExpressionType>,

@@ -20,8 +20,8 @@ impl GetResourceProfileInput {
 }
 
 /// A builder for [`GetResourceProfileInput`](crate::operation::get_resource_profile::GetResourceProfileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetResourceProfileInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
 }

@@ -26,8 +26,8 @@ impl CreateRecordingConfigurationOutput {
 }
 
 /// A builder for [`CreateRecordingConfigurationOutput`](crate::operation::create_recording_configuration::CreateRecordingConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateRecordingConfigurationOutputBuilder {
     pub(crate) recording_configuration: ::std::option::Option<crate::types::RecordingConfiguration>,
     _request_id: Option<String>,

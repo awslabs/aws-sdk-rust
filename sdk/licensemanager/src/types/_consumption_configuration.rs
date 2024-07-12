@@ -33,8 +33,8 @@ impl ConsumptionConfiguration {
 }
 
 /// A builder for [`ConsumptionConfiguration`](crate::types::ConsumptionConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConsumptionConfigurationBuilder {
     pub(crate) renew_type: ::std::option::Option<crate::types::RenewType>,
     pub(crate) provisional_configuration: ::std::option::Option<crate::types::ProvisionalConfiguration>,

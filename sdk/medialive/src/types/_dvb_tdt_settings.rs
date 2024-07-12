@@ -21,8 +21,8 @@ impl DvbTdtSettings {
 }
 
 /// A builder for [`DvbTdtSettings`](crate::types::DvbTdtSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DvbTdtSettingsBuilder {
     pub(crate) rep_interval: ::std::option::Option<i32>,
 }

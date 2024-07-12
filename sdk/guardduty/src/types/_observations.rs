@@ -23,8 +23,8 @@ impl Observations {
 }
 
 /// A builder for [`Observations`](crate::types::Observations).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ObservationsBuilder {
     pub(crate) text: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

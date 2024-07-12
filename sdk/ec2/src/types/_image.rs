@@ -223,8 +223,8 @@ impl Image {
 }
 
 /// A builder for [`Image`](crate::types::Image).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImageBuilder {
     pub(crate) architecture: ::std::option::Option<crate::types::ArchitectureValues>,
     pub(crate) creation_date: ::std::option::Option<::std::string::String>,

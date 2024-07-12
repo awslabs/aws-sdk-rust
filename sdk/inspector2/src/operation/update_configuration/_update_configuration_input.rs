@@ -26,8 +26,8 @@ impl UpdateConfigurationInput {
 }
 
 /// A builder for [`UpdateConfigurationInput`](crate::operation::update_configuration::UpdateConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateConfigurationInputBuilder {
     pub(crate) ecr_configuration: ::std::option::Option<crate::types::EcrConfiguration>,
     pub(crate) ec2_configuration: ::std::option::Option<crate::types::Ec2Configuration>,

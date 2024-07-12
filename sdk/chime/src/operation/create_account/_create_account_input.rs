@@ -20,8 +20,8 @@ impl CreateAccountInput {
 }
 
 /// A builder for [`CreateAccountInput`](crate::operation::create_account::CreateAccountInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAccountInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

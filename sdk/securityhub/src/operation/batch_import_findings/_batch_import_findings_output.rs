@@ -40,8 +40,8 @@ impl BatchImportFindingsOutput {
 }
 
 /// A builder for [`BatchImportFindingsOutput`](crate::operation::batch_import_findings::BatchImportFindingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchImportFindingsOutputBuilder {
     pub(crate) failed_count: ::std::option::Option<i32>,
     pub(crate) success_count: ::std::option::Option<i32>,

@@ -40,8 +40,8 @@ impl CreateServiceProfileInput {
 }
 
 /// A builder for [`CreateServiceProfileInput`](crate::operation::create_service_profile::CreateServiceProfileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateServiceProfileInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) lo_ra_wan: ::std::option::Option<crate::types::LoRaWanServiceProfile>,

@@ -47,8 +47,8 @@ impl PerformanceInsightsMetricDimensionGroup {
 }
 
 /// A builder for [`PerformanceInsightsMetricDimensionGroup`](crate::types::PerformanceInsightsMetricDimensionGroup).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PerformanceInsightsMetricDimensionGroupBuilder {
     pub(crate) dimensions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) group: ::std::option::Option<::std::string::String>,

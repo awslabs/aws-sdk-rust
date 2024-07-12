@@ -32,8 +32,8 @@ impl UpdateCostCategoryDefinitionOutput {
 }
 
 /// A builder for [`UpdateCostCategoryDefinitionOutput`](crate::operation::update_cost_category_definition::UpdateCostCategoryDefinitionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateCostCategoryDefinitionOutputBuilder {
     pub(crate) cost_category_arn: ::std::option::Option<::std::string::String>,
     pub(crate) effective_start: ::std::option::Option<::std::string::String>,

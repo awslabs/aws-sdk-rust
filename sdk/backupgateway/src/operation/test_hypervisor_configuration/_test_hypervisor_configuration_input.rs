@@ -48,8 +48,8 @@ impl TestHypervisorConfigurationInput {
 }
 
 /// A builder for [`TestHypervisorConfigurationInput`](crate::operation::test_hypervisor_configuration::TestHypervisorConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct TestHypervisorConfigurationInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) host: ::std::option::Option<::std::string::String>,

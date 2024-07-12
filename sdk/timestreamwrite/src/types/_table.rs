@@ -81,8 +81,8 @@ impl Table {
 }
 
 /// A builder for [`Table`](crate::types::Table).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TableBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) table_name: ::std::option::Option<::std::string::String>,

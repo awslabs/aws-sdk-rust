@@ -132,8 +132,8 @@ impl DescribeVolumesInput {
 }
 
 /// A builder for [`DescribeVolumesInput`](crate::operation::describe_volumes::DescribeVolumesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeVolumesInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) volume_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

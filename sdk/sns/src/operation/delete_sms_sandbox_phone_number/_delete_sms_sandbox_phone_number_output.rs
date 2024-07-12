@@ -18,8 +18,8 @@ impl DeleteSmsSandboxPhoneNumberOutput {
 }
 
 /// A builder for [`DeleteSmsSandboxPhoneNumberOutput`](crate::operation::delete_sms_sandbox_phone_number::DeleteSmsSandboxPhoneNumberOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSmsSandboxPhoneNumberOutputBuilder {
     _request_id: Option<String>,
 }

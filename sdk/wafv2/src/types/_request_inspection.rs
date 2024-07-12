@@ -71,8 +71,8 @@ impl RequestInspection {
 }
 
 /// A builder for [`RequestInspection`](crate::types::RequestInspection).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RequestInspectionBuilder {
     pub(crate) payload_type: ::std::option::Option<crate::types::PayloadType>,
     pub(crate) username_field: ::std::option::Option<crate::types::UsernameField>,

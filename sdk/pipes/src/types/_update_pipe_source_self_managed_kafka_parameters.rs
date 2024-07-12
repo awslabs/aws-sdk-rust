@@ -46,8 +46,8 @@ impl UpdatePipeSourceSelfManagedKafkaParameters {
 }
 
 /// A builder for [`UpdatePipeSourceSelfManagedKafkaParameters`](crate::types::UpdatePipeSourceSelfManagedKafkaParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePipeSourceSelfManagedKafkaParametersBuilder {
     pub(crate) batch_size: ::std::option::Option<i32>,
     pub(crate) maximum_batching_window_in_seconds: ::std::option::Option<i32>,

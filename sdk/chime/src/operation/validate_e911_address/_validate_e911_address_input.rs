@@ -69,8 +69,8 @@ impl ValidateE911AddressInput {
 }
 
 /// A builder for [`ValidateE911AddressInput`](crate::operation::validate_e911_address::ValidateE911AddressInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ValidateE911AddressInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) street_number: ::std::option::Option<::std::string::String>,

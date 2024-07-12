@@ -18,8 +18,8 @@ impl DeleteCapacityReservationOutput {
 }
 
 /// A builder for [`DeleteCapacityReservationOutput`](crate::operation::delete_capacity_reservation::DeleteCapacityReservationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCapacityReservationOutputBuilder {
     _request_id: Option<String>,
 }

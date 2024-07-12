@@ -93,8 +93,8 @@ impl CaptionDestinationSettings {
 }
 
 /// A builder for [`CaptionDestinationSettings`](crate::types::CaptionDestinationSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CaptionDestinationSettingsBuilder {
     pub(crate) arib_destination_settings: ::std::option::Option<crate::types::AribDestinationSettings>,
     pub(crate) burn_in_destination_settings: ::std::option::Option<crate::types::BurnInDestinationSettings>,

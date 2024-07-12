@@ -133,8 +133,8 @@ impl RecoveryInstance {
 }
 
 /// A builder for [`RecoveryInstance`](crate::types::RecoveryInstance).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct RecoveryInstanceBuilder {
     pub(crate) ec2_instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) ec2_instance_state: ::std::option::Option<crate::types::Ec2InstanceState>,

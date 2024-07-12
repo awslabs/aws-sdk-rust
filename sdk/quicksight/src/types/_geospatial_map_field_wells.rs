@@ -22,8 +22,8 @@ impl GeospatialMapFieldWells {
 }
 
 /// A builder for [`GeospatialMapFieldWells`](crate::types::GeospatialMapFieldWells).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GeospatialMapFieldWellsBuilder {
     pub(crate) geospatial_map_aggregated_field_wells: ::std::option::Option<crate::types::GeospatialMapAggregatedFieldWells>,
 }

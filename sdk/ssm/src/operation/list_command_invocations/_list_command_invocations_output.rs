@@ -34,8 +34,8 @@ impl ListCommandInvocationsOutput {
 }
 
 /// A builder for [`ListCommandInvocationsOutput`](crate::operation::list_command_invocations::ListCommandInvocationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCommandInvocationsOutputBuilder {
     pub(crate) command_invocations: ::std::option::Option<::std::vec::Vec<crate::types::CommandInvocation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

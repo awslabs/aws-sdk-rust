@@ -30,8 +30,8 @@ impl MetricPolicy {
 }
 
 /// A builder for [`MetricPolicy`](crate::types::MetricPolicy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MetricPolicyBuilder {
     pub(crate) container_level_metrics: ::std::option::Option<crate::types::ContainerLevelMetrics>,
     pub(crate) metric_policy_rules: ::std::option::Option<::std::vec::Vec<crate::types::MetricPolicyRule>>,

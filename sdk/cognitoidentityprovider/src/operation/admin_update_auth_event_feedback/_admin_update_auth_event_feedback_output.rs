@@ -18,8 +18,8 @@ impl AdminUpdateAuthEventFeedbackOutput {
 }
 
 /// A builder for [`AdminUpdateAuthEventFeedbackOutput`](crate::operation::admin_update_auth_event_feedback::AdminUpdateAuthEventFeedbackOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AdminUpdateAuthEventFeedbackOutputBuilder {
     _request_id: Option<String>,
 }

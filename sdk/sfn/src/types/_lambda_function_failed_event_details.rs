@@ -35,8 +35,8 @@ impl LambdaFunctionFailedEventDetails {
 }
 
 /// A builder for [`LambdaFunctionFailedEventDetails`](crate::types::LambdaFunctionFailedEventDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct LambdaFunctionFailedEventDetailsBuilder {
     pub(crate) error: ::std::option::Option<::std::string::String>,
     pub(crate) cause: ::std::option::Option<::std::string::String>,

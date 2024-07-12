@@ -20,8 +20,8 @@ impl GetRetentionSettingsInput {
 }
 
 /// A builder for [`GetRetentionSettingsInput`](crate::operation::get_retention_settings::GetRetentionSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRetentionSettingsInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }

@@ -27,8 +27,8 @@ impl CreateDataflowEndpointGroupOutput {
 }
 
 /// A builder for [`CreateDataflowEndpointGroupOutput`](crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDataflowEndpointGroupOutputBuilder {
     pub(crate) dataflow_endpoint_group_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

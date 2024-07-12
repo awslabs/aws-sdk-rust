@@ -21,8 +21,8 @@ impl VisualAxisSortOption {
 }
 
 /// A builder for [`VisualAxisSortOption`](crate::types::VisualAxisSortOption).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VisualAxisSortOptionBuilder {
     pub(crate) availability_status: ::std::option::Option<crate::types::DashboardBehavior>,
 }

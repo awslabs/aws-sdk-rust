@@ -18,8 +18,8 @@ impl UpdateCanaryOutput {
 }
 
 /// A builder for [`UpdateCanaryOutput`](crate::operation::update_canary::UpdateCanaryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateCanaryOutputBuilder {
     _request_id: Option<String>,
 }

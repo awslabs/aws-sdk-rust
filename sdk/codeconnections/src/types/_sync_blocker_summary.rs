@@ -36,8 +36,8 @@ impl SyncBlockerSummary {
 }
 
 /// A builder for [`SyncBlockerSummary`](crate::types::SyncBlockerSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SyncBlockerSummaryBuilder {
     pub(crate) resource_name: ::std::option::Option<::std::string::String>,
     pub(crate) parent_resource_name: ::std::option::Option<::std::string::String>,

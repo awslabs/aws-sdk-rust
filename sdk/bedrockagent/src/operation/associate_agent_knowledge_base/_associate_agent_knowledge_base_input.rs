@@ -44,8 +44,8 @@ impl AssociateAgentKnowledgeBaseInput {
 }
 
 /// A builder for [`AssociateAgentKnowledgeBaseInput`](crate::operation::associate_agent_knowledge_base::AssociateAgentKnowledgeBaseInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateAgentKnowledgeBaseInputBuilder {
     pub(crate) agent_id: ::std::option::Option<::std::string::String>,
     pub(crate) agent_version: ::std::option::Option<::std::string::String>,

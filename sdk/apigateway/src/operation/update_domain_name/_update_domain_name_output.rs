@@ -123,8 +123,8 @@ impl UpdateDomainNameOutput {
 }
 
 /// A builder for [`UpdateDomainNameOutput`](crate::operation::update_domain_name::UpdateDomainNameOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDomainNameOutputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_name: ::std::option::Option<::std::string::String>,

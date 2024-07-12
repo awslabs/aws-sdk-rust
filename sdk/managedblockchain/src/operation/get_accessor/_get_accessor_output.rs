@@ -26,8 +26,8 @@ impl GetAccessorOutput {
 }
 
 /// A builder for [`GetAccessorOutput`](crate::operation::get_accessor::GetAccessorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAccessorOutputBuilder {
     pub(crate) accessor: ::std::option::Option<crate::types::Accessor>,
     _request_id: Option<String>,

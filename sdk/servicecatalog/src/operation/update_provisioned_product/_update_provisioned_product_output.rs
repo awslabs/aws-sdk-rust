@@ -26,8 +26,8 @@ impl UpdateProvisionedProductOutput {
 }
 
 /// A builder for [`UpdateProvisionedProductOutput`](crate::operation::update_provisioned_product::UpdateProvisionedProductOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateProvisionedProductOutputBuilder {
     pub(crate) record_detail: ::std::option::Option<crate::types::RecordDetail>,
     _request_id: Option<String>,

@@ -33,8 +33,8 @@ impl SoftwareInformation {
 }
 
 /// A builder for [`SoftwareInformation`](crate::types::SoftwareInformation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SoftwareInformationBuilder {
     pub(crate) installed_version: ::std::option::Option<::std::string::String>,
     pub(crate) installing_version: ::std::option::Option<::std::string::String>,

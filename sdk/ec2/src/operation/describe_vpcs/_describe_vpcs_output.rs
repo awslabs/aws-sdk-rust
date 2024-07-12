@@ -34,8 +34,8 @@ impl DescribeVpcsOutput {
 }
 
 /// A builder for [`DescribeVpcsOutput`](crate::operation::describe_vpcs::DescribeVpcsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeVpcsOutputBuilder {
     pub(crate) vpcs: ::std::option::Option<::std::vec::Vec<crate::types::Vpc>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

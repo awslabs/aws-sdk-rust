@@ -27,8 +27,8 @@ impl RouteTableAssociationState {
 }
 
 /// A builder for [`RouteTableAssociationState`](crate::types::RouteTableAssociationState).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RouteTableAssociationStateBuilder {
     pub(crate) state: ::std::option::Option<crate::types::RouteTableAssociationStateCode>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,

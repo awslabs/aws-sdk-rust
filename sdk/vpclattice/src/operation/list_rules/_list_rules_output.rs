@@ -33,8 +33,8 @@ impl ListRulesOutput {
 }
 
 /// A builder for [`ListRulesOutput`](crate::operation::list_rules::ListRulesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRulesOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::RuleSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -32,8 +32,8 @@ impl CreateFpgaImageOutput {
 }
 
 /// A builder for [`CreateFpgaImageOutput`](crate::operation::create_fpga_image::CreateFpgaImageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateFpgaImageOutputBuilder {
     pub(crate) fpga_image_id: ::std::option::Option<::std::string::String>,
     pub(crate) fpga_image_global_id: ::std::option::Option<::std::string::String>,

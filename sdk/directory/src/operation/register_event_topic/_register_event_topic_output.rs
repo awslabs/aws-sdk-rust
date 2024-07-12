@@ -19,8 +19,8 @@ impl RegisterEventTopicOutput {
 }
 
 /// A builder for [`RegisterEventTopicOutput`](crate::operation::register_event_topic::RegisterEventTopicOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterEventTopicOutputBuilder {
     _request_id: Option<String>,
 }

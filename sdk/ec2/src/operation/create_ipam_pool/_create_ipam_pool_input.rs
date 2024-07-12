@@ -124,8 +124,8 @@ impl CreateIpamPoolInput {
 }
 
 /// A builder for [`CreateIpamPoolInput`](crate::operation::create_ipam_pool::CreateIpamPoolInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateIpamPoolInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) ipam_scope_id: ::std::option::Option<::std::string::String>,

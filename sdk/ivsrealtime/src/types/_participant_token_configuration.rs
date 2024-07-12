@@ -41,8 +41,8 @@ impl ParticipantTokenConfiguration {
 }
 
 /// A builder for [`ParticipantTokenConfiguration`](crate::types::ParticipantTokenConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ParticipantTokenConfigurationBuilder {
     pub(crate) duration: ::std::option::Option<i32>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,

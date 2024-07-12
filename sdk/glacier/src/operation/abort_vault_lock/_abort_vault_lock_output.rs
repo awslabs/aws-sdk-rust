@@ -18,8 +18,8 @@ impl AbortVaultLockOutput {
 }
 
 /// A builder for [`AbortVaultLockOutput`](crate::operation::abort_vault_lock::AbortVaultLockOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AbortVaultLockOutputBuilder {
     _request_id: Option<String>,
 }

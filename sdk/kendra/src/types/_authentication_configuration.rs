@@ -25,8 +25,8 @@ impl AuthenticationConfiguration {
 }
 
 /// A builder for [`AuthenticationConfiguration`](crate::types::AuthenticationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AuthenticationConfigurationBuilder {
     pub(crate) basic_authentication: ::std::option::Option<::std::vec::Vec<crate::types::BasicAuthenticationConfiguration>>,
 }

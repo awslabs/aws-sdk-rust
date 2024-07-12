@@ -28,8 +28,8 @@ impl DetachTrafficSourcesInput {
 }
 
 /// A builder for [`DetachTrafficSourcesInput`](crate::operation::detach_traffic_sources::DetachTrafficSourcesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetachTrafficSourcesInputBuilder {
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) traffic_sources: ::std::option::Option<::std::vec::Vec<crate::types::TrafficSourceIdentifier>>,

@@ -32,8 +32,8 @@ impl CreateNatGatewayOutput {
 }
 
 /// A builder for [`CreateNatGatewayOutput`](crate::operation::create_nat_gateway::CreateNatGatewayOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateNatGatewayOutputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) nat_gateway: ::std::option::Option<crate::types::NatGateway>,

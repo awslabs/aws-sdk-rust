@@ -32,8 +32,8 @@ impl DescribeVirtualGatewayInput {
 }
 
 /// A builder for [`DescribeVirtualGatewayInput`](crate::operation::describe_virtual_gateway::DescribeVirtualGatewayInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeVirtualGatewayInputBuilder {
     pub(crate) virtual_gateway_name: ::std::option::Option<::std::string::String>,
     pub(crate) mesh_name: ::std::option::Option<::std::string::String>,

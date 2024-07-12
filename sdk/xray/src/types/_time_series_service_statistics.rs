@@ -47,8 +47,8 @@ impl TimeSeriesServiceStatistics {
 }
 
 /// A builder for [`TimeSeriesServiceStatistics`](crate::types::TimeSeriesServiceStatistics).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TimeSeriesServiceStatisticsBuilder {
     pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) edge_summary_statistics: ::std::option::Option<crate::types::EdgeStatistics>,

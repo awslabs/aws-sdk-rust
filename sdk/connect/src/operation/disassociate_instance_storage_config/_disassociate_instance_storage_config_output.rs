@@ -18,8 +18,8 @@ impl DisassociateInstanceStorageConfigOutput {
 }
 
 /// A builder for [`DisassociateInstanceStorageConfigOutput`](crate::operation::disassociate_instance_storage_config::DisassociateInstanceStorageConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateInstanceStorageConfigOutputBuilder {
     _request_id: Option<String>,
 }

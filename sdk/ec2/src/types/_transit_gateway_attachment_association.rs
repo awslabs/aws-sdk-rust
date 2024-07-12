@@ -27,8 +27,8 @@ impl TransitGatewayAttachmentAssociation {
 }
 
 /// A builder for [`TransitGatewayAttachmentAssociation`](crate::types::TransitGatewayAttachmentAssociation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TransitGatewayAttachmentAssociationBuilder {
     pub(crate) transit_gateway_route_table_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::TransitGatewayAssociationState>,

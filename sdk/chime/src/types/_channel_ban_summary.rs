@@ -21,8 +21,8 @@ impl ChannelBanSummary {
 }
 
 /// A builder for [`ChannelBanSummary`](crate::types::ChannelBanSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ChannelBanSummaryBuilder {
     pub(crate) member: ::std::option::Option<crate::types::Identity>,
 }

@@ -49,8 +49,8 @@ impl WorkerConfigurationRevisionDescription {
 }
 
 /// A builder for [`WorkerConfigurationRevisionDescription`](crate::types::WorkerConfigurationRevisionDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct WorkerConfigurationRevisionDescriptionBuilder {
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

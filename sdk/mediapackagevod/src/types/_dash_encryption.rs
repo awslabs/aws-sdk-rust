@@ -21,8 +21,8 @@ impl DashEncryption {
 }
 
 /// A builder for [`DashEncryption`](crate::types::DashEncryption).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DashEncryptionBuilder {
     pub(crate) speke_key_provider: ::std::option::Option<crate::types::SpekeKeyProvider>,
 }

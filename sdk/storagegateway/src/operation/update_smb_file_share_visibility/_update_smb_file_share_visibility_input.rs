@@ -26,8 +26,8 @@ impl UpdateSmbFileShareVisibilityInput {
 }
 
 /// A builder for [`UpdateSmbFileShareVisibilityInput`](crate::operation::update_smb_file_share_visibility::UpdateSmbFileShareVisibilityInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSmbFileShareVisibilityInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) file_shares_visible: ::std::option::Option<bool>,

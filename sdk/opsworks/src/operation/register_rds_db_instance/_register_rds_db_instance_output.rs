@@ -18,8 +18,8 @@ impl RegisterRdsDbInstanceOutput {
 }
 
 /// A builder for [`RegisterRdsDbInstanceOutput`](crate::operation::register_rds_db_instance::RegisterRdsDbInstanceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterRdsDbInstanceOutputBuilder {
     _request_id: Option<String>,
 }

@@ -54,8 +54,8 @@ impl OriginAccessControlList {
 }
 
 /// A builder for [`OriginAccessControlList`](crate::types::OriginAccessControlList).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OriginAccessControlListBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,

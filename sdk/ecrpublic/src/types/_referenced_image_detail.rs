@@ -51,8 +51,8 @@ impl ReferencedImageDetail {
 }
 
 /// A builder for [`ReferencedImageDetail`](crate::types::ReferencedImageDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReferencedImageDetailBuilder {
     pub(crate) image_digest: ::std::option::Option<::std::string::String>,
     pub(crate) image_size_in_bytes: ::std::option::Option<i64>,

@@ -20,8 +20,8 @@ impl GetOutpostInput {
 }
 
 /// A builder for [`GetOutpostInput`](crate::operation::get_outpost::GetOutpostInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetOutpostInputBuilder {
     pub(crate) outpost_id: ::std::option::Option<::std::string::String>,
 }

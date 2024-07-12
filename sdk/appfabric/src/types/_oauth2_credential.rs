@@ -37,8 +37,8 @@ impl Oauth2Credential {
 }
 
 /// A builder for [`Oauth2Credential`](crate::types::Oauth2Credential).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct Oauth2CredentialBuilder {
     pub(crate) client_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_secret: ::std::option::Option<::std::string::String>,

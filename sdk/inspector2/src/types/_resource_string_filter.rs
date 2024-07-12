@@ -28,8 +28,8 @@ impl ResourceStringFilter {
 }
 
 /// A builder for [`ResourceStringFilter`](crate::types::ResourceStringFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResourceStringFilterBuilder {
     pub(crate) comparison: ::std::option::Option<crate::types::ResourceStringComparison>,
     pub(crate) value: ::std::option::Option<::std::string::String>,

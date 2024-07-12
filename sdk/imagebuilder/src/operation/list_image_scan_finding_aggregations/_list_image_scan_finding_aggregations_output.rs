@@ -70,8 +70,8 @@ impl ListImageScanFindingAggregationsOutput {
 }
 
 /// A builder for [`ListImageScanFindingAggregationsOutput`](crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListImageScanFindingAggregationsOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) aggregation_type: ::std::option::Option<::std::string::String>,

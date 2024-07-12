@@ -38,8 +38,8 @@ impl ListAccessEntriesOutput {
 }
 
 /// A builder for [`ListAccessEntriesOutput`](crate::operation::list_access_entries::ListAccessEntriesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAccessEntriesOutputBuilder {
     pub(crate) access_entries: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

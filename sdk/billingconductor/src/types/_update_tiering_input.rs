@@ -21,8 +21,8 @@ impl UpdateTieringInput {
 }
 
 /// A builder for [`UpdateTieringInput`](crate::types::UpdateTieringInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateTieringInputBuilder {
     pub(crate) free_tier: ::std::option::Option<crate::types::UpdateFreeTierConfig>,
 }

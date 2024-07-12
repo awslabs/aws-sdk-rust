@@ -27,8 +27,8 @@ impl MotionGraphicsConfiguration {
 }
 
 /// A builder for [`MotionGraphicsConfiguration`](crate::types::MotionGraphicsConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MotionGraphicsConfigurationBuilder {
     pub(crate) motion_graphics_insertion: ::std::option::Option<crate::types::MotionGraphicsInsertion>,
     pub(crate) motion_graphics_settings: ::std::option::Option<crate::types::MotionGraphicsSettings>,

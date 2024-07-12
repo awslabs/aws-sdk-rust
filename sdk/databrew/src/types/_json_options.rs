@@ -21,8 +21,8 @@ impl JsonOptions {
 }
 
 /// A builder for [`JsonOptions`](crate::types::JsonOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JsonOptionsBuilder {
     pub(crate) multi_line: ::std::option::Option<bool>,
 }

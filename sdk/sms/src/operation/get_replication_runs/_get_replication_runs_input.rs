@@ -32,8 +32,8 @@ impl GetReplicationRunsInput {
 }
 
 /// A builder for [`GetReplicationRunsInput`](crate::operation::get_replication_runs::GetReplicationRunsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetReplicationRunsInputBuilder {
     pub(crate) replication_job_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

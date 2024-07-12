@@ -68,8 +68,8 @@ impl EbsUtilizationMetric {
 }
 
 /// A builder for [`EbsUtilizationMetric`](crate::types::EbsUtilizationMetric).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EbsUtilizationMetricBuilder {
     pub(crate) name: ::std::option::Option<crate::types::EbsMetricName>,
     pub(crate) statistic: ::std::option::Option<crate::types::MetricStatistic>,

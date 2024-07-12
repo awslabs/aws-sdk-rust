@@ -28,8 +28,8 @@ impl DeleteDeliveryStreamInput {
 }
 
 /// A builder for [`DeleteDeliveryStreamInput`](crate::operation::delete_delivery_stream::DeleteDeliveryStreamInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDeliveryStreamInputBuilder {
     pub(crate) delivery_stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) allow_force_delete: ::std::option::Option<bool>,

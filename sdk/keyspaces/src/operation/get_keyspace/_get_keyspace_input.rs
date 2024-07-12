@@ -20,8 +20,8 @@ impl GetKeyspaceInput {
 }
 
 /// A builder for [`GetKeyspaceInput`](crate::operation::get_keyspace::GetKeyspaceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetKeyspaceInputBuilder {
     pub(crate) keyspace_name: ::std::option::Option<::std::string::String>,
 }

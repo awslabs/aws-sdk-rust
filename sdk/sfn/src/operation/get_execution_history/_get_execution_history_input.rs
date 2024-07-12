@@ -46,8 +46,8 @@ impl GetExecutionHistoryInput {
 }
 
 /// A builder for [`GetExecutionHistoryInput`](crate::operation::get_execution_history::GetExecutionHistoryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetExecutionHistoryInputBuilder {
     pub(crate) execution_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

@@ -27,8 +27,8 @@ impl CreateCustomerGatewayOutput {
 }
 
 /// A builder for [`CreateCustomerGatewayOutput`](crate::operation::create_customer_gateway::CreateCustomerGatewayOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCustomerGatewayOutputBuilder {
     pub(crate) customer_gateway: ::std::option::Option<crate::types::CustomerGateway>,
     _request_id: Option<String>,

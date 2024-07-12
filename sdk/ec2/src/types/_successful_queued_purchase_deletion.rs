@@ -21,8 +21,8 @@ impl SuccessfulQueuedPurchaseDeletion {
 }
 
 /// A builder for [`SuccessfulQueuedPurchaseDeletion`](crate::types::SuccessfulQueuedPurchaseDeletion).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SuccessfulQueuedPurchaseDeletionBuilder {
     pub(crate) reserved_instances_id: ::std::option::Option<::std::string::String>,
 }

@@ -31,8 +31,8 @@ impl AutoDetectionS3SourceConfig {
 }
 
 /// A builder for [`AutoDetectionS3SourceConfig`](crate::types::AutoDetectionS3SourceConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AutoDetectionS3SourceConfigBuilder {
     pub(crate) templated_path_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) historical_data_path_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

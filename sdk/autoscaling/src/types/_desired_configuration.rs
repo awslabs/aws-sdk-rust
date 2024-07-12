@@ -30,8 +30,8 @@ impl DesiredConfiguration {
 }
 
 /// A builder for [`DesiredConfiguration`](crate::types::DesiredConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DesiredConfigurationBuilder {
     pub(crate) launch_template: ::std::option::Option<crate::types::LaunchTemplateSpecification>,
     pub(crate) mixed_instances_policy: ::std::option::Option<crate::types::MixedInstancesPolicy>,

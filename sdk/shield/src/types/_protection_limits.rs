@@ -22,8 +22,8 @@ impl ProtectionLimits {
 }
 
 /// A builder for [`ProtectionLimits`](crate::types::ProtectionLimits).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProtectionLimitsBuilder {
     pub(crate) protected_resource_type_limits: ::std::option::Option<::std::vec::Vec<crate::types::Limit>>,
 }

@@ -34,8 +34,8 @@ impl DescribeLocalGatewaysOutput {
 }
 
 /// A builder for [`DescribeLocalGatewaysOutput`](crate::operation::describe_local_gateways::DescribeLocalGatewaysOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeLocalGatewaysOutputBuilder {
     pub(crate) local_gateways: ::std::option::Option<::std::vec::Vec<crate::types::LocalGateway>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

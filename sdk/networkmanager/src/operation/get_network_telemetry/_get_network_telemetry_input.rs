@@ -84,8 +84,8 @@ impl GetNetworkTelemetryInput {
 }
 
 /// A builder for [`GetNetworkTelemetryInput`](crate::operation::get_network_telemetry::GetNetworkTelemetryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetNetworkTelemetryInputBuilder {
     pub(crate) global_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) core_network_id: ::std::option::Option<::std::string::String>,

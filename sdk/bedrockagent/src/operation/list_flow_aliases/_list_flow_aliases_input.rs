@@ -32,8 +32,8 @@ impl ListFlowAliasesInput {
 }
 
 /// A builder for [`ListFlowAliasesInput`](crate::operation::list_flow_aliases::ListFlowAliasesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFlowAliasesInputBuilder {
     pub(crate) flow_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

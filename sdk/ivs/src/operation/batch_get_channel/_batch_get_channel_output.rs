@@ -36,8 +36,8 @@ impl BatchGetChannelOutput {
 }
 
 /// A builder for [`BatchGetChannelOutput`](crate::operation::batch_get_channel::BatchGetChannelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetChannelOutputBuilder {
     pub(crate) channels: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchError>>,

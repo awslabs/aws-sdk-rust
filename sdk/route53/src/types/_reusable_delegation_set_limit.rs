@@ -27,8 +27,8 @@ impl ReusableDelegationSetLimit {
 }
 
 /// A builder for [`ReusableDelegationSetLimit`](crate::types::ReusableDelegationSetLimit).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReusableDelegationSetLimitBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ReusableDelegationSetLimitType>,
     pub(crate) value: ::std::option::Option<i64>,

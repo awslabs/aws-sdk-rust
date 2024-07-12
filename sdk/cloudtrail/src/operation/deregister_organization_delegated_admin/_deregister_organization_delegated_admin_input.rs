@@ -21,8 +21,8 @@ impl DeregisterOrganizationDelegatedAdminInput {
 }
 
 /// A builder for [`DeregisterOrganizationDelegatedAdminInput`](crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeregisterOrganizationDelegatedAdminInputBuilder {
     pub(crate) delegated_admin_account_id: ::std::option::Option<::std::string::String>,
 }

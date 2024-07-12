@@ -65,8 +65,8 @@ impl PutIntegrationResponseInput {
 }
 
 /// A builder for [`PutIntegrationResponseInput`](crate::operation::put_integration_response::PutIntegrationResponseInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutIntegrationResponseInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,

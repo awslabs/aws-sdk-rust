@@ -27,8 +27,8 @@ impl DescribeEnvironmentResourcesOutput {
 }
 
 /// A builder for [`DescribeEnvironmentResourcesOutput`](crate::operation::describe_environment_resources::DescribeEnvironmentResourcesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEnvironmentResourcesOutputBuilder {
     pub(crate) environment_resources: ::std::option::Option<crate::types::EnvironmentResourceDescription>,
     _request_id: Option<String>,

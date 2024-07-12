@@ -38,8 +38,8 @@ impl RevokeCertificateInput {
 }
 
 /// A builder for [`RevokeCertificateInput`](crate::operation::revoke_certificate::RevokeCertificateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RevokeCertificateInputBuilder {
     pub(crate) certificate_authority_arn: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_serial: ::std::option::Option<::std::string::String>,

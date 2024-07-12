@@ -33,8 +33,8 @@ impl TrafficConfig {
 }
 
 /// A builder for [`TrafficConfig`](crate::types::TrafficConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TrafficConfigBuilder {
     pub(crate) single_weight_config: ::std::option::Option<crate::types::ContinuousDeploymentSingleWeightConfig>,
     pub(crate) single_header_config: ::std::option::Option<crate::types::ContinuousDeploymentSingleHeaderConfig>,

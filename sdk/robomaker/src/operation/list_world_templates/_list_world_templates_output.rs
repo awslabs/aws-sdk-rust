@@ -34,8 +34,8 @@ impl ListWorldTemplatesOutput {
 }
 
 /// A builder for [`ListWorldTemplatesOutput`](crate::operation::list_world_templates::ListWorldTemplatesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListWorldTemplatesOutputBuilder {
     pub(crate) template_summaries: ::std::option::Option<::std::vec::Vec<crate::types::TemplateSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -105,8 +105,8 @@ impl BackupRuleInput {
 }
 
 /// A builder for [`BackupRuleInput`](crate::types::BackupRuleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct BackupRuleInputBuilder {
     pub(crate) rule_name: ::std::option::Option<::std::string::String>,
     pub(crate) target_backup_vault_name: ::std::option::Option<::std::string::String>,

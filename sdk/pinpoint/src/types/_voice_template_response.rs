@@ -87,8 +87,8 @@ impl VoiceTemplateResponse {
 }
 
 /// A builder for [`VoiceTemplateResponse`](crate::types::VoiceTemplateResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VoiceTemplateResponseBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) body: ::std::option::Option<::std::string::String>,

@@ -57,8 +57,8 @@ impl ArtifactsConcatenationConfiguration {
 }
 
 /// A builder for [`ArtifactsConcatenationConfiguration`](crate::types::ArtifactsConcatenationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ArtifactsConcatenationConfigurationBuilder {
     pub(crate) audio: ::std::option::Option<crate::types::AudioConcatenationConfiguration>,
     pub(crate) video: ::std::option::Option<crate::types::VideoConcatenationConfiguration>,

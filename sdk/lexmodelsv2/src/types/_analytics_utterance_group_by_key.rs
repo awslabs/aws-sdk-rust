@@ -27,8 +27,8 @@ impl AnalyticsUtteranceGroupByKey {
 }
 
 /// A builder for [`AnalyticsUtteranceGroupByKey`](crate::types::AnalyticsUtteranceGroupByKey).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AnalyticsUtteranceGroupByKeyBuilder {
     pub(crate) name: ::std::option::Option<crate::types::AnalyticsUtteranceField>,
     pub(crate) value: ::std::option::Option<::std::string::String>,

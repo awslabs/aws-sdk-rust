@@ -34,8 +34,8 @@ impl ListDelegatedAdminAccountsOutput {
 }
 
 /// A builder for [`ListDelegatedAdminAccountsOutput`](crate::operation::list_delegated_admin_accounts::ListDelegatedAdminAccountsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDelegatedAdminAccountsOutputBuilder {
     pub(crate) delegated_admin_accounts: ::std::option::Option<::std::vec::Vec<crate::types::DelegatedAdminAccount>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

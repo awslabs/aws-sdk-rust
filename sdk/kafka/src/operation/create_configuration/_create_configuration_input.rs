@@ -48,8 +48,8 @@ impl CreateConfigurationInput {
 }
 
 /// A builder for [`CreateConfigurationInput`](crate::operation::create_configuration::CreateConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateConfigurationInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) kafka_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -34,8 +34,8 @@ impl UpdateOpsMetadataInput {
 }
 
 /// A builder for [`UpdateOpsMetadataInput`](crate::operation::update_ops_metadata::UpdateOpsMetadataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateOpsMetadataInputBuilder {
     pub(crate) ops_metadata_arn: ::std::option::Option<::std::string::String>,
     pub(crate) metadata_to_update: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>>,

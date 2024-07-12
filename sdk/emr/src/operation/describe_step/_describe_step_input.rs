@@ -27,8 +27,8 @@ impl DescribeStepInput {
 }
 
 /// A builder for [`DescribeStepInput`](crate::operation::describe_step::DescribeStepInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeStepInputBuilder {
     pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) step_id: ::std::option::Option<::std::string::String>,

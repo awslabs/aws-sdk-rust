@@ -44,8 +44,8 @@ impl AssumeDecoratedRoleWithSamlOutput {
 }
 
 /// A builder for [`AssumeDecoratedRoleWithSamlOutput`](crate::operation::assume_decorated_role_with_saml::AssumeDecoratedRoleWithSamlOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssumeDecoratedRoleWithSamlOutputBuilder {
     pub(crate) access_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) secret_access_key: ::std::option::Option<::std::string::String>,

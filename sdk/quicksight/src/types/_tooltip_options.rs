@@ -45,8 +45,8 @@ impl TooltipOptions {
 }
 
 /// A builder for [`TooltipOptions`](crate::types::TooltipOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TooltipOptionsBuilder {
     pub(crate) tooltip_visibility: ::std::option::Option<crate::types::Visibility>,
     pub(crate) selected_tooltip_type: ::std::option::Option<crate::types::SelectedTooltipType>,

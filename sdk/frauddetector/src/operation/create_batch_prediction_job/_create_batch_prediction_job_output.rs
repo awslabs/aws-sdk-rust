@@ -18,8 +18,8 @@ impl CreateBatchPredictionJobOutput {
 }
 
 /// A builder for [`CreateBatchPredictionJobOutput`](crate::operation::create_batch_prediction_job::CreateBatchPredictionJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateBatchPredictionJobOutputBuilder {
     _request_id: Option<String>,
 }

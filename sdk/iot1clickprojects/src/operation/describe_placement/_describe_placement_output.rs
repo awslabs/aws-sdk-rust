@@ -26,8 +26,8 @@ impl DescribePlacementOutput {
 }
 
 /// A builder for [`DescribePlacementOutput`](crate::operation::describe_placement::DescribePlacementOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribePlacementOutputBuilder {
     pub(crate) placement: ::std::option::Option<crate::types::PlacementDescription>,
     _request_id: Option<String>,

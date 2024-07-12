@@ -62,8 +62,8 @@ impl CreateApplicationInstanceInput {
 }
 
 /// A builder for [`CreateApplicationInstanceInput`](crate::operation::create_application_instance::CreateApplicationInstanceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateApplicationInstanceInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

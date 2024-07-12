@@ -30,8 +30,8 @@ impl GetSolVnfInfo {
 }
 
 /// A builder for [`GetSolVnfInfo`](crate::types::GetSolVnfInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSolVnfInfoBuilder {
     pub(crate) vnf_state: ::std::option::Option<crate::types::VnfOperationalState>,
     pub(crate) vnfc_resource_info: ::std::option::Option<::std::vec::Vec<crate::types::GetSolVnfcResourceInfo>>,

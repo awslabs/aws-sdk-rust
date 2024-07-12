@@ -45,8 +45,8 @@ impl GetMfaDeviceOutput {
 }
 
 /// A builder for [`GetMfaDeviceOutput`](crate::operation::get_mfa_device::GetMfaDeviceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMfaDeviceOutputBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) serial_number: ::std::option::Option<::std::string::String>,

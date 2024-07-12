@@ -65,8 +65,8 @@ impl S3DestinationUpdate {
 }
 
 /// A builder for [`S3DestinationUpdate`](crate::types::S3DestinationUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3DestinationUpdateBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) bucket_arn: ::std::option::Option<::std::string::String>,

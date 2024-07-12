@@ -27,8 +27,8 @@ impl AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails {
 }
 
 /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetailsBuilder {
     pub(crate) read_only: ::std::option::Option<bool>,
     pub(crate) source_container: ::std::option::Option<::std::string::String>,

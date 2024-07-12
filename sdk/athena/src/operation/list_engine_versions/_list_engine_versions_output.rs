@@ -34,8 +34,8 @@ impl ListEngineVersionsOutput {
 }
 
 /// A builder for [`ListEngineVersionsOutput`](crate::operation::list_engine_versions::ListEngineVersionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEngineVersionsOutputBuilder {
     pub(crate) engine_versions: ::std::option::Option<::std::vec::Vec<crate::types::EngineVersion>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

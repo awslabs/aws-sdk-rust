@@ -38,8 +38,8 @@ impl UpdateWorkGroupInput {
 }
 
 /// A builder for [`UpdateWorkGroupInput`](crate::operation::update_work_group::UpdateWorkGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateWorkGroupInputBuilder {
     pub(crate) work_group: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

@@ -33,8 +33,8 @@ impl ListScheduledQueriesOutput {
 }
 
 /// A builder for [`ListScheduledQueriesOutput`](crate::operation::list_scheduled_queries::ListScheduledQueriesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListScheduledQueriesOutputBuilder {
     pub(crate) scheduled_queries: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledQuery>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

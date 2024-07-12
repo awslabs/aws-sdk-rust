@@ -19,8 +19,8 @@ impl DeleteReceiptRuleOutput {
 }
 
 /// A builder for [`DeleteReceiptRuleOutput`](crate::operation::delete_receipt_rule::DeleteReceiptRuleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteReceiptRuleOutputBuilder {
     _request_id: Option<String>,
 }

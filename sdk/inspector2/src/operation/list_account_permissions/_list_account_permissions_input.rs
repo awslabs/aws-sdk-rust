@@ -32,8 +32,8 @@ impl ListAccountPermissionsInput {
 }
 
 /// A builder for [`ListAccountPermissionsInput`](crate::operation::list_account_permissions::ListAccountPermissionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAccountPermissionsInputBuilder {
     pub(crate) service: ::std::option::Option<crate::types::Service>,
     pub(crate) max_results: ::std::option::Option<i32>,

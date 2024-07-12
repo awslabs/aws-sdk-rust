@@ -62,8 +62,8 @@ impl ModifyScheduledActionInput {
 }
 
 /// A builder for [`ModifyScheduledActionInput`](crate::operation::modify_scheduled_action::ModifyScheduledActionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyScheduledActionInputBuilder {
     pub(crate) scheduled_action_name: ::std::option::Option<::std::string::String>,
     pub(crate) target_action: ::std::option::Option<crate::types::ScheduledActionType>,

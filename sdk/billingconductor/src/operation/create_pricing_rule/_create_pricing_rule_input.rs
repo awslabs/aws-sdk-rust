@@ -108,8 +108,8 @@ impl CreatePricingRuleInput {
 }
 
 /// A builder for [`CreatePricingRuleInput`](crate::operation::create_pricing_rule::CreatePricingRuleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreatePricingRuleInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

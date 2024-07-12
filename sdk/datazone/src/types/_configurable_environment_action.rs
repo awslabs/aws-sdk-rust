@@ -35,8 +35,8 @@ impl ConfigurableEnvironmentAction {
 }
 
 /// A builder for [`ConfigurableEnvironmentAction`](crate::types::ConfigurableEnvironmentAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConfigurableEnvironmentActionBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) auth: ::std::option::Option<crate::types::ConfigurableActionTypeAuthorization>,

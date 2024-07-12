@@ -52,8 +52,8 @@ impl InvokeWithResponseStreamOutput {
 }
 
 /// A builder for [`InvokeWithResponseStreamOutput`](crate::operation::invoke_with_response_stream::InvokeWithResponseStreamOutput).
-#[non_exhaustive]
 #[derive(::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InvokeWithResponseStreamOutputBuilder {
     pub(crate) status_code: ::std::option::Option<i32>,
     pub(crate) executed_version: ::std::option::Option<::std::string::String>,

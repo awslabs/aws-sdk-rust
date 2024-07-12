@@ -26,8 +26,8 @@ impl DescribeAppInstanceUserEndpointOutput {
 }
 
 /// A builder for [`DescribeAppInstanceUserEndpointOutput`](crate::operation::describe_app_instance_user_endpoint::DescribeAppInstanceUserEndpointOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAppInstanceUserEndpointOutputBuilder {
     pub(crate) app_instance_user_endpoint: ::std::option::Option<crate::types::AppInstanceUserEndpoint>,
     _request_id: Option<String>,

@@ -36,8 +36,8 @@ impl ConditionalFormattingGradientColor {
 }
 
 /// A builder for [`ConditionalFormattingGradientColor`](crate::types::ConditionalFormattingGradientColor).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ConditionalFormattingGradientColorBuilder {
     pub(crate) expression: ::std::option::Option<::std::string::String>,
     pub(crate) color: ::std::option::Option<crate::types::GradientColor>,

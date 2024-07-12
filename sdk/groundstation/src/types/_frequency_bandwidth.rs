@@ -43,8 +43,8 @@ impl FrequencyBandwidth {
 }
 
 /// A builder for [`FrequencyBandwidth`](crate::types::FrequencyBandwidth).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FrequencyBandwidthBuilder {
     pub(crate) value: ::std::option::Option<f64>,
     pub(crate) units: ::std::option::Option<crate::types::BandwidthUnits>,

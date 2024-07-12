@@ -115,8 +115,8 @@ impl SynthesisTask {
 }
 
 /// A builder for [`SynthesisTask`](crate::types::SynthesisTask).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SynthesisTaskBuilder {
     pub(crate) engine: ::std::option::Option<crate::types::Engine>,
     pub(crate) task_id: ::std::option::Option<::std::string::String>,

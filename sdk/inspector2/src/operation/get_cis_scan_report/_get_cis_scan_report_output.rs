@@ -32,8 +32,8 @@ impl GetCisScanReportOutput {
 }
 
 /// A builder for [`GetCisScanReportOutput`](crate::operation::get_cis_scan_report::GetCisScanReportOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCisScanReportOutputBuilder {
     pub(crate) url: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::CisReportStatus>,

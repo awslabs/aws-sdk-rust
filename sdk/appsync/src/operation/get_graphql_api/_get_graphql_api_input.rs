@@ -20,8 +20,8 @@ impl GetGraphqlApiInput {
 }
 
 /// A builder for [`GetGraphqlApiInput`](crate::operation::get_graphql_api::GetGraphqlApiInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetGraphqlApiInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
 }

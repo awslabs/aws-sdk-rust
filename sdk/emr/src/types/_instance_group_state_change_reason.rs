@@ -27,8 +27,8 @@ impl InstanceGroupStateChangeReason {
 }
 
 /// A builder for [`InstanceGroupStateChangeReason`](crate::types::InstanceGroupStateChangeReason).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceGroupStateChangeReasonBuilder {
     pub(crate) code: ::std::option::Option<crate::types::InstanceGroupStateChangeReasonCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

@@ -20,8 +20,8 @@ impl DisassociateThirdPartyFirewallInput {
 }
 
 /// A builder for [`DisassociateThirdPartyFirewallInput`](crate::operation::disassociate_third_party_firewall::DisassociateThirdPartyFirewallInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateThirdPartyFirewallInputBuilder {
     pub(crate) third_party_firewall: ::std::option::Option<crate::types::ThirdPartyFirewall>,
 }

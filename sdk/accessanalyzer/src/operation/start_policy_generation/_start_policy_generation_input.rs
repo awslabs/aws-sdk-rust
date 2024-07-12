@@ -34,8 +34,8 @@ impl StartPolicyGenerationInput {
 }
 
 /// A builder for [`StartPolicyGenerationInput`](crate::operation::start_policy_generation::StartPolicyGenerationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartPolicyGenerationInputBuilder {
     pub(crate) policy_generation_details: ::std::option::Option<crate::types::PolicyGenerationDetails>,
     pub(crate) cloud_trail_details: ::std::option::Option<crate::types::CloudTrailDetails>,

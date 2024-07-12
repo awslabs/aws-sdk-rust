@@ -33,8 +33,8 @@ impl ListCompositionRelationshipsOutput {
 }
 
 /// A builder for [`ListCompositionRelationshipsOutput`](crate::operation::list_composition_relationships::ListCompositionRelationshipsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCompositionRelationshipsOutputBuilder {
     pub(crate) composition_relationship_summaries: ::std::option::Option<::std::vec::Vec<crate::types::CompositionRelationshipSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

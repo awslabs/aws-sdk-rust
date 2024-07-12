@@ -80,8 +80,8 @@ impl UpdateCsvClassifierRequest {
 }
 
 /// A builder for [`UpdateCsvClassifierRequest`](crate::types::UpdateCsvClassifierRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateCsvClassifierRequestBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) delimiter: ::std::option::Option<::std::string::String>,

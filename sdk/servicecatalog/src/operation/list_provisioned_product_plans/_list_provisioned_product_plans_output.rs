@@ -34,8 +34,8 @@ impl ListProvisionedProductPlansOutput {
 }
 
 /// A builder for [`ListProvisionedProductPlansOutput`](crate::operation::list_provisioned_product_plans::ListProvisionedProductPlansOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListProvisionedProductPlansOutputBuilder {
     pub(crate) provisioned_product_plans: ::std::option::Option<::std::vec::Vec<crate::types::ProvisionedProductPlanSummary>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,

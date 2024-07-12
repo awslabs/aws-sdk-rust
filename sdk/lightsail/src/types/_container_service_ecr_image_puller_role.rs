@@ -28,8 +28,8 @@ impl ContainerServiceEcrImagePullerRole {
 }
 
 /// A builder for [`ContainerServiceEcrImagePullerRole`](crate::types::ContainerServiceEcrImagePullerRole).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ContainerServiceEcrImagePullerRoleBuilder {
     pub(crate) is_active: ::std::option::Option<bool>,
     pub(crate) principal_arn: ::std::option::Option<::std::string::String>,

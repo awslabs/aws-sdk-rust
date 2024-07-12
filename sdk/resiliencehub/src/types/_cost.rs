@@ -34,8 +34,8 @@ impl Cost {
 }
 
 /// A builder for [`Cost`](crate::types::Cost).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CostBuilder {
     pub(crate) amount: ::std::option::Option<f64>,
     pub(crate) currency: ::std::option::Option<::std::string::String>,

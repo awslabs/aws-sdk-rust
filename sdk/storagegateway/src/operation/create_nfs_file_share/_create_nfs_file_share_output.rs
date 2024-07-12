@@ -27,8 +27,8 @@ impl CreateNfsFileShareOutput {
 }
 
 /// A builder for [`CreateNfsFileShareOutput`](crate::operation::create_nfs_file_share::CreateNfsFileShareOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateNfsFileShareOutputBuilder {
     pub(crate) file_share_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -21,8 +21,8 @@ impl ConverseTrace {
 }
 
 /// A builder for [`ConverseTrace`](crate::types::ConverseTrace).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConverseTraceBuilder {
     pub(crate) guardrail: ::std::option::Option<crate::types::GuardrailTraceAssessment>,
 }

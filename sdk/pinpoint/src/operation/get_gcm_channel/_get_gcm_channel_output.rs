@@ -26,8 +26,8 @@ impl GetGcmChannelOutput {
 }
 
 /// A builder for [`GetGcmChannelOutput`](crate::operation::get_gcm_channel::GetGcmChannelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetGcmChannelOutputBuilder {
     pub(crate) gcm_channel_response: ::std::option::Option<crate::types::GcmChannelResponse>,
     _request_id: Option<String>,

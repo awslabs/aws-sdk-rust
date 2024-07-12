@@ -26,8 +26,8 @@ impl UpdateFeatureOutput {
 }
 
 /// A builder for [`UpdateFeatureOutput`](crate::operation::update_feature::UpdateFeatureOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateFeatureOutputBuilder {
     pub(crate) feature: ::std::option::Option<crate::types::Feature>,
     _request_id: Option<String>,

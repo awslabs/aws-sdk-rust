@@ -34,8 +34,8 @@ impl ListConversationsOutput {
 }
 
 /// A builder for [`ListConversationsOutput`](crate::operation::list_conversations::ListConversationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListConversationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) conversations: ::std::option::Option<::std::vec::Vec<crate::types::Conversation>>,

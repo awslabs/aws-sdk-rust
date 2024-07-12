@@ -56,8 +56,8 @@ impl S3Storage {
 }
 
 /// A builder for [`S3Storage`](crate::types::S3Storage).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct S3StorageBuilder {
     pub(crate) aws_access_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) bucket: ::std::option::Option<::std::string::String>,

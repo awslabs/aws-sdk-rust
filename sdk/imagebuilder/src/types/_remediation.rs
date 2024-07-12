@@ -21,8 +21,8 @@ impl Remediation {
 }
 
 /// A builder for [`Remediation`](crate::types::Remediation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemediationBuilder {
     pub(crate) recommendation: ::std::option::Option<crate::types::RemediationRecommendation>,
 }

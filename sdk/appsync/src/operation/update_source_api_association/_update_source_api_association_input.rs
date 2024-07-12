@@ -38,8 +38,8 @@ impl UpdateSourceApiAssociationInput {
 }
 
 /// A builder for [`UpdateSourceApiAssociationInput`](crate::operation::update_source_api_association::UpdateSourceApiAssociationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSourceApiAssociationInputBuilder {
     pub(crate) association_id: ::std::option::Option<::std::string::String>,
     pub(crate) merged_api_identifier: ::std::option::Option<::std::string::String>,

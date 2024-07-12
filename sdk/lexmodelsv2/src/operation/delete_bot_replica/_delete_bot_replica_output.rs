@@ -38,8 +38,8 @@ impl DeleteBotReplicaOutput {
 }
 
 /// A builder for [`DeleteBotReplicaOutput`](crate::operation::delete_bot_replica::DeleteBotReplicaOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteBotReplicaOutputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) replica_region: ::std::option::Option<::std::string::String>,

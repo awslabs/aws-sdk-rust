@@ -29,8 +29,8 @@ impl ApiKeyCredential {
 }
 
 /// A builder for [`ApiKeyCredential`](crate::types::ApiKeyCredential).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ApiKeyCredentialBuilder {
     pub(crate) api_key: ::std::option::Option<::std::string::String>,
 }

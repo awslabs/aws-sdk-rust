@@ -28,8 +28,8 @@ impl GetApplicationComponentStrategiesOutput {
 }
 
 /// A builder for [`GetApplicationComponentStrategiesOutput`](crate::operation::get_application_component_strategies::GetApplicationComponentStrategiesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetApplicationComponentStrategiesOutputBuilder {
     pub(crate) application_component_strategies: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationComponentStrategy>>,
     _request_id: Option<String>,

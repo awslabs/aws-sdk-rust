@@ -77,8 +77,8 @@ impl Icd10CmAttribute {
 }
 
 /// A builder for [`Icd10CmAttribute`](crate::types::Icd10CmAttribute).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Icd10CmAttributeBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::Icd10CmAttributeType>,
     pub(crate) score: ::std::option::Option<f32>,

@@ -34,8 +34,8 @@ impl GetSecurityGroupsForVpcOutput {
 }
 
 /// A builder for [`GetSecurityGroupsForVpcOutput`](crate::operation::get_security_groups_for_vpc::GetSecurityGroupsForVpcOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSecurityGroupsForVpcOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) security_group_for_vpcs: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupForVpc>>,

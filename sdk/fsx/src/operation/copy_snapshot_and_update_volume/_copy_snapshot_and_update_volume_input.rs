@@ -80,8 +80,8 @@ impl CopySnapshotAndUpdateVolumeInput {
 }
 
 /// A builder for [`CopySnapshotAndUpdateVolumeInput`](crate::operation::copy_snapshot_and_update_volume::CopySnapshotAndUpdateVolumeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CopySnapshotAndUpdateVolumeInputBuilder {
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) volume_id: ::std::option::Option<::std::string::String>,

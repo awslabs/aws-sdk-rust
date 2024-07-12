@@ -26,8 +26,8 @@ impl GetRotationOverrideInput {
 }
 
 /// A builder for [`GetRotationOverrideInput`](crate::operation::get_rotation_override::GetRotationOverrideInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRotationOverrideInputBuilder {
     pub(crate) rotation_id: ::std::option::Option<::std::string::String>,
     pub(crate) rotation_override_id: ::std::option::Option<::std::string::String>,

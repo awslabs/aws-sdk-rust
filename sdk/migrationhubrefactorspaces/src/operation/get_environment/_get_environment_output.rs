@@ -111,8 +111,8 @@ impl GetEnvironmentOutput {
 }
 
 /// A builder for [`GetEnvironmentOutput`](crate::operation::get_environment::GetEnvironmentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetEnvironmentOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

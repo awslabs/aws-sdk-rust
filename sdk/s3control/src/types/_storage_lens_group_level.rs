@@ -21,8 +21,8 @@ impl StorageLensGroupLevel {
 }
 
 /// A builder for [`StorageLensGroupLevel`](crate::types::StorageLensGroupLevel).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StorageLensGroupLevelBuilder {
     pub(crate) selection_criteria: ::std::option::Option<crate::types::StorageLensGroupLevelSelectionCriteria>,
 }

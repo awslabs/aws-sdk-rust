@@ -33,8 +33,8 @@ impl FormStyle {
 }
 
 /// A builder for [`FormStyle`](crate::types::FormStyle).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FormStyleBuilder {
     pub(crate) horizontal_gap: ::std::option::Option<crate::types::FormStyleConfig>,
     pub(crate) vertical_gap: ::std::option::Option<crate::types::FormStyleConfig>,

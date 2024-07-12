@@ -30,8 +30,8 @@ impl DeleteSyncJobInput {
 }
 
 /// A builder for [`DeleteSyncJobInput`](crate::operation::delete_sync_job::DeleteSyncJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSyncJobInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) sync_source: ::std::option::Option<::std::string::String>,

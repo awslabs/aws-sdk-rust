@@ -27,8 +27,8 @@ impl DeleteBackupInput {
 }
 
 /// A builder for [`DeleteBackupInput`](crate::operation::delete_backup::DeleteBackupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteBackupInputBuilder {
     pub(crate) backup_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,

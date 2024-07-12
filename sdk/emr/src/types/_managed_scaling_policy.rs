@@ -21,8 +21,8 @@ impl ManagedScalingPolicy {
 }
 
 /// A builder for [`ManagedScalingPolicy`](crate::types::ManagedScalingPolicy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ManagedScalingPolicyBuilder {
     pub(crate) compute_limits: ::std::option::Option<crate::types::ComputeLimits>,
 }

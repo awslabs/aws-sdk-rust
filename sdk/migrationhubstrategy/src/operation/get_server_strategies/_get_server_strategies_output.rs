@@ -28,8 +28,8 @@ impl GetServerStrategiesOutput {
 }
 
 /// A builder for [`GetServerStrategiesOutput`](crate::operation::get_server_strategies::GetServerStrategiesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetServerStrategiesOutputBuilder {
     pub(crate) server_strategies: ::std::option::Option<::std::vec::Vec<crate::types::ServerStrategy>>,
     _request_id: Option<String>,

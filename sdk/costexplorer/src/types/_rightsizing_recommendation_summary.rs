@@ -39,8 +39,8 @@ impl RightsizingRecommendationSummary {
 }
 
 /// A builder for [`RightsizingRecommendationSummary`](crate::types::RightsizingRecommendationSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RightsizingRecommendationSummaryBuilder {
     pub(crate) total_recommendation_count: ::std::option::Option<::std::string::String>,
     pub(crate) estimated_total_monthly_savings_amount: ::std::option::Option<::std::string::String>,

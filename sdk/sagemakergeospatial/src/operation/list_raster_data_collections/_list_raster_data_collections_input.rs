@@ -34,8 +34,8 @@ impl ListRasterDataCollectionsInput {
 }
 
 /// A builder for [`ListRasterDataCollectionsInput`](crate::operation::list_raster_data_collections::ListRasterDataCollectionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ListRasterDataCollectionsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

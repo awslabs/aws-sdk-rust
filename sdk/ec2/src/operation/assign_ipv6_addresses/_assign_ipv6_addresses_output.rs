@@ -42,8 +42,8 @@ impl AssignIpv6AddressesOutput {
 }
 
 /// A builder for [`AssignIpv6AddressesOutput`](crate::operation::assign_ipv6_addresses::AssignIpv6AddressesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssignIpv6AddressesOutputBuilder {
     pub(crate) assigned_ipv6_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) assigned_ipv6_prefixes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

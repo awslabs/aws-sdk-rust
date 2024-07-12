@@ -28,8 +28,8 @@ impl SsmParameterStoreParameter {
 }
 
 /// A builder for [`SsmParameterStoreParameter`](crate::types::SsmParameterStoreParameter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SsmParameterStoreParameterBuilder {
     pub(crate) parameter_type: ::std::option::Option<crate::types::SsmParameterStoreParameterType>,
     pub(crate) parameter_name: ::std::option::Option<::std::string::String>,

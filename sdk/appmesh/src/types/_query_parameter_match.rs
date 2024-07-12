@@ -21,8 +21,8 @@ impl QueryParameterMatch {
 }
 
 /// A builder for [`QueryParameterMatch`](crate::types::QueryParameterMatch).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct QueryParameterMatchBuilder {
     pub(crate) exact: ::std::option::Option<::std::string::String>,
 }

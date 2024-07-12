@@ -64,8 +64,8 @@ impl ForecastGeofenceEventsInput {
 }
 
 /// A builder for [`ForecastGeofenceEventsInput`](crate::operation::forecast_geofence_events::ForecastGeofenceEventsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ForecastGeofenceEventsInputBuilder {
     pub(crate) collection_name: ::std::option::Option<::std::string::String>,
     pub(crate) device_state: ::std::option::Option<crate::types::ForecastGeofenceEventsDeviceState>,

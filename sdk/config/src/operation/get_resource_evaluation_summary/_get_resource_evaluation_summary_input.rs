@@ -20,8 +20,8 @@ impl GetResourceEvaluationSummaryInput {
 }
 
 /// A builder for [`GetResourceEvaluationSummaryInput`](crate::operation::get_resource_evaluation_summary::GetResourceEvaluationSummaryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetResourceEvaluationSummaryInputBuilder {
     pub(crate) resource_evaluation_id: ::std::option::Option<::std::string::String>,
 }

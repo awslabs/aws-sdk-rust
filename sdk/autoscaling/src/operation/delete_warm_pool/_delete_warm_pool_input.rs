@@ -26,8 +26,8 @@ impl DeleteWarmPoolInput {
 }
 
 /// A builder for [`DeleteWarmPoolInput`](crate::operation::delete_warm_pool::DeleteWarmPoolInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteWarmPoolInputBuilder {
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) force_delete: ::std::option::Option<bool>,

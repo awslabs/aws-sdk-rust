@@ -28,8 +28,8 @@ impl AddCustomRoutingEndpointsInput {
 }
 
 /// A builder for [`AddCustomRoutingEndpointsInput`](crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpointsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddCustomRoutingEndpointsInputBuilder {
     pub(crate) endpoint_configurations: ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingEndpointConfiguration>>,
     pub(crate) endpoint_group_arn: ::std::option::Option<::std::string::String>,

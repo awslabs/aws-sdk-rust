@@ -32,8 +32,8 @@ impl ReplaceRouteTableAssociationOutput {
 }
 
 /// A builder for [`ReplaceRouteTableAssociationOutput`](crate::operation::replace_route_table_association::ReplaceRouteTableAssociationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReplaceRouteTableAssociationOutputBuilder {
     pub(crate) new_association_id: ::std::option::Option<::std::string::String>,
     pub(crate) association_state: ::std::option::Option<crate::types::RouteTableAssociationState>,

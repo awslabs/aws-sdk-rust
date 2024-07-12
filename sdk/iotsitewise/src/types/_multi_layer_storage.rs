@@ -21,8 +21,8 @@ impl MultiLayerStorage {
 }
 
 /// A builder for [`MultiLayerStorage`](crate::types::MultiLayerStorage).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MultiLayerStorageBuilder {
     pub(crate) customer_managed_s3_storage: ::std::option::Option<crate::types::CustomerManagedS3Storage>,
 }

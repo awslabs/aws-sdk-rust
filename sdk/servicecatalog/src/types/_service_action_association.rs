@@ -36,8 +36,8 @@ impl ServiceActionAssociation {
 }
 
 /// A builder for [`ServiceActionAssociation`](crate::types::ServiceActionAssociation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServiceActionAssociationBuilder {
     pub(crate) service_action_id: ::std::option::Option<::std::string::String>,
     pub(crate) product_id: ::std::option::Option<::std::string::String>,

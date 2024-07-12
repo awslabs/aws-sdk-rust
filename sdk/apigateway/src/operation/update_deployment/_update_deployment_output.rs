@@ -51,8 +51,8 @@ impl UpdateDeploymentOutput {
 }
 
 /// A builder for [`UpdateDeploymentOutput`](crate::operation::update_deployment::UpdateDeploymentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDeploymentOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

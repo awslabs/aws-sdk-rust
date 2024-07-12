@@ -27,8 +27,8 @@ impl CreateAddonInstanceOutput {
 }
 
 /// A builder for [`CreateAddonInstanceOutput`](crate::operation::create_addon_instance::CreateAddonInstanceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAddonInstanceOutputBuilder {
     pub(crate) addon_instance_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

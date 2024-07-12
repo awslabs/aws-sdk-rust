@@ -44,8 +44,8 @@ impl UpdatePullThroughCacheRuleOutput {
 }
 
 /// A builder for [`UpdatePullThroughCacheRuleOutput`](crate::operation::update_pull_through_cache_rule::UpdatePullThroughCacheRuleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePullThroughCacheRuleOutputBuilder {
     pub(crate) ecr_repository_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,

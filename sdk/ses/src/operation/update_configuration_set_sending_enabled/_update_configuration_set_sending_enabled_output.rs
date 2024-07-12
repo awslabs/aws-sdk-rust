@@ -18,8 +18,8 @@ impl UpdateConfigurationSetSendingEnabledOutput {
 }
 
 /// A builder for [`UpdateConfigurationSetSendingEnabledOutput`](crate::operation::update_configuration_set_sending_enabled::UpdateConfigurationSetSendingEnabledOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateConfigurationSetSendingEnabledOutputBuilder {
     _request_id: Option<String>,
 }

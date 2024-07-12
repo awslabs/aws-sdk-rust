@@ -28,8 +28,8 @@ impl InferenceS3InputConfiguration {
 }
 
 /// A builder for [`InferenceS3InputConfiguration`](crate::types::InferenceS3InputConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InferenceS3InputConfigurationBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) prefix: ::std::option::Option<::std::string::String>,

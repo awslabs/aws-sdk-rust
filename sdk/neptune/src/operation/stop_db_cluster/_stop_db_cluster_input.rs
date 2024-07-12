@@ -20,8 +20,8 @@ impl StopDbClusterInput {
 }
 
 /// A builder for [`StopDbClusterInput`](crate::operation::stop_db_cluster::StopDbClusterInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopDbClusterInputBuilder {
     pub(crate) db_cluster_identifier: ::std::option::Option<::std::string::String>,
 }

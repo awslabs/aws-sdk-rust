@@ -21,8 +21,8 @@ impl Target {
 }
 
 /// A builder for [`Target`](crate::types::Target).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TargetBuilder {
     pub(crate) member_arn: ::std::option::Option<::std::string::String>,
 }

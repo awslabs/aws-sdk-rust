@@ -12,8 +12,8 @@ impl EmbeddedPlusScte20DestinationSettings {
 }
 
 /// A builder for [`EmbeddedPlusScte20DestinationSettings`](crate::types::EmbeddedPlusScte20DestinationSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EmbeddedPlusScte20DestinationSettingsBuilder {}
 impl EmbeddedPlusScte20DestinationSettingsBuilder {
     /// Consumes the builder and constructs a [`EmbeddedPlusScte20DestinationSettings`](crate::types::EmbeddedPlusScte20DestinationSettings).

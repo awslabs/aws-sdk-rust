@@ -43,8 +43,8 @@ impl NetworkPathComponent {
 }
 
 /// A builder for [`NetworkPathComponent`](crate::types::NetworkPathComponent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NetworkPathComponentBuilder {
     pub(crate) component_id: ::std::option::Option<::std::string::String>,
     pub(crate) component_type: ::std::option::Option<::std::string::String>,

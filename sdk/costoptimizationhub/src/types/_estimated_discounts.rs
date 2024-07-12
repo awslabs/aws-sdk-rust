@@ -33,8 +33,8 @@ impl EstimatedDiscounts {
 }
 
 /// A builder for [`EstimatedDiscounts`](crate::types::EstimatedDiscounts).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EstimatedDiscountsBuilder {
     pub(crate) savings_plans_discount: ::std::option::Option<f64>,
     pub(crate) reserved_instances_discount: ::std::option::Option<f64>,

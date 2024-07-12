@@ -39,8 +39,8 @@ impl SavingsPlansPricing {
 }
 
 /// A builder for [`SavingsPlansPricing`](crate::types::SavingsPlansPricing).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SavingsPlansPricingBuilder {
     pub(crate) monthly_savings_plans_eligible_cost: ::std::option::Option<f64>,
     pub(crate) estimated_monthly_commitment: ::std::option::Option<f64>,

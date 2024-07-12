@@ -21,8 +21,8 @@ impl DeviceConfiguration {
 }
 
 /// A builder for [`DeviceConfiguration`](crate::types::DeviceConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeviceConfigurationBuilder {
     pub(crate) snowcone_device_configuration: ::std::option::Option<crate::types::SnowconeDeviceConfiguration>,
 }

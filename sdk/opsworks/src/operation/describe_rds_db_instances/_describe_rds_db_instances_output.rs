@@ -29,8 +29,8 @@ impl DescribeRdsDbInstancesOutput {
 }
 
 /// A builder for [`DescribeRdsDbInstancesOutput`](crate::operation::describe_rds_db_instances::DescribeRdsDbInstancesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRdsDbInstancesOutputBuilder {
     pub(crate) rds_db_instances: ::std::option::Option<::std::vec::Vec<crate::types::RdsDbInstance>>,
     _request_id: Option<String>,

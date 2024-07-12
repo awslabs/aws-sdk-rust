@@ -60,8 +60,8 @@ impl UpdateAuthenticationProfileInput {
 }
 
 /// A builder for [`UpdateAuthenticationProfileInput`](crate::operation::update_authentication_profile::UpdateAuthenticationProfileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAuthenticationProfileInputBuilder {
     pub(crate) authentication_profile_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,

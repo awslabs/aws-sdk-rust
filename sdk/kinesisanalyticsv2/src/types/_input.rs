@@ -54,8 +54,8 @@ impl Input {
 }
 
 /// A builder for [`Input`](crate::types::Input).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InputBuilder {
     pub(crate) name_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) input_processing_configuration: ::std::option::Option<crate::types::InputProcessingConfiguration>,

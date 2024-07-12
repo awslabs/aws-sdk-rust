@@ -42,8 +42,8 @@ impl DeleteIndexOutput {
 }
 
 /// A builder for [`DeleteIndexOutput`](crate::operation::delete_index::DeleteIndexOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteIndexOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::IndexState>,

@@ -32,8 +32,8 @@ impl CreateFleetMetricOutput {
 }
 
 /// A builder for [`CreateFleetMetricOutput`](crate::operation::create_fleet_metric::CreateFleetMetricOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateFleetMetricOutputBuilder {
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
     pub(crate) metric_arn: ::std::option::Option<::std::string::String>,

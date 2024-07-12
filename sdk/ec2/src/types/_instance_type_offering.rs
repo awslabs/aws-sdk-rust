@@ -33,8 +33,8 @@ impl InstanceTypeOffering {
 }
 
 /// A builder for [`InstanceTypeOffering`](crate::types::InstanceTypeOffering).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceTypeOfferingBuilder {
     pub(crate) instance_type: ::std::option::Option<crate::types::InstanceType>,
     pub(crate) location_type: ::std::option::Option<crate::types::LocationType>,

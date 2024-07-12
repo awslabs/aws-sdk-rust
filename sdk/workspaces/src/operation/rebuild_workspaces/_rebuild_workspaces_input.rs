@@ -22,8 +22,8 @@ impl RebuildWorkspacesInput {
 }
 
 /// A builder for [`RebuildWorkspacesInput`](crate::operation::rebuild_workspaces::RebuildWorkspacesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RebuildWorkspacesInputBuilder {
     pub(crate) rebuild_workspace_requests: ::std::option::Option<::std::vec::Vec<crate::types::RebuildRequest>>,
 }

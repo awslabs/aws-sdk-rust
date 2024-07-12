@@ -116,8 +116,8 @@ impl GetMediaOutput {
 }
 
 /// A builder for [`GetMediaOutput`](crate::operation::get_media::GetMediaOutput).
-#[non_exhaustive]
 #[derive(::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMediaOutputBuilder {
     pub(crate) content_type: ::std::option::Option<::std::string::String>,
     pub(crate) payload: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>,

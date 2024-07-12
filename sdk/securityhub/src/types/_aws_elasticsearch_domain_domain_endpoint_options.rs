@@ -41,8 +41,8 @@ impl AwsElasticsearchDomainDomainEndpointOptions {
 }
 
 /// A builder for [`AwsElasticsearchDomainDomainEndpointOptions`](crate::types::AwsElasticsearchDomainDomainEndpointOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsElasticsearchDomainDomainEndpointOptionsBuilder {
     pub(crate) enforce_https: ::std::option::Option<bool>,
     pub(crate) tls_security_policy: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl DashIsoEncryptionSettings {
 }
 
 /// A builder for [`DashIsoEncryptionSettings`](crate::types::DashIsoEncryptionSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DashIsoEncryptionSettingsBuilder {
     pub(crate) playback_device_compatibility: ::std::option::Option<crate::types::DashIsoPlaybackDeviceCompatibility>,
     pub(crate) speke_key_provider: ::std::option::Option<crate::types::SpekeKeyProvider>,

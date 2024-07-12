@@ -32,8 +32,8 @@ impl PutRetentionSettingsOutput {
 }
 
 /// A builder for [`PutRetentionSettingsOutput`](crate::operation::put_retention_settings::PutRetentionSettingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutRetentionSettingsOutputBuilder {
     pub(crate) retention_settings: ::std::option::Option<crate::types::RetentionSettings>,
     pub(crate) initiate_deletion_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,

@@ -22,8 +22,8 @@ impl InputDefinition {
 }
 
 /// A builder for [`InputDefinition`](crate::types::InputDefinition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InputDefinitionBuilder {
     pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
 }

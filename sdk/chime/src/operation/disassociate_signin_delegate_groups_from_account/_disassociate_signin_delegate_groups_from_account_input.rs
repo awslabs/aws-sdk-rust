@@ -30,8 +30,8 @@ impl DisassociateSigninDelegateGroupsFromAccountInput {
 }
 
 /// A builder for [`DisassociateSigninDelegateGroupsFromAccountInput`](crate::operation::disassociate_signin_delegate_groups_from_account::DisassociateSigninDelegateGroupsFromAccountInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateSigninDelegateGroupsFromAccountInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

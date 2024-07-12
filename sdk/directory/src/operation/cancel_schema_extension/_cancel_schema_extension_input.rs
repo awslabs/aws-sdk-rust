@@ -26,8 +26,8 @@ impl CancelSchemaExtensionInput {
 }
 
 /// A builder for [`CancelSchemaExtensionInput`](crate::operation::cancel_schema_extension::CancelSchemaExtensionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelSchemaExtensionInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) schema_extension_id: ::std::option::Option<::std::string::String>,

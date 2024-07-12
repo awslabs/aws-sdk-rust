@@ -32,8 +32,8 @@ impl ExportMetadataModelAssessmentOutput {
 }
 
 /// A builder for [`ExportMetadataModelAssessmentOutput`](crate::operation::export_metadata_model_assessment::ExportMetadataModelAssessmentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExportMetadataModelAssessmentOutputBuilder {
     pub(crate) pdf_report: ::std::option::Option<crate::types::ExportMetadataModelAssessmentResultEntry>,
     pub(crate) csv_report: ::std::option::Option<crate::types::ExportMetadataModelAssessmentResultEntry>,

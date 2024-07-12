@@ -34,8 +34,8 @@ impl GetTransitGatewayRegistrationsOutput {
 }
 
 /// A builder for [`GetTransitGatewayRegistrationsOutput`](crate::operation::get_transit_gateway_registrations::GetTransitGatewayRegistrationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTransitGatewayRegistrationsOutputBuilder {
     pub(crate) transit_gateway_registrations: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRegistration>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

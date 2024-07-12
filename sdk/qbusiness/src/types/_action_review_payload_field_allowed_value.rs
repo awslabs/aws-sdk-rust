@@ -27,8 +27,8 @@ impl ActionReviewPayloadFieldAllowedValue {
 }
 
 /// A builder for [`ActionReviewPayloadFieldAllowedValue`](crate::types::ActionReviewPayloadFieldAllowedValue).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ActionReviewPayloadFieldAllowedValueBuilder {
     pub(crate) value: ::std::option::Option<::aws_smithy_types::Document>,
     pub(crate) display_value: ::std::option::Option<::aws_smithy_types::Document>,

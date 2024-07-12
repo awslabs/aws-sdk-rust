@@ -21,8 +21,8 @@ impl SimpleClusterMarker {
 }
 
 /// A builder for [`SimpleClusterMarker`](crate::types::SimpleClusterMarker).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SimpleClusterMarkerBuilder {
     pub(crate) color: ::std::option::Option<::std::string::String>,
 }

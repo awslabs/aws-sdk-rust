@@ -26,8 +26,8 @@ impl UpdatePresetOutput {
 }
 
 /// A builder for [`UpdatePresetOutput`](crate::operation::update_preset::UpdatePresetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePresetOutputBuilder {
     pub(crate) preset: ::std::option::Option<crate::types::Preset>,
     _request_id: Option<String>,

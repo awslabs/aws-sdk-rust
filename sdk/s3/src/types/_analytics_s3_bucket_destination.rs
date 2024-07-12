@@ -44,8 +44,8 @@ impl AnalyticsS3BucketDestination {
 }
 
 /// A builder for [`AnalyticsS3BucketDestination`](crate::types::AnalyticsS3BucketDestination).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AnalyticsS3BucketDestinationBuilder {
     pub(crate) format: ::std::option::Option<crate::types::AnalyticsS3ExportFileFormat>,
     pub(crate) bucket_account_id: ::std::option::Option<::std::string::String>,

@@ -71,8 +71,8 @@ impl MedicalScribeSettings {
 }
 
 /// A builder for [`MedicalScribeSettings`](crate::types::MedicalScribeSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MedicalScribeSettingsBuilder {
     pub(crate) show_speaker_labels: ::std::option::Option<bool>,
     pub(crate) max_speaker_labels: ::std::option::Option<i32>,

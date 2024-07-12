@@ -27,8 +27,8 @@ impl AsnAuthorizationContext {
 }
 
 /// A builder for [`AsnAuthorizationContext`](crate::types::AsnAuthorizationContext).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AsnAuthorizationContextBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) signature: ::std::option::Option<::std::string::String>,

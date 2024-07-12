@@ -20,8 +20,8 @@ impl GetImportTaskInput {
 }
 
 /// A builder for [`GetImportTaskInput`](crate::operation::get_import_task::GetImportTaskInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetImportTaskInputBuilder {
     pub(crate) task_identifier: ::std::option::Option<::std::string::String>,
 }

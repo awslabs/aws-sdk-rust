@@ -18,8 +18,8 @@ impl AbortMultipartUploadOutput {
 }
 
 /// A builder for [`AbortMultipartUploadOutput`](crate::operation::abort_multipart_upload::AbortMultipartUploadOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AbortMultipartUploadOutputBuilder {
     _request_id: Option<String>,
 }

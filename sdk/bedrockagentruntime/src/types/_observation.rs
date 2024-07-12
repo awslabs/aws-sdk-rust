@@ -94,8 +94,8 @@ impl Observation {
 }
 
 /// A builder for [`Observation`](crate::types::Observation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ObservationBuilder {
     pub(crate) trace_id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::Type>,

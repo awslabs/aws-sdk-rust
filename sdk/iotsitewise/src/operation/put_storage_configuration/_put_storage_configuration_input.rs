@@ -80,8 +80,8 @@ impl PutStorageConfigurationInput {
 }
 
 /// A builder for [`PutStorageConfigurationInput`](crate::operation::put_storage_configuration::PutStorageConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutStorageConfigurationInputBuilder {
     pub(crate) storage_type: ::std::option::Option<crate::types::StorageType>,
     pub(crate) multi_layer_storage: ::std::option::Option<crate::types::MultiLayerStorage>,

@@ -26,8 +26,8 @@ impl DescribeDetectMitigationActionsTaskOutput {
 }
 
 /// A builder for [`DescribeDetectMitigationActionsTaskOutput`](crate::operation::describe_detect_mitigation_actions_task::DescribeDetectMitigationActionsTaskOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDetectMitigationActionsTaskOutputBuilder {
     pub(crate) task_summary: ::std::option::Option<crate::types::DetectMitigationActionsTaskSummary>,
     _request_id: Option<String>,

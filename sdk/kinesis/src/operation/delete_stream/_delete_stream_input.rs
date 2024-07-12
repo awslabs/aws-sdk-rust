@@ -33,8 +33,8 @@ impl DeleteStreamInput {
 }
 
 /// A builder for [`DeleteStreamInput`](crate::operation::delete_stream::DeleteStreamInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteStreamInputBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) enforce_consumer_deletion: ::std::option::Option<bool>,

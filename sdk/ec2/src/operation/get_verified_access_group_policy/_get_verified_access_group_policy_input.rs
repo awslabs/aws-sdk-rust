@@ -26,8 +26,8 @@ impl GetVerifiedAccessGroupPolicyInput {
 }
 
 /// A builder for [`GetVerifiedAccessGroupPolicyInput`](crate::operation::get_verified_access_group_policy::GetVerifiedAccessGroupPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetVerifiedAccessGroupPolicyInputBuilder {
     pub(crate) verified_access_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,

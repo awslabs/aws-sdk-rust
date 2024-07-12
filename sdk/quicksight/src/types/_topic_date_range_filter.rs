@@ -35,8 +35,8 @@ impl TopicDateRangeFilter {
 }
 
 /// A builder for [`TopicDateRangeFilter`](crate::types::TopicDateRangeFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct TopicDateRangeFilterBuilder {
     pub(crate) inclusive: ::std::option::Option<bool>,
     pub(crate) constant: ::std::option::Option<crate::types::TopicRangeFilterConstant>,

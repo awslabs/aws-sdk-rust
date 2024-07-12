@@ -21,8 +21,8 @@ impl DescribeAgentInput {
 }
 
 /// A builder for [`DescribeAgentInput`](crate::operation::describe_agent::DescribeAgentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAgentInputBuilder {
     pub(crate) agent_arn: ::std::option::Option<::std::string::String>,
 }

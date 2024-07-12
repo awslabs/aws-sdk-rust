@@ -20,8 +20,8 @@ impl GetAdminScopeInput {
 }
 
 /// A builder for [`GetAdminScopeInput`](crate::operation::get_admin_scope::GetAdminScopeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAdminScopeInputBuilder {
     pub(crate) admin_account: ::std::option::Option<::std::string::String>,
 }

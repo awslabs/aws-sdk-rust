@@ -99,8 +99,8 @@ impl RepositoryCatalogDataInput {
 }
 
 /// A builder for [`RepositoryCatalogDataInput`](crate::types::RepositoryCatalogDataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RepositoryCatalogDataInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) architectures: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

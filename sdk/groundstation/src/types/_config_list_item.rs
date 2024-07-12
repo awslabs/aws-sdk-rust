@@ -39,8 +39,8 @@ impl ConfigListItem {
 }
 
 /// A builder for [`ConfigListItem`](crate::types::ConfigListItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConfigListItemBuilder {
     pub(crate) config_id: ::std::option::Option<::std::string::String>,
     pub(crate) config_type: ::std::option::Option<crate::types::ConfigCapabilityType>,

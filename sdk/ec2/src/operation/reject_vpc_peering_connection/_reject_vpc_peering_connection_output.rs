@@ -26,8 +26,8 @@ impl RejectVpcPeeringConnectionOutput {
 }
 
 /// A builder for [`RejectVpcPeeringConnectionOutput`](crate::operation::reject_vpc_peering_connection::RejectVpcPeeringConnectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RejectVpcPeeringConnectionOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,

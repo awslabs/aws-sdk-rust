@@ -157,8 +157,8 @@ impl PlatformDescription {
 }
 
 /// A builder for [`PlatformDescription`](crate::types::PlatformDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PlatformDescriptionBuilder {
     pub(crate) platform_arn: ::std::option::Option<::std::string::String>,
     pub(crate) platform_owner: ::std::option::Option<::std::string::String>,

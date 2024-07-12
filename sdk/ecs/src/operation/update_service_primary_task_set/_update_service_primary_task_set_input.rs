@@ -32,8 +32,8 @@ impl UpdateServicePrimaryTaskSetInput {
 }
 
 /// A builder for [`UpdateServicePrimaryTaskSetInput`](crate::operation::update_service_primary_task_set::UpdateServicePrimaryTaskSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateServicePrimaryTaskSetInputBuilder {
     pub(crate) cluster: ::std::option::Option<::std::string::String>,
     pub(crate) service: ::std::option::Option<::std::string::String>,

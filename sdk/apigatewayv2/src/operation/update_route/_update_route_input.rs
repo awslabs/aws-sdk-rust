@@ -97,8 +97,8 @@ impl UpdateRouteInput {
 }
 
 /// A builder for [`UpdateRouteInput`](crate::operation::update_route::UpdateRouteInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRouteInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) api_key_required: ::std::option::Option<bool>,

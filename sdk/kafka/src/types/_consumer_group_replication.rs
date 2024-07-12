@@ -43,8 +43,8 @@ impl ConsumerGroupReplication {
 }
 
 /// A builder for [`ConsumerGroupReplication`](crate::types::ConsumerGroupReplication).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConsumerGroupReplicationBuilder {
     pub(crate) consumer_groups_to_exclude: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) consumer_groups_to_replicate: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

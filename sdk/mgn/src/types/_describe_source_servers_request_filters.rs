@@ -53,8 +53,8 @@ impl DescribeSourceServersRequestFilters {
 }
 
 /// A builder for [`DescribeSourceServersRequestFilters`](crate::types::DescribeSourceServersRequestFilters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSourceServersRequestFiltersBuilder {
     pub(crate) source_server_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) is_archived: ::std::option::Option<bool>,

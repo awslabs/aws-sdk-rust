@@ -33,8 +33,8 @@ impl TopicRefreshDetails {
 }
 
 /// A builder for [`TopicRefreshDetails`](crate::types::TopicRefreshDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TopicRefreshDetailsBuilder {
     pub(crate) refresh_arn: ::std::option::Option<::std::string::String>,
     pub(crate) refresh_id: ::std::option::Option<::std::string::String>,

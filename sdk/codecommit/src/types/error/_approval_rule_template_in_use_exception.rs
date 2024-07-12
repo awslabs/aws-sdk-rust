@@ -45,8 +45,8 @@ impl ApprovalRuleTemplateInUseException {
 }
 
 /// A builder for [`ApprovalRuleTemplateInUseException`](crate::types::error::ApprovalRuleTemplateInUseException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ApprovalRuleTemplateInUseExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,

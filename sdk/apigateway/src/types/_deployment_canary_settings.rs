@@ -33,8 +33,8 @@ impl DeploymentCanarySettings {
 }
 
 /// A builder for [`DeploymentCanarySettings`](crate::types::DeploymentCanarySettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeploymentCanarySettingsBuilder {
     pub(crate) percent_traffic: ::std::option::Option<f64>,
     pub(crate) stage_variable_overrides: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

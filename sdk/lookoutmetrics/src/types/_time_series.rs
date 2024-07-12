@@ -36,8 +36,8 @@ impl TimeSeries {
 }
 
 /// A builder for [`TimeSeries`](crate::types::TimeSeries).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TimeSeriesBuilder {
     pub(crate) time_series_id: ::std::option::Option<::std::string::String>,
     pub(crate) dimension_list: ::std::option::Option<::std::vec::Vec<crate::types::DimensionNameValue>>,

@@ -27,8 +27,8 @@ impl CreateCloudFormationSummary {
 }
 
 /// A builder for [`CreateCloudFormationSummary`](crate::types::CreateCloudFormationSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCloudFormationSummaryBuilder {
     pub(crate) step_input: ::std::option::Option<crate::types::CreateCloudFormationStepInput>,
     pub(crate) step_output: ::std::option::Option<crate::types::CreateCloudFormationStepOutput>,

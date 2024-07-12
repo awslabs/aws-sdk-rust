@@ -47,8 +47,8 @@ impl DescribeOrderableClusterOptionsInput {
 }
 
 /// A builder for [`DescribeOrderableClusterOptionsInput`](crate::operation::describe_orderable_cluster_options::DescribeOrderableClusterOptionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeOrderableClusterOptionsInputBuilder {
     pub(crate) cluster_version: ::std::option::Option<::std::string::String>,
     pub(crate) node_type: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl DescribeStaleSecurityGroupsOutput {
 }
 
 /// A builder for [`DescribeStaleSecurityGroupsOutput`](crate::operation::describe_stale_security_groups::DescribeStaleSecurityGroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeStaleSecurityGroupsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) stale_security_group_set: ::std::option::Option<::std::vec::Vec<crate::types::StaleSecurityGroup>>,

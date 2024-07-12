@@ -20,8 +20,8 @@ impl DeleteServiceLinkedRoleInput {
 }
 
 /// A builder for [`DeleteServiceLinkedRoleInput`](crate::operation::delete_service_linked_role::DeleteServiceLinkedRoleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteServiceLinkedRoleInputBuilder {
     pub(crate) role_name: ::std::option::Option<::std::string::String>,
 }

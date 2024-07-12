@@ -69,8 +69,8 @@ impl SigningPlatform {
 }
 
 /// A builder for [`SigningPlatform`](crate::types::SigningPlatform).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SigningPlatformBuilder {
     pub(crate) platform_id: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,

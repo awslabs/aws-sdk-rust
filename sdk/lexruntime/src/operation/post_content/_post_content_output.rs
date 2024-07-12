@@ -254,8 +254,8 @@ impl PostContentOutput {
 }
 
 /// A builder for [`PostContentOutput`](crate::operation::post_content::PostContentOutput).
-#[non_exhaustive]
 #[derive(::std::default::Default)]
+#[non_exhaustive]
 pub struct PostContentOutputBuilder {
     pub(crate) content_type: ::std::option::Option<::std::string::String>,
     pub(crate) intent_name: ::std::option::Option<::std::string::String>,

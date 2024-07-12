@@ -33,8 +33,8 @@ impl ListJobRunAttemptsOutput {
 }
 
 /// A builder for [`ListJobRunAttemptsOutput`](crate::operation::list_job_run_attempts::ListJobRunAttemptsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListJobRunAttemptsOutputBuilder {
     pub(crate) job_run_attempts: ::std::option::Option<::std::vec::Vec<crate::types::JobRunAttemptSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

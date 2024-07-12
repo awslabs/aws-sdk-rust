@@ -21,8 +21,8 @@ impl AwsCloudFrontDistributionOriginS3OriginConfig {
 }
 
 /// A builder for [`AwsCloudFrontDistributionOriginS3OriginConfig`](crate::types::AwsCloudFrontDistributionOriginS3OriginConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsCloudFrontDistributionOriginS3OriginConfigBuilder {
     pub(crate) origin_access_identity: ::std::option::Option<::std::string::String>,
 }

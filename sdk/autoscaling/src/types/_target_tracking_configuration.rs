@@ -43,8 +43,8 @@ impl TargetTrackingConfiguration {
 }
 
 /// A builder for [`TargetTrackingConfiguration`](crate::types::TargetTrackingConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TargetTrackingConfigurationBuilder {
     pub(crate) predefined_metric_specification: ::std::option::Option<crate::types::PredefinedMetricSpecification>,
     pub(crate) customized_metric_specification: ::std::option::Option<crate::types::CustomizedMetricSpecification>,

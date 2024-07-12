@@ -26,8 +26,8 @@ impl CreateLogAnomalyDetectorOutput {
 }
 
 /// A builder for [`CreateLogAnomalyDetectorOutput`](crate::operation::create_log_anomaly_detector::CreateLogAnomalyDetectorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLogAnomalyDetectorOutputBuilder {
     pub(crate) anomaly_detector_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

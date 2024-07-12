@@ -21,8 +21,8 @@ impl StandardsStatusReason {
 }
 
 /// A builder for [`StandardsStatusReason`](crate::types::StandardsStatusReason).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StandardsStatusReasonBuilder {
     pub(crate) status_reason_code: ::std::option::Option<crate::types::StatusReasonCode>,
 }

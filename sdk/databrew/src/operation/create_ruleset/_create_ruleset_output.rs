@@ -27,8 +27,8 @@ impl CreateRulesetOutput {
 }
 
 /// A builder for [`CreateRulesetOutput`](crate::operation::create_ruleset::CreateRulesetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateRulesetOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

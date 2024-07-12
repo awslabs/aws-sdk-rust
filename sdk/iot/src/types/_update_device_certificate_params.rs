@@ -21,8 +21,8 @@ impl UpdateDeviceCertificateParams {
 }
 
 /// A builder for [`UpdateDeviceCertificateParams`](crate::types::UpdateDeviceCertificateParams).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDeviceCertificateParamsBuilder {
     pub(crate) action: ::std::option::Option<crate::types::DeviceCertificateUpdateAction>,
 }

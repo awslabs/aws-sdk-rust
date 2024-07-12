@@ -20,8 +20,8 @@ impl DescribeDominantLanguageDetectionJobInput {
 }
 
 /// A builder for [`DescribeDominantLanguageDetectionJobInput`](crate::operation::describe_dominant_language_detection_job::DescribeDominantLanguageDetectionJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDominantLanguageDetectionJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }

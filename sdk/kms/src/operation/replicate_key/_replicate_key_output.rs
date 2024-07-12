@@ -40,8 +40,8 @@ impl ReplicateKeyOutput {
 }
 
 /// A builder for [`ReplicateKeyOutput`](crate::operation::replicate_key::ReplicateKeyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReplicateKeyOutputBuilder {
     pub(crate) replica_key_metadata: ::std::option::Option<crate::types::KeyMetadata>,
     pub(crate) replica_policy: ::std::option::Option<::std::string::String>,

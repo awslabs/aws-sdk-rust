@@ -32,8 +32,8 @@ impl PutRegistryPolicyOutput {
 }
 
 /// A builder for [`PutRegistryPolicyOutput`](crate::operation::put_registry_policy::PutRegistryPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutRegistryPolicyOutputBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
     pub(crate) policy_text: ::std::option::Option<::std::string::String>,

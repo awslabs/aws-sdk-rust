@@ -26,8 +26,8 @@ impl DescribeSignalingChannelOutput {
 }
 
 /// A builder for [`DescribeSignalingChannelOutput`](crate::operation::describe_signaling_channel::DescribeSignalingChannelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSignalingChannelOutputBuilder {
     pub(crate) channel_info: ::std::option::Option<crate::types::ChannelInfo>,
     _request_id: Option<String>,

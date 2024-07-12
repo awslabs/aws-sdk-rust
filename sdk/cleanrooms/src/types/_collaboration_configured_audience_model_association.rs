@@ -82,8 +82,8 @@ impl CollaborationConfiguredAudienceModelAssociation {
 }
 
 /// A builder for [`CollaborationConfiguredAudienceModelAssociation`](crate::types::CollaborationConfiguredAudienceModelAssociation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CollaborationConfiguredAudienceModelAssociationBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

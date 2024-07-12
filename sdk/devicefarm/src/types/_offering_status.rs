@@ -39,8 +39,8 @@ impl OfferingStatus {
 }
 
 /// A builder for [`OfferingStatus`](crate::types::OfferingStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OfferingStatusBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::OfferingTransactionType>,
     pub(crate) offering: ::std::option::Option<crate::types::Offering>,

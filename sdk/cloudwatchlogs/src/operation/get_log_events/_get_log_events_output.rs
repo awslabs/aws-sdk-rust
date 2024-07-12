@@ -40,8 +40,8 @@ impl GetLogEventsOutput {
 }
 
 /// A builder for [`GetLogEventsOutput`](crate::operation::get_log_events::GetLogEventsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLogEventsOutputBuilder {
     pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::OutputLogEvent>>,
     pub(crate) next_forward_token: ::std::option::Option<::std::string::String>,

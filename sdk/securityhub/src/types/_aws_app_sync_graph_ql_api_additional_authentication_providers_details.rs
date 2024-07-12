@@ -39,8 +39,8 @@ impl AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails {
 }
 
 /// A builder for [`AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails`](crate::types::AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetailsBuilder {
     pub(crate) authentication_type: ::std::option::Option<::std::string::String>,
     pub(crate) lambda_authorizer_config: ::std::option::Option<crate::types::AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails>,

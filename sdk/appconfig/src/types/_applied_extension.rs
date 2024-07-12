@@ -39,8 +39,8 @@ impl AppliedExtension {
 }
 
 /// A builder for [`AppliedExtension`](crate::types::AppliedExtension).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AppliedExtensionBuilder {
     pub(crate) extension_id: ::std::option::Option<::std::string::String>,
     pub(crate) extension_association_id: ::std::option::Option<::std::string::String>,

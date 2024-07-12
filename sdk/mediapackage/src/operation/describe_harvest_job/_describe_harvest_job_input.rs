@@ -20,8 +20,8 @@ impl DescribeHarvestJobInput {
 }
 
 /// A builder for [`DescribeHarvestJobInput`](crate::operation::describe_harvest_job::DescribeHarvestJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeHarvestJobInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }

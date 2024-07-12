@@ -26,8 +26,8 @@ impl DeleteGlobalNetworkOutput {
 }
 
 /// A builder for [`DeleteGlobalNetworkOutput`](crate::operation::delete_global_network::DeleteGlobalNetworkOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteGlobalNetworkOutputBuilder {
     pub(crate) global_network: ::std::option::Option<crate::types::GlobalNetwork>,
     _request_id: Option<String>,

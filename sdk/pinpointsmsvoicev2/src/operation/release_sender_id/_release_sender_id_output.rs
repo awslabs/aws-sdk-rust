@@ -67,8 +67,8 @@ impl ReleaseSenderIdOutput {
 }
 
 /// A builder for [`ReleaseSenderIdOutput`](crate::operation::release_sender_id::ReleaseSenderIdOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReleaseSenderIdOutputBuilder {
     pub(crate) sender_id_arn: ::std::option::Option<::std::string::String>,
     pub(crate) sender_id: ::std::option::Option<::std::string::String>,

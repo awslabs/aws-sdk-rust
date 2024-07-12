@@ -47,8 +47,8 @@ impl ErrorReason {
 }
 
 /// A builder for [`ErrorReason`](crate::types::ErrorReason).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ErrorReasonBuilder {
     pub(crate) error_code: ::std::option::Option<crate::types::ErrorCode>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl SendTaskSuccessInput {
 }
 
 /// A builder for [`SendTaskSuccessInput`](crate::operation::send_task_success::SendTaskSuccessInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SendTaskSuccessInputBuilder {
     pub(crate) task_token: ::std::option::Option<::std::string::String>,
     pub(crate) output: ::std::option::Option<::std::string::String>,

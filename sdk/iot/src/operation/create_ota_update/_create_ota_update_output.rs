@@ -50,8 +50,8 @@ impl CreateOtaUpdateOutput {
 }
 
 /// A builder for [`CreateOtaUpdateOutput`](crate::operation::create_ota_update::CreateOtaUpdateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateOtaUpdateOutputBuilder {
     pub(crate) ota_update_id: ::std::option::Option<::std::string::String>,
     pub(crate) aws_iot_job_id: ::std::option::Option<::std::string::String>,

@@ -63,8 +63,8 @@ impl RuleBasedMatchingRequest {
 }
 
 /// A builder for [`RuleBasedMatchingRequest`](crate::types::RuleBasedMatchingRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RuleBasedMatchingRequestBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) matching_rules: ::std::option::Option<::std::vec::Vec<crate::types::MatchingRule>>,

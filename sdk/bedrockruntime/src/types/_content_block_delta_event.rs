@@ -27,8 +27,8 @@ impl ContentBlockDeltaEvent {
 }
 
 /// A builder for [`ContentBlockDeltaEvent`](crate::types::ContentBlockDeltaEvent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ContentBlockDeltaEventBuilder {
     pub(crate) delta: ::std::option::Option<crate::types::ContentBlockDelta>,
     pub(crate) content_block_index: ::std::option::Option<i32>,

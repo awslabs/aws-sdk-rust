@@ -18,8 +18,8 @@ impl PutResourceConfigOutput {
 }
 
 /// A builder for [`PutResourceConfigOutput`](crate::operation::put_resource_config::PutResourceConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutResourceConfigOutputBuilder {
     _request_id: Option<String>,
 }

@@ -47,8 +47,8 @@ impl AnalyticsUtteranceResult {
 }
 
 /// A builder for [`AnalyticsUtteranceResult`](crate::types::AnalyticsUtteranceResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AnalyticsUtteranceResultBuilder {
     pub(crate) bin_keys: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsBinKey>>,
     pub(crate) group_by_keys: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceGroupByKey>>,

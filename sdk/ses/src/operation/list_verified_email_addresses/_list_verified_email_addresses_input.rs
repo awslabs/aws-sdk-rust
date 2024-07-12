@@ -11,8 +11,8 @@ impl ListVerifiedEmailAddressesInput {
 }
 
 /// A builder for [`ListVerifiedEmailAddressesInput`](crate::operation::list_verified_email_addresses::ListVerifiedEmailAddressesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListVerifiedEmailAddressesInputBuilder {}
 impl ListVerifiedEmailAddressesInputBuilder {
     /// Consumes the builder and constructs a [`ListVerifiedEmailAddressesInput`](crate::operation::list_verified_email_addresses::ListVerifiedEmailAddressesInput).

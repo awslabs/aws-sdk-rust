@@ -31,8 +31,8 @@ impl InternetHealth {
 }
 
 /// A builder for [`InternetHealth`](crate::types::InternetHealth).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InternetHealthBuilder {
     pub(crate) availability: ::std::option::Option<crate::types::AvailabilityMeasurement>,
     pub(crate) performance: ::std::option::Option<crate::types::PerformanceMeasurement>,

@@ -32,8 +32,8 @@ impl ListDomainConfigurationsInput {
 }
 
 /// A builder for [`ListDomainConfigurationsInput`](crate::operation::list_domain_configurations::ListDomainConfigurationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDomainConfigurationsInputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) page_size: ::std::option::Option<i32>,

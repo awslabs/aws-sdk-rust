@@ -27,8 +27,8 @@ impl CreateFaceLivenessSessionRequestSettings {
 }
 
 /// A builder for [`CreateFaceLivenessSessionRequestSettings`](crate::types::CreateFaceLivenessSessionRequestSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateFaceLivenessSessionRequestSettingsBuilder {
     pub(crate) output_config: ::std::option::Option<crate::types::LivenessOutputConfig>,
     pub(crate) audit_images_limit: ::std::option::Option<i32>,

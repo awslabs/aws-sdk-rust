@@ -33,8 +33,8 @@ impl RoutingProfileQueueConfig {
 }
 
 /// A builder for [`RoutingProfileQueueConfig`](crate::types::RoutingProfileQueueConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RoutingProfileQueueConfigBuilder {
     pub(crate) queue_reference: ::std::option::Option<crate::types::RoutingProfileQueueReference>,
     pub(crate) priority: ::std::option::Option<i32>,

@@ -29,8 +29,8 @@ impl BatchAssociateClientDeviceWithCoreDeviceInput {
 }
 
 /// A builder for [`BatchAssociateClientDeviceWithCoreDeviceInput`](crate::operation::batch_associate_client_device_with_core_device::BatchAssociateClientDeviceWithCoreDeviceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchAssociateClientDeviceWithCoreDeviceInputBuilder {
     pub(crate) entries: ::std::option::Option<::std::vec::Vec<crate::types::AssociateClientDeviceWithCoreDeviceEntry>>,
     pub(crate) core_device_thing_name: ::std::option::Option<::std::string::String>,

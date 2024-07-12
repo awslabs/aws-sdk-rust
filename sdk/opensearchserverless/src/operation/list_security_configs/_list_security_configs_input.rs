@@ -32,8 +32,8 @@ impl ListSecurityConfigsInput {
 }
 
 /// A builder for [`ListSecurityConfigsInput`](crate::operation::list_security_configs::ListSecurityConfigsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSecurityConfigsInputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::SecurityConfigType>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

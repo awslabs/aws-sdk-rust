@@ -49,8 +49,8 @@ impl TopicCategoryFilter {
 }
 
 /// A builder for [`TopicCategoryFilter`](crate::types::TopicCategoryFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct TopicCategoryFilterBuilder {
     pub(crate) category_filter_function: ::std::option::Option<crate::types::CategoryFilterFunction>,
     pub(crate) category_filter_type: ::std::option::Option<crate::types::CategoryFilterType>,

@@ -35,8 +35,8 @@ impl SsmActionDefinition {
 }
 
 /// A builder for [`SsmActionDefinition`](crate::types::SsmActionDefinition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SsmActionDefinitionBuilder {
     pub(crate) action_sub_type: ::std::option::Option<crate::types::ActionSubType>,
     pub(crate) region: ::std::option::Option<::std::string::String>,

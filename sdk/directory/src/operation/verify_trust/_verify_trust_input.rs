@@ -21,8 +21,8 @@ impl VerifyTrustInput {
 }
 
 /// A builder for [`VerifyTrustInput`](crate::operation::verify_trust::VerifyTrustInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VerifyTrustInputBuilder {
     pub(crate) trust_id: ::std::option::Option<::std::string::String>,
 }

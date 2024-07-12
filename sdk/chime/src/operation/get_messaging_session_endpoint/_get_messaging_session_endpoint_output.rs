@@ -26,8 +26,8 @@ impl GetMessagingSessionEndpointOutput {
 }
 
 /// A builder for [`GetMessagingSessionEndpointOutput`](crate::operation::get_messaging_session_endpoint::GetMessagingSessionEndpointOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMessagingSessionEndpointOutputBuilder {
     pub(crate) endpoint: ::std::option::Option<crate::types::MessagingSessionEndpoint>,
     _request_id: Option<String>,

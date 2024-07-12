@@ -21,8 +21,8 @@ impl InvokedIntentSample {
 }
 
 /// A builder for [`InvokedIntentSample`](crate::types::InvokedIntentSample).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InvokedIntentSampleBuilder {
     pub(crate) intent_name: ::std::option::Option<::std::string::String>,
 }

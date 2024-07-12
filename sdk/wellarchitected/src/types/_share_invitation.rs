@@ -63,8 +63,8 @@ impl ShareInvitation {
 }
 
 /// A builder for [`ShareInvitation`](crate::types::ShareInvitation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ShareInvitationBuilder {
     pub(crate) share_invitation_id: ::std::option::Option<::std::string::String>,
     pub(crate) share_resource_type: ::std::option::Option<crate::types::ShareResourceType>,

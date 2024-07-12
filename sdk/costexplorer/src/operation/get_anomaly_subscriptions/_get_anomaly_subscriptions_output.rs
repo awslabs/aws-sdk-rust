@@ -33,8 +33,8 @@ impl GetAnomalySubscriptionsOutput {
 }
 
 /// A builder for [`GetAnomalySubscriptionsOutput`](crate::operation::get_anomaly_subscriptions::GetAnomalySubscriptionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAnomalySubscriptionsOutputBuilder {
     pub(crate) anomaly_subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::AnomalySubscription>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,

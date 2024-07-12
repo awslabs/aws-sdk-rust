@@ -26,8 +26,8 @@ impl UpdateContinuousBackupsInput {
 }
 
 /// A builder for [`UpdateContinuousBackupsInput`](crate::operation::update_continuous_backups::UpdateContinuousBackupsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateContinuousBackupsInputBuilder {
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
     pub(crate) point_in_time_recovery_specification: ::std::option::Option<crate::types::PointInTimeRecoverySpecification>,

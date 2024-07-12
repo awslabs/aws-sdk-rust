@@ -26,8 +26,8 @@ impl DescribeChannelBanOutput {
 }
 
 /// A builder for [`DescribeChannelBanOutput`](crate::operation::describe_channel_ban::DescribeChannelBanOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeChannelBanOutputBuilder {
     pub(crate) channel_ban: ::std::option::Option<crate::types::ChannelBan>,
     _request_id: Option<String>,

@@ -34,8 +34,8 @@ impl ListStackSetOperationsOutput {
 }
 
 /// A builder for [`ListStackSetOperationsOutput`](crate::operation::list_stack_set_operations::ListStackSetOperationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListStackSetOperationsOutputBuilder {
     pub(crate) summaries: ::std::option::Option<::std::vec::Vec<crate::types::StackSetOperationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

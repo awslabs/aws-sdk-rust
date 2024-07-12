@@ -26,8 +26,8 @@ impl ExchangeCodeForTokenInput {
 }
 
 /// A builder for [`ExchangeCodeForTokenInput`](crate::operation::exchange_code_for_token::ExchangeCodeForTokenInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExchangeCodeForTokenInputBuilder {
     pub(crate) provider: ::std::option::Option<crate::types::TokenProviders>,
     pub(crate) request: ::std::option::Option<crate::types::ExchangeCodeForTokenRequestBody>,

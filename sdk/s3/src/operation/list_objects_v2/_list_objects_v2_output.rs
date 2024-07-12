@@ -150,8 +150,8 @@ impl ListObjectsV2Output {
 }
 
 /// A builder for [`ListObjectsV2Output`](crate::operation::list_objects_v2::ListObjectsV2Output).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListObjectsV2OutputBuilder {
     pub(crate) is_truncated: ::std::option::Option<bool>,
     pub(crate) contents: ::std::option::Option<::std::vec::Vec<crate::types::Object>>,

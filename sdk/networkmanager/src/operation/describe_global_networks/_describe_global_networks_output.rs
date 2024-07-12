@@ -34,8 +34,8 @@ impl DescribeGlobalNetworksOutput {
 }
 
 /// A builder for [`DescribeGlobalNetworksOutput`](crate::operation::describe_global_networks::DescribeGlobalNetworksOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeGlobalNetworksOutputBuilder {
     pub(crate) global_networks: ::std::option::Option<::std::vec::Vec<crate::types::GlobalNetwork>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -18,8 +18,8 @@ impl PutSubscriptionFilterOutput {
 }
 
 /// A builder for [`PutSubscriptionFilterOutput`](crate::operation::put_subscription_filter::PutSubscriptionFilterOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutSubscriptionFilterOutputBuilder {
     _request_id: Option<String>,
 }

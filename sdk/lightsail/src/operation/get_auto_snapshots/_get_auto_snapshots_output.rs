@@ -40,8 +40,8 @@ impl GetAutoSnapshotsOutput {
 }
 
 /// A builder for [`GetAutoSnapshotsOutput`](crate::operation::get_auto_snapshots::GetAutoSnapshotsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAutoSnapshotsOutputBuilder {
     pub(crate) resource_name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,

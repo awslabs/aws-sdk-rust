@@ -38,8 +38,8 @@ impl DescribeAnalysisOutput {
 }
 
 /// A builder for [`DescribeAnalysisOutput`](crate::operation::describe_analysis::DescribeAnalysisOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAnalysisOutputBuilder {
     pub(crate) analysis: ::std::option::Option<crate::types::Analysis>,
     pub(crate) status: ::std::option::Option<i32>,

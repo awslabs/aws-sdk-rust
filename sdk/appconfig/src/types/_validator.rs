@@ -36,8 +36,8 @@ impl Validator {
 }
 
 /// A builder for [`Validator`](crate::types::Validator).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ValidatorBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ValidatorType>,
     pub(crate) content: ::std::option::Option<::std::string::String>,

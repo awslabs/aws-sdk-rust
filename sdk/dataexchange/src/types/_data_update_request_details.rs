@@ -21,8 +21,8 @@ impl DataUpdateRequestDetails {
 }
 
 /// A builder for [`DataUpdateRequestDetails`](crate::types::DataUpdateRequestDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataUpdateRequestDetailsBuilder {
     pub(crate) data_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }

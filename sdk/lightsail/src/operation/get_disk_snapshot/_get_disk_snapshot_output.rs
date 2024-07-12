@@ -26,8 +26,8 @@ impl GetDiskSnapshotOutput {
 }
 
 /// A builder for [`GetDiskSnapshotOutput`](crate::operation::get_disk_snapshot::GetDiskSnapshotOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDiskSnapshotOutputBuilder {
     pub(crate) disk_snapshot: ::std::option::Option<crate::types::DiskSnapshot>,
     _request_id: Option<String>,

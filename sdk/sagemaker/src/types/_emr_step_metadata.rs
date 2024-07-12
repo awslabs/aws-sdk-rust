@@ -39,8 +39,8 @@ impl EmrStepMetadata {
 }
 
 /// A builder for [`EmrStepMetadata`](crate::types::EmrStepMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EmrStepMetadataBuilder {
     pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) step_id: ::std::option::Option<::std::string::String>,

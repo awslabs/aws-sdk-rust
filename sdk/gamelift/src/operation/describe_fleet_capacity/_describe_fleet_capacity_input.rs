@@ -34,8 +34,8 @@ impl DescribeFleetCapacityInput {
 }
 
 /// A builder for [`DescribeFleetCapacityInput`](crate::operation::describe_fleet_capacity::DescribeFleetCapacityInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFleetCapacityInputBuilder {
     pub(crate) fleet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) limit: ::std::option::Option<i32>,

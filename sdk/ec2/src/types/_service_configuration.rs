@@ -119,8 +119,8 @@ impl ServiceConfiguration {
 }
 
 /// A builder for [`ServiceConfiguration`](crate::types::ServiceConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServiceConfigurationBuilder {
     pub(crate) service_type: ::std::option::Option<::std::vec::Vec<crate::types::ServiceTypeDetail>>,
     pub(crate) service_id: ::std::option::Option<::std::string::String>,

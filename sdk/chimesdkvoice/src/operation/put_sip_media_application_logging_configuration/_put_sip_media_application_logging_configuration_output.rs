@@ -28,8 +28,8 @@ impl PutSipMediaApplicationLoggingConfigurationOutput {
 }
 
 /// A builder for [`PutSipMediaApplicationLoggingConfigurationOutput`](crate::operation::put_sip_media_application_logging_configuration::PutSipMediaApplicationLoggingConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutSipMediaApplicationLoggingConfigurationOutputBuilder {
     pub(crate) sip_media_application_logging_configuration: ::std::option::Option<crate::types::SipMediaApplicationLoggingConfiguration>,
     _request_id: Option<String>,

@@ -21,8 +21,8 @@ impl AwsCloudFrontDistributionOriginGroupFailover {
 }
 
 /// A builder for [`AwsCloudFrontDistributionOriginGroupFailover`](crate::types::AwsCloudFrontDistributionOriginGroupFailover).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsCloudFrontDistributionOriginGroupFailoverBuilder {
     pub(crate) status_codes: ::std::option::Option<crate::types::AwsCloudFrontDistributionOriginGroupFailoverStatusCodes>,
 }

@@ -26,8 +26,8 @@ impl DescribeEventsDetectionJobOutput {
 }
 
 /// A builder for [`DescribeEventsDetectionJobOutput`](crate::operation::describe_events_detection_job::DescribeEventsDetectionJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEventsDetectionJobOutputBuilder {
     pub(crate) events_detection_job_properties: ::std::option::Option<crate::types::EventsDetectionJobProperties>,
     _request_id: Option<String>,

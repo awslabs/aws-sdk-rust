@@ -38,8 +38,8 @@ impl GetGroupCertificateAuthorityOutput {
 }
 
 /// A builder for [`GetGroupCertificateAuthorityOutput`](crate::operation::get_group_certificate_authority::GetGroupCertificateAuthorityOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetGroupCertificateAuthorityOutputBuilder {
     pub(crate) group_certificate_authority_arn: ::std::option::Option<::std::string::String>,
     pub(crate) group_certificate_authority_id: ::std::option::Option<::std::string::String>,

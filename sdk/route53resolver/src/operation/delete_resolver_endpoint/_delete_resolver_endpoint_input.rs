@@ -20,8 +20,8 @@ impl DeleteResolverEndpointInput {
 }
 
 /// A builder for [`DeleteResolverEndpointInput`](crate::operation::delete_resolver_endpoint::DeleteResolverEndpointInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteResolverEndpointInputBuilder {
     pub(crate) resolver_endpoint_id: ::std::option::Option<::std::string::String>,
 }

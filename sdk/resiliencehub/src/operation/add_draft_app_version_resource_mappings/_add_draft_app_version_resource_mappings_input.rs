@@ -28,8 +28,8 @@ impl AddDraftAppVersionResourceMappingsInput {
 }
 
 /// A builder for [`AddDraftAppVersionResourceMappingsInput`](crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddDraftAppVersionResourceMappingsInputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
     pub(crate) resource_mappings: ::std::option::Option<::std::vec::Vec<crate::types::ResourceMapping>>,

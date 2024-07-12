@@ -26,8 +26,8 @@ impl DeleteFirewallManagerRuleGroupsInput {
 }
 
 /// A builder for [`DeleteFirewallManagerRuleGroupsInput`](crate::operation::delete_firewall_manager_rule_groups::DeleteFirewallManagerRuleGroupsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFirewallManagerRuleGroupsInputBuilder {
     pub(crate) web_acl_arn: ::std::option::Option<::std::string::String>,
     pub(crate) web_acl_lock_token: ::std::option::Option<::std::string::String>,

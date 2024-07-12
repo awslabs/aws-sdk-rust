@@ -35,8 +35,8 @@ impl Output {
 }
 
 /// A builder for [`Output`](crate::types::Output).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct OutputBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) value_string: ::std::option::Option<::std::string::String>,

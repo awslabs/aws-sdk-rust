@@ -27,8 +27,8 @@ impl StartVariantImportJobOutput {
 }
 
 /// A builder for [`StartVariantImportJobOutput`](crate::operation::start_variant_import_job::StartVariantImportJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartVariantImportJobOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

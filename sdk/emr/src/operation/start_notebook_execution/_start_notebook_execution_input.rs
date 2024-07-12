@@ -88,8 +88,8 @@ impl StartNotebookExecutionInput {
 }
 
 /// A builder for [`StartNotebookExecutionInput`](crate::operation::start_notebook_execution::StartNotebookExecutionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartNotebookExecutionInputBuilder {
     pub(crate) editor_id: ::std::option::Option<::std::string::String>,
     pub(crate) relative_path: ::std::option::Option<::std::string::String>,

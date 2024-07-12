@@ -26,8 +26,8 @@ impl CreateDatasetContentOutput {
 }
 
 /// A builder for [`CreateDatasetContentOutput`](crate::operation::create_dataset_content::CreateDatasetContentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDatasetContentOutputBuilder {
     pub(crate) version_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

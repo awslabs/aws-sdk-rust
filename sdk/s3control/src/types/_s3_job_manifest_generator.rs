@@ -50,8 +50,8 @@ impl S3JobManifestGenerator {
 }
 
 /// A builder for [`S3JobManifestGenerator`](crate::types::S3JobManifestGenerator).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3JobManifestGeneratorBuilder {
     pub(crate) expected_bucket_owner: ::std::option::Option<::std::string::String>,
     pub(crate) source_bucket: ::std::option::Option<::std::string::String>,

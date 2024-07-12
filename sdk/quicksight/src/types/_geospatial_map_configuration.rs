@@ -63,8 +63,8 @@ impl GeospatialMapConfiguration {
 }
 
 /// A builder for [`GeospatialMapConfiguration`](crate::types::GeospatialMapConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GeospatialMapConfigurationBuilder {
     pub(crate) field_wells: ::std::option::Option<crate::types::GeospatialMapFieldWells>,
     pub(crate) legend: ::std::option::Option<crate::types::LegendOptions>,

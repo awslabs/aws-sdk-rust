@@ -32,8 +32,8 @@ impl DeleteSlackUserIdentityInput {
 }
 
 /// A builder for [`DeleteSlackUserIdentityInput`](crate::operation::delete_slack_user_identity::DeleteSlackUserIdentityInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSlackUserIdentityInputBuilder {
     pub(crate) chat_configuration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) slack_team_id: ::std::option::Option<::std::string::String>,

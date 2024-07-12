@@ -18,8 +18,8 @@ impl DeleteAccessControlRuleOutput {
 }
 
 /// A builder for [`DeleteAccessControlRuleOutput`](crate::operation::delete_access_control_rule::DeleteAccessControlRuleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAccessControlRuleOutputBuilder {
     _request_id: Option<String>,
 }

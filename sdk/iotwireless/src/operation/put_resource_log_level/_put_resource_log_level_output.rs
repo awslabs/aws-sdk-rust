@@ -18,8 +18,8 @@ impl PutResourceLogLevelOutput {
 }
 
 /// A builder for [`PutResourceLogLevelOutput`](crate::operation::put_resource_log_level::PutResourceLogLevelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutResourceLogLevelOutputBuilder {
     _request_id: Option<String>,
 }

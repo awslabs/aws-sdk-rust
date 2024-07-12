@@ -26,8 +26,8 @@ impl DescribeAuthorizerOutput {
 }
 
 /// A builder for [`DescribeAuthorizerOutput`](crate::operation::describe_authorizer::DescribeAuthorizerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAuthorizerOutputBuilder {
     pub(crate) authorizer_description: ::std::option::Option<crate::types::AuthorizerDescription>,
     _request_id: Option<String>,

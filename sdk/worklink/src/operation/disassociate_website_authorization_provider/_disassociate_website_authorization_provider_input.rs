@@ -27,8 +27,8 @@ impl DisassociateWebsiteAuthorizationProviderInput {
 }
 
 /// A builder for [`DisassociateWebsiteAuthorizationProviderInput`](crate::operation::disassociate_website_authorization_provider::DisassociateWebsiteAuthorizationProviderInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateWebsiteAuthorizationProviderInputBuilder {
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,
     pub(crate) authorization_provider_id: ::std::option::Option<::std::string::String>,

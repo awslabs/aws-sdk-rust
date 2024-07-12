@@ -32,8 +32,8 @@ impl CreateIpSetOutput {
 }
 
 /// A builder for [`CreateIpSetOutput`](crate::operation::create_ip_set::CreateIpSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateIpSetOutputBuilder {
     pub(crate) ip_set: ::std::option::Option<crate::types::IpSet>,
     pub(crate) change_token: ::std::option::Option<::std::string::String>,

@@ -33,8 +33,8 @@ impl ListGatewaysOutput {
 }
 
 /// A builder for [`ListGatewaysOutput`](crate::operation::list_gateways::ListGatewaysOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListGatewaysOutputBuilder {
     pub(crate) gateway_summaries: ::std::option::Option<::std::vec::Vec<crate::types::GatewaySummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

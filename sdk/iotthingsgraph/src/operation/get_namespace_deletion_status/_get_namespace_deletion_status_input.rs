@@ -11,8 +11,8 @@ impl GetNamespaceDeletionStatusInput {
 }
 
 /// A builder for [`GetNamespaceDeletionStatusInput`](crate::operation::get_namespace_deletion_status::GetNamespaceDeletionStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetNamespaceDeletionStatusInputBuilder {}
 impl GetNamespaceDeletionStatusInputBuilder {
     /// Consumes the builder and constructs a [`GetNamespaceDeletionStatusInput`](crate::operation::get_namespace_deletion_status::GetNamespaceDeletionStatusInput).

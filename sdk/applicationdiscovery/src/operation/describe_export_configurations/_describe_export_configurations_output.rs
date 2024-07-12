@@ -34,8 +34,8 @@ impl DescribeExportConfigurationsOutput {
 }
 
 /// A builder for [`DescribeExportConfigurationsOutput`](crate::operation::describe_export_configurations::DescribeExportConfigurationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeExportConfigurationsOutputBuilder {
     pub(crate) exports_info: ::std::option::Option<::std::vec::Vec<crate::types::ExportInfo>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

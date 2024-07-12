@@ -28,8 +28,8 @@ impl CertificateList {
 }
 
 /// A builder for [`CertificateList`](crate::types::CertificateList).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CertificateListBuilder {
     pub(crate) signing_alg: ::std::option::Option<crate::types::SigningAlg>,
     pub(crate) value: ::std::option::Option<::std::string::String>,

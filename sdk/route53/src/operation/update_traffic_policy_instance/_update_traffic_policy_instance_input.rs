@@ -39,8 +39,8 @@ impl UpdateTrafficPolicyInstanceInput {
 }
 
 /// A builder for [`UpdateTrafficPolicyInstanceInput`](crate::operation::update_traffic_policy_instance::UpdateTrafficPolicyInstanceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateTrafficPolicyInstanceInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) ttl: ::std::option::Option<i64>,

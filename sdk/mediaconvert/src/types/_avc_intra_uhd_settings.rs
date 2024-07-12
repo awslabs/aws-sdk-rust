@@ -21,8 +21,8 @@ impl AvcIntraUhdSettings {
 }
 
 /// A builder for [`AvcIntraUhdSettings`](crate::types::AvcIntraUhdSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AvcIntraUhdSettingsBuilder {
     pub(crate) quality_tuning_level: ::std::option::Option<crate::types::AvcIntraUhdQualityTuningLevel>,
 }

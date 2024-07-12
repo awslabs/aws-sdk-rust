@@ -36,8 +36,8 @@ impl BatchDescribeSimulationJobOutput {
 }
 
 /// A builder for [`BatchDescribeSimulationJobOutput`](crate::operation::batch_describe_simulation_job::BatchDescribeSimulationJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDescribeSimulationJobOutputBuilder {
     pub(crate) jobs: ::std::option::Option<::std::vec::Vec<crate::types::SimulationJob>>,
     pub(crate) unprocessed_jobs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

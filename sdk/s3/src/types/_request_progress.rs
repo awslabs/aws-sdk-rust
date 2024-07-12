@@ -21,8 +21,8 @@ impl RequestProgress {
 }
 
 /// A builder for [`RequestProgress`](crate::types::RequestProgress).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RequestProgressBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
 }

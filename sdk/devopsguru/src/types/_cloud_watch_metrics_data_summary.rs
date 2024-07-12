@@ -29,8 +29,8 @@ impl CloudWatchMetricsDataSummary {
 }
 
 /// A builder for [`CloudWatchMetricsDataSummary`](crate::types::CloudWatchMetricsDataSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CloudWatchMetricsDataSummaryBuilder {
     pub(crate) timestamp_metric_value_pair_list: ::std::option::Option<::std::vec::Vec<crate::types::TimestampMetricValuePair>>,
     pub(crate) status_code: ::std::option::Option<crate::types::CloudWatchMetricDataStatusCode>,

@@ -27,8 +27,8 @@ impl MatchObjectAge {
 }
 
 /// A builder for [`MatchObjectAge`](crate::types::MatchObjectAge).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MatchObjectAgeBuilder {
     pub(crate) days_greater_than: ::std::option::Option<i32>,
     pub(crate) days_less_than: ::std::option::Option<i32>,

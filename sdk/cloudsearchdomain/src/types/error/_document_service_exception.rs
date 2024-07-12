@@ -53,8 +53,8 @@ impl DocumentServiceException {
 }
 
 /// A builder for [`DocumentServiceException`](crate::types::error::DocumentServiceException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DocumentServiceExceptionBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

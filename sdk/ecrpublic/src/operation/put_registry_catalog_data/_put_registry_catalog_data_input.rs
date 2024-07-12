@@ -24,8 +24,8 @@ impl PutRegistryCatalogDataInput {
 }
 
 /// A builder for [`PutRegistryCatalogDataInput`](crate::operation::put_registry_catalog_data::PutRegistryCatalogDataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutRegistryCatalogDataInputBuilder {
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
 }

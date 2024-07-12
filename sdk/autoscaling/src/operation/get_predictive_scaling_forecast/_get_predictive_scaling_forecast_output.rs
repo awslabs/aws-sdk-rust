@@ -40,8 +40,8 @@ impl GetPredictiveScalingForecastOutput {
 }
 
 /// A builder for [`GetPredictiveScalingForecastOutput`](crate::operation::get_predictive_scaling_forecast::GetPredictiveScalingForecastOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPredictiveScalingForecastOutputBuilder {
     pub(crate) load_forecast: ::std::option::Option<::std::vec::Vec<crate::types::LoadForecast>>,
     pub(crate) capacity_forecast: ::std::option::Option<crate::types::CapacityForecast>,

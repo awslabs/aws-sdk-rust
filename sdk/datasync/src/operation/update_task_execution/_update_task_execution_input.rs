@@ -30,8 +30,8 @@ impl UpdateTaskExecutionInput {
 }
 
 /// A builder for [`UpdateTaskExecutionInput`](crate::operation::update_task_execution::UpdateTaskExecutionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateTaskExecutionInputBuilder {
     pub(crate) task_execution_arn: ::std::option::Option<::std::string::String>,
     pub(crate) options: ::std::option::Option<crate::types::Options>,

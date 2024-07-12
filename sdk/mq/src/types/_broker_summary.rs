@@ -63,8 +63,8 @@ impl BrokerSummary {
 }
 
 /// A builder for [`BrokerSummary`](crate::types::BrokerSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BrokerSummaryBuilder {
     pub(crate) broker_arn: ::std::option::Option<::std::string::String>,
     pub(crate) broker_id: ::std::option::Option<::std::string::String>,

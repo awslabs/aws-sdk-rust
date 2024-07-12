@@ -32,8 +32,8 @@ impl UpdatePartnerAccountInput {
 }
 
 /// A builder for [`UpdatePartnerAccountInput`](crate::operation::update_partner_account::UpdatePartnerAccountInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePartnerAccountInputBuilder {
     pub(crate) sidewalk: ::std::option::Option<crate::types::SidewalkUpdateAccount>,
     pub(crate) partner_account_id: ::std::option::Option<::std::string::String>,

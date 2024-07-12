@@ -50,8 +50,8 @@ impl ListAppInstanceBotsOutput {
 }
 
 /// A builder for [`ListAppInstanceBotsOutput`](crate::operation::list_app_instance_bots::ListAppInstanceBotsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ListAppInstanceBotsOutputBuilder {
     pub(crate) app_instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_instance_bots: ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceBotSummary>>,

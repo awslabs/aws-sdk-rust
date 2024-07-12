@@ -27,8 +27,8 @@ impl FindingHistoryUpdateSource {
 }
 
 /// A builder for [`FindingHistoryUpdateSource`](crate::types::FindingHistoryUpdateSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FindingHistoryUpdateSourceBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::FindingHistoryUpdateSourceType>,
     pub(crate) identity: ::std::option::Option<::std::string::String>,

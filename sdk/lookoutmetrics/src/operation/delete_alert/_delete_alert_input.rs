@@ -20,8 +20,8 @@ impl DeleteAlertInput {
 }
 
 /// A builder for [`DeleteAlertInput`](crate::operation::delete_alert::DeleteAlertInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAlertInputBuilder {
     pub(crate) alert_arn: ::std::option::Option<::std::string::String>,
 }

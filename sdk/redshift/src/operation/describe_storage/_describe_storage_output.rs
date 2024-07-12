@@ -32,8 +32,8 @@ impl DescribeStorageOutput {
 }
 
 /// A builder for [`DescribeStorageOutput`](crate::operation::describe_storage::DescribeStorageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeStorageOutputBuilder {
     pub(crate) total_backup_size_in_mega_bytes: ::std::option::Option<f64>,
     pub(crate) total_provisioned_storage_in_mega_bytes: ::std::option::Option<f64>,

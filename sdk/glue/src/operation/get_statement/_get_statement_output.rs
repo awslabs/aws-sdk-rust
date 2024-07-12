@@ -26,8 +26,8 @@ impl GetStatementOutput {
 }
 
 /// A builder for [`GetStatementOutput`](crate::operation::get_statement::GetStatementOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetStatementOutputBuilder {
     pub(crate) statement: ::std::option::Option<crate::types::Statement>,
     _request_id: Option<String>,

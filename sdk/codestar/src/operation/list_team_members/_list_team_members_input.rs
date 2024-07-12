@@ -32,8 +32,8 @@ impl ListTeamMembersInput {
 }
 
 /// A builder for [`ListTeamMembersInput`](crate::operation::list_team_members::ListTeamMembersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTeamMembersInputBuilder {
     pub(crate) project_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

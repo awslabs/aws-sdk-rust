@@ -20,8 +20,8 @@ impl DeleteFindingsFilterInput {
 }
 
 /// A builder for [`DeleteFindingsFilterInput`](crate::operation::delete_findings_filter::DeleteFindingsFilterInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFindingsFilterInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }

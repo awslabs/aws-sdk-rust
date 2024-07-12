@@ -32,8 +32,8 @@ impl DisassociateAttributeGroupOutput {
 }
 
 /// A builder for [`DisassociateAttributeGroupOutput`](crate::operation::disassociate_attribute_group::DisassociateAttributeGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateAttributeGroupOutputBuilder {
     pub(crate) application_arn: ::std::option::Option<::std::string::String>,
     pub(crate) attribute_group_arn: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl DisassociateAppBlockBuilderAppBlockInput {
 }
 
 /// A builder for [`DisassociateAppBlockBuilderAppBlockInput`](crate::operation::disassociate_app_block_builder_app_block::DisassociateAppBlockBuilderAppBlockInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateAppBlockBuilderAppBlockInputBuilder {
     pub(crate) app_block_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_block_builder_name: ::std::option::Option<::std::string::String>,

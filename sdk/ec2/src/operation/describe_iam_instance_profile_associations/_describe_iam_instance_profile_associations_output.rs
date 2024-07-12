@@ -34,8 +34,8 @@ impl DescribeIamInstanceProfileAssociationsOutput {
 }
 
 /// A builder for [`DescribeIamInstanceProfileAssociationsOutput`](crate::operation::describe_iam_instance_profile_associations::DescribeIamInstanceProfileAssociationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeIamInstanceProfileAssociationsOutputBuilder {
     pub(crate) iam_instance_profile_associations: ::std::option::Option<::std::vec::Vec<crate::types::IamInstanceProfileAssociation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

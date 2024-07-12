@@ -11,8 +11,8 @@ impl GetContainerServicePowersInput {
 }
 
 /// A builder for [`GetContainerServicePowersInput`](crate::operation::get_container_service_powers::GetContainerServicePowersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetContainerServicePowersInputBuilder {}
 impl GetContainerServicePowersInputBuilder {
     /// Consumes the builder and constructs a [`GetContainerServicePowersInput`](crate::operation::get_container_service_powers::GetContainerServicePowersInput).

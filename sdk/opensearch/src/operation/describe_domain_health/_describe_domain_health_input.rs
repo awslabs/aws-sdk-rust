@@ -21,8 +21,8 @@ impl DescribeDomainHealthInput {
 }
 
 /// A builder for [`DescribeDomainHealthInput`](crate::operation::describe_domain_health::DescribeDomainHealthInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDomainHealthInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
 }

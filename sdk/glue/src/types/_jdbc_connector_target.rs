@@ -71,8 +71,8 @@ impl JdbcConnectorTarget {
 }
 
 /// A builder for [`JdbcConnectorTarget`](crate::types::JdbcConnectorTarget).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JdbcConnectorTargetBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

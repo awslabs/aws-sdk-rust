@@ -35,8 +35,8 @@ impl TimeSeriesCondition {
 }
 
 /// A builder for [`TimeSeriesCondition`](crate::types::TimeSeriesCondition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TimeSeriesConditionBuilder {
     pub(crate) attribute_name: ::std::option::Option<::std::string::String>,
     pub(crate) attribute_value: ::std::option::Option<::std::string::String>,

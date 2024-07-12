@@ -29,8 +29,8 @@ impl Websocket {
 }
 
 /// A builder for [`Websocket`](crate::types::Websocket).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WebsocketBuilder {
     pub(crate) url: ::std::option::Option<::std::string::String>,
     pub(crate) connection_expiry: ::std::option::Option<::std::string::String>,

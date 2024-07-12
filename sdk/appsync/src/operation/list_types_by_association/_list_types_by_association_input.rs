@@ -44,8 +44,8 @@ impl ListTypesByAssociationInput {
 }
 
 /// A builder for [`ListTypesByAssociationInput`](crate::operation::list_types_by_association::ListTypesByAssociationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTypesByAssociationInputBuilder {
     pub(crate) merged_api_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) association_id: ::std::option::Option<::std::string::String>,

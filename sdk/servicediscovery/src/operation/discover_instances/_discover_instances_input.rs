@@ -102,8 +102,8 @@ impl DiscoverInstancesInput {
 }
 
 /// A builder for [`DiscoverInstancesInput`](crate::operation::discover_instances::DiscoverInstancesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DiscoverInstancesInputBuilder {
     pub(crate) namespace_name: ::std::option::Option<::std::string::String>,
     pub(crate) service_name: ::std::option::Option<::std::string::String>,

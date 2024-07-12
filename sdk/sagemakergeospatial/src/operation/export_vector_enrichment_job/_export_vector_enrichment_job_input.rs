@@ -38,8 +38,8 @@ impl ExportVectorEnrichmentJobInput {
 }
 
 /// A builder for [`ExportVectorEnrichmentJobInput`](crate::operation::export_vector_enrichment_job::ExportVectorEnrichmentJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExportVectorEnrichmentJobInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

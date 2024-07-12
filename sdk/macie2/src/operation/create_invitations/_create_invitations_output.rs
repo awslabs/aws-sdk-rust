@@ -28,8 +28,8 @@ impl CreateInvitationsOutput {
 }
 
 /// A builder for [`CreateInvitationsOutput`](crate::operation::create_invitations::CreateInvitationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateInvitationsOutputBuilder {
     pub(crate) unprocessed_accounts: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>,
     _request_id: Option<String>,

@@ -22,8 +22,8 @@ impl DisableAlarmActionsInput {
 }
 
 /// A builder for [`DisableAlarmActionsInput`](crate::operation::disable_alarm_actions::DisableAlarmActionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableAlarmActionsInputBuilder {
     pub(crate) alarm_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

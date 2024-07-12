@@ -33,8 +33,8 @@ impl ListEngagementsOutput {
 }
 
 /// A builder for [`ListEngagementsOutput`](crate::operation::list_engagements::ListEngagementsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEngagementsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) engagements: ::std::option::Option<::std::vec::Vec<crate::types::Engagement>>,

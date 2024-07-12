@@ -40,8 +40,8 @@ impl ListLifecyclePoliciesInput {
 }
 
 /// A builder for [`ListLifecyclePoliciesInput`](crate::operation::list_lifecycle_policies::ListLifecyclePoliciesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListLifecyclePoliciesInputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::LifecyclePolicyType>,
     pub(crate) resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

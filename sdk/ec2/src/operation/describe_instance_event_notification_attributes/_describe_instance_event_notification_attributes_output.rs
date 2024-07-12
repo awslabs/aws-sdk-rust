@@ -28,8 +28,8 @@ impl DescribeInstanceEventNotificationAttributesOutput {
 }
 
 /// A builder for [`DescribeInstanceEventNotificationAttributesOutput`](crate::operation::describe_instance_event_notification_attributes::DescribeInstanceEventNotificationAttributesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeInstanceEventNotificationAttributesOutputBuilder {
     pub(crate) instance_tag_attribute: ::std::option::Option<crate::types::InstanceTagNotificationAttribute>,
     _request_id: Option<String>,

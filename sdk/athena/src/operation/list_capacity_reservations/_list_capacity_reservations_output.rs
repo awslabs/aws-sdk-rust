@@ -33,8 +33,8 @@ impl ListCapacityReservationsOutput {
 }
 
 /// A builder for [`ListCapacityReservationsOutput`](crate::operation::list_capacity_reservations::ListCapacityReservationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCapacityReservationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) capacity_reservations: ::std::option::Option<::std::vec::Vec<crate::types::CapacityReservation>>,

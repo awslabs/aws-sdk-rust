@@ -34,8 +34,8 @@ impl BatchGetDevicePositionOutput {
 }
 
 /// A builder for [`BatchGetDevicePositionOutput`](crate::operation::batch_get_device_position::BatchGetDevicePositionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetDevicePositionOutputBuilder {
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetDevicePositionError>>,
     pub(crate) device_positions: ::std::option::Option<::std::vec::Vec<crate::types::DevicePosition>>,

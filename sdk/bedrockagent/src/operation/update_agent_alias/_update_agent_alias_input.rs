@@ -46,8 +46,8 @@ impl UpdateAgentAliasInput {
 }
 
 /// A builder for [`UpdateAgentAliasInput`](crate::operation::update_agent_alias::UpdateAgentAliasInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAgentAliasInputBuilder {
     pub(crate) agent_id: ::std::option::Option<::std::string::String>,
     pub(crate) agent_alias_id: ::std::option::Option<::std::string::String>,

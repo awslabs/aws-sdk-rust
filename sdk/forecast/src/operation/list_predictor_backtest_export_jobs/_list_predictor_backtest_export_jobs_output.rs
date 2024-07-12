@@ -34,8 +34,8 @@ impl ListPredictorBacktestExportJobsOutput {
 }
 
 /// A builder for [`ListPredictorBacktestExportJobsOutput`](crate::operation::list_predictor_backtest_export_jobs::ListPredictorBacktestExportJobsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPredictorBacktestExportJobsOutputBuilder {
     pub(crate) predictor_backtest_export_jobs: ::std::option::Option<::std::vec::Vec<crate::types::PredictorBacktestExportJobSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -54,8 +54,8 @@ impl DescribeStorageSystemResourcesInput {
 }
 
 /// A builder for [`DescribeStorageSystemResourcesInput`](crate::operation::describe_storage_system_resources::DescribeStorageSystemResourcesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeStorageSystemResourcesInputBuilder {
     pub(crate) discovery_job_arn: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::DiscoveryResourceType>,

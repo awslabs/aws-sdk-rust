@@ -76,8 +76,8 @@ impl CreateDataQualityJobDefinitionInput {
 }
 
 /// A builder for [`CreateDataQualityJobDefinitionInput`](crate::operation::create_data_quality_job_definition::CreateDataQualityJobDefinitionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDataQualityJobDefinitionInputBuilder {
     pub(crate) job_definition_name: ::std::option::Option<::std::string::String>,
     pub(crate) data_quality_baseline_config: ::std::option::Option<crate::types::DataQualityBaselineConfig>,

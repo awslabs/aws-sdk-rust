@@ -39,8 +39,8 @@ impl ExportToS3Task {
 }
 
 /// A builder for [`ExportToS3Task`](crate::types::ExportToS3Task).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExportToS3TaskBuilder {
     pub(crate) container_format: ::std::option::Option<crate::types::ContainerFormat>,
     pub(crate) disk_image_format: ::std::option::Option<crate::types::DiskImageFormat>,

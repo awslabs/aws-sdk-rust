@@ -26,8 +26,8 @@ impl DeleteCarrierGatewayOutput {
 }
 
 /// A builder for [`DeleteCarrierGatewayOutput`](crate::operation::delete_carrier_gateway::DeleteCarrierGatewayOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCarrierGatewayOutputBuilder {
     pub(crate) carrier_gateway: ::std::option::Option<crate::types::CarrierGateway>,
     _request_id: Option<String>,

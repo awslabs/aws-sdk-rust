@@ -35,8 +35,8 @@ impl GetTransitGatewayConnectPeerAssociationsOutput {
 }
 
 /// A builder for [`GetTransitGatewayConnectPeerAssociationsOutput`](crate::operation::get_transit_gateway_connect_peer_associations::GetTransitGatewayConnectPeerAssociationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTransitGatewayConnectPeerAssociationsOutputBuilder {
     pub(crate) transit_gateway_connect_peer_associations: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayConnectPeerAssociation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

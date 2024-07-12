@@ -32,8 +32,8 @@ impl RegisterApplicationOutput {
 }
 
 /// A builder for [`RegisterApplicationOutput`](crate::operation::register_application::RegisterApplicationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterApplicationOutputBuilder {
     pub(crate) application: ::std::option::Option<crate::types::Application>,
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,

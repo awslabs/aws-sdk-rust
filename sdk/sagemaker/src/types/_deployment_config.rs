@@ -33,8 +33,8 @@ impl DeploymentConfig {
 }
 
 /// A builder for [`DeploymentConfig`](crate::types::DeploymentConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeploymentConfigBuilder {
     pub(crate) blue_green_update_policy: ::std::option::Option<crate::types::BlueGreenUpdatePolicy>,
     pub(crate) rolling_update_policy: ::std::option::Option<crate::types::RollingUpdatePolicy>,

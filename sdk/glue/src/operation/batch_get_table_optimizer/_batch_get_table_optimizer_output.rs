@@ -36,8 +36,8 @@ impl BatchGetTableOptimizerOutput {
 }
 
 /// A builder for [`BatchGetTableOptimizerOutput`](crate::operation::batch_get_table_optimizer::BatchGetTableOptimizerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetTableOptimizerOutputBuilder {
     pub(crate) table_optimizers: ::std::option::Option<::std::vec::Vec<crate::types::BatchTableOptimizer>>,
     pub(crate) failures: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetTableOptimizerError>>,

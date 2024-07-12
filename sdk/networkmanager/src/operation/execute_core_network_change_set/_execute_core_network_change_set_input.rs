@@ -26,8 +26,8 @@ impl ExecuteCoreNetworkChangeSetInput {
 }
 
 /// A builder for [`ExecuteCoreNetworkChangeSetInput`](crate::operation::execute_core_network_change_set::ExecuteCoreNetworkChangeSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExecuteCoreNetworkChangeSetInputBuilder {
     pub(crate) core_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) policy_version_id: ::std::option::Option<i32>,

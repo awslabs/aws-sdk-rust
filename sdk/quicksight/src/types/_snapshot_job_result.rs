@@ -23,8 +23,8 @@ impl SnapshotJobResult {
 }
 
 /// A builder for [`SnapshotJobResult`](crate::types::SnapshotJobResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SnapshotJobResultBuilder {
     pub(crate) anonymous_users: ::std::option::Option<::std::vec::Vec<crate::types::AnonymousUserSnapshotJobResult>>,
 }

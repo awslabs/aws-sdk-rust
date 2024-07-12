@@ -26,8 +26,8 @@ impl SubmitTaskStateChangeOutput {
 }
 
 /// A builder for [`SubmitTaskStateChangeOutput`](crate::operation::submit_task_state_change::SubmitTaskStateChangeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SubmitTaskStateChangeOutputBuilder {
     pub(crate) acknowledgment: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

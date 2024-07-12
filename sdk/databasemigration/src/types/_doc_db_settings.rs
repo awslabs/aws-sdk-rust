@@ -136,8 +136,8 @@ impl DocDbSettings {
 }
 
 /// A builder for [`DocDbSettings`](crate::types::DocDbSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DocDbSettingsBuilder {
     pub(crate) username: ::std::option::Option<::std::string::String>,
     pub(crate) password: ::std::option::Option<::std::string::String>,

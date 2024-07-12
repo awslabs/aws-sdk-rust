@@ -36,8 +36,8 @@ impl BatchGetMembershipDatasourcesOutput {
 }
 
 /// A builder for [`BatchGetMembershipDatasourcesOutput`](crate::operation::batch_get_membership_datasources::BatchGetMembershipDatasourcesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetMembershipDatasourcesOutputBuilder {
     pub(crate) membership_datasources: ::std::option::Option<::std::vec::Vec<crate::types::MembershipDatasources>>,
     pub(crate) unprocessed_graphs: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedGraph>>,

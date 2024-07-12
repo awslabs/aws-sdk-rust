@@ -28,8 +28,8 @@ impl RunPipelineActivityInput {
 }
 
 /// A builder for [`RunPipelineActivityInput`](crate::operation::run_pipeline_activity::RunPipelineActivityInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RunPipelineActivityInputBuilder {
     pub(crate) pipeline_activity: ::std::option::Option<crate::types::PipelineActivity>,
     pub(crate) payloads: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>>,

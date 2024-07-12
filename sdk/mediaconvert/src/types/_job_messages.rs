@@ -31,8 +31,8 @@ impl JobMessages {
 }
 
 /// A builder for [`JobMessages`](crate::types::JobMessages).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JobMessagesBuilder {
     pub(crate) info: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) warning: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

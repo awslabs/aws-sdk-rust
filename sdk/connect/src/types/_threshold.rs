@@ -27,8 +27,8 @@ impl Threshold {
 }
 
 /// A builder for [`Threshold`](crate::types::Threshold).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ThresholdBuilder {
     pub(crate) comparison: ::std::option::Option<crate::types::Comparison>,
     pub(crate) threshold_value: ::std::option::Option<f64>,

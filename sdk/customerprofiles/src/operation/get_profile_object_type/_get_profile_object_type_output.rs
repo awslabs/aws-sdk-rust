@@ -127,8 +127,8 @@ impl GetProfileObjectTypeOutput {
 }
 
 /// A builder for [`GetProfileObjectTypeOutput`](crate::operation::get_profile_object_type::GetProfileObjectTypeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetProfileObjectTypeOutputBuilder {
     pub(crate) object_type_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

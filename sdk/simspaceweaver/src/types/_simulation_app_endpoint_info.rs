@@ -29,8 +29,8 @@ impl SimulationAppEndpointInfo {
 }
 
 /// A builder for [`SimulationAppEndpointInfo`](crate::types::SimulationAppEndpointInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SimulationAppEndpointInfoBuilder {
     pub(crate) address: ::std::option::Option<::std::string::String>,
     pub(crate) ingress_port_mappings: ::std::option::Option<::std::vec::Vec<crate::types::SimulationAppPortMapping>>,

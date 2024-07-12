@@ -35,8 +35,8 @@ impl Urls {
 }
 
 /// A builder for [`Urls`](crate::types::Urls).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UrlsBuilder {
     pub(crate) seed_url_configuration: ::std::option::Option<crate::types::SeedUrlConfiguration>,
     pub(crate) site_maps_configuration: ::std::option::Option<crate::types::SiteMapsConfiguration>,

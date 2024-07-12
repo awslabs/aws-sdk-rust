@@ -40,8 +40,8 @@ impl ListCrawlsInput {
 }
 
 /// A builder for [`ListCrawlsInput`](crate::operation::list_crawls::ListCrawlsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCrawlsInputBuilder {
     pub(crate) crawler_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

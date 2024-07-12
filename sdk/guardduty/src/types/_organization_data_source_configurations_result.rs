@@ -33,8 +33,8 @@ impl OrganizationDataSourceConfigurationsResult {
 }
 
 /// A builder for [`OrganizationDataSourceConfigurationsResult`](crate::types::OrganizationDataSourceConfigurationsResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OrganizationDataSourceConfigurationsResultBuilder {
     pub(crate) s3_logs: ::std::option::Option<crate::types::OrganizationS3LogsConfigurationResult>,
     pub(crate) kubernetes: ::std::option::Option<crate::types::OrganizationKubernetesConfigurationResult>,

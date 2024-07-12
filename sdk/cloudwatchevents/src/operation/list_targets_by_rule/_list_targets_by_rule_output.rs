@@ -34,8 +34,8 @@ impl ListTargetsByRuleOutput {
 }
 
 /// A builder for [`ListTargetsByRuleOutput`](crate::operation::list_targets_by_rule::ListTargetsByRuleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTargetsByRuleOutputBuilder {
     pub(crate) targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

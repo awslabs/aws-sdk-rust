@@ -28,8 +28,8 @@ impl RequestCertificateOutput {
 }
 
 /// A builder for [`RequestCertificateOutput`](crate::operation::request_certificate::RequestCertificateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RequestCertificateOutputBuilder {
     pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

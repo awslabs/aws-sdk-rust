@@ -21,8 +21,8 @@ impl DqStopJobOnFailureOptions {
 }
 
 /// A builder for [`DqStopJobOnFailureOptions`](crate::types::DqStopJobOnFailureOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DqStopJobOnFailureOptionsBuilder {
     pub(crate) stop_job_on_failure_timing: ::std::option::Option<crate::types::DqStopJobOnFailureTiming>,
 }

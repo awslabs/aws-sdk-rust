@@ -34,8 +34,8 @@ impl DeleteFirewallOutput {
 }
 
 /// A builder for [`DeleteFirewallOutput`](crate::operation::delete_firewall::DeleteFirewallOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFirewallOutputBuilder {
     pub(crate) firewall: ::std::option::Option<crate::types::Firewall>,
     pub(crate) firewall_status: ::std::option::Option<crate::types::FirewallStatus>,

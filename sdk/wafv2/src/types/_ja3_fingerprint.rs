@@ -39,8 +39,8 @@ impl Ja3Fingerprint {
 }
 
 /// A builder for [`Ja3Fingerprint`](crate::types::Ja3Fingerprint).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Ja3FingerprintBuilder {
     pub(crate) fallback_behavior: ::std::option::Option<crate::types::FallbackBehavior>,
 }

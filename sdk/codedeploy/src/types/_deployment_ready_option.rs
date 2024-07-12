@@ -39,8 +39,8 @@ impl DeploymentReadyOption {
 }
 
 /// A builder for [`DeploymentReadyOption`](crate::types::DeploymentReadyOption).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeploymentReadyOptionBuilder {
     pub(crate) action_on_timeout: ::std::option::Option<crate::types::DeploymentReadyAction>,
     pub(crate) wait_time_in_minutes: ::std::option::Option<i32>,

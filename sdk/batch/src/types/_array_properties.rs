@@ -21,8 +21,8 @@ impl ArrayProperties {
 }
 
 /// A builder for [`ArrayProperties`](crate::types::ArrayProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ArrayPropertiesBuilder {
     pub(crate) size: ::std::option::Option<i32>,
 }

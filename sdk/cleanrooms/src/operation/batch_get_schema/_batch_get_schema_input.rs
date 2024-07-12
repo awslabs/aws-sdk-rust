@@ -28,8 +28,8 @@ impl BatchGetSchemaInput {
 }
 
 /// A builder for [`BatchGetSchemaInput`](crate::operation::batch_get_schema::BatchGetSchemaInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetSchemaInputBuilder {
     pub(crate) collaboration_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

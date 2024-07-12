@@ -35,8 +35,8 @@ impl GlobalClusterMember {
 }
 
 /// A builder for [`GlobalClusterMember`](crate::types::GlobalClusterMember).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GlobalClusterMemberBuilder {
     pub(crate) db_cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) readers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

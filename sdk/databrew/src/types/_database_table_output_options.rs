@@ -28,8 +28,8 @@ impl DatabaseTableOutputOptions {
 }
 
 /// A builder for [`DatabaseTableOutputOptions`](crate::types::DatabaseTableOutputOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DatabaseTableOutputOptionsBuilder {
     pub(crate) temp_directory: ::std::option::Option<crate::types::S3Location>,
     pub(crate) table_name: ::std::option::Option<::std::string::String>,

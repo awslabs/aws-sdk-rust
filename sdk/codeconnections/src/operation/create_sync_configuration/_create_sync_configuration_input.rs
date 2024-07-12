@@ -62,8 +62,8 @@ impl CreateSyncConfigurationInput {
 }
 
 /// A builder for [`CreateSyncConfigurationInput`](crate::operation::create_sync_configuration::CreateSyncConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSyncConfigurationInputBuilder {
     pub(crate) branch: ::std::option::Option<::std::string::String>,
     pub(crate) config_file: ::std::option::Option<::std::string::String>,

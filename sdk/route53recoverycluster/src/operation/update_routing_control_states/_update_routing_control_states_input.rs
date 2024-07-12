@@ -32,8 +32,8 @@ impl UpdateRoutingControlStatesInput {
 }
 
 /// A builder for [`UpdateRoutingControlStatesInput`](crate::operation::update_routing_control_states::UpdateRoutingControlStatesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRoutingControlStatesInputBuilder {
     pub(crate) update_routing_control_state_entries: ::std::option::Option<::std::vec::Vec<crate::types::UpdateRoutingControlStateEntry>>,
     pub(crate) safety_rules_to_override: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

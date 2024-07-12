@@ -30,8 +30,8 @@ impl SqlQueryDatasetAction {
 }
 
 /// A builder for [`SqlQueryDatasetAction`](crate::types::SqlQueryDatasetAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SqlQueryDatasetActionBuilder {
     pub(crate) sql_query: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::QueryFilter>>,

@@ -18,8 +18,8 @@ impl StartCampaignOutput {
 }
 
 /// A builder for [`StartCampaignOutput`](crate::operation::start_campaign::StartCampaignOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartCampaignOutputBuilder {
     _request_id: Option<String>,
 }

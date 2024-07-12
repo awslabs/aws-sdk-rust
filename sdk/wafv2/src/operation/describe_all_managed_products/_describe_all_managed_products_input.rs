@@ -34,8 +34,8 @@ impl DescribeAllManagedProductsInput {
 }
 
 /// A builder for [`DescribeAllManagedProductsInput`](crate::operation::describe_all_managed_products::DescribeAllManagedProductsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAllManagedProductsInputBuilder {
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,
 }

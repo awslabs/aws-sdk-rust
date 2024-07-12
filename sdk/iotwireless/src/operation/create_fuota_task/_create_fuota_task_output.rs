@@ -32,8 +32,8 @@ impl CreateFuotaTaskOutput {
 }
 
 /// A builder for [`CreateFuotaTaskOutput`](crate::operation::create_fuota_task::CreateFuotaTaskOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateFuotaTaskOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,

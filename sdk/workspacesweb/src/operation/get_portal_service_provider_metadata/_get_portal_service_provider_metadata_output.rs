@@ -33,8 +33,8 @@ impl GetPortalServiceProviderMetadataOutput {
 }
 
 /// A builder for [`GetPortalServiceProviderMetadataOutput`](crate::operation::get_portal_service_provider_metadata::GetPortalServiceProviderMetadataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPortalServiceProviderMetadataOutputBuilder {
     pub(crate) portal_arn: ::std::option::Option<::std::string::String>,
     pub(crate) service_provider_saml_metadata: ::std::option::Option<::std::string::String>,

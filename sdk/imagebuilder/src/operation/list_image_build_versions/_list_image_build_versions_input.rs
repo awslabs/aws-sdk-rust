@@ -64,8 +64,8 @@ impl ListImageBuildVersionsInput {
 }
 
 /// A builder for [`ListImageBuildVersionsInput`](crate::operation::list_image_build_versions::ListImageBuildVersionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListImageBuildVersionsInputBuilder {
     pub(crate) image_version_arn: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,

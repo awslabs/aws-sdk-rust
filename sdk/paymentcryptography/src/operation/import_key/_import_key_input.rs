@@ -52,8 +52,8 @@ impl ImportKeyInput {
 }
 
 /// A builder for [`ImportKeyInput`](crate::operation::import_key::ImportKeyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportKeyInputBuilder {
     pub(crate) key_material: ::std::option::Option<crate::types::ImportKeyMaterial>,
     pub(crate) key_check_value_algorithm: ::std::option::Option<crate::types::KeyCheckValueAlgorithm>,

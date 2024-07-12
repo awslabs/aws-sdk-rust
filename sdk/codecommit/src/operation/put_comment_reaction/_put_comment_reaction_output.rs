@@ -18,8 +18,8 @@ impl PutCommentReactionOutput {
 }
 
 /// A builder for [`PutCommentReactionOutput`](crate::operation::put_comment_reaction::PutCommentReactionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutCommentReactionOutputBuilder {
     _request_id: Option<String>,
 }

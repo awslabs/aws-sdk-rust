@@ -21,8 +21,8 @@ impl AtiModelPerformance {
 }
 
 /// A builder for [`AtiModelPerformance`](crate::types::AtiModelPerformance).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AtiModelPerformanceBuilder {
     pub(crate) asi: ::std::option::Option<f32>,
 }

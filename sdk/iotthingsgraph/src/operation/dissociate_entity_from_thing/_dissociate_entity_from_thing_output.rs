@@ -18,8 +18,8 @@ impl DissociateEntityFromThingOutput {
 }
 
 /// A builder for [`DissociateEntityFromThingOutput`](crate::operation::dissociate_entity_from_thing::DissociateEntityFromThingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DissociateEntityFromThingOutputBuilder {
     _request_id: Option<String>,
 }

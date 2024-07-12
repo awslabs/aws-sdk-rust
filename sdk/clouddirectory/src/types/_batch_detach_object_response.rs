@@ -21,8 +21,8 @@ impl BatchDetachObjectResponse {
 }
 
 /// A builder for [`BatchDetachObjectResponse`](crate::types::BatchDetachObjectResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDetachObjectResponseBuilder {
     pub(crate) detached_object_identifier: ::std::option::Option<::std::string::String>,
 }

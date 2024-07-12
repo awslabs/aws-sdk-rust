@@ -47,8 +47,8 @@ impl DeleteVerifiedDestinationNumberOutput {
 }
 
 /// A builder for [`DeleteVerifiedDestinationNumberOutput`](crate::operation::delete_verified_destination_number::DeleteVerifiedDestinationNumberOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVerifiedDestinationNumberOutputBuilder {
     pub(crate) verified_destination_number_arn: ::std::option::Option<::std::string::String>,
     pub(crate) verified_destination_number_id: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl UpdateBranchOutput {
 }
 
 /// A builder for [`UpdateBranchOutput`](crate::operation::update_branch::UpdateBranchOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateBranchOutputBuilder {
     pub(crate) branch: ::std::option::Option<crate::types::Branch>,
     _request_id: Option<String>,

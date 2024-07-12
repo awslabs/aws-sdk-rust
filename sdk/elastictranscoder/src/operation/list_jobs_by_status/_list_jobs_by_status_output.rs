@@ -35,8 +35,8 @@ impl ListJobsByStatusOutput {
 }
 
 /// A builder for [`ListJobsByStatusOutput`](crate::operation::list_jobs_by_status::ListJobsByStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListJobsByStatusOutputBuilder {
     pub(crate) jobs: ::std::option::Option<::std::vec::Vec<crate::types::Job>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,

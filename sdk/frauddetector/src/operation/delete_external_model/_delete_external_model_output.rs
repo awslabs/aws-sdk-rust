@@ -18,8 +18,8 @@ impl DeleteExternalModelOutput {
 }
 
 /// A builder for [`DeleteExternalModelOutput`](crate::operation::delete_external_model::DeleteExternalModelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteExternalModelOutputBuilder {
     _request_id: Option<String>,
 }

@@ -50,8 +50,8 @@ impl UpdateNetworkSettingsInput {
 }
 
 /// A builder for [`UpdateNetworkSettingsInput`](crate::operation::update_network_settings::UpdateNetworkSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateNetworkSettingsInputBuilder {
     pub(crate) network_settings_arn: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,

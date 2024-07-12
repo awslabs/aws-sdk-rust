@@ -39,8 +39,8 @@ impl GenerationSortBy {
 }
 
 /// A builder for [`GenerationSortBy`](crate::types::GenerationSortBy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GenerationSortByBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::GenerationSortByAttribute>,
     pub(crate) order: ::std::option::Option<crate::types::SortOrder>,

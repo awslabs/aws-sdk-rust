@@ -71,8 +71,8 @@ impl RdsConfiguration {
 }
 
 /// A builder for [`RdsConfiguration`](crate::types::RdsConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RdsConfigurationBuilder {
     pub(crate) engine_edition: ::std::option::Option<::std::string::String>,
     pub(crate) instance_type: ::std::option::Option<::std::string::String>,

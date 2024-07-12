@@ -18,8 +18,8 @@ impl UpdateCampaignDialerConfigOutput {
 }
 
 /// A builder for [`UpdateCampaignDialerConfigOutput`](crate::operation::update_campaign_dialer_config::UpdateCampaignDialerConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateCampaignDialerConfigOutputBuilder {
     _request_id: Option<String>,
 }

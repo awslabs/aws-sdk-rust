@@ -34,8 +34,8 @@ impl ListDecoderManifestSignalsOutput {
 }
 
 /// A builder for [`ListDecoderManifestSignalsOutput`](crate::operation::list_decoder_manifest_signals::ListDecoderManifestSignalsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDecoderManifestSignalsOutputBuilder {
     pub(crate) signal_decoders: ::std::option::Option<::std::vec::Vec<crate::types::SignalDecoder>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

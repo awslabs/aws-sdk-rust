@@ -34,8 +34,8 @@ impl GetVpcLinksOutput {
 }
 
 /// A builder for [`GetVpcLinksOutput`](crate::operation::get_vpc_links::GetVpcLinksOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetVpcLinksOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::VpcLink>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

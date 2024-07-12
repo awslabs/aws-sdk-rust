@@ -34,8 +34,8 @@ impl ListCrossAccountAuthorizationsOutput {
 }
 
 /// A builder for [`ListCrossAccountAuthorizationsOutput`](crate::operation::list_cross_account_authorizations::ListCrossAccountAuthorizationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCrossAccountAuthorizationsOutputBuilder {
     pub(crate) cross_account_authorizations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

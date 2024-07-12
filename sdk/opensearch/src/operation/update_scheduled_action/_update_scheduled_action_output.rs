@@ -26,8 +26,8 @@ impl UpdateScheduledActionOutput {
 }
 
 /// A builder for [`UpdateScheduledActionOutput`](crate::operation::update_scheduled_action::UpdateScheduledActionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateScheduledActionOutputBuilder {
     pub(crate) scheduled_action: ::std::option::Option<crate::types::ScheduledAction>,
     _request_id: Option<String>,

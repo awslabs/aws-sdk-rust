@@ -26,8 +26,8 @@ impl DescribeScheduledQueryOutput {
 }
 
 /// A builder for [`DescribeScheduledQueryOutput`](crate::operation::describe_scheduled_query::DescribeScheduledQueryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeScheduledQueryOutputBuilder {
     pub(crate) scheduled_query: ::std::option::Option<crate::types::ScheduledQueryDescription>,
     _request_id: Option<String>,

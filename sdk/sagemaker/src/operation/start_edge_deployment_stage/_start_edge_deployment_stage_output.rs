@@ -18,8 +18,8 @@ impl StartEdgeDeploymentStageOutput {
 }
 
 /// A builder for [`StartEdgeDeploymentStageOutput`](crate::operation::start_edge_deployment_stage::StartEdgeDeploymentStageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartEdgeDeploymentStageOutputBuilder {
     _request_id: Option<String>,
 }

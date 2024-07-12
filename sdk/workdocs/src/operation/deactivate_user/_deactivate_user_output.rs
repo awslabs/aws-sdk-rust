@@ -18,8 +18,8 @@ impl DeactivateUserOutput {
 }
 
 /// A builder for [`DeactivateUserOutput`](crate::operation::deactivate_user::DeactivateUserOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeactivateUserOutputBuilder {
     _request_id: Option<String>,
 }

@@ -40,8 +40,8 @@ impl ListBucketsOutput {
 }
 
 /// A builder for [`ListBucketsOutput`](crate::operation::list_buckets::ListBucketsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListBucketsOutputBuilder {
     pub(crate) buckets: ::std::option::Option<::std::vec::Vec<crate::types::Bucket>>,
     pub(crate) owner: ::std::option::Option<crate::types::Owner>,

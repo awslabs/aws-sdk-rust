@@ -155,8 +155,8 @@ impl LambdaFunctionRecommendation {
 }
 
 /// A builder for [`LambdaFunctionRecommendation`](crate::types::LambdaFunctionRecommendation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LambdaFunctionRecommendationBuilder {
     pub(crate) function_arn: ::std::option::Option<::std::string::String>,
     pub(crate) function_version: ::std::option::Option<::std::string::String>,

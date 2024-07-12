@@ -21,8 +21,8 @@ impl BooleanFilter {
 }
 
 /// A builder for [`BooleanFilter`](crate::types::BooleanFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BooleanFilterBuilder {
     pub(crate) value: ::std::option::Option<bool>,
 }

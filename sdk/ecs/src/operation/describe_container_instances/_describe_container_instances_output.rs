@@ -36,8 +36,8 @@ impl DescribeContainerInstancesOutput {
 }
 
 /// A builder for [`DescribeContainerInstancesOutput`](crate::operation::describe_container_instances::DescribeContainerInstancesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeContainerInstancesOutputBuilder {
     pub(crate) container_instances: ::std::option::Option<::std::vec::Vec<crate::types::ContainerInstance>>,
     pub(crate) failures: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>,

@@ -28,8 +28,8 @@ impl DeleteLocalGatewayRouteTableVpcAssociationOutput {
 }
 
 /// A builder for [`DeleteLocalGatewayRouteTableVpcAssociationOutput`](crate::operation::delete_local_gateway_route_table_vpc_association::DeleteLocalGatewayRouteTableVpcAssociationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteLocalGatewayRouteTableVpcAssociationOutputBuilder {
     pub(crate) local_gateway_route_table_vpc_association: ::std::option::Option<crate::types::LocalGatewayRouteTableVpcAssociation>,
     _request_id: Option<String>,

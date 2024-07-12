@@ -26,8 +26,8 @@ impl CreateTransitVirtualInterfaceOutput {
 }
 
 /// A builder for [`CreateTransitVirtualInterfaceOutput`](crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateTransitVirtualInterfaceOutputBuilder {
     pub(crate) virtual_interface: ::std::option::Option<crate::types::VirtualInterface>,
     _request_id: Option<String>,

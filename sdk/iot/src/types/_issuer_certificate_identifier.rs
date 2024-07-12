@@ -33,8 +33,8 @@ impl IssuerCertificateIdentifier {
 }
 
 /// A builder for [`IssuerCertificateIdentifier`](crate::types::IssuerCertificateIdentifier).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IssuerCertificateIdentifierBuilder {
     pub(crate) issuer_certificate_subject: ::std::option::Option<::std::string::String>,
     pub(crate) issuer_id: ::std::option::Option<::std::string::String>,

@@ -32,8 +32,8 @@ impl DeleteThemeAliasInput {
 }
 
 /// A builder for [`DeleteThemeAliasInput`](crate::operation::delete_theme_alias::DeleteThemeAliasInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteThemeAliasInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) theme_id: ::std::option::Option<::std::string::String>,

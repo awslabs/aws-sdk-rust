@@ -37,8 +37,8 @@ impl AddJobFlowStepsInput {
 }
 
 /// A builder for [`AddJobFlowStepsInput`](crate::operation::add_job_flow_steps::AddJobFlowStepsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddJobFlowStepsInputBuilder {
     pub(crate) job_flow_id: ::std::option::Option<::std::string::String>,
     pub(crate) steps: ::std::option::Option<::std::vec::Vec<crate::types::StepConfig>>,

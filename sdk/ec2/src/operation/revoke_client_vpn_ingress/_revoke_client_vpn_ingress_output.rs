@@ -26,8 +26,8 @@ impl RevokeClientVpnIngressOutput {
 }
 
 /// A builder for [`RevokeClientVpnIngressOutput`](crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngressOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RevokeClientVpnIngressOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ClientVpnAuthorizationRuleStatus>,
     _request_id: Option<String>,

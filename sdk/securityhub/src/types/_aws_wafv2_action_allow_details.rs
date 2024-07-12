@@ -21,8 +21,8 @@ impl AwsWafv2ActionAllowDetails {
 }
 
 /// A builder for [`AwsWafv2ActionAllowDetails`](crate::types::AwsWafv2ActionAllowDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsWafv2ActionAllowDetailsBuilder {
     pub(crate) custom_request_handling: ::std::option::Option<crate::types::AwsWafv2CustomRequestHandlingDetails>,
 }

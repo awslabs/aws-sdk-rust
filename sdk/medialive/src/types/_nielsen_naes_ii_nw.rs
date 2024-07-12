@@ -33,8 +33,8 @@ impl NielsenNaesIiNw {
 }
 
 /// A builder for [`NielsenNaesIiNw`](crate::types::NielsenNaesIiNw).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NielsenNaesIiNwBuilder {
     pub(crate) check_digit_string: ::std::option::Option<::std::string::String>,
     pub(crate) sid: ::std::option::Option<f64>,

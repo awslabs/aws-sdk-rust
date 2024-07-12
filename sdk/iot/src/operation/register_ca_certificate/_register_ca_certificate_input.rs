@@ -69,8 +69,8 @@ impl RegisterCaCertificateInput {
 }
 
 /// A builder for [`RegisterCaCertificateInput`](crate::operation::register_ca_certificate::RegisterCaCertificateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterCaCertificateInputBuilder {
     pub(crate) ca_certificate: ::std::option::Option<::std::string::String>,
     pub(crate) verification_certificate: ::std::option::Option<::std::string::String>,

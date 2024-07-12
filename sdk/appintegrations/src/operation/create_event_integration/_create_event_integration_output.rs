@@ -26,8 +26,8 @@ impl CreateEventIntegrationOutput {
 }
 
 /// A builder for [`CreateEventIntegrationOutput`](crate::operation::create_event_integration::CreateEventIntegrationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateEventIntegrationOutputBuilder {
     pub(crate) event_integration_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

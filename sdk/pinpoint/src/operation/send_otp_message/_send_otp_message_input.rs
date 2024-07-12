@@ -26,8 +26,8 @@ impl SendOtpMessageInput {
 }
 
 /// A builder for [`SendOtpMessageInput`](crate::operation::send_otp_message::SendOtpMessageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendOtpMessageInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) send_otp_message_request_parameters: ::std::option::Option<crate::types::SendOtpMessageRequestParameters>,

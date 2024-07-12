@@ -74,8 +74,8 @@ impl CreateRegistrationAssociationOutput {
 }
 
 /// A builder for [`CreateRegistrationAssociationOutput`](crate::operation::create_registration_association::CreateRegistrationAssociationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateRegistrationAssociationOutputBuilder {
     pub(crate) registration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) registration_id: ::std::option::Option<::std::string::String>,

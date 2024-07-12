@@ -61,8 +61,8 @@ impl CacheSubnetGroup {
 }
 
 /// A builder for [`CacheSubnetGroup`](crate::types::CacheSubnetGroup).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CacheSubnetGroupBuilder {
     pub(crate) cache_subnet_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) cache_subnet_group_description: ::std::option::Option<::std::string::String>,

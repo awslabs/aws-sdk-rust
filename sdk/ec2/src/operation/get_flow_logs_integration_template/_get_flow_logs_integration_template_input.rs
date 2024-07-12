@@ -38,8 +38,8 @@ impl GetFlowLogsIntegrationTemplateInput {
 }
 
 /// A builder for [`GetFlowLogsIntegrationTemplateInput`](crate::operation::get_flow_logs_integration_template::GetFlowLogsIntegrationTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetFlowLogsIntegrationTemplateInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) flow_log_id: ::std::option::Option<::std::string::String>,

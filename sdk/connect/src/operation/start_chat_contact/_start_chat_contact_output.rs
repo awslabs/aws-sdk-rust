@@ -44,8 +44,8 @@ impl StartChatContactOutput {
 }
 
 /// A builder for [`StartChatContactOutput`](crate::operation::start_chat_contact::StartChatContactOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartChatContactOutputBuilder {
     pub(crate) contact_id: ::std::option::Option<::std::string::String>,
     pub(crate) participant_id: ::std::option::Option<::std::string::String>,

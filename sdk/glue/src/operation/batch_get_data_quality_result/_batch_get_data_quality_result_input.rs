@@ -22,8 +22,8 @@ impl BatchGetDataQualityResultInput {
 }
 
 /// A builder for [`BatchGetDataQualityResultInput`](crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetDataQualityResultInputBuilder {
     pub(crate) result_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

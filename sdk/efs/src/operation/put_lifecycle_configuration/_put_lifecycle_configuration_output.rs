@@ -28,8 +28,8 @@ impl PutLifecycleConfigurationOutput {
 }
 
 /// A builder for [`PutLifecycleConfigurationOutput`](crate::operation::put_lifecycle_configuration::PutLifecycleConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutLifecycleConfigurationOutputBuilder {
     pub(crate) lifecycle_policies: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicy>>,
     _request_id: Option<String>,

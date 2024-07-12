@@ -34,8 +34,8 @@ impl ListApprovedOriginsOutput {
 }
 
 /// A builder for [`ListApprovedOriginsOutput`](crate::operation::list_approved_origins::ListApprovedOriginsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListApprovedOriginsOutputBuilder {
     pub(crate) origins: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

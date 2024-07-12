@@ -33,8 +33,8 @@ impl CommitmentInformation {
 }
 
 /// A builder for [`CommitmentInformation`](crate::types::CommitmentInformation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CommitmentInformationBuilder {
     pub(crate) commitment_configuration: ::std::option::Option<crate::types::CommitmentConfiguration>,
     pub(crate) start_at: ::std::option::Option<::aws_smithy_types::DateTime>,

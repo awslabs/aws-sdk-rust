@@ -38,8 +38,8 @@ impl DescribeGroupMembershipOutput {
 }
 
 /// A builder for [`DescribeGroupMembershipOutput`](crate::operation::describe_group_membership::DescribeGroupMembershipOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeGroupMembershipOutputBuilder {
     pub(crate) group_member: ::std::option::Option<crate::types::GroupMember>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,

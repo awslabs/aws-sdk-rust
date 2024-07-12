@@ -18,8 +18,8 @@ impl PutLexiconOutput {
 }
 
 /// A builder for [`PutLexiconOutput`](crate::operation::put_lexicon::PutLexiconOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutLexiconOutputBuilder {
     _request_id: Option<String>,
 }

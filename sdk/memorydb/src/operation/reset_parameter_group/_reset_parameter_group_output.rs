@@ -26,8 +26,8 @@ impl ResetParameterGroupOutput {
 }
 
 /// A builder for [`ResetParameterGroupOutput`](crate::operation::reset_parameter_group::ResetParameterGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResetParameterGroupOutputBuilder {
     pub(crate) parameter_group: ::std::option::Option<crate::types::ParameterGroup>,
     _request_id: Option<String>,

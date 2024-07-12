@@ -40,8 +40,8 @@ impl CheckAccessNotGrantedOutput {
 }
 
 /// A builder for [`CheckAccessNotGrantedOutput`](crate::operation::check_access_not_granted::CheckAccessNotGrantedOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CheckAccessNotGrantedOutputBuilder {
     pub(crate) result: ::std::option::Option<crate::types::CheckAccessNotGrantedResult>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

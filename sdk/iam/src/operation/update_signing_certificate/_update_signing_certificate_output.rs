@@ -18,8 +18,8 @@ impl UpdateSigningCertificateOutput {
 }
 
 /// A builder for [`UpdateSigningCertificateOutput`](crate::operation::update_signing_certificate::UpdateSigningCertificateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSigningCertificateOutputBuilder {
     _request_id: Option<String>,
 }

@@ -32,8 +32,8 @@ impl DisassociateClientVpnTargetNetworkOutput {
 }
 
 /// A builder for [`DisassociateClientVpnTargetNetworkOutput`](crate::operation::disassociate_client_vpn_target_network::DisassociateClientVpnTargetNetworkOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateClientVpnTargetNetworkOutputBuilder {
     pub(crate) association_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::AssociationStatus>,

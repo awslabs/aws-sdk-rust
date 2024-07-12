@@ -27,8 +27,8 @@ impl FailedQueuedPurchaseDeletion {
 }
 
 /// A builder for [`FailedQueuedPurchaseDeletion`](crate::types::FailedQueuedPurchaseDeletion).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FailedQueuedPurchaseDeletionBuilder {
     pub(crate) error: ::std::option::Option<crate::types::DeleteQueuedReservedInstancesError>,
     pub(crate) reserved_instances_id: ::std::option::Option<::std::string::String>,

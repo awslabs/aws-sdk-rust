@@ -32,8 +32,8 @@ impl SendChannelMessageOutput {
 }
 
 /// A builder for [`SendChannelMessageOutput`](crate::operation::send_channel_message::SendChannelMessageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendChannelMessageOutputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) message_id: ::std::option::Option<::std::string::String>,

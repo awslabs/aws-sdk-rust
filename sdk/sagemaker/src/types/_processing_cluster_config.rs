@@ -53,8 +53,8 @@ impl ProcessingClusterConfig {
 }
 
 /// A builder for [`ProcessingClusterConfig`](crate::types::ProcessingClusterConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProcessingClusterConfigBuilder {
     pub(crate) instance_count: ::std::option::Option<i32>,
     pub(crate) instance_type: ::std::option::Option<crate::types::ProcessingInstanceType>,

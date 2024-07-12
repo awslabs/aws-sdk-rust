@@ -28,8 +28,8 @@ impl AddThingsToThingGroupParams {
 }
 
 /// A builder for [`AddThingsToThingGroupParams`](crate::types::AddThingsToThingGroupParams).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddThingsToThingGroupParamsBuilder {
     pub(crate) thing_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) override_dynamic_groups: ::std::option::Option<bool>,

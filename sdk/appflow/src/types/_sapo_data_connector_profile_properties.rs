@@ -68,8 +68,8 @@ impl SapoDataConnectorProfileProperties {
 }
 
 /// A builder for [`SapoDataConnectorProfileProperties`](crate::types::SapoDataConnectorProfileProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SapoDataConnectorProfilePropertiesBuilder {
     pub(crate) application_host_url: ::std::option::Option<::std::string::String>,
     pub(crate) application_service_path: ::std::option::Option<::std::string::String>,

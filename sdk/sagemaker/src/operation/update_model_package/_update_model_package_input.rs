@@ -88,8 +88,8 @@ impl UpdateModelPackageInput {
 }
 
 /// A builder for [`UpdateModelPackageInput`](crate::operation::update_model_package::UpdateModelPackageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateModelPackageInputBuilder {
     pub(crate) model_package_arn: ::std::option::Option<::std::string::String>,
     pub(crate) model_approval_status: ::std::option::Option<crate::types::ModelApprovalStatus>,

@@ -18,8 +18,8 @@ impl DeleteConformancePackOutput {
 }
 
 /// A builder for [`DeleteConformancePackOutput`](crate::operation::delete_conformance_pack::DeleteConformancePackOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteConformancePackOutputBuilder {
     _request_id: Option<String>,
 }

@@ -27,8 +27,8 @@ impl ModificationState {
 }
 
 /// A builder for [`ModificationState`](crate::types::ModificationState).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModificationStateBuilder {
     pub(crate) resource: ::std::option::Option<crate::types::ModificationResourceEnum>,
     pub(crate) state: ::std::option::Option<crate::types::ModificationStateEnum>,

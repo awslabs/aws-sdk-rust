@@ -393,8 +393,8 @@ impl ModifyCacheClusterInput {
 }
 
 /// A builder for [`ModifyCacheClusterInput`](crate::operation::modify_cache_cluster::ModifyCacheClusterInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyCacheClusterInputBuilder {
     pub(crate) cache_cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) num_cache_nodes: ::std::option::Option<i32>,

@@ -26,8 +26,8 @@ impl CreateThreatIntelSetOutput {
 }
 
 /// A builder for [`CreateThreatIntelSetOutput`](crate::operation::create_threat_intel_set::CreateThreatIntelSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateThreatIntelSetOutputBuilder {
     pub(crate) threat_intel_set_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

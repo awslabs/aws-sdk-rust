@@ -45,8 +45,8 @@ impl DiscoverDynamicCardVerificationCode {
 }
 
 /// A builder for [`DiscoverDynamicCardVerificationCode`](crate::types::DiscoverDynamicCardVerificationCode).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DiscoverDynamicCardVerificationCodeBuilder {
     pub(crate) card_expiry_date: ::std::option::Option<::std::string::String>,
     pub(crate) unpredictable_number: ::std::option::Option<::std::string::String>,

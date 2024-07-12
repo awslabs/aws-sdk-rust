@@ -79,8 +79,8 @@ impl ReferenceLineLabelConfiguration {
 }
 
 /// A builder for [`ReferenceLineLabelConfiguration`](crate::types::ReferenceLineLabelConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReferenceLineLabelConfigurationBuilder {
     pub(crate) value_label_configuration: ::std::option::Option<crate::types::ReferenceLineValueLabelConfiguration>,
     pub(crate) custom_label_configuration: ::std::option::Option<crate::types::ReferenceLineCustomLabelConfiguration>,

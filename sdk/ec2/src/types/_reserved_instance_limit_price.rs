@@ -27,8 +27,8 @@ impl ReservedInstanceLimitPrice {
 }
 
 /// A builder for [`ReservedInstanceLimitPrice`](crate::types::ReservedInstanceLimitPrice).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReservedInstanceLimitPriceBuilder {
     pub(crate) amount: ::std::option::Option<f64>,
     pub(crate) currency_code: ::std::option::Option<crate::types::CurrencyCodeValues>,

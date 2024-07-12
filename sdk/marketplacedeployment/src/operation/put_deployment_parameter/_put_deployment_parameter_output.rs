@@ -47,8 +47,8 @@ impl PutDeploymentParameterOutput {
 }
 
 /// A builder for [`PutDeploymentParameterOutput`](crate::operation::put_deployment_parameter::PutDeploymentParameterOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutDeploymentParameterOutputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) agreement_id: ::std::option::Option<::std::string::String>,

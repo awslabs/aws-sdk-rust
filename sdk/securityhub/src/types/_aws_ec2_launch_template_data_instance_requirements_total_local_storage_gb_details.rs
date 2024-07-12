@@ -27,8 +27,8 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetails {
 }
 
 /// A builder for [`AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetailsBuilder {
     pub(crate) max: ::std::option::Option<f64>,
     pub(crate) min: ::std::option::Option<f64>,

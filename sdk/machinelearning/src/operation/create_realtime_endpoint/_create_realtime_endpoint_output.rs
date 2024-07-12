@@ -35,8 +35,8 @@ impl CreateRealtimeEndpointOutput {
 }
 
 /// A builder for [`CreateRealtimeEndpointOutput`](crate::operation::create_realtime_endpoint::CreateRealtimeEndpointOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateRealtimeEndpointOutputBuilder {
     pub(crate) ml_model_id: ::std::option::Option<::std::string::String>,
     pub(crate) realtime_endpoint_info: ::std::option::Option<crate::types::RealtimeEndpointInfo>,

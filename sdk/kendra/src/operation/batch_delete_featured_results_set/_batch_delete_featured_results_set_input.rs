@@ -28,8 +28,8 @@ impl BatchDeleteFeaturedResultsSetInput {
 }
 
 /// A builder for [`BatchDeleteFeaturedResultsSetInput`](crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDeleteFeaturedResultsSetInputBuilder {
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
     pub(crate) featured_results_set_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

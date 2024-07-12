@@ -42,8 +42,8 @@ impl AcceptChoice {
 }
 
 /// A builder for [`AcceptChoice`](crate::types::AcceptChoice).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AcceptChoiceBuilder {
     pub(crate) prediction_target: ::std::option::Option<::std::string::String>,
     pub(crate) prediction_choice: ::std::option::Option<i32>,

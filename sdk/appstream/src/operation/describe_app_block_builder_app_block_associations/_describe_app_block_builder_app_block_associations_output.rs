@@ -35,8 +35,8 @@ impl DescribeAppBlockBuilderAppBlockAssociationsOutput {
 }
 
 /// A builder for [`DescribeAppBlockBuilderAppBlockAssociationsOutput`](crate::operation::describe_app_block_builder_app_block_associations::DescribeAppBlockBuilderAppBlockAssociationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAppBlockBuilderAppBlockAssociationsOutputBuilder {
     pub(crate) app_block_builder_app_block_associations: ::std::option::Option<::std::vec::Vec<crate::types::AppBlockBuilderAppBlockAssociation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

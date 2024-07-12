@@ -133,8 +133,8 @@ impl IncidentRecord {
 }
 
 /// A builder for [`IncidentRecord`](crate::types::IncidentRecord).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IncidentRecordBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) title: ::std::option::Option<::std::string::String>,

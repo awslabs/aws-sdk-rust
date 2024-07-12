@@ -91,8 +91,8 @@ impl CallAnalyticsJobSettings {
 }
 
 /// A builder for [`CallAnalyticsJobSettings`](crate::types::CallAnalyticsJobSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CallAnalyticsJobSettingsBuilder {
     pub(crate) vocabulary_name: ::std::option::Option<::std::string::String>,
     pub(crate) vocabulary_filter_name: ::std::option::Option<::std::string::String>,

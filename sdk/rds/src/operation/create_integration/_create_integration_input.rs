@@ -68,8 +68,8 @@ impl CreateIntegrationInput {
 }
 
 /// A builder for [`CreateIntegrationInput`](crate::operation::create_integration::CreateIntegrationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateIntegrationInputBuilder {
     pub(crate) source_arn: ::std::option::Option<::std::string::String>,
     pub(crate) target_arn: ::std::option::Option<::std::string::String>,

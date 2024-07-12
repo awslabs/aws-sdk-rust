@@ -160,8 +160,8 @@ impl DeviceSelectionConfiguration {
 }
 
 /// A builder for [`DeviceSelectionConfiguration`](crate::types::DeviceSelectionConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeviceSelectionConfigurationBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::DeviceFilter>>,
     pub(crate) max_devices: ::std::option::Option<i32>,

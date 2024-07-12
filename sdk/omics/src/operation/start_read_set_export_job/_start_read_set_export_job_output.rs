@@ -53,8 +53,8 @@ impl StartReadSetExportJobOutput {
 }
 
 /// A builder for [`StartReadSetExportJobOutput`](crate::operation::start_read_set_export_job::StartReadSetExportJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartReadSetExportJobOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) sequence_store_id: ::std::option::Option<::std::string::String>,

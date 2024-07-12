@@ -31,8 +31,8 @@ impl GuardrailSensitiveInformationPolicyConfig {
 }
 
 /// A builder for [`GuardrailSensitiveInformationPolicyConfig`](crate::types::GuardrailSensitiveInformationPolicyConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GuardrailSensitiveInformationPolicyConfigBuilder {
     pub(crate) pii_entities_config: ::std::option::Option<::std::vec::Vec<crate::types::GuardrailPiiEntityConfig>>,
     pub(crate) regexes_config: ::std::option::Option<::std::vec::Vec<crate::types::GuardrailRegexConfig>>,

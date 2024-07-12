@@ -26,8 +26,8 @@ impl ModifyReplicationGroupOutput {
 }
 
 /// A builder for [`ModifyReplicationGroupOutput`](crate::operation::modify_replication_group::ModifyReplicationGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyReplicationGroupOutputBuilder {
     pub(crate) replication_group: ::std::option::Option<crate::types::ReplicationGroup>,
     _request_id: Option<String>,

@@ -44,8 +44,8 @@ impl ListInferenceSchedulersInput {
 }
 
 /// A builder for [`ListInferenceSchedulersInput`](crate::operation::list_inference_schedulers::ListInferenceSchedulersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListInferenceSchedulersInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

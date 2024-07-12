@@ -23,8 +23,8 @@ impl HoneycodeMetadata {
 }
 
 /// A builder for [`HoneycodeMetadata`](crate::types::HoneycodeMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HoneycodeMetadataBuilder {
     pub(crate) o_auth_scopes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

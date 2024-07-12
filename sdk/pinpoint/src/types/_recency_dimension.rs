@@ -27,8 +27,8 @@ impl RecencyDimension {
 }
 
 /// A builder for [`RecencyDimension`](crate::types::RecencyDimension).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecencyDimensionBuilder {
     pub(crate) duration: ::std::option::Option<crate::types::Duration>,
     pub(crate) recency_type: ::std::option::Option<crate::types::RecencyType>,

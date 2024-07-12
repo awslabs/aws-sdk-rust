@@ -26,8 +26,8 @@ impl DeleteResiliencyPolicyInput {
 }
 
 /// A builder for [`DeleteResiliencyPolicyInput`](crate::operation::delete_resiliency_policy::DeleteResiliencyPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteResiliencyPolicyInputBuilder {
     pub(crate) policy_arn: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

@@ -18,8 +18,8 @@ impl AssociateQAppWithUserOutput {
 }
 
 /// A builder for [`AssociateQAppWithUserOutput`](crate::operation::associate_q_app_with_user::AssociateQAppWithUserOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateQAppWithUserOutputBuilder {
     _request_id: Option<String>,
 }

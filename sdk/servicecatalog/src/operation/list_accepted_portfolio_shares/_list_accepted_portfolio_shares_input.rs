@@ -66,8 +66,8 @@ impl ListAcceptedPortfolioSharesInput {
 }
 
 /// A builder for [`ListAcceptedPortfolioSharesInput`](crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioSharesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAcceptedPortfolioSharesInputBuilder {
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,
     pub(crate) page_token: ::std::option::Option<::std::string::String>,

@@ -18,8 +18,8 @@ impl DeleteConfigRuleOutput {
 }
 
 /// A builder for [`DeleteConfigRuleOutput`](crate::operation::delete_config_rule::DeleteConfigRuleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteConfigRuleOutputBuilder {
     _request_id: Option<String>,
 }

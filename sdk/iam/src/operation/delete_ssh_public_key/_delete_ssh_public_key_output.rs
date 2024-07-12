@@ -18,8 +18,8 @@ impl DeleteSshPublicKeyOutput {
 }
 
 /// A builder for [`DeleteSshPublicKeyOutput`](crate::operation::delete_ssh_public_key::DeleteSshPublicKeyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSshPublicKeyOutputBuilder {
     _request_id: Option<String>,
 }

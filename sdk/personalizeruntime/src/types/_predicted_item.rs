@@ -75,8 +75,8 @@ impl PredictedItem {
 }
 
 /// A builder for [`PredictedItem`](crate::types::PredictedItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PredictedItemBuilder {
     pub(crate) item_id: ::std::option::Option<::std::string::String>,
     pub(crate) score: ::std::option::Option<f64>,

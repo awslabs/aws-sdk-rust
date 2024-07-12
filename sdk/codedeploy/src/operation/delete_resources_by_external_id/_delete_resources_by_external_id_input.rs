@@ -20,8 +20,8 @@ impl DeleteResourcesByExternalIdInput {
 }
 
 /// A builder for [`DeleteResourcesByExternalIdInput`](crate::operation::delete_resources_by_external_id::DeleteResourcesByExternalIdInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteResourcesByExternalIdInputBuilder {
     pub(crate) external_id: ::std::option::Option<::std::string::String>,
 }

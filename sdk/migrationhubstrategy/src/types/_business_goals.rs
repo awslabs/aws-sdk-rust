@@ -39,8 +39,8 @@ impl BusinessGoals {
 }
 
 /// A builder for [`BusinessGoals`](crate::types::BusinessGoals).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BusinessGoalsBuilder {
     pub(crate) speed_of_migration: ::std::option::Option<i32>,
     pub(crate) reduce_operational_overhead_with_managed_services: ::std::option::Option<i32>,

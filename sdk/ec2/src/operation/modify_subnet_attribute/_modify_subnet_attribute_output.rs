@@ -18,8 +18,8 @@ impl ModifySubnetAttributeOutput {
 }
 
 /// A builder for [`ModifySubnetAttributeOutput`](crate::operation::modify_subnet_attribute::ModifySubnetAttributeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifySubnetAttributeOutputBuilder {
     _request_id: Option<String>,
 }

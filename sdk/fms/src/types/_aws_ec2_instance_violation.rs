@@ -29,8 +29,8 @@ impl AwsEc2InstanceViolation {
 }
 
 /// A builder for [`AwsEc2InstanceViolation`](crate::types::AwsEc2InstanceViolation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEc2InstanceViolationBuilder {
     pub(crate) violation_target: ::std::option::Option<::std::string::String>,
     pub(crate) aws_ec2_network_interface_violations: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2NetworkInterfaceViolation>>,

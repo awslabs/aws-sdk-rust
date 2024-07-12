@@ -38,8 +38,8 @@ impl ListPermissionSetProvisioningStatusInput {
 }
 
 /// A builder for [`ListPermissionSetProvisioningStatusInput`](crate::operation::list_permission_set_provisioning_status::ListPermissionSetProvisioningStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPermissionSetProvisioningStatusInputBuilder {
     pub(crate) instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

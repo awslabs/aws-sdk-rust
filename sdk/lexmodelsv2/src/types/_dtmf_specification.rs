@@ -41,8 +41,8 @@ impl DtmfSpecification {
 }
 
 /// A builder for [`DtmfSpecification`](crate::types::DtmfSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DtmfSpecificationBuilder {
     pub(crate) max_length: ::std::option::Option<i32>,
     pub(crate) end_timeout_ms: ::std::option::Option<i32>,

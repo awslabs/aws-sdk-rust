@@ -26,8 +26,8 @@ impl AssociateApiOutput {
 }
 
 /// A builder for [`AssociateApiOutput`](crate::operation::associate_api::AssociateApiOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateApiOutputBuilder {
     pub(crate) api_association: ::std::option::Option<crate::types::ApiAssociation>,
     _request_id: Option<String>,

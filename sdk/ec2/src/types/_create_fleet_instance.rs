@@ -47,8 +47,8 @@ impl CreateFleetInstance {
 }
 
 /// A builder for [`CreateFleetInstance`](crate::types::CreateFleetInstance).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateFleetInstanceBuilder {
     pub(crate) launch_template_and_overrides: ::std::option::Option<crate::types::LaunchTemplateAndOverridesResponse>,
     pub(crate) lifecycle: ::std::option::Option<crate::types::InstanceLifecycle>,

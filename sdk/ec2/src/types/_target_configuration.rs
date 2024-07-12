@@ -27,8 +27,8 @@ impl TargetConfiguration {
 }
 
 /// A builder for [`TargetConfiguration`](crate::types::TargetConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TargetConfigurationBuilder {
     pub(crate) instance_count: ::std::option::Option<i32>,
     pub(crate) offering_id: ::std::option::Option<::std::string::String>,

@@ -53,8 +53,8 @@ impl S3BucketDestination {
 }
 
 /// A builder for [`S3BucketDestination`](crate::types::S3BucketDestination).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3BucketDestinationBuilder {
     pub(crate) format: ::std::option::Option<crate::types::Format>,
     pub(crate) output_schema_version: ::std::option::Option<crate::types::OutputSchemaVersion>,

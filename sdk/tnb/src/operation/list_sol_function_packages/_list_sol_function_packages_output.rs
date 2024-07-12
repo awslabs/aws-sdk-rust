@@ -33,8 +33,8 @@ impl ListSolFunctionPackagesOutput {
 }
 
 /// A builder for [`ListSolFunctionPackagesOutput`](crate::operation::list_sol_function_packages::ListSolFunctionPackagesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSolFunctionPackagesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) function_packages: ::std::option::Option<::std::vec::Vec<crate::types::ListSolFunctionPackageInfo>>,

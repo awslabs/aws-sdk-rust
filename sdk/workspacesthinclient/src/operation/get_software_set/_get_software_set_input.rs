@@ -20,8 +20,8 @@ impl GetSoftwareSetInput {
 }
 
 /// A builder for [`GetSoftwareSetInput`](crate::operation::get_software_set::GetSoftwareSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSoftwareSetInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }

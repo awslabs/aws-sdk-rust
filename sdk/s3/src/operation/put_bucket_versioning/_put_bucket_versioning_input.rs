@@ -54,8 +54,8 @@ impl PutBucketVersioningInput {
 }
 
 /// A builder for [`PutBucketVersioningInput`](crate::operation::put_bucket_versioning::PutBucketVersioningInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutBucketVersioningInputBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) content_md5: ::std::option::Option<::std::string::String>,

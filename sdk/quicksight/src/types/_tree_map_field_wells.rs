@@ -22,8 +22,8 @@ impl TreeMapFieldWells {
 }
 
 /// A builder for [`TreeMapFieldWells`](crate::types::TreeMapFieldWells).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TreeMapFieldWellsBuilder {
     pub(crate) tree_map_aggregated_field_wells: ::std::option::Option<crate::types::TreeMapAggregatedFieldWells>,
 }

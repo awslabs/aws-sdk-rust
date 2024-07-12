@@ -34,8 +34,8 @@ impl ListActivatedRulesInRuleGroupOutput {
 }
 
 /// A builder for [`ListActivatedRulesInRuleGroupOutput`](crate::operation::list_activated_rules_in_rule_group::ListActivatedRulesInRuleGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListActivatedRulesInRuleGroupOutputBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     pub(crate) activated_rules: ::std::option::Option<::std::vec::Vec<crate::types::ActivatedRule>>,

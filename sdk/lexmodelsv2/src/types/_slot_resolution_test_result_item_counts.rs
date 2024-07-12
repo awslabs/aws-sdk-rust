@@ -35,8 +35,8 @@ impl SlotResolutionTestResultItemCounts {
 }
 
 /// A builder for [`SlotResolutionTestResultItemCounts`](crate::types::SlotResolutionTestResultItemCounts).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SlotResolutionTestResultItemCountsBuilder {
     pub(crate) total_result_count: ::std::option::Option<i32>,
     pub(crate) speech_transcription_result_counts: ::std::option::Option<::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>>,

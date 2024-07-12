@@ -33,8 +33,8 @@ impl HttpGatewayRouteRewrite {
 }
 
 /// A builder for [`HttpGatewayRouteRewrite`](crate::types::HttpGatewayRouteRewrite).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HttpGatewayRouteRewriteBuilder {
     pub(crate) prefix: ::std::option::Option<crate::types::HttpGatewayRoutePrefixRewrite>,
     pub(crate) path: ::std::option::Option<crate::types::HttpGatewayRoutePathRewrite>,

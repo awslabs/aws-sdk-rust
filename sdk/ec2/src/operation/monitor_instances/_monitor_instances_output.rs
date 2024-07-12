@@ -28,8 +28,8 @@ impl MonitorInstancesOutput {
 }
 
 /// A builder for [`MonitorInstancesOutput`](crate::operation::monitor_instances::MonitorInstancesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MonitorInstancesOutputBuilder {
     pub(crate) instance_monitorings: ::std::option::Option<::std::vec::Vec<crate::types::InstanceMonitoring>>,
     _request_id: Option<String>,

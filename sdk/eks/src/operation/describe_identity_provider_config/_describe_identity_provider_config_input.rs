@@ -26,8 +26,8 @@ impl DescribeIdentityProviderConfigInput {
 }
 
 /// A builder for [`DescribeIdentityProviderConfigInput`](crate::operation::describe_identity_provider_config::DescribeIdentityProviderConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeIdentityProviderConfigInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) identity_provider_config: ::std::option::Option<crate::types::IdentityProviderConfig>,

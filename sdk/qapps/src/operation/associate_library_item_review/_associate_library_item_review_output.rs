@@ -18,8 +18,8 @@ impl AssociateLibraryItemReviewOutput {
 }
 
 /// A builder for [`AssociateLibraryItemReviewOutput`](crate::operation::associate_library_item_review::AssociateLibraryItemReviewOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateLibraryItemReviewOutputBuilder {
     _request_id: Option<String>,
 }

@@ -38,8 +38,8 @@ impl DescribeGlobalClustersInput {
 }
 
 /// A builder for [`DescribeGlobalClustersInput`](crate::operation::describe_global_clusters::DescribeGlobalClustersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeGlobalClustersInputBuilder {
     pub(crate) global_cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,

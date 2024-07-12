@@ -51,8 +51,8 @@ impl TaskSubmittedEventDetails {
 }
 
 /// A builder for [`TaskSubmittedEventDetails`](crate::types::TaskSubmittedEventDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct TaskSubmittedEventDetailsBuilder {
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
     pub(crate) resource: ::std::option::Option<::std::string::String>,

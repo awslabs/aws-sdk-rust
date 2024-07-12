@@ -26,8 +26,8 @@ impl ListColumnStatisticsTaskRunsInput {
 }
 
 /// A builder for [`ListColumnStatisticsTaskRunsInput`](crate::operation::list_column_statistics_task_runs::ListColumnStatisticsTaskRunsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListColumnStatisticsTaskRunsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -54,8 +54,8 @@ impl CodeSigningConfig {
 }
 
 /// A builder for [`CodeSigningConfig`](crate::types::CodeSigningConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CodeSigningConfigBuilder {
     pub(crate) code_signing_config_id: ::std::option::Option<::std::string::String>,
     pub(crate) code_signing_config_arn: ::std::option::Option<::std::string::String>,

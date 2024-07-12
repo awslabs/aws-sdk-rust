@@ -49,8 +49,8 @@ impl GroupProfileSummary {
 }
 
 /// A builder for [`GroupProfileSummary`](crate::types::GroupProfileSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GroupProfileSummaryBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,

@@ -30,8 +30,8 @@ impl DeleteFlowLogsInput {
 }
 
 /// A builder for [`DeleteFlowLogsInput`](crate::operation::delete_flow_logs::DeleteFlowLogsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFlowLogsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) flow_log_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

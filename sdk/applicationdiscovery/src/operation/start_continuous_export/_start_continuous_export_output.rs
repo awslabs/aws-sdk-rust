@@ -58,8 +58,8 @@ impl StartContinuousExportOutput {
 }
 
 /// A builder for [`StartContinuousExportOutput`](crate::operation::start_continuous_export::StartContinuousExportOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartContinuousExportOutputBuilder {
     pub(crate) export_id: ::std::option::Option<::std::string::String>,
     pub(crate) s3_bucket: ::std::option::Option<::std::string::String>,

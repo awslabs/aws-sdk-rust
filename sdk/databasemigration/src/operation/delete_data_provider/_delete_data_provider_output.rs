@@ -26,8 +26,8 @@ impl DeleteDataProviderOutput {
 }
 
 /// A builder for [`DeleteDataProviderOutput`](crate::operation::delete_data_provider::DeleteDataProviderOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDataProviderOutputBuilder {
     pub(crate) data_provider: ::std::option::Option<crate::types::DataProvider>,
     _request_id: Option<String>,

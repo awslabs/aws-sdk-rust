@@ -22,8 +22,8 @@ impl PrivateRegistryAccess {
 }
 
 /// A builder for [`PrivateRegistryAccess`](crate::types::PrivateRegistryAccess).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PrivateRegistryAccessBuilder {
     pub(crate) ecr_image_puller_role: ::std::option::Option<crate::types::ContainerServiceEcrImagePullerRole>,
 }

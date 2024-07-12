@@ -27,8 +27,8 @@ impl Action {
 }
 
 /// A builder for [`Action`](crate::types::Action).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ActionBuilder {
     pub(crate) sns_configuration: ::std::option::Option<crate::types::SnsConfiguration>,
     pub(crate) lambda_configuration: ::std::option::Option<crate::types::LambdaConfiguration>,

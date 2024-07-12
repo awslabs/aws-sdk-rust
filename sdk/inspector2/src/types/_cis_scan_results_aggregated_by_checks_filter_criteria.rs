@@ -63,8 +63,8 @@ impl CisScanResultsAggregatedByChecksFilterCriteria {
 }
 
 /// A builder for [`CisScanResultsAggregatedByChecksFilterCriteria`](crate::types::CisScanResultsAggregatedByChecksFilterCriteria).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CisScanResultsAggregatedByChecksFilterCriteriaBuilder {
     pub(crate) account_id_filters: ::std::option::Option<::std::vec::Vec<crate::types::CisStringFilter>>,
     pub(crate) check_id_filters: ::std::option::Option<::std::vec::Vec<crate::types::CisStringFilter>>,

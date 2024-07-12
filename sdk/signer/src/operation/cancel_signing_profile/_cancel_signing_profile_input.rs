@@ -20,8 +20,8 @@ impl CancelSigningProfileInput {
 }
 
 /// A builder for [`CancelSigningProfileInput`](crate::operation::cancel_signing_profile::CancelSigningProfileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelSigningProfileInputBuilder {
     pub(crate) profile_name: ::std::option::Option<::std::string::String>,
 }

@@ -64,8 +64,8 @@ impl UpdateGameSessionInput {
 }
 
 /// A builder for [`UpdateGameSessionInput`](crate::operation::update_game_session::UpdateGameSessionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateGameSessionInputBuilder {
     pub(crate) game_session_id: ::std::option::Option<::std::string::String>,
     pub(crate) maximum_player_session_count: ::std::option::Option<i32>,

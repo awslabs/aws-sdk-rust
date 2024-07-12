@@ -20,8 +20,8 @@ impl RestoreEventDataStoreInput {
 }
 
 /// A builder for [`RestoreEventDataStoreInput`](crate::operation::restore_event_data_store::RestoreEventDataStoreInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RestoreEventDataStoreInputBuilder {
     pub(crate) event_data_store: ::std::option::Option<::std::string::String>,
 }

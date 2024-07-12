@@ -45,8 +45,8 @@ impl NumberFilter {
 }
 
 /// A builder for [`NumberFilter`](crate::types::NumberFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NumberFilterBuilder {
     pub(crate) gte: ::std::option::Option<f64>,
     pub(crate) lte: ::std::option::Option<f64>,

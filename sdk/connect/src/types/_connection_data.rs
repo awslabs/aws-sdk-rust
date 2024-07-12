@@ -27,8 +27,8 @@ impl ConnectionData {
 }
 
 /// A builder for [`ConnectionData`](crate::types::ConnectionData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConnectionDataBuilder {
     pub(crate) attendee: ::std::option::Option<crate::types::Attendee>,
     pub(crate) meeting: ::std::option::Option<crate::types::Meeting>,

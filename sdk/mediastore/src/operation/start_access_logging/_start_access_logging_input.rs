@@ -20,8 +20,8 @@ impl StartAccessLoggingInput {
 }
 
 /// A builder for [`StartAccessLoggingInput`](crate::operation::start_access_logging::StartAccessLoggingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartAccessLoggingInputBuilder {
     pub(crate) container_name: ::std::option::Option<::std::string::String>,
 }

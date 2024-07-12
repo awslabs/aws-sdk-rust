@@ -41,8 +41,8 @@ impl BatchListIndex {
 }
 
 /// A builder for [`BatchListIndex`](crate::types::BatchListIndex).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchListIndexBuilder {
     pub(crate) ranges_on_indexed_values: ::std::option::Option<::std::vec::Vec<crate::types::ObjectAttributeRange>>,
     pub(crate) index_reference: ::std::option::Option<crate::types::ObjectReference>,

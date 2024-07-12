@@ -44,8 +44,8 @@ impl ListSourceRepositoryBranchesInput {
 }
 
 /// A builder for [`ListSourceRepositoryBranchesInput`](crate::operation::list_source_repository_branches::ListSourceRepositoryBranchesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSourceRepositoryBranchesInputBuilder {
     pub(crate) space_name: ::std::option::Option<::std::string::String>,
     pub(crate) project_name: ::std::option::Option<::std::string::String>,

@@ -40,8 +40,8 @@ impl GetTranscriptOutput {
 }
 
 /// A builder for [`GetTranscriptOutput`](crate::operation::get_transcript::GetTranscriptOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTranscriptOutputBuilder {
     pub(crate) initial_contact_id: ::std::option::Option<::std::string::String>,
     pub(crate) transcript: ::std::option::Option<::std::vec::Vec<crate::types::Item>>,

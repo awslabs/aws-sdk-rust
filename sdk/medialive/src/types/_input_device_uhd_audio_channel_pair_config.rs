@@ -27,8 +27,8 @@ impl InputDeviceUhdAudioChannelPairConfig {
 }
 
 /// A builder for [`InputDeviceUhdAudioChannelPairConfig`](crate::types::InputDeviceUhdAudioChannelPairConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InputDeviceUhdAudioChannelPairConfigBuilder {
     pub(crate) id: ::std::option::Option<i32>,
     pub(crate) profile: ::std::option::Option<crate::types::InputDeviceUhdAudioChannelPairProfile>,

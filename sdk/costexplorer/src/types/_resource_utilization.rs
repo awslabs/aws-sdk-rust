@@ -21,8 +21,8 @@ impl ResourceUtilization {
 }
 
 /// A builder for [`ResourceUtilization`](crate::types::ResourceUtilization).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResourceUtilizationBuilder {
     pub(crate) ec2_resource_utilization: ::std::option::Option<crate::types::Ec2ResourceUtilization>,
 }

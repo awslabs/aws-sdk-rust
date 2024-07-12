@@ -34,8 +34,8 @@ impl SubDomain {
 }
 
 /// A builder for [`SubDomain`](crate::types::SubDomain).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SubDomainBuilder {
     pub(crate) sub_domain_setting: ::std::option::Option<crate::types::SubDomainSetting>,
     pub(crate) verified: ::std::option::Option<bool>,

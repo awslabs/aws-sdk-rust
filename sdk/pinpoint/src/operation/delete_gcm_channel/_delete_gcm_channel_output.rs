@@ -26,8 +26,8 @@ impl DeleteGcmChannelOutput {
 }
 
 /// A builder for [`DeleteGcmChannelOutput`](crate::operation::delete_gcm_channel::DeleteGcmChannelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteGcmChannelOutputBuilder {
     pub(crate) gcm_channel_response: ::std::option::Option<crate::types::GcmChannelResponse>,
     _request_id: Option<String>,

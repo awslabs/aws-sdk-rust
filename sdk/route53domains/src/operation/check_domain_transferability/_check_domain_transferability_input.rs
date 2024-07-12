@@ -57,8 +57,8 @@ impl CheckDomainTransferabilityInput {
 }
 
 /// A builder for [`CheckDomainTransferabilityInput`](crate::operation::check_domain_transferability::CheckDomainTransferabilityInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CheckDomainTransferabilityInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) auth_code: ::std::option::Option<::std::string::String>,

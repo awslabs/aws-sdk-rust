@@ -34,8 +34,8 @@ impl ListThingsInBillingGroupOutput {
 }
 
 /// A builder for [`ListThingsInBillingGroupOutput`](crate::operation::list_things_in_billing_group::ListThingsInBillingGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListThingsInBillingGroupOutputBuilder {
     pub(crate) things: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

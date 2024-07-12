@@ -40,8 +40,8 @@ impl CreateEmailIdentityOutput {
 }
 
 /// A builder for [`CreateEmailIdentityOutput`](crate::operation::create_email_identity::CreateEmailIdentityOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateEmailIdentityOutputBuilder {
     pub(crate) identity_type: ::std::option::Option<crate::types::IdentityType>,
     pub(crate) verified_for_sending_status: ::std::option::Option<bool>,

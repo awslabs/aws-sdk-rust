@@ -26,8 +26,8 @@ impl RollbackInstanceRefreshOutput {
 }
 
 /// A builder for [`RollbackInstanceRefreshOutput`](crate::operation::rollback_instance_refresh::RollbackInstanceRefreshOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RollbackInstanceRefreshOutputBuilder {
     pub(crate) instance_refresh_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

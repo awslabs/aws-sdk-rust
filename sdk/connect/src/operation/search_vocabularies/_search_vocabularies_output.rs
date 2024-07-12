@@ -34,8 +34,8 @@ impl SearchVocabulariesOutput {
 }
 
 /// A builder for [`SearchVocabulariesOutput`](crate::operation::search_vocabularies::SearchVocabulariesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchVocabulariesOutputBuilder {
     pub(crate) vocabulary_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::VocabularySummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

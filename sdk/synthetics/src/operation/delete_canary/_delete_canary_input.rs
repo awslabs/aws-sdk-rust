@@ -28,8 +28,8 @@ impl DeleteCanaryInput {
 }
 
 /// A builder for [`DeleteCanaryInput`](crate::operation::delete_canary::DeleteCanaryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCanaryInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) delete_lambda: ::std::option::Option<bool>,

@@ -18,8 +18,8 @@ impl DetachVpnGatewayOutput {
 }
 
 /// A builder for [`DetachVpnGatewayOutput`](crate::operation::detach_vpn_gateway::DetachVpnGatewayOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetachVpnGatewayOutputBuilder {
     _request_id: Option<String>,
 }

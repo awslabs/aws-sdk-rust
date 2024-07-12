@@ -27,8 +27,8 @@ impl EbsBlockDevice {
 }
 
 /// A builder for [`EbsBlockDevice`](crate::types::EbsBlockDevice).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EbsBlockDeviceBuilder {
     pub(crate) volume_specification: ::std::option::Option<crate::types::VolumeSpecification>,
     pub(crate) device: ::std::option::Option<::std::string::String>,

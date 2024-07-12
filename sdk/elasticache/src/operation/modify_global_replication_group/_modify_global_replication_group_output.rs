@@ -34,8 +34,8 @@ impl ModifyGlobalReplicationGroupOutput {
 }
 
 /// A builder for [`ModifyGlobalReplicationGroupOutput`](crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyGlobalReplicationGroupOutputBuilder {
     pub(crate) global_replication_group: ::std::option::Option<crate::types::GlobalReplicationGroup>,
     _request_id: Option<String>,

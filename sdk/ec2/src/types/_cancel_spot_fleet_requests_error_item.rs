@@ -27,8 +27,8 @@ impl CancelSpotFleetRequestsErrorItem {
 }
 
 /// A builder for [`CancelSpotFleetRequestsErrorItem`](crate::types::CancelSpotFleetRequestsErrorItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelSpotFleetRequestsErrorItemBuilder {
     pub(crate) error: ::std::option::Option<crate::types::CancelSpotFleetRequestsError>,
     pub(crate) spot_fleet_request_id: ::std::option::Option<::std::string::String>,

@@ -41,8 +41,8 @@ impl ConfigSnapshotDeliveryProperties {
 }
 
 /// A builder for [`ConfigSnapshotDeliveryProperties`](crate::types::ConfigSnapshotDeliveryProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConfigSnapshotDeliveryPropertiesBuilder {
     pub(crate) delivery_frequency: ::std::option::Option<crate::types::MaximumExecutionFrequency>,
 }

@@ -21,8 +21,8 @@ impl BudgetDetail {
 }
 
 /// A builder for [`BudgetDetail`](crate::types::BudgetDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BudgetDetailBuilder {
     pub(crate) budget_name: ::std::option::Option<::std::string::String>,
 }

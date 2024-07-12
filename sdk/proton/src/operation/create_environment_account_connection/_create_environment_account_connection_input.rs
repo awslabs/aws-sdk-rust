@@ -64,8 +64,8 @@ impl CreateEnvironmentAccountConnectionInput {
 }
 
 /// A builder for [`CreateEnvironmentAccountConnectionInput`](crate::operation::create_environment_account_connection::CreateEnvironmentAccountConnectionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateEnvironmentAccountConnectionInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) management_account_id: ::std::option::Option<::std::string::String>,

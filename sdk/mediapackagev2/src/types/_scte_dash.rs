@@ -35,8 +35,8 @@ impl ScteDash {
 }
 
 /// A builder for [`ScteDash`](crate::types::ScteDash).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScteDashBuilder {
     pub(crate) ad_marker_dash: ::std::option::Option<crate::types::AdMarkerDash>,
 }

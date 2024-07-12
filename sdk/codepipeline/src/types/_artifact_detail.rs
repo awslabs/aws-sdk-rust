@@ -27,8 +27,8 @@ impl ArtifactDetail {
 }
 
 /// A builder for [`ArtifactDetail`](crate::types::ArtifactDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ArtifactDetailBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) s3_location: ::std::option::Option<crate::types::S3Location>,

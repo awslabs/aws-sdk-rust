@@ -26,8 +26,8 @@ impl CreateExportTaskOutput {
 }
 
 /// A builder for [`CreateExportTaskOutput`](crate::operation::create_export_task::CreateExportTaskOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateExportTaskOutputBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

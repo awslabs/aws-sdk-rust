@@ -27,8 +27,8 @@ impl ReadSetUploadPartListFilter {
 }
 
 /// A builder for [`ReadSetUploadPartListFilter`](crate::types::ReadSetUploadPartListFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReadSetUploadPartListFilterBuilder {
     pub(crate) created_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_before: ::std::option::Option<::aws_smithy_types::DateTime>,

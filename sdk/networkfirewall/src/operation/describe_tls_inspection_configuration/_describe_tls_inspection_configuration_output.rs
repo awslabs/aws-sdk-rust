@@ -45,8 +45,8 @@ impl DescribeTlsInspectionConfigurationOutput {
 }
 
 /// A builder for [`DescribeTlsInspectionConfigurationOutput`](crate::operation::describe_tls_inspection_configuration::DescribeTlsInspectionConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTlsInspectionConfigurationOutputBuilder {
     pub(crate) update_token: ::std::option::Option<::std::string::String>,
     pub(crate) tls_inspection_configuration: ::std::option::Option<crate::types::TlsInspectionConfiguration>,

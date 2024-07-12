@@ -21,8 +21,8 @@ impl DeleteReplicationInstanceInput {
 }
 
 /// A builder for [`DeleteReplicationInstanceInput`](crate::operation::delete_replication_instance::DeleteReplicationInstanceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteReplicationInstanceInputBuilder {
     pub(crate) replication_instance_arn: ::std::option::Option<::std::string::String>,
 }

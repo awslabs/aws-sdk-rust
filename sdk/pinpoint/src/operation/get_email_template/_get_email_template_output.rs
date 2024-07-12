@@ -26,8 +26,8 @@ impl GetEmailTemplateOutput {
 }
 
 /// A builder for [`GetEmailTemplateOutput`](crate::operation::get_email_template::GetEmailTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEmailTemplateOutputBuilder {
     pub(crate) email_template_response: ::std::option::Option<crate::types::EmailTemplateResponse>,
     _request_id: Option<String>,

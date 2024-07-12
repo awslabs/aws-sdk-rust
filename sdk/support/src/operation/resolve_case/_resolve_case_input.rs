@@ -20,8 +20,8 @@ impl ResolveCaseInput {
 }
 
 /// A builder for [`ResolveCaseInput`](crate::operation::resolve_case::ResolveCaseInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResolveCaseInputBuilder {
     pub(crate) case_id: ::std::option::Option<::std::string::String>,
 }

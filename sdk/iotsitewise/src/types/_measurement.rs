@@ -21,8 +21,8 @@ impl Measurement {
 }
 
 /// A builder for [`Measurement`](crate::types::Measurement).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MeasurementBuilder {
     pub(crate) processing_config: ::std::option::Option<crate::types::MeasurementProcessingConfig>,
 }

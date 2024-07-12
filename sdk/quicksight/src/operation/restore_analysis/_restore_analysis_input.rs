@@ -26,8 +26,8 @@ impl RestoreAnalysisInput {
 }
 
 /// A builder for [`RestoreAnalysisInput`](crate::operation::restore_analysis::RestoreAnalysisInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RestoreAnalysisInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) analysis_id: ::std::option::Option<::std::string::String>,

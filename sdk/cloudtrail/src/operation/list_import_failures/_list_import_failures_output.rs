@@ -34,8 +34,8 @@ impl ListImportFailuresOutput {
 }
 
 /// A builder for [`ListImportFailuresOutput`](crate::operation::list_import_failures::ListImportFailuresOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListImportFailuresOutputBuilder {
     pub(crate) failures: ::std::option::Option<::std::vec::Vec<crate::types::ImportFailureListItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

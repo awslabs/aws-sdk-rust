@@ -33,8 +33,8 @@ impl AuthorizeCacheSecurityGroupIngressInput {
 }
 
 /// A builder for [`AuthorizeCacheSecurityGroupIngressInput`](crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngressInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AuthorizeCacheSecurityGroupIngressInputBuilder {
     pub(crate) cache_security_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) ec2_security_group_name: ::std::option::Option<::std::string::String>,

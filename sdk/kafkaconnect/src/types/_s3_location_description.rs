@@ -33,8 +33,8 @@ impl S3LocationDescription {
 }
 
 /// A builder for [`S3LocationDescription`](crate::types::S3LocationDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3LocationDescriptionBuilder {
     pub(crate) bucket_arn: ::std::option::Option<::std::string::String>,
     pub(crate) file_key: ::std::option::Option<::std::string::String>,

@@ -46,8 +46,8 @@ impl CreateInstanceExportTaskInput {
 }
 
 /// A builder for [`CreateInstanceExportTaskInput`](crate::operation::create_instance_export_task::CreateInstanceExportTaskInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateInstanceExportTaskInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) export_to_s3_task: ::std::option::Option<crate::types::ExportToS3TaskSpecification>,

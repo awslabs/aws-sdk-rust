@@ -20,8 +20,8 @@ impl DeleteTrialComponentInput {
 }
 
 /// A builder for [`DeleteTrialComponentInput`](crate::operation::delete_trial_component::DeleteTrialComponentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTrialComponentInputBuilder {
     pub(crate) trial_component_name: ::std::option::Option<::std::string::String>,
 }

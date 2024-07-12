@@ -18,8 +18,8 @@ impl StopStreamProcessorOutput {
 }
 
 /// A builder for [`StopStreamProcessorOutput`](crate::operation::stop_stream_processor::StopStreamProcessorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopStreamProcessorOutputBuilder {
     _request_id: Option<String>,
 }

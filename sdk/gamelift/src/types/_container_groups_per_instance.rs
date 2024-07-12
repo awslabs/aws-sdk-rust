@@ -39,8 +39,8 @@ impl ContainerGroupsPerInstance {
 }
 
 /// A builder for [`ContainerGroupsPerInstance`](crate::types::ContainerGroupsPerInstance).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ContainerGroupsPerInstanceBuilder {
     pub(crate) desired_replica_container_groups_per_instance: ::std::option::Option<i32>,
     pub(crate) max_replica_container_groups_per_instance: ::std::option::Option<i32>,

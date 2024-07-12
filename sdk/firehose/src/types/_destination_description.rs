@@ -80,8 +80,8 @@ impl DestinationDescription {
 }
 
 /// A builder for [`DestinationDescription`](crate::types::DestinationDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DestinationDescriptionBuilder {
     pub(crate) destination_id: ::std::option::Option<::std::string::String>,
     pub(crate) s3_destination_description: ::std::option::Option<crate::types::S3DestinationDescription>,

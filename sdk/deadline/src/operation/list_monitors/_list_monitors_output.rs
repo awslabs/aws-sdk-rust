@@ -33,8 +33,8 @@ impl ListMonitorsOutput {
 }
 
 /// A builder for [`ListMonitorsOutput`](crate::operation::list_monitors::ListMonitorsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListMonitorsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) monitors: ::std::option::Option<::std::vec::Vec<crate::types::MonitorSummary>>,

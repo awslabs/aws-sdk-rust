@@ -21,8 +21,8 @@ impl DatasetSchema {
 }
 
 /// A builder for [`DatasetSchema`](crate::types::DatasetSchema).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DatasetSchemaBuilder {
     pub(crate) inline_data_schema: ::std::option::Option<::std::string::String>,
 }

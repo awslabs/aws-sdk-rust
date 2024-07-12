@@ -28,8 +28,8 @@ impl GetDimensionKeyDetailsOutput {
 }
 
 /// A builder for [`GetDimensionKeyDetailsOutput`](crate::operation::get_dimension_key_details::GetDimensionKeyDetailsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDimensionKeyDetailsOutputBuilder {
     pub(crate) dimensions: ::std::option::Option<::std::vec::Vec<crate::types::DimensionKeyDetail>>,
     _request_id: Option<String>,

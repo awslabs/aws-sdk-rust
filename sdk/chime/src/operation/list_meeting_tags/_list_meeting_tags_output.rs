@@ -28,8 +28,8 @@ impl ListMeetingTagsOutput {
 }
 
 /// A builder for [`ListMeetingTagsOutput`](crate::operation::list_meeting_tags::ListMeetingTagsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListMeetingTagsOutputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     _request_id: Option<String>,

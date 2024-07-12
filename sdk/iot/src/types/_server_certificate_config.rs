@@ -23,8 +23,8 @@ impl ServerCertificateConfig {
 }
 
 /// A builder for [`ServerCertificateConfig`](crate::types::ServerCertificateConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServerCertificateConfigBuilder {
     pub(crate) enable_ocsp_check: ::std::option::Option<bool>,
 }

@@ -21,8 +21,8 @@ impl GetDedicatedIpInput {
 }
 
 /// A builder for [`GetDedicatedIpInput`](crate::operation::get_dedicated_ip::GetDedicatedIpInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDedicatedIpInputBuilder {
     pub(crate) ip: ::std::option::Option<::std::string::String>,
 }

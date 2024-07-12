@@ -20,8 +20,8 @@ impl RegisterWebhookWithThirdPartyInput {
 }
 
 /// A builder for [`RegisterWebhookWithThirdPartyInput`](crate::operation::register_webhook_with_third_party::RegisterWebhookWithThirdPartyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterWebhookWithThirdPartyInputBuilder {
     pub(crate) webhook_name: ::std::option::Option<::std::string::String>,
 }

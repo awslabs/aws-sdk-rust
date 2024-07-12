@@ -60,8 +60,8 @@ impl DescribeStackResourceDriftsInput {
 }
 
 /// A builder for [`DescribeStackResourceDriftsInput`](crate::operation::describe_stack_resource_drifts::DescribeStackResourceDriftsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeStackResourceDriftsInputBuilder {
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
     pub(crate) stack_resource_drift_status_filters: ::std::option::Option<::std::vec::Vec<crate::types::StackResourceDriftStatus>>,

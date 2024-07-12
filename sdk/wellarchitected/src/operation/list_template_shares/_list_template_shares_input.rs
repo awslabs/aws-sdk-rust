@@ -44,8 +44,8 @@ impl ListTemplateSharesInput {
 }
 
 /// A builder for [`ListTemplateSharesInput`](crate::operation::list_template_shares::ListTemplateSharesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTemplateSharesInputBuilder {
     pub(crate) template_arn: ::std::option::Option<::std::string::String>,
     pub(crate) shared_with_prefix: ::std::option::Option<::std::string::String>,

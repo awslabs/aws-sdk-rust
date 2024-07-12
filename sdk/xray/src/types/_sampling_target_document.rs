@@ -45,8 +45,8 @@ impl SamplingTargetDocument {
 }
 
 /// A builder for [`SamplingTargetDocument`](crate::types::SamplingTargetDocument).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SamplingTargetDocumentBuilder {
     pub(crate) rule_name: ::std::option::Option<::std::string::String>,
     pub(crate) fixed_rate: ::std::option::Option<f64>,

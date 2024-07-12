@@ -37,8 +37,8 @@ impl ListProfilingGroupsInput {
 }
 
 /// A builder for [`ListProfilingGroupsInput`](crate::operation::list_profiling_groups::ListProfilingGroupsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListProfilingGroupsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

@@ -29,8 +29,8 @@ impl PineconeFieldMapping {
 }
 
 /// A builder for [`PineconeFieldMapping`](crate::types::PineconeFieldMapping).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PineconeFieldMappingBuilder {
     pub(crate) text_field: ::std::option::Option<::std::string::String>,
     pub(crate) metadata_field: ::std::option::Option<::std::string::String>,

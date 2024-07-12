@@ -26,8 +26,8 @@ impl DetachObjectOutput {
 }
 
 /// A builder for [`DetachObjectOutput`](crate::operation::detach_object::DetachObjectOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetachObjectOutputBuilder {
     pub(crate) detached_object_identifier: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

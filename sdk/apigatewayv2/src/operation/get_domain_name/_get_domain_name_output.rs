@@ -52,8 +52,8 @@ impl GetDomainNameOutput {
 }
 
 /// A builder for [`GetDomainNameOutput`](crate::operation::get_domain_name::GetDomainNameOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDomainNameOutputBuilder {
     pub(crate) api_mapping_selection_expression: ::std::option::Option<::std::string::String>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,

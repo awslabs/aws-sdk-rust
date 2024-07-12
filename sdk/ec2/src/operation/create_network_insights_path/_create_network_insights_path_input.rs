@@ -82,8 +82,8 @@ impl CreateNetworkInsightsPathInput {
 }
 
 /// A builder for [`CreateNetworkInsightsPathInput`](crate::operation::create_network_insights_path::CreateNetworkInsightsPathInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateNetworkInsightsPathInputBuilder {
     pub(crate) source_ip: ::std::option::Option<::std::string::String>,
     pub(crate) destination_ip: ::std::option::Option<::std::string::String>,

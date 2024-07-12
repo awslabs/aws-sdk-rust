@@ -19,8 +19,8 @@ impl SetIdentityDkimEnabledOutput {
 }
 
 /// A builder for [`SetIdentityDkimEnabledOutput`](crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetIdentityDkimEnabledOutputBuilder {
     _request_id: Option<String>,
 }

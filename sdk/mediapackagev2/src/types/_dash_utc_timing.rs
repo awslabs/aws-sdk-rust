@@ -27,8 +27,8 @@ impl DashUtcTiming {
 }
 
 /// A builder for [`DashUtcTiming`](crate::types::DashUtcTiming).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DashUtcTimingBuilder {
     pub(crate) timing_mode: ::std::option::Option<crate::types::DashUtcTimingMode>,
     pub(crate) timing_source: ::std::option::Option<::std::string::String>,

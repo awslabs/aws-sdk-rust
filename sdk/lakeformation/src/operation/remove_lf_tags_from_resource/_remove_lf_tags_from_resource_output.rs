@@ -28,8 +28,8 @@ impl RemoveLfTagsFromResourceOutput {
 }
 
 /// A builder for [`RemoveLfTagsFromResourceOutput`](crate::operation::remove_lf_tags_from_resource::RemoveLfTagsFromResourceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoveLfTagsFromResourceOutputBuilder {
     pub(crate) failures: ::std::option::Option<::std::vec::Vec<crate::types::LfTagError>>,
     _request_id: Option<String>,

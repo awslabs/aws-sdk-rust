@@ -45,8 +45,8 @@ impl RouteSettings {
 }
 
 /// A builder for [`RouteSettings`](crate::types::RouteSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RouteSettingsBuilder {
     pub(crate) data_trace_enabled: ::std::option::Option<bool>,
     pub(crate) detailed_metrics_enabled: ::std::option::Option<bool>,

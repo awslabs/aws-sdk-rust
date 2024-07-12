@@ -51,8 +51,8 @@ impl StartSpeakerSearchTaskInput {
 }
 
 /// A builder for [`StartSpeakerSearchTaskInput`](crate::operation::start_speaker_search_task::StartSpeakerSearchTaskInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct StartSpeakerSearchTaskInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) voice_profile_domain_arn: ::std::option::Option<::std::string::String>,

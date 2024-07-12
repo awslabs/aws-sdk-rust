@@ -35,8 +35,8 @@ impl DescribeComplianceByResourceOutput {
 }
 
 /// A builder for [`DescribeComplianceByResourceOutput`](crate::operation::describe_compliance_by_resource::DescribeComplianceByResourceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeComplianceByResourceOutputBuilder {
     pub(crate) compliance_by_resources: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceByResource>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

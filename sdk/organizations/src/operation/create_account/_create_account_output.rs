@@ -26,8 +26,8 @@ impl CreateAccountOutput {
 }
 
 /// A builder for [`CreateAccountOutput`](crate::operation::create_account::CreateAccountOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAccountOutputBuilder {
     pub(crate) create_account_status: ::std::option::Option<crate::types::CreateAccountStatus>,
     _request_id: Option<String>,

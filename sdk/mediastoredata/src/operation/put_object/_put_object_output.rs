@@ -38,8 +38,8 @@ impl PutObjectOutput {
 }
 
 /// A builder for [`PutObjectOutput`](crate::operation::put_object::PutObjectOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutObjectOutputBuilder {
     pub(crate) content_sha256: ::std::option::Option<::std::string::String>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,

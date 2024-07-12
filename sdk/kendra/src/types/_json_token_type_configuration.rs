@@ -29,8 +29,8 @@ impl JsonTokenTypeConfiguration {
 }
 
 /// A builder for [`JsonTokenTypeConfiguration`](crate::types::JsonTokenTypeConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JsonTokenTypeConfigurationBuilder {
     pub(crate) user_name_attribute_field: ::std::option::Option<::std::string::String>,
     pub(crate) group_attribute_field: ::std::option::Option<::std::string::String>,

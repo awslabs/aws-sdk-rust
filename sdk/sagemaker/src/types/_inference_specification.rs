@@ -59,8 +59,8 @@ impl InferenceSpecification {
 }
 
 /// A builder for [`InferenceSpecification`](crate::types::InferenceSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InferenceSpecificationBuilder {
     pub(crate) containers: ::std::option::Option<::std::vec::Vec<crate::types::ModelPackageContainerDefinition>>,
     pub(crate) supported_transform_instance_types: ::std::option::Option<::std::vec::Vec<crate::types::TransformInstanceType>>,

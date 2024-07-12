@@ -34,8 +34,8 @@ impl ListDataQualityRulesetsOutput {
 }
 
 /// A builder for [`ListDataQualityRulesetsOutput`](crate::operation::list_data_quality_rulesets::ListDataQualityRulesetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDataQualityRulesetsOutputBuilder {
     pub(crate) rulesets: ::std::option::Option<::std::vec::Vec<crate::types::DataQualityRulesetListDetails>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

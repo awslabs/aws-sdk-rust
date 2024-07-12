@@ -32,8 +32,8 @@ impl ListTargetAccountConfigurationsInput {
 }
 
 /// A builder for [`ListTargetAccountConfigurationsInput`](crate::operation::list_target_account_configurations::ListTargetAccountConfigurationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTargetAccountConfigurationsInputBuilder {
     pub(crate) experiment_template_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

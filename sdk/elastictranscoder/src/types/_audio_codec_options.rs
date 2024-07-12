@@ -81,8 +81,8 @@ impl AudioCodecOptions {
 }
 
 /// A builder for [`AudioCodecOptions`](crate::types::AudioCodecOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AudioCodecOptionsBuilder {
     pub(crate) profile: ::std::option::Option<::std::string::String>,
     pub(crate) bit_depth: ::std::option::Option<::std::string::String>,

@@ -33,8 +33,8 @@ impl DataStorage {
 }
 
 /// A builder for [`DataStorage`](crate::types::DataStorage).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataStorageBuilder {
     pub(crate) maximum: ::std::option::Option<i32>,
     pub(crate) minimum: ::std::option::Option<i32>,

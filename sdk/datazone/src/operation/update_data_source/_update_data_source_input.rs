@@ -99,8 +99,8 @@ impl UpdateDataSourceInput {
 }
 
 /// A builder for [`UpdateDataSourceInput`](crate::operation::update_data_source::UpdateDataSourceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateDataSourceInputBuilder {
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) identifier: ::std::option::Option<::std::string::String>,

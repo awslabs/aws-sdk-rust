@@ -27,8 +27,8 @@ impl StudioEncryptionConfiguration {
 }
 
 /// A builder for [`StudioEncryptionConfiguration`](crate::types::StudioEncryptionConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StudioEncryptionConfigurationBuilder {
     pub(crate) key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) key_type: ::std::option::Option<crate::types::StudioEncryptionConfigurationKeyType>,

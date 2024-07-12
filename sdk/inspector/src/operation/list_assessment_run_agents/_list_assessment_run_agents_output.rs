@@ -33,8 +33,8 @@ impl ListAssessmentRunAgentsOutput {
 }
 
 /// A builder for [`ListAssessmentRunAgentsOutput`](crate::operation::list_assessment_run_agents::ListAssessmentRunAgentsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAssessmentRunAgentsOutputBuilder {
     pub(crate) assessment_run_agents: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentRunAgent>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl DeleteAccessControlRuleInput {
 }
 
 /// A builder for [`DeleteAccessControlRuleInput`](crate::operation::delete_access_control_rule::DeleteAccessControlRuleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAccessControlRuleInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

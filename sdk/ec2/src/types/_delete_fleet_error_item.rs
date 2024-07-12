@@ -27,8 +27,8 @@ impl DeleteFleetErrorItem {
 }
 
 /// A builder for [`DeleteFleetErrorItem`](crate::types::DeleteFleetErrorItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFleetErrorItemBuilder {
     pub(crate) error: ::std::option::Option<crate::types::DeleteFleetError>,
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,

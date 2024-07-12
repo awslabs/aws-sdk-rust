@@ -38,8 +38,8 @@ impl RejectGrantOutput {
 }
 
 /// A builder for [`RejectGrantOutput`](crate::operation::reject_grant::RejectGrantOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RejectGrantOutputBuilder {
     pub(crate) grant_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::GrantStatus>,

@@ -69,8 +69,8 @@ impl MigrationSummary {
 }
 
 /// A builder for [`MigrationSummary`](crate::types::MigrationSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MigrationSummaryBuilder {
     pub(crate) migration_id: ::std::option::Option<::std::string::String>,
     pub(crate) v1_bot_name: ::std::option::Option<::std::string::String>,

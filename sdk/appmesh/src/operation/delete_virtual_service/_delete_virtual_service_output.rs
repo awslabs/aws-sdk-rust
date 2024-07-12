@@ -26,8 +26,8 @@ impl DeleteVirtualServiceOutput {
 }
 
 /// A builder for [`DeleteVirtualServiceOutput`](crate::operation::delete_virtual_service::DeleteVirtualServiceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVirtualServiceOutputBuilder {
     pub(crate) virtual_service: ::std::option::Option<crate::types::VirtualServiceData>,
     _request_id: Option<String>,

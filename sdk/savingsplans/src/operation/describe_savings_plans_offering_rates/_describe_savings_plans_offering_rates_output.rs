@@ -34,8 +34,8 @@ impl DescribeSavingsPlansOfferingRatesOutput {
 }
 
 /// A builder for [`DescribeSavingsPlansOfferingRatesOutput`](crate::operation::describe_savings_plans_offering_rates::DescribeSavingsPlansOfferingRatesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSavingsPlansOfferingRatesOutputBuilder {
     pub(crate) search_results: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanOfferingRate>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

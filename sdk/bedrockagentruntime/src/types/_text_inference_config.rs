@@ -43,8 +43,8 @@ impl TextInferenceConfig {
 }
 
 /// A builder for [`TextInferenceConfig`](crate::types::TextInferenceConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TextInferenceConfigBuilder {
     pub(crate) temperature: ::std::option::Option<f32>,
     pub(crate) top_p: ::std::option::Option<f32>,

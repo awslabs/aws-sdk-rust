@@ -22,8 +22,8 @@ impl KinesisStreamsInputUpdate {
 }
 
 /// A builder for [`KinesisStreamsInputUpdate`](crate::types::KinesisStreamsInputUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KinesisStreamsInputUpdateBuilder {
     pub(crate) resource_arn_update: ::std::option::Option<::std::string::String>,
 }

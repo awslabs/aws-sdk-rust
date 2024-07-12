@@ -11,8 +11,8 @@ impl GetPortfolioPreferencesInput {
 }
 
 /// A builder for [`GetPortfolioPreferencesInput`](crate::operation::get_portfolio_preferences::GetPortfolioPreferencesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPortfolioPreferencesInputBuilder {}
 impl GetPortfolioPreferencesInputBuilder {
     /// Consumes the builder and constructs a [`GetPortfolioPreferencesInput`](crate::operation::get_portfolio_preferences::GetPortfolioPreferencesInput).

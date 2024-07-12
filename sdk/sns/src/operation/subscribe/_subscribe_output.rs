@@ -27,8 +27,8 @@ impl SubscribeOutput {
 }
 
 /// A builder for [`SubscribeOutput`](crate::operation::subscribe::SubscribeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SubscribeOutputBuilder {
     pub(crate) subscription_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

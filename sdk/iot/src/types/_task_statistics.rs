@@ -57,8 +57,8 @@ impl TaskStatistics {
 }
 
 /// A builder for [`TaskStatistics`](crate::types::TaskStatistics).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TaskStatisticsBuilder {
     pub(crate) total_checks: ::std::option::Option<i32>,
     pub(crate) in_progress_checks: ::std::option::Option<i32>,

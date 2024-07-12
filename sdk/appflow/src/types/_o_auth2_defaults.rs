@@ -55,8 +55,8 @@ impl OAuth2Defaults {
 }
 
 /// A builder for [`OAuth2Defaults`](crate::types::OAuth2Defaults).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OAuth2DefaultsBuilder {
     pub(crate) oauth_scopes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) token_urls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

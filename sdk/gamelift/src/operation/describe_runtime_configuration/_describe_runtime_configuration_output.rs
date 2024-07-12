@@ -26,8 +26,8 @@ impl DescribeRuntimeConfigurationOutput {
 }
 
 /// A builder for [`DescribeRuntimeConfigurationOutput`](crate::operation::describe_runtime_configuration::DescribeRuntimeConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRuntimeConfigurationOutputBuilder {
     pub(crate) runtime_configuration: ::std::option::Option<crate::types::RuntimeConfiguration>,
     _request_id: Option<String>,

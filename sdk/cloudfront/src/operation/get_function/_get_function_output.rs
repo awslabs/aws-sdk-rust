@@ -48,8 +48,8 @@ impl GetFunctionOutput {
 }
 
 /// A builder for [`GetFunctionOutput`](crate::operation::get_function::GetFunctionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetFunctionOutputBuilder {
     pub(crate) function_code: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,

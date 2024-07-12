@@ -82,8 +82,8 @@ impl ExportImageOutput {
 }
 
 /// A builder for [`ExportImageOutput`](crate::operation::export_image::ExportImageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExportImageOutputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) disk_image_format: ::std::option::Option<crate::types::DiskImageFormat>,

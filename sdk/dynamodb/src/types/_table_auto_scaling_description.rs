@@ -55,8 +55,8 @@ impl TableAutoScalingDescription {
 }
 
 /// A builder for [`TableAutoScalingDescription`](crate::types::TableAutoScalingDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TableAutoScalingDescriptionBuilder {
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
     pub(crate) table_status: ::std::option::Option<crate::types::TableStatus>,

@@ -34,8 +34,8 @@ impl GetProvisionedProductOutputsOutput {
 }
 
 /// A builder for [`GetProvisionedProductOutputsOutput`](crate::operation::get_provisioned_product_outputs::GetProvisionedProductOutputsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetProvisionedProductOutputsOutputBuilder {
     pub(crate) outputs: ::std::option::Option<::std::vec::Vec<crate::types::RecordOutput>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,

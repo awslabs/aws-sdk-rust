@@ -47,8 +47,8 @@ impl DomainSettingsForUpdate {
 }
 
 /// A builder for [`DomainSettingsForUpdate`](crate::types::DomainSettingsForUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DomainSettingsForUpdateBuilder {
     pub(crate) r_studio_server_pro_domain_settings_for_update: ::std::option::Option<crate::types::RStudioServerProDomainSettingsForUpdate>,
     pub(crate) execution_role_identity_config: ::std::option::Option<crate::types::ExecutionRoleIdentityConfig>,

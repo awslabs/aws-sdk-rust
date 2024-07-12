@@ -33,8 +33,8 @@ impl DeleteBandwidthRateLimitInput {
 }
 
 /// A builder for [`DeleteBandwidthRateLimitInput`](crate::operation::delete_bandwidth_rate_limit::DeleteBandwidthRateLimitInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteBandwidthRateLimitInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) bandwidth_type: ::std::option::Option<::std::string::String>,

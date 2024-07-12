@@ -39,8 +39,8 @@ impl NetworkStatus {
 }
 
 /// A builder for [`NetworkStatus`](crate::types::NetworkStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NetworkStatusBuilder {
     pub(crate) ethernet0_status: ::std::option::Option<crate::types::EthernetStatus>,
     pub(crate) ethernet1_status: ::std::option::Option<crate::types::EthernetStatus>,

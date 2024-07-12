@@ -27,8 +27,8 @@ impl PortalOptions {
 }
 
 /// A builder for [`PortalOptions`](crate::types::PortalOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PortalOptionsBuilder {
     pub(crate) sign_in_options: ::std::option::Option<crate::types::SignInOptions>,
     pub(crate) visibility: ::std::option::Option<crate::types::ApplicationVisibility>,

@@ -35,8 +35,8 @@ impl DescribeActiveReceiptRuleSetOutput {
 }
 
 /// A builder for [`DescribeActiveReceiptRuleSetOutput`](crate::operation::describe_active_receipt_rule_set::DescribeActiveReceiptRuleSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeActiveReceiptRuleSetOutputBuilder {
     pub(crate) metadata: ::std::option::Option<crate::types::ReceiptRuleSetMetadata>,
     pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::ReceiptRule>>,

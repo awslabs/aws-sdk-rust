@@ -26,8 +26,8 @@ impl CreateMembershipOutput {
 }
 
 /// A builder for [`CreateMembershipOutput`](crate::operation::create_membership::CreateMembershipOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateMembershipOutputBuilder {
     pub(crate) membership: ::std::option::Option<crate::types::Membership>,
     _request_id: Option<String>,

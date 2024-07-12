@@ -21,8 +21,8 @@ impl ProtectedQueryResult {
 }
 
 /// A builder for [`ProtectedQueryResult`](crate::types::ProtectedQueryResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProtectedQueryResultBuilder {
     pub(crate) output: ::std::option::Option<crate::types::ProtectedQueryOutput>,
 }

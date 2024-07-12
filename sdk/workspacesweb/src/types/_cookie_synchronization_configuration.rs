@@ -38,8 +38,8 @@ impl CookieSynchronizationConfiguration {
 }
 
 /// A builder for [`CookieSynchronizationConfiguration`](crate::types::CookieSynchronizationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CookieSynchronizationConfigurationBuilder {
     pub(crate) allowlist: ::std::option::Option<::std::vec::Vec<crate::types::CookieSpecification>>,
     pub(crate) blocklist: ::std::option::Option<::std::vec::Vec<crate::types::CookieSpecification>>,

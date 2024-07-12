@@ -32,8 +32,8 @@ impl AddWorkloadInput {
 }
 
 /// A builder for [`AddWorkloadInput`](crate::operation::add_workload::AddWorkloadInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddWorkloadInputBuilder {
     pub(crate) resource_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) component_name: ::std::option::Option<::std::string::String>,

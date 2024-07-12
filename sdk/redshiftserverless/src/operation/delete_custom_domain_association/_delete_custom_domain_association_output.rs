@@ -18,8 +18,8 @@ impl DeleteCustomDomainAssociationOutput {
 }
 
 /// A builder for [`DeleteCustomDomainAssociationOutput`](crate::operation::delete_custom_domain_association::DeleteCustomDomainAssociationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCustomDomainAssociationOutputBuilder {
     _request_id: Option<String>,
 }

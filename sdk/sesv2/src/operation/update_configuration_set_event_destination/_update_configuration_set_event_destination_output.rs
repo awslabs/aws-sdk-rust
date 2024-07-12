@@ -19,8 +19,8 @@ impl UpdateConfigurationSetEventDestinationOutput {
 }
 
 /// A builder for [`UpdateConfigurationSetEventDestinationOutput`](crate::operation::update_configuration_set_event_destination::UpdateConfigurationSetEventDestinationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateConfigurationSetEventDestinationOutputBuilder {
     _request_id: Option<String>,
 }

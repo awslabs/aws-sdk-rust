@@ -28,8 +28,8 @@ impl DescribeElasticsearchDomainsOutput {
 }
 
 /// A builder for [`DescribeElasticsearchDomainsOutput`](crate::operation::describe_elasticsearch_domains::DescribeElasticsearchDomainsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeElasticsearchDomainsOutputBuilder {
     pub(crate) domain_status_list: ::std::option::Option<::std::vec::Vec<crate::types::ElasticsearchDomainStatus>>,
     _request_id: Option<String>,

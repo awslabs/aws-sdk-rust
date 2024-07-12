@@ -69,8 +69,8 @@ impl AacSettings {
 }
 
 /// A builder for [`AacSettings`](crate::types::AacSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AacSettingsBuilder {
     pub(crate) audio_description_broadcaster_mix: ::std::option::Option<crate::types::AacAudioDescriptionBroadcasterMix>,
     pub(crate) bitrate: ::std::option::Option<i32>,

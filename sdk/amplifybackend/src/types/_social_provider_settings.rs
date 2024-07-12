@@ -49,8 +49,8 @@ impl SocialProviderSettings {
 }
 
 /// A builder for [`SocialProviderSettings`](crate::types::SocialProviderSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SocialProviderSettingsBuilder {
     pub(crate) facebook: ::std::option::Option<crate::types::BackendAuthSocialProviderConfig>,
     pub(crate) google: ::std::option::Option<crate::types::BackendAuthSocialProviderConfig>,

@@ -18,8 +18,8 @@ impl DisassociateTagOptionFromResourceOutput {
 }
 
 /// A builder for [`DisassociateTagOptionFromResourceOutput`](crate::operation::disassociate_tag_option_from_resource::DisassociateTagOptionFromResourceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateTagOptionFromResourceOutputBuilder {
     _request_id: Option<String>,
 }

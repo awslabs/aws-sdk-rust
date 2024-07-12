@@ -57,8 +57,8 @@ impl ExecutionStepResult {
 }
 
 /// A builder for [`ExecutionStepResult`](crate::types::ExecutionStepResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExecutionStepResultBuilder {
     pub(crate) step_type: ::std::option::Option<crate::types::WorkflowStepType>,
     pub(crate) outputs: ::std::option::Option<::std::string::String>,

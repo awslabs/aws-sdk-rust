@@ -50,8 +50,8 @@ impl GrantPermissionsInput {
 }
 
 /// A builder for [`GrantPermissionsInput`](crate::operation::grant_permissions::GrantPermissionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GrantPermissionsInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) principal: ::std::option::Option<crate::types::DataLakePrincipal>,

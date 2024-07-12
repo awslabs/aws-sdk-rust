@@ -38,8 +38,8 @@ impl GetQueryStatisticsOutput {
 }
 
 /// A builder for [`GetQueryStatisticsOutput`](crate::operation::get_query_statistics::GetQueryStatisticsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetQueryStatisticsOutputBuilder {
     pub(crate) execution_statistics: ::std::option::Option<crate::types::ExecutionStatistics>,
     pub(crate) planning_statistics: ::std::option::Option<crate::types::PlanningStatistics>,

@@ -32,8 +32,8 @@ impl CustomResponseBody {
 }
 
 /// A builder for [`CustomResponseBody`](crate::types::CustomResponseBody).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CustomResponseBodyBuilder {
     pub(crate) content_type: ::std::option::Option<crate::types::ResponseContentType>,
     pub(crate) content: ::std::option::Option<::std::string::String>,

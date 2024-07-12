@@ -56,8 +56,8 @@ impl UpdateKeyInput {
 }
 
 /// A builder for [`UpdateKeyInput`](crate::operation::update_key::UpdateKeyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateKeyInputBuilder {
     pub(crate) key_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

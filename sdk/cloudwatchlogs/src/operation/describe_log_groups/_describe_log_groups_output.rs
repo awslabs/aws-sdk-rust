@@ -36,8 +36,8 @@ impl DescribeLogGroupsOutput {
 }
 
 /// A builder for [`DescribeLogGroupsOutput`](crate::operation::describe_log_groups::DescribeLogGroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeLogGroupsOutputBuilder {
     pub(crate) log_groups: ::std::option::Option<::std::vec::Vec<crate::types::LogGroup>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -55,8 +55,8 @@ impl AgentHierarchyGroups {
 }
 
 /// A builder for [`AgentHierarchyGroups`](crate::types::AgentHierarchyGroups).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AgentHierarchyGroupsBuilder {
     pub(crate) l1_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) l2_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

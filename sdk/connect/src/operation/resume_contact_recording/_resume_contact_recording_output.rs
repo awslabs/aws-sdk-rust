@@ -18,8 +18,8 @@ impl ResumeContactRecordingOutput {
 }
 
 /// A builder for [`ResumeContactRecordingOutput`](crate::operation::resume_contact_recording::ResumeContactRecordingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResumeContactRecordingOutputBuilder {
     _request_id: Option<String>,
 }

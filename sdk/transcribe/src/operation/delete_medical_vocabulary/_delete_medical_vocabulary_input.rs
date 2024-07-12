@@ -20,8 +20,8 @@ impl DeleteMedicalVocabularyInput {
 }
 
 /// A builder for [`DeleteMedicalVocabularyInput`](crate::operation::delete_medical_vocabulary::DeleteMedicalVocabularyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteMedicalVocabularyInputBuilder {
     pub(crate) vocabulary_name: ::std::option::Option<::std::string::String>,
 }

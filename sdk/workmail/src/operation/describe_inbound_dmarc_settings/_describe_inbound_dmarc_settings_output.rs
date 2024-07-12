@@ -26,8 +26,8 @@ impl DescribeInboundDmarcSettingsOutput {
 }
 
 /// A builder for [`DescribeInboundDmarcSettingsOutput`](crate::operation::describe_inbound_dmarc_settings::DescribeInboundDmarcSettingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeInboundDmarcSettingsOutputBuilder {
     pub(crate) enforced: ::std::option::Option<bool>,
     _request_id: Option<String>,

@@ -34,8 +34,8 @@ impl ListNotebookExecutionsOutput {
 }
 
 /// A builder for [`ListNotebookExecutionsOutput`](crate::operation::list_notebook_executions::ListNotebookExecutionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListNotebookExecutionsOutputBuilder {
     pub(crate) notebook_executions: ::std::option::Option<::std::vec::Vec<crate::types::NotebookExecutionSummary>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

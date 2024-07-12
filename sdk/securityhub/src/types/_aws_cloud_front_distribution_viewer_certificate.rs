@@ -57,8 +57,8 @@ impl AwsCloudFrontDistributionViewerCertificate {
 }
 
 /// A builder for [`AwsCloudFrontDistributionViewerCertificate`](crate::types::AwsCloudFrontDistributionViewerCertificate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsCloudFrontDistributionViewerCertificateBuilder {
     pub(crate) acm_certificate_arn: ::std::option::Option<::std::string::String>,
     pub(crate) certificate: ::std::option::Option<::std::string::String>,

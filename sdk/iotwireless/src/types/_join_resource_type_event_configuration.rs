@@ -21,8 +21,8 @@ impl JoinResourceTypeEventConfiguration {
 }
 
 /// A builder for [`JoinResourceTypeEventConfiguration`](crate::types::JoinResourceTypeEventConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JoinResourceTypeEventConfigurationBuilder {
     pub(crate) lo_ra_wan: ::std::option::Option<crate::types::LoRaWanJoinResourceTypeEventConfiguration>,
 }

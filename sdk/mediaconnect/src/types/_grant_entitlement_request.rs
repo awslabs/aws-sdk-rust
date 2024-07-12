@@ -53,8 +53,8 @@ impl GrantEntitlementRequest {
 }
 
 /// A builder for [`GrantEntitlementRequest`](crate::types::GrantEntitlementRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GrantEntitlementRequestBuilder {
     pub(crate) data_transfer_subscriber_fee_percent: ::std::option::Option<i32>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

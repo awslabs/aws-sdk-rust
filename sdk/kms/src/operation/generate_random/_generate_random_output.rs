@@ -45,8 +45,8 @@ impl GenerateRandomOutput {
 }
 
 /// A builder for [`GenerateRandomOutput`](crate::operation::generate_random::GenerateRandomOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GenerateRandomOutputBuilder {
     pub(crate) plaintext: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) ciphertext_for_recipient: ::std::option::Option<::aws_smithy_types::Blob>,

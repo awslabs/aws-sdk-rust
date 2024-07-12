@@ -26,8 +26,8 @@ impl DeleteIpamResourceDiscoveryOutput {
 }
 
 /// A builder for [`DeleteIpamResourceDiscoveryOutput`](crate::operation::delete_ipam_resource_discovery::DeleteIpamResourceDiscoveryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteIpamResourceDiscoveryOutputBuilder {
     pub(crate) ipam_resource_discovery: ::std::option::Option<crate::types::IpamResourceDiscovery>,
     _request_id: Option<String>,

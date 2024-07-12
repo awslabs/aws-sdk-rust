@@ -37,8 +37,8 @@ impl RoleMapping {
 }
 
 /// A builder for [`RoleMapping`](crate::types::RoleMapping).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RoleMappingBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::RoleMappingType>,
     pub(crate) ambiguous_role_resolution: ::std::option::Option<crate::types::AmbiguousRoleResolutionType>,

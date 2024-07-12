@@ -39,8 +39,8 @@ impl ClientVpnAuthenticationRequest {
 }
 
 /// A builder for [`ClientVpnAuthenticationRequest`](crate::types::ClientVpnAuthenticationRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ClientVpnAuthenticationRequestBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ClientVpnAuthenticationType>,
     pub(crate) active_directory: ::std::option::Option<crate::types::DirectoryServiceAuthenticationRequest>,

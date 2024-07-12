@@ -29,8 +29,8 @@ impl DeregisterRobotInput {
 }
 
 /// A builder for [`DeregisterRobotInput`](crate::operation::deregister_robot::DeregisterRobotInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeregisterRobotInputBuilder {
     pub(crate) fleet: ::std::option::Option<::std::string::String>,
     pub(crate) robot: ::std::option::Option<::std::string::String>,

@@ -20,8 +20,8 @@ impl DeleteDataQualityRulesetInput {
 }
 
 /// A builder for [`DeleteDataQualityRulesetInput`](crate::operation::delete_data_quality_ruleset::DeleteDataQualityRulesetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDataQualityRulesetInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

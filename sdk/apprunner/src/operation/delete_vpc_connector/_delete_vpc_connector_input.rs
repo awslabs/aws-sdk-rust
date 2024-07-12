@@ -22,8 +22,8 @@ impl DeleteVpcConnectorInput {
 }
 
 /// A builder for [`DeleteVpcConnectorInput`](crate::operation::delete_vpc_connector::DeleteVpcConnectorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVpcConnectorInputBuilder {
     pub(crate) vpc_connector_arn: ::std::option::Option<::std::string::String>,
 }

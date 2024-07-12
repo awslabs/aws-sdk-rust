@@ -51,8 +51,8 @@ impl DescribeSpotFleetRequestHistoryInput {
 }
 
 /// A builder for [`DescribeSpotFleetRequestHistoryInput`](crate::operation::describe_spot_fleet_request_history::DescribeSpotFleetRequestHistoryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSpotFleetRequestHistoryInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) event_type: ::std::option::Option<crate::types::EventType>,

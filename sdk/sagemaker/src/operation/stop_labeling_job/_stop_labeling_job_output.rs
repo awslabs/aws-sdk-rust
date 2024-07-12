@@ -18,8 +18,8 @@ impl StopLabelingJobOutput {
 }
 
 /// A builder for [`StopLabelingJobOutput`](crate::operation::stop_labeling_job::StopLabelingJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopLabelingJobOutputBuilder {
     _request_id: Option<String>,
 }

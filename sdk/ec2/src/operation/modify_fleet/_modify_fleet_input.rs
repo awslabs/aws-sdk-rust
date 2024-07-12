@@ -54,8 +54,8 @@ impl ModifyFleetInput {
 }
 
 /// A builder for [`ModifyFleetInput`](crate::operation::modify_fleet::ModifyFleetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyFleetInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) excess_capacity_termination_policy: ::std::option::Option<crate::types::FleetExcessCapacityTerminationPolicy>,

@@ -33,8 +33,8 @@ impl ListBudgetsOutput {
 }
 
 /// A builder for [`ListBudgetsOutput`](crate::operation::list_budgets::ListBudgetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListBudgetsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) budgets: ::std::option::Option<::std::vec::Vec<crate::types::BudgetSummary>>,

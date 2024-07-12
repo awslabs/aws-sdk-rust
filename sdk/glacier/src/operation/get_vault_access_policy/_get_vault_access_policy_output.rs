@@ -27,8 +27,8 @@ impl GetVaultAccessPolicyOutput {
 }
 
 /// A builder for [`GetVaultAccessPolicyOutput`](crate::operation::get_vault_access_policy::GetVaultAccessPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetVaultAccessPolicyOutputBuilder {
     pub(crate) policy: ::std::option::Option<crate::types::VaultAccessPolicy>,
     _request_id: Option<String>,

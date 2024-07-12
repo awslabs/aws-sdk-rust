@@ -29,8 +29,8 @@ impl S3BucketSinkConfiguration {
 }
 
 /// A builder for [`S3BucketSinkConfiguration`](crate::types::S3BucketSinkConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct S3BucketSinkConfigurationBuilder {
     pub(crate) destination: ::std::option::Option<::std::string::String>,
 }

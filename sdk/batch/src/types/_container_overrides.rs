@@ -74,8 +74,8 @@ impl ContainerOverrides {
 }
 
 /// A builder for [`ContainerOverrides`](crate::types::ContainerOverrides).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ContainerOverridesBuilder {
     pub(crate) vcpus: ::std::option::Option<i32>,
     pub(crate) memory: ::std::option::Option<i32>,

@@ -35,8 +35,8 @@ impl Compatibility {
 }
 
 /// A builder for [`Compatibility`](crate::types::Compatibility).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CompatibilityBuilder {
     pub(crate) cluster_version: ::std::option::Option<::std::string::String>,
     pub(crate) platform_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

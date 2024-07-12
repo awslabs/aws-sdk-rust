@@ -28,8 +28,8 @@ impl BatchWriteOutput {
 }
 
 /// A builder for [`BatchWriteOutput`](crate::operation::batch_write::BatchWriteOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchWriteOutputBuilder {
     pub(crate) responses: ::std::option::Option<::std::vec::Vec<crate::types::BatchWriteOperationResponse>>,
     _request_id: Option<String>,

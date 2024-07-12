@@ -20,8 +20,8 @@ impl GetNetworkSiteInput {
 }
 
 /// A builder for [`GetNetworkSiteInput`](crate::operation::get_network_site::GetNetworkSiteInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetNetworkSiteInputBuilder {
     pub(crate) network_site_arn: ::std::option::Option<::std::string::String>,
 }

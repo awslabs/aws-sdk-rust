@@ -36,8 +36,8 @@ impl ExecuteTransactionOutput {
 }
 
 /// A builder for [`ExecuteTransactionOutput`](crate::operation::execute_transaction::ExecuteTransactionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExecuteTransactionOutputBuilder {
     pub(crate) responses: ::std::option::Option<::std::vec::Vec<crate::types::ItemResponse>>,
     pub(crate) consumed_capacity: ::std::option::Option<::std::vec::Vec<crate::types::ConsumedCapacity>>,

@@ -34,8 +34,8 @@ impl ListTypesOutput {
 }
 
 /// A builder for [`ListTypesOutput`](crate::operation::list_types::ListTypesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTypesOutputBuilder {
     pub(crate) types: ::std::option::Option<::std::vec::Vec<crate::types::Type>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

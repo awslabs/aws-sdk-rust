@@ -21,8 +21,8 @@ impl IndexCapacityConfiguration {
 }
 
 /// A builder for [`IndexCapacityConfiguration`](crate::types::IndexCapacityConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IndexCapacityConfigurationBuilder {
     pub(crate) units: ::std::option::Option<i32>,
 }

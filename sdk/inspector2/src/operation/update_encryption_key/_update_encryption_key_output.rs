@@ -18,8 +18,8 @@ impl UpdateEncryptionKeyOutput {
 }
 
 /// A builder for [`UpdateEncryptionKeyOutput`](crate::operation::update_encryption_key::UpdateEncryptionKeyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateEncryptionKeyOutputBuilder {
     _request_id: Option<String>,
 }

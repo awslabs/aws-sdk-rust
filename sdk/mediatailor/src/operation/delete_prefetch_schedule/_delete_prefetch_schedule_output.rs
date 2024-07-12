@@ -18,8 +18,8 @@ impl DeletePrefetchScheduleOutput {
 }
 
 /// A builder for [`DeletePrefetchScheduleOutput`](crate::operation::delete_prefetch_schedule::DeletePrefetchScheduleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePrefetchScheduleOutputBuilder {
     _request_id: Option<String>,
 }

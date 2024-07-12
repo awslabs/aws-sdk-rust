@@ -32,8 +32,8 @@ impl ListConfiguredTableAssociationsInput {
 }
 
 /// A builder for [`ListConfiguredTableAssociationsInput`](crate::operation::list_configured_table_associations::ListConfiguredTableAssociationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListConfiguredTableAssociationsInputBuilder {
     pub(crate) membership_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

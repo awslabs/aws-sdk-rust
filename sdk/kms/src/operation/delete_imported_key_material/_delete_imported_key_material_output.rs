@@ -18,8 +18,8 @@ impl DeleteImportedKeyMaterialOutput {
 }
 
 /// A builder for [`DeleteImportedKeyMaterialOutput`](crate::operation::delete_imported_key_material::DeleteImportedKeyMaterialOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteImportedKeyMaterialOutputBuilder {
     _request_id: Option<String>,
 }

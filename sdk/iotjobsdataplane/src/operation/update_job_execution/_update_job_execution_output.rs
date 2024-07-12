@@ -32,8 +32,8 @@ impl UpdateJobExecutionOutput {
 }
 
 /// A builder for [`UpdateJobExecutionOutput`](crate::operation::update_job_execution::UpdateJobExecutionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateJobExecutionOutputBuilder {
     pub(crate) execution_state: ::std::option::Option<crate::types::JobExecutionState>,
     pub(crate) job_document: ::std::option::Option<::std::string::String>,

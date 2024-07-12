@@ -26,8 +26,8 @@ impl DescribeFeedbackOutput {
 }
 
 /// A builder for [`DescribeFeedbackOutput`](crate::operation::describe_feedback::DescribeFeedbackOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFeedbackOutputBuilder {
     pub(crate) insight_feedback: ::std::option::Option<crate::types::InsightFeedback>,
     _request_id: Option<String>,

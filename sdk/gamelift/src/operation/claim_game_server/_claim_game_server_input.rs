@@ -38,8 +38,8 @@ impl ClaimGameServerInput {
 }
 
 /// A builder for [`ClaimGameServerInput`](crate::operation::claim_game_server::ClaimGameServerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ClaimGameServerInputBuilder {
     pub(crate) game_server_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) game_server_id: ::std::option::Option<::std::string::String>,

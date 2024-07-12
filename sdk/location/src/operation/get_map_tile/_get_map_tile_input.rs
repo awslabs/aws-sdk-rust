@@ -55,8 +55,8 @@ impl GetMapTileInput {
 }
 
 /// A builder for [`GetMapTileInput`](crate::operation::get_map_tile::GetMapTileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetMapTileInputBuilder {
     pub(crate) map_name: ::std::option::Option<::std::string::String>,
     pub(crate) z: ::std::option::Option<::std::string::String>,

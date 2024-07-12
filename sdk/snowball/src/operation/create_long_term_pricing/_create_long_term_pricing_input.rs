@@ -32,8 +32,8 @@ impl CreateLongTermPricingInput {
 }
 
 /// A builder for [`CreateLongTermPricingInput`](crate::operation::create_long_term_pricing::CreateLongTermPricingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLongTermPricingInputBuilder {
     pub(crate) long_term_pricing_type: ::std::option::Option<crate::types::LongTermPricingType>,
     pub(crate) is_long_term_pricing_auto_renew: ::std::option::Option<bool>,

@@ -26,8 +26,8 @@ impl CreateVolumeFromBackupOutput {
 }
 
 /// A builder for [`CreateVolumeFromBackupOutput`](crate::operation::create_volume_from_backup::CreateVolumeFromBackupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateVolumeFromBackupOutputBuilder {
     pub(crate) volume: ::std::option::Option<crate::types::Volume>,
     _request_id: Option<String>,

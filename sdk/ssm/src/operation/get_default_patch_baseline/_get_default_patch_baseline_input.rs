@@ -20,8 +20,8 @@ impl GetDefaultPatchBaselineInput {
 }
 
 /// A builder for [`GetDefaultPatchBaselineInput`](crate::operation::get_default_patch_baseline::GetDefaultPatchBaselineInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDefaultPatchBaselineInputBuilder {
     pub(crate) operating_system: ::std::option::Option<crate::types::OperatingSystem>,
 }

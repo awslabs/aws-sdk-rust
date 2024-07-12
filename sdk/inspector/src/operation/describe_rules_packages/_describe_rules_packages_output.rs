@@ -33,8 +33,8 @@ impl DescribeRulesPackagesOutput {
 }
 
 /// A builder for [`DescribeRulesPackagesOutput`](crate::operation::describe_rules_packages::DescribeRulesPackagesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRulesPackagesOutputBuilder {
     pub(crate) rules_packages: ::std::option::Option<::std::vec::Vec<crate::types::RulesPackage>>,
     pub(crate) failed_items: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>>,

@@ -33,8 +33,8 @@ impl CognitoMemberDefinition {
 }
 
 /// A builder for [`CognitoMemberDefinition`](crate::types::CognitoMemberDefinition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CognitoMemberDefinitionBuilder {
     pub(crate) user_pool: ::std::option::Option<::std::string::String>,
     pub(crate) user_group: ::std::option::Option<::std::string::String>,

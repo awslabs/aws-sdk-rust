@@ -20,8 +20,8 @@ impl CreateAddressInput {
 }
 
 /// A builder for [`CreateAddressInput`](crate::operation::create_address::CreateAddressInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAddressInputBuilder {
     pub(crate) address: ::std::option::Option<crate::types::Address>,
 }

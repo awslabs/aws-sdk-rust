@@ -28,8 +28,8 @@ impl CreateDataSourceFromRdsOutput {
 }
 
 /// A builder for [`CreateDataSourceFromRdsOutput`](crate::operation::create_data_source_from_rds::CreateDataSourceFromRdsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDataSourceFromRdsOutputBuilder {
     pub(crate) data_source_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

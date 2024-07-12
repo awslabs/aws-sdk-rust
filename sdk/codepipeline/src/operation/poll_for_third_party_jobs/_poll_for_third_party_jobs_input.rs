@@ -27,8 +27,8 @@ impl PollForThirdPartyJobsInput {
 }
 
 /// A builder for [`PollForThirdPartyJobsInput`](crate::operation::poll_for_third_party_jobs::PollForThirdPartyJobsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PollForThirdPartyJobsInputBuilder {
     pub(crate) action_type_id: ::std::option::Option<crate::types::ActionTypeId>,
     pub(crate) max_batch_size: ::std::option::Option<i32>,

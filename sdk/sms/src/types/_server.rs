@@ -45,8 +45,8 @@ impl Server {
 }
 
 /// A builder for [`Server`](crate::types::Server).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServerBuilder {
     pub(crate) server_id: ::std::option::Option<::std::string::String>,
     pub(crate) server_type: ::std::option::Option<crate::types::ServerType>,

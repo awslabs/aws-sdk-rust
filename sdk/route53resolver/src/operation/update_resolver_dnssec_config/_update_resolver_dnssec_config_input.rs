@@ -26,8 +26,8 @@ impl UpdateResolverDnssecConfigInput {
 }
 
 /// A builder for [`UpdateResolverDnssecConfigInput`](crate::operation::update_resolver_dnssec_config::UpdateResolverDnssecConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateResolverDnssecConfigInputBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) validation: ::std::option::Option<crate::types::Validation>,

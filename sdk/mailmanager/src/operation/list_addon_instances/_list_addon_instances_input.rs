@@ -26,8 +26,8 @@ impl ListAddonInstancesInput {
 }
 
 /// A builder for [`ListAddonInstancesInput`](crate::operation::list_addon_instances::ListAddonInstancesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAddonInstancesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) page_size: ::std::option::Option<i32>,

@@ -44,8 +44,8 @@ impl ListAttachedIndicesInput {
 }
 
 /// A builder for [`ListAttachedIndicesInput`](crate::operation::list_attached_indices::ListAttachedIndicesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAttachedIndicesInputBuilder {
     pub(crate) directory_arn: ::std::option::Option<::std::string::String>,
     pub(crate) target_reference: ::std::option::Option<crate::types::ObjectReference>,

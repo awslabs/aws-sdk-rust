@@ -34,8 +34,8 @@ impl DescribeClusterDbRevisionsOutput {
 }
 
 /// A builder for [`DescribeClusterDbRevisionsOutput`](crate::operation::describe_cluster_db_revisions::DescribeClusterDbRevisionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeClusterDbRevisionsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_db_revisions: ::std::option::Option<::std::vec::Vec<crate::types::ClusterDbRevision>>,

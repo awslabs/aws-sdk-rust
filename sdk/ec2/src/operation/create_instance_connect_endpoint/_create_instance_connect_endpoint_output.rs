@@ -32,8 +32,8 @@ impl CreateInstanceConnectEndpointOutput {
 }
 
 /// A builder for [`CreateInstanceConnectEndpointOutput`](crate::operation::create_instance_connect_endpoint::CreateInstanceConnectEndpointOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateInstanceConnectEndpointOutputBuilder {
     pub(crate) instance_connect_endpoint: ::std::option::Option<crate::types::Ec2InstanceConnectEndpoint>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

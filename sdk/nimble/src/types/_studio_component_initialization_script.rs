@@ -49,8 +49,8 @@ impl StudioComponentInitializationScript {
 }
 
 /// A builder for [`StudioComponentInitializationScript`](crate::types::StudioComponentInitializationScript).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct StudioComponentInitializationScriptBuilder {
     pub(crate) launch_profile_protocol_version: ::std::option::Option<::std::string::String>,
     pub(crate) platform: ::std::option::Option<crate::types::LaunchProfilePlatform>,

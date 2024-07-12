@@ -41,8 +41,8 @@ impl RecommenderConfig {
 }
 
 /// A builder for [`RecommenderConfig`](crate::types::RecommenderConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecommenderConfigBuilder {
     pub(crate) item_exploration_config: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) min_recommendation_requests_per_second: ::std::option::Option<i32>,

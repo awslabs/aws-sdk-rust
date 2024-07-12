@@ -35,8 +35,8 @@ impl EmailSettings {
 }
 
 /// A builder for [`EmailSettings`](crate::types::EmailSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct EmailSettingsBuilder {
     pub(crate) email_message: ::std::option::Option<::std::string::String>,
     pub(crate) email_subject: ::std::option::Option<::std::string::String>,

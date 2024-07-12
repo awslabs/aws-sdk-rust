@@ -26,8 +26,8 @@ impl CloseTunnelInput {
 }
 
 /// A builder for [`CloseTunnelInput`](crate::operation::close_tunnel::CloseTunnelInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CloseTunnelInputBuilder {
     pub(crate) tunnel_id: ::std::option::Option<::std::string::String>,
     pub(crate) delete: ::std::option::Option<bool>,

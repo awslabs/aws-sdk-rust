@@ -48,8 +48,8 @@ impl ListBuildsForProjectInput {
 }
 
 /// A builder for [`ListBuildsForProjectInput`](crate::operation::list_builds_for_project::ListBuildsForProjectInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListBuildsForProjectInputBuilder {
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrderType>,

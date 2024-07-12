@@ -108,8 +108,8 @@ impl UpdateProvisionedProductInput {
 }
 
 /// A builder for [`UpdateProvisionedProductInput`](crate::operation::update_provisioned_product::UpdateProvisionedProductInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateProvisionedProductInputBuilder {
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,
     pub(crate) provisioned_product_name: ::std::option::Option<::std::string::String>,

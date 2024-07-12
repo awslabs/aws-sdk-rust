@@ -146,8 +146,8 @@ impl ListRecoveryPointsByBackupVaultInput {
 }
 
 /// A builder for [`ListRecoveryPointsByBackupVaultInput`](crate::operation::list_recovery_points_by_backup_vault::ListRecoveryPointsByBackupVaultInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRecoveryPointsByBackupVaultInputBuilder {
     pub(crate) backup_vault_name: ::std::option::Option<::std::string::String>,
     pub(crate) backup_vault_account_id: ::std::option::Option<::std::string::String>,

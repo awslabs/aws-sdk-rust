@@ -27,8 +27,8 @@ impl AttachmentDetails {
 }
 
 /// A builder for [`AttachmentDetails`](crate::types::AttachmentDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttachmentDetailsBuilder {
     pub(crate) attachment_id: ::std::option::Option<::std::string::String>,
     pub(crate) file_name: ::std::option::Option<::std::string::String>,

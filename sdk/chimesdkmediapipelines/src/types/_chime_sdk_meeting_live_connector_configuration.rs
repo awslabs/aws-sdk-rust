@@ -50,8 +50,8 @@ impl ChimeSdkMeetingLiveConnectorConfiguration {
 }
 
 /// A builder for [`ChimeSdkMeetingLiveConnectorConfiguration`](crate::types::ChimeSdkMeetingLiveConnectorConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ChimeSdkMeetingLiveConnectorConfigurationBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) mux_type: ::std::option::Option<crate::types::LiveConnectorMuxType>,

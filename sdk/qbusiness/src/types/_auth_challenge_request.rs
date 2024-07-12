@@ -22,8 +22,8 @@ impl AuthChallengeRequest {
 }
 
 /// A builder for [`AuthChallengeRequest`](crate::types::AuthChallengeRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AuthChallengeRequestBuilder {
     pub(crate) authorization_url: ::std::option::Option<::std::string::String>,
 }

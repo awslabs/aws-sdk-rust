@@ -40,8 +40,8 @@ impl AnalyzeIdOutput {
 }
 
 /// A builder for [`AnalyzeIdOutput`](crate::operation::analyze_id::AnalyzeIdOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AnalyzeIdOutputBuilder {
     pub(crate) identity_documents: ::std::option::Option<::std::vec::Vec<crate::types::IdentityDocument>>,
     pub(crate) document_metadata: ::std::option::Option<crate::types::DocumentMetadata>,

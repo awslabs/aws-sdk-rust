@@ -26,8 +26,8 @@ impl CreateVpcPeeringConnectionOutput {
 }
 
 /// A builder for [`CreateVpcPeeringConnectionOutput`](crate::operation::create_vpc_peering_connection::CreateVpcPeeringConnectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateVpcPeeringConnectionOutputBuilder {
     pub(crate) vpc_peering_connection: ::std::option::Option<crate::types::VpcPeeringConnection>,
     _request_id: Option<String>,

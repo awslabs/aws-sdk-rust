@@ -51,8 +51,8 @@ impl LambdaFunctionUtilizationMetric {
 }
 
 /// A builder for [`LambdaFunctionUtilizationMetric`](crate::types::LambdaFunctionUtilizationMetric).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LambdaFunctionUtilizationMetricBuilder {
     pub(crate) name: ::std::option::Option<crate::types::LambdaFunctionMetricName>,
     pub(crate) statistic: ::std::option::Option<crate::types::LambdaFunctionMetricStatistic>,

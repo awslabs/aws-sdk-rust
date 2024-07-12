@@ -65,8 +65,8 @@ impl HttpRequest {
 }
 
 /// A builder for [`HttpRequest`](crate::types::HttpRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HttpRequestBuilder {
     pub(crate) client_ip: ::std::option::Option<::std::string::String>,
     pub(crate) country: ::std::option::Option<::std::string::String>,

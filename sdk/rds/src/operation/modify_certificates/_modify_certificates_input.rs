@@ -28,8 +28,8 @@ impl ModifyCertificatesInput {
 }
 
 /// A builder for [`ModifyCertificatesInput`](crate::operation::modify_certificates::ModifyCertificatesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyCertificatesInputBuilder {
     pub(crate) certificate_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) remove_customer_override: ::std::option::Option<bool>,

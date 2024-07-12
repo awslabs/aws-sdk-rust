@@ -29,8 +29,8 @@ impl CompromisedCredentialsRiskConfigurationType {
 }
 
 /// A builder for [`CompromisedCredentialsRiskConfigurationType`](crate::types::CompromisedCredentialsRiskConfigurationType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CompromisedCredentialsRiskConfigurationTypeBuilder {
     pub(crate) event_filter: ::std::option::Option<::std::vec::Vec<crate::types::EventFilterType>>,
     pub(crate) actions: ::std::option::Option<crate::types::CompromisedCredentialsActionsType>,

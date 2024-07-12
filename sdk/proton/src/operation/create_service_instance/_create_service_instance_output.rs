@@ -26,8 +26,8 @@ impl CreateServiceInstanceOutput {
 }
 
 /// A builder for [`CreateServiceInstanceOutput`](crate::operation::create_service_instance::CreateServiceInstanceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateServiceInstanceOutputBuilder {
     pub(crate) service_instance: ::std::option::Option<crate::types::ServiceInstance>,
     _request_id: Option<String>,

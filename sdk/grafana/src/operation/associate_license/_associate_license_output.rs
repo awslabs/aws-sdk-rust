@@ -26,8 +26,8 @@ impl AssociateLicenseOutput {
 }
 
 /// A builder for [`AssociateLicenseOutput`](crate::operation::associate_license::AssociateLicenseOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateLicenseOutputBuilder {
     pub(crate) workspace: ::std::option::Option<crate::types::WorkspaceDescription>,
     _request_id: Option<String>,

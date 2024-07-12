@@ -21,8 +21,8 @@ impl OperationStatusFilter {
 }
 
 /// A builder for [`OperationStatusFilter`](crate::types::OperationStatusFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OperationStatusFilterBuilder {
     pub(crate) status: ::std::option::Option<crate::types::StatusValues>,
 }

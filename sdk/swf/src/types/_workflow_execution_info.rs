@@ -99,8 +99,8 @@ impl WorkflowExecutionInfo {
 }
 
 /// A builder for [`WorkflowExecutionInfo`](crate::types::WorkflowExecutionInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WorkflowExecutionInfoBuilder {
     pub(crate) execution: ::std::option::Option<crate::types::WorkflowExecution>,
     pub(crate) workflow_type: ::std::option::Option<crate::types::WorkflowType>,

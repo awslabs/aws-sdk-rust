@@ -52,8 +52,8 @@ impl CreateVocabularyOutput {
 }
 
 /// A builder for [`CreateVocabularyOutput`](crate::operation::create_vocabulary::CreateVocabularyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateVocabularyOutputBuilder {
     pub(crate) vocabulary_name: ::std::option::Option<::std::string::String>,
     pub(crate) language_code: ::std::option::Option<crate::types::LanguageCode>,

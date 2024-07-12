@@ -28,8 +28,8 @@ impl WirelessGatewayEventLogOption {
 }
 
 /// A builder for [`WirelessGatewayEventLogOption`](crate::types::WirelessGatewayEventLogOption).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WirelessGatewayEventLogOptionBuilder {
     pub(crate) event: ::std::option::Option<crate::types::WirelessGatewayEvent>,
     pub(crate) log_level: ::std::option::Option<crate::types::LogLevel>,

@@ -20,8 +20,8 @@ impl ConfirmPublicVirtualInterfaceInput {
 }
 
 /// A builder for [`ConfirmPublicVirtualInterfaceInput`](crate::operation::confirm_public_virtual_interface::ConfirmPublicVirtualInterfaceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConfirmPublicVirtualInterfaceInputBuilder {
     pub(crate) virtual_interface_id: ::std::option::Option<::std::string::String>,
 }

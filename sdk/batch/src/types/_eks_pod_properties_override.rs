@@ -41,8 +41,8 @@ impl EksPodPropertiesOverride {
 }
 
 /// A builder for [`EksPodPropertiesOverride`](crate::types::EksPodPropertiesOverride).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EksPodPropertiesOverrideBuilder {
     pub(crate) containers: ::std::option::Option<::std::vec::Vec<crate::types::EksContainerOverride>>,
     pub(crate) init_containers: ::std::option::Option<::std::vec::Vec<crate::types::EksContainerOverride>>,

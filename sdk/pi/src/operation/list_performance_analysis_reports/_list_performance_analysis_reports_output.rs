@@ -34,8 +34,8 @@ impl ListPerformanceAnalysisReportsOutput {
 }
 
 /// A builder for [`ListPerformanceAnalysisReportsOutput`](crate::operation::list_performance_analysis_reports::ListPerformanceAnalysisReportsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPerformanceAnalysisReportsOutputBuilder {
     pub(crate) analysis_reports: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisReportSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

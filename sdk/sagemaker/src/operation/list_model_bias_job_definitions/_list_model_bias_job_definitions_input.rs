@@ -62,8 +62,8 @@ impl ListModelBiasJobDefinitionsInput {
 }
 
 /// A builder for [`ListModelBiasJobDefinitionsInput`](crate::operation::list_model_bias_job_definitions::ListModelBiasJobDefinitionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListModelBiasJobDefinitionsInputBuilder {
     pub(crate) endpoint_name: ::std::option::Option<::std::string::String>,
     pub(crate) sort_by: ::std::option::Option<crate::types::MonitoringJobDefinitionSortKey>,

@@ -107,8 +107,8 @@ impl ConnectorSummary {
 }
 
 /// A builder for [`ConnectorSummary`](crate::types::ConnectorSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConnectorSummaryBuilder {
     pub(crate) capacity: ::std::option::Option<crate::types::CapacityDescription>,
     pub(crate) connector_arn: ::std::option::Option<::std::string::String>,

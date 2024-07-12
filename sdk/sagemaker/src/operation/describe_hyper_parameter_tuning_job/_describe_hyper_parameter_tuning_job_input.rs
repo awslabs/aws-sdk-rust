@@ -20,8 +20,8 @@ impl DescribeHyperParameterTuningJobInput {
 }
 
 /// A builder for [`DescribeHyperParameterTuningJobInput`](crate::operation::describe_hyper_parameter_tuning_job::DescribeHyperParameterTuningJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeHyperParameterTuningJobInputBuilder {
     pub(crate) hyper_parameter_tuning_job_name: ::std::option::Option<::std::string::String>,
 }

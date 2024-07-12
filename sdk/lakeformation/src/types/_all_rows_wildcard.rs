@@ -12,8 +12,8 @@ impl AllRowsWildcard {
 }
 
 /// A builder for [`AllRowsWildcard`](crate::types::AllRowsWildcard).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AllRowsWildcardBuilder {}
 impl AllRowsWildcardBuilder {
     /// Consumes the builder and constructs a [`AllRowsWildcard`](crate::types::AllRowsWildcard).

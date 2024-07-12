@@ -40,8 +40,8 @@ impl DatabaseInputDefinition {
 }
 
 /// A builder for [`DatabaseInputDefinition`](crate::types::DatabaseInputDefinition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DatabaseInputDefinitionBuilder {
     pub(crate) glue_connection_name: ::std::option::Option<::std::string::String>,
     pub(crate) database_table_name: ::std::option::Option<::std::string::String>,

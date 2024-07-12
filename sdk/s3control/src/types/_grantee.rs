@@ -43,8 +43,8 @@ impl Grantee {
 }
 
 /// A builder for [`Grantee`](crate::types::Grantee).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GranteeBuilder {
     pub(crate) grantee_type: ::std::option::Option<crate::types::GranteeType>,
     pub(crate) grantee_identifier: ::std::option::Option<::std::string::String>,

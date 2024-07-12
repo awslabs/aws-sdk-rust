@@ -83,8 +83,8 @@ impl Link {
 }
 
 /// A builder for [`Link`](crate::types::Link).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LinkBuilder {
     pub(crate) link_id: ::std::option::Option<::std::string::String>,
     pub(crate) link_arn: ::std::option::Option<::std::string::String>,

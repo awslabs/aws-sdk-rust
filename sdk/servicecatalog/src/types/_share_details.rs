@@ -31,8 +31,8 @@ impl ShareDetails {
 }
 
 /// A builder for [`ShareDetails`](crate::types::ShareDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ShareDetailsBuilder {
     pub(crate) successful_shares: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) share_errors: ::std::option::Option<::std::vec::Vec<crate::types::ShareError>>,

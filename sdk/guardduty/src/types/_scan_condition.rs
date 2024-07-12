@@ -23,8 +23,8 @@ impl ScanCondition {
 }
 
 /// A builder for [`ScanCondition`](crate::types::ScanCondition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScanConditionBuilder {
     pub(crate) map_equals: ::std::option::Option<::std::vec::Vec<crate::types::ScanConditionPair>>,
 }

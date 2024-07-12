@@ -32,8 +32,8 @@ impl CreateAdditionalAssignmentsForHitInput {
 }
 
 /// A builder for [`CreateAdditionalAssignmentsForHitInput`](crate::operation::create_additional_assignments_for_hit::CreateAdditionalAssignmentsForHitInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAdditionalAssignmentsForHitInputBuilder {
     pub(crate) hit_id: ::std::option::Option<::std::string::String>,
     pub(crate) number_of_additional_assignments: ::std::option::Option<i32>,

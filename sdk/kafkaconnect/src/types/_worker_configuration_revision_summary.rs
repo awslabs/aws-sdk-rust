@@ -33,8 +33,8 @@ impl WorkerConfigurationRevisionSummary {
 }
 
 /// A builder for [`WorkerConfigurationRevisionSummary`](crate::types::WorkerConfigurationRevisionSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WorkerConfigurationRevisionSummaryBuilder {
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

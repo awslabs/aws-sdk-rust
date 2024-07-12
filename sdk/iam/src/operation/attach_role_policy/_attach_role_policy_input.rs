@@ -30,8 +30,8 @@ impl AttachRolePolicyInput {
 }
 
 /// A builder for [`AttachRolePolicyInput`](crate::operation::attach_role_policy::AttachRolePolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttachRolePolicyInputBuilder {
     pub(crate) role_name: ::std::option::Option<::std::string::String>,
     pub(crate) policy_arn: ::std::option::Option<::std::string::String>,

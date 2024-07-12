@@ -33,8 +33,8 @@ impl SearchVulnerabilitiesOutput {
 }
 
 /// A builder for [`SearchVulnerabilitiesOutput`](crate::operation::search_vulnerabilities::SearchVulnerabilitiesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchVulnerabilitiesOutputBuilder {
     pub(crate) vulnerabilities: ::std::option::Option<::std::vec::Vec<crate::types::Vulnerability>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

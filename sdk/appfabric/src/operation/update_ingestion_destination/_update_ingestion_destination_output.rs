@@ -26,8 +26,8 @@ impl UpdateIngestionDestinationOutput {
 }
 
 /// A builder for [`UpdateIngestionDestinationOutput`](crate::operation::update_ingestion_destination::UpdateIngestionDestinationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateIngestionDestinationOutputBuilder {
     pub(crate) ingestion_destination: ::std::option::Option<crate::types::IngestionDestination>,
     _request_id: Option<String>,

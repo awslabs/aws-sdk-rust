@@ -61,8 +61,8 @@ impl GetAggregateComplianceDetailsByConfigRuleInput {
 }
 
 /// A builder for [`GetAggregateComplianceDetailsByConfigRuleInput`](crate::operation::get_aggregate_compliance_details_by_config_rule::GetAggregateComplianceDetailsByConfigRuleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAggregateComplianceDetailsByConfigRuleInputBuilder {
     pub(crate) configuration_aggregator_name: ::std::option::Option<::std::string::String>,
     pub(crate) config_rule_name: ::std::option::Option<::std::string::String>,

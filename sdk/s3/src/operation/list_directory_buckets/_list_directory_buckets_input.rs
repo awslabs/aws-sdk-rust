@@ -26,8 +26,8 @@ impl ListDirectoryBucketsInput {
 }
 
 /// A builder for [`ListDirectoryBucketsInput`](crate::operation::list_directory_buckets::ListDirectoryBucketsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDirectoryBucketsInputBuilder {
     pub(crate) continuation_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_directory_buckets: ::std::option::Option<i32>,

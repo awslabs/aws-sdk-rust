@@ -79,8 +79,8 @@ impl ActionGroupInvocationInput {
 }
 
 /// A builder for [`ActionGroupInvocationInput`](crate::types::ActionGroupInvocationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ActionGroupInvocationInputBuilder {
     pub(crate) action_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) verb: ::std::option::Option<::std::string::String>,

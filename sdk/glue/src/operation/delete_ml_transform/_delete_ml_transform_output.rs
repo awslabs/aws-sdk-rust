@@ -26,8 +26,8 @@ impl DeleteMlTransformOutput {
 }
 
 /// A builder for [`DeleteMlTransformOutput`](crate::operation::delete_ml_transform::DeleteMlTransformOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteMlTransformOutputBuilder {
     pub(crate) transform_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

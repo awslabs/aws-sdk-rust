@@ -33,8 +33,8 @@ impl ComplianceSummary {
 }
 
 /// A builder for [`ComplianceSummary`](crate::types::ComplianceSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ComplianceSummaryBuilder {
     pub(crate) compliant_resource_count: ::std::option::Option<crate::types::ComplianceContributorCount>,
     pub(crate) non_compliant_resource_count: ::std::option::Option<crate::types::ComplianceContributorCount>,

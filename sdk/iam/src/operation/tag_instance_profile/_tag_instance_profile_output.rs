@@ -18,8 +18,8 @@ impl TagInstanceProfileOutput {
 }
 
 /// A builder for [`TagInstanceProfileOutput`](crate::operation::tag_instance_profile::TagInstanceProfileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TagInstanceProfileOutputBuilder {
     _request_id: Option<String>,
 }

@@ -26,8 +26,8 @@ impl DescribeOfferingOutput {
 }
 
 /// A builder for [`DescribeOfferingOutput`](crate::operation::describe_offering::DescribeOfferingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeOfferingOutputBuilder {
     pub(crate) offering: ::std::option::Option<crate::types::Offering>,
     _request_id: Option<String>,

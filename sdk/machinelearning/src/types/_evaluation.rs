@@ -142,8 +142,8 @@ impl Evaluation {
 }
 
 /// A builder for [`Evaluation`](crate::types::Evaluation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EvaluationBuilder {
     pub(crate) evaluation_id: ::std::option::Option<::std::string::String>,
     pub(crate) ml_model_id: ::std::option::Option<::std::string::String>,

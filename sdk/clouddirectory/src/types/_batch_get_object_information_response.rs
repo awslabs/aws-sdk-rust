@@ -29,8 +29,8 @@ impl BatchGetObjectInformationResponse {
 }
 
 /// A builder for [`BatchGetObjectInformationResponse`](crate::types::BatchGetObjectInformationResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetObjectInformationResponseBuilder {
     pub(crate) schema_facets: ::std::option::Option<::std::vec::Vec<crate::types::SchemaFacet>>,
     pub(crate) object_identifier: ::std::option::Option<::std::string::String>,

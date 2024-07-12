@@ -26,8 +26,8 @@ impl DeactivateDeviceIdentifierOutput {
 }
 
 /// A builder for [`DeactivateDeviceIdentifierOutput`](crate::operation::deactivate_device_identifier::DeactivateDeviceIdentifierOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeactivateDeviceIdentifierOutputBuilder {
     pub(crate) device_identifier: ::std::option::Option<crate::types::DeviceIdentifier>,
     _request_id: Option<String>,

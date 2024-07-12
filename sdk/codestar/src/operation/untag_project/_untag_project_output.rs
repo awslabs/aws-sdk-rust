@@ -18,8 +18,8 @@ impl UntagProjectOutput {
 }
 
 /// A builder for [`UntagProjectOutput`](crate::operation::untag_project::UntagProjectOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UntagProjectOutputBuilder {
     _request_id: Option<String>,
 }

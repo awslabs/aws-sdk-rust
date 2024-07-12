@@ -75,8 +75,8 @@ impl GetTemplateSummaryInput {
 }
 
 /// A builder for [`GetTemplateSummaryInput`](crate::operation::get_template_summary::GetTemplateSummaryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTemplateSummaryInputBuilder {
     pub(crate) template_body: ::std::option::Option<::std::string::String>,
     pub(crate) template_url: ::std::option::Option<::std::string::String>,

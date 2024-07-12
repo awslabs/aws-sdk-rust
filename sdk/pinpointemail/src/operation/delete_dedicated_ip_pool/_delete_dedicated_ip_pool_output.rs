@@ -19,8 +19,8 @@ impl DeleteDedicatedIpPoolOutput {
 }
 
 /// A builder for [`DeleteDedicatedIpPoolOutput`](crate::operation::delete_dedicated_ip_pool::DeleteDedicatedIpPoolOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDedicatedIpPoolOutputBuilder {
     _request_id: Option<String>,
 }

@@ -26,8 +26,8 @@ impl ListMediaAnalysisJobsInput {
 }
 
 /// A builder for [`ListMediaAnalysisJobsInput`](crate::operation::list_media_analysis_jobs::ListMediaAnalysisJobsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListMediaAnalysisJobsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

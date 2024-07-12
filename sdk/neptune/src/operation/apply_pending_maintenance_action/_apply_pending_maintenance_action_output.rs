@@ -26,8 +26,8 @@ impl ApplyPendingMaintenanceActionOutput {
 }
 
 /// A builder for [`ApplyPendingMaintenanceActionOutput`](crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ApplyPendingMaintenanceActionOutputBuilder {
     pub(crate) resource_pending_maintenance_actions: ::std::option::Option<crate::types::ResourcePendingMaintenanceActions>,
     _request_id: Option<String>,

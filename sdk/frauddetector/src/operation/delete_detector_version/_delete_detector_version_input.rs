@@ -26,8 +26,8 @@ impl DeleteDetectorVersionInput {
 }
 
 /// A builder for [`DeleteDetectorVersionInput`](crate::operation::delete_detector_version::DeleteDetectorVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDetectorVersionInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
     pub(crate) detector_version_id: ::std::option::Option<::std::string::String>,

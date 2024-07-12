@@ -62,8 +62,8 @@ impl SendProjectSessionActionInput {
 }
 
 /// A builder for [`SendProjectSessionActionInput`](crate::operation::send_project_session_action::SendProjectSessionActionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SendProjectSessionActionInputBuilder {
     pub(crate) preview: ::std::option::Option<bool>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl ListChallengeMetadataOutput {
 }
 
 /// A builder for [`ListChallengeMetadataOutput`](crate::operation::list_challenge_metadata::ListChallengeMetadataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListChallengeMetadataOutputBuilder {
     pub(crate) challenges: ::std::option::Option<::std::vec::Vec<crate::types::ChallengeMetadataSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

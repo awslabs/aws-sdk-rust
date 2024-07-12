@@ -27,8 +27,8 @@ impl CdnConfiguration {
 }
 
 /// A builder for [`CdnConfiguration`](crate::types::CdnConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CdnConfigurationBuilder {
     pub(crate) ad_segment_url_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) content_segment_url_prefix: ::std::option::Option<::std::string::String>,

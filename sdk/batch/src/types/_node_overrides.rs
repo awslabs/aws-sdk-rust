@@ -47,8 +47,8 @@ impl NodeOverrides {
 }
 
 /// A builder for [`NodeOverrides`](crate::types::NodeOverrides).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NodeOverridesBuilder {
     pub(crate) num_nodes: ::std::option::Option<i32>,
     pub(crate) node_property_overrides: ::std::option::Option<::std::vec::Vec<crate::types::NodePropertyOverride>>,

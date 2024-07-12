@@ -33,8 +33,8 @@ impl ListAssetModelPropertiesOutput {
 }
 
 /// A builder for [`ListAssetModelPropertiesOutput`](crate::operation::list_asset_model_properties::ListAssetModelPropertiesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAssetModelPropertiesOutputBuilder {
     pub(crate) asset_model_property_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelPropertySummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

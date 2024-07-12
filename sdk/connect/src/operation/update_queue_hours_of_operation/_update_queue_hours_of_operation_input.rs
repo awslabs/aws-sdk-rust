@@ -32,8 +32,8 @@ impl UpdateQueueHoursOfOperationInput {
 }
 
 /// A builder for [`UpdateQueueHoursOfOperationInput`](crate::operation::update_queue_hours_of_operation::UpdateQueueHoursOfOperationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateQueueHoursOfOperationInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) queue_id: ::std::option::Option<::std::string::String>,

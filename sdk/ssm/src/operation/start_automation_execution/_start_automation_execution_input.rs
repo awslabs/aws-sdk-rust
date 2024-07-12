@@ -119,8 +119,8 @@ impl StartAutomationExecutionInput {
 }
 
 /// A builder for [`StartAutomationExecutionInput`](crate::operation::start_automation_execution::StartAutomationExecutionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartAutomationExecutionInputBuilder {
     pub(crate) document_name: ::std::option::Option<::std::string::String>,
     pub(crate) document_version: ::std::option::Option<::std::string::String>,

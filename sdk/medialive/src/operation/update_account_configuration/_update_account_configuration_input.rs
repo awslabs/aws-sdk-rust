@@ -21,8 +21,8 @@ impl UpdateAccountConfigurationInput {
 }
 
 /// A builder for [`UpdateAccountConfigurationInput`](crate::operation::update_account_configuration::UpdateAccountConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAccountConfigurationInputBuilder {
     pub(crate) account_configuration: ::std::option::Option<crate::types::AccountConfiguration>,
 }

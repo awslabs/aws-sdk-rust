@@ -50,8 +50,8 @@ impl StartTestSetGenerationInput {
 }
 
 /// A builder for [`StartTestSetGenerationInput`](crate::operation::start_test_set_generation::StartTestSetGenerationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartTestSetGenerationInputBuilder {
     pub(crate) test_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

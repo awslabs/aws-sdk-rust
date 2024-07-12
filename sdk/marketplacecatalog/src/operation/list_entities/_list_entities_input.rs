@@ -70,8 +70,8 @@ impl ListEntitiesInput {
 }
 
 /// A builder for [`ListEntitiesInput`](crate::operation::list_entities::ListEntitiesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEntitiesInputBuilder {
     pub(crate) catalog: ::std::option::Option<::std::string::String>,
     pub(crate) entity_type: ::std::option::Option<::std::string::String>,

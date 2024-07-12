@@ -27,8 +27,8 @@ impl GetDomainMaintenanceStatusInput {
 }
 
 /// A builder for [`GetDomainMaintenanceStatusInput`](crate::operation::get_domain_maintenance_status::GetDomainMaintenanceStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDomainMaintenanceStatusInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) maintenance_id: ::std::option::Option<::std::string::String>,

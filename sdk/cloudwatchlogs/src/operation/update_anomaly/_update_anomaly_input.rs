@@ -44,8 +44,8 @@ impl UpdateAnomalyInput {
 }
 
 /// A builder for [`UpdateAnomalyInput`](crate::operation::update_anomaly::UpdateAnomalyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAnomalyInputBuilder {
     pub(crate) anomaly_id: ::std::option::Option<::std::string::String>,
     pub(crate) pattern_id: ::std::option::Option<::std::string::String>,

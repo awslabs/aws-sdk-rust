@@ -27,8 +27,8 @@ impl MarketplaceInformation {
 }
 
 /// A builder for [`MarketplaceInformation`](crate::types::MarketplaceInformation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MarketplaceInformationBuilder {
     pub(crate) product_id: ::std::option::Option<::std::string::String>,
     pub(crate) product_url: ::std::option::Option<::std::string::String>,

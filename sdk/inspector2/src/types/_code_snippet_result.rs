@@ -49,8 +49,8 @@ impl CodeSnippetResult {
 }
 
 /// A builder for [`CodeSnippetResult`](crate::types::CodeSnippetResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CodeSnippetResultBuilder {
     pub(crate) finding_arn: ::std::option::Option<::std::string::String>,
     pub(crate) start_line: ::std::option::Option<i32>,

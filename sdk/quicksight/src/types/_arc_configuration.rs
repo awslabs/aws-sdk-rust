@@ -27,8 +27,8 @@ impl ArcConfiguration {
 }
 
 /// A builder for [`ArcConfiguration`](crate::types::ArcConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ArcConfigurationBuilder {
     pub(crate) arc_angle: ::std::option::Option<f64>,
     pub(crate) arc_thickness: ::std::option::Option<crate::types::ArcThicknessOptions>,

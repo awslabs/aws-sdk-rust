@@ -27,8 +27,8 @@ impl AcceptCertificateTransferInput {
 }
 
 /// A builder for [`AcceptCertificateTransferInput`](crate::operation::accept_certificate_transfer::AcceptCertificateTransferInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AcceptCertificateTransferInputBuilder {
     pub(crate) certificate_id: ::std::option::Option<::std::string::String>,
     pub(crate) set_as_active: ::std::option::Option<bool>,

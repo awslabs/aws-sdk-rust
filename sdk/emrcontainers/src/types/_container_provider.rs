@@ -34,8 +34,8 @@ impl ContainerProvider {
 }
 
 /// A builder for [`ContainerProvider`](crate::types::ContainerProvider).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ContainerProviderBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ContainerProviderType>,
     pub(crate) id: ::std::option::Option<::std::string::String>,

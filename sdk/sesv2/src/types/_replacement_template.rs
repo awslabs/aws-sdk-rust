@@ -21,8 +21,8 @@ impl ReplacementTemplate {
 }
 
 /// A builder for [`ReplacementTemplate`](crate::types::ReplacementTemplate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReplacementTemplateBuilder {
     pub(crate) replacement_template_data: ::std::option::Option<::std::string::String>,
 }

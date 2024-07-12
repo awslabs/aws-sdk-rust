@@ -26,8 +26,8 @@ impl UpdateDomainEntryInput {
 }
 
 /// A builder for [`UpdateDomainEntryInput`](crate::operation::update_domain_entry::UpdateDomainEntryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDomainEntryInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) domain_entry: ::std::option::Option<crate::types::DomainEntry>,

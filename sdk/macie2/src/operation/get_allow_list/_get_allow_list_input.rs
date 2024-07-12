@@ -20,8 +20,8 @@ impl GetAllowListInput {
 }
 
 /// A builder for [`GetAllowListInput`](crate::operation::get_allow_list::GetAllowListInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAllowListInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }

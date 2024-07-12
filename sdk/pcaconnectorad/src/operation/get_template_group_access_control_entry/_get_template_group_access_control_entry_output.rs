@@ -26,8 +26,8 @@ impl GetTemplateGroupAccessControlEntryOutput {
 }
 
 /// A builder for [`GetTemplateGroupAccessControlEntryOutput`](crate::operation::get_template_group_access_control_entry::GetTemplateGroupAccessControlEntryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTemplateGroupAccessControlEntryOutputBuilder {
     pub(crate) access_control_entry: ::std::option::Option<crate::types::AccessControlEntry>,
     _request_id: Option<String>,

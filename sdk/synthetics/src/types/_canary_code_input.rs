@@ -48,8 +48,8 @@ impl CanaryCodeInput {
 }
 
 /// A builder for [`CanaryCodeInput`](crate::types::CanaryCodeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CanaryCodeInputBuilder {
     pub(crate) s3_bucket: ::std::option::Option<::std::string::String>,
     pub(crate) s3_key: ::std::option::Option<::std::string::String>,

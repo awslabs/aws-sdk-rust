@@ -33,8 +33,8 @@ impl ObjectTypes {
 }
 
 /// A builder for [`ObjectTypes`](crate::types::ObjectTypes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ObjectTypesBuilder {
     pub(crate) source: ::std::option::Option<crate::types::ObjectTypeEnum>,
     pub(crate) destination: ::std::option::Option<crate::types::ObjectTypeEnum>,

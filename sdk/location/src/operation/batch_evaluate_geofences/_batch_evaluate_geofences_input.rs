@@ -28,8 +28,8 @@ impl BatchEvaluateGeofencesInput {
 }
 
 /// A builder for [`BatchEvaluateGeofencesInput`](crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchEvaluateGeofencesInputBuilder {
     pub(crate) collection_name: ::std::option::Option<::std::string::String>,
     pub(crate) device_position_updates: ::std::option::Option<::std::vec::Vec<crate::types::DevicePositionUpdate>>,

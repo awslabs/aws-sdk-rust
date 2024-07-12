@@ -83,8 +83,8 @@ impl ComponentResponse {
 }
 
 /// A builder for [`ComponentResponse`](crate::types::ComponentResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ComponentResponseBuilder {
     pub(crate) component_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

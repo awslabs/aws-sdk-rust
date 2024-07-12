@@ -38,8 +38,8 @@ impl UpdateHitReviewStatusInput {
 }
 
 /// A builder for [`UpdateHitReviewStatusInput`](crate::operation::update_hit_review_status::UpdateHitReviewStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateHitReviewStatusInputBuilder {
     pub(crate) hit_id: ::std::option::Option<::std::string::String>,
     pub(crate) revert: ::std::option::Option<bool>,

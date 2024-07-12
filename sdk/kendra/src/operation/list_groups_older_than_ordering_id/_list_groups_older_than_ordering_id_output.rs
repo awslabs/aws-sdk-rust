@@ -34,8 +34,8 @@ impl ListGroupsOlderThanOrderingIdOutput {
 }
 
 /// A builder for [`ListGroupsOlderThanOrderingIdOutput`](crate::operation::list_groups_older_than_ordering_id::ListGroupsOlderThanOrderingIdOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListGroupsOlderThanOrderingIdOutputBuilder {
     pub(crate) groups_summaries: ::std::option::Option<::std::vec::Vec<crate::types::GroupSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

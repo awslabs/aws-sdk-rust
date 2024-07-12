@@ -26,8 +26,8 @@ impl GetBackupPlanFromTemplateOutput {
 }
 
 /// A builder for [`GetBackupPlanFromTemplateOutput`](crate::operation::get_backup_plan_from_template::GetBackupPlanFromTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBackupPlanFromTemplateOutputBuilder {
     pub(crate) backup_plan_document: ::std::option::Option<crate::types::BackupPlan>,
     _request_id: Option<String>,

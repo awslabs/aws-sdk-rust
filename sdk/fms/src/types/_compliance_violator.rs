@@ -39,8 +39,8 @@ impl ComplianceViolator {
 }
 
 /// A builder for [`ComplianceViolator`](crate::types::ComplianceViolator).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ComplianceViolatorBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) violation_reason: ::std::option::Option<crate::types::ViolationReason>,

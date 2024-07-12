@@ -27,8 +27,8 @@ impl TestExecutionResultFilterBy {
 }
 
 /// A builder for [`TestExecutionResultFilterBy`](crate::types::TestExecutionResultFilterBy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TestExecutionResultFilterByBuilder {
     pub(crate) result_type_filter: ::std::option::Option<crate::types::TestResultTypeFilter>,
     pub(crate) conversation_level_test_results_filter_by: ::std::option::Option<crate::types::ConversationLevelTestResultsFilterBy>,

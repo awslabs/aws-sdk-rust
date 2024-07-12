@@ -26,8 +26,8 @@ impl GetMetadataInput {
 }
 
 /// A builder for [`GetMetadataInput`](crate::operation::get_metadata::GetMetadataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMetadataInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) environment_name: ::std::option::Option<::std::string::String>,

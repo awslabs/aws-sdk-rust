@@ -26,8 +26,8 @@ impl SubmitContainerStateChangeOutput {
 }
 
 /// A builder for [`SubmitContainerStateChangeOutput`](crate::operation::submit_container_state_change::SubmitContainerStateChangeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SubmitContainerStateChangeOutputBuilder {
     pub(crate) acknowledgment: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -26,8 +26,8 @@ impl AssociateAccessGrantsIdentityCenterInput {
 }
 
 /// A builder for [`AssociateAccessGrantsIdentityCenterInput`](crate::operation::associate_access_grants_identity_center::AssociateAccessGrantsIdentityCenterInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateAccessGrantsIdentityCenterInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) identity_center_arn: ::std::option::Option<::std::string::String>,

@@ -21,8 +21,8 @@ impl MetricWindow {
 }
 
 /// A builder for [`MetricWindow`](crate::types::MetricWindow).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MetricWindowBuilder {
     pub(crate) tumbling: ::std::option::Option<crate::types::TumblingWindow>,
 }

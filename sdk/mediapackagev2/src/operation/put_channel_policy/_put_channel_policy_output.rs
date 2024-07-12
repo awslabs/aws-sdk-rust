@@ -18,8 +18,8 @@ impl PutChannelPolicyOutput {
 }
 
 /// A builder for [`PutChannelPolicyOutput`](crate::operation::put_channel_policy::PutChannelPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutChannelPolicyOutputBuilder {
     _request_id: Option<String>,
 }

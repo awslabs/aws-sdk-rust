@@ -18,8 +18,8 @@ impl DeleteMicrosoftTeamsConfiguredTeamOutput {
 }
 
 /// A builder for [`DeleteMicrosoftTeamsConfiguredTeamOutput`](crate::operation::delete_microsoft_teams_configured_team::DeleteMicrosoftTeamsConfiguredTeamOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteMicrosoftTeamsConfiguredTeamOutputBuilder {
     _request_id: Option<String>,
 }

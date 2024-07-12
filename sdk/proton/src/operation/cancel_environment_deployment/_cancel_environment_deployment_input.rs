@@ -20,8 +20,8 @@ impl CancelEnvironmentDeploymentInput {
 }
 
 /// A builder for [`CancelEnvironmentDeploymentInput`](crate::operation::cancel_environment_deployment::CancelEnvironmentDeploymentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelEnvironmentDeploymentInputBuilder {
     pub(crate) environment_name: ::std::option::Option<::std::string::String>,
 }

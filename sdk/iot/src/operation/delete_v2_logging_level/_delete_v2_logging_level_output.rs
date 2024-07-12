@@ -18,8 +18,8 @@ impl DeleteV2LoggingLevelOutput {
 }
 
 /// A builder for [`DeleteV2LoggingLevelOutput`](crate::operation::delete_v2_logging_level::DeleteV2LoggingLevelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteV2LoggingLevelOutputBuilder {
     _request_id: Option<String>,
 }

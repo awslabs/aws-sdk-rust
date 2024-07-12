@@ -21,8 +21,8 @@ impl PutDeliveryChannelInput {
 }
 
 /// A builder for [`PutDeliveryChannelInput`](crate::operation::put_delivery_channel::PutDeliveryChannelInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutDeliveryChannelInputBuilder {
     pub(crate) delivery_channel: ::std::option::Option<crate::types::DeliveryChannel>,
 }

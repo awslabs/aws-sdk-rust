@@ -22,8 +22,8 @@ impl DescribeDraftAppVersionResourcesImportStatusInput {
 }
 
 /// A builder for [`DescribeDraftAppVersionResourcesImportStatusInput`](crate::operation::describe_draft_app_version_resources_import_status::DescribeDraftAppVersionResourcesImportStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDraftAppVersionResourcesImportStatusInputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
 }

@@ -51,8 +51,8 @@ impl ChangeProgressDetails {
 }
 
 /// A builder for [`ChangeProgressDetails`](crate::types::ChangeProgressDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ChangeProgressDetailsBuilder {
     pub(crate) change_id: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

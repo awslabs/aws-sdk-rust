@@ -25,8 +25,8 @@ impl ConfluenceBlogConfiguration {
 }
 
 /// A builder for [`ConfluenceBlogConfiguration`](crate::types::ConfluenceBlogConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConfluenceBlogConfigurationBuilder {
     pub(crate) blog_field_mappings: ::std::option::Option<::std::vec::Vec<crate::types::ConfluenceBlogToIndexFieldMapping>>,
 }

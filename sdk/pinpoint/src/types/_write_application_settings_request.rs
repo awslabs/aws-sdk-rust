@@ -83,8 +83,8 @@ impl WriteApplicationSettingsRequest {
 }
 
 /// A builder for [`WriteApplicationSettingsRequest`](crate::types::WriteApplicationSettingsRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WriteApplicationSettingsRequestBuilder {
     pub(crate) campaign_hook: ::std::option::Option<crate::types::CampaignHook>,
     pub(crate) cloud_watch_metrics_enabled: ::std::option::Option<bool>,

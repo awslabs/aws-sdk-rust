@@ -32,8 +32,8 @@ impl ListFacetNamesInput {
 }
 
 /// A builder for [`ListFacetNamesInput`](crate::operation::list_facet_names::ListFacetNamesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFacetNamesInputBuilder {
     pub(crate) schema_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

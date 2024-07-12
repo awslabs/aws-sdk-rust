@@ -26,8 +26,8 @@ impl CountPendingDecisionTasksInput {
 }
 
 /// A builder for [`CountPendingDecisionTasksInput`](crate::operation::count_pending_decision_tasks::CountPendingDecisionTasksInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CountPendingDecisionTasksInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) task_list: ::std::option::Option<crate::types::TaskList>,

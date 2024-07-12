@@ -44,8 +44,8 @@ impl ListLogPatternsInput {
 }
 
 /// A builder for [`ListLogPatternsInput`](crate::operation::list_log_patterns::ListLogPatternsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListLogPatternsInputBuilder {
     pub(crate) resource_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) pattern_set_name: ::std::option::Option<::std::string::String>,

@@ -21,8 +21,8 @@ impl TransitGatewayConnectOptions {
 }
 
 /// A builder for [`TransitGatewayConnectOptions`](crate::types::TransitGatewayConnectOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TransitGatewayConnectOptionsBuilder {
     pub(crate) protocol: ::std::option::Option<crate::types::ProtocolValue>,
 }

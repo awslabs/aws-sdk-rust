@@ -21,8 +21,8 @@ impl TableInlineVisualization {
 }
 
 /// A builder for [`TableInlineVisualization`](crate::types::TableInlineVisualization).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TableInlineVisualizationBuilder {
     pub(crate) data_bars: ::std::option::Option<crate::types::DataBarsOptions>,
 }

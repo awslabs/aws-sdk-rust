@@ -21,8 +21,8 @@ impl M2tsScte35Esam {
 }
 
 /// A builder for [`M2tsScte35Esam`](crate::types::M2tsScte35Esam).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct M2tsScte35EsamBuilder {
     pub(crate) scte35_esam_pid: ::std::option::Option<i32>,
 }

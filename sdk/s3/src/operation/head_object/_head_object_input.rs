@@ -271,8 +271,8 @@ impl HeadObjectInput {
 }
 
 /// A builder for [`HeadObjectInput`](crate::operation::head_object::HeadObjectInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct HeadObjectInputBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) if_match: ::std::option::Option<::std::string::String>,

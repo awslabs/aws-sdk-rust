@@ -99,8 +99,8 @@ impl NumberValidateResponse {
 }
 
 /// A builder for [`NumberValidateResponse`](crate::types::NumberValidateResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NumberValidateResponseBuilder {
     pub(crate) carrier: ::std::option::Option<::std::string::String>,
     pub(crate) city: ::std::option::Option<::std::string::String>,

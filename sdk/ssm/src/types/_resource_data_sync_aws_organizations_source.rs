@@ -30,8 +30,8 @@ impl ResourceDataSyncAwsOrganizationsSource {
 }
 
 /// A builder for [`ResourceDataSyncAwsOrganizationsSource`](crate::types::ResourceDataSyncAwsOrganizationsSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResourceDataSyncAwsOrganizationsSourceBuilder {
     pub(crate) organization_source_type: ::std::option::Option<::std::string::String>,
     pub(crate) organizational_units: ::std::option::Option<::std::vec::Vec<crate::types::ResourceDataSyncOrganizationalUnit>>,

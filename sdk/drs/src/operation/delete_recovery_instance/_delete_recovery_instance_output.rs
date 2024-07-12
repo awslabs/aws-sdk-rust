@@ -18,8 +18,8 @@ impl DeleteRecoveryInstanceOutput {
 }
 
 /// A builder for [`DeleteRecoveryInstanceOutput`](crate::operation::delete_recovery_instance::DeleteRecoveryInstanceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRecoveryInstanceOutputBuilder {
     _request_id: Option<String>,
 }

@@ -135,8 +135,8 @@ impl CreateFileSystemOpenZfsConfiguration {
 }
 
 /// A builder for [`CreateFileSystemOpenZfsConfiguration`](crate::types::CreateFileSystemOpenZfsConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateFileSystemOpenZfsConfigurationBuilder {
     pub(crate) automatic_backup_retention_days: ::std::option::Option<i32>,
     pub(crate) copy_tags_to_backups: ::std::option::Option<bool>,

@@ -230,8 +230,8 @@ impl DescribeScheduledActionsInput {
 }
 
 /// A builder for [`DescribeScheduledActionsInput`](crate::operation::describe_scheduled_actions::DescribeScheduledActionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeScheduledActionsInputBuilder {
     pub(crate) scheduled_action_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) service_namespace: ::std::option::Option<crate::types::ServiceNamespace>,

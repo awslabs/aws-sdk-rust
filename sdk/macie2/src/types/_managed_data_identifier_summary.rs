@@ -27,8 +27,8 @@ impl ManagedDataIdentifierSummary {
 }
 
 /// A builder for [`ManagedDataIdentifierSummary`](crate::types::ManagedDataIdentifierSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ManagedDataIdentifierSummaryBuilder {
     pub(crate) category: ::std::option::Option<crate::types::SensitiveDataItemCategory>,
     pub(crate) id: ::std::option::Option<::std::string::String>,

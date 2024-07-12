@@ -20,8 +20,8 @@ impl GetCatalogItemInput {
 }
 
 /// A builder for [`GetCatalogItemInput`](crate::operation::get_catalog_item::GetCatalogItemInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCatalogItemInputBuilder {
     pub(crate) catalog_item_id: ::std::option::Option<::std::string::String>,
 }

@@ -46,8 +46,8 @@ impl GetConsolidatedReportOutput {
 }
 
 /// A builder for [`GetConsolidatedReportOutput`](crate::operation::get_consolidated_report::GetConsolidatedReportOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetConsolidatedReportOutputBuilder {
     pub(crate) metrics: ::std::option::Option<::std::vec::Vec<crate::types::ConsolidatedReportMetric>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

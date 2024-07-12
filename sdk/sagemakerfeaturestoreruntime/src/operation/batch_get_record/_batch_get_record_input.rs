@@ -28,8 +28,8 @@ impl BatchGetRecordInput {
 }
 
 /// A builder for [`BatchGetRecordInput`](crate::operation::batch_get_record::BatchGetRecordInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetRecordInputBuilder {
     pub(crate) identifiers: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetRecordIdentifier>>,
     pub(crate) expiration_time_response: ::std::option::Option<crate::types::ExpirationTimeResponse>,

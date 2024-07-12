@@ -267,8 +267,8 @@ impl AdminRespondToAuthChallengeInput {
 }
 
 /// A builder for [`AdminRespondToAuthChallengeInput`](crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AdminRespondToAuthChallengeInputBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_id: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl SupportedHour {
 }
 
 /// A builder for [`SupportedHour`](crate::types::SupportedHour).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SupportedHourBuilder {
     pub(crate) start_time: ::std::option::Option<::std::string::String>,
     pub(crate) end_time: ::std::option::Option<::std::string::String>,

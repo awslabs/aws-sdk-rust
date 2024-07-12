@@ -23,8 +23,8 @@ impl AwsEcsClusterConfigurationDetails {
 }
 
 /// A builder for [`AwsEcsClusterConfigurationDetails`](crate::types::AwsEcsClusterConfigurationDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEcsClusterConfigurationDetailsBuilder {
     pub(crate) execute_command_configuration: ::std::option::Option<crate::types::AwsEcsClusterConfigurationExecuteCommandConfigurationDetails>,
 }

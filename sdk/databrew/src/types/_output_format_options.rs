@@ -21,8 +21,8 @@ impl OutputFormatOptions {
 }
 
 /// A builder for [`OutputFormatOptions`](crate::types::OutputFormatOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OutputFormatOptionsBuilder {
     pub(crate) csv: ::std::option::Option<crate::types::CsvOutputOptions>,
 }

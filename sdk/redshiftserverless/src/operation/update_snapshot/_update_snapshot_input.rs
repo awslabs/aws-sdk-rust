@@ -26,8 +26,8 @@ impl UpdateSnapshotInput {
 }
 
 /// A builder for [`UpdateSnapshotInput`](crate::operation::update_snapshot::UpdateSnapshotInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSnapshotInputBuilder {
     pub(crate) snapshot_name: ::std::option::Option<::std::string::String>,
     pub(crate) retention_period: ::std::option::Option<i32>,

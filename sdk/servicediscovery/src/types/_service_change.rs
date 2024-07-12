@@ -33,8 +33,8 @@ impl ServiceChange {
 }
 
 /// A builder for [`ServiceChange`](crate::types::ServiceChange).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServiceChangeBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) dns_config: ::std::option::Option<crate::types::DnsConfigChange>,

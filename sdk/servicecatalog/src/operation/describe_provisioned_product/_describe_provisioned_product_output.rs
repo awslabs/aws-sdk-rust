@@ -34,8 +34,8 @@ impl DescribeProvisionedProductOutput {
 }
 
 /// A builder for [`DescribeProvisionedProductOutput`](crate::operation::describe_provisioned_product::DescribeProvisionedProductOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeProvisionedProductOutputBuilder {
     pub(crate) provisioned_product_detail: ::std::option::Option<crate::types::ProvisionedProductDetail>,
     pub(crate) cloud_watch_dashboards: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchDashboard>>,

@@ -21,8 +21,8 @@ impl AwsEc2LaunchTemplateDataMonitoringDetails {
 }
 
 /// A builder for [`AwsEc2LaunchTemplateDataMonitoringDetails`](crate::types::AwsEc2LaunchTemplateDataMonitoringDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEc2LaunchTemplateDataMonitoringDetailsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
 }

@@ -38,8 +38,8 @@ impl TextPromptTemplateConfiguration {
 }
 
 /// A builder for [`TextPromptTemplateConfiguration`](crate::types::TextPromptTemplateConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct TextPromptTemplateConfigurationBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
     pub(crate) input_variables: ::std::option::Option<::std::vec::Vec<crate::types::PromptInputVariable>>,

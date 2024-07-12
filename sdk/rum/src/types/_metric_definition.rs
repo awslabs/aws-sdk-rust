@@ -61,8 +61,8 @@ impl MetricDefinition {
 }
 
 /// A builder for [`MetricDefinition`](crate::types::MetricDefinition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MetricDefinitionBuilder {
     pub(crate) metric_definition_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

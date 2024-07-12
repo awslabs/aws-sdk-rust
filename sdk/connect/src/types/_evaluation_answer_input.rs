@@ -21,8 +21,8 @@ impl EvaluationAnswerInput {
 }
 
 /// A builder for [`EvaluationAnswerInput`](crate::types::EvaluationAnswerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EvaluationAnswerInputBuilder {
     pub(crate) value: ::std::option::Option<crate::types::EvaluationAnswerData>,
 }

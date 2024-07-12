@@ -34,8 +34,8 @@ impl TranscriptCriteria {
 }
 
 /// A builder for [`TranscriptCriteria`](crate::types::TranscriptCriteria).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TranscriptCriteriaBuilder {
     pub(crate) participant_role: ::std::option::Option<crate::types::ParticipantRole>,
     pub(crate) search_text: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

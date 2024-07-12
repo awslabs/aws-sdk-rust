@@ -31,8 +31,8 @@ impl RuleUpdate {
 }
 
 /// A builder for [`RuleUpdate`](crate::types::RuleUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RuleUpdateBuilder {
     pub(crate) action: ::std::option::Option<crate::types::ChangeAction>,
     pub(crate) predicate: ::std::option::Option<crate::types::Predicate>,

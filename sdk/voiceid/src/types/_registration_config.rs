@@ -35,8 +35,8 @@ impl RegistrationConfig {
 }
 
 /// A builder for [`RegistrationConfig`](crate::types::RegistrationConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegistrationConfigBuilder {
     pub(crate) duplicate_registration_action: ::std::option::Option<crate::types::DuplicateRegistrationAction>,
     pub(crate) fraudster_similarity_threshold: ::std::option::Option<i32>,

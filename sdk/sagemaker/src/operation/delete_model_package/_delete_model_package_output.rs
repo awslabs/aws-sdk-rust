@@ -18,8 +18,8 @@ impl DeleteModelPackageOutput {
 }
 
 /// A builder for [`DeleteModelPackageOutput`](crate::operation::delete_model_package::DeleteModelPackageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteModelPackageOutputBuilder {
     _request_id: Option<String>,
 }

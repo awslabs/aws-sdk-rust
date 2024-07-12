@@ -26,8 +26,8 @@ impl UpdateEnvironmentMembershipOutput {
 }
 
 /// A builder for [`UpdateEnvironmentMembershipOutput`](crate::operation::update_environment_membership::UpdateEnvironmentMembershipOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateEnvironmentMembershipOutputBuilder {
     pub(crate) membership: ::std::option::Option<crate::types::EnvironmentMember>,
     _request_id: Option<String>,

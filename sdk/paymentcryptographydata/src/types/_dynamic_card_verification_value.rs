@@ -53,8 +53,8 @@ impl DynamicCardVerificationValue {
 }
 
 /// A builder for [`DynamicCardVerificationValue`](crate::types::DynamicCardVerificationValue).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DynamicCardVerificationValueBuilder {
     pub(crate) pan_sequence_number: ::std::option::Option<::std::string::String>,
     pub(crate) card_expiry_date: ::std::option::Option<::std::string::String>,

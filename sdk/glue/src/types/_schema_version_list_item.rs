@@ -45,8 +45,8 @@ impl SchemaVersionListItem {
 }
 
 /// A builder for [`SchemaVersionListItem`](crate::types::SchemaVersionListItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SchemaVersionListItemBuilder {
     pub(crate) schema_arn: ::std::option::Option<::std::string::String>,
     pub(crate) schema_version_id: ::std::option::Option<::std::string::String>,

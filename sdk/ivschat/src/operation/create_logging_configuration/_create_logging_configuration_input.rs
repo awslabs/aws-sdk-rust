@@ -32,8 +32,8 @@ impl CreateLoggingConfigurationInput {
 }
 
 /// A builder for [`CreateLoggingConfigurationInput`](crate::operation::create_logging_configuration::CreateLoggingConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLoggingConfigurationInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) destination_configuration: ::std::option::Option<crate::types::DestinationConfiguration>,

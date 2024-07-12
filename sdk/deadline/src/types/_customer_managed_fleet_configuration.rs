@@ -33,8 +33,8 @@ impl CustomerManagedFleetConfiguration {
 }
 
 /// A builder for [`CustomerManagedFleetConfiguration`](crate::types::CustomerManagedFleetConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CustomerManagedFleetConfigurationBuilder {
     pub(crate) mode: ::std::option::Option<crate::types::AutoScalingMode>,
     pub(crate) worker_capabilities: ::std::option::Option<crate::types::CustomerManagedWorkerCapabilities>,

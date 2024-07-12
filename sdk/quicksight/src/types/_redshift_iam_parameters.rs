@@ -42,8 +42,8 @@ impl RedshiftIamParameters {
 }
 
 /// A builder for [`RedshiftIamParameters`](crate::types::RedshiftIamParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RedshiftIamParametersBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) database_user: ::std::option::Option<::std::string::String>,

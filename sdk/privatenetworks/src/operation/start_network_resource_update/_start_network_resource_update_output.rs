@@ -26,8 +26,8 @@ impl StartNetworkResourceUpdateOutput {
 }
 
 /// A builder for [`StartNetworkResourceUpdateOutput`](crate::operation::start_network_resource_update::StartNetworkResourceUpdateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartNetworkResourceUpdateOutputBuilder {
     pub(crate) network_resource: ::std::option::Option<crate::types::NetworkResource>,
     _request_id: Option<String>,

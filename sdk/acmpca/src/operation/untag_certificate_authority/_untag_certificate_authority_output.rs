@@ -18,8 +18,8 @@ impl UntagCertificateAuthorityOutput {
 }
 
 /// A builder for [`UntagCertificateAuthorityOutput`](crate::operation::untag_certificate_authority::UntagCertificateAuthorityOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UntagCertificateAuthorityOutputBuilder {
     _request_id: Option<String>,
 }

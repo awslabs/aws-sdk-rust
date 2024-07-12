@@ -21,8 +21,8 @@ impl HistogramFieldWells {
 }
 
 /// A builder for [`HistogramFieldWells`](crate::types::HistogramFieldWells).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HistogramFieldWellsBuilder {
     pub(crate) histogram_aggregated_field_wells: ::std::option::Option<crate::types::HistogramAggregatedFieldWells>,
 }

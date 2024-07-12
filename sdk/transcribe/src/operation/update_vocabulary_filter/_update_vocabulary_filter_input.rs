@@ -52,8 +52,8 @@ impl UpdateVocabularyFilterInput {
 }
 
 /// A builder for [`UpdateVocabularyFilterInput`](crate::operation::update_vocabulary_filter::UpdateVocabularyFilterInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateVocabularyFilterInputBuilder {
     pub(crate) vocabulary_filter_name: ::std::option::Option<::std::string::String>,
     pub(crate) words: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

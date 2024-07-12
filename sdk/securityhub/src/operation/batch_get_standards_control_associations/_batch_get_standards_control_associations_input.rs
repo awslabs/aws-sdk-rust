@@ -22,8 +22,8 @@ impl BatchGetStandardsControlAssociationsInput {
 }
 
 /// A builder for [`BatchGetStandardsControlAssociationsInput`](crate::operation::batch_get_standards_control_associations::BatchGetStandardsControlAssociationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetStandardsControlAssociationsInputBuilder {
     pub(crate) standards_control_association_ids: ::std::option::Option<::std::vec::Vec<crate::types::StandardsControlAssociationId>>,
 }

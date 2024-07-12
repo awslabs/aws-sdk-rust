@@ -21,8 +21,8 @@ impl ParticipantCapabilities {
 }
 
 /// A builder for [`ParticipantCapabilities`](crate::types::ParticipantCapabilities).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ParticipantCapabilitiesBuilder {
     pub(crate) video: ::std::option::Option<crate::types::VideoCapability>,
 }

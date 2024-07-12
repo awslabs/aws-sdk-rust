@@ -26,8 +26,8 @@ impl UpdateServicePrimaryTaskSetOutput {
 }
 
 /// A builder for [`UpdateServicePrimaryTaskSetOutput`](crate::operation::update_service_primary_task_set::UpdateServicePrimaryTaskSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateServicePrimaryTaskSetOutputBuilder {
     pub(crate) task_set: ::std::option::Option<crate::types::TaskSet>,
     _request_id: Option<String>,

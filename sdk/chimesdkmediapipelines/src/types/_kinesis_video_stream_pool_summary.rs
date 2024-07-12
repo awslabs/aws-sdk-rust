@@ -42,8 +42,8 @@ impl KinesisVideoStreamPoolSummary {
 }
 
 /// A builder for [`KinesisVideoStreamPoolSummary`](crate::types::KinesisVideoStreamPoolSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct KinesisVideoStreamPoolSummaryBuilder {
     pub(crate) pool_name: ::std::option::Option<::std::string::String>,
     pub(crate) pool_id: ::std::option::Option<::std::string::String>,

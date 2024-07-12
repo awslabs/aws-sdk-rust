@@ -20,8 +20,8 @@ impl DeleteRecoveryGroupInput {
 }
 
 /// A builder for [`DeleteRecoveryGroupInput`](crate::operation::delete_recovery_group::DeleteRecoveryGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRecoveryGroupInputBuilder {
     pub(crate) recovery_group_name: ::std::option::Option<::std::string::String>,
 }

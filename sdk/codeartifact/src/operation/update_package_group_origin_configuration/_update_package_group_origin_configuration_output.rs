@@ -44,8 +44,8 @@ impl UpdatePackageGroupOriginConfigurationOutput {
 }
 
 /// A builder for [`UpdatePackageGroupOriginConfigurationOutput`](crate::operation::update_package_group_origin_configuration::UpdatePackageGroupOriginConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePackageGroupOriginConfigurationOutputBuilder {
     pub(crate) package_group: ::std::option::Option<crate::types::PackageGroupDescription>,
     pub(crate) allowed_repository_updates: ::std::option::Option<

@@ -27,8 +27,8 @@ impl ReloadReplicationTablesOutput {
 }
 
 /// A builder for [`ReloadReplicationTablesOutput`](crate::operation::reload_replication_tables::ReloadReplicationTablesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReloadReplicationTablesOutputBuilder {
     pub(crate) replication_config_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

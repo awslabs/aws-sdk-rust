@@ -47,8 +47,8 @@ impl CvssScoreDetails {
 }
 
 /// A builder for [`CvssScoreDetails`](crate::types::CvssScoreDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CvssScoreDetailsBuilder {
     pub(crate) adjustments: ::std::option::Option<::std::vec::Vec<crate::types::CvssScoreAdjustment>>,
     pub(crate) score: ::std::option::Option<f64>,

@@ -26,8 +26,8 @@ impl ListMlEndpointsInput {
 }
 
 /// A builder for [`ListMlEndpointsInput`](crate::operation::list_ml_endpoints::ListMlEndpointsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListMlEndpointsInputBuilder {
     pub(crate) max_items: ::std::option::Option<i32>,
     pub(crate) neptune_iam_role_arn: ::std::option::Option<::std::string::String>,

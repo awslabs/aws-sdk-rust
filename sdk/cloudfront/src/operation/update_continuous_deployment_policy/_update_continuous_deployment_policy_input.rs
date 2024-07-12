@@ -32,8 +32,8 @@ impl UpdateContinuousDeploymentPolicyInput {
 }
 
 /// A builder for [`UpdateContinuousDeploymentPolicyInput`](crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateContinuousDeploymentPolicyInputBuilder {
     pub(crate) continuous_deployment_policy_config: ::std::option::Option<crate::types::ContinuousDeploymentPolicyConfig>,
     pub(crate) id: ::std::option::Option<::std::string::String>,

@@ -38,8 +38,8 @@ impl ListEnrollmentStatusesInput {
 }
 
 /// A builder for [`ListEnrollmentStatusesInput`](crate::operation::list_enrollment_statuses::ListEnrollmentStatusesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEnrollmentStatusesInputBuilder {
     pub(crate) include_organization_info: ::std::option::Option<bool>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,

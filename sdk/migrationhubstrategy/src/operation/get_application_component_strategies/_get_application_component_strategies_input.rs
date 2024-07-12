@@ -20,8 +20,8 @@ impl GetApplicationComponentStrategiesInput {
 }
 
 /// A builder for [`GetApplicationComponentStrategiesInput`](crate::operation::get_application_component_strategies::GetApplicationComponentStrategiesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetApplicationComponentStrategiesInputBuilder {
     pub(crate) application_component_id: ::std::option::Option<::std::string::String>,
 }

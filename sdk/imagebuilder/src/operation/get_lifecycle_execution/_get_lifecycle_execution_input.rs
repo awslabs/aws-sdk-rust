@@ -20,8 +20,8 @@ impl GetLifecycleExecutionInput {
 }
 
 /// A builder for [`GetLifecycleExecutionInput`](crate::operation::get_lifecycle_execution::GetLifecycleExecutionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLifecycleExecutionInputBuilder {
     pub(crate) lifecycle_execution_id: ::std::option::Option<::std::string::String>,
 }

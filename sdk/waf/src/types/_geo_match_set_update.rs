@@ -31,8 +31,8 @@ impl GeoMatchSetUpdate {
 }
 
 /// A builder for [`GeoMatchSetUpdate`](crate::types::GeoMatchSetUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GeoMatchSetUpdateBuilder {
     pub(crate) action: ::std::option::Option<crate::types::ChangeAction>,
     pub(crate) geo_match_constraint: ::std::option::Option<crate::types::GeoMatchConstraint>,

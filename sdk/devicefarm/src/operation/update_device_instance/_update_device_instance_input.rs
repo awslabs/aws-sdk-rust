@@ -34,8 +34,8 @@ impl UpdateDeviceInstanceInput {
 }
 
 /// A builder for [`UpdateDeviceInstanceInput`](crate::operation::update_device_instance::UpdateDeviceInstanceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDeviceInstanceInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) profile_arn: ::std::option::Option<::std::string::String>,

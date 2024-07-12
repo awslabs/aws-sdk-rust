@@ -34,8 +34,8 @@ impl PivotTableFieldOption {
 }
 
 /// A builder for [`PivotTableFieldOption`](crate::types::PivotTableFieldOption).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PivotTableFieldOptionBuilder {
     pub(crate) field_id: ::std::option::Option<::std::string::String>,
     pub(crate) custom_label: ::std::option::Option<::std::string::String>,

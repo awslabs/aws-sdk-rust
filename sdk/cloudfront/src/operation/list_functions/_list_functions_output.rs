@@ -26,8 +26,8 @@ impl ListFunctionsOutput {
 }
 
 /// A builder for [`ListFunctionsOutput`](crate::operation::list_functions::ListFunctionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFunctionsOutputBuilder {
     pub(crate) function_list: ::std::option::Option<crate::types::FunctionList>,
     _request_id: Option<String>,

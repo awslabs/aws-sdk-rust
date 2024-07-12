@@ -35,8 +35,8 @@ impl ListArchiveExportsOutput {
 }
 
 /// A builder for [`ListArchiveExportsOutput`](crate::operation::list_archive_exports::ListArchiveExportsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListArchiveExportsOutputBuilder {
     pub(crate) exports: ::std::option::Option<::std::vec::Vec<crate::types::ExportSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

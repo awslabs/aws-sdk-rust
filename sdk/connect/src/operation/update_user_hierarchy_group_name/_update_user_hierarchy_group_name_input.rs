@@ -32,8 +32,8 @@ impl UpdateUserHierarchyGroupNameInput {
 }
 
 /// A builder for [`UpdateUserHierarchyGroupNameInput`](crate::operation::update_user_hierarchy_group_name::UpdateUserHierarchyGroupNameInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateUserHierarchyGroupNameInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) hierarchy_group_id: ::std::option::Option<::std::string::String>,

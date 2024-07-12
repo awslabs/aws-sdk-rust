@@ -33,8 +33,8 @@ impl GetLoaderJobStatusOutput {
 }
 
 /// A builder for [`GetLoaderJobStatusOutput`](crate::operation::get_loader_job_status::GetLoaderJobStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLoaderJobStatusOutputBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) payload: ::std::option::Option<::aws_smithy_types::Document>,

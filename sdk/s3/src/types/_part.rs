@@ -63,8 +63,8 @@ impl Part {
 }
 
 /// A builder for [`Part`](crate::types::Part).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PartBuilder {
     pub(crate) part_number: ::std::option::Option<i32>,
     pub(crate) last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,

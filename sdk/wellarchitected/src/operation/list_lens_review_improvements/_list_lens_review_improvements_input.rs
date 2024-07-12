@@ -67,8 +67,8 @@ impl ListLensReviewImprovementsInput {
 }
 
 /// A builder for [`ListLensReviewImprovementsInput`](crate::operation::list_lens_review_improvements::ListLensReviewImprovementsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListLensReviewImprovementsInputBuilder {
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,
     pub(crate) lens_alias: ::std::option::Option<::std::string::String>,

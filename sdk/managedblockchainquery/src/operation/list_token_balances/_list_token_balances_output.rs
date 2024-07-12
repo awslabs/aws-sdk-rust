@@ -33,8 +33,8 @@ impl ListTokenBalancesOutput {
 }
 
 /// A builder for [`ListTokenBalancesOutput`](crate::operation::list_token_balances::ListTokenBalancesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTokenBalancesOutputBuilder {
     pub(crate) token_balances: ::std::option::Option<::std::vec::Vec<crate::types::TokenBalance>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

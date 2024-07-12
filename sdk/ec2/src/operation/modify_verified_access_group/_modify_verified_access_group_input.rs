@@ -44,8 +44,8 @@ impl ModifyVerifiedAccessGroupInput {
 }
 
 /// A builder for [`ModifyVerifiedAccessGroupInput`](crate::operation::modify_verified_access_group::ModifyVerifiedAccessGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyVerifiedAccessGroupInputBuilder {
     pub(crate) verified_access_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) verified_access_instance_id: ::std::option::Option<::std::string::String>,

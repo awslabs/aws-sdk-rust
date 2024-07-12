@@ -23,8 +23,8 @@ impl GetIdentityMailFromDomainAttributesInput {
 }
 
 /// A builder for [`GetIdentityMailFromDomainAttributesInput`](crate::operation::get_identity_mail_from_domain_attributes::GetIdentityMailFromDomainAttributesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetIdentityMailFromDomainAttributesInputBuilder {
     pub(crate) identities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

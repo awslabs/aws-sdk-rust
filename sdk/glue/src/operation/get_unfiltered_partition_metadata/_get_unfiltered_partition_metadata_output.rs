@@ -40,8 +40,8 @@ impl GetUnfilteredPartitionMetadataOutput {
 }
 
 /// A builder for [`GetUnfilteredPartitionMetadataOutput`](crate::operation::get_unfiltered_partition_metadata::GetUnfilteredPartitionMetadataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetUnfilteredPartitionMetadataOutputBuilder {
     pub(crate) partition: ::std::option::Option<crate::types::Partition>,
     pub(crate) authorized_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

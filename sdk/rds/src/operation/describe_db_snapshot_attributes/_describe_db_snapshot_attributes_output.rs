@@ -28,8 +28,8 @@ impl DescribeDbSnapshotAttributesOutput {
 }
 
 /// A builder for [`DescribeDbSnapshotAttributesOutput`](crate::operation::describe_db_snapshot_attributes::DescribeDbSnapshotAttributesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDbSnapshotAttributesOutputBuilder {
     pub(crate) db_snapshot_attributes_result: ::std::option::Option<crate::types::DbSnapshotAttributesResult>,
     _request_id: Option<String>,

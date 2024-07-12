@@ -27,8 +27,8 @@ impl WebhookAuthConfiguration {
 }
 
 /// A builder for [`WebhookAuthConfiguration`](crate::types::WebhookAuthConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WebhookAuthConfigurationBuilder {
     pub(crate) allowed_ip_range: ::std::option::Option<::std::string::String>,
     pub(crate) secret_token: ::std::option::Option<::std::string::String>,

@@ -77,8 +77,8 @@ impl DetectMitigationActionsTaskSummary {
 }
 
 /// A builder for [`DetectMitigationActionsTaskSummary`](crate::types::DetectMitigationActionsTaskSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetectMitigationActionsTaskSummaryBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
     pub(crate) task_status: ::std::option::Option<crate::types::DetectMitigationActionsTaskStatus>,

@@ -18,8 +18,8 @@ impl EnableMetricsCollectionOutput {
 }
 
 /// A builder for [`EnableMetricsCollectionOutput`](crate::operation::enable_metrics_collection::EnableMetricsCollectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnableMetricsCollectionOutputBuilder {
     _request_id: Option<String>,
 }

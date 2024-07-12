@@ -49,8 +49,8 @@ impl ExecuteCommandConfiguration {
 }
 
 /// A builder for [`ExecuteCommandConfiguration`](crate::types::ExecuteCommandConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExecuteCommandConfigurationBuilder {
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) logging: ::std::option::Option<crate::types::ExecuteCommandLogging>,

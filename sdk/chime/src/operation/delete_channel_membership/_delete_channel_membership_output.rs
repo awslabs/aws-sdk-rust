@@ -18,8 +18,8 @@ impl DeleteChannelMembershipOutput {
 }
 
 /// A builder for [`DeleteChannelMembershipOutput`](crate::operation::delete_channel_membership::DeleteChannelMembershipOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteChannelMembershipOutputBuilder {
     _request_id: Option<String>,
 }

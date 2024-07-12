@@ -138,8 +138,8 @@ impl Studio {
 }
 
 /// A builder for [`Studio`](crate::types::Studio).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct StudioBuilder {
     pub(crate) admin_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

@@ -46,8 +46,8 @@ impl GetPercentilesInput {
 }
 
 /// A builder for [`GetPercentilesInput`](crate::operation::get_percentiles::GetPercentilesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPercentilesInputBuilder {
     pub(crate) index_name: ::std::option::Option<::std::string::String>,
     pub(crate) query_string: ::std::option::Option<::std::string::String>,

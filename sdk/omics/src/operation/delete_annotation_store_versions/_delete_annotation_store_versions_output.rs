@@ -28,8 +28,8 @@ impl DeleteAnnotationStoreVersionsOutput {
 }
 
 /// A builder for [`DeleteAnnotationStoreVersionsOutput`](crate::operation::delete_annotation_store_versions::DeleteAnnotationStoreVersionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAnnotationStoreVersionsOutputBuilder {
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::VersionDeleteError>>,
     _request_id: Option<String>,

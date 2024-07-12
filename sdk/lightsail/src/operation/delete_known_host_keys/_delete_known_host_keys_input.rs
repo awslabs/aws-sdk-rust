@@ -20,8 +20,8 @@ impl DeleteKnownHostKeysInput {
 }
 
 /// A builder for [`DeleteKnownHostKeysInput`](crate::operation::delete_known_host_keys::DeleteKnownHostKeysInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteKnownHostKeysInputBuilder {
     pub(crate) instance_name: ::std::option::Option<::std::string::String>,
 }

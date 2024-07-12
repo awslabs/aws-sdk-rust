@@ -61,8 +61,8 @@ impl HttpRouteMatch {
 }
 
 /// A builder for [`HttpRouteMatch`](crate::types::HttpRouteMatch).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HttpRouteMatchBuilder {
     pub(crate) prefix: ::std::option::Option<::std::string::String>,
     pub(crate) path: ::std::option::Option<crate::types::HttpPathMatch>,

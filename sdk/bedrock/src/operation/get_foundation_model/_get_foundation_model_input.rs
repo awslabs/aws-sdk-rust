@@ -20,8 +20,8 @@ impl GetFoundationModelInput {
 }
 
 /// A builder for [`GetFoundationModelInput`](crate::operation::get_foundation_model::GetFoundationModelInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetFoundationModelInputBuilder {
     pub(crate) model_identifier: ::std::option::Option<::std::string::String>,
 }

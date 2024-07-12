@@ -50,8 +50,8 @@ impl DecryptDataInput {
 }
 
 /// A builder for [`DecryptDataInput`](crate::operation::decrypt_data::DecryptDataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DecryptDataInputBuilder {
     pub(crate) key_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) cipher_text: ::std::option::Option<::std::string::String>,

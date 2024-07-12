@@ -33,8 +33,8 @@ impl DeletionWarning {
 }
 
 /// A builder for [`DeletionWarning`](crate::types::DeletionWarning).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletionWarningBuilder {
     pub(crate) configuration_id: ::std::option::Option<::std::string::String>,
     pub(crate) warning_code: ::std::option::Option<i32>,

@@ -21,8 +21,8 @@ impl CreateCloudFrontOriginAccessIdentityInput {
 }
 
 /// A builder for [`CreateCloudFrontOriginAccessIdentityInput`](crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentityInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCloudFrontOriginAccessIdentityInputBuilder {
     pub(crate) cloud_front_origin_access_identity_config: ::std::option::Option<crate::types::CloudFrontOriginAccessIdentityConfig>,
 }

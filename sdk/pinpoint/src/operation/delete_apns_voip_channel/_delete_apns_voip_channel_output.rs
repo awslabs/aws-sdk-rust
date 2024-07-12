@@ -26,8 +26,8 @@ impl DeleteApnsVoipChannelOutput {
 }
 
 /// A builder for [`DeleteApnsVoipChannelOutput`](crate::operation::delete_apns_voip_channel::DeleteApnsVoipChannelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteApnsVoipChannelOutputBuilder {
     pub(crate) apns_voip_channel_response: ::std::option::Option<crate::types::ApnsVoipChannelResponse>,
     _request_id: Option<String>,

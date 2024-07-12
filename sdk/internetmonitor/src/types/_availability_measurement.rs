@@ -41,8 +41,8 @@ impl AvailabilityMeasurement {
 }
 
 /// A builder for [`AvailabilityMeasurement`](crate::types::AvailabilityMeasurement).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AvailabilityMeasurementBuilder {
     pub(crate) experience_score: ::std::option::Option<f64>,
     pub(crate) percent_of_total_traffic_impacted: ::std::option::Option<f64>,

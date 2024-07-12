@@ -30,8 +30,8 @@ impl PreTokenGenerationVersionConfigType {
 }
 
 /// A builder for [`PreTokenGenerationVersionConfigType`](crate::types::PreTokenGenerationVersionConfigType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PreTokenGenerationVersionConfigTypeBuilder {
     pub(crate) lambda_version: ::std::option::Option<crate::types::PreTokenGenerationLambdaVersionType>,
     pub(crate) lambda_arn: ::std::option::Option<::std::string::String>,

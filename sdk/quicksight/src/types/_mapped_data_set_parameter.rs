@@ -29,8 +29,8 @@ impl MappedDataSetParameter {
 }
 
 /// A builder for [`MappedDataSetParameter`](crate::types::MappedDataSetParameter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MappedDataSetParameterBuilder {
     pub(crate) data_set_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) data_set_parameter_name: ::std::option::Option<::std::string::String>,

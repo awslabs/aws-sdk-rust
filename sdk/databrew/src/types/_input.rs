@@ -39,8 +39,8 @@ impl Input {
 }
 
 /// A builder for [`Input`](crate::types::Input).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InputBuilder {
     pub(crate) s3_input_definition: ::std::option::Option<crate::types::S3Location>,
     pub(crate) data_catalog_input_definition: ::std::option::Option<crate::types::DataCatalogInputDefinition>,

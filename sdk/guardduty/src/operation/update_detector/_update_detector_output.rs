@@ -18,8 +18,8 @@ impl UpdateDetectorOutput {
 }
 
 /// A builder for [`UpdateDetectorOutput`](crate::operation::update_detector::UpdateDetectorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDetectorOutputBuilder {
     _request_id: Option<String>,
 }

@@ -181,8 +181,8 @@ impl ApiCache {
 }
 
 /// A builder for [`ApiCache`](crate::types::ApiCache).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ApiCacheBuilder {
     pub(crate) ttl: ::std::option::Option<i64>,
     pub(crate) api_caching_behavior: ::std::option::Option<crate::types::ApiCachingBehavior>,

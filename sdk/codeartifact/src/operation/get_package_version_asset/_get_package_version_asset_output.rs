@@ -44,8 +44,8 @@ impl GetPackageVersionAssetOutput {
 }
 
 /// A builder for [`GetPackageVersionAssetOutput`](crate::operation::get_package_version_asset::GetPackageVersionAssetOutput).
-#[non_exhaustive]
 #[derive(::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPackageVersionAssetOutputBuilder {
     pub(crate) asset: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>,
     pub(crate) asset_name: ::std::option::Option<::std::string::String>,

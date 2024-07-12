@@ -18,8 +18,8 @@ impl DeleteBucketLifecycleConfigurationOutput {
 }
 
 /// A builder for [`DeleteBucketLifecycleConfigurationOutput`](crate::operation::delete_bucket_lifecycle_configuration::DeleteBucketLifecycleConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteBucketLifecycleConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

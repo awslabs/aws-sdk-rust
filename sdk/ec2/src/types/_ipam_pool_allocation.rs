@@ -57,8 +57,8 @@ impl IpamPoolAllocation {
 }
 
 /// A builder for [`IpamPoolAllocation`](crate::types::IpamPoolAllocation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IpamPoolAllocationBuilder {
     pub(crate) cidr: ::std::option::Option<::std::string::String>,
     pub(crate) ipam_pool_allocation_id: ::std::option::Option<::std::string::String>,

@@ -94,8 +94,8 @@ impl DeleteStackInstancesInput {
 }
 
 /// A builder for [`DeleteStackInstancesInput`](crate::operation::delete_stack_instances::DeleteStackInstancesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteStackInstancesInputBuilder {
     pub(crate) stack_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

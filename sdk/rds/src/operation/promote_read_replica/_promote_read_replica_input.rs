@@ -85,8 +85,8 @@ impl PromoteReadReplicaInput {
 }
 
 /// A builder for [`PromoteReadReplicaInput`](crate::operation::promote_read_replica::PromoteReadReplicaInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PromoteReadReplicaInputBuilder {
     pub(crate) db_instance_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) backup_retention_period: ::std::option::Option<i32>,

@@ -148,8 +148,8 @@ impl MicrosoftSqlServerSettings {
 }
 
 /// A builder for [`MicrosoftSqlServerSettings`](crate::types::MicrosoftSqlServerSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct MicrosoftSqlServerSettingsBuilder {
     pub(crate) port: ::std::option::Option<i32>,
     pub(crate) bcp_packet_size: ::std::option::Option<i32>,

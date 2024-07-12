@@ -125,8 +125,8 @@ impl SimulationJobRequest {
 }
 
 /// A builder for [`SimulationJobRequest`](crate::types::SimulationJobRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SimulationJobRequestBuilder {
     pub(crate) output_location: ::std::option::Option<crate::types::OutputLocation>,
     pub(crate) logging_config: ::std::option::Option<crate::types::LoggingConfig>,

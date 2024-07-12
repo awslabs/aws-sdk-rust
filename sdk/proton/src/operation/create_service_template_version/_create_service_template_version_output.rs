@@ -26,8 +26,8 @@ impl CreateServiceTemplateVersionOutput {
 }
 
 /// A builder for [`CreateServiceTemplateVersionOutput`](crate::operation::create_service_template_version::CreateServiceTemplateVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateServiceTemplateVersionOutputBuilder {
     pub(crate) service_template_version: ::std::option::Option<crate::types::ServiceTemplateVersion>,
     _request_id: Option<String>,

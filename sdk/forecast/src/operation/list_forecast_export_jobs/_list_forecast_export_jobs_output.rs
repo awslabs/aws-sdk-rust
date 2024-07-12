@@ -34,8 +34,8 @@ impl ListForecastExportJobsOutput {
 }
 
 /// A builder for [`ListForecastExportJobsOutput`](crate::operation::list_forecast_export_jobs::ListForecastExportJobsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListForecastExportJobsOutputBuilder {
     pub(crate) forecast_export_jobs: ::std::option::Option<::std::vec::Vec<crate::types::ForecastExportJobSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

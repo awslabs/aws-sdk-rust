@@ -27,8 +27,8 @@ impl CurrentMetric {
 }
 
 /// A builder for [`CurrentMetric`](crate::types::CurrentMetric).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CurrentMetricBuilder {
     pub(crate) name: ::std::option::Option<crate::types::CurrentMetricName>,
     pub(crate) unit: ::std::option::Option<crate::types::Unit>,

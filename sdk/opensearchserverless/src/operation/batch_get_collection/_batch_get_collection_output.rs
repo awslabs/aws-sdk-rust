@@ -36,8 +36,8 @@ impl BatchGetCollectionOutput {
 }
 
 /// A builder for [`BatchGetCollectionOutput`](crate::operation::batch_get_collection::BatchGetCollectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetCollectionOutputBuilder {
     pub(crate) collection_details: ::std::option::Option<::std::vec::Vec<crate::types::CollectionDetail>>,
     pub(crate) collection_error_details: ::std::option::Option<::std::vec::Vec<crate::types::CollectionErrorDetail>>,

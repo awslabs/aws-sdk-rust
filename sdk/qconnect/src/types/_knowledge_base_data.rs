@@ -88,8 +88,8 @@ impl KnowledgeBaseData {
 }
 
 /// A builder for [`KnowledgeBaseData`](crate::types::KnowledgeBaseData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KnowledgeBaseDataBuilder {
     pub(crate) knowledge_base_id: ::std::option::Option<::std::string::String>,
     pub(crate) knowledge_base_arn: ::std::option::Option<::std::string::String>,

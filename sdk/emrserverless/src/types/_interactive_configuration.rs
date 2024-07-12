@@ -27,8 +27,8 @@ impl InteractiveConfiguration {
 }
 
 /// A builder for [`InteractiveConfiguration`](crate::types::InteractiveConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InteractiveConfigurationBuilder {
     pub(crate) studio_enabled: ::std::option::Option<bool>,
     pub(crate) livy_endpoint_enabled: ::std::option::Option<bool>,

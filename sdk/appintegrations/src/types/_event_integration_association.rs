@@ -51,8 +51,8 @@ impl EventIntegrationAssociation {
 }
 
 /// A builder for [`EventIntegrationAssociation`](crate::types::EventIntegrationAssociation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EventIntegrationAssociationBuilder {
     pub(crate) event_integration_association_arn: ::std::option::Option<::std::string::String>,
     pub(crate) event_integration_association_id: ::std::option::Option<::std::string::String>,

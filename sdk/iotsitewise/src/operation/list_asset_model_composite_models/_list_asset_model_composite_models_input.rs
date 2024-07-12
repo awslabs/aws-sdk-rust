@@ -34,8 +34,8 @@ impl ListAssetModelCompositeModelsInput {
 }
 
 /// A builder for [`ListAssetModelCompositeModelsInput`](crate::operation::list_asset_model_composite_models::ListAssetModelCompositeModelsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAssetModelCompositeModelsInputBuilder {
     pub(crate) asset_model_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

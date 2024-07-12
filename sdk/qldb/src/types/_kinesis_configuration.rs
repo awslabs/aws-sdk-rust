@@ -34,8 +34,8 @@ impl KinesisConfiguration {
 }
 
 /// A builder for [`KinesisConfiguration`](crate::types::KinesisConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KinesisConfigurationBuilder {
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
     pub(crate) aggregation_enabled: ::std::option::Option<bool>,

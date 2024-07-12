@@ -20,8 +20,8 @@ impl DeleteCallAnalyticsJobInput {
 }
 
 /// A builder for [`DeleteCallAnalyticsJobInput`](crate::operation::delete_call_analytics_job::DeleteCallAnalyticsJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCallAnalyticsJobInputBuilder {
     pub(crate) call_analytics_job_name: ::std::option::Option<::std::string::String>,
 }

@@ -78,8 +78,8 @@ impl RevokeSecurityGroupEgressInput {
 }
 
 /// A builder for [`RevokeSecurityGroupEgressInput`](crate::operation::revoke_security_group_egress::RevokeSecurityGroupEgressInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RevokeSecurityGroupEgressInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) group_id: ::std::option::Option<::std::string::String>,

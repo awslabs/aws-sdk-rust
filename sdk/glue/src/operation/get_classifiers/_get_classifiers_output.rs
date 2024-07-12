@@ -34,8 +34,8 @@ impl GetClassifiersOutput {
 }
 
 /// A builder for [`GetClassifiersOutput`](crate::operation::get_classifiers::GetClassifiersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetClassifiersOutputBuilder {
     pub(crate) classifiers: ::std::option::Option<::std::vec::Vec<crate::types::Classifier>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

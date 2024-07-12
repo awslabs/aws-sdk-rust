@@ -45,8 +45,8 @@ impl ComputeLimits {
 }
 
 /// A builder for [`ComputeLimits`](crate::types::ComputeLimits).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ComputeLimitsBuilder {
     pub(crate) unit_type: ::std::option::Option<crate::types::ComputeLimitsUnitType>,
     pub(crate) minimum_capacity_units: ::std::option::Option<i32>,

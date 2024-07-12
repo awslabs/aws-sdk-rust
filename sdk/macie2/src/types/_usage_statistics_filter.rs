@@ -57,8 +57,8 @@ impl UsageStatisticsFilter {
 }
 
 /// A builder for [`UsageStatisticsFilter`](crate::types::UsageStatisticsFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UsageStatisticsFilterBuilder {
     pub(crate) comparator: ::std::option::Option<crate::types::UsageStatisticsFilterComparator>,
     pub(crate) key: ::std::option::Option<crate::types::UsageStatisticsFilterKey>,

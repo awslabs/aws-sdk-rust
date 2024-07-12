@@ -21,8 +21,8 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails {
 }
 
 /// A builder for [`AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails`](crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetailsBuilder {
     pub(crate) ipv6_prefix: ::std::option::Option<::std::string::String>,
 }

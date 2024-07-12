@@ -30,8 +30,8 @@ impl UpdateLabelGroupInput {
 }
 
 /// A builder for [`UpdateLabelGroupInput`](crate::operation::update_label_group::UpdateLabelGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateLabelGroupInputBuilder {
     pub(crate) label_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) fault_codes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

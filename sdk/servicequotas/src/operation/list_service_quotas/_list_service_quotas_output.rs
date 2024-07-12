@@ -34,8 +34,8 @@ impl ListServiceQuotasOutput {
 }
 
 /// A builder for [`ListServiceQuotasOutput`](crate::operation::list_service_quotas::ListServiceQuotasOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListServiceQuotasOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) quotas: ::std::option::Option<::std::vec::Vec<crate::types::ServiceQuota>>,

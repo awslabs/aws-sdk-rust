@@ -50,8 +50,8 @@ impl ListStepConsumersInput {
 }
 
 /// A builder for [`ListStepConsumersInput`](crate::operation::list_step_consumers::ListStepConsumersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListStepConsumersInputBuilder {
     pub(crate) farm_id: ::std::option::Option<::std::string::String>,
     pub(crate) queue_id: ::std::option::Option<::std::string::String>,

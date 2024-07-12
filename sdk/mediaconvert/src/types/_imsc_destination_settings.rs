@@ -27,8 +27,8 @@ impl ImscDestinationSettings {
 }
 
 /// A builder for [`ImscDestinationSettings`](crate::types::ImscDestinationSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImscDestinationSettingsBuilder {
     pub(crate) accessibility: ::std::option::Option<crate::types::ImscAccessibilitySubs>,
     pub(crate) style_passthrough: ::std::option::Option<crate::types::ImscStylePassthrough>,

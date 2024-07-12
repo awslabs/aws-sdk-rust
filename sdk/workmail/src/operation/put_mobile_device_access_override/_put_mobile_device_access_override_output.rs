@@ -18,8 +18,8 @@ impl PutMobileDeviceAccessOverrideOutput {
 }
 
 /// A builder for [`PutMobileDeviceAccessOverrideOutput`](crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutMobileDeviceAccessOverrideOutputBuilder {
     _request_id: Option<String>,
 }

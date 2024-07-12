@@ -18,8 +18,8 @@ impl UpdateKeyDescriptionOutput {
 }
 
 /// A builder for [`UpdateKeyDescriptionOutput`](crate::operation::update_key_description::UpdateKeyDescriptionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateKeyDescriptionOutputBuilder {
     _request_id: Option<String>,
 }

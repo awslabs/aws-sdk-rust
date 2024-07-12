@@ -26,8 +26,8 @@ impl GetStageSessionOutput {
 }
 
 /// A builder for [`GetStageSessionOutput`](crate::operation::get_stage_session::GetStageSessionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetStageSessionOutputBuilder {
     pub(crate) stage_session: ::std::option::Option<crate::types::StageSession>,
     _request_id: Option<String>,

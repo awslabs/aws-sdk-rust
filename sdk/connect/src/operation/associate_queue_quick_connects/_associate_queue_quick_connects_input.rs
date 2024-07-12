@@ -34,8 +34,8 @@ impl AssociateQueueQuickConnectsInput {
 }
 
 /// A builder for [`AssociateQueueQuickConnectsInput`](crate::operation::associate_queue_quick_connects::AssociateQueueQuickConnectsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateQueueQuickConnectsInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) queue_id: ::std::option::Option<::std::string::String>,

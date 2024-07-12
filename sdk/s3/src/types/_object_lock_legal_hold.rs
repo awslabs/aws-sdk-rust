@@ -21,8 +21,8 @@ impl ObjectLockLegalHold {
 }
 
 /// A builder for [`ObjectLockLegalHold`](crate::types::ObjectLockLegalHold).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ObjectLockLegalHoldBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ObjectLockLegalHoldStatus>,
 }

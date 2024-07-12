@@ -167,8 +167,8 @@ impl GetDataSourceOutput {
 }
 
 /// A builder for [`GetDataSourceOutput`](crate::operation::get_data_source::GetDataSourceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDataSourceOutputBuilder {
     pub(crate) data_source_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_location_s3: ::std::option::Option<::std::string::String>,

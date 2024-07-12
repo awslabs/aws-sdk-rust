@@ -39,8 +39,8 @@ impl AntipatternReportResult {
 }
 
 /// A builder for [`AntipatternReportResult`](crate::types::AntipatternReportResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AntipatternReportResultBuilder {
     pub(crate) analyzer_name: ::std::option::Option<crate::types::AnalyzerNameUnion>,
     pub(crate) anti_pattern_report_s3_object: ::std::option::Option<crate::types::S3Object>,

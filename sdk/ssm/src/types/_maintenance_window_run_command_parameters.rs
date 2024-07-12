@@ -109,8 +109,8 @@ impl MaintenanceWindowRunCommandParameters {
 }
 
 /// A builder for [`MaintenanceWindowRunCommandParameters`](crate::types::MaintenanceWindowRunCommandParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct MaintenanceWindowRunCommandParametersBuilder {
     pub(crate) comment: ::std::option::Option<::std::string::String>,
     pub(crate) cloud_watch_output_config: ::std::option::Option<crate::types::CloudWatchOutputConfig>,

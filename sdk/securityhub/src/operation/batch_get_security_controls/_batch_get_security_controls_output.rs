@@ -36,8 +36,8 @@ impl BatchGetSecurityControlsOutput {
 }
 
 /// A builder for [`BatchGetSecurityControlsOutput`](crate::operation::batch_get_security_controls::BatchGetSecurityControlsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetSecurityControlsOutputBuilder {
     pub(crate) security_controls: ::std::option::Option<::std::vec::Vec<crate::types::SecurityControl>>,
     pub(crate) unprocessed_ids: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedSecurityControl>>,

@@ -20,8 +20,8 @@ impl DeleteEventDataStoreInput {
 }
 
 /// A builder for [`DeleteEventDataStoreInput`](crate::operation::delete_event_data_store::DeleteEventDataStoreInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteEventDataStoreInputBuilder {
     pub(crate) event_data_store: ::std::option::Option<::std::string::String>,
 }

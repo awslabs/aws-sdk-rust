@@ -35,8 +35,8 @@ impl InputSchemaUpdate {
 }
 
 /// A builder for [`InputSchemaUpdate`](crate::types::InputSchemaUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InputSchemaUpdateBuilder {
     pub(crate) record_format_update: ::std::option::Option<crate::types::RecordFormat>,
     pub(crate) record_encoding_update: ::std::option::Option<::std::string::String>,

@@ -28,8 +28,8 @@ impl GetRevocationStatusOutput {
 }
 
 /// A builder for [`GetRevocationStatusOutput`](crate::operation::get_revocation_status::GetRevocationStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRevocationStatusOutputBuilder {
     pub(crate) revoked_entities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,

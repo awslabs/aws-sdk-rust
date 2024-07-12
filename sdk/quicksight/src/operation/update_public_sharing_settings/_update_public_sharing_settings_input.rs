@@ -26,8 +26,8 @@ impl UpdatePublicSharingSettingsInput {
 }
 
 /// A builder for [`UpdatePublicSharingSettingsInput`](crate::operation::update_public_sharing_settings::UpdatePublicSharingSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePublicSharingSettingsInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) public_sharing_enabled: ::std::option::Option<bool>,

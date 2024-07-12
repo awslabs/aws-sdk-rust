@@ -84,8 +84,8 @@ impl ListPackageVersionAssetsOutput {
 }
 
 /// A builder for [`ListPackageVersionAssetsOutput`](crate::operation::list_package_version_assets::ListPackageVersionAssetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPackageVersionAssetsOutputBuilder {
     pub(crate) format: ::std::option::Option<crate::types::PackageFormat>,
     pub(crate) namespace: ::std::option::Option<::std::string::String>,

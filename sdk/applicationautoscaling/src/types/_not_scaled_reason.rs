@@ -66,8 +66,8 @@ impl NotScaledReason {
 }
 
 /// A builder for [`NotScaledReason`](crate::types::NotScaledReason).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NotScaledReasonBuilder {
     pub(crate) code: ::std::option::Option<::std::string::String>,
     pub(crate) max_capacity: ::std::option::Option<i32>,

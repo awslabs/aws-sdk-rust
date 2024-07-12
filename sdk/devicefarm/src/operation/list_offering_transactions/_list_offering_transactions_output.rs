@@ -35,8 +35,8 @@ impl ListOfferingTransactionsOutput {
 }
 
 /// A builder for [`ListOfferingTransactionsOutput`](crate::operation::list_offering_transactions::ListOfferingTransactionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListOfferingTransactionsOutputBuilder {
     pub(crate) offering_transactions: ::std::option::Option<::std::vec::Vec<crate::types::OfferingTransaction>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

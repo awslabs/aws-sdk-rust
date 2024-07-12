@@ -105,8 +105,8 @@ impl KeysAndAttributes {
 }
 
 /// A builder for [`KeysAndAttributes`](crate::types::KeysAndAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KeysAndAttributesBuilder {
     pub(crate) keys: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>>,
     pub(crate) attributes_to_get: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

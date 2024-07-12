@@ -39,8 +39,8 @@ impl EbsInfo {
 }
 
 /// A builder for [`EbsInfo`](crate::types::EbsInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EbsInfoBuilder {
     pub(crate) ebs_optimized_support: ::std::option::Option<crate::types::EbsOptimizedSupport>,
     pub(crate) encryption_support: ::std::option::Option<crate::types::EbsEncryptionSupport>,

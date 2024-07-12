@@ -56,8 +56,8 @@ impl ListResourceCatalogsInput {
 }
 
 /// A builder for [`ListResourceCatalogsInput`](crate::operation::list_resource_catalogs::ListResourceCatalogsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListResourceCatalogsInputBuilder {
     pub(crate) name_contains: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,

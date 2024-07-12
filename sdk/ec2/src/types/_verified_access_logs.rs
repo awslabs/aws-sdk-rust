@@ -45,8 +45,8 @@ impl VerifiedAccessLogs {
 }
 
 /// A builder for [`VerifiedAccessLogs`](crate::types::VerifiedAccessLogs).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VerifiedAccessLogsBuilder {
     pub(crate) s3: ::std::option::Option<crate::types::VerifiedAccessLogS3Destination>,
     pub(crate) cloud_watch_logs: ::std::option::Option<crate::types::VerifiedAccessLogCloudWatchLogsDestination>,

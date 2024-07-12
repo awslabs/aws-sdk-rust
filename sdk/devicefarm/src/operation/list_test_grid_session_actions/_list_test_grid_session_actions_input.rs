@@ -32,8 +32,8 @@ impl ListTestGridSessionActionsInput {
 }
 
 /// A builder for [`ListTestGridSessionActionsInput`](crate::operation::list_test_grid_session_actions::ListTestGridSessionActionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTestGridSessionActionsInputBuilder {
     pub(crate) session_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_result: ::std::option::Option<i32>,

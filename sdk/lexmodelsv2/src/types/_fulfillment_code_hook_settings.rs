@@ -39,8 +39,8 @@ impl FulfillmentCodeHookSettings {
 }
 
 /// A builder for [`FulfillmentCodeHookSettings`](crate::types::FulfillmentCodeHookSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FulfillmentCodeHookSettingsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) post_fulfillment_status_specification: ::std::option::Option<crate::types::PostFulfillmentStatusSpecification>,

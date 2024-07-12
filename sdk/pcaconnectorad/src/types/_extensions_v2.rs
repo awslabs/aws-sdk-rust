@@ -27,8 +27,8 @@ impl ExtensionsV2 {
 }
 
 /// A builder for [`ExtensionsV2`](crate::types::ExtensionsV2).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExtensionsV2Builder {
     pub(crate) key_usage: ::std::option::Option<crate::types::KeyUsage>,
     pub(crate) application_policies: ::std::option::Option<crate::types::ApplicationPolicies>,

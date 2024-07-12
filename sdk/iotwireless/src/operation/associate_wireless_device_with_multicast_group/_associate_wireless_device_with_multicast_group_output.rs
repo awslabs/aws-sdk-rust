@@ -19,8 +19,8 @@ impl AssociateWirelessDeviceWithMulticastGroupOutput {
 }
 
 /// A builder for [`AssociateWirelessDeviceWithMulticastGroupOutput`](crate::operation::associate_wireless_device_with_multicast_group::AssociateWirelessDeviceWithMulticastGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateWirelessDeviceWithMulticastGroupOutputBuilder {
     _request_id: Option<String>,
 }

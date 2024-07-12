@@ -20,8 +20,8 @@ impl DeleteStoredQueryInput {
 }
 
 /// A builder for [`DeleteStoredQueryInput`](crate::operation::delete_stored_query::DeleteStoredQueryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteStoredQueryInputBuilder {
     pub(crate) query_name: ::std::option::Option<::std::string::String>,
 }

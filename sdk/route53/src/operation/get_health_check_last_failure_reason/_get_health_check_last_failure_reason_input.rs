@@ -25,8 +25,8 @@ impl GetHealthCheckLastFailureReasonInput {
 }
 
 /// A builder for [`GetHealthCheckLastFailureReasonInput`](crate::operation::get_health_check_last_failure_reason::GetHealthCheckLastFailureReasonInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetHealthCheckLastFailureReasonInputBuilder {
     pub(crate) health_check_id: ::std::option::Option<::std::string::String>,
 }

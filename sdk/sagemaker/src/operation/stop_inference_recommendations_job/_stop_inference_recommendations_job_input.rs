@@ -20,8 +20,8 @@ impl StopInferenceRecommendationsJobInput {
 }
 
 /// A builder for [`StopInferenceRecommendationsJobInput`](crate::operation::stop_inference_recommendations_job::StopInferenceRecommendationsJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopInferenceRecommendationsJobInputBuilder {
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
 }

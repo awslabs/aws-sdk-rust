@@ -55,8 +55,8 @@ impl AddressConfiguration {
 }
 
 /// A builder for [`AddressConfiguration`](crate::types::AddressConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddressConfigurationBuilder {
     pub(crate) body_override: ::std::option::Option<::std::string::String>,
     pub(crate) channel_type: ::std::option::Option<crate::types::ChannelType>,

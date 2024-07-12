@@ -33,8 +33,8 @@ impl ListDataSetImportHistoryOutput {
 }
 
 /// A builder for [`ListDataSetImportHistoryOutput`](crate::operation::list_data_set_import_history::ListDataSetImportHistoryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDataSetImportHistoryOutputBuilder {
     pub(crate) data_set_import_tasks: ::std::option::Option<::std::vec::Vec<crate::types::DataSetImportTask>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -41,8 +41,8 @@ impl KeyAttributes {
 }
 
 /// A builder for [`KeyAttributes`](crate::types::KeyAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KeyAttributesBuilder {
     pub(crate) key_usage: ::std::option::Option<crate::types::KeyUsage>,
     pub(crate) key_class: ::std::option::Option<crate::types::KeyClass>,

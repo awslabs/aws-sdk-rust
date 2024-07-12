@@ -44,8 +44,8 @@ impl DeleteBackupPlanOutput {
 }
 
 /// A builder for [`DeleteBackupPlanOutput`](crate::operation::delete_backup_plan::DeleteBackupPlanOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteBackupPlanOutputBuilder {
     pub(crate) backup_plan_id: ::std::option::Option<::std::string::String>,
     pub(crate) backup_plan_arn: ::std::option::Option<::std::string::String>,

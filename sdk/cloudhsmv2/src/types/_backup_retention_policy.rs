@@ -27,8 +27,8 @@ impl BackupRetentionPolicy {
 }
 
 /// A builder for [`BackupRetentionPolicy`](crate::types::BackupRetentionPolicy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BackupRetentionPolicyBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::BackupRetentionType>,
     pub(crate) value: ::std::option::Option<::std::string::String>,

@@ -20,8 +20,8 @@ impl ExecuteGremlinExplainQueryInput {
 }
 
 /// A builder for [`ExecuteGremlinExplainQueryInput`](crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExecuteGremlinExplainQueryInputBuilder {
     pub(crate) gremlin_query: ::std::option::Option<::std::string::String>,
 }

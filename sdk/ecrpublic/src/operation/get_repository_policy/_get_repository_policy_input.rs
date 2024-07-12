@@ -26,8 +26,8 @@ impl GetRepositoryPolicyInput {
 }
 
 /// A builder for [`GetRepositoryPolicyInput`](crate::operation::get_repository_policy::GetRepositoryPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRepositoryPolicyInputBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,

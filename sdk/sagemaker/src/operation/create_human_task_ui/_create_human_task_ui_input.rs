@@ -34,8 +34,8 @@ impl CreateHumanTaskUiInput {
 }
 
 /// A builder for [`CreateHumanTaskUiInput`](crate::operation::create_human_task_ui::CreateHumanTaskUiInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateHumanTaskUiInputBuilder {
     pub(crate) human_task_ui_name: ::std::option::Option<::std::string::String>,
     pub(crate) ui_template: ::std::option::Option<crate::types::UiTemplate>,

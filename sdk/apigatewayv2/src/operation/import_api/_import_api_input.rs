@@ -33,8 +33,8 @@ impl ImportApiInput {
 }
 
 /// A builder for [`ImportApiInput`](crate::operation::import_api::ImportApiInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportApiInputBuilder {
     pub(crate) basepath: ::std::option::Option<::std::string::String>,
     pub(crate) body: ::std::option::Option<::std::string::String>,

@@ -80,8 +80,8 @@ impl GetLayerVersionOutput {
 }
 
 /// A builder for [`GetLayerVersionOutput`](crate::operation::get_layer_version::GetLayerVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLayerVersionOutputBuilder {
     pub(crate) content: ::std::option::Option<crate::types::LayerVersionContentOutput>,
     pub(crate) layer_arn: ::std::option::Option<::std::string::String>,

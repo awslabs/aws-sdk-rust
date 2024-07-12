@@ -33,8 +33,8 @@ impl ListQueueEnvironmentsOutput {
 }
 
 /// A builder for [`ListQueueEnvironmentsOutput`](crate::operation::list_queue_environments::ListQueueEnvironmentsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListQueueEnvironmentsOutputBuilder {
     pub(crate) environments: ::std::option::Option<::std::vec::Vec<crate::types::QueueEnvironmentSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

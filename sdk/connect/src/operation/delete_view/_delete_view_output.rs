@@ -18,8 +18,8 @@ impl DeleteViewOutput {
 }
 
 /// A builder for [`DeleteViewOutput`](crate::operation::delete_view::DeleteViewOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteViewOutputBuilder {
     _request_id: Option<String>,
 }

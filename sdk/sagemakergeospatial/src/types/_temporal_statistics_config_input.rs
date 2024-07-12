@@ -36,8 +36,8 @@ impl TemporalStatisticsConfigInput {
 }
 
 /// A builder for [`TemporalStatisticsConfigInput`](crate::types::TemporalStatisticsConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TemporalStatisticsConfigInputBuilder {
     pub(crate) group_by: ::std::option::Option<crate::types::GroupBy>,
     pub(crate) statistics: ::std::option::Option<::std::vec::Vec<crate::types::TemporalStatistics>>,

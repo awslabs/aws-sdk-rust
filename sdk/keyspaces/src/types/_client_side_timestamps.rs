@@ -22,8 +22,8 @@ impl ClientSideTimestamps {
 }
 
 /// A builder for [`ClientSideTimestamps`](crate::types::ClientSideTimestamps).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ClientSideTimestampsBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ClientSideTimestampsStatus>,
 }

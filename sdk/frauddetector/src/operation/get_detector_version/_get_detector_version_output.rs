@@ -96,8 +96,8 @@ impl GetDetectorVersionOutput {
 }
 
 /// A builder for [`GetDetectorVersionOutput`](crate::operation::get_detector_version::GetDetectorVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDetectorVersionOutputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
     pub(crate) detector_version_id: ::std::option::Option<::std::string::String>,

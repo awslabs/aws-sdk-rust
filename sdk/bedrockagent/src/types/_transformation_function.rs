@@ -21,8 +21,8 @@ impl TransformationFunction {
 }
 
 /// A builder for [`TransformationFunction`](crate::types::TransformationFunction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TransformationFunctionBuilder {
     pub(crate) transformation_lambda_configuration: ::std::option::Option<crate::types::TransformationLambdaConfiguration>,
 }

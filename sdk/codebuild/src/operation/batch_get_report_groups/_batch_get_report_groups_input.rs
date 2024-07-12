@@ -22,8 +22,8 @@ impl BatchGetReportGroupsInput {
 }
 
 /// A builder for [`BatchGetReportGroupsInput`](crate::operation::batch_get_report_groups::BatchGetReportGroupsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetReportGroupsInputBuilder {
     pub(crate) report_group_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

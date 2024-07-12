@@ -63,8 +63,8 @@ impl ShareResult {
 }
 
 /// A builder for [`ShareResult`](crate::types::ShareResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ShareResultBuilder {
     pub(crate) principal_id: ::std::option::Option<::std::string::String>,
     pub(crate) invitee_principal_id: ::std::option::Option<::std::string::String>,

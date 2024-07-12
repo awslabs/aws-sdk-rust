@@ -31,8 +31,8 @@ impl ArchiveFilters {
 }
 
 /// A builder for [`ArchiveFilters`](crate::types::ArchiveFilters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ArchiveFiltersBuilder {
     pub(crate) include: ::std::option::Option<::std::vec::Vec<crate::types::ArchiveFilterCondition>>,
     pub(crate) unless: ::std::option::Option<::std::vec::Vec<crate::types::ArchiveFilterCondition>>,

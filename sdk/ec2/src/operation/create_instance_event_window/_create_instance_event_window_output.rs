@@ -26,8 +26,8 @@ impl CreateInstanceEventWindowOutput {
 }
 
 /// A builder for [`CreateInstanceEventWindowOutput`](crate::operation::create_instance_event_window::CreateInstanceEventWindowOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateInstanceEventWindowOutputBuilder {
     pub(crate) instance_event_window: ::std::option::Option<crate::types::InstanceEventWindow>,
     _request_id: Option<String>,

@@ -26,8 +26,8 @@ impl GetTileOutput {
 }
 
 /// A builder for [`GetTileOutput`](crate::operation::get_tile::GetTileOutput).
-#[non_exhaustive]
 #[derive(::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTileOutputBuilder {
     pub(crate) binary_file: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>,
     _request_id: Option<String>,

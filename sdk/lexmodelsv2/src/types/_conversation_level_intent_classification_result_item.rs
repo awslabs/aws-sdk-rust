@@ -28,8 +28,8 @@ impl ConversationLevelIntentClassificationResultItem {
 }
 
 /// A builder for [`ConversationLevelIntentClassificationResultItem`](crate::types::ConversationLevelIntentClassificationResultItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConversationLevelIntentClassificationResultItemBuilder {
     pub(crate) intent_name: ::std::option::Option<::std::string::String>,
     pub(crate) match_result: ::std::option::Option<crate::types::TestResultMatchStatus>,

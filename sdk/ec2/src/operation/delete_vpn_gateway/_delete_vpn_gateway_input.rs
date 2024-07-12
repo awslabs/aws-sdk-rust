@@ -27,8 +27,8 @@ impl DeleteVpnGatewayInput {
 }
 
 /// A builder for [`DeleteVpnGatewayInput`](crate::operation::delete_vpn_gateway::DeleteVpnGatewayInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVpnGatewayInputBuilder {
     pub(crate) vpn_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,

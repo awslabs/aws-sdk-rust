@@ -26,8 +26,8 @@ impl CreateReplaceRootVolumeTaskOutput {
 }
 
 /// A builder for [`CreateReplaceRootVolumeTaskOutput`](crate::operation::create_replace_root_volume_task::CreateReplaceRootVolumeTaskOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateReplaceRootVolumeTaskOutputBuilder {
     pub(crate) replace_root_volume_task: ::std::option::Option<crate::types::ReplaceRootVolumeTask>,
     _request_id: Option<String>,

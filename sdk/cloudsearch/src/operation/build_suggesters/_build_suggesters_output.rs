@@ -29,8 +29,8 @@ impl BuildSuggestersOutput {
 }
 
 /// A builder for [`BuildSuggestersOutput`](crate::operation::build_suggesters::BuildSuggestersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BuildSuggestersOutputBuilder {
     pub(crate) field_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,

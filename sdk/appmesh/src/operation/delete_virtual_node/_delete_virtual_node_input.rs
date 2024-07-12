@@ -33,8 +33,8 @@ impl DeleteVirtualNodeInput {
 }
 
 /// A builder for [`DeleteVirtualNodeInput`](crate::operation::delete_virtual_node::DeleteVirtualNodeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVirtualNodeInputBuilder {
     pub(crate) virtual_node_name: ::std::option::Option<::std::string::String>,
     pub(crate) mesh_name: ::std::option::Option<::std::string::String>,

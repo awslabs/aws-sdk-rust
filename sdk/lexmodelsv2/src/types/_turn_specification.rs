@@ -27,8 +27,8 @@ impl TurnSpecification {
 }
 
 /// A builder for [`TurnSpecification`](crate::types::TurnSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TurnSpecificationBuilder {
     pub(crate) agent_turn: ::std::option::Option<crate::types::AgentTurnSpecification>,
     pub(crate) user_turn: ::std::option::Option<crate::types::UserTurnSpecification>,

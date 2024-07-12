@@ -32,8 +32,8 @@ impl UpdateGatewayInstanceOutput {
 }
 
 /// A builder for [`UpdateGatewayInstanceOutput`](crate::operation::update_gateway_instance::UpdateGatewayInstanceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateGatewayInstanceOutputBuilder {
     pub(crate) bridge_placement: ::std::option::Option<crate::types::BridgePlacement>,
     pub(crate) gateway_instance_arn: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl DescribeClustersOutput {
 }
 
 /// A builder for [`DescribeClustersOutput`](crate::operation::describe_clusters::DescribeClustersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeClustersOutputBuilder {
     pub(crate) clusters: ::std::option::Option<::std::vec::Vec<crate::types::Cluster>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -18,8 +18,8 @@ impl UpdateSshPublicKeyOutput {
 }
 
 /// A builder for [`UpdateSshPublicKeyOutput`](crate::operation::update_ssh_public_key::UpdateSshPublicKeyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSshPublicKeyOutputBuilder {
     _request_id: Option<String>,
 }

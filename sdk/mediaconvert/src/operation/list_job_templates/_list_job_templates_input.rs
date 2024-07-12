@@ -44,8 +44,8 @@ impl ListJobTemplatesInput {
 }
 
 /// A builder for [`ListJobTemplatesInput`](crate::operation::list_job_templates::ListJobTemplatesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListJobTemplatesInputBuilder {
     pub(crate) category: ::std::option::Option<::std::string::String>,
     pub(crate) list_by: ::std::option::Option<crate::types::JobTemplateListBy>,

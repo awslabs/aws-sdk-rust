@@ -39,8 +39,8 @@ impl IdentityPoolUsage {
 }
 
 /// A builder for [`IdentityPoolUsage`](crate::types::IdentityPoolUsage).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IdentityPoolUsageBuilder {
     pub(crate) identity_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) sync_sessions_count: ::std::option::Option<i64>,

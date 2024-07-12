@@ -34,8 +34,8 @@ impl ListPrincipalsForPortfolioOutput {
 }
 
 /// A builder for [`ListPrincipalsForPortfolioOutput`](crate::operation::list_principals_for_portfolio::ListPrincipalsForPortfolioOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPrincipalsForPortfolioOutputBuilder {
     pub(crate) principals: ::std::option::Option<::std::vec::Vec<crate::types::Principal>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,

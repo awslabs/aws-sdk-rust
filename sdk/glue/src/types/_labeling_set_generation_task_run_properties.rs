@@ -21,8 +21,8 @@ impl LabelingSetGenerationTaskRunProperties {
 }
 
 /// A builder for [`LabelingSetGenerationTaskRunProperties`](crate::types::LabelingSetGenerationTaskRunProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LabelingSetGenerationTaskRunPropertiesBuilder {
     pub(crate) output_s3_path: ::std::option::Option<::std::string::String>,
 }

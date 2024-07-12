@@ -42,8 +42,8 @@ impl ElasticGpuAssociation {
 }
 
 /// A builder for [`ElasticGpuAssociation`](crate::types::ElasticGpuAssociation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ElasticGpuAssociationBuilder {
     pub(crate) elastic_gpu_id: ::std::option::Option<::std::string::String>,
     pub(crate) elastic_gpu_association_id: ::std::option::Option<::std::string::String>,

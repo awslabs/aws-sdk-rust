@@ -34,8 +34,8 @@ impl ListKxChangesetsOutput {
 }
 
 /// A builder for [`ListKxChangesetsOutput`](crate::operation::list_kx_changesets::ListKxChangesetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListKxChangesetsOutputBuilder {
     pub(crate) kx_changesets: ::std::option::Option<::std::vec::Vec<crate::types::KxChangesetListEntry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

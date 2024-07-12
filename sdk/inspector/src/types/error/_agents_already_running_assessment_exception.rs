@@ -64,8 +64,8 @@ impl AgentsAlreadyRunningAssessmentException {
 }
 
 /// A builder for [`AgentsAlreadyRunningAssessmentException`](crate::types::error::AgentsAlreadyRunningAssessmentException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AgentsAlreadyRunningAssessmentExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) agents: ::std::option::Option<::std::vec::Vec<crate::types::AgentAlreadyRunningAssessment>>,

@@ -40,8 +40,8 @@ impl Template {
 }
 
 /// A builder for [`Template`](crate::types::Template).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TemplateBuilder {
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
     pub(crate) subject_part: ::std::option::Option<::std::string::String>,

@@ -47,8 +47,8 @@ impl Parameters {
 }
 
 /// A builder for [`Parameters`](crate::types::Parameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ParametersBuilder {
     pub(crate) string_parameters: ::std::option::Option<::std::vec::Vec<crate::types::StringParameter>>,
     pub(crate) integer_parameters: ::std::option::Option<::std::vec::Vec<crate::types::IntegerParameter>>,

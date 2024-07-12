@@ -29,8 +29,8 @@ impl ResourceCostCalculation {
 }
 
 /// A builder for [`ResourceCostCalculation`](crate::types::ResourceCostCalculation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResourceCostCalculationBuilder {
     pub(crate) usages: ::std::option::Option<::std::vec::Vec<crate::types::Usage>>,
     pub(crate) pricing: ::std::option::Option<crate::types::ResourcePricing>,

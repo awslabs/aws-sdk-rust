@@ -44,8 +44,8 @@ impl CreatePrefetchScheduleInput {
 }
 
 /// A builder for [`CreatePrefetchScheduleInput`](crate::operation::create_prefetch_schedule::CreatePrefetchScheduleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePrefetchScheduleInputBuilder {
     pub(crate) consumption: ::std::option::Option<crate::types::PrefetchConsumption>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

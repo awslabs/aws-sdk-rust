@@ -27,8 +27,8 @@ impl AllowedCapabilities {
 }
 
 /// A builder for [`AllowedCapabilities`](crate::types::AllowedCapabilities).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AllowedCapabilitiesBuilder {
     pub(crate) customer: ::std::option::Option<crate::types::ParticipantCapabilities>,
     pub(crate) agent: ::std::option::Option<crate::types::ParticipantCapabilities>,

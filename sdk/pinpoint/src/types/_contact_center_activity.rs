@@ -20,8 +20,8 @@ impl ContactCenterActivity {
 }
 
 /// A builder for [`ContactCenterActivity`](crate::types::ContactCenterActivity).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ContactCenterActivityBuilder {
     pub(crate) next_activity: ::std::option::Option<::std::string::String>,
 }

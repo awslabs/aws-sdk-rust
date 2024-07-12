@@ -21,8 +21,8 @@ impl AnalysisDefaults {
 }
 
 /// A builder for [`AnalysisDefaults`](crate::types::AnalysisDefaults).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AnalysisDefaultsBuilder {
     pub(crate) default_new_sheet_configuration: ::std::option::Option<crate::types::DefaultNewSheetConfiguration>,
 }

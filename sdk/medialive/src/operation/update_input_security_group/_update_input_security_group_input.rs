@@ -35,8 +35,8 @@ impl UpdateInputSecurityGroupInput {
 }
 
 /// A builder for [`UpdateInputSecurityGroupInput`](crate::operation::update_input_security_group::UpdateInputSecurityGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateInputSecurityGroupInputBuilder {
     pub(crate) input_security_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

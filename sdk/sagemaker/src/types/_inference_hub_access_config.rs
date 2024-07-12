@@ -21,8 +21,8 @@ impl InferenceHubAccessConfig {
 }
 
 /// A builder for [`InferenceHubAccessConfig`](crate::types::InferenceHubAccessConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InferenceHubAccessConfigBuilder {
     pub(crate) hub_content_arn: ::std::option::Option<::std::string::String>,
 }

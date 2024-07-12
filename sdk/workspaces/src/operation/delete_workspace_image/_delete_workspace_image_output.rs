@@ -18,8 +18,8 @@ impl DeleteWorkspaceImageOutput {
 }
 
 /// A builder for [`DeleteWorkspaceImageOutput`](crate::operation::delete_workspace_image::DeleteWorkspaceImageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteWorkspaceImageOutputBuilder {
     _request_id: Option<String>,
 }

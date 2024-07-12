@@ -45,8 +45,8 @@ impl StepExecutionStatusDetail {
 }
 
 /// A builder for [`StepExecutionStatusDetail`](crate::types::StepExecutionStatusDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StepExecutionStatusDetailBuilder {
     pub(crate) state: ::std::option::Option<crate::types::StepExecutionState>,
     pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,

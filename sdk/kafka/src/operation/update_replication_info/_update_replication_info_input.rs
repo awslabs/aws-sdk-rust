@@ -51,8 +51,8 @@ impl UpdateReplicationInfoInput {
 }
 
 /// A builder for [`UpdateReplicationInfoInput`](crate::operation::update_replication_info::UpdateReplicationInfoInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateReplicationInfoInputBuilder {
     pub(crate) consumer_group_replication: ::std::option::Option<crate::types::ConsumerGroupReplicationUpdate>,
     pub(crate) current_version: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl TerminateInstanceInAutoScalingGroupOutput {
 }
 
 /// A builder for [`TerminateInstanceInAutoScalingGroupOutput`](crate::operation::terminate_instance_in_auto_scaling_group::TerminateInstanceInAutoScalingGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TerminateInstanceInAutoScalingGroupOutputBuilder {
     pub(crate) activity: ::std::option::Option<crate::types::Activity>,
     _request_id: Option<String>,

@@ -128,8 +128,8 @@ impl UpdateWebAclInput {
 }
 
 /// A builder for [`UpdateWebAclInput`](crate::operation::update_web_acl::UpdateWebAclInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateWebAclInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,

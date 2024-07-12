@@ -53,8 +53,8 @@ impl DomainValidationOption {
 }
 
 /// A builder for [`DomainValidationOption`](crate::types::DomainValidationOption).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DomainValidationOptionBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) validation_domain: ::std::option::Option<::std::string::String>,

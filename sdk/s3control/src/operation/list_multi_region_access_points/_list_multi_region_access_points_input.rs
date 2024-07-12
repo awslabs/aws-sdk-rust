@@ -32,8 +32,8 @@ impl ListMultiRegionAccessPointsInput {
 }
 
 /// A builder for [`ListMultiRegionAccessPointsInput`](crate::operation::list_multi_region_access_points::ListMultiRegionAccessPointsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListMultiRegionAccessPointsInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -40,8 +40,8 @@ impl UnassignPrivateNatGatewayAddressInput {
 }
 
 /// A builder for [`UnassignPrivateNatGatewayAddressInput`](crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UnassignPrivateNatGatewayAddressInputBuilder {
     pub(crate) nat_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) private_ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -20,8 +20,8 @@ impl GetConfiguredTableInput {
 }
 
 /// A builder for [`GetConfiguredTableInput`](crate::operation::get_configured_table::GetConfiguredTableInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetConfiguredTableInputBuilder {
     pub(crate) configured_table_identifier: ::std::option::Option<::std::string::String>,
 }

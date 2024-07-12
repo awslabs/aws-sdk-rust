@@ -32,8 +32,8 @@ impl RequestCancelWorkflowExecutionInput {
 }
 
 /// A builder for [`RequestCancelWorkflowExecutionInput`](crate::operation::request_cancel_workflow_execution::RequestCancelWorkflowExecutionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RequestCancelWorkflowExecutionInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) workflow_id: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl RecurringCharge {
 }
 
 /// A builder for [`RecurringCharge`](crate::types::RecurringCharge).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecurringChargeBuilder {
     pub(crate) amount: ::std::option::Option<f64>,
     pub(crate) frequency: ::std::option::Option<crate::types::RecurringChargeFrequency>,

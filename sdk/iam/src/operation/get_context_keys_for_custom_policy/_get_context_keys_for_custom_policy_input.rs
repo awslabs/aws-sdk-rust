@@ -40,8 +40,8 @@ impl GetContextKeysForCustomPolicyInput {
 }
 
 /// A builder for [`GetContextKeysForCustomPolicyInput`](crate::operation::get_context_keys_for_custom_policy::GetContextKeysForCustomPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetContextKeysForCustomPolicyInputBuilder {
     pub(crate) policy_input_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

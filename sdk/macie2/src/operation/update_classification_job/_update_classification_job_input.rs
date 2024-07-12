@@ -48,8 +48,8 @@ impl UpdateClassificationJobInput {
 }
 
 /// A builder for [`UpdateClassificationJobInput`](crate::operation::update_classification_job::UpdateClassificationJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateClassificationJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_status: ::std::option::Option<crate::types::JobStatus>,

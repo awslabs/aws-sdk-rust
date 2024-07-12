@@ -35,8 +35,8 @@ impl BrokerInstance {
 }
 
 /// A builder for [`BrokerInstance`](crate::types::BrokerInstance).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BrokerInstanceBuilder {
     pub(crate) console_url: ::std::option::Option<::std::string::String>,
     pub(crate) endpoints: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

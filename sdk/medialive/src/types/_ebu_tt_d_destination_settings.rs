@@ -39,8 +39,8 @@ impl EbuTtDDestinationSettings {
 }
 
 /// A builder for [`EbuTtDDestinationSettings`](crate::types::EbuTtDDestinationSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EbuTtDDestinationSettingsBuilder {
     pub(crate) copyright_holder: ::std::option::Option<::std::string::String>,
     pub(crate) fill_line_gap: ::std::option::Option<crate::types::EbuTtDFillLineGapControl>,

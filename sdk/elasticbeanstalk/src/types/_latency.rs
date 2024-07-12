@@ -63,8 +63,8 @@ impl Latency {
 }
 
 /// A builder for [`Latency`](crate::types::Latency).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LatencyBuilder {
     pub(crate) p999: ::std::option::Option<f64>,
     pub(crate) p99: ::std::option::Option<f64>,

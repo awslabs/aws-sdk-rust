@@ -44,8 +44,8 @@ impl FunctionMetadata {
 }
 
 /// A builder for [`FunctionMetadata`](crate::types::FunctionMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FunctionMetadataBuilder {
     pub(crate) function_arn: ::std::option::Option<::std::string::String>,
     pub(crate) stage: ::std::option::Option<crate::types::FunctionStage>,

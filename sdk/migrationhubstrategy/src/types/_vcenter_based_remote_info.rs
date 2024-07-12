@@ -27,8 +27,8 @@ impl VcenterBasedRemoteInfo {
 }
 
 /// A builder for [`VcenterBasedRemoteInfo`](crate::types::VcenterBasedRemoteInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VcenterBasedRemoteInfoBuilder {
     pub(crate) vcenter_configuration_time_stamp: ::std::option::Option<::std::string::String>,
     pub(crate) os_type: ::std::option::Option<crate::types::OsType>,

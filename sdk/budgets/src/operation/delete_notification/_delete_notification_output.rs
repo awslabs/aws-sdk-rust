@@ -19,8 +19,8 @@ impl DeleteNotificationOutput {
 }
 
 /// A builder for [`DeleteNotificationOutput`](crate::operation::delete_notification::DeleteNotificationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteNotificationOutputBuilder {
     _request_id: Option<String>,
 }

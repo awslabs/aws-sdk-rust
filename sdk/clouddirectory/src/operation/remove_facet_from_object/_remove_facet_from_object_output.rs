@@ -18,8 +18,8 @@ impl RemoveFacetFromObjectOutput {
 }
 
 /// A builder for [`RemoveFacetFromObjectOutput`](crate::operation::remove_facet_from_object::RemoveFacetFromObjectOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoveFacetFromObjectOutputBuilder {
     _request_id: Option<String>,
 }

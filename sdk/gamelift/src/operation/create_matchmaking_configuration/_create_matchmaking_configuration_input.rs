@@ -128,8 +128,8 @@ impl CreateMatchmakingConfigurationInput {
 }
 
 /// A builder for [`CreateMatchmakingConfigurationInput`](crate::operation::create_matchmaking_configuration::CreateMatchmakingConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateMatchmakingConfigurationInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

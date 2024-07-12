@@ -48,8 +48,8 @@ impl DescribeTypeRegistrationOutput {
 }
 
 /// A builder for [`DescribeTypeRegistrationOutput`](crate::operation::describe_type_registration::DescribeTypeRegistrationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTypeRegistrationOutputBuilder {
     pub(crate) progress_status: ::std::option::Option<crate::types::RegistrationStatus>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

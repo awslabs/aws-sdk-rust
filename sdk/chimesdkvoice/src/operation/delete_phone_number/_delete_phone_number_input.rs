@@ -27,8 +27,8 @@ impl DeletePhoneNumberInput {
 }
 
 /// A builder for [`DeletePhoneNumberInput`](crate::operation::delete_phone_number::DeletePhoneNumberInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DeletePhoneNumberInputBuilder {
     pub(crate) phone_number_id: ::std::option::Option<::std::string::String>,
 }

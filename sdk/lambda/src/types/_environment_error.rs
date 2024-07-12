@@ -35,8 +35,8 @@ impl EnvironmentError {
 }
 
 /// A builder for [`EnvironmentError`](crate::types::EnvironmentError).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct EnvironmentErrorBuilder {
     pub(crate) error_code: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

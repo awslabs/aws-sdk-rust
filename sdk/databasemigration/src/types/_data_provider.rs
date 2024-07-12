@@ -51,8 +51,8 @@ impl DataProvider {
 }
 
 /// A builder for [`DataProvider`](crate::types::DataProvider).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataProviderBuilder {
     pub(crate) data_provider_name: ::std::option::Option<::std::string::String>,
     pub(crate) data_provider_arn: ::std::option::Option<::std::string::String>,

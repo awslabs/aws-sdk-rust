@@ -49,8 +49,8 @@ impl SmallMultiplesOptions {
 }
 
 /// A builder for [`SmallMultiplesOptions`](crate::types::SmallMultiplesOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SmallMultiplesOptionsBuilder {
     pub(crate) max_visible_rows: ::std::option::Option<i64>,
     pub(crate) max_visible_columns: ::std::option::Option<i64>,

@@ -32,8 +32,8 @@ impl UpdatePricingPlanOutput {
 }
 
 /// A builder for [`UpdatePricingPlanOutput`](crate::operation::update_pricing_plan::UpdatePricingPlanOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePricingPlanOutputBuilder {
     pub(crate) current_pricing_plan: ::std::option::Option<crate::types::PricingPlan>,
     pub(crate) pending_pricing_plan: ::std::option::Option<crate::types::PricingPlan>,

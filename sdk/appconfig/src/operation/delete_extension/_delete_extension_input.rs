@@ -26,8 +26,8 @@ impl DeleteExtensionInput {
 }
 
 /// A builder for [`DeleteExtensionInput`](crate::operation::delete_extension::DeleteExtensionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteExtensionInputBuilder {
     pub(crate) extension_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) version_number: ::std::option::Option<i32>,

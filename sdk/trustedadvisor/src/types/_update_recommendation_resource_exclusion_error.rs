@@ -33,8 +33,8 @@ impl UpdateRecommendationResourceExclusionError {
 }
 
 /// A builder for [`UpdateRecommendationResourceExclusionError`](crate::types::UpdateRecommendationResourceExclusionError).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRecommendationResourceExclusionErrorBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) error_code: ::std::option::Option<::std::string::String>,

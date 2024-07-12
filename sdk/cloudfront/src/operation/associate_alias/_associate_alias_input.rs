@@ -26,8 +26,8 @@ impl AssociateAliasInput {
 }
 
 /// A builder for [`AssociateAliasInput`](crate::operation::associate_alias::AssociateAliasInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateAliasInputBuilder {
     pub(crate) target_distribution_id: ::std::option::Option<::std::string::String>,
     pub(crate) alias: ::std::option::Option<::std::string::String>,

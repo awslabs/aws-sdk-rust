@@ -21,8 +21,8 @@ impl DescribeCampaignInput {
 }
 
 /// A builder for [`DescribeCampaignInput`](crate::operation::describe_campaign::DescribeCampaignInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCampaignInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }

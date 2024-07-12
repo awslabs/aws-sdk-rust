@@ -33,8 +33,8 @@ impl EnableVgwRoutePropagationInput {
 }
 
 /// A builder for [`EnableVgwRoutePropagationInput`](crate::operation::enable_vgw_route_propagation::EnableVgwRoutePropagationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnableVgwRoutePropagationInputBuilder {
     pub(crate) gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) route_table_id: ::std::option::Option<::std::string::String>,

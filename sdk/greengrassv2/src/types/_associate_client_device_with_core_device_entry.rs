@@ -22,8 +22,8 @@ impl AssociateClientDeviceWithCoreDeviceEntry {
 }
 
 /// A builder for [`AssociateClientDeviceWithCoreDeviceEntry`](crate::types::AssociateClientDeviceWithCoreDeviceEntry).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateClientDeviceWithCoreDeviceEntryBuilder {
     pub(crate) thing_name: ::std::option::Option<::std::string::String>,
 }

@@ -27,8 +27,8 @@ impl AwsRedshiftClusterVpcSecurityGroup {
 }
 
 /// A builder for [`AwsRedshiftClusterVpcSecurityGroup`](crate::types::AwsRedshiftClusterVpcSecurityGroup).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsRedshiftClusterVpcSecurityGroupBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_security_group_id: ::std::option::Option<::std::string::String>,

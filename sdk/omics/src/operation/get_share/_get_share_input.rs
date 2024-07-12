@@ -20,8 +20,8 @@ impl GetShareInput {
 }
 
 /// A builder for [`GetShareInput`](crate::operation::get_share::GetShareInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetShareInputBuilder {
     pub(crate) share_id: ::std::option::Option<::std::string::String>,
 }

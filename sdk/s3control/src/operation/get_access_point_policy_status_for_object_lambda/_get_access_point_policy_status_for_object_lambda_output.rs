@@ -28,8 +28,8 @@ impl GetAccessPointPolicyStatusForObjectLambdaOutput {
 }
 
 /// A builder for [`GetAccessPointPolicyStatusForObjectLambdaOutput`](crate::operation::get_access_point_policy_status_for_object_lambda::GetAccessPointPolicyStatusForObjectLambdaOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAccessPointPolicyStatusForObjectLambdaOutputBuilder {
     pub(crate) policy_status: ::std::option::Option<crate::types::PolicyStatus>,
     _request_id: Option<String>,

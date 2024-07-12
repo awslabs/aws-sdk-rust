@@ -49,8 +49,8 @@ impl SearchForTextResult {
 }
 
 /// A builder for [`SearchForTextResult`](crate::types::SearchForTextResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchForTextResultBuilder {
     pub(crate) place: ::std::option::Option<crate::types::Place>,
     pub(crate) distance: ::std::option::Option<f64>,

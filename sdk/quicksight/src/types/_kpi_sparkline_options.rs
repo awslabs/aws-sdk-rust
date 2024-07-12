@@ -39,8 +39,8 @@ impl KpiSparklineOptions {
 }
 
 /// A builder for [`KpiSparklineOptions`](crate::types::KpiSparklineOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KpiSparklineOptionsBuilder {
     pub(crate) visibility: ::std::option::Option<crate::types::Visibility>,
     pub(crate) r#type: ::std::option::Option<crate::types::KpiSparklineType>,

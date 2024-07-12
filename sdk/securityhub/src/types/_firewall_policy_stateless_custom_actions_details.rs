@@ -27,8 +27,8 @@ impl FirewallPolicyStatelessCustomActionsDetails {
 }
 
 /// A builder for [`FirewallPolicyStatelessCustomActionsDetails`](crate::types::FirewallPolicyStatelessCustomActionsDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FirewallPolicyStatelessCustomActionsDetailsBuilder {
     pub(crate) action_definition: ::std::option::Option<crate::types::StatelessCustomActionDefinition>,
     pub(crate) action_name: ::std::option::Option<::std::string::String>,

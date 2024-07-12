@@ -29,8 +29,8 @@ impl CustomDnsServer {
 }
 
 /// A builder for [`CustomDnsServer`](crate::types::CustomDnsServer).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CustomDnsServerBuilder {
     pub(crate) custom_dns_server_name: ::std::option::Option<::std::string::String>,
     pub(crate) custom_dns_server_ip: ::std::option::Option<::std::string::String>,

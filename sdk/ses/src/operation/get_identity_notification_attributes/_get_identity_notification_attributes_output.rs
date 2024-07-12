@@ -27,8 +27,8 @@ impl GetIdentityNotificationAttributesOutput {
 }
 
 /// A builder for [`GetIdentityNotificationAttributesOutput`](crate::operation::get_identity_notification_attributes::GetIdentityNotificationAttributesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetIdentityNotificationAttributesOutputBuilder {
     pub(crate) notification_attributes:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::IdentityNotificationAttributes>>,

@@ -72,8 +72,8 @@ impl ChatSyncOutput {
 }
 
 /// A builder for [`ChatSyncOutput`](crate::operation::chat_sync::ChatSyncOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ChatSyncOutputBuilder {
     pub(crate) conversation_id: ::std::option::Option<::std::string::String>,
     pub(crate) system_message: ::std::option::Option<::std::string::String>,

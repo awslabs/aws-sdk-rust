@@ -48,8 +48,8 @@ impl DetectEntitiesV2Output {
 }
 
 /// A builder for [`DetectEntitiesV2Output`](crate::operation::detect_entities_v2::DetectEntitiesV2Output).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetectEntitiesV2OutputBuilder {
     pub(crate) entities: ::std::option::Option<::std::vec::Vec<crate::types::Entity>>,
     pub(crate) unmapped_attributes: ::std::option::Option<::std::vec::Vec<crate::types::UnmappedAttribute>>,

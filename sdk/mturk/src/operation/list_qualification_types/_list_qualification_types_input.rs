@@ -44,8 +44,8 @@ impl ListQualificationTypesInput {
 }
 
 /// A builder for [`ListQualificationTypesInput`](crate::operation::list_qualification_types::ListQualificationTypesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListQualificationTypesInputBuilder {
     pub(crate) query: ::std::option::Option<::std::string::String>,
     pub(crate) must_be_requestable: ::std::option::Option<bool>,

@@ -60,8 +60,8 @@ impl Media {
 }
 
 /// A builder for [`Media`](crate::types::Media).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MediaBuilder {
     pub(crate) media_file_uri: ::std::option::Option<::std::string::String>,
     pub(crate) redacted_media_file_uri: ::std::option::Option<::std::string::String>,

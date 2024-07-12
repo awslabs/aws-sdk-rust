@@ -36,8 +36,8 @@ impl BatchDeleteRumMetricDefinitionsError {
 }
 
 /// A builder for [`BatchDeleteRumMetricDefinitionsError`](crate::types::BatchDeleteRumMetricDefinitionsError).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDeleteRumMetricDefinitionsErrorBuilder {
     pub(crate) metric_definition_id: ::std::option::Option<::std::string::String>,
     pub(crate) error_code: ::std::option::Option<::std::string::String>,

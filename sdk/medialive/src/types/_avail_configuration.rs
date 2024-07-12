@@ -27,8 +27,8 @@ impl AvailConfiguration {
 }
 
 /// A builder for [`AvailConfiguration`](crate::types::AvailConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AvailConfigurationBuilder {
     pub(crate) avail_settings: ::std::option::Option<crate::types::AvailSettings>,
     pub(crate) scte35_segmentation_scope: ::std::option::Option<crate::types::Scte35SegmentationScope>,

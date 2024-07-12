@@ -26,8 +26,8 @@ impl GetSourceApiAssociationOutput {
 }
 
 /// A builder for [`GetSourceApiAssociationOutput`](crate::operation::get_source_api_association::GetSourceApiAssociationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSourceApiAssociationOutputBuilder {
     pub(crate) source_api_association: ::std::option::Option<crate::types::SourceApiAssociation>,
     _request_id: Option<String>,

@@ -34,8 +34,8 @@ impl ListRoutingProfilesOutput {
 }
 
 /// A builder for [`ListRoutingProfilesOutput`](crate::operation::list_routing_profiles::ListRoutingProfilesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRoutingProfilesOutputBuilder {
     pub(crate) routing_profile_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

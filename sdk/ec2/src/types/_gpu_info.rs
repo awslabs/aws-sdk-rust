@@ -29,8 +29,8 @@ impl GpuInfo {
 }
 
 /// A builder for [`GpuInfo`](crate::types::GpuInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GpuInfoBuilder {
     pub(crate) gpus: ::std::option::Option<::std::vec::Vec<crate::types::GpuDeviceInfo>>,
     pub(crate) total_gpu_memory_in_mib: ::std::option::Option<i32>,

@@ -128,8 +128,8 @@ impl StartCallAnalyticsJobInput {
 }
 
 /// A builder for [`StartCallAnalyticsJobInput`](crate::operation::start_call_analytics_job::StartCallAnalyticsJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartCallAnalyticsJobInputBuilder {
     pub(crate) call_analytics_job_name: ::std::option::Option<::std::string::String>,
     pub(crate) media: ::std::option::Option<crate::types::Media>,

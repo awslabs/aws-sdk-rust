@@ -27,8 +27,8 @@ impl ListInsightsAnyStatusFilter {
 }
 
 /// A builder for [`ListInsightsAnyStatusFilter`](crate::types::ListInsightsAnyStatusFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListInsightsAnyStatusFilterBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::InsightType>,
     pub(crate) start_time_range: ::std::option::Option<crate::types::StartTimeRange>,

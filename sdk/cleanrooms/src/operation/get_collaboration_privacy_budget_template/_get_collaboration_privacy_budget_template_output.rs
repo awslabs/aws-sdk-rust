@@ -26,8 +26,8 @@ impl GetCollaborationPrivacyBudgetTemplateOutput {
 }
 
 /// A builder for [`GetCollaborationPrivacyBudgetTemplateOutput`](crate::operation::get_collaboration_privacy_budget_template::GetCollaborationPrivacyBudgetTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCollaborationPrivacyBudgetTemplateOutputBuilder {
     pub(crate) collaboration_privacy_budget_template: ::std::option::Option<crate::types::CollaborationPrivacyBudgetTemplate>,
     _request_id: Option<String>,

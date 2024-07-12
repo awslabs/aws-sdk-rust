@@ -37,8 +37,8 @@ impl SetUserSettingsInput {
 }
 
 /// A builder for [`SetUserSettingsInput`](crate::operation::set_user_settings::SetUserSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SetUserSettingsInputBuilder {
     pub(crate) access_token: ::std::option::Option<::std::string::String>,
     pub(crate) mfa_options: ::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>>,

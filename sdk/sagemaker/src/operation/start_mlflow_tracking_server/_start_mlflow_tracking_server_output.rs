@@ -26,8 +26,8 @@ impl StartMlflowTrackingServerOutput {
 }
 
 /// A builder for [`StartMlflowTrackingServerOutput`](crate::operation::start_mlflow_tracking_server::StartMlflowTrackingServerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartMlflowTrackingServerOutputBuilder {
     pub(crate) tracking_server_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

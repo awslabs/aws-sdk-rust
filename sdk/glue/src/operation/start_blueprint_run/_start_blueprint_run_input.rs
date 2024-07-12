@@ -32,8 +32,8 @@ impl StartBlueprintRunInput {
 }
 
 /// A builder for [`StartBlueprintRunInput`](crate::operation::start_blueprint_run::StartBlueprintRunInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartBlueprintRunInputBuilder {
     pub(crate) blueprint_name: ::std::option::Option<::std::string::String>,
     pub(crate) parameters: ::std::option::Option<::std::string::String>,

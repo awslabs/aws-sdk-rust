@@ -27,8 +27,8 @@ impl GetDocumentationPartInput {
 }
 
 /// A builder for [`GetDocumentationPartInput`](crate::operation::get_documentation_part::GetDocumentationPartInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDocumentationPartInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
     pub(crate) documentation_part_id: ::std::option::Option<::std::string::String>,

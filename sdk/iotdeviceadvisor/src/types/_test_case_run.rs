@@ -113,8 +113,8 @@ impl TestCaseRun {
 }
 
 /// A builder for [`TestCaseRun`](crate::types::TestCaseRun).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TestCaseRunBuilder {
     pub(crate) test_case_run_id: ::std::option::Option<::std::string::String>,
     pub(crate) test_case_definition_id: ::std::option::Option<::std::string::String>,

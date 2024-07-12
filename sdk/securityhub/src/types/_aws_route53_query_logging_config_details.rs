@@ -21,8 +21,8 @@ impl AwsRoute53QueryLoggingConfigDetails {
 }
 
 /// A builder for [`AwsRoute53QueryLoggingConfigDetails`](crate::types::AwsRoute53QueryLoggingConfigDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsRoute53QueryLoggingConfigDetailsBuilder {
     pub(crate) cloud_watch_logs_log_group_arn: ::std::option::Option<crate::types::CloudWatchLogsLogGroupArnConfigDetails>,
 }

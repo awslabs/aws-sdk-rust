@@ -26,8 +26,8 @@ impl DeleteInAppTemplateOutput {
 }
 
 /// A builder for [`DeleteInAppTemplateOutput`](crate::operation::delete_in_app_template::DeleteInAppTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteInAppTemplateOutputBuilder {
     pub(crate) message_body: ::std::option::Option<crate::types::MessageBody>,
     _request_id: Option<String>,

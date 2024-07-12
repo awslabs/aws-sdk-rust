@@ -26,8 +26,8 @@ impl UpdateArtifactOutput {
 }
 
 /// A builder for [`UpdateArtifactOutput`](crate::operation::update_artifact::UpdateArtifactOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateArtifactOutputBuilder {
     pub(crate) artifact_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

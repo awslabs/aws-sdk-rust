@@ -32,8 +32,8 @@ impl GetKeyPolicyOutput {
 }
 
 /// A builder for [`GetKeyPolicyOutput`](crate::operation::get_key_policy::GetKeyPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetKeyPolicyOutputBuilder {
     pub(crate) policy: ::std::option::Option<::std::string::String>,
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,

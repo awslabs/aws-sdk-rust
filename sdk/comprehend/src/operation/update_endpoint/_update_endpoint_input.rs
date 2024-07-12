@@ -44,8 +44,8 @@ impl UpdateEndpointInput {
 }
 
 /// A builder for [`UpdateEndpointInput`](crate::operation::update_endpoint::UpdateEndpointInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateEndpointInputBuilder {
     pub(crate) endpoint_arn: ::std::option::Option<::std::string::String>,
     pub(crate) desired_model_arn: ::std::option::Option<::std::string::String>,

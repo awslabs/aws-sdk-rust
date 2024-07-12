@@ -37,8 +37,8 @@ impl ExternalId {
 }
 
 /// A builder for [`ExternalId`](crate::types::ExternalId).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ExternalIdBuilder {
     pub(crate) issuer: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,

@@ -22,8 +22,8 @@ impl DeletePermissionPolicyInput {
 }
 
 /// A builder for [`DeletePermissionPolicyInput`](crate::operation::delete_permission_policy::DeletePermissionPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePermissionPolicyInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
 }

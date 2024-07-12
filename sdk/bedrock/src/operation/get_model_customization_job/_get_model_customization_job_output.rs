@@ -153,8 +153,8 @@ impl GetModelCustomizationJobOutput {
 }
 
 /// A builder for [`GetModelCustomizationJobOutput`](crate::operation::get_model_customization_job::GetModelCustomizationJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetModelCustomizationJobOutputBuilder {
     pub(crate) job_arn: ::std::option::Option<::std::string::String>,
     pub(crate) job_name: ::std::option::Option<::std::string::String>,

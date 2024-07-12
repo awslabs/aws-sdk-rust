@@ -21,8 +21,8 @@ impl TrainingJobStepMetadata {
 }
 
 /// A builder for [`TrainingJobStepMetadata`](crate::types::TrainingJobStepMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TrainingJobStepMetadataBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }

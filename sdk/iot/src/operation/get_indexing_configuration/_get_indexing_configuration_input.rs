@@ -11,8 +11,8 @@ impl GetIndexingConfigurationInput {
 }
 
 /// A builder for [`GetIndexingConfigurationInput`](crate::operation::get_indexing_configuration::GetIndexingConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetIndexingConfigurationInputBuilder {}
 impl GetIndexingConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`GetIndexingConfigurationInput`](crate::operation::get_indexing_configuration::GetIndexingConfigurationInput).

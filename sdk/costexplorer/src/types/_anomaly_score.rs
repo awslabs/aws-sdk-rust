@@ -27,8 +27,8 @@ impl AnomalyScore {
 }
 
 /// A builder for [`AnomalyScore`](crate::types::AnomalyScore).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AnomalyScoreBuilder {
     pub(crate) max_score: ::std::option::Option<f64>,
     pub(crate) current_score: ::std::option::Option<f64>,

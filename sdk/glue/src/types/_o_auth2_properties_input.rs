@@ -45,8 +45,8 @@ impl OAuth2PropertiesInput {
 }
 
 /// A builder for [`OAuth2PropertiesInput`](crate::types::OAuth2PropertiesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OAuth2PropertiesInputBuilder {
     pub(crate) o_auth2_grant_type: ::std::option::Option<crate::types::OAuth2GrantType>,
     pub(crate) o_auth2_client_application: ::std::option::Option<crate::types::OAuth2ClientApplication>,

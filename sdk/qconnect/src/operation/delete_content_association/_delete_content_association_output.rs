@@ -18,8 +18,8 @@ impl DeleteContentAssociationOutput {
 }
 
 /// A builder for [`DeleteContentAssociationOutput`](crate::operation::delete_content_association::DeleteContentAssociationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteContentAssociationOutputBuilder {
     _request_id: Option<String>,
 }

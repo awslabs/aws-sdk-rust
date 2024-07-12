@@ -27,8 +27,8 @@ impl IdMappingTechniques {
 }
 
 /// A builder for [`IdMappingTechniques`](crate::types::IdMappingTechniques).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IdMappingTechniquesBuilder {
     pub(crate) id_mapping_type: ::std::option::Option<crate::types::IdMappingType>,
     pub(crate) provider_properties: ::std::option::Option<crate::types::ProviderProperties>,

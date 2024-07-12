@@ -50,8 +50,8 @@ impl ListAnomaliesForInsightInput {
 }
 
 /// A builder for [`ListAnomaliesForInsightInput`](crate::operation::list_anomalies_for_insight::ListAnomaliesForInsightInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAnomaliesForInsightInputBuilder {
     pub(crate) insight_id: ::std::option::Option<::std::string::String>,
     pub(crate) start_time_range: ::std::option::Option<crate::types::StartTimeRange>,

@@ -33,8 +33,8 @@ impl UdpGroupSettings {
 }
 
 /// A builder for [`UdpGroupSettings`](crate::types::UdpGroupSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UdpGroupSettingsBuilder {
     pub(crate) input_loss_action: ::std::option::Option<crate::types::InputLossActionForUdpOut>,
     pub(crate) timed_metadata_id3_frame: ::std::option::Option<crate::types::UdpTimedMetadataId3Frame>,

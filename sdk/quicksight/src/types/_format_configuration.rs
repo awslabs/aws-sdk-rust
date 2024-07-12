@@ -33,8 +33,8 @@ impl FormatConfiguration {
 }
 
 /// A builder for [`FormatConfiguration`](crate::types::FormatConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FormatConfigurationBuilder {
     pub(crate) string_format_configuration: ::std::option::Option<crate::types::StringFormatConfiguration>,
     pub(crate) number_format_configuration: ::std::option::Option<crate::types::NumberFormatConfiguration>,

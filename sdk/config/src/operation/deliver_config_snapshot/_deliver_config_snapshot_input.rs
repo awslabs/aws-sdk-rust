@@ -21,8 +21,8 @@ impl DeliverConfigSnapshotInput {
 }
 
 /// A builder for [`DeliverConfigSnapshotInput`](crate::operation::deliver_config_snapshot::DeliverConfigSnapshotInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeliverConfigSnapshotInputBuilder {
     pub(crate) delivery_channel_name: ::std::option::Option<::std::string::String>,
 }

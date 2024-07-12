@@ -39,8 +39,8 @@ impl UpdateDomainConfigOutput {
 }
 
 /// A builder for [`UpdateDomainConfigOutput`](crate::operation::update_domain_config::UpdateDomainConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDomainConfigOutputBuilder {
     pub(crate) domain_config: ::std::option::Option<crate::types::DomainConfig>,
     pub(crate) dry_run_results: ::std::option::Option<crate::types::DryRunResults>,

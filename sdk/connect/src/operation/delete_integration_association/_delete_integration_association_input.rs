@@ -26,8 +26,8 @@ impl DeleteIntegrationAssociationInput {
 }
 
 /// A builder for [`DeleteIntegrationAssociationInput`](crate::operation::delete_integration_association::DeleteIntegrationAssociationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteIntegrationAssociationInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) integration_association_id: ::std::option::Option<::std::string::String>,

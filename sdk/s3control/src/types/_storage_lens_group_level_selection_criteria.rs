@@ -31,8 +31,8 @@ impl StorageLensGroupLevelSelectionCriteria {
 }
 
 /// A builder for [`StorageLensGroupLevelSelectionCriteria`](crate::types::StorageLensGroupLevelSelectionCriteria).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StorageLensGroupLevelSelectionCriteriaBuilder {
     pub(crate) include: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) exclude: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

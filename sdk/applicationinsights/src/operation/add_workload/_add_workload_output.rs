@@ -32,8 +32,8 @@ impl AddWorkloadOutput {
 }
 
 /// A builder for [`AddWorkloadOutput`](crate::operation::add_workload::AddWorkloadOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddWorkloadOutputBuilder {
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,
     pub(crate) workload_configuration: ::std::option::Option<crate::types::WorkloadConfiguration>,

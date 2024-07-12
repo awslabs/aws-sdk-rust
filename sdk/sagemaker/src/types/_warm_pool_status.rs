@@ -55,8 +55,8 @@ impl WarmPoolStatus {
 }
 
 /// A builder for [`WarmPoolStatus`](crate::types::WarmPoolStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WarmPoolStatusBuilder {
     pub(crate) status: ::std::option::Option<crate::types::WarmPoolResourceStatus>,
     pub(crate) resource_retained_billable_time_in_seconds: ::std::option::Option<i32>,

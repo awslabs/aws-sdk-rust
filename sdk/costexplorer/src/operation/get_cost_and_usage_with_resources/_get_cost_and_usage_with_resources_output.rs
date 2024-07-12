@@ -50,8 +50,8 @@ impl GetCostAndUsageWithResourcesOutput {
 }
 
 /// A builder for [`GetCostAndUsageWithResourcesOutput`](crate::operation::get_cost_and_usage_with_resources::GetCostAndUsageWithResourcesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCostAndUsageWithResourcesOutputBuilder {
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
     pub(crate) group_definitions: ::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>>,

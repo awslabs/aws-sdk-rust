@@ -183,8 +183,8 @@ impl GetDimensionValuesOutput {
 }
 
 /// A builder for [`GetDimensionValuesOutput`](crate::operation::get_dimension_values::GetDimensionValuesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDimensionValuesOutputBuilder {
     pub(crate) dimension_values: ::std::option::Option<::std::vec::Vec<crate::types::DimensionValuesWithAttributes>>,
     pub(crate) return_size: ::std::option::Option<i32>,

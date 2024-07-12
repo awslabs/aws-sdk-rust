@@ -35,8 +35,8 @@ impl InferenceComponentContainerSpecificationSummary {
 }
 
 /// A builder for [`InferenceComponentContainerSpecificationSummary`](crate::types::InferenceComponentContainerSpecificationSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InferenceComponentContainerSpecificationSummaryBuilder {
     pub(crate) deployed_image: ::std::option::Option<crate::types::DeployedImage>,
     pub(crate) artifact_url: ::std::option::Option<::std::string::String>,

@@ -81,8 +81,8 @@ impl RuleAction {
 }
 
 /// A builder for [`RuleAction`](crate::types::RuleAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RuleActionBuilder {
     pub(crate) action_type: ::std::option::Option<crate::types::ActionType>,
     pub(crate) task_action: ::std::option::Option<crate::types::TaskActionDefinition>,

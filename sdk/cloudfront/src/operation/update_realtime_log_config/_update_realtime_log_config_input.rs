@@ -50,8 +50,8 @@ impl UpdateRealtimeLogConfigInput {
 }
 
 /// A builder for [`UpdateRealtimeLogConfigInput`](crate::operation::update_realtime_log_config::UpdateRealtimeLogConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRealtimeLogConfigInputBuilder {
     pub(crate) end_points: ::std::option::Option<::std::vec::Vec<crate::types::EndPoint>>,
     pub(crate) fields: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

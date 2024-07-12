@@ -44,8 +44,8 @@ impl ListAggregateDiscoveredResourcesInput {
 }
 
 /// A builder for [`ListAggregateDiscoveredResourcesInput`](crate::operation::list_aggregate_discovered_resources::ListAggregateDiscoveredResourcesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAggregateDiscoveredResourcesInputBuilder {
     pub(crate) configuration_aggregator_name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,

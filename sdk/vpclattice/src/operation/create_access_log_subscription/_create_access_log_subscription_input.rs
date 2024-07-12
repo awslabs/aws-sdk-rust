@@ -38,8 +38,8 @@ impl CreateAccessLogSubscriptionInput {
 }
 
 /// A builder for [`CreateAccessLogSubscriptionInput`](crate::operation::create_access_log_subscription::CreateAccessLogSubscriptionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAccessLogSubscriptionInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) resource_identifier: ::std::option::Option<::std::string::String>,

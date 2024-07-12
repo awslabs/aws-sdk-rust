@@ -28,8 +28,8 @@ impl GetAuthorizationTokenInput {
 }
 
 /// A builder for [`GetAuthorizationTokenInput`](crate::operation::get_authorization_token::GetAuthorizationTokenInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAuthorizationTokenInputBuilder {
     pub(crate) registry_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

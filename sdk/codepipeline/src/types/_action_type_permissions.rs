@@ -22,8 +22,8 @@ impl ActionTypePermissions {
 }
 
 /// A builder for [`ActionTypePermissions`](crate::types::ActionTypePermissions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ActionTypePermissionsBuilder {
     pub(crate) allowed_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

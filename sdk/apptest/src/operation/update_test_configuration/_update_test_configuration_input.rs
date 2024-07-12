@@ -46,8 +46,8 @@ impl UpdateTestConfigurationInput {
 }
 
 /// A builder for [`UpdateTestConfigurationInput`](crate::operation::update_test_configuration::UpdateTestConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateTestConfigurationInputBuilder {
     pub(crate) test_configuration_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

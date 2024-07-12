@@ -26,8 +26,8 @@ impl CreateMonitoringScheduleOutput {
 }
 
 /// A builder for [`CreateMonitoringScheduleOutput`](crate::operation::create_monitoring_schedule::CreateMonitoringScheduleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateMonitoringScheduleOutputBuilder {
     pub(crate) monitoring_schedule_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

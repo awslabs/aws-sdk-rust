@@ -20,8 +20,8 @@ impl DeleteDefaultMessageTypeInput {
 }
 
 /// A builder for [`DeleteDefaultMessageTypeInput`](crate::operation::delete_default_message_type::DeleteDefaultMessageTypeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDefaultMessageTypeInputBuilder {
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
 }

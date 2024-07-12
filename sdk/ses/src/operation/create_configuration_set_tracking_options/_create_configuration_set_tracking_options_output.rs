@@ -19,8 +19,8 @@ impl CreateConfigurationSetTrackingOptionsOutput {
 }
 
 /// A builder for [`CreateConfigurationSetTrackingOptionsOutput`](crate::operation::create_configuration_set_tracking_options::CreateConfigurationSetTrackingOptionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateConfigurationSetTrackingOptionsOutputBuilder {
     _request_id: Option<String>,
 }

@@ -32,8 +32,8 @@ impl GetDocumentAnalysisInput {
 }
 
 /// A builder for [`GetDocumentAnalysisInput`](crate::operation::get_document_analysis::GetDocumentAnalysisInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDocumentAnalysisInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

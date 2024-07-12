@@ -33,8 +33,8 @@ impl ListStreamSessionsOutput {
 }
 
 /// A builder for [`ListStreamSessionsOutput`](crate::operation::list_stream_sessions::ListStreamSessionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListStreamSessionsOutputBuilder {
     pub(crate) stream_sessions: ::std::option::Option<::std::vec::Vec<crate::types::StreamSessionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -68,8 +68,8 @@ impl ListHostedZonesByNameOutput {
 }
 
 /// A builder for [`ListHostedZonesByNameOutput`](crate::operation::list_hosted_zones_by_name::ListHostedZonesByNameOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListHostedZonesByNameOutputBuilder {
     pub(crate) hosted_zones: ::std::option::Option<::std::vec::Vec<crate::types::HostedZone>>,
     pub(crate) dns_name: ::std::option::Option<::std::string::String>,

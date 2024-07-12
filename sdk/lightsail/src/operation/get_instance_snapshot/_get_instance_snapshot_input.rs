@@ -20,8 +20,8 @@ impl GetInstanceSnapshotInput {
 }
 
 /// A builder for [`GetInstanceSnapshotInput`](crate::operation::get_instance_snapshot::GetInstanceSnapshotInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetInstanceSnapshotInputBuilder {
     pub(crate) instance_snapshot_name: ::std::option::Option<::std::string::String>,
 }

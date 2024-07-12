@@ -27,8 +27,8 @@ impl CreateFarmOutput {
 }
 
 /// A builder for [`CreateFarmOutput`](crate::operation::create_farm::CreateFarmOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateFarmOutputBuilder {
     pub(crate) farm_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -37,8 +37,8 @@ impl CreateEmailIdentityPolicyInput {
 }
 
 /// A builder for [`CreateEmailIdentityPolicyInput`](crate::operation::create_email_identity_policy::CreateEmailIdentityPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateEmailIdentityPolicyInputBuilder {
     pub(crate) email_identity: ::std::option::Option<::std::string::String>,
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,

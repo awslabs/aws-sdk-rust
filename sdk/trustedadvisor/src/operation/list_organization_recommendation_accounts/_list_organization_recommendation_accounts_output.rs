@@ -33,8 +33,8 @@ impl ListOrganizationRecommendationAccountsOutput {
 }
 
 /// A builder for [`ListOrganizationRecommendationAccountsOutput`](crate::operation::list_organization_recommendation_accounts::ListOrganizationRecommendationAccountsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListOrganizationRecommendationAccountsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) account_recommendation_lifecycle_summaries:

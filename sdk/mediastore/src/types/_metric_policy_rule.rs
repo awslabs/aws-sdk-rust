@@ -29,8 +29,8 @@ impl MetricPolicyRule {
 }
 
 /// A builder for [`MetricPolicyRule`](crate::types::MetricPolicyRule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MetricPolicyRuleBuilder {
     pub(crate) object_group: ::std::option::Option<::std::string::String>,
     pub(crate) object_group_name: ::std::option::Option<::std::string::String>,

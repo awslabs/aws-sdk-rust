@@ -129,8 +129,8 @@ impl MsSmoothGroupSettings {
 }
 
 /// A builder for [`MsSmoothGroupSettings`](crate::types::MsSmoothGroupSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MsSmoothGroupSettingsBuilder {
     pub(crate) acquisition_point_id: ::std::option::Option<::std::string::String>,
     pub(crate) audio_only_timecode_control: ::std::option::Option<crate::types::SmoothGroupAudioOnlyTimecodeControl>,

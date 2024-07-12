@@ -18,8 +18,8 @@ impl UpdateFleetMetadataOutput {
 }
 
 /// A builder for [`UpdateFleetMetadataOutput`](crate::operation::update_fleet_metadata::UpdateFleetMetadataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateFleetMetadataOutputBuilder {
     _request_id: Option<String>,
 }

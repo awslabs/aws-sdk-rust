@@ -66,8 +66,8 @@ impl GetUnfilteredPartitionMetadataInput {
 }
 
 /// A builder for [`GetUnfilteredPartitionMetadataInput`](crate::operation::get_unfiltered_partition_metadata::GetUnfilteredPartitionMetadataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetUnfilteredPartitionMetadataInputBuilder {
     pub(crate) region: ::std::option::Option<::std::string::String>,
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,

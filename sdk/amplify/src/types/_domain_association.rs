@@ -177,8 +177,8 @@ impl DomainAssociation {
 }
 
 /// A builder for [`DomainAssociation`](crate::types::DomainAssociation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DomainAssociationBuilder {
     pub(crate) domain_association_arn: ::std::option::Option<::std::string::String>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,

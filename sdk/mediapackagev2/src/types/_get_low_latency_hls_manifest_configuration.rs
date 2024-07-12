@@ -61,8 +61,8 @@ impl GetLowLatencyHlsManifestConfiguration {
 }
 
 /// A builder for [`GetLowLatencyHlsManifestConfiguration`](crate::types::GetLowLatencyHlsManifestConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLowLatencyHlsManifestConfigurationBuilder {
     pub(crate) manifest_name: ::std::option::Option<::std::string::String>,
     pub(crate) url: ::std::option::Option<::std::string::String>,

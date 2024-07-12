@@ -55,8 +55,8 @@ impl TemplateConfiguration {
 }
 
 /// A builder for [`TemplateConfiguration`](crate::types::TemplateConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TemplateConfigurationBuilder {
     pub(crate) deletion_policy: ::std::option::Option<crate::types::GeneratedTemplateDeletionPolicy>,
     pub(crate) update_replace_policy: ::std::option::Option<crate::types::GeneratedTemplateUpdateReplacePolicy>,

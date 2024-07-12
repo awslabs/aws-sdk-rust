@@ -63,8 +63,8 @@ impl Xavc4kProfileSettings {
 }
 
 /// A builder for [`Xavc4kProfileSettings`](crate::types::Xavc4kProfileSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Xavc4kProfileSettingsBuilder {
     pub(crate) bitrate_class: ::std::option::Option<crate::types::Xavc4kProfileBitrateClass>,
     pub(crate) codec_profile: ::std::option::Option<crate::types::Xavc4kProfileCodecProfile>,

@@ -26,8 +26,8 @@ impl DescribeWatchlistOutput {
 }
 
 /// A builder for [`DescribeWatchlistOutput`](crate::operation::describe_watchlist::DescribeWatchlistOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeWatchlistOutputBuilder {
     pub(crate) watchlist: ::std::option::Option<crate::types::Watchlist>,
     _request_id: Option<String>,

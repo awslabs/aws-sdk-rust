@@ -69,8 +69,8 @@ impl CreateSpaceInput {
 }
 
 /// A builder for [`CreateSpaceInput`](crate::operation::create_space::CreateSpaceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateSpaceInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) subdomain: ::std::option::Option<::std::string::String>,

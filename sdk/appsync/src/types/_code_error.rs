@@ -37,8 +37,8 @@ impl CodeError {
 }
 
 /// A builder for [`CodeError`](crate::types::CodeError).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CodeErrorBuilder {
     pub(crate) error_type: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,

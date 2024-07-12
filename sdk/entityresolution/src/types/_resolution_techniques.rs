@@ -33,8 +33,8 @@ impl ResolutionTechniques {
 }
 
 /// A builder for [`ResolutionTechniques`](crate::types::ResolutionTechniques).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResolutionTechniquesBuilder {
     pub(crate) resolution_type: ::std::option::Option<crate::types::ResolutionType>,
     pub(crate) rule_based_properties: ::std::option::Option<crate::types::RuleBasedProperties>,

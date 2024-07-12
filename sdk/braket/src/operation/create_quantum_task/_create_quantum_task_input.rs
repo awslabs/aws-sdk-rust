@@ -76,8 +76,8 @@ impl CreateQuantumTaskInput {
 }
 
 /// A builder for [`CreateQuantumTaskInput`](crate::operation::create_quantum_task::CreateQuantumTaskInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateQuantumTaskInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) device_arn: ::std::option::Option<::std::string::String>,

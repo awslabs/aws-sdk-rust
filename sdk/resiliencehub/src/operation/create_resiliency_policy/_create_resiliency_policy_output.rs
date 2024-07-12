@@ -26,8 +26,8 @@ impl CreateResiliencyPolicyOutput {
 }
 
 /// A builder for [`CreateResiliencyPolicyOutput`](crate::operation::create_resiliency_policy::CreateResiliencyPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateResiliencyPolicyOutputBuilder {
     pub(crate) policy: ::std::option::Option<crate::types::ResiliencyPolicy>,
     _request_id: Option<String>,

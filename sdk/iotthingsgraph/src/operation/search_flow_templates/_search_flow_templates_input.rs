@@ -34,8 +34,8 @@ impl SearchFlowTemplatesInput {
 }
 
 /// A builder for [`SearchFlowTemplatesInput`](crate::operation::search_flow_templates::SearchFlowTemplatesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchFlowTemplatesInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::FlowTemplateFilter>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

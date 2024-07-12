@@ -32,8 +32,8 @@ impl UpdateSourceServerInput {
 }
 
 /// A builder for [`UpdateSourceServerInput`](crate::operation::update_source_server::UpdateSourceServerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSourceServerInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) source_server_id: ::std::option::Option<::std::string::String>,

@@ -18,8 +18,8 @@ impl AssociateApplicationToEntitlementOutput {
 }
 
 /// A builder for [`AssociateApplicationToEntitlementOutput`](crate::operation::associate_application_to_entitlement::AssociateApplicationToEntitlementOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateApplicationToEntitlementOutputBuilder {
     _request_id: Option<String>,
 }

@@ -56,8 +56,8 @@ impl ModifyVerifiedAccessTrustProviderInput {
 }
 
 /// A builder for [`ModifyVerifiedAccessTrustProviderInput`](crate::operation::modify_verified_access_trust_provider::ModifyVerifiedAccessTrustProviderInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyVerifiedAccessTrustProviderInputBuilder {
     pub(crate) verified_access_trust_provider_id: ::std::option::Option<::std::string::String>,
     pub(crate) oidc_options: ::std::option::Option<crate::types::ModifyVerifiedAccessTrustProviderOidcOptions>,

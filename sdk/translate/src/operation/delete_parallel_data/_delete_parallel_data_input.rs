@@ -20,8 +20,8 @@ impl DeleteParallelDataInput {
 }
 
 /// A builder for [`DeleteParallelDataInput`](crate::operation::delete_parallel_data::DeleteParallelDataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteParallelDataInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

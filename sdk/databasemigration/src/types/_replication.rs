@@ -191,8 +191,8 @@ impl Replication {
 }
 
 /// A builder for [`Replication`](crate::types::Replication).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReplicationBuilder {
     pub(crate) replication_config_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) replication_config_arn: ::std::option::Option<::std::string::String>,

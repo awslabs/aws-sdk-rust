@@ -18,8 +18,8 @@ impl DeleteVectorEnrichmentJobOutput {
 }
 
 /// A builder for [`DeleteVectorEnrichmentJobOutput`](crate::operation::delete_vector_enrichment_job::DeleteVectorEnrichmentJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVectorEnrichmentJobOutputBuilder {
     _request_id: Option<String>,
 }

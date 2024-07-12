@@ -18,8 +18,8 @@ impl UpdateNotebookMetadataOutput {
 }
 
 /// A builder for [`UpdateNotebookMetadataOutput`](crate::operation::update_notebook_metadata::UpdateNotebookMetadataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateNotebookMetadataOutputBuilder {
     _request_id: Option<String>,
 }

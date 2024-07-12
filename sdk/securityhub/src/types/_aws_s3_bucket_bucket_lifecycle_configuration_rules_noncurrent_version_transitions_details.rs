@@ -27,8 +27,8 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDet
 }
 
 /// A builder for [`AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails`](crate::types::AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetailsBuilder {
     pub(crate) days: ::std::option::Option<i32>,
     pub(crate) storage_class: ::std::option::Option<::std::string::String>,

@@ -53,8 +53,8 @@ impl ScanSummary {
 }
 
 /// A builder for [`ScanSummary`](crate::types::ScanSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScanSummaryBuilder {
     pub(crate) scan_state: ::std::option::Option<crate::types::ScanState>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,

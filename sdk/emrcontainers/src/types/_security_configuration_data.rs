@@ -21,8 +21,8 @@ impl SecurityConfigurationData {
 }
 
 /// A builder for [`SecurityConfigurationData`](crate::types::SecurityConfigurationData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SecurityConfigurationDataBuilder {
     pub(crate) authorization_configuration: ::std::option::Option<crate::types::AuthorizationConfiguration>,
 }

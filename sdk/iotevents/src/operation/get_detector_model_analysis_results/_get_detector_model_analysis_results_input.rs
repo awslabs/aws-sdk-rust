@@ -32,8 +32,8 @@ impl GetDetectorModelAnalysisResultsInput {
 }
 
 /// A builder for [`GetDetectorModelAnalysisResultsInput`](crate::operation::get_detector_model_analysis_results::GetDetectorModelAnalysisResultsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDetectorModelAnalysisResultsInputBuilder {
     pub(crate) analysis_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

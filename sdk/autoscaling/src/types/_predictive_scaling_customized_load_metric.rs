@@ -23,8 +23,8 @@ impl PredictiveScalingCustomizedLoadMetric {
 }
 
 /// A builder for [`PredictiveScalingCustomizedLoadMetric`](crate::types::PredictiveScalingCustomizedLoadMetric).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PredictiveScalingCustomizedLoadMetricBuilder {
     pub(crate) metric_data_queries: ::std::option::Option<::std::vec::Vec<crate::types::MetricDataQuery>>,
 }

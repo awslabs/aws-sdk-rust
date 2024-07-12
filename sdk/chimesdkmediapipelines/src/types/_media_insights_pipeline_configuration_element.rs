@@ -78,8 +78,8 @@ impl MediaInsightsPipelineConfigurationElement {
 }
 
 /// A builder for [`MediaInsightsPipelineConfigurationElement`](crate::types::MediaInsightsPipelineConfigurationElement).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MediaInsightsPipelineConfigurationElementBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::MediaInsightsPipelineConfigurationElementType>,
     pub(crate) amazon_transcribe_call_analytics_processor_configuration:

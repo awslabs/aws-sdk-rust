@@ -29,8 +29,8 @@ impl TimestreamConfig {
 }
 
 /// A builder for [`TimestreamConfig`](crate::types::TimestreamConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TimestreamConfigBuilder {
     pub(crate) timestream_table_arn: ::std::option::Option<::std::string::String>,
     pub(crate) execution_role_arn: ::std::option::Option<::std::string::String>,

@@ -20,8 +20,8 @@ impl CreateDataCellsFilterInput {
 }
 
 /// A builder for [`CreateDataCellsFilterInput`](crate::operation::create_data_cells_filter::CreateDataCellsFilterInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDataCellsFilterInputBuilder {
     pub(crate) table_data: ::std::option::Option<crate::types::DataCellsFilter>,
 }

@@ -119,8 +119,8 @@ impl TimeSeriesForecastingJobConfig {
 }
 
 /// A builder for [`TimeSeriesForecastingJobConfig`](crate::types::TimeSeriesForecastingJobConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TimeSeriesForecastingJobConfigBuilder {
     pub(crate) feature_specification_s3_uri: ::std::option::Option<::std::string::String>,
     pub(crate) completion_criteria: ::std::option::Option<crate::types::AutoMlJobCompletionCriteria>,

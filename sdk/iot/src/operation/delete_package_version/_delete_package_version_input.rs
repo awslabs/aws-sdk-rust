@@ -32,8 +32,8 @@ impl DeletePackageVersionInput {
 }
 
 /// A builder for [`DeletePackageVersionInput`](crate::operation::delete_package_version::DeletePackageVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePackageVersionInputBuilder {
     pub(crate) package_name: ::std::option::Option<::std::string::String>,
     pub(crate) version_name: ::std::option::Option<::std::string::String>,

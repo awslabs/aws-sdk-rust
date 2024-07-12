@@ -19,8 +19,8 @@ impl UpdateEventConfigurationByResourceTypesOutput {
 }
 
 /// A builder for [`UpdateEventConfigurationByResourceTypesOutput`](crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateEventConfigurationByResourceTypesOutputBuilder {
     _request_id: Option<String>,
 }

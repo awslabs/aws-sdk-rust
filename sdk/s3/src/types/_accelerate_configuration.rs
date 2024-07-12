@@ -21,8 +21,8 @@ impl AccelerateConfiguration {
 }
 
 /// A builder for [`AccelerateConfiguration`](crate::types::AccelerateConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AccelerateConfigurationBuilder {
     pub(crate) status: ::std::option::Option<crate::types::BucketAccelerateStatus>,
 }

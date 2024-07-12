@@ -41,8 +41,8 @@ impl HoursOfOperationSearchCriteria {
 }
 
 /// A builder for [`HoursOfOperationSearchCriteria`](crate::types::HoursOfOperationSearchCriteria).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HoursOfOperationSearchCriteriaBuilder {
     pub(crate) or_conditions: ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationSearchCriteria>>,
     pub(crate) and_conditions: ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationSearchCriteria>>,

@@ -26,8 +26,8 @@ impl GetExportJobInput {
 }
 
 /// A builder for [`GetExportJobInput`](crate::operation::get_export_job::GetExportJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetExportJobInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_id: ::std::option::Option<::std::string::String>,

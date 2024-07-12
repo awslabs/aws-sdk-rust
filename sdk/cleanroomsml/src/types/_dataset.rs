@@ -27,8 +27,8 @@ impl Dataset {
 }
 
 /// A builder for [`Dataset`](crate::types::Dataset).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DatasetBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::DatasetType>,
     pub(crate) input_config: ::std::option::Option<crate::types::DatasetInputConfig>,

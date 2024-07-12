@@ -19,8 +19,8 @@ impl UpdateThingOutput {
 }
 
 /// A builder for [`UpdateThingOutput`](crate::operation::update_thing::UpdateThingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateThingOutputBuilder {
     _request_id: Option<String>,
 }

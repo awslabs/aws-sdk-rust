@@ -27,8 +27,8 @@ impl CreateStorageProfileOutput {
 }
 
 /// A builder for [`CreateStorageProfileOutput`](crate::operation::create_storage_profile::CreateStorageProfileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateStorageProfileOutputBuilder {
     pub(crate) storage_profile_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

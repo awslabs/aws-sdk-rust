@@ -21,8 +21,8 @@ impl RuleEvaluation {
 }
 
 /// A builder for [`RuleEvaluation`](crate::types::RuleEvaluation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RuleEvaluationBuilder {
     pub(crate) simple_rule_evaluation: ::std::option::Option<crate::types::SimpleRuleEvaluation>,
 }

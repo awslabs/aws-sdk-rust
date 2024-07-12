@@ -63,8 +63,8 @@ impl PermissionModel {
 }
 
 /// A builder for [`PermissionModel`](crate::types::PermissionModel).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PermissionModelBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::PermissionModelType>,
     pub(crate) invoker_role_name: ::std::option::Option<::std::string::String>,

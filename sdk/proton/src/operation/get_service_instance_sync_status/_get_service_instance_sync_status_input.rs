@@ -26,8 +26,8 @@ impl GetServiceInstanceSyncStatusInput {
 }
 
 /// A builder for [`GetServiceInstanceSyncStatusInput`](crate::operation::get_service_instance_sync_status::GetServiceInstanceSyncStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetServiceInstanceSyncStatusInputBuilder {
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
     pub(crate) service_instance_name: ::std::option::Option<::std::string::String>,

@@ -37,8 +37,8 @@ impl Goal {
 }
 
 /// A builder for [`Goal`](crate::types::Goal).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GoalBuilder {
     pub(crate) interval: ::std::option::Option<crate::types::Interval>,
     pub(crate) attainment_goal: ::std::option::Option<f64>,

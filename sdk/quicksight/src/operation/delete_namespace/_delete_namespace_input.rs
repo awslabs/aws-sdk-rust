@@ -26,8 +26,8 @@ impl DeleteNamespaceInput {
 }
 
 /// A builder for [`DeleteNamespaceInput`](crate::operation::delete_namespace::DeleteNamespaceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteNamespaceInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) namespace: ::std::option::Option<::std::string::String>,

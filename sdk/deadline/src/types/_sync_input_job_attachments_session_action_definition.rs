@@ -21,8 +21,8 @@ impl SyncInputJobAttachmentsSessionActionDefinition {
 }
 
 /// A builder for [`SyncInputJobAttachmentsSessionActionDefinition`](crate::types::SyncInputJobAttachmentsSessionActionDefinition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SyncInputJobAttachmentsSessionActionDefinitionBuilder {
     pub(crate) step_id: ::std::option::Option<::std::string::String>,
 }

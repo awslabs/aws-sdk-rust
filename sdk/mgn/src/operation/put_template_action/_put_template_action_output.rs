@@ -103,8 +103,8 @@ impl PutTemplateActionOutput {
 }
 
 /// A builder for [`PutTemplateActionOutput`](crate::operation::put_template_action::PutTemplateActionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutTemplateActionOutputBuilder {
     pub(crate) action_id: ::std::option::Option<::std::string::String>,
     pub(crate) action_name: ::std::option::Option<::std::string::String>,

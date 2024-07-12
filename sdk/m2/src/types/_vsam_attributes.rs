@@ -48,8 +48,8 @@ impl VsamAttributes {
 }
 
 /// A builder for [`VsamAttributes`](crate::types::VsamAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VsamAttributesBuilder {
     pub(crate) format: ::std::option::Option<::std::string::String>,
     pub(crate) encoding: ::std::option::Option<::std::string::String>,

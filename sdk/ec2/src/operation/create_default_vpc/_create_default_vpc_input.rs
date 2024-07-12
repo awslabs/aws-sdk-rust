@@ -20,8 +20,8 @@ impl CreateDefaultVpcInput {
 }
 
 /// A builder for [`CreateDefaultVpcInput`](crate::operation::create_default_vpc::CreateDefaultVpcInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDefaultVpcInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
 }

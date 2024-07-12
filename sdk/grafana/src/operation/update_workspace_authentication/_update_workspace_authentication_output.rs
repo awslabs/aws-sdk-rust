@@ -26,8 +26,8 @@ impl UpdateWorkspaceAuthenticationOutput {
 }
 
 /// A builder for [`UpdateWorkspaceAuthenticationOutput`](crate::operation::update_workspace_authentication::UpdateWorkspaceAuthenticationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateWorkspaceAuthenticationOutputBuilder {
     pub(crate) authentication: ::std::option::Option<crate::types::AuthenticationDescription>,
     _request_id: Option<String>,

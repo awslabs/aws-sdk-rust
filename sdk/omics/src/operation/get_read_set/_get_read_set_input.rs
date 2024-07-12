@@ -38,8 +38,8 @@ impl GetReadSetInput {
 }
 
 /// A builder for [`GetReadSetInput`](crate::operation::get_read_set::GetReadSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetReadSetInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) sequence_store_id: ::std::option::Option<::std::string::String>,

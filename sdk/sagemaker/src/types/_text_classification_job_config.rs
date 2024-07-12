@@ -33,8 +33,8 @@ impl TextClassificationJobConfig {
 }
 
 /// A builder for [`TextClassificationJobConfig`](crate::types::TextClassificationJobConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TextClassificationJobConfigBuilder {
     pub(crate) completion_criteria: ::std::option::Option<crate::types::AutoMlJobCompletionCriteria>,
     pub(crate) content_column: ::std::option::Option<::std::string::String>,

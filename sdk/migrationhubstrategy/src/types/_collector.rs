@@ -63,8 +63,8 @@ impl Collector {
 }
 
 /// A builder for [`Collector`](crate::types::Collector).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CollectorBuilder {
     pub(crate) collector_id: ::std::option::Option<::std::string::String>,
     pub(crate) ip_address: ::std::option::Option<::std::string::String>,

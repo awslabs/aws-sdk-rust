@@ -54,8 +54,8 @@ impl CreateVpcConnectionInput {
 }
 
 /// A builder for [`CreateVpcConnectionInput`](crate::operation::create_vpc_connection::CreateVpcConnectionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateVpcConnectionInputBuilder {
     pub(crate) target_cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) authentication: ::std::option::Option<::std::string::String>,

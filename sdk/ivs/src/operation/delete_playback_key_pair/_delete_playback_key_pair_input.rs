@@ -20,8 +20,8 @@ impl DeletePlaybackKeyPairInput {
 }
 
 /// A builder for [`DeletePlaybackKeyPairInput`](crate::operation::delete_playback_key_pair::DeletePlaybackKeyPairInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePlaybackKeyPairInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }

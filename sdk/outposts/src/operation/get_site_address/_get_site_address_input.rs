@@ -26,8 +26,8 @@ impl GetSiteAddressInput {
 }
 
 /// A builder for [`GetSiteAddressInput`](crate::operation::get_site_address::GetSiteAddressInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSiteAddressInputBuilder {
     pub(crate) site_id: ::std::option::Option<::std::string::String>,
     pub(crate) address_type: ::std::option::Option<crate::types::AddressType>,

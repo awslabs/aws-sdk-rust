@@ -34,8 +34,8 @@ impl ListEventsDetectionJobsOutput {
 }
 
 /// A builder for [`ListEventsDetectionJobsOutput`](crate::operation::list_events_detection_jobs::ListEventsDetectionJobsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEventsDetectionJobsOutputBuilder {
     pub(crate) events_detection_job_properties_list: ::std::option::Option<::std::vec::Vec<crate::types::EventsDetectionJobProperties>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

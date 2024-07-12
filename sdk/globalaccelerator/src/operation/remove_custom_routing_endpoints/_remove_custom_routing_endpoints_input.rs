@@ -28,8 +28,8 @@ impl RemoveCustomRoutingEndpointsInput {
 }
 
 /// A builder for [`RemoveCustomRoutingEndpointsInput`](crate::operation::remove_custom_routing_endpoints::RemoveCustomRoutingEndpointsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoveCustomRoutingEndpointsInputBuilder {
     pub(crate) endpoint_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) endpoint_group_arn: ::std::option::Option<::std::string::String>,

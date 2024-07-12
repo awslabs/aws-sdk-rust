@@ -20,8 +20,8 @@ impl DeleteHubInput {
 }
 
 /// A builder for [`DeleteHubInput`](crate::operation::delete_hub::DeleteHubInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteHubInputBuilder {
     pub(crate) hub_name: ::std::option::Option<::std::string::String>,
 }

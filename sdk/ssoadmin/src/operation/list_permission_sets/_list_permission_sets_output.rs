@@ -34,8 +34,8 @@ impl ListPermissionSetsOutput {
 }
 
 /// A builder for [`ListPermissionSetsOutput`](crate::operation::list_permission_sets::ListPermissionSetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPermissionSetsOutputBuilder {
     pub(crate) permission_sets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

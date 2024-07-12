@@ -79,8 +79,8 @@ impl ListRecordsOutput {
 }
 
 /// A builder for [`ListRecordsOutput`](crate::operation::list_records::ListRecordsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRecordsOutputBuilder {
     pub(crate) records: ::std::option::Option<::std::vec::Vec<crate::types::Record>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

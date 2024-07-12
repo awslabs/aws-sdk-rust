@@ -32,8 +32,8 @@ impl CreateGatewayInput {
 }
 
 /// A builder for [`CreateGatewayInput`](crate::operation::create_gateway::CreateGatewayInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateGatewayInputBuilder {
     pub(crate) gateway_name: ::std::option::Option<::std::string::String>,
     pub(crate) gateway_platform: ::std::option::Option<crate::types::GatewayPlatform>,

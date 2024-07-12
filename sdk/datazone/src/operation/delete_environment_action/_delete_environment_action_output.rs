@@ -18,8 +18,8 @@ impl DeleteEnvironmentActionOutput {
 }
 
 /// A builder for [`DeleteEnvironmentActionOutput`](crate::operation::delete_environment_action::DeleteEnvironmentActionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteEnvironmentActionOutputBuilder {
     _request_id: Option<String>,
 }

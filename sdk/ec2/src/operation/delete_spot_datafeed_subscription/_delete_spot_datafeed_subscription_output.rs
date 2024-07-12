@@ -18,8 +18,8 @@ impl DeleteSpotDatafeedSubscriptionOutput {
 }
 
 /// A builder for [`DeleteSpotDatafeedSubscriptionOutput`](crate::operation::delete_spot_datafeed_subscription::DeleteSpotDatafeedSubscriptionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSpotDatafeedSubscriptionOutputBuilder {
     _request_id: Option<String>,
 }

@@ -23,8 +23,8 @@ impl KpiSortConfiguration {
 }
 
 /// A builder for [`KpiSortConfiguration`](crate::types::KpiSortConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KpiSortConfigurationBuilder {
     pub(crate) trend_group_sort: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
 }

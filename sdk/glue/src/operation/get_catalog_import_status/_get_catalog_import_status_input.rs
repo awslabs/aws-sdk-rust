@@ -20,8 +20,8 @@ impl GetCatalogImportStatusInput {
 }
 
 /// A builder for [`GetCatalogImportStatusInput`](crate::operation::get_catalog_import_status::GetCatalogImportStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCatalogImportStatusInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
 }

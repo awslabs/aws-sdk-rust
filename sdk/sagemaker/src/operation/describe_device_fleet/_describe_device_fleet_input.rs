@@ -20,8 +20,8 @@ impl DescribeDeviceFleetInput {
 }
 
 /// A builder for [`DescribeDeviceFleetInput`](crate::operation::describe_device_fleet::DescribeDeviceFleetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDeviceFleetInputBuilder {
     pub(crate) device_fleet_name: ::std::option::Option<::std::string::String>,
 }

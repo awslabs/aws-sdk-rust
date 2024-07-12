@@ -35,8 +35,8 @@ impl UserTurnOutputSpecification {
 }
 
 /// A builder for [`UserTurnOutputSpecification`](crate::types::UserTurnOutputSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UserTurnOutputSpecificationBuilder {
     pub(crate) intent: ::std::option::Option<crate::types::UserTurnIntentOutput>,
     pub(crate) active_contexts: ::std::option::Option<::std::vec::Vec<crate::types::ActiveContext>>,

@@ -41,8 +41,8 @@ impl DescribeEndpointTypesInput {
 }
 
 /// A builder for [`DescribeEndpointTypesInput`](crate::operation::describe_endpoint_types::DescribeEndpointTypesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEndpointTypesInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) max_records: ::std::option::Option<i32>,

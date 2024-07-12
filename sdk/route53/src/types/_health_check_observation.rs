@@ -33,8 +33,8 @@ impl HealthCheckObservation {
 }
 
 /// A builder for [`HealthCheckObservation`](crate::types::HealthCheckObservation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HealthCheckObservationBuilder {
     pub(crate) region: ::std::option::Option<crate::types::HealthCheckRegion>,
     pub(crate) ip_address: ::std::option::Option<::std::string::String>,

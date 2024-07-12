@@ -30,8 +30,8 @@ impl VerifyDomainIdentityOutput {
 }
 
 /// A builder for [`VerifyDomainIdentityOutput`](crate::operation::verify_domain_identity::VerifyDomainIdentityOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VerifyDomainIdentityOutputBuilder {
     pub(crate) verification_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

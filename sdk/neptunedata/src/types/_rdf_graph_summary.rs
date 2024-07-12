@@ -63,8 +63,8 @@ impl RdfGraphSummary {
 }
 
 /// A builder for [`RdfGraphSummary`](crate::types::RdfGraphSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RdfGraphSummaryBuilder {
     pub(crate) num_distinct_subjects: ::std::option::Option<i64>,
     pub(crate) num_distinct_predicates: ::std::option::Option<i64>,

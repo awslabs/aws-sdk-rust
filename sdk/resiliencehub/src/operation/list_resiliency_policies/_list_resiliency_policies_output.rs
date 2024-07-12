@@ -33,8 +33,8 @@ impl ListResiliencyPoliciesOutput {
 }
 
 /// A builder for [`ListResiliencyPoliciesOutput`](crate::operation::list_resiliency_policies::ListResiliencyPoliciesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListResiliencyPoliciesOutputBuilder {
     pub(crate) resiliency_policies: ::std::option::Option<::std::vec::Vec<crate::types::ResiliencyPolicy>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

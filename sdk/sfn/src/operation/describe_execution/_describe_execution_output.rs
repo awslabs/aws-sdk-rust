@@ -269,8 +269,8 @@ impl DescribeExecutionOutput {
 }
 
 /// A builder for [`DescribeExecutionOutput`](crate::operation::describe_execution::DescribeExecutionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DescribeExecutionOutputBuilder {
     pub(crate) execution_arn: ::std::option::Option<::std::string::String>,
     pub(crate) state_machine_arn: ::std::option::Option<::std::string::String>,

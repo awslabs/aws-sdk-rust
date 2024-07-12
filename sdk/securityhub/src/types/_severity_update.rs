@@ -83,8 +83,8 @@ impl SeverityUpdate {
 }
 
 /// A builder for [`SeverityUpdate`](crate::types::SeverityUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SeverityUpdateBuilder {
     pub(crate) normalized: ::std::option::Option<i32>,
     pub(crate) product: ::std::option::Option<f64>,

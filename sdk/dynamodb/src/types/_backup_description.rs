@@ -33,8 +33,8 @@ impl BackupDescription {
 }
 
 /// A builder for [`BackupDescription`](crate::types::BackupDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BackupDescriptionBuilder {
     pub(crate) backup_details: ::std::option::Option<crate::types::BackupDetails>,
     pub(crate) source_table_details: ::std::option::Option<crate::types::SourceTableDetails>,

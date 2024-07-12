@@ -38,8 +38,8 @@ impl ListConnectPeersInput {
 }
 
 /// A builder for [`ListConnectPeersInput`](crate::operation::list_connect_peers::ListConnectPeersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListConnectPeersInputBuilder {
     pub(crate) core_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) connect_attachment_id: ::std::option::Option<::std::string::String>,

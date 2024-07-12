@@ -46,8 +46,8 @@ impl CreateWirelessGatewayInput {
 }
 
 /// A builder for [`CreateWirelessGatewayInput`](crate::operation::create_wireless_gateway::CreateWirelessGatewayInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateWirelessGatewayInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

@@ -33,8 +33,8 @@ impl ListAppVersionResourceMappingsOutput {
 }
 
 /// A builder for [`ListAppVersionResourceMappingsOutput`](crate::operation::list_app_version_resource_mappings::ListAppVersionResourceMappingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAppVersionResourceMappingsOutputBuilder {
     pub(crate) resource_mappings: ::std::option::Option<::std::vec::Vec<crate::types::ResourceMapping>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

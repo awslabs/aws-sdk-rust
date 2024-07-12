@@ -47,8 +47,8 @@ impl StopDevEnvironmentOutput {
 }
 
 /// A builder for [`StopDevEnvironmentOutput`](crate::operation::stop_dev_environment::StopDevEnvironmentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopDevEnvironmentOutputBuilder {
     pub(crate) space_name: ::std::option::Option<::std::string::String>,
     pub(crate) project_name: ::std::option::Option<::std::string::String>,

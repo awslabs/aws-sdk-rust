@@ -18,8 +18,8 @@ impl DeleteConstraintOutput {
 }
 
 /// A builder for [`DeleteConstraintOutput`](crate::operation::delete_constraint::DeleteConstraintOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteConstraintOutputBuilder {
     _request_id: Option<String>,
 }

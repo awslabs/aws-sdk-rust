@@ -58,8 +58,8 @@ impl DescribeKeyInput {
 }
 
 /// A builder for [`DescribeKeyInput`](crate::operation::describe_key::DescribeKeyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeKeyInputBuilder {
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
     pub(crate) grant_tokens: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

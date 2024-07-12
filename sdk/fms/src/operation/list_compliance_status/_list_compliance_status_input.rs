@@ -32,8 +32,8 @@ impl ListComplianceStatusInput {
 }
 
 /// A builder for [`ListComplianceStatusInput`](crate::operation::list_compliance_status::ListComplianceStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListComplianceStatusInputBuilder {
     pub(crate) policy_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -42,8 +42,8 @@ impl UpdateGeofenceCollectionInput {
 }
 
 /// A builder for [`UpdateGeofenceCollectionInput`](crate::operation::update_geofence_collection::UpdateGeofenceCollectionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateGeofenceCollectionInputBuilder {
     pub(crate) collection_name: ::std::option::Option<::std::string::String>,
     pub(crate) pricing_plan: ::std::option::Option<crate::types::PricingPlan>,

@@ -26,8 +26,8 @@ impl GetPermissionsBoundaryForPermissionSetOutput {
 }
 
 /// A builder for [`GetPermissionsBoundaryForPermissionSetOutput`](crate::operation::get_permissions_boundary_for_permission_set::GetPermissionsBoundaryForPermissionSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPermissionsBoundaryForPermissionSetOutputBuilder {
     pub(crate) permissions_boundary: ::std::option::Option<crate::types::PermissionsBoundary>,
     _request_id: Option<String>,

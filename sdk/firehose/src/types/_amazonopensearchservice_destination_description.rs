@@ -99,8 +99,8 @@ impl AmazonopensearchserviceDestinationDescription {
 }
 
 /// A builder for [`AmazonopensearchserviceDestinationDescription`](crate::types::AmazonopensearchserviceDestinationDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AmazonopensearchserviceDestinationDescriptionBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) domain_arn: ::std::option::Option<::std::string::String>,

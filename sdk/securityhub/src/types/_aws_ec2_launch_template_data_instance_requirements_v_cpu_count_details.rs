@@ -27,8 +27,8 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails {
 }
 
 /// A builder for [`AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetailsBuilder {
     pub(crate) max: ::std::option::Option<i32>,
     pub(crate) min: ::std::option::Option<i32>,

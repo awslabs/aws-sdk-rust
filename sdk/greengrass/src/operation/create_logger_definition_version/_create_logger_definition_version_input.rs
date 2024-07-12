@@ -34,8 +34,8 @@ impl CreateLoggerDefinitionVersionInput {
 }
 
 /// A builder for [`CreateLoggerDefinitionVersionInput`](crate::operation::create_logger_definition_version::CreateLoggerDefinitionVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLoggerDefinitionVersionInputBuilder {
     pub(crate) amzn_client_token: ::std::option::Option<::std::string::String>,
     pub(crate) logger_definition_id: ::std::option::Option<::std::string::String>,

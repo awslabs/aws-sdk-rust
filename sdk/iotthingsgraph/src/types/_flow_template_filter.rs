@@ -28,8 +28,8 @@ impl FlowTemplateFilter {
 }
 
 /// A builder for [`FlowTemplateFilter`](crate::types::FlowTemplateFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FlowTemplateFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::FlowTemplateFilterName>,
     pub(crate) value: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

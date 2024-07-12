@@ -19,8 +19,8 @@ impl SetTaskStatusOutput {
 }
 
 /// A builder for [`SetTaskStatusOutput`](crate::operation::set_task_status::SetTaskStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetTaskStatusOutputBuilder {
     _request_id: Option<String>,
 }

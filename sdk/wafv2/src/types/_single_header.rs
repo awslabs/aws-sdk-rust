@@ -25,8 +25,8 @@ impl SingleHeader {
 }
 
 /// A builder for [`SingleHeader`](crate::types::SingleHeader).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SingleHeaderBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

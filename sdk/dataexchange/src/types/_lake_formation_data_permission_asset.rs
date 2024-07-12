@@ -40,8 +40,8 @@ impl LakeFormationDataPermissionAsset {
 }
 
 /// A builder for [`LakeFormationDataPermissionAsset`](crate::types::LakeFormationDataPermissionAsset).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LakeFormationDataPermissionAssetBuilder {
     pub(crate) lake_formation_data_permission_details: ::std::option::Option<crate::types::LakeFormationDataPermissionDetails>,
     pub(crate) lake_formation_data_permission_type: ::std::option::Option<crate::types::LakeFormationDataPermissionType>,

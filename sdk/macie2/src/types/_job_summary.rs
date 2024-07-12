@@ -111,8 +111,8 @@ impl JobSummary {
 }
 
 /// A builder for [`JobSummary`](crate::types::JobSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JobSummaryBuilder {
     pub(crate) bucket_criteria: ::std::option::Option<crate::types::S3BucketCriteriaForJob>,
     pub(crate) bucket_definitions: ::std::option::Option<::std::vec::Vec<crate::types::S3BucketDefinitionForJob>>,

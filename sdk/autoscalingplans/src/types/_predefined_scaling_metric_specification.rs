@@ -87,8 +87,8 @@ impl PredefinedScalingMetricSpecification {
 }
 
 /// A builder for [`PredefinedScalingMetricSpecification`](crate::types::PredefinedScalingMetricSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PredefinedScalingMetricSpecificationBuilder {
     pub(crate) predefined_scaling_metric_type: ::std::option::Option<crate::types::ScalingMetricType>,
     pub(crate) resource_label: ::std::option::Option<::std::string::String>,

@@ -48,8 +48,8 @@ impl GetEventSelectorsInput {
 }
 
 /// A builder for [`GetEventSelectorsInput`](crate::operation::get_event_selectors::GetEventSelectorsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEventSelectorsInputBuilder {
     pub(crate) trail_name: ::std::option::Option<::std::string::String>,
 }

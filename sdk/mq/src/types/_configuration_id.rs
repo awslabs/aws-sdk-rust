@@ -27,8 +27,8 @@ impl ConfigurationId {
 }
 
 /// A builder for [`ConfigurationId`](crate::types::ConfigurationId).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConfigurationIdBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) revision: ::std::option::Option<i32>,

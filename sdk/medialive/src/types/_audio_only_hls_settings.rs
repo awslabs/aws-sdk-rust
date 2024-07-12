@@ -39,8 +39,8 @@ impl AudioOnlyHlsSettings {
 }
 
 /// A builder for [`AudioOnlyHlsSettings`](crate::types::AudioOnlyHlsSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AudioOnlyHlsSettingsBuilder {
     pub(crate) audio_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) audio_only_image: ::std::option::Option<crate::types::InputLocation>,

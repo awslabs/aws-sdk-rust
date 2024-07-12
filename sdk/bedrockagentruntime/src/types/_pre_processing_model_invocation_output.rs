@@ -35,8 +35,8 @@ impl PreProcessingModelInvocationOutput {
 }
 
 /// A builder for [`PreProcessingModelInvocationOutput`](crate::types::PreProcessingModelInvocationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PreProcessingModelInvocationOutputBuilder {
     pub(crate) trace_id: ::std::option::Option<::std::string::String>,
     pub(crate) parsed_response: ::std::option::Option<crate::types::PreProcessingParsedResponse>,

@@ -70,8 +70,8 @@ impl UpdatedSessionActionInfo {
 }
 
 /// A builder for [`UpdatedSessionActionInfo`](crate::types::UpdatedSessionActionInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdatedSessionActionInfoBuilder {
     pub(crate) completed_status: ::std::option::Option<crate::types::CompletedStatus>,
     pub(crate) process_exit_code: ::std::option::Option<i32>,

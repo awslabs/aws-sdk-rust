@@ -20,8 +20,8 @@ impl RequestUploadCredentialsInput {
 }
 
 /// A builder for [`RequestUploadCredentialsInput`](crate::operation::request_upload_credentials::RequestUploadCredentialsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RequestUploadCredentialsInputBuilder {
     pub(crate) build_id: ::std::option::Option<::std::string::String>,
 }

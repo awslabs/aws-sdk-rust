@@ -34,8 +34,8 @@ impl DescribeBudgetNotificationsForAccountOutput {
 }
 
 /// A builder for [`DescribeBudgetNotificationsForAccountOutput`](crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeBudgetNotificationsForAccountOutputBuilder {
     pub(crate) budget_notifications_for_account: ::std::option::Option<::std::vec::Vec<crate::types::BudgetNotificationsForAccount>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

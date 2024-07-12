@@ -106,8 +106,8 @@ impl UpdateBrokerOutput {
 }
 
 /// A builder for [`UpdateBrokerOutput`](crate::operation::update_broker::UpdateBrokerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateBrokerOutputBuilder {
     pub(crate) authentication_strategy: ::std::option::Option<crate::types::AuthenticationStrategy>,
     pub(crate) auto_minor_version_upgrade: ::std::option::Option<bool>,

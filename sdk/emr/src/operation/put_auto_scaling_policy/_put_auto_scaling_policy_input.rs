@@ -32,8 +32,8 @@ impl PutAutoScalingPolicyInput {
 }
 
 /// A builder for [`PutAutoScalingPolicyInput`](crate::operation::put_auto_scaling_policy::PutAutoScalingPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutAutoScalingPolicyInputBuilder {
     pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_group_id: ::std::option::Option<::std::string::String>,

@@ -68,8 +68,8 @@ impl StartGameSessionPlacementInput {
 }
 
 /// A builder for [`StartGameSessionPlacementInput`](crate::operation::start_game_session_placement::StartGameSessionPlacementInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartGameSessionPlacementInputBuilder {
     pub(crate) placement_id: ::std::option::Option<::std::string::String>,
     pub(crate) game_session_queue_name: ::std::option::Option<::std::string::String>,

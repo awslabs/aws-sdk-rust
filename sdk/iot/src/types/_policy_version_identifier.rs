@@ -27,8 +27,8 @@ impl PolicyVersionIdentifier {
 }
 
 /// A builder for [`PolicyVersionIdentifier`](crate::types::PolicyVersionIdentifier).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PolicyVersionIdentifierBuilder {
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,
     pub(crate) policy_version_id: ::std::option::Option<::std::string::String>,

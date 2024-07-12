@@ -19,8 +19,8 @@ impl DeregisterEventTopicOutput {
 }
 
 /// A builder for [`DeregisterEventTopicOutput`](crate::operation::deregister_event_topic::DeregisterEventTopicOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeregisterEventTopicOutputBuilder {
     _request_id: Option<String>,
 }

@@ -23,8 +23,8 @@ impl PivotTableConditionalFormatting {
 }
 
 /// A builder for [`PivotTableConditionalFormatting`](crate::types::PivotTableConditionalFormatting).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PivotTableConditionalFormattingBuilder {
     pub(crate) conditional_formatting_options: ::std::option::Option<::std::vec::Vec<crate::types::PivotTableConditionalFormattingOption>>,
 }

@@ -11,8 +11,8 @@ impl DescribeEmergencyContactSettingsInput {
 }
 
 /// A builder for [`DescribeEmergencyContactSettingsInput`](crate::operation::describe_emergency_contact_settings::DescribeEmergencyContactSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEmergencyContactSettingsInputBuilder {}
 impl DescribeEmergencyContactSettingsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEmergencyContactSettingsInput`](crate::operation::describe_emergency_contact_settings::DescribeEmergencyContactSettingsInput).

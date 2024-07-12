@@ -47,8 +47,8 @@ impl PostLaunchActions {
 }
 
 /// A builder for [`PostLaunchActions`](crate::types::PostLaunchActions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PostLaunchActionsBuilder {
     pub(crate) deployment: ::std::option::Option<crate::types::PostLaunchActionsDeploymentType>,
     pub(crate) s3_log_bucket: ::std::option::Option<::std::string::String>,

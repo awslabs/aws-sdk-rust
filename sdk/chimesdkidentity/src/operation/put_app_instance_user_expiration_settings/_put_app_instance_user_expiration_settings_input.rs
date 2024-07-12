@@ -26,8 +26,8 @@ impl PutAppInstanceUserExpirationSettingsInput {
 }
 
 /// A builder for [`PutAppInstanceUserExpirationSettingsInput`](crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutAppInstanceUserExpirationSettingsInputBuilder {
     pub(crate) app_instance_user_arn: ::std::option::Option<::std::string::String>,
     pub(crate) expiration_settings: ::std::option::Option<crate::types::ExpirationSettings>,

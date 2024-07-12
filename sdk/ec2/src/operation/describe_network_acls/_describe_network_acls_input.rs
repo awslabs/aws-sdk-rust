@@ -140,8 +140,8 @@ impl DescribeNetworkAclsInput {
 }
 
 /// A builder for [`DescribeNetworkAclsInput`](crate::operation::describe_network_acls::DescribeNetworkAclsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeNetworkAclsInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) dry_run: ::std::option::Option<bool>,

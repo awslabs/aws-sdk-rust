@@ -38,8 +38,8 @@ impl AssociateAccessPolicyOutput {
 }
 
 /// A builder for [`AssociateAccessPolicyOutput`](crate::operation::associate_access_policy::AssociateAccessPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateAccessPolicyOutputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) principal_arn: ::std::option::Option<::std::string::String>,

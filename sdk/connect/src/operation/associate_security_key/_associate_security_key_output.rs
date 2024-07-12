@@ -26,8 +26,8 @@ impl AssociateSecurityKeyOutput {
 }
 
 /// A builder for [`AssociateSecurityKeyOutput`](crate::operation::associate_security_key::AssociateSecurityKeyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateSecurityKeyOutputBuilder {
     pub(crate) association_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

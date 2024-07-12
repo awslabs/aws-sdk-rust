@@ -33,8 +33,8 @@ impl MessageTemplateType {
 }
 
 /// A builder for [`MessageTemplateType`](crate::types::MessageTemplateType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MessageTemplateTypeBuilder {
     pub(crate) sms_message: ::std::option::Option<::std::string::String>,
     pub(crate) email_message: ::std::option::Option<::std::string::String>,

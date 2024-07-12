@@ -48,8 +48,8 @@ impl CustomParameterValues {
 }
 
 /// A builder for [`CustomParameterValues`](crate::types::CustomParameterValues).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CustomParameterValuesBuilder {
     pub(crate) string_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) integer_values: ::std::option::Option<::std::vec::Vec<i64>>,

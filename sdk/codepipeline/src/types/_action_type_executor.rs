@@ -45,8 +45,8 @@ impl ActionTypeExecutor {
 }
 
 /// A builder for [`ActionTypeExecutor`](crate::types::ActionTypeExecutor).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ActionTypeExecutorBuilder {
     pub(crate) configuration: ::std::option::Option<crate::types::ExecutorConfiguration>,
     pub(crate) r#type: ::std::option::Option<crate::types::ExecutorType>,

@@ -20,8 +20,8 @@ impl DescribeEdgePackagingJobInput {
 }
 
 /// A builder for [`DescribeEdgePackagingJobInput`](crate::operation::describe_edge_packaging_job::DescribeEdgePackagingJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEdgePackagingJobInputBuilder {
     pub(crate) edge_packaging_job_name: ::std::option::Option<::std::string::String>,
 }

@@ -20,8 +20,8 @@ impl DeleteGeofenceCollectionInput {
 }
 
 /// A builder for [`DeleteGeofenceCollectionInput`](crate::operation::delete_geofence_collection::DeleteGeofenceCollectionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteGeofenceCollectionInputBuilder {
     pub(crate) collection_name: ::std::option::Option<::std::string::String>,
 }

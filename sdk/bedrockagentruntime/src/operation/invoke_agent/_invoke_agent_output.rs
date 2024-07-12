@@ -46,8 +46,8 @@ impl InvokeAgentOutput {
 }
 
 /// A builder for [`InvokeAgentOutput`](crate::operation::invoke_agent::InvokeAgentOutput).
-#[non_exhaustive]
 #[derive(::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InvokeAgentOutputBuilder {
     pub(crate) completion:
         ::std::option::Option<crate::event_receiver::EventReceiver<crate::types::ResponseStream, crate::types::error::ResponseStreamError>>,

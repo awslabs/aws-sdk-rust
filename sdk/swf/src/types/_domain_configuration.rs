@@ -22,8 +22,8 @@ impl DomainConfiguration {
 }
 
 /// A builder for [`DomainConfiguration`](crate::types::DomainConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DomainConfigurationBuilder {
     pub(crate) workflow_execution_retention_period_in_days: ::std::option::Option<::std::string::String>,
 }

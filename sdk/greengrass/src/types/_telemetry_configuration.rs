@@ -27,8 +27,8 @@ impl TelemetryConfiguration {
 }
 
 /// A builder for [`TelemetryConfiguration`](crate::types::TelemetryConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TelemetryConfigurationBuilder {
     pub(crate) configuration_sync_status: ::std::option::Option<crate::types::ConfigurationSyncStatus>,
     pub(crate) telemetry: ::std::option::Option<crate::types::Telemetry>,

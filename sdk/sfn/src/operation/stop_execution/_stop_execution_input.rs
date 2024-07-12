@@ -41,8 +41,8 @@ impl StopExecutionInput {
 }
 
 /// A builder for [`StopExecutionInput`](crate::operation::stop_execution::StopExecutionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct StopExecutionInputBuilder {
     pub(crate) execution_arn: ::std::option::Option<::std::string::String>,
     pub(crate) error: ::std::option::Option<::std::string::String>,

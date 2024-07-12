@@ -28,8 +28,8 @@ impl Transcript {
 }
 
 /// A builder for [`Transcript`](crate::types::Transcript).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TranscriptBuilder {
     pub(crate) criteria: ::std::option::Option<::std::vec::Vec<crate::types::TranscriptCriteria>>,
     pub(crate) match_type: ::std::option::Option<crate::types::SearchContactsMatchType>,

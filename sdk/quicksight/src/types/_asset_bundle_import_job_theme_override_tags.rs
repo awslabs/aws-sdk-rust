@@ -29,8 +29,8 @@ impl AssetBundleImportJobThemeOverrideTags {
 }
 
 /// A builder for [`AssetBundleImportJobThemeOverrideTags`](crate::types::AssetBundleImportJobThemeOverrideTags).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssetBundleImportJobThemeOverrideTagsBuilder {
     pub(crate) theme_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,

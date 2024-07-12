@@ -26,8 +26,8 @@ impl UpdateServiceSyncBlockerInput {
 }
 
 /// A builder for [`UpdateServiceSyncBlockerInput`](crate::operation::update_service_sync_blocker::UpdateServiceSyncBlockerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateServiceSyncBlockerInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) resolved_reason: ::std::option::Option<::std::string::String>,

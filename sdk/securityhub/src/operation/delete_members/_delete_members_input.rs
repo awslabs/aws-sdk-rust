@@ -22,8 +22,8 @@ impl DeleteMembersInput {
 }
 
 /// A builder for [`DeleteMembersInput`](crate::operation::delete_members::DeleteMembersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteMembersInputBuilder {
     pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

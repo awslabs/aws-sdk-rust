@@ -38,8 +38,8 @@ impl UpdateUserDefinedFunctionInput {
 }
 
 /// A builder for [`UpdateUserDefinedFunctionInput`](crate::operation::update_user_defined_function::UpdateUserDefinedFunctionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateUserDefinedFunctionInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,

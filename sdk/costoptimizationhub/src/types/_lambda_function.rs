@@ -27,8 +27,8 @@ impl LambdaFunction {
 }
 
 /// A builder for [`LambdaFunction`](crate::types::LambdaFunction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LambdaFunctionBuilder {
     pub(crate) configuration: ::std::option::Option<crate::types::LambdaFunctionConfiguration>,
     pub(crate) cost_calculation: ::std::option::Option<crate::types::ResourceCostCalculation>,

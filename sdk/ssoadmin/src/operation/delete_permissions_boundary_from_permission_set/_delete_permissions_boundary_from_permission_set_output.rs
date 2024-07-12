@@ -20,8 +20,8 @@ impl DeletePermissionsBoundaryFromPermissionSetOutput {
 }
 
 /// A builder for [`DeletePermissionsBoundaryFromPermissionSetOutput`](crate::operation::delete_permissions_boundary_from_permission_set::DeletePermissionsBoundaryFromPermissionSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePermissionsBoundaryFromPermissionSetOutputBuilder {
     _request_id: Option<String>,
 }

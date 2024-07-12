@@ -32,8 +32,8 @@ impl AssociateTrialComponentOutput {
 }
 
 /// A builder for [`AssociateTrialComponentOutput`](crate::operation::associate_trial_component::AssociateTrialComponentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateTrialComponentOutputBuilder {
     pub(crate) trial_component_arn: ::std::option::Option<::std::string::String>,
     pub(crate) trial_arn: ::std::option::Option<::std::string::String>,

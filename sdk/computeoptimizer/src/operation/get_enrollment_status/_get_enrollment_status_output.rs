@@ -52,8 +52,8 @@ impl GetEnrollmentStatusOutput {
 }
 
 /// A builder for [`GetEnrollmentStatusOutput`](crate::operation::get_enrollment_status::GetEnrollmentStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEnrollmentStatusOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::Status>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,

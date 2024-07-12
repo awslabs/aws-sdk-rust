@@ -21,8 +21,8 @@ impl PositionalAccuracy {
 }
 
 /// A builder for [`PositionalAccuracy`](crate::types::PositionalAccuracy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PositionalAccuracyBuilder {
     pub(crate) horizontal: ::std::option::Option<f64>,
 }

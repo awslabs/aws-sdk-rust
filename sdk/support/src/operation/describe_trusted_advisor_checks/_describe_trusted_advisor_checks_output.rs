@@ -28,8 +28,8 @@ impl DescribeTrustedAdvisorChecksOutput {
 }
 
 /// A builder for [`DescribeTrustedAdvisorChecksOutput`](crate::operation::describe_trusted_advisor_checks::DescribeTrustedAdvisorChecksOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTrustedAdvisorChecksOutputBuilder {
     pub(crate) checks: ::std::option::Option<::std::vec::Vec<crate::types::TrustedAdvisorCheckDescription>>,
     _request_id: Option<String>,

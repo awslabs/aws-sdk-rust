@@ -26,8 +26,8 @@ impl GetSnapshotOutput {
 }
 
 /// A builder for [`GetSnapshotOutput`](crate::operation::get_snapshot::GetSnapshotOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSnapshotOutputBuilder {
     pub(crate) snapshot: ::std::option::Option<crate::types::Snapshot>,
     _request_id: Option<String>,

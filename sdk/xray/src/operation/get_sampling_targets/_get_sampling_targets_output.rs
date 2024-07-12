@@ -42,8 +42,8 @@ impl GetSamplingTargetsOutput {
 }
 
 /// A builder for [`GetSamplingTargetsOutput`](crate::operation::get_sampling_targets::GetSamplingTargetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSamplingTargetsOutputBuilder {
     pub(crate) sampling_target_documents: ::std::option::Option<::std::vec::Vec<crate::types::SamplingTargetDocument>>,
     pub(crate) last_rule_modification: ::std::option::Option<::aws_smithy_types::DateTime>,

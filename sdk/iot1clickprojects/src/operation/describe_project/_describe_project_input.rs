@@ -20,8 +20,8 @@ impl DescribeProjectInput {
 }
 
 /// A builder for [`DescribeProjectInput`](crate::operation::describe_project::DescribeProjectInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeProjectInputBuilder {
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
 }

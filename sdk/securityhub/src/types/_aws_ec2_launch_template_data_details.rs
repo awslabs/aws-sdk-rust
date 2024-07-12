@@ -213,8 +213,8 @@ impl AwsEc2LaunchTemplateDataDetails {
 }
 
 /// A builder for [`AwsEc2LaunchTemplateDataDetails`](crate::types::AwsEc2LaunchTemplateDataDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEc2LaunchTemplateDataDetailsBuilder {
     pub(crate) block_device_mapping_set: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails>>,
     pub(crate) capacity_reservation_specification:

@@ -54,8 +54,8 @@ impl RoutingProfileQueueConfigSummary {
 }
 
 /// A builder for [`RoutingProfileQueueConfigSummary`](crate::types::RoutingProfileQueueConfigSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RoutingProfileQueueConfigSummaryBuilder {
     pub(crate) queue_id: ::std::option::Option<::std::string::String>,
     pub(crate) queue_arn: ::std::option::Option<::std::string::String>,

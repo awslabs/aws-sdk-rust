@@ -18,8 +18,8 @@ impl DeleteOpsItemOutput {
 }
 
 /// A builder for [`DeleteOpsItemOutput`](crate::operation::delete_ops_item::DeleteOpsItemOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteOpsItemOutputBuilder {
     _request_id: Option<String>,
 }

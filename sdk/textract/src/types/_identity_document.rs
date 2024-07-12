@@ -37,8 +37,8 @@ impl IdentityDocument {
 }
 
 /// A builder for [`IdentityDocument`](crate::types::IdentityDocument).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IdentityDocumentBuilder {
     pub(crate) document_index: ::std::option::Option<i32>,
     pub(crate) identity_document_fields: ::std::option::Option<::std::vec::Vec<crate::types::IdentityDocumentField>>,

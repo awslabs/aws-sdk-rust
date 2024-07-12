@@ -33,8 +33,8 @@ impl AbpV10X {
 }
 
 /// A builder for [`AbpV10X`](crate::types::AbpV10X).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AbpV10XBuilder {
     pub(crate) dev_addr: ::std::option::Option<::std::string::String>,
     pub(crate) session_keys: ::std::option::Option<crate::types::SessionKeysAbpV10X>,

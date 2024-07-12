@@ -65,8 +65,8 @@ impl ExportInfo {
 }
 
 /// A builder for [`ExportInfo`](crate::types::ExportInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExportInfoBuilder {
     pub(crate) export_id: ::std::option::Option<::std::string::String>,
     pub(crate) export_status: ::std::option::Option<crate::types::ExportStatus>,

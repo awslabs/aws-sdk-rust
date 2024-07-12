@@ -20,8 +20,8 @@ impl DeleteProtectionGroupInput {
 }
 
 /// A builder for [`DeleteProtectionGroupInput`](crate::operation::delete_protection_group::DeleteProtectionGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteProtectionGroupInputBuilder {
     pub(crate) protection_group_id: ::std::option::Option<::std::string::String>,
 }

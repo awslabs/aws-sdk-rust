@@ -34,8 +34,8 @@ impl ListAccessorsOutput {
 }
 
 /// A builder for [`ListAccessorsOutput`](crate::operation::list_accessors::ListAccessorsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAccessorsOutputBuilder {
     pub(crate) accessors: ::std::option::Option<::std::vec::Vec<crate::types::AccessorSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

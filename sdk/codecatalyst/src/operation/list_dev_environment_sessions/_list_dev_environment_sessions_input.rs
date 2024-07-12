@@ -44,8 +44,8 @@ impl ListDevEnvironmentSessionsInput {
 }
 
 /// A builder for [`ListDevEnvironmentSessionsInput`](crate::operation::list_dev_environment_sessions::ListDevEnvironmentSessionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDevEnvironmentSessionsInputBuilder {
     pub(crate) space_name: ::std::option::Option<::std::string::String>,
     pub(crate) project_name: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl BuiltInIntentSortBy {
 }
 
 /// A builder for [`BuiltInIntentSortBy`](crate::types::BuiltInIntentSortBy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BuiltInIntentSortByBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::BuiltInIntentSortAttribute>,
     pub(crate) order: ::std::option::Option<crate::types::SortOrder>,

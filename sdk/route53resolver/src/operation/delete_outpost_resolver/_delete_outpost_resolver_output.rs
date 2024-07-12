@@ -26,8 +26,8 @@ impl DeleteOutpostResolverOutput {
 }
 
 /// A builder for [`DeleteOutpostResolverOutput`](crate::operation::delete_outpost_resolver::DeleteOutpostResolverOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteOutpostResolverOutputBuilder {
     pub(crate) outpost_resolver: ::std::option::Option<crate::types::OutpostResolver>,
     _request_id: Option<String>,

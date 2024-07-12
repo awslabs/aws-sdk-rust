@@ -18,8 +18,8 @@ impl PutAccessPointPolicyOutput {
 }
 
 /// A builder for [`PutAccessPointPolicyOutput`](crate::operation::put_access_point_policy::PutAccessPointPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutAccessPointPolicyOutputBuilder {
     _request_id: Option<String>,
 }

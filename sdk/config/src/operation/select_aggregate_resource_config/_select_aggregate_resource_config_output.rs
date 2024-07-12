@@ -40,8 +40,8 @@ impl SelectAggregateResourceConfigOutput {
 }
 
 /// A builder for [`SelectAggregateResourceConfigOutput`](crate::operation::select_aggregate_resource_config::SelectAggregateResourceConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SelectAggregateResourceConfigOutputBuilder {
     pub(crate) results: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) query_info: ::std::option::Option<crate::types::QueryInfo>,

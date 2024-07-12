@@ -26,8 +26,8 @@ impl UpdateAppImageConfigOutput {
 }
 
 /// A builder for [`UpdateAppImageConfigOutput`](crate::operation::update_app_image_config::UpdateAppImageConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAppImageConfigOutputBuilder {
     pub(crate) app_image_config_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

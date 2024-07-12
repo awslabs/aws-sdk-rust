@@ -41,8 +41,8 @@ impl BotReplicaSummary {
 }
 
 /// A builder for [`BotReplicaSummary`](crate::types::BotReplicaSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BotReplicaSummaryBuilder {
     pub(crate) replica_region: ::std::option::Option<::std::string::String>,
     pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,

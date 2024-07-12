@@ -26,8 +26,8 @@ impl DeleteWorkteamOutput {
 }
 
 /// A builder for [`DeleteWorkteamOutput`](crate::operation::delete_workteam::DeleteWorkteamOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteWorkteamOutputBuilder {
     pub(crate) success: ::std::option::Option<bool>,
     _request_id: Option<String>,

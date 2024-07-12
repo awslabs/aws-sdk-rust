@@ -32,8 +32,8 @@ impl GetSubscriptionTargetInput {
 }
 
 /// A builder for [`GetSubscriptionTargetInput`](crate::operation::get_subscription_target::GetSubscriptionTargetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSubscriptionTargetInputBuilder {
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) environment_identifier: ::std::option::Option<::std::string::String>,

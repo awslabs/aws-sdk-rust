@@ -27,8 +27,8 @@ impl CreateBrowserSettingsOutput {
 }
 
 /// A builder for [`CreateBrowserSettingsOutput`](crate::operation::create_browser_settings::CreateBrowserSettingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateBrowserSettingsOutputBuilder {
     pub(crate) browser_settings_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

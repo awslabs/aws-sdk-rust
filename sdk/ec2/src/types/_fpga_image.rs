@@ -117,8 +117,8 @@ impl FpgaImage {
 }
 
 /// A builder for [`FpgaImage`](crate::types::FpgaImage).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FpgaImageBuilder {
     pub(crate) fpga_image_id: ::std::option::Option<::std::string::String>,
     pub(crate) fpga_image_global_id: ::std::option::Option<::std::string::String>,

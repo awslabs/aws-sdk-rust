@@ -27,8 +27,8 @@ impl DeleteDomainAssociationInput {
 }
 
 /// A builder for [`DeleteDomainAssociationInput`](crate::operation::delete_domain_association::DeleteDomainAssociationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDomainAssociationInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,

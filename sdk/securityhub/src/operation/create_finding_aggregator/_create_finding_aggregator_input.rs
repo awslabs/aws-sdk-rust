@@ -50,8 +50,8 @@ impl CreateFindingAggregatorInput {
 }
 
 /// A builder for [`CreateFindingAggregatorInput`](crate::operation::create_finding_aggregator::CreateFindingAggregatorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateFindingAggregatorInputBuilder {
     pub(crate) region_linking_mode: ::std::option::Option<::std::string::String>,
     pub(crate) regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -18,8 +18,8 @@ impl DeleteStoredQueryOutput {
 }
 
 /// A builder for [`DeleteStoredQueryOutput`](crate::operation::delete_stored_query::DeleteStoredQueryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteStoredQueryOutputBuilder {
     _request_id: Option<String>,
 }

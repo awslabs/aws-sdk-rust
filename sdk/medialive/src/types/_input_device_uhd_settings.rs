@@ -89,8 +89,8 @@ impl InputDeviceUhdSettings {
 }
 
 /// A builder for [`InputDeviceUhdSettings`](crate::types::InputDeviceUhdSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InputDeviceUhdSettingsBuilder {
     pub(crate) active_input: ::std::option::Option<crate::types::InputDeviceActiveInput>,
     pub(crate) configured_input: ::std::option::Option<crate::types::InputDeviceConfiguredInput>,

@@ -27,8 +27,8 @@ impl GetCorsPolicyOutput {
 }
 
 /// A builder for [`GetCorsPolicyOutput`](crate::operation::get_cors_policy::GetCorsPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCorsPolicyOutputBuilder {
     pub(crate) cors_policy: ::std::option::Option<::std::vec::Vec<crate::types::CorsRule>>,
     _request_id: Option<String>,

@@ -165,8 +165,8 @@ impl AwsLambdaFunctionDetails {
 }
 
 /// A builder for [`AwsLambdaFunctionDetails`](crate::types::AwsLambdaFunctionDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsLambdaFunctionDetailsBuilder {
     pub(crate) code: ::std::option::Option<crate::types::AwsLambdaFunctionCode>,
     pub(crate) code_sha256: ::std::option::Option<::std::string::String>,

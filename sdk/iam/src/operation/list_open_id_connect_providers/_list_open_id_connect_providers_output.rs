@@ -29,8 +29,8 @@ impl ListOpenIdConnectProvidersOutput {
 }
 
 /// A builder for [`ListOpenIdConnectProvidersOutput`](crate::operation::list_open_id_connect_providers::ListOpenIdConnectProvidersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListOpenIdConnectProvidersOutputBuilder {
     pub(crate) open_id_connect_provider_list: ::std::option::Option<::std::vec::Vec<crate::types::OpenIdConnectProviderListEntry>>,
     _request_id: Option<String>,

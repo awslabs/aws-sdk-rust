@@ -33,8 +33,8 @@ impl CanaryRunStatus {
 }
 
 /// A builder for [`CanaryRunStatus`](crate::types::CanaryRunStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CanaryRunStatusBuilder {
     pub(crate) state: ::std::option::Option<crate::types::CanaryRunState>,
     pub(crate) state_reason: ::std::option::Option<::std::string::String>,

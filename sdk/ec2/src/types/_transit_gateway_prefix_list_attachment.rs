@@ -33,8 +33,8 @@ impl TransitGatewayPrefixListAttachment {
 }
 
 /// A builder for [`TransitGatewayPrefixListAttachment`](crate::types::TransitGatewayPrefixListAttachment).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TransitGatewayPrefixListAttachmentBuilder {
     pub(crate) transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::TransitGatewayAttachmentResourceType>,

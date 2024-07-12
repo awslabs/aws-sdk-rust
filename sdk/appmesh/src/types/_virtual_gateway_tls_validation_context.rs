@@ -27,8 +27,8 @@ impl VirtualGatewayTlsValidationContext {
 }
 
 /// A builder for [`VirtualGatewayTlsValidationContext`](crate::types::VirtualGatewayTlsValidationContext).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VirtualGatewayTlsValidationContextBuilder {
     pub(crate) trust: ::std::option::Option<crate::types::VirtualGatewayTlsValidationContextTrust>,
     pub(crate) subject_alternative_names: ::std::option::Option<crate::types::SubjectAlternativeNames>,

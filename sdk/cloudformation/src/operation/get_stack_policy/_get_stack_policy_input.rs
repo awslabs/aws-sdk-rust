@@ -21,8 +21,8 @@ impl GetStackPolicyInput {
 }
 
 /// A builder for [`GetStackPolicyInput`](crate::operation::get_stack_policy::GetStackPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetStackPolicyInputBuilder {
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
 }

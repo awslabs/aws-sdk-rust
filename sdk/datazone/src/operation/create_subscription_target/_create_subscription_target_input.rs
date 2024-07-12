@@ -96,8 +96,8 @@ impl CreateSubscriptionTargetInput {
 }
 
 /// A builder for [`CreateSubscriptionTargetInput`](crate::operation::create_subscription_target::CreateSubscriptionTargetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateSubscriptionTargetInputBuilder {
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) environment_identifier: ::std::option::Option<::std::string::String>,

@@ -33,8 +33,8 @@ impl ReferenceLineDynamicDataConfiguration {
 }
 
 /// A builder for [`ReferenceLineDynamicDataConfiguration`](crate::types::ReferenceLineDynamicDataConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReferenceLineDynamicDataConfigurationBuilder {
     pub(crate) column: ::std::option::Option<crate::types::ColumnIdentifier>,
     pub(crate) measure_aggregation_function: ::std::option::Option<crate::types::AggregationFunction>,

@@ -58,8 +58,8 @@ impl IpPermission {
 }
 
 /// A builder for [`IpPermission`](crate::types::IpPermission).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct IpPermissionBuilder {
     pub(crate) from_port: ::std::option::Option<i32>,
     pub(crate) to_port: ::std::option::Option<i32>,

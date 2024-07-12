@@ -27,8 +27,8 @@ impl ComplianceByConfigRule {
 }
 
 /// A builder for [`ComplianceByConfigRule`](crate::types::ComplianceByConfigRule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ComplianceByConfigRuleBuilder {
     pub(crate) config_rule_name: ::std::option::Option<::std::string::String>,
     pub(crate) compliance: ::std::option::Option<crate::types::Compliance>,

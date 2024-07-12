@@ -21,8 +21,8 @@ impl LifecyclePolicyPreviewFilter {
 }
 
 /// A builder for [`LifecyclePolicyPreviewFilter`](crate::types::LifecyclePolicyPreviewFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LifecyclePolicyPreviewFilterBuilder {
     pub(crate) tag_status: ::std::option::Option<crate::types::TagStatus>,
 }

@@ -27,8 +27,8 @@ impl SystemEvent {
 }
 
 /// A builder for [`SystemEvent`](crate::types::SystemEvent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SystemEventBuilder {
     pub(crate) event_type: ::std::option::Option<crate::types::EventType>,
     pub(crate) state_change_configuration: ::std::option::Option<crate::types::StateChangeConfiguration>,

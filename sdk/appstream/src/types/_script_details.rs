@@ -39,8 +39,8 @@ impl ScriptDetails {
 }
 
 /// A builder for [`ScriptDetails`](crate::types::ScriptDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScriptDetailsBuilder {
     pub(crate) script_s3_location: ::std::option::Option<crate::types::S3Location>,
     pub(crate) executable_path: ::std::option::Option<::std::string::String>,

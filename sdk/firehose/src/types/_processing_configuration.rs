@@ -29,8 +29,8 @@ impl ProcessingConfiguration {
 }
 
 /// A builder for [`ProcessingConfiguration`](crate::types::ProcessingConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProcessingConfigurationBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) processors: ::std::option::Option<::std::vec::Vec<crate::types::Processor>>,

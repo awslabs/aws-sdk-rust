@@ -27,8 +27,8 @@ impl LoadBalancerTlsCertificateDomainValidationOption {
 }
 
 /// A builder for [`LoadBalancerTlsCertificateDomainValidationOption`](crate::types::LoadBalancerTlsCertificateDomainValidationOption).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LoadBalancerTlsCertificateDomainValidationOptionBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) validation_status: ::std::option::Option<crate::types::LoadBalancerTlsCertificateDomainStatus>,

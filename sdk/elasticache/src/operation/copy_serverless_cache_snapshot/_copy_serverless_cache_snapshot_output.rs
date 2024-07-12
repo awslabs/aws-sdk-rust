@@ -26,8 +26,8 @@ impl CopyServerlessCacheSnapshotOutput {
 }
 
 /// A builder for [`CopyServerlessCacheSnapshotOutput`](crate::operation::copy_serverless_cache_snapshot::CopyServerlessCacheSnapshotOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CopyServerlessCacheSnapshotOutputBuilder {
     pub(crate) serverless_cache_snapshot: ::std::option::Option<crate::types::ServerlessCacheSnapshot>,
     _request_id: Option<String>,

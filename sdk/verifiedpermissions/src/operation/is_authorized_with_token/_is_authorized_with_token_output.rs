@@ -46,8 +46,8 @@ impl IsAuthorizedWithTokenOutput {
 }
 
 /// A builder for [`IsAuthorizedWithTokenOutput`](crate::operation::is_authorized_with_token::IsAuthorizedWithTokenOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IsAuthorizedWithTokenOutputBuilder {
     pub(crate) decision: ::std::option::Option<crate::types::Decision>,
     pub(crate) determining_policies: ::std::option::Option<::std::vec::Vec<crate::types::DeterminingPolicyItem>>,

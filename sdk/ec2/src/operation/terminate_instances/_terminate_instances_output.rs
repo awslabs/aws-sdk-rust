@@ -28,8 +28,8 @@ impl TerminateInstancesOutput {
 }
 
 /// A builder for [`TerminateInstancesOutput`](crate::operation::terminate_instances::TerminateInstancesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TerminateInstancesOutputBuilder {
     pub(crate) terminating_instances: ::std::option::Option<::std::vec::Vec<crate::types::InstanceStateChange>>,
     _request_id: Option<String>,

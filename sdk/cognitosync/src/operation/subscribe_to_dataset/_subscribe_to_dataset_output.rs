@@ -19,8 +19,8 @@ impl SubscribeToDatasetOutput {
 }
 
 /// A builder for [`SubscribeToDatasetOutput`](crate::operation::subscribe_to_dataset::SubscribeToDatasetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SubscribeToDatasetOutputBuilder {
     _request_id: Option<String>,
 }

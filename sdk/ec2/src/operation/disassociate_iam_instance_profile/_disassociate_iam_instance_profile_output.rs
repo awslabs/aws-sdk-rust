@@ -26,8 +26,8 @@ impl DisassociateIamInstanceProfileOutput {
 }
 
 /// A builder for [`DisassociateIamInstanceProfileOutput`](crate::operation::disassociate_iam_instance_profile::DisassociateIamInstanceProfileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateIamInstanceProfileOutputBuilder {
     pub(crate) iam_instance_profile_association: ::std::option::Option<crate::types::IamInstanceProfileAssociation>,
     _request_id: Option<String>,

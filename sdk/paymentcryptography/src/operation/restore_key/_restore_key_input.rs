@@ -20,8 +20,8 @@ impl RestoreKeyInput {
 }
 
 /// A builder for [`RestoreKeyInput`](crate::operation::restore_key::RestoreKeyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RestoreKeyInputBuilder {
     pub(crate) key_identifier: ::std::option::Option<::std::string::String>,
 }

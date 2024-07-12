@@ -62,8 +62,8 @@ impl CreateWorkspaceBundleInput {
 }
 
 /// A builder for [`CreateWorkspaceBundleInput`](crate::operation::create_workspace_bundle::CreateWorkspaceBundleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateWorkspaceBundleInputBuilder {
     pub(crate) bundle_name: ::std::option::Option<::std::string::String>,
     pub(crate) bundle_description: ::std::option::Option<::std::string::String>,

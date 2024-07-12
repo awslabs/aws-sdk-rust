@@ -41,8 +41,8 @@ impl Hits {
 }
 
 /// A builder for [`Hits`](crate::types::Hits).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HitsBuilder {
     pub(crate) found: ::std::option::Option<i64>,
     pub(crate) start: ::std::option::Option<i64>,

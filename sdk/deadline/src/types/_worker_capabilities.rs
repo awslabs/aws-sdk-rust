@@ -29,8 +29,8 @@ impl WorkerCapabilities {
 }
 
 /// A builder for [`WorkerCapabilities`](crate::types::WorkerCapabilities).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WorkerCapabilitiesBuilder {
     pub(crate) amounts: ::std::option::Option<::std::vec::Vec<crate::types::WorkerAmountCapability>>,
     pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::WorkerAttributeCapability>>,

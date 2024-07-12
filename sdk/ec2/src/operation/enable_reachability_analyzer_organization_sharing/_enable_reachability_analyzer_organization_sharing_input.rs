@@ -22,8 +22,8 @@ impl EnableReachabilityAnalyzerOrganizationSharingInput {
 }
 
 /// A builder for [`EnableReachabilityAnalyzerOrganizationSharingInput`](crate::operation::enable_reachability_analyzer_organization_sharing::EnableReachabilityAnalyzerOrganizationSharingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnableReachabilityAnalyzerOrganizationSharingInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
 }

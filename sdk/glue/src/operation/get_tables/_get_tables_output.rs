@@ -34,8 +34,8 @@ impl GetTablesOutput {
 }
 
 /// A builder for [`GetTablesOutput`](crate::operation::get_tables::GetTablesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTablesOutputBuilder {
     pub(crate) table_list: ::std::option::Option<::std::vec::Vec<crate::types::Table>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

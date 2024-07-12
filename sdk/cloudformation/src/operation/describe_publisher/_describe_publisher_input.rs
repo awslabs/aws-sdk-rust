@@ -22,8 +22,8 @@ impl DescribePublisherInput {
 }
 
 /// A builder for [`DescribePublisherInput`](crate::operation::describe_publisher::DescribePublisherInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribePublisherInputBuilder {
     pub(crate) publisher_id: ::std::option::Option<::std::string::String>,
 }

@@ -33,8 +33,8 @@ impl MetricsSource {
 }
 
 /// A builder for [`MetricsSource`](crate::types::MetricsSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MetricsSourceBuilder {
     pub(crate) content_type: ::std::option::Option<::std::string::String>,
     pub(crate) content_digest: ::std::option::Option<::std::string::String>,

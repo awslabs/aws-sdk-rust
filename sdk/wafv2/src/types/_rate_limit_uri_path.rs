@@ -22,8 +22,8 @@ impl RateLimitUriPath {
 }
 
 /// A builder for [`RateLimitUriPath`](crate::types::RateLimitUriPath).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RateLimitUriPathBuilder {
     pub(crate) text_transformations: ::std::option::Option<::std::vec::Vec<crate::types::TextTransformation>>,
 }

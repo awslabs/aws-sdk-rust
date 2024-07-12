@@ -26,8 +26,8 @@ impl CreateSolutionVersionOutput {
 }
 
 /// A builder for [`CreateSolutionVersionOutput`](crate::operation::create_solution_version::CreateSolutionVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSolutionVersionOutputBuilder {
     pub(crate) solution_version_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

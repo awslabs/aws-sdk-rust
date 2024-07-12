@@ -46,8 +46,8 @@ impl DescribeInstanceInformationInput {
 }
 
 /// A builder for [`DescribeInstanceInformationInput`](crate::operation::describe_instance_information::DescribeInstanceInformationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeInstanceInformationInputBuilder {
     pub(crate) instance_information_filter_list: ::std::option::Option<::std::vec::Vec<crate::types::InstanceInformationFilter>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::InstanceInformationStringFilter>>,

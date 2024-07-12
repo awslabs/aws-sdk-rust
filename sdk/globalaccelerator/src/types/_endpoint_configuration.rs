@@ -47,8 +47,8 @@ impl EndpointConfiguration {
 }
 
 /// A builder for [`EndpointConfiguration`](crate::types::EndpointConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EndpointConfigurationBuilder {
     pub(crate) endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) weight: ::std::option::Option<i32>,

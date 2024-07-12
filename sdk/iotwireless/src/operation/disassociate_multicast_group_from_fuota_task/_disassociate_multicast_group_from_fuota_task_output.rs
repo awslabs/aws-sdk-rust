@@ -19,8 +19,8 @@ impl DisassociateMulticastGroupFromFuotaTaskOutput {
 }
 
 /// A builder for [`DisassociateMulticastGroupFromFuotaTaskOutput`](crate::operation::disassociate_multicast_group_from_fuota_task::DisassociateMulticastGroupFromFuotaTaskOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateMulticastGroupFromFuotaTaskOutputBuilder {
     _request_id: Option<String>,
 }

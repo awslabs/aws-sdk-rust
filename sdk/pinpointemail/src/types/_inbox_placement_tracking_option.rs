@@ -29,8 +29,8 @@ impl InboxPlacementTrackingOption {
 }
 
 /// A builder for [`InboxPlacementTrackingOption`](crate::types::InboxPlacementTrackingOption).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InboxPlacementTrackingOptionBuilder {
     pub(crate) global: ::std::option::Option<bool>,
     pub(crate) tracked_isps: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

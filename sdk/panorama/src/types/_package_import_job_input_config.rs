@@ -21,8 +21,8 @@ impl PackageImportJobInputConfig {
 }
 
 /// A builder for [`PackageImportJobInputConfig`](crate::types::PackageImportJobInputConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PackageImportJobInputConfigBuilder {
     pub(crate) package_version_input_config: ::std::option::Option<crate::types::PackageVersionInputConfig>,
 }

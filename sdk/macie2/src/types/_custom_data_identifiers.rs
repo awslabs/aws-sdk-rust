@@ -29,8 +29,8 @@ impl CustomDataIdentifiers {
 }
 
 /// A builder for [`CustomDataIdentifiers`](crate::types::CustomDataIdentifiers).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CustomDataIdentifiersBuilder {
     pub(crate) detections: ::std::option::Option<::std::vec::Vec<crate::types::CustomDetection>>,
     pub(crate) total_count: ::std::option::Option<i64>,

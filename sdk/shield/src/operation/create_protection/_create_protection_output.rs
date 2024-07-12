@@ -26,8 +26,8 @@ impl CreateProtectionOutput {
 }
 
 /// A builder for [`CreateProtectionOutput`](crate::operation::create_protection::CreateProtectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateProtectionOutputBuilder {
     pub(crate) protection_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

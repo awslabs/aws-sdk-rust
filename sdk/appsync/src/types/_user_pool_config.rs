@@ -41,8 +41,8 @@ impl UserPoolConfig {
 }
 
 /// A builder for [`UserPoolConfig`](crate::types::UserPoolConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UserPoolConfigBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) aws_region: ::std::option::Option<::std::string::String>,

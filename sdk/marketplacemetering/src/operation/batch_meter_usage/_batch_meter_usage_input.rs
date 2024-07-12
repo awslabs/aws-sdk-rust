@@ -29,8 +29,8 @@ impl BatchMeterUsageInput {
 }
 
 /// A builder for [`BatchMeterUsageInput`](crate::operation::batch_meter_usage::BatchMeterUsageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchMeterUsageInputBuilder {
     pub(crate) usage_records: ::std::option::Option<::std::vec::Vec<crate::types::UsageRecord>>,
     pub(crate) product_code: ::std::option::Option<::std::string::String>,

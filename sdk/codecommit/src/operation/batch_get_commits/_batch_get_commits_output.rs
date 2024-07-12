@@ -36,8 +36,8 @@ impl BatchGetCommitsOutput {
 }
 
 /// A builder for [`BatchGetCommitsOutput`](crate::operation::batch_get_commits::BatchGetCommitsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetCommitsOutputBuilder {
     pub(crate) commits: ::std::option::Option<::std::vec::Vec<crate::types::Commit>>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetCommitsError>>,

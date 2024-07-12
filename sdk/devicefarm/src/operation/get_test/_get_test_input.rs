@@ -21,8 +21,8 @@ impl GetTestInput {
 }
 
 /// A builder for [`GetTestInput`](crate::operation::get_test::GetTestInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTestInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }

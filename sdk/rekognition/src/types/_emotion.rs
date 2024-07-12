@@ -27,8 +27,8 @@ impl Emotion {
 }
 
 /// A builder for [`Emotion`](crate::types::Emotion).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EmotionBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::EmotionName>,
     pub(crate) confidence: ::std::option::Option<f32>,

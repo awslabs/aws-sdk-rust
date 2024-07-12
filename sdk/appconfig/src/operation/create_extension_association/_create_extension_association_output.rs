@@ -56,8 +56,8 @@ impl CreateExtensionAssociationOutput {
 }
 
 /// A builder for [`CreateExtensionAssociationOutput`](crate::operation::create_extension_association::CreateExtensionAssociationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateExtensionAssociationOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) extension_arn: ::std::option::Option<::std::string::String>,

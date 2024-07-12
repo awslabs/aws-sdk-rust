@@ -41,8 +41,8 @@ impl GetAuthorizationTokenOutput {
 }
 
 /// A builder for [`GetAuthorizationTokenOutput`](crate::operation::get_authorization_token::GetAuthorizationTokenOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetAuthorizationTokenOutputBuilder {
     pub(crate) authorization_token: ::std::option::Option<::std::string::String>,
     pub(crate) expiration: ::std::option::Option<::aws_smithy_types::DateTime>,

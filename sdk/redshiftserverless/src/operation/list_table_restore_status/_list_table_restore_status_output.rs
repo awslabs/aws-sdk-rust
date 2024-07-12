@@ -34,8 +34,8 @@ impl ListTableRestoreStatusOutput {
 }
 
 /// A builder for [`ListTableRestoreStatusOutput`](crate::operation::list_table_restore_status::ListTableRestoreStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTableRestoreStatusOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) table_restore_statuses: ::std::option::Option<::std::vec::Vec<crate::types::TableRestoreStatus>>,

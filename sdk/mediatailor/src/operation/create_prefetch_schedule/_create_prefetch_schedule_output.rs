@@ -56,8 +56,8 @@ impl CreatePrefetchScheduleOutput {
 }
 
 /// A builder for [`CreatePrefetchScheduleOutput`](crate::operation::create_prefetch_schedule::CreatePrefetchScheduleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePrefetchScheduleOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) consumption: ::std::option::Option<crate::types::PrefetchConsumption>,

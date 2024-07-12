@@ -129,8 +129,8 @@ impl ConnectorProfileCredentials {
 }
 
 /// A builder for [`ConnectorProfileCredentials`](crate::types::ConnectorProfileCredentials).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConnectorProfileCredentialsBuilder {
     pub(crate) amplitude: ::std::option::Option<crate::types::AmplitudeConnectorProfileCredentials>,
     pub(crate) datadog: ::std::option::Option<crate::types::DatadogConnectorProfileCredentials>,

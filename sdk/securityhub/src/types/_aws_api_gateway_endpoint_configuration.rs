@@ -25,8 +25,8 @@ impl AwsApiGatewayEndpointConfiguration {
 }
 
 /// A builder for [`AwsApiGatewayEndpointConfiguration`](crate::types::AwsApiGatewayEndpointConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsApiGatewayEndpointConfigurationBuilder {
     pub(crate) types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

@@ -27,8 +27,8 @@ impl ChefConfiguration {
 }
 
 /// A builder for [`ChefConfiguration`](crate::types::ChefConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ChefConfigurationBuilder {
     pub(crate) manage_berkshelf: ::std::option::Option<bool>,
     pub(crate) berkshelf_version: ::std::option::Option<::std::string::String>,

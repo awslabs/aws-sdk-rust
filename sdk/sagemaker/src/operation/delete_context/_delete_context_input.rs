@@ -20,8 +20,8 @@ impl DeleteContextInput {
 }
 
 /// A builder for [`DeleteContextInput`](crate::operation::delete_context::DeleteContextInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteContextInputBuilder {
     pub(crate) context_name: ::std::option::Option<::std::string::String>,
 }

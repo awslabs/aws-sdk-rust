@@ -128,8 +128,8 @@ impl ScheduledInstancesLaunchSpecification {
 }
 
 /// A builder for [`ScheduledInstancesLaunchSpecification`](crate::types::ScheduledInstancesLaunchSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ScheduledInstancesLaunchSpecificationBuilder {
     pub(crate) block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledInstancesBlockDeviceMapping>>,
     pub(crate) ebs_optimized: ::std::option::Option<bool>,

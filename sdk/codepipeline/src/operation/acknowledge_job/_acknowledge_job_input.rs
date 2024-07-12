@@ -27,8 +27,8 @@ impl AcknowledgeJobInput {
 }
 
 /// A builder for [`AcknowledgeJobInput`](crate::operation::acknowledge_job::AcknowledgeJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AcknowledgeJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) nonce: ::std::option::Option<::std::string::String>,

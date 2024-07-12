@@ -38,8 +38,8 @@ impl StartThingRegistrationTaskInput {
 }
 
 /// A builder for [`StartThingRegistrationTaskInput`](crate::operation::start_thing_registration_task::StartThingRegistrationTaskInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartThingRegistrationTaskInputBuilder {
     pub(crate) template_body: ::std::option::Option<::std::string::String>,
     pub(crate) input_file_bucket: ::std::option::Option<::std::string::String>,

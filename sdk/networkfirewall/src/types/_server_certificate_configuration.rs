@@ -63,8 +63,8 @@ impl ServerCertificateConfiguration {
 }
 
 /// A builder for [`ServerCertificateConfiguration`](crate::types::ServerCertificateConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServerCertificateConfigurationBuilder {
     pub(crate) server_certificates: ::std::option::Option<::std::vec::Vec<crate::types::ServerCertificate>>,
     pub(crate) scopes: ::std::option::Option<::std::vec::Vec<crate::types::ServerCertificateScope>>,

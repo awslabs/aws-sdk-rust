@@ -21,8 +21,8 @@ impl DefaultRelativeDateTimeControlOptions {
 }
 
 /// A builder for [`DefaultRelativeDateTimeControlOptions`](crate::types::DefaultRelativeDateTimeControlOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DefaultRelativeDateTimeControlOptionsBuilder {
     pub(crate) display_options: ::std::option::Option<crate::types::RelativeDateTimeControlDisplayOptions>,
 }

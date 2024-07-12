@@ -22,8 +22,8 @@ impl DescribeMatchmakingInput {
 }
 
 /// A builder for [`DescribeMatchmakingInput`](crate::operation::describe_matchmaking::DescribeMatchmakingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeMatchmakingInputBuilder {
     pub(crate) ticket_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

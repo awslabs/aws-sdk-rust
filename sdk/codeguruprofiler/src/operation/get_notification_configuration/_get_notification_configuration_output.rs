@@ -27,8 +27,8 @@ impl GetNotificationConfigurationOutput {
 }
 
 /// A builder for [`GetNotificationConfigurationOutput`](crate::operation::get_notification_configuration::GetNotificationConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetNotificationConfigurationOutputBuilder {
     pub(crate) notification_configuration: ::std::option::Option<crate::types::NotificationConfiguration>,
     _request_id: Option<String>,

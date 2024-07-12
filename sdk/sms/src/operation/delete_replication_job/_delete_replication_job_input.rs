@@ -20,8 +20,8 @@ impl DeleteReplicationJobInput {
 }
 
 /// A builder for [`DeleteReplicationJobInput`](crate::operation::delete_replication_job::DeleteReplicationJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteReplicationJobInputBuilder {
     pub(crate) replication_job_id: ::std::option::Option<::std::string::String>,
 }

@@ -47,8 +47,8 @@ impl DecimalValueWhenUnsetConfiguration {
 }
 
 /// A builder for [`DecimalValueWhenUnsetConfiguration`](crate::types::DecimalValueWhenUnsetConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DecimalValueWhenUnsetConfigurationBuilder {
     pub(crate) value_when_unset_option: ::std::option::Option<crate::types::ValueWhenUnsetOption>,
     pub(crate) custom_value: ::std::option::Option<f64>,

@@ -27,8 +27,8 @@ impl DescribeRouterConfigurationInput {
 }
 
 /// A builder for [`DescribeRouterConfigurationInput`](crate::operation::describe_router_configuration::DescribeRouterConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRouterConfigurationInputBuilder {
     pub(crate) virtual_interface_id: ::std::option::Option<::std::string::String>,
     pub(crate) router_type_identifier: ::std::option::Option<::std::string::String>,

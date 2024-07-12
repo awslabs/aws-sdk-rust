@@ -38,8 +38,8 @@ impl CreateNotificationSubscriptionInput {
 }
 
 /// A builder for [`CreateNotificationSubscriptionInput`](crate::operation::create_notification_subscription::CreateNotificationSubscriptionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateNotificationSubscriptionInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,

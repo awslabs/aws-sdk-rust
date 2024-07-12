@@ -63,8 +63,8 @@ impl TableCellStyle {
 }
 
 /// A builder for [`TableCellStyle`](crate::types::TableCellStyle).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TableCellStyleBuilder {
     pub(crate) visibility: ::std::option::Option<crate::types::Visibility>,
     pub(crate) font_configuration: ::std::option::Option<crate::types::FontConfiguration>,

@@ -28,8 +28,8 @@ impl DetectCustomLabelsOutput {
 }
 
 /// A builder for [`DetectCustomLabelsOutput`](crate::operation::detect_custom_labels::DetectCustomLabelsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetectCustomLabelsOutputBuilder {
     pub(crate) custom_labels: ::std::option::Option<::std::vec::Vec<crate::types::CustomLabel>>,
     _request_id: Option<String>,

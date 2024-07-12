@@ -34,8 +34,8 @@ impl GetFlowTemplateRevisionsOutput {
 }
 
 /// A builder for [`GetFlowTemplateRevisionsOutput`](crate::operation::get_flow_template_revisions::GetFlowTemplateRevisionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetFlowTemplateRevisionsOutputBuilder {
     pub(crate) summaries: ::std::option::Option<::std::vec::Vec<crate::types::FlowTemplateSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

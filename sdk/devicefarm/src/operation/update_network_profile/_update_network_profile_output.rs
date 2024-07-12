@@ -26,8 +26,8 @@ impl UpdateNetworkProfileOutput {
 }
 
 /// A builder for [`UpdateNetworkProfileOutput`](crate::operation::update_network_profile::UpdateNetworkProfileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateNetworkProfileOutputBuilder {
     pub(crate) network_profile: ::std::option::Option<crate::types::NetworkProfile>,
     _request_id: Option<String>,

@@ -165,8 +165,8 @@ impl AwsApiGatewayV2StageDetails {
 }
 
 /// A builder for [`AwsApiGatewayV2StageDetails`](crate::types::AwsApiGatewayV2StageDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsApiGatewayV2StageDetailsBuilder {
     pub(crate) client_certificate_id: ::std::option::Option<::std::string::String>,
     pub(crate) created_date: ::std::option::Option<::std::string::String>,

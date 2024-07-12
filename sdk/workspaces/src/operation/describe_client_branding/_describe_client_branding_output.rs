@@ -56,8 +56,8 @@ impl DescribeClientBrandingOutput {
 }
 
 /// A builder for [`DescribeClientBrandingOutput`](crate::operation::describe_client_branding::DescribeClientBrandingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeClientBrandingOutputBuilder {
     pub(crate) device_type_windows: ::std::option::Option<crate::types::DefaultClientBrandingAttributes>,
     pub(crate) device_type_osx: ::std::option::Option<crate::types::DefaultClientBrandingAttributes>,

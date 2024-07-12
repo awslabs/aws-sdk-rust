@@ -189,8 +189,8 @@ impl AdministrativeAction {
 }
 
 /// A builder for [`AdministrativeAction`](crate::types::AdministrativeAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AdministrativeActionBuilder {
     pub(crate) administrative_action_type: ::std::option::Option<crate::types::AdministrativeActionType>,
     pub(crate) progress_percent: ::std::option::Option<i32>,

@@ -77,8 +77,8 @@ impl TestIdentityProviderInput {
 }
 
 /// A builder for [`TestIdentityProviderInput`](crate::operation::test_identity_provider::TestIdentityProviderInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct TestIdentityProviderInputBuilder {
     pub(crate) server_id: ::std::option::Option<::std::string::String>,
     pub(crate) server_protocol: ::std::option::Option<crate::types::Protocol>,

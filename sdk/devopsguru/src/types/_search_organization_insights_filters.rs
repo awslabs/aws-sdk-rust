@@ -43,8 +43,8 @@ impl SearchOrganizationInsightsFilters {
 }
 
 /// A builder for [`SearchOrganizationInsightsFilters`](crate::types::SearchOrganizationInsightsFilters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchOrganizationInsightsFiltersBuilder {
     pub(crate) severities: ::std::option::Option<::std::vec::Vec<crate::types::InsightSeverity>>,
     pub(crate) statuses: ::std::option::Option<::std::vec::Vec<crate::types::InsightStatus>>,

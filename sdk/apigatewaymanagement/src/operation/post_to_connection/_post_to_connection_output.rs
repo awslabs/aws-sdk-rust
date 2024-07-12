@@ -18,8 +18,8 @@ impl PostToConnectionOutput {
 }
 
 /// A builder for [`PostToConnectionOutput`](crate::operation::post_to_connection::PostToConnectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PostToConnectionOutputBuilder {
     _request_id: Option<String>,
 }

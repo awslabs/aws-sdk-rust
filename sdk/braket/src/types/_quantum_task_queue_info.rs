@@ -40,8 +40,8 @@ impl QuantumTaskQueueInfo {
 }
 
 /// A builder for [`QuantumTaskQueueInfo`](crate::types::QuantumTaskQueueInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct QuantumTaskQueueInfoBuilder {
     pub(crate) queue: ::std::option::Option<crate::types::QueueName>,
     pub(crate) position: ::std::option::Option<::std::string::String>,

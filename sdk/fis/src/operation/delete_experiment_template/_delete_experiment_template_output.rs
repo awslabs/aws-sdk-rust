@@ -26,8 +26,8 @@ impl DeleteExperimentTemplateOutput {
 }
 
 /// A builder for [`DeleteExperimentTemplateOutput`](crate::operation::delete_experiment_template::DeleteExperimentTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteExperimentTemplateOutputBuilder {
     pub(crate) experiment_template: ::std::option::Option<crate::types::ExperimentTemplate>,
     _request_id: Option<String>,

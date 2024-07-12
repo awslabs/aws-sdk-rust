@@ -21,8 +21,8 @@ impl FastResetToken {
 }
 
 /// A builder for [`FastResetToken`](crate::types::FastResetToken).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FastResetTokenBuilder {
     pub(crate) token: ::std::option::Option<::std::string::String>,
 }

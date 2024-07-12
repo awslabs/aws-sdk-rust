@@ -85,8 +85,8 @@ impl ReviewTemplateLensReview {
 }
 
 /// A builder for [`ReviewTemplateLensReview`](crate::types::ReviewTemplateLensReview).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReviewTemplateLensReviewBuilder {
     pub(crate) lens_alias: ::std::option::Option<::std::string::String>,
     pub(crate) lens_arn: ::std::option::Option<::std::string::String>,

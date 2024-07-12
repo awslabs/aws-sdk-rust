@@ -77,8 +77,8 @@ impl AccountRecommendationLifecycleSummary {
 }
 
 /// A builder for [`AccountRecommendationLifecycleSummary`](crate::types::AccountRecommendationLifecycleSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AccountRecommendationLifecycleSummaryBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) account_recommendation_arn: ::std::option::Option<::std::string::String>,

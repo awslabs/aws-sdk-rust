@@ -27,8 +27,8 @@ impl BatchPutPropertyValuesOutput {
 }
 
 /// A builder for [`BatchPutPropertyValuesOutput`](crate::operation::batch_put_property_values::BatchPutPropertyValuesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchPutPropertyValuesOutputBuilder {
     pub(crate) error_entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutPropertyErrorEntry>>,
     _request_id: Option<String>,

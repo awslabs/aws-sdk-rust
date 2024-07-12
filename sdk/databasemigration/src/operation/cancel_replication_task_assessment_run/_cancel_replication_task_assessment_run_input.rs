@@ -21,8 +21,8 @@ impl CancelReplicationTaskAssessmentRunInput {
 }
 
 /// A builder for [`CancelReplicationTaskAssessmentRunInput`](crate::operation::cancel_replication_task_assessment_run::CancelReplicationTaskAssessmentRunInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelReplicationTaskAssessmentRunInputBuilder {
     pub(crate) replication_task_assessment_run_arn: ::std::option::Option<::std::string::String>,
 }

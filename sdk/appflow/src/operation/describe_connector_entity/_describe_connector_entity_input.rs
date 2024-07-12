@@ -38,8 +38,8 @@ impl DescribeConnectorEntityInput {
 }
 
 /// A builder for [`DescribeConnectorEntityInput`](crate::operation::describe_connector_entity::DescribeConnectorEntityInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeConnectorEntityInputBuilder {
     pub(crate) connector_entity_name: ::std::option::Option<::std::string::String>,
     pub(crate) connector_type: ::std::option::Option<crate::types::ConnectorType>,

@@ -80,8 +80,8 @@ impl DescribeProvisioningParametersOutput {
 }
 
 /// A builder for [`DescribeProvisioningParametersOutput`](crate::operation::describe_provisioning_parameters::DescribeProvisioningParametersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeProvisioningParametersOutputBuilder {
     pub(crate) provisioning_artifact_parameters: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningArtifactParameter>>,
     pub(crate) constraint_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ConstraintSummary>>,

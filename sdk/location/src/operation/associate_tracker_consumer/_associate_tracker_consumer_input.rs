@@ -34,8 +34,8 @@ impl AssociateTrackerConsumerInput {
 }
 
 /// A builder for [`AssociateTrackerConsumerInput`](crate::operation::associate_tracker_consumer::AssociateTrackerConsumerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateTrackerConsumerInputBuilder {
     pub(crate) tracker_name: ::std::option::Option<::std::string::String>,
     pub(crate) consumer_arn: ::std::option::Option<::std::string::String>,

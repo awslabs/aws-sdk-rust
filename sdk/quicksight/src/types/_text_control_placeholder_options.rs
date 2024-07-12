@@ -21,8 +21,8 @@ impl TextControlPlaceholderOptions {
 }
 
 /// A builder for [`TextControlPlaceholderOptions`](crate::types::TextControlPlaceholderOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TextControlPlaceholderOptionsBuilder {
     pub(crate) visibility: ::std::option::Option<crate::types::Visibility>,
 }

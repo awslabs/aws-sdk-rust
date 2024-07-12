@@ -42,8 +42,8 @@ impl DescribeConfigurationSetsInput {
 }
 
 /// A builder for [`DescribeConfigurationSetsInput`](crate::operation::describe_configuration_sets::DescribeConfigurationSetsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeConfigurationSetsInputBuilder {
     pub(crate) configuration_set_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationSetFilter>>,

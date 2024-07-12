@@ -54,8 +54,8 @@ impl PurchaseHostReservationInput {
 }
 
 /// A builder for [`PurchaseHostReservationInput`](crate::operation::purchase_host_reservation::PurchaseHostReservationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PurchaseHostReservationInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) currency_code: ::std::option::Option<crate::types::CurrencyCodeValues>,

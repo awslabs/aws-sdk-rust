@@ -18,8 +18,8 @@ impl UpdateInstanceCustomHealthStatusOutput {
 }
 
 /// A builder for [`UpdateInstanceCustomHealthStatusOutput`](crate::operation::update_instance_custom_health_status::UpdateInstanceCustomHealthStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateInstanceCustomHealthStatusOutputBuilder {
     _request_id: Option<String>,
 }

@@ -51,8 +51,8 @@ impl HistoricalOptions {
 }
 
 /// A builder for [`HistoricalOptions`](crate::types::HistoricalOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HistoricalOptionsBuilder {
     pub(crate) budget_adjustment_period: ::std::option::Option<i32>,
     pub(crate) look_back_available_periods: ::std::option::Option<i32>,

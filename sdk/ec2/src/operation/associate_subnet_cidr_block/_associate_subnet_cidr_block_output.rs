@@ -32,8 +32,8 @@ impl AssociateSubnetCidrBlockOutput {
 }
 
 /// A builder for [`AssociateSubnetCidrBlockOutput`](crate::operation::associate_subnet_cidr_block::AssociateSubnetCidrBlockOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateSubnetCidrBlockOutputBuilder {
     pub(crate) ipv6_cidr_block_association: ::std::option::Option<crate::types::SubnetIpv6CidrBlockAssociation>,
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,

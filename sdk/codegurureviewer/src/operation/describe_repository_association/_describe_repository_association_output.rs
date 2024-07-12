@@ -44,8 +44,8 @@ impl DescribeRepositoryAssociationOutput {
 }
 
 /// A builder for [`DescribeRepositoryAssociationOutput`](crate::operation::describe_repository_association::DescribeRepositoryAssociationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRepositoryAssociationOutputBuilder {
     pub(crate) repository_association: ::std::option::Option<crate::types::RepositoryAssociation>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

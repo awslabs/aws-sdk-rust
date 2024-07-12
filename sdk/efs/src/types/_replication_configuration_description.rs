@@ -56,8 +56,8 @@ impl ReplicationConfigurationDescription {
 }
 
 /// A builder for [`ReplicationConfigurationDescription`](crate::types::ReplicationConfigurationDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReplicationConfigurationDescriptionBuilder {
     pub(crate) source_file_system_id: ::std::option::Option<::std::string::String>,
     pub(crate) source_file_system_region: ::std::option::Option<::std::string::String>,

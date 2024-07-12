@@ -26,8 +26,8 @@ impl GetDefaultCreditSpecificationOutput {
 }
 
 /// A builder for [`GetDefaultCreditSpecificationOutput`](crate::operation::get_default_credit_specification::GetDefaultCreditSpecificationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDefaultCreditSpecificationOutputBuilder {
     pub(crate) instance_family_credit_specification: ::std::option::Option<crate::types::InstanceFamilyCreditSpecification>,
     _request_id: Option<String>,

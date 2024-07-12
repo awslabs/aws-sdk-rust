@@ -40,8 +40,8 @@ impl ReferenceDataSourceUpdate {
 }
 
 /// A builder for [`ReferenceDataSourceUpdate`](crate::types::ReferenceDataSourceUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReferenceDataSourceUpdateBuilder {
     pub(crate) reference_id: ::std::option::Option<::std::string::String>,
     pub(crate) table_name_update: ::std::option::Option<::std::string::String>,

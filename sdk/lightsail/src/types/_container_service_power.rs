@@ -52,8 +52,8 @@ impl ContainerServicePower {
 }
 
 /// A builder for [`ContainerServicePower`](crate::types::ContainerServicePower).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ContainerServicePowerBuilder {
     pub(crate) power_id: ::std::option::Option<::std::string::String>,
     pub(crate) price: ::std::option::Option<f32>,

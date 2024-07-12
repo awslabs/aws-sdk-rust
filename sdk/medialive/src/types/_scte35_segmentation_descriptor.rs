@@ -81,8 +81,8 @@ impl Scte35SegmentationDescriptor {
 }
 
 /// A builder for [`Scte35SegmentationDescriptor`](crate::types::Scte35SegmentationDescriptor).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Scte35SegmentationDescriptorBuilder {
     pub(crate) delivery_restrictions: ::std::option::Option<crate::types::Scte35DeliveryRestrictions>,
     pub(crate) segment_num: ::std::option::Option<i32>,

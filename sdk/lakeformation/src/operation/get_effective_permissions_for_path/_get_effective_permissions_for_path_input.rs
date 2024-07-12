@@ -38,8 +38,8 @@ impl GetEffectivePermissionsForPathInput {
 }
 
 /// A builder for [`GetEffectivePermissionsForPathInput`](crate::operation::get_effective_permissions_for_path::GetEffectivePermissionsForPathInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEffectivePermissionsForPathInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,

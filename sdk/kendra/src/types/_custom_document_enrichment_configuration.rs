@@ -42,8 +42,8 @@ impl CustomDocumentEnrichmentConfiguration {
 }
 
 /// A builder for [`CustomDocumentEnrichmentConfiguration`](crate::types::CustomDocumentEnrichmentConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CustomDocumentEnrichmentConfigurationBuilder {
     pub(crate) inline_configurations: ::std::option::Option<::std::vec::Vec<crate::types::InlineCustomDocumentEnrichmentConfiguration>>,
     pub(crate) pre_extraction_hook_configuration: ::std::option::Option<crate::types::HookConfiguration>,

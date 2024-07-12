@@ -20,8 +20,8 @@ impl GetJobQueueSnapshotInput {
 }
 
 /// A builder for [`GetJobQueueSnapshotInput`](crate::operation::get_job_queue_snapshot::GetJobQueueSnapshotInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetJobQueueSnapshotInputBuilder {
     pub(crate) job_queue: ::std::option::Option<::std::string::String>,
 }

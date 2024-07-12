@@ -35,8 +35,8 @@ impl DescribeEndpointTypesOutput {
 }
 
 /// A builder for [`DescribeEndpointTypesOutput`](crate::operation::describe_endpoint_types::DescribeEndpointTypesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEndpointTypesOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) supported_endpoint_types: ::std::option::Option<::std::vec::Vec<crate::types::SupportedEndpointType>>,

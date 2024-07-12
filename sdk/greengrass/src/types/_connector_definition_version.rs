@@ -23,8 +23,8 @@ impl ConnectorDefinitionVersion {
 }
 
 /// A builder for [`ConnectorDefinitionVersion`](crate::types::ConnectorDefinitionVersion).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConnectorDefinitionVersionBuilder {
     pub(crate) connectors: ::std::option::Option<::std::vec::Vec<crate::types::Connector>>,
 }

@@ -20,8 +20,8 @@ impl PhoneNumberValidateInput {
 }
 
 /// A builder for [`PhoneNumberValidateInput`](crate::operation::phone_number_validate::PhoneNumberValidateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PhoneNumberValidateInputBuilder {
     pub(crate) number_validate_request: ::std::option::Option<crate::types::NumberValidateRequest>,
 }

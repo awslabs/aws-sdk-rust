@@ -39,8 +39,8 @@ impl AttachmentItem {
 }
 
 /// A builder for [`AttachmentItem`](crate::types::AttachmentItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttachmentItemBuilder {
     pub(crate) content_type: ::std::option::Option<::std::string::String>,
     pub(crate) attachment_id: ::std::option::Option<::std::string::String>,

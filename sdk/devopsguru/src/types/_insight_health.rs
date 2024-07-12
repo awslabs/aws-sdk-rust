@@ -33,8 +33,8 @@ impl InsightHealth {
 }
 
 /// A builder for [`InsightHealth`](crate::types::InsightHealth).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InsightHealthBuilder {
     pub(crate) open_proactive_insights: ::std::option::Option<i32>,
     pub(crate) open_reactive_insights: ::std::option::Option<i32>,

@@ -26,8 +26,8 @@ impl GetServiceTemplateOutput {
 }
 
 /// A builder for [`GetServiceTemplateOutput`](crate::operation::get_service_template::GetServiceTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetServiceTemplateOutputBuilder {
     pub(crate) service_template: ::std::option::Option<crate::types::ServiceTemplate>,
     _request_id: Option<String>,

@@ -66,8 +66,8 @@ impl GetUserAttributeVerificationCodeInput {
 }
 
 /// A builder for [`GetUserAttributeVerificationCodeInput`](crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetUserAttributeVerificationCodeInputBuilder {
     pub(crate) access_token: ::std::option::Option<::std::string::String>,
     pub(crate) attribute_name: ::std::option::Option<::std::string::String>,

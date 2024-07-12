@@ -18,8 +18,8 @@ impl DeleteCommentOutput {
 }
 
 /// A builder for [`DeleteCommentOutput`](crate::operation::delete_comment::DeleteCommentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCommentOutputBuilder {
     _request_id: Option<String>,
 }

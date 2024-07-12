@@ -51,8 +51,8 @@ impl Proxy {
 }
 
 /// A builder for [`Proxy`](crate::types::Proxy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ProxyBuilder {
     pub(crate) default_session_expiry_minutes: ::std::option::Option<i32>,
     pub(crate) disabled: ::std::option::Option<bool>,

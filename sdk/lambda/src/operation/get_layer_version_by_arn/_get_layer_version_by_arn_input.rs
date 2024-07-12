@@ -20,8 +20,8 @@ impl GetLayerVersionByArnInput {
 }
 
 /// A builder for [`GetLayerVersionByArnInput`](crate::operation::get_layer_version_by_arn::GetLayerVersionByArnInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLayerVersionByArnInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }

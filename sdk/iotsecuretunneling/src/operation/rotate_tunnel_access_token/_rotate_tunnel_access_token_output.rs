@@ -48,8 +48,8 @@ impl RotateTunnelAccessTokenOutput {
 }
 
 /// A builder for [`RotateTunnelAccessTokenOutput`](crate::operation::rotate_tunnel_access_token::RotateTunnelAccessTokenOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct RotateTunnelAccessTokenOutputBuilder {
     pub(crate) tunnel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) source_access_token: ::std::option::Option<::std::string::String>,

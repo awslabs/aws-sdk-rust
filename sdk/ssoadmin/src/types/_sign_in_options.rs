@@ -39,8 +39,8 @@ impl SignInOptions {
 }
 
 /// A builder for [`SignInOptions`](crate::types::SignInOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SignInOptionsBuilder {
     pub(crate) origin: ::std::option::Option<crate::types::SignInOrigin>,
     pub(crate) application_url: ::std::option::Option<::std::string::String>,

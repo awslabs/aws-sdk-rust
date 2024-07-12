@@ -37,8 +37,8 @@ impl InstanceResizePolicy {
 }
 
 /// A builder for [`InstanceResizePolicy`](crate::types::InstanceResizePolicy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceResizePolicyBuilder {
     pub(crate) instances_to_terminate: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) instances_to_protect: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

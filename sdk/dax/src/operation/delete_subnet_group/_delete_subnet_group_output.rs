@@ -26,8 +26,8 @@ impl DeleteSubnetGroupOutput {
 }
 
 /// A builder for [`DeleteSubnetGroupOutput`](crate::operation::delete_subnet_group::DeleteSubnetGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSubnetGroupOutputBuilder {
     pub(crate) deletion_message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

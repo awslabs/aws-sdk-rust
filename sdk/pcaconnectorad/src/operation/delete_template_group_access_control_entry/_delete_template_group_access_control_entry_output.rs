@@ -18,8 +18,8 @@ impl DeleteTemplateGroupAccessControlEntryOutput {
 }
 
 /// A builder for [`DeleteTemplateGroupAccessControlEntryOutput`](crate::operation::delete_template_group_access_control_entry::DeleteTemplateGroupAccessControlEntryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTemplateGroupAccessControlEntryOutputBuilder {
     _request_id: Option<String>,
 }

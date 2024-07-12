@@ -27,8 +27,8 @@ impl ElasticsearchClusterConfigStatus {
 }
 
 /// A builder for [`ElasticsearchClusterConfigStatus`](crate::types::ElasticsearchClusterConfigStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ElasticsearchClusterConfigStatusBuilder {
     pub(crate) options: ::std::option::Option<crate::types::ElasticsearchClusterConfig>,
     pub(crate) status: ::std::option::Option<crate::types::OptionStatus>,

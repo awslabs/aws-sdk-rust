@@ -26,8 +26,8 @@ impl DeleteWorkGroupInput {
 }
 
 /// A builder for [`DeleteWorkGroupInput`](crate::operation::delete_work_group::DeleteWorkGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteWorkGroupInputBuilder {
     pub(crate) work_group: ::std::option::Option<::std::string::String>,
     pub(crate) recursive_delete_option: ::std::option::Option<bool>,

@@ -20,8 +20,8 @@ impl DeactivateEventSourceInput {
 }
 
 /// A builder for [`DeactivateEventSourceInput`](crate::operation::deactivate_event_source::DeactivateEventSourceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeactivateEventSourceInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

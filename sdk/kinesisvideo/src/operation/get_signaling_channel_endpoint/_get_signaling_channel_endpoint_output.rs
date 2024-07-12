@@ -28,8 +28,8 @@ impl GetSignalingChannelEndpointOutput {
 }
 
 /// A builder for [`GetSignalingChannelEndpointOutput`](crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSignalingChannelEndpointOutputBuilder {
     pub(crate) resource_endpoint_list: ::std::option::Option<::std::vec::Vec<crate::types::ResourceEndpointListItem>>,
     _request_id: Option<String>,

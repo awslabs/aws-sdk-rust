@@ -21,8 +21,8 @@ impl SidewalkResourceTypeEventConfiguration {
 }
 
 /// A builder for [`SidewalkResourceTypeEventConfiguration`](crate::types::SidewalkResourceTypeEventConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SidewalkResourceTypeEventConfigurationBuilder {
     pub(crate) wireless_device_event_topic: ::std::option::Option<crate::types::EventNotificationTopicStatus>,
 }

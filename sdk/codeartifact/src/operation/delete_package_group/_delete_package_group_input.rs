@@ -32,8 +32,8 @@ impl DeletePackageGroupInput {
 }
 
 /// A builder for [`DeletePackageGroupInput`](crate::operation::delete_package_group::DeletePackageGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePackageGroupInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) domain_owner: ::std::option::Option<::std::string::String>,

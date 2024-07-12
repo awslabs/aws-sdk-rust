@@ -21,8 +21,8 @@ impl S3DestinationAccessControl {
 }
 
 /// A builder for [`S3DestinationAccessControl`](crate::types::S3DestinationAccessControl).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3DestinationAccessControlBuilder {
     pub(crate) canned_acl: ::std::option::Option<crate::types::S3ObjectCannedAcl>,
 }

@@ -27,8 +27,8 @@ impl ContentDataDetails {
 }
 
 /// A builder for [`ContentDataDetails`](crate::types::ContentDataDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ContentDataDetailsBuilder {
     pub(crate) text_data: ::std::option::Option<crate::types::TextData>,
     pub(crate) ranking_data: ::std::option::Option<crate::types::RankingData>,

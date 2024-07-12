@@ -34,8 +34,8 @@ impl ListConfiguredAudienceModelAssociationsOutput {
 }
 
 /// A builder for [`ListConfiguredAudienceModelAssociationsOutput`](crate::operation::list_configured_audience_model_associations::ListConfiguredAudienceModelAssociationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListConfiguredAudienceModelAssociationsOutputBuilder {
     pub(crate) configured_audience_model_association_summaries:
         ::std::option::Option<::std::vec::Vec<crate::types::ConfiguredAudienceModelAssociationSummary>>,

@@ -34,8 +34,8 @@ impl GetAccessControlEffectOutput {
 }
 
 /// A builder for [`GetAccessControlEffectOutput`](crate::operation::get_access_control_effect::GetAccessControlEffectOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAccessControlEffectOutputBuilder {
     pub(crate) effect: ::std::option::Option<crate::types::AccessControlRuleEffect>,
     pub(crate) matched_rules: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

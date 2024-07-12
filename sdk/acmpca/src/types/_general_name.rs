@@ -63,8 +63,8 @@ impl GeneralName {
 }
 
 /// A builder for [`GeneralName`](crate::types::GeneralName).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GeneralNameBuilder {
     pub(crate) other_name: ::std::option::Option<crate::types::OtherName>,
     pub(crate) rfc822_name: ::std::option::Option<::std::string::String>,

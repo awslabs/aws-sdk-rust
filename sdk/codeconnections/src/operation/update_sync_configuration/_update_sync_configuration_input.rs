@@ -62,8 +62,8 @@ impl UpdateSyncConfigurationInput {
 }
 
 /// A builder for [`UpdateSyncConfigurationInput`](crate::operation::update_sync_configuration::UpdateSyncConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSyncConfigurationInputBuilder {
     pub(crate) branch: ::std::option::Option<::std::string::String>,
     pub(crate) config_file: ::std::option::Option<::std::string::String>,

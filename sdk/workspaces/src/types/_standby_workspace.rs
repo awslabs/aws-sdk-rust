@@ -49,8 +49,8 @@ impl StandbyWorkspace {
 }
 
 /// A builder for [`StandbyWorkspace`](crate::types::StandbyWorkspace).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StandbyWorkspaceBuilder {
     pub(crate) primary_workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) volume_encryption_key: ::std::option::Option<::std::string::String>,

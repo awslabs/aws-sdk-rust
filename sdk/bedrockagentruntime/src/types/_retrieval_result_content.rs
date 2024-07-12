@@ -38,8 +38,8 @@ impl RetrievalResultContent {
 }
 
 /// A builder for [`RetrievalResultContent`](crate::types::RetrievalResultContent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct RetrievalResultContentBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
 }

@@ -18,8 +18,8 @@ impl DeleteWorkflowStepGroupOutput {
 }
 
 /// A builder for [`DeleteWorkflowStepGroupOutput`](crate::operation::delete_workflow_step_group::DeleteWorkflowStepGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteWorkflowStepGroupOutputBuilder {
     _request_id: Option<String>,
 }

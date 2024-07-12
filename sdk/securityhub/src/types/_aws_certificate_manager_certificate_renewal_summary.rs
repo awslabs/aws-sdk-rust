@@ -71,8 +71,8 @@ impl AwsCertificateManagerCertificateRenewalSummary {
 }
 
 /// A builder for [`AwsCertificateManagerCertificateRenewalSummary`](crate::types::AwsCertificateManagerCertificateRenewalSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsCertificateManagerCertificateRenewalSummaryBuilder {
     pub(crate) domain_validation_options:
         ::std::option::Option<::std::vec::Vec<crate::types::AwsCertificateManagerCertificateDomainValidationOption>>,

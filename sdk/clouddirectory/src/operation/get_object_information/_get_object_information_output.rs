@@ -34,8 +34,8 @@ impl GetObjectInformationOutput {
 }
 
 /// A builder for [`GetObjectInformationOutput`](crate::operation::get_object_information::GetObjectInformationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetObjectInformationOutputBuilder {
     pub(crate) schema_facets: ::std::option::Option<::std::vec::Vec<crate::types::SchemaFacet>>,
     pub(crate) object_identifier: ::std::option::Option<::std::string::String>,

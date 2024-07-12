@@ -18,8 +18,8 @@ impl DeleteOrganizationalUnitOutput {
 }
 
 /// A builder for [`DeleteOrganizationalUnitOutput`](crate::operation::delete_organizational_unit::DeleteOrganizationalUnitOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteOrganizationalUnitOutputBuilder {
     _request_id: Option<String>,
 }

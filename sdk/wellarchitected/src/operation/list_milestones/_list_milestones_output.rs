@@ -41,8 +41,8 @@ impl ListMilestonesOutput {
 }
 
 /// A builder for [`ListMilestonesOutput`](crate::operation::list_milestones::ListMilestonesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListMilestonesOutputBuilder {
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,
     pub(crate) milestone_summaries: ::std::option::Option<::std::vec::Vec<crate::types::MilestoneSummary>>,

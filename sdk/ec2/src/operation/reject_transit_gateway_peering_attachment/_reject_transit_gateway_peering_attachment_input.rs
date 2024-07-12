@@ -26,8 +26,8 @@ impl RejectTransitGatewayPeeringAttachmentInput {
 }
 
 /// A builder for [`RejectTransitGatewayPeeringAttachmentInput`](crate::operation::reject_transit_gateway_peering_attachment::RejectTransitGatewayPeeringAttachmentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RejectTransitGatewayPeeringAttachmentInputBuilder {
     pub(crate) transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,

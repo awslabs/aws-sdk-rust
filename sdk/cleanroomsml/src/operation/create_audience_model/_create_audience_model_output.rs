@@ -27,8 +27,8 @@ impl CreateAudienceModelOutput {
 }
 
 /// A builder for [`CreateAudienceModelOutput`](crate::operation::create_audience_model::CreateAudienceModelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAudienceModelOutputBuilder {
     pub(crate) audience_model_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -27,8 +27,8 @@ impl EbsStorageInfo {
 }
 
 /// A builder for [`EbsStorageInfo`](crate::types::EbsStorageInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EbsStorageInfoBuilder {
     pub(crate) provisioned_throughput: ::std::option::Option<crate::types::ProvisionedThroughput>,
     pub(crate) volume_size: ::std::option::Option<i32>,

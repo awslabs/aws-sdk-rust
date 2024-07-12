@@ -27,8 +27,8 @@ impl DeleteMultiplexProgramInput {
 }
 
 /// A builder for [`DeleteMultiplexProgramInput`](crate::operation::delete_multiplex_program::DeleteMultiplexProgramInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteMultiplexProgramInputBuilder {
     pub(crate) multiplex_id: ::std::option::Option<::std::string::String>,
     pub(crate) program_name: ::std::option::Option<::std::string::String>,

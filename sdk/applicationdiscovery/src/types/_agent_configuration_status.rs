@@ -33,8 +33,8 @@ impl AgentConfigurationStatus {
 }
 
 /// A builder for [`AgentConfigurationStatus`](crate::types::AgentConfigurationStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AgentConfigurationStatusBuilder {
     pub(crate) agent_id: ::std::option::Option<::std::string::String>,
     pub(crate) operation_succeeded: ::std::option::Option<bool>,

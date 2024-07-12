@@ -28,8 +28,8 @@ impl M2NonManagedApplicationAction {
 }
 
 /// A builder for [`M2NonManagedApplicationAction`](crate::types::M2NonManagedApplicationAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct M2NonManagedApplicationActionBuilder {
     pub(crate) resource: ::std::option::Option<::std::string::String>,
     pub(crate) action_type: ::std::option::Option<crate::types::M2NonManagedActionType>,

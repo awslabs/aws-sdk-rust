@@ -29,8 +29,8 @@ impl EventBridgeParameters {
 }
 
 /// A builder for [`EventBridgeParameters`](crate::types::EventBridgeParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EventBridgeParametersBuilder {
     pub(crate) detail_type: ::std::option::Option<::std::string::String>,
     pub(crate) source: ::std::option::Option<::std::string::String>,

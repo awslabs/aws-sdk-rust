@@ -70,8 +70,8 @@ impl CreateVpcEndpointServiceConfigurationInput {
 }
 
 /// A builder for [`CreateVpcEndpointServiceConfigurationInput`](crate::operation::create_vpc_endpoint_service_configuration::CreateVpcEndpointServiceConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateVpcEndpointServiceConfigurationInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) acceptance_required: ::std::option::Option<bool>,

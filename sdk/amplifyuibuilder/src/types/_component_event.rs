@@ -33,8 +33,8 @@ impl ComponentEvent {
 }
 
 /// A builder for [`ComponentEvent`](crate::types::ComponentEvent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ComponentEventBuilder {
     pub(crate) action: ::std::option::Option<::std::string::String>,
     pub(crate) parameters: ::std::option::Option<crate::types::ActionParameters>,

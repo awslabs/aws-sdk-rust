@@ -63,8 +63,8 @@ impl PipeSourceDynamoDbStreamParameters {
 }
 
 /// A builder for [`PipeSourceDynamoDbStreamParameters`](crate::types::PipeSourceDynamoDbStreamParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PipeSourceDynamoDbStreamParametersBuilder {
     pub(crate) batch_size: ::std::option::Option<i32>,
     pub(crate) dead_letter_config: ::std::option::Option<crate::types::DeadLetterConfig>,

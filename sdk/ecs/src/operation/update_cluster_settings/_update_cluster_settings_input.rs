@@ -32,8 +32,8 @@ impl UpdateClusterSettingsInput {
 }
 
 /// A builder for [`UpdateClusterSettingsInput`](crate::operation::update_cluster_settings::UpdateClusterSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateClusterSettingsInputBuilder {
     pub(crate) cluster: ::std::option::Option<::std::string::String>,
     pub(crate) settings: ::std::option::Option<::std::vec::Vec<crate::types::ClusterSetting>>,

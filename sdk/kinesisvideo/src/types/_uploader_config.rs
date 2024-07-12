@@ -21,8 +21,8 @@ impl UploaderConfig {
 }
 
 /// A builder for [`UploaderConfig`](crate::types::UploaderConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UploaderConfigBuilder {
     pub(crate) schedule_config: ::std::option::Option<crate::types::ScheduleConfig>,
 }

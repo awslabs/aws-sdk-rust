@@ -63,8 +63,8 @@ impl ChimeWebhookConfiguration {
 }
 
 /// A builder for [`ChimeWebhookConfiguration`](crate::types::ChimeWebhookConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ChimeWebhookConfigurationBuilder {
     pub(crate) webhook_description: ::std::option::Option<::std::string::String>,
     pub(crate) chat_configuration_arn: ::std::option::Option<::std::string::String>,

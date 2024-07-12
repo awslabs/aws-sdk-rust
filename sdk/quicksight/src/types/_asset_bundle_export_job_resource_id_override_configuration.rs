@@ -21,8 +21,8 @@ impl AssetBundleExportJobResourceIdOverrideConfiguration {
 }
 
 /// A builder for [`AssetBundleExportJobResourceIdOverrideConfiguration`](crate::types::AssetBundleExportJobResourceIdOverrideConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssetBundleExportJobResourceIdOverrideConfigurationBuilder {
     pub(crate) prefix_for_all_resources: ::std::option::Option<bool>,
 }

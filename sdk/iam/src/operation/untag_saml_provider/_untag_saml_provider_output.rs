@@ -18,8 +18,8 @@ impl UntagSamlProviderOutput {
 }
 
 /// A builder for [`UntagSamlProviderOutput`](crate::operation::untag_saml_provider::UntagSamlProviderOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UntagSamlProviderOutputBuilder {
     _request_id: Option<String>,
 }

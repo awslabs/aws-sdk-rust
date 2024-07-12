@@ -26,8 +26,8 @@ impl GetDevicesInPlacementInput {
 }
 
 /// A builder for [`GetDevicesInPlacementInput`](crate::operation::get_devices_in_placement::GetDevicesInPlacementInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDevicesInPlacementInputBuilder {
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
     pub(crate) placement_name: ::std::option::Option<::std::string::String>,

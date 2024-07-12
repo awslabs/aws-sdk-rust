@@ -27,8 +27,8 @@ impl StreamingDistributionConfigWithTags {
 }
 
 /// A builder for [`StreamingDistributionConfigWithTags`](crate::types::StreamingDistributionConfigWithTags).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StreamingDistributionConfigWithTagsBuilder {
     pub(crate) streaming_distribution_config: ::std::option::Option<crate::types::StreamingDistributionConfig>,
     pub(crate) tags: ::std::option::Option<crate::types::Tags>,

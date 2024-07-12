@@ -28,8 +28,8 @@ impl ListSupportedPhoneNumberCountriesOutput {
 }
 
 /// A builder for [`ListSupportedPhoneNumberCountriesOutput`](crate::operation::list_supported_phone_number_countries::ListSupportedPhoneNumberCountriesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSupportedPhoneNumberCountriesOutputBuilder {
     pub(crate) phone_number_countries: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberCountry>>,
     _request_id: Option<String>,

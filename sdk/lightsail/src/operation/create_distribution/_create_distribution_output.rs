@@ -32,8 +32,8 @@ impl CreateDistributionOutput {
 }
 
 /// A builder for [`CreateDistributionOutput`](crate::operation::create_distribution::CreateDistributionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDistributionOutputBuilder {
     pub(crate) distribution: ::std::option::Option<crate::types::LightsailDistribution>,
     pub(crate) operation: ::std::option::Option<crate::types::Operation>,

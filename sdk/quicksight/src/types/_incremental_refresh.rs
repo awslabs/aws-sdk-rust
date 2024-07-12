@@ -21,8 +21,8 @@ impl IncrementalRefresh {
 }
 
 /// A builder for [`IncrementalRefresh`](crate::types::IncrementalRefresh).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IncrementalRefreshBuilder {
     pub(crate) lookback_window: ::std::option::Option<crate::types::LookbackWindow>,
 }

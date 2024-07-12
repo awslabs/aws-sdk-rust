@@ -1710,8 +1710,8 @@ impl GetMetricDataV2Input {
 }
 
 /// A builder for [`GetMetricDataV2Input`](crate::operation::get_metric_data_v2::GetMetricDataV2Input).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMetricDataV2InputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,

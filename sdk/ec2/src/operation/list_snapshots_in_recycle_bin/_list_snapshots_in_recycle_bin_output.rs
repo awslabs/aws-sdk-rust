@@ -34,8 +34,8 @@ impl ListSnapshotsInRecycleBinOutput {
 }
 
 /// A builder for [`ListSnapshotsInRecycleBinOutput`](crate::operation::list_snapshots_in_recycle_bin::ListSnapshotsInRecycleBinOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSnapshotsInRecycleBinOutputBuilder {
     pub(crate) snapshots: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotRecycleBinInfo>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

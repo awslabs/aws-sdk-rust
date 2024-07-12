@@ -21,8 +21,8 @@ impl AwsConsoleLinkParameters {
 }
 
 /// A builder for [`AwsConsoleLinkParameters`](crate::types::AwsConsoleLinkParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsConsoleLinkParametersBuilder {
     pub(crate) uri: ::std::option::Option<::std::string::String>,
 }

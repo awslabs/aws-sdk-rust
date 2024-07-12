@@ -41,8 +41,8 @@ impl PredefinedAttributeSearchCriteria {
 }
 
 /// A builder for [`PredefinedAttributeSearchCriteria`](crate::types::PredefinedAttributeSearchCriteria).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PredefinedAttributeSearchCriteriaBuilder {
     pub(crate) or_conditions: ::std::option::Option<::std::vec::Vec<crate::types::PredefinedAttributeSearchCriteria>>,
     pub(crate) and_conditions: ::std::option::Option<::std::vec::Vec<crate::types::PredefinedAttributeSearchCriteria>>,

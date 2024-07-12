@@ -87,8 +87,8 @@ impl Operation {
 }
 
 /// A builder for [`Operation`](crate::types::Operation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OperationBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_name: ::std::option::Option<::std::string::String>,

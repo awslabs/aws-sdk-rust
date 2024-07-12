@@ -27,8 +27,8 @@ impl AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails {
 }
 
 /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetailsBuilder {
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,

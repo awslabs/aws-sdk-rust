@@ -123,8 +123,8 @@ impl ListUsersInput {
 }
 
 /// A builder for [`ListUsersInput`](crate::operation::list_users::ListUsersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListUsersInputBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) attributes_to_get: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

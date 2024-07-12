@@ -34,8 +34,8 @@ impl DisassociateTrackerConsumerInput {
 }
 
 /// A builder for [`DisassociateTrackerConsumerInput`](crate::operation::disassociate_tracker_consumer::DisassociateTrackerConsumerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateTrackerConsumerInputBuilder {
     pub(crate) tracker_name: ::std::option::Option<::std::string::String>,
     pub(crate) consumer_arn: ::std::option::Option<::std::string::String>,

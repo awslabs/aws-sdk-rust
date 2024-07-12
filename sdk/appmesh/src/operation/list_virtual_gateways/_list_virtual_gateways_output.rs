@@ -33,8 +33,8 @@ impl ListVirtualGatewaysOutput {
 }
 
 /// A builder for [`ListVirtualGatewaysOutput`](crate::operation::list_virtual_gateways::ListVirtualGatewaysOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListVirtualGatewaysOutputBuilder {
     pub(crate) virtual_gateways: ::std::option::Option<::std::vec::Vec<crate::types::VirtualGatewayRef>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

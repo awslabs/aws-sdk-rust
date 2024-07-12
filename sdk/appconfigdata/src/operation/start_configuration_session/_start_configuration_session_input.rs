@@ -38,8 +38,8 @@ impl StartConfigurationSessionInput {
 }
 
 /// A builder for [`StartConfigurationSessionInput`](crate::operation::start_configuration_session::StartConfigurationSessionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartConfigurationSessionInputBuilder {
     pub(crate) application_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) environment_identifier: ::std::option::Option<::std::string::String>,

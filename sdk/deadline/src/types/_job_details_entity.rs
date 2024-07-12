@@ -82,8 +82,8 @@ impl JobDetailsEntity {
 }
 
 /// A builder for [`JobDetailsEntity`](crate::types::JobDetailsEntity).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct JobDetailsEntityBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_attachment_settings: ::std::option::Option<crate::types::JobAttachmentSettings>,

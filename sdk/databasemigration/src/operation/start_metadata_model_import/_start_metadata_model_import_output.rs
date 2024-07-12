@@ -26,8 +26,8 @@ impl StartMetadataModelImportOutput {
 }
 
 /// A builder for [`StartMetadataModelImportOutput`](crate::operation::start_metadata_model_import::StartMetadataModelImportOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartMetadataModelImportOutputBuilder {
     pub(crate) request_identifier: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

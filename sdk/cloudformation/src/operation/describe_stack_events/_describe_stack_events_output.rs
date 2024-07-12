@@ -35,8 +35,8 @@ impl DescribeStackEventsOutput {
 }
 
 /// A builder for [`DescribeStackEventsOutput`](crate::operation::describe_stack_events::DescribeStackEventsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeStackEventsOutputBuilder {
     pub(crate) stack_events: ::std::option::Option<::std::vec::Vec<crate::types::StackEvent>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

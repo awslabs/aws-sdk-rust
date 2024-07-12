@@ -35,8 +35,8 @@ impl ListArchiveSearchesOutput {
 }
 
 /// A builder for [`ListArchiveSearchesOutput`](crate::operation::list_archive_searches::ListArchiveSearchesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListArchiveSearchesOutputBuilder {
     pub(crate) searches: ::std::option::Option<::std::vec::Vec<crate::types::SearchSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

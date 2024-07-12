@@ -44,8 +44,8 @@ impl ListOriginRequestPoliciesInput {
 }
 
 /// A builder for [`ListOriginRequestPoliciesInput`](crate::operation::list_origin_request_policies::ListOriginRequestPoliciesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListOriginRequestPoliciesInputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::OriginRequestPolicyType>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

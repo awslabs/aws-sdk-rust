@@ -31,8 +31,8 @@ impl GitFilePathFilterCriteria {
 }
 
 /// A builder for [`GitFilePathFilterCriteria`](crate::types::GitFilePathFilterCriteria).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GitFilePathFilterCriteriaBuilder {
     pub(crate) includes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) excludes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

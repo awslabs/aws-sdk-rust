@@ -33,8 +33,8 @@ impl ListThingPrincipalsInput {
 }
 
 /// A builder for [`ListThingPrincipalsInput`](crate::operation::list_thing_principals::ListThingPrincipalsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListThingPrincipalsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

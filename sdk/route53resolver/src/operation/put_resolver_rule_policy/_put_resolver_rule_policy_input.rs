@@ -52,8 +52,8 @@ impl PutResolverRulePolicyInput {
 }
 
 /// A builder for [`PutResolverRulePolicyInput`](crate::operation::put_resolver_rule_policy::PutResolverRulePolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutResolverRulePolicyInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) resolver_rule_policy: ::std::option::Option<::std::string::String>,

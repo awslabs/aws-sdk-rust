@@ -20,8 +20,8 @@ impl DeleteStageInput {
 }
 
 /// A builder for [`DeleteStageInput`](crate::operation::delete_stage::DeleteStageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteStageInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }

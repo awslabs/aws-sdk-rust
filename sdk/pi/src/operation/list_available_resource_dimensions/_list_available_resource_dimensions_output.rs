@@ -34,8 +34,8 @@ impl ListAvailableResourceDimensionsOutput {
 }
 
 /// A builder for [`ListAvailableResourceDimensionsOutput`](crate::operation::list_available_resource_dimensions::ListAvailableResourceDimensionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAvailableResourceDimensionsOutputBuilder {
     pub(crate) metric_dimensions: ::std::option::Option<::std::vec::Vec<crate::types::MetricDimensionGroups>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

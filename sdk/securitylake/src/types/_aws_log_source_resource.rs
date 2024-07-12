@@ -27,8 +27,8 @@ impl AwsLogSourceResource {
 }
 
 /// A builder for [`AwsLogSourceResource`](crate::types::AwsLogSourceResource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsLogSourceResourceBuilder {
     pub(crate) source_name: ::std::option::Option<crate::types::AwsLogSourceName>,
     pub(crate) source_version: ::std::option::Option<::std::string::String>,

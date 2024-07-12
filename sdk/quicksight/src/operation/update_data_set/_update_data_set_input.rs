@@ -98,8 +98,8 @@ impl UpdateDataSetInput {
 }
 
 /// A builder for [`UpdateDataSetInput`](crate::operation::update_data_set::UpdateDataSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDataSetInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,

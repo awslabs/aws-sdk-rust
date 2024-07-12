@@ -18,8 +18,8 @@ impl DeleteSlackWorkspaceAuthorizationOutput {
 }
 
 /// A builder for [`DeleteSlackWorkspaceAuthorizationOutput`](crate::operation::delete_slack_workspace_authorization::DeleteSlackWorkspaceAuthorizationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSlackWorkspaceAuthorizationOutputBuilder {
     _request_id: Option<String>,
 }

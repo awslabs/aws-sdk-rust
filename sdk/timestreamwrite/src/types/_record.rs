@@ -74,8 +74,8 @@ impl Record {
 }
 
 /// A builder for [`Record`](crate::types::Record).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecordBuilder {
     pub(crate) dimensions: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
     pub(crate) measure_name: ::std::option::Option<::std::string::String>,

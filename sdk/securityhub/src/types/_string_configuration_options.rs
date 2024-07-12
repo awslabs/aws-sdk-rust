@@ -33,8 +33,8 @@ impl StringConfigurationOptions {
 }
 
 /// A builder for [`StringConfigurationOptions`](crate::types::StringConfigurationOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StringConfigurationOptionsBuilder {
     pub(crate) default_value: ::std::option::Option<::std::string::String>,
     pub(crate) re2_expression: ::std::option::Option<::std::string::String>,

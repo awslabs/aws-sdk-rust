@@ -81,8 +81,8 @@ impl Workforce {
 }
 
 /// A builder for [`Workforce`](crate::types::Workforce).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WorkforceBuilder {
     pub(crate) workforce_name: ::std::option::Option<::std::string::String>,
     pub(crate) workforce_arn: ::std::option::Option<::std::string::String>,

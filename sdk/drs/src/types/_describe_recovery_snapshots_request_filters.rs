@@ -27,8 +27,8 @@ impl DescribeRecoverySnapshotsRequestFilters {
 }
 
 /// A builder for [`DescribeRecoverySnapshotsRequestFilters`](crate::types::DescribeRecoverySnapshotsRequestFilters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRecoverySnapshotsRequestFiltersBuilder {
     pub(crate) from_date_time: ::std::option::Option<::std::string::String>,
     pub(crate) to_date_time: ::std::option::Option<::std::string::String>,

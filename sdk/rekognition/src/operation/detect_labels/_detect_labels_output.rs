@@ -50,8 +50,8 @@ impl DetectLabelsOutput {
 }
 
 /// A builder for [`DetectLabelsOutput`](crate::operation::detect_labels::DetectLabelsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetectLabelsOutputBuilder {
     pub(crate) labels: ::std::option::Option<::std::vec::Vec<crate::types::Label>>,
     pub(crate) orientation_correction: ::std::option::Option<crate::types::OrientationCorrection>,

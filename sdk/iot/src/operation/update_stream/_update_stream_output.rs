@@ -44,8 +44,8 @@ impl UpdateStreamOutput {
 }
 
 /// A builder for [`UpdateStreamOutput`](crate::operation::update_stream::UpdateStreamOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateStreamOutputBuilder {
     pub(crate) stream_id: ::std::option::Option<::std::string::String>,
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,

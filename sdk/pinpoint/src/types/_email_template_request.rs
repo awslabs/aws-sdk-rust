@@ -71,8 +71,8 @@ impl EmailTemplateRequest {
 }
 
 /// A builder for [`EmailTemplateRequest`](crate::types::EmailTemplateRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EmailTemplateRequestBuilder {
     pub(crate) default_substitutions: ::std::option::Option<::std::string::String>,
     pub(crate) html_part: ::std::option::Option<::std::string::String>,

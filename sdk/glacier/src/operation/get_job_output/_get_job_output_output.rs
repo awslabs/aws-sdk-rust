@@ -79,8 +79,8 @@ impl GetJobOutputOutput {
 }
 
 /// A builder for [`GetJobOutputOutput`](crate::operation::get_job_output::GetJobOutputOutput).
-#[non_exhaustive]
 #[derive(::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetJobOutputOutputBuilder {
     pub(crate) body: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>,
     pub(crate) checksum: ::std::option::Option<::std::string::String>,

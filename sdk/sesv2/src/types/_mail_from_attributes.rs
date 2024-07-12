@@ -56,8 +56,8 @@ impl MailFromAttributes {
 }
 
 /// A builder for [`MailFromAttributes`](crate::types::MailFromAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MailFromAttributesBuilder {
     pub(crate) mail_from_domain: ::std::option::Option<::std::string::String>,
     pub(crate) mail_from_domain_status: ::std::option::Option<crate::types::MailFromDomainStatus>,

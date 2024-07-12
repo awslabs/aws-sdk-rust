@@ -32,8 +32,8 @@ impl DetachInternetGatewayInput {
 }
 
 /// A builder for [`DetachInternetGatewayInput`](crate::operation::detach_internet_gateway::DetachInternetGatewayInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetachInternetGatewayInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) internet_gateway_id: ::std::option::Option<::std::string::String>,

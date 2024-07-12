@@ -21,8 +21,8 @@ impl Phase1DhGroupNumbersListValue {
 }
 
 /// A builder for [`Phase1DhGroupNumbersListValue`](crate::types::Phase1DhGroupNumbersListValue).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Phase1DhGroupNumbersListValueBuilder {
     pub(crate) value: ::std::option::Option<i32>,
 }

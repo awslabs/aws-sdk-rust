@@ -11,8 +11,8 @@ impl GetNotificationChannelInput {
 }
 
 /// A builder for [`GetNotificationChannelInput`](crate::operation::get_notification_channel::GetNotificationChannelInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetNotificationChannelInputBuilder {}
 impl GetNotificationChannelInputBuilder {
     /// Consumes the builder and constructs a [`GetNotificationChannelInput`](crate::operation::get_notification_channel::GetNotificationChannelInput).

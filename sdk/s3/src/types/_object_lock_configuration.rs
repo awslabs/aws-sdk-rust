@@ -27,8 +27,8 @@ impl ObjectLockConfiguration {
 }
 
 /// A builder for [`ObjectLockConfiguration`](crate::types::ObjectLockConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ObjectLockConfigurationBuilder {
     pub(crate) object_lock_enabled: ::std::option::Option<crate::types::ObjectLockEnabled>,
     pub(crate) rule: ::std::option::Option<crate::types::ObjectLockRule>,

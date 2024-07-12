@@ -36,8 +36,8 @@ impl GetParametersOutput {
 }
 
 /// A builder for [`GetParametersOutput`](crate::operation::get_parameters::GetParametersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetParametersOutputBuilder {
     pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
     pub(crate) invalid_parameters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

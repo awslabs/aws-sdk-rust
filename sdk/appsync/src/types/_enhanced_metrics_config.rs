@@ -165,8 +165,8 @@ impl EnhancedMetricsConfig {
 }
 
 /// A builder for [`EnhancedMetricsConfig`](crate::types::EnhancedMetricsConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnhancedMetricsConfigBuilder {
     pub(crate) resolver_level_metrics_behavior: ::std::option::Option<crate::types::ResolverLevelMetricsBehavior>,
     pub(crate) data_source_level_metrics_behavior: ::std::option::Option<crate::types::DataSourceLevelMetricsBehavior>,

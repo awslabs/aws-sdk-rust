@@ -65,8 +65,8 @@ impl FilterListConfiguration {
 }
 
 /// A builder for [`FilterListConfiguration`](crate::types::FilterListConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FilterListConfigurationBuilder {
     pub(crate) match_operator: ::std::option::Option<crate::types::CategoryFilterMatchOperator>,
     pub(crate) category_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

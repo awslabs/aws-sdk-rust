@@ -42,8 +42,8 @@ impl UpdateTableReplicaAutoScalingInput {
 }
 
 /// A builder for [`UpdateTableReplicaAutoScalingInput`](crate::operation::update_table_replica_auto_scaling::UpdateTableReplicaAutoScalingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateTableReplicaAutoScalingInputBuilder {
     pub(crate) global_secondary_index_updates: ::std::option::Option<::std::vec::Vec<crate::types::GlobalSecondaryIndexAutoScalingUpdate>>,
     pub(crate) table_name: ::std::option::Option<::std::string::String>,

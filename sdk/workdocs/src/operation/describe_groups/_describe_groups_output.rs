@@ -34,8 +34,8 @@ impl DescribeGroupsOutput {
 }
 
 /// A builder for [`DescribeGroupsOutput`](crate::operation::describe_groups::DescribeGroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeGroupsOutputBuilder {
     pub(crate) groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupMetadata>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

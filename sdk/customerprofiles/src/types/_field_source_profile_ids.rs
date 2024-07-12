@@ -141,8 +141,8 @@ impl FieldSourceProfileIds {
 }
 
 /// A builder for [`FieldSourceProfileIds`](crate::types::FieldSourceProfileIds).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FieldSourceProfileIdsBuilder {
     pub(crate) account_number: ::std::option::Option<::std::string::String>,
     pub(crate) additional_information: ::std::option::Option<::std::string::String>,

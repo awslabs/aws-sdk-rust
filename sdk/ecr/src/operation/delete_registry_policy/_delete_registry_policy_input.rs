@@ -11,8 +11,8 @@ impl DeleteRegistryPolicyInput {
 }
 
 /// A builder for [`DeleteRegistryPolicyInput`](crate::operation::delete_registry_policy::DeleteRegistryPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRegistryPolicyInputBuilder {}
 impl DeleteRegistryPolicyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRegistryPolicyInput`](crate::operation::delete_registry_policy::DeleteRegistryPolicyInput).

@@ -38,8 +38,8 @@ impl StartBgpFailoverTestInput {
 }
 
 /// A builder for [`StartBgpFailoverTestInput`](crate::operation::start_bgp_failover_test::StartBgpFailoverTestInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartBgpFailoverTestInputBuilder {
     pub(crate) virtual_interface_id: ::std::option::Option<::std::string::String>,
     pub(crate) bgp_peers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

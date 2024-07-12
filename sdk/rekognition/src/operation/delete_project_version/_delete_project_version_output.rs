@@ -26,8 +26,8 @@ impl DeleteProjectVersionOutput {
 }
 
 /// A builder for [`DeleteProjectVersionOutput`](crate::operation::delete_project_version::DeleteProjectVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteProjectVersionOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ProjectVersionStatus>,
     _request_id: Option<String>,

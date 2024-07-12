@@ -27,8 +27,8 @@ impl AwsDynamoDbTableStreamSpecification {
 }
 
 /// A builder for [`AwsDynamoDbTableStreamSpecification`](crate::types::AwsDynamoDbTableStreamSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsDynamoDbTableStreamSpecificationBuilder {
     pub(crate) stream_enabled: ::std::option::Option<bool>,
     pub(crate) stream_view_type: ::std::option::Option<::std::string::String>,

@@ -57,8 +57,8 @@ impl JwtTokenTypeConfiguration {
 }
 
 /// A builder for [`JwtTokenTypeConfiguration`](crate::types::JwtTokenTypeConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JwtTokenTypeConfigurationBuilder {
     pub(crate) key_location: ::std::option::Option<crate::types::KeyLocation>,
     pub(crate) url: ::std::option::Option<::std::string::String>,

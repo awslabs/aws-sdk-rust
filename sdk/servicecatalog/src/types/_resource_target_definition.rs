@@ -33,8 +33,8 @@ impl ResourceTargetDefinition {
 }
 
 /// A builder for [`ResourceTargetDefinition`](crate::types::ResourceTargetDefinition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResourceTargetDefinitionBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::ResourceAttribute>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

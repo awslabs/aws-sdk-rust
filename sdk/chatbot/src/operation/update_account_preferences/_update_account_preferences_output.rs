@@ -26,8 +26,8 @@ impl UpdateAccountPreferencesOutput {
 }
 
 /// A builder for [`UpdateAccountPreferencesOutput`](crate::operation::update_account_preferences::UpdateAccountPreferencesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAccountPreferencesOutputBuilder {
     pub(crate) account_preferences: ::std::option::Option<crate::types::AccountPreferences>,
     _request_id: Option<String>,

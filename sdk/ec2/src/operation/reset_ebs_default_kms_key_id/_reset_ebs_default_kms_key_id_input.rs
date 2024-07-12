@@ -20,8 +20,8 @@ impl ResetEbsDefaultKmsKeyIdInput {
 }
 
 /// A builder for [`ResetEbsDefaultKmsKeyIdInput`](crate::operation::reset_ebs_default_kms_key_id::ResetEbsDefaultKmsKeyIdInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResetEbsDefaultKmsKeyIdInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
 }

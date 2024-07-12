@@ -49,8 +49,8 @@ impl AccountAssociationsListElement {
 }
 
 /// A builder for [`AccountAssociationsListElement`](crate::types::AccountAssociationsListElement).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AccountAssociationsListElementBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) billing_group_arn: ::std::option::Option<::std::string::String>,

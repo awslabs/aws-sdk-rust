@@ -18,8 +18,8 @@ impl DisassociateQualificationFromWorkerOutput {
 }
 
 /// A builder for [`DisassociateQualificationFromWorkerOutput`](crate::operation::disassociate_qualification_from_worker::DisassociateQualificationFromWorkerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateQualificationFromWorkerOutputBuilder {
     _request_id: Option<String>,
 }

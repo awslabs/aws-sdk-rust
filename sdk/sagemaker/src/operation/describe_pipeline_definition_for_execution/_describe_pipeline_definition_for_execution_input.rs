@@ -20,8 +20,8 @@ impl DescribePipelineDefinitionForExecutionInput {
 }
 
 /// A builder for [`DescribePipelineDefinitionForExecutionInput`](crate::operation::describe_pipeline_definition_for_execution::DescribePipelineDefinitionForExecutionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribePipelineDefinitionForExecutionInputBuilder {
     pub(crate) pipeline_execution_arn: ::std::option::Option<::std::string::String>,
 }

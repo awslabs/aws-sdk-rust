@@ -18,8 +18,8 @@ impl DeleteNotebookInstanceOutput {
 }
 
 /// A builder for [`DeleteNotebookInstanceOutput`](crate::operation::delete_notebook_instance::DeleteNotebookInstanceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteNotebookInstanceOutputBuilder {
     _request_id: Option<String>,
 }

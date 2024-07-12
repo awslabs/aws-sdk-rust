@@ -12,8 +12,8 @@ impl GetCheckerIpRangesInput {
 }
 
 /// A builder for [`GetCheckerIpRangesInput`](crate::operation::get_checker_ip_ranges::GetCheckerIpRangesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCheckerIpRangesInputBuilder {}
 impl GetCheckerIpRangesInputBuilder {
     /// Consumes the builder and constructs a [`GetCheckerIpRangesInput`](crate::operation::get_checker_ip_ranges::GetCheckerIpRangesInput).

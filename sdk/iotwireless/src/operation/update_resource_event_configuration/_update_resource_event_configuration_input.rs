@@ -62,8 +62,8 @@ impl UpdateResourceEventConfigurationInput {
 }
 
 /// A builder for [`UpdateResourceEventConfigurationInput`](crate::operation::update_resource_event_configuration::UpdateResourceEventConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateResourceEventConfigurationInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) identifier_type: ::std::option::Option<crate::types::IdentifierType>,

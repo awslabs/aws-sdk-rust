@@ -113,8 +113,8 @@ impl DeleteRegistrationOutput {
 }
 
 /// A builder for [`DeleteRegistrationOutput`](crate::operation::delete_registration::DeleteRegistrationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRegistrationOutputBuilder {
     pub(crate) registration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) registration_id: ::std::option::Option<::std::string::String>,

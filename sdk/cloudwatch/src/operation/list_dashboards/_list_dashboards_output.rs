@@ -34,8 +34,8 @@ impl ListDashboardsOutput {
 }
 
 /// A builder for [`ListDashboardsOutput`](crate::operation::list_dashboards::ListDashboardsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDashboardsOutputBuilder {
     pub(crate) dashboard_entries: ::std::option::Option<::std::vec::Vec<crate::types::DashboardEntry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

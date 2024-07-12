@@ -42,8 +42,8 @@ impl GetProgrammaticAccessCredentialsOutput {
 }
 
 /// A builder for [`GetProgrammaticAccessCredentialsOutput`](crate::operation::get_programmatic_access_credentials::GetProgrammaticAccessCredentialsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetProgrammaticAccessCredentialsOutputBuilder {
     pub(crate) credentials: ::std::option::Option<crate::types::Credentials>,
     pub(crate) duration_in_minutes: ::std::option::Option<i64>,

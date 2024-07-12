@@ -18,8 +18,8 @@ impl DeleteEncoderConfigurationOutput {
 }
 
 /// A builder for [`DeleteEncoderConfigurationOutput`](crate::operation::delete_encoder_configuration::DeleteEncoderConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteEncoderConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

@@ -28,8 +28,8 @@ impl LivenessOutputConfig {
 }
 
 /// A builder for [`LivenessOutputConfig`](crate::types::LivenessOutputConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LivenessOutputConfigBuilder {
     pub(crate) s3_bucket: ::std::option::Option<::std::string::String>,
     pub(crate) s3_key_prefix: ::std::option::Option<::std::string::String>,

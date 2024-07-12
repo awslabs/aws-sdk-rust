@@ -26,8 +26,8 @@ impl DescribeDetectorInput {
 }
 
 /// A builder for [`DescribeDetectorInput`](crate::operation::describe_detector::DescribeDetectorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDetectorInputBuilder {
     pub(crate) detector_model_name: ::std::option::Option<::std::string::String>,
     pub(crate) key_value: ::std::option::Option<::std::string::String>,

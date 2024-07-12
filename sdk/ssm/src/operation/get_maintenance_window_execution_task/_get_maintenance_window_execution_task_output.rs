@@ -158,8 +158,8 @@ impl GetMaintenanceWindowExecutionTaskOutput {
 }
 
 /// A builder for [`GetMaintenanceWindowExecutionTaskOutput`](crate::operation::get_maintenance_window_execution_task::GetMaintenanceWindowExecutionTaskOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetMaintenanceWindowExecutionTaskOutputBuilder {
     pub(crate) window_execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) task_execution_id: ::std::option::Option<::std::string::String>,

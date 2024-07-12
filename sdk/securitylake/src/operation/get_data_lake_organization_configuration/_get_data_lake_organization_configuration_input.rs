@@ -11,8 +11,8 @@ impl GetDataLakeOrganizationConfigurationInput {
 }
 
 /// A builder for [`GetDataLakeOrganizationConfigurationInput`](crate::operation::get_data_lake_organization_configuration::GetDataLakeOrganizationConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDataLakeOrganizationConfigurationInputBuilder {}
 impl GetDataLakeOrganizationConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`GetDataLakeOrganizationConfigurationInput`](crate::operation::get_data_lake_organization_configuration::GetDataLakeOrganizationConfigurationInput).

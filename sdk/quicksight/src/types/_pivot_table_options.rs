@@ -105,8 +105,8 @@ impl PivotTableOptions {
 }
 
 /// A builder for [`PivotTableOptions`](crate::types::PivotTableOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PivotTableOptionsBuilder {
     pub(crate) metric_placement: ::std::option::Option<crate::types::PivotTableMetricPlacement>,
     pub(crate) single_metric_visibility: ::std::option::Option<crate::types::Visibility>,

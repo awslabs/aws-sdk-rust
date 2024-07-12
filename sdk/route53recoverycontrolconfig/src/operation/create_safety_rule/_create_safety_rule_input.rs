@@ -39,8 +39,8 @@ impl CreateSafetyRuleInput {
 }
 
 /// A builder for [`CreateSafetyRuleInput`](crate::operation::create_safety_rule::CreateSafetyRuleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSafetyRuleInputBuilder {
     pub(crate) assertion_rule: ::std::option::Option<crate::types::NewAssertionRule>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

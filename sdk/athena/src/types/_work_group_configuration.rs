@@ -89,8 +89,8 @@ impl WorkGroupConfiguration {
 }
 
 /// A builder for [`WorkGroupConfiguration`](crate::types::WorkGroupConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WorkGroupConfigurationBuilder {
     pub(crate) result_configuration: ::std::option::Option<crate::types::ResultConfiguration>,
     pub(crate) enforce_work_group_configuration: ::std::option::Option<bool>,

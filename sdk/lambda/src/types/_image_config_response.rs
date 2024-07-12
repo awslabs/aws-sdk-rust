@@ -27,8 +27,8 @@ impl ImageConfigResponse {
 }
 
 /// A builder for [`ImageConfigResponse`](crate::types::ImageConfigResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImageConfigResponseBuilder {
     pub(crate) image_config: ::std::option::Option<crate::types::ImageConfig>,
     pub(crate) error: ::std::option::Option<crate::types::ImageConfigError>,

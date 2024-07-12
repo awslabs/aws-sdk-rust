@@ -21,8 +21,8 @@ impl TrackSourceSettings {
 }
 
 /// A builder for [`TrackSourceSettings`](crate::types::TrackSourceSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TrackSourceSettingsBuilder {
     pub(crate) track_number: ::std::option::Option<i32>,
 }

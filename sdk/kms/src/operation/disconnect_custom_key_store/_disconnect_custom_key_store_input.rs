@@ -20,8 +20,8 @@ impl DisconnectCustomKeyStoreInput {
 }
 
 /// A builder for [`DisconnectCustomKeyStoreInput`](crate::operation::disconnect_custom_key_store::DisconnectCustomKeyStoreInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisconnectCustomKeyStoreInputBuilder {
     pub(crate) custom_key_store_id: ::std::option::Option<::std::string::String>,
 }

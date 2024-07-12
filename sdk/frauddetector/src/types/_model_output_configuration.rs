@@ -33,8 +33,8 @@ impl ModelOutputConfiguration {
 }
 
 /// A builder for [`ModelOutputConfiguration`](crate::types::ModelOutputConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModelOutputConfigurationBuilder {
     pub(crate) format: ::std::option::Option<crate::types::ModelOutputDataFormat>,
     pub(crate) json_key_to_variable_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

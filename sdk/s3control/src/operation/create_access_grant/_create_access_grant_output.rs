@@ -90,8 +90,8 @@ impl CreateAccessGrantOutput {
 }
 
 /// A builder for [`CreateAccessGrantOutput`](crate::operation::create_access_grant::CreateAccessGrantOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAccessGrantOutputBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) access_grant_id: ::std::option::Option<::std::string::String>,

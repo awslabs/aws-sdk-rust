@@ -26,8 +26,8 @@ impl RemoveFlowSourceInput {
 }
 
 /// A builder for [`RemoveFlowSourceInput`](crate::operation::remove_flow_source::RemoveFlowSourceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoveFlowSourceInputBuilder {
     pub(crate) flow_arn: ::std::option::Option<::std::string::String>,
     pub(crate) source_arn: ::std::option::Option<::std::string::String>,

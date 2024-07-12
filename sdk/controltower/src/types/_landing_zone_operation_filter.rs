@@ -31,8 +31,8 @@ impl LandingZoneOperationFilter {
 }
 
 /// A builder for [`LandingZoneOperationFilter`](crate::types::LandingZoneOperationFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LandingZoneOperationFilterBuilder {
     pub(crate) types: ::std::option::Option<::std::vec::Vec<crate::types::LandingZoneOperationType>>,
     pub(crate) statuses: ::std::option::Option<::std::vec::Vec<crate::types::LandingZoneOperationStatus>>,

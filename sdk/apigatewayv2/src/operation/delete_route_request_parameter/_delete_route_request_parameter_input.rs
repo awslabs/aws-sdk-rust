@@ -32,8 +32,8 @@ impl DeleteRouteRequestParameterInput {
 }
 
 /// A builder for [`DeleteRouteRequestParameterInput`](crate::operation::delete_route_request_parameter::DeleteRouteRequestParameterInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRouteRequestParameterInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) request_parameter_key: ::std::option::Option<::std::string::String>,

@@ -20,8 +20,8 @@ impl DescribeScheduledAuditInput {
 }
 
 /// A builder for [`DescribeScheduledAuditInput`](crate::operation::describe_scheduled_audit::DescribeScheduledAuditInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeScheduledAuditInputBuilder {
     pub(crate) scheduled_audit_name: ::std::option::Option<::std::string::String>,
 }

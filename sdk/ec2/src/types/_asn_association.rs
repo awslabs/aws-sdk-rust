@@ -39,8 +39,8 @@ impl AsnAssociation {
 }
 
 /// A builder for [`AsnAssociation`](crate::types::AsnAssociation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AsnAssociationBuilder {
     pub(crate) asn: ::std::option::Option<::std::string::String>,
     pub(crate) cidr: ::std::option::Option<::std::string::String>,

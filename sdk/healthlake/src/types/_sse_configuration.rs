@@ -21,8 +21,8 @@ impl SseConfiguration {
 }
 
 /// A builder for [`SseConfiguration`](crate::types::SseConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SseConfigurationBuilder {
     pub(crate) kms_encryption_config: ::std::option::Option<crate::types::KmsEncryptionConfig>,
 }

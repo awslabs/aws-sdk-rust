@@ -27,8 +27,8 @@ impl CreateVpnConnectionRouteInput {
 }
 
 /// A builder for [`CreateVpnConnectionRouteInput`](crate::operation::create_vpn_connection_route::CreateVpnConnectionRouteInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateVpnConnectionRouteInputBuilder {
     pub(crate) destination_cidr_block: ::std::option::Option<::std::string::String>,
     pub(crate) vpn_connection_id: ::std::option::Option<::std::string::String>,

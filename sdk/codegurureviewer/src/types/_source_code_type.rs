@@ -45,8 +45,8 @@ impl SourceCodeType {
 }
 
 /// A builder for [`SourceCodeType`](crate::types::SourceCodeType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SourceCodeTypeBuilder {
     pub(crate) commit_diff: ::std::option::Option<crate::types::CommitDiffSourceCodeType>,
     pub(crate) repository_head: ::std::option::Option<crate::types::RepositoryHeadSourceCodeType>,

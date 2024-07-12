@@ -20,8 +20,8 @@ impl GetMulticastGroupSessionInput {
 }
 
 /// A builder for [`GetMulticastGroupSessionInput`](crate::operation::get_multicast_group_session::GetMulticastGroupSessionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMulticastGroupSessionInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }

@@ -92,8 +92,8 @@ impl DescribeAssetCompositeModelOutput {
 }
 
 /// A builder for [`DescribeAssetCompositeModelOutput`](crate::operation::describe_asset_composite_model::DescribeAssetCompositeModelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAssetCompositeModelOutputBuilder {
     pub(crate) asset_id: ::std::option::Option<::std::string::String>,
     pub(crate) asset_composite_model_id: ::std::option::Option<::std::string::String>,

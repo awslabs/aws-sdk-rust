@@ -26,8 +26,8 @@ impl UpdateKnowledgeBaseTemplateUriInput {
 }
 
 /// A builder for [`UpdateKnowledgeBaseTemplateUriInput`](crate::operation::update_knowledge_base_template_uri::UpdateKnowledgeBaseTemplateUriInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateKnowledgeBaseTemplateUriInputBuilder {
     pub(crate) knowledge_base_id: ::std::option::Option<::std::string::String>,
     pub(crate) template_uri: ::std::option::Option<::std::string::String>,

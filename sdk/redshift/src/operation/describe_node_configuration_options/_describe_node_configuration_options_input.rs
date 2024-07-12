@@ -68,8 +68,8 @@ impl DescribeNodeConfigurationOptionsInput {
 }
 
 /// A builder for [`DescribeNodeConfigurationOptionsInput`](crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeNodeConfigurationOptionsInputBuilder {
     pub(crate) action_type: ::std::option::Option<crate::types::ActionType>,
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,

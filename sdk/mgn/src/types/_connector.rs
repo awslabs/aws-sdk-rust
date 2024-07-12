@@ -62,8 +62,8 @@ impl Connector {
 }
 
 /// A builder for [`Connector`](crate::types::Connector).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ConnectorBuilder {
     pub(crate) connector_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

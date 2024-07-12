@@ -37,8 +37,8 @@ impl BatchAssociateResourcesToCustomLineItemOutput {
 }
 
 /// A builder for [`BatchAssociateResourcesToCustomLineItemOutput`](crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchAssociateResourcesToCustomLineItemOutputBuilder {
     pub(crate) successfully_associated_resources: ::std::option::Option<::std::vec::Vec<crate::types::AssociateResourceResponseElement>>,
     pub(crate) failed_associated_resources: ::std::option::Option<::std::vec::Vec<crate::types::AssociateResourceResponseElement>>,

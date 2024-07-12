@@ -32,8 +32,8 @@ impl SendSerialConsoleSshPublicKeyOutput {
 }
 
 /// A builder for [`SendSerialConsoleSshPublicKeyOutput`](crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSshPublicKeyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendSerialConsoleSshPublicKeyOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) success: ::std::option::Option<bool>,

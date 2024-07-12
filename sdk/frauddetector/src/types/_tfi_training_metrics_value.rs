@@ -29,8 +29,8 @@ impl TfiTrainingMetricsValue {
 }
 
 /// A builder for [`TfiTrainingMetricsValue`](crate::types::TfiTrainingMetricsValue).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TfiTrainingMetricsValueBuilder {
     pub(crate) metric_data_points: ::std::option::Option<::std::vec::Vec<crate::types::TfiMetricDataPoint>>,
     pub(crate) model_performance: ::std::option::Option<crate::types::TfiModelPerformance>,

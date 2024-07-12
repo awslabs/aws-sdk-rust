@@ -34,8 +34,8 @@ impl ListFeaturedResultsSetsOutput {
 }
 
 /// A builder for [`ListFeaturedResultsSetsOutput`](crate::operation::list_featured_results_sets::ListFeaturedResultsSetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFeaturedResultsSetsOutputBuilder {
     pub(crate) featured_results_set_summary_items: ::std::option::Option<::std::vec::Vec<crate::types::FeaturedResultsSetSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

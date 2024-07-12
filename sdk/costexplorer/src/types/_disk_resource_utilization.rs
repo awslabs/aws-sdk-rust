@@ -39,8 +39,8 @@ impl DiskResourceUtilization {
 }
 
 /// A builder for [`DiskResourceUtilization`](crate::types::DiskResourceUtilization).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DiskResourceUtilizationBuilder {
     pub(crate) disk_read_ops_per_second: ::std::option::Option<::std::string::String>,
     pub(crate) disk_write_ops_per_second: ::std::option::Option<::std::string::String>,

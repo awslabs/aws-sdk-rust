@@ -34,8 +34,8 @@ impl ListDocumentClassificationJobsOutput {
 }
 
 /// A builder for [`ListDocumentClassificationJobsOutput`](crate::operation::list_document_classification_jobs::ListDocumentClassificationJobsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDocumentClassificationJobsOutputBuilder {
     pub(crate) document_classification_job_properties_list: ::std::option::Option<::std::vec::Vec<crate::types::DocumentClassificationJobProperties>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

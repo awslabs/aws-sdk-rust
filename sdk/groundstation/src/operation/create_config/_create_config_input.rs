@@ -33,8 +33,8 @@ impl CreateConfigInput {
 }
 
 /// A builder for [`CreateConfigInput`](crate::operation::create_config::CreateConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateConfigInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) config_data: ::std::option::Option<crate::types::ConfigTypeData>,

@@ -32,8 +32,8 @@ impl ModifyClusterSnapshotScheduleInput {
 }
 
 /// A builder for [`ModifyClusterSnapshotScheduleInput`](crate::operation::modify_cluster_snapshot_schedule::ModifyClusterSnapshotScheduleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyClusterSnapshotScheduleInputBuilder {
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) schedule_identifier: ::std::option::Option<::std::string::String>,

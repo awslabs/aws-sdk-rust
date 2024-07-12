@@ -20,8 +20,8 @@ impl DeleteQueuedSavingsPlanInput {
 }
 
 /// A builder for [`DeleteQueuedSavingsPlanInput`](crate::operation::delete_queued_savings_plan::DeleteQueuedSavingsPlanInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteQueuedSavingsPlanInputBuilder {
     pub(crate) savings_plan_id: ::std::option::Option<::std::string::String>,
 }

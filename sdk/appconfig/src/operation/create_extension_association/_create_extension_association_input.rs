@@ -44,8 +44,8 @@ impl CreateExtensionAssociationInput {
 }
 
 /// A builder for [`CreateExtensionAssociationInput`](crate::operation::create_extension_association::CreateExtensionAssociationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateExtensionAssociationInputBuilder {
     pub(crate) extension_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) extension_version_number: ::std::option::Option<i32>,

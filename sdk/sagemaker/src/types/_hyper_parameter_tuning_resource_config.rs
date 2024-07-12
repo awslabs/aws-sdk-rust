@@ -75,8 +75,8 @@ impl HyperParameterTuningResourceConfig {
 }
 
 /// A builder for [`HyperParameterTuningResourceConfig`](crate::types::HyperParameterTuningResourceConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HyperParameterTuningResourceConfigBuilder {
     pub(crate) instance_type: ::std::option::Option<crate::types::TrainingInstanceType>,
     pub(crate) instance_count: ::std::option::Option<i32>,

@@ -20,8 +20,8 @@ impl DescribeHubInput {
 }
 
 /// A builder for [`DescribeHubInput`](crate::operation::describe_hub::DescribeHubInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeHubInputBuilder {
     pub(crate) hub_arn: ::std::option::Option<::std::string::String>,
 }

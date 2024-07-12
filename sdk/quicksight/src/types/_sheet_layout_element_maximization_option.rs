@@ -21,8 +21,8 @@ impl SheetLayoutElementMaximizationOption {
 }
 
 /// A builder for [`SheetLayoutElementMaximizationOption`](crate::types::SheetLayoutElementMaximizationOption).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SheetLayoutElementMaximizationOptionBuilder {
     pub(crate) availability_status: ::std::option::Option<crate::types::DashboardBehavior>,
 }

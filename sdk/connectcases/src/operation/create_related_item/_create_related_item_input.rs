@@ -44,8 +44,8 @@ impl CreateRelatedItemInput {
 }
 
 /// A builder for [`CreateRelatedItemInput`](crate::operation::create_related_item::CreateRelatedItemInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateRelatedItemInputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) case_id: ::std::option::Option<::std::string::String>,

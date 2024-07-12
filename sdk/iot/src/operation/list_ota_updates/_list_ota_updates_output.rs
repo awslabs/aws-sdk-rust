@@ -34,8 +34,8 @@ impl ListOtaUpdatesOutput {
 }
 
 /// A builder for [`ListOtaUpdatesOutput`](crate::operation::list_ota_updates::ListOtaUpdatesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListOtaUpdatesOutputBuilder {
     pub(crate) ota_updates: ::std::option::Option<::std::vec::Vec<crate::types::OtaUpdateSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -33,8 +33,8 @@ impl StringAttributeBoostingConfiguration {
 }
 
 /// A builder for [`StringAttributeBoostingConfiguration`](crate::types::StringAttributeBoostingConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StringAttributeBoostingConfigurationBuilder {
     pub(crate) boosting_level: ::std::option::Option<crate::types::DocumentAttributeBoostingLevel>,
     pub(crate) attribute_value_boosting:

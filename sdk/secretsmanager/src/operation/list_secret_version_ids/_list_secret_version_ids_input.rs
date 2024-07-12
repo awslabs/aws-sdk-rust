@@ -42,8 +42,8 @@ impl ListSecretVersionIdsInput {
 }
 
 /// A builder for [`ListSecretVersionIdsInput`](crate::operation::list_secret_version_ids::ListSecretVersionIdsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSecretVersionIdsInputBuilder {
     pub(crate) secret_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

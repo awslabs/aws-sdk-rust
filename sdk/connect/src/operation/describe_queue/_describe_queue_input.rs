@@ -26,8 +26,8 @@ impl DescribeQueueInput {
 }
 
 /// A builder for [`DescribeQueueInput`](crate::operation::describe_queue::DescribeQueueInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeQueueInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) queue_id: ::std::option::Option<::std::string::String>,

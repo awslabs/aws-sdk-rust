@@ -45,8 +45,8 @@ impl SparkSubmit {
 }
 
 /// A builder for [`SparkSubmit`](crate::types::SparkSubmit).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SparkSubmitBuilder {
     pub(crate) entry_point: ::std::option::Option<::std::string::String>,
     pub(crate) entry_point_arguments: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

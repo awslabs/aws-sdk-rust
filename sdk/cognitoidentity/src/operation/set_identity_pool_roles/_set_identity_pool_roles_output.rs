@@ -18,8 +18,8 @@ impl SetIdentityPoolRolesOutput {
 }
 
 /// A builder for [`SetIdentityPoolRolesOutput`](crate::operation::set_identity_pool_roles::SetIdentityPoolRolesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetIdentityPoolRolesOutputBuilder {
     _request_id: Option<String>,
 }

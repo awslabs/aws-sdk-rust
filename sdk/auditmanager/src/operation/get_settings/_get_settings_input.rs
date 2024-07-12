@@ -20,8 +20,8 @@ impl GetSettingsInput {
 }
 
 /// A builder for [`GetSettingsInput`](crate::operation::get_settings::GetSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSettingsInputBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::SettingAttribute>,
 }

@@ -68,8 +68,8 @@ impl Intent {
 }
 
 /// A builder for [`Intent`](crate::types::Intent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IntentBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) slots: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Slot>>,

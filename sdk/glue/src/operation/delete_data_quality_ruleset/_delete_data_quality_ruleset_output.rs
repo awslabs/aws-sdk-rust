@@ -18,8 +18,8 @@ impl DeleteDataQualityRulesetOutput {
 }
 
 /// A builder for [`DeleteDataQualityRulesetOutput`](crate::operation::delete_data_quality_ruleset::DeleteDataQualityRulesetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDataQualityRulesetOutputBuilder {
     _request_id: Option<String>,
 }

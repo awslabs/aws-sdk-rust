@@ -20,8 +20,8 @@ impl GetPullRequestInput {
 }
 
 /// A builder for [`GetPullRequestInput`](crate::operation::get_pull_request::GetPullRequestInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPullRequestInputBuilder {
     pub(crate) pull_request_id: ::std::option::Option<::std::string::String>,
 }

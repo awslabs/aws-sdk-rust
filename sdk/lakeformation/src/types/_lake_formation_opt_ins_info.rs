@@ -39,8 +39,8 @@ impl LakeFormationOptInsInfo {
 }
 
 /// A builder for [`LakeFormationOptInsInfo`](crate::types::LakeFormationOptInsInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LakeFormationOptInsInfoBuilder {
     pub(crate) resource: ::std::option::Option<crate::types::Resource>,
     pub(crate) principal: ::std::option::Option<crate::types::DataLakePrincipal>,

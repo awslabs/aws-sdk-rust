@@ -43,8 +43,8 @@ impl BucketPublicAccess {
 }
 
 /// A builder for [`BucketPublicAccess`](crate::types::BucketPublicAccess).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BucketPublicAccessBuilder {
     pub(crate) effective_permission: ::std::option::Option<crate::types::EffectivePermission>,
     pub(crate) permission_configuration: ::std::option::Option<crate::types::BucketPermissionConfiguration>,

@@ -20,8 +20,8 @@ impl DeleteTargetGroupInput {
 }
 
 /// A builder for [`DeleteTargetGroupInput`](crate::operation::delete_target_group::DeleteTargetGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTargetGroupInputBuilder {
     pub(crate) target_group_arn: ::std::option::Option<::std::string::String>,
 }

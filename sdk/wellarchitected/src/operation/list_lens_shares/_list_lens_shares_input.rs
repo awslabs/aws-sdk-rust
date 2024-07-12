@@ -50,8 +50,8 @@ impl ListLensSharesInput {
 }
 
 /// A builder for [`ListLensSharesInput`](crate::operation::list_lens_shares::ListLensSharesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListLensSharesInputBuilder {
     pub(crate) lens_alias: ::std::option::Option<::std::string::String>,
     pub(crate) shared_with_prefix: ::std::option::Option<::std::string::String>,

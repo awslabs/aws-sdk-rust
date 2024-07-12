@@ -33,8 +33,8 @@ impl WarningProperty {
 }
 
 /// A builder for [`WarningProperty`](crate::types::WarningProperty).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WarningPropertyBuilder {
     pub(crate) property_path: ::std::option::Option<::std::string::String>,
     pub(crate) required: ::std::option::Option<bool>,

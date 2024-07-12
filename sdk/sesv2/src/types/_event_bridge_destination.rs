@@ -22,8 +22,8 @@ impl EventBridgeDestination {
 }
 
 /// A builder for [`EventBridgeDestination`](crate::types::EventBridgeDestination).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EventBridgeDestinationBuilder {
     pub(crate) event_bus_arn: ::std::option::Option<::std::string::String>,
 }

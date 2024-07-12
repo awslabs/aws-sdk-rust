@@ -41,8 +41,8 @@ impl CreateCliTokenOutput {
 }
 
 /// A builder for [`CreateCliTokenOutput`](crate::operation::create_cli_token::CreateCliTokenOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateCliTokenOutputBuilder {
     pub(crate) cli_token: ::std::option::Option<::std::string::String>,
     pub(crate) web_server_hostname: ::std::option::Option<::std::string::String>,

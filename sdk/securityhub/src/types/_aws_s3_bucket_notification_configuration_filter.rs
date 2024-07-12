@@ -21,8 +21,8 @@ impl AwsS3BucketNotificationConfigurationFilter {
 }
 
 /// A builder for [`AwsS3BucketNotificationConfigurationFilter`](crate::types::AwsS3BucketNotificationConfigurationFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsS3BucketNotificationConfigurationFilterBuilder {
     pub(crate) s3_key_filter: ::std::option::Option<crate::types::AwsS3BucketNotificationConfigurationS3KeyFilter>,
 }

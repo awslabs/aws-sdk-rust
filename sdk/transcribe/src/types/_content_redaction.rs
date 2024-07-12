@@ -39,8 +39,8 @@ impl ContentRedaction {
 }
 
 /// A builder for [`ContentRedaction`](crate::types::ContentRedaction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ContentRedactionBuilder {
     pub(crate) redaction_type: ::std::option::Option<crate::types::RedactionType>,
     pub(crate) redaction_output: ::std::option::Option<crate::types::RedactionOutput>,

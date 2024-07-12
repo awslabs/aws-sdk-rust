@@ -39,8 +39,8 @@ impl AccountAggregation {
 }
 
 /// A builder for [`AccountAggregation`](crate::types::AccountAggregation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AccountAggregationBuilder {
     pub(crate) finding_type: ::std::option::Option<crate::types::AggregationFindingType>,
     pub(crate) resource_type: ::std::option::Option<crate::types::AggregationResourceType>,

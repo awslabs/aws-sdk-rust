@@ -39,8 +39,8 @@ impl GetIdentityPoolConfigurationOutput {
 }
 
 /// A builder for [`GetIdentityPoolConfigurationOutput`](crate::operation::get_identity_pool_configuration::GetIdentityPoolConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetIdentityPoolConfigurationOutputBuilder {
     pub(crate) identity_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) push_sync: ::std::option::Option<crate::types::PushSync>,

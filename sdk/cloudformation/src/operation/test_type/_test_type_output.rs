@@ -26,8 +26,8 @@ impl TestTypeOutput {
 }
 
 /// A builder for [`TestTypeOutput`](crate::operation::test_type::TestTypeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TestTypeOutputBuilder {
     pub(crate) type_version_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

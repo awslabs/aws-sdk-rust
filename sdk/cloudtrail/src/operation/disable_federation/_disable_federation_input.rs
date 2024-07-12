@@ -20,8 +20,8 @@ impl DisableFederationInput {
 }
 
 /// A builder for [`DisableFederationInput`](crate::operation::disable_federation::DisableFederationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableFederationInputBuilder {
     pub(crate) event_data_store: ::std::option::Option<::std::string::String>,
 }

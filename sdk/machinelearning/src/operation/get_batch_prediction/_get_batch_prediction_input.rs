@@ -20,8 +20,8 @@ impl GetBatchPredictionInput {
 }
 
 /// A builder for [`GetBatchPredictionInput`](crate::operation::get_batch_prediction::GetBatchPredictionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBatchPredictionInputBuilder {
     pub(crate) batch_prediction_id: ::std::option::Option<::std::string::String>,
 }

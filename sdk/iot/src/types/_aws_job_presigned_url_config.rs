@@ -21,8 +21,8 @@ impl AwsJobPresignedUrlConfig {
 }
 
 /// A builder for [`AwsJobPresignedUrlConfig`](crate::types::AwsJobPresignedUrlConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsJobPresignedUrlConfigBuilder {
     pub(crate) expires_in_sec: ::std::option::Option<i64>,
 }

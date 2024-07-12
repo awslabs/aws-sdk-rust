@@ -35,8 +35,8 @@ impl ListMissionProfilesOutput {
 }
 
 /// A builder for [`ListMissionProfilesOutput`](crate::operation::list_mission_profiles::ListMissionProfilesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListMissionProfilesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) mission_profile_list: ::std::option::Option<::std::vec::Vec<crate::types::MissionProfileListItem>>,

@@ -20,8 +20,8 @@ impl DeleteIdMappingWorkflowInput {
 }
 
 /// A builder for [`DeleteIdMappingWorkflowInput`](crate::operation::delete_id_mapping_workflow::DeleteIdMappingWorkflowInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteIdMappingWorkflowInputBuilder {
     pub(crate) workflow_name: ::std::option::Option<::std::string::String>,
 }

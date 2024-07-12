@@ -32,8 +32,8 @@ impl ListControlOperationsInput {
 }
 
 /// A builder for [`ListControlOperationsInput`](crate::operation::list_control_operations::ListControlOperationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListControlOperationsInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::ControlOperationFilter>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

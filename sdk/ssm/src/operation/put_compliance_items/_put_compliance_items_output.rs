@@ -18,8 +18,8 @@ impl PutComplianceItemsOutput {
 }
 
 /// A builder for [`PutComplianceItemsOutput`](crate::operation::put_compliance_items::PutComplianceItemsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutComplianceItemsOutputBuilder {
     _request_id: Option<String>,
 }

@@ -20,8 +20,8 @@ impl GetWirelessGatewayCertificateInput {
 }
 
 /// A builder for [`GetWirelessGatewayCertificateInput`](crate::operation::get_wireless_gateway_certificate::GetWirelessGatewayCertificateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetWirelessGatewayCertificateInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }

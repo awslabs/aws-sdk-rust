@@ -31,8 +31,8 @@ impl FleetCapabilities {
 }
 
 /// A builder for [`FleetCapabilities`](crate::types::FleetCapabilities).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FleetCapabilitiesBuilder {
     pub(crate) amounts: ::std::option::Option<::std::vec::Vec<crate::types::FleetAmountCapability>>,
     pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::FleetAttributeCapability>>,

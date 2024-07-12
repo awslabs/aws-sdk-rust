@@ -28,8 +28,8 @@ impl CancelDomainTransferToAnotherAwsAccountOutput {
 }
 
 /// A builder for [`CancelDomainTransferToAnotherAwsAccountOutput`](crate::operation::cancel_domain_transfer_to_another_aws_account::CancelDomainTransferToAnotherAwsAccountOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelDomainTransferToAnotherAwsAccountOutputBuilder {
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

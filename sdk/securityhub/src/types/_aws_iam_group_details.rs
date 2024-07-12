@@ -81,8 +81,8 @@ impl AwsIamGroupDetails {
 }
 
 /// A builder for [`AwsIamGroupDetails`](crate::types::AwsIamGroupDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsIamGroupDetailsBuilder {
     pub(crate) attached_managed_policies: ::std::option::Option<::std::vec::Vec<crate::types::AwsIamAttachedManagedPolicy>>,
     pub(crate) create_date: ::std::option::Option<::std::string::String>,

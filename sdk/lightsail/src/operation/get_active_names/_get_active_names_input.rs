@@ -22,8 +22,8 @@ impl GetActiveNamesInput {
 }
 
 /// A builder for [`GetActiveNamesInput`](crate::operation::get_active_names::GetActiveNamesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetActiveNamesInputBuilder {
     pub(crate) page_token: ::std::option::Option<::std::string::String>,
 }

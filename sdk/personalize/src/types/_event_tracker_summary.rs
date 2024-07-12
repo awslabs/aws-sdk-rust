@@ -59,8 +59,8 @@ impl EventTrackerSummary {
 }
 
 /// A builder for [`EventTrackerSummary`](crate::types::EventTrackerSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EventTrackerSummaryBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) event_tracker_arn: ::std::option::Option<::std::string::String>,

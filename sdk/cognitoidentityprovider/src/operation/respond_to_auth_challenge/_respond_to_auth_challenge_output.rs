@@ -56,8 +56,8 @@ impl RespondToAuthChallengeOutput {
 }
 
 /// A builder for [`RespondToAuthChallengeOutput`](crate::operation::respond_to_auth_challenge::RespondToAuthChallengeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct RespondToAuthChallengeOutputBuilder {
     pub(crate) challenge_name: ::std::option::Option<crate::types::ChallengeNameType>,
     pub(crate) session: ::std::option::Option<::std::string::String>,

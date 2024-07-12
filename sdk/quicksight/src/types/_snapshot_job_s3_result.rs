@@ -44,8 +44,8 @@ impl SnapshotJobS3Result {
 }
 
 /// A builder for [`SnapshotJobS3Result`](crate::types::SnapshotJobS3Result).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SnapshotJobS3ResultBuilder {
     pub(crate) s3_destination_configuration: ::std::option::Option<crate::types::SnapshotS3DestinationConfiguration>,
     pub(crate) s3_uri: ::std::option::Option<::std::string::String>,

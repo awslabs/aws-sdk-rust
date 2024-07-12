@@ -39,8 +39,8 @@ impl ReputationOptions {
 }
 
 /// A builder for [`ReputationOptions`](crate::types::ReputationOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReputationOptionsBuilder {
     pub(crate) sending_enabled: ::std::option::Option<bool>,
     pub(crate) reputation_metrics_enabled: ::std::option::Option<bool>,

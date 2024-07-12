@@ -18,8 +18,8 @@ impl DeleteProtectionOutput {
 }
 
 /// A builder for [`DeleteProtectionOutput`](crate::operation::delete_protection::DeleteProtectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteProtectionOutputBuilder {
     _request_id: Option<String>,
 }

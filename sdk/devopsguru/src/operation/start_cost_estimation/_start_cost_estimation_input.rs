@@ -26,8 +26,8 @@ impl StartCostEstimationInput {
 }
 
 /// A builder for [`StartCostEstimationInput`](crate::operation::start_cost_estimation::StartCostEstimationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartCostEstimationInputBuilder {
     pub(crate) resource_collection: ::std::option::Option<crate::types::CostEstimationResourceCollectionFilter>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

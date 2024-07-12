@@ -34,8 +34,8 @@ impl GetKxConnectionStringOutput {
 }
 
 /// A builder for [`GetKxConnectionStringOutput`](crate::operation::get_kx_connection_string::GetKxConnectionStringOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetKxConnectionStringOutputBuilder {
     pub(crate) signed_connection_string: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

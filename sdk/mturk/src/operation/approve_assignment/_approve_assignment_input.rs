@@ -32,8 +32,8 @@ impl ApproveAssignmentInput {
 }
 
 /// A builder for [`ApproveAssignmentInput`](crate::operation::approve_assignment::ApproveAssignmentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ApproveAssignmentInputBuilder {
     pub(crate) assignment_id: ::std::option::Option<::std::string::String>,
     pub(crate) requester_feedback: ::std::option::Option<::std::string::String>,

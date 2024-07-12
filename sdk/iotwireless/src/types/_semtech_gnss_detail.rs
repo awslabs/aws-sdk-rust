@@ -39,8 +39,8 @@ impl SemtechGnssDetail {
 }
 
 /// A builder for [`SemtechGnssDetail`](crate::types::SemtechGnssDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SemtechGnssDetailBuilder {
     pub(crate) provider: ::std::option::Option<crate::types::PositionSolverProvider>,
     pub(crate) r#type: ::std::option::Option<crate::types::PositionSolverType>,

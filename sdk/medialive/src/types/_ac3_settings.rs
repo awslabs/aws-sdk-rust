@@ -63,8 +63,8 @@ impl Ac3Settings {
 }
 
 /// A builder for [`Ac3Settings`](crate::types::Ac3Settings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Ac3SettingsBuilder {
     pub(crate) bitrate: ::std::option::Option<f64>,
     pub(crate) bitstream_mode: ::std::option::Option<crate::types::Ac3BitstreamMode>,

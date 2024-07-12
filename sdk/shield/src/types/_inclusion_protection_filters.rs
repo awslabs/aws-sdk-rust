@@ -39,8 +39,8 @@ impl InclusionProtectionFilters {
 }
 
 /// A builder for [`InclusionProtectionFilters`](crate::types::InclusionProtectionFilters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InclusionProtectionFiltersBuilder {
     pub(crate) resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) protection_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

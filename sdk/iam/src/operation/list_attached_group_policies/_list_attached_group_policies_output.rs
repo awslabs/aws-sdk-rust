@@ -41,8 +41,8 @@ impl ListAttachedGroupPoliciesOutput {
 }
 
 /// A builder for [`ListAttachedGroupPoliciesOutput`](crate::operation::list_attached_group_policies::ListAttachedGroupPoliciesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAttachedGroupPoliciesOutputBuilder {
     pub(crate) attached_policies: ::std::option::Option<::std::vec::Vec<crate::types::AttachedPolicy>>,
     pub(crate) is_truncated: ::std::option::Option<bool>,

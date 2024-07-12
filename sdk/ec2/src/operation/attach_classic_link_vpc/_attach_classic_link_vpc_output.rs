@@ -26,8 +26,8 @@ impl AttachClassicLinkVpcOutput {
 }
 
 /// A builder for [`AttachClassicLinkVpcOutput`](crate::operation::attach_classic_link_vpc::AttachClassicLinkVpcOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttachClassicLinkVpcOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,

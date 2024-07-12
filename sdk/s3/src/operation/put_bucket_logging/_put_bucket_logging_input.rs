@@ -48,8 +48,8 @@ impl PutBucketLoggingInput {
 }
 
 /// A builder for [`PutBucketLoggingInput`](crate::operation::put_bucket_logging::PutBucketLoggingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutBucketLoggingInputBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) bucket_logging_status: ::std::option::Option<crate::types::BucketLoggingStatus>,

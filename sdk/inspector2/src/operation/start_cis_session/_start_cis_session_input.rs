@@ -26,8 +26,8 @@ impl StartCisSessionInput {
 }
 
 /// A builder for [`StartCisSessionInput`](crate::operation::start_cis_session::StartCisSessionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartCisSessionInputBuilder {
     pub(crate) scan_job_id: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<crate::types::StartCisSessionMessage>,

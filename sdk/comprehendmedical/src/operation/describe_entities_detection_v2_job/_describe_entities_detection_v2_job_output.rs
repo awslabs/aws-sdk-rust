@@ -26,8 +26,8 @@ impl DescribeEntitiesDetectionV2JobOutput {
 }
 
 /// A builder for [`DescribeEntitiesDetectionV2JobOutput`](crate::operation::describe_entities_detection_v2_job::DescribeEntitiesDetectionV2JobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEntitiesDetectionV2JobOutputBuilder {
     pub(crate) comprehend_medical_async_job_properties: ::std::option::Option<crate::types::ComprehendMedicalAsyncJobProperties>,
     _request_id: Option<String>,

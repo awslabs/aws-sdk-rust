@@ -26,8 +26,8 @@ impl DetectMetricSetConfigOutput {
 }
 
 /// A builder for [`DetectMetricSetConfigOutput`](crate::operation::detect_metric_set_config::DetectMetricSetConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetectMetricSetConfigOutputBuilder {
     pub(crate) detected_metric_set_config: ::std::option::Option<crate::types::DetectedMetricSetConfig>,
     _request_id: Option<String>,

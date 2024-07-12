@@ -23,8 +23,8 @@ impl DescribeConfigurationRecordersInput {
 }
 
 /// A builder for [`DescribeConfigurationRecordersInput`](crate::operation::describe_configuration_recorders::DescribeConfigurationRecordersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeConfigurationRecordersInputBuilder {
     pub(crate) configuration_recorder_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

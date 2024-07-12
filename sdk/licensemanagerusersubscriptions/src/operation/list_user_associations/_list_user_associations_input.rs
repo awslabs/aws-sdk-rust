@@ -46,8 +46,8 @@ impl ListUserAssociationsInput {
 }
 
 /// A builder for [`ListUserAssociationsInput`](crate::operation::list_user_associations::ListUserAssociationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListUserAssociationsInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) identity_provider: ::std::option::Option<crate::types::IdentityProvider>,

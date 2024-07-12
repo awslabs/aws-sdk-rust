@@ -34,8 +34,8 @@ impl OpsItemEventFilter {
 }
 
 /// A builder for [`OpsItemEventFilter`](crate::types::OpsItemEventFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OpsItemEventFilterBuilder {
     pub(crate) key: ::std::option::Option<crate::types::OpsItemEventFilterKey>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

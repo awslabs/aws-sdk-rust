@@ -35,8 +35,8 @@ impl RedshiftConnectorProfileCredentials {
 }
 
 /// A builder for [`RedshiftConnectorProfileCredentials`](crate::types::RedshiftConnectorProfileCredentials).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct RedshiftConnectorProfileCredentialsBuilder {
     pub(crate) username: ::std::option::Option<::std::string::String>,
     pub(crate) password: ::std::option::Option<::std::string::String>,

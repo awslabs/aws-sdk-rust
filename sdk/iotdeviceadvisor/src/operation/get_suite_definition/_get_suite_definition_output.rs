@@ -68,8 +68,8 @@ impl GetSuiteDefinitionOutput {
 }
 
 /// A builder for [`GetSuiteDefinitionOutput`](crate::operation::get_suite_definition::GetSuiteDefinitionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSuiteDefinitionOutputBuilder {
     pub(crate) suite_definition_id: ::std::option::Option<::std::string::String>,
     pub(crate) suite_definition_arn: ::std::option::Option<::std::string::String>,

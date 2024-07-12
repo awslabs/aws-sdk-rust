@@ -28,8 +28,8 @@ impl CreateFleetLocationsInput {
 }
 
 /// A builder for [`CreateFleetLocationsInput`](crate::operation::create_fleet_locations::CreateFleetLocationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateFleetLocationsInputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) locations: ::std::option::Option<::std::vec::Vec<crate::types::LocationConfiguration>>,

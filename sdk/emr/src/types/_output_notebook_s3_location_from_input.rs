@@ -27,8 +27,8 @@ impl OutputNotebookS3LocationFromInput {
 }
 
 /// A builder for [`OutputNotebookS3LocationFromInput`](crate::types::OutputNotebookS3LocationFromInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OutputNotebookS3LocationFromInputBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) key: ::std::option::Option<::std::string::String>,

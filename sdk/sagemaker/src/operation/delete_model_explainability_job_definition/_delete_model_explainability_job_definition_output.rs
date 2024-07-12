@@ -18,8 +18,8 @@ impl DeleteModelExplainabilityJobDefinitionOutput {
 }
 
 /// A builder for [`DeleteModelExplainabilityJobDefinitionOutput`](crate::operation::delete_model_explainability_job_definition::DeleteModelExplainabilityJobDefinitionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteModelExplainabilityJobDefinitionOutputBuilder {
     _request_id: Option<String>,
 }

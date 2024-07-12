@@ -29,8 +29,8 @@ impl PollForThirdPartyJobsOutput {
 }
 
 /// A builder for [`PollForThirdPartyJobsOutput`](crate::operation::poll_for_third_party_jobs::PollForThirdPartyJobsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PollForThirdPartyJobsOutputBuilder {
     pub(crate) jobs: ::std::option::Option<::std::vec::Vec<crate::types::ThirdPartyJob>>,
     _request_id: Option<String>,

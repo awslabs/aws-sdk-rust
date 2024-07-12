@@ -23,8 +23,8 @@ impl DisableLoggingInput {
 }
 
 /// A builder for [`DisableLoggingInput`](crate::operation::disable_logging::DisableLoggingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableLoggingInputBuilder {
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
 }

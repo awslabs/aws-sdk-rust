@@ -49,8 +49,8 @@ impl ExecuteSqlInput {
 }
 
 /// A builder for [`ExecuteSqlInput`](crate::operation::execute_sql::ExecuteSqlInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExecuteSqlInputBuilder {
     pub(crate) db_cluster_or_instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) aws_secret_store_arn: ::std::option::Option<::std::string::String>,

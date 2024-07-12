@@ -51,8 +51,8 @@ impl LexiconAttributes {
 }
 
 /// A builder for [`LexiconAttributes`](crate::types::LexiconAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LexiconAttributesBuilder {
     pub(crate) alphabet: ::std::option::Option<::std::string::String>,
     pub(crate) language_code: ::std::option::Option<crate::types::LanguageCode>,

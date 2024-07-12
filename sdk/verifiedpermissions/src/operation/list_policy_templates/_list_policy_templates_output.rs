@@ -33,8 +33,8 @@ impl ListPolicyTemplatesOutput {
 }
 
 /// A builder for [`ListPolicyTemplatesOutput`](crate::operation::list_policy_templates::ListPolicyTemplatesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPolicyTemplatesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) policy_templates: ::std::option::Option<::std::vec::Vec<crate::types::PolicyTemplateItem>>,

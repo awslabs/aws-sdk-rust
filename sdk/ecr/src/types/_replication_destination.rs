@@ -29,8 +29,8 @@ impl ReplicationDestination {
 }
 
 /// A builder for [`ReplicationDestination`](crate::types::ReplicationDestination).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReplicationDestinationBuilder {
     pub(crate) region: ::std::option::Option<::std::string::String>,
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,

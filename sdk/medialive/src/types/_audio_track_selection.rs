@@ -29,8 +29,8 @@ impl AudioTrackSelection {
 }
 
 /// A builder for [`AudioTrackSelection`](crate::types::AudioTrackSelection).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AudioTrackSelectionBuilder {
     pub(crate) tracks: ::std::option::Option<::std::vec::Vec<crate::types::AudioTrack>>,
     pub(crate) dolby_e_decode: ::std::option::Option<crate::types::AudioDolbyEDecode>,

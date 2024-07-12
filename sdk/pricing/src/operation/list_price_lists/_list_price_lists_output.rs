@@ -34,8 +34,8 @@ impl ListPriceListsOutput {
 }
 
 /// A builder for [`ListPriceListsOutput`](crate::operation::list_price_lists::ListPriceListsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPriceListsOutputBuilder {
     pub(crate) price_lists: ::std::option::Option<::std::vec::Vec<crate::types::PriceList>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

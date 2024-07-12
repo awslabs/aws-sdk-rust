@@ -26,8 +26,8 @@ impl DescribeResourcePoliciesInput {
 }
 
 /// A builder for [`DescribeResourcePoliciesInput`](crate::operation::describe_resource_policies::DescribeResourcePoliciesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeResourcePoliciesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,

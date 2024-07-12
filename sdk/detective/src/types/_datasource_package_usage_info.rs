@@ -27,8 +27,8 @@ impl DatasourcePackageUsageInfo {
 }
 
 /// A builder for [`DatasourcePackageUsageInfo`](crate::types::DatasourcePackageUsageInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DatasourcePackageUsageInfoBuilder {
     pub(crate) volume_usage_in_bytes: ::std::option::Option<i64>,
     pub(crate) volume_usage_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,

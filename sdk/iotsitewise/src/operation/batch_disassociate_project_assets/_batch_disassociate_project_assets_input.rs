@@ -34,8 +34,8 @@ impl BatchDisassociateProjectAssetsInput {
 }
 
 /// A builder for [`BatchDisassociateProjectAssetsInput`](crate::operation::batch_disassociate_project_assets::BatchDisassociateProjectAssetsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDisassociateProjectAssetsInputBuilder {
     pub(crate) project_id: ::std::option::Option<::std::string::String>,
     pub(crate) asset_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -56,8 +56,8 @@ impl ListImageScanFindingsInput {
 }
 
 /// A builder for [`ListImageScanFindingsInput`](crate::operation::list_image_scan_findings::ListImageScanFindingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListImageScanFindingsInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::ImageScanFindingsFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,

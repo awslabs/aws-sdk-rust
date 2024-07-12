@@ -34,8 +34,8 @@ impl DescribeSecurityGroupRulesOutput {
 }
 
 /// A builder for [`DescribeSecurityGroupRulesOutput`](crate::operation::describe_security_group_rules::DescribeSecurityGroupRulesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSecurityGroupRulesOutputBuilder {
     pub(crate) security_group_rules: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupRule>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

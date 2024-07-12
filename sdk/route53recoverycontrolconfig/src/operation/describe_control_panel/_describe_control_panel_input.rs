@@ -20,8 +20,8 @@ impl DescribeControlPanelInput {
 }
 
 /// A builder for [`DescribeControlPanelInput`](crate::operation::describe_control_panel::DescribeControlPanelInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeControlPanelInputBuilder {
     pub(crate) control_panel_arn: ::std::option::Option<::std::string::String>,
 }

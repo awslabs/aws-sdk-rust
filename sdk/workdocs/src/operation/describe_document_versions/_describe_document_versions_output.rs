@@ -34,8 +34,8 @@ impl DescribeDocumentVersionsOutput {
 }
 
 /// A builder for [`DescribeDocumentVersionsOutput`](crate::operation::describe_document_versions::DescribeDocumentVersionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDocumentVersionsOutputBuilder {
     pub(crate) document_versions: ::std::option::Option<::std::vec::Vec<crate::types::DocumentVersionMetadata>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

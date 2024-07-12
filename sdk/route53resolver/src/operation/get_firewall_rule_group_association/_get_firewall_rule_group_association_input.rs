@@ -20,8 +20,8 @@ impl GetFirewallRuleGroupAssociationInput {
 }
 
 /// A builder for [`GetFirewallRuleGroupAssociationInput`](crate::operation::get_firewall_rule_group_association::GetFirewallRuleGroupAssociationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetFirewallRuleGroupAssociationInputBuilder {
     pub(crate) firewall_rule_group_association_id: ::std::option::Option<::std::string::String>,
 }

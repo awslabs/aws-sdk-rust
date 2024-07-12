@@ -26,8 +26,8 @@ impl GetAnomalyGroupInput {
 }
 
 /// A builder for [`GetAnomalyGroupInput`](crate::operation::get_anomaly_group::GetAnomalyGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAnomalyGroupInputBuilder {
     pub(crate) anomaly_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) anomaly_detector_arn: ::std::option::Option<::std::string::String>,

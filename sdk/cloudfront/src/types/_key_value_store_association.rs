@@ -22,8 +22,8 @@ impl KeyValueStoreAssociation {
 }
 
 /// A builder for [`KeyValueStoreAssociation`](crate::types::KeyValueStoreAssociation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KeyValueStoreAssociationBuilder {
     pub(crate) key_value_store_arn: ::std::option::Option<::std::string::String>,
 }

@@ -21,8 +21,8 @@ impl DeleteAccessGrantsInstanceResourcePolicyInput {
 }
 
 /// A builder for [`DeleteAccessGrantsInstanceResourcePolicyInput`](crate::operation::delete_access_grants_instance_resource_policy::DeleteAccessGrantsInstanceResourcePolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAccessGrantsInstanceResourcePolicyInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }

@@ -39,8 +39,8 @@ impl Iops {
 }
 
 /// A builder for [`Iops`](crate::types::Iops).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IopsBuilder {
     pub(crate) read: ::std::option::Option<f64>,
     pub(crate) write: ::std::option::Option<f64>,

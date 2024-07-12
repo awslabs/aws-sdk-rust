@@ -26,8 +26,8 @@ impl StartThingRegistrationTaskOutput {
 }
 
 /// A builder for [`StartThingRegistrationTaskOutput`](crate::operation::start_thing_registration_task::StartThingRegistrationTaskOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartThingRegistrationTaskOutputBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

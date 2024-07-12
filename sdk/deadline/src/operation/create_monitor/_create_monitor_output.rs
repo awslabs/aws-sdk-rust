@@ -34,8 +34,8 @@ impl CreateMonitorOutput {
 }
 
 /// A builder for [`CreateMonitorOutput`](crate::operation::create_monitor::CreateMonitorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateMonitorOutputBuilder {
     pub(crate) monitor_id: ::std::option::Option<::std::string::String>,
     pub(crate) identity_center_application_arn: ::std::option::Option<::std::string::String>,

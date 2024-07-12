@@ -26,8 +26,8 @@ impl DeleteKeyValueStoreInput {
 }
 
 /// A builder for [`DeleteKeyValueStoreInput`](crate::operation::delete_key_value_store::DeleteKeyValueStoreInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteKeyValueStoreInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) if_match: ::std::option::Option<::std::string::String>,

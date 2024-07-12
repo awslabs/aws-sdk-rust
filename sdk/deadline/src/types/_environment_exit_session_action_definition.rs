@@ -22,8 +22,8 @@ impl EnvironmentExitSessionActionDefinition {
 }
 
 /// A builder for [`EnvironmentExitSessionActionDefinition`](crate::types::EnvironmentExitSessionActionDefinition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnvironmentExitSessionActionDefinitionBuilder {
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
 }

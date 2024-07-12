@@ -65,8 +65,8 @@ impl CriterionAdditionalProperties {
 }
 
 /// A builder for [`CriterionAdditionalProperties`](crate::types::CriterionAdditionalProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CriterionAdditionalPropertiesBuilder {
     pub(crate) eq: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) eq_exact_match: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -38,8 +38,8 @@ impl CreateInstanceInput {
 }
 
 /// A builder for [`CreateInstanceInput`](crate::operation::create_instance::CreateInstanceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateInstanceInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

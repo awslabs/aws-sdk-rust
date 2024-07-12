@@ -18,8 +18,8 @@ impl AssociateTrackerConsumerOutput {
 }
 
 /// A builder for [`AssociateTrackerConsumerOutput`](crate::operation::associate_tracker_consumer::AssociateTrackerConsumerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateTrackerConsumerOutputBuilder {
     _request_id: Option<String>,
 }

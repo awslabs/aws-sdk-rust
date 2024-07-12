@@ -28,8 +28,8 @@ impl UpdateDomainEntryOutput {
 }
 
 /// A builder for [`UpdateDomainEntryOutput`](crate::operation::update_domain_entry::UpdateDomainEntryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDomainEntryOutputBuilder {
     pub(crate) operations: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>,
     _request_id: Option<String>,

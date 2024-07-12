@@ -39,8 +39,8 @@ impl DescribeAggregateComplianceByConfigRulesInput {
 }
 
 /// A builder for [`DescribeAggregateComplianceByConfigRulesInput`](crate::operation::describe_aggregate_compliance_by_config_rules::DescribeAggregateComplianceByConfigRulesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAggregateComplianceByConfigRulesInputBuilder {
     pub(crate) configuration_aggregator_name: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<crate::types::ConfigRuleComplianceFilters>,

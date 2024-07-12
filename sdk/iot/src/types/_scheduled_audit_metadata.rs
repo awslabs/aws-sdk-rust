@@ -45,8 +45,8 @@ impl ScheduledAuditMetadata {
 }
 
 /// A builder for [`ScheduledAuditMetadata`](crate::types::ScheduledAuditMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScheduledAuditMetadataBuilder {
     pub(crate) scheduled_audit_name: ::std::option::Option<::std::string::String>,
     pub(crate) scheduled_audit_arn: ::std::option::Option<::std::string::String>,

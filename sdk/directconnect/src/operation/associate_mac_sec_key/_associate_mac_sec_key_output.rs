@@ -34,8 +34,8 @@ impl AssociateMacSecKeyOutput {
 }
 
 /// A builder for [`AssociateMacSecKeyOutput`](crate::operation::associate_mac_sec_key::AssociateMacSecKeyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateMacSecKeyOutputBuilder {
     pub(crate) connection_id: ::std::option::Option<::std::string::String>,
     pub(crate) mac_sec_keys: ::std::option::Option<::std::vec::Vec<crate::types::MacSecKey>>,

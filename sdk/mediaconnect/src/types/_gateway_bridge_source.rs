@@ -27,8 +27,8 @@ impl GatewayBridgeSource {
 }
 
 /// A builder for [`GatewayBridgeSource`](crate::types::GatewayBridgeSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GatewayBridgeSourceBuilder {
     pub(crate) bridge_arn: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_interface_attachment: ::std::option::Option<crate::types::VpcInterfaceAttachment>,

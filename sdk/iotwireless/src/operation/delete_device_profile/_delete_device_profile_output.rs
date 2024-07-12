@@ -18,8 +18,8 @@ impl DeleteDeviceProfileOutput {
 }
 
 /// A builder for [`DeleteDeviceProfileOutput`](crate::operation::delete_device_profile::DeleteDeviceProfileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDeviceProfileOutputBuilder {
     _request_id: Option<String>,
 }

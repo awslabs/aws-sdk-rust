@@ -27,8 +27,8 @@ impl ArtifactSourceType {
 }
 
 /// A builder for [`ArtifactSourceType`](crate::types::ArtifactSourceType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ArtifactSourceTypeBuilder {
     pub(crate) source_id_type: ::std::option::Option<crate::types::ArtifactSourceIdType>,
     pub(crate) value: ::std::option::Option<::std::string::String>,

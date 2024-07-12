@@ -18,8 +18,8 @@ impl DeleteExplainabilityOutput {
 }
 
 /// A builder for [`DeleteExplainabilityOutput`](crate::operation::delete_explainability::DeleteExplainabilityOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteExplainabilityOutputBuilder {
     _request_id: Option<String>,
 }

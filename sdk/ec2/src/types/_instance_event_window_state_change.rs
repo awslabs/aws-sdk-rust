@@ -27,8 +27,8 @@ impl InstanceEventWindowStateChange {
 }
 
 /// A builder for [`InstanceEventWindowStateChange`](crate::types::InstanceEventWindowStateChange).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceEventWindowStateChangeBuilder {
     pub(crate) instance_event_window_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::InstanceEventWindowState>,

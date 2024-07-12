@@ -29,8 +29,8 @@ impl BatchUpdatePartitionFailureEntry {
 }
 
 /// A builder for [`BatchUpdatePartitionFailureEntry`](crate::types::BatchUpdatePartitionFailureEntry).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchUpdatePartitionFailureEntryBuilder {
     pub(crate) partition_value_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) error_detail: ::std::option::Option<crate::types::ErrorDetail>,

@@ -21,8 +21,8 @@ impl ShardConfigurationRequest {
 }
 
 /// A builder for [`ShardConfigurationRequest`](crate::types::ShardConfigurationRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ShardConfigurationRequestBuilder {
     pub(crate) shard_count: ::std::option::Option<i32>,
 }

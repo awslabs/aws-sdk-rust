@@ -42,8 +42,8 @@ impl TestRoleInput {
 }
 
 /// A builder for [`TestRoleInput`](crate::operation::test_role::TestRoleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TestRoleInputBuilder {
     pub(crate) role: ::std::option::Option<::std::string::String>,
     pub(crate) input_bucket: ::std::option::Option<::std::string::String>,

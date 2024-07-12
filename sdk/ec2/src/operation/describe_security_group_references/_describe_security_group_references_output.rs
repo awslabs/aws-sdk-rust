@@ -28,8 +28,8 @@ impl DescribeSecurityGroupReferencesOutput {
 }
 
 /// A builder for [`DescribeSecurityGroupReferencesOutput`](crate::operation::describe_security_group_references::DescribeSecurityGroupReferencesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSecurityGroupReferencesOutputBuilder {
     pub(crate) security_group_reference_set: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupReference>>,
     _request_id: Option<String>,

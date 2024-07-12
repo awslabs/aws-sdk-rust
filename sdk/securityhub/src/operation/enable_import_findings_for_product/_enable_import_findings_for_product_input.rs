@@ -20,8 +20,8 @@ impl EnableImportFindingsForProductInput {
 }
 
 /// A builder for [`EnableImportFindingsForProductInput`](crate::operation::enable_import_findings_for_product::EnableImportFindingsForProductInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnableImportFindingsForProductInputBuilder {
     pub(crate) product_arn: ::std::option::Option<::std::string::String>,
 }

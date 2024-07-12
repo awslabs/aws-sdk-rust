@@ -136,8 +136,8 @@ impl RestoreTableInput {
 }
 
 /// A builder for [`RestoreTableInput`](crate::operation::restore_table::RestoreTableInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RestoreTableInputBuilder {
     pub(crate) source_keyspace_name: ::std::option::Option<::std::string::String>,
     pub(crate) source_table_name: ::std::option::Option<::std::string::String>,

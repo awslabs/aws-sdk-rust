@@ -41,8 +41,8 @@ impl Status {
 }
 
 /// A builder for [`Status`](crate::types::Status).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StatusBuilder {
     pub(crate) document_id: ::std::option::Option<::std::string::String>,
     pub(crate) document_status: ::std::option::Option<crate::types::DocumentStatus>,

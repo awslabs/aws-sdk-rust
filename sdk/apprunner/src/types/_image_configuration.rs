@@ -65,8 +65,8 @@ impl ImageConfiguration {
 }
 
 /// A builder for [`ImageConfiguration`](crate::types::ImageConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ImageConfigurationBuilder {
     pub(crate) runtime_environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) start_command: ::std::option::Option<::std::string::String>,

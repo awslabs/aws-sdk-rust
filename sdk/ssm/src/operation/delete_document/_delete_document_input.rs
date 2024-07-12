@@ -38,8 +38,8 @@ impl DeleteDocumentInput {
 }
 
 /// A builder for [`DeleteDocumentInput`](crate::operation::delete_document::DeleteDocumentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDocumentInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) document_version: ::std::option::Option<::std::string::String>,

@@ -78,8 +78,8 @@ impl ListCodeReviewsInput {
 }
 
 /// A builder for [`ListCodeReviewsInput`](crate::operation::list_code_reviews::ListCodeReviewsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCodeReviewsInputBuilder {
     pub(crate) provider_types: ::std::option::Option<::std::vec::Vec<crate::types::ProviderType>>,
     pub(crate) states: ::std::option::Option<::std::vec::Vec<crate::types::JobState>>,

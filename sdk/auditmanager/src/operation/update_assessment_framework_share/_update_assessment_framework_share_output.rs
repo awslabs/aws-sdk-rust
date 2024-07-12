@@ -26,8 +26,8 @@ impl UpdateAssessmentFrameworkShareOutput {
 }
 
 /// A builder for [`UpdateAssessmentFrameworkShareOutput`](crate::operation::update_assessment_framework_share::UpdateAssessmentFrameworkShareOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAssessmentFrameworkShareOutputBuilder {
     pub(crate) assessment_framework_share_request: ::std::option::Option<crate::types::AssessmentFrameworkShareRequest>,
     _request_id: Option<String>,

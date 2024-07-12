@@ -20,8 +20,8 @@ impl StartGuiSessionInput {
 }
 
 /// A builder for [`StartGuiSessionInput`](crate::operation::start_gui_session::StartGuiSessionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartGuiSessionInputBuilder {
     pub(crate) resource_name: ::std::option::Option<::std::string::String>,
 }

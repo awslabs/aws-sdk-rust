@@ -39,8 +39,8 @@ impl VerifiedAccessLogS3DestinationOptions {
 }
 
 /// A builder for [`VerifiedAccessLogS3DestinationOptions`](crate::types::VerifiedAccessLogS3DestinationOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VerifiedAccessLogS3DestinationOptionsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,

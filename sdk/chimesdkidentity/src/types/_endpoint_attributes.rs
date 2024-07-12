@@ -36,8 +36,8 @@ impl EndpointAttributes {
 }
 
 /// A builder for [`EndpointAttributes`](crate::types::EndpointAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct EndpointAttributesBuilder {
     pub(crate) device_token: ::std::option::Option<::std::string::String>,
     pub(crate) voip_device_token: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl UpdateServiceTemplateOutput {
 }
 
 /// A builder for [`UpdateServiceTemplateOutput`](crate::operation::update_service_template::UpdateServiceTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateServiceTemplateOutputBuilder {
     pub(crate) service_template: ::std::option::Option<crate::types::ServiceTemplate>,
     _request_id: Option<String>,

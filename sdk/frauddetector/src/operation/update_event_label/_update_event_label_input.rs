@@ -38,8 +38,8 @@ impl UpdateEventLabelInput {
 }
 
 /// A builder for [`UpdateEventLabelInput`](crate::operation::update_event_label::UpdateEventLabelInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateEventLabelInputBuilder {
     pub(crate) event_id: ::std::option::Option<::std::string::String>,
     pub(crate) event_type_name: ::std::option::Option<::std::string::String>,

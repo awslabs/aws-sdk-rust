@@ -41,8 +41,8 @@ impl ColumnStatistics {
 }
 
 /// A builder for [`ColumnStatistics`](crate::types::ColumnStatistics).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ColumnStatisticsBuilder {
     pub(crate) column_name: ::std::option::Option<::std::string::String>,
     pub(crate) column_type: ::std::option::Option<::std::string::String>,

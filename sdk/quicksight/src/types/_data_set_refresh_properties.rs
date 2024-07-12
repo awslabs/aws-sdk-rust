@@ -21,8 +21,8 @@ impl DataSetRefreshProperties {
 }
 
 /// A builder for [`DataSetRefreshProperties`](crate::types::DataSetRefreshProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataSetRefreshPropertiesBuilder {
     pub(crate) refresh_configuration: ::std::option::Option<crate::types::RefreshConfiguration>,
 }

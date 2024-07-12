@@ -11,8 +11,8 @@ impl GetAccountSummaryInput {
 }
 
 /// A builder for [`GetAccountSummaryInput`](crate::operation::get_account_summary::GetAccountSummaryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAccountSummaryInputBuilder {}
 impl GetAccountSummaryInputBuilder {
     /// Consumes the builder and constructs a [`GetAccountSummaryInput`](crate::operation::get_account_summary::GetAccountSummaryInput).

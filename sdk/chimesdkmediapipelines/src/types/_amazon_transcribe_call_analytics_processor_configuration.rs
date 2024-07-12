@@ -139,8 +139,8 @@ impl AmazonTranscribeCallAnalyticsProcessorConfiguration {
 }
 
 /// A builder for [`AmazonTranscribeCallAnalyticsProcessorConfiguration`](crate::types::AmazonTranscribeCallAnalyticsProcessorConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AmazonTranscribeCallAnalyticsProcessorConfigurationBuilder {
     pub(crate) language_code: ::std::option::Option<crate::types::CallAnalyticsLanguageCode>,
     pub(crate) vocabulary_name: ::std::option::Option<::std::string::String>,

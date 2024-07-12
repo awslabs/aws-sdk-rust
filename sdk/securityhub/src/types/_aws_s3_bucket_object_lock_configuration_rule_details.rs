@@ -21,8 +21,8 @@ impl AwsS3BucketObjectLockConfigurationRuleDetails {
 }
 
 /// A builder for [`AwsS3BucketObjectLockConfigurationRuleDetails`](crate::types::AwsS3BucketObjectLockConfigurationRuleDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsS3BucketObjectLockConfigurationRuleDetailsBuilder {
     pub(crate) default_retention: ::std::option::Option<crate::types::AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails>,
 }

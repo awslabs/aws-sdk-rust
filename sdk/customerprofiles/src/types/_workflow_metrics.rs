@@ -21,8 +21,8 @@ impl WorkflowMetrics {
 }
 
 /// A builder for [`WorkflowMetrics`](crate::types::WorkflowMetrics).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WorkflowMetricsBuilder {
     pub(crate) appflow_integration: ::std::option::Option<crate::types::AppflowIntegrationWorkflowMetrics>,
 }

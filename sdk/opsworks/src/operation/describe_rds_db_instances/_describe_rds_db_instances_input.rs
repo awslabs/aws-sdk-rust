@@ -28,8 +28,8 @@ impl DescribeRdsDbInstancesInput {
 }
 
 /// A builder for [`DescribeRdsDbInstancesInput`](crate::operation::describe_rds_db_instances::DescribeRdsDbInstancesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRdsDbInstancesInputBuilder {
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,
     pub(crate) rds_db_instance_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

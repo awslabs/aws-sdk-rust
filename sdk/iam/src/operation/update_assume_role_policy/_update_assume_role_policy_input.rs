@@ -48,8 +48,8 @@ impl UpdateAssumeRolePolicyInput {
 }
 
 /// A builder for [`UpdateAssumeRolePolicyInput`](crate::operation::update_assume_role_policy::UpdateAssumeRolePolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAssumeRolePolicyInputBuilder {
     pub(crate) role_name: ::std::option::Option<::std::string::String>,
     pub(crate) policy_document: ::std::option::Option<::std::string::String>,

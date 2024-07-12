@@ -21,8 +21,8 @@ impl MultiplexOutputDestination {
 }
 
 /// A builder for [`MultiplexOutputDestination`](crate::types::MultiplexOutputDestination).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MultiplexOutputDestinationBuilder {
     pub(crate) media_connect_settings: ::std::option::Option<crate::types::MultiplexMediaConnectOutputDestinationSettings>,
 }

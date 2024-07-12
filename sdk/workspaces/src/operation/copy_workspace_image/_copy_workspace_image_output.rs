@@ -26,8 +26,8 @@ impl CopyWorkspaceImageOutput {
 }
 
 /// A builder for [`CopyWorkspaceImageOutput`](crate::operation::copy_workspace_image::CopyWorkspaceImageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CopyWorkspaceImageOutputBuilder {
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

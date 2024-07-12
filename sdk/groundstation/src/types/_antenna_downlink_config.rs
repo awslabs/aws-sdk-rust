@@ -21,8 +21,8 @@ impl AntennaDownlinkConfig {
 }
 
 /// A builder for [`AntennaDownlinkConfig`](crate::types::AntennaDownlinkConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AntennaDownlinkConfigBuilder {
     pub(crate) spectrum_config: ::std::option::Option<crate::types::SpectrumConfig>,
 }

@@ -123,8 +123,8 @@ impl AssumeRoleWithSamlOutput {
 }
 
 /// A builder for [`AssumeRoleWithSamlOutput`](crate::operation::assume_role_with_saml::AssumeRoleWithSamlOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AssumeRoleWithSamlOutputBuilder {
     pub(crate) credentials: ::std::option::Option<crate::types::Credentials>,
     pub(crate) assumed_role_user: ::std::option::Option<crate::types::AssumedRoleUser>,

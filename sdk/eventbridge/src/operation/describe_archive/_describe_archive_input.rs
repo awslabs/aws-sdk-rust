@@ -20,8 +20,8 @@ impl DescribeArchiveInput {
 }
 
 /// A builder for [`DescribeArchiveInput`](crate::operation::describe_archive::DescribeArchiveInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeArchiveInputBuilder {
     pub(crate) archive_name: ::std::option::Option<::std::string::String>,
 }

@@ -39,8 +39,8 @@ impl BlockPublicAccess {
 }
 
 /// A builder for [`BlockPublicAccess`](crate::types::BlockPublicAccess).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BlockPublicAccessBuilder {
     pub(crate) block_public_acls: ::std::option::Option<bool>,
     pub(crate) block_public_policy: ::std::option::Option<bool>,

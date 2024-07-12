@@ -26,8 +26,8 @@ impl DeleteJourneyOutput {
 }
 
 /// A builder for [`DeleteJourneyOutput`](crate::operation::delete_journey::DeleteJourneyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteJourneyOutputBuilder {
     pub(crate) journey_response: ::std::option::Option<crate::types::JourneyResponse>,
     _request_id: Option<String>,

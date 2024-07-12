@@ -20,8 +20,8 @@ impl GetResourceDefinitionInput {
 }
 
 /// A builder for [`GetResourceDefinitionInput`](crate::operation::get_resource_definition::GetResourceDefinitionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetResourceDefinitionInputBuilder {
     pub(crate) resource_definition_id: ::std::option::Option<::std::string::String>,
 }

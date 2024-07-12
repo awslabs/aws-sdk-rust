@@ -18,8 +18,8 @@ impl UpdateExpirationForHitOutput {
 }
 
 /// A builder for [`UpdateExpirationForHitOutput`](crate::operation::update_expiration_for_hit::UpdateExpirationForHitOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateExpirationForHitOutputBuilder {
     _request_id: Option<String>,
 }

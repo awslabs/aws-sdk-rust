@@ -33,8 +33,8 @@ impl UnprocessedStandardsControlAssociationUpdate {
 }
 
 /// A builder for [`UnprocessedStandardsControlAssociationUpdate`](crate::types::UnprocessedStandardsControlAssociationUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UnprocessedStandardsControlAssociationUpdateBuilder {
     pub(crate) standards_control_association_update: ::std::option::Option<crate::types::StandardsControlAssociationUpdate>,
     pub(crate) error_code: ::std::option::Option<crate::types::UnprocessedErrorCode>,

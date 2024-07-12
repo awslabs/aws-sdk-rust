@@ -32,8 +32,8 @@ impl GetTermForReportOutput {
 }
 
 /// A builder for [`GetTermForReportOutput`](crate::operation::get_term_for_report::GetTermForReportOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTermForReportOutputBuilder {
     pub(crate) document_presigned_url: ::std::option::Option<::std::string::String>,
     pub(crate) term_token: ::std::option::Option<::std::string::String>,

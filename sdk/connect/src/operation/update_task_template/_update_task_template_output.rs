@@ -94,8 +94,8 @@ impl UpdateTaskTemplateOutput {
 }
 
 /// A builder for [`UpdateTaskTemplateOutput`](crate::operation::update_task_template::UpdateTaskTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateTaskTemplateOutputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,

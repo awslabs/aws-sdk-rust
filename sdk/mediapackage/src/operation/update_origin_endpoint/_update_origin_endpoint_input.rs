@@ -89,8 +89,8 @@ impl UpdateOriginEndpointInput {
 }
 
 /// A builder for [`UpdateOriginEndpointInput`](crate::operation::update_origin_endpoint::UpdateOriginEndpointInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateOriginEndpointInputBuilder {
     pub(crate) authorization: ::std::option::Option<crate::types::Authorization>,
     pub(crate) cmaf_package: ::std::option::Option<crate::types::CmafPackageCreateOrUpdateParameters>,

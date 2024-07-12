@@ -26,8 +26,8 @@ impl UpdateNumberOfDomainControllersInput {
 }
 
 /// A builder for [`UpdateNumberOfDomainControllersInput`](crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateNumberOfDomainControllersInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) desired_number: ::std::option::Option<i32>,

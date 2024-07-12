@@ -39,8 +39,8 @@ impl CaptionRectangle {
 }
 
 /// A builder for [`CaptionRectangle`](crate::types::CaptionRectangle).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CaptionRectangleBuilder {
     pub(crate) height: ::std::option::Option<f64>,
     pub(crate) left_offset: ::std::option::Option<f64>,

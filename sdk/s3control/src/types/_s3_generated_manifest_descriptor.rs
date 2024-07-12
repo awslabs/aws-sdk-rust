@@ -27,8 +27,8 @@ impl S3GeneratedManifestDescriptor {
 }
 
 /// A builder for [`S3GeneratedManifestDescriptor`](crate::types::S3GeneratedManifestDescriptor).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3GeneratedManifestDescriptorBuilder {
     pub(crate) format: ::std::option::Option<crate::types::GeneratedManifestFormat>,
     pub(crate) location: ::std::option::Option<crate::types::JobManifestLocation>,

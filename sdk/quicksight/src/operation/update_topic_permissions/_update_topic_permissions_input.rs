@@ -42,8 +42,8 @@ impl UpdateTopicPermissionsInput {
 }
 
 /// A builder for [`UpdateTopicPermissionsInput`](crate::operation::update_topic_permissions::UpdateTopicPermissionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateTopicPermissionsInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) topic_id: ::std::option::Option<::std::string::String>,

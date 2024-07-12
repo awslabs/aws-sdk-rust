@@ -20,8 +20,8 @@ impl GetFuotaTaskInput {
 }
 
 /// A builder for [`GetFuotaTaskInput`](crate::operation::get_fuota_task::GetFuotaTaskInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetFuotaTaskInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }

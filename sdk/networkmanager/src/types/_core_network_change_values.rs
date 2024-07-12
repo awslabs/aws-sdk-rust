@@ -77,8 +77,8 @@ impl CoreNetworkChangeValues {
 }
 
 /// A builder for [`CoreNetworkChangeValues`](crate::types::CoreNetworkChangeValues).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CoreNetworkChangeValuesBuilder {
     pub(crate) segment_name: ::std::option::Option<::std::string::String>,
     pub(crate) network_function_group_name: ::std::option::Option<::std::string::String>,

@@ -53,8 +53,8 @@ impl AdvancedEventSelector {
 }
 
 /// A builder for [`AdvancedEventSelector`](crate::types::AdvancedEventSelector).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AdvancedEventSelectorBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) field_selectors: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedFieldSelector>>,

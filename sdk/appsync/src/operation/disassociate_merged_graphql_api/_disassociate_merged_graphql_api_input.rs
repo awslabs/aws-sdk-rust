@@ -26,8 +26,8 @@ impl DisassociateMergedGraphqlApiInput {
 }
 
 /// A builder for [`DisassociateMergedGraphqlApiInput`](crate::operation::disassociate_merged_graphql_api::DisassociateMergedGraphqlApiInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateMergedGraphqlApiInputBuilder {
     pub(crate) source_api_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) association_id: ::std::option::Option<::std::string::String>,

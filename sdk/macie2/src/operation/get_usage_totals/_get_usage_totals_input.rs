@@ -20,8 +20,8 @@ impl GetUsageTotalsInput {
 }
 
 /// A builder for [`GetUsageTotalsInput`](crate::operation::get_usage_totals::GetUsageTotalsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetUsageTotalsInputBuilder {
     pub(crate) time_range: ::std::option::Option<::std::string::String>,
 }

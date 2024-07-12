@@ -29,8 +29,8 @@ impl TableExcerpt {
 }
 
 /// A builder for [`TableExcerpt`](crate::types::TableExcerpt).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TableExcerptBuilder {
     pub(crate) rows: ::std::option::Option<::std::vec::Vec<crate::types::TableRow>>,
     pub(crate) total_number_of_rows: ::std::option::Option<i32>,

@@ -32,8 +32,8 @@ impl ResetAddressAttributeInput {
 }
 
 /// A builder for [`ResetAddressAttributeInput`](crate::operation::reset_address_attribute::ResetAddressAttributeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResetAddressAttributeInputBuilder {
     pub(crate) allocation_id: ::std::option::Option<::std::string::String>,
     pub(crate) attribute: ::std::option::Option<crate::types::AddressAttributeName>,

@@ -18,8 +18,8 @@ impl UpdateProtectionGroupOutput {
 }
 
 /// A builder for [`UpdateProtectionGroupOutput`](crate::operation::update_protection_group::UpdateProtectionGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateProtectionGroupOutputBuilder {
     _request_id: Option<String>,
 }

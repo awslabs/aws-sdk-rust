@@ -18,8 +18,8 @@ impl DeleteServiceLevelObjectiveOutput {
 }
 
 /// A builder for [`DeleteServiceLevelObjectiveOutput`](crate::operation::delete_service_level_objective::DeleteServiceLevelObjectiveOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteServiceLevelObjectiveOutputBuilder {
     _request_id: Option<String>,
 }

@@ -27,8 +27,8 @@ impl UserTurnSpecification {
 }
 
 /// A builder for [`UserTurnSpecification`](crate::types::UserTurnSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UserTurnSpecificationBuilder {
     pub(crate) input: ::std::option::Option<crate::types::UserTurnInputSpecification>,
     pub(crate) expected: ::std::option::Option<crate::types::UserTurnOutputSpecification>,

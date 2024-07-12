@@ -19,8 +19,8 @@ impl SetIdentityMailFromDomainOutput {
 }
 
 /// A builder for [`SetIdentityMailFromDomainOutput`](crate::operation::set_identity_mail_from_domain::SetIdentityMailFromDomainOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetIdentityMailFromDomainOutputBuilder {
     _request_id: Option<String>,
 }

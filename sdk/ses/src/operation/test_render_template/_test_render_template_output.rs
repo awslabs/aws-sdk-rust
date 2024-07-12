@@ -26,8 +26,8 @@ impl TestRenderTemplateOutput {
 }
 
 /// A builder for [`TestRenderTemplateOutput`](crate::operation::test_render_template::TestRenderTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TestRenderTemplateOutputBuilder {
     pub(crate) rendered_template: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

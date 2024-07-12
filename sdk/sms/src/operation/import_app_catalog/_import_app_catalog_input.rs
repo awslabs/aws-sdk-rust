@@ -20,8 +20,8 @@ impl ImportAppCatalogInput {
 }
 
 /// A builder for [`ImportAppCatalogInput`](crate::operation::import_app_catalog::ImportAppCatalogInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportAppCatalogInputBuilder {
     pub(crate) role_name: ::std::option::Option<::std::string::String>,
 }

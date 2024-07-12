@@ -53,8 +53,8 @@ impl AnalysisPacketHeader {
 }
 
 /// A builder for [`AnalysisPacketHeader`](crate::types::AnalysisPacketHeader).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AnalysisPacketHeaderBuilder {
     pub(crate) destination_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) destination_port_ranges: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,

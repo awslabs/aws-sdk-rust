@@ -112,8 +112,8 @@ impl UpdateFunctionCodeInput {
 }
 
 /// A builder for [`UpdateFunctionCodeInput`](crate::operation::update_function_code::UpdateFunctionCodeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateFunctionCodeInputBuilder {
     pub(crate) function_name: ::std::option::Option<::std::string::String>,
     pub(crate) zip_file: ::std::option::Option<::aws_smithy_types::Blob>,

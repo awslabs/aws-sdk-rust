@@ -29,8 +29,8 @@ impl UpdateClientCertificateInput {
 }
 
 /// A builder for [`UpdateClientCertificateInput`](crate::operation::update_client_certificate::UpdateClientCertificateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateClientCertificateInputBuilder {
     pub(crate) client_certificate_id: ::std::option::Option<::std::string::String>,
     pub(crate) patch_operations: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>,

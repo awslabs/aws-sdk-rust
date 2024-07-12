@@ -34,8 +34,8 @@ impl ListRetrainingSchedulersOutput {
 }
 
 /// A builder for [`ListRetrainingSchedulersOutput`](crate::operation::list_retraining_schedulers::ListRetrainingSchedulersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRetrainingSchedulersOutputBuilder {
     pub(crate) retraining_scheduler_summaries: ::std::option::Option<::std::vec::Vec<crate::types::RetrainingSchedulerSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

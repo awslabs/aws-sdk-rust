@@ -23,8 +23,8 @@ impl TrackingOptions {
 }
 
 /// A builder for [`TrackingOptions`](crate::types::TrackingOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TrackingOptionsBuilder {
     pub(crate) custom_redirect_domain: ::std::option::Option<::std::string::String>,
 }

@@ -27,8 +27,8 @@ impl AggregateStatus {
 }
 
 /// A builder for [`AggregateStatus`](crate::types::AggregateStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AggregateStatusBuilder {
     pub(crate) status: ::std::option::Option<crate::types::AgentStatus>,
     pub(crate) signature_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, bool>>,

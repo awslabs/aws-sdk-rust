@@ -35,8 +35,8 @@ impl DescribePackagesInput {
 }
 
 /// A builder for [`DescribePackagesInput`](crate::operation::describe_packages::DescribePackagesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribePackagesInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::DescribePackagesFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,

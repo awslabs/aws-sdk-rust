@@ -28,8 +28,8 @@ impl DetectTextInput {
 }
 
 /// A builder for [`DetectTextInput`](crate::operation::detect_text::DetectTextInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetectTextInputBuilder {
     pub(crate) image: ::std::option::Option<crate::types::Image>,
     pub(crate) filters: ::std::option::Option<crate::types::DetectTextFilters>,

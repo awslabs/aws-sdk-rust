@@ -32,8 +32,8 @@ impl UpdateAnalysisTemplateInput {
 }
 
 /// A builder for [`UpdateAnalysisTemplateInput`](crate::operation::update_analysis_template::UpdateAnalysisTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAnalysisTemplateInputBuilder {
     pub(crate) membership_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) analysis_template_identifier: ::std::option::Option<::std::string::String>,

@@ -56,8 +56,8 @@ impl Recipes {
 }
 
 /// A builder for [`Recipes`](crate::types::Recipes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecipesBuilder {
     pub(crate) setup: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) configure: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

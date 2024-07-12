@@ -23,8 +23,8 @@ impl ReplicationTimeValue {
 }
 
 /// A builder for [`ReplicationTimeValue`](crate::types::ReplicationTimeValue).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReplicationTimeValueBuilder {
     pub(crate) minutes: ::std::option::Option<i32>,
 }

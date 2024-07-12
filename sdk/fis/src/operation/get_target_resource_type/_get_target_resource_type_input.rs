@@ -20,8 +20,8 @@ impl GetTargetResourceTypeInput {
 }
 
 /// A builder for [`GetTargetResourceTypeInput`](crate::operation::get_target_resource_type::GetTargetResourceTypeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTargetResourceTypeInputBuilder {
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
 }

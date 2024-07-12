@@ -26,8 +26,8 @@ impl UpdateAssessmentOutput {
 }
 
 /// A builder for [`UpdateAssessmentOutput`](crate::operation::update_assessment::UpdateAssessmentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAssessmentOutputBuilder {
     pub(crate) assessment: ::std::option::Option<crate::types::Assessment>,
     _request_id: Option<String>,

@@ -38,8 +38,8 @@ impl DescribeTopicRefreshOutput {
 }
 
 /// A builder for [`DescribeTopicRefreshOutput`](crate::operation::describe_topic_refresh::DescribeTopicRefreshOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTopicRefreshOutputBuilder {
     pub(crate) refresh_details: ::std::option::Option<crate::types::TopicRefreshDetails>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,

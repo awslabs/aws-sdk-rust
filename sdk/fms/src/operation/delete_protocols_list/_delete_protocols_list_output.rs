@@ -18,8 +18,8 @@ impl DeleteProtocolsListOutput {
 }
 
 /// A builder for [`DeleteProtocolsListOutput`](crate::operation::delete_protocols_list::DeleteProtocolsListOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteProtocolsListOutputBuilder {
     _request_id: Option<String>,
 }

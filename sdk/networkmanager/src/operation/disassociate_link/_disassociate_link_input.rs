@@ -32,8 +32,8 @@ impl DisassociateLinkInput {
 }
 
 /// A builder for [`DisassociateLinkInput`](crate::operation::disassociate_link::DisassociateLinkInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateLinkInputBuilder {
     pub(crate) global_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) device_id: ::std::option::Option<::std::string::String>,

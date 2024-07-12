@@ -34,8 +34,8 @@ impl ModifySecurityGroupRulesInput {
 }
 
 /// A builder for [`ModifySecurityGroupRulesInput`](crate::operation::modify_security_group_rules::ModifySecurityGroupRulesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifySecurityGroupRulesInputBuilder {
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
     pub(crate) security_group_rules: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupRuleUpdate>>,

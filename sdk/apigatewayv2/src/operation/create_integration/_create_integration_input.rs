@@ -175,8 +175,8 @@ impl CreateIntegrationInput {
 }
 
 /// A builder for [`CreateIntegrationInput`](crate::operation::create_integration::CreateIntegrationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateIntegrationInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) connection_id: ::std::option::Option<::std::string::String>,

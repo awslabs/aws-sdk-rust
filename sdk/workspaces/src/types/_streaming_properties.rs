@@ -37,8 +37,8 @@ impl StreamingProperties {
 }
 
 /// A builder for [`StreamingProperties`](crate::types::StreamingProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StreamingPropertiesBuilder {
     pub(crate) streaming_experience_preferred_protocol: ::std::option::Option<crate::types::StreamingExperiencePreferredProtocolEnum>,
     pub(crate) user_settings: ::std::option::Option<::std::vec::Vec<crate::types::UserSetting>>,

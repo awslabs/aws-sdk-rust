@@ -197,8 +197,8 @@ impl DescribeJobOutput {
 }
 
 /// A builder for [`DescribeJobOutput`](crate::operation::describe_job::DescribeJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeJobOutputBuilder {
     pub(crate) create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,

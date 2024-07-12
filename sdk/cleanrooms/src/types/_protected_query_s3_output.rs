@@ -22,8 +22,8 @@ impl ProtectedQueryS3Output {
 }
 
 /// A builder for [`ProtectedQueryS3Output`](crate::types::ProtectedQueryS3Output).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProtectedQueryS3OutputBuilder {
     pub(crate) location: ::std::option::Option<::std::string::String>,
 }

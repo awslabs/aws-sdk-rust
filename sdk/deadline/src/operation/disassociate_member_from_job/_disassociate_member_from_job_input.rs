@@ -38,8 +38,8 @@ impl DisassociateMemberFromJobInput {
 }
 
 /// A builder for [`DisassociateMemberFromJobInput`](crate::operation::disassociate_member_from_job::DisassociateMemberFromJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateMemberFromJobInputBuilder {
     pub(crate) farm_id: ::std::option::Option<::std::string::String>,
     pub(crate) queue_id: ::std::option::Option<::std::string::String>,

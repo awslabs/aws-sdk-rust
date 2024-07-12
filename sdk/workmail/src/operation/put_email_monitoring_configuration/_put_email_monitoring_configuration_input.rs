@@ -32,8 +32,8 @@ impl PutEmailMonitoringConfigurationInput {
 }
 
 /// A builder for [`PutEmailMonitoringConfigurationInput`](crate::operation::put_email_monitoring_configuration::PutEmailMonitoringConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutEmailMonitoringConfigurationInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,

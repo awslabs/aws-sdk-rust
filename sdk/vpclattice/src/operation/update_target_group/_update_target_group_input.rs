@@ -26,8 +26,8 @@ impl UpdateTargetGroupInput {
 }
 
 /// A builder for [`UpdateTargetGroupInput`](crate::operation::update_target_group::UpdateTargetGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateTargetGroupInputBuilder {
     pub(crate) target_group_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) health_check: ::std::option::Option<crate::types::HealthCheckConfig>,

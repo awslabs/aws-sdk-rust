@@ -58,8 +58,8 @@ impl ModifyInstanceMetadataDefaultsInput {
 }
 
 /// A builder for [`ModifyInstanceMetadataDefaultsInput`](crate::operation::modify_instance_metadata_defaults::ModifyInstanceMetadataDefaultsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyInstanceMetadataDefaultsInputBuilder {
     pub(crate) http_tokens: ::std::option::Option<crate::types::MetadataDefaultHttpTokensState>,
     pub(crate) http_put_response_hop_limit: ::std::option::Option<i32>,

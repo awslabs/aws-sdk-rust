@@ -102,8 +102,8 @@ impl AuthorizeSecurityGroupIngressInput {
 }
 
 /// A builder for [`AuthorizeSecurityGroupIngressInput`](crate::operation::authorize_security_group_ingress::AuthorizeSecurityGroupIngressInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AuthorizeSecurityGroupIngressInputBuilder {
     pub(crate) cidr_ip: ::std::option::Option<::std::string::String>,
     pub(crate) from_port: ::std::option::Option<i32>,

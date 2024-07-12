@@ -21,8 +21,8 @@ impl CreateStreamingDistributionWithTagsInput {
 }
 
 /// A builder for [`CreateStreamingDistributionWithTagsInput`](crate::operation::create_streaming_distribution_with_tags::CreateStreamingDistributionWithTagsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateStreamingDistributionWithTagsInputBuilder {
     pub(crate) streaming_distribution_config_with_tags: ::std::option::Option<crate::types::StreamingDistributionConfigWithTags>,
 }

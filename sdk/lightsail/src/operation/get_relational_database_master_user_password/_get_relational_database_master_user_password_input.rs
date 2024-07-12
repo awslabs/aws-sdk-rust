@@ -31,8 +31,8 @@ impl GetRelationalDatabaseMasterUserPasswordInput {
 }
 
 /// A builder for [`GetRelationalDatabaseMasterUserPasswordInput`](crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRelationalDatabaseMasterUserPasswordInputBuilder {
     pub(crate) relational_database_name: ::std::option::Option<::std::string::String>,
     pub(crate) password_version: ::std::option::Option<crate::types::RelationalDatabasePasswordVersion>,

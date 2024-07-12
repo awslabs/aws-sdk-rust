@@ -35,8 +35,8 @@ impl DescribeReservedElasticsearchInstanceOfferingsInput {
 }
 
 /// A builder for [`DescribeReservedElasticsearchInstanceOfferingsInput`](crate::operation::describe_reserved_elasticsearch_instance_offerings::DescribeReservedElasticsearchInstanceOfferingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeReservedElasticsearchInstanceOfferingsInputBuilder {
     pub(crate) reserved_elasticsearch_instance_offering_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

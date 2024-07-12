@@ -20,8 +20,8 @@ impl DeleteClassifierInput {
 }
 
 /// A builder for [`DeleteClassifierInput`](crate::operation::delete_classifier::DeleteClassifierInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteClassifierInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

@@ -32,8 +32,8 @@ impl UpdateUserRoutingProfileInput {
 }
 
 /// A builder for [`UpdateUserRoutingProfileInput`](crate::operation::update_user_routing_profile::UpdateUserRoutingProfileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateUserRoutingProfileInputBuilder {
     pub(crate) routing_profile_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,

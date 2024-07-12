@@ -38,8 +38,8 @@ impl DescribeReplicationTaskAssessmentResultsInput {
 }
 
 /// A builder for [`DescribeReplicationTaskAssessmentResultsInput`](crate::operation::describe_replication_task_assessment_results::DescribeReplicationTaskAssessmentResultsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeReplicationTaskAssessmentResultsInputBuilder {
     pub(crate) replication_task_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,

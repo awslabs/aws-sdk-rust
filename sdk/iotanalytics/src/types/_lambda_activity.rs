@@ -43,8 +43,8 @@ impl LambdaActivity {
 }
 
 /// A builder for [`LambdaActivity`](crate::types::LambdaActivity).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LambdaActivityBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) lambda_name: ::std::option::Option<::std::string::String>,

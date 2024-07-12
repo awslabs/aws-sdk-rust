@@ -26,8 +26,8 @@ impl PutRegistryScanningConfigurationOutput {
 }
 
 /// A builder for [`PutRegistryScanningConfigurationOutput`](crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutRegistryScanningConfigurationOutputBuilder {
     pub(crate) registry_scanning_configuration: ::std::option::Option<crate::types::RegistryScanningConfiguration>,
     _request_id: Option<String>,

@@ -33,8 +33,8 @@ impl Receipt {
 }
 
 /// A builder for [`Receipt`](crate::types::Receipt).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReceiptBuilder {
     pub(crate) delivered_timestamp: ::std::option::Option<::std::string::String>,
     pub(crate) read_timestamp: ::std::option::Option<::std::string::String>,

@@ -18,8 +18,8 @@ impl StopVectorEnrichmentJobOutput {
 }
 
 /// A builder for [`StopVectorEnrichmentJobOutput`](crate::operation::stop_vector_enrichment_job::StopVectorEnrichmentJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopVectorEnrichmentJobOutputBuilder {
     _request_id: Option<String>,
 }

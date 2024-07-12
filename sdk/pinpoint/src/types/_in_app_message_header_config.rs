@@ -33,8 +33,8 @@ impl InAppMessageHeaderConfig {
 }
 
 /// A builder for [`InAppMessageHeaderConfig`](crate::types::InAppMessageHeaderConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InAppMessageHeaderConfigBuilder {
     pub(crate) alignment: ::std::option::Option<crate::types::Alignment>,
     pub(crate) header: ::std::option::Option<::std::string::String>,

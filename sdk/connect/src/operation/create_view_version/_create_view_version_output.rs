@@ -26,8 +26,8 @@ impl CreateViewVersionOutput {
 }
 
 /// A builder for [`CreateViewVersionOutput`](crate::operation::create_view_version::CreateViewVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateViewVersionOutputBuilder {
     pub(crate) view: ::std::option::Option<crate::types::View>,
     _request_id: Option<String>,

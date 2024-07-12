@@ -32,8 +32,8 @@ impl GetPublicAccessBlockOutput {
 }
 
 /// A builder for [`GetPublicAccessBlockOutput`](crate::operation::get_public_access_block::GetPublicAccessBlockOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPublicAccessBlockOutputBuilder {
     pub(crate) public_access_block_configuration: ::std::option::Option<crate::types::PublicAccessBlockConfiguration>,
     _extended_request_id: Option<String>,

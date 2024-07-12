@@ -34,8 +34,8 @@ impl ListResourceEvaluationsOutput {
 }
 
 /// A builder for [`ListResourceEvaluationsOutput`](crate::operation::list_resource_evaluations::ListResourceEvaluationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListResourceEvaluationsOutputBuilder {
     pub(crate) resource_evaluations: ::std::option::Option<::std::vec::Vec<crate::types::ResourceEvaluation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

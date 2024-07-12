@@ -34,8 +34,8 @@ impl FailoverDbClusterOutput {
 }
 
 /// A builder for [`FailoverDbClusterOutput`](crate::operation::failover_db_cluster::FailoverDbClusterOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FailoverDbClusterOutputBuilder {
     pub(crate) db_cluster: ::std::option::Option<crate::types::DbCluster>,
     _request_id: Option<String>,

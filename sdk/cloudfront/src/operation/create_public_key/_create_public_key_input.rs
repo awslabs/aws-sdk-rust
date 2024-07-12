@@ -20,8 +20,8 @@ impl CreatePublicKeyInput {
 }
 
 /// A builder for [`CreatePublicKeyInput`](crate::operation::create_public_key::CreatePublicKeyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePublicKeyInputBuilder {
     pub(crate) public_key_config: ::std::option::Option<crate::types::PublicKeyConfig>,
 }

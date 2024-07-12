@@ -56,8 +56,8 @@ impl UpdateBotLocaleInput {
 }
 
 /// A builder for [`UpdateBotLocaleInput`](crate::operation::update_bot_locale::UpdateBotLocaleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateBotLocaleInputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,

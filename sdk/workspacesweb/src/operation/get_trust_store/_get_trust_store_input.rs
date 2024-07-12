@@ -20,8 +20,8 @@ impl GetTrustStoreInput {
 }
 
 /// A builder for [`GetTrustStoreInput`](crate::operation::get_trust_store::GetTrustStoreInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTrustStoreInputBuilder {
     pub(crate) trust_store_arn: ::std::option::Option<::std::string::String>,
 }

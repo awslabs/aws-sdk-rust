@@ -40,8 +40,8 @@ impl ListAssessmentRunAgentsInput {
 }
 
 /// A builder for [`ListAssessmentRunAgentsInput`](crate::operation::list_assessment_run_agents::ListAssessmentRunAgentsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAssessmentRunAgentsInputBuilder {
     pub(crate) assessment_run_arn: ::std::option::Option<::std::string::String>,
     pub(crate) filter: ::std::option::Option<crate::types::AgentFilter>,

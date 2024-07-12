@@ -33,8 +33,8 @@ impl ListBaselinesOutput {
 }
 
 /// A builder for [`ListBaselinesOutput`](crate::operation::list_baselines::ListBaselinesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListBaselinesOutputBuilder {
     pub(crate) baselines: ::std::option::Option<::std::vec::Vec<crate::types::BaselineSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

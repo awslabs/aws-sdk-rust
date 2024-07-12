@@ -111,8 +111,8 @@ impl Service {
 }
 
 /// A builder for [`Service`](crate::types::Service).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServiceBuilder {
     pub(crate) action: ::std::option::Option<crate::types::Action>,
     pub(crate) evidence: ::std::option::Option<crate::types::Evidence>,

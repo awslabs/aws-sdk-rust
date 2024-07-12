@@ -27,8 +27,8 @@ impl DolbyVisionLevel6Metadata {
 }
 
 /// A builder for [`DolbyVisionLevel6Metadata`](crate::types::DolbyVisionLevel6Metadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DolbyVisionLevel6MetadataBuilder {
     pub(crate) max_cll: ::std::option::Option<i32>,
     pub(crate) max_fall: ::std::option::Option<i32>,

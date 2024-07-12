@@ -34,8 +34,8 @@ impl DescribeTrustStoreRevocationsOutput {
 }
 
 /// A builder for [`DescribeTrustStoreRevocationsOutput`](crate::operation::describe_trust_store_revocations::DescribeTrustStoreRevocationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTrustStoreRevocationsOutputBuilder {
     pub(crate) trust_store_revocations: ::std::option::Option<::std::vec::Vec<crate::types::DescribeTrustStoreRevocation>>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,

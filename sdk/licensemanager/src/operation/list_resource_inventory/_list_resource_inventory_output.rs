@@ -34,8 +34,8 @@ impl ListResourceInventoryOutput {
 }
 
 /// A builder for [`ListResourceInventoryOutput`](crate::operation::list_resource_inventory::ListResourceInventoryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListResourceInventoryOutputBuilder {
     pub(crate) resource_inventory_list: ::std::option::Option<::std::vec::Vec<crate::types::ResourceInventory>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

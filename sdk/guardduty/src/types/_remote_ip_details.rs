@@ -63,8 +63,8 @@ impl RemoteIpDetails {
 }
 
 /// A builder for [`RemoteIpDetails`](crate::types::RemoteIpDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct RemoteIpDetailsBuilder {
     pub(crate) city: ::std::option::Option<crate::types::City>,
     pub(crate) country: ::std::option::Option<crate::types::Country>,

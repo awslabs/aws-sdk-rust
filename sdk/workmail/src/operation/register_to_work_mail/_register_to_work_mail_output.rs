@@ -18,8 +18,8 @@ impl RegisterToWorkMailOutput {
 }
 
 /// A builder for [`RegisterToWorkMailOutput`](crate::operation::register_to_work_mail::RegisterToWorkMailOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterToWorkMailOutputBuilder {
     _request_id: Option<String>,
 }

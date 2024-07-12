@@ -33,8 +33,8 @@ impl TableOptimizer {
 }
 
 /// A builder for [`TableOptimizer`](crate::types::TableOptimizer).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TableOptimizerBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::TableOptimizerType>,
     pub(crate) configuration: ::std::option::Option<crate::types::TableOptimizerConfiguration>,

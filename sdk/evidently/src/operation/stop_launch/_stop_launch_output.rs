@@ -26,8 +26,8 @@ impl StopLaunchOutput {
 }
 
 /// A builder for [`StopLaunchOutput`](crate::operation::stop_launch::StopLaunchOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopLaunchOutputBuilder {
     pub(crate) ended_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,

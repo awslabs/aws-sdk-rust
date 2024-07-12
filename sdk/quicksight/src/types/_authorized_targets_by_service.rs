@@ -29,8 +29,8 @@ impl AuthorizedTargetsByService {
 }
 
 /// A builder for [`AuthorizedTargetsByService`](crate::types::AuthorizedTargetsByService).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AuthorizedTargetsByServiceBuilder {
     pub(crate) service: ::std::option::Option<crate::types::ServiceType>,
     pub(crate) authorized_targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

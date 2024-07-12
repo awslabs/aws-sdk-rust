@@ -26,8 +26,8 @@ impl DeleteResolverRuleOutput {
 }
 
 /// A builder for [`DeleteResolverRuleOutput`](crate::operation::delete_resolver_rule::DeleteResolverRuleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteResolverRuleOutputBuilder {
     pub(crate) resolver_rule: ::std::option::Option<crate::types::ResolverRule>,
     _request_id: Option<String>,

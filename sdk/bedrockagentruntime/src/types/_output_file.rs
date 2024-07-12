@@ -42,8 +42,8 @@ impl OutputFile {
 }
 
 /// A builder for [`OutputFile`](crate::types::OutputFile).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct OutputFileBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,

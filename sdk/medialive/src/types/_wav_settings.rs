@@ -33,8 +33,8 @@ impl WavSettings {
 }
 
 /// A builder for [`WavSettings`](crate::types::WavSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WavSettingsBuilder {
     pub(crate) bit_depth: ::std::option::Option<f64>,
     pub(crate) coding_mode: ::std::option::Option<crate::types::WavCodingMode>,

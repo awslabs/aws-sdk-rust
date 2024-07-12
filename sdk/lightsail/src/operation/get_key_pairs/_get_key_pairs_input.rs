@@ -28,8 +28,8 @@ impl GetKeyPairsInput {
 }
 
 /// A builder for [`GetKeyPairsInput`](crate::operation::get_key_pairs::GetKeyPairsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetKeyPairsInputBuilder {
     pub(crate) page_token: ::std::option::Option<::std::string::String>,
     pub(crate) include_default_key_pair: ::std::option::Option<bool>,

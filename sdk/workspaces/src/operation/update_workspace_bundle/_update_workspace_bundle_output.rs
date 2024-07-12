@@ -18,8 +18,8 @@ impl UpdateWorkspaceBundleOutput {
 }
 
 /// A builder for [`UpdateWorkspaceBundleOutput`](crate::operation::update_workspace_bundle::UpdateWorkspaceBundleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateWorkspaceBundleOutputBuilder {
     _request_id: Option<String>,
 }

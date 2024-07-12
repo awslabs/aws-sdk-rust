@@ -21,8 +21,8 @@ impl ExportLabelsTaskRunProperties {
 }
 
 /// A builder for [`ExportLabelsTaskRunProperties`](crate::types::ExportLabelsTaskRunProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExportLabelsTaskRunPropertiesBuilder {
     pub(crate) output_s3_path: ::std::option::Option<::std::string::String>,
 }

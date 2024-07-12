@@ -29,8 +29,8 @@ impl DeleteLoadBalancerListenersInput {
 }
 
 /// A builder for [`DeleteLoadBalancerListenersInput`](crate::operation::delete_load_balancer_listeners::DeleteLoadBalancerListenersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteLoadBalancerListenersInputBuilder {
     pub(crate) load_balancer_name: ::std::option::Option<::std::string::String>,
     pub(crate) load_balancer_ports: ::std::option::Option<::std::vec::Vec<i32>>,

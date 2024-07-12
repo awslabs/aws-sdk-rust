@@ -93,8 +93,8 @@ impl Network {
 }
 
 /// A builder for [`Network`](crate::types::Network).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NetworkBuilder {
     pub(crate) direction: ::std::option::Option<crate::types::NetworkDirection>,
     pub(crate) protocol: ::std::option::Option<::std::string::String>,

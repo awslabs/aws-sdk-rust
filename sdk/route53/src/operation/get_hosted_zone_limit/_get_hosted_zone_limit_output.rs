@@ -33,8 +33,8 @@ impl GetHostedZoneLimitOutput {
 }
 
 /// A builder for [`GetHostedZoneLimitOutput`](crate::operation::get_hosted_zone_limit::GetHostedZoneLimitOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetHostedZoneLimitOutputBuilder {
     pub(crate) limit: ::std::option::Option<crate::types::HostedZoneLimit>,
     pub(crate) count: ::std::option::Option<i64>,

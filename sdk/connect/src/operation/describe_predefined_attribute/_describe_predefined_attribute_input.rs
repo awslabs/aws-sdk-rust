@@ -26,8 +26,8 @@ impl DescribePredefinedAttributeInput {
 }
 
 /// A builder for [`DescribePredefinedAttributeInput`](crate::operation::describe_predefined_attribute::DescribePredefinedAttributeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribePredefinedAttributeInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

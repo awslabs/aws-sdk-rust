@@ -19,8 +19,8 @@ impl DeleteModelInvocationLoggingConfigurationOutput {
 }
 
 /// A builder for [`DeleteModelInvocationLoggingConfigurationOutput`](crate::operation::delete_model_invocation_logging_configuration::DeleteModelInvocationLoggingConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteModelInvocationLoggingConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

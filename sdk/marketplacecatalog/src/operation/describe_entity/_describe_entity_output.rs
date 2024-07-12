@@ -56,8 +56,8 @@ impl DescribeEntityOutput {
 }
 
 /// A builder for [`DescribeEntityOutput`](crate::operation::describe_entity::DescribeEntityOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEntityOutputBuilder {
     pub(crate) entity_type: ::std::option::Option<::std::string::String>,
     pub(crate) entity_identifier: ::std::option::Option<::std::string::String>,

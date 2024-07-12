@@ -26,8 +26,8 @@ impl AdminDisableProviderForUserInput {
 }
 
 /// A builder for [`AdminDisableProviderForUserInput`](crate::operation::admin_disable_provider_for_user::AdminDisableProviderForUserInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AdminDisableProviderForUserInputBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) user: ::std::option::Option<crate::types::ProviderUserIdentifierType>,

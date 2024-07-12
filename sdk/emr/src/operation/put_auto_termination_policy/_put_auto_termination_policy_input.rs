@@ -26,8 +26,8 @@ impl PutAutoTerminationPolicyInput {
 }
 
 /// A builder for [`PutAutoTerminationPolicyInput`](crate::operation::put_auto_termination_policy::PutAutoTerminationPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutAutoTerminationPolicyInputBuilder {
     pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) auto_termination_policy: ::std::option::Option<crate::types::AutoTerminationPolicy>,

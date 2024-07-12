@@ -20,8 +20,8 @@ impl GetDataQualityRulesetEvaluationRunInput {
 }
 
 /// A builder for [`GetDataQualityRulesetEvaluationRunInput`](crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDataQualityRulesetEvaluationRunInputBuilder {
     pub(crate) run_id: ::std::option::Option<::std::string::String>,
 }

@@ -38,8 +38,8 @@ impl DescribeDataSourceOutput {
 }
 
 /// A builder for [`DescribeDataSourceOutput`](crate::operation::describe_data_source::DescribeDataSourceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDataSourceOutputBuilder {
     pub(crate) data_source: ::std::option::Option<crate::types::DataSource>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,

@@ -47,8 +47,8 @@ impl OutputGroup {
 }
 
 /// A builder for [`OutputGroup`](crate::types::OutputGroup).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OutputGroupBuilder {
     pub(crate) automated_encoding_settings: ::std::option::Option<crate::types::AutomatedEncodingSettings>,
     pub(crate) custom_name: ::std::option::Option<::std::string::String>,

@@ -25,8 +25,8 @@ impl DeleteCacheParameterGroupInput {
 }
 
 /// A builder for [`DeleteCacheParameterGroupInput`](crate::operation::delete_cache_parameter_group::DeleteCacheParameterGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCacheParameterGroupInputBuilder {
     pub(crate) cache_parameter_group_name: ::std::option::Option<::std::string::String>,
 }

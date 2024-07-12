@@ -33,8 +33,8 @@ impl ExternalSource {
 }
 
 /// A builder for [`ExternalSource`](crate::types::ExternalSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExternalSourceBuilder {
     pub(crate) source_type: ::std::option::Option<crate::types::ExternalSourceType>,
     pub(crate) s3_location: ::std::option::Option<crate::types::S3ObjectDoc>,

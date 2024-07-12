@@ -47,8 +47,8 @@ impl VpcPeeringAuthorization {
 }
 
 /// A builder for [`VpcPeeringAuthorization`](crate::types::VpcPeeringAuthorization).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VpcPeeringAuthorizationBuilder {
     pub(crate) game_lift_aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) peer_vpc_aws_account_id: ::std::option::Option<::std::string::String>,

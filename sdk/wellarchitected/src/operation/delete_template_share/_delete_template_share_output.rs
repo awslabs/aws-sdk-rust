@@ -18,8 +18,8 @@ impl DeleteTemplateShareOutput {
 }
 
 /// A builder for [`DeleteTemplateShareOutput`](crate::operation::delete_template_share::DeleteTemplateShareOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTemplateShareOutputBuilder {
     _request_id: Option<String>,
 }

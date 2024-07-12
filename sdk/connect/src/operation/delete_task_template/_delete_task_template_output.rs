@@ -18,8 +18,8 @@ impl DeleteTaskTemplateOutput {
 }
 
 /// A builder for [`DeleteTaskTemplateOutput`](crate::operation::delete_task_template::DeleteTaskTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTaskTemplateOutputBuilder {
     _request_id: Option<String>,
 }

@@ -22,8 +22,8 @@ impl TransformationLambdaConfiguration {
 }
 
 /// A builder for [`TransformationLambdaConfiguration`](crate::types::TransformationLambdaConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TransformationLambdaConfigurationBuilder {
     pub(crate) lambda_arn: ::std::option::Option<::std::string::String>,
 }

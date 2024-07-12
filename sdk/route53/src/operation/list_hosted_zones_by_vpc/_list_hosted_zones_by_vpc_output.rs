@@ -39,8 +39,8 @@ impl ListHostedZonesByVpcOutput {
 }
 
 /// A builder for [`ListHostedZonesByVpcOutput`](crate::operation::list_hosted_zones_by_vpc::ListHostedZonesByVpcOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListHostedZonesByVpcOutputBuilder {
     pub(crate) hosted_zone_summaries: ::std::option::Option<::std::vec::Vec<crate::types::HostedZoneSummary>>,
     pub(crate) max_items: ::std::option::Option<i32>,

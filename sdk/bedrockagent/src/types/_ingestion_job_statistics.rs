@@ -57,8 +57,8 @@ impl IngestionJobStatistics {
 }
 
 /// A builder for [`IngestionJobStatistics`](crate::types::IngestionJobStatistics).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IngestionJobStatisticsBuilder {
     pub(crate) number_of_documents_scanned: ::std::option::Option<i64>,
     pub(crate) number_of_metadata_documents_scanned: ::std::option::Option<i64>,

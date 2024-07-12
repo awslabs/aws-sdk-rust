@@ -27,8 +27,8 @@ impl DescribePermissionSetProvisioningStatusOutput {
 }
 
 /// A builder for [`DescribePermissionSetProvisioningStatusOutput`](crate::operation::describe_permission_set_provisioning_status::DescribePermissionSetProvisioningStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribePermissionSetProvisioningStatusOutputBuilder {
     pub(crate) permission_set_provisioning_status: ::std::option::Option<crate::types::PermissionSetProvisioningStatus>,
     _request_id: Option<String>,

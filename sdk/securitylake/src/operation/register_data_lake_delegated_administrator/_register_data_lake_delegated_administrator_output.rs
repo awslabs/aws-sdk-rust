@@ -18,8 +18,8 @@ impl RegisterDataLakeDelegatedAdministratorOutput {
 }
 
 /// A builder for [`RegisterDataLakeDelegatedAdministratorOutput`](crate::operation::register_data_lake_delegated_administrator::RegisterDataLakeDelegatedAdministratorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterDataLakeDelegatedAdministratorOutputBuilder {
     _request_id: Option<String>,
 }

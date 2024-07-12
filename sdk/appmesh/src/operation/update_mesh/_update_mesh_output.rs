@@ -26,8 +26,8 @@ impl UpdateMeshOutput {
 }
 
 /// A builder for [`UpdateMeshOutput`](crate::operation::update_mesh::UpdateMeshOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateMeshOutputBuilder {
     pub(crate) mesh: ::std::option::Option<crate::types::MeshData>,
     _request_id: Option<String>,

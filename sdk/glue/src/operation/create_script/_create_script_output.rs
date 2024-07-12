@@ -32,8 +32,8 @@ impl CreateScriptOutput {
 }
 
 /// A builder for [`CreateScriptOutput`](crate::operation::create_script::CreateScriptOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateScriptOutputBuilder {
     pub(crate) python_script: ::std::option::Option<::std::string::String>,
     pub(crate) scala_code: ::std::option::Option<::std::string::String>,

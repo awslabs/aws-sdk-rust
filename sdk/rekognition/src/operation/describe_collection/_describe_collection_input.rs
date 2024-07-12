@@ -20,8 +20,8 @@ impl DescribeCollectionInput {
 }
 
 /// A builder for [`DescribeCollectionInput`](crate::operation::describe_collection::DescribeCollectionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCollectionInputBuilder {
     pub(crate) collection_id: ::std::option::Option<::std::string::String>,
 }

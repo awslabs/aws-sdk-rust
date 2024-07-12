@@ -42,8 +42,8 @@ impl PushNotificationConfiguration {
 }
 
 /// A builder for [`PushNotificationConfiguration`](crate::types::PushNotificationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PushNotificationConfigurationBuilder {
     pub(crate) title: ::std::option::Option<::std::string::String>,
     pub(crate) body: ::std::option::Option<::std::string::String>,

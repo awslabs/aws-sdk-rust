@@ -34,8 +34,8 @@ impl ListAdapterVersionsOutput {
 }
 
 /// A builder for [`ListAdapterVersionsOutput`](crate::operation::list_adapter_versions::ListAdapterVersionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAdapterVersionsOutputBuilder {
     pub(crate) adapter_versions: ::std::option::Option<::std::vec::Vec<crate::types::AdapterVersionOverview>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -38,8 +38,8 @@ impl ListBotVersionsInput {
 }
 
 /// A builder for [`ListBotVersionsInput`](crate::operation::list_bot_versions::ListBotVersionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListBotVersionsInputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) sort_by: ::std::option::Option<crate::types::BotVersionSortBy>,

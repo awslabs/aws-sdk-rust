@@ -21,8 +21,8 @@ impl AwsAthenaWorkGroupConfigurationDetails {
 }
 
 /// A builder for [`AwsAthenaWorkGroupConfigurationDetails`](crate::types::AwsAthenaWorkGroupConfigurationDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsAthenaWorkGroupConfigurationDetailsBuilder {
     pub(crate) result_configuration: ::std::option::Option<crate::types::AwsAthenaWorkGroupConfigurationResultConfigurationDetails>,
 }

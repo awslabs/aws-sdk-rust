@@ -18,8 +18,8 @@ impl DeleteEdgeConfigurationOutput {
 }
 
 /// A builder for [`DeleteEdgeConfigurationOutput`](crate::operation::delete_edge_configuration::DeleteEdgeConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteEdgeConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

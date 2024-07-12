@@ -44,8 +44,8 @@ impl DescribeRecoverySnapshotsInput {
 }
 
 /// A builder for [`DescribeRecoverySnapshotsInput`](crate::operation::describe_recovery_snapshots::DescribeRecoverySnapshotsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRecoverySnapshotsInputBuilder {
     pub(crate) source_server_id: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<crate::types::DescribeRecoverySnapshotsRequestFilters>,

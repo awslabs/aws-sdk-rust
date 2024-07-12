@@ -26,8 +26,8 @@ impl DescribeRoutingProfileInput {
 }
 
 /// A builder for [`DescribeRoutingProfileInput`](crate::operation::describe_routing_profile::DescribeRoutingProfileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRoutingProfileInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) routing_profile_id: ::std::option::Option<::std::string::String>,

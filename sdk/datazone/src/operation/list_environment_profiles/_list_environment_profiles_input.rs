@@ -76,8 +76,8 @@ impl ListEnvironmentProfilesInput {
 }
 
 /// A builder for [`ListEnvironmentProfilesInput`](crate::operation::list_environment_profiles::ListEnvironmentProfilesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ListEnvironmentProfilesInputBuilder {
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,

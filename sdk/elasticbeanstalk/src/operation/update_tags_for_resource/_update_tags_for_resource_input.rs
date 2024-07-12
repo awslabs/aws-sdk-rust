@@ -42,8 +42,8 @@ impl UpdateTagsForResourceInput {
 }
 
 /// A builder for [`UpdateTagsForResourceInput`](crate::operation::update_tags_for_resource::UpdateTagsForResourceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateTagsForResourceInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tags_to_add: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,

@@ -33,8 +33,8 @@ impl IamIdentity {
 }
 
 /// A builder for [`IamIdentity`](crate::types::IamIdentity).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IamIdentityBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) principal_id: ::std::option::Option<::std::string::String>,

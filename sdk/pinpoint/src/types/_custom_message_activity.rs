@@ -69,8 +69,8 @@ impl CustomMessageActivity {
 }
 
 /// A builder for [`CustomMessageActivity`](crate::types::CustomMessageActivity).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CustomMessageActivityBuilder {
     pub(crate) delivery_uri: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint_types: ::std::option::Option<::std::vec::Vec<crate::types::EndpointTypesElement>>,

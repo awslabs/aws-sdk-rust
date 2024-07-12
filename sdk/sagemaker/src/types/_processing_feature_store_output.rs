@@ -21,8 +21,8 @@ impl ProcessingFeatureStoreOutput {
 }
 
 /// A builder for [`ProcessingFeatureStoreOutput`](crate::types::ProcessingFeatureStoreOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProcessingFeatureStoreOutputBuilder {
     pub(crate) feature_group_name: ::std::option::Option<::std::string::String>,
 }

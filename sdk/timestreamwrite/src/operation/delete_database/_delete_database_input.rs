@@ -20,8 +20,8 @@ impl DeleteDatabaseInput {
 }
 
 /// A builder for [`DeleteDatabaseInput`](crate::operation::delete_database::DeleteDatabaseInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDatabaseInputBuilder {
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
 }

@@ -114,8 +114,8 @@ impl InputTransformer {
 }
 
 /// A builder for [`InputTransformer`](crate::types::InputTransformer).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InputTransformerBuilder {
     pub(crate) input_paths_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) input_template: ::std::option::Option<::std::string::String>,

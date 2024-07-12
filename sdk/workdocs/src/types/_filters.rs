@@ -89,8 +89,8 @@ impl Filters {
 }
 
 /// A builder for [`Filters`](crate::types::Filters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FiltersBuilder {
     pub(crate) text_locales: ::std::option::Option<::std::vec::Vec<crate::types::LanguageCodeType>>,
     pub(crate) content_categories: ::std::option::Option<::std::vec::Vec<crate::types::ContentCategoryType>>,

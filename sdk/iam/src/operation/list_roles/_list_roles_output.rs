@@ -40,8 +40,8 @@ impl ListRolesOutput {
 }
 
 /// A builder for [`ListRolesOutput`](crate::operation::list_roles::ListRolesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRolesOutputBuilder {
     pub(crate) roles: ::std::option::Option<::std::vec::Vec<crate::types::Role>>,
     pub(crate) is_truncated: ::std::option::Option<bool>,

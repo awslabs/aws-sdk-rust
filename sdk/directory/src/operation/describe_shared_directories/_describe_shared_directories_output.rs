@@ -34,8 +34,8 @@ impl DescribeSharedDirectoriesOutput {
 }
 
 /// A builder for [`DescribeSharedDirectoriesOutput`](crate::operation::describe_shared_directories::DescribeSharedDirectoriesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSharedDirectoriesOutputBuilder {
     pub(crate) shared_directories: ::std::option::Option<::std::vec::Vec<crate::types::SharedDirectory>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

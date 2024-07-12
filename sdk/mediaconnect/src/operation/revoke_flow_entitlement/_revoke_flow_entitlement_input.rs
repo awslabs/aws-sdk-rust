@@ -26,8 +26,8 @@ impl RevokeFlowEntitlementInput {
 }
 
 /// A builder for [`RevokeFlowEntitlementInput`](crate::operation::revoke_flow_entitlement::RevokeFlowEntitlementInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RevokeFlowEntitlementInputBuilder {
     pub(crate) entitlement_arn: ::std::option::Option<::std::string::String>,
     pub(crate) flow_arn: ::std::option::Option<::std::string::String>,

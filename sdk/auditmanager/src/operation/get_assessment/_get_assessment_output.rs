@@ -32,8 +32,8 @@ impl GetAssessmentOutput {
 }
 
 /// A builder for [`GetAssessmentOutput`](crate::operation::get_assessment::GetAssessmentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAssessmentOutputBuilder {
     pub(crate) assessment: ::std::option::Option<crate::types::Assessment>,
     pub(crate) user_role: ::std::option::Option<crate::types::Role>,

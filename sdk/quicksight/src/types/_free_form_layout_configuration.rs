@@ -28,8 +28,8 @@ impl FreeFormLayoutConfiguration {
 }
 
 /// A builder for [`FreeFormLayoutConfiguration`](crate::types::FreeFormLayoutConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FreeFormLayoutConfigurationBuilder {
     pub(crate) elements: ::std::option::Option<::std::vec::Vec<crate::types::FreeFormLayoutElement>>,
     pub(crate) canvas_size_options: ::std::option::Option<crate::types::FreeFormLayoutCanvasSizeOptions>,

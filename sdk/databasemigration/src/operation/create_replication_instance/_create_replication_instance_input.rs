@@ -153,8 +153,8 @@ impl CreateReplicationInstanceInput {
 }
 
 /// A builder for [`CreateReplicationInstanceInput`](crate::operation::create_replication_instance::CreateReplicationInstanceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateReplicationInstanceInputBuilder {
     pub(crate) replication_instance_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) allocated_storage: ::std::option::Option<i32>,

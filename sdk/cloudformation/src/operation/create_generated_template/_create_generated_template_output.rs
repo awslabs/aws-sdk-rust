@@ -26,8 +26,8 @@ impl CreateGeneratedTemplateOutput {
 }
 
 /// A builder for [`CreateGeneratedTemplateOutput`](crate::operation::create_generated_template::CreateGeneratedTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateGeneratedTemplateOutputBuilder {
     pub(crate) generated_template_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

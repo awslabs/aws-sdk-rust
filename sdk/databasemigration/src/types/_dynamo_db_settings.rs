@@ -22,8 +22,8 @@ impl DynamoDbSettings {
 }
 
 /// A builder for [`DynamoDbSettings`](crate::types::DynamoDbSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DynamoDbSettingsBuilder {
     pub(crate) service_access_role_arn: ::std::option::Option<::std::string::String>,
 }

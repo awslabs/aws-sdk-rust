@@ -45,8 +45,8 @@ impl UtteranceData {
 }
 
 /// A builder for [`UtteranceData`](crate::types::UtteranceData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UtteranceDataBuilder {
     pub(crate) utterance_string: ::std::option::Option<::std::string::String>,
     pub(crate) count: ::std::option::Option<i32>,

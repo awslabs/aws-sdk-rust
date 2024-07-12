@@ -31,8 +31,8 @@ impl CapacityUnitsConfiguration {
 }
 
 /// A builder for [`CapacityUnitsConfiguration`](crate::types::CapacityUnitsConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CapacityUnitsConfigurationBuilder {
     pub(crate) storage_capacity_units: ::std::option::Option<i32>,
     pub(crate) query_capacity_units: ::std::option::Option<i32>,

@@ -105,8 +105,8 @@ impl CreateChannelInput {
 }
 
 /// A builder for [`CreateChannelInput`](crate::operation::create_channel::CreateChannelInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateChannelInputBuilder {
     pub(crate) cdi_input_specification: ::std::option::Option<crate::types::CdiInputSpecification>,
     pub(crate) channel_class: ::std::option::Option<crate::types::ChannelClass>,

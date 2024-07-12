@@ -77,8 +77,8 @@ impl FindingSummaryV2 {
 }
 
 /// A builder for [`FindingSummaryV2`](crate::types::FindingSummaryV2).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FindingSummaryV2Builder {
     pub(crate) analyzed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,

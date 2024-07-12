@@ -82,8 +82,8 @@ impl UpdateSlotTypeInput {
 }
 
 /// A builder for [`UpdateSlotTypeInput`](crate::operation::update_slot_type::UpdateSlotTypeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSlotTypeInputBuilder {
     pub(crate) slot_type_id: ::std::option::Option<::std::string::String>,
     pub(crate) slot_type_name: ::std::option::Option<::std::string::String>,

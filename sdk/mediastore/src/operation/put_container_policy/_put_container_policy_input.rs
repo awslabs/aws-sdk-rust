@@ -38,8 +38,8 @@ impl PutContainerPolicyInput {
 }
 
 /// A builder for [`PutContainerPolicyInput`](crate::operation::put_container_policy::PutContainerPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutContainerPolicyInputBuilder {
     pub(crate) container_name: ::std::option::Option<::std::string::String>,
     pub(crate) policy: ::std::option::Option<::std::string::String>,

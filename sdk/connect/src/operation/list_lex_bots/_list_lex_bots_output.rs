@@ -34,8 +34,8 @@ impl ListLexBotsOutput {
 }
 
 /// A builder for [`ListLexBotsOutput`](crate::operation::list_lex_bots::ListLexBotsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListLexBotsOutputBuilder {
     pub(crate) lex_bots: ::std::option::Option<::std::vec::Vec<crate::types::LexBot>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

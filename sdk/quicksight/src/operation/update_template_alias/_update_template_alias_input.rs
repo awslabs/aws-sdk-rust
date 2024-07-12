@@ -38,8 +38,8 @@ impl UpdateTemplateAliasInput {
 }
 
 /// A builder for [`UpdateTemplateAliasInput`](crate::operation::update_template_alias::UpdateTemplateAliasInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateTemplateAliasInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) template_id: ::std::option::Option<::std::string::String>,

@@ -21,8 +21,8 @@ impl Asset {
 }
 
 /// A builder for [`Asset`](crate::types::Asset).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssetBuilder {
     pub(crate) ground_truth_manifest: ::std::option::Option<crate::types::GroundTruthManifest>,
 }

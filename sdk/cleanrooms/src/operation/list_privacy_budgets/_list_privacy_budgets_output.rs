@@ -33,8 +33,8 @@ impl ListPrivacyBudgetsOutput {
 }
 
 /// A builder for [`ListPrivacyBudgetsOutput`](crate::operation::list_privacy_budgets::ListPrivacyBudgetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPrivacyBudgetsOutputBuilder {
     pub(crate) privacy_budget_summaries: ::std::option::Option<::std::vec::Vec<crate::types::PrivacyBudgetSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

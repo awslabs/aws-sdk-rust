@@ -31,8 +31,8 @@ impl RegexMatchSetUpdate {
 }
 
 /// A builder for [`RegexMatchSetUpdate`](crate::types::RegexMatchSetUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegexMatchSetUpdateBuilder {
     pub(crate) action: ::std::option::Option<crate::types::ChangeAction>,
     pub(crate) regex_match_tuple: ::std::option::Option<crate::types::RegexMatchTuple>,

@@ -27,8 +27,8 @@ impl Source {
 }
 
 /// A builder for [`Source`](crate::types::Source).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SourceBuilder {
     pub(crate) source_type: ::std::option::Option<crate::types::TrustAnchorType>,
     pub(crate) source_data: ::std::option::Option<crate::types::SourceData>,

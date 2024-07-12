@@ -20,8 +20,8 @@ impl DeleteEndpointGroupInput {
 }
 
 /// A builder for [`DeleteEndpointGroupInput`](crate::operation::delete_endpoint_group::DeleteEndpointGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteEndpointGroupInputBuilder {
     pub(crate) endpoint_group_arn: ::std::option::Option<::std::string::String>,
 }

@@ -27,8 +27,8 @@ impl SecurityHubConfiguration {
 }
 
 /// A builder for [`SecurityHubConfiguration`](crate::types::SecurityHubConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SecurityHubConfigurationBuilder {
     pub(crate) publish_classification_findings: ::std::option::Option<bool>,
     pub(crate) publish_policy_findings: ::std::option::Option<bool>,

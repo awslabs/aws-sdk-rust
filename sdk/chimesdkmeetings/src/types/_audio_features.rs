@@ -21,8 +21,8 @@ impl AudioFeatures {
 }
 
 /// A builder for [`AudioFeatures`](crate::types::AudioFeatures).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AudioFeaturesBuilder {
     pub(crate) echo_reduction: ::std::option::Option<crate::types::MeetingFeatureStatus>,
 }

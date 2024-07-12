@@ -27,8 +27,8 @@ impl VisualInteractionOptions {
 }
 
 /// A builder for [`VisualInteractionOptions`](crate::types::VisualInteractionOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VisualInteractionOptionsBuilder {
     pub(crate) visual_menu_option: ::std::option::Option<crate::types::VisualMenuOption>,
     pub(crate) context_menu_option: ::std::option::Option<crate::types::ContextMenuOption>,

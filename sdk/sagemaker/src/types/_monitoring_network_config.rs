@@ -33,8 +33,8 @@ impl MonitoringNetworkConfig {
 }
 
 /// A builder for [`MonitoringNetworkConfig`](crate::types::MonitoringNetworkConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MonitoringNetworkConfigBuilder {
     pub(crate) enable_inter_container_traffic_encryption: ::std::option::Option<bool>,
     pub(crate) enable_network_isolation: ::std::option::Option<bool>,

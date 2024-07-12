@@ -26,8 +26,8 @@ impl DisassociateLicenseOutput {
 }
 
 /// A builder for [`DisassociateLicenseOutput`](crate::operation::disassociate_license::DisassociateLicenseOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateLicenseOutputBuilder {
     pub(crate) workspace: ::std::option::Option<crate::types::WorkspaceDescription>,
     _request_id: Option<String>,

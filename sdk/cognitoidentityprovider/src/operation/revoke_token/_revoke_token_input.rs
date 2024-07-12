@@ -41,8 +41,8 @@ impl RevokeTokenInput {
 }
 
 /// A builder for [`RevokeTokenInput`](crate::operation::revoke_token::RevokeTokenInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct RevokeTokenInputBuilder {
     pub(crate) token: ::std::option::Option<::std::string::String>,
     pub(crate) client_id: ::std::option::Option<::std::string::String>,

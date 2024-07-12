@@ -27,8 +27,8 @@ impl GetTelemetryMetadataOutput {
 }
 
 /// A builder for [`GetTelemetryMetadataOutput`](crate::operation::get_telemetry_metadata::GetTelemetryMetadataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTelemetryMetadataOutputBuilder {
     pub(crate) telemetry_metadata: ::std::option::Option<::std::vec::Vec<crate::types::TelemetryMetadata>>,
     _request_id: Option<String>,

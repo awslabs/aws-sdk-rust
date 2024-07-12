@@ -26,8 +26,8 @@ impl DeletePrivateGraphEndpointInput {
 }
 
 /// A builder for [`DeletePrivateGraphEndpointInput`](crate::operation::delete_private_graph_endpoint::DeletePrivateGraphEndpointInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePrivateGraphEndpointInputBuilder {
     pub(crate) graph_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,

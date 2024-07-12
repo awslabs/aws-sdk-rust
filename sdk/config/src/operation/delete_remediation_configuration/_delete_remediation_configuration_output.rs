@@ -18,8 +18,8 @@ impl DeleteRemediationConfigurationOutput {
 }
 
 /// A builder for [`DeleteRemediationConfigurationOutput`](crate::operation::delete_remediation_configuration::DeleteRemediationConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRemediationConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

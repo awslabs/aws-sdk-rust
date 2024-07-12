@@ -18,8 +18,8 @@ impl UpdateDevicePolicyConfigurationOutput {
 }
 
 /// A builder for [`UpdateDevicePolicyConfigurationOutput`](crate::operation::update_device_policy_configuration::UpdateDevicePolicyConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDevicePolicyConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

@@ -18,8 +18,8 @@ impl DeleteReportGroupOutput {
 }
 
 /// A builder for [`DeleteReportGroupOutput`](crate::operation::delete_report_group::DeleteReportGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteReportGroupOutputBuilder {
     _request_id: Option<String>,
 }

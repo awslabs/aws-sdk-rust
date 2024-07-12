@@ -42,8 +42,8 @@ impl RegisterTransitGatewayMulticastGroupSourcesInput {
 }
 
 /// A builder for [`RegisterTransitGatewayMulticastGroupSourcesInput`](crate::operation::register_transit_gateway_multicast_group_sources::RegisterTransitGatewayMulticastGroupSourcesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterTransitGatewayMulticastGroupSourcesInputBuilder {
     pub(crate) transit_gateway_multicast_domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) group_ip_address: ::std::option::Option<::std::string::String>,

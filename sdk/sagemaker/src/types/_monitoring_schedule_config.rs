@@ -39,8 +39,8 @@ impl MonitoringScheduleConfig {
 }
 
 /// A builder for [`MonitoringScheduleConfig`](crate::types::MonitoringScheduleConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MonitoringScheduleConfigBuilder {
     pub(crate) schedule_config: ::std::option::Option<crate::types::ScheduleConfig>,
     pub(crate) monitoring_job_definition: ::std::option::Option<crate::types::MonitoringJobDefinition>,

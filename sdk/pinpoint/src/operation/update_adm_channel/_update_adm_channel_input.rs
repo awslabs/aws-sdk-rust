@@ -26,8 +26,8 @@ impl UpdateAdmChannelInput {
 }
 
 /// A builder for [`UpdateAdmChannelInput`](crate::operation::update_adm_channel::UpdateAdmChannelInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAdmChannelInputBuilder {
     pub(crate) adm_channel_request: ::std::option::Option<crate::types::AdmChannelRequest>,
     pub(crate) application_id: ::std::option::Option<::std::string::String>,

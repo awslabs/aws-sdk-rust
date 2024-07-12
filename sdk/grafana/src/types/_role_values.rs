@@ -39,8 +39,8 @@ impl RoleValues {
 }
 
 /// A builder for [`RoleValues`](crate::types::RoleValues).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct RoleValuesBuilder {
     pub(crate) editor: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) admin: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

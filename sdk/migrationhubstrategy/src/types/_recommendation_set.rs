@@ -33,8 +33,8 @@ impl RecommendationSet {
 }
 
 /// A builder for [`RecommendationSet`](crate::types::RecommendationSet).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecommendationSetBuilder {
     pub(crate) transformation_tool: ::std::option::Option<crate::types::TransformationTool>,
     pub(crate) target_destination: ::std::option::Option<crate::types::TargetDestination>,

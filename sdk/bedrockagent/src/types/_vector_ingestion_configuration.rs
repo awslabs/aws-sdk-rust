@@ -33,8 +33,8 @@ impl VectorIngestionConfiguration {
 }
 
 /// A builder for [`VectorIngestionConfiguration`](crate::types::VectorIngestionConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VectorIngestionConfigurationBuilder {
     pub(crate) chunking_configuration: ::std::option::Option<crate::types::ChunkingConfiguration>,
     pub(crate) custom_transformation_configuration: ::std::option::Option<crate::types::CustomTransformationConfiguration>,

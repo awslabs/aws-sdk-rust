@@ -43,8 +43,8 @@ impl ListCalculatedAttributeDefinitionsOutput {
 }
 
 /// A builder for [`ListCalculatedAttributeDefinitionsOutput`](crate::operation::list_calculated_attribute_definitions::ListCalculatedAttributeDefinitionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ListCalculatedAttributeDefinitionsOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ListCalculatedAttributeDefinitionItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

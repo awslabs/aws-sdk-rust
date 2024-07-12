@@ -26,8 +26,8 @@ impl GetBranchOutput {
 }
 
 /// A builder for [`GetBranchOutput`](crate::operation::get_branch::GetBranchOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBranchOutputBuilder {
     pub(crate) branch: ::std::option::Option<crate::types::Branch>,
     _request_id: Option<String>,

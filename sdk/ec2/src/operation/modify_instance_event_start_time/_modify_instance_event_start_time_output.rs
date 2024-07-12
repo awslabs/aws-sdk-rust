@@ -26,8 +26,8 @@ impl ModifyInstanceEventStartTimeOutput {
 }
 
 /// A builder for [`ModifyInstanceEventStartTimeOutput`](crate::operation::modify_instance_event_start_time::ModifyInstanceEventStartTimeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyInstanceEventStartTimeOutputBuilder {
     pub(crate) event: ::std::option::Option<crate::types::InstanceStatusEvent>,
     _request_id: Option<String>,

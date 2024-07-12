@@ -18,8 +18,8 @@ impl DeleteTimelineEventOutput {
 }
 
 /// A builder for [`DeleteTimelineEventOutput`](crate::operation::delete_timeline_event::DeleteTimelineEventOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTimelineEventOutputBuilder {
     _request_id: Option<String>,
 }

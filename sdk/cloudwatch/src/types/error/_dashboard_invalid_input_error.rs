@@ -55,8 +55,8 @@ impl DashboardInvalidInputError {
 }
 
 /// A builder for [`DashboardInvalidInputError`](crate::types::error::DashboardInvalidInputError).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DashboardInvalidInputErrorBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) dashboard_validation_messages: ::std::option::Option<::std::vec::Vec<crate::types::DashboardValidationMessage>>,

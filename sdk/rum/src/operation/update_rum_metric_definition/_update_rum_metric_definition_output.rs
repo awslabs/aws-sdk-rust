@@ -18,8 +18,8 @@ impl UpdateRumMetricDefinitionOutput {
 }
 
 /// A builder for [`UpdateRumMetricDefinitionOutput`](crate::operation::update_rum_metric_definition::UpdateRumMetricDefinitionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRumMetricDefinitionOutputBuilder {
     _request_id: Option<String>,
 }

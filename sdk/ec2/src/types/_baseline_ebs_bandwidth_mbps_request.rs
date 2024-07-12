@@ -27,8 +27,8 @@ impl BaselineEbsBandwidthMbpsRequest {
 }
 
 /// A builder for [`BaselineEbsBandwidthMbpsRequest`](crate::types::BaselineEbsBandwidthMbpsRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BaselineEbsBandwidthMbpsRequestBuilder {
     pub(crate) min: ::std::option::Option<i32>,
     pub(crate) max: ::std::option::Option<i32>,

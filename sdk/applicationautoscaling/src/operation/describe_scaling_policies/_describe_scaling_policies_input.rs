@@ -230,8 +230,8 @@ impl DescribeScalingPoliciesInput {
 }
 
 /// A builder for [`DescribeScalingPoliciesInput`](crate::operation::describe_scaling_policies::DescribeScalingPoliciesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeScalingPoliciesInputBuilder {
     pub(crate) policy_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) service_namespace: ::std::option::Option<crate::types::ServiceNamespace>,

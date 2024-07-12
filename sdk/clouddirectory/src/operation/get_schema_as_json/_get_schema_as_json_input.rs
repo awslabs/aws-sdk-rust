@@ -20,8 +20,8 @@ impl GetSchemaAsJsonInput {
 }
 
 /// A builder for [`GetSchemaAsJsonInput`](crate::operation::get_schema_as_json::GetSchemaAsJsonInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSchemaAsJsonInputBuilder {
     pub(crate) schema_arn: ::std::option::Option<::std::string::String>,
 }

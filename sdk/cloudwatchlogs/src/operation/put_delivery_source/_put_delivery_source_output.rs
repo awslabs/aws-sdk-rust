@@ -26,8 +26,8 @@ impl PutDeliverySourceOutput {
 }
 
 /// A builder for [`PutDeliverySourceOutput`](crate::operation::put_delivery_source::PutDeliverySourceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutDeliverySourceOutputBuilder {
     pub(crate) delivery_source: ::std::option::Option<crate::types::DeliverySource>,
     _request_id: Option<String>,

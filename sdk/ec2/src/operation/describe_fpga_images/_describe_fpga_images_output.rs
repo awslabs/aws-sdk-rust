@@ -34,8 +34,8 @@ impl DescribeFpgaImagesOutput {
 }
 
 /// A builder for [`DescribeFpgaImagesOutput`](crate::operation::describe_fpga_images::DescribeFpgaImagesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFpgaImagesOutputBuilder {
     pub(crate) fpga_images: ::std::option::Option<::std::vec::Vec<crate::types::FpgaImage>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

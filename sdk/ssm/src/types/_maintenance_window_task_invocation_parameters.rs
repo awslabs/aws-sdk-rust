@@ -39,8 +39,8 @@ impl MaintenanceWindowTaskInvocationParameters {
 }
 
 /// A builder for [`MaintenanceWindowTaskInvocationParameters`](crate::types::MaintenanceWindowTaskInvocationParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MaintenanceWindowTaskInvocationParametersBuilder {
     pub(crate) run_command: ::std::option::Option<crate::types::MaintenanceWindowRunCommandParameters>,
     pub(crate) automation: ::std::option::Option<crate::types::MaintenanceWindowAutomationParameters>,

@@ -32,8 +32,8 @@ impl ProtectedResourceConditions {
 }
 
 /// A builder for [`ProtectedResourceConditions`](crate::types::ProtectedResourceConditions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProtectedResourceConditionsBuilder {
     pub(crate) string_equals: ::std::option::Option<::std::vec::Vec<crate::types::KeyValue>>,
     pub(crate) string_not_equals: ::std::option::Option<::std::vec::Vec<crate::types::KeyValue>>,

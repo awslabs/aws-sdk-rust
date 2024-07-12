@@ -26,8 +26,8 @@ impl GenerateChangeSetInput {
 }
 
 /// A builder for [`GenerateChangeSetInput`](crate::operation::generate_change_set::GenerateChangeSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GenerateChangeSetInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) changeset_format: ::std::option::Option<crate::types::OutputFormat>,

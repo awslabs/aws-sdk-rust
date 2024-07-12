@@ -33,8 +33,8 @@ impl RecommendedIntentSummary {
 }
 
 /// A builder for [`RecommendedIntentSummary`](crate::types::RecommendedIntentSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecommendedIntentSummaryBuilder {
     pub(crate) intent_id: ::std::option::Option<::std::string::String>,
     pub(crate) intent_name: ::std::option::Option<::std::string::String>,

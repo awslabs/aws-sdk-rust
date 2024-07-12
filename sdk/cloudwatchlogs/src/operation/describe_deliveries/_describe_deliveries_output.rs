@@ -34,8 +34,8 @@ impl DescribeDeliveriesOutput {
 }
 
 /// A builder for [`DescribeDeliveriesOutput`](crate::operation::describe_deliveries::DescribeDeliveriesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDeliveriesOutputBuilder {
     pub(crate) deliveries: ::std::option::Option<::std::vec::Vec<crate::types::Delivery>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

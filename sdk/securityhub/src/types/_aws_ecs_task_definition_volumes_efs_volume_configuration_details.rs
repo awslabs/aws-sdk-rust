@@ -47,8 +47,8 @@ impl AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails {
 }
 
 /// A builder for [`AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails`](crate::types::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetailsBuilder {
     pub(crate) authorization_config: ::std::option::Option<crate::types::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails>,
     pub(crate) filesystem_id: ::std::option::Option<::std::string::String>,

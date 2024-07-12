@@ -18,8 +18,8 @@ impl StopContactOutput {
 }
 
 /// A builder for [`StopContactOutput`](crate::operation::stop_contact::StopContactOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopContactOutputBuilder {
     _request_id: Option<String>,
 }

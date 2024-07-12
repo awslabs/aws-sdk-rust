@@ -94,8 +94,8 @@ impl ListNotebookExecutionsInput {
 }
 
 /// A builder for [`ListNotebookExecutionsInput`](crate::operation::list_notebook_executions::ListNotebookExecutionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListNotebookExecutionsInputBuilder {
     pub(crate) editor_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::NotebookExecutionStatus>,

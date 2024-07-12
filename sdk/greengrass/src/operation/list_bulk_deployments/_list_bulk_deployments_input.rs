@@ -26,8 +26,8 @@ impl ListBulkDeploymentsInput {
 }
 
 /// A builder for [`ListBulkDeploymentsInput`](crate::operation::list_bulk_deployments::ListBulkDeploymentsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListBulkDeploymentsInputBuilder {
     pub(crate) max_results: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

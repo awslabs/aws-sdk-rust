@@ -105,8 +105,8 @@ impl InvokeModelWithResponseStreamInput {
 }
 
 /// A builder for [`InvokeModelWithResponseStreamInput`](crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct InvokeModelWithResponseStreamInputBuilder {
     pub(crate) body: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) content_type: ::std::option::Option<::std::string::String>,

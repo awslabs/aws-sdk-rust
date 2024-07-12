@@ -164,8 +164,8 @@ impl DescribeImageVersionOutput {
 }
 
 /// A builder for [`DescribeImageVersionOutput`](crate::operation::describe_image_version::DescribeImageVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeImageVersionOutputBuilder {
     pub(crate) base_image: ::std::option::Option<::std::string::String>,
     pub(crate) container_image: ::std::option::Option<::std::string::String>,

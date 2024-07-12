@@ -40,8 +40,8 @@ impl CreateLocalGatewayRouteTableInput {
 }
 
 /// A builder for [`CreateLocalGatewayRouteTableInput`](crate::operation::create_local_gateway_route_table::CreateLocalGatewayRouteTableInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLocalGatewayRouteTableInputBuilder {
     pub(crate) local_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) mode: ::std::option::Option<crate::types::LocalGatewayRouteTableMode>,

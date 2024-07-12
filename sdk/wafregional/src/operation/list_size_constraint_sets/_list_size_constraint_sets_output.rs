@@ -34,8 +34,8 @@ impl ListSizeConstraintSetsOutput {
 }
 
 /// A builder for [`ListSizeConstraintSetsOutput`](crate::operation::list_size_constraint_sets::ListSizeConstraintSetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSizeConstraintSetsOutputBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     pub(crate) size_constraint_sets: ::std::option::Option<::std::vec::Vec<crate::types::SizeConstraintSetSummary>>,

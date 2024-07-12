@@ -18,8 +18,8 @@ impl DeleteMediaPipelineOutput {
 }
 
 /// A builder for [`DeleteMediaPipelineOutput`](crate::operation::delete_media_pipeline::DeleteMediaPipelineOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteMediaPipelineOutputBuilder {
     _request_id: Option<String>,
 }

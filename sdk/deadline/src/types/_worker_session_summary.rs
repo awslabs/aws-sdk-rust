@@ -60,8 +60,8 @@ impl WorkerSessionSummary {
 }
 
 /// A builder for [`WorkerSessionSummary`](crate::types::WorkerSessionSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WorkerSessionSummaryBuilder {
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
     pub(crate) queue_id: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl GetTableMetadataOutput {
 }
 
 /// A builder for [`GetTableMetadataOutput`](crate::operation::get_table_metadata::GetTableMetadataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTableMetadataOutputBuilder {
     pub(crate) table_metadata: ::std::option::Option<crate::types::TableMetadata>,
     _request_id: Option<String>,

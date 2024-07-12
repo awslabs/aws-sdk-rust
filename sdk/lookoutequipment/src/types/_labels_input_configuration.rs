@@ -27,8 +27,8 @@ impl LabelsInputConfiguration {
 }
 
 /// A builder for [`LabelsInputConfiguration`](crate::types::LabelsInputConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LabelsInputConfigurationBuilder {
     pub(crate) s3_input_configuration: ::std::option::Option<crate::types::LabelsS3InputConfiguration>,
     pub(crate) label_group_name: ::std::option::Option<::std::string::String>,

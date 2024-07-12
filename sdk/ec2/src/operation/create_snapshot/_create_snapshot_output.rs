@@ -131,8 +131,8 @@ impl CreateSnapshotOutput {
 }
 
 /// A builder for [`CreateSnapshotOutput`](crate::operation::create_snapshot::CreateSnapshotOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSnapshotOutputBuilder {
     pub(crate) data_encryption_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

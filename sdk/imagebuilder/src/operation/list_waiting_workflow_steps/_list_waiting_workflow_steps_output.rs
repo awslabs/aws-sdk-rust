@@ -34,8 +34,8 @@ impl ListWaitingWorkflowStepsOutput {
 }
 
 /// A builder for [`ListWaitingWorkflowStepsOutput`](crate::operation::list_waiting_workflow_steps::ListWaitingWorkflowStepsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListWaitingWorkflowStepsOutputBuilder {
     pub(crate) steps: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepExecution>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

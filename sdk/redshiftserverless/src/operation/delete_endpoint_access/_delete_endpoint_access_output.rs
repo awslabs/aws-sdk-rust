@@ -26,8 +26,8 @@ impl DeleteEndpointAccessOutput {
 }
 
 /// A builder for [`DeleteEndpointAccessOutput`](crate::operation::delete_endpoint_access::DeleteEndpointAccessOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteEndpointAccessOutputBuilder {
     pub(crate) endpoint: ::std::option::Option<crate::types::EndpointAccess>,
     _request_id: Option<String>,

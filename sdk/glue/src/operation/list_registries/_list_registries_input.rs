@@ -26,8 +26,8 @@ impl ListRegistriesInput {
 }
 
 /// A builder for [`ListRegistriesInput`](crate::operation::list_registries::ListRegistriesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRegistriesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

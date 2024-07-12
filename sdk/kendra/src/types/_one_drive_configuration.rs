@@ -69,8 +69,8 @@ impl OneDriveConfiguration {
 }
 
 /// A builder for [`OneDriveConfiguration`](crate::types::OneDriveConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OneDriveConfigurationBuilder {
     pub(crate) tenant_domain: ::std::option::Option<::std::string::String>,
     pub(crate) secret_arn: ::std::option::Option<::std::string::String>,

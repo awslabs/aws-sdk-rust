@@ -27,8 +27,8 @@ impl KgKeyPairIds {
 }
 
 /// A builder for [`KgKeyPairIds`](crate::types::KgKeyPairIds).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KgKeyPairIdsBuilder {
     pub(crate) key_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) key_pair_ids: ::std::option::Option<crate::types::KeyPairIds>,

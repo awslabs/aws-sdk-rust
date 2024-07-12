@@ -13,8 +13,8 @@ impl IteratorFlowNodeConfiguration {
 }
 
 /// A builder for [`IteratorFlowNodeConfiguration`](crate::types::IteratorFlowNodeConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IteratorFlowNodeConfigurationBuilder {}
 impl IteratorFlowNodeConfigurationBuilder {
     /// Consumes the builder and constructs a [`IteratorFlowNodeConfiguration`](crate::types::IteratorFlowNodeConfiguration).

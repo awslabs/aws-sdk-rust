@@ -69,8 +69,8 @@ impl ServiceSetting {
 }
 
 /// A builder for [`ServiceSetting`](crate::types::ServiceSetting).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServiceSettingBuilder {
     pub(crate) setting_id: ::std::option::Option<::std::string::String>,
     pub(crate) setting_value: ::std::option::Option<::std::string::String>,

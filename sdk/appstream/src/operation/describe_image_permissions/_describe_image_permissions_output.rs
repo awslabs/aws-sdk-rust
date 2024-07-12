@@ -40,8 +40,8 @@ impl DescribeImagePermissionsOutput {
 }
 
 /// A builder for [`DescribeImagePermissionsOutput`](crate::operation::describe_image_permissions::DescribeImagePermissionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeImagePermissionsOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) shared_image_permissions_list: ::std::option::Option<::std::vec::Vec<crate::types::SharedImagePermissions>>,

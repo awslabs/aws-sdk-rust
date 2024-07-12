@@ -39,8 +39,8 @@ impl QuickConnectConfig {
 }
 
 /// A builder for [`QuickConnectConfig`](crate::types::QuickConnectConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct QuickConnectConfigBuilder {
     pub(crate) quick_connect_type: ::std::option::Option<crate::types::QuickConnectType>,
     pub(crate) user_config: ::std::option::Option<crate::types::UserQuickConnectConfig>,

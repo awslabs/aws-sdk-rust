@@ -36,8 +36,8 @@ impl RowLevelPermissionTagConfiguration {
 }
 
 /// A builder for [`RowLevelPermissionTagConfiguration`](crate::types::RowLevelPermissionTagConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RowLevelPermissionTagConfigurationBuilder {
     pub(crate) status: ::std::option::Option<crate::types::Status>,
     pub(crate) tag_rules: ::std::option::Option<::std::vec::Vec<crate::types::RowLevelPermissionTagRule>>,

@@ -27,8 +27,8 @@ impl BatchIsAuthorizedOutput {
 }
 
 /// A builder for [`BatchIsAuthorizedOutput`](crate::operation::batch_is_authorized::BatchIsAuthorizedOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchIsAuthorizedOutputBuilder {
     pub(crate) results: ::std::option::Option<::std::vec::Vec<crate::types::BatchIsAuthorizedOutputItem>>,
     _request_id: Option<String>,

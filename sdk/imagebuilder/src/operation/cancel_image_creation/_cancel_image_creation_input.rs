@@ -26,8 +26,8 @@ impl CancelImageCreationInput {
 }
 
 /// A builder for [`CancelImageCreationInput`](crate::operation::cancel_image_creation::CancelImageCreationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelImageCreationInputBuilder {
     pub(crate) image_build_version_arn: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

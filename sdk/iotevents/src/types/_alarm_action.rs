@@ -173,8 +173,8 @@ impl AlarmAction {
 }
 
 /// A builder for [`AlarmAction`](crate::types::AlarmAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AlarmActionBuilder {
     pub(crate) sns: ::std::option::Option<crate::types::SnsTopicPublishAction>,
     pub(crate) iot_topic_publish: ::std::option::Option<crate::types::IotTopicPublishAction>,

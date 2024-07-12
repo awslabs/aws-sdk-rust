@@ -30,8 +30,8 @@ impl DisableAvailabilityZonesForLoadBalancerInput {
 }
 
 /// A builder for [`DisableAvailabilityZonesForLoadBalancerInput`](crate::operation::disable_availability_zones_for_load_balancer::DisableAvailabilityZonesForLoadBalancerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableAvailabilityZonesForLoadBalancerInputBuilder {
     pub(crate) load_balancer_name: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

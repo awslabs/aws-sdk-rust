@@ -86,8 +86,8 @@ impl ListClusterNodesInput {
 }
 
 /// A builder for [`ListClusterNodesInput`](crate::operation::list_cluster_nodes::ListClusterNodesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListClusterNodesInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,

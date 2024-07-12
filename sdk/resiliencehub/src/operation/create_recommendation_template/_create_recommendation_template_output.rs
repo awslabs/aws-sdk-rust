@@ -26,8 +26,8 @@ impl CreateRecommendationTemplateOutput {
 }
 
 /// A builder for [`CreateRecommendationTemplateOutput`](crate::operation::create_recommendation_template::CreateRecommendationTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateRecommendationTemplateOutputBuilder {
     pub(crate) recommendation_template: ::std::option::Option<crate::types::RecommendationTemplate>,
     _request_id: Option<String>,

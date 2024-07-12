@@ -26,8 +26,8 @@ impl RevokeClusterSecurityGroupIngressOutput {
 }
 
 /// A builder for [`RevokeClusterSecurityGroupIngressOutput`](crate::operation::revoke_cluster_security_group_ingress::RevokeClusterSecurityGroupIngressOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RevokeClusterSecurityGroupIngressOutputBuilder {
     pub(crate) cluster_security_group: ::std::option::Option<crate::types::ClusterSecurityGroup>,
     _request_id: Option<String>,

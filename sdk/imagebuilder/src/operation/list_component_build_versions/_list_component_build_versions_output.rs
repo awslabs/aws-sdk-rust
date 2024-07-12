@@ -40,8 +40,8 @@ impl ListComponentBuildVersionsOutput {
 }
 
 /// A builder for [`ListComponentBuildVersionsOutput`](crate::operation::list_component_build_versions::ListComponentBuildVersionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListComponentBuildVersionsOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) component_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ComponentSummary>>,

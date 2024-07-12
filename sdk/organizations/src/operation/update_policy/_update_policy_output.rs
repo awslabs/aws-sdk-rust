@@ -26,8 +26,8 @@ impl UpdatePolicyOutput {
 }
 
 /// A builder for [`UpdatePolicyOutput`](crate::operation::update_policy::UpdatePolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePolicyOutputBuilder {
     pub(crate) policy: ::std::option::Option<crate::types::Policy>,
     _request_id: Option<String>,

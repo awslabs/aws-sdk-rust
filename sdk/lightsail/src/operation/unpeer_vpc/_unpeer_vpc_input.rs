@@ -11,8 +11,8 @@ impl UnpeerVpcInput {
 }
 
 /// A builder for [`UnpeerVpcInput`](crate::operation::unpeer_vpc::UnpeerVpcInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UnpeerVpcInputBuilder {}
 impl UnpeerVpcInputBuilder {
     /// Consumes the builder and constructs a [`UnpeerVpcInput`](crate::operation::unpeer_vpc::UnpeerVpcInput).

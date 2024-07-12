@@ -52,8 +52,8 @@ impl GetConfigurationOutput {
 }
 
 /// A builder for [`GetConfigurationOutput`](crate::operation::get_configuration::GetConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetConfigurationOutputBuilder {
     pub(crate) content: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) configuration_version: ::std::option::Option<::std::string::String>,

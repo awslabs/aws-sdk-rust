@@ -34,8 +34,8 @@ impl ListAccountLinksInput {
 }
 
 /// A builder for [`ListAccountLinksInput`](crate::operation::list_account_links::ListAccountLinksInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAccountLinksInputBuilder {
     pub(crate) link_status_filter: ::std::option::Option<::std::vec::Vec<crate::types::AccountLinkStatusEnum>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

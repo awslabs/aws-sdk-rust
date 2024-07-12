@@ -26,8 +26,8 @@ impl GetThingRuntimeConfigurationOutput {
 }
 
 /// A builder for [`GetThingRuntimeConfigurationOutput`](crate::operation::get_thing_runtime_configuration::GetThingRuntimeConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetThingRuntimeConfigurationOutputBuilder {
     pub(crate) runtime_configuration: ::std::option::Option<crate::types::RuntimeConfiguration>,
     _request_id: Option<String>,

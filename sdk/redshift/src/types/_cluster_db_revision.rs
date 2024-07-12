@@ -41,8 +41,8 @@ impl ClusterDbRevision {
 }
 
 /// A builder for [`ClusterDbRevision`](crate::types::ClusterDbRevision).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ClusterDbRevisionBuilder {
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) current_database_revision: ::std::option::Option<::std::string::String>,

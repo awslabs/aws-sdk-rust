@@ -34,8 +34,8 @@ impl ListMlflowTrackingServersOutput {
 }
 
 /// A builder for [`ListMlflowTrackingServersOutput`](crate::operation::list_mlflow_tracking_servers::ListMlflowTrackingServersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListMlflowTrackingServersOutputBuilder {
     pub(crate) tracking_server_summaries: ::std::option::Option<::std::vec::Vec<crate::types::TrackingServerSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

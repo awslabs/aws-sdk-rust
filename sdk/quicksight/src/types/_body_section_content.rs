@@ -21,8 +21,8 @@ impl BodySectionContent {
 }
 
 /// A builder for [`BodySectionContent`](crate::types::BodySectionContent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BodySectionContentBuilder {
     pub(crate) layout: ::std::option::Option<crate::types::SectionLayoutConfiguration>,
 }

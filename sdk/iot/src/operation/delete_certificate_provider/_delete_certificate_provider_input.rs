@@ -20,8 +20,8 @@ impl DeleteCertificateProviderInput {
 }
 
 /// A builder for [`DeleteCertificateProviderInput`](crate::operation::delete_certificate_provider::DeleteCertificateProviderInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCertificateProviderInputBuilder {
     pub(crate) certificate_provider_name: ::std::option::Option<::std::string::String>,
 }

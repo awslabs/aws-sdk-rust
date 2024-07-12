@@ -27,8 +27,8 @@ impl TablePaginatedReportOptions {
 }
 
 /// A builder for [`TablePaginatedReportOptions`](crate::types::TablePaginatedReportOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TablePaginatedReportOptionsBuilder {
     pub(crate) vertical_overflow_visibility: ::std::option::Option<crate::types::Visibility>,
     pub(crate) overflow_column_header_visibility: ::std::option::Option<crate::types::Visibility>,

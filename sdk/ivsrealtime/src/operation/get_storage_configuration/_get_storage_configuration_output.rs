@@ -26,8 +26,8 @@ impl GetStorageConfigurationOutput {
 }
 
 /// A builder for [`GetStorageConfigurationOutput`](crate::operation::get_storage_configuration::GetStorageConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetStorageConfigurationOutputBuilder {
     pub(crate) storage_configuration: ::std::option::Option<crate::types::StorageConfiguration>,
     _request_id: Option<String>,

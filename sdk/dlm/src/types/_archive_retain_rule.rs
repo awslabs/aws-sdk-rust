@@ -21,8 +21,8 @@ impl ArchiveRetainRule {
 }
 
 /// A builder for [`ArchiveRetainRule`](crate::types::ArchiveRetainRule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ArchiveRetainRuleBuilder {
     pub(crate) retention_archive_tier: ::std::option::Option<crate::types::RetentionArchiveTier>,
 }

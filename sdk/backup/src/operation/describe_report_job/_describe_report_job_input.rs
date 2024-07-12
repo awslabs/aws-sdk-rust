@@ -20,8 +20,8 @@ impl DescribeReportJobInput {
 }
 
 /// A builder for [`DescribeReportJobInput`](crate::operation::describe_report_job::DescribeReportJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeReportJobInputBuilder {
     pub(crate) report_job_id: ::std::option::Option<::std::string::String>,
 }

@@ -32,8 +32,8 @@ impl DescribeSupportedLanguagesInput {
 }
 
 /// A builder for [`DescribeSupportedLanguagesInput`](crate::operation::describe_supported_languages::DescribeSupportedLanguagesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSupportedLanguagesInputBuilder {
     pub(crate) issue_type: ::std::option::Option<::std::string::String>,
     pub(crate) service_code: ::std::option::Option<::std::string::String>,

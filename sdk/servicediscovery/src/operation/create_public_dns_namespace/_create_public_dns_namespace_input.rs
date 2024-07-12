@@ -50,8 +50,8 @@ impl CreatePublicDnsNamespaceInput {
 }
 
 /// A builder for [`CreatePublicDnsNamespaceInput`](crate::operation::create_public_dns_namespace::CreatePublicDnsNamespaceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePublicDnsNamespaceInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) creator_request_id: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl CreateImportJobOutput {
 }
 
 /// A builder for [`CreateImportJobOutput`](crate::operation::create_import_job::CreateImportJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateImportJobOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

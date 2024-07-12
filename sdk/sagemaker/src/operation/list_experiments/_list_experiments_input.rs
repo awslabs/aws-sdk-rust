@@ -50,8 +50,8 @@ impl ListExperimentsInput {
 }
 
 /// A builder for [`ListExperimentsInput`](crate::operation::list_experiments::ListExperimentsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListExperimentsInputBuilder {
     pub(crate) created_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_before: ::std::option::Option<::aws_smithy_types::DateTime>,

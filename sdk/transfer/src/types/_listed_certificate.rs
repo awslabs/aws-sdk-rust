@@ -79,8 +79,8 @@ impl ListedCertificate {
 }
 
 /// A builder for [`ListedCertificate`](crate::types::ListedCertificate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListedCertificateBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_id: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl DescribeDbInstancesOutput {
 }
 
 /// A builder for [`DescribeDbInstancesOutput`](crate::operation::describe_db_instances::DescribeDbInstancesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDbInstancesOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) db_instances: ::std::option::Option<::std::vec::Vec<crate::types::DbInstance>>,

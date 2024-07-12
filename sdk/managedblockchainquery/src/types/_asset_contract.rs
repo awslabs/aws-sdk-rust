@@ -34,8 +34,8 @@ impl AssetContract {
 }
 
 /// A builder for [`AssetContract`](crate::types::AssetContract).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssetContractBuilder {
     pub(crate) contract_identifier: ::std::option::Option<crate::types::ContractIdentifier>,
     pub(crate) token_standard: ::std::option::Option<crate::types::QueryTokenStandard>,

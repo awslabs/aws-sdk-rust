@@ -28,8 +28,8 @@ impl SignalApplicationInstanceNodeInstancesInput {
 }
 
 /// A builder for [`SignalApplicationInstanceNodeInstancesInput`](crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SignalApplicationInstanceNodeInstancesInputBuilder {
     pub(crate) application_instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) node_signals: ::std::option::Option<::std::vec::Vec<crate::types::NodeSignal>>,

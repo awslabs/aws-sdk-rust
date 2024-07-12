@@ -21,8 +21,8 @@ impl Ec2InstanceConfiguration {
 }
 
 /// A builder for [`Ec2InstanceConfiguration`](crate::types::Ec2InstanceConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Ec2InstanceConfigurationBuilder {
     pub(crate) instance: ::std::option::Option<crate::types::InstanceConfiguration>,
 }

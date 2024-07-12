@@ -29,8 +29,8 @@ impl RecoveryInstanceDataReplicationInitiation {
 }
 
 /// A builder for [`RecoveryInstanceDataReplicationInitiation`](crate::types::RecoveryInstanceDataReplicationInitiation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecoveryInstanceDataReplicationInitiationBuilder {
     pub(crate) start_date_time: ::std::option::Option<::std::string::String>,
     pub(crate) steps: ::std::option::Option<::std::vec::Vec<crate::types::RecoveryInstanceDataReplicationInitiationStep>>,

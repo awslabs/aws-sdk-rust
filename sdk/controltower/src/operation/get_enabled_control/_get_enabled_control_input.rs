@@ -20,8 +20,8 @@ impl GetEnabledControlInput {
 }
 
 /// A builder for [`GetEnabledControlInput`](crate::operation::get_enabled_control::GetEnabledControlInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEnabledControlInputBuilder {
     pub(crate) enabled_control_identifier: ::std::option::Option<::std::string::String>,
 }

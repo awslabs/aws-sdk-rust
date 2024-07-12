@@ -40,8 +40,8 @@ impl GetLfTagOutput {
 }
 
 /// A builder for [`GetLfTagOutput`](crate::operation::get_lf_tag::GetLfTagOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLfTagOutputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) tag_key: ::std::option::Option<::std::string::String>,

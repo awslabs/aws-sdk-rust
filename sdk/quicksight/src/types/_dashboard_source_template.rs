@@ -29,8 +29,8 @@ impl DashboardSourceTemplate {
 }
 
 /// A builder for [`DashboardSourceTemplate`](crate::types::DashboardSourceTemplate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DashboardSourceTemplateBuilder {
     pub(crate) data_set_references: ::std::option::Option<::std::vec::Vec<crate::types::DataSetReference>>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

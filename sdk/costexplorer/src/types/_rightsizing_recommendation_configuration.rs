@@ -27,8 +27,8 @@ impl RightsizingRecommendationConfiguration {
 }
 
 /// A builder for [`RightsizingRecommendationConfiguration`](crate::types::RightsizingRecommendationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RightsizingRecommendationConfigurationBuilder {
     pub(crate) recommendation_target: ::std::option::Option<crate::types::RecommendationTarget>,
     pub(crate) benefits_considered: ::std::option::Option<bool>,

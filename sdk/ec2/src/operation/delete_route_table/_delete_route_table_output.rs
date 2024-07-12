@@ -18,8 +18,8 @@ impl DeleteRouteTableOutput {
 }
 
 /// A builder for [`DeleteRouteTableOutput`](crate::operation::delete_route_table::DeleteRouteTableOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRouteTableOutputBuilder {
     _request_id: Option<String>,
 }

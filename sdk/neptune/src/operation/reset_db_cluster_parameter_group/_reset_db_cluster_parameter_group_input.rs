@@ -34,8 +34,8 @@ impl ResetDbClusterParameterGroupInput {
 }
 
 /// A builder for [`ResetDbClusterParameterGroupInput`](crate::operation::reset_db_cluster_parameter_group::ResetDbClusterParameterGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResetDbClusterParameterGroupInputBuilder {
     pub(crate) db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) reset_all_parameters: ::std::option::Option<bool>,

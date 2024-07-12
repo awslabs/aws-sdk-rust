@@ -26,8 +26,8 @@ impl CreateContainerGroupDefinitionOutput {
 }
 
 /// A builder for [`CreateContainerGroupDefinitionOutput`](crate::operation::create_container_group_definition::CreateContainerGroupDefinitionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateContainerGroupDefinitionOutputBuilder {
     pub(crate) container_group_definition: ::std::option::Option<crate::types::ContainerGroupDefinition>,
     _request_id: Option<String>,

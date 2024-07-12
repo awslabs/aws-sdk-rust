@@ -27,8 +27,8 @@ impl RankingData {
 }
 
 /// A builder for [`RankingData`](crate::types::RankingData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RankingDataBuilder {
     pub(crate) relevance_score: ::std::option::Option<f64>,
     pub(crate) relevance_level: ::std::option::Option<crate::types::RelevanceLevel>,

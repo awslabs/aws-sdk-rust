@@ -45,8 +45,8 @@ impl GetTagsOutput {
 }
 
 /// A builder for [`GetTagsOutput`](crate::operation::get_tags::GetTagsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTagsOutputBuilder {
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -29,8 +29,8 @@ impl DescribeLayersOutput {
 }
 
 /// A builder for [`DescribeLayersOutput`](crate::operation::describe_layers::DescribeLayersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeLayersOutputBuilder {
     pub(crate) layers: ::std::option::Option<::std::vec::Vec<crate::types::Layer>>,
     _request_id: Option<String>,

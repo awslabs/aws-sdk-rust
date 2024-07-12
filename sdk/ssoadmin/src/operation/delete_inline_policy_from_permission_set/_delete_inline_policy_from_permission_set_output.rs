@@ -18,8 +18,8 @@ impl DeleteInlinePolicyFromPermissionSetOutput {
 }
 
 /// A builder for [`DeleteInlinePolicyFromPermissionSetOutput`](crate::operation::delete_inline_policy_from_permission_set::DeleteInlinePolicyFromPermissionSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteInlinePolicyFromPermissionSetOutputBuilder {
     _request_id: Option<String>,
 }

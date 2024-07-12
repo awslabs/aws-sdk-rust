@@ -34,8 +34,8 @@ impl CreateOutboundCrossClusterSearchConnectionInput {
 }
 
 /// A builder for [`CreateOutboundCrossClusterSearchConnectionInput`](crate::operation::create_outbound_cross_cluster_search_connection::CreateOutboundCrossClusterSearchConnectionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateOutboundCrossClusterSearchConnectionInputBuilder {
     pub(crate) source_domain_info: ::std::option::Option<crate::types::DomainInformation>,
     pub(crate) destination_domain_info: ::std::option::Option<crate::types::DomainInformation>,

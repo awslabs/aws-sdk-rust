@@ -33,8 +33,8 @@ impl DescribeDbLogFilesDetails {
 }
 
 /// A builder for [`DescribeDbLogFilesDetails`](crate::types::DescribeDbLogFilesDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDbLogFilesDetailsBuilder {
     pub(crate) log_file_name: ::std::option::Option<::std::string::String>,
     pub(crate) last_written: ::std::option::Option<i64>,

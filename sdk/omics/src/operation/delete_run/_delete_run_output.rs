@@ -18,8 +18,8 @@ impl DeleteRunOutput {
 }
 
 /// A builder for [`DeleteRunOutput`](crate::operation::delete_run::DeleteRunOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRunOutputBuilder {
     _request_id: Option<String>,
 }

@@ -81,8 +81,8 @@ impl Alert {
 }
 
 /// A builder for [`Alert`](crate::types::Alert).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AlertBuilder {
     pub(crate) action: ::std::option::Option<crate::types::Action>,
     pub(crate) alert_description: ::std::option::Option<::std::string::String>,

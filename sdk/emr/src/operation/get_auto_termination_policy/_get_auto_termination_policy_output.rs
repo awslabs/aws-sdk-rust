@@ -26,8 +26,8 @@ impl GetAutoTerminationPolicyOutput {
 }
 
 /// A builder for [`GetAutoTerminationPolicyOutput`](crate::operation::get_auto_termination_policy::GetAutoTerminationPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAutoTerminationPolicyOutputBuilder {
     pub(crate) auto_termination_policy: ::std::option::Option<crate::types::AutoTerminationPolicy>,
     _request_id: Option<String>,

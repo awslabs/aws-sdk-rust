@@ -37,8 +37,8 @@ impl RecommendationFeedbackSummary {
 }
 
 /// A builder for [`RecommendationFeedbackSummary`](crate::types::RecommendationFeedbackSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecommendationFeedbackSummaryBuilder {
     pub(crate) recommendation_id: ::std::option::Option<::std::string::String>,
     pub(crate) reactions: ::std::option::Option<::std::vec::Vec<crate::types::Reaction>>,

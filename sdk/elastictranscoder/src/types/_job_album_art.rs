@@ -49,8 +49,8 @@ impl JobAlbumArt {
 }
 
 /// A builder for [`JobAlbumArt`](crate::types::JobAlbumArt).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JobAlbumArtBuilder {
     pub(crate) merge_policy: ::std::option::Option<::std::string::String>,
     pub(crate) artwork: ::std::option::Option<::std::vec::Vec<crate::types::Artwork>>,

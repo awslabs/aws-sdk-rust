@@ -35,8 +35,8 @@ impl BatchGetAssetPropertyValueHistoryErrorEntry {
 }
 
 /// A builder for [`BatchGetAssetPropertyValueHistoryErrorEntry`](crate::types::BatchGetAssetPropertyValueHistoryErrorEntry).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetAssetPropertyValueHistoryErrorEntryBuilder {
     pub(crate) error_code: ::std::option::Option<crate::types::BatchGetAssetPropertyValueHistoryErrorCode>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,

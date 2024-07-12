@@ -28,8 +28,8 @@ impl CreateBatchPredictionOutput {
 }
 
 /// A builder for [`CreateBatchPredictionOutput`](crate::operation::create_batch_prediction::CreateBatchPredictionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateBatchPredictionOutputBuilder {
     pub(crate) batch_prediction_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -18,8 +18,8 @@ impl DisassociateIpAccessSettingsOutput {
 }
 
 /// A builder for [`DisassociateIpAccessSettingsOutput`](crate::operation::disassociate_ip_access_settings::DisassociateIpAccessSettingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateIpAccessSettingsOutputBuilder {
     _request_id: Option<String>,
 }

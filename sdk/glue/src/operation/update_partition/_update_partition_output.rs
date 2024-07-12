@@ -18,8 +18,8 @@ impl UpdatePartitionOutput {
 }
 
 /// A builder for [`UpdatePartitionOutput`](crate::operation::update_partition::UpdatePartitionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePartitionOutputBuilder {
     _request_id: Option<String>,
 }

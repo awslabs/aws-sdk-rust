@@ -38,8 +38,8 @@ impl ListAnnotationStoreVersionsInput {
 }
 
 /// A builder for [`ListAnnotationStoreVersionsInput`](crate::operation::list_annotation_store_versions::ListAnnotationStoreVersionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAnnotationStoreVersionsInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

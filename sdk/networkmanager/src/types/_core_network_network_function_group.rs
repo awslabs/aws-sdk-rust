@@ -35,8 +35,8 @@ impl CoreNetworkNetworkFunctionGroup {
 }
 
 /// A builder for [`CoreNetworkNetworkFunctionGroup`](crate::types::CoreNetworkNetworkFunctionGroup).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CoreNetworkNetworkFunctionGroupBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) edge_locations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

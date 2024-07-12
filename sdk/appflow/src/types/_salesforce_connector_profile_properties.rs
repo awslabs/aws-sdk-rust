@@ -105,8 +105,8 @@ impl SalesforceConnectorProfileProperties {
 }
 
 /// A builder for [`SalesforceConnectorProfileProperties`](crate::types::SalesforceConnectorProfileProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SalesforceConnectorProfilePropertiesBuilder {
     pub(crate) instance_url: ::std::option::Option<::std::string::String>,
     pub(crate) is_sandbox_environment: ::std::option::Option<bool>,

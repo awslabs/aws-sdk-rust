@@ -27,8 +27,8 @@ impl RdsDbInstance {
 }
 
 /// A builder for [`RdsDbInstance`](crate::types::RdsDbInstance).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RdsDbInstanceBuilder {
     pub(crate) configuration: ::std::option::Option<crate::types::RdsDbInstanceConfiguration>,
     pub(crate) cost_calculation: ::std::option::Option<crate::types::ResourceCostCalculation>,

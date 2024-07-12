@@ -18,8 +18,8 @@ impl UpdateRotationOutput {
 }
 
 /// A builder for [`UpdateRotationOutput`](crate::operation::update_rotation::UpdateRotationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRotationOutputBuilder {
     _request_id: Option<String>,
 }

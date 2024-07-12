@@ -44,8 +44,8 @@ impl SetTypeDefaultVersionInput {
 }
 
 /// A builder for [`SetTypeDefaultVersionInput`](crate::operation::set_type_default_version::SetTypeDefaultVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetTypeDefaultVersionInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::RegistryType>,

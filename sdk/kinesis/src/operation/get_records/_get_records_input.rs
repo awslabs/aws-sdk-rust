@@ -33,8 +33,8 @@ impl GetRecordsInput {
 }
 
 /// A builder for [`GetRecordsInput`](crate::operation::get_records::GetRecordsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRecordsInputBuilder {
     pub(crate) shard_iterator: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,

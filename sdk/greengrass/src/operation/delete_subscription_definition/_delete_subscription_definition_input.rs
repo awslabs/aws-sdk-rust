@@ -20,8 +20,8 @@ impl DeleteSubscriptionDefinitionInput {
 }
 
 /// A builder for [`DeleteSubscriptionDefinitionInput`](crate::operation::delete_subscription_definition::DeleteSubscriptionDefinitionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSubscriptionDefinitionInputBuilder {
     pub(crate) subscription_definition_id: ::std::option::Option<::std::string::String>,
 }

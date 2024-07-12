@@ -29,8 +29,8 @@ impl CloudWatchOutputConfig {
 }
 
 /// A builder for [`CloudWatchOutputConfig`](crate::types::CloudWatchOutputConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CloudWatchOutputConfigBuilder {
     pub(crate) cloud_watch_log_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) cloud_watch_output_enabled: ::std::option::Option<bool>,

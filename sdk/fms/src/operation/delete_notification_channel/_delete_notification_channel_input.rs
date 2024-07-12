@@ -11,8 +11,8 @@ impl DeleteNotificationChannelInput {
 }
 
 /// A builder for [`DeleteNotificationChannelInput`](crate::operation::delete_notification_channel::DeleteNotificationChannelInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteNotificationChannelInputBuilder {}
 impl DeleteNotificationChannelInputBuilder {
     /// Consumes the builder and constructs a [`DeleteNotificationChannelInput`](crate::operation::delete_notification_channel::DeleteNotificationChannelInput).

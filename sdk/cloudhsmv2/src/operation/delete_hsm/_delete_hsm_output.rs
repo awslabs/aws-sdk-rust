@@ -26,8 +26,8 @@ impl DeleteHsmOutput {
 }
 
 /// A builder for [`DeleteHsmOutput`](crate::operation::delete_hsm::DeleteHsmOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteHsmOutputBuilder {
     pub(crate) hsm_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

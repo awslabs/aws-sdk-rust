@@ -153,8 +153,8 @@ impl FleetData {
 }
 
 /// A builder for [`FleetData`](crate::types::FleetData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FleetDataBuilder {
     pub(crate) activity_status: ::std::option::Option<crate::types::FleetActivityStatus>,
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,

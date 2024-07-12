@@ -34,8 +34,8 @@ impl ListPickupLocationsOutput {
 }
 
 /// A builder for [`ListPickupLocationsOutput`](crate::operation::list_pickup_locations::ListPickupLocationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPickupLocationsOutputBuilder {
     pub(crate) addresses: ::std::option::Option<::std::vec::Vec<crate::types::Address>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

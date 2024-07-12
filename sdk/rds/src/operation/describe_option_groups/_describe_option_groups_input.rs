@@ -115,8 +115,8 @@ impl DescribeOptionGroupsInput {
 }
 
 /// A builder for [`DescribeOptionGroupsInput`](crate::operation::describe_option_groups::DescribeOptionGroupsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeOptionGroupsInputBuilder {
     pub(crate) option_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,

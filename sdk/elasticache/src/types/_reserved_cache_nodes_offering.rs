@@ -179,8 +179,8 @@ impl ReservedCacheNodesOffering {
 }
 
 /// A builder for [`ReservedCacheNodesOffering`](crate::types::ReservedCacheNodesOffering).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReservedCacheNodesOfferingBuilder {
     pub(crate) reserved_cache_nodes_offering_id: ::std::option::Option<::std::string::String>,
     pub(crate) cache_node_type: ::std::option::Option<::std::string::String>,

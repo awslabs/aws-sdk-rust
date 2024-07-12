@@ -20,8 +20,8 @@ impl InferIcd10CmInput {
 }
 
 /// A builder for [`InferIcd10CmInput`](crate::operation::infer_icd10_cm::InferIcd10CmInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InferIcd10CmInputBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
 }

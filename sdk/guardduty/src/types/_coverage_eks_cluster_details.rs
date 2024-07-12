@@ -49,8 +49,8 @@ impl CoverageEksClusterDetails {
 }
 
 /// A builder for [`CoverageEksClusterDetails`](crate::types::CoverageEksClusterDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CoverageEksClusterDetailsBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) covered_nodes: ::std::option::Option<i64>,

@@ -125,8 +125,8 @@ impl CreateOptionGroupInput {
 }
 
 /// A builder for [`CreateOptionGroupInput`](crate::operation::create_option_group::CreateOptionGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateOptionGroupInputBuilder {
     pub(crate) option_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) engine_name: ::std::option::Option<::std::string::String>,

@@ -33,8 +33,8 @@ impl NodePropertiesSummary {
 }
 
 /// A builder for [`NodePropertiesSummary`](crate::types::NodePropertiesSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NodePropertiesSummaryBuilder {
     pub(crate) is_main_node: ::std::option::Option<bool>,
     pub(crate) num_nodes: ::std::option::Option<i32>,

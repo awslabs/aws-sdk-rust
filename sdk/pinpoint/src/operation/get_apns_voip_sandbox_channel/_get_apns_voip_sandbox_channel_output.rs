@@ -26,8 +26,8 @@ impl GetApnsVoipSandboxChannelOutput {
 }
 
 /// A builder for [`GetApnsVoipSandboxChannelOutput`](crate::operation::get_apns_voip_sandbox_channel::GetApnsVoipSandboxChannelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetApnsVoipSandboxChannelOutputBuilder {
     pub(crate) apns_voip_sandbox_channel_response: ::std::option::Option<crate::types::ApnsVoipSandboxChannelResponse>,
     _request_id: Option<String>,

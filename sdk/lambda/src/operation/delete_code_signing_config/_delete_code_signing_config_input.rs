@@ -20,8 +20,8 @@ impl DeleteCodeSigningConfigInput {
 }
 
 /// A builder for [`DeleteCodeSigningConfigInput`](crate::operation::delete_code_signing_config::DeleteCodeSigningConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCodeSigningConfigInputBuilder {
     pub(crate) code_signing_config_arn: ::std::option::Option<::std::string::String>,
 }

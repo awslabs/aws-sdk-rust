@@ -44,8 +44,8 @@ impl CreateWorkspaceInput {
 }
 
 /// A builder for [`CreateWorkspaceInput`](crate::operation::create_workspace::CreateWorkspaceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateWorkspaceInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

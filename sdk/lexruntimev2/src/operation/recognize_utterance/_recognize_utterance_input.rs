@@ -180,8 +180,8 @@ impl RecognizeUtteranceInput {
 }
 
 /// A builder for [`RecognizeUtteranceInput`](crate::operation::recognize_utterance::RecognizeUtteranceInput).
-#[non_exhaustive]
 #[derive(::std::default::Default)]
+#[non_exhaustive]
 pub struct RecognizeUtteranceInputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_alias_id: ::std::option::Option<::std::string::String>,

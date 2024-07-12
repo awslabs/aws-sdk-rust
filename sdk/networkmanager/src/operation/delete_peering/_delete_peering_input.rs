@@ -20,8 +20,8 @@ impl DeletePeeringInput {
 }
 
 /// A builder for [`DeletePeeringInput`](crate::operation::delete_peering::DeletePeeringInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePeeringInputBuilder {
     pub(crate) peering_id: ::std::option::Option<::std::string::String>,
 }

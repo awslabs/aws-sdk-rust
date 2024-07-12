@@ -21,8 +21,8 @@ impl ScaleInPolicy {
 }
 
 /// A builder for [`ScaleInPolicy`](crate::types::ScaleInPolicy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScaleInPolicyBuilder {
     pub(crate) cpu_utilization_percentage: ::std::option::Option<i32>,
 }

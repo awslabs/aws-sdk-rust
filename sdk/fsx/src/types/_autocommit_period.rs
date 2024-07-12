@@ -52,8 +52,8 @@ impl AutocommitPeriod {
 }
 
 /// A builder for [`AutocommitPeriod`](crate::types::AutocommitPeriod).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AutocommitPeriodBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::AutocommitPeriodType>,
     pub(crate) value: ::std::option::Option<i32>,

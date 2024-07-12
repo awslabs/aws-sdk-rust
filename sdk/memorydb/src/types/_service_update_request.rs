@@ -21,8 +21,8 @@ impl ServiceUpdateRequest {
 }
 
 /// A builder for [`ServiceUpdateRequest`](crate::types::ServiceUpdateRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServiceUpdateRequestBuilder {
     pub(crate) service_update_name_to_apply: ::std::option::Option<::std::string::String>,
 }

@@ -44,8 +44,8 @@ impl ViewContent {
 }
 
 /// A builder for [`ViewContent`](crate::types::ViewContent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ViewContentBuilder {
     pub(crate) input_schema: ::std::option::Option<::std::string::String>,
     pub(crate) template: ::std::option::Option<::std::string::String>,

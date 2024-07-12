@@ -34,8 +34,8 @@ impl ListFlowDefinitionsOutput {
 }
 
 /// A builder for [`ListFlowDefinitionsOutput`](crate::operation::list_flow_definitions::ListFlowDefinitionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFlowDefinitionsOutputBuilder {
     pub(crate) flow_definition_summaries: ::std::option::Option<::std::vec::Vec<crate::types::FlowDefinitionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

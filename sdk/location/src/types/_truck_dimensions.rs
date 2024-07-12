@@ -77,8 +77,8 @@ impl TruckDimensions {
 }
 
 /// A builder for [`TruckDimensions`](crate::types::TruckDimensions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TruckDimensionsBuilder {
     pub(crate) length: ::std::option::Option<f64>,
     pub(crate) height: ::std::option::Option<f64>,

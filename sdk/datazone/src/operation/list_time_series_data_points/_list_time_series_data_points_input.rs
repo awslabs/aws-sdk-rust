@@ -62,8 +62,8 @@ impl ListTimeSeriesDataPointsInput {
 }
 
 /// A builder for [`ListTimeSeriesDataPointsInput`](crate::operation::list_time_series_data_points::ListTimeSeriesDataPointsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTimeSeriesDataPointsInputBuilder {
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) entity_identifier: ::std::option::Option<::std::string::String>,

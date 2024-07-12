@@ -28,8 +28,8 @@ impl DescribeSecurityGroupReferencesInput {
 }
 
 /// A builder for [`DescribeSecurityGroupReferencesInput`](crate::operation::describe_security_group_references::DescribeSecurityGroupReferencesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSecurityGroupReferencesInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) group_id: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

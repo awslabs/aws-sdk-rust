@@ -27,8 +27,8 @@ impl AutoTune {
 }
 
 /// A builder for [`AutoTune`](crate::types::AutoTune).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AutoTuneBuilder {
     pub(crate) auto_tune_type: ::std::option::Option<crate::types::AutoTuneType>,
     pub(crate) auto_tune_details: ::std::option::Option<crate::types::AutoTuneDetails>,

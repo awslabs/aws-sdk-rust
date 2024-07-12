@@ -21,8 +21,8 @@ impl MetadataCatalogConfig {
 }
 
 /// A builder for [`MetadataCatalogConfig`](crate::types::MetadataCatalogConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MetadataCatalogConfigBuilder {
     pub(crate) glue_data_catalog: ::std::option::Option<crate::types::GlueDataCatalogConfig>,
 }

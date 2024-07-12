@@ -28,8 +28,8 @@ impl HdfsNameNode {
 }
 
 /// A builder for [`HdfsNameNode`](crate::types::HdfsNameNode).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HdfsNameNodeBuilder {
     pub(crate) hostname: ::std::option::Option<::std::string::String>,
     pub(crate) port: ::std::option::Option<i32>,

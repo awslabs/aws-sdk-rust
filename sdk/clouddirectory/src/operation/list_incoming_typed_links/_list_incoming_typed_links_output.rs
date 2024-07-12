@@ -34,8 +34,8 @@ impl ListIncomingTypedLinksOutput {
 }
 
 /// A builder for [`ListIncomingTypedLinksOutput`](crate::operation::list_incoming_typed_links::ListIncomingTypedLinksOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListIncomingTypedLinksOutputBuilder {
     pub(crate) link_specifiers: ::std::option::Option<::std::vec::Vec<crate::types::TypedLinkSpecifier>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -95,8 +95,8 @@ impl BulkEmailDestinationStatus {
 }
 
 /// A builder for [`BulkEmailDestinationStatus`](crate::types::BulkEmailDestinationStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BulkEmailDestinationStatusBuilder {
     pub(crate) status: ::std::option::Option<crate::types::BulkEmailStatus>,
     pub(crate) error: ::std::option::Option<::std::string::String>,

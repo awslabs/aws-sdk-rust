@@ -51,8 +51,8 @@ impl RestoreStatus {
 }
 
 /// A builder for [`RestoreStatus`](crate::types::RestoreStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RestoreStatusBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) current_restore_rate_in_mega_bytes_per_second: ::std::option::Option<f64>,

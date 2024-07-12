@@ -73,8 +73,8 @@ impl RedisSettings {
 }
 
 /// A builder for [`RedisSettings`](crate::types::RedisSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct RedisSettingsBuilder {
     pub(crate) server_name: ::std::option::Option<::std::string::String>,
     pub(crate) port: ::std::option::Option<i32>,

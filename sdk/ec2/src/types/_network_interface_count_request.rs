@@ -27,8 +27,8 @@ impl NetworkInterfaceCountRequest {
 }
 
 /// A builder for [`NetworkInterfaceCountRequest`](crate::types::NetworkInterfaceCountRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NetworkInterfaceCountRequestBuilder {
     pub(crate) min: ::std::option::Option<i32>,
     pub(crate) max: ::std::option::Option<i32>,

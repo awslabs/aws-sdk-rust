@@ -21,8 +21,8 @@ impl ObfuscationSetting {
 }
 
 /// A builder for [`ObfuscationSetting`](crate::types::ObfuscationSetting).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ObfuscationSettingBuilder {
     pub(crate) obfuscation_setting_type: ::std::option::Option<crate::types::ObfuscationSettingType>,
 }

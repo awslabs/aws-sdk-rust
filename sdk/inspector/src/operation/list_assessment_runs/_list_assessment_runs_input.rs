@@ -42,8 +42,8 @@ impl ListAssessmentRunsInput {
 }
 
 /// A builder for [`ListAssessmentRunsInput`](crate::operation::list_assessment_runs::ListAssessmentRunsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAssessmentRunsInputBuilder {
     pub(crate) assessment_template_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filter: ::std::option::Option<crate::types::AssessmentRunFilter>,

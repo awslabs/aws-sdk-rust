@@ -28,8 +28,8 @@ impl StopWorkspacesOutput {
 }
 
 /// A builder for [`StopWorkspacesOutput`](crate::operation::stop_workspaces::StopWorkspacesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopWorkspacesOutputBuilder {
     pub(crate) failed_requests: ::std::option::Option<::std::vec::Vec<crate::types::FailedWorkspaceChangeRequest>>,
     _request_id: Option<String>,

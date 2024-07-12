@@ -18,8 +18,8 @@ impl SendActivationCodeOutput {
 }
 
 /// A builder for [`SendActivationCodeOutput`](crate::operation::send_activation_code::SendActivationCodeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendActivationCodeOutputBuilder {
     _request_id: Option<String>,
 }

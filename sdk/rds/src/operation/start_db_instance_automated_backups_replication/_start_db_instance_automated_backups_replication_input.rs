@@ -47,8 +47,8 @@ impl StartDbInstanceAutomatedBackupsReplicationInput {
 }
 
 /// A builder for [`StartDbInstanceAutomatedBackupsReplicationInput`](crate::operation::start_db_instance_automated_backups_replication::StartDbInstanceAutomatedBackupsReplicationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartDbInstanceAutomatedBackupsReplicationInputBuilder {
     pub(crate) source_db_instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) backup_retention_period: ::std::option::Option<i32>,

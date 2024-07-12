@@ -72,8 +72,8 @@ impl DescribeResourceCollectionHealthOutput {
 }
 
 /// A builder for [`DescribeResourceCollectionHealthOutput`](crate::operation::describe_resource_collection_health::DescribeResourceCollectionHealthOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeResourceCollectionHealthOutputBuilder {
     pub(crate) cloud_formation: ::std::option::Option<::std::vec::Vec<crate::types::CloudFormationHealth>>,
     pub(crate) service: ::std::option::Option<::std::vec::Vec<crate::types::ServiceHealth>>,

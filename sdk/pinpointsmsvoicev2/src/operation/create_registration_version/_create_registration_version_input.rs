@@ -20,8 +20,8 @@ impl CreateRegistrationVersionInput {
 }
 
 /// A builder for [`CreateRegistrationVersionInput`](crate::operation::create_registration_version::CreateRegistrationVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateRegistrationVersionInputBuilder {
     pub(crate) registration_id: ::std::option::Option<::std::string::String>,
 }

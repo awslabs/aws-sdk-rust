@@ -34,8 +34,8 @@ impl RemoveLfTagsFromResourceInput {
 }
 
 /// A builder for [`RemoveLfTagsFromResourceInput`](crate::operation::remove_lf_tags_from_resource::RemoveLfTagsFromResourceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoveLfTagsFromResourceInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource: ::std::option::Option<crate::types::Resource>,

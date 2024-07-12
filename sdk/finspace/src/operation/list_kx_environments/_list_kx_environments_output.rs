@@ -34,8 +34,8 @@ impl ListKxEnvironmentsOutput {
 }
 
 /// A builder for [`ListKxEnvironmentsOutput`](crate::operation::list_kx_environments::ListKxEnvironmentsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListKxEnvironmentsOutputBuilder {
     pub(crate) environments: ::std::option::Option<::std::vec::Vec<crate::types::KxEnvironment>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

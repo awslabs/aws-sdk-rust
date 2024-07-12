@@ -32,8 +32,8 @@ impl CreateTrafficMirrorTargetOutput {
 }
 
 /// A builder for [`CreateTrafficMirrorTargetOutput`](crate::operation::create_traffic_mirror_target::CreateTrafficMirrorTargetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateTrafficMirrorTargetOutputBuilder {
     pub(crate) traffic_mirror_target: ::std::option::Option<crate::types::TrafficMirrorTarget>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

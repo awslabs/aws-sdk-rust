@@ -23,8 +23,8 @@ impl AnonymousUserDashboardVisualEmbeddingConfiguration {
 }
 
 /// A builder for [`AnonymousUserDashboardVisualEmbeddingConfiguration`](crate::types::AnonymousUserDashboardVisualEmbeddingConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AnonymousUserDashboardVisualEmbeddingConfigurationBuilder {
     pub(crate) initial_dashboard_visual_id: ::std::option::Option<crate::types::DashboardVisualId>,
 }

@@ -53,8 +53,8 @@ impl ShippingDetails {
 }
 
 /// A builder for [`ShippingDetails`](crate::types::ShippingDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ShippingDetailsBuilder {
     pub(crate) shipping_option: ::std::option::Option<crate::types::ShippingOption>,
     pub(crate) inbound_shipment: ::std::option::Option<crate::types::Shipment>,

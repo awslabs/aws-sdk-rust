@@ -34,8 +34,8 @@ impl S3BatchJobIdentifier {
 }
 
 /// A builder for [`S3BatchJobIdentifier`](crate::types::S3BatchJobIdentifier).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3BatchJobIdentifierBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) key_prefix: ::std::option::Option<::std::string::String>,

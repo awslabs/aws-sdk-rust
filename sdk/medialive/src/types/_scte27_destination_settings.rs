@@ -12,8 +12,8 @@ impl Scte27DestinationSettings {
 }
 
 /// A builder for [`Scte27DestinationSettings`](crate::types::Scte27DestinationSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Scte27DestinationSettingsBuilder {}
 impl Scte27DestinationSettingsBuilder {
     /// Consumes the builder and constructs a [`Scte27DestinationSettings`](crate::types::Scte27DestinationSettings).

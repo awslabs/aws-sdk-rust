@@ -34,8 +34,8 @@ impl ListFaqsOutput {
 }
 
 /// A builder for [`ListFaqsOutput`](crate::operation::list_faqs::ListFaqsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFaqsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) faq_summary_items: ::std::option::Option<::std::vec::Vec<crate::types::FaqSummary>>,

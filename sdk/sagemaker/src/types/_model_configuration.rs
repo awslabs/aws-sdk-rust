@@ -35,8 +35,8 @@ impl ModelConfiguration {
 }
 
 /// A builder for [`ModelConfiguration`](crate::types::ModelConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModelConfigurationBuilder {
     pub(crate) inference_specification_name: ::std::option::Option<::std::string::String>,
     pub(crate) environment_parameters: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentParameter>>,

@@ -35,8 +35,8 @@ impl SnowflakeRoleConfiguration {
 }
 
 /// A builder for [`SnowflakeRoleConfiguration`](crate::types::SnowflakeRoleConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SnowflakeRoleConfigurationBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) snowflake_role: ::std::option::Option<::std::string::String>,

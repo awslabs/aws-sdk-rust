@@ -27,8 +27,8 @@ impl VoiceAnalyticsProcessorConfiguration {
 }
 
 /// A builder for [`VoiceAnalyticsProcessorConfiguration`](crate::types::VoiceAnalyticsProcessorConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VoiceAnalyticsProcessorConfigurationBuilder {
     pub(crate) speaker_search_status: ::std::option::Option<crate::types::VoiceAnalyticsConfigurationStatus>,
     pub(crate) voice_tone_analysis_status: ::std::option::Option<crate::types::VoiceAnalyticsConfigurationStatus>,

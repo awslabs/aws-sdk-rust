@@ -33,8 +33,8 @@ impl HyperParameterTuningInstanceConfig {
 }
 
 /// A builder for [`HyperParameterTuningInstanceConfig`](crate::types::HyperParameterTuningInstanceConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HyperParameterTuningInstanceConfigBuilder {
     pub(crate) instance_type: ::std::option::Option<crate::types::TrainingInstanceType>,
     pub(crate) instance_count: ::std::option::Option<i32>,

@@ -35,8 +35,8 @@ impl RetrieveDomainAuthCodeOutput {
 }
 
 /// A builder for [`RetrieveDomainAuthCodeOutput`](crate::operation::retrieve_domain_auth_code::RetrieveDomainAuthCodeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct RetrieveDomainAuthCodeOutputBuilder {
     pub(crate) auth_code: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

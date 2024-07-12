@@ -27,8 +27,8 @@ impl GetCommitOutput {
 }
 
 /// A builder for [`GetCommitOutput`](crate::operation::get_commit::GetCommitOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCommitOutputBuilder {
     pub(crate) commit: ::std::option::Option<crate::types::Commit>,
     _request_id: Option<String>,

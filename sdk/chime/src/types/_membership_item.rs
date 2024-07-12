@@ -27,8 +27,8 @@ impl MembershipItem {
 }
 
 /// A builder for [`MembershipItem`](crate::types::MembershipItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MembershipItemBuilder {
     pub(crate) member_id: ::std::option::Option<::std::string::String>,
     pub(crate) role: ::std::option::Option<crate::types::RoomMembershipRole>,

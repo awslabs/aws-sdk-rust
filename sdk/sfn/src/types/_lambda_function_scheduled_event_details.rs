@@ -57,8 +57,8 @@ impl LambdaFunctionScheduledEventDetails {
 }
 
 /// A builder for [`LambdaFunctionScheduledEventDetails`](crate::types::LambdaFunctionScheduledEventDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct LambdaFunctionScheduledEventDetailsBuilder {
     pub(crate) resource: ::std::option::Option<::std::string::String>,
     pub(crate) input: ::std::option::Option<::std::string::String>,

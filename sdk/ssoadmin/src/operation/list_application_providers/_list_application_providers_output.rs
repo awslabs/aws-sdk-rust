@@ -34,8 +34,8 @@ impl ListApplicationProvidersOutput {
 }
 
 /// A builder for [`ListApplicationProvidersOutput`](crate::operation::list_application_providers::ListApplicationProvidersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListApplicationProvidersOutputBuilder {
     pub(crate) application_providers: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationProvider>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

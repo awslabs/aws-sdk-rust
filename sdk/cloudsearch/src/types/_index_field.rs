@@ -98,8 +98,8 @@ impl IndexField {
 }
 
 /// A builder for [`IndexField`](crate::types::IndexField).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IndexFieldBuilder {
     pub(crate) index_field_name: ::std::option::Option<::std::string::String>,
     pub(crate) index_field_type: ::std::option::Option<crate::types::IndexFieldType>,

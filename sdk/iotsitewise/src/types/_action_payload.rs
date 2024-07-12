@@ -22,8 +22,8 @@ impl ActionPayload {
 }
 
 /// A builder for [`ActionPayload`](crate::types::ActionPayload).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ActionPayloadBuilder {
     pub(crate) string_value: ::std::option::Option<::std::string::String>,
 }

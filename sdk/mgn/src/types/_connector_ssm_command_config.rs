@@ -39,8 +39,8 @@ impl ConnectorSsmCommandConfig {
 }
 
 /// A builder for [`ConnectorSsmCommandConfig`](crate::types::ConnectorSsmCommandConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConnectorSsmCommandConfigBuilder {
     pub(crate) s3_output_enabled: ::std::option::Option<bool>,
     pub(crate) output_s3_bucket_name: ::std::option::Option<::std::string::String>,

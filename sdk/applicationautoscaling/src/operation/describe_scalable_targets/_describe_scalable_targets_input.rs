@@ -224,8 +224,8 @@ impl DescribeScalableTargetsInput {
 }
 
 /// A builder for [`DescribeScalableTargetsInput`](crate::operation::describe_scalable_targets::DescribeScalableTargetsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeScalableTargetsInputBuilder {
     pub(crate) service_namespace: ::std::option::Option<crate::types::ServiceNamespace>,
     pub(crate) resource_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

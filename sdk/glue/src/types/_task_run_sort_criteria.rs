@@ -27,8 +27,8 @@ impl TaskRunSortCriteria {
 }
 
 /// A builder for [`TaskRunSortCriteria`](crate::types::TaskRunSortCriteria).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TaskRunSortCriteriaBuilder {
     pub(crate) column: ::std::option::Option<crate::types::TaskRunSortColumnType>,
     pub(crate) sort_direction: ::std::option::Option<crate::types::SortDirectionType>,

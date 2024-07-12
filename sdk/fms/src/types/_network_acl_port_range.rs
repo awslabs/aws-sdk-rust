@@ -27,8 +27,8 @@ impl NetworkAclPortRange {
 }
 
 /// A builder for [`NetworkAclPortRange`](crate::types::NetworkAclPortRange).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NetworkAclPortRangeBuilder {
     pub(crate) from: ::std::option::Option<i32>,
     pub(crate) to: ::std::option::Option<i32>,

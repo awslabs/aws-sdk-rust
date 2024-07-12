@@ -26,8 +26,8 @@ impl DescribeAssetInput {
 }
 
 /// A builder for [`DescribeAssetInput`](crate::operation::describe_asset::DescribeAssetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAssetInputBuilder {
     pub(crate) asset_id: ::std::option::Option<::std::string::String>,
     pub(crate) exclude_properties: ::std::option::Option<bool>,

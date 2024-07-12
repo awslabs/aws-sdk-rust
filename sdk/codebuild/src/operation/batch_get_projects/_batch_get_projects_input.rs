@@ -22,8 +22,8 @@ impl BatchGetProjectsInput {
 }
 
 /// A builder for [`BatchGetProjectsInput`](crate::operation::batch_get_projects::BatchGetProjectsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetProjectsInputBuilder {
     pub(crate) names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

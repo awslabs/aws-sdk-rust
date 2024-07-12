@@ -26,8 +26,8 @@ impl VerifyDestinationNumberInput {
 }
 
 /// A builder for [`VerifyDestinationNumberInput`](crate::operation::verify_destination_number::VerifyDestinationNumberInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VerifyDestinationNumberInputBuilder {
     pub(crate) verified_destination_number_id: ::std::option::Option<::std::string::String>,
     pub(crate) verification_code: ::std::option::Option<::std::string::String>,

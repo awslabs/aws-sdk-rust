@@ -20,8 +20,8 @@ impl DescribeApplicationInstanceDetailsInput {
 }
 
 /// A builder for [`DescribeApplicationInstanceDetailsInput`](crate::operation::describe_application_instance_details::DescribeApplicationInstanceDetailsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeApplicationInstanceDetailsInputBuilder {
     pub(crate) application_instance_id: ::std::option::Option<::std::string::String>,
 }

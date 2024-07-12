@@ -36,8 +36,8 @@ impl NotifyRecommendationsReceivedOutput {
 }
 
 /// A builder for [`NotifyRecommendationsReceivedOutput`](crate::operation::notify_recommendations_received::NotifyRecommendationsReceivedOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NotifyRecommendationsReceivedOutputBuilder {
     pub(crate) recommendation_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::NotifyRecommendationsReceivedError>>,

@@ -19,8 +19,8 @@ impl DeleteLoadBalancerOutput {
 }
 
 /// A builder for [`DeleteLoadBalancerOutput`](crate::operation::delete_load_balancer::DeleteLoadBalancerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteLoadBalancerOutputBuilder {
     _request_id: Option<String>,
 }

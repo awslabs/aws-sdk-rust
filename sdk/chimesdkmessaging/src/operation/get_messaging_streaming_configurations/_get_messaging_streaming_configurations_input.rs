@@ -20,8 +20,8 @@ impl GetMessagingStreamingConfigurationsInput {
 }
 
 /// A builder for [`GetMessagingStreamingConfigurationsInput`](crate::operation::get_messaging_streaming_configurations::GetMessagingStreamingConfigurationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMessagingStreamingConfigurationsInputBuilder {
     pub(crate) app_instance_arn: ::std::option::Option<::std::string::String>,
 }

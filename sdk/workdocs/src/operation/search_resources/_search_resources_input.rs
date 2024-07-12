@@ -89,8 +89,8 @@ impl SearchResourcesInput {
 }
 
 /// A builder for [`SearchResourcesInput`](crate::operation::search_resources::SearchResourcesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SearchResourcesInputBuilder {
     pub(crate) authentication_token: ::std::option::Option<::std::string::String>,
     pub(crate) query_text: ::std::option::Option<::std::string::String>,

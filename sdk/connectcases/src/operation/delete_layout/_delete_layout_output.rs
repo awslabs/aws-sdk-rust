@@ -18,8 +18,8 @@ impl DeleteLayoutOutput {
 }
 
 /// A builder for [`DeleteLayoutOutput`](crate::operation::delete_layout::DeleteLayoutOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteLayoutOutputBuilder {
     _request_id: Option<String>,
 }

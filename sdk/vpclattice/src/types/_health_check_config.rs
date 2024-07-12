@@ -75,8 +75,8 @@ impl HealthCheckConfig {
 }
 
 /// A builder for [`HealthCheckConfig`](crate::types::HealthCheckConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HealthCheckConfigBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) protocol: ::std::option::Option<crate::types::TargetGroupProtocol>,

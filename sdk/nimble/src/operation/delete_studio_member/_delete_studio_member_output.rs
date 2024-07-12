@@ -18,8 +18,8 @@ impl DeleteStudioMemberOutput {
 }
 
 /// A builder for [`DeleteStudioMemberOutput`](crate::operation::delete_studio_member::DeleteStudioMemberOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteStudioMemberOutputBuilder {
     _request_id: Option<String>,
 }

@@ -44,8 +44,8 @@ impl GatewayCapabilitySummary {
 }
 
 /// A builder for [`GatewayCapabilitySummary`](crate::types::GatewayCapabilitySummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GatewayCapabilitySummaryBuilder {
     pub(crate) capability_namespace: ::std::option::Option<::std::string::String>,
     pub(crate) capability_sync_status: ::std::option::Option<crate::types::CapabilitySyncStatus>,

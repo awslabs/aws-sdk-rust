@@ -98,8 +98,8 @@ impl UpdateLaunchConfigurationTemplateInput {
 }
 
 /// A builder for [`UpdateLaunchConfigurationTemplateInput`](crate::operation::update_launch_configuration_template::UpdateLaunchConfigurationTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateLaunchConfigurationTemplateInputBuilder {
     pub(crate) launch_configuration_template_id: ::std::option::Option<::std::string::String>,
     pub(crate) post_launch_actions: ::std::option::Option<crate::types::PostLaunchActions>,

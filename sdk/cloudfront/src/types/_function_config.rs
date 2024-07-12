@@ -34,8 +34,8 @@ impl FunctionConfig {
 }
 
 /// A builder for [`FunctionConfig`](crate::types::FunctionConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FunctionConfigBuilder {
     pub(crate) comment: ::std::option::Option<::std::string::String>,
     pub(crate) runtime: ::std::option::Option<crate::types::FunctionRuntime>,

@@ -21,8 +21,8 @@ impl LaunchTemplateInstanceMaintenanceOptionsRequest {
 }
 
 /// A builder for [`LaunchTemplateInstanceMaintenanceOptionsRequest`](crate::types::LaunchTemplateInstanceMaintenanceOptionsRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LaunchTemplateInstanceMaintenanceOptionsRequestBuilder {
     pub(crate) auto_recovery: ::std::option::Option<crate::types::LaunchTemplateAutoRecoveryState>,
 }

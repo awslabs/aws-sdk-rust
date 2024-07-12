@@ -26,8 +26,8 @@ impl CreateFirewallRuleGroupOutput {
 }
 
 /// A builder for [`CreateFirewallRuleGroupOutput`](crate::operation::create_firewall_rule_group::CreateFirewallRuleGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateFirewallRuleGroupOutputBuilder {
     pub(crate) firewall_rule_group: ::std::option::Option<crate::types::FirewallRuleGroup>,
     _request_id: Option<String>,

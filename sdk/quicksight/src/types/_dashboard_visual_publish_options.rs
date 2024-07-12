@@ -21,8 +21,8 @@ impl DashboardVisualPublishOptions {
 }
 
 /// A builder for [`DashboardVisualPublishOptions`](crate::types::DashboardVisualPublishOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DashboardVisualPublishOptionsBuilder {
     pub(crate) export_hidden_fields_option: ::std::option::Option<crate::types::ExportHiddenFieldsOption>,
 }

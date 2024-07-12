@@ -20,8 +20,8 @@ impl DescribeScheduledQueryInput {
 }
 
 /// A builder for [`DescribeScheduledQueryInput`](crate::operation::describe_scheduled_query::DescribeScheduledQueryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeScheduledQueryInputBuilder {
     pub(crate) scheduled_query_arn: ::std::option::Option<::std::string::String>,
 }

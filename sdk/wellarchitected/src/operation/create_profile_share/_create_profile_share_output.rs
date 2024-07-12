@@ -32,8 +32,8 @@ impl CreateProfileShareOutput {
 }
 
 /// A builder for [`CreateProfileShareOutput`](crate::operation::create_profile_share::CreateProfileShareOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateProfileShareOutputBuilder {
     pub(crate) share_id: ::std::option::Option<::std::string::String>,
     pub(crate) profile_arn: ::std::option::Option<::std::string::String>,

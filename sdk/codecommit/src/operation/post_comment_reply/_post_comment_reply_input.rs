@@ -32,8 +32,8 @@ impl PostCommentReplyInput {
 }
 
 /// A builder for [`PostCommentReplyInput`](crate::operation::post_comment_reply::PostCommentReplyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PostCommentReplyInputBuilder {
     pub(crate) in_reply_to: ::std::option::Option<::std::string::String>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,

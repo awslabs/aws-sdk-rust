@@ -21,8 +21,8 @@ impl ResourceDetails {
 }
 
 /// A builder for [`ResourceDetails`](crate::types::ResourceDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResourceDetailsBuilder {
     pub(crate) aws_ecr_container_image: ::std::option::Option<crate::types::AwsEcrContainerImageDetails>,
 }

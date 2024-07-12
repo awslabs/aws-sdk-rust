@@ -27,8 +27,8 @@ impl UpdateReceiptRuleInput {
 }
 
 /// A builder for [`UpdateReceiptRuleInput`](crate::operation::update_receipt_rule::UpdateReceiptRuleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateReceiptRuleInputBuilder {
     pub(crate) rule_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) rule: ::std::option::Option<crate::types::ReceiptRule>,

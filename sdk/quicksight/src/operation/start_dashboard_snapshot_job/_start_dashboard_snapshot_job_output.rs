@@ -44,8 +44,8 @@ impl StartDashboardSnapshotJobOutput {
 }
 
 /// A builder for [`StartDashboardSnapshotJobOutput`](crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartDashboardSnapshotJobOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) snapshot_job_id: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl DescribePublicIpv4PoolsOutput {
 }
 
 /// A builder for [`DescribePublicIpv4PoolsOutput`](crate::operation::describe_public_ipv4_pools::DescribePublicIpv4PoolsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribePublicIpv4PoolsOutputBuilder {
     pub(crate) public_ipv4_pools: ::std::option::Option<::std::vec::Vec<crate::types::PublicIpv4Pool>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

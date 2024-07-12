@@ -29,8 +29,8 @@ impl CognitoGroupConfigurationDetail {
 }
 
 /// A builder for [`CognitoGroupConfigurationDetail`](crate::types::CognitoGroupConfigurationDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CognitoGroupConfigurationDetailBuilder {
     pub(crate) group_entity_type: ::std::option::Option<::std::string::String>,
 }

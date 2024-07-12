@@ -26,8 +26,8 @@ impl GetTemplateOutput {
 }
 
 /// A builder for [`GetTemplateOutput`](crate::operation::get_template::GetTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTemplateOutputBuilder {
     pub(crate) template: ::std::option::Option<crate::types::Template>,
     _request_id: Option<String>,

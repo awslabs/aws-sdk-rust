@@ -44,8 +44,8 @@ impl CreateKxEnvironmentInput {
 }
 
 /// A builder for [`CreateKxEnvironmentInput`](crate::operation::create_kx_environment::CreateKxEnvironmentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateKxEnvironmentInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

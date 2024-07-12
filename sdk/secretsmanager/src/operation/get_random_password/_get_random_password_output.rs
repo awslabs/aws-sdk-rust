@@ -34,8 +34,8 @@ impl GetRandomPasswordOutput {
 }
 
 /// A builder for [`GetRandomPasswordOutput`](crate::operation::get_random_password::GetRandomPasswordOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetRandomPasswordOutputBuilder {
     pub(crate) random_password: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

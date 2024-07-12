@@ -58,8 +58,8 @@ impl ListAccountSettingsInput {
 }
 
 /// A builder for [`ListAccountSettingsInput`](crate::operation::list_account_settings::ListAccountSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAccountSettingsInputBuilder {
     pub(crate) name: ::std::option::Option<crate::types::SettingName>,
     pub(crate) value: ::std::option::Option<::std::string::String>,

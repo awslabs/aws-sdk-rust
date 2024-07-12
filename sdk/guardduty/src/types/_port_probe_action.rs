@@ -29,8 +29,8 @@ impl PortProbeAction {
 }
 
 /// A builder for [`PortProbeAction`](crate::types::PortProbeAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PortProbeActionBuilder {
     pub(crate) blocked: ::std::option::Option<bool>,
     pub(crate) port_probe_details: ::std::option::Option<::std::vec::Vec<crate::types::PortProbeDetail>>,

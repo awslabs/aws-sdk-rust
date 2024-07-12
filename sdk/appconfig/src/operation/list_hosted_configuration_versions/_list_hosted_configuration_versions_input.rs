@@ -44,8 +44,8 @@ impl ListHostedConfigurationVersionsInput {
 }
 
 /// A builder for [`ListHostedConfigurationVersionsInput`](crate::operation::list_hosted_configuration_versions::ListHostedConfigurationVersionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListHostedConfigurationVersionsInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) configuration_profile_id: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl EncryptionInfo {
 }
 
 /// A builder for [`EncryptionInfo`](crate::types::EncryptionInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EncryptionInfoBuilder {
     pub(crate) encryption_at_rest: ::std::option::Option<crate::types::EncryptionAtRest>,
     pub(crate) encryption_in_transit: ::std::option::Option<crate::types::EncryptionInTransit>,

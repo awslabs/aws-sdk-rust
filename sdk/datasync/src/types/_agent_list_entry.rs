@@ -51,8 +51,8 @@ impl AgentListEntry {
 }
 
 /// A builder for [`AgentListEntry`](crate::types::AgentListEntry).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AgentListEntryBuilder {
     pub(crate) agent_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

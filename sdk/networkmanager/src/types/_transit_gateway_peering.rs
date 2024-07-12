@@ -33,8 +33,8 @@ impl TransitGatewayPeering {
 }
 
 /// A builder for [`TransitGatewayPeering`](crate::types::TransitGatewayPeering).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TransitGatewayPeeringBuilder {
     pub(crate) peering: ::std::option::Option<crate::types::Peering>,
     pub(crate) transit_gateway_arn: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl KubernetesDetails {
 }
 
 /// A builder for [`KubernetesDetails`](crate::types::KubernetesDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KubernetesDetailsBuilder {
     pub(crate) kubernetes_user_details: ::std::option::Option<crate::types::KubernetesUserDetails>,
     pub(crate) kubernetes_workload_details: ::std::option::Option<crate::types::KubernetesWorkloadDetails>,

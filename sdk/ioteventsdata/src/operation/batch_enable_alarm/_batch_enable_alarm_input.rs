@@ -22,8 +22,8 @@ impl BatchEnableAlarmInput {
 }
 
 /// A builder for [`BatchEnableAlarmInput`](crate::operation::batch_enable_alarm::BatchEnableAlarmInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchEnableAlarmInputBuilder {
     pub(crate) enable_action_requests: ::std::option::Option<::std::vec::Vec<crate::types::EnableAlarmActionRequest>>,
 }

@@ -38,8 +38,8 @@ impl SampleChannelDataInput {
 }
 
 /// A builder for [`SampleChannelDataInput`](crate::operation::sample_channel_data::SampleChannelDataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SampleChannelDataInputBuilder {
     pub(crate) channel_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_messages: ::std::option::Option<i32>,

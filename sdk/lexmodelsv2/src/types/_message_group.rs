@@ -29,8 +29,8 @@ impl MessageGroup {
 }
 
 /// A builder for [`MessageGroup`](crate::types::MessageGroup).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MessageGroupBuilder {
     pub(crate) message: ::std::option::Option<crate::types::Message>,
     pub(crate) variations: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,

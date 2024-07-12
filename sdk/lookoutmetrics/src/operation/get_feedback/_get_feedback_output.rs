@@ -34,8 +34,8 @@ impl GetFeedbackOutput {
 }
 
 /// A builder for [`GetFeedbackOutput`](crate::operation::get_feedback::GetFeedbackOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetFeedbackOutputBuilder {
     pub(crate) anomaly_group_time_series_feedback: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesFeedback>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -63,8 +63,8 @@ impl CrawlerMetrics {
 }
 
 /// A builder for [`CrawlerMetrics`](crate::types::CrawlerMetrics).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CrawlerMetricsBuilder {
     pub(crate) crawler_name: ::std::option::Option<::std::string::String>,
     pub(crate) time_left_seconds: ::std::option::Option<f64>,

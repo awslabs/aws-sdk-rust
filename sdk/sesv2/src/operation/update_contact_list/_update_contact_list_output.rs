@@ -18,8 +18,8 @@ impl UpdateContactListOutput {
 }
 
 /// A builder for [`UpdateContactListOutput`](crate::operation::update_contact_list::UpdateContactListOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateContactListOutputBuilder {
     _request_id: Option<String>,
 }

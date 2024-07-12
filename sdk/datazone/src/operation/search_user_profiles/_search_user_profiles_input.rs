@@ -55,8 +55,8 @@ impl SearchUserProfilesInput {
 }
 
 /// A builder for [`SearchUserProfilesInput`](crate::operation::search_user_profiles::SearchUserProfilesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SearchUserProfilesInputBuilder {
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) user_type: ::std::option::Option<crate::types::UserSearchType>,

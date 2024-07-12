@@ -90,8 +90,8 @@ impl ListPackageVersionsOutput {
 }
 
 /// A builder for [`ListPackageVersionsOutput`](crate::operation::list_package_versions::ListPackageVersionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPackageVersionsOutputBuilder {
     pub(crate) default_display_version: ::std::option::Option<::std::string::String>,
     pub(crate) format: ::std::option::Option<crate::types::PackageFormat>,

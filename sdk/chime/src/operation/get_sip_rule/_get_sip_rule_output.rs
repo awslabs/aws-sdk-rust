@@ -26,8 +26,8 @@ impl GetSipRuleOutput {
 }
 
 /// A builder for [`GetSipRuleOutput`](crate::operation::get_sip_rule::GetSipRuleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSipRuleOutputBuilder {
     pub(crate) sip_rule: ::std::option::Option<crate::types::SipRule>,
     _request_id: Option<String>,

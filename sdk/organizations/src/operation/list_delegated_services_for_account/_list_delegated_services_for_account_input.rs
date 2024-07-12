@@ -32,8 +32,8 @@ impl ListDelegatedServicesForAccountInput {
 }
 
 /// A builder for [`ListDelegatedServicesForAccountInput`](crate::operation::list_delegated_services_for_account::ListDelegatedServicesForAccountInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDelegatedServicesForAccountInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

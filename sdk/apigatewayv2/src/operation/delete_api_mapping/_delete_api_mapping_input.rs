@@ -26,8 +26,8 @@ impl DeleteApiMappingInput {
 }
 
 /// A builder for [`DeleteApiMappingInput`](crate::operation::delete_api_mapping::DeleteApiMappingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteApiMappingInputBuilder {
     pub(crate) api_mapping_id: ::std::option::Option<::std::string::String>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,

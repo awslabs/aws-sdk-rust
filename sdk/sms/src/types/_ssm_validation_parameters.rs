@@ -51,8 +51,8 @@ impl SsmValidationParameters {
 }
 
 /// A builder for [`SsmValidationParameters`](crate::types::SsmValidationParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SsmValidationParametersBuilder {
     pub(crate) source: ::std::option::Option<crate::types::Source>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,

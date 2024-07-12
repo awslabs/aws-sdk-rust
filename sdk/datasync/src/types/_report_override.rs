@@ -23,8 +23,8 @@ impl ReportOverride {
 }
 
 /// A builder for [`ReportOverride`](crate::types::ReportOverride).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReportOverrideBuilder {
     pub(crate) report_level: ::std::option::Option<crate::types::ReportLevel>,
 }

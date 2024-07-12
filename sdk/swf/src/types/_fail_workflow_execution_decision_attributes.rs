@@ -38,8 +38,8 @@ impl FailWorkflowExecutionDecisionAttributes {
 }
 
 /// A builder for [`FailWorkflowExecutionDecisionAttributes`](crate::types::FailWorkflowExecutionDecisionAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FailWorkflowExecutionDecisionAttributesBuilder {
     pub(crate) reason: ::std::option::Option<::std::string::String>,
     pub(crate) details: ::std::option::Option<::std::string::String>,

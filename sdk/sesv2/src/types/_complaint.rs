@@ -27,8 +27,8 @@ impl Complaint {
 }
 
 /// A builder for [`Complaint`](crate::types::Complaint).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ComplaintBuilder {
     pub(crate) complaint_sub_type: ::std::option::Option<::std::string::String>,
     pub(crate) complaint_feedback_type: ::std::option::Option<::std::string::String>,

@@ -20,8 +20,8 @@ impl GetLoggingConfigurationInput {
 }
 
 /// A builder for [`GetLoggingConfigurationInput`](crate::operation::get_logging_configuration::GetLoggingConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLoggingConfigurationInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
 }

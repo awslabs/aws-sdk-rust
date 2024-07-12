@@ -18,8 +18,8 @@ impl DeleteMatchmakingRuleSetOutput {
 }
 
 /// A builder for [`DeleteMatchmakingRuleSetOutput`](crate::operation::delete_matchmaking_rule_set::DeleteMatchmakingRuleSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteMatchmakingRuleSetOutputBuilder {
     _request_id: Option<String>,
 }

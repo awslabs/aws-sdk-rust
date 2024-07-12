@@ -59,8 +59,8 @@ impl ProductionVariantCoreDumpConfig {
 }
 
 /// A builder for [`ProductionVariantCoreDumpConfig`](crate::types::ProductionVariantCoreDumpConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProductionVariantCoreDumpConfigBuilder {
     pub(crate) destination_s3_uri: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,

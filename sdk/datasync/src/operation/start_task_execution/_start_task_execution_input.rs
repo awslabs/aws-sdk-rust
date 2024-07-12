@@ -77,8 +77,8 @@ impl StartTaskExecutionInput {
 }
 
 /// A builder for [`StartTaskExecutionInput`](crate::operation::start_task_execution::StartTaskExecutionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartTaskExecutionInputBuilder {
     pub(crate) task_arn: ::std::option::Option<::std::string::String>,
     pub(crate) override_options: ::std::option::Option<crate::types::Options>,

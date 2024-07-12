@@ -32,8 +32,8 @@ impl TargetedSentimentEntity {
 }
 
 /// A builder for [`TargetedSentimentEntity`](crate::types::TargetedSentimentEntity).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TargetedSentimentEntityBuilder {
     pub(crate) descriptive_mention_index: ::std::option::Option<::std::vec::Vec<i32>>,
     pub(crate) mentions: ::std::option::Option<::std::vec::Vec<crate::types::TargetedSentimentMention>>,

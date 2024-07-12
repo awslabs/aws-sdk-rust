@@ -27,8 +27,8 @@ impl ModelCompilationConfig {
 }
 
 /// A builder for [`ModelCompilationConfig`](crate::types::ModelCompilationConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModelCompilationConfigBuilder {
     pub(crate) image: ::std::option::Option<::std::string::String>,
     pub(crate) override_environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

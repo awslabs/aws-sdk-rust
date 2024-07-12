@@ -37,8 +37,8 @@ impl BatchDisassociateAssessmentReportEvidenceOutput {
 }
 
 /// A builder for [`BatchDisassociateAssessmentReportEvidenceOutput`](crate::operation::batch_disassociate_assessment_report_evidence::BatchDisassociateAssessmentReportEvidenceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDisassociateAssessmentReportEvidenceOutputBuilder {
     pub(crate) evidence_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentReportEvidenceError>>,

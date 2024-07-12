@@ -27,8 +27,8 @@ impl CreateSolNetworkPackageInput {
 }
 
 /// A builder for [`CreateSolNetworkPackageInput`](crate::operation::create_sol_network_package::CreateSolNetworkPackageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateSolNetworkPackageInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }

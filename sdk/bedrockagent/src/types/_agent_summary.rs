@@ -59,8 +59,8 @@ impl AgentSummary {
 }
 
 /// A builder for [`AgentSummary`](crate::types::AgentSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AgentSummaryBuilder {
     pub(crate) agent_id: ::std::option::Option<::std::string::String>,
     pub(crate) agent_name: ::std::option::Option<::std::string::String>,

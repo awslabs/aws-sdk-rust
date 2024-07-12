@@ -33,8 +33,8 @@ impl InputLocation {
 }
 
 /// A builder for [`InputLocation`](crate::types::InputLocation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InputLocationBuilder {
     pub(crate) password_param: ::std::option::Option<::std::string::String>,
     pub(crate) uri: ::std::option::Option<::std::string::String>,

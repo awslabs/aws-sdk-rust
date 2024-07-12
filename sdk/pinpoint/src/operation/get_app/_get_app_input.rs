@@ -20,8 +20,8 @@ impl GetAppInput {
 }
 
 /// A builder for [`GetAppInput`](crate::operation::get_app::GetAppInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAppInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
 }

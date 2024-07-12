@@ -48,8 +48,8 @@ impl FilterOperationSelectedFieldsConfiguration {
 }
 
 /// A builder for [`FilterOperationSelectedFieldsConfiguration`](crate::types::FilterOperationSelectedFieldsConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FilterOperationSelectedFieldsConfigurationBuilder {
     pub(crate) selected_fields: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) selected_field_options: ::std::option::Option<crate::types::SelectedFieldOptions>,

@@ -26,8 +26,8 @@ impl UpdateIdentityProviderSettingsOutput {
 }
 
 /// A builder for [`UpdateIdentityProviderSettingsOutput`](crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateIdentityProviderSettingsOutputBuilder {
     pub(crate) identity_provider_summary: ::std::option::Option<crate::types::IdentityProviderSummary>,
     _request_id: Option<String>,

@@ -20,8 +20,8 @@ impl UpdateRoutingProfileAgentAvailabilityTimerOutput {
 }
 
 /// A builder for [`UpdateRoutingProfileAgentAvailabilityTimerOutput`](crate::operation::update_routing_profile_agent_availability_timer::UpdateRoutingProfileAgentAvailabilityTimerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRoutingProfileAgentAvailabilityTimerOutputBuilder {
     _request_id: Option<String>,
 }

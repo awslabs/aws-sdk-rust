@@ -57,8 +57,8 @@ impl ListServiceActionsForProvisioningArtifactInput {
 }
 
 /// A builder for [`ListServiceActionsForProvisioningArtifactInput`](crate::operation::list_service_actions_for_provisioning_artifact::ListServiceActionsForProvisioningArtifactInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListServiceActionsForProvisioningArtifactInputBuilder {
     pub(crate) product_id: ::std::option::Option<::std::string::String>,
     pub(crate) provisioning_artifact_id: ::std::option::Option<::std::string::String>,

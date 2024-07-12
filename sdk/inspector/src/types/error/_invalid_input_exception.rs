@@ -57,8 +57,8 @@ impl InvalidInputException {
 }
 
 /// A builder for [`InvalidInputException`](crate::types::error::InvalidInputException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InvalidInputExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) error_code: ::std::option::Option<crate::types::InvalidInputErrorCode>,

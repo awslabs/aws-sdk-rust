@@ -29,8 +29,8 @@ impl CreateAliasInput {
 }
 
 /// A builder for [`CreateAliasInput`](crate::operation::create_alias::CreateAliasInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAliasInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) alias: ::std::option::Option<::std::string::String>,

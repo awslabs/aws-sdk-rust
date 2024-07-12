@@ -20,8 +20,8 @@ impl UpdateEventConfigurationsInput {
 }
 
 /// A builder for [`UpdateEventConfigurationsInput`](crate::operation::update_event_configurations::UpdateEventConfigurationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateEventConfigurationsInputBuilder {
     pub(crate) event_configurations: ::std::option::Option<::std::collections::HashMap<crate::types::EventType, crate::types::Configuration>>,
 }

@@ -63,8 +63,8 @@ impl ContainerRecipeSummary {
 }
 
 /// A builder for [`ContainerRecipeSummary`](crate::types::ContainerRecipeSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ContainerRecipeSummaryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) container_type: ::std::option::Option<crate::types::ContainerType>,

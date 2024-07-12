@@ -35,8 +35,8 @@ impl EncryptionEntity {
 }
 
 /// A builder for [`EncryptionEntity`](crate::types::EncryptionEntity).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EncryptionEntityBuilder {
     pub(crate) public_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) provider_id: ::std::option::Option<::std::string::String>,

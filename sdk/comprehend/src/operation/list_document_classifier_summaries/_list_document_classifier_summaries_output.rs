@@ -34,8 +34,8 @@ impl ListDocumentClassifierSummariesOutput {
 }
 
 /// A builder for [`ListDocumentClassifierSummariesOutput`](crate::operation::list_document_classifier_summaries::ListDocumentClassifierSummariesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDocumentClassifierSummariesOutputBuilder {
     pub(crate) document_classifier_summaries_list: ::std::option::Option<::std::vec::Vec<crate::types::DocumentClassifierSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

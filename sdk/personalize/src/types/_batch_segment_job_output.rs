@@ -21,8 +21,8 @@ impl BatchSegmentJobOutput {
 }
 
 /// A builder for [`BatchSegmentJobOutput`](crate::types::BatchSegmentJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchSegmentJobOutputBuilder {
     pub(crate) s3_data_destination: ::std::option::Option<crate::types::S3DataConfig>,
 }

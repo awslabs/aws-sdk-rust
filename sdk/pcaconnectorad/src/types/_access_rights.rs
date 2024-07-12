@@ -27,8 +27,8 @@ impl AccessRights {
 }
 
 /// A builder for [`AccessRights`](crate::types::AccessRights).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AccessRightsBuilder {
     pub(crate) enroll: ::std::option::Option<crate::types::AccessRight>,
     pub(crate) auto_enroll: ::std::option::Option<crate::types::AccessRight>,

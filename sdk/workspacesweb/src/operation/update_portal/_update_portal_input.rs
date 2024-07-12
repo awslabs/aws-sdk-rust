@@ -59,8 +59,8 @@ impl UpdatePortalInput {
 }
 
 /// A builder for [`UpdatePortalInput`](crate::operation::update_portal::UpdatePortalInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdatePortalInputBuilder {
     pub(crate) portal_arn: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,

@@ -94,8 +94,8 @@ impl DescribeSimulationApplicationOutput {
 }
 
 /// A builder for [`DescribeSimulationApplicationOutput`](crate::operation::describe_simulation_application::DescribeSimulationApplicationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSimulationApplicationOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

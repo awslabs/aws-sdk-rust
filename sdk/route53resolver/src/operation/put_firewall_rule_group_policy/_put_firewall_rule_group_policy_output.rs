@@ -26,8 +26,8 @@ impl PutFirewallRuleGroupPolicyOutput {
 }
 
 /// A builder for [`PutFirewallRuleGroupPolicyOutput`](crate::operation::put_firewall_rule_group_policy::PutFirewallRuleGroupPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutFirewallRuleGroupPolicyOutputBuilder {
     pub(crate) return_value: ::std::option::Option<bool>,
     _request_id: Option<String>,

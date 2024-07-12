@@ -22,8 +22,8 @@ impl PutRemediationConfigurationsInput {
 }
 
 /// A builder for [`PutRemediationConfigurationsInput`](crate::operation::put_remediation_configurations::PutRemediationConfigurationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutRemediationConfigurationsInputBuilder {
     pub(crate) remediation_configurations: ::std::option::Option<::std::vec::Vec<crate::types::RemediationConfiguration>>,
 }

@@ -27,8 +27,8 @@ impl CreateAccessConfigRequest {
 }
 
 /// A builder for [`CreateAccessConfigRequest`](crate::types::CreateAccessConfigRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAccessConfigRequestBuilder {
     pub(crate) bootstrap_cluster_creator_admin_permissions: ::std::option::Option<bool>,
     pub(crate) authentication_mode: ::std::option::Option<crate::types::AuthenticationMode>,

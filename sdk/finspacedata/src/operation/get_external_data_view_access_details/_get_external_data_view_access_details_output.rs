@@ -41,8 +41,8 @@ impl GetExternalDataViewAccessDetailsOutput {
 }
 
 /// A builder for [`GetExternalDataViewAccessDetailsOutput`](crate::operation::get_external_data_view_access_details::GetExternalDataViewAccessDetailsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetExternalDataViewAccessDetailsOutputBuilder {
     pub(crate) credentials: ::std::option::Option<crate::types::AwsCredentials>,
     pub(crate) s3_location: ::std::option::Option<crate::types::S3Location>,

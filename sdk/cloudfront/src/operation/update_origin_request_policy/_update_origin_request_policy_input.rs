@@ -32,8 +32,8 @@ impl UpdateOriginRequestPolicyInput {
 }
 
 /// A builder for [`UpdateOriginRequestPolicyInput`](crate::operation::update_origin_request_policy::UpdateOriginRequestPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateOriginRequestPolicyInputBuilder {
     pub(crate) origin_request_policy_config: ::std::option::Option<crate::types::OriginRequestPolicyConfig>,
     pub(crate) id: ::std::option::Option<::std::string::String>,

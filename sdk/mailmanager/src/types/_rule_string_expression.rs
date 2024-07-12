@@ -34,8 +34,8 @@ impl RuleStringExpression {
 }
 
 /// A builder for [`RuleStringExpression`](crate::types::RuleStringExpression).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RuleStringExpressionBuilder {
     pub(crate) evaluate: ::std::option::Option<crate::types::RuleStringToEvaluate>,
     pub(crate) operator: ::std::option::Option<crate::types::RuleStringOperator>,

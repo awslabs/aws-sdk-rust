@@ -22,8 +22,8 @@ impl UpdateNetworkConfigurationInput {
 }
 
 /// A builder for [`UpdateNetworkConfigurationInput`](crate::types::UpdateNetworkConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateNetworkConfigurationInputBuilder {
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

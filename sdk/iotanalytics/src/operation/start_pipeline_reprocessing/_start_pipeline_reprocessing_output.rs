@@ -26,8 +26,8 @@ impl StartPipelineReprocessingOutput {
 }
 
 /// A builder for [`StartPipelineReprocessingOutput`](crate::operation::start_pipeline_reprocessing::StartPipelineReprocessingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartPipelineReprocessingOutputBuilder {
     pub(crate) reprocessing_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -68,8 +68,8 @@ impl ListedUser {
 }
 
 /// A builder for [`ListedUser`](crate::types::ListedUser).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListedUserBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) home_directory: ::std::option::Option<::std::string::String>,

@@ -33,8 +33,8 @@ impl FailoverConditionSettings {
 }
 
 /// A builder for [`FailoverConditionSettings`](crate::types::FailoverConditionSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FailoverConditionSettingsBuilder {
     pub(crate) audio_silence_settings: ::std::option::Option<crate::types::AudioSilenceFailoverSettings>,
     pub(crate) input_loss_settings: ::std::option::Option<crate::types::InputLossFailoverSettings>,

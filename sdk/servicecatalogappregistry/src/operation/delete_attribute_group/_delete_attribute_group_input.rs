@@ -20,8 +20,8 @@ impl DeleteAttributeGroupInput {
 }
 
 /// A builder for [`DeleteAttributeGroupInput`](crate::operation::delete_attribute_group::DeleteAttributeGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAttributeGroupInputBuilder {
     pub(crate) attribute_group: ::std::option::Option<::std::string::String>,
 }

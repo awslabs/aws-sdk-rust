@@ -18,8 +18,8 @@ impl UpdateUserPhoneConfigOutput {
 }
 
 /// A builder for [`UpdateUserPhoneConfigOutput`](crate::operation::update_user_phone_config::UpdateUserPhoneConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateUserPhoneConfigOutputBuilder {
     _request_id: Option<String>,
 }

@@ -86,8 +86,8 @@ impl IncidentTemplate {
 }
 
 /// A builder for [`IncidentTemplate`](crate::types::IncidentTemplate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IncidentTemplateBuilder {
     pub(crate) title: ::std::option::Option<::std::string::String>,
     pub(crate) impact: ::std::option::Option<i32>,

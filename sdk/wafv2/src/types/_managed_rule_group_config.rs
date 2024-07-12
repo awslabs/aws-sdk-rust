@@ -97,8 +97,8 @@ impl ManagedRuleGroupConfig {
 }
 
 /// A builder for [`ManagedRuleGroupConfig`](crate::types::ManagedRuleGroupConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ManagedRuleGroupConfigBuilder {
     pub(crate) login_path: ::std::option::Option<::std::string::String>,
     pub(crate) payload_type: ::std::option::Option<crate::types::PayloadType>,

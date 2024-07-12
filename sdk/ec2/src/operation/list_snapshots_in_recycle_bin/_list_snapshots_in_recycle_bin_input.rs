@@ -40,8 +40,8 @@ impl ListSnapshotsInRecycleBinInput {
 }
 
 /// A builder for [`ListSnapshotsInRecycleBinInput`](crate::operation::list_snapshots_in_recycle_bin::ListSnapshotsInRecycleBinInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSnapshotsInRecycleBinInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

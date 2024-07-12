@@ -104,8 +104,8 @@ impl CreateMeetingWithAttendeesInput {
 }
 
 /// A builder for [`CreateMeetingWithAttendeesInput`](crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendeesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateMeetingWithAttendeesInputBuilder {
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) media_region: ::std::option::Option<::std::string::String>,

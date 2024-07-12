@@ -18,8 +18,8 @@ impl UpdateContactFlowContentOutput {
 }
 
 /// A builder for [`UpdateContactFlowContentOutput`](crate::operation::update_contact_flow_content::UpdateContactFlowContentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateContactFlowContentOutputBuilder {
     _request_id: Option<String>,
 }

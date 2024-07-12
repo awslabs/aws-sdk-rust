@@ -27,8 +27,8 @@ impl PatchGroupPatchBaselineMapping {
 }
 
 /// A builder for [`PatchGroupPatchBaselineMapping`](crate::types::PatchGroupPatchBaselineMapping).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PatchGroupPatchBaselineMappingBuilder {
     pub(crate) patch_group: ::std::option::Option<::std::string::String>,
     pub(crate) baseline_identity: ::std::option::Option<crate::types::PatchBaselineIdentity>,

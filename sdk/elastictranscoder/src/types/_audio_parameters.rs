@@ -223,8 +223,8 @@ impl AudioParameters {
 }
 
 /// A builder for [`AudioParameters`](crate::types::AudioParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AudioParametersBuilder {
     pub(crate) codec: ::std::option::Option<::std::string::String>,
     pub(crate) sample_rate: ::std::option::Option<::std::string::String>,

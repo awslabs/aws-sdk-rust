@@ -56,8 +56,8 @@ impl AllowCustomRoutingTrafficInput {
 }
 
 /// A builder for [`AllowCustomRoutingTrafficInput`](crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTrafficInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AllowCustomRoutingTrafficInputBuilder {
     pub(crate) endpoint_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint_id: ::std::option::Option<::std::string::String>,

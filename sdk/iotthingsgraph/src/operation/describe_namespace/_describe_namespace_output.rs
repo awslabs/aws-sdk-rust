@@ -50,8 +50,8 @@ impl DescribeNamespaceOutput {
 }
 
 /// A builder for [`DescribeNamespaceOutput`](crate::operation::describe_namespace::DescribeNamespaceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeNamespaceOutputBuilder {
     pub(crate) namespace_arn: ::std::option::Option<::std::string::String>,
     pub(crate) namespace_name: ::std::option::Option<::std::string::String>,

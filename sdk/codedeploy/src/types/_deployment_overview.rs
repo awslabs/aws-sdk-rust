@@ -51,8 +51,8 @@ impl DeploymentOverview {
 }
 
 /// A builder for [`DeploymentOverview`](crate::types::DeploymentOverview).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeploymentOverviewBuilder {
     pub(crate) pending: ::std::option::Option<i64>,
     pub(crate) in_progress: ::std::option::Option<i64>,

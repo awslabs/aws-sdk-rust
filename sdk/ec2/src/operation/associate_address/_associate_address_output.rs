@@ -26,8 +26,8 @@ impl AssociateAddressOutput {
 }
 
 /// A builder for [`AssociateAddressOutput`](crate::operation::associate_address::AssociateAddressOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateAddressOutputBuilder {
     pub(crate) association_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

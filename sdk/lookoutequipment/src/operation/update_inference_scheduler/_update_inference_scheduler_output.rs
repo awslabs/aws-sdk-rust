@@ -18,8 +18,8 @@ impl UpdateInferenceSchedulerOutput {
 }
 
 /// A builder for [`UpdateInferenceSchedulerOutput`](crate::operation::update_inference_scheduler::UpdateInferenceSchedulerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateInferenceSchedulerOutputBuilder {
     _request_id: Option<String>,
 }

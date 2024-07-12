@@ -36,8 +36,8 @@ impl DescribeEnvironmentManagedActionHistoryOutput {
 }
 
 /// A builder for [`DescribeEnvironmentManagedActionHistoryOutput`](crate::operation::describe_environment_managed_action_history::DescribeEnvironmentManagedActionHistoryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEnvironmentManagedActionHistoryOutputBuilder {
     pub(crate) managed_action_history_items: ::std::option::Option<::std::vec::Vec<crate::types::ManagedActionHistoryItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

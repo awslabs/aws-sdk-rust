@@ -22,8 +22,8 @@ impl AndStatement {
 }
 
 /// A builder for [`AndStatement`](crate::types::AndStatement).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AndStatementBuilder {
     pub(crate) statements: ::std::option::Option<::std::vec::Vec<crate::types::Statement>>,
 }

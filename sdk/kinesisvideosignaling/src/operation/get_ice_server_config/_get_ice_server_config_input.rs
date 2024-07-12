@@ -38,8 +38,8 @@ impl GetIceServerConfigInput {
 }
 
 /// A builder for [`GetIceServerConfigInput`](crate::operation::get_ice_server_config::GetIceServerConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetIceServerConfigInputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) client_id: ::std::option::Option<::std::string::String>,

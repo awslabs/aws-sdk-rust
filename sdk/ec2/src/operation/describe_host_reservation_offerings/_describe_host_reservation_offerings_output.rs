@@ -34,8 +34,8 @@ impl DescribeHostReservationOfferingsOutput {
 }
 
 /// A builder for [`DescribeHostReservationOfferingsOutput`](crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeHostReservationOfferingsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) offering_set: ::std::option::Option<::std::vec::Vec<crate::types::HostOffering>>,

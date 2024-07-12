@@ -36,8 +36,8 @@ impl VerifyCardValidationDataOutput {
 }
 
 /// A builder for [`VerifyCardValidationDataOutput`](crate::operation::verify_card_validation_data::VerifyCardValidationDataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VerifyCardValidationDataOutputBuilder {
     pub(crate) key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) key_check_value: ::std::option::Option<::std::string::String>,

@@ -29,8 +29,8 @@ impl EksSource {
 }
 
 /// A builder for [`EksSource`](crate::types::EksSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EksSourceBuilder {
     pub(crate) eks_cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) namespaces: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

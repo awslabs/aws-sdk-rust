@@ -26,8 +26,8 @@ impl DeleteCustomLineItemInput {
 }
 
 /// A builder for [`DeleteCustomLineItemInput`](crate::operation::delete_custom_line_item::DeleteCustomLineItemInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCustomLineItemInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) billing_period_range: ::std::option::Option<crate::types::CustomLineItemBillingPeriodRange>,

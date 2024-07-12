@@ -32,8 +32,8 @@ impl DeleteDeploymentOutput {
 }
 
 /// A builder for [`DeleteDeploymentOutput`](crate::operation::delete_deployment::DeleteDeploymentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDeploymentOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::DeploymentStatus>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,

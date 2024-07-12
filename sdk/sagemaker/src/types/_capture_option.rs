@@ -21,8 +21,8 @@ impl CaptureOption {
 }
 
 /// A builder for [`CaptureOption`](crate::types::CaptureOption).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CaptureOptionBuilder {
     pub(crate) capture_mode: ::std::option::Option<crate::types::CaptureMode>,
 }

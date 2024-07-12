@@ -48,8 +48,8 @@ impl AggregatedVariablesImpactExplanation {
 }
 
 /// A builder for [`AggregatedVariablesImpactExplanation`](crate::types::AggregatedVariablesImpactExplanation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AggregatedVariablesImpactExplanationBuilder {
     pub(crate) event_variable_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) relative_impact: ::std::option::Option<::std::string::String>,

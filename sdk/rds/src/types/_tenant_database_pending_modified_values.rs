@@ -35,8 +35,8 @@ impl TenantDatabasePendingModifiedValues {
 }
 
 /// A builder for [`TenantDatabasePendingModifiedValues`](crate::types::TenantDatabasePendingModifiedValues).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct TenantDatabasePendingModifiedValuesBuilder {
     pub(crate) master_user_password: ::std::option::Option<::std::string::String>,
     pub(crate) tenant_db_name: ::std::option::Option<::std::string::String>,

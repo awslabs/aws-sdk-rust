@@ -42,8 +42,8 @@ impl GetSubnetCidrReservationsOutput {
 }
 
 /// A builder for [`GetSubnetCidrReservationsOutput`](crate::operation::get_subnet_cidr_reservations::GetSubnetCidrReservationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSubnetCidrReservationsOutputBuilder {
     pub(crate) subnet_ipv4_cidr_reservations: ::std::option::Option<::std::vec::Vec<crate::types::SubnetCidrReservation>>,
     pub(crate) subnet_ipv6_cidr_reservations: ::std::option::Option<::std::vec::Vec<crate::types::SubnetCidrReservation>>,

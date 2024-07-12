@@ -23,8 +23,8 @@ impl S3SetObjectTaggingOperation {
 }
 
 /// A builder for [`S3SetObjectTaggingOperation`](crate::types::S3SetObjectTaggingOperation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3SetObjectTaggingOperationBuilder {
     pub(crate) tag_set: ::std::option::Option<::std::vec::Vec<crate::types::S3Tag>>,
 }

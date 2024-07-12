@@ -41,8 +41,8 @@ impl DescribeMountTargetsOutput {
 }
 
 /// A builder for [`DescribeMountTargetsOutput`](crate::operation::describe_mount_targets::DescribeMountTargetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeMountTargetsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) mount_targets: ::std::option::Option<::std::vec::Vec<crate::types::MountTargetDescription>>,

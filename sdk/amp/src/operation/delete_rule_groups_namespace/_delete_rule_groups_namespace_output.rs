@@ -18,8 +18,8 @@ impl DeleteRuleGroupsNamespaceOutput {
 }
 
 /// A builder for [`DeleteRuleGroupsNamespaceOutput`](crate::operation::delete_rule_groups_namespace::DeleteRuleGroupsNamespaceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRuleGroupsNamespaceOutputBuilder {
     _request_id: Option<String>,
 }

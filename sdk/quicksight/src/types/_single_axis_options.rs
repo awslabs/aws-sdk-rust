@@ -21,8 +21,8 @@ impl SingleAxisOptions {
 }
 
 /// A builder for [`SingleAxisOptions`](crate::types::SingleAxisOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SingleAxisOptionsBuilder {
     pub(crate) y_axis_options: ::std::option::Option<crate::types::YAxisOptions>,
 }

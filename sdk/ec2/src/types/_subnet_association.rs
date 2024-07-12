@@ -27,8 +27,8 @@ impl SubnetAssociation {
 }
 
 /// A builder for [`SubnetAssociation`](crate::types::SubnetAssociation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SubnetAssociationBuilder {
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::TransitGatewayMulitcastDomainAssociationState>,

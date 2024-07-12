@@ -117,8 +117,8 @@ impl CreateStudioComponentInput {
 }
 
 /// A builder for [`CreateStudioComponentInput`](crate::operation::create_studio_component::CreateStudioComponentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateStudioComponentInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) configuration: ::std::option::Option<crate::types::StudioComponentConfiguration>,

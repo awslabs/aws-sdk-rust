@@ -77,8 +77,8 @@ impl MaintenanceWindowExecutionTaskIdentity {
 }
 
 /// A builder for [`MaintenanceWindowExecutionTaskIdentity`](crate::types::MaintenanceWindowExecutionTaskIdentity).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MaintenanceWindowExecutionTaskIdentityBuilder {
     pub(crate) window_execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) task_execution_id: ::std::option::Option<::std::string::String>,

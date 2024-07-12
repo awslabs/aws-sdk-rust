@@ -20,8 +20,8 @@ impl DescribeVirtualClusterInput {
 }
 
 /// A builder for [`DescribeVirtualClusterInput`](crate::operation::describe_virtual_cluster::DescribeVirtualClusterInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeVirtualClusterInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }

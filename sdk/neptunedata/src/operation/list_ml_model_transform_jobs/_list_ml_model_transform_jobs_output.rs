@@ -28,8 +28,8 @@ impl ListMlModelTransformJobsOutput {
 }
 
 /// A builder for [`ListMlModelTransformJobsOutput`](crate::operation::list_ml_model_transform_jobs::ListMlModelTransformJobsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListMlModelTransformJobsOutputBuilder {
     pub(crate) ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,

@@ -26,8 +26,8 @@ impl EnableIpamOrganizationAdminAccountOutput {
 }
 
 /// A builder for [`EnableIpamOrganizationAdminAccountOutput`](crate::operation::enable_ipam_organization_admin_account::EnableIpamOrganizationAdminAccountOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnableIpamOrganizationAdminAccountOutputBuilder {
     pub(crate) success: ::std::option::Option<bool>,
     _request_id: Option<String>,

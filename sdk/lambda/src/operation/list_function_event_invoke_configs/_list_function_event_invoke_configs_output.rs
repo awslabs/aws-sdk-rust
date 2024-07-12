@@ -34,8 +34,8 @@ impl ListFunctionEventInvokeConfigsOutput {
 }
 
 /// A builder for [`ListFunctionEventInvokeConfigsOutput`](crate::operation::list_function_event_invoke_configs::ListFunctionEventInvokeConfigsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFunctionEventInvokeConfigsOutputBuilder {
     pub(crate) function_event_invoke_configs: ::std::option::Option<::std::vec::Vec<crate::types::FunctionEventInvokeConfig>>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,

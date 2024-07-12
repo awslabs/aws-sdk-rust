@@ -32,8 +32,8 @@ impl ListPredefinedAttributesInput {
 }
 
 /// A builder for [`ListPredefinedAttributesInput`](crate::operation::list_predefined_attributes::ListPredefinedAttributesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPredefinedAttributesInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

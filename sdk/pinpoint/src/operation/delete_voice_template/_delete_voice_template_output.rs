@@ -26,8 +26,8 @@ impl DeleteVoiceTemplateOutput {
 }
 
 /// A builder for [`DeleteVoiceTemplateOutput`](crate::operation::delete_voice_template::DeleteVoiceTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVoiceTemplateOutputBuilder {
     pub(crate) message_body: ::std::option::Option<crate::types::MessageBody>,
     _request_id: Option<String>,

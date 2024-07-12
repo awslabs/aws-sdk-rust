@@ -27,8 +27,8 @@ impl RdsReservedInstances {
 }
 
 /// A builder for [`RdsReservedInstances`](crate::types::RdsReservedInstances).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RdsReservedInstancesBuilder {
     pub(crate) configuration: ::std::option::Option<crate::types::RdsReservedInstancesConfiguration>,
     pub(crate) cost_calculation: ::std::option::Option<crate::types::ReservedInstancesCostCalculation>,

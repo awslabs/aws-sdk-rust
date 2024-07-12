@@ -28,8 +28,8 @@ impl DescribeAlarmsForMetricOutput {
 }
 
 /// A builder for [`DescribeAlarmsForMetricOutput`](crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAlarmsForMetricOutputBuilder {
     pub(crate) metric_alarms: ::std::option::Option<::std::vec::Vec<crate::types::MetricAlarm>>,
     _request_id: Option<String>,

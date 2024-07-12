@@ -93,8 +93,8 @@ impl ColumnMetadata {
 }
 
 /// A builder for [`ColumnMetadata`](crate::types::ColumnMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ColumnMetadataBuilder {
     pub(crate) is_case_sensitive: ::std::option::Option<bool>,
     pub(crate) is_currency: ::std::option::Option<bool>,

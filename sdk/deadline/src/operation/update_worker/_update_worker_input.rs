@@ -50,8 +50,8 @@ impl UpdateWorkerInput {
 }
 
 /// A builder for [`UpdateWorkerInput`](crate::operation::update_worker::UpdateWorkerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateWorkerInputBuilder {
     pub(crate) farm_id: ::std::option::Option<::std::string::String>,
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,

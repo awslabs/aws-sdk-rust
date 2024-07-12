@@ -23,8 +23,8 @@ impl DescribeSmbFileSharesInput {
 }
 
 /// A builder for [`DescribeSmbFileSharesInput`](crate::operation::describe_smb_file_shares::DescribeSmbFileSharesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSmbFileSharesInputBuilder {
     pub(crate) file_share_arn_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

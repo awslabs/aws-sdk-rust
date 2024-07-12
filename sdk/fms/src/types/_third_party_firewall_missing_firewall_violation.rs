@@ -39,8 +39,8 @@ impl ThirdPartyFirewallMissingFirewallViolation {
 }
 
 /// A builder for [`ThirdPartyFirewallMissingFirewallViolation`](crate::types::ThirdPartyFirewallMissingFirewallViolation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ThirdPartyFirewallMissingFirewallViolationBuilder {
     pub(crate) violation_target: ::std::option::Option<::std::string::String>,
     pub(crate) vpc: ::std::option::Option<::std::string::String>,

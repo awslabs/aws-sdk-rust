@@ -81,8 +81,8 @@ impl CsvInput {
 }
 
 /// A builder for [`CsvInput`](crate::types::CsvInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CsvInputBuilder {
     pub(crate) file_header_info: ::std::option::Option<crate::types::FileHeaderInfo>,
     pub(crate) comments: ::std::option::Option<::std::string::String>,

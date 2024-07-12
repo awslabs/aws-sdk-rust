@@ -38,8 +38,8 @@ impl ListReviewableHiTsInput {
 }
 
 /// A builder for [`ListReviewableHiTsInput`](crate::operation::list_reviewable_hits::ListReviewableHiTsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListReviewableHiTsInputBuilder {
     pub(crate) hit_type_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ReviewableHitStatus>,

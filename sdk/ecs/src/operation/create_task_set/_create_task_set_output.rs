@@ -26,8 +26,8 @@ impl CreateTaskSetOutput {
 }
 
 /// A builder for [`CreateTaskSetOutput`](crate::operation::create_task_set::CreateTaskSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateTaskSetOutputBuilder {
     pub(crate) task_set: ::std::option::Option<crate::types::TaskSet>,
     _request_id: Option<String>,

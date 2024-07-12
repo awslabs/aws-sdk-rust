@@ -33,8 +33,8 @@ impl IncrementalExportSpecification {
 }
 
 /// A builder for [`IncrementalExportSpecification`](crate::types::IncrementalExportSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IncrementalExportSpecificationBuilder {
     pub(crate) export_from_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) export_to_time: ::std::option::Option<::aws_smithy_types::DateTime>,

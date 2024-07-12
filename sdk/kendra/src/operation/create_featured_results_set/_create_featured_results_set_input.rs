@@ -68,8 +68,8 @@ impl CreateFeaturedResultsSetInput {
 }
 
 /// A builder for [`CreateFeaturedResultsSetInput`](crate::operation::create_featured_results_set::CreateFeaturedResultsSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateFeaturedResultsSetInputBuilder {
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
     pub(crate) featured_results_set_name: ::std::option::Option<::std::string::String>,

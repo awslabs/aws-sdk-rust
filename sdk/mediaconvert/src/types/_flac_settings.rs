@@ -33,8 +33,8 @@ impl FlacSettings {
 }
 
 /// A builder for [`FlacSettings`](crate::types::FlacSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FlacSettingsBuilder {
     pub(crate) bit_depth: ::std::option::Option<i32>,
     pub(crate) channels: ::std::option::Option<i32>,

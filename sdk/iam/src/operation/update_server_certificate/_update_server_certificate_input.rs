@@ -38,8 +38,8 @@ impl UpdateServerCertificateInput {
 }
 
 /// A builder for [`UpdateServerCertificateInput`](crate::operation::update_server_certificate::UpdateServerCertificateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateServerCertificateInputBuilder {
     pub(crate) server_certificate_name: ::std::option::Option<::std::string::String>,
     pub(crate) new_path: ::std::option::Option<::std::string::String>,

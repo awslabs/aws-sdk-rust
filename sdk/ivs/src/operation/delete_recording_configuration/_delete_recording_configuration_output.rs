@@ -18,8 +18,8 @@ impl DeleteRecordingConfigurationOutput {
 }
 
 /// A builder for [`DeleteRecordingConfigurationOutput`](crate::operation::delete_recording_configuration::DeleteRecordingConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRecordingConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

@@ -26,8 +26,8 @@ impl GetTemplateSyncConfigInput {
 }
 
 /// A builder for [`GetTemplateSyncConfigInput`](crate::operation::get_template_sync_config::GetTemplateSyncConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTemplateSyncConfigInputBuilder {
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
     pub(crate) template_type: ::std::option::Option<crate::types::TemplateType>,

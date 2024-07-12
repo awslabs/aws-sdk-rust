@@ -36,8 +36,8 @@ impl DetectToxicContentInput {
 }
 
 /// A builder for [`DetectToxicContentInput`](crate::operation::detect_toxic_content::DetectToxicContentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DetectToxicContentInputBuilder {
     pub(crate) text_segments: ::std::option::Option<::std::vec::Vec<crate::types::TextSegment>>,
     pub(crate) language_code: ::std::option::Option<crate::types::LanguageCode>,

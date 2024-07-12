@@ -26,8 +26,8 @@ impl GetComplianceDetailOutput {
 }
 
 /// A builder for [`GetComplianceDetailOutput`](crate::operation::get_compliance_detail::GetComplianceDetailOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetComplianceDetailOutputBuilder {
     pub(crate) policy_compliance_detail: ::std::option::Option<crate::types::PolicyComplianceDetail>,
     _request_id: Option<String>,

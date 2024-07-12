@@ -133,8 +133,8 @@ impl RedshiftDataSpec {
 }
 
 /// A builder for [`RedshiftDataSpec`](crate::types::RedshiftDataSpec).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RedshiftDataSpecBuilder {
     pub(crate) database_information: ::std::option::Option<crate::types::RedshiftDatabase>,
     pub(crate) select_sql_query: ::std::option::Option<::std::string::String>,

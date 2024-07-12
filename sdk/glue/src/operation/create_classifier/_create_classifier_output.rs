@@ -18,8 +18,8 @@ impl CreateClassifierOutput {
 }
 
 /// A builder for [`CreateClassifierOutput`](crate::operation::create_classifier::CreateClassifierOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateClassifierOutputBuilder {
     _request_id: Option<String>,
 }

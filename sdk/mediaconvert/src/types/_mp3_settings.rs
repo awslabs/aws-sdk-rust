@@ -45,8 +45,8 @@ impl Mp3Settings {
 }
 
 /// A builder for [`Mp3Settings`](crate::types::Mp3Settings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Mp3SettingsBuilder {
     pub(crate) bitrate: ::std::option::Option<i32>,
     pub(crate) channels: ::std::option::Option<i32>,

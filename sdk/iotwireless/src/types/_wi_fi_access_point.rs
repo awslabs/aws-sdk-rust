@@ -28,8 +28,8 @@ impl WiFiAccessPoint {
 }
 
 /// A builder for [`WiFiAccessPoint`](crate::types::WiFiAccessPoint).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WiFiAccessPointBuilder {
     pub(crate) mac_address: ::std::option::Option<::std::string::String>,
     pub(crate) rss: ::std::option::Option<i32>,

@@ -23,8 +23,8 @@ impl CompositionDetails {
 }
 
 /// A builder for [`CompositionDetails`](crate::types::CompositionDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CompositionDetailsBuilder {
     pub(crate) composition_relationship: ::std::option::Option<::std::vec::Vec<crate::types::CompositionRelationshipItem>>,
 }

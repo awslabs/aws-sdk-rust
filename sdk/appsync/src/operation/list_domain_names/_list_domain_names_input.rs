@@ -26,8 +26,8 @@ impl ListDomainNamesInput {
 }
 
 /// A builder for [`ListDomainNamesInput`](crate::operation::list_domain_names::ListDomainNamesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDomainNamesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

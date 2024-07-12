@@ -36,8 +36,8 @@ impl PutObjectRetentionOutput {
 }
 
 /// A builder for [`PutObjectRetentionOutput`](crate::operation::put_object_retention::PutObjectRetentionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutObjectRetentionOutputBuilder {
     pub(crate) request_charged: ::std::option::Option<crate::types::RequestCharged>,
     _extended_request_id: Option<String>,

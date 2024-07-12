@@ -18,8 +18,8 @@ impl UpdateStorageProfileOutput {
 }
 
 /// A builder for [`UpdateStorageProfileOutput`](crate::operation::update_storage_profile::UpdateStorageProfileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateStorageProfileOutputBuilder {
     _request_id: Option<String>,
 }

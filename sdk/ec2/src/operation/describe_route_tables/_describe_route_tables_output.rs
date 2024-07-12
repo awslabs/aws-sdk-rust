@@ -35,8 +35,8 @@ impl DescribeRouteTablesOutput {
 }
 
 /// A builder for [`DescribeRouteTablesOutput`](crate::operation::describe_route_tables::DescribeRouteTablesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRouteTablesOutputBuilder {
     pub(crate) route_tables: ::std::option::Option<::std::vec::Vec<crate::types::RouteTable>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

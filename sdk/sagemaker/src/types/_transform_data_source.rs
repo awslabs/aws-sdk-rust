@@ -21,8 +21,8 @@ impl TransformDataSource {
 }
 
 /// A builder for [`TransformDataSource`](crate::types::TransformDataSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TransformDataSourceBuilder {
     pub(crate) s3_data_source: ::std::option::Option<crate::types::TransformS3DataSource>,
 }

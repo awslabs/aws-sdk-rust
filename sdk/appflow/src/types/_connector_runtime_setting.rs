@@ -59,8 +59,8 @@ impl ConnectorRuntimeSetting {
 }
 
 /// A builder for [`ConnectorRuntimeSetting`](crate::types::ConnectorRuntimeSetting).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConnectorRuntimeSettingBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) data_type: ::std::option::Option<::std::string::String>,

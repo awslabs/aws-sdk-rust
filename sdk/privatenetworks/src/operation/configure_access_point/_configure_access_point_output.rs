@@ -26,8 +26,8 @@ impl ConfigureAccessPointOutput {
 }
 
 /// A builder for [`ConfigureAccessPointOutput`](crate::operation::configure_access_point::ConfigureAccessPointOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConfigureAccessPointOutputBuilder {
     pub(crate) access_point: ::std::option::Option<crate::types::NetworkResource>,
     _request_id: Option<String>,

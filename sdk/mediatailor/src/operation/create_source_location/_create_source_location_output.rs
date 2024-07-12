@@ -76,8 +76,8 @@ impl CreateSourceLocationOutput {
 }
 
 /// A builder for [`CreateSourceLocationOutput`](crate::operation::create_source_location::CreateSourceLocationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSourceLocationOutputBuilder {
     pub(crate) access_configuration: ::std::option::Option<crate::types::AccessConfiguration>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

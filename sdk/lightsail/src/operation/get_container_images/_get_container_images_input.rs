@@ -20,8 +20,8 @@ impl GetContainerImagesInput {
 }
 
 /// A builder for [`GetContainerImagesInput`](crate::operation::get_container_images::GetContainerImagesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetContainerImagesInputBuilder {
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
 }

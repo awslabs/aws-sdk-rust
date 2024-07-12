@@ -18,8 +18,8 @@ impl UpdateRelatedItemsOutput {
 }
 
 /// A builder for [`UpdateRelatedItemsOutput`](crate::operation::update_related_items::UpdateRelatedItemsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRelatedItemsOutputBuilder {
     _request_id: Option<String>,
 }

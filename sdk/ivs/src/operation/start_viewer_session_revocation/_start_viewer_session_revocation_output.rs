@@ -18,8 +18,8 @@ impl StartViewerSessionRevocationOutput {
 }
 
 /// A builder for [`StartViewerSessionRevocationOutput`](crate::operation::start_viewer_session_revocation::StartViewerSessionRevocationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartViewerSessionRevocationOutputBuilder {
     _request_id: Option<String>,
 }

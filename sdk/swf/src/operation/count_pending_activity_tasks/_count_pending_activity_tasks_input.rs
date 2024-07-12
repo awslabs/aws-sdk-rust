@@ -26,8 +26,8 @@ impl CountPendingActivityTasksInput {
 }
 
 /// A builder for [`CountPendingActivityTasksInput`](crate::operation::count_pending_activity_tasks::CountPendingActivityTasksInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CountPendingActivityTasksInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) task_list: ::std::option::Option<crate::types::TaskList>,

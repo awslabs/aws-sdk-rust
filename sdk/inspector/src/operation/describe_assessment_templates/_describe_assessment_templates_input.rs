@@ -22,8 +22,8 @@ impl DescribeAssessmentTemplatesInput {
 }
 
 /// A builder for [`DescribeAssessmentTemplatesInput`](crate::operation::describe_assessment_templates::DescribeAssessmentTemplatesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAssessmentTemplatesInputBuilder {
     pub(crate) assessment_template_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

@@ -21,8 +21,8 @@ impl ClassicLoadBalancer {
 }
 
 /// A builder for [`ClassicLoadBalancer`](crate::types::ClassicLoadBalancer).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ClassicLoadBalancerBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

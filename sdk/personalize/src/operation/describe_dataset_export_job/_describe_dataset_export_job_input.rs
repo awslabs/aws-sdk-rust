@@ -20,8 +20,8 @@ impl DescribeDatasetExportJobInput {
 }
 
 /// A builder for [`DescribeDatasetExportJobInput`](crate::operation::describe_dataset_export_job::DescribeDatasetExportJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDatasetExportJobInputBuilder {
     pub(crate) dataset_export_job_arn: ::std::option::Option<::std::string::String>,
 }

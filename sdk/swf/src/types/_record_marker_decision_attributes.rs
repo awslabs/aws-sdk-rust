@@ -39,8 +39,8 @@ impl RecordMarkerDecisionAttributes {
 }
 
 /// A builder for [`RecordMarkerDecisionAttributes`](crate::types::RecordMarkerDecisionAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecordMarkerDecisionAttributesBuilder {
     pub(crate) marker_name: ::std::option::Option<::std::string::String>,
     pub(crate) details: ::std::option::Option<::std::string::String>,

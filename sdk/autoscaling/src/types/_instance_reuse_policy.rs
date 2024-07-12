@@ -22,8 +22,8 @@ impl InstanceReusePolicy {
 }
 
 /// A builder for [`InstanceReusePolicy`](crate::types::InstanceReusePolicy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceReusePolicyBuilder {
     pub(crate) reuse_on_scale_in: ::std::option::Option<bool>,
 }

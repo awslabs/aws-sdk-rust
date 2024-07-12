@@ -47,8 +47,8 @@ impl RdsdbStorageRecommendationOption {
 }
 
 /// A builder for [`RdsdbStorageRecommendationOption`](crate::types::RdsdbStorageRecommendationOption).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RdsdbStorageRecommendationOptionBuilder {
     pub(crate) storage_configuration: ::std::option::Option<crate::types::DbStorageConfiguration>,
     pub(crate) rank: ::std::option::Option<i32>,

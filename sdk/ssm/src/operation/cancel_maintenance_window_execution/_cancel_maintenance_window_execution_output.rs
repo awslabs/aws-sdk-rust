@@ -26,8 +26,8 @@ impl CancelMaintenanceWindowExecutionOutput {
 }
 
 /// A builder for [`CancelMaintenanceWindowExecutionOutput`](crate::operation::cancel_maintenance_window_execution::CancelMaintenanceWindowExecutionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelMaintenanceWindowExecutionOutputBuilder {
     pub(crate) window_execution_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

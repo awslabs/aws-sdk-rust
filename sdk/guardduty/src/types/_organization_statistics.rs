@@ -48,8 +48,8 @@ impl OrganizationStatistics {
 }
 
 /// A builder for [`OrganizationStatistics`](crate::types::OrganizationStatistics).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OrganizationStatisticsBuilder {
     pub(crate) total_accounts_count: ::std::option::Option<i32>,
     pub(crate) member_accounts_count: ::std::option::Option<i32>,

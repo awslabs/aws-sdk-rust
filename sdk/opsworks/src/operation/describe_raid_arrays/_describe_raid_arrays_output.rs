@@ -29,8 +29,8 @@ impl DescribeRaidArraysOutput {
 }
 
 /// A builder for [`DescribeRaidArraysOutput`](crate::operation::describe_raid_arrays::DescribeRaidArraysOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRaidArraysOutputBuilder {
     pub(crate) raid_arrays: ::std::option::Option<::std::vec::Vec<crate::types::RaidArray>>,
     _request_id: Option<String>,

@@ -41,8 +41,8 @@ impl UpdateFarmInput {
 }
 
 /// A builder for [`UpdateFarmInput`](crate::operation::update_farm::UpdateFarmInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateFarmInputBuilder {
     pub(crate) farm_id: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,

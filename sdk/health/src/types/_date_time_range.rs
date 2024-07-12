@@ -27,8 +27,8 @@ impl DateTimeRange {
 }
 
 /// A builder for [`DateTimeRange`](crate::types::DateTimeRange).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DateTimeRangeBuilder {
     pub(crate) from: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) to: ::std::option::Option<::aws_smithy_types::DateTime>,

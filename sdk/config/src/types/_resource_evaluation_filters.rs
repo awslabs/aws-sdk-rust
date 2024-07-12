@@ -37,8 +37,8 @@ impl ResourceEvaluationFilters {
 }
 
 /// A builder for [`ResourceEvaluationFilters`](crate::types::ResourceEvaluationFilters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResourceEvaluationFiltersBuilder {
     pub(crate) evaluation_mode: ::std::option::Option<crate::types::EvaluationMode>,
     pub(crate) time_window: ::std::option::Option<crate::types::TimeWindow>,

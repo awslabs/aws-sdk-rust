@@ -27,8 +27,8 @@ impl ModifySpotFleetRequestOutput {
 }
 
 /// A builder for [`ModifySpotFleetRequestOutput`](crate::operation::modify_spot_fleet_request::ModifySpotFleetRequestOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifySpotFleetRequestOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,

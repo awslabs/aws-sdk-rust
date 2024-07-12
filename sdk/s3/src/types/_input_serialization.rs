@@ -39,8 +39,8 @@ impl InputSerialization {
 }
 
 /// A builder for [`InputSerialization`](crate::types::InputSerialization).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InputSerializationBuilder {
     pub(crate) csv: ::std::option::Option<crate::types::CsvInput>,
     pub(crate) compression_type: ::std::option::Option<crate::types::CompressionType>,

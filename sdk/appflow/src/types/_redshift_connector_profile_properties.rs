@@ -71,8 +71,8 @@ impl RedshiftConnectorProfileProperties {
 }
 
 /// A builder for [`RedshiftConnectorProfileProperties`](crate::types::RedshiftConnectorProfileProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RedshiftConnectorProfilePropertiesBuilder {
     pub(crate) database_url: ::std::option::Option<::std::string::String>,
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,

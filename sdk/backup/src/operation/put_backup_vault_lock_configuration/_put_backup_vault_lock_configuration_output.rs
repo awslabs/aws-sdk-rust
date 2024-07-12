@@ -18,8 +18,8 @@ impl PutBackupVaultLockConfigurationOutput {
 }
 
 /// A builder for [`PutBackupVaultLockConfigurationOutput`](crate::operation::put_backup_vault_lock_configuration::PutBackupVaultLockConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutBackupVaultLockConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

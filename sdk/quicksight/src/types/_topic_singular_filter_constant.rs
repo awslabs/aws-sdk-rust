@@ -35,8 +35,8 @@ impl TopicSingularFilterConstant {
 }
 
 /// A builder for [`TopicSingularFilterConstant`](crate::types::TopicSingularFilterConstant).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct TopicSingularFilterConstantBuilder {
     pub(crate) constant_type: ::std::option::Option<crate::types::ConstantType>,
     pub(crate) singular_constant: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl DescribePiiEntitiesDetectionJobOutput {
 }
 
 /// A builder for [`DescribePiiEntitiesDetectionJobOutput`](crate::operation::describe_pii_entities_detection_job::DescribePiiEntitiesDetectionJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribePiiEntitiesDetectionJobOutputBuilder {
     pub(crate) pii_entities_detection_job_properties: ::std::option::Option<crate::types::PiiEntitiesDetectionJobProperties>,
     _request_id: Option<String>,

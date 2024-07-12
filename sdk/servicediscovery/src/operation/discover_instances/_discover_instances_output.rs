@@ -34,8 +34,8 @@ impl DiscoverInstancesOutput {
 }
 
 /// A builder for [`DiscoverInstancesOutput`](crate::operation::discover_instances::DiscoverInstancesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DiscoverInstancesOutputBuilder {
     pub(crate) instances: ::std::option::Option<::std::vec::Vec<crate::types::HttpInstanceSummary>>,
     pub(crate) instances_revision: ::std::option::Option<i64>,

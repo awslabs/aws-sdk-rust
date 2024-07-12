@@ -35,8 +35,8 @@ impl RemovePermissionOutput {
 }
 
 /// A builder for [`RemovePermissionOutput`](crate::operation::remove_permission::RemovePermissionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemovePermissionOutputBuilder {
     pub(crate) policy: ::std::option::Option<::std::string::String>,
     pub(crate) revision_id: ::std::option::Option<::std::string::String>,

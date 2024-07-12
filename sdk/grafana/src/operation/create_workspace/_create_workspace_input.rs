@@ -169,8 +169,8 @@ impl CreateWorkspaceInput {
 }
 
 /// A builder for [`CreateWorkspaceInput`](crate::operation::create_workspace::CreateWorkspaceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateWorkspaceInputBuilder {
     pub(crate) account_access_type: ::std::option::Option<crate::types::AccountAccessType>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

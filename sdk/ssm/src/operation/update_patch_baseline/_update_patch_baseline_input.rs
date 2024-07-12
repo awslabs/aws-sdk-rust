@@ -108,8 +108,8 @@ impl UpdatePatchBaselineInput {
 }
 
 /// A builder for [`UpdatePatchBaselineInput`](crate::operation::update_patch_baseline::UpdatePatchBaselineInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePatchBaselineInputBuilder {
     pub(crate) baseline_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

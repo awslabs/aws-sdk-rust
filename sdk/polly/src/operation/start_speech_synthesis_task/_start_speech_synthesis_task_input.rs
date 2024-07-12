@@ -96,8 +96,8 @@ impl StartSpeechSynthesisTaskInput {
 }
 
 /// A builder for [`StartSpeechSynthesisTaskInput`](crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartSpeechSynthesisTaskInputBuilder {
     pub(crate) engine: ::std::option::Option<crate::types::Engine>,
     pub(crate) language_code: ::std::option::Option<crate::types::LanguageCode>,

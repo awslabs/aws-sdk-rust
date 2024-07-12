@@ -84,8 +84,8 @@ impl GetArchiveOutput {
 }
 
 /// A builder for [`GetArchiveOutput`](crate::operation::get_archive::GetArchiveOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetArchiveOutputBuilder {
     pub(crate) archive_id: ::std::option::Option<::std::string::String>,
     pub(crate) archive_name: ::std::option::Option<::std::string::String>,

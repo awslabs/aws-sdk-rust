@@ -28,8 +28,8 @@ impl DeleteVpcEndpointsOutput {
 }
 
 /// A builder for [`DeleteVpcEndpointsOutput`](crate::operation::delete_vpc_endpoints::DeleteVpcEndpointsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVpcEndpointsOutputBuilder {
     pub(crate) unsuccessful: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulItem>>,
     _request_id: Option<String>,

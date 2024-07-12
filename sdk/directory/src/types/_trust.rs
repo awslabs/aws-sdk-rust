@@ -81,8 +81,8 @@ impl Trust {
 }
 
 /// A builder for [`Trust`](crate::types::Trust).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TrustBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) trust_id: ::std::option::Option<::std::string::String>,

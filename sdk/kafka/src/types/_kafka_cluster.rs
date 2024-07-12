@@ -27,8 +27,8 @@ impl KafkaCluster {
 }
 
 /// A builder for [`KafkaCluster`](crate::types::KafkaCluster).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KafkaClusterBuilder {
     pub(crate) amazon_msk_cluster: ::std::option::Option<crate::types::AmazonMskCluster>,
     pub(crate) vpc_config: ::std::option::Option<crate::types::KafkaClusterClientVpcConfig>,

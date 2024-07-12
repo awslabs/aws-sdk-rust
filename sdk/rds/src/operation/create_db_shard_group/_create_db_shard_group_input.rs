@@ -94,8 +94,8 @@ impl CreateDbShardGroupInput {
 }
 
 /// A builder for [`CreateDbShardGroupInput`](crate::operation::create_db_shard_group::CreateDbShardGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDbShardGroupInputBuilder {
     pub(crate) db_shard_group_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) db_cluster_identifier: ::std::option::Option<::std::string::String>,

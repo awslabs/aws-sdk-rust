@@ -69,8 +69,8 @@ impl UpdateChapCredentialsInput {
 }
 
 /// A builder for [`UpdateChapCredentialsInput`](crate::operation::update_chap_credentials::UpdateChapCredentialsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateChapCredentialsInputBuilder {
     pub(crate) target_arn: ::std::option::Option<::std::string::String>,
     pub(crate) secret_to_authenticate_initiator: ::std::option::Option<::std::string::String>,

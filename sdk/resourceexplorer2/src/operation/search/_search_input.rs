@@ -60,8 +60,8 @@ impl SearchInput {
 }
 
 /// A builder for [`SearchInput`](crate::operation::search::SearchInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SearchInputBuilder {
     pub(crate) query_string: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

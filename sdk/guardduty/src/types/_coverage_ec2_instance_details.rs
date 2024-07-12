@@ -61,8 +61,8 @@ impl CoverageEc2InstanceDetails {
 }
 
 /// A builder for [`CoverageEc2InstanceDetails`](crate::types::CoverageEc2InstanceDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CoverageEc2InstanceDetailsBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_type: ::std::option::Option<::std::string::String>,

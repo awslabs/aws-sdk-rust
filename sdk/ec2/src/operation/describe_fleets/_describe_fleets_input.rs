@@ -76,8 +76,8 @@ impl DescribeFleetsInput {
 }
 
 /// A builder for [`DescribeFleetsInput`](crate::operation::describe_fleets::DescribeFleetsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFleetsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) max_results: ::std::option::Option<i32>,

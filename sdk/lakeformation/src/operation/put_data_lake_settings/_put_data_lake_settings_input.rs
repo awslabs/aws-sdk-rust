@@ -26,8 +26,8 @@ impl PutDataLakeSettingsInput {
 }
 
 /// A builder for [`PutDataLakeSettingsInput`](crate::operation::put_data_lake_settings::PutDataLakeSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutDataLakeSettingsInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_lake_settings: ::std::option::Option<crate::types::DataLakeSettings>,

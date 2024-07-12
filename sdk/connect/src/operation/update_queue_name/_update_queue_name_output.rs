@@ -18,8 +18,8 @@ impl UpdateQueueNameOutput {
 }
 
 /// A builder for [`UpdateQueueNameOutput`](crate::operation::update_queue_name::UpdateQueueNameOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateQueueNameOutputBuilder {
     _request_id: Option<String>,
 }

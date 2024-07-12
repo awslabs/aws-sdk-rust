@@ -18,8 +18,8 @@ impl RevokeGrantOutput {
 }
 
 /// A builder for [`RevokeGrantOutput`](crate::operation::revoke_grant::RevokeGrantOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RevokeGrantOutputBuilder {
     _request_id: Option<String>,
 }

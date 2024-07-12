@@ -29,8 +29,8 @@ impl RecipeReference {
 }
 
 /// A builder for [`RecipeReference`](crate::types::RecipeReference).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecipeReferenceBuilder {
     pub(crate) recipe_arn: ::std::option::Option<::std::string::String>,
     pub(crate) recipe_version: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl GetStreamSessionInput {
 }
 
 /// A builder for [`GetStreamSessionInput`](crate::operation::get_stream_session::GetStreamSessionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetStreamSessionInputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) stream_id: ::std::option::Option<::std::string::String>,

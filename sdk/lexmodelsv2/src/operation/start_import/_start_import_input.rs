@@ -48,8 +48,8 @@ impl StartImportInput {
 }
 
 /// A builder for [`StartImportInput`](crate::operation::start_import::StartImportInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct StartImportInputBuilder {
     pub(crate) import_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_specification: ::std::option::Option<crate::types::ImportResourceSpecification>,

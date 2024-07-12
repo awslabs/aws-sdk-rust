@@ -20,8 +20,8 @@ impl EnableVpcClassicLinkDnsSupportInput {
 }
 
 /// A builder for [`EnableVpcClassicLinkDnsSupportInput`](crate::operation::enable_vpc_classic_link_dns_support::EnableVpcClassicLinkDnsSupportInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnableVpcClassicLinkDnsSupportInputBuilder {
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
 }

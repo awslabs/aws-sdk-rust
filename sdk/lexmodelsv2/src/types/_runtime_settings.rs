@@ -21,8 +21,8 @@ impl RuntimeSettings {
 }
 
 /// A builder for [`RuntimeSettings`](crate::types::RuntimeSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RuntimeSettingsBuilder {
     pub(crate) slot_resolution_improvement: ::std::option::Option<crate::types::SlotResolutionImprovementSpecification>,
 }

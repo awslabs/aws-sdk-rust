@@ -21,8 +21,8 @@ impl ReplaceDefaultPolicyVersionParams {
 }
 
 /// A builder for [`ReplaceDefaultPolicyVersionParams`](crate::types::ReplaceDefaultPolicyVersionParams).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReplaceDefaultPolicyVersionParamsBuilder {
     pub(crate) template_name: ::std::option::Option<crate::types::PolicyTemplateName>,
 }

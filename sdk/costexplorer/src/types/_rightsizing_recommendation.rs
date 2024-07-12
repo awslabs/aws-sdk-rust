@@ -53,8 +53,8 @@ impl RightsizingRecommendation {
 }
 
 /// A builder for [`RightsizingRecommendation`](crate::types::RightsizingRecommendation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RightsizingRecommendationBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) current_instance: ::std::option::Option<crate::types::CurrentInstance>,

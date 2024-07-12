@@ -77,8 +77,8 @@ impl CreateModelCardInput {
 }
 
 /// A builder for [`CreateModelCardInput`](crate::operation::create_model_card::CreateModelCardInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateModelCardInputBuilder {
     pub(crate) model_card_name: ::std::option::Option<::std::string::String>,
     pub(crate) security_config: ::std::option::Option<crate::types::ModelCardSecurityConfig>,

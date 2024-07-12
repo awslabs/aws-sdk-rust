@@ -18,8 +18,8 @@ impl DeleteAnomalySubscriptionOutput {
 }
 
 /// A builder for [`DeleteAnomalySubscriptionOutput`](crate::operation::delete_anomaly_subscription::DeleteAnomalySubscriptionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAnomalySubscriptionOutputBuilder {
     _request_id: Option<String>,
 }

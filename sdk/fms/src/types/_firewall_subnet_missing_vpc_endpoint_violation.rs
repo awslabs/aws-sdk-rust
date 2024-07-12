@@ -39,8 +39,8 @@ impl FirewallSubnetMissingVpcEndpointViolation {
 }
 
 /// A builder for [`FirewallSubnetMissingVpcEndpointViolation`](crate::types::FirewallSubnetMissingVpcEndpointViolation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FirewallSubnetMissingVpcEndpointViolationBuilder {
     pub(crate) firewall_subnet_id: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,

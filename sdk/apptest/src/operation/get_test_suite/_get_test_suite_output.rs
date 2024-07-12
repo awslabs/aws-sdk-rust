@@ -109,8 +109,8 @@ impl GetTestSuiteOutput {
 }
 
 /// A builder for [`GetTestSuiteOutput`](crate::operation::get_test_suite::GetTestSuiteOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTestSuiteOutputBuilder {
     pub(crate) test_suite_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

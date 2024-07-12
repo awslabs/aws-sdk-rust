@@ -57,8 +57,8 @@ impl Notification {
 }
 
 /// A builder for [`Notification`](crate::types::Notification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NotificationBuilder {
     pub(crate) notification_type: ::std::option::Option<crate::types::NotificationType>,
     pub(crate) comparison_operator: ::std::option::Option<crate::types::ComparisonOperator>,

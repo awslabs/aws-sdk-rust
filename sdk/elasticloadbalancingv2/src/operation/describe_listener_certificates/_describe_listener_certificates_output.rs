@@ -34,8 +34,8 @@ impl DescribeListenerCertificatesOutput {
 }
 
 /// A builder for [`DescribeListenerCertificatesOutput`](crate::operation::describe_listener_certificates::DescribeListenerCertificatesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeListenerCertificatesOutputBuilder {
     pub(crate) certificates: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,

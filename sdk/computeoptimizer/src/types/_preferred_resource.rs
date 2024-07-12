@@ -48,8 +48,8 @@ impl PreferredResource {
 }
 
 /// A builder for [`PreferredResource`](crate::types::PreferredResource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PreferredResourceBuilder {
     pub(crate) name: ::std::option::Option<crate::types::PreferredResourceName>,
     pub(crate) include_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -20,8 +20,8 @@ impl DeleteLagInput {
 }
 
 /// A builder for [`DeleteLagInput`](crate::operation::delete_lag::DeleteLagInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteLagInputBuilder {
     pub(crate) lag_id: ::std::option::Option<::std::string::String>,
 }

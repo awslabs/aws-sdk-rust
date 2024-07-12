@@ -53,8 +53,8 @@ impl CustomVerificationEmailTemplateAlreadyExistsException {
 }
 
 /// A builder for [`CustomVerificationEmailTemplateAlreadyExistsException`](crate::types::error::CustomVerificationEmailTemplateAlreadyExistsException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CustomVerificationEmailTemplateAlreadyExistsExceptionBuilder {
     pub(crate) custom_verification_email_template_name: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

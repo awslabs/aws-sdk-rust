@@ -18,8 +18,8 @@ impl UpdateLogAnomalyDetectorOutput {
 }
 
 /// A builder for [`UpdateLogAnomalyDetectorOutput`](crate::operation::update_log_anomaly_detector::UpdateLogAnomalyDetectorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateLogAnomalyDetectorOutputBuilder {
     _request_id: Option<String>,
 }

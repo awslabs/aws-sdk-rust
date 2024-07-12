@@ -18,8 +18,8 @@ impl PutLifecycleHookOutput {
 }
 
 /// A builder for [`PutLifecycleHookOutput`](crate::operation::put_lifecycle_hook::PutLifecycleHookOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutLifecycleHookOutputBuilder {
     _request_id: Option<String>,
 }

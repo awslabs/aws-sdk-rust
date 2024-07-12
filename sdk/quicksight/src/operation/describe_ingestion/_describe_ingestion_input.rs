@@ -32,8 +32,8 @@ impl DescribeIngestionInput {
 }
 
 /// A builder for [`DescribeIngestionInput`](crate::operation::describe_ingestion::DescribeIngestionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeIngestionInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,

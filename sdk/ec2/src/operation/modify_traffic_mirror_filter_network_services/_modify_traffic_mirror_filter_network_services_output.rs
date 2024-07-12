@@ -27,8 +27,8 @@ impl ModifyTrafficMirrorFilterNetworkServicesOutput {
 }
 
 /// A builder for [`ModifyTrafficMirrorFilterNetworkServicesOutput`](crate::operation::modify_traffic_mirror_filter_network_services::ModifyTrafficMirrorFilterNetworkServicesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyTrafficMirrorFilterNetworkServicesOutputBuilder {
     pub(crate) traffic_mirror_filter: ::std::option::Option<crate::types::TrafficMirrorFilter>,
     _request_id: Option<String>,

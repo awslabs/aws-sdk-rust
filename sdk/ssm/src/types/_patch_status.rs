@@ -33,8 +33,8 @@ impl PatchStatus {
 }
 
 /// A builder for [`PatchStatus`](crate::types::PatchStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PatchStatusBuilder {
     pub(crate) deployment_status: ::std::option::Option<crate::types::PatchDeploymentStatus>,
     pub(crate) compliance_level: ::std::option::Option<crate::types::PatchComplianceLevel>,

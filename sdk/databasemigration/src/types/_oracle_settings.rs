@@ -370,8 +370,8 @@ impl OracleSettings {
 }
 
 /// A builder for [`OracleSettings`](crate::types::OracleSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct OracleSettingsBuilder {
     pub(crate) add_supplemental_logging: ::std::option::Option<bool>,
     pub(crate) archived_log_dest_id: ::std::option::Option<i32>,

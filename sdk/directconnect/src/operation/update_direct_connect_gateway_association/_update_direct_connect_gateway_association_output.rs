@@ -26,8 +26,8 @@ impl UpdateDirectConnectGatewayAssociationOutput {
 }
 
 /// A builder for [`UpdateDirectConnectGatewayAssociationOutput`](crate::operation::update_direct_connect_gateway_association::UpdateDirectConnectGatewayAssociationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDirectConnectGatewayAssociationOutputBuilder {
     pub(crate) direct_connect_gateway_association: ::std::option::Option<crate::types::DirectConnectGatewayAssociation>,
     _request_id: Option<String>,

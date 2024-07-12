@@ -20,8 +20,8 @@ impl PutAccountSettingsInput {
 }
 
 /// A builder for [`PutAccountSettingsInput`](crate::operation::put_account_settings::PutAccountSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutAccountSettingsInputBuilder {
     pub(crate) notification_subscription_status: ::std::option::Option<crate::types::NotificationSubscriptionStatus>,
 }

@@ -45,8 +45,8 @@ impl AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetail
 }
 
 /// A builder for [`AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails`](crate::types::AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetailsBuilder {
     pub(crate) cloud_watch_encryption_enabled: ::std::option::Option<bool>,
     pub(crate) cloud_watch_log_group_name: ::std::option::Option<::std::string::String>,

@@ -173,8 +173,8 @@ impl BackupJob {
 }
 
 /// A builder for [`BackupJob`](crate::types::BackupJob).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BackupJobBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) backup_job_id: ::std::option::Option<::std::string::String>,

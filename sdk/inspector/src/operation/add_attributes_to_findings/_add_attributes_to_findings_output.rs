@@ -26,8 +26,8 @@ impl AddAttributesToFindingsOutput {
 }
 
 /// A builder for [`AddAttributesToFindingsOutput`](crate::operation::add_attributes_to_findings::AddAttributesToFindingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddAttributesToFindingsOutputBuilder {
     pub(crate) failed_items: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>>,
     _request_id: Option<String>,

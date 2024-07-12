@@ -18,8 +18,8 @@ impl DeletePlaybackRestrictionPolicyOutput {
 }
 
 /// A builder for [`DeletePlaybackRestrictionPolicyOutput`](crate::operation::delete_playback_restriction_policy::DeletePlaybackRestrictionPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePlaybackRestrictionPolicyOutputBuilder {
     _request_id: Option<String>,
 }

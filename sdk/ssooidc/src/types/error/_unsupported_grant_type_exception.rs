@@ -59,8 +59,8 @@ impl UnsupportedGrantTypeException {
 }
 
 /// A builder for [`UnsupportedGrantTypeException`](crate::types::error::UnsupportedGrantTypeException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UnsupportedGrantTypeExceptionBuilder {
     pub(crate) error: ::std::option::Option<::std::string::String>,
     pub(crate) error_description: ::std::option::Option<::std::string::String>,

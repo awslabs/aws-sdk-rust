@@ -32,8 +32,8 @@ impl UpdateBrokerCountOutput {
 }
 
 /// A builder for [`UpdateBrokerCountOutput`](crate::operation::update_broker_count::UpdateBrokerCountOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateBrokerCountOutputBuilder {
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_operation_arn: ::std::option::Option<::std::string::String>,

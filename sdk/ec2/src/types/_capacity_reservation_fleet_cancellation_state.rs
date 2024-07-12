@@ -33,8 +33,8 @@ impl CapacityReservationFleetCancellationState {
 }
 
 /// A builder for [`CapacityReservationFleetCancellationState`](crate::types::CapacityReservationFleetCancellationState).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CapacityReservationFleetCancellationStateBuilder {
     pub(crate) current_fleet_state: ::std::option::Option<crate::types::CapacityReservationFleetState>,
     pub(crate) previous_fleet_state: ::std::option::Option<crate::types::CapacityReservationFleetState>,

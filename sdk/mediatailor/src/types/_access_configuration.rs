@@ -55,8 +55,8 @@ impl AccessConfiguration {
 }
 
 /// A builder for [`AccessConfiguration`](crate::types::AccessConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AccessConfigurationBuilder {
     pub(crate) access_type: ::std::option::Option<crate::types::AccessType>,
     pub(crate) secrets_manager_access_token_configuration: ::std::option::Option<crate::types::SecretsManagerAccessTokenConfiguration>,

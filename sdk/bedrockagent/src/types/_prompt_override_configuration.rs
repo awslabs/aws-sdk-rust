@@ -36,8 +36,8 @@ impl PromptOverrideConfiguration {
 }
 
 /// A builder for [`PromptOverrideConfiguration`](crate::types::PromptOverrideConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PromptOverrideConfigurationBuilder {
     pub(crate) prompt_configurations: ::std::option::Option<::std::vec::Vec<crate::types::PromptConfiguration>>,
     pub(crate) override_lambda: ::std::option::Option<::std::string::String>,

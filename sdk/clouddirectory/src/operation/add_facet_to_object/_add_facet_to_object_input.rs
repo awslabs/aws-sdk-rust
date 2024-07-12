@@ -40,8 +40,8 @@ impl AddFacetToObjectInput {
 }
 
 /// A builder for [`AddFacetToObjectInput`](crate::operation::add_facet_to_object::AddFacetToObjectInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddFacetToObjectInputBuilder {
     pub(crate) directory_arn: ::std::option::Option<::std::string::String>,
     pub(crate) schema_facet: ::std::option::Option<crate::types::SchemaFacet>,

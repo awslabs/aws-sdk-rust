@@ -146,8 +146,8 @@ impl CreateClassificationJobInput {
 }
 
 /// A builder for [`CreateClassificationJobInput`](crate::operation::create_classification_job::CreateClassificationJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateClassificationJobInputBuilder {
     pub(crate) allow_list_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

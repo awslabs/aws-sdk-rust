@@ -56,8 +56,8 @@ impl AuthorizeClientVpnIngressInput {
 }
 
 /// A builder for [`AuthorizeClientVpnIngressInput`](crate::operation::authorize_client_vpn_ingress::AuthorizeClientVpnIngressInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AuthorizeClientVpnIngressInputBuilder {
     pub(crate) client_vpn_endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) target_network_cidr: ::std::option::Option<::std::string::String>,

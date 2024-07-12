@@ -38,8 +38,8 @@ impl RegisteredDomainDelegationInfo {
 }
 
 /// A builder for [`RegisteredDomainDelegationInfo`](crate::types::RegisteredDomainDelegationInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisteredDomainDelegationInfoBuilder {
     pub(crate) name_servers_update_state: ::std::option::Option<crate::types::NameServersUpdateState>,
     pub(crate) r53_hosted_zone_deletion_state: ::std::option::Option<crate::types::R53HostedZoneDeletionState>,

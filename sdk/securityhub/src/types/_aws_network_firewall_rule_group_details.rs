@@ -58,8 +58,8 @@ impl AwsNetworkFirewallRuleGroupDetails {
 }
 
 /// A builder for [`AwsNetworkFirewallRuleGroupDetails`](crate::types::AwsNetworkFirewallRuleGroupDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsNetworkFirewallRuleGroupDetailsBuilder {
     pub(crate) capacity: ::std::option::Option<i32>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

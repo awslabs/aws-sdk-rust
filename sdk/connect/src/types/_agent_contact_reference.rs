@@ -61,8 +61,8 @@ impl AgentContactReference {
 }
 
 /// A builder for [`AgentContactReference`](crate::types::AgentContactReference).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AgentContactReferenceBuilder {
     pub(crate) contact_id: ::std::option::Option<::std::string::String>,
     pub(crate) channel: ::std::option::Option<crate::types::Channel>,

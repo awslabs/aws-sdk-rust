@@ -41,8 +41,8 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails {
 }
 
 /// A builder for [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails`](crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetailsBuilder {
     pub(crate) operands:
         ::std::option::Option<::std::vec::Vec<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails>>,

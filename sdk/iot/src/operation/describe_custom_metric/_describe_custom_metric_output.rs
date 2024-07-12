@@ -60,8 +60,8 @@ impl DescribeCustomMetricOutput {
 }
 
 /// A builder for [`DescribeCustomMetricOutput`](crate::operation::describe_custom_metric::DescribeCustomMetricOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCustomMetricOutputBuilder {
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
     pub(crate) metric_arn: ::std::option::Option<::std::string::String>,

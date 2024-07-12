@@ -20,8 +20,8 @@ impl GetAppInstanceRetentionSettingsInput {
 }
 
 /// A builder for [`GetAppInstanceRetentionSettingsInput`](crate::operation::get_app_instance_retention_settings::GetAppInstanceRetentionSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAppInstanceRetentionSettingsInputBuilder {
     pub(crate) app_instance_arn: ::std::option::Option<::std::string::String>,
 }

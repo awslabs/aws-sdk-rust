@@ -24,8 +24,8 @@ impl RulesConfigurationType {
 }
 
 /// A builder for [`RulesConfigurationType`](crate::types::RulesConfigurationType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RulesConfigurationTypeBuilder {
     pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::MappingRule>>,
 }

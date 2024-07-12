@@ -34,8 +34,8 @@ impl ListModelManifestsOutput {
 }
 
 /// A builder for [`ListModelManifestsOutput`](crate::operation::list_model_manifests::ListModelManifestsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListModelManifestsOutputBuilder {
     pub(crate) summaries: ::std::option::Option<::std::vec::Vec<crate::types::ModelManifestSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

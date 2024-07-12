@@ -84,8 +84,8 @@ impl NetworkSite {
 }
 
 /// A builder for [`NetworkSite`](crate::types::NetworkSite).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NetworkSiteBuilder {
     pub(crate) network_site_arn: ::std::option::Option<::std::string::String>,
     pub(crate) network_site_name: ::std::option::Option<::std::string::String>,

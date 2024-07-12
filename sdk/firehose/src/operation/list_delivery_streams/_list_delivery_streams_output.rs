@@ -33,8 +33,8 @@ impl ListDeliveryStreamsOutput {
 }
 
 /// A builder for [`ListDeliveryStreamsOutput`](crate::operation::list_delivery_streams::ListDeliveryStreamsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDeliveryStreamsOutputBuilder {
     pub(crate) delivery_stream_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) has_more_delivery_streams: ::std::option::Option<bool>,

@@ -40,8 +40,8 @@ impl PutBucketAccelerateConfigurationInput {
 }
 
 /// A builder for [`PutBucketAccelerateConfigurationInput`](crate::operation::put_bucket_accelerate_configuration::PutBucketAccelerateConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutBucketAccelerateConfigurationInputBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) accelerate_configuration: ::std::option::Option<crate::types::AccelerateConfiguration>,

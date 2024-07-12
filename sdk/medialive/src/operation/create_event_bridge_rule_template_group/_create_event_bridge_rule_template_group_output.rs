@@ -63,8 +63,8 @@ impl CreateEventBridgeRuleTemplateGroupOutput {
 }
 
 /// A builder for [`CreateEventBridgeRuleTemplateGroupOutput`](crate::operation::create_event_bridge_rule_template_group::CreateEventBridgeRuleTemplateGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateEventBridgeRuleTemplateGroupOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,

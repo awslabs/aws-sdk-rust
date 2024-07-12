@@ -22,8 +22,8 @@ impl DescribeCertificateAuthorityInput {
 }
 
 /// A builder for [`DescribeCertificateAuthorityInput`](crate::operation::describe_certificate_authority::DescribeCertificateAuthorityInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCertificateAuthorityInputBuilder {
     pub(crate) certificate_authority_arn: ::std::option::Option<::std::string::String>,
 }

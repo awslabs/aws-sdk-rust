@@ -44,8 +44,8 @@ impl StartRouteAnalysisInput {
 }
 
 /// A builder for [`StartRouteAnalysisInput`](crate::operation::start_route_analysis::StartRouteAnalysisInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartRouteAnalysisInputBuilder {
     pub(crate) global_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) source: ::std::option::Option<crate::types::RouteAnalysisEndpointOptionsSpecification>,

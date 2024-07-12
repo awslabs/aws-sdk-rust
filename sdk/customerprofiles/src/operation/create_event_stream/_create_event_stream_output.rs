@@ -33,8 +33,8 @@ impl CreateEventStreamOutput {
 }
 
 /// A builder for [`CreateEventStreamOutput`](crate::operation::create_event_stream::CreateEventStreamOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateEventStreamOutputBuilder {
     pub(crate) event_stream_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

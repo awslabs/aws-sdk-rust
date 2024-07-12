@@ -59,8 +59,8 @@ impl FunnelChartDataLabelOptions {
 }
 
 /// A builder for [`FunnelChartDataLabelOptions`](crate::types::FunnelChartDataLabelOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FunnelChartDataLabelOptionsBuilder {
     pub(crate) visibility: ::std::option::Option<crate::types::Visibility>,
     pub(crate) category_label_visibility: ::std::option::Option<crate::types::Visibility>,

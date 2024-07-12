@@ -27,8 +27,8 @@ impl ExportErrorDetails {
 }
 
 /// A builder for [`ExportErrorDetails`](crate::types::ExportErrorDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExportErrorDetailsBuilder {
     pub(crate) export_results: ::std::option::Option<crate::types::ExportErrorDetailsOutput>,
     pub(crate) export_source_images: ::std::option::Option<crate::types::ExportErrorDetailsOutput>,

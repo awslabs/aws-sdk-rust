@@ -41,8 +41,8 @@ impl CreateExportInput {
 }
 
 /// A builder for [`CreateExportInput`](crate::operation::create_export::CreateExportInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateExportInputBuilder {
     pub(crate) resource_specification: ::std::option::Option<crate::types::ExportResourceSpecification>,
     pub(crate) file_format: ::std::option::Option<crate::types::ImportExportFileFormat>,

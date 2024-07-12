@@ -32,8 +32,8 @@ impl UpdateLandingZoneInput {
 }
 
 /// A builder for [`UpdateLandingZoneInput`](crate::operation::update_landing_zone::UpdateLandingZoneInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateLandingZoneInputBuilder {
     pub(crate) version: ::std::option::Option<::std::string::String>,
     pub(crate) manifest: ::std::option::Option<::aws_smithy_types::Document>,

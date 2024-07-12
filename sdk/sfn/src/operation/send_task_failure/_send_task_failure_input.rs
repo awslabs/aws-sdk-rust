@@ -41,8 +41,8 @@ impl SendTaskFailureInput {
 }
 
 /// A builder for [`SendTaskFailureInput`](crate::operation::send_task_failure::SendTaskFailureInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SendTaskFailureInputBuilder {
     pub(crate) task_token: ::std::option::Option<::std::string::String>,
     pub(crate) error: ::std::option::Option<::std::string::String>,

@@ -42,8 +42,8 @@ impl SshPublicKeyMetadata {
 }
 
 /// A builder for [`SshPublicKeyMetadata`](crate::types::SshPublicKeyMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SshPublicKeyMetadataBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) ssh_public_key_id: ::std::option::Option<::std::string::String>,

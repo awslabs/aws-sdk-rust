@@ -30,8 +30,8 @@ impl GetParametersForImportInput {
 }
 
 /// A builder for [`GetParametersForImportInput`](crate::operation::get_parameters_for_import::GetParametersForImportInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetParametersForImportInputBuilder {
     pub(crate) key_material_type: ::std::option::Option<crate::types::KeyMaterialType>,
     pub(crate) wrapping_key_algorithm: ::std::option::Option<crate::types::KeyAlgorithm>,

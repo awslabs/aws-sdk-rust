@@ -316,8 +316,8 @@ impl GetCurrentMetricDataInput {
 }
 
 /// A builder for [`GetCurrentMetricDataInput`](crate::operation::get_current_metric_data::GetCurrentMetricDataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCurrentMetricDataInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<crate::types::Filters>,

@@ -89,8 +89,8 @@ impl UpdateIdentityPoolOutput {
 }
 
 /// A builder for [`UpdateIdentityPoolOutput`](crate::operation::update_identity_pool::UpdateIdentityPoolOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateIdentityPoolOutputBuilder {
     pub(crate) identity_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) identity_pool_name: ::std::option::Option<::std::string::String>,

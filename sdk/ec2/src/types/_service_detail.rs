@@ -119,8 +119,8 @@ impl ServiceDetail {
 }
 
 /// A builder for [`ServiceDetail`](crate::types::ServiceDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServiceDetailBuilder {
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
     pub(crate) service_id: ::std::option::Option<::std::string::String>,

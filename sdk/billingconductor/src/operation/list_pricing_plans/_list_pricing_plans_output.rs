@@ -40,8 +40,8 @@ impl ListPricingPlansOutput {
 }
 
 /// A builder for [`ListPricingPlansOutput`](crate::operation::list_pricing_plans::ListPricingPlansOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPricingPlansOutputBuilder {
     pub(crate) billing_period: ::std::option::Option<::std::string::String>,
     pub(crate) pricing_plans: ::std::option::Option<::std::vec::Vec<crate::types::PricingPlanListElement>>,

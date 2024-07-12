@@ -74,8 +74,8 @@ impl GetMemberOutput {
 }
 
 /// A builder for [`GetMemberOutput`](crate::operation::get_member::GetMemberOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMemberOutputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) administrator_account_id: ::std::option::Option<::std::string::String>,

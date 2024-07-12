@@ -48,8 +48,8 @@ impl AttendeeCapabilities {
 }
 
 /// A builder for [`AttendeeCapabilities`](crate::types::AttendeeCapabilities).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttendeeCapabilitiesBuilder {
     pub(crate) audio: ::std::option::Option<crate::types::MediaCapabilities>,
     pub(crate) video: ::std::option::Option<crate::types::MediaCapabilities>,

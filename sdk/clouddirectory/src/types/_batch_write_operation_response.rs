@@ -105,8 +105,8 @@ impl BatchWriteOperationResponse {
 }
 
 /// A builder for [`BatchWriteOperationResponse`](crate::types::BatchWriteOperationResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchWriteOperationResponseBuilder {
     pub(crate) create_object: ::std::option::Option<crate::types::BatchCreateObjectResponse>,
     pub(crate) attach_object: ::std::option::Option<crate::types::BatchAttachObjectResponse>,

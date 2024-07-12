@@ -18,8 +18,8 @@ impl DeleteProgressUpdateStreamOutput {
 }
 
 /// A builder for [`DeleteProgressUpdateStreamOutput`](crate::operation::delete_progress_update_stream::DeleteProgressUpdateStreamOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteProgressUpdateStreamOutputBuilder {
     _request_id: Option<String>,
 }

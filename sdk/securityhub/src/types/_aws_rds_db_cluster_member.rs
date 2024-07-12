@@ -39,8 +39,8 @@ impl AwsRdsDbClusterMember {
 }
 
 /// A builder for [`AwsRdsDbClusterMember`](crate::types::AwsRdsDbClusterMember).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsRdsDbClusterMemberBuilder {
     pub(crate) is_cluster_writer: ::std::option::Option<bool>,
     pub(crate) promotion_tier: ::std::option::Option<i32>,

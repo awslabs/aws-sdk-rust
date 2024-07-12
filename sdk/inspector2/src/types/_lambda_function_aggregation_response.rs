@@ -58,8 +58,8 @@ impl LambdaFunctionAggregationResponse {
 }
 
 /// A builder for [`LambdaFunctionAggregationResponse`](crate::types::LambdaFunctionAggregationResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LambdaFunctionAggregationResponseBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) function_name: ::std::option::Option<::std::string::String>,

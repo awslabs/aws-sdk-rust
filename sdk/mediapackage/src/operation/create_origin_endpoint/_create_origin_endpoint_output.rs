@@ -124,8 +124,8 @@ impl CreateOriginEndpointOutput {
 }
 
 /// A builder for [`CreateOriginEndpointOutput`](crate::operation::create_origin_endpoint::CreateOriginEndpointOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateOriginEndpointOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) authorization: ::std::option::Option<crate::types::Authorization>,

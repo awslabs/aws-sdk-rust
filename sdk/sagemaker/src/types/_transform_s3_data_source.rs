@@ -71,8 +71,8 @@ impl TransformS3DataSource {
 }
 
 /// A builder for [`TransformS3DataSource`](crate::types::TransformS3DataSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TransformS3DataSourceBuilder {
     pub(crate) s3_data_type: ::std::option::Option<crate::types::S3DataType>,
     pub(crate) s3_uri: ::std::option::Option<::std::string::String>,

@@ -18,8 +18,8 @@ impl RequestEnvironmentInfoOutput {
 }
 
 /// A builder for [`RequestEnvironmentInfoOutput`](crate::operation::request_environment_info::RequestEnvironmentInfoOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RequestEnvironmentInfoOutputBuilder {
     _request_id: Option<String>,
 }

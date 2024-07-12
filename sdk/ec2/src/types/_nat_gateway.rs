@@ -143,8 +143,8 @@ impl NatGateway {
 }
 
 /// A builder for [`NatGateway`](crate::types::NatGateway).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NatGatewayBuilder {
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) delete_time: ::std::option::Option<::aws_smithy_types::DateTime>,

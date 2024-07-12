@@ -39,8 +39,8 @@ impl Spacing {
 }
 
 /// A builder for [`Spacing`](crate::types::Spacing).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SpacingBuilder {
     pub(crate) top: ::std::option::Option<::std::string::String>,
     pub(crate) bottom: ::std::option::Option<::std::string::String>,

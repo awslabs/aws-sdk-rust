@@ -28,8 +28,8 @@ impl ListTagsForCertificateOutput {
 }
 
 /// A builder for [`ListTagsForCertificateOutput`](crate::operation::list_tags_for_certificate::ListTagsForCertificateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTagsForCertificateOutputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     _request_id: Option<String>,

@@ -11,8 +11,8 @@ impl GetSparqlStatisticsInput {
 }
 
 /// A builder for [`GetSparqlStatisticsInput`](crate::operation::get_sparql_statistics::GetSparqlStatisticsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSparqlStatisticsInputBuilder {}
 impl GetSparqlStatisticsInputBuilder {
     /// Consumes the builder and constructs a [`GetSparqlStatisticsInput`](crate::operation::get_sparql_statistics::GetSparqlStatisticsInput).

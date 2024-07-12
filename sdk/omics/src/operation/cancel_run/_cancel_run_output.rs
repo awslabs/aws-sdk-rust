@@ -18,8 +18,8 @@ impl CancelRunOutput {
 }
 
 /// A builder for [`CancelRunOutput`](crate::operation::cancel_run::CancelRunOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelRunOutputBuilder {
     _request_id: Option<String>,
 }

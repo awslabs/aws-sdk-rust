@@ -27,8 +27,8 @@ impl ProximityEventConfiguration {
 }
 
 /// A builder for [`ProximityEventConfiguration`](crate::types::ProximityEventConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProximityEventConfigurationBuilder {
     pub(crate) sidewalk: ::std::option::Option<crate::types::SidewalkEventNotificationConfigurations>,
     pub(crate) wireless_device_id_event_topic: ::std::option::Option<crate::types::EventNotificationTopicStatus>,

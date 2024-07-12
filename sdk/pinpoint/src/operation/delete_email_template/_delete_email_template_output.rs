@@ -26,8 +26,8 @@ impl DeleteEmailTemplateOutput {
 }
 
 /// A builder for [`DeleteEmailTemplateOutput`](crate::operation::delete_email_template::DeleteEmailTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteEmailTemplateOutputBuilder {
     pub(crate) message_body: ::std::option::Option<crate::types::MessageBody>,
     _request_id: Option<String>,

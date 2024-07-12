@@ -47,8 +47,8 @@ impl FileShareInfo {
 }
 
 /// A builder for [`FileShareInfo`](crate::types::FileShareInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FileShareInfoBuilder {
     pub(crate) file_share_type: ::std::option::Option<crate::types::FileShareType>,
     pub(crate) file_share_arn: ::std::option::Option<::std::string::String>,

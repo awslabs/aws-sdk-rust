@@ -22,8 +22,8 @@ impl ListenerTlsSdsCertificate {
 }
 
 /// A builder for [`ListenerTlsSdsCertificate`](crate::types::ListenerTlsSdsCertificate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListenerTlsSdsCertificateBuilder {
     pub(crate) secret_name: ::std::option::Option<::std::string::String>,
 }

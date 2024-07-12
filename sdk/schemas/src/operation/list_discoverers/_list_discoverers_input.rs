@@ -38,8 +38,8 @@ impl ListDiscoverersInput {
 }
 
 /// A builder for [`ListDiscoverersInput`](crate::operation::list_discoverers::ListDiscoverersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDiscoverersInputBuilder {
     pub(crate) discoverer_id_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,

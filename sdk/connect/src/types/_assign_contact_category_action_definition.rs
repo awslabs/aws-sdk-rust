@@ -13,8 +13,8 @@ impl AssignContactCategoryActionDefinition {
 }
 
 /// A builder for [`AssignContactCategoryActionDefinition`](crate::types::AssignContactCategoryActionDefinition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssignContactCategoryActionDefinitionBuilder {}
 impl AssignContactCategoryActionDefinitionBuilder {
     /// Consumes the builder and constructs a [`AssignContactCategoryActionDefinition`](crate::types::AssignContactCategoryActionDefinition).

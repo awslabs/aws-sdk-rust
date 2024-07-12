@@ -27,8 +27,8 @@ impl AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails {
 }
 
 /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsSecretsDetailsBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) value_from: ::std::option::Option<::std::string::String>,

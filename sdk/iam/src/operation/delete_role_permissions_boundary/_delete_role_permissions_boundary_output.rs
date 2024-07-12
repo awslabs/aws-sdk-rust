@@ -18,8 +18,8 @@ impl DeleteRolePermissionsBoundaryOutput {
 }
 
 /// A builder for [`DeleteRolePermissionsBoundaryOutput`](crate::operation::delete_role_permissions_boundary::DeleteRolePermissionsBoundaryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRolePermissionsBoundaryOutputBuilder {
     _request_id: Option<String>,
 }

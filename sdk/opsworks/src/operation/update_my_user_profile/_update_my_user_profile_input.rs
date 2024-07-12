@@ -20,8 +20,8 @@ impl UpdateMyUserProfileInput {
 }
 
 /// A builder for [`UpdateMyUserProfileInput`](crate::operation::update_my_user_profile::UpdateMyUserProfileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateMyUserProfileInputBuilder {
     pub(crate) ssh_public_key: ::std::option::Option<::std::string::String>,
 }

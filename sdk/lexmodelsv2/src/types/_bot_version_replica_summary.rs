@@ -41,8 +41,8 @@ impl BotVersionReplicaSummary {
 }
 
 /// A builder for [`BotVersionReplicaSummary`](crate::types::BotVersionReplicaSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BotVersionReplicaSummaryBuilder {
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version_replication_status: ::std::option::Option<crate::types::BotVersionReplicationStatus>,

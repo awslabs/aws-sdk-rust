@@ -18,8 +18,8 @@ impl UpdateManagedInstanceRoleOutput {
 }
 
 /// A builder for [`UpdateManagedInstanceRoleOutput`](crate::operation::update_managed_instance_role::UpdateManagedInstanceRoleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateManagedInstanceRoleOutputBuilder {
     _request_id: Option<String>,
 }

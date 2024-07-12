@@ -26,8 +26,8 @@ impl DescribeTextTranslationJobOutput {
 }
 
 /// A builder for [`DescribeTextTranslationJobOutput`](crate::operation::describe_text_translation_job::DescribeTextTranslationJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTextTranslationJobOutputBuilder {
     pub(crate) text_translation_job_properties: ::std::option::Option<crate::types::TextTranslationJobProperties>,
     _request_id: Option<String>,

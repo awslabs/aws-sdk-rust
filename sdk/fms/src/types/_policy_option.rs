@@ -33,8 +33,8 @@ impl PolicyOption {
 }
 
 /// A builder for [`PolicyOption`](crate::types::PolicyOption).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PolicyOptionBuilder {
     pub(crate) network_firewall_policy: ::std::option::Option<crate::types::NetworkFirewallPolicy>,
     pub(crate) third_party_firewall_policy: ::std::option::Option<crate::types::ThirdPartyFirewallPolicy>,

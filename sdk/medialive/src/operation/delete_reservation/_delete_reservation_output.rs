@@ -135,8 +135,8 @@ impl DeleteReservationOutput {
 }
 
 /// A builder for [`DeleteReservationOutput`](crate::operation::delete_reservation::DeleteReservationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteReservationOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) count: ::std::option::Option<i32>,

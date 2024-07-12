@@ -29,8 +29,8 @@ impl SamlIdp {
 }
 
 /// A builder for [`SamlIdp`](crate::types::SamlIdp).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SamlIdpBuilder {
     pub(crate) metadata_content: ::std::option::Option<::std::string::String>,
     pub(crate) entity_id: ::std::option::Option<::std::string::String>,

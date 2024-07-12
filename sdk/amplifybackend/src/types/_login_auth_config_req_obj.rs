@@ -39,8 +39,8 @@ impl LoginAuthConfigReqObj {
 }
 
 /// A builder for [`LoginAuthConfigReqObj`](crate::types::LoginAuthConfigReqObj).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LoginAuthConfigReqObjBuilder {
     pub(crate) aws_cognito_identity_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) aws_cognito_region: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl NodeFabricAttributes {
 }
 
 /// A builder for [`NodeFabricAttributes`](crate::types::NodeFabricAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NodeFabricAttributesBuilder {
     pub(crate) peer_endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) peer_event_endpoint: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl EmailContent {
 }
 
 /// A builder for [`EmailContent`](crate::types::EmailContent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EmailContentBuilder {
     pub(crate) subject: ::std::option::Option<::std::string::String>,
     pub(crate) additional_message: ::std::option::Option<::std::string::String>,

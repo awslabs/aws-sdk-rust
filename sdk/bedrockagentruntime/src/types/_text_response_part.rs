@@ -42,8 +42,8 @@ impl TextResponsePart {
 }
 
 /// A builder for [`TextResponsePart`](crate::types::TextResponsePart).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct TextResponsePartBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
     pub(crate) span: ::std::option::Option<crate::types::Span>,

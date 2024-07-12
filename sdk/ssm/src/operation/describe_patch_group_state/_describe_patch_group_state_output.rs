@@ -96,8 +96,8 @@ impl DescribePatchGroupStateOutput {
 }
 
 /// A builder for [`DescribePatchGroupStateOutput`](crate::operation::describe_patch_group_state::DescribePatchGroupStateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribePatchGroupStateOutputBuilder {
     pub(crate) instances: ::std::option::Option<i32>,
     pub(crate) instances_with_installed_patches: ::std::option::Option<i32>,

@@ -26,8 +26,8 @@ impl GetCoreNetworkPolicyOutput {
 }
 
 /// A builder for [`GetCoreNetworkPolicyOutput`](crate::operation::get_core_network_policy::GetCoreNetworkPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCoreNetworkPolicyOutputBuilder {
     pub(crate) core_network_policy: ::std::option::Option<crate::types::CoreNetworkPolicy>,
     _request_id: Option<String>,

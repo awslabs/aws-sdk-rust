@@ -34,8 +34,8 @@ impl HybridJobQueueInfo {
 }
 
 /// A builder for [`HybridJobQueueInfo`](crate::types::HybridJobQueueInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HybridJobQueueInfoBuilder {
     pub(crate) queue: ::std::option::Option<crate::types::QueueName>,
     pub(crate) position: ::std::option::Option<::std::string::String>,

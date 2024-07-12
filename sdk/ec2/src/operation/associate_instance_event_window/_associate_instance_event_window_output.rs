@@ -26,8 +26,8 @@ impl AssociateInstanceEventWindowOutput {
 }
 
 /// A builder for [`AssociateInstanceEventWindowOutput`](crate::operation::associate_instance_event_window::AssociateInstanceEventWindowOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateInstanceEventWindowOutputBuilder {
     pub(crate) instance_event_window: ::std::option::Option<crate::types::InstanceEventWindow>,
     _request_id: Option<String>,

@@ -26,8 +26,8 @@ impl GetConfigurationOutput {
 }
 
 /// A builder for [`GetConfigurationOutput`](crate::operation::get_configuration::GetConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetConfigurationOutputBuilder {
     pub(crate) configuration: ::std::option::Option<crate::types::AppRegistryConfiguration>,
     _request_id: Option<String>,

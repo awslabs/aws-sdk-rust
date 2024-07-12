@@ -71,8 +71,8 @@ impl QueryStage {
 }
 
 /// A builder for [`QueryStage`](crate::types::QueryStage).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct QueryStageBuilder {
     pub(crate) stage_id: ::std::option::Option<i64>,
     pub(crate) state: ::std::option::Option<::std::string::String>,

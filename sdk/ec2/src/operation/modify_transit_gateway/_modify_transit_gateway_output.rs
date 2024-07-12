@@ -26,8 +26,8 @@ impl ModifyTransitGatewayOutput {
 }
 
 /// A builder for [`ModifyTransitGatewayOutput`](crate::operation::modify_transit_gateway::ModifyTransitGatewayOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyTransitGatewayOutputBuilder {
     pub(crate) transit_gateway: ::std::option::Option<crate::types::TransitGateway>,
     _request_id: Option<String>,

@@ -119,8 +119,8 @@ impl SharePointConfiguration {
 }
 
 /// A builder for [`SharePointConfiguration`](crate::types::SharePointConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SharePointConfigurationBuilder {
     pub(crate) share_point_version: ::std::option::Option<crate::types::SharePointVersion>,
     pub(crate) urls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

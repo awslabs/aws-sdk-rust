@@ -38,8 +38,8 @@ impl RetrieveAndGenerateConfiguration {
 }
 
 /// A builder for [`RetrieveAndGenerateConfiguration`](crate::types::RetrieveAndGenerateConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RetrieveAndGenerateConfigurationBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::RetrieveAndGenerateType>,
     pub(crate) knowledge_base_configuration: ::std::option::Option<crate::types::KnowledgeBaseRetrieveAndGenerateConfiguration>,

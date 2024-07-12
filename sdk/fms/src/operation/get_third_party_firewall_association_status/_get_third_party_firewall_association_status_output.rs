@@ -72,8 +72,8 @@ impl GetThirdPartyFirewallAssociationStatusOutput {
 }
 
 /// A builder for [`GetThirdPartyFirewallAssociationStatusOutput`](crate::operation::get_third_party_firewall_association_status::GetThirdPartyFirewallAssociationStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetThirdPartyFirewallAssociationStatusOutputBuilder {
     pub(crate) third_party_firewall_status: ::std::option::Option<crate::types::ThirdPartyFirewallAssociationStatus>,
     pub(crate) marketplace_onboarding_status: ::std::option::Option<crate::types::MarketplaceSubscriptionOnboardingStatus>,

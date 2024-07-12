@@ -27,8 +27,8 @@ impl PlatformFramework {
 }
 
 /// A builder for [`PlatformFramework`](crate::types::PlatformFramework).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PlatformFrameworkBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,

@@ -50,8 +50,8 @@ impl CreateAccessGrantsLocationOutput {
 }
 
 /// A builder for [`CreateAccessGrantsLocationOutput`](crate::operation::create_access_grants_location::CreateAccessGrantsLocationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAccessGrantsLocationOutputBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) access_grants_location_id: ::std::option::Option<::std::string::String>,

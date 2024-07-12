@@ -18,8 +18,8 @@ impl CreateProtectionGroupOutput {
 }
 
 /// A builder for [`CreateProtectionGroupOutput`](crate::operation::create_protection_group::CreateProtectionGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateProtectionGroupOutputBuilder {
     _request_id: Option<String>,
 }

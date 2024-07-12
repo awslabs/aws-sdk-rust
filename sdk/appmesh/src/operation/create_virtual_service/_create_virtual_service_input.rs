@@ -52,8 +52,8 @@ impl CreateVirtualServiceInput {
 }
 
 /// A builder for [`CreateVirtualServiceInput`](crate::operation::create_virtual_service::CreateVirtualServiceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateVirtualServiceInputBuilder {
     pub(crate) virtual_service_name: ::std::option::Option<::std::string::String>,
     pub(crate) mesh_name: ::std::option::Option<::std::string::String>,

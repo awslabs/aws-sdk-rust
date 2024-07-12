@@ -28,8 +28,8 @@ impl MetricResult {
 }
 
 /// A builder for [`MetricResult`](crate::types::MetricResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MetricResultBuilder {
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
     pub(crate) metric_value: ::std::option::Option<f64>,

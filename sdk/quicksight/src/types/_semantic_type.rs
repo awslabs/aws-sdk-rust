@@ -74,8 +74,8 @@ impl SemanticType {
 }
 
 /// A builder for [`SemanticType`](crate::types::SemanticType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SemanticTypeBuilder {
     pub(crate) type_name: ::std::option::Option<::std::string::String>,
     pub(crate) sub_type_name: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl DisassociateEnclaveCertificateIamRoleOutput {
 }
 
 /// A builder for [`DisassociateEnclaveCertificateIamRoleOutput`](crate::operation::disassociate_enclave_certificate_iam_role::DisassociateEnclaveCertificateIamRoleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateEnclaveCertificateIamRoleOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,

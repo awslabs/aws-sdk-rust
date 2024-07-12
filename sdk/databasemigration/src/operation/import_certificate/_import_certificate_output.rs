@@ -26,8 +26,8 @@ impl ImportCertificateOutput {
 }
 
 /// A builder for [`ImportCertificateOutput`](crate::operation::import_certificate::ImportCertificateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportCertificateOutputBuilder {
     pub(crate) certificate: ::std::option::Option<crate::types::Certificate>,
     _request_id: Option<String>,

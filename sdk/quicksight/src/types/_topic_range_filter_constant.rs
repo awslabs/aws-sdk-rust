@@ -35,8 +35,8 @@ impl TopicRangeFilterConstant {
 }
 
 /// A builder for [`TopicRangeFilterConstant`](crate::types::TopicRangeFilterConstant).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct TopicRangeFilterConstantBuilder {
     pub(crate) constant_type: ::std::option::Option<crate::types::ConstantType>,
     pub(crate) range_constant: ::std::option::Option<crate::types::RangeConstant>,

@@ -22,8 +22,8 @@ impl BatchPutAssetPropertyValueInput {
 }
 
 /// A builder for [`BatchPutAssetPropertyValueInput`](crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchPutAssetPropertyValueInputBuilder {
     pub(crate) entries: ::std::option::Option<::std::vec::Vec<crate::types::PutAssetPropertyValueEntry>>,
 }

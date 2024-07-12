@@ -26,8 +26,8 @@ impl CreateVirtualServiceOutput {
 }
 
 /// A builder for [`CreateVirtualServiceOutput`](crate::operation::create_virtual_service::CreateVirtualServiceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateVirtualServiceOutputBuilder {
     pub(crate) virtual_service: ::std::option::Option<crate::types::VirtualServiceData>,
     _request_id: Option<String>,

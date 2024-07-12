@@ -40,8 +40,8 @@ impl ModifyVerifiedAccessInstanceLoggingConfigurationInput {
 }
 
 /// A builder for [`ModifyVerifiedAccessInstanceLoggingConfigurationInput`](crate::operation::modify_verified_access_instance_logging_configuration::ModifyVerifiedAccessInstanceLoggingConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyVerifiedAccessInstanceLoggingConfigurationInputBuilder {
     pub(crate) verified_access_instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) access_logs: ::std::option::Option<crate::types::VerifiedAccessLogOptions>,

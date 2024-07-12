@@ -29,8 +29,8 @@ impl GetQueueUrlInput {
 }
 
 /// A builder for [`GetQueueUrlInput`](crate::operation::get_queue_url::GetQueueUrlInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetQueueUrlInputBuilder {
     pub(crate) queue_name: ::std::option::Option<::std::string::String>,
     pub(crate) queue_owner_aws_account_id: ::std::option::Option<::std::string::String>,

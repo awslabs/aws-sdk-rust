@@ -40,8 +40,8 @@ impl DeleteAgentAliasOutput {
 }
 
 /// A builder for [`DeleteAgentAliasOutput`](crate::operation::delete_agent_alias::DeleteAgentAliasOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAgentAliasOutputBuilder {
     pub(crate) agent_id: ::std::option::Option<::std::string::String>,
     pub(crate) agent_alias_id: ::std::option::Option<::std::string::String>,

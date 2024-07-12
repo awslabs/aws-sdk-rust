@@ -33,8 +33,8 @@ impl ResolveCaseOutput {
 }
 
 /// A builder for [`ResolveCaseOutput`](crate::operation::resolve_case::ResolveCaseOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResolveCaseOutputBuilder {
     pub(crate) initial_case_status: ::std::option::Option<::std::string::String>,
     pub(crate) final_case_status: ::std::option::Option<::std::string::String>,

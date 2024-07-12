@@ -65,8 +65,8 @@ impl ReservedInstanceOffering {
 }
 
 /// A builder for [`ReservedInstanceOffering`](crate::types::ReservedInstanceOffering).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReservedInstanceOfferingBuilder {
     pub(crate) reserved_instance_offering_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_type: ::std::option::Option<crate::types::OpenSearchPartitionInstanceType>,

@@ -119,8 +119,8 @@ impl ConnectorDetail {
 }
 
 /// A builder for [`ConnectorDetail`](crate::types::ConnectorDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConnectorDetailBuilder {
     pub(crate) connector_description: ::std::option::Option<::std::string::String>,
     pub(crate) connector_name: ::std::option::Option<::std::string::String>,

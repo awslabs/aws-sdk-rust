@@ -82,8 +82,8 @@ impl RestoreTestingPlanForGet {
 }
 
 /// A builder for [`RestoreTestingPlanForGet`](crate::types::RestoreTestingPlanForGet).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RestoreTestingPlanForGetBuilder {
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) creator_request_id: ::std::option::Option<::std::string::String>,

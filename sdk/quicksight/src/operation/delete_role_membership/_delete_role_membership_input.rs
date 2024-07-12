@@ -38,8 +38,8 @@ impl DeleteRoleMembershipInput {
 }
 
 /// A builder for [`DeleteRoleMembershipInput`](crate::operation::delete_role_membership::DeleteRoleMembershipInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRoleMembershipInputBuilder {
     pub(crate) member_name: ::std::option::Option<::std::string::String>,
     pub(crate) role: ::std::option::Option<crate::types::Role>,

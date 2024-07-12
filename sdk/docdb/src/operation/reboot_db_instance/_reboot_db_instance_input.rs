@@ -39,8 +39,8 @@ impl RebootDbInstanceInput {
 }
 
 /// A builder for [`RebootDbInstanceInput`](crate::operation::reboot_db_instance::RebootDbInstanceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RebootDbInstanceInputBuilder {
     pub(crate) db_instance_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) force_failover: ::std::option::Option<bool>,

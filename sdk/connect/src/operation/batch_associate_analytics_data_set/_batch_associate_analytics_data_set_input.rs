@@ -34,8 +34,8 @@ impl BatchAssociateAnalyticsDataSetInput {
 }
 
 /// A builder for [`BatchAssociateAnalyticsDataSetInput`](crate::operation::batch_associate_analytics_data_set::BatchAssociateAnalyticsDataSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchAssociateAnalyticsDataSetInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_set_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

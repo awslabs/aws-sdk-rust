@@ -38,8 +38,8 @@ impl ListQueueQuickConnectsInput {
 }
 
 /// A builder for [`ListQueueQuickConnectsInput`](crate::operation::list_queue_quick_connects::ListQueueQuickConnectsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListQueueQuickConnectsInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) queue_id: ::std::option::Option<::std::string::String>,

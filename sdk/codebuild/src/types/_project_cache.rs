@@ -139,8 +139,8 @@ impl ProjectCache {
 }
 
 /// A builder for [`ProjectCache`](crate::types::ProjectCache).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProjectCacheBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::CacheType>,
     pub(crate) location: ::std::option::Option<::std::string::String>,

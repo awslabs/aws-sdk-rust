@@ -28,8 +28,8 @@ impl AlarmConfiguration {
 }
 
 /// A builder for [`AlarmConfiguration`](crate::types::AlarmConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AlarmConfigurationBuilder {
     pub(crate) ignore_poll_alarm_failure: ::std::option::Option<bool>,
     pub(crate) alarms: ::std::option::Option<::std::vec::Vec<crate::types::Alarm>>,

@@ -63,8 +63,8 @@ impl ShardFilter {
 }
 
 /// A builder for [`ShardFilter`](crate::types::ShardFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ShardFilterBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ShardFilterType>,
     pub(crate) shard_id: ::std::option::Option<::std::string::String>,

@@ -38,8 +38,8 @@ impl SignPayloadInput {
 }
 
 /// A builder for [`SignPayloadInput`](crate::operation::sign_payload::SignPayloadInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SignPayloadInputBuilder {
     pub(crate) profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) profile_owner: ::std::option::Option<::std::string::String>,

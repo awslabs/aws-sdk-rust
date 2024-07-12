@@ -31,8 +31,8 @@ impl AnomalyDetectorConfiguration {
 }
 
 /// A builder for [`AnomalyDetectorConfiguration`](crate::types::AnomalyDetectorConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AnomalyDetectorConfigurationBuilder {
     pub(crate) excluded_time_ranges: ::std::option::Option<::std::vec::Vec<crate::types::Range>>,
     pub(crate) metric_timezone: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl GetNotebookMetadataOutput {
 }
 
 /// A builder for [`GetNotebookMetadataOutput`](crate::operation::get_notebook_metadata::GetNotebookMetadataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetNotebookMetadataOutputBuilder {
     pub(crate) notebook_metadata: ::std::option::Option<crate::types::NotebookMetadata>,
     _request_id: Option<String>,

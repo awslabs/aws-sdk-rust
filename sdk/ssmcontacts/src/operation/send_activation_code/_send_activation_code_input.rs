@@ -20,8 +20,8 @@ impl SendActivationCodeInput {
 }
 
 /// A builder for [`SendActivationCodeInput`](crate::operation::send_activation_code::SendActivationCodeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendActivationCodeInputBuilder {
     pub(crate) contact_channel_id: ::std::option::Option<::std::string::String>,
 }

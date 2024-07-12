@@ -24,8 +24,8 @@ impl ContainerAttributes {
 }
 
 /// A builder for [`ContainerAttributes`](crate::types::ContainerAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ContainerAttributesBuilder {
     pub(crate) container_port_mappings: ::std::option::Option<::std::vec::Vec<crate::types::ContainerPortMapping>>,
 }

@@ -28,8 +28,8 @@ impl BatchDeleteDelegationByAssessmentInput {
 }
 
 /// A builder for [`BatchDeleteDelegationByAssessmentInput`](crate::operation::batch_delete_delegation_by_assessment::BatchDeleteDelegationByAssessmentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDeleteDelegationByAssessmentInputBuilder {
     pub(crate) delegation_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) assessment_id: ::std::option::Option<::std::string::String>,

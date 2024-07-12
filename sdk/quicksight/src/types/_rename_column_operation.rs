@@ -29,8 +29,8 @@ impl RenameColumnOperation {
 }
 
 /// A builder for [`RenameColumnOperation`](crate::types::RenameColumnOperation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RenameColumnOperationBuilder {
     pub(crate) column_name: ::std::option::Option<::std::string::String>,
     pub(crate) new_column_name: ::std::option::Option<::std::string::String>,

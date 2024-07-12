@@ -21,8 +21,8 @@ impl BatchAttachObjectResponse {
 }
 
 /// A builder for [`BatchAttachObjectResponse`](crate::types::BatchAttachObjectResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchAttachObjectResponseBuilder {
     pub(crate) attached_object_identifier: ::std::option::Option<::std::string::String>,
 }

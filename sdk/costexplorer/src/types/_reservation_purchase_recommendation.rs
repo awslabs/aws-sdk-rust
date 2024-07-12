@@ -59,8 +59,8 @@ impl ReservationPurchaseRecommendation {
 }
 
 /// A builder for [`ReservationPurchaseRecommendation`](crate::types::ReservationPurchaseRecommendation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReservationPurchaseRecommendationBuilder {
     pub(crate) account_scope: ::std::option::Option<crate::types::AccountScope>,
     pub(crate) lookback_period_in_days: ::std::option::Option<crate::types::LookbackPeriodInDays>,

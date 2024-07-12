@@ -38,8 +38,8 @@ impl ListBackupVaultsInput {
 }
 
 /// A builder for [`ListBackupVaultsInput`](crate::operation::list_backup_vaults::ListBackupVaultsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListBackupVaultsInputBuilder {
     pub(crate) by_vault_type: ::std::option::Option<crate::types::VaultType>,
     pub(crate) by_shared: ::std::option::Option<bool>,

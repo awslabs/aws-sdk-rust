@@ -105,8 +105,8 @@ impl ScheduleActionSettings {
 }
 
 /// A builder for [`ScheduleActionSettings`](crate::types::ScheduleActionSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScheduleActionSettingsBuilder {
     pub(crate) hls_id3_segment_tagging_settings: ::std::option::Option<crate::types::HlsId3SegmentTaggingScheduleActionSettings>,
     pub(crate) hls_timed_metadata_settings: ::std::option::Option<crate::types::HlsTimedMetadataScheduleActionSettings>,

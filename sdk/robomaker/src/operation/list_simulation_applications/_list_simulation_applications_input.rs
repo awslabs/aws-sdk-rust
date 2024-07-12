@@ -42,8 +42,8 @@ impl ListSimulationApplicationsInput {
 }
 
 /// A builder for [`ListSimulationApplicationsInput`](crate::operation::list_simulation_applications::ListSimulationApplicationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSimulationApplicationsInputBuilder {
     pub(crate) version_qualifier: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

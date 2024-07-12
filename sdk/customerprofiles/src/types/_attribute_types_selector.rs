@@ -72,8 +72,8 @@ impl AttributeTypesSelector {
 }
 
 /// A builder for [`AttributeTypesSelector`](crate::types::AttributeTypesSelector).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttributeTypesSelectorBuilder {
     pub(crate) attribute_matching_model: ::std::option::Option<crate::types::AttributeMatchingModel>,
     pub(crate) address: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -26,8 +26,8 @@ impl GetJobUnlockCodeOutput {
 }
 
 /// A builder for [`GetJobUnlockCodeOutput`](crate::operation::get_job_unlock_code::GetJobUnlockCodeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetJobUnlockCodeOutputBuilder {
     pub(crate) unlock_code: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

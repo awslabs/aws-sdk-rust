@@ -29,8 +29,8 @@ impl TimeSeriesTransformation {
 }
 
 /// A builder for [`TimeSeriesTransformation`](crate::types::TimeSeriesTransformation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TimeSeriesTransformationBuilder {
     pub(crate) action: ::std::option::Option<crate::types::Action>,
     pub(crate) time_series_conditions: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesCondition>>,

@@ -55,8 +55,8 @@ impl DescribeAccessControlConfigurationOutput {
 }
 
 /// A builder for [`DescribeAccessControlConfigurationOutput`](crate::operation::describe_access_control_configuration::DescribeAccessControlConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAccessControlConfigurationOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

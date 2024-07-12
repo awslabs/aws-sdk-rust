@@ -30,8 +30,8 @@ impl PolicyInformation {
 }
 
 /// A builder for [`PolicyInformation`](crate::types::PolicyInformation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PolicyInformationBuilder {
     pub(crate) cert_policy_id: ::std::option::Option<::std::string::String>,
     pub(crate) policy_qualifiers: ::std::option::Option<::std::vec::Vec<crate::types::PolicyQualifierInfo>>,

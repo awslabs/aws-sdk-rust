@@ -27,8 +27,8 @@ impl ElastiCacheReservedInstances {
 }
 
 /// A builder for [`ElastiCacheReservedInstances`](crate::types::ElastiCacheReservedInstances).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ElastiCacheReservedInstancesBuilder {
     pub(crate) configuration: ::std::option::Option<crate::types::ElastiCacheReservedInstancesConfiguration>,
     pub(crate) cost_calculation: ::std::option::Option<crate::types::ReservedInstancesCostCalculation>,

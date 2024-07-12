@@ -26,8 +26,8 @@ impl GetQuickResponseInput {
 }
 
 /// A builder for [`GetQuickResponseInput`](crate::operation::get_quick_response::GetQuickResponseInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetQuickResponseInputBuilder {
     pub(crate) quick_response_id: ::std::option::Option<::std::string::String>,
     pub(crate) knowledge_base_id: ::std::option::Option<::std::string::String>,

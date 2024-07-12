@@ -32,8 +32,8 @@ impl GetAssessmentReportOutput {
 }
 
 /// A builder for [`GetAssessmentReportOutput`](crate::operation::get_assessment_report::GetAssessmentReportOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAssessmentReportOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ReportStatus>,
     pub(crate) url: ::std::option::Option<::std::string::String>,

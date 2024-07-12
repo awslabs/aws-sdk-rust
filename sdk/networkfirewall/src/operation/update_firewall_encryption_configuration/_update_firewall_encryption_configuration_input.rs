@@ -42,8 +42,8 @@ impl UpdateFirewallEncryptionConfigurationInput {
 }
 
 /// A builder for [`UpdateFirewallEncryptionConfigurationInput`](crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateFirewallEncryptionConfigurationInputBuilder {
     pub(crate) update_token: ::std::option::Option<::std::string::String>,
     pub(crate) firewall_arn: ::std::option::Option<::std::string::String>,

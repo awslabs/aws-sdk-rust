@@ -53,8 +53,8 @@ impl EndpointDescription {
 }
 
 /// A builder for [`EndpointDescription`](crate::types::EndpointDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EndpointDescriptionBuilder {
     pub(crate) endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) weight: ::std::option::Option<i32>,

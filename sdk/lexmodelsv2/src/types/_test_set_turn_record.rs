@@ -39,8 +39,8 @@ impl TestSetTurnRecord {
 }
 
 /// A builder for [`TestSetTurnRecord`](crate::types::TestSetTurnRecord).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TestSetTurnRecordBuilder {
     pub(crate) record_number: ::std::option::Option<i64>,
     pub(crate) conversation_id: ::std::option::Option<::std::string::String>,

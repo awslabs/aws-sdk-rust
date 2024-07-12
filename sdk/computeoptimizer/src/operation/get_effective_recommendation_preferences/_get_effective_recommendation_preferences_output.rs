@@ -72,8 +72,8 @@ impl GetEffectiveRecommendationPreferencesOutput {
 }
 
 /// A builder for [`GetEffectiveRecommendationPreferencesOutput`](crate::operation::get_effective_recommendation_preferences::GetEffectiveRecommendationPreferencesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEffectiveRecommendationPreferencesOutputBuilder {
     pub(crate) enhanced_infrastructure_metrics: ::std::option::Option<crate::types::EnhancedInfrastructureMetrics>,
     pub(crate) external_metrics_preference: ::std::option::Option<crate::types::ExternalMetricsPreference>,

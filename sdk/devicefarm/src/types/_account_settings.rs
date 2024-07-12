@@ -65,8 +65,8 @@ impl AccountSettings {
 }
 
 /// A builder for [`AccountSettings`](crate::types::AccountSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AccountSettingsBuilder {
     pub(crate) aws_account_number: ::std::option::Option<::std::string::String>,
     pub(crate) unmetered_devices: ::std::option::Option<::std::collections::HashMap<crate::types::DevicePlatform, i32>>,

@@ -27,8 +27,8 @@ impl Gpu {
 }
 
 /// A builder for [`Gpu`](crate::types::Gpu).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GpuBuilder {
     pub(crate) gpu_count: ::std::option::Option<i32>,
     pub(crate) gpu_memory_size_in_mib: ::std::option::Option<i32>,

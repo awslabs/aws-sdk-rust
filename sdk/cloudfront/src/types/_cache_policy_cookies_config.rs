@@ -47,8 +47,8 @@ impl CachePolicyCookiesConfig {
 }
 
 /// A builder for [`CachePolicyCookiesConfig`](crate::types::CachePolicyCookiesConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CachePolicyCookiesConfigBuilder {
     pub(crate) cookie_behavior: ::std::option::Option<crate::types::CachePolicyCookieBehavior>,
     pub(crate) cookies: ::std::option::Option<crate::types::CookieNames>,

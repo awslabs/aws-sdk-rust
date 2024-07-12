@@ -21,8 +21,8 @@ impl RecommendationConfiguration {
 }
 
 /// A builder for [`RecommendationConfiguration`](crate::types::RecommendationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecommendationConfigurationBuilder {
     pub(crate) enable_business_name_generation: ::std::option::Option<bool>,
 }

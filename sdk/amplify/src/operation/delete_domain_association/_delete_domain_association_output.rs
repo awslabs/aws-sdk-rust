@@ -26,8 +26,8 @@ impl DeleteDomainAssociationOutput {
 }
 
 /// A builder for [`DeleteDomainAssociationOutput`](crate::operation::delete_domain_association::DeleteDomainAssociationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDomainAssociationOutputBuilder {
     pub(crate) domain_association: ::std::option::Option<crate::types::DomainAssociation>,
     _request_id: Option<String>,

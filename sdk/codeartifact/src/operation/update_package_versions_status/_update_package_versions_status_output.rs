@@ -34,8 +34,8 @@ impl UpdatePackageVersionsStatusOutput {
 }
 
 /// A builder for [`UpdatePackageVersionsStatusOutput`](crate::operation::update_package_versions_status::UpdatePackageVersionsStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePackageVersionsStatusOutputBuilder {
     pub(crate) successful_versions:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SuccessfulPackageVersionInfo>>,

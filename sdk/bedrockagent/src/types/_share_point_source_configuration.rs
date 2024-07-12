@@ -54,8 +54,8 @@ impl SharePointSourceConfiguration {
 }
 
 /// A builder for [`SharePointSourceConfiguration`](crate::types::SharePointSourceConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SharePointSourceConfigurationBuilder {
     pub(crate) tenant_id: ::std::option::Option<::std::string::String>,
     pub(crate) domain: ::std::option::Option<::std::string::String>,

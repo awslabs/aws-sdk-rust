@@ -35,8 +35,8 @@ impl ListUploadsOutput {
 }
 
 /// A builder for [`ListUploadsOutput`](crate::operation::list_uploads::ListUploadsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListUploadsOutputBuilder {
     pub(crate) uploads: ::std::option::Option<::std::vec::Vec<crate::types::Upload>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

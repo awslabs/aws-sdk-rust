@@ -28,8 +28,8 @@ impl BatchUpdateUserInput {
 }
 
 /// A builder for [`BatchUpdateUserInput`](crate::operation::batch_update_user::BatchUpdateUserInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchUpdateUserInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) update_user_request_items: ::std::option::Option<::std::vec::Vec<crate::types::UpdateUserRequestItem>>,

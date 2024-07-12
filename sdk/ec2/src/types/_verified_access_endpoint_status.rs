@@ -27,8 +27,8 @@ impl VerifiedAccessEndpointStatus {
 }
 
 /// A builder for [`VerifiedAccessEndpointStatus`](crate::types::VerifiedAccessEndpointStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VerifiedAccessEndpointStatusBuilder {
     pub(crate) code: ::std::option::Option<crate::types::VerifiedAccessEndpointStatusCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

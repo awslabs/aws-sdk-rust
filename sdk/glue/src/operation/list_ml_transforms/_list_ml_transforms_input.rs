@@ -44,8 +44,8 @@ impl ListMlTransformsInput {
 }
 
 /// A builder for [`ListMlTransformsInput`](crate::operation::list_ml_transforms::ListMlTransformsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListMlTransformsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

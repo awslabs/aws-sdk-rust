@@ -26,8 +26,8 @@ impl ListConflictingAliasesOutput {
 }
 
 /// A builder for [`ListConflictingAliasesOutput`](crate::operation::list_conflicting_aliases::ListConflictingAliasesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListConflictingAliasesOutputBuilder {
     pub(crate) conflicting_aliases_list: ::std::option::Option<crate::types::ConflictingAliasesList>,
     _request_id: Option<String>,

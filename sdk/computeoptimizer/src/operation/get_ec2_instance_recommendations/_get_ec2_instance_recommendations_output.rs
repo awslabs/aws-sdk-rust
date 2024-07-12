@@ -46,8 +46,8 @@ impl GetEc2InstanceRecommendationsOutput {
 }
 
 /// A builder for [`GetEc2InstanceRecommendationsOutput`](crate::operation::get_ec2_instance_recommendations::GetEc2InstanceRecommendationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEc2InstanceRecommendationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) instance_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::InstanceRecommendation>>,

@@ -52,8 +52,8 @@ impl CreateKeyPairInput {
 }
 
 /// A builder for [`CreateKeyPairInput`](crate::operation::create_key_pair::CreateKeyPairInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateKeyPairInputBuilder {
     pub(crate) key_name: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,

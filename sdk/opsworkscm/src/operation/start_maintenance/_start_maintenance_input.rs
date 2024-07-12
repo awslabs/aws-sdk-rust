@@ -38,8 +38,8 @@ impl StartMaintenanceInput {
 }
 
 /// A builder for [`StartMaintenanceInput`](crate::operation::start_maintenance::StartMaintenanceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartMaintenanceInputBuilder {
     pub(crate) server_name: ::std::option::Option<::std::string::String>,
     pub(crate) engine_attributes: ::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>>,

@@ -34,8 +34,8 @@ impl ListManagedRuleSetsOutput {
 }
 
 /// A builder for [`ListManagedRuleSetsOutput`](crate::operation::list_managed_rule_sets::ListManagedRuleSetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListManagedRuleSetsOutputBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     pub(crate) managed_rule_sets: ::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleSetSummary>>,

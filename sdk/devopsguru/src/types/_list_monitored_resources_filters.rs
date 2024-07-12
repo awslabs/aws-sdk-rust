@@ -28,8 +28,8 @@ impl ListMonitoredResourcesFilters {
 }
 
 /// A builder for [`ListMonitoredResourcesFilters`](crate::types::ListMonitoredResourcesFilters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListMonitoredResourcesFiltersBuilder {
     pub(crate) resource_permission: ::std::option::Option<crate::types::ResourcePermission>,
     pub(crate) resource_type_filters: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTypeFilter>>,

@@ -28,8 +28,8 @@ impl BatchDeleteReadSetOutput {
 }
 
 /// A builder for [`BatchDeleteReadSetOutput`](crate::operation::batch_delete_read_set::BatchDeleteReadSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDeleteReadSetOutputBuilder {
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::ReadSetBatchError>>,
     _request_id: Option<String>,

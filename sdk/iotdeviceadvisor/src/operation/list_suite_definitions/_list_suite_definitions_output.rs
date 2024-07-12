@@ -34,8 +34,8 @@ impl ListSuiteDefinitionsOutput {
 }
 
 /// A builder for [`ListSuiteDefinitionsOutput`](crate::operation::list_suite_definitions::ListSuiteDefinitionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSuiteDefinitionsOutputBuilder {
     pub(crate) suite_definition_information_list: ::std::option::Option<::std::vec::Vec<crate::types::SuiteDefinitionInformation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

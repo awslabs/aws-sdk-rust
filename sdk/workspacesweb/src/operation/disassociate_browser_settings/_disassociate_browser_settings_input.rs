@@ -20,8 +20,8 @@ impl DisassociateBrowserSettingsInput {
 }
 
 /// A builder for [`DisassociateBrowserSettingsInput`](crate::operation::disassociate_browser_settings::DisassociateBrowserSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateBrowserSettingsInputBuilder {
     pub(crate) portal_arn: ::std::option::Option<::std::string::String>,
 }

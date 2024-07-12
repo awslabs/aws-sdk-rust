@@ -52,8 +52,8 @@ impl ListChildrenInput {
 }
 
 /// A builder for [`ListChildrenInput`](crate::operation::list_children::ListChildrenInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListChildrenInputBuilder {
     pub(crate) parent_id: ::std::option::Option<::std::string::String>,
     pub(crate) child_type: ::std::option::Option<crate::types::ChildType>,

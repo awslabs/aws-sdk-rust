@@ -18,8 +18,8 @@ impl DeleteWorkspaceBundleOutput {
 }
 
 /// A builder for [`DeleteWorkspaceBundleOutput`](crate::operation::delete_workspace_bundle::DeleteWorkspaceBundleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteWorkspaceBundleOutputBuilder {
     _request_id: Option<String>,
 }

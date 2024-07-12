@@ -40,8 +40,8 @@ impl DescribeVolumeAttributeOutput {
 }
 
 /// A builder for [`DescribeVolumeAttributeOutput`](crate::operation::describe_volume_attribute::DescribeVolumeAttributeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeVolumeAttributeOutputBuilder {
     pub(crate) auto_enable_io: ::std::option::Option<crate::types::AttributeBooleanValue>,
     pub(crate) product_codes: ::std::option::Option<::std::vec::Vec<crate::types::ProductCode>>,

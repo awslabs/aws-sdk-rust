@@ -40,8 +40,8 @@ impl PurchaseCapacityBlockInput {
 }
 
 /// A builder for [`PurchaseCapacityBlockInput`](crate::operation::purchase_capacity_block::PurchaseCapacityBlockInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PurchaseCapacityBlockInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,

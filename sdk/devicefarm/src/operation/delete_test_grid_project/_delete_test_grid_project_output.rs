@@ -18,8 +18,8 @@ impl DeleteTestGridProjectOutput {
 }
 
 /// A builder for [`DeleteTestGridProjectOutput`](crate::operation::delete_test_grid_project::DeleteTestGridProjectOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTestGridProjectOutputBuilder {
     _request_id: Option<String>,
 }

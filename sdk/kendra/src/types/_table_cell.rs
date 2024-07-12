@@ -39,8 +39,8 @@ impl TableCell {
 }
 
 /// A builder for [`TableCell`](crate::types::TableCell).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TableCellBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
     pub(crate) top_answer: ::std::option::Option<bool>,

@@ -29,8 +29,8 @@ impl StepRequiredCapabilities {
 }
 
 /// A builder for [`StepRequiredCapabilities`](crate::types::StepRequiredCapabilities).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StepRequiredCapabilitiesBuilder {
     pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::StepAttributeCapability>>,
     pub(crate) amounts: ::std::option::Option<::std::vec::Vec<crate::types::StepAmountCapability>>,

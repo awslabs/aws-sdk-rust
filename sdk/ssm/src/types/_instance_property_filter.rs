@@ -28,8 +28,8 @@ impl InstancePropertyFilter {
 }
 
 /// A builder for [`InstancePropertyFilter`](crate::types::InstancePropertyFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstancePropertyFilterBuilder {
     pub(crate) key: ::std::option::Option<crate::types::InstancePropertyFilterKey>,
     pub(crate) value_set: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

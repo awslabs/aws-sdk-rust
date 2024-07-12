@@ -20,8 +20,8 @@ impl DeleteEventSourceMappingInput {
 }
 
 /// A builder for [`DeleteEventSourceMappingInput`](crate::operation::delete_event_source_mapping::DeleteEventSourceMappingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteEventSourceMappingInputBuilder {
     pub(crate) uuid: ::std::option::Option<::std::string::String>,
 }

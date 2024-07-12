@@ -18,8 +18,8 @@ impl SetTerminationProtectionOutput {
 }
 
 /// A builder for [`SetTerminationProtectionOutput`](crate::operation::set_termination_protection::SetTerminationProtectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetTerminationProtectionOutputBuilder {
     _request_id: Option<String>,
 }

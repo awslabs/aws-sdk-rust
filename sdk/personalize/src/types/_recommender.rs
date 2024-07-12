@@ -99,8 +99,8 @@ impl Recommender {
 }
 
 /// A builder for [`Recommender`](crate::types::Recommender).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecommenderBuilder {
     pub(crate) recommender_arn: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_group_arn: ::std::option::Option<::std::string::String>,

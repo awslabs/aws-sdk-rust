@@ -181,8 +181,8 @@ impl Lag {
 }
 
 /// A builder for [`Lag`](crate::types::Lag).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LagBuilder {
     pub(crate) connections_bandwidth: ::std::option::Option<::std::string::String>,
     pub(crate) number_of_connections: ::std::option::Option<i32>,

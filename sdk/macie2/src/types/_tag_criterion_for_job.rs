@@ -29,8 +29,8 @@ impl TagCriterionForJob {
 }
 
 /// A builder for [`TagCriterionForJob`](crate::types::TagCriterionForJob).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TagCriterionForJobBuilder {
     pub(crate) comparator: ::std::option::Option<crate::types::JobComparator>,
     pub(crate) tag_values: ::std::option::Option<::std::vec::Vec<crate::types::TagCriterionPairForJob>>,

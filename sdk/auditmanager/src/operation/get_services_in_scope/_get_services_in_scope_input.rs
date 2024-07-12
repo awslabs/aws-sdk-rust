@@ -11,8 +11,8 @@ impl GetServicesInScopeInput {
 }
 
 /// A builder for [`GetServicesInScopeInput`](crate::operation::get_services_in_scope::GetServicesInScopeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetServicesInScopeInputBuilder {}
 impl GetServicesInScopeInputBuilder {
     /// Consumes the builder and constructs a [`GetServicesInScopeInput`](crate::operation::get_services_in_scope::GetServicesInScopeInput).

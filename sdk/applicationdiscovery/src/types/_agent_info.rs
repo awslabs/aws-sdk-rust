@@ -77,8 +77,8 @@ impl AgentInfo {
 }
 
 /// A builder for [`AgentInfo`](crate::types::AgentInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AgentInfoBuilder {
     pub(crate) agent_id: ::std::option::Option<::std::string::String>,
     pub(crate) host_name: ::std::option::Option<::std::string::String>,

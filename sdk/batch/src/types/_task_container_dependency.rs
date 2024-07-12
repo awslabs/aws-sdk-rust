@@ -43,8 +43,8 @@ impl TaskContainerDependency {
 }
 
 /// A builder for [`TaskContainerDependency`](crate::types::TaskContainerDependency).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TaskContainerDependencyBuilder {
     pub(crate) container_name: ::std::option::Option<::std::string::String>,
     pub(crate) condition: ::std::option::Option<::std::string::String>,

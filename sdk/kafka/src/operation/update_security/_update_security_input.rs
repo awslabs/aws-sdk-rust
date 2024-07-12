@@ -38,8 +38,8 @@ impl UpdateSecurityInput {
 }
 
 /// A builder for [`UpdateSecurityInput`](crate::operation::update_security::UpdateSecurityInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSecurityInputBuilder {
     pub(crate) client_authentication: ::std::option::Option<crate::types::ClientAuthentication>,
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,

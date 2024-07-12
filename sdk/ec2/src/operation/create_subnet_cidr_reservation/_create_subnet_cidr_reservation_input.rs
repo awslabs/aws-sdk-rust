@@ -64,8 +64,8 @@ impl CreateSubnetCidrReservationInput {
 }
 
 /// A builder for [`CreateSubnetCidrReservationInput`](crate::operation::create_subnet_cidr_reservation::CreateSubnetCidrReservationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSubnetCidrReservationInputBuilder {
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
     pub(crate) cidr: ::std::option::Option<::std::string::String>,

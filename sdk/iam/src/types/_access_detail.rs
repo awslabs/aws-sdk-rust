@@ -62,8 +62,8 @@ impl AccessDetail {
 }
 
 /// A builder for [`AccessDetail`](crate::types::AccessDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AccessDetailBuilder {
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
     pub(crate) service_namespace: ::std::option::Option<::std::string::String>,

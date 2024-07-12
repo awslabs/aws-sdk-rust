@@ -79,8 +79,8 @@ impl SoftwareSet {
 }
 
 /// A builder for [`SoftwareSet`](crate::types::SoftwareSet).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SoftwareSetBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,

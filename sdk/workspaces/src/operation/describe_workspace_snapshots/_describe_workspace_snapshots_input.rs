@@ -20,8 +20,8 @@ impl DescribeWorkspaceSnapshotsInput {
 }
 
 /// A builder for [`DescribeWorkspaceSnapshotsInput`](crate::operation::describe_workspace_snapshots::DescribeWorkspaceSnapshotsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeWorkspaceSnapshotsInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
 }

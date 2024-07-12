@@ -44,8 +44,8 @@ impl StartBotRecommendationInput {
 }
 
 /// A builder for [`StartBotRecommendationInput`](crate::operation::start_bot_recommendation::StartBotRecommendationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartBotRecommendationInputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,

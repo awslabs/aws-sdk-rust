@@ -144,8 +144,8 @@ impl DescribeEvaluationsInput {
 }
 
 /// A builder for [`DescribeEvaluationsInput`](crate::operation::describe_evaluations::DescribeEvaluationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEvaluationsInputBuilder {
     pub(crate) filter_variable: ::std::option::Option<crate::types::EvaluationFilterVariable>,
     pub(crate) eq: ::std::option::Option<::std::string::String>,

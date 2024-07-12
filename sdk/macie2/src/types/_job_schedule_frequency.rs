@@ -33,8 +33,8 @@ impl JobScheduleFrequency {
 }
 
 /// A builder for [`JobScheduleFrequency`](crate::types::JobScheduleFrequency).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JobScheduleFrequencyBuilder {
     pub(crate) daily_schedule: ::std::option::Option<crate::types::DailySchedule>,
     pub(crate) monthly_schedule: ::std::option::Option<crate::types::MonthlySchedule>,

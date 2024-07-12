@@ -48,8 +48,8 @@ impl UpdateFeatureMetadataInput {
 }
 
 /// A builder for [`UpdateFeatureMetadataInput`](crate::operation::update_feature_metadata::UpdateFeatureMetadataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateFeatureMetadataInputBuilder {
     pub(crate) feature_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) feature_name: ::std::option::Option<::std::string::String>,

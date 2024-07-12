@@ -44,8 +44,8 @@ impl LanguageIdSettings {
 }
 
 /// A builder for [`LanguageIdSettings`](crate::types::LanguageIdSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LanguageIdSettingsBuilder {
     pub(crate) vocabulary_name: ::std::option::Option<::std::string::String>,
     pub(crate) vocabulary_filter_name: ::std::option::Option<::std::string::String>,

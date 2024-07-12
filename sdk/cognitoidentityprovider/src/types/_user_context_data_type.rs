@@ -35,8 +35,8 @@ impl UserContextDataType {
 }
 
 /// A builder for [`UserContextDataType`](crate::types::UserContextDataType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UserContextDataTypeBuilder {
     pub(crate) ip_address: ::std::option::Option<::std::string::String>,
     pub(crate) encoded_data: ::std::option::Option<::std::string::String>,

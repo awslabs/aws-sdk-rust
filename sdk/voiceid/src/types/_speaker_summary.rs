@@ -70,8 +70,8 @@ impl SpeakerSummary {
 }
 
 /// A builder for [`SpeakerSummary`](crate::types::SpeakerSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SpeakerSummaryBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) customer_speaker_id: ::std::option::Option<::std::string::String>,

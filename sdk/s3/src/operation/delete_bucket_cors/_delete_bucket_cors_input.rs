@@ -26,8 +26,8 @@ impl DeleteBucketCorsInput {
 }
 
 /// A builder for [`DeleteBucketCorsInput`](crate::operation::delete_bucket_cors::DeleteBucketCorsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteBucketCorsInputBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) expected_bucket_owner: ::std::option::Option<::std::string::String>,

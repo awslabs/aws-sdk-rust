@@ -18,8 +18,8 @@ impl DisassociatePhoneNumberFromUserOutput {
 }
 
 /// A builder for [`DisassociatePhoneNumberFromUserOutput`](crate::operation::disassociate_phone_number_from_user::DisassociatePhoneNumberFromUserOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociatePhoneNumberFromUserOutputBuilder {
     _request_id: Option<String>,
 }

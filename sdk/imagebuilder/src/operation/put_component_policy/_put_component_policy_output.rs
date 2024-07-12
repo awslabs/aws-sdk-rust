@@ -32,8 +32,8 @@ impl PutComponentPolicyOutput {
 }
 
 /// A builder for [`PutComponentPolicyOutput`](crate::operation::put_component_policy::PutComponentPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutComponentPolicyOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) component_arn: ::std::option::Option<::std::string::String>,

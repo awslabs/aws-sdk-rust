@@ -21,8 +21,8 @@ impl CreateStreamingDistributionInput {
 }
 
 /// A builder for [`CreateStreamingDistributionInput`](crate::operation::create_streaming_distribution::CreateStreamingDistributionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateStreamingDistributionInputBuilder {
     pub(crate) streaming_distribution_config: ::std::option::Option<crate::types::StreamingDistributionConfig>,
 }

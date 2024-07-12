@@ -50,8 +50,8 @@ impl UpdateWebhookInput {
 }
 
 /// A builder for [`UpdateWebhookInput`](crate::operation::update_webhook::UpdateWebhookInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateWebhookInputBuilder {
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
     pub(crate) branch_filter: ::std::option::Option<::std::string::String>,

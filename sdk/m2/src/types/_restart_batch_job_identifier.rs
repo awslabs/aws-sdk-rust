@@ -28,8 +28,8 @@ impl RestartBatchJobIdentifier {
 }
 
 /// A builder for [`RestartBatchJobIdentifier`](crate::types::RestartBatchJobIdentifier).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RestartBatchJobIdentifierBuilder {
     pub(crate) execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_step_restart_marker: ::std::option::Option<crate::types::JobStepRestartMarker>,

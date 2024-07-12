@@ -26,8 +26,8 @@ impl GetProfileObjectTypeInput {
 }
 
 /// A builder for [`GetProfileObjectTypeInput`](crate::operation::get_profile_object_type::GetProfileObjectTypeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetProfileObjectTypeInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) object_type_name: ::std::option::Option<::std::string::String>,

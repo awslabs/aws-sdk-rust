@@ -36,8 +36,8 @@ impl BatchDetectKeyPhrasesInput {
 }
 
 /// A builder for [`BatchDetectKeyPhrasesInput`](crate::operation::batch_detect_key_phrases::BatchDetectKeyPhrasesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct BatchDetectKeyPhrasesInputBuilder {
     pub(crate) text_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) language_code: ::std::option::Option<crate::types::LanguageCode>,

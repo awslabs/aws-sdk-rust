@@ -38,8 +38,8 @@ impl RotateKeyOnDemandInput {
 }
 
 /// A builder for [`RotateKeyOnDemandInput`](crate::operation::rotate_key_on_demand::RotateKeyOnDemandInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RotateKeyOnDemandInputBuilder {
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
 }

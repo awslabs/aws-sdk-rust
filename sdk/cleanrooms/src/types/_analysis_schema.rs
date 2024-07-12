@@ -23,8 +23,8 @@ impl AnalysisSchema {
 }
 
 /// A builder for [`AnalysisSchema`](crate::types::AnalysisSchema).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AnalysisSchemaBuilder {
     pub(crate) referenced_tables: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

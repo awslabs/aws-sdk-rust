@@ -142,8 +142,8 @@ impl UpdateKxVolumeOutput {
 }
 
 /// A builder for [`UpdateKxVolumeOutput`](crate::operation::update_kx_volume::UpdateKxVolumeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateKxVolumeOutputBuilder {
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
     pub(crate) volume_name: ::std::option::Option<::std::string::String>,

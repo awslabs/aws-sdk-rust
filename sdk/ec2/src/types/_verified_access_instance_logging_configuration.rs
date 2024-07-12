@@ -27,8 +27,8 @@ impl VerifiedAccessInstanceLoggingConfiguration {
 }
 
 /// A builder for [`VerifiedAccessInstanceLoggingConfiguration`](crate::types::VerifiedAccessInstanceLoggingConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VerifiedAccessInstanceLoggingConfigurationBuilder {
     pub(crate) verified_access_instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) access_logs: ::std::option::Option<crate::types::VerifiedAccessLogs>,

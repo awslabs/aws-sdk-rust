@@ -21,8 +21,8 @@ impl InfraCheckConfig {
 }
 
 /// A builder for [`InfraCheckConfig`](crate::types::InfraCheckConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InfraCheckConfigBuilder {
     pub(crate) enable_infra_check: ::std::option::Option<bool>,
 }

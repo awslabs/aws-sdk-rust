@@ -34,8 +34,8 @@ impl ListAppsListsInput {
 }
 
 /// A builder for [`ListAppsListsInput`](crate::operation::list_apps_lists::ListAppsListsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAppsListsInputBuilder {
     pub(crate) default_lists: ::std::option::Option<bool>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

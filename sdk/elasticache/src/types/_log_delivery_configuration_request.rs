@@ -45,8 +45,8 @@ impl LogDeliveryConfigurationRequest {
 }
 
 /// A builder for [`LogDeliveryConfigurationRequest`](crate::types::LogDeliveryConfigurationRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LogDeliveryConfigurationRequestBuilder {
     pub(crate) log_type: ::std::option::Option<crate::types::LogType>,
     pub(crate) destination_type: ::std::option::Option<crate::types::DestinationType>,

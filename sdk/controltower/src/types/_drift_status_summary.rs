@@ -44,8 +44,8 @@ impl DriftStatusSummary {
 }
 
 /// A builder for [`DriftStatusSummary`](crate::types::DriftStatusSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DriftStatusSummaryBuilder {
     pub(crate) drift_status: ::std::option::Option<crate::types::DriftStatus>,
 }

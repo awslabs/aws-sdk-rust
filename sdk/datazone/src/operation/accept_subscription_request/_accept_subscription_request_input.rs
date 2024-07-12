@@ -41,8 +41,8 @@ impl AcceptSubscriptionRequestInput {
 }
 
 /// A builder for [`AcceptSubscriptionRequestInput`](crate::operation::accept_subscription_request::AcceptSubscriptionRequestInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AcceptSubscriptionRequestInputBuilder {
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) identifier: ::std::option::Option<::std::string::String>,

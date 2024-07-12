@@ -21,8 +21,8 @@ impl ErrorReportConfiguration {
 }
 
 /// A builder for [`ErrorReportConfiguration`](crate::types::ErrorReportConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ErrorReportConfigurationBuilder {
     pub(crate) s3_configuration: ::std::option::Option<crate::types::S3Configuration>,
 }

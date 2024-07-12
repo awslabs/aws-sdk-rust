@@ -26,8 +26,8 @@ impl ListSuggestedResiliencyPoliciesInput {
 }
 
 /// A builder for [`ListSuggestedResiliencyPoliciesInput`](crate::operation::list_suggested_resiliency_policies::ListSuggestedResiliencyPoliciesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSuggestedResiliencyPoliciesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

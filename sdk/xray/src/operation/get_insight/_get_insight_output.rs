@@ -26,8 +26,8 @@ impl GetInsightOutput {
 }
 
 /// A builder for [`GetInsightOutput`](crate::operation::get_insight::GetInsightOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetInsightOutputBuilder {
     pub(crate) insight: ::std::option::Option<crate::types::Insight>,
     _request_id: Option<String>,

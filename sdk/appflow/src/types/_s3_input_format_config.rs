@@ -21,8 +21,8 @@ impl S3InputFormatConfig {
 }
 
 /// A builder for [`S3InputFormatConfig`](crate::types::S3InputFormatConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3InputFormatConfigBuilder {
     pub(crate) s3_input_file_type: ::std::option::Option<crate::types::S3InputFileType>,
 }

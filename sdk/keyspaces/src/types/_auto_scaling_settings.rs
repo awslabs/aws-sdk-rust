@@ -64,8 +64,8 @@ impl AutoScalingSettings {
 }
 
 /// A builder for [`AutoScalingSettings`](crate::types::AutoScalingSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AutoScalingSettingsBuilder {
     pub(crate) auto_scaling_disabled: ::std::option::Option<bool>,
     pub(crate) minimum_units: ::std::option::Option<i64>,

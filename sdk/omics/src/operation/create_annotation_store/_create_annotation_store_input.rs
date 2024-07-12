@@ -62,8 +62,8 @@ impl CreateAnnotationStoreInput {
 }
 
 /// A builder for [`CreateAnnotationStoreInput`](crate::operation::create_annotation_store::CreateAnnotationStoreInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAnnotationStoreInputBuilder {
     pub(crate) reference: ::std::option::Option<crate::types::ReferenceItem>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

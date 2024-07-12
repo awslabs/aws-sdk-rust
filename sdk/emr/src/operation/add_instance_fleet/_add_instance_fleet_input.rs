@@ -26,8 +26,8 @@ impl AddInstanceFleetInput {
 }
 
 /// A builder for [`AddInstanceFleetInput`](crate::operation::add_instance_fleet::AddInstanceFleetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddInstanceFleetInputBuilder {
     pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_fleet: ::std::option::Option<crate::types::InstanceFleetConfig>,

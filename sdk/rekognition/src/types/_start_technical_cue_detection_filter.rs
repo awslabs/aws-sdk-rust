@@ -29,8 +29,8 @@ impl StartTechnicalCueDetectionFilter {
 }
 
 /// A builder for [`StartTechnicalCueDetectionFilter`](crate::types::StartTechnicalCueDetectionFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartTechnicalCueDetectionFilterBuilder {
     pub(crate) min_segment_confidence: ::std::option::Option<f32>,
     pub(crate) black_frame: ::std::option::Option<crate::types::BlackFrame>,

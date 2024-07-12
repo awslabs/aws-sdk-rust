@@ -23,8 +23,8 @@ impl TemplateConfiguration {
 }
 
 /// A builder for [`TemplateConfiguration`](crate::types::TemplateConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TemplateConfigurationBuilder {
     pub(crate) template: ::std::option::Option<::aws_smithy_types::Document>,
 }

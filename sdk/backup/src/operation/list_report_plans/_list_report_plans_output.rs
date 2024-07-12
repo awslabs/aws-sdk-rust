@@ -34,8 +34,8 @@ impl ListReportPlansOutput {
 }
 
 /// A builder for [`ListReportPlansOutput`](crate::operation::list_report_plans::ListReportPlansOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListReportPlansOutputBuilder {
     pub(crate) report_plans: ::std::option::Option<::std::vec::Vec<crate::types::ReportPlan>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

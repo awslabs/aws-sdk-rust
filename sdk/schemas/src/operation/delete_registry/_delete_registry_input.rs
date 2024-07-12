@@ -20,8 +20,8 @@ impl DeleteRegistryInput {
 }
 
 /// A builder for [`DeleteRegistryInput`](crate::operation::delete_registry::DeleteRegistryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRegistryInputBuilder {
     pub(crate) registry_name: ::std::option::Option<::std::string::String>,
 }

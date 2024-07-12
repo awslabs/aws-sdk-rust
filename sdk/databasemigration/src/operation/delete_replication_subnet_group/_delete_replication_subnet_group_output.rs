@@ -19,8 +19,8 @@ impl DeleteReplicationSubnetGroupOutput {
 }
 
 /// A builder for [`DeleteReplicationSubnetGroupOutput`](crate::operation::delete_replication_subnet_group::DeleteReplicationSubnetGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteReplicationSubnetGroupOutputBuilder {
     _request_id: Option<String>,
 }

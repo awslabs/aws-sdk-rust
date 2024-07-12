@@ -50,8 +50,8 @@ impl UpdateAccessEntryInput {
 }
 
 /// A builder for [`UpdateAccessEntryInput`](crate::operation::update_access_entry::UpdateAccessEntryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAccessEntryInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) principal_arn: ::std::option::Option<::std::string::String>,

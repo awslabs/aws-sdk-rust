@@ -47,8 +47,8 @@ impl DescribeIdentityOutput {
 }
 
 /// A builder for [`DescribeIdentityOutput`](crate::operation::describe_identity::DescribeIdentityOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeIdentityOutputBuilder {
     pub(crate) identity_id: ::std::option::Option<::std::string::String>,
     pub(crate) logins: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

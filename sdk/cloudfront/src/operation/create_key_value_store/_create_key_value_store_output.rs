@@ -38,8 +38,8 @@ impl CreateKeyValueStoreOutput {
 }
 
 /// A builder for [`CreateKeyValueStoreOutput`](crate::operation::create_key_value_store::CreateKeyValueStoreOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateKeyValueStoreOutputBuilder {
     pub(crate) key_value_store: ::std::option::Option<crate::types::KeyValueStore>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,

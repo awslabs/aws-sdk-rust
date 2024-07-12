@@ -33,8 +33,8 @@ impl QuotaContextInfo {
 }
 
 /// A builder for [`QuotaContextInfo`](crate::types::QuotaContextInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct QuotaContextInfoBuilder {
     pub(crate) context_scope: ::std::option::Option<crate::types::QuotaContextScope>,
     pub(crate) context_scope_type: ::std::option::Option<::std::string::String>,

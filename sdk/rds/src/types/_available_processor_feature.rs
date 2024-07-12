@@ -34,8 +34,8 @@ impl AvailableProcessorFeature {
 }
 
 /// A builder for [`AvailableProcessorFeature`](crate::types::AvailableProcessorFeature).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AvailableProcessorFeatureBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) default_value: ::std::option::Option<::std::string::String>,

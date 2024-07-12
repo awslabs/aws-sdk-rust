@@ -21,8 +21,8 @@ impl ConversationLevelTestResultsFilterBy {
 }
 
 /// A builder for [`ConversationLevelTestResultsFilterBy`](crate::types::ConversationLevelTestResultsFilterBy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConversationLevelTestResultsFilterByBuilder {
     pub(crate) end_to_end_result: ::std::option::Option<crate::types::TestResultMatchStatus>,
 }

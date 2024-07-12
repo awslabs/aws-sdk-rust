@@ -32,8 +32,8 @@ impl RejectResourceShareInvitationOutput {
 }
 
 /// A builder for [`RejectResourceShareInvitationOutput`](crate::operation::reject_resource_share_invitation::RejectResourceShareInvitationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RejectResourceShareInvitationOutputBuilder {
     pub(crate) resource_share_invitation: ::std::option::Option<crate::types::ResourceShareInvitation>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

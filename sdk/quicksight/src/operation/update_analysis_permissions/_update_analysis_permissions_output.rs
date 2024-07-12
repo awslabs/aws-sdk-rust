@@ -52,8 +52,8 @@ impl UpdateAnalysisPermissionsOutput {
 }
 
 /// A builder for [`UpdateAnalysisPermissionsOutput`](crate::operation::update_analysis_permissions::UpdateAnalysisPermissionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAnalysisPermissionsOutputBuilder {
     pub(crate) analysis_arn: ::std::option::Option<::std::string::String>,
     pub(crate) analysis_id: ::std::option::Option<::std::string::String>,

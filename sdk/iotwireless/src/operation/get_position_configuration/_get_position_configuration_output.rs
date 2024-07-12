@@ -33,8 +33,8 @@ impl GetPositionConfigurationOutput {
 }
 
 /// A builder for [`GetPositionConfigurationOutput`](crate::operation::get_position_configuration::GetPositionConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPositionConfigurationOutputBuilder {
     pub(crate) solvers: ::std::option::Option<crate::types::PositionSolverDetails>,
     pub(crate) destination: ::std::option::Option<::std::string::String>,

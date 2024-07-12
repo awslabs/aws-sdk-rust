@@ -18,8 +18,8 @@ impl PutAccountVdmAttributesOutput {
 }
 
 /// A builder for [`PutAccountVdmAttributesOutput`](crate::operation::put_account_vdm_attributes::PutAccountVdmAttributesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutAccountVdmAttributesOutputBuilder {
     _request_id: Option<String>,
 }

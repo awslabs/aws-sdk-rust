@@ -58,8 +58,8 @@ impl RasterDataCollectionQueryOutput {
 }
 
 /// A builder for [`RasterDataCollectionQueryOutput`](crate::types::RasterDataCollectionQueryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct RasterDataCollectionQueryOutputBuilder {
     pub(crate) raster_data_collection_arn: ::std::option::Option<::std::string::String>,
     pub(crate) raster_data_collection_name: ::std::option::Option<::std::string::String>,

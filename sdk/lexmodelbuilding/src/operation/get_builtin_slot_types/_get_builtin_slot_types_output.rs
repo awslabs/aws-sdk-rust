@@ -34,8 +34,8 @@ impl GetBuiltinSlotTypesOutput {
 }
 
 /// A builder for [`GetBuiltinSlotTypesOutput`](crate::operation::get_builtin_slot_types::GetBuiltinSlotTypesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBuiltinSlotTypesOutputBuilder {
     pub(crate) slot_types: ::std::option::Option<::std::vec::Vec<crate::types::BuiltinSlotTypeMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

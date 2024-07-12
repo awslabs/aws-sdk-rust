@@ -69,8 +69,8 @@ impl LaunchTemplatePlacement {
 }
 
 /// A builder for [`LaunchTemplatePlacement`](crate::types::LaunchTemplatePlacement).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LaunchTemplatePlacementBuilder {
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) affinity: ::std::option::Option<::std::string::String>,

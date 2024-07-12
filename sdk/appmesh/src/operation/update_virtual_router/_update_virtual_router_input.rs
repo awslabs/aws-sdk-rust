@@ -44,8 +44,8 @@ impl UpdateVirtualRouterInput {
 }
 
 /// A builder for [`UpdateVirtualRouterInput`](crate::operation::update_virtual_router::UpdateVirtualRouterInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateVirtualRouterInputBuilder {
     pub(crate) virtual_router_name: ::std::option::Option<::std::string::String>,
     pub(crate) mesh_name: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl DataConnector {
 }
 
 /// A builder for [`DataConnector`](crate::types::DataConnector).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataConnectorBuilder {
     pub(crate) lambda: ::std::option::Option<crate::types::LambdaFunction>,
     pub(crate) is_native: ::std::option::Option<bool>,

@@ -34,8 +34,8 @@ impl GetServiceLastAccessedDetailsInput {
 }
 
 /// A builder for [`GetServiceLastAccessedDetailsInput`](crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetServiceLastAccessedDetailsInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,

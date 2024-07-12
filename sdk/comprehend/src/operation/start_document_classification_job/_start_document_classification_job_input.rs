@@ -88,8 +88,8 @@ impl StartDocumentClassificationJobInput {
 }
 
 /// A builder for [`StartDocumentClassificationJobInput`](crate::operation::start_document_classification_job::StartDocumentClassificationJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartDocumentClassificationJobInputBuilder {
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
     pub(crate) document_classifier_arn: ::std::option::Option<::std::string::String>,

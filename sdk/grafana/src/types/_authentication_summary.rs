@@ -28,8 +28,8 @@ impl AuthenticationSummary {
 }
 
 /// A builder for [`AuthenticationSummary`](crate::types::AuthenticationSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AuthenticationSummaryBuilder {
     pub(crate) providers: ::std::option::Option<::std::vec::Vec<crate::types::AuthenticationProviderTypes>>,
     pub(crate) saml_configuration_status: ::std::option::Option<crate::types::SamlConfigurationStatus>,

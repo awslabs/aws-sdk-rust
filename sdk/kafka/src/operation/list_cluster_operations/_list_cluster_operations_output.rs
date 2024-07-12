@@ -34,8 +34,8 @@ impl ListClusterOperationsOutput {
 }
 
 /// A builder for [`ListClusterOperationsOutput`](crate::operation::list_cluster_operations::ListClusterOperationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListClusterOperationsOutputBuilder {
     pub(crate) cluster_operation_info_list: ::std::option::Option<::std::vec::Vec<crate::types::ClusterOperationInfo>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

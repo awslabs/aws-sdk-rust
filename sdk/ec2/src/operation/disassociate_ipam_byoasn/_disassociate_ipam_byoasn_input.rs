@@ -32,8 +32,8 @@ impl DisassociateIpamByoasnInput {
 }
 
 /// A builder for [`DisassociateIpamByoasnInput`](crate::operation::disassociate_ipam_byoasn::DisassociateIpamByoasnInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateIpamByoasnInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) asn: ::std::option::Option<::std::string::String>,

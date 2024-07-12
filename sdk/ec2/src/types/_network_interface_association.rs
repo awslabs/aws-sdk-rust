@@ -59,8 +59,8 @@ impl NetworkInterfaceAssociation {
 }
 
 /// A builder for [`NetworkInterfaceAssociation`](crate::types::NetworkInterfaceAssociation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NetworkInterfaceAssociationBuilder {
     pub(crate) allocation_id: ::std::option::Option<::std::string::String>,
     pub(crate) association_id: ::std::option::Option<::std::string::String>,

@@ -21,8 +21,8 @@ impl ParentHyperParameterTuningJob {
 }
 
 /// A builder for [`ParentHyperParameterTuningJob`](crate::types::ParentHyperParameterTuningJob).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ParentHyperParameterTuningJobBuilder {
     pub(crate) hyper_parameter_tuning_job_name: ::std::option::Option<::std::string::String>,
 }

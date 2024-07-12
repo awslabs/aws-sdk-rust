@@ -147,8 +147,8 @@ impl SpotInstanceRequest {
 }
 
 /// A builder for [`SpotInstanceRequest`](crate::types::SpotInstanceRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SpotInstanceRequestBuilder {
     pub(crate) actual_block_hourly_price: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zone_group: ::std::option::Option<::std::string::String>,

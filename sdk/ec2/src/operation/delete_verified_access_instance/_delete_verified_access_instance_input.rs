@@ -32,8 +32,8 @@ impl DeleteVerifiedAccessInstanceInput {
 }
 
 /// A builder for [`DeleteVerifiedAccessInstanceInput`](crate::operation::delete_verified_access_instance::DeleteVerifiedAccessInstanceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVerifiedAccessInstanceInputBuilder {
     pub(crate) verified_access_instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,

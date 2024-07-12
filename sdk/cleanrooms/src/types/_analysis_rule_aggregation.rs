@@ -64,8 +64,8 @@ impl AnalysisRuleAggregation {
 }
 
 /// A builder for [`AnalysisRuleAggregation`](crate::types::AnalysisRuleAggregation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AnalysisRuleAggregationBuilder {
     pub(crate) aggregate_columns: ::std::option::Option<::std::vec::Vec<crate::types::AggregateColumn>>,
     pub(crate) join_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

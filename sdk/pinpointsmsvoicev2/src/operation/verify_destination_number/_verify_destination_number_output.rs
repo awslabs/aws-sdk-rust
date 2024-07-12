@@ -53,8 +53,8 @@ impl VerifyDestinationNumberOutput {
 }
 
 /// A builder for [`VerifyDestinationNumberOutput`](crate::operation::verify_destination_number::VerifyDestinationNumberOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VerifyDestinationNumberOutputBuilder {
     pub(crate) verified_destination_number_arn: ::std::option::Option<::std::string::String>,
     pub(crate) verified_destination_number_id: ::std::option::Option<::std::string::String>,

@@ -29,8 +29,8 @@ impl SingularConnectorProfileCredentials {
 }
 
 /// A builder for [`SingularConnectorProfileCredentials`](crate::types::SingularConnectorProfileCredentials).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SingularConnectorProfileCredentialsBuilder {
     pub(crate) api_key: ::std::option::Option<::std::string::String>,
 }

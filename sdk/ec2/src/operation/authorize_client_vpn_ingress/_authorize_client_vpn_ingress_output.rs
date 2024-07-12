@@ -26,8 +26,8 @@ impl AuthorizeClientVpnIngressOutput {
 }
 
 /// A builder for [`AuthorizeClientVpnIngressOutput`](crate::operation::authorize_client_vpn_ingress::AuthorizeClientVpnIngressOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AuthorizeClientVpnIngressOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ClientVpnAuthorizationRuleStatus>,
     _request_id: Option<String>,

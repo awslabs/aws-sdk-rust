@@ -27,8 +27,8 @@ impl NewDeviceMetadataType {
 }
 
 /// A builder for [`NewDeviceMetadataType`](crate::types::NewDeviceMetadataType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NewDeviceMetadataTypeBuilder {
     pub(crate) device_key: ::std::option::Option<::std::string::String>,
     pub(crate) device_group_key: ::std::option::Option<::std::string::String>,

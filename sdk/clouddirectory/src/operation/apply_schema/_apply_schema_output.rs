@@ -32,8 +32,8 @@ impl ApplySchemaOutput {
 }
 
 /// A builder for [`ApplySchemaOutput`](crate::operation::apply_schema::ApplySchemaOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ApplySchemaOutputBuilder {
     pub(crate) applied_schema_arn: ::std::option::Option<::std::string::String>,
     pub(crate) directory_arn: ::std::option::Option<::std::string::String>,

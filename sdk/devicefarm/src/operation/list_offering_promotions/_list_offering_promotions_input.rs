@@ -20,8 +20,8 @@ impl ListOfferingPromotionsInput {
 }
 
 /// A builder for [`ListOfferingPromotionsInput`](crate::operation::list_offering_promotions::ListOfferingPromotionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListOfferingPromotionsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }

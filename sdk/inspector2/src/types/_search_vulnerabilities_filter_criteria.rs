@@ -22,8 +22,8 @@ impl SearchVulnerabilitiesFilterCriteria {
 }
 
 /// A builder for [`SearchVulnerabilitiesFilterCriteria`](crate::types::SearchVulnerabilitiesFilterCriteria).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchVulnerabilitiesFilterCriteriaBuilder {
     pub(crate) vulnerability_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

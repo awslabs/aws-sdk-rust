@@ -79,8 +79,8 @@ impl ResourceFilterCriteria {
 }
 
 /// A builder for [`ResourceFilterCriteria`](crate::types::ResourceFilterCriteria).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResourceFilterCriteriaBuilder {
     pub(crate) account_id: ::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>>,
     pub(crate) resource_id: ::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>>,

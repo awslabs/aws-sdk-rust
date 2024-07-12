@@ -21,8 +21,8 @@ impl AttachmentInputEvent {
 }
 
 /// A builder for [`AttachmentInputEvent`](crate::types::AttachmentInputEvent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttachmentInputEventBuilder {
     pub(crate) attachment: ::std::option::Option<crate::types::AttachmentInput>,
 }

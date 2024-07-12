@@ -36,8 +36,8 @@ impl BatchDeleteClusterSnapshotsOutput {
 }
 
 /// A builder for [`BatchDeleteClusterSnapshotsOutput`](crate::operation::batch_delete_cluster_snapshots::BatchDeleteClusterSnapshotsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDeleteClusterSnapshotsOutputBuilder {
     pub(crate) resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotErrorMessage>>,

@@ -70,8 +70,8 @@ impl TaskReportConfig {
 }
 
 /// A builder for [`TaskReportConfig`](crate::types::TaskReportConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TaskReportConfigBuilder {
     pub(crate) destination: ::std::option::Option<crate::types::ReportDestination>,
     pub(crate) output_type: ::std::option::Option<crate::types::ReportOutputType>,

@@ -26,8 +26,8 @@ impl StopAssessmentRunInput {
 }
 
 /// A builder for [`StopAssessmentRunInput`](crate::operation::stop_assessment_run::StopAssessmentRunInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopAssessmentRunInputBuilder {
     pub(crate) assessment_run_arn: ::std::option::Option<::std::string::String>,
     pub(crate) stop_action: ::std::option::Option<crate::types::StopAction>,

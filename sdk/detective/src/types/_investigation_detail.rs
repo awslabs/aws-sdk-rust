@@ -57,8 +57,8 @@ impl InvestigationDetail {
 }
 
 /// A builder for [`InvestigationDetail`](crate::types::InvestigationDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InvestigationDetailBuilder {
     pub(crate) investigation_id: ::std::option::Option<::std::string::String>,
     pub(crate) severity: ::std::option::Option<crate::types::Severity>,

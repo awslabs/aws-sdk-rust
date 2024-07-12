@@ -29,8 +29,8 @@ impl ViewInputContent {
 }
 
 /// A builder for [`ViewInputContent`](crate::types::ViewInputContent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ViewInputContentBuilder {
     pub(crate) template: ::std::option::Option<::std::string::String>,
     pub(crate) actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

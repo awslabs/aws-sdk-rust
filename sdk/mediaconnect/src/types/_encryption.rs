@@ -69,8 +69,8 @@ impl Encryption {
 }
 
 /// A builder for [`Encryption`](crate::types::Encryption).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EncryptionBuilder {
     pub(crate) algorithm: ::std::option::Option<crate::types::Algorithm>,
     pub(crate) constant_initialization_vector: ::std::option::Option<::std::string::String>,

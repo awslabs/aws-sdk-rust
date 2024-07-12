@@ -27,8 +27,8 @@ impl SessionContext {
 }
 
 /// A builder for [`SessionContext`](crate::types::SessionContext).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SessionContextBuilder {
     pub(crate) attributes: ::std::option::Option<crate::types::SessionContextAttributes>,
     pub(crate) session_issuer: ::std::option::Option<crate::types::SessionIssuer>,

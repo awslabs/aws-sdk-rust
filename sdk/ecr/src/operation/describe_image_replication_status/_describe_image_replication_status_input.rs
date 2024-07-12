@@ -32,8 +32,8 @@ impl DescribeImageReplicationStatusInput {
 }
 
 /// A builder for [`DescribeImageReplicationStatusInput`](crate::operation::describe_image_replication_status::DescribeImageReplicationStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeImageReplicationStatusInputBuilder {
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
     pub(crate) image_id: ::std::option::Option<crate::types::ImageIdentifier>,

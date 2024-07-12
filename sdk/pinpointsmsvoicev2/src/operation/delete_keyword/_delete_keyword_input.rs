@@ -26,8 +26,8 @@ impl DeleteKeywordInput {
 }
 
 /// A builder for [`DeleteKeywordInput`](crate::operation::delete_keyword::DeleteKeywordInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteKeywordInputBuilder {
     pub(crate) origination_identity: ::std::option::Option<::std::string::String>,
     pub(crate) keyword: ::std::option::Option<::std::string::String>,

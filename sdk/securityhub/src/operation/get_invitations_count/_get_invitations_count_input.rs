@@ -11,8 +11,8 @@ impl GetInvitationsCountInput {
 }
 
 /// A builder for [`GetInvitationsCountInput`](crate::operation::get_invitations_count::GetInvitationsCountInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetInvitationsCountInputBuilder {}
 impl GetInvitationsCountInputBuilder {
     /// Consumes the builder and constructs a [`GetInvitationsCountInput`](crate::operation::get_invitations_count::GetInvitationsCountInput).

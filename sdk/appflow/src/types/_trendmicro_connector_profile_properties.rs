@@ -12,8 +12,8 @@ impl TrendmicroConnectorProfileProperties {
 }
 
 /// A builder for [`TrendmicroConnectorProfileProperties`](crate::types::TrendmicroConnectorProfileProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TrendmicroConnectorProfilePropertiesBuilder {}
 impl TrendmicroConnectorProfilePropertiesBuilder {
     /// Consumes the builder and constructs a [`TrendmicroConnectorProfileProperties`](crate::types::TrendmicroConnectorProfileProperties).

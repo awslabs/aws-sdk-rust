@@ -18,8 +18,8 @@ impl DeleteThreatIntelSetOutput {
 }
 
 /// A builder for [`DeleteThreatIntelSetOutput`](crate::operation::delete_threat_intel_set::DeleteThreatIntelSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteThreatIntelSetOutputBuilder {
     _request_id: Option<String>,
 }

@@ -50,8 +50,8 @@ impl ListPrincipalsForPortfolioInput {
 }
 
 /// A builder for [`ListPrincipalsForPortfolioInput`](crate::operation::list_principals_for_portfolio::ListPrincipalsForPortfolioInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPrincipalsForPortfolioInputBuilder {
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,
     pub(crate) portfolio_id: ::std::option::Option<::std::string::String>,

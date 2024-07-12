@@ -56,8 +56,8 @@ impl GetCampaignDateRangeKpiInput {
 }
 
 /// A builder for [`GetCampaignDateRangeKpiInput`](crate::operation::get_campaign_date_range_kpi::GetCampaignDateRangeKpiInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCampaignDateRangeKpiInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) campaign_id: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl InputIdentifier {
 }
 
 /// A builder for [`InputIdentifier`](crate::types::InputIdentifier).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InputIdentifierBuilder {
     pub(crate) iot_events_input_identifier: ::std::option::Option<crate::types::IotEventsInputIdentifier>,
     pub(crate) iot_site_wise_input_identifier: ::std::option::Option<crate::types::IotSiteWiseInputIdentifier>,

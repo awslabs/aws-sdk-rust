@@ -49,8 +49,8 @@ impl SeedUrlConfiguration {
 }
 
 /// A builder for [`SeedUrlConfiguration`](crate::types::SeedUrlConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SeedUrlConfigurationBuilder {
     pub(crate) seed_urls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) web_crawler_mode: ::std::option::Option<crate::types::WebCrawlerMode>,

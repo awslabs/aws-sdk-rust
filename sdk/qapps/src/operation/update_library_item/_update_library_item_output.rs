@@ -97,8 +97,8 @@ impl UpdateLibraryItemOutput {
 }
 
 /// A builder for [`UpdateLibraryItemOutput`](crate::operation::update_library_item::UpdateLibraryItemOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateLibraryItemOutputBuilder {
     pub(crate) library_item_id: ::std::option::Option<::std::string::String>,
     pub(crate) app_id: ::std::option::Option<::std::string::String>,

@@ -21,8 +21,8 @@ impl GetBulkPublishDetailsInput {
 }
 
 /// A builder for [`GetBulkPublishDetailsInput`](crate::operation::get_bulk_publish_details::GetBulkPublishDetailsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBulkPublishDetailsInputBuilder {
     pub(crate) identity_pool_id: ::std::option::Option<::std::string::String>,
 }

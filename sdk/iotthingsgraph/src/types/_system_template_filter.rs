@@ -28,8 +28,8 @@ impl SystemTemplateFilter {
 }
 
 /// A builder for [`SystemTemplateFilter`](crate::types::SystemTemplateFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SystemTemplateFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::SystemTemplateFilterName>,
     pub(crate) value: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

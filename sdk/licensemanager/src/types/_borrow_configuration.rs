@@ -27,8 +27,8 @@ impl BorrowConfiguration {
 }
 
 /// A builder for [`BorrowConfiguration`](crate::types::BorrowConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BorrowConfigurationBuilder {
     pub(crate) allow_early_check_in: ::std::option::Option<bool>,
     pub(crate) max_time_to_live_in_minutes: ::std::option::Option<i32>,

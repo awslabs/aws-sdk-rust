@@ -48,8 +48,8 @@ impl UpdateApplicationSettingsInput {
 }
 
 /// A builder for [`UpdateApplicationSettingsInput`](crate::operation::update_application_settings::UpdateApplicationSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateApplicationSettingsInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) credentials_to_add_or_update: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>>,

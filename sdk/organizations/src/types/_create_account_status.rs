@@ -141,8 +141,8 @@ impl CreateAccountStatus {
 }
 
 /// A builder for [`CreateAccountStatus`](crate::types::CreateAccountStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateAccountStatusBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) account_name: ::std::option::Option<::std::string::String>,

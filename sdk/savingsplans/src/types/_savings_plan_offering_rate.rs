@@ -65,8 +65,8 @@ impl SavingsPlanOfferingRate {
 }
 
 /// A builder for [`SavingsPlanOfferingRate`](crate::types::SavingsPlanOfferingRate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SavingsPlanOfferingRateBuilder {
     pub(crate) savings_plan_offering: ::std::option::Option<crate::types::ParentSavingsPlanOffering>,
     pub(crate) rate: ::std::option::Option<::std::string::String>,

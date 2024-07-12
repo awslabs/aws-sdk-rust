@@ -32,8 +32,8 @@ impl DescribeObjectInput {
 }
 
 /// A builder for [`DescribeObjectInput`](crate::operation::describe_object::DescribeObjectInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeObjectInputBuilder {
     pub(crate) path: ::std::option::Option<::std::string::String>,
 }

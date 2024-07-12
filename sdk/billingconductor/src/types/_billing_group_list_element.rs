@@ -98,8 +98,8 @@ impl BillingGroupListElement {
 }
 
 /// A builder for [`BillingGroupListElement`](crate::types::BillingGroupListElement).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct BillingGroupListElementBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

@@ -56,8 +56,8 @@ impl AssociateWebAclInput {
 }
 
 /// A builder for [`AssociateWebAclInput`](crate::operation::associate_web_acl::AssociateWebAclInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateWebAclInputBuilder {
     pub(crate) web_acl_arn: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,

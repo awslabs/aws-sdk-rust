@@ -42,8 +42,8 @@ impl TopicCategoryFilterConstant {
 }
 
 /// A builder for [`TopicCategoryFilterConstant`](crate::types::TopicCategoryFilterConstant).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct TopicCategoryFilterConstantBuilder {
     pub(crate) constant_type: ::std::option::Option<crate::types::ConstantType>,
     pub(crate) singular_constant: ::std::option::Option<::std::string::String>,

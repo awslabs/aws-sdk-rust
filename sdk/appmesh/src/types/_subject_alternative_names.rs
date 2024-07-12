@@ -21,8 +21,8 @@ impl SubjectAlternativeNames {
 }
 
 /// A builder for [`SubjectAlternativeNames`](crate::types::SubjectAlternativeNames).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SubjectAlternativeNamesBuilder {
     pub(crate) r#match: ::std::option::Option<crate::types::SubjectAlternativeNameMatchers>,
 }

@@ -20,8 +20,8 @@ impl GetRecoveryGroupInput {
 }
 
 /// A builder for [`GetRecoveryGroupInput`](crate::operation::get_recovery_group::GetRecoveryGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRecoveryGroupInputBuilder {
     pub(crate) recovery_group_name: ::std::option::Option<::std::string::String>,
 }

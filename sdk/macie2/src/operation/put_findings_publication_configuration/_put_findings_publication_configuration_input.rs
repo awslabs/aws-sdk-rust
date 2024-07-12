@@ -26,8 +26,8 @@ impl PutFindingsPublicationConfigurationInput {
 }
 
 /// A builder for [`PutFindingsPublicationConfigurationInput`](crate::operation::put_findings_publication_configuration::PutFindingsPublicationConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutFindingsPublicationConfigurationInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) security_hub_configuration: ::std::option::Option<crate::types::SecurityHubConfiguration>,

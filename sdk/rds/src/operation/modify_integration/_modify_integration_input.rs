@@ -38,8 +38,8 @@ impl ModifyIntegrationInput {
 }
 
 /// A builder for [`ModifyIntegrationInput`](crate::operation::modify_integration::ModifyIntegrationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyIntegrationInputBuilder {
     pub(crate) integration_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) integration_name: ::std::option::Option<::std::string::String>,

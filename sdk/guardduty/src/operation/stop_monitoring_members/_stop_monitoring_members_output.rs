@@ -28,8 +28,8 @@ impl StopMonitoringMembersOutput {
 }
 
 /// A builder for [`StopMonitoringMembersOutput`](crate::operation::stop_monitoring_members::StopMonitoringMembersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopMonitoringMembersOutputBuilder {
     pub(crate) unprocessed_accounts: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>,
     _request_id: Option<String>,

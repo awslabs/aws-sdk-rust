@@ -18,8 +18,8 @@ impl UpdateTimelineEventOutput {
 }
 
 /// A builder for [`UpdateTimelineEventOutput`](crate::operation::update_timeline_event::UpdateTimelineEventOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateTimelineEventOutputBuilder {
     _request_id: Option<String>,
 }

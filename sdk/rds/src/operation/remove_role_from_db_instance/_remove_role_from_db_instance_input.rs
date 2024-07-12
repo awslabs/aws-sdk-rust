@@ -32,8 +32,8 @@ impl RemoveRoleFromDbInstanceInput {
 }
 
 /// A builder for [`RemoveRoleFromDbInstanceInput`](crate::operation::remove_role_from_db_instance::RemoveRoleFromDbInstanceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoveRoleFromDbInstanceInputBuilder {
     pub(crate) db_instance_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,

@@ -18,8 +18,8 @@ impl ResetAuthorizersCacheOutput {
 }
 
 /// A builder for [`ResetAuthorizersCacheOutput`](crate::operation::reset_authorizers_cache::ResetAuthorizersCacheOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResetAuthorizersCacheOutputBuilder {
     _request_id: Option<String>,
 }

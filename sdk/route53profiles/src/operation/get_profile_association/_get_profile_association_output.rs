@@ -26,8 +26,8 @@ impl GetProfileAssociationOutput {
 }
 
 /// A builder for [`GetProfileAssociationOutput`](crate::operation::get_profile_association::GetProfileAssociationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetProfileAssociationOutputBuilder {
     pub(crate) profile_association: ::std::option::Option<crate::types::ProfileAssociation>,
     _request_id: Option<String>,

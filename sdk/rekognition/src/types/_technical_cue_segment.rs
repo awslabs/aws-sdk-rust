@@ -27,8 +27,8 @@ impl TechnicalCueSegment {
 }
 
 /// A builder for [`TechnicalCueSegment`](crate::types::TechnicalCueSegment).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TechnicalCueSegmentBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::TechnicalCueType>,
     pub(crate) confidence: ::std::option::Option<f32>,

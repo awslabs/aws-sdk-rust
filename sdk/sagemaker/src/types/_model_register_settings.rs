@@ -27,8 +27,8 @@ impl ModelRegisterSettings {
 }
 
 /// A builder for [`ModelRegisterSettings`](crate::types::ModelRegisterSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModelRegisterSettingsBuilder {
     pub(crate) status: ::std::option::Option<crate::types::FeatureStatus>,
     pub(crate) cross_account_model_register_role_arn: ::std::option::Option<::std::string::String>,

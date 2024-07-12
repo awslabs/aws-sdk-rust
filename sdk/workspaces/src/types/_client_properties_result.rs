@@ -27,8 +27,8 @@ impl ClientPropertiesResult {
 }
 
 /// A builder for [`ClientPropertiesResult`](crate::types::ClientPropertiesResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ClientPropertiesResultBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_properties: ::std::option::Option<crate::types::ClientProperties>,

@@ -18,8 +18,8 @@ impl UpdateWirelessGatewayOutput {
 }
 
 /// A builder for [`UpdateWirelessGatewayOutput`](crate::operation::update_wireless_gateway::UpdateWirelessGatewayOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateWirelessGatewayOutputBuilder {
     _request_id: Option<String>,
 }

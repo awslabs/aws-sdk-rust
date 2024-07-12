@@ -34,8 +34,8 @@ impl ListExperimentTemplatesOutput {
 }
 
 /// A builder for [`ListExperimentTemplatesOutput`](crate::operation::list_experiment_templates::ListExperimentTemplatesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListExperimentTemplatesOutputBuilder {
     pub(crate) experiment_templates: ::std::option::Option<::std::vec::Vec<crate::types::ExperimentTemplateSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

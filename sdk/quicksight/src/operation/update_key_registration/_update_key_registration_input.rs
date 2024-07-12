@@ -28,8 +28,8 @@ impl UpdateKeyRegistrationInput {
 }
 
 /// A builder for [`UpdateKeyRegistrationInput`](crate::operation::update_key_registration::UpdateKeyRegistrationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateKeyRegistrationInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) key_registration: ::std::option::Option<::std::vec::Vec<crate::types::RegisteredCustomerManagedKey>>,

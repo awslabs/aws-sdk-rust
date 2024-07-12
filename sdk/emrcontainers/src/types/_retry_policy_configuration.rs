@@ -21,8 +21,8 @@ impl RetryPolicyConfiguration {
 }
 
 /// A builder for [`RetryPolicyConfiguration`](crate::types::RetryPolicyConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RetryPolicyConfigurationBuilder {
     pub(crate) max_attempts: ::std::option::Option<i32>,
 }

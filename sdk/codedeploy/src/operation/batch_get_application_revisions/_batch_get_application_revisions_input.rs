@@ -29,8 +29,8 @@ impl BatchGetApplicationRevisionsInput {
 }
 
 /// A builder for [`BatchGetApplicationRevisionsInput`](crate::operation::batch_get_application_revisions::BatchGetApplicationRevisionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetApplicationRevisionsInputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
     pub(crate) revisions: ::std::option::Option<::std::vec::Vec<crate::types::RevisionLocation>>,

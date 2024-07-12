@@ -163,8 +163,8 @@ impl CreateBrokerInput {
 }
 
 /// A builder for [`CreateBrokerInput`](crate::operation::create_broker::CreateBrokerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateBrokerInputBuilder {
     pub(crate) authentication_strategy: ::std::option::Option<crate::types::AuthenticationStrategy>,
     pub(crate) auto_minor_version_upgrade: ::std::option::Option<bool>,

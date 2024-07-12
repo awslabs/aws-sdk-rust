@@ -18,8 +18,8 @@ impl AddRoleToDbInstanceOutput {
 }
 
 /// A builder for [`AddRoleToDbInstanceOutput`](crate::operation::add_role_to_db_instance::AddRoleToDbInstanceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddRoleToDbInstanceOutputBuilder {
     _request_id: Option<String>,
 }

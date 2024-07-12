@@ -44,8 +44,8 @@ impl UpdatePromptInput {
 }
 
 /// A builder for [`UpdatePromptInput`](crate::operation::update_prompt::UpdatePromptInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePromptInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) prompt_id: ::std::option::Option<::std::string::String>,

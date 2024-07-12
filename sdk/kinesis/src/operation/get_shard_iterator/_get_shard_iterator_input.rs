@@ -77,8 +77,8 @@ impl GetShardIteratorInput {
 }
 
 /// A builder for [`GetShardIteratorInput`](crate::operation::get_shard_iterator::GetShardIteratorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetShardIteratorInputBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) shard_id: ::std::option::Option<::std::string::String>,

@@ -51,8 +51,8 @@ impl SnapshotCopyConfiguration {
 }
 
 /// A builder for [`SnapshotCopyConfiguration`](crate::types::SnapshotCopyConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SnapshotCopyConfigurationBuilder {
     pub(crate) snapshot_copy_configuration_id: ::std::option::Option<::std::string::String>,
     pub(crate) snapshot_copy_configuration_arn: ::std::option::Option<::std::string::String>,

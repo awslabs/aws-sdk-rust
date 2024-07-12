@@ -34,8 +34,8 @@ impl VolumeConfiguration {
 }
 
 /// A builder for [`VolumeConfiguration`](crate::types::VolumeConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VolumeConfigurationBuilder {
     pub(crate) size: ::std::option::Option<i32>,
     pub(crate) throughput: ::std::option::Option<i32>,

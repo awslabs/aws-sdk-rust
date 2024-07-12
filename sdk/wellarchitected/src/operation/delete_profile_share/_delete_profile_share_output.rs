@@ -18,8 +18,8 @@ impl DeleteProfileShareOutput {
 }
 
 /// A builder for [`DeleteProfileShareOutput`](crate::operation::delete_profile_share::DeleteProfileShareOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteProfileShareOutputBuilder {
     _request_id: Option<String>,
 }

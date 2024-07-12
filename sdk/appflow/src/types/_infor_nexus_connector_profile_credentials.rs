@@ -53,8 +53,8 @@ impl InforNexusConnectorProfileCredentials {
 }
 
 /// A builder for [`InforNexusConnectorProfileCredentials`](crate::types::InforNexusConnectorProfileCredentials).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct InforNexusConnectorProfileCredentialsBuilder {
     pub(crate) access_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,

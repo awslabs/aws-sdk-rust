@@ -26,8 +26,8 @@ impl DescribeFhirDatastoreOutput {
 }
 
 /// A builder for [`DescribeFhirDatastoreOutput`](crate::operation::describe_fhir_datastore::DescribeFhirDatastoreOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFhirDatastoreOutputBuilder {
     pub(crate) datastore_properties: ::std::option::Option<crate::types::DatastoreProperties>,
     _request_id: Option<String>,

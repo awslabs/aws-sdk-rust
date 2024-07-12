@@ -27,8 +27,8 @@ impl DnsOptionsSpecification {
 }
 
 /// A builder for [`DnsOptionsSpecification`](crate::types::DnsOptionsSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DnsOptionsSpecificationBuilder {
     pub(crate) dns_record_ip_type: ::std::option::Option<crate::types::DnsRecordIpType>,
     pub(crate) private_dns_only_for_inbound_resolver_endpoint: ::std::option::Option<bool>,

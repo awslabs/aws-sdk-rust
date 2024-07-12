@@ -18,8 +18,8 @@ impl DeleteScheduledAuditOutput {
 }
 
 /// A builder for [`DeleteScheduledAuditOutput`](crate::operation::delete_scheduled_audit::DeleteScheduledAuditOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteScheduledAuditOutputBuilder {
     _request_id: Option<String>,
 }

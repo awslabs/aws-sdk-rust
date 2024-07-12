@@ -61,8 +61,8 @@ impl ResourceChange {
 }
 
 /// A builder for [`ResourceChange`](crate::types::ResourceChange).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResourceChangeBuilder {
     pub(crate) action: ::std::option::Option<crate::types::ChangeAction>,
     pub(crate) logical_resource_id: ::std::option::Option<::std::string::String>,

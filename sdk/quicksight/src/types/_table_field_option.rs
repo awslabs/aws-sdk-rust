@@ -46,8 +46,8 @@ impl TableFieldOption {
 }
 
 /// A builder for [`TableFieldOption`](crate::types::TableFieldOption).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TableFieldOptionBuilder {
     pub(crate) field_id: ::std::option::Option<::std::string::String>,
     pub(crate) width: ::std::option::Option<::std::string::String>,

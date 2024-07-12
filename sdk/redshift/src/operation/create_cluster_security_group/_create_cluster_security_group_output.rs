@@ -26,8 +26,8 @@ impl CreateClusterSecurityGroupOutput {
 }
 
 /// A builder for [`CreateClusterSecurityGroupOutput`](crate::operation::create_cluster_security_group::CreateClusterSecurityGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateClusterSecurityGroupOutputBuilder {
     pub(crate) cluster_security_group: ::std::option::Option<crate::types::ClusterSecurityGroup>,
     _request_id: Option<String>,

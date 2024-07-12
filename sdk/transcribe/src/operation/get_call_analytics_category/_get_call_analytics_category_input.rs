@@ -20,8 +20,8 @@ impl GetCallAnalyticsCategoryInput {
 }
 
 /// A builder for [`GetCallAnalyticsCategoryInput`](crate::operation::get_call_analytics_category::GetCallAnalyticsCategoryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCallAnalyticsCategoryInputBuilder {
     pub(crate) category_name: ::std::option::Option<::std::string::String>,
 }

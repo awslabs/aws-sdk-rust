@@ -26,8 +26,8 @@ impl PutBackupVaultAccessPolicyInput {
 }
 
 /// A builder for [`PutBackupVaultAccessPolicyInput`](crate::operation::put_backup_vault_access_policy::PutBackupVaultAccessPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutBackupVaultAccessPolicyInputBuilder {
     pub(crate) backup_vault_name: ::std::option::Option<::std::string::String>,
     pub(crate) policy: ::std::option::Option<::std::string::String>,

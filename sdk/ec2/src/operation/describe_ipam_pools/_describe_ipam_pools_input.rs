@@ -48,8 +48,8 @@ impl DescribeIpamPoolsInput {
 }
 
 /// A builder for [`DescribeIpamPoolsInput`](crate::operation::describe_ipam_pools::DescribeIpamPoolsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeIpamPoolsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,

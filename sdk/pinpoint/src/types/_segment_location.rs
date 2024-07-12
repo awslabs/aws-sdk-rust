@@ -27,8 +27,8 @@ impl SegmentLocation {
 }
 
 /// A builder for [`SegmentLocation`](crate::types::SegmentLocation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SegmentLocationBuilder {
     pub(crate) country: ::std::option::Option<crate::types::SetDimension>,
     pub(crate) gps_point: ::std::option::Option<crate::types::GpsPointDimension>,

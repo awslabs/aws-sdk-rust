@@ -33,8 +33,8 @@ impl ListVirtualServicesOutput {
 }
 
 /// A builder for [`ListVirtualServicesOutput`](crate::operation::list_virtual_services::ListVirtualServicesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListVirtualServicesOutputBuilder {
     pub(crate) virtual_services: ::std::option::Option<::std::vec::Vec<crate::types::VirtualServiceRef>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

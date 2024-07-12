@@ -32,8 +32,8 @@ impl UpdateDistributionWithStagingConfigOutput {
 }
 
 /// A builder for [`UpdateDistributionWithStagingConfigOutput`](crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDistributionWithStagingConfigOutputBuilder {
     pub(crate) distribution: ::std::option::Option<crate::types::Distribution>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,

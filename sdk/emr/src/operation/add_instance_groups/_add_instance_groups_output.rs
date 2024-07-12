@@ -41,8 +41,8 @@ impl AddInstanceGroupsOutput {
 }
 
 /// A builder for [`AddInstanceGroupsOutput`](crate::operation::add_instance_groups::AddInstanceGroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddInstanceGroupsOutputBuilder {
     pub(crate) job_flow_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

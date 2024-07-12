@@ -27,8 +27,8 @@ impl Signer {
 }
 
 /// A builder for [`Signer`](crate::types::Signer).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SignerBuilder {
     pub(crate) aws_account_number: ::std::option::Option<::std::string::String>,
     pub(crate) key_pair_ids: ::std::option::Option<crate::types::KeyPairIds>,

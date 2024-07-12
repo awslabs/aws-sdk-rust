@@ -62,8 +62,8 @@ impl GetConfigurationPolicyAssociationOutput {
 }
 
 /// A builder for [`GetConfigurationPolicyAssociationOutput`](crate::operation::get_configuration_policy_association::GetConfigurationPolicyAssociationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetConfigurationPolicyAssociationOutputBuilder {
     pub(crate) configuration_policy_id: ::std::option::Option<::std::string::String>,
     pub(crate) target_id: ::std::option::Option<::std::string::String>,

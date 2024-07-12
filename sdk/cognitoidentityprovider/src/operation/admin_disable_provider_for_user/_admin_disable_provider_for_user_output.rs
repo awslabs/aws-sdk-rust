@@ -18,8 +18,8 @@ impl AdminDisableProviderForUserOutput {
 }
 
 /// A builder for [`AdminDisableProviderForUserOutput`](crate::operation::admin_disable_provider_for_user::AdminDisableProviderForUserOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AdminDisableProviderForUserOutputBuilder {
     _request_id: Option<String>,
 }

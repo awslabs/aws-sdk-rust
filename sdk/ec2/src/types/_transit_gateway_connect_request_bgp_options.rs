@@ -21,8 +21,8 @@ impl TransitGatewayConnectRequestBgpOptions {
 }
 
 /// A builder for [`TransitGatewayConnectRequestBgpOptions`](crate::types::TransitGatewayConnectRequestBgpOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TransitGatewayConnectRequestBgpOptionsBuilder {
     pub(crate) peer_asn: ::std::option::Option<i64>,
 }

@@ -27,8 +27,8 @@ impl Region {
 }
 
 /// A builder for [`Region`](crate::types::Region).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegionBuilder {
     pub(crate) region_name: ::std::option::Option<::std::string::String>,
     pub(crate) region_opt_status: ::std::option::Option<crate::types::RegionOptStatus>,

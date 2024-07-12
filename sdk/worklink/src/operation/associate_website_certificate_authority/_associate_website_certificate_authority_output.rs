@@ -26,8 +26,8 @@ impl AssociateWebsiteCertificateAuthorityOutput {
 }
 
 /// A builder for [`AssociateWebsiteCertificateAuthorityOutput`](crate::operation::associate_website_certificate_authority::AssociateWebsiteCertificateAuthorityOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateWebsiteCertificateAuthorityOutputBuilder {
     pub(crate) website_ca_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

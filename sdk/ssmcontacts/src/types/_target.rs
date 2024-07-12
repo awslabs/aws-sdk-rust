@@ -27,8 +27,8 @@ impl Target {
 }
 
 /// A builder for [`Target`](crate::types::Target).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TargetBuilder {
     pub(crate) channel_target_info: ::std::option::Option<crate::types::ChannelTargetInfo>,
     pub(crate) contact_target_info: ::std::option::Option<crate::types::ContactTargetInfo>,

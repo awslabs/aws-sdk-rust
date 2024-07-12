@@ -26,8 +26,8 @@ impl CreatePhoneNumberOrderOutput {
 }
 
 /// A builder for [`CreatePhoneNumberOrderOutput`](crate::operation::create_phone_number_order::CreatePhoneNumberOrderOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePhoneNumberOrderOutputBuilder {
     pub(crate) phone_number_order: ::std::option::Option<crate::types::PhoneNumberOrder>,
     _request_id: Option<String>,

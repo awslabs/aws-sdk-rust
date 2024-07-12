@@ -67,8 +67,8 @@ impl RefreshFrequency {
 }
 
 /// A builder for [`RefreshFrequency`](crate::types::RefreshFrequency).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RefreshFrequencyBuilder {
     pub(crate) interval: ::std::option::Option<crate::types::RefreshInterval>,
     pub(crate) refresh_on_day: ::std::option::Option<crate::types::ScheduleRefreshOnEntity>,

@@ -28,8 +28,8 @@ impl BatchDeleteConnectionInput {
 }
 
 /// A builder for [`BatchDeleteConnectionInput`](crate::operation::batch_delete_connection::BatchDeleteConnectionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDeleteConnectionInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) connection_name_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -34,8 +34,8 @@ impl ListPortfolioAccessOutput {
 }
 
 /// A builder for [`ListPortfolioAccessOutput`](crate::operation::list_portfolio_access::ListPortfolioAccessOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPortfolioAccessOutputBuilder {
     pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,

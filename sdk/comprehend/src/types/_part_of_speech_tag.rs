@@ -27,8 +27,8 @@ impl PartOfSpeechTag {
 }
 
 /// A builder for [`PartOfSpeechTag`](crate::types::PartOfSpeechTag).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PartOfSpeechTagBuilder {
     pub(crate) tag: ::std::option::Option<crate::types::PartOfSpeechTagType>,
     pub(crate) score: ::std::option::Option<f32>,

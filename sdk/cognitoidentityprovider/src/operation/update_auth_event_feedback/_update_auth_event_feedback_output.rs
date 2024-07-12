@@ -18,8 +18,8 @@ impl UpdateAuthEventFeedbackOutput {
 }
 
 /// A builder for [`UpdateAuthEventFeedbackOutput`](crate::operation::update_auth_event_feedback::UpdateAuthEventFeedbackOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAuthEventFeedbackOutputBuilder {
     _request_id: Option<String>,
 }

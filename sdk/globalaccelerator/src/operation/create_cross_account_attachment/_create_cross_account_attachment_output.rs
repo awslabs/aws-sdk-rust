@@ -26,8 +26,8 @@ impl CreateCrossAccountAttachmentOutput {
 }
 
 /// A builder for [`CreateCrossAccountAttachmentOutput`](crate::operation::create_cross_account_attachment::CreateCrossAccountAttachmentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCrossAccountAttachmentOutputBuilder {
     pub(crate) cross_account_attachment: ::std::option::Option<crate::types::Attachment>,
     _request_id: Option<String>,

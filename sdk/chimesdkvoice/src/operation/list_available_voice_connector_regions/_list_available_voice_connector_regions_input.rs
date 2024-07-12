@@ -11,8 +11,8 @@ impl ListAvailableVoiceConnectorRegionsInput {
 }
 
 /// A builder for [`ListAvailableVoiceConnectorRegionsInput`](crate::operation::list_available_voice_connector_regions::ListAvailableVoiceConnectorRegionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAvailableVoiceConnectorRegionsInputBuilder {}
 impl ListAvailableVoiceConnectorRegionsInputBuilder {
     /// Consumes the builder and constructs a [`ListAvailableVoiceConnectorRegionsInput`](crate::operation::list_available_voice_connector_regions::ListAvailableVoiceConnectorRegionsInput).

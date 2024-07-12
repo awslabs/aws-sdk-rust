@@ -41,8 +41,8 @@ impl ProtectiveEquipmentPerson {
 }
 
 /// A builder for [`ProtectiveEquipmentPerson`](crate::types::ProtectiveEquipmentPerson).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProtectiveEquipmentPersonBuilder {
     pub(crate) body_parts: ::std::option::Option<::std::vec::Vec<crate::types::ProtectiveEquipmentBodyPart>>,
     pub(crate) bounding_box: ::std::option::Option<crate::types::BoundingBox>,

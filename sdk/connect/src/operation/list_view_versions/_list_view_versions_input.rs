@@ -38,8 +38,8 @@ impl ListViewVersionsInput {
 }
 
 /// A builder for [`ListViewVersionsInput`](crate::operation::list_view_versions::ListViewVersionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListViewVersionsInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) view_id: ::std::option::Option<::std::string::String>,

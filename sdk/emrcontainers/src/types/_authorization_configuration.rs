@@ -27,8 +27,8 @@ impl AuthorizationConfiguration {
 }
 
 /// A builder for [`AuthorizationConfiguration`](crate::types::AuthorizationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AuthorizationConfigurationBuilder {
     pub(crate) lake_formation_configuration: ::std::option::Option<crate::types::LakeFormationConfiguration>,
     pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,

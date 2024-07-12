@@ -57,8 +57,8 @@ impl GroupVersion {
 }
 
 /// A builder for [`GroupVersion`](crate::types::GroupVersion).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GroupVersionBuilder {
     pub(crate) connector_definition_version_arn: ::std::option::Option<::std::string::String>,
     pub(crate) core_definition_version_arn: ::std::option::Option<::std::string::String>,

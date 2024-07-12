@@ -145,8 +145,8 @@ impl RequestSpotLaunchSpecification {
 }
 
 /// A builder for [`RequestSpotLaunchSpecification`](crate::types::RequestSpotLaunchSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct RequestSpotLaunchSpecificationBuilder {
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

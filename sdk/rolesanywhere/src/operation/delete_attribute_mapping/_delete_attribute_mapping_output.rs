@@ -26,8 +26,8 @@ impl DeleteAttributeMappingOutput {
 }
 
 /// A builder for [`DeleteAttributeMappingOutput`](crate::operation::delete_attribute_mapping::DeleteAttributeMappingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAttributeMappingOutputBuilder {
     pub(crate) profile: ::std::option::Option<crate::types::ProfileDetail>,
     _request_id: Option<String>,

@@ -26,8 +26,8 @@ impl GetBaselineOperationOutput {
 }
 
 /// A builder for [`GetBaselineOperationOutput`](crate::operation::get_baseline_operation::GetBaselineOperationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBaselineOperationOutputBuilder {
     pub(crate) baseline_operation: ::std::option::Option<crate::types::BaselineOperation>,
     _request_id: Option<String>,

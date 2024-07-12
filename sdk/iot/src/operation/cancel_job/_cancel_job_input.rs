@@ -40,8 +40,8 @@ impl CancelJobInput {
 }
 
 /// A builder for [`CancelJobInput`](crate::operation::cancel_job::CancelJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) reason_code: ::std::option::Option<::std::string::String>,

@@ -18,8 +18,8 @@ impl DeleteStreamKeyOutput {
 }
 
 /// A builder for [`DeleteStreamKeyOutput`](crate::operation::delete_stream_key::DeleteStreamKeyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteStreamKeyOutputBuilder {
     _request_id: Option<String>,
 }

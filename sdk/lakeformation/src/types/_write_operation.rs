@@ -27,8 +27,8 @@ impl WriteOperation {
 }
 
 /// A builder for [`WriteOperation`](crate::types::WriteOperation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WriteOperationBuilder {
     pub(crate) add_object: ::std::option::Option<crate::types::AddObjectInput>,
     pub(crate) delete_object: ::std::option::Option<crate::types::DeleteObjectInput>,

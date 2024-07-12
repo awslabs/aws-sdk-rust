@@ -20,8 +20,8 @@ impl DeleteUserGroupInput {
 }
 
 /// A builder for [`DeleteUserGroupInput`](crate::operation::delete_user_group::DeleteUserGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteUserGroupInputBuilder {
     pub(crate) user_group_id: ::std::option::Option<::std::string::String>,
 }

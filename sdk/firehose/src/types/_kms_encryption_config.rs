@@ -22,8 +22,8 @@ impl KmsEncryptionConfig {
 }
 
 /// A builder for [`KmsEncryptionConfig`](crate::types::KmsEncryptionConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KmsEncryptionConfigBuilder {
     pub(crate) awskms_key_arn: ::std::option::Option<::std::string::String>,
 }

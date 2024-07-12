@@ -59,8 +59,8 @@ impl Ec2UnexpectedException {
 }
 
 /// A builder for [`Ec2UnexpectedException`](crate::types::error::Ec2UnexpectedException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Ec2UnexpectedExceptionBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

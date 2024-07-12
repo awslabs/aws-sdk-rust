@@ -87,8 +87,8 @@ impl DecryptStepDetails {
 }
 
 /// A builder for [`DecryptStepDetails`](crate::types::DecryptStepDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DecryptStepDetailsBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::EncryptionType>,

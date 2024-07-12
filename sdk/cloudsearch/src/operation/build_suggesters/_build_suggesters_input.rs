@@ -21,8 +21,8 @@ impl BuildSuggestersInput {
 }
 
 /// A builder for [`BuildSuggestersInput`](crate::operation::build_suggesters::BuildSuggestersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BuildSuggestersInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
 }

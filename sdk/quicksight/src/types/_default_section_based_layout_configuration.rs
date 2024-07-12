@@ -21,8 +21,8 @@ impl DefaultSectionBasedLayoutConfiguration {
 }
 
 /// A builder for [`DefaultSectionBasedLayoutConfiguration`](crate::types::DefaultSectionBasedLayoutConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DefaultSectionBasedLayoutConfigurationBuilder {
     pub(crate) canvas_size_options: ::std::option::Option<crate::types::SectionBasedLayoutCanvasSizeOptions>,
 }

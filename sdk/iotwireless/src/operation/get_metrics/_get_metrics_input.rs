@@ -22,8 +22,8 @@ impl GetMetricsInput {
 }
 
 /// A builder for [`GetMetricsInput`](crate::operation::get_metrics::GetMetricsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMetricsInputBuilder {
     pub(crate) summary_metric_queries: ::std::option::Option<::std::vec::Vec<crate::types::SummaryMetricQuery>>,
 }

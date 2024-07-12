@@ -69,8 +69,8 @@ impl AlertSummary {
 }
 
 /// A builder for [`AlertSummary`](crate::types::AlertSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AlertSummaryBuilder {
     pub(crate) alert_arn: ::std::option::Option<::std::string::String>,
     pub(crate) anomaly_detector_arn: ::std::option::Option<::std::string::String>,

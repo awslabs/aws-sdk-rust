@@ -29,8 +29,8 @@ impl DetachLoadBalancerFromSubnetsOutput {
 }
 
 /// A builder for [`DetachLoadBalancerFromSubnetsOutput`](crate::operation::detach_load_balancer_from_subnets::DetachLoadBalancerFromSubnetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetachLoadBalancerFromSubnetsOutputBuilder {
     pub(crate) subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,

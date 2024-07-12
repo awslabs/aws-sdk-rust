@@ -39,8 +39,8 @@ impl ServiceInsertionAction {
 }
 
 /// A builder for [`ServiceInsertionAction`](crate::types::ServiceInsertionAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServiceInsertionActionBuilder {
     pub(crate) action: ::std::option::Option<crate::types::SegmentActionServiceInsertion>,
     pub(crate) mode: ::std::option::Option<crate::types::SendViaMode>,

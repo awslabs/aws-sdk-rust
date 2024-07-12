@@ -47,8 +47,8 @@ impl DnsRuleGroupPriorityConflictViolation {
 }
 
 /// A builder for [`DnsRuleGroupPriorityConflictViolation`](crate::types::DnsRuleGroupPriorityConflictViolation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DnsRuleGroupPriorityConflictViolationBuilder {
     pub(crate) violation_target: ::std::option::Option<::std::string::String>,
     pub(crate) violation_target_description: ::std::option::Option<::std::string::String>,

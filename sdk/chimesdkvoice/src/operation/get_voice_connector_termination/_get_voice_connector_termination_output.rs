@@ -26,8 +26,8 @@ impl GetVoiceConnectorTerminationOutput {
 }
 
 /// A builder for [`GetVoiceConnectorTerminationOutput`](crate::operation::get_voice_connector_termination::GetVoiceConnectorTerminationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetVoiceConnectorTerminationOutputBuilder {
     pub(crate) termination: ::std::option::Option<crate::types::Termination>,
     _request_id: Option<String>,

@@ -27,8 +27,8 @@ impl SearchResourcesSortCriteria {
 }
 
 /// A builder for [`SearchResourcesSortCriteria`](crate::types::SearchResourcesSortCriteria).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchResourcesSortCriteriaBuilder {
     pub(crate) attribute_name: ::std::option::Option<crate::types::SearchResourcesSortAttributeName>,
     pub(crate) order_by: ::std::option::Option<crate::types::OrderBy>,

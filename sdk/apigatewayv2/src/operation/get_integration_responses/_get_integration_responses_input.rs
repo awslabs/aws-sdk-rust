@@ -38,8 +38,8 @@ impl GetIntegrationResponsesInput {
 }
 
 /// A builder for [`GetIntegrationResponsesInput`](crate::operation::get_integration_responses::GetIntegrationResponsesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetIntegrationResponsesInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) integration_id: ::std::option::Option<::std::string::String>,

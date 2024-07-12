@@ -33,8 +33,8 @@ impl CoreNetworkNetworkFunctionGroupIdentifier {
 }
 
 /// A builder for [`CoreNetworkNetworkFunctionGroupIdentifier`](crate::types::CoreNetworkNetworkFunctionGroupIdentifier).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CoreNetworkNetworkFunctionGroupIdentifierBuilder {
     pub(crate) core_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) network_function_group_name: ::std::option::Option<::std::string::String>,

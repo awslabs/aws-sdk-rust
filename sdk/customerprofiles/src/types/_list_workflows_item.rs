@@ -53,8 +53,8 @@ impl ListWorkflowsItem {
 }
 
 /// A builder for [`ListWorkflowsItem`](crate::types::ListWorkflowsItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListWorkflowsItemBuilder {
     pub(crate) workflow_type: ::std::option::Option<crate::types::WorkflowType>,
     pub(crate) workflow_id: ::std::option::Option<::std::string::String>,

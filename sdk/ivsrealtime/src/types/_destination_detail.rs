@@ -21,8 +21,8 @@ impl DestinationDetail {
 }
 
 /// A builder for [`DestinationDetail`](crate::types::DestinationDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DestinationDetailBuilder {
     pub(crate) s3: ::std::option::Option<crate::types::S3Detail>,
 }

@@ -18,8 +18,8 @@ impl AssociateServiceQuotaTemplateOutput {
 }
 
 /// A builder for [`AssociateServiceQuotaTemplateOutput`](crate::operation::associate_service_quota_template::AssociateServiceQuotaTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateServiceQuotaTemplateOutputBuilder {
     _request_id: Option<String>,
 }

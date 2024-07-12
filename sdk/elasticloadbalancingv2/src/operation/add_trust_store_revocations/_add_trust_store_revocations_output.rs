@@ -28,8 +28,8 @@ impl AddTrustStoreRevocationsOutput {
 }
 
 /// A builder for [`AddTrustStoreRevocationsOutput`](crate::operation::add_trust_store_revocations::AddTrustStoreRevocationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddTrustStoreRevocationsOutputBuilder {
     pub(crate) trust_store_revocations: ::std::option::Option<::std::vec::Vec<crate::types::TrustStoreRevocation>>,
     _request_id: Option<String>,

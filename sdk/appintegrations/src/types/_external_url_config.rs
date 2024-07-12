@@ -30,8 +30,8 @@ impl ExternalUrlConfig {
 }
 
 /// A builder for [`ExternalUrlConfig`](crate::types::ExternalUrlConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExternalUrlConfigBuilder {
     pub(crate) access_url: ::std::option::Option<::std::string::String>,
     pub(crate) approved_origins: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

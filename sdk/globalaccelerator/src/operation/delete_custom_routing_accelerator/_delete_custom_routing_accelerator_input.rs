@@ -20,8 +20,8 @@ impl DeleteCustomRoutingAcceleratorInput {
 }
 
 /// A builder for [`DeleteCustomRoutingAcceleratorInput`](crate::operation::delete_custom_routing_accelerator::DeleteCustomRoutingAcceleratorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCustomRoutingAcceleratorInputBuilder {
     pub(crate) accelerator_arn: ::std::option::Option<::std::string::String>,
 }

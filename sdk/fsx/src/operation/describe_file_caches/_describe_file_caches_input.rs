@@ -34,8 +34,8 @@ impl DescribeFileCachesInput {
 }
 
 /// A builder for [`DescribeFileCachesInput`](crate::operation::describe_file_caches::DescribeFileCachesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFileCachesInputBuilder {
     pub(crate) file_cache_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) max_results: ::std::option::Option<i32>,

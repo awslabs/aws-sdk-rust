@@ -26,8 +26,8 @@ impl GetHypervisorOutput {
 }
 
 /// A builder for [`GetHypervisorOutput`](crate::operation::get_hypervisor::GetHypervisorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetHypervisorOutputBuilder {
     pub(crate) hypervisor: ::std::option::Option<crate::types::HypervisorDetails>,
     _request_id: Option<String>,

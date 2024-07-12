@@ -27,8 +27,8 @@ impl DataReplicationMetadataOutput {
 }
 
 /// A builder for [`DataReplicationMetadataOutput`](crate::types::DataReplicationMetadataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataReplicationMetadataOutputBuilder {
     pub(crate) data_replication_counterpart: ::std::option::Option<crate::types::DataReplicationCounterpart>,
     pub(crate) data_replication_role: ::std::option::Option<::std::string::String>,

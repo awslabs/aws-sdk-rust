@@ -11,8 +11,8 @@ impl DeleteServerCatalogInput {
 }
 
 /// A builder for [`DeleteServerCatalogInput`](crate::operation::delete_server_catalog::DeleteServerCatalogInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteServerCatalogInputBuilder {}
 impl DeleteServerCatalogInputBuilder {
     /// Consumes the builder and constructs a [`DeleteServerCatalogInput`](crate::operation::delete_server_catalog::DeleteServerCatalogInput).

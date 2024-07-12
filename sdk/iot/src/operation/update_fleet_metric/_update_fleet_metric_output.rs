@@ -18,8 +18,8 @@ impl UpdateFleetMetricOutput {
 }
 
 /// A builder for [`UpdateFleetMetricOutput`](crate::operation::update_fleet_metric::UpdateFleetMetricOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateFleetMetricOutputBuilder {
     _request_id: Option<String>,
 }

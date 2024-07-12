@@ -38,8 +38,8 @@ impl DescribePortfolioInput {
 }
 
 /// A builder for [`DescribePortfolioInput`](crate::operation::describe_portfolio::DescribePortfolioInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribePortfolioInputBuilder {
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,

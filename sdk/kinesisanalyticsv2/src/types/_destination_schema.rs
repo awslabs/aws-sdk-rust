@@ -21,8 +21,8 @@ impl DestinationSchema {
 }
 
 /// A builder for [`DestinationSchema`](crate::types::DestinationSchema).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DestinationSchemaBuilder {
     pub(crate) record_format_type: ::std::option::Option<crate::types::RecordFormatType>,
 }

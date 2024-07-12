@@ -55,8 +55,8 @@ impl UpdateGroupProfileOutput {
 }
 
 /// A builder for [`UpdateGroupProfileOutput`](crate::operation::update_group_profile::UpdateGroupProfileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateGroupProfileOutputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,

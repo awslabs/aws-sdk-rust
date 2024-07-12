@@ -27,8 +27,8 @@ impl ExpirationSettings {
 }
 
 /// A builder for [`ExpirationSettings`](crate::types::ExpirationSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExpirationSettingsBuilder {
     pub(crate) expiration_days: ::std::option::Option<i32>,
     pub(crate) expiration_criterion: ::std::option::Option<crate::types::ExpirationCriterion>,

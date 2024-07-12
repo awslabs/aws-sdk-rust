@@ -26,8 +26,8 @@ impl ProvisionIpamByoasnOutput {
 }
 
 /// A builder for [`ProvisionIpamByoasnOutput`](crate::operation::provision_ipam_byoasn::ProvisionIpamByoasnOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProvisionIpamByoasnOutputBuilder {
     pub(crate) byoasn: ::std::option::Option<crate::types::Byoasn>,
     _request_id: Option<String>,

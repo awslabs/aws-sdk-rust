@@ -33,8 +33,8 @@ impl ProviderIdNameSpaceConfiguration {
 }
 
 /// A builder for [`ProviderIdNameSpaceConfiguration`](crate::types::ProviderIdNameSpaceConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProviderIdNameSpaceConfigurationBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) provider_target_configuration_definition: ::std::option::Option<::aws_smithy_types::Document>,

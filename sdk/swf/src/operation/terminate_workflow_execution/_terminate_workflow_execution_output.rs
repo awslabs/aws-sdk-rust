@@ -18,8 +18,8 @@ impl TerminateWorkflowExecutionOutput {
 }
 
 /// A builder for [`TerminateWorkflowExecutionOutput`](crate::operation::terminate_workflow_execution::TerminateWorkflowExecutionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TerminateWorkflowExecutionOutputBuilder {
     _request_id: Option<String>,
 }

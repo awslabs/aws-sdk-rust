@@ -40,8 +40,8 @@ impl DomainSummary {
 }
 
 /// A builder for [`DomainSummary`](crate::types::DomainSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DomainSummaryBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,

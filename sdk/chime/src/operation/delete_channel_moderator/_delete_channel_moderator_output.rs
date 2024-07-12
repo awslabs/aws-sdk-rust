@@ -18,8 +18,8 @@ impl DeleteChannelModeratorOutput {
 }
 
 /// A builder for [`DeleteChannelModeratorOutput`](crate::operation::delete_channel_moderator::DeleteChannelModeratorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteChannelModeratorOutputBuilder {
     _request_id: Option<String>,
 }

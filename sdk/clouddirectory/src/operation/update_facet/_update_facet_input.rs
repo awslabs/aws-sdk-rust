@@ -40,8 +40,8 @@ impl UpdateFacetInput {
 }
 
 /// A builder for [`UpdateFacetInput`](crate::operation::update_facet::UpdateFacetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateFacetInputBuilder {
     pub(crate) schema_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

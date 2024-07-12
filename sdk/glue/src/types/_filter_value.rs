@@ -28,8 +28,8 @@ impl FilterValue {
 }
 
 /// A builder for [`FilterValue`](crate::types::FilterValue).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FilterValueBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::FilterValueType>,
     pub(crate) value: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

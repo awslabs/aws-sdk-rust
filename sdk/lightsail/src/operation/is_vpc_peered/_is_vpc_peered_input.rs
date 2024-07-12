@@ -11,8 +11,8 @@ impl IsVpcPeeredInput {
 }
 
 /// A builder for [`IsVpcPeeredInput`](crate::operation::is_vpc_peered::IsVpcPeeredInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IsVpcPeeredInputBuilder {}
 impl IsVpcPeeredInputBuilder {
     /// Consumes the builder and constructs a [`IsVpcPeeredInput`](crate::operation::is_vpc_peered::IsVpcPeeredInput).

@@ -26,8 +26,8 @@ impl GetOperationOutput {
 }
 
 /// A builder for [`GetOperationOutput`](crate::operation::get_operation::GetOperationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetOperationOutputBuilder {
     pub(crate) operation: ::std::option::Option<crate::types::Operation>,
     _request_id: Option<String>,

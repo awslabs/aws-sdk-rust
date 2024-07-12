@@ -26,8 +26,8 @@ impl DisassociateIpamByoasnOutput {
 }
 
 /// A builder for [`DisassociateIpamByoasnOutput`](crate::operation::disassociate_ipam_byoasn::DisassociateIpamByoasnOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateIpamByoasnOutputBuilder {
     pub(crate) asn_association: ::std::option::Option<crate::types::AsnAssociation>,
     _request_id: Option<String>,

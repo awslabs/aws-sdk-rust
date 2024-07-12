@@ -26,8 +26,8 @@ impl GetChannelOutput {
 }
 
 /// A builder for [`GetChannelOutput`](crate::operation::get_channel::GetChannelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetChannelOutputBuilder {
     pub(crate) channel: ::std::option::Option<crate::types::Channel>,
     _request_id: Option<String>,

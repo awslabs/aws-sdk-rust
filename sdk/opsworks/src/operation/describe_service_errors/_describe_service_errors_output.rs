@@ -29,8 +29,8 @@ impl DescribeServiceErrorsOutput {
 }
 
 /// A builder for [`DescribeServiceErrorsOutput`](crate::operation::describe_service_errors::DescribeServiceErrorsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeServiceErrorsOutputBuilder {
     pub(crate) service_errors: ::std::option::Option<::std::vec::Vec<crate::types::ServiceError>>,
     _request_id: Option<String>,

@@ -26,8 +26,8 @@ impl GetDatastoreOutput {
 }
 
 /// A builder for [`GetDatastoreOutput`](crate::operation::get_datastore::GetDatastoreOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDatastoreOutputBuilder {
     pub(crate) datastore_properties: ::std::option::Option<crate::types::DatastoreProperties>,
     _request_id: Option<String>,

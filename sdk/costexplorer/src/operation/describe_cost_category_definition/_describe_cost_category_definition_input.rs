@@ -26,8 +26,8 @@ impl DescribeCostCategoryDefinitionInput {
 }
 
 /// A builder for [`DescribeCostCategoryDefinitionInput`](crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCostCategoryDefinitionInputBuilder {
     pub(crate) cost_category_arn: ::std::option::Option<::std::string::String>,
     pub(crate) effective_on: ::std::option::Option<::std::string::String>,

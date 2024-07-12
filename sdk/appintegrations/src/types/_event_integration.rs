@@ -51,8 +51,8 @@ impl EventIntegration {
 }
 
 /// A builder for [`EventIntegration`](crate::types::EventIntegration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EventIntegrationBuilder {
     pub(crate) event_integration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

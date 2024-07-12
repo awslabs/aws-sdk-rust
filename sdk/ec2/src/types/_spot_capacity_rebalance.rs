@@ -37,8 +37,8 @@ impl SpotCapacityRebalance {
 }
 
 /// A builder for [`SpotCapacityRebalance`](crate::types::SpotCapacityRebalance).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SpotCapacityRebalanceBuilder {
     pub(crate) replacement_strategy: ::std::option::Option<crate::types::ReplacementStrategy>,
     pub(crate) termination_delay: ::std::option::Option<i32>,

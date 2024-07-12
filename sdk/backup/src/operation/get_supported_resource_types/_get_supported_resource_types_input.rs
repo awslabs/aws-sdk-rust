@@ -11,8 +11,8 @@ impl GetSupportedResourceTypesInput {
 }
 
 /// A builder for [`GetSupportedResourceTypesInput`](crate::operation::get_supported_resource_types::GetSupportedResourceTypesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSupportedResourceTypesInputBuilder {}
 impl GetSupportedResourceTypesInputBuilder {
     /// Consumes the builder and constructs a [`GetSupportedResourceTypesInput`](crate::operation::get_supported_resource_types::GetSupportedResourceTypesInput).

@@ -38,8 +38,8 @@ impl UpgradePublishedSchemaInput {
 }
 
 /// A builder for [`UpgradePublishedSchemaInput`](crate::operation::upgrade_published_schema::UpgradePublishedSchemaInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpgradePublishedSchemaInputBuilder {
     pub(crate) development_schema_arn: ::std::option::Option<::std::string::String>,
     pub(crate) published_schema_arn: ::std::option::Option<::std::string::String>,

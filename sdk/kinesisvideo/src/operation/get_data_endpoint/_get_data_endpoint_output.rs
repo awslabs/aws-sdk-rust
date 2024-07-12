@@ -26,8 +26,8 @@ impl GetDataEndpointOutput {
 }
 
 /// A builder for [`GetDataEndpointOutput`](crate::operation::get_data_endpoint::GetDataEndpointOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDataEndpointOutputBuilder {
     pub(crate) data_endpoint: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

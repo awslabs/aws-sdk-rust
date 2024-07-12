@@ -69,8 +69,8 @@ impl ActionTypeId {
 }
 
 /// A builder for [`ActionTypeId`](crate::types::ActionTypeId).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ActionTypeIdBuilder {
     pub(crate) category: ::std::option::Option<crate::types::ActionCategory>,
     pub(crate) owner: ::std::option::Option<crate::types::ActionOwner>,

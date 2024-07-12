@@ -23,8 +23,8 @@ impl NetworkPath {
 }
 
 /// A builder for [`NetworkPath`](crate::types::NetworkPath).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NetworkPathBuilder {
     pub(crate) steps: ::std::option::Option<::std::vec::Vec<crate::types::Step>>,
 }

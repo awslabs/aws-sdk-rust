@@ -57,8 +57,8 @@ impl TtPsObservedDetail {
 }
 
 /// A builder for [`TtPsObservedDetail`](crate::types::TtPsObservedDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TtPsObservedDetailBuilder {
     pub(crate) tactic: ::std::option::Option<::std::string::String>,
     pub(crate) technique: ::std::option::Option<::std::string::String>,

@@ -49,8 +49,8 @@ impl IotEventsAction {
 }
 
 /// A builder for [`IotEventsAction`](crate::types::IotEventsAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IotEventsActionBuilder {
     pub(crate) input_name: ::std::option::Option<::std::string::String>,
     pub(crate) message_id: ::std::option::Option<::std::string::String>,

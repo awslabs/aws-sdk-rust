@@ -18,8 +18,8 @@ impl UndeprecateDomainOutput {
 }
 
 /// A builder for [`UndeprecateDomainOutput`](crate::operation::undeprecate_domain::UndeprecateDomainOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UndeprecateDomainOutputBuilder {
     _request_id: Option<String>,
 }

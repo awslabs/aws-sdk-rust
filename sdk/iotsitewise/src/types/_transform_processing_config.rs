@@ -27,8 +27,8 @@ impl TransformProcessingConfig {
 }
 
 /// A builder for [`TransformProcessingConfig`](crate::types::TransformProcessingConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TransformProcessingConfigBuilder {
     pub(crate) compute_location: ::std::option::Option<crate::types::ComputeLocation>,
     pub(crate) forwarding_config: ::std::option::Option<crate::types::ForwardingConfig>,

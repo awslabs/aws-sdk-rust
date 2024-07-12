@@ -55,8 +55,8 @@ impl CreateSipMediaApplicationCallInput {
 }
 
 /// A builder for [`CreateSipMediaApplicationCallInput`](crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateSipMediaApplicationCallInputBuilder {
     pub(crate) from_phone_number: ::std::option::Option<::std::string::String>,
     pub(crate) to_phone_number: ::std::option::Option<::std::string::String>,

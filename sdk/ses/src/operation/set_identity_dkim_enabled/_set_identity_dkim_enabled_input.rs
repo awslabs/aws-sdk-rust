@@ -27,8 +27,8 @@ impl SetIdentityDkimEnabledInput {
 }
 
 /// A builder for [`SetIdentityDkimEnabledInput`](crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetIdentityDkimEnabledInputBuilder {
     pub(crate) identity: ::std::option::Option<::std::string::String>,
     pub(crate) dkim_enabled: ::std::option::Option<bool>,

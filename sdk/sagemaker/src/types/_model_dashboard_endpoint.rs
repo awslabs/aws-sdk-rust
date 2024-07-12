@@ -45,8 +45,8 @@ impl ModelDashboardEndpoint {
 }
 
 /// A builder for [`ModelDashboardEndpoint`](crate::types::ModelDashboardEndpoint).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModelDashboardEndpointBuilder {
     pub(crate) endpoint_name: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint_arn: ::std::option::Option<::std::string::String>,

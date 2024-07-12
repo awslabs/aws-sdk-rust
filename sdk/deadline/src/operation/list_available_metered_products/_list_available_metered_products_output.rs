@@ -33,8 +33,8 @@ impl ListAvailableMeteredProductsOutput {
 }
 
 /// A builder for [`ListAvailableMeteredProductsOutput`](crate::operation::list_available_metered_products::ListAvailableMeteredProductsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAvailableMeteredProductsOutputBuilder {
     pub(crate) metered_products: ::std::option::Option<::std::vec::Vec<crate::types::MeteredProductSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

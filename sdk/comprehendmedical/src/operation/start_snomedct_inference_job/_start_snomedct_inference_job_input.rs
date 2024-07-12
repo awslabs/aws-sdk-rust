@@ -56,8 +56,8 @@ impl StartSnomedctInferenceJobInput {
 }
 
 /// A builder for [`StartSnomedctInferenceJobInput`](crate::operation::start_snomedct_inference_job::StartSnomedctInferenceJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartSnomedctInferenceJobInputBuilder {
     pub(crate) input_data_config: ::std::option::Option<crate::types::InputDataConfig>,
     pub(crate) output_data_config: ::std::option::Option<crate::types::OutputDataConfig>,

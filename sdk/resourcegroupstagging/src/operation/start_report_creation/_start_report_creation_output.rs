@@ -18,8 +18,8 @@ impl StartReportCreationOutput {
 }
 
 /// A builder for [`StartReportCreationOutput`](crate::operation::start_report_creation::StartReportCreationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartReportCreationOutputBuilder {
     _request_id: Option<String>,
 }

@@ -32,8 +32,8 @@ impl GetPricingPlanOutput {
 }
 
 /// A builder for [`GetPricingPlanOutput`](crate::operation::get_pricing_plan::GetPricingPlanOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPricingPlanOutputBuilder {
     pub(crate) current_pricing_plan: ::std::option::Option<crate::types::PricingPlan>,
     pub(crate) pending_pricing_plan: ::std::option::Option<crate::types::PricingPlan>,

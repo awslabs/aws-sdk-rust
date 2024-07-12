@@ -22,8 +22,8 @@ impl BatchGetAutomationRulesInput {
 }
 
 /// A builder for [`BatchGetAutomationRulesInput`](crate::operation::batch_get_automation_rules::BatchGetAutomationRulesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetAutomationRulesInputBuilder {
     pub(crate) automation_rules_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

@@ -35,8 +35,8 @@ impl UpdateGatewayResponseInput {
 }
 
 /// A builder for [`UpdateGatewayResponseInput`](crate::operation::update_gateway_response::UpdateGatewayResponseInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateGatewayResponseInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
     pub(crate) response_type: ::std::option::Option<crate::types::GatewayResponseType>,

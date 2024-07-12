@@ -24,8 +24,8 @@ impl DocumentIdOptions {
 }
 
 /// A builder for [`DocumentIdOptions`](crate::types::DocumentIdOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DocumentIdOptionsBuilder {
     pub(crate) default_document_id_format: ::std::option::Option<crate::types::DefaultDocumentIdFormat>,
 }

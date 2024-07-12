@@ -54,8 +54,8 @@ impl CreateAssessmentReportInput {
 }
 
 /// A builder for [`CreateAssessmentReportInput`](crate::operation::create_assessment_report::CreateAssessmentReportInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateAssessmentReportInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

@@ -23,8 +23,8 @@ impl GaugeChartConditionalFormatting {
 }
 
 /// A builder for [`GaugeChartConditionalFormatting`](crate::types::GaugeChartConditionalFormatting).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GaugeChartConditionalFormattingBuilder {
     pub(crate) conditional_formatting_options: ::std::option::Option<::std::vec::Vec<crate::types::GaugeChartConditionalFormattingOption>>,
 }

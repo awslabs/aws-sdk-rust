@@ -127,8 +127,8 @@ impl NetworkInsightsAnalysis {
 }
 
 /// A builder for [`NetworkInsightsAnalysis`](crate::types::NetworkInsightsAnalysis).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NetworkInsightsAnalysisBuilder {
     pub(crate) network_insights_analysis_id: ::std::option::Option<::std::string::String>,
     pub(crate) network_insights_analysis_arn: ::std::option::Option<::std::string::String>,

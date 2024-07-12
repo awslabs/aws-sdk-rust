@@ -35,8 +35,8 @@ impl AcceleratorType {
 }
 
 /// A builder for [`AcceleratorType`](crate::types::AcceleratorType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AcceleratorTypeBuilder {
     pub(crate) accelerator_type_name: ::std::option::Option<::std::string::String>,
     pub(crate) memory_info: ::std::option::Option<crate::types::MemoryInfo>,

@@ -28,8 +28,8 @@ impl AssociateApprovalRuleTemplateWithRepositoryInput {
 }
 
 /// A builder for [`AssociateApprovalRuleTemplateWithRepositoryInput`](crate::operation::associate_approval_rule_template_with_repository::AssociateApprovalRuleTemplateWithRepositoryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateApprovalRuleTemplateWithRepositoryInputBuilder {
     pub(crate) approval_rule_template_name: ::std::option::Option<::std::string::String>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,

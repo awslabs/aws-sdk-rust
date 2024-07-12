@@ -20,8 +20,8 @@ impl DeleteDetectorInput {
 }
 
 /// A builder for [`DeleteDetectorInput`](crate::operation::delete_detector::DeleteDetectorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDetectorInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
 }

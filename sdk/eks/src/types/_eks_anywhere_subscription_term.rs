@@ -27,8 +27,8 @@ impl EksAnywhereSubscriptionTerm {
 }
 
 /// A builder for [`EksAnywhereSubscriptionTerm`](crate::types::EksAnywhereSubscriptionTerm).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EksAnywhereSubscriptionTermBuilder {
     pub(crate) duration: ::std::option::Option<i32>,
     pub(crate) unit: ::std::option::Option<crate::types::EksAnywhereSubscriptionTermUnit>,

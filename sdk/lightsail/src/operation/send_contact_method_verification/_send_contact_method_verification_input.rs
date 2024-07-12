@@ -20,8 +20,8 @@ impl SendContactMethodVerificationInput {
 }
 
 /// A builder for [`SendContactMethodVerificationInput`](crate::operation::send_contact_method_verification::SendContactMethodVerificationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendContactMethodVerificationInputBuilder {
     pub(crate) protocol: ::std::option::Option<crate::types::ContactMethodVerificationProtocol>,
 }

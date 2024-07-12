@@ -28,8 +28,8 @@ impl DeleteTransitGatewayRouteTableAnnouncementOutput {
 }
 
 /// A builder for [`DeleteTransitGatewayRouteTableAnnouncementOutput`](crate::operation::delete_transit_gateway_route_table_announcement::DeleteTransitGatewayRouteTableAnnouncementOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTransitGatewayRouteTableAnnouncementOutputBuilder {
     pub(crate) transit_gateway_route_table_announcement: ::std::option::Option<crate::types::TransitGatewayRouteTableAnnouncement>,
     _request_id: Option<String>,

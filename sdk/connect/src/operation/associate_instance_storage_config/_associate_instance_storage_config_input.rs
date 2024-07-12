@@ -50,8 +50,8 @@ impl AssociateInstanceStorageConfigInput {
 }
 
 /// A builder for [`AssociateInstanceStorageConfigInput`](crate::operation::associate_instance_storage_config::AssociateInstanceStorageConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateInstanceStorageConfigInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::InstanceStorageResourceType>,

@@ -27,8 +27,8 @@ impl ClusterInstancePlacement {
 }
 
 /// A builder for [`ClusterInstancePlacement`](crate::types::ClusterInstancePlacement).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ClusterInstancePlacementBuilder {
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl DescribeServiceAccessPoliciesInput {
 }
 
 /// A builder for [`DescribeServiceAccessPoliciesInput`](crate::operation::describe_service_access_policies::DescribeServiceAccessPoliciesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeServiceAccessPoliciesInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) deployed: ::std::option::Option<bool>,

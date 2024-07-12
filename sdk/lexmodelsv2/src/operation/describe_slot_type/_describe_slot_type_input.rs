@@ -38,8 +38,8 @@ impl DescribeSlotTypeInput {
 }
 
 /// A builder for [`DescribeSlotTypeInput`](crate::operation::describe_slot_type::DescribeSlotTypeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSlotTypeInputBuilder {
     pub(crate) slot_type_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,

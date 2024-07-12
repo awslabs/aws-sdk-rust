@@ -80,8 +80,8 @@ impl DescribeThingGroupOutput {
 }
 
 /// A builder for [`DescribeThingGroupOutput`](crate::operation::describe_thing_group::DescribeThingGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeThingGroupOutputBuilder {
     pub(crate) thing_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) thing_group_id: ::std::option::Option<::std::string::String>,

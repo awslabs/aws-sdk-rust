@@ -65,8 +65,8 @@ impl ExperimentAction {
 }
 
 /// A builder for [`ExperimentAction`](crate::types::ExperimentAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExperimentActionBuilder {
     pub(crate) action_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

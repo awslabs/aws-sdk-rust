@@ -34,8 +34,8 @@ impl ListMediaCapturePipelinesOutput {
 }
 
 /// A builder for [`ListMediaCapturePipelinesOutput`](crate::operation::list_media_capture_pipelines::ListMediaCapturePipelinesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListMediaCapturePipelinesOutputBuilder {
     pub(crate) media_capture_pipelines: ::std::option::Option<::std::vec::Vec<crate::types::MediaCapturePipeline>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

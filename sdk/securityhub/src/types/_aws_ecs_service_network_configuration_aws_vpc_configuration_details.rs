@@ -43,8 +43,8 @@ impl AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails {
 }
 
 /// A builder for [`AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails`](crate::types::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetailsBuilder {
     pub(crate) assign_public_ip: ::std::option::Option<::std::string::String>,
     pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

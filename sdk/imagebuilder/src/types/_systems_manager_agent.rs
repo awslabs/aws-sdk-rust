@@ -21,8 +21,8 @@ impl SystemsManagerAgent {
 }
 
 /// A builder for [`SystemsManagerAgent`](crate::types::SystemsManagerAgent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SystemsManagerAgentBuilder {
     pub(crate) uninstall_after_build: ::std::option::Option<bool>,
 }

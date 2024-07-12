@@ -34,8 +34,8 @@ impl DescribeProductsInput {
 }
 
 /// A builder for [`DescribeProductsInput`](crate::operation::describe_products::DescribeProductsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeProductsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

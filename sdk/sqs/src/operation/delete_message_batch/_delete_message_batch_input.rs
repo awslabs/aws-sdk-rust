@@ -31,8 +31,8 @@ impl DeleteMessageBatchInput {
 }
 
 /// A builder for [`DeleteMessageBatchInput`](crate::operation::delete_message_batch::DeleteMessageBatchInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteMessageBatchInputBuilder {
     pub(crate) queue_url: ::std::option::Option<::std::string::String>,
     pub(crate) entries: ::std::option::Option<::std::vec::Vec<crate::types::DeleteMessageBatchRequestEntry>>,

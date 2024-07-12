@@ -34,8 +34,8 @@ impl ListSensorStatisticsOutput {
 }
 
 /// A builder for [`ListSensorStatisticsOutput`](crate::operation::list_sensor_statistics::ListSensorStatisticsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSensorStatisticsOutputBuilder {
     pub(crate) sensor_statistics_summaries: ::std::option::Option<::std::vec::Vec<crate::types::SensorStatisticsSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

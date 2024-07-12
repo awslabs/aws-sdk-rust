@@ -26,8 +26,8 @@ impl DescribeTunnelOutput {
 }
 
 /// A builder for [`DescribeTunnelOutput`](crate::operation::describe_tunnel::DescribeTunnelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTunnelOutputBuilder {
     pub(crate) tunnel: ::std::option::Option<crate::types::Tunnel>,
     _request_id: Option<String>,

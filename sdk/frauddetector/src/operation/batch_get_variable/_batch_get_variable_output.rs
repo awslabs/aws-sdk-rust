@@ -36,8 +36,8 @@ impl BatchGetVariableOutput {
 }
 
 /// A builder for [`BatchGetVariableOutput`](crate::operation::batch_get_variable::BatchGetVariableOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetVariableOutputBuilder {
     pub(crate) variables: ::std::option::Option<::std::vec::Vec<crate::types::Variable>>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetVariableError>>,

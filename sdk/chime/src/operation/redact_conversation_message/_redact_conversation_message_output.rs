@@ -18,8 +18,8 @@ impl RedactConversationMessageOutput {
 }
 
 /// A builder for [`RedactConversationMessageOutput`](crate::operation::redact_conversation_message::RedactConversationMessageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RedactConversationMessageOutputBuilder {
     _request_id: Option<String>,
 }

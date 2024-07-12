@@ -32,8 +32,8 @@ impl DeleteQueuedMessagesInput {
 }
 
 /// A builder for [`DeleteQueuedMessagesInput`](crate::operation::delete_queued_messages::DeleteQueuedMessagesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteQueuedMessagesInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) message_id: ::std::option::Option<::std::string::String>,

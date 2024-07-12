@@ -20,8 +20,8 @@ impl UndeploySystemInstanceInput {
 }
 
 /// A builder for [`UndeploySystemInstanceInput`](crate::operation::undeploy_system_instance::UndeploySystemInstanceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UndeploySystemInstanceInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }

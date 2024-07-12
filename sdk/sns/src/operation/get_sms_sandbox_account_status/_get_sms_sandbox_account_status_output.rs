@@ -26,8 +26,8 @@ impl GetSmsSandboxAccountStatusOutput {
 }
 
 /// A builder for [`GetSmsSandboxAccountStatusOutput`](crate::operation::get_sms_sandbox_account_status::GetSmsSandboxAccountStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSmsSandboxAccountStatusOutputBuilder {
     pub(crate) is_in_sandbox: ::std::option::Option<bool>,
     _request_id: Option<String>,

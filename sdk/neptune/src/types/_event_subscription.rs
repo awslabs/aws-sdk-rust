@@ -85,8 +85,8 @@ impl EventSubscription {
 }
 
 /// A builder for [`EventSubscription`](crate::types::EventSubscription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EventSubscriptionBuilder {
     pub(crate) customer_aws_id: ::std::option::Option<::std::string::String>,
     pub(crate) cust_subscription_id: ::std::option::Option<::std::string::String>,

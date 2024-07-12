@@ -40,8 +40,8 @@ impl UpdateSensitivityInspectionTemplateInput {
 }
 
 /// A builder for [`UpdateSensitivityInspectionTemplateInput`](crate::operation::update_sensitivity_inspection_template::UpdateSensitivityInspectionTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSensitivityInspectionTemplateInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) excludes: ::std::option::Option<crate::types::SensitivityInspectionTemplateExcludes>,

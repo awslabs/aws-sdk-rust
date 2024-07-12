@@ -87,8 +87,8 @@ impl CreateGlossaryTermOutput {
 }
 
 /// A builder for [`CreateGlossaryTermOutput`](crate::operation::create_glossary_term::CreateGlossaryTermOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateGlossaryTermOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,

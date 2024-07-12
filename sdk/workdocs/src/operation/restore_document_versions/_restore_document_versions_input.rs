@@ -34,8 +34,8 @@ impl RestoreDocumentVersionsInput {
 }
 
 /// A builder for [`RestoreDocumentVersionsInput`](crate::operation::restore_document_versions::RestoreDocumentVersionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct RestoreDocumentVersionsInputBuilder {
     pub(crate) authentication_token: ::std::option::Option<::std::string::String>,
     pub(crate) document_id: ::std::option::Option<::std::string::String>,

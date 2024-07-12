@@ -18,8 +18,8 @@ impl UpdateWorkspaceImagePermissionOutput {
 }
 
 /// A builder for [`UpdateWorkspaceImagePermissionOutput`](crate::operation::update_workspace_image_permission::UpdateWorkspaceImagePermissionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateWorkspaceImagePermissionOutputBuilder {
     _request_id: Option<String>,
 }

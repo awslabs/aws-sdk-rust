@@ -27,8 +27,8 @@ impl Severity {
 }
 
 /// A builder for [`Severity`](crate::types::Severity).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SeverityBuilder {
     pub(crate) description: ::std::option::Option<crate::types::SeverityDescription>,
     pub(crate) score: ::std::option::Option<i64>,

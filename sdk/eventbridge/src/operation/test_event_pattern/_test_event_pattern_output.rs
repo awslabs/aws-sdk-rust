@@ -26,8 +26,8 @@ impl TestEventPatternOutput {
 }
 
 /// A builder for [`TestEventPatternOutput`](crate::operation::test_event_pattern::TestEventPatternOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TestEventPatternOutputBuilder {
     pub(crate) result: ::std::option::Option<bool>,
     _request_id: Option<String>,

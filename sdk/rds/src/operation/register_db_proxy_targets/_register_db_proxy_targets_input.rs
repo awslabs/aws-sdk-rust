@@ -42,8 +42,8 @@ impl RegisterDbProxyTargetsInput {
 }
 
 /// A builder for [`RegisterDbProxyTargetsInput`](crate::operation::register_db_proxy_targets::RegisterDbProxyTargetsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterDbProxyTargetsInputBuilder {
     pub(crate) db_proxy_name: ::std::option::Option<::std::string::String>,
     pub(crate) target_group_name: ::std::option::Option<::std::string::String>,

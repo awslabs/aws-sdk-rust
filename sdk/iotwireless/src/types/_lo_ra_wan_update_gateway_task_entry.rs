@@ -27,8 +27,8 @@ impl LoRaWanUpdateGatewayTaskEntry {
 }
 
 /// A builder for [`LoRaWanUpdateGatewayTaskEntry`](crate::types::LoRaWanUpdateGatewayTaskEntry).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LoRaWanUpdateGatewayTaskEntryBuilder {
     pub(crate) current_version: ::std::option::Option<crate::types::LoRaWanGatewayVersion>,
     pub(crate) update_version: ::std::option::Option<crate::types::LoRaWanGatewayVersion>,

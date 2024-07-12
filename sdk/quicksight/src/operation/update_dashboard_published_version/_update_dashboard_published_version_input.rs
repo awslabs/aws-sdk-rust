@@ -32,8 +32,8 @@ impl UpdateDashboardPublishedVersionInput {
 }
 
 /// A builder for [`UpdateDashboardPublishedVersionInput`](crate::operation::update_dashboard_published_version::UpdateDashboardPublishedVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDashboardPublishedVersionInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) dashboard_id: ::std::option::Option<::std::string::String>,

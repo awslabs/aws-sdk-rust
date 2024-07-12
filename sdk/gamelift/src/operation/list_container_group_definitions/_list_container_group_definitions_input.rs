@@ -44,8 +44,8 @@ impl ListContainerGroupDefinitionsInput {
 }
 
 /// A builder for [`ListContainerGroupDefinitionsInput`](crate::operation::list_container_group_definitions::ListContainerGroupDefinitionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListContainerGroupDefinitionsInputBuilder {
     pub(crate) scheduling_strategy: ::std::option::Option<crate::types::ContainerSchedulingStrategy>,
     pub(crate) limit: ::std::option::Option<i32>,

@@ -48,8 +48,8 @@ impl StartResourceEvaluationInput {
 }
 
 /// A builder for [`StartResourceEvaluationInput`](crate::operation::start_resource_evaluation::StartResourceEvaluationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartResourceEvaluationInputBuilder {
     pub(crate) resource_details: ::std::option::Option<crate::types::ResourceDetails>,
     pub(crate) evaluation_context: ::std::option::Option<crate::types::EvaluationContext>,

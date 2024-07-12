@@ -32,8 +32,8 @@ impl GetClipOutput {
 }
 
 /// A builder for [`GetClipOutput`](crate::operation::get_clip::GetClipOutput).
-#[non_exhaustive]
 #[derive(::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetClipOutputBuilder {
     pub(crate) content_type: ::std::option::Option<::std::string::String>,
     pub(crate) payload: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>,

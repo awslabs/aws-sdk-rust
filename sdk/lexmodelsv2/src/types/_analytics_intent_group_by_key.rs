@@ -27,8 +27,8 @@ impl AnalyticsIntentGroupByKey {
 }
 
 /// A builder for [`AnalyticsIntentGroupByKey`](crate::types::AnalyticsIntentGroupByKey).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AnalyticsIntentGroupByKeyBuilder {
     pub(crate) name: ::std::option::Option<crate::types::AnalyticsIntentField>,
     pub(crate) value: ::std::option::Option<::std::string::String>,

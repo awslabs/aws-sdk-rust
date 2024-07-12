@@ -65,8 +65,8 @@ impl LocalGatewayRouteTableVpcAssociation {
 }
 
 /// A builder for [`LocalGatewayRouteTableVpcAssociation`](crate::types::LocalGatewayRouteTableVpcAssociation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LocalGatewayRouteTableVpcAssociationBuilder {
     pub(crate) local_gateway_route_table_vpc_association_id: ::std::option::Option<::std::string::String>,
     pub(crate) local_gateway_route_table_id: ::std::option::Option<::std::string::String>,

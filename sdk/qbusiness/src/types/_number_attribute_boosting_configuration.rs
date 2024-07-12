@@ -28,8 +28,8 @@ impl NumberAttributeBoostingConfiguration {
 }
 
 /// A builder for [`NumberAttributeBoostingConfiguration`](crate::types::NumberAttributeBoostingConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NumberAttributeBoostingConfigurationBuilder {
     pub(crate) boosting_level: ::std::option::Option<crate::types::DocumentAttributeBoostingLevel>,
     pub(crate) boosting_type: ::std::option::Option<crate::types::NumberAttributeBoostingType>,

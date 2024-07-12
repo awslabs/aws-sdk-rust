@@ -21,8 +21,8 @@ impl AwsDmsReplicationInstanceVpcSecurityGroupsDetails {
 }
 
 /// A builder for [`AwsDmsReplicationInstanceVpcSecurityGroupsDetails`](crate::types::AwsDmsReplicationInstanceVpcSecurityGroupsDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsDmsReplicationInstanceVpcSecurityGroupsDetailsBuilder {
     pub(crate) vpc_security_group_id: ::std::option::Option<::std::string::String>,
 }

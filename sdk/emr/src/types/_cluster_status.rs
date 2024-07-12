@@ -41,8 +41,8 @@ impl ClusterStatus {
 }
 
 /// A builder for [`ClusterStatus`](crate::types::ClusterStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ClusterStatusBuilder {
     pub(crate) state: ::std::option::Option<crate::types::ClusterState>,
     pub(crate) state_change_reason: ::std::option::Option<crate::types::ClusterStateChangeReason>,

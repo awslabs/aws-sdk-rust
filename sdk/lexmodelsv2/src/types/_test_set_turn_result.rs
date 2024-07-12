@@ -27,8 +27,8 @@ impl TestSetTurnResult {
 }
 
 /// A builder for [`TestSetTurnResult`](crate::types::TestSetTurnResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TestSetTurnResultBuilder {
     pub(crate) agent: ::std::option::Option<crate::types::AgentTurnResult>,
     pub(crate) user: ::std::option::Option<crate::types::UserTurnResult>,

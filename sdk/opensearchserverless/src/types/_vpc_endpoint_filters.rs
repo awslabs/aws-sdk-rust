@@ -21,8 +21,8 @@ impl VpcEndpointFilters {
 }
 
 /// A builder for [`VpcEndpointFilters`](crate::types::VpcEndpointFilters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VpcEndpointFiltersBuilder {
     pub(crate) status: ::std::option::Option<crate::types::VpcEndpointStatus>,
 }

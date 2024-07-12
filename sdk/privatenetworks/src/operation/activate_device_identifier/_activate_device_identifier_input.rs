@@ -26,8 +26,8 @@ impl ActivateDeviceIdentifierInput {
 }
 
 /// A builder for [`ActivateDeviceIdentifierInput`](crate::operation::activate_device_identifier::ActivateDeviceIdentifierInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ActivateDeviceIdentifierInputBuilder {
     pub(crate) device_identifier_arn: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

@@ -135,8 +135,8 @@ impl StackSetOperation {
 }
 
 /// A builder for [`StackSetOperation`](crate::types::StackSetOperation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StackSetOperationBuilder {
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,
     pub(crate) stack_set_id: ::std::option::Option<::std::string::String>,

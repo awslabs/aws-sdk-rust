@@ -23,8 +23,8 @@ impl LaunchOverrides {
 }
 
 /// A builder for [`LaunchOverrides`](crate::types::LaunchOverrides).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LaunchOverridesBuilder {
     pub(crate) launch_commands: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

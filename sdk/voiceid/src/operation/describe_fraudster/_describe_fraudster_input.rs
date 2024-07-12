@@ -34,8 +34,8 @@ impl DescribeFraudsterInput {
 }
 
 /// A builder for [`DescribeFraudsterInput`](crate::operation::describe_fraudster::DescribeFraudsterInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DescribeFraudsterInputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) fraudster_id: ::std::option::Option<::std::string::String>,

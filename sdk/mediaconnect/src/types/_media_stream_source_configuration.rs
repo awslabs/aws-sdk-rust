@@ -35,8 +35,8 @@ impl MediaStreamSourceConfiguration {
 }
 
 /// A builder for [`MediaStreamSourceConfiguration`](crate::types::MediaStreamSourceConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MediaStreamSourceConfigurationBuilder {
     pub(crate) encoding_name: ::std::option::Option<crate::types::EncodingName>,
     pub(crate) input_configurations: ::std::option::Option<::std::vec::Vec<crate::types::InputConfiguration>>,

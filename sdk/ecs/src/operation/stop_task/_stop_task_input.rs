@@ -32,8 +32,8 @@ impl StopTaskInput {
 }
 
 /// A builder for [`StopTaskInput`](crate::operation::stop_task::StopTaskInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopTaskInputBuilder {
     pub(crate) cluster: ::std::option::Option<::std::string::String>,
     pub(crate) task: ::std::option::Option<::std::string::String>,

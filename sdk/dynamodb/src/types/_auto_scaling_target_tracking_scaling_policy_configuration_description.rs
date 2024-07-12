@@ -39,8 +39,8 @@ impl AutoScalingTargetTrackingScalingPolicyConfigurationDescription {
 }
 
 /// A builder for [`AutoScalingTargetTrackingScalingPolicyConfigurationDescription`](crate::types::AutoScalingTargetTrackingScalingPolicyConfigurationDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AutoScalingTargetTrackingScalingPolicyConfigurationDescriptionBuilder {
     pub(crate) disable_scale_in: ::std::option::Option<bool>,
     pub(crate) scale_in_cooldown: ::std::option::Option<i32>,

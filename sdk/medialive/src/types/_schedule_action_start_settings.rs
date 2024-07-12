@@ -33,8 +33,8 @@ impl ScheduleActionStartSettings {
 }
 
 /// A builder for [`ScheduleActionStartSettings`](crate::types::ScheduleActionStartSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScheduleActionStartSettingsBuilder {
     pub(crate) fixed_mode_schedule_action_start_settings: ::std::option::Option<crate::types::FixedModeScheduleActionStartSettings>,
     pub(crate) follow_mode_schedule_action_start_settings: ::std::option::Option<crate::types::FollowModeScheduleActionStartSettings>,

@@ -33,8 +33,8 @@ impl UpdateZonalAutoshiftConfigurationOutput {
 }
 
 /// A builder for [`UpdateZonalAutoshiftConfigurationOutput`](crate::operation::update_zonal_autoshift_configuration::UpdateZonalAutoshiftConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateZonalAutoshiftConfigurationOutputBuilder {
     pub(crate) resource_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) zonal_autoshift_status: ::std::option::Option<crate::types::ZonalAutoshiftStatus>,

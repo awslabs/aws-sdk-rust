@@ -19,8 +19,8 @@ impl PutEmailIdentityDkimAttributesOutput {
 }
 
 /// A builder for [`PutEmailIdentityDkimAttributesOutput`](crate::operation::put_email_identity_dkim_attributes::PutEmailIdentityDkimAttributesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutEmailIdentityDkimAttributesOutputBuilder {
     _request_id: Option<String>,
 }

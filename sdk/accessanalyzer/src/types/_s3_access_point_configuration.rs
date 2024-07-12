@@ -33,8 +33,8 @@ impl S3AccessPointConfiguration {
 }
 
 /// A builder for [`S3AccessPointConfiguration`](crate::types::S3AccessPointConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3AccessPointConfigurationBuilder {
     pub(crate) access_point_policy: ::std::option::Option<::std::string::String>,
     pub(crate) public_access_block: ::std::option::Option<crate::types::S3PublicAccessBlockConfiguration>,

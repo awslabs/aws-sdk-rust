@@ -44,8 +44,8 @@ impl ActiveDirectoryConfiguration {
 }
 
 /// A builder for [`ActiveDirectoryConfiguration`](crate::types::ActiveDirectoryConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ActiveDirectoryConfigurationBuilder {
     pub(crate) computer_attributes: ::std::option::Option<::std::vec::Vec<crate::types::ActiveDirectoryComputerAttribute>>,
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,

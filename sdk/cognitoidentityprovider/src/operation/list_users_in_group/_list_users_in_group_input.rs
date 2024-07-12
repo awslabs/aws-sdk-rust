@@ -38,8 +38,8 @@ impl ListUsersInGroupInput {
 }
 
 /// A builder for [`ListUsersInGroupInput`](crate::operation::list_users_in_group::ListUsersInGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListUsersInGroupInputBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) group_name: ::std::option::Option<::std::string::String>,

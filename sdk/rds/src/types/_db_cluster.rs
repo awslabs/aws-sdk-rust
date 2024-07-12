@@ -605,8 +605,8 @@ impl DbCluster {
 }
 
 /// A builder for [`DbCluster`](crate::types::DbCluster).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DbClusterBuilder {
     pub(crate) allocated_storage: ::std::option::Option<i32>,
     pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

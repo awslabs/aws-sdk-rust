@@ -18,8 +18,8 @@ impl DeleteSignalMapOutput {
 }
 
 /// A builder for [`DeleteSignalMapOutput`](crate::operation::delete_signal_map::DeleteSignalMapOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSignalMapOutputBuilder {
     _request_id: Option<String>,
 }

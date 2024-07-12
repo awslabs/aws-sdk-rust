@@ -57,8 +57,8 @@ impl RecommendationJobInferenceBenchmark {
 }
 
 /// A builder for [`RecommendationJobInferenceBenchmark`](crate::types::RecommendationJobInferenceBenchmark).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecommendationJobInferenceBenchmarkBuilder {
     pub(crate) metrics: ::std::option::Option<crate::types::RecommendationMetrics>,
     pub(crate) endpoint_metrics: ::std::option::Option<crate::types::InferenceMetrics>,

@@ -38,8 +38,8 @@ impl CreateImagePipelineOutput {
 }
 
 /// A builder for [`CreateImagePipelineOutput`](crate::operation::create_image_pipeline::CreateImagePipelineOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateImagePipelineOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

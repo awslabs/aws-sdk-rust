@@ -28,8 +28,8 @@ impl ListAccessControlRulesOutput {
 }
 
 /// A builder for [`ListAccessControlRulesOutput`](crate::operation::list_access_control_rules::ListAccessControlRulesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAccessControlRulesOutputBuilder {
     pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::AccessControlRule>>,
     _request_id: Option<String>,

@@ -26,8 +26,8 @@ impl UnshareDirectoryInput {
 }
 
 /// A builder for [`UnshareDirectoryInput`](crate::operation::unshare_directory::UnshareDirectoryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UnshareDirectoryInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) unshare_target: ::std::option::Option<crate::types::UnshareTarget>,

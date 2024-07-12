@@ -34,8 +34,8 @@ impl GetMappingInput {
 }
 
 /// A builder for [`GetMappingInput`](crate::operation::get_mapping::GetMappingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMappingInputBuilder {
     pub(crate) source: ::std::option::Option<crate::types::CatalogEntry>,
     pub(crate) sinks: ::std::option::Option<::std::vec::Vec<crate::types::CatalogEntry>>,

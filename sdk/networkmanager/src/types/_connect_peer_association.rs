@@ -45,8 +45,8 @@ impl ConnectPeerAssociation {
 }
 
 /// A builder for [`ConnectPeerAssociation`](crate::types::ConnectPeerAssociation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConnectPeerAssociationBuilder {
     pub(crate) connect_peer_id: ::std::option::Option<::std::string::String>,
     pub(crate) global_network_id: ::std::option::Option<::std::string::String>,

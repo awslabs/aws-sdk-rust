@@ -39,8 +39,8 @@ impl DataProductFilters {
 }
 
 /// A builder for [`DataProductFilters`](crate::types::DataProductFilters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataProductFiltersBuilder {
     pub(crate) entity_id: ::std::option::Option<crate::types::DataProductEntityIdFilter>,
     pub(crate) product_title: ::std::option::Option<crate::types::DataProductTitleFilter>,

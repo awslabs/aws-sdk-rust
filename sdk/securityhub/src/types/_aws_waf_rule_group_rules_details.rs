@@ -39,8 +39,8 @@ impl AwsWafRuleGroupRulesDetails {
 }
 
 /// A builder for [`AwsWafRuleGroupRulesDetails`](crate::types::AwsWafRuleGroupRulesDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsWafRuleGroupRulesDetailsBuilder {
     pub(crate) action: ::std::option::Option<crate::types::AwsWafRuleGroupRulesActionDetails>,
     pub(crate) priority: ::std::option::Option<i32>,

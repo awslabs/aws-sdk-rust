@@ -20,8 +20,8 @@ impl StartDbClusterInput {
 }
 
 /// A builder for [`StartDbClusterInput`](crate::operation::start_db_cluster::StartDbClusterInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartDbClusterInputBuilder {
     pub(crate) db_cluster_identifier: ::std::option::Option<::std::string::String>,
 }

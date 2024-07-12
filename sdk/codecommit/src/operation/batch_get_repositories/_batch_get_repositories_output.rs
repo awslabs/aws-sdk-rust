@@ -45,8 +45,8 @@ impl BatchGetRepositoriesOutput {
 }
 
 /// A builder for [`BatchGetRepositoriesOutput`](crate::operation::batch_get_repositories::BatchGetRepositoriesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetRepositoriesOutputBuilder {
     pub(crate) repositories: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryMetadata>>,
     pub(crate) repositories_not_found: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

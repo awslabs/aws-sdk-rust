@@ -74,8 +74,8 @@ impl MergePullRequestByThreeWayInput {
 }
 
 /// A builder for [`MergePullRequestByThreeWayInput`](crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MergePullRequestByThreeWayInputBuilder {
     pub(crate) pull_request_id: ::std::option::Option<::std::string::String>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,

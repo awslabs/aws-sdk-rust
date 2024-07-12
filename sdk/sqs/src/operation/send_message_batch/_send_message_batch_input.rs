@@ -31,8 +31,8 @@ impl SendMessageBatchInput {
 }
 
 /// A builder for [`SendMessageBatchInput`](crate::operation::send_message_batch::SendMessageBatchInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendMessageBatchInputBuilder {
     pub(crate) queue_url: ::std::option::Option<::std::string::String>,
     pub(crate) entries: ::std::option::Option<::std::vec::Vec<crate::types::SendMessageBatchRequestEntry>>,

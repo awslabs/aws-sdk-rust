@@ -12,8 +12,8 @@ impl InputFlowNodeConfiguration {
 }
 
 /// A builder for [`InputFlowNodeConfiguration`](crate::types::InputFlowNodeConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InputFlowNodeConfigurationBuilder {}
 impl InputFlowNodeConfigurationBuilder {
     /// Consumes the builder and constructs a [`InputFlowNodeConfiguration`](crate::types::InputFlowNodeConfiguration).

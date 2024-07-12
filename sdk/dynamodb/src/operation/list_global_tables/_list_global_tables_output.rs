@@ -34,8 +34,8 @@ impl ListGlobalTablesOutput {
 }
 
 /// A builder for [`ListGlobalTablesOutput`](crate::operation::list_global_tables::ListGlobalTablesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListGlobalTablesOutputBuilder {
     pub(crate) global_tables: ::std::option::Option<::std::vec::Vec<crate::types::GlobalTable>>,
     pub(crate) last_evaluated_global_table_name: ::std::option::Option<::std::string::String>,

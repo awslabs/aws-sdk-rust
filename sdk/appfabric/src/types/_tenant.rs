@@ -29,8 +29,8 @@ impl Tenant {
 }
 
 /// A builder for [`Tenant`](crate::types::Tenant).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TenantBuilder {
     pub(crate) tenant_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) tenant_display_name: ::std::option::Option<::std::string::String>,

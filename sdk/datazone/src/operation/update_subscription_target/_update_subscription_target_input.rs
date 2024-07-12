@@ -89,8 +89,8 @@ impl UpdateSubscriptionTargetInput {
 }
 
 /// A builder for [`UpdateSubscriptionTargetInput`](crate::operation::update_subscription_target::UpdateSubscriptionTargetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateSubscriptionTargetInputBuilder {
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) environment_identifier: ::std::option::Option<::std::string::String>,

@@ -58,8 +58,8 @@ impl PutRecordInput {
 }
 
 /// A builder for [`PutRecordInput`](crate::operation::put_record::PutRecordInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutRecordInputBuilder {
     pub(crate) feature_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) record: ::std::option::Option<::std::vec::Vec<crate::types::FeatureValue>>,

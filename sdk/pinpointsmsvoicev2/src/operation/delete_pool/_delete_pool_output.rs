@@ -102,8 +102,8 @@ impl DeletePoolOutput {
 }
 
 /// A builder for [`DeletePoolOutput`](crate::operation::delete_pool::DeletePoolOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePoolOutputBuilder {
     pub(crate) pool_arn: ::std::option::Option<::std::string::String>,
     pub(crate) pool_id: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl GetAttendeeInput {
 }
 
 /// A builder for [`GetAttendeeInput`](crate::operation::get_attendee::GetAttendeeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAttendeeInputBuilder {
     pub(crate) meeting_id: ::std::option::Option<::std::string::String>,
     pub(crate) attendee_id: ::std::option::Option<::std::string::String>,

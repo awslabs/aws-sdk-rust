@@ -29,8 +29,8 @@ impl EnvironmentLanguage {
 }
 
 /// A builder for [`EnvironmentLanguage`](crate::types::EnvironmentLanguage).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnvironmentLanguageBuilder {
     pub(crate) language: ::std::option::Option<crate::types::LanguageType>,
     pub(crate) images: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentImage>>,

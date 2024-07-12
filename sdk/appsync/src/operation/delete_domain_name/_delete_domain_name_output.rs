@@ -18,8 +18,8 @@ impl DeleteDomainNameOutput {
 }
 
 /// A builder for [`DeleteDomainNameOutput`](crate::operation::delete_domain_name::DeleteDomainNameOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDomainNameOutputBuilder {
     _request_id: Option<String>,
 }

@@ -26,8 +26,8 @@ impl UpdateCoreNetworkOutput {
 }
 
 /// A builder for [`UpdateCoreNetworkOutput`](crate::operation::update_core_network::UpdateCoreNetworkOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateCoreNetworkOutputBuilder {
     pub(crate) core_network: ::std::option::Option<crate::types::CoreNetwork>,
     _request_id: Option<String>,

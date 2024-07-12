@@ -95,8 +95,8 @@ impl ServiceTemplateVersionSummary {
 }
 
 /// A builder for [`ServiceTemplateVersionSummary`](crate::types::ServiceTemplateVersionSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ServiceTemplateVersionSummaryBuilder {
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
     pub(crate) major_version: ::std::option::Option<::std::string::String>,

@@ -94,8 +94,8 @@ impl GetMonitorOutput {
 }
 
 /// A builder for [`GetMonitorOutput`](crate::operation::get_monitor::GetMonitorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMonitorOutputBuilder {
     pub(crate) monitor_id: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,

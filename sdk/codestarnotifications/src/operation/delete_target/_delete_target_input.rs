@@ -34,8 +34,8 @@ impl DeleteTargetInput {
 }
 
 /// A builder for [`DeleteTargetInput`](crate::operation::delete_target::DeleteTargetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DeleteTargetInputBuilder {
     pub(crate) target_address: ::std::option::Option<::std::string::String>,
     pub(crate) force_unsubscribe_all: ::std::option::Option<bool>,

@@ -67,8 +67,8 @@ impl AutoMlJobChannel {
 }
 
 /// A builder for [`AutoMlJobChannel`](crate::types::AutoMlJobChannel).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AutoMlJobChannelBuilder {
     pub(crate) channel_type: ::std::option::Option<crate::types::AutoMlChannelType>,
     pub(crate) content_type: ::std::option::Option<::std::string::String>,

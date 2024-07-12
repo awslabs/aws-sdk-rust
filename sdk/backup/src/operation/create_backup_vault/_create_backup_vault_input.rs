@@ -50,8 +50,8 @@ impl CreateBackupVaultInput {
 }
 
 /// A builder for [`CreateBackupVaultInput`](crate::operation::create_backup_vault::CreateBackupVaultInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateBackupVaultInputBuilder {
     pub(crate) backup_vault_name: ::std::option::Option<::std::string::String>,
     pub(crate) backup_vault_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

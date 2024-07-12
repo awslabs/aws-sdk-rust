@@ -60,8 +60,8 @@ impl UpdateChatControlsConfigurationInput {
 }
 
 /// A builder for [`UpdateChatControlsConfigurationInput`](crate::operation::update_chat_controls_configuration::UpdateChatControlsConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateChatControlsConfigurationInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

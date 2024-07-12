@@ -35,8 +35,8 @@ impl UpdateConnectionApiKeyAuthRequestParameters {
 }
 
 /// A builder for [`UpdateConnectionApiKeyAuthRequestParameters`](crate::types::UpdateConnectionApiKeyAuthRequestParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateConnectionApiKeyAuthRequestParametersBuilder {
     pub(crate) api_key_name: ::std::option::Option<::std::string::String>,
     pub(crate) api_key_value: ::std::option::Option<::std::string::String>,

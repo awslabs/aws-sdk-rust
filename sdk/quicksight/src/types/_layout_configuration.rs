@@ -34,8 +34,8 @@ impl LayoutConfiguration {
 }
 
 /// A builder for [`LayoutConfiguration`](crate::types::LayoutConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LayoutConfigurationBuilder {
     pub(crate) grid_layout: ::std::option::Option<crate::types::GridLayoutConfiguration>,
     pub(crate) free_form_layout: ::std::option::Option<crate::types::FreeFormLayoutConfiguration>,

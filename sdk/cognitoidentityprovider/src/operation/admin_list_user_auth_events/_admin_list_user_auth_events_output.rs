@@ -34,8 +34,8 @@ impl AdminListUserAuthEventsOutput {
 }
 
 /// A builder for [`AdminListUserAuthEventsOutput`](crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AdminListUserAuthEventsOutputBuilder {
     pub(crate) auth_events: ::std::option::Option<::std::vec::Vec<crate::types::AuthEventType>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

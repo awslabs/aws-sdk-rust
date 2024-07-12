@@ -66,8 +66,8 @@ impl DeleteVirtualInterfaceOutput {
 }
 
 /// A builder for [`DeleteVirtualInterfaceOutput`](crate::operation::delete_virtual_interface::DeleteVirtualInterfaceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVirtualInterfaceOutputBuilder {
     pub(crate) virtual_interface_state: ::std::option::Option<crate::types::VirtualInterfaceState>,
     _request_id: Option<String>,

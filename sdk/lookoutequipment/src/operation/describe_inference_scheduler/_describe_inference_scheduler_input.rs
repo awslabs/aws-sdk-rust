@@ -20,8 +20,8 @@ impl DescribeInferenceSchedulerInput {
 }
 
 /// A builder for [`DescribeInferenceSchedulerInput`](crate::operation::describe_inference_scheduler::DescribeInferenceSchedulerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeInferenceSchedulerInputBuilder {
     pub(crate) inference_scheduler_name: ::std::option::Option<::std::string::String>,
 }

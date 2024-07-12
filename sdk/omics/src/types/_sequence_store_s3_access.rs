@@ -27,8 +27,8 @@ impl SequenceStoreS3Access {
 }
 
 /// A builder for [`SequenceStoreS3Access`](crate::types::SequenceStoreS3Access).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SequenceStoreS3AccessBuilder {
     pub(crate) s3_uri: ::std::option::Option<::std::string::String>,
     pub(crate) s3_access_point_arn: ::std::option::Option<::std::string::String>,

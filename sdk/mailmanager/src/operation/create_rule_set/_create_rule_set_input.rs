@@ -42,8 +42,8 @@ impl CreateRuleSetInput {
 }
 
 /// A builder for [`CreateRuleSetInput`](crate::operation::create_rule_set::CreateRuleSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateRuleSetInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) rule_set_name: ::std::option::Option<::std::string::String>,

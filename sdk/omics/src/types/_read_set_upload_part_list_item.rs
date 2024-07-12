@@ -52,8 +52,8 @@ impl ReadSetUploadPartListItem {
 }
 
 /// A builder for [`ReadSetUploadPartListItem`](crate::types::ReadSetUploadPartListItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReadSetUploadPartListItemBuilder {
     pub(crate) part_number: ::std::option::Option<i32>,
     pub(crate) part_size: ::std::option::Option<i64>,

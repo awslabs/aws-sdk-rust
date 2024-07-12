@@ -19,8 +19,8 @@ impl AddCustomAttributesOutput {
 }
 
 /// A builder for [`AddCustomAttributesOutput`](crate::operation::add_custom_attributes::AddCustomAttributesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddCustomAttributesOutputBuilder {
     _request_id: Option<String>,
 }

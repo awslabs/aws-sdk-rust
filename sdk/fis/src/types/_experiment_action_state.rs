@@ -27,8 +27,8 @@ impl ExperimentActionState {
 }
 
 /// A builder for [`ExperimentActionState`](crate::types::ExperimentActionState).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExperimentActionStateBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ExperimentActionStatus>,
     pub(crate) reason: ::std::option::Option<::std::string::String>,

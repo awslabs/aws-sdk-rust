@@ -22,8 +22,8 @@ impl BoxPlotFieldWells {
 }
 
 /// A builder for [`BoxPlotFieldWells`](crate::types::BoxPlotFieldWells).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BoxPlotFieldWellsBuilder {
     pub(crate) box_plot_aggregated_field_wells: ::std::option::Option<crate::types::BoxPlotAggregatedFieldWells>,
 }

@@ -48,8 +48,8 @@ impl GetScalingConfigurationRecommendationInput {
 }
 
 /// A builder for [`GetScalingConfigurationRecommendationInput`](crate::operation::get_scaling_configuration_recommendation::GetScalingConfigurationRecommendationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetScalingConfigurationRecommendationInputBuilder {
     pub(crate) inference_recommendations_job_name: ::std::option::Option<::std::string::String>,
     pub(crate) recommendation_id: ::std::option::Option<::std::string::String>,

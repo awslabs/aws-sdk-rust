@@ -23,8 +23,8 @@ impl JourneyPushMessage {
 }
 
 /// A builder for [`JourneyPushMessage`](crate::types::JourneyPushMessage).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JourneyPushMessageBuilder {
     pub(crate) time_to_live: ::std::option::Option<::std::string::String>,
 }

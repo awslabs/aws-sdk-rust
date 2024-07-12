@@ -26,8 +26,8 @@ impl GetEmailChannelOutput {
 }
 
 /// A builder for [`GetEmailChannelOutput`](crate::operation::get_email_channel::GetEmailChannelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEmailChannelOutputBuilder {
     pub(crate) email_channel_response: ::std::option::Option<crate::types::EmailChannelResponse>,
     _request_id: Option<String>,

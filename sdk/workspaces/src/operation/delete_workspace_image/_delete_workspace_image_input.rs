@@ -20,8 +20,8 @@ impl DeleteWorkspaceImageInput {
 }
 
 /// A builder for [`DeleteWorkspaceImageInput`](crate::operation::delete_workspace_image::DeleteWorkspaceImageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteWorkspaceImageInputBuilder {
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
 }

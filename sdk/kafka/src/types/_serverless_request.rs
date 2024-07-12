@@ -29,8 +29,8 @@ impl ServerlessRequest {
 }
 
 /// A builder for [`ServerlessRequest`](crate::types::ServerlessRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServerlessRequestBuilder {
     pub(crate) vpc_configs: ::std::option::Option<::std::vec::Vec<crate::types::VpcConfig>>,
     pub(crate) client_authentication: ::std::option::Option<crate::types::ServerlessClientAuthentication>,

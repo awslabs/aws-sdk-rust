@@ -29,8 +29,8 @@ impl BudgetNotificationsForAccount {
 }
 
 /// A builder for [`BudgetNotificationsForAccount`](crate::types::BudgetNotificationsForAccount).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BudgetNotificationsForAccountBuilder {
     pub(crate) notifications: ::std::option::Option<::std::vec::Vec<crate::types::Notification>>,
     pub(crate) budget_name: ::std::option::Option<::std::string::String>,

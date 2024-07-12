@@ -68,8 +68,8 @@ impl HeadBucketOutput {
 }
 
 /// A builder for [`HeadBucketOutput`](crate::operation::head_bucket::HeadBucketOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HeadBucketOutputBuilder {
     pub(crate) bucket_location_type: ::std::option::Option<crate::types::LocationType>,
     pub(crate) bucket_location_name: ::std::option::Option<::std::string::String>,

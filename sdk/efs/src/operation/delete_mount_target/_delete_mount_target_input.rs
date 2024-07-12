@@ -21,8 +21,8 @@ impl DeleteMountTargetInput {
 }
 
 /// A builder for [`DeleteMountTargetInput`](crate::operation::delete_mount_target::DeleteMountTargetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteMountTargetInputBuilder {
     pub(crate) mount_target_id: ::std::option::Option<::std::string::String>,
 }

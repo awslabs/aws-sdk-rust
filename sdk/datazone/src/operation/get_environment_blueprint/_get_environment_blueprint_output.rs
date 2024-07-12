@@ -104,8 +104,8 @@ impl GetEnvironmentBlueprintOutput {
 }
 
 /// A builder for [`GetEnvironmentBlueprintOutput`](crate::operation::get_environment_blueprint::GetEnvironmentBlueprintOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetEnvironmentBlueprintOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

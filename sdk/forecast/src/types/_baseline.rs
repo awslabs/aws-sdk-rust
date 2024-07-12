@@ -21,8 +21,8 @@ impl Baseline {
 }
 
 /// A builder for [`Baseline`](crate::types::Baseline).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BaselineBuilder {
     pub(crate) predictor_baseline: ::std::option::Option<crate::types::PredictorBaseline>,
 }

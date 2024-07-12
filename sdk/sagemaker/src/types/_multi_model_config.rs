@@ -21,8 +21,8 @@ impl MultiModelConfig {
 }
 
 /// A builder for [`MultiModelConfig`](crate::types::MultiModelConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MultiModelConfigBuilder {
     pub(crate) model_cache_setting: ::std::option::Option<crate::types::ModelCacheSetting>,
 }

@@ -26,8 +26,8 @@ impl GetIngestionInput {
 }
 
 /// A builder for [`GetIngestionInput`](crate::operation::get_ingestion::GetIngestionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetIngestionInputBuilder {
     pub(crate) app_bundle_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) ingestion_identifier: ::std::option::Option<::std::string::String>,

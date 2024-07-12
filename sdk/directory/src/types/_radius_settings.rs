@@ -79,8 +79,8 @@ impl RadiusSettings {
 }
 
 /// A builder for [`RadiusSettings`](crate::types::RadiusSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct RadiusSettingsBuilder {
     pub(crate) radius_servers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) radius_port: ::std::option::Option<i32>,

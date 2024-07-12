@@ -30,8 +30,8 @@ impl ImportDataSource {
 }
 
 /// A builder for [`ImportDataSource`](crate::types::ImportDataSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportDataSourceBuilder {
     pub(crate) s3_url: ::std::option::Option<::std::string::String>,
     pub(crate) data_format: ::std::option::Option<crate::types::DataFormat>,

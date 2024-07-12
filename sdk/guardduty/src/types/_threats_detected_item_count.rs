@@ -21,8 +21,8 @@ impl ThreatsDetectedItemCount {
 }
 
 /// A builder for [`ThreatsDetectedItemCount`](crate::types::ThreatsDetectedItemCount).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ThreatsDetectedItemCountBuilder {
     pub(crate) files: ::std::option::Option<i32>,
 }

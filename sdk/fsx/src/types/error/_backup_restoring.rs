@@ -53,8 +53,8 @@ impl BackupRestoring {
 }
 
 /// A builder for [`BackupRestoring`](crate::types::error::BackupRestoring).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BackupRestoringBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) file_system_id: ::std::option::Option<::std::string::String>,

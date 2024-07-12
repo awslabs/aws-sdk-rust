@@ -160,8 +160,8 @@ impl CalculateRouteMatrixInput {
 }
 
 /// A builder for [`CalculateRouteMatrixInput`](crate::operation::calculate_route_matrix::CalculateRouteMatrixInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CalculateRouteMatrixInputBuilder {
     pub(crate) calculator_name: ::std::option::Option<::std::string::String>,
     pub(crate) departure_positions: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>>,

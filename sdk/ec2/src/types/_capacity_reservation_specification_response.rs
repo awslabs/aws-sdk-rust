@@ -39,8 +39,8 @@ impl CapacityReservationSpecificationResponse {
 }
 
 /// A builder for [`CapacityReservationSpecificationResponse`](crate::types::CapacityReservationSpecificationResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CapacityReservationSpecificationResponseBuilder {
     pub(crate) capacity_reservation_preference: ::std::option::Option<crate::types::CapacityReservationPreference>,
     pub(crate) capacity_reservation_target: ::std::option::Option<crate::types::CapacityReservationTargetResponse>,

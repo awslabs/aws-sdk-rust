@@ -27,8 +27,8 @@ impl TargetResource {
 }
 
 /// A builder for [`TargetResource`](crate::types::TargetResource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TargetResourceBuilder {
     pub(crate) nlb_resource: ::std::option::Option<crate::types::NlbResource>,
     pub(crate) r53_resource: ::std::option::Option<crate::types::R53ResourceRecord>,

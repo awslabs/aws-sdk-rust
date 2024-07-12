@@ -21,8 +21,8 @@ impl LabelDetectionSettings {
 }
 
 /// A builder for [`LabelDetectionSettings`](crate::types::LabelDetectionSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LabelDetectionSettingsBuilder {
     pub(crate) general_labels: ::std::option::Option<crate::types::GeneralLabelsSettings>,
 }

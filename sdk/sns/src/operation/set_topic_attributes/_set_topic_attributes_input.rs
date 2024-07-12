@@ -229,8 +229,8 @@ impl SetTopicAttributesInput {
 }
 
 /// A builder for [`SetTopicAttributesInput`](crate::operation::set_topic_attributes::SetTopicAttributesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetTopicAttributesInputBuilder {
     pub(crate) topic_arn: ::std::option::Option<::std::string::String>,
     pub(crate) attribute_name: ::std::option::Option<::std::string::String>,

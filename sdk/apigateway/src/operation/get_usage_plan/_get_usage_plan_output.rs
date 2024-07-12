@@ -71,8 +71,8 @@ impl GetUsagePlanOutput {
 }
 
 /// A builder for [`GetUsagePlanOutput`](crate::operation::get_usage_plan::GetUsagePlanOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetUsagePlanOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

@@ -25,8 +25,8 @@ impl SiteMapsConfiguration {
 }
 
 /// A builder for [`SiteMapsConfiguration`](crate::types::SiteMapsConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SiteMapsConfigurationBuilder {
     pub(crate) site_maps: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

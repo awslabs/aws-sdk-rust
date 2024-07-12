@@ -26,8 +26,8 @@ impl AssociateAgentKnowledgeBaseOutput {
 }
 
 /// A builder for [`AssociateAgentKnowledgeBaseOutput`](crate::operation::associate_agent_knowledge_base::AssociateAgentKnowledgeBaseOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateAgentKnowledgeBaseOutputBuilder {
     pub(crate) agent_knowledge_base: ::std::option::Option<crate::types::AgentKnowledgeBase>,
     _request_id: Option<String>,

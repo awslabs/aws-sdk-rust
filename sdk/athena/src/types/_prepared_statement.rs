@@ -45,8 +45,8 @@ impl PreparedStatement {
 }
 
 /// A builder for [`PreparedStatement`](crate::types::PreparedStatement).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PreparedStatementBuilder {
     pub(crate) statement_name: ::std::option::Option<::std::string::String>,
     pub(crate) query_statement: ::std::option::Option<::std::string::String>,

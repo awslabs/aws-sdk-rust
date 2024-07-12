@@ -54,8 +54,8 @@ impl DescribeCustomDomainsOutput {
 }
 
 /// A builder for [`DescribeCustomDomainsOutput`](crate::operation::describe_custom_domains::DescribeCustomDomainsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCustomDomainsOutputBuilder {
     pub(crate) dns_target: ::std::option::Option<::std::string::String>,
     pub(crate) service_arn: ::std::option::Option<::std::string::String>,

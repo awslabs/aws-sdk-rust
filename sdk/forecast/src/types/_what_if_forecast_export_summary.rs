@@ -113,8 +113,8 @@ impl WhatIfForecastExportSummary {
 }
 
 /// A builder for [`WhatIfForecastExportSummary`](crate::types::WhatIfForecastExportSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WhatIfForecastExportSummaryBuilder {
     pub(crate) what_if_forecast_export_arn: ::std::option::Option<::std::string::String>,
     pub(crate) what_if_forecast_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

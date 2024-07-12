@@ -32,8 +32,8 @@ impl RegisterWorkspaceDirectoryOutput {
 }
 
 /// A builder for [`RegisterWorkspaceDirectoryOutput`](crate::operation::register_workspace_directory::RegisterWorkspaceDirectoryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterWorkspaceDirectoryOutputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::WorkspaceDirectoryState>,

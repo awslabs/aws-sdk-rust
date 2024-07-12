@@ -28,8 +28,8 @@ impl GetAppInstanceStreamingConfigurationsOutput {
 }
 
 /// A builder for [`GetAppInstanceStreamingConfigurationsOutput`](crate::operation::get_app_instance_streaming_configurations::GetAppInstanceStreamingConfigurationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAppInstanceStreamingConfigurationsOutputBuilder {
     pub(crate) app_instance_streaming_configurations: ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceStreamingConfiguration>>,
     _request_id: Option<String>,

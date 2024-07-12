@@ -28,8 +28,8 @@ impl VectorKnowledgeBaseConfiguration {
 }
 
 /// A builder for [`VectorKnowledgeBaseConfiguration`](crate::types::VectorKnowledgeBaseConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VectorKnowledgeBaseConfigurationBuilder {
     pub(crate) embedding_model_arn: ::std::option::Option<::std::string::String>,
     pub(crate) embedding_model_configuration: ::std::option::Option<crate::types::EmbeddingModelConfiguration>,

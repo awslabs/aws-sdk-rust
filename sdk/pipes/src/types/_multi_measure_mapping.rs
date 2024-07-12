@@ -30,8 +30,8 @@ impl MultiMeasureMapping {
 }
 
 /// A builder for [`MultiMeasureMapping`](crate::types::MultiMeasureMapping).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MultiMeasureMappingBuilder {
     pub(crate) multi_measure_name: ::std::option::Option<::std::string::String>,
     pub(crate) multi_measure_attribute_mappings: ::std::option::Option<::std::vec::Vec<crate::types::MultiMeasureAttributeMapping>>,

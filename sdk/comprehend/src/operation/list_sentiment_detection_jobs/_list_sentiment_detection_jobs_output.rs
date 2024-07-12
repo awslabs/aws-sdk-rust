@@ -34,8 +34,8 @@ impl ListSentimentDetectionJobsOutput {
 }
 
 /// A builder for [`ListSentimentDetectionJobsOutput`](crate::operation::list_sentiment_detection_jobs::ListSentimentDetectionJobsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSentimentDetectionJobsOutputBuilder {
     pub(crate) sentiment_detection_job_properties_list: ::std::option::Option<::std::vec::Vec<crate::types::SentimentDetectionJobProperties>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

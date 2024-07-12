@@ -33,8 +33,8 @@ impl FileModes {
 }
 
 /// A builder for [`FileModes`](crate::types::FileModes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FileModesBuilder {
     pub(crate) source: ::std::option::Option<crate::types::FileModeTypeEnum>,
     pub(crate) destination: ::std::option::Option<crate::types::FileModeTypeEnum>,

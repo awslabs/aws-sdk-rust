@@ -27,8 +27,8 @@ impl AwsS3BucketObjectLockConfiguration {
 }
 
 /// A builder for [`AwsS3BucketObjectLockConfiguration`](crate::types::AwsS3BucketObjectLockConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsS3BucketObjectLockConfigurationBuilder {
     pub(crate) object_lock_enabled: ::std::option::Option<::std::string::String>,
     pub(crate) rule: ::std::option::Option<crate::types::AwsS3BucketObjectLockConfigurationRuleDetails>,

@@ -26,8 +26,8 @@ impl DescribeBatchLoadTaskOutput {
 }
 
 /// A builder for [`DescribeBatchLoadTaskOutput`](crate::operation::describe_batch_load_task::DescribeBatchLoadTaskOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeBatchLoadTaskOutputBuilder {
     pub(crate) batch_load_task_description: ::std::option::Option<crate::types::BatchLoadTaskDescription>,
     _request_id: Option<String>,

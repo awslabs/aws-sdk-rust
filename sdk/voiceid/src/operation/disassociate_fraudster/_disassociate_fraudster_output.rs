@@ -26,8 +26,8 @@ impl DisassociateFraudsterOutput {
 }
 
 /// A builder for [`DisassociateFraudsterOutput`](crate::operation::disassociate_fraudster::DisassociateFraudsterOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateFraudsterOutputBuilder {
     pub(crate) fraudster: ::std::option::Option<crate::types::Fraudster>,
     _request_id: Option<String>,

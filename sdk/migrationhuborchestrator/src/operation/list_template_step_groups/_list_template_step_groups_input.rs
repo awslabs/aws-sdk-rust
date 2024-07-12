@@ -32,8 +32,8 @@ impl ListTemplateStepGroupsInput {
 }
 
 /// A builder for [`ListTemplateStepGroupsInput`](crate::operation::list_template_step_groups::ListTemplateStepGroupsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTemplateStepGroupsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

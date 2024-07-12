@@ -19,8 +19,8 @@ impl DeleteAttachedFileOutput {
 }
 
 /// A builder for [`DeleteAttachedFileOutput`](crate::operation::delete_attached_file::DeleteAttachedFileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAttachedFileOutputBuilder {
     _request_id: Option<String>,
 }

@@ -21,8 +21,8 @@ impl OpsItemNotification {
 }
 
 /// A builder for [`OpsItemNotification`](crate::types::OpsItemNotification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OpsItemNotificationBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }

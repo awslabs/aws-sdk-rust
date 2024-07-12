@@ -27,8 +27,8 @@ impl ListMissionProfilesInput {
 }
 
 /// A builder for [`ListMissionProfilesInput`](crate::operation::list_mission_profiles::ListMissionProfilesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListMissionProfilesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

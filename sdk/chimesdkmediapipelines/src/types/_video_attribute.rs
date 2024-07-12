@@ -39,8 +39,8 @@ impl VideoAttribute {
 }
 
 /// A builder for [`VideoAttribute`](crate::types::VideoAttribute).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VideoAttributeBuilder {
     pub(crate) corner_radius: ::std::option::Option<i32>,
     pub(crate) border_color: ::std::option::Option<crate::types::BorderColor>,

@@ -45,8 +45,8 @@ impl CustomizableMetricParameters {
 }
 
 /// A builder for [`CustomizableMetricParameters`](crate::types::CustomizableMetricParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CustomizableMetricParametersBuilder {
     pub(crate) threshold: ::std::option::Option<crate::types::CustomizableMetricThreshold>,
     pub(crate) headroom: ::std::option::Option<crate::types::CustomizableMetricHeadroom>,

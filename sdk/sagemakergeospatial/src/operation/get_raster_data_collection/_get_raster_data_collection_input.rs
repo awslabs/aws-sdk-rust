@@ -20,8 +20,8 @@ impl GetRasterDataCollectionInput {
 }
 
 /// A builder for [`GetRasterDataCollectionInput`](crate::operation::get_raster_data_collection::GetRasterDataCollectionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRasterDataCollectionInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }

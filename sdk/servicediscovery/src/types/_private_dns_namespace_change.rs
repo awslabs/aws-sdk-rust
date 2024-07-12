@@ -27,8 +27,8 @@ impl PrivateDnsNamespaceChange {
 }
 
 /// A builder for [`PrivateDnsNamespaceChange`](crate::types::PrivateDnsNamespaceChange).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PrivateDnsNamespaceChangeBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) properties: ::std::option::Option<crate::types::PrivateDnsNamespacePropertiesChange>,

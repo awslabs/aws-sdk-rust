@@ -26,8 +26,8 @@ impl CreateChimeWebhookConfigurationOutput {
 }
 
 /// A builder for [`CreateChimeWebhookConfigurationOutput`](crate::operation::create_chime_webhook_configuration::CreateChimeWebhookConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateChimeWebhookConfigurationOutputBuilder {
     pub(crate) webhook_configuration: ::std::option::Option<crate::types::ChimeWebhookConfiguration>,
     _request_id: Option<String>,

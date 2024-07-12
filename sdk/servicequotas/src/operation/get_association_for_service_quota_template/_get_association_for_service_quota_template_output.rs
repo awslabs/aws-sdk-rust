@@ -26,8 +26,8 @@ impl GetAssociationForServiceQuotaTemplateOutput {
 }
 
 /// A builder for [`GetAssociationForServiceQuotaTemplateOutput`](crate::operation::get_association_for_service_quota_template::GetAssociationForServiceQuotaTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAssociationForServiceQuotaTemplateOutputBuilder {
     pub(crate) service_quota_template_association_status: ::std::option::Option<crate::types::ServiceQuotaTemplateAssociationStatus>,
     _request_id: Option<String>,

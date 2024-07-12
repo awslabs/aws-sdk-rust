@@ -39,8 +39,8 @@ impl ResourceState {
 }
 
 /// A builder for [`ResourceState`](crate::types::ResourceState).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResourceStateBuilder {
     pub(crate) ec2: ::std::option::Option<crate::types::State>,
     pub(crate) ecr: ::std::option::Option<crate::types::State>,

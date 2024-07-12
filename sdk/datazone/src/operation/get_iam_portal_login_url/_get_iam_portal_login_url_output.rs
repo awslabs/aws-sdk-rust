@@ -33,8 +33,8 @@ impl GetIamPortalLoginUrlOutput {
 }
 
 /// A builder for [`GetIamPortalLoginUrlOutput`](crate::operation::get_iam_portal_login_url::GetIamPortalLoginUrlOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetIamPortalLoginUrlOutputBuilder {
     pub(crate) auth_code_url: ::std::option::Option<::std::string::String>,
     pub(crate) user_profile_id: ::std::option::Option<::std::string::String>,

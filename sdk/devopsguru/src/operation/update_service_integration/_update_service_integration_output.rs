@@ -18,8 +18,8 @@ impl UpdateServiceIntegrationOutput {
 }
 
 /// A builder for [`UpdateServiceIntegrationOutput`](crate::operation::update_service_integration::UpdateServiceIntegrationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateServiceIntegrationOutputBuilder {
     _request_id: Option<String>,
 }

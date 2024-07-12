@@ -45,8 +45,8 @@ impl RetainRule {
 }
 
 /// A builder for [`RetainRule`](crate::types::RetainRule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RetainRuleBuilder {
     pub(crate) count: ::std::option::Option<i32>,
     pub(crate) interval: ::std::option::Option<i32>,

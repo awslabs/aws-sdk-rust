@@ -20,8 +20,8 @@ impl GetAnnotationStoreInput {
 }
 
 /// A builder for [`GetAnnotationStoreInput`](crate::operation::get_annotation_store::GetAnnotationStoreInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAnnotationStoreInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

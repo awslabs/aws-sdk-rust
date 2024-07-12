@@ -23,8 +23,8 @@ impl AmiProductVisibilityFilter {
 }
 
 /// A builder for [`AmiProductVisibilityFilter`](crate::types::AmiProductVisibilityFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AmiProductVisibilityFilterBuilder {
     pub(crate) value_list: ::std::option::Option<::std::vec::Vec<crate::types::AmiProductVisibilityString>>,
 }

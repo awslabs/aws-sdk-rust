@@ -219,8 +219,8 @@ impl DocumentDescription {
 }
 
 /// A builder for [`DocumentDescription`](crate::types::DocumentDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DocumentDescriptionBuilder {
     pub(crate) sha1: ::std::option::Option<::std::string::String>,
     pub(crate) hash: ::std::option::Option<::std::string::String>,

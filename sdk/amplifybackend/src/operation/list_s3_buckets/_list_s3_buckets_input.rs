@@ -21,8 +21,8 @@ impl ListS3BucketsInput {
 }
 
 /// A builder for [`ListS3BucketsInput`](crate::operation::list_s3_buckets::ListS3BucketsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListS3BucketsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }

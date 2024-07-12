@@ -39,8 +39,8 @@ impl KubernetesPermissionCheckedDetails {
 }
 
 /// A builder for [`KubernetesPermissionCheckedDetails`](crate::types::KubernetesPermissionCheckedDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KubernetesPermissionCheckedDetailsBuilder {
     pub(crate) verb: ::std::option::Option<::std::string::String>,
     pub(crate) resource: ::std::option::Option<::std::string::String>,

@@ -22,8 +22,8 @@ impl HttpConfiguration {
 }
 
 /// A builder for [`HttpConfiguration`](crate::types::HttpConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HttpConfigurationBuilder {
     pub(crate) base_url: ::std::option::Option<::std::string::String>,
 }

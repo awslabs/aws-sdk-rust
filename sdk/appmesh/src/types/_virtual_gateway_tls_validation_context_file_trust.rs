@@ -22,8 +22,8 @@ impl VirtualGatewayTlsValidationContextFileTrust {
 }
 
 /// A builder for [`VirtualGatewayTlsValidationContextFileTrust`](crate::types::VirtualGatewayTlsValidationContextFileTrust).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VirtualGatewayTlsValidationContextFileTrustBuilder {
     pub(crate) certificate_chain: ::std::option::Option<::std::string::String>,
 }

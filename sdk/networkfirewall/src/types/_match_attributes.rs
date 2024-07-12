@@ -67,8 +67,8 @@ impl MatchAttributes {
 }
 
 /// A builder for [`MatchAttributes`](crate::types::MatchAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MatchAttributesBuilder {
     pub(crate) sources: ::std::option::Option<::std::vec::Vec<crate::types::Address>>,
     pub(crate) destinations: ::std::option::Option<::std::vec::Vec<crate::types::Address>>,

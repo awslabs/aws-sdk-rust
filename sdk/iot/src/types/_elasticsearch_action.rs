@@ -52,8 +52,8 @@ impl ElasticsearchAction {
 }
 
 /// A builder for [`ElasticsearchAction`](crate::types::ElasticsearchAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ElasticsearchActionBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,

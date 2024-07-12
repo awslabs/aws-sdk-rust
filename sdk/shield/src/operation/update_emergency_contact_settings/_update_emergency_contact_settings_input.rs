@@ -24,8 +24,8 @@ impl UpdateEmergencyContactSettingsInput {
 }
 
 /// A builder for [`UpdateEmergencyContactSettingsInput`](crate::operation::update_emergency_contact_settings::UpdateEmergencyContactSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateEmergencyContactSettingsInputBuilder {
     pub(crate) emergency_contact_list: ::std::option::Option<::std::vec::Vec<crate::types::EmergencyContact>>,
 }

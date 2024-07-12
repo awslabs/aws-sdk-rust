@@ -34,8 +34,8 @@ impl ListCoreDefinitionsOutput {
 }
 
 /// A builder for [`ListCoreDefinitionsOutput`](crate::operation::list_core_definitions::ListCoreDefinitionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCoreDefinitionsOutputBuilder {
     pub(crate) definitions: ::std::option::Option<::std::vec::Vec<crate::types::DefinitionInformation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

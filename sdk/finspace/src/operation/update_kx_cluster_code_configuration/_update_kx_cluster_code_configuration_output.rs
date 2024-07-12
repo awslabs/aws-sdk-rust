@@ -18,8 +18,8 @@ impl UpdateKxClusterCodeConfigurationOutput {
 }
 
 /// A builder for [`UpdateKxClusterCodeConfigurationOutput`](crate::operation::update_kx_cluster_code_configuration::UpdateKxClusterCodeConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateKxClusterCodeConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

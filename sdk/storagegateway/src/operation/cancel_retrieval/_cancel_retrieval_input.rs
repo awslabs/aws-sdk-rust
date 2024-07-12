@@ -27,8 +27,8 @@ impl CancelRetrievalInput {
 }
 
 /// A builder for [`CancelRetrievalInput`](crate::operation::cancel_retrieval::CancelRetrievalInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelRetrievalInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tape_arn: ::std::option::Option<::std::string::String>,

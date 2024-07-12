@@ -33,8 +33,8 @@ impl UpdateReservationInput {
 }
 
 /// A builder for [`UpdateReservationInput`](crate::operation::update_reservation::UpdateReservationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateReservationInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) renewal_settings: ::std::option::Option<crate::types::RenewalSettings>,

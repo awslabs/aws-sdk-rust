@@ -188,8 +188,8 @@ impl UpdateEnvironmentOutput {
 }
 
 /// A builder for [`UpdateEnvironmentOutput`](crate::operation::update_environment::UpdateEnvironmentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateEnvironmentOutputBuilder {
     pub(crate) project_id: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,

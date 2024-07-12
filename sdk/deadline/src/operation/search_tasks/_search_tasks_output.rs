@@ -39,8 +39,8 @@ impl SearchTasksOutput {
 }
 
 /// A builder for [`SearchTasksOutput`](crate::operation::search_tasks::SearchTasksOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchTasksOutputBuilder {
     pub(crate) tasks: ::std::option::Option<::std::vec::Vec<crate::types::TaskSearchSummary>>,
     pub(crate) next_item_offset: ::std::option::Option<i32>,

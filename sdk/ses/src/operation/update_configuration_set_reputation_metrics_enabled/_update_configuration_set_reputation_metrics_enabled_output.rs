@@ -20,8 +20,8 @@ impl UpdateConfigurationSetReputationMetricsEnabledOutput {
 }
 
 /// A builder for [`UpdateConfigurationSetReputationMetricsEnabledOutput`](crate::operation::update_configuration_set_reputation_metrics_enabled::UpdateConfigurationSetReputationMetricsEnabledOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateConfigurationSetReputationMetricsEnabledOutputBuilder {
     _request_id: Option<String>,
 }

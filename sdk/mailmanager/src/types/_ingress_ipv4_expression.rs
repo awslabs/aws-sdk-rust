@@ -34,8 +34,8 @@ impl IngressIpv4Expression {
 }
 
 /// A builder for [`IngressIpv4Expression`](crate::types::IngressIpv4Expression).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IngressIpv4ExpressionBuilder {
     pub(crate) evaluate: ::std::option::Option<crate::types::IngressIpToEvaluate>,
     pub(crate) operator: ::std::option::Option<crate::types::IngressIpOperator>,

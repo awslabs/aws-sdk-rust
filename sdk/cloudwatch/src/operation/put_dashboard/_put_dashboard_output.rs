@@ -32,8 +32,8 @@ impl PutDashboardOutput {
 }
 
 /// A builder for [`PutDashboardOutput`](crate::operation::put_dashboard::PutDashboardOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutDashboardOutputBuilder {
     pub(crate) dashboard_validation_messages: ::std::option::Option<::std::vec::Vec<crate::types::DashboardValidationMessage>>,
     _request_id: Option<String>,

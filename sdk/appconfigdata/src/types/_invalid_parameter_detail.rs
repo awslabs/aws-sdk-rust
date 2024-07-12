@@ -21,8 +21,8 @@ impl InvalidParameterDetail {
 }
 
 /// A builder for [`InvalidParameterDetail`](crate::types::InvalidParameterDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InvalidParameterDetailBuilder {
     pub(crate) problem: ::std::option::Option<crate::types::InvalidParameterProblem>,
 }

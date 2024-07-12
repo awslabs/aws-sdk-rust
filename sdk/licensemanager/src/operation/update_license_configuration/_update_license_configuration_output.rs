@@ -18,8 +18,8 @@ impl UpdateLicenseConfigurationOutput {
 }
 
 /// A builder for [`UpdateLicenseConfigurationOutput`](crate::operation::update_license_configuration::UpdateLicenseConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateLicenseConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

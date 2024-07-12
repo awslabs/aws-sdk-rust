@@ -27,8 +27,8 @@ impl UserTokenConfiguration {
 }
 
 /// A builder for [`UserTokenConfiguration`](crate::types::UserTokenConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UserTokenConfigurationBuilder {
     pub(crate) jwt_token_type_configuration: ::std::option::Option<crate::types::JwtTokenTypeConfiguration>,
     pub(crate) json_token_type_configuration: ::std::option::Option<crate::types::JsonTokenTypeConfiguration>,

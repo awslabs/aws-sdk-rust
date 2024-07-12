@@ -27,8 +27,8 @@ impl DataQualityObservation {
 }
 
 /// A builder for [`DataQualityObservation`](crate::types::DataQualityObservation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataQualityObservationBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) metric_based_observation: ::std::option::Option<crate::types::MetricBasedObservation>,

@@ -26,8 +26,8 @@ impl GetDomainPermissionsPolicyInput {
 }
 
 /// A builder for [`GetDomainPermissionsPolicyInput`](crate::operation::get_domain_permissions_policy::GetDomainPermissionsPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDomainPermissionsPolicyInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) domain_owner: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl ListSigningProfilesOutput {
 }
 
 /// A builder for [`ListSigningProfilesOutput`](crate::operation::list_signing_profiles::ListSigningProfilesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSigningProfilesOutputBuilder {
     pub(crate) profiles: ::std::option::Option<::std::vec::Vec<crate::types::SigningProfile>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

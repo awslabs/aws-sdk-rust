@@ -20,8 +20,8 @@ impl DeleteDataCatalogInput {
 }
 
 /// A builder for [`DeleteDataCatalogInput`](crate::operation::delete_data_catalog::DeleteDataCatalogInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDataCatalogInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

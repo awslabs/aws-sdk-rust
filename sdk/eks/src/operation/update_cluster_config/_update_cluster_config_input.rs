@@ -48,8 +48,8 @@ impl UpdateClusterConfigInput {
 }
 
 /// A builder for [`UpdateClusterConfigInput`](crate::operation::update_cluster_config::UpdateClusterConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateClusterConfigInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) resources_vpc_config: ::std::option::Option<crate::types::VpcConfigRequest>,

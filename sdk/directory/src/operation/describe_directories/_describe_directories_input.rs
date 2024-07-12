@@ -37,8 +37,8 @@ impl DescribeDirectoriesInput {
 }
 
 /// A builder for [`DescribeDirectoriesInput`](crate::operation::describe_directories::DescribeDirectoriesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDirectoriesInputBuilder {
     pub(crate) directory_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

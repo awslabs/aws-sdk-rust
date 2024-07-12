@@ -26,8 +26,8 @@ impl GetCoreNetworkOutput {
 }
 
 /// A builder for [`GetCoreNetworkOutput`](crate::operation::get_core_network::GetCoreNetworkOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCoreNetworkOutputBuilder {
     pub(crate) core_network: ::std::option::Option<crate::types::CoreNetwork>,
     _request_id: Option<String>,

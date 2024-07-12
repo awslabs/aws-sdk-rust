@@ -21,8 +21,8 @@ impl GetCompatibleElasticsearchVersionsInput {
 }
 
 /// A builder for [`GetCompatibleElasticsearchVersionsInput`](crate::operation::get_compatible_elasticsearch_versions::GetCompatibleElasticsearchVersionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCompatibleElasticsearchVersionsInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
 }

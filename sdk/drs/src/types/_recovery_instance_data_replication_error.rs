@@ -27,8 +27,8 @@ impl RecoveryInstanceDataReplicationError {
 }
 
 /// A builder for [`RecoveryInstanceDataReplicationError`](crate::types::RecoveryInstanceDataReplicationError).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecoveryInstanceDataReplicationErrorBuilder {
     pub(crate) error: ::std::option::Option<crate::types::FailbackReplicationError>,
     pub(crate) raw_error: ::std::option::Option<::std::string::String>,

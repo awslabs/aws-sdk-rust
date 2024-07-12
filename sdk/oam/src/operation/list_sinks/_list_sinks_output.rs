@@ -33,8 +33,8 @@ impl ListSinksOutput {
 }
 
 /// A builder for [`ListSinksOutput`](crate::operation::list_sinks::ListSinksOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSinksOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ListSinksItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

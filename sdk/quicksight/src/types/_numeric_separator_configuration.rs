@@ -27,8 +27,8 @@ impl NumericSeparatorConfiguration {
 }
 
 /// A builder for [`NumericSeparatorConfiguration`](crate::types::NumericSeparatorConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NumericSeparatorConfigurationBuilder {
     pub(crate) decimal_separator: ::std::option::Option<crate::types::NumericSeparatorSymbol>,
     pub(crate) thousands_separator: ::std::option::Option<crate::types::ThousandSeparatorOptions>,

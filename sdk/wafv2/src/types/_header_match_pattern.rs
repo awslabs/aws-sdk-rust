@@ -39,8 +39,8 @@ impl HeaderMatchPattern {
 }
 
 /// A builder for [`HeaderMatchPattern`](crate::types::HeaderMatchPattern).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HeaderMatchPatternBuilder {
     pub(crate) all: ::std::option::Option<crate::types::All>,
     pub(crate) included_headers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

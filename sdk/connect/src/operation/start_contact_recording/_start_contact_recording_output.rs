@@ -18,8 +18,8 @@ impl StartContactRecordingOutput {
 }
 
 /// A builder for [`StartContactRecordingOutput`](crate::operation::start_contact_recording::StartContactRecordingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartContactRecordingOutputBuilder {
     _request_id: Option<String>,
 }

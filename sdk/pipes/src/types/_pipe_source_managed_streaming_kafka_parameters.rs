@@ -64,8 +64,8 @@ impl PipeSourceManagedStreamingKafkaParameters {
 }
 
 /// A builder for [`PipeSourceManagedStreamingKafkaParameters`](crate::types::PipeSourceManagedStreamingKafkaParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PipeSourceManagedStreamingKafkaParametersBuilder {
     pub(crate) topic_name: ::std::option::Option<::std::string::String>,
     pub(crate) starting_position: ::std::option::Option<crate::types::MskStartPosition>,

@@ -34,8 +34,8 @@ impl AssignPrivateNatGatewayAddressOutput {
 }
 
 /// A builder for [`AssignPrivateNatGatewayAddressOutput`](crate::operation::assign_private_nat_gateway_address::AssignPrivateNatGatewayAddressOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssignPrivateNatGatewayAddressOutputBuilder {
     pub(crate) nat_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) nat_gateway_addresses: ::std::option::Option<::std::vec::Vec<crate::types::NatGatewayAddress>>,

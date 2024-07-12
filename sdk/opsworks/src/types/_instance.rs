@@ -347,8 +347,8 @@ impl Instance {
 }
 
 /// A builder for [`Instance`](crate::types::Instance).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceBuilder {
     pub(crate) agent_version: ::std::option::Option<::std::string::String>,
     pub(crate) ami_id: ::std::option::Option<::std::string::String>,

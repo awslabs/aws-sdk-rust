@@ -26,8 +26,8 @@ impl DisassociateRoleFromGroupOutput {
 }
 
 /// A builder for [`DisassociateRoleFromGroupOutput`](crate::operation::disassociate_role_from_group::DisassociateRoleFromGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateRoleFromGroupOutputBuilder {
     pub(crate) disassociated_at: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -34,8 +34,8 @@ impl ReplicateSecretToRegionsInput {
 }
 
 /// A builder for [`ReplicateSecretToRegionsInput`](crate::operation::replicate_secret_to_regions::ReplicateSecretToRegionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReplicateSecretToRegionsInputBuilder {
     pub(crate) secret_id: ::std::option::Option<::std::string::String>,
     pub(crate) add_replica_regions: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaRegionType>>,

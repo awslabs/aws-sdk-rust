@@ -27,8 +27,8 @@ impl S3AccessControlPolicy {
 }
 
 /// A builder for [`S3AccessControlPolicy`](crate::types::S3AccessControlPolicy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3AccessControlPolicyBuilder {
     pub(crate) access_control_list: ::std::option::Option<crate::types::S3AccessControlList>,
     pub(crate) canned_access_control_list: ::std::option::Option<crate::types::S3CannedAccessControlList>,

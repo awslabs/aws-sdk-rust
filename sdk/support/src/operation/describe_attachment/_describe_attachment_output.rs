@@ -29,8 +29,8 @@ impl DescribeAttachmentOutput {
 }
 
 /// A builder for [`DescribeAttachmentOutput`](crate::operation::describe_attachment::DescribeAttachmentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAttachmentOutputBuilder {
     pub(crate) attachment: ::std::option::Option<crate::types::Attachment>,
     _request_id: Option<String>,

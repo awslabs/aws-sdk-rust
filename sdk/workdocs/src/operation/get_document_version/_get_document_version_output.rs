@@ -32,8 +32,8 @@ impl GetDocumentVersionOutput {
 }
 
 /// A builder for [`GetDocumentVersionOutput`](crate::operation::get_document_version::GetDocumentVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDocumentVersionOutputBuilder {
     pub(crate) metadata: ::std::option::Option<crate::types::DocumentVersionMetadata>,
     pub(crate) custom_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

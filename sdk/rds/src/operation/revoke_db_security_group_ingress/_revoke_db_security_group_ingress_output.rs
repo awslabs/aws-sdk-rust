@@ -28,8 +28,8 @@ impl RevokeDbSecurityGroupIngressOutput {
 }
 
 /// A builder for [`RevokeDbSecurityGroupIngressOutput`](crate::operation::revoke_db_security_group_ingress::RevokeDbSecurityGroupIngressOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RevokeDbSecurityGroupIngressOutputBuilder {
     pub(crate) db_security_group: ::std::option::Option<crate::types::DbSecurityGroup>,
     _request_id: Option<String>,

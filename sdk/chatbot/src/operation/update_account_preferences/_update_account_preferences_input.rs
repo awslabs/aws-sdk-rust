@@ -26,8 +26,8 @@ impl UpdateAccountPreferencesInput {
 }
 
 /// A builder for [`UpdateAccountPreferencesInput`](crate::operation::update_account_preferences::UpdateAccountPreferencesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAccountPreferencesInputBuilder {
     pub(crate) user_authorization_required: ::std::option::Option<bool>,
     pub(crate) training_data_collection_enabled: ::std::option::Option<bool>,

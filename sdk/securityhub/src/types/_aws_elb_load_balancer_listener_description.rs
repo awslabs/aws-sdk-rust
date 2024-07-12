@@ -29,8 +29,8 @@ impl AwsElbLoadBalancerListenerDescription {
 }
 
 /// A builder for [`AwsElbLoadBalancerListenerDescription`](crate::types::AwsElbLoadBalancerListenerDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsElbLoadBalancerListenerDescriptionBuilder {
     pub(crate) listener: ::std::option::Option<crate::types::AwsElbLoadBalancerListener>,
     pub(crate) policy_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

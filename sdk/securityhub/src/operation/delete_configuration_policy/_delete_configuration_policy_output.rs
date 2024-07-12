@@ -18,8 +18,8 @@ impl DeleteConfigurationPolicyOutput {
 }
 
 /// A builder for [`DeleteConfigurationPolicyOutput`](crate::operation::delete_configuration_policy::DeleteConfigurationPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteConfigurationPolicyOutputBuilder {
     _request_id: Option<String>,
 }

@@ -34,8 +34,8 @@ impl ListTestSetRecordsOutput {
 }
 
 /// A builder for [`ListTestSetRecordsOutput`](crate::operation::list_test_set_records::ListTestSetRecordsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTestSetRecordsOutputBuilder {
     pub(crate) test_set_records: ::std::option::Option<::std::vec::Vec<crate::types::TestSetTurnRecord>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

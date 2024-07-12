@@ -57,8 +57,8 @@ impl DominantColor {
 }
 
 /// A builder for [`DominantColor`](crate::types::DominantColor).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DominantColorBuilder {
     pub(crate) red: ::std::option::Option<i32>,
     pub(crate) blue: ::std::option::Option<i32>,

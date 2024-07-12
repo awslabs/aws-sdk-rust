@@ -115,8 +115,8 @@ impl InstanceRecommendationOption {
 }
 
 /// A builder for [`InstanceRecommendationOption`](crate::types::InstanceRecommendationOption).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceRecommendationOptionBuilder {
     pub(crate) instance_type: ::std::option::Option<::std::string::String>,
     pub(crate) instance_gpu_info: ::std::option::Option<crate::types::GpuInfo>,

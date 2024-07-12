@@ -185,8 +185,8 @@ impl QuickResponseSearchResultData {
 }
 
 /// A builder for [`QuickResponseSearchResultData`](crate::types::QuickResponseSearchResultData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct QuickResponseSearchResultDataBuilder {
     pub(crate) quick_response_arn: ::std::option::Option<::std::string::String>,
     pub(crate) quick_response_id: ::std::option::Option<::std::string::String>,

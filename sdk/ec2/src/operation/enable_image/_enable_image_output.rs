@@ -26,8 +26,8 @@ impl EnableImageOutput {
 }
 
 /// A builder for [`EnableImageOutput`](crate::operation::enable_image::EnableImageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnableImageOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,

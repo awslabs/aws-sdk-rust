@@ -37,8 +37,8 @@ impl ImportApiKeysOutput {
 }
 
 /// A builder for [`ImportApiKeysOutput`](crate::operation::import_api_keys::ImportApiKeysOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportApiKeysOutputBuilder {
     pub(crate) ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) warnings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

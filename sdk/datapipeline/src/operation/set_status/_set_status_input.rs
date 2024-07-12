@@ -35,8 +35,8 @@ impl SetStatusInput {
 }
 
 /// A builder for [`SetStatusInput`](crate::operation::set_status::SetStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetStatusInputBuilder {
     pub(crate) pipeline_id: ::std::option::Option<::std::string::String>,
     pub(crate) object_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

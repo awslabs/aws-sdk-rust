@@ -20,8 +20,8 @@ impl StopBuildBatchInput {
 }
 
 /// A builder for [`StopBuildBatchInput`](crate::operation::stop_build_batch::StopBuildBatchInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopBuildBatchInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }

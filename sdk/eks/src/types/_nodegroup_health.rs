@@ -23,8 +23,8 @@ impl NodegroupHealth {
 }
 
 /// A builder for [`NodegroupHealth`](crate::types::NodegroupHealth).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NodegroupHealthBuilder {
     pub(crate) issues: ::std::option::Option<::std::vec::Vec<crate::types::Issue>>,
 }

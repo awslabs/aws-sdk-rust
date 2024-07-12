@@ -34,8 +34,8 @@ impl SendCisSessionTelemetryInput {
 }
 
 /// A builder for [`SendCisSessionTelemetryInput`](crate::operation::send_cis_session_telemetry::SendCisSessionTelemetryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendCisSessionTelemetryInputBuilder {
     pub(crate) scan_job_id: ::std::option::Option<::std::string::String>,
     pub(crate) session_token: ::std::option::Option<::std::string::String>,

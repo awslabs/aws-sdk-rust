@@ -80,8 +80,8 @@ impl CreateProxySessionInput {
 }
 
 /// A builder for [`CreateProxySessionInput`](crate::operation::create_proxy_session::CreateProxySessionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateProxySessionInputBuilder {
     pub(crate) voice_connector_id: ::std::option::Option<::std::string::String>,
     pub(crate) participant_phone_numbers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -69,8 +69,8 @@ impl QueryExecutionStatistics {
 }
 
 /// A builder for [`QueryExecutionStatistics`](crate::types::QueryExecutionStatistics).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct QueryExecutionStatisticsBuilder {
     pub(crate) engine_execution_time_in_millis: ::std::option::Option<i64>,
     pub(crate) data_scanned_in_bytes: ::std::option::Option<i64>,

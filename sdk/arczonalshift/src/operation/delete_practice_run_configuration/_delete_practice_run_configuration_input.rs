@@ -20,8 +20,8 @@ impl DeletePracticeRunConfigurationInput {
 }
 
 /// A builder for [`DeletePracticeRunConfigurationInput`](crate::operation::delete_practice_run_configuration::DeletePracticeRunConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePracticeRunConfigurationInputBuilder {
     pub(crate) resource_identifier: ::std::option::Option<::std::string::String>,
 }

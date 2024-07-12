@@ -33,8 +33,8 @@ impl AntennaUplinkConfig {
 }
 
 /// A builder for [`AntennaUplinkConfig`](crate::types::AntennaUplinkConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AntennaUplinkConfigBuilder {
     pub(crate) transmit_disabled: ::std::option::Option<bool>,
     pub(crate) spectrum_config: ::std::option::Option<crate::types::UplinkSpectrumConfig>,

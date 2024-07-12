@@ -20,8 +20,8 @@ impl DisableHttpEndpointInput {
 }
 
 /// A builder for [`DisableHttpEndpointInput`](crate::operation::disable_http_endpoint::DisableHttpEndpointInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableHttpEndpointInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
 }

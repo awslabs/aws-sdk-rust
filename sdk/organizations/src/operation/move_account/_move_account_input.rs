@@ -62,8 +62,8 @@ impl MoveAccountInput {
 }
 
 /// A builder for [`MoveAccountInput`](crate::operation::move_account::MoveAccountInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MoveAccountInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) source_parent_id: ::std::option::Option<::std::string::String>,

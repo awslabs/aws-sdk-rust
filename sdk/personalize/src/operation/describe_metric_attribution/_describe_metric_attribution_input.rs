@@ -20,8 +20,8 @@ impl DescribeMetricAttributionInput {
 }
 
 /// A builder for [`DescribeMetricAttributionInput`](crate::operation::describe_metric_attribution::DescribeMetricAttributionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeMetricAttributionInputBuilder {
     pub(crate) metric_attribution_arn: ::std::option::Option<::std::string::String>,
 }

@@ -33,8 +33,8 @@ impl ListSchedulesOutput {
 }
 
 /// A builder for [`ListSchedulesOutput`](crate::operation::list_schedules::ListSchedulesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSchedulesOutputBuilder {
     pub(crate) schedules: ::std::option::Option<::std::vec::Vec<crate::types::Schedule>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

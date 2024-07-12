@@ -39,8 +39,8 @@ impl CodeContentDescription {
 }
 
 /// A builder for [`CodeContentDescription`](crate::types::CodeContentDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CodeContentDescriptionBuilder {
     pub(crate) text_content: ::std::option::Option<::std::string::String>,
     pub(crate) code_md5: ::std::option::Option<::std::string::String>,

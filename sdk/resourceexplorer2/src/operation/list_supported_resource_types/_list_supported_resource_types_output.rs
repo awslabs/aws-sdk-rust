@@ -34,8 +34,8 @@ impl ListSupportedResourceTypesOutput {
 }
 
 /// A builder for [`ListSupportedResourceTypesOutput`](crate::operation::list_supported_resource_types::ListSupportedResourceTypesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSupportedResourceTypesOutputBuilder {
     pub(crate) resource_types: ::std::option::Option<::std::vec::Vec<crate::types::SupportedResourceType>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

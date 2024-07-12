@@ -37,8 +37,8 @@ impl DescribeInboundCrossClusterSearchConnectionsOutput {
 }
 
 /// A builder for [`DescribeInboundCrossClusterSearchConnectionsOutput`](crate::operation::describe_inbound_cross_cluster_search_connections::DescribeInboundCrossClusterSearchConnectionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeInboundCrossClusterSearchConnectionsOutputBuilder {
     pub(crate) cross_cluster_search_connections: ::std::option::Option<::std::vec::Vec<crate::types::InboundCrossClusterSearchConnection>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

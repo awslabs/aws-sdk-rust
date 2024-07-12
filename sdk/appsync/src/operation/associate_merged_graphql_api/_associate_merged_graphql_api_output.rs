@@ -26,8 +26,8 @@ impl AssociateMergedGraphqlApiOutput {
 }
 
 /// A builder for [`AssociateMergedGraphqlApiOutput`](crate::operation::associate_merged_graphql_api::AssociateMergedGraphqlApiOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateMergedGraphqlApiOutputBuilder {
     pub(crate) source_api_association: ::std::option::Option<crate::types::SourceApiAssociation>,
     _request_id: Option<String>,

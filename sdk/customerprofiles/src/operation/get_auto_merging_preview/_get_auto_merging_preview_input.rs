@@ -38,8 +38,8 @@ impl GetAutoMergingPreviewInput {
 }
 
 /// A builder for [`GetAutoMergingPreviewInput`](crate::operation::get_auto_merging_preview::GetAutoMergingPreviewInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAutoMergingPreviewInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) consolidation: ::std::option::Option<crate::types::Consolidation>,

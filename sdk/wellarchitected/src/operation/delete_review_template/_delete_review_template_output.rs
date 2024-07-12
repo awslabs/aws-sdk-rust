@@ -18,8 +18,8 @@ impl DeleteReviewTemplateOutput {
 }
 
 /// A builder for [`DeleteReviewTemplateOutput`](crate::operation::delete_review_template::DeleteReviewTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteReviewTemplateOutputBuilder {
     _request_id: Option<String>,
 }

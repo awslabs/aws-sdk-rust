@@ -46,8 +46,8 @@ impl ListPerformanceAnalysisReportsInput {
 }
 
 /// A builder for [`ListPerformanceAnalysisReportsInput`](crate::operation::list_performance_analysis_reports::ListPerformanceAnalysisReportsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPerformanceAnalysisReportsInputBuilder {
     pub(crate) service_type: ::std::option::Option<crate::types::ServiceType>,
     pub(crate) identifier: ::std::option::Option<::std::string::String>,

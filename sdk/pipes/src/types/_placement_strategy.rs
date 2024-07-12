@@ -35,8 +35,8 @@ impl PlacementStrategy {
 }
 
 /// A builder for [`PlacementStrategy`](crate::types::PlacementStrategy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PlacementStrategyBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::PlacementStrategyType>,
     pub(crate) field: ::std::option::Option<::std::string::String>,

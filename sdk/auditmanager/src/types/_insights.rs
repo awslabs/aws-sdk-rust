@@ -71,8 +71,8 @@ impl Insights {
 }
 
 /// A builder for [`Insights`](crate::types::Insights).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InsightsBuilder {
     pub(crate) active_assessments_count: ::std::option::Option<i32>,
     pub(crate) noncompliant_evidence_count: ::std::option::Option<i32>,

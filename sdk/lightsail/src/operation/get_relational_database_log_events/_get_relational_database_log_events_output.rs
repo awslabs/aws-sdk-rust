@@ -40,8 +40,8 @@ impl GetRelationalDatabaseLogEventsOutput {
 }
 
 /// A builder for [`GetRelationalDatabaseLogEventsOutput`](crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRelationalDatabaseLogEventsOutputBuilder {
     pub(crate) resource_log_events: ::std::option::Option<::std::vec::Vec<crate::types::LogEvent>>,
     pub(crate) next_backward_token: ::std::option::Option<::std::string::String>,

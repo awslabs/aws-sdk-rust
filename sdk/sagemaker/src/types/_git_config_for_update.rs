@@ -23,8 +23,8 @@ impl GitConfigForUpdate {
 }
 
 /// A builder for [`GitConfigForUpdate`](crate::types::GitConfigForUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GitConfigForUpdateBuilder {
     pub(crate) secret_arn: ::std::option::Option<::std::string::String>,
 }

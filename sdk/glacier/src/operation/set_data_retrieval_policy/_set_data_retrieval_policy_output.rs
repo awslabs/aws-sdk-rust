@@ -18,8 +18,8 @@ impl SetDataRetrievalPolicyOutput {
 }
 
 /// A builder for [`SetDataRetrievalPolicyOutput`](crate::operation::set_data_retrieval_policy::SetDataRetrievalPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetDataRetrievalPolicyOutputBuilder {
     _request_id: Option<String>,
 }

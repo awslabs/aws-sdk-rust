@@ -63,8 +63,8 @@ impl JobProgressReport {
 }
 
 /// A builder for [`JobProgressReport`](crate::types::JobProgressReport).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JobProgressReportBuilder {
     pub(crate) total_number_of_scanned_files: ::std::option::Option<i64>,
     pub(crate) total_size_of_scanned_files_in_mb: ::std::option::Option<f64>,

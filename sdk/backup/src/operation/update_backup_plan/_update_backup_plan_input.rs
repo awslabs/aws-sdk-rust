@@ -26,8 +26,8 @@ impl UpdateBackupPlanInput {
 }
 
 /// A builder for [`UpdateBackupPlanInput`](crate::operation::update_backup_plan::UpdateBackupPlanInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateBackupPlanInputBuilder {
     pub(crate) backup_plan_id: ::std::option::Option<::std::string::String>,
     pub(crate) backup_plan: ::std::option::Option<crate::types::BackupPlanInput>,

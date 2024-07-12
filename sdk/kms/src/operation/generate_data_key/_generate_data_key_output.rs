@@ -59,8 +59,8 @@ impl GenerateDataKeyOutput {
 }
 
 /// A builder for [`GenerateDataKeyOutput`](crate::operation::generate_data_key::GenerateDataKeyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GenerateDataKeyOutputBuilder {
     pub(crate) ciphertext_blob: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) plaintext: ::std::option::Option<::aws_smithy_types::Blob>,

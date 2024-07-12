@@ -39,8 +39,8 @@ impl AwsSqsQueueDetails {
 }
 
 /// A builder for [`AwsSqsQueueDetails`](crate::types::AwsSqsQueueDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsSqsQueueDetailsBuilder {
     pub(crate) kms_data_key_reuse_period_seconds: ::std::option::Option<i32>,
     pub(crate) kms_master_key_id: ::std::option::Option<::std::string::String>,

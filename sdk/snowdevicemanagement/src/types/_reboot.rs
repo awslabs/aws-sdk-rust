@@ -12,8 +12,8 @@ impl Reboot {
 }
 
 /// A builder for [`Reboot`](crate::types::Reboot).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RebootBuilder {}
 impl RebootBuilder {
     /// Consumes the builder and constructs a [`Reboot`](crate::types::Reboot).

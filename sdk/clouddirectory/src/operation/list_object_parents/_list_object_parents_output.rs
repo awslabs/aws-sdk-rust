@@ -40,8 +40,8 @@ impl ListObjectParentsOutput {
 }
 
 /// A builder for [`ListObjectParentsOutput`](crate::operation::list_object_parents::ListObjectParentsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListObjectParentsOutputBuilder {
     pub(crate) parents: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

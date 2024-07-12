@@ -32,8 +32,8 @@ impl ListAttachedLinksInput {
 }
 
 /// A builder for [`ListAttachedLinksInput`](crate::operation::list_attached_links::ListAttachedLinksInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAttachedLinksInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

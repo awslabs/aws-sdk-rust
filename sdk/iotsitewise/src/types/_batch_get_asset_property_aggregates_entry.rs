@@ -89,8 +89,8 @@ impl BatchGetAssetPropertyAggregatesEntry {
 }
 
 /// A builder for [`BatchGetAssetPropertyAggregatesEntry`](crate::types::BatchGetAssetPropertyAggregatesEntry).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetAssetPropertyAggregatesEntryBuilder {
     pub(crate) entry_id: ::std::option::Option<::std::string::String>,
     pub(crate) asset_id: ::std::option::Option<::std::string::String>,

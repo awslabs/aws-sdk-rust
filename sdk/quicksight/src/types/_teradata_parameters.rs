@@ -35,8 +35,8 @@ impl TeradataParameters {
 }
 
 /// A builder for [`TeradataParameters`](crate::types::TeradataParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TeradataParametersBuilder {
     pub(crate) host: ::std::option::Option<::std::string::String>,
     pub(crate) port: ::std::option::Option<i32>,

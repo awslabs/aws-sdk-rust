@@ -20,8 +20,8 @@ impl DeleteFirewallRuleGroupInput {
 }
 
 /// A builder for [`DeleteFirewallRuleGroupInput`](crate::operation::delete_firewall_rule_group::DeleteFirewallRuleGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFirewallRuleGroupInputBuilder {
     pub(crate) firewall_rule_group_id: ::std::option::Option<::std::string::String>,
 }

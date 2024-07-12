@@ -29,8 +29,8 @@ impl AttachLoadBalancerToSubnetsInput {
 }
 
 /// A builder for [`AttachLoadBalancerToSubnetsInput`](crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttachLoadBalancerToSubnetsInputBuilder {
     pub(crate) load_balancer_name: ::std::option::Option<::std::string::String>,
     pub(crate) subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -43,8 +43,8 @@ impl SearchedFaceDetails {
 }
 
 /// A builder for [`SearchedFaceDetails`](crate::types::SearchedFaceDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchedFaceDetailsBuilder {
     pub(crate) face_detail: ::std::option::Option<crate::types::FaceDetail>,
 }

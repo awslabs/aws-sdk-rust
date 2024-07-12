@@ -27,8 +27,8 @@ impl ParametricCloudWatchMonitoringConfiguration {
 }
 
 /// A builder for [`ParametricCloudWatchMonitoringConfiguration`](crate::types::ParametricCloudWatchMonitoringConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ParametricCloudWatchMonitoringConfigurationBuilder {
     pub(crate) log_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) log_stream_name_prefix: ::std::option::Option<::std::string::String>,

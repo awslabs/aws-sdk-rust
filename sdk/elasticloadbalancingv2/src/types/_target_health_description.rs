@@ -43,8 +43,8 @@ impl TargetHealthDescription {
 }
 
 /// A builder for [`TargetHealthDescription`](crate::types::TargetHealthDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TargetHealthDescriptionBuilder {
     pub(crate) target: ::std::option::Option<crate::types::TargetDescription>,
     pub(crate) health_check_port: ::std::option::Option<::std::string::String>,

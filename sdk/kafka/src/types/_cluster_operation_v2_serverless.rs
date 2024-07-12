@@ -21,8 +21,8 @@ impl ClusterOperationV2Serverless {
 }
 
 /// A builder for [`ClusterOperationV2Serverless`](crate::types::ClusterOperationV2Serverless).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ClusterOperationV2ServerlessBuilder {
     pub(crate) vpc_connection_info: ::std::option::Option<crate::types::VpcConnectionInfoServerless>,
 }

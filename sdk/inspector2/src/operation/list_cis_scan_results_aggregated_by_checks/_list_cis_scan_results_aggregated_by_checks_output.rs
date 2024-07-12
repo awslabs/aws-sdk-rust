@@ -34,8 +34,8 @@ impl ListCisScanResultsAggregatedByChecksOutput {
 }
 
 /// A builder for [`ListCisScanResultsAggregatedByChecksOutput`](crate::operation::list_cis_scan_results_aggregated_by_checks::ListCisScanResultsAggregatedByChecksOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCisScanResultsAggregatedByChecksOutputBuilder {
     pub(crate) check_aggregations: ::std::option::Option<::std::vec::Vec<crate::types::CisCheckAggregation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

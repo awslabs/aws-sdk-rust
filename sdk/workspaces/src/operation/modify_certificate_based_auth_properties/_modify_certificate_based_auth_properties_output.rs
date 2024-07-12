@@ -18,8 +18,8 @@ impl ModifyCertificateBasedAuthPropertiesOutput {
 }
 
 /// A builder for [`ModifyCertificateBasedAuthPropertiesOutput`](crate::operation::modify_certificate_based_auth_properties::ModifyCertificateBasedAuthPropertiesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyCertificateBasedAuthPropertiesOutputBuilder {
     _request_id: Option<String>,
 }

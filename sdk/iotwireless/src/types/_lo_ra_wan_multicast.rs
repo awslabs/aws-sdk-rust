@@ -27,8 +27,8 @@ impl LoRaWanMulticast {
 }
 
 /// A builder for [`LoRaWanMulticast`](crate::types::LoRaWanMulticast).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LoRaWanMulticastBuilder {
     pub(crate) rf_region: ::std::option::Option<crate::types::SupportedRfRegion>,
     pub(crate) dl_class: ::std::option::Option<crate::types::DlClass>,

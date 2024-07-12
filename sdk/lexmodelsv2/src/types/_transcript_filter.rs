@@ -21,8 +21,8 @@ impl TranscriptFilter {
 }
 
 /// A builder for [`TranscriptFilter`](crate::types::TranscriptFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TranscriptFilterBuilder {
     pub(crate) lex_transcript_filter: ::std::option::Option<crate::types::LexTranscriptFilter>,
 }

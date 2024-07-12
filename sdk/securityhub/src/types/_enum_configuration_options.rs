@@ -29,8 +29,8 @@ impl EnumConfigurationOptions {
 }
 
 /// A builder for [`EnumConfigurationOptions`](crate::types::EnumConfigurationOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnumConfigurationOptionsBuilder {
     pub(crate) default_value: ::std::option::Option<::std::string::String>,
     pub(crate) allowed_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -48,8 +48,8 @@ impl MapRunListItem {
 }
 
 /// A builder for [`MapRunListItem`](crate::types::MapRunListItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MapRunListItemBuilder {
     pub(crate) execution_arn: ::std::option::Option<::std::string::String>,
     pub(crate) map_run_arn: ::std::option::Option<::std::string::String>,

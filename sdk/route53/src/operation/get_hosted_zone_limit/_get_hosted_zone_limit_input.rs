@@ -39,8 +39,8 @@ impl GetHostedZoneLimitInput {
 }
 
 /// A builder for [`GetHostedZoneLimitInput`](crate::operation::get_hosted_zone_limit::GetHostedZoneLimitInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetHostedZoneLimitInputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::HostedZoneLimitType>,
     pub(crate) hosted_zone_id: ::std::option::Option<::std::string::String>,

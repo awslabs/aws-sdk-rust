@@ -51,8 +51,8 @@ impl CoreNetworkPolicyVersion {
 }
 
 /// A builder for [`CoreNetworkPolicyVersion`](crate::types::CoreNetworkPolicyVersion).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CoreNetworkPolicyVersionBuilder {
     pub(crate) core_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) policy_version_id: ::std::option::Option<i32>,

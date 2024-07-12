@@ -29,8 +29,8 @@ impl ReportTaskProgressInput {
 }
 
 /// A builder for [`ReportTaskProgressInput`](crate::operation::report_task_progress::ReportTaskProgressInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReportTaskProgressInputBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
     pub(crate) fields: ::std::option::Option<::std::vec::Vec<crate::types::Field>>,

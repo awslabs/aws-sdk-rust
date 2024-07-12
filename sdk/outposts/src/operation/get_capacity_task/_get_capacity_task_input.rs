@@ -26,8 +26,8 @@ impl GetCapacityTaskInput {
 }
 
 /// A builder for [`GetCapacityTaskInput`](crate::operation::get_capacity_task::GetCapacityTaskInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCapacityTaskInputBuilder {
     pub(crate) capacity_task_id: ::std::option::Option<::std::string::String>,
     pub(crate) outpost_identifier: ::std::option::Option<::std::string::String>,

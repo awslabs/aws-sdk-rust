@@ -27,8 +27,8 @@ impl R53ResourceRecord {
 }
 
 /// A builder for [`R53ResourceRecord`](crate::types::R53ResourceRecord).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct R53ResourceRecordBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) record_set_id: ::std::option::Option<::std::string::String>,

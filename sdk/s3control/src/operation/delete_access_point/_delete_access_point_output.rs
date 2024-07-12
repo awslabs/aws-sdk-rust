@@ -18,8 +18,8 @@ impl DeleteAccessPointOutput {
 }
 
 /// A builder for [`DeleteAccessPointOutput`](crate::operation::delete_access_point::DeleteAccessPointOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAccessPointOutputBuilder {
     _request_id: Option<String>,
 }

@@ -22,8 +22,8 @@ impl EntityRecognizerEntityList {
 }
 
 /// A builder for [`EntityRecognizerEntityList`](crate::types::EntityRecognizerEntityList).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EntityRecognizerEntityListBuilder {
     pub(crate) s3_uri: ::std::option::Option<::std::string::String>,
 }

@@ -21,8 +21,8 @@ impl DetectLabelsImagePropertiesSettings {
 }
 
 /// A builder for [`DetectLabelsImagePropertiesSettings`](crate::types::DetectLabelsImagePropertiesSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetectLabelsImagePropertiesSettingsBuilder {
     pub(crate) max_dominant_colors: ::std::option::Option<i32>,
 }

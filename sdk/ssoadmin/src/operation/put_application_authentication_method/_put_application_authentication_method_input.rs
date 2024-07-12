@@ -32,8 +32,8 @@ impl PutApplicationAuthenticationMethodInput {
 }
 
 /// A builder for [`PutApplicationAuthenticationMethodInput`](crate::operation::put_application_authentication_method::PutApplicationAuthenticationMethodInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutApplicationAuthenticationMethodInputBuilder {
     pub(crate) application_arn: ::std::option::Option<::std::string::String>,
     pub(crate) authentication_method_type: ::std::option::Option<crate::types::AuthenticationMethodType>,

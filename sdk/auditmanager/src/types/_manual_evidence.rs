@@ -42,8 +42,8 @@ impl ManualEvidence {
 }
 
 /// A builder for [`ManualEvidence`](crate::types::ManualEvidence).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ManualEvidenceBuilder {
     pub(crate) s3_resource_path: ::std::option::Option<::std::string::String>,
     pub(crate) text_response: ::std::option::Option<::std::string::String>,

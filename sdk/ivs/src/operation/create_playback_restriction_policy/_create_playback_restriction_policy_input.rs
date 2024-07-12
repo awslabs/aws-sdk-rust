@@ -48,8 +48,8 @@ impl CreatePlaybackRestrictionPolicyInput {
 }
 
 /// A builder for [`CreatePlaybackRestrictionPolicyInput`](crate::operation::create_playback_restriction_policy::CreatePlaybackRestrictionPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePlaybackRestrictionPolicyInputBuilder {
     pub(crate) allowed_countries: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) allowed_origins: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -27,8 +27,8 @@ impl SearchResourcesCriteria {
 }
 
 /// A builder for [`SearchResourcesCriteria`](crate::types::SearchResourcesCriteria).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchResourcesCriteriaBuilder {
     pub(crate) simple_criterion: ::std::option::Option<crate::types::SearchResourcesSimpleCriterion>,
     pub(crate) tag_criterion: ::std::option::Option<crate::types::SearchResourcesTagCriterion>,

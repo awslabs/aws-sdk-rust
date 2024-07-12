@@ -88,8 +88,8 @@ impl DiscardRegistrationVersionOutput {
 }
 
 /// A builder for [`DiscardRegistrationVersionOutput`](crate::operation::discard_registration_version::DiscardRegistrationVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DiscardRegistrationVersionOutputBuilder {
     pub(crate) registration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) registration_id: ::std::option::Option<::std::string::String>,

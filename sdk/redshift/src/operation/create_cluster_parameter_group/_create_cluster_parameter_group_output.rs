@@ -26,8 +26,8 @@ impl CreateClusterParameterGroupOutput {
 }
 
 /// A builder for [`CreateClusterParameterGroupOutput`](crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateClusterParameterGroupOutputBuilder {
     pub(crate) cluster_parameter_group: ::std::option::Option<crate::types::ClusterParameterGroup>,
     _request_id: Option<String>,

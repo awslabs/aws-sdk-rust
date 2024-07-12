@@ -18,8 +18,8 @@ impl DeleteRouteRequestParameterOutput {
 }
 
 /// A builder for [`DeleteRouteRequestParameterOutput`](crate::operation::delete_route_request_parameter::DeleteRouteRequestParameterOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRouteRequestParameterOutputBuilder {
     _request_id: Option<String>,
 }

@@ -21,8 +21,8 @@ impl CertificateOptions {
 }
 
 /// A builder for [`CertificateOptions`](crate::types::CertificateOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CertificateOptionsBuilder {
     pub(crate) certificate_transparency_logging_preference: ::std::option::Option<crate::types::CertificateTransparencyLoggingPreference>,
 }

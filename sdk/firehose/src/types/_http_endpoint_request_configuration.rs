@@ -29,8 +29,8 @@ impl HttpEndpointRequestConfiguration {
 }
 
 /// A builder for [`HttpEndpointRequestConfiguration`](crate::types::HttpEndpointRequestConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HttpEndpointRequestConfigurationBuilder {
     pub(crate) content_encoding: ::std::option::Option<crate::types::ContentEncoding>,
     pub(crate) common_attributes: ::std::option::Option<::std::vec::Vec<crate::types::HttpEndpointCommonAttribute>>,

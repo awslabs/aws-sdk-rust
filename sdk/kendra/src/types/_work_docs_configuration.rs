@@ -63,8 +63,8 @@ impl WorkDocsConfiguration {
 }
 
 /// A builder for [`WorkDocsConfiguration`](crate::types::WorkDocsConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WorkDocsConfigurationBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) crawl_comments: ::std::option::Option<bool>,

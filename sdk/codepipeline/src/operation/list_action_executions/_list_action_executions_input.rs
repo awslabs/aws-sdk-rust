@@ -38,8 +38,8 @@ impl ListActionExecutionsInput {
 }
 
 /// A builder for [`ListActionExecutionsInput`](crate::operation::list_action_executions::ListActionExecutionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListActionExecutionsInputBuilder {
     pub(crate) pipeline_name: ::std::option::Option<::std::string::String>,
     pub(crate) filter: ::std::option::Option<crate::types::ActionExecutionFilter>,

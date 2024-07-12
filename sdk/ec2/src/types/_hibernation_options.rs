@@ -21,8 +21,8 @@ impl HibernationOptions {
 }
 
 /// A builder for [`HibernationOptions`](crate::types::HibernationOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HibernationOptionsBuilder {
     pub(crate) configured: ::std::option::Option<bool>,
 }

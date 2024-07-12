@@ -27,8 +27,8 @@ impl GetSmsAttributesOutput {
 }
 
 /// A builder for [`GetSmsAttributesOutput`](crate::operation::get_sms_attributes::GetSmsAttributesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSmsAttributesOutputBuilder {
     pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,

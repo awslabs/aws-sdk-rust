@@ -44,8 +44,8 @@ impl ListJournalS3ExportsOutput {
 }
 
 /// A builder for [`ListJournalS3ExportsOutput`](crate::operation::list_journal_s3_exports::ListJournalS3ExportsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListJournalS3ExportsOutputBuilder {
     pub(crate) journal_s3_exports: ::std::option::Option<::std::vec::Vec<crate::types::JournalS3ExportDescription>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

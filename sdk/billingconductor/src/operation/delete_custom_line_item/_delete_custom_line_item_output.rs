@@ -26,8 +26,8 @@ impl DeleteCustomLineItemOutput {
 }
 
 /// A builder for [`DeleteCustomLineItemOutput`](crate::operation::delete_custom_line_item::DeleteCustomLineItemOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCustomLineItemOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

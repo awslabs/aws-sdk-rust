@@ -22,8 +22,8 @@ impl ImportAssetFromSignedUrlJobErrorDetails {
 }
 
 /// A builder for [`ImportAssetFromSignedUrlJobErrorDetails`](crate::types::ImportAssetFromSignedUrlJobErrorDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportAssetFromSignedUrlJobErrorDetailsBuilder {
     pub(crate) asset_name: ::std::option::Option<::std::string::String>,
 }

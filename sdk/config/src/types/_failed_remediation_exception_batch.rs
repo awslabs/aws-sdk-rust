@@ -29,8 +29,8 @@ impl FailedRemediationExceptionBatch {
 }
 
 /// A builder for [`FailedRemediationExceptionBatch`](crate::types::FailedRemediationExceptionBatch).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FailedRemediationExceptionBatchBuilder {
     pub(crate) failure_message: ::std::option::Option<::std::string::String>,
     pub(crate) failed_items: ::std::option::Option<::std::vec::Vec<crate::types::RemediationException>>,

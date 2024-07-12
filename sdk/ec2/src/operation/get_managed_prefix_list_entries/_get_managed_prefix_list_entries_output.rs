@@ -34,8 +34,8 @@ impl GetManagedPrefixListEntriesOutput {
 }
 
 /// A builder for [`GetManagedPrefixListEntriesOutput`](crate::operation::get_managed_prefix_list_entries::GetManagedPrefixListEntriesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetManagedPrefixListEntriesOutputBuilder {
     pub(crate) entries: ::std::option::Option<::std::vec::Vec<crate::types::PrefixListEntry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

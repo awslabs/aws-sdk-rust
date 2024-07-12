@@ -38,8 +38,8 @@ impl RdsDatabaseProjectedMetric {
 }
 
 /// A builder for [`RdsDatabaseProjectedMetric`](crate::types::RdsDatabaseProjectedMetric).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RdsDatabaseProjectedMetricBuilder {
     pub(crate) name: ::std::option::Option<crate::types::RdsdbMetricName>,
     pub(crate) timestamps: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,

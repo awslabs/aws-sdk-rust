@@ -19,8 +19,8 @@ impl DeleteDataLakeOrganizationConfigurationOutput {
 }
 
 /// A builder for [`DeleteDataLakeOrganizationConfigurationOutput`](crate::operation::delete_data_lake_organization_configuration::DeleteDataLakeOrganizationConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDataLakeOrganizationConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

@@ -18,8 +18,8 @@ impl PutApplicationAssignmentConfigurationOutput {
 }
 
 /// A builder for [`PutApplicationAssignmentConfigurationOutput`](crate::operation::put_application_assignment_configuration::PutApplicationAssignmentConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutApplicationAssignmentConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

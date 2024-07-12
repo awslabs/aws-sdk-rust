@@ -28,8 +28,8 @@ impl EstimatedMonthlySavings {
 }
 
 /// A builder for [`EstimatedMonthlySavings`](crate::types::EstimatedMonthlySavings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EstimatedMonthlySavingsBuilder {
     pub(crate) currency: ::std::option::Option<crate::types::Currency>,
     pub(crate) value: ::std::option::Option<f64>,

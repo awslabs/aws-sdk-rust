@@ -21,8 +21,8 @@ impl SpotMaintenanceStrategies {
 }
 
 /// A builder for [`SpotMaintenanceStrategies`](crate::types::SpotMaintenanceStrategies).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SpotMaintenanceStrategiesBuilder {
     pub(crate) capacity_rebalance: ::std::option::Option<crate::types::SpotCapacityRebalance>,
 }

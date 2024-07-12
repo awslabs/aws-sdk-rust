@@ -18,8 +18,8 @@ impl UpdateHostOutput {
 }
 
 /// A builder for [`UpdateHostOutput`](crate::operation::update_host::UpdateHostOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateHostOutputBuilder {
     _request_id: Option<String>,
 }

@@ -32,8 +32,8 @@ impl GetBlueprintInput {
 }
 
 /// A builder for [`GetBlueprintInput`](crate::operation::get_blueprint::GetBlueprintInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBlueprintInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) include_blueprint: ::std::option::Option<bool>,

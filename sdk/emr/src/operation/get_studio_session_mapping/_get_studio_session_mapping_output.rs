@@ -26,8 +26,8 @@ impl GetStudioSessionMappingOutput {
 }
 
 /// A builder for [`GetStudioSessionMappingOutput`](crate::operation::get_studio_session_mapping::GetStudioSessionMappingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetStudioSessionMappingOutputBuilder {
     pub(crate) session_mapping: ::std::option::Option<crate::types::SessionMappingDetail>,
     _request_id: Option<String>,

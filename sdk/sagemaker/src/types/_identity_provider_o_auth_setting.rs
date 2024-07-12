@@ -33,8 +33,8 @@ impl IdentityProviderOAuthSetting {
 }
 
 /// A builder for [`IdentityProviderOAuthSetting`](crate::types::IdentityProviderOAuthSetting).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IdentityProviderOAuthSettingBuilder {
     pub(crate) data_source_name: ::std::option::Option<crate::types::DataSourceName>,
     pub(crate) status: ::std::option::Option<crate::types::FeatureStatus>,

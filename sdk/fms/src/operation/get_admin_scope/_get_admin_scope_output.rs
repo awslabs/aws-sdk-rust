@@ -52,8 +52,8 @@ impl GetAdminScopeOutput {
 }
 
 /// A builder for [`GetAdminScopeOutput`](crate::operation::get_admin_scope::GetAdminScopeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAdminScopeOutputBuilder {
     pub(crate) admin_scope: ::std::option::Option<crate::types::AdminScope>,
     pub(crate) status: ::std::option::Option<crate::types::OrganizationStatus>,

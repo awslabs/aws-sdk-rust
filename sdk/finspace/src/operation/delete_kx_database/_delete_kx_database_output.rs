@@ -18,8 +18,8 @@ impl DeleteKxDatabaseOutput {
 }
 
 /// A builder for [`DeleteKxDatabaseOutput`](crate::operation::delete_kx_database::DeleteKxDatabaseOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteKxDatabaseOutputBuilder {
     _request_id: Option<String>,
 }

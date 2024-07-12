@@ -33,8 +33,8 @@ impl PredictionExplanations {
 }
 
 /// A builder for [`PredictionExplanations`](crate::types::PredictionExplanations).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PredictionExplanationsBuilder {
     pub(crate) variable_impact_explanations: ::std::option::Option<::std::vec::Vec<crate::types::VariableImpactExplanation>>,
     pub(crate) aggregated_variables_impact_explanations: ::std::option::Option<::std::vec::Vec<crate::types::AggregatedVariablesImpactExplanation>>,

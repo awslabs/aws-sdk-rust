@@ -57,8 +57,8 @@ impl VoiceToneAnalysisTask {
 }
 
 /// A builder for [`VoiceToneAnalysisTask`](crate::types::VoiceToneAnalysisTask).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VoiceToneAnalysisTaskBuilder {
     pub(crate) voice_tone_analysis_task_id: ::std::option::Option<::std::string::String>,
     pub(crate) voice_tone_analysis_task_status: ::std::option::Option<::std::string::String>,

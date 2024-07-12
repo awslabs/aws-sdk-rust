@@ -45,8 +45,8 @@ impl ReplicationConfigurationReplicatedDisk {
 }
 
 /// A builder for [`ReplicationConfigurationReplicatedDisk`](crate::types::ReplicationConfigurationReplicatedDisk).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReplicationConfigurationReplicatedDiskBuilder {
     pub(crate) device_name: ::std::option::Option<::std::string::String>,
     pub(crate) is_boot_disk: ::std::option::Option<bool>,

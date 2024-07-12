@@ -18,8 +18,8 @@ impl ExpireSessionOutput {
 }
 
 /// A builder for [`ExpireSessionOutput`](crate::operation::expire_session::ExpireSessionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExpireSessionOutputBuilder {
     _request_id: Option<String>,
 }

@@ -33,8 +33,8 @@ impl DescribeAssessmentRunsOutput {
 }
 
 /// A builder for [`DescribeAssessmentRunsOutput`](crate::operation::describe_assessment_runs::DescribeAssessmentRunsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAssessmentRunsOutputBuilder {
     pub(crate) assessment_runs: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentRun>>,
     pub(crate) failed_items: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>>,

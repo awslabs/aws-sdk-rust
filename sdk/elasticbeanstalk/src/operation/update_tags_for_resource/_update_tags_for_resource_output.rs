@@ -18,8 +18,8 @@ impl UpdateTagsForResourceOutput {
 }
 
 /// A builder for [`UpdateTagsForResourceOutput`](crate::operation::update_tags_for_resource::UpdateTagsForResourceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateTagsForResourceOutputBuilder {
     _request_id: Option<String>,
 }

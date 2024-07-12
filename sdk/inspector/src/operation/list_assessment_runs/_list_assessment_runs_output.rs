@@ -33,8 +33,8 @@ impl ListAssessmentRunsOutput {
 }
 
 /// A builder for [`ListAssessmentRunsOutput`](crate::operation::list_assessment_runs::ListAssessmentRunsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAssessmentRunsOutputBuilder {
     pub(crate) assessment_run_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

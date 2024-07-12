@@ -56,8 +56,8 @@ impl CreateCommitOutput {
 }
 
 /// A builder for [`CreateCommitOutput`](crate::operation::create_commit::CreateCommitOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCommitOutputBuilder {
     pub(crate) commit_id: ::std::option::Option<::std::string::String>,
     pub(crate) tree_id: ::std::option::Option<::std::string::String>,

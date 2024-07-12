@@ -18,8 +18,8 @@ impl AdminRemoveUserFromGroupOutput {
 }
 
 /// A builder for [`AdminRemoveUserFromGroupOutput`](crate::operation::admin_remove_user_from_group::AdminRemoveUserFromGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AdminRemoveUserFromGroupOutputBuilder {
     _request_id: Option<String>,
 }

@@ -29,8 +29,8 @@ impl Subject {
 }
 
 /// A builder for [`Subject`](crate::types::Subject).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SubjectBuilder {
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
     pub(crate) service_account: ::std::option::Option<::std::string::String>,

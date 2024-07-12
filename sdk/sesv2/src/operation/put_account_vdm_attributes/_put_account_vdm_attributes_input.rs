@@ -21,8 +21,8 @@ impl PutAccountVdmAttributesInput {
 }
 
 /// A builder for [`PutAccountVdmAttributesInput`](crate::operation::put_account_vdm_attributes::PutAccountVdmAttributesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutAccountVdmAttributesInputBuilder {
     pub(crate) vdm_attributes: ::std::option::Option<crate::types::VdmAttributes>,
 }

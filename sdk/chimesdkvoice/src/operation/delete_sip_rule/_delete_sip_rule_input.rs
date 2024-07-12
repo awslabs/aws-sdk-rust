@@ -20,8 +20,8 @@ impl DeleteSipRuleInput {
 }
 
 /// A builder for [`DeleteSipRuleInput`](crate::operation::delete_sip_rule::DeleteSipRuleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSipRuleInputBuilder {
     pub(crate) sip_rule_id: ::std::option::Option<::std::string::String>,
 }

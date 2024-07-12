@@ -26,8 +26,8 @@ impl DeprovisionIpamByoasnOutput {
 }
 
 /// A builder for [`DeprovisionIpamByoasnOutput`](crate::operation::deprovision_ipam_byoasn::DeprovisionIpamByoasnOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeprovisionIpamByoasnOutputBuilder {
     pub(crate) byoasn: ::std::option::Option<crate::types::Byoasn>,
     _request_id: Option<String>,

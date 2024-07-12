@@ -97,8 +97,8 @@ impl UpdateGuardrailInput {
 }
 
 /// A builder for [`UpdateGuardrailInput`](crate::operation::update_guardrail::UpdateGuardrailInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateGuardrailInputBuilder {
     pub(crate) guardrail_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

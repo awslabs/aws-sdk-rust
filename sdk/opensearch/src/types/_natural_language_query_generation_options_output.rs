@@ -27,8 +27,8 @@ impl NaturalLanguageQueryGenerationOptionsOutput {
 }
 
 /// A builder for [`NaturalLanguageQueryGenerationOptionsOutput`](crate::types::NaturalLanguageQueryGenerationOptionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NaturalLanguageQueryGenerationOptionsOutputBuilder {
     pub(crate) desired_state: ::std::option::Option<crate::types::NaturalLanguageQueryGenerationDesiredState>,
     pub(crate) current_state: ::std::option::Option<crate::types::NaturalLanguageQueryGenerationCurrentState>,

@@ -22,8 +22,8 @@ impl BatchGetAccountStatusInput {
 }
 
 /// A builder for [`BatchGetAccountStatusInput`](crate::operation::batch_get_account_status::BatchGetAccountStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetAccountStatusInputBuilder {
     pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

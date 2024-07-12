@@ -152,8 +152,8 @@ impl AssumeRoleInput {
 }
 
 /// A builder for [`AssumeRoleInput`](crate::operation::assume_role::AssumeRoleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssumeRoleInputBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) role_session_name: ::std::option::Option<::std::string::String>,

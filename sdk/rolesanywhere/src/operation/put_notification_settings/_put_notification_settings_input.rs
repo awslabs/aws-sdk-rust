@@ -28,8 +28,8 @@ impl PutNotificationSettingsInput {
 }
 
 /// A builder for [`PutNotificationSettingsInput`](crate::operation::put_notification_settings::PutNotificationSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutNotificationSettingsInputBuilder {
     pub(crate) trust_anchor_id: ::std::option::Option<::std::string::String>,
     pub(crate) notification_settings: ::std::option::Option<::std::vec::Vec<crate::types::NotificationSetting>>,

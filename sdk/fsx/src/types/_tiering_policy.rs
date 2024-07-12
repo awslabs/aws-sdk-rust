@@ -64,8 +64,8 @@ impl TieringPolicy {
 }
 
 /// A builder for [`TieringPolicy`](crate::types::TieringPolicy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TieringPolicyBuilder {
     pub(crate) cooling_period: ::std::option::Option<i32>,
     pub(crate) name: ::std::option::Option<crate::types::TieringPolicyName>,

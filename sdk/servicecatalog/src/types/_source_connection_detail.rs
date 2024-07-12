@@ -57,8 +57,8 @@ impl SourceConnectionDetail {
 }
 
 /// A builder for [`SourceConnectionDetail`](crate::types::SourceConnectionDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SourceConnectionDetailBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::SourceType>,
     pub(crate) connection_parameters: ::std::option::Option<crate::types::SourceConnectionParameters>,

@@ -68,8 +68,8 @@ impl CreateMigrationProjectInput {
 }
 
 /// A builder for [`CreateMigrationProjectInput`](crate::operation::create_migration_project::CreateMigrationProjectInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateMigrationProjectInputBuilder {
     pub(crate) migration_project_name: ::std::option::Option<::std::string::String>,
     pub(crate) source_data_provider_descriptors: ::std::option::Option<::std::vec::Vec<crate::types::DataProviderDescriptorDefinition>>,

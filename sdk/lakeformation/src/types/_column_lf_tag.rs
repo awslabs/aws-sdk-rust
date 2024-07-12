@@ -29,8 +29,8 @@ impl ColumnLfTag {
 }
 
 /// A builder for [`ColumnLfTag`](crate::types::ColumnLfTag).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ColumnLfTagBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) lf_tags: ::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>>,

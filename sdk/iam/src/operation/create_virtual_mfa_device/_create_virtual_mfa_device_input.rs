@@ -44,8 +44,8 @@ impl CreateVirtualMfaDeviceInput {
 }
 
 /// A builder for [`CreateVirtualMfaDeviceInput`](crate::operation::create_virtual_mfa_device::CreateVirtualMfaDeviceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateVirtualMfaDeviceInputBuilder {
     pub(crate) path: ::std::option::Option<::std::string::String>,
     pub(crate) virtual_mfa_device_name: ::std::option::Option<::std::string::String>,

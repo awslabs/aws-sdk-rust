@@ -18,8 +18,8 @@ impl UpdateNumberOfDomainControllersOutput {
 }
 
 /// A builder for [`UpdateNumberOfDomainControllersOutput`](crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateNumberOfDomainControllersOutputBuilder {
     _request_id: Option<String>,
 }

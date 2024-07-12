@@ -51,8 +51,8 @@ impl Listener {
 }
 
 /// A builder for [`Listener`](crate::types::Listener).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListenerBuilder {
     pub(crate) port_mapping: ::std::option::Option<crate::types::PortMapping>,
     pub(crate) tls: ::std::option::Option<crate::types::ListenerTls>,

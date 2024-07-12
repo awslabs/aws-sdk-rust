@@ -27,8 +27,8 @@ impl RemediationActionWithOrder {
 }
 
 /// A builder for [`RemediationActionWithOrder`](crate::types::RemediationActionWithOrder).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemediationActionWithOrderBuilder {
     pub(crate) remediation_action: ::std::option::Option<crate::types::RemediationAction>,
     pub(crate) order: ::std::option::Option<i32>,

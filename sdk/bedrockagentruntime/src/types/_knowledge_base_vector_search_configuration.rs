@@ -49,8 +49,8 @@ impl KnowledgeBaseVectorSearchConfiguration {
 }
 
 /// A builder for [`KnowledgeBaseVectorSearchConfiguration`](crate::types::KnowledgeBaseVectorSearchConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct KnowledgeBaseVectorSearchConfigurationBuilder {
     pub(crate) number_of_results: ::std::option::Option<i32>,
     pub(crate) override_search_type: ::std::option::Option<crate::types::SearchType>,

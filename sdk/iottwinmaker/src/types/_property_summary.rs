@@ -40,8 +40,8 @@ impl PropertySummary {
 }
 
 /// A builder for [`PropertySummary`](crate::types::PropertySummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PropertySummaryBuilder {
     pub(crate) definition: ::std::option::Option<crate::types::PropertyDefinitionResponse>,
     pub(crate) property_name: ::std::option::Option<::std::string::String>,

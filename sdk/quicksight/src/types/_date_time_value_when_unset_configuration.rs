@@ -47,8 +47,8 @@ impl DateTimeValueWhenUnsetConfiguration {
 }
 
 /// A builder for [`DateTimeValueWhenUnsetConfiguration`](crate::types::DateTimeValueWhenUnsetConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DateTimeValueWhenUnsetConfigurationBuilder {
     pub(crate) value_when_unset_option: ::std::option::Option<crate::types::ValueWhenUnsetOption>,
     pub(crate) custom_value: ::std::option::Option<::aws_smithy_types::DateTime>,

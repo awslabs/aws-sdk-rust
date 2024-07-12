@@ -80,8 +80,8 @@ impl DescribeTrialOutput {
 }
 
 /// A builder for [`DescribeTrialOutput`](crate::operation::describe_trial::DescribeTrialOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTrialOutputBuilder {
     pub(crate) trial_name: ::std::option::Option<::std::string::String>,
     pub(crate) trial_arn: ::std::option::Option<::std::string::String>,

@@ -109,8 +109,8 @@ impl KxDataviewListEntry {
 }
 
 /// A builder for [`KxDataviewListEntry`](crate::types::KxDataviewListEntry).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KxDataviewListEntryBuilder {
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,

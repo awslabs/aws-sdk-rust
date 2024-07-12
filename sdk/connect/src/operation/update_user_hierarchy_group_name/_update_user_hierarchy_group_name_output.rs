@@ -18,8 +18,8 @@ impl UpdateUserHierarchyGroupNameOutput {
 }
 
 /// A builder for [`UpdateUserHierarchyGroupNameOutput`](crate::operation::update_user_hierarchy_group_name::UpdateUserHierarchyGroupNameOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateUserHierarchyGroupNameOutputBuilder {
     _request_id: Option<String>,
 }

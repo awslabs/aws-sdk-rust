@@ -11,8 +11,8 @@ impl GetPoliciesStatsInput {
 }
 
 /// A builder for [`GetPoliciesStatsInput`](crate::operation::get_policies_stats::GetPoliciesStatsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPoliciesStatsInputBuilder {}
 impl GetPoliciesStatsInputBuilder {
     /// Consumes the builder and constructs a [`GetPoliciesStatsInput`](crate::operation::get_policies_stats::GetPoliciesStatsInput).

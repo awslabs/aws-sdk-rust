@@ -33,8 +33,8 @@ impl BatchGetCommitsError {
 }
 
 /// A builder for [`BatchGetCommitsError`](crate::types::BatchGetCommitsError).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetCommitsErrorBuilder {
     pub(crate) commit_id: ::std::option::Option<::std::string::String>,
     pub(crate) error_code: ::std::option::Option<::std::string::String>,

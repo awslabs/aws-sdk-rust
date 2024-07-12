@@ -26,8 +26,8 @@ impl ImportStacksToStackSetOutput {
 }
 
 /// A builder for [`ImportStacksToStackSetOutput`](crate::operation::import_stacks_to_stack_set::ImportStacksToStackSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportStacksToStackSetOutputBuilder {
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

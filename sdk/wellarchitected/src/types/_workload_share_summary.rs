@@ -45,8 +45,8 @@ impl WorkloadShareSummary {
 }
 
 /// A builder for [`WorkloadShareSummary`](crate::types::WorkloadShareSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WorkloadShareSummaryBuilder {
     pub(crate) share_id: ::std::option::Option<::std::string::String>,
     pub(crate) shared_with: ::std::option::Option<::std::string::String>,

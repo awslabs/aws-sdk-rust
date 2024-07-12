@@ -23,8 +23,8 @@ impl GetIdentityNotificationAttributesInput {
 }
 
 /// A builder for [`GetIdentityNotificationAttributesInput`](crate::operation::get_identity_notification_attributes::GetIdentityNotificationAttributesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetIdentityNotificationAttributesInputBuilder {
     pub(crate) identities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

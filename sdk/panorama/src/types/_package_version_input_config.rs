@@ -21,8 +21,8 @@ impl PackageVersionInputConfig {
 }
 
 /// A builder for [`PackageVersionInputConfig`](crate::types::PackageVersionInputConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PackageVersionInputConfigBuilder {
     pub(crate) s3_location: ::std::option::Option<crate::types::S3Location>,
 }

@@ -80,8 +80,8 @@ impl ListChannelMessagesInput {
 }
 
 /// A builder for [`ListChannelMessagesInput`](crate::operation::list_channel_messages::ListChannelMessagesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ListChannelMessagesInputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,

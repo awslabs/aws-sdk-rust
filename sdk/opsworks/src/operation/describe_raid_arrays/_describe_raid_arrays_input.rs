@@ -34,8 +34,8 @@ impl DescribeRaidArraysInput {
 }
 
 /// A builder for [`DescribeRaidArraysInput`](crate::operation::describe_raid_arrays::DescribeRaidArraysInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRaidArraysInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,

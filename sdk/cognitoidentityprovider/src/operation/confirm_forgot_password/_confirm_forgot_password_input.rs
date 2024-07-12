@@ -101,8 +101,8 @@ impl ConfirmForgotPasswordInput {
 }
 
 /// A builder for [`ConfirmForgotPasswordInput`](crate::operation::confirm_forgot_password::ConfirmForgotPasswordInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ConfirmForgotPasswordInputBuilder {
     pub(crate) client_id: ::std::option::Option<::std::string::String>,
     pub(crate) secret_hash: ::std::option::Option<::std::string::String>,

@@ -40,8 +40,8 @@ impl ListSecurityPoliciesInput {
 }
 
 /// A builder for [`ListSecurityPoliciesInput`](crate::operation::list_security_policies::ListSecurityPoliciesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSecurityPoliciesInputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::SecurityPolicyType>,
     pub(crate) resource: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

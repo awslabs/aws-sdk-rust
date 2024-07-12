@@ -32,8 +32,8 @@ impl SelectResourceConfigInput {
 }
 
 /// A builder for [`SelectResourceConfigInput`](crate::operation::select_resource_config::SelectResourceConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SelectResourceConfigInputBuilder {
     pub(crate) expression: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,

@@ -27,8 +27,8 @@ impl ReservedInstanceReservationValue {
 }
 
 /// A builder for [`ReservedInstanceReservationValue`](crate::types::ReservedInstanceReservationValue).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReservedInstanceReservationValueBuilder {
     pub(crate) reservation_value: ::std::option::Option<crate::types::ReservationValue>,
     pub(crate) reserved_instance_id: ::std::option::Option<::std::string::String>,

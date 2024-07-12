@@ -26,8 +26,8 @@ impl ModifyVpnConnectionOutput {
 }
 
 /// A builder for [`ModifyVpnConnectionOutput`](crate::operation::modify_vpn_connection::ModifyVpnConnectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyVpnConnectionOutputBuilder {
     pub(crate) vpn_connection: ::std::option::Option<crate::types::VpnConnection>,
     _request_id: Option<String>,

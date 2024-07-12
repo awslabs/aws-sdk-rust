@@ -57,8 +57,8 @@ impl SecurityConfigDetail {
 }
 
 /// A builder for [`SecurityConfigDetail`](crate::types::SecurityConfigDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SecurityConfigDetailBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::SecurityConfigType>,

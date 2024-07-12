@@ -20,8 +20,8 @@ impl CancelResourceRequestInput {
 }
 
 /// A builder for [`CancelResourceRequestInput`](crate::operation::cancel_resource_request::CancelResourceRequestInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelResourceRequestInputBuilder {
     pub(crate) request_token: ::std::option::Option<::std::string::String>,
 }

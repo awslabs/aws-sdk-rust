@@ -26,8 +26,8 @@ impl DeleteComponentOutput {
 }
 
 /// A builder for [`DeleteComponentOutput`](crate::operation::delete_component::DeleteComponentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteComponentOutputBuilder {
     pub(crate) component: ::std::option::Option<crate::types::Component>,
     _request_id: Option<String>,

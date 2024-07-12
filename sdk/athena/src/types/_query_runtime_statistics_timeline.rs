@@ -51,8 +51,8 @@ impl QueryRuntimeStatisticsTimeline {
 }
 
 /// A builder for [`QueryRuntimeStatisticsTimeline`](crate::types::QueryRuntimeStatisticsTimeline).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct QueryRuntimeStatisticsTimelineBuilder {
     pub(crate) query_queue_time_in_millis: ::std::option::Option<i64>,
     pub(crate) service_pre_processing_time_in_millis: ::std::option::Option<i64>,

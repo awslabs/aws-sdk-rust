@@ -12,8 +12,8 @@ impl GetSagemakerServicecatalogPortfolioStatusInput {
 }
 
 /// A builder for [`GetSagemakerServicecatalogPortfolioStatusInput`](crate::operation::get_sagemaker_servicecatalog_portfolio_status::GetSagemakerServicecatalogPortfolioStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSagemakerServicecatalogPortfolioStatusInputBuilder {}
 impl GetSagemakerServicecatalogPortfolioStatusInputBuilder {
     /// Consumes the builder and constructs a [`GetSagemakerServicecatalogPortfolioStatusInput`](crate::operation::get_sagemaker_servicecatalog_portfolio_status::GetSagemakerServicecatalogPortfolioStatusInput).

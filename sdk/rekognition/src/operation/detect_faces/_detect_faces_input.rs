@@ -34,8 +34,8 @@ impl DetectFacesInput {
 }
 
 /// A builder for [`DetectFacesInput`](crate::operation::detect_faces::DetectFacesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetectFacesInputBuilder {
     pub(crate) image: ::std::option::Option<crate::types::Image>,
     pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,

@@ -26,8 +26,8 @@ impl DisableLdapsInput {
 }
 
 /// A builder for [`DisableLdapsInput`](crate::operation::disable_ldaps::DisableLdapsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableLdapsInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::LdapsType>,

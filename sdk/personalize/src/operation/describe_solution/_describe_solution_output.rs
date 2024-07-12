@@ -26,8 +26,8 @@ impl DescribeSolutionOutput {
 }
 
 /// A builder for [`DescribeSolutionOutput`](crate::operation::describe_solution::DescribeSolutionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSolutionOutputBuilder {
     pub(crate) solution: ::std::option::Option<crate::types::Solution>,
     _request_id: Option<String>,

@@ -88,8 +88,8 @@ impl UpdateSlotInput {
 }
 
 /// A builder for [`UpdateSlotInput`](crate::operation::update_slot::UpdateSlotInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSlotInputBuilder {
     pub(crate) slot_id: ::std::option::Option<::std::string::String>,
     pub(crate) slot_name: ::std::option::Option<::std::string::String>,

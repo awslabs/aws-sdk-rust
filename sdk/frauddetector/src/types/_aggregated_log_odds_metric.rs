@@ -29,8 +29,8 @@ impl AggregatedLogOddsMetric {
 }
 
 /// A builder for [`AggregatedLogOddsMetric`](crate::types::AggregatedLogOddsMetric).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AggregatedLogOddsMetricBuilder {
     pub(crate) variable_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) aggregated_variables_importance: ::std::option::Option<f32>,

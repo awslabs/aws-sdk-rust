@@ -48,8 +48,8 @@ impl IntegerValueWhenUnsetConfiguration {
 }
 
 /// A builder for [`IntegerValueWhenUnsetConfiguration`](crate::types::IntegerValueWhenUnsetConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct IntegerValueWhenUnsetConfigurationBuilder {
     pub(crate) value_when_unset_option: ::std::option::Option<crate::types::ValueWhenUnsetOption>,
     pub(crate) custom_value: ::std::option::Option<i64>,

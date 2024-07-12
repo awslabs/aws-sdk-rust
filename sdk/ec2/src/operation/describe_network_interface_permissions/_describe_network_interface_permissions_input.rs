@@ -67,8 +67,8 @@ impl DescribeNetworkInterfacePermissionsInput {
 }
 
 /// A builder for [`DescribeNetworkInterfacePermissionsInput`](crate::operation::describe_network_interface_permissions::DescribeNetworkInterfacePermissionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeNetworkInterfacePermissionsInputBuilder {
     pub(crate) network_interface_permission_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,

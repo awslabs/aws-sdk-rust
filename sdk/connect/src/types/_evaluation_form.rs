@@ -105,8 +105,8 @@ impl EvaluationForm {
 }
 
 /// A builder for [`EvaluationForm`](crate::types::EvaluationForm).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EvaluationFormBuilder {
     pub(crate) evaluation_form_id: ::std::option::Option<::std::string::String>,
     pub(crate) evaluation_form_version: ::std::option::Option<i32>,

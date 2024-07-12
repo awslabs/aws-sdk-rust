@@ -47,8 +47,8 @@ impl NetworkInsightsAccessScope {
 }
 
 /// A builder for [`NetworkInsightsAccessScope`](crate::types::NetworkInsightsAccessScope).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NetworkInsightsAccessScopeBuilder {
     pub(crate) network_insights_access_scope_id: ::std::option::Option<::std::string::String>,
     pub(crate) network_insights_access_scope_arn: ::std::option::Option<::std::string::String>,

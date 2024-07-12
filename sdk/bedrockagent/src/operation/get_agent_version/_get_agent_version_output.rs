@@ -26,8 +26,8 @@ impl GetAgentVersionOutput {
 }
 
 /// A builder for [`GetAgentVersionOutput`](crate::operation::get_agent_version::GetAgentVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAgentVersionOutputBuilder {
     pub(crate) agent_version: ::std::option::Option<crate::types::AgentVersion>,
     _request_id: Option<String>,

@@ -29,8 +29,8 @@ impl AssetBundleImportJobDashboardOverrideTags {
 }
 
 /// A builder for [`AssetBundleImportJobDashboardOverrideTags`](crate::types::AssetBundleImportJobDashboardOverrideTags).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssetBundleImportJobDashboardOverrideTagsBuilder {
     pub(crate) dashboard_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,

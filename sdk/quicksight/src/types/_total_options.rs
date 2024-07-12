@@ -53,8 +53,8 @@ impl TotalOptions {
 }
 
 /// A builder for [`TotalOptions`](crate::types::TotalOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TotalOptionsBuilder {
     pub(crate) totals_visibility: ::std::option::Option<crate::types::Visibility>,
     pub(crate) placement: ::std::option::Option<crate::types::TableTotalsPlacement>,

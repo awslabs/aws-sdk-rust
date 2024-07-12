@@ -18,8 +18,8 @@ impl DisassociateFromMasterAccountOutput {
 }
 
 /// A builder for [`DisassociateFromMasterAccountOutput`](crate::operation::disassociate_from_master_account::DisassociateFromMasterAccountOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateFromMasterAccountOutputBuilder {
     _request_id: Option<String>,
 }

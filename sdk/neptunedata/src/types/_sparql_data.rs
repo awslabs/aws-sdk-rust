@@ -22,8 +22,8 @@ impl SparqlData {
 }
 
 /// A builder for [`SparqlData`](crate::types::SparqlData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SparqlDataBuilder {
     pub(crate) stmt: ::std::option::Option<::std::string::String>,
 }

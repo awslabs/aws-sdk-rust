@@ -36,8 +36,8 @@ impl DeleteDatasetInput {
 }
 
 /// A builder for [`DeleteDatasetInput`](crate::operation::delete_dataset::DeleteDatasetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDatasetInputBuilder {
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_type: ::std::option::Option<::std::string::String>,

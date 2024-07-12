@@ -21,8 +21,8 @@ impl PointInTimeRecoverySpecification {
 }
 
 /// A builder for [`PointInTimeRecoverySpecification`](crate::types::PointInTimeRecoverySpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PointInTimeRecoverySpecificationBuilder {
     pub(crate) point_in_time_recovery_enabled: ::std::option::Option<bool>,
 }

@@ -58,8 +58,8 @@ impl GetSimilarProfilesOutput {
 }
 
 /// A builder for [`GetSimilarProfilesOutput`](crate::operation::get_similar_profiles::GetSimilarProfilesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSimilarProfilesOutputBuilder {
     pub(crate) profile_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) match_id: ::std::option::Option<::std::string::String>,

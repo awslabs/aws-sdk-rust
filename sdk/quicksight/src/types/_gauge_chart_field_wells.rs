@@ -31,8 +31,8 @@ impl GaugeChartFieldWells {
 }
 
 /// A builder for [`GaugeChartFieldWells`](crate::types::GaugeChartFieldWells).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GaugeChartFieldWellsBuilder {
     pub(crate) values: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
     pub(crate) target_values: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,

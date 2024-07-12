@@ -60,8 +60,8 @@ impl CloudWatchDimensionConfiguration {
 }
 
 /// A builder for [`CloudWatchDimensionConfiguration`](crate::types::CloudWatchDimensionConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CloudWatchDimensionConfigurationBuilder {
     pub(crate) dimension_name: ::std::option::Option<::std::string::String>,
     pub(crate) dimension_value_source: ::std::option::Option<crate::types::DimensionValueSource>,

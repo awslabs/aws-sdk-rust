@@ -33,8 +33,8 @@ impl LineageConfiguration {
 }
 
 /// A builder for [`LineageConfiguration`](crate::types::LineageConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LineageConfigurationBuilder {
     pub(crate) crawler_lineage_settings: ::std::option::Option<crate::types::CrawlerLineageSettings>,
 }

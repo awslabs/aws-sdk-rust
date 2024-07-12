@@ -53,8 +53,8 @@ impl ModifyDbSnapshotAttributeInput {
 }
 
 /// A builder for [`ModifyDbSnapshotAttributeInput`](crate::operation::modify_db_snapshot_attribute::ModifyDbSnapshotAttributeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyDbSnapshotAttributeInputBuilder {
     pub(crate) db_snapshot_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) attribute_name: ::std::option::Option<::std::string::String>,

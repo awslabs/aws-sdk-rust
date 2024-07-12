@@ -34,8 +34,8 @@ impl ListSourceServerActionsOutput {
 }
 
 /// A builder for [`ListSourceServerActionsOutput`](crate::operation::list_source_server_actions::ListSourceServerActionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSourceServerActionsOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::SourceServerActionDocument>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

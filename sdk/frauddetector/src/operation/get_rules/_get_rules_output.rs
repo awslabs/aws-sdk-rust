@@ -34,8 +34,8 @@ impl GetRulesOutput {
 }
 
 /// A builder for [`GetRulesOutput`](crate::operation::get_rules::GetRulesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRulesOutputBuilder {
     pub(crate) rule_details: ::std::option::Option<::std::vec::Vec<crate::types::RuleDetail>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

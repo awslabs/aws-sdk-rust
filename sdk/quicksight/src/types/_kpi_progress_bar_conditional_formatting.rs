@@ -21,8 +21,8 @@ impl KpiProgressBarConditionalFormatting {
 }
 
 /// A builder for [`KpiProgressBarConditionalFormatting`](crate::types::KpiProgressBarConditionalFormatting).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KpiProgressBarConditionalFormattingBuilder {
     pub(crate) foreground_color: ::std::option::Option<crate::types::ConditionalFormattingColor>,
 }

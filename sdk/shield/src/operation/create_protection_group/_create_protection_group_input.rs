@@ -70,8 +70,8 @@ impl CreateProtectionGroupInput {
 }
 
 /// A builder for [`CreateProtectionGroupInput`](crate::operation::create_protection_group::CreateProtectionGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateProtectionGroupInputBuilder {
     pub(crate) protection_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) aggregation: ::std::option::Option<crate::types::ProtectionGroupAggregation>,

@@ -30,8 +30,8 @@ impl UntagSamlProviderInput {
 }
 
 /// A builder for [`UntagSamlProviderInput`](crate::operation::untag_saml_provider::UntagSamlProviderInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UntagSamlProviderInputBuilder {
     pub(crate) saml_provider_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

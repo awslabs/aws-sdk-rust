@@ -49,8 +49,8 @@ impl Image {
 }
 
 /// A builder for [`Image`](crate::types::Image).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImageBuilder {
     pub(crate) time_stamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) error: ::std::option::Option<crate::types::ImageError>,

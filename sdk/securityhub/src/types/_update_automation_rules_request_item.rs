@@ -65,8 +65,8 @@ impl UpdateAutomationRulesRequestItem {
 }
 
 /// A builder for [`UpdateAutomationRulesRequestItem`](crate::types::UpdateAutomationRulesRequestItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAutomationRulesRequestItemBuilder {
     pub(crate) rule_arn: ::std::option::Option<::std::string::String>,
     pub(crate) rule_status: ::std::option::Option<crate::types::RuleStatus>,

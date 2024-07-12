@@ -18,8 +18,8 @@ impl DeleteQueueEnvironmentOutput {
 }
 
 /// A builder for [`DeleteQueueEnvironmentOutput`](crate::operation::delete_queue_environment::DeleteQueueEnvironmentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteQueueEnvironmentOutputBuilder {
     _request_id: Option<String>,
 }

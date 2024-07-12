@@ -32,8 +32,8 @@ impl ListAvailabilityConfigurationsInput {
 }
 
 /// A builder for [`ListAvailabilityConfigurationsInput`](crate::operation::list_availability_configurations::ListAvailabilityConfigurationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAvailabilityConfigurationsInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

@@ -41,8 +41,8 @@ impl BatchParameters {
 }
 
 /// A builder for [`BatchParameters`](crate::types::BatchParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchParametersBuilder {
     pub(crate) job_definition: ::std::option::Option<::std::string::String>,
     pub(crate) job_name: ::std::option::Option<::std::string::String>,

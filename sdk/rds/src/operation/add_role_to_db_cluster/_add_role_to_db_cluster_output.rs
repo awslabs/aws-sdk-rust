@@ -18,8 +18,8 @@ impl AddRoleToDbClusterOutput {
 }
 
 /// A builder for [`AddRoleToDbClusterOutput`](crate::operation::add_role_to_db_cluster::AddRoleToDbClusterOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddRoleToDbClusterOutputBuilder {
     _request_id: Option<String>,
 }

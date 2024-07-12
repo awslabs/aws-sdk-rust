@@ -28,8 +28,8 @@ impl UpdateSamlProviderInput {
 }
 
 /// A builder for [`UpdateSamlProviderInput`](crate::operation::update_saml_provider::UpdateSamlProviderInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSamlProviderInputBuilder {
     pub(crate) saml_metadata_document: ::std::option::Option<::std::string::String>,
     pub(crate) saml_provider_arn: ::std::option::Option<::std::string::String>,

@@ -41,8 +41,8 @@ impl GetDataAccessOutput {
 }
 
 /// A builder for [`GetDataAccessOutput`](crate::operation::get_data_access::GetDataAccessOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetDataAccessOutputBuilder {
     pub(crate) credentials: ::std::option::Option<crate::types::Credentials>,
     pub(crate) matched_grant_target: ::std::option::Option<::std::string::String>,

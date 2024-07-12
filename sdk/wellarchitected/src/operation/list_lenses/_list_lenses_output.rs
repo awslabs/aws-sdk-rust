@@ -35,8 +35,8 @@ impl ListLensesOutput {
 }
 
 /// A builder for [`ListLensesOutput`](crate::operation::list_lenses::ListLensesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListLensesOutputBuilder {
     pub(crate) lens_summaries: ::std::option::Option<::std::vec::Vec<crate::types::LensSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -38,8 +38,8 @@ impl GetOpenCypherQueryStatusOutput {
 }
 
 /// A builder for [`GetOpenCypherQueryStatusOutput`](crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetOpenCypherQueryStatusOutputBuilder {
     pub(crate) query_id: ::std::option::Option<::std::string::String>,
     pub(crate) query_string: ::std::option::Option<::std::string::String>,

@@ -42,8 +42,8 @@ impl DescribeSnapshotAttributeOutput {
 }
 
 /// A builder for [`DescribeSnapshotAttributeOutput`](crate::operation::describe_snapshot_attribute::DescribeSnapshotAttributeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSnapshotAttributeOutputBuilder {
     pub(crate) create_volume_permissions: ::std::option::Option<::std::vec::Vec<crate::types::CreateVolumePermission>>,
     pub(crate) product_codes: ::std::option::Option<::std::vec::Vec<crate::types::ProductCode>>,

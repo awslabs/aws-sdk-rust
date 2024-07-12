@@ -18,8 +18,8 @@ impl DeleteSolFunctionPackageOutput {
 }
 
 /// A builder for [`DeleteSolFunctionPackageOutput`](crate::operation::delete_sol_function_package::DeleteSolFunctionPackageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSolFunctionPackageOutputBuilder {
     _request_id: Option<String>,
 }

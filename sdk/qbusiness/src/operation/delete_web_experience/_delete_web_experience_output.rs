@@ -18,8 +18,8 @@ impl DeleteWebExperienceOutput {
 }
 
 /// A builder for [`DeleteWebExperienceOutput`](crate::operation::delete_web_experience::DeleteWebExperienceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteWebExperienceOutputBuilder {
     _request_id: Option<String>,
 }

@@ -18,8 +18,8 @@ impl CreateLogSubscriptionOutput {
 }
 
 /// A builder for [`CreateLogSubscriptionOutput`](crate::operation::create_log_subscription::CreateLogSubscriptionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLogSubscriptionOutputBuilder {
     _request_id: Option<String>,
 }

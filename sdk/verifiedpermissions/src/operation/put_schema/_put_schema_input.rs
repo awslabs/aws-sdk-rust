@@ -26,8 +26,8 @@ impl PutSchemaInput {
 }
 
 /// A builder for [`PutSchemaInput`](crate::operation::put_schema::PutSchemaInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutSchemaInputBuilder {
     pub(crate) policy_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) definition: ::std::option::Option<crate::types::SchemaDefinition>,

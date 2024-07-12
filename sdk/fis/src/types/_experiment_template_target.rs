@@ -55,8 +55,8 @@ impl ExperimentTemplateTarget {
 }
 
 /// A builder for [`ExperimentTemplateTarget`](crate::types::ExperimentTemplateTarget).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExperimentTemplateTargetBuilder {
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

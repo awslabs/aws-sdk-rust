@@ -34,8 +34,8 @@ impl ListCrlsOutput {
 }
 
 /// A builder for [`ListCrlsOutput`](crate::operation::list_crls::ListCrlsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCrlsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) crls: ::std::option::Option<::std::vec::Vec<crate::types::CrlDetail>>,

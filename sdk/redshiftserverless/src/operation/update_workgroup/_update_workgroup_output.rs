@@ -26,8 +26,8 @@ impl UpdateWorkgroupOutput {
 }
 
 /// A builder for [`UpdateWorkgroupOutput`](crate::operation::update_workgroup::UpdateWorkgroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateWorkgroupOutputBuilder {
     pub(crate) workgroup: ::std::option::Option<crate::types::Workgroup>,
     _request_id: Option<String>,

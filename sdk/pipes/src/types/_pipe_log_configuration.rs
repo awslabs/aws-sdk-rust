@@ -51,8 +51,8 @@ impl PipeLogConfiguration {
 }
 
 /// A builder for [`PipeLogConfiguration`](crate::types::PipeLogConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PipeLogConfigurationBuilder {
     pub(crate) s3_log_destination: ::std::option::Option<crate::types::S3LogDestination>,
     pub(crate) firehose_log_destination: ::std::option::Option<crate::types::FirehoseLogDestination>,

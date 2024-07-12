@@ -26,8 +26,8 @@ impl UpdateTemplateSyncConfigOutput {
 }
 
 /// A builder for [`UpdateTemplateSyncConfigOutput`](crate::operation::update_template_sync_config::UpdateTemplateSyncConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateTemplateSyncConfigOutputBuilder {
     pub(crate) template_sync_config: ::std::option::Option<crate::types::TemplateSyncConfig>,
     _request_id: Option<String>,

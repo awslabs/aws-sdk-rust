@@ -103,8 +103,8 @@ impl LambdaConfigType {
 }
 
 /// A builder for [`LambdaConfigType`](crate::types::LambdaConfigType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LambdaConfigTypeBuilder {
     pub(crate) pre_sign_up: ::std::option::Option<::std::string::String>,
     pub(crate) custom_message: ::std::option::Option<::std::string::String>,

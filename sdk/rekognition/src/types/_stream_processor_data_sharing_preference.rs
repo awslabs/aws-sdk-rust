@@ -21,8 +21,8 @@ impl StreamProcessorDataSharingPreference {
 }
 
 /// A builder for [`StreamProcessorDataSharingPreference`](crate::types::StreamProcessorDataSharingPreference).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StreamProcessorDataSharingPreferenceBuilder {
     pub(crate) opt_in: ::std::option::Option<bool>,
 }

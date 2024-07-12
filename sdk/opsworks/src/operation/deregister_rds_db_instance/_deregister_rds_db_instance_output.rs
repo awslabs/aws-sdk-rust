@@ -18,8 +18,8 @@ impl DeregisterRdsDbInstanceOutput {
 }
 
 /// A builder for [`DeregisterRdsDbInstanceOutput`](crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstanceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeregisterRdsDbInstanceOutputBuilder {
     _request_id: Option<String>,
 }

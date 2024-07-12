@@ -26,8 +26,8 @@ impl LockRuleInput {
 }
 
 /// A builder for [`LockRuleInput`](crate::operation::lock_rule::LockRuleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LockRuleInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) lock_configuration: ::std::option::Option<crate::types::LockConfiguration>,

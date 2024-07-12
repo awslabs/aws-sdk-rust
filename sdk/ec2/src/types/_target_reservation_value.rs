@@ -27,8 +27,8 @@ impl TargetReservationValue {
 }
 
 /// A builder for [`TargetReservationValue`](crate::types::TargetReservationValue).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TargetReservationValueBuilder {
     pub(crate) reservation_value: ::std::option::Option<crate::types::ReservationValue>,
     pub(crate) target_configuration: ::std::option::Option<crate::types::TargetConfiguration>,

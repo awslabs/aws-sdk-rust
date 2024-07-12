@@ -29,8 +29,8 @@ impl GetAssociatedEnclaveCertificateIamRolesOutput {
 }
 
 /// A builder for [`GetAssociatedEnclaveCertificateIamRolesOutput`](crate::operation::get_associated_enclave_certificate_iam_roles::GetAssociatedEnclaveCertificateIamRolesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAssociatedEnclaveCertificateIamRolesOutputBuilder {
     pub(crate) associated_roles: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedRole>>,
     _request_id: Option<String>,

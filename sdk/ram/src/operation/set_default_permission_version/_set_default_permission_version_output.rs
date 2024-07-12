@@ -32,8 +32,8 @@ impl SetDefaultPermissionVersionOutput {
 }
 
 /// A builder for [`SetDefaultPermissionVersionOutput`](crate::operation::set_default_permission_version::SetDefaultPermissionVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetDefaultPermissionVersionOutputBuilder {
     pub(crate) return_value: ::std::option::Option<bool>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

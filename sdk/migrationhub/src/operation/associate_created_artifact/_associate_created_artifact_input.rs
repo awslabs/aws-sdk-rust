@@ -38,8 +38,8 @@ impl AssociateCreatedArtifactInput {
 }
 
 /// A builder for [`AssociateCreatedArtifactInput`](crate::operation::associate_created_artifact::AssociateCreatedArtifactInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateCreatedArtifactInputBuilder {
     pub(crate) progress_update_stream: ::std::option::Option<::std::string::String>,
     pub(crate) migration_task_name: ::std::option::Option<::std::string::String>,

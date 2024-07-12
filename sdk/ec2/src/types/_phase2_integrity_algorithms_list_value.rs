@@ -21,8 +21,8 @@ impl Phase2IntegrityAlgorithmsListValue {
 }
 
 /// A builder for [`Phase2IntegrityAlgorithmsListValue`](crate::types::Phase2IntegrityAlgorithmsListValue).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Phase2IntegrityAlgorithmsListValueBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
 }

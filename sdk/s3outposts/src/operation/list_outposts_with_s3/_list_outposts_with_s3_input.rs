@@ -26,8 +26,8 @@ impl ListOutpostsWithS3Input {
 }
 
 /// A builder for [`ListOutpostsWithS3Input`](crate::operation::list_outposts_with_s3::ListOutpostsWithS3Input).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListOutpostsWithS3InputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

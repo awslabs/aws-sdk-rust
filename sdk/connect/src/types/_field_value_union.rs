@@ -39,8 +39,8 @@ impl FieldValueUnion {
 }
 
 /// A builder for [`FieldValueUnion`](crate::types::FieldValueUnion).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FieldValueUnionBuilder {
     pub(crate) boolean_value: ::std::option::Option<bool>,
     pub(crate) double_value: ::std::option::Option<f64>,

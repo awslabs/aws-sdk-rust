@@ -27,8 +27,8 @@ impl QueryArgProfileConfig {
 }
 
 /// A builder for [`QueryArgProfileConfig`](crate::types::QueryArgProfileConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct QueryArgProfileConfigBuilder {
     pub(crate) forward_when_query_arg_profile_is_unknown: ::std::option::Option<bool>,
     pub(crate) query_arg_profiles: ::std::option::Option<crate::types::QueryArgProfiles>,

@@ -23,8 +23,8 @@ impl DescribeRobotInput {
 }
 
 /// A builder for [`DescribeRobotInput`](crate::operation::describe_robot::DescribeRobotInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRobotInputBuilder {
     pub(crate) robot: ::std::option::Option<::std::string::String>,
 }

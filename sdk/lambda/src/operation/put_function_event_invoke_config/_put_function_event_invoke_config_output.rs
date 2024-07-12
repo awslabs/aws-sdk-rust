@@ -72,8 +72,8 @@ impl PutFunctionEventInvokeConfigOutput {
 }
 
 /// A builder for [`PutFunctionEventInvokeConfigOutput`](crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutFunctionEventInvokeConfigOutputBuilder {
     pub(crate) last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) function_arn: ::std::option::Option<::std::string::String>,

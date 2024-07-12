@@ -11,8 +11,8 @@ impl ListOpenIdConnectProvidersInput {
 }
 
 /// A builder for [`ListOpenIdConnectProvidersInput`](crate::operation::list_open_id_connect_providers::ListOpenIdConnectProvidersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListOpenIdConnectProvidersInputBuilder {}
 impl ListOpenIdConnectProvidersInputBuilder {
     /// Consumes the builder and constructs a [`ListOpenIdConnectProvidersInput`](crate::operation::list_open_id_connect_providers::ListOpenIdConnectProvidersInput).

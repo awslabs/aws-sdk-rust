@@ -32,8 +32,8 @@ impl GetGlobalSettingsOutput {
 }
 
 /// A builder for [`GetGlobalSettingsOutput`](crate::operation::get_global_settings::GetGlobalSettingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetGlobalSettingsOutputBuilder {
     pub(crate) business_calling: ::std::option::Option<crate::types::BusinessCallingSettings>,
     pub(crate) voice_connector: ::std::option::Option<crate::types::VoiceConnectorSettings>,

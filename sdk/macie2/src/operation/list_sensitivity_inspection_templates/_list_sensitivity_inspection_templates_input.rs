@@ -26,8 +26,8 @@ impl ListSensitivityInspectionTemplatesInput {
 }
 
 /// A builder for [`ListSensitivityInspectionTemplatesInput`](crate::operation::list_sensitivity_inspection_templates::ListSensitivityInspectionTemplatesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSensitivityInspectionTemplatesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

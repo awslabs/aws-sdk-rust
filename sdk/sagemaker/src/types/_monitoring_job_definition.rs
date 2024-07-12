@@ -71,8 +71,8 @@ impl MonitoringJobDefinition {
 }
 
 /// A builder for [`MonitoringJobDefinition`](crate::types::MonitoringJobDefinition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MonitoringJobDefinitionBuilder {
     pub(crate) baseline_config: ::std::option::Option<crate::types::MonitoringBaselineConfig>,
     pub(crate) monitoring_inputs: ::std::option::Option<::std::vec::Vec<crate::types::MonitoringInput>>,

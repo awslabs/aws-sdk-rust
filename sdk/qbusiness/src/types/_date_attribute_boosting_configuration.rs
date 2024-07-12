@@ -28,8 +28,8 @@ impl DateAttributeBoostingConfiguration {
 }
 
 /// A builder for [`DateAttributeBoostingConfiguration`](crate::types::DateAttributeBoostingConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DateAttributeBoostingConfigurationBuilder {
     pub(crate) boosting_level: ::std::option::Option<crate::types::DocumentAttributeBoostingLevel>,
     pub(crate) boosting_duration_in_seconds: ::std::option::Option<i64>,

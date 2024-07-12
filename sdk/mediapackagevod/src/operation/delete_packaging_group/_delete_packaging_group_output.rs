@@ -18,8 +18,8 @@ impl DeletePackagingGroupOutput {
 }
 
 /// A builder for [`DeletePackagingGroupOutput`](crate::operation::delete_packaging_group::DeletePackagingGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePackagingGroupOutputBuilder {
     _request_id: Option<String>,
 }

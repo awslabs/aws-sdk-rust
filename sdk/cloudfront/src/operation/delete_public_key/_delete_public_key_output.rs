@@ -18,8 +18,8 @@ impl DeletePublicKeyOutput {
 }
 
 /// A builder for [`DeletePublicKeyOutput`](crate::operation::delete_public_key::DeletePublicKeyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePublicKeyOutputBuilder {
     _request_id: Option<String>,
 }

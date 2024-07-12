@@ -58,8 +58,8 @@ impl CreateSoftwareUpdateJobInput {
 }
 
 /// A builder for [`CreateSoftwareUpdateJobInput`](crate::operation::create_software_update_job::CreateSoftwareUpdateJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSoftwareUpdateJobInputBuilder {
     pub(crate) amzn_client_token: ::std::option::Option<::std::string::String>,
     pub(crate) s3_url_signer_role: ::std::option::Option<::std::string::String>,

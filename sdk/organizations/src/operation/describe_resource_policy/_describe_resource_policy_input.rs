@@ -11,8 +11,8 @@ impl DescribeResourcePolicyInput {
 }
 
 /// A builder for [`DescribeResourcePolicyInput`](crate::operation::describe_resource_policy::DescribeResourcePolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeResourcePolicyInputBuilder {}
 impl DescribeResourcePolicyInputBuilder {
     /// Consumes the builder and constructs a [`DescribeResourcePolicyInput`](crate::operation::describe_resource_policy::DescribeResourcePolicyInput).

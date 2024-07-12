@@ -26,8 +26,8 @@ impl DeleteWorkflowInput {
 }
 
 /// A builder for [`DeleteWorkflowInput`](crate::operation::delete_workflow::DeleteWorkflowInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteWorkflowInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) workflow_id: ::std::option::Option<::std::string::String>,

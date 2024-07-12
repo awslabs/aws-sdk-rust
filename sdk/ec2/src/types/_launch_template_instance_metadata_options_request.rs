@@ -71,8 +71,8 @@ impl LaunchTemplateInstanceMetadataOptionsRequest {
 }
 
 /// A builder for [`LaunchTemplateInstanceMetadataOptionsRequest`](crate::types::LaunchTemplateInstanceMetadataOptionsRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LaunchTemplateInstanceMetadataOptionsRequestBuilder {
     pub(crate) http_tokens: ::std::option::Option<crate::types::LaunchTemplateHttpTokensState>,
     pub(crate) http_put_response_hop_limit: ::std::option::Option<i32>,

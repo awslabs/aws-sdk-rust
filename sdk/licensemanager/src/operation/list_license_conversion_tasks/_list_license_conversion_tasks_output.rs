@@ -34,8 +34,8 @@ impl ListLicenseConversionTasksOutput {
 }
 
 /// A builder for [`ListLicenseConversionTasksOutput`](crate::operation::list_license_conversion_tasks::ListLicenseConversionTasksOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListLicenseConversionTasksOutputBuilder {
     pub(crate) license_conversion_tasks: ::std::option::Option<::std::vec::Vec<crate::types::LicenseConversionTask>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

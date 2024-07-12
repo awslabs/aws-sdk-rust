@@ -43,8 +43,8 @@ impl BatchDetectSyntaxOutput {
 }
 
 /// A builder for [`BatchDetectSyntaxOutput`](crate::operation::batch_detect_syntax::BatchDetectSyntaxOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct BatchDetectSyntaxOutputBuilder {
     pub(crate) result_list: ::std::option::Option<::std::vec::Vec<crate::types::BatchDetectSyntaxItemResult>>,
     pub(crate) error_list: ::std::option::Option<::std::vec::Vec<crate::types::BatchItemError>>,

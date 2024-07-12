@@ -33,8 +33,8 @@ impl ListImageSetVersionsOutput {
 }
 
 /// A builder for [`ListImageSetVersionsOutput`](crate::operation::list_image_set_versions::ListImageSetVersionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListImageSetVersionsOutputBuilder {
     pub(crate) image_set_properties_list: ::std::option::Option<::std::vec::Vec<crate::types::ImageSetProperties>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

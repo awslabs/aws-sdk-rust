@@ -43,8 +43,8 @@ impl DescribeBackupsInput {
 }
 
 /// A builder for [`DescribeBackupsInput`](crate::operation::describe_backups::DescribeBackupsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeBackupsInputBuilder {
     pub(crate) backup_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,

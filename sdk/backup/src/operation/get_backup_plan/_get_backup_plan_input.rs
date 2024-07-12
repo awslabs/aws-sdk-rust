@@ -26,8 +26,8 @@ impl GetBackupPlanInput {
 }
 
 /// A builder for [`GetBackupPlanInput`](crate::operation::get_backup_plan::GetBackupPlanInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBackupPlanInputBuilder {
     pub(crate) backup_plan_id: ::std::option::Option<::std::string::String>,
     pub(crate) version_id: ::std::option::Option<::std::string::String>,

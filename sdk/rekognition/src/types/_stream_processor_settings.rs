@@ -27,8 +27,8 @@ impl StreamProcessorSettings {
 }
 
 /// A builder for [`StreamProcessorSettings`](crate::types::StreamProcessorSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StreamProcessorSettingsBuilder {
     pub(crate) face_search: ::std::option::Option<crate::types::FaceSearchSettings>,
     pub(crate) connected_home: ::std::option::Option<crate::types::ConnectedHomeSettings>,

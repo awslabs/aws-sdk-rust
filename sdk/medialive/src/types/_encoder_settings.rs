@@ -107,8 +107,8 @@ impl EncoderSettings {
 }
 
 /// A builder for [`EncoderSettings`](crate::types::EncoderSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EncoderSettingsBuilder {
     pub(crate) audio_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::AudioDescription>>,
     pub(crate) avail_blanking: ::std::option::Option<crate::types::AvailBlanking>,

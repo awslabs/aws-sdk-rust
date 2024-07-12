@@ -34,8 +34,8 @@ impl DescribeDataRepositoryAssociationsOutput {
 }
 
 /// A builder for [`DescribeDataRepositoryAssociationsOutput`](crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDataRepositoryAssociationsOutputBuilder {
     pub(crate) associations: ::std::option::Option<::std::vec::Vec<crate::types::DataRepositoryAssociation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

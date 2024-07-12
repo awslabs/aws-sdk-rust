@@ -40,8 +40,8 @@ impl EdiConfiguration {
 }
 
 /// A builder for [`EdiConfiguration`](crate::types::EdiConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EdiConfigurationBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::EdiType>,
     pub(crate) input_location: ::std::option::Option<crate::types::S3Location>,

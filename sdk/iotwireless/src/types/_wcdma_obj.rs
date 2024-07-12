@@ -65,8 +65,8 @@ impl WcdmaObj {
 }
 
 /// A builder for [`WcdmaObj`](crate::types::WcdmaObj).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WcdmaObjBuilder {
     pub(crate) mcc: ::std::option::Option<i32>,
     pub(crate) mnc: ::std::option::Option<i32>,

@@ -26,8 +26,8 @@ impl DeregisterGatewayInstanceInput {
 }
 
 /// A builder for [`DeregisterGatewayInstanceInput`](crate::operation::deregister_gateway_instance::DeregisterGatewayInstanceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeregisterGatewayInstanceInputBuilder {
     pub(crate) force: ::std::option::Option<bool>,
     pub(crate) gateway_instance_arn: ::std::option::Option<::std::string::String>,

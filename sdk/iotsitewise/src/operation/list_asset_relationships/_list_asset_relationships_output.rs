@@ -33,8 +33,8 @@ impl ListAssetRelationshipsOutput {
 }
 
 /// A builder for [`ListAssetRelationshipsOutput`](crate::operation::list_asset_relationships::ListAssetRelationshipsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAssetRelationshipsOutputBuilder {
     pub(crate) asset_relationship_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AssetRelationshipSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

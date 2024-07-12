@@ -18,8 +18,8 @@ impl DeleteAgentMemoryOutput {
 }
 
 /// A builder for [`DeleteAgentMemoryOutput`](crate::operation::delete_agent_memory::DeleteAgentMemoryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAgentMemoryOutputBuilder {
     _request_id: Option<String>,
 }

@@ -76,8 +76,8 @@ impl PutSnapshotBlockInput {
 }
 
 /// A builder for [`PutSnapshotBlockInput`](crate::operation::put_snapshot_block::PutSnapshotBlockInput).
-#[non_exhaustive]
 #[derive(::std::default::Default)]
+#[non_exhaustive]
 pub struct PutSnapshotBlockInputBuilder {
     pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
     pub(crate) block_index: ::std::option::Option<i32>,

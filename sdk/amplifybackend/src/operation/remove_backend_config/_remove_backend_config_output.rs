@@ -26,8 +26,8 @@ impl RemoveBackendConfigOutput {
 }
 
 /// A builder for [`RemoveBackendConfigOutput`](crate::operation::remove_backend_config::RemoveBackendConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoveBackendConfigOutputBuilder {
     pub(crate) error: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

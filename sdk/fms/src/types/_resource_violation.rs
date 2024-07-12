@@ -178,8 +178,8 @@ impl ResourceViolation {
 }
 
 /// A builder for [`ResourceViolation`](crate::types::ResourceViolation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResourceViolationBuilder {
     pub(crate) aws_vpc_security_group_violation: ::std::option::Option<crate::types::AwsVpcSecurityGroupViolation>,
     pub(crate) aws_ec2_network_interface_violation: ::std::option::Option<crate::types::AwsEc2NetworkInterfaceViolation>,

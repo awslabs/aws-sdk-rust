@@ -26,8 +26,8 @@ impl DescribeGlobalTableOutput {
 }
 
 /// A builder for [`DescribeGlobalTableOutput`](crate::operation::describe_global_table::DescribeGlobalTableOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeGlobalTableOutputBuilder {
     pub(crate) global_table_description: ::std::option::Option<crate::types::GlobalTableDescription>,
     _request_id: Option<String>,

@@ -45,8 +45,8 @@ impl ReplicationStatusType {
 }
 
 /// A builder for [`ReplicationStatusType`](crate::types::ReplicationStatusType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReplicationStatusTypeBuilder {
     pub(crate) region: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,

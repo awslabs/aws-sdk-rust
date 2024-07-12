@@ -53,8 +53,8 @@ impl AppComponentCompliance {
 }
 
 /// A builder for [`AppComponentCompliance`](crate::types::AppComponentCompliance).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AppComponentComplianceBuilder {
     pub(crate) cost: ::std::option::Option<crate::types::Cost>,
     pub(crate) app_component_name: ::std::option::Option<::std::string::String>,

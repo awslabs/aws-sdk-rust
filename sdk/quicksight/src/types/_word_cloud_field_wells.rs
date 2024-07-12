@@ -22,8 +22,8 @@ impl WordCloudFieldWells {
 }
 
 /// A builder for [`WordCloudFieldWells`](crate::types::WordCloudFieldWells).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WordCloudFieldWellsBuilder {
     pub(crate) word_cloud_aggregated_field_wells: ::std::option::Option<crate::types::WordCloudAggregatedFieldWells>,
 }

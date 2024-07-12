@@ -27,8 +27,8 @@ impl AutoDeployment {
 }
 
 /// A builder for [`AutoDeployment`](crate::types::AutoDeployment).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AutoDeploymentBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) retain_stacks_on_account_removal: ::std::option::Option<bool>,

@@ -27,8 +27,8 @@ impl UpdateRoutingControlInput {
 }
 
 /// A builder for [`UpdateRoutingControlInput`](crate::operation::update_routing_control::UpdateRoutingControlInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRoutingControlInputBuilder {
     pub(crate) routing_control_arn: ::std::option::Option<::std::string::String>,
     pub(crate) routing_control_name: ::std::option::Option<::std::string::String>,

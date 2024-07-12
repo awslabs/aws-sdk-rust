@@ -18,8 +18,8 @@ impl PutAnomalyDetectorOutput {
 }
 
 /// A builder for [`PutAnomalyDetectorOutput`](crate::operation::put_anomaly_detector::PutAnomalyDetectorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutAnomalyDetectorOutputBuilder {
     _request_id: Option<String>,
 }

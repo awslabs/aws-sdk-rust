@@ -41,8 +41,8 @@ impl DeleteWorkspaceServiceAccountTokenOutput {
 }
 
 /// A builder for [`DeleteWorkspaceServiceAccountTokenOutput`](crate::operation::delete_workspace_service_account_token::DeleteWorkspaceServiceAccountTokenOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteWorkspaceServiceAccountTokenOutputBuilder {
     pub(crate) token_id: ::std::option::Option<::std::string::String>,
     pub(crate) service_account_id: ::std::option::Option<::std::string::String>,

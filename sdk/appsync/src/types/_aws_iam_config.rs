@@ -27,8 +27,8 @@ impl AwsIamConfig {
 }
 
 /// A builder for [`AwsIamConfig`](crate::types::AwsIamConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsIamConfigBuilder {
     pub(crate) signing_region: ::std::option::Option<::std::string::String>,
     pub(crate) signing_service_name: ::std::option::Option<::std::string::String>,

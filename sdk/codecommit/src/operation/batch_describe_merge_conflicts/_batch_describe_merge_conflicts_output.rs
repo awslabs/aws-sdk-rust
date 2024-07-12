@@ -61,8 +61,8 @@ impl BatchDescribeMergeConflictsOutput {
 }
 
 /// A builder for [`BatchDescribeMergeConflictsOutput`](crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflictsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDescribeMergeConflictsOutputBuilder {
     pub(crate) conflicts: ::std::option::Option<::std::vec::Vec<crate::types::Conflict>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

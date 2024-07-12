@@ -18,8 +18,8 @@ impl SetVaultAccessPolicyOutput {
 }
 
 /// A builder for [`SetVaultAccessPolicyOutput`](crate::operation::set_vault_access_policy::SetVaultAccessPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetVaultAccessPolicyOutputBuilder {
     _request_id: Option<String>,
 }

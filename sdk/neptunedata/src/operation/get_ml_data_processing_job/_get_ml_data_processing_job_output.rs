@@ -38,8 +38,8 @@ impl GetMlDataProcessingJobOutput {
 }
 
 /// A builder for [`GetMlDataProcessingJobOutput`](crate::operation::get_ml_data_processing_job::GetMlDataProcessingJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMlDataProcessingJobOutputBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,

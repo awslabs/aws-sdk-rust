@@ -51,8 +51,8 @@ impl AttributesResource {
 }
 
 /// A builder for [`AttributesResource`](crate::types::AttributesResource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttributesResourceBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) attribute_type: ::std::option::Option<::std::string::String>,

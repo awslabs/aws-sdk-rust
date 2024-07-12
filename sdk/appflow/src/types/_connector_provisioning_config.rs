@@ -21,8 +21,8 @@ impl ConnectorProvisioningConfig {
 }
 
 /// A builder for [`ConnectorProvisioningConfig`](crate::types::ConnectorProvisioningConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConnectorProvisioningConfigBuilder {
     pub(crate) lambda: ::std::option::Option<crate::types::LambdaConnectorProvisioningConfig>,
 }

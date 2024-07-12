@@ -26,8 +26,8 @@ impl CreateExtendedSourceServerOutput {
 }
 
 /// A builder for [`CreateExtendedSourceServerOutput`](crate::operation::create_extended_source_server::CreateExtendedSourceServerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateExtendedSourceServerOutputBuilder {
     pub(crate) source_server: ::std::option::Option<crate::types::SourceServer>,
     _request_id: Option<String>,

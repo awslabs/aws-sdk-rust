@@ -28,8 +28,8 @@ impl DeleteGroupInput {
 }
 
 /// A builder for [`DeleteGroupInput`](crate::operation::delete_group::DeleteGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteGroupInputBuilder {
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
     pub(crate) group: ::std::option::Option<::std::string::String>,

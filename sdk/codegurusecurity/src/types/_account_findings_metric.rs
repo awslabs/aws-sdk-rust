@@ -45,8 +45,8 @@ impl AccountFindingsMetric {
 }
 
 /// A builder for [`AccountFindingsMetric`](crate::types::AccountFindingsMetric).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AccountFindingsMetricBuilder {
     pub(crate) date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) new_findings: ::std::option::Option<crate::types::FindingMetricsValuePerSeverity>,

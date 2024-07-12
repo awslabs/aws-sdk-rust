@@ -27,8 +27,8 @@ impl CapacityDescription {
 }
 
 /// A builder for [`CapacityDescription`](crate::types::CapacityDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CapacityDescriptionBuilder {
     pub(crate) auto_scaling: ::std::option::Option<crate::types::AutoScalingDescription>,
     pub(crate) provisioned_capacity: ::std::option::Option<crate::types::ProvisionedCapacityDescription>,

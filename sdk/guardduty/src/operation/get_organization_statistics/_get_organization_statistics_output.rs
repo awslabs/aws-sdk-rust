@@ -26,8 +26,8 @@ impl GetOrganizationStatisticsOutput {
 }
 
 /// A builder for [`GetOrganizationStatisticsOutput`](crate::operation::get_organization_statistics::GetOrganizationStatisticsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetOrganizationStatisticsOutputBuilder {
     pub(crate) organization_details: ::std::option::Option<crate::types::OrganizationDetails>,
     _request_id: Option<String>,

@@ -56,8 +56,8 @@ impl ListCandidatesForAutoMlJobInput {
 }
 
 /// A builder for [`ListCandidatesForAutoMlJobInput`](crate::operation::list_candidates_for_auto_ml_job::ListCandidatesForAutoMlJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCandidatesForAutoMlJobInputBuilder {
     pub(crate) auto_ml_job_name: ::std::option::Option<::std::string::String>,
     pub(crate) status_equals: ::std::option::Option<crate::types::CandidateStatus>,

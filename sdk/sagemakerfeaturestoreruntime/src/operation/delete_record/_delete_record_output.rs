@@ -18,8 +18,8 @@ impl DeleteRecordOutput {
 }
 
 /// A builder for [`DeleteRecordOutput`](crate::operation::delete_record::DeleteRecordOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRecordOutputBuilder {
     _request_id: Option<String>,
 }

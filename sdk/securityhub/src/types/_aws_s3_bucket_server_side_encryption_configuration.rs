@@ -23,8 +23,8 @@ impl AwsS3BucketServerSideEncryptionConfiguration {
 }
 
 /// A builder for [`AwsS3BucketServerSideEncryptionConfiguration`](crate::types::AwsS3BucketServerSideEncryptionConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsS3BucketServerSideEncryptionConfigurationBuilder {
     pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::AwsS3BucketServerSideEncryptionRule>>,
 }

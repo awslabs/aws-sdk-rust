@@ -67,8 +67,8 @@ impl AwsEcrContainerAggregation {
 }
 
 /// A builder for [`AwsEcrContainerAggregation`](crate::types::AwsEcrContainerAggregation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEcrContainerAggregationBuilder {
     pub(crate) resource_ids: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) image_shas: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,

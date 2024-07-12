@@ -237,8 +237,8 @@ impl ByteMatchTuple {
 }
 
 /// A builder for [`ByteMatchTuple`](crate::types::ByteMatchTuple).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ByteMatchTupleBuilder {
     pub(crate) field_to_match: ::std::option::Option<crate::types::FieldToMatch>,
     pub(crate) target_string: ::std::option::Option<::aws_smithy_types::Blob>,

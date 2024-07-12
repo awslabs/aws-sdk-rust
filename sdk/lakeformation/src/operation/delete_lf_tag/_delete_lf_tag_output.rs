@@ -18,8 +18,8 @@ impl DeleteLfTagOutput {
 }
 
 /// A builder for [`DeleteLfTagOutput`](crate::operation::delete_lf_tag::DeleteLfTagOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteLfTagOutputBuilder {
     _request_id: Option<String>,
 }

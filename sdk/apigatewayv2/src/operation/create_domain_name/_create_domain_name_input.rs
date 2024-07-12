@@ -41,8 +41,8 @@ impl CreateDomainNameInput {
 }
 
 /// A builder for [`CreateDomainNameInput`](crate::operation::create_domain_name::CreateDomainNameInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDomainNameInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) domain_name_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DomainNameConfiguration>>,

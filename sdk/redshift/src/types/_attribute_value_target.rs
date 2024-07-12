@@ -21,8 +21,8 @@ impl AttributeValueTarget {
 }
 
 /// A builder for [`AttributeValueTarget`](crate::types::AttributeValueTarget).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttributeValueTargetBuilder {
     pub(crate) attribute_value: ::std::option::Option<::std::string::String>,
 }

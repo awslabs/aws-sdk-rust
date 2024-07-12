@@ -36,8 +36,8 @@ impl DescribeMetadataModelAssessmentsOutput {
 }
 
 /// A builder for [`DescribeMetadataModelAssessmentsOutput`](crate::operation::describe_metadata_model_assessments::DescribeMetadataModelAssessmentsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeMetadataModelAssessmentsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) requests: ::std::option::Option<::std::vec::Vec<crate::types::SchemaConversionRequest>>,

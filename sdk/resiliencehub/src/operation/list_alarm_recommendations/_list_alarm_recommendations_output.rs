@@ -33,8 +33,8 @@ impl ListAlarmRecommendationsOutput {
 }
 
 /// A builder for [`ListAlarmRecommendationsOutput`](crate::operation::list_alarm_recommendations::ListAlarmRecommendationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAlarmRecommendationsOutputBuilder {
     pub(crate) alarm_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::AlarmRecommendation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

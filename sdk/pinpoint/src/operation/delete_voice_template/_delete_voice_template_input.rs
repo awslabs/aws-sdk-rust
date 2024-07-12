@@ -48,8 +48,8 @@ impl DeleteVoiceTemplateInput {
 }
 
 /// A builder for [`DeleteVoiceTemplateInput`](crate::operation::delete_voice_template::DeleteVoiceTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVoiceTemplateInputBuilder {
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,

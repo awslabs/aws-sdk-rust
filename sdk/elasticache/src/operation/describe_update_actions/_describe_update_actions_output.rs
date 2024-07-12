@@ -34,8 +34,8 @@ impl DescribeUpdateActionsOutput {
 }
 
 /// A builder for [`DescribeUpdateActionsOutput`](crate::operation::describe_update_actions::DescribeUpdateActionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeUpdateActionsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) update_actions: ::std::option::Option<::std::vec::Vec<crate::types::UpdateAction>>,

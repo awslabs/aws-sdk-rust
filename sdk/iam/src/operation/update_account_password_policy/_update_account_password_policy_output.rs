@@ -18,8 +18,8 @@ impl UpdateAccountPasswordPolicyOutput {
 }
 
 /// A builder for [`UpdateAccountPasswordPolicyOutput`](crate::operation::update_account_password_policy::UpdateAccountPasswordPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAccountPasswordPolicyOutputBuilder {
     _request_id: Option<String>,
 }

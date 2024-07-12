@@ -34,8 +34,8 @@ impl ListSourceRepositoriesOutput {
 }
 
 /// A builder for [`ListSourceRepositoriesOutput`](crate::operation::list_source_repositories::ListSourceRepositoriesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSourceRepositoriesOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ListSourceRepositoriesItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -287,8 +287,8 @@ impl ScheduledAction {
 }
 
 /// A builder for [`ScheduledAction`](crate::types::ScheduledAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScheduledActionBuilder {
     pub(crate) scheduled_action_name: ::std::option::Option<::std::string::String>,
     pub(crate) scheduled_action_arn: ::std::option::Option<::std::string::String>,

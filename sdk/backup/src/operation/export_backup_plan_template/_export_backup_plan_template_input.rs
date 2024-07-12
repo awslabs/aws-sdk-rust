@@ -20,8 +20,8 @@ impl ExportBackupPlanTemplateInput {
 }
 
 /// A builder for [`ExportBackupPlanTemplateInput`](crate::operation::export_backup_plan_template::ExportBackupPlanTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExportBackupPlanTemplateInputBuilder {
     pub(crate) backup_plan_id: ::std::option::Option<::std::string::String>,
 }

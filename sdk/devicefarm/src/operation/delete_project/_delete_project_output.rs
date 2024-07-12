@@ -19,8 +19,8 @@ impl DeleteProjectOutput {
 }
 
 /// A builder for [`DeleteProjectOutput`](crate::operation::delete_project::DeleteProjectOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteProjectOutputBuilder {
     _request_id: Option<String>,
 }

@@ -153,8 +153,8 @@ impl EbsBlockDevice {
 }
 
 /// A builder for [`EbsBlockDevice`](crate::types::EbsBlockDevice).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EbsBlockDeviceBuilder {
     pub(crate) delete_on_termination: ::std::option::Option<bool>,
     pub(crate) iops: ::std::option::Option<i32>,

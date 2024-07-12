@@ -31,8 +31,8 @@ impl RiskExceptionConfigurationType {
 }
 
 /// A builder for [`RiskExceptionConfigurationType`](crate::types::RiskExceptionConfigurationType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RiskExceptionConfigurationTypeBuilder {
     pub(crate) blocked_ip_range_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) skipped_ip_range_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

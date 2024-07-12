@@ -77,8 +77,8 @@ impl FileSystemAssociationInfo {
 }
 
 /// A builder for [`FileSystemAssociationInfo`](crate::types::FileSystemAssociationInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FileSystemAssociationInfoBuilder {
     pub(crate) file_system_association_arn: ::std::option::Option<::std::string::String>,
     pub(crate) location_arn: ::std::option::Option<::std::string::String>,

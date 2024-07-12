@@ -27,8 +27,8 @@ impl ListDeploymentGroupsInput {
 }
 
 /// A builder for [`ListDeploymentGroupsInput`](crate::operation::list_deployment_groups::ListDeploymentGroupsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDeploymentGroupsInputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

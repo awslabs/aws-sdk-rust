@@ -38,8 +38,8 @@ impl ListLaunchesInput {
 }
 
 /// A builder for [`ListLaunchesInput`](crate::operation::list_launches::ListLaunchesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListLaunchesInputBuilder {
     pub(crate) project: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

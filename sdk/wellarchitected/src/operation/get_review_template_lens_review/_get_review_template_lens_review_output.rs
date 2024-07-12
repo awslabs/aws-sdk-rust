@@ -32,8 +32,8 @@ impl GetReviewTemplateLensReviewOutput {
 }
 
 /// A builder for [`GetReviewTemplateLensReviewOutput`](crate::operation::get_review_template_lens_review::GetReviewTemplateLensReviewOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetReviewTemplateLensReviewOutputBuilder {
     pub(crate) template_arn: ::std::option::Option<::std::string::String>,
     pub(crate) lens_review: ::std::option::Option<crate::types::ReviewTemplateLensReview>,

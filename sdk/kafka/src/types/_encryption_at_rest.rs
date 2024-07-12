@@ -21,8 +21,8 @@ impl EncryptionAtRest {
 }
 
 /// A builder for [`EncryptionAtRest`](crate::types::EncryptionAtRest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EncryptionAtRestBuilder {
     pub(crate) data_volume_kms_key_id: ::std::option::Option<::std::string::String>,
 }

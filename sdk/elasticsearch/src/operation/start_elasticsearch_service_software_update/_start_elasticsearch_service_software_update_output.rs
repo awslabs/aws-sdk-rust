@@ -28,8 +28,8 @@ impl StartElasticsearchServiceSoftwareUpdateOutput {
 }
 
 /// A builder for [`StartElasticsearchServiceSoftwareUpdateOutput`](crate::operation::start_elasticsearch_service_software_update::StartElasticsearchServiceSoftwareUpdateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartElasticsearchServiceSoftwareUpdateOutputBuilder {
     pub(crate) service_software_options: ::std::option::Option<crate::types::ServiceSoftwareOptions>,
     _request_id: Option<String>,

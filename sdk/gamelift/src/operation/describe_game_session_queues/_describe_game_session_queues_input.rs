@@ -34,8 +34,8 @@ impl DescribeGameSessionQueuesInput {
 }
 
 /// A builder for [`DescribeGameSessionQueuesInput`](crate::operation::describe_game_session_queues::DescribeGameSessionQueuesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeGameSessionQueuesInputBuilder {
     pub(crate) names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) limit: ::std::option::Option<i32>,

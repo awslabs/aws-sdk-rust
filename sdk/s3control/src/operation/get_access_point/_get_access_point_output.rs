@@ -88,8 +88,8 @@ impl GetAccessPointOutput {
 }
 
 /// A builder for [`GetAccessPointOutput`](crate::operation::get_access_point::GetAccessPointOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAccessPointOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) bucket: ::std::option::Option<::std::string::String>,

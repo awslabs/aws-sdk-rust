@@ -89,8 +89,8 @@ impl Compliance {
 }
 
 /// A builder for [`Compliance`](crate::types::Compliance).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ComplianceBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ComplianceStatus>,
     pub(crate) related_requirements: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

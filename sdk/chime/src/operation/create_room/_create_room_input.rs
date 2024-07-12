@@ -41,8 +41,8 @@ impl CreateRoomInput {
 }
 
 /// A builder for [`CreateRoomInput`](crate::operation::create_room::CreateRoomInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateRoomInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

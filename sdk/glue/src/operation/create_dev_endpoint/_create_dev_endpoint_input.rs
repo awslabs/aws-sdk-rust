@@ -142,8 +142,8 @@ impl CreateDevEndpointInput {
 }
 
 /// A builder for [`CreateDevEndpointInput`](crate::operation::create_dev_endpoint::CreateDevEndpointInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDevEndpointInputBuilder {
     pub(crate) endpoint_name: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,

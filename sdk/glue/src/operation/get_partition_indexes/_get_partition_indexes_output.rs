@@ -34,8 +34,8 @@ impl GetPartitionIndexesOutput {
 }
 
 /// A builder for [`GetPartitionIndexesOutput`](crate::operation::get_partition_indexes::GetPartitionIndexesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPartitionIndexesOutputBuilder {
     pub(crate) partition_index_descriptor_list: ::std::option::Option<::std::vec::Vec<crate::types::PartitionIndexDescriptor>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

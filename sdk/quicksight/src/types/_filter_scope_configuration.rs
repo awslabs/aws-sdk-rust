@@ -28,8 +28,8 @@ impl FilterScopeConfiguration {
 }
 
 /// A builder for [`FilterScopeConfiguration`](crate::types::FilterScopeConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FilterScopeConfigurationBuilder {
     pub(crate) selected_sheets: ::std::option::Option<crate::types::SelectedSheetsFilterScopeConfiguration>,
     pub(crate) all_sheets: ::std::option::Option<crate::types::AllSheetsFilterScopeConfiguration>,

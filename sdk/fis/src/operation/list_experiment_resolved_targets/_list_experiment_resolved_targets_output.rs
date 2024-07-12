@@ -34,8 +34,8 @@ impl ListExperimentResolvedTargetsOutput {
 }
 
 /// A builder for [`ListExperimentResolvedTargetsOutput`](crate::operation::list_experiment_resolved_targets::ListExperimentResolvedTargetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListExperimentResolvedTargetsOutputBuilder {
     pub(crate) resolved_targets: ::std::option::Option<::std::vec::Vec<crate::types::ResolvedTarget>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

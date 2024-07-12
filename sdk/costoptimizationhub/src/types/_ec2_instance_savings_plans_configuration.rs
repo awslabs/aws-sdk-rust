@@ -51,8 +51,8 @@ impl Ec2InstanceSavingsPlansConfiguration {
 }
 
 /// A builder for [`Ec2InstanceSavingsPlansConfiguration`](crate::types::Ec2InstanceSavingsPlansConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Ec2InstanceSavingsPlansConfigurationBuilder {
     pub(crate) account_scope: ::std::option::Option<::std::string::String>,
     pub(crate) term: ::std::option::Option<::std::string::String>,

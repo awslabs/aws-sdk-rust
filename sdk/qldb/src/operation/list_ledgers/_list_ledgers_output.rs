@@ -46,8 +46,8 @@ impl ListLedgersOutput {
 }
 
 /// A builder for [`ListLedgersOutput`](crate::operation::list_ledgers::ListLedgersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListLedgersOutputBuilder {
     pub(crate) ledgers: ::std::option::Option<::std::vec::Vec<crate::types::LedgerSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

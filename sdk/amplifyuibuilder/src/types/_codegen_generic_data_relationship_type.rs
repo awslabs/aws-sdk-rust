@@ -74,8 +74,8 @@ impl CodegenGenericDataRelationshipType {
 }
 
 /// A builder for [`CodegenGenericDataRelationshipType`](crate::types::CodegenGenericDataRelationshipType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CodegenGenericDataRelationshipTypeBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::GenericDataRelationshipType>,
     pub(crate) related_model_name: ::std::option::Option<::std::string::String>,

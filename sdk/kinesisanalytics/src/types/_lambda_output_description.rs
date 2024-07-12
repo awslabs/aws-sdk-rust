@@ -27,8 +27,8 @@ impl LambdaOutputDescription {
 }
 
 /// A builder for [`LambdaOutputDescription`](crate::types::LambdaOutputDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LambdaOutputDescriptionBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,

@@ -18,8 +18,8 @@ impl StopBulkDeploymentOutput {
 }
 
 /// A builder for [`StopBulkDeploymentOutput`](crate::operation::stop_bulk_deployment::StopBulkDeploymentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopBulkDeploymentOutputBuilder {
     _request_id: Option<String>,
 }

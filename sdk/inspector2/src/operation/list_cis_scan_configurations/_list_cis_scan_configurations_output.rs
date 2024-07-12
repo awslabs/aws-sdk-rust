@@ -34,8 +34,8 @@ impl ListCisScanConfigurationsOutput {
 }
 
 /// A builder for [`ListCisScanConfigurationsOutput`](crate::operation::list_cis_scan_configurations::ListCisScanConfigurationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCisScanConfigurationsOutputBuilder {
     pub(crate) scan_configurations: ::std::option::Option<::std::vec::Vec<crate::types::CisScanConfiguration>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

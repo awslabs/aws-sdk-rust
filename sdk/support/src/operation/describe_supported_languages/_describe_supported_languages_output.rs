@@ -28,8 +28,8 @@ impl DescribeSupportedLanguagesOutput {
 }
 
 /// A builder for [`DescribeSupportedLanguagesOutput`](crate::operation::describe_supported_languages::DescribeSupportedLanguagesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSupportedLanguagesOutputBuilder {
     pub(crate) supported_languages: ::std::option::Option<::std::vec::Vec<crate::types::SupportedLanguage>>,
     _request_id: Option<String>,

@@ -26,8 +26,8 @@ impl RedriveExecutionInput {
 }
 
 /// A builder for [`RedriveExecutionInput`](crate::operation::redrive_execution::RedriveExecutionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RedriveExecutionInputBuilder {
     pub(crate) execution_arn: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

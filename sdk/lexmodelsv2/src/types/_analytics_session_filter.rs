@@ -173,8 +173,8 @@ impl AnalyticsSessionFilter {
 }
 
 /// A builder for [`AnalyticsSessionFilter`](crate::types::AnalyticsSessionFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AnalyticsSessionFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::AnalyticsSessionFilterName>,
     pub(crate) operator: ::std::option::Option<crate::types::AnalyticsFilterOperator>,

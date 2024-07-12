@@ -21,8 +21,8 @@ impl MonthlyTransfer {
 }
 
 /// A builder for [`MonthlyTransfer`](crate::types::MonthlyTransfer).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MonthlyTransferBuilder {
     pub(crate) gb_per_month_allocated: ::std::option::Option<i32>,
 }

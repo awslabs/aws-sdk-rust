@@ -74,8 +74,8 @@ impl GetDevicePositionHistoryInput {
 }
 
 /// A builder for [`GetDevicePositionHistoryInput`](crate::operation::get_device_position_history::GetDevicePositionHistoryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDevicePositionHistoryInputBuilder {
     pub(crate) tracker_name: ::std::option::Option<::std::string::String>,
     pub(crate) device_id: ::std::option::Option<::std::string::String>,

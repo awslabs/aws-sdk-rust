@@ -21,8 +21,8 @@ impl Data {
 }
 
 /// A builder for [`Data`](crate::types::Data).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataBuilder {
     pub(crate) performance_insights_metric: ::std::option::Option<crate::types::PerformanceInsightsMetric>,
 }

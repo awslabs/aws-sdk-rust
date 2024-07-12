@@ -36,8 +36,8 @@ impl ListSimulationJobsInput {
 }
 
 /// A builder for [`ListSimulationJobsInput`](crate::operation::list_simulation_jobs::ListSimulationJobsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSimulationJobsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

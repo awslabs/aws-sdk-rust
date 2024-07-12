@@ -91,8 +91,8 @@ impl NetAppOntapCluster {
 }
 
 /// A builder for [`NetAppOntapCluster`](crate::types::NetAppOntapCluster).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NetAppOntapClusterBuilder {
     pub(crate) cifs_share_count: ::std::option::Option<i64>,
     pub(crate) nfs_exported_volumes: ::std::option::Option<i64>,

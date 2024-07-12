@@ -33,8 +33,8 @@ impl ConfluencePageToIndexFieldMapping {
 }
 
 /// A builder for [`ConfluencePageToIndexFieldMapping`](crate::types::ConfluencePageToIndexFieldMapping).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConfluencePageToIndexFieldMappingBuilder {
     pub(crate) data_source_field_name: ::std::option::Option<crate::types::ConfluencePageFieldName>,
     pub(crate) date_field_format: ::std::option::Option<::std::string::String>,

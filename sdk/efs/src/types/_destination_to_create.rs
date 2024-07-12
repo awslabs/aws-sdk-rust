@@ -59,8 +59,8 @@ impl DestinationToCreate {
 }
 
 /// A builder for [`DestinationToCreate`](crate::types::DestinationToCreate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DestinationToCreateBuilder {
     pub(crate) region: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zone_name: ::std::option::Option<::std::string::String>,

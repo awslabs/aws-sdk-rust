@@ -27,8 +27,8 @@ impl AwsMountPoint {
 }
 
 /// A builder for [`AwsMountPoint`](crate::types::AwsMountPoint).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsMountPointBuilder {
     pub(crate) source_volume: ::std::option::Option<::std::string::String>,
     pub(crate) container_path: ::std::option::Option<::std::string::String>,

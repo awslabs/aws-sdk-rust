@@ -26,8 +26,8 @@ impl CreateFolderOutput {
 }
 
 /// A builder for [`CreateFolderOutput`](crate::operation::create_folder::CreateFolderOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateFolderOutputBuilder {
     pub(crate) metadata: ::std::option::Option<crate::types::FolderMetadata>,
     _request_id: Option<String>,

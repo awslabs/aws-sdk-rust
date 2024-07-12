@@ -27,8 +27,8 @@ impl PortMapping {
 }
 
 /// A builder for [`PortMapping`](crate::types::PortMapping).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PortMappingBuilder {
     pub(crate) port: ::std::option::Option<i32>,
     pub(crate) protocol: ::std::option::Option<crate::types::PortProtocol>,

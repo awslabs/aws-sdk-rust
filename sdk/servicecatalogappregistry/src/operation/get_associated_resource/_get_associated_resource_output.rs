@@ -40,8 +40,8 @@ impl GetAssociatedResourceOutput {
 }
 
 /// A builder for [`GetAssociatedResourceOutput`](crate::operation::get_associated_resource::GetAssociatedResourceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAssociatedResourceOutputBuilder {
     pub(crate) resource: ::std::option::Option<crate::types::Resource>,
     pub(crate) options: ::std::option::Option<::std::vec::Vec<crate::types::AssociationOption>>,

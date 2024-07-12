@@ -34,8 +34,8 @@ impl DescribeFleetAdvisorSchemasOutput {
 }
 
 /// A builder for [`DescribeFleetAdvisorSchemasOutput`](crate::operation::describe_fleet_advisor_schemas::DescribeFleetAdvisorSchemasOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFleetAdvisorSchemasOutputBuilder {
     pub(crate) fleet_advisor_schemas: ::std::option::Option<::std::vec::Vec<crate::types::SchemaResponse>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

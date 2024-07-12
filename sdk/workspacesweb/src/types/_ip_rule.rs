@@ -36,8 +36,8 @@ impl IpRule {
 }
 
 /// A builder for [`IpRule`](crate::types::IpRule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct IpRuleBuilder {
     pub(crate) ip_range: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

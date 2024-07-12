@@ -21,8 +21,8 @@ impl LaunchTemplateHibernationOptions {
 }
 
 /// A builder for [`LaunchTemplateHibernationOptions`](crate::types::LaunchTemplateHibernationOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LaunchTemplateHibernationOptionsBuilder {
     pub(crate) configured: ::std::option::Option<bool>,
 }

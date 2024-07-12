@@ -44,8 +44,8 @@ impl UpdateRelayInput {
 }
 
 /// A builder for [`UpdateRelayInput`](crate::operation::update_relay::UpdateRelayInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRelayInputBuilder {
     pub(crate) relay_id: ::std::option::Option<::std::string::String>,
     pub(crate) relay_name: ::std::option::Option<::std::string::String>,

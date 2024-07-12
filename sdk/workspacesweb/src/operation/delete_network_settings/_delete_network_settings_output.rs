@@ -18,8 +18,8 @@ impl DeleteNetworkSettingsOutput {
 }
 
 /// A builder for [`DeleteNetworkSettingsOutput`](crate::operation::delete_network_settings::DeleteNetworkSettingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteNetworkSettingsOutputBuilder {
     _request_id: Option<String>,
 }

@@ -21,8 +21,8 @@ impl AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails {
 }
 
 /// A builder for [`AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails`](crate::types::AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetailsBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
 }

@@ -27,8 +27,8 @@ impl RenewalTerm {
 }
 
 /// A builder for [`RenewalTerm`](crate::types::RenewalTerm).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RenewalTermBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) configuration: ::std::option::Option<crate::types::RenewalTermConfiguration>,

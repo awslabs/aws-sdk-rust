@@ -35,8 +35,8 @@ impl ListStepsOutput {
 }
 
 /// A builder for [`ListStepsOutput`](crate::operation::list_steps::ListStepsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListStepsOutputBuilder {
     pub(crate) steps: ::std::option::Option<::std::vec::Vec<crate::types::StepSummary>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

@@ -42,8 +42,8 @@ impl ListVectorEnrichmentJobsOutput {
 }
 
 /// A builder for [`ListVectorEnrichmentJobsOutput`](crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ListVectorEnrichmentJobsOutputBuilder {
     pub(crate) vector_enrichment_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ListVectorEnrichmentJobOutputConfig>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

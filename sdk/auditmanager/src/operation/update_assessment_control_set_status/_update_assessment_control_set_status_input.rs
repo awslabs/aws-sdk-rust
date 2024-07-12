@@ -48,8 +48,8 @@ impl UpdateAssessmentControlSetStatusInput {
 }
 
 /// A builder for [`UpdateAssessmentControlSetStatusInput`](crate::operation::update_assessment_control_set_status::UpdateAssessmentControlSetStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateAssessmentControlSetStatusInputBuilder {
     pub(crate) assessment_id: ::std::option::Option<::std::string::String>,
     pub(crate) control_set_id: ::std::option::Option<::std::string::String>,

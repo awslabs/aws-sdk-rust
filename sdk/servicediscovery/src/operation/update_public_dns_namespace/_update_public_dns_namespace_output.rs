@@ -26,8 +26,8 @@ impl UpdatePublicDnsNamespaceOutput {
 }
 
 /// A builder for [`UpdatePublicDnsNamespaceOutput`](crate::operation::update_public_dns_namespace::UpdatePublicDnsNamespaceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePublicDnsNamespaceOutputBuilder {
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

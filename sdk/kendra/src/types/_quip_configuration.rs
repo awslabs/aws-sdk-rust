@@ -109,8 +109,8 @@ impl QuipConfiguration {
 }
 
 /// A builder for [`QuipConfiguration`](crate::types::QuipConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct QuipConfigurationBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) secret_arn: ::std::option::Option<::std::string::String>,

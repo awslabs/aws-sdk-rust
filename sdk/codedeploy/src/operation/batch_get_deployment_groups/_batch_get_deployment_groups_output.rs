@@ -35,8 +35,8 @@ impl BatchGetDeploymentGroupsOutput {
 }
 
 /// A builder for [`BatchGetDeploymentGroupsOutput`](crate::operation::batch_get_deployment_groups::BatchGetDeploymentGroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetDeploymentGroupsOutputBuilder {
     pub(crate) deployment_groups_info: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentGroupInfo>>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,

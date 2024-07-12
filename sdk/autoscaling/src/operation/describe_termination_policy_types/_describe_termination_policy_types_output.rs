@@ -28,8 +28,8 @@ impl DescribeTerminationPolicyTypesOutput {
 }
 
 /// A builder for [`DescribeTerminationPolicyTypesOutput`](crate::operation::describe_termination_policy_types::DescribeTerminationPolicyTypesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTerminationPolicyTypesOutputBuilder {
     pub(crate) termination_policy_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,

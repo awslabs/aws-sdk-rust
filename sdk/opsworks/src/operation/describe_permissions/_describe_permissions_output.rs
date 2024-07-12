@@ -45,8 +45,8 @@ impl DescribePermissionsOutput {
 }
 
 /// A builder for [`DescribePermissionsOutput`](crate::operation::describe_permissions::DescribePermissionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribePermissionsOutputBuilder {
     pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
     _request_id: Option<String>,

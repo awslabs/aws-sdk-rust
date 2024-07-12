@@ -28,8 +28,8 @@ impl SourceAuth {
 }
 
 /// A builder for [`SourceAuth`](crate::types::SourceAuth).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SourceAuthBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::SourceAuthType>,
     pub(crate) resource: ::std::option::Option<::std::string::String>,

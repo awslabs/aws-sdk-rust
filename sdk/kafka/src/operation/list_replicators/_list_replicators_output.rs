@@ -34,8 +34,8 @@ impl ListReplicatorsOutput {
 }
 
 /// A builder for [`ListReplicatorsOutput`](crate::operation::list_replicators::ListReplicatorsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListReplicatorsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) replicators: ::std::option::Option<::std::vec::Vec<crate::types::ReplicatorSummary>>,

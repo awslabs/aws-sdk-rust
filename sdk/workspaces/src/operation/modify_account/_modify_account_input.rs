@@ -26,8 +26,8 @@ impl ModifyAccountInput {
 }
 
 /// A builder for [`ModifyAccountInput`](crate::operation::modify_account::ModifyAccountInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyAccountInputBuilder {
     pub(crate) dedicated_tenancy_support: ::std::option::Option<crate::types::DedicatedTenancySupportEnum>,
     pub(crate) dedicated_tenancy_management_cidr_range: ::std::option::Option<::std::string::String>,

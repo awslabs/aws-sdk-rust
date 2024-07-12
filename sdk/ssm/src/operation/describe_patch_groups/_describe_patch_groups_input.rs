@@ -52,8 +52,8 @@ impl DescribePatchGroupsInput {
 }
 
 /// A builder for [`DescribePatchGroupsInput`](crate::operation::describe_patch_groups::DescribePatchGroupsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribePatchGroupsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>>,

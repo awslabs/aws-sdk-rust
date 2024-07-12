@@ -28,8 +28,8 @@ impl BatchAcknowledgeAlarmOutput {
 }
 
 /// A builder for [`BatchAcknowledgeAlarmOutput`](crate::operation::batch_acknowledge_alarm::BatchAcknowledgeAlarmOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchAcknowledgeAlarmOutputBuilder {
     pub(crate) error_entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchAlarmActionErrorEntry>>,
     _request_id: Option<String>,

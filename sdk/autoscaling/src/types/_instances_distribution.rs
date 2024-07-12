@@ -149,8 +149,8 @@ impl InstancesDistribution {
 }
 
 /// A builder for [`InstancesDistribution`](crate::types::InstancesDistribution).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstancesDistributionBuilder {
     pub(crate) on_demand_allocation_strategy: ::std::option::Option<::std::string::String>,
     pub(crate) on_demand_base_capacity: ::std::option::Option<i32>,

@@ -224,8 +224,8 @@ impl RespondToAuthChallengeInput {
 }
 
 /// A builder for [`RespondToAuthChallengeInput`](crate::operation::respond_to_auth_challenge::RespondToAuthChallengeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct RespondToAuthChallengeInputBuilder {
     pub(crate) client_id: ::std::option::Option<::std::string::String>,
     pub(crate) challenge_name: ::std::option::Option<crate::types::ChallengeNameType>,

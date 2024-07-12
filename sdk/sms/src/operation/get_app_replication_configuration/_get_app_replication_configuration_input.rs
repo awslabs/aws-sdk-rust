@@ -20,8 +20,8 @@ impl GetAppReplicationConfigurationInput {
 }
 
 /// A builder for [`GetAppReplicationConfigurationInput`](crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAppReplicationConfigurationInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
 }

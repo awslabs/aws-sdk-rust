@@ -59,8 +59,8 @@ impl TargetInstance {
 }
 
 /// A builder for [`TargetInstance`](crate::types::TargetInstance).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TargetInstanceBuilder {
     pub(crate) estimated_monthly_cost: ::std::option::Option<::std::string::String>,
     pub(crate) estimated_monthly_savings: ::std::option::Option<::std::string::String>,

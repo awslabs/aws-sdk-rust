@@ -32,8 +32,8 @@ impl DescribeConnectClientAddInsInput {
 }
 
 /// A builder for [`DescribeConnectClientAddInsInput`](crate::operation::describe_connect_client_add_ins::DescribeConnectClientAddInsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeConnectClientAddInsInputBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

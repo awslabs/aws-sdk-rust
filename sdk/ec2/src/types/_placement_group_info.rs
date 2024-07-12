@@ -23,8 +23,8 @@ impl PlacementGroupInfo {
 }
 
 /// A builder for [`PlacementGroupInfo`](crate::types::PlacementGroupInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PlacementGroupInfoBuilder {
     pub(crate) supported_strategies: ::std::option::Option<::std::vec::Vec<crate::types::PlacementGroupStrategy>>,
 }

@@ -26,8 +26,8 @@ impl ListKeyValueStoresOutput {
 }
 
 /// A builder for [`ListKeyValueStoresOutput`](crate::operation::list_key_value_stores::ListKeyValueStoresOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListKeyValueStoresOutputBuilder {
     pub(crate) key_value_store_list: ::std::option::Option<crate::types::KeyValueStoreList>,
     _request_id: Option<String>,

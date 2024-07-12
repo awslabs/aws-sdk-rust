@@ -28,8 +28,8 @@ impl UserAccessLoggingSettingsSummary {
 }
 
 /// A builder for [`UserAccessLoggingSettingsSummary`](crate::types::UserAccessLoggingSettingsSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UserAccessLoggingSettingsSummaryBuilder {
     pub(crate) user_access_logging_settings_arn: ::std::option::Option<::std::string::String>,
     pub(crate) kinesis_stream_arn: ::std::option::Option<::std::string::String>,

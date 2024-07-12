@@ -27,8 +27,8 @@ impl ProductCode {
 }
 
 /// A builder for [`ProductCode`](crate::types::ProductCode).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProductCodeBuilder {
     pub(crate) product_code_id: ::std::option::Option<::std::string::String>,
     pub(crate) product_code_type: ::std::option::Option<crate::types::ProductCodeValues>,

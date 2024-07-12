@@ -33,8 +33,8 @@ impl DetectedMetricSetConfig {
 }
 
 /// A builder for [`DetectedMetricSetConfig`](crate::types::DetectedMetricSetConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetectedMetricSetConfigBuilder {
     pub(crate) offset: ::std::option::Option<crate::types::DetectedField>,
     pub(crate) metric_set_frequency: ::std::option::Option<crate::types::DetectedField>,

@@ -20,8 +20,8 @@ impl DescribeTestSetInput {
 }
 
 /// A builder for [`DescribeTestSetInput`](crate::operation::describe_test_set::DescribeTestSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTestSetInputBuilder {
     pub(crate) test_set_id: ::std::option::Option<::std::string::String>,
 }

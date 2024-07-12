@@ -37,8 +37,8 @@ impl GetCredentialsForIdentityInput {
 }
 
 /// A builder for [`GetCredentialsForIdentityInput`](crate::operation::get_credentials_for_identity::GetCredentialsForIdentityInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCredentialsForIdentityInputBuilder {
     pub(crate) identity_id: ::std::option::Option<::std::string::String>,
     pub(crate) logins: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

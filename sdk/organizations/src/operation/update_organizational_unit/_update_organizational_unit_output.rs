@@ -26,8 +26,8 @@ impl UpdateOrganizationalUnitOutput {
 }
 
 /// A builder for [`UpdateOrganizationalUnitOutput`](crate::operation::update_organizational_unit::UpdateOrganizationalUnitOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateOrganizationalUnitOutputBuilder {
     pub(crate) organizational_unit: ::std::option::Option<crate::types::OrganizationalUnit>,
     _request_id: Option<String>,

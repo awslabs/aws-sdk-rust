@@ -26,8 +26,8 @@ impl StopTriggerOutput {
 }
 
 /// A builder for [`StopTriggerOutput`](crate::operation::stop_trigger::StopTriggerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopTriggerOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

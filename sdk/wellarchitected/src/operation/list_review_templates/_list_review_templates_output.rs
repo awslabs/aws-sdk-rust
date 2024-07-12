@@ -34,8 +34,8 @@ impl ListReviewTemplatesOutput {
 }
 
 /// A builder for [`ListReviewTemplatesOutput`](crate::operation::list_review_templates::ListReviewTemplatesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListReviewTemplatesOutputBuilder {
     pub(crate) review_templates: ::std::option::Option<::std::vec::Vec<crate::types::ReviewTemplateSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

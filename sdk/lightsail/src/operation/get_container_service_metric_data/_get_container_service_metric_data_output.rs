@@ -34,8 +34,8 @@ impl GetContainerServiceMetricDataOutput {
 }
 
 /// A builder for [`GetContainerServiceMetricDataOutput`](crate::operation::get_container_service_metric_data::GetContainerServiceMetricDataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetContainerServiceMetricDataOutputBuilder {
     pub(crate) metric_name: ::std::option::Option<crate::types::ContainerServiceMetricName>,
     pub(crate) metric_data: ::std::option::Option<::std::vec::Vec<crate::types::MetricDatapoint>>,

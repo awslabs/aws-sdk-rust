@@ -34,8 +34,8 @@ impl SearchGameSessionsOutput {
 }
 
 /// A builder for [`SearchGameSessionsOutput`](crate::operation::search_game_sessions::SearchGameSessionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchGameSessionsOutputBuilder {
     pub(crate) game_sessions: ::std::option::Option<::std::vec::Vec<crate::types::GameSession>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

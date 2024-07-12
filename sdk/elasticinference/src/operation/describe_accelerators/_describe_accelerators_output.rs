@@ -34,8 +34,8 @@ impl DescribeAcceleratorsOutput {
 }
 
 /// A builder for [`DescribeAcceleratorsOutput`](crate::operation::describe_accelerators::DescribeAcceleratorsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAcceleratorsOutputBuilder {
     pub(crate) accelerator_set: ::std::option::Option<::std::vec::Vec<crate::types::ElasticInferenceAccelerator>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -20,8 +20,8 @@ impl DeleteProjectVersionInput {
 }
 
 /// A builder for [`DeleteProjectVersionInput`](crate::operation::delete_project_version::DeleteProjectVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteProjectVersionInputBuilder {
     pub(crate) project_version_arn: ::std::option::Option<::std::string::String>,
 }

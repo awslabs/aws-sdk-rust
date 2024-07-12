@@ -27,8 +27,8 @@ impl EcpuPerSecond {
 }
 
 /// A builder for [`EcpuPerSecond`](crate::types::EcpuPerSecond).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EcpuPerSecondBuilder {
     pub(crate) maximum: ::std::option::Option<i32>,
     pub(crate) minimum: ::std::option::Option<i32>,

@@ -18,8 +18,8 @@ impl DistributeDatasetEntriesOutput {
 }
 
 /// A builder for [`DistributeDatasetEntriesOutput`](crate::operation::distribute_dataset_entries::DistributeDatasetEntriesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DistributeDatasetEntriesOutputBuilder {
     _request_id: Option<String>,
 }

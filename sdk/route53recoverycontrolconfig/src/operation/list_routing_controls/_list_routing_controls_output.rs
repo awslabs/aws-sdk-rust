@@ -34,8 +34,8 @@ impl ListRoutingControlsOutput {
 }
 
 /// A builder for [`ListRoutingControlsOutput`](crate::operation::list_routing_controls::ListRoutingControlsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRoutingControlsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) routing_controls: ::std::option::Option<::std::vec::Vec<crate::types::RoutingControl>>,

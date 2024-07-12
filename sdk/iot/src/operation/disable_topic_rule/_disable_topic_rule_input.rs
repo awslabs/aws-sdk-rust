@@ -21,8 +21,8 @@ impl DisableTopicRuleInput {
 }
 
 /// A builder for [`DisableTopicRuleInput`](crate::operation::disable_topic_rule::DisableTopicRuleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableTopicRuleInputBuilder {
     pub(crate) rule_name: ::std::option::Option<::std::string::String>,
 }

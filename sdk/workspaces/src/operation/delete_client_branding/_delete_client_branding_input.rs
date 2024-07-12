@@ -28,8 +28,8 @@ impl DeleteClientBrandingInput {
 }
 
 /// A builder for [`DeleteClientBrandingInput`](crate::operation::delete_client_branding::DeleteClientBrandingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteClientBrandingInputBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) platforms: ::std::option::Option<::std::vec::Vec<crate::types::ClientDeviceType>>,

@@ -34,8 +34,8 @@ impl CreateIntegrationWorkflowOutput {
 }
 
 /// A builder for [`CreateIntegrationWorkflowOutput`](crate::operation::create_integration_workflow::CreateIntegrationWorkflowOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateIntegrationWorkflowOutputBuilder {
     pub(crate) workflow_id: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

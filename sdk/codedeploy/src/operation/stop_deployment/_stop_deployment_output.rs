@@ -45,8 +45,8 @@ impl StopDeploymentOutput {
 }
 
 /// A builder for [`StopDeploymentOutput`](crate::operation::stop_deployment::StopDeploymentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopDeploymentOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::StopStatus>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,

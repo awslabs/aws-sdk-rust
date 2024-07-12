@@ -29,8 +29,8 @@ impl AgentFilter {
 }
 
 /// A builder for [`AgentFilter`](crate::types::AgentFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AgentFilterBuilder {
     pub(crate) agent_healths: ::std::option::Option<::std::vec::Vec<crate::types::AgentHealth>>,
     pub(crate) agent_health_codes: ::std::option::Option<::std::vec::Vec<crate::types::AgentHealthCode>>,

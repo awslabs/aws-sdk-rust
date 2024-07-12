@@ -18,8 +18,8 @@ impl DetachNetworkInterfaceOutput {
 }
 
 /// A builder for [`DetachNetworkInterfaceOutput`](crate::operation::detach_network_interface::DetachNetworkInterfaceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetachNetworkInterfaceOutputBuilder {
     _request_id: Option<String>,
 }

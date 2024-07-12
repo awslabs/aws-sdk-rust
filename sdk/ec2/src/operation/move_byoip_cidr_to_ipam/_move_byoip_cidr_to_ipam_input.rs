@@ -38,8 +38,8 @@ impl MoveByoipCidrToIpamInput {
 }
 
 /// A builder for [`MoveByoipCidrToIpamInput`](crate::operation::move_byoip_cidr_to_ipam::MoveByoipCidrToIpamInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MoveByoipCidrToIpamInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) cidr: ::std::option::Option<::std::string::String>,

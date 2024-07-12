@@ -18,8 +18,8 @@ impl ImportAppCatalogOutput {
 }
 
 /// A builder for [`ImportAppCatalogOutput`](crate::operation::import_app_catalog::ImportAppCatalogOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportAppCatalogOutputBuilder {
     _request_id: Option<String>,
 }

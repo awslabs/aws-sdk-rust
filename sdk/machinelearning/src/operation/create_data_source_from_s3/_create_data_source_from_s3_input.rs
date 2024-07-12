@@ -60,8 +60,8 @@ impl CreateDataSourceFromS3Input {
 }
 
 /// A builder for [`CreateDataSourceFromS3Input`](crate::operation::create_data_source_from_s3::CreateDataSourceFromS3Input).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDataSourceFromS3InputBuilder {
     pub(crate) data_source_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_source_name: ::std::option::Option<::std::string::String>,

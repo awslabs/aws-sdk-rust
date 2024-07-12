@@ -60,8 +60,8 @@ impl CreateProtectConfigurationOutput {
 }
 
 /// A builder for [`CreateProtectConfigurationOutput`](crate::operation::create_protect_configuration::CreateProtectConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateProtectConfigurationOutputBuilder {
     pub(crate) protect_configuration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) protect_configuration_id: ::std::option::Option<::std::string::String>,

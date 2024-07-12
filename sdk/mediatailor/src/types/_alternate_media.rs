@@ -59,8 +59,8 @@ impl AlternateMedia {
 }
 
 /// A builder for [`AlternateMedia`](crate::types::AlternateMedia).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AlternateMediaBuilder {
     pub(crate) source_location_name: ::std::option::Option<::std::string::String>,
     pub(crate) live_source_name: ::std::option::Option<::std::string::String>,

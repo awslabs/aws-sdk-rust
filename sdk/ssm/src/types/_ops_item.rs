@@ -182,8 +182,8 @@ impl OpsItem {
 }
 
 /// A builder for [`OpsItem`](crate::types::OpsItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OpsItemBuilder {
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
     pub(crate) ops_item_type: ::std::option::Option<::std::string::String>,

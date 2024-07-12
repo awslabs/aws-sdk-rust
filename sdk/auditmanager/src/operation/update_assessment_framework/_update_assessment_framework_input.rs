@@ -57,8 +57,8 @@ impl UpdateAssessmentFrameworkInput {
 }
 
 /// A builder for [`UpdateAssessmentFrameworkInput`](crate::operation::update_assessment_framework::UpdateAssessmentFrameworkInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateAssessmentFrameworkInputBuilder {
     pub(crate) framework_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

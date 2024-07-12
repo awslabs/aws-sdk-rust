@@ -21,8 +21,8 @@ impl UserPoolPolicyType {
 }
 
 /// A builder for [`UserPoolPolicyType`](crate::types::UserPoolPolicyType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UserPoolPolicyTypeBuilder {
     pub(crate) password_policy: ::std::option::Option<crate::types::PasswordPolicyType>,
 }

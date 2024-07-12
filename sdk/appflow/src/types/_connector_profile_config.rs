@@ -27,8 +27,8 @@ impl ConnectorProfileConfig {
 }
 
 /// A builder for [`ConnectorProfileConfig`](crate::types::ConnectorProfileConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConnectorProfileConfigBuilder {
     pub(crate) connector_profile_properties: ::std::option::Option<crate::types::ConnectorProfileProperties>,
     pub(crate) connector_profile_credentials: ::std::option::Option<crate::types::ConnectorProfileCredentials>,

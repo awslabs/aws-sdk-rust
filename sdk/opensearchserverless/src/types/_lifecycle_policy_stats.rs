@@ -21,8 +21,8 @@ impl LifecyclePolicyStats {
 }
 
 /// A builder for [`LifecyclePolicyStats`](crate::types::LifecyclePolicyStats).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LifecyclePolicyStatsBuilder {
     pub(crate) retention_policy_count: ::std::option::Option<i64>,
 }

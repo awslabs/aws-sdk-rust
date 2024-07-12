@@ -28,8 +28,8 @@ impl ImportSource {
 }
 
 /// A builder for [`ImportSource`](crate::types::ImportSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportSourceBuilder {
     pub(crate) source_type: ::std::option::Option<crate::types::ImportSourceType>,
     pub(crate) source_arn: ::std::option::Option<::std::string::String>,

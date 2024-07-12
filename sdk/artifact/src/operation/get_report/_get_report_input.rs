@@ -32,8 +32,8 @@ impl GetReportInput {
 }
 
 /// A builder for [`GetReportInput`](crate::operation::get_report::GetReportInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetReportInputBuilder {
     pub(crate) report_id: ::std::option::Option<::std::string::String>,
     pub(crate) report_version: ::std::option::Option<i64>,

@@ -28,8 +28,8 @@ impl DescribeAcceleratorTypesOutput {
 }
 
 /// A builder for [`DescribeAcceleratorTypesOutput`](crate::operation::describe_accelerator_types::DescribeAcceleratorTypesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAcceleratorTypesOutputBuilder {
     pub(crate) accelerator_types: ::std::option::Option<::std::vec::Vec<crate::types::AcceleratorType>>,
     _request_id: Option<String>,

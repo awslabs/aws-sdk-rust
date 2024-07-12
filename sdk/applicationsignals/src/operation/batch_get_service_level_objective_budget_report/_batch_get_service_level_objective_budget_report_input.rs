@@ -29,8 +29,8 @@ impl BatchGetServiceLevelObjectiveBudgetReportInput {
 }
 
 /// A builder for [`BatchGetServiceLevelObjectiveBudgetReportInput`](crate::operation::batch_get_service_level_objective_budget_report::BatchGetServiceLevelObjectiveBudgetReportInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetServiceLevelObjectiveBudgetReportInputBuilder {
     pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) slo_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

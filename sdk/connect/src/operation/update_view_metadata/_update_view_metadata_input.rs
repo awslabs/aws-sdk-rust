@@ -48,8 +48,8 @@ impl UpdateViewMetadataInput {
 }
 
 /// A builder for [`UpdateViewMetadataInput`](crate::operation::update_view_metadata::UpdateViewMetadataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateViewMetadataInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) view_id: ::std::option::Option<::std::string::String>,

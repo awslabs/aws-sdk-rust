@@ -20,8 +20,8 @@ impl GetAdapterInput {
 }
 
 /// A builder for [`GetAdapterInput`](crate::operation::get_adapter::GetAdapterInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAdapterInputBuilder {
     pub(crate) adapter_id: ::std::option::Option<::std::string::String>,
 }

@@ -18,8 +18,8 @@ impl UpdateDomainMetadataOutput {
 }
 
 /// A builder for [`UpdateDomainMetadataOutput`](crate::operation::update_domain_metadata::UpdateDomainMetadataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDomainMetadataOutputBuilder {
     _request_id: Option<String>,
 }

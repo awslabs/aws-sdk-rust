@@ -63,8 +63,8 @@ impl ReferenceLineDataConfiguration {
 }
 
 /// A builder for [`ReferenceLineDataConfiguration`](crate::types::ReferenceLineDataConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReferenceLineDataConfigurationBuilder {
     pub(crate) static_configuration: ::std::option::Option<crate::types::ReferenceLineStaticDataConfiguration>,
     pub(crate) dynamic_configuration: ::std::option::Option<crate::types::ReferenceLineDynamicDataConfiguration>,

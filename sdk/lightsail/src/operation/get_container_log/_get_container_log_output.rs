@@ -38,8 +38,8 @@ impl GetContainerLogOutput {
 }
 
 /// A builder for [`GetContainerLogOutput`](crate::operation::get_container_log::GetContainerLogOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetContainerLogOutputBuilder {
     pub(crate) log_events: ::std::option::Option<::std::vec::Vec<crate::types::ContainerServiceLogEvent>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,

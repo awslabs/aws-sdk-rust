@@ -26,8 +26,8 @@ impl CreateAssessmentReportOutput {
 }
 
 /// A builder for [`CreateAssessmentReportOutput`](crate::operation::create_assessment_report::CreateAssessmentReportOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAssessmentReportOutputBuilder {
     pub(crate) assessment_report: ::std::option::Option<crate::types::AssessmentReport>,
     _request_id: Option<String>,

@@ -32,8 +32,8 @@ impl ListSequenceStoresInput {
 }
 
 /// A builder for [`ListSequenceStoresInput`](crate::operation::list_sequence_stores::ListSequenceStoresInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSequenceStoresInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

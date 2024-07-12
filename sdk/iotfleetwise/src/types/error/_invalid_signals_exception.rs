@@ -55,8 +55,8 @@ impl InvalidSignalsException {
 }
 
 /// A builder for [`InvalidSignalsException`](crate::types::error::InvalidSignalsException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InvalidSignalsExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) invalid_signals: ::std::option::Option<::std::vec::Vec<crate::types::InvalidSignal>>,

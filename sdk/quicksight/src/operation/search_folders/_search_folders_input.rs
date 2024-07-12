@@ -40,8 +40,8 @@ impl SearchFoldersInput {
 }
 
 /// A builder for [`SearchFoldersInput`](crate::operation::search_folders::SearchFoldersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchFoldersInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::FolderSearchFilter>>,

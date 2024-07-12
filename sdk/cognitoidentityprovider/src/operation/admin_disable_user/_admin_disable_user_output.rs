@@ -19,8 +19,8 @@ impl AdminDisableUserOutput {
 }
 
 /// A builder for [`AdminDisableUserOutput`](crate::operation::admin_disable_user::AdminDisableUserOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AdminDisableUserOutputBuilder {
     _request_id: Option<String>,
 }

@@ -46,8 +46,8 @@ impl CreateOpsMetadataInput {
 }
 
 /// A builder for [`CreateOpsMetadataInput`](crate::operation::create_ops_metadata::CreateOpsMetadataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateOpsMetadataInputBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>>,

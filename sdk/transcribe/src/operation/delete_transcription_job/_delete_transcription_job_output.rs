@@ -18,8 +18,8 @@ impl DeleteTranscriptionJobOutput {
 }
 
 /// A builder for [`DeleteTranscriptionJobOutput`](crate::operation::delete_transcription_job::DeleteTranscriptionJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTranscriptionJobOutputBuilder {
     _request_id: Option<String>,
 }

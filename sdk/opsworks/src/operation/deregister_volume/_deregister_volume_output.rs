@@ -18,8 +18,8 @@ impl DeregisterVolumeOutput {
 }
 
 /// A builder for [`DeregisterVolumeOutput`](crate::operation::deregister_volume::DeregisterVolumeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeregisterVolumeOutputBuilder {
     _request_id: Option<String>,
 }

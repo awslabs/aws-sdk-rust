@@ -29,8 +29,8 @@ impl AttachLoadBalancerToSubnetsOutput {
 }
 
 /// A builder for [`AttachLoadBalancerToSubnetsOutput`](crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttachLoadBalancerToSubnetsOutputBuilder {
     pub(crate) subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,

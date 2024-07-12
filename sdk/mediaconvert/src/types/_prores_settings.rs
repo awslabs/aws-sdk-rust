@@ -93,8 +93,8 @@ impl ProresSettings {
 }
 
 /// A builder for [`ProresSettings`](crate::types::ProresSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProresSettingsBuilder {
     pub(crate) chroma_sampling: ::std::option::Option<crate::types::ProresChromaSampling>,
     pub(crate) codec_profile: ::std::option::Option<crate::types::ProresCodecProfile>,

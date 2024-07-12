@@ -27,8 +27,8 @@ impl DescribeIdentityUsageOutput {
 }
 
 /// A builder for [`DescribeIdentityUsageOutput`](crate::operation::describe_identity_usage::DescribeIdentityUsageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeIdentityUsageOutputBuilder {
     pub(crate) identity_usage: ::std::option::Option<crate::types::IdentityUsage>,
     _request_id: Option<String>,

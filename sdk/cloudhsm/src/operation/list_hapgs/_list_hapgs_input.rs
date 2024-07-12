@@ -20,8 +20,8 @@ impl ListHapgsInput {
 }
 
 /// A builder for [`ListHapgsInput`](crate::operation::list_hapgs::ListHapgsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListHapgsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }

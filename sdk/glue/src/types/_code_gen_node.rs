@@ -42,8 +42,8 @@ impl CodeGenNode {
 }
 
 /// A builder for [`CodeGenNode`](crate::types::CodeGenNode).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CodeGenNodeBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) node_type: ::std::option::Option<::std::string::String>,

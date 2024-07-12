@@ -68,8 +68,8 @@ impl ModifyInstancePlacementInput {
 }
 
 /// A builder for [`ModifyInstancePlacementInput`](crate::operation::modify_instance_placement::ModifyInstancePlacementInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyInstancePlacementInputBuilder {
     pub(crate) affinity: ::std::option::Option<crate::types::Affinity>,
     pub(crate) group_name: ::std::option::Option<::std::string::String>,

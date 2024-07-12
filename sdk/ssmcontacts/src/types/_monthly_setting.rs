@@ -27,8 +27,8 @@ impl MonthlySetting {
 }
 
 /// A builder for [`MonthlySetting`](crate::types::MonthlySetting).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MonthlySettingBuilder {
     pub(crate) day_of_month: ::std::option::Option<i32>,
     pub(crate) hand_off_time: ::std::option::Option<crate::types::HandOffTime>,

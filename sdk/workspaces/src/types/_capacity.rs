@@ -21,8 +21,8 @@ impl Capacity {
 }
 
 /// A builder for [`Capacity`](crate::types::Capacity).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CapacityBuilder {
     pub(crate) desired_user_sessions: ::std::option::Option<i32>,
 }

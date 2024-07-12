@@ -20,8 +20,8 @@ impl DeleteHypervisorInput {
 }
 
 /// A builder for [`DeleteHypervisorInput`](crate::operation::delete_hypervisor::DeleteHypervisorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteHypervisorInputBuilder {
     pub(crate) hypervisor_arn: ::std::option::Option<::std::string::String>,
 }

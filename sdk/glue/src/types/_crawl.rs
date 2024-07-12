@@ -51,8 +51,8 @@ impl Crawl {
 }
 
 /// A builder for [`Crawl`](crate::types::Crawl).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CrawlBuilder {
     pub(crate) state: ::std::option::Option<crate::types::CrawlState>,
     pub(crate) started_on: ::std::option::Option<::aws_smithy_types::DateTime>,

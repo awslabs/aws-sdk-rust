@@ -23,8 +23,8 @@ impl DescribeLoggingStatusInput {
 }
 
 /// A builder for [`DescribeLoggingStatusInput`](crate::operation::describe_logging_status::DescribeLoggingStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeLoggingStatusInputBuilder {
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
 }

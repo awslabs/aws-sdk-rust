@@ -99,8 +99,8 @@ impl BatchReadSuccessfulResponse {
 }
 
 /// A builder for [`BatchReadSuccessfulResponse`](crate::types::BatchReadSuccessfulResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchReadSuccessfulResponseBuilder {
     pub(crate) list_object_attributes: ::std::option::Option<crate::types::BatchListObjectAttributesResponse>,
     pub(crate) list_object_children: ::std::option::Option<crate::types::BatchListObjectChildrenResponse>,

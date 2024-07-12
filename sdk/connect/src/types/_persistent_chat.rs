@@ -41,8 +41,8 @@ impl PersistentChat {
 }
 
 /// A builder for [`PersistentChat`](crate::types::PersistentChat).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PersistentChatBuilder {
     pub(crate) rehydration_type: ::std::option::Option<crate::types::RehydrationType>,
     pub(crate) source_contact_id: ::std::option::Option<::std::string::String>,

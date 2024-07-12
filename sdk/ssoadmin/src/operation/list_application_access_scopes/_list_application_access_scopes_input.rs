@@ -32,8 +32,8 @@ impl ListApplicationAccessScopesInput {
 }
 
 /// A builder for [`ListApplicationAccessScopesInput`](crate::operation::list_application_access_scopes::ListApplicationAccessScopesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListApplicationAccessScopesInputBuilder {
     pub(crate) application_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

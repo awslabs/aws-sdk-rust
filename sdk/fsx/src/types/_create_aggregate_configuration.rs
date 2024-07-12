@@ -29,8 +29,8 @@ impl CreateAggregateConfiguration {
 }
 
 /// A builder for [`CreateAggregateConfiguration`](crate::types::CreateAggregateConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAggregateConfigurationBuilder {
     pub(crate) aggregates: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) constituents_per_aggregate: ::std::option::Option<i32>,

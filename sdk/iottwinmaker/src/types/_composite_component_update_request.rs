@@ -42,8 +42,8 @@ impl CompositeComponentUpdateRequest {
 }
 
 /// A builder for [`CompositeComponentUpdateRequest`](crate::types::CompositeComponentUpdateRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CompositeComponentUpdateRequestBuilder {
     pub(crate) update_type: ::std::option::Option<crate::types::ComponentUpdateType>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

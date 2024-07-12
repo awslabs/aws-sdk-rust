@@ -57,8 +57,8 @@ impl HealthCheckPolicy {
 }
 
 /// A builder for [`HealthCheckPolicy`](crate::types::HealthCheckPolicy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HealthCheckPolicyBuilder {
     pub(crate) timeout_millis: ::std::option::Option<i64>,
     pub(crate) interval_millis: ::std::option::Option<i64>,

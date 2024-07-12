@@ -34,8 +34,8 @@ impl DescribeVpcClassicLinkDnsSupportOutput {
 }
 
 /// A builder for [`DescribeVpcClassicLinkDnsSupportOutput`](crate::operation::describe_vpc_classic_link_dns_support::DescribeVpcClassicLinkDnsSupportOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeVpcClassicLinkDnsSupportOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) vpcs: ::std::option::Option<::std::vec::Vec<crate::types::ClassicLinkDnsSupport>>,

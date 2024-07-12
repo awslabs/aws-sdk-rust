@@ -28,8 +28,8 @@ impl PutApplicationPolicyOutput {
 }
 
 /// A builder for [`PutApplicationPolicyOutput`](crate::operation::put_application_policy::PutApplicationPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutApplicationPolicyOutputBuilder {
     pub(crate) statements: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationPolicyStatement>>,
     _request_id: Option<String>,

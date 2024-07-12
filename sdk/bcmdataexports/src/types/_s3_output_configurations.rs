@@ -39,8 +39,8 @@ impl S3OutputConfigurations {
 }
 
 /// A builder for [`S3OutputConfigurations`](crate::types::S3OutputConfigurations).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3OutputConfigurationsBuilder {
     pub(crate) output_type: ::std::option::Option<crate::types::S3OutputType>,
     pub(crate) format: ::std::option::Option<crate::types::FormatOption>,

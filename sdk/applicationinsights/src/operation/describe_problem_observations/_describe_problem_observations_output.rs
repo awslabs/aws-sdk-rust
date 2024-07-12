@@ -26,8 +26,8 @@ impl DescribeProblemObservationsOutput {
 }
 
 /// A builder for [`DescribeProblemObservationsOutput`](crate::operation::describe_problem_observations::DescribeProblemObservationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeProblemObservationsOutputBuilder {
     pub(crate) related_observations: ::std::option::Option<crate::types::RelatedObservations>,
     _request_id: Option<String>,

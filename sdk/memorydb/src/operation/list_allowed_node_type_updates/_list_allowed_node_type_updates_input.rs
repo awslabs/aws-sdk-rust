@@ -20,8 +20,8 @@ impl ListAllowedNodeTypeUpdatesInput {
 }
 
 /// A builder for [`ListAllowedNodeTypeUpdatesInput`](crate::operation::list_allowed_node_type_updates::ListAllowedNodeTypeUpdatesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAllowedNodeTypeUpdatesInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
 }

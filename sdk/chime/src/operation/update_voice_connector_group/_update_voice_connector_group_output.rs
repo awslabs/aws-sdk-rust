@@ -26,8 +26,8 @@ impl UpdateVoiceConnectorGroupOutput {
 }
 
 /// A builder for [`UpdateVoiceConnectorGroupOutput`](crate::operation::update_voice_connector_group::UpdateVoiceConnectorGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateVoiceConnectorGroupOutputBuilder {
     pub(crate) voice_connector_group: ::std::option::Option<crate::types::VoiceConnectorGroup>,
     _request_id: Option<String>,

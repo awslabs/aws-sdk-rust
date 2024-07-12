@@ -41,8 +41,8 @@ impl CostCategoryRule {
 }
 
 /// A builder for [`CostCategoryRule`](crate::types::CostCategoryRule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CostCategoryRuleBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
     pub(crate) rule: ::std::option::Option<crate::types::Expression>,

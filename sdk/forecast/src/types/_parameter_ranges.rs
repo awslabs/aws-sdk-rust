@@ -39,8 +39,8 @@ impl ParameterRanges {
 }
 
 /// A builder for [`ParameterRanges`](crate::types::ParameterRanges).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ParameterRangesBuilder {
     pub(crate) categorical_parameter_ranges: ::std::option::Option<::std::vec::Vec<crate::types::CategoricalParameterRange>>,
     pub(crate) continuous_parameter_ranges: ::std::option::Option<::std::vec::Vec<crate::types::ContinuousParameterRange>>,

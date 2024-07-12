@@ -34,8 +34,8 @@ impl ListLineageGroupsOutput {
 }
 
 /// A builder for [`ListLineageGroupsOutput`](crate::operation::list_lineage_groups::ListLineageGroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListLineageGroupsOutputBuilder {
     pub(crate) lineage_group_summaries: ::std::option::Option<::std::vec::Vec<crate::types::LineageGroupSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -22,8 +22,8 @@ impl RedshiftDataShareAsset {
 }
 
 /// A builder for [`RedshiftDataShareAsset`](crate::types::RedshiftDataShareAsset).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RedshiftDataShareAssetBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }

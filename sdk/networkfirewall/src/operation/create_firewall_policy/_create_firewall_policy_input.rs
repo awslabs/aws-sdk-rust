@@ -56,8 +56,8 @@ impl CreateFirewallPolicyInput {
 }
 
 /// A builder for [`CreateFirewallPolicyInput`](crate::operation::create_firewall_policy::CreateFirewallPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateFirewallPolicyInputBuilder {
     pub(crate) firewall_policy_name: ::std::option::Option<::std::string::String>,
     pub(crate) firewall_policy: ::std::option::Option<crate::types::FirewallPolicy>,

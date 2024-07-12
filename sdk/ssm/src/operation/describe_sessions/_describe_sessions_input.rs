@@ -40,8 +40,8 @@ impl DescribeSessionsInput {
 }
 
 /// A builder for [`DescribeSessionsInput`](crate::operation::describe_sessions::DescribeSessionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSessionsInputBuilder {
     pub(crate) state: ::std::option::Option<crate::types::SessionState>,
     pub(crate) max_results: ::std::option::Option<i32>,

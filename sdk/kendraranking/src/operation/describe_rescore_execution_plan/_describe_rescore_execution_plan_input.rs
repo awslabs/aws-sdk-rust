@@ -20,8 +20,8 @@ impl DescribeRescoreExecutionPlanInput {
 }
 
 /// A builder for [`DescribeRescoreExecutionPlanInput`](crate::operation::describe_rescore_execution_plan::DescribeRescoreExecutionPlanInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRescoreExecutionPlanInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }

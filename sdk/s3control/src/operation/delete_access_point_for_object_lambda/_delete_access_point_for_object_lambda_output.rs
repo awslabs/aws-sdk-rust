@@ -18,8 +18,8 @@ impl DeleteAccessPointForObjectLambdaOutput {
 }
 
 /// A builder for [`DeleteAccessPointForObjectLambdaOutput`](crate::operation::delete_access_point_for_object_lambda::DeleteAccessPointForObjectLambdaOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAccessPointForObjectLambdaOutputBuilder {
     _request_id: Option<String>,
 }

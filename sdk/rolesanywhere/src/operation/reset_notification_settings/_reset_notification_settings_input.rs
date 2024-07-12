@@ -28,8 +28,8 @@ impl ResetNotificationSettingsInput {
 }
 
 /// A builder for [`ResetNotificationSettingsInput`](crate::operation::reset_notification_settings::ResetNotificationSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResetNotificationSettingsInputBuilder {
     pub(crate) trust_anchor_id: ::std::option::Option<::std::string::String>,
     pub(crate) notification_setting_keys: ::std::option::Option<::std::vec::Vec<crate::types::NotificationSettingKey>>,

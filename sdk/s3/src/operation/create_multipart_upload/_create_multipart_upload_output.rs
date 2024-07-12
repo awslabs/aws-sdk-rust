@@ -167,8 +167,8 @@ impl CreateMultipartUploadOutput {
 }
 
 /// A builder for [`CreateMultipartUploadOutput`](crate::operation::create_multipart_upload::CreateMultipartUploadOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateMultipartUploadOutputBuilder {
     pub(crate) abort_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) abort_rule_id: ::std::option::Option<::std::string::String>,

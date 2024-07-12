@@ -33,8 +33,8 @@ impl CachingConfig {
 }
 
 /// A builder for [`CachingConfig`](crate::types::CachingConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CachingConfigBuilder {
     pub(crate) ttl: ::std::option::Option<i64>,
     pub(crate) caching_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

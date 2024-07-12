@@ -22,8 +22,8 @@ impl DescribeHandshakeInput {
 }
 
 /// A builder for [`DescribeHandshakeInput`](crate::operation::describe_handshake::DescribeHandshakeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeHandshakeInputBuilder {
     pub(crate) handshake_id: ::std::option::Option<::std::string::String>,
 }

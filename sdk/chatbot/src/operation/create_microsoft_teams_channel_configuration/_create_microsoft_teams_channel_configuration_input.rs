@@ -93,8 +93,8 @@ impl CreateMicrosoftTeamsChannelConfigurationInput {
 }
 
 /// A builder for [`CreateMicrosoftTeamsChannelConfigurationInput`](crate::operation::create_microsoft_teams_channel_configuration::CreateMicrosoftTeamsChannelConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateMicrosoftTeamsChannelConfigurationInputBuilder {
     pub(crate) channel_id: ::std::option::Option<::std::string::String>,
     pub(crate) channel_name: ::std::option::Option<::std::string::String>,

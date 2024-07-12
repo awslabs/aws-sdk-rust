@@ -102,8 +102,8 @@ impl UpdateRouteOutput {
 }
 
 /// A builder for [`UpdateRouteOutput`](crate::operation::update_route::UpdateRouteOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRouteOutputBuilder {
     pub(crate) api_gateway_managed: ::std::option::Option<bool>,
     pub(crate) api_key_required: ::std::option::Option<bool>,

@@ -147,8 +147,8 @@ impl InputTemplate {
 }
 
 /// A builder for [`InputTemplate`](crate::types::InputTemplate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InputTemplateBuilder {
     pub(crate) advanced_input_filter: ::std::option::Option<crate::types::AdvancedInputFilter>,
     pub(crate) advanced_input_filter_settings: ::std::option::Option<crate::types::AdvancedInputFilterSettings>,

@@ -51,8 +51,8 @@ impl MessageRequest {
 }
 
 /// A builder for [`MessageRequest`](crate::types::MessageRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MessageRequestBuilder {
     pub(crate) addresses: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AddressConfiguration>>,
     pub(crate) context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

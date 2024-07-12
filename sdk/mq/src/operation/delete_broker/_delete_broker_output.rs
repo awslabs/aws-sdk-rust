@@ -26,8 +26,8 @@ impl DeleteBrokerOutput {
 }
 
 /// A builder for [`DeleteBrokerOutput`](crate::operation::delete_broker::DeleteBrokerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteBrokerOutputBuilder {
     pub(crate) broker_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

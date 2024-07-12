@@ -37,8 +37,8 @@ impl ContentSourceConfiguration {
 }
 
 /// A builder for [`ContentSourceConfiguration`](crate::types::ContentSourceConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ContentSourceConfigurationBuilder {
     pub(crate) data_source_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) faq_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

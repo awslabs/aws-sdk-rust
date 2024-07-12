@@ -26,8 +26,8 @@ impl PutAccountPreferencesOutput {
 }
 
 /// A builder for [`PutAccountPreferencesOutput`](crate::operation::put_account_preferences::PutAccountPreferencesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutAccountPreferencesOutputBuilder {
     pub(crate) resource_id_preference: ::std::option::Option<crate::types::ResourceIdPreference>,
     _request_id: Option<String>,

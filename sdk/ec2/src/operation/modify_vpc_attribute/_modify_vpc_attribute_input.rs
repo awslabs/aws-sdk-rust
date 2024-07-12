@@ -42,8 +42,8 @@ impl ModifyVpcAttributeInput {
 }
 
 /// A builder for [`ModifyVpcAttributeInput`](crate::operation::modify_vpc_attribute::ModifyVpcAttributeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyVpcAttributeInputBuilder {
     pub(crate) enable_dns_hostnames: ::std::option::Option<crate::types::AttributeBooleanValue>,
     pub(crate) enable_dns_support: ::std::option::Option<crate::types::AttributeBooleanValue>,

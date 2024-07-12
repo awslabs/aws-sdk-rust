@@ -29,8 +29,8 @@ impl WrappedKey {
 }
 
 /// A builder for [`WrappedKey`](crate::types::WrappedKey).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WrappedKeyBuilder {
     pub(crate) wrapped_key_material: ::std::option::Option<crate::types::WrappedKeyMaterial>,
     pub(crate) key_check_value_algorithm: ::std::option::Option<crate::types::KeyCheckValueAlgorithm>,

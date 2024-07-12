@@ -39,8 +39,8 @@ impl ScanDetections {
 }
 
 /// A builder for [`ScanDetections`](crate::types::ScanDetections).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScanDetectionsBuilder {
     pub(crate) scanned_item_count: ::std::option::Option<crate::types::ScannedItemCount>,
     pub(crate) threats_detected_item_count: ::std::option::Option<crate::types::ThreatsDetectedItemCount>,

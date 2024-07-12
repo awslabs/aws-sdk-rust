@@ -18,8 +18,8 @@ impl DeleteLiveSourceOutput {
 }
 
 /// A builder for [`DeleteLiveSourceOutput`](crate::operation::delete_live_source::DeleteLiveSourceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteLiveSourceOutputBuilder {
     _request_id: Option<String>,
 }

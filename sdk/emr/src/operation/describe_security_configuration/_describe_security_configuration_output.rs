@@ -38,8 +38,8 @@ impl DescribeSecurityConfigurationOutput {
 }
 
 /// A builder for [`DescribeSecurityConfigurationOutput`](crate::operation::describe_security_configuration::DescribeSecurityConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSecurityConfigurationOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) security_configuration: ::std::option::Option<::std::string::String>,

@@ -48,8 +48,8 @@ impl ExportCertificateOutput {
 }
 
 /// A builder for [`ExportCertificateOutput`](crate::operation::export_certificate::ExportCertificateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ExportCertificateOutputBuilder {
     pub(crate) certificate: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_chain: ::std::option::Option<::std::string::String>,

@@ -41,8 +41,8 @@ impl AutoMlJobCompletionCriteria {
 }
 
 /// A builder for [`AutoMlJobCompletionCriteria`](crate::types::AutoMlJobCompletionCriteria).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AutoMlJobCompletionCriteriaBuilder {
     pub(crate) max_candidates: ::std::option::Option<i32>,
     pub(crate) max_runtime_per_training_job_in_seconds: ::std::option::Option<i32>,

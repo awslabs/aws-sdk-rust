@@ -21,8 +21,8 @@ impl NotificationConfiguration {
 }
 
 /// A builder for [`NotificationConfiguration`](crate::types::NotificationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NotificationConfigurationBuilder {
     pub(crate) sns_configuration: ::std::option::Option<crate::types::SnsConfiguration>,
 }

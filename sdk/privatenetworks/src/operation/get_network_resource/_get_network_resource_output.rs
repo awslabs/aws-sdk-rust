@@ -41,8 +41,8 @@ impl GetNetworkResourceOutput {
 }
 
 /// A builder for [`GetNetworkResourceOutput`](crate::operation::get_network_resource::GetNetworkResourceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetNetworkResourceOutputBuilder {
     pub(crate) network_resource: ::std::option::Option<crate::types::NetworkResource>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

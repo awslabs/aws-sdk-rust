@@ -38,8 +38,8 @@ impl StartMetadataModelExportAsScriptInput {
 }
 
 /// A builder for [`StartMetadataModelExportAsScriptInput`](crate::operation::start_metadata_model_export_as_script::StartMetadataModelExportAsScriptInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartMetadataModelExportAsScriptInputBuilder {
     pub(crate) migration_project_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) selection_rules: ::std::option::Option<::std::string::String>,

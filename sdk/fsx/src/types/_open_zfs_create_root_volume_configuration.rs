@@ -71,8 +71,8 @@ impl OpenZfsCreateRootVolumeConfiguration {
 }
 
 /// A builder for [`OpenZfsCreateRootVolumeConfiguration`](crate::types::OpenZfsCreateRootVolumeConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OpenZfsCreateRootVolumeConfigurationBuilder {
     pub(crate) record_size_kib: ::std::option::Option<i32>,
     pub(crate) data_compression_type: ::std::option::Option<crate::types::OpenZfsDataCompressionType>,

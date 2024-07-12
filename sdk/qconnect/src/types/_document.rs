@@ -33,8 +33,8 @@ impl Document {
 }
 
 /// A builder for [`Document`](crate::types::Document).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DocumentBuilder {
     pub(crate) content_reference: ::std::option::Option<crate::types::ContentReference>,
     pub(crate) title: ::std::option::Option<crate::types::DocumentText>,

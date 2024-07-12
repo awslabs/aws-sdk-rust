@@ -26,8 +26,8 @@ impl DeregisterTaskFromMaintenanceWindowInput {
 }
 
 /// A builder for [`DeregisterTaskFromMaintenanceWindowInput`](crate::operation::deregister_task_from_maintenance_window::DeregisterTaskFromMaintenanceWindowInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeregisterTaskFromMaintenanceWindowInputBuilder {
     pub(crate) window_id: ::std::option::Option<::std::string::String>,
     pub(crate) window_task_id: ::std::option::Option<::std::string::String>,

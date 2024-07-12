@@ -46,8 +46,8 @@ impl CreateWorldExportJobInput {
 }
 
 /// A builder for [`CreateWorldExportJobInput`](crate::operation::create_world_export_job::CreateWorldExportJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateWorldExportJobInputBuilder {
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) worlds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

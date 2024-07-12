@@ -45,8 +45,8 @@ impl SegmentGroup {
 }
 
 /// A builder for [`SegmentGroup`](crate::types::SegmentGroup).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SegmentGroupBuilder {
     pub(crate) dimensions: ::std::option::Option<::std::vec::Vec<crate::types::SegmentDimensions>>,
     pub(crate) source_segments: ::std::option::Option<::std::vec::Vec<crate::types::SegmentReference>>,

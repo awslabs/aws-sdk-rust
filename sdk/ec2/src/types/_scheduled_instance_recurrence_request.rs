@@ -47,8 +47,8 @@ impl ScheduledInstanceRecurrenceRequest {
 }
 
 /// A builder for [`ScheduledInstanceRecurrenceRequest`](crate::types::ScheduledInstanceRecurrenceRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScheduledInstanceRecurrenceRequestBuilder {
     pub(crate) frequency: ::std::option::Option<::std::string::String>,
     pub(crate) interval: ::std::option::Option<i32>,

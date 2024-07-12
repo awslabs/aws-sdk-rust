@@ -19,8 +19,8 @@ impl SetIdentityNotificationTopicOutput {
 }
 
 /// A builder for [`SetIdentityNotificationTopicOutput`](crate::operation::set_identity_notification_topic::SetIdentityNotificationTopicOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetIdentityNotificationTopicOutputBuilder {
     _request_id: Option<String>,
 }

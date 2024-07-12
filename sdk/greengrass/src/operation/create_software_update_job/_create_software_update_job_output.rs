@@ -38,8 +38,8 @@ impl CreateSoftwareUpdateJobOutput {
 }
 
 /// A builder for [`CreateSoftwareUpdateJobOutput`](crate::operation::create_software_update_job::CreateSoftwareUpdateJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSoftwareUpdateJobOutputBuilder {
     pub(crate) iot_job_arn: ::std::option::Option<::std::string::String>,
     pub(crate) iot_job_id: ::std::option::Option<::std::string::String>,

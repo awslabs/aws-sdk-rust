@@ -35,8 +35,8 @@ impl Condition {
 }
 
 /// A builder for [`Condition`](crate::types::Condition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConditionBuilder {
     pub(crate) condition_type: ::std::option::Option<crate::types::ConditionType>,
     pub(crate) condition_key: ::std::option::Option<::std::string::String>,

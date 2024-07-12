@@ -39,8 +39,8 @@ impl HyperParameterRanges {
 }
 
 /// A builder for [`HyperParameterRanges`](crate::types::HyperParameterRanges).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HyperParameterRangesBuilder {
     pub(crate) integer_hyper_parameter_ranges: ::std::option::Option<::std::vec::Vec<crate::types::IntegerHyperParameterRange>>,
     pub(crate) continuous_hyper_parameter_ranges: ::std::option::Option<::std::vec::Vec<crate::types::ContinuousHyperParameterRange>>,

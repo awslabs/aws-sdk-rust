@@ -33,8 +33,8 @@ impl SnomedctDetails {
 }
 
 /// A builder for [`SnomedctDetails`](crate::types::SnomedctDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SnomedctDetailsBuilder {
     pub(crate) edition: ::std::option::Option<::std::string::String>,
     pub(crate) language: ::std::option::Option<::std::string::String>,

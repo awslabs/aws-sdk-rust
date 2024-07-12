@@ -55,8 +55,8 @@ impl DescribeResourcePermissionsInput {
 }
 
 /// A builder for [`DescribeResourcePermissionsInput`](crate::operation::describe_resource_permissions::DescribeResourcePermissionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DescribeResourcePermissionsInputBuilder {
     pub(crate) authentication_token: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,

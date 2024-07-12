@@ -20,8 +20,8 @@ impl CreatePresignedNotebookUrlInput {
 }
 
 /// A builder for [`CreatePresignedNotebookUrlInput`](crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePresignedNotebookUrlInputBuilder {
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
 }

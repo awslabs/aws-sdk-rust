@@ -55,8 +55,8 @@ impl UpdateCustomLineItemInput {
 }
 
 /// A builder for [`UpdateCustomLineItemInput`](crate::operation::update_custom_line_item::UpdateCustomLineItemInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateCustomLineItemInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

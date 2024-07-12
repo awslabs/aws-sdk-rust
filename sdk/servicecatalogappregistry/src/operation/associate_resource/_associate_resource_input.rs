@@ -40,8 +40,8 @@ impl AssociateResourceInput {
 }
 
 /// A builder for [`AssociateResourceInput`](crate::operation::associate_resource::AssociateResourceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateResourceInputBuilder {
     pub(crate) application: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,

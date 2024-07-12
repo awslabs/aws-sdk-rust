@@ -36,8 +36,8 @@ impl AttachCertificateToDistributionInput {
 }
 
 /// A builder for [`AttachCertificateToDistributionInput`](crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttachCertificateToDistributionInputBuilder {
     pub(crate) distribution_name: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_name: ::std::option::Option<::std::string::String>,

@@ -23,8 +23,8 @@ impl HumanLoopDataAttributes {
 }
 
 /// A builder for [`HumanLoopDataAttributes`](crate::types::HumanLoopDataAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HumanLoopDataAttributesBuilder {
     pub(crate) content_classifiers: ::std::option::Option<::std::vec::Vec<crate::types::ContentClassifier>>,
 }

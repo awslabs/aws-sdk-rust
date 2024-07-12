@@ -21,8 +21,8 @@ impl VirtualServiceSpec {
 }
 
 /// A builder for [`VirtualServiceSpec`](crate::types::VirtualServiceSpec).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VirtualServiceSpecBuilder {
     pub(crate) provider: ::std::option::Option<crate::types::VirtualServiceProvider>,
 }

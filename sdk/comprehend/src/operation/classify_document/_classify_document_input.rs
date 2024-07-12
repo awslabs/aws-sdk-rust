@@ -62,8 +62,8 @@ impl ClassifyDocumentInput {
 }
 
 /// A builder for [`ClassifyDocumentInput`](crate::operation::classify_document::ClassifyDocumentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ClassifyDocumentInputBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint_arn: ::std::option::Option<::std::string::String>,

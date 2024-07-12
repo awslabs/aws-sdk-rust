@@ -26,8 +26,8 @@ impl GetTimelineEventOutput {
 }
 
 /// A builder for [`GetTimelineEventOutput`](crate::operation::get_timeline_event::GetTimelineEventOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTimelineEventOutputBuilder {
     pub(crate) event: ::std::option::Option<crate::types::TimelineEvent>,
     _request_id: Option<String>,

@@ -52,8 +52,8 @@ impl DeleteObjectsOutput {
 }
 
 /// A builder for [`DeleteObjectsOutput`](crate::operation::delete_objects::DeleteObjectsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteObjectsOutputBuilder {
     pub(crate) deleted: ::std::option::Option<::std::vec::Vec<crate::types::DeletedObject>>,
     pub(crate) request_charged: ::std::option::Option<crate::types::RequestCharged>,

@@ -34,8 +34,8 @@ impl RunPipelineActivityOutput {
 }
 
 /// A builder for [`RunPipelineActivityOutput`](crate::operation::run_pipeline_activity::RunPipelineActivityOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RunPipelineActivityOutputBuilder {
     pub(crate) payloads: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>>,
     pub(crate) log_result: ::std::option::Option<::std::string::String>,

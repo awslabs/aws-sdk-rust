@@ -26,8 +26,8 @@ impl CreateCarrierGatewayOutput {
 }
 
 /// A builder for [`CreateCarrierGatewayOutput`](crate::operation::create_carrier_gateway::CreateCarrierGatewayOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCarrierGatewayOutputBuilder {
     pub(crate) carrier_gateway: ::std::option::Option<crate::types::CarrierGateway>,
     _request_id: Option<String>,

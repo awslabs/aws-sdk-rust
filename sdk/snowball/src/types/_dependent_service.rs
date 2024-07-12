@@ -27,8 +27,8 @@ impl DependentService {
 }
 
 /// A builder for [`DependentService`](crate::types::DependentService).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DependentServiceBuilder {
     pub(crate) service_name: ::std::option::Option<crate::types::ServiceName>,
     pub(crate) service_version: ::std::option::Option<crate::types::ServiceVersion>,

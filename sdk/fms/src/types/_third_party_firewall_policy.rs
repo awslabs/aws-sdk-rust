@@ -21,8 +21,8 @@ impl ThirdPartyFirewallPolicy {
 }
 
 /// A builder for [`ThirdPartyFirewallPolicy`](crate::types::ThirdPartyFirewallPolicy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ThirdPartyFirewallPolicyBuilder {
     pub(crate) firewall_deployment_model: ::std::option::Option<crate::types::FirewallDeploymentModel>,
 }

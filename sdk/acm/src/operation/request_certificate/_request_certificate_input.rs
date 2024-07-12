@@ -124,8 +124,8 @@ impl RequestCertificateInput {
 }
 
 /// A builder for [`RequestCertificateInput`](crate::operation::request_certificate::RequestCertificateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RequestCertificateInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) validation_method: ::std::option::Option<crate::types::ValidationMethod>,

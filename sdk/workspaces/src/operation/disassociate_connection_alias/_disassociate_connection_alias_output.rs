@@ -18,8 +18,8 @@ impl DisassociateConnectionAliasOutput {
 }
 
 /// A builder for [`DisassociateConnectionAliasOutput`](crate::operation::disassociate_connection_alias::DisassociateConnectionAliasOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateConnectionAliasOutputBuilder {
     _request_id: Option<String>,
 }

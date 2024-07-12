@@ -50,8 +50,8 @@ impl ListReadSetUploadPartsInput {
 }
 
 /// A builder for [`ListReadSetUploadPartsInput`](crate::operation::list_read_set_upload_parts::ListReadSetUploadPartsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListReadSetUploadPartsInputBuilder {
     pub(crate) sequence_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) upload_id: ::std::option::Option<::std::string::String>,

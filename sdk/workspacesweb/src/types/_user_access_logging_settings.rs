@@ -36,8 +36,8 @@ impl UserAccessLoggingSettings {
 }
 
 /// A builder for [`UserAccessLoggingSettings`](crate::types::UserAccessLoggingSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UserAccessLoggingSettingsBuilder {
     pub(crate) user_access_logging_settings_arn: ::std::option::Option<::std::string::String>,
     pub(crate) associated_portal_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

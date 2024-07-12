@@ -32,8 +32,8 @@ impl ListSnomedctInferenceJobsInput {
 }
 
 /// A builder for [`ListSnomedctInferenceJobsInput`](crate::operation::list_snomedct_inference_jobs::ListSnomedctInferenceJobsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSnomedctInferenceJobsInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::ComprehendMedicalAsyncJobFilter>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl SapoDataConnectorProfileCredentials {
 }
 
 /// A builder for [`SapoDataConnectorProfileCredentials`](crate::types::SapoDataConnectorProfileCredentials).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SapoDataConnectorProfileCredentialsBuilder {
     pub(crate) basic_auth_credentials: ::std::option::Option<crate::types::BasicAuthCredentials>,
     pub(crate) o_auth_credentials: ::std::option::Option<crate::types::OAuthCredentials>,

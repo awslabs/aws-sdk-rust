@@ -39,8 +39,8 @@ impl SourceCloudProperties {
 }
 
 /// A builder for [`SourceCloudProperties`](crate::types::SourceCloudProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SourceCloudPropertiesBuilder {
     pub(crate) origin_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) origin_region: ::std::option::Option<::std::string::String>,

@@ -39,8 +39,8 @@ impl PackageGroupOriginRestriction {
 }
 
 /// A builder for [`PackageGroupOriginRestriction`](crate::types::PackageGroupOriginRestriction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PackageGroupOriginRestrictionBuilder {
     pub(crate) mode: ::std::option::Option<crate::types::PackageGroupOriginRestrictionMode>,
     pub(crate) effective_mode: ::std::option::Option<crate::types::PackageGroupOriginRestrictionMode>,

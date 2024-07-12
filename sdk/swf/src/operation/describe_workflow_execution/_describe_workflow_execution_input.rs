@@ -26,8 +26,8 @@ impl DescribeWorkflowExecutionInput {
 }
 
 /// A builder for [`DescribeWorkflowExecutionInput`](crate::operation::describe_workflow_execution::DescribeWorkflowExecutionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeWorkflowExecutionInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) execution: ::std::option::Option<crate::types::WorkflowExecution>,

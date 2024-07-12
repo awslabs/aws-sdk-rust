@@ -38,8 +38,8 @@ impl CreateAccountSubscriptionOutput {
 }
 
 /// A builder for [`CreateAccountSubscriptionOutput`](crate::operation::create_account_subscription::CreateAccountSubscriptionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAccountSubscriptionOutputBuilder {
     pub(crate) signup_response: ::std::option::Option<crate::types::SignupResponse>,
     pub(crate) status: ::std::option::Option<i32>,

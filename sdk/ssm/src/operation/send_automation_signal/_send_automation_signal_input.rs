@@ -44,8 +44,8 @@ impl SendAutomationSignalInput {
 }
 
 /// A builder for [`SendAutomationSignalInput`](crate::operation::send_automation_signal::SendAutomationSignalInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendAutomationSignalInputBuilder {
     pub(crate) automation_execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) signal_type: ::std::option::Option<crate::types::SignalType>,

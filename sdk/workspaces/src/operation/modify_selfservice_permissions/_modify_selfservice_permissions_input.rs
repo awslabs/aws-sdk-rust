@@ -26,8 +26,8 @@ impl ModifySelfservicePermissionsInput {
 }
 
 /// A builder for [`ModifySelfservicePermissionsInput`](crate::operation::modify_selfservice_permissions::ModifySelfservicePermissionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifySelfservicePermissionsInputBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) selfservice_permissions: ::std::option::Option<crate::types::SelfservicePermissions>,

@@ -27,8 +27,8 @@ impl ForecastConfiguration {
 }
 
 /// A builder for [`ForecastConfiguration`](crate::types::ForecastConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ForecastConfigurationBuilder {
     pub(crate) forecast_properties: ::std::option::Option<crate::types::TimeBasedForecastProperties>,
     pub(crate) scenario: ::std::option::Option<crate::types::ForecastScenario>,

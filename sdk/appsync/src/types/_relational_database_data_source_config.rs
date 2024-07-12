@@ -35,8 +35,8 @@ impl RelationalDatabaseDataSourceConfig {
 }
 
 /// A builder for [`RelationalDatabaseDataSourceConfig`](crate::types::RelationalDatabaseDataSourceConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RelationalDatabaseDataSourceConfigBuilder {
     pub(crate) relational_database_source_type: ::std::option::Option<crate::types::RelationalDatabaseSourceType>,
     pub(crate) rds_http_endpoint_config: ::std::option::Option<crate::types::RdsHttpEndpointConfig>,

@@ -32,8 +32,8 @@ impl ListTagsForStreamInput {
 }
 
 /// A builder for [`ListTagsForStreamInput`](crate::operation::list_tags_for_stream::ListTagsForStreamInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTagsForStreamInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,

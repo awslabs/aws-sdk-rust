@@ -20,8 +20,8 @@ impl GetDbInstanceInput {
 }
 
 /// A builder for [`GetDbInstanceInput`](crate::operation::get_db_instance::GetDbInstanceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDbInstanceInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
 }

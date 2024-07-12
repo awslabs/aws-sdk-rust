@@ -34,8 +34,8 @@ impl ListRecoveryPointsByLegalHoldOutput {
 }
 
 /// A builder for [`ListRecoveryPointsByLegalHoldOutput`](crate::operation::list_recovery_points_by_legal_hold::ListRecoveryPointsByLegalHoldOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRecoveryPointsByLegalHoldOutputBuilder {
     pub(crate) recovery_points: ::std::option::Option<::std::vec::Vec<crate::types::RecoveryPointMember>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

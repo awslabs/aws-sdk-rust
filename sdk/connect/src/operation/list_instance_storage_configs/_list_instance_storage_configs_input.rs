@@ -38,8 +38,8 @@ impl ListInstanceStorageConfigsInput {
 }
 
 /// A builder for [`ListInstanceStorageConfigsInput`](crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListInstanceStorageConfigsInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::InstanceStorageResourceType>,

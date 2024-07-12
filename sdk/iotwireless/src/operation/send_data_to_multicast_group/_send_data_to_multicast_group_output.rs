@@ -26,8 +26,8 @@ impl SendDataToMulticastGroupOutput {
 }
 
 /// A builder for [`SendDataToMulticastGroupOutput`](crate::operation::send_data_to_multicast_group::SendDataToMulticastGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendDataToMulticastGroupOutputBuilder {
     pub(crate) message_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

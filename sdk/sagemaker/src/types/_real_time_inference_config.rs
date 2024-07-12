@@ -27,8 +27,8 @@ impl RealTimeInferenceConfig {
 }
 
 /// A builder for [`RealTimeInferenceConfig`](crate::types::RealTimeInferenceConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RealTimeInferenceConfigBuilder {
     pub(crate) instance_type: ::std::option::Option<crate::types::InstanceType>,
     pub(crate) instance_count: ::std::option::Option<i32>,

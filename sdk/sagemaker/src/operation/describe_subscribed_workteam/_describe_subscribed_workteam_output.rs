@@ -26,8 +26,8 @@ impl DescribeSubscribedWorkteamOutput {
 }
 
 /// A builder for [`DescribeSubscribedWorkteamOutput`](crate::operation::describe_subscribed_workteam::DescribeSubscribedWorkteamOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSubscribedWorkteamOutputBuilder {
     pub(crate) subscribed_workteam: ::std::option::Option<crate::types::SubscribedWorkteam>,
     _request_id: Option<String>,

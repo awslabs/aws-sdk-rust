@@ -18,8 +18,8 @@ impl PutAccountConfigurationOutput {
 }
 
 /// A builder for [`PutAccountConfigurationOutput`](crate::operation::put_account_configuration::PutAccountConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutAccountConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

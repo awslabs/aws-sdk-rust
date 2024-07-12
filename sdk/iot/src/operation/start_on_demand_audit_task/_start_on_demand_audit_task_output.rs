@@ -26,8 +26,8 @@ impl StartOnDemandAuditTaskOutput {
 }
 
 /// A builder for [`StartOnDemandAuditTaskOutput`](crate::operation::start_on_demand_audit_task::StartOnDemandAuditTaskOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartOnDemandAuditTaskOutputBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

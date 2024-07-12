@@ -46,8 +46,8 @@ impl CreateLogicallyAirGappedBackupVaultOutput {
 }
 
 /// A builder for [`CreateLogicallyAirGappedBackupVaultOutput`](crate::operation::create_logically_air_gapped_backup_vault::CreateLogicallyAirGappedBackupVaultOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLogicallyAirGappedBackupVaultOutputBuilder {
     pub(crate) backup_vault_name: ::std::option::Option<::std::string::String>,
     pub(crate) backup_vault_arn: ::std::option::Option<::std::string::String>,

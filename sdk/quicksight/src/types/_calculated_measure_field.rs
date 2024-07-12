@@ -37,8 +37,8 @@ impl CalculatedMeasureField {
 }
 
 /// A builder for [`CalculatedMeasureField`](crate::types::CalculatedMeasureField).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CalculatedMeasureFieldBuilder {
     pub(crate) field_id: ::std::option::Option<::std::string::String>,
     pub(crate) expression: ::std::option::Option<::std::string::String>,

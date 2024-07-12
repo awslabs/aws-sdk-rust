@@ -33,8 +33,8 @@ impl ListWorkgroupsOutput {
 }
 
 /// A builder for [`ListWorkgroupsOutput`](crate::operation::list_workgroups::ListWorkgroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListWorkgroupsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) workgroups: ::std::option::Option<::std::vec::Vec<crate::types::Workgroup>>,

@@ -62,8 +62,8 @@ impl CreateDbParameterGroupInput {
 }
 
 /// A builder for [`CreateDbParameterGroupInput`](crate::operation::create_db_parameter_group::CreateDbParameterGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDbParameterGroupInputBuilder {
     pub(crate) db_parameter_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) db_parameter_group_family: ::std::option::Option<::std::string::String>,

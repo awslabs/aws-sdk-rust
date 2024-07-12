@@ -21,8 +21,8 @@ impl GetDomainDetailInput {
 }
 
 /// A builder for [`GetDomainDetailInput`](crate::operation::get_domain_detail::GetDomainDetailInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDomainDetailInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
 }

@@ -18,8 +18,8 @@ impl DeleteFunctionDefinitionOutput {
 }
 
 /// A builder for [`DeleteFunctionDefinitionOutput`](crate::operation::delete_function_definition::DeleteFunctionDefinitionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFunctionDefinitionOutputBuilder {
     _request_id: Option<String>,
 }

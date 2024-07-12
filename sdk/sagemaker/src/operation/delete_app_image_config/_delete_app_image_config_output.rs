@@ -18,8 +18,8 @@ impl DeleteAppImageConfigOutput {
 }
 
 /// A builder for [`DeleteAppImageConfigOutput`](crate::operation::delete_app_image_config::DeleteAppImageConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAppImageConfigOutputBuilder {
     _request_id: Option<String>,
 }

@@ -38,8 +38,8 @@ impl ListLanguageModelsInput {
 }
 
 /// A builder for [`ListLanguageModelsInput`](crate::operation::list_language_models::ListLanguageModelsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListLanguageModelsInputBuilder {
     pub(crate) status_equals: ::std::option::Option<crate::types::ModelStatus>,
     pub(crate) name_contains: ::std::option::Option<::std::string::String>,

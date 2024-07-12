@@ -44,8 +44,8 @@ impl GetEventPredictionOutput {
 }
 
 /// A builder for [`GetEventPredictionOutput`](crate::operation::get_event_prediction::GetEventPredictionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEventPredictionOutputBuilder {
     pub(crate) model_scores: ::std::option::Option<::std::vec::Vec<crate::types::ModelScores>>,
     pub(crate) rule_results: ::std::option::Option<::std::vec::Vec<crate::types::RuleResult>>,

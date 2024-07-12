@@ -22,8 +22,8 @@ impl BedrockModelSpecification {
 }
 
 /// A builder for [`BedrockModelSpecification`](crate::types::BedrockModelSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BedrockModelSpecificationBuilder {
     pub(crate) model_arn: ::std::option::Option<::std::string::String>,
 }

@@ -27,8 +27,8 @@ impl DescriptiveBotBuilderSpecification {
 }
 
 /// A builder for [`DescriptiveBotBuilderSpecification`](crate::types::DescriptiveBotBuilderSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescriptiveBotBuilderSpecificationBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) bedrock_model_specification: ::std::option::Option<crate::types::BedrockModelSpecification>,

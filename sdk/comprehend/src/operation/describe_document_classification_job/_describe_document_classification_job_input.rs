@@ -20,8 +20,8 @@ impl DescribeDocumentClassificationJobInput {
 }
 
 /// A builder for [`DescribeDocumentClassificationJobInput`](crate::operation::describe_document_classification_job::DescribeDocumentClassificationJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDocumentClassificationJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }

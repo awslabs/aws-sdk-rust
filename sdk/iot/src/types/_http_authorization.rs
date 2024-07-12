@@ -21,8 +21,8 @@ impl HttpAuthorization {
 }
 
 /// A builder for [`HttpAuthorization`](crate::types::HttpAuthorization).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HttpAuthorizationBuilder {
     pub(crate) sigv4: ::std::option::Option<crate::types::SigV4Authorization>,
 }

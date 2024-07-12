@@ -46,8 +46,8 @@ impl ListEnvironmentAccountConnectionsInput {
 }
 
 /// A builder for [`ListEnvironmentAccountConnectionsInput`](crate::operation::list_environment_account_connections::ListEnvironmentAccountConnectionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEnvironmentAccountConnectionsInputBuilder {
     pub(crate) requested_by: ::std::option::Option<crate::types::EnvironmentAccountConnectionRequesterAccountType>,
     pub(crate) environment_name: ::std::option::Option<::std::string::String>,

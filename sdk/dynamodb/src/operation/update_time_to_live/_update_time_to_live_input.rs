@@ -27,8 +27,8 @@ impl UpdateTimeToLiveInput {
 }
 
 /// A builder for [`UpdateTimeToLiveInput`](crate::operation::update_time_to_live::UpdateTimeToLiveInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateTimeToLiveInputBuilder {
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
     pub(crate) time_to_live_specification: ::std::option::Option<crate::types::TimeToLiveSpecification>,

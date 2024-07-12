@@ -18,8 +18,8 @@ impl CreateTemplateOutput {
 }
 
 /// A builder for [`CreateTemplateOutput`](crate::operation::create_template::CreateTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateTemplateOutputBuilder {
     _request_id: Option<String>,
 }

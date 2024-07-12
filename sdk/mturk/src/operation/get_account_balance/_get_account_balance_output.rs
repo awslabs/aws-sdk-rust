@@ -32,8 +32,8 @@ impl GetAccountBalanceOutput {
 }
 
 /// A builder for [`GetAccountBalanceOutput`](crate::operation::get_account_balance::GetAccountBalanceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAccountBalanceOutputBuilder {
     pub(crate) available_balance: ::std::option::Option<::std::string::String>,
     pub(crate) on_hold_balance: ::std::option::Option<::std::string::String>,

@@ -20,8 +20,8 @@ impl GetLicenseUsageInput {
 }
 
 /// A builder for [`GetLicenseUsageInput`](crate::operation::get_license_usage::GetLicenseUsageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLicenseUsageInputBuilder {
     pub(crate) license_arn: ::std::option::Option<::std::string::String>,
 }

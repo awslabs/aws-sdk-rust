@@ -95,8 +95,8 @@ impl IntentConfirmationSetting {
 }
 
 /// A builder for [`IntentConfirmationSetting`](crate::types::IntentConfirmationSetting).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IntentConfirmationSettingBuilder {
     pub(crate) prompt_specification: ::std::option::Option<crate::types::PromptSpecification>,
     pub(crate) declination_response: ::std::option::Option<crate::types::ResponseSpecification>,

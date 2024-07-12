@@ -26,8 +26,8 @@ impl DeleteIntegrationInput {
 }
 
 /// A builder for [`DeleteIntegrationInput`](crate::operation::delete_integration::DeleteIntegrationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteIntegrationInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) integration_id: ::std::option::Option<::std::string::String>,

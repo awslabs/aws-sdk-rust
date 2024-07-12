@@ -48,8 +48,8 @@ impl CreateAssessmentTemplateInput {
 }
 
 /// A builder for [`CreateAssessmentTemplateInput`](crate::operation::create_assessment_template::CreateAssessmentTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAssessmentTemplateInputBuilder {
     pub(crate) assessment_target_arn: ::std::option::Option<::std::string::String>,
     pub(crate) assessment_template_name: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl DeleteFargateProfileInput {
 }
 
 /// A builder for [`DeleteFargateProfileInput`](crate::operation::delete_fargate_profile::DeleteFargateProfileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFargateProfileInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) fargate_profile_name: ::std::option::Option<::std::string::String>,

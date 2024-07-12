@@ -34,8 +34,8 @@ impl AuthenticationDescription {
 }
 
 /// A builder for [`AuthenticationDescription`](crate::types::AuthenticationDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AuthenticationDescriptionBuilder {
     pub(crate) providers: ::std::option::Option<::std::vec::Vec<crate::types::AuthenticationProviderTypes>>,
     pub(crate) saml: ::std::option::Option<crate::types::SamlAuthentication>,

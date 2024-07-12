@@ -65,8 +65,8 @@ impl AwsWafv2RuleGroupDetails {
 }
 
 /// A builder for [`AwsWafv2RuleGroupDetails`](crate::types::AwsWafv2RuleGroupDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsWafv2RuleGroupDetailsBuilder {
     pub(crate) capacity: ::std::option::Option<i64>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

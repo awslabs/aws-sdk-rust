@@ -46,8 +46,8 @@ impl BucketLevel {
 }
 
 /// A builder for [`BucketLevel`](crate::types::BucketLevel).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BucketLevelBuilder {
     pub(crate) activity_metrics: ::std::option::Option<crate::types::ActivityMetrics>,
     pub(crate) prefix_level: ::std::option::Option<crate::types::PrefixLevel>,

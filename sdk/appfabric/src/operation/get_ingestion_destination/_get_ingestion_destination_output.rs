@@ -26,8 +26,8 @@ impl GetIngestionDestinationOutput {
 }
 
 /// A builder for [`GetIngestionDestinationOutput`](crate::operation::get_ingestion_destination::GetIngestionDestinationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetIngestionDestinationOutputBuilder {
     pub(crate) ingestion_destination: ::std::option::Option<crate::types::IngestionDestination>,
     _request_id: Option<String>,

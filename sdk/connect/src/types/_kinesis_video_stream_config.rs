@@ -36,8 +36,8 @@ impl KinesisVideoStreamConfig {
 }
 
 /// A builder for [`KinesisVideoStreamConfig`](crate::types::KinesisVideoStreamConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KinesisVideoStreamConfigBuilder {
     pub(crate) prefix: ::std::option::Option<::std::string::String>,
     pub(crate) retention_period_hours: ::std::option::Option<i32>,

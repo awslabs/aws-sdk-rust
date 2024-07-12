@@ -39,8 +39,8 @@ impl UpdateMethodResponseOutput {
 }
 
 /// A builder for [`UpdateMethodResponseOutput`](crate::operation::update_method_response::UpdateMethodResponseOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateMethodResponseOutputBuilder {
     pub(crate) status_code: ::std::option::Option<::std::string::String>,
     pub(crate) response_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, bool>>,

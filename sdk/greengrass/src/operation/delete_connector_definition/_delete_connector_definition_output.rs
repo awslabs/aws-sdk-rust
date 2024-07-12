@@ -18,8 +18,8 @@ impl DeleteConnectorDefinitionOutput {
 }
 
 /// A builder for [`DeleteConnectorDefinitionOutput`](crate::operation::delete_connector_definition::DeleteConnectorDefinitionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteConnectorDefinitionOutputBuilder {
     _request_id: Option<String>,
 }

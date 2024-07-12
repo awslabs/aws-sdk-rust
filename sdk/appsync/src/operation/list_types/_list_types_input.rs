@@ -38,8 +38,8 @@ impl ListTypesInput {
 }
 
 /// A builder for [`ListTypesInput`](crate::operation::list_types::ListTypesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTypesInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) format: ::std::option::Option<crate::types::TypeDefinitionFormat>,

@@ -31,8 +31,8 @@ impl UpdateRetrievalConfiguration {
 }
 
 /// A builder for [`UpdateRetrievalConfiguration`](crate::types::UpdateRetrievalConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRetrievalConfigurationBuilder {
     pub(crate) retrieval_mode: ::std::option::Option<crate::types::RetrievalMode>,
     pub(crate) role_name: ::std::option::Option<::std::string::String>,

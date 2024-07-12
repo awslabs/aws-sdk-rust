@@ -39,8 +39,8 @@ impl HttpRoute {
 }
 
 /// A builder for [`HttpRoute`](crate::types::HttpRoute).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HttpRouteBuilder {
     pub(crate) r#match: ::std::option::Option<crate::types::HttpRouteMatch>,
     pub(crate) action: ::std::option::Option<crate::types::HttpRouteAction>,

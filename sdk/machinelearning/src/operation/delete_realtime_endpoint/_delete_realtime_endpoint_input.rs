@@ -20,8 +20,8 @@ impl DeleteRealtimeEndpointInput {
 }
 
 /// A builder for [`DeleteRealtimeEndpointInput`](crate::operation::delete_realtime_endpoint::DeleteRealtimeEndpointInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRealtimeEndpointInputBuilder {
     pub(crate) ml_model_id: ::std::option::Option<::std::string::String>,
 }

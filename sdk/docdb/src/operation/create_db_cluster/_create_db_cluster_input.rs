@@ -263,8 +263,8 @@ impl CreateDbClusterInput {
 }
 
 /// A builder for [`CreateDbClusterInput`](crate::operation::create_db_cluster::CreateDbClusterInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDbClusterInputBuilder {
     pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) backup_retention_period: ::std::option::Option<i32>,

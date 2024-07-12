@@ -26,8 +26,8 @@ impl GetDomainNameOutput {
 }
 
 /// A builder for [`GetDomainNameOutput`](crate::operation::get_domain_name::GetDomainNameOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDomainNameOutputBuilder {
     pub(crate) domain_name_config: ::std::option::Option<crate::types::DomainNameConfig>,
     _request_id: Option<String>,

@@ -26,8 +26,8 @@ impl StartGameSessionPlacementOutput {
 }
 
 /// A builder for [`StartGameSessionPlacementOutput`](crate::operation::start_game_session_placement::StartGameSessionPlacementOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartGameSessionPlacementOutputBuilder {
     pub(crate) game_session_placement: ::std::option::Option<crate::types::GameSessionPlacement>,
     _request_id: Option<String>,

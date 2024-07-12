@@ -41,8 +41,8 @@ impl GetRoleCredentialsInput {
 }
 
 /// A builder for [`GetRoleCredentialsInput`](crate::operation::get_role_credentials::GetRoleCredentialsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetRoleCredentialsInputBuilder {
     pub(crate) role_name: ::std::option::Option<::std::string::String>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,

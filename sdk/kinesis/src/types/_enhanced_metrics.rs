@@ -63,8 +63,8 @@ impl EnhancedMetrics {
 }
 
 /// A builder for [`EnhancedMetrics`](crate::types::EnhancedMetrics).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnhancedMetricsBuilder {
     pub(crate) shard_level_metrics: ::std::option::Option<::std::vec::Vec<crate::types::MetricsName>>,
 }

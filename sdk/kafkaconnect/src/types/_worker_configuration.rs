@@ -28,8 +28,8 @@ impl WorkerConfiguration {
 }
 
 /// A builder for [`WorkerConfiguration`](crate::types::WorkerConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WorkerConfigurationBuilder {
     pub(crate) revision: ::std::option::Option<i64>,
     pub(crate) worker_configuration_arn: ::std::option::Option<::std::string::String>,

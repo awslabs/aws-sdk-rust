@@ -47,8 +47,8 @@ impl InputDeviceNetworkSettings {
 }
 
 /// A builder for [`InputDeviceNetworkSettings`](crate::types::InputDeviceNetworkSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InputDeviceNetworkSettingsBuilder {
     pub(crate) dns_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) gateway: ::std::option::Option<::std::string::String>,

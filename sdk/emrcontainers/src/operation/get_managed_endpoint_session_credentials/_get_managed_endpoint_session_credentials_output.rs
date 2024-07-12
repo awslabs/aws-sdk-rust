@@ -38,8 +38,8 @@ impl GetManagedEndpointSessionCredentialsOutput {
 }
 
 /// A builder for [`GetManagedEndpointSessionCredentialsOutput`](crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetManagedEndpointSessionCredentialsOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) credentials: ::std::option::Option<crate::types::Credentials>,

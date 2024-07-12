@@ -18,8 +18,8 @@ impl UpdatePreparedStatementOutput {
 }
 
 /// A builder for [`UpdatePreparedStatementOutput`](crate::operation::update_prepared_statement::UpdatePreparedStatementOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePreparedStatementOutputBuilder {
     _request_id: Option<String>,
 }

@@ -75,8 +75,8 @@ impl DetachVolumeOutput {
 }
 
 /// A builder for [`DetachVolumeOutput`](crate::operation::detach_volume::DetachVolumeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetachVolumeOutputBuilder {
     pub(crate) attach_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) device: ::std::option::Option<::std::string::String>,

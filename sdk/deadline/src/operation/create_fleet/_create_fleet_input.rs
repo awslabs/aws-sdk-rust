@@ -83,8 +83,8 @@ impl CreateFleetInput {
 }
 
 /// A builder for [`CreateFleetInput`](crate::operation::create_fleet::CreateFleetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateFleetInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) farm_id: ::std::option::Option<::std::string::String>,

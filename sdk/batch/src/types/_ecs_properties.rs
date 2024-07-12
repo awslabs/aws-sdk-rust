@@ -27,8 +27,8 @@ impl EcsProperties {
 }
 
 /// A builder for [`EcsProperties`](crate::types::EcsProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EcsPropertiesBuilder {
     pub(crate) task_properties: ::std::option::Option<::std::vec::Vec<crate::types::EcsTaskProperties>>,
 }

@@ -18,8 +18,8 @@ impl UpdateEmergencyContactSettingsOutput {
 }
 
 /// A builder for [`UpdateEmergencyContactSettingsOutput`](crate::operation::update_emergency_contact_settings::UpdateEmergencyContactSettingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateEmergencyContactSettingsOutputBuilder {
     _request_id: Option<String>,
 }

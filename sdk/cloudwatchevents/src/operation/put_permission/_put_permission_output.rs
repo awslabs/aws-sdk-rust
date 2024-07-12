@@ -18,8 +18,8 @@ impl PutPermissionOutput {
 }
 
 /// A builder for [`PutPermissionOutput`](crate::operation::put_permission::PutPermissionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutPermissionOutputBuilder {
     _request_id: Option<String>,
 }

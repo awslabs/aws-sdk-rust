@@ -28,8 +28,8 @@ impl GetIceServerConfigOutput {
 }
 
 /// A builder for [`GetIceServerConfigOutput`](crate::operation::get_ice_server_config::GetIceServerConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetIceServerConfigOutputBuilder {
     pub(crate) ice_server_list: ::std::option::Option<::std::vec::Vec<crate::types::IceServer>>,
     _request_id: Option<String>,

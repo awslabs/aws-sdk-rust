@@ -39,8 +39,8 @@ impl IntentClosingSetting {
 }
 
 /// A builder for [`IntentClosingSetting`](crate::types::IntentClosingSetting).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IntentClosingSettingBuilder {
     pub(crate) closing_response: ::std::option::Option<crate::types::ResponseSpecification>,
     pub(crate) active: ::std::option::Option<bool>,

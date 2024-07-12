@@ -81,8 +81,8 @@ impl CrawlsFilter {
 }
 
 /// A builder for [`CrawlsFilter`](crate::types::CrawlsFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CrawlsFilterBuilder {
     pub(crate) field_name: ::std::option::Option<crate::types::FieldName>,
     pub(crate) filter_operator: ::std::option::Option<crate::types::FilterOperator>,

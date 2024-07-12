@@ -26,8 +26,8 @@ impl ListStreamProcessorsInput {
 }
 
 /// A builder for [`ListStreamProcessorsInput`](crate::operation::list_stream_processors::ListStreamProcessorsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListStreamProcessorsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

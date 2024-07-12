@@ -21,8 +21,8 @@ impl DeleteVolumeInput {
 }
 
 /// A builder for [`DeleteVolumeInput`](crate::operation::delete_volume::DeleteVolumeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVolumeInputBuilder {
     pub(crate) volume_arn: ::std::option::Option<::std::string::String>,
 }

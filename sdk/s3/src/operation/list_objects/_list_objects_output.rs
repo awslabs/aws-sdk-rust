@@ -112,8 +112,8 @@ impl ListObjectsOutput {
 }
 
 /// A builder for [`ListObjectsOutput`](crate::operation::list_objects::ListObjectsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListObjectsOutputBuilder {
     pub(crate) is_truncated: ::std::option::Option<bool>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

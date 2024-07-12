@@ -50,8 +50,8 @@ impl GetOperationsForResourceOutput {
 }
 
 /// A builder for [`GetOperationsForResourceOutput`](crate::operation::get_operations_for_resource::GetOperationsForResourceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetOperationsForResourceOutputBuilder {
     pub(crate) operations: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>,
     pub(crate) next_page_count: ::std::option::Option<::std::string::String>,

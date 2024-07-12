@@ -118,8 +118,8 @@ impl DescribeExplainabilityExportOutput {
 }
 
 /// A builder for [`DescribeExplainabilityExportOutput`](crate::operation::describe_explainability_export::DescribeExplainabilityExportOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeExplainabilityExportOutputBuilder {
     pub(crate) explainability_export_arn: ::std::option::Option<::std::string::String>,
     pub(crate) explainability_export_name: ::std::option::Option<::std::string::String>,

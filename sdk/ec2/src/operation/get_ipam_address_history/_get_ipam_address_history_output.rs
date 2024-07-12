@@ -34,8 +34,8 @@ impl GetIpamAddressHistoryOutput {
 }
 
 /// A builder for [`GetIpamAddressHistoryOutput`](crate::operation::get_ipam_address_history::GetIpamAddressHistoryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetIpamAddressHistoryOutputBuilder {
     pub(crate) history_records: ::std::option::Option<::std::vec::Vec<crate::types::IpamAddressHistoryRecord>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

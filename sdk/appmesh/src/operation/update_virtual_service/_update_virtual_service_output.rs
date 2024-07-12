@@ -26,8 +26,8 @@ impl UpdateVirtualServiceOutput {
 }
 
 /// A builder for [`UpdateVirtualServiceOutput`](crate::operation::update_virtual_service::UpdateVirtualServiceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateVirtualServiceOutputBuilder {
     pub(crate) virtual_service: ::std::option::Option<crate::types::VirtualServiceData>,
     _request_id: Option<String>,

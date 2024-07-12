@@ -161,8 +161,8 @@ impl AwsAutoScalingLaunchConfigurationDetails {
 }
 
 /// A builder for [`AwsAutoScalingLaunchConfigurationDetails`](crate::types::AwsAutoScalingLaunchConfigurationDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsAutoScalingLaunchConfigurationDetailsBuilder {
     pub(crate) associate_public_ip_address: ::std::option::Option<bool>,
     pub(crate) block_device_mappings:

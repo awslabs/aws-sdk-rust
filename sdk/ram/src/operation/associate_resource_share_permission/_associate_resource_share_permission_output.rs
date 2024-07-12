@@ -32,8 +32,8 @@ impl AssociateResourceSharePermissionOutput {
 }
 
 /// A builder for [`AssociateResourceSharePermissionOutput`](crate::operation::associate_resource_share_permission::AssociateResourceSharePermissionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateResourceSharePermissionOutputBuilder {
     pub(crate) return_value: ::std::option::Option<bool>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

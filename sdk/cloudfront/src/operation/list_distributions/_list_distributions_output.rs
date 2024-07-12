@@ -27,8 +27,8 @@ impl ListDistributionsOutput {
 }
 
 /// A builder for [`ListDistributionsOutput`](crate::operation::list_distributions::ListDistributionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDistributionsOutputBuilder {
     pub(crate) distribution_list: ::std::option::Option<crate::types::DistributionList>,
     _request_id: Option<String>,

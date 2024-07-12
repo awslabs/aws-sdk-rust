@@ -35,8 +35,8 @@ impl FilterCrossSheetControl {
 }
 
 /// A builder for [`FilterCrossSheetControl`](crate::types::FilterCrossSheetControl).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FilterCrossSheetControlBuilder {
     pub(crate) filter_control_id: ::std::option::Option<::std::string::String>,
     pub(crate) source_filter_id: ::std::option::Option<::std::string::String>,

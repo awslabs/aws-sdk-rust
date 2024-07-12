@@ -28,8 +28,8 @@ impl AudienceQualityMetrics {
 }
 
 /// A builder for [`AudienceQualityMetrics`](crate::types::AudienceQualityMetrics).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AudienceQualityMetricsBuilder {
     pub(crate) relevance_metrics: ::std::option::Option<::std::vec::Vec<crate::types::RelevanceMetric>>,
     pub(crate) recall_metric: ::std::option::Option<f64>,

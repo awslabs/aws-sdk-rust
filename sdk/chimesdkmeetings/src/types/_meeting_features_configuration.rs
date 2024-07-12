@@ -39,8 +39,8 @@ impl MeetingFeaturesConfiguration {
 }
 
 /// A builder for [`MeetingFeaturesConfiguration`](crate::types::MeetingFeaturesConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MeetingFeaturesConfigurationBuilder {
     pub(crate) audio: ::std::option::Option<crate::types::AudioFeatures>,
     pub(crate) video: ::std::option::Option<crate::types::VideoFeatures>,

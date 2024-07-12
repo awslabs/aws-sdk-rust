@@ -41,8 +41,8 @@ impl AuthorizeClusterSecurityGroupIngressInput {
 }
 
 /// A builder for [`AuthorizeClusterSecurityGroupIngressInput`](crate::operation::authorize_cluster_security_group_ingress::AuthorizeClusterSecurityGroupIngressInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AuthorizeClusterSecurityGroupIngressInputBuilder {
     pub(crate) cluster_security_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) cidrip: ::std::option::Option<::std::string::String>,

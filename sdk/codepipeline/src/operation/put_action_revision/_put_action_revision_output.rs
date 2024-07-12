@@ -33,8 +33,8 @@ impl PutActionRevisionOutput {
 }
 
 /// A builder for [`PutActionRevisionOutput`](crate::operation::put_action_revision::PutActionRevisionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutActionRevisionOutputBuilder {
     pub(crate) new_revision: ::std::option::Option<bool>,
     pub(crate) pipeline_execution_id: ::std::option::Option<::std::string::String>,

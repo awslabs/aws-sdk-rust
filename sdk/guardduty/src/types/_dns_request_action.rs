@@ -39,8 +39,8 @@ impl DnsRequestAction {
 }
 
 /// A builder for [`DnsRequestAction`](crate::types::DnsRequestAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DnsRequestActionBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) protocol: ::std::option::Option<::std::string::String>,

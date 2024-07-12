@@ -36,8 +36,8 @@ impl DescribeTaskSetsOutput {
 }
 
 /// A builder for [`DescribeTaskSetsOutput`](crate::operation::describe_task_sets::DescribeTaskSetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTaskSetsOutputBuilder {
     pub(crate) task_sets: ::std::option::Option<::std::vec::Vec<crate::types::TaskSet>>,
     pub(crate) failures: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>,

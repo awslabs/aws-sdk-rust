@@ -39,8 +39,8 @@ impl CoverageHours {
 }
 
 /// A builder for [`CoverageHours`](crate::types::CoverageHours).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CoverageHoursBuilder {
     pub(crate) on_demand_hours: ::std::option::Option<::std::string::String>,
     pub(crate) reserved_hours: ::std::option::Option<::std::string::String>,

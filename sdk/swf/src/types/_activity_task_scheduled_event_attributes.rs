@@ -86,8 +86,8 @@ impl ActivityTaskScheduledEventAttributes {
 }
 
 /// A builder for [`ActivityTaskScheduledEventAttributes`](crate::types::ActivityTaskScheduledEventAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ActivityTaskScheduledEventAttributesBuilder {
     pub(crate) activity_type: ::std::option::Option<crate::types::ActivityType>,
     pub(crate) activity_id: ::std::option::Option<::std::string::String>,

@@ -28,8 +28,8 @@ impl InstanceTypeCapacity {
 }
 
 /// A builder for [`InstanceTypeCapacity`](crate::types::InstanceTypeCapacity).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceTypeCapacityBuilder {
     pub(crate) instance_type: ::std::option::Option<::std::string::String>,
     pub(crate) count: ::std::option::Option<i32>,

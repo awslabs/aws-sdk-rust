@@ -20,8 +20,8 @@ impl GetSolNetworkOperationInput {
 }
 
 /// A builder for [`GetSolNetworkOperationInput`](crate::operation::get_sol_network_operation::GetSolNetworkOperationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSolNetworkOperationInputBuilder {
     pub(crate) ns_lcm_op_occ_id: ::std::option::Option<::std::string::String>,
 }

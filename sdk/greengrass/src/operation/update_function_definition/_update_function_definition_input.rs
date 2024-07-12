@@ -26,8 +26,8 @@ impl UpdateFunctionDefinitionInput {
 }
 
 /// A builder for [`UpdateFunctionDefinitionInput`](crate::operation::update_function_definition::UpdateFunctionDefinitionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateFunctionDefinitionInputBuilder {
     pub(crate) function_definition_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

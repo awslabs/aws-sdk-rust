@@ -32,8 +32,8 @@ impl ListSafetyRulesInput {
 }
 
 /// A builder for [`ListSafetyRulesInput`](crate::operation::list_safety_rules::ListSafetyRulesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSafetyRulesInputBuilder {
     pub(crate) control_panel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

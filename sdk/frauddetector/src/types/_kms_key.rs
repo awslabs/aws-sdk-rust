@@ -21,8 +21,8 @@ impl KmsKey {
 }
 
 /// A builder for [`KmsKey`](crate::types::KmsKey).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KmsKeyBuilder {
     pub(crate) kms_encryption_key_arn: ::std::option::Option<::std::string::String>,
 }

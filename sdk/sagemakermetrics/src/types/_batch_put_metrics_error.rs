@@ -47,8 +47,8 @@ impl BatchPutMetricsError {
 }
 
 /// A builder for [`BatchPutMetricsError`](crate::types::BatchPutMetricsError).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchPutMetricsErrorBuilder {
     pub(crate) code: ::std::option::Option<crate::types::PutMetricsErrorCode>,
     pub(crate) metric_index: ::std::option::Option<i32>,

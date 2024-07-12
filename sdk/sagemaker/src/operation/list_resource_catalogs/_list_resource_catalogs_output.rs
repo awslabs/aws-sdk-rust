@@ -34,8 +34,8 @@ impl ListResourceCatalogsOutput {
 }
 
 /// A builder for [`ListResourceCatalogsOutput`](crate::operation::list_resource_catalogs::ListResourceCatalogsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListResourceCatalogsOutputBuilder {
     pub(crate) resource_catalogs: ::std::option::Option<::std::vec::Vec<crate::types::ResourceCatalog>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

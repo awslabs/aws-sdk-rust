@@ -33,8 +33,8 @@ impl BatchUpdateScheduleOutput {
 }
 
 /// A builder for [`BatchUpdateScheduleOutput`](crate::operation::batch_update_schedule::BatchUpdateScheduleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchUpdateScheduleOutputBuilder {
     pub(crate) creates: ::std::option::Option<crate::types::BatchScheduleActionCreateResult>,
     pub(crate) deletes: ::std::option::Option<crate::types::BatchScheduleActionDeleteResult>,

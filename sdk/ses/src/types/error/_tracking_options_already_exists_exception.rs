@@ -53,8 +53,8 @@ impl TrackingOptionsAlreadyExistsException {
 }
 
 /// A builder for [`TrackingOptionsAlreadyExistsException`](crate::types::error::TrackingOptionsAlreadyExistsException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TrackingOptionsAlreadyExistsExceptionBuilder {
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

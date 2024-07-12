@@ -41,8 +41,8 @@ impl ProtocolsListDataSummary {
 }
 
 /// A builder for [`ProtocolsListDataSummary`](crate::types::ProtocolsListDataSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProtocolsListDataSummaryBuilder {
     pub(crate) list_arn: ::std::option::Option<::std::string::String>,
     pub(crate) list_id: ::std::option::Option<::std::string::String>,

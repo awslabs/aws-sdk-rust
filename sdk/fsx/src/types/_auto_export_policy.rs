@@ -42,8 +42,8 @@ impl AutoExportPolicy {
 }
 
 /// A builder for [`AutoExportPolicy`](crate::types::AutoExportPolicy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AutoExportPolicyBuilder {
     pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>,
 }

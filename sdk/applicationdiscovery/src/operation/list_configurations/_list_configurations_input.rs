@@ -52,8 +52,8 @@ impl ListConfigurationsInput {
 }
 
 /// A builder for [`ListConfigurationsInput`](crate::operation::list_configurations::ListConfigurationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListConfigurationsInputBuilder {
     pub(crate) configuration_type: ::std::option::Option<crate::types::ConfigurationItemType>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,

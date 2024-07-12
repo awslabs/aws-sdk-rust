@@ -28,8 +28,8 @@ impl GetHealthCheckStatusOutput {
 }
 
 /// A builder for [`GetHealthCheckStatusOutput`](crate::operation::get_health_check_status::GetHealthCheckStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetHealthCheckStatusOutputBuilder {
     pub(crate) health_check_observations: ::std::option::Option<::std::vec::Vec<crate::types::HealthCheckObservation>>,
     _request_id: Option<String>,

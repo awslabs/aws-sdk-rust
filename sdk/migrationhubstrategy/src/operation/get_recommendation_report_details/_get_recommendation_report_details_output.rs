@@ -32,8 +32,8 @@ impl GetRecommendationReportDetailsOutput {
 }
 
 /// A builder for [`GetRecommendationReportDetailsOutput`](crate::operation::get_recommendation_report_details::GetRecommendationReportDetailsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRecommendationReportDetailsOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) recommendation_report_details: ::std::option::Option<crate::types::RecommendationReportDetails>,

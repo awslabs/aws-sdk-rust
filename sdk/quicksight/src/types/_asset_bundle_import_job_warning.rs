@@ -27,8 +27,8 @@ impl AssetBundleImportJobWarning {
 }
 
 /// A builder for [`AssetBundleImportJobWarning`](crate::types::AssetBundleImportJobWarning).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssetBundleImportJobWarningBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

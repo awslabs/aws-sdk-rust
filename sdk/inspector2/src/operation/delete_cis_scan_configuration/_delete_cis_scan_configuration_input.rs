@@ -20,8 +20,8 @@ impl DeleteCisScanConfigurationInput {
 }
 
 /// A builder for [`DeleteCisScanConfigurationInput`](crate::operation::delete_cis_scan_configuration::DeleteCisScanConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCisScanConfigurationInputBuilder {
     pub(crate) scan_configuration_arn: ::std::option::Option<::std::string::String>,
 }

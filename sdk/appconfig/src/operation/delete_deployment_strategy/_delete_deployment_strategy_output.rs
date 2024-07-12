@@ -18,8 +18,8 @@ impl DeleteDeploymentStrategyOutput {
 }
 
 /// A builder for [`DeleteDeploymentStrategyOutput`](crate::operation::delete_deployment_strategy::DeleteDeploymentStrategyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDeploymentStrategyOutputBuilder {
     _request_id: Option<String>,
 }

@@ -26,8 +26,8 @@ impl CreateSmsTemplateInput {
 }
 
 /// A builder for [`CreateSmsTemplateInput`](crate::operation::create_sms_template::CreateSmsTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSmsTemplateInputBuilder {
     pub(crate) sms_template_request: ::std::option::Option<crate::types::SmsTemplateRequest>,
     pub(crate) template_name: ::std::option::Option<::std::string::String>,

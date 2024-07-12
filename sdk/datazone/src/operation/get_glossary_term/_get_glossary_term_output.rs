@@ -115,8 +115,8 @@ impl GetGlossaryTermOutput {
 }
 
 /// A builder for [`GetGlossaryTermOutput`](crate::operation::get_glossary_term::GetGlossaryTermOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetGlossaryTermOutputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) glossary_id: ::std::option::Option<::std::string::String>,

@@ -53,8 +53,8 @@ impl LicenseRecommendationOption {
 }
 
 /// A builder for [`LicenseRecommendationOption`](crate::types::LicenseRecommendationOption).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LicenseRecommendationOptionBuilder {
     pub(crate) rank: ::std::option::Option<i32>,
     pub(crate) operating_system: ::std::option::Option<::std::string::String>,

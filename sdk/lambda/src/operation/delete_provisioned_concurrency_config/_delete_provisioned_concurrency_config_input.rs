@@ -46,8 +46,8 @@ impl DeleteProvisionedConcurrencyConfigInput {
 }
 
 /// A builder for [`DeleteProvisionedConcurrencyConfigInput`](crate::operation::delete_provisioned_concurrency_config::DeleteProvisionedConcurrencyConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteProvisionedConcurrencyConfigInputBuilder {
     pub(crate) function_name: ::std::option::Option<::std::string::String>,
     pub(crate) qualifier: ::std::option::Option<::std::string::String>,

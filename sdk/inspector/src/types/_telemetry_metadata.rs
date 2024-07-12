@@ -34,8 +34,8 @@ impl TelemetryMetadata {
 }
 
 /// A builder for [`TelemetryMetadata`](crate::types::TelemetryMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TelemetryMetadataBuilder {
     pub(crate) message_type: ::std::option::Option<::std::string::String>,
     pub(crate) count: ::std::option::Option<i64>,

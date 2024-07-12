@@ -34,8 +34,8 @@ impl DescribeCodeCoveragesOutput {
 }
 
 /// A builder for [`DescribeCodeCoveragesOutput`](crate::operation::describe_code_coverages::DescribeCodeCoveragesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCodeCoveragesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) code_coverages: ::std::option::Option<::std::vec::Vec<crate::types::CodeCoverage>>,

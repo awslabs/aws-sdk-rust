@@ -28,8 +28,8 @@ impl JobSchedule {
 }
 
 /// A builder for [`JobSchedule`](crate::types::JobSchedule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JobScheduleBuilder {
     pub(crate) day_of_the_week: ::std::option::Option<crate::types::JobScheduleDayOfTheWeek>,
     pub(crate) time: ::std::option::Option<::std::string::String>,

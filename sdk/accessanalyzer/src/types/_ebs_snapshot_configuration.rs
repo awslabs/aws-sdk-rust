@@ -81,8 +81,8 @@ impl EbsSnapshotConfiguration {
 }
 
 /// A builder for [`EbsSnapshotConfiguration`](crate::types::EbsSnapshotConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EbsSnapshotConfigurationBuilder {
     pub(crate) user_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

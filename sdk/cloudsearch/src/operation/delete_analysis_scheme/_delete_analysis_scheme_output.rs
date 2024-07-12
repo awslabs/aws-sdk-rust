@@ -27,8 +27,8 @@ impl DeleteAnalysisSchemeOutput {
 }
 
 /// A builder for [`DeleteAnalysisSchemeOutput`](crate::operation::delete_analysis_scheme::DeleteAnalysisSchemeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAnalysisSchemeOutputBuilder {
     pub(crate) analysis_scheme: ::std::option::Option<crate::types::AnalysisSchemeStatus>,
     _request_id: Option<String>,

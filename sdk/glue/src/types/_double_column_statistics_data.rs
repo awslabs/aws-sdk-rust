@@ -39,8 +39,8 @@ impl DoubleColumnStatisticsData {
 }
 
 /// A builder for [`DoubleColumnStatisticsData`](crate::types::DoubleColumnStatisticsData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DoubleColumnStatisticsDataBuilder {
     pub(crate) minimum_value: ::std::option::Option<f64>,
     pub(crate) maximum_value: ::std::option::Option<f64>,

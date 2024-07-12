@@ -20,8 +20,8 @@ impl DetectPhiInput {
 }
 
 /// A builder for [`DetectPhiInput`](crate::operation::detect_phi::DetectPhiInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetectPhiInputBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
 }

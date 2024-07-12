@@ -29,8 +29,8 @@ impl ItemResponse {
 }
 
 /// A builder for [`ItemResponse`](crate::types::ItemResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ItemResponseBuilder {
     pub(crate) endpoint_item_response: ::std::option::Option<crate::types::EndpointItemResponse>,
     pub(crate) events_item_response: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EventItemResponse>>,

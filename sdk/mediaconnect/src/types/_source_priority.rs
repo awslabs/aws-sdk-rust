@@ -21,8 +21,8 @@ impl SourcePriority {
 }
 
 /// A builder for [`SourcePriority`](crate::types::SourcePriority).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SourcePriorityBuilder {
     pub(crate) primary_source: ::std::option::Option<::std::string::String>,
 }

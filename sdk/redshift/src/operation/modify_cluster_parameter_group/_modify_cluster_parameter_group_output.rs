@@ -33,8 +33,8 @@ impl ModifyClusterParameterGroupOutput {
 }
 
 /// A builder for [`ModifyClusterParameterGroupOutput`](crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyClusterParameterGroupOutputBuilder {
     pub(crate) parameter_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) parameter_group_status: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl CreateDataSetImportTaskOutput {
 }
 
 /// A builder for [`CreateDataSetImportTaskOutput`](crate::operation::create_data_set_import_task::CreateDataSetImportTaskOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDataSetImportTaskOutputBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

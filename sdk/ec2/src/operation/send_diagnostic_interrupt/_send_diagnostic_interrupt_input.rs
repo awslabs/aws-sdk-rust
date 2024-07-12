@@ -26,8 +26,8 @@ impl SendDiagnosticInterruptInput {
 }
 
 /// A builder for [`SendDiagnosticInterruptInput`](crate::operation::send_diagnostic_interrupt::SendDiagnosticInterruptInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendDiagnosticInterruptInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,

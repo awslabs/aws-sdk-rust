@@ -26,8 +26,8 @@ impl UpdateOutpostResolverOutput {
 }
 
 /// A builder for [`UpdateOutpostResolverOutput`](crate::operation::update_outpost_resolver::UpdateOutpostResolverOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateOutpostResolverOutputBuilder {
     pub(crate) outpost_resolver: ::std::option::Option<crate::types::OutpostResolver>,
     _request_id: Option<String>,

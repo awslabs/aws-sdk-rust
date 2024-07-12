@@ -35,8 +35,8 @@ impl PipeTargetHttpParameters {
 }
 
 /// A builder for [`PipeTargetHttpParameters`](crate::types::PipeTargetHttpParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PipeTargetHttpParametersBuilder {
     pub(crate) path_parameter_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) header_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

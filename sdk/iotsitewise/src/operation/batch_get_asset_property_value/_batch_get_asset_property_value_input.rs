@@ -28,8 +28,8 @@ impl BatchGetAssetPropertyValueInput {
 }
 
 /// A builder for [`BatchGetAssetPropertyValueInput`](crate::operation::batch_get_asset_property_value::BatchGetAssetPropertyValueInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetAssetPropertyValueInputBuilder {
     pub(crate) entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetAssetPropertyValueEntry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

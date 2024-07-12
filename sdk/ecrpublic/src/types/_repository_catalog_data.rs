@@ -69,8 +69,8 @@ impl RepositoryCatalogData {
 }
 
 /// A builder for [`RepositoryCatalogData`](crate::types::RepositoryCatalogData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RepositoryCatalogDataBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) architectures: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -27,8 +27,8 @@ impl GatewayRouteTarget {
 }
 
 /// A builder for [`GatewayRouteTarget`](crate::types::GatewayRouteTarget).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GatewayRouteTargetBuilder {
     pub(crate) virtual_service: ::std::option::Option<crate::types::GatewayRouteVirtualService>,
     pub(crate) port: ::std::option::Option<i32>,

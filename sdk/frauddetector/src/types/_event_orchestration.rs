@@ -21,8 +21,8 @@ impl EventOrchestration {
 }
 
 /// A builder for [`EventOrchestration`](crate::types::EventOrchestration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EventOrchestrationBuilder {
     pub(crate) event_bridge_enabled: ::std::option::Option<bool>,
 }

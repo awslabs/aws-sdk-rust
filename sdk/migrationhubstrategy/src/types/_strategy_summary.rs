@@ -27,8 +27,8 @@ impl StrategySummary {
 }
 
 /// A builder for [`StrategySummary`](crate::types::StrategySummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StrategySummaryBuilder {
     pub(crate) strategy: ::std::option::Option<crate::types::Strategy>,
     pub(crate) count: ::std::option::Option<i32>,

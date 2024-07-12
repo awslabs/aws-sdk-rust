@@ -44,8 +44,8 @@ impl GetAggregateDiscoveredResourceCountsInput {
 }
 
 /// A builder for [`GetAggregateDiscoveredResourceCountsInput`](crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAggregateDiscoveredResourceCountsInputBuilder {
     pub(crate) configuration_aggregator_name: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<crate::types::ResourceCountFilters>,

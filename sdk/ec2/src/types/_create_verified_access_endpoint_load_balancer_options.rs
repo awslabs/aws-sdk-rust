@@ -41,8 +41,8 @@ impl CreateVerifiedAccessEndpointLoadBalancerOptions {
 }
 
 /// A builder for [`CreateVerifiedAccessEndpointLoadBalancerOptions`](crate::types::CreateVerifiedAccessEndpointLoadBalancerOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateVerifiedAccessEndpointLoadBalancerOptionsBuilder {
     pub(crate) protocol: ::std::option::Option<crate::types::VerifiedAccessEndpointProtocol>,
     pub(crate) port: ::std::option::Option<i32>,

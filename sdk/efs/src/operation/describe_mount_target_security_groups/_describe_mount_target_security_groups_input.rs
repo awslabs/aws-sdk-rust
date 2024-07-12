@@ -21,8 +21,8 @@ impl DescribeMountTargetSecurityGroupsInput {
 }
 
 /// A builder for [`DescribeMountTargetSecurityGroupsInput`](crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeMountTargetSecurityGroupsInputBuilder {
     pub(crate) mount_target_id: ::std::option::Option<::std::string::String>,
 }

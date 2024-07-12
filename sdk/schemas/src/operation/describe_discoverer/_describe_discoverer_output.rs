@@ -62,8 +62,8 @@ impl DescribeDiscovererOutput {
 }
 
 /// A builder for [`DescribeDiscovererOutput`](crate::operation::describe_discoverer::DescribeDiscovererOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDiscovererOutputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) discoverer_arn: ::std::option::Option<::std::string::String>,

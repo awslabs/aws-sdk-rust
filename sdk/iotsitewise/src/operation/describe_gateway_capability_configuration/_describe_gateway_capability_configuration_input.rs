@@ -26,8 +26,8 @@ impl DescribeGatewayCapabilityConfigurationInput {
 }
 
 /// A builder for [`DescribeGatewayCapabilityConfigurationInput`](crate::operation::describe_gateway_capability_configuration::DescribeGatewayCapabilityConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeGatewayCapabilityConfigurationInputBuilder {
     pub(crate) gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) capability_namespace: ::std::option::Option<::std::string::String>,

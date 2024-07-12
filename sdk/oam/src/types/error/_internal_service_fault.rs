@@ -53,8 +53,8 @@ impl InternalServiceFault {
 }
 
 /// A builder for [`InternalServiceFault`](crate::types::error::InternalServiceFault).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InternalServiceFaultBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) amzn_error_type: ::std::option::Option<::std::string::String>,

@@ -18,8 +18,8 @@ impl DeleteInternetGatewayOutput {
 }
 
 /// A builder for [`DeleteInternetGatewayOutput`](crate::operation::delete_internet_gateway::DeleteInternetGatewayOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteInternetGatewayOutputBuilder {
     _request_id: Option<String>,
 }

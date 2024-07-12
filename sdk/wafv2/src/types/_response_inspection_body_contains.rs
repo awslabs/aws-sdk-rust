@@ -35,8 +35,8 @@ impl ResponseInspectionBodyContains {
 }
 
 /// A builder for [`ResponseInspectionBodyContains`](crate::types::ResponseInspectionBodyContains).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResponseInspectionBodyContainsBuilder {
     pub(crate) success_strings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) failure_strings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

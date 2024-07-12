@@ -35,8 +35,8 @@ impl DescribeReplicationTasksOutput {
 }
 
 /// A builder for [`DescribeReplicationTasksOutput`](crate::operation::describe_replication_tasks::DescribeReplicationTasksOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeReplicationTasksOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) replication_tasks: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationTask>>,

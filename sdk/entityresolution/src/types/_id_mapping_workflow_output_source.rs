@@ -28,8 +28,8 @@ impl IdMappingWorkflowOutputSource {
 }
 
 /// A builder for [`IdMappingWorkflowOutputSource`](crate::types::IdMappingWorkflowOutputSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IdMappingWorkflowOutputSourceBuilder {
     pub(crate) output_s3_path: ::std::option::Option<::std::string::String>,
     pub(crate) kms_arn: ::std::option::Option<::std::string::String>,

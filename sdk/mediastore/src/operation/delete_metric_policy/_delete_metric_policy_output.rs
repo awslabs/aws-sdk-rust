@@ -18,8 +18,8 @@ impl DeleteMetricPolicyOutput {
 }
 
 /// A builder for [`DeleteMetricPolicyOutput`](crate::operation::delete_metric_policy::DeleteMetricPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteMetricPolicyOutputBuilder {
     _request_id: Option<String>,
 }

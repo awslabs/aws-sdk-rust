@@ -46,8 +46,8 @@ impl DescribeMaintenanceWindowExecutionTaskInvocationsInput {
 }
 
 /// A builder for [`DescribeMaintenanceWindowExecutionTaskInvocationsInput`](crate::operation::describe_maintenance_window_execution_task_invocations::DescribeMaintenanceWindowExecutionTaskInvocationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeMaintenanceWindowExecutionTaskInvocationsInputBuilder {
     pub(crate) window_execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) task_id: ::std::option::Option<::std::string::String>,

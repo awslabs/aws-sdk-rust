@@ -27,8 +27,8 @@ impl BulkPublishOutput {
 }
 
 /// A builder for [`BulkPublishOutput`](crate::operation::bulk_publish::BulkPublishOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BulkPublishOutputBuilder {
     pub(crate) identity_pool_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

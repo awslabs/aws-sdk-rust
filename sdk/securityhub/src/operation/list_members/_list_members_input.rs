@@ -38,8 +38,8 @@ impl ListMembersInput {
 }
 
 /// A builder for [`ListMembersInput`](crate::operation::list_members::ListMembersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListMembersInputBuilder {
     pub(crate) only_associated: ::std::option::Option<bool>,
     pub(crate) max_results: ::std::option::Option<i32>,

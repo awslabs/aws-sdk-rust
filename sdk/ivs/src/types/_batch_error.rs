@@ -33,8 +33,8 @@ impl BatchError {
 }
 
 /// A builder for [`BatchError`](crate::types::BatchError).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchErrorBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) code: ::std::option::Option<::std::string::String>,

@@ -32,8 +32,8 @@ impl UpdateBrokerCountInput {
 }
 
 /// A builder for [`UpdateBrokerCountInput`](crate::operation::update_broker_count::UpdateBrokerCountInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateBrokerCountInputBuilder {
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) current_version: ::std::option::Option<::std::string::String>,

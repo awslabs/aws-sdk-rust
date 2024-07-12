@@ -22,8 +22,8 @@ impl PromptFlowNodeResourceConfiguration {
 }
 
 /// A builder for [`PromptFlowNodeResourceConfiguration`](crate::types::PromptFlowNodeResourceConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PromptFlowNodeResourceConfigurationBuilder {
     pub(crate) prompt_arn: ::std::option::Option<::std::string::String>,
 }

@@ -18,8 +18,8 @@ impl DeleteAccessKeyOutput {
 }
 
 /// A builder for [`DeleteAccessKeyOutput`](crate::operation::delete_access_key::DeleteAccessKeyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAccessKeyOutputBuilder {
     _request_id: Option<String>,
 }

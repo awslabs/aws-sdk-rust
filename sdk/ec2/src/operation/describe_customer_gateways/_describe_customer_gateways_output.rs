@@ -29,8 +29,8 @@ impl DescribeCustomerGatewaysOutput {
 }
 
 /// A builder for [`DescribeCustomerGatewaysOutput`](crate::operation::describe_customer_gateways::DescribeCustomerGatewaysOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCustomerGatewaysOutputBuilder {
     pub(crate) customer_gateways: ::std::option::Option<::std::vec::Vec<crate::types::CustomerGateway>>,
     _request_id: Option<String>,

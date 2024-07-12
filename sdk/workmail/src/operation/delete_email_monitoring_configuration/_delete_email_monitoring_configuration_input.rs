@@ -20,8 +20,8 @@ impl DeleteEmailMonitoringConfigurationInput {
 }
 
 /// A builder for [`DeleteEmailMonitoringConfigurationInput`](crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteEmailMonitoringConfigurationInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
 }

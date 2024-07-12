@@ -18,8 +18,8 @@ impl DeleteStorageLensGroupOutput {
 }
 
 /// A builder for [`DeleteStorageLensGroupOutput`](crate::operation::delete_storage_lens_group::DeleteStorageLensGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteStorageLensGroupOutputBuilder {
     _request_id: Option<String>,
 }

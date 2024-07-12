@@ -26,8 +26,8 @@ impl RebootDbInstanceOutput {
 }
 
 /// A builder for [`RebootDbInstanceOutput`](crate::operation::reboot_db_instance::RebootDbInstanceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RebootDbInstanceOutputBuilder {
     pub(crate) db_instance: ::std::option::Option<crate::types::DbInstance>,
     _request_id: Option<String>,

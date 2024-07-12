@@ -45,8 +45,8 @@ impl ForecastGeofenceEventsOutput {
 }
 
 /// A builder for [`ForecastGeofenceEventsOutput`](crate::operation::forecast_geofence_events::ForecastGeofenceEventsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ForecastGeofenceEventsOutputBuilder {
     pub(crate) forecasted_events: ::std::option::Option<::std::vec::Vec<crate::types::ForecastedEvent>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

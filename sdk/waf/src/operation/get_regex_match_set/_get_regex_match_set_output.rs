@@ -26,8 +26,8 @@ impl GetRegexMatchSetOutput {
 }
 
 /// A builder for [`GetRegexMatchSetOutput`](crate::operation::get_regex_match_set::GetRegexMatchSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRegexMatchSetOutputBuilder {
     pub(crate) regex_match_set: ::std::option::Option<crate::types::RegexMatchSet>,
     _request_id: Option<String>,

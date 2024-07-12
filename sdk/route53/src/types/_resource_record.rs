@@ -30,8 +30,8 @@ impl ResourceRecord {
 }
 
 /// A builder for [`ResourceRecord`](crate::types::ResourceRecord).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResourceRecordBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
 }

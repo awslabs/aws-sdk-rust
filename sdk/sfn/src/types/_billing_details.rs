@@ -27,8 +27,8 @@ impl BillingDetails {
 }
 
 /// A builder for [`BillingDetails`](crate::types::BillingDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BillingDetailsBuilder {
     pub(crate) billed_memory_used_in_mb: ::std::option::Option<i64>,
     pub(crate) billed_duration_in_milliseconds: ::std::option::Option<i64>,

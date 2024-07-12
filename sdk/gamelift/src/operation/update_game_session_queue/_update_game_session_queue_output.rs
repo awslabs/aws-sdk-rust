@@ -26,8 +26,8 @@ impl UpdateGameSessionQueueOutput {
 }
 
 /// A builder for [`UpdateGameSessionQueueOutput`](crate::operation::update_game_session_queue::UpdateGameSessionQueueOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateGameSessionQueueOutputBuilder {
     pub(crate) game_session_queue: ::std::option::Option<crate::types::GameSessionQueue>,
     _request_id: Option<String>,

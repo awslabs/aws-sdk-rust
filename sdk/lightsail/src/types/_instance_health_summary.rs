@@ -101,8 +101,8 @@ impl InstanceHealthSummary {
 }
 
 /// A builder for [`InstanceHealthSummary`](crate::types::InstanceHealthSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceHealthSummaryBuilder {
     pub(crate) instance_name: ::std::option::Option<::std::string::String>,
     pub(crate) instance_health: ::std::option::Option<crate::types::InstanceHealthState>,

@@ -26,8 +26,8 @@ impl DeleteUserHierarchyGroupInput {
 }
 
 /// A builder for [`DeleteUserHierarchyGroupInput`](crate::operation::delete_user_hierarchy_group::DeleteUserHierarchyGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteUserHierarchyGroupInputBuilder {
     pub(crate) hierarchy_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,

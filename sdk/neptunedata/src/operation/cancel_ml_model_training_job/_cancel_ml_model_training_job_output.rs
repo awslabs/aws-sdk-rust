@@ -26,8 +26,8 @@ impl CancelMlModelTrainingJobOutput {
 }
 
 /// A builder for [`CancelMlModelTrainingJobOutput`](crate::operation::cancel_ml_model_training_job::CancelMlModelTrainingJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelMlModelTrainingJobOutputBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

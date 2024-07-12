@@ -26,8 +26,8 @@ impl UpdateBillingGroupOutput {
 }
 
 /// A builder for [`UpdateBillingGroupOutput`](crate::operation::update_billing_group::UpdateBillingGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateBillingGroupOutputBuilder {
     pub(crate) version: ::std::option::Option<i64>,
     _request_id: Option<String>,

@@ -20,8 +20,8 @@ impl DeleteAppsListInput {
 }
 
 /// A builder for [`DeleteAppsListInput`](crate::operation::delete_apps_list::DeleteAppsListInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAppsListInputBuilder {
     pub(crate) list_id: ::std::option::Option<::std::string::String>,
 }

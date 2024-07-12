@@ -28,8 +28,8 @@ impl GameServerGroupAutoScalingPolicy {
 }
 
 /// A builder for [`GameServerGroupAutoScalingPolicy`](crate::types::GameServerGroupAutoScalingPolicy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GameServerGroupAutoScalingPolicyBuilder {
     pub(crate) estimated_instance_warmup: ::std::option::Option<i32>,
     pub(crate) target_tracking_configuration: ::std::option::Option<crate::types::TargetTrackingConfiguration>,

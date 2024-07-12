@@ -38,8 +38,8 @@ impl DiscoverPollEndpointOutput {
 }
 
 /// A builder for [`DiscoverPollEndpointOutput`](crate::operation::discover_poll_endpoint::DiscoverPollEndpointOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DiscoverPollEndpointOutputBuilder {
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) telemetry_endpoint: ::std::option::Option<::std::string::String>,

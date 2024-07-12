@@ -33,8 +33,8 @@ impl ListPagesByContactOutput {
 }
 
 /// A builder for [`ListPagesByContactOutput`](crate::operation::list_pages_by_contact::ListPagesByContactOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPagesByContactOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) pages: ::std::option::Option<::std::vec::Vec<crate::types::Page>>,

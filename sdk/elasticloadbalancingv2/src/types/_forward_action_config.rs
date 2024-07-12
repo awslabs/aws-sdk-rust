@@ -29,8 +29,8 @@ impl ForwardActionConfig {
 }
 
 /// A builder for [`ForwardActionConfig`](crate::types::ForwardActionConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ForwardActionConfigBuilder {
     pub(crate) target_groups: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroupTuple>>,
     pub(crate) target_group_stickiness_config: ::std::option::Option<crate::types::TargetGroupStickinessConfig>,

@@ -27,8 +27,8 @@ impl MultiplexProgramSummary {
 }
 
 /// A builder for [`MultiplexProgramSummary`](crate::types::MultiplexProgramSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MultiplexProgramSummaryBuilder {
     pub(crate) channel_id: ::std::option::Option<::std::string::String>,
     pub(crate) program_name: ::std::option::Option<::std::string::String>,

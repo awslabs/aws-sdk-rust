@@ -27,8 +27,8 @@ impl ImagePipelineAggregation {
 }
 
 /// A builder for [`ImagePipelineAggregation`](crate::types::ImagePipelineAggregation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImagePipelineAggregationBuilder {
     pub(crate) image_pipeline_arn: ::std::option::Option<::std::string::String>,
     pub(crate) severity_counts: ::std::option::Option<crate::types::SeverityCounts>,

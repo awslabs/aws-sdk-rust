@@ -161,8 +161,8 @@ impl RegisterImageInput {
 }
 
 /// A builder for [`RegisterImageInput`](crate::operation::register_image::RegisterImageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterImageInputBuilder {
     pub(crate) image_location: ::std::option::Option<::std::string::String>,
     pub(crate) architecture: ::std::option::Option<crate::types::ArchitectureValues>,

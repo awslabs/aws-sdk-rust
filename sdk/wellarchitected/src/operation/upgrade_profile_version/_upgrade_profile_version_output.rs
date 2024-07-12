@@ -18,8 +18,8 @@ impl UpgradeProfileVersionOutput {
 }
 
 /// A builder for [`UpgradeProfileVersionOutput`](crate::operation::upgrade_profile_version::UpgradeProfileVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpgradeProfileVersionOutputBuilder {
     _request_id: Option<String>,
 }

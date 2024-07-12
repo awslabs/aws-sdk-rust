@@ -21,8 +21,8 @@ impl AddBridgeOutputRequest {
 }
 
 /// A builder for [`AddBridgeOutputRequest`](crate::types::AddBridgeOutputRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddBridgeOutputRequestBuilder {
     pub(crate) network_output: ::std::option::Option<crate::types::AddBridgeNetworkOutputRequest>,
 }

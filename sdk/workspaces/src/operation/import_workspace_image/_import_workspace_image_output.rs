@@ -26,8 +26,8 @@ impl ImportWorkspaceImageOutput {
 }
 
 /// A builder for [`ImportWorkspaceImageOutput`](crate::operation::import_workspace_image::ImportWorkspaceImageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportWorkspaceImageOutputBuilder {
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

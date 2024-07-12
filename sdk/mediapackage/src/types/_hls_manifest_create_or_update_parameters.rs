@@ -71,8 +71,8 @@ impl HlsManifestCreateOrUpdateParameters {
 }
 
 /// A builder for [`HlsManifestCreateOrUpdateParameters`](crate::types::HlsManifestCreateOrUpdateParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HlsManifestCreateOrUpdateParametersBuilder {
     pub(crate) ad_markers: ::std::option::Option<crate::types::AdMarkers>,
     pub(crate) ad_triggers: ::std::option::Option<::std::vec::Vec<crate::types::AdTriggersElement>>,

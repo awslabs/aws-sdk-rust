@@ -59,8 +59,8 @@ impl SystemInstanceDescription {
 }
 
 /// A builder for [`SystemInstanceDescription`](crate::types::SystemInstanceDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SystemInstanceDescriptionBuilder {
     pub(crate) summary: ::std::option::Option<crate::types::SystemInstanceSummary>,
     pub(crate) definition: ::std::option::Option<crate::types::DefinitionDocument>,

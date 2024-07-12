@@ -26,8 +26,8 @@ impl DescribeDataSourceInput {
 }
 
 /// A builder for [`DescribeDataSourceInput`](crate::operation::describe_data_source::DescribeDataSourceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDataSourceInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_source_id: ::std::option::Option<::std::string::String>,

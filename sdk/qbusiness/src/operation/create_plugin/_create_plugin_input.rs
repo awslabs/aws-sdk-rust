@@ -64,8 +64,8 @@ impl CreatePluginInput {
 }
 
 /// A builder for [`CreatePluginInput`](crate::operation::create_plugin::CreatePluginInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePluginInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,

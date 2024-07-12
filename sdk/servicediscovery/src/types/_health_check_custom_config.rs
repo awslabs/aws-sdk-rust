@@ -59,8 +59,8 @@ impl HealthCheckCustomConfig {
 }
 
 /// A builder for [`HealthCheckCustomConfig`](crate::types::HealthCheckCustomConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HealthCheckCustomConfigBuilder {
     pub(crate) failure_threshold: ::std::option::Option<i32>,
 }

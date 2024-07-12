@@ -72,8 +72,8 @@ impl GetSupportedResourceTypesOutput {
 }
 
 /// A builder for [`GetSupportedResourceTypesOutput`](crate::operation::get_supported_resource_types::GetSupportedResourceTypesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSupportedResourceTypesOutputBuilder {
     pub(crate) resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,

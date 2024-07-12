@@ -50,8 +50,8 @@ impl RasterDataCollectionQueryInput {
 }
 
 /// A builder for [`RasterDataCollectionQueryInput`](crate::types::RasterDataCollectionQueryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct RasterDataCollectionQueryInputBuilder {
     pub(crate) raster_data_collection_arn: ::std::option::Option<::std::string::String>,
     pub(crate) time_range_filter: ::std::option::Option<crate::types::TimeRangeFilterInput>,

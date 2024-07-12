@@ -32,8 +32,8 @@ impl GetModelVersionInput {
 }
 
 /// A builder for [`GetModelVersionInput`](crate::operation::get_model_version::GetModelVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetModelVersionInputBuilder {
     pub(crate) model_id: ::std::option::Option<::std::string::String>,
     pub(crate) model_type: ::std::option::Option<crate::types::ModelTypeEnum>,

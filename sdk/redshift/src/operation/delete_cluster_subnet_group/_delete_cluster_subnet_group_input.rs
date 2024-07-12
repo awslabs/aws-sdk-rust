@@ -21,8 +21,8 @@ impl DeleteClusterSubnetGroupInput {
 }
 
 /// A builder for [`DeleteClusterSubnetGroupInput`](crate::operation::delete_cluster_subnet_group::DeleteClusterSubnetGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteClusterSubnetGroupInputBuilder {
     pub(crate) cluster_subnet_group_name: ::std::option::Option<::std::string::String>,
 }

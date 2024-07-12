@@ -33,8 +33,8 @@ impl ListPlaybackKeyPairsOutput {
 }
 
 /// A builder for [`ListPlaybackKeyPairsOutput`](crate::operation::list_playback_key_pairs::ListPlaybackKeyPairsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPlaybackKeyPairsOutputBuilder {
     pub(crate) key_pairs: ::std::option::Option<::std::vec::Vec<crate::types::PlaybackKeyPairSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -28,8 +28,8 @@ impl GetEffectivePoliciesOutput {
 }
 
 /// A builder for [`GetEffectivePoliciesOutput`](crate::operation::get_effective_policies::GetEffectivePoliciesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEffectivePoliciesOutputBuilder {
     pub(crate) effective_policies: ::std::option::Option<::std::vec::Vec<crate::types::EffectivePolicy>>,
     _request_id: Option<String>,

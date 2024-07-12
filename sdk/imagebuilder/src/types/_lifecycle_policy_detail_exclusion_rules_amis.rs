@@ -49,8 +49,8 @@ impl LifecyclePolicyDetailExclusionRulesAmis {
 }
 
 /// A builder for [`LifecyclePolicyDetailExclusionRulesAmis`](crate::types::LifecyclePolicyDetailExclusionRulesAmis).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LifecyclePolicyDetailExclusionRulesAmisBuilder {
     pub(crate) is_public: ::std::option::Option<bool>,
     pub(crate) regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

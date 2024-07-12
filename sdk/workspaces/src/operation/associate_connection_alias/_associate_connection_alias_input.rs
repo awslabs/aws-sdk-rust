@@ -26,8 +26,8 @@ impl AssociateConnectionAliasInput {
 }
 
 /// A builder for [`AssociateConnectionAliasInput`](crate::operation::associate_connection_alias::AssociateConnectionAliasInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateConnectionAliasInputBuilder {
     pub(crate) alias_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,

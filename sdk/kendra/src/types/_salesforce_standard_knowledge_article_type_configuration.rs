@@ -36,8 +36,8 @@ impl SalesforceStandardKnowledgeArticleTypeConfiguration {
 }
 
 /// A builder for [`SalesforceStandardKnowledgeArticleTypeConfiguration`](crate::types::SalesforceStandardKnowledgeArticleTypeConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SalesforceStandardKnowledgeArticleTypeConfigurationBuilder {
     pub(crate) document_data_field_name: ::std::option::Option<::std::string::String>,
     pub(crate) document_title_field_name: ::std::option::Option<::std::string::String>,

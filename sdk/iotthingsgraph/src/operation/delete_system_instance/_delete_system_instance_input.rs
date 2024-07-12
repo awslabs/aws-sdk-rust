@@ -20,8 +20,8 @@ impl DeleteSystemInstanceInput {
 }
 
 /// A builder for [`DeleteSystemInstanceInput`](crate::operation::delete_system_instance::DeleteSystemInstanceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSystemInstanceInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }

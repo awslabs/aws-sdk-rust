@@ -27,8 +27,8 @@ impl RecommendationCostOptimizingAggregates {
 }
 
 /// A builder for [`RecommendationCostOptimizingAggregates`](crate::types::RecommendationCostOptimizingAggregates).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecommendationCostOptimizingAggregatesBuilder {
     pub(crate) estimated_monthly_savings: ::std::option::Option<f64>,
     pub(crate) estimated_percent_monthly_savings: ::std::option::Option<f64>,

@@ -20,8 +20,8 @@ impl StartPipelineInput {
 }
 
 /// A builder for [`StartPipelineInput`](crate::operation::start_pipeline::StartPipelineInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartPipelineInputBuilder {
     pub(crate) pipeline_name: ::std::option::Option<::std::string::String>,
 }

@@ -35,8 +35,8 @@ impl NotificationOptions {
 }
 
 /// A builder for [`NotificationOptions`](crate::types::NotificationOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct NotificationOptionsBuilder {
     pub(crate) send_email: ::std::option::Option<bool>,
     pub(crate) email_message: ::std::option::Option<::std::string::String>,

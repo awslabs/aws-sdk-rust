@@ -38,8 +38,8 @@ impl CancelReplayOutput {
 }
 
 /// A builder for [`CancelReplayOutput`](crate::operation::cancel_replay::CancelReplayOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelReplayOutputBuilder {
     pub(crate) replay_arn: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::ReplayState>,

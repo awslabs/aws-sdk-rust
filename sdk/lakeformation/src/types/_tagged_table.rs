@@ -45,8 +45,8 @@ impl TaggedTable {
 }
 
 /// A builder for [`TaggedTable`](crate::types::TaggedTable).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TaggedTableBuilder {
     pub(crate) table: ::std::option::Option<crate::types::TableResource>,
     pub(crate) lf_tag_on_database: ::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>>,

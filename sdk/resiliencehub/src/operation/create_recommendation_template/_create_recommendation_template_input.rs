@@ -148,8 +148,8 @@ impl CreateRecommendationTemplateInput {
 }
 
 /// A builder for [`CreateRecommendationTemplateInput`](crate::operation::create_recommendation_template::CreateRecommendationTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateRecommendationTemplateInputBuilder {
     pub(crate) recommendation_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) format: ::std::option::Option<crate::types::TemplateFormat>,

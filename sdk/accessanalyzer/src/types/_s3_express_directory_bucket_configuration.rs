@@ -21,8 +21,8 @@ impl S3ExpressDirectoryBucketConfiguration {
 }
 
 /// A builder for [`S3ExpressDirectoryBucketConfiguration`](crate::types::S3ExpressDirectoryBucketConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3ExpressDirectoryBucketConfigurationBuilder {
     pub(crate) bucket_policy: ::std::option::Option<::std::string::String>,
 }

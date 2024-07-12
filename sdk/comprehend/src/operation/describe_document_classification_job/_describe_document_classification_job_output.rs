@@ -26,8 +26,8 @@ impl DescribeDocumentClassificationJobOutput {
 }
 
 /// A builder for [`DescribeDocumentClassificationJobOutput`](crate::operation::describe_document_classification_job::DescribeDocumentClassificationJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDocumentClassificationJobOutputBuilder {
     pub(crate) document_classification_job_properties: ::std::option::Option<crate::types::DocumentClassificationJobProperties>,
     _request_id: Option<String>,

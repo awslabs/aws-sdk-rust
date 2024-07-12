@@ -19,8 +19,8 @@ impl DeleteMediaInsightsPipelineConfigurationOutput {
 }
 
 /// A builder for [`DeleteMediaInsightsPipelineConfigurationOutput`](crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteMediaInsightsPipelineConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

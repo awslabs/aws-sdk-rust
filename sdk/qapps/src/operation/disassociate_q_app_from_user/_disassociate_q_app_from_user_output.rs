@@ -18,8 +18,8 @@ impl DisassociateQAppFromUserOutput {
 }
 
 /// A builder for [`DisassociateQAppFromUserOutput`](crate::operation::disassociate_q_app_from_user::DisassociateQAppFromUserOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateQAppFromUserOutputBuilder {
     _request_id: Option<String>,
 }

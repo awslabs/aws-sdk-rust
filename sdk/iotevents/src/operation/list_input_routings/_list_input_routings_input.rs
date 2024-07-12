@@ -32,8 +32,8 @@ impl ListInputRoutingsInput {
 }
 
 /// A builder for [`ListInputRoutingsInput`](crate::operation::list_input_routings::ListInputRoutingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListInputRoutingsInputBuilder {
     pub(crate) input_identifier: ::std::option::Option<crate::types::InputIdentifier>,
     pub(crate) max_results: ::std::option::Option<i32>,

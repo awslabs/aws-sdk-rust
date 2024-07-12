@@ -26,8 +26,8 @@ impl DeleteReferenceInput {
 }
 
 /// A builder for [`DeleteReferenceInput`](crate::operation::delete_reference::DeleteReferenceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteReferenceInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) reference_store_id: ::std::option::Option<::std::string::String>,

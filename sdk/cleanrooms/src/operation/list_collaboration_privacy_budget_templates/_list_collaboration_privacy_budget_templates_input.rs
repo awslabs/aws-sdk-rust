@@ -32,8 +32,8 @@ impl ListCollaborationPrivacyBudgetTemplatesInput {
 }
 
 /// A builder for [`ListCollaborationPrivacyBudgetTemplatesInput`](crate::operation::list_collaboration_privacy_budget_templates::ListCollaborationPrivacyBudgetTemplatesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCollaborationPrivacyBudgetTemplatesInputBuilder {
     pub(crate) collaboration_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

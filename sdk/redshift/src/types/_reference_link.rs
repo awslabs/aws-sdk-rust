@@ -27,8 +27,8 @@ impl ReferenceLink {
 }
 
 /// A builder for [`ReferenceLink`](crate::types::ReferenceLink).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReferenceLinkBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
     pub(crate) link: ::std::option::Option<::std::string::String>,

@@ -11,8 +11,8 @@ impl ListPipelineBlueprintsInput {
 }
 
 /// A builder for [`ListPipelineBlueprintsInput`](crate::operation::list_pipeline_blueprints::ListPipelineBlueprintsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPipelineBlueprintsInputBuilder {}
 impl ListPipelineBlueprintsInputBuilder {
     /// Consumes the builder and constructs a [`ListPipelineBlueprintsInput`](crate::operation::list_pipeline_blueprints::ListPipelineBlueprintsInput).

@@ -34,8 +34,8 @@ impl ListV2LoggingLevelsOutput {
 }
 
 /// A builder for [`ListV2LoggingLevelsOutput`](crate::operation::list_v2_logging_levels::ListV2LoggingLevelsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListV2LoggingLevelsOutputBuilder {
     pub(crate) log_target_configurations: ::std::option::Option<::std::vec::Vec<crate::types::LogTargetConfiguration>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

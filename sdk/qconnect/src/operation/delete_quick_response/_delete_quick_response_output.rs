@@ -18,8 +18,8 @@ impl DeleteQuickResponseOutput {
 }
 
 /// A builder for [`DeleteQuickResponseOutput`](crate::operation::delete_quick_response::DeleteQuickResponseOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteQuickResponseOutputBuilder {
     _request_id: Option<String>,
 }

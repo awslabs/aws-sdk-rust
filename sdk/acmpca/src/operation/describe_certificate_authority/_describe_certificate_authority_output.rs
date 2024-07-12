@@ -26,8 +26,8 @@ impl DescribeCertificateAuthorityOutput {
 }
 
 /// A builder for [`DescribeCertificateAuthorityOutput`](crate::operation::describe_certificate_authority::DescribeCertificateAuthorityOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCertificateAuthorityOutputBuilder {
     pub(crate) certificate_authority: ::std::option::Option<crate::types::CertificateAuthority>,
     _request_id: Option<String>,

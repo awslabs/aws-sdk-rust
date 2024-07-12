@@ -26,8 +26,8 @@ impl GetRepositorySyncStatusOutput {
 }
 
 /// A builder for [`GetRepositorySyncStatusOutput`](crate::operation::get_repository_sync_status::GetRepositorySyncStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRepositorySyncStatusOutputBuilder {
     pub(crate) latest_sync: ::std::option::Option<crate::types::RepositorySyncAttempt>,
     _request_id: Option<String>,

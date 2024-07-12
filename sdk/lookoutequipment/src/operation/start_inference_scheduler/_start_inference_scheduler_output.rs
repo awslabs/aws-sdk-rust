@@ -50,8 +50,8 @@ impl StartInferenceSchedulerOutput {
 }
 
 /// A builder for [`StartInferenceSchedulerOutput`](crate::operation::start_inference_scheduler::StartInferenceSchedulerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartInferenceSchedulerOutputBuilder {
     pub(crate) model_arn: ::std::option::Option<::std::string::String>,
     pub(crate) model_name: ::std::option::Option<::std::string::String>,

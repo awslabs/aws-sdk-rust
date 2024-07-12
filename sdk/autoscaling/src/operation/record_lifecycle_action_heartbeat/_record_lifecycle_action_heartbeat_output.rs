@@ -18,8 +18,8 @@ impl RecordLifecycleActionHeartbeatOutput {
 }
 
 /// A builder for [`RecordLifecycleActionHeartbeatOutput`](crate::operation::record_lifecycle_action_heartbeat::RecordLifecycleActionHeartbeatOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecordLifecycleActionHeartbeatOutputBuilder {
     _request_id: Option<String>,
 }

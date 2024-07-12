@@ -21,8 +21,8 @@ impl DescribeWorkingStorageInput {
 }
 
 /// A builder for [`DescribeWorkingStorageInput`](crate::operation::describe_working_storage::DescribeWorkingStorageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeWorkingStorageInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
 }

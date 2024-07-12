@@ -29,8 +29,8 @@ impl ListingRevisionInput {
 }
 
 /// A builder for [`ListingRevisionInput`](crate::types::ListingRevisionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListingRevisionInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) revision: ::std::option::Option<::std::string::String>,

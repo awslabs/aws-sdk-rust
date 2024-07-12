@@ -33,8 +33,8 @@ impl PublishStateMachineVersionOutput {
 }
 
 /// A builder for [`PublishStateMachineVersionOutput`](crate::operation::publish_state_machine_version::PublishStateMachineVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PublishStateMachineVersionOutputBuilder {
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) state_machine_version_arn: ::std::option::Option<::std::string::String>,

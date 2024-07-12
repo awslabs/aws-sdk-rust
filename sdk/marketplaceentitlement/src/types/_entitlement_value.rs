@@ -39,8 +39,8 @@ impl EntitlementValue {
 }
 
 /// A builder for [`EntitlementValue`](crate::types::EntitlementValue).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EntitlementValueBuilder {
     pub(crate) integer_value: ::std::option::Option<i32>,
     pub(crate) double_value: ::std::option::Option<f64>,

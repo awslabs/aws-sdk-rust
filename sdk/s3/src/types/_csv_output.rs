@@ -57,8 +57,8 @@ impl CsvOutput {
 }
 
 /// A builder for [`CsvOutput`](crate::types::CsvOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CsvOutputBuilder {
     pub(crate) quote_fields: ::std::option::Option<crate::types::QuoteFields>,
     pub(crate) quote_escape_character: ::std::option::Option<::std::string::String>,

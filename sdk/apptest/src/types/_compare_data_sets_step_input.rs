@@ -43,8 +43,8 @@ impl CompareDataSetsStepInput {
 }
 
 /// A builder for [`CompareDataSetsStepInput`](crate::types::CompareDataSetsStepInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CompareDataSetsStepInputBuilder {
     pub(crate) source_location: ::std::option::Option<::std::string::String>,
     pub(crate) target_location: ::std::option::Option<::std::string::String>,

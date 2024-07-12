@@ -139,8 +139,8 @@ impl GcpMySqlSettings {
 }
 
 /// A builder for [`GcpMySqlSettings`](crate::types::GcpMySqlSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GcpMySqlSettingsBuilder {
     pub(crate) after_connect_script: ::std::option::Option<::std::string::String>,
     pub(crate) clean_source_metadata_on_mismatch: ::std::option::Option<bool>,

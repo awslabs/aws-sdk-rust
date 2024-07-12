@@ -20,8 +20,8 @@ impl CancelGremlinQueryInput {
 }
 
 /// A builder for [`CancelGremlinQueryInput`](crate::operation::cancel_gremlin_query::CancelGremlinQueryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelGremlinQueryInputBuilder {
     pub(crate) query_id: ::std::option::Option<::std::string::String>,
 }

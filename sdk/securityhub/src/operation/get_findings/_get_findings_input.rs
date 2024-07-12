@@ -46,8 +46,8 @@ impl GetFindingsInput {
 }
 
 /// A builder for [`GetFindingsInput`](crate::operation::get_findings::GetFindingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetFindingsInputBuilder {
     pub(crate) filters: ::std::option::Option<crate::types::AwsSecurityFindingFilters>,
     pub(crate) sort_criteria: ::std::option::Option<::std::vec::Vec<crate::types::SortCriterion>>,

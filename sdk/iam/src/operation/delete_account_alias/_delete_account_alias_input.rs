@@ -22,8 +22,8 @@ impl DeleteAccountAliasInput {
 }
 
 /// A builder for [`DeleteAccountAliasInput`](crate::operation::delete_account_alias::DeleteAccountAliasInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAccountAliasInputBuilder {
     pub(crate) account_alias: ::std::option::Option<::std::string::String>,
 }

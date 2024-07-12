@@ -74,8 +74,8 @@ impl ListHubContentsInput {
 }
 
 /// A builder for [`ListHubContentsInput`](crate::operation::list_hub_contents::ListHubContentsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListHubContentsInputBuilder {
     pub(crate) hub_name: ::std::option::Option<::std::string::String>,
     pub(crate) hub_content_type: ::std::option::Option<crate::types::HubContentType>,

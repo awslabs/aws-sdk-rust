@@ -28,8 +28,8 @@ impl ChannelTargetInfo {
 }
 
 /// A builder for [`ChannelTargetInfo`](crate::types::ChannelTargetInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ChannelTargetInfoBuilder {
     pub(crate) contact_channel_id: ::std::option::Option<::std::string::String>,
     pub(crate) retry_interval_in_minutes: ::std::option::Option<i32>,

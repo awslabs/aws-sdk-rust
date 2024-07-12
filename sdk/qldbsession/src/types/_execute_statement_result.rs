@@ -33,8 +33,8 @@ impl ExecuteStatementResult {
 }
 
 /// A builder for [`ExecuteStatementResult`](crate::types::ExecuteStatementResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExecuteStatementResultBuilder {
     pub(crate) first_page: ::std::option::Option<crate::types::Page>,
     pub(crate) timing_information: ::std::option::Option<crate::types::TimingInformation>,

@@ -34,8 +34,8 @@ impl ListFleetsForVehicleInput {
 }
 
 /// A builder for [`ListFleetsForVehicleInput`](crate::operation::list_fleets_for_vehicle::ListFleetsForVehicleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFleetsForVehicleInputBuilder {
     pub(crate) vehicle_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -90,8 +90,8 @@ impl CreateAudienceModelInput {
 }
 
 /// A builder for [`CreateAudienceModelInput`](crate::operation::create_audience_model::CreateAudienceModelInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAudienceModelInputBuilder {
     pub(crate) training_data_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) training_data_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,

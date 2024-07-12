@@ -50,8 +50,8 @@ impl GetSensitivityInspectionTemplateOutput {
 }
 
 /// A builder for [`GetSensitivityInspectionTemplateOutput`](crate::operation::get_sensitivity_inspection_template::GetSensitivityInspectionTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSensitivityInspectionTemplateOutputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) excludes: ::std::option::Option<crate::types::SensitivityInspectionTemplateExcludes>,

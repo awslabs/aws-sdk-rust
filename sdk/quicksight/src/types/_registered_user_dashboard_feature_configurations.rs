@@ -27,8 +27,8 @@ impl RegisteredUserDashboardFeatureConfigurations {
 }
 
 /// A builder for [`RegisteredUserDashboardFeatureConfigurations`](crate::types::RegisteredUserDashboardFeatureConfigurations).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisteredUserDashboardFeatureConfigurationsBuilder {
     pub(crate) state_persistence: ::std::option::Option<crate::types::StatePersistenceConfigurations>,
     pub(crate) bookmarks: ::std::option::Option<crate::types::BookmarksConfigurations>,

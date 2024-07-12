@@ -43,8 +43,8 @@ impl BatchDetectDominantLanguageOutput {
 }
 
 /// A builder for [`BatchDetectDominantLanguageOutput`](crate::operation::batch_detect_dominant_language::BatchDetectDominantLanguageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct BatchDetectDominantLanguageOutputBuilder {
     pub(crate) result_list: ::std::option::Option<::std::vec::Vec<crate::types::BatchDetectDominantLanguageItemResult>>,
     pub(crate) error_list: ::std::option::Option<::std::vec::Vec<crate::types::BatchItemError>>,

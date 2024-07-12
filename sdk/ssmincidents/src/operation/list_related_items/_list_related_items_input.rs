@@ -32,8 +32,8 @@ impl ListRelatedItemsInput {
 }
 
 /// A builder for [`ListRelatedItemsInput`](crate::operation::list_related_items::ListRelatedItemsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRelatedItemsInputBuilder {
     pub(crate) incident_record_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

@@ -21,8 +21,8 @@ impl CreateDistributionWithTagsInput {
 }
 
 /// A builder for [`CreateDistributionWithTagsInput`](crate::operation::create_distribution_with_tags::CreateDistributionWithTagsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDistributionWithTagsInputBuilder {
     pub(crate) distribution_config_with_tags: ::std::option::Option<crate::types::DistributionConfigWithTags>,
 }

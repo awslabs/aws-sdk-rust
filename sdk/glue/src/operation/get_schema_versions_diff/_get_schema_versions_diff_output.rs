@@ -26,8 +26,8 @@ impl GetSchemaVersionsDiffOutput {
 }
 
 /// A builder for [`GetSchemaVersionsDiffOutput`](crate::operation::get_schema_versions_diff::GetSchemaVersionsDiffOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSchemaVersionsDiffOutputBuilder {
     pub(crate) diff: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

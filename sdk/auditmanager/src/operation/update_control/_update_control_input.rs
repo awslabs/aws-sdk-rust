@@ -71,8 +71,8 @@ impl UpdateControlInput {
 }
 
 /// A builder for [`UpdateControlInput`](crate::operation::update_control::UpdateControlInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateControlInputBuilder {
     pub(crate) control_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

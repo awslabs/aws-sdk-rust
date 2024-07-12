@@ -126,8 +126,8 @@ impl StartMlModelTrainingJobInput {
 }
 
 /// A builder for [`StartMlModelTrainingJobInput`](crate::operation::start_ml_model_training_job::StartMlModelTrainingJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartMlModelTrainingJobInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) previous_model_training_job_id: ::std::option::Option<::std::string::String>,

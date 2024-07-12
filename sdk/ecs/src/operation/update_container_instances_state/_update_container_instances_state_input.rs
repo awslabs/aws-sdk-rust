@@ -34,8 +34,8 @@ impl UpdateContainerInstancesStateInput {
 }
 
 /// A builder for [`UpdateContainerInstancesStateInput`](crate::operation::update_container_instances_state::UpdateContainerInstancesStateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateContainerInstancesStateInputBuilder {
     pub(crate) cluster: ::std::option::Option<::std::string::String>,
     pub(crate) container_instances: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

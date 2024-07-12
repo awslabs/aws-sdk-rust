@@ -21,8 +21,8 @@ impl ConnectionSettings {
 }
 
 /// A builder for [`ConnectionSettings`](crate::types::ConnectionSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConnectionSettingsBuilder {
     pub(crate) idle_timeout: ::std::option::Option<i32>,
 }

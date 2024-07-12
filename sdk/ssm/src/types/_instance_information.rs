@@ -175,8 +175,8 @@ impl InstanceInformation {
 }
 
 /// A builder for [`InstanceInformation`](crate::types::InstanceInformation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct InstanceInformationBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) ping_status: ::std::option::Option<crate::types::PingStatus>,

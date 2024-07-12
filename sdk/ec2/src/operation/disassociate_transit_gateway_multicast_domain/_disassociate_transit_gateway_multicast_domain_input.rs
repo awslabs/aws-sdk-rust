@@ -41,8 +41,8 @@ impl DisassociateTransitGatewayMulticastDomainInput {
 }
 
 /// A builder for [`DisassociateTransitGatewayMulticastDomainInput`](crate::operation::disassociate_transit_gateway_multicast_domain::DisassociateTransitGatewayMulticastDomainInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateTransitGatewayMulticastDomainInputBuilder {
     pub(crate) transit_gateway_multicast_domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,

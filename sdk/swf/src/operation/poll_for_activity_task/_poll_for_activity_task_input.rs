@@ -34,8 +34,8 @@ impl PollForActivityTaskInput {
 }
 
 /// A builder for [`PollForActivityTaskInput`](crate::operation::poll_for_activity_task::PollForActivityTaskInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PollForActivityTaskInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) task_list: ::std::option::Option<crate::types::TaskList>,

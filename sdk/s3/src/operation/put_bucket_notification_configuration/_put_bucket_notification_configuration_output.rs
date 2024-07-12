@@ -24,8 +24,8 @@ impl PutBucketNotificationConfigurationOutput {
 }
 
 /// A builder for [`PutBucketNotificationConfigurationOutput`](crate::operation::put_bucket_notification_configuration::PutBucketNotificationConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutBucketNotificationConfigurationOutputBuilder {
     _extended_request_id: Option<String>,
     _request_id: Option<String>,

@@ -32,8 +32,8 @@ impl UpdateStandardsControlInput {
 }
 
 /// A builder for [`UpdateStandardsControlInput`](crate::operation::update_standards_control::UpdateStandardsControlInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateStandardsControlInputBuilder {
     pub(crate) standards_control_arn: ::std::option::Option<::std::string::String>,
     pub(crate) control_status: ::std::option::Option<crate::types::ControlStatus>,

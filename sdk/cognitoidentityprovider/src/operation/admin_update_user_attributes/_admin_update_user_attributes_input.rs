@@ -81,8 +81,8 @@ impl AdminUpdateUserAttributesInput {
 }
 
 /// A builder for [`AdminUpdateUserAttributesInput`](crate::operation::admin_update_user_attributes::AdminUpdateUserAttributesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AdminUpdateUserAttributesInputBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) username: ::std::option::Option<::std::string::String>,

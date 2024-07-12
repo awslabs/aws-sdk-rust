@@ -18,8 +18,8 @@ impl SetUnhealthyNodeReplacementOutput {
 }
 
 /// A builder for [`SetUnhealthyNodeReplacementOutput`](crate::operation::set_unhealthy_node_replacement::SetUnhealthyNodeReplacementOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetUnhealthyNodeReplacementOutputBuilder {
     _request_id: Option<String>,
 }

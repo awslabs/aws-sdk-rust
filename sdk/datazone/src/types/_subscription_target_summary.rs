@@ -138,8 +138,8 @@ impl SubscriptionTargetSummary {
 }
 
 /// A builder for [`SubscriptionTargetSummary`](crate::types::SubscriptionTargetSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SubscriptionTargetSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) authorized_principals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

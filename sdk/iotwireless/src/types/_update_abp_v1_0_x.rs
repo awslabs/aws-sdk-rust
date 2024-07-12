@@ -21,8 +21,8 @@ impl UpdateAbpV10X {
 }
 
 /// A builder for [`UpdateAbpV10X`](crate::types::UpdateAbpV10X).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAbpV10XBuilder {
     pub(crate) f_cnt_start: ::std::option::Option<i32>,
 }

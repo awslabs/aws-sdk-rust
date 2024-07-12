@@ -27,8 +27,8 @@ impl AwsEc2LaunchTemplateDataIamInstanceProfileDetails {
 }
 
 /// A builder for [`AwsEc2LaunchTemplateDataIamInstanceProfileDetails`](crate::types::AwsEc2LaunchTemplateDataIamInstanceProfileDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEc2LaunchTemplateDataIamInstanceProfileDetailsBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

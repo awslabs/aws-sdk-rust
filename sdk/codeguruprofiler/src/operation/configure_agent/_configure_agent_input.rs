@@ -73,8 +73,8 @@ impl ConfigureAgentInput {
 }
 
 /// A builder for [`ConfigureAgentInput`](crate::operation::configure_agent::ConfigureAgentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConfigureAgentInputBuilder {
     pub(crate) profiling_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) fleet_instance_id: ::std::option::Option<::std::string::String>,

@@ -18,8 +18,8 @@ impl DeleteDocumentOutput {
 }
 
 /// A builder for [`DeleteDocumentOutput`](crate::operation::delete_document::DeleteDocumentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDocumentOutputBuilder {
     _request_id: Option<String>,
 }

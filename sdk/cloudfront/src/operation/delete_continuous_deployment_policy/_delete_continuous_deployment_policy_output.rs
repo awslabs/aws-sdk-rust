@@ -18,8 +18,8 @@ impl DeleteContinuousDeploymentPolicyOutput {
 }
 
 /// A builder for [`DeleteContinuousDeploymentPolicyOutput`](crate::operation::delete_continuous_deployment_policy::DeleteContinuousDeploymentPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteContinuousDeploymentPolicyOutputBuilder {
     _request_id: Option<String>,
 }

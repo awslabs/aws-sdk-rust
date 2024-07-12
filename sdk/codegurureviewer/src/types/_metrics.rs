@@ -33,8 +33,8 @@ impl Metrics {
 }
 
 /// A builder for [`Metrics`](crate::types::Metrics).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MetricsBuilder {
     pub(crate) metered_lines_of_code_count: ::std::option::Option<i64>,
     pub(crate) suppressed_lines_of_code_count: ::std::option::Option<i64>,

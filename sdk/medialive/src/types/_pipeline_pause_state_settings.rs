@@ -21,8 +21,8 @@ impl PipelinePauseStateSettings {
 }
 
 /// A builder for [`PipelinePauseStateSettings`](crate::types::PipelinePauseStateSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PipelinePauseStateSettingsBuilder {
     pub(crate) pipeline_id: ::std::option::Option<crate::types::PipelineId>,
 }

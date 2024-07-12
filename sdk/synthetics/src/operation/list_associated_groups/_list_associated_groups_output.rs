@@ -34,8 +34,8 @@ impl ListAssociatedGroupsOutput {
 }
 
 /// A builder for [`ListAssociatedGroupsOutput`](crate::operation::list_associated_groups::ListAssociatedGroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAssociatedGroupsOutputBuilder {
     pub(crate) groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

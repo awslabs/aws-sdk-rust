@@ -18,8 +18,8 @@ impl UpdateQuickConnectConfigOutput {
 }
 
 /// A builder for [`UpdateQuickConnectConfigOutput`](crate::operation::update_quick_connect_config::UpdateQuickConnectConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateQuickConnectConfigOutputBuilder {
     _request_id: Option<String>,
 }

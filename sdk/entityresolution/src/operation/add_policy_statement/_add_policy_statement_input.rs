@@ -56,8 +56,8 @@ impl AddPolicyStatementInput {
 }
 
 /// A builder for [`AddPolicyStatementInput`](crate::operation::add_policy_statement::AddPolicyStatementInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddPolicyStatementInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) statement_id: ::std::option::Option<::std::string::String>,

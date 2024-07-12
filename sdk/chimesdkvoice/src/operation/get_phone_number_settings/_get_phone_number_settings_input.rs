@@ -11,8 +11,8 @@ impl GetPhoneNumberSettingsInput {
 }
 
 /// A builder for [`GetPhoneNumberSettingsInput`](crate::operation::get_phone_number_settings::GetPhoneNumberSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPhoneNumberSettingsInputBuilder {}
 impl GetPhoneNumberSettingsInputBuilder {
     /// Consumes the builder and constructs a [`GetPhoneNumberSettingsInput`](crate::operation::get_phone_number_settings::GetPhoneNumberSettingsInput).

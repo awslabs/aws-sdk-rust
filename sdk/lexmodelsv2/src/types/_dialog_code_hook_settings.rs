@@ -21,8 +21,8 @@ impl DialogCodeHookSettings {
 }
 
 /// A builder for [`DialogCodeHookSettings`](crate::types::DialogCodeHookSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DialogCodeHookSettingsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
 }

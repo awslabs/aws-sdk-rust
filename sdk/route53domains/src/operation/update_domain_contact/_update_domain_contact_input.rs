@@ -63,8 +63,8 @@ impl UpdateDomainContactInput {
 }
 
 /// A builder for [`UpdateDomainContactInput`](crate::operation::update_domain_contact::UpdateDomainContactInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateDomainContactInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) admin_contact: ::std::option::Option<crate::types::ContactDetail>,

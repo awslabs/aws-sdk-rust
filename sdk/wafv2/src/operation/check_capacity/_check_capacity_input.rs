@@ -42,8 +42,8 @@ impl CheckCapacityInput {
 }
 
 /// A builder for [`CheckCapacityInput`](crate::operation::check_capacity::CheckCapacityInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CheckCapacityInputBuilder {
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,
     pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,

@@ -31,8 +31,8 @@ impl RootDirectory {
 }
 
 /// A builder for [`RootDirectory`](crate::types::RootDirectory).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RootDirectoryBuilder {
     pub(crate) path: ::std::option::Option<::std::string::String>,
     pub(crate) creation_info: ::std::option::Option<crate::types::CreationInfo>,

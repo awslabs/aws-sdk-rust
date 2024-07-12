@@ -18,8 +18,8 @@ impl DeleteAuditSuppressionOutput {
 }
 
 /// A builder for [`DeleteAuditSuppressionOutput`](crate::operation::delete_audit_suppression::DeleteAuditSuppressionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAuditSuppressionOutputBuilder {
     _request_id: Option<String>,
 }

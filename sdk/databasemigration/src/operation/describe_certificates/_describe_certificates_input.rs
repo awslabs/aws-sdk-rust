@@ -36,8 +36,8 @@ impl DescribeCertificatesInput {
 }
 
 /// A builder for [`DescribeCertificatesInput`](crate::operation::describe_certificates::DescribeCertificatesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCertificatesInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) max_records: ::std::option::Option<i32>,

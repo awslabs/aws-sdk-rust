@@ -29,8 +29,8 @@ impl GuardrailSensitiveInformationPolicyAssessment {
 }
 
 /// A builder for [`GuardrailSensitiveInformationPolicyAssessment`](crate::types::GuardrailSensitiveInformationPolicyAssessment).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GuardrailSensitiveInformationPolicyAssessmentBuilder {
     pub(crate) pii_entities: ::std::option::Option<::std::vec::Vec<crate::types::GuardrailPiiEntityFilter>>,
     pub(crate) regexes: ::std::option::Option<::std::vec::Vec<crate::types::GuardrailRegexFilter>>,

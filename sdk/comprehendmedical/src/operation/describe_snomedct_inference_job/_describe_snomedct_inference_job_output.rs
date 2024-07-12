@@ -26,8 +26,8 @@ impl DescribeSnomedctInferenceJobOutput {
 }
 
 /// A builder for [`DescribeSnomedctInferenceJobOutput`](crate::operation::describe_snomedct_inference_job::DescribeSnomedctInferenceJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSnomedctInferenceJobOutputBuilder {
     pub(crate) comprehend_medical_async_job_properties: ::std::option::Option<crate::types::ComprehendMedicalAsyncJobProperties>,
     _request_id: Option<String>,

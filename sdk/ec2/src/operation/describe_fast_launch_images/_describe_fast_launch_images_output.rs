@@ -34,8 +34,8 @@ impl DescribeFastLaunchImagesOutput {
 }
 
 /// A builder for [`DescribeFastLaunchImagesOutput`](crate::operation::describe_fast_launch_images::DescribeFastLaunchImagesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFastLaunchImagesOutputBuilder {
     pub(crate) fast_launch_images: ::std::option::Option<::std::vec::Vec<crate::types::DescribeFastLaunchImagesSuccessItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

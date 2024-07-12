@@ -32,8 +32,8 @@ impl UpdateSpiceCapacityConfigurationOutput {
 }
 
 /// A builder for [`UpdateSpiceCapacityConfigurationOutput`](crate::operation::update_spice_capacity_configuration::UpdateSpiceCapacityConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSpiceCapacityConfigurationOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<i32>,

@@ -38,8 +38,8 @@ impl ListPrivacyBudgetsInput {
 }
 
 /// A builder for [`ListPrivacyBudgetsInput`](crate::operation::list_privacy_budgets::ListPrivacyBudgetsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPrivacyBudgetsInputBuilder {
     pub(crate) membership_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) privacy_budget_type: ::std::option::Option<crate::types::PrivacyBudgetType>,

@@ -41,8 +41,8 @@ impl RequestUploadCredentialsOutput {
 }
 
 /// A builder for [`RequestUploadCredentialsOutput`](crate::operation::request_upload_credentials::RequestUploadCredentialsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct RequestUploadCredentialsOutputBuilder {
     pub(crate) upload_credentials: ::std::option::Option<crate::types::AwsCredentials>,
     pub(crate) storage_location: ::std::option::Option<crate::types::S3Location>,

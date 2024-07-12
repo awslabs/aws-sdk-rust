@@ -33,8 +33,8 @@ impl AvailSettings {
 }
 
 /// A builder for [`AvailSettings`](crate::types::AvailSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AvailSettingsBuilder {
     pub(crate) esam: ::std::option::Option<crate::types::Esam>,
     pub(crate) scte35_splice_insert: ::std::option::Option<crate::types::Scte35SpliceInsert>,

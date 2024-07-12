@@ -27,8 +27,8 @@ impl CancelContactOutput {
 }
 
 /// A builder for [`CancelContactOutput`](crate::operation::cancel_contact::CancelContactOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelContactOutputBuilder {
     pub(crate) contact_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

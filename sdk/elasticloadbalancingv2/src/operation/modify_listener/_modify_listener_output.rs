@@ -28,8 +28,8 @@ impl ModifyListenerOutput {
 }
 
 /// A builder for [`ModifyListenerOutput`](crate::operation::modify_listener::ModifyListenerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyListenerOutputBuilder {
     pub(crate) listeners: ::std::option::Option<::std::vec::Vec<crate::types::Listener>>,
     _request_id: Option<String>,

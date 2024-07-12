@@ -33,8 +33,8 @@ impl VoiceMessageContent {
 }
 
 /// A builder for [`VoiceMessageContent`](crate::types::VoiceMessageContent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VoiceMessageContentBuilder {
     pub(crate) call_instructions_message: ::std::option::Option<crate::types::CallInstructionsMessageType>,
     pub(crate) plain_text_message: ::std::option::Option<crate::types::PlainTextMessageType>,

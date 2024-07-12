@@ -29,8 +29,8 @@ impl PutDialRequestBatchInput {
 }
 
 /// A builder for [`PutDialRequestBatchInput`](crate::operation::put_dial_request_batch::PutDialRequestBatchInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutDialRequestBatchInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) dial_requests: ::std::option::Option<::std::vec::Vec<crate::types::DialRequest>>,

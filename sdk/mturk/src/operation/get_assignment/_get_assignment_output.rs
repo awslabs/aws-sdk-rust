@@ -32,8 +32,8 @@ impl GetAssignmentOutput {
 }
 
 /// A builder for [`GetAssignmentOutput`](crate::operation::get_assignment::GetAssignmentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAssignmentOutputBuilder {
     pub(crate) assignment: ::std::option::Option<crate::types::Assignment>,
     pub(crate) hit: ::std::option::Option<crate::types::Hit>,

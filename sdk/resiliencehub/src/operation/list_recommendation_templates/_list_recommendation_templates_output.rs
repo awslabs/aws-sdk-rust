@@ -34,8 +34,8 @@ impl ListRecommendationTemplatesOutput {
 }
 
 /// A builder for [`ListRecommendationTemplatesOutput`](crate::operation::list_recommendation_templates::ListRecommendationTemplatesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRecommendationTemplatesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) recommendation_templates: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationTemplate>>,

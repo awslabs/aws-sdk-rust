@@ -58,8 +58,8 @@ impl TestResult {
 }
 
 /// A builder for [`TestResult`](crate::types::TestResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct TestResultBuilder {
     pub(crate) function_summary: ::std::option::Option<crate::types::FunctionSummary>,
     pub(crate) compute_utilization: ::std::option::Option<::std::string::String>,

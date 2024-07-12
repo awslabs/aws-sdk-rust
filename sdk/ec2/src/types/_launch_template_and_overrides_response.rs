@@ -27,8 +27,8 @@ impl LaunchTemplateAndOverridesResponse {
 }
 
 /// A builder for [`LaunchTemplateAndOverridesResponse`](crate::types::LaunchTemplateAndOverridesResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LaunchTemplateAndOverridesResponseBuilder {
     pub(crate) launch_template_specification: ::std::option::Option<crate::types::FleetLaunchTemplateSpecification>,
     pub(crate) overrides: ::std::option::Option<crate::types::FleetLaunchTemplateOverrides>,

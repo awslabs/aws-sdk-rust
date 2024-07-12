@@ -18,8 +18,8 @@ impl UpdateElasticIpOutput {
 }
 
 /// A builder for [`UpdateElasticIpOutput`](crate::operation::update_elastic_ip::UpdateElasticIpOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateElasticIpOutputBuilder {
     _request_id: Option<String>,
 }

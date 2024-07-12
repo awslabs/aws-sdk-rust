@@ -38,8 +38,8 @@ impl ListCallAnalyticsJobsInput {
 }
 
 /// A builder for [`ListCallAnalyticsJobsInput`](crate::operation::list_call_analytics_jobs::ListCallAnalyticsJobsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCallAnalyticsJobsInputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::CallAnalyticsJobStatus>,
     pub(crate) job_name_contains: ::std::option::Option<::std::string::String>,

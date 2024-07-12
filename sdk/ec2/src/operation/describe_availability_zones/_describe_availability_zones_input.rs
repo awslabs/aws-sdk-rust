@@ -96,8 +96,8 @@ impl DescribeAvailabilityZonesInput {
 }
 
 /// A builder for [`DescribeAvailabilityZonesInput`](crate::operation::describe_availability_zones::DescribeAvailabilityZonesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAvailabilityZonesInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) zone_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -37,8 +37,8 @@ impl EncryptionInTransit {
 }
 
 /// A builder for [`EncryptionInTransit`](crate::types::EncryptionInTransit).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EncryptionInTransitBuilder {
     pub(crate) client_broker: ::std::option::Option<crate::types::ClientBroker>,
     pub(crate) in_cluster: ::std::option::Option<bool>,

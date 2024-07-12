@@ -52,8 +52,8 @@ impl EnvironmentState {
 }
 
 /// A builder for [`EnvironmentState`](crate::types::EnvironmentState).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct EnvironmentStateBuilder {
     pub(crate) spec: ::std::option::Option<::std::string::String>,
     pub(crate) template_name: ::std::option::Option<::std::string::String>,

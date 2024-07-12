@@ -33,8 +33,8 @@ impl HlsRenditionGroupSettings {
 }
 
 /// A builder for [`HlsRenditionGroupSettings`](crate::types::HlsRenditionGroupSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HlsRenditionGroupSettingsBuilder {
     pub(crate) rendition_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) rendition_language_code: ::std::option::Option<crate::types::LanguageCode>,

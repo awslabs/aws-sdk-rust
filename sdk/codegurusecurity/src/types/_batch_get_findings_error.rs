@@ -42,8 +42,8 @@ impl BatchGetFindingsError {
 }
 
 /// A builder for [`BatchGetFindingsError`](crate::types::BatchGetFindingsError).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetFindingsErrorBuilder {
     pub(crate) scan_name: ::std::option::Option<::std::string::String>,
     pub(crate) finding_id: ::std::option::Option<::std::string::String>,

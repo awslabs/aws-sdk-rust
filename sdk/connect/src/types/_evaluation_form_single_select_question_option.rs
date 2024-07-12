@@ -41,8 +41,8 @@ impl EvaluationFormSingleSelectQuestionOption {
 }
 
 /// A builder for [`EvaluationFormSingleSelectQuestionOption`](crate::types::EvaluationFormSingleSelectQuestionOption).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EvaluationFormSingleSelectQuestionOptionBuilder {
     pub(crate) ref_id: ::std::option::Option<::std::string::String>,
     pub(crate) text: ::std::option::Option<::std::string::String>,

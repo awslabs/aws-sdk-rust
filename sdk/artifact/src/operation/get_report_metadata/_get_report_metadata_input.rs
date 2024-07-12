@@ -26,8 +26,8 @@ impl GetReportMetadataInput {
 }
 
 /// A builder for [`GetReportMetadataInput`](crate::operation::get_report_metadata::GetReportMetadataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetReportMetadataInputBuilder {
     pub(crate) report_id: ::std::option::Option<::std::string::String>,
     pub(crate) report_version: ::std::option::Option<i64>,

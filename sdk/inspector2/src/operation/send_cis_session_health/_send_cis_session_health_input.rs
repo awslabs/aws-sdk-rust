@@ -26,8 +26,8 @@ impl SendCisSessionHealthInput {
 }
 
 /// A builder for [`SendCisSessionHealthInput`](crate::operation::send_cis_session_health::SendCisSessionHealthInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendCisSessionHealthInputBuilder {
     pub(crate) scan_job_id: ::std::option::Option<::std::string::String>,
     pub(crate) session_token: ::std::option::Option<::std::string::String>,

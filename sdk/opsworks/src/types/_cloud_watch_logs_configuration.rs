@@ -29,8 +29,8 @@ impl CloudWatchLogsConfiguration {
 }
 
 /// A builder for [`CloudWatchLogsConfiguration`](crate::types::CloudWatchLogsConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CloudWatchLogsConfigurationBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) log_streams: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLogsLogStream>>,

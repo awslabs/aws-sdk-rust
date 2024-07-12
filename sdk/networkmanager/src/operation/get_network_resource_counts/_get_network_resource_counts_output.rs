@@ -34,8 +34,8 @@ impl GetNetworkResourceCountsOutput {
 }
 
 /// A builder for [`GetNetworkResourceCountsOutput`](crate::operation::get_network_resource_counts::GetNetworkResourceCountsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetNetworkResourceCountsOutputBuilder {
     pub(crate) network_resource_counts: ::std::option::Option<::std::vec::Vec<crate::types::NetworkResourceCount>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

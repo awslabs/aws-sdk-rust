@@ -28,8 +28,8 @@ impl BatchStartRecommendationsOutput {
 }
 
 /// A builder for [`BatchStartRecommendationsOutput`](crate::operation::batch_start_recommendations::BatchStartRecommendationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchStartRecommendationsOutputBuilder {
     pub(crate) error_entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchStartRecommendationsErrorEntry>>,
     _request_id: Option<String>,

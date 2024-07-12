@@ -18,8 +18,8 @@ impl DeleteWorkGroupOutput {
 }
 
 /// A builder for [`DeleteWorkGroupOutput`](crate::operation::delete_work_group::DeleteWorkGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteWorkGroupOutputBuilder {
     _request_id: Option<String>,
 }

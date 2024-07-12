@@ -32,8 +32,8 @@ impl Delete {
 }
 
 /// A builder for [`Delete`](crate::types::Delete).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteBuilder {
     pub(crate) objects: ::std::option::Option<::std::vec::Vec<crate::types::ObjectIdentifier>>,
     pub(crate) quiet: ::std::option::Option<bool>,

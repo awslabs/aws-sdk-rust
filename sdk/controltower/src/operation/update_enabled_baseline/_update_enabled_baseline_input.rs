@@ -34,8 +34,8 @@ impl UpdateEnabledBaselineInput {
 }
 
 /// A builder for [`UpdateEnabledBaselineInput`](crate::operation::update_enabled_baseline::UpdateEnabledBaselineInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateEnabledBaselineInputBuilder {
     pub(crate) baseline_version: ::std::option::Option<::std::string::String>,
     pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::EnabledBaselineParameter>>,

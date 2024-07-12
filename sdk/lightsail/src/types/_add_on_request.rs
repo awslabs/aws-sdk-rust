@@ -39,8 +39,8 @@ impl AddOnRequest {
 }
 
 /// A builder for [`AddOnRequest`](crate::types::AddOnRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddOnRequestBuilder {
     pub(crate) add_on_type: ::std::option::Option<crate::types::AddOnType>,
     pub(crate) auto_snapshot_add_on_request: ::std::option::Option<crate::types::AutoSnapshotAddOnRequest>,

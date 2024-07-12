@@ -82,8 +82,8 @@ impl ServiceInstanceState {
 }
 
 /// A builder for [`ServiceInstanceState`](crate::types::ServiceInstanceState).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ServiceInstanceStateBuilder {
     pub(crate) spec: ::std::option::Option<::std::string::String>,
     pub(crate) template_name: ::std::option::Option<::std::string::String>,

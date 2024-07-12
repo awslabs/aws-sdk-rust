@@ -38,8 +38,8 @@ impl ListMedicalScribeJobsInput {
 }
 
 /// A builder for [`ListMedicalScribeJobsInput`](crate::operation::list_medical_scribe_jobs::ListMedicalScribeJobsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListMedicalScribeJobsInputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::MedicalScribeJobStatus>,
     pub(crate) job_name_contains: ::std::option::Option<::std::string::String>,

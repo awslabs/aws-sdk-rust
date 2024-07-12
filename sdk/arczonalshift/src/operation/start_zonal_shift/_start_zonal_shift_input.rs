@@ -58,8 +58,8 @@ impl StartZonalShiftInput {
 }
 
 /// A builder for [`StartZonalShiftInput`](crate::operation::start_zonal_shift::StartZonalShiftInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartZonalShiftInputBuilder {
     pub(crate) resource_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) away_from: ::std::option::Option<::std::string::String>,

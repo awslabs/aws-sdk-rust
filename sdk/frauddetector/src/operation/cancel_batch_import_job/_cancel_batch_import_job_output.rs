@@ -18,8 +18,8 @@ impl CancelBatchImportJobOutput {
 }
 
 /// A builder for [`CancelBatchImportJobOutput`](crate::operation::cancel_batch_import_job::CancelBatchImportJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelBatchImportJobOutputBuilder {
     _request_id: Option<String>,
 }

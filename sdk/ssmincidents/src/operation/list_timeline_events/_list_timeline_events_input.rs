@@ -86,8 +86,8 @@ impl ListTimelineEventsInput {
 }
 
 /// A builder for [`ListTimelineEventsInput`](crate::operation::list_timeline_events::ListTimelineEventsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTimelineEventsInputBuilder {
     pub(crate) incident_record_arn: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,

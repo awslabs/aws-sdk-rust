@@ -37,8 +37,8 @@ impl ComplianceDetails {
 }
 
 /// A builder for [`ComplianceDetails`](crate::types::ComplianceDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ComplianceDetailsBuilder {
     pub(crate) noncompliant_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) keys_with_noncompliant_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

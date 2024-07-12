@@ -26,8 +26,8 @@ impl AssociateHealthCheckInput {
 }
 
 /// A builder for [`AssociateHealthCheckInput`](crate::operation::associate_health_check::AssociateHealthCheckInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateHealthCheckInputBuilder {
     pub(crate) protection_id: ::std::option::Option<::std::string::String>,
     pub(crate) health_check_arn: ::std::option::Option<::std::string::String>,

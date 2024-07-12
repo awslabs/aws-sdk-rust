@@ -20,8 +20,8 @@ impl DeleteAppInstanceBotInput {
 }
 
 /// A builder for [`DeleteAppInstanceBotInput`](crate::operation::delete_app_instance_bot::DeleteAppInstanceBotInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAppInstanceBotInputBuilder {
     pub(crate) app_instance_bot_arn: ::std::option::Option<::std::string::String>,
 }

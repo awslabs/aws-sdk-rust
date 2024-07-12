@@ -20,8 +20,8 @@ impl DeleteRuleInput {
 }
 
 /// A builder for [`DeleteRuleInput`](crate::operation::delete_rule::DeleteRuleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRuleInputBuilder {
     pub(crate) rule: ::std::option::Option<crate::types::Rule>,
 }

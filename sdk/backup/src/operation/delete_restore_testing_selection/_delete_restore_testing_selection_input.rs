@@ -26,8 +26,8 @@ impl DeleteRestoreTestingSelectionInput {
 }
 
 /// A builder for [`DeleteRestoreTestingSelectionInput`](crate::operation::delete_restore_testing_selection::DeleteRestoreTestingSelectionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRestoreTestingSelectionInputBuilder {
     pub(crate) restore_testing_plan_name: ::std::option::Option<::std::string::String>,
     pub(crate) restore_testing_selection_name: ::std::option::Option<::std::string::String>,

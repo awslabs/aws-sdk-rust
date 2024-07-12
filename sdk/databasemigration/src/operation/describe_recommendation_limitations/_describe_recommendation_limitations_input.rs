@@ -36,8 +36,8 @@ impl DescribeRecommendationLimitationsInput {
 }
 
 /// A builder for [`DescribeRecommendationLimitationsInput`](crate::operation::describe_recommendation_limitations::DescribeRecommendationLimitationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRecommendationLimitationsInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) max_records: ::std::option::Option<i32>,

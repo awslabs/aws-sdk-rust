@@ -43,8 +43,8 @@ impl Attendee {
 }
 
 /// A builder for [`Attendee`](crate::types::Attendee).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AttendeeBuilder {
     pub(crate) external_user_id: ::std::option::Option<::std::string::String>,
     pub(crate) attendee_id: ::std::option::Option<::std::string::String>,

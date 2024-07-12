@@ -40,8 +40,8 @@ impl PromptFlowNodeInlineConfiguration {
 }
 
 /// A builder for [`PromptFlowNodeInlineConfiguration`](crate::types::PromptFlowNodeInlineConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PromptFlowNodeInlineConfigurationBuilder {
     pub(crate) template_type: ::std::option::Option<crate::types::PromptTemplateType>,
     pub(crate) template_configuration: ::std::option::Option<crate::types::PromptTemplateConfiguration>,

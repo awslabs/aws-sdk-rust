@@ -23,8 +23,8 @@ impl PivotTableSortConfiguration {
 }
 
 /// A builder for [`PivotTableSortConfiguration`](crate::types::PivotTableSortConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PivotTableSortConfigurationBuilder {
     pub(crate) field_sort_options: ::std::option::Option<::std::vec::Vec<crate::types::PivotFieldSortOptions>>,
 }

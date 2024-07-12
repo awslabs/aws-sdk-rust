@@ -18,8 +18,8 @@ impl EnableAwsOrganizationsAccessOutput {
 }
 
 /// A builder for [`EnableAwsOrganizationsAccessOutput`](crate::operation::enable_aws_organizations_access::EnableAwsOrganizationsAccessOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnableAwsOrganizationsAccessOutputBuilder {
     _request_id: Option<String>,
 }

@@ -32,8 +32,8 @@ impl StartBatchJobInput {
 }
 
 /// A builder for [`StartBatchJobInput`](crate::operation::start_batch_job::StartBatchJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartBatchJobInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) batch_job_identifier: ::std::option::Option<crate::types::BatchJobIdentifier>,

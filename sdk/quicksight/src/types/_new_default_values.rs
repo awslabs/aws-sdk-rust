@@ -47,8 +47,8 @@ impl NewDefaultValues {
 }
 
 /// A builder for [`NewDefaultValues`](crate::types::NewDefaultValues).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NewDefaultValuesBuilder {
     pub(crate) string_static_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) decimal_static_values: ::std::option::Option<::std::vec::Vec<f64>>,

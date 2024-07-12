@@ -34,8 +34,8 @@ impl GetExternalModelsOutput {
 }
 
 /// A builder for [`GetExternalModelsOutput`](crate::operation::get_external_models::GetExternalModelsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetExternalModelsOutputBuilder {
     pub(crate) external_models: ::std::option::Option<::std::vec::Vec<crate::types::ExternalModel>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl AnalyticsIntentStageGroupByKey {
 }
 
 /// A builder for [`AnalyticsIntentStageGroupByKey`](crate::types::AnalyticsIntentStageGroupByKey).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AnalyticsIntentStageGroupByKeyBuilder {
     pub(crate) name: ::std::option::Option<crate::types::AnalyticsIntentStageField>,
     pub(crate) value: ::std::option::Option<::std::string::String>,

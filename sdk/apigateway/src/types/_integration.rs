@@ -115,8 +115,8 @@ impl Integration {
 }
 
 /// A builder for [`Integration`](crate::types::Integration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IntegrationBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::IntegrationType>,
     pub(crate) http_method: ::std::option::Option<::std::string::String>,

@@ -18,8 +18,8 @@ impl RejectInvitationOutput {
 }
 
 /// A builder for [`RejectInvitationOutput`](crate::operation::reject_invitation::RejectInvitationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RejectInvitationOutputBuilder {
     _request_id: Option<String>,
 }

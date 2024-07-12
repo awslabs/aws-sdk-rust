@@ -21,8 +21,8 @@ impl Builder {
 }
 
 /// A builder for [`Builder`](crate::types::Builder).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BuilderBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }

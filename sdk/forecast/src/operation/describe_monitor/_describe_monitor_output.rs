@@ -86,8 +86,8 @@ impl DescribeMonitorOutput {
 }
 
 /// A builder for [`DescribeMonitorOutput`](crate::operation::describe_monitor::DescribeMonitorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeMonitorOutputBuilder {
     pub(crate) monitor_name: ::std::option::Option<::std::string::String>,
     pub(crate) monitor_arn: ::std::option::Option<::std::string::String>,

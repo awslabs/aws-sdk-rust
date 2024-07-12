@@ -27,8 +27,8 @@ impl AnalyticsSessionGroupByKey {
 }
 
 /// A builder for [`AnalyticsSessionGroupByKey`](crate::types::AnalyticsSessionGroupByKey).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AnalyticsSessionGroupByKeyBuilder {
     pub(crate) name: ::std::option::Option<crate::types::AnalyticsSessionField>,
     pub(crate) value: ::std::option::Option<::std::string::String>,

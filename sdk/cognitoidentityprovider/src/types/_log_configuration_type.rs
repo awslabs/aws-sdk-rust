@@ -33,8 +33,8 @@ impl LogConfigurationType {
 }
 
 /// A builder for [`LogConfigurationType`](crate::types::LogConfigurationType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LogConfigurationTypeBuilder {
     pub(crate) log_level: ::std::option::Option<crate::types::LogLevel>,
     pub(crate) event_source: ::std::option::Option<crate::types::EventSourceName>,

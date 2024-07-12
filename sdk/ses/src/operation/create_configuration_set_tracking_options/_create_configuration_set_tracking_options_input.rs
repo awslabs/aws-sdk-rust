@@ -29,8 +29,8 @@ impl CreateConfigurationSetTrackingOptionsInput {
 }
 
 /// A builder for [`CreateConfigurationSetTrackingOptionsInput`](crate::operation::create_configuration_set_tracking_options::CreateConfigurationSetTrackingOptionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateConfigurationSetTrackingOptionsInputBuilder {
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) tracking_options: ::std::option::Option<crate::types::TrackingOptions>,

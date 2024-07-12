@@ -32,8 +32,8 @@ impl GetExternalModelsInput {
 }
 
 /// A builder for [`GetExternalModelsInput`](crate::operation::get_external_models::GetExternalModelsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetExternalModelsInputBuilder {
     pub(crate) model_endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

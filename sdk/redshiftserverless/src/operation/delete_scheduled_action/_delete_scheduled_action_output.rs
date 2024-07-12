@@ -26,8 +26,8 @@ impl DeleteScheduledActionOutput {
 }
 
 /// A builder for [`DeleteScheduledActionOutput`](crate::operation::delete_scheduled_action::DeleteScheduledActionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteScheduledActionOutputBuilder {
     pub(crate) scheduled_action: ::std::option::Option<crate::types::ScheduledActionResponse>,
     _request_id: Option<String>,

@@ -18,8 +18,8 @@ impl StartCisSessionOutput {
 }
 
 /// A builder for [`StartCisSessionOutput`](crate::operation::start_cis_session::StartCisSessionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartCisSessionOutputBuilder {
     _request_id: Option<String>,
 }

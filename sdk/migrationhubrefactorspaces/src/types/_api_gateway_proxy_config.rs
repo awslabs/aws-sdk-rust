@@ -57,8 +57,8 @@ impl ApiGatewayProxyConfig {
 }
 
 /// A builder for [`ApiGatewayProxyConfig`](crate::types::ApiGatewayProxyConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ApiGatewayProxyConfigBuilder {
     pub(crate) proxy_url: ::std::option::Option<::std::string::String>,
     pub(crate) api_gateway_id: ::std::option::Option<::std::string::String>,

@@ -18,8 +18,8 @@ impl ApplyArchiveRuleOutput {
 }
 
 /// A builder for [`ApplyArchiveRuleOutput`](crate::operation::apply_archive_rule::ApplyArchiveRuleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ApplyArchiveRuleOutputBuilder {
     _request_id: Option<String>,
 }

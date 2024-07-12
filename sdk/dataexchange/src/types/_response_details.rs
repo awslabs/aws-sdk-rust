@@ -71,8 +71,8 @@ impl ResponseDetails {
 }
 
 /// A builder for [`ResponseDetails`](crate::types::ResponseDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResponseDetailsBuilder {
     pub(crate) export_asset_to_signed_url: ::std::option::Option<crate::types::ExportAssetToSignedUrlResponseDetails>,
     pub(crate) export_assets_to_s3: ::std::option::Option<crate::types::ExportAssetsToS3ResponseDetails>,

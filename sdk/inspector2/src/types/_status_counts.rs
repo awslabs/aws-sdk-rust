@@ -33,8 +33,8 @@ impl StatusCounts {
 }
 
 /// A builder for [`StatusCounts`](crate::types::StatusCounts).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StatusCountsBuilder {
     pub(crate) failed: ::std::option::Option<i32>,
     pub(crate) skipped: ::std::option::Option<i32>,

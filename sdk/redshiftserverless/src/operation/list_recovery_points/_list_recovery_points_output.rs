@@ -34,8 +34,8 @@ impl ListRecoveryPointsOutput {
 }
 
 /// A builder for [`ListRecoveryPointsOutput`](crate::operation::list_recovery_points::ListRecoveryPointsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRecoveryPointsOutputBuilder {
     pub(crate) recovery_points: ::std::option::Option<::std::vec::Vec<crate::types::RecoveryPoint>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

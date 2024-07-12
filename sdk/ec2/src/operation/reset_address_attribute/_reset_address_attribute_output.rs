@@ -26,8 +26,8 @@ impl ResetAddressAttributeOutput {
 }
 
 /// A builder for [`ResetAddressAttributeOutput`](crate::operation::reset_address_attribute::ResetAddressAttributeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResetAddressAttributeOutputBuilder {
     pub(crate) address: ::std::option::Option<crate::types::AddressAttribute>,
     _request_id: Option<String>,

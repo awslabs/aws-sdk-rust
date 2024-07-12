@@ -58,8 +58,8 @@ impl ListDatasetEntriesInput {
 }
 
 /// A builder for [`ListDatasetEntriesInput`](crate::operation::list_dataset_entries::ListDatasetEntriesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDatasetEntriesInputBuilder {
     pub(crate) dataset_arn: ::std::option::Option<::std::string::String>,
     pub(crate) contains_labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

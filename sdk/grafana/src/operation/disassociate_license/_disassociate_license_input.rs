@@ -26,8 +26,8 @@ impl DisassociateLicenseInput {
 }
 
 /// A builder for [`DisassociateLicenseInput`](crate::operation::disassociate_license::DisassociateLicenseInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateLicenseInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) license_type: ::std::option::Option<crate::types::LicenseType>,

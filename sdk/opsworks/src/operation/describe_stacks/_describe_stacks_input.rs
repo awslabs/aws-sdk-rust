@@ -22,8 +22,8 @@ impl DescribeStacksInput {
 }
 
 /// A builder for [`DescribeStacksInput`](crate::operation::describe_stacks::DescribeStacksInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeStacksInputBuilder {
     pub(crate) stack_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

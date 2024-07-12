@@ -24,8 +24,8 @@ impl WriteGetObjectResponseOutput {
 }
 
 /// A builder for [`WriteGetObjectResponseOutput`](crate::operation::write_get_object_response::WriteGetObjectResponseOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WriteGetObjectResponseOutputBuilder {
     _extended_request_id: Option<String>,
     _request_id: Option<String>,

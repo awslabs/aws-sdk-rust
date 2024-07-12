@@ -18,8 +18,8 @@ impl PutCaseEventConfigurationOutput {
 }
 
 /// A builder for [`PutCaseEventConfigurationOutput`](crate::operation::put_case_event_configuration::PutCaseEventConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutCaseEventConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

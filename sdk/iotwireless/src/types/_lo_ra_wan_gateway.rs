@@ -63,8 +63,8 @@ impl LoRaWanGateway {
 }
 
 /// A builder for [`LoRaWanGateway`](crate::types::LoRaWanGateway).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LoRaWanGatewayBuilder {
     pub(crate) gateway_eui: ::std::option::Option<::std::string::String>,
     pub(crate) rf_region: ::std::option::Option<::std::string::String>,

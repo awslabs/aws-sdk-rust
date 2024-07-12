@@ -34,8 +34,8 @@ impl ListHyperParameterTuningJobsOutput {
 }
 
 /// A builder for [`ListHyperParameterTuningJobsOutput`](crate::operation::list_hyper_parameter_tuning_jobs::ListHyperParameterTuningJobsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListHyperParameterTuningJobsOutputBuilder {
     pub(crate) hyper_parameter_tuning_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::HyperParameterTuningJobSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

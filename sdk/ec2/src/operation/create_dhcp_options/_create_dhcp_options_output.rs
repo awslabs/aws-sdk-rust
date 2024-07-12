@@ -26,8 +26,8 @@ impl CreateDhcpOptionsOutput {
 }
 
 /// A builder for [`CreateDhcpOptionsOutput`](crate::operation::create_dhcp_options::CreateDhcpOptionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDhcpOptionsOutputBuilder {
     pub(crate) dhcp_options: ::std::option::Option<crate::types::DhcpOptions>,
     _request_id: Option<String>,

@@ -34,8 +34,8 @@ impl ListEdgeDeploymentPlansOutput {
 }
 
 /// A builder for [`ListEdgeDeploymentPlansOutput`](crate::operation::list_edge_deployment_plans::ListEdgeDeploymentPlansOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEdgeDeploymentPlansOutputBuilder {
     pub(crate) edge_deployment_plan_summaries: ::std::option::Option<::std::vec::Vec<crate::types::EdgeDeploymentPlanSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -43,8 +43,8 @@ impl ReviewTemplatePillarReviewSummary {
 }
 
 /// A builder for [`ReviewTemplatePillarReviewSummary`](crate::types::ReviewTemplatePillarReviewSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReviewTemplatePillarReviewSummaryBuilder {
     pub(crate) pillar_id: ::std::option::Option<::std::string::String>,
     pub(crate) pillar_name: ::std::option::Option<::std::string::String>,

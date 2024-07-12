@@ -41,8 +41,8 @@ impl PostLineageEventInput {
 }
 
 /// A builder for [`PostLineageEventInput`](crate::operation::post_lineage_event::PostLineageEventInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PostLineageEventInputBuilder {
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) event: ::std::option::Option<::aws_smithy_types::Blob>,

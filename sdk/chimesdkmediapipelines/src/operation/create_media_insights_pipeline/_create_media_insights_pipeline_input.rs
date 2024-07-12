@@ -84,8 +84,8 @@ impl CreateMediaInsightsPipelineInput {
 }
 
 /// A builder for [`CreateMediaInsightsPipelineInput`](crate::operation::create_media_insights_pipeline::CreateMediaInsightsPipelineInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateMediaInsightsPipelineInputBuilder {
     pub(crate) media_insights_pipeline_configuration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) kinesis_video_stream_source_runtime_configuration: ::std::option::Option<crate::types::KinesisVideoStreamSourceRuntimeConfiguration>,

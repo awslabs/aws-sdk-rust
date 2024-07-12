@@ -26,8 +26,8 @@ impl GetRateBasedRuleManagedKeysInput {
 }
 
 /// A builder for [`GetRateBasedRuleManagedKeysInput`](crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRateBasedRuleManagedKeysInputBuilder {
     pub(crate) rule_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,

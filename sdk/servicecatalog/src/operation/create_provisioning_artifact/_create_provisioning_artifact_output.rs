@@ -48,8 +48,8 @@ impl CreateProvisioningArtifactOutput {
 }
 
 /// A builder for [`CreateProvisioningArtifactOutput`](crate::operation::create_provisioning_artifact::CreateProvisioningArtifactOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateProvisioningArtifactOutputBuilder {
     pub(crate) provisioning_artifact_detail: ::std::option::Option<crate::types::ProvisioningArtifactDetail>,
     pub(crate) info: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

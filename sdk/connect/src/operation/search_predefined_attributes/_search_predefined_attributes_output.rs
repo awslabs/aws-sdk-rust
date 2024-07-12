@@ -40,8 +40,8 @@ impl SearchPredefinedAttributesOutput {
 }
 
 /// A builder for [`SearchPredefinedAttributesOutput`](crate::operation::search_predefined_attributes::SearchPredefinedAttributesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchPredefinedAttributesOutputBuilder {
     pub(crate) predefined_attributes: ::std::option::Option<::std::vec::Vec<crate::types::PredefinedAttribute>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

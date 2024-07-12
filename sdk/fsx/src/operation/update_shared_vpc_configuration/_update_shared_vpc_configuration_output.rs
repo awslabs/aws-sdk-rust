@@ -26,8 +26,8 @@ impl UpdateSharedVpcConfigurationOutput {
 }
 
 /// A builder for [`UpdateSharedVpcConfigurationOutput`](crate::operation::update_shared_vpc_configuration::UpdateSharedVpcConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSharedVpcConfigurationOutputBuilder {
     pub(crate) enable_fsx_route_table_updates_from_participant_accounts: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

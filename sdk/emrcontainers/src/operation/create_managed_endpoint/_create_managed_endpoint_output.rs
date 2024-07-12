@@ -44,8 +44,8 @@ impl CreateManagedEndpointOutput {
 }
 
 /// A builder for [`CreateManagedEndpointOutput`](crate::operation::create_managed_endpoint::CreateManagedEndpointOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateManagedEndpointOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

@@ -91,8 +91,8 @@ impl ResolverQueryLogConfigAssociation {
 }
 
 /// A builder for [`ResolverQueryLogConfigAssociation`](crate::types::ResolverQueryLogConfigAssociation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResolverQueryLogConfigAssociationBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) resolver_query_log_config_id: ::std::option::Option<::std::string::String>,

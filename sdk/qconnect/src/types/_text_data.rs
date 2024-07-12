@@ -27,8 +27,8 @@ impl TextData {
 }
 
 /// A builder for [`TextData`](crate::types::TextData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TextDataBuilder {
     pub(crate) title: ::std::option::Option<crate::types::DocumentText>,
     pub(crate) excerpt: ::std::option::Option<crate::types::DocumentText>,

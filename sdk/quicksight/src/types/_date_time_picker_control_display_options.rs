@@ -33,8 +33,8 @@ impl DateTimePickerControlDisplayOptions {
 }
 
 /// A builder for [`DateTimePickerControlDisplayOptions`](crate::types::DateTimePickerControlDisplayOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DateTimePickerControlDisplayOptionsBuilder {
     pub(crate) title_options: ::std::option::Option<crate::types::LabelOptions>,
     pub(crate) date_time_format: ::std::option::Option<::std::string::String>,

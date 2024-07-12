@@ -22,8 +22,8 @@ impl SigningMaterial {
 }
 
 /// A builder for [`SigningMaterial`](crate::types::SigningMaterial).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SigningMaterialBuilder {
     pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
 }

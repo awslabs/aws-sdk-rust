@@ -46,8 +46,8 @@ impl GetDevicesInput {
 }
 
 /// A builder for [`GetDevicesInput`](crate::operation::get_devices::GetDevicesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDevicesInputBuilder {
     pub(crate) global_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) device_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

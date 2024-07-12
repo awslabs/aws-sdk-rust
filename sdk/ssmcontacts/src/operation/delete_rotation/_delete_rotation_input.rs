@@ -20,8 +20,8 @@ impl DeleteRotationInput {
 }
 
 /// A builder for [`DeleteRotationInput`](crate::operation::delete_rotation::DeleteRotationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRotationInputBuilder {
     pub(crate) rotation_id: ::std::option::Option<::std::string::String>,
 }

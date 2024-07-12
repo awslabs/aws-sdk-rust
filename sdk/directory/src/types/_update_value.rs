@@ -21,8 +21,8 @@ impl UpdateValue {
 }
 
 /// A builder for [`UpdateValue`](crate::types::UpdateValue).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateValueBuilder {
     pub(crate) os_update_settings: ::std::option::Option<crate::types::OsUpdateSettings>,
 }

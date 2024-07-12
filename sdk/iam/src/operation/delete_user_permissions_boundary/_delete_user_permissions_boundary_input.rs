@@ -20,8 +20,8 @@ impl DeleteUserPermissionsBoundaryInput {
 }
 
 /// A builder for [`DeleteUserPermissionsBoundaryInput`](crate::operation::delete_user_permissions_boundary::DeleteUserPermissionsBoundaryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteUserPermissionsBoundaryInputBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
 }

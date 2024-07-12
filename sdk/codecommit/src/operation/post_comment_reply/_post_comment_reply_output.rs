@@ -26,8 +26,8 @@ impl PostCommentReplyOutput {
 }
 
 /// A builder for [`PostCommentReplyOutput`](crate::operation::post_comment_reply::PostCommentReplyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PostCommentReplyOutputBuilder {
     pub(crate) comment: ::std::option::Option<crate::types::Comment>,
     _request_id: Option<String>,

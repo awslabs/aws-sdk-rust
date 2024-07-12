@@ -39,8 +39,8 @@ impl JsonMatchPattern {
 }
 
 /// A builder for [`JsonMatchPattern`](crate::types::JsonMatchPattern).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JsonMatchPatternBuilder {
     pub(crate) all: ::std::option::Option<crate::types::All>,
     pub(crate) included_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

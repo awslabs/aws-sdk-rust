@@ -102,8 +102,8 @@ impl UpdateProfileOutput {
 }
 
 /// A builder for [`UpdateProfileOutput`](crate::operation::update_profile::UpdateProfileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateProfileOutputBuilder {
     pub(crate) profile_id: ::std::option::Option<::std::string::String>,
     pub(crate) profile_arn: ::std::option::Option<::std::string::String>,

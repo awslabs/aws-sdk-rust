@@ -32,8 +32,8 @@ impl DeleteConversationInput {
 }
 
 /// A builder for [`DeleteConversationInput`](crate::operation::delete_conversation::DeleteConversationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteConversationInputBuilder {
     pub(crate) conversation_id: ::std::option::Option<::std::string::String>,
     pub(crate) application_id: ::std::option::Option<::std::string::String>,

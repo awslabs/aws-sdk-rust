@@ -35,8 +35,8 @@ impl DataReplicationInitiation {
 }
 
 /// A builder for [`DataReplicationInitiation`](crate::types::DataReplicationInitiation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataReplicationInitiationBuilder {
     pub(crate) start_date_time: ::std::option::Option<::std::string::String>,
     pub(crate) next_attempt_date_time: ::std::option::Option<::std::string::String>,

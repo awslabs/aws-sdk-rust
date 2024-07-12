@@ -68,8 +68,8 @@ impl ListDeviceFleetsInput {
 }
 
 /// A builder for [`ListDeviceFleetsInput`](crate::operation::list_device_fleets::ListDeviceFleetsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDeviceFleetsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

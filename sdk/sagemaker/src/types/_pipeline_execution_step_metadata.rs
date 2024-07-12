@@ -171,8 +171,8 @@ impl PipelineExecutionStepMetadata {
 }
 
 /// A builder for [`PipelineExecutionStepMetadata`](crate::types::PipelineExecutionStepMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PipelineExecutionStepMetadataBuilder {
     pub(crate) training_job: ::std::option::Option<crate::types::TrainingJobStepMetadata>,
     pub(crate) processing_job: ::std::option::Option<crate::types::ProcessingJobStepMetadata>,

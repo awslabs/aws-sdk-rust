@@ -26,8 +26,8 @@ impl ListCoreNetworksInput {
 }
 
 /// A builder for [`ListCoreNetworksInput`](crate::operation::list_core_networks::ListCoreNetworksInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCoreNetworksInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

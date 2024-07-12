@@ -34,8 +34,8 @@ impl ListSpeakerEnrollmentJobsOutput {
 }
 
 /// A builder for [`ListSpeakerEnrollmentJobsOutput`](crate::operation::list_speaker_enrollment_jobs::ListSpeakerEnrollmentJobsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSpeakerEnrollmentJobsOutputBuilder {
     pub(crate) job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::SpeakerEnrollmentJobSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

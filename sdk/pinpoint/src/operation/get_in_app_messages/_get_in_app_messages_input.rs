@@ -26,8 +26,8 @@ impl GetInAppMessagesInput {
 }
 
 /// A builder for [`GetInAppMessagesInput`](crate::operation::get_in_app_messages::GetInAppMessagesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetInAppMessagesInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint_id: ::std::option::Option<::std::string::String>,

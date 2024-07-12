@@ -22,8 +22,8 @@ impl BatchAcknowledgeAlarmInput {
 }
 
 /// A builder for [`BatchAcknowledgeAlarmInput`](crate::operation::batch_acknowledge_alarm::BatchAcknowledgeAlarmInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchAcknowledgeAlarmInputBuilder {
     pub(crate) acknowledge_action_requests: ::std::option::Option<::std::vec::Vec<crate::types::AcknowledgeAlarmActionRequest>>,
 }

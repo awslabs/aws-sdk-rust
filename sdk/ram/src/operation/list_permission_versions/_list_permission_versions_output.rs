@@ -34,8 +34,8 @@ impl ListPermissionVersionsOutput {
 }
 
 /// A builder for [`ListPermissionVersionsOutput`](crate::operation::list_permission_versions::ListPermissionVersionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPermissionVersionsOutputBuilder {
     pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourceSharePermissionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

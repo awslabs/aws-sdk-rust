@@ -26,8 +26,8 @@ impl GetMlTaskRunInput {
 }
 
 /// A builder for [`GetMlTaskRunInput`](crate::operation::get_ml_task_run::GetMlTaskRunInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMlTaskRunInputBuilder {
     pub(crate) transform_id: ::std::option::Option<::std::string::String>,
     pub(crate) task_run_id: ::std::option::Option<::std::string::String>,

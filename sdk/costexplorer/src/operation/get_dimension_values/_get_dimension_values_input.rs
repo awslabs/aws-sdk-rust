@@ -392,8 +392,8 @@ impl GetDimensionValuesInput {
 }
 
 /// A builder for [`GetDimensionValuesInput`](crate::operation::get_dimension_values::GetDimensionValuesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDimensionValuesInputBuilder {
     pub(crate) search_string: ::std::option::Option<::std::string::String>,
     pub(crate) time_period: ::std::option::Option<crate::types::DateInterval>,

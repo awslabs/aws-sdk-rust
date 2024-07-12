@@ -47,8 +47,8 @@ impl SingleMetricAnomalyDetector {
 }
 
 /// A builder for [`SingleMetricAnomalyDetector`](crate::types::SingleMetricAnomalyDetector).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SingleMetricAnomalyDetectorBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) namespace: ::std::option::Option<::std::string::String>,

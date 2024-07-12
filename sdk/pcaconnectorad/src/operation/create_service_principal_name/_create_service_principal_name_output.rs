@@ -18,8 +18,8 @@ impl CreateServicePrincipalNameOutput {
 }
 
 /// A builder for [`CreateServicePrincipalNameOutput`](crate::operation::create_service_principal_name::CreateServicePrincipalNameOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateServicePrincipalNameOutputBuilder {
     _request_id: Option<String>,
 }

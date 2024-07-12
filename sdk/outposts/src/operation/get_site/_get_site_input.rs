@@ -20,8 +20,8 @@ impl GetSiteInput {
 }
 
 /// A builder for [`GetSiteInput`](crate::operation::get_site::GetSiteInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSiteInputBuilder {
     pub(crate) site_id: ::std::option::Option<::std::string::String>,
 }

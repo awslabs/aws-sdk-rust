@@ -124,8 +124,8 @@ impl StartMedicalScribeJobInput {
 }
 
 /// A builder for [`StartMedicalScribeJobInput`](crate::operation::start_medical_scribe_job::StartMedicalScribeJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartMedicalScribeJobInputBuilder {
     pub(crate) medical_scribe_job_name: ::std::option::Option<::std::string::String>,
     pub(crate) media: ::std::option::Option<crate::types::Media>,

@@ -28,8 +28,8 @@ impl BatchUpdateAutomatedDiscoveryAccountsOutput {
 }
 
 /// A builder for [`BatchUpdateAutomatedDiscoveryAccountsOutput`](crate::operation::batch_update_automated_discovery_accounts::BatchUpdateAutomatedDiscoveryAccountsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchUpdateAutomatedDiscoveryAccountsOutputBuilder {
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::AutomatedDiscoveryAccountUpdateError>>,
     _request_id: Option<String>,

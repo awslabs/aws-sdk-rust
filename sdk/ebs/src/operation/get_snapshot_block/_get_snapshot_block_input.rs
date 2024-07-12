@@ -36,8 +36,8 @@ impl GetSnapshotBlockInput {
 }
 
 /// A builder for [`GetSnapshotBlockInput`](crate::operation::get_snapshot_block::GetSnapshotBlockInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSnapshotBlockInputBuilder {
     pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
     pub(crate) block_index: ::std::option::Option<i32>,

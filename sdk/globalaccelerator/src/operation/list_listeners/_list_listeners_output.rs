@@ -34,8 +34,8 @@ impl ListListenersOutput {
 }
 
 /// A builder for [`ListListenersOutput`](crate::operation::list_listeners::ListListenersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListListenersOutputBuilder {
     pub(crate) listeners: ::std::option::Option<::std::vec::Vec<crate::types::Listener>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

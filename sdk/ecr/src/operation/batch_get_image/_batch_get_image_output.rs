@@ -36,8 +36,8 @@ impl BatchGetImageOutput {
 }
 
 /// A builder for [`BatchGetImageOutput`](crate::operation::batch_get_image::BatchGetImageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetImageOutputBuilder {
     pub(crate) images: ::std::option::Option<::std::vec::Vec<crate::types::Image>>,
     pub(crate) failures: ::std::option::Option<::std::vec::Vec<crate::types::ImageFailure>>,

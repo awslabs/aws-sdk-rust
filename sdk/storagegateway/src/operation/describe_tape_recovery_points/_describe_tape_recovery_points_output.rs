@@ -43,8 +43,8 @@ impl DescribeTapeRecoveryPointsOutput {
 }
 
 /// A builder for [`DescribeTapeRecoveryPointsOutput`](crate::operation::describe_tape_recovery_points::DescribeTapeRecoveryPointsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTapeRecoveryPointsOutputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tape_recovery_point_infos: ::std::option::Option<::std::vec::Vec<crate::types::TapeRecoveryPointInfo>>,

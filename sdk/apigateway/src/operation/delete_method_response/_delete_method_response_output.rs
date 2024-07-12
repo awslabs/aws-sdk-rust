@@ -18,8 +18,8 @@ impl DeleteMethodResponseOutput {
 }
 
 /// A builder for [`DeleteMethodResponseOutput`](crate::operation::delete_method_response::DeleteMethodResponseOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteMethodResponseOutputBuilder {
     _request_id: Option<String>,
 }

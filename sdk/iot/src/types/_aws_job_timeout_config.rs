@@ -21,8 +21,8 @@ impl AwsJobTimeoutConfig {
 }
 
 /// A builder for [`AwsJobTimeoutConfig`](crate::types::AwsJobTimeoutConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsJobTimeoutConfigBuilder {
     pub(crate) in_progress_timeout_in_minutes: ::std::option::Option<i64>,
 }

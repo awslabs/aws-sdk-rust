@@ -69,8 +69,8 @@ impl OutputSettings {
 }
 
 /// A builder for [`OutputSettings`](crate::types::OutputSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OutputSettingsBuilder {
     pub(crate) archive_output_settings: ::std::option::Option<crate::types::ArchiveOutputSettings>,
     pub(crate) frame_capture_output_settings: ::std::option::Option<crate::types::FrameCaptureOutputSettings>,

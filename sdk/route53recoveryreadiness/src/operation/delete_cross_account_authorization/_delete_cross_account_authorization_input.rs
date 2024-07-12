@@ -20,8 +20,8 @@ impl DeleteCrossAccountAuthorizationInput {
 }
 
 /// A builder for [`DeleteCrossAccountAuthorizationInput`](crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCrossAccountAuthorizationInputBuilder {
     pub(crate) cross_account_authorization: ::std::option::Option<::std::string::String>,
 }

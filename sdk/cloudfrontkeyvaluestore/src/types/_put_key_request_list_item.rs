@@ -37,8 +37,8 @@ impl PutKeyRequestListItem {
 }
 
 /// A builder for [`PutKeyRequestListItem`](crate::types::PutKeyRequestListItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PutKeyRequestListItemBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl DeleteChannelPolicyInput {
 }
 
 /// A builder for [`DeleteChannelPolicyInput`](crate::operation::delete_channel_policy::DeleteChannelPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteChannelPolicyInputBuilder {
     pub(crate) channel_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) channel_name: ::std::option::Option<::std::string::String>,

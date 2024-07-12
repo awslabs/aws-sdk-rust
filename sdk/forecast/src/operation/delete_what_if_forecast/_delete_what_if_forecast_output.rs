@@ -18,8 +18,8 @@ impl DeleteWhatIfForecastOutput {
 }
 
 /// A builder for [`DeleteWhatIfForecastOutput`](crate::operation::delete_what_if_forecast::DeleteWhatIfForecastOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteWhatIfForecastOutputBuilder {
     _request_id: Option<String>,
 }

@@ -385,8 +385,8 @@ impl HeadObjectOutput {
 }
 
 /// A builder for [`HeadObjectOutput`](crate::operation::head_object::HeadObjectOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct HeadObjectOutputBuilder {
     pub(crate) delete_marker: ::std::option::Option<bool>,
     pub(crate) accept_ranges: ::std::option::Option<::std::string::String>,

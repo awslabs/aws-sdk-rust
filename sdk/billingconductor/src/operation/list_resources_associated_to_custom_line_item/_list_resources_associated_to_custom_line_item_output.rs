@@ -41,8 +41,8 @@ impl ListResourcesAssociatedToCustomLineItemOutput {
 }
 
 /// A builder for [`ListResourcesAssociatedToCustomLineItemOutput`](crate::operation::list_resources_associated_to_custom_line_item::ListResourcesAssociatedToCustomLineItemOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListResourcesAssociatedToCustomLineItemOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) associated_resources: ::std::option::Option<::std::vec::Vec<crate::types::ListResourcesAssociatedToCustomLineItemResponseElement>>,

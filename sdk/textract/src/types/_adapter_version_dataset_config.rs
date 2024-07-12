@@ -25,8 +25,8 @@ impl AdapterVersionDatasetConfig {
 }
 
 /// A builder for [`AdapterVersionDatasetConfig`](crate::types::AdapterVersionDatasetConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AdapterVersionDatasetConfigBuilder {
     pub(crate) manifest_s3_object: ::std::option::Option<crate::types::S3Object>,
 }

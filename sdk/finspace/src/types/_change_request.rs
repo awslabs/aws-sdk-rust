@@ -46,8 +46,8 @@ impl ChangeRequest {
 }
 
 /// A builder for [`ChangeRequest`](crate::types::ChangeRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ChangeRequestBuilder {
     pub(crate) change_type: ::std::option::Option<crate::types::ChangeType>,
     pub(crate) s3_path: ::std::option::Option<::std::string::String>,

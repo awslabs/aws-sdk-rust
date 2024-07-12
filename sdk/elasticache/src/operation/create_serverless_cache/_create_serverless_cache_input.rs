@@ -100,8 +100,8 @@ impl CreateServerlessCacheInput {
 }
 
 /// A builder for [`CreateServerlessCacheInput`](crate::operation::create_serverless_cache::CreateServerlessCacheInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateServerlessCacheInputBuilder {
     pub(crate) serverless_cache_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

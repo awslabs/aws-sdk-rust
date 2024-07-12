@@ -33,8 +33,8 @@ impl EncryptionAtRest {
 }
 
 /// A builder for [`EncryptionAtRest`](crate::types::EncryptionAtRest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EncryptionAtRestBuilder {
     pub(crate) catalog_encryption_mode: ::std::option::Option<crate::types::CatalogEncryptionMode>,
     pub(crate) sse_aws_kms_key_id: ::std::option::Option<::std::string::String>,

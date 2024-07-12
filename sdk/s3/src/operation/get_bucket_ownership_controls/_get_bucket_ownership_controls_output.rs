@@ -32,8 +32,8 @@ impl GetBucketOwnershipControlsOutput {
 }
 
 /// A builder for [`GetBucketOwnershipControlsOutput`](crate::operation::get_bucket_ownership_controls::GetBucketOwnershipControlsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBucketOwnershipControlsOutputBuilder {
     pub(crate) ownership_controls: ::std::option::Option<crate::types::OwnershipControls>,
     _extended_request_id: Option<String>,

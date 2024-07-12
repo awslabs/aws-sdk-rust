@@ -34,8 +34,8 @@ impl DescribeRuntimeVersionsOutput {
 }
 
 /// A builder for [`DescribeRuntimeVersionsOutput`](crate::operation::describe_runtime_versions::DescribeRuntimeVersionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRuntimeVersionsOutputBuilder {
     pub(crate) runtime_versions: ::std::option::Option<::std::vec::Vec<crate::types::RuntimeVersion>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

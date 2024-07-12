@@ -44,8 +44,8 @@ impl UpdateTableStorageOptimizerInput {
 }
 
 /// A builder for [`UpdateTableStorageOptimizerInput`](crate::operation::update_table_storage_optimizer::UpdateTableStorageOptimizerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateTableStorageOptimizerInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,

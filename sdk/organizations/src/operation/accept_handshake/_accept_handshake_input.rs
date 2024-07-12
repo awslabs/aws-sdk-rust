@@ -22,8 +22,8 @@ impl AcceptHandshakeInput {
 }
 
 /// A builder for [`AcceptHandshakeInput`](crate::operation::accept_handshake::AcceptHandshakeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AcceptHandshakeInputBuilder {
     pub(crate) handshake_id: ::std::option::Option<::std::string::String>,
 }

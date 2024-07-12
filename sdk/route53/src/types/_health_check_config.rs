@@ -331,8 +331,8 @@ impl HealthCheckConfig {
 }
 
 /// A builder for [`HealthCheckConfig`](crate::types::HealthCheckConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HealthCheckConfigBuilder {
     pub(crate) ip_address: ::std::option::Option<::std::string::String>,
     pub(crate) port: ::std::option::Option<i32>,

@@ -26,8 +26,8 @@ impl CreateVoiceProfileDomainOutput {
 }
 
 /// A builder for [`CreateVoiceProfileDomainOutput`](crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateVoiceProfileDomainOutputBuilder {
     pub(crate) voice_profile_domain: ::std::option::Option<crate::types::VoiceProfileDomain>,
     _request_id: Option<String>,

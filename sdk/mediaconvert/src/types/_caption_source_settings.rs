@@ -63,8 +63,8 @@ impl CaptionSourceSettings {
 }
 
 /// A builder for [`CaptionSourceSettings`](crate::types::CaptionSourceSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CaptionSourceSettingsBuilder {
     pub(crate) ancillary_source_settings: ::std::option::Option<crate::types::AncillarySourceSettings>,
     pub(crate) dvb_sub_source_settings: ::std::option::Option<crate::types::DvbSubSourceSettings>,

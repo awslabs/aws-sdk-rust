@@ -19,8 +19,8 @@ impl ChangeTagsForResourceOutput {
 }
 
 /// A builder for [`ChangeTagsForResourceOutput`](crate::operation::change_tags_for_resource::ChangeTagsForResourceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ChangeTagsForResourceOutputBuilder {
     _request_id: Option<String>,
 }

@@ -51,8 +51,8 @@ impl ChannelMembership {
 }
 
 /// A builder for [`ChannelMembership`](crate::types::ChannelMembership).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ChannelMembershipBuilder {
     pub(crate) invited_by: ::std::option::Option<crate::types::Identity>,
     pub(crate) r#type: ::std::option::Option<crate::types::ChannelMembershipType>,

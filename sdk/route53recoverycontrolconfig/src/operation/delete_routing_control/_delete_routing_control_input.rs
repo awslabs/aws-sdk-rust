@@ -20,8 +20,8 @@ impl DeleteRoutingControlInput {
 }
 
 /// A builder for [`DeleteRoutingControlInput`](crate::operation::delete_routing_control::DeleteRoutingControlInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRoutingControlInputBuilder {
     pub(crate) routing_control_arn: ::std::option::Option<::std::string::String>,
 }

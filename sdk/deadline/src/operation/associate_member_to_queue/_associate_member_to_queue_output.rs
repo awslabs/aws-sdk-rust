@@ -18,8 +18,8 @@ impl AssociateMemberToQueueOutput {
 }
 
 /// A builder for [`AssociateMemberToQueueOutput`](crate::operation::associate_member_to_queue::AssociateMemberToQueueOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateMemberToQueueOutputBuilder {
     _request_id: Option<String>,
 }

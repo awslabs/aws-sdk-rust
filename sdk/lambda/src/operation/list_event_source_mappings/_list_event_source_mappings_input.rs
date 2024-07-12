@@ -90,8 +90,8 @@ impl ListEventSourceMappingsInput {
 }
 
 /// A builder for [`ListEventSourceMappingsInput`](crate::operation::list_event_source_mappings::ListEventSourceMappingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEventSourceMappingsInputBuilder {
     pub(crate) event_source_arn: ::std::option::Option<::std::string::String>,
     pub(crate) function_name: ::std::option::Option<::std::string::String>,

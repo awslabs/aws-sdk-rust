@@ -29,8 +29,8 @@ impl GeoMosaicConfigInput {
 }
 
 /// A builder for [`GeoMosaicConfigInput`](crate::types::GeoMosaicConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GeoMosaicConfigInputBuilder {
     pub(crate) algorithm_name: ::std::option::Option<crate::types::AlgorithmNameGeoMosaic>,
     pub(crate) target_bands: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

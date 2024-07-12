@@ -57,8 +57,8 @@ impl CustomerConnectorInfo {
 }
 
 /// A builder for [`CustomerConnectorInfo`](crate::types::CustomerConnectorInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CustomerConnectorInfoBuilder {
     pub(crate) active_connectors: ::std::option::Option<i32>,
     pub(crate) healthy_connectors: ::std::option::Option<i32>,

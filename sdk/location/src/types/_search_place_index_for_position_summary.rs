@@ -71,8 +71,8 @@ impl SearchPlaceIndexForPositionSummary {
 }
 
 /// A builder for [`SearchPlaceIndexForPositionSummary`](crate::types::SearchPlaceIndexForPositionSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SearchPlaceIndexForPositionSummaryBuilder {
     pub(crate) position: ::std::option::Option<::std::vec::Vec<f64>>,
     pub(crate) max_results: ::std::option::Option<i32>,

@@ -33,8 +33,8 @@ impl AwsRoute53HostedZoneObjectDetails {
 }
 
 /// A builder for [`AwsRoute53HostedZoneObjectDetails`](crate::types::AwsRoute53HostedZoneObjectDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsRoute53HostedZoneObjectDetailsBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

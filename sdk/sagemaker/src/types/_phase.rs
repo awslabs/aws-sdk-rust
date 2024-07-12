@@ -33,8 +33,8 @@ impl Phase {
 }
 
 /// A builder for [`Phase`](crate::types::Phase).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PhaseBuilder {
     pub(crate) initial_number_of_users: ::std::option::Option<i32>,
     pub(crate) spawn_rate: ::std::option::Option<i32>,

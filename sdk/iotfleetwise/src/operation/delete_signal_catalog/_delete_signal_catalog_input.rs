@@ -20,8 +20,8 @@ impl DeleteSignalCatalogInput {
 }
 
 /// A builder for [`DeleteSignalCatalogInput`](crate::operation::delete_signal_catalog::DeleteSignalCatalogInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSignalCatalogInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

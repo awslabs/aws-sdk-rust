@@ -34,8 +34,8 @@ impl DisassociateSourceServersInput {
 }
 
 /// A builder for [`DisassociateSourceServersInput`](crate::operation::disassociate_source_servers::DisassociateSourceServersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateSourceServersInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) source_server_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

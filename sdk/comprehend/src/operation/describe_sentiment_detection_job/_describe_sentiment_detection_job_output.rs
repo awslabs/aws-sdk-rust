@@ -26,8 +26,8 @@ impl DescribeSentimentDetectionJobOutput {
 }
 
 /// A builder for [`DescribeSentimentDetectionJobOutput`](crate::operation::describe_sentiment_detection_job::DescribeSentimentDetectionJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSentimentDetectionJobOutputBuilder {
     pub(crate) sentiment_detection_job_properties: ::std::option::Option<crate::types::SentimentDetectionJobProperties>,
     _request_id: Option<String>,

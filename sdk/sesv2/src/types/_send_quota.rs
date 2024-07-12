@@ -33,8 +33,8 @@ impl SendQuota {
 }
 
 /// A builder for [`SendQuota`](crate::types::SendQuota).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendQuotaBuilder {
     pub(crate) max24_hour_send: ::std::option::Option<f64>,
     pub(crate) max_send_rate: ::std::option::Option<f64>,

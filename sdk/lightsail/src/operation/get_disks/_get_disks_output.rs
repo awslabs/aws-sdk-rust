@@ -38,8 +38,8 @@ impl GetDisksOutput {
 }
 
 /// A builder for [`GetDisksOutput`](crate::operation::get_disks::GetDisksOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDisksOutputBuilder {
     pub(crate) disks: ::std::option::Option<::std::vec::Vec<crate::types::Disk>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,

@@ -39,8 +39,8 @@ impl CodegenJobGenericDataSchema {
 }
 
 /// A builder for [`CodegenJobGenericDataSchema`](crate::types::CodegenJobGenericDataSchema).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CodegenJobGenericDataSchemaBuilder {
     pub(crate) data_source_type: ::std::option::Option<crate::types::CodegenJobGenericDataSourceType>,
     pub(crate) models: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CodegenGenericDataModel>>,

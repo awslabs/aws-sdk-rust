@@ -26,8 +26,8 @@ impl AcceptReservedNodeExchangeOutput {
 }
 
 /// A builder for [`AcceptReservedNodeExchangeOutput`](crate::operation::accept_reserved_node_exchange::AcceptReservedNodeExchangeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AcceptReservedNodeExchangeOutputBuilder {
     pub(crate) exchanged_reserved_node: ::std::option::Option<crate::types::ReservedNode>,
     _request_id: Option<String>,

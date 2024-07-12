@@ -37,8 +37,8 @@ impl DatadogConnectorProfileCredentials {
 }
 
 /// A builder for [`DatadogConnectorProfileCredentials`](crate::types::DatadogConnectorProfileCredentials).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DatadogConnectorProfileCredentialsBuilder {
     pub(crate) api_key: ::std::option::Option<::std::string::String>,
     pub(crate) application_key: ::std::option::Option<::std::string::String>,

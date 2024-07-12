@@ -21,8 +21,8 @@ impl GetRemoteAccessSessionInput {
 }
 
 /// A builder for [`GetRemoteAccessSessionInput`](crate::operation::get_remote_access_session::GetRemoteAccessSessionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRemoteAccessSessionInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }

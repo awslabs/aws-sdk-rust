@@ -26,8 +26,8 @@ impl DescribeJournalKinesisStreamOutput {
 }
 
 /// A builder for [`DescribeJournalKinesisStreamOutput`](crate::operation::describe_journal_kinesis_stream::DescribeJournalKinesisStreamOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeJournalKinesisStreamOutputBuilder {
     pub(crate) stream: ::std::option::Option<crate::types::JournalKinesisStreamDescription>,
     _request_id: Option<String>,

@@ -109,8 +109,8 @@ impl ModifyImageAttributeInput {
 }
 
 /// A builder for [`ModifyImageAttributeInput`](crate::operation::modify_image_attribute::ModifyImageAttributeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyImageAttributeInputBuilder {
     pub(crate) attribute: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<crate::types::AttributeValue>,

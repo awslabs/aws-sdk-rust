@@ -38,8 +38,8 @@ impl ListConnectionsInput {
 }
 
 /// A builder for [`ListConnectionsInput`](crate::operation::list_connections::ListConnectionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListConnectionsInputBuilder {
     pub(crate) provider_type_filter: ::std::option::Option<crate::types::ProviderType>,
     pub(crate) host_arn_filter: ::std::option::Option<::std::string::String>,

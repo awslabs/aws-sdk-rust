@@ -61,8 +61,8 @@ impl MediaConcatenationPipeline {
 }
 
 /// A builder for [`MediaConcatenationPipeline`](crate::types::MediaConcatenationPipeline).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MediaConcatenationPipelineBuilder {
     pub(crate) media_pipeline_id: ::std::option::Option<::std::string::String>,
     pub(crate) media_pipeline_arn: ::std::option::Option<::std::string::String>,

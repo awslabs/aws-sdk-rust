@@ -32,8 +32,8 @@ impl CreateRouteTableOutput {
 }
 
 /// A builder for [`CreateRouteTableOutput`](crate::operation::create_route_table::CreateRouteTableOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateRouteTableOutputBuilder {
     pub(crate) route_table: ::std::option::Option<crate::types::RouteTable>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

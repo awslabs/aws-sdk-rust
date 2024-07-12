@@ -18,8 +18,8 @@ impl DeleteOpenIdConnectProviderOutput {
 }
 
 /// A builder for [`DeleteOpenIdConnectProviderOutput`](crate::operation::delete_open_id_connect_provider::DeleteOpenIdConnectProviderOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteOpenIdConnectProviderOutputBuilder {
     _request_id: Option<String>,
 }

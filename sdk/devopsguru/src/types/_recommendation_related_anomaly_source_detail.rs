@@ -23,8 +23,8 @@ impl RecommendationRelatedAnomalySourceDetail {
 }
 
 /// A builder for [`RecommendationRelatedAnomalySourceDetail`](crate::types::RecommendationRelatedAnomalySourceDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecommendationRelatedAnomalySourceDetailBuilder {
     pub(crate) cloud_watch_metrics: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedCloudWatchMetricsSourceDetail>>,
 }

@@ -56,8 +56,8 @@ impl Challenge {
 }
 
 /// A builder for [`Challenge`](crate::types::Challenge).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ChallengeBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) connector_arn: ::std::option::Option<::std::string::String>,

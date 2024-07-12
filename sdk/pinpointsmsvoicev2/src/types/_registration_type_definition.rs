@@ -36,8 +36,8 @@ impl RegistrationTypeDefinition {
 }
 
 /// A builder for [`RegistrationTypeDefinition`](crate::types::RegistrationTypeDefinition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegistrationTypeDefinitionBuilder {
     pub(crate) registration_type: ::std::option::Option<::std::string::String>,
     pub(crate) supported_associations: ::std::option::Option<::std::vec::Vec<crate::types::SupportedAssociation>>,

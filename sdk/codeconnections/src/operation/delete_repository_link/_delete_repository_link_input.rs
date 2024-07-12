@@ -20,8 +20,8 @@ impl DeleteRepositoryLinkInput {
 }
 
 /// A builder for [`DeleteRepositoryLinkInput`](crate::operation::delete_repository_link::DeleteRepositoryLinkInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRepositoryLinkInputBuilder {
     pub(crate) repository_link_id: ::std::option::Option<::std::string::String>,
 }

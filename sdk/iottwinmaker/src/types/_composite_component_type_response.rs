@@ -27,8 +27,8 @@ impl CompositeComponentTypeResponse {
 }
 
 /// A builder for [`CompositeComponentTypeResponse`](crate::types::CompositeComponentTypeResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CompositeComponentTypeResponseBuilder {
     pub(crate) component_type_id: ::std::option::Option<::std::string::String>,
     pub(crate) is_inherited: ::std::option::Option<bool>,

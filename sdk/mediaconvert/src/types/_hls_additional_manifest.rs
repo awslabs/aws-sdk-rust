@@ -29,8 +29,8 @@ impl HlsAdditionalManifest {
 }
 
 /// A builder for [`HlsAdditionalManifest`](crate::types::HlsAdditionalManifest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HlsAdditionalManifestBuilder {
     pub(crate) manifest_name_modifier: ::std::option::Option<::std::string::String>,
     pub(crate) selected_outputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

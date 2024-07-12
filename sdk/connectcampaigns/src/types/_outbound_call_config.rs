@@ -40,8 +40,8 @@ impl OutboundCallConfig {
 }
 
 /// A builder for [`OutboundCallConfig`](crate::types::OutboundCallConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OutboundCallConfigBuilder {
     pub(crate) connect_contact_flow_id: ::std::option::Option<::std::string::String>,
     pub(crate) connect_source_phone_number: ::std::option::Option<::std::string::String>,

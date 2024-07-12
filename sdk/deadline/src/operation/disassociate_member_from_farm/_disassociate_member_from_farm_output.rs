@@ -18,8 +18,8 @@ impl DisassociateMemberFromFarmOutput {
 }
 
 /// A builder for [`DisassociateMemberFromFarmOutput`](crate::operation::disassociate_member_from_farm::DisassociateMemberFromFarmOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateMemberFromFarmOutputBuilder {
     _request_id: Option<String>,
 }

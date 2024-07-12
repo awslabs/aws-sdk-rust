@@ -21,8 +21,8 @@ impl ResourceDataSyncOrganizationalUnit {
 }
 
 /// A builder for [`ResourceDataSyncOrganizationalUnit`](crate::types::ResourceDataSyncOrganizationalUnit).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResourceDataSyncOrganizationalUnitBuilder {
     pub(crate) organizational_unit_id: ::std::option::Option<::std::string::String>,
 }

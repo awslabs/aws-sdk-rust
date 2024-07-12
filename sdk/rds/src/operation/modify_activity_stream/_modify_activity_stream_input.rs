@@ -26,8 +26,8 @@ impl ModifyActivityStreamInput {
 }
 
 /// A builder for [`ModifyActivityStreamInput`](crate::operation::modify_activity_stream::ModifyActivityStreamInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyActivityStreamInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) audit_policy_state: ::std::option::Option<crate::types::AuditPolicyState>,

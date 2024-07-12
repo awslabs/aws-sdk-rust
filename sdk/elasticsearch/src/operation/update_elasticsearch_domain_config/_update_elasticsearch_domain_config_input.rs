@@ -107,8 +107,8 @@ impl UpdateElasticsearchDomainConfigInput {
 }
 
 /// A builder for [`UpdateElasticsearchDomainConfigInput`](crate::operation::update_elasticsearch_domain_config::UpdateElasticsearchDomainConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateElasticsearchDomainConfigInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) elasticsearch_cluster_config: ::std::option::Option<crate::types::ElasticsearchClusterConfig>,

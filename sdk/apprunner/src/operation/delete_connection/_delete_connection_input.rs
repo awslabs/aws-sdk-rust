@@ -20,8 +20,8 @@ impl DeleteConnectionInput {
 }
 
 /// A builder for [`DeleteConnectionInput`](crate::operation::delete_connection::DeleteConnectionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteConnectionInputBuilder {
     pub(crate) connection_arn: ::std::option::Option<::std::string::String>,
 }

@@ -89,8 +89,8 @@ impl AwsEc2TransitGatewayDetails {
 }
 
 /// A builder for [`AwsEc2TransitGatewayDetails`](crate::types::AwsEc2TransitGatewayDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEc2TransitGatewayDetailsBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

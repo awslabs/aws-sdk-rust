@@ -60,8 +60,8 @@ impl GrokClassifier {
 }
 
 /// A builder for [`GrokClassifier`](crate::types::GrokClassifier).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GrokClassifierBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) classification: ::std::option::Option<::std::string::String>,

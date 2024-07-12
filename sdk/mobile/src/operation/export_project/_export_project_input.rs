@@ -21,8 +21,8 @@ impl ExportProjectInput {
 }
 
 /// A builder for [`ExportProjectInput`](crate::operation::export_project::ExportProjectInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExportProjectInputBuilder {
     pub(crate) project_id: ::std::option::Option<::std::string::String>,
 }

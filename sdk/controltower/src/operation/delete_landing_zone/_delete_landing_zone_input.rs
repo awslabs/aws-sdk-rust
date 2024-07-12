@@ -20,8 +20,8 @@ impl DeleteLandingZoneInput {
 }
 
 /// A builder for [`DeleteLandingZoneInput`](crate::operation::delete_landing_zone::DeleteLandingZoneInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteLandingZoneInputBuilder {
     pub(crate) landing_zone_identifier: ::std::option::Option<::std::string::String>,
 }

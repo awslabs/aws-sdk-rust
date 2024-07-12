@@ -63,8 +63,8 @@ impl ApnsSandboxChannelRequest {
 }
 
 /// A builder for [`ApnsSandboxChannelRequest`](crate::types::ApnsSandboxChannelRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ApnsSandboxChannelRequestBuilder {
     pub(crate) bundle_id: ::std::option::Option<::std::string::String>,
     pub(crate) certificate: ::std::option::Option<::std::string::String>,

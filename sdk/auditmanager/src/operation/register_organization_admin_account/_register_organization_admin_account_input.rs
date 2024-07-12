@@ -20,8 +20,8 @@ impl RegisterOrganizationAdminAccountInput {
 }
 
 /// A builder for [`RegisterOrganizationAdminAccountInput`](crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccountInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterOrganizationAdminAccountInputBuilder {
     pub(crate) admin_account_id: ::std::option::Option<::std::string::String>,
 }

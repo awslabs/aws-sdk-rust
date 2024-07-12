@@ -18,8 +18,8 @@ impl DeleteCustomDataIdentifierOutput {
 }
 
 /// A builder for [`DeleteCustomDataIdentifierOutput`](crate::operation::delete_custom_data_identifier::DeleteCustomDataIdentifierOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCustomDataIdentifierOutputBuilder {
     _request_id: Option<String>,
 }

@@ -43,8 +43,8 @@ impl DtmfInputEvent {
 }
 
 /// A builder for [`DtmfInputEvent`](crate::types::DtmfInputEvent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DtmfInputEventBuilder {
     pub(crate) input_character: ::std::option::Option<::std::string::String>,
     pub(crate) event_id: ::std::option::Option<::std::string::String>,

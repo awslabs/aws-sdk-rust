@@ -27,8 +27,8 @@ impl LaunchTemplateInstanceMarketOptionsRequest {
 }
 
 /// A builder for [`LaunchTemplateInstanceMarketOptionsRequest`](crate::types::LaunchTemplateInstanceMarketOptionsRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LaunchTemplateInstanceMarketOptionsRequestBuilder {
     pub(crate) market_type: ::std::option::Option<crate::types::MarketType>,
     pub(crate) spot_options: ::std::option::Option<crate::types::LaunchTemplateSpotMarketOptionsRequest>,

@@ -33,8 +33,8 @@ impl ListVirtualNodesOutput {
 }
 
 /// A builder for [`ListVirtualNodesOutput`](crate::operation::list_virtual_nodes::ListVirtualNodesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListVirtualNodesOutputBuilder {
     pub(crate) virtual_nodes: ::std::option::Option<::std::vec::Vec<crate::types::VirtualNodeRef>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

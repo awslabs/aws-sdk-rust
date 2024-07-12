@@ -34,8 +34,8 @@ impl DeviceQueueInfo {
 }
 
 /// A builder for [`DeviceQueueInfo`](crate::types::DeviceQueueInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeviceQueueInfoBuilder {
     pub(crate) queue: ::std::option::Option<crate::types::QueueName>,
     pub(crate) queue_size: ::std::option::Option<::std::string::String>,

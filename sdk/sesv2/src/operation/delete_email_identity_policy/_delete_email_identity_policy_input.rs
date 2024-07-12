@@ -29,8 +29,8 @@ impl DeleteEmailIdentityPolicyInput {
 }
 
 /// A builder for [`DeleteEmailIdentityPolicyInput`](crate::operation::delete_email_identity_policy::DeleteEmailIdentityPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteEmailIdentityPolicyInputBuilder {
     pub(crate) email_identity: ::std::option::Option<::std::string::String>,
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,

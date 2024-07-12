@@ -57,8 +57,8 @@ impl PipeSourceRabbitMqBrokerParameters {
 }
 
 /// A builder for [`PipeSourceRabbitMqBrokerParameters`](crate::types::PipeSourceRabbitMqBrokerParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PipeSourceRabbitMqBrokerParametersBuilder {
     pub(crate) credentials: ::std::option::Option<crate::types::MqBrokerAccessCredentials>,
     pub(crate) queue_name: ::std::option::Option<::std::string::String>,

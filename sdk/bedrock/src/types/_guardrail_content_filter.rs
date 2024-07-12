@@ -50,8 +50,8 @@ impl GuardrailContentFilter {
 }
 
 /// A builder for [`GuardrailContentFilter`](crate::types::GuardrailContentFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GuardrailContentFilterBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::GuardrailContentFilterType>,
     pub(crate) input_strength: ::std::option::Option<crate::types::GuardrailFilterStrength>,

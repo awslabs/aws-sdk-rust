@@ -63,8 +63,8 @@ impl AppInstanceUserEndpointSummary {
 }
 
 /// A builder for [`AppInstanceUserEndpointSummary`](crate::types::AppInstanceUserEndpointSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AppInstanceUserEndpointSummaryBuilder {
     pub(crate) app_instance_user_arn: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint_id: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl DefaultConditionalBranch {
 }
 
 /// A builder for [`DefaultConditionalBranch`](crate::types::DefaultConditionalBranch).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DefaultConditionalBranchBuilder {
     pub(crate) next_step: ::std::option::Option<crate::types::DialogState>,
     pub(crate) response: ::std::option::Option<crate::types::ResponseSpecification>,

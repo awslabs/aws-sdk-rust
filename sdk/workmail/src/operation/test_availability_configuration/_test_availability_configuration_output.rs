@@ -32,8 +32,8 @@ impl TestAvailabilityConfigurationOutput {
 }
 
 /// A builder for [`TestAvailabilityConfigurationOutput`](crate::operation::test_availability_configuration::TestAvailabilityConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TestAvailabilityConfigurationOutputBuilder {
     pub(crate) test_passed: ::std::option::Option<bool>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,

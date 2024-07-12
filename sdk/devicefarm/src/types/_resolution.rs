@@ -27,8 +27,8 @@ impl Resolution {
 }
 
 /// A builder for [`Resolution`](crate::types::Resolution).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResolutionBuilder {
     pub(crate) width: ::std::option::Option<i32>,
     pub(crate) height: ::std::option::Option<i32>,

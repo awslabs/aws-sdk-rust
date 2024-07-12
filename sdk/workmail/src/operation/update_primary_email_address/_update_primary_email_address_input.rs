@@ -50,8 +50,8 @@ impl UpdatePrimaryEmailAddressInput {
 }
 
 /// A builder for [`UpdatePrimaryEmailAddressInput`](crate::operation::update_primary_email_address::UpdatePrimaryEmailAddressInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePrimaryEmailAddressInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) entity_id: ::std::option::Option<::std::string::String>,

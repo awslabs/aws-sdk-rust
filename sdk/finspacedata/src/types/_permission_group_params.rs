@@ -31,8 +31,8 @@ impl PermissionGroupParams {
 }
 
 /// A builder for [`PermissionGroupParams`](crate::types::PermissionGroupParams).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PermissionGroupParamsBuilder {
     pub(crate) permission_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,

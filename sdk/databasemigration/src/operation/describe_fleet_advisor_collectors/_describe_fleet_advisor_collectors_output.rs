@@ -34,8 +34,8 @@ impl DescribeFleetAdvisorCollectorsOutput {
 }
 
 /// A builder for [`DescribeFleetAdvisorCollectorsOutput`](crate::operation::describe_fleet_advisor_collectors::DescribeFleetAdvisorCollectorsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFleetAdvisorCollectorsOutputBuilder {
     pub(crate) collectors: ::std::option::Option<::std::vec::Vec<crate::types::CollectorResponse>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

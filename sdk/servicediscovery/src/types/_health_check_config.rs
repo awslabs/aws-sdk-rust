@@ -113,8 +113,8 @@ impl HealthCheckConfig {
 }
 
 /// A builder for [`HealthCheckConfig`](crate::types::HealthCheckConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HealthCheckConfigBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::HealthCheckType>,
     pub(crate) resource_path: ::std::option::Option<::std::string::String>,

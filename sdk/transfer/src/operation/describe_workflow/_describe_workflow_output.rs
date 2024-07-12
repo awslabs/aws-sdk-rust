@@ -26,8 +26,8 @@ impl DescribeWorkflowOutput {
 }
 
 /// A builder for [`DescribeWorkflowOutput`](crate::operation::describe_workflow::DescribeWorkflowOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeWorkflowOutputBuilder {
     pub(crate) workflow: ::std::option::Option<crate::types::DescribedWorkflow>,
     _request_id: Option<String>,

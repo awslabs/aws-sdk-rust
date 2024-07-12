@@ -34,8 +34,8 @@ impl SearchLocalGatewayRoutesOutput {
 }
 
 /// A builder for [`SearchLocalGatewayRoutesOutput`](crate::operation::search_local_gateway_routes::SearchLocalGatewayRoutesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchLocalGatewayRoutesOutputBuilder {
     pub(crate) routes: ::std::option::Option<::std::vec::Vec<crate::types::LocalGatewayRoute>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

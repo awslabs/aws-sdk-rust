@@ -26,8 +26,8 @@ impl UpdateTriggerOutput {
 }
 
 /// A builder for [`UpdateTriggerOutput`](crate::operation::update_trigger::UpdateTriggerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateTriggerOutputBuilder {
     pub(crate) trigger: ::std::option::Option<crate::types::Trigger>,
     _request_id: Option<String>,

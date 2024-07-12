@@ -20,8 +20,8 @@ impl StopCalculationExecutionInput {
 }
 
 /// A builder for [`StopCalculationExecutionInput`](crate::operation::stop_calculation_execution::StopCalculationExecutionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopCalculationExecutionInputBuilder {
     pub(crate) calculation_execution_id: ::std::option::Option<::std::string::String>,
 }

@@ -26,8 +26,8 @@ impl CreatePresignedNotebookInstanceUrlInput {
 }
 
 /// A builder for [`CreatePresignedNotebookInstanceUrlInput`](crate::operation::create_presigned_notebook_instance_url::CreatePresignedNotebookInstanceUrlInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePresignedNotebookInstanceUrlInputBuilder {
     pub(crate) notebook_instance_name: ::std::option::Option<::std::string::String>,
     pub(crate) session_expiration_duration_in_seconds: ::std::option::Option<i32>,

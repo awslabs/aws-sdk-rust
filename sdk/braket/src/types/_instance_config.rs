@@ -33,8 +33,8 @@ impl InstanceConfig {
 }
 
 /// A builder for [`InstanceConfig`](crate::types::InstanceConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceConfigBuilder {
     pub(crate) instance_type: ::std::option::Option<crate::types::InstanceType>,
     pub(crate) volume_size_in_gb: ::std::option::Option<i32>,

@@ -33,8 +33,8 @@ impl ModelBiasJobInput {
 }
 
 /// A builder for [`ModelBiasJobInput`](crate::types::ModelBiasJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModelBiasJobInputBuilder {
     pub(crate) endpoint_input: ::std::option::Option<crate::types::EndpointInput>,
     pub(crate) batch_transform_input: ::std::option::Option<crate::types::BatchTransformInput>,

@@ -20,8 +20,8 @@ impl DeletePublicKeyInput {
 }
 
 /// A builder for [`DeletePublicKeyInput`](crate::operation::delete_public_key::DeletePublicKeyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePublicKeyInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }

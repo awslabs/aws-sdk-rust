@@ -70,8 +70,8 @@ impl UpdateContainerServiceInput {
 }
 
 /// A builder for [`UpdateContainerServiceInput`](crate::operation::update_container_service::UpdateContainerServiceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateContainerServiceInputBuilder {
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
     pub(crate) power: ::std::option::Option<crate::types::ContainerServicePowerName>,

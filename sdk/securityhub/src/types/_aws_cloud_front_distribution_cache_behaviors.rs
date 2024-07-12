@@ -23,8 +23,8 @@ impl AwsCloudFrontDistributionCacheBehaviors {
 }
 
 /// A builder for [`AwsCloudFrontDistributionCacheBehaviors`](crate::types::AwsCloudFrontDistributionCacheBehaviors).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsCloudFrontDistributionCacheBehaviorsBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::AwsCloudFrontDistributionCacheBehavior>>,
 }

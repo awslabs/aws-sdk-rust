@@ -26,8 +26,8 @@ impl RebootCacheClusterOutput {
 }
 
 /// A builder for [`RebootCacheClusterOutput`](crate::operation::reboot_cache_cluster::RebootCacheClusterOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RebootCacheClusterOutputBuilder {
     pub(crate) cache_cluster: ::std::option::Option<crate::types::CacheCluster>,
     _request_id: Option<String>,

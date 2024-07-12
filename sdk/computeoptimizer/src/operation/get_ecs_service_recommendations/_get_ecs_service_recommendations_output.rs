@@ -42,8 +42,8 @@ impl GetEcsServiceRecommendationsOutput {
 }
 
 /// A builder for [`GetEcsServiceRecommendationsOutput`](crate::operation::get_ecs_service_recommendations::GetEcsServiceRecommendationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEcsServiceRecommendationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) ecs_service_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::EcsServiceRecommendation>>,

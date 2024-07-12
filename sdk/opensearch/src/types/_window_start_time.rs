@@ -27,8 +27,8 @@ impl WindowStartTime {
 }
 
 /// A builder for [`WindowStartTime`](crate::types::WindowStartTime).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WindowStartTimeBuilder {
     pub(crate) hours: ::std::option::Option<i64>,
     pub(crate) minutes: ::std::option::Option<i64>,

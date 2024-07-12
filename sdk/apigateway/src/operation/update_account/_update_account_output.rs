@@ -47,8 +47,8 @@ impl UpdateAccountOutput {
 }
 
 /// A builder for [`UpdateAccountOutput`](crate::operation::update_account::UpdateAccountOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAccountOutputBuilder {
     pub(crate) cloudwatch_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) throttle_settings: ::std::option::Option<crate::types::ThrottleSettings>,

@@ -71,8 +71,8 @@ impl CdmaObj {
 }
 
 /// A builder for [`CdmaObj`](crate::types::CdmaObj).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CdmaObjBuilder {
     pub(crate) system_id: ::std::option::Option<i32>,
     pub(crate) network_id: ::std::option::Option<i32>,

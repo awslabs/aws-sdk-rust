@@ -32,8 +32,8 @@ impl ListStreamingImagesInput {
 }
 
 /// A builder for [`ListStreamingImagesInput`](crate::operation::list_streaming_images::ListStreamingImagesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListStreamingImagesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) owner: ::std::option::Option<::std::string::String>,

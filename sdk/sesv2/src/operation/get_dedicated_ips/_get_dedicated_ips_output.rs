@@ -35,8 +35,8 @@ impl GetDedicatedIpsOutput {
 }
 
 /// A builder for [`GetDedicatedIpsOutput`](crate::operation::get_dedicated_ips::GetDedicatedIpsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDedicatedIpsOutputBuilder {
     pub(crate) dedicated_ips: ::std::option::Option<::std::vec::Vec<crate::types::DedicatedIp>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl GetPackageConfigurationOutput {
 }
 
 /// A builder for [`GetPackageConfigurationOutput`](crate::operation::get_package_configuration::GetPackageConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPackageConfigurationOutputBuilder {
     pub(crate) version_update_by_jobs_config: ::std::option::Option<crate::types::VersionUpdateByJobsConfig>,
     _request_id: Option<String>,

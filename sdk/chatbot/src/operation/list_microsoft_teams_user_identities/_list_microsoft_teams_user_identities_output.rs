@@ -34,8 +34,8 @@ impl ListMicrosoftTeamsUserIdentitiesOutput {
 }
 
 /// A builder for [`ListMicrosoftTeamsUserIdentitiesOutput`](crate::operation::list_microsoft_teams_user_identities::ListMicrosoftTeamsUserIdentitiesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListMicrosoftTeamsUserIdentitiesOutputBuilder {
     pub(crate) teams_user_identities: ::std::option::Option<::std::vec::Vec<crate::types::TeamsUserIdentity>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

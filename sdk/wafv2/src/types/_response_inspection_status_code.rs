@@ -35,8 +35,8 @@ impl ResponseInspectionStatusCode {
 }
 
 /// A builder for [`ResponseInspectionStatusCode`](crate::types::ResponseInspectionStatusCode).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResponseInspectionStatusCodeBuilder {
     pub(crate) success_codes: ::std::option::Option<::std::vec::Vec<i32>>,
     pub(crate) failure_codes: ::std::option::Option<::std::vec::Vec<i32>>,

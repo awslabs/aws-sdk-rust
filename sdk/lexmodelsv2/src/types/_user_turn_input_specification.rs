@@ -33,8 +33,8 @@ impl UserTurnInputSpecification {
 }
 
 /// A builder for [`UserTurnInputSpecification`](crate::types::UserTurnInputSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UserTurnInputSpecificationBuilder {
     pub(crate) utterance_input: ::std::option::Option<crate::types::UtteranceInputSpecification>,
     pub(crate) request_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

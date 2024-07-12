@@ -28,8 +28,8 @@ impl ListDistributionsByResponseHeadersPolicyIdOutput {
 }
 
 /// A builder for [`ListDistributionsByResponseHeadersPolicyIdOutput`](crate::operation::list_distributions_by_response_headers_policy_id::ListDistributionsByResponseHeadersPolicyIdOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDistributionsByResponseHeadersPolicyIdOutputBuilder {
     pub(crate) distribution_id_list: ::std::option::Option<crate::types::DistributionIdList>,
     _request_id: Option<String>,

@@ -21,8 +21,8 @@ impl ModelInput {
 }
 
 /// A builder for [`ModelInput`](crate::types::ModelInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModelInputBuilder {
     pub(crate) data_input_config: ::std::option::Option<::std::string::String>,
 }

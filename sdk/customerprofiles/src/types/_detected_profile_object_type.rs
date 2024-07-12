@@ -42,8 +42,8 @@ impl DetectedProfileObjectType {
 }
 
 /// A builder for [`DetectedProfileObjectType`](crate::types::DetectedProfileObjectType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DetectedProfileObjectTypeBuilder {
     pub(crate) source_last_updated_timestamp_format: ::std::option::Option<::std::string::String>,
     pub(crate) fields: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ObjectTypeField>>,

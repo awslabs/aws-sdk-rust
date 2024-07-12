@@ -123,8 +123,8 @@ impl EventFilter {
 }
 
 /// A builder for [`EventFilter`](crate::types::EventFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EventFilterBuilder {
     pub(crate) event_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) event_type_codes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

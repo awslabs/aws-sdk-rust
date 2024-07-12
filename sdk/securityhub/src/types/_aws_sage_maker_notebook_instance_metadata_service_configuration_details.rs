@@ -21,8 +21,8 @@ impl AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails {
 }
 
 /// A builder for [`AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails`](crate::types::AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetailsBuilder {
     pub(crate) minimum_instance_metadata_service_version: ::std::option::Option<::std::string::String>,
 }

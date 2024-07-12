@@ -28,8 +28,8 @@ impl DescribeAllManagedProductsOutput {
 }
 
 /// A builder for [`DescribeAllManagedProductsOutput`](crate::operation::describe_all_managed_products::DescribeAllManagedProductsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAllManagedProductsOutputBuilder {
     pub(crate) managed_products: ::std::option::Option<::std::vec::Vec<crate::types::ManagedProductDescriptor>>,
     _request_id: Option<String>,

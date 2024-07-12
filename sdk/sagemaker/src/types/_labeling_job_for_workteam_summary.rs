@@ -51,8 +51,8 @@ impl LabelingJobForWorkteamSummary {
 }
 
 /// A builder for [`LabelingJobForWorkteamSummary`](crate::types::LabelingJobForWorkteamSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LabelingJobForWorkteamSummaryBuilder {
     pub(crate) labeling_job_name: ::std::option::Option<::std::string::String>,
     pub(crate) job_reference_code: ::std::option::Option<::std::string::String>,

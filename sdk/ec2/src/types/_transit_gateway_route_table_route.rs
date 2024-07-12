@@ -69,8 +69,8 @@ impl TransitGatewayRouteTableRoute {
 }
 
 /// A builder for [`TransitGatewayRouteTableRoute`](crate::types::TransitGatewayRouteTableRoute).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TransitGatewayRouteTableRouteBuilder {
     pub(crate) destination_cidr: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<::std::string::String>,

@@ -41,8 +41,8 @@ impl CreateFunctionInput {
 }
 
 /// A builder for [`CreateFunctionInput`](crate::operation::create_function::CreateFunctionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateFunctionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) function_config: ::std::option::Option<crate::types::FunctionConfig>,

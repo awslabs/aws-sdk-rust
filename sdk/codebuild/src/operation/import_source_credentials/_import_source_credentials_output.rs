@@ -26,8 +26,8 @@ impl ImportSourceCredentialsOutput {
 }
 
 /// A builder for [`ImportSourceCredentialsOutput`](crate::operation::import_source_credentials::ImportSourceCredentialsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportSourceCredentialsOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

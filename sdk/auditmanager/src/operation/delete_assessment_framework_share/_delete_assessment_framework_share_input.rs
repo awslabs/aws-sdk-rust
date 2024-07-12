@@ -26,8 +26,8 @@ impl DeleteAssessmentFrameworkShareInput {
 }
 
 /// A builder for [`DeleteAssessmentFrameworkShareInput`](crate::operation::delete_assessment_framework_share::DeleteAssessmentFrameworkShareInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAssessmentFrameworkShareInputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) request_type: ::std::option::Option<crate::types::ShareRequestType>,

@@ -18,8 +18,8 @@ impl DeleteProvisioningTemplateVersionOutput {
 }
 
 /// A builder for [`DeleteProvisioningTemplateVersionOutput`](crate::operation::delete_provisioning_template_version::DeleteProvisioningTemplateVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteProvisioningTemplateVersionOutputBuilder {
     _request_id: Option<String>,
 }

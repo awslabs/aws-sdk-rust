@@ -27,8 +27,8 @@ impl AwsDynamoDbTableAttributeDefinition {
 }
 
 /// A builder for [`AwsDynamoDbTableAttributeDefinition`](crate::types::AwsDynamoDbTableAttributeDefinition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsDynamoDbTableAttributeDefinitionBuilder {
     pub(crate) attribute_name: ::std::option::Option<::std::string::String>,
     pub(crate) attribute_type: ::std::option::Option<::std::string::String>,

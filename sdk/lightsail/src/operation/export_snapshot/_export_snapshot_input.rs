@@ -20,8 +20,8 @@ impl ExportSnapshotInput {
 }
 
 /// A builder for [`ExportSnapshotInput`](crate::operation::export_snapshot::ExportSnapshotInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExportSnapshotInputBuilder {
     pub(crate) source_snapshot_name: ::std::option::Option<::std::string::String>,
 }

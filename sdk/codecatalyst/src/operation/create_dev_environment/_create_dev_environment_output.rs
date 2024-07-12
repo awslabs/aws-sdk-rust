@@ -47,8 +47,8 @@ impl CreateDevEnvironmentOutput {
 }
 
 /// A builder for [`CreateDevEnvironmentOutput`](crate::operation::create_dev_environment::CreateDevEnvironmentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDevEnvironmentOutputBuilder {
     pub(crate) space_name: ::std::option::Option<::std::string::String>,
     pub(crate) project_name: ::std::option::Option<::std::string::String>,

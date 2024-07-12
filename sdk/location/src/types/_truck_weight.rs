@@ -37,8 +37,8 @@ impl TruckWeight {
 }
 
 /// A builder for [`TruckWeight`](crate::types::TruckWeight).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TruckWeightBuilder {
     pub(crate) total: ::std::option::Option<f64>,
     pub(crate) unit: ::std::option::Option<crate::types::VehicleWeightUnit>,

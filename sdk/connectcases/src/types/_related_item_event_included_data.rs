@@ -21,8 +21,8 @@ impl RelatedItemEventIncludedData {
 }
 
 /// A builder for [`RelatedItemEventIncludedData`](crate::types::RelatedItemEventIncludedData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RelatedItemEventIncludedDataBuilder {
     pub(crate) include_content: ::std::option::Option<bool>,
 }

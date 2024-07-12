@@ -26,8 +26,8 @@ impl UpdateTagOptionOutput {
 }
 
 /// A builder for [`UpdateTagOptionOutput`](crate::operation::update_tag_option::UpdateTagOptionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateTagOptionOutputBuilder {
     pub(crate) tag_option_detail: ::std::option::Option<crate::types::TagOptionDetail>,
     _request_id: Option<String>,

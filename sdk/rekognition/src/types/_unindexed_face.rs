@@ -57,8 +57,8 @@ impl UnindexedFace {
 }
 
 /// A builder for [`UnindexedFace`](crate::types::UnindexedFace).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UnindexedFaceBuilder {
     pub(crate) reasons: ::std::option::Option<::std::vec::Vec<crate::types::Reason>>,
     pub(crate) face_detail: ::std::option::Option<crate::types::FaceDetail>,

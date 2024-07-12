@@ -28,8 +28,8 @@ impl DeleteBucketAccessKeyInput {
 }
 
 /// A builder for [`DeleteBucketAccessKeyInput`](crate::operation::delete_bucket_access_key::DeleteBucketAccessKeyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteBucketAccessKeyInputBuilder {
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) access_key_id: ::std::option::Option<::std::string::String>,

@@ -20,8 +20,8 @@ impl StopCompilationJobInput {
 }
 
 /// A builder for [`StopCompilationJobInput`](crate::operation::stop_compilation_job::StopCompilationJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopCompilationJobInputBuilder {
     pub(crate) compilation_job_name: ::std::option::Option<::std::string::String>,
 }

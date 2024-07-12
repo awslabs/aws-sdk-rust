@@ -29,8 +29,8 @@ impl Action {
 }
 
 /// A builder for [`Action`](crate::types::Action).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ActionBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) cross_region_copy: ::std::option::Option<::std::vec::Vec<crate::types::CrossRegionCopyAction>>,

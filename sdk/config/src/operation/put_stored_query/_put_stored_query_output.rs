@@ -26,8 +26,8 @@ impl PutStoredQueryOutput {
 }
 
 /// A builder for [`PutStoredQueryOutput`](crate::operation::put_stored_query::PutStoredQueryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutStoredQueryOutputBuilder {
     pub(crate) query_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

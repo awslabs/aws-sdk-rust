@@ -27,8 +27,8 @@ impl AppBlockBuilderAppBlockAssociation {
 }
 
 /// A builder for [`AppBlockBuilderAppBlockAssociation`](crate::types::AppBlockBuilderAppBlockAssociation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AppBlockBuilderAppBlockAssociationBuilder {
     pub(crate) app_block_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_block_builder_name: ::std::option::Option<::std::string::String>,

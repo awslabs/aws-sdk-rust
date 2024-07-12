@@ -24,8 +24,8 @@ impl AnonymousUserQSearchBarEmbeddingConfiguration {
 }
 
 /// A builder for [`AnonymousUserQSearchBarEmbeddingConfiguration`](crate::types::AnonymousUserQSearchBarEmbeddingConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AnonymousUserQSearchBarEmbeddingConfigurationBuilder {
     pub(crate) initial_topic_id: ::std::option::Option<::std::string::String>,
 }

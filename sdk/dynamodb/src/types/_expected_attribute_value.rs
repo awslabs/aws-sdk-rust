@@ -198,8 +198,8 @@ impl ExpectedAttributeValue {
 }
 
 /// A builder for [`ExpectedAttributeValue`](crate::types::ExpectedAttributeValue).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExpectedAttributeValueBuilder {
     pub(crate) value: ::std::option::Option<crate::types::AttributeValue>,
     pub(crate) exists: ::std::option::Option<bool>,

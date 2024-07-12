@@ -34,8 +34,8 @@ impl DescribeServiceErrorsInput {
 }
 
 /// A builder for [`DescribeServiceErrorsInput`](crate::operation::describe_service_errors::DescribeServiceErrorsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeServiceErrorsInputBuilder {
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,

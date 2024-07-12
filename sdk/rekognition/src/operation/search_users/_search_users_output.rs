@@ -46,8 +46,8 @@ impl SearchUsersOutput {
 }
 
 /// A builder for [`SearchUsersOutput`](crate::operation::search_users::SearchUsersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchUsersOutputBuilder {
     pub(crate) user_matches: ::std::option::Option<::std::vec::Vec<crate::types::UserMatch>>,
     pub(crate) face_model_version: ::std::option::Option<::std::string::String>,

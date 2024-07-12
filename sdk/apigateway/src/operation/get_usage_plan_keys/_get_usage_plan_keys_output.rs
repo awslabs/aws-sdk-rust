@@ -35,8 +35,8 @@ impl GetUsagePlanKeysOutput {
 }
 
 /// A builder for [`GetUsagePlanKeysOutput`](crate::operation::get_usage_plan_keys::GetUsagePlanKeysOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetUsagePlanKeysOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::UsagePlanKey>>,
     pub(crate) position: ::std::option::Option<::std::string::String>,

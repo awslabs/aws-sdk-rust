@@ -38,8 +38,8 @@ impl GetTemplateSyncStatusOutput {
 }
 
 /// A builder for [`GetTemplateSyncStatusOutput`](crate::operation::get_template_sync_status::GetTemplateSyncStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTemplateSyncStatusOutputBuilder {
     pub(crate) latest_sync: ::std::option::Option<crate::types::ResourceSyncAttempt>,
     pub(crate) latest_successful_sync: ::std::option::Option<crate::types::ResourceSyncAttempt>,

@@ -27,8 +27,8 @@ impl TargetOnDeviceService {
 }
 
 /// A builder for [`TargetOnDeviceService`](crate::types::TargetOnDeviceService).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TargetOnDeviceServiceBuilder {
     pub(crate) service_name: ::std::option::Option<crate::types::DeviceServiceName>,
     pub(crate) transfer_option: ::std::option::Option<crate::types::TransferOption>,

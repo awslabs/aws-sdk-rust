@@ -28,8 +28,8 @@ impl ComponentPropertyBindingProperties {
 }
 
 /// A builder for [`ComponentPropertyBindingProperties`](crate::types::ComponentPropertyBindingProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ComponentPropertyBindingPropertiesBuilder {
     pub(crate) property: ::std::option::Option<::std::string::String>,
     pub(crate) field: ::std::option::Option<::std::string::String>,

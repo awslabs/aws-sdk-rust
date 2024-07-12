@@ -46,8 +46,8 @@ impl GetUsageStatisticsInput {
 }
 
 /// A builder for [`GetUsageStatisticsInput`](crate::operation::get_usage_statistics::GetUsageStatisticsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetUsageStatisticsInputBuilder {
     pub(crate) filter_by: ::std::option::Option<::std::vec::Vec<crate::types::UsageStatisticsFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,

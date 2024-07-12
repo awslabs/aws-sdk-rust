@@ -21,8 +21,8 @@ impl EksPropertiesOverride {
 }
 
 /// A builder for [`EksPropertiesOverride`](crate::types::EksPropertiesOverride).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EksPropertiesOverrideBuilder {
     pub(crate) pod_properties: ::std::option::Option<crate::types::EksPodPropertiesOverride>,
 }

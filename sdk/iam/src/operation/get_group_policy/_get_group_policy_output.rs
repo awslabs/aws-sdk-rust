@@ -44,8 +44,8 @@ impl GetGroupPolicyOutput {
 }
 
 /// A builder for [`GetGroupPolicyOutput`](crate::operation::get_group_policy::GetGroupPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetGroupPolicyOutputBuilder {
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,

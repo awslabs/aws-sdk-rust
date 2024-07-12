@@ -56,8 +56,8 @@ impl CloudwatchMetricAction {
 }
 
 /// A builder for [`CloudwatchMetricAction`](crate::types::CloudwatchMetricAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CloudwatchMetricActionBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) metric_namespace: ::std::option::Option<::std::string::String>,

@@ -22,8 +22,8 @@ impl TimeToLive {
 }
 
 /// A builder for [`TimeToLive`](crate::types::TimeToLive).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TimeToLiveBuilder {
     pub(crate) status: ::std::option::Option<crate::types::TimeToLiveStatus>,
 }

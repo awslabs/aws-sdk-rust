@@ -30,8 +30,8 @@ impl TaskSchedule {
 }
 
 /// A builder for [`TaskSchedule`](crate::types::TaskSchedule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TaskScheduleBuilder {
     pub(crate) schedule_expression: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ScheduleStatus>,

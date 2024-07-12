@@ -66,8 +66,8 @@ impl GeneratePinDataInput {
 }
 
 /// A builder for [`GeneratePinDataInput`](crate::operation::generate_pin_data::GeneratePinDataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GeneratePinDataInputBuilder {
     pub(crate) generation_key_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) encryption_key_identifier: ::std::option::Option<::std::string::String>,

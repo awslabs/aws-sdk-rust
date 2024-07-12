@@ -28,8 +28,8 @@ impl CreateTrustStoreOutput {
 }
 
 /// A builder for [`CreateTrustStoreOutput`](crate::operation::create_trust_store::CreateTrustStoreOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateTrustStoreOutputBuilder {
     pub(crate) trust_stores: ::std::option::Option<::std::vec::Vec<crate::types::TrustStore>>,
     _request_id: Option<String>,

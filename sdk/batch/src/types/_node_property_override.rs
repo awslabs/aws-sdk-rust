@@ -47,8 +47,8 @@ impl NodePropertyOverride {
 }
 
 /// A builder for [`NodePropertyOverride`](crate::types::NodePropertyOverride).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NodePropertyOverrideBuilder {
     pub(crate) target_nodes: ::std::option::Option<::std::string::String>,
     pub(crate) container_overrides: ::std::option::Option<crate::types::ContainerOverrides>,

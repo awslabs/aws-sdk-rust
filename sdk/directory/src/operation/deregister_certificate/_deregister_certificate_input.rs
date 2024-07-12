@@ -26,8 +26,8 @@ impl DeregisterCertificateInput {
 }
 
 /// A builder for [`DeregisterCertificateInput`](crate::operation::deregister_certificate::DeregisterCertificateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeregisterCertificateInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_id: ::std::option::Option<::std::string::String>,

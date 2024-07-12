@@ -75,8 +75,8 @@ impl DisableEnhancedMonitoringInput {
 }
 
 /// A builder for [`DisableEnhancedMonitoringInput`](crate::operation::disable_enhanced_monitoring::DisableEnhancedMonitoringInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableEnhancedMonitoringInputBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) shard_level_metrics: ::std::option::Option<::std::vec::Vec<crate::types::MetricsName>>,

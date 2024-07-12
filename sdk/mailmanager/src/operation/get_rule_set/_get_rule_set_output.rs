@@ -60,8 +60,8 @@ impl GetRuleSetOutput {
 }
 
 /// A builder for [`GetRuleSetOutput`](crate::operation::get_rule_set::GetRuleSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRuleSetOutputBuilder {
     pub(crate) rule_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) rule_set_arn: ::std::option::Option<::std::string::String>,

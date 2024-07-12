@@ -62,8 +62,8 @@ impl DescribeAccountSubscriptionOutput {
 }
 
 /// A builder for [`DescribeAccountSubscriptionOutput`](crate::operation::describe_account_subscription::DescribeAccountSubscriptionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAccountSubscriptionOutputBuilder {
     pub(crate) account_info: ::std::option::Option<crate::types::AccountInfo>,
     pub(crate) status: ::std::option::Option<i32>,

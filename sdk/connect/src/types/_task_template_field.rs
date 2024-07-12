@@ -41,8 +41,8 @@ impl TaskTemplateField {
 }
 
 /// A builder for [`TaskTemplateField`](crate::types::TaskTemplateField).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TaskTemplateFieldBuilder {
     pub(crate) id: ::std::option::Option<crate::types::TaskTemplateFieldIdentifier>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

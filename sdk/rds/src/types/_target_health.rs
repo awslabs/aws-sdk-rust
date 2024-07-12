@@ -35,8 +35,8 @@ impl TargetHealth {
 }
 
 /// A builder for [`TargetHealth`](crate::types::TargetHealth).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TargetHealthBuilder {
     pub(crate) state: ::std::option::Option<crate::types::TargetState>,
     pub(crate) reason: ::std::option::Option<crate::types::TargetHealthReason>,

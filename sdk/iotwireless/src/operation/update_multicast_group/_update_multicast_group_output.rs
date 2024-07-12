@@ -18,8 +18,8 @@ impl UpdateMulticastGroupOutput {
 }
 
 /// A builder for [`UpdateMulticastGroupOutput`](crate::operation::update_multicast_group::UpdateMulticastGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateMulticastGroupOutputBuilder {
     _request_id: Option<String>,
 }

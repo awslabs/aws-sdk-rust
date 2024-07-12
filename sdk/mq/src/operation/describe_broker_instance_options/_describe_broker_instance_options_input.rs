@@ -44,8 +44,8 @@ impl DescribeBrokerInstanceOptionsInput {
 }
 
 /// A builder for [`DescribeBrokerInstanceOptionsInput`](crate::operation::describe_broker_instance_options::DescribeBrokerInstanceOptionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeBrokerInstanceOptionsInputBuilder {
     pub(crate) engine_type: ::std::option::Option<::std::string::String>,
     pub(crate) host_instance_type: ::std::option::Option<::std::string::String>,

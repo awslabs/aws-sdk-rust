@@ -46,8 +46,8 @@ impl ListFoldersOutput {
 }
 
 /// A builder for [`ListFoldersOutput`](crate::operation::list_folders::ListFoldersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFoldersOutputBuilder {
     pub(crate) status: ::std::option::Option<i32>,
     pub(crate) folder_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::FolderSummary>>,

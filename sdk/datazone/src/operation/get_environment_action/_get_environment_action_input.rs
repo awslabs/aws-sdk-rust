@@ -32,8 +32,8 @@ impl GetEnvironmentActionInput {
 }
 
 /// A builder for [`GetEnvironmentActionInput`](crate::operation::get_environment_action::GetEnvironmentActionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEnvironmentActionInputBuilder {
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) environment_identifier: ::std::option::Option<::std::string::String>,

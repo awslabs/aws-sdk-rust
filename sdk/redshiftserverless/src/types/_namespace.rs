@@ -116,8 +116,8 @@ impl Namespace {
 }
 
 /// A builder for [`Namespace`](crate::types::Namespace).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct NamespaceBuilder {
     pub(crate) namespace_arn: ::std::option::Option<::std::string::String>,
     pub(crate) namespace_id: ::std::option::Option<::std::string::String>,

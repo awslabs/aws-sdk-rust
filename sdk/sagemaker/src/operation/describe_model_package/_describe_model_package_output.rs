@@ -196,8 +196,8 @@ impl DescribeModelPackageOutput {
 }
 
 /// A builder for [`DescribeModelPackageOutput`](crate::operation::describe_model_package::DescribeModelPackageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeModelPackageOutputBuilder {
     pub(crate) model_package_name: ::std::option::Option<::std::string::String>,
     pub(crate) model_package_group_name: ::std::option::Option<::std::string::String>,

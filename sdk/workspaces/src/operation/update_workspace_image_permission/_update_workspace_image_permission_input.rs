@@ -36,8 +36,8 @@ impl UpdateWorkspaceImagePermissionInput {
 }
 
 /// A builder for [`UpdateWorkspaceImagePermissionInput`](crate::operation::update_workspace_image_permission::UpdateWorkspaceImagePermissionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateWorkspaceImagePermissionInputBuilder {
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
     pub(crate) allow_copy_image: ::std::option::Option<bool>,

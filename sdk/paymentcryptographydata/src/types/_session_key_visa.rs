@@ -37,8 +37,8 @@ impl SessionKeyVisa {
 }
 
 /// A builder for [`SessionKeyVisa`](crate::types::SessionKeyVisa).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SessionKeyVisaBuilder {
     pub(crate) primary_account_number: ::std::option::Option<::std::string::String>,
     pub(crate) pan_sequence_number: ::std::option::Option<::std::string::String>,

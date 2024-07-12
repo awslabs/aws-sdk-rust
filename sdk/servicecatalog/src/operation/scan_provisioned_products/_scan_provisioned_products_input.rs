@@ -50,8 +50,8 @@ impl ScanProvisionedProductsInput {
 }
 
 /// A builder for [`ScanProvisionedProductsInput`](crate::operation::scan_provisioned_products::ScanProvisionedProductsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScanProvisionedProductsInputBuilder {
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,
     pub(crate) access_level_filter: ::std::option::Option<crate::types::AccessLevelFilter>,

@@ -18,8 +18,8 @@ impl DeleteCalculatedAttributeDefinitionOutput {
 }
 
 /// A builder for [`DeleteCalculatedAttributeDefinitionOutput`](crate::operation::delete_calculated_attribute_definition::DeleteCalculatedAttributeDefinitionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCalculatedAttributeDefinitionOutputBuilder {
     _request_id: Option<String>,
 }

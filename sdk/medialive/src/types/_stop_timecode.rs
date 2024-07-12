@@ -27,8 +27,8 @@ impl StopTimecode {
 }
 
 /// A builder for [`StopTimecode`](crate::types::StopTimecode).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopTimecodeBuilder {
     pub(crate) last_frame_clipping_behavior: ::std::option::Option<crate::types::LastFrameClippingBehavior>,
     pub(crate) timecode: ::std::option::Option<::std::string::String>,

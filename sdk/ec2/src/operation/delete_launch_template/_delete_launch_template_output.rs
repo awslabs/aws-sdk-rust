@@ -26,8 +26,8 @@ impl DeleteLaunchTemplateOutput {
 }
 
 /// A builder for [`DeleteLaunchTemplateOutput`](crate::operation::delete_launch_template::DeleteLaunchTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteLaunchTemplateOutputBuilder {
     pub(crate) launch_template: ::std::option::Option<crate::types::LaunchTemplate>,
     _request_id: Option<String>,

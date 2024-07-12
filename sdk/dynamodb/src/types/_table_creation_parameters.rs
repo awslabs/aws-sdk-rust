@@ -70,8 +70,8 @@ impl TableCreationParameters {
 }
 
 /// A builder for [`TableCreationParameters`](crate::types::TableCreationParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TableCreationParametersBuilder {
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
     pub(crate) attribute_definitions: ::std::option::Option<::std::vec::Vec<crate::types::AttributeDefinition>>,

@@ -39,8 +39,8 @@ impl ConnectionAuthResponseParameters {
 }
 
 /// A builder for [`ConnectionAuthResponseParameters`](crate::types::ConnectionAuthResponseParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConnectionAuthResponseParametersBuilder {
     pub(crate) basic_auth_parameters: ::std::option::Option<crate::types::ConnectionBasicAuthResponseParameters>,
     pub(crate) o_auth_parameters: ::std::option::Option<crate::types::ConnectionOAuthResponseParameters>,

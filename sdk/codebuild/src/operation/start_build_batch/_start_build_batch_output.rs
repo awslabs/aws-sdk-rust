@@ -26,8 +26,8 @@ impl StartBuildBatchOutput {
 }
 
 /// A builder for [`StartBuildBatchOutput`](crate::operation::start_build_batch::StartBuildBatchOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartBuildBatchOutputBuilder {
     pub(crate) build_batch: ::std::option::Option<crate::types::BuildBatch>,
     _request_id: Option<String>,

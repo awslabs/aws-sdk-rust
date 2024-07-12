@@ -29,8 +29,8 @@ impl FacetAttributeReference {
 }
 
 /// A builder for [`FacetAttributeReference`](crate::types::FacetAttributeReference).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FacetAttributeReferenceBuilder {
     pub(crate) target_facet_name: ::std::option::Option<::std::string::String>,
     pub(crate) target_attribute_name: ::std::option::Option<::std::string::String>,

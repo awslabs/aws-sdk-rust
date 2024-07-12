@@ -33,8 +33,8 @@ impl ListPositionConfigurationsInput {
 }
 
 /// A builder for [`ListPositionConfigurationsInput`](crate::operation::list_position_configurations::ListPositionConfigurationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPositionConfigurationsInputBuilder {
     pub(crate) resource_type: ::std::option::Option<crate::types::PositionResourceType>,
     pub(crate) max_results: ::std::option::Option<i32>,

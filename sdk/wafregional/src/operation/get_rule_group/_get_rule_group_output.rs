@@ -26,8 +26,8 @@ impl GetRuleGroupOutput {
 }
 
 /// A builder for [`GetRuleGroupOutput`](crate::operation::get_rule_group::GetRuleGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRuleGroupOutputBuilder {
     pub(crate) rule_group: ::std::option::Option<crate::types::RuleGroup>,
     _request_id: Option<String>,

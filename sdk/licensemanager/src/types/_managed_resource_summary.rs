@@ -27,8 +27,8 @@ impl ManagedResourceSummary {
 }
 
 /// A builder for [`ManagedResourceSummary`](crate::types::ManagedResourceSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ManagedResourceSummaryBuilder {
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
     pub(crate) association_count: ::std::option::Option<i64>,

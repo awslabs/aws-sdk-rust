@@ -34,8 +34,8 @@ impl RetrieveOutput {
 }
 
 /// A builder for [`RetrieveOutput`](crate::operation::retrieve::RetrieveOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RetrieveOutputBuilder {
     pub(crate) query_id: ::std::option::Option<::std::string::String>,
     pub(crate) result_items: ::std::option::Option<::std::vec::Vec<crate::types::RetrieveResultItem>>,

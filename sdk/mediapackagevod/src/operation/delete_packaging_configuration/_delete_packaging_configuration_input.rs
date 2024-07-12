@@ -20,8 +20,8 @@ impl DeletePackagingConfigurationInput {
 }
 
 /// A builder for [`DeletePackagingConfigurationInput`](crate::operation::delete_packaging_configuration::DeletePackagingConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePackagingConfigurationInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }

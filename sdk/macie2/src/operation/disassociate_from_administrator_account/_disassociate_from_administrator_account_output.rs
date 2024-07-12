@@ -18,8 +18,8 @@ impl DisassociateFromAdministratorAccountOutput {
 }
 
 /// A builder for [`DisassociateFromAdministratorAccountOutput`](crate::operation::disassociate_from_administrator_account::DisassociateFromAdministratorAccountOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateFromAdministratorAccountOutputBuilder {
     _request_id: Option<String>,
 }

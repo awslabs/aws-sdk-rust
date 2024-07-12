@@ -39,8 +39,8 @@ impl DependencyCounts {
 }
 
 /// A builder for [`DependencyCounts`](crate::types::DependencyCounts).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DependencyCountsBuilder {
     pub(crate) dependencies_resolved: ::std::option::Option<i32>,
     pub(crate) dependencies_unresolved: ::std::option::Option<i32>,

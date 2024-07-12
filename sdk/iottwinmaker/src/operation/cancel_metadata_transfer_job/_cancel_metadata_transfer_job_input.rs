@@ -20,8 +20,8 @@ impl CancelMetadataTransferJobInput {
 }
 
 /// A builder for [`CancelMetadataTransferJobInput`](crate::operation::cancel_metadata_transfer_job::CancelMetadataTransferJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelMetadataTransferJobInputBuilder {
     pub(crate) metadata_transfer_job_id: ::std::option::Option<::std::string::String>,
 }

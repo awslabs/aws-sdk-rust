@@ -26,8 +26,8 @@ impl GetResolverQueryLogConfigPolicyOutput {
 }
 
 /// A builder for [`GetResolverQueryLogConfigPolicyOutput`](crate::operation::get_resolver_query_log_config_policy::GetResolverQueryLogConfigPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetResolverQueryLogConfigPolicyOutputBuilder {
     pub(crate) resolver_query_log_config_policy: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

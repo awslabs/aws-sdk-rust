@@ -28,8 +28,8 @@ impl ExitStandbyOutput {
 }
 
 /// A builder for [`ExitStandbyOutput`](crate::operation::exit_standby::ExitStandbyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExitStandbyOutputBuilder {
     pub(crate) activities: ::std::option::Option<::std::vec::Vec<crate::types::Activity>>,
     _request_id: Option<String>,

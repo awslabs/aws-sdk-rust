@@ -27,8 +27,8 @@ impl DescribeDomainChangeProgressOutput {
 }
 
 /// A builder for [`DescribeDomainChangeProgressOutput`](crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDomainChangeProgressOutputBuilder {
     pub(crate) change_progress_status: ::std::option::Option<crate::types::ChangeProgressStatusDetails>,
     _request_id: Option<String>,

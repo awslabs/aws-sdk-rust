@@ -228,8 +228,8 @@ impl PutCompositeAlarmInput {
 }
 
 /// A builder for [`PutCompositeAlarmInput`](crate::operation::put_composite_alarm::PutCompositeAlarmInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutCompositeAlarmInputBuilder {
     pub(crate) actions_enabled: ::std::option::Option<bool>,
     pub(crate) alarm_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -26,8 +26,8 @@ impl GetBotOutput {
 }
 
 /// A builder for [`GetBotOutput`](crate::operation::get_bot::GetBotOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBotOutputBuilder {
     pub(crate) bot: ::std::option::Option<crate::types::Bot>,
     _request_id: Option<String>,

@@ -20,8 +20,8 @@ impl DeleteInstanceSnapshotInput {
 }
 
 /// A builder for [`DeleteInstanceSnapshotInput`](crate::operation::delete_instance_snapshot::DeleteInstanceSnapshotInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteInstanceSnapshotInputBuilder {
     pub(crate) instance_snapshot_name: ::std::option::Option<::std::string::String>,
 }

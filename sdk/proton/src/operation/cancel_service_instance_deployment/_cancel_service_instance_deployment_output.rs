@@ -26,8 +26,8 @@ impl CancelServiceInstanceDeploymentOutput {
 }
 
 /// A builder for [`CancelServiceInstanceDeploymentOutput`](crate::operation::cancel_service_instance_deployment::CancelServiceInstanceDeploymentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelServiceInstanceDeploymentOutputBuilder {
     pub(crate) service_instance: ::std::option::Option<crate::types::ServiceInstance>,
     _request_id: Option<String>,

@@ -23,8 +23,8 @@ impl UserGroupResolutionConfiguration {
 }
 
 /// A builder for [`UserGroupResolutionConfiguration`](crate::types::UserGroupResolutionConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UserGroupResolutionConfigurationBuilder {
     pub(crate) user_group_resolution_mode: ::std::option::Option<crate::types::UserGroupResolutionMode>,
 }

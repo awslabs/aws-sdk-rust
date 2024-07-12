@@ -42,8 +42,8 @@ impl GetSpotPlacementScoresOutput {
 }
 
 /// A builder for [`GetSpotPlacementScoresOutput`](crate::operation::get_spot_placement_scores::GetSpotPlacementScoresOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSpotPlacementScoresOutputBuilder {
     pub(crate) spot_placement_scores: ::std::option::Option<::std::vec::Vec<crate::types::SpotPlacementScore>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

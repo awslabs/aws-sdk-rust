@@ -28,8 +28,8 @@ impl BatchPutScheduledUpdateGroupActionOutput {
 }
 
 /// A builder for [`BatchPutScheduledUpdateGroupActionOutput`](crate::operation::batch_put_scheduled_update_group_action::BatchPutScheduledUpdateGroupActionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchPutScheduledUpdateGroupActionOutputBuilder {
     pub(crate) failed_scheduled_update_group_actions: ::std::option::Option<::std::vec::Vec<crate::types::FailedScheduledUpdateGroupActionRequest>>,
     _request_id: Option<String>,

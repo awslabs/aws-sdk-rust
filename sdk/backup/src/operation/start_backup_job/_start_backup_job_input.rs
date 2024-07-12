@@ -97,8 +97,8 @@ impl StartBackupJobInput {
 }
 
 /// A builder for [`StartBackupJobInput`](crate::operation::start_backup_job::StartBackupJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct StartBackupJobInputBuilder {
     pub(crate) backup_vault_name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,

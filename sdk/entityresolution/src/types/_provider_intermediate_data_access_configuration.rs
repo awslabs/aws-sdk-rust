@@ -31,8 +31,8 @@ impl ProviderIntermediateDataAccessConfiguration {
 }
 
 /// A builder for [`ProviderIntermediateDataAccessConfiguration`](crate::types::ProviderIntermediateDataAccessConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProviderIntermediateDataAccessConfigurationBuilder {
     pub(crate) aws_account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) required_bucket_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

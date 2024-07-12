@@ -26,8 +26,8 @@ impl ListAdminsManagingAccountInput {
 }
 
 /// A builder for [`ListAdminsManagingAccountInput`](crate::operation::list_admins_managing_account::ListAdminsManagingAccountInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAdminsManagingAccountInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

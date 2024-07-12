@@ -21,8 +21,8 @@ impl KafkaClusterClientAuthenticationDescription {
 }
 
 /// A builder for [`KafkaClusterClientAuthenticationDescription`](crate::types::KafkaClusterClientAuthenticationDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KafkaClusterClientAuthenticationDescriptionBuilder {
     pub(crate) authentication_type: ::std::option::Option<crate::types::KafkaClusterClientAuthenticationType>,
 }

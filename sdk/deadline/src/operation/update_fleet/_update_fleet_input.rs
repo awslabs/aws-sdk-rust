@@ -83,8 +83,8 @@ impl UpdateFleetInput {
 }
 
 /// A builder for [`UpdateFleetInput`](crate::operation::update_fleet::UpdateFleetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateFleetInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) farm_id: ::std::option::Option<::std::string::String>,

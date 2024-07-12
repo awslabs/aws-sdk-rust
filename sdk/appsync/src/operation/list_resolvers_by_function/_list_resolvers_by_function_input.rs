@@ -38,8 +38,8 @@ impl ListResolversByFunctionInput {
 }
 
 /// A builder for [`ListResolversByFunctionInput`](crate::operation::list_resolvers_by_function::ListResolversByFunctionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListResolversByFunctionInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) function_id: ::std::option::Option<::std::string::String>,

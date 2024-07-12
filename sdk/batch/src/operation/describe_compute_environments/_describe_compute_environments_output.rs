@@ -34,8 +34,8 @@ impl DescribeComputeEnvironmentsOutput {
 }
 
 /// A builder for [`DescribeComputeEnvironmentsOutput`](crate::operation::describe_compute_environments::DescribeComputeEnvironmentsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeComputeEnvironmentsOutputBuilder {
     pub(crate) compute_environments: ::std::option::Option<::std::vec::Vec<crate::types::ComputeEnvironmentDetail>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -131,8 +131,8 @@ impl KafkaStreamingSourceOptions {
 }
 
 /// A builder for [`KafkaStreamingSourceOptions`](crate::types::KafkaStreamingSourceOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KafkaStreamingSourceOptionsBuilder {
     pub(crate) bootstrap_servers: ::std::option::Option<::std::string::String>,
     pub(crate) security_protocol: ::std::option::Option<::std::string::String>,

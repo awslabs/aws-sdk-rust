@@ -26,8 +26,8 @@ impl UpdateResolverDnssecConfigOutput {
 }
 
 /// A builder for [`UpdateResolverDnssecConfigOutput`](crate::operation::update_resolver_dnssec_config::UpdateResolverDnssecConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateResolverDnssecConfigOutputBuilder {
     pub(crate) resolver_dnssec_config: ::std::option::Option<crate::types::ResolverDnssecConfig>,
     _request_id: Option<String>,

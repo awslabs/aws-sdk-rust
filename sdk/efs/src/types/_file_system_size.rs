@@ -45,8 +45,8 @@ impl FileSystemSize {
 }
 
 /// A builder for [`FileSystemSize`](crate::types::FileSystemSize).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FileSystemSizeBuilder {
     pub(crate) value: ::std::option::Option<i64>,
     pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,

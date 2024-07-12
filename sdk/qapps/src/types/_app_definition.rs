@@ -35,8 +35,8 @@ impl AppDefinition {
 }
 
 /// A builder for [`AppDefinition`](crate::types::AppDefinition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AppDefinitionBuilder {
     pub(crate) app_definition_version: ::std::option::Option<::std::string::String>,
     pub(crate) cards: ::std::option::Option<::std::vec::Vec<crate::types::Card>>,

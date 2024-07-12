@@ -55,8 +55,8 @@ impl AwsEc2SecurityGroupDetails {
 }
 
 /// A builder for [`AwsEc2SecurityGroupDetails`](crate::types::AwsEc2SecurityGroupDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEc2SecurityGroupDetailsBuilder {
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
     pub(crate) group_id: ::std::option::Option<::std::string::String>,

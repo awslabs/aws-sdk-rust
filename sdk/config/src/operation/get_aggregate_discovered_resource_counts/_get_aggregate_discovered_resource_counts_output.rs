@@ -46,8 +46,8 @@ impl GetAggregateDiscoveredResourceCountsOutput {
 }
 
 /// A builder for [`GetAggregateDiscoveredResourceCountsOutput`](crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAggregateDiscoveredResourceCountsOutputBuilder {
     pub(crate) total_discovered_resources: ::std::option::Option<i64>,
     pub(crate) group_by_key: ::std::option::Option<::std::string::String>,

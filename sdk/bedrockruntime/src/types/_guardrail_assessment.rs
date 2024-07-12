@@ -45,8 +45,8 @@ impl GuardrailAssessment {
 }
 
 /// A builder for [`GuardrailAssessment`](crate::types::GuardrailAssessment).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GuardrailAssessmentBuilder {
     pub(crate) topic_policy: ::std::option::Option<crate::types::GuardrailTopicPolicyAssessment>,
     pub(crate) content_policy: ::std::option::Option<crate::types::GuardrailContentPolicyAssessment>,

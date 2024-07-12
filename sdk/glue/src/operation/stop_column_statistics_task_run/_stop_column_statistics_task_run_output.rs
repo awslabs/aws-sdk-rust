@@ -18,8 +18,8 @@ impl StopColumnStatisticsTaskRunOutput {
 }
 
 /// A builder for [`StopColumnStatisticsTaskRunOutput`](crate::operation::stop_column_statistics_task_run::StopColumnStatisticsTaskRunOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopColumnStatisticsTaskRunOutputBuilder {
     _request_id: Option<String>,
 }

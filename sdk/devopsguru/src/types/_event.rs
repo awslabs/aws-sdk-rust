@@ -65,8 +65,8 @@ impl Event {
 }
 
 /// A builder for [`Event`](crate::types::Event).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EventBuilder {
     pub(crate) resource_collection: ::std::option::Option<crate::types::ResourceCollection>,
     pub(crate) id: ::std::option::Option<::std::string::String>,

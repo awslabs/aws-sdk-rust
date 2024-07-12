@@ -19,8 +19,8 @@ impl UpdateReceiptRuleOutput {
 }
 
 /// A builder for [`UpdateReceiptRuleOutput`](crate::operation::update_receipt_rule::UpdateReceiptRuleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateReceiptRuleOutputBuilder {
     _request_id: Option<String>,
 }

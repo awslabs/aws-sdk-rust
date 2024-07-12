@@ -35,8 +35,8 @@ impl ListEmailIdentitiesOutput {
 }
 
 /// A builder for [`ListEmailIdentitiesOutput`](crate::operation::list_email_identities::ListEmailIdentitiesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEmailIdentitiesOutputBuilder {
     pub(crate) email_identities: ::std::option::Option<::std::vec::Vec<crate::types::IdentityInfo>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

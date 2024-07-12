@@ -74,8 +74,8 @@ impl GetLicenseConversionTaskOutput {
 }
 
 /// A builder for [`GetLicenseConversionTaskOutput`](crate::operation::get_license_conversion_task::GetLicenseConversionTaskOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLicenseConversionTaskOutputBuilder {
     pub(crate) license_conversion_task_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,

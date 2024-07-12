@@ -39,8 +39,8 @@ impl CreateThingTypeOutput {
 }
 
 /// A builder for [`CreateThingTypeOutput`](crate::operation::create_thing_type::CreateThingTypeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateThingTypeOutputBuilder {
     pub(crate) thing_type_name: ::std::option::Option<::std::string::String>,
     pub(crate) thing_type_arn: ::std::option::Option<::std::string::String>,

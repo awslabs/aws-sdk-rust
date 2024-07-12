@@ -20,8 +20,8 @@ impl DescribeTrialComponentInput {
 }
 
 /// A builder for [`DescribeTrialComponentInput`](crate::operation::describe_trial_component::DescribeTrialComponentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTrialComponentInputBuilder {
     pub(crate) trial_component_name: ::std::option::Option<::std::string::String>,
 }

@@ -20,8 +20,8 @@ impl DeleteDataQualityJobDefinitionInput {
 }
 
 /// A builder for [`DeleteDataQualityJobDefinitionInput`](crate::operation::delete_data_quality_job_definition::DeleteDataQualityJobDefinitionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDataQualityJobDefinitionInputBuilder {
     pub(crate) job_definition_name: ::std::option::Option<::std::string::String>,
 }

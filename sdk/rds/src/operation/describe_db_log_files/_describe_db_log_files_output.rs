@@ -35,8 +35,8 @@ impl DescribeDbLogFilesOutput {
 }
 
 /// A builder for [`DescribeDbLogFilesOutput`](crate::operation::describe_db_log_files::DescribeDbLogFilesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDbLogFilesOutputBuilder {
     pub(crate) describe_db_log_files: ::std::option::Option<::std::vec::Vec<crate::types::DescribeDbLogFilesDetails>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

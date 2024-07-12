@@ -41,8 +41,8 @@ impl TapeRecoveryPointInfo {
 }
 
 /// A builder for [`TapeRecoveryPointInfo`](crate::types::TapeRecoveryPointInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TapeRecoveryPointInfoBuilder {
     pub(crate) tape_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tape_recovery_point_time: ::std::option::Option<::aws_smithy_types::DateTime>,

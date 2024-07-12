@@ -33,8 +33,8 @@ impl ApiStage {
 }
 
 /// A builder for [`ApiStage`](crate::types::ApiStage).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ApiStageBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) stage: ::std::option::Option<::std::string::String>,

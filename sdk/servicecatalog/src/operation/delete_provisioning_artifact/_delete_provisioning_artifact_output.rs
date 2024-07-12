@@ -18,8 +18,8 @@ impl DeleteProvisioningArtifactOutput {
 }
 
 /// A builder for [`DeleteProvisioningArtifactOutput`](crate::operation::delete_provisioning_artifact::DeleteProvisioningArtifactOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteProvisioningArtifactOutputBuilder {
     _request_id: Option<String>,
 }

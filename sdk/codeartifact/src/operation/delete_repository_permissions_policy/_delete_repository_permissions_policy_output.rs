@@ -26,8 +26,8 @@ impl DeleteRepositoryPermissionsPolicyOutput {
 }
 
 /// A builder for [`DeleteRepositoryPermissionsPolicyOutput`](crate::operation::delete_repository_permissions_policy::DeleteRepositoryPermissionsPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRepositoryPermissionsPolicyOutputBuilder {
     pub(crate) policy: ::std::option::Option<crate::types::ResourcePolicy>,
     _request_id: Option<String>,

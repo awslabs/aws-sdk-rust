@@ -44,8 +44,8 @@ impl PutEncryptionConfigInput {
 }
 
 /// A builder for [`PutEncryptionConfigInput`](crate::operation::put_encryption_config::PutEncryptionConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutEncryptionConfigInputBuilder {
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::EncryptionType>,

@@ -34,8 +34,8 @@ impl DescribeMaintenanceWindowsInput {
 }
 
 /// A builder for [`DescribeMaintenanceWindowsInput`](crate::operation::describe_maintenance_windows::DescribeMaintenanceWindowsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeMaintenanceWindowsInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,

@@ -26,8 +26,8 @@ impl GetDataLakePrincipalOutput {
 }
 
 /// A builder for [`GetDataLakePrincipalOutput`](crate::operation::get_data_lake_principal::GetDataLakePrincipalOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDataLakePrincipalOutputBuilder {
     pub(crate) identity: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

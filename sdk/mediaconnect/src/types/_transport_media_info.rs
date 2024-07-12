@@ -23,8 +23,8 @@ impl TransportMediaInfo {
 }
 
 /// A builder for [`TransportMediaInfo`](crate::types::TransportMediaInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TransportMediaInfoBuilder {
     pub(crate) programs: ::std::option::Option<::std::vec::Vec<crate::types::TransportStreamProgram>>,
 }

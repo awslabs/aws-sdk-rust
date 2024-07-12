@@ -21,8 +21,8 @@ impl GrammarSlotTypeSetting {
 }
 
 /// A builder for [`GrammarSlotTypeSetting`](crate::types::GrammarSlotTypeSetting).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GrammarSlotTypeSettingBuilder {
     pub(crate) source: ::std::option::Option<crate::types::GrammarSlotTypeSource>,
 }

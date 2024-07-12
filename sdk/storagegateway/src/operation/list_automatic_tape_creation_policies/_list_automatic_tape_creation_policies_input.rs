@@ -20,8 +20,8 @@ impl ListAutomaticTapeCreationPoliciesInput {
 }
 
 /// A builder for [`ListAutomaticTapeCreationPoliciesInput`](crate::operation::list_automatic_tape_creation_policies::ListAutomaticTapeCreationPoliciesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAutomaticTapeCreationPoliciesInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
 }

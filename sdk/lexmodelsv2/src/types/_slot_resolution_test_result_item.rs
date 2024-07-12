@@ -28,8 +28,8 @@ impl SlotResolutionTestResultItem {
 }
 
 /// A builder for [`SlotResolutionTestResultItem`](crate::types::SlotResolutionTestResultItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SlotResolutionTestResultItemBuilder {
     pub(crate) slot_name: ::std::option::Option<::std::string::String>,
     pub(crate) result_counts: ::std::option::Option<crate::types::SlotResolutionTestResultItemCounts>,

@@ -22,8 +22,8 @@ impl BatchUpdateDetectorInput {
 }
 
 /// A builder for [`BatchUpdateDetectorInput`](crate::operation::batch_update_detector::BatchUpdateDetectorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchUpdateDetectorInputBuilder {
     pub(crate) detectors: ::std::option::Option<::std::vec::Vec<crate::types::UpdateDetectorRequest>>,
 }

@@ -45,8 +45,8 @@ impl JourneySmsMessage {
 }
 
 /// A builder for [`JourneySmsMessage`](crate::types::JourneySmsMessage).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JourneySmsMessageBuilder {
     pub(crate) message_type: ::std::option::Option<crate::types::MessageType>,
     pub(crate) origination_number: ::std::option::Option<::std::string::String>,

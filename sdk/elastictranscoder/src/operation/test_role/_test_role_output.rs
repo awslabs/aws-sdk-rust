@@ -36,8 +36,8 @@ impl TestRoleOutput {
 }
 
 /// A builder for [`TestRoleOutput`](crate::operation::test_role::TestRoleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TestRoleOutputBuilder {
     pub(crate) success: ::std::option::Option<::std::string::String>,
     pub(crate) messages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

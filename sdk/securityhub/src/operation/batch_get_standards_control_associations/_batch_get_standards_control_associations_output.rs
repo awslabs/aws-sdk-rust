@@ -36,8 +36,8 @@ impl BatchGetStandardsControlAssociationsOutput {
 }
 
 /// A builder for [`BatchGetStandardsControlAssociationsOutput`](crate::operation::batch_get_standards_control_associations::BatchGetStandardsControlAssociationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetStandardsControlAssociationsOutputBuilder {
     pub(crate) standards_control_association_details: ::std::option::Option<::std::vec::Vec<crate::types::StandardsControlAssociationDetail>>,
     pub(crate) unprocessed_associations: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedStandardsControlAssociation>>,

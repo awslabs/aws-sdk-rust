@@ -34,8 +34,8 @@ impl GetNetworkResourceRelationshipsOutput {
 }
 
 /// A builder for [`GetNetworkResourceRelationshipsOutput`](crate::operation::get_network_resource_relationships::GetNetworkResourceRelationshipsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetNetworkResourceRelationshipsOutputBuilder {
     pub(crate) relationships: ::std::option::Option<::std::vec::Vec<crate::types::Relationship>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

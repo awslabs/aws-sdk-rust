@@ -29,8 +29,8 @@ impl AllocateHostsOutput {
 }
 
 /// A builder for [`AllocateHostsOutput`](crate::operation::allocate_hosts::AllocateHostsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AllocateHostsOutputBuilder {
     pub(crate) host_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,

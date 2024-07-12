@@ -88,8 +88,8 @@ impl PredefinedLoadMetricSpecification {
 }
 
 /// A builder for [`PredefinedLoadMetricSpecification`](crate::types::PredefinedLoadMetricSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PredefinedLoadMetricSpecificationBuilder {
     pub(crate) predefined_load_metric_type: ::std::option::Option<crate::types::LoadMetricType>,
     pub(crate) resource_label: ::std::option::Option<::std::string::String>,

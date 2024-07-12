@@ -29,8 +29,8 @@ impl WordCloudSortConfiguration {
 }
 
 /// A builder for [`WordCloudSortConfiguration`](crate::types::WordCloudSortConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WordCloudSortConfigurationBuilder {
     pub(crate) category_items_limit: ::std::option::Option<crate::types::ItemsLimitConfiguration>,
     pub(crate) category_sort: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,

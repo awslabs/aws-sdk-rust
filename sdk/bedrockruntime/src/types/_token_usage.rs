@@ -33,8 +33,8 @@ impl TokenUsage {
 }
 
 /// A builder for [`TokenUsage`](crate::types::TokenUsage).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TokenUsageBuilder {
     pub(crate) input_tokens: ::std::option::Option<i32>,
     pub(crate) output_tokens: ::std::option::Option<i32>,

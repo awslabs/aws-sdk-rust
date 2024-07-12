@@ -27,8 +27,8 @@ impl AutoScalingSpecification {
 }
 
 /// A builder for [`AutoScalingSpecification`](crate::types::AutoScalingSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AutoScalingSpecificationBuilder {
     pub(crate) write_capacity_auto_scaling: ::std::option::Option<crate::types::AutoScalingSettings>,
     pub(crate) read_capacity_auto_scaling: ::std::option::Option<crate::types::AutoScalingSettings>,

@@ -18,8 +18,8 @@ impl DeletePartnerEventSourceOutput {
 }
 
 /// A builder for [`DeletePartnerEventSourceOutput`](crate::operation::delete_partner_event_source::DeletePartnerEventSourceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePartnerEventSourceOutputBuilder {
     _request_id: Option<String>,
 }

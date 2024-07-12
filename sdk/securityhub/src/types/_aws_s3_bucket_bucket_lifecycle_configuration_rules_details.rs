@@ -117,8 +117,8 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesDetails {
 }
 
 /// A builder for [`AwsS3BucketBucketLifecycleConfigurationRulesDetails`](crate::types::AwsS3BucketBucketLifecycleConfigurationRulesDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsS3BucketBucketLifecycleConfigurationRulesDetailsBuilder {
     pub(crate) abort_incomplete_multipart_upload:
         ::std::option::Option<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails>,

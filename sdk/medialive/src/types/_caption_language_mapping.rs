@@ -33,8 +33,8 @@ impl CaptionLanguageMapping {
 }
 
 /// A builder for [`CaptionLanguageMapping`](crate::types::CaptionLanguageMapping).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CaptionLanguageMappingBuilder {
     pub(crate) caption_channel: ::std::option::Option<i32>,
     pub(crate) language_code: ::std::option::Option<::std::string::String>,

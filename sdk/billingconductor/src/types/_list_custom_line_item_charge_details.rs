@@ -41,8 +41,8 @@ impl ListCustomLineItemChargeDetails {
 }
 
 /// A builder for [`ListCustomLineItemChargeDetails`](crate::types::ListCustomLineItemChargeDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCustomLineItemChargeDetailsBuilder {
     pub(crate) flat: ::std::option::Option<crate::types::ListCustomLineItemFlatChargeDetails>,
     pub(crate) percentage: ::std::option::Option<crate::types::ListCustomLineItemPercentageChargeDetails>,

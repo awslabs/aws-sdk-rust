@@ -18,8 +18,8 @@ impl CancelQueryOutput {
 }
 
 /// A builder for [`CancelQueryOutput`](crate::operation::cancel_query::CancelQueryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelQueryOutputBuilder {
     _request_id: Option<String>,
 }

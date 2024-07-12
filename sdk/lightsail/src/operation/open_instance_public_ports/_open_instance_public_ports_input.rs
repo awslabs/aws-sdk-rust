@@ -26,8 +26,8 @@ impl OpenInstancePublicPortsInput {
 }
 
 /// A builder for [`OpenInstancePublicPortsInput`](crate::operation::open_instance_public_ports::OpenInstancePublicPortsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OpenInstancePublicPortsInputBuilder {
     pub(crate) port_info: ::std::option::Option<crate::types::PortInfo>,
     pub(crate) instance_name: ::std::option::Option<::std::string::String>,

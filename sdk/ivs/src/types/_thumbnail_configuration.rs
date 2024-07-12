@@ -43,8 +43,8 @@ impl ThumbnailConfiguration {
 }
 
 /// A builder for [`ThumbnailConfiguration`](crate::types::ThumbnailConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ThumbnailConfigurationBuilder {
     pub(crate) recording_mode: ::std::option::Option<crate::types::RecordingMode>,
     pub(crate) target_interval_seconds: ::std::option::Option<i64>,

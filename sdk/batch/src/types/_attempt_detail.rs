@@ -47,8 +47,8 @@ impl AttemptDetail {
 }
 
 /// A builder for [`AttemptDetail`](crate::types::AttemptDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttemptDetailBuilder {
     pub(crate) container: ::std::option::Option<crate::types::AttemptContainerDetail>,
     pub(crate) started_at: ::std::option::Option<i64>,

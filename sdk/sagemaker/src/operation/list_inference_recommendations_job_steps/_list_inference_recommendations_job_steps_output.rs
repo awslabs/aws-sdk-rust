@@ -34,8 +34,8 @@ impl ListInferenceRecommendationsJobStepsOutput {
 }
 
 /// A builder for [`ListInferenceRecommendationsJobStepsOutput`](crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListInferenceRecommendationsJobStepsOutputBuilder {
     pub(crate) steps: ::std::option::Option<::std::vec::Vec<crate::types::InferenceRecommendationsJobStep>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

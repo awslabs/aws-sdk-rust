@@ -37,8 +37,8 @@ impl DescribeReservedElasticsearchInstanceOfferingsOutput {
 }
 
 /// A builder for [`DescribeReservedElasticsearchInstanceOfferingsOutput`](crate::operation::describe_reserved_elasticsearch_instance_offerings::DescribeReservedElasticsearchInstanceOfferingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeReservedElasticsearchInstanceOfferingsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) reserved_elasticsearch_instance_offerings: ::std::option::Option<::std::vec::Vec<crate::types::ReservedElasticsearchInstanceOffering>>,

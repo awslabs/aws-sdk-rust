@@ -105,8 +105,8 @@ impl ScheduledInstance {
 }
 
 /// A builder for [`ScheduledInstance`](crate::types::ScheduledInstance).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScheduledInstanceBuilder {
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) create_date: ::std::option::Option<::aws_smithy_types::DateTime>,

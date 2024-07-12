@@ -34,8 +34,8 @@ impl PutAttributeMappingInput {
 }
 
 /// A builder for [`PutAttributeMappingInput`](crate::operation::put_attribute_mapping::PutAttributeMappingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutAttributeMappingInputBuilder {
     pub(crate) profile_id: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_field: ::std::option::Option<crate::types::CertificateField>,

@@ -21,8 +21,8 @@ impl EventTriggerDefinition {
 }
 
 /// A builder for [`EventTriggerDefinition`](crate::types::EventTriggerDefinition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EventTriggerDefinitionBuilder {
     pub(crate) event_resource_arn: ::std::option::Option<::std::string::String>,
 }

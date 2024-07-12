@@ -34,8 +34,8 @@ impl ListPresetsOutput {
 }
 
 /// A builder for [`ListPresetsOutput`](crate::operation::list_presets::ListPresetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPresetsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) presets: ::std::option::Option<::std::vec::Vec<crate::types::Preset>>,

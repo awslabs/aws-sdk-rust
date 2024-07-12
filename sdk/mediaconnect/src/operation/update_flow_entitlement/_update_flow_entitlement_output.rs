@@ -32,8 +32,8 @@ impl UpdateFlowEntitlementOutput {
 }
 
 /// A builder for [`UpdateFlowEntitlementOutput`](crate::operation::update_flow_entitlement::UpdateFlowEntitlementOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateFlowEntitlementOutputBuilder {
     pub(crate) entitlement: ::std::option::Option<crate::types::Entitlement>,
     pub(crate) flow_arn: ::std::option::Option<::std::string::String>,

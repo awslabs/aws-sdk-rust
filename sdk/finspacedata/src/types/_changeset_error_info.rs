@@ -63,8 +63,8 @@ impl ChangesetErrorInfo {
 }
 
 /// A builder for [`ChangesetErrorInfo`](crate::types::ChangesetErrorInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ChangesetErrorInfoBuilder {
     pub(crate) error_message: ::std::option::Option<::std::string::String>,
     pub(crate) error_category: ::std::option::Option<crate::types::ErrorCategory>,

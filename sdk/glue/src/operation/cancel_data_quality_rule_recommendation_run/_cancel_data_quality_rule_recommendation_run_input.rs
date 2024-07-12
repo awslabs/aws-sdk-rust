@@ -20,8 +20,8 @@ impl CancelDataQualityRuleRecommendationRunInput {
 }
 
 /// A builder for [`CancelDataQualityRuleRecommendationRunInput`](crate::operation::cancel_data_quality_rule_recommendation_run::CancelDataQualityRuleRecommendationRunInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelDataQualityRuleRecommendationRunInputBuilder {
     pub(crate) run_id: ::std::option::Option<::std::string::String>,
 }

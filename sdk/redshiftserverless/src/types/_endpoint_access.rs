@@ -79,8 +79,8 @@ impl EndpointAccess {
 }
 
 /// A builder for [`EndpointAccess`](crate::types::EndpointAccess).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EndpointAccessBuilder {
     pub(crate) endpoint_name: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint_status: ::std::option::Option<::std::string::String>,

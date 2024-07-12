@@ -41,8 +41,8 @@ impl FileVersion {
 }
 
 /// A builder for [`FileVersion`](crate::types::FileVersion).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FileVersionBuilder {
     pub(crate) commit: ::std::option::Option<crate::types::Commit>,
     pub(crate) blob_id: ::std::option::Option<::std::string::String>,

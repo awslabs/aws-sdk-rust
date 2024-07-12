@@ -26,8 +26,8 @@ impl UpdateContainerAgentInput {
 }
 
 /// A builder for [`UpdateContainerAgentInput`](crate::operation::update_container_agent::UpdateContainerAgentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateContainerAgentInputBuilder {
     pub(crate) cluster: ::std::option::Option<::std::string::String>,
     pub(crate) container_instance: ::std::option::Option<::std::string::String>,

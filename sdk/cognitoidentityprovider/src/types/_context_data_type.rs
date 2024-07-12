@@ -49,8 +49,8 @@ impl ContextDataType {
 }
 
 /// A builder for [`ContextDataType`](crate::types::ContextDataType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ContextDataTypeBuilder {
     pub(crate) ip_address: ::std::option::Option<::std::string::String>,
     pub(crate) server_name: ::std::option::Option<::std::string::String>,

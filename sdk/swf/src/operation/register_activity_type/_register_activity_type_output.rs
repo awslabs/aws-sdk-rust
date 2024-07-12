@@ -18,8 +18,8 @@ impl RegisterActivityTypeOutput {
 }
 
 /// A builder for [`RegisterActivityTypeOutput`](crate::operation::register_activity_type::RegisterActivityTypeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterActivityTypeOutputBuilder {
     _request_id: Option<String>,
 }

@@ -94,8 +94,8 @@ impl DescribeMapRunOutput {
 }
 
 /// A builder for [`DescribeMapRunOutput`](crate::operation::describe_map_run::DescribeMapRunOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeMapRunOutputBuilder {
     pub(crate) map_run_arn: ::std::option::Option<::std::string::String>,
     pub(crate) execution_arn: ::std::option::Option<::std::string::String>,

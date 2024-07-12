@@ -32,8 +32,8 @@ impl UpdateUserIdentityInfoInput {
 }
 
 /// A builder for [`UpdateUserIdentityInfoInput`](crate::operation::update_user_identity_info::UpdateUserIdentityInfoInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateUserIdentityInfoInputBuilder {
     pub(crate) identity_info: ::std::option::Option<crate::types::UserIdentityInfo>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,

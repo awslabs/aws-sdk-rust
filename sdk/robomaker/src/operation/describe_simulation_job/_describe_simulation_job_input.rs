@@ -20,8 +20,8 @@ impl DescribeSimulationJobInput {
 }
 
 /// A builder for [`DescribeSimulationJobInput`](crate::operation::describe_simulation_job::DescribeSimulationJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSimulationJobInputBuilder {
     pub(crate) job: ::std::option::Option<::std::string::String>,
 }

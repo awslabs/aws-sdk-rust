@@ -18,8 +18,8 @@ impl StartConfigurationPolicyDisassociationOutput {
 }
 
 /// A builder for [`StartConfigurationPolicyDisassociationOutput`](crate::operation::start_configuration_policy_disassociation::StartConfigurationPolicyDisassociationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartConfigurationPolicyDisassociationOutputBuilder {
     _request_id: Option<String>,
 }

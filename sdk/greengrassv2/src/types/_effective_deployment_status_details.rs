@@ -33,8 +33,8 @@ impl EffectiveDeploymentStatusDetails {
 }
 
 /// A builder for [`EffectiveDeploymentStatusDetails`](crate::types::EffectiveDeploymentStatusDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EffectiveDeploymentStatusDetailsBuilder {
     pub(crate) error_stack: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) error_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

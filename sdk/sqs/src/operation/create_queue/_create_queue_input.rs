@@ -271,8 +271,8 @@ impl CreateQueueInput {
 }
 
 /// A builder for [`CreateQueueInput`](crate::operation::create_queue::CreateQueueInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateQueueInputBuilder {
     pub(crate) queue_name: ::std::option::Option<::std::string::String>,
     pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<crate::types::QueueAttributeName, ::std::string::String>>,

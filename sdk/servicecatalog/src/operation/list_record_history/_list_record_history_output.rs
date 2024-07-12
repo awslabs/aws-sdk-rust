@@ -34,8 +34,8 @@ impl ListRecordHistoryOutput {
 }
 
 /// A builder for [`ListRecordHistoryOutput`](crate::operation::list_record_history::ListRecordHistoryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRecordHistoryOutputBuilder {
     pub(crate) record_details: ::std::option::Option<::std::vec::Vec<crate::types::RecordDetail>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,

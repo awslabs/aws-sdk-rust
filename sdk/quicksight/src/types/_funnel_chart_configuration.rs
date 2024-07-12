@@ -63,8 +63,8 @@ impl FunnelChartConfiguration {
 }
 
 /// A builder for [`FunnelChartConfiguration`](crate::types::FunnelChartConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FunnelChartConfigurationBuilder {
     pub(crate) field_wells: ::std::option::Option<crate::types::FunnelChartFieldWells>,
     pub(crate) sort_configuration: ::std::option::Option<crate::types::FunnelChartSortConfiguration>,

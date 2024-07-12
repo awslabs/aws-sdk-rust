@@ -21,8 +21,8 @@ impl JmxExporter {
 }
 
 /// A builder for [`JmxExporter`](crate::types::JmxExporter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JmxExporterBuilder {
     pub(crate) enabled_in_broker: ::std::option::Option<bool>,
 }

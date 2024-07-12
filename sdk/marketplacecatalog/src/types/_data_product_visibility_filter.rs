@@ -23,8 +23,8 @@ impl DataProductVisibilityFilter {
 }
 
 /// A builder for [`DataProductVisibilityFilter`](crate::types::DataProductVisibilityFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataProductVisibilityFilterBuilder {
     pub(crate) value_list: ::std::option::Option<::std::vec::Vec<crate::types::DataProductVisibilityString>>,
 }

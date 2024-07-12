@@ -20,8 +20,8 @@ impl DescribeGameSessionPlacementInput {
 }
 
 /// A builder for [`DescribeGameSessionPlacementInput`](crate::operation::describe_game_session_placement::DescribeGameSessionPlacementInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeGameSessionPlacementInputBuilder {
     pub(crate) placement_id: ::std::option::Option<::std::string::String>,
 }

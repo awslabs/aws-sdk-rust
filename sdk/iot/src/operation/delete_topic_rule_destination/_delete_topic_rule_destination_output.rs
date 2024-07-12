@@ -18,8 +18,8 @@ impl DeleteTopicRuleDestinationOutput {
 }
 
 /// A builder for [`DeleteTopicRuleDestinationOutput`](crate::operation::delete_topic_rule_destination::DeleteTopicRuleDestinationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTopicRuleDestinationOutputBuilder {
     _request_id: Option<String>,
 }

@@ -29,8 +29,8 @@ impl Details {
 }
 
 /// A builder for [`Details`](crate::types::Details).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetailsBuilder {
     pub(crate) import_asset_from_signed_url_job_error_details: ::std::option::Option<crate::types::ImportAssetFromSignedUrlJobErrorDetails>,
     pub(crate) import_assets_from_s3_job_error_details: ::std::option::Option<::std::vec::Vec<crate::types::AssetSourceEntry>>,

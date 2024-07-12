@@ -34,8 +34,8 @@ impl ListRumMetricsDestinationsOutput {
 }
 
 /// A builder for [`ListRumMetricsDestinationsOutput`](crate::operation::list_rum_metrics_destinations::ListRumMetricsDestinationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRumMetricsDestinationsOutputBuilder {
     pub(crate) destinations: ::std::option::Option<::std::vec::Vec<crate::types::MetricDestinationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

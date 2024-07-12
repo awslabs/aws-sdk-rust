@@ -32,8 +32,8 @@ impl CreateComputeEnvironmentOutput {
 }
 
 /// A builder for [`CreateComputeEnvironmentOutput`](crate::operation::create_compute_environment::CreateComputeEnvironmentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateComputeEnvironmentOutputBuilder {
     pub(crate) compute_environment_name: ::std::option::Option<::std::string::String>,
     pub(crate) compute_environment_arn: ::std::option::Option<::std::string::String>,

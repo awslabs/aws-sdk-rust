@@ -27,8 +27,8 @@ impl DeleteSuggesterInput {
 }
 
 /// A builder for [`DeleteSuggesterInput`](crate::operation::delete_suggester::DeleteSuggesterInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSuggesterInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) suggester_name: ::std::option::Option<::std::string::String>,

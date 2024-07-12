@@ -40,8 +40,8 @@ impl EbsFilter {
 }
 
 /// A builder for [`EbsFilter`](crate::types::EbsFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EbsFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::EbsFilterName>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

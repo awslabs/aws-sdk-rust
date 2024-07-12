@@ -18,8 +18,8 @@ impl DisableLdapsOutput {
 }
 
 /// A builder for [`DisableLdapsOutput`](crate::operation::disable_ldaps::DisableLdapsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableLdapsOutputBuilder {
     _request_id: Option<String>,
 }

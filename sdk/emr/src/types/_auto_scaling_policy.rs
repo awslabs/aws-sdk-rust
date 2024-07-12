@@ -29,8 +29,8 @@ impl AutoScalingPolicy {
 }
 
 /// A builder for [`AutoScalingPolicy`](crate::types::AutoScalingPolicy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AutoScalingPolicyBuilder {
     pub(crate) constraints: ::std::option::Option<crate::types::ScalingConstraints>,
     pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::ScalingRule>>,

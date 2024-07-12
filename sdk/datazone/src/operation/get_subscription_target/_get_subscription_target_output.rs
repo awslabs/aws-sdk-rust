@@ -144,8 +144,8 @@ impl GetSubscriptionTargetOutput {
 }
 
 /// A builder for [`GetSubscriptionTargetOutput`](crate::operation::get_subscription_target::GetSubscriptionTargetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetSubscriptionTargetOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) authorized_principals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

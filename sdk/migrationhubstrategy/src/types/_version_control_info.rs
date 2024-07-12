@@ -27,8 +27,8 @@ impl VersionControlInfo {
 }
 
 /// A builder for [`VersionControlInfo`](crate::types::VersionControlInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VersionControlInfoBuilder {
     pub(crate) version_control_type: ::std::option::Option<crate::types::VersionControlType>,
     pub(crate) version_control_configuration_time_stamp: ::std::option::Option<::std::string::String>,

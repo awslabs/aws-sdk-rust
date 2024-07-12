@@ -28,8 +28,8 @@ impl BatchUpdateClusterInput {
 }
 
 /// A builder for [`BatchUpdateClusterInput`](crate::operation::batch_update_cluster::BatchUpdateClusterInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchUpdateClusterInputBuilder {
     pub(crate) cluster_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) service_update: ::std::option::Option<crate::types::ServiceUpdateRequest>,

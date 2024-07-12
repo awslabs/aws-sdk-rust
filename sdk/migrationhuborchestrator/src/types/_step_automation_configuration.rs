@@ -45,8 +45,8 @@ impl StepAutomationConfiguration {
 }
 
 /// A builder for [`StepAutomationConfiguration`](crate::types::StepAutomationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StepAutomationConfigurationBuilder {
     pub(crate) script_location_s3_bucket: ::std::option::Option<::std::string::String>,
     pub(crate) script_location_s3_key: ::std::option::Option<crate::types::PlatformScriptKey>,

@@ -11,8 +11,8 @@ impl GetEngineStatusInput {
 }
 
 /// A builder for [`GetEngineStatusInput`](crate::operation::get_engine_status::GetEngineStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEngineStatusInputBuilder {}
 impl GetEngineStatusInputBuilder {
     /// Consumes the builder and constructs a [`GetEngineStatusInput`](crate::operation::get_engine_status::GetEngineStatusInput).

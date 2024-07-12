@@ -20,8 +20,8 @@ impl GetDirectoryRegistrationInput {
 }
 
 /// A builder for [`GetDirectoryRegistrationInput`](crate::operation::get_directory_registration::GetDirectoryRegistrationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDirectoryRegistrationInputBuilder {
     pub(crate) directory_registration_arn: ::std::option::Option<::std::string::String>,
 }

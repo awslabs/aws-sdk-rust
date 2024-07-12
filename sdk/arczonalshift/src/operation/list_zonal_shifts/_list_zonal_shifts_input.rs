@@ -56,8 +56,8 @@ impl ListZonalShiftsInput {
 }
 
 /// A builder for [`ListZonalShiftsInput`](crate::operation::list_zonal_shifts::ListZonalShiftsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListZonalShiftsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ZonalShiftStatus>,

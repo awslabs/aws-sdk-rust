@@ -21,8 +21,8 @@ impl TemplateSummaryConfig {
 }
 
 /// A builder for [`TemplateSummaryConfig`](crate::types::TemplateSummaryConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TemplateSummaryConfigBuilder {
     pub(crate) treat_unrecognized_resource_types_as_warnings: ::std::option::Option<bool>,
 }

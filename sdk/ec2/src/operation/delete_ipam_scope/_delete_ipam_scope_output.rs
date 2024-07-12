@@ -26,8 +26,8 @@ impl DeleteIpamScopeOutput {
 }
 
 /// A builder for [`DeleteIpamScopeOutput`](crate::operation::delete_ipam_scope::DeleteIpamScopeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteIpamScopeOutputBuilder {
     pub(crate) ipam_scope: ::std::option::Option<crate::types::IpamScope>,
     _request_id: Option<String>,

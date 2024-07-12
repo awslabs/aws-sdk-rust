@@ -58,8 +58,8 @@ impl ListCodeRepositoriesOutput {
 }
 
 /// A builder for [`ListCodeRepositoriesOutput`](crate::operation::list_code_repositories::ListCodeRepositoriesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCodeRepositoriesOutputBuilder {
     pub(crate) code_repository_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::CodeRepositorySummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

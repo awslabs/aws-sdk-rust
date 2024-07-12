@@ -32,8 +32,8 @@ impl RedactRoomMessageInput {
 }
 
 /// A builder for [`RedactRoomMessageInput`](crate::operation::redact_room_message::RedactRoomMessageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RedactRoomMessageInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) room_id: ::std::option::Option<::std::string::String>,

@@ -107,8 +107,8 @@ impl UpdateTrailOutput {
 }
 
 /// A builder for [`UpdateTrailOutput`](crate::operation::update_trail::UpdateTrailOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateTrailOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) s3_bucket_name: ::std::option::Option<::std::string::String>,

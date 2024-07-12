@@ -22,8 +22,8 @@ impl GetDisksInput {
 }
 
 /// A builder for [`GetDisksInput`](crate::operation::get_disks::GetDisksInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDisksInputBuilder {
     pub(crate) page_token: ::std::option::Option<::std::string::String>,
 }

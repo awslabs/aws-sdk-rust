@@ -27,8 +27,8 @@ impl BootstrapActionConfig {
 }
 
 /// A builder for [`BootstrapActionConfig`](crate::types::BootstrapActionConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BootstrapActionConfigBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) script_bootstrap_action: ::std::option::Option<crate::types::ScriptBootstrapActionConfig>,

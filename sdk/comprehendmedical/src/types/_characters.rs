@@ -21,8 +21,8 @@ impl Characters {
 }
 
 /// A builder for [`Characters`](crate::types::Characters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CharactersBuilder {
     pub(crate) original_text_characters: ::std::option::Option<i32>,
 }

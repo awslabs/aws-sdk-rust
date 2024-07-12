@@ -27,8 +27,8 @@ impl BinWidthOptions {
 }
 
 /// A builder for [`BinWidthOptions`](crate::types::BinWidthOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BinWidthOptionsBuilder {
     pub(crate) value: ::std::option::Option<f64>,
     pub(crate) bin_count_limit: ::std::option::Option<i64>,

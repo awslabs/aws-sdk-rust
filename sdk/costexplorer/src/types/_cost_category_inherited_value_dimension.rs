@@ -29,8 +29,8 @@ impl CostCategoryInheritedValueDimension {
 }
 
 /// A builder for [`CostCategoryInheritedValueDimension`](crate::types::CostCategoryInheritedValueDimension).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CostCategoryInheritedValueDimensionBuilder {
     pub(crate) dimension_name: ::std::option::Option<crate::types::CostCategoryInheritedValueDimensionName>,
     pub(crate) dimension_key: ::std::option::Option<::std::string::String>,

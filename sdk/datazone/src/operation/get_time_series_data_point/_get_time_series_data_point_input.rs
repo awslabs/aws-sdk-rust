@@ -44,8 +44,8 @@ impl GetTimeSeriesDataPointInput {
 }
 
 /// A builder for [`GetTimeSeriesDataPointInput`](crate::operation::get_time_series_data_point::GetTimeSeriesDataPointInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTimeSeriesDataPointInputBuilder {
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) entity_identifier: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl GeneratedPolicyProperties {
 }
 
 /// A builder for [`GeneratedPolicyProperties`](crate::types::GeneratedPolicyProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GeneratedPolicyPropertiesBuilder {
     pub(crate) is_complete: ::std::option::Option<bool>,
     pub(crate) principal_arn: ::std::option::Option<::std::string::String>,

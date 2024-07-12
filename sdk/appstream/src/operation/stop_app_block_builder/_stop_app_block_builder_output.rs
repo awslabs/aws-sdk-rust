@@ -26,8 +26,8 @@ impl StopAppBlockBuilderOutput {
 }
 
 /// A builder for [`StopAppBlockBuilderOutput`](crate::operation::stop_app_block_builder::StopAppBlockBuilderOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopAppBlockBuilderOutputBuilder {
     pub(crate) app_block_builder: ::std::option::Option<crate::types::AppBlockBuilder>,
     _request_id: Option<String>,

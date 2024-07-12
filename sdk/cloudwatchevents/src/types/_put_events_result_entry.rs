@@ -33,8 +33,8 @@ impl PutEventsResultEntry {
 }
 
 /// A builder for [`PutEventsResultEntry`](crate::types::PutEventsResultEntry).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutEventsResultEntryBuilder {
     pub(crate) event_id: ::std::option::Option<::std::string::String>,
     pub(crate) error_code: ::std::option::Option<::std::string::String>,

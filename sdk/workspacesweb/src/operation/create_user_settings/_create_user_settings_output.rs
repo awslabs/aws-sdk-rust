@@ -27,8 +27,8 @@ impl CreateUserSettingsOutput {
 }
 
 /// A builder for [`CreateUserSettingsOutput`](crate::operation::create_user_settings::CreateUserSettingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateUserSettingsOutputBuilder {
     pub(crate) user_settings_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

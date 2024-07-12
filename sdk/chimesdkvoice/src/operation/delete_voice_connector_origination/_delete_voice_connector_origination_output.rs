@@ -18,8 +18,8 @@ impl DeleteVoiceConnectorOriginationOutput {
 }
 
 /// A builder for [`DeleteVoiceConnectorOriginationOutput`](crate::operation::delete_voice_connector_origination::DeleteVoiceConnectorOriginationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVoiceConnectorOriginationOutputBuilder {
     _request_id: Option<String>,
 }

@@ -22,8 +22,8 @@ impl ZendeskConnectorProfileProperties {
 }
 
 /// A builder for [`ZendeskConnectorProfileProperties`](crate::types::ZendeskConnectorProfileProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ZendeskConnectorProfilePropertiesBuilder {
     pub(crate) instance_url: ::std::option::Option<::std::string::String>,
 }

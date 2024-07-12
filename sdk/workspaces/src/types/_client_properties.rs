@@ -27,8 +27,8 @@ impl ClientProperties {
 }
 
 /// A builder for [`ClientProperties`](crate::types::ClientProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ClientPropertiesBuilder {
     pub(crate) reconnect_enabled: ::std::option::Option<crate::types::ReconnectEnum>,
     pub(crate) log_upload_enabled: ::std::option::Option<crate::types::LogUploadEnum>,

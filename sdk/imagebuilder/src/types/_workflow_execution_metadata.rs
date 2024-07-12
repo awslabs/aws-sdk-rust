@@ -87,8 +87,8 @@ impl WorkflowExecutionMetadata {
 }
 
 /// A builder for [`WorkflowExecutionMetadata`](crate::types::WorkflowExecutionMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WorkflowExecutionMetadataBuilder {
     pub(crate) workflow_build_version_arn: ::std::option::Option<::std::string::String>,
     pub(crate) workflow_execution_id: ::std::option::Option<::std::string::String>,

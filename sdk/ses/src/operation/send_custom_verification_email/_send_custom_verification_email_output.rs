@@ -27,8 +27,8 @@ impl SendCustomVerificationEmailOutput {
 }
 
 /// A builder for [`SendCustomVerificationEmailOutput`](crate::operation::send_custom_verification_email::SendCustomVerificationEmailOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendCustomVerificationEmailOutputBuilder {
     pub(crate) message_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

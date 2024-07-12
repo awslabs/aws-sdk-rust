@@ -103,8 +103,8 @@ impl GetPromptOutput {
 }
 
 /// A builder for [`GetPromptOutput`](crate::operation::get_prompt::GetPromptOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetPromptOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

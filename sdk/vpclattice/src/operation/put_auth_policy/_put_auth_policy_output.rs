@@ -32,8 +32,8 @@ impl PutAuthPolicyOutput {
 }
 
 /// A builder for [`PutAuthPolicyOutput`](crate::operation::put_auth_policy::PutAuthPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutAuthPolicyOutputBuilder {
     pub(crate) policy: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::AuthPolicyState>,

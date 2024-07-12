@@ -47,8 +47,8 @@ impl PurchaseReservedDbInstancesOfferingInput {
 }
 
 /// A builder for [`PurchaseReservedDbInstancesOfferingInput`](crate::operation::purchase_reserved_db_instances_offering::PurchaseReservedDbInstancesOfferingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PurchaseReservedDbInstancesOfferingInputBuilder {
     pub(crate) reserved_db_instances_offering_id: ::std::option::Option<::std::string::String>,
     pub(crate) reserved_db_instance_id: ::std::option::Option<::std::string::String>,

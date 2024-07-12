@@ -245,8 +245,8 @@ impl AutoScalingGroup {
 }
 
 /// A builder for [`AutoScalingGroup`](crate::types::AutoScalingGroup).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AutoScalingGroupBuilder {
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) auto_scaling_group_arn: ::std::option::Option<::std::string::String>,

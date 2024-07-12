@@ -51,8 +51,8 @@ impl DeleteFileSystemOutput {
 }
 
 /// A builder for [`DeleteFileSystemOutput`](crate::operation::delete_file_system::DeleteFileSystemOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFileSystemOutputBuilder {
     pub(crate) file_system_id: ::std::option::Option<::std::string::String>,
     pub(crate) lifecycle: ::std::option::Option<crate::types::FileSystemLifecycle>,

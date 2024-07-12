@@ -35,8 +35,8 @@ impl GetInstanceTypesFromInstanceRequirementsOutput {
 }
 
 /// A builder for [`GetInstanceTypesFromInstanceRequirementsOutput`](crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetInstanceTypesFromInstanceRequirementsOutputBuilder {
     pub(crate) instance_types: ::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeInfoFromInstanceRequirements>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

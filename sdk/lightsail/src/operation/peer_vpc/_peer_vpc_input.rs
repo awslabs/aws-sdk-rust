@@ -11,8 +11,8 @@ impl PeerVpcInput {
 }
 
 /// A builder for [`PeerVpcInput`](crate::operation::peer_vpc::PeerVpcInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PeerVpcInputBuilder {}
 impl PeerVpcInputBuilder {
     /// Consumes the builder and constructs a [`PeerVpcInput`](crate::operation::peer_vpc::PeerVpcInput).

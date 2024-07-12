@@ -40,8 +40,8 @@ impl SearchQueuesOutput {
 }
 
 /// A builder for [`SearchQueuesOutput`](crate::operation::search_queues::SearchQueuesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchQueuesOutputBuilder {
     pub(crate) queues: ::std::option::Option<::std::vec::Vec<crate::types::Queue>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

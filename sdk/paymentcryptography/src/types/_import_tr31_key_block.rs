@@ -37,8 +37,8 @@ impl ImportTr31KeyBlock {
 }
 
 /// A builder for [`ImportTr31KeyBlock`](crate::types::ImportTr31KeyBlock).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ImportTr31KeyBlockBuilder {
     pub(crate) wrapping_key_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) wrapped_key_block: ::std::option::Option<::std::string::String>,

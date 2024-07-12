@@ -26,8 +26,8 @@ impl GetSyncConfigurationInput {
 }
 
 /// A builder for [`GetSyncConfigurationInput`](crate::operation::get_sync_configuration::GetSyncConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSyncConfigurationInputBuilder {
     pub(crate) sync_type: ::std::option::Option<crate::types::SyncConfigurationType>,
     pub(crate) resource_name: ::std::option::Option<::std::string::String>,

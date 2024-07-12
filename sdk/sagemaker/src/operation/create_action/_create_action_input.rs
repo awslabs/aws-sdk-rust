@@ -64,8 +64,8 @@ impl CreateActionInput {
 }
 
 /// A builder for [`CreateActionInput`](crate::operation::create_action::CreateActionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateActionInputBuilder {
     pub(crate) action_name: ::std::option::Option<::std::string::String>,
     pub(crate) source: ::std::option::Option<crate::types::ActionSource>,

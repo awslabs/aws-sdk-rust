@@ -26,8 +26,8 @@ impl PutMetricStreamOutput {
 }
 
 /// A builder for [`PutMetricStreamOutput`](crate::operation::put_metric_stream::PutMetricStreamOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutMetricStreamOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

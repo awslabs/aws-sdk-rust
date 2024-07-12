@@ -34,8 +34,8 @@ impl ListDiscoverersOutput {
 }
 
 /// A builder for [`ListDiscoverersOutput`](crate::operation::list_discoverers::ListDiscoverersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDiscoverersOutputBuilder {
     pub(crate) discoverers: ::std::option::Option<::std::vec::Vec<crate::types::DiscovererSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

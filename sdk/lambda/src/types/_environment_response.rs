@@ -35,8 +35,8 @@ impl EnvironmentResponse {
 }
 
 /// A builder for [`EnvironmentResponse`](crate::types::EnvironmentResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct EnvironmentResponseBuilder {
     pub(crate) variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) error: ::std::option::Option<crate::types::EnvironmentError>,

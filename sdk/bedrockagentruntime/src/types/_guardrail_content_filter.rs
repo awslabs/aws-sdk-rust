@@ -42,8 +42,8 @@ impl GuardrailContentFilter {
 }
 
 /// A builder for [`GuardrailContentFilter`](crate::types::GuardrailContentFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GuardrailContentFilterBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::GuardrailContentFilterType>,
     pub(crate) confidence: ::std::option::Option<crate::types::GuardrailContentFilterConfidence>,

@@ -27,8 +27,8 @@ impl DataSourceErrorMessage {
 }
 
 /// A builder for [`DataSourceErrorMessage`](crate::types::DataSourceErrorMessage).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataSourceErrorMessageBuilder {
     pub(crate) error_type: ::std::option::Option<crate::types::DataSourceErrorType>,
     pub(crate) error_detail: ::std::option::Option<::std::string::String>,

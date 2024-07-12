@@ -28,8 +28,8 @@ impl RelevanceFeedback {
 }
 
 /// A builder for [`RelevanceFeedback`](crate::types::RelevanceFeedback).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RelevanceFeedbackBuilder {
     pub(crate) result_id: ::std::option::Option<::std::string::String>,
     pub(crate) relevance_value: ::std::option::Option<crate::types::RelevanceType>,

@@ -20,8 +20,8 @@ impl DeleteSnapshotScheduleInput {
 }
 
 /// A builder for [`DeleteSnapshotScheduleInput`](crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSnapshotScheduleInputBuilder {
     pub(crate) schedule_identifier: ::std::option::Option<::std::string::String>,
 }

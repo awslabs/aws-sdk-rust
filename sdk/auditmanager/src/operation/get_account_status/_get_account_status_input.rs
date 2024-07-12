@@ -11,8 +11,8 @@ impl GetAccountStatusInput {
 }
 
 /// A builder for [`GetAccountStatusInput`](crate::operation::get_account_status::GetAccountStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAccountStatusInputBuilder {}
 impl GetAccountStatusInputBuilder {
     /// Consumes the builder and constructs a [`GetAccountStatusInput`](crate::operation::get_account_status::GetAccountStatusInput).

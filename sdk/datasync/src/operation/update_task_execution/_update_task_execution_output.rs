@@ -18,8 +18,8 @@ impl UpdateTaskExecutionOutput {
 }
 
 /// A builder for [`UpdateTaskExecutionOutput`](crate::operation::update_task_execution::UpdateTaskExecutionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateTaskExecutionOutputBuilder {
     _request_id: Option<String>,
 }

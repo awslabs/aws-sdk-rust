@@ -110,8 +110,8 @@ impl CreateBucketInput {
 }
 
 /// A builder for [`CreateBucketInput`](crate::operation::create_bucket::CreateBucketInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateBucketInputBuilder {
     pub(crate) acl: ::std::option::Option<crate::types::BucketCannedAcl>,
     pub(crate) bucket: ::std::option::Option<::std::string::String>,

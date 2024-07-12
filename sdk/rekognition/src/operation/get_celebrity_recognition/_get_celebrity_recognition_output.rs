@@ -70,8 +70,8 @@ impl GetCelebrityRecognitionOutput {
 }
 
 /// A builder for [`GetCelebrityRecognitionOutput`](crate::operation::get_celebrity_recognition::GetCelebrityRecognitionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCelebrityRecognitionOutputBuilder {
     pub(crate) job_status: ::std::option::Option<crate::types::VideoJobStatus>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,

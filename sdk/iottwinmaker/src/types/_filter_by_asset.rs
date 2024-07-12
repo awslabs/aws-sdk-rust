@@ -39,8 +39,8 @@ impl FilterByAsset {
 }
 
 /// A builder for [`FilterByAsset`](crate::types::FilterByAsset).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FilterByAssetBuilder {
     pub(crate) asset_id: ::std::option::Option<::std::string::String>,
     pub(crate) asset_external_id: ::std::option::Option<::std::string::String>,

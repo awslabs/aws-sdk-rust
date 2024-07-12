@@ -53,8 +53,8 @@ impl Ec2AccessDeniedException {
 }
 
 /// A builder for [`Ec2AccessDeniedException`](crate::types::error::Ec2AccessDeniedException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Ec2AccessDeniedExceptionBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

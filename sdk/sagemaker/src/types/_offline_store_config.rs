@@ -43,8 +43,8 @@ impl OfflineStoreConfig {
 }
 
 /// A builder for [`OfflineStoreConfig`](crate::types::OfflineStoreConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OfflineStoreConfigBuilder {
     pub(crate) s3_storage_config: ::std::option::Option<crate::types::S3StorageConfig>,
     pub(crate) disable_glue_table_creation: ::std::option::Option<bool>,

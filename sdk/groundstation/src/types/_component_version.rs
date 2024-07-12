@@ -29,8 +29,8 @@ impl ComponentVersion {
 }
 
 /// A builder for [`ComponentVersion`](crate::types::ComponentVersion).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ComponentVersionBuilder {
     pub(crate) component_type: ::std::option::Option<::std::string::String>,
     pub(crate) versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

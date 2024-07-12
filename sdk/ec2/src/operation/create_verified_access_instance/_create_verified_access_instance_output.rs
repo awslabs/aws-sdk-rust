@@ -26,8 +26,8 @@ impl CreateVerifiedAccessInstanceOutput {
 }
 
 /// A builder for [`CreateVerifiedAccessInstanceOutput`](crate::operation::create_verified_access_instance::CreateVerifiedAccessInstanceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateVerifiedAccessInstanceOutputBuilder {
     pub(crate) verified_access_instance: ::std::option::Option<crate::types::VerifiedAccessInstance>,
     _request_id: Option<String>,

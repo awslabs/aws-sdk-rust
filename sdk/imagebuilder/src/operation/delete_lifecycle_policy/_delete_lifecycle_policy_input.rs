@@ -20,8 +20,8 @@ impl DeleteLifecyclePolicyInput {
 }
 
 /// A builder for [`DeleteLifecyclePolicyInput`](crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteLifecyclePolicyInputBuilder {
     pub(crate) lifecycle_policy_arn: ::std::option::Option<::std::string::String>,
 }

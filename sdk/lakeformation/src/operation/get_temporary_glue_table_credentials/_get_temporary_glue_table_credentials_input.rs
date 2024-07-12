@@ -60,8 +60,8 @@ impl GetTemporaryGlueTableCredentialsInput {
 }
 
 /// A builder for [`GetTemporaryGlueTableCredentialsInput`](crate::operation::get_temporary_glue_table_credentials::GetTemporaryGlueTableCredentialsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTemporaryGlueTableCredentialsInputBuilder {
     pub(crate) table_arn: ::std::option::Option<::std::string::String>,
     pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,

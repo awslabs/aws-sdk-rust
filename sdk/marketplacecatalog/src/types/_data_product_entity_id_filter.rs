@@ -23,8 +23,8 @@ impl DataProductEntityIdFilter {
 }
 
 /// A builder for [`DataProductEntityIdFilter`](crate::types::DataProductEntityIdFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataProductEntityIdFilterBuilder {
     pub(crate) value_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

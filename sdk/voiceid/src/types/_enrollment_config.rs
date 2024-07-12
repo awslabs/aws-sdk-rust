@@ -27,8 +27,8 @@ impl EnrollmentConfig {
 }
 
 /// A builder for [`EnrollmentConfig`](crate::types::EnrollmentConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnrollmentConfigBuilder {
     pub(crate) existing_enrollment_action: ::std::option::Option<crate::types::ExistingEnrollmentAction>,
     pub(crate) fraud_detection_config: ::std::option::Option<crate::types::EnrollmentJobFraudDetectionConfig>,

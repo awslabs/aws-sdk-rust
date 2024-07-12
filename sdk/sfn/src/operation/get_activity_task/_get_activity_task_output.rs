@@ -41,8 +41,8 @@ impl GetActivityTaskOutput {
 }
 
 /// A builder for [`GetActivityTaskOutput`](crate::operation::get_activity_task::GetActivityTaskOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetActivityTaskOutputBuilder {
     pub(crate) task_token: ::std::option::Option<::std::string::String>,
     pub(crate) input: ::std::option::Option<::std::string::String>,

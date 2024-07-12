@@ -26,8 +26,8 @@ impl CreateSnapshotCopyConfigurationOutput {
 }
 
 /// A builder for [`CreateSnapshotCopyConfigurationOutput`](crate::operation::create_snapshot_copy_configuration::CreateSnapshotCopyConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSnapshotCopyConfigurationOutputBuilder {
     pub(crate) snapshot_copy_configuration: ::std::option::Option<crate::types::SnapshotCopyConfiguration>,
     _request_id: Option<String>,

@@ -40,8 +40,8 @@ impl SwitchoverBlueGreenDeploymentInput {
 }
 
 /// A builder for [`SwitchoverBlueGreenDeploymentInput`](crate::operation::switchover_blue_green_deployment::SwitchoverBlueGreenDeploymentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SwitchoverBlueGreenDeploymentInputBuilder {
     pub(crate) blue_green_deployment_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) switchover_timeout: ::std::option::Option<i32>,

@@ -28,8 +28,8 @@ impl BatchDeleteScheduledActionOutput {
 }
 
 /// A builder for [`BatchDeleteScheduledActionOutput`](crate::operation::batch_delete_scheduled_action::BatchDeleteScheduledActionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDeleteScheduledActionOutputBuilder {
     pub(crate) failed_scheduled_actions: ::std::option::Option<::std::vec::Vec<crate::types::FailedScheduledUpdateGroupActionRequest>>,
     _request_id: Option<String>,

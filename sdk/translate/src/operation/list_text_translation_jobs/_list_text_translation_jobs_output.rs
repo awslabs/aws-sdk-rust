@@ -34,8 +34,8 @@ impl ListTextTranslationJobsOutput {
 }
 
 /// A builder for [`ListTextTranslationJobsOutput`](crate::operation::list_text_translation_jobs::ListTextTranslationJobsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTextTranslationJobsOutputBuilder {
     pub(crate) text_translation_job_properties_list: ::std::option::Option<::std::vec::Vec<crate::types::TextTranslationJobProperties>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

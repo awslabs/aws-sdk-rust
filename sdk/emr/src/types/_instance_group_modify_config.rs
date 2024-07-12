@@ -55,8 +55,8 @@ impl InstanceGroupModifyConfig {
 }
 
 /// A builder for [`InstanceGroupModifyConfig`](crate::types::InstanceGroupModifyConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceGroupModifyConfigBuilder {
     pub(crate) instance_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_count: ::std::option::Option<i32>,

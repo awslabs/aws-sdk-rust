@@ -46,8 +46,8 @@ impl ListAnalysesOutput {
 }
 
 /// A builder for [`ListAnalysesOutput`](crate::operation::list_analyses::ListAnalysesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAnalysesOutputBuilder {
     pub(crate) analysis_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

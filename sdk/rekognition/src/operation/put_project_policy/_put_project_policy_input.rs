@@ -38,8 +38,8 @@ impl PutProjectPolicyInput {
 }
 
 /// A builder for [`PutProjectPolicyInput`](crate::operation::put_project_policy::PutProjectPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutProjectPolicyInputBuilder {
     pub(crate) project_arn: ::std::option::Option<::std::string::String>,
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,

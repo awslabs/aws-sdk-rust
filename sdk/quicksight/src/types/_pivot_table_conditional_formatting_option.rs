@@ -21,8 +21,8 @@ impl PivotTableConditionalFormattingOption {
 }
 
 /// A builder for [`PivotTableConditionalFormattingOption`](crate::types::PivotTableConditionalFormattingOption).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PivotTableConditionalFormattingOptionBuilder {
     pub(crate) cell: ::std::option::Option<crate::types::PivotTableCellConditionalFormatting>,
 }

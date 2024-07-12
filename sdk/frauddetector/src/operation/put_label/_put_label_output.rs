@@ -18,8 +18,8 @@ impl PutLabelOutput {
 }
 
 /// A builder for [`PutLabelOutput`](crate::operation::put_label::PutLabelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutLabelOutputBuilder {
     _request_id: Option<String>,
 }

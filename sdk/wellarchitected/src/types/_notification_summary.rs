@@ -27,8 +27,8 @@ impl NotificationSummary {
 }
 
 /// A builder for [`NotificationSummary`](crate::types::NotificationSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NotificationSummaryBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::NotificationType>,
     pub(crate) lens_upgrade_summary: ::std::option::Option<crate::types::LensUpgradeSummary>,

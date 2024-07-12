@@ -28,8 +28,8 @@ impl Specifications {
 }
 
 /// A builder for [`Specifications`](crate::types::Specifications).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SpecificationsBuilder {
     pub(crate) slot_type_id: ::std::option::Option<::std::string::String>,
     pub(crate) value_elicitation_setting: ::std::option::Option<crate::types::SubSlotValueElicitationSetting>,

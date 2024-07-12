@@ -55,8 +55,8 @@ impl StageState {
 }
 
 /// A builder for [`StageState`](crate::types::StageState).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StageStateBuilder {
     pub(crate) stage_name: ::std::option::Option<::std::string::String>,
     pub(crate) inbound_execution: ::std::option::Option<crate::types::StageExecution>,

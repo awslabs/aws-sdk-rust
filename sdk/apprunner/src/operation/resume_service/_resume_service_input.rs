@@ -20,8 +20,8 @@ impl ResumeServiceInput {
 }
 
 /// A builder for [`ResumeServiceInput`](crate::operation::resume_service::ResumeServiceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResumeServiceInputBuilder {
     pub(crate) service_arn: ::std::option::Option<::std::string::String>,
 }

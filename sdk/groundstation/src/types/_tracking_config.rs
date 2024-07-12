@@ -21,8 +21,8 @@ impl TrackingConfig {
 }
 
 /// A builder for [`TrackingConfig`](crate::types::TrackingConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TrackingConfigBuilder {
     pub(crate) autotrack: ::std::option::Option<crate::types::Criticality>,
 }

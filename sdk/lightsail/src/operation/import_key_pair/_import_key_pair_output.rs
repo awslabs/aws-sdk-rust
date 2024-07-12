@@ -26,8 +26,8 @@ impl ImportKeyPairOutput {
 }
 
 /// A builder for [`ImportKeyPairOutput`](crate::operation::import_key_pair::ImportKeyPairOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportKeyPairOutputBuilder {
     pub(crate) operation: ::std::option::Option<crate::types::Operation>,
     _request_id: Option<String>,

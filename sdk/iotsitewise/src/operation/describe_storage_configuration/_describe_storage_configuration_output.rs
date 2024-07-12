@@ -98,8 +98,8 @@ impl DescribeStorageConfigurationOutput {
 }
 
 /// A builder for [`DescribeStorageConfigurationOutput`](crate::operation::describe_storage_configuration::DescribeStorageConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeStorageConfigurationOutputBuilder {
     pub(crate) storage_type: ::std::option::Option<crate::types::StorageType>,
     pub(crate) multi_layer_storage: ::std::option::Option<crate::types::MultiLayerStorage>,

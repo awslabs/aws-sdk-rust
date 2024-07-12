@@ -18,8 +18,8 @@ impl DeleteCrossAccountAttachmentOutput {
 }
 
 /// A builder for [`DeleteCrossAccountAttachmentOutput`](crate::operation::delete_cross_account_attachment::DeleteCrossAccountAttachmentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCrossAccountAttachmentOutputBuilder {
     _request_id: Option<String>,
 }

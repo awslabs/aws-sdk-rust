@@ -65,8 +65,8 @@ impl ReservedElasticsearchInstanceOffering {
 }
 
 /// A builder for [`ReservedElasticsearchInstanceOffering`](crate::types::ReservedElasticsearchInstanceOffering).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReservedElasticsearchInstanceOfferingBuilder {
     pub(crate) reserved_elasticsearch_instance_offering_id: ::std::option::Option<::std::string::String>,
     pub(crate) elasticsearch_instance_type: ::std::option::Option<crate::types::EsPartitionInstanceType>,

@@ -18,8 +18,8 @@ impl DeleteIntentVersionOutput {
 }
 
 /// A builder for [`DeleteIntentVersionOutput`](crate::operation::delete_intent_version::DeleteIntentVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteIntentVersionOutputBuilder {
     _request_id: Option<String>,
 }

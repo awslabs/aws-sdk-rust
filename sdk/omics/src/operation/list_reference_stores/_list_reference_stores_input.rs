@@ -32,8 +32,8 @@ impl ListReferenceStoresInput {
 }
 
 /// A builder for [`ListReferenceStoresInput`](crate::operation::list_reference_stores::ListReferenceStoresInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListReferenceStoresInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

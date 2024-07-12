@@ -36,8 +36,8 @@ impl DeleteFleetsOutput {
 }
 
 /// A builder for [`DeleteFleetsOutput`](crate::operation::delete_fleets::DeleteFleetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFleetsOutputBuilder {
     pub(crate) successful_fleet_deletions: ::std::option::Option<::std::vec::Vec<crate::types::DeleteFleetSuccessItem>>,
     pub(crate) unsuccessful_fleet_deletions: ::std::option::Option<::std::vec::Vec<crate::types::DeleteFleetErrorItem>>,

@@ -33,8 +33,8 @@ impl CancelSpotFleetRequestsSuccessItem {
 }
 
 /// A builder for [`CancelSpotFleetRequestsSuccessItem`](crate::types::CancelSpotFleetRequestsSuccessItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelSpotFleetRequestsSuccessItemBuilder {
     pub(crate) current_spot_fleet_request_state: ::std::option::Option<crate::types::BatchState>,
     pub(crate) previous_spot_fleet_request_state: ::std::option::Option<crate::types::BatchState>,

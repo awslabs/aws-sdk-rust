@@ -34,8 +34,8 @@ impl ListCertificateAuthoritiesOutput {
 }
 
 /// A builder for [`ListCertificateAuthoritiesOutput`](crate::operation::list_certificate_authorities::ListCertificateAuthoritiesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCertificateAuthoritiesOutputBuilder {
     pub(crate) certificate_authorities: ::std::option::Option<::std::vec::Vec<crate::types::CertificateAuthority>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

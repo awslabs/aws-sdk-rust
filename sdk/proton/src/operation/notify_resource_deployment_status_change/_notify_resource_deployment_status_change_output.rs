@@ -18,8 +18,8 @@ impl NotifyResourceDeploymentStatusChangeOutput {
 }
 
 /// A builder for [`NotifyResourceDeploymentStatusChangeOutput`](crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChangeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NotifyResourceDeploymentStatusChangeOutputBuilder {
     _request_id: Option<String>,
 }

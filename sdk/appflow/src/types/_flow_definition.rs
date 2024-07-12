@@ -105,8 +105,8 @@ impl FlowDefinition {
 }
 
 /// A builder for [`FlowDefinition`](crate::types::FlowDefinition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FlowDefinitionBuilder {
     pub(crate) flow_arn: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

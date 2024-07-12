@@ -26,8 +26,8 @@ impl DetectAnomaliesOutput {
 }
 
 /// A builder for [`DetectAnomaliesOutput`](crate::operation::detect_anomalies::DetectAnomaliesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetectAnomaliesOutputBuilder {
     pub(crate) detect_anomaly_result: ::std::option::Option<crate::types::DetectAnomalyResult>,
     _request_id: Option<String>,

@@ -21,8 +21,8 @@ impl RetrieveDomainAuthCodeInput {
 }
 
 /// A builder for [`RetrieveDomainAuthCodeInput`](crate::operation::retrieve_domain_auth_code::RetrieveDomainAuthCodeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RetrieveDomainAuthCodeInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
 }

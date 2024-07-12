@@ -45,8 +45,8 @@ impl SubtitlesOutput {
 }
 
 /// A builder for [`SubtitlesOutput`](crate::types::SubtitlesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SubtitlesOutputBuilder {
     pub(crate) formats: ::std::option::Option<::std::vec::Vec<crate::types::SubtitleFormat>>,
     pub(crate) subtitle_file_uris: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

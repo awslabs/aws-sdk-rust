@@ -18,8 +18,8 @@ impl CreatePredefinedAttributeOutput {
 }
 
 /// A builder for [`CreatePredefinedAttributeOutput`](crate::operation::create_predefined_attribute::CreatePredefinedAttributeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePredefinedAttributeOutputBuilder {
     _request_id: Option<String>,
 }

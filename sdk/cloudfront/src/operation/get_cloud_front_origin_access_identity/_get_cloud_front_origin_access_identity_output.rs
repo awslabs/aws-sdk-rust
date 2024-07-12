@@ -33,8 +33,8 @@ impl GetCloudFrontOriginAccessIdentityOutput {
 }
 
 /// A builder for [`GetCloudFrontOriginAccessIdentityOutput`](crate::operation::get_cloud_front_origin_access_identity::GetCloudFrontOriginAccessIdentityOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCloudFrontOriginAccessIdentityOutputBuilder {
     pub(crate) cloud_front_origin_access_identity: ::std::option::Option<crate::types::CloudFrontOriginAccessIdentity>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,

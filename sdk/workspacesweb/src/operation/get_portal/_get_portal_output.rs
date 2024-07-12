@@ -26,8 +26,8 @@ impl GetPortalOutput {
 }
 
 /// A builder for [`GetPortalOutput`](crate::operation::get_portal::GetPortalOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPortalOutputBuilder {
     pub(crate) portal: ::std::option::Option<crate::types::Portal>,
     _request_id: Option<String>,

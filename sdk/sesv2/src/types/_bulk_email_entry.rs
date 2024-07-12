@@ -70,8 +70,8 @@ impl BulkEmailEntry {
 }
 
 /// A builder for [`BulkEmailEntry`](crate::types::BulkEmailEntry).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BulkEmailEntryBuilder {
     pub(crate) destination: ::std::option::Option<crate::types::Destination>,
     pub(crate) replacement_tags: ::std::option::Option<::std::vec::Vec<crate::types::MessageTag>>,

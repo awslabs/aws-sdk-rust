@@ -18,8 +18,8 @@ impl UpdateSubscriptionOutput {
 }
 
 /// A builder for [`UpdateSubscriptionOutput`](crate::operation::update_subscription::UpdateSubscriptionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSubscriptionOutputBuilder {
     _request_id: Option<String>,
 }

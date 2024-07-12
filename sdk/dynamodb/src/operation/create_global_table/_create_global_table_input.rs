@@ -28,8 +28,8 @@ impl CreateGlobalTableInput {
 }
 
 /// A builder for [`CreateGlobalTableInput`](crate::operation::create_global_table::CreateGlobalTableInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateGlobalTableInputBuilder {
     pub(crate) global_table_name: ::std::option::Option<::std::string::String>,
     pub(crate) replication_group: ::std::option::Option<::std::vec::Vec<crate::types::Replica>>,

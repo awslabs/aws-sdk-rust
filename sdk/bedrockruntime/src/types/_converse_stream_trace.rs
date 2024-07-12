@@ -21,8 +21,8 @@ impl ConverseStreamTrace {
 }
 
 /// A builder for [`ConverseStreamTrace`](crate::types::ConverseStreamTrace).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConverseStreamTraceBuilder {
     pub(crate) guardrail: ::std::option::Option<crate::types::GuardrailTraceAssessment>,
 }

@@ -26,8 +26,8 @@ impl DeleteApplicationOutput {
 }
 
 /// A builder for [`DeleteApplicationOutput`](crate::operation::delete_application::DeleteApplicationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteApplicationOutputBuilder {
     pub(crate) application: ::std::option::Option<crate::types::ApplicationSummary>,
     _request_id: Option<String>,

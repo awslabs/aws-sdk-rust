@@ -40,8 +40,8 @@ impl RollbackStackInput {
 }
 
 /// A builder for [`RollbackStackInput`](crate::operation::rollback_stack::RollbackStackInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RollbackStackInputBuilder {
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,

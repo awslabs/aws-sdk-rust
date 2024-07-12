@@ -39,8 +39,8 @@ impl GetUpgradeStatusOutput {
 }
 
 /// A builder for [`GetUpgradeStatusOutput`](crate::operation::get_upgrade_status::GetUpgradeStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetUpgradeStatusOutputBuilder {
     pub(crate) upgrade_step: ::std::option::Option<crate::types::UpgradeStep>,
     pub(crate) step_status: ::std::option::Option<crate::types::UpgradeStatus>,

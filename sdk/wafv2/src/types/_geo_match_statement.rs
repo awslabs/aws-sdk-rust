@@ -51,8 +51,8 @@ impl GeoMatchStatement {
 }
 
 /// A builder for [`GeoMatchStatement`](crate::types::GeoMatchStatement).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GeoMatchStatementBuilder {
     pub(crate) country_codes: ::std::option::Option<::std::vec::Vec<crate::types::CountryCode>>,
     pub(crate) forwarded_ip_config: ::std::option::Option<crate::types::ForwardedIpConfig>,

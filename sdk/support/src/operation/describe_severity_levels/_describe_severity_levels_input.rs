@@ -20,8 +20,8 @@ impl DescribeSeverityLevelsInput {
 }
 
 /// A builder for [`DescribeSeverityLevelsInput`](crate::operation::describe_severity_levels::DescribeSeverityLevelsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSeverityLevelsInputBuilder {
     pub(crate) language: ::std::option::Option<::std::string::String>,
 }

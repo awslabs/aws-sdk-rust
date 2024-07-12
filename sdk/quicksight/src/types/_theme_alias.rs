@@ -33,8 +33,8 @@ impl ThemeAlias {
 }
 
 /// A builder for [`ThemeAlias`](crate::types::ThemeAlias).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ThemeAliasBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) alias_name: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl ListSolFunctionPackagesInput {
 }
 
 /// A builder for [`ListSolFunctionPackagesInput`](crate::operation::list_sol_function_packages::ListSolFunctionPackagesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSolFunctionPackagesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

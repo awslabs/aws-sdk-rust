@@ -36,8 +36,8 @@ impl ForecastGeofenceEventsDeviceState {
 }
 
 /// A builder for [`ForecastGeofenceEventsDeviceState`](crate::types::ForecastGeofenceEventsDeviceState).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ForecastGeofenceEventsDeviceStateBuilder {
     pub(crate) position: ::std::option::Option<::std::vec::Vec<f64>>,
     pub(crate) speed: ::std::option::Option<f64>,

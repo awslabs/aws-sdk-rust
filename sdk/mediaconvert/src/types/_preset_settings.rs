@@ -43,8 +43,8 @@ impl PresetSettings {
 }
 
 /// A builder for [`PresetSettings`](crate::types::PresetSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PresetSettingsBuilder {
     pub(crate) audio_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::AudioDescription>>,
     pub(crate) caption_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::CaptionDescriptionPreset>>,

@@ -20,8 +20,8 @@ impl DescribeReturnShippingLabelInput {
 }
 
 /// A builder for [`DescribeReturnShippingLabelInput`](crate::operation::describe_return_shipping_label::DescribeReturnShippingLabelInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeReturnShippingLabelInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }

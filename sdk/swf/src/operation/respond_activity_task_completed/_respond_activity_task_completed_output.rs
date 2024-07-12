@@ -18,8 +18,8 @@ impl RespondActivityTaskCompletedOutput {
 }
 
 /// A builder for [`RespondActivityTaskCompletedOutput`](crate::operation::respond_activity_task_completed::RespondActivityTaskCompletedOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RespondActivityTaskCompletedOutputBuilder {
     _request_id: Option<String>,
 }

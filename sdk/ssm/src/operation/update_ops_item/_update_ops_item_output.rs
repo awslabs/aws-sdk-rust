@@ -18,8 +18,8 @@ impl UpdateOpsItemOutput {
 }
 
 /// A builder for [`UpdateOpsItemOutput`](crate::operation::update_ops_item::UpdateOpsItemOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateOpsItemOutputBuilder {
     _request_id: Option<String>,
 }

@@ -28,8 +28,8 @@ impl TranslatedDocument {
 }
 
 /// A builder for [`TranslatedDocument`](crate::types::TranslatedDocument).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct TranslatedDocumentBuilder {
     pub(crate) content: ::std::option::Option<::aws_smithy_types::Blob>,
 }

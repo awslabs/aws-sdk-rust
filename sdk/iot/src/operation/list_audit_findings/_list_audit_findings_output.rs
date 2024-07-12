@@ -34,8 +34,8 @@ impl ListAuditFindingsOutput {
 }
 
 /// A builder for [`ListAuditFindingsOutput`](crate::operation::list_audit_findings::ListAuditFindingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAuditFindingsOutputBuilder {
     pub(crate) findings: ::std::option::Option<::std::vec::Vec<crate::types::AuditFinding>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

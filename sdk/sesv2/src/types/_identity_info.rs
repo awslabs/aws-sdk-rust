@@ -65,8 +65,8 @@ impl IdentityInfo {
 }
 
 /// A builder for [`IdentityInfo`](crate::types::IdentityInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IdentityInfoBuilder {
     pub(crate) identity_type: ::std::option::Option<crate::types::IdentityType>,
     pub(crate) identity_name: ::std::option::Option<::std::string::String>,

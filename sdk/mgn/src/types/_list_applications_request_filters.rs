@@ -37,8 +37,8 @@ impl ListApplicationsRequestFilters {
 }
 
 /// A builder for [`ListApplicationsRequestFilters`](crate::types::ListApplicationsRequestFilters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListApplicationsRequestFiltersBuilder {
     pub(crate) application_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) is_archived: ::std::option::Option<bool>,

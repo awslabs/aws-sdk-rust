@@ -18,8 +18,8 @@ impl DeleteContactEvaluationOutput {
 }
 
 /// A builder for [`DeleteContactEvaluationOutput`](crate::operation::delete_contact_evaluation::DeleteContactEvaluationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteContactEvaluationOutputBuilder {
     _request_id: Option<String>,
 }

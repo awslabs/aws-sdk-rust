@@ -32,8 +32,8 @@ impl GetDownloadUrlForLayerInput {
 }
 
 /// A builder for [`GetDownloadUrlForLayerInput`](crate::operation::get_download_url_for_layer::GetDownloadUrlForLayerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDownloadUrlForLayerInputBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,

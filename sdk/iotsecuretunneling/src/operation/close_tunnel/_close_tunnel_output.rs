@@ -18,8 +18,8 @@ impl CloseTunnelOutput {
 }
 
 /// A builder for [`CloseTunnelOutput`](crate::operation::close_tunnel::CloseTunnelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CloseTunnelOutputBuilder {
     _request_id: Option<String>,
 }

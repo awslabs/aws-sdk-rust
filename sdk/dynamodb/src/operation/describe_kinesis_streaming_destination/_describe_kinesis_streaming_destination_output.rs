@@ -34,8 +34,8 @@ impl DescribeKinesisStreamingDestinationOutput {
 }
 
 /// A builder for [`DescribeKinesisStreamingDestinationOutput`](crate::operation::describe_kinesis_streaming_destination::DescribeKinesisStreamingDestinationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeKinesisStreamingDestinationOutputBuilder {
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
     pub(crate) kinesis_data_stream_destinations: ::std::option::Option<::std::vec::Vec<crate::types::KinesisDataStreamDestination>>,

@@ -27,8 +27,8 @@ impl ChannelStorage {
 }
 
 /// A builder for [`ChannelStorage`](crate::types::ChannelStorage).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ChannelStorageBuilder {
     pub(crate) service_managed_s3: ::std::option::Option<crate::types::ServiceManagedChannelS3Storage>,
     pub(crate) customer_managed_s3: ::std::option::Option<crate::types::CustomerManagedChannelS3Storage>,

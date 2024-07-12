@@ -18,8 +18,8 @@ impl DeleteDashboardsOutput {
 }
 
 /// A builder for [`DeleteDashboardsOutput`](crate::operation::delete_dashboards::DeleteDashboardsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDashboardsOutputBuilder {
     _request_id: Option<String>,
 }

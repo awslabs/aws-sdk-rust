@@ -32,8 +32,8 @@ impl DeleteVerifiedAccessGroupInput {
 }
 
 /// A builder for [`DeleteVerifiedAccessGroupInput`](crate::operation::delete_verified_access_group::DeleteVerifiedAccessGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVerifiedAccessGroupInputBuilder {
     pub(crate) verified_access_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

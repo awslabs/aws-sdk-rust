@@ -33,8 +33,8 @@ impl ResetCacheParameterGroupOutput {
 }
 
 /// A builder for [`ResetCacheParameterGroupOutput`](crate::operation::reset_cache_parameter_group::ResetCacheParameterGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResetCacheParameterGroupOutputBuilder {
     pub(crate) cache_parameter_group_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

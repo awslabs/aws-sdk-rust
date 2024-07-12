@@ -41,8 +41,8 @@ impl RejectPredictionsOutput {
 }
 
 /// A builder for [`RejectPredictionsOutput`](crate::operation::reject_predictions::RejectPredictionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RejectPredictionsOutputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) asset_id: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl DescribeMatchmakingRuleSetsOutput {
 }
 
 /// A builder for [`DescribeMatchmakingRuleSetsOutput`](crate::operation::describe_matchmaking_rule_sets::DescribeMatchmakingRuleSetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeMatchmakingRuleSetsOutputBuilder {
     pub(crate) rule_sets: ::std::option::Option<::std::vec::Vec<crate::types::MatchmakingRuleSet>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -73,8 +73,8 @@ impl UpdateChannelMessageInput {
 }
 
 /// A builder for [`UpdateChannelMessageInput`](crate::operation::update_channel_message::UpdateChannelMessageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateChannelMessageInputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) message_id: ::std::option::Option<::std::string::String>,

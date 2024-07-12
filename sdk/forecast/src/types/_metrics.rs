@@ -45,8 +45,8 @@ impl Metrics {
 }
 
 /// A builder for [`Metrics`](crate::types::Metrics).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MetricsBuilder {
     pub(crate) rmse: ::std::option::Option<f64>,
     pub(crate) weighted_quantile_losses: ::std::option::Option<::std::vec::Vec<crate::types::WeightedQuantileLoss>>,

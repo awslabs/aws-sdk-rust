@@ -27,8 +27,8 @@ impl FirewallManagerStatement {
 }
 
 /// A builder for [`FirewallManagerStatement`](crate::types::FirewallManagerStatement).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FirewallManagerStatementBuilder {
     pub(crate) managed_rule_group_statement: ::std::option::Option<crate::types::ManagedRuleGroupStatement>,
     pub(crate) rule_group_reference_statement: ::std::option::Option<crate::types::RuleGroupReferenceStatement>,

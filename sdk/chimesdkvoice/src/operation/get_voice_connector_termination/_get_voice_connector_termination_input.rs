@@ -20,8 +20,8 @@ impl GetVoiceConnectorTerminationInput {
 }
 
 /// A builder for [`GetVoiceConnectorTerminationInput`](crate::operation::get_voice_connector_termination::GetVoiceConnectorTerminationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetVoiceConnectorTerminationInputBuilder {
     pub(crate) voice_connector_id: ::std::option::Option<::std::string::String>,
 }

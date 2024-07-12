@@ -48,8 +48,8 @@ impl RemoveAttributesInput {
 }
 
 /// A builder for [`RemoveAttributesInput`](crate::operation::remove_attributes::RemoveAttributesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoveAttributesInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) attribute_type: ::std::option::Option<::std::string::String>,

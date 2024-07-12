@@ -45,8 +45,8 @@ impl TransitGatewayAttachmentBgpConfiguration {
 }
 
 /// A builder for [`TransitGatewayAttachmentBgpConfiguration`](crate::types::TransitGatewayAttachmentBgpConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TransitGatewayAttachmentBgpConfigurationBuilder {
     pub(crate) transit_gateway_asn: ::std::option::Option<i64>,
     pub(crate) peer_asn: ::std::option::Option<i64>,

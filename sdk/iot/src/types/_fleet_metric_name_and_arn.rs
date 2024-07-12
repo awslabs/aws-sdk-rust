@@ -27,8 +27,8 @@ impl FleetMetricNameAndArn {
 }
 
 /// A builder for [`FleetMetricNameAndArn`](crate::types::FleetMetricNameAndArn).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FleetMetricNameAndArnBuilder {
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
     pub(crate) metric_arn: ::std::option::Option<::std::string::String>,

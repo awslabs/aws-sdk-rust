@@ -27,8 +27,8 @@ impl DatabasePreferences {
 }
 
 /// A builder for [`DatabasePreferences`](crate::types::DatabasePreferences).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DatabasePreferencesBuilder {
     pub(crate) database_management_preference: ::std::option::Option<crate::types::DatabaseManagementPreference>,
     pub(crate) database_migration_preference: ::std::option::Option<crate::types::DatabaseMigrationPreference>,

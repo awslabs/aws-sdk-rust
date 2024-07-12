@@ -32,8 +32,8 @@ impl UpdateAssessmentTargetInput {
 }
 
 /// A builder for [`UpdateAssessmentTargetInput`](crate::operation::update_assessment_target::UpdateAssessmentTargetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAssessmentTargetInputBuilder {
     pub(crate) assessment_target_arn: ::std::option::Option<::std::string::String>,
     pub(crate) assessment_target_name: ::std::option::Option<::std::string::String>,

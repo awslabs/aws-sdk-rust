@@ -28,8 +28,8 @@ impl PostProcessingParsedResponse {
 }
 
 /// A builder for [`PostProcessingParsedResponse`](crate::types::PostProcessingParsedResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PostProcessingParsedResponseBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
 }

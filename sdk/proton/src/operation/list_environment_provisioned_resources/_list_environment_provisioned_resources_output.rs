@@ -33,8 +33,8 @@ impl ListEnvironmentProvisionedResourcesOutput {
 }
 
 /// A builder for [`ListEnvironmentProvisionedResourcesOutput`](crate::operation::list_environment_provisioned_resources::ListEnvironmentProvisionedResourcesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEnvironmentProvisionedResourcesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) provisioned_resources: ::std::option::Option<::std::vec::Vec<crate::types::ProvisionedResource>>,

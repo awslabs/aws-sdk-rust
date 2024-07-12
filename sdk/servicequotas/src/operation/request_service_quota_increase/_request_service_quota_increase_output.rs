@@ -26,8 +26,8 @@ impl RequestServiceQuotaIncreaseOutput {
 }
 
 /// A builder for [`RequestServiceQuotaIncreaseOutput`](crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RequestServiceQuotaIncreaseOutputBuilder {
     pub(crate) requested_quota: ::std::option::Option<crate::types::RequestedServiceQuotaChange>,
     _request_id: Option<String>,

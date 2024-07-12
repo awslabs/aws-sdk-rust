@@ -48,8 +48,8 @@ impl AssociateTargetsWithJobInput {
 }
 
 /// A builder for [`AssociateTargetsWithJobInput`](crate::operation::associate_targets_with_job::AssociateTargetsWithJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateTargetsWithJobInputBuilder {
     pub(crate) targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) job_id: ::std::option::Option<::std::string::String>,

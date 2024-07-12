@@ -45,8 +45,8 @@ impl CheckDnsAvailabilityOutput {
 }
 
 /// A builder for [`CheckDnsAvailabilityOutput`](crate::operation::check_dns_availability::CheckDnsAvailabilityOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CheckDnsAvailabilityOutputBuilder {
     pub(crate) available: ::std::option::Option<bool>,
     pub(crate) fully_qualified_cname: ::std::option::Option<::std::string::String>,

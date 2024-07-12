@@ -73,8 +73,8 @@ impl DescribeStateMachineAliasOutput {
 }
 
 /// A builder for [`DescribeStateMachineAliasOutput`](crate::operation::describe_state_machine_alias::DescribeStateMachineAliasOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DescribeStateMachineAliasOutputBuilder {
     pub(crate) state_machine_alias_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

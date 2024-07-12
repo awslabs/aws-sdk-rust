@@ -26,8 +26,8 @@ impl DeleteVariantStoreInput {
 }
 
 /// A builder for [`DeleteVariantStoreInput`](crate::operation::delete_variant_store::DeleteVariantStoreInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVariantStoreInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) force: ::std::option::Option<bool>,

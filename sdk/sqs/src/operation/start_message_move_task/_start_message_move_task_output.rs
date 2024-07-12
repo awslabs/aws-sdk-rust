@@ -26,8 +26,8 @@ impl StartMessageMoveTaskOutput {
 }
 
 /// A builder for [`StartMessageMoveTaskOutput`](crate::operation::start_message_move_task::StartMessageMoveTaskOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartMessageMoveTaskOutputBuilder {
     pub(crate) task_handle: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

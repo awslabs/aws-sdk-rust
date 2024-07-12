@@ -32,8 +32,8 @@ impl DisassociateIdentityProviderConfigInput {
 }
 
 /// A builder for [`DisassociateIdentityProviderConfigInput`](crate::operation::disassociate_identity_provider_config::DisassociateIdentityProviderConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateIdentityProviderConfigInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) identity_provider_config: ::std::option::Option<crate::types::IdentityProviderConfig>,

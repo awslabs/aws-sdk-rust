@@ -21,8 +21,8 @@ impl RetryPolicyExecution {
 }
 
 /// A builder for [`RetryPolicyExecution`](crate::types::RetryPolicyExecution).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RetryPolicyExecutionBuilder {
     pub(crate) current_attempt_count: ::std::option::Option<i32>,
 }

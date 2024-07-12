@@ -40,8 +40,8 @@ impl UpdateLibraryItemInput {
 }
 
 /// A builder for [`UpdateLibraryItemInput`](crate::operation::update_library_item::UpdateLibraryItemInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateLibraryItemInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) library_item_id: ::std::option::Option<::std::string::String>,

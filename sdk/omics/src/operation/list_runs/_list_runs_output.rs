@@ -34,8 +34,8 @@ impl ListRunsOutput {
 }
 
 /// A builder for [`ListRunsOutput`](crate::operation::list_runs::ListRunsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRunsOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::RunListItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl ResetPersonalPinOutput {
 }
 
 /// A builder for [`ResetPersonalPinOutput`](crate::operation::reset_personal_pin::ResetPersonalPinOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResetPersonalPinOutputBuilder {
     pub(crate) user: ::std::option::Option<crate::types::User>,
     _request_id: Option<String>,

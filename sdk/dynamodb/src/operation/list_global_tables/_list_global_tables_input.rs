@@ -34,8 +34,8 @@ impl ListGlobalTablesInput {
 }
 
 /// A builder for [`ListGlobalTablesInput`](crate::operation::list_global_tables::ListGlobalTablesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListGlobalTablesInputBuilder {
     pub(crate) exclusive_start_global_table_name: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,

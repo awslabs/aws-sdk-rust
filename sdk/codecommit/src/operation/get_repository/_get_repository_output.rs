@@ -27,8 +27,8 @@ impl GetRepositoryOutput {
 }
 
 /// A builder for [`GetRepositoryOutput`](crate::operation::get_repository::GetRepositoryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRepositoryOutputBuilder {
     pub(crate) repository_metadata: ::std::option::Option<crate::types::RepositoryMetadata>,
     _request_id: Option<String>,

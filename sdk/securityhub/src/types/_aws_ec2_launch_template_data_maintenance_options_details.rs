@@ -21,8 +21,8 @@ impl AwsEc2LaunchTemplateDataMaintenanceOptionsDetails {
 }
 
 /// A builder for [`AwsEc2LaunchTemplateDataMaintenanceOptionsDetails`](crate::types::AwsEc2LaunchTemplateDataMaintenanceOptionsDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEc2LaunchTemplateDataMaintenanceOptionsDetailsBuilder {
     pub(crate) auto_recovery: ::std::option::Option<::std::string::String>,
 }

@@ -21,8 +21,8 @@ impl ClusterOperationStepInfo {
 }
 
 /// A builder for [`ClusterOperationStepInfo`](crate::types::ClusterOperationStepInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ClusterOperationStepInfoBuilder {
     pub(crate) step_status: ::std::option::Option<::std::string::String>,
 }

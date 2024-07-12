@@ -21,8 +21,8 @@ impl NetworkFirewallPolicy {
 }
 
 /// A builder for [`NetworkFirewallPolicy`](crate::types::NetworkFirewallPolicy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NetworkFirewallPolicyBuilder {
     pub(crate) firewall_deployment_model: ::std::option::Option<crate::types::FirewallDeploymentModel>,
 }

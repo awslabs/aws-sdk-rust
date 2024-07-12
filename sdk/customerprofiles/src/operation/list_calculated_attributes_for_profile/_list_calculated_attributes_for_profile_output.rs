@@ -34,8 +34,8 @@ impl ListCalculatedAttributesForProfileOutput {
 }
 
 /// A builder for [`ListCalculatedAttributesForProfileOutput`](crate::operation::list_calculated_attributes_for_profile::ListCalculatedAttributesForProfileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCalculatedAttributesForProfileOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ListCalculatedAttributeForProfileItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

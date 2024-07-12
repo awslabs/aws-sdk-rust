@@ -34,8 +34,8 @@ impl ListModelExplainabilityJobDefinitionsOutput {
 }
 
 /// A builder for [`ListModelExplainabilityJobDefinitionsOutput`](crate::operation::list_model_explainability_job_definitions::ListModelExplainabilityJobDefinitionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListModelExplainabilityJobDefinitionsOutputBuilder {
     pub(crate) job_definition_summaries: ::std::option::Option<::std::vec::Vec<crate::types::MonitoringJobDefinitionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

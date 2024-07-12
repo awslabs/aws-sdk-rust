@@ -27,8 +27,8 @@ impl TimestampColumn {
 }
 
 /// A builder for [`TimestampColumn`](crate::types::TimestampColumn).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TimestampColumnBuilder {
     pub(crate) column_name: ::std::option::Option<::std::string::String>,
     pub(crate) column_format: ::std::option::Option<::std::string::String>,

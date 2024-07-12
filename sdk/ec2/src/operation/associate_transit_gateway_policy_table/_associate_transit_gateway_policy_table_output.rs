@@ -26,8 +26,8 @@ impl AssociateTransitGatewayPolicyTableOutput {
 }
 
 /// A builder for [`AssociateTransitGatewayPolicyTableOutput`](crate::operation::associate_transit_gateway_policy_table::AssociateTransitGatewayPolicyTableOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateTransitGatewayPolicyTableOutputBuilder {
     pub(crate) association: ::std::option::Option<crate::types::TransitGatewayPolicyTableAssociation>,
     _request_id: Option<String>,

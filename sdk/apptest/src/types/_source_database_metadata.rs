@@ -27,8 +27,8 @@ impl SourceDatabaseMetadata {
 }
 
 /// A builder for [`SourceDatabaseMetadata`](crate::types::SourceDatabaseMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SourceDatabaseMetadataBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::SourceDatabase>,
     pub(crate) capture_tool: ::std::option::Option<crate::types::CaptureTool>,

@@ -110,8 +110,8 @@ impl DescribeMlflowTrackingServerOutput {
 }
 
 /// A builder for [`DescribeMlflowTrackingServerOutput`](crate::operation::describe_mlflow_tracking_server::DescribeMlflowTrackingServerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeMlflowTrackingServerOutputBuilder {
     pub(crate) tracking_server_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tracking_server_name: ::std::option::Option<::std::string::String>,

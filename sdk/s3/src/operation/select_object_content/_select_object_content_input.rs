@@ -153,8 +153,8 @@ impl SelectObjectContentInput {
 }
 
 /// A builder for [`SelectObjectContentInput`](crate::operation::select_object_content::SelectObjectContentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SelectObjectContentInputBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) key: ::std::option::Option<::std::string::String>,

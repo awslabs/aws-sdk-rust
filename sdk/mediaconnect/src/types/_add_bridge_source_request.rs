@@ -27,8 +27,8 @@ impl AddBridgeSourceRequest {
 }
 
 /// A builder for [`AddBridgeSourceRequest`](crate::types::AddBridgeSourceRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddBridgeSourceRequestBuilder {
     pub(crate) flow_source: ::std::option::Option<crate::types::AddBridgeFlowSourceRequest>,
     pub(crate) network_source: ::std::option::Option<crate::types::AddBridgeNetworkSourceRequest>,

@@ -31,8 +31,8 @@ impl RecommendationJobVpcConfig {
 }
 
 /// A builder for [`RecommendationJobVpcConfig`](crate::types::RecommendationJobVpcConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecommendationJobVpcConfigBuilder {
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

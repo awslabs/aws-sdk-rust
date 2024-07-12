@@ -43,8 +43,8 @@ impl SearchChannelsOutput {
 }
 
 /// A builder for [`SearchChannelsOutput`](crate::operation::search_channels::SearchChannelsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SearchChannelsOutputBuilder {
     pub(crate) channels: ::std::option::Option<::std::vec::Vec<crate::types::ChannelSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

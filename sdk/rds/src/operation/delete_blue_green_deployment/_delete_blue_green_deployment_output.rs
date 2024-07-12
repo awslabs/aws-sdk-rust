@@ -28,8 +28,8 @@ impl DeleteBlueGreenDeploymentOutput {
 }
 
 /// A builder for [`DeleteBlueGreenDeploymentOutput`](crate::operation::delete_blue_green_deployment::DeleteBlueGreenDeploymentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteBlueGreenDeploymentOutputBuilder {
     pub(crate) blue_green_deployment: ::std::option::Option<crate::types::BlueGreenDeployment>,
     _request_id: Option<String>,

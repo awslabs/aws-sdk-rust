@@ -26,8 +26,8 @@ impl DescribeEngineDefaultParametersOutput {
 }
 
 /// A builder for [`DescribeEngineDefaultParametersOutput`](crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParametersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEngineDefaultParametersOutputBuilder {
     pub(crate) engine_defaults: ::std::option::Option<crate::types::EngineDefaults>,
     _request_id: Option<String>,

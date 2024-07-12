@@ -28,8 +28,8 @@ impl ListCuratedEnvironmentImagesOutput {
 }
 
 /// A builder for [`ListCuratedEnvironmentImagesOutput`](crate::operation::list_curated_environment_images::ListCuratedEnvironmentImagesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCuratedEnvironmentImagesOutputBuilder {
     pub(crate) platforms: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentPlatform>>,
     _request_id: Option<String>,

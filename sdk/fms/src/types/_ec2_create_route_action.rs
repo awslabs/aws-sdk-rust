@@ -57,8 +57,8 @@ impl Ec2CreateRouteAction {
 }
 
 /// A builder for [`Ec2CreateRouteAction`](crate::types::Ec2CreateRouteAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Ec2CreateRouteActionBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) destination_cidr_block: ::std::option::Option<::std::string::String>,

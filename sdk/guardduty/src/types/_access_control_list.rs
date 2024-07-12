@@ -27,8 +27,8 @@ impl AccessControlList {
 }
 
 /// A builder for [`AccessControlList`](crate::types::AccessControlList).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AccessControlListBuilder {
     pub(crate) allows_public_read_access: ::std::option::Option<bool>,
     pub(crate) allows_public_write_access: ::std::option::Option<bool>,

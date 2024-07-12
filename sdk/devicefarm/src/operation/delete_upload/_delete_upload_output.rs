@@ -19,8 +19,8 @@ impl DeleteUploadOutput {
 }
 
 /// A builder for [`DeleteUploadOutput`](crate::operation::delete_upload::DeleteUploadOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteUploadOutputBuilder {
     _request_id: Option<String>,
 }

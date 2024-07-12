@@ -34,8 +34,8 @@ impl ListResourceScansOutput {
 }
 
 /// A builder for [`ListResourceScansOutput`](crate::operation::list_resource_scans::ListResourceScansOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListResourceScansOutputBuilder {
     pub(crate) resource_scan_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ResourceScanSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

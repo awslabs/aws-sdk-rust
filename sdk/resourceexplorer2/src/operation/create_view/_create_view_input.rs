@@ -74,8 +74,8 @@ impl CreateViewInput {
 }
 
 /// A builder for [`CreateViewInput`](crate::operation::create_view::CreateViewInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateViewInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) view_name: ::std::option::Option<::std::string::String>,

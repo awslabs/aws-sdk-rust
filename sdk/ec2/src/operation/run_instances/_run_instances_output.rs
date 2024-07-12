@@ -55,8 +55,8 @@ impl RunInstancesOutput {
 }
 
 /// A builder for [`RunInstancesOutput`](crate::operation::run_instances::RunInstancesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RunInstancesOutputBuilder {
     pub(crate) groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>,
     pub(crate) instances: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,

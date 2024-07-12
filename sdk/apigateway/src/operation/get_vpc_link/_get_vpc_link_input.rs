@@ -21,8 +21,8 @@ impl GetVpcLinkInput {
 }
 
 /// A builder for [`GetVpcLinkInput`](crate::operation::get_vpc_link::GetVpcLinkInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetVpcLinkInputBuilder {
     pub(crate) vpc_link_id: ::std::option::Option<::std::string::String>,
 }

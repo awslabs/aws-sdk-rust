@@ -33,8 +33,8 @@ impl ListFlowAliasesOutput {
 }
 
 /// A builder for [`ListFlowAliasesOutput`](crate::operation::list_flow_aliases::ListFlowAliasesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFlowAliasesOutputBuilder {
     pub(crate) flow_alias_summaries: ::std::option::Option<::std::vec::Vec<crate::types::FlowAliasSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -32,8 +32,8 @@ impl DescribeAnomalyOutput {
 }
 
 /// A builder for [`DescribeAnomalyOutput`](crate::operation::describe_anomaly::DescribeAnomalyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAnomalyOutputBuilder {
     pub(crate) proactive_anomaly: ::std::option::Option<crate::types::ProactiveAnomaly>,
     pub(crate) reactive_anomaly: ::std::option::Option<crate::types::ReactiveAnomaly>,

@@ -39,8 +39,8 @@ impl InstanceEventWindowAssociationTarget {
 }
 
 /// A builder for [`InstanceEventWindowAssociationTarget`](crate::types::InstanceEventWindowAssociationTarget).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceEventWindowAssociationTargetBuilder {
     pub(crate) instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,

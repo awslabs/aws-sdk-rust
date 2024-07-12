@@ -146,8 +146,8 @@ impl UpdateConstraintInput {
 }
 
 /// A builder for [`UpdateConstraintInput`](crate::operation::update_constraint::UpdateConstraintInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateConstraintInputBuilder {
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,

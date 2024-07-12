@@ -39,8 +39,8 @@ impl CompletionReport {
 }
 
 /// A builder for [`CompletionReport`](crate::types::CompletionReport).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CompletionReportBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) path: ::std::option::Option<::std::string::String>,

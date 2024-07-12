@@ -20,8 +20,8 @@ impl DeregisterElasticIpInput {
 }
 
 /// A builder for [`DeregisterElasticIpInput`](crate::operation::deregister_elastic_ip::DeregisterElasticIpInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeregisterElasticIpInputBuilder {
     pub(crate) elastic_ip: ::std::option::Option<::std::string::String>,
 }

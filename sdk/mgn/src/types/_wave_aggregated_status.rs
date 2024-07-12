@@ -45,8 +45,8 @@ impl WaveAggregatedStatus {
 }
 
 /// A builder for [`WaveAggregatedStatus`](crate::types::WaveAggregatedStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WaveAggregatedStatusBuilder {
     pub(crate) last_update_date_time: ::std::option::Option<::std::string::String>,
     pub(crate) replication_started_date_time: ::std::option::Option<::std::string::String>,

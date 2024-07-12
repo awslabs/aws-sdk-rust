@@ -33,8 +33,8 @@ impl NotificationDetails {
 }
 
 /// A builder for [`NotificationDetails`](crate::types::NotificationDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NotificationDetailsBuilder {
     pub(crate) data_update: ::std::option::Option<crate::types::DataUpdateRequestDetails>,
     pub(crate) deprecation: ::std::option::Option<crate::types::DeprecationRequestDetails>,

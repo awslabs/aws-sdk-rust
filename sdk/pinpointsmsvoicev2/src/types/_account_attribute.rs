@@ -28,8 +28,8 @@ impl AccountAttribute {
 }
 
 /// A builder for [`AccountAttribute`](crate::types::AccountAttribute).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AccountAttributeBuilder {
     pub(crate) name: ::std::option::Option<crate::types::AccountAttributeName>,
     pub(crate) value: ::std::option::Option<::std::string::String>,

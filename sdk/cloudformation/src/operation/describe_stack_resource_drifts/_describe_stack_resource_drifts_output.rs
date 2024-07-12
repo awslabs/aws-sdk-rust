@@ -36,8 +36,8 @@ impl DescribeStackResourceDriftsOutput {
 }
 
 /// A builder for [`DescribeStackResourceDriftsOutput`](crate::operation::describe_stack_resource_drifts::DescribeStackResourceDriftsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeStackResourceDriftsOutputBuilder {
     pub(crate) stack_resource_drifts: ::std::option::Option<::std::vec::Vec<crate::types::StackResourceDrift>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

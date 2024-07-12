@@ -45,8 +45,8 @@ impl CreateLoginProfileInput {
 }
 
 /// A builder for [`CreateLoginProfileInput`](crate::operation::create_login_profile::CreateLoginProfileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateLoginProfileInputBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) password: ::std::option::Option<::std::string::String>,

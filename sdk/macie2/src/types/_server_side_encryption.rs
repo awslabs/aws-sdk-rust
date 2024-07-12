@@ -27,8 +27,8 @@ impl ServerSideEncryption {
 }
 
 /// A builder for [`ServerSideEncryption`](crate::types::ServerSideEncryption).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServerSideEncryptionBuilder {
     pub(crate) encryption_type: ::std::option::Option<crate::types::EncryptionType>,
     pub(crate) kms_master_key_id: ::std::option::Option<::std::string::String>,

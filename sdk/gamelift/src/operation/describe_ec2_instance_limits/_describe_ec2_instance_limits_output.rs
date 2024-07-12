@@ -28,8 +28,8 @@ impl DescribeEc2InstanceLimitsOutput {
 }
 
 /// A builder for [`DescribeEc2InstanceLimitsOutput`](crate::operation::describe_ec2_instance_limits::DescribeEc2InstanceLimitsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEc2InstanceLimitsOutputBuilder {
     pub(crate) ec2_instance_limits: ::std::option::Option<::std::vec::Vec<crate::types::Ec2InstanceLimit>>,
     _request_id: Option<String>,

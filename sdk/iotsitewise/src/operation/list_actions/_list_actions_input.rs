@@ -38,8 +38,8 @@ impl ListActionsInput {
 }
 
 /// A builder for [`ListActionsInput`](crate::operation::list_actions::ListActionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListActionsInputBuilder {
     pub(crate) target_resource_type: ::std::option::Option<crate::types::TargetResourceType>,
     pub(crate) target_resource_id: ::std::option::Option<::std::string::String>,

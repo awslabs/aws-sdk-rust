@@ -26,8 +26,8 @@ impl CompleteSnapshotOutput {
 }
 
 /// A builder for [`CompleteSnapshotOutput`](crate::operation::complete_snapshot::CompleteSnapshotOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CompleteSnapshotOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::Status>,
     _request_id: Option<String>,

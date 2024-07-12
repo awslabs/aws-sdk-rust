@@ -18,8 +18,8 @@ impl DeleteAppValidationConfigurationOutput {
 }
 
 /// A builder for [`DeleteAppValidationConfigurationOutput`](crate::operation::delete_app_validation_configuration::DeleteAppValidationConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAppValidationConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

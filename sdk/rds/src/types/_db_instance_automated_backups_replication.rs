@@ -21,8 +21,8 @@ impl DbInstanceAutomatedBackupsReplication {
 }
 
 /// A builder for [`DbInstanceAutomatedBackupsReplication`](crate::types::DbInstanceAutomatedBackupsReplication).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DbInstanceAutomatedBackupsReplicationBuilder {
     pub(crate) db_instance_automated_backups_arn: ::std::option::Option<::std::string::String>,
 }

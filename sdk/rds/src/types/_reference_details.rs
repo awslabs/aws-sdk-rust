@@ -21,8 +21,8 @@ impl ReferenceDetails {
 }
 
 /// A builder for [`ReferenceDetails`](crate::types::ReferenceDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReferenceDetailsBuilder {
     pub(crate) scalar_reference_details: ::std::option::Option<crate::types::ScalarReferenceDetails>,
 }

@@ -74,8 +74,8 @@ impl ListSubscriptionsInput {
 }
 
 /// A builder for [`ListSubscriptionsInput`](crate::operation::list_subscriptions::ListSubscriptionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSubscriptionsInputBuilder {
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) subscription_request_identifier: ::std::option::Option<::std::string::String>,

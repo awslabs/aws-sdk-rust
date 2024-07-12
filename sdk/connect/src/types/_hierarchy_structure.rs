@@ -45,8 +45,8 @@ impl HierarchyStructure {
 }
 
 /// A builder for [`HierarchyStructure`](crate::types::HierarchyStructure).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HierarchyStructureBuilder {
     pub(crate) level_one: ::std::option::Option<crate::types::HierarchyLevel>,
     pub(crate) level_two: ::std::option::Option<crate::types::HierarchyLevel>,

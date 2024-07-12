@@ -36,8 +36,8 @@ impl BatchGetStreamKeyOutput {
 }
 
 /// A builder for [`BatchGetStreamKeyOutput`](crate::operation::batch_get_stream_key::BatchGetStreamKeyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetStreamKeyOutputBuilder {
     pub(crate) stream_keys: ::std::option::Option<::std::vec::Vec<crate::types::StreamKey>>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchError>>,

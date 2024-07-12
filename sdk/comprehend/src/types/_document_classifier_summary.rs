@@ -45,8 +45,8 @@ impl DocumentClassifierSummary {
 }
 
 /// A builder for [`DocumentClassifierSummary`](crate::types::DocumentClassifierSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DocumentClassifierSummaryBuilder {
     pub(crate) document_classifier_name: ::std::option::Option<::std::string::String>,
     pub(crate) number_of_versions: ::std::option::Option<i32>,

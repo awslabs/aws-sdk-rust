@@ -18,8 +18,8 @@ impl PutMetricAlarmOutput {
 }
 
 /// A builder for [`PutMetricAlarmOutput`](crate::operation::put_metric_alarm::PutMetricAlarmOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutMetricAlarmOutputBuilder {
     _request_id: Option<String>,
 }

@@ -20,8 +20,8 @@ impl SetIdentityHeadersInNotificationsEnabledOutput {
 }
 
 /// A builder for [`SetIdentityHeadersInNotificationsEnabledOutput`](crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabledOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetIdentityHeadersInNotificationsEnabledOutputBuilder {
     _request_id: Option<String>,
 }

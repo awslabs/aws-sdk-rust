@@ -34,8 +34,8 @@ impl DescribeInstancePropertiesOutput {
 }
 
 /// A builder for [`DescribeInstancePropertiesOutput`](crate::operation::describe_instance_properties::DescribeInstancePropertiesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeInstancePropertiesOutputBuilder {
     pub(crate) instance_properties: ::std::option::Option<::std::vec::Vec<crate::types::InstanceProperty>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -44,8 +44,8 @@ impl ListSourceServerActionsInput {
 }
 
 /// A builder for [`ListSourceServerActionsInput`](crate::operation::list_source_server_actions::ListSourceServerActionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSourceServerActionsInputBuilder {
     pub(crate) source_server_id: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<crate::types::SourceServerActionsRequestFilters>,

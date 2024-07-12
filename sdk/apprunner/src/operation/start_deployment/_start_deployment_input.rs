@@ -20,8 +20,8 @@ impl StartDeploymentInput {
 }
 
 /// A builder for [`StartDeploymentInput`](crate::operation::start_deployment::StartDeploymentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartDeploymentInputBuilder {
     pub(crate) service_arn: ::std::option::Option<::std::string::String>,
 }

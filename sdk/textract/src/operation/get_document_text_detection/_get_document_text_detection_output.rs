@@ -66,8 +66,8 @@ impl GetDocumentTextDetectionOutput {
 }
 
 /// A builder for [`GetDocumentTextDetectionOutput`](crate::operation::get_document_text_detection::GetDocumentTextDetectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDocumentTextDetectionOutputBuilder {
     pub(crate) document_metadata: ::std::option::Option<crate::types::DocumentMetadata>,
     pub(crate) job_status: ::std::option::Option<crate::types::JobStatus>,

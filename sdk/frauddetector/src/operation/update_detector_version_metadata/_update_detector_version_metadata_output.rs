@@ -18,8 +18,8 @@ impl UpdateDetectorVersionMetadataOutput {
 }
 
 /// A builder for [`UpdateDetectorVersionMetadataOutput`](crate::operation::update_detector_version_metadata::UpdateDetectorVersionMetadataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDetectorVersionMetadataOutputBuilder {
     _request_id: Option<String>,
 }

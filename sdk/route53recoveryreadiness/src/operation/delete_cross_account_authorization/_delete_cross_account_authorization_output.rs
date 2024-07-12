@@ -18,8 +18,8 @@ impl DeleteCrossAccountAuthorizationOutput {
 }
 
 /// A builder for [`DeleteCrossAccountAuthorizationOutput`](crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCrossAccountAuthorizationOutputBuilder {
     _request_id: Option<String>,
 }

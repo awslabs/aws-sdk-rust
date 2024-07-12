@@ -18,8 +18,8 @@ impl DisassociateServiceActionFromProvisioningArtifactOutput {
 }
 
 /// A builder for [`DisassociateServiceActionFromProvisioningArtifactOutput`](crate::operation::disassociate_service_action_from_provisioning_artifact::DisassociateServiceActionFromProvisioningArtifactOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateServiceActionFromProvisioningArtifactOutputBuilder {
     _request_id: Option<String>,
 }

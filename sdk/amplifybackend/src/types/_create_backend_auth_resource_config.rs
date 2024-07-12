@@ -39,8 +39,8 @@ impl CreateBackendAuthResourceConfig {
 }
 
 /// A builder for [`CreateBackendAuthResourceConfig`](crate::types::CreateBackendAuthResourceConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateBackendAuthResourceConfigBuilder {
     pub(crate) auth_resources: ::std::option::Option<crate::types::AuthResources>,
     pub(crate) identity_pool_configs: ::std::option::Option<crate::types::CreateBackendAuthIdentityPoolConfig>,

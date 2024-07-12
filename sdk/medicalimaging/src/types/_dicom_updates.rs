@@ -35,8 +35,8 @@ impl DicomUpdates {
 }
 
 /// A builder for [`DicomUpdates`](crate::types::DicomUpdates).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DicomUpdatesBuilder {
     pub(crate) removable_attributes: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) updatable_attributes: ::std::option::Option<::aws_smithy_types::Blob>,

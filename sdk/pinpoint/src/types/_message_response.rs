@@ -39,8 +39,8 @@ impl MessageResponse {
 }
 
 /// A builder for [`MessageResponse`](crate::types::MessageResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MessageResponseBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint_result: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EndpointMessageResult>>,

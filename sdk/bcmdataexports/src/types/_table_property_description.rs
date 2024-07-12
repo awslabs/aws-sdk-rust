@@ -41,8 +41,8 @@ impl TablePropertyDescription {
 }
 
 /// A builder for [`TablePropertyDescription`](crate::types::TablePropertyDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TablePropertyDescriptionBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) valid_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

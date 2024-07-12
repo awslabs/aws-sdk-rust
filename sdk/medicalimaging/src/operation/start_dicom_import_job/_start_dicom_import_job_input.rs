@@ -56,8 +56,8 @@ impl StartDicomImportJobInput {
 }
 
 /// A builder for [`StartDicomImportJobInput`](crate::operation::start_dicom_import_job::StartDicomImportJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartDicomImportJobInputBuilder {
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
     pub(crate) data_access_role_arn: ::std::option::Option<::std::string::String>,

@@ -50,8 +50,8 @@ impl SearchChannelsInput {
 }
 
 /// A builder for [`SearchChannelsInput`](crate::operation::search_channels::SearchChannelsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SearchChannelsInputBuilder {
     pub(crate) chime_bearer: ::std::option::Option<::std::string::String>,
     pub(crate) fields: ::std::option::Option<::std::vec::Vec<crate::types::SearchField>>,

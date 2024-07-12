@@ -79,8 +79,8 @@ impl RedshiftIdcApplication {
 }
 
 /// A builder for [`RedshiftIdcApplication`](crate::types::RedshiftIdcApplication).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RedshiftIdcApplicationBuilder {
     pub(crate) idc_instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) redshift_idc_application_name: ::std::option::Option<::std::string::String>,

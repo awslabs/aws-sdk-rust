@@ -33,8 +33,8 @@ impl DetectionFilter {
 }
 
 /// A builder for [`DetectionFilter`](crate::types::DetectionFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetectionFilterBuilder {
     pub(crate) min_confidence: ::std::option::Option<f32>,
     pub(crate) min_bounding_box_height: ::std::option::Option<f32>,

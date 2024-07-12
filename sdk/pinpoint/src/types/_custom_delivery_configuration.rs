@@ -41,8 +41,8 @@ impl CustomDeliveryConfiguration {
 }
 
 /// A builder for [`CustomDeliveryConfiguration`](crate::types::CustomDeliveryConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CustomDeliveryConfigurationBuilder {
     pub(crate) delivery_uri: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint_types: ::std::option::Option<::std::vec::Vec<crate::types::EndpointTypesElement>>,

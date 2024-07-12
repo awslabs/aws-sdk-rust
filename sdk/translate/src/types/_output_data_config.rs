@@ -28,8 +28,8 @@ impl OutputDataConfig {
 }
 
 /// A builder for [`OutputDataConfig`](crate::types::OutputDataConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OutputDataConfigBuilder {
     pub(crate) s3_uri: ::std::option::Option<::std::string::String>,
     pub(crate) encryption_key: ::std::option::Option<crate::types::EncryptionKey>,

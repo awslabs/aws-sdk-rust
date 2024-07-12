@@ -20,8 +20,8 @@ impl DescribeDeviceJobInput {
 }
 
 /// A builder for [`DescribeDeviceJobInput`](crate::operation::describe_device_job::DescribeDeviceJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDeviceJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }

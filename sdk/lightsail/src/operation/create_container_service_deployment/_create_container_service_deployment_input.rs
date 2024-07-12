@@ -32,8 +32,8 @@ impl CreateContainerServiceDeploymentInput {
 }
 
 /// A builder for [`CreateContainerServiceDeploymentInput`](crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateContainerServiceDeploymentInputBuilder {
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
     pub(crate) containers: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Container>>,

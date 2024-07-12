@@ -77,8 +77,8 @@ impl TimeSeriesSummary {
 }
 
 /// A builder for [`TimeSeriesSummary`](crate::types::TimeSeriesSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TimeSeriesSummaryBuilder {
     pub(crate) asset_id: ::std::option::Option<::std::string::String>,
     pub(crate) property_id: ::std::option::Option<::std::string::String>,

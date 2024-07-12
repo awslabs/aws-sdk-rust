@@ -22,8 +22,8 @@ impl BucketLifecycleConfiguration {
 }
 
 /// A builder for [`BucketLifecycleConfiguration`](crate::types::BucketLifecycleConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BucketLifecycleConfigurationBuilder {
     pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::LifecycleRule>>,
 }

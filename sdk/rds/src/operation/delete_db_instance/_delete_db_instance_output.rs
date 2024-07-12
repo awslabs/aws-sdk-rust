@@ -28,8 +28,8 @@ impl DeleteDbInstanceOutput {
 }
 
 /// A builder for [`DeleteDbInstanceOutput`](crate::operation::delete_db_instance::DeleteDbInstanceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDbInstanceOutputBuilder {
     pub(crate) db_instance: ::std::option::Option<crate::types::DbInstance>,
     _request_id: Option<String>,

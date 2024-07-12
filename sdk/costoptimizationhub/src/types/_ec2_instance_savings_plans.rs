@@ -27,8 +27,8 @@ impl Ec2InstanceSavingsPlans {
 }
 
 /// A builder for [`Ec2InstanceSavingsPlans`](crate::types::Ec2InstanceSavingsPlans).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Ec2InstanceSavingsPlansBuilder {
     pub(crate) configuration: ::std::option::Option<crate::types::Ec2InstanceSavingsPlansConfiguration>,
     pub(crate) cost_calculation: ::std::option::Option<crate::types::SavingsPlansCostCalculation>,

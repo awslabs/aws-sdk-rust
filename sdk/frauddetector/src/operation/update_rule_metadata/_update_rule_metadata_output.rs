@@ -18,8 +18,8 @@ impl UpdateRuleMetadataOutput {
 }
 
 /// A builder for [`UpdateRuleMetadataOutput`](crate::operation::update_rule_metadata::UpdateRuleMetadataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRuleMetadataOutputBuilder {
     _request_id: Option<String>,
 }

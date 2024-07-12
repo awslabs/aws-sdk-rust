@@ -45,8 +45,8 @@ impl UpdateFileSystemLustreMetadataConfiguration {
 }
 
 /// A builder for [`UpdateFileSystemLustreMetadataConfiguration`](crate::types::UpdateFileSystemLustreMetadataConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateFileSystemLustreMetadataConfigurationBuilder {
     pub(crate) iops: ::std::option::Option<i32>,
     pub(crate) mode: ::std::option::Option<crate::types::MetadataConfigurationMode>,

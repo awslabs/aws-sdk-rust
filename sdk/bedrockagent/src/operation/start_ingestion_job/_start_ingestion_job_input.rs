@@ -38,8 +38,8 @@ impl StartIngestionJobInput {
 }
 
 /// A builder for [`StartIngestionJobInput`](crate::operation::start_ingestion_job::StartIngestionJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartIngestionJobInputBuilder {
     pub(crate) knowledge_base_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_source_id: ::std::option::Option<::std::string::String>,

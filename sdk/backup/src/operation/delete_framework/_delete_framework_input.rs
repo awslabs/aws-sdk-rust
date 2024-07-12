@@ -20,8 +20,8 @@ impl DeleteFrameworkInput {
 }
 
 /// A builder for [`DeleteFrameworkInput`](crate::operation::delete_framework::DeleteFrameworkInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFrameworkInputBuilder {
     pub(crate) framework_name: ::std::option::Option<::std::string::String>,
 }

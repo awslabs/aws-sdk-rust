@@ -26,8 +26,8 @@ impl DeleteFirewallPolicyOutput {
 }
 
 /// A builder for [`DeleteFirewallPolicyOutput`](crate::operation::delete_firewall_policy::DeleteFirewallPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFirewallPolicyOutputBuilder {
     pub(crate) firewall_policy_response: ::std::option::Option<crate::types::FirewallPolicyResponse>,
     _request_id: Option<String>,

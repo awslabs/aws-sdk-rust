@@ -23,8 +23,8 @@ impl AwsCertificateManagerCertificateOptions {
 }
 
 /// A builder for [`AwsCertificateManagerCertificateOptions`](crate::types::AwsCertificateManagerCertificateOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsCertificateManagerCertificateOptionsBuilder {
     pub(crate) certificate_transparency_logging_preference: ::std::option::Option<::std::string::String>,
 }

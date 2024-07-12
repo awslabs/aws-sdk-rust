@@ -34,8 +34,8 @@ impl GetSystemTemplateRevisionsOutput {
 }
 
 /// A builder for [`GetSystemTemplateRevisionsOutput`](crate::operation::get_system_template_revisions::GetSystemTemplateRevisionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSystemTemplateRevisionsOutputBuilder {
     pub(crate) summaries: ::std::option::Option<::std::vec::Vec<crate::types::SystemTemplateSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

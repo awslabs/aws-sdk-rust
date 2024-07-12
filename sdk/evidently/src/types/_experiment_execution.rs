@@ -27,8 +27,8 @@ impl ExperimentExecution {
 }
 
 /// A builder for [`ExperimentExecution`](crate::types::ExperimentExecution).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExperimentExecutionBuilder {
     pub(crate) started_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) ended_time: ::std::option::Option<::aws_smithy_types::DateTime>,

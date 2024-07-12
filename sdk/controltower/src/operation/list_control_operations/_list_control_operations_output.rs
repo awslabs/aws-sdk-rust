@@ -33,8 +33,8 @@ impl ListControlOperationsOutput {
 }
 
 /// A builder for [`ListControlOperationsOutput`](crate::operation::list_control_operations::ListControlOperationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListControlOperationsOutputBuilder {
     pub(crate) control_operations: ::std::option::Option<::std::vec::Vec<crate::types::ControlOperationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

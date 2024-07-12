@@ -18,8 +18,8 @@ impl AssociateBudgetWithResourceOutput {
 }
 
 /// A builder for [`AssociateBudgetWithResourceOutput`](crate::operation::associate_budget_with_resource::AssociateBudgetWithResourceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateBudgetWithResourceOutputBuilder {
     _request_id: Option<String>,
 }

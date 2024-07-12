@@ -87,8 +87,8 @@ impl DashboardPublishOptions {
 }
 
 /// A builder for [`DashboardPublishOptions`](crate::types::DashboardPublishOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DashboardPublishOptionsBuilder {
     pub(crate) ad_hoc_filtering_option: ::std::option::Option<crate::types::AdHocFilteringOption>,
     pub(crate) export_to_csv_option: ::std::option::Option<crate::types::ExportToCsvOption>,

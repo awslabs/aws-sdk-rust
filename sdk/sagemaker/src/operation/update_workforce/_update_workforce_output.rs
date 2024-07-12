@@ -26,8 +26,8 @@ impl UpdateWorkforceOutput {
 }
 
 /// A builder for [`UpdateWorkforceOutput`](crate::operation::update_workforce::UpdateWorkforceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateWorkforceOutputBuilder {
     pub(crate) workforce: ::std::option::Option<crate::types::Workforce>,
     _request_id: Option<String>,

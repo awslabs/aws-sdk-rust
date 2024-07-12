@@ -33,8 +33,8 @@ impl ListPublicKeysInput {
 }
 
 /// A builder for [`ListPublicKeysInput`](crate::operation::list_public_keys::ListPublicKeysInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPublicKeysInputBuilder {
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,

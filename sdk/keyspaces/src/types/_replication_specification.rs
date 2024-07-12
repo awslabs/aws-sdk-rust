@@ -35,8 +35,8 @@ impl ReplicationSpecification {
 }
 
 /// A builder for [`ReplicationSpecification`](crate::types::ReplicationSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReplicationSpecificationBuilder {
     pub(crate) replication_strategy: ::std::option::Option<crate::types::Rs>,
     pub(crate) region_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

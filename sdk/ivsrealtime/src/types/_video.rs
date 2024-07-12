@@ -39,8 +39,8 @@ impl Video {
 }
 
 /// A builder for [`Video`](crate::types::Video).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VideoBuilder {
     pub(crate) width: ::std::option::Option<i32>,
     pub(crate) height: ::std::option::Option<i32>,

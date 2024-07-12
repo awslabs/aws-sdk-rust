@@ -26,8 +26,8 @@ impl AssociateFraudsterOutput {
 }
 
 /// A builder for [`AssociateFraudsterOutput`](crate::operation::associate_fraudster::AssociateFraudsterOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateFraudsterOutputBuilder {
     pub(crate) fraudster: ::std::option::Option<crate::types::Fraudster>,
     _request_id: Option<String>,

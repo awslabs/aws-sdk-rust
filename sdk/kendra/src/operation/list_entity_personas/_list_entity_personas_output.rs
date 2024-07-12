@@ -34,8 +34,8 @@ impl ListEntityPersonasOutput {
 }
 
 /// A builder for [`ListEntityPersonasOutput`](crate::operation::list_entity_personas::ListEntityPersonasOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEntityPersonasOutputBuilder {
     pub(crate) summary_items: ::std::option::Option<::std::vec::Vec<crate::types::PersonasSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

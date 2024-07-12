@@ -27,8 +27,8 @@ impl RuleBooleanExpression {
 }
 
 /// A builder for [`RuleBooleanExpression`](crate::types::RuleBooleanExpression).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RuleBooleanExpressionBuilder {
     pub(crate) evaluate: ::std::option::Option<crate::types::RuleBooleanToEvaluate>,
     pub(crate) operator: ::std::option::Option<crate::types::RuleBooleanOperator>,

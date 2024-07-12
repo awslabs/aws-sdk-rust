@@ -107,8 +107,8 @@ impl AwsRdsEventSubscriptionDetails {
 }
 
 /// A builder for [`AwsRdsEventSubscriptionDetails`](crate::types::AwsRdsEventSubscriptionDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsRdsEventSubscriptionDetailsBuilder {
     pub(crate) cust_subscription_id: ::std::option::Option<::std::string::String>,
     pub(crate) customer_aws_id: ::std::option::Option<::std::string::String>,

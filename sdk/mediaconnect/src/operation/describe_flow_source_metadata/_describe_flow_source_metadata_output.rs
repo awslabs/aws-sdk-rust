@@ -46,8 +46,8 @@ impl DescribeFlowSourceMetadataOutput {
 }
 
 /// A builder for [`DescribeFlowSourceMetadataOutput`](crate::operation::describe_flow_source_metadata::DescribeFlowSourceMetadataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFlowSourceMetadataOutputBuilder {
     pub(crate) flow_arn: ::std::option::Option<::std::string::String>,
     pub(crate) messages: ::std::option::Option<::std::vec::Vec<crate::types::MessageDetail>>,

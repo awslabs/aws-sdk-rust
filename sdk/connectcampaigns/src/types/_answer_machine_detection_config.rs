@@ -27,8 +27,8 @@ impl AnswerMachineDetectionConfig {
 }
 
 /// A builder for [`AnswerMachineDetectionConfig`](crate::types::AnswerMachineDetectionConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AnswerMachineDetectionConfigBuilder {
     pub(crate) enable_answer_machine_detection: ::std::option::Option<bool>,
     pub(crate) await_answer_machine_prompt: ::std::option::Option<bool>,

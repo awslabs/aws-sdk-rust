@@ -34,8 +34,8 @@ impl SnapshotConfiguration {
 }
 
 /// A builder for [`SnapshotConfiguration`](crate::types::SnapshotConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SnapshotConfigurationBuilder {
     pub(crate) file_groups: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotFileGroup>>,
     pub(crate) destination_configuration: ::std::option::Option<crate::types::SnapshotDestinationConfiguration>,

@@ -26,8 +26,8 @@ impl CreateModelQualityJobDefinitionOutput {
 }
 
 /// A builder for [`CreateModelQualityJobDefinitionOutput`](crate::operation::create_model_quality_job_definition::CreateModelQualityJobDefinitionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateModelQualityJobDefinitionOutputBuilder {
     pub(crate) job_definition_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

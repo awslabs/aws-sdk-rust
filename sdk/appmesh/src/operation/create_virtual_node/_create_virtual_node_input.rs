@@ -52,8 +52,8 @@ impl CreateVirtualNodeInput {
 }
 
 /// A builder for [`CreateVirtualNodeInput`](crate::operation::create_virtual_node::CreateVirtualNodeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateVirtualNodeInputBuilder {
     pub(crate) virtual_node_name: ::std::option::Option<::std::string::String>,
     pub(crate) mesh_name: ::std::option::Option<::std::string::String>,

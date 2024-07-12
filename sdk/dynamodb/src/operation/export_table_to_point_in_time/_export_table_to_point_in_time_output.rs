@@ -26,8 +26,8 @@ impl ExportTableToPointInTimeOutput {
 }
 
 /// A builder for [`ExportTableToPointInTimeOutput`](crate::operation::export_table_to_point_in_time::ExportTableToPointInTimeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExportTableToPointInTimeOutputBuilder {
     pub(crate) export_description: ::std::option::Option<crate::types::ExportDescription>,
     _request_id: Option<String>,

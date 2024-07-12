@@ -35,8 +35,8 @@ impl DescribeCasesOutput {
 }
 
 /// A builder for [`DescribeCasesOutput`](crate::operation::describe_cases::DescribeCasesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCasesOutputBuilder {
     pub(crate) cases: ::std::option::Option<::std::vec::Vec<crate::types::CaseDetails>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

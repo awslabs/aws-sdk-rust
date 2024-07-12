@@ -41,8 +41,8 @@ impl OverallTestResultItem {
 }
 
 /// A builder for [`OverallTestResultItem`](crate::types::OverallTestResultItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OverallTestResultItemBuilder {
     pub(crate) multi_turn_conversation: ::std::option::Option<bool>,
     pub(crate) total_result_count: ::std::option::Option<i32>,

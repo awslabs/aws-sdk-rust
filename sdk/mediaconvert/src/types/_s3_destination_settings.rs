@@ -33,8 +33,8 @@ impl S3DestinationSettings {
 }
 
 /// A builder for [`S3DestinationSettings`](crate::types::S3DestinationSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3DestinationSettingsBuilder {
     pub(crate) access_control: ::std::option::Option<crate::types::S3DestinationAccessControl>,
     pub(crate) encryption: ::std::option::Option<crate::types::S3EncryptionSettings>,

@@ -32,8 +32,8 @@ impl ExportKeyInput {
 }
 
 /// A builder for [`ExportKeyInput`](crate::operation::export_key::ExportKeyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExportKeyInputBuilder {
     pub(crate) key_material: ::std::option::Option<crate::types::ExportKeyMaterial>,
     pub(crate) export_key_identifier: ::std::option::Option<::std::string::String>,

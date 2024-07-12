@@ -34,8 +34,8 @@ impl ListProfileNotificationsOutput {
 }
 
 /// A builder for [`ListProfileNotificationsOutput`](crate::operation::list_profile_notifications::ListProfileNotificationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListProfileNotificationsOutputBuilder {
     pub(crate) notification_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ProfileNotificationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

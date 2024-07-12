@@ -21,8 +21,8 @@ impl ServiceVersion {
 }
 
 /// A builder for [`ServiceVersion`](crate::types::ServiceVersion).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServiceVersionBuilder {
     pub(crate) version: ::std::option::Option<::std::string::String>,
 }

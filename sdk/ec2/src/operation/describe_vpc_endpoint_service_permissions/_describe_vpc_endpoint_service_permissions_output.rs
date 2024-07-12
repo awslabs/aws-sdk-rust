@@ -34,8 +34,8 @@ impl DescribeVpcEndpointServicePermissionsOutput {
 }
 
 /// A builder for [`DescribeVpcEndpointServicePermissionsOutput`](crate::operation::describe_vpc_endpoint_service_permissions::DescribeVpcEndpointServicePermissionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeVpcEndpointServicePermissionsOutputBuilder {
     pub(crate) allowed_principals: ::std::option::Option<::std::vec::Vec<crate::types::AllowedPrincipal>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

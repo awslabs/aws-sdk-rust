@@ -34,8 +34,8 @@ impl DescribeDhcpOptionsOutput {
 }
 
 /// A builder for [`DescribeDhcpOptionsOutput`](crate::operation::describe_dhcp_options::DescribeDhcpOptionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDhcpOptionsOutputBuilder {
     pub(crate) dhcp_options: ::std::option::Option<::std::vec::Vec<crate::types::DhcpOptions>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl CreateVerifiedAccessGroupOutput {
 }
 
 /// A builder for [`CreateVerifiedAccessGroupOutput`](crate::operation::create_verified_access_group::CreateVerifiedAccessGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateVerifiedAccessGroupOutputBuilder {
     pub(crate) verified_access_group: ::std::option::Option<crate::types::VerifiedAccessGroup>,
     _request_id: Option<String>,

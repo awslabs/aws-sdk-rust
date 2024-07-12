@@ -42,8 +42,8 @@ impl PlayerLatency {
 }
 
 /// A builder for [`PlayerLatency`](crate::types::PlayerLatency).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PlayerLatencyBuilder {
     pub(crate) player_id: ::std::option::Option<::std::string::String>,
     pub(crate) region_identifier: ::std::option::Option<::std::string::String>,

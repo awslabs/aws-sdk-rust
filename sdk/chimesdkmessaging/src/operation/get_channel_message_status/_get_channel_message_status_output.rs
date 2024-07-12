@@ -26,8 +26,8 @@ impl GetChannelMessageStatusOutput {
 }
 
 /// A builder for [`GetChannelMessageStatusOutput`](crate::operation::get_channel_message_status::GetChannelMessageStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetChannelMessageStatusOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ChannelMessageStatusStructure>,
     _request_id: Option<String>,

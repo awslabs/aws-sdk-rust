@@ -47,8 +47,8 @@ impl OriginRequestPolicyQueryStringsConfig {
 }
 
 /// A builder for [`OriginRequestPolicyQueryStringsConfig`](crate::types::OriginRequestPolicyQueryStringsConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OriginRequestPolicyQueryStringsConfigBuilder {
     pub(crate) query_string_behavior: ::std::option::Option<crate::types::OriginRequestPolicyQueryStringBehavior>,
     pub(crate) query_strings: ::std::option::Option<crate::types::QueryStringNames>,

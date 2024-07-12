@@ -33,8 +33,8 @@ impl InstanceFleetProvisioningSpecifications {
 }
 
 /// A builder for [`InstanceFleetProvisioningSpecifications`](crate::types::InstanceFleetProvisioningSpecifications).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceFleetProvisioningSpecificationsBuilder {
     pub(crate) spot_specification: ::std::option::Option<crate::types::SpotProvisioningSpecification>,
     pub(crate) on_demand_specification: ::std::option::Option<crate::types::OnDemandProvisioningSpecification>,

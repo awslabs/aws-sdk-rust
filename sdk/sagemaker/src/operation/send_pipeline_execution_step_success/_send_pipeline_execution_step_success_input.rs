@@ -34,8 +34,8 @@ impl SendPipelineExecutionStepSuccessInput {
 }
 
 /// A builder for [`SendPipelineExecutionStepSuccessInput`](crate::operation::send_pipeline_execution_step_success::SendPipelineExecutionStepSuccessInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendPipelineExecutionStepSuccessInputBuilder {
     pub(crate) callback_token: ::std::option::Option<::std::string::String>,
     pub(crate) output_parameters: ::std::option::Option<::std::vec::Vec<crate::types::OutputParameter>>,

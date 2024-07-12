@@ -38,8 +38,8 @@ impl GetRuntimeManagementConfigOutput {
 }
 
 /// A builder for [`GetRuntimeManagementConfigOutput`](crate::operation::get_runtime_management_config::GetRuntimeManagementConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRuntimeManagementConfigOutputBuilder {
     pub(crate) update_runtime_on: ::std::option::Option<crate::types::UpdateRuntimeOn>,
     pub(crate) runtime_version_arn: ::std::option::Option<::std::string::String>,

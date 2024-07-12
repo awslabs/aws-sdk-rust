@@ -172,8 +172,8 @@ impl PhysicalResourceId {
 }
 
 /// A builder for [`PhysicalResourceId`](crate::types::PhysicalResourceId).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PhysicalResourceIdBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::PhysicalIdentifierType>,

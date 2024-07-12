@@ -20,8 +20,8 @@ impl DeleteAuthPolicyInput {
 }
 
 /// A builder for [`DeleteAuthPolicyInput`](crate::operation::delete_auth_policy::DeleteAuthPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAuthPolicyInputBuilder {
     pub(crate) resource_identifier: ::std::option::Option<::std::string::String>,
 }

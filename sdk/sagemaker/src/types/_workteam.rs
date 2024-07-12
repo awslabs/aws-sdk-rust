@@ -87,8 +87,8 @@ impl Workteam {
 }
 
 /// A builder for [`Workteam`](crate::types::Workteam).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WorkteamBuilder {
     pub(crate) workteam_name: ::std::option::Option<::std::string::String>,
     pub(crate) member_definitions: ::std::option::Option<::std::vec::Vec<crate::types::MemberDefinition>>,

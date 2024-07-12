@@ -28,8 +28,8 @@ impl GetLoadBalancerTlsCertificatesOutput {
 }
 
 /// A builder for [`GetLoadBalancerTlsCertificatesOutput`](crate::operation::get_load_balancer_tls_certificates::GetLoadBalancerTlsCertificatesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLoadBalancerTlsCertificatesOutputBuilder {
     pub(crate) tls_certificates: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerTlsCertificate>>,
     _request_id: Option<String>,

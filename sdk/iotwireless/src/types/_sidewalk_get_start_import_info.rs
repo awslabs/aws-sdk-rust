@@ -29,8 +29,8 @@ impl SidewalkGetStartImportInfo {
 }
 
 /// A builder for [`SidewalkGetStartImportInfo`](crate::types::SidewalkGetStartImportInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SidewalkGetStartImportInfoBuilder {
     pub(crate) device_creation_file_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) role: ::std::option::Option<::std::string::String>,

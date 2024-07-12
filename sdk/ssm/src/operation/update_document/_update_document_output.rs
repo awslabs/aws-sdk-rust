@@ -26,8 +26,8 @@ impl UpdateDocumentOutput {
 }
 
 /// A builder for [`UpdateDocumentOutput`](crate::operation::update_document::UpdateDocumentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDocumentOutputBuilder {
     pub(crate) document_description: ::std::option::Option<crate::types::DocumentDescription>,
     _request_id: Option<String>,

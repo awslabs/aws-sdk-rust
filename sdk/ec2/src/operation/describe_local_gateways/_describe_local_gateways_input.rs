@@ -68,8 +68,8 @@ impl DescribeLocalGatewaysInput {
 }
 
 /// A builder for [`DescribeLocalGatewaysInput`](crate::operation::describe_local_gateways::DescribeLocalGatewaysInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeLocalGatewaysInputBuilder {
     pub(crate) local_gateway_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,

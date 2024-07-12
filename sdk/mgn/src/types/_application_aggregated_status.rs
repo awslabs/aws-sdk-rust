@@ -39,8 +39,8 @@ impl ApplicationAggregatedStatus {
 }
 
 /// A builder for [`ApplicationAggregatedStatus`](crate::types::ApplicationAggregatedStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ApplicationAggregatedStatusBuilder {
     pub(crate) last_update_date_time: ::std::option::Option<::std::string::String>,
     pub(crate) health_status: ::std::option::Option<crate::types::ApplicationHealthStatus>,

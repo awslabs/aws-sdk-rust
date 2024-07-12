@@ -38,8 +38,8 @@ impl StartAudienceExportJobInput {
 }
 
 /// A builder for [`StartAudienceExportJobInput`](crate::operation::start_audience_export_job::StartAudienceExportJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartAudienceExportJobInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) audience_generation_job_arn: ::std::option::Option<::std::string::String>,

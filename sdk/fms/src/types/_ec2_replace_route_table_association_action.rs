@@ -33,8 +33,8 @@ impl Ec2ReplaceRouteTableAssociationAction {
 }
 
 /// A builder for [`Ec2ReplaceRouteTableAssociationAction`](crate::types::Ec2ReplaceRouteTableAssociationAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Ec2ReplaceRouteTableAssociationActionBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) association_id: ::std::option::Option<crate::types::ActionTarget>,

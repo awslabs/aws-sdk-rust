@@ -40,8 +40,8 @@ impl PutServiceQuotaIncreaseRequestIntoTemplateInput {
 }
 
 /// A builder for [`PutServiceQuotaIncreaseRequestIntoTemplateInput`](crate::operation::put_service_quota_increase_request_into_template::PutServiceQuotaIncreaseRequestIntoTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutServiceQuotaIncreaseRequestIntoTemplateInputBuilder {
     pub(crate) quota_code: ::std::option::Option<::std::string::String>,
     pub(crate) service_code: ::std::option::Option<::std::string::String>,

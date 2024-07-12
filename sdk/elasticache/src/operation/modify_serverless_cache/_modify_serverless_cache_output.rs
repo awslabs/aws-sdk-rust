@@ -26,8 +26,8 @@ impl ModifyServerlessCacheOutput {
 }
 
 /// A builder for [`ModifyServerlessCacheOutput`](crate::operation::modify_serverless_cache::ModifyServerlessCacheOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyServerlessCacheOutputBuilder {
     pub(crate) serverless_cache: ::std::option::Option<crate::types::ServerlessCache>,
     _request_id: Option<String>,

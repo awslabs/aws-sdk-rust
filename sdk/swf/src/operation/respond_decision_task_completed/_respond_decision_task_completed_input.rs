@@ -53,8 +53,8 @@ impl RespondDecisionTaskCompletedInput {
 }
 
 /// A builder for [`RespondDecisionTaskCompletedInput`](crate::operation::respond_decision_task_completed::RespondDecisionTaskCompletedInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RespondDecisionTaskCompletedInputBuilder {
     pub(crate) task_token: ::std::option::Option<::std::string::String>,
     pub(crate) decisions: ::std::option::Option<::std::vec::Vec<crate::types::Decision>>,

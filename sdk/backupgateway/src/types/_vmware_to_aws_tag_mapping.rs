@@ -43,8 +43,8 @@ impl VmwareToAwsTagMapping {
 }
 
 /// A builder for [`VmwareToAwsTagMapping`](crate::types::VmwareToAwsTagMapping).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VmwareToAwsTagMappingBuilder {
     pub(crate) vmware_category: ::std::option::Option<::std::string::String>,
     pub(crate) vmware_tag_name: ::std::option::Option<::std::string::String>,

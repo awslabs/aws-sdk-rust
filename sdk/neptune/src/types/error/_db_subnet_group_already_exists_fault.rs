@@ -45,8 +45,8 @@ impl DbSubnetGroupAlreadyExistsFault {
 }
 
 /// A builder for [`DbSubnetGroupAlreadyExistsFault`](crate::types::error::DbSubnetGroupAlreadyExistsFault).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DbSubnetGroupAlreadyExistsFaultBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,

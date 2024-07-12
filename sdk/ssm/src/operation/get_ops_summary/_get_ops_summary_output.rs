@@ -34,8 +34,8 @@ impl GetOpsSummaryOutput {
 }
 
 /// A builder for [`GetOpsSummaryOutput`](crate::operation::get_ops_summary::GetOpsSummaryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetOpsSummaryOutputBuilder {
     pub(crate) entities: ::std::option::Option<::std::vec::Vec<crate::types::OpsEntity>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

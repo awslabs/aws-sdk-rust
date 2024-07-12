@@ -18,8 +18,8 @@ impl ArchiveFindingsOutput {
 }
 
 /// A builder for [`ArchiveFindingsOutput`](crate::operation::archive_findings::ArchiveFindingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ArchiveFindingsOutputBuilder {
     _request_id: Option<String>,
 }

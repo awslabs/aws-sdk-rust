@@ -21,8 +21,8 @@ impl SessionChainingConfig {
 }
 
 /// A builder for [`SessionChainingConfig`](crate::types::SessionChainingConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SessionChainingConfigBuilder {
     pub(crate) enable_session_tag_chaining: ::std::option::Option<bool>,
 }

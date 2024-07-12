@@ -30,8 +30,8 @@ impl AddAttributesToFindingsInput {
 }
 
 /// A builder for [`AddAttributesToFindingsInput`](crate::operation::add_attributes_to_findings::AddAttributesToFindingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddAttributesToFindingsInputBuilder {
     pub(crate) finding_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,

@@ -32,8 +32,8 @@ impl ListVoiceProfilesInput {
 }
 
 /// A builder for [`ListVoiceProfilesInput`](crate::operation::list_voice_profiles::ListVoiceProfilesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListVoiceProfilesInputBuilder {
     pub(crate) voice_profile_domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

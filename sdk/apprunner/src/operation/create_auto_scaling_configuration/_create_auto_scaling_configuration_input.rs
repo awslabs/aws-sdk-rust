@@ -80,8 +80,8 @@ impl CreateAutoScalingConfigurationInput {
 }
 
 /// A builder for [`CreateAutoScalingConfigurationInput`](crate::operation::create_auto_scaling_configuration::CreateAutoScalingConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAutoScalingConfigurationInputBuilder {
     pub(crate) auto_scaling_configuration_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_concurrency: ::std::option::Option<i32>,

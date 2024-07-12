@@ -34,8 +34,8 @@ impl SearchSystemInstancesOutput {
 }
 
 /// A builder for [`SearchSystemInstancesOutput`](crate::operation::search_system_instances::SearchSystemInstancesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchSystemInstancesOutputBuilder {
     pub(crate) summaries: ::std::option::Option<::std::vec::Vec<crate::types::SystemInstanceSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

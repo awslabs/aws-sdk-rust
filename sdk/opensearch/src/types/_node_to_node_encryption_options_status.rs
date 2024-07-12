@@ -27,8 +27,8 @@ impl NodeToNodeEncryptionOptionsStatus {
 }
 
 /// A builder for [`NodeToNodeEncryptionOptionsStatus`](crate::types::NodeToNodeEncryptionOptionsStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NodeToNodeEncryptionOptionsStatusBuilder {
     pub(crate) options: ::std::option::Option<crate::types::NodeToNodeEncryptionOptions>,
     pub(crate) status: ::std::option::Option<crate::types::OptionStatus>,

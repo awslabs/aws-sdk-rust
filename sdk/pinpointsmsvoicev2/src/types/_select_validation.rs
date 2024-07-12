@@ -34,8 +34,8 @@ impl SelectValidation {
 }
 
 /// A builder for [`SelectValidation`](crate::types::SelectValidation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SelectValidationBuilder {
     pub(crate) min_choices: ::std::option::Option<i32>,
     pub(crate) max_choices: ::std::option::Option<i32>,

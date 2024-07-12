@@ -113,8 +113,8 @@ impl ActivatedRule {
 }
 
 /// A builder for [`ActivatedRule`](crate::types::ActivatedRule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ActivatedRuleBuilder {
     pub(crate) priority: ::std::option::Option<i32>,
     pub(crate) rule_id: ::std::option::Option<::std::string::String>,

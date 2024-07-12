@@ -34,8 +34,8 @@ impl ListFlywheelIterationHistoryOutput {
 }
 
 /// A builder for [`ListFlywheelIterationHistoryOutput`](crate::operation::list_flywheel_iteration_history::ListFlywheelIterationHistoryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFlywheelIterationHistoryOutputBuilder {
     pub(crate) flywheel_iteration_properties_list: ::std::option::Option<::std::vec::Vec<crate::types::FlywheelIterationProperties>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

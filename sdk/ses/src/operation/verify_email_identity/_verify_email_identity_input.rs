@@ -21,8 +21,8 @@ impl VerifyEmailIdentityInput {
 }
 
 /// A builder for [`VerifyEmailIdentityInput`](crate::operation::verify_email_identity::VerifyEmailIdentityInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VerifyEmailIdentityInputBuilder {
     pub(crate) email_address: ::std::option::Option<::std::string::String>,
 }

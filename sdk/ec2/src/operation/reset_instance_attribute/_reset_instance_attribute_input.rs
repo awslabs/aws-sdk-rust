@@ -36,8 +36,8 @@ impl ResetInstanceAttributeInput {
 }
 
 /// A builder for [`ResetInstanceAttributeInput`](crate::operation::reset_instance_attribute::ResetInstanceAttributeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResetInstanceAttributeInputBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::InstanceAttributeName>,
     pub(crate) dry_run: ::std::option::Option<bool>,

@@ -20,8 +20,8 @@ impl AddNotificationChannelInput {
 }
 
 /// A builder for [`AddNotificationChannelInput`](crate::operation::add_notification_channel::AddNotificationChannelInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddNotificationChannelInputBuilder {
     pub(crate) config: ::std::option::Option<crate::types::NotificationChannelConfig>,
 }

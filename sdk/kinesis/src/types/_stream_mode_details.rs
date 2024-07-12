@@ -21,8 +21,8 @@ impl StreamModeDetails {
 }
 
 /// A builder for [`StreamModeDetails`](crate::types::StreamModeDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StreamModeDetailsBuilder {
     pub(crate) stream_mode: ::std::option::Option<crate::types::StreamMode>,
 }

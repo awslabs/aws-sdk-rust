@@ -18,8 +18,8 @@ impl UpdateDefaultBranchOutput {
 }
 
 /// A builder for [`UpdateDefaultBranchOutput`](crate::operation::update_default_branch::UpdateDefaultBranchOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDefaultBranchOutputBuilder {
     _request_id: Option<String>,
 }

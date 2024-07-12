@@ -22,8 +22,8 @@ impl MultiPolygonGeometryInput {
 }
 
 /// A builder for [`MultiPolygonGeometryInput`](crate::types::MultiPolygonGeometryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MultiPolygonGeometryInputBuilder {
     pub(crate) coordinates: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<f64>>>>>,
 }

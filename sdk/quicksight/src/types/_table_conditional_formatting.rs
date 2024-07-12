@@ -23,8 +23,8 @@ impl TableConditionalFormatting {
 }
 
 /// A builder for [`TableConditionalFormatting`](crate::types::TableConditionalFormatting).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TableConditionalFormattingBuilder {
     pub(crate) conditional_formatting_options: ::std::option::Option<::std::vec::Vec<crate::types::TableConditionalFormattingOption>>,
 }

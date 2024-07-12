@@ -34,8 +34,8 @@ impl ListWebsiteCertificateAuthoritiesOutput {
 }
 
 /// A builder for [`ListWebsiteCertificateAuthoritiesOutput`](crate::operation::list_website_certificate_authorities::ListWebsiteCertificateAuthoritiesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListWebsiteCertificateAuthoritiesOutputBuilder {
     pub(crate) website_certificate_authorities: ::std::option::Option<::std::vec::Vec<crate::types::WebsiteCaSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

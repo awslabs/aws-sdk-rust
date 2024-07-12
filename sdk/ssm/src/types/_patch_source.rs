@@ -57,8 +57,8 @@ impl PatchSource {
 }
 
 /// A builder for [`PatchSource`](crate::types::PatchSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PatchSourceBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) products: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

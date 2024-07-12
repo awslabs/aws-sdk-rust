@@ -26,8 +26,8 @@ impl TerminateTargetInstancesOutput {
 }
 
 /// A builder for [`TerminateTargetInstancesOutput`](crate::operation::terminate_target_instances::TerminateTargetInstancesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TerminateTargetInstancesOutputBuilder {
     pub(crate) job: ::std::option::Option<crate::types::Job>,
     _request_id: Option<String>,

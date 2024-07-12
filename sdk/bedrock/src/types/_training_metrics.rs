@@ -21,8 +21,8 @@ impl TrainingMetrics {
 }
 
 /// A builder for [`TrainingMetrics`](crate::types::TrainingMetrics).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TrainingMetricsBuilder {
     pub(crate) training_loss: ::std::option::Option<f32>,
 }

@@ -22,8 +22,8 @@ impl GetResourceRequestStatusInput {
 }
 
 /// A builder for [`GetResourceRequestStatusInput`](crate::operation::get_resource_request_status::GetResourceRequestStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetResourceRequestStatusInputBuilder {
     pub(crate) request_token: ::std::option::Option<::std::string::String>,
 }

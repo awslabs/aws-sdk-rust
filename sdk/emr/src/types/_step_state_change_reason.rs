@@ -27,8 +27,8 @@ impl StepStateChangeReason {
 }
 
 /// A builder for [`StepStateChangeReason`](crate::types::StepStateChangeReason).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StepStateChangeReasonBuilder {
     pub(crate) code: ::std::option::Option<crate::types::StepStateChangeReasonCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

@@ -35,8 +35,8 @@ impl CreateS3DataAccessFromS3BucketResponseDetails {
 }
 
 /// A builder for [`CreateS3DataAccessFromS3BucketResponseDetails`](crate::types::CreateS3DataAccessFromS3BucketResponseDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateS3DataAccessFromS3BucketResponseDetailsBuilder {
     pub(crate) asset_source: ::std::option::Option<crate::types::S3DataAccessAssetSourceEntry>,
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,

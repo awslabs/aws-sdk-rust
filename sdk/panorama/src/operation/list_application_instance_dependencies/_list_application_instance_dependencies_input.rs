@@ -32,8 +32,8 @@ impl ListApplicationInstanceDependenciesInput {
 }
 
 /// A builder for [`ListApplicationInstanceDependenciesInput`](crate::operation::list_application_instance_dependencies::ListApplicationInstanceDependenciesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListApplicationInstanceDependenciesInputBuilder {
     pub(crate) application_instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

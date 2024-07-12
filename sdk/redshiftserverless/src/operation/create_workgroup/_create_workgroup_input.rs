@@ -88,8 +88,8 @@ impl CreateWorkgroupInput {
 }
 
 /// A builder for [`CreateWorkgroupInput`](crate::operation::create_workgroup::CreateWorkgroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateWorkgroupInputBuilder {
     pub(crate) workgroup_name: ::std::option::Option<::std::string::String>,
     pub(crate) namespace_name: ::std::option::Option<::std::string::String>,

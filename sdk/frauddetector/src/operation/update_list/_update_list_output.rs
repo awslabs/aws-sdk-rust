@@ -18,8 +18,8 @@ impl UpdateListOutput {
 }
 
 /// A builder for [`UpdateListOutput`](crate::operation::update_list::UpdateListOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateListOutputBuilder {
     _request_id: Option<String>,
 }

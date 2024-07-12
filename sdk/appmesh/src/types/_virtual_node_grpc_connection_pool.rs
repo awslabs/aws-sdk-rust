@@ -21,8 +21,8 @@ impl VirtualNodeGrpcConnectionPool {
 }
 
 /// A builder for [`VirtualNodeGrpcConnectionPool`](crate::types::VirtualNodeGrpcConnectionPool).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VirtualNodeGrpcConnectionPoolBuilder {
     pub(crate) max_requests: ::std::option::Option<i32>,
 }

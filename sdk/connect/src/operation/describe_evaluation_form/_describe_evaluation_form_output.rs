@@ -26,8 +26,8 @@ impl DescribeEvaluationFormOutput {
 }
 
 /// A builder for [`DescribeEvaluationFormOutput`](crate::operation::describe_evaluation_form::DescribeEvaluationFormOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEvaluationFormOutputBuilder {
     pub(crate) evaluation_form: ::std::option::Option<crate::types::EvaluationForm>,
     _request_id: Option<String>,

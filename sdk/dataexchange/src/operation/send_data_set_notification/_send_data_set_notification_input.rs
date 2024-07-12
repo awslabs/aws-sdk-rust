@@ -50,8 +50,8 @@ impl SendDataSetNotificationInput {
 }
 
 /// A builder for [`SendDataSetNotificationInput`](crate::operation::send_data_set_notification::SendDataSetNotificationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendDataSetNotificationInputBuilder {
     pub(crate) scope: ::std::option::Option<crate::types::ScopeDetails>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

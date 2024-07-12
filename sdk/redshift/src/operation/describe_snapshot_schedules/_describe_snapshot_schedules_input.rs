@@ -54,8 +54,8 @@ impl DescribeSnapshotSchedulesInput {
 }
 
 /// A builder for [`DescribeSnapshotSchedulesInput`](crate::operation::describe_snapshot_schedules::DescribeSnapshotSchedulesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSnapshotSchedulesInputBuilder {
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) schedule_identifier: ::std::option::Option<::std::string::String>,

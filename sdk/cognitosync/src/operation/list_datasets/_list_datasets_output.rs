@@ -41,8 +41,8 @@ impl ListDatasetsOutput {
 }
 
 /// A builder for [`ListDatasetsOutput`](crate::operation::list_datasets::ListDatasetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDatasetsOutputBuilder {
     pub(crate) datasets: ::std::option::Option<::std::vec::Vec<crate::types::Dataset>>,
     pub(crate) count: ::std::option::Option<i32>,

@@ -26,8 +26,8 @@ impl EnableClientAuthenticationInput {
 }
 
 /// A builder for [`EnableClientAuthenticationInput`](crate::operation::enable_client_authentication::EnableClientAuthenticationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnableClientAuthenticationInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::ClientAuthenticationType>,

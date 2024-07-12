@@ -34,8 +34,8 @@ impl LifecycleExpiration {
 }
 
 /// A builder for [`LifecycleExpiration`](crate::types::LifecycleExpiration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LifecycleExpirationBuilder {
     pub(crate) date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) days: ::std::option::Option<i32>,

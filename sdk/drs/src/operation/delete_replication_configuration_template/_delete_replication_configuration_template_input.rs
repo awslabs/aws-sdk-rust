@@ -20,8 +20,8 @@ impl DeleteReplicationConfigurationTemplateInput {
 }
 
 /// A builder for [`DeleteReplicationConfigurationTemplateInput`](crate::operation::delete_replication_configuration_template::DeleteReplicationConfigurationTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteReplicationConfigurationTemplateInputBuilder {
     pub(crate) replication_configuration_template_id: ::std::option::Option<::std::string::String>,
 }

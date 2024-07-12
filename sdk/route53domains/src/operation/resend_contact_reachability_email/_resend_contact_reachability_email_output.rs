@@ -48,8 +48,8 @@ impl ResendContactReachabilityEmailOutput {
 }
 
 /// A builder for [`ResendContactReachabilityEmailOutput`](crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmailOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ResendContactReachabilityEmailOutputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) email_address: ::std::option::Option<::std::string::String>,

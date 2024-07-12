@@ -19,8 +19,8 @@ impl CreateAppCookieStickinessPolicyOutput {
 }
 
 /// A builder for [`CreateAppCookieStickinessPolicyOutput`](crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAppCookieStickinessPolicyOutputBuilder {
     _request_id: Option<String>,
 }

@@ -35,8 +35,8 @@ impl DeliveryStreamEncryptionConfigurationInput {
 }
 
 /// A builder for [`DeliveryStreamEncryptionConfigurationInput`](crate::types::DeliveryStreamEncryptionConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeliveryStreamEncryptionConfigurationInputBuilder {
     pub(crate) key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) key_type: ::std::option::Option<crate::types::KeyType>,

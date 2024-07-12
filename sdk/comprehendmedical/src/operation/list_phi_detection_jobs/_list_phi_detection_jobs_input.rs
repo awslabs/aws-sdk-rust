@@ -32,8 +32,8 @@ impl ListPhiDetectionJobsInput {
 }
 
 /// A builder for [`ListPhiDetectionJobsInput`](crate::operation::list_phi_detection_jobs::ListPhiDetectionJobsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPhiDetectionJobsInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::ComprehendMedicalAsyncJobFilter>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

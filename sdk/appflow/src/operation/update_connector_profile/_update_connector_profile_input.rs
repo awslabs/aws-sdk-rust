@@ -42,8 +42,8 @@ impl UpdateConnectorProfileInput {
 }
 
 /// A builder for [`UpdateConnectorProfileInput`](crate::operation::update_connector_profile::UpdateConnectorProfileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateConnectorProfileInputBuilder {
     pub(crate) connector_profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) connection_mode: ::std::option::Option<crate::types::ConnectionMode>,

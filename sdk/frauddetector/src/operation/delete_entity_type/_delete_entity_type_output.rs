@@ -18,8 +18,8 @@ impl DeleteEntityTypeOutput {
 }
 
 /// A builder for [`DeleteEntityTypeOutput`](crate::operation::delete_entity_type::DeleteEntityTypeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteEntityTypeOutputBuilder {
     _request_id: Option<String>,
 }

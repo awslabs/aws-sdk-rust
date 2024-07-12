@@ -26,8 +26,8 @@ impl DeleteRegexMatchSetOutput {
 }
 
 /// A builder for [`DeleteRegexMatchSetOutput`](crate::operation::delete_regex_match_set::DeleteRegexMatchSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRegexMatchSetOutputBuilder {
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

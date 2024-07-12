@@ -26,8 +26,8 @@ impl DisassociateVehicleFleetInput {
 }
 
 /// A builder for [`DisassociateVehicleFleetInput`](crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateVehicleFleetInputBuilder {
     pub(crate) vehicle_name: ::std::option::Option<::std::string::String>,
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,

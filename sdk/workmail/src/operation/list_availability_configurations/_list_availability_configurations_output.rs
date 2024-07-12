@@ -34,8 +34,8 @@ impl ListAvailabilityConfigurationsOutput {
 }
 
 /// A builder for [`ListAvailabilityConfigurationsOutput`](crate::operation::list_availability_configurations::ListAvailabilityConfigurationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAvailabilityConfigurationsOutputBuilder {
     pub(crate) availability_configurations: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityConfiguration>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

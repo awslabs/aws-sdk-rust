@@ -26,8 +26,8 @@ impl NotebookInstanceLifecycleHook {
 }
 
 /// A builder for [`NotebookInstanceLifecycleHook`](crate::types::NotebookInstanceLifecycleHook).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NotebookInstanceLifecycleHookBuilder {
     pub(crate) content: ::std::option::Option<::std::string::String>,
 }

@@ -26,8 +26,8 @@ impl GetAccountConfigurationOutput {
 }
 
 /// A builder for [`GetAccountConfigurationOutput`](crate::operation::get_account_configuration::GetAccountConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAccountConfigurationOutputBuilder {
     pub(crate) expiry_events: ::std::option::Option<crate::types::ExpiryEventsConfiguration>,
     _request_id: Option<String>,

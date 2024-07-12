@@ -26,8 +26,8 @@ impl DeleteNetworkInput {
 }
 
 /// A builder for [`DeleteNetworkInput`](crate::operation::delete_network::DeleteNetworkInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteNetworkInputBuilder {
     pub(crate) network_arn: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

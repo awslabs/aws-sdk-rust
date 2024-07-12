@@ -64,8 +64,8 @@ impl CreatePullRequestApprovalRuleInput {
 }
 
 /// A builder for [`CreatePullRequestApprovalRuleInput`](crate::operation::create_pull_request_approval_rule::CreatePullRequestApprovalRuleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePullRequestApprovalRuleInputBuilder {
     pub(crate) pull_request_id: ::std::option::Option<::std::string::String>,
     pub(crate) approval_rule_name: ::std::option::Option<::std::string::String>,

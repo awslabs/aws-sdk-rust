@@ -26,8 +26,8 @@ impl UpdatePrivacyBudgetTemplateOutput {
 }
 
 /// A builder for [`UpdatePrivacyBudgetTemplateOutput`](crate::operation::update_privacy_budget_template::UpdatePrivacyBudgetTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePrivacyBudgetTemplateOutputBuilder {
     pub(crate) privacy_budget_template: ::std::option::Option<crate::types::PrivacyBudgetTemplate>,
     _request_id: Option<String>,

@@ -70,8 +70,8 @@ impl GetSyncJobOutput {
 }
 
 /// A builder for [`GetSyncJobOutput`](crate::operation::get_sync_job::GetSyncJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSyncJobOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,

@@ -33,8 +33,8 @@ impl SetReceiptRulePositionInput {
 }
 
 /// A builder for [`SetReceiptRulePositionInput`](crate::operation::set_receipt_rule_position::SetReceiptRulePositionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetReceiptRulePositionInputBuilder {
     pub(crate) rule_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) rule_name: ::std::option::Option<::std::string::String>,

@@ -64,8 +64,8 @@ impl DescribeTenantDatabasesInput {
 }
 
 /// A builder for [`DescribeTenantDatabasesInput`](crate::operation::describe_tenant_databases::DescribeTenantDatabasesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTenantDatabasesInputBuilder {
     pub(crate) db_instance_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) tenant_db_name: ::std::option::Option<::std::string::String>,

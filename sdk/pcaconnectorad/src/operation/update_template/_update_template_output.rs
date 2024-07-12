@@ -18,8 +18,8 @@ impl UpdateTemplateOutput {
 }
 
 /// A builder for [`UpdateTemplateOutput`](crate::operation::update_template::UpdateTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateTemplateOutputBuilder {
     _request_id: Option<String>,
 }

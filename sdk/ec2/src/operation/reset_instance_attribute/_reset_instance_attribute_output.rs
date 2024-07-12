@@ -18,8 +18,8 @@ impl ResetInstanceAttributeOutput {
 }
 
 /// A builder for [`ResetInstanceAttributeOutput`](crate::operation::reset_instance_attribute::ResetInstanceAttributeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResetInstanceAttributeOutputBuilder {
     _request_id: Option<String>,
 }

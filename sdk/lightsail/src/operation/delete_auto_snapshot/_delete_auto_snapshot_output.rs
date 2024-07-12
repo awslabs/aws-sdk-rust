@@ -28,8 +28,8 @@ impl DeleteAutoSnapshotOutput {
 }
 
 /// A builder for [`DeleteAutoSnapshotOutput`](crate::operation::delete_auto_snapshot::DeleteAutoSnapshotOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAutoSnapshotOutputBuilder {
     pub(crate) operations: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>,
     _request_id: Option<String>,

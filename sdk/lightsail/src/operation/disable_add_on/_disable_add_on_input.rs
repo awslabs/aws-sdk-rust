@@ -26,8 +26,8 @@ impl DisableAddOnInput {
 }
 
 /// A builder for [`DisableAddOnInput`](crate::operation::disable_add_on::DisableAddOnInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableAddOnInputBuilder {
     pub(crate) add_on_type: ::std::option::Option<crate::types::AddOnType>,
     pub(crate) resource_name: ::std::option::Option<::std::string::String>,

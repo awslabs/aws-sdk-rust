@@ -27,8 +27,8 @@ impl FaceMatch {
 }
 
 /// A builder for [`FaceMatch`](crate::types::FaceMatch).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FaceMatchBuilder {
     pub(crate) similarity: ::std::option::Option<f32>,
     pub(crate) face: ::std::option::Option<crate::types::Face>,

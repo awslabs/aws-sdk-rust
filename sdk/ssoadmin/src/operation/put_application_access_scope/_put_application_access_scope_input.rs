@@ -34,8 +34,8 @@ impl PutApplicationAccessScopeInput {
 }
 
 /// A builder for [`PutApplicationAccessScopeInput`](crate::operation::put_application_access_scope::PutApplicationAccessScopeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutApplicationAccessScopeInputBuilder {
     pub(crate) scope: ::std::option::Option<::std::string::String>,
     pub(crate) authorized_targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

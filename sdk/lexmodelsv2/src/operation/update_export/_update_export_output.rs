@@ -56,8 +56,8 @@ impl UpdateExportOutput {
 }
 
 /// A builder for [`UpdateExportOutput`](crate::operation::update_export::UpdateExportOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateExportOutputBuilder {
     pub(crate) export_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_specification: ::std::option::Option<crate::types::ExportResourceSpecification>,

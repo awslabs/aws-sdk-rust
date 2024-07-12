@@ -27,8 +27,8 @@ impl DetectorModel {
 }
 
 /// A builder for [`DetectorModel`](crate::types::DetectorModel).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetectorModelBuilder {
     pub(crate) detector_model_definition: ::std::option::Option<crate::types::DetectorModelDefinition>,
     pub(crate) detector_model_configuration: ::std::option::Option<crate::types::DetectorModelConfiguration>,

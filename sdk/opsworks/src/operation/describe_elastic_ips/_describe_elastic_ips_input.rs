@@ -34,8 +34,8 @@ impl DescribeElasticIpsInput {
 }
 
 /// A builder for [`DescribeElasticIpsInput`](crate::operation::describe_elastic_ips::DescribeElasticIpsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeElasticIpsInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,

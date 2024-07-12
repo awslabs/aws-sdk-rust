@@ -62,8 +62,8 @@ impl ListDataQualityJobDefinitionsInput {
 }
 
 /// A builder for [`ListDataQualityJobDefinitionsInput`](crate::operation::list_data_quality_job_definitions::ListDataQualityJobDefinitionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDataQualityJobDefinitionsInputBuilder {
     pub(crate) endpoint_name: ::std::option::Option<::std::string::String>,
     pub(crate) sort_by: ::std::option::Option<crate::types::MonitoringJobDefinitionSortKey>,

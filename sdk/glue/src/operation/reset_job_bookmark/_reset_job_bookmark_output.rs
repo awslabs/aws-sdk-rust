@@ -26,8 +26,8 @@ impl ResetJobBookmarkOutput {
 }
 
 /// A builder for [`ResetJobBookmarkOutput`](crate::operation::reset_job_bookmark::ResetJobBookmarkOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResetJobBookmarkOutputBuilder {
     pub(crate) job_bookmark_entry: ::std::option::Option<crate::types::JobBookmarkEntry>,
     _request_id: Option<String>,

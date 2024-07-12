@@ -29,8 +29,8 @@ impl TaggedDatabase {
 }
 
 /// A builder for [`TaggedDatabase`](crate::types::TaggedDatabase).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TaggedDatabaseBuilder {
     pub(crate) database: ::std::option::Option<crate::types::DatabaseResource>,
     pub(crate) lf_tags: ::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>>,

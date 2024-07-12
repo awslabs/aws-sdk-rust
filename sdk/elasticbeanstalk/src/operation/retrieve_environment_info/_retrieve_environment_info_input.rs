@@ -41,8 +41,8 @@ impl RetrieveEnvironmentInfoInput {
 }
 
 /// A builder for [`RetrieveEnvironmentInfoInput`](crate::operation::retrieve_environment_info::RetrieveEnvironmentInfoInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RetrieveEnvironmentInfoInputBuilder {
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
     pub(crate) environment_name: ::std::option::Option<::std::string::String>,

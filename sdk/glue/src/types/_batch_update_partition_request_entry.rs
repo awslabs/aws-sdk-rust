@@ -28,8 +28,8 @@ impl BatchUpdatePartitionRequestEntry {
 }
 
 /// A builder for [`BatchUpdatePartitionRequestEntry`](crate::types::BatchUpdatePartitionRequestEntry).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchUpdatePartitionRequestEntryBuilder {
     pub(crate) partition_value_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) partition_input: ::std::option::Option<crate::types::PartitionInput>,

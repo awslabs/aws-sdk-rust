@@ -35,8 +35,8 @@ impl BatchGetDeploymentInstancesOutput {
 }
 
 /// A builder for [`BatchGetDeploymentInstancesOutput`](crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetDeploymentInstancesOutputBuilder {
     pub(crate) instances_summary: ::std::option::Option<::std::vec::Vec<crate::types::InstanceSummary>>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl PutJobTaggingInput {
 }
 
 /// A builder for [`PutJobTaggingInput`](crate::operation::put_job_tagging::PutJobTaggingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutJobTaggingInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_id: ::std::option::Option<::std::string::String>,

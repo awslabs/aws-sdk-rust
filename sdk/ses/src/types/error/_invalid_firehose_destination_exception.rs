@@ -59,8 +59,8 @@ impl InvalidFirehoseDestinationException {
 }
 
 /// A builder for [`InvalidFirehoseDestinationException`](crate::types::error::InvalidFirehoseDestinationException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InvalidFirehoseDestinationExceptionBuilder {
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) event_destination_name: ::std::option::Option<::std::string::String>,

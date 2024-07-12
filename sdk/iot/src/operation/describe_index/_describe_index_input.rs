@@ -20,8 +20,8 @@ impl DescribeIndexInput {
 }
 
 /// A builder for [`DescribeIndexInput`](crate::operation::describe_index::DescribeIndexInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeIndexInputBuilder {
     pub(crate) index_name: ::std::option::Option<::std::string::String>,
 }

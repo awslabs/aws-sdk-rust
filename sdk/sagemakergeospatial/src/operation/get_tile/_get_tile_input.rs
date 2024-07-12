@@ -88,8 +88,8 @@ impl GetTileInput {
 }
 
 /// A builder for [`GetTileInput`](crate::operation::get_tile::GetTileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTileInputBuilder {
     pub(crate) x: ::std::option::Option<i32>,
     pub(crate) y: ::std::option::Option<i32>,

@@ -35,8 +35,8 @@ impl ServiceAccountCredentials {
 }
 
 /// A builder for [`ServiceAccountCredentials`](crate::types::ServiceAccountCredentials).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ServiceAccountCredentialsBuilder {
     pub(crate) account_name: ::std::option::Option<::std::string::String>,
     pub(crate) account_password: ::std::option::Option<::std::string::String>,

@@ -29,8 +29,8 @@ impl ApplicationSource {
 }
 
 /// A builder for [`ApplicationSource`](crate::types::ApplicationSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ApplicationSourceBuilder {
     pub(crate) cloud_formation_stack_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tag_filters: ::std::option::Option<::std::vec::Vec<crate::types::TagFilter>>,

@@ -27,8 +27,8 @@ impl ProvisionedCapacity {
 }
 
 /// A builder for [`ProvisionedCapacity`](crate::types::ProvisionedCapacity).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProvisionedCapacityBuilder {
     pub(crate) mcu_count: ::std::option::Option<i32>,
     pub(crate) worker_count: ::std::option::Option<i32>,

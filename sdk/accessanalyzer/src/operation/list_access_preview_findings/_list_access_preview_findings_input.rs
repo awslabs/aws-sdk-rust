@@ -44,8 +44,8 @@ impl ListAccessPreviewFindingsInput {
 }
 
 /// A builder for [`ListAccessPreviewFindingsInput`](crate::operation::list_access_preview_findings::ListAccessPreviewFindingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAccessPreviewFindingsInputBuilder {
     pub(crate) access_preview_id: ::std::option::Option<::std::string::String>,
     pub(crate) analyzer_arn: ::std::option::Option<::std::string::String>,

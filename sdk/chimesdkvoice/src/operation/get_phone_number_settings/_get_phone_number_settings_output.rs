@@ -41,8 +41,8 @@ impl GetPhoneNumberSettingsOutput {
 }
 
 /// A builder for [`GetPhoneNumberSettingsOutput`](crate::operation::get_phone_number_settings::GetPhoneNumberSettingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetPhoneNumberSettingsOutputBuilder {
     pub(crate) calling_name: ::std::option::Option<::std::string::String>,
     pub(crate) calling_name_updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,

@@ -27,8 +27,8 @@ impl S3ContentBaseLocationUpdate {
 }
 
 /// A builder for [`S3ContentBaseLocationUpdate`](crate::types::S3ContentBaseLocationUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3ContentBaseLocationUpdateBuilder {
     pub(crate) bucket_arn_update: ::std::option::Option<::std::string::String>,
     pub(crate) base_path_update: ::std::option::Option<::std::string::String>,

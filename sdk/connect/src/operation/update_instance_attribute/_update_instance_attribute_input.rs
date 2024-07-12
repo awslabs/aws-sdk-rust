@@ -36,8 +36,8 @@ impl UpdateInstanceAttributeInput {
 }
 
 /// A builder for [`UpdateInstanceAttributeInput`](crate::operation::update_instance_attribute::UpdateInstanceAttributeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateInstanceAttributeInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) attribute_type: ::std::option::Option<crate::types::InstanceAttributeType>,

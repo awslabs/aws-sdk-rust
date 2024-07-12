@@ -29,8 +29,8 @@ impl ScriptBootstrapActionConfig {
 }
 
 /// A builder for [`ScriptBootstrapActionConfig`](crate::types::ScriptBootstrapActionConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScriptBootstrapActionConfigBuilder {
     pub(crate) path: ::std::option::Option<::std::string::String>,
     pub(crate) args: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

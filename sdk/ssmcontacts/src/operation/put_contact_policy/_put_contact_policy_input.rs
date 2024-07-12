@@ -26,8 +26,8 @@ impl PutContactPolicyInput {
 }
 
 /// A builder for [`PutContactPolicyInput`](crate::operation::put_contact_policy::PutContactPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutContactPolicyInputBuilder {
     pub(crate) contact_arn: ::std::option::Option<::std::string::String>,
     pub(crate) policy: ::std::option::Option<::std::string::String>,

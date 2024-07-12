@@ -60,8 +60,8 @@ impl Termination {
 }
 
 /// A builder for [`Termination`](crate::types::Termination).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct TerminationBuilder {
     pub(crate) cps_limit: ::std::option::Option<i32>,
     pub(crate) default_phone_number: ::std::option::Option<::std::string::String>,

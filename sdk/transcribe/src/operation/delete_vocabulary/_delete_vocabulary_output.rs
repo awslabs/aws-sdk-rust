@@ -18,8 +18,8 @@ impl DeleteVocabularyOutput {
 }
 
 /// A builder for [`DeleteVocabularyOutput`](crate::operation::delete_vocabulary::DeleteVocabularyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVocabularyOutputBuilder {
     _request_id: Option<String>,
 }

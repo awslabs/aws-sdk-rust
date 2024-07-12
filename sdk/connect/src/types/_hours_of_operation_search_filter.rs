@@ -33,8 +33,8 @@ impl HoursOfOperationSearchFilter {
 }
 
 /// A builder for [`HoursOfOperationSearchFilter`](crate::types::HoursOfOperationSearchFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HoursOfOperationSearchFilterBuilder {
     pub(crate) tag_filter: ::std::option::Option<crate::types::ControlPlaneTagFilter>,
 }

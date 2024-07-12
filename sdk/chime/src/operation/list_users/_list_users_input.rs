@@ -55,8 +55,8 @@ impl ListUsersInput {
 }
 
 /// A builder for [`ListUsersInput`](crate::operation::list_users::ListUsersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ListUsersInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_email: ::std::option::Option<::std::string::String>,

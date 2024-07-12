@@ -34,8 +34,8 @@ impl DescribeCanariesLastRunOutput {
 }
 
 /// A builder for [`DescribeCanariesLastRunOutput`](crate::operation::describe_canaries_last_run::DescribeCanariesLastRunOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCanariesLastRunOutputBuilder {
     pub(crate) canaries_last_run: ::std::option::Option<::std::vec::Vec<crate::types::CanaryLastRun>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

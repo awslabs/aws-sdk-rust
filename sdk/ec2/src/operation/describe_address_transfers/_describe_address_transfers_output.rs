@@ -34,8 +34,8 @@ impl DescribeAddressTransfersOutput {
 }
 
 /// A builder for [`DescribeAddressTransfersOutput`](crate::operation::describe_address_transfers::DescribeAddressTransfersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAddressTransfersOutputBuilder {
     pub(crate) address_transfers: ::std::option::Option<::std::vec::Vec<crate::types::AddressTransfer>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

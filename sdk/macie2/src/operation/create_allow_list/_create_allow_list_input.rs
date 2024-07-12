@@ -46,8 +46,8 @@ impl CreateAllowListInput {
 }
 
 /// A builder for [`CreateAllowListInput`](crate::operation::create_allow_list::CreateAllowListInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAllowListInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) criteria: ::std::option::Option<crate::types::AllowListCriteria>,

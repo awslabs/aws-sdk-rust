@@ -21,8 +21,8 @@ impl AnomalyDetectorConfig {
 }
 
 /// A builder for [`AnomalyDetectorConfig`](crate::types::AnomalyDetectorConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AnomalyDetectorConfigBuilder {
     pub(crate) anomaly_detector_frequency: ::std::option::Option<crate::types::Frequency>,
 }

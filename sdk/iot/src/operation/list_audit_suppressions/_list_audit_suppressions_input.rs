@@ -44,8 +44,8 @@ impl ListAuditSuppressionsInput {
 }
 
 /// A builder for [`ListAuditSuppressionsInput`](crate::operation::list_audit_suppressions::ListAuditSuppressionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAuditSuppressionsInputBuilder {
     pub(crate) check_name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_identifier: ::std::option::Option<crate::types::ResourceIdentifier>,

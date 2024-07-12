@@ -34,8 +34,8 @@ impl ListCustomRoutingEndpointGroupsOutput {
 }
 
 /// A builder for [`ListCustomRoutingEndpointGroupsOutput`](crate::operation::list_custom_routing_endpoint_groups::ListCustomRoutingEndpointGroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCustomRoutingEndpointGroupsOutputBuilder {
     pub(crate) endpoint_groups: ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingEndpointGroup>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

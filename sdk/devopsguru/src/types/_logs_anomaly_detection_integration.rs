@@ -21,8 +21,8 @@ impl LogsAnomalyDetectionIntegration {
 }
 
 /// A builder for [`LogsAnomalyDetectionIntegration`](crate::types::LogsAnomalyDetectionIntegration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LogsAnomalyDetectionIntegrationBuilder {
     pub(crate) opt_in_status: ::std::option::Option<crate::types::OptInStatus>,
 }

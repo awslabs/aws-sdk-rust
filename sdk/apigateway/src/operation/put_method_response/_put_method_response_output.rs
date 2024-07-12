@@ -39,8 +39,8 @@ impl PutMethodResponseOutput {
 }
 
 /// A builder for [`PutMethodResponseOutput`](crate::operation::put_method_response::PutMethodResponseOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutMethodResponseOutputBuilder {
     pub(crate) status_code: ::std::option::Option<::std::string::String>,
     pub(crate) response_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, bool>>,

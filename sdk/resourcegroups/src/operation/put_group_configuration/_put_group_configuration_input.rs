@@ -34,8 +34,8 @@ impl PutGroupConfigurationInput {
 }
 
 /// A builder for [`PutGroupConfigurationInput`](crate::operation::put_group_configuration::PutGroupConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutGroupConfigurationInputBuilder {
     pub(crate) group: ::std::option::Option<::std::string::String>,
     pub(crate) configuration: ::std::option::Option<::std::vec::Vec<crate::types::GroupConfigurationItem>>,

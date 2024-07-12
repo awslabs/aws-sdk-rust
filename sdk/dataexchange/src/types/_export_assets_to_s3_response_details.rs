@@ -42,8 +42,8 @@ impl ExportAssetsToS3ResponseDetails {
 }
 
 /// A builder for [`ExportAssetsToS3ResponseDetails`](crate::types::ExportAssetsToS3ResponseDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExportAssetsToS3ResponseDetailsBuilder {
     pub(crate) asset_destinations: ::std::option::Option<::std::vec::Vec<crate::types::AssetDestinationEntry>>,
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,

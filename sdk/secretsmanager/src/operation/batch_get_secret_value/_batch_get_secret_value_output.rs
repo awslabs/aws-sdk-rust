@@ -42,8 +42,8 @@ impl BatchGetSecretValueOutput {
 }
 
 /// A builder for [`BatchGetSecretValueOutput`](crate::operation::batch_get_secret_value::BatchGetSecretValueOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetSecretValueOutputBuilder {
     pub(crate) secret_values: ::std::option::Option<::std::vec::Vec<crate::types::SecretValueEntry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

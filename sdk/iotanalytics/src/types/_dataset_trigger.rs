@@ -27,8 +27,8 @@ impl DatasetTrigger {
 }
 
 /// A builder for [`DatasetTrigger`](crate::types::DatasetTrigger).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DatasetTriggerBuilder {
     pub(crate) schedule: ::std::option::Option<crate::types::Schedule>,
     pub(crate) dataset: ::std::option::Option<crate::types::TriggeringDataset>,

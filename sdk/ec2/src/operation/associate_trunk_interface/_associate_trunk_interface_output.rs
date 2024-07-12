@@ -32,8 +32,8 @@ impl AssociateTrunkInterfaceOutput {
 }
 
 /// A builder for [`AssociateTrunkInterfaceOutput`](crate::operation::associate_trunk_interface::AssociateTrunkInterfaceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateTrunkInterfaceOutputBuilder {
     pub(crate) interface_association: ::std::option::Option<crate::types::TrunkInterfaceAssociation>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

@@ -20,8 +20,8 @@ impl DeleteCoreDeviceInput {
 }
 
 /// A builder for [`DeleteCoreDeviceInput`](crate::operation::delete_core_device::DeleteCoreDeviceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCoreDeviceInputBuilder {
     pub(crate) core_device_thing_name: ::std::option::Option<::std::string::String>,
 }

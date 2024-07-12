@@ -30,8 +30,8 @@ impl DetachGroupPolicyInput {
 }
 
 /// A builder for [`DetachGroupPolicyInput`](crate::operation::detach_group_policy::DetachGroupPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetachGroupPolicyInputBuilder {
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
     pub(crate) policy_arn: ::std::option::Option<::std::string::String>,

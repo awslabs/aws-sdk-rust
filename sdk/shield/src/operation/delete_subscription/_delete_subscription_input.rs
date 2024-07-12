@@ -12,8 +12,8 @@ impl DeleteSubscriptionInput {
 }
 
 /// A builder for [`DeleteSubscriptionInput`](crate::operation::delete_subscription::DeleteSubscriptionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSubscriptionInputBuilder {}
 impl DeleteSubscriptionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSubscriptionInput`](crate::operation::delete_subscription::DeleteSubscriptionInput).

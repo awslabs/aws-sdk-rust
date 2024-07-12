@@ -97,8 +97,8 @@ impl AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails {
 }
 
 /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetailsBuilder {
     pub(crate) hard_limit: ::std::option::Option<i32>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

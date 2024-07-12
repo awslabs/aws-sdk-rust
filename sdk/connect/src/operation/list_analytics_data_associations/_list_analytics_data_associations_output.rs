@@ -34,8 +34,8 @@ impl ListAnalyticsDataAssociationsOutput {
 }
 
 /// A builder for [`ListAnalyticsDataAssociationsOutput`](crate::operation::list_analytics_data_associations::ListAnalyticsDataAssociationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAnalyticsDataAssociationsOutputBuilder {
     pub(crate) results: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsDataAssociationResult>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

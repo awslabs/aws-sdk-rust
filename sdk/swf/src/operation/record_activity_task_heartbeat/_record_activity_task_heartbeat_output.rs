@@ -27,8 +27,8 @@ impl RecordActivityTaskHeartbeatOutput {
 }
 
 /// A builder for [`RecordActivityTaskHeartbeatOutput`](crate::operation::record_activity_task_heartbeat::RecordActivityTaskHeartbeatOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecordActivityTaskHeartbeatOutputBuilder {
     pub(crate) cancel_requested: ::std::option::Option<bool>,
     _request_id: Option<String>,

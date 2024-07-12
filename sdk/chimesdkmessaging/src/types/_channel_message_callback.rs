@@ -73,8 +73,8 @@ impl ChannelMessageCallback {
 }
 
 /// A builder for [`ChannelMessageCallback`](crate::types::ChannelMessageCallback).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ChannelMessageCallbackBuilder {
     pub(crate) message_id: ::std::option::Option<::std::string::String>,
     pub(crate) content: ::std::option::Option<::std::string::String>,

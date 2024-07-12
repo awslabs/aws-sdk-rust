@@ -49,8 +49,8 @@ impl AddPermissionInput {
 }
 
 /// A builder for [`AddPermissionInput`](crate::operation::add_permission::AddPermissionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddPermissionInputBuilder {
     pub(crate) queue_url: ::std::option::Option<::std::string::String>,
     pub(crate) label: ::std::option::Option<::std::string::String>,

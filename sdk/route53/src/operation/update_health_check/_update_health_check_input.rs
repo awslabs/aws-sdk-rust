@@ -317,8 +317,8 @@ impl UpdateHealthCheckInput {
 }
 
 /// A builder for [`UpdateHealthCheckInput`](crate::operation::update_health_check::UpdateHealthCheckInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateHealthCheckInputBuilder {
     pub(crate) health_check_id: ::std::option::Option<::std::string::String>,
     pub(crate) health_check_version: ::std::option::Option<i64>,

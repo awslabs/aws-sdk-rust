@@ -27,8 +27,8 @@ impl MetadataKeyValuePair {
 }
 
 /// A builder for [`MetadataKeyValuePair`](crate::types::MetadataKeyValuePair).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MetadataKeyValuePairBuilder {
     pub(crate) metadata_key: ::std::option::Option<::std::string::String>,
     pub(crate) metadata_value: ::std::option::Option<::std::string::String>,

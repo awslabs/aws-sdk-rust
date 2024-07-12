@@ -82,8 +82,8 @@ impl GetDimensionKeyDetailsInput {
 }
 
 /// A builder for [`GetDimensionKeyDetailsInput`](crate::operation::get_dimension_key_details::GetDimensionKeyDetailsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDimensionKeyDetailsInputBuilder {
     pub(crate) service_type: ::std::option::Option<crate::types::ServiceType>,
     pub(crate) identifier: ::std::option::Option<::std::string::String>,

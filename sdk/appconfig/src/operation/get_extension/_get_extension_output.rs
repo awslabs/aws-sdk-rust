@@ -62,8 +62,8 @@ impl GetExtensionOutput {
 }
 
 /// A builder for [`GetExtensionOutput`](crate::operation::get_extension::GetExtensionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetExtensionOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

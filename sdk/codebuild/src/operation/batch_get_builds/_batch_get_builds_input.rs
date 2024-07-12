@@ -22,8 +22,8 @@ impl BatchGetBuildsInput {
 }
 
 /// A builder for [`BatchGetBuildsInput`](crate::operation::batch_get_builds::BatchGetBuildsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetBuildsInputBuilder {
     pub(crate) ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

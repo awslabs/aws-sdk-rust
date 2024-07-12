@@ -68,8 +68,8 @@ impl CreateInstanceConnectEndpointInput {
 }
 
 /// A builder for [`CreateInstanceConnectEndpointInput`](crate::operation::create_instance_connect_endpoint::CreateInstanceConnectEndpointInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateInstanceConnectEndpointInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,

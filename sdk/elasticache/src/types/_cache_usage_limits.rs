@@ -27,8 +27,8 @@ impl CacheUsageLimits {
 }
 
 /// A builder for [`CacheUsageLimits`](crate::types::CacheUsageLimits).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CacheUsageLimitsBuilder {
     pub(crate) data_storage: ::std::option::Option<crate::types::DataStorage>,
     pub(crate) ecpu_per_second: ::std::option::Option<crate::types::EcpuPerSecond>,

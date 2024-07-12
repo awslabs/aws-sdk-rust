@@ -46,8 +46,8 @@ impl ImportCrlInput {
 }
 
 /// A builder for [`ImportCrlInput`](crate::operation::import_crl::ImportCrlInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportCrlInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) crl_data: ::std::option::Option<::aws_smithy_types::Blob>,

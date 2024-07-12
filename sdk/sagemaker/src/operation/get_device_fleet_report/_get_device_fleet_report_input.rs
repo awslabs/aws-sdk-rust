@@ -20,8 +20,8 @@ impl GetDeviceFleetReportInput {
 }
 
 /// A builder for [`GetDeviceFleetReportInput`](crate::operation::get_device_fleet_report::GetDeviceFleetReportInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDeviceFleetReportInputBuilder {
     pub(crate) device_fleet_name: ::std::option::Option<::std::string::String>,
 }

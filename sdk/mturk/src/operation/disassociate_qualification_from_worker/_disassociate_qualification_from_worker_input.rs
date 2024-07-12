@@ -32,8 +32,8 @@ impl DisassociateQualificationFromWorkerInput {
 }
 
 /// A builder for [`DisassociateQualificationFromWorkerInput`](crate::operation::disassociate_qualification_from_worker::DisassociateQualificationFromWorkerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateQualificationFromWorkerInputBuilder {
     pub(crate) worker_id: ::std::option::Option<::std::string::String>,
     pub(crate) qualification_type_id: ::std::option::Option<::std::string::String>,

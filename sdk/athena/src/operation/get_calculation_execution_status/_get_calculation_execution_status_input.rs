@@ -20,8 +20,8 @@ impl GetCalculationExecutionStatusInput {
 }
 
 /// A builder for [`GetCalculationExecutionStatusInput`](crate::operation::get_calculation_execution_status::GetCalculationExecutionStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCalculationExecutionStatusInputBuilder {
     pub(crate) calculation_execution_id: ::std::option::Option<::std::string::String>,
 }

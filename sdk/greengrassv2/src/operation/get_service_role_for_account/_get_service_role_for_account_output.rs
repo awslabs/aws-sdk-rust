@@ -32,8 +32,8 @@ impl GetServiceRoleForAccountOutput {
 }
 
 /// A builder for [`GetServiceRoleForAccountOutput`](crate::operation::get_service_role_for_account::GetServiceRoleForAccountOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetServiceRoleForAccountOutputBuilder {
     pub(crate) associated_at: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,

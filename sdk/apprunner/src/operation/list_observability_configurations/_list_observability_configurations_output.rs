@@ -33,8 +33,8 @@ impl ListObservabilityConfigurationsOutput {
 }
 
 /// A builder for [`ListObservabilityConfigurationsOutput`](crate::operation::list_observability_configurations::ListObservabilityConfigurationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListObservabilityConfigurationsOutputBuilder {
     pub(crate) observability_configuration_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ObservabilityConfigurationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

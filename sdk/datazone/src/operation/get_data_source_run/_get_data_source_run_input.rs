@@ -26,8 +26,8 @@ impl GetDataSourceRunInput {
 }
 
 /// A builder for [`GetDataSourceRunInput`](crate::operation::get_data_source_run::GetDataSourceRunInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDataSourceRunInputBuilder {
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) identifier: ::std::option::Option<::std::string::String>,

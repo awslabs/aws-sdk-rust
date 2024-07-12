@@ -50,8 +50,8 @@ impl GetJourneyRunExecutionActivityMetricsInput {
 }
 
 /// A builder for [`GetJourneyRunExecutionActivityMetricsInput`](crate::operation::get_journey_run_execution_activity_metrics::GetJourneyRunExecutionActivityMetricsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetJourneyRunExecutionActivityMetricsInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) journey_activity_id: ::std::option::Option<::std::string::String>,

@@ -37,8 +37,8 @@ impl TestRepositoryTriggersOutput {
 }
 
 /// A builder for [`TestRepositoryTriggersOutput`](crate::operation::test_repository_triggers::TestRepositoryTriggersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TestRepositoryTriggersOutputBuilder {
     pub(crate) successful_executions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) failed_executions: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryTriggerExecutionFailure>>,

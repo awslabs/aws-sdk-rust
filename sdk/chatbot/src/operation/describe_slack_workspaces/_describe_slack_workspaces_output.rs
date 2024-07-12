@@ -34,8 +34,8 @@ impl DescribeSlackWorkspacesOutput {
 }
 
 /// A builder for [`DescribeSlackWorkspacesOutput`](crate::operation::describe_slack_workspaces::DescribeSlackWorkspacesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSlackWorkspacesOutputBuilder {
     pub(crate) slack_workspaces: ::std::option::Option<::std::vec::Vec<crate::types::SlackWorkspace>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

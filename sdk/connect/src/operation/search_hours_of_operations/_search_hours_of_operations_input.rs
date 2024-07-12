@@ -44,8 +44,8 @@ impl SearchHoursOfOperationsInput {
 }
 
 /// A builder for [`SearchHoursOfOperationsInput`](crate::operation::search_hours_of_operations::SearchHoursOfOperationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchHoursOfOperationsInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

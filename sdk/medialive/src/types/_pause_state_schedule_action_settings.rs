@@ -23,8 +23,8 @@ impl PauseStateScheduleActionSettings {
 }
 
 /// A builder for [`PauseStateScheduleActionSettings`](crate::types::PauseStateScheduleActionSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PauseStateScheduleActionSettingsBuilder {
     pub(crate) pipelines: ::std::option::Option<::std::vec::Vec<crate::types::PipelinePauseStateSettings>>,
 }

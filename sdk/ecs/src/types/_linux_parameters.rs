@@ -91,8 +91,8 @@ impl LinuxParameters {
 }
 
 /// A builder for [`LinuxParameters`](crate::types::LinuxParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LinuxParametersBuilder {
     pub(crate) capabilities: ::std::option::Option<crate::types::KernelCapabilities>,
     pub(crate) devices: ::std::option::Option<::std::vec::Vec<crate::types::Device>>,

@@ -29,8 +29,8 @@ impl GridLayoutConfiguration {
 }
 
 /// A builder for [`GridLayoutConfiguration`](crate::types::GridLayoutConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GridLayoutConfigurationBuilder {
     pub(crate) elements: ::std::option::Option<::std::vec::Vec<crate::types::GridLayoutElement>>,
     pub(crate) canvas_size_options: ::std::option::Option<crate::types::GridLayoutCanvasSizeOptions>,

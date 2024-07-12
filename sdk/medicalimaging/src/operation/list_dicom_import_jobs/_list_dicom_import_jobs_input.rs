@@ -38,8 +38,8 @@ impl ListDicomImportJobsInput {
 }
 
 /// A builder for [`ListDicomImportJobsInput`](crate::operation::list_dicom_import_jobs::ListDicomImportJobsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDicomImportJobsInputBuilder {
     pub(crate) datastore_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_status: ::std::option::Option<crate::types::JobStatus>,

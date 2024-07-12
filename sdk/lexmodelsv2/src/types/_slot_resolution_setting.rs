@@ -21,8 +21,8 @@ impl SlotResolutionSetting {
 }
 
 /// A builder for [`SlotResolutionSetting`](crate::types::SlotResolutionSetting).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SlotResolutionSettingBuilder {
     pub(crate) slot_resolution_strategy: ::std::option::Option<crate::types::SlotResolutionStrategy>,
 }

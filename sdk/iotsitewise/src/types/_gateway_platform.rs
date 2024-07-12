@@ -27,8 +27,8 @@ impl GatewayPlatform {
 }
 
 /// A builder for [`GatewayPlatform`](crate::types::GatewayPlatform).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GatewayPlatformBuilder {
     pub(crate) greengrass: ::std::option::Option<crate::types::Greengrass>,
     pub(crate) greengrass_v2: ::std::option::Option<crate::types::GreengrassV2>,

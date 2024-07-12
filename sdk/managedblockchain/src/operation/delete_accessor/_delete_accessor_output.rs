@@ -18,8 +18,8 @@ impl DeleteAccessorOutput {
 }
 
 /// A builder for [`DeleteAccessorOutput`](crate::operation::delete_accessor::DeleteAccessorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAccessorOutputBuilder {
     _request_id: Option<String>,
 }

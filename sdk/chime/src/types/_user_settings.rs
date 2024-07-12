@@ -21,8 +21,8 @@ impl UserSettings {
 }
 
 /// A builder for [`UserSettings`](crate::types::UserSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UserSettingsBuilder {
     pub(crate) telephony: ::std::option::Option<crate::types::TelephonySettings>,
 }

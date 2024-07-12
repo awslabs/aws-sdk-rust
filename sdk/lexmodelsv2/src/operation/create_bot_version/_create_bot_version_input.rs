@@ -35,8 +35,8 @@ impl CreateBotVersionInput {
 }
 
 /// A builder for [`CreateBotVersionInput`](crate::operation::create_bot_version::CreateBotVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateBotVersionInputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

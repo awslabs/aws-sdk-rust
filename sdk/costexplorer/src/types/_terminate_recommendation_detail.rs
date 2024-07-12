@@ -27,8 +27,8 @@ impl TerminateRecommendationDetail {
 }
 
 /// A builder for [`TerminateRecommendationDetail`](crate::types::TerminateRecommendationDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TerminateRecommendationDetailBuilder {
     pub(crate) estimated_monthly_savings: ::std::option::Option<::std::string::String>,
     pub(crate) currency_code: ::std::option::Option<::std::string::String>,

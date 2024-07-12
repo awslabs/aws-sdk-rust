@@ -26,8 +26,8 @@ impl GetAttachmentInput {
 }
 
 /// A builder for [`GetAttachmentInput`](crate::operation::get_attachment::GetAttachmentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAttachmentInputBuilder {
     pub(crate) attachment_id: ::std::option::Option<::std::string::String>,
     pub(crate) connection_token: ::std::option::Option<::std::string::String>,

@@ -48,8 +48,8 @@ impl PutEventsConfigurationInput {
 }
 
 /// A builder for [`PutEventsConfigurationInput`](crate::operation::put_events_configuration::PutEventsConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PutEventsConfigurationInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,

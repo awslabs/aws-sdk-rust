@@ -35,8 +35,8 @@ impl ListTestsOutput {
 }
 
 /// A builder for [`ListTestsOutput`](crate::operation::list_tests::ListTestsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTestsOutputBuilder {
     pub(crate) tests: ::std::option::Option<::std::vec::Vec<crate::types::Test>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

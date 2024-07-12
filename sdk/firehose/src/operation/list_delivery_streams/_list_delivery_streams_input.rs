@@ -46,8 +46,8 @@ impl ListDeliveryStreamsInput {
 }
 
 /// A builder for [`ListDeliveryStreamsInput`](crate::operation::list_delivery_streams::ListDeliveryStreamsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDeliveryStreamsInputBuilder {
     pub(crate) limit: ::std::option::Option<i32>,
     pub(crate) delivery_stream_type: ::std::option::Option<crate::types::DeliveryStreamType>,

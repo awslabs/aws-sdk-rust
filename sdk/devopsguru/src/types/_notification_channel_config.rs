@@ -31,8 +31,8 @@ impl NotificationChannelConfig {
 }
 
 /// A builder for [`NotificationChannelConfig`](crate::types::NotificationChannelConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NotificationChannelConfigBuilder {
     pub(crate) sns: ::std::option::Option<crate::types::SnsChannelConfig>,
     pub(crate) filters: ::std::option::Option<crate::types::NotificationFilterConfig>,

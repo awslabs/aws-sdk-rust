@@ -22,8 +22,8 @@ impl ChatStreamingConfiguration {
 }
 
 /// A builder for [`ChatStreamingConfiguration`](crate::types::ChatStreamingConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ChatStreamingConfigurationBuilder {
     pub(crate) streaming_endpoint_arn: ::std::option::Option<::std::string::String>,
 }

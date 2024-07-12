@@ -27,8 +27,8 @@ impl ScalingPolicyMetric {
 }
 
 /// A builder for [`ScalingPolicyMetric`](crate::types::ScalingPolicyMetric).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScalingPolicyMetricBuilder {
     pub(crate) invocations_per_instance: ::std::option::Option<i32>,
     pub(crate) model_latency: ::std::option::Option<i32>,

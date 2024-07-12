@@ -78,8 +78,8 @@ impl CreateAccessorInput {
 }
 
 /// A builder for [`CreateAccessorInput`](crate::operation::create_accessor::CreateAccessorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAccessorInputBuilder {
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) accessor_type: ::std::option::Option<crate::types::AccessorType>,

@@ -28,8 +28,8 @@ impl LambdaFunctionSinkConfiguration {
 }
 
 /// A builder for [`LambdaFunctionSinkConfiguration`](crate::types::LambdaFunctionSinkConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct LambdaFunctionSinkConfigurationBuilder {
     pub(crate) insights_target: ::std::option::Option<::std::string::String>,
 }

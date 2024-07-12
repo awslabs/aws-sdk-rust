@@ -26,8 +26,8 @@ impl ListKnowledgeBasesInput {
 }
 
 /// A builder for [`ListKnowledgeBasesInput`](crate::operation::list_knowledge_bases::ListKnowledgeBasesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListKnowledgeBasesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

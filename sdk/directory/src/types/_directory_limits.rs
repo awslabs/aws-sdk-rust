@@ -69,8 +69,8 @@ impl DirectoryLimits {
 }
 
 /// A builder for [`DirectoryLimits`](crate::types::DirectoryLimits).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DirectoryLimitsBuilder {
     pub(crate) cloud_only_directories_limit: ::std::option::Option<i32>,
     pub(crate) cloud_only_directories_current_count: ::std::option::Option<i32>,

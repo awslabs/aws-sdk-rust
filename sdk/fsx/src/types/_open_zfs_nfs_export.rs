@@ -23,8 +23,8 @@ impl OpenZfsNfsExport {
 }
 
 /// A builder for [`OpenZfsNfsExport`](crate::types::OpenZfsNfsExport).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OpenZfsNfsExportBuilder {
     pub(crate) client_configurations: ::std::option::Option<::std::vec::Vec<crate::types::OpenZfsClientConfiguration>>,
 }

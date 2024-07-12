@@ -106,8 +106,8 @@ impl CacheSettings {
 }
 
 /// A builder for [`CacheSettings`](crate::types::CacheSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CacheSettingsBuilder {
     pub(crate) default_ttl: ::std::option::Option<i64>,
     pub(crate) minimum_ttl: ::std::option::Option<i64>,

@@ -20,8 +20,8 @@ impl StopCrawlerScheduleInput {
 }
 
 /// A builder for [`StopCrawlerScheduleInput`](crate::operation::stop_crawler_schedule::StopCrawlerScheduleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopCrawlerScheduleInputBuilder {
     pub(crate) crawler_name: ::std::option::Option<::std::string::String>,
 }

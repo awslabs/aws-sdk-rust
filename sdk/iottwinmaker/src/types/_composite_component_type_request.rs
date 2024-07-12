@@ -21,8 +21,8 @@ impl CompositeComponentTypeRequest {
 }
 
 /// A builder for [`CompositeComponentTypeRequest`](crate::types::CompositeComponentTypeRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CompositeComponentTypeRequestBuilder {
     pub(crate) component_type_id: ::std::option::Option<::std::string::String>,
 }

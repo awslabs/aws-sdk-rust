@@ -18,8 +18,8 @@ impl DeleteChallengeOutput {
 }
 
 /// A builder for [`DeleteChallengeOutput`](crate::operation::delete_challenge::DeleteChallengeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteChallengeOutputBuilder {
     _request_id: Option<String>,
 }

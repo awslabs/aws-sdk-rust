@@ -34,8 +34,8 @@ impl DescribeDbProxyTargetsOutput {
 }
 
 /// A builder for [`DescribeDbProxyTargetsOutput`](crate::operation::describe_db_proxy_targets::DescribeDbProxyTargetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDbProxyTargetsOutputBuilder {
     pub(crate) targets: ::std::option::Option<::std::vec::Vec<crate::types::DbProxyTarget>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

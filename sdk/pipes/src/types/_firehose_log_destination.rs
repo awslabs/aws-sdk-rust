@@ -21,8 +21,8 @@ impl FirehoseLogDestination {
 }
 
 /// A builder for [`FirehoseLogDestination`](crate::types::FirehoseLogDestination).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FirehoseLogDestinationBuilder {
     pub(crate) delivery_stream_arn: ::std::option::Option<::std::string::String>,
 }

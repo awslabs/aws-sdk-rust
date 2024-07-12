@@ -20,8 +20,8 @@ impl DeleteGlobalClusterInput {
 }
 
 /// A builder for [`DeleteGlobalClusterInput`](crate::operation::delete_global_cluster::DeleteGlobalClusterInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteGlobalClusterInputBuilder {
     pub(crate) global_cluster_identifier: ::std::option::Option<::std::string::String>,
 }

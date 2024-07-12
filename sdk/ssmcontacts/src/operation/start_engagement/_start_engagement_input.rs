@@ -62,8 +62,8 @@ impl StartEngagementInput {
 }
 
 /// A builder for [`StartEngagementInput`](crate::operation::start_engagement::StartEngagementInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartEngagementInputBuilder {
     pub(crate) contact_id: ::std::option::Option<::std::string::String>,
     pub(crate) sender: ::std::option::Option<::std::string::String>,

@@ -31,8 +31,8 @@ impl DeletePullRequestApprovalRuleOutput {
 }
 
 /// A builder for [`DeletePullRequestApprovalRuleOutput`](crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePullRequestApprovalRuleOutputBuilder {
     pub(crate) approval_rule_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

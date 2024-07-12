@@ -43,8 +43,8 @@ impl CreateBackupPlanInput {
 }
 
 /// A builder for [`CreateBackupPlanInput`](crate::operation::create_backup_plan::CreateBackupPlanInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateBackupPlanInputBuilder {
     pub(crate) backup_plan: ::std::option::Option<crate::types::BackupPlanInput>,
     pub(crate) backup_plan_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

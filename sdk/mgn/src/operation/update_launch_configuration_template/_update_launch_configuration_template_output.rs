@@ -147,8 +147,8 @@ impl UpdateLaunchConfigurationTemplateOutput {
 }
 
 /// A builder for [`UpdateLaunchConfigurationTemplateOutput`](crate::operation::update_launch_configuration_template::UpdateLaunchConfigurationTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateLaunchConfigurationTemplateOutputBuilder {
     pub(crate) launch_configuration_template_id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

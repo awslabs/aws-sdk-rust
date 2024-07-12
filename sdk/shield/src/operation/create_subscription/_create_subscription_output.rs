@@ -18,8 +18,8 @@ impl CreateSubscriptionOutput {
 }
 
 /// A builder for [`CreateSubscriptionOutput`](crate::operation::create_subscription::CreateSubscriptionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSubscriptionOutputBuilder {
     _request_id: Option<String>,
 }

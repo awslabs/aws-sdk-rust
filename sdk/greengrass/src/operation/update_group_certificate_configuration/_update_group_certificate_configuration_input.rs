@@ -26,8 +26,8 @@ impl UpdateGroupCertificateConfigurationInput {
 }
 
 /// A builder for [`UpdateGroupCertificateConfigurationInput`](crate::operation::update_group_certificate_configuration::UpdateGroupCertificateConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateGroupCertificateConfigurationInputBuilder {
     pub(crate) certificate_expiry_in_milliseconds: ::std::option::Option<::std::string::String>,
     pub(crate) group_id: ::std::option::Option<::std::string::String>,

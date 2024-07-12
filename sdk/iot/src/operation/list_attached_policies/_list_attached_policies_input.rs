@@ -38,8 +38,8 @@ impl ListAttachedPoliciesInput {
 }
 
 /// A builder for [`ListAttachedPoliciesInput`](crate::operation::list_attached_policies::ListAttachedPoliciesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAttachedPoliciesInputBuilder {
     pub(crate) target: ::std::option::Option<::std::string::String>,
     pub(crate) recursive: ::std::option::Option<bool>,

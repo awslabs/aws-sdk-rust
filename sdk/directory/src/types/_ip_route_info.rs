@@ -51,8 +51,8 @@ impl IpRouteInfo {
 }
 
 /// A builder for [`IpRouteInfo`](crate::types::IpRouteInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IpRouteInfoBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) cidr_ip: ::std::option::Option<::std::string::String>,

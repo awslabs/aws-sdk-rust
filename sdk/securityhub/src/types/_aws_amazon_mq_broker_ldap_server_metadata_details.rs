@@ -77,8 +77,8 @@ impl AwsAmazonMqBrokerLdapServerMetadataDetails {
 }
 
 /// A builder for [`AwsAmazonMqBrokerLdapServerMetadataDetails`](crate::types::AwsAmazonMqBrokerLdapServerMetadataDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsAmazonMqBrokerLdapServerMetadataDetailsBuilder {
     pub(crate) hosts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) role_base: ::std::option::Option<::std::string::String>,

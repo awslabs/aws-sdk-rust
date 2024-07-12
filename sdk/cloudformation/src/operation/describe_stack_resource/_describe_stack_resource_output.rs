@@ -27,8 +27,8 @@ impl DescribeStackResourceOutput {
 }
 
 /// A builder for [`DescribeStackResourceOutput`](crate::operation::describe_stack_resource::DescribeStackResourceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeStackResourceOutputBuilder {
     pub(crate) stack_resource_detail: ::std::option::Option<crate::types::StackResourceDetail>,
     _request_id: Option<String>,

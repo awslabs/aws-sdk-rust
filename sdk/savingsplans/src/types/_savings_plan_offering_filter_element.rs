@@ -29,8 +29,8 @@ impl SavingsPlanOfferingFilterElement {
 }
 
 /// A builder for [`SavingsPlanOfferingFilterElement`](crate::types::SavingsPlanOfferingFilterElement).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SavingsPlanOfferingFilterElementBuilder {
     pub(crate) name: ::std::option::Option<crate::types::SavingsPlanOfferingFilterAttribute>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

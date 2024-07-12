@@ -26,8 +26,8 @@ impl PutOrganizationConfigRuleOutput {
 }
 
 /// A builder for [`PutOrganizationConfigRuleOutput`](crate::operation::put_organization_config_rule::PutOrganizationConfigRuleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutOrganizationConfigRuleOutputBuilder {
     pub(crate) organization_config_rule_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

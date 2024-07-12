@@ -23,8 +23,8 @@ impl DeleteDbSnapshotInput {
 }
 
 /// A builder for [`DeleteDbSnapshotInput`](crate::operation::delete_db_snapshot::DeleteDbSnapshotInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDbSnapshotInputBuilder {
     pub(crate) db_snapshot_identifier: ::std::option::Option<::std::string::String>,
 }

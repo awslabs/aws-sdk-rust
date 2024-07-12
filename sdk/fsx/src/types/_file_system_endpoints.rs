@@ -27,8 +27,8 @@ impl FileSystemEndpoints {
 }
 
 /// A builder for [`FileSystemEndpoints`](crate::types::FileSystemEndpoints).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FileSystemEndpointsBuilder {
     pub(crate) intercluster: ::std::option::Option<crate::types::FileSystemEndpoint>,
     pub(crate) management: ::std::option::Option<crate::types::FileSystemEndpoint>,

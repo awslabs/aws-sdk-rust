@@ -26,8 +26,8 @@ impl GetSearchSuggestionsInput {
 }
 
 /// A builder for [`GetSearchSuggestionsInput`](crate::operation::get_search_suggestions::GetSearchSuggestionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSearchSuggestionsInputBuilder {
     pub(crate) resource: ::std::option::Option<crate::types::ResourceType>,
     pub(crate) suggestion_query: ::std::option::Option<crate::types::SuggestionQuery>,

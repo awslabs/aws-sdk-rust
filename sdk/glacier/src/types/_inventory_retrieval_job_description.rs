@@ -45,8 +45,8 @@ impl InventoryRetrievalJobDescription {
 }
 
 /// A builder for [`InventoryRetrievalJobDescription`](crate::types::InventoryRetrievalJobDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InventoryRetrievalJobDescriptionBuilder {
     pub(crate) format: ::std::option::Option<::std::string::String>,
     pub(crate) start_date: ::std::option::Option<::std::string::String>,

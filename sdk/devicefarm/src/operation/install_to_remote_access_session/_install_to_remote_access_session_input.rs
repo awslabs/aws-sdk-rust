@@ -27,8 +27,8 @@ impl InstallToRemoteAccessSessionInput {
 }
 
 /// A builder for [`InstallToRemoteAccessSessionInput`](crate::operation::install_to_remote_access_session::InstallToRemoteAccessSessionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstallToRemoteAccessSessionInputBuilder {
     pub(crate) remote_access_session_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,

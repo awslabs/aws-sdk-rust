@@ -26,8 +26,8 @@ impl ModifyIpamPoolOutput {
 }
 
 /// A builder for [`ModifyIpamPoolOutput`](crate::operation::modify_ipam_pool::ModifyIpamPoolOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyIpamPoolOutputBuilder {
     pub(crate) ipam_pool: ::std::option::Option<crate::types::IpamPool>,
     _request_id: Option<String>,

@@ -20,8 +20,8 @@ impl DeleteAssistantInput {
 }
 
 /// A builder for [`DeleteAssistantInput`](crate::operation::delete_assistant::DeleteAssistantInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAssistantInputBuilder {
     pub(crate) assistant_id: ::std::option::Option<::std::string::String>,
 }

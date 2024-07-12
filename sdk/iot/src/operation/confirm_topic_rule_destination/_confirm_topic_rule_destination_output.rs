@@ -18,8 +18,8 @@ impl ConfirmTopicRuleDestinationOutput {
 }
 
 /// A builder for [`ConfirmTopicRuleDestinationOutput`](crate::operation::confirm_topic_rule_destination::ConfirmTopicRuleDestinationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConfirmTopicRuleDestinationOutputBuilder {
     _request_id: Option<String>,
 }

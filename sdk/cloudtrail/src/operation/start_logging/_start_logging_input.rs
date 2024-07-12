@@ -23,8 +23,8 @@ impl StartLoggingInput {
 }
 
 /// A builder for [`StartLoggingInput`](crate::operation::start_logging::StartLoggingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartLoggingInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

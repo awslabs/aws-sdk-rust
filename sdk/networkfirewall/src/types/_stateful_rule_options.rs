@@ -21,8 +21,8 @@ impl StatefulRuleOptions {
 }
 
 /// A builder for [`StatefulRuleOptions`](crate::types::StatefulRuleOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StatefulRuleOptionsBuilder {
     pub(crate) rule_order: ::std::option::Option<crate::types::RuleOrder>,
 }

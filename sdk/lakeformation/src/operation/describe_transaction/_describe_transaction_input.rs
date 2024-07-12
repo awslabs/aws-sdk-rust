@@ -20,8 +20,8 @@ impl DescribeTransactionInput {
 }
 
 /// A builder for [`DescribeTransactionInput`](crate::operation::describe_transaction::DescribeTransactionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTransactionInputBuilder {
     pub(crate) transaction_id: ::std::option::Option<::std::string::String>,
 }

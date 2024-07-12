@@ -18,8 +18,8 @@ impl DisconnectParticipantOutput {
 }
 
 /// A builder for [`DisconnectParticipantOutput`](crate::operation::disconnect_participant::DisconnectParticipantOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisconnectParticipantOutputBuilder {
     _request_id: Option<String>,
 }

@@ -29,8 +29,8 @@ impl JobAttachmentSettings {
 }
 
 /// A builder for [`JobAttachmentSettings`](crate::types::JobAttachmentSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JobAttachmentSettingsBuilder {
     pub(crate) s3_bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) root_prefix: ::std::option::Option<::std::string::String>,

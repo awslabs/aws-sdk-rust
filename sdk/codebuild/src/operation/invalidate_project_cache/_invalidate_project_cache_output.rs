@@ -18,8 +18,8 @@ impl InvalidateProjectCacheOutput {
 }
 
 /// A builder for [`InvalidateProjectCacheOutput`](crate::operation::invalidate_project_cache::InvalidateProjectCacheOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InvalidateProjectCacheOutputBuilder {
     _request_id: Option<String>,
 }

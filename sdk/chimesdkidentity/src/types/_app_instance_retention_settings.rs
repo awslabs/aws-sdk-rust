@@ -21,8 +21,8 @@ impl AppInstanceRetentionSettings {
 }
 
 /// A builder for [`AppInstanceRetentionSettings`](crate::types::AppInstanceRetentionSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AppInstanceRetentionSettingsBuilder {
     pub(crate) channel_retention_settings: ::std::option::Option<crate::types::ChannelRetentionSettings>,
 }

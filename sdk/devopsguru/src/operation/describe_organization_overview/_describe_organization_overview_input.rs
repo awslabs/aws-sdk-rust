@@ -42,8 +42,8 @@ impl DescribeOrganizationOverviewInput {
 }
 
 /// A builder for [`DescribeOrganizationOverviewInput`](crate::operation::describe_organization_overview::DescribeOrganizationOverviewInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeOrganizationOverviewInputBuilder {
     pub(crate) from_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) to_time: ::std::option::Option<::aws_smithy_types::DateTime>,

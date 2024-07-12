@@ -20,8 +20,8 @@ impl DeleteRoomInput {
 }
 
 /// A builder for [`DeleteRoomInput`](crate::operation::delete_room::DeleteRoomInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRoomInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
 }

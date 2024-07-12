@@ -26,8 +26,8 @@ impl DeleteObservabilityConfigurationOutput {
 }
 
 /// A builder for [`DeleteObservabilityConfigurationOutput`](crate::operation::delete_observability_configuration::DeleteObservabilityConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteObservabilityConfigurationOutputBuilder {
     pub(crate) observability_configuration: ::std::option::Option<crate::types::ObservabilityConfiguration>,
     _request_id: Option<String>,

@@ -34,8 +34,8 @@ impl ListManagedPoliciesInPermissionSetOutput {
 }
 
 /// A builder for [`ListManagedPoliciesInPermissionSetOutput`](crate::operation::list_managed_policies_in_permission_set::ListManagedPoliciesInPermissionSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListManagedPoliciesInPermissionSetOutputBuilder {
     pub(crate) attached_managed_policies: ::std::option::Option<::std::vec::Vec<crate::types::AttachedManagedPolicy>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

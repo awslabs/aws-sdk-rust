@@ -26,8 +26,8 @@ impl GetMobileSdkReleaseInput {
 }
 
 /// A builder for [`GetMobileSdkReleaseInput`](crate::operation::get_mobile_sdk_release::GetMobileSdkReleaseInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMobileSdkReleaseInputBuilder {
     pub(crate) platform: ::std::option::Option<crate::types::Platform>,
     pub(crate) release_version: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl ListReplacePermissionAssociationsWorkOutput {
 }
 
 /// A builder for [`ListReplacePermissionAssociationsWorkOutput`](crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWorkOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListReplacePermissionAssociationsWorkOutputBuilder {
     pub(crate) replace_permission_associations_works: ::std::option::Option<::std::vec::Vec<crate::types::ReplacePermissionAssociationsWork>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

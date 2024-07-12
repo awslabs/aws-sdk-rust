@@ -18,8 +18,8 @@ impl CreateUserDefinedFunctionOutput {
 }
 
 /// A builder for [`CreateUserDefinedFunctionOutput`](crate::operation::create_user_defined_function::CreateUserDefinedFunctionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateUserDefinedFunctionOutputBuilder {
     _request_id: Option<String>,
 }

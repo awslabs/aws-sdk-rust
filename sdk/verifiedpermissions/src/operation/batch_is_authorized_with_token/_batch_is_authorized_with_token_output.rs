@@ -33,8 +33,8 @@ impl BatchIsAuthorizedWithTokenOutput {
 }
 
 /// A builder for [`BatchIsAuthorizedWithTokenOutput`](crate::operation::batch_is_authorized_with_token::BatchIsAuthorizedWithTokenOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchIsAuthorizedWithTokenOutputBuilder {
     pub(crate) principal: ::std::option::Option<crate::types::EntityIdentifier>,
     pub(crate) results: ::std::option::Option<::std::vec::Vec<crate::types::BatchIsAuthorizedWithTokenOutputItem>>,

@@ -39,8 +39,8 @@ impl Ec2InstanceLimit {
 }
 
 /// A builder for [`Ec2InstanceLimit`](crate::types::Ec2InstanceLimit).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Ec2InstanceLimitBuilder {
     pub(crate) ec2_instance_type: ::std::option::Option<crate::types::Ec2InstanceType>,
     pub(crate) current_instances: ::std::option::Option<i32>,

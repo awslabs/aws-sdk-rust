@@ -34,8 +34,8 @@ impl EvaluationFormSingleSelectQuestionProperties {
 }
 
 /// A builder for [`EvaluationFormSingleSelectQuestionProperties`](crate::types::EvaluationFormSingleSelectQuestionProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EvaluationFormSingleSelectQuestionPropertiesBuilder {
     pub(crate) options: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormSingleSelectQuestionOption>>,
     pub(crate) display_as: ::std::option::Option<crate::types::EvaluationFormSingleSelectQuestionDisplayMode>,

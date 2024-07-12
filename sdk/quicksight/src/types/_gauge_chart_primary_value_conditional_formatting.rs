@@ -27,8 +27,8 @@ impl GaugeChartPrimaryValueConditionalFormatting {
 }
 
 /// A builder for [`GaugeChartPrimaryValueConditionalFormatting`](crate::types::GaugeChartPrimaryValueConditionalFormatting).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GaugeChartPrimaryValueConditionalFormattingBuilder {
     pub(crate) text_color: ::std::option::Option<crate::types::ConditionalFormattingColor>,
     pub(crate) icon: ::std::option::Option<crate::types::ConditionalFormattingIcon>,

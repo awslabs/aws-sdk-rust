@@ -27,8 +27,8 @@ impl BridgeSource {
 }
 
 /// A builder for [`BridgeSource`](crate::types::BridgeSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BridgeSourceBuilder {
     pub(crate) flow_source: ::std::option::Option<crate::types::BridgeFlowSource>,
     pub(crate) network_source: ::std::option::Option<crate::types::BridgeNetworkSource>,

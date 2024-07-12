@@ -34,8 +34,8 @@ impl GetInsightSummariesOutput {
 }
 
 /// A builder for [`GetInsightSummariesOutput`](crate::operation::get_insight_summaries::GetInsightSummariesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetInsightSummariesOutputBuilder {
     pub(crate) insight_summaries: ::std::option::Option<::std::vec::Vec<crate::types::InsightSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

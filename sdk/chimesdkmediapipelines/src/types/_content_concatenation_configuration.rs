@@ -21,8 +21,8 @@ impl ContentConcatenationConfiguration {
 }
 
 /// A builder for [`ContentConcatenationConfiguration`](crate::types::ContentConcatenationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ContentConcatenationConfigurationBuilder {
     pub(crate) state: ::std::option::Option<crate::types::ArtifactsConcatenationState>,
 }

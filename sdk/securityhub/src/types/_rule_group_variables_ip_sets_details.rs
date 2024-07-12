@@ -23,8 +23,8 @@ impl RuleGroupVariablesIpSetsDetails {
 }
 
 /// A builder for [`RuleGroupVariablesIpSetsDetails`](crate::types::RuleGroupVariablesIpSetsDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RuleGroupVariablesIpSetsDetailsBuilder {
     pub(crate) definition: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

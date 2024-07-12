@@ -20,8 +20,8 @@ impl StopHumanLoopInput {
 }
 
 /// A builder for [`StopHumanLoopInput`](crate::operation::stop_human_loop::StopHumanLoopInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopHumanLoopInputBuilder {
     pub(crate) human_loop_name: ::std::option::Option<::std::string::String>,
 }

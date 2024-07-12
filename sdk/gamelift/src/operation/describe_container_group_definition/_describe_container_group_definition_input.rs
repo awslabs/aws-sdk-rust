@@ -20,8 +20,8 @@ impl DescribeContainerGroupDefinitionInput {
 }
 
 /// A builder for [`DescribeContainerGroupDefinitionInput`](crate::operation::describe_container_group_definition::DescribeContainerGroupDefinitionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeContainerGroupDefinitionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

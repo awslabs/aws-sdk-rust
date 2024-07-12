@@ -30,8 +30,8 @@ impl UntagOpenIdConnectProviderInput {
 }
 
 /// A builder for [`UntagOpenIdConnectProviderInput`](crate::operation::untag_open_id_connect_provider::UntagOpenIdConnectProviderInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UntagOpenIdConnectProviderInputBuilder {
     pub(crate) open_id_connect_provider_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

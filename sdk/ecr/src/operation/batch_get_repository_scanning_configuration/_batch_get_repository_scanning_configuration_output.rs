@@ -37,8 +37,8 @@ impl BatchGetRepositoryScanningConfigurationOutput {
 }
 
 /// A builder for [`BatchGetRepositoryScanningConfigurationOutput`](crate::operation::batch_get_repository_scanning_configuration::BatchGetRepositoryScanningConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetRepositoryScanningConfigurationOutputBuilder {
     pub(crate) scanning_configurations: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryScanningConfiguration>>,
     pub(crate) failures: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryScanningConfigurationFailure>>,

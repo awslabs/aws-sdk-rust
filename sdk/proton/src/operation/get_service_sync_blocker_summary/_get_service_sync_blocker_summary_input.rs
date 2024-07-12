@@ -26,8 +26,8 @@ impl GetServiceSyncBlockerSummaryInput {
 }
 
 /// A builder for [`GetServiceSyncBlockerSummaryInput`](crate::operation::get_service_sync_blocker_summary::GetServiceSyncBlockerSummaryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetServiceSyncBlockerSummaryInputBuilder {
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
     pub(crate) service_instance_name: ::std::option::Option<::std::string::String>,

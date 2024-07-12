@@ -27,8 +27,8 @@ impl CancelBundleTaskInput {
 }
 
 /// A builder for [`CancelBundleTaskInput`](crate::operation::cancel_bundle_task::CancelBundleTaskInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelBundleTaskInputBuilder {
     pub(crate) bundle_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,

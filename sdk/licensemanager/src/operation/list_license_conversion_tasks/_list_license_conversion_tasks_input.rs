@@ -34,8 +34,8 @@ impl ListLicenseConversionTasksInput {
 }
 
 /// A builder for [`ListLicenseConversionTasksInput`](crate::operation::list_license_conversion_tasks::ListLicenseConversionTasksInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListLicenseConversionTasksInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

@@ -51,8 +51,8 @@ impl AppInputSource {
 }
 
 /// A builder for [`AppInputSource`](crate::types::AppInputSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AppInputSourceBuilder {
     pub(crate) source_name: ::std::option::Option<::std::string::String>,
     pub(crate) import_type: ::std::option::Option<crate::types::ResourceMappingType>,

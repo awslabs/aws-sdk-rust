@@ -42,8 +42,8 @@ impl DeleteGameServerGroupInput {
 }
 
 /// A builder for [`DeleteGameServerGroupInput`](crate::operation::delete_game_server_group::DeleteGameServerGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteGameServerGroupInputBuilder {
     pub(crate) game_server_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) delete_option: ::std::option::Option<crate::types::GameServerGroupDeleteOption>,

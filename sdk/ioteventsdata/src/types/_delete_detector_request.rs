@@ -35,8 +35,8 @@ impl DeleteDetectorRequest {
 }
 
 /// A builder for [`DeleteDetectorRequest`](crate::types::DeleteDetectorRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDetectorRequestBuilder {
     pub(crate) message_id: ::std::option::Option<::std::string::String>,
     pub(crate) detector_model_name: ::std::option::Option<::std::string::String>,

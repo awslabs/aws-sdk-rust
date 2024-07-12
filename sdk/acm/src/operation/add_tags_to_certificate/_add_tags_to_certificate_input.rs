@@ -32,8 +32,8 @@ impl AddTagsToCertificateInput {
 }
 
 /// A builder for [`AddTagsToCertificateInput`](crate::operation::add_tags_to_certificate::AddTagsToCertificateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddTagsToCertificateInputBuilder {
     pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,

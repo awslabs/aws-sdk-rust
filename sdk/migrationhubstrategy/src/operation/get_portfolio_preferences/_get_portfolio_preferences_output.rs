@@ -44,8 +44,8 @@ impl GetPortfolioPreferencesOutput {
 }
 
 /// A builder for [`GetPortfolioPreferencesOutput`](crate::operation::get_portfolio_preferences::GetPortfolioPreferencesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPortfolioPreferencesOutputBuilder {
     pub(crate) prioritize_business_goals: ::std::option::Option<crate::types::PrioritizeBusinessGoals>,
     pub(crate) application_preferences: ::std::option::Option<crate::types::ApplicationPreferences>,

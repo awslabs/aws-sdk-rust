@@ -34,8 +34,8 @@ impl ListDataSourcesOutput {
 }
 
 /// A builder for [`ListDataSourcesOutput`](crate::operation::list_data_sources::ListDataSourcesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDataSourcesOutputBuilder {
     pub(crate) data_sources: ::std::option::Option<::std::vec::Vec<crate::types::DataSource>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -21,8 +21,8 @@ impl DisassociatedFace {
 }
 
 /// A builder for [`DisassociatedFace`](crate::types::DisassociatedFace).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociatedFaceBuilder {
     pub(crate) face_id: ::std::option::Option<::std::string::String>,
 }

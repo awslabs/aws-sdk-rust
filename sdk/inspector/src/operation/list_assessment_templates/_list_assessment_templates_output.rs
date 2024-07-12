@@ -33,8 +33,8 @@ impl ListAssessmentTemplatesOutput {
 }
 
 /// A builder for [`ListAssessmentTemplatesOutput`](crate::operation::list_assessment_templates::ListAssessmentTemplatesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAssessmentTemplatesOutputBuilder {
     pub(crate) assessment_template_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

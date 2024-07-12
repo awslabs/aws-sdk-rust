@@ -34,8 +34,8 @@ impl ListQueuedMessagesOutput {
 }
 
 /// A builder for [`ListQueuedMessagesOutput`](crate::operation::list_queued_messages::ListQueuedMessagesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListQueuedMessagesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) downlink_queue_messages_list: ::std::option::Option<::std::vec::Vec<crate::types::DownlinkQueueMessage>>,

@@ -151,8 +151,8 @@ impl CreateReplicationConfigurationTemplateOutput {
 }
 
 /// A builder for [`CreateReplicationConfigurationTemplateOutput`](crate::operation::create_replication_configuration_template::CreateReplicationConfigurationTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateReplicationConfigurationTemplateOutputBuilder {
     pub(crate) replication_configuration_template_id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

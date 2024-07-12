@@ -40,8 +40,8 @@ impl DescribeImageReplicationStatusOutput {
 }
 
 /// A builder for [`DescribeImageReplicationStatusOutput`](crate::operation::describe_image_replication_status::DescribeImageReplicationStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeImageReplicationStatusOutputBuilder {
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
     pub(crate) image_id: ::std::option::Option<crate::types::ImageIdentifier>,

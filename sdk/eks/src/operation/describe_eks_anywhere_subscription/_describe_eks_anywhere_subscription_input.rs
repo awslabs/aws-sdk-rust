@@ -20,8 +20,8 @@ impl DescribeEksAnywhereSubscriptionInput {
 }
 
 /// A builder for [`DescribeEksAnywhereSubscriptionInput`](crate::operation::describe_eks_anywhere_subscription::DescribeEksAnywhereSubscriptionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEksAnywhereSubscriptionInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }

@@ -26,8 +26,8 @@ impl ListProvisioningTemplatesInput {
 }
 
 /// A builder for [`ListProvisioningTemplatesInput`](crate::operation::list_provisioning_templates::ListProvisioningTemplatesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListProvisioningTemplatesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

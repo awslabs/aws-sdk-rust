@@ -76,8 +76,8 @@ impl DetectEntitiesOutput {
 }
 
 /// A builder for [`DetectEntitiesOutput`](crate::operation::detect_entities::DetectEntitiesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DetectEntitiesOutputBuilder {
     pub(crate) entities: ::std::option::Option<::std::vec::Vec<crate::types::Entity>>,
     pub(crate) document_metadata: ::std::option::Option<crate::types::DocumentMetadata>,

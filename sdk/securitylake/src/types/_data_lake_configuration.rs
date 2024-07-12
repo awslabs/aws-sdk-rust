@@ -40,8 +40,8 @@ impl DataLakeConfiguration {
 }
 
 /// A builder for [`DataLakeConfiguration`](crate::types::DataLakeConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataLakeConfigurationBuilder {
     pub(crate) region: ::std::option::Option<::std::string::String>,
     pub(crate) encryption_configuration: ::std::option::Option<crate::types::DataLakeEncryptionConfiguration>,

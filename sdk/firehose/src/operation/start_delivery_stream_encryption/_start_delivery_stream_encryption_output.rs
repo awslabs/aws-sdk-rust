@@ -18,8 +18,8 @@ impl StartDeliveryStreamEncryptionOutput {
 }
 
 /// A builder for [`StartDeliveryStreamEncryptionOutput`](crate::operation::start_delivery_stream_encryption::StartDeliveryStreamEncryptionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartDeliveryStreamEncryptionOutputBuilder {
     _request_id: Option<String>,
 }

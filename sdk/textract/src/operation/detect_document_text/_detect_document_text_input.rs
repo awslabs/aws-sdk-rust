@@ -22,8 +22,8 @@ impl DetectDocumentTextInput {
 }
 
 /// A builder for [`DetectDocumentTextInput`](crate::operation::detect_document_text::DetectDocumentTextInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetectDocumentTextInputBuilder {
     pub(crate) document: ::std::option::Option<crate::types::Document>,
 }

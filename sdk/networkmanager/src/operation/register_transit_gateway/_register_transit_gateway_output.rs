@@ -26,8 +26,8 @@ impl RegisterTransitGatewayOutput {
 }
 
 /// A builder for [`RegisterTransitGatewayOutput`](crate::operation::register_transit_gateway::RegisterTransitGatewayOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterTransitGatewayOutputBuilder {
     pub(crate) transit_gateway_registration: ::std::option::Option<crate::types::TransitGatewayRegistration>,
     _request_id: Option<String>,

@@ -80,8 +80,8 @@ impl VerifyPinDataInput {
 }
 
 /// A builder for [`VerifyPinDataInput`](crate::operation::verify_pin_data::VerifyPinDataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct VerifyPinDataInputBuilder {
     pub(crate) verification_key_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) encryption_key_identifier: ::std::option::Option<::std::string::String>,

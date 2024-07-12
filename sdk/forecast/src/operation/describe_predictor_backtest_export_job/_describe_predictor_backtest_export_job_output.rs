@@ -118,8 +118,8 @@ impl DescribePredictorBacktestExportJobOutput {
 }
 
 /// A builder for [`DescribePredictorBacktestExportJobOutput`](crate::operation::describe_predictor_backtest_export_job::DescribePredictorBacktestExportJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribePredictorBacktestExportJobOutputBuilder {
     pub(crate) predictor_backtest_export_job_arn: ::std::option::Option<::std::string::String>,
     pub(crate) predictor_backtest_export_job_name: ::std::option::Option<::std::string::String>,

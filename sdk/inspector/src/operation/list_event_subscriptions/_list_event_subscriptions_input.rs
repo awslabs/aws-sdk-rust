@@ -32,8 +32,8 @@ impl ListEventSubscriptionsInput {
 }
 
 /// A builder for [`ListEventSubscriptionsInput`](crate::operation::list_event_subscriptions::ListEventSubscriptionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEventSubscriptionsInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

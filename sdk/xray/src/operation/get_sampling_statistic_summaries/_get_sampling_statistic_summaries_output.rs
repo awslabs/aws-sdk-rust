@@ -34,8 +34,8 @@ impl GetSamplingStatisticSummariesOutput {
 }
 
 /// A builder for [`GetSamplingStatisticSummariesOutput`](crate::operation::get_sampling_statistic_summaries::GetSamplingStatisticSummariesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSamplingStatisticSummariesOutputBuilder {
     pub(crate) sampling_statistic_summaries: ::std::option::Option<::std::vec::Vec<crate::types::SamplingStatisticSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -36,8 +36,8 @@ impl DeleteFacesOutput {
 }
 
 /// A builder for [`DeleteFacesOutput`](crate::operation::delete_faces::DeleteFacesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFacesOutputBuilder {
     pub(crate) deleted_faces: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) unsuccessful_face_deletions: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceDeletion>>,

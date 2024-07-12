@@ -29,8 +29,8 @@ impl AwsEc2VpnConnectionOptionsDetails {
 }
 
 /// A builder for [`AwsEc2VpnConnectionOptionsDetails`](crate::types::AwsEc2VpnConnectionOptionsDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEc2VpnConnectionOptionsDetailsBuilder {
     pub(crate) static_routes_only: ::std::option::Option<bool>,
     pub(crate) tunnel_options: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2VpnConnectionOptionsTunnelOptionsDetails>>,

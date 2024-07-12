@@ -51,8 +51,8 @@ impl LifecycleExecution {
 }
 
 /// A builder for [`LifecycleExecution`](crate::types::LifecycleExecution).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LifecycleExecutionBuilder {
     pub(crate) lifecycle_execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) lifecycle_policy_arn: ::std::option::Option<::std::string::String>,

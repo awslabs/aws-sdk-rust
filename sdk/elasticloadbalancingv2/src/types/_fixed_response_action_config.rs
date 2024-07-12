@@ -35,8 +35,8 @@ impl FixedResponseActionConfig {
 }
 
 /// A builder for [`FixedResponseActionConfig`](crate::types::FixedResponseActionConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FixedResponseActionConfigBuilder {
     pub(crate) message_body: ::std::option::Option<::std::string::String>,
     pub(crate) status_code: ::std::option::Option<::std::string::String>,

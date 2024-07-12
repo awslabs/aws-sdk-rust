@@ -70,8 +70,8 @@ impl BatchExecuteStatementInput {
 }
 
 /// A builder for [`BatchExecuteStatementInput`](crate::operation::batch_execute_statement::BatchExecuteStatementInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchExecuteStatementInputBuilder {
     pub(crate) sqls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,

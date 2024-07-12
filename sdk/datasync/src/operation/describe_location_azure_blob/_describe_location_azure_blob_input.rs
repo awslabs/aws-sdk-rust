@@ -20,8 +20,8 @@ impl DescribeLocationAzureBlobInput {
 }
 
 /// A builder for [`DescribeLocationAzureBlobInput`](crate::operation::describe_location_azure_blob::DescribeLocationAzureBlobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeLocationAzureBlobInputBuilder {
     pub(crate) location_arn: ::std::option::Option<::std::string::String>,
 }

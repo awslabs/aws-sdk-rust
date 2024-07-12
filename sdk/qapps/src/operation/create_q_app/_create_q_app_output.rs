@@ -99,8 +99,8 @@ impl CreateQAppOutput {
 }
 
 /// A builder for [`CreateQAppOutput`](crate::operation::create_q_app::CreateQAppOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateQAppOutputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,

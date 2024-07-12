@@ -33,8 +33,8 @@ impl SearchPlaceIndexForSuggestionsOutput {
 }
 
 /// A builder for [`SearchPlaceIndexForSuggestionsOutput`](crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchPlaceIndexForSuggestionsOutputBuilder {
     pub(crate) summary: ::std::option::Option<crate::types::SearchPlaceIndexForSuggestionsSummary>,
     pub(crate) results: ::std::option::Option<::std::vec::Vec<crate::types::SearchForSuggestionsResult>>,

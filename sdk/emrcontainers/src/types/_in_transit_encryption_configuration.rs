@@ -21,8 +21,8 @@ impl InTransitEncryptionConfiguration {
 }
 
 /// A builder for [`InTransitEncryptionConfiguration`](crate::types::InTransitEncryptionConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InTransitEncryptionConfigurationBuilder {
     pub(crate) tls_certificate_configuration: ::std::option::Option<crate::types::TlsCertificateConfiguration>,
 }

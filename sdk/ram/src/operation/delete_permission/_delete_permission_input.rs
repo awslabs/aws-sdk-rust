@@ -30,8 +30,8 @@ impl DeletePermissionInput {
 }
 
 /// A builder for [`DeletePermissionInput`](crate::operation::delete_permission::DeletePermissionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePermissionInputBuilder {
     pub(crate) permission_arn: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

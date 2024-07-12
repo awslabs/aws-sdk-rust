@@ -18,8 +18,8 @@ impl CreateInstanceAccessControlAttributeConfigurationOutput {
 }
 
 /// A builder for [`CreateInstanceAccessControlAttributeConfigurationOutput`](crate::operation::create_instance_access_control_attribute_configuration::CreateInstanceAccessControlAttributeConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateInstanceAccessControlAttributeConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

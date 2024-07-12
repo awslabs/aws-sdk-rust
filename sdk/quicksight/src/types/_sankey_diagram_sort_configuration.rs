@@ -35,8 +35,8 @@ impl SankeyDiagramSortConfiguration {
 }
 
 /// A builder for [`SankeyDiagramSortConfiguration`](crate::types::SankeyDiagramSortConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SankeyDiagramSortConfigurationBuilder {
     pub(crate) weight_sort: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
     pub(crate) source_items_limit: ::std::option::Option<crate::types::ItemsLimitConfiguration>,

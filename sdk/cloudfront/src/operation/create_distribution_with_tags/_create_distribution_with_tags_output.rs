@@ -39,8 +39,8 @@ impl CreateDistributionWithTagsOutput {
 }
 
 /// A builder for [`CreateDistributionWithTagsOutput`](crate::operation::create_distribution_with_tags::CreateDistributionWithTagsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDistributionWithTagsOutputBuilder {
     pub(crate) distribution: ::std::option::Option<crate::types::Distribution>,
     pub(crate) location: ::std::option::Option<::std::string::String>,

@@ -47,8 +47,8 @@ impl FieldBasedTooltip {
 }
 
 /// A builder for [`FieldBasedTooltip`](crate::types::FieldBasedTooltip).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FieldBasedTooltipBuilder {
     pub(crate) aggregation_visibility: ::std::option::Option<crate::types::Visibility>,
     pub(crate) tooltip_title_type: ::std::option::Option<crate::types::TooltipTitleType>,

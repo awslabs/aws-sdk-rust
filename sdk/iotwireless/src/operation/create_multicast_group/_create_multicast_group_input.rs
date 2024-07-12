@@ -46,8 +46,8 @@ impl CreateMulticastGroupInput {
 }
 
 /// A builder for [`CreateMulticastGroupInput`](crate::operation::create_multicast_group::CreateMulticastGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateMulticastGroupInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

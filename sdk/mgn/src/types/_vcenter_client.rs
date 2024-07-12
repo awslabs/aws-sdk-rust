@@ -77,8 +77,8 @@ impl VcenterClient {
 }
 
 /// A builder for [`VcenterClient`](crate::types::VcenterClient).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct VcenterClientBuilder {
     pub(crate) vcenter_client_id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

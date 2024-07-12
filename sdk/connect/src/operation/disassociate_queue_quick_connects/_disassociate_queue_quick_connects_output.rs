@@ -18,8 +18,8 @@ impl DisassociateQueueQuickConnectsOutput {
 }
 
 /// A builder for [`DisassociateQueueQuickConnectsOutput`](crate::operation::disassociate_queue_quick_connects::DisassociateQueueQuickConnectsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateQueueQuickConnectsOutputBuilder {
     _request_id: Option<String>,
 }

@@ -27,8 +27,8 @@ impl WebDataSourceConfiguration {
 }
 
 /// A builder for [`WebDataSourceConfiguration`](crate::types::WebDataSourceConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WebDataSourceConfigurationBuilder {
     pub(crate) source_configuration: ::std::option::Option<crate::types::WebSourceConfiguration>,
     pub(crate) crawler_configuration: ::std::option::Option<crate::types::WebCrawlerConfiguration>,

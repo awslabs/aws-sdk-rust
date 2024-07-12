@@ -47,8 +47,8 @@ impl RegistrationSectionDisplayHints {
 }
 
 /// A builder for [`RegistrationSectionDisplayHints`](crate::types::RegistrationSectionDisplayHints).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegistrationSectionDisplayHintsBuilder {
     pub(crate) title: ::std::option::Option<::std::string::String>,
     pub(crate) short_description: ::std::option::Option<::std::string::String>,

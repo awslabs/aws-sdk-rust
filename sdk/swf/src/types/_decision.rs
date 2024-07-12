@@ -207,8 +207,8 @@ impl Decision {
 }
 
 /// A builder for [`Decision`](crate::types::Decision).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DecisionBuilder {
     pub(crate) decision_type: ::std::option::Option<crate::types::DecisionType>,
     pub(crate) schedule_activity_task_decision_attributes: ::std::option::Option<crate::types::ScheduleActivityTaskDecisionAttributes>,

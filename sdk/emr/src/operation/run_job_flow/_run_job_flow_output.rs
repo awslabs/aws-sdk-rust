@@ -33,8 +33,8 @@ impl RunJobFlowOutput {
 }
 
 /// A builder for [`RunJobFlowOutput`](crate::operation::run_job_flow::RunJobFlowOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RunJobFlowOutputBuilder {
     pub(crate) job_flow_id: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl ListCrossAccountResourcesOutput {
 }
 
 /// A builder for [`ListCrossAccountResourcesOutput`](crate::operation::list_cross_account_resources::ListCrossAccountResourcesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCrossAccountResourcesOutputBuilder {
     pub(crate) cross_account_resources: ::std::option::Option<::std::vec::Vec<crate::types::CrossAccountResource>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

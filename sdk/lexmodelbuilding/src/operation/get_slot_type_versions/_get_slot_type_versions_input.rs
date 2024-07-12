@@ -32,8 +32,8 @@ impl GetSlotTypeVersionsInput {
 }
 
 /// A builder for [`GetSlotTypeVersionsInput`](crate::operation::get_slot_type_versions::GetSlotTypeVersionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSlotTypeVersionsInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

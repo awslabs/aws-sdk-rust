@@ -63,8 +63,8 @@ impl ExecuteStatementOutput {
 }
 
 /// A builder for [`ExecuteStatementOutput`](crate::operation::execute_statement::ExecuteStatementOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExecuteStatementOutputBuilder {
     pub(crate) records: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::Field>>>,
     pub(crate) column_metadata: ::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>>,

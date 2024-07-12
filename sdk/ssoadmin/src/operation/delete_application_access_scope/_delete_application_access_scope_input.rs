@@ -26,8 +26,8 @@ impl DeleteApplicationAccessScopeInput {
 }
 
 /// A builder for [`DeleteApplicationAccessScopeInput`](crate::operation::delete_application_access_scope::DeleteApplicationAccessScopeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteApplicationAccessScopeInputBuilder {
     pub(crate) application_arn: ::std::option::Option<::std::string::String>,
     pub(crate) scope: ::std::option::Option<::std::string::String>,

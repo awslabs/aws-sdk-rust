@@ -34,8 +34,8 @@ impl ListChangeSetsOutput {
 }
 
 /// A builder for [`ListChangeSetsOutput`](crate::operation::list_change_sets::ListChangeSetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListChangeSetsOutputBuilder {
     pub(crate) change_set_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ChangeSetSummaryListItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

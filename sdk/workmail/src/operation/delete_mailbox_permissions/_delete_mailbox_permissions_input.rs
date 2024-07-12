@@ -68,8 +68,8 @@ impl DeleteMailboxPermissionsInput {
 }
 
 /// A builder for [`DeleteMailboxPermissionsInput`](crate::operation::delete_mailbox_permissions::DeleteMailboxPermissionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteMailboxPermissionsInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) entity_id: ::std::option::Option<::std::string::String>,

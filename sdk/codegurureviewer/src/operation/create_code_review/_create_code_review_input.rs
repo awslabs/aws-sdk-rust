@@ -40,8 +40,8 @@ impl CreateCodeReviewInput {
 }
 
 /// A builder for [`CreateCodeReviewInput`](crate::operation::create_code_review::CreateCodeReviewInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCodeReviewInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) repository_association_arn: ::std::option::Option<::std::string::String>,

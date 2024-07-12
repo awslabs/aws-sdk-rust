@@ -22,8 +22,8 @@ impl GetSamplingTargetsInput {
 }
 
 /// A builder for [`GetSamplingTargetsInput`](crate::operation::get_sampling_targets::GetSamplingTargetsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSamplingTargetsInputBuilder {
     pub(crate) sampling_statistics_documents: ::std::option::Option<::std::vec::Vec<crate::types::SamplingStatisticsDocument>>,
 }

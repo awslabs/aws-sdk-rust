@@ -57,8 +57,8 @@ impl InsufficientCloudWatchLogsResourcePolicy {
 }
 
 /// A builder for [`InsufficientCloudWatchLogsResourcePolicy`](crate::types::error::InsufficientCloudWatchLogsResourcePolicy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InsufficientCloudWatchLogsResourcePolicyBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,

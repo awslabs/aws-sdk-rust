@@ -27,8 +27,8 @@ impl InterpolationParameters {
 }
 
 /// A builder for [`InterpolationParameters`](crate::types::InterpolationParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InterpolationParametersBuilder {
     pub(crate) interpolation_type: ::std::option::Option<crate::types::InterpolationType>,
     pub(crate) interval_in_seconds: ::std::option::Option<i64>,

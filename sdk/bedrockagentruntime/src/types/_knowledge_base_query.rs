@@ -34,8 +34,8 @@ impl KnowledgeBaseQuery {
 }
 
 /// A builder for [`KnowledgeBaseQuery`](crate::types::KnowledgeBaseQuery).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct KnowledgeBaseQueryBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
 }

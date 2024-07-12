@@ -20,8 +20,8 @@ impl DeletePartnershipInput {
 }
 
 /// A builder for [`DeletePartnershipInput`](crate::operation::delete_partnership::DeletePartnershipInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePartnershipInputBuilder {
     pub(crate) partnership_id: ::std::option::Option<::std::string::String>,
 }

@@ -36,8 +36,8 @@ impl AwsEcsTaskDefinitionProxyConfigurationDetails {
 }
 
 /// A builder for [`AwsEcsTaskDefinitionProxyConfigurationDetails`](crate::types::AwsEcsTaskDefinitionProxyConfigurationDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEcsTaskDefinitionProxyConfigurationDetailsBuilder {
     pub(crate) container_name: ::std::option::Option<::std::string::String>,
     pub(crate) proxy_configuration_properties:

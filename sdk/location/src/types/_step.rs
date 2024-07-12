@@ -60,8 +60,8 @@ impl Step {
 }
 
 /// A builder for [`Step`](crate::types::Step).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct StepBuilder {
     pub(crate) start_position: ::std::option::Option<::std::vec::Vec<f64>>,
     pub(crate) end_position: ::std::option::Option<::std::vec::Vec<f64>>,

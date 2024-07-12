@@ -20,8 +20,8 @@ impl UpdateGlobalSettingsInput {
 }
 
 /// A builder for [`UpdateGlobalSettingsInput`](crate::operation::update_global_settings::UpdateGlobalSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateGlobalSettingsInputBuilder {
     pub(crate) voice_connector: ::std::option::Option<crate::types::VoiceConnectorSettings>,
 }

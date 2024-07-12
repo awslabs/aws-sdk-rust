@@ -32,8 +32,8 @@ impl DescribeFpgaImageAttributeInput {
 }
 
 /// A builder for [`DescribeFpgaImageAttributeInput`](crate::operation::describe_fpga_image_attribute::DescribeFpgaImageAttributeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFpgaImageAttributeInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) fpga_image_id: ::std::option::Option<::std::string::String>,

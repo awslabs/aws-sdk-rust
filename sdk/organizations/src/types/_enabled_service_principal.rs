@@ -27,8 +27,8 @@ impl EnabledServicePrincipal {
 }
 
 /// A builder for [`EnabledServicePrincipal`](crate::types::EnabledServicePrincipal).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnabledServicePrincipalBuilder {
     pub(crate) service_principal: ::std::option::Option<::std::string::String>,
     pub(crate) date_enabled: ::std::option::Option<::aws_smithy_types::DateTime>,

@@ -22,8 +22,8 @@ impl BatchGetConfigurationPolicyAssociationsInput {
 }
 
 /// A builder for [`BatchGetConfigurationPolicyAssociationsInput`](crate::operation::batch_get_configuration_policy_associations::BatchGetConfigurationPolicyAssociationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetConfigurationPolicyAssociationsInputBuilder {
     pub(crate) configuration_policy_association_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationPolicyAssociation>>,
 }

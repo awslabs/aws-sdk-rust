@@ -32,8 +32,8 @@ impl CreateAccessPointForObjectLambdaOutput {
 }
 
 /// A builder for [`CreateAccessPointForObjectLambdaOutput`](crate::operation::create_access_point_for_object_lambda::CreateAccessPointForObjectLambdaOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAccessPointForObjectLambdaOutputBuilder {
     pub(crate) object_lambda_access_point_arn: ::std::option::Option<::std::string::String>,
     pub(crate) alias: ::std::option::Option<crate::types::ObjectLambdaAccessPointAlias>,

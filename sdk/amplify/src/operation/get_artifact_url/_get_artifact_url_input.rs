@@ -21,8 +21,8 @@ impl GetArtifactUrlInput {
 }
 
 /// A builder for [`GetArtifactUrlInput`](crate::operation::get_artifact_url::GetArtifactUrlInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetArtifactUrlInputBuilder {
     pub(crate) artifact_id: ::std::option::Option<::std::string::String>,
 }

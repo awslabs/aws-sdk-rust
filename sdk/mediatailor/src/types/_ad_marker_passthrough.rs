@@ -22,8 +22,8 @@ impl AdMarkerPassthrough {
 }
 
 /// A builder for [`AdMarkerPassthrough`](crate::types::AdMarkerPassthrough).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AdMarkerPassthroughBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
 }

@@ -22,8 +22,8 @@ impl RevisionPublished {
 }
 
 /// A builder for [`RevisionPublished`](crate::types::RevisionPublished).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RevisionPublishedBuilder {
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,
 }

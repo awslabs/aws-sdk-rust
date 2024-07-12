@@ -20,8 +20,8 @@ impl DeregisterVolumeInput {
 }
 
 /// A builder for [`DeregisterVolumeInput`](crate::operation::deregister_volume::DeregisterVolumeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeregisterVolumeInputBuilder {
     pub(crate) volume_id: ::std::option::Option<::std::string::String>,
 }

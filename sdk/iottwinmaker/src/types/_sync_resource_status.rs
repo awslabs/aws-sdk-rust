@@ -27,8 +27,8 @@ impl SyncResourceStatus {
 }
 
 /// A builder for [`SyncResourceStatus`](crate::types::SyncResourceStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SyncResourceStatusBuilder {
     pub(crate) state: ::std::option::Option<crate::types::SyncResourceState>,
     pub(crate) error: ::std::option::Option<crate::types::ErrorDetails>,

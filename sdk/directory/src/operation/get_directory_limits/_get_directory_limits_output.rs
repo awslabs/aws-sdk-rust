@@ -27,8 +27,8 @@ impl GetDirectoryLimitsOutput {
 }
 
 /// A builder for [`GetDirectoryLimitsOutput`](crate::operation::get_directory_limits::GetDirectoryLimitsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDirectoryLimitsOutputBuilder {
     pub(crate) directory_limits: ::std::option::Option<crate::types::DirectoryLimits>,
     _request_id: Option<String>,

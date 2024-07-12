@@ -34,8 +34,8 @@ impl ListVoiceConnectorsOutput {
 }
 
 /// A builder for [`ListVoiceConnectorsOutput`](crate::operation::list_voice_connectors::ListVoiceConnectorsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListVoiceConnectorsOutputBuilder {
     pub(crate) voice_connectors: ::std::option::Option<::std::vec::Vec<crate::types::VoiceConnector>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

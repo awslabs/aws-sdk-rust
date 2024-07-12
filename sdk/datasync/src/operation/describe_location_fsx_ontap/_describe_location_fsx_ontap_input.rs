@@ -20,8 +20,8 @@ impl DescribeLocationFsxOntapInput {
 }
 
 /// A builder for [`DescribeLocationFsxOntapInput`](crate::operation::describe_location_fsx_ontap::DescribeLocationFsxOntapInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeLocationFsxOntapInputBuilder {
     pub(crate) location_arn: ::std::option::Option<::std::string::String>,
 }

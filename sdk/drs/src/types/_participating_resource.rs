@@ -27,8 +27,8 @@ impl ParticipatingResource {
 }
 
 /// A builder for [`ParticipatingResource`](crate::types::ParticipatingResource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ParticipatingResourceBuilder {
     pub(crate) participating_resource_id: ::std::option::Option<crate::types::ParticipatingResourceId>,
     pub(crate) launch_status: ::std::option::Option<crate::types::LaunchStatus>,

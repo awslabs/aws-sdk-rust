@@ -29,8 +29,8 @@ impl AddBridgeSourcesInput {
 }
 
 /// A builder for [`AddBridgeSourcesInput`](crate::operation::add_bridge_sources::AddBridgeSourcesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddBridgeSourcesInputBuilder {
     pub(crate) bridge_arn: ::std::option::Option<::std::string::String>,
     pub(crate) sources: ::std::option::Option<::std::vec::Vec<crate::types::AddBridgeSourceRequest>>,

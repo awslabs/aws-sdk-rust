@@ -51,8 +51,8 @@ impl DashIsoImageBasedTrickPlaySettings {
 }
 
 /// A builder for [`DashIsoImageBasedTrickPlaySettings`](crate::types::DashIsoImageBasedTrickPlaySettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DashIsoImageBasedTrickPlaySettingsBuilder {
     pub(crate) interval_cadence: ::std::option::Option<crate::types::DashIsoIntervalCadence>,
     pub(crate) thumbnail_height: ::std::option::Option<i32>,

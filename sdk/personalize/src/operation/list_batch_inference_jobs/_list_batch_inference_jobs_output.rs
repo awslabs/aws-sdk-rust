@@ -34,8 +34,8 @@ impl ListBatchInferenceJobsOutput {
 }
 
 /// A builder for [`ListBatchInferenceJobsOutput`](crate::operation::list_batch_inference_jobs::ListBatchInferenceJobsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListBatchInferenceJobsOutputBuilder {
     pub(crate) batch_inference_jobs: ::std::option::Option<::std::vec::Vec<crate::types::BatchInferenceJobSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

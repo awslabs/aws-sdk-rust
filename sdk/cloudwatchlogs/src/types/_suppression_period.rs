@@ -27,8 +27,8 @@ impl SuppressionPeriod {
 }
 
 /// A builder for [`SuppressionPeriod`](crate::types::SuppressionPeriod).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SuppressionPeriodBuilder {
     pub(crate) value: ::std::option::Option<i32>,
     pub(crate) suppression_unit: ::std::option::Option<crate::types::SuppressionUnit>,

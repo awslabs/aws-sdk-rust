@@ -26,8 +26,8 @@ impl UpdateCrawlerScheduleInput {
 }
 
 /// A builder for [`UpdateCrawlerScheduleInput`](crate::operation::update_crawler_schedule::UpdateCrawlerScheduleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateCrawlerScheduleInputBuilder {
     pub(crate) crawler_name: ::std::option::Option<::std::string::String>,
     pub(crate) schedule: ::std::option::Option<::std::string::String>,

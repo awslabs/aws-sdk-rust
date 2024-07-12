@@ -51,8 +51,8 @@ impl AwsGuardDutyDetectorDataSourcesDetails {
 }
 
 /// A builder for [`AwsGuardDutyDetectorDataSourcesDetails`](crate::types::AwsGuardDutyDetectorDataSourcesDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsGuardDutyDetectorDataSourcesDetailsBuilder {
     pub(crate) cloud_trail: ::std::option::Option<crate::types::AwsGuardDutyDetectorDataSourcesCloudTrailDetails>,
     pub(crate) dns_logs: ::std::option::Option<crate::types::AwsGuardDutyDetectorDataSourcesDnsLogsDetails>,

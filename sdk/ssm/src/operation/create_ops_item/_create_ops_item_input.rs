@@ -162,8 +162,8 @@ impl CreateOpsItemInput {
 }
 
 /// A builder for [`CreateOpsItemInput`](crate::operation::create_ops_item::CreateOpsItemInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateOpsItemInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) ops_item_type: ::std::option::Option<::std::string::String>,

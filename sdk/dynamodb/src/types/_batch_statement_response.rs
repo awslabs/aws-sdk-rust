@@ -33,8 +33,8 @@ impl BatchStatementResponse {
 }
 
 /// A builder for [`BatchStatementResponse`](crate::types::BatchStatementResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchStatementResponseBuilder {
     pub(crate) error: ::std::option::Option<crate::types::BatchStatementError>,
     pub(crate) table_name: ::std::option::Option<::std::string::String>,

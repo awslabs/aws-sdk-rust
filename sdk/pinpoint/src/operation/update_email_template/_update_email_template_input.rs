@@ -62,8 +62,8 @@ impl UpdateEmailTemplateInput {
 }
 
 /// A builder for [`UpdateEmailTemplateInput`](crate::operation::update_email_template::UpdateEmailTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateEmailTemplateInputBuilder {
     pub(crate) create_new_version: ::std::option::Option<bool>,
     pub(crate) email_template_request: ::std::option::Option<crate::types::EmailTemplateRequest>,

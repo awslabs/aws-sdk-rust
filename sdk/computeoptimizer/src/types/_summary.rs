@@ -35,8 +35,8 @@ impl Summary {
 }
 
 /// A builder for [`Summary`](crate::types::Summary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SummaryBuilder {
     pub(crate) name: ::std::option::Option<crate::types::Finding>,
     pub(crate) value: ::std::option::Option<f64>,

@@ -32,8 +32,8 @@ impl GetApplicationOutput {
 }
 
 /// A builder for [`GetApplicationOutput`](crate::operation::get_application::GetApplicationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetApplicationOutputBuilder {
     pub(crate) application: ::std::option::Option<crate::types::Application>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

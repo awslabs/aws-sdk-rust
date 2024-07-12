@@ -48,8 +48,8 @@ impl UpdateUserProfileInput {
 }
 
 /// A builder for [`UpdateUserProfileInput`](crate::operation::update_user_profile::UpdateUserProfileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateUserProfileInputBuilder {
     pub(crate) user_arn: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,

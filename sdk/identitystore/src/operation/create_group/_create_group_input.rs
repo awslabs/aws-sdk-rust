@@ -41,8 +41,8 @@ impl CreateGroupInput {
 }
 
 /// A builder for [`CreateGroupInput`](crate::operation::create_group::CreateGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateGroupInputBuilder {
     pub(crate) identity_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,

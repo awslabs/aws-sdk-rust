@@ -22,8 +22,8 @@ impl DeleteApplicationsInput {
 }
 
 /// A builder for [`DeleteApplicationsInput`](crate::operation::delete_applications::DeleteApplicationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteApplicationsInputBuilder {
     pub(crate) configuration_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

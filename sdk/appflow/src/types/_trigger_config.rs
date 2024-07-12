@@ -27,8 +27,8 @@ impl TriggerConfig {
 }
 
 /// A builder for [`TriggerConfig`](crate::types::TriggerConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TriggerConfigBuilder {
     pub(crate) trigger_type: ::std::option::Option<crate::types::TriggerType>,
     pub(crate) trigger_properties: ::std::option::Option<crate::types::TriggerProperties>,

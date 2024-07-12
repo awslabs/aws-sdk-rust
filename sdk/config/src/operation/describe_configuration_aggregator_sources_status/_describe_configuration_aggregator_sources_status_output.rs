@@ -35,8 +35,8 @@ impl DescribeConfigurationAggregatorSourcesStatusOutput {
 }
 
 /// A builder for [`DescribeConfigurationAggregatorSourcesStatusOutput`](crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeConfigurationAggregatorSourcesStatusOutputBuilder {
     pub(crate) aggregated_source_status_list: ::std::option::Option<::std::vec::Vec<crate::types::AggregatedSourceStatus>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

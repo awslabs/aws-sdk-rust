@@ -22,8 +22,8 @@ impl FreeFormLayoutScreenCanvasSizeOptions {
 }
 
 /// A builder for [`FreeFormLayoutScreenCanvasSizeOptions`](crate::types::FreeFormLayoutScreenCanvasSizeOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FreeFormLayoutScreenCanvasSizeOptionsBuilder {
     pub(crate) optimized_view_port_width: ::std::option::Option<::std::string::String>,
 }

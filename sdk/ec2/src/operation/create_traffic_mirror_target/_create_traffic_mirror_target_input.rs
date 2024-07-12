@@ -58,8 +58,8 @@ impl CreateTrafficMirrorTargetInput {
 }
 
 /// A builder for [`CreateTrafficMirrorTargetInput`](crate::operation::create_traffic_mirror_target::CreateTrafficMirrorTargetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateTrafficMirrorTargetInputBuilder {
     pub(crate) network_interface_id: ::std::option::Option<::std::string::String>,
     pub(crate) network_load_balancer_arn: ::std::option::Option<::std::string::String>,

@@ -28,8 +28,8 @@ impl AxisDisplayRange {
 }
 
 /// A builder for [`AxisDisplayRange`](crate::types::AxisDisplayRange).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AxisDisplayRangeBuilder {
     pub(crate) min_max: ::std::option::Option<crate::types::AxisDisplayMinMaxRange>,
     pub(crate) data_driven: ::std::option::Option<crate::types::AxisDisplayDataDrivenRange>,

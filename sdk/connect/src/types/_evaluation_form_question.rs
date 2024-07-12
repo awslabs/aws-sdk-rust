@@ -59,8 +59,8 @@ impl EvaluationFormQuestion {
 }
 
 /// A builder for [`EvaluationFormQuestion`](crate::types::EvaluationFormQuestion).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EvaluationFormQuestionBuilder {
     pub(crate) title: ::std::option::Option<::std::string::String>,
     pub(crate) instructions: ::std::option::Option<::std::string::String>,

@@ -18,8 +18,8 @@ impl DeleteDirectoryRegistrationOutput {
 }
 
 /// A builder for [`DeleteDirectoryRegistrationOutput`](crate::operation::delete_directory_registration::DeleteDirectoryRegistrationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDirectoryRegistrationOutputBuilder {
     _request_id: Option<String>,
 }

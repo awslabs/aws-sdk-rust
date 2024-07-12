@@ -33,8 +33,8 @@ impl ListResourcesFilters {
 }
 
 /// A builder for [`ListResourcesFilters`](crate::types::ListResourcesFilters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListResourcesFiltersBuilder {
     pub(crate) name_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) primary_email_prefix: ::std::option::Option<::std::string::String>,

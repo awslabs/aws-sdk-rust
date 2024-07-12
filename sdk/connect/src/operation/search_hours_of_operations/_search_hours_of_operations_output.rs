@@ -40,8 +40,8 @@ impl SearchHoursOfOperationsOutput {
 }
 
 /// A builder for [`SearchHoursOfOperationsOutput`](crate::operation::search_hours_of_operations::SearchHoursOfOperationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchHoursOfOperationsOutputBuilder {
     pub(crate) hours_of_operations: ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

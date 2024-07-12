@@ -27,8 +27,8 @@ impl Counts {
 }
 
 /// A builder for [`Counts`](crate::types::Counts).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CountsBuilder {
     pub(crate) count: ::std::option::Option<i64>,
     pub(crate) group_key: ::std::option::Option<crate::types::GroupKey>,

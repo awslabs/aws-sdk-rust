@@ -33,8 +33,8 @@ impl PlainTextMessageType {
 }
 
 /// A builder for [`PlainTextMessageType`](crate::types::PlainTextMessageType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PlainTextMessageTypeBuilder {
     pub(crate) language_code: ::std::option::Option<::std::string::String>,
     pub(crate) text: ::std::option::Option<::std::string::String>,

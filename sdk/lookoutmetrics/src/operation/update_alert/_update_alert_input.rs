@@ -44,8 +44,8 @@ impl UpdateAlertInput {
 }
 
 /// A builder for [`UpdateAlertInput`](crate::operation::update_alert::UpdateAlertInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAlertInputBuilder {
     pub(crate) alert_arn: ::std::option::Option<::std::string::String>,
     pub(crate) alert_description: ::std::option::Option<::std::string::String>,

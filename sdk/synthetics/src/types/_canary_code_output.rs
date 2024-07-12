@@ -27,8 +27,8 @@ impl CanaryCodeOutput {
 }
 
 /// A builder for [`CanaryCodeOutput`](crate::types::CanaryCodeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CanaryCodeOutputBuilder {
     pub(crate) source_location_arn: ::std::option::Option<::std::string::String>,
     pub(crate) handler: ::std::option::Option<::std::string::String>,

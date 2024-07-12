@@ -20,8 +20,8 @@ impl StopChannelInput {
 }
 
 /// A builder for [`StopChannelInput`](crate::operation::stop_channel::StopChannelInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopChannelInputBuilder {
     pub(crate) channel_name: ::std::option::Option<::std::string::String>,
 }

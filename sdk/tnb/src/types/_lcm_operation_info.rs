@@ -23,8 +23,8 @@ impl LcmOperationInfo {
 }
 
 /// A builder for [`LcmOperationInfo`](crate::types::LcmOperationInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LcmOperationInfoBuilder {
     pub(crate) ns_lcm_op_occ_id: ::std::option::Option<::std::string::String>,
 }

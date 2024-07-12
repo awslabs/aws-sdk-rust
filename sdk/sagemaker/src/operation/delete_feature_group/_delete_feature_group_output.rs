@@ -18,8 +18,8 @@ impl DeleteFeatureGroupOutput {
 }
 
 /// A builder for [`DeleteFeatureGroupOutput`](crate::operation::delete_feature_group::DeleteFeatureGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFeatureGroupOutputBuilder {
     _request_id: Option<String>,
 }

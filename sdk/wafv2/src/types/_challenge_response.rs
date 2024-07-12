@@ -33,8 +33,8 @@ impl ChallengeResponse {
 }
 
 /// A builder for [`ChallengeResponse`](crate::types::ChallengeResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ChallengeResponseBuilder {
     pub(crate) response_code: ::std::option::Option<i32>,
     pub(crate) solve_timestamp: ::std::option::Option<i64>,

@@ -51,8 +51,8 @@ impl JourneyLimits {
 }
 
 /// A builder for [`JourneyLimits`](crate::types::JourneyLimits).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JourneyLimitsBuilder {
     pub(crate) daily_cap: ::std::option::Option<i32>,
     pub(crate) endpoint_reentry_cap: ::std::option::Option<i32>,

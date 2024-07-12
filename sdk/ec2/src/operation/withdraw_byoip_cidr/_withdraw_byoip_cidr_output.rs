@@ -26,8 +26,8 @@ impl WithdrawByoipCidrOutput {
 }
 
 /// A builder for [`WithdrawByoipCidrOutput`](crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WithdrawByoipCidrOutputBuilder {
     pub(crate) byoip_cidr: ::std::option::Option<crate::types::ByoipCidr>,
     _request_id: Option<String>,

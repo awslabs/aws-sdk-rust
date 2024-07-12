@@ -35,8 +35,8 @@ impl TemplateError {
 }
 
 /// A builder for [`TemplateError`](crate::types::TemplateError).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TemplateErrorBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::TemplateErrorType>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

@@ -31,8 +31,8 @@ impl GetJobDetailsOutput {
 }
 
 /// A builder for [`GetJobDetailsOutput`](crate::operation::get_job_details::GetJobDetailsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetJobDetailsOutputBuilder {
     pub(crate) job_details: ::std::option::Option<crate::types::JobDetails>,
     _request_id: Option<String>,

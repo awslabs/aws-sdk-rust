@@ -285,8 +285,8 @@ impl GuardrailPiiEntityConfig {
 }
 
 /// A builder for [`GuardrailPiiEntityConfig`](crate::types::GuardrailPiiEntityConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GuardrailPiiEntityConfigBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::GuardrailPiiEntityType>,
     pub(crate) action: ::std::option::Option<crate::types::GuardrailSensitiveInformationAction>,

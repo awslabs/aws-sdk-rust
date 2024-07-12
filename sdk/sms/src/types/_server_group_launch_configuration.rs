@@ -35,8 +35,8 @@ impl ServerGroupLaunchConfiguration {
 }
 
 /// A builder for [`ServerGroupLaunchConfiguration`](crate::types::ServerGroupLaunchConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServerGroupLaunchConfigurationBuilder {
     pub(crate) server_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) launch_order: ::std::option::Option<i32>,

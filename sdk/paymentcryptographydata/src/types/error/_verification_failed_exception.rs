@@ -51,8 +51,8 @@ impl VerificationFailedException {
 }
 
 /// A builder for [`VerificationFailedException`](crate::types::error::VerificationFailedException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VerificationFailedExceptionBuilder {
     pub(crate) reason: ::std::option::Option<crate::types::VerificationFailedReason>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

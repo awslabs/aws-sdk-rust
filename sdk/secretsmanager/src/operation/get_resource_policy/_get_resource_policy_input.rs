@@ -22,8 +22,8 @@ impl GetResourcePolicyInput {
 }
 
 /// A builder for [`GetResourcePolicyInput`](crate::operation::get_resource_policy::GetResourcePolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetResourcePolicyInputBuilder {
     pub(crate) secret_id: ::std::option::Option<::std::string::String>,
 }

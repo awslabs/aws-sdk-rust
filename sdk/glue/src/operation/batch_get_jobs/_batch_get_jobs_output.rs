@@ -36,8 +36,8 @@ impl BatchGetJobsOutput {
 }
 
 /// A builder for [`BatchGetJobsOutput`](crate::operation::batch_get_jobs::BatchGetJobsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetJobsOutputBuilder {
     pub(crate) jobs: ::std::option::Option<::std::vec::Vec<crate::types::Job>>,
     pub(crate) jobs_not_found: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -39,8 +39,8 @@ impl WorkflowStepOutput {
 }
 
 /// A builder for [`WorkflowStepOutput`](crate::types::WorkflowStepOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WorkflowStepOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) data_type: ::std::option::Option<crate::types::DataType>,

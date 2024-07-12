@@ -32,8 +32,8 @@ impl ListDetectorModelVersionsInput {
 }
 
 /// A builder for [`ListDetectorModelVersionsInput`](crate::operation::list_detector_model_versions::ListDetectorModelVersionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDetectorModelVersionsInputBuilder {
     pub(crate) detector_model_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

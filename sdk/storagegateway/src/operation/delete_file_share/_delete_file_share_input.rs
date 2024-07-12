@@ -29,8 +29,8 @@ impl DeleteFileShareInput {
 }
 
 /// A builder for [`DeleteFileShareInput`](crate::operation::delete_file_share::DeleteFileShareInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFileShareInputBuilder {
     pub(crate) file_share_arn: ::std::option::Option<::std::string::String>,
     pub(crate) force_delete: ::std::option::Option<bool>,

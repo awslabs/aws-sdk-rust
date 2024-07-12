@@ -18,8 +18,8 @@ impl DeleteContactFlowModuleOutput {
 }
 
 /// A builder for [`DeleteContactFlowModuleOutput`](crate::operation::delete_contact_flow_module::DeleteContactFlowModuleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteContactFlowModuleOutputBuilder {
     _request_id: Option<String>,
 }

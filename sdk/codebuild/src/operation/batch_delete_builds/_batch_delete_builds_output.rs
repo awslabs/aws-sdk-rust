@@ -36,8 +36,8 @@ impl BatchDeleteBuildsOutput {
 }
 
 /// A builder for [`BatchDeleteBuildsOutput`](crate::operation::batch_delete_builds::BatchDeleteBuildsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDeleteBuildsOutputBuilder {
     pub(crate) builds_deleted: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) builds_not_deleted: ::std::option::Option<::std::vec::Vec<crate::types::BuildNotDeleted>>,

@@ -18,8 +18,8 @@ impl UpdateUserProficienciesOutput {
 }
 
 /// A builder for [`UpdateUserProficienciesOutput`](crate::operation::update_user_proficiencies::UpdateUserProficienciesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateUserProficienciesOutputBuilder {
     _request_id: Option<String>,
 }

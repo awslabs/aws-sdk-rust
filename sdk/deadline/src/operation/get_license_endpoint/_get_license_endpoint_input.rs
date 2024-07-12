@@ -20,8 +20,8 @@ impl GetLicenseEndpointInput {
 }
 
 /// A builder for [`GetLicenseEndpointInput`](crate::operation::get_license_endpoint::GetLicenseEndpointInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLicenseEndpointInputBuilder {
     pub(crate) license_endpoint_id: ::std::option::Option<::std::string::String>,
 }

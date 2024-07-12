@@ -27,8 +27,8 @@ impl TableFieldLinkContentConfiguration {
 }
 
 /// A builder for [`TableFieldLinkContentConfiguration`](crate::types::TableFieldLinkContentConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TableFieldLinkContentConfigurationBuilder {
     pub(crate) custom_text_content: ::std::option::Option<crate::types::TableFieldCustomTextContent>,
     pub(crate) custom_icon_content: ::std::option::Option<crate::types::TableFieldCustomIconContent>,

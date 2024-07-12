@@ -56,8 +56,8 @@ impl CreateStreamingSessionInput {
 }
 
 /// A builder for [`CreateStreamingSessionInput`](crate::operation::create_streaming_session::CreateStreamingSessionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateStreamingSessionInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) ec2_instance_type: ::std::option::Option<crate::types::StreamingInstanceType>,

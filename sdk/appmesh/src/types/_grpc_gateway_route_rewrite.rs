@@ -21,8 +21,8 @@ impl GrpcGatewayRouteRewrite {
 }
 
 /// A builder for [`GrpcGatewayRouteRewrite`](crate::types::GrpcGatewayRouteRewrite).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GrpcGatewayRouteRewriteBuilder {
     pub(crate) hostname: ::std::option::Option<crate::types::GatewayRouteHostnameRewrite>,
 }

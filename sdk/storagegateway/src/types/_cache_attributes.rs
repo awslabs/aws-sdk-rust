@@ -23,8 +23,8 @@ impl CacheAttributes {
 }
 
 /// A builder for [`CacheAttributes`](crate::types::CacheAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CacheAttributesBuilder {
     pub(crate) cache_stale_timeout_in_seconds: ::std::option::Option<i32>,
 }

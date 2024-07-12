@@ -27,8 +27,8 @@ impl InsightsConfiguration {
 }
 
 /// A builder for [`InsightsConfiguration`](crate::types::InsightsConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InsightsConfigurationBuilder {
     pub(crate) insights_enabled: ::std::option::Option<bool>,
     pub(crate) notifications_enabled: ::std::option::Option<bool>,

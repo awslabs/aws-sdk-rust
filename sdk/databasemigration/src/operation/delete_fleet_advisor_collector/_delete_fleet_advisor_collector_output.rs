@@ -18,8 +18,8 @@ impl DeleteFleetAdvisorCollectorOutput {
 }
 
 /// A builder for [`DeleteFleetAdvisorCollectorOutput`](crate::operation::delete_fleet_advisor_collector::DeleteFleetAdvisorCollectorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFleetAdvisorCollectorOutputBuilder {
     _request_id: Option<String>,
 }

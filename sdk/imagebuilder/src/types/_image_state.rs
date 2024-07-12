@@ -27,8 +27,8 @@ impl ImageState {
 }
 
 /// A builder for [`ImageState`](crate::types::ImageState).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImageStateBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ImageStatus>,
     pub(crate) reason: ::std::option::Option<::std::string::String>,

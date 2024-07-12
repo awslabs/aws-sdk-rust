@@ -27,8 +27,8 @@ impl OtherMetadataValueListItem {
 }
 
 /// A builder for [`OtherMetadataValueListItem`](crate::types::OtherMetadataValueListItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OtherMetadataValueListItemBuilder {
     pub(crate) metadata_value: ::std::option::Option<::std::string::String>,
     pub(crate) created_time: ::std::option::Option<::std::string::String>,

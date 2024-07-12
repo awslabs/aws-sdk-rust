@@ -77,8 +77,8 @@ impl BehaviorCriteria {
 }
 
 /// A builder for [`BehaviorCriteria`](crate::types::BehaviorCriteria).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BehaviorCriteriaBuilder {
     pub(crate) comparison_operator: ::std::option::Option<crate::types::ComparisonOperator>,
     pub(crate) value: ::std::option::Option<crate::types::MetricValue>,

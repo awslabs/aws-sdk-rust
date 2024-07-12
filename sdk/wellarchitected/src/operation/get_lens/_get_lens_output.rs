@@ -26,8 +26,8 @@ impl GetLensOutput {
 }
 
 /// A builder for [`GetLensOutput`](crate::operation::get_lens::GetLensOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLensOutputBuilder {
     pub(crate) lens: ::std::option::Option<crate::types::Lens>,
     _request_id: Option<String>,

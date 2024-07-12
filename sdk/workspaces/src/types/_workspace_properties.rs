@@ -81,8 +81,8 @@ impl WorkspaceProperties {
 }
 
 /// A builder for [`WorkspaceProperties`](crate::types::WorkspaceProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WorkspacePropertiesBuilder {
     pub(crate) running_mode: ::std::option::Option<crate::types::RunningMode>,
     pub(crate) running_mode_auto_stop_timeout_in_minutes: ::std::option::Option<i32>,

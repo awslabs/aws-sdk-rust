@@ -40,8 +40,8 @@ impl ListEnrollmentStatusesOutput {
 }
 
 /// A builder for [`ListEnrollmentStatusesOutput`](crate::operation::list_enrollment_statuses::ListEnrollmentStatusesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEnrollmentStatusesOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::AccountEnrollmentStatus>>,
     pub(crate) include_member_accounts: ::std::option::Option<bool>,

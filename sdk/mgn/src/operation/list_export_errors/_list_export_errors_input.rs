@@ -33,8 +33,8 @@ impl ListExportErrorsInput {
 }
 
 /// A builder for [`ListExportErrorsInput`](crate::operation::list_export_errors::ListExportErrorsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListExportErrorsInputBuilder {
     pub(crate) export_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

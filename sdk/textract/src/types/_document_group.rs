@@ -45,8 +45,8 @@ impl DocumentGroup {
 }
 
 /// A builder for [`DocumentGroup`](crate::types::DocumentGroup).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DocumentGroupBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) split_documents: ::std::option::Option<::std::vec::Vec<crate::types::SplitDocument>>,

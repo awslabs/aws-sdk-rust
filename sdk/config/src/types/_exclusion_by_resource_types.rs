@@ -47,8 +47,8 @@ impl ExclusionByResourceTypes {
 }
 
 /// A builder for [`ExclusionByResourceTypes`](crate::types::ExclusionByResourceTypes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExclusionByResourceTypesBuilder {
     pub(crate) resource_types: ::std::option::Option<::std::vec::Vec<crate::types::ResourceType>>,
 }

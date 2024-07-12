@@ -37,8 +37,8 @@ impl AssetBundleImportSource {
 }
 
 /// A builder for [`AssetBundleImportSource`](crate::types::AssetBundleImportSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AssetBundleImportSourceBuilder {
     pub(crate) body: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) s3_uri: ::std::option::Option<::std::string::String>,

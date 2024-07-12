@@ -27,8 +27,8 @@ impl ModifyReplicationInstanceOutput {
 }
 
 /// A builder for [`ModifyReplicationInstanceOutput`](crate::operation::modify_replication_instance::ModifyReplicationInstanceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyReplicationInstanceOutputBuilder {
     pub(crate) replication_instance: ::std::option::Option<crate::types::ReplicationInstance>,
     _request_id: Option<String>,

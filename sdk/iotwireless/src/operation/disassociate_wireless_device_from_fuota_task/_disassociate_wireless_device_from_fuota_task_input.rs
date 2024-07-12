@@ -27,8 +27,8 @@ impl DisassociateWirelessDeviceFromFuotaTaskInput {
 }
 
 /// A builder for [`DisassociateWirelessDeviceFromFuotaTaskInput`](crate::operation::disassociate_wireless_device_from_fuota_task::DisassociateWirelessDeviceFromFuotaTaskInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateWirelessDeviceFromFuotaTaskInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) wireless_device_id: ::std::option::Option<::std::string::String>,

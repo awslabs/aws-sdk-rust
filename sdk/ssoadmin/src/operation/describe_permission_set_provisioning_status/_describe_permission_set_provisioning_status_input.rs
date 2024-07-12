@@ -26,8 +26,8 @@ impl DescribePermissionSetProvisioningStatusInput {
 }
 
 /// A builder for [`DescribePermissionSetProvisioningStatusInput`](crate::operation::describe_permission_set_provisioning_status::DescribePermissionSetProvisioningStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribePermissionSetProvisioningStatusInputBuilder {
     pub(crate) instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) provision_permission_set_request_id: ::std::option::Option<::std::string::String>,

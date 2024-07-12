@@ -34,8 +34,8 @@ impl FulfillmentActivity {
 }
 
 /// A builder for [`FulfillmentActivity`](crate::types::FulfillmentActivity).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FulfillmentActivityBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::FulfillmentActivityType>,
     pub(crate) code_hook: ::std::option::Option<crate::types::CodeHook>,

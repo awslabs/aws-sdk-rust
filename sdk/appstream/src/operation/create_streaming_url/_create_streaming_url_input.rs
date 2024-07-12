@@ -50,8 +50,8 @@ impl CreateStreamingUrlInput {
 }
 
 /// A builder for [`CreateStreamingUrlInput`](crate::operation::create_streaming_url::CreateStreamingUrlInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateStreamingUrlInputBuilder {
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
     pub(crate) fleet_name: ::std::option::Option<::std::string::String>,

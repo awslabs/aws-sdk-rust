@@ -21,8 +21,8 @@ impl GetEndpointAttributesInput {
 }
 
 /// A builder for [`GetEndpointAttributesInput`](crate::operation::get_endpoint_attributes::GetEndpointAttributesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEndpointAttributesInputBuilder {
     pub(crate) endpoint_arn: ::std::option::Option<::std::string::String>,
 }

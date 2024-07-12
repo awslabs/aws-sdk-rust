@@ -23,8 +23,8 @@ impl UpdateCloudFormationCollectionFilter {
 }
 
 /// A builder for [`UpdateCloudFormationCollectionFilter`](crate::types::UpdateCloudFormationCollectionFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateCloudFormationCollectionFilterBuilder {
     pub(crate) stack_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

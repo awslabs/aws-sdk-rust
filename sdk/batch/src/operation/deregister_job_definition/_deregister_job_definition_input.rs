@@ -20,8 +20,8 @@ impl DeregisterJobDefinitionInput {
 }
 
 /// A builder for [`DeregisterJobDefinitionInput`](crate::operation::deregister_job_definition::DeregisterJobDefinitionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeregisterJobDefinitionInputBuilder {
     pub(crate) job_definition: ::std::option::Option<::std::string::String>,
 }

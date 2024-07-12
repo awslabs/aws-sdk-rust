@@ -26,8 +26,8 @@ impl SetLocalConsolePasswordOutput {
 }
 
 /// A builder for [`SetLocalConsolePasswordOutput`](crate::operation::set_local_console_password::SetLocalConsolePasswordOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetLocalConsolePasswordOutputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

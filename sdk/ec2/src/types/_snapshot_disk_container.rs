@@ -51,8 +51,8 @@ impl SnapshotDiskContainer {
 }
 
 /// A builder for [`SnapshotDiskContainer`](crate::types::SnapshotDiskContainer).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SnapshotDiskContainerBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) format: ::std::option::Option<::std::string::String>,

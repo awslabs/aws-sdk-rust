@@ -37,8 +37,8 @@ impl DescribeDefaultClusterParametersInput {
 }
 
 /// A builder for [`DescribeDefaultClusterParametersInput`](crate::operation::describe_default_cluster_parameters::DescribeDefaultClusterParametersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDefaultClusterParametersInputBuilder {
     pub(crate) parameter_group_family: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,

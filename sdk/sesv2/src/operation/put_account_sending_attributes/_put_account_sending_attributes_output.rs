@@ -19,8 +19,8 @@ impl PutAccountSendingAttributesOutput {
 }
 
 /// A builder for [`PutAccountSendingAttributesOutput`](crate::operation::put_account_sending_attributes::PutAccountSendingAttributesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutAccountSendingAttributesOutputBuilder {
     _request_id: Option<String>,
 }

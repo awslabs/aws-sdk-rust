@@ -27,8 +27,8 @@ impl DescribeConnectorEntityOutput {
 }
 
 /// A builder for [`DescribeConnectorEntityOutput`](crate::operation::describe_connector_entity::DescribeConnectorEntityOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeConnectorEntityOutputBuilder {
     pub(crate) connector_entity_fields: ::std::option::Option<::std::vec::Vec<crate::types::ConnectorEntityField>>,
     _request_id: Option<String>,

@@ -76,8 +76,8 @@ impl GetPackageVersionReadmeOutput {
 }
 
 /// A builder for [`GetPackageVersionReadmeOutput`](crate::operation::get_package_version_readme::GetPackageVersionReadmeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPackageVersionReadmeOutputBuilder {
     pub(crate) format: ::std::option::Option<crate::types::PackageFormat>,
     pub(crate) namespace: ::std::option::Option<::std::string::String>,

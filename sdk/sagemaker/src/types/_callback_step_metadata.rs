@@ -35,8 +35,8 @@ impl CallbackStepMetadata {
 }
 
 /// A builder for [`CallbackStepMetadata`](crate::types::CallbackStepMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CallbackStepMetadataBuilder {
     pub(crate) callback_token: ::std::option::Option<::std::string::String>,
     pub(crate) sqs_queue_url: ::std::option::Option<::std::string::String>,

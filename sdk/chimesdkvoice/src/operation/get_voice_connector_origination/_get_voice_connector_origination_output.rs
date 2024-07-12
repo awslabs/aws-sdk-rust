@@ -26,8 +26,8 @@ impl GetVoiceConnectorOriginationOutput {
 }
 
 /// A builder for [`GetVoiceConnectorOriginationOutput`](crate::operation::get_voice_connector_origination::GetVoiceConnectorOriginationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetVoiceConnectorOriginationOutputBuilder {
     pub(crate) origination: ::std::option::Option<crate::types::Origination>,
     _request_id: Option<String>,

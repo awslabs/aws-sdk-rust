@@ -37,8 +37,8 @@ impl ValidDbInstanceModificationsMessage {
 }
 
 /// A builder for [`ValidDbInstanceModificationsMessage`](crate::types::ValidDbInstanceModificationsMessage).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ValidDbInstanceModificationsMessageBuilder {
     pub(crate) storage: ::std::option::Option<::std::vec::Vec<crate::types::ValidStorageOptions>>,
     pub(crate) valid_processor_features: ::std::option::Option<::std::vec::Vec<crate::types::AvailableProcessorFeature>>,

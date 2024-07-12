@@ -63,8 +63,8 @@ impl AuthenticationResultType {
 }
 
 /// A builder for [`AuthenticationResultType`](crate::types::AuthenticationResultType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AuthenticationResultTypeBuilder {
     pub(crate) access_token: ::std::option::Option<::std::string::String>,
     pub(crate) expires_in: ::std::option::Option<i32>,

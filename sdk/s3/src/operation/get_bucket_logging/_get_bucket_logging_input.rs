@@ -26,8 +26,8 @@ impl GetBucketLoggingInput {
 }
 
 /// A builder for [`GetBucketLoggingInput`](crate::operation::get_bucket_logging::GetBucketLoggingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBucketLoggingInputBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) expected_bucket_owner: ::std::option::Option<::std::string::String>,

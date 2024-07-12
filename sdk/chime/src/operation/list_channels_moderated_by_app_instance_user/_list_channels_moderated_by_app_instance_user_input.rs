@@ -48,8 +48,8 @@ impl ListChannelsModeratedByAppInstanceUserInput {
 }
 
 /// A builder for [`ListChannelsModeratedByAppInstanceUserInput`](crate::operation::list_channels_moderated_by_app_instance_user::ListChannelsModeratedByAppInstanceUserInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ListChannelsModeratedByAppInstanceUserInputBuilder {
     pub(crate) app_instance_user_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

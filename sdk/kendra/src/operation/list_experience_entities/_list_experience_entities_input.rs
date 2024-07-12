@@ -32,8 +32,8 @@ impl ListExperienceEntitiesInput {
 }
 
 /// A builder for [`ListExperienceEntitiesInput`](crate::operation::list_experience_entities::ListExperienceEntitiesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListExperienceEntitiesInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) index_id: ::std::option::Option<::std::string::String>,

@@ -50,8 +50,8 @@ impl GetUsageProfileOutput {
 }
 
 /// A builder for [`GetUsageProfileOutput`](crate::operation::get_usage_profile::GetUsageProfileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetUsageProfileOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

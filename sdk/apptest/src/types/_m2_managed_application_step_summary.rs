@@ -27,8 +27,8 @@ impl M2ManagedApplicationStepSummary {
 }
 
 /// A builder for [`M2ManagedApplicationStepSummary`](crate::types::M2ManagedApplicationStepSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct M2ManagedApplicationStepSummaryBuilder {
     pub(crate) step_input: ::std::option::Option<crate::types::M2ManagedApplicationStepInput>,
     pub(crate) step_output: ::std::option::Option<crate::types::M2ManagedApplicationStepOutput>,

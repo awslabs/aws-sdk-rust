@@ -22,8 +22,8 @@ impl UserJobsFirst {
 }
 
 /// A builder for [`UserJobsFirst`](crate::types::UserJobsFirst).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UserJobsFirstBuilder {
     pub(crate) user_identity_id: ::std::option::Option<::std::string::String>,
 }

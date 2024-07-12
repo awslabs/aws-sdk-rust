@@ -26,8 +26,8 @@ impl GetIdentityProviderByIdentifierInput {
 }
 
 /// A builder for [`GetIdentityProviderByIdentifierInput`](crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifierInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetIdentityProviderByIdentifierInputBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) idp_identifier: ::std::option::Option<::std::string::String>,

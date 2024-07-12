@@ -85,8 +85,8 @@ impl TargetPlatform {
 }
 
 /// A builder for [`TargetPlatform`](crate::types::TargetPlatform).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TargetPlatformBuilder {
     pub(crate) os: ::std::option::Option<crate::types::TargetPlatformOs>,
     pub(crate) arch: ::std::option::Option<crate::types::TargetPlatformArch>,

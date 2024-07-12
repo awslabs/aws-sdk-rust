@@ -27,8 +27,8 @@ impl UpdateSecurityGroupRuleDescriptionsEgressOutput {
 }
 
 /// A builder for [`UpdateSecurityGroupRuleDescriptionsEgressOutput`](crate::operation::update_security_group_rule_descriptions_egress::UpdateSecurityGroupRuleDescriptionsEgressOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSecurityGroupRuleDescriptionsEgressOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,

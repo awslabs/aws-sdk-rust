@@ -33,8 +33,8 @@ impl ListCollaborationAnalysisTemplatesOutput {
 }
 
 /// A builder for [`ListCollaborationAnalysisTemplatesOutput`](crate::operation::list_collaboration_analysis_templates::ListCollaborationAnalysisTemplatesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCollaborationAnalysisTemplatesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) collaboration_analysis_template_summaries: ::std::option::Option<::std::vec::Vec<crate::types::CollaborationAnalysisTemplateSummary>>,

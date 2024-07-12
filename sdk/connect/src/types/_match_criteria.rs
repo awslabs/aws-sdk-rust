@@ -21,8 +21,8 @@ impl MatchCriteria {
 }
 
 /// A builder for [`MatchCriteria`](crate::types::MatchCriteria).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MatchCriteriaBuilder {
     pub(crate) agents_criteria: ::std::option::Option<crate::types::AgentsCriteria>,
 }

@@ -21,8 +21,8 @@ impl WisdomInfo {
 }
 
 /// A builder for [`WisdomInfo`](crate::types::WisdomInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WisdomInfoBuilder {
     pub(crate) session_arn: ::std::option::Option<::std::string::String>,
 }

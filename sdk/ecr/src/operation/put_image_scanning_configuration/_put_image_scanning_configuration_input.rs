@@ -32,8 +32,8 @@ impl PutImageScanningConfigurationInput {
 }
 
 /// A builder for [`PutImageScanningConfigurationInput`](crate::operation::put_image_scanning_configuration::PutImageScanningConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutImageScanningConfigurationInputBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,

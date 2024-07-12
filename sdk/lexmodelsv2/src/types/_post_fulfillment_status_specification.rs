@@ -69,8 +69,8 @@ impl PostFulfillmentStatusSpecification {
 }
 
 /// A builder for [`PostFulfillmentStatusSpecification`](crate::types::PostFulfillmentStatusSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PostFulfillmentStatusSpecificationBuilder {
     pub(crate) success_response: ::std::option::Option<crate::types::ResponseSpecification>,
     pub(crate) failure_response: ::std::option::Option<crate::types::ResponseSpecification>,

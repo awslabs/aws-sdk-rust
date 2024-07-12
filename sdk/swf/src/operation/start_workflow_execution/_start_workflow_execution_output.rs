@@ -27,8 +27,8 @@ impl StartWorkflowExecutionOutput {
 }
 
 /// A builder for [`StartWorkflowExecutionOutput`](crate::operation::start_workflow_execution::StartWorkflowExecutionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartWorkflowExecutionOutputBuilder {
     pub(crate) run_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

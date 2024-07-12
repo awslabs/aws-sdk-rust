@@ -29,8 +29,8 @@ impl ListStacksInput {
 }
 
 /// A builder for [`ListStacksInput`](crate::operation::list_stacks::ListStacksInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListStacksInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) stack_status_filter: ::std::option::Option<::std::vec::Vec<crate::types::StackStatus>>,

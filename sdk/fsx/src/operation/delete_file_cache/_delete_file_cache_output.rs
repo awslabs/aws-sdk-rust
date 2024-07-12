@@ -32,8 +32,8 @@ impl DeleteFileCacheOutput {
 }
 
 /// A builder for [`DeleteFileCacheOutput`](crate::operation::delete_file_cache::DeleteFileCacheOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFileCacheOutputBuilder {
     pub(crate) file_cache_id: ::std::option::Option<::std::string::String>,
     pub(crate) lifecycle: ::std::option::Option<crate::types::FileCacheLifecycle>,

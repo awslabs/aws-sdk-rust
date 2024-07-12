@@ -34,8 +34,8 @@ impl ListAssessmentFrameworkShareRequestsOutput {
 }
 
 /// A builder for [`ListAssessmentFrameworkShareRequestsOutput`](crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAssessmentFrameworkShareRequestsOutputBuilder {
     pub(crate) assessment_framework_share_requests: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentFrameworkShareRequest>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

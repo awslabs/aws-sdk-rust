@@ -27,8 +27,8 @@ impl OptimizationObjective {
 }
 
 /// A builder for [`OptimizationObjective`](crate::types::OptimizationObjective).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OptimizationObjectiveBuilder {
     pub(crate) item_attribute: ::std::option::Option<::std::string::String>,
     pub(crate) objective_sensitivity: ::std::option::Option<crate::types::ObjectiveSensitivity>,

@@ -27,8 +27,8 @@ impl TestSetSortBy {
 }
 
 /// A builder for [`TestSetSortBy`](crate::types::TestSetSortBy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TestSetSortByBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::TestSetSortAttribute>,
     pub(crate) order: ::std::option::Option<crate::types::SortOrder>,

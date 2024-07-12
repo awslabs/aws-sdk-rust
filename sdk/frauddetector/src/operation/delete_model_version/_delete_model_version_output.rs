@@ -18,8 +18,8 @@ impl DeleteModelVersionOutput {
 }
 
 /// A builder for [`DeleteModelVersionOutput`](crate::operation::delete_model_version::DeleteModelVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteModelVersionOutputBuilder {
     _request_id: Option<String>,
 }

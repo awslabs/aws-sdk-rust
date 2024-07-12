@@ -27,8 +27,8 @@ impl AwsEcsServiceDeploymentControllerDetails {
 }
 
 /// A builder for [`AwsEcsServiceDeploymentControllerDetails`](crate::types::AwsEcsServiceDeploymentControllerDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEcsServiceDeploymentControllerDetailsBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
 }

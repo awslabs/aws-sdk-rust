@@ -29,8 +29,8 @@ impl TleEphemeris {
 }
 
 /// A builder for [`TleEphemeris`](crate::types::TleEphemeris).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TleEphemerisBuilder {
     pub(crate) s3_object: ::std::option::Option<crate::types::S3Object>,
     pub(crate) tle_data: ::std::option::Option<::std::vec::Vec<crate::types::TleData>>,

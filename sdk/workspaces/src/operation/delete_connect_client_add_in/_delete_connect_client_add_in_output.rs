@@ -18,8 +18,8 @@ impl DeleteConnectClientAddInOutput {
 }
 
 /// A builder for [`DeleteConnectClientAddInOutput`](crate::operation::delete_connect_client_add_in::DeleteConnectClientAddInOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteConnectClientAddInOutputBuilder {
     _request_id: Option<String>,
 }

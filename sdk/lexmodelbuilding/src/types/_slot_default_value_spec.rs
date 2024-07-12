@@ -24,8 +24,8 @@ impl SlotDefaultValueSpec {
 }
 
 /// A builder for [`SlotDefaultValueSpec`](crate::types::SlotDefaultValueSpec).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SlotDefaultValueSpecBuilder {
     pub(crate) default_value_list: ::std::option::Option<::std::vec::Vec<crate::types::SlotDefaultValue>>,
 }

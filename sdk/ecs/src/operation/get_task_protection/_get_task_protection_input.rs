@@ -28,8 +28,8 @@ impl GetTaskProtectionInput {
 }
 
 /// A builder for [`GetTaskProtectionInput`](crate::operation::get_task_protection::GetTaskProtectionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTaskProtectionInputBuilder {
     pub(crate) cluster: ::std::option::Option<::std::string::String>,
     pub(crate) tasks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

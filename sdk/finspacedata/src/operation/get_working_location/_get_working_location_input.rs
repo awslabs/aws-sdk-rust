@@ -32,8 +32,8 @@ impl GetWorkingLocationInput {
 }
 
 /// A builder for [`GetWorkingLocationInput`](crate::operation::get_working_location::GetWorkingLocationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetWorkingLocationInputBuilder {
     pub(crate) location_type: ::std::option::Option<crate::types::LocationType>,
 }

@@ -21,8 +21,8 @@ impl MemberFrameworkConfiguration {
 }
 
 /// A builder for [`MemberFrameworkConfiguration`](crate::types::MemberFrameworkConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MemberFrameworkConfigurationBuilder {
     pub(crate) fabric: ::std::option::Option<crate::types::MemberFabricConfiguration>,
 }

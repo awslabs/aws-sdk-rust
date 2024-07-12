@@ -27,8 +27,8 @@ impl NewUserAgentDetail {
 }
 
 /// A builder for [`NewUserAgentDetail`](crate::types::NewUserAgentDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NewUserAgentDetailBuilder {
     pub(crate) user_agent: ::std::option::Option<::std::string::String>,
     pub(crate) is_new_for_entire_account: ::std::option::Option<bool>,

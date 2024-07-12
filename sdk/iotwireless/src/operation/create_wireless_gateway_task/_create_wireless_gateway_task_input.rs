@@ -26,8 +26,8 @@ impl CreateWirelessGatewayTaskInput {
 }
 
 /// A builder for [`CreateWirelessGatewayTaskInput`](crate::operation::create_wireless_gateway_task::CreateWirelessGatewayTaskInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateWirelessGatewayTaskInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) wireless_gateway_task_definition_id: ::std::option::Option<::std::string::String>,

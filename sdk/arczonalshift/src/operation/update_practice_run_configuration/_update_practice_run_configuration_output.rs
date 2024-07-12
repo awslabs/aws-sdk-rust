@@ -46,8 +46,8 @@ impl UpdatePracticeRunConfigurationOutput {
 }
 
 /// A builder for [`UpdatePracticeRunConfigurationOutput`](crate::operation::update_practice_run_configuration::UpdatePracticeRunConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePracticeRunConfigurationOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

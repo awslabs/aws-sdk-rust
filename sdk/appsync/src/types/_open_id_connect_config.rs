@@ -40,8 +40,8 @@ impl OpenIdConnectConfig {
 }
 
 /// A builder for [`OpenIdConnectConfig`](crate::types::OpenIdConnectConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OpenIdConnectConfigBuilder {
     pub(crate) issuer: ::std::option::Option<::std::string::String>,
     pub(crate) client_id: ::std::option::Option<::std::string::String>,

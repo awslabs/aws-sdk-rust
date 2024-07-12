@@ -117,8 +117,8 @@ impl OtaUpdateInfo {
 }
 
 /// A builder for [`OtaUpdateInfo`](crate::types::OtaUpdateInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OtaUpdateInfoBuilder {
     pub(crate) ota_update_id: ::std::option::Option<::std::string::String>,
     pub(crate) ota_update_arn: ::std::option::Option<::std::string::String>,

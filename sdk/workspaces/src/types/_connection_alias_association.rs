@@ -39,8 +39,8 @@ impl ConnectionAliasAssociation {
 }
 
 /// A builder for [`ConnectionAliasAssociation`](crate::types::ConnectionAliasAssociation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConnectionAliasAssociationBuilder {
     pub(crate) association_status: ::std::option::Option<crate::types::AssociationStatus>,
     pub(crate) associated_account_id: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl GetPrivateGraphEndpointInput {
 }
 
 /// A builder for [`GetPrivateGraphEndpointInput`](crate::operation::get_private_graph_endpoint::GetPrivateGraphEndpointInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPrivateGraphEndpointInputBuilder {
     pub(crate) graph_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,

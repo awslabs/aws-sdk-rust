@@ -11,8 +11,8 @@ impl GetRegistryCatalogDataInput {
 }
 
 /// A builder for [`GetRegistryCatalogDataInput`](crate::operation::get_registry_catalog_data::GetRegistryCatalogDataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRegistryCatalogDataInputBuilder {}
 impl GetRegistryCatalogDataInputBuilder {
     /// Consumes the builder and constructs a [`GetRegistryCatalogDataInput`](crate::operation::get_registry_catalog_data::GetRegistryCatalogDataInput).

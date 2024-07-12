@@ -32,8 +32,8 @@ impl ModifyInstanceMaintenanceOptionsOutput {
 }
 
 /// A builder for [`ModifyInstanceMaintenanceOptionsOutput`](crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyInstanceMaintenanceOptionsOutputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) auto_recovery: ::std::option::Option<crate::types::InstanceAutoRecoveryState>,

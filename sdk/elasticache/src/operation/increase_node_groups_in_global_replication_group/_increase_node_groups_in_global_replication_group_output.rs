@@ -36,8 +36,8 @@ impl IncreaseNodeGroupsInGlobalReplicationGroupOutput {
 }
 
 /// A builder for [`IncreaseNodeGroupsInGlobalReplicationGroupOutput`](crate::operation::increase_node_groups_in_global_replication_group::IncreaseNodeGroupsInGlobalReplicationGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IncreaseNodeGroupsInGlobalReplicationGroupOutputBuilder {
     pub(crate) global_replication_group: ::std::option::Option<crate::types::GlobalReplicationGroup>,
     _request_id: Option<String>,

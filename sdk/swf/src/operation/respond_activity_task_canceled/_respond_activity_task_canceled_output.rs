@@ -18,8 +18,8 @@ impl RespondActivityTaskCanceledOutput {
 }
 
 /// A builder for [`RespondActivityTaskCanceledOutput`](crate::operation::respond_activity_task_canceled::RespondActivityTaskCanceledOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RespondActivityTaskCanceledOutputBuilder {
     _request_id: Option<String>,
 }

@@ -47,8 +47,8 @@ impl UpdateDomainNameserversInput {
 }
 
 /// A builder for [`UpdateDomainNameserversInput`](crate::operation::update_domain_nameservers::UpdateDomainNameserversInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateDomainNameserversInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) fi_auth_key: ::std::option::Option<::std::string::String>,

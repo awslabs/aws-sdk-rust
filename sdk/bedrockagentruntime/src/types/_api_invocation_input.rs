@@ -64,8 +64,8 @@ impl ApiInvocationInput {
 }
 
 /// A builder for [`ApiInvocationInput`](crate::types::ApiInvocationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ApiInvocationInputBuilder {
     pub(crate) action_group: ::std::option::Option<::std::string::String>,
     pub(crate) http_method: ::std::option::Option<::std::string::String>,

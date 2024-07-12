@@ -18,8 +18,8 @@ impl DetachSecurityProfileOutput {
 }
 
 /// A builder for [`DetachSecurityProfileOutput`](crate::operation::detach_security_profile::DetachSecurityProfileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetachSecurityProfileOutputBuilder {
     _request_id: Option<String>,
 }

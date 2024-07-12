@@ -32,8 +32,8 @@ impl DescribeExclusionsOutput {
 }
 
 /// A builder for [`DescribeExclusionsOutput`](crate::operation::describe_exclusions::DescribeExclusionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeExclusionsOutputBuilder {
     pub(crate) exclusions: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Exclusion>>,
     pub(crate) failed_items: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>>,

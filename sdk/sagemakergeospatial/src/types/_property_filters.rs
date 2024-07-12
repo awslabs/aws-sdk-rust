@@ -29,8 +29,8 @@ impl PropertyFilters {
 }
 
 /// A builder for [`PropertyFilters`](crate::types::PropertyFilters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PropertyFiltersBuilder {
     pub(crate) properties: ::std::option::Option<::std::vec::Vec<crate::types::PropertyFilter>>,
     pub(crate) logical_operator: ::std::option::Option<crate::types::LogicalOperator>,

@@ -125,8 +125,8 @@ impl WriteCampaignRequest {
 }
 
 /// A builder for [`WriteCampaignRequest`](crate::types::WriteCampaignRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WriteCampaignRequestBuilder {
     pub(crate) additional_treatments: ::std::option::Option<::std::vec::Vec<crate::types::WriteTreatmentResource>>,
     pub(crate) custom_delivery_configuration: ::std::option::Option<crate::types::CustomDeliveryConfiguration>,

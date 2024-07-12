@@ -20,8 +20,8 @@ impl PutClassificationExportConfigurationInput {
 }
 
 /// A builder for [`PutClassificationExportConfigurationInput`](crate::operation::put_classification_export_configuration::PutClassificationExportConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutClassificationExportConfigurationInputBuilder {
     pub(crate) configuration: ::std::option::Option<crate::types::ClassificationExportConfiguration>,
 }

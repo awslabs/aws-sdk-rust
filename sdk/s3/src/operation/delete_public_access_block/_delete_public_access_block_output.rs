@@ -24,8 +24,8 @@ impl DeletePublicAccessBlockOutput {
 }
 
 /// A builder for [`DeletePublicAccessBlockOutput`](crate::operation::delete_public_access_block::DeletePublicAccessBlockOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePublicAccessBlockOutputBuilder {
     _extended_request_id: Option<String>,
     _request_id: Option<String>,

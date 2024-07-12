@@ -26,8 +26,8 @@ impl ExecuteProvisionedProductServiceActionOutput {
 }
 
 /// A builder for [`ExecuteProvisionedProductServiceActionOutput`](crate::operation::execute_provisioned_product_service_action::ExecuteProvisionedProductServiceActionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExecuteProvisionedProductServiceActionOutputBuilder {
     pub(crate) record_detail: ::std::option::Option<crate::types::RecordDetail>,
     _request_id: Option<String>,

@@ -20,8 +20,8 @@ impl GetTranscriptionJobInput {
 }
 
 /// A builder for [`GetTranscriptionJobInput`](crate::operation::get_transcription_job::GetTranscriptionJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTranscriptionJobInputBuilder {
     pub(crate) transcription_job_name: ::std::option::Option<::std::string::String>,
 }

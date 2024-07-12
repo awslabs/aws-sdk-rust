@@ -38,8 +38,8 @@ impl DescribeAddonVersionsOutput {
 }
 
 /// A builder for [`DescribeAddonVersionsOutput`](crate::operation::describe_addon_versions::DescribeAddonVersionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAddonVersionsOutputBuilder {
     pub(crate) addons: ::std::option::Option<::std::vec::Vec<crate::types::AddonInfo>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -21,8 +21,8 @@ impl S3SetObjectAclOperation {
 }
 
 /// A builder for [`S3SetObjectAclOperation`](crate::types::S3SetObjectAclOperation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3SetObjectAclOperationBuilder {
     pub(crate) access_control_policy: ::std::option::Option<crate::types::S3AccessControlPolicy>,
 }

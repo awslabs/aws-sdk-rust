@@ -26,8 +26,8 @@ impl CreateObservabilityConfigurationOutput {
 }
 
 /// A builder for [`CreateObservabilityConfigurationOutput`](crate::operation::create_observability_configuration::CreateObservabilityConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateObservabilityConfigurationOutputBuilder {
     pub(crate) observability_configuration: ::std::option::Option<crate::types::ObservabilityConfiguration>,
     _request_id: Option<String>,

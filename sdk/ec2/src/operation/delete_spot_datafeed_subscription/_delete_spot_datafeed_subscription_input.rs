@@ -21,8 +21,8 @@ impl DeleteSpotDatafeedSubscriptionInput {
 }
 
 /// A builder for [`DeleteSpotDatafeedSubscriptionInput`](crate::operation::delete_spot_datafeed_subscription::DeleteSpotDatafeedSubscriptionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSpotDatafeedSubscriptionInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
 }

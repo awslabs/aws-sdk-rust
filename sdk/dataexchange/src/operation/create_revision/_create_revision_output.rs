@@ -92,8 +92,8 @@ impl CreateRevisionOutput {
 }
 
 /// A builder for [`CreateRevisionOutput`](crate::operation::create_revision::CreateRevisionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateRevisionOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) comment: ::std::option::Option<::std::string::String>,

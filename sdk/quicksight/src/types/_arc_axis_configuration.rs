@@ -27,8 +27,8 @@ impl ArcAxisConfiguration {
 }
 
 /// A builder for [`ArcAxisConfiguration`](crate::types::ArcAxisConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ArcAxisConfigurationBuilder {
     pub(crate) range: ::std::option::Option<crate::types::ArcAxisDisplayRange>,
     pub(crate) reserve_range: ::std::option::Option<i32>,

@@ -20,8 +20,8 @@ impl CancelPolicyGenerationInput {
 }
 
 /// A builder for [`CancelPolicyGenerationInput`](crate::operation::cancel_policy_generation::CancelPolicyGenerationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelPolicyGenerationInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }

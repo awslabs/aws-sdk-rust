@@ -35,8 +35,8 @@ impl FilterCondition {
 }
 
 /// A builder for [`FilterCondition`](crate::types::FilterCondition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FilterConditionBuilder {
     pub(crate) field: ::std::option::Option<crate::types::FieldNameString>,
     pub(crate) comparison_operator: ::std::option::Option<crate::types::ComparisonOperator>,

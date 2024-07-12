@@ -38,8 +38,8 @@ impl CreateOriginAccessControlOutput {
 }
 
 /// A builder for [`CreateOriginAccessControlOutput`](crate::operation::create_origin_access_control::CreateOriginAccessControlOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateOriginAccessControlOutputBuilder {
     pub(crate) origin_access_control: ::std::option::Option<crate::types::OriginAccessControl>,
     pub(crate) location: ::std::option::Option<::std::string::String>,

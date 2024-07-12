@@ -26,8 +26,8 @@ impl DescribeFilterOutput {
 }
 
 /// A builder for [`DescribeFilterOutput`](crate::operation::describe_filter::DescribeFilterOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFilterOutputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::Filter>,
     _request_id: Option<String>,

@@ -21,8 +21,8 @@ impl TableCellImageSizingConfiguration {
 }
 
 /// A builder for [`TableCellImageSizingConfiguration`](crate::types::TableCellImageSizingConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TableCellImageSizingConfigurationBuilder {
     pub(crate) table_cell_image_scaling_configuration: ::std::option::Option<crate::types::TableCellImageScalingConfiguration>,
 }

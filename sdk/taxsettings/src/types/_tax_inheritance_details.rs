@@ -27,8 +27,8 @@ impl TaxInheritanceDetails {
 }
 
 /// A builder for [`TaxInheritanceDetails`](crate::types::TaxInheritanceDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TaxInheritanceDetailsBuilder {
     pub(crate) parent_entity_id: ::std::option::Option<::std::string::String>,
     pub(crate) inheritance_obtained_reason: ::std::option::Option<::std::string::String>,

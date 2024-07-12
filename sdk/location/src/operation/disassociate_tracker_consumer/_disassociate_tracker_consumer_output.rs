@@ -18,8 +18,8 @@ impl DisassociateTrackerConsumerOutput {
 }
 
 /// A builder for [`DisassociateTrackerConsumerOutput`](crate::operation::disassociate_tracker_consumer::DisassociateTrackerConsumerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateTrackerConsumerOutputBuilder {
     _request_id: Option<String>,
 }

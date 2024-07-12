@@ -95,8 +95,8 @@ impl ImportJobResponse {
 }
 
 /// A builder for [`ImportJobResponse`](crate::types::ImportJobResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportJobResponseBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) completed_pieces: ::std::option::Option<i32>,

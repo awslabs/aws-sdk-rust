@@ -75,8 +75,8 @@ impl StartSelector {
 }
 
 /// A builder for [`StartSelector`](crate::types::StartSelector).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartSelectorBuilder {
     pub(crate) start_selector_type: ::std::option::Option<crate::types::StartSelectorType>,
     pub(crate) after_fragment_number: ::std::option::Option<::std::string::String>,

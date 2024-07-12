@@ -32,8 +32,8 @@ impl DeleteRepositoryInput {
 }
 
 /// A builder for [`DeleteRepositoryInput`](crate::operation::delete_repository::DeleteRepositoryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRepositoryInputBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,

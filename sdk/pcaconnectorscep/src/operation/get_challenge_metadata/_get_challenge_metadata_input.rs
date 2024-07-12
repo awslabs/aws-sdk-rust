@@ -20,8 +20,8 @@ impl GetChallengeMetadataInput {
 }
 
 /// A builder for [`GetChallengeMetadataInput`](crate::operation::get_challenge_metadata::GetChallengeMetadataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetChallengeMetadataInputBuilder {
     pub(crate) challenge_arn: ::std::option::Option<::std::string::String>,
 }

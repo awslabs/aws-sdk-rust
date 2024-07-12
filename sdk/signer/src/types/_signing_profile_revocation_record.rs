@@ -33,8 +33,8 @@ impl SigningProfileRevocationRecord {
 }
 
 /// A builder for [`SigningProfileRevocationRecord`](crate::types::SigningProfileRevocationRecord).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SigningProfileRevocationRecordBuilder {
     pub(crate) revocation_effective_from: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) revoked_at: ::std::option::Option<::aws_smithy_types::DateTime>,

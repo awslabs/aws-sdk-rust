@@ -21,8 +21,8 @@ impl VideoSelectorProgramId {
 }
 
 /// A builder for [`VideoSelectorProgramId`](crate::types::VideoSelectorProgramId).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VideoSelectorProgramIdBuilder {
     pub(crate) program_id: ::std::option::Option<i32>,
 }

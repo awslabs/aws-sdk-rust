@@ -32,8 +32,8 @@ impl GetAgreementTermsInput {
 }
 
 /// A builder for [`GetAgreementTermsInput`](crate::operation::get_agreement_terms::GetAgreementTermsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAgreementTermsInputBuilder {
     pub(crate) agreement_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

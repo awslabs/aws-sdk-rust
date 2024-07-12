@@ -34,8 +34,8 @@ impl ListResourceDefinitionsOutput {
 }
 
 /// A builder for [`ListResourceDefinitionsOutput`](crate::operation::list_resource_definitions::ListResourceDefinitionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListResourceDefinitionsOutputBuilder {
     pub(crate) definitions: ::std::option::Option<::std::vec::Vec<crate::types::DefinitionInformation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

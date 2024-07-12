@@ -29,8 +29,8 @@ impl DeleteVoiceConnectorTerminationCredentialsInput {
 }
 
 /// A builder for [`DeleteVoiceConnectorTerminationCredentialsInput`](crate::operation::delete_voice_connector_termination_credentials::DeleteVoiceConnectorTerminationCredentialsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVoiceConnectorTerminationCredentialsInputBuilder {
     pub(crate) voice_connector_id: ::std::option::Option<::std::string::String>,
     pub(crate) usernames: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

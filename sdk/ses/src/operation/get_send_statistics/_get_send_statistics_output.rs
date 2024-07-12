@@ -29,8 +29,8 @@ impl GetSendStatisticsOutput {
 }
 
 /// A builder for [`GetSendStatisticsOutput`](crate::operation::get_send_statistics::GetSendStatisticsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSendStatisticsOutputBuilder {
     pub(crate) send_data_points: ::std::option::Option<::std::vec::Vec<crate::types::SendDataPoint>>,
     _request_id: Option<String>,

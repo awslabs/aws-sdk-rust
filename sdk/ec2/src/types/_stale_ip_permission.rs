@@ -57,8 +57,8 @@ impl StaleIpPermission {
 }
 
 /// A builder for [`StaleIpPermission`](crate::types::StaleIpPermission).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StaleIpPermissionBuilder {
     pub(crate) from_port: ::std::option::Option<i32>,
     pub(crate) ip_protocol: ::std::option::Option<::std::string::String>,

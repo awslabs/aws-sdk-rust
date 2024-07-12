@@ -21,8 +21,8 @@ impl CrossZoneLoadBalancing {
 }
 
 /// A builder for [`CrossZoneLoadBalancing`](crate::types::CrossZoneLoadBalancing).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CrossZoneLoadBalancingBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
 }

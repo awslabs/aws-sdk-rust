@@ -26,8 +26,8 @@ impl GetDataSetImportTaskInput {
 }
 
 /// A builder for [`GetDataSetImportTaskInput`](crate::operation::get_data_set_import_task::GetDataSetImportTaskInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDataSetImportTaskInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) task_id: ::std::option::Option<::std::string::String>,

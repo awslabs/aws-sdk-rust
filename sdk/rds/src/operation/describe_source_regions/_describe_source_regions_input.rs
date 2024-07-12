@@ -55,8 +55,8 @@ impl DescribeSourceRegionsInput {
 }
 
 /// A builder for [`DescribeSourceRegionsInput`](crate::operation::describe_source_regions::DescribeSourceRegionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSourceRegionsInputBuilder {
     pub(crate) region_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,

@@ -52,8 +52,8 @@ impl ListRecommendationSummariesOutput {
 }
 
 /// A builder for [`ListRecommendationSummariesOutput`](crate::operation::list_recommendation_summaries::ListRecommendationSummariesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRecommendationSummariesOutputBuilder {
     pub(crate) estimated_total_deduped_savings: ::std::option::Option<f64>,
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationSummary>>,

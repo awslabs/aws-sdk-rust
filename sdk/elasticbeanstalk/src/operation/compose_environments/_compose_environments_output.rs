@@ -35,8 +35,8 @@ impl ComposeEnvironmentsOutput {
 }
 
 /// A builder for [`ComposeEnvironmentsOutput`](crate::operation::compose_environments::ComposeEnvironmentsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ComposeEnvironmentsOutputBuilder {
     pub(crate) environments: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentDescription>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

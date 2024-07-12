@@ -28,8 +28,8 @@ impl ListAvailableZonesOutput {
 }
 
 /// A builder for [`ListAvailableZonesOutput`](crate::operation::list_available_zones::ListAvailableZonesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAvailableZonesOutputBuilder {
     pub(crate) az_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,

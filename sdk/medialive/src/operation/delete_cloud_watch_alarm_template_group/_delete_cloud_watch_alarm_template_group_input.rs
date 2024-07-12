@@ -21,8 +21,8 @@ impl DeleteCloudWatchAlarmTemplateGroupInput {
 }
 
 /// A builder for [`DeleteCloudWatchAlarmTemplateGroupInput`](crate::operation::delete_cloud_watch_alarm_template_group::DeleteCloudWatchAlarmTemplateGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCloudWatchAlarmTemplateGroupInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
 }

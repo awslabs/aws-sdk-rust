@@ -36,8 +36,8 @@ impl MediaStreamSource {
 }
 
 /// A builder for [`MediaStreamSource`](crate::types::MediaStreamSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct MediaStreamSourceBuilder {
     pub(crate) source_type: ::std::option::Option<crate::types::MediaPipelineSourceType>,
     pub(crate) source_arn: ::std::option::Option<::std::string::String>,

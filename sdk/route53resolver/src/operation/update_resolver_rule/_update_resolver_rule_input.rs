@@ -26,8 +26,8 @@ impl UpdateResolverRuleInput {
 }
 
 /// A builder for [`UpdateResolverRuleInput`](crate::operation::update_resolver_rule::UpdateResolverRuleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateResolverRuleInputBuilder {
     pub(crate) resolver_rule_id: ::std::option::Option<::std::string::String>,
     pub(crate) config: ::std::option::Option<crate::types::ResolverRuleConfig>,

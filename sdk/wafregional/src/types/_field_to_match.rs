@@ -67,8 +67,8 @@ impl FieldToMatch {
 }
 
 /// A builder for [`FieldToMatch`](crate::types::FieldToMatch).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FieldToMatchBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::MatchFieldType>,
     pub(crate) data: ::std::option::Option<::std::string::String>,

@@ -20,8 +20,8 @@ impl GetSmsChannelInput {
 }
 
 /// A builder for [`GetSmsChannelInput`](crate::operation::get_sms_channel::GetSmsChannelInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSmsChannelInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
 }

@@ -34,8 +34,8 @@ impl DescribeSnapshotTierStatusOutput {
 }
 
 /// A builder for [`DescribeSnapshotTierStatusOutput`](crate::operation::describe_snapshot_tier_status::DescribeSnapshotTierStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSnapshotTierStatusOutputBuilder {
     pub(crate) snapshot_tier_statuses: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotTierStatus>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

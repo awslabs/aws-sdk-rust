@@ -20,8 +20,8 @@ impl DescribeRoutingControlInput {
 }
 
 /// A builder for [`DescribeRoutingControlInput`](crate::operation::describe_routing_control::DescribeRoutingControlInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRoutingControlInputBuilder {
     pub(crate) routing_control_arn: ::std::option::Option<::std::string::String>,
 }

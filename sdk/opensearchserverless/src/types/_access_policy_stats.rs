@@ -21,8 +21,8 @@ impl AccessPolicyStats {
 }
 
 /// A builder for [`AccessPolicyStats`](crate::types::AccessPolicyStats).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AccessPolicyStatsBuilder {
     pub(crate) data_policy_count: ::std::option::Option<i64>,
 }

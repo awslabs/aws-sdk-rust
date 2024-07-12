@@ -34,8 +34,8 @@ impl ListWebExperiencesOutput {
 }
 
 /// A builder for [`ListWebExperiencesOutput`](crate::operation::list_web_experiences::ListWebExperiencesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListWebExperiencesOutputBuilder {
     pub(crate) web_experiences: ::std::option::Option<::std::vec::Vec<crate::types::WebExperience>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

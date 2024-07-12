@@ -39,8 +39,8 @@ impl AsyncInferenceNotificationConfig {
 }
 
 /// A builder for [`AsyncInferenceNotificationConfig`](crate::types::AsyncInferenceNotificationConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AsyncInferenceNotificationConfigBuilder {
     pub(crate) success_topic: ::std::option::Option<::std::string::String>,
     pub(crate) error_topic: ::std::option::Option<::std::string::String>,

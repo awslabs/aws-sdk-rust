@@ -27,8 +27,8 @@ impl RemovePermissionInput {
 }
 
 /// A builder for [`RemovePermissionInput`](crate::operation::remove_permission::RemovePermissionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemovePermissionInputBuilder {
     pub(crate) topic_arn: ::std::option::Option<::std::string::String>,
     pub(crate) label: ::std::option::Option<::std::string::String>,

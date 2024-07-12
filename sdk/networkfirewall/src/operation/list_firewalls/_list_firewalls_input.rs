@@ -34,8 +34,8 @@ impl ListFirewallsInput {
 }
 
 /// A builder for [`ListFirewallsInput`](crate::operation::list_firewalls::ListFirewallsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFirewallsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -27,8 +27,8 @@ impl CisNumberFilter {
 }
 
 /// A builder for [`CisNumberFilter`](crate::types::CisNumberFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CisNumberFilterBuilder {
     pub(crate) upper_inclusive: ::std::option::Option<i32>,
     pub(crate) lower_inclusive: ::std::option::Option<i32>,

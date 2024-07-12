@@ -34,8 +34,8 @@ impl DescribeSlackUserIdentitiesOutput {
 }
 
 /// A builder for [`DescribeSlackUserIdentitiesOutput`](crate::operation::describe_slack_user_identities::DescribeSlackUserIdentitiesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSlackUserIdentitiesOutputBuilder {
     pub(crate) slack_user_identities: ::std::option::Option<::std::vec::Vec<crate::types::SlackUserIdentity>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

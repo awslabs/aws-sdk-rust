@@ -20,8 +20,8 @@ impl StopEventDataStoreIngestionInput {
 }
 
 /// A builder for [`StopEventDataStoreIngestionInput`](crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopEventDataStoreIngestionInputBuilder {
     pub(crate) event_data_store: ::std::option::Option<::std::string::String>,
 }

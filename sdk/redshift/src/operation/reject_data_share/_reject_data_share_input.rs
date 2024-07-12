@@ -20,8 +20,8 @@ impl RejectDataShareInput {
 }
 
 /// A builder for [`RejectDataShareInput`](crate::operation::reject_data_share::RejectDataShareInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RejectDataShareInputBuilder {
     pub(crate) data_share_arn: ::std::option::Option<::std::string::String>,
 }

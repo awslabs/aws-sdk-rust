@@ -20,8 +20,8 @@ impl CreateWebLoginTokenInput {
 }
 
 /// A builder for [`CreateWebLoginTokenInput`](crate::operation::create_web_login_token::CreateWebLoginTokenInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateWebLoginTokenInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

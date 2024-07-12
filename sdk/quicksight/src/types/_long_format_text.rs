@@ -28,8 +28,8 @@ impl LongFormatText {
 }
 
 /// A builder for [`LongFormatText`](crate::types::LongFormatText).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LongFormatTextBuilder {
     pub(crate) plain_text: ::std::option::Option<::std::string::String>,
     pub(crate) rich_text: ::std::option::Option<::std::string::String>,

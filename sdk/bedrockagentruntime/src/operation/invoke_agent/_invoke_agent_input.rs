@@ -84,8 +84,8 @@ impl InvokeAgentInput {
 }
 
 /// A builder for [`InvokeAgentInput`](crate::operation::invoke_agent::InvokeAgentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct InvokeAgentInputBuilder {
     pub(crate) session_state: ::std::option::Option<crate::types::SessionState>,
     pub(crate) agent_id: ::std::option::Option<::std::string::String>,

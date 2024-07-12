@@ -26,8 +26,8 @@ impl GetTaxRegistrationDocumentInput {
 }
 
 /// A builder for [`GetTaxRegistrationDocumentInput`](crate::operation::get_tax_registration_document::GetTaxRegistrationDocumentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTaxRegistrationDocumentInputBuilder {
     pub(crate) destination_s3_location: ::std::option::Option<crate::types::DestinationS3Location>,
     pub(crate) tax_document_metadata: ::std::option::Option<crate::types::TaxDocumentMetadata>,

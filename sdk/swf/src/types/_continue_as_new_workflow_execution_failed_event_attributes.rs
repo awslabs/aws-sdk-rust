@@ -31,8 +31,8 @@ impl ContinueAsNewWorkflowExecutionFailedEventAttributes {
 }
 
 /// A builder for [`ContinueAsNewWorkflowExecutionFailedEventAttributes`](crate::types::ContinueAsNewWorkflowExecutionFailedEventAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ContinueAsNewWorkflowExecutionFailedEventAttributesBuilder {
     pub(crate) cause: ::std::option::Option<crate::types::ContinueAsNewWorkflowExecutionFailedCause>,
     pub(crate) decision_task_completed_event_id: ::std::option::Option<i64>,

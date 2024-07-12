@@ -32,8 +32,8 @@ impl GetRateBasedStatementManagedKeysOutput {
 }
 
 /// A builder for [`GetRateBasedStatementManagedKeysOutput`](crate::operation::get_rate_based_statement_managed_keys::GetRateBasedStatementManagedKeysOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRateBasedStatementManagedKeysOutputBuilder {
     pub(crate) managed_keys_ipv4: ::std::option::Option<crate::types::RateBasedStatementManagedKeysIpSet>,
     pub(crate) managed_keys_ipv6: ::std::option::Option<crate::types::RateBasedStatementManagedKeysIpSet>,

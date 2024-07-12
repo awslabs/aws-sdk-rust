@@ -33,8 +33,8 @@ impl ModelPerformance {
 }
 
 /// A builder for [`ModelPerformance`](crate::types::ModelPerformance).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModelPerformanceBuilder {
     pub(crate) f1_score: ::std::option::Option<f32>,
     pub(crate) recall: ::std::option::Option<f32>,

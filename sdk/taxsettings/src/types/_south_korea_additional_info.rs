@@ -36,8 +36,8 @@ impl SouthKoreaAdditionalInfo {
 }
 
 /// A builder for [`SouthKoreaAdditionalInfo`](crate::types::SouthKoreaAdditionalInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SouthKoreaAdditionalInfoBuilder {
     pub(crate) business_representative_name: ::std::option::Option<::std::string::String>,
     pub(crate) line_of_business: ::std::option::Option<::std::string::String>,

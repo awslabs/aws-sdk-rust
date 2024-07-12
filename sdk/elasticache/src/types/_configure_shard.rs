@@ -69,8 +69,8 @@ impl ConfigureShard {
 }
 
 /// A builder for [`ConfigureShard`](crate::types::ConfigureShard).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConfigureShardBuilder {
     pub(crate) node_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) new_replica_count: ::std::option::Option<i32>,

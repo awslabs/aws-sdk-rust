@@ -32,8 +32,8 @@ impl CancelWorkflowExecutionDecisionAttributes {
 }
 
 /// A builder for [`CancelWorkflowExecutionDecisionAttributes`](crate::types::CancelWorkflowExecutionDecisionAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelWorkflowExecutionDecisionAttributesBuilder {
     pub(crate) details: ::std::option::Option<::std::string::String>,
 }

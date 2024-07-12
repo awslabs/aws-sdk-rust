@@ -38,8 +38,8 @@ impl UpdateThemeAliasOutput {
 }
 
 /// A builder for [`UpdateThemeAliasOutput`](crate::operation::update_theme_alias::UpdateThemeAliasOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateThemeAliasOutputBuilder {
     pub(crate) theme_alias: ::std::option::Option<crate::types::ThemeAlias>,
     pub(crate) status: ::std::option::Option<i32>,

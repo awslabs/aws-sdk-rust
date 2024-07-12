@@ -12,8 +12,8 @@ impl GetTrafficPolicyInstanceCountInput {
 }
 
 /// A builder for [`GetTrafficPolicyInstanceCountInput`](crate::operation::get_traffic_policy_instance_count::GetTrafficPolicyInstanceCountInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTrafficPolicyInstanceCountInputBuilder {}
 impl GetTrafficPolicyInstanceCountInputBuilder {
     /// Consumes the builder and constructs a [`GetTrafficPolicyInstanceCountInput`](crate::operation::get_traffic_policy_instance_count::GetTrafficPolicyInstanceCountInput).

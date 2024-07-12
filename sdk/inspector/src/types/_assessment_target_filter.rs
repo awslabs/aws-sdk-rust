@@ -21,8 +21,8 @@ impl AssessmentTargetFilter {
 }
 
 /// A builder for [`AssessmentTargetFilter`](crate::types::AssessmentTargetFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssessmentTargetFilterBuilder {
     pub(crate) assessment_target_name_pattern: ::std::option::Option<::std::string::String>,
 }

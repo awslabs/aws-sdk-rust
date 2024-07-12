@@ -33,8 +33,8 @@ impl RevealConfiguration {
 }
 
 /// A builder for [`RevealConfiguration`](crate::types::RevealConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RevealConfigurationBuilder {
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::RevealStatus>,

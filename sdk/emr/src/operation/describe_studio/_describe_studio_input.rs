@@ -20,8 +20,8 @@ impl DescribeStudioInput {
 }
 
 /// A builder for [`DescribeStudioInput`](crate::operation::describe_studio::DescribeStudioInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeStudioInputBuilder {
     pub(crate) studio_id: ::std::option::Option<::std::string::String>,
 }

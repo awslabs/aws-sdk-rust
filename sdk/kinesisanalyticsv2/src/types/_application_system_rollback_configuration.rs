@@ -21,8 +21,8 @@ impl ApplicationSystemRollbackConfiguration {
 }
 
 /// A builder for [`ApplicationSystemRollbackConfiguration`](crate::types::ApplicationSystemRollbackConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ApplicationSystemRollbackConfigurationBuilder {
     pub(crate) rollback_enabled: ::std::option::Option<bool>,
 }

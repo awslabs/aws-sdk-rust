@@ -35,8 +35,8 @@ impl OverallVolume {
 }
 
 /// A builder for [`OverallVolume`](crate::types::OverallVolume).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OverallVolumeBuilder {
     pub(crate) volume_statistics: ::std::option::Option<crate::types::VolumeStatistics>,
     pub(crate) read_rate_percent: ::std::option::Option<f64>,

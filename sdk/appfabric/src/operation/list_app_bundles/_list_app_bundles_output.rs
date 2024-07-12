@@ -33,8 +33,8 @@ impl ListAppBundlesOutput {
 }
 
 /// A builder for [`ListAppBundlesOutput`](crate::operation::list_app_bundles::ListAppBundlesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAppBundlesOutputBuilder {
     pub(crate) app_bundle_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::AppBundleSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

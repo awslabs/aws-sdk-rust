@@ -21,8 +21,8 @@ impl GetArchiveInput {
 }
 
 /// A builder for [`GetArchiveInput`](crate::operation::get_archive::GetArchiveInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetArchiveInputBuilder {
     pub(crate) archive_id: ::std::option::Option<::std::string::String>,
 }

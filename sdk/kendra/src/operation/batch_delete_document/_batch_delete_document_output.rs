@@ -28,8 +28,8 @@ impl BatchDeleteDocumentOutput {
 }
 
 /// A builder for [`BatchDeleteDocumentOutput`](crate::operation::batch_delete_document::BatchDeleteDocumentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDeleteDocumentOutputBuilder {
     pub(crate) failed_documents: ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteDocumentResponseFailedDocument>>,
     _request_id: Option<String>,

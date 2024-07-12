@@ -26,8 +26,8 @@ impl UpdateApplicationSettingsOutput {
 }
 
 /// A builder for [`UpdateApplicationSettingsOutput`](crate::operation::update_application_settings::UpdateApplicationSettingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateApplicationSettingsOutputBuilder {
     pub(crate) application_settings_resource: ::std::option::Option<crate::types::ApplicationSettingsResource>,
     _request_id: Option<String>,

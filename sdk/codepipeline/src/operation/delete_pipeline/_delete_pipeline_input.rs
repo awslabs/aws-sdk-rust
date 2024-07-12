@@ -21,8 +21,8 @@ impl DeletePipelineInput {
 }
 
 /// A builder for [`DeletePipelineInput`](crate::operation::delete_pipeline::DeletePipelineInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePipelineInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

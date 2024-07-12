@@ -46,8 +46,8 @@ impl ListApiKeysInput {
 }
 
 /// A builder for [`ListApiKeysInput`](crate::operation::list_api_keys::ListApiKeysInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListApiKeysInputBuilder {
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,

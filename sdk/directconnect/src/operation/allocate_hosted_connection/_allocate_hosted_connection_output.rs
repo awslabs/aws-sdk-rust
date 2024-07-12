@@ -201,8 +201,8 @@ impl AllocateHostedConnectionOutput {
 }
 
 /// A builder for [`AllocateHostedConnectionOutput`](crate::operation::allocate_hosted_connection::AllocateHostedConnectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AllocateHostedConnectionOutputBuilder {
     pub(crate) owner_account: ::std::option::Option<::std::string::String>,
     pub(crate) connection_id: ::std::option::Option<::std::string::String>,

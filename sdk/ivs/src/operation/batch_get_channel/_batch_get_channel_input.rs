@@ -22,8 +22,8 @@ impl BatchGetChannelInput {
 }
 
 /// A builder for [`BatchGetChannelInput`](crate::operation::batch_get_channel::BatchGetChannelInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetChannelInputBuilder {
     pub(crate) arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

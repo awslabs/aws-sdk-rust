@@ -59,8 +59,8 @@ impl PolicyStoreItem {
 }
 
 /// A builder for [`PolicyStoreItem`](crate::types::PolicyStoreItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PolicyStoreItemBuilder {
     pub(crate) policy_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

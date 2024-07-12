@@ -14,8 +14,8 @@ impl NoneAction {
 }
 
 /// A builder for [`NoneAction`](crate::types::NoneAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NoneActionBuilder {}
 impl NoneActionBuilder {
     /// Consumes the builder and constructs a [`NoneAction`](crate::types::NoneAction).

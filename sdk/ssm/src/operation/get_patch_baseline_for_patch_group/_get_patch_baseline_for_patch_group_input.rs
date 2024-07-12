@@ -26,8 +26,8 @@ impl GetPatchBaselineForPatchGroupInput {
 }
 
 /// A builder for [`GetPatchBaselineForPatchGroupInput`](crate::operation::get_patch_baseline_for_patch_group::GetPatchBaselineForPatchGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPatchBaselineForPatchGroupInputBuilder {
     pub(crate) patch_group: ::std::option::Option<::std::string::String>,
     pub(crate) operating_system: ::std::option::Option<crate::types::OperatingSystem>,

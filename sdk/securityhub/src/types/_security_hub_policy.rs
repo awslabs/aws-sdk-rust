@@ -35,8 +35,8 @@ impl SecurityHubPolicy {
 }
 
 /// A builder for [`SecurityHubPolicy`](crate::types::SecurityHubPolicy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SecurityHubPolicyBuilder {
     pub(crate) service_enabled: ::std::option::Option<bool>,
     pub(crate) enabled_standard_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

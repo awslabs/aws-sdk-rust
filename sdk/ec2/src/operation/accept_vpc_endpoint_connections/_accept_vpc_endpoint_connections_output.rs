@@ -28,8 +28,8 @@ impl AcceptVpcEndpointConnectionsOutput {
 }
 
 /// A builder for [`AcceptVpcEndpointConnectionsOutput`](crate::operation::accept_vpc_endpoint_connections::AcceptVpcEndpointConnectionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AcceptVpcEndpointConnectionsOutputBuilder {
     pub(crate) unsuccessful: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulItem>>,
     _request_id: Option<String>,

@@ -55,8 +55,8 @@ impl GetRdsDatabaseRecommendationProjectedMetricsInput {
 }
 
 /// A builder for [`GetRdsDatabaseRecommendationProjectedMetricsInput`](crate::operation::get_rds_database_recommendation_projected_metrics::GetRdsDatabaseRecommendationProjectedMetricsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRdsDatabaseRecommendationProjectedMetricsInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) stat: ::std::option::Option<crate::types::MetricStatistic>,

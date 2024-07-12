@@ -32,8 +32,8 @@ impl CreateHubContentReferenceOutput {
 }
 
 /// A builder for [`CreateHubContentReferenceOutput`](crate::operation::create_hub_content_reference::CreateHubContentReferenceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateHubContentReferenceOutputBuilder {
     pub(crate) hub_arn: ::std::option::Option<::std::string::String>,
     pub(crate) hub_content_arn: ::std::option::Option<::std::string::String>,

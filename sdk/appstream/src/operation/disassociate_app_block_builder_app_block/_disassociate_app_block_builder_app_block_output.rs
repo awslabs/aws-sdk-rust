@@ -18,8 +18,8 @@ impl DisassociateAppBlockBuilderAppBlockOutput {
 }
 
 /// A builder for [`DisassociateAppBlockBuilderAppBlockOutput`](crate::operation::disassociate_app_block_builder_app_block::DisassociateAppBlockBuilderAppBlockOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateAppBlockBuilderAppBlockOutputBuilder {
     _request_id: Option<String>,
 }

@@ -55,8 +55,8 @@ impl WebCrawlerConfiguration {
 }
 
 /// A builder for [`WebCrawlerConfiguration`](crate::types::WebCrawlerConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct WebCrawlerConfigurationBuilder {
     pub(crate) crawler_limits: ::std::option::Option<crate::types::WebCrawlerLimits>,
     pub(crate) inclusion_filters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

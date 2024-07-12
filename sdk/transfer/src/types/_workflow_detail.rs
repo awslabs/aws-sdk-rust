@@ -30,8 +30,8 @@ impl WorkflowDetail {
 }
 
 /// A builder for [`WorkflowDetail`](crate::types::WorkflowDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WorkflowDetailBuilder {
     pub(crate) workflow_id: ::std::option::Option<::std::string::String>,
     pub(crate) execution_role: ::std::option::Option<::std::string::String>,

@@ -20,8 +20,8 @@ impl DescribeClusterOperationV2Input {
 }
 
 /// A builder for [`DescribeClusterOperationV2Input`](crate::operation::describe_cluster_operation_v2::DescribeClusterOperationV2Input).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeClusterOperationV2InputBuilder {
     pub(crate) cluster_operation_arn: ::std::option::Option<::std::string::String>,
 }

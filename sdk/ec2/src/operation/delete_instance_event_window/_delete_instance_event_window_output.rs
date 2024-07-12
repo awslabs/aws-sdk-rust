@@ -26,8 +26,8 @@ impl DeleteInstanceEventWindowOutput {
 }
 
 /// A builder for [`DeleteInstanceEventWindowOutput`](crate::operation::delete_instance_event_window::DeleteInstanceEventWindowOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteInstanceEventWindowOutputBuilder {
     pub(crate) instance_event_window_state: ::std::option::Option<crate::types::InstanceEventWindowStateChange>,
     _request_id: Option<String>,

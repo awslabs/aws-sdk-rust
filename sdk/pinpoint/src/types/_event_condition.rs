@@ -27,8 +27,8 @@ impl EventCondition {
 }
 
 /// A builder for [`EventCondition`](crate::types::EventCondition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EventConditionBuilder {
     pub(crate) dimensions: ::std::option::Option<crate::types::EventDimensions>,
     pub(crate) message_activity: ::std::option::Option<::std::string::String>,

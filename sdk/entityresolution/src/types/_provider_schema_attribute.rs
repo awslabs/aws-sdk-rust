@@ -40,8 +40,8 @@ impl ProviderSchemaAttribute {
 }
 
 /// A builder for [`ProviderSchemaAttribute`](crate::types::ProviderSchemaAttribute).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProviderSchemaAttributeBuilder {
     pub(crate) field_name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::SchemaAttributeType>,

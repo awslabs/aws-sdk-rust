@@ -30,8 +30,8 @@ impl AddAttachmentsToSetInput {
 }
 
 /// A builder for [`AddAttachmentsToSetInput`](crate::operation::add_attachments_to_set::AddAttachmentsToSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddAttachmentsToSetInputBuilder {
     pub(crate) attachment_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) attachments: ::std::option::Option<::std::vec::Vec<crate::types::Attachment>>,

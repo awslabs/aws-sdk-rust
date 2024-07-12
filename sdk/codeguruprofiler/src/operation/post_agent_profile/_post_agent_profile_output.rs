@@ -19,8 +19,8 @@ impl PostAgentProfileOutput {
 }
 
 /// A builder for [`PostAgentProfileOutput`](crate::operation::post_agent_profile::PostAgentProfileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PostAgentProfileOutputBuilder {
     _request_id: Option<String>,
 }

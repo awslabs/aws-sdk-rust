@@ -34,8 +34,8 @@ impl ListParentsOutput {
 }
 
 /// A builder for [`ListParentsOutput`](crate::operation::list_parents::ListParentsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListParentsOutputBuilder {
     pub(crate) parents: ::std::option::Option<::std::vec::Vec<crate::types::Parent>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

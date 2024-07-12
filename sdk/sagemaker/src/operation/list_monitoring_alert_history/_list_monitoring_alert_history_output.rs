@@ -34,8 +34,8 @@ impl ListMonitoringAlertHistoryOutput {
 }
 
 /// A builder for [`ListMonitoringAlertHistoryOutput`](crate::operation::list_monitoring_alert_history::ListMonitoringAlertHistoryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListMonitoringAlertHistoryOutputBuilder {
     pub(crate) monitoring_alert_history: ::std::option::Option<::std::vec::Vec<crate::types::MonitoringAlertHistorySummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

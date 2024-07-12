@@ -46,8 +46,8 @@ impl ListDeploymentsInput {
 }
 
 /// A builder for [`ListDeploymentsInput`](crate::operation::list_deployments::ListDeploymentsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDeploymentsInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,

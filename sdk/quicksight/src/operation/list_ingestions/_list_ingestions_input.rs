@@ -38,8 +38,8 @@ impl ListIngestionsInput {
 }
 
 /// A builder for [`ListIngestionsInput`](crate::operation::list_ingestions::ListIngestionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListIngestionsInputBuilder {
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

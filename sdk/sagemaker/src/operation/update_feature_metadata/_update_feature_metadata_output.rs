@@ -18,8 +18,8 @@ impl UpdateFeatureMetadataOutput {
 }
 
 /// A builder for [`UpdateFeatureMetadataOutput`](crate::operation::update_feature_metadata::UpdateFeatureMetadataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateFeatureMetadataOutputBuilder {
     _request_id: Option<String>,
 }

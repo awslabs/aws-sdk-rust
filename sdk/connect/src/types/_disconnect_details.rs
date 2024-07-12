@@ -21,8 +21,8 @@ impl DisconnectDetails {
 }
 
 /// A builder for [`DisconnectDetails`](crate::types::DisconnectDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisconnectDetailsBuilder {
     pub(crate) potential_disconnect_issue: ::std::option::Option<::std::string::String>,
 }

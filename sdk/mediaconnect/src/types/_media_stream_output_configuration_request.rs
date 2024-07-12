@@ -41,8 +41,8 @@ impl MediaStreamOutputConfigurationRequest {
 }
 
 /// A builder for [`MediaStreamOutputConfigurationRequest`](crate::types::MediaStreamOutputConfigurationRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MediaStreamOutputConfigurationRequestBuilder {
     pub(crate) destination_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DestinationConfigurationRequest>>,
     pub(crate) encoding_name: ::std::option::Option<crate::types::EncodingName>,

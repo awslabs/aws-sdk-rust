@@ -32,8 +32,8 @@ impl DeleteReplicatorOutput {
 }
 
 /// A builder for [`DeleteReplicatorOutput`](crate::operation::delete_replicator::DeleteReplicatorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteReplicatorOutputBuilder {
     pub(crate) replicator_arn: ::std::option::Option<::std::string::String>,
     pub(crate) replicator_state: ::std::option::Option<crate::types::ReplicatorState>,

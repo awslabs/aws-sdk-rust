@@ -18,8 +18,8 @@ impl StopSpeakerSearchTaskOutput {
 }
 
 /// A builder for [`StopSpeakerSearchTaskOutput`](crate::operation::stop_speaker_search_task::StopSpeakerSearchTaskOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopSpeakerSearchTaskOutputBuilder {
     _request_id: Option<String>,
 }

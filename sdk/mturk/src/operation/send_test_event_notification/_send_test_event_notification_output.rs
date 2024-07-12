@@ -18,8 +18,8 @@ impl SendTestEventNotificationOutput {
 }
 
 /// A builder for [`SendTestEventNotificationOutput`](crate::operation::send_test_event_notification::SendTestEventNotificationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendTestEventNotificationOutputBuilder {
     _request_id: Option<String>,
 }

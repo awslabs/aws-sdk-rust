@@ -40,8 +40,8 @@ impl SelectResourceConfigOutput {
 }
 
 /// A builder for [`SelectResourceConfigOutput`](crate::operation::select_resource_config::SelectResourceConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SelectResourceConfigOutputBuilder {
     pub(crate) results: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) query_info: ::std::option::Option<crate::types::QueryInfo>,

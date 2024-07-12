@@ -22,8 +22,8 @@ impl RejectInvitationInput {
 }
 
 /// A builder for [`RejectInvitationInput`](crate::operation::reject_invitation::RejectInvitationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RejectInvitationInputBuilder {
     pub(crate) graph_arn: ::std::option::Option<::std::string::String>,
 }

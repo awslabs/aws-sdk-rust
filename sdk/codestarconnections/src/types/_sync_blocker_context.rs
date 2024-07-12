@@ -29,8 +29,8 @@ impl SyncBlockerContext {
 }
 
 /// A builder for [`SyncBlockerContext`](crate::types::SyncBlockerContext).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SyncBlockerContextBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,

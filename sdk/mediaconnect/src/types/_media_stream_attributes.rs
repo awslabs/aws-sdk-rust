@@ -27,8 +27,8 @@ impl MediaStreamAttributes {
 }
 
 /// A builder for [`MediaStreamAttributes`](crate::types::MediaStreamAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MediaStreamAttributesBuilder {
     pub(crate) fmtp: ::std::option::Option<crate::types::Fmtp>,
     pub(crate) lang: ::std::option::Option<::std::string::String>,

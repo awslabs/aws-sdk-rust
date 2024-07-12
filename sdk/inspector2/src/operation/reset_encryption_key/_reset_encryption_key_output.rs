@@ -18,8 +18,8 @@ impl ResetEncryptionKeyOutput {
 }
 
 /// A builder for [`ResetEncryptionKeyOutput`](crate::operation::reset_encryption_key::ResetEncryptionKeyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResetEncryptionKeyOutputBuilder {
     _request_id: Option<String>,
 }

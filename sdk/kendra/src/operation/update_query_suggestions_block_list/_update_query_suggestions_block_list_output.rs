@@ -18,8 +18,8 @@ impl UpdateQuerySuggestionsBlockListOutput {
 }
 
 /// A builder for [`UpdateQuerySuggestionsBlockListOutput`](crate::operation::update_query_suggestions_block_list::UpdateQuerySuggestionsBlockListOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateQuerySuggestionsBlockListOutputBuilder {
     _request_id: Option<String>,
 }

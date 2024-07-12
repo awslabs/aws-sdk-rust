@@ -37,8 +37,8 @@ impl NetworkConfiguration {
 }
 
 /// A builder for [`NetworkConfiguration`](crate::types::NetworkConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NetworkConfigurationBuilder {
     pub(crate) egress_configuration: ::std::option::Option<crate::types::EgressConfiguration>,
     pub(crate) ingress_configuration: ::std::option::Option<crate::types::IngressConfiguration>,

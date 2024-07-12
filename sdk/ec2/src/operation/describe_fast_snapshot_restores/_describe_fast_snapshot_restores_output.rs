@@ -34,8 +34,8 @@ impl DescribeFastSnapshotRestoresOutput {
 }
 
 /// A builder for [`DescribeFastSnapshotRestoresOutput`](crate::operation::describe_fast_snapshot_restores::DescribeFastSnapshotRestoresOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFastSnapshotRestoresOutputBuilder {
     pub(crate) fast_snapshot_restores: ::std::option::Option<::std::vec::Vec<crate::types::DescribeFastSnapshotRestoreSuccessItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

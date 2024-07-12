@@ -57,8 +57,8 @@ impl AllowedMethods {
 }
 
 /// A builder for [`AllowedMethods`](crate::types::AllowedMethods).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AllowedMethodsBuilder {
     pub(crate) quantity: ::std::option::Option<i32>,
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::Method>>,

@@ -77,8 +77,8 @@ impl CustomerAction {
 }
 
 /// A builder for [`CustomerAction`](crate::types::CustomerAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CustomerActionBuilder {
     pub(crate) action_name: ::std::option::Option<crate::types::CustomerActionName>,
     pub(crate) snooze_action_configuration: ::std::option::Option<crate::types::SnoozeActionConfiguration>,

@@ -45,8 +45,8 @@ impl ProgressCounters {
 }
 
 /// A builder for [`ProgressCounters`](crate::types::ProgressCounters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProgressCountersBuilder {
     pub(crate) total_steps: ::std::option::Option<i32>,
     pub(crate) success_steps: ::std::option::Option<i32>,

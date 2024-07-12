@@ -32,8 +32,8 @@ impl UpdateTemplateActiveVersionInput {
 }
 
 /// A builder for [`UpdateTemplateActiveVersionInput`](crate::operation::update_template_active_version::UpdateTemplateActiveVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateTemplateActiveVersionInputBuilder {
     pub(crate) template_active_version_request: ::std::option::Option<crate::types::TemplateActiveVersionRequest>,
     pub(crate) template_name: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl StartEntitiesDetectionV2JobOutput {
 }
 
 /// A builder for [`StartEntitiesDetectionV2JobOutput`](crate::operation::start_entities_detection_v2_job::StartEntitiesDetectionV2JobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartEntitiesDetectionV2JobOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

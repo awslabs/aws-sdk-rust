@@ -26,8 +26,8 @@ impl GetLifecycleExecutionOutput {
 }
 
 /// A builder for [`GetLifecycleExecutionOutput`](crate::operation::get_lifecycle_execution::GetLifecycleExecutionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLifecycleExecutionOutputBuilder {
     pub(crate) lifecycle_execution: ::std::option::Option<crate::types::LifecycleExecution>,
     _request_id: Option<String>,

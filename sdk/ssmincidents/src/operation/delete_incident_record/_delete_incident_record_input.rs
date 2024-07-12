@@ -20,8 +20,8 @@ impl DeleteIncidentRecordInput {
 }
 
 /// A builder for [`DeleteIncidentRecordInput`](crate::operation::delete_incident_record::DeleteIncidentRecordInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteIncidentRecordInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }

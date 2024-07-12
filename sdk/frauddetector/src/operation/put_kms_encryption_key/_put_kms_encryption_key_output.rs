@@ -18,8 +18,8 @@ impl PutKmsEncryptionKeyOutput {
 }
 
 /// A builder for [`PutKmsEncryptionKeyOutput`](crate::operation::put_kms_encryption_key::PutKmsEncryptionKeyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutKmsEncryptionKeyOutputBuilder {
     _request_id: Option<String>,
 }

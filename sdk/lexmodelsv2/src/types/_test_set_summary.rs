@@ -75,8 +75,8 @@ impl TestSetSummary {
 }
 
 /// A builder for [`TestSetSummary`](crate::types::TestSetSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TestSetSummaryBuilder {
     pub(crate) test_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) test_set_name: ::std::option::Option<::std::string::String>,

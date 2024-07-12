@@ -28,8 +28,8 @@ impl AssociatedTranscriptFilter {
 }
 
 /// A builder for [`AssociatedTranscriptFilter`](crate::types::AssociatedTranscriptFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociatedTranscriptFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::AssociatedTranscriptFilterName>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

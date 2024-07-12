@@ -144,8 +144,8 @@ impl CreateTargetGroupInput {
 }
 
 /// A builder for [`CreateTargetGroupInput`](crate::operation::create_target_group::CreateTargetGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateTargetGroupInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) protocol: ::std::option::Option<crate::types::ProtocolEnum>,

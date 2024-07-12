@@ -27,8 +27,8 @@ impl CreateJobOutput {
 }
 
 /// A builder for [`CreateJobOutput`](crate::operation::create_job::CreateJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateJobOutputBuilder {
     pub(crate) job_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

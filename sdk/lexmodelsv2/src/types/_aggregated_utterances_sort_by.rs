@@ -27,8 +27,8 @@ impl AggregatedUtterancesSortBy {
 }
 
 /// A builder for [`AggregatedUtterancesSortBy`](crate::types::AggregatedUtterancesSortBy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AggregatedUtterancesSortByBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::AggregatedUtterancesSortAttribute>,
     pub(crate) order: ::std::option::Option<crate::types::SortOrder>,

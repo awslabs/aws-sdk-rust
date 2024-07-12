@@ -34,8 +34,8 @@ impl PutAuditEventsOutput {
 }
 
 /// A builder for [`PutAuditEventsOutput`](crate::operation::put_audit_events::PutAuditEventsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutAuditEventsOutputBuilder {
     pub(crate) successful: ::std::option::Option<::std::vec::Vec<crate::types::AuditEventResultEntry>>,
     pub(crate) failed: ::std::option::Option<::std::vec::Vec<crate::types::ResultErrorEntry>>,

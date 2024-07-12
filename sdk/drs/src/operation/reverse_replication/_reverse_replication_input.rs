@@ -20,8 +20,8 @@ impl ReverseReplicationInput {
 }
 
 /// A builder for [`ReverseReplicationInput`](crate::operation::reverse_replication::ReverseReplicationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReverseReplicationInputBuilder {
     pub(crate) recovery_instance_id: ::std::option::Option<::std::string::String>,
 }

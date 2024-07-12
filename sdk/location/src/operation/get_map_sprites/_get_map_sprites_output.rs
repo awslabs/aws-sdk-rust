@@ -38,8 +38,8 @@ impl GetMapSpritesOutput {
 }
 
 /// A builder for [`GetMapSpritesOutput`](crate::operation::get_map_sprites::GetMapSpritesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMapSpritesOutputBuilder {
     pub(crate) blob: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) content_type: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl GetPersonalizedRankingOutput {
 }
 
 /// A builder for [`GetPersonalizedRankingOutput`](crate::operation::get_personalized_ranking::GetPersonalizedRankingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPersonalizedRankingOutputBuilder {
     pub(crate) personalized_ranking: ::std::option::Option<::std::vec::Vec<crate::types::PredictedItem>>,
     pub(crate) recommendation_id: ::std::option::Option<::std::string::String>,

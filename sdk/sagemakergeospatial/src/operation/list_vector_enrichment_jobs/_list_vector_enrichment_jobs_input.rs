@@ -55,8 +55,8 @@ impl ListVectorEnrichmentJobsInput {
 }
 
 /// A builder for [`ListVectorEnrichmentJobsInput`](crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ListVectorEnrichmentJobsInputBuilder {
     pub(crate) status_equals: ::std::option::Option<::std::string::String>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,

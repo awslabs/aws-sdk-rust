@@ -81,8 +81,8 @@ impl SnomedctEntity {
 }
 
 /// A builder for [`SnomedctEntity`](crate::types::SnomedctEntity).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SnomedctEntityBuilder {
     pub(crate) id: ::std::option::Option<i32>,
     pub(crate) text: ::std::option::Option<::std::string::String>,

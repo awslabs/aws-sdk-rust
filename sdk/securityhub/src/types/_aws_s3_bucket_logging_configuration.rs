@@ -27,8 +27,8 @@ impl AwsS3BucketLoggingConfiguration {
 }
 
 /// A builder for [`AwsS3BucketLoggingConfiguration`](crate::types::AwsS3BucketLoggingConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsS3BucketLoggingConfigurationBuilder {
     pub(crate) destination_bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) log_file_prefix: ::std::option::Option<::std::string::String>,

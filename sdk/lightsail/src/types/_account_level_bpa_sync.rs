@@ -88,8 +88,8 @@ impl AccountLevelBpaSync {
 }
 
 /// A builder for [`AccountLevelBpaSync`](crate::types::AccountLevelBpaSync).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AccountLevelBpaSyncBuilder {
     pub(crate) status: ::std::option::Option<crate::types::AccountLevelBpaSyncStatus>,
     pub(crate) last_synced_at: ::std::option::Option<::aws_smithy_types::DateTime>,

@@ -20,8 +20,8 @@ impl StopClockInput {
 }
 
 /// A builder for [`StopClockInput`](crate::operation::stop_clock::StopClockInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopClockInputBuilder {
     pub(crate) simulation: ::std::option::Option<::std::string::String>,
 }

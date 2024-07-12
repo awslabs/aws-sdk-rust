@@ -18,8 +18,8 @@ impl DeleteGlossaryTermOutput {
 }
 
 /// A builder for [`DeleteGlossaryTermOutput`](crate::operation::delete_glossary_term::DeleteGlossaryTermOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteGlossaryTermOutputBuilder {
     _request_id: Option<String>,
 }

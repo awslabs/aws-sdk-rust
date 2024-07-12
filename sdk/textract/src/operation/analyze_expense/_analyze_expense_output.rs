@@ -34,8 +34,8 @@ impl AnalyzeExpenseOutput {
 }
 
 /// A builder for [`AnalyzeExpenseOutput`](crate::operation::analyze_expense::AnalyzeExpenseOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AnalyzeExpenseOutputBuilder {
     pub(crate) document_metadata: ::std::option::Option<crate::types::DocumentMetadata>,
     pub(crate) expense_documents: ::std::option::Option<::std::vec::Vec<crate::types::ExpenseDocument>>,

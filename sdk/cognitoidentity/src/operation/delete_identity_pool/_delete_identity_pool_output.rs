@@ -18,8 +18,8 @@ impl DeleteIdentityPoolOutput {
 }
 
 /// A builder for [`DeleteIdentityPoolOutput`](crate::operation::delete_identity_pool::DeleteIdentityPoolOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteIdentityPoolOutputBuilder {
     _request_id: Option<String>,
 }

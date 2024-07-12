@@ -26,8 +26,8 @@ impl DescribePredefinedAttributeOutput {
 }
 
 /// A builder for [`DescribePredefinedAttributeOutput`](crate::operation::describe_predefined_attribute::DescribePredefinedAttributeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribePredefinedAttributeOutputBuilder {
     pub(crate) predefined_attribute: ::std::option::Option<crate::types::PredefinedAttribute>,
     _request_id: Option<String>,

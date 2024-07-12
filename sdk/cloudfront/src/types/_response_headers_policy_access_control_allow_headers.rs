@@ -29,8 +29,8 @@ impl ResponseHeadersPolicyAccessControlAllowHeaders {
 }
 
 /// A builder for [`ResponseHeadersPolicyAccessControlAllowHeaders`](crate::types::ResponseHeadersPolicyAccessControlAllowHeaders).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResponseHeadersPolicyAccessControlAllowHeadersBuilder {
     pub(crate) quantity: ::std::option::Option<i32>,
     pub(crate) items: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

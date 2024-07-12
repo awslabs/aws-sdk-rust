@@ -44,8 +44,8 @@ impl StartContentModerationInput {
 }
 
 /// A builder for [`StartContentModerationInput`](crate::operation::start_content_moderation::StartContentModerationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartContentModerationInputBuilder {
     pub(crate) video: ::std::option::Option<crate::types::Video>,
     pub(crate) min_confidence: ::std::option::Option<f32>,

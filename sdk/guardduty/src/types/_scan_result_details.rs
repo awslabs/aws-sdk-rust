@@ -21,8 +21,8 @@ impl ScanResultDetails {
 }
 
 /// A builder for [`ScanResultDetails`](crate::types::ScanResultDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScanResultDetailsBuilder {
     pub(crate) scan_result: ::std::option::Option<crate::types::ScanResult>,
 }

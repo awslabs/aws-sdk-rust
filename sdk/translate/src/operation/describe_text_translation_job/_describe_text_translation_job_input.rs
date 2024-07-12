@@ -20,8 +20,8 @@ impl DescribeTextTranslationJobInput {
 }
 
 /// A builder for [`DescribeTextTranslationJobInput`](crate::operation::describe_text_translation_job::DescribeTextTranslationJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTextTranslationJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }

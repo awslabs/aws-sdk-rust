@@ -44,8 +44,8 @@ impl GetAccessPointForObjectLambdaOutput {
 }
 
 /// A builder for [`GetAccessPointForObjectLambdaOutput`](crate::operation::get_access_point_for_object_lambda::GetAccessPointForObjectLambdaOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAccessPointForObjectLambdaOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) public_access_block_configuration: ::std::option::Option<crate::types::PublicAccessBlockConfiguration>,

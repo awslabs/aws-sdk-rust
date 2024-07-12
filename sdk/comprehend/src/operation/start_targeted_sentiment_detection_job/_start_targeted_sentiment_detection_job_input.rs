@@ -82,8 +82,8 @@ impl StartTargetedSentimentDetectionJobInput {
 }
 
 /// A builder for [`StartTargetedSentimentDetectionJobInput`](crate::operation::start_targeted_sentiment_detection_job::StartTargetedSentimentDetectionJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartTargetedSentimentDetectionJobInputBuilder {
     pub(crate) input_data_config: ::std::option::Option<crate::types::InputDataConfig>,
     pub(crate) output_data_config: ::std::option::Option<crate::types::OutputDataConfig>,

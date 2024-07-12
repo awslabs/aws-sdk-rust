@@ -35,8 +35,8 @@ impl DescribeReplicationConfigurationTemplatesInput {
 }
 
 /// A builder for [`DescribeReplicationConfigurationTemplatesInput`](crate::operation::describe_replication_configuration_templates::DescribeReplicationConfigurationTemplatesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeReplicationConfigurationTemplatesInputBuilder {
     pub(crate) replication_configuration_template_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) max_results: ::std::option::Option<i32>,

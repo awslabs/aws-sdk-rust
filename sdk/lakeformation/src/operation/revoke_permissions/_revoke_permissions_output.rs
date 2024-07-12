@@ -18,8 +18,8 @@ impl RevokePermissionsOutput {
 }
 
 /// A builder for [`RevokePermissionsOutput`](crate::operation::revoke_permissions::RevokePermissionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RevokePermissionsOutputBuilder {
     _request_id: Option<String>,
 }

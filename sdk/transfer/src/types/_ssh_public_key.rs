@@ -37,8 +37,8 @@ impl SshPublicKey {
 }
 
 /// A builder for [`SshPublicKey`](crate::types::SshPublicKey).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SshPublicKeyBuilder {
     pub(crate) date_imported: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) ssh_public_key_body: ::std::option::Option<::std::string::String>,

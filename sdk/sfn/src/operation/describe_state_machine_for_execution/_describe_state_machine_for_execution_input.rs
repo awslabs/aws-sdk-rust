@@ -20,8 +20,8 @@ impl DescribeStateMachineForExecutionInput {
 }
 
 /// A builder for [`DescribeStateMachineForExecutionInput`](crate::operation::describe_state_machine_for_execution::DescribeStateMachineForExecutionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeStateMachineForExecutionInputBuilder {
     pub(crate) execution_arn: ::std::option::Option<::std::string::String>,
 }

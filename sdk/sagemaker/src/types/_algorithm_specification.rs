@@ -134,8 +134,8 @@ impl AlgorithmSpecification {
 }
 
 /// A builder for [`AlgorithmSpecification`](crate::types::AlgorithmSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AlgorithmSpecificationBuilder {
     pub(crate) training_image: ::std::option::Option<::std::string::String>,
     pub(crate) algorithm_name: ::std::option::Option<::std::string::String>,

@@ -21,8 +21,8 @@ impl ValidationStrategy {
 }
 
 /// A builder for [`ValidationStrategy`](crate::types::ValidationStrategy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ValidationStrategyBuilder {
     pub(crate) mode: ::std::option::Option<crate::types::ValidationStrategyMode>,
 }

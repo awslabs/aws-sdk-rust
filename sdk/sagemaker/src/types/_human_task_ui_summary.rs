@@ -33,8 +33,8 @@ impl HumanTaskUiSummary {
 }
 
 /// A builder for [`HumanTaskUiSummary`](crate::types::HumanTaskUiSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HumanTaskUiSummaryBuilder {
     pub(crate) human_task_ui_name: ::std::option::Option<::std::string::String>,
     pub(crate) human_task_ui_arn: ::std::option::Option<::std::string::String>,

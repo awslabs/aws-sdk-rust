@@ -32,8 +32,8 @@ impl GetExportOutput {
 }
 
 /// A builder for [`GetExportOutput`](crate::operation::get_export::GetExportOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetExportOutputBuilder {
     pub(crate) export: ::std::option::Option<crate::types::Export>,
     pub(crate) export_status: ::std::option::Option<crate::types::ExportStatus>,

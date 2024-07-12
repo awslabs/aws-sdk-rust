@@ -35,8 +35,8 @@ impl SidewalkAccountInfo {
 }
 
 /// A builder for [`SidewalkAccountInfo`](crate::types::SidewalkAccountInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SidewalkAccountInfoBuilder {
     pub(crate) amazon_id: ::std::option::Option<::std::string::String>,
     pub(crate) app_server_private_key: ::std::option::Option<::std::string::String>,

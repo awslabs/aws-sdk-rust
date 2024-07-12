@@ -137,8 +137,8 @@ impl UpdateFlowSourceInput {
 }
 
 /// A builder for [`UpdateFlowSourceInput`](crate::operation::update_flow_source::UpdateFlowSourceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateFlowSourceInputBuilder {
     pub(crate) decryption: ::std::option::Option<crate::types::UpdateEncryption>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

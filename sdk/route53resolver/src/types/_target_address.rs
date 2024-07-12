@@ -91,8 +91,8 @@ impl TargetAddress {
 }
 
 /// A builder for [`TargetAddress`](crate::types::TargetAddress).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TargetAddressBuilder {
     pub(crate) ip: ::std::option::Option<::std::string::String>,
     pub(crate) port: ::std::option::Option<i32>,

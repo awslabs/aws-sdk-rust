@@ -45,8 +45,8 @@ impl InvalidFilterOption {
 }
 
 /// A builder for [`InvalidFilterOption`](crate::types::error::InvalidFilterOption).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InvalidFilterOptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,

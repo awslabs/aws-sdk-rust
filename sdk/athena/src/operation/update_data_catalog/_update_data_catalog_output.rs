@@ -18,8 +18,8 @@ impl UpdateDataCatalogOutput {
 }
 
 /// A builder for [`UpdateDataCatalogOutput`](crate::operation::update_data_catalog::UpdateDataCatalogOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDataCatalogOutputBuilder {
     _request_id: Option<String>,
 }

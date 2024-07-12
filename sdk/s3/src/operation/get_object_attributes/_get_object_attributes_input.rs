@@ -129,8 +129,8 @@ impl GetObjectAttributesInput {
 }
 
 /// A builder for [`GetObjectAttributesInput`](crate::operation::get_object_attributes::GetObjectAttributesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetObjectAttributesInputBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) key: ::std::option::Option<::std::string::String>,

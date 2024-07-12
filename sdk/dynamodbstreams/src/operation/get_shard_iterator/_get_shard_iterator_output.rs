@@ -27,8 +27,8 @@ impl GetShardIteratorOutput {
 }
 
 /// A builder for [`GetShardIteratorOutput`](crate::operation::get_shard_iterator::GetShardIteratorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetShardIteratorOutputBuilder {
     pub(crate) shard_iterator: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

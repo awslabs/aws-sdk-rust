@@ -29,8 +29,8 @@ impl TaskStartedEventDetails {
 }
 
 /// A builder for [`TaskStartedEventDetails`](crate::types::TaskStartedEventDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TaskStartedEventDetailsBuilder {
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
     pub(crate) resource: ::std::option::Option<::std::string::String>,

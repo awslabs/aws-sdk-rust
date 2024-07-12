@@ -60,8 +60,8 @@ impl Group {
 }
 
 /// A builder for [`Group`](crate::types::Group).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GroupBuilder {
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,

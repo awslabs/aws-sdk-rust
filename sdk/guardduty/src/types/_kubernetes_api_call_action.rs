@@ -83,8 +83,8 @@ impl KubernetesApiCallAction {
 }
 
 /// A builder for [`KubernetesApiCallAction`](crate::types::KubernetesApiCallAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KubernetesApiCallActionBuilder {
     pub(crate) request_uri: ::std::option::Option<::std::string::String>,
     pub(crate) verb: ::std::option::Option<::std::string::String>,

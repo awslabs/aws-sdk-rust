@@ -27,8 +27,8 @@ impl BodySectionRepeatDimensionConfiguration {
 }
 
 /// A builder for [`BodySectionRepeatDimensionConfiguration`](crate::types::BodySectionRepeatDimensionConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BodySectionRepeatDimensionConfigurationBuilder {
     pub(crate) dynamic_category_dimension_configuration: ::std::option::Option<crate::types::BodySectionDynamicCategoryDimensionConfiguration>,
     pub(crate) dynamic_numeric_dimension_configuration: ::std::option::Option<crate::types::BodySectionDynamicNumericDimensionConfiguration>,

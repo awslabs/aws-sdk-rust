@@ -21,8 +21,8 @@ impl ActionLocalIpDetails {
 }
 
 /// A builder for [`ActionLocalIpDetails`](crate::types::ActionLocalIpDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ActionLocalIpDetailsBuilder {
     pub(crate) ip_address_v4: ::std::option::Option<::std::string::String>,
 }

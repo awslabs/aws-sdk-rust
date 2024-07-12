@@ -44,8 +44,8 @@ impl ListDocumentMetadataHistoryInput {
 }
 
 /// A builder for [`ListDocumentMetadataHistoryInput`](crate::operation::list_document_metadata_history::ListDocumentMetadataHistoryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDocumentMetadataHistoryInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) document_version: ::std::option::Option<::std::string::String>,

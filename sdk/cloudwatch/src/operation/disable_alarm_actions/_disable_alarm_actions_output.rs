@@ -18,8 +18,8 @@ impl DisableAlarmActionsOutput {
 }
 
 /// A builder for [`DisableAlarmActionsOutput`](crate::operation::disable_alarm_actions::DisableAlarmActionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableAlarmActionsOutputBuilder {
     _request_id: Option<String>,
 }

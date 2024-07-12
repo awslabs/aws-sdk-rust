@@ -18,8 +18,8 @@ impl DeleteThemeOutput {
 }
 
 /// A builder for [`DeleteThemeOutput`](crate::operation::delete_theme::DeleteThemeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteThemeOutputBuilder {
     _request_id: Option<String>,
 }

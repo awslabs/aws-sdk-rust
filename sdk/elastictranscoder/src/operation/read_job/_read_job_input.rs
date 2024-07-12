@@ -21,8 +21,8 @@ impl ReadJobInput {
 }
 
 /// A builder for [`ReadJobInput`](crate::operation::read_job::ReadJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReadJobInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }

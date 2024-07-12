@@ -26,8 +26,8 @@ impl AssociateFleetInput {
 }
 
 /// A builder for [`AssociateFleetInput`](crate::operation::associate_fleet::AssociateFleetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateFleetInputBuilder {
     pub(crate) fleet_name: ::std::option::Option<::std::string::String>,
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,

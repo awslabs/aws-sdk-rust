@@ -46,8 +46,8 @@ impl ListCostAllocationTagsInput {
 }
 
 /// A builder for [`ListCostAllocationTagsInput`](crate::operation::list_cost_allocation_tags::ListCostAllocationTagsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCostAllocationTagsInputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::CostAllocationTagStatus>,
     pub(crate) tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

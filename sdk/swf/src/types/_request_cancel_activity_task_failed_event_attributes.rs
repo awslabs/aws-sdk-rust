@@ -38,8 +38,8 @@ impl RequestCancelActivityTaskFailedEventAttributes {
 }
 
 /// A builder for [`RequestCancelActivityTaskFailedEventAttributes`](crate::types::RequestCancelActivityTaskFailedEventAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RequestCancelActivityTaskFailedEventAttributesBuilder {
     pub(crate) activity_id: ::std::option::Option<::std::string::String>,
     pub(crate) cause: ::std::option::Option<crate::types::RequestCancelActivityTaskFailedCause>,

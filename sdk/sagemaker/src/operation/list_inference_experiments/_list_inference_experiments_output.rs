@@ -34,8 +34,8 @@ impl ListInferenceExperimentsOutput {
 }
 
 /// A builder for [`ListInferenceExperimentsOutput`](crate::operation::list_inference_experiments::ListInferenceExperimentsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListInferenceExperimentsOutputBuilder {
     pub(crate) inference_experiments: ::std::option::Option<::std::vec::Vec<crate::types::InferenceExperimentSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

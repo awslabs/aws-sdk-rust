@@ -32,8 +32,8 @@ impl DeleteBotChannelAssociationInput {
 }
 
 /// A builder for [`DeleteBotChannelAssociationInput`](crate::operation::delete_bot_channel_association::DeleteBotChannelAssociationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteBotChannelAssociationInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) bot_name: ::std::option::Option<::std::string::String>,

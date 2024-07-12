@@ -23,8 +23,8 @@ impl DateTimeDatasetParameterDefaultValues {
 }
 
 /// A builder for [`DateTimeDatasetParameterDefaultValues`](crate::types::DateTimeDatasetParameterDefaultValues).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DateTimeDatasetParameterDefaultValuesBuilder {
     pub(crate) static_values: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
 }

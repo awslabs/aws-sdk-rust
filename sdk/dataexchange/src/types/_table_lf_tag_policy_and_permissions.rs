@@ -29,8 +29,8 @@ impl TableLfTagPolicyAndPermissions {
 }
 
 /// A builder for [`TableLfTagPolicyAndPermissions`](crate::types::TableLfTagPolicyAndPermissions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TableLfTagPolicyAndPermissionsBuilder {
     pub(crate) expression: ::std::option::Option<::std::vec::Vec<crate::types::LfTag>>,
     pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::TableTagPolicyLfPermission>>,

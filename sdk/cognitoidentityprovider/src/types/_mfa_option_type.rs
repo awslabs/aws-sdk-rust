@@ -27,8 +27,8 @@ impl MfaOptionType {
 }
 
 /// A builder for [`MfaOptionType`](crate::types::MfaOptionType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MfaOptionTypeBuilder {
     pub(crate) delivery_medium: ::std::option::Option<crate::types::DeliveryMediumType>,
     pub(crate) attribute_name: ::std::option::Option<::std::string::String>,

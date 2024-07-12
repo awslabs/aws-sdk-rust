@@ -34,8 +34,8 @@ impl DescribeTrunkInterfaceAssociationsOutput {
 }
 
 /// A builder for [`DescribeTrunkInterfaceAssociationsOutput`](crate::operation::describe_trunk_interface_associations::DescribeTrunkInterfaceAssociationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTrunkInterfaceAssociationsOutputBuilder {
     pub(crate) interface_associations: ::std::option::Option<::std::vec::Vec<crate::types::TrunkInterfaceAssociation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

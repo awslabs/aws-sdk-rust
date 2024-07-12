@@ -52,8 +52,8 @@ impl UpdateWorkteamInput {
 }
 
 /// A builder for [`UpdateWorkteamInput`](crate::operation::update_workteam::UpdateWorkteamInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateWorkteamInputBuilder {
     pub(crate) workteam_name: ::std::option::Option<::std::string::String>,
     pub(crate) member_definitions: ::std::option::Option<::std::vec::Vec<crate::types::MemberDefinition>>,

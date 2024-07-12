@@ -38,8 +38,8 @@ impl LambdaAuthorizerConfig {
 }
 
 /// A builder for [`LambdaAuthorizerConfig`](crate::types::LambdaAuthorizerConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LambdaAuthorizerConfigBuilder {
     pub(crate) authorizer_result_ttl_in_seconds: ::std::option::Option<i32>,
     pub(crate) authorizer_uri: ::std::option::Option<::std::string::String>,

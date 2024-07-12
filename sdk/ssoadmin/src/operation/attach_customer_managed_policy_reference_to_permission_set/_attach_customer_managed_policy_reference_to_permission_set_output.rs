@@ -18,8 +18,8 @@ impl AttachCustomerManagedPolicyReferenceToPermissionSetOutput {
 }
 
 /// A builder for [`AttachCustomerManagedPolicyReferenceToPermissionSetOutput`](crate::operation::attach_customer_managed_policy_reference_to_permission_set::AttachCustomerManagedPolicyReferenceToPermissionSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttachCustomerManagedPolicyReferenceToPermissionSetOutputBuilder {
     _request_id: Option<String>,
 }

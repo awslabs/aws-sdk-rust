@@ -63,8 +63,8 @@ impl AutoScalingThresholds {
 }
 
 /// A builder for [`AutoScalingThresholds`](crate::types::AutoScalingThresholds).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AutoScalingThresholdsBuilder {
     pub(crate) instance_count: ::std::option::Option<i32>,
     pub(crate) thresholds_wait_time: ::std::option::Option<i32>,

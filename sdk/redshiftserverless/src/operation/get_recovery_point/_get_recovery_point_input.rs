@@ -20,8 +20,8 @@ impl GetRecoveryPointInput {
 }
 
 /// A builder for [`GetRecoveryPointInput`](crate::operation::get_recovery_point::GetRecoveryPointInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRecoveryPointInputBuilder {
     pub(crate) recovery_point_id: ::std::option::Option<::std::string::String>,
 }

@@ -86,8 +86,8 @@ impl DnsConfig {
 }
 
 /// A builder for [`DnsConfig`](crate::types::DnsConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DnsConfigBuilder {
     pub(crate) namespace_id: ::std::option::Option<::std::string::String>,
     pub(crate) routing_policy: ::std::option::Option<crate::types::RoutingPolicy>,

@@ -21,8 +21,8 @@ impl MsSmoothEncryptionSettings {
 }
 
 /// A builder for [`MsSmoothEncryptionSettings`](crate::types::MsSmoothEncryptionSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MsSmoothEncryptionSettingsBuilder {
     pub(crate) speke_key_provider: ::std::option::Option<crate::types::SpekeKeyProvider>,
 }

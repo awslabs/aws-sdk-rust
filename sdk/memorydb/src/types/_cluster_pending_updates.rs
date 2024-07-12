@@ -35,8 +35,8 @@ impl ClusterPendingUpdates {
 }
 
 /// A builder for [`ClusterPendingUpdates`](crate::types::ClusterPendingUpdates).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ClusterPendingUpdatesBuilder {
     pub(crate) resharding: ::std::option::Option<crate::types::ReshardingStatus>,
     pub(crate) acls: ::std::option::Option<crate::types::AcLsUpdateStatus>,

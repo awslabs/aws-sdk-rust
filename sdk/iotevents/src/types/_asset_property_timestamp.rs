@@ -41,8 +41,8 @@ impl AssetPropertyTimestamp {
 }
 
 /// A builder for [`AssetPropertyTimestamp`](crate::types::AssetPropertyTimestamp).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssetPropertyTimestampBuilder {
     pub(crate) time_in_seconds: ::std::option::Option<::std::string::String>,
     pub(crate) offset_in_nanos: ::std::option::Option<::std::string::String>,

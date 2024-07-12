@@ -42,8 +42,8 @@ impl ListEarthObservationJobsOutput {
 }
 
 /// A builder for [`ListEarthObservationJobsOutput`](crate::operation::list_earth_observation_jobs::ListEarthObservationJobsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ListEarthObservationJobsOutputBuilder {
     pub(crate) earth_observation_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ListEarthObservationJobOutputConfig>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

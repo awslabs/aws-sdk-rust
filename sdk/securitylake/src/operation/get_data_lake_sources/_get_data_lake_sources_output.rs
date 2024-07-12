@@ -42,8 +42,8 @@ impl GetDataLakeSourcesOutput {
 }
 
 /// A builder for [`GetDataLakeSourcesOutput`](crate::operation::get_data_lake_sources::GetDataLakeSourcesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDataLakeSourcesOutputBuilder {
     pub(crate) data_lake_arn: ::std::option::Option<::std::string::String>,
     pub(crate) data_lake_sources: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeSource>>,

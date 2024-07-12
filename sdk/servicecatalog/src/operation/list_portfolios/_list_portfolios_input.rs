@@ -44,8 +44,8 @@ impl ListPortfoliosInput {
 }
 
 /// A builder for [`ListPortfoliosInput`](crate::operation::list_portfolios::ListPortfoliosInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPortfoliosInputBuilder {
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,
     pub(crate) page_token: ::std::option::Option<::std::string::String>,

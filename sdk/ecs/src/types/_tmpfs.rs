@@ -38,8 +38,8 @@ impl Tmpfs {
 }
 
 /// A builder for [`Tmpfs`](crate::types::Tmpfs).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TmpfsBuilder {
     pub(crate) container_path: ::std::option::Option<::std::string::String>,
     pub(crate) size: ::std::option::Option<i32>,

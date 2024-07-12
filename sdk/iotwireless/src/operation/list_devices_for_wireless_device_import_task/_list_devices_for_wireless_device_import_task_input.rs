@@ -38,8 +38,8 @@ impl ListDevicesForWirelessDeviceImportTaskInput {
 }
 
 /// A builder for [`ListDevicesForWirelessDeviceImportTaskInput`](crate::operation::list_devices_for_wireless_device_import_task::ListDevicesForWirelessDeviceImportTaskInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDevicesForWirelessDeviceImportTaskInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

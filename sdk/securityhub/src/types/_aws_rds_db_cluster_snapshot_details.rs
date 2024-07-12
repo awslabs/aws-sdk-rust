@@ -185,8 +185,8 @@ impl AwsRdsDbClusterSnapshotDetails {
 }
 
 /// A builder for [`AwsRdsDbClusterSnapshotDetails`](crate::types::AwsRdsDbClusterSnapshotDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsRdsDbClusterSnapshotDetailsBuilder {
     pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) snapshot_create_time: ::std::option::Option<::std::string::String>,

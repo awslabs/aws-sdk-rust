@@ -33,8 +33,8 @@ impl Task {
 }
 
 /// A builder for [`Task`](crate::types::Task).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TaskBuilder {
     pub(crate) status: ::std::option::Option<crate::types::Status>,
     pub(crate) status_detail: ::std::option::Option<::std::string::String>,

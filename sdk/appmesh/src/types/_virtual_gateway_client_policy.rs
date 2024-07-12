@@ -21,8 +21,8 @@ impl VirtualGatewayClientPolicy {
 }
 
 /// A builder for [`VirtualGatewayClientPolicy`](crate::types::VirtualGatewayClientPolicy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VirtualGatewayClientPolicyBuilder {
     pub(crate) tls: ::std::option::Option<crate::types::VirtualGatewayClientPolicyTls>,
 }

@@ -78,8 +78,8 @@ impl CreatePolicyOutput {
 }
 
 /// A builder for [`CreatePolicyOutput`](crate::operation::create_policy::CreatePolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePolicyOutputBuilder {
     pub(crate) policy_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) policy_id: ::std::option::Option<::std::string::String>,

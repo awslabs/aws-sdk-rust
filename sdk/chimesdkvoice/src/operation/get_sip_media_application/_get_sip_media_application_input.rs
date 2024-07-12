@@ -20,8 +20,8 @@ impl GetSipMediaApplicationInput {
 }
 
 /// A builder for [`GetSipMediaApplicationInput`](crate::operation::get_sip_media_application::GetSipMediaApplicationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSipMediaApplicationInputBuilder {
     pub(crate) sip_media_application_id: ::std::option::Option<::std::string::String>,
 }

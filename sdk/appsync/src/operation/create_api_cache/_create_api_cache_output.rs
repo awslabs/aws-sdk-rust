@@ -27,8 +27,8 @@ impl CreateApiCacheOutput {
 }
 
 /// A builder for [`CreateApiCacheOutput`](crate::operation::create_api_cache::CreateApiCacheOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateApiCacheOutputBuilder {
     pub(crate) api_cache: ::std::option::Option<crate::types::ApiCache>,
     _request_id: Option<String>,

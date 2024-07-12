@@ -27,8 +27,8 @@ impl TtlDuration {
 }
 
 /// A builder for [`TtlDuration`](crate::types::TtlDuration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TtlDurationBuilder {
     pub(crate) unit: ::std::option::Option<crate::types::TtlDurationUnit>,
     pub(crate) value: ::std::option::Option<i32>,

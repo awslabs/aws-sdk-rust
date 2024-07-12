@@ -34,8 +34,8 @@ impl ListServiceLevelObjectivesOutput {
 }
 
 /// A builder for [`ListServiceLevelObjectivesOutput`](crate::operation::list_service_level_objectives::ListServiceLevelObjectivesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListServiceLevelObjectivesOutputBuilder {
     pub(crate) slo_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ServiceLevelObjectiveSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

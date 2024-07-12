@@ -27,8 +27,8 @@ impl ContentBlockStartEvent {
 }
 
 /// A builder for [`ContentBlockStartEvent`](crate::types::ContentBlockStartEvent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ContentBlockStartEventBuilder {
     pub(crate) start: ::std::option::Option<crate::types::ContentBlockStart>,
     pub(crate) content_block_index: ::std::option::Option<i32>,

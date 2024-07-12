@@ -34,8 +34,8 @@ impl ListLoggerDefinitionsOutput {
 }
 
 /// A builder for [`ListLoggerDefinitionsOutput`](crate::operation::list_logger_definitions::ListLoggerDefinitionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListLoggerDefinitionsOutputBuilder {
     pub(crate) definitions: ::std::option::Option<::std::vec::Vec<crate::types::DefinitionInformation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

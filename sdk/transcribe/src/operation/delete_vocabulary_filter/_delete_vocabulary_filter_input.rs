@@ -20,8 +20,8 @@ impl DeleteVocabularyFilterInput {
 }
 
 /// A builder for [`DeleteVocabularyFilterInput`](crate::operation::delete_vocabulary_filter::DeleteVocabularyFilterInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVocabularyFilterInputBuilder {
     pub(crate) vocabulary_filter_name: ::std::option::Option<::std::string::String>,
 }

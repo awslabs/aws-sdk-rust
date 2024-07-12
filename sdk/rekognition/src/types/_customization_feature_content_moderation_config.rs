@@ -21,8 +21,8 @@ impl CustomizationFeatureContentModerationConfig {
 }
 
 /// A builder for [`CustomizationFeatureContentModerationConfig`](crate::types::CustomizationFeatureContentModerationConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CustomizationFeatureContentModerationConfigBuilder {
     pub(crate) confidence_threshold: ::std::option::Option<f32>,
 }

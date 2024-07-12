@@ -27,8 +27,8 @@ impl CreateRotationOverrideOutput {
 }
 
 /// A builder for [`CreateRotationOverrideOutput`](crate::operation::create_rotation_override::CreateRotationOverrideOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateRotationOverrideOutputBuilder {
     pub(crate) rotation_override_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

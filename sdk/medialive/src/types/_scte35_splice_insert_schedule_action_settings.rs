@@ -27,8 +27,8 @@ impl Scte35SpliceInsertScheduleActionSettings {
 }
 
 /// A builder for [`Scte35SpliceInsertScheduleActionSettings`](crate::types::Scte35SpliceInsertScheduleActionSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Scte35SpliceInsertScheduleActionSettingsBuilder {
     pub(crate) duration: ::std::option::Option<i64>,
     pub(crate) splice_event_id: ::std::option::Option<i64>,

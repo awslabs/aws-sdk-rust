@@ -21,8 +21,8 @@ impl DirectoryServiceAuthenticationRequest {
 }
 
 /// A builder for [`DirectoryServiceAuthenticationRequest`](crate::types::DirectoryServiceAuthenticationRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DirectoryServiceAuthenticationRequestBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
 }

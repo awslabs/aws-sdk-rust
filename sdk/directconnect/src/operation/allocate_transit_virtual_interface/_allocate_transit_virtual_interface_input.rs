@@ -32,8 +32,8 @@ impl AllocateTransitVirtualInterfaceInput {
 }
 
 /// A builder for [`AllocateTransitVirtualInterfaceInput`](crate::operation::allocate_transit_virtual_interface::AllocateTransitVirtualInterfaceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AllocateTransitVirtualInterfaceInputBuilder {
     pub(crate) connection_id: ::std::option::Option<::std::string::String>,
     pub(crate) owner_account: ::std::option::Option<::std::string::String>,

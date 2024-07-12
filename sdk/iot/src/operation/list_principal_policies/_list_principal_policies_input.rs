@@ -39,8 +39,8 @@ impl ListPrincipalPoliciesInput {
 }
 
 /// A builder for [`ListPrincipalPoliciesInput`](crate::operation::list_principal_policies::ListPrincipalPoliciesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPrincipalPoliciesInputBuilder {
     pub(crate) principal: ::std::option::Option<::std::string::String>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

@@ -50,8 +50,8 @@ impl AssociateProductWithPortfolioInput {
 }
 
 /// A builder for [`AssociateProductWithPortfolioInput`](crate::operation::associate_product_with_portfolio::AssociateProductWithPortfolioInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateProductWithPortfolioInputBuilder {
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,
     pub(crate) product_id: ::std::option::Option<::std::string::String>,

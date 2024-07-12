@@ -26,8 +26,8 @@ impl DeleteSizeConstraintSetInput {
 }
 
 /// A builder for [`DeleteSizeConstraintSetInput`](crate::operation::delete_size_constraint_set::DeleteSizeConstraintSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSizeConstraintSetInputBuilder {
     pub(crate) size_constraint_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) change_token: ::std::option::Option<::std::string::String>,

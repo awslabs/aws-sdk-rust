@@ -30,8 +30,8 @@ impl ValueMappings {
 }
 
 /// A builder for [`ValueMappings`](crate::types::ValueMappings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ValueMappingsBuilder {
     pub(crate) values: ::std::option::Option<::std::vec::Vec<crate::types::ValueMapping>>,
     pub(crate) binding_properties:

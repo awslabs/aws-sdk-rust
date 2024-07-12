@@ -37,8 +37,8 @@ impl MissingDataConfiguration {
 }
 
 /// A builder for [`MissingDataConfiguration`](crate::types::MissingDataConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MissingDataConfigurationBuilder {
     pub(crate) treatment_option: ::std::option::Option<crate::types::MissingDataTreatmentOption>,
 }

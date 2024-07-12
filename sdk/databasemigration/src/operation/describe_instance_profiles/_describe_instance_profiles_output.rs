@@ -36,8 +36,8 @@ impl DescribeInstanceProfilesOutput {
 }
 
 /// A builder for [`DescribeInstanceProfilesOutput`](crate::operation::describe_instance_profiles::DescribeInstanceProfilesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeInstanceProfilesOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) instance_profiles: ::std::option::Option<::std::vec::Vec<crate::types::InstanceProfile>>,

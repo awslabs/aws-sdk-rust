@@ -18,8 +18,8 @@ impl ModifyClientPropertiesOutput {
 }
 
 /// A builder for [`ModifyClientPropertiesOutput`](crate::operation::modify_client_properties::ModifyClientPropertiesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyClientPropertiesOutputBuilder {
     _request_id: Option<String>,
 }

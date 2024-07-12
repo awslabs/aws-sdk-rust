@@ -27,8 +27,8 @@ impl ValidationError {
 }
 
 /// A builder for [`ValidationError`](crate::types::ValidationError).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ValidationErrorBuilder {
     pub(crate) element_path: ::std::option::Option<::std::string::String>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,

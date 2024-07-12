@@ -21,8 +21,8 @@ impl LifecycleExecutionResourcesImpactedSummary {
 }
 
 /// A builder for [`LifecycleExecutionResourcesImpactedSummary`](crate::types::LifecycleExecutionResourcesImpactedSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LifecycleExecutionResourcesImpactedSummaryBuilder {
     pub(crate) has_impacted_resources: ::std::option::Option<bool>,
 }

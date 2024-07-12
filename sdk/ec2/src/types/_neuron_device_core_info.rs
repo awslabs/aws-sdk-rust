@@ -27,8 +27,8 @@ impl NeuronDeviceCoreInfo {
 }
 
 /// A builder for [`NeuronDeviceCoreInfo`](crate::types::NeuronDeviceCoreInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NeuronDeviceCoreInfoBuilder {
     pub(crate) count: ::std::option::Option<i32>,
     pub(crate) version: ::std::option::Option<i32>,

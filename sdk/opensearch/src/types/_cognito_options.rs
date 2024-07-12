@@ -39,8 +39,8 @@ impl CognitoOptions {
 }
 
 /// A builder for [`CognitoOptions`](crate::types::CognitoOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CognitoOptionsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,

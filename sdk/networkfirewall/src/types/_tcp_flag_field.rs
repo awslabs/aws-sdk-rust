@@ -44,8 +44,8 @@ impl TcpFlagField {
 }
 
 /// A builder for [`TcpFlagField`](crate::types::TcpFlagField).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TcpFlagFieldBuilder {
     pub(crate) flags: ::std::option::Option<::std::vec::Vec<crate::types::TcpFlag>>,
     pub(crate) masks: ::std::option::Option<::std::vec::Vec<crate::types::TcpFlag>>,

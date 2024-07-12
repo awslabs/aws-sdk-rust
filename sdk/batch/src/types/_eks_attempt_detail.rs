@@ -67,8 +67,8 @@ impl EksAttemptDetail {
 }
 
 /// A builder for [`EksAttemptDetail`](crate::types::EksAttemptDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EksAttemptDetailBuilder {
     pub(crate) containers: ::std::option::Option<::std::vec::Vec<crate::types::EksAttemptContainerDetail>>,
     pub(crate) init_containers: ::std::option::Option<::std::vec::Vec<crate::types::EksAttemptContainerDetail>>,

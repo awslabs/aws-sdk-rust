@@ -33,8 +33,8 @@ impl DescribeAttackStatisticsOutput {
 }
 
 /// A builder for [`DescribeAttackStatisticsOutput`](crate::operation::describe_attack_statistics::DescribeAttackStatisticsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAttackStatisticsOutputBuilder {
     pub(crate) time_range: ::std::option::Option<crate::types::TimeRange>,
     pub(crate) data_items: ::std::option::Option<::std::vec::Vec<crate::types::AttackStatisticsDataItem>>,

@@ -88,8 +88,8 @@ impl CreateQualificationTypeInput {
 }
 
 /// A builder for [`CreateQualificationTypeInput`](crate::operation::create_qualification_type::CreateQualificationTypeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateQualificationTypeInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) keywords: ::std::option::Option<::std::string::String>,

@@ -21,8 +21,8 @@ impl MachineLearningDetectionConfig {
 }
 
 /// A builder for [`MachineLearningDetectionConfig`](crate::types::MachineLearningDetectionConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MachineLearningDetectionConfigBuilder {
     pub(crate) confidence_level: ::std::option::Option<crate::types::ConfidenceLevel>,
 }

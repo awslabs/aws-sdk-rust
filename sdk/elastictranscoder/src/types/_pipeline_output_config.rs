@@ -61,8 +61,8 @@ impl PipelineOutputConfig {
 }
 
 /// A builder for [`PipelineOutputConfig`](crate::types::PipelineOutputConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PipelineOutputConfigBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) storage_class: ::std::option::Option<::std::string::String>,

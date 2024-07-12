@@ -26,8 +26,8 @@ impl GetResourceMetadataInput {
 }
 
 /// A builder for [`GetResourceMetadataInput`](crate::operation::get_resource_metadata::GetResourceMetadataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetResourceMetadataInputBuilder {
     pub(crate) service_type: ::std::option::Option<crate::types::ServiceType>,
     pub(crate) identifier: ::std::option::Option<::std::string::String>,

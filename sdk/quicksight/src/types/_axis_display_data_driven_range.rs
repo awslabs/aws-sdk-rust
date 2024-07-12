@@ -12,8 +12,8 @@ impl AxisDisplayDataDrivenRange {
 }
 
 /// A builder for [`AxisDisplayDataDrivenRange`](crate::types::AxisDisplayDataDrivenRange).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AxisDisplayDataDrivenRangeBuilder {}
 impl AxisDisplayDataDrivenRangeBuilder {
     /// Consumes the builder and constructs a [`AxisDisplayDataDrivenRange`](crate::types::AxisDisplayDataDrivenRange).

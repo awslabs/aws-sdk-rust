@@ -26,8 +26,8 @@ impl UpdateGameServerOutput {
 }
 
 /// A builder for [`UpdateGameServerOutput`](crate::operation::update_game_server::UpdateGameServerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateGameServerOutputBuilder {
     pub(crate) game_server: ::std::option::Option<crate::types::GameServer>,
     _request_id: Option<String>,

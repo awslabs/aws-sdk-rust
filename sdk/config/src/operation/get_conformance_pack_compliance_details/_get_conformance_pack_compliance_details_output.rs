@@ -41,8 +41,8 @@ impl GetConformancePackComplianceDetailsOutput {
 }
 
 /// A builder for [`GetConformancePackComplianceDetailsOutput`](crate::operation::get_conformance_pack_compliance_details::GetConformancePackComplianceDetailsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetConformancePackComplianceDetailsOutputBuilder {
     pub(crate) conformance_pack_name: ::std::option::Option<::std::string::String>,
     pub(crate) conformance_pack_rule_evaluation_results: ::std::option::Option<::std::vec::Vec<crate::types::ConformancePackEvaluationResult>>,

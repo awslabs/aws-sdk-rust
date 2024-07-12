@@ -35,8 +35,8 @@ impl DataSetConfiguration {
 }
 
 /// A builder for [`DataSetConfiguration`](crate::types::DataSetConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataSetConfigurationBuilder {
     pub(crate) placeholder: ::std::option::Option<::std::string::String>,
     pub(crate) data_set_schema: ::std::option::Option<crate::types::DataSetSchema>,

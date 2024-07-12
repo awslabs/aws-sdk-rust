@@ -46,8 +46,8 @@ impl GetOutpostInstanceTypesOutput {
 }
 
 /// A builder for [`GetOutpostInstanceTypesOutput`](crate::operation::get_outpost_instance_types::GetOutpostInstanceTypesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetOutpostInstanceTypesOutputBuilder {
     pub(crate) instance_types: ::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

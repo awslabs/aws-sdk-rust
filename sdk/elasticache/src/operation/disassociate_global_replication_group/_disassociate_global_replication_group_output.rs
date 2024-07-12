@@ -34,8 +34,8 @@ impl DisassociateGlobalReplicationGroupOutput {
 }
 
 /// A builder for [`DisassociateGlobalReplicationGroupOutput`](crate::operation::disassociate_global_replication_group::DisassociateGlobalReplicationGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateGlobalReplicationGroupOutputBuilder {
     pub(crate) global_replication_group: ::std::option::Option<crate::types::GlobalReplicationGroup>,
     _request_id: Option<String>,

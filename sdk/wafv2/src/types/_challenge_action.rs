@@ -43,8 +43,8 @@ impl ChallengeAction {
 }
 
 /// A builder for [`ChallengeAction`](crate::types::ChallengeAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ChallengeActionBuilder {
     pub(crate) custom_request_handling: ::std::option::Option<crate::types::CustomRequestHandling>,
 }

@@ -23,8 +23,8 @@ impl LoggingConfiguration {
 }
 
 /// A builder for [`LoggingConfiguration`](crate::types::LoggingConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LoggingConfigurationBuilder {
     pub(crate) destinations: ::std::option::Option<::std::vec::Vec<crate::types::LogDestination>>,
 }

@@ -22,8 +22,8 @@ impl CorsConfiguration {
 }
 
 /// A builder for [`CorsConfiguration`](crate::types::CorsConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CorsConfigurationBuilder {
     pub(crate) cors_rules: ::std::option::Option<::std::vec::Vec<crate::types::CorsRule>>,
 }

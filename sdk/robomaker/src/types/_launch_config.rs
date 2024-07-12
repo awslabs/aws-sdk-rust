@@ -55,8 +55,8 @@ impl LaunchConfig {
 }
 
 /// A builder for [`LaunchConfig`](crate::types::LaunchConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LaunchConfigBuilder {
     pub(crate) package_name: ::std::option::Option<::std::string::String>,
     pub(crate) launch_file: ::std::option::Option<::std::string::String>,

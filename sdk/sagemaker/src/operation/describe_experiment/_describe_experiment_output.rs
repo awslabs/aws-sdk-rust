@@ -74,8 +74,8 @@ impl DescribeExperimentOutput {
 }
 
 /// A builder for [`DescribeExperimentOutput`](crate::operation::describe_experiment::DescribeExperimentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeExperimentOutputBuilder {
     pub(crate) experiment_name: ::std::option::Option<::std::string::String>,
     pub(crate) experiment_arn: ::std::option::Option<::std::string::String>,

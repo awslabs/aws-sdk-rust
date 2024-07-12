@@ -32,8 +32,8 @@ impl CreateRuleGroupOutput {
 }
 
 /// A builder for [`CreateRuleGroupOutput`](crate::operation::create_rule_group::CreateRuleGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateRuleGroupOutputBuilder {
     pub(crate) rule_group: ::std::option::Option<crate::types::RuleGroup>,
     pub(crate) change_token: ::std::option::Option<::std::string::String>,

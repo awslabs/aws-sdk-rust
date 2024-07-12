@@ -34,8 +34,8 @@ impl ListDomainDeliverabilityCampaignsOutput {
 }
 
 /// A builder for [`ListDomainDeliverabilityCampaignsOutput`](crate::operation::list_domain_deliverability_campaigns::ListDomainDeliverabilityCampaignsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDomainDeliverabilityCampaignsOutputBuilder {
     pub(crate) domain_deliverability_campaigns: ::std::option::Option<::std::vec::Vec<crate::types::DomainDeliverabilityCampaign>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

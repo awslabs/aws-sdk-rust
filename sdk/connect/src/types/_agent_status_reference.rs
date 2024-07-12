@@ -33,8 +33,8 @@ impl AgentStatusReference {
 }
 
 /// A builder for [`AgentStatusReference`](crate::types::AgentStatusReference).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AgentStatusReferenceBuilder {
     pub(crate) status_start_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status_arn: ::std::option::Option<::std::string::String>,

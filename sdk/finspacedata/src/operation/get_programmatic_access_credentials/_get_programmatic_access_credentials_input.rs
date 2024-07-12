@@ -27,8 +27,8 @@ impl GetProgrammaticAccessCredentialsInput {
 }
 
 /// A builder for [`GetProgrammaticAccessCredentialsInput`](crate::operation::get_programmatic_access_credentials::GetProgrammaticAccessCredentialsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetProgrammaticAccessCredentialsInputBuilder {
     pub(crate) duration_in_minutes: ::std::option::Option<i64>,
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,

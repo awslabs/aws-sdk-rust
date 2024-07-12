@@ -26,8 +26,8 @@ impl DescribeDataSetInput {
 }
 
 /// A builder for [`DescribeDataSetInput`](crate::operation::describe_data_set::DescribeDataSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDataSetInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,

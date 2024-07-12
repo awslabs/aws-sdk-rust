@@ -21,8 +21,8 @@ impl WorkerTypeSpecification {
 }
 
 /// A builder for [`WorkerTypeSpecification`](crate::types::WorkerTypeSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WorkerTypeSpecificationBuilder {
     pub(crate) image_configuration: ::std::option::Option<crate::types::ImageConfiguration>,
 }

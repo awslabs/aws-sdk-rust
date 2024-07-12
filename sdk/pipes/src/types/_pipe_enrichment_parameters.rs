@@ -39,8 +39,8 @@ impl PipeEnrichmentParameters {
 }
 
 /// A builder for [`PipeEnrichmentParameters`](crate::types::PipeEnrichmentParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PipeEnrichmentParametersBuilder {
     pub(crate) input_template: ::std::option::Option<::std::string::String>,
     pub(crate) http_parameters: ::std::option::Option<crate::types::PipeEnrichmentHttpParameters>,

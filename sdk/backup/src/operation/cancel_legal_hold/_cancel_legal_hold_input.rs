@@ -32,8 +32,8 @@ impl CancelLegalHoldInput {
 }
 
 /// A builder for [`CancelLegalHoldInput`](crate::operation::cancel_legal_hold::CancelLegalHoldInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelLegalHoldInputBuilder {
     pub(crate) legal_hold_id: ::std::option::Option<::std::string::String>,
     pub(crate) cancel_description: ::std::option::Option<::std::string::String>,

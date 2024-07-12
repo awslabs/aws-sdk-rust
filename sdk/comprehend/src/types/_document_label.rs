@@ -33,8 +33,8 @@ impl DocumentLabel {
 }
 
 /// A builder for [`DocumentLabel`](crate::types::DocumentLabel).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DocumentLabelBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) score: ::std::option::Option<f32>,

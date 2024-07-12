@@ -80,8 +80,8 @@ impl UpdatePolicyTemplateInput {
 }
 
 /// A builder for [`UpdatePolicyTemplateInput`](crate::operation::update_policy_template::UpdatePolicyTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdatePolicyTemplateInputBuilder {
     pub(crate) policy_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) policy_template_id: ::std::option::Option<::std::string::String>,
