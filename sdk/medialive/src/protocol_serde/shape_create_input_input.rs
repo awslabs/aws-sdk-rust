@@ -69,24 +69,30 @@ pub fn ser_create_input_input_input(
         }
         array_20.finish();
     }
-    if let Some(var_23) = &input.tags {
+    if let Some(var_23) = &input.srt_settings {
         #[allow(unused_mut)]
-        let mut object_24 = object.key("tags").start_object();
-        for (key_25, value_26) in var_23 {
-            {
-                object_24.key(key_25.as_str()).string(value_26.as_str());
-            }
-        }
+        let mut object_24 = object.key("srtSettings").start_object();
+        crate::protocol_serde::shape_srt_settings_request::ser_srt_settings_request(&mut object_24, var_23)?;
         object_24.finish();
     }
-    if let Some(var_27) = &input.r#type {
-        object.key("type").string(var_27.as_str());
-    }
-    if let Some(var_28) = &input.vpc {
+    if let Some(var_25) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_29 = object.key("vpc").start_object();
-        crate::protocol_serde::shape_input_vpc_request::ser_input_vpc_request(&mut object_29, var_28)?;
-        object_29.finish();
+        let mut object_26 = object.key("tags").start_object();
+        for (key_27, value_28) in var_25 {
+            {
+                object_26.key(key_27.as_str()).string(value_28.as_str());
+            }
+        }
+        object_26.finish();
+    }
+    if let Some(var_29) = &input.r#type {
+        object.key("type").string(var_29.as_str());
+    }
+    if let Some(var_30) = &input.vpc {
+        #[allow(unused_mut)]
+        let mut object_31 = object.key("vpc").start_object();
+        crate::protocol_serde::shape_input_vpc_request::ser_input_vpc_request(&mut object_31, var_30)?;
+        object_31.finish();
     }
     Ok(())
 }

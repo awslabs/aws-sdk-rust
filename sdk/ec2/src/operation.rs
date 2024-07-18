@@ -229,6 +229,9 @@ pub mod create_internet_gateway;
 /// Types for the `CreateIpam` operation.
 pub mod create_ipam;
 
+/// Types for the `CreateIpamExternalResourceVerificationToken` operation.
+pub mod create_ipam_external_resource_verification_token;
+
 /// Types for the `CreateIpamPool` operation.
 pub mod create_ipam_pool;
 
@@ -456,6 +459,9 @@ pub mod delete_internet_gateway;
 
 /// Types for the `DeleteIpam` operation.
 pub mod delete_ipam;
+
+/// Types for the `DeleteIpamExternalResourceVerificationToken` operation.
+pub mod delete_ipam_external_resource_verification_token;
 
 /// Types for the `DeleteIpamPool` operation.
 pub mod delete_ipam_pool;
@@ -828,6 +834,9 @@ pub mod describe_internet_gateways;
 
 /// Types for the `DescribeIpamByoasn` operation.
 pub mod describe_ipam_byoasn;
+
+/// Types for the `DescribeIpamExternalResourceVerificationTokens` operation.
+pub mod describe_ipam_external_resource_verification_tokens;
 
 /// Types for the `DescribeIpamPools` operation.
 pub mod describe_ipam_pools;

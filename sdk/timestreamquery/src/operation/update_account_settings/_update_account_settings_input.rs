@@ -6,7 +6,9 @@ pub struct UpdateAccountSettingsInput {
     /// <p>The maximum number of compute units the service will use at any point in time to serve your queries. To run queries, you must set a minimum capacity of 4 TCU. You can set the maximum number of TCU in multiples of 4, for example, 4, 8, 16, 32, and so on.</p>
     /// <p>The maximum value supported for <code>MaxQueryTCU</code> is 1000. To request an increase to this soft limit, contact Amazon Web Services Support. For information about the default quota for maxQueryTCU, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.default">Default quotas</a>.</p>
     pub max_query_tcu: ::std::option::Option<i32>,
-    /// <p>The pricing model for queries in an account.</p>
+    /// <p>The pricing model for queries in an account.</p><note>
+    /// <p>The <code>QueryPricingModel</code> parameter is used by several Timestream operations; however, the <code>UpdateAccountSettings</code> API operation doesn't recognize any values other than <code>COMPUTE_UNITS</code>.</p>
+    /// </note>
     pub query_pricing_model: ::std::option::Option<crate::types::QueryPricingModel>,
 }
 impl UpdateAccountSettingsInput {
@@ -15,7 +17,9 @@ impl UpdateAccountSettingsInput {
     pub fn max_query_tcu(&self) -> ::std::option::Option<i32> {
         self.max_query_tcu
     }
-    /// <p>The pricing model for queries in an account.</p>
+    /// <p>The pricing model for queries in an account.</p><note>
+    /// <p>The <code>QueryPricingModel</code> parameter is used by several Timestream operations; however, the <code>UpdateAccountSettings</code> API operation doesn't recognize any values other than <code>COMPUTE_UNITS</code>.</p>
+    /// </note>
     pub fn query_pricing_model(&self) -> ::std::option::Option<&crate::types::QueryPricingModel> {
         self.query_pricing_model.as_ref()
     }
@@ -52,17 +56,23 @@ impl UpdateAccountSettingsInputBuilder {
     pub fn get_max_query_tcu(&self) -> &::std::option::Option<i32> {
         &self.max_query_tcu
     }
-    /// <p>The pricing model for queries in an account.</p>
+    /// <p>The pricing model for queries in an account.</p><note>
+    /// <p>The <code>QueryPricingModel</code> parameter is used by several Timestream operations; however, the <code>UpdateAccountSettings</code> API operation doesn't recognize any values other than <code>COMPUTE_UNITS</code>.</p>
+    /// </note>
     pub fn query_pricing_model(mut self, input: crate::types::QueryPricingModel) -> Self {
         self.query_pricing_model = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The pricing model for queries in an account.</p>
+    /// <p>The pricing model for queries in an account.</p><note>
+    /// <p>The <code>QueryPricingModel</code> parameter is used by several Timestream operations; however, the <code>UpdateAccountSettings</code> API operation doesn't recognize any values other than <code>COMPUTE_UNITS</code>.</p>
+    /// </note>
     pub fn set_query_pricing_model(mut self, input: ::std::option::Option<crate::types::QueryPricingModel>) -> Self {
         self.query_pricing_model = input;
         self
     }
-    /// <p>The pricing model for queries in an account.</p>
+    /// <p>The pricing model for queries in an account.</p><note>
+    /// <p>The <code>QueryPricingModel</code> parameter is used by several Timestream operations; however, the <code>UpdateAccountSettings</code> API operation doesn't recognize any values other than <code>COMPUTE_UNITS</code>.</p>
+    /// </note>
     pub fn get_query_pricing_model(&self) -> &::std::option::Option<crate::types::QueryPricingModel> {
         &self.query_pricing_model
     }

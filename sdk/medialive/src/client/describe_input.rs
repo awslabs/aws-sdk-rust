@@ -21,6 +21,7 @@ impl super::Client {
     ///   - [`state(Option<InputState>)`](crate::operation::describe_input::DescribeInputOutput::state): Placeholder documentation for InputState
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::describe_input::DescribeInputOutput::tags): A collection of key-value pairs.
     ///   - [`r#type(Option<InputType>)`](crate::operation::describe_input::DescribeInputOutput::type): The different types of inputs that AWS Elemental MediaLive supports.
+    ///   - [`srt_settings(Option<SrtSettings>)`](crate::operation::describe_input::DescribeInputOutput::srt_settings): The settings associated with an SRT input.
     /// - On failure, responds with [`SdkError<DescribeInputError>`](crate::operation::describe_input::DescribeInputError)
     pub fn describe_input(&self) -> crate::operation::describe_input::builders::DescribeInputFluentBuilder {
         crate::operation::describe_input::builders::DescribeInputFluentBuilder::new(self.handle.clone())

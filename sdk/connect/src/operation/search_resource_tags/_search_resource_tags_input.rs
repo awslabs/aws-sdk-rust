@@ -6,6 +6,25 @@ pub struct SearchResourceTagsInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of resource types to be used to search tags from. If not provided or if any empty list is provided, this API will search from all supported resource types.</p>
+    /// <p class="title"><b>Supported resource types</b></p>
+    /// <ul>
+    /// <li>
+    /// <p>AGENT</p></li>
+    /// <li>
+    /// <p>ROUTING_PROFILE</p></li>
+    /// <li>
+    /// <p>STANDARD_QUEUE</p></li>
+    /// <li>
+    /// <p>SECURITY_PROFILE</p></li>
+    /// <li>
+    /// <p>OPERATING_HOURS</p></li>
+    /// <li>
+    /// <p>PROMPT</p></li>
+    /// <li>
+    /// <p>CONTACT_FLOW</p></li>
+    /// <li>
+    /// <p>FLOW_MODULE</p></li>
+    /// </ul>
     pub resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -20,6 +39,25 @@ impl SearchResourceTagsInput {
         self.instance_id.as_deref()
     }
     /// <p>The list of resource types to be used to search tags from. If not provided or if any empty list is provided, this API will search from all supported resource types.</p>
+    /// <p class="title"><b>Supported resource types</b></p>
+    /// <ul>
+    /// <li>
+    /// <p>AGENT</p></li>
+    /// <li>
+    /// <p>ROUTING_PROFILE</p></li>
+    /// <li>
+    /// <p>STANDARD_QUEUE</p></li>
+    /// <li>
+    /// <p>SECURITY_PROFILE</p></li>
+    /// <li>
+    /// <p>OPERATING_HOURS</p></li>
+    /// <li>
+    /// <p>PROMPT</p></li>
+    /// <li>
+    /// <p>CONTACT_FLOW</p></li>
+    /// <li>
+    /// <p>FLOW_MODULE</p></li>
+    /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_types.is_none()`.
     pub fn resource_types(&self) -> &[::std::string::String] {
@@ -76,6 +114,25 @@ impl SearchResourceTagsInputBuilder {
     /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
     ///
     /// <p>The list of resource types to be used to search tags from. If not provided or if any empty list is provided, this API will search from all supported resource types.</p>
+    /// <p class="title"><b>Supported resource types</b></p>
+    /// <ul>
+    /// <li>
+    /// <p>AGENT</p></li>
+    /// <li>
+    /// <p>ROUTING_PROFILE</p></li>
+    /// <li>
+    /// <p>STANDARD_QUEUE</p></li>
+    /// <li>
+    /// <p>SECURITY_PROFILE</p></li>
+    /// <li>
+    /// <p>OPERATING_HOURS</p></li>
+    /// <li>
+    /// <p>PROMPT</p></li>
+    /// <li>
+    /// <p>CONTACT_FLOW</p></li>
+    /// <li>
+    /// <p>FLOW_MODULE</p></li>
+    /// </ul>
     pub fn resource_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_types.unwrap_or_default();
         v.push(input.into());
@@ -83,11 +140,49 @@ impl SearchResourceTagsInputBuilder {
         self
     }
     /// <p>The list of resource types to be used to search tags from. If not provided or if any empty list is provided, this API will search from all supported resource types.</p>
+    /// <p class="title"><b>Supported resource types</b></p>
+    /// <ul>
+    /// <li>
+    /// <p>AGENT</p></li>
+    /// <li>
+    /// <p>ROUTING_PROFILE</p></li>
+    /// <li>
+    /// <p>STANDARD_QUEUE</p></li>
+    /// <li>
+    /// <p>SECURITY_PROFILE</p></li>
+    /// <li>
+    /// <p>OPERATING_HOURS</p></li>
+    /// <li>
+    /// <p>PROMPT</p></li>
+    /// <li>
+    /// <p>CONTACT_FLOW</p></li>
+    /// <li>
+    /// <p>FLOW_MODULE</p></li>
+    /// </ul>
     pub fn set_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resource_types = input;
         self
     }
     /// <p>The list of resource types to be used to search tags from. If not provided or if any empty list is provided, this API will search from all supported resource types.</p>
+    /// <p class="title"><b>Supported resource types</b></p>
+    /// <ul>
+    /// <li>
+    /// <p>AGENT</p></li>
+    /// <li>
+    /// <p>ROUTING_PROFILE</p></li>
+    /// <li>
+    /// <p>STANDARD_QUEUE</p></li>
+    /// <li>
+    /// <p>SECURITY_PROFILE</p></li>
+    /// <li>
+    /// <p>OPERATING_HOURS</p></li>
+    /// <li>
+    /// <p>PROMPT</p></li>
+    /// <li>
+    /// <p>CONTACT_FLOW</p></li>
+    /// <li>
+    /// <p>FLOW_MODULE</p></li>
+    /// </ul>
     pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.resource_types
     }

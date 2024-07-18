@@ -36,6 +36,7 @@
 ///     ResourceType::InstanceEventWindow => { /* ... */ },
 ///     ResourceType::InternetGateway => { /* ... */ },
 ///     ResourceType::Ipam => { /* ... */ },
+///     ResourceType::IpamExternalResourceVerificationToken => { /* ... */ },
 ///     ResourceType::IpamPool => { /* ... */ },
 ///     ResourceType::IpamResourceDiscovery => { /* ... */ },
 ///     ResourceType::IpamResourceDiscoveryAssociation => { /* ... */ },
@@ -174,6 +175,8 @@ pub enum ResourceType {
     InternetGateway,
     #[allow(missing_docs)] // documentation missing in model
     Ipam,
+    #[allow(missing_docs)] // documentation missing in model
+    IpamExternalResourceVerificationToken,
     #[allow(missing_docs)] // documentation missing in model
     IpamPool,
     #[allow(missing_docs)] // documentation missing in model
@@ -331,6 +334,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "instance-event-window" => ResourceType::InstanceEventWindow,
             "internet-gateway" => ResourceType::InternetGateway,
             "ipam" => ResourceType::Ipam,
+            "ipam-external-resource-verification-token" => ResourceType::IpamExternalResourceVerificationToken,
             "ipam-pool" => ResourceType::IpamPool,
             "ipam-resource-discovery" => ResourceType::IpamResourceDiscovery,
             "ipam-resource-discovery-association" => ResourceType::IpamResourceDiscoveryAssociation,
@@ -433,6 +437,7 @@ impl ResourceType {
             ResourceType::InstanceEventWindow => "instance-event-window",
             ResourceType::InternetGateway => "internet-gateway",
             ResourceType::Ipam => "ipam",
+            ResourceType::IpamExternalResourceVerificationToken => "ipam-external-resource-verification-token",
             ResourceType::IpamPool => "ipam-pool",
             ResourceType::IpamResourceDiscovery => "ipam-resource-discovery",
             ResourceType::IpamResourceDiscoveryAssociation => "ipam-resource-discovery-association",
@@ -526,6 +531,7 @@ impl ResourceType {
             "instance-event-window",
             "internet-gateway",
             "ipam",
+            "ipam-external-resource-verification-token",
             "ipam-pool",
             "ipam-resource-discovery",
             "ipam-resource-discovery-association",
@@ -636,6 +642,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::InstanceEventWindow => write!(f, "instance-event-window"),
             ResourceType::InternetGateway => write!(f, "internet-gateway"),
             ResourceType::Ipam => write!(f, "ipam"),
+            ResourceType::IpamExternalResourceVerificationToken => write!(f, "ipam-external-resource-verification-token"),
             ResourceType::IpamPool => write!(f, "ipam-pool"),
             ResourceType::IpamResourceDiscovery => write!(f, "ipam-resource-discovery"),
             ResourceType::IpamResourceDiscoveryAssociation => write!(f, "ipam-resource-discovery-association"),

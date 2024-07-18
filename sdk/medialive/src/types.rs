@@ -109,6 +109,14 @@ pub use crate::types::_input_device_media_connect_configurable_settings::InputDe
 
 pub use crate::types::_input::Input;
 
+pub use crate::types::_srt_settings::SrtSettings;
+
+pub use crate::types::_srt_caller_source::SrtCallerSource;
+
+pub use crate::types::_srt_caller_decryption::SrtCallerDecryption;
+
+pub use crate::types::_algorithm::Algorithm;
+
 pub use crate::types::_input_type::InputType;
 
 pub use crate::types::_input_state::InputState;
@@ -126,6 +134,12 @@ pub use crate::types::_input_class::InputClass;
 pub use crate::types::_input_destination::InputDestination;
 
 pub use crate::types::_input_destination_vpc::InputDestinationVpc;
+
+pub use crate::types::_srt_settings_request::SrtSettingsRequest;
+
+pub use crate::types::_srt_caller_source_request::SrtCallerSourceRequest;
+
+pub use crate::types::_srt_caller_decryption_request::SrtCallerDecryptionRequest;
 
 pub use crate::types::_input_source_request::InputSourceRequest;
 
@@ -1151,6 +1165,8 @@ mod _account_configuration;
 
 mod _afd_signaling;
 
+mod _algorithm;
+
 mod _ancillary_source_settings;
 
 mod _archive_cdn_settings;
@@ -2126,6 +2142,18 @@ mod _smooth_group_timestamp_offset_mode;
 mod _smpte2038_data_preference;
 
 mod _smpte_tt_destination_settings;
+
+mod _srt_caller_decryption;
+
+mod _srt_caller_decryption_request;
+
+mod _srt_caller_source;
+
+mod _srt_caller_source_request;
+
+mod _srt_settings;
+
+mod _srt_settings_request;
 
 mod _standard_hls_settings;
 

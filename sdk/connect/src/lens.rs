@@ -469,6 +469,16 @@ pub(crate) fn reflens_list_views_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_search_agent_statuses_output_output_next_token(
+    input: &crate::operation::search_agent_statuses::SearchAgentStatusesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_search_available_phone_numbers_output_output_next_token(
     input: &crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -581,6 +591,16 @@ pub(crate) fn reflens_search_routing_profiles_output_output_next_token(
 
 pub(crate) fn reflens_search_security_profiles_output_output_next_token(
     input: &crate::operation::search_security_profiles::SearchSecurityProfilesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_search_user_hierarchy_groups_output_output_next_token(
+    input: &crate::operation::search_user_hierarchy_groups::SearchUserHierarchyGroupsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -1014,6 +1034,16 @@ pub(crate) fn lens_list_views_output_output_views_summary_list(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_search_agent_statuses_output_output_agent_statuses(
+    input: crate::operation::search_agent_statuses::SearchAgentStatusesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AgentStatus>> {
+    let input = match input.agent_statuses {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_search_available_phone_numbers_output_output_available_numbers_list(
     input: crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AvailableNumberSummary>> {
@@ -1125,6 +1155,16 @@ pub(crate) fn lens_search_security_profiles_output_output_security_profiles(
     input: crate::operation::search_security_profiles::SearchSecurityProfilesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SecurityProfileSearchSummary>> {
     let input = match input.security_profiles {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_search_user_hierarchy_groups_output_output_user_hierarchy_groups(
+    input: crate::operation::search_user_hierarchy_groups::SearchUserHierarchyGroupsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::HierarchyGroup>> {
+    let input = match input.user_hierarchy_groups {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

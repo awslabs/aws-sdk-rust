@@ -33,11 +33,17 @@ pub fn ser_user_search_criteria(
         crate::protocol_serde::shape_string_condition::ser_string_condition(&mut object_10, var_9)?;
         object_10.finish();
     }
-    if let Some(var_11) = &input.hierarchy_group_condition {
+    if let Some(var_11) = &input.list_condition {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("HierarchyGroupCondition").start_object();
-        crate::protocol_serde::shape_hierarchy_group_condition::ser_hierarchy_group_condition(&mut object_12, var_11)?;
+        let mut object_12 = object.key("ListCondition").start_object();
+        crate::protocol_serde::shape_list_condition::ser_list_condition(&mut object_12, var_11)?;
         object_12.finish();
+    }
+    if let Some(var_13) = &input.hierarchy_group_condition {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("HierarchyGroupCondition").start_object();
+        crate::protocol_serde::shape_hierarchy_group_condition::ser_hierarchy_group_condition(&mut object_14, var_13)?;
+        object_14.finish();
     }
     Ok(())
 }

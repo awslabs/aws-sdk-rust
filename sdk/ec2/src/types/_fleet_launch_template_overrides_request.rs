@@ -17,7 +17,8 @@ pub struct FleetLaunchTemplateOverridesRequest {
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone in which to launch the instances.</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
-    /// <p>The number of units provided by the specified instance type.</p><note>
+    /// <p>The number of units provided by the specified instance type. These are the same units that you chose to set the target capacity in terms of instances, or a performance characteristic such as vCPUs, memory, or I/O.</p>
+    /// <p>If the target capacity divided by this value is not a whole number, Amazon EC2 rounds the number of instances to the next whole number. If this value is not specified, the default is 1.</p><note>
     /// <p>When specifying weights, the price used in the <code>lowest-price</code> and <code>price-capacity-optimized</code> allocation strategies is per <i>unit</i> hour (where the instance price is divided by the specified weight). However, if all the specified weights are above the requested <code>TargetCapacity</code>, resulting in only 1 instance being launched, the price used is per <i>instance</i> hour.</p>
     /// </note>
     pub weighted_capacity: ::std::option::Option<f64>,
@@ -57,7 +58,8 @@ impl FleetLaunchTemplateOverridesRequest {
     pub fn availability_zone(&self) -> ::std::option::Option<&str> {
         self.availability_zone.as_deref()
     }
-    /// <p>The number of units provided by the specified instance type.</p><note>
+    /// <p>The number of units provided by the specified instance type. These are the same units that you chose to set the target capacity in terms of instances, or a performance characteristic such as vCPUs, memory, or I/O.</p>
+    /// <p>If the target capacity divided by this value is not a whole number, Amazon EC2 rounds the number of instances to the next whole number. If this value is not specified, the default is 1.</p><note>
     /// <p>When specifying weights, the price used in the <code>lowest-price</code> and <code>price-capacity-optimized</code> allocation strategies is per <i>unit</i> hour (where the instance price is divided by the specified weight). However, if all the specified weights are above the requested <code>TargetCapacity</code>, resulting in only 1 instance being launched, the price used is per <i>instance</i> hour.</p>
     /// </note>
     pub fn weighted_capacity(&self) -> ::std::option::Option<f64> {
@@ -178,21 +180,24 @@ impl FleetLaunchTemplateOverridesRequestBuilder {
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         &self.availability_zone
     }
-    /// <p>The number of units provided by the specified instance type.</p><note>
+    /// <p>The number of units provided by the specified instance type. These are the same units that you chose to set the target capacity in terms of instances, or a performance characteristic such as vCPUs, memory, or I/O.</p>
+    /// <p>If the target capacity divided by this value is not a whole number, Amazon EC2 rounds the number of instances to the next whole number. If this value is not specified, the default is 1.</p><note>
     /// <p>When specifying weights, the price used in the <code>lowest-price</code> and <code>price-capacity-optimized</code> allocation strategies is per <i>unit</i> hour (where the instance price is divided by the specified weight). However, if all the specified weights are above the requested <code>TargetCapacity</code>, resulting in only 1 instance being launched, the price used is per <i>instance</i> hour.</p>
     /// </note>
     pub fn weighted_capacity(mut self, input: f64) -> Self {
         self.weighted_capacity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of units provided by the specified instance type.</p><note>
+    /// <p>The number of units provided by the specified instance type. These are the same units that you chose to set the target capacity in terms of instances, or a performance characteristic such as vCPUs, memory, or I/O.</p>
+    /// <p>If the target capacity divided by this value is not a whole number, Amazon EC2 rounds the number of instances to the next whole number. If this value is not specified, the default is 1.</p><note>
     /// <p>When specifying weights, the price used in the <code>lowest-price</code> and <code>price-capacity-optimized</code> allocation strategies is per <i>unit</i> hour (where the instance price is divided by the specified weight). However, if all the specified weights are above the requested <code>TargetCapacity</code>, resulting in only 1 instance being launched, the price used is per <i>instance</i> hour.</p>
     /// </note>
     pub fn set_weighted_capacity(mut self, input: ::std::option::Option<f64>) -> Self {
         self.weighted_capacity = input;
         self
     }
-    /// <p>The number of units provided by the specified instance type.</p><note>
+    /// <p>The number of units provided by the specified instance type. These are the same units that you chose to set the target capacity in terms of instances, or a performance characteristic such as vCPUs, memory, or I/O.</p>
+    /// <p>If the target capacity divided by this value is not a whole number, Amazon EC2 rounds the number of instances to the next whole number. If this value is not specified, the default is 1.</p><note>
     /// <p>When specifying weights, the price used in the <code>lowest-price</code> and <code>price-capacity-optimized</code> allocation strategies is per <i>unit</i> hour (where the instance price is divided by the specified weight). However, if all the specified weights are above the requested <code>TargetCapacity</code>, resulting in only 1 instance being launched, the price used is per <i>instance</i> hour.</p>
     /// </note>
     pub fn get_weighted_capacity(&self) -> &::std::option::Option<f64> {

@@ -42,7 +42,7 @@ pub struct Environment {
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The tag keys and optional values for the resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>"The tag keys and optional values for the newly created devices for this environment."</p>
+    /// <p>The tag keys and optional values for the newly created devices for this environment.</p>
     pub device_creation_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl Environment {
@@ -122,7 +122,7 @@ impl Environment {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p>"The tag keys and optional values for the newly created devices for this environment."</p>
+    /// <p>The tag keys and optional values for the newly created devices for this environment.</p>
     pub fn device_creation_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.device_creation_tags.as_ref()
     }
@@ -462,7 +462,7 @@ impl EnvironmentBuilder {
     ///
     /// To override the contents of this collection use [`set_device_creation_tags`](Self::set_device_creation_tags).
     ///
-    /// <p>"The tag keys and optional values for the newly created devices for this environment."</p>
+    /// <p>The tag keys and optional values for the newly created devices for this environment.</p>
     pub fn device_creation_tags(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -473,7 +473,7 @@ impl EnvironmentBuilder {
         self.device_creation_tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>"The tag keys and optional values for the newly created devices for this environment."</p>
+    /// <p>The tag keys and optional values for the newly created devices for this environment.</p>
     pub fn set_device_creation_tags(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -481,7 +481,7 @@ impl EnvironmentBuilder {
         self.device_creation_tags = input;
         self
     }
-    /// <p>"The tag keys and optional values for the newly created devices for this environment."</p>
+    /// <p>The tag keys and optional values for the newly created devices for this environment.</p>
     pub fn get_device_creation_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.device_creation_tags
     }

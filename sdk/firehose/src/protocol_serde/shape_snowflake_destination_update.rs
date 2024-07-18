@@ -75,5 +75,11 @@ pub fn ser_snowflake_destination_update(
         crate::protocol_serde::shape_secrets_manager_configuration::ser_secrets_manager_configuration(&mut object_24, var_23)?;
         object_24.finish();
     }
+    if let Some(var_25) = &input.buffering_hints {
+        #[allow(unused_mut)]
+        let mut object_26 = object.key("BufferingHints").start_object();
+        crate::protocol_serde::shape_snowflake_buffering_hints::ser_snowflake_buffering_hints(&mut object_26, var_25)?;
+        object_26.finish();
+    }
     Ok(())
 }

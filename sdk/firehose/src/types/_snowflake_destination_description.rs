@@ -38,6 +38,8 @@ pub struct SnowflakeDestinationDescription {
     pub s3_destination_description: ::std::option::Option<crate::types::S3DestinationDescription>,
     /// <p>The configuration that defines how you access secrets for Snowflake.</p>
     pub secrets_manager_configuration: ::std::option::Option<crate::types::SecretsManagerConfiguration>,
+    /// <p>Describes the buffering to perform before delivering data to the Snowflake destination. If you do not specify any value, Firehose uses the default values.</p>
+    pub buffering_hints: ::std::option::Option<crate::types::SnowflakeBufferingHints>,
 }
 impl SnowflakeDestinationDescription {
     /// <p>URL for accessing your Snowflake account. This URL must include your <a href="https://docs.snowflake.com/en/user-guide/admin-account-identifier">account identifier</a>. Note that the protocol (https://) and port number are optional.</p>
@@ -108,6 +110,10 @@ impl SnowflakeDestinationDescription {
     pub fn secrets_manager_configuration(&self) -> ::std::option::Option<&crate::types::SecretsManagerConfiguration> {
         self.secrets_manager_configuration.as_ref()
     }
+    /// <p>Describes the buffering to perform before delivering data to the Snowflake destination. If you do not specify any value, Firehose uses the default values.</p>
+    pub fn buffering_hints(&self) -> ::std::option::Option<&crate::types::SnowflakeBufferingHints> {
+        self.buffering_hints.as_ref()
+    }
 }
 impl ::std::fmt::Debug for SnowflakeDestinationDescription {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -129,6 +135,7 @@ impl ::std::fmt::Debug for SnowflakeDestinationDescription {
         formatter.field("s3_backup_mode", &self.s3_backup_mode);
         formatter.field("s3_destination_description", &self.s3_destination_description);
         formatter.field("secrets_manager_configuration", &self.secrets_manager_configuration);
+        formatter.field("buffering_hints", &self.buffering_hints);
         formatter.finish()
     }
 }
@@ -160,6 +167,7 @@ pub struct SnowflakeDestinationDescriptionBuilder {
     pub(crate) s3_backup_mode: ::std::option::Option<crate::types::SnowflakeS3BackupMode>,
     pub(crate) s3_destination_description: ::std::option::Option<crate::types::S3DestinationDescription>,
     pub(crate) secrets_manager_configuration: ::std::option::Option<crate::types::SecretsManagerConfiguration>,
+    pub(crate) buffering_hints: ::std::option::Option<crate::types::SnowflakeBufferingHints>,
 }
 impl SnowflakeDestinationDescriptionBuilder {
     /// <p>URL for accessing your Snowflake account. This URL must include your <a href="https://docs.snowflake.com/en/user-guide/admin-account-identifier">account identifier</a>. Note that the protocol (https://) and port number are optional.</p>
@@ -400,6 +408,20 @@ impl SnowflakeDestinationDescriptionBuilder {
     pub fn get_secrets_manager_configuration(&self) -> &::std::option::Option<crate::types::SecretsManagerConfiguration> {
         &self.secrets_manager_configuration
     }
+    /// <p>Describes the buffering to perform before delivering data to the Snowflake destination. If you do not specify any value, Firehose uses the default values.</p>
+    pub fn buffering_hints(mut self, input: crate::types::SnowflakeBufferingHints) -> Self {
+        self.buffering_hints = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes the buffering to perform before delivering data to the Snowflake destination. If you do not specify any value, Firehose uses the default values.</p>
+    pub fn set_buffering_hints(mut self, input: ::std::option::Option<crate::types::SnowflakeBufferingHints>) -> Self {
+        self.buffering_hints = input;
+        self
+    }
+    /// <p>Describes the buffering to perform before delivering data to the Snowflake destination. If you do not specify any value, Firehose uses the default values.</p>
+    pub fn get_buffering_hints(&self) -> &::std::option::Option<crate::types::SnowflakeBufferingHints> {
+        &self.buffering_hints
+    }
     /// Consumes the builder and constructs a [`SnowflakeDestinationDescription`](crate::types::SnowflakeDestinationDescription).
     pub fn build(self) -> crate::types::SnowflakeDestinationDescription {
         crate::types::SnowflakeDestinationDescription {
@@ -420,6 +442,7 @@ impl SnowflakeDestinationDescriptionBuilder {
             s3_backup_mode: self.s3_backup_mode,
             s3_destination_description: self.s3_destination_description,
             secrets_manager_configuration: self.secrets_manager_configuration,
+            buffering_hints: self.buffering_hints,
         }
     }
 }
@@ -443,6 +466,7 @@ impl ::std::fmt::Debug for SnowflakeDestinationDescriptionBuilder {
         formatter.field("s3_backup_mode", &self.s3_backup_mode);
         formatter.field("s3_destination_description", &self.s3_destination_description);
         formatter.field("secrets_manager_configuration", &self.secrets_manager_configuration);
+        formatter.field("buffering_hints", &self.buffering_hints);
         formatter.finish()
     }
 }

@@ -38,6 +38,16 @@ pub fn ser_provision_ipam_pool_cidr_input_input_input(
     if let Some(var_12) = &input.client_token {
         scope_11.string(var_12);
     }
+    #[allow(unused_mut)]
+    let mut scope_13 = writer.prefix("VerificationMethod");
+    if let Some(var_14) = &input.verification_method {
+        scope_13.string(var_14.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_15 = writer.prefix("IpamExternalResourceVerificationTokenId");
+    if let Some(var_16) = &input.ipam_external_resource_verification_token_id {
+        scope_15.string(var_16);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

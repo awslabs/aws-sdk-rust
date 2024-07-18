@@ -253,6 +253,18 @@ pub(crate) fn vpc_configuration_description_correct_errors(
     builder
 }
 
+pub(crate) fn destination_table_configuration_correct_errors(
+    mut builder: crate::types::builders::DestinationTableConfigurationBuilder,
+) -> crate::types::builders::DestinationTableConfigurationBuilder {
+    if builder.destination_table_name.is_none() {
+        builder.destination_table_name = Some(Default::default())
+    }
+    if builder.destination_database_name.is_none() {
+        builder.destination_database_name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn kms_encryption_config_correct_errors(
     mut builder: crate::types::builders::KmsEncryptionConfigBuilder,
 ) -> crate::types::builders::KmsEncryptionConfigBuilder {

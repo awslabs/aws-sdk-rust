@@ -134,16 +134,73 @@ impl SearchResourceTagsFluentBuilder {
     /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
     ///
     /// <p>The list of resource types to be used to search tags from. If not provided or if any empty list is provided, this API will search from all supported resource types.</p>
+    /// <p class="title"><b>Supported resource types</b></p>
+    /// <ul>
+    /// <li>
+    /// <p>AGENT</p></li>
+    /// <li>
+    /// <p>ROUTING_PROFILE</p></li>
+    /// <li>
+    /// <p>STANDARD_QUEUE</p></li>
+    /// <li>
+    /// <p>SECURITY_PROFILE</p></li>
+    /// <li>
+    /// <p>OPERATING_HOURS</p></li>
+    /// <li>
+    /// <p>PROMPT</p></li>
+    /// <li>
+    /// <p>CONTACT_FLOW</p></li>
+    /// <li>
+    /// <p>FLOW_MODULE</p></li>
+    /// </ul>
     pub fn resource_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_types(input.into());
         self
     }
     /// <p>The list of resource types to be used to search tags from. If not provided or if any empty list is provided, this API will search from all supported resource types.</p>
+    /// <p class="title"><b>Supported resource types</b></p>
+    /// <ul>
+    /// <li>
+    /// <p>AGENT</p></li>
+    /// <li>
+    /// <p>ROUTING_PROFILE</p></li>
+    /// <li>
+    /// <p>STANDARD_QUEUE</p></li>
+    /// <li>
+    /// <p>SECURITY_PROFILE</p></li>
+    /// <li>
+    /// <p>OPERATING_HOURS</p></li>
+    /// <li>
+    /// <p>PROMPT</p></li>
+    /// <li>
+    /// <p>CONTACT_FLOW</p></li>
+    /// <li>
+    /// <p>FLOW_MODULE</p></li>
+    /// </ul>
     pub fn set_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_resource_types(input);
         self
     }
     /// <p>The list of resource types to be used to search tags from. If not provided or if any empty list is provided, this API will search from all supported resource types.</p>
+    /// <p class="title"><b>Supported resource types</b></p>
+    /// <ul>
+    /// <li>
+    /// <p>AGENT</p></li>
+    /// <li>
+    /// <p>ROUTING_PROFILE</p></li>
+    /// <li>
+    /// <p>STANDARD_QUEUE</p></li>
+    /// <li>
+    /// <p>SECURITY_PROFILE</p></li>
+    /// <li>
+    /// <p>OPERATING_HOURS</p></li>
+    /// <li>
+    /// <p>PROMPT</p></li>
+    /// <li>
+    /// <p>CONTACT_FLOW</p></li>
+    /// <li>
+    /// <p>FLOW_MODULE</p></li>
+    /// </ul>
     pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_resource_types()
     }

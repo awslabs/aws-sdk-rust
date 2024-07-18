@@ -245,4 +245,18 @@ impl UpdateInputFluentBuilder {
     pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputSourceRequest>> {
         self.inner.get_sources()
     }
+    /// The settings associated with an SRT input.
+    pub fn srt_settings(mut self, input: crate::types::SrtSettingsRequest) -> Self {
+        self.inner = self.inner.srt_settings(input);
+        self
+    }
+    /// The settings associated with an SRT input.
+    pub fn set_srt_settings(mut self, input: ::std::option::Option<crate::types::SrtSettingsRequest>) -> Self {
+        self.inner = self.inner.set_srt_settings(input);
+        self
+    }
+    /// The settings associated with an SRT input.
+    pub fn get_srt_settings(&self) -> &::std::option::Option<crate::types::SrtSettingsRequest> {
+        self.inner.get_srt_settings()
+    }
 }

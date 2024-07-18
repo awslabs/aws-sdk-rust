@@ -99,5 +99,11 @@ pub fn ser_create_delivery_stream_input_input(
         crate::protocol_serde::shape_snowflake_destination_configuration::ser_snowflake_destination_configuration(&mut object_30, var_29)?;
         object_30.finish();
     }
+    if let Some(var_31) = &input.iceberg_destination_configuration {
+        #[allow(unused_mut)]
+        let mut object_32 = object.key("IcebergDestinationConfiguration").start_object();
+        crate::protocol_serde::shape_iceberg_destination_configuration::ser_iceberg_destination_configuration(&mut object_32, var_31)?;
+        object_32.finish();
+    }
     Ok(())
 }

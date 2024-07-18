@@ -20,7 +20,7 @@ pub struct H264Settings {
     pub color_space_settings: ::std::option::Option<crate::types::H264ColorSpaceSettings>,
     /// Entropy encoding mode. Use cabac (must be in Main or High profile) or cavlc.
     pub entropy_encoding: ::std::option::Option<crate::types::H264EntropyEncoding>,
-    /// Optional filters that you can apply to an encode.
+    /// Optional. Both filters reduce bandwidth by removing imperceptible details. You can enable one of the filters. We recommend that you try both filters and observe the results to decide which one to use. The Temporal Filter reduces bandwidth by removing imperceptible details in the content. It combines perceptual filtering and motion compensated temporal filtering (MCTF). It operates independently of the compression level. The Bandwidth Reduction filter is a perceptual filter located within the encoding loop. It adapts to the current compression level to filter imperceptible signals. This filter works only when the resolution is 1080p or lower.
     pub filter_settings: ::std::option::Option<crate::types::H264FilterSettings>,
     /// Four bit AFD value to write on all frames of video in the output stream. Only valid when afdSignaling is set to 'Fixed'.
     pub fixed_afd: ::std::option::Option<crate::types::FixedAfd>,
@@ -122,7 +122,7 @@ impl H264Settings {
     pub fn entropy_encoding(&self) -> ::std::option::Option<&crate::types::H264EntropyEncoding> {
         self.entropy_encoding.as_ref()
     }
-    /// Optional filters that you can apply to an encode.
+    /// Optional. Both filters reduce bandwidth by removing imperceptible details. You can enable one of the filters. We recommend that you try both filters and observe the results to decide which one to use. The Temporal Filter reduces bandwidth by removing imperceptible details in the content. It combines perceptual filtering and motion compensated temporal filtering (MCTF). It operates independently of the compression level. The Bandwidth Reduction filter is a perceptual filter located within the encoding loop. It adapts to the current compression level to filter imperceptible signals. This filter works only when the resolution is 1080p or lower.
     pub fn filter_settings(&self) -> ::std::option::Option<&crate::types::H264FilterSettings> {
         self.filter_settings.as_ref()
     }
@@ -426,17 +426,17 @@ impl H264SettingsBuilder {
     pub fn get_entropy_encoding(&self) -> &::std::option::Option<crate::types::H264EntropyEncoding> {
         &self.entropy_encoding
     }
-    /// Optional filters that you can apply to an encode.
+    /// Optional. Both filters reduce bandwidth by removing imperceptible details. You can enable one of the filters. We recommend that you try both filters and observe the results to decide which one to use. The Temporal Filter reduces bandwidth by removing imperceptible details in the content. It combines perceptual filtering and motion compensated temporal filtering (MCTF). It operates independently of the compression level. The Bandwidth Reduction filter is a perceptual filter located within the encoding loop. It adapts to the current compression level to filter imperceptible signals. This filter works only when the resolution is 1080p or lower.
     pub fn filter_settings(mut self, input: crate::types::H264FilterSettings) -> Self {
         self.filter_settings = ::std::option::Option::Some(input);
         self
     }
-    /// Optional filters that you can apply to an encode.
+    /// Optional. Both filters reduce bandwidth by removing imperceptible details. You can enable one of the filters. We recommend that you try both filters and observe the results to decide which one to use. The Temporal Filter reduces bandwidth by removing imperceptible details in the content. It combines perceptual filtering and motion compensated temporal filtering (MCTF). It operates independently of the compression level. The Bandwidth Reduction filter is a perceptual filter located within the encoding loop. It adapts to the current compression level to filter imperceptible signals. This filter works only when the resolution is 1080p or lower.
     pub fn set_filter_settings(mut self, input: ::std::option::Option<crate::types::H264FilterSettings>) -> Self {
         self.filter_settings = input;
         self
     }
-    /// Optional filters that you can apply to an encode.
+    /// Optional. Both filters reduce bandwidth by removing imperceptible details. You can enable one of the filters. We recommend that you try both filters and observe the results to decide which one to use. The Temporal Filter reduces bandwidth by removing imperceptible details in the content. It combines perceptual filtering and motion compensated temporal filtering (MCTF). It operates independently of the compression level. The Bandwidth Reduction filter is a perceptual filter located within the encoding loop. It adapts to the current compression level to filter imperceptible signals. This filter works only when the resolution is 1080p or lower.
     pub fn get_filter_settings(&self) -> &::std::option::Option<crate::types::H264FilterSettings> {
         &self.filter_settings
     }

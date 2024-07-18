@@ -53,6 +53,12 @@ pub use crate::types::_input_device_media_connect_configurable_settings::InputDe
 
 pub use crate::types::_input::InputBuilder;
 
+pub use crate::types::_srt_settings::SrtSettingsBuilder;
+
+pub use crate::types::_srt_caller_source::SrtCallerSourceBuilder;
+
+pub use crate::types::_srt_caller_decryption::SrtCallerDecryptionBuilder;
+
 pub use crate::types::_input_source::InputSourceBuilder;
 
 pub use crate::types::_media_connect_flow::MediaConnectFlowBuilder;
@@ -62,6 +68,12 @@ pub use crate::types::_input_device_settings::InputDeviceSettingsBuilder;
 pub use crate::types::_input_destination::InputDestinationBuilder;
 
 pub use crate::types::_input_destination_vpc::InputDestinationVpcBuilder;
+
+pub use crate::types::_srt_settings_request::SrtSettingsRequestBuilder;
+
+pub use crate::types::_srt_caller_source_request::SrtCallerSourceRequestBuilder;
+
+pub use crate::types::_srt_caller_decryption_request::SrtCallerDecryptionRequestBuilder;
 
 pub use crate::types::_input_source_request::InputSourceRequestBuilder;
 

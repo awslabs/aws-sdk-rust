@@ -1953,6 +1953,40 @@ impl From<crate::operation::create_ipam::CreateIpamError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_ipam_external_resource_verification_token::CreateIpamExternalResourceVerificationTokenError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_ipam_external_resource_verification_token::CreateIpamExternalResourceVerificationTokenError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_ipam_external_resource_verification_token::CreateIpamExternalResourceVerificationTokenError> for Error {
+    fn from(err: crate::operation::create_ipam_external_resource_verification_token::CreateIpamExternalResourceVerificationTokenError) -> Self {
+        match err {
+            crate::operation::create_ipam_external_resource_verification_token::CreateIpamExternalResourceVerificationTokenError::Unhandled(
+                inner,
+            ) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_ipam_pool::CreateIpamPoolError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -3880,6 +3914,40 @@ impl From<crate::operation::delete_ipam::DeleteIpamError> for Error {
     fn from(err: crate::operation::delete_ipam::DeleteIpamError) -> Self {
         match err {
             crate::operation::delete_ipam::DeleteIpamError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_ipam_external_resource_verification_token::DeleteIpamExternalResourceVerificationTokenError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_ipam_external_resource_verification_token::DeleteIpamExternalResourceVerificationTokenError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_ipam_external_resource_verification_token::DeleteIpamExternalResourceVerificationTokenError> for Error {
+    fn from(err: crate::operation::delete_ipam_external_resource_verification_token::DeleteIpamExternalResourceVerificationTokenError) -> Self {
+        match err {
+            crate::operation::delete_ipam_external_resource_verification_token::DeleteIpamExternalResourceVerificationTokenError::Unhandled(
+                inner,
+            ) => Error::Unhandled(inner),
         }
     }
 }
@@ -7098,6 +7166,40 @@ impl From<crate::operation::describe_ipam_byoasn::DescribeIpamByoasnError> for E
     fn from(err: crate::operation::describe_ipam_byoasn::DescribeIpamByoasnError) -> Self {
         match err {
             crate::operation::describe_ipam_byoasn::DescribeIpamByoasnError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_ipam_external_resource_verification_tokens::DescribeIpamExternalResourceVerificationTokensError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_ipam_external_resource_verification_tokens::DescribeIpamExternalResourceVerificationTokensError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_ipam_external_resource_verification_tokens::DescribeIpamExternalResourceVerificationTokensError> for Error {
+    fn from(err: crate::operation::describe_ipam_external_resource_verification_tokens::DescribeIpamExternalResourceVerificationTokensError) -> Self {
+        match err {
+            crate::operation::describe_ipam_external_resource_verification_tokens::DescribeIpamExternalResourceVerificationTokensError::Unhandled(
+                inner,
+            ) => Error::Unhandled(inner),
         }
     }
 }

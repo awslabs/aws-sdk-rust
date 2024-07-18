@@ -24,6 +24,9 @@ pub struct DestinationDescription {
     pub snowflake_destination_description: ::std::option::Option<crate::types::SnowflakeDestinationDescription>,
     /// <p>The destination in the Serverless offering for Amazon OpenSearch Service.</p>
     pub amazon_open_search_serverless_destination_description: ::std::option::Option<crate::types::AmazonOpenSearchServerlessDestinationDescription>,
+    /// <p>Describes a destination in Apache Iceberg Tables.</p>
+    /// <p>Amazon Data Firehose is in preview release and is subject to change.</p>
+    pub iceberg_destination_description: ::std::option::Option<crate::types::IcebergDestinationDescription>,
 }
 impl DestinationDescription {
     /// <p>The ID of the destination.</p>
@@ -71,6 +74,11 @@ impl DestinationDescription {
     ) -> ::std::option::Option<&crate::types::AmazonOpenSearchServerlessDestinationDescription> {
         self.amazon_open_search_serverless_destination_description.as_ref()
     }
+    /// <p>Describes a destination in Apache Iceberg Tables.</p>
+    /// <p>Amazon Data Firehose is in preview release and is subject to change.</p>
+    pub fn iceberg_destination_description(&self) -> ::std::option::Option<&crate::types::IcebergDestinationDescription> {
+        self.iceberg_destination_description.as_ref()
+    }
 }
 impl DestinationDescription {
     /// Creates a new builder-style object to manufacture [`DestinationDescription`](crate::types::DestinationDescription).
@@ -94,6 +102,7 @@ pub struct DestinationDescriptionBuilder {
     pub(crate) snowflake_destination_description: ::std::option::Option<crate::types::SnowflakeDestinationDescription>,
     pub(crate) amazon_open_search_serverless_destination_description:
         ::std::option::Option<crate::types::AmazonOpenSearchServerlessDestinationDescription>,
+    pub(crate) iceberg_destination_description: ::std::option::Option<crate::types::IcebergDestinationDescription>,
 }
 impl DestinationDescriptionBuilder {
     /// <p>The ID of the destination.</p>
@@ -256,6 +265,23 @@ impl DestinationDescriptionBuilder {
     ) -> &::std::option::Option<crate::types::AmazonOpenSearchServerlessDestinationDescription> {
         &self.amazon_open_search_serverless_destination_description
     }
+    /// <p>Describes a destination in Apache Iceberg Tables.</p>
+    /// <p>Amazon Data Firehose is in preview release and is subject to change.</p>
+    pub fn iceberg_destination_description(mut self, input: crate::types::IcebergDestinationDescription) -> Self {
+        self.iceberg_destination_description = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes a destination in Apache Iceberg Tables.</p>
+    /// <p>Amazon Data Firehose is in preview release and is subject to change.</p>
+    pub fn set_iceberg_destination_description(mut self, input: ::std::option::Option<crate::types::IcebergDestinationDescription>) -> Self {
+        self.iceberg_destination_description = input;
+        self
+    }
+    /// <p>Describes a destination in Apache Iceberg Tables.</p>
+    /// <p>Amazon Data Firehose is in preview release and is subject to change.</p>
+    pub fn get_iceberg_destination_description(&self) -> &::std::option::Option<crate::types::IcebergDestinationDescription> {
+        &self.iceberg_destination_description
+    }
     /// Consumes the builder and constructs a [`DestinationDescription`](crate::types::DestinationDescription).
     /// This method will fail if any of the following fields are not set:
     /// - [`destination_id`](crate::types::builders::DestinationDescriptionBuilder::destination_id)
@@ -276,6 +302,7 @@ impl DestinationDescriptionBuilder {
             http_endpoint_destination_description: self.http_endpoint_destination_description,
             snowflake_destination_description: self.snowflake_destination_description,
             amazon_open_search_serverless_destination_description: self.amazon_open_search_serverless_destination_description,
+            iceberg_destination_description: self.iceberg_destination_description,
         })
     }
 }

@@ -36,6 +36,8 @@ pub struct DescribeInputOutput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// The different types of inputs that AWS Elemental MediaLive supports.
     pub r#type: ::std::option::Option<crate::types::InputType>,
+    /// The settings associated with an SRT input.
+    pub srt_settings: ::std::option::Option<crate::types::SrtSettings>,
     _request_id: Option<String>,
 }
 impl DescribeInputOutput {
@@ -117,6 +119,10 @@ impl DescribeInputOutput {
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::InputType> {
         self.r#type.as_ref()
     }
+    /// The settings associated with an SRT input.
+    pub fn srt_settings(&self) -> ::std::option::Option<&crate::types::SrtSettings> {
+        self.srt_settings.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeInputOutput {
     fn request_id(&self) -> Option<&str> {
@@ -150,6 +156,7 @@ pub struct DescribeInputOutputBuilder {
     pub(crate) state: ::std::option::Option<crate::types::InputState>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) r#type: ::std::option::Option<crate::types::InputType>,
+    pub(crate) srt_settings: ::std::option::Option<crate::types::SrtSettings>,
     _request_id: Option<String>,
 }
 impl DescribeInputOutputBuilder {
@@ -425,6 +432,20 @@ impl DescribeInputOutputBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::InputType> {
         &self.r#type
     }
+    /// The settings associated with an SRT input.
+    pub fn srt_settings(mut self, input: crate::types::SrtSettings) -> Self {
+        self.srt_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// The settings associated with an SRT input.
+    pub fn set_srt_settings(mut self, input: ::std::option::Option<crate::types::SrtSettings>) -> Self {
+        self.srt_settings = input;
+        self
+    }
+    /// The settings associated with an SRT input.
+    pub fn get_srt_settings(&self) -> &::std::option::Option<crate::types::SrtSettings> {
+        &self.srt_settings
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -453,6 +474,7 @@ impl DescribeInputOutputBuilder {
             state: self.state,
             tags: self.tags,
             r#type: self.r#type,
+            srt_settings: self.srt_settings,
             _request_id: self._request_id,
         }
     }

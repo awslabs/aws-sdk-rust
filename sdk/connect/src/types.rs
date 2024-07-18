@@ -297,9 +297,19 @@ pub use crate::types::_hierarchy_group_condition::HierarchyGroupCondition;
 
 pub use crate::types::_hierarchy_group_match_type::HierarchyGroupMatchType;
 
+pub use crate::types::_list_condition::ListCondition;
+
+pub use crate::types::_condition::Condition;
+
+pub use crate::types::_number_condition::NumberCondition;
+
+pub use crate::types::_number_comparison_type::NumberComparisonType;
+
 pub use crate::types::_string_condition::StringCondition;
 
 pub use crate::types::_string_comparison_type::StringComparisonType;
+
+pub use crate::types::_target_list_type::TargetListType;
 
 pub use crate::types::_user_search_filter::UserSearchFilter;
 
@@ -310,6 +320,20 @@ pub use crate::types::_tag_condition::TagCondition;
 pub use crate::types::_attribute_and_condition::AttributeAndCondition;
 
 pub use crate::types::_control_plane_tag_filter::ControlPlaneTagFilter;
+
+pub use crate::types::_hierarchy_group::HierarchyGroup;
+
+pub use crate::types::_hierarchy_path::HierarchyPath;
+
+pub use crate::types::_hierarchy_group_summary::HierarchyGroupSummary;
+
+pub use crate::types::_user_hierarchy_group_search_criteria::UserHierarchyGroupSearchCriteria;
+
+pub use crate::types::_user_hierarchy_group_search_filter::UserHierarchyGroupSearchFilter;
+
+pub use crate::types::_control_plane_attribute_filter::ControlPlaneAttributeFilter;
+
+pub use crate::types::_common_attribute_and_condition::CommonAttributeAndCondition;
 
 pub use crate::types::_security_profile_search_summary::SecurityProfileSearchSummary;
 
@@ -419,6 +443,14 @@ pub use crate::types::_phone_number_type::PhoneNumberType;
 
 pub use crate::types::_phone_number_country_code::PhoneNumberCountryCode;
 
+pub use crate::types::_agent_status::AgentStatus;
+
+pub use crate::types::_agent_status_type::AgentStatusType;
+
+pub use crate::types::_agent_status_search_criteria::AgentStatusSearchCriteria;
+
+pub use crate::types::_agent_status_search_filter::AgentStatusSearchFilter;
+
 pub use crate::types::_monitor_capability::MonitorCapability;
 
 pub use crate::types::_view_version_summary::ViewVersionSummary;
@@ -426,8 +458,6 @@ pub use crate::types::_view_version_summary::ViewVersionSummary;
 pub use crate::types::_view_summary::ViewSummary;
 
 pub use crate::types::_user_summary::UserSummary;
-
-pub use crate::types::_hierarchy_group_summary::HierarchyGroupSummary;
 
 pub use crate::types::_use_case::UseCase;
 
@@ -579,8 +609,6 @@ pub use crate::types::_analytics_data_association_result::AnalyticsDataAssociati
 
 pub use crate::types::_agent_status_summary::AgentStatusSummary;
 
-pub use crate::types::_agent_status_type::AgentStatusType;
-
 pub use crate::types::_metric_result_v2::MetricResultV2;
 
 pub use crate::types::_metric_data_v2::MetricDataV2;
@@ -667,10 +695,6 @@ pub use crate::types::_hierarchy_structure::HierarchyStructure;
 
 pub use crate::types::_hierarchy_level::HierarchyLevel;
 
-pub use crate::types::_hierarchy_group::HierarchyGroup;
-
-pub use crate::types::_hierarchy_path::HierarchyPath;
-
 pub use crate::types::_user::User;
 
 pub use crate::types::_traffic_distribution_group::TrafficDistributionGroup;
@@ -751,8 +775,6 @@ pub use crate::types::_queue_info::QueueInfo;
 
 pub use crate::types::_authentication_profile::AuthenticationProfile;
 
-pub use crate::types::_agent_status::AgentStatus;
-
 pub use crate::types::_participant_token_credentials::ParticipantTokenCredentials;
 
 pub use crate::types::_participant_details_to_add::ParticipantDetailsToAdd;
@@ -796,6 +818,10 @@ mod _agent_quality_metrics;
 mod _agent_status;
 
 mod _agent_status_reference;
+
+mod _agent_status_search_criteria;
+
+mod _agent_status_search_filter;
 
 mod _agent_status_state;
 
@@ -863,7 +889,11 @@ mod _chat_streaming_configuration;
 
 mod _claimed_phone_number_summary;
 
+mod _common_attribute_and_condition;
+
 mod _comparison;
+
+mod _condition;
 
 mod _connection_data;
 
@@ -910,6 +940,8 @@ mod _contact_search_summary_agent_info;
 mod _contact_search_summary_queue_info;
 
 mod _contact_state;
+
+mod _control_plane_attribute_filter;
 
 mod _control_plane_tag_filter;
 
@@ -1149,6 +1181,8 @@ mod _lex_v2_bot;
 
 mod _lex_version;
 
+mod _list_condition;
+
 mod _list_flow_association_resource_type;
 
 mod _list_phone_numbers_summary;
@@ -1184,6 +1218,10 @@ mod _notification_content_type;
 mod _notification_delivery_type;
 
 mod _notification_recipient_type;
+
+mod _number_comparison_type;
+
+mod _number_condition;
 
 mod _number_reference;
 
@@ -1439,6 +1477,8 @@ mod _tag_search_condition;
 
 mod _tag_set;
 
+mod _target_list_type;
+
 mod _task_action_definition;
 
 mod _task_template_constraints;
@@ -1498,6 +1538,10 @@ mod _user;
 mod _user_data;
 
 mod _user_data_filters;
+
+mod _user_hierarchy_group_search_criteria;
+
+mod _user_hierarchy_group_search_filter;
 
 mod _user_identity_info;
 

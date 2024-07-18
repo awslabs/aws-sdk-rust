@@ -9,12 +9,16 @@ pub struct ProvisionIpamPoolCidrInput {
     pub ipam_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The CIDR you want to assign to the IPAM pool. Either "NetmaskLength" or "Cidr" is required. This value will be null if you specify "NetmaskLength" and will be filled in during the provisioning process.</p>
     pub cidr: ::std::option::Option<::std::string::String>,
-    /// <p>A signed document that proves that you are authorized to bring a specified IP address range to Amazon using BYOIP. This option applies to public pools only.</p>
+    /// <p>A signed document that proves that you are authorized to bring a specified IP address range to Amazon using BYOIP. This option only applies to IPv4 and IPv6 pools in the public scope.</p>
     pub cidr_authorization_context: ::std::option::Option<crate::types::IpamCidrAuthorizationContext>,
     /// <p>The netmask length of the CIDR you'd like to provision to a pool. Can be used for provisioning Amazon-provided IPv6 CIDRs to top-level pools and for provisioning CIDRs to pools with source pools. Cannot be used to provision BYOIP CIDRs to top-level pools. Either "NetmaskLength" or "Cidr" is required.</p>
     pub netmask_length: ::std::option::Option<i32>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">Ensuring idempotency</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
+    /// <p>The method for verifying control of a public IP address range. Defaults to <code>remarks-x509</code> if not specified. This option only applies to IPv4 and IPv6 pools in the public scope.</p>
+    pub verification_method: ::std::option::Option<crate::types::VerificationMethod>,
+    /// <p>Verification token ID. This option only applies to IPv4 and IPv6 pools in the public scope.</p>
+    pub ipam_external_resource_verification_token_id: ::std::option::Option<::std::string::String>,
 }
 impl ProvisionIpamPoolCidrInput {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -29,7 +33,7 @@ impl ProvisionIpamPoolCidrInput {
     pub fn cidr(&self) -> ::std::option::Option<&str> {
         self.cidr.as_deref()
     }
-    /// <p>A signed document that proves that you are authorized to bring a specified IP address range to Amazon using BYOIP. This option applies to public pools only.</p>
+    /// <p>A signed document that proves that you are authorized to bring a specified IP address range to Amazon using BYOIP. This option only applies to IPv4 and IPv6 pools in the public scope.</p>
     pub fn cidr_authorization_context(&self) -> ::std::option::Option<&crate::types::IpamCidrAuthorizationContext> {
         self.cidr_authorization_context.as_ref()
     }
@@ -40,6 +44,14 @@ impl ProvisionIpamPoolCidrInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">Ensuring idempotency</a>.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
+    }
+    /// <p>The method for verifying control of a public IP address range. Defaults to <code>remarks-x509</code> if not specified. This option only applies to IPv4 and IPv6 pools in the public scope.</p>
+    pub fn verification_method(&self) -> ::std::option::Option<&crate::types::VerificationMethod> {
+        self.verification_method.as_ref()
+    }
+    /// <p>Verification token ID. This option only applies to IPv4 and IPv6 pools in the public scope.</p>
+    pub fn ipam_external_resource_verification_token_id(&self) -> ::std::option::Option<&str> {
+        self.ipam_external_resource_verification_token_id.as_deref()
     }
 }
 impl ProvisionIpamPoolCidrInput {
@@ -59,6 +71,8 @@ pub struct ProvisionIpamPoolCidrInputBuilder {
     pub(crate) cidr_authorization_context: ::std::option::Option<crate::types::IpamCidrAuthorizationContext>,
     pub(crate) netmask_length: ::std::option::Option<i32>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) verification_method: ::std::option::Option<crate::types::VerificationMethod>,
+    pub(crate) ipam_external_resource_verification_token_id: ::std::option::Option<::std::string::String>,
 }
 impl ProvisionIpamPoolCidrInputBuilder {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -104,17 +118,17 @@ impl ProvisionIpamPoolCidrInputBuilder {
     pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
         &self.cidr
     }
-    /// <p>A signed document that proves that you are authorized to bring a specified IP address range to Amazon using BYOIP. This option applies to public pools only.</p>
+    /// <p>A signed document that proves that you are authorized to bring a specified IP address range to Amazon using BYOIP. This option only applies to IPv4 and IPv6 pools in the public scope.</p>
     pub fn cidr_authorization_context(mut self, input: crate::types::IpamCidrAuthorizationContext) -> Self {
         self.cidr_authorization_context = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A signed document that proves that you are authorized to bring a specified IP address range to Amazon using BYOIP. This option applies to public pools only.</p>
+    /// <p>A signed document that proves that you are authorized to bring a specified IP address range to Amazon using BYOIP. This option only applies to IPv4 and IPv6 pools in the public scope.</p>
     pub fn set_cidr_authorization_context(mut self, input: ::std::option::Option<crate::types::IpamCidrAuthorizationContext>) -> Self {
         self.cidr_authorization_context = input;
         self
     }
-    /// <p>A signed document that proves that you are authorized to bring a specified IP address range to Amazon using BYOIP. This option applies to public pools only.</p>
+    /// <p>A signed document that proves that you are authorized to bring a specified IP address range to Amazon using BYOIP. This option only applies to IPv4 and IPv6 pools in the public scope.</p>
     pub fn get_cidr_authorization_context(&self) -> &::std::option::Option<crate::types::IpamCidrAuthorizationContext> {
         &self.cidr_authorization_context
     }
@@ -146,6 +160,34 @@ impl ProvisionIpamPoolCidrInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
+    /// <p>The method for verifying control of a public IP address range. Defaults to <code>remarks-x509</code> if not specified. This option only applies to IPv4 and IPv6 pools in the public scope.</p>
+    pub fn verification_method(mut self, input: crate::types::VerificationMethod) -> Self {
+        self.verification_method = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The method for verifying control of a public IP address range. Defaults to <code>remarks-x509</code> if not specified. This option only applies to IPv4 and IPv6 pools in the public scope.</p>
+    pub fn set_verification_method(mut self, input: ::std::option::Option<crate::types::VerificationMethod>) -> Self {
+        self.verification_method = input;
+        self
+    }
+    /// <p>The method for verifying control of a public IP address range. Defaults to <code>remarks-x509</code> if not specified. This option only applies to IPv4 and IPv6 pools in the public scope.</p>
+    pub fn get_verification_method(&self) -> &::std::option::Option<crate::types::VerificationMethod> {
+        &self.verification_method
+    }
+    /// <p>Verification token ID. This option only applies to IPv4 and IPv6 pools in the public scope.</p>
+    pub fn ipam_external_resource_verification_token_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ipam_external_resource_verification_token_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Verification token ID. This option only applies to IPv4 and IPv6 pools in the public scope.</p>
+    pub fn set_ipam_external_resource_verification_token_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ipam_external_resource_verification_token_id = input;
+        self
+    }
+    /// <p>Verification token ID. This option only applies to IPv4 and IPv6 pools in the public scope.</p>
+    pub fn get_ipam_external_resource_verification_token_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipam_external_resource_verification_token_id
+    }
     /// Consumes the builder and constructs a [`ProvisionIpamPoolCidrInput`](crate::operation::provision_ipam_pool_cidr::ProvisionIpamPoolCidrInput).
     pub fn build(
         self,
@@ -158,6 +200,8 @@ impl ProvisionIpamPoolCidrInputBuilder {
             cidr_authorization_context: self.cidr_authorization_context,
             netmask_length: self.netmask_length,
             client_token: self.client_token,
+            verification_method: self.verification_method,
+            ipam_external_resource_verification_token_id: self.ipam_external_resource_verification_token_id,
         })
     }
 }

@@ -23,7 +23,6 @@ impl crate::operation::describe_volumes_modifications::builders::DescribeVolumes
 /// Fluent builder constructing a request to `DescribeVolumesModifications`.
 ///
 /// <p>Describes the most recent volume modification request for the specified EBS volumes.</p>
-/// <p>If a volume has never been modified, some information in the output will be null. If a volume has been modified more than once, the output includes only the most recent modification request.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/monitoring-volume-modifications.html"> Monitor the progress of volume modifications</a> in the <i>Amazon EBS User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeVolumesModificationsFluentBuilder {

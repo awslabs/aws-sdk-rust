@@ -292,4 +292,21 @@ impl UpdateDestinationFluentBuilder {
     pub fn get_snowflake_destination_update(&self) -> &::std::option::Option<crate::types::SnowflakeDestinationUpdate> {
         self.inner.get_snowflake_destination_update()
     }
+    /// <p>Describes an update for a destination in Apache Iceberg Tables.</p>
+    /// <p>Amazon Data Firehose is in preview release and is subject to change.</p>
+    pub fn iceberg_destination_update(mut self, input: crate::types::IcebergDestinationUpdate) -> Self {
+        self.inner = self.inner.iceberg_destination_update(input);
+        self
+    }
+    /// <p>Describes an update for a destination in Apache Iceberg Tables.</p>
+    /// <p>Amazon Data Firehose is in preview release and is subject to change.</p>
+    pub fn set_iceberg_destination_update(mut self, input: ::std::option::Option<crate::types::IcebergDestinationUpdate>) -> Self {
+        self.inner = self.inner.set_iceberg_destination_update(input);
+        self
+    }
+    /// <p>Describes an update for a destination in Apache Iceberg Tables.</p>
+    /// <p>Amazon Data Firehose is in preview release and is subject to change.</p>
+    pub fn get_iceberg_destination_update(&self) -> &::std::option::Option<crate::types::IcebergDestinationUpdate> {
+        self.inner.get_iceberg_destination_update()
+    }
 }

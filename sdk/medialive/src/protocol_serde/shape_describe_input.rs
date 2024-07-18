@@ -222,6 +222,9 @@ pub(crate) fn de_describe_input(
                 "sources" => {
                     builder = builder.set_sources(crate::protocol_serde::shape_list_of_input_source::de_list_of_input_source(tokens)?);
                 }
+                "srtSettings" => {
+                    builder = builder.set_srt_settings(crate::protocol_serde::shape_srt_settings::de_srt_settings(tokens)?);
+                }
                 "state" => {
                     builder = builder.set_state(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

@@ -151,17 +151,17 @@ impl ProvisionIpamPoolCidrFluentBuilder {
     pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cidr()
     }
-    /// <p>A signed document that proves that you are authorized to bring a specified IP address range to Amazon using BYOIP. This option applies to public pools only.</p>
+    /// <p>A signed document that proves that you are authorized to bring a specified IP address range to Amazon using BYOIP. This option only applies to IPv4 and IPv6 pools in the public scope.</p>
     pub fn cidr_authorization_context(mut self, input: crate::types::IpamCidrAuthorizationContext) -> Self {
         self.inner = self.inner.cidr_authorization_context(input);
         self
     }
-    /// <p>A signed document that proves that you are authorized to bring a specified IP address range to Amazon using BYOIP. This option applies to public pools only.</p>
+    /// <p>A signed document that proves that you are authorized to bring a specified IP address range to Amazon using BYOIP. This option only applies to IPv4 and IPv6 pools in the public scope.</p>
     pub fn set_cidr_authorization_context(mut self, input: ::std::option::Option<crate::types::IpamCidrAuthorizationContext>) -> Self {
         self.inner = self.inner.set_cidr_authorization_context(input);
         self
     }
-    /// <p>A signed document that proves that you are authorized to bring a specified IP address range to Amazon using BYOIP. This option applies to public pools only.</p>
+    /// <p>A signed document that proves that you are authorized to bring a specified IP address range to Amazon using BYOIP. This option only applies to IPv4 and IPv6 pools in the public scope.</p>
     pub fn get_cidr_authorization_context(&self) -> &::std::option::Option<crate::types::IpamCidrAuthorizationContext> {
         self.inner.get_cidr_authorization_context()
     }
@@ -192,5 +192,33 @@ impl ProvisionIpamPoolCidrFluentBuilder {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">Ensuring idempotency</a>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
+    }
+    /// <p>The method for verifying control of a public IP address range. Defaults to <code>remarks-x509</code> if not specified. This option only applies to IPv4 and IPv6 pools in the public scope.</p>
+    pub fn verification_method(mut self, input: crate::types::VerificationMethod) -> Self {
+        self.inner = self.inner.verification_method(input);
+        self
+    }
+    /// <p>The method for verifying control of a public IP address range. Defaults to <code>remarks-x509</code> if not specified. This option only applies to IPv4 and IPv6 pools in the public scope.</p>
+    pub fn set_verification_method(mut self, input: ::std::option::Option<crate::types::VerificationMethod>) -> Self {
+        self.inner = self.inner.set_verification_method(input);
+        self
+    }
+    /// <p>The method for verifying control of a public IP address range. Defaults to <code>remarks-x509</code> if not specified. This option only applies to IPv4 and IPv6 pools in the public scope.</p>
+    pub fn get_verification_method(&self) -> &::std::option::Option<crate::types::VerificationMethod> {
+        self.inner.get_verification_method()
+    }
+    /// <p>Verification token ID. This option only applies to IPv4 and IPv6 pools in the public scope.</p>
+    pub fn ipam_external_resource_verification_token_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.ipam_external_resource_verification_token_id(input.into());
+        self
+    }
+    /// <p>Verification token ID. This option only applies to IPv4 and IPv6 pools in the public scope.</p>
+    pub fn set_ipam_external_resource_verification_token_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_ipam_external_resource_verification_token_id(input);
+        self
+    }
+    /// <p>Verification token ID. This option only applies to IPv4 and IPv6 pools in the public scope.</p>
+    pub fn get_ipam_external_resource_verification_token_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ipam_external_resource_verification_token_id()
     }
 }

@@ -185,6 +185,12 @@ pub use crate::types::_user_search_criteria::UserSearchCriteriaBuilder;
 
 pub use crate::types::_hierarchy_group_condition::HierarchyGroupConditionBuilder;
 
+pub use crate::types::_list_condition::ListConditionBuilder;
+
+pub use crate::types::_condition::ConditionBuilder;
+
+pub use crate::types::_number_condition::NumberConditionBuilder;
+
 pub use crate::types::_string_condition::StringConditionBuilder;
 
 pub use crate::types::_user_search_filter::UserSearchFilterBuilder;
@@ -196,6 +202,20 @@ pub use crate::types::_tag_condition::TagConditionBuilder;
 pub use crate::types::_attribute_and_condition::AttributeAndConditionBuilder;
 
 pub use crate::types::_control_plane_tag_filter::ControlPlaneTagFilterBuilder;
+
+pub use crate::types::_hierarchy_group::HierarchyGroupBuilder;
+
+pub use crate::types::_hierarchy_path::HierarchyPathBuilder;
+
+pub use crate::types::_hierarchy_group_summary::HierarchyGroupSummaryBuilder;
+
+pub use crate::types::_user_hierarchy_group_search_criteria::UserHierarchyGroupSearchCriteriaBuilder;
+
+pub use crate::types::_user_hierarchy_group_search_filter::UserHierarchyGroupSearchFilterBuilder;
+
+pub use crate::types::_control_plane_attribute_filter::ControlPlaneAttributeFilterBuilder;
+
+pub use crate::types::_common_attribute_and_condition::CommonAttributeAndConditionBuilder;
 
 pub use crate::types::_security_profile_search_summary::SecurityProfileSearchSummaryBuilder;
 
@@ -281,13 +301,17 @@ pub use crate::types::_contact_flow_module_search_filter::ContactFlowModuleSearc
 
 pub use crate::types::_available_number_summary::AvailableNumberSummaryBuilder;
 
+pub use crate::types::_agent_status::AgentStatusBuilder;
+
+pub use crate::types::_agent_status_search_criteria::AgentStatusSearchCriteriaBuilder;
+
+pub use crate::types::_agent_status_search_filter::AgentStatusSearchFilterBuilder;
+
 pub use crate::types::_view_version_summary::ViewVersionSummaryBuilder;
 
 pub use crate::types::_view_summary::ViewSummaryBuilder;
 
 pub use crate::types::_user_summary::UserSummaryBuilder;
-
-pub use crate::types::_hierarchy_group_summary::HierarchyGroupSummaryBuilder;
 
 pub use crate::types::_use_case::UseCaseBuilder;
 
@@ -463,10 +487,6 @@ pub use crate::types::_hierarchy_structure::HierarchyStructureBuilder;
 
 pub use crate::types::_hierarchy_level::HierarchyLevelBuilder;
 
-pub use crate::types::_hierarchy_group::HierarchyGroupBuilder;
-
-pub use crate::types::_hierarchy_path::HierarchyPathBuilder;
-
 pub use crate::types::_user::UserBuilder;
 
 pub use crate::types::_traffic_distribution_group::TrafficDistributionGroupBuilder;
@@ -540,8 +560,6 @@ pub use crate::types::_agent_hierarchy_group::AgentHierarchyGroupBuilder;
 pub use crate::types::_queue_info::QueueInfoBuilder;
 
 pub use crate::types::_authentication_profile::AuthenticationProfileBuilder;
-
-pub use crate::types::_agent_status::AgentStatusBuilder;
 
 pub use crate::types::_participant_token_credentials::ParticipantTokenCredentialsBuilder;
 

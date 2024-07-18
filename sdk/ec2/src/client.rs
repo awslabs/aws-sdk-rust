@@ -496,6 +496,8 @@ mod create_internet_gateway;
 
 mod create_ipam;
 
+mod create_ipam_external_resource_verification_token;
+
 mod create_ipam_pool;
 
 mod create_ipam_resource_discovery;
@@ -674,6 +676,8 @@ mod delete_instance_event_window;
 mod delete_internet_gateway;
 
 mod delete_ipam;
+
+mod delete_ipam_external_resource_verification_token;
 
 mod delete_ipam_pool;
 
@@ -922,6 +926,8 @@ mod describe_instances;
 mod describe_internet_gateways;
 
 mod describe_ipam_byoasn;
+
+mod describe_ipam_external_resource_verification_tokens;
 
 mod describe_ipam_pools;
 

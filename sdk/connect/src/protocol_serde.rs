@@ -369,6 +369,8 @@ pub(crate) mod shape_resume_contact;
 
 pub(crate) mod shape_resume_contact_recording;
 
+pub(crate) mod shape_search_agent_statuses;
+
 pub(crate) mod shape_search_available_phone_numbers;
 
 pub(crate) mod shape_search_contact_flow_modules;
@@ -392,6 +394,8 @@ pub(crate) mod shape_search_resource_tags;
 pub(crate) mod shape_search_routing_profiles;
 
 pub(crate) mod shape_search_security_profiles;
+
+pub(crate) mod shape_search_user_hierarchy_groups;
 
 pub(crate) mod shape_search_users;
 
@@ -711,6 +715,8 @@ pub(crate) mod shape_resume_contact_input;
 
 pub(crate) mod shape_resume_contact_recording_input;
 
+pub(crate) mod shape_search_agent_statuses_input;
+
 pub(crate) mod shape_search_available_phone_numbers_input;
 
 pub(crate) mod shape_search_contact_flow_modules_input;
@@ -734,6 +740,8 @@ pub(crate) mod shape_search_resource_tags_input;
 pub(crate) mod shape_search_routing_profiles_input;
 
 pub(crate) mod shape_search_security_profiles_input;
+
+pub(crate) mod shape_search_user_hierarchy_groups_input;
 
 pub(crate) mod shape_search_users_input;
 
@@ -878,6 +886,12 @@ pub(crate) mod shape_user_not_found_exception;
 pub(crate) mod shape_agent_config;
 
 pub(crate) mod shape_agent_status;
+
+pub(crate) mod shape_agent_status_list;
+
+pub(crate) mod shape_agent_status_search_criteria;
+
+pub(crate) mod shape_agent_status_search_filter;
 
 pub(crate) mod shape_agent_status_summary_list;
 
@@ -1201,6 +1215,12 @@ pub(crate) mod shape_user_data_filters;
 
 pub(crate) mod shape_user_data_list;
 
+pub(crate) mod shape_user_hierarchy_group_list;
+
+pub(crate) mod shape_user_hierarchy_group_search_criteria;
+
+pub(crate) mod shape_user_hierarchy_group_search_filter;
+
 pub(crate) mod shape_user_identity_info;
 
 pub(crate) mod shape_user_phone_config;
@@ -1272,6 +1292,8 @@ pub(crate) mod shape_contact_flow_summary;
 pub(crate) mod shape_contact_search_summary;
 
 pub(crate) mod shape_contact_tag_map;
+
+pub(crate) mod shape_control_plane_attribute_filter;
 
 pub(crate) mod shape_control_plane_tag_filter;
 
@@ -1368,6 +1390,8 @@ pub(crate) mod shape_kinesis_stream_config;
 pub(crate) mod shape_kinesis_video_stream_config;
 
 pub(crate) mod shape_lex_bot_config;
+
+pub(crate) mod shape_list_condition;
 
 pub(crate) mod shape_list_phone_numbers_summary;
 
@@ -1517,6 +1541,10 @@ pub(crate) mod shape_attribute_and_condition;
 
 pub(crate) mod shape_channel_to_count_map;
 
+pub(crate) mod shape_common_attribute_and_condition;
+
+pub(crate) mod shape_condition;
+
 pub(crate) mod shape_contact_search_summary_agent_info;
 
 pub(crate) mod shape_contact_search_summary_queue_info;
@@ -1622,6 +1650,8 @@ pub(crate) mod shape_hierarchy_group_summary_reference;
 pub(crate) mod shape_historical_metric_data;
 
 pub(crate) mod shape_metric_data_v2;
+
+pub(crate) mod shape_number_condition;
 
 pub(crate) mod shape_participant_timer_value;
 

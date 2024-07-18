@@ -325,6 +325,10 @@ pub(crate) mod shape_create_internet_gateway_input;
 
 pub(crate) mod shape_create_ipam;
 
+pub(crate) mod shape_create_ipam_external_resource_verification_token;
+
+pub(crate) mod shape_create_ipam_external_resource_verification_token_input;
+
 pub(crate) mod shape_create_ipam_input;
 
 pub(crate) mod shape_create_ipam_pool;
@@ -628,6 +632,10 @@ pub(crate) mod shape_delete_internet_gateway;
 pub(crate) mod shape_delete_internet_gateway_input;
 
 pub(crate) mod shape_delete_ipam;
+
+pub(crate) mod shape_delete_ipam_external_resource_verification_token;
+
+pub(crate) mod shape_delete_ipam_external_resource_verification_token_input;
 
 pub(crate) mod shape_delete_ipam_input;
 
@@ -1126,6 +1134,10 @@ pub(crate) mod shape_describe_internet_gateways_input;
 pub(crate) mod shape_describe_ipam_byoasn;
 
 pub(crate) mod shape_describe_ipam_byoasn_input;
+
+pub(crate) mod shape_describe_ipam_external_resource_verification_tokens;
+
+pub(crate) mod shape_describe_ipam_external_resource_verification_tokens_input;
 
 pub(crate) mod shape_describe_ipam_pools;
 
@@ -3068,6 +3080,10 @@ pub(crate) mod shape_ipam_discovered_account_set;
 pub(crate) mod shape_ipam_discovered_public_address_set;
 
 pub(crate) mod shape_ipam_discovered_resource_cidr_set;
+
+pub(crate) mod shape_ipam_external_resource_verification_token;
+
+pub(crate) mod shape_ipam_external_resource_verification_token_set;
 
 pub(crate) mod shape_ipam_pool;
 

@@ -403,4 +403,21 @@ impl CreateDeliveryStreamFluentBuilder {
     pub fn get_snowflake_destination_configuration(&self) -> &::std::option::Option<crate::types::SnowflakeDestinationConfiguration> {
         self.inner.get_snowflake_destination_configuration()
     }
+    /// <p>Configure Apache Iceberg Tables destination.</p>
+    /// <p>Amazon Data Firehose is in preview release and is subject to change.</p>
+    pub fn iceberg_destination_configuration(mut self, input: crate::types::IcebergDestinationConfiguration) -> Self {
+        self.inner = self.inner.iceberg_destination_configuration(input);
+        self
+    }
+    /// <p>Configure Apache Iceberg Tables destination.</p>
+    /// <p>Amazon Data Firehose is in preview release and is subject to change.</p>
+    pub fn set_iceberg_destination_configuration(mut self, input: ::std::option::Option<crate::types::IcebergDestinationConfiguration>) -> Self {
+        self.inner = self.inner.set_iceberg_destination_configuration(input);
+        self
+    }
+    /// <p>Configure Apache Iceberg Tables destination.</p>
+    /// <p>Amazon Data Firehose is in preview release and is subject to change.</p>
+    pub fn get_iceberg_destination_configuration(&self) -> &::std::option::Option<crate::types::IcebergDestinationConfiguration> {
+        self.inner.get_iceberg_destination_configuration()
+    }
 }

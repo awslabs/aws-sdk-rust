@@ -118,6 +118,11 @@ where
                                 crate::protocol_serde::shape_secrets_manager_configuration::de_secrets_manager_configuration(tokens)?,
                             );
                         }
+                        "BufferingHints" => {
+                            builder = builder.set_buffering_hints(
+                                crate::protocol_serde::shape_snowflake_buffering_hints::de_snowflake_buffering_hints(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

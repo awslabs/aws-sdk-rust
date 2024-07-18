@@ -20,6 +20,8 @@ pub struct UpdateInputInput {
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// The source URLs for a PULL-type input. Every PULL type input needs exactly two source URLs for redundancy. Only specify sources for PULL type Inputs. Leave Destinations empty.
     pub sources: ::std::option::Option<::std::vec::Vec<crate::types::InputSourceRequest>>,
+    /// The settings associated with an SRT input.
+    pub srt_settings: ::std::option::Option<crate::types::SrtSettingsRequest>,
 }
 impl UpdateInputInput {
     /// Destination settings for PUSH type inputs.
@@ -64,6 +66,10 @@ impl UpdateInputInput {
     pub fn sources(&self) -> &[crate::types::InputSourceRequest] {
         self.sources.as_deref().unwrap_or_default()
     }
+    /// The settings associated with an SRT input.
+    pub fn srt_settings(&self) -> ::std::option::Option<&crate::types::SrtSettingsRequest> {
+        self.srt_settings.as_ref()
+    }
 }
 impl UpdateInputInput {
     /// Creates a new builder-style object to manufacture [`UpdateInputInput`](crate::operation::update_input::UpdateInputInput).
@@ -84,6 +90,7 @@ pub struct UpdateInputInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) sources: ::std::option::Option<::std::vec::Vec<crate::types::InputSourceRequest>>,
+    pub(crate) srt_settings: ::std::option::Option<crate::types::SrtSettingsRequest>,
 }
 impl UpdateInputInputBuilder {
     /// Appends an item to `destinations`.
@@ -229,6 +236,20 @@ impl UpdateInputInputBuilder {
     pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputSourceRequest>> {
         &self.sources
     }
+    /// The settings associated with an SRT input.
+    pub fn srt_settings(mut self, input: crate::types::SrtSettingsRequest) -> Self {
+        self.srt_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// The settings associated with an SRT input.
+    pub fn set_srt_settings(mut self, input: ::std::option::Option<crate::types::SrtSettingsRequest>) -> Self {
+        self.srt_settings = input;
+        self
+    }
+    /// The settings associated with an SRT input.
+    pub fn get_srt_settings(&self) -> &::std::option::Option<crate::types::SrtSettingsRequest> {
+        &self.srt_settings
+    }
     /// Consumes the builder and constructs a [`UpdateInputInput`](crate::operation::update_input::UpdateInputInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_input::UpdateInputInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_input::UpdateInputInput {
@@ -240,6 +261,7 @@ impl UpdateInputInputBuilder {
             name: self.name,
             role_arn: self.role_arn,
             sources: self.sources,
+            srt_settings: self.srt_settings,
         })
     }
 }

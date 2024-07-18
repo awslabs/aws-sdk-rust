@@ -36,6 +36,8 @@ pub struct Input {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// The different types of inputs that AWS Elemental MediaLive supports.
     pub r#type: ::std::option::Option<crate::types::InputType>,
+    /// The settings associated with an SRT input.
+    pub srt_settings: ::std::option::Option<crate::types::SrtSettings>,
 }
 impl Input {
     /// The Unique ARN of the input (generated, immutable).
@@ -116,6 +118,10 @@ impl Input {
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::InputType> {
         self.r#type.as_ref()
     }
+    /// The settings associated with an SRT input.
+    pub fn srt_settings(&self) -> ::std::option::Option<&crate::types::SrtSettings> {
+        self.srt_settings.as_ref()
+    }
 }
 impl Input {
     /// Creates a new builder-style object to manufacture [`Input`](crate::types::Input).
@@ -144,6 +150,7 @@ pub struct InputBuilder {
     pub(crate) state: ::std::option::Option<crate::types::InputState>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) r#type: ::std::option::Option<crate::types::InputType>,
+    pub(crate) srt_settings: ::std::option::Option<crate::types::SrtSettings>,
 }
 impl InputBuilder {
     /// The Unique ARN of the input (generated, immutable).
@@ -418,6 +425,20 @@ impl InputBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::InputType> {
         &self.r#type
     }
+    /// The settings associated with an SRT input.
+    pub fn srt_settings(mut self, input: crate::types::SrtSettings) -> Self {
+        self.srt_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// The settings associated with an SRT input.
+    pub fn set_srt_settings(mut self, input: ::std::option::Option<crate::types::SrtSettings>) -> Self {
+        self.srt_settings = input;
+        self
+    }
+    /// The settings associated with an SRT input.
+    pub fn get_srt_settings(&self) -> &::std::option::Option<crate::types::SrtSettings> {
+        &self.srt_settings
+    }
     /// Consumes the builder and constructs a [`Input`](crate::types::Input).
     pub fn build(self) -> crate::types::Input {
         crate::types::Input {
@@ -437,6 +458,7 @@ impl InputBuilder {
             state: self.state,
             tags: self.tags,
             r#type: self.r#type,
+            srt_settings: self.srt_settings,
         }
     }
 }

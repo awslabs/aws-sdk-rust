@@ -15,5 +15,10 @@ pub fn ser_msk_source_configuration(
         crate::protocol_serde::shape_authentication_configuration::ser_authentication_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.read_from_timestamp {
+        object
+            .key("ReadFromTimestamp")
+            .date_time(var_3, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+    }
     Ok(())
 }

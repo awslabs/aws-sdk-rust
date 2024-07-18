@@ -521,6 +521,8 @@ pub use crate::types::_ipam_pool_cidr_failure_code::IpamPoolCidrFailureCode;
 
 pub use crate::types::_ipam_pool_cidr_state::IpamPoolCidrState;
 
+pub use crate::types::_verification_method::VerificationMethod;
+
 pub use crate::types::_ipam_cidr_authorization_context::IpamCidrAuthorizationContext;
 
 pub use crate::types::_byoasn::Byoasn;
@@ -1612,6 +1614,12 @@ pub use crate::types::_key_type::KeyType;
 pub use crate::types::_ipv6_pool::Ipv6Pool;
 
 pub use crate::types::_pool_cidr_block::PoolCidrBlock;
+
+pub use crate::types::_ipam_external_resource_verification_token::IpamExternalResourceVerificationToken;
+
+pub use crate::types::_ipam_external_resource_verification_token_state::IpamExternalResourceVerificationTokenState;
+
+pub use crate::types::_token_state::TokenState;
 
 pub use crate::types::_internet_gateway::InternetGateway;
 
@@ -3081,6 +3089,10 @@ mod _ipam_discovery_failure_code;
 
 mod _ipam_discovery_failure_reason;
 
+mod _ipam_external_resource_verification_token;
+
+mod _ipam_external_resource_verification_token_state;
+
 mod _ipam_management_state;
 
 mod _ipam_network_interface_attachment_status;
@@ -3955,6 +3967,8 @@ mod _through_resources_statement_request;
 
 mod _tiering_operation_status;
 
+mod _token_state;
+
 mod _total_local_storage_gb;
 
 mod _total_local_storage_gb_request;
@@ -4142,6 +4156,8 @@ mod _v_cpu_info;
 mod _validation_error;
 
 mod _validation_warning;
+
+mod _verification_method;
 
 mod _verified_access_endpoint;
 

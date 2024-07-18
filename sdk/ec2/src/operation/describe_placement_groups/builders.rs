@@ -22,7 +22,10 @@ impl crate::operation::describe_placement_groups::builders::DescribePlacementGro
 }
 /// Fluent builder constructing a request to `DescribePlacementGroups`.
 ///
-/// <p>Describes the specified placement groups or all of your placement groups. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement groups</a> in the <i>Amazon EC2 User Guide</i>.</p>
+/// <p>Describes the specified placement groups or all of your placement groups.</p><note>
+/// <p>To describe a specific placement group that is <i>shared</i> with your account, you must specify the ID of the placement group using the <code>GroupId</code> parameter. Specifying the name of a <i>shared</i> placement group using the <code>GroupNames</code> parameter will result in an error.</p>
+/// </note>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement groups</a> in the <i>Amazon EC2 User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribePlacementGroupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -195,19 +198,37 @@ impl DescribePlacementGroupsFluentBuilder {
     /// To override the contents of this collection use [`set_group_names`](Self::set_group_names).
     ///
     /// <p>The names of the placement groups.</p>
-    /// <p>Default: Describes all your placement groups, or only those otherwise specified.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You can specify a name only if the placement group is owned by your account.</p></li>
+    /// <li>
+    /// <p>If a placement group is <i>shared</i> with your account, specifying the name results in an error. You must use the <code>GroupId</code> parameter instead.</p></li>
+    /// </ul>
     pub fn group_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_names(input.into());
         self
     }
     /// <p>The names of the placement groups.</p>
-    /// <p>Default: Describes all your placement groups, or only those otherwise specified.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You can specify a name only if the placement group is owned by your account.</p></li>
+    /// <li>
+    /// <p>If a placement group is <i>shared</i> with your account, specifying the name results in an error. You must use the <code>GroupId</code> parameter instead.</p></li>
+    /// </ul>
     pub fn set_group_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_group_names(input);
         self
     }
     /// <p>The names of the placement groups.</p>
-    /// <p>Default: Describes all your placement groups, or only those otherwise specified.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You can specify a name only if the placement group is owned by your account.</p></li>
+    /// <li>
+    /// <p>If a placement group is <i>shared</i> with your account, specifying the name results in an error. You must use the <code>GroupId</code> parameter instead.</p></li>
+    /// </ul>
     pub fn get_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_group_names()
     }

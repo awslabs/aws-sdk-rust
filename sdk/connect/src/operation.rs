@@ -520,6 +520,9 @@ pub mod resume_contact;
 /// Types for the `ResumeContactRecording` operation.
 pub mod resume_contact_recording;
 
+/// Types for the `SearchAgentStatuses` operation.
+pub mod search_agent_statuses;
+
 /// Types for the `SearchAvailablePhoneNumbers` operation.
 pub mod search_available_phone_numbers;
 
@@ -555,6 +558,9 @@ pub mod search_routing_profiles;
 
 /// Types for the `SearchSecurityProfiles` operation.
 pub mod search_security_profiles;
+
+/// Types for the `SearchUserHierarchyGroups` operation.
+pub mod search_user_hierarchy_groups;
 
 /// Types for the `SearchUsers` operation.
 pub mod search_users;

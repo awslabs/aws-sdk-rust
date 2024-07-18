@@ -451,6 +451,10 @@ pub(crate) mod shape_reservation;
 
 pub(crate) mod shape_reservation_resource_specification;
 
+pub(crate) mod shape_srt_settings;
+
+pub(crate) mod shape_srt_settings_request;
+
 pub(crate) mod shape_successful_monitor_deployment;
 
 pub(crate) mod shape_tag_map;
@@ -521,6 +525,8 @@ pub(crate) mod shape_list_of_integer;
 
 pub(crate) mod shape_list_of_output_group;
 
+pub(crate) mod shape_list_of_srt_caller_source;
+
 pub(crate) mod shape_list_of_video_description;
 
 pub(crate) mod shape_media_connect_flow;
@@ -558,6 +564,8 @@ pub(crate) mod shape_pipeline_detail;
 pub(crate) mod shape_schedule_action;
 
 pub(crate) mod shape_signal_map_summary;
+
+pub(crate) mod shape_srt_caller_source_request;
 
 pub(crate) mod shape_thumbnail_configuration;
 
@@ -628,6 +636,10 @@ pub(crate) mod shape_remix_settings;
 pub(crate) mod shape_schedule_action_settings;
 
 pub(crate) mod shape_schedule_action_start_settings;
+
+pub(crate) mod shape_srt_caller_decryption_request;
+
+pub(crate) mod shape_srt_caller_source;
 
 pub(crate) mod shape_video_codec_settings;
 
@@ -756,6 +768,8 @@ pub(crate) mod shape_scte35_time_signal_apos;
 pub(crate) mod shape_scte35_time_signal_schedule_action_settings;
 
 pub(crate) mod shape_smpte_tt_destination_settings;
+
+pub(crate) mod shape_srt_caller_decryption;
 
 pub(crate) mod shape_static_image_activate_schedule_action_settings;
 

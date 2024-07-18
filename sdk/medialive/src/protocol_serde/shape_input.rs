@@ -100,6 +100,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "srtSettings" => {
+                            builder = builder.set_srt_settings(crate::protocol_serde::shape_srt_settings::de_srt_settings(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

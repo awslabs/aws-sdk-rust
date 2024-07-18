@@ -121,6 +121,10 @@ pub(crate) mod shape_http_endpoint_destination_configuration;
 
 pub(crate) mod shape_http_endpoint_destination_update;
 
+pub(crate) mod shape_iceberg_destination_configuration;
+
+pub(crate) mod shape_iceberg_destination_update;
+
 pub(crate) mod shape_kinesis_stream_source_configuration;
 
 pub(crate) mod shape_list_tags_for_delivery_stream_output_tag_list;
@@ -161,6 +165,8 @@ pub(crate) mod shape_authentication_configuration;
 
 pub(crate) mod shape_buffering_hints;
 
+pub(crate) mod shape_catalog_configuration;
+
 pub(crate) mod shape_cloud_watch_logging_options;
 
 pub(crate) mod shape_copy_command;
@@ -170,6 +176,8 @@ pub(crate) mod shape_data_format_conversion_configuration;
 pub(crate) mod shape_delivery_stream_encryption_configuration;
 
 pub(crate) mod shape_destination_description_list;
+
+pub(crate) mod shape_destination_table_configuration;
 
 pub(crate) mod shape_document_id_options;
 
@@ -197,7 +205,11 @@ pub(crate) mod shape_put_record_batch_response_entry;
 
 pub(crate) mod shape_redshift_retry_options;
 
+pub(crate) mod shape_retry_options;
+
 pub(crate) mod shape_secrets_manager_configuration;
+
+pub(crate) mod shape_snowflake_buffering_hints;
 
 pub(crate) mod shape_snowflake_retry_options;
 
@@ -229,8 +241,6 @@ pub(crate) mod shape_output_format_configuration;
 
 pub(crate) mod shape_processor;
 
-pub(crate) mod shape_retry_options;
-
 pub(crate) mod shape_schema_configuration;
 
 pub(crate) mod shape_amazon_open_search_serverless_destination_description;
@@ -245,6 +255,8 @@ pub(crate) mod shape_extended_s3_destination_description;
 
 pub(crate) mod shape_http_endpoint_destination_description;
 
+pub(crate) mod shape_iceberg_destination_description;
+
 pub(crate) mod shape_processor_parameter;
 
 pub(crate) mod shape_redshift_destination_description;
@@ -256,6 +268,8 @@ pub(crate) mod shape_serializer;
 pub(crate) mod shape_snowflake_destination_description;
 
 pub(crate) mod shape_splunk_destination_description;
+
+pub(crate) mod shape_destination_table_configuration_list;
 
 pub(crate) mod shape_hive_json_ser_de;
 
@@ -277,10 +291,10 @@ pub(crate) mod shape_security_group_id_list;
 
 pub(crate) mod shape_subnet_id_list;
 
+pub(crate) mod shape_list_of_non_empty_strings_without_whitespace;
+
 pub(crate) mod shape_processor_parameter_list;
 
 pub(crate) mod shape_column_to_json_key_mappings;
 
 pub(crate) mod shape_list_of_non_empty_strings;
-
-pub(crate) mod shape_list_of_non_empty_strings_without_whitespace;

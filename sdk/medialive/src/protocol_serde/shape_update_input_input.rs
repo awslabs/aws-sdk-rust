@@ -66,5 +66,11 @@ pub fn ser_update_input_input_input(
         }
         array_19.finish();
     }
+    if let Some(var_22) = &input.srt_settings {
+        #[allow(unused_mut)]
+        let mut object_23 = object.key("srtSettings").start_object();
+        crate::protocol_serde::shape_srt_settings_request::ser_srt_settings_request(&mut object_23, var_22)?;
+        object_23.finish();
+    }
     Ok(())
 }

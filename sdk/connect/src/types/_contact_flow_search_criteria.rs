@@ -8,9 +8,7 @@ pub struct ContactFlowSearchCriteria {
     pub or_conditions: ::std::option::Option<::std::vec::Vec<crate::types::ContactFlowSearchCriteria>>,
     /// <p>A list of conditions which would be applied together with an <code>AND</code> condition.</p>
     pub and_conditions: ::std::option::Option<::std::vec::Vec<crate::types::ContactFlowSearchCriteria>>,
-    /// <p>A leaf node condition which can be used to specify a string condition.</p><note>
-    /// <p>The currently supported values for <code>FieldName</code> are <code>name</code> and <code>description</code>.</p>
-    /// </note>
+    /// <p>A leaf node condition which can be used to specify a string condition.</p>
     pub string_condition: ::std::option::Option<crate::types::StringCondition>,
     /// <p>The type of flow.</p>
     pub type_condition: ::std::option::Option<crate::types::ContactFlowType>,
@@ -32,9 +30,7 @@ impl ContactFlowSearchCriteria {
     pub fn and_conditions(&self) -> &[crate::types::ContactFlowSearchCriteria] {
         self.and_conditions.as_deref().unwrap_or_default()
     }
-    /// <p>A leaf node condition which can be used to specify a string condition.</p><note>
-    /// <p>The currently supported values for <code>FieldName</code> are <code>name</code> and <code>description</code>.</p>
-    /// </note>
+    /// <p>A leaf node condition which can be used to specify a string condition.</p>
     pub fn string_condition(&self) -> ::std::option::Option<&crate::types::StringCondition> {
         self.string_condition.as_ref()
     }
@@ -110,23 +106,17 @@ impl ContactFlowSearchCriteriaBuilder {
     pub fn get_and_conditions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContactFlowSearchCriteria>> {
         &self.and_conditions
     }
-    /// <p>A leaf node condition which can be used to specify a string condition.</p><note>
-    /// <p>The currently supported values for <code>FieldName</code> are <code>name</code> and <code>description</code>.</p>
-    /// </note>
+    /// <p>A leaf node condition which can be used to specify a string condition.</p>
     pub fn string_condition(mut self, input: crate::types::StringCondition) -> Self {
         self.string_condition = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A leaf node condition which can be used to specify a string condition.</p><note>
-    /// <p>The currently supported values for <code>FieldName</code> are <code>name</code> and <code>description</code>.</p>
-    /// </note>
+    /// <p>A leaf node condition which can be used to specify a string condition.</p>
     pub fn set_string_condition(mut self, input: ::std::option::Option<crate::types::StringCondition>) -> Self {
         self.string_condition = input;
         self
     }
-    /// <p>A leaf node condition which can be used to specify a string condition.</p><note>
-    /// <p>The currently supported values for <code>FieldName</code> are <code>name</code> and <code>description</code>.</p>
-    /// </note>
+    /// <p>A leaf node condition which can be used to specify a string condition.</p>
     pub fn get_string_condition(&self) -> &::std::option::Option<crate::types::StringCondition> {
         &self.string_condition
     }

@@ -24,7 +24,13 @@ pub struct DescribePlacementGroupsInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The names of the placement groups.</p>
-    /// <p>Default: Describes all your placement groups, or only those otherwise specified.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You can specify a name only if the placement group is owned by your account.</p></li>
+    /// <li>
+    /// <p>If a placement group is <i>shared</i> with your account, specifying the name results in an error. You must use the <code>GroupId</code> parameter instead.</p></li>
+    /// </ul>
     pub group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IDs of the placement groups.</p>
     pub group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -57,7 +63,13 @@ impl DescribePlacementGroupsInput {
         self.dry_run
     }
     /// <p>The names of the placement groups.</p>
-    /// <p>Default: Describes all your placement groups, or only those otherwise specified.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You can specify a name only if the placement group is owned by your account.</p></li>
+    /// <li>
+    /// <p>If a placement group is <i>shared</i> with your account, specifying the name results in an error. You must use the <code>GroupId</code> parameter instead.</p></li>
+    /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_names.is_none()`.
     pub fn group_names(&self) -> &[::std::string::String] {
@@ -174,7 +186,13 @@ impl DescribePlacementGroupsInputBuilder {
     /// To override the contents of this collection use [`set_group_names`](Self::set_group_names).
     ///
     /// <p>The names of the placement groups.</p>
-    /// <p>Default: Describes all your placement groups, or only those otherwise specified.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You can specify a name only if the placement group is owned by your account.</p></li>
+    /// <li>
+    /// <p>If a placement group is <i>shared</i> with your account, specifying the name results in an error. You must use the <code>GroupId</code> parameter instead.</p></li>
+    /// </ul>
     pub fn group_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.group_names.unwrap_or_default();
         v.push(input.into());
@@ -182,13 +200,25 @@ impl DescribePlacementGroupsInputBuilder {
         self
     }
     /// <p>The names of the placement groups.</p>
-    /// <p>Default: Describes all your placement groups, or only those otherwise specified.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You can specify a name only if the placement group is owned by your account.</p></li>
+    /// <li>
+    /// <p>If a placement group is <i>shared</i> with your account, specifying the name results in an error. You must use the <code>GroupId</code> parameter instead.</p></li>
+    /// </ul>
     pub fn set_group_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.group_names = input;
         self
     }
     /// <p>The names of the placement groups.</p>
-    /// <p>Default: Describes all your placement groups, or only those otherwise specified.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You can specify a name only if the placement group is owned by your account.</p></li>
+    /// <li>
+    /// <p>If a placement group is <i>shared</i> with your account, specifying the name results in an error. You must use the <code>GroupId</code> parameter instead.</p></li>
+    /// </ul>
     pub fn get_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.group_names
     }

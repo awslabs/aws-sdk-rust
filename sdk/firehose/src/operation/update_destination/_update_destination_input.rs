@@ -28,6 +28,9 @@ pub struct UpdateDestinationInput {
     pub amazon_open_search_serverless_destination_update: ::std::option::Option<crate::types::AmazonOpenSearchServerlessDestinationUpdate>,
     /// <p>Update to the Snowflake destination configuration settings.</p>
     pub snowflake_destination_update: ::std::option::Option<crate::types::SnowflakeDestinationUpdate>,
+    /// <p>Describes an update for a destination in Apache Iceberg Tables.</p>
+    /// <p>Amazon Data Firehose is in preview release and is subject to change.</p>
+    pub iceberg_destination_update: ::std::option::Option<crate::types::IcebergDestinationUpdate>,
 }
 impl UpdateDestinationInput {
     /// <p>The name of the delivery stream.</p>
@@ -81,6 +84,11 @@ impl UpdateDestinationInput {
     pub fn snowflake_destination_update(&self) -> ::std::option::Option<&crate::types::SnowflakeDestinationUpdate> {
         self.snowflake_destination_update.as_ref()
     }
+    /// <p>Describes an update for a destination in Apache Iceberg Tables.</p>
+    /// <p>Amazon Data Firehose is in preview release and is subject to change.</p>
+    pub fn iceberg_destination_update(&self) -> ::std::option::Option<&crate::types::IcebergDestinationUpdate> {
+        self.iceberg_destination_update.as_ref()
+    }
 }
 impl UpdateDestinationInput {
     /// Creates a new builder-style object to manufacture [`UpdateDestinationInput`](crate::operation::update_destination::UpdateDestinationInput).
@@ -105,6 +113,7 @@ pub struct UpdateDestinationInputBuilder {
     pub(crate) http_endpoint_destination_update: ::std::option::Option<crate::types::HttpEndpointDestinationUpdate>,
     pub(crate) amazon_open_search_serverless_destination_update: ::std::option::Option<crate::types::AmazonOpenSearchServerlessDestinationUpdate>,
     pub(crate) snowflake_destination_update: ::std::option::Option<crate::types::SnowflakeDestinationUpdate>,
+    pub(crate) iceberg_destination_update: ::std::option::Option<crate::types::IcebergDestinationUpdate>,
 }
 impl UpdateDestinationInputBuilder {
     /// <p>The name of the delivery stream.</p>
@@ -289,6 +298,23 @@ impl UpdateDestinationInputBuilder {
     pub fn get_snowflake_destination_update(&self) -> &::std::option::Option<crate::types::SnowflakeDestinationUpdate> {
         &self.snowflake_destination_update
     }
+    /// <p>Describes an update for a destination in Apache Iceberg Tables.</p>
+    /// <p>Amazon Data Firehose is in preview release and is subject to change.</p>
+    pub fn iceberg_destination_update(mut self, input: crate::types::IcebergDestinationUpdate) -> Self {
+        self.iceberg_destination_update = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes an update for a destination in Apache Iceberg Tables.</p>
+    /// <p>Amazon Data Firehose is in preview release and is subject to change.</p>
+    pub fn set_iceberg_destination_update(mut self, input: ::std::option::Option<crate::types::IcebergDestinationUpdate>) -> Self {
+        self.iceberg_destination_update = input;
+        self
+    }
+    /// <p>Describes an update for a destination in Apache Iceberg Tables.</p>
+    /// <p>Amazon Data Firehose is in preview release and is subject to change.</p>
+    pub fn get_iceberg_destination_update(&self) -> &::std::option::Option<crate::types::IcebergDestinationUpdate> {
+        &self.iceberg_destination_update
+    }
     /// Consumes the builder and constructs a [`UpdateDestinationInput`](crate::operation::update_destination::UpdateDestinationInput).
     pub fn build(
         self,
@@ -306,6 +332,7 @@ impl UpdateDestinationInputBuilder {
             http_endpoint_destination_update: self.http_endpoint_destination_update,
             amazon_open_search_serverless_destination_update: self.amazon_open_search_serverless_destination_update,
             snowflake_destination_update: self.snowflake_destination_update,
+            iceberg_destination_update: self.iceberg_destination_update,
         })
     }
 }

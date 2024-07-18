@@ -509,6 +509,8 @@ mod resume_contact;
 
 mod resume_contact_recording;
 
+mod search_agent_statuses;
+
 mod search_available_phone_numbers;
 
 mod search_contact_flow_modules;
@@ -532,6 +534,8 @@ mod search_resource_tags;
 mod search_routing_profiles;
 
 mod search_security_profiles;
+
+mod search_user_hierarchy_groups;
 
 mod search_users;
 

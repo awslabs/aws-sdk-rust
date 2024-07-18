@@ -26,6 +26,8 @@ pub struct CreateInputInput {
     pub r#type: ::std::option::Option<crate::types::InputType>,
     /// Settings for a private VPC Input. When this property is specified, the input destination addresses will be created in a VPC rather than with public Internet addresses. This property requires setting the roleArn property on Input creation. Not compatible with the inputSecurityGroups property.
     pub vpc: ::std::option::Option<crate::types::InputVpcRequest>,
+    /// The settings associated with an SRT input.
+    pub srt_settings: ::std::option::Option<crate::types::SrtSettingsRequest>,
 }
 impl CreateInputInput {
     /// Destination settings for PUSH type inputs.
@@ -82,6 +84,10 @@ impl CreateInputInput {
     pub fn vpc(&self) -> ::std::option::Option<&crate::types::InputVpcRequest> {
         self.vpc.as_ref()
     }
+    /// The settings associated with an SRT input.
+    pub fn srt_settings(&self) -> ::std::option::Option<&crate::types::SrtSettingsRequest> {
+        self.srt_settings.as_ref()
+    }
 }
 impl CreateInputInput {
     /// Creates a new builder-style object to manufacture [`CreateInputInput`](crate::operation::create_input::CreateInputInput).
@@ -105,6 +111,7 @@ pub struct CreateInputInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) r#type: ::std::option::Option<crate::types::InputType>,
     pub(crate) vpc: ::std::option::Option<crate::types::InputVpcRequest>,
+    pub(crate) srt_settings: ::std::option::Option<crate::types::SrtSettingsRequest>,
 }
 impl CreateInputInputBuilder {
     /// Appends an item to `destinations`.
@@ -297,6 +304,20 @@ impl CreateInputInputBuilder {
     pub fn get_vpc(&self) -> &::std::option::Option<crate::types::InputVpcRequest> {
         &self.vpc
     }
+    /// The settings associated with an SRT input.
+    pub fn srt_settings(mut self, input: crate::types::SrtSettingsRequest) -> Self {
+        self.srt_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// The settings associated with an SRT input.
+    pub fn set_srt_settings(mut self, input: ::std::option::Option<crate::types::SrtSettingsRequest>) -> Self {
+        self.srt_settings = input;
+        self
+    }
+    /// The settings associated with an SRT input.
+    pub fn get_srt_settings(&self) -> &::std::option::Option<crate::types::SrtSettingsRequest> {
+        &self.srt_settings
+    }
     /// Consumes the builder and constructs a [`CreateInputInput`](crate::operation::create_input::CreateInputInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_input::CreateInputInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_input::CreateInputInput {
@@ -311,6 +332,7 @@ impl CreateInputInputBuilder {
             tags: self.tags,
             r#type: self.r#type,
             vpc: self.vpc,
+            srt_settings: self.srt_settings,
         })
     }
 }

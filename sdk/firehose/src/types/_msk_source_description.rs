@@ -12,6 +12,9 @@ pub struct MskSourceDescription {
     pub authentication_configuration: ::std::option::Option<crate::types::AuthenticationConfiguration>,
     /// <p>Firehose starts retrieving records from the topic within the Amazon MSK cluster starting with this timestamp.</p>
     pub delivery_start_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The start date and time in UTC for the offset position within your MSK topic from where Firehose begins to read. By default, this is set to timestamp when Firehose becomes Active.</p>
+    /// <p>If you want to create a Firehose stream with Earliest start position from SDK or CLI, you need to set the <code>ReadFromTimestampUTC</code> parameter to Epoch (1970-01-01T00:00:00Z).</p>
+    pub read_from_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl MskSourceDescription {
     /// <p>The ARN of the Amazon MSK cluster.</p>
@@ -30,6 +33,11 @@ impl MskSourceDescription {
     pub fn delivery_start_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.delivery_start_timestamp.as_ref()
     }
+    /// <p>The start date and time in UTC for the offset position within your MSK topic from where Firehose begins to read. By default, this is set to timestamp when Firehose becomes Active.</p>
+    /// <p>If you want to create a Firehose stream with Earliest start position from SDK or CLI, you need to set the <code>ReadFromTimestampUTC</code> parameter to Epoch (1970-01-01T00:00:00Z).</p>
+    pub fn read_from_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.read_from_timestamp.as_ref()
+    }
 }
 impl MskSourceDescription {
     /// Creates a new builder-style object to manufacture [`MskSourceDescription`](crate::types::MskSourceDescription).
@@ -46,6 +54,7 @@ pub struct MskSourceDescriptionBuilder {
     pub(crate) topic_name: ::std::option::Option<::std::string::String>,
     pub(crate) authentication_configuration: ::std::option::Option<crate::types::AuthenticationConfiguration>,
     pub(crate) delivery_start_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) read_from_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl MskSourceDescriptionBuilder {
     /// <p>The ARN of the Amazon MSK cluster.</p>
@@ -104,6 +113,23 @@ impl MskSourceDescriptionBuilder {
     pub fn get_delivery_start_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.delivery_start_timestamp
     }
+    /// <p>The start date and time in UTC for the offset position within your MSK topic from where Firehose begins to read. By default, this is set to timestamp when Firehose becomes Active.</p>
+    /// <p>If you want to create a Firehose stream with Earliest start position from SDK or CLI, you need to set the <code>ReadFromTimestampUTC</code> parameter to Epoch (1970-01-01T00:00:00Z).</p>
+    pub fn read_from_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.read_from_timestamp = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The start date and time in UTC for the offset position within your MSK topic from where Firehose begins to read. By default, this is set to timestamp when Firehose becomes Active.</p>
+    /// <p>If you want to create a Firehose stream with Earliest start position from SDK or CLI, you need to set the <code>ReadFromTimestampUTC</code> parameter to Epoch (1970-01-01T00:00:00Z).</p>
+    pub fn set_read_from_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.read_from_timestamp = input;
+        self
+    }
+    /// <p>The start date and time in UTC for the offset position within your MSK topic from where Firehose begins to read. By default, this is set to timestamp when Firehose becomes Active.</p>
+    /// <p>If you want to create a Firehose stream with Earliest start position from SDK or CLI, you need to set the <code>ReadFromTimestampUTC</code> parameter to Epoch (1970-01-01T00:00:00Z).</p>
+    pub fn get_read_from_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.read_from_timestamp
+    }
     /// Consumes the builder and constructs a [`MskSourceDescription`](crate::types::MskSourceDescription).
     pub fn build(self) -> crate::types::MskSourceDescription {
         crate::types::MskSourceDescription {
@@ -111,6 +137,7 @@ impl MskSourceDescriptionBuilder {
             topic_name: self.topic_name,
             authentication_configuration: self.authentication_configuration,
             delivery_start_timestamp: self.delivery_start_timestamp,
+            read_from_timestamp: self.read_from_timestamp,
         }
     }
 }

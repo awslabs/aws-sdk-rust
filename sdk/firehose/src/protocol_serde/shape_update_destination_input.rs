@@ -72,5 +72,11 @@ pub fn ser_update_destination_input_input(
         crate::protocol_serde::shape_snowflake_destination_update::ser_snowflake_destination_update(&mut object_21, var_20)?;
         object_21.finish();
     }
+    if let Some(var_22) = &input.iceberg_destination_update {
+        #[allow(unused_mut)]
+        let mut object_23 = object.key("IcebergDestinationUpdate").start_object();
+        crate::protocol_serde::shape_iceberg_destination_update::ser_iceberg_destination_update(&mut object_23, var_22)?;
+        object_23.finish();
+    }
     Ok(())
 }

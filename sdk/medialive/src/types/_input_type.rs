@@ -19,6 +19,7 @@
 ///     InputType::RtmpPull => { /* ... */ },
 ///     InputType::RtmpPush => { /* ... */ },
 ///     InputType::RtpPush => { /* ... */ },
+///     InputType::SrtCaller => { /* ... */ },
 ///     InputType::TsFile => { /* ... */ },
 ///     InputType::UdpPush => { /* ... */ },
 ///     InputType::UrlPull => { /* ... */ },
@@ -64,6 +65,8 @@ pub enum InputType {
     #[allow(missing_docs)] // documentation missing in model
     RtpPush,
     #[allow(missing_docs)] // documentation missing in model
+    SrtCaller,
+    #[allow(missing_docs)] // documentation missing in model
     TsFile,
     #[allow(missing_docs)] // documentation missing in model
     UdpPush,
@@ -83,6 +86,7 @@ impl ::std::convert::From<&str> for InputType {
             "RTMP_PULL" => InputType::RtmpPull,
             "RTMP_PUSH" => InputType::RtmpPush,
             "RTP_PUSH" => InputType::RtpPush,
+            "SRT_CALLER" => InputType::SrtCaller,
             "TS_FILE" => InputType::TsFile,
             "UDP_PUSH" => InputType::UdpPush,
             "URL_PULL" => InputType::UrlPull,
@@ -108,6 +112,7 @@ impl InputType {
             InputType::RtmpPull => "RTMP_PULL",
             InputType::RtmpPush => "RTMP_PUSH",
             InputType::RtpPush => "RTP_PUSH",
+            InputType::SrtCaller => "SRT_CALLER",
             InputType::TsFile => "TS_FILE",
             InputType::UdpPush => "UDP_PUSH",
             InputType::UrlPull => "URL_PULL",
@@ -124,6 +129,7 @@ impl InputType {
             "RTMP_PULL",
             "RTMP_PUSH",
             "RTP_PUSH",
+            "SRT_CALLER",
             "TS_FILE",
             "UDP_PUSH",
             "URL_PULL",
@@ -157,6 +163,7 @@ impl ::std::fmt::Display for InputType {
             InputType::RtmpPull => write!(f, "RTMP_PULL"),
             InputType::RtmpPush => write!(f, "RTMP_PUSH"),
             InputType::RtpPush => write!(f, "RTP_PUSH"),
+            InputType::SrtCaller => write!(f, "SRT_CALLER"),
             InputType::TsFile => write!(f, "TS_FILE"),
             InputType::UdpPush => write!(f, "UDP_PUSH"),
             InputType::UrlPull => write!(f, "URL_PULL"),

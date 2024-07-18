@@ -6240,6 +6240,40 @@ impl From<crate::operation::resume_contact_recording::ResumeContactRecordingErro
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_agent_statuses::SearchAgentStatusesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_agent_statuses::SearchAgentStatusesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::search_agent_statuses::SearchAgentStatusesError> for Error {
+    fn from(err: crate::operation::search_agent_statuses::SearchAgentStatusesError) -> Self {
+        match err {
+            crate::operation::search_agent_statuses::SearchAgentStatusesError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::search_agent_statuses::SearchAgentStatusesError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::search_agent_statuses::SearchAgentStatusesError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::search_agent_statuses::SearchAgentStatusesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::search_agent_statuses::SearchAgentStatusesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::search_agent_statuses::SearchAgentStatusesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersError, R>>
     for Error
@@ -6645,6 +6679,45 @@ impl From<crate::operation::search_security_profiles::SearchSecurityProfilesErro
             }
             crate::operation::search_security_profiles::SearchSecurityProfilesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::search_security_profiles::SearchSecurityProfilesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_user_hierarchy_groups::SearchUserHierarchyGroupsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_user_hierarchy_groups::SearchUserHierarchyGroupsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::search_user_hierarchy_groups::SearchUserHierarchyGroupsError> for Error {
+    fn from(err: crate::operation::search_user_hierarchy_groups::SearchUserHierarchyGroupsError) -> Self {
+        match err {
+            crate::operation::search_user_hierarchy_groups::SearchUserHierarchyGroupsError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::search_user_hierarchy_groups::SearchUserHierarchyGroupsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::search_user_hierarchy_groups::SearchUserHierarchyGroupsError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::search_user_hierarchy_groups::SearchUserHierarchyGroupsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::search_user_hierarchy_groups::SearchUserHierarchyGroupsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::search_user_hierarchy_groups::SearchUserHierarchyGroupsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

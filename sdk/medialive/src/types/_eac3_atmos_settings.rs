@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Eac3AtmosSettings {
-    /// Average bitrate in bits/second. Valid bitrates depend on the coding mode. // * @affectsRightSizing true
+    /// Average bitrate in bits/second. Valid bitrates depend on the coding mode.
     pub bitrate: ::std::option::Option<f64>,
     /// Dolby Digital Plus with Dolby Atmos coding mode. Determines number of channels.
     pub coding_mode: ::std::option::Option<crate::types::Eac3AtmosCodingMode>,
@@ -20,7 +20,7 @@ pub struct Eac3AtmosSettings {
     pub surround_trim: ::std::option::Option<f64>,
 }
 impl Eac3AtmosSettings {
-    /// Average bitrate in bits/second. Valid bitrates depend on the coding mode. // * @affectsRightSizing true
+    /// Average bitrate in bits/second. Valid bitrates depend on the coding mode.
     pub fn bitrate(&self) -> ::std::option::Option<f64> {
         self.bitrate
     }
@@ -69,17 +69,17 @@ pub struct Eac3AtmosSettingsBuilder {
     pub(crate) surround_trim: ::std::option::Option<f64>,
 }
 impl Eac3AtmosSettingsBuilder {
-    /// Average bitrate in bits/second. Valid bitrates depend on the coding mode. // * @affectsRightSizing true
+    /// Average bitrate in bits/second. Valid bitrates depend on the coding mode.
     pub fn bitrate(mut self, input: f64) -> Self {
         self.bitrate = ::std::option::Option::Some(input);
         self
     }
-    /// Average bitrate in bits/second. Valid bitrates depend on the coding mode. // * @affectsRightSizing true
+    /// Average bitrate in bits/second. Valid bitrates depend on the coding mode.
     pub fn set_bitrate(mut self, input: ::std::option::Option<f64>) -> Self {
         self.bitrate = input;
         self
     }
-    /// Average bitrate in bits/second. Valid bitrates depend on the coding mode. // * @affectsRightSizing true
+    /// Average bitrate in bits/second. Valid bitrates depend on the coding mode.
     pub fn get_bitrate(&self) -> &::std::option::Option<f64> {
         &self.bitrate
     }

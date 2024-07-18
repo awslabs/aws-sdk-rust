@@ -30,7 +30,7 @@ pub struct IpamDiscoveredResourceCidr {
     pub ip_usage: ::std::option::Option<f64>,
     /// <p>The VPC ID.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
-    /// <p>For elastic IP addresses, this is the status of an attached network interface.</p>
+    /// <p>For elastic network interfaces, this is the status of whether or not the elastic network interface is attached.</p>
     pub network_interface_attachment_status: ::std::option::Option<crate::types::IpamNetworkInterfaceAttachmentStatus>,
     /// <p>The last successful resource discovery time.</p>
     pub sample_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -84,7 +84,7 @@ impl IpamDiscoveredResourceCidr {
     pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
-    /// <p>For elastic IP addresses, this is the status of an attached network interface.</p>
+    /// <p>For elastic network interfaces, this is the status of whether or not the elastic network interface is attached.</p>
     pub fn network_interface_attachment_status(&self) -> ::std::option::Option<&crate::types::IpamNetworkInterfaceAttachmentStatus> {
         self.network_interface_attachment_status.as_ref()
     }
@@ -278,12 +278,12 @@ impl IpamDiscoveredResourceCidrBuilder {
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_id
     }
-    /// <p>For elastic IP addresses, this is the status of an attached network interface.</p>
+    /// <p>For elastic network interfaces, this is the status of whether or not the elastic network interface is attached.</p>
     pub fn network_interface_attachment_status(mut self, input: crate::types::IpamNetworkInterfaceAttachmentStatus) -> Self {
         self.network_interface_attachment_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>For elastic IP addresses, this is the status of an attached network interface.</p>
+    /// <p>For elastic network interfaces, this is the status of whether or not the elastic network interface is attached.</p>
     pub fn set_network_interface_attachment_status(
         mut self,
         input: ::std::option::Option<crate::types::IpamNetworkInterfaceAttachmentStatus>,
@@ -291,7 +291,7 @@ impl IpamDiscoveredResourceCidrBuilder {
         self.network_interface_attachment_status = input;
         self
     }
-    /// <p>For elastic IP addresses, this is the status of an attached network interface.</p>
+    /// <p>For elastic network interfaces, this is the status of whether or not the elastic network interface is attached.</p>
     pub fn get_network_interface_attachment_status(&self) -> &::std::option::Option<crate::types::IpamNetworkInterfaceAttachmentStatus> {
         &self.network_interface_attachment_status
     }

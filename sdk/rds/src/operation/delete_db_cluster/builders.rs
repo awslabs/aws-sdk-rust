@@ -207,17 +207,23 @@ impl DeleteDBClusterFluentBuilder {
     pub fn get_final_db_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_final_db_snapshot_identifier()
     }
-    /// <p>Specifies whether to remove automated backups immediately after the DB cluster is deleted. This parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB cluster is deleted.</p>
+    /// <p>Specifies whether to remove automated backups immediately after the DB cluster is deleted. This parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB cluster is deleted.</p><note>
+    /// <p>You must delete automated backups for Amazon RDS Multi-AZ DB clusters. For more information about managing automated backups for RDS Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ManagingAutomatedBackups.html">Managing automated backups</a>.</p>
+    /// </note>
     pub fn delete_automated_backups(mut self, input: bool) -> Self {
         self.inner = self.inner.delete_automated_backups(input);
         self
     }
-    /// <p>Specifies whether to remove automated backups immediately after the DB cluster is deleted. This parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB cluster is deleted.</p>
+    /// <p>Specifies whether to remove automated backups immediately after the DB cluster is deleted. This parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB cluster is deleted.</p><note>
+    /// <p>You must delete automated backups for Amazon RDS Multi-AZ DB clusters. For more information about managing automated backups for RDS Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ManagingAutomatedBackups.html">Managing automated backups</a>.</p>
+    /// </note>
     pub fn set_delete_automated_backups(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_delete_automated_backups(input);
         self
     }
-    /// <p>Specifies whether to remove automated backups immediately after the DB cluster is deleted. This parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB cluster is deleted.</p>
+    /// <p>Specifies whether to remove automated backups immediately after the DB cluster is deleted. This parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB cluster is deleted.</p><note>
+    /// <p>You must delete automated backups for Amazon RDS Multi-AZ DB clusters. For more information about managing automated backups for RDS Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ManagingAutomatedBackups.html">Managing automated backups</a>.</p>
+    /// </note>
     pub fn get_delete_automated_backups(&self) -> &::std::option::Option<bool> {
         self.inner.get_delete_automated_backups()
     }

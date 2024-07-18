@@ -1089,6 +1089,8 @@ pub use crate::types::_ipv6_pool::Ipv6PoolBuilder;
 
 pub use crate::types::_pool_cidr_block::PoolCidrBlockBuilder;
 
+pub use crate::types::_ipam_external_resource_verification_token::IpamExternalResourceVerificationTokenBuilder;
+
 pub use crate::types::_internet_gateway::InternetGatewayBuilder;
 
 pub use crate::types::_internet_gateway_attachment::InternetGatewayAttachmentBuilder;
