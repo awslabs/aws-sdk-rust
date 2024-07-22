@@ -256,6 +256,9 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListEnabledPr
     }
 }
 
+// The get_* functions below are generated from JMESPath expressions in the
+// operationContextParams trait. They target the operation's input shape.
+
 /// Error type for the `ListEnabledProductsForImportError` operation.
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]

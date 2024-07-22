@@ -231,6 +231,9 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetDisksEndpo
     }
 }
 
+// The get_* functions below are generated from JMESPath expressions in the
+// operationContextParams trait. They target the operation's input shape.
+
 /// Error type for the `GetDisksError` operation.
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]

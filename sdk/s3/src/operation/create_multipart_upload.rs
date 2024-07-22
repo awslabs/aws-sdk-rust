@@ -290,6 +290,10 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateMultipa
         ::std::result::Result::Ok(())
     }
 }
+
+// The get_* functions below are generated from JMESPath expressions in the
+// operationContextParams trait. They target the operation's input shape.
+
 #[allow(unreachable_code, unused_variables)]
 #[cfg(test)]
 mod create_multipart_upload_test {

@@ -257,6 +257,9 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListEksAnywhe
     }
 }
 
+// The get_* functions below are generated from JMESPath expressions in the
+// operationContextParams trait. They target the operation's input shape.
+
 /// Error type for the `ListEksAnywhereSubscriptionsError` operation.
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
