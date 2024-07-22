@@ -60,5 +60,8 @@ pub fn ser_update_workgroup_input_input(
             ::aws_smithy_types::Number::NegInt((*var_16).into()),
         );
     }
+    if let Some(var_17) = &input.ip_address_type {
+        object.key("ipAddressType").string(var_17.as_str());
+    }
     Ok(())
 }

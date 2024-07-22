@@ -22,6 +22,8 @@ pub struct EnvironmentBlueprintConfigurationItem {
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the environment blueprint was updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The provisioning configuration of a blueprint.</p>
+    pub provisioning_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningConfiguration>>,
 }
 impl EnvironmentBlueprintConfigurationItem {
     /// <p>The identifier of the Amazon DataZone domain in which an environment blueprint exists.</p>
@@ -64,6 +66,12 @@ impl EnvironmentBlueprintConfigurationItem {
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
+    /// <p>The provisioning configuration of a blueprint.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.provisioning_configurations.is_none()`.
+    pub fn provisioning_configurations(&self) -> &[crate::types::ProvisioningConfiguration] {
+        self.provisioning_configurations.as_deref().unwrap_or_default()
+    }
 }
 impl EnvironmentBlueprintConfigurationItem {
     /// Creates a new builder-style object to manufacture [`EnvironmentBlueprintConfigurationItem`](crate::types::EnvironmentBlueprintConfigurationItem).
@@ -86,6 +94,7 @@ pub struct EnvironmentBlueprintConfigurationItemBuilder {
     >,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) provisioning_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningConfiguration>>,
 }
 impl EnvironmentBlueprintConfigurationItemBuilder {
     /// <p>The identifier of the Amazon DataZone domain in which an environment blueprint exists.</p>
@@ -227,6 +236,26 @@ impl EnvironmentBlueprintConfigurationItemBuilder {
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
+    /// Appends an item to `provisioning_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_provisioning_configurations`](Self::set_provisioning_configurations).
+    ///
+    /// <p>The provisioning configuration of a blueprint.</p>
+    pub fn provisioning_configurations(mut self, input: crate::types::ProvisioningConfiguration) -> Self {
+        let mut v = self.provisioning_configurations.unwrap_or_default();
+        v.push(input);
+        self.provisioning_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The provisioning configuration of a blueprint.</p>
+    pub fn set_provisioning_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningConfiguration>>) -> Self {
+        self.provisioning_configurations = input;
+        self
+    }
+    /// <p>The provisioning configuration of a blueprint.</p>
+    pub fn get_provisioning_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProvisioningConfiguration>> {
+        &self.provisioning_configurations
+    }
     /// Consumes the builder and constructs a [`EnvironmentBlueprintConfigurationItem`](crate::types::EnvironmentBlueprintConfigurationItem).
     /// This method will fail if any of the following fields are not set:
     /// - [`domain_id`](crate::types::builders::EnvironmentBlueprintConfigurationItemBuilder::domain_id)
@@ -253,6 +282,7 @@ impl EnvironmentBlueprintConfigurationItemBuilder {
             regional_parameters: self.regional_parameters,
             created_at: self.created_at,
             updated_at: self.updated_at,
+            provisioning_configurations: self.provisioning_configurations,
         })
     }
 }

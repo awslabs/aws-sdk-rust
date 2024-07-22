@@ -21,6 +21,8 @@ pub struct UpdateWorkgroupInput {
     pub port: ::std::option::Option<i32>,
     /// <p>The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve queries. The max capacity is specified in RPUs.</p>
     pub max_capacity: ::std::option::Option<i32>,
+    /// <p>The IP address type that the workgroup supports. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
+    pub ip_address_type: ::std::option::Option<::std::string::String>,
 }
 impl UpdateWorkgroupInput {
     /// <p>The name of the workgroup to update. You can't update the name of a workgroup once it is created.</p>
@@ -65,6 +67,10 @@ impl UpdateWorkgroupInput {
     pub fn max_capacity(&self) -> ::std::option::Option<i32> {
         self.max_capacity
     }
+    /// <p>The IP address type that the workgroup supports. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
+    pub fn ip_address_type(&self) -> ::std::option::Option<&str> {
+        self.ip_address_type.as_deref()
+    }
 }
 impl UpdateWorkgroupInput {
     /// Creates a new builder-style object to manufacture [`UpdateWorkgroupInput`](crate::operation::update_workgroup::UpdateWorkgroupInput).
@@ -86,6 +92,7 @@ pub struct UpdateWorkgroupInputBuilder {
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) port: ::std::option::Option<i32>,
     pub(crate) max_capacity: ::std::option::Option<i32>,
+    pub(crate) ip_address_type: ::std::option::Option<::std::string::String>,
 }
 impl UpdateWorkgroupInputBuilder {
     /// <p>The name of the workgroup to update. You can't update the name of a workgroup once it is created.</p>
@@ -233,6 +240,20 @@ impl UpdateWorkgroupInputBuilder {
     pub fn get_max_capacity(&self) -> &::std::option::Option<i32> {
         &self.max_capacity
     }
+    /// <p>The IP address type that the workgroup supports. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
+    pub fn ip_address_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ip_address_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The IP address type that the workgroup supports. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ip_address_type = input;
+        self
+    }
+    /// <p>The IP address type that the workgroup supports. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_address_type
+    }
     /// Consumes the builder and constructs a [`UpdateWorkgroupInput`](crate::operation::update_workgroup::UpdateWorkgroupInput).
     pub fn build(
         self,
@@ -247,6 +268,7 @@ impl UpdateWorkgroupInputBuilder {
             security_group_ids: self.security_group_ids,
             port: self.port,
             max_capacity: self.max_capacity,
+            ip_address_type: self.ip_address_type,
         })
     }
 }

@@ -260,6 +260,8 @@ pub enum UpdateWorkgroupError {
     InsufficientCapacityException(crate::types::error::InsufficientCapacityException),
     /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     InternalServerException(crate::types::error::InternalServerException),
+    /// <p>There are no subnets in your VPC with associated IPv6 CIDR blocks. To use dual-stack mode, associate an IPv6 CIDR block with each subnet in your VPC.</p>
+    Ipv6CidrBlockNotFoundException(crate::types::error::Ipv6CidrBlockNotFoundException),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The input failed to satisfy the constraints specified by an AWS service.</p>
@@ -300,6 +302,7 @@ impl UpdateWorkgroupError {
             Self::ConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InsufficientCapacityException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalServerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::Ipv6CidrBlockNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
@@ -317,6 +320,10 @@ impl UpdateWorkgroupError {
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(self, Self::InternalServerException(_))
     }
+    /// Returns `true` if the error kind is `UpdateWorkgroupError::Ipv6CidrBlockNotFoundException`.
+    pub fn is_ipv6_cidr_block_not_found_exception(&self) -> bool {
+        matches!(self, Self::Ipv6CidrBlockNotFoundException(_))
+    }
     /// Returns `true` if the error kind is `UpdateWorkgroupError::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(self, Self::ResourceNotFoundException(_))
@@ -332,6 +339,7 @@ impl ::std::error::Error for UpdateWorkgroupError {
             Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::InsufficientCapacityException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServerException(_inner) => ::std::option::Option::Some(_inner),
+            Self::Ipv6CidrBlockNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
@@ -344,6 +352,7 @@ impl ::std::fmt::Display for UpdateWorkgroupError {
             Self::ConflictException(_inner) => _inner.fmt(f),
             Self::InsufficientCapacityException(_inner) => _inner.fmt(f),
             Self::InternalServerException(_inner) => _inner.fmt(f),
+            Self::Ipv6CidrBlockNotFoundException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ValidationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
@@ -374,6 +383,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateWorkgro
             Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InsufficientCapacityException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::Ipv6CidrBlockNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,

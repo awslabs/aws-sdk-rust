@@ -25,6 +25,8 @@ pub struct CreateWorkgroupInput {
     pub port: ::std::option::Option<i32>,
     /// <p>The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve queries. The max capacity is specified in RPUs.</p>
     pub max_capacity: ::std::option::Option<i32>,
+    /// <p>The IP address type that the workgroup supports. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
+    pub ip_address_type: ::std::option::Option<::std::string::String>,
 }
 impl CreateWorkgroupInput {
     /// <p>The name of the created workgroup.</p>
@@ -79,6 +81,10 @@ impl CreateWorkgroupInput {
     pub fn max_capacity(&self) -> ::std::option::Option<i32> {
         self.max_capacity
     }
+    /// <p>The IP address type that the workgroup supports. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
+    pub fn ip_address_type(&self) -> ::std::option::Option<&str> {
+        self.ip_address_type.as_deref()
+    }
 }
 impl CreateWorkgroupInput {
     /// Creates a new builder-style object to manufacture [`CreateWorkgroupInput`](crate::operation::create_workgroup::CreateWorkgroupInput).
@@ -102,6 +108,7 @@ pub struct CreateWorkgroupInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) port: ::std::option::Option<i32>,
     pub(crate) max_capacity: ::std::option::Option<i32>,
+    pub(crate) ip_address_type: ::std::option::Option<::std::string::String>,
 }
 impl CreateWorkgroupInputBuilder {
     /// <p>The name of the created workgroup.</p>
@@ -284,6 +291,20 @@ impl CreateWorkgroupInputBuilder {
     pub fn get_max_capacity(&self) -> &::std::option::Option<i32> {
         &self.max_capacity
     }
+    /// <p>The IP address type that the workgroup supports. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
+    pub fn ip_address_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ip_address_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The IP address type that the workgroup supports. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ip_address_type = input;
+        self
+    }
+    /// <p>The IP address type that the workgroup supports. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_address_type
+    }
     /// Consumes the builder and constructs a [`CreateWorkgroupInput`](crate::operation::create_workgroup::CreateWorkgroupInput).
     pub fn build(
         self,
@@ -300,6 +321,7 @@ impl CreateWorkgroupInputBuilder {
             tags: self.tags,
             port: self.port,
             max_capacity: self.max_capacity,
+            ip_address_type: self.ip_address_type,
         })
     }
 }

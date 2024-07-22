@@ -19,6 +19,9 @@ pub mod cancel_subscription;
 /// Types for the `CreateAsset` operation.
 pub mod create_asset;
 
+/// Types for the `CreateAssetFilter` operation.
+pub mod create_asset_filter;
+
 /// Types for the `CreateAssetRevision` operation.
 pub mod create_asset_revision;
 
@@ -76,6 +79,9 @@ pub mod create_user_profile;
 /// Types for the `DeleteAsset` operation.
 pub mod delete_asset;
 
+/// Types for the `DeleteAssetFilter` operation.
+pub mod delete_asset_filter;
+
 /// Types for the `DeleteAssetType` operation.
 pub mod delete_asset_type;
 
@@ -132,6 +138,9 @@ pub mod disassociate_environment_role;
 
 /// Types for the `GetAsset` operation.
 pub mod get_asset;
+
+/// Types for the `GetAssetFilter` operation.
+pub mod get_asset_filter;
 
 /// Types for the `GetAssetType` operation.
 pub mod get_asset_type;
@@ -204,6 +213,9 @@ pub mod get_time_series_data_point;
 
 /// Types for the `GetUserProfile` operation.
 pub mod get_user_profile;
+
+/// Types for the `ListAssetFilters` operation.
+pub mod list_asset_filters;
 
 /// Types for the `ListAssetRevisions` operation.
 pub mod list_asset_revisions;
@@ -312,6 +324,9 @@ pub mod tag_resource;
 
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
+
+/// Types for the `UpdateAssetFilter` operation.
+pub mod update_asset_filter;
 
 /// Types for the `UpdateDataSource` operation.
 pub mod update_data_source;

@@ -14,6 +14,7 @@ impl super::Client {
     ///   - [`regional_parameters(Option<HashMap::<String, HashMap::<String, String>>>)`](crate::operation::get_environment_blueprint_configuration::GetEnvironmentBlueprintConfigurationOutput::regional_parameters): <p>The regional parameters of the blueprint.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::get_environment_blueprint_configuration::GetEnvironmentBlueprintConfigurationOutput::created_at): <p>The timestamp of when this blueprint was created.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_environment_blueprint_configuration::GetEnvironmentBlueprintConfigurationOutput::updated_at): <p>The timestamp of when this blueprint was upated.</p>
+    ///   - [`provisioning_configurations(Option<Vec::<ProvisioningConfiguration>>)`](crate::operation::get_environment_blueprint_configuration::GetEnvironmentBlueprintConfigurationOutput::provisioning_configurations): <p>The provisioning configuration of a blueprint.</p>
     /// - On failure, responds with [`SdkError<GetEnvironmentBlueprintConfigurationError>`](crate::operation::get_environment_blueprint_configuration::GetEnvironmentBlueprintConfigurationError)
     pub fn get_environment_blueprint_configuration(
         &self,

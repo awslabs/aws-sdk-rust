@@ -60,6 +60,23 @@ pub fn de_create_workgroup_http_error(
             };
             tmp
         }),
+        "Ipv6CidrBlockNotFoundException" => crate::operation::create_workgroup::CreateWorkgroupError::Ipv6CidrBlockNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::Ipv6CidrBlockNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_ipv6_cidr_block_not_found_exception::de_ipv6_cidr_block_not_found_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::create_workgroup::CreateWorkgroupError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::ipv6_cidr_block_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_workgroup::CreateWorkgroupError::unhandled)?
+            };
+            tmp
+        }),
         "ResourceNotFoundException" => crate::operation::create_workgroup::CreateWorkgroupError::ResourceNotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {

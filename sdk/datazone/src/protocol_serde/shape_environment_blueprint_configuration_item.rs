@@ -61,6 +61,11 @@ where
                                 ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                             )?);
                         }
+                        "provisioningConfigurations" => {
+                            builder = builder.set_provisioning_configurations(
+                                crate::protocol_serde::shape_provisioning_configuration_list::de_provisioning_configuration_list(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

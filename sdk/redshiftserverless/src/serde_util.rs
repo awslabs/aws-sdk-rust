@@ -65,6 +65,15 @@ pub(crate) fn insufficient_capacity_exception_correct_errors(
     builder
 }
 
+pub(crate) fn ipv6_cidr_block_not_found_exception_correct_errors(
+    mut builder: crate::types::error::builders::Ipv6CidrBlockNotFoundExceptionBuilder,
+) -> crate::types::error::builders::Ipv6CidrBlockNotFoundExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn delete_namespace_output_output_correct_errors(
     mut builder: crate::operation::delete_namespace::builders::DeleteNamespaceOutputBuilder,
 ) -> crate::operation::delete_namespace::builders::DeleteNamespaceOutputBuilder {

@@ -13,6 +13,8 @@ pub enum Error {
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The provided pagination token is invalid.</p>
     InvalidPaginationException(crate::types::error::InvalidPaginationException),
+    /// <p>There are no subnets in your VPC with associated IPv6 CIDR blocks. To use dual-stack mode, associate an IPv6 CIDR block with each subnet in your VPC.</p>
+    Ipv6CidrBlockNotFoundException(crate::types::error::Ipv6CidrBlockNotFoundException),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The service limit was exceeded.</p>
@@ -40,6 +42,7 @@ impl ::std::fmt::Display for Error {
             Error::InsufficientCapacityException(inner) => inner.fmt(f),
             Error::InternalServerException(inner) => inner.fmt(f),
             Error::InvalidPaginationException(inner) => inner.fmt(f),
+            Error::Ipv6CidrBlockNotFoundException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
@@ -71,6 +74,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::InsufficientCapacityException(inner) => inner.meta(),
             Self::InternalServerException(inner) => inner.meta(),
             Self::InvalidPaginationException(inner) => inner.meta(),
+            Self::Ipv6CidrBlockNotFoundException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
             Self::ServiceQuotaExceededException(inner) => inner.meta(),
             Self::ThrottlingException(inner) => inner.meta(),
@@ -395,6 +399,9 @@ impl From<crate::operation::create_workgroup::CreateWorkgroupError> for Error {
                 Error::InsufficientCapacityException(inner)
             }
             crate::operation::create_workgroup::CreateWorkgroupError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_workgroup::CreateWorkgroupError::Ipv6CidrBlockNotFoundException(inner) => {
+                Error::Ipv6CidrBlockNotFoundException(inner)
+            }
             crate::operation::create_workgroup::CreateWorkgroupError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::create_workgroup::CreateWorkgroupError::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
             crate::operation::create_workgroup::CreateWorkgroupError::ValidationException(inner) => Error::ValidationException(inner),
@@ -1781,6 +1788,9 @@ impl From<crate::operation::update_workgroup::UpdateWorkgroupError> for Error {
                 Error::InsufficientCapacityException(inner)
             }
             crate::operation::update_workgroup::UpdateWorkgroupError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_workgroup::UpdateWorkgroupError::Ipv6CidrBlockNotFoundException(inner) => {
+                Error::Ipv6CidrBlockNotFoundException(inner)
+            }
             crate::operation::update_workgroup::UpdateWorkgroupError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::update_workgroup::UpdateWorkgroupError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_workgroup::UpdateWorkgroupError::Unhandled(inner) => Error::Unhandled(inner),
@@ -1795,6 +1805,7 @@ impl ::std::error::Error for Error {
             Error::InsufficientCapacityException(inner) => inner.source(),
             Error::InternalServerException(inner) => inner.source(),
             Error::InvalidPaginationException(inner) => inner.source(),
+            Error::Ipv6CidrBlockNotFoundException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::ServiceQuotaExceededException(inner) => inner.source(),
             Error::ThrottlingException(inner) => inner.source(),
@@ -1812,6 +1823,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::InsufficientCapacityException(e) => e.request_id(),
             Self::InternalServerException(e) => e.request_id(),
             Self::InvalidPaginationException(e) => e.request_id(),
+            Self::Ipv6CidrBlockNotFoundException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
             Self::ServiceQuotaExceededException(e) => e.request_id(),
             Self::ThrottlingException(e) => e.request_id(),

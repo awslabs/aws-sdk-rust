@@ -7,6 +7,8 @@ pub use crate::types::error::_internal_server_exception::InternalServerException
 
 pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;
 
+pub use crate::types::error::_ipv6_cidr_block_not_found_exception::Ipv6CidrBlockNotFoundExceptionBuilder;
+
 pub use crate::types::error::_insufficient_capacity_exception::InsufficientCapacityExceptionBuilder;
 
 pub use crate::types::error::_too_many_tags_exception::TooManyTagsExceptionBuilder;

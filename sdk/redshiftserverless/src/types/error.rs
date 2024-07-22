@@ -7,6 +7,8 @@ pub use crate::types::error::_internal_server_exception::InternalServerException
 
 pub use crate::types::error::_conflict_exception::ConflictException;
 
+pub use crate::types::error::_ipv6_cidr_block_not_found_exception::Ipv6CidrBlockNotFoundException;
+
 pub use crate::types::error::_insufficient_capacity_exception::InsufficientCapacityException;
 
 pub use crate::types::error::_too_many_tags_exception::TooManyTagsException;
@@ -28,6 +30,8 @@ mod _insufficient_capacity_exception;
 mod _internal_server_exception;
 
 mod _invalid_pagination_exception;
+
+mod _ipv6_cidr_block_not_found_exception;
 
 mod _resource_not_found_exception;
 

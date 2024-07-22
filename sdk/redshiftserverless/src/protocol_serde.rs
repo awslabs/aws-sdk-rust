@@ -209,6 +209,8 @@ pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_invalid_pagination_exception;
 
+pub(crate) mod shape_ipv6_cidr_block_not_found_exception;
+
 pub(crate) mod shape_list_custom_domain_associations_input;
 
 pub(crate) mod shape_list_endpoint_access_input;

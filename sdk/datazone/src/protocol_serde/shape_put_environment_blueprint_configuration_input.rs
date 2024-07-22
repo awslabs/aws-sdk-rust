@@ -15,25 +15,37 @@ pub fn ser_put_environment_blueprint_configuration_input_input(
     if let Some(var_4) = &input.manage_access_role_arn {
         object.key("manageAccessRoleArn").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.provisioning_role_arn {
-        object.key("provisioningRoleArn").string(var_5.as_str());
-    }
-    if let Some(var_6) = &input.regional_parameters {
-        #[allow(unused_mut)]
-        let mut object_7 = object.key("regionalParameters").start_object();
-        for (key_8, value_9) in var_6 {
+    if let Some(var_5) = &input.provisioning_configurations {
+        let mut array_6 = object.key("provisioningConfigurations").start_array();
+        for item_7 in var_5 {
             {
                 #[allow(unused_mut)]
-                let mut object_10 = object_7.key(key_8.as_str()).start_object();
-                for (key_11, value_12) in value_9 {
-                    {
-                        object_10.key(key_11.as_str()).string(value_12.as_str());
-                    }
-                }
-                object_10.finish();
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_provisioning_configuration::ser_provisioning_configuration(&mut object_8, item_7)?;
+                object_8.finish();
             }
         }
-        object_7.finish();
+        array_6.finish();
+    }
+    if let Some(var_9) = &input.provisioning_role_arn {
+        object.key("provisioningRoleArn").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.regional_parameters {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("regionalParameters").start_object();
+        for (key_12, value_13) in var_10 {
+            {
+                #[allow(unused_mut)]
+                let mut object_14 = object_11.key(key_12.as_str()).start_object();
+                for (key_15, value_16) in value_13 {
+                    {
+                        object_14.key(key_15.as_str()).string(value_16.as_str());
+                    }
+                }
+                object_14.finish();
+            }
+        }
+        object_11.finish();
     }
     Ok(())
 }

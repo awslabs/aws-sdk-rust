@@ -13,6 +13,8 @@ pub use crate::types::_term_relations::TermRelationsBuilder;
 
 pub use crate::types::_import::ImportBuilder;
 
+pub use crate::types::_lake_formation_configuration::LakeFormationConfigurationBuilder;
+
 pub use crate::types::_environment_blueprint_configuration_item::EnvironmentBlueprintConfigurationItemBuilder;
 
 pub use crate::types::_single_sign_on::SingleSignOnBuilder;
@@ -109,6 +111,34 @@ pub use crate::types::_configurable_action_parameter::ConfigurableActionParamete
 
 pub use crate::types::_resource::ResourceBuilder;
 
+pub use crate::types::_row_filter_configuration::RowFilterConfigurationBuilder;
+
+pub use crate::types::_not_like_expression::NotLikeExpressionBuilder;
+
+pub use crate::types::_like_expression::LikeExpressionBuilder;
+
+pub use crate::types::_not_in_expression::NotInExpressionBuilder;
+
+pub use crate::types::_in_expression::InExpressionBuilder;
+
+pub use crate::types::_is_not_null_expression::IsNotNullExpressionBuilder;
+
+pub use crate::types::_is_null_expression::IsNullExpressionBuilder;
+
+pub use crate::types::_less_than_or_equal_to_expression::LessThanOrEqualToExpressionBuilder;
+
+pub use crate::types::_greater_than_or_equal_to_expression::GreaterThanOrEqualToExpressionBuilder;
+
+pub use crate::types::_less_than_expression::LessThanExpressionBuilder;
+
+pub use crate::types::_greater_than_expression::GreaterThanExpressionBuilder;
+
+pub use crate::types::_not_equal_to_expression::NotEqualToExpressionBuilder;
+
+pub use crate::types::_equal_to_expression::EqualToExpressionBuilder;
+
+pub use crate::types::_column_filter_configuration::ColumnFilterConfigurationBuilder;
+
 pub use crate::types::_user_profile_summary::UserProfileSummaryBuilder;
 
 pub use crate::types::_lineage_node_type_item::LineageNodeTypeItemBuilder;
@@ -184,6 +214,8 @@ pub use crate::types::_environment_action_summary::EnvironmentActionSummaryBuild
 pub use crate::types::_data_source_run_activity::DataSourceRunActivityBuilder;
 
 pub use crate::types::_asset_revision::AssetRevisionBuilder;
+
+pub use crate::types::_asset_filter_summary::AssetFilterSummaryBuilder;
 
 pub use crate::types::_lineage_node_reference::LineageNodeReferenceBuilder;
 

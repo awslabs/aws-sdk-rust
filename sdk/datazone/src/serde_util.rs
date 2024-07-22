@@ -182,6 +182,27 @@ pub(crate) fn create_asset_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_asset_filter_output_output_correct_errors(
+    mut builder: crate::operation::create_asset_filter::builders::CreateAssetFilterOutputBuilder,
+) -> crate::operation::create_asset_filter::builders::CreateAssetFilterOutputBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.domain_id.is_none() {
+        builder.domain_id = Some(Default::default())
+    }
+    if builder.asset_id.is_none() {
+        builder.asset_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.configuration.is_none() {
+        builder.configuration = Some(crate::types::AssetFilterConfiguration::Unknown)
+    }
+    builder
+}
+
 pub(crate) fn create_asset_revision_output_output_correct_errors(
     mut builder: crate::operation::create_asset_revision::builders::CreateAssetRevisionOutputBuilder,
 ) -> crate::operation::create_asset_revision::builders::CreateAssetRevisionOutputBuilder {
@@ -604,6 +625,27 @@ pub(crate) fn get_asset_output_output_correct_errors(
     }
     if builder.forms_output.is_none() {
         builder.forms_output = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_asset_filter_output_output_correct_errors(
+    mut builder: crate::operation::get_asset_filter::builders::GetAssetFilterOutputBuilder,
+) -> crate::operation::get_asset_filter::builders::GetAssetFilterOutputBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.domain_id.is_none() {
+        builder.domain_id = Some(Default::default())
+    }
+    if builder.asset_id.is_none() {
+        builder.asset_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.configuration.is_none() {
+        builder.configuration = Some(crate::types::AssetFilterConfiguration::Unknown)
     }
     builder
 }
@@ -1061,6 +1103,15 @@ pub(crate) fn get_subscription_target_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_asset_filters_output_output_correct_errors(
+    mut builder: crate::operation::list_asset_filters::builders::ListAssetFiltersOutputBuilder,
+) -> crate::operation::list_asset_filters::builders::ListAssetFiltersOutputBuilder {
+    if builder.items.is_none() {
+        builder.items = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_data_source_run_activities_output_output_correct_errors(
     mut builder: crate::operation::list_data_source_run_activities::builders::ListDataSourceRunActivitiesOutputBuilder,
 ) -> crate::operation::list_data_source_run_activities::builders::ListDataSourceRunActivitiesOutputBuilder {
@@ -1300,6 +1351,27 @@ pub(crate) fn start_metadata_generation_run_output_output_correct_errors(
     }
     if builder.id.is_none() {
         builder.id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn update_asset_filter_output_output_correct_errors(
+    mut builder: crate::operation::update_asset_filter::builders::UpdateAssetFilterOutputBuilder,
+) -> crate::operation::update_asset_filter::builders::UpdateAssetFilterOutputBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.domain_id.is_none() {
+        builder.domain_id = Some(Default::default())
+    }
+    if builder.asset_id.is_none() {
+        builder.asset_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.configuration.is_none() {
+        builder.configuration = Some(crate::types::AssetFilterConfiguration::Unknown)
     }
     builder
 }
@@ -1627,6 +1699,24 @@ pub(crate) fn time_series_data_point_form_output_correct_errors(
     }
     if builder.timestamp.is_none() {
         builder.timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn asset_filter_summary_correct_errors(
+    mut builder: crate::types::builders::AssetFilterSummaryBuilder,
+) -> crate::types::builders::AssetFilterSummaryBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.domain_id.is_none() {
+        builder.domain_id = Some(Default::default())
+    }
+    if builder.asset_id.is_none() {
+        builder.asset_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
     }
     builder
 }
@@ -2060,6 +2150,15 @@ pub(crate) fn resource_correct_errors(mut builder: crate::types::builders::Resou
     builder
 }
 
+pub(crate) fn row_filter_configuration_correct_errors(
+    mut builder: crate::types::builders::RowFilterConfigurationBuilder,
+) -> crate::types::builders::RowFilterConfigurationBuilder {
+    if builder.row_filter.is_none() {
+        builder.row_filter = Some(crate::types::RowFilter::Unknown)
+    }
+    builder
+}
+
 pub(crate) fn subscribed_asset_correct_errors(
     mut builder: crate::types::builders::SubscribedAssetBuilder,
 ) -> crate::types::builders::SubscribedAssetBuilder {
@@ -2458,6 +2557,142 @@ pub(crate) fn self_grant_status_detail_correct_errors(
 pub(crate) fn user_details_correct_errors(mut builder: crate::types::builders::UserDetailsBuilder) -> crate::types::builders::UserDetailsBuilder {
     if builder.user_id.is_none() {
         builder.user_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn equal_to_expression_correct_errors(
+    mut builder: crate::types::builders::EqualToExpressionBuilder,
+) -> crate::types::builders::EqualToExpressionBuilder {
+    if builder.column_name.is_none() {
+        builder.column_name = Some(Default::default())
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn greater_than_expression_correct_errors(
+    mut builder: crate::types::builders::GreaterThanExpressionBuilder,
+) -> crate::types::builders::GreaterThanExpressionBuilder {
+    if builder.column_name.is_none() {
+        builder.column_name = Some(Default::default())
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn greater_than_or_equal_to_expression_correct_errors(
+    mut builder: crate::types::builders::GreaterThanOrEqualToExpressionBuilder,
+) -> crate::types::builders::GreaterThanOrEqualToExpressionBuilder {
+    if builder.column_name.is_none() {
+        builder.column_name = Some(Default::default())
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn in_expression_correct_errors(mut builder: crate::types::builders::InExpressionBuilder) -> crate::types::builders::InExpressionBuilder {
+    if builder.column_name.is_none() {
+        builder.column_name = Some(Default::default())
+    }
+    if builder.values.is_none() {
+        builder.values = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn is_not_null_expression_correct_errors(
+    mut builder: crate::types::builders::IsNotNullExpressionBuilder,
+) -> crate::types::builders::IsNotNullExpressionBuilder {
+    if builder.column_name.is_none() {
+        builder.column_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn is_null_expression_correct_errors(
+    mut builder: crate::types::builders::IsNullExpressionBuilder,
+) -> crate::types::builders::IsNullExpressionBuilder {
+    if builder.column_name.is_none() {
+        builder.column_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn less_than_expression_correct_errors(
+    mut builder: crate::types::builders::LessThanExpressionBuilder,
+) -> crate::types::builders::LessThanExpressionBuilder {
+    if builder.column_name.is_none() {
+        builder.column_name = Some(Default::default())
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn less_than_or_equal_to_expression_correct_errors(
+    mut builder: crate::types::builders::LessThanOrEqualToExpressionBuilder,
+) -> crate::types::builders::LessThanOrEqualToExpressionBuilder {
+    if builder.column_name.is_none() {
+        builder.column_name = Some(Default::default())
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn like_expression_correct_errors(
+    mut builder: crate::types::builders::LikeExpressionBuilder,
+) -> crate::types::builders::LikeExpressionBuilder {
+    if builder.column_name.is_none() {
+        builder.column_name = Some(Default::default())
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn not_equal_to_expression_correct_errors(
+    mut builder: crate::types::builders::NotEqualToExpressionBuilder,
+) -> crate::types::builders::NotEqualToExpressionBuilder {
+    if builder.column_name.is_none() {
+        builder.column_name = Some(Default::default())
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn not_in_expression_correct_errors(
+    mut builder: crate::types::builders::NotInExpressionBuilder,
+) -> crate::types::builders::NotInExpressionBuilder {
+    if builder.column_name.is_none() {
+        builder.column_name = Some(Default::default())
+    }
+    if builder.values.is_none() {
+        builder.values = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn not_like_expression_correct_errors(
+    mut builder: crate::types::builders::NotLikeExpressionBuilder,
+) -> crate::types::builders::NotLikeExpressionBuilder {
+    if builder.column_name.is_none() {
+        builder.column_name = Some(Default::default())
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
     }
     builder
 }

@@ -216,4 +216,23 @@ impl PutEnvironmentBlueprintConfigurationFluentBuilder {
     > {
         self.inner.get_regional_parameters()
     }
+    ///
+    /// Appends an item to `provisioningConfigurations`.
+    ///
+    /// To override the contents of this collection use [`set_provisioning_configurations`](Self::set_provisioning_configurations).
+    ///
+    /// <p>The provisioning configuration of a blueprint.</p>
+    pub fn provisioning_configurations(mut self, input: crate::types::ProvisioningConfiguration) -> Self {
+        self.inner = self.inner.provisioning_configurations(input);
+        self
+    }
+    /// <p>The provisioning configuration of a blueprint.</p>
+    pub fn set_provisioning_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningConfiguration>>) -> Self {
+        self.inner = self.inner.set_provisioning_configurations(input);
+        self
+    }
+    /// <p>The provisioning configuration of a blueprint.</p>
+    pub fn get_provisioning_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProvisioningConfiguration>> {
+        self.inner.get_provisioning_configurations()
+    }
 }

@@ -46,6 +46,8 @@ pub struct Workgroup {
     pub max_capacity: ::std::option::Option<i32>,
     /// <p>A list of VPCs. Each entry is the unique identifier of a virtual private cloud with access to Amazon Redshift Serverless. If all of the VPCs for the grantee are allowed, it shows an asterisk.</p>
     pub cross_account_vpcs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The IP address type that the workgroup supports. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
+    pub ip_address_type: ::std::option::Option<::std::string::String>,
 }
 impl Workgroup {
     /// <p>The unique identifier of the workgroup.</p>
@@ -140,6 +142,10 @@ impl Workgroup {
     pub fn cross_account_vpcs(&self) -> &[::std::string::String] {
         self.cross_account_vpcs.as_deref().unwrap_or_default()
     }
+    /// <p>The IP address type that the workgroup supports. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
+    pub fn ip_address_type(&self) -> ::std::option::Option<&str> {
+        self.ip_address_type.as_deref()
+    }
 }
 impl Workgroup {
     /// Creates a new builder-style object to manufacture [`Workgroup`](crate::types::Workgroup).
@@ -173,6 +179,7 @@ pub struct WorkgroupBuilder {
     pub(crate) patch_version: ::std::option::Option<::std::string::String>,
     pub(crate) max_capacity: ::std::option::Option<i32>,
     pub(crate) cross_account_vpcs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) ip_address_type: ::std::option::Option<::std::string::String>,
 }
 impl WorkgroupBuilder {
     /// <p>The unique identifier of the workgroup.</p>
@@ -493,6 +500,20 @@ impl WorkgroupBuilder {
     pub fn get_cross_account_vpcs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.cross_account_vpcs
     }
+    /// <p>The IP address type that the workgroup supports. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
+    pub fn ip_address_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ip_address_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The IP address type that the workgroup supports. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ip_address_type = input;
+        self
+    }
+    /// <p>The IP address type that the workgroup supports. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_address_type
+    }
     /// Consumes the builder and constructs a [`Workgroup`](crate::types::Workgroup).
     pub fn build(self) -> crate::types::Workgroup {
         crate::types::Workgroup {
@@ -517,6 +538,7 @@ impl WorkgroupBuilder {
             patch_version: self.patch_version,
             max_capacity: self.max_capacity,
             cross_account_vpcs: self.cross_account_vpcs,
+            ip_address_type: self.ip_address_type,
         }
     }
 }

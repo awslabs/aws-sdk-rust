@@ -148,6 +148,8 @@ mod cancel_subscription;
 
 mod create_asset;
 
+mod create_asset_filter;
+
 mod create_asset_revision;
 
 mod create_asset_type;
@@ -213,6 +215,8 @@ pub mod customize;
 
 mod delete_asset;
 
+mod delete_asset_filter;
+
 mod delete_asset_type;
 
 mod delete_data_source;
@@ -250,6 +254,8 @@ mod delete_time_series_data_points;
 mod disassociate_environment_role;
 
 mod get_asset;
+
+mod get_asset_filter;
 
 mod get_asset_type;
 
@@ -298,6 +304,8 @@ mod get_subscription_target;
 mod get_time_series_data_point;
 
 mod get_user_profile;
+
+mod list_asset_filters;
 
 mod list_asset_revisions;
 
@@ -370,6 +378,8 @@ mod start_metadata_generation_run;
 mod tag_resource;
 
 mod untag_resource;
+
+mod update_asset_filter;
 
 mod update_data_source;
 

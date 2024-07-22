@@ -219,6 +219,11 @@ pub(crate) fn de_put_environment_blueprint_configuration(
                             .transpose()?,
                     );
                 }
+                "provisioningConfigurations" => {
+                    builder = builder.set_provisioning_configurations(
+                        crate::protocol_serde::shape_provisioning_configuration_list::de_provisioning_configuration_list(tokens)?,
+                    );
+                }
                 "provisioningRoleArn" => {
                     builder = builder.set_provisioning_role_arn(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

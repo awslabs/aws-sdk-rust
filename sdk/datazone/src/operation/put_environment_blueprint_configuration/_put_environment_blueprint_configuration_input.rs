@@ -17,6 +17,8 @@ pub struct PutEnvironmentBlueprintConfigurationInput {
     pub regional_parameters: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     >,
+    /// <p>The provisioning configuration of a blueprint.</p>
+    pub provisioning_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningConfiguration>>,
 }
 impl PutEnvironmentBlueprintConfigurationInput {
     /// <p>The identifier of the Amazon DataZone domain.</p>
@@ -49,6 +51,12 @@ impl PutEnvironmentBlueprintConfigurationInput {
     > {
         self.regional_parameters.as_ref()
     }
+    /// <p>The provisioning configuration of a blueprint.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.provisioning_configurations.is_none()`.
+    pub fn provisioning_configurations(&self) -> &[crate::types::ProvisioningConfiguration] {
+        self.provisioning_configurations.as_deref().unwrap_or_default()
+    }
 }
 impl PutEnvironmentBlueprintConfigurationInput {
     /// Creates a new builder-style object to manufacture [`PutEnvironmentBlueprintConfigurationInput`](crate::operation::put_environment_blueprint_configuration::PutEnvironmentBlueprintConfigurationInput).
@@ -69,6 +77,7 @@ pub struct PutEnvironmentBlueprintConfigurationInputBuilder {
     pub(crate) regional_parameters: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     >,
+    pub(crate) provisioning_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningConfiguration>>,
 }
 impl PutEnvironmentBlueprintConfigurationInputBuilder {
     /// <p>The identifier of the Amazon DataZone domain.</p>
@@ -182,6 +191,26 @@ impl PutEnvironmentBlueprintConfigurationInputBuilder {
     > {
         &self.regional_parameters
     }
+    /// Appends an item to `provisioning_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_provisioning_configurations`](Self::set_provisioning_configurations).
+    ///
+    /// <p>The provisioning configuration of a blueprint.</p>
+    pub fn provisioning_configurations(mut self, input: crate::types::ProvisioningConfiguration) -> Self {
+        let mut v = self.provisioning_configurations.unwrap_or_default();
+        v.push(input);
+        self.provisioning_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The provisioning configuration of a blueprint.</p>
+    pub fn set_provisioning_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningConfiguration>>) -> Self {
+        self.provisioning_configurations = input;
+        self
+    }
+    /// <p>The provisioning configuration of a blueprint.</p>
+    pub fn get_provisioning_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProvisioningConfiguration>> {
+        &self.provisioning_configurations
+    }
     /// Consumes the builder and constructs a [`PutEnvironmentBlueprintConfigurationInput`](crate::operation::put_environment_blueprint_configuration::PutEnvironmentBlueprintConfigurationInput).
     pub fn build(
         self,
@@ -197,6 +226,7 @@ impl PutEnvironmentBlueprintConfigurationInputBuilder {
                 manage_access_role_arn: self.manage_access_role_arn,
                 enabled_regions: self.enabled_regions,
                 regional_parameters: self.regional_parameters,
+                provisioning_configurations: self.provisioning_configurations,
             },
         )
     }

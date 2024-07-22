@@ -35,6 +35,8 @@ pub(crate) mod shape_cancel_subscription;
 
 pub(crate) mod shape_create_asset;
 
+pub(crate) mod shape_create_asset_filter;
+
 pub(crate) mod shape_create_asset_revision;
 
 pub(crate) mod shape_create_asset_type;
@@ -73,6 +75,8 @@ pub(crate) mod shape_create_user_profile;
 
 pub(crate) mod shape_delete_asset;
 
+pub(crate) mod shape_delete_asset_filter;
+
 pub(crate) mod shape_delete_asset_type;
 
 pub(crate) mod shape_delete_data_source;
@@ -110,6 +114,8 @@ pub(crate) mod shape_delete_time_series_data_points;
 pub(crate) mod shape_disassociate_environment_role;
 
 pub(crate) mod shape_get_asset;
+
+pub(crate) mod shape_get_asset_filter;
 
 pub(crate) mod shape_get_asset_type;
 
@@ -158,6 +164,8 @@ pub(crate) mod shape_get_subscription_target;
 pub(crate) mod shape_get_time_series_data_point;
 
 pub(crate) mod shape_get_user_profile;
+
+pub(crate) mod shape_list_asset_filters;
 
 pub(crate) mod shape_list_asset_revisions;
 
@@ -233,6 +241,8 @@ pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
 
+pub(crate) mod shape_update_asset_filter;
+
 pub(crate) mod shape_update_data_source;
 
 pub(crate) mod shape_update_domain;
@@ -274,6 +284,8 @@ pub(crate) mod shape_accept_subscription_request_input;
 pub(crate) mod shape_access_denied_exception;
 
 pub(crate) mod shape_conflict_exception;
+
+pub(crate) mod shape_create_asset_filter_input;
 
 pub(crate) mod shape_create_asset_input;
 
@@ -351,6 +363,8 @@ pub(crate) mod shape_throttling_exception;
 
 pub(crate) mod shape_unauthorized_exception;
 
+pub(crate) mod shape_update_asset_filter_input;
+
 pub(crate) mod shape_update_data_source_input;
 
 pub(crate) mod shape_update_domain_input;
@@ -387,6 +401,10 @@ pub(crate) mod shape_action_parameters;
 
 pub(crate) mod shape_applicable_asset_types;
 
+pub(crate) mod shape_asset_filter_configuration;
+
+pub(crate) mod shape_asset_filters;
+
 pub(crate) mod shape_asset_listing_details;
 
 pub(crate) mod shape_asset_revisions;
@@ -394,6 +412,8 @@ pub(crate) mod shape_asset_revisions;
 pub(crate) mod shape_asset_target_name_map;
 
 pub(crate) mod shape_authorized_principal_identifiers;
+
+pub(crate) mod shape_column_name_list;
 
 pub(crate) mod shape_custom_parameter_list;
 
@@ -477,6 +497,10 @@ pub(crate) mod shape_project_members;
 
 pub(crate) mod shape_project_summaries;
 
+pub(crate) mod shape_provisioning_configuration;
+
+pub(crate) mod shape_provisioning_configuration_list;
+
 pub(crate) mod shape_provisioning_properties;
 
 pub(crate) mod shape_recommendation_configuration;
@@ -549,6 +573,8 @@ pub(crate) mod shape_user_profile_details;
 
 pub(crate) mod shape_user_profile_summaries;
 
+pub(crate) mod shape_asset_filter_summary;
+
 pub(crate) mod shape_asset_listing;
 
 pub(crate) mod shape_asset_revision;
@@ -558,6 +584,8 @@ pub(crate) mod shape_aws_console_link_parameters;
 pub(crate) mod shape_business_name_generation_configuration;
 
 pub(crate) mod shape_cloud_formation_properties;
+
+pub(crate) mod shape_column_filter_configuration;
 
 pub(crate) mod shape_configurable_environment_action;
 
@@ -603,6 +631,8 @@ pub(crate) mod shape_iam_user_profile_details;
 
 pub(crate) mod shape_import;
 
+pub(crate) mod shape_lake_formation_configuration;
+
 pub(crate) mod shape_lineage_node_reference;
 
 pub(crate) mod shape_lineage_node_summary;
@@ -630,6 +660,8 @@ pub(crate) mod shape_redshift_self_grant_status_output;
 pub(crate) mod shape_regional_parameter;
 
 pub(crate) mod shape_resource;
+
+pub(crate) mod shape_row_filter_configuration;
 
 pub(crate) mod shape_search_inventory_result_item;
 
@@ -691,6 +723,8 @@ pub(crate) mod shape_relational_filter_configuration;
 
 pub(crate) mod shape_relational_filter_configurations;
 
+pub(crate) mod shape_row_filter;
+
 pub(crate) mod shape_self_grant_status_details;
 
 pub(crate) mod shape_subscribed_asset_listing;
@@ -717,10 +751,42 @@ pub(crate) mod shape_redshift_cluster_storage;
 
 pub(crate) mod shape_redshift_serverless_storage;
 
+pub(crate) mod shape_row_filter_expression;
+
+pub(crate) mod shape_row_filter_list;
+
+pub(crate) mod shape_s3_location_list;
+
 pub(crate) mod shape_self_grant_status_detail;
 
 pub(crate) mod shape_user_details;
 
 pub(crate) mod shape_data_product_item;
 
+pub(crate) mod shape_equal_to_expression;
+
 pub(crate) mod shape_filter_expressions;
+
+pub(crate) mod shape_greater_than_expression;
+
+pub(crate) mod shape_greater_than_or_equal_to_expression;
+
+pub(crate) mod shape_in_expression;
+
+pub(crate) mod shape_is_not_null_expression;
+
+pub(crate) mod shape_is_null_expression;
+
+pub(crate) mod shape_less_than_expression;
+
+pub(crate) mod shape_less_than_or_equal_to_expression;
+
+pub(crate) mod shape_like_expression;
+
+pub(crate) mod shape_not_equal_to_expression;
+
+pub(crate) mod shape_not_in_expression;
+
+pub(crate) mod shape_not_like_expression;
+
+pub(crate) mod shape_string_list;

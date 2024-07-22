@@ -296,6 +296,39 @@ impl From<crate::operation::create_asset::CreateAssetError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_asset_filter::CreateAssetFilterError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_asset_filter::CreateAssetFilterError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_asset_filter::CreateAssetFilterError> for Error {
+    fn from(err: crate::operation::create_asset_filter::CreateAssetFilterError) -> Self {
+        match err {
+            crate::operation::create_asset_filter::CreateAssetFilterError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_asset_filter::CreateAssetFilterError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_asset_filter::CreateAssetFilterError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_asset_filter::CreateAssetFilterError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_asset_filter::CreateAssetFilterError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_asset_filter::CreateAssetFilterError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_asset_filter::CreateAssetFilterError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_asset_filter::CreateAssetFilterError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::create_asset_filter::CreateAssetFilterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_asset_revision::CreateAssetRevisionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -954,6 +987,36 @@ impl From<crate::operation::delete_asset::DeleteAssetError> for Error {
             crate::operation::delete_asset::DeleteAssetError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_asset::DeleteAssetError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::delete_asset::DeleteAssetError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_asset_filter::DeleteAssetFilterError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_asset_filter::DeleteAssetFilterError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_asset_filter::DeleteAssetFilterError> for Error {
+    fn from(err: crate::operation::delete_asset_filter::DeleteAssetFilterError) -> Self {
+        match err {
+            crate::operation::delete_asset_filter::DeleteAssetFilterError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_asset_filter::DeleteAssetFilterError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_asset_filter::DeleteAssetFilterError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_asset_filter::DeleteAssetFilterError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_asset_filter::DeleteAssetFilterError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_asset_filter::DeleteAssetFilterError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_asset_filter::DeleteAssetFilterError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::delete_asset_filter::DeleteAssetFilterError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1633,6 +1696,33 @@ impl From<crate::operation::get_asset::GetAssetError> for Error {
             crate::operation::get_asset::GetAssetError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_asset::GetAssetError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::get_asset::GetAssetError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_asset_filter::GetAssetFilterError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_asset_filter::GetAssetFilterError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_asset_filter::GetAssetFilterError> for Error {
+    fn from(err: crate::operation::get_asset_filter::GetAssetFilterError) -> Self {
+        match err {
+            crate::operation::get_asset_filter::GetAssetFilterError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_asset_filter::GetAssetFilterError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_asset_filter::GetAssetFilterError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_asset_filter::GetAssetFilterError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_asset_filter::GetAssetFilterError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_asset_filter::GetAssetFilterError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::get_asset_filter::GetAssetFilterError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2419,6 +2509,33 @@ impl From<crate::operation::get_user_profile::GetUserProfileError> for Error {
             crate::operation::get_user_profile::GetUserProfileError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_user_profile::GetUserProfileError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::get_user_profile::GetUserProfileError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_asset_filters::ListAssetFiltersError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_asset_filters::ListAssetFiltersError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_asset_filters::ListAssetFiltersError> for Error {
+    fn from(err: crate::operation::list_asset_filters::ListAssetFiltersError) -> Self {
+        match err {
+            crate::operation::list_asset_filters::ListAssetFiltersError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_asset_filters::ListAssetFiltersError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_asset_filters::ListAssetFiltersError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_asset_filters::ListAssetFiltersError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_asset_filters::ListAssetFiltersError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_asset_filters::ListAssetFiltersError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::list_asset_filters::ListAssetFiltersError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -3686,6 +3803,36 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
             crate::operation::untag_resource::UntagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::untag_resource::UntagResourceError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_asset_filter::UpdateAssetFilterError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_asset_filter::UpdateAssetFilterError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_asset_filter::UpdateAssetFilterError> for Error {
+    fn from(err: crate::operation::update_asset_filter::UpdateAssetFilterError) -> Self {
+        match err {
+            crate::operation::update_asset_filter::UpdateAssetFilterError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_asset_filter::UpdateAssetFilterError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_asset_filter::UpdateAssetFilterError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_asset_filter::UpdateAssetFilterError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_asset_filter::UpdateAssetFilterError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_asset_filter::UpdateAssetFilterError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_asset_filter::UpdateAssetFilterError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::update_asset_filter::UpdateAssetFilterError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -31,6 +31,10 @@ pub use crate::types::_form_type_status::FormTypeStatus;
 
 pub use crate::types::_model::Model;
 
+pub use crate::types::_provisioning_configuration::ProvisioningConfiguration;
+
+pub use crate::types::_lake_formation_configuration::LakeFormationConfiguration;
+
 pub use crate::types::_environment_blueprint_configuration_item::EnvironmentBlueprintConfigurationItem;
 
 pub use crate::types::_domain_status::DomainStatus;
@@ -191,6 +195,42 @@ pub use crate::types::_environment_status::EnvironmentStatus;
 
 pub use crate::types::_resource::Resource;
 
+pub use crate::types::_asset_filter_configuration::AssetFilterConfiguration;
+
+pub use crate::types::_row_filter_configuration::RowFilterConfiguration;
+
+pub use crate::types::_row_filter::RowFilter;
+
+pub use crate::types::_row_filter_expression::RowFilterExpression;
+
+pub use crate::types::_not_like_expression::NotLikeExpression;
+
+pub use crate::types::_like_expression::LikeExpression;
+
+pub use crate::types::_not_in_expression::NotInExpression;
+
+pub use crate::types::_in_expression::InExpression;
+
+pub use crate::types::_is_not_null_expression::IsNotNullExpression;
+
+pub use crate::types::_is_null_expression::IsNullExpression;
+
+pub use crate::types::_less_than_or_equal_to_expression::LessThanOrEqualToExpression;
+
+pub use crate::types::_greater_than_or_equal_to_expression::GreaterThanOrEqualToExpression;
+
+pub use crate::types::_less_than_expression::LessThanExpression;
+
+pub use crate::types::_greater_than_expression::GreaterThanExpression;
+
+pub use crate::types::_not_equal_to_expression::NotEqualToExpression;
+
+pub use crate::types::_equal_to_expression::EqualToExpression;
+
+pub use crate::types::_column_filter_configuration::ColumnFilterConfiguration;
+
+pub use crate::types::_filter_status::FilterStatus;
+
 pub use crate::types::_user_profile_summary::UserProfileSummary;
 
 pub use crate::types::_user_search_type::UserSearchType;
@@ -313,6 +353,8 @@ pub use crate::types::_data_asset_activity_status::DataAssetActivityStatus;
 
 pub use crate::types::_asset_revision::AssetRevision;
 
+pub use crate::types::_asset_filter_summary::AssetFilterSummary;
+
 pub use crate::types::_lineage_node_reference::LineageNodeReference;
 
 pub use crate::types::_member::Member;
@@ -349,6 +391,10 @@ mod _accept_rule_behavior;
 
 mod _action_parameters;
 
+mod _asset_filter_configuration;
+
+mod _asset_filter_summary;
+
 mod _asset_item;
 
 mod _asset_item_additional_attributes;
@@ -376,6 +422,8 @@ mod _business_name_generation_configuration;
 mod _change_action;
 
 mod _cloud_formation_properties;
+
+mod _column_filter_configuration;
 
 mod _configurable_action_parameter;
 
@@ -447,6 +495,8 @@ mod _environment_status;
 
 mod _environment_summary;
 
+mod _equal_to_expression;
+
 mod _failure_cause;
 
 mod _filter;
@@ -456,6 +506,8 @@ mod _filter_clause;
 mod _filter_expression;
 
 mod _filter_expression_type;
+
+mod _filter_status;
 
 mod _form_entry_input;
 
@@ -487,6 +539,10 @@ mod _granted_entity;
 
 mod _granted_entity_input;
 
+mod _greater_than_expression;
+
+mod _greater_than_or_equal_to_expression;
+
 mod _group_details;
 
 mod _group_profile_status;
@@ -499,7 +555,21 @@ mod _iam_user_profile_details;
 
 mod _import;
 
+mod _in_expression;
+
 mod _inventory_search_scope;
+
+mod _is_not_null_expression;
+
+mod _is_null_expression;
+
+mod _lake_formation_configuration;
+
+mod _less_than_expression;
+
+mod _less_than_or_equal_to_expression;
+
+mod _like_expression;
 
 mod _lineage_node_reference;
 
@@ -531,6 +601,12 @@ mod _metadata_generation_target_type;
 
 mod _model;
 
+mod _not_equal_to_expression;
+
+mod _not_in_expression;
+
+mod _not_like_expression;
+
 mod _notification_output;
 
 mod _notification_resource;
@@ -550,6 +626,8 @@ mod _project_member;
 mod _project_status;
 
 mod _project_summary;
+
+mod _provisioning_configuration;
 
 mod _provisioning_properties;
 
@@ -578,6 +656,12 @@ mod _reject_rule_behavior;
 mod _relational_filter_configuration;
 
 mod _resource;
+
+mod _row_filter;
+
+mod _row_filter_configuration;
+
+mod _row_filter_expression;
 
 mod _run_statistics_for_assets;
 
