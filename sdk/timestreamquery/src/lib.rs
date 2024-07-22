@@ -29,7 +29,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-timestreamquery = "1.36.1"
+//! aws-sdk-timestreamquery = "1.37.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

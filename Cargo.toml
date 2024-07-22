@@ -1,9 +1,9 @@
 [workspace]
 resolver = "2"
 exclude = [
-    "examples/lambda",
-    "examples/cross_service",
     "examples/test-utils",
+    "examples/cross_service",
+    "examples/lambda",
     "examples/examples",
     "examples/webassembly",
     "tests/no-default-features",
@@ -284,7 +284,6 @@ members = [
     "sdk/migrationhuborchestrator",
     "sdk/migrationhubrefactorspaces",
     "sdk/migrationhubstrategy",
-    "sdk/mobile",
     "sdk/mq",
     "sdk/mturk",
     "sdk/mwaa",

@@ -31,7 +31,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-neptunegraph = "1.32.0"
+//! aws-sdk-neptunegraph = "1.33.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
