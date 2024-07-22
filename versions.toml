@@ -2,7 +2,7 @@ smithy_rs_revision = '78c50eea17450666458200cf925fc381097c3e32'
 aws_doc_sdk_examples_revision = '2e781e92dc3f08ef8842e4f3f826c4bd1704bb2c'
 
 [manual_interventions]
-crates_to_remove = []
+crates_to_remove = ["aws-sdk-mobile"]
 [crates.aws-config]
 category = 'AwsRuntime'
 version = '1.5.4'
