@@ -19,6 +19,7 @@ impl super::Client {
     ///   - [`metrics(Option<AudienceQualityMetrics>)`](crate::operation::get_audience_generation_job::GetAudienceGenerationJobOutput::metrics): <p>The relevance scores for different audience sizes and the recall score of the generated audience.</p>
     ///   - [`started_by(Option<String>)`](crate::operation::get_audience_generation_job::GetAudienceGenerationJobOutput::started_by): <p>The AWS account that started this audience generation job.</p>
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_audience_generation_job::GetAudienceGenerationJobOutput::tags): <p>The tags that are associated to this audience generation job.</p>
+    ///   - [`protected_query_identifier(Option<String>)`](crate::operation::get_audience_generation_job::GetAudienceGenerationJobOutput::protected_query_identifier): <p>The unique identifier of the protected query for this audience generation job.</p>
     /// - On failure, responds with [`SdkError<GetAudienceGenerationJobError>`](crate::operation::get_audience_generation_job::GetAudienceGenerationJobError)
     pub fn get_audience_generation_job(&self) -> crate::operation::get_audience_generation_job::builders::GetAudienceGenerationJobFluentBuilder {
         crate::operation::get_audience_generation_job::builders::GetAudienceGenerationJobFluentBuilder::new(self.handle.clone())

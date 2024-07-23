@@ -154,6 +154,10 @@ mod create_configured_table_analysis_rule;
 
 mod create_configured_table_association;
 
+mod create_id_mapping_table;
+
+mod create_id_namespace_association;
+
 mod create_membership;
 
 mod create_privacy_budget_template;
@@ -197,6 +201,10 @@ mod delete_configured_table_analysis_rule;
 
 mod delete_configured_table_association;
 
+mod delete_id_mapping_table;
+
+mod delete_id_namespace_association;
+
 mod delete_member;
 
 mod delete_membership;
@@ -211,6 +219,8 @@ mod get_collaboration_analysis_template;
 
 mod get_collaboration_configured_audience_model_association;
 
+mod get_collaboration_id_namespace_association;
+
 mod get_collaboration_privacy_budget_template;
 
 mod get_configured_audience_model_association;
@@ -220,6 +230,10 @@ mod get_configured_table;
 mod get_configured_table_analysis_rule;
 
 mod get_configured_table_association;
+
+mod get_id_mapping_table;
+
+mod get_id_namespace_association;
 
 mod get_membership;
 
@@ -237,6 +251,8 @@ mod list_collaboration_analysis_templates;
 
 mod list_collaboration_configured_audience_model_associations;
 
+mod list_collaboration_id_namespace_associations;
+
 mod list_collaboration_privacy_budget_templates;
 
 mod list_collaboration_privacy_budgets;
@@ -248,6 +264,10 @@ mod list_configured_audience_model_associations;
 mod list_configured_table_associations;
 
 mod list_configured_tables;
+
+mod list_id_mapping_tables;
+
+mod list_id_namespace_associations;
 
 mod list_members;
 
@@ -262,6 +282,8 @@ mod list_protected_queries;
 mod list_schemas;
 
 mod list_tags_for_resource;
+
+mod populate_id_mapping_table;
 
 mod preview_privacy_impact;
 
@@ -282,6 +304,10 @@ mod update_configured_table;
 mod update_configured_table_analysis_rule;
 
 mod update_configured_table_association;
+
+mod update_id_mapping_table;
+
+mod update_id_namespace_association;
 
 mod update_membership;
 

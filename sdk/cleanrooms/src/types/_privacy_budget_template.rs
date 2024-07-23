@@ -26,7 +26,7 @@ pub struct PrivacyBudgetTemplate {
     /// <p>If you plan to regularly bring new data into the collaboration, use <code>CALENDAR_MONTH</code> to automatically get a new privacy budget for the collaboration every calendar month. Choosing this option allows arbitrary amounts of information to be revealed about rows of the data when repeatedly queried across refreshes. Avoid choosing this if the same rows will be repeatedly queried between privacy budget refreshes.</p>
     /// </important>
     pub auto_refresh: crate::types::PrivacyBudgetTemplateAutoRefresh,
-    /// <p>Specifies the epislon and noise parameters for the privacy budget template.</p>
+    /// <p>Specifies the epsilon and noise parameters for the privacy budget template.</p>
     pub parameters: ::std::option::Option<crate::types::PrivacyBudgetTemplateParametersOutput>,
 }
 impl PrivacyBudgetTemplate {
@@ -78,7 +78,7 @@ impl PrivacyBudgetTemplate {
     pub fn auto_refresh(&self) -> &crate::types::PrivacyBudgetTemplateAutoRefresh {
         &self.auto_refresh
     }
-    /// <p>Specifies the epislon and noise parameters for the privacy budget template.</p>
+    /// <p>Specifies the epsilon and noise parameters for the privacy budget template.</p>
     pub fn parameters(&self) -> ::std::option::Option<&crate::types::PrivacyBudgetTemplateParametersOutput> {
         self.parameters.as_ref()
     }
@@ -263,18 +263,18 @@ impl PrivacyBudgetTemplateBuilder {
     pub fn get_auto_refresh(&self) -> &::std::option::Option<crate::types::PrivacyBudgetTemplateAutoRefresh> {
         &self.auto_refresh
     }
-    /// <p>Specifies the epislon and noise parameters for the privacy budget template.</p>
+    /// <p>Specifies the epsilon and noise parameters for the privacy budget template.</p>
     /// This field is required.
     pub fn parameters(mut self, input: crate::types::PrivacyBudgetTemplateParametersOutput) -> Self {
         self.parameters = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the epislon and noise parameters for the privacy budget template.</p>
+    /// <p>Specifies the epsilon and noise parameters for the privacy budget template.</p>
     pub fn set_parameters(mut self, input: ::std::option::Option<crate::types::PrivacyBudgetTemplateParametersOutput>) -> Self {
         self.parameters = input;
         self
     }
-    /// <p>Specifies the epislon and noise parameters for the privacy budget template.</p>
+    /// <p>Specifies the epsilon and noise parameters for the privacy budget template.</p>
     pub fn get_parameters(&self) -> &::std::option::Option<crate::types::PrivacyBudgetTemplateParametersOutput> {
         &self.parameters
     }

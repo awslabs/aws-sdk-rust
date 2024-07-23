@@ -90,6 +90,10 @@ where
                                 crate::protocol_serde::shape_schema_status_detail_list::de_schema_status_detail_list(tokens)?,
                             );
                         }
+                        "schemaTypeProperties" => {
+                            builder = builder
+                                .set_schema_type_properties(crate::protocol_serde::shape_schema_type_properties::de_schema_type_properties(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

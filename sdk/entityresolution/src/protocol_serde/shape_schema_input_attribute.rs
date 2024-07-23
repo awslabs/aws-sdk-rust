@@ -18,6 +18,9 @@ pub fn ser_schema_input_attribute(
     if let Some(var_3) = &input.sub_type {
         object.key("subType").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.hashed {
+        object.key("hashed").boolean(*var_4);
+    }
     Ok(())
 }
 
@@ -70,6 +73,9 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "hashed" => {
+                            builder = builder.set_hashed(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

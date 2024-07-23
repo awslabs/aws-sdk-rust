@@ -14,6 +14,7 @@
 /// match analysisruletype {
 ///     AnalysisRuleType::Aggregation => { /* ... */ },
 ///     AnalysisRuleType::Custom => { /* ... */ },
+///     AnalysisRuleType::IdMappingTable => { /* ... */ },
 ///     AnalysisRuleType::List => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -47,6 +48,8 @@ pub enum AnalysisRuleType {
     #[allow(missing_docs)] // documentation missing in model
     Custom,
     #[allow(missing_docs)] // documentation missing in model
+    IdMappingTable,
+    #[allow(missing_docs)] // documentation missing in model
     List,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -57,6 +60,7 @@ impl ::std::convert::From<&str> for AnalysisRuleType {
         match s {
             "AGGREGATION" => AnalysisRuleType::Aggregation,
             "CUSTOM" => AnalysisRuleType::Custom,
+            "ID_MAPPING_TABLE" => AnalysisRuleType::IdMappingTable,
             "LIST" => AnalysisRuleType::List,
             other => AnalysisRuleType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -75,13 +79,14 @@ impl AnalysisRuleType {
         match self {
             AnalysisRuleType::Aggregation => "AGGREGATION",
             AnalysisRuleType::Custom => "CUSTOM",
+            AnalysisRuleType::IdMappingTable => "ID_MAPPING_TABLE",
             AnalysisRuleType::List => "LIST",
             AnalysisRuleType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AGGREGATION", "CUSTOM", "LIST"]
+        &["AGGREGATION", "CUSTOM", "ID_MAPPING_TABLE", "LIST"]
     }
 }
 impl ::std::convert::AsRef<str> for AnalysisRuleType {
@@ -106,6 +111,7 @@ impl ::std::fmt::Display for AnalysisRuleType {
         match self {
             AnalysisRuleType::Aggregation => write!(f, "AGGREGATION"),
             AnalysisRuleType::Custom => write!(f, "CUSTOM"),
+            AnalysisRuleType::IdMappingTable => write!(f, "ID_MAPPING_TABLE"),
             AnalysisRuleType::List => write!(f, "LIST"),
             AnalysisRuleType::Unknown(value) => write!(f, "{}", value),
         }

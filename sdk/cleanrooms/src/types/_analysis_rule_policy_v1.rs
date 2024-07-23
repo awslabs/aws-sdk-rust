@@ -8,6 +8,8 @@ pub enum AnalysisRulePolicyV1 {
     Aggregation(crate::types::AnalysisRuleAggregation),
     /// <p>Analysis rule type that enables custom SQL queries on a configured table.</p>
     Custom(crate::types::AnalysisRuleCustom),
+    /// <p>The ID mapping table.</p>
+    IdMappingTable(crate::types::AnalysisRuleIdMappingTable),
     /// <p>Analysis rule type that enables only list queries on a configured table.</p>
     List(crate::types::AnalysisRuleList),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -46,6 +48,19 @@ impl AnalysisRulePolicyV1 {
     /// Returns true if this is a [`Custom`](crate::types::AnalysisRulePolicyV1::Custom).
     pub fn is_custom(&self) -> bool {
         self.as_custom().is_ok()
+    }
+    /// Tries to convert the enum instance into [`IdMappingTable`](crate::types::AnalysisRulePolicyV1::IdMappingTable), extracting the inner [`AnalysisRuleIdMappingTable`](crate::types::AnalysisRuleIdMappingTable).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_id_mapping_table(&self) -> ::std::result::Result<&crate::types::AnalysisRuleIdMappingTable, &Self> {
+        if let AnalysisRulePolicyV1::IdMappingTable(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`IdMappingTable`](crate::types::AnalysisRulePolicyV1::IdMappingTable).
+    pub fn is_id_mapping_table(&self) -> bool {
+        self.as_id_mapping_table().is_ok()
     }
     /// Tries to convert the enum instance into [`List`](crate::types::AnalysisRulePolicyV1::List), extracting the inner [`AnalysisRuleList`](crate::types::AnalysisRuleList).
     /// Returns `Err(&Self)` if it can't be converted.

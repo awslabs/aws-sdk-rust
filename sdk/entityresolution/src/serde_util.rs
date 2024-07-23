@@ -47,9 +47,6 @@ pub(crate) fn create_id_mapping_workflow_output_output_correct_errors(
             crate::serde_util::id_mapping_techniques_correct_errors(builder).build().ok()
         }
     }
-    if builder.role_arn.is_none() {
-        builder.role_arn = Some(Default::default())
-    }
     builder
 }
 
@@ -205,9 +202,6 @@ pub(crate) fn get_id_mapping_workflow_output_output_correct_errors(
     }
     if builder.updated_at.is_none() {
         builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
-    }
-    if builder.role_arn.is_none() {
-        builder.role_arn = Some(Default::default())
     }
     builder
 }
@@ -404,9 +398,6 @@ pub(crate) fn update_id_mapping_workflow_output_output_correct_errors(
             crate::serde_util::id_mapping_techniques_correct_errors(builder).build().ok()
         }
     }
-    if builder.role_arn.is_none() {
-        builder.role_arn = Some(Default::default())
-    }
     builder
 }
 
@@ -517,6 +508,21 @@ pub(crate) fn id_mapping_job_output_source_correct_errors(
     }
     if builder.output_s3_path.is_none() {
         builder.output_s3_path = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn id_mapping_rule_based_properties_correct_errors(
+    mut builder: crate::types::builders::IdMappingRuleBasedPropertiesBuilder,
+) -> crate::types::builders::IdMappingRuleBasedPropertiesBuilder {
+    if builder.rule_definition_type.is_none() {
+        builder.rule_definition_type = "no value was set".parse::<crate::types::IdMappingWorkflowRuleDefinitionType>().ok()
+    }
+    if builder.attribute_matching_model.is_none() {
+        builder.attribute_matching_model = "no value was set".parse::<crate::types::AttributeMatchingModel>().ok()
+    }
+    if builder.record_matching_model.is_none() {
+        builder.record_matching_model = "no value was set".parse::<crate::types::RecordMatchingModel>().ok()
     }
     builder
 }
@@ -781,6 +787,15 @@ pub(crate) fn provider_schema_attribute_correct_errors(
     }
     if builder.r#type.is_none() {
         builder.r#type = "no value was set".parse::<crate::types::SchemaAttributeType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn id_namespace_id_mapping_workflow_metadata_correct_errors(
+    mut builder: crate::types::builders::IdNamespaceIdMappingWorkflowMetadataBuilder,
+) -> crate::types::builders::IdNamespaceIdMappingWorkflowMetadataBuilder {
+    if builder.id_mapping_type.is_none() {
+        builder.id_mapping_type = "no value was set".parse::<crate::types::IdMappingType>().ok()
     }
     builder
 }

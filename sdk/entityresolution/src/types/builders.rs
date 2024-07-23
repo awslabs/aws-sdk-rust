@@ -23,9 +23,13 @@ pub use crate::types::_id_namespace_id_mapping_workflow_properties::IdNamespaceI
 
 pub use crate::types::_namespace_provider_properties::NamespaceProviderPropertiesBuilder;
 
+pub use crate::types::_namespace_rule_based_properties::NamespaceRuleBasedPropertiesBuilder;
+
 pub use crate::types::_id_namespace_input_source::IdNamespaceInputSourceBuilder;
 
 pub use crate::types::_id_mapping_techniques::IdMappingTechniquesBuilder;
+
+pub use crate::types::_id_mapping_rule_based_properties::IdMappingRuleBasedPropertiesBuilder;
 
 pub use crate::types::_id_mapping_workflow_output_source::IdMappingWorkflowOutputSourceBuilder;
 
@@ -42,6 +46,8 @@ pub use crate::types::_matching_workflow_summary::MatchingWorkflowSummaryBuilder
 pub use crate::types::_job_summary::JobSummaryBuilder;
 
 pub use crate::types::_id_namespace_summary::IdNamespaceSummaryBuilder;
+
+pub use crate::types::_id_namespace_id_mapping_workflow_metadata::IdNamespaceIdMappingWorkflowMetadataBuilder;
 
 pub use crate::types::_id_mapping_workflow_summary::IdMappingWorkflowSummaryBuilder;
 

@@ -159,10 +159,6 @@ pub use crate::types::_asset_listing_item_additional_attributes::AssetListingIte
 
 pub use crate::types::_group_profile_summary::GroupProfileSummaryBuilder;
 
-pub use crate::types::_data_product_summary::DataProductSummaryBuilder;
-
-pub use crate::types::_data_product_item::DataProductItemBuilder;
-
 pub use crate::types::_asset_item::AssetItemBuilder;
 
 pub use crate::types::_asset_item_additional_attributes::AssetItemAdditionalAttributesBuilder;

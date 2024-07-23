@@ -16,6 +16,7 @@
 ///     SchemaStatusReasonCode::AnalysisRuleMissing => { /* ... */ },
 ///     SchemaStatusReasonCode::AnalysisTemplatesNotConfigured => { /* ... */ },
 ///     SchemaStatusReasonCode::DifferentialPrivacyPolicyNotConfigured => { /* ... */ },
+///     SchemaStatusReasonCode::IdMappingTableNotPopulated => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -51,6 +52,8 @@ pub enum SchemaStatusReasonCode {
     AnalysisTemplatesNotConfigured,
     #[allow(missing_docs)] // documentation missing in model
     DifferentialPrivacyPolicyNotConfigured,
+    #[allow(missing_docs)] // documentation missing in model
+    IdMappingTableNotPopulated,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -62,6 +65,7 @@ impl ::std::convert::From<&str> for SchemaStatusReasonCode {
             "ANALYSIS_RULE_MISSING" => SchemaStatusReasonCode::AnalysisRuleMissing,
             "ANALYSIS_TEMPLATES_NOT_CONFIGURED" => SchemaStatusReasonCode::AnalysisTemplatesNotConfigured,
             "DIFFERENTIAL_PRIVACY_POLICY_NOT_CONFIGURED" => SchemaStatusReasonCode::DifferentialPrivacyPolicyNotConfigured,
+            "ID_MAPPING_TABLE_NOT_POPULATED" => SchemaStatusReasonCode::IdMappingTableNotPopulated,
             other => SchemaStatusReasonCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -81,6 +85,7 @@ impl SchemaStatusReasonCode {
             SchemaStatusReasonCode::AnalysisRuleMissing => "ANALYSIS_RULE_MISSING",
             SchemaStatusReasonCode::AnalysisTemplatesNotConfigured => "ANALYSIS_TEMPLATES_NOT_CONFIGURED",
             SchemaStatusReasonCode::DifferentialPrivacyPolicyNotConfigured => "DIFFERENTIAL_PRIVACY_POLICY_NOT_CONFIGURED",
+            SchemaStatusReasonCode::IdMappingTableNotPopulated => "ID_MAPPING_TABLE_NOT_POPULATED",
             SchemaStatusReasonCode::Unknown(value) => value.as_str(),
         }
     }
@@ -91,6 +96,7 @@ impl SchemaStatusReasonCode {
             "ANALYSIS_RULE_MISSING",
             "ANALYSIS_TEMPLATES_NOT_CONFIGURED",
             "DIFFERENTIAL_PRIVACY_POLICY_NOT_CONFIGURED",
+            "ID_MAPPING_TABLE_NOT_POPULATED",
         ]
     }
 }
@@ -118,6 +124,7 @@ impl ::std::fmt::Display for SchemaStatusReasonCode {
             SchemaStatusReasonCode::AnalysisRuleMissing => write!(f, "ANALYSIS_RULE_MISSING"),
             SchemaStatusReasonCode::AnalysisTemplatesNotConfigured => write!(f, "ANALYSIS_TEMPLATES_NOT_CONFIGURED"),
             SchemaStatusReasonCode::DifferentialPrivacyPolicyNotConfigured => write!(f, "DIFFERENTIAL_PRIVACY_POLICY_NOT_CONFIGURED"),
+            SchemaStatusReasonCode::IdMappingTableNotPopulated => write!(f, "ID_MAPPING_TABLE_NOT_POPULATED"),
             SchemaStatusReasonCode::Unknown(value) => write!(f, "{}", value),
         }
     }

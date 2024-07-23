@@ -108,6 +108,12 @@ impl ListDomainNamesFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_domain_names::paginator::ListDomainNamesPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+    pub fn into_paginator(self) -> crate::operation::list_domain_names::paginator::ListDomainNamesPaginator {
+        crate::operation::list_domain_names::paginator::ListDomainNamesPaginator::new(self.handle, self.inner)
+    }
     /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

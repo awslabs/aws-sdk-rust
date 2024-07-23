@@ -20,6 +20,10 @@ where
                         "Categories" => {
                             builder = builder.set_categories(crate::protocol_serde::shape_categories::de_categories(tokens)?);
                         }
+                        "PostContactSummary" => {
+                            builder =
+                                builder.set_post_contact_summary(crate::protocol_serde::shape_post_contact_summary::de_post_contact_summary(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -103,6 +103,30 @@ pub use crate::types::_membership_status::MembershipStatus;
 
 pub use crate::types::_membership_summary::MembershipSummary;
 
+pub use crate::types::_id_namespace_association::IdNamespaceAssociation;
+
+pub use crate::types::_id_mapping_config::IdMappingConfig;
+
+pub use crate::types::_id_namespace_association_input_reference_properties::IdNamespaceAssociationInputReferenceProperties;
+
+pub use crate::types::_id_namespace_type::IdNamespaceType;
+
+pub use crate::types::_id_namespace_association_input_reference_config::IdNamespaceAssociationInputReferenceConfig;
+
+pub use crate::types::_id_namespace_association_summary::IdNamespaceAssociationSummary;
+
+pub use crate::types::_id_namespace_association_input_reference_properties_summary::IdNamespaceAssociationInputReferencePropertiesSummary;
+
+pub use crate::types::_id_mapping_table::IdMappingTable;
+
+pub use crate::types::_id_mapping_table_input_reference_properties::IdMappingTableInputReferenceProperties;
+
+pub use crate::types::_id_mapping_table_input_source::IdMappingTableInputSource;
+
+pub use crate::types::_id_mapping_table_input_reference_config::IdMappingTableInputReferenceConfig;
+
+pub use crate::types::_id_mapping_table_summary::IdMappingTableSummary;
+
 pub use crate::types::_configured_table_analysis_rule::ConfiguredTableAnalysisRule;
 
 pub use crate::types::_configured_table_analysis_rule_type::ConfiguredTableAnalysisRuleType;
@@ -171,6 +195,8 @@ pub use crate::types::_collaboration_privacy_budget_template_summary::Collaborat
 
 pub use crate::types::_collaboration_privacy_budget_summary::CollaborationPrivacyBudgetSummary;
 
+pub use crate::types::_collaboration_id_namespace_association_summary::CollaborationIdNamespaceAssociationSummary;
+
 pub use crate::types::_collaboration_configured_audience_model_association_summary::CollaborationConfiguredAudienceModelAssociationSummary;
 
 pub use crate::types::_collaboration_analysis_template_summary::CollaborationAnalysisTemplateSummary;
@@ -181,7 +207,17 @@ pub use crate::types::_analysis_rule_policy::AnalysisRulePolicy;
 
 pub use crate::types::_analysis_rule_policy_v1::AnalysisRulePolicyV1;
 
+pub use crate::types::_analysis_rule_id_mapping_table::AnalysisRuleIdMappingTable;
+
+pub use crate::types::_query_constraint::QueryConstraint;
+
+pub use crate::types::_query_constraint_require_overlap::QueryConstraintRequireOverlap;
+
 pub use crate::types::_schema::Schema;
+
+pub use crate::types::_schema_type_properties::SchemaTypeProperties;
+
+pub use crate::types::_id_mapping_table_schema_type_properties::IdMappingTableSchemaTypeProperties;
 
 pub use crate::types::_schema_status_detail::SchemaStatusDetail;
 
@@ -196,6 +232,8 @@ pub use crate::types::_schema_status::SchemaStatus;
 pub use crate::types::_column::Column;
 
 pub use crate::types::_collaboration_privacy_budget_template::CollaborationPrivacyBudgetTemplate;
+
+pub use crate::types::_collaboration_id_namespace_association::CollaborationIdNamespaceAssociation;
 
 pub use crate::types::_collaboration_configured_audience_model_association::CollaborationConfiguredAudienceModelAssociation;
 
@@ -265,6 +303,8 @@ mod _analysis_rule_aggregation;
 
 mod _analysis_rule_custom;
 
+mod _analysis_rule_id_mapping_table;
+
 mod _analysis_rule_list;
 
 mod _analysis_rule_policy;
@@ -304,6 +344,10 @@ mod _collaboration_analysis_template_summary;
 mod _collaboration_configured_audience_model_association;
 
 mod _collaboration_configured_audience_model_association_summary;
+
+mod _collaboration_id_namespace_association;
+
+mod _collaboration_id_namespace_association_summary;
 
 mod _collaboration_privacy_budget_summary;
 
@@ -370,6 +414,32 @@ mod _differential_privacy_template_update_parameters;
 mod _filterable_member_status;
 
 mod _glue_table_reference;
+
+mod _id_mapping_config;
+
+mod _id_mapping_table;
+
+mod _id_mapping_table_input_reference_config;
+
+mod _id_mapping_table_input_reference_properties;
+
+mod _id_mapping_table_input_source;
+
+mod _id_mapping_table_schema_type_properties;
+
+mod _id_mapping_table_summary;
+
+mod _id_namespace_association;
+
+mod _id_namespace_association_input_reference_config;
+
+mod _id_namespace_association_input_reference_properties;
+
+mod _id_namespace_association_input_reference_properties_summary;
+
+mod _id_namespace_association_summary;
+
+mod _id_namespace_type;
 
 mod _join_operator;
 
@@ -455,6 +525,10 @@ mod _protected_query_type;
 
 mod _query_compute_payment_config;
 
+mod _query_constraint;
+
+mod _query_constraint_require_overlap;
+
 mod _resource_type;
 
 mod _result_format;
@@ -478,6 +552,8 @@ mod _schema_status_reason_code;
 mod _schema_summary;
 
 mod _schema_type;
+
+mod _schema_type_properties;
 
 mod _table_reference;
 

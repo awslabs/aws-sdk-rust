@@ -136,17 +136,23 @@ impl AddPolicyStatementFluentBuilder {
     pub fn get_statement_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_statement_id()
     }
-    /// <p>Determines whether the permissions specified in the policy are to be allowed (<code>Allow</code>) or denied (<code>Deny</code>).</p>
+    /// <p>Determines whether the permissions specified in the policy are to be allowed (<code>Allow</code>) or denied (<code>Deny</code>).</p><important>
+    /// <p>If you set the value of the <code>effect</code> parameter to <code>Deny</code> for the <code>AddPolicyStatement</code> operation, you must also set the value of the <code>effect</code> parameter in the <code>policy</code> to <code>Deny</code> for the <code>PutPolicy</code> operation.</p>
+    /// </important>
     pub fn effect(mut self, input: crate::types::StatementEffect) -> Self {
         self.inner = self.inner.effect(input);
         self
     }
-    /// <p>Determines whether the permissions specified in the policy are to be allowed (<code>Allow</code>) or denied (<code>Deny</code>).</p>
+    /// <p>Determines whether the permissions specified in the policy are to be allowed (<code>Allow</code>) or denied (<code>Deny</code>).</p><important>
+    /// <p>If you set the value of the <code>effect</code> parameter to <code>Deny</code> for the <code>AddPolicyStatement</code> operation, you must also set the value of the <code>effect</code> parameter in the <code>policy</code> to <code>Deny</code> for the <code>PutPolicy</code> operation.</p>
+    /// </important>
     pub fn set_effect(mut self, input: ::std::option::Option<crate::types::StatementEffect>) -> Self {
         self.inner = self.inner.set_effect(input);
         self
     }
-    /// <p>Determines whether the permissions specified in the policy are to be allowed (<code>Allow</code>) or denied (<code>Deny</code>).</p>
+    /// <p>Determines whether the permissions specified in the policy are to be allowed (<code>Allow</code>) or denied (<code>Deny</code>).</p><important>
+    /// <p>If you set the value of the <code>effect</code> parameter to <code>Deny</code> for the <code>AddPolicyStatement</code> operation, you must also set the value of the <code>effect</code> parameter in the <code>policy</code> to <code>Deny</code> for the <code>PutPolicy</code> operation.</p>
+    /// </important>
     pub fn get_effect(&self) -> &::std::option::Option<crate::types::StatementEffect> {
         self.inner.get_effect()
     }

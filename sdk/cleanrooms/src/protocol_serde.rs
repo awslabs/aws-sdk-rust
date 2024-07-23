@@ -41,6 +41,10 @@ pub(crate) mod shape_create_configured_table_analysis_rule;
 
 pub(crate) mod shape_create_configured_table_association;
 
+pub(crate) mod shape_create_id_mapping_table;
+
+pub(crate) mod shape_create_id_namespace_association;
+
 pub(crate) mod shape_create_membership;
 
 pub(crate) mod shape_create_privacy_budget_template;
@@ -57,6 +61,10 @@ pub(crate) mod shape_delete_configured_table_analysis_rule;
 
 pub(crate) mod shape_delete_configured_table_association;
 
+pub(crate) mod shape_delete_id_mapping_table;
+
+pub(crate) mod shape_delete_id_namespace_association;
+
 pub(crate) mod shape_delete_member;
 
 pub(crate) mod shape_delete_membership;
@@ -71,6 +79,8 @@ pub(crate) mod shape_get_collaboration_analysis_template;
 
 pub(crate) mod shape_get_collaboration_configured_audience_model_association;
 
+pub(crate) mod shape_get_collaboration_id_namespace_association;
+
 pub(crate) mod shape_get_collaboration_privacy_budget_template;
 
 pub(crate) mod shape_get_configured_audience_model_association;
@@ -80,6 +90,10 @@ pub(crate) mod shape_get_configured_table;
 pub(crate) mod shape_get_configured_table_analysis_rule;
 
 pub(crate) mod shape_get_configured_table_association;
+
+pub(crate) mod shape_get_id_mapping_table;
+
+pub(crate) mod shape_get_id_namespace_association;
 
 pub(crate) mod shape_get_membership;
 
@@ -97,6 +111,8 @@ pub(crate) mod shape_list_collaboration_analysis_templates;
 
 pub(crate) mod shape_list_collaboration_configured_audience_model_associations;
 
+pub(crate) mod shape_list_collaboration_id_namespace_associations;
+
 pub(crate) mod shape_list_collaboration_privacy_budget_templates;
 
 pub(crate) mod shape_list_collaboration_privacy_budgets;
@@ -108,6 +124,10 @@ pub(crate) mod shape_list_configured_audience_model_associations;
 pub(crate) mod shape_list_configured_table_associations;
 
 pub(crate) mod shape_list_configured_tables;
+
+pub(crate) mod shape_list_id_mapping_tables;
+
+pub(crate) mod shape_list_id_namespace_associations;
 
 pub(crate) mod shape_list_members;
 
@@ -122,6 +142,8 @@ pub(crate) mod shape_list_protected_queries;
 pub(crate) mod shape_list_schemas;
 
 pub(crate) mod shape_list_tags_for_resource;
+
+pub(crate) mod shape_populate_id_mapping_table;
 
 pub(crate) mod shape_preview_privacy_impact;
 
@@ -142,6 +164,10 @@ pub(crate) mod shape_update_configured_table;
 pub(crate) mod shape_update_configured_table_analysis_rule;
 
 pub(crate) mod shape_update_configured_table_association;
+
+pub(crate) mod shape_update_id_mapping_table;
+
+pub(crate) mod shape_update_id_namespace_association;
 
 pub(crate) mod shape_update_membership;
 
@@ -179,6 +205,10 @@ pub(crate) mod shape_create_configured_table_association_input;
 
 pub(crate) mod shape_create_configured_table_input;
 
+pub(crate) mod shape_create_id_mapping_table_input;
+
+pub(crate) mod shape_create_id_namespace_association_input;
+
 pub(crate) mod shape_create_membership_input;
 
 pub(crate) mod shape_create_privacy_budget_template_input;
@@ -208,6 +238,10 @@ pub(crate) mod shape_update_configured_table_analysis_rule_input;
 pub(crate) mod shape_update_configured_table_association_input;
 
 pub(crate) mod shape_update_configured_table_input;
+
+pub(crate) mod shape_update_id_mapping_table_input;
+
+pub(crate) mod shape_update_id_namespace_association_input;
 
 pub(crate) mod shape_update_membership_input;
 
@@ -245,6 +279,10 @@ pub(crate) mod shape_collaboration_configured_audience_model_association;
 
 pub(crate) mod shape_collaboration_configured_audience_model_association_summary_list;
 
+pub(crate) mod shape_collaboration_id_namespace_association;
+
+pub(crate) mod shape_collaboration_id_namespace_association_summary_list;
+
 pub(crate) mod shape_collaboration_privacy_budget_summary_list;
 
 pub(crate) mod shape_collaboration_privacy_budget_template;
@@ -270,6 +308,20 @@ pub(crate) mod shape_configured_table_association_summary_list;
 pub(crate) mod shape_configured_table_summary_list;
 
 pub(crate) mod shape_data_encryption_metadata;
+
+pub(crate) mod shape_id_mapping_config;
+
+pub(crate) mod shape_id_mapping_table;
+
+pub(crate) mod shape_id_mapping_table_input_reference_config;
+
+pub(crate) mod shape_id_mapping_table_summary_list;
+
+pub(crate) mod shape_id_namespace_association;
+
+pub(crate) mod shape_id_namespace_association_input_reference_config;
+
+pub(crate) mod shape_id_namespace_association_summary_list;
 
 pub(crate) mod shape_member_specification;
 
@@ -347,6 +399,8 @@ pub(crate) mod shape_collaboration_analysis_template_summary;
 
 pub(crate) mod shape_collaboration_configured_audience_model_association_summary;
 
+pub(crate) mod shape_collaboration_id_namespace_association_summary;
+
 pub(crate) mod shape_collaboration_privacy_budget_summary;
 
 pub(crate) mod shape_collaboration_privacy_budget_template_summary;
@@ -376,6 +430,14 @@ pub(crate) mod shape_differential_privacy_template_parameters_input;
 pub(crate) mod shape_differential_privacy_template_update_parameters;
 
 pub(crate) mod shape_glue_table_reference;
+
+pub(crate) mod shape_id_mapping_table_input_reference_properties;
+
+pub(crate) mod shape_id_mapping_table_summary;
+
+pub(crate) mod shape_id_namespace_association_input_reference_properties;
+
+pub(crate) mod shape_id_namespace_association_summary;
 
 pub(crate) mod shape_member_abilities;
 
@@ -409,6 +471,8 @@ pub(crate) mod shape_schema_status_detail_list;
 
 pub(crate) mod shape_schema_summary;
 
+pub(crate) mod shape_schema_type_properties;
+
 pub(crate) mod shape_validation_exception_field;
 
 pub(crate) mod shape_analysis_rule_aggregation;
@@ -429,6 +493,14 @@ pub(crate) mod shape_differential_privacy_sensitivity_parameters_list;
 
 pub(crate) mod shape_differential_privacy_template_parameters_output;
 
+pub(crate) mod shape_id_mapping_table_input_source_list;
+
+pub(crate) mod shape_id_mapping_table_schema_type_properties;
+
+pub(crate) mod shape_id_mapping_workflows_supported;
+
+pub(crate) mod shape_id_namespace_association_input_reference_properties_summary;
+
 pub(crate) mod shape_parameter_map;
 
 pub(crate) mod shape_privacy_budget;
@@ -445,6 +517,8 @@ pub(crate) mod shape_aggregate_column;
 
 pub(crate) mod shape_aggregation_constraint;
 
+pub(crate) mod shape_analysis_rule_id_mapping_table;
+
 pub(crate) mod shape_analysis_template_validation_status_reason_list;
 
 pub(crate) mod shape_differential_privacy_configuration;
@@ -454,6 +528,8 @@ pub(crate) mod shape_differential_privacy_preview_aggregation;
 pub(crate) mod shape_differential_privacy_privacy_budget;
 
 pub(crate) mod shape_differential_privacy_sensitivity_parameters;
+
+pub(crate) mod shape_id_mapping_table_input_source;
 
 pub(crate) mod shape_protected_query_member_output_list;
 
@@ -483,6 +559,8 @@ pub(crate) mod shape_join_operators_list;
 
 pub(crate) mod shape_protected_query_single_member_output;
 
+pub(crate) mod shape_query_constraint_list;
+
 pub(crate) mod shape_scalar_functions_list;
 
 pub(crate) mod shape_schema_status_reason;
@@ -491,4 +569,8 @@ pub(crate) mod shape_differential_privacy_column_list;
 
 pub(crate) mod shape_differential_privacy_privacy_budget_aggregation;
 
+pub(crate) mod shape_query_constraint;
+
 pub(crate) mod shape_analysis_rule_column_name_list;
+
+pub(crate) mod shape_query_constraint_require_overlap;

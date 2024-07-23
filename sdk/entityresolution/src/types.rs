@@ -15,6 +15,8 @@ pub use crate::types::_intermediate_source_configuration::IntermediateSourceConf
 
 pub use crate::types::_rule_based_properties::RuleBasedProperties;
 
+pub use crate::types::_match_purpose::MatchPurpose;
+
 pub use crate::types::_attribute_matching_model::AttributeMatchingModel;
 
 pub use crate::types::_rule::Rule;
@@ -33,11 +35,19 @@ pub use crate::types::_id_namespace_id_mapping_workflow_properties::IdNamespaceI
 
 pub use crate::types::_namespace_provider_properties::NamespaceProviderProperties;
 
+pub use crate::types::_namespace_rule_based_properties::NamespaceRuleBasedProperties;
+
+pub use crate::types::_record_matching_model::RecordMatchingModel;
+
+pub use crate::types::_id_mapping_workflow_rule_definition_type::IdMappingWorkflowRuleDefinitionType;
+
 pub use crate::types::_id_mapping_type::IdMappingType;
 
 pub use crate::types::_id_namespace_input_source::IdNamespaceInputSource;
 
 pub use crate::types::_id_mapping_techniques::IdMappingTechniques;
+
+pub use crate::types::_id_mapping_rule_based_properties::IdMappingRuleBasedProperties;
 
 pub use crate::types::_id_mapping_workflow_output_source::IdMappingWorkflowOutputSource;
 
@@ -58,6 +68,8 @@ pub use crate::types::_job_summary::JobSummary;
 pub use crate::types::_job_status::JobStatus;
 
 pub use crate::types::_id_namespace_summary::IdNamespaceSummary;
+
+pub use crate::types::_id_namespace_id_mapping_workflow_metadata::IdNamespaceIdMappingWorkflowMetadata;
 
 pub use crate::types::_id_mapping_workflow_summary::IdMappingWorkflowSummary;
 
@@ -107,6 +119,8 @@ mod _id_mapping_job_metrics;
 
 mod _id_mapping_job_output_source;
 
+mod _id_mapping_rule_based_properties;
+
 mod _id_mapping_techniques;
 
 mod _id_mapping_type;
@@ -115,7 +129,11 @@ mod _id_mapping_workflow_input_source;
 
 mod _id_mapping_workflow_output_source;
 
+mod _id_mapping_workflow_rule_definition_type;
+
 mod _id_mapping_workflow_summary;
+
+mod _id_namespace_id_mapping_workflow_metadata;
 
 mod _id_namespace_id_mapping_workflow_properties;
 
@@ -141,9 +159,13 @@ mod _job_status;
 
 mod _job_summary;
 
+mod _match_purpose;
+
 mod _matching_workflow_summary;
 
 mod _namespace_provider_properties;
+
+mod _namespace_rule_based_properties;
 
 mod _output_attribute;
 
@@ -164,6 +186,8 @@ mod _provider_properties;
 mod _provider_schema_attribute;
 
 mod _provider_service_summary;
+
+mod _record_matching_model;
 
 mod _resolution_techniques;
 

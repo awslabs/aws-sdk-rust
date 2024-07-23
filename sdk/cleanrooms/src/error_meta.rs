@@ -430,6 +430,91 @@ impl From<crate::operation::create_configured_table_association::CreateConfigure
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_id_mapping_table::CreateIdMappingTableError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_id_mapping_table::CreateIdMappingTableError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_id_mapping_table::CreateIdMappingTableError> for Error {
+    fn from(err: crate::operation::create_id_mapping_table::CreateIdMappingTableError) -> Self {
+        match err {
+            crate::operation::create_id_mapping_table::CreateIdMappingTableError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_id_mapping_table::CreateIdMappingTableError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_id_mapping_table::CreateIdMappingTableError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_id_mapping_table::CreateIdMappingTableError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_id_mapping_table::CreateIdMappingTableError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_id_mapping_table::CreateIdMappingTableError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_id_mapping_table::CreateIdMappingTableError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_id_mapping_table::CreateIdMappingTableError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_id_namespace_association::CreateIdNamespaceAssociationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_id_namespace_association::CreateIdNamespaceAssociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_id_namespace_association::CreateIdNamespaceAssociationError> for Error {
+    fn from(err: crate::operation::create_id_namespace_association::CreateIdNamespaceAssociationError) -> Self {
+        match err {
+            crate::operation::create_id_namespace_association::CreateIdNamespaceAssociationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_id_namespace_association::CreateIdNamespaceAssociationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_id_namespace_association::CreateIdNamespaceAssociationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_id_namespace_association::CreateIdNamespaceAssociationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_id_namespace_association::CreateIdNamespaceAssociationError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_id_namespace_association::CreateIdNamespaceAssociationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_id_namespace_association::CreateIdNamespaceAssociationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_id_namespace_association::CreateIdNamespaceAssociationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_membership::CreateMembershipError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -739,6 +824,81 @@ impl From<crate::operation::delete_configured_table_association::DeleteConfigure
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_id_mapping_table::DeleteIdMappingTableError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_id_mapping_table::DeleteIdMappingTableError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_id_mapping_table::DeleteIdMappingTableError> for Error {
+    fn from(err: crate::operation::delete_id_mapping_table::DeleteIdMappingTableError) -> Self {
+        match err {
+            crate::operation::delete_id_mapping_table::DeleteIdMappingTableError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_id_mapping_table::DeleteIdMappingTableError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_id_mapping_table::DeleteIdMappingTableError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_id_mapping_table::DeleteIdMappingTableError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_id_mapping_table::DeleteIdMappingTableError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_id_mapping_table::DeleteIdMappingTableError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_id_namespace_association::DeleteIdNamespaceAssociationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_id_namespace_association::DeleteIdNamespaceAssociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_id_namespace_association::DeleteIdNamespaceAssociationError> for Error {
+    fn from(err: crate::operation::delete_id_namespace_association::DeleteIdNamespaceAssociationError) -> Self {
+        match err {
+            crate::operation::delete_id_namespace_association::DeleteIdNamespaceAssociationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_id_namespace_association::DeleteIdNamespaceAssociationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_id_namespace_association::DeleteIdNamespaceAssociationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_id_namespace_association::DeleteIdNamespaceAssociationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_id_namespace_association::DeleteIdNamespaceAssociationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_id_namespace_association::DeleteIdNamespaceAssociationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_member::DeleteMemberError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -982,6 +1142,55 @@ impl From<crate::operation::get_collaboration_configured_audience_model_associat
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_collaboration_id_namespace_association::GetCollaborationIdNamespaceAssociationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_collaboration_id_namespace_association::GetCollaborationIdNamespaceAssociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_collaboration_id_namespace_association::GetCollaborationIdNamespaceAssociationError> for Error {
+    fn from(err: crate::operation::get_collaboration_id_namespace_association::GetCollaborationIdNamespaceAssociationError) -> Self {
+        match err {
+            crate::operation::get_collaboration_id_namespace_association::GetCollaborationIdNamespaceAssociationError::AccessDeniedException(
+                inner,
+            ) => Error::AccessDeniedException(inner),
+            crate::operation::get_collaboration_id_namespace_association::GetCollaborationIdNamespaceAssociationError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::get_collaboration_id_namespace_association::GetCollaborationIdNamespaceAssociationError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_collaboration_id_namespace_association::GetCollaborationIdNamespaceAssociationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_collaboration_id_namespace_association::GetCollaborationIdNamespaceAssociationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_collaboration_id_namespace_association::GetCollaborationIdNamespaceAssociationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::get_collaboration_privacy_budget_template::GetCollaborationPrivacyBudgetTemplateError,
             R,
         >,
@@ -1193,6 +1402,73 @@ impl From<crate::operation::get_configured_table_association::GetConfiguredTable
                 Error::ValidationException(inner)
             }
             crate::operation::get_configured_table_association::GetConfiguredTableAssociationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_id_mapping_table::GetIdMappingTableError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_id_mapping_table::GetIdMappingTableError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_id_mapping_table::GetIdMappingTableError> for Error {
+    fn from(err: crate::operation::get_id_mapping_table::GetIdMappingTableError) -> Self {
+        match err {
+            crate::operation::get_id_mapping_table::GetIdMappingTableError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_id_mapping_table::GetIdMappingTableError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_id_mapping_table::GetIdMappingTableError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_id_mapping_table::GetIdMappingTableError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_id_mapping_table::GetIdMappingTableError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_id_mapping_table::GetIdMappingTableError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_id_namespace_association::GetIdNamespaceAssociationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_id_namespace_association::GetIdNamespaceAssociationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_id_namespace_association::GetIdNamespaceAssociationError> for Error {
+    fn from(err: crate::operation::get_id_namespace_association::GetIdNamespaceAssociationError) -> Self {
+        match err {
+            crate::operation::get_id_namespace_association::GetIdNamespaceAssociationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_id_namespace_association::GetIdNamespaceAssociationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_id_namespace_association::GetIdNamespaceAssociationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_id_namespace_association::GetIdNamespaceAssociationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_id_namespace_association::GetIdNamespaceAssociationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_id_namespace_association::GetIdNamespaceAssociationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1476,6 +1752,43 @@ impl From<crate::operation::list_collaboration_configured_audience_model_associa
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_collaboration_id_namespace_associations::ListCollaborationIdNamespaceAssociationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_collaboration_id_namespace_associations::ListCollaborationIdNamespaceAssociationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_collaboration_id_namespace_associations::ListCollaborationIdNamespaceAssociationsError> for Error {
+    fn from(err: crate::operation::list_collaboration_id_namespace_associations::ListCollaborationIdNamespaceAssociationsError) -> Self {
+        match err {
+            crate::operation::list_collaboration_id_namespace_associations::ListCollaborationIdNamespaceAssociationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_collaboration_id_namespace_associations::ListCollaborationIdNamespaceAssociationsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_collaboration_id_namespace_associations::ListCollaborationIdNamespaceAssociationsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_collaboration_id_namespace_associations::ListCollaborationIdNamespaceAssociationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_collaboration_id_namespace_associations::ListCollaborationIdNamespaceAssociationsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_collaboration_id_namespace_associations::ListCollaborationIdNamespaceAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::list_collaboration_privacy_budgets::ListCollaborationPrivacyBudgetsError,
             R,
         >,
@@ -1693,6 +2006,79 @@ impl From<crate::operation::list_configured_tables::ListConfiguredTablesError> f
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_id_mapping_tables::ListIdMappingTablesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_id_mapping_tables::ListIdMappingTablesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_id_mapping_tables::ListIdMappingTablesError> for Error {
+    fn from(err: crate::operation::list_id_mapping_tables::ListIdMappingTablesError) -> Self {
+        match err {
+            crate::operation::list_id_mapping_tables::ListIdMappingTablesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_id_mapping_tables::ListIdMappingTablesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_id_mapping_tables::ListIdMappingTablesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_id_mapping_tables::ListIdMappingTablesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_id_mapping_tables::ListIdMappingTablesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_id_mapping_tables::ListIdMappingTablesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_id_namespace_associations::ListIdNamespaceAssociationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_id_namespace_associations::ListIdNamespaceAssociationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_id_namespace_associations::ListIdNamespaceAssociationsError> for Error {
+    fn from(err: crate::operation::list_id_namespace_associations::ListIdNamespaceAssociationsError) -> Self {
+        match err {
+            crate::operation::list_id_namespace_associations::ListIdNamespaceAssociationsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_id_namespace_associations::ListIdNamespaceAssociationsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_id_namespace_associations::ListIdNamespaceAssociationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_id_namespace_associations::ListIdNamespaceAssociationsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_id_namespace_associations::ListIdNamespaceAssociationsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_id_namespace_associations::ListIdNamespaceAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_members::ListMembersError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1889,6 +2275,42 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
             }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::populate_id_mapping_table::PopulateIdMappingTableError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::populate_id_mapping_table::PopulateIdMappingTableError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::populate_id_mapping_table::PopulateIdMappingTableError> for Error {
+    fn from(err: crate::operation::populate_id_mapping_table::PopulateIdMappingTableError) -> Self {
+        match err {
+            crate::operation::populate_id_mapping_table::PopulateIdMappingTableError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::populate_id_mapping_table::PopulateIdMappingTableError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::populate_id_mapping_table::PopulateIdMappingTableError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::populate_id_mapping_table::PopulateIdMappingTableError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::populate_id_mapping_table::PopulateIdMappingTableError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::populate_id_mapping_table::PopulateIdMappingTableError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::populate_id_mapping_table::PopulateIdMappingTableError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2231,6 +2653,81 @@ impl From<crate::operation::update_configured_table_association::UpdateConfigure
                 Error::ValidationException(inner)
             }
             crate::operation::update_configured_table_association::UpdateConfiguredTableAssociationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_id_mapping_table::UpdateIdMappingTableError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_id_mapping_table::UpdateIdMappingTableError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_id_mapping_table::UpdateIdMappingTableError> for Error {
+    fn from(err: crate::operation::update_id_mapping_table::UpdateIdMappingTableError) -> Self {
+        match err {
+            crate::operation::update_id_mapping_table::UpdateIdMappingTableError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_id_mapping_table::UpdateIdMappingTableError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_id_mapping_table::UpdateIdMappingTableError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_id_mapping_table::UpdateIdMappingTableError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_id_mapping_table::UpdateIdMappingTableError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_id_mapping_table::UpdateIdMappingTableError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_id_namespace_association::UpdateIdNamespaceAssociationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_id_namespace_association::UpdateIdNamespaceAssociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_id_namespace_association::UpdateIdNamespaceAssociationError> for Error {
+    fn from(err: crate::operation::update_id_namespace_association::UpdateIdNamespaceAssociationError) -> Self {
+        match err {
+            crate::operation::update_id_namespace_association::UpdateIdNamespaceAssociationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_id_namespace_association::UpdateIdNamespaceAssociationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_id_namespace_association::UpdateIdNamespaceAssociationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_id_namespace_association::UpdateIdNamespaceAssociationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_id_namespace_association::UpdateIdNamespaceAssociationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_id_namespace_association::UpdateIdNamespaceAssociationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

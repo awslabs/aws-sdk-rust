@@ -43,6 +43,11 @@ where
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'custom' cannot be null")
                             })?,
                         )),
+                        "idMappingTable" => Some(crate::types::AnalysisRulePolicyV1::IdMappingTable(
+                            crate::protocol_serde::shape_analysis_rule_id_mapping_table::de_analysis_rule_id_mapping_table(tokens)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'idMappingTable' cannot be null"),
+                            )?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::AnalysisRulePolicyV1::Unknown)

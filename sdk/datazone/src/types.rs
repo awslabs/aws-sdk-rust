@@ -269,10 +269,6 @@ pub use crate::types::_group_search_type::GroupSearchType;
 
 pub use crate::types::_search_inventory_result_item::SearchInventoryResultItem;
 
-pub use crate::types::_data_product_summary::DataProductSummary;
-
-pub use crate::types::_data_product_item::DataProductItem;
-
 pub use crate::types::_asset_item::AssetItem;
 
 pub use crate::types::_asset_item_additional_attributes::AssetItemAdditionalAttributes;
@@ -434,10 +430,6 @@ mod _configurable_environment_action;
 mod _custom_parameter;
 
 mod _data_asset_activity_status;
-
-mod _data_product_item;
-
-mod _data_product_summary;
 
 mod _data_source_configuration_input;
 

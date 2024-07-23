@@ -4,17 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IdMappingWorkflowInputSource {
-    /// <p>An Glue table ARN for the input source table.</p>
+    /// <p>An Glue table Amazon Resource Name (ARN) or a matching workflow ARN for the input source table.</p>
     pub input_source_arn: ::std::string::String,
     /// <p>The name of the schema to be retrieved.</p>
     pub schema_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of ID namespace. There are two types: <code>SOURCE</code> and <code>TARGET</code>.</p>
     /// <p>The <code>SOURCE</code> contains configurations for <code>sourceId</code> data that will be processed in an ID mapping workflow.</p>
-    /// <p>The <code>TARGET</code> contains a configuration of <code>targetId</code> to which all <code>sourceIds</code> will resolve to.</p>
+    /// <p>The <code>TARGET</code> contains a configuration of <code>targetId</code> which all <code>sourceIds</code> will resolve to.</p>
     pub r#type: ::std::option::Option<crate::types::IdNamespaceType>,
 }
 impl IdMappingWorkflowInputSource {
-    /// <p>An Glue table ARN for the input source table.</p>
+    /// <p>An Glue table Amazon Resource Name (ARN) or a matching workflow ARN for the input source table.</p>
     pub fn input_source_arn(&self) -> &str {
         use std::ops::Deref;
         self.input_source_arn.deref()
@@ -25,7 +25,7 @@ impl IdMappingWorkflowInputSource {
     }
     /// <p>The type of ID namespace. There are two types: <code>SOURCE</code> and <code>TARGET</code>.</p>
     /// <p>The <code>SOURCE</code> contains configurations for <code>sourceId</code> data that will be processed in an ID mapping workflow.</p>
-    /// <p>The <code>TARGET</code> contains a configuration of <code>targetId</code> to which all <code>sourceIds</code> will resolve to.</p>
+    /// <p>The <code>TARGET</code> contains a configuration of <code>targetId</code> which all <code>sourceIds</code> will resolve to.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::IdNamespaceType> {
         self.r#type.as_ref()
     }
@@ -46,18 +46,18 @@ pub struct IdMappingWorkflowInputSourceBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::IdNamespaceType>,
 }
 impl IdMappingWorkflowInputSourceBuilder {
-    /// <p>An Glue table ARN for the input source table.</p>
+    /// <p>An Glue table Amazon Resource Name (ARN) or a matching workflow ARN for the input source table.</p>
     /// This field is required.
     pub fn input_source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_source_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An Glue table ARN for the input source table.</p>
+    /// <p>An Glue table Amazon Resource Name (ARN) or a matching workflow ARN for the input source table.</p>
     pub fn set_input_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input_source_arn = input;
         self
     }
-    /// <p>An Glue table ARN for the input source table.</p>
+    /// <p>An Glue table Amazon Resource Name (ARN) or a matching workflow ARN for the input source table.</p>
     pub fn get_input_source_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.input_source_arn
     }
@@ -77,21 +77,21 @@ impl IdMappingWorkflowInputSourceBuilder {
     }
     /// <p>The type of ID namespace. There are two types: <code>SOURCE</code> and <code>TARGET</code>.</p>
     /// <p>The <code>SOURCE</code> contains configurations for <code>sourceId</code> data that will be processed in an ID mapping workflow.</p>
-    /// <p>The <code>TARGET</code> contains a configuration of <code>targetId</code> to which all <code>sourceIds</code> will resolve to.</p>
+    /// <p>The <code>TARGET</code> contains a configuration of <code>targetId</code> which all <code>sourceIds</code> will resolve to.</p>
     pub fn r#type(mut self, input: crate::types::IdNamespaceType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of ID namespace. There are two types: <code>SOURCE</code> and <code>TARGET</code>.</p>
     /// <p>The <code>SOURCE</code> contains configurations for <code>sourceId</code> data that will be processed in an ID mapping workflow.</p>
-    /// <p>The <code>TARGET</code> contains a configuration of <code>targetId</code> to which all <code>sourceIds</code> will resolve to.</p>
+    /// <p>The <code>TARGET</code> contains a configuration of <code>targetId</code> which all <code>sourceIds</code> will resolve to.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::IdNamespaceType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The type of ID namespace. There are two types: <code>SOURCE</code> and <code>TARGET</code>.</p>
     /// <p>The <code>SOURCE</code> contains configurations for <code>sourceId</code> data that will be processed in an ID mapping workflow.</p>
-    /// <p>The <code>TARGET</code> contains a configuration of <code>targetId</code> to which all <code>sourceIds</code> will resolve to.</p>
+    /// <p>The <code>TARGET</code> contains a configuration of <code>targetId</code> which all <code>sourceIds</code> will resolve to.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::IdNamespaceType> {
         &self.r#type
     }

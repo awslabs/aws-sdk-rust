@@ -487,6 +487,12 @@ pub use crate::types::_routing_profile_queue_config_summary::RoutingProfileQueue
 
 pub use crate::types::_realtime_contact_analysis_segment::RealtimeContactAnalysisSegment;
 
+pub use crate::types::_real_time_contact_analysis_segment_post_contact_summary::RealTimeContactAnalysisSegmentPostContactSummary;
+
+pub use crate::types::_real_time_contact_analysis_post_contact_summary_failure_code::RealTimeContactAnalysisPostContactSummaryFailureCode;
+
+pub use crate::types::_real_time_contact_analysis_post_contact_summary_status::RealTimeContactAnalysisPostContactSummaryStatus;
+
 pub use crate::types::_real_time_contact_analysis_segment_attachments::RealTimeContactAnalysisSegmentAttachments;
 
 pub use crate::types::_real_time_contact_analysis_time_data::RealTimeContactAnalysisTimeData;
@@ -1333,6 +1339,10 @@ mod _real_time_contact_analysis_output_type;
 
 mod _real_time_contact_analysis_point_of_interest;
 
+mod _real_time_contact_analysis_post_contact_summary_failure_code;
+
+mod _real_time_contact_analysis_post_contact_summary_status;
+
 mod _real_time_contact_analysis_segment_attachments;
 
 mod _real_time_contact_analysis_segment_categories;
@@ -1340,6 +1350,8 @@ mod _real_time_contact_analysis_segment_categories;
 mod _real_time_contact_analysis_segment_event;
 
 mod _real_time_contact_analysis_segment_issues;
+
+mod _real_time_contact_analysis_segment_post_contact_summary;
 
 mod _real_time_contact_analysis_segment_transcript;
 

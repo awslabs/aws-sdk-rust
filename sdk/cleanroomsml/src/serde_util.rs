@@ -298,12 +298,6 @@ pub(crate) fn configured_audience_model_output_config_correct_errors(
 pub(crate) fn audience_generation_job_data_source_correct_errors(
     mut builder: crate::types::builders::AudienceGenerationJobDataSourceBuilder,
 ) -> crate::types::builders::AudienceGenerationJobDataSourceBuilder {
-    if builder.data_source.is_none() {
-        builder.data_source = {
-            let builder = crate::types::builders::S3ConfigMapBuilder::default();
-            crate::serde_util::s3_config_map_correct_errors(builder).build().ok()
-        }
-    }
     if builder.role_arn.is_none() {
         builder.role_arn = Some(Default::default())
     }

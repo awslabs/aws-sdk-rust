@@ -10,9 +10,11 @@ pub struct IdNamespaceSummary {
     pub id_namespace_arn: ::std::string::String,
     /// <p>The description of the ID namespace.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>An object which defines any additional configurations required by the ID mapping workflow.</p>
+    pub id_mapping_workflow_properties: ::std::option::Option<::std::vec::Vec<crate::types::IdNamespaceIdMappingWorkflowMetadata>>,
     /// <p>The type of ID namespace. There are two types: <code>SOURCE</code> and <code>TARGET</code>.</p>
     /// <p>The <code>SOURCE</code> contains configurations for <code>sourceId</code> data that will be processed in an ID mapping workflow.</p>
-    /// <p>The <code>TARGET</code> contains a configuration of <code>targetId</code> to which all <code>sourceIds</code> will resolve to.</p>
+    /// <p>The <code>TARGET</code> contains a configuration of <code>targetId</code> which all <code>sourceIds</code> will resolve to.</p>
     pub r#type: crate::types::IdNamespaceType,
     /// <p>The timestamp of when the ID namespace was created.</p>
     pub created_at: ::aws_smithy_types::DateTime,
@@ -34,9 +36,15 @@ impl IdNamespaceSummary {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
+    /// <p>An object which defines any additional configurations required by the ID mapping workflow.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.id_mapping_workflow_properties.is_none()`.
+    pub fn id_mapping_workflow_properties(&self) -> &[crate::types::IdNamespaceIdMappingWorkflowMetadata] {
+        self.id_mapping_workflow_properties.as_deref().unwrap_or_default()
+    }
     /// <p>The type of ID namespace. There are two types: <code>SOURCE</code> and <code>TARGET</code>.</p>
     /// <p>The <code>SOURCE</code> contains configurations for <code>sourceId</code> data that will be processed in an ID mapping workflow.</p>
-    /// <p>The <code>TARGET</code> contains a configuration of <code>targetId</code> to which all <code>sourceIds</code> will resolve to.</p>
+    /// <p>The <code>TARGET</code> contains a configuration of <code>targetId</code> which all <code>sourceIds</code> will resolve to.</p>
     pub fn r#type(&self) -> &crate::types::IdNamespaceType {
         &self.r#type
     }
@@ -63,6 +71,7 @@ pub struct IdNamespaceSummaryBuilder {
     pub(crate) id_namespace_name: ::std::option::Option<::std::string::String>,
     pub(crate) id_namespace_arn: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) id_mapping_workflow_properties: ::std::option::Option<::std::vec::Vec<crate::types::IdNamespaceIdMappingWorkflowMetadata>>,
     pub(crate) r#type: ::std::option::Option<crate::types::IdNamespaceType>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -112,9 +121,32 @@ impl IdNamespaceSummaryBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
+    /// Appends an item to `id_mapping_workflow_properties`.
+    ///
+    /// To override the contents of this collection use [`set_id_mapping_workflow_properties`](Self::set_id_mapping_workflow_properties).
+    ///
+    /// <p>An object which defines any additional configurations required by the ID mapping workflow.</p>
+    pub fn id_mapping_workflow_properties(mut self, input: crate::types::IdNamespaceIdMappingWorkflowMetadata) -> Self {
+        let mut v = self.id_mapping_workflow_properties.unwrap_or_default();
+        v.push(input);
+        self.id_mapping_workflow_properties = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>An object which defines any additional configurations required by the ID mapping workflow.</p>
+    pub fn set_id_mapping_workflow_properties(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::IdNamespaceIdMappingWorkflowMetadata>>,
+    ) -> Self {
+        self.id_mapping_workflow_properties = input;
+        self
+    }
+    /// <p>An object which defines any additional configurations required by the ID mapping workflow.</p>
+    pub fn get_id_mapping_workflow_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdNamespaceIdMappingWorkflowMetadata>> {
+        &self.id_mapping_workflow_properties
+    }
     /// <p>The type of ID namespace. There are two types: <code>SOURCE</code> and <code>TARGET</code>.</p>
     /// <p>The <code>SOURCE</code> contains configurations for <code>sourceId</code> data that will be processed in an ID mapping workflow.</p>
-    /// <p>The <code>TARGET</code> contains a configuration of <code>targetId</code> to which all <code>sourceIds</code> will resolve to.</p>
+    /// <p>The <code>TARGET</code> contains a configuration of <code>targetId</code> which all <code>sourceIds</code> will resolve to.</p>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::IdNamespaceType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -122,14 +154,14 @@ impl IdNamespaceSummaryBuilder {
     }
     /// <p>The type of ID namespace. There are two types: <code>SOURCE</code> and <code>TARGET</code>.</p>
     /// <p>The <code>SOURCE</code> contains configurations for <code>sourceId</code> data that will be processed in an ID mapping workflow.</p>
-    /// <p>The <code>TARGET</code> contains a configuration of <code>targetId</code> to which all <code>sourceIds</code> will resolve to.</p>
+    /// <p>The <code>TARGET</code> contains a configuration of <code>targetId</code> which all <code>sourceIds</code> will resolve to.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::IdNamespaceType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The type of ID namespace. There are two types: <code>SOURCE</code> and <code>TARGET</code>.</p>
     /// <p>The <code>SOURCE</code> contains configurations for <code>sourceId</code> data that will be processed in an ID mapping workflow.</p>
-    /// <p>The <code>TARGET</code> contains a configuration of <code>targetId</code> to which all <code>sourceIds</code> will resolve to.</p>
+    /// <p>The <code>TARGET</code> contains a configuration of <code>targetId</code> which all <code>sourceIds</code> will resolve to.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::IdNamespaceType> {
         &self.r#type
     }
@@ -185,6 +217,7 @@ impl IdNamespaceSummaryBuilder {
                 )
             })?,
             description: self.description,
+            id_mapping_workflow_properties: self.id_mapping_workflow_properties,
             r#type: self.r#type.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",

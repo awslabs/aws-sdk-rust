@@ -7,7 +7,9 @@ pub struct PutPolicyInput {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the current revision of the policy.</p>
     pub token: ::std::option::Option<::std::string::String>,
-    /// <p>The resource-based policy.</p>
+    /// <p>The resource-based policy.</p><important>
+    /// <p>If you set the value of the <code>effect</code> parameter in the <code>policy</code> to <code>Deny</code> for the <code>PutPolicy</code> operation, you must also set the value of the <code>effect</code> parameter to <code>Deny</code> for the <code>AddPolicyStatement</code> operation.</p>
+    /// </important>
     pub policy: ::std::option::Option<::std::string::String>,
 }
 impl PutPolicyInput {
@@ -19,7 +21,9 @@ impl PutPolicyInput {
     pub fn token(&self) -> ::std::option::Option<&str> {
         self.token.as_deref()
     }
-    /// <p>The resource-based policy.</p>
+    /// <p>The resource-based policy.</p><important>
+    /// <p>If you set the value of the <code>effect</code> parameter in the <code>policy</code> to <code>Deny</code> for the <code>PutPolicy</code> operation, you must also set the value of the <code>effect</code> parameter to <code>Deny</code> for the <code>AddPolicyStatement</code> operation.</p>
+    /// </important>
     pub fn policy(&self) -> ::std::option::Option<&str> {
         self.policy.as_deref()
     }
@@ -69,18 +73,24 @@ impl PutPolicyInputBuilder {
     pub fn get_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.token
     }
-    /// <p>The resource-based policy.</p>
+    /// <p>The resource-based policy.</p><important>
+    /// <p>If you set the value of the <code>effect</code> parameter in the <code>policy</code> to <code>Deny</code> for the <code>PutPolicy</code> operation, you must also set the value of the <code>effect</code> parameter to <code>Deny</code> for the <code>AddPolicyStatement</code> operation.</p>
+    /// </important>
     /// This field is required.
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The resource-based policy.</p>
+    /// <p>The resource-based policy.</p><important>
+    /// <p>If you set the value of the <code>effect</code> parameter in the <code>policy</code> to <code>Deny</code> for the <code>PutPolicy</code> operation, you must also set the value of the <code>effect</code> parameter to <code>Deny</code> for the <code>AddPolicyStatement</code> operation.</p>
+    /// </important>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy = input;
         self
     }
-    /// <p>The resource-based policy.</p>
+    /// <p>The resource-based policy.</p><important>
+    /// <p>If you set the value of the <code>effect</code> parameter in the <code>policy</code> to <code>Deny</code> for the <code>PutPolicy</code> operation, you must also set the value of the <code>effect</code> parameter to <code>Deny</code> for the <code>AddPolicyStatement</code> operation.</p>
+    /// </important>
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy
     }

@@ -2385,24 +2385,6 @@ pub(crate) fn asset_type_item_correct_errors(
     builder
 }
 
-pub(crate) fn data_product_summary_correct_errors(
-    mut builder: crate::types::builders::DataProductSummaryBuilder,
-) -> crate::types::builders::DataProductSummaryBuilder {
-    if builder.domain_id.is_none() {
-        builder.domain_id = Some(Default::default())
-    }
-    if builder.id.is_none() {
-        builder.id = Some(Default::default())
-    }
-    if builder.name.is_none() {
-        builder.name = Some(Default::default())
-    }
-    if builder.owning_project_id.is_none() {
-        builder.owning_project_id = Some(Default::default())
-    }
-    builder
-}
-
 pub(crate) fn form_type_data_correct_errors(mut builder: crate::types::builders::FormTypeDataBuilder) -> crate::types::builders::FormTypeDataBuilder {
     if builder.domain_id.is_none() {
         builder.domain_id = Some(Default::default())

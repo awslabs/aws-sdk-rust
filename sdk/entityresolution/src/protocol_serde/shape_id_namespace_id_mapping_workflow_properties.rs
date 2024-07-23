@@ -6,11 +6,17 @@ pub fn ser_id_namespace_id_mapping_workflow_properties(
     {
         object.key("idMappingType").string(input.id_mapping_type.as_str());
     }
-    if let Some(var_1) = &input.provider_properties {
+    if let Some(var_1) = &input.rule_based_properties {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("providerProperties").start_object();
-        crate::protocol_serde::shape_namespace_provider_properties::ser_namespace_provider_properties(&mut object_2, var_1)?;
+        let mut object_2 = object.key("ruleBasedProperties").start_object();
+        crate::protocol_serde::shape_namespace_rule_based_properties::ser_namespace_rule_based_properties(&mut object_2, var_1)?;
         object_2.finish();
+    }
+    if let Some(var_3) = &input.provider_properties {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("providerProperties").start_object();
+        crate::protocol_serde::shape_namespace_provider_properties::ser_namespace_provider_properties(&mut object_4, var_3)?;
+        object_4.finish();
     }
     Ok(())
 }
@@ -35,6 +41,11 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::IdMappingType::from(u.as_ref())))
                                     .transpose()?,
+                            );
+                        }
+                        "ruleBasedProperties" => {
+                            builder = builder.set_rule_based_properties(
+                                crate::protocol_serde::shape_namespace_rule_based_properties::de_namespace_rule_based_properties(tokens)?,
                             );
                         }
                         "providerProperties" => {

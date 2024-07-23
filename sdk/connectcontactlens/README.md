@@ -1,8 +1,11 @@
 # aws-sdk-connectcontactlens
 
-Contact Lens for Amazon Connect enables you to analyze conversations between customer and agents, by using speech transcription, natural language processing, and intelligent search capabilities. It performs sentiment analysis, detects issues, and enables you to automatically categorize contacts.
+  - [Contact Lens actions](https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_Connect_Contact_Lens.html)
+  - [Contact Lens data types](https://docs.aws.amazon.com/connect/latest/APIReference/API_Types_Amazon_Connect_Contact_Lens.html)
 
-Contact Lens for Amazon Connect provides both real-time and post-call analytics of customer-agent conversations. For more information, see [Analyze conversations using Contact Lens](https://docs.aws.amazon.com/connect/latest/adminguide/analyze-conversations.html) in the _Amazon Connect Administrator Guide_.
+Amazon Connect Contact Lens enables you to analyze conversations between customer and agents, by using speech transcription, natural language processing, and intelligent search capabilities. It performs sentiment analysis, detects issues, and enables you to automatically categorize contacts.
+
+Amazon Connect Contact Lens provides both real-time and post-call analytics of customer-agent conversations. For more information, see [Analyze conversations using speech analytics](https://docs.aws.amazon.com/connect/latest/adminguide/analyze-conversations.html) in the _Amazon Connect Administrator Guide_.
 
 ## Getting Started
 
@@ -16,7 +19,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-aws-sdk-connectcontactlens = "1.36.0"
+aws-sdk-connectcontactlens = "1.37.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

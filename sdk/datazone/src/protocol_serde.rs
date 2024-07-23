@@ -699,8 +699,6 @@ pub(crate) mod shape_asset_type_item;
 
 pub(crate) mod shape_configurable_action_parameter_list;
 
-pub(crate) mod shape_data_product_summary;
-
 pub(crate) mod shape_detailed_glossary_terms;
 
 pub(crate) mod shape_form_type_data;
@@ -737,8 +735,6 @@ pub(crate) mod shape_asset_listing_item_additional_attributes;
 
 pub(crate) mod shape_configurable_action_parameter;
 
-pub(crate) mod shape_data_product_items;
-
 pub(crate) mod shape_detailed_glossary_term;
 
 pub(crate) mod shape_filter_expression;
@@ -760,8 +756,6 @@ pub(crate) mod shape_s3_location_list;
 pub(crate) mod shape_self_grant_status_detail;
 
 pub(crate) mod shape_user_details;
-
-pub(crate) mod shape_data_product_item;
 
 pub(crate) mod shape_equal_to_expression;
 

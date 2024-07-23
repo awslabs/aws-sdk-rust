@@ -981,6 +981,17 @@ pub(crate) fn real_time_contact_analysis_segment_issues_correct_errors(
     builder
 }
 
+pub(crate) fn real_time_contact_analysis_segment_post_contact_summary_correct_errors(
+    mut builder: crate::types::builders::RealTimeContactAnalysisSegmentPostContactSummaryBuilder,
+) -> crate::types::builders::RealTimeContactAnalysisSegmentPostContactSummaryBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set"
+            .parse::<crate::types::RealTimeContactAnalysisPostContactSummaryStatus>()
+            .ok()
+    }
+    builder
+}
+
 pub(crate) fn real_time_contact_analysis_segment_transcript_correct_errors(
     mut builder: crate::types::builders::RealTimeContactAnalysisSegmentTranscriptBuilder,
 ) -> crate::types::builders::RealTimeContactAnalysisSegmentTranscriptBuilder {

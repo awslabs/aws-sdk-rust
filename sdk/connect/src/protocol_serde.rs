@@ -1603,6 +1603,8 @@ pub(crate) mod shape_real_time_contact_analysis_segment_event;
 
 pub(crate) mod shape_real_time_contact_analysis_segment_issues;
 
+pub(crate) mod shape_real_time_contact_analysis_segment_post_contact_summary;
+
 pub(crate) mod shape_real_time_contact_analysis_segment_transcript;
 
 pub(crate) mod shape_routing_profile_reference;

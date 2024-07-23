@@ -51,6 +51,8 @@ pub use crate::types::_audience_size::AudienceSize;
 
 pub use crate::types::_audience_generation_job_data_source::AudienceGenerationJobDataSource;
 
+pub use crate::types::_protected_query_sql_parameters::ProtectedQuerySqlParameters;
+
 pub use crate::types::_audience_generation_job_status::AudienceGenerationJobStatus;
 
 pub use crate::types::_audience_generation_job_summary::AudienceGenerationJobSummary;
@@ -104,6 +106,8 @@ mod _dataset_type;
 mod _glue_data_source;
 
 mod _policy_existence_condition;
+
+mod _protected_query_sql_parameters;
 
 mod _relevance_metric;
 

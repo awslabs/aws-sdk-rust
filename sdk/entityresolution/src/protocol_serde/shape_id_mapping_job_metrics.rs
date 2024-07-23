@@ -35,6 +35,27 @@ where
                                     .transpose()?,
                             );
                         }
+                        "totalMappedRecords" => {
+                            builder = builder.set_total_mapped_records(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "totalMappedSourceRecords" => {
+                            builder = builder.set_total_mapped_source_records(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "totalMappedTargetRecords" => {
+                            builder = builder.set_total_mapped_target_records(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

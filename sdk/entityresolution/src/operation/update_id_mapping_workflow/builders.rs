@@ -174,17 +174,17 @@ impl UpdateIdMappingWorkflowFluentBuilder {
     pub fn get_output_source_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdMappingWorkflowOutputSource>> {
         self.inner.get_output_source_config()
     }
-    /// <p>An object which defines the <code>idMappingType</code> and the <code>providerProperties</code>.</p>
+    /// <p>An object which defines the ID mapping technique and any additional configurations.</p>
     pub fn id_mapping_techniques(mut self, input: crate::types::IdMappingTechniques) -> Self {
         self.inner = self.inner.id_mapping_techniques(input);
         self
     }
-    /// <p>An object which defines the <code>idMappingType</code> and the <code>providerProperties</code>.</p>
+    /// <p>An object which defines the ID mapping technique and any additional configurations.</p>
     pub fn set_id_mapping_techniques(mut self, input: ::std::option::Option<crate::types::IdMappingTechniques>) -> Self {
         self.inner = self.inner.set_id_mapping_techniques(input);
         self
     }
-    /// <p>An object which defines the <code>idMappingType</code> and the <code>providerProperties</code>.</p>
+    /// <p>An object which defines the ID mapping technique and any additional configurations.</p>
     pub fn get_id_mapping_techniques(&self) -> &::std::option::Option<crate::types::IdMappingTechniques> {
         self.inner.get_id_mapping_techniques()
     }

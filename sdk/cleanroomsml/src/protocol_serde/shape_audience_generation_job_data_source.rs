@@ -24,6 +24,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "sqlParameters" => {
+                            builder = builder.set_sql_parameters(
+                                crate::protocol_serde::shape_protected_query_sql_parameters::de_protected_query_sql_parameters(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -58,6 +63,12 @@ pub fn ser_audience_generation_job_data_source(
     }
     {
         object.key("roleArn").string(input.role_arn.as_str());
+    }
+    if let Some(var_3) = &input.sql_parameters {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("sqlParameters").start_object();
+        crate::protocol_serde::shape_protected_query_sql_parameters::ser_protected_query_sql_parameters(&mut object_4, var_3)?;
+        object_4.finish();
     }
     Ok(())
 }

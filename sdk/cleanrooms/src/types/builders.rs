@@ -57,6 +57,28 @@ pub use crate::types::_membership_protected_query_result_configuration::Membersh
 
 pub use crate::types::_membership_summary::MembershipSummaryBuilder;
 
+pub use crate::types::_id_namespace_association::IdNamespaceAssociationBuilder;
+
+pub use crate::types::_id_mapping_config::IdMappingConfigBuilder;
+
+pub use crate::types::_id_namespace_association_input_reference_properties::IdNamespaceAssociationInputReferencePropertiesBuilder;
+
+pub use crate::types::_id_namespace_association_input_reference_config::IdNamespaceAssociationInputReferenceConfigBuilder;
+
+pub use crate::types::_id_namespace_association_summary::IdNamespaceAssociationSummaryBuilder;
+
+pub use crate::types::_id_namespace_association_input_reference_properties_summary::IdNamespaceAssociationInputReferencePropertiesSummaryBuilder;
+
+pub use crate::types::_id_mapping_table::IdMappingTableBuilder;
+
+pub use crate::types::_id_mapping_table_input_reference_properties::IdMappingTableInputReferencePropertiesBuilder;
+
+pub use crate::types::_id_mapping_table_input_source::IdMappingTableInputSourceBuilder;
+
+pub use crate::types::_id_mapping_table_input_reference_config::IdMappingTableInputReferenceConfigBuilder;
+
+pub use crate::types::_id_mapping_table_summary::IdMappingTableSummaryBuilder;
+
 pub use crate::types::_configured_table_analysis_rule::ConfiguredTableAnalysisRuleBuilder;
 
 pub use crate::types::_analysis_rule_custom::AnalysisRuleCustomBuilder;
@@ -99,13 +121,21 @@ pub use crate::types::_collaboration_privacy_budget_template_summary::Collaborat
 
 pub use crate::types::_collaboration_privacy_budget_summary::CollaborationPrivacyBudgetSummaryBuilder;
 
+pub use crate::types::_collaboration_id_namespace_association_summary::CollaborationIdNamespaceAssociationSummaryBuilder;
+
 pub use crate::types::_collaboration_configured_audience_model_association_summary::CollaborationConfiguredAudienceModelAssociationSummaryBuilder;
 
 pub use crate::types::_collaboration_analysis_template_summary::CollaborationAnalysisTemplateSummaryBuilder;
 
 pub use crate::types::_analysis_rule::AnalysisRuleBuilder;
 
+pub use crate::types::_analysis_rule_id_mapping_table::AnalysisRuleIdMappingTableBuilder;
+
+pub use crate::types::_query_constraint_require_overlap::QueryConstraintRequireOverlapBuilder;
+
 pub use crate::types::_schema::SchemaBuilder;
+
+pub use crate::types::_id_mapping_table_schema_type_properties::IdMappingTableSchemaTypePropertiesBuilder;
 
 pub use crate::types::_schema_status_detail::SchemaStatusDetailBuilder;
 
@@ -114,6 +144,8 @@ pub use crate::types::_schema_status_reason::SchemaStatusReasonBuilder;
 pub use crate::types::_column::ColumnBuilder;
 
 pub use crate::types::_collaboration_privacy_budget_template::CollaborationPrivacyBudgetTemplateBuilder;
+
+pub use crate::types::_collaboration_id_namespace_association::CollaborationIdNamespaceAssociationBuilder;
 
 pub use crate::types::_collaboration_configured_audience_model_association::CollaborationConfiguredAudienceModelAssociationBuilder;
 

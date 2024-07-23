@@ -28,6 +28,12 @@ pub mod create_configured_table_analysis_rule;
 /// Types for the `CreateConfiguredTableAssociation` operation.
 pub mod create_configured_table_association;
 
+/// Types for the `CreateIdMappingTable` operation.
+pub mod create_id_mapping_table;
+
+/// Types for the `CreateIdNamespaceAssociation` operation.
+pub mod create_id_namespace_association;
+
 /// Types for the `CreateMembership` operation.
 pub mod create_membership;
 
@@ -52,6 +58,12 @@ pub mod delete_configured_table_analysis_rule;
 /// Types for the `DeleteConfiguredTableAssociation` operation.
 pub mod delete_configured_table_association;
 
+/// Types for the `DeleteIdMappingTable` operation.
+pub mod delete_id_mapping_table;
+
+/// Types for the `DeleteIdNamespaceAssociation` operation.
+pub mod delete_id_namespace_association;
+
 /// Types for the `DeleteMember` operation.
 pub mod delete_member;
 
@@ -73,6 +85,9 @@ pub mod get_collaboration_analysis_template;
 /// Types for the `GetCollaborationConfiguredAudienceModelAssociation` operation.
 pub mod get_collaboration_configured_audience_model_association;
 
+/// Types for the `GetCollaborationIdNamespaceAssociation` operation.
+pub mod get_collaboration_id_namespace_association;
+
 /// Types for the `GetCollaborationPrivacyBudgetTemplate` operation.
 pub mod get_collaboration_privacy_budget_template;
 
@@ -87,6 +102,12 @@ pub mod get_configured_table_analysis_rule;
 
 /// Types for the `GetConfiguredTableAssociation` operation.
 pub mod get_configured_table_association;
+
+/// Types for the `GetIdMappingTable` operation.
+pub mod get_id_mapping_table;
+
+/// Types for the `GetIdNamespaceAssociation` operation.
+pub mod get_id_namespace_association;
 
 /// Types for the `GetMembership` operation.
 pub mod get_membership;
@@ -112,6 +133,9 @@ pub mod list_collaboration_analysis_templates;
 /// Types for the `ListCollaborationConfiguredAudienceModelAssociations` operation.
 pub mod list_collaboration_configured_audience_model_associations;
 
+/// Types for the `ListCollaborationIdNamespaceAssociations` operation.
+pub mod list_collaboration_id_namespace_associations;
+
 /// Types for the `ListCollaborationPrivacyBudgetTemplates` operation.
 pub mod list_collaboration_privacy_budget_templates;
 
@@ -129,6 +153,12 @@ pub mod list_configured_table_associations;
 
 /// Types for the `ListConfiguredTables` operation.
 pub mod list_configured_tables;
+
+/// Types for the `ListIdMappingTables` operation.
+pub mod list_id_mapping_tables;
+
+/// Types for the `ListIdNamespaceAssociations` operation.
+pub mod list_id_namespace_associations;
 
 /// Types for the `ListMembers` operation.
 pub mod list_members;
@@ -150,6 +180,9 @@ pub mod list_schemas;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
+
+/// Types for the `PopulateIdMappingTable` operation.
+pub mod populate_id_mapping_table;
 
 /// Types for the `PreviewPrivacyImpact` operation.
 pub mod preview_privacy_impact;
@@ -180,6 +213,12 @@ pub mod update_configured_table_analysis_rule;
 
 /// Types for the `UpdateConfiguredTableAssociation` operation.
 pub mod update_configured_table_association;
+
+/// Types for the `UpdateIdMappingTable` operation.
+pub mod update_id_mapping_table;
+
+/// Types for the `UpdateIdNamespaceAssociation` operation.
+pub mod update_id_namespace_association;
 
 /// Types for the `UpdateMembership` operation.
 pub mod update_membership;

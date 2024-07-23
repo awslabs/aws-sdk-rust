@@ -2,15 +2,17 @@
 
 /// <p>Defines the Amazon S3 bucket where the seed audience for the generating audience is stored.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AudienceGenerationJobDataSource {
     /// <p>Defines the Amazon S3 bucket where the seed audience for the generating audience is stored. A valid data source is a JSON line file in the following format:</p>
     /// <p><code>{"user_id": "111111"}</code></p>
     /// <p><code>{"user_id": "222222"}</code></p>
     /// <p><code>...</code></p>
     pub data_source: ::std::option::Option<crate::types::S3ConfigMap>,
-    /// <p>The ARN of the IAM role that can read the Amazon S3 bucket where the training data is stored.</p>
+    /// <p>The ARN of the IAM role that can read the Amazon S3 bucket where the seed audience is stored.</p>
     pub role_arn: ::std::string::String,
+    /// <p>The protected SQL query parameters.</p>
+    pub sql_parameters: ::std::option::Option<crate::types::ProtectedQuerySqlParameters>,
 }
 impl AudienceGenerationJobDataSource {
     /// <p>Defines the Amazon S3 bucket where the seed audience for the generating audience is stored. A valid data source is a JSON line file in the following format:</p>
@@ -20,10 +22,23 @@ impl AudienceGenerationJobDataSource {
     pub fn data_source(&self) -> ::std::option::Option<&crate::types::S3ConfigMap> {
         self.data_source.as_ref()
     }
-    /// <p>The ARN of the IAM role that can read the Amazon S3 bucket where the training data is stored.</p>
+    /// <p>The ARN of the IAM role that can read the Amazon S3 bucket where the seed audience is stored.</p>
     pub fn role_arn(&self) -> &str {
         use std::ops::Deref;
         self.role_arn.deref()
+    }
+    /// <p>The protected SQL query parameters.</p>
+    pub fn sql_parameters(&self) -> ::std::option::Option<&crate::types::ProtectedQuerySqlParameters> {
+        self.sql_parameters.as_ref()
+    }
+}
+impl ::std::fmt::Debug for AudienceGenerationJobDataSource {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AudienceGenerationJobDataSource");
+        formatter.field("data_source", &self.data_source);
+        formatter.field("role_arn", &self.role_arn);
+        formatter.field("sql_parameters", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }
 impl AudienceGenerationJobDataSource {
@@ -34,18 +49,18 @@ impl AudienceGenerationJobDataSource {
 }
 
 /// A builder for [`AudienceGenerationJobDataSource`](crate::types::AudienceGenerationJobDataSource).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct AudienceGenerationJobDataSourceBuilder {
     pub(crate) data_source: ::std::option::Option<crate::types::S3ConfigMap>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) sql_parameters: ::std::option::Option<crate::types::ProtectedQuerySqlParameters>,
 }
 impl AudienceGenerationJobDataSourceBuilder {
     /// <p>Defines the Amazon S3 bucket where the seed audience for the generating audience is stored. A valid data source is a JSON line file in the following format:</p>
     /// <p><code>{"user_id": "111111"}</code></p>
     /// <p><code>{"user_id": "222222"}</code></p>
     /// <p><code>...</code></p>
-    /// This field is required.
     pub fn data_source(mut self, input: crate::types::S3ConfigMap) -> Self {
         self.data_source = ::std::option::Option::Some(input);
         self
@@ -65,20 +80,34 @@ impl AudienceGenerationJobDataSourceBuilder {
     pub fn get_data_source(&self) -> &::std::option::Option<crate::types::S3ConfigMap> {
         &self.data_source
     }
-    /// <p>The ARN of the IAM role that can read the Amazon S3 bucket where the training data is stored.</p>
+    /// <p>The ARN of the IAM role that can read the Amazon S3 bucket where the seed audience is stored.</p>
     /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the IAM role that can read the Amazon S3 bucket where the training data is stored.</p>
+    /// <p>The ARN of the IAM role that can read the Amazon S3 bucket where the seed audience is stored.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p>The ARN of the IAM role that can read the Amazon S3 bucket where the training data is stored.</p>
+    /// <p>The ARN of the IAM role that can read the Amazon S3 bucket where the seed audience is stored.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
+    }
+    /// <p>The protected SQL query parameters.</p>
+    pub fn sql_parameters(mut self, input: crate::types::ProtectedQuerySqlParameters) -> Self {
+        self.sql_parameters = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The protected SQL query parameters.</p>
+    pub fn set_sql_parameters(mut self, input: ::std::option::Option<crate::types::ProtectedQuerySqlParameters>) -> Self {
+        self.sql_parameters = input;
+        self
+    }
+    /// <p>The protected SQL query parameters.</p>
+    pub fn get_sql_parameters(&self) -> &::std::option::Option<crate::types::ProtectedQuerySqlParameters> {
+        &self.sql_parameters
     }
     /// Consumes the builder and constructs a [`AudienceGenerationJobDataSource`](crate::types::AudienceGenerationJobDataSource).
     /// This method will fail if any of the following fields are not set:
@@ -92,6 +121,16 @@ impl AudienceGenerationJobDataSourceBuilder {
                     "role_arn was not specified but it is required when building AudienceGenerationJobDataSource",
                 )
             })?,
+            sql_parameters: self.sql_parameters,
         })
+    }
+}
+impl ::std::fmt::Debug for AudienceGenerationJobDataSourceBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AudienceGenerationJobDataSourceBuilder");
+        formatter.field("data_source", &self.data_source);
+        formatter.field("role_arn", &self.role_arn);
+        formatter.field("sql_parameters", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

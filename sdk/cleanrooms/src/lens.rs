@@ -29,6 +29,16 @@ pub(crate) fn reflens_list_collaboration_configured_audience_model_associations_
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_collaboration_id_namespace_associations_output_output_next_token(
+    input: &crate::operation::list_collaboration_id_namespace_associations::ListCollaborationIdNamespaceAssociationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_collaboration_privacy_budget_templates_output_output_next_token(
     input: &crate::operation::list_collaboration_privacy_budget_templates::ListCollaborationPrivacyBudgetTemplatesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -81,6 +91,26 @@ pub(crate) fn reflens_list_configured_table_associations_output_output_next_toke
 
 pub(crate) fn reflens_list_configured_tables_output_output_next_token(
     input: &crate::operation::list_configured_tables::ListConfiguredTablesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_id_mapping_tables_output_output_next_token(
+    input: &crate::operation::list_id_mapping_tables::ListIdMappingTablesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_id_namespace_associations_output_output_next_token(
+    input: &crate::operation::list_id_namespace_associations::ListIdNamespaceAssociationsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -170,6 +200,13 @@ pub(crate) fn lens_list_collaboration_configured_audience_model_associations_out
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_collaboration_id_namespace_associations_output_output_collaboration_id_namespace_association_summaries(
+    input: crate::operation::list_collaboration_id_namespace_associations::ListCollaborationIdNamespaceAssociationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::CollaborationIdNamespaceAssociationSummary>> {
+    let input = input.collaboration_id_namespace_association_summaries;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_collaboration_privacy_budget_templates_output_output_collaboration_privacy_budget_template_summaries(
     input: crate::operation::list_collaboration_privacy_budget_templates::ListCollaborationPrivacyBudgetTemplatesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::CollaborationPrivacyBudgetTemplateSummary>> {
@@ -209,6 +246,20 @@ pub(crate) fn lens_list_configured_tables_output_output_configured_table_summari
     input: crate::operation::list_configured_tables::ListConfiguredTablesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTableSummary>> {
     let input = input.configured_table_summaries;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_id_mapping_tables_output_output_id_mapping_table_summaries(
+    input: crate::operation::list_id_mapping_tables::ListIdMappingTablesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::IdMappingTableSummary>> {
+    let input = input.id_mapping_table_summaries;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_id_namespace_associations_output_output_id_namespace_association_summaries(
+    input: crate::operation::list_id_namespace_associations::ListIdNamespaceAssociationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::IdNamespaceAssociationSummary>> {
+    let input = input.id_namespace_association_summaries;
     ::std::option::Option::Some(input)
 }
 

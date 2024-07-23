@@ -12,6 +12,7 @@
 /// ```text
 /// # let schematype = unimplemented!();
 /// match schematype {
+///     SchemaType::IdMappingTable => { /* ... */ },
 ///     SchemaType::Table => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -41,6 +42,8 @@
 )]
 pub enum SchemaType {
     #[allow(missing_docs)] // documentation missing in model
+    IdMappingTable,
+    #[allow(missing_docs)] // documentation missing in model
     Table,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -49,6 +52,7 @@ pub enum SchemaType {
 impl ::std::convert::From<&str> for SchemaType {
     fn from(s: &str) -> Self {
         match s {
+            "ID_MAPPING_TABLE" => SchemaType::IdMappingTable,
             "TABLE" => SchemaType::Table,
             other => SchemaType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -65,13 +69,14 @@ impl SchemaType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            SchemaType::IdMappingTable => "ID_MAPPING_TABLE",
             SchemaType::Table => "TABLE",
             SchemaType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["TABLE"]
+        &["ID_MAPPING_TABLE", "TABLE"]
     }
 }
 impl ::std::convert::AsRef<str> for SchemaType {
@@ -94,6 +99,7 @@ impl SchemaType {
 impl ::std::fmt::Display for SchemaType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            SchemaType::IdMappingTable => write!(f, "ID_MAPPING_TABLE"),
             SchemaType::Table => write!(f, "TABLE"),
             SchemaType::Unknown(value) => write!(f, "{}", value),
         }

@@ -7,7 +7,7 @@ pub struct ListRealtimeContactAnalysisSegmentsInput {
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the contact.</p>
     pub contact_id: ::std::option::Option<::std::string::String>,
-    /// <p>The maximimum number of results to return per page.</p>
+    /// <p>The maximum number of results to return per page.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -21,7 +21,7 @@ impl ListRealtimeContactAnalysisSegmentsInput {
     pub fn contact_id(&self) -> ::std::option::Option<&str> {
         self.contact_id.as_deref()
     }
-    /// <p>The maximimum number of results to return per page.</p>
+    /// <p>The maximum number of results to return per page.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -77,17 +77,17 @@ impl ListRealtimeContactAnalysisSegmentsInputBuilder {
     pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.contact_id
     }
-    /// <p>The maximimum number of results to return per page.</p>
+    /// <p>The maximum number of results to return per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximimum number of results to return per page.</p>
+    /// <p>The maximum number of results to return per page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximimum number of results to return per page.</p>
+    /// <p>The maximum number of results to return per page.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

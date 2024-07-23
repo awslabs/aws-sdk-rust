@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IdNamespaceInputSource {
-    /// <p>An Glue table ARN for the input source table.</p>
+    /// <p>An Glue table Amazon Resource Name (ARN) or a matching workflow ARN for the input source table.</p>
     pub input_source_arn: ::std::string::String,
     /// <p>The name of the schema.</p>
     pub schema_name: ::std::option::Option<::std::string::String>,
 }
 impl IdNamespaceInputSource {
-    /// <p>An Glue table ARN for the input source table.</p>
+    /// <p>An Glue table Amazon Resource Name (ARN) or a matching workflow ARN for the input source table.</p>
     pub fn input_source_arn(&self) -> &str {
         use std::ops::Deref;
         self.input_source_arn.deref()
@@ -35,18 +35,18 @@ pub struct IdNamespaceInputSourceBuilder {
     pub(crate) schema_name: ::std::option::Option<::std::string::String>,
 }
 impl IdNamespaceInputSourceBuilder {
-    /// <p>An Glue table ARN for the input source table.</p>
+    /// <p>An Glue table Amazon Resource Name (ARN) or a matching workflow ARN for the input source table.</p>
     /// This field is required.
     pub fn input_source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_source_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An Glue table ARN for the input source table.</p>
+    /// <p>An Glue table Amazon Resource Name (ARN) or a matching workflow ARN for the input source table.</p>
     pub fn set_input_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input_source_arn = input;
         self
     }
-    /// <p>An Glue table ARN for the input source table.</p>
+    /// <p>An Glue table Amazon Resource Name (ARN) or a matching workflow ARN for the input source table.</p>
     pub fn get_input_source_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.input_source_arn
     }

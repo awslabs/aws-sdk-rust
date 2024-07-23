@@ -6,9 +6,6 @@
 pub enum SearchInventoryResultItem {
     /// <p>The asset item included in the search results.</p>
     AssetItem(crate::types::AssetItem),
-    /// <p>The data product item included in the search results.</p>
-    #[deprecated(note = "This field is deprecated.")]
-    DataProductItem(crate::types::DataProductSummary),
     /// <p>The glossary item included in the search results.</p>
     GlossaryItem(crate::types::GlossaryItem),
     /// <p>The glossary term item included in the search results.</p>
@@ -36,19 +33,6 @@ impl SearchInventoryResultItem {
     /// Returns true if this is a [`AssetItem`](crate::types::SearchInventoryResultItem::AssetItem).
     pub fn is_asset_item(&self) -> bool {
         self.as_asset_item().is_ok()
-    }
-    /// Tries to convert the enum instance into [`DataProductItem`](crate::types::SearchInventoryResultItem::DataProductItem), extracting the inner [`DataProductSummary`](crate::types::DataProductSummary).
-    /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_data_product_item(&self) -> ::std::result::Result<&crate::types::DataProductSummary, &Self> {
-        if let SearchInventoryResultItem::DataProductItem(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
-    }
-    /// Returns true if this is a [`DataProductItem`](crate::types::SearchInventoryResultItem::DataProductItem).
-    pub fn is_data_product_item(&self) -> bool {
-        self.as_data_product_item().is_ok()
     }
     /// Tries to convert the enum instance into [`GlossaryItem`](crate::types::SearchInventoryResultItem::GlossaryItem), extracting the inner [`GlossaryItem`](crate::types::GlossaryItem).
     /// Returns `Err(&Self)` if it can't be converted.

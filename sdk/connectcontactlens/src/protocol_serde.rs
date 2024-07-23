@@ -51,6 +51,8 @@ pub(crate) mod shape_realtime_contact_analysis_segment;
 
 pub(crate) mod shape_categories;
 
+pub(crate) mod shape_post_contact_summary;
+
 pub(crate) mod shape_transcript;
 
 pub(crate) mod shape_issues_detected;

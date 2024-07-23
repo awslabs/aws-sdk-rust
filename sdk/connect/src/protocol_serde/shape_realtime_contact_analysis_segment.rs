@@ -59,6 +59,12 @@ where
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Attachments' cannot be null"))?
                                 ))
                             }
+                            "PostContactSummary" => {
+                                Some(crate::types::RealtimeContactAnalysisSegment::PostContactSummary(
+                                    crate::protocol_serde::shape_real_time_contact_analysis_segment_post_contact_summary::de_real_time_contact_analysis_segment_post_contact_summary(tokens)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'PostContactSummary' cannot be null"))?
+                                ))
+                            }
                             _ => {
                                                                               ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                                                                               Some(crate::types::RealtimeContactAnalysisSegment::Unknown)

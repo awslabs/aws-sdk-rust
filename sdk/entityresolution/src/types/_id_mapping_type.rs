@@ -13,6 +13,7 @@
 /// # let idmappingtype = unimplemented!();
 /// match idmappingtype {
 ///     IdMappingType::Provider => { /* ... */ },
+///     IdMappingType::RuleBased => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -42,6 +43,8 @@
 pub enum IdMappingType {
     #[allow(missing_docs)] // documentation missing in model
     Provider,
+    #[allow(missing_docs)] // documentation missing in model
+    RuleBased,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -50,6 +53,7 @@ impl ::std::convert::From<&str> for IdMappingType {
     fn from(s: &str) -> Self {
         match s {
             "PROVIDER" => IdMappingType::Provider,
+            "RULE_BASED" => IdMappingType::RuleBased,
             other => IdMappingType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -66,12 +70,13 @@ impl IdMappingType {
     pub fn as_str(&self) -> &str {
         match self {
             IdMappingType::Provider => "PROVIDER",
+            IdMappingType::RuleBased => "RULE_BASED",
             IdMappingType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PROVIDER"]
+        &["PROVIDER", "RULE_BASED"]
     }
 }
 impl ::std::convert::AsRef<str> for IdMappingType {
@@ -95,6 +100,7 @@ impl ::std::fmt::Display for IdMappingType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             IdMappingType::Provider => write!(f, "PROVIDER"),
+            IdMappingType::RuleBased => write!(f, "RULE_BASED"),
             IdMappingType::Unknown(value) => write!(f, "{}", value),
         }
     }

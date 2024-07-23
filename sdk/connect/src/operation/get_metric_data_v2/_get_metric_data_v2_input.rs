@@ -38,6 +38,8 @@ pub struct GetMetricDataV2Input {
     /// <li>
     /// <p>Agents</p></li>
     /// <li>
+    /// <p>Campaigns</p></li>
+    /// <li>
     /// <p>Channels</p></li>
     /// <li>
     /// <p>Feature</p></li>
@@ -51,11 +53,12 @@ pub struct GetMetricDataV2Input {
     /// <p>User hierarchy groups</p></li>
     /// </ul>
     /// <p>At least one filter must be passed from queues, routing profiles, agents, or user hierarchy groups.</p>
+    /// <p>For metrics for outbound campaigns analytics, you can also use campaigns to satisfy at least one filter requirement.</p>
     /// <p>To filter by phone number, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-historical-metrics-report.html">Create a historical metrics report</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     /// <p>Note the following limits:</p>
     /// <ul>
     /// <li>
-    /// <p><b>Filter keys</b>: A maximum of 5 filter keys are supported in a single request. Valid filter keys: <code>AGENT</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>CASE_TEMPLATE_ARN</code> | <code>CASE_STATUS</code> | <code>CHANNEL</code> | <code>contact/segmentAttributes/connect:Subtype</code> | <code>FEATURE</code> | <code>FLOW_TYPE</code> | <code>FLOWS_NEXT_RESOURCE_ID</code> | <code>FLOWS_NEXT_RESOURCE_QUEUE_ID</code> | <code>FLOWS_OUTCOME_TYPE</code> | <code>FLOWS_RESOURCE_ID</code> | <code>INITIATION_METHOD</code> | <code>RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>ROUTING_PROFILE</code> | <code>ROUTING_STEP_EXPRESSION</code> | <code>QUEUE</code> | <code>Q_CONNECT_ENABLED</code> |</p></li>
+    /// <p><b>Filter keys</b>: A maximum of 5 filter keys are supported in a single request. Valid filter keys: <code>AGENT</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>ANSWERING_MACHINE_DETECTION_STATUS</code> | <code>CAMPAIGN</code> | <code>CASE_TEMPLATE_ARN</code> | <code>CASE_STATUS</code> | <code>CHANNEL</code> | <code>contact/segmentAttributes/connect:Subtype</code> | <code>DISCONNECT_REASON</code> | <code>FEATURE</code> | <code>FLOW_TYPE</code> | <code>FLOWS_NEXT_RESOURCE_ID</code> | <code>FLOWS_NEXT_RESOURCE_QUEUE_ID</code> | <code>FLOWS_OUTCOME_TYPE</code> | <code>FLOWS_RESOURCE_ID</code> | <code>INITIATION_METHOD</code> | <code>RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>ROUTING_PROFILE</code> | <code>ROUTING_STEP_EXPRESSION</code> | <code>QUEUE</code> | <code>Q_CONNECT_ENABLED</code> |</p></li>
     /// <li>
     /// <p><b>Filter values</b>: A maximum of 100 filter values are supported in a single request. VOICE, CHAT, and TASK are valid <code>filterValue</code> for the CHANNEL filter key. They do not count towards limitation of 100 filter values. For example, a GetMetricDataV2 request can filter by 50 queues, 35 agents, and 15 routing profiles for a total of 100 filter values, along with 3 channel filters.</p>
     /// <p><code>contact_lens_conversational_analytics</code> is a valid filterValue for the <code>FEATURE</code> filter key. It is available only to contacts analyzed by Contact Lens conversational analytics.</p>
@@ -68,12 +71,13 @@ pub struct GetMetricDataV2Input {
     /// <li>
     /// <p>FALSE includes all contacts that did not have Amazon Q in Connect enabled as part of the flow</p></li>
     /// </ul>
-    /// <p>This filter is available only for contact record-driven metrics.</p></li>
+    /// <p>This filter is available only for contact record-driven metrics.</p>
+    /// <p><a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-outbound-campaigns_Campaign.html">Campaign</a> ARNs are valid <code>filterValues</code> for the <code>CAMPAIGN</code> filter key.</p></li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::FilterV2>>,
     /// <p>The grouping applied to the metrics that are returned. For example, when results are grouped by queue, the metrics returned are grouped by queue. The values that are returned apply to the metrics for each queue. They are not aggregated for all queues.</p>
     /// <p>If no grouping is specified, a summary of all metrics is returned.</p>
-    /// <p>Valid grouping keys: <code>AGENT</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>CASE_TEMPLATE_ARN</code> | <code>CASE_STATUS</code> | <code>CHANNEL</code> | <code>contact/segmentAttributes/connect:Subtype</code> | <code>FLOWS_RESOURCE_ID</code> | <code>FLOWS_MODULE_RESOURCE_ID</code> | <code>FLOW_TYPE</code> | <code>FLOWS_OUTCOME_TYPE</code> | <code>INITIATION_METHOD</code> | <code>Q_CONNECT_ENABLED</code> | <code>QUEUE</code> | <code>RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>ROUTING_PROFILE</code> | <code>ROUTING_STEP_EXPRESSION</code></p>
+    /// <p>Valid grouping keys: <code>AGENT</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>ANSWERING_MACHINE_DETECTION_STATUS</code> | <code>CAMPAIGN</code> | <code>CASE_TEMPLATE_ARN</code> | <code>CASE_STATUS</code> | <code>CHANNEL</code> | <code>contact/segmentAttributes/connect:Subtype</code> | <code>DISCONNECT_REASON</code> | <code>FLOWS_RESOURCE_ID</code> | <code>FLOWS_MODULE_RESOURCE_ID</code> | <code>FLOW_TYPE</code> | <code>FLOWS_OUTCOME_TYPE</code> | <code>INITIATION_METHOD</code> | <code>Q_CONNECT_ENABLED</code> | <code>QUEUE</code> | <code>RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>ROUTING_PROFILE</code> | <code>ROUTING_STEP_EXPRESSION</code></p>
     pub groupings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The metrics to retrieve. Specify the name, groupings, and filters for each metric. The following historical metrics are available. For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical metrics definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     /// <dl>
@@ -236,6 +240,15 @@ pub struct GetMetricDataV2Input {
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-conversation-duration-historical">Average conversation duration</a></p>
     /// </dd>
     /// <dt>
+    /// AVG_DIALS_PER_MINUTE
+    /// </dt>
+    /// <dd>
+    /// <p>This metric is available only for contacts analyzed by outbound campaigns analytics.</p>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Campaign, Agent, Queue, Routing Profile</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-dials-historical">Average dials per minute</a></p>
+    /// </dd>
+    /// <dt>
     /// AVG_FLOW_TIME
     /// </dt>
     /// <dd>
@@ -382,13 +395,42 @@ pub struct GetMetricDataV2Input {
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-talk-time-customer-historical">Average customer talk time</a></p>
     /// </dd>
     /// <dt>
+    /// AVG_WAIT_TIME_AFTER_CUSTOMER_CONNECTION
+    /// </dt>
+    /// <dd>
+    /// <p>This metric is available only for contacts analyzed by outbound campaigns analytics.</p>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Campaign</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-wait-time-historical">Average wait time after customer connection</a></p>
+    /// </dd>
+    /// <dt>
+    /// CAMPAIGN_CONTACTS_ABANDONED_AFTER_X
+    /// </dt>
+    /// <dd>
+    /// <p>This metric is available only for contacts analyzed by outbound campaigns analytics.</p>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Campaign, Agent</p>
+    /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>GT</code> (for <i>Greater than</i>).</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#campaign-contacts-abandoned-historical">Campaign contacts abandoned after X</a></p>
+    /// </dd>
+    /// <dt>
+    /// CAMPAIGN_CONTACTS_ABANDONED_AFTER_X_RATE
+    /// </dt>
+    /// <dd>
+    /// <p>This metric is available only for contacts analyzed by outbound campaigns analytics.</p>
+    /// <p>Unit: Percent</p>
+    /// <p>Valid groupings and filters: Campaign, Agent</p>
+    /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>GT</code> (for <i>Greater than</i>).</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#campaign-contacts-abandoned-rate-historical">Campaign contacts abandoned after X rate</a></p>
+    /// </dd>
+    /// <dt>
     /// CASES_CREATED
     /// </dt>
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Required filter key: CASE_TEMPLATE_ARN</p>
     /// <p>Valid groupings and filters: CASE_TEMPLATE_ARN, CASE_STATUS</p>
-    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html##cases-created-historical">Cases created</a></p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#cases-created-historical">Cases created</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_CREATED
@@ -539,6 +581,28 @@ pub struct GetMetricDataV2Input {
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#current-cases-historical">Current cases</a></p>
     /// </dd>
     /// <dt>
+    /// DELIVERY_ATTEMPTS
+    /// </dt>
+    /// <dd>
+    /// <p>This metric is available only for contacts analyzed by outbound campaigns analytics.</p>
+    /// <p>Unit: Count</p>
+    /// <p>Valid metric filter key: <code>ANSWERING_MACHINE_DETECTION_STATUS</code>, <code>DISCONNECT_REASON</code></p>
+    /// <p>Valid groupings and filters: Campaign, Agent, Queue, Routing Profile, Answering Machine Detection Status, Disconnect Reason</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#delivery-attempts-historical">Delivery attempts</a></p>
+    /// </dd>
+    /// <dt>
+    /// DELIVERY_ATTEMPT_DISPOSITION_RATE
+    /// </dt>
+    /// <dd>
+    /// <p>This metric is available only for contacts analyzed by outbound campaigns analytics, and with the answering machine detection enabled.</p>
+    /// <p>Unit: Percent</p>
+    /// <p>Valid metric filter key: <code>ANSWERING_MACHINE_DETECTION_STATUS</code>, <code>DISCONNECT_REASON</code></p>
+    /// <p>Valid groupings and filters: Campaign, Agent, Answering Machine Detection Status, Disconnect Reason</p><note>
+    /// <p>Answering Machine Detection Status and Disconnect Reason are valid filters but not valid groupings.</p>
+    /// </note>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#delivery-attempt-disposition-rate-historical">Delivery attempt disposition rate</a></p>
+    /// </dd>
+    /// <dt>
     /// FLOWS_OUTCOME
     /// </dt>
     /// <dd>
@@ -553,6 +617,15 @@ pub struct GetMetricDataV2Input {
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Channel, contact/segmentAttributes/connect:Subtype, Flow type, Flows module resource ID, Flows resource ID, Initiation method, Resource published timestamp</p>
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#flows-started-historical">Flows started</a></p>
+    /// </dd>
+    /// <dt>
+    /// HUMAN_ANSWERED_CALLS
+    /// </dt>
+    /// <dd>
+    /// <p>This metric is available only for contacts analyzed by outbound campaigns analytics, and with the answering machine detection enabled.</p>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Campaign, Agent</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#human-answered-historical">Human answered</a></p>
     /// </dd>
     /// <dt>
     /// MAX_FLOW_TIME
@@ -884,6 +957,8 @@ impl GetMetricDataV2Input {
     /// <li>
     /// <p>Agents</p></li>
     /// <li>
+    /// <p>Campaigns</p></li>
+    /// <li>
     /// <p>Channels</p></li>
     /// <li>
     /// <p>Feature</p></li>
@@ -897,11 +972,12 @@ impl GetMetricDataV2Input {
     /// <p>User hierarchy groups</p></li>
     /// </ul>
     /// <p>At least one filter must be passed from queues, routing profiles, agents, or user hierarchy groups.</p>
+    /// <p>For metrics for outbound campaigns analytics, you can also use campaigns to satisfy at least one filter requirement.</p>
     /// <p>To filter by phone number, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-historical-metrics-report.html">Create a historical metrics report</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     /// <p>Note the following limits:</p>
     /// <ul>
     /// <li>
-    /// <p><b>Filter keys</b>: A maximum of 5 filter keys are supported in a single request. Valid filter keys: <code>AGENT</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>CASE_TEMPLATE_ARN</code> | <code>CASE_STATUS</code> | <code>CHANNEL</code> | <code>contact/segmentAttributes/connect:Subtype</code> | <code>FEATURE</code> | <code>FLOW_TYPE</code> | <code>FLOWS_NEXT_RESOURCE_ID</code> | <code>FLOWS_NEXT_RESOURCE_QUEUE_ID</code> | <code>FLOWS_OUTCOME_TYPE</code> | <code>FLOWS_RESOURCE_ID</code> | <code>INITIATION_METHOD</code> | <code>RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>ROUTING_PROFILE</code> | <code>ROUTING_STEP_EXPRESSION</code> | <code>QUEUE</code> | <code>Q_CONNECT_ENABLED</code> |</p></li>
+    /// <p><b>Filter keys</b>: A maximum of 5 filter keys are supported in a single request. Valid filter keys: <code>AGENT</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>ANSWERING_MACHINE_DETECTION_STATUS</code> | <code>CAMPAIGN</code> | <code>CASE_TEMPLATE_ARN</code> | <code>CASE_STATUS</code> | <code>CHANNEL</code> | <code>contact/segmentAttributes/connect:Subtype</code> | <code>DISCONNECT_REASON</code> | <code>FEATURE</code> | <code>FLOW_TYPE</code> | <code>FLOWS_NEXT_RESOURCE_ID</code> | <code>FLOWS_NEXT_RESOURCE_QUEUE_ID</code> | <code>FLOWS_OUTCOME_TYPE</code> | <code>FLOWS_RESOURCE_ID</code> | <code>INITIATION_METHOD</code> | <code>RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>ROUTING_PROFILE</code> | <code>ROUTING_STEP_EXPRESSION</code> | <code>QUEUE</code> | <code>Q_CONNECT_ENABLED</code> |</p></li>
     /// <li>
     /// <p><b>Filter values</b>: A maximum of 100 filter values are supported in a single request. VOICE, CHAT, and TASK are valid <code>filterValue</code> for the CHANNEL filter key. They do not count towards limitation of 100 filter values. For example, a GetMetricDataV2 request can filter by 50 queues, 35 agents, and 15 routing profiles for a total of 100 filter values, along with 3 channel filters.</p>
     /// <p><code>contact_lens_conversational_analytics</code> is a valid filterValue for the <code>FEATURE</code> filter key. It is available only to contacts analyzed by Contact Lens conversational analytics.</p>
@@ -914,7 +990,8 @@ impl GetMetricDataV2Input {
     /// <li>
     /// <p>FALSE includes all contacts that did not have Amazon Q in Connect enabled as part of the flow</p></li>
     /// </ul>
-    /// <p>This filter is available only for contact record-driven metrics.</p></li>
+    /// <p>This filter is available only for contact record-driven metrics.</p>
+    /// <p><a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-outbound-campaigns_Campaign.html">Campaign</a> ARNs are valid <code>filterValues</code> for the <code>CAMPAIGN</code> filter key.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
@@ -923,7 +1000,7 @@ impl GetMetricDataV2Input {
     }
     /// <p>The grouping applied to the metrics that are returned. For example, when results are grouped by queue, the metrics returned are grouped by queue. The values that are returned apply to the metrics for each queue. They are not aggregated for all queues.</p>
     /// <p>If no grouping is specified, a summary of all metrics is returned.</p>
-    /// <p>Valid grouping keys: <code>AGENT</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>CASE_TEMPLATE_ARN</code> | <code>CASE_STATUS</code> | <code>CHANNEL</code> | <code>contact/segmentAttributes/connect:Subtype</code> | <code>FLOWS_RESOURCE_ID</code> | <code>FLOWS_MODULE_RESOURCE_ID</code> | <code>FLOW_TYPE</code> | <code>FLOWS_OUTCOME_TYPE</code> | <code>INITIATION_METHOD</code> | <code>Q_CONNECT_ENABLED</code> | <code>QUEUE</code> | <code>RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>ROUTING_PROFILE</code> | <code>ROUTING_STEP_EXPRESSION</code></p>
+    /// <p>Valid grouping keys: <code>AGENT</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>ANSWERING_MACHINE_DETECTION_STATUS</code> | <code>CAMPAIGN</code> | <code>CASE_TEMPLATE_ARN</code> | <code>CASE_STATUS</code> | <code>CHANNEL</code> | <code>contact/segmentAttributes/connect:Subtype</code> | <code>DISCONNECT_REASON</code> | <code>FLOWS_RESOURCE_ID</code> | <code>FLOWS_MODULE_RESOURCE_ID</code> | <code>FLOW_TYPE</code> | <code>FLOWS_OUTCOME_TYPE</code> | <code>INITIATION_METHOD</code> | <code>Q_CONNECT_ENABLED</code> | <code>QUEUE</code> | <code>RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>ROUTING_PROFILE</code> | <code>ROUTING_STEP_EXPRESSION</code></p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groupings.is_none()`.
     pub fn groupings(&self) -> &[::std::string::String] {
@@ -1090,6 +1167,15 @@ impl GetMetricDataV2Input {
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-conversation-duration-historical">Average conversation duration</a></p>
     /// </dd>
     /// <dt>
+    /// AVG_DIALS_PER_MINUTE
+    /// </dt>
+    /// <dd>
+    /// <p>This metric is available only for contacts analyzed by outbound campaigns analytics.</p>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Campaign, Agent, Queue, Routing Profile</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-dials-historical">Average dials per minute</a></p>
+    /// </dd>
+    /// <dt>
     /// AVG_FLOW_TIME
     /// </dt>
     /// <dd>
@@ -1236,13 +1322,42 @@ impl GetMetricDataV2Input {
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-talk-time-customer-historical">Average customer talk time</a></p>
     /// </dd>
     /// <dt>
+    /// AVG_WAIT_TIME_AFTER_CUSTOMER_CONNECTION
+    /// </dt>
+    /// <dd>
+    /// <p>This metric is available only for contacts analyzed by outbound campaigns analytics.</p>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Campaign</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-wait-time-historical">Average wait time after customer connection</a></p>
+    /// </dd>
+    /// <dt>
+    /// CAMPAIGN_CONTACTS_ABANDONED_AFTER_X
+    /// </dt>
+    /// <dd>
+    /// <p>This metric is available only for contacts analyzed by outbound campaigns analytics.</p>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Campaign, Agent</p>
+    /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>GT</code> (for <i>Greater than</i>).</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#campaign-contacts-abandoned-historical">Campaign contacts abandoned after X</a></p>
+    /// </dd>
+    /// <dt>
+    /// CAMPAIGN_CONTACTS_ABANDONED_AFTER_X_RATE
+    /// </dt>
+    /// <dd>
+    /// <p>This metric is available only for contacts analyzed by outbound campaigns analytics.</p>
+    /// <p>Unit: Percent</p>
+    /// <p>Valid groupings and filters: Campaign, Agent</p>
+    /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>GT</code> (for <i>Greater than</i>).</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#campaign-contacts-abandoned-rate-historical">Campaign contacts abandoned after X rate</a></p>
+    /// </dd>
+    /// <dt>
     /// CASES_CREATED
     /// </dt>
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Required filter key: CASE_TEMPLATE_ARN</p>
     /// <p>Valid groupings and filters: CASE_TEMPLATE_ARN, CASE_STATUS</p>
-    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html##cases-created-historical">Cases created</a></p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#cases-created-historical">Cases created</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_CREATED
@@ -1393,6 +1508,28 @@ impl GetMetricDataV2Input {
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#current-cases-historical">Current cases</a></p>
     /// </dd>
     /// <dt>
+    /// DELIVERY_ATTEMPTS
+    /// </dt>
+    /// <dd>
+    /// <p>This metric is available only for contacts analyzed by outbound campaigns analytics.</p>
+    /// <p>Unit: Count</p>
+    /// <p>Valid metric filter key: <code>ANSWERING_MACHINE_DETECTION_STATUS</code>, <code>DISCONNECT_REASON</code></p>
+    /// <p>Valid groupings and filters: Campaign, Agent, Queue, Routing Profile, Answering Machine Detection Status, Disconnect Reason</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#delivery-attempts-historical">Delivery attempts</a></p>
+    /// </dd>
+    /// <dt>
+    /// DELIVERY_ATTEMPT_DISPOSITION_RATE
+    /// </dt>
+    /// <dd>
+    /// <p>This metric is available only for contacts analyzed by outbound campaigns analytics, and with the answering machine detection enabled.</p>
+    /// <p>Unit: Percent</p>
+    /// <p>Valid metric filter key: <code>ANSWERING_MACHINE_DETECTION_STATUS</code>, <code>DISCONNECT_REASON</code></p>
+    /// <p>Valid groupings and filters: Campaign, Agent, Answering Machine Detection Status, Disconnect Reason</p><note>
+    /// <p>Answering Machine Detection Status and Disconnect Reason are valid filters but not valid groupings.</p>
+    /// </note>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#delivery-attempt-disposition-rate-historical">Delivery attempt disposition rate</a></p>
+    /// </dd>
+    /// <dt>
     /// FLOWS_OUTCOME
     /// </dt>
     /// <dd>
@@ -1407,6 +1544,15 @@ impl GetMetricDataV2Input {
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Channel, contact/segmentAttributes/connect:Subtype, Flow type, Flows module resource ID, Flows resource ID, Initiation method, Resource published timestamp</p>
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#flows-started-historical">Flows started</a></p>
+    /// </dd>
+    /// <dt>
+    /// HUMAN_ANSWERED_CALLS
+    /// </dt>
+    /// <dd>
+    /// <p>This metric is available only for contacts analyzed by outbound campaigns analytics, and with the answering machine detection enabled.</p>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Campaign, Agent</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#human-answered-historical">Human answered</a></p>
     /// </dd>
     /// <dt>
     /// MAX_FLOW_TIME
@@ -1858,6 +2004,8 @@ impl GetMetricDataV2InputBuilder {
     /// <li>
     /// <p>Agents</p></li>
     /// <li>
+    /// <p>Campaigns</p></li>
+    /// <li>
     /// <p>Channels</p></li>
     /// <li>
     /// <p>Feature</p></li>
@@ -1871,11 +2019,12 @@ impl GetMetricDataV2InputBuilder {
     /// <p>User hierarchy groups</p></li>
     /// </ul>
     /// <p>At least one filter must be passed from queues, routing profiles, agents, or user hierarchy groups.</p>
+    /// <p>For metrics for outbound campaigns analytics, you can also use campaigns to satisfy at least one filter requirement.</p>
     /// <p>To filter by phone number, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-historical-metrics-report.html">Create a historical metrics report</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     /// <p>Note the following limits:</p>
     /// <ul>
     /// <li>
-    /// <p><b>Filter keys</b>: A maximum of 5 filter keys are supported in a single request. Valid filter keys: <code>AGENT</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>CASE_TEMPLATE_ARN</code> | <code>CASE_STATUS</code> | <code>CHANNEL</code> | <code>contact/segmentAttributes/connect:Subtype</code> | <code>FEATURE</code> | <code>FLOW_TYPE</code> | <code>FLOWS_NEXT_RESOURCE_ID</code> | <code>FLOWS_NEXT_RESOURCE_QUEUE_ID</code> | <code>FLOWS_OUTCOME_TYPE</code> | <code>FLOWS_RESOURCE_ID</code> | <code>INITIATION_METHOD</code> | <code>RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>ROUTING_PROFILE</code> | <code>ROUTING_STEP_EXPRESSION</code> | <code>QUEUE</code> | <code>Q_CONNECT_ENABLED</code> |</p></li>
+    /// <p><b>Filter keys</b>: A maximum of 5 filter keys are supported in a single request. Valid filter keys: <code>AGENT</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>ANSWERING_MACHINE_DETECTION_STATUS</code> | <code>CAMPAIGN</code> | <code>CASE_TEMPLATE_ARN</code> | <code>CASE_STATUS</code> | <code>CHANNEL</code> | <code>contact/segmentAttributes/connect:Subtype</code> | <code>DISCONNECT_REASON</code> | <code>FEATURE</code> | <code>FLOW_TYPE</code> | <code>FLOWS_NEXT_RESOURCE_ID</code> | <code>FLOWS_NEXT_RESOURCE_QUEUE_ID</code> | <code>FLOWS_OUTCOME_TYPE</code> | <code>FLOWS_RESOURCE_ID</code> | <code>INITIATION_METHOD</code> | <code>RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>ROUTING_PROFILE</code> | <code>ROUTING_STEP_EXPRESSION</code> | <code>QUEUE</code> | <code>Q_CONNECT_ENABLED</code> |</p></li>
     /// <li>
     /// <p><b>Filter values</b>: A maximum of 100 filter values are supported in a single request. VOICE, CHAT, and TASK are valid <code>filterValue</code> for the CHANNEL filter key. They do not count towards limitation of 100 filter values. For example, a GetMetricDataV2 request can filter by 50 queues, 35 agents, and 15 routing profiles for a total of 100 filter values, along with 3 channel filters.</p>
     /// <p><code>contact_lens_conversational_analytics</code> is a valid filterValue for the <code>FEATURE</code> filter key. It is available only to contacts analyzed by Contact Lens conversational analytics.</p>
@@ -1888,7 +2037,8 @@ impl GetMetricDataV2InputBuilder {
     /// <li>
     /// <p>FALSE includes all contacts that did not have Amazon Q in Connect enabled as part of the flow</p></li>
     /// </ul>
-    /// <p>This filter is available only for contact record-driven metrics.</p></li>
+    /// <p>This filter is available only for contact record-driven metrics.</p>
+    /// <p><a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-outbound-campaigns_Campaign.html">Campaign</a> ARNs are valid <code>filterValues</code> for the <code>CAMPAIGN</code> filter key.</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::FilterV2) -> Self {
         let mut v = self.filters.unwrap_or_default();
@@ -1901,6 +2051,8 @@ impl GetMetricDataV2InputBuilder {
     /// <li>
     /// <p>Agents</p></li>
     /// <li>
+    /// <p>Campaigns</p></li>
+    /// <li>
     /// <p>Channels</p></li>
     /// <li>
     /// <p>Feature</p></li>
@@ -1914,11 +2066,12 @@ impl GetMetricDataV2InputBuilder {
     /// <p>User hierarchy groups</p></li>
     /// </ul>
     /// <p>At least one filter must be passed from queues, routing profiles, agents, or user hierarchy groups.</p>
+    /// <p>For metrics for outbound campaigns analytics, you can also use campaigns to satisfy at least one filter requirement.</p>
     /// <p>To filter by phone number, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-historical-metrics-report.html">Create a historical metrics report</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     /// <p>Note the following limits:</p>
     /// <ul>
     /// <li>
-    /// <p><b>Filter keys</b>: A maximum of 5 filter keys are supported in a single request. Valid filter keys: <code>AGENT</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>CASE_TEMPLATE_ARN</code> | <code>CASE_STATUS</code> | <code>CHANNEL</code> | <code>contact/segmentAttributes/connect:Subtype</code> | <code>FEATURE</code> | <code>FLOW_TYPE</code> | <code>FLOWS_NEXT_RESOURCE_ID</code> | <code>FLOWS_NEXT_RESOURCE_QUEUE_ID</code> | <code>FLOWS_OUTCOME_TYPE</code> | <code>FLOWS_RESOURCE_ID</code> | <code>INITIATION_METHOD</code> | <code>RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>ROUTING_PROFILE</code> | <code>ROUTING_STEP_EXPRESSION</code> | <code>QUEUE</code> | <code>Q_CONNECT_ENABLED</code> |</p></li>
+    /// <p><b>Filter keys</b>: A maximum of 5 filter keys are supported in a single request. Valid filter keys: <code>AGENT</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>ANSWERING_MACHINE_DETECTION_STATUS</code> | <code>CAMPAIGN</code> | <code>CASE_TEMPLATE_ARN</code> | <code>CASE_STATUS</code> | <code>CHANNEL</code> | <code>contact/segmentAttributes/connect:Subtype</code> | <code>DISCONNECT_REASON</code> | <code>FEATURE</code> | <code>FLOW_TYPE</code> | <code>FLOWS_NEXT_RESOURCE_ID</code> | <code>FLOWS_NEXT_RESOURCE_QUEUE_ID</code> | <code>FLOWS_OUTCOME_TYPE</code> | <code>FLOWS_RESOURCE_ID</code> | <code>INITIATION_METHOD</code> | <code>RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>ROUTING_PROFILE</code> | <code>ROUTING_STEP_EXPRESSION</code> | <code>QUEUE</code> | <code>Q_CONNECT_ENABLED</code> |</p></li>
     /// <li>
     /// <p><b>Filter values</b>: A maximum of 100 filter values are supported in a single request. VOICE, CHAT, and TASK are valid <code>filterValue</code> for the CHANNEL filter key. They do not count towards limitation of 100 filter values. For example, a GetMetricDataV2 request can filter by 50 queues, 35 agents, and 15 routing profiles for a total of 100 filter values, along with 3 channel filters.</p>
     /// <p><code>contact_lens_conversational_analytics</code> is a valid filterValue for the <code>FEATURE</code> filter key. It is available only to contacts analyzed by Contact Lens conversational analytics.</p>
@@ -1931,7 +2084,8 @@ impl GetMetricDataV2InputBuilder {
     /// <li>
     /// <p>FALSE includes all contacts that did not have Amazon Q in Connect enabled as part of the flow</p></li>
     /// </ul>
-    /// <p>This filter is available only for contact record-driven metrics.</p></li>
+    /// <p>This filter is available only for contact record-driven metrics.</p>
+    /// <p><a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-outbound-campaigns_Campaign.html">Campaign</a> ARNs are valid <code>filterValues</code> for the <code>CAMPAIGN</code> filter key.</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FilterV2>>) -> Self {
         self.filters = input;
@@ -1942,6 +2096,8 @@ impl GetMetricDataV2InputBuilder {
     /// <li>
     /// <p>Agents</p></li>
     /// <li>
+    /// <p>Campaigns</p></li>
+    /// <li>
     /// <p>Channels</p></li>
     /// <li>
     /// <p>Feature</p></li>
@@ -1955,11 +2111,12 @@ impl GetMetricDataV2InputBuilder {
     /// <p>User hierarchy groups</p></li>
     /// </ul>
     /// <p>At least one filter must be passed from queues, routing profiles, agents, or user hierarchy groups.</p>
+    /// <p>For metrics for outbound campaigns analytics, you can also use campaigns to satisfy at least one filter requirement.</p>
     /// <p>To filter by phone number, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-historical-metrics-report.html">Create a historical metrics report</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     /// <p>Note the following limits:</p>
     /// <ul>
     /// <li>
-    /// <p><b>Filter keys</b>: A maximum of 5 filter keys are supported in a single request. Valid filter keys: <code>AGENT</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>CASE_TEMPLATE_ARN</code> | <code>CASE_STATUS</code> | <code>CHANNEL</code> | <code>contact/segmentAttributes/connect:Subtype</code> | <code>FEATURE</code> | <code>FLOW_TYPE</code> | <code>FLOWS_NEXT_RESOURCE_ID</code> | <code>FLOWS_NEXT_RESOURCE_QUEUE_ID</code> | <code>FLOWS_OUTCOME_TYPE</code> | <code>FLOWS_RESOURCE_ID</code> | <code>INITIATION_METHOD</code> | <code>RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>ROUTING_PROFILE</code> | <code>ROUTING_STEP_EXPRESSION</code> | <code>QUEUE</code> | <code>Q_CONNECT_ENABLED</code> |</p></li>
+    /// <p><b>Filter keys</b>: A maximum of 5 filter keys are supported in a single request. Valid filter keys: <code>AGENT</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>ANSWERING_MACHINE_DETECTION_STATUS</code> | <code>CAMPAIGN</code> | <code>CASE_TEMPLATE_ARN</code> | <code>CASE_STATUS</code> | <code>CHANNEL</code> | <code>contact/segmentAttributes/connect:Subtype</code> | <code>DISCONNECT_REASON</code> | <code>FEATURE</code> | <code>FLOW_TYPE</code> | <code>FLOWS_NEXT_RESOURCE_ID</code> | <code>FLOWS_NEXT_RESOURCE_QUEUE_ID</code> | <code>FLOWS_OUTCOME_TYPE</code> | <code>FLOWS_RESOURCE_ID</code> | <code>INITIATION_METHOD</code> | <code>RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>ROUTING_PROFILE</code> | <code>ROUTING_STEP_EXPRESSION</code> | <code>QUEUE</code> | <code>Q_CONNECT_ENABLED</code> |</p></li>
     /// <li>
     /// <p><b>Filter values</b>: A maximum of 100 filter values are supported in a single request. VOICE, CHAT, and TASK are valid <code>filterValue</code> for the CHANNEL filter key. They do not count towards limitation of 100 filter values. For example, a GetMetricDataV2 request can filter by 50 queues, 35 agents, and 15 routing profiles for a total of 100 filter values, along with 3 channel filters.</p>
     /// <p><code>contact_lens_conversational_analytics</code> is a valid filterValue for the <code>FEATURE</code> filter key. It is available only to contacts analyzed by Contact Lens conversational analytics.</p>
@@ -1972,7 +2129,8 @@ impl GetMetricDataV2InputBuilder {
     /// <li>
     /// <p>FALSE includes all contacts that did not have Amazon Q in Connect enabled as part of the flow</p></li>
     /// </ul>
-    /// <p>This filter is available only for contact record-driven metrics.</p></li>
+    /// <p>This filter is available only for contact record-driven metrics.</p>
+    /// <p><a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-outbound-campaigns_Campaign.html">Campaign</a> ARNs are valid <code>filterValues</code> for the <code>CAMPAIGN</code> filter key.</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterV2>> {
         &self.filters
@@ -1983,7 +2141,7 @@ impl GetMetricDataV2InputBuilder {
     ///
     /// <p>The grouping applied to the metrics that are returned. For example, when results are grouped by queue, the metrics returned are grouped by queue. The values that are returned apply to the metrics for each queue. They are not aggregated for all queues.</p>
     /// <p>If no grouping is specified, a summary of all metrics is returned.</p>
-    /// <p>Valid grouping keys: <code>AGENT</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>CASE_TEMPLATE_ARN</code> | <code>CASE_STATUS</code> | <code>CHANNEL</code> | <code>contact/segmentAttributes/connect:Subtype</code> | <code>FLOWS_RESOURCE_ID</code> | <code>FLOWS_MODULE_RESOURCE_ID</code> | <code>FLOW_TYPE</code> | <code>FLOWS_OUTCOME_TYPE</code> | <code>INITIATION_METHOD</code> | <code>Q_CONNECT_ENABLED</code> | <code>QUEUE</code> | <code>RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>ROUTING_PROFILE</code> | <code>ROUTING_STEP_EXPRESSION</code></p>
+    /// <p>Valid grouping keys: <code>AGENT</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>ANSWERING_MACHINE_DETECTION_STATUS</code> | <code>CAMPAIGN</code> | <code>CASE_TEMPLATE_ARN</code> | <code>CASE_STATUS</code> | <code>CHANNEL</code> | <code>contact/segmentAttributes/connect:Subtype</code> | <code>DISCONNECT_REASON</code> | <code>FLOWS_RESOURCE_ID</code> | <code>FLOWS_MODULE_RESOURCE_ID</code> | <code>FLOW_TYPE</code> | <code>FLOWS_OUTCOME_TYPE</code> | <code>INITIATION_METHOD</code> | <code>Q_CONNECT_ENABLED</code> | <code>QUEUE</code> | <code>RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>ROUTING_PROFILE</code> | <code>ROUTING_STEP_EXPRESSION</code></p>
     pub fn groupings(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.groupings.unwrap_or_default();
         v.push(input.into());
@@ -1992,14 +2150,14 @@ impl GetMetricDataV2InputBuilder {
     }
     /// <p>The grouping applied to the metrics that are returned. For example, when results are grouped by queue, the metrics returned are grouped by queue. The values that are returned apply to the metrics for each queue. They are not aggregated for all queues.</p>
     /// <p>If no grouping is specified, a summary of all metrics is returned.</p>
-    /// <p>Valid grouping keys: <code>AGENT</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>CASE_TEMPLATE_ARN</code> | <code>CASE_STATUS</code> | <code>CHANNEL</code> | <code>contact/segmentAttributes/connect:Subtype</code> | <code>FLOWS_RESOURCE_ID</code> | <code>FLOWS_MODULE_RESOURCE_ID</code> | <code>FLOW_TYPE</code> | <code>FLOWS_OUTCOME_TYPE</code> | <code>INITIATION_METHOD</code> | <code>Q_CONNECT_ENABLED</code> | <code>QUEUE</code> | <code>RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>ROUTING_PROFILE</code> | <code>ROUTING_STEP_EXPRESSION</code></p>
+    /// <p>Valid grouping keys: <code>AGENT</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>ANSWERING_MACHINE_DETECTION_STATUS</code> | <code>CAMPAIGN</code> | <code>CASE_TEMPLATE_ARN</code> | <code>CASE_STATUS</code> | <code>CHANNEL</code> | <code>contact/segmentAttributes/connect:Subtype</code> | <code>DISCONNECT_REASON</code> | <code>FLOWS_RESOURCE_ID</code> | <code>FLOWS_MODULE_RESOURCE_ID</code> | <code>FLOW_TYPE</code> | <code>FLOWS_OUTCOME_TYPE</code> | <code>INITIATION_METHOD</code> | <code>Q_CONNECT_ENABLED</code> | <code>QUEUE</code> | <code>RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>ROUTING_PROFILE</code> | <code>ROUTING_STEP_EXPRESSION</code></p>
     pub fn set_groupings(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.groupings = input;
         self
     }
     /// <p>The grouping applied to the metrics that are returned. For example, when results are grouped by queue, the metrics returned are grouped by queue. The values that are returned apply to the metrics for each queue. They are not aggregated for all queues.</p>
     /// <p>If no grouping is specified, a summary of all metrics is returned.</p>
-    /// <p>Valid grouping keys: <code>AGENT</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>CASE_TEMPLATE_ARN</code> | <code>CASE_STATUS</code> | <code>CHANNEL</code> | <code>contact/segmentAttributes/connect:Subtype</code> | <code>FLOWS_RESOURCE_ID</code> | <code>FLOWS_MODULE_RESOURCE_ID</code> | <code>FLOW_TYPE</code> | <code>FLOWS_OUTCOME_TYPE</code> | <code>INITIATION_METHOD</code> | <code>Q_CONNECT_ENABLED</code> | <code>QUEUE</code> | <code>RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>ROUTING_PROFILE</code> | <code>ROUTING_STEP_EXPRESSION</code></p>
+    /// <p>Valid grouping keys: <code>AGENT</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>ANSWERING_MACHINE_DETECTION_STATUS</code> | <code>CAMPAIGN</code> | <code>CASE_TEMPLATE_ARN</code> | <code>CASE_STATUS</code> | <code>CHANNEL</code> | <code>contact/segmentAttributes/connect:Subtype</code> | <code>DISCONNECT_REASON</code> | <code>FLOWS_RESOURCE_ID</code> | <code>FLOWS_MODULE_RESOURCE_ID</code> | <code>FLOW_TYPE</code> | <code>FLOWS_OUTCOME_TYPE</code> | <code>INITIATION_METHOD</code> | <code>Q_CONNECT_ENABLED</code> | <code>QUEUE</code> | <code>RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>ROUTING_PROFILE</code> | <code>ROUTING_STEP_EXPRESSION</code></p>
     pub fn get_groupings(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.groupings
     }
@@ -2168,6 +2326,15 @@ impl GetMetricDataV2InputBuilder {
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-conversation-duration-historical">Average conversation duration</a></p>
     /// </dd>
     /// <dt>
+    /// AVG_DIALS_PER_MINUTE
+    /// </dt>
+    /// <dd>
+    /// <p>This metric is available only for contacts analyzed by outbound campaigns analytics.</p>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Campaign, Agent, Queue, Routing Profile</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-dials-historical">Average dials per minute</a></p>
+    /// </dd>
+    /// <dt>
     /// AVG_FLOW_TIME
     /// </dt>
     /// <dd>
@@ -2314,13 +2481,42 @@ impl GetMetricDataV2InputBuilder {
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-talk-time-customer-historical">Average customer talk time</a></p>
     /// </dd>
     /// <dt>
+    /// AVG_WAIT_TIME_AFTER_CUSTOMER_CONNECTION
+    /// </dt>
+    /// <dd>
+    /// <p>This metric is available only for contacts analyzed by outbound campaigns analytics.</p>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Campaign</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-wait-time-historical">Average wait time after customer connection</a></p>
+    /// </dd>
+    /// <dt>
+    /// CAMPAIGN_CONTACTS_ABANDONED_AFTER_X
+    /// </dt>
+    /// <dd>
+    /// <p>This metric is available only for contacts analyzed by outbound campaigns analytics.</p>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Campaign, Agent</p>
+    /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>GT</code> (for <i>Greater than</i>).</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#campaign-contacts-abandoned-historical">Campaign contacts abandoned after X</a></p>
+    /// </dd>
+    /// <dt>
+    /// CAMPAIGN_CONTACTS_ABANDONED_AFTER_X_RATE
+    /// </dt>
+    /// <dd>
+    /// <p>This metric is available only for contacts analyzed by outbound campaigns analytics.</p>
+    /// <p>Unit: Percent</p>
+    /// <p>Valid groupings and filters: Campaign, Agent</p>
+    /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>GT</code> (for <i>Greater than</i>).</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#campaign-contacts-abandoned-rate-historical">Campaign contacts abandoned after X rate</a></p>
+    /// </dd>
+    /// <dt>
     /// CASES_CREATED
     /// </dt>
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Required filter key: CASE_TEMPLATE_ARN</p>
     /// <p>Valid groupings and filters: CASE_TEMPLATE_ARN, CASE_STATUS</p>
-    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html##cases-created-historical">Cases created</a></p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#cases-created-historical">Cases created</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_CREATED
@@ -2471,6 +2667,28 @@ impl GetMetricDataV2InputBuilder {
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#current-cases-historical">Current cases</a></p>
     /// </dd>
     /// <dt>
+    /// DELIVERY_ATTEMPTS
+    /// </dt>
+    /// <dd>
+    /// <p>This metric is available only for contacts analyzed by outbound campaigns analytics.</p>
+    /// <p>Unit: Count</p>
+    /// <p>Valid metric filter key: <code>ANSWERING_MACHINE_DETECTION_STATUS</code>, <code>DISCONNECT_REASON</code></p>
+    /// <p>Valid groupings and filters: Campaign, Agent, Queue, Routing Profile, Answering Machine Detection Status, Disconnect Reason</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#delivery-attempts-historical">Delivery attempts</a></p>
+    /// </dd>
+    /// <dt>
+    /// DELIVERY_ATTEMPT_DISPOSITION_RATE
+    /// </dt>
+    /// <dd>
+    /// <p>This metric is available only for contacts analyzed by outbound campaigns analytics, and with the answering machine detection enabled.</p>
+    /// <p>Unit: Percent</p>
+    /// <p>Valid metric filter key: <code>ANSWERING_MACHINE_DETECTION_STATUS</code>, <code>DISCONNECT_REASON</code></p>
+    /// <p>Valid groupings and filters: Campaign, Agent, Answering Machine Detection Status, Disconnect Reason</p><note>
+    /// <p>Answering Machine Detection Status and Disconnect Reason are valid filters but not valid groupings.</p>
+    /// </note>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#delivery-attempt-disposition-rate-historical">Delivery attempt disposition rate</a></p>
+    /// </dd>
+    /// <dt>
     /// FLOWS_OUTCOME
     /// </dt>
     /// <dd>
@@ -2485,6 +2703,15 @@ impl GetMetricDataV2InputBuilder {
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Channel, contact/segmentAttributes/connect:Subtype, Flow type, Flows module resource ID, Flows resource ID, Initiation method, Resource published timestamp</p>
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#flows-started-historical">Flows started</a></p>
+    /// </dd>
+    /// <dt>
+    /// HUMAN_ANSWERED_CALLS
+    /// </dt>
+    /// <dd>
+    /// <p>This metric is available only for contacts analyzed by outbound campaigns analytics, and with the answering machine detection enabled.</p>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Campaign, Agent</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#human-answered-historical">Human answered</a></p>
     /// </dd>
     /// <dt>
     /// MAX_FLOW_TIME
@@ -2933,6 +3160,15 @@ impl GetMetricDataV2InputBuilder {
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-conversation-duration-historical">Average conversation duration</a></p>
     /// </dd>
     /// <dt>
+    /// AVG_DIALS_PER_MINUTE
+    /// </dt>
+    /// <dd>
+    /// <p>This metric is available only for contacts analyzed by outbound campaigns analytics.</p>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Campaign, Agent, Queue, Routing Profile</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-dials-historical">Average dials per minute</a></p>
+    /// </dd>
+    /// <dt>
     /// AVG_FLOW_TIME
     /// </dt>
     /// <dd>
@@ -3079,13 +3315,42 @@ impl GetMetricDataV2InputBuilder {
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-talk-time-customer-historical">Average customer talk time</a></p>
     /// </dd>
     /// <dt>
+    /// AVG_WAIT_TIME_AFTER_CUSTOMER_CONNECTION
+    /// </dt>
+    /// <dd>
+    /// <p>This metric is available only for contacts analyzed by outbound campaigns analytics.</p>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Campaign</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-wait-time-historical">Average wait time after customer connection</a></p>
+    /// </dd>
+    /// <dt>
+    /// CAMPAIGN_CONTACTS_ABANDONED_AFTER_X
+    /// </dt>
+    /// <dd>
+    /// <p>This metric is available only for contacts analyzed by outbound campaigns analytics.</p>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Campaign, Agent</p>
+    /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>GT</code> (for <i>Greater than</i>).</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#campaign-contacts-abandoned-historical">Campaign contacts abandoned after X</a></p>
+    /// </dd>
+    /// <dt>
+    /// CAMPAIGN_CONTACTS_ABANDONED_AFTER_X_RATE
+    /// </dt>
+    /// <dd>
+    /// <p>This metric is available only for contacts analyzed by outbound campaigns analytics.</p>
+    /// <p>Unit: Percent</p>
+    /// <p>Valid groupings and filters: Campaign, Agent</p>
+    /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>GT</code> (for <i>Greater than</i>).</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#campaign-contacts-abandoned-rate-historical">Campaign contacts abandoned after X rate</a></p>
+    /// </dd>
+    /// <dt>
     /// CASES_CREATED
     /// </dt>
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Required filter key: CASE_TEMPLATE_ARN</p>
     /// <p>Valid groupings and filters: CASE_TEMPLATE_ARN, CASE_STATUS</p>
-    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html##cases-created-historical">Cases created</a></p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#cases-created-historical">Cases created</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_CREATED
@@ -3236,6 +3501,28 @@ impl GetMetricDataV2InputBuilder {
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#current-cases-historical">Current cases</a></p>
     /// </dd>
     /// <dt>
+    /// DELIVERY_ATTEMPTS
+    /// </dt>
+    /// <dd>
+    /// <p>This metric is available only for contacts analyzed by outbound campaigns analytics.</p>
+    /// <p>Unit: Count</p>
+    /// <p>Valid metric filter key: <code>ANSWERING_MACHINE_DETECTION_STATUS</code>, <code>DISCONNECT_REASON</code></p>
+    /// <p>Valid groupings and filters: Campaign, Agent, Queue, Routing Profile, Answering Machine Detection Status, Disconnect Reason</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#delivery-attempts-historical">Delivery attempts</a></p>
+    /// </dd>
+    /// <dt>
+    /// DELIVERY_ATTEMPT_DISPOSITION_RATE
+    /// </dt>
+    /// <dd>
+    /// <p>This metric is available only for contacts analyzed by outbound campaigns analytics, and with the answering machine detection enabled.</p>
+    /// <p>Unit: Percent</p>
+    /// <p>Valid metric filter key: <code>ANSWERING_MACHINE_DETECTION_STATUS</code>, <code>DISCONNECT_REASON</code></p>
+    /// <p>Valid groupings and filters: Campaign, Agent, Answering Machine Detection Status, Disconnect Reason</p><note>
+    /// <p>Answering Machine Detection Status and Disconnect Reason are valid filters but not valid groupings.</p>
+    /// </note>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#delivery-attempt-disposition-rate-historical">Delivery attempt disposition rate</a></p>
+    /// </dd>
+    /// <dt>
     /// FLOWS_OUTCOME
     /// </dt>
     /// <dd>
@@ -3250,6 +3537,15 @@ impl GetMetricDataV2InputBuilder {
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Channel, contact/segmentAttributes/connect:Subtype, Flow type, Flows module resource ID, Flows resource ID, Initiation method, Resource published timestamp</p>
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#flows-started-historical">Flows started</a></p>
+    /// </dd>
+    /// <dt>
+    /// HUMAN_ANSWERED_CALLS
+    /// </dt>
+    /// <dd>
+    /// <p>This metric is available only for contacts analyzed by outbound campaigns analytics, and with the answering machine detection enabled.</p>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Campaign, Agent</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#human-answered-historical">Human answered</a></p>
     /// </dd>
     /// <dt>
     /// MAX_FLOW_TIME
@@ -3696,6 +3992,15 @@ impl GetMetricDataV2InputBuilder {
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-conversation-duration-historical">Average conversation duration</a></p>
     /// </dd>
     /// <dt>
+    /// AVG_DIALS_PER_MINUTE
+    /// </dt>
+    /// <dd>
+    /// <p>This metric is available only for contacts analyzed by outbound campaigns analytics.</p>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Campaign, Agent, Queue, Routing Profile</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-dials-historical">Average dials per minute</a></p>
+    /// </dd>
+    /// <dt>
     /// AVG_FLOW_TIME
     /// </dt>
     /// <dd>
@@ -3842,13 +4147,42 @@ impl GetMetricDataV2InputBuilder {
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-talk-time-customer-historical">Average customer talk time</a></p>
     /// </dd>
     /// <dt>
+    /// AVG_WAIT_TIME_AFTER_CUSTOMER_CONNECTION
+    /// </dt>
+    /// <dd>
+    /// <p>This metric is available only for contacts analyzed by outbound campaigns analytics.</p>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Campaign</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-wait-time-historical">Average wait time after customer connection</a></p>
+    /// </dd>
+    /// <dt>
+    /// CAMPAIGN_CONTACTS_ABANDONED_AFTER_X
+    /// </dt>
+    /// <dd>
+    /// <p>This metric is available only for contacts analyzed by outbound campaigns analytics.</p>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Campaign, Agent</p>
+    /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>GT</code> (for <i>Greater than</i>).</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#campaign-contacts-abandoned-historical">Campaign contacts abandoned after X</a></p>
+    /// </dd>
+    /// <dt>
+    /// CAMPAIGN_CONTACTS_ABANDONED_AFTER_X_RATE
+    /// </dt>
+    /// <dd>
+    /// <p>This metric is available only for contacts analyzed by outbound campaigns analytics.</p>
+    /// <p>Unit: Percent</p>
+    /// <p>Valid groupings and filters: Campaign, Agent</p>
+    /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>GT</code> (for <i>Greater than</i>).</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#campaign-contacts-abandoned-rate-historical">Campaign contacts abandoned after X rate</a></p>
+    /// </dd>
+    /// <dt>
     /// CASES_CREATED
     /// </dt>
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Required filter key: CASE_TEMPLATE_ARN</p>
     /// <p>Valid groupings and filters: CASE_TEMPLATE_ARN, CASE_STATUS</p>
-    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html##cases-created-historical">Cases created</a></p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#cases-created-historical">Cases created</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_CREATED
@@ -3999,6 +4333,28 @@ impl GetMetricDataV2InputBuilder {
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#current-cases-historical">Current cases</a></p>
     /// </dd>
     /// <dt>
+    /// DELIVERY_ATTEMPTS
+    /// </dt>
+    /// <dd>
+    /// <p>This metric is available only for contacts analyzed by outbound campaigns analytics.</p>
+    /// <p>Unit: Count</p>
+    /// <p>Valid metric filter key: <code>ANSWERING_MACHINE_DETECTION_STATUS</code>, <code>DISCONNECT_REASON</code></p>
+    /// <p>Valid groupings and filters: Campaign, Agent, Queue, Routing Profile, Answering Machine Detection Status, Disconnect Reason</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#delivery-attempts-historical">Delivery attempts</a></p>
+    /// </dd>
+    /// <dt>
+    /// DELIVERY_ATTEMPT_DISPOSITION_RATE
+    /// </dt>
+    /// <dd>
+    /// <p>This metric is available only for contacts analyzed by outbound campaigns analytics, and with the answering machine detection enabled.</p>
+    /// <p>Unit: Percent</p>
+    /// <p>Valid metric filter key: <code>ANSWERING_MACHINE_DETECTION_STATUS</code>, <code>DISCONNECT_REASON</code></p>
+    /// <p>Valid groupings and filters: Campaign, Agent, Answering Machine Detection Status, Disconnect Reason</p><note>
+    /// <p>Answering Machine Detection Status and Disconnect Reason are valid filters but not valid groupings.</p>
+    /// </note>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#delivery-attempt-disposition-rate-historical">Delivery attempt disposition rate</a></p>
+    /// </dd>
+    /// <dt>
     /// FLOWS_OUTCOME
     /// </dt>
     /// <dd>
@@ -4013,6 +4369,15 @@ impl GetMetricDataV2InputBuilder {
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Channel, contact/segmentAttributes/connect:Subtype, Flow type, Flows module resource ID, Flows resource ID, Initiation method, Resource published timestamp</p>
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#flows-started-historical">Flows started</a></p>
+    /// </dd>
+    /// <dt>
+    /// HUMAN_ANSWERED_CALLS
+    /// </dt>
+    /// <dd>
+    /// <p>This metric is available only for contacts analyzed by outbound campaigns analytics, and with the answering machine detection enabled.</p>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Campaign, Agent</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#human-answered-historical">Human answered</a></p>
     /// </dd>
     /// <dt>
     /// MAX_FLOW_TIME

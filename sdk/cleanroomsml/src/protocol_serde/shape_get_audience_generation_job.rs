@@ -154,6 +154,13 @@ pub(crate) fn de_get_audience_generation_job(
                             .transpose()?,
                     );
                 }
+                "protectedQueryIdentifier" => {
+                    builder = builder.set_protected_query_identifier(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "seedAudience" => {
                     builder = builder.set_seed_audience(
                         crate::protocol_serde::shape_audience_generation_job_data_source::de_audience_generation_job_data_source(tokens)?,

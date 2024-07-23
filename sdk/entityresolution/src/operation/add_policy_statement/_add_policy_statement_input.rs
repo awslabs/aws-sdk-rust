@@ -7,7 +7,9 @@ pub struct AddPolicyStatementInput {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A statement identifier that differentiates the statement from others in the same policy.</p>
     pub statement_id: ::std::option::Option<::std::string::String>,
-    /// <p>Determines whether the permissions specified in the policy are to be allowed (<code>Allow</code>) or denied (<code>Deny</code>).</p>
+    /// <p>Determines whether the permissions specified in the policy are to be allowed (<code>Allow</code>) or denied (<code>Deny</code>).</p><important>
+    /// <p>If you set the value of the <code>effect</code> parameter to <code>Deny</code> for the <code>AddPolicyStatement</code> operation, you must also set the value of the <code>effect</code> parameter in the <code>policy</code> to <code>Deny</code> for the <code>PutPolicy</code> operation.</p>
+    /// </important>
     pub effect: ::std::option::Option<crate::types::StatementEffect>,
     /// <p>The action that the principal can use on the resource.</p>
     /// <p>For example, <code>entityresolution:GetIdMappingJob</code>, <code>entityresolution:GetMatchingJob</code>.</p>
@@ -26,7 +28,9 @@ impl AddPolicyStatementInput {
     pub fn statement_id(&self) -> ::std::option::Option<&str> {
         self.statement_id.as_deref()
     }
-    /// <p>Determines whether the permissions specified in the policy are to be allowed (<code>Allow</code>) or denied (<code>Deny</code>).</p>
+    /// <p>Determines whether the permissions specified in the policy are to be allowed (<code>Allow</code>) or denied (<code>Deny</code>).</p><important>
+    /// <p>If you set the value of the <code>effect</code> parameter to <code>Deny</code> for the <code>AddPolicyStatement</code> operation, you must also set the value of the <code>effect</code> parameter in the <code>policy</code> to <code>Deny</code> for the <code>PutPolicy</code> operation.</p>
+    /// </important>
     pub fn effect(&self) -> ::std::option::Option<&crate::types::StatementEffect> {
         self.effect.as_ref()
     }
@@ -97,18 +101,24 @@ impl AddPolicyStatementInputBuilder {
     pub fn get_statement_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.statement_id
     }
-    /// <p>Determines whether the permissions specified in the policy are to be allowed (<code>Allow</code>) or denied (<code>Deny</code>).</p>
+    /// <p>Determines whether the permissions specified in the policy are to be allowed (<code>Allow</code>) or denied (<code>Deny</code>).</p><important>
+    /// <p>If you set the value of the <code>effect</code> parameter to <code>Deny</code> for the <code>AddPolicyStatement</code> operation, you must also set the value of the <code>effect</code> parameter in the <code>policy</code> to <code>Deny</code> for the <code>PutPolicy</code> operation.</p>
+    /// </important>
     /// This field is required.
     pub fn effect(mut self, input: crate::types::StatementEffect) -> Self {
         self.effect = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Determines whether the permissions specified in the policy are to be allowed (<code>Allow</code>) or denied (<code>Deny</code>).</p>
+    /// <p>Determines whether the permissions specified in the policy are to be allowed (<code>Allow</code>) or denied (<code>Deny</code>).</p><important>
+    /// <p>If you set the value of the <code>effect</code> parameter to <code>Deny</code> for the <code>AddPolicyStatement</code> operation, you must also set the value of the <code>effect</code> parameter in the <code>policy</code> to <code>Deny</code> for the <code>PutPolicy</code> operation.</p>
+    /// </important>
     pub fn set_effect(mut self, input: ::std::option::Option<crate::types::StatementEffect>) -> Self {
         self.effect = input;
         self
     }
-    /// <p>Determines whether the permissions specified in the policy are to be allowed (<code>Allow</code>) or denied (<code>Deny</code>).</p>
+    /// <p>Determines whether the permissions specified in the policy are to be allowed (<code>Allow</code>) or denied (<code>Deny</code>).</p><important>
+    /// <p>If you set the value of the <code>effect</code> parameter to <code>Deny</code> for the <code>AddPolicyStatement</code> operation, you must also set the value of the <code>effect</code> parameter in the <code>policy</code> to <code>Deny</code> for the <code>PutPolicy</code> operation.</p>
+    /// </important>
     pub fn get_effect(&self) -> &::std::option::Option<crate::types::StatementEffect> {
         &self.effect
     }

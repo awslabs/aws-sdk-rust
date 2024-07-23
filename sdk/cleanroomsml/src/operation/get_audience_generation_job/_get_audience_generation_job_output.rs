@@ -31,6 +31,8 @@ pub struct GetAudienceGenerationJobOutput {
     pub started_by: ::std::option::Option<::std::string::String>,
     /// <p>The tags that are associated to this audience generation job.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The unique identifier of the protected query for this audience generation job.</p>
+    pub protected_query_identifier: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetAudienceGenerationJobOutput {
@@ -93,6 +95,10 @@ impl GetAudienceGenerationJobOutput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>The unique identifier of the protected query for this audience generation job.</p>
+    pub fn protected_query_identifier(&self) -> ::std::option::Option<&str> {
+        self.protected_query_identifier.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetAudienceGenerationJobOutput {
     fn request_id(&self) -> Option<&str> {
@@ -124,6 +130,7 @@ pub struct GetAudienceGenerationJobOutputBuilder {
     pub(crate) metrics: ::std::option::Option<crate::types::AudienceQualityMetrics>,
     pub(crate) started_by: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) protected_query_identifier: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetAudienceGenerationJobOutputBuilder {
@@ -335,6 +342,20 @@ impl GetAudienceGenerationJobOutputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>The unique identifier of the protected query for this audience generation job.</p>
+    pub fn protected_query_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.protected_query_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the protected query for this audience generation job.</p>
+    pub fn set_protected_query_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.protected_query_identifier = input;
+        self
+    }
+    /// <p>The unique identifier of the protected query for this audience generation job.</p>
+    pub fn get_protected_query_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.protected_query_identifier
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -403,6 +424,7 @@ impl GetAudienceGenerationJobOutputBuilder {
             metrics: self.metrics,
             started_by: self.started_by,
             tags: self.tags,
+            protected_query_identifier: self.protected_query_identifier,
             _request_id: self._request_id,
         })
     }

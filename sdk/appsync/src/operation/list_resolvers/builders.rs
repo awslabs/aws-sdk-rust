@@ -108,6 +108,12 @@ impl ListResolversFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_resolvers::paginator::ListResolversPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+    pub fn into_paginator(self) -> crate::operation::list_resolvers::paginator::ListResolversPaginator {
+        crate::operation::list_resolvers::paginator::ListResolversPaginator::new(self.handle, self.inner)
+    }
     /// <p>The API ID.</p>
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.api_id(input.into());

@@ -6,7 +6,7 @@
 pub struct Transcript {
     /// <p>The identifier of the transcript.</p>
     pub id: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the participant.</p>
+    /// <p>The identifier of the participant. Valid values are CUSTOMER or AGENT.</p>
     pub participant_id: ::std::option::Option<::std::string::String>,
     /// <p>The role of participant. For example, is it a customer, agent, or system.</p>
     pub participant_role: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ pub struct Transcript {
     pub begin_offset_millis: ::std::option::Option<i32>,
     /// <p>The end offset in the contact for this transcript.</p>
     pub end_offset_millis: ::std::option::Option<i32>,
-    /// <p>The sentiment of the detected for this piece of transcript.</p>
+    /// <p>The sentiment detected for this piece of transcript.</p>
     pub sentiment: ::std::option::Option<crate::types::SentimentValue>,
     /// <p>List of positions where issues were detected on the transcript.</p>
     pub issues_detected: ::std::option::Option<::std::vec::Vec<crate::types::IssueDetected>>,
@@ -26,7 +26,7 @@ impl Transcript {
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The identifier of the participant.</p>
+    /// <p>The identifier of the participant. Valid values are CUSTOMER or AGENT.</p>
     pub fn participant_id(&self) -> ::std::option::Option<&str> {
         self.participant_id.as_deref()
     }
@@ -46,7 +46,7 @@ impl Transcript {
     pub fn end_offset_millis(&self) -> ::std::option::Option<i32> {
         self.end_offset_millis
     }
-    /// <p>The sentiment of the detected for this piece of transcript.</p>
+    /// <p>The sentiment detected for this piece of transcript.</p>
     pub fn sentiment(&self) -> ::std::option::Option<&crate::types::SentimentValue> {
         self.sentiment.as_ref()
     }
@@ -93,18 +93,18 @@ impl TranscriptBuilder {
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
-    /// <p>The identifier of the participant.</p>
+    /// <p>The identifier of the participant. Valid values are CUSTOMER or AGENT.</p>
     /// This field is required.
     pub fn participant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.participant_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the participant.</p>
+    /// <p>The identifier of the participant. Valid values are CUSTOMER or AGENT.</p>
     pub fn set_participant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.participant_id = input;
         self
     }
-    /// <p>The identifier of the participant.</p>
+    /// <p>The identifier of the participant. Valid values are CUSTOMER or AGENT.</p>
     pub fn get_participant_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.participant_id
     }
@@ -168,18 +168,18 @@ impl TranscriptBuilder {
     pub fn get_end_offset_millis(&self) -> &::std::option::Option<i32> {
         &self.end_offset_millis
     }
-    /// <p>The sentiment of the detected for this piece of transcript.</p>
+    /// <p>The sentiment detected for this piece of transcript.</p>
     /// This field is required.
     pub fn sentiment(mut self, input: crate::types::SentimentValue) -> Self {
         self.sentiment = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The sentiment of the detected for this piece of transcript.</p>
+    /// <p>The sentiment detected for this piece of transcript.</p>
     pub fn set_sentiment(mut self, input: ::std::option::Option<crate::types::SentimentValue>) -> Self {
         self.sentiment = input;
         self
     }
-    /// <p>The sentiment of the detected for this piece of transcript.</p>
+    /// <p>The sentiment detected for this piece of transcript.</p>
     pub fn get_sentiment(&self) -> &::std::option::Option<crate::types::SentimentValue> {
         &self.sentiment
     }

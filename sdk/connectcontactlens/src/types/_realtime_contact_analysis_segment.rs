@@ -8,6 +8,8 @@ pub struct RealtimeContactAnalysisSegment {
     pub transcript: ::std::option::Option<crate::types::Transcript>,
     /// <p>The matched category rules.</p>
     pub categories: ::std::option::Option<crate::types::Categories>,
+    /// <p>Information about the post-contact summary.</p>
+    pub post_contact_summary: ::std::option::Option<crate::types::PostContactSummary>,
 }
 impl RealtimeContactAnalysisSegment {
     /// <p>The analyzed transcript.</p>
@@ -17,6 +19,10 @@ impl RealtimeContactAnalysisSegment {
     /// <p>The matched category rules.</p>
     pub fn categories(&self) -> ::std::option::Option<&crate::types::Categories> {
         self.categories.as_ref()
+    }
+    /// <p>Information about the post-contact summary.</p>
+    pub fn post_contact_summary(&self) -> ::std::option::Option<&crate::types::PostContactSummary> {
+        self.post_contact_summary.as_ref()
     }
 }
 impl RealtimeContactAnalysisSegment {
@@ -32,6 +38,7 @@ impl RealtimeContactAnalysisSegment {
 pub struct RealtimeContactAnalysisSegmentBuilder {
     pub(crate) transcript: ::std::option::Option<crate::types::Transcript>,
     pub(crate) categories: ::std::option::Option<crate::types::Categories>,
+    pub(crate) post_contact_summary: ::std::option::Option<crate::types::PostContactSummary>,
 }
 impl RealtimeContactAnalysisSegmentBuilder {
     /// <p>The analyzed transcript.</p>
@@ -62,11 +69,26 @@ impl RealtimeContactAnalysisSegmentBuilder {
     pub fn get_categories(&self) -> &::std::option::Option<crate::types::Categories> {
         &self.categories
     }
+    /// <p>Information about the post-contact summary.</p>
+    pub fn post_contact_summary(mut self, input: crate::types::PostContactSummary) -> Self {
+        self.post_contact_summary = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about the post-contact summary.</p>
+    pub fn set_post_contact_summary(mut self, input: ::std::option::Option<crate::types::PostContactSummary>) -> Self {
+        self.post_contact_summary = input;
+        self
+    }
+    /// <p>Information about the post-contact summary.</p>
+    pub fn get_post_contact_summary(&self) -> &::std::option::Option<crate::types::PostContactSummary> {
+        &self.post_contact_summary
+    }
     /// Consumes the builder and constructs a [`RealtimeContactAnalysisSegment`](crate::types::RealtimeContactAnalysisSegment).
     pub fn build(self) -> crate::types::RealtimeContactAnalysisSegment {
         crate::types::RealtimeContactAnalysisSegment {
             transcript: self.transcript,
             categories: self.categories,
+            post_contact_summary: self.post_contact_summary,
         }
     }
 }

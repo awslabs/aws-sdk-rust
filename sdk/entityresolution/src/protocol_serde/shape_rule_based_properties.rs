@@ -24,6 +24,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "matchPurpose" => {
+                            builder = builder.set_match_purpose(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::MatchPurpose::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -62,6 +69,9 @@ pub fn ser_rule_based_properties(
     }
     {
         object.key("attributeMatchingModel").string(input.attribute_matching_model.as_str());
+    }
+    if let Some(var_4) = &input.match_purpose {
+        object.key("matchPurpose").string(var_4.as_str());
     }
     Ok(())
 }

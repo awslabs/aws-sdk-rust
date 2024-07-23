@@ -151,6 +151,8 @@ pub(crate) mod shape_configured_audience_model_summary;
 
 pub(crate) mod shape_dataset_input_config;
 
+pub(crate) mod shape_protected_query_sql_parameters;
+
 pub(crate) mod shape_relevance_metrics;
 
 pub(crate) mod shape_s3_config_map;
@@ -160,6 +162,8 @@ pub(crate) mod shape_training_dataset_summary;
 pub(crate) mod shape_column_schema;
 
 pub(crate) mod shape_data_source;
+
+pub(crate) mod shape_parameter_map;
 
 pub(crate) mod shape_relevance_metric;
 

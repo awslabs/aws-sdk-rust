@@ -11,7 +11,7 @@ pub struct UpdateIdMappingWorkflowInput {
     pub input_source_config: ::std::option::Option<::std::vec::Vec<crate::types::IdMappingWorkflowInputSource>>,
     /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code> and <code>KMSArn</code>.</p>
     pub output_source_config: ::std::option::Option<::std::vec::Vec<crate::types::IdMappingWorkflowOutputSource>>,
-    /// <p>An object which defines the <code>idMappingType</code> and the <code>providerProperties</code>.</p>
+    /// <p>An object which defines the ID mapping technique and any additional configurations.</p>
     pub id_mapping_techniques: ::std::option::Option<crate::types::IdMappingTechniques>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to access Amazon Web Services resources on your behalf.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
@@ -37,7 +37,7 @@ impl UpdateIdMappingWorkflowInput {
     pub fn output_source_config(&self) -> &[crate::types::IdMappingWorkflowOutputSource] {
         self.output_source_config.as_deref().unwrap_or_default()
     }
-    /// <p>An object which defines the <code>idMappingType</code> and the <code>providerProperties</code>.</p>
+    /// <p>An object which defines the ID mapping technique and any additional configurations.</p>
     pub fn id_mapping_techniques(&self) -> ::std::option::Option<&crate::types::IdMappingTechniques> {
         self.id_mapping_techniques.as_ref()
     }
@@ -134,23 +134,22 @@ impl UpdateIdMappingWorkflowInputBuilder {
     pub fn get_output_source_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdMappingWorkflowOutputSource>> {
         &self.output_source_config
     }
-    /// <p>An object which defines the <code>idMappingType</code> and the <code>providerProperties</code>.</p>
+    /// <p>An object which defines the ID mapping technique and any additional configurations.</p>
     /// This field is required.
     pub fn id_mapping_techniques(mut self, input: crate::types::IdMappingTechniques) -> Self {
         self.id_mapping_techniques = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object which defines the <code>idMappingType</code> and the <code>providerProperties</code>.</p>
+    /// <p>An object which defines the ID mapping technique and any additional configurations.</p>
     pub fn set_id_mapping_techniques(mut self, input: ::std::option::Option<crate::types::IdMappingTechniques>) -> Self {
         self.id_mapping_techniques = input;
         self
     }
-    /// <p>An object which defines the <code>idMappingType</code> and the <code>providerProperties</code>.</p>
+    /// <p>An object which defines the ID mapping technique and any additional configurations.</p>
     pub fn get_id_mapping_techniques(&self) -> &::std::option::Option<crate::types::IdMappingTechniques> {
         &self.id_mapping_techniques
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to access Amazon Web Services resources on your behalf.</p>
-    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self

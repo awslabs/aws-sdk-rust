@@ -139,6 +139,30 @@ pub(crate) fn create_configured_table_association_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_id_mapping_table_output_output_correct_errors(
+    mut builder: crate::operation::create_id_mapping_table::builders::CreateIdMappingTableOutputBuilder,
+) -> crate::operation::create_id_mapping_table::builders::CreateIdMappingTableOutputBuilder {
+    if builder.id_mapping_table.is_none() {
+        builder.id_mapping_table = {
+            let builder = crate::types::builders::IdMappingTableBuilder::default();
+            crate::serde_util::id_mapping_table_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn create_id_namespace_association_output_output_correct_errors(
+    mut builder: crate::operation::create_id_namespace_association::builders::CreateIdNamespaceAssociationOutputBuilder,
+) -> crate::operation::create_id_namespace_association::builders::CreateIdNamespaceAssociationOutputBuilder {
+    if builder.id_namespace_association.is_none() {
+        builder.id_namespace_association = {
+            let builder = crate::types::builders::IdNamespaceAssociationBuilder::default();
+            crate::serde_util::id_namespace_association_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn create_membership_output_output_correct_errors(
     mut builder: crate::operation::create_membership::builders::CreateMembershipOutputBuilder,
 ) -> crate::operation::create_membership::builders::CreateMembershipOutputBuilder {
@@ -211,6 +235,20 @@ pub(crate) fn get_collaboration_configured_audience_model_association_output_out
     builder
 }
 
+pub(crate) fn get_collaboration_id_namespace_association_output_output_correct_errors(
+    mut builder: crate::operation::get_collaboration_id_namespace_association::builders::GetCollaborationIdNamespaceAssociationOutputBuilder,
+) -> crate::operation::get_collaboration_id_namespace_association::builders::GetCollaborationIdNamespaceAssociationOutputBuilder {
+    if builder.collaboration_id_namespace_association.is_none() {
+        builder.collaboration_id_namespace_association = {
+            let builder = crate::types::builders::CollaborationIdNamespaceAssociationBuilder::default();
+            crate::serde_util::collaboration_id_namespace_association_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn get_collaboration_privacy_budget_template_output_output_correct_errors(
     mut builder: crate::operation::get_collaboration_privacy_budget_template::builders::GetCollaborationPrivacyBudgetTemplateOutputBuilder,
 ) -> crate::operation::get_collaboration_privacy_budget_template::builders::GetCollaborationPrivacyBudgetTemplateOutputBuilder {
@@ -270,6 +308,30 @@ pub(crate) fn get_configured_table_association_output_output_correct_errors(
         builder.configured_table_association = {
             let builder = crate::types::builders::ConfiguredTableAssociationBuilder::default();
             crate::serde_util::configured_table_association_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn get_id_mapping_table_output_output_correct_errors(
+    mut builder: crate::operation::get_id_mapping_table::builders::GetIdMappingTableOutputBuilder,
+) -> crate::operation::get_id_mapping_table::builders::GetIdMappingTableOutputBuilder {
+    if builder.id_mapping_table.is_none() {
+        builder.id_mapping_table = {
+            let builder = crate::types::builders::IdMappingTableBuilder::default();
+            crate::serde_util::id_mapping_table_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn get_id_namespace_association_output_output_correct_errors(
+    mut builder: crate::operation::get_id_namespace_association::builders::GetIdNamespaceAssociationOutputBuilder,
+) -> crate::operation::get_id_namespace_association::builders::GetIdNamespaceAssociationOutputBuilder {
+    if builder.id_namespace_association.is_none() {
+        builder.id_namespace_association = {
+            let builder = crate::types::builders::IdNamespaceAssociationBuilder::default();
+            crate::serde_util::id_namespace_association_correct_errors(builder).build().ok()
         }
     }
     builder
@@ -360,6 +422,15 @@ pub(crate) fn list_collaboration_configured_audience_model_associations_output_o
     builder
 }
 
+pub(crate) fn list_collaboration_id_namespace_associations_output_output_correct_errors(
+    mut builder: crate::operation::list_collaboration_id_namespace_associations::builders::ListCollaborationIdNamespaceAssociationsOutputBuilder,
+) -> crate::operation::list_collaboration_id_namespace_associations::builders::ListCollaborationIdNamespaceAssociationsOutputBuilder {
+    if builder.collaboration_id_namespace_association_summaries.is_none() {
+        builder.collaboration_id_namespace_association_summaries = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_collaboration_privacy_budget_templates_output_output_correct_errors(
     mut builder: crate::operation::list_collaboration_privacy_budget_templates::builders::ListCollaborationPrivacyBudgetTemplatesOutputBuilder,
 ) -> crate::operation::list_collaboration_privacy_budget_templates::builders::ListCollaborationPrivacyBudgetTemplatesOutputBuilder {
@@ -410,6 +481,24 @@ pub(crate) fn list_configured_tables_output_output_correct_errors(
 ) -> crate::operation::list_configured_tables::builders::ListConfiguredTablesOutputBuilder {
     if builder.configured_table_summaries.is_none() {
         builder.configured_table_summaries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_id_mapping_tables_output_output_correct_errors(
+    mut builder: crate::operation::list_id_mapping_tables::builders::ListIdMappingTablesOutputBuilder,
+) -> crate::operation::list_id_mapping_tables::builders::ListIdMappingTablesOutputBuilder {
+    if builder.id_mapping_table_summaries.is_none() {
+        builder.id_mapping_table_summaries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_id_namespace_associations_output_output_correct_errors(
+    mut builder: crate::operation::list_id_namespace_associations::builders::ListIdNamespaceAssociationsOutputBuilder,
+) -> crate::operation::list_id_namespace_associations::builders::ListIdNamespaceAssociationsOutputBuilder {
+    if builder.id_namespace_association_summaries.is_none() {
+        builder.id_namespace_association_summaries = Some(Default::default())
     }
     builder
 }
@@ -473,6 +562,15 @@ pub(crate) fn list_tags_for_resource_output_output_correct_errors(
 ) -> crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder {
     if builder.tags.is_none() {
         builder.tags = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn populate_id_mapping_table_output_output_correct_errors(
+    mut builder: crate::operation::populate_id_mapping_table::builders::PopulateIdMappingTableOutputBuilder,
+) -> crate::operation::populate_id_mapping_table::builders::PopulateIdMappingTableOutputBuilder {
+    if builder.id_mapping_job_id.is_none() {
+        builder.id_mapping_job_id = Some(Default::default())
     }
     builder
 }
@@ -567,6 +665,30 @@ pub(crate) fn update_configured_table_association_output_output_correct_errors(
         builder.configured_table_association = {
             let builder = crate::types::builders::ConfiguredTableAssociationBuilder::default();
             crate::serde_util::configured_table_association_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn update_id_mapping_table_output_output_correct_errors(
+    mut builder: crate::operation::update_id_mapping_table::builders::UpdateIdMappingTableOutputBuilder,
+) -> crate::operation::update_id_mapping_table::builders::UpdateIdMappingTableOutputBuilder {
+    if builder.id_mapping_table.is_none() {
+        builder.id_mapping_table = {
+            let builder = crate::types::builders::IdMappingTableBuilder::default();
+            crate::serde_util::id_mapping_table_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn update_id_namespace_association_output_output_correct_errors(
+    mut builder: crate::operation::update_id_namespace_association::builders::UpdateIdNamespaceAssociationOutputBuilder,
+) -> crate::operation::update_id_namespace_association::builders::UpdateIdNamespaceAssociationOutputBuilder {
+    if builder.id_namespace_association.is_none() {
+        builder.id_namespace_association = {
+            let builder = crate::types::builders::IdNamespaceAssociationBuilder::default();
+            crate::serde_util::id_namespace_association_correct_errors(builder).build().ok()
         }
     }
     builder
@@ -818,6 +940,104 @@ pub(crate) fn configured_table_association_correct_errors(
     builder
 }
 
+pub(crate) fn id_mapping_table_correct_errors(
+    mut builder: crate::types::builders::IdMappingTableBuilder,
+) -> crate::types::builders::IdMappingTableBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.input_reference_config.is_none() {
+        builder.input_reference_config = {
+            let builder = crate::types::builders::IdMappingTableInputReferenceConfigBuilder::default();
+            crate::serde_util::id_mapping_table_input_reference_config_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    if builder.membership_id.is_none() {
+        builder.membership_id = Some(Default::default())
+    }
+    if builder.membership_arn.is_none() {
+        builder.membership_arn = Some(Default::default())
+    }
+    if builder.collaboration_id.is_none() {
+        builder.collaboration_id = Some(Default::default())
+    }
+    if builder.collaboration_arn.is_none() {
+        builder.collaboration_arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.create_time.is_none() {
+        builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.update_time.is_none() {
+        builder.update_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.input_reference_properties.is_none() {
+        builder.input_reference_properties = {
+            let builder = crate::types::builders::IdMappingTableInputReferencePropertiesBuilder::default();
+            crate::serde_util::id_mapping_table_input_reference_properties_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn id_namespace_association_correct_errors(
+    mut builder: crate::types::builders::IdNamespaceAssociationBuilder,
+) -> crate::types::builders::IdNamespaceAssociationBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.membership_id.is_none() {
+        builder.membership_id = Some(Default::default())
+    }
+    if builder.membership_arn.is_none() {
+        builder.membership_arn = Some(Default::default())
+    }
+    if builder.collaboration_id.is_none() {
+        builder.collaboration_id = Some(Default::default())
+    }
+    if builder.collaboration_arn.is_none() {
+        builder.collaboration_arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.create_time.is_none() {
+        builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.update_time.is_none() {
+        builder.update_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.input_reference_config.is_none() {
+        builder.input_reference_config = {
+            let builder = crate::types::builders::IdNamespaceAssociationInputReferenceConfigBuilder::default();
+            crate::serde_util::id_namespace_association_input_reference_config_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    if builder.input_reference_properties.is_none() {
+        builder.input_reference_properties = {
+            let builder = crate::types::builders::IdNamespaceAssociationInputReferencePropertiesBuilder::default();
+            crate::serde_util::id_namespace_association_input_reference_properties_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn membership_correct_errors(mut builder: crate::types::builders::MembershipBuilder) -> crate::types::builders::MembershipBuilder {
     if builder.id.is_none() {
         builder.id = Some(Default::default())
@@ -978,6 +1198,52 @@ pub(crate) fn collaboration_configured_audience_model_association_correct_errors
     builder
 }
 
+pub(crate) fn collaboration_id_namespace_association_correct_errors(
+    mut builder: crate::types::builders::CollaborationIdNamespaceAssociationBuilder,
+) -> crate::types::builders::CollaborationIdNamespaceAssociationBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.collaboration_id.is_none() {
+        builder.collaboration_id = Some(Default::default())
+    }
+    if builder.collaboration_arn.is_none() {
+        builder.collaboration_arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.creator_account_id.is_none() {
+        builder.creator_account_id = Some(Default::default())
+    }
+    if builder.create_time.is_none() {
+        builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.update_time.is_none() {
+        builder.update_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.input_reference_config.is_none() {
+        builder.input_reference_config = {
+            let builder = crate::types::builders::IdNamespaceAssociationInputReferenceConfigBuilder::default();
+            crate::serde_util::id_namespace_association_input_reference_config_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    if builder.input_reference_properties.is_none() {
+        builder.input_reference_properties = {
+            let builder = crate::types::builders::IdNamespaceAssociationInputReferencePropertiesBuilder::default();
+            crate::serde_util::id_namespace_association_input_reference_properties_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn collaboration_privacy_budget_template_correct_errors(
     mut builder: crate::types::builders::CollaborationPrivacyBudgetTemplateBuilder,
 ) -> crate::types::builders::CollaborationPrivacyBudgetTemplateBuilder {
@@ -1093,6 +1359,51 @@ pub(crate) fn analysis_rule_correct_errors(mut builder: crate::types::builders::
     }
     if builder.policy.is_none() {
         builder.policy = Some(crate::types::AnalysisRulePolicy::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn id_mapping_table_input_reference_config_correct_errors(
+    mut builder: crate::types::builders::IdMappingTableInputReferenceConfigBuilder,
+) -> crate::types::builders::IdMappingTableInputReferenceConfigBuilder {
+    if builder.input_reference_arn.is_none() {
+        builder.input_reference_arn = Some(Default::default())
+    }
+    if builder.manage_resource_policies.is_none() {
+        builder.manage_resource_policies = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn id_mapping_table_input_reference_properties_correct_errors(
+    mut builder: crate::types::builders::IdMappingTableInputReferencePropertiesBuilder,
+) -> crate::types::builders::IdMappingTableInputReferencePropertiesBuilder {
+    if builder.id_mapping_table_input_source.is_none() {
+        builder.id_mapping_table_input_source = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn id_namespace_association_input_reference_config_correct_errors(
+    mut builder: crate::types::builders::IdNamespaceAssociationInputReferenceConfigBuilder,
+) -> crate::types::builders::IdNamespaceAssociationInputReferenceConfigBuilder {
+    if builder.input_reference_arn.is_none() {
+        builder.input_reference_arn = Some(Default::default())
+    }
+    if builder.manage_resource_policies.is_none() {
+        builder.manage_resource_policies = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn id_namespace_association_input_reference_properties_correct_errors(
+    mut builder: crate::types::builders::IdNamespaceAssociationInputReferencePropertiesBuilder,
+) -> crate::types::builders::IdNamespaceAssociationInputReferencePropertiesBuilder {
+    if builder.id_namespace_type.is_none() {
+        builder.id_namespace_type = "no value was set".parse::<crate::types::IdNamespaceType>().ok()
+    }
+    if builder.id_mapping_workflows_supported.is_none() {
+        builder.id_mapping_workflows_supported = Some(Default::default())
     }
     builder
 }
@@ -1248,6 +1559,52 @@ pub(crate) fn collaboration_configured_audience_model_association_summary_correc
     }
     if builder.creator_account_id.is_none() {
         builder.creator_account_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn collaboration_id_namespace_association_summary_correct_errors(
+    mut builder: crate::types::builders::CollaborationIdNamespaceAssociationSummaryBuilder,
+) -> crate::types::builders::CollaborationIdNamespaceAssociationSummaryBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.create_time.is_none() {
+        builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.update_time.is_none() {
+        builder.update_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.collaboration_arn.is_none() {
+        builder.collaboration_arn = Some(Default::default())
+    }
+    if builder.collaboration_id.is_none() {
+        builder.collaboration_id = Some(Default::default())
+    }
+    if builder.creator_account_id.is_none() {
+        builder.creator_account_id = Some(Default::default())
+    }
+    if builder.input_reference_config.is_none() {
+        builder.input_reference_config = {
+            let builder = crate::types::builders::IdNamespaceAssociationInputReferenceConfigBuilder::default();
+            crate::serde_util::id_namespace_association_input_reference_config_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.input_reference_properties.is_none() {
+        builder.input_reference_properties = {
+            let builder = crate::types::builders::IdNamespaceAssociationInputReferencePropertiesSummaryBuilder::default();
+            crate::serde_util::id_namespace_association_input_reference_properties_summary_correct_errors(builder)
+                .build()
+                .ok()
+        }
     }
     builder
 }
@@ -1473,6 +1830,105 @@ pub(crate) fn differential_privacy_privacy_impact_correct_errors(
 ) -> crate::types::builders::DifferentialPrivacyPrivacyImpactBuilder {
     if builder.aggregations.is_none() {
         builder.aggregations = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn id_mapping_config_correct_errors(
+    mut builder: crate::types::builders::IdMappingConfigBuilder,
+) -> crate::types::builders::IdMappingConfigBuilder {
+    if builder.allow_use_as_dimension_column.is_none() {
+        builder.allow_use_as_dimension_column = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn id_mapping_table_summary_correct_errors(
+    mut builder: crate::types::builders::IdMappingTableSummaryBuilder,
+) -> crate::types::builders::IdMappingTableSummaryBuilder {
+    if builder.collaboration_arn.is_none() {
+        builder.collaboration_arn = Some(Default::default())
+    }
+    if builder.collaboration_id.is_none() {
+        builder.collaboration_id = Some(Default::default())
+    }
+    if builder.membership_id.is_none() {
+        builder.membership_id = Some(Default::default())
+    }
+    if builder.membership_arn.is_none() {
+        builder.membership_arn = Some(Default::default())
+    }
+    if builder.create_time.is_none() {
+        builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.update_time.is_none() {
+        builder.update_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.input_reference_config.is_none() {
+        builder.input_reference_config = {
+            let builder = crate::types::builders::IdMappingTableInputReferenceConfigBuilder::default();
+            crate::serde_util::id_mapping_table_input_reference_config_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn id_namespace_association_summary_correct_errors(
+    mut builder: crate::types::builders::IdNamespaceAssociationSummaryBuilder,
+) -> crate::types::builders::IdNamespaceAssociationSummaryBuilder {
+    if builder.membership_id.is_none() {
+        builder.membership_id = Some(Default::default())
+    }
+    if builder.membership_arn.is_none() {
+        builder.membership_arn = Some(Default::default())
+    }
+    if builder.collaboration_arn.is_none() {
+        builder.collaboration_arn = Some(Default::default())
+    }
+    if builder.collaboration_id.is_none() {
+        builder.collaboration_id = Some(Default::default())
+    }
+    if builder.create_time.is_none() {
+        builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.update_time.is_none() {
+        builder.update_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.input_reference_config.is_none() {
+        builder.input_reference_config = {
+            let builder = crate::types::builders::IdNamespaceAssociationInputReferenceConfigBuilder::default();
+            crate::serde_util::id_namespace_association_input_reference_config_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.input_reference_properties.is_none() {
+        builder.input_reference_properties = {
+            let builder = crate::types::builders::IdNamespaceAssociationInputReferencePropertiesSummaryBuilder::default();
+            crate::serde_util::id_namespace_association_input_reference_properties_summary_correct_errors(builder)
+                .build()
+                .ok()
+        }
     }
     builder
 }
@@ -1793,6 +2249,24 @@ pub(crate) fn glue_table_reference_correct_errors(
     builder
 }
 
+pub(crate) fn id_mapping_table_schema_type_properties_correct_errors(
+    mut builder: crate::types::builders::IdMappingTableSchemaTypePropertiesBuilder,
+) -> crate::types::builders::IdMappingTableSchemaTypePropertiesBuilder {
+    if builder.id_mapping_table_input_source.is_none() {
+        builder.id_mapping_table_input_source = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn id_namespace_association_input_reference_properties_summary_correct_errors(
+    mut builder: crate::types::builders::IdNamespaceAssociationInputReferencePropertiesSummaryBuilder,
+) -> crate::types::builders::IdNamespaceAssociationInputReferencePropertiesSummaryBuilder {
+    if builder.id_namespace_type.is_none() {
+        builder.id_namespace_type = "no value was set".parse::<crate::types::IdNamespaceType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn payment_configuration_correct_errors(
     mut builder: crate::types::builders::PaymentConfigurationBuilder,
 ) -> crate::types::builders::PaymentConfigurationBuilder {
@@ -1844,6 +2318,18 @@ pub(crate) fn analysis_rule_custom_correct_errors(
     builder
 }
 
+pub(crate) fn analysis_rule_id_mapping_table_correct_errors(
+    mut builder: crate::types::builders::AnalysisRuleIdMappingTableBuilder,
+) -> crate::types::builders::AnalysisRuleIdMappingTableBuilder {
+    if builder.join_columns.is_none() {
+        builder.join_columns = Some(Default::default())
+    }
+    if builder.query_constraints.is_none() {
+        builder.query_constraints = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn analysis_rule_list_correct_errors(
     mut builder: crate::types::builders::AnalysisRuleListBuilder,
 ) -> crate::types::builders::AnalysisRuleListBuilder {
@@ -1891,6 +2377,18 @@ pub(crate) fn differential_privacy_sensitivity_parameters_correct_errors(
     }
     if builder.user_contribution_limit.is_none() {
         builder.user_contribution_limit = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn id_mapping_table_input_source_correct_errors(
+    mut builder: crate::types::builders::IdMappingTableInputSourceBuilder,
+) -> crate::types::builders::IdMappingTableInputSourceBuilder {
+    if builder.id_namespace_association_id.is_none() {
+        builder.id_namespace_association_id = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::IdNamespaceType>().ok()
     }
     builder
 }

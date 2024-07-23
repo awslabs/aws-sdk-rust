@@ -36,6 +36,15 @@ pub(crate) fn categories_correct_errors(mut builder: crate::types::builders::Cat
     builder
 }
 
+pub(crate) fn post_contact_summary_correct_errors(
+    mut builder: crate::types::builders::PostContactSummaryBuilder,
+) -> crate::types::builders::PostContactSummaryBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::PostContactSummaryStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn transcript_correct_errors(mut builder: crate::types::builders::TranscriptBuilder) -> crate::types::builders::TranscriptBuilder {
     if builder.id.is_none() {
         builder.id = Some(Default::default())

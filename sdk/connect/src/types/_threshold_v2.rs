@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ThresholdV2 {
-    /// <p>The type of comparison. Only "less than" (LT) comparisons are supported.</p>
+    /// <p>The type of comparison. Only "less than" (LT) and "greater than" (GT) comparisons are supported.</p>
     pub comparison: ::std::option::Option<::std::string::String>,
     /// <p>The threshold value to compare.</p>
     pub threshold_value: ::std::option::Option<f64>,
 }
 impl ThresholdV2 {
-    /// <p>The type of comparison. Only "less than" (LT) comparisons are supported.</p>
+    /// <p>The type of comparison. Only "less than" (LT) and "greater than" (GT) comparisons are supported.</p>
     pub fn comparison(&self) -> ::std::option::Option<&str> {
         self.comparison.as_deref()
     }
@@ -34,17 +34,17 @@ pub struct ThresholdV2Builder {
     pub(crate) threshold_value: ::std::option::Option<f64>,
 }
 impl ThresholdV2Builder {
-    /// <p>The type of comparison. Only "less than" (LT) comparisons are supported.</p>
+    /// <p>The type of comparison. Only "less than" (LT) and "greater than" (GT) comparisons are supported.</p>
     pub fn comparison(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comparison = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The type of comparison. Only "less than" (LT) comparisons are supported.</p>
+    /// <p>The type of comparison. Only "less than" (LT) and "greater than" (GT) comparisons are supported.</p>
     pub fn set_comparison(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.comparison = input;
         self
     }
-    /// <p>The type of comparison. Only "less than" (LT) comparisons are supported.</p>
+    /// <p>The type of comparison. Only "less than" (LT) and "greater than" (GT) comparisons are supported.</p>
     pub fn get_comparison(&self) -> &::std::option::Option<::std::string::String> {
         &self.comparison
     }

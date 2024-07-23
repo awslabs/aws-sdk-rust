@@ -12,6 +12,8 @@ pub enum RealtimeContactAnalysisSegment {
     Event(crate::types::RealTimeContactAnalysisSegmentEvent),
     /// <p>Segment type containing a list of detected issues.</p>
     Issues(crate::types::RealTimeContactAnalysisSegmentIssues),
+    /// <p>Information about the post-contact summary.</p>
+    PostContactSummary(crate::types::RealTimeContactAnalysisSegmentPostContactSummary),
     /// <p>The analyzed transcript segment.</p>
     Transcript(crate::types::RealTimeContactAnalysisSegmentTranscript),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -76,6 +78,19 @@ impl RealtimeContactAnalysisSegment {
     /// Returns true if this is a [`Issues`](crate::types::RealtimeContactAnalysisSegment::Issues).
     pub fn is_issues(&self) -> bool {
         self.as_issues().is_ok()
+    }
+    /// Tries to convert the enum instance into [`PostContactSummary`](crate::types::RealtimeContactAnalysisSegment::PostContactSummary), extracting the inner [`RealTimeContactAnalysisSegmentPostContactSummary`](crate::types::RealTimeContactAnalysisSegmentPostContactSummary).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_post_contact_summary(&self) -> ::std::result::Result<&crate::types::RealTimeContactAnalysisSegmentPostContactSummary, &Self> {
+        if let RealtimeContactAnalysisSegment::PostContactSummary(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`PostContactSummary`](crate::types::RealtimeContactAnalysisSegment::PostContactSummary).
+    pub fn is_post_contact_summary(&self) -> bool {
+        self.as_post_contact_summary().is_ok()
     }
     /// Tries to convert the enum instance into [`Transcript`](crate::types::RealtimeContactAnalysisSegment::Transcript), extracting the inner [`RealTimeContactAnalysisSegmentTranscript`](crate::types::RealTimeContactAnalysisSegmentTranscript).
     /// Returns `Err(&Self)` if it can't be converted.

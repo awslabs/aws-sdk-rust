@@ -35,6 +35,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "idMappingWorkflowProperties" => {
+                            builder = builder.set_id_mapping_workflow_properties(
+                                    crate::protocol_serde::shape_id_namespace_id_mapping_workflow_metadata_list::de_id_namespace_id_mapping_workflow_metadata_list(tokens)?
+                                );
+                        }
                         "type" => {
                             builder = builder.set_type(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

@@ -16,6 +16,7 @@
 ///     RealTimeContactAnalysisSegmentType::Categories => { /* ... */ },
 ///     RealTimeContactAnalysisSegmentType::Event => { /* ... */ },
 ///     RealTimeContactAnalysisSegmentType::Issues => { /* ... */ },
+///     RealTimeContactAnalysisSegmentType::PostContactSummary => { /* ... */ },
 ///     RealTimeContactAnalysisSegmentType::Transcript => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -53,6 +54,8 @@ pub enum RealTimeContactAnalysisSegmentType {
     #[allow(missing_docs)] // documentation missing in model
     Issues,
     #[allow(missing_docs)] // documentation missing in model
+    PostContactSummary,
+    #[allow(missing_docs)] // documentation missing in model
     Transcript,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -65,6 +68,7 @@ impl ::std::convert::From<&str> for RealTimeContactAnalysisSegmentType {
             "Categories" => RealTimeContactAnalysisSegmentType::Categories,
             "Event" => RealTimeContactAnalysisSegmentType::Event,
             "Issues" => RealTimeContactAnalysisSegmentType::Issues,
+            "PostContactSummary" => RealTimeContactAnalysisSegmentType::PostContactSummary,
             "Transcript" => RealTimeContactAnalysisSegmentType::Transcript,
             other => RealTimeContactAnalysisSegmentType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -85,13 +89,14 @@ impl RealTimeContactAnalysisSegmentType {
             RealTimeContactAnalysisSegmentType::Categories => "Categories",
             RealTimeContactAnalysisSegmentType::Event => "Event",
             RealTimeContactAnalysisSegmentType::Issues => "Issues",
+            RealTimeContactAnalysisSegmentType::PostContactSummary => "PostContactSummary",
             RealTimeContactAnalysisSegmentType::Transcript => "Transcript",
             RealTimeContactAnalysisSegmentType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Attachments", "Categories", "Event", "Issues", "Transcript"]
+        &["Attachments", "Categories", "Event", "Issues", "PostContactSummary", "Transcript"]
     }
 }
 impl ::std::convert::AsRef<str> for RealTimeContactAnalysisSegmentType {
@@ -118,6 +123,7 @@ impl ::std::fmt::Display for RealTimeContactAnalysisSegmentType {
             RealTimeContactAnalysisSegmentType::Categories => write!(f, "Categories"),
             RealTimeContactAnalysisSegmentType::Event => write!(f, "Event"),
             RealTimeContactAnalysisSegmentType::Issues => write!(f, "Issues"),
+            RealTimeContactAnalysisSegmentType::PostContactSummary => write!(f, "PostContactSummary"),
             RealTimeContactAnalysisSegmentType::Transcript => write!(f, "Transcript"),
             RealTimeContactAnalysisSegmentType::Unknown(value) => write!(f, "{}", value),
         }

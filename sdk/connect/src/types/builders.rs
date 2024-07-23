@@ -333,6 +333,8 @@ pub use crate::types::_routing_profile_summary::RoutingProfileSummaryBuilder;
 
 pub use crate::types::_routing_profile_queue_config_summary::RoutingProfileQueueConfigSummaryBuilder;
 
+pub use crate::types::_real_time_contact_analysis_segment_post_contact_summary::RealTimeContactAnalysisSegmentPostContactSummaryBuilder;
+
 pub use crate::types::_real_time_contact_analysis_segment_attachments::RealTimeContactAnalysisSegmentAttachmentsBuilder;
 
 pub use crate::types::_real_time_contact_analysis_attachment::RealTimeContactAnalysisAttachmentBuilder;

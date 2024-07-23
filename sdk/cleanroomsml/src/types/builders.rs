@@ -33,6 +33,8 @@ pub use crate::types::_audience_size::AudienceSizeBuilder;
 
 pub use crate::types::_audience_generation_job_data_source::AudienceGenerationJobDataSourceBuilder;
 
+pub use crate::types::_protected_query_sql_parameters::ProtectedQuerySqlParametersBuilder;
+
 pub use crate::types::_audience_generation_job_summary::AudienceGenerationJobSummaryBuilder;
 
 pub use crate::types::_audience_export_job_summary::AudienceExportJobSummaryBuilder;
