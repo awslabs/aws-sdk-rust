@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateConfiguredTableAssociationOutput {
-    /// <p>The entire configured table association object.</p>
+    /// <p>The configured table association.</p>
     pub configured_table_association: ::std::option::Option<crate::types::ConfiguredTableAssociation>,
     _request_id: Option<String>,
 }
 impl CreateConfiguredTableAssociationOutput {
-    /// <p>The entire configured table association object.</p>
+    /// <p>The configured table association.</p>
     pub fn configured_table_association(&self) -> ::std::option::Option<&crate::types::ConfiguredTableAssociation> {
         self.configured_table_association.as_ref()
     }
@@ -33,18 +33,18 @@ pub struct CreateConfiguredTableAssociationOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateConfiguredTableAssociationOutputBuilder {
-    /// <p>The entire configured table association object.</p>
+    /// <p>The configured table association.</p>
     /// This field is required.
     pub fn configured_table_association(mut self, input: crate::types::ConfiguredTableAssociation) -> Self {
         self.configured_table_association = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The entire configured table association object.</p>
+    /// <p>The configured table association.</p>
     pub fn set_configured_table_association(mut self, input: ::std::option::Option<crate::types::ConfiguredTableAssociation>) -> Self {
         self.configured_table_association = input;
         self
     }
-    /// <p>The entire configured table association object.</p>
+    /// <p>The configured table association.</p>
     pub fn get_configured_table_association(&self) -> &::std::option::Option<crate::types::ConfiguredTableAssociation> {
         &self.configured_table_association
     }

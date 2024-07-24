@@ -19,6 +19,8 @@ pub use crate::types::_dicom_study_date_and_time::DicomStudyDateAndTimeBuilder;
 
 pub use crate::types::_image_set_properties::ImageSetPropertiesBuilder;
 
+pub use crate::types::_overrides::OverridesBuilder;
+
 pub use crate::types::_dicom_import_job_summary::DicomImportJobSummaryBuilder;
 
 pub use crate::types::_image_frame_information::ImageFrameInformationBuilder;
@@ -34,3 +36,5 @@ pub use crate::types::_copy_image_set_information::CopyImageSetInformationBuilde
 pub use crate::types::_copy_destination_image_set::CopyDestinationImageSetBuilder;
 
 pub use crate::types::_copy_source_image_set_information::CopySourceImageSetInformationBuilder;
+
+pub use crate::types::_metadata_copies::MetadataCopiesBuilder;

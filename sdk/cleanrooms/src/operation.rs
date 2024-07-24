@@ -28,6 +28,9 @@ pub mod create_configured_table_analysis_rule;
 /// Types for the `CreateConfiguredTableAssociation` operation.
 pub mod create_configured_table_association;
 
+/// Types for the `CreateConfiguredTableAssociationAnalysisRule` operation.
+pub mod create_configured_table_association_analysis_rule;
+
 /// Types for the `CreateIdMappingTable` operation.
 pub mod create_id_mapping_table;
 
@@ -57,6 +60,9 @@ pub mod delete_configured_table_analysis_rule;
 
 /// Types for the `DeleteConfiguredTableAssociation` operation.
 pub mod delete_configured_table_association;
+
+/// Types for the `DeleteConfiguredTableAssociationAnalysisRule` operation.
+pub mod delete_configured_table_association_analysis_rule;
 
 /// Types for the `DeleteIdMappingTable` operation.
 pub mod delete_id_mapping_table;
@@ -102,6 +108,9 @@ pub mod get_configured_table_analysis_rule;
 
 /// Types for the `GetConfiguredTableAssociation` operation.
 pub mod get_configured_table_association;
+
+/// Types for the `GetConfiguredTableAssociationAnalysisRule` operation.
+pub mod get_configured_table_association_analysis_rule;
 
 /// Types for the `GetIdMappingTable` operation.
 pub mod get_id_mapping_table;
@@ -213,6 +222,9 @@ pub mod update_configured_table_analysis_rule;
 
 /// Types for the `UpdateConfiguredTableAssociation` operation.
 pub mod update_configured_table_association;
+
+/// Types for the `UpdateConfiguredTableAssociationAnalysisRule` operation.
+pub mod update_configured_table_association_analysis_rule;
 
 /// Types for the `UpdateIdMappingTable` operation.
 pub mod update_id_mapping_table;

@@ -17,6 +17,21 @@ pub fn de_delete_gateway_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "ConflictingOperationException" => crate::operation::delete_gateway::DeleteGatewayError::ConflictingOperationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ConflictingOperationExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_conflicting_operation_exception::de_conflicting_operation_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::delete_gateway::DeleteGatewayError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::conflicting_operation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::delete_gateway::DeleteGatewayError::unhandled)?
+            };
+            tmp
+        }),
         "InternalFailureException" => crate::operation::delete_gateway::DeleteGatewayError::InternalFailureException({
             #[allow(unused_mut)]
             let mut tmp = {

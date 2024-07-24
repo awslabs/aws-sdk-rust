@@ -13,6 +13,7 @@
 /// # let capabilitysyncstatus = unimplemented!();
 /// match capabilitysyncstatus {
 ///     CapabilitySyncStatus::InSync => { /* ... */ },
+///     CapabilitySyncStatus::NotApplicable => { /* ... */ },
 ///     CapabilitySyncStatus::OutOfSync => { /* ... */ },
 ///     CapabilitySyncStatus::SyncFailed => { /* ... */ },
 ///     CapabilitySyncStatus::UnknownValue => { /* ... */ },
@@ -46,6 +47,8 @@ pub enum CapabilitySyncStatus {
     #[allow(missing_docs)] // documentation missing in model
     InSync,
     #[allow(missing_docs)] // documentation missing in model
+    NotApplicable,
+    #[allow(missing_docs)] // documentation missing in model
     OutOfSync,
     #[allow(missing_docs)] // documentation missing in model
     SyncFailed,
@@ -59,6 +62,7 @@ impl ::std::convert::From<&str> for CapabilitySyncStatus {
     fn from(s: &str) -> Self {
         match s {
             "IN_SYNC" => CapabilitySyncStatus::InSync,
+            "NOT_APPLICABLE" => CapabilitySyncStatus::NotApplicable,
             "OUT_OF_SYNC" => CapabilitySyncStatus::OutOfSync,
             "SYNC_FAILED" => CapabilitySyncStatus::SyncFailed,
             "UNKNOWN" => CapabilitySyncStatus::UnknownValue,
@@ -78,6 +82,7 @@ impl CapabilitySyncStatus {
     pub fn as_str(&self) -> &str {
         match self {
             CapabilitySyncStatus::InSync => "IN_SYNC",
+            CapabilitySyncStatus::NotApplicable => "NOT_APPLICABLE",
             CapabilitySyncStatus::OutOfSync => "OUT_OF_SYNC",
             CapabilitySyncStatus::SyncFailed => "SYNC_FAILED",
             CapabilitySyncStatus::UnknownValue => "UNKNOWN",
@@ -86,7 +91,7 @@ impl CapabilitySyncStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["IN_SYNC", "OUT_OF_SYNC", "SYNC_FAILED", "UNKNOWN"]
+        &["IN_SYNC", "NOT_APPLICABLE", "OUT_OF_SYNC", "SYNC_FAILED", "UNKNOWN"]
     }
 }
 impl ::std::convert::AsRef<str> for CapabilitySyncStatus {
@@ -110,6 +115,7 @@ impl ::std::fmt::Display for CapabilitySyncStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             CapabilitySyncStatus::InSync => write!(f, "IN_SYNC"),
+            CapabilitySyncStatus::NotApplicable => write!(f, "NOT_APPLICABLE"),
             CapabilitySyncStatus::OutOfSync => write!(f, "OUT_OF_SYNC"),
             CapabilitySyncStatus::SyncFailed => write!(f, "SYNC_FAILED"),
             CapabilitySyncStatus::UnknownValue => write!(f, "UNKNOWN"),

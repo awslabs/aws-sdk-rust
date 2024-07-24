@@ -22,6 +22,8 @@ pub struct ConfiguredTableAssociation {
     pub name: ::std::string::String,
     /// <p>A description of the configured table association.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>The analysis rule types for the configured table association.</p>
+    pub analysis_rule_types: ::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTableAssociationAnalysisRuleType>>,
     /// <p>The time the configured table association was created.</p>
     pub create_time: ::aws_smithy_types::DateTime,
     /// <p>The time the configured table association was last updated.</p>
@@ -72,6 +74,12 @@ impl ConfiguredTableAssociation {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
+    /// <p>The analysis rule types for the configured table association.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.analysis_rule_types.is_none()`.
+    pub fn analysis_rule_types(&self) -> &[crate::types::ConfiguredTableAssociationAnalysisRuleType] {
+        self.analysis_rule_types.as_deref().unwrap_or_default()
+    }
     /// <p>The time the configured table association was created.</p>
     pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
         &self.create_time
@@ -101,6 +109,7 @@ pub struct ConfiguredTableAssociationBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) analysis_rule_types: ::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTableAssociationAnalysisRuleType>>,
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -239,6 +248,29 @@ impl ConfiguredTableAssociationBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
+    /// Appends an item to `analysis_rule_types`.
+    ///
+    /// To override the contents of this collection use [`set_analysis_rule_types`](Self::set_analysis_rule_types).
+    ///
+    /// <p>The analysis rule types for the configured table association.</p>
+    pub fn analysis_rule_types(mut self, input: crate::types::ConfiguredTableAssociationAnalysisRuleType) -> Self {
+        let mut v = self.analysis_rule_types.unwrap_or_default();
+        v.push(input);
+        self.analysis_rule_types = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The analysis rule types for the configured table association.</p>
+    pub fn set_analysis_rule_types(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTableAssociationAnalysisRuleType>>,
+    ) -> Self {
+        self.analysis_rule_types = input;
+        self
+    }
+    /// <p>The analysis rule types for the configured table association.</p>
+    pub fn get_analysis_rule_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTableAssociationAnalysisRuleType>> {
+        &self.analysis_rule_types
+    }
     /// <p>The time the configured table association was created.</p>
     /// This field is required.
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -332,6 +364,7 @@ impl ConfiguredTableAssociationBuilder {
                 )
             })?,
             description: self.description,
+            analysis_rule_types: self.analysis_rule_types,
             create_time: self.create_time.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "create_time",

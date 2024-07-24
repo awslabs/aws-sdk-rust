@@ -25,11 +25,11 @@ pub struct CreatePoolOutput {
     pub two_way_channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>An optional IAM Role Arn for a service to assume, to be able to post inbound SMS messages.</p>
     pub two_way_channel_role: ::std::option::Option<::std::string::String>,
-    /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
+    /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, AWS End User Messaging SMS and Voice automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
     pub self_managed_opt_outs_enabled: bool,
     /// <p>The name of the OptOutList associated with the pool.</p>
     pub opt_out_list_name: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates whether shared routes are enabled for the pool.</p>
+    /// <p>Indicates whether shared routes are enabled for the pool. Set to false and only origination identities in this pool are used to send messages.</p>
     pub shared_routes_enabled: bool,
     /// <p>When set to true deletion protection is enabled. By default this is set to false.</p>
     pub deletion_protection_enabled: bool,
@@ -76,7 +76,7 @@ impl CreatePoolOutput {
     pub fn two_way_channel_role(&self) -> ::std::option::Option<&str> {
         self.two_way_channel_role.as_deref()
     }
-    /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
+    /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, AWS End User Messaging SMS and Voice automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
     pub fn self_managed_opt_outs_enabled(&self) -> bool {
         self.self_managed_opt_outs_enabled
     }
@@ -84,7 +84,7 @@ impl CreatePoolOutput {
     pub fn opt_out_list_name(&self) -> ::std::option::Option<&str> {
         self.opt_out_list_name.as_deref()
     }
-    /// <p>Indicates whether shared routes are enabled for the pool.</p>
+    /// <p>Indicates whether shared routes are enabled for the pool. Set to false and only origination identities in this pool are used to send messages.</p>
     pub fn shared_routes_enabled(&self) -> bool {
         self.shared_routes_enabled
     }
@@ -257,17 +257,17 @@ impl CreatePoolOutputBuilder {
     pub fn get_two_way_channel_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.two_way_channel_role
     }
-    /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
+    /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, AWS End User Messaging SMS and Voice automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
     pub fn self_managed_opt_outs_enabled(mut self, input: bool) -> Self {
         self.self_managed_opt_outs_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
+    /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, AWS End User Messaging SMS and Voice automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
     pub fn set_self_managed_opt_outs_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.self_managed_opt_outs_enabled = input;
         self
     }
-    /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
+    /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, AWS End User Messaging SMS and Voice automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
     pub fn get_self_managed_opt_outs_enabled(&self) -> &::std::option::Option<bool> {
         &self.self_managed_opt_outs_enabled
     }
@@ -285,17 +285,17 @@ impl CreatePoolOutputBuilder {
     pub fn get_opt_out_list_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.opt_out_list_name
     }
-    /// <p>Indicates whether shared routes are enabled for the pool.</p>
+    /// <p>Indicates whether shared routes are enabled for the pool. Set to false and only origination identities in this pool are used to send messages.</p>
     pub fn shared_routes_enabled(mut self, input: bool) -> Self {
         self.shared_routes_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether shared routes are enabled for the pool.</p>
+    /// <p>Indicates whether shared routes are enabled for the pool. Set to false and only origination identities in this pool are used to send messages.</p>
     pub fn set_shared_routes_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.shared_routes_enabled = input;
         self
     }
-    /// <p>Indicates whether shared routes are enabled for the pool.</p>
+    /// <p>Indicates whether shared routes are enabled for the pool. Set to false and only origination identities in this pool are used to send messages.</p>
     pub fn get_shared_routes_enabled(&self) -> &::std::option::Option<bool> {
         &self.shared_routes_enabled
     }

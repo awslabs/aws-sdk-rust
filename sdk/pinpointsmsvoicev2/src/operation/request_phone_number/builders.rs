@@ -22,7 +22,7 @@ impl crate::operation::request_phone_number::builders::RequestPhoneNumberInputBu
 }
 /// Fluent builder constructing a request to `RequestPhoneNumber`.
 ///
-/// <p>Request an origination phone number for use in your account. For more information on phone number request see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/settings-sms-request-number.html"> Requesting a number </a> in the <i>Amazon Pinpoint User Guide</i>.</p>
+/// <p>Request an origination phone number for use in your account. For more information on phone number request see <a href="https://docs.aws.amazon.com/sms-voice/latest/userguide/phone-numbers-request.html">Request a phone number</a> in the <i>AWS End User Messaging SMS User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RequestPhoneNumberFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

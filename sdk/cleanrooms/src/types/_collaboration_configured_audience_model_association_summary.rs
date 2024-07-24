@@ -18,7 +18,7 @@ pub struct CollaborationConfiguredAudienceModelAssociationSummary {
     pub collaboration_arn: ::std::string::String,
     /// <p>A unique identifier for the collaboration that the configured audience model associations belong to. Accepts collaboration ID.</p>
     pub collaboration_id: ::std::string::String,
-    /// <p>The identifier used to reference members of the collaboration. Only supports Amazon Web Services account ID.</p>
+    /// <p>The identifier used to reference members of the collaboration. Only supports AWS account ID.</p>
     pub creator_account_id: ::std::string::String,
     /// <p>The description of the configured audience model association.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -57,7 +57,7 @@ impl CollaborationConfiguredAudienceModelAssociationSummary {
         use std::ops::Deref;
         self.collaboration_id.deref()
     }
-    /// <p>The identifier used to reference members of the collaboration. Only supports Amazon Web Services account ID.</p>
+    /// <p>The identifier used to reference members of the collaboration. Only supports AWS account ID.</p>
     pub fn creator_account_id(&self) -> &str {
         use std::ops::Deref;
         self.creator_account_id.deref()
@@ -194,18 +194,18 @@ impl CollaborationConfiguredAudienceModelAssociationSummaryBuilder {
     pub fn get_collaboration_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.collaboration_id
     }
-    /// <p>The identifier used to reference members of the collaboration. Only supports Amazon Web Services account ID.</p>
+    /// <p>The identifier used to reference members of the collaboration. Only supports AWS account ID.</p>
     /// This field is required.
     pub fn creator_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creator_account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier used to reference members of the collaboration. Only supports Amazon Web Services account ID.</p>
+    /// <p>The identifier used to reference members of the collaboration. Only supports AWS account ID.</p>
     pub fn set_creator_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creator_account_id = input;
         self
     }
-    /// <p>The identifier used to reference members of the collaboration. Only supports Amazon Web Services account ID.</p>
+    /// <p>The identifier used to reference members of the collaboration. Only supports AWS account ID.</p>
     pub fn get_creator_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.creator_account_id
     }

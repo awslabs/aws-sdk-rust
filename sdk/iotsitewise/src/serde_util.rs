@@ -1899,6 +1899,13 @@ pub(crate) fn row_correct_errors(mut builder: crate::types::builders::RowBuilder
     builder
 }
 
+pub(crate) fn siemens_ie_correct_errors(mut builder: crate::types::builders::SiemensIeBuilder) -> crate::types::builders::SiemensIeBuilder {
+    if builder.iot_core_thing_name.is_none() {
+        builder.iot_core_thing_name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn time_in_nanos_correct_errors(mut builder: crate::types::builders::TimeInNanosBuilder) -> crate::types::builders::TimeInNanosBuilder {
     if builder.time_in_seconds.is_none() {
         builder.time_in_seconds = Some(Default::default())

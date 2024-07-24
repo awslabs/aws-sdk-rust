@@ -48,6 +48,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "receiverConfigurations" => {
+                            builder = builder.set_receiver_configurations(
+                                crate::protocol_serde::shape_receiver_configurations_list::de_receiver_configurations_list(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

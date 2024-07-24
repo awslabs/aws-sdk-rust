@@ -67,6 +67,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "overrides" => {
+                            builder = builder.set_overrides(crate::protocol_serde::shape_overrides::de_overrides(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

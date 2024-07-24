@@ -5,7 +5,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SchemaStatusDetail {
-    /// <p>The status of the schema.</p>
+    /// <p>The status of the schema, indicating if it is ready to query.</p>
     pub status: crate::types::SchemaStatus,
     /// <p>The reasons why the schema status is set to its current state.</p>
     pub reasons: ::std::option::Option<::std::vec::Vec<crate::types::SchemaStatusReason>>,
@@ -13,9 +13,12 @@ pub struct SchemaStatusDetail {
     pub analysis_rule_type: ::std::option::Option<crate::types::AnalysisRuleType>,
     /// <p>The configuration details of the schema analysis rule for the given type.</p>
     pub configurations: ::std::option::Option<::std::vec::Vec<crate::types::SchemaConfiguration>>,
+    /// <p>The type of analysis that can be performed on the schema.</p>
+    /// <p>A schema can have an <code>analysisType</code> of <code>DIRECT_ANALYSIS</code>, <code>ADDITIONAL_ANALYSIS_FOR_AUDIENCE_GENERATION</code>, or both.</p>
+    pub analysis_type: crate::types::AnalysisType,
 }
 impl SchemaStatusDetail {
-    /// <p>The status of the schema.</p>
+    /// <p>The status of the schema, indicating if it is ready to query.</p>
     pub fn status(&self) -> &crate::types::SchemaStatus {
         &self.status
     }
@@ -35,6 +38,11 @@ impl SchemaStatusDetail {
     pub fn configurations(&self) -> &[crate::types::SchemaConfiguration] {
         self.configurations.as_deref().unwrap_or_default()
     }
+    /// <p>The type of analysis that can be performed on the schema.</p>
+    /// <p>A schema can have an <code>analysisType</code> of <code>DIRECT_ANALYSIS</code>, <code>ADDITIONAL_ANALYSIS_FOR_AUDIENCE_GENERATION</code>, or both.</p>
+    pub fn analysis_type(&self) -> &crate::types::AnalysisType {
+        &self.analysis_type
+    }
 }
 impl SchemaStatusDetail {
     /// Creates a new builder-style object to manufacture [`SchemaStatusDetail`](crate::types::SchemaStatusDetail).
@@ -51,20 +59,21 @@ pub struct SchemaStatusDetailBuilder {
     pub(crate) reasons: ::std::option::Option<::std::vec::Vec<crate::types::SchemaStatusReason>>,
     pub(crate) analysis_rule_type: ::std::option::Option<crate::types::AnalysisRuleType>,
     pub(crate) configurations: ::std::option::Option<::std::vec::Vec<crate::types::SchemaConfiguration>>,
+    pub(crate) analysis_type: ::std::option::Option<crate::types::AnalysisType>,
 }
 impl SchemaStatusDetailBuilder {
-    /// <p>The status of the schema.</p>
+    /// <p>The status of the schema, indicating if it is ready to query.</p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::SchemaStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the schema.</p>
+    /// <p>The status of the schema, indicating if it is ready to query.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::SchemaStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the schema.</p>
+    /// <p>The status of the schema, indicating if it is ready to query.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::SchemaStatus> {
         &self.status
     }
@@ -122,9 +131,28 @@ impl SchemaStatusDetailBuilder {
     pub fn get_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaConfiguration>> {
         &self.configurations
     }
+    /// <p>The type of analysis that can be performed on the schema.</p>
+    /// <p>A schema can have an <code>analysisType</code> of <code>DIRECT_ANALYSIS</code>, <code>ADDITIONAL_ANALYSIS_FOR_AUDIENCE_GENERATION</code>, or both.</p>
+    /// This field is required.
+    pub fn analysis_type(mut self, input: crate::types::AnalysisType) -> Self {
+        self.analysis_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of analysis that can be performed on the schema.</p>
+    /// <p>A schema can have an <code>analysisType</code> of <code>DIRECT_ANALYSIS</code>, <code>ADDITIONAL_ANALYSIS_FOR_AUDIENCE_GENERATION</code>, or both.</p>
+    pub fn set_analysis_type(mut self, input: ::std::option::Option<crate::types::AnalysisType>) -> Self {
+        self.analysis_type = input;
+        self
+    }
+    /// <p>The type of analysis that can be performed on the schema.</p>
+    /// <p>A schema can have an <code>analysisType</code> of <code>DIRECT_ANALYSIS</code>, <code>ADDITIONAL_ANALYSIS_FOR_AUDIENCE_GENERATION</code>, or both.</p>
+    pub fn get_analysis_type(&self) -> &::std::option::Option<crate::types::AnalysisType> {
+        &self.analysis_type
+    }
     /// Consumes the builder and constructs a [`SchemaStatusDetail`](crate::types::SchemaStatusDetail).
     /// This method will fail if any of the following fields are not set:
     /// - [`status`](crate::types::builders::SchemaStatusDetailBuilder::status)
+    /// - [`analysis_type`](crate::types::builders::SchemaStatusDetailBuilder::analysis_type)
     pub fn build(self) -> ::std::result::Result<crate::types::SchemaStatusDetail, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SchemaStatusDetail {
             status: self.status.ok_or_else(|| {
@@ -136,6 +164,12 @@ impl SchemaStatusDetailBuilder {
             reasons: self.reasons,
             analysis_rule_type: self.analysis_rule_type,
             configurations: self.configurations,
+            analysis_type: self.analysis_type.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "analysis_type",
+                    "analysis_type was not specified but it is required when building SchemaStatusDetail",
+                )
+            })?,
         })
     }
 }

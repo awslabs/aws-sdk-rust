@@ -6,6 +6,10 @@
 pub enum MetadataUpdates {
     /// <p>The object containing <code>removableAttributes</code> and <code>updatableAttributes</code>.</p>
     DicomUpdates(crate::types::DicomUpdates),
+    /// <p>Specifies the previous image set version ID to revert the current image set back to.</p><note>
+    /// <p>You must provide either <code>revertToVersionId</code> or <code>DICOMUpdates</code> in your request. A <code>ValidationException</code> error is thrown if both parameters are provided at the same time.</p>
+    /// </note>
+    RevertToVersionId(::std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -17,7 +21,6 @@ pub enum MetadataUpdates {
     Unknown,
 }
 impl MetadataUpdates {
-    #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`DicomUpdates`](crate::types::MetadataUpdates::DicomUpdates), extracting the inner [`DicomUpdates`](crate::types::DicomUpdates).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_dicom_updates(&self) -> ::std::result::Result<&crate::types::DicomUpdates, &Self> {
@@ -30,6 +33,19 @@ impl MetadataUpdates {
     /// Returns true if this is a [`DicomUpdates`](crate::types::MetadataUpdates::DicomUpdates).
     pub fn is_dicom_updates(&self) -> bool {
         self.as_dicom_updates().is_ok()
+    }
+    /// Tries to convert the enum instance into [`RevertToVersionId`](crate::types::MetadataUpdates::RevertToVersionId), extracting the inner [`String`](::std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_revert_to_version_id(&self) -> ::std::result::Result<&::std::string::String, &Self> {
+        if let MetadataUpdates::RevertToVersionId(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`RevertToVersionId`](crate::types::MetadataUpdates::RevertToVersionId).
+    pub fn is_revert_to_version_id(&self) -> bool {
+        self.as_revert_to_version_id().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

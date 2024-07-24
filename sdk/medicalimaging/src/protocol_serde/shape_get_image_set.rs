@@ -188,6 +188,9 @@ pub(crate) fn de_get_image_set(
                             .transpose()?,
                     );
                 }
+                "overrides" => {
+                    builder = builder.set_overrides(crate::protocol_serde::shape_overrides::de_overrides(tokens)?);
+                }
                 "updatedAt" => {
                     builder = builder.set_updated_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),

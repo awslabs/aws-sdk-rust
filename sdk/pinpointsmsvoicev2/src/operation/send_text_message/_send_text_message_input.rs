@@ -15,16 +15,25 @@ pub struct SendTextMessageInput {
     pub keyword: ::std::option::Option<::std::string::String>,
     /// <p>The name of the configuration set to use. This can be either the ConfigurationSetName or ConfigurationSetArn.</p>
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum amount that you want to spend, in US dollars, per each text message part. A text message can contain multiple parts.</p>
+    /// <p>The maximum amount that you want to spend, in US dollars, per each text message. If the calculated amount to send the text message is greater than <code>MaxPrice</code>, the message is not sent and an error is returned.</p>
     pub max_price: ::std::option::Option<::std::string::String>,
-    /// <p>How long the text message is valid for. By default this is 72 hours.</p>
+    /// <p>How long the text message is valid for, in seconds. By default this is 72 hours. If the messages isn't handed off before the TTL expires we stop attempting to hand off the message and return <code>TTL_EXPIRED</code> event.</p>
     pub time_to_live: ::std::option::Option<i32>,
     /// <p>You can specify custom data in this field. If you do, that data is logged to the event destination.</p>
     pub context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>This field is used for any country-specific registration requirements. Currently, this setting is only used when you send messages to recipients in India using a sender ID. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-senderid-india.html">Special requirements for sending SMS messages to recipients in India</a>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IN_ENTITY_ID</code> The entity ID or Principal Entity (PE) ID that you received after completing the sender ID registration process.</p></li>
+    /// <li>
+    /// <p><code>IN_TEMPLATE_ID</code> The template ID that you received after completing the sender ID registration process.</p><important>
+    /// <p>Make sure that the Template ID that you specify matches your message template exactly. If your message doesn't match the template that you provided during the registration process, the mobile carriers might reject your message.</p>
+    /// </important></li>
+    /// </ul>
     pub destination_country_parameters:
         ::std::option::Option<::std::collections::HashMap<crate::types::DestinationCountryParameterKey, ::std::string::String>>,
-    /// <p>When set to true, the message is checked and validated, but isn't sent to the end recipient.</p>
+    /// <p>When set to true, the message is checked and validated, but isn't sent to the end recipient. You are not charged for using <code>DryRun</code>.</p>
+    /// <p>The Message Parts per Second (MPS) limit when using <code>DryRun</code> is five. If your origination identity has a lower MPS limit then the lower MPS limit is used. For more information about MPS limits, see <a href="https://docs.aws.amazon.com/sms-voice/latest/userguide/sms-limitations-mps.html">Message Parts per Second (MPS) limits</a> in the <i>AWS End User Messaging SMS User Guide</i>..</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The unique identifier for the protect configuration.</p>
     pub protect_configuration_id: ::std::option::Option<::std::string::String>,
@@ -54,11 +63,11 @@ impl SendTextMessageInput {
     pub fn configuration_set_name(&self) -> ::std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
-    /// <p>The maximum amount that you want to spend, in US dollars, per each text message part. A text message can contain multiple parts.</p>
+    /// <p>The maximum amount that you want to spend, in US dollars, per each text message. If the calculated amount to send the text message is greater than <code>MaxPrice</code>, the message is not sent and an error is returned.</p>
     pub fn max_price(&self) -> ::std::option::Option<&str> {
         self.max_price.as_deref()
     }
-    /// <p>How long the text message is valid for. By default this is 72 hours.</p>
+    /// <p>How long the text message is valid for, in seconds. By default this is 72 hours. If the messages isn't handed off before the TTL expires we stop attempting to hand off the message and return <code>TTL_EXPIRED</code> event.</p>
     pub fn time_to_live(&self) -> ::std::option::Option<i32> {
         self.time_to_live
     }
@@ -67,12 +76,21 @@ impl SendTextMessageInput {
         self.context.as_ref()
     }
     /// <p>This field is used for any country-specific registration requirements. Currently, this setting is only used when you send messages to recipients in India using a sender ID. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-senderid-india.html">Special requirements for sending SMS messages to recipients in India</a>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IN_ENTITY_ID</code> The entity ID or Principal Entity (PE) ID that you received after completing the sender ID registration process.</p></li>
+    /// <li>
+    /// <p><code>IN_TEMPLATE_ID</code> The template ID that you received after completing the sender ID registration process.</p><important>
+    /// <p>Make sure that the Template ID that you specify matches your message template exactly. If your message doesn't match the template that you provided during the registration process, the mobile carriers might reject your message.</p>
+    /// </important></li>
+    /// </ul>
     pub fn destination_country_parameters(
         &self,
     ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::DestinationCountryParameterKey, ::std::string::String>> {
         self.destination_country_parameters.as_ref()
     }
-    /// <p>When set to true, the message is checked and validated, but isn't sent to the end recipient.</p>
+    /// <p>When set to true, the message is checked and validated, but isn't sent to the end recipient. You are not charged for using <code>DryRun</code>.</p>
+    /// <p>The Message Parts per Second (MPS) limit when using <code>DryRun</code> is five. If your origination identity has a lower MPS limit then the lower MPS limit is used. For more information about MPS limits, see <a href="https://docs.aws.amazon.com/sms-voice/latest/userguide/sms-limitations-mps.html">Message Parts per Second (MPS) limits</a> in the <i>AWS End User Messaging SMS User Guide</i>..</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
@@ -192,31 +210,31 @@ impl SendTextMessageInputBuilder {
     pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.configuration_set_name
     }
-    /// <p>The maximum amount that you want to spend, in US dollars, per each text message part. A text message can contain multiple parts.</p>
+    /// <p>The maximum amount that you want to spend, in US dollars, per each text message. If the calculated amount to send the text message is greater than <code>MaxPrice</code>, the message is not sent and an error is returned.</p>
     pub fn max_price(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.max_price = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The maximum amount that you want to spend, in US dollars, per each text message part. A text message can contain multiple parts.</p>
+    /// <p>The maximum amount that you want to spend, in US dollars, per each text message. If the calculated amount to send the text message is greater than <code>MaxPrice</code>, the message is not sent and an error is returned.</p>
     pub fn set_max_price(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.max_price = input;
         self
     }
-    /// <p>The maximum amount that you want to spend, in US dollars, per each text message part. A text message can contain multiple parts.</p>
+    /// <p>The maximum amount that you want to spend, in US dollars, per each text message. If the calculated amount to send the text message is greater than <code>MaxPrice</code>, the message is not sent and an error is returned.</p>
     pub fn get_max_price(&self) -> &::std::option::Option<::std::string::String> {
         &self.max_price
     }
-    /// <p>How long the text message is valid for. By default this is 72 hours.</p>
+    /// <p>How long the text message is valid for, in seconds. By default this is 72 hours. If the messages isn't handed off before the TTL expires we stop attempting to hand off the message and return <code>TTL_EXPIRED</code> event.</p>
     pub fn time_to_live(mut self, input: i32) -> Self {
         self.time_to_live = ::std::option::Option::Some(input);
         self
     }
-    /// <p>How long the text message is valid for. By default this is 72 hours.</p>
+    /// <p>How long the text message is valid for, in seconds. By default this is 72 hours. If the messages isn't handed off before the TTL expires we stop attempting to hand off the message and return <code>TTL_EXPIRED</code> event.</p>
     pub fn set_time_to_live(mut self, input: ::std::option::Option<i32>) -> Self {
         self.time_to_live = input;
         self
     }
-    /// <p>How long the text message is valid for. By default this is 72 hours.</p>
+    /// <p>How long the text message is valid for, in seconds. By default this is 72 hours. If the messages isn't handed off before the TTL expires we stop attempting to hand off the message and return <code>TTL_EXPIRED</code> event.</p>
     pub fn get_time_to_live(&self) -> &::std::option::Option<i32> {
         &self.time_to_live
     }
@@ -245,6 +263,14 @@ impl SendTextMessageInputBuilder {
     /// To override the contents of this collection use [`set_destination_country_parameters`](Self::set_destination_country_parameters).
     ///
     /// <p>This field is used for any country-specific registration requirements. Currently, this setting is only used when you send messages to recipients in India using a sender ID. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-senderid-india.html">Special requirements for sending SMS messages to recipients in India</a>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IN_ENTITY_ID</code> The entity ID or Principal Entity (PE) ID that you received after completing the sender ID registration process.</p></li>
+    /// <li>
+    /// <p><code>IN_TEMPLATE_ID</code> The template ID that you received after completing the sender ID registration process.</p><important>
+    /// <p>Make sure that the Template ID that you specify matches your message template exactly. If your message doesn't match the template that you provided during the registration process, the mobile carriers might reject your message.</p>
+    /// </important></li>
+    /// </ul>
     pub fn destination_country_parameters(
         mut self,
         k: crate::types::DestinationCountryParameterKey,
@@ -256,6 +282,14 @@ impl SendTextMessageInputBuilder {
         self
     }
     /// <p>This field is used for any country-specific registration requirements. Currently, this setting is only used when you send messages to recipients in India using a sender ID. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-senderid-india.html">Special requirements for sending SMS messages to recipients in India</a>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IN_ENTITY_ID</code> The entity ID or Principal Entity (PE) ID that you received after completing the sender ID registration process.</p></li>
+    /// <li>
+    /// <p><code>IN_TEMPLATE_ID</code> The template ID that you received after completing the sender ID registration process.</p><important>
+    /// <p>Make sure that the Template ID that you specify matches your message template exactly. If your message doesn't match the template that you provided during the registration process, the mobile carriers might reject your message.</p>
+    /// </important></li>
+    /// </ul>
     pub fn set_destination_country_parameters(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<crate::types::DestinationCountryParameterKey, ::std::string::String>>,
@@ -264,22 +298,33 @@ impl SendTextMessageInputBuilder {
         self
     }
     /// <p>This field is used for any country-specific registration requirements. Currently, this setting is only used when you send messages to recipients in India using a sender ID. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-senderid-india.html">Special requirements for sending SMS messages to recipients in India</a>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IN_ENTITY_ID</code> The entity ID or Principal Entity (PE) ID that you received after completing the sender ID registration process.</p></li>
+    /// <li>
+    /// <p><code>IN_TEMPLATE_ID</code> The template ID that you received after completing the sender ID registration process.</p><important>
+    /// <p>Make sure that the Template ID that you specify matches your message template exactly. If your message doesn't match the template that you provided during the registration process, the mobile carriers might reject your message.</p>
+    /// </important></li>
+    /// </ul>
     pub fn get_destination_country_parameters(
         &self,
     ) -> &::std::option::Option<::std::collections::HashMap<crate::types::DestinationCountryParameterKey, ::std::string::String>> {
         &self.destination_country_parameters
     }
-    /// <p>When set to true, the message is checked and validated, but isn't sent to the end recipient.</p>
+    /// <p>When set to true, the message is checked and validated, but isn't sent to the end recipient. You are not charged for using <code>DryRun</code>.</p>
+    /// <p>The Message Parts per Second (MPS) limit when using <code>DryRun</code> is five. If your origination identity has a lower MPS limit then the lower MPS limit is used. For more information about MPS limits, see <a href="https://docs.aws.amazon.com/sms-voice/latest/userguide/sms-limitations-mps.html">Message Parts per Second (MPS) limits</a> in the <i>AWS End User Messaging SMS User Guide</i>..</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
         self
     }
-    /// <p>When set to true, the message is checked and validated, but isn't sent to the end recipient.</p>
+    /// <p>When set to true, the message is checked and validated, but isn't sent to the end recipient. You are not charged for using <code>DryRun</code>.</p>
+    /// <p>The Message Parts per Second (MPS) limit when using <code>DryRun</code> is five. If your origination identity has a lower MPS limit then the lower MPS limit is used. For more information about MPS limits, see <a href="https://docs.aws.amazon.com/sms-voice/latest/userguide/sms-limitations-mps.html">Message Parts per Second (MPS) limits</a> in the <i>AWS End User Messaging SMS User Guide</i>..</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
     }
-    /// <p>When set to true, the message is checked and validated, but isn't sent to the end recipient.</p>
+    /// <p>When set to true, the message is checked and validated, but isn't sent to the end recipient. You are not charged for using <code>DryRun</code>.</p>
+    /// <p>The Message Parts per Second (MPS) limit when using <code>DryRun</code> is five. If your origination identity has a lower MPS limit then the lower MPS limit is used. For more information about MPS limits, see <a href="https://docs.aws.amazon.com/sms-voice/latest/userguide/sms-limitations-mps.html">Message Parts per Second (MPS) limits</a> in the <i>AWS End User Messaging SMS User Guide</i>..</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }

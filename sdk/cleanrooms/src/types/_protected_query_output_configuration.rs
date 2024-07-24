@@ -4,7 +4,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum ProtectedQueryOutputConfiguration {
-    /// <p>Required configuration for a protected query with an `S3` output type.</p>
+    /// <p>Required configuration for a protected query with a <code>member</code> output type.</p>
+    Member(crate::types::ProtectedQueryMemberOutputConfiguration),
+    /// <p>Required configuration for a protected query with an <code>s3</code> output type.</p>
     S3(crate::types::ProtectedQueryS3OutputConfiguration),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
@@ -17,7 +19,19 @@ pub enum ProtectedQueryOutputConfiguration {
     Unknown,
 }
 impl ProtectedQueryOutputConfiguration {
-    #[allow(irrefutable_let_patterns)]
+    /// Tries to convert the enum instance into [`Member`](crate::types::ProtectedQueryOutputConfiguration::Member), extracting the inner [`ProtectedQueryMemberOutputConfiguration`](crate::types::ProtectedQueryMemberOutputConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_member(&self) -> ::std::result::Result<&crate::types::ProtectedQueryMemberOutputConfiguration, &Self> {
+        if let ProtectedQueryOutputConfiguration::Member(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Member`](crate::types::ProtectedQueryOutputConfiguration::Member).
+    pub fn is_member(&self) -> bool {
+        self.as_member().is_ok()
+    }
     /// Tries to convert the enum instance into [`S3`](crate::types::ProtectedQueryOutputConfiguration::S3), extracting the inner [`ProtectedQueryS3OutputConfiguration`](crate::types::ProtectedQueryS3OutputConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_s3(&self) -> ::std::result::Result<&crate::types::ProtectedQueryS3OutputConfiguration, &Self> {

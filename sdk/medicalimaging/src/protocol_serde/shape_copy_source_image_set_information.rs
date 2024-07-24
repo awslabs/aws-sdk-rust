@@ -6,5 +6,11 @@ pub fn ser_copy_source_image_set_information(
     {
         object.key("latestVersionId").string(input.latest_version_id.as_str());
     }
+    if let Some(var_1) = &input.dicom_copies {
+        #[allow(unused_mut)]
+        let mut object_2 = object.key("DICOMCopies").start_object();
+        crate::protocol_serde::shape_metadata_copies::ser_metadata_copies(&mut object_2, var_1)?;
+        object_2.finish();
+    }
     Ok(())
 }

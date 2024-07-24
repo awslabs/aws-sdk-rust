@@ -5,11 +5,11 @@
 pub struct ListSchemasInput {
     /// <p>A unique identifier for the collaboration that the schema belongs to. Currently accepts a collaboration ID.</p>
     pub collaboration_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>If present, filter schemas by schema type.</p>
+    /// <p>If present, filter schemas by schema type. The only valid schema type is currently `TABLE`.</p>
     pub schema_type: ::std::option::Option<crate::types::SchemaType>,
-    /// <p>The pagination token that's used to fetch the next set of results.</p>
+    /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum number of results that are returned for an API request call. The service chooses a default number if you don't set one. The service might return a `nextToken` even if the `maxResults` value has not been met.</p>
+    /// <p>The maximum size of the results that is returned per call.</p>
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListSchemasInput {
@@ -17,15 +17,15 @@ impl ListSchemasInput {
     pub fn collaboration_identifier(&self) -> ::std::option::Option<&str> {
         self.collaboration_identifier.as_deref()
     }
-    /// <p>If present, filter schemas by schema type.</p>
+    /// <p>If present, filter schemas by schema type. The only valid schema type is currently `TABLE`.</p>
     pub fn schema_type(&self) -> ::std::option::Option<&crate::types::SchemaType> {
         self.schema_type.as_ref()
     }
-    /// <p>The pagination token that's used to fetch the next set of results.</p>
+    /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results that are returned for an API request call. The service chooses a default number if you don't set one. The service might return a `nextToken` even if the `maxResults` value has not been met.</p>
+    /// <p>The maximum size of the results that is returned per call.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -62,45 +62,45 @@ impl ListSchemasInputBuilder {
     pub fn get_collaboration_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.collaboration_identifier
     }
-    /// <p>If present, filter schemas by schema type.</p>
+    /// <p>If present, filter schemas by schema type. The only valid schema type is currently `TABLE`.</p>
     pub fn schema_type(mut self, input: crate::types::SchemaType) -> Self {
         self.schema_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If present, filter schemas by schema type.</p>
+    /// <p>If present, filter schemas by schema type. The only valid schema type is currently `TABLE`.</p>
     pub fn set_schema_type(mut self, input: ::std::option::Option<crate::types::SchemaType>) -> Self {
         self.schema_type = input;
         self
     }
-    /// <p>If present, filter schemas by schema type.</p>
+    /// <p>If present, filter schemas by schema type. The only valid schema type is currently `TABLE`.</p>
     pub fn get_schema_type(&self) -> &::std::option::Option<crate::types::SchemaType> {
         &self.schema_type
     }
-    /// <p>The pagination token that's used to fetch the next set of results.</p>
+    /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The pagination token that's used to fetch the next set of results.</p>
+    /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The pagination token that's used to fetch the next set of results.</p>
+    /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>The maximum number of results that are returned for an API request call. The service chooses a default number if you don't set one. The service might return a `nextToken` even if the `maxResults` value has not been met.</p>
+    /// <p>The maximum size of the results that is returned per call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of results that are returned for an API request call. The service chooses a default number if you don't set one. The service might return a `nextToken` even if the `maxResults` value has not been met.</p>
+    /// <p>The maximum size of the results that is returned per call.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of results that are returned for an API request call. The service chooses a default number if you don't set one. The service might return a `nextToken` even if the `maxResults` value has not been met.</p>
+    /// <p>The maximum size of the results that is returned per call.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

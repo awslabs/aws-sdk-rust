@@ -430,6 +430,44 @@ impl From<crate::operation::create_configured_table_association::CreateConfigure
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_configured_table_association_analysis_rule::CreateConfiguredTableAssociationAnalysisRuleError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_configured_table_association_analysis_rule::CreateConfiguredTableAssociationAnalysisRuleError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_configured_table_association_analysis_rule::CreateConfiguredTableAssociationAnalysisRuleError> for Error {
+    fn from(err: crate::operation::create_configured_table_association_analysis_rule::CreateConfiguredTableAssociationAnalysisRuleError) -> Self {
+        match err {
+            crate::operation::create_configured_table_association_analysis_rule::CreateConfiguredTableAssociationAnalysisRuleError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_configured_table_association_analysis_rule::CreateConfiguredTableAssociationAnalysisRuleError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_configured_table_association_analysis_rule::CreateConfiguredTableAssociationAnalysisRuleError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_configured_table_association_analysis_rule::CreateConfiguredTableAssociationAnalysisRuleError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_configured_table_association_analysis_rule::CreateConfiguredTableAssociationAnalysisRuleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_configured_table_association_analysis_rule::CreateConfiguredTableAssociationAnalysisRuleError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_configured_table_association_analysis_rule::CreateConfiguredTableAssociationAnalysisRuleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_id_mapping_table::CreateIdMappingTableError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -821,6 +859,44 @@ impl From<crate::operation::delete_configured_table_association::DeleteConfigure
                 Error::ValidationException(inner)
             }
             crate::operation::delete_configured_table_association::DeleteConfiguredTableAssociationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_configured_table_association_analysis_rule::DeleteConfiguredTableAssociationAnalysisRuleError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_configured_table_association_analysis_rule::DeleteConfiguredTableAssociationAnalysisRuleError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_configured_table_association_analysis_rule::DeleteConfiguredTableAssociationAnalysisRuleError> for Error {
+    fn from(err: crate::operation::delete_configured_table_association_analysis_rule::DeleteConfiguredTableAssociationAnalysisRuleError) -> Self {
+        match err {
+            crate::operation::delete_configured_table_association_analysis_rule::DeleteConfiguredTableAssociationAnalysisRuleError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_configured_table_association_analysis_rule::DeleteConfiguredTableAssociationAnalysisRuleError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_configured_table_association_analysis_rule::DeleteConfiguredTableAssociationAnalysisRuleError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_configured_table_association_analysis_rule::DeleteConfiguredTableAssociationAnalysisRuleError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_configured_table_association_analysis_rule::DeleteConfiguredTableAssociationAnalysisRuleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_configured_table_association_analysis_rule::DeleteConfiguredTableAssociationAnalysisRuleError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_configured_table_association_analysis_rule::DeleteConfiguredTableAssociationAnalysisRuleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1402,6 +1478,43 @@ impl From<crate::operation::get_configured_table_association::GetConfiguredTable
                 Error::ValidationException(inner)
             }
             crate::operation::get_configured_table_association::GetConfiguredTableAssociationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_configured_table_association_analysis_rule::GetConfiguredTableAssociationAnalysisRuleError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_configured_table_association_analysis_rule::GetConfiguredTableAssociationAnalysisRuleError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_configured_table_association_analysis_rule::GetConfiguredTableAssociationAnalysisRuleError> for Error {
+    fn from(err: crate::operation::get_configured_table_association_analysis_rule::GetConfiguredTableAssociationAnalysisRuleError) -> Self {
+        match err {
+            crate::operation::get_configured_table_association_analysis_rule::GetConfiguredTableAssociationAnalysisRuleError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_configured_table_association_analysis_rule::GetConfiguredTableAssociationAnalysisRuleError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_configured_table_association_analysis_rule::GetConfiguredTableAssociationAnalysisRuleError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_configured_table_association_analysis_rule::GetConfiguredTableAssociationAnalysisRuleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_configured_table_association_analysis_rule::GetConfiguredTableAssociationAnalysisRuleError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_configured_table_association_analysis_rule::GetConfiguredTableAssociationAnalysisRuleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2653,6 +2766,44 @@ impl From<crate::operation::update_configured_table_association::UpdateConfigure
                 Error::ValidationException(inner)
             }
             crate::operation::update_configured_table_association::UpdateConfiguredTableAssociationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_configured_table_association_analysis_rule::UpdateConfiguredTableAssociationAnalysisRuleError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_configured_table_association_analysis_rule::UpdateConfiguredTableAssociationAnalysisRuleError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_configured_table_association_analysis_rule::UpdateConfiguredTableAssociationAnalysisRuleError> for Error {
+    fn from(err: crate::operation::update_configured_table_association_analysis_rule::UpdateConfiguredTableAssociationAnalysisRuleError) -> Self {
+        match err {
+            crate::operation::update_configured_table_association_analysis_rule::UpdateConfiguredTableAssociationAnalysisRuleError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_configured_table_association_analysis_rule::UpdateConfiguredTableAssociationAnalysisRuleError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_configured_table_association_analysis_rule::UpdateConfiguredTableAssociationAnalysisRuleError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_configured_table_association_analysis_rule::UpdateConfiguredTableAssociationAnalysisRuleError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_configured_table_association_analysis_rule::UpdateConfiguredTableAssociationAnalysisRuleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_configured_table_association_analysis_rule::UpdateConfiguredTableAssociationAnalysisRuleError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_configured_table_association_analysis_rule::UpdateConfiguredTableAssociationAnalysisRuleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

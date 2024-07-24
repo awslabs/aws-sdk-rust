@@ -37,6 +37,8 @@ pub use crate::types::_dicom_study_date_and_time::DicomStudyDateAndTime;
 
 pub use crate::types::_image_set_properties::ImageSetProperties;
 
+pub use crate::types::_overrides::Overrides;
+
 pub use crate::types::_dicom_import_job_summary::DicomImportJobSummary;
 
 pub use crate::types::_image_frame_information::ImageFrameInformation;
@@ -52,6 +54,8 @@ pub use crate::types::_copy_image_set_information::CopyImageSetInformation;
 pub use crate::types::_copy_destination_image_set::CopyDestinationImageSet;
 
 pub use crate::types::_copy_source_image_set_information::CopySourceImageSetInformation;
+
+pub use crate::types::_metadata_copies::MetadataCopies;
 
 mod _copy_destination_image_set;
 
@@ -91,9 +95,13 @@ mod _image_sets_metadata_summary;
 
 mod _job_status;
 
+mod _metadata_copies;
+
 mod _metadata_updates;
 
 mod _operator;
+
+mod _overrides;
 
 mod _search_by_attribute_value;
 

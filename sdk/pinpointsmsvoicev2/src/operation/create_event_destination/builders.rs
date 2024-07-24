@@ -23,8 +23,8 @@ impl crate::operation::create_event_destination::builders::CreateEventDestinatio
 /// Fluent builder constructing a request to `CreateEventDestination`.
 ///
 /// <p>Creates a new event destination in a configuration set.</p>
-/// <p>An event destination is a location where you send message events. The event options are Amazon CloudWatch, Amazon Kinesis Data Firehose, or Amazon SNS. For example, when a message is delivered successfully, you can send information about that event to an event destination, or send notifications to endpoints that are subscribed to an Amazon SNS topic.</p>
-/// <p>Each configuration set can contain between 0 and 5 event destinations. Each event destination can contain a reference to a single destination, such as a CloudWatch or Kinesis Data Firehose destination.</p>
+/// <p>An event destination is a location where you send message events. The event options are Amazon CloudWatch, Amazon Data Firehose, or Amazon SNS. For example, when a message is delivered successfully, you can send information about that event to an event destination, or send notifications to endpoints that are subscribed to an Amazon SNS topic.</p>
+/// <p>Each configuration set can contain between 0 and 5 event destinations. Each event destination can contain a reference to a single destination, such as a CloudWatch or Firehose destination.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateEventDestinationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -143,21 +143,21 @@ impl CreateEventDestinationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_matching_event_types`](Self::set_matching_event_types).
     ///
-    /// <p>An array of event types that determine which events to log. If "ALL" is used, then Amazon Pinpoint logs every event type.</p><note>
+    /// <p>An array of event types that determine which events to log. If "ALL" is used, then AWS End User Messaging SMS and Voice logs every event type.</p><note>
     /// <p>The <code>TEXT_SENT</code> event type is not supported.</p>
     /// </note>
     pub fn matching_event_types(mut self, input: crate::types::EventType) -> Self {
         self.inner = self.inner.matching_event_types(input);
         self
     }
-    /// <p>An array of event types that determine which events to log. If "ALL" is used, then Amazon Pinpoint logs every event type.</p><note>
+    /// <p>An array of event types that determine which events to log. If "ALL" is used, then AWS End User Messaging SMS and Voice logs every event type.</p><note>
     /// <p>The <code>TEXT_SENT</code> event type is not supported.</p>
     /// </note>
     pub fn set_matching_event_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>) -> Self {
         self.inner = self.inner.set_matching_event_types(input);
         self
     }
-    /// <p>An array of event types that determine which events to log. If "ALL" is used, then Amazon Pinpoint logs every event type.</p><note>
+    /// <p>An array of event types that determine which events to log. If "ALL" is used, then AWS End User Messaging SMS and Voice logs every event type.</p><note>
     /// <p>The <code>TEXT_SENT</code> event type is not supported.</p>
     /// </note>
     pub fn get_matching_event_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventType>> {
@@ -177,17 +177,17 @@ impl CreateEventDestinationFluentBuilder {
     pub fn get_cloud_watch_logs_destination(&self) -> &::std::option::Option<crate::types::CloudWatchLogsDestination> {
         self.inner.get_cloud_watch_logs_destination()
     }
-    /// <p>An object that contains information about an event destination for logging to Amazon Kinesis Data Firehose.</p>
+    /// <p>An object that contains information about an event destination for logging to Amazon Data Firehose.</p>
     pub fn kinesis_firehose_destination(mut self, input: crate::types::KinesisFirehoseDestination) -> Self {
         self.inner = self.inner.kinesis_firehose_destination(input);
         self
     }
-    /// <p>An object that contains information about an event destination for logging to Amazon Kinesis Data Firehose.</p>
+    /// <p>An object that contains information about an event destination for logging to Amazon Data Firehose.</p>
     pub fn set_kinesis_firehose_destination(mut self, input: ::std::option::Option<crate::types::KinesisFirehoseDestination>) -> Self {
         self.inner = self.inner.set_kinesis_firehose_destination(input);
         self
     }
-    /// <p>An object that contains information about an event destination for logging to Amazon Kinesis Data Firehose.</p>
+    /// <p>An object that contains information about an event destination for logging to Amazon Data Firehose.</p>
     pub fn get_kinesis_firehose_destination(&self) -> &::std::option::Option<crate::types::KinesisFirehoseDestination> {
         self.inner.get_kinesis_firehose_destination()
     }

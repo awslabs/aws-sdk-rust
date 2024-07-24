@@ -136,17 +136,17 @@ impl CreateConfiguredTableAnalysisRuleFluentBuilder {
     pub fn get_analysis_rule_type(&self) -> &::std::option::Option<crate::types::ConfiguredTableAnalysisRuleType> {
         self.inner.get_analysis_rule_type()
     }
-    /// <p>The entire created configured table analysis rule object.</p>
+    /// <p>The analysis rule policy that was created for the configured table.</p>
     pub fn analysis_rule_policy(mut self, input: crate::types::ConfiguredTableAnalysisRulePolicy) -> Self {
         self.inner = self.inner.analysis_rule_policy(input);
         self
     }
-    /// <p>The entire created configured table analysis rule object.</p>
+    /// <p>The analysis rule policy that was created for the configured table.</p>
     pub fn set_analysis_rule_policy(mut self, input: ::std::option::Option<crate::types::ConfiguredTableAnalysisRulePolicy>) -> Self {
         self.inner = self.inner.set_analysis_rule_policy(input);
         self
     }
-    /// <p>The entire created configured table analysis rule object.</p>
+    /// <p>The analysis rule policy that was created for the configured table.</p>
     pub fn get_analysis_rule_policy(&self) -> &::std::option::Option<crate::types::ConfiguredTableAnalysisRulePolicy> {
         self.inner.get_analysis_rule_policy()
     }

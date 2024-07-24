@@ -15,6 +15,12 @@ pub fn ser_gateway_platform(
         crate::protocol_serde::shape_greengrass_v2::ser_greengrass_v2(&mut object_4, var_3)?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.siemens_ie {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("siemensIE").start_object();
+        crate::protocol_serde::shape_siemens_ie::ser_siemens_ie(&mut object_6, var_5)?;
+        object_6.finish();
+    }
     Ok(())
 }
 
@@ -38,6 +44,9 @@ where
                         }
                         "greengrassV2" => {
                             builder = builder.set_greengrass_v2(crate::protocol_serde::shape_greengrass_v2::de_greengrass_v2(tokens)?);
+                        }
+                        "siemensIE" => {
+                            builder = builder.set_siemens_ie(crate::protocol_serde::shape_siemens_ie::de_siemens_ie(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

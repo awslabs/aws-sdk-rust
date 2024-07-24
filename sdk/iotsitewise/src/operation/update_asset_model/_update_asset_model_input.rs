@@ -5,7 +5,7 @@
 pub struct UpdateAssetModelInput {
     /// <p>The ID of the asset model to update. This can be either the actual ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub asset_model_id: ::std::option::Option<::std::string::String>,
-    /// <p>A unique, friendly name for the asset model.</p>
+    /// <p>A unique name for the asset model.</p>
     pub asset_model_name: ::std::option::Option<::std::string::String>,
     /// <p>A description for the asset model.</p>
     pub asset_model_description: ::std::option::Option<::std::string::String>,
@@ -16,8 +16,7 @@ pub struct UpdateAssetModelInput {
     /// <p>You can specify up to 10 hierarchies per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub asset_model_hierarchies: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelHierarchy>>,
     /// <p>The composite models that are part of this asset model. It groups properties (such as attributes, measurements, transforms, and metrics) and child composite models that model parts of your industrial equipment. Each composite model has a type that defines the properties that the composite model supports. Use composite models to define alarms on this asset model.</p><note>
-    /// <p>When creating custom composite models, you need to use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html">CreateAssetModelCompositeModel</a>. For more information, see
-    /// <link>.</p>
+    /// <p>When creating custom composite models, you need to use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html">CreateAssetModelCompositeModel</a>. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-custom-composite-models.html">Creating custom composite models (Components)</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// </note>
     pub asset_model_composite_models: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelCompositeModel>>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -30,7 +29,7 @@ impl UpdateAssetModelInput {
     pub fn asset_model_id(&self) -> ::std::option::Option<&str> {
         self.asset_model_id.as_deref()
     }
-    /// <p>A unique, friendly name for the asset model.</p>
+    /// <p>A unique name for the asset model.</p>
     pub fn asset_model_name(&self) -> ::std::option::Option<&str> {
         self.asset_model_name.as_deref()
     }
@@ -53,8 +52,7 @@ impl UpdateAssetModelInput {
         self.asset_model_hierarchies.as_deref().unwrap_or_default()
     }
     /// <p>The composite models that are part of this asset model. It groups properties (such as attributes, measurements, transforms, and metrics) and child composite models that model parts of your industrial equipment. Each composite model has a type that defines the properties that the composite model supports. Use composite models to define alarms on this asset model.</p><note>
-    /// <p>When creating custom composite models, you need to use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html">CreateAssetModelCompositeModel</a>. For more information, see
-    /// <link>.</p>
+    /// <p>When creating custom composite models, you need to use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html">CreateAssetModelCompositeModel</a>. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-custom-composite-models.html">Creating custom composite models (Components)</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.asset_model_composite_models.is_none()`.
@@ -106,18 +104,18 @@ impl UpdateAssetModelInputBuilder {
     pub fn get_asset_model_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.asset_model_id
     }
-    /// <p>A unique, friendly name for the asset model.</p>
+    /// <p>A unique name for the asset model.</p>
     /// This field is required.
     pub fn asset_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_model_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique, friendly name for the asset model.</p>
+    /// <p>A unique name for the asset model.</p>
     pub fn set_asset_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.asset_model_name = input;
         self
     }
-    /// <p>A unique, friendly name for the asset model.</p>
+    /// <p>A unique name for the asset model.</p>
     pub fn get_asset_model_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.asset_model_name
     }
@@ -186,8 +184,7 @@ impl UpdateAssetModelInputBuilder {
     /// To override the contents of this collection use [`set_asset_model_composite_models`](Self::set_asset_model_composite_models).
     ///
     /// <p>The composite models that are part of this asset model. It groups properties (such as attributes, measurements, transforms, and metrics) and child composite models that model parts of your industrial equipment. Each composite model has a type that defines the properties that the composite model supports. Use composite models to define alarms on this asset model.</p><note>
-    /// <p>When creating custom composite models, you need to use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html">CreateAssetModelCompositeModel</a>. For more information, see
-    /// <link>.</p>
+    /// <p>When creating custom composite models, you need to use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html">CreateAssetModelCompositeModel</a>. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-custom-composite-models.html">Creating custom composite models (Components)</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// </note>
     pub fn asset_model_composite_models(mut self, input: crate::types::AssetModelCompositeModel) -> Self {
         let mut v = self.asset_model_composite_models.unwrap_or_default();
@@ -196,16 +193,14 @@ impl UpdateAssetModelInputBuilder {
         self
     }
     /// <p>The composite models that are part of this asset model. It groups properties (such as attributes, measurements, transforms, and metrics) and child composite models that model parts of your industrial equipment. Each composite model has a type that defines the properties that the composite model supports. Use composite models to define alarms on this asset model.</p><note>
-    /// <p>When creating custom composite models, you need to use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html">CreateAssetModelCompositeModel</a>. For more information, see
-    /// <link>.</p>
+    /// <p>When creating custom composite models, you need to use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html">CreateAssetModelCompositeModel</a>. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-custom-composite-models.html">Creating custom composite models (Components)</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// </note>
     pub fn set_asset_model_composite_models(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelCompositeModel>>) -> Self {
         self.asset_model_composite_models = input;
         self
     }
     /// <p>The composite models that are part of this asset model. It groups properties (such as attributes, measurements, transforms, and metrics) and child composite models that model parts of your industrial equipment. Each composite model has a type that defines the properties that the composite model supports. Use composite models to define alarms on this asset model.</p><note>
-    /// <p>When creating custom composite models, you need to use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html">CreateAssetModelCompositeModel</a>. For more information, see
-    /// <link>.</p>
+    /// <p>When creating custom composite models, you need to use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html">CreateAssetModelCompositeModel</a>. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-custom-composite-models.html">Creating custom composite models (Components)</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// </note>
     pub fn get_asset_model_composite_models(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetModelCompositeModel>> {
         &self.asset_model_composite_models

@@ -14,6 +14,7 @@
 /// match drmsystem {
 ///     DrmSystem::ClearKeyAes128 => { /* ... */ },
 ///     DrmSystem::Fairplay => { /* ... */ },
+///     DrmSystem::Irdeto => { /* ... */ },
 ///     DrmSystem::Playready => { /* ... */ },
 ///     DrmSystem::Widevine => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -48,6 +49,8 @@ pub enum DrmSystem {
     #[allow(missing_docs)] // documentation missing in model
     Fairplay,
     #[allow(missing_docs)] // documentation missing in model
+    Irdeto,
+    #[allow(missing_docs)] // documentation missing in model
     Playready,
     #[allow(missing_docs)] // documentation missing in model
     Widevine,
@@ -60,6 +63,7 @@ impl ::std::convert::From<&str> for DrmSystem {
         match s {
             "CLEAR_KEY_AES_128" => DrmSystem::ClearKeyAes128,
             "FAIRPLAY" => DrmSystem::Fairplay,
+            "IRDETO" => DrmSystem::Irdeto,
             "PLAYREADY" => DrmSystem::Playready,
             "WIDEVINE" => DrmSystem::Widevine,
             other => DrmSystem::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -79,6 +83,7 @@ impl DrmSystem {
         match self {
             DrmSystem::ClearKeyAes128 => "CLEAR_KEY_AES_128",
             DrmSystem::Fairplay => "FAIRPLAY",
+            DrmSystem::Irdeto => "IRDETO",
             DrmSystem::Playready => "PLAYREADY",
             DrmSystem::Widevine => "WIDEVINE",
             DrmSystem::Unknown(value) => value.as_str(),
@@ -86,7 +91,7 @@ impl DrmSystem {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CLEAR_KEY_AES_128", "FAIRPLAY", "PLAYREADY", "WIDEVINE"]
+        &["CLEAR_KEY_AES_128", "FAIRPLAY", "IRDETO", "PLAYREADY", "WIDEVINE"]
     }
 }
 impl ::std::convert::AsRef<str> for DrmSystem {
@@ -111,6 +116,7 @@ impl ::std::fmt::Display for DrmSystem {
         match self {
             DrmSystem::ClearKeyAes128 => write!(f, "CLEAR_KEY_AES_128"),
             DrmSystem::Fairplay => write!(f, "FAIRPLAY"),
+            DrmSystem::Irdeto => write!(f, "IRDETO"),
             DrmSystem::Playready => write!(f, "PLAYREADY"),
             DrmSystem::Widevine => write!(f, "WIDEVINE"),
             DrmSystem::Unknown(value) => write!(f, "{}", value),

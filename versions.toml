@@ -346,9 +346,9 @@ model_hash = '45c858a0d7a64b8f32f7881d5a042dca0e01a1b9464f2c513fca63feda328f1c'
 
 [crates.aws-sdk-cleanrooms]
 category = 'AwsSdk'
-version = '1.40.0'
-source_hash = 'daa36926eb91a0c3cc33b648f8c70fe6fdccb7aa718ad040830e369410b1e4b0'
-model_hash = '7dd68ec03ce92b017d77cb808d69b4da6150b02036431ce5c2a9fed1e35a4956'
+version = '1.41.0'
+source_hash = 'e995d699d571c69d04ff0374ec36ba7d629597f90e2f7e599e105c87b1512fc6'
+model_hash = '85a4611dfac4d0c4e3a5c17626129f56abc756ae6859bf4eb94ca0d24b885f5a'
 
 [crates.aws-sdk-cleanroomsml]
 category = 'AwsSdk'
@@ -736,9 +736,9 @@ model_hash = '8fb73e1979de38a6fe2ffed3fd6295dac350ef807a1131d8cc093b73c3d80ece'
 
 [crates.aws-sdk-dynamodb]
 category = 'AwsSdk'
-version = '1.39.0'
-source_hash = 'e368028adf5e22a6345b8e67b3499dfd1cdf2d15cc02acc09b626d601df2e006'
-model_hash = '54efc0f048d367e9e2d418f8d91e281fa6f28e954e9f3fb8c6b8751017d4a1e5'
+version = '1.39.1'
+source_hash = '0f8e0ff2b8ef0b9abcfd1ab88ae893dad9427382945868bef6e63782151f07cf'
+model_hash = '6d3d4a6893532aacc47144a44b1e6f6ceae2d9ca55bf436a25a0be5bcbdfb538'
 
 [crates.aws-sdk-dynamodbstreams]
 category = 'AwsSdk'
@@ -1120,9 +1120,9 @@ model_hash = '260b1b95d87fb1ced3c57c054ea243ea803537b1e73b98f1db9f47a913dc185e'
 
 [crates.aws-sdk-iotsitewise]
 category = 'AwsSdk'
-version = '1.36.0'
-source_hash = '9e1121ecb803161707a50c861b6ec1656c8c29a78d67868d65d3a12191aa558e'
-model_hash = '336225679503f3803f82942bb925155c9d7affc4caf9bb9d72b25622a3029445'
+version = '1.37.0'
+source_hash = 'bf247ea77991022c61dea35439d4172587ccc4dfb5cf5b6a1444d38583c3f1a1'
+model_hash = '0d2cbf740d47b221c66b63d9d0fde2393b106ac4b57807978a2ec58dafd9d1f3'
 
 [crates.aws-sdk-iotthingsgraph]
 category = 'AwsSdk'
@@ -1432,9 +1432,9 @@ model_hash = '6b1f33b67ca3b4d994b5180e1e84382e43a2e48852907d8628429009f5be0d00'
 
 [crates.aws-sdk-mediapackagev2]
 category = 'AwsSdk'
-version = '1.38.0'
-source_hash = '02373e23423677f24d9d7309e0dae3e5d65d2a7d7055004e5b63d879a4856f6e'
-model_hash = '4995cdf9f08c240d440cf48ddeaec8690d76be1546fa9c362026b1161c28db6b'
+version = '1.39.0'
+source_hash = 'd7cc5c79674c37f54a1bccedfad2fbef8914c1bb40b754245d65a7f8862c0f0f'
+model_hash = 'bd80e4f36b0527f1f4dd1221f6a6903a72e7fc20056778e3f1114a63e4888860'
 
 [crates.aws-sdk-mediapackagevod]
 category = 'AwsSdk'
@@ -1462,9 +1462,9 @@ model_hash = '53459c76efd167d51bff31c90dfcf1b32cc5c534fdcf0210f680e3e6c43aea47'
 
 [crates.aws-sdk-medicalimaging]
 category = 'AwsSdk'
-version = '1.38.0'
-source_hash = 'fac989b9696bb24cae332e0c7501228edddd668daffd2c0af23fd7cca145c878'
-model_hash = '97d368819840cbf57b5969cdbdafe3d865f3d9d3cb3b013fb9ef09a7134a6f66'
+version = '1.39.0'
+source_hash = 'b93ca89d6930384d508a5d0e4ec283354c58123ad87e80cf889ac79ee53419ca'
+model_hash = '9e1fdd813daddf3df399b2498e19ef42edc473af4ef010b5c573152e9af0f7a3'
 
 [crates.aws-sdk-memorydb]
 category = 'AwsSdk'
@@ -1696,9 +1696,9 @@ model_hash = '1c88a67d16451b4c40c3e7f51f3020b6961f62187c4503fc4788187849855a80'
 
 [crates.aws-sdk-pinpointsmsvoicev2]
 category = 'AwsSdk'
-version = '1.37.0'
-source_hash = '811a2d30c5f14bc0274e37146b039a0d845af3070ddbd1046102d99c9fa2b569'
-model_hash = '3ea7969c67e81d93bf1016a614f225d657c0ccc03fd10c163884a0863d951762'
+version = '1.37.1'
+source_hash = '402294a0dbc7a111f7c1375ebed0cedc2d07ec3ee7230ce1a6145aca5e60c82d'
+model_hash = 'f6941e7408fc17a86da64ffdef38fd217dd3ab5ea9a78715d5a7a2815fa990b9'
 
 [crates.aws-sdk-pipes]
 category = 'AwsSdk'
@@ -2476,15 +2476,10 @@ source_hash = '1d4ed02612a642bc8b5aa41e106c6614f4eb2dc9834dedffef91fb4cff7bcb8a'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '61439a7640fb5dfb476544cc23a37cc6781b09e3cfd6bc92f36063d572f6eb8e'
-
-[release]
-tag = 'release-2024-07-23'
-
 [release.crates]
-aws-sdk-appsync = '1.41.0'
-aws-sdk-cleanrooms = '1.40.0'
-aws-sdk-cleanroomsml = '1.35.0'
-aws-sdk-connect = '1.54.0'
-aws-sdk-connectcontactlens = '1.37.0'
-aws-sdk-datazone = '1.43.0'
-aws-sdk-entityresolution = '1.39.0'
+aws-sdk-cleanrooms = '1.41.0'
+aws-sdk-dynamodb = '1.39.1'
+aws-sdk-iotsitewise = '1.37.0'
+aws-sdk-mediapackagev2 = '1.39.0'
+aws-sdk-medicalimaging = '1.39.0'
+aws-sdk-pinpointsmsvoicev2 = '1.37.1'

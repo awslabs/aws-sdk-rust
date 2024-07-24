@@ -12,11 +12,7 @@
 /// ```text
 /// # let schemaconfiguration = unimplemented!();
 /// match schemaconfiguration {
-///     SchemaConfiguration::CustomAnalysisNotAllowed => { /* ... */ },
 ///     SchemaConfiguration::DifferentialPrivacy => { /* ... */ },
-///     SchemaConfiguration::DifferentialPrivacyBudgetNotConfigured => { /* ... */ },
-///     SchemaConfiguration::IdMappingTableNotPopulated => { /* ... */ },
-///     SchemaConfiguration::NoMemberAccountAllowedToProvideAnalysis => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -45,15 +41,7 @@
 )]
 pub enum SchemaConfiguration {
     #[allow(missing_docs)] // documentation missing in model
-    CustomAnalysisNotAllowed,
-    #[allow(missing_docs)] // documentation missing in model
     DifferentialPrivacy,
-    #[allow(missing_docs)] // documentation missing in model
-    DifferentialPrivacyBudgetNotConfigured,
-    #[allow(missing_docs)] // documentation missing in model
-    IdMappingTableNotPopulated,
-    #[allow(missing_docs)] // documentation missing in model
-    NoMemberAccountAllowedToProvideAnalysis,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -61,11 +49,7 @@ pub enum SchemaConfiguration {
 impl ::std::convert::From<&str> for SchemaConfiguration {
     fn from(s: &str) -> Self {
         match s {
-            "CUSTOM_ANALYSIS_NOT_ALLOWED" => SchemaConfiguration::CustomAnalysisNotAllowed,
             "DIFFERENTIAL_PRIVACY" => SchemaConfiguration::DifferentialPrivacy,
-            "DIFFERENTIAL_PRIVACY_BUDGET_NOT_CONFIGURED" => SchemaConfiguration::DifferentialPrivacyBudgetNotConfigured,
-            "ID_MAPPING_TABLE_NOT_POPULATED" => SchemaConfiguration::IdMappingTableNotPopulated,
-            "NO_MEMBER_ACCOUNT_ALLOWED_TO_PROVIDE_ANALYSIS" => SchemaConfiguration::NoMemberAccountAllowedToProvideAnalysis,
             other => SchemaConfiguration::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -81,23 +65,13 @@ impl SchemaConfiguration {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            SchemaConfiguration::CustomAnalysisNotAllowed => "CUSTOM_ANALYSIS_NOT_ALLOWED",
             SchemaConfiguration::DifferentialPrivacy => "DIFFERENTIAL_PRIVACY",
-            SchemaConfiguration::DifferentialPrivacyBudgetNotConfigured => "DIFFERENTIAL_PRIVACY_BUDGET_NOT_CONFIGURED",
-            SchemaConfiguration::IdMappingTableNotPopulated => "ID_MAPPING_TABLE_NOT_POPULATED",
-            SchemaConfiguration::NoMemberAccountAllowedToProvideAnalysis => "NO_MEMBER_ACCOUNT_ALLOWED_TO_PROVIDE_ANALYSIS",
             SchemaConfiguration::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "CUSTOM_ANALYSIS_NOT_ALLOWED",
-            "DIFFERENTIAL_PRIVACY",
-            "DIFFERENTIAL_PRIVACY_BUDGET_NOT_CONFIGURED",
-            "ID_MAPPING_TABLE_NOT_POPULATED",
-            "NO_MEMBER_ACCOUNT_ALLOWED_TO_PROVIDE_ANALYSIS",
-        ]
+        &["DIFFERENTIAL_PRIVACY"]
     }
 }
 impl ::std::convert::AsRef<str> for SchemaConfiguration {
@@ -120,11 +94,7 @@ impl SchemaConfiguration {
 impl ::std::fmt::Display for SchemaConfiguration {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
-            SchemaConfiguration::CustomAnalysisNotAllowed => write!(f, "CUSTOM_ANALYSIS_NOT_ALLOWED"),
             SchemaConfiguration::DifferentialPrivacy => write!(f, "DIFFERENTIAL_PRIVACY"),
-            SchemaConfiguration::DifferentialPrivacyBudgetNotConfigured => write!(f, "DIFFERENTIAL_PRIVACY_BUDGET_NOT_CONFIGURED"),
-            SchemaConfiguration::IdMappingTableNotPopulated => write!(f, "ID_MAPPING_TABLE_NOT_POPULATED"),
-            SchemaConfiguration::NoMemberAccountAllowedToProvideAnalysis => write!(f, "NO_MEMBER_ACCOUNT_ALLOWED_TO_PROVIDE_ANALYSIS"),
             SchemaConfiguration::Unknown(value) => write!(f, "{}", value),
         }
     }

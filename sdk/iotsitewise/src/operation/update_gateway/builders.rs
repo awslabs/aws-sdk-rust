@@ -122,17 +122,17 @@ impl UpdateGatewayFluentBuilder {
     pub fn get_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_gateway_id()
     }
-    /// <p>A unique, friendly name for the gateway.</p>
+    /// <p>A unique name for the gateway.</p>
     pub fn gateway_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.gateway_name(input.into());
         self
     }
-    /// <p>A unique, friendly name for the gateway.</p>
+    /// <p>A unique name for the gateway.</p>
     pub fn set_gateway_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_gateway_name(input);
         self
     }
-    /// <p>A unique, friendly name for the gateway.</p>
+    /// <p>A unique name for the gateway.</p>
     pub fn get_gateway_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_gateway_name()
     }

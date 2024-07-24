@@ -8,6 +8,8 @@ pub struct GatewayPlatform {
     pub greengrass: ::std::option::Option<crate::types::Greengrass>,
     /// <p>A gateway that runs on IoT Greengrass V2.</p>
     pub greengrass_v2: ::std::option::Option<crate::types::GreengrassV2>,
+    /// <p>A SiteWise Edge gateway that runs on a Siemens Industrial Edge Device.</p>
+    pub siemens_ie: ::std::option::Option<crate::types::SiemensIe>,
 }
 impl GatewayPlatform {
     /// <p>A gateway that runs on IoT Greengrass.</p>
@@ -17,6 +19,10 @@ impl GatewayPlatform {
     /// <p>A gateway that runs on IoT Greengrass V2.</p>
     pub fn greengrass_v2(&self) -> ::std::option::Option<&crate::types::GreengrassV2> {
         self.greengrass_v2.as_ref()
+    }
+    /// <p>A SiteWise Edge gateway that runs on a Siemens Industrial Edge Device.</p>
+    pub fn siemens_ie(&self) -> ::std::option::Option<&crate::types::SiemensIe> {
+        self.siemens_ie.as_ref()
     }
 }
 impl GatewayPlatform {
@@ -32,6 +38,7 @@ impl GatewayPlatform {
 pub struct GatewayPlatformBuilder {
     pub(crate) greengrass: ::std::option::Option<crate::types::Greengrass>,
     pub(crate) greengrass_v2: ::std::option::Option<crate::types::GreengrassV2>,
+    pub(crate) siemens_ie: ::std::option::Option<crate::types::SiemensIe>,
 }
 impl GatewayPlatformBuilder {
     /// <p>A gateway that runs on IoT Greengrass.</p>
@@ -62,11 +69,26 @@ impl GatewayPlatformBuilder {
     pub fn get_greengrass_v2(&self) -> &::std::option::Option<crate::types::GreengrassV2> {
         &self.greengrass_v2
     }
+    /// <p>A SiteWise Edge gateway that runs on a Siemens Industrial Edge Device.</p>
+    pub fn siemens_ie(mut self, input: crate::types::SiemensIe) -> Self {
+        self.siemens_ie = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A SiteWise Edge gateway that runs on a Siemens Industrial Edge Device.</p>
+    pub fn set_siemens_ie(mut self, input: ::std::option::Option<crate::types::SiemensIe>) -> Self {
+        self.siemens_ie = input;
+        self
+    }
+    /// <p>A SiteWise Edge gateway that runs on a Siemens Industrial Edge Device.</p>
+    pub fn get_siemens_ie(&self) -> &::std::option::Option<crate::types::SiemensIe> {
+        &self.siemens_ie
+    }
     /// Consumes the builder and constructs a [`GatewayPlatform`](crate::types::GatewayPlatform).
     pub fn build(self) -> crate::types::GatewayPlatform {
         crate::types::GatewayPlatform {
             greengrass: self.greengrass,
             greengrass_v2: self.greengrass_v2,
+            siemens_ie: self.siemens_ie,
         }
     }
 }

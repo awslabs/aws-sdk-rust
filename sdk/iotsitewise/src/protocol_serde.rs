@@ -569,6 +569,8 @@ pub(crate) mod shape_property_type;
 
 pub(crate) mod shape_row;
 
+pub(crate) mod shape_siemens_ie;
+
 pub(crate) mod shape_time_in_nanos;
 
 pub(crate) mod shape_time_series_summary;

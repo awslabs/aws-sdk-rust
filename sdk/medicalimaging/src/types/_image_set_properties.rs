@@ -20,6 +20,8 @@ pub struct ImageSetProperties {
     pub deleted_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The error message thrown if an image set action fails.</p>
     pub message: ::std::option::Option<::std::string::String>,
+    /// <p>Contains details on overrides used when creating the returned version of an image set. For example, if <code>forced</code> exists, the <code>forced</code> flag was used when creating the image set.</p>
+    pub overrides: ::std::option::Option<crate::types::Overrides>,
 }
 impl ImageSetProperties {
     /// <p>The image set identifier.</p>
@@ -56,6 +58,10 @@ impl ImageSetProperties {
     pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
+    /// <p>Contains details on overrides used when creating the returned version of an image set. For example, if <code>forced</code> exists, the <code>forced</code> flag was used when creating the image set.</p>
+    pub fn overrides(&self) -> ::std::option::Option<&crate::types::Overrides> {
+        self.overrides.as_ref()
+    }
 }
 impl ImageSetProperties {
     /// Creates a new builder-style object to manufacture [`ImageSetProperties`](crate::types::ImageSetProperties).
@@ -76,6 +82,7 @@ pub struct ImageSetPropertiesBuilder {
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) deleted_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) overrides: ::std::option::Option<crate::types::Overrides>,
 }
 impl ImageSetPropertiesBuilder {
     /// <p>The image set identifier.</p>
@@ -193,6 +200,20 @@ impl ImageSetPropertiesBuilder {
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
+    /// <p>Contains details on overrides used when creating the returned version of an image set. For example, if <code>forced</code> exists, the <code>forced</code> flag was used when creating the image set.</p>
+    pub fn overrides(mut self, input: crate::types::Overrides) -> Self {
+        self.overrides = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains details on overrides used when creating the returned version of an image set. For example, if <code>forced</code> exists, the <code>forced</code> flag was used when creating the image set.</p>
+    pub fn set_overrides(mut self, input: ::std::option::Option<crate::types::Overrides>) -> Self {
+        self.overrides = input;
+        self
+    }
+    /// <p>Contains details on overrides used when creating the returned version of an image set. For example, if <code>forced</code> exists, the <code>forced</code> flag was used when creating the image set.</p>
+    pub fn get_overrides(&self) -> &::std::option::Option<crate::types::Overrides> {
+        &self.overrides
+    }
     /// Consumes the builder and constructs a [`ImageSetProperties`](crate::types::ImageSetProperties).
     /// This method will fail if any of the following fields are not set:
     /// - [`image_set_id`](crate::types::builders::ImageSetPropertiesBuilder::image_set_id)
@@ -223,6 +244,7 @@ impl ImageSetPropertiesBuilder {
             updated_at: self.updated_at,
             deleted_at: self.deleted_at,
             message: self.message,
+            overrides: self.overrides,
         })
     }
 }

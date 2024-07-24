@@ -66,6 +66,9 @@ pub fn ser_analysis_rule_aggregation(
         }
         array_14.finish();
     }
+    if let Some(var_17) = &input.additional_analyses {
+        object.key("additionalAnalyses").string(var_17.as_str());
+    }
     Ok(())
 }
 
@@ -116,6 +119,13 @@ where
                         "outputConstraints" => {
                             builder = builder
                                 .set_output_constraints(crate::protocol_serde::shape_aggregation_constraints::de_aggregation_constraints(tokens)?);
+                        }
+                        "additionalAnalyses" => {
+                            builder = builder.set_additional_analyses(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::AdditionalAnalyses::from(u.as_ref())))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -8,6 +8,10 @@ pub struct AnalysisRuleCustom {
     pub allowed_analyses: ::std::vec::Vec<::std::string::String>,
     /// <p>The IDs of the Amazon Web Services accounts that are allowed to query by the custom analysis rule. Required when <code>allowedAnalyses</code> is <code>ANY_QUERY</code>.</p>
     pub allowed_analysis_providers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>An indicator as to whether additional analyses (such as Clean Rooms ML) can be applied to the output of the direct query.</p>
+    pub additional_analyses: ::std::option::Option<crate::types::AdditionalAnalyses>,
+    /// <p>A list of columns that aren't allowed to be shown in the query output.</p>
+    pub disallowed_output_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The differential privacy configuration.</p>
     pub differential_privacy: ::std::option::Option<crate::types::DifferentialPrivacyConfiguration>,
 }
@@ -22,6 +26,16 @@ impl AnalysisRuleCustom {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_analysis_providers.is_none()`.
     pub fn allowed_analysis_providers(&self) -> &[::std::string::String] {
         self.allowed_analysis_providers.as_deref().unwrap_or_default()
+    }
+    /// <p>An indicator as to whether additional analyses (such as Clean Rooms ML) can be applied to the output of the direct query.</p>
+    pub fn additional_analyses(&self) -> ::std::option::Option<&crate::types::AdditionalAnalyses> {
+        self.additional_analyses.as_ref()
+    }
+    /// <p>A list of columns that aren't allowed to be shown in the query output.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.disallowed_output_columns.is_none()`.
+    pub fn disallowed_output_columns(&self) -> &[::std::string::String] {
+        self.disallowed_output_columns.as_deref().unwrap_or_default()
     }
     /// <p>The differential privacy configuration.</p>
     pub fn differential_privacy(&self) -> ::std::option::Option<&crate::types::DifferentialPrivacyConfiguration> {
@@ -41,6 +55,8 @@ impl AnalysisRuleCustom {
 pub struct AnalysisRuleCustomBuilder {
     pub(crate) allowed_analyses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) allowed_analysis_providers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) additional_analyses: ::std::option::Option<crate::types::AdditionalAnalyses>,
+    pub(crate) disallowed_output_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) differential_privacy: ::std::option::Option<crate::types::DifferentialPrivacyConfiguration>,
 }
 impl AnalysisRuleCustomBuilder {
@@ -84,6 +100,40 @@ impl AnalysisRuleCustomBuilder {
     pub fn get_allowed_analysis_providers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.allowed_analysis_providers
     }
+    /// <p>An indicator as to whether additional analyses (such as Clean Rooms ML) can be applied to the output of the direct query.</p>
+    pub fn additional_analyses(mut self, input: crate::types::AdditionalAnalyses) -> Self {
+        self.additional_analyses = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An indicator as to whether additional analyses (such as Clean Rooms ML) can be applied to the output of the direct query.</p>
+    pub fn set_additional_analyses(mut self, input: ::std::option::Option<crate::types::AdditionalAnalyses>) -> Self {
+        self.additional_analyses = input;
+        self
+    }
+    /// <p>An indicator as to whether additional analyses (such as Clean Rooms ML) can be applied to the output of the direct query.</p>
+    pub fn get_additional_analyses(&self) -> &::std::option::Option<crate::types::AdditionalAnalyses> {
+        &self.additional_analyses
+    }
+    /// Appends an item to `disallowed_output_columns`.
+    ///
+    /// To override the contents of this collection use [`set_disallowed_output_columns`](Self::set_disallowed_output_columns).
+    ///
+    /// <p>A list of columns that aren't allowed to be shown in the query output.</p>
+    pub fn disallowed_output_columns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.disallowed_output_columns.unwrap_or_default();
+        v.push(input.into());
+        self.disallowed_output_columns = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of columns that aren't allowed to be shown in the query output.</p>
+    pub fn set_disallowed_output_columns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.disallowed_output_columns = input;
+        self
+    }
+    /// <p>A list of columns that aren't allowed to be shown in the query output.</p>
+    pub fn get_disallowed_output_columns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.disallowed_output_columns
+    }
     /// <p>The differential privacy configuration.</p>
     pub fn differential_privacy(mut self, input: crate::types::DifferentialPrivacyConfiguration) -> Self {
         self.differential_privacy = ::std::option::Option::Some(input);
@@ -110,6 +160,8 @@ impl AnalysisRuleCustomBuilder {
                 )
             })?,
             allowed_analysis_providers: self.allowed_analysis_providers,
+            additional_analyses: self.additional_analyses,
+            disallowed_output_columns: self.disallowed_output_columns,
             differential_privacy: self.differential_privacy,
         })
     }

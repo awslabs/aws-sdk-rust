@@ -9,6 +9,14 @@ pub struct UpdateImageSetMetadataInput {
     pub image_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The latest image set version identifier.</p>
     pub latest_version_id: ::std::option::Option<::std::string::String>,
+    /// <p>Setting this flag will force the <code>UpdateImageSetMetadata</code> operation for the following attributes:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Tag.StudyInstanceUID</code>, <code>Tag.SeriesInstanceUID</code>, <code>Tag.SOPInstanceUID</code>, and <code>Tag.StudyID</code></p></li>
+    /// <li>
+    /// <p>Adding, removing, or updating private tags for an individual SOP Instance</p></li>
+    /// </ul>
+    pub force: ::std::option::Option<bool>,
     /// <p>Update image set metadata updates.</p>
     pub update_image_set_metadata_updates: ::std::option::Option<crate::types::MetadataUpdates>,
 }
@@ -24,6 +32,16 @@ impl UpdateImageSetMetadataInput {
     /// <p>The latest image set version identifier.</p>
     pub fn latest_version_id(&self) -> ::std::option::Option<&str> {
         self.latest_version_id.as_deref()
+    }
+    /// <p>Setting this flag will force the <code>UpdateImageSetMetadata</code> operation for the following attributes:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Tag.StudyInstanceUID</code>, <code>Tag.SeriesInstanceUID</code>, <code>Tag.SOPInstanceUID</code>, and <code>Tag.StudyID</code></p></li>
+    /// <li>
+    /// <p>Adding, removing, or updating private tags for an individual SOP Instance</p></li>
+    /// </ul>
+    pub fn force(&self) -> ::std::option::Option<bool> {
+        self.force
     }
     /// <p>Update image set metadata updates.</p>
     pub fn update_image_set_metadata_updates(&self) -> ::std::option::Option<&crate::types::MetadataUpdates> {
@@ -44,6 +62,7 @@ pub struct UpdateImageSetMetadataInputBuilder {
     pub(crate) datastore_id: ::std::option::Option<::std::string::String>,
     pub(crate) image_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) latest_version_id: ::std::option::Option<::std::string::String>,
+    pub(crate) force: ::std::option::Option<bool>,
     pub(crate) update_image_set_metadata_updates: ::std::option::Option<crate::types::MetadataUpdates>,
 }
 impl UpdateImageSetMetadataInputBuilder {
@@ -92,6 +111,38 @@ impl UpdateImageSetMetadataInputBuilder {
     pub fn get_latest_version_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.latest_version_id
     }
+    /// <p>Setting this flag will force the <code>UpdateImageSetMetadata</code> operation for the following attributes:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Tag.StudyInstanceUID</code>, <code>Tag.SeriesInstanceUID</code>, <code>Tag.SOPInstanceUID</code>, and <code>Tag.StudyID</code></p></li>
+    /// <li>
+    /// <p>Adding, removing, or updating private tags for an individual SOP Instance</p></li>
+    /// </ul>
+    pub fn force(mut self, input: bool) -> Self {
+        self.force = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Setting this flag will force the <code>UpdateImageSetMetadata</code> operation for the following attributes:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Tag.StudyInstanceUID</code>, <code>Tag.SeriesInstanceUID</code>, <code>Tag.SOPInstanceUID</code>, and <code>Tag.StudyID</code></p></li>
+    /// <li>
+    /// <p>Adding, removing, or updating private tags for an individual SOP Instance</p></li>
+    /// </ul>
+    pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.force = input;
+        self
+    }
+    /// <p>Setting this flag will force the <code>UpdateImageSetMetadata</code> operation for the following attributes:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Tag.StudyInstanceUID</code>, <code>Tag.SeriesInstanceUID</code>, <code>Tag.SOPInstanceUID</code>, and <code>Tag.StudyID</code></p></li>
+    /// <li>
+    /// <p>Adding, removing, or updating private tags for an individual SOP Instance</p></li>
+    /// </ul>
+    pub fn get_force(&self) -> &::std::option::Option<bool> {
+        &self.force
+    }
     /// <p>Update image set metadata updates.</p>
     /// This field is required.
     pub fn update_image_set_metadata_updates(mut self, input: crate::types::MetadataUpdates) -> Self {
@@ -118,6 +169,7 @@ impl UpdateImageSetMetadataInputBuilder {
             datastore_id: self.datastore_id,
             image_set_id: self.image_set_id,
             latest_version_id: self.latest_version_id,
+            force: self.force,
             update_image_set_metadata_updates: self.update_image_set_metadata_updates,
         })
     }

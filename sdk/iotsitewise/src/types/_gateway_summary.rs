@@ -6,7 +6,7 @@
 pub struct GatewaySummary {
     /// <p>The ID of the gateway device.</p>
     pub gateway_id: ::std::string::String,
-    /// <p>The name of the asset.</p>
+    /// <p>The name of the gateway.</p>
     pub gateway_name: ::std::string::String,
     /// <p>Contains a gateway's platform information.</p>
     pub gateway_platform: ::std::option::Option<crate::types::GatewayPlatform>,
@@ -23,7 +23,7 @@ impl GatewaySummary {
         use std::ops::Deref;
         self.gateway_id.deref()
     }
-    /// <p>The name of the asset.</p>
+    /// <p>The name of the gateway.</p>
     pub fn gateway_name(&self) -> &str {
         use std::ops::Deref;
         self.gateway_name.deref()
@@ -81,18 +81,18 @@ impl GatewaySummaryBuilder {
     pub fn get_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.gateway_id
     }
-    /// <p>The name of the asset.</p>
+    /// <p>The name of the gateway.</p>
     /// This field is required.
     pub fn gateway_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the asset.</p>
+    /// <p>The name of the gateway.</p>
     pub fn set_gateway_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_name = input;
         self
     }
-    /// <p>The name of the asset.</p>
+    /// <p>The name of the gateway.</p>
     pub fn get_gateway_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.gateway_name
     }

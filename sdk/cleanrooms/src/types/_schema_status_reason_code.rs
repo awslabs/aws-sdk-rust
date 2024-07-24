@@ -12,11 +12,17 @@
 /// ```text
 /// # let schemastatusreasoncode = unimplemented!();
 /// match schemastatusreasoncode {
+///     SchemaStatusReasonCode::AdditionalAnalysesNotAllowed => { /* ... */ },
+///     SchemaStatusReasonCode::AdditionalAnalysesNotConfigured => { /* ... */ },
 ///     SchemaStatusReasonCode::AnalysisProvidersNotConfigured => { /* ... */ },
 ///     SchemaStatusReasonCode::AnalysisRuleMissing => { /* ... */ },
+///     SchemaStatusReasonCode::AnalysisRuleTypesNotCompatible => { /* ... */ },
 ///     SchemaStatusReasonCode::AnalysisTemplatesNotConfigured => { /* ... */ },
+///     SchemaStatusReasonCode::CollaborationAnalysisRuleNotConfigured => { /* ... */ },
 ///     SchemaStatusReasonCode::DifferentialPrivacyPolicyNotConfigured => { /* ... */ },
 ///     SchemaStatusReasonCode::IdMappingTableNotPopulated => { /* ... */ },
+///     SchemaStatusReasonCode::ResultReceiversNotAllowed => { /* ... */ },
+///     SchemaStatusReasonCode::ResultReceiversNotConfigured => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -45,15 +51,27 @@
 )]
 pub enum SchemaStatusReasonCode {
     #[allow(missing_docs)] // documentation missing in model
+    AdditionalAnalysesNotAllowed,
+    #[allow(missing_docs)] // documentation missing in model
+    AdditionalAnalysesNotConfigured,
+    #[allow(missing_docs)] // documentation missing in model
     AnalysisProvidersNotConfigured,
     #[allow(missing_docs)] // documentation missing in model
     AnalysisRuleMissing,
     #[allow(missing_docs)] // documentation missing in model
+    AnalysisRuleTypesNotCompatible,
+    #[allow(missing_docs)] // documentation missing in model
     AnalysisTemplatesNotConfigured,
+    #[allow(missing_docs)] // documentation missing in model
+    CollaborationAnalysisRuleNotConfigured,
     #[allow(missing_docs)] // documentation missing in model
     DifferentialPrivacyPolicyNotConfigured,
     #[allow(missing_docs)] // documentation missing in model
     IdMappingTableNotPopulated,
+    #[allow(missing_docs)] // documentation missing in model
+    ResultReceiversNotAllowed,
+    #[allow(missing_docs)] // documentation missing in model
+    ResultReceiversNotConfigured,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -61,11 +79,17 @@ pub enum SchemaStatusReasonCode {
 impl ::std::convert::From<&str> for SchemaStatusReasonCode {
     fn from(s: &str) -> Self {
         match s {
+            "ADDITIONAL_ANALYSES_NOT_ALLOWED" => SchemaStatusReasonCode::AdditionalAnalysesNotAllowed,
+            "ADDITIONAL_ANALYSES_NOT_CONFIGURED" => SchemaStatusReasonCode::AdditionalAnalysesNotConfigured,
             "ANALYSIS_PROVIDERS_NOT_CONFIGURED" => SchemaStatusReasonCode::AnalysisProvidersNotConfigured,
             "ANALYSIS_RULE_MISSING" => SchemaStatusReasonCode::AnalysisRuleMissing,
+            "ANALYSIS_RULE_TYPES_NOT_COMPATIBLE" => SchemaStatusReasonCode::AnalysisRuleTypesNotCompatible,
             "ANALYSIS_TEMPLATES_NOT_CONFIGURED" => SchemaStatusReasonCode::AnalysisTemplatesNotConfigured,
+            "COLLABORATION_ANALYSIS_RULE_NOT_CONFIGURED" => SchemaStatusReasonCode::CollaborationAnalysisRuleNotConfigured,
             "DIFFERENTIAL_PRIVACY_POLICY_NOT_CONFIGURED" => SchemaStatusReasonCode::DifferentialPrivacyPolicyNotConfigured,
             "ID_MAPPING_TABLE_NOT_POPULATED" => SchemaStatusReasonCode::IdMappingTableNotPopulated,
+            "RESULT_RECEIVERS_NOT_ALLOWED" => SchemaStatusReasonCode::ResultReceiversNotAllowed,
+            "RESULT_RECEIVERS_NOT_CONFIGURED" => SchemaStatusReasonCode::ResultReceiversNotConfigured,
             other => SchemaStatusReasonCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -81,22 +105,34 @@ impl SchemaStatusReasonCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            SchemaStatusReasonCode::AdditionalAnalysesNotAllowed => "ADDITIONAL_ANALYSES_NOT_ALLOWED",
+            SchemaStatusReasonCode::AdditionalAnalysesNotConfigured => "ADDITIONAL_ANALYSES_NOT_CONFIGURED",
             SchemaStatusReasonCode::AnalysisProvidersNotConfigured => "ANALYSIS_PROVIDERS_NOT_CONFIGURED",
             SchemaStatusReasonCode::AnalysisRuleMissing => "ANALYSIS_RULE_MISSING",
+            SchemaStatusReasonCode::AnalysisRuleTypesNotCompatible => "ANALYSIS_RULE_TYPES_NOT_COMPATIBLE",
             SchemaStatusReasonCode::AnalysisTemplatesNotConfigured => "ANALYSIS_TEMPLATES_NOT_CONFIGURED",
+            SchemaStatusReasonCode::CollaborationAnalysisRuleNotConfigured => "COLLABORATION_ANALYSIS_RULE_NOT_CONFIGURED",
             SchemaStatusReasonCode::DifferentialPrivacyPolicyNotConfigured => "DIFFERENTIAL_PRIVACY_POLICY_NOT_CONFIGURED",
             SchemaStatusReasonCode::IdMappingTableNotPopulated => "ID_MAPPING_TABLE_NOT_POPULATED",
+            SchemaStatusReasonCode::ResultReceiversNotAllowed => "RESULT_RECEIVERS_NOT_ALLOWED",
+            SchemaStatusReasonCode::ResultReceiversNotConfigured => "RESULT_RECEIVERS_NOT_CONFIGURED",
             SchemaStatusReasonCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "ADDITIONAL_ANALYSES_NOT_ALLOWED",
+            "ADDITIONAL_ANALYSES_NOT_CONFIGURED",
             "ANALYSIS_PROVIDERS_NOT_CONFIGURED",
             "ANALYSIS_RULE_MISSING",
+            "ANALYSIS_RULE_TYPES_NOT_COMPATIBLE",
             "ANALYSIS_TEMPLATES_NOT_CONFIGURED",
+            "COLLABORATION_ANALYSIS_RULE_NOT_CONFIGURED",
             "DIFFERENTIAL_PRIVACY_POLICY_NOT_CONFIGURED",
             "ID_MAPPING_TABLE_NOT_POPULATED",
+            "RESULT_RECEIVERS_NOT_ALLOWED",
+            "RESULT_RECEIVERS_NOT_CONFIGURED",
         ]
     }
 }
@@ -120,11 +156,17 @@ impl SchemaStatusReasonCode {
 impl ::std::fmt::Display for SchemaStatusReasonCode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            SchemaStatusReasonCode::AdditionalAnalysesNotAllowed => write!(f, "ADDITIONAL_ANALYSES_NOT_ALLOWED"),
+            SchemaStatusReasonCode::AdditionalAnalysesNotConfigured => write!(f, "ADDITIONAL_ANALYSES_NOT_CONFIGURED"),
             SchemaStatusReasonCode::AnalysisProvidersNotConfigured => write!(f, "ANALYSIS_PROVIDERS_NOT_CONFIGURED"),
             SchemaStatusReasonCode::AnalysisRuleMissing => write!(f, "ANALYSIS_RULE_MISSING"),
+            SchemaStatusReasonCode::AnalysisRuleTypesNotCompatible => write!(f, "ANALYSIS_RULE_TYPES_NOT_COMPATIBLE"),
             SchemaStatusReasonCode::AnalysisTemplatesNotConfigured => write!(f, "ANALYSIS_TEMPLATES_NOT_CONFIGURED"),
+            SchemaStatusReasonCode::CollaborationAnalysisRuleNotConfigured => write!(f, "COLLABORATION_ANALYSIS_RULE_NOT_CONFIGURED"),
             SchemaStatusReasonCode::DifferentialPrivacyPolicyNotConfigured => write!(f, "DIFFERENTIAL_PRIVACY_POLICY_NOT_CONFIGURED"),
             SchemaStatusReasonCode::IdMappingTableNotPopulated => write!(f, "ID_MAPPING_TABLE_NOT_POPULATED"),
+            SchemaStatusReasonCode::ResultReceiversNotAllowed => write!(f, "RESULT_RECEIVERS_NOT_ALLOWED"),
+            SchemaStatusReasonCode::ResultReceiversNotConfigured => write!(f, "RESULT_RECEIVERS_NOT_CONFIGURED"),
             SchemaStatusReasonCode::Unknown(value) => write!(f, "{}", value),
         }
     }

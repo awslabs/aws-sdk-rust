@@ -6,12 +6,18 @@
 pub struct CopySourceImageSetInformation {
     /// <p>The latest version identifier for the source image set.</p>
     pub latest_version_id: ::std::string::String,
+    /// <p>Contains <code>MetadataCopies</code> structure and wraps information related to specific copy use cases. For example, when copying subsets.</p>
+    pub dicom_copies: ::std::option::Option<crate::types::MetadataCopies>,
 }
 impl CopySourceImageSetInformation {
     /// <p>The latest version identifier for the source image set.</p>
     pub fn latest_version_id(&self) -> &str {
         use std::ops::Deref;
         self.latest_version_id.deref()
+    }
+    /// <p>Contains <code>MetadataCopies</code> structure and wraps information related to specific copy use cases. For example, when copying subsets.</p>
+    pub fn dicom_copies(&self) -> ::std::option::Option<&crate::types::MetadataCopies> {
+        self.dicom_copies.as_ref()
     }
 }
 impl CopySourceImageSetInformation {
@@ -26,6 +32,7 @@ impl CopySourceImageSetInformation {
 #[non_exhaustive]
 pub struct CopySourceImageSetInformationBuilder {
     pub(crate) latest_version_id: ::std::option::Option<::std::string::String>,
+    pub(crate) dicom_copies: ::std::option::Option<crate::types::MetadataCopies>,
 }
 impl CopySourceImageSetInformationBuilder {
     /// <p>The latest version identifier for the source image set.</p>
@@ -43,6 +50,20 @@ impl CopySourceImageSetInformationBuilder {
     pub fn get_latest_version_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.latest_version_id
     }
+    /// <p>Contains <code>MetadataCopies</code> structure and wraps information related to specific copy use cases. For example, when copying subsets.</p>
+    pub fn dicom_copies(mut self, input: crate::types::MetadataCopies) -> Self {
+        self.dicom_copies = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains <code>MetadataCopies</code> structure and wraps information related to specific copy use cases. For example, when copying subsets.</p>
+    pub fn set_dicom_copies(mut self, input: ::std::option::Option<crate::types::MetadataCopies>) -> Self {
+        self.dicom_copies = input;
+        self
+    }
+    /// <p>Contains <code>MetadataCopies</code> structure and wraps information related to specific copy use cases. For example, when copying subsets.</p>
+    pub fn get_dicom_copies(&self) -> &::std::option::Option<crate::types::MetadataCopies> {
+        &self.dicom_copies
+    }
     /// Consumes the builder and constructs a [`CopySourceImageSetInformation`](crate::types::CopySourceImageSetInformation).
     /// This method will fail if any of the following fields are not set:
     /// - [`latest_version_id`](crate::types::builders::CopySourceImageSetInformationBuilder::latest_version_id)
@@ -54,6 +75,7 @@ impl CopySourceImageSetInformationBuilder {
                     "latest_version_id was not specified but it is required when building CopySourceImageSetInformation",
                 )
             })?,
+            dicom_copies: self.dicom_copies,
         })
     }
 }

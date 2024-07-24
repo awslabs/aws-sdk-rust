@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCollaborationOutput {
-    /// <p>The entire created collaboration object.</p>
+    /// <p>The collaboration.</p>
     pub collaboration: ::std::option::Option<crate::types::Collaboration>,
     _request_id: Option<String>,
 }
 impl CreateCollaborationOutput {
-    /// <p>The entire created collaboration object.</p>
+    /// <p>The collaboration.</p>
     pub fn collaboration(&self) -> ::std::option::Option<&crate::types::Collaboration> {
         self.collaboration.as_ref()
     }
@@ -33,18 +33,18 @@ pub struct CreateCollaborationOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateCollaborationOutputBuilder {
-    /// <p>The entire created collaboration object.</p>
+    /// <p>The collaboration.</p>
     /// This field is required.
     pub fn collaboration(mut self, input: crate::types::Collaboration) -> Self {
         self.collaboration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The entire created collaboration object.</p>
+    /// <p>The collaboration.</p>
     pub fn set_collaboration(mut self, input: ::std::option::Option<crate::types::Collaboration>) -> Self {
         self.collaboration = input;
         self
     }
-    /// <p>The entire created collaboration object.</p>
+    /// <p>The collaboration.</p>
     pub fn get_collaboration(&self) -> &::std::option::Option<crate::types::Collaboration> {
         &self.collaboration
     }

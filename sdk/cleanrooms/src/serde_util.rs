@@ -139,6 +139,20 @@ pub(crate) fn create_configured_table_association_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_configured_table_association_analysis_rule_output_output_correct_errors(
+    mut builder: crate::operation::create_configured_table_association_analysis_rule::builders::CreateConfiguredTableAssociationAnalysisRuleOutputBuilder,
+) -> crate::operation::create_configured_table_association_analysis_rule::builders::CreateConfiguredTableAssociationAnalysisRuleOutputBuilder {
+    if builder.analysis_rule.is_none() {
+        builder.analysis_rule = {
+            let builder = crate::types::builders::ConfiguredTableAssociationAnalysisRuleBuilder::default();
+            crate::serde_util::configured_table_association_analysis_rule_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn create_id_mapping_table_output_output_correct_errors(
     mut builder: crate::operation::create_id_mapping_table::builders::CreateIdMappingTableOutputBuilder,
 ) -> crate::operation::create_id_mapping_table::builders::CreateIdMappingTableOutputBuilder {
@@ -308,6 +322,20 @@ pub(crate) fn get_configured_table_association_output_output_correct_errors(
         builder.configured_table_association = {
             let builder = crate::types::builders::ConfiguredTableAssociationBuilder::default();
             crate::serde_util::configured_table_association_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn get_configured_table_association_analysis_rule_output_output_correct_errors(
+    mut builder: crate::operation::get_configured_table_association_analysis_rule::builders::GetConfiguredTableAssociationAnalysisRuleOutputBuilder,
+) -> crate::operation::get_configured_table_association_analysis_rule::builders::GetConfiguredTableAssociationAnalysisRuleOutputBuilder {
+    if builder.analysis_rule.is_none() {
+        builder.analysis_rule = {
+            let builder = crate::types::builders::ConfiguredTableAssociationAnalysisRuleBuilder::default();
+            crate::serde_util::configured_table_association_analysis_rule_correct_errors(builder)
+                .build()
+                .ok()
         }
     }
     builder
@@ -670,6 +698,20 @@ pub(crate) fn update_configured_table_association_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn update_configured_table_association_analysis_rule_output_output_correct_errors(
+    mut builder: crate::operation::update_configured_table_association_analysis_rule::builders::UpdateConfiguredTableAssociationAnalysisRuleOutputBuilder,
+) -> crate::operation::update_configured_table_association_analysis_rule::builders::UpdateConfiguredTableAssociationAnalysisRuleOutputBuilder {
+    if builder.analysis_rule.is_none() {
+        builder.analysis_rule = {
+            let builder = crate::types::builders::ConfiguredTableAssociationAnalysisRuleBuilder::default();
+            crate::serde_util::configured_table_association_analysis_rule_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn update_id_mapping_table_output_output_correct_errors(
     mut builder: crate::operation::update_id_mapping_table::builders::UpdateIdMappingTableOutputBuilder,
 ) -> crate::operation::update_id_mapping_table::builders::UpdateIdMappingTableOutputBuilder {
@@ -930,6 +972,35 @@ pub(crate) fn configured_table_association_correct_errors(
     }
     if builder.name.is_none() {
         builder.name = Some(Default::default())
+    }
+    if builder.create_time.is_none() {
+        builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.update_time.is_none() {
+        builder.update_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn configured_table_association_analysis_rule_correct_errors(
+    mut builder: crate::types::builders::ConfiguredTableAssociationAnalysisRuleBuilder,
+) -> crate::types::builders::ConfiguredTableAssociationAnalysisRuleBuilder {
+    if builder.membership_identifier.is_none() {
+        builder.membership_identifier = Some(Default::default())
+    }
+    if builder.configured_table_association_id.is_none() {
+        builder.configured_table_association_id = Some(Default::default())
+    }
+    if builder.configured_table_association_arn.is_none() {
+        builder.configured_table_association_arn = Some(Default::default())
+    }
+    if builder.policy.is_none() {
+        builder.policy = Some(crate::types::ConfiguredTableAssociationAnalysisRulePolicy::Unknown)
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set"
+            .parse::<crate::types::ConfiguredTableAssociationAnalysisRuleType>()
+            .ok()
     }
     if builder.create_time.is_none() {
         builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
@@ -2137,6 +2208,9 @@ pub(crate) fn protected_query_summary_correct_errors(
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::ProtectedQueryStatus>().ok()
     }
+    if builder.receiver_configurations.is_none() {
+        builder.receiver_configurations = Some(Default::default())
+    }
     builder
 }
 
@@ -2285,6 +2359,9 @@ pub(crate) fn schema_status_detail_correct_errors(
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::SchemaStatus>().ok()
     }
+    if builder.analysis_type.is_none() {
+        builder.analysis_type = "no value was set".parse::<crate::types::AnalysisType>().ok()
+    }
     builder
 }
 
@@ -2393,6 +2470,15 @@ pub(crate) fn id_mapping_table_input_source_correct_errors(
     builder
 }
 
+pub(crate) fn protected_query_member_output_configuration_correct_errors(
+    mut builder: crate::types::builders::ProtectedQueryMemberOutputConfigurationBuilder,
+) -> crate::types::builders::ProtectedQueryMemberOutputConfigurationBuilder {
+    if builder.account_id.is_none() {
+        builder.account_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn protected_query_s3_output_correct_errors(
     mut builder: crate::types::builders::ProtectedQueryS3OutputBuilder,
 ) -> crate::types::builders::ProtectedQueryS3OutputBuilder {
@@ -2419,6 +2505,15 @@ pub(crate) fn query_compute_payment_config_correct_errors(
 ) -> crate::types::builders::QueryComputePaymentConfigBuilder {
     if builder.is_responsible.is_none() {
         builder.is_responsible = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn receiver_configuration_correct_errors(
+    mut builder: crate::types::builders::ReceiverConfigurationBuilder,
+) -> crate::types::builders::ReceiverConfigurationBuilder {
+    if builder.analysis_type.is_none() {
+        builder.analysis_type = "no value was set".parse::<crate::types::AnalysisType>().ok()
     }
     builder
 }

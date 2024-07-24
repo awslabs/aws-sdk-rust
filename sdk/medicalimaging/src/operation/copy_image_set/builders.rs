@@ -150,4 +150,18 @@ impl CopyImageSetFluentBuilder {
     pub fn get_copy_image_set_information(&self) -> &::std::option::Option<crate::types::CopyImageSetInformation> {
         self.inner.get_copy_image_set_information()
     }
+    /// <p>Setting this flag will force the <code>CopyImageSet</code> operation, even if Patient, Study, or Series level metadata are mismatched across the <code>sourceImageSet</code> and <code>destinationImageSet</code>.</p>
+    pub fn force(mut self, input: bool) -> Self {
+        self.inner = self.inner.force(input);
+        self
+    }
+    /// <p>Setting this flag will force the <code>CopyImageSet</code> operation, even if Patient, Study, or Series level metadata are mismatched across the <code>sourceImageSet</code> and <code>destinationImageSet</code>.</p>
+    pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_force(input);
+        self
+    }
+    /// <p>Setting this flag will force the <code>CopyImageSet</code> operation, even if Patient, Study, or Series level metadata are mismatched across the <code>sourceImageSet</code> and <code>destinationImageSet</code>.</p>
+    pub fn get_force(&self) -> &::std::option::Option<bool> {
+        self.inner.get_force()
+    }
 }

@@ -5,7 +5,7 @@
 pub struct UpdateGatewayInput {
     /// <p>The ID of the gateway to update.</p>
     pub gateway_id: ::std::option::Option<::std::string::String>,
-    /// <p>A unique, friendly name for the gateway.</p>
+    /// <p>A unique name for the gateway.</p>
     pub gateway_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateGatewayInput {
@@ -13,7 +13,7 @@ impl UpdateGatewayInput {
     pub fn gateway_id(&self) -> ::std::option::Option<&str> {
         self.gateway_id.as_deref()
     }
-    /// <p>A unique, friendly name for the gateway.</p>
+    /// <p>A unique name for the gateway.</p>
     pub fn gateway_name(&self) -> ::std::option::Option<&str> {
         self.gateway_name.as_deref()
     }
@@ -48,18 +48,18 @@ impl UpdateGatewayInputBuilder {
     pub fn get_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.gateway_id
     }
-    /// <p>A unique, friendly name for the gateway.</p>
+    /// <p>A unique name for the gateway.</p>
     /// This field is required.
     pub fn gateway_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique, friendly name for the gateway.</p>
+    /// <p>A unique name for the gateway.</p>
     pub fn set_gateway_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_name = input;
         self
     }
-    /// <p>A unique, friendly name for the gateway.</p>
+    /// <p>A unique name for the gateway.</p>
     pub fn get_gateway_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.gateway_name
     }

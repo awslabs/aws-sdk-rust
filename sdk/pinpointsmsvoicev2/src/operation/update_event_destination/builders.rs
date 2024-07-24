@@ -22,8 +22,8 @@ impl crate::operation::update_event_destination::builders::UpdateEventDestinatio
 }
 /// Fluent builder constructing a request to `UpdateEventDestination`.
 ///
-/// <p>Updates an existing event destination in a configuration set. You can update the IAM role ARN for CloudWatch Logs and Kinesis Data Firehose. You can also enable or disable the event destination.</p>
-/// <p>You may want to update an event destination to change its matching event types or updating the destination resource ARN. You can't change an event destination's type between CloudWatch Logs, Kinesis Data Firehose, and Amazon SNS.</p>
+/// <p>Updates an existing event destination in a configuration set. You can update the IAM role ARN for CloudWatch Logs and Firehose. You can also enable or disable the event destination.</p>
+/// <p>You may want to update an event destination to change its matching event types or updating the destination resource ARN. You can't change an event destination's type between CloudWatch Logs, Firehose, and Amazon SNS.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateEventDestinationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -190,17 +190,17 @@ impl UpdateEventDestinationFluentBuilder {
     pub fn get_cloud_watch_logs_destination(&self) -> &::std::option::Option<crate::types::CloudWatchLogsDestination> {
         self.inner.get_cloud_watch_logs_destination()
     }
-    /// <p>An object that contains information about an event destination for logging to Kinesis Data Firehose.</p>
+    /// <p>An object that contains information about an event destination for logging to Firehose.</p>
     pub fn kinesis_firehose_destination(mut self, input: crate::types::KinesisFirehoseDestination) -> Self {
         self.inner = self.inner.kinesis_firehose_destination(input);
         self
     }
-    /// <p>An object that contains information about an event destination for logging to Kinesis Data Firehose.</p>
+    /// <p>An object that contains information about an event destination for logging to Firehose.</p>
     pub fn set_kinesis_firehose_destination(mut self, input: ::std::option::Option<crate::types::KinesisFirehoseDestination>) -> Self {
         self.inner = self.inner.set_kinesis_firehose_destination(input);
         self
     }
-    /// <p>An object that contains information about an event destination for logging to Kinesis Data Firehose.</p>
+    /// <p>An object that contains information about an event destination for logging to Firehose.</p>
     pub fn get_kinesis_firehose_destination(&self) -> &::std::option::Option<crate::types::KinesisFirehoseDestination> {
         self.inner.get_kinesis_firehose_destination()
     }

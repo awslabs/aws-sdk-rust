@@ -135,6 +135,8 @@ pub use crate::types::_gateway_capability_summary::GatewayCapabilitySummary;
 
 pub use crate::types::_gateway_platform::GatewayPlatform;
 
+pub use crate::types::_siemens_ie::SiemensIe;
+
 pub use crate::types::_greengrass_v2::GreengrassV2;
 
 pub use crate::types::_greengrass::Greengrass;
@@ -606,6 +608,8 @@ mod _retention_period;
 mod _row;
 
 mod _scalar_type;
+
+mod _siemens_ie;
 
 mod _storage_type;
 

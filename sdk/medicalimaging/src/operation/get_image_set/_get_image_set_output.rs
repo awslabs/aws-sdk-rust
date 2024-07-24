@@ -23,6 +23,8 @@ pub struct GetImageSetOutput {
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) assigned to the image set.</p>
     pub image_set_arn: ::std::option::Option<::std::string::String>,
+    /// <p>This object contains the details of any overrides used while creating a specific image set version. If an image set was copied or updated using the <code>force</code> flag, this object will contain the <code>forced</code> flag.</p>
+    pub overrides: ::std::option::Option<crate::types::Overrides>,
     _request_id: Option<String>,
 }
 impl GetImageSetOutput {
@@ -69,6 +71,10 @@ impl GetImageSetOutput {
     pub fn image_set_arn(&self) -> ::std::option::Option<&str> {
         self.image_set_arn.as_deref()
     }
+    /// <p>This object contains the details of any overrides used while creating a specific image set version. If an image set was copied or updated using the <code>force</code> flag, this object will contain the <code>forced</code> flag.</p>
+    pub fn overrides(&self) -> ::std::option::Option<&crate::types::Overrides> {
+        self.overrides.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetImageSetOutput {
     fn request_id(&self) -> Option<&str> {
@@ -96,6 +102,7 @@ pub struct GetImageSetOutputBuilder {
     pub(crate) deleted_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) image_set_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) overrides: ::std::option::Option<crate::types::Overrides>,
     _request_id: Option<String>,
 }
 impl GetImageSetOutputBuilder {
@@ -243,6 +250,20 @@ impl GetImageSetOutputBuilder {
     pub fn get_image_set_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_set_arn
     }
+    /// <p>This object contains the details of any overrides used while creating a specific image set version. If an image set was copied or updated using the <code>force</code> flag, this object will contain the <code>forced</code> flag.</p>
+    pub fn overrides(mut self, input: crate::types::Overrides) -> Self {
+        self.overrides = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>This object contains the details of any overrides used while creating a specific image set version. If an image set was copied or updated using the <code>force</code> flag, this object will contain the <code>forced</code> flag.</p>
+    pub fn set_overrides(mut self, input: ::std::option::Option<crate::types::Overrides>) -> Self {
+        self.overrides = input;
+        self
+    }
+    /// <p>This object contains the details of any overrides used while creating a specific image set version. If an image set was copied or updated using the <code>force</code> flag, this object will contain the <code>forced</code> flag.</p>
+    pub fn get_overrides(&self) -> &::std::option::Option<crate::types::Overrides> {
+        &self.overrides
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -292,6 +313,7 @@ impl GetImageSetOutputBuilder {
             deleted_at: self.deleted_at,
             message: self.message,
             image_set_arn: self.image_set_arn,
+            overrides: self.overrides,
             _request_id: self._request_id,
         })
     }

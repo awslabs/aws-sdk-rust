@@ -150,6 +150,38 @@ impl UpdateImageSetMetadataFluentBuilder {
     pub fn get_latest_version_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_latest_version_id()
     }
+    /// <p>Setting this flag will force the <code>UpdateImageSetMetadata</code> operation for the following attributes:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Tag.StudyInstanceUID</code>, <code>Tag.SeriesInstanceUID</code>, <code>Tag.SOPInstanceUID</code>, and <code>Tag.StudyID</code></p></li>
+    /// <li>
+    /// <p>Adding, removing, or updating private tags for an individual SOP Instance</p></li>
+    /// </ul>
+    pub fn force(mut self, input: bool) -> Self {
+        self.inner = self.inner.force(input);
+        self
+    }
+    /// <p>Setting this flag will force the <code>UpdateImageSetMetadata</code> operation for the following attributes:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Tag.StudyInstanceUID</code>, <code>Tag.SeriesInstanceUID</code>, <code>Tag.SOPInstanceUID</code>, and <code>Tag.StudyID</code></p></li>
+    /// <li>
+    /// <p>Adding, removing, or updating private tags for an individual SOP Instance</p></li>
+    /// </ul>
+    pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_force(input);
+        self
+    }
+    /// <p>Setting this flag will force the <code>UpdateImageSetMetadata</code> operation for the following attributes:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Tag.StudyInstanceUID</code>, <code>Tag.SeriesInstanceUID</code>, <code>Tag.SOPInstanceUID</code>, and <code>Tag.StudyID</code></p></li>
+    /// <li>
+    /// <p>Adding, removing, or updating private tags for an individual SOP Instance</p></li>
+    /// </ul>
+    pub fn get_force(&self) -> &::std::option::Option<bool> {
+        self.inner.get_force()
+    }
     /// <p>Update image set metadata updates.</p>
     pub fn update_image_set_metadata_updates(mut self, input: crate::types::MetadataUpdates) -> Self {
         self.inner = self.inner.update_image_set_metadata_updates(input);

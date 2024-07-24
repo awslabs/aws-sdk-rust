@@ -77,6 +77,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "analysisRuleTypes" => {
+                            builder = builder.set_analysis_rule_types(
+                                    crate::protocol_serde::shape_configured_table_association_analysis_rule_type_list::de_configured_table_association_analysis_rule_type_list(tokens)?
+                                );
+                        }
                         "createTime" => {
                             builder = builder.set_create_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),

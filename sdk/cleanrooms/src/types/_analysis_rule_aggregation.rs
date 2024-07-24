@@ -18,6 +18,9 @@ pub struct AnalysisRuleAggregation {
     pub scalar_functions: ::std::vec::Vec<crate::types::ScalarFunctions>,
     /// <p>Columns that must meet a specific threshold value (after an aggregation function is applied to it) for each output row to be returned.</p>
     pub output_constraints: ::std::vec::Vec<crate::types::AggregationConstraint>,
+    /// <p>An indicator as to whether additional analyses (such as Clean Rooms ML) can be applied to the output of the direct query.</p>
+    /// <p>The <code>additionalAnalyses</code> parameter is currently supported for the list analysis rule (<code>AnalysisRuleList</code>) and the custom analysis rule (<code>AnalysisRuleCustom</code>).</p>
+    pub additional_analyses: ::std::option::Option<crate::types::AdditionalAnalyses>,
 }
 impl AnalysisRuleAggregation {
     /// <p>The columns that query runners are allowed to use in aggregation queries.</p>
@@ -55,6 +58,11 @@ impl AnalysisRuleAggregation {
         use std::ops::Deref;
         self.output_constraints.deref()
     }
+    /// <p>An indicator as to whether additional analyses (such as Clean Rooms ML) can be applied to the output of the direct query.</p>
+    /// <p>The <code>additionalAnalyses</code> parameter is currently supported for the list analysis rule (<code>AnalysisRuleList</code>) and the custom analysis rule (<code>AnalysisRuleCustom</code>).</p>
+    pub fn additional_analyses(&self) -> ::std::option::Option<&crate::types::AdditionalAnalyses> {
+        self.additional_analyses.as_ref()
+    }
 }
 impl AnalysisRuleAggregation {
     /// Creates a new builder-style object to manufacture [`AnalysisRuleAggregation`](crate::types::AnalysisRuleAggregation).
@@ -74,6 +82,7 @@ pub struct AnalysisRuleAggregationBuilder {
     pub(crate) dimension_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) scalar_functions: ::std::option::Option<::std::vec::Vec<crate::types::ScalarFunctions>>,
     pub(crate) output_constraints: ::std::option::Option<::std::vec::Vec<crate::types::AggregationConstraint>>,
+    pub(crate) additional_analyses: ::std::option::Option<crate::types::AdditionalAnalyses>,
 }
 impl AnalysisRuleAggregationBuilder {
     /// Appends an item to `aggregate_columns`.
@@ -210,6 +219,23 @@ impl AnalysisRuleAggregationBuilder {
     pub fn get_output_constraints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregationConstraint>> {
         &self.output_constraints
     }
+    /// <p>An indicator as to whether additional analyses (such as Clean Rooms ML) can be applied to the output of the direct query.</p>
+    /// <p>The <code>additionalAnalyses</code> parameter is currently supported for the list analysis rule (<code>AnalysisRuleList</code>) and the custom analysis rule (<code>AnalysisRuleCustom</code>).</p>
+    pub fn additional_analyses(mut self, input: crate::types::AdditionalAnalyses) -> Self {
+        self.additional_analyses = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An indicator as to whether additional analyses (such as Clean Rooms ML) can be applied to the output of the direct query.</p>
+    /// <p>The <code>additionalAnalyses</code> parameter is currently supported for the list analysis rule (<code>AnalysisRuleList</code>) and the custom analysis rule (<code>AnalysisRuleCustom</code>).</p>
+    pub fn set_additional_analyses(mut self, input: ::std::option::Option<crate::types::AdditionalAnalyses>) -> Self {
+        self.additional_analyses = input;
+        self
+    }
+    /// <p>An indicator as to whether additional analyses (such as Clean Rooms ML) can be applied to the output of the direct query.</p>
+    /// <p>The <code>additionalAnalyses</code> parameter is currently supported for the list analysis rule (<code>AnalysisRuleList</code>) and the custom analysis rule (<code>AnalysisRuleCustom</code>).</p>
+    pub fn get_additional_analyses(&self) -> &::std::option::Option<crate::types::AdditionalAnalyses> {
+        &self.additional_analyses
+    }
     /// Consumes the builder and constructs a [`AnalysisRuleAggregation`](crate::types::AnalysisRuleAggregation).
     /// This method will fail if any of the following fields are not set:
     /// - [`aggregate_columns`](crate::types::builders::AnalysisRuleAggregationBuilder::aggregate_columns)
@@ -251,6 +277,7 @@ impl AnalysisRuleAggregationBuilder {
                     "output_constraints was not specified but it is required when building AnalysisRuleAggregation",
                 )
             })?,
+            additional_analyses: self.additional_analyses,
         })
     }
 }

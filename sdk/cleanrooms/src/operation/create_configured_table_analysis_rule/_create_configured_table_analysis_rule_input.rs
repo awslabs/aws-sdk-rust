@@ -7,7 +7,7 @@ pub struct CreateConfiguredTableAnalysisRuleInput {
     pub configured_table_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The type of analysis rule.</p>
     pub analysis_rule_type: ::std::option::Option<crate::types::ConfiguredTableAnalysisRuleType>,
-    /// <p>The entire created configured table analysis rule object.</p>
+    /// <p>The analysis rule policy that was created for the configured table.</p>
     pub analysis_rule_policy: ::std::option::Option<crate::types::ConfiguredTableAnalysisRulePolicy>,
 }
 impl CreateConfiguredTableAnalysisRuleInput {
@@ -19,7 +19,7 @@ impl CreateConfiguredTableAnalysisRuleInput {
     pub fn analysis_rule_type(&self) -> ::std::option::Option<&crate::types::ConfiguredTableAnalysisRuleType> {
         self.analysis_rule_type.as_ref()
     }
-    /// <p>The entire created configured table analysis rule object.</p>
+    /// <p>The analysis rule policy that was created for the configured table.</p>
     pub fn analysis_rule_policy(&self) -> ::std::option::Option<&crate::types::ConfiguredTableAnalysisRulePolicy> {
         self.analysis_rule_policy.as_ref()
     }
@@ -70,18 +70,18 @@ impl CreateConfiguredTableAnalysisRuleInputBuilder {
     pub fn get_analysis_rule_type(&self) -> &::std::option::Option<crate::types::ConfiguredTableAnalysisRuleType> {
         &self.analysis_rule_type
     }
-    /// <p>The entire created configured table analysis rule object.</p>
+    /// <p>The analysis rule policy that was created for the configured table.</p>
     /// This field is required.
     pub fn analysis_rule_policy(mut self, input: crate::types::ConfiguredTableAnalysisRulePolicy) -> Self {
         self.analysis_rule_policy = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The entire created configured table analysis rule object.</p>
+    /// <p>The analysis rule policy that was created for the configured table.</p>
     pub fn set_analysis_rule_policy(mut self, input: ::std::option::Option<crate::types::ConfiguredTableAnalysisRulePolicy>) -> Self {
         self.analysis_rule_policy = input;
         self
     }
-    /// <p>The entire created configured table analysis rule object.</p>
+    /// <p>The analysis rule policy that was created for the configured table.</p>
     pub fn get_analysis_rule_policy(&self) -> &::std::option::Option<crate::types::ConfiguredTableAnalysisRulePolicy> {
         &self.analysis_rule_policy
     }

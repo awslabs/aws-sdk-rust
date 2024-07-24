@@ -4,27 +4,21 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetModelCompositeModelSummary {
-    /// <p>The ID of the the composite model that this summary describes..</p>
+    /// <p>The ID of the composite model that this summary describes..</p>
     pub id: ::std::string::String,
     /// <p>The external ID of a composite model on this asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub external_id: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the the composite model that this summary describes..</p>
+    /// <p>The name of the composite model that this summary describes..</p>
     pub name: ::std::string::String,
-    /// <p>The type of asset model.</p>
-    /// <ul>
-    /// <li>
-    /// <p><b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p></li>
-    /// <li>
-    /// <p><b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model.</p></li>
-    /// </ul>
+    /// <p>The composite model type. Valid values are <code>AWS/ALARM</code>, <code>CUSTOM</code>, or <code> AWS/L4E_ANOMALY</code>.</p>
     pub r#type: ::std::string::String,
-    /// <p>The description of the the composite model that this summary describes..</p>
+    /// <p>The description of the composite model that this summary describes..</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The path that includes all the pieces that make up the composite model.</p>
     pub path: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelCompositeModelPathSegment>>,
 }
 impl AssetModelCompositeModelSummary {
-    /// <p>The ID of the the composite model that this summary describes..</p>
+    /// <p>The ID of the composite model that this summary describes..</p>
     pub fn id(&self) -> &str {
         use std::ops::Deref;
         self.id.deref()
@@ -33,23 +27,17 @@ impl AssetModelCompositeModelSummary {
     pub fn external_id(&self) -> ::std::option::Option<&str> {
         self.external_id.as_deref()
     }
-    /// <p>The name of the the composite model that this summary describes..</p>
+    /// <p>The name of the composite model that this summary describes..</p>
     pub fn name(&self) -> &str {
         use std::ops::Deref;
         self.name.deref()
     }
-    /// <p>The type of asset model.</p>
-    /// <ul>
-    /// <li>
-    /// <p><b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p></li>
-    /// <li>
-    /// <p><b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model.</p></li>
-    /// </ul>
+    /// <p>The composite model type. Valid values are <code>AWS/ALARM</code>, <code>CUSTOM</code>, or <code> AWS/L4E_ANOMALY</code>.</p>
     pub fn r#type(&self) -> &str {
         use std::ops::Deref;
         self.r#type.deref()
     }
-    /// <p>The description of the the composite model that this summary describes..</p>
+    /// <p>The description of the composite model that this summary describes..</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -79,18 +67,18 @@ pub struct AssetModelCompositeModelSummaryBuilder {
     pub(crate) path: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelCompositeModelPathSegment>>,
 }
 impl AssetModelCompositeModelSummaryBuilder {
-    /// <p>The ID of the the composite model that this summary describes..</p>
+    /// <p>The ID of the composite model that this summary describes..</p>
     /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the the composite model that this summary describes..</p>
+    /// <p>The ID of the composite model that this summary describes..</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p>The ID of the the composite model that this summary describes..</p>
+    /// <p>The ID of the composite model that this summary describes..</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
@@ -108,65 +96,47 @@ impl AssetModelCompositeModelSummaryBuilder {
     pub fn get_external_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.external_id
     }
-    /// <p>The name of the the composite model that this summary describes..</p>
+    /// <p>The name of the composite model that this summary describes..</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the the composite model that this summary describes..</p>
+    /// <p>The name of the composite model that this summary describes..</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the the composite model that this summary describes..</p>
+    /// <p>The name of the composite model that this summary describes..</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The type of asset model.</p>
-    /// <ul>
-    /// <li>
-    /// <p><b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p></li>
-    /// <li>
-    /// <p><b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model.</p></li>
-    /// </ul>
+    /// <p>The composite model type. Valid values are <code>AWS/ALARM</code>, <code>CUSTOM</code>, or <code> AWS/L4E_ANOMALY</code>.</p>
     /// This field is required.
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The type of asset model.</p>
-    /// <ul>
-    /// <li>
-    /// <p><b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p></li>
-    /// <li>
-    /// <p><b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model.</p></li>
-    /// </ul>
+    /// <p>The composite model type. Valid values are <code>AWS/ALARM</code>, <code>CUSTOM</code>, or <code> AWS/L4E_ANOMALY</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The type of asset model.</p>
-    /// <ul>
-    /// <li>
-    /// <p><b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p></li>
-    /// <li>
-    /// <p><b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model.</p></li>
-    /// </ul>
+    /// <p>The composite model type. Valid values are <code>AWS/ALARM</code>, <code>CUSTOM</code>, or <code> AWS/L4E_ANOMALY</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type
     }
-    /// <p>The description of the the composite model that this summary describes..</p>
+    /// <p>The description of the composite model that this summary describes..</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The description of the the composite model that this summary describes..</p>
+    /// <p>The description of the composite model that this summary describes..</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>The description of the the composite model that this summary describes..</p>
+    /// <p>The description of the composite model that this summary describes..</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }

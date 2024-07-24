@@ -185,17 +185,17 @@ impl CreateAssetModelCompositeModelFluentBuilder {
     pub fn get_asset_model_composite_model_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_asset_model_composite_model_description()
     }
-    /// <p>A unique, friendly name for the composite model.</p>
+    /// <p>A unique name for the composite model.</p>
     pub fn asset_model_composite_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.asset_model_composite_model_name(input.into());
         self
     }
-    /// <p>A unique, friendly name for the composite model.</p>
+    /// <p>A unique name for the composite model.</p>
     pub fn set_asset_model_composite_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_asset_model_composite_model_name(input);
         self
     }
-    /// <p>A unique, friendly name for the composite model.</p>
+    /// <p>A unique name for the composite model.</p>
     pub fn get_asset_model_composite_model_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_asset_model_composite_model_name()
     }
@@ -227,17 +227,17 @@ impl CreateAssetModelCompositeModelFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// <p>The ID of a composite model on this asset.</p>
+    /// <p>The ID of a component model which is reused to create this composite model.</p>
     pub fn composed_asset_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.composed_asset_model_id(input.into());
         self
     }
-    /// <p>The ID of a composite model on this asset.</p>
+    /// <p>The ID of a component model which is reused to create this composite model.</p>
     pub fn set_composed_asset_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_composed_asset_model_id(input);
         self
     }
-    /// <p>The ID of a composite model on this asset.</p>
+    /// <p>The ID of a component model which is reused to create this composite model.</p>
     pub fn get_composed_asset_model_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_composed_asset_model_id()
     }
@@ -246,15 +246,13 @@ impl CreateAssetModelCompositeModelFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_asset_model_composite_model_properties`](Self::set_asset_model_composite_model_properties).
     ///
-    /// <p>The property definitions of the composite model. For more information, see
-    /// <link>.</p>
+    /// <p>The property definitions of the composite model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/custom-composite-models.html#inline-composite-models"> Inline custom composite models</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>You can specify up to 200 properties per composite model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn asset_model_composite_model_properties(mut self, input: crate::types::AssetModelPropertyDefinition) -> Self {
         self.inner = self.inner.asset_model_composite_model_properties(input);
         self
     }
-    /// <p>The property definitions of the composite model. For more information, see
-    /// <link>.</p>
+    /// <p>The property definitions of the composite model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/custom-composite-models.html#inline-composite-models"> Inline custom composite models</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>You can specify up to 200 properties per composite model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn set_asset_model_composite_model_properties(
         mut self,
@@ -263,8 +261,7 @@ impl CreateAssetModelCompositeModelFluentBuilder {
         self.inner = self.inner.set_asset_model_composite_model_properties(input);
         self
     }
-    /// <p>The property definitions of the composite model. For more information, see
-    /// <link>.</p>
+    /// <p>The property definitions of the composite model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/custom-composite-models.html#inline-composite-models"> Inline custom composite models</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>You can specify up to 200 properties per composite model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn get_asset_model_composite_model_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetModelPropertyDefinition>> {
         self.inner.get_asset_model_composite_model_properties()

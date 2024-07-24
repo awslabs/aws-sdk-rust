@@ -14,6 +14,8 @@ pub struct ProtectedQuerySummary {
     pub create_time: ::aws_smithy_types::DateTime,
     /// <p>The status of the protected query. Value values are `SUBMITTED`, `STARTED`, `CANCELLED`, `CANCELLING`, `FAILED`, `SUCCESS`, `TIMED_OUT`.</p>
     pub status: crate::types::ProtectedQueryStatus,
+    /// <p>The receiver configuration.</p>
+    pub receiver_configurations: ::std::vec::Vec<crate::types::ReceiverConfiguration>,
 }
 impl ProtectedQuerySummary {
     /// <p>The unique ID of the protected query.</p>
@@ -39,6 +41,11 @@ impl ProtectedQuerySummary {
     pub fn status(&self) -> &crate::types::ProtectedQueryStatus {
         &self.status
     }
+    /// <p>The receiver configuration.</p>
+    pub fn receiver_configurations(&self) -> &[crate::types::ReceiverConfiguration] {
+        use std::ops::Deref;
+        self.receiver_configurations.deref()
+    }
 }
 impl ProtectedQuerySummary {
     /// Creates a new builder-style object to manufacture [`ProtectedQuerySummary`](crate::types::ProtectedQuerySummary).
@@ -56,6 +63,7 @@ pub struct ProtectedQuerySummaryBuilder {
     pub(crate) membership_arn: ::std::option::Option<::std::string::String>,
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::ProtectedQueryStatus>,
+    pub(crate) receiver_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ReceiverConfiguration>>,
 }
 impl ProtectedQuerySummaryBuilder {
     /// <p>The unique ID of the protected query.</p>
@@ -133,6 +141,26 @@ impl ProtectedQuerySummaryBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ProtectedQueryStatus> {
         &self.status
     }
+    /// Appends an item to `receiver_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_receiver_configurations`](Self::set_receiver_configurations).
+    ///
+    /// <p>The receiver configuration.</p>
+    pub fn receiver_configurations(mut self, input: crate::types::ReceiverConfiguration) -> Self {
+        let mut v = self.receiver_configurations.unwrap_or_default();
+        v.push(input);
+        self.receiver_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The receiver configuration.</p>
+    pub fn set_receiver_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReceiverConfiguration>>) -> Self {
+        self.receiver_configurations = input;
+        self
+    }
+    /// <p>The receiver configuration.</p>
+    pub fn get_receiver_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReceiverConfiguration>> {
+        &self.receiver_configurations
+    }
     /// Consumes the builder and constructs a [`ProtectedQuerySummary`](crate::types::ProtectedQuerySummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::ProtectedQuerySummaryBuilder::id)
@@ -172,6 +200,7 @@ impl ProtectedQuerySummaryBuilder {
                     "status was not specified but it is required when building ProtectedQuerySummary",
                 )
             })?,
+            receiver_configurations: self.receiver_configurations.unwrap_or_default(),
         })
     }
 }

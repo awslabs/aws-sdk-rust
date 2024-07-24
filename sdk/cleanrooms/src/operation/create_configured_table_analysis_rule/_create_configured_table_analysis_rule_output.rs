@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateConfiguredTableAnalysisRuleOutput {
-    /// <p>The entire created analysis rule.</p>
+    /// <p>The analysis rule that was created for the configured table.</p>
     pub analysis_rule: ::std::option::Option<crate::types::ConfiguredTableAnalysisRule>,
     _request_id: Option<String>,
 }
 impl CreateConfiguredTableAnalysisRuleOutput {
-    /// <p>The entire created analysis rule.</p>
+    /// <p>The analysis rule that was created for the configured table.</p>
     pub fn analysis_rule(&self) -> ::std::option::Option<&crate::types::ConfiguredTableAnalysisRule> {
         self.analysis_rule.as_ref()
     }
@@ -33,18 +33,18 @@ pub struct CreateConfiguredTableAnalysisRuleOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateConfiguredTableAnalysisRuleOutputBuilder {
-    /// <p>The entire created analysis rule.</p>
+    /// <p>The analysis rule that was created for the configured table.</p>
     /// This field is required.
     pub fn analysis_rule(mut self, input: crate::types::ConfiguredTableAnalysisRule) -> Self {
         self.analysis_rule = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The entire created analysis rule.</p>
+    /// <p>The analysis rule that was created for the configured table.</p>
     pub fn set_analysis_rule(mut self, input: ::std::option::Option<crate::types::ConfiguredTableAnalysisRule>) -> Self {
         self.analysis_rule = input;
         self
     }
-    /// <p>The entire created analysis rule.</p>
+    /// <p>The analysis rule that was created for the configured table.</p>
     pub fn get_analysis_rule(&self) -> &::std::option::Option<crate::types::ConfiguredTableAnalysisRule> {
         &self.analysis_rule
     }

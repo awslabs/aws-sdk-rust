@@ -10,6 +10,9 @@ pub fn ser_metadata_updates(
             crate::protocol_serde::shape_dicom_updates::ser_dicom_updates(&mut object_1, inner)?;
             object_1.finish();
         }
+        crate::types::MetadataUpdates::RevertToVersionId(inner) => {
+            object.key("revertToVersionId").string(inner.as_str());
+        }
         crate::types::MetadataUpdates::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "MetadataUpdates",

@@ -30,6 +30,9 @@ pub fn ser_analysis_rule_list(
         }
         array_6.finish();
     }
+    if let Some(var_8) = &input.additional_analyses {
+        object.key("additionalAnalyses").string(var_8.as_str());
+    }
     Ok(())
 }
 
@@ -61,6 +64,13 @@ where
                             builder = builder.set_list_columns(crate::protocol_serde::shape_analysis_rule_column_list::de_analysis_rule_column_list(
                                 tokens,
                             )?);
+                        }
+                        "additionalAnalyses" => {
+                            builder = builder.set_additional_analyses(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::AdditionalAnalyses::from(u.as_ref())))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

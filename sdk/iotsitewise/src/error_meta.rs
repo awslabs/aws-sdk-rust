@@ -892,6 +892,7 @@ where
 impl From<crate::operation::delete_gateway::DeleteGatewayError> for Error {
     fn from(err: crate::operation::delete_gateway::DeleteGatewayError) -> Self {
         match err {
+            crate::operation::delete_gateway::DeleteGatewayError::ConflictingOperationException(inner) => Error::ConflictingOperationException(inner),
             crate::operation::delete_gateway::DeleteGatewayError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::delete_gateway::DeleteGatewayError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::delete_gateway::DeleteGatewayError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),

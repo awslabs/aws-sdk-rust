@@ -95,6 +95,8 @@ pub use crate::types::_gateway_capability_summary::GatewayCapabilitySummaryBuild
 
 pub use crate::types::_gateway_platform::GatewayPlatformBuilder;
 
+pub use crate::types::_siemens_ie::SiemensIeBuilder;
+
 pub use crate::types::_greengrass_v2::GreengrassV2Builder;
 
 pub use crate::types::_greengrass::GreengrassBuilder;

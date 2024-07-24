@@ -9,6 +9,8 @@ pub struct CopyImageSetInput {
     pub source_image_set_id: ::std::option::Option<::std::string::String>,
     /// <p>Copy image set information.</p>
     pub copy_image_set_information: ::std::option::Option<crate::types::CopyImageSetInformation>,
+    /// <p>Setting this flag will force the <code>CopyImageSet</code> operation, even if Patient, Study, or Series level metadata are mismatched across the <code>sourceImageSet</code> and <code>destinationImageSet</code>.</p>
+    pub force: ::std::option::Option<bool>,
 }
 impl CopyImageSetInput {
     /// <p>The data store identifier.</p>
@@ -22,6 +24,10 @@ impl CopyImageSetInput {
     /// <p>Copy image set information.</p>
     pub fn copy_image_set_information(&self) -> ::std::option::Option<&crate::types::CopyImageSetInformation> {
         self.copy_image_set_information.as_ref()
+    }
+    /// <p>Setting this flag will force the <code>CopyImageSet</code> operation, even if Patient, Study, or Series level metadata are mismatched across the <code>sourceImageSet</code> and <code>destinationImageSet</code>.</p>
+    pub fn force(&self) -> ::std::option::Option<bool> {
+        self.force
     }
 }
 impl CopyImageSetInput {
@@ -38,6 +44,7 @@ pub struct CopyImageSetInputBuilder {
     pub(crate) datastore_id: ::std::option::Option<::std::string::String>,
     pub(crate) source_image_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) copy_image_set_information: ::std::option::Option<crate::types::CopyImageSetInformation>,
+    pub(crate) force: ::std::option::Option<bool>,
 }
 impl CopyImageSetInputBuilder {
     /// <p>The data store identifier.</p>
@@ -85,6 +92,20 @@ impl CopyImageSetInputBuilder {
     pub fn get_copy_image_set_information(&self) -> &::std::option::Option<crate::types::CopyImageSetInformation> {
         &self.copy_image_set_information
     }
+    /// <p>Setting this flag will force the <code>CopyImageSet</code> operation, even if Patient, Study, or Series level metadata are mismatched across the <code>sourceImageSet</code> and <code>destinationImageSet</code>.</p>
+    pub fn force(mut self, input: bool) -> Self {
+        self.force = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Setting this flag will force the <code>CopyImageSet</code> operation, even if Patient, Study, or Series level metadata are mismatched across the <code>sourceImageSet</code> and <code>destinationImageSet</code>.</p>
+    pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.force = input;
+        self
+    }
+    /// <p>Setting this flag will force the <code>CopyImageSet</code> operation, even if Patient, Study, or Series level metadata are mismatched across the <code>sourceImageSet</code> and <code>destinationImageSet</code>.</p>
+    pub fn get_force(&self) -> &::std::option::Option<bool> {
+        &self.force
+    }
     /// Consumes the builder and constructs a [`CopyImageSetInput`](crate::operation::copy_image_set::CopyImageSetInput).
     pub fn build(
         self,
@@ -93,6 +114,7 @@ impl CopyImageSetInputBuilder {
             datastore_id: self.datastore_id,
             source_image_set_id: self.source_image_set_id,
             copy_image_set_information: self.copy_image_set_information,
+            force: self.force,
         })
     }
 }

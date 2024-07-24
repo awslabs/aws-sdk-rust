@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateGatewayInput {
-    /// <p>A unique, friendly name for the gateway.</p>
+    /// <p>A unique name for the gateway.</p>
     pub gateway_name: ::std::option::Option<::std::string::String>,
     /// <p>The gateway's platform. You can only specify one platform in a gateway.</p>
     pub gateway_platform: ::std::option::Option<crate::types::GatewayPlatform>,
@@ -11,7 +11,7 @@ pub struct CreateGatewayInput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateGatewayInput {
-    /// <p>A unique, friendly name for the gateway.</p>
+    /// <p>A unique name for the gateway.</p>
     pub fn gateway_name(&self) -> ::std::option::Option<&str> {
         self.gateway_name.as_deref()
     }
@@ -40,18 +40,18 @@ pub struct CreateGatewayInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateGatewayInputBuilder {
-    /// <p>A unique, friendly name for the gateway.</p>
+    /// <p>A unique name for the gateway.</p>
     /// This field is required.
     pub fn gateway_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique, friendly name for the gateway.</p>
+    /// <p>A unique name for the gateway.</p>
     pub fn set_gateway_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_name = input;
         self
     }
-    /// <p>A unique, friendly name for the gateway.</p>
+    /// <p>A unique name for the gateway.</p>
     pub fn get_gateway_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.gateway_name
     }

@@ -10,6 +10,8 @@ pub struct AnalysisRuleList {
     pub allowed_join_operators: ::std::option::Option<::std::vec::Vec<crate::types::JoinOperator>>,
     /// <p>Columns that can be listed in the output.</p>
     pub list_columns: ::std::vec::Vec<::std::string::String>,
+    /// <p>An indicator as to whether additional analyses (such as Clean Rooms ML) can be applied to the output of the direct query.</p>
+    pub additional_analyses: ::std::option::Option<crate::types::AdditionalAnalyses>,
 }
 impl AnalysisRuleList {
     /// <p>Columns that can be used to join a configured table with the table of the member who can query and other members' configured tables.</p>
@@ -28,6 +30,10 @@ impl AnalysisRuleList {
         use std::ops::Deref;
         self.list_columns.deref()
     }
+    /// <p>An indicator as to whether additional analyses (such as Clean Rooms ML) can be applied to the output of the direct query.</p>
+    pub fn additional_analyses(&self) -> ::std::option::Option<&crate::types::AdditionalAnalyses> {
+        self.additional_analyses.as_ref()
+    }
 }
 impl AnalysisRuleList {
     /// Creates a new builder-style object to manufacture [`AnalysisRuleList`](crate::types::AnalysisRuleList).
@@ -43,6 +49,7 @@ pub struct AnalysisRuleListBuilder {
     pub(crate) join_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) allowed_join_operators: ::std::option::Option<::std::vec::Vec<crate::types::JoinOperator>>,
     pub(crate) list_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) additional_analyses: ::std::option::Option<crate::types::AdditionalAnalyses>,
 }
 impl AnalysisRuleListBuilder {
     /// Appends an item to `join_columns`.
@@ -105,6 +112,20 @@ impl AnalysisRuleListBuilder {
     pub fn get_list_columns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.list_columns
     }
+    /// <p>An indicator as to whether additional analyses (such as Clean Rooms ML) can be applied to the output of the direct query.</p>
+    pub fn additional_analyses(mut self, input: crate::types::AdditionalAnalyses) -> Self {
+        self.additional_analyses = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An indicator as to whether additional analyses (such as Clean Rooms ML) can be applied to the output of the direct query.</p>
+    pub fn set_additional_analyses(mut self, input: ::std::option::Option<crate::types::AdditionalAnalyses>) -> Self {
+        self.additional_analyses = input;
+        self
+    }
+    /// <p>An indicator as to whether additional analyses (such as Clean Rooms ML) can be applied to the output of the direct query.</p>
+    pub fn get_additional_analyses(&self) -> &::std::option::Option<crate::types::AdditionalAnalyses> {
+        &self.additional_analyses
+    }
     /// Consumes the builder and constructs a [`AnalysisRuleList`](crate::types::AnalysisRuleList).
     /// This method will fail if any of the following fields are not set:
     /// - [`join_columns`](crate::types::builders::AnalysisRuleListBuilder::join_columns)
@@ -124,6 +145,7 @@ impl AnalysisRuleListBuilder {
                     "list_columns was not specified but it is required when building AnalysisRuleList",
                 )
             })?,
+            additional_analyses: self.additional_analyses,
         })
     }
 }

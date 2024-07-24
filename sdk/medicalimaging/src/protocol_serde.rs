@@ -129,6 +129,8 @@ pub(crate) mod shape_image_sets_metadata_summaries;
 
 pub(crate) mod shape_metadata_updates;
 
+pub(crate) mod shape_overrides;
+
 pub(crate) mod shape_search_criteria;
 
 pub(crate) mod shape_sort;
@@ -152,6 +154,8 @@ pub(crate) mod shape_image_sets_metadata_summary;
 pub(crate) mod shape_search_filter;
 
 pub(crate) mod shape_dicom_tags;
+
+pub(crate) mod shape_metadata_copies;
 
 pub(crate) mod shape_search_by_attribute_value;
 

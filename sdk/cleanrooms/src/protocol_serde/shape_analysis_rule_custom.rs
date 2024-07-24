@@ -21,11 +21,23 @@ pub fn ser_analysis_rule_custom(
         }
         array_4.finish();
     }
-    if let Some(var_6) = &input.differential_privacy {
+    if let Some(var_6) = &input.additional_analyses {
+        object.key("additionalAnalyses").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.disallowed_output_columns {
+        let mut array_8 = object.key("disallowedOutputColumns").start_array();
+        for item_9 in var_7 {
+            {
+                array_8.value().string(item_9.as_str());
+            }
+        }
+        array_8.finish();
+    }
+    if let Some(var_10) = &input.differential_privacy {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("differentialPrivacy").start_object();
-        crate::protocol_serde::shape_differential_privacy_configuration::ser_differential_privacy_configuration(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_11 = object.key("differentialPrivacy").start_object();
+        crate::protocol_serde::shape_differential_privacy_configuration::ser_differential_privacy_configuration(&mut object_11, var_10)?;
+        object_11.finish();
     }
     Ok(())
 }
@@ -52,6 +64,18 @@ where
                         "allowedAnalysisProviders" => {
                             builder = builder.set_allowed_analysis_providers(
                                 crate::protocol_serde::shape_allowed_analysis_provider_list::de_allowed_analysis_provider_list(tokens)?,
+                            );
+                        }
+                        "additionalAnalyses" => {
+                            builder = builder.set_additional_analyses(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::AdditionalAnalyses::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "disallowedOutputColumns" => {
+                            builder = builder.set_disallowed_output_columns(
+                                crate::protocol_serde::shape_analysis_rule_column_list::de_analysis_rule_column_list(tokens)?,
                             );
                         }
                         "differentialPrivacy" => {

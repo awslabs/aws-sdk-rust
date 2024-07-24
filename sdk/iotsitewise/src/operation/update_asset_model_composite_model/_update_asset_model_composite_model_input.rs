@@ -11,12 +11,11 @@ pub struct UpdateAssetModelCompositeModelInput {
     pub asset_model_composite_model_external_id: ::std::option::Option<::std::string::String>,
     /// <p>A description for the composite model.</p>
     pub asset_model_composite_model_description: ::std::option::Option<::std::string::String>,
-    /// <p>A unique, friendly name for the composite model.</p>
+    /// <p>A unique name for the composite model.</p>
     pub asset_model_composite_model_name: ::std::option::Option<::std::string::String>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>The property definitions of the composite model. For more information, see
-    /// <link>.</p>
+    /// <p>The property definitions of the composite model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/custom-composite-models.html#inline-composite-models"> Inline custom composite models</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>You can specify up to 200 properties per composite model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub asset_model_composite_model_properties: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelProperty>>,
 }
@@ -37,7 +36,7 @@ impl UpdateAssetModelCompositeModelInput {
     pub fn asset_model_composite_model_description(&self) -> ::std::option::Option<&str> {
         self.asset_model_composite_model_description.as_deref()
     }
-    /// <p>A unique, friendly name for the composite model.</p>
+    /// <p>A unique name for the composite model.</p>
     pub fn asset_model_composite_model_name(&self) -> ::std::option::Option<&str> {
         self.asset_model_composite_model_name.as_deref()
     }
@@ -45,8 +44,7 @@ impl UpdateAssetModelCompositeModelInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The property definitions of the composite model. For more information, see
-    /// <link>.</p>
+    /// <p>The property definitions of the composite model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/custom-composite-models.html#inline-composite-models"> Inline custom composite models</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>You can specify up to 200 properties per composite model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.asset_model_composite_model_properties.is_none()`.
@@ -132,18 +130,18 @@ impl UpdateAssetModelCompositeModelInputBuilder {
     pub fn get_asset_model_composite_model_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.asset_model_composite_model_description
     }
-    /// <p>A unique, friendly name for the composite model.</p>
+    /// <p>A unique name for the composite model.</p>
     /// This field is required.
     pub fn asset_model_composite_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_model_composite_model_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique, friendly name for the composite model.</p>
+    /// <p>A unique name for the composite model.</p>
     pub fn set_asset_model_composite_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.asset_model_composite_model_name = input;
         self
     }
-    /// <p>A unique, friendly name for the composite model.</p>
+    /// <p>A unique name for the composite model.</p>
     pub fn get_asset_model_composite_model_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.asset_model_composite_model_name
     }
@@ -165,8 +163,7 @@ impl UpdateAssetModelCompositeModelInputBuilder {
     ///
     /// To override the contents of this collection use [`set_asset_model_composite_model_properties`](Self::set_asset_model_composite_model_properties).
     ///
-    /// <p>The property definitions of the composite model. For more information, see
-    /// <link>.</p>
+    /// <p>The property definitions of the composite model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/custom-composite-models.html#inline-composite-models"> Inline custom composite models</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>You can specify up to 200 properties per composite model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn asset_model_composite_model_properties(mut self, input: crate::types::AssetModelProperty) -> Self {
         let mut v = self.asset_model_composite_model_properties.unwrap_or_default();
@@ -174,8 +171,7 @@ impl UpdateAssetModelCompositeModelInputBuilder {
         self.asset_model_composite_model_properties = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The property definitions of the composite model. For more information, see
-    /// <link>.</p>
+    /// <p>The property definitions of the composite model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/custom-composite-models.html#inline-composite-models"> Inline custom composite models</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>You can specify up to 200 properties per composite model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn set_asset_model_composite_model_properties(
         mut self,
@@ -184,8 +180,7 @@ impl UpdateAssetModelCompositeModelInputBuilder {
         self.asset_model_composite_model_properties = input;
         self
     }
-    /// <p>The property definitions of the composite model. For more information, see
-    /// <link>.</p>
+    /// <p>The property definitions of the composite model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/custom-composite-models.html#inline-composite-models"> Inline custom composite models</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>You can specify up to 200 properties per composite model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn get_asset_model_composite_model_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetModelProperty>> {
         &self.asset_model_composite_model_properties

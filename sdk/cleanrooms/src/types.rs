@@ -53,6 +53,8 @@ pub use crate::types::_protected_query_result_configuration::ProtectedQueryResul
 
 pub use crate::types::_protected_query_output_configuration::ProtectedQueryOutputConfiguration;
 
+pub use crate::types::_protected_query_member_output_configuration::ProtectedQueryMemberOutputConfiguration;
+
 pub use crate::types::_protected_query_s3_output_configuration::ProtectedQueryS3OutputConfiguration;
 
 pub use crate::types::_result_format::ResultFormat;
@@ -76,6 +78,14 @@ pub use crate::types::_preview_privacy_impact_parameters_input::PreviewPrivacyIm
 pub use crate::types::_differential_privacy_preview_parameters_input::DifferentialPrivacyPreviewParametersInput;
 
 pub use crate::types::_protected_query_summary::ProtectedQuerySummary;
+
+pub use crate::types::_receiver_configuration::ReceiverConfiguration;
+
+pub use crate::types::_configuration_details::ConfigurationDetails;
+
+pub use crate::types::_direct_analysis_configuration_details::DirectAnalysisConfigurationDetails;
+
+pub use crate::types::_analysis_type::AnalysisType;
 
 pub use crate::types::_privacy_budget_summary::PrivacyBudgetSummary;
 
@@ -141,6 +151,8 @@ pub use crate::types::_differential_privacy_configuration::DifferentialPrivacyCo
 
 pub use crate::types::_differential_privacy_column::DifferentialPrivacyColumn;
 
+pub use crate::types::_additional_analyses::AdditionalAnalyses;
+
 pub use crate::types::_analysis_rule_aggregation::AnalysisRuleAggregation;
 
 pub use crate::types::_aggregation_constraint::AggregationConstraint;
@@ -168,6 +180,20 @@ pub use crate::types::_table_reference::TableReference;
 pub use crate::types::_glue_table_reference::GlueTableReference;
 
 pub use crate::types::_configured_table_summary::ConfiguredTableSummary;
+
+pub use crate::types::_configured_table_association_analysis_rule::ConfiguredTableAssociationAnalysisRule;
+
+pub use crate::types::_configured_table_association_analysis_rule_type::ConfiguredTableAssociationAnalysisRuleType;
+
+pub use crate::types::_configured_table_association_analysis_rule_policy::ConfiguredTableAssociationAnalysisRulePolicy;
+
+pub use crate::types::_configured_table_association_analysis_rule_policy_v1::ConfiguredTableAssociationAnalysisRulePolicyV1;
+
+pub use crate::types::_configured_table_association_analysis_rule_custom::ConfiguredTableAssociationAnalysisRuleCustom;
+
+pub use crate::types::_configured_table_association_analysis_rule_aggregation::ConfiguredTableAssociationAnalysisRuleAggregation;
+
+pub use crate::types::_configured_table_association_analysis_rule_list::ConfiguredTableAssociationAnalysisRuleList;
 
 pub use crate::types::_configured_table_association::ConfiguredTableAssociation;
 
@@ -283,6 +309,8 @@ pub use crate::types::_analysis_template_summary::AnalysisTemplateSummary;
 
 mod _access_denied_exception_reason;
 
+mod _additional_analyses;
+
 mod _aggregate_column;
 
 mod _aggregate_function_name;
@@ -329,6 +357,8 @@ mod _analysis_template_validation_status_reason;
 
 mod _analysis_template_validation_type;
 
+mod _analysis_type;
+
 mod _batch_get_collaboration_analysis_template_error;
 
 mod _batch_get_schema_analysis_rule_error;
@@ -361,6 +391,8 @@ mod _collaboration_summary;
 
 mod _column;
 
+mod _configuration_details;
+
 mod _configured_audience_model_association;
 
 mod _configured_audience_model_association_summary;
@@ -376,6 +408,20 @@ mod _configured_table_analysis_rule_policy_v1;
 mod _configured_table_analysis_rule_type;
 
 mod _configured_table_association;
+
+mod _configured_table_association_analysis_rule;
+
+mod _configured_table_association_analysis_rule_aggregation;
+
+mod _configured_table_association_analysis_rule_custom;
+
+mod _configured_table_association_analysis_rule_list;
+
+mod _configured_table_association_analysis_rule_policy;
+
+mod _configured_table_association_analysis_rule_policy_v1;
+
+mod _configured_table_association_analysis_rule_type;
 
 mod _configured_table_association_summary;
 
@@ -410,6 +456,8 @@ mod _differential_privacy_template_parameters_input;
 mod _differential_privacy_template_parameters_output;
 
 mod _differential_privacy_template_update_parameters;
+
+mod _direct_analysis_configuration_details;
 
 mod _filterable_member_status;
 
@@ -499,6 +547,8 @@ mod _protected_query;
 
 mod _protected_query_error;
 
+mod _protected_query_member_output_configuration;
+
 mod _protected_query_output;
 
 mod _protected_query_output_configuration;
@@ -528,6 +578,8 @@ mod _query_compute_payment_config;
 mod _query_constraint;
 
 mod _query_constraint_require_overlap;
+
+mod _receiver_configuration;
 
 mod _resource_type;
 

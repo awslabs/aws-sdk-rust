@@ -29,6 +29,8 @@ pub use crate::types::_protected_query_statistics::ProtectedQueryStatisticsBuild
 
 pub use crate::types::_protected_query_result_configuration::ProtectedQueryResultConfigurationBuilder;
 
+pub use crate::types::_protected_query_member_output_configuration::ProtectedQueryMemberOutputConfigurationBuilder;
+
 pub use crate::types::_protected_query_s3_output_configuration::ProtectedQueryS3OutputConfigurationBuilder;
 
 pub use crate::types::_protected_query_sql_parameters::ProtectedQuerySqlParametersBuilder;
@@ -40,6 +42,10 @@ pub use crate::types::_differential_privacy_preview_aggregation::DifferentialPri
 pub use crate::types::_differential_privacy_preview_parameters_input::DifferentialPrivacyPreviewParametersInputBuilder;
 
 pub use crate::types::_protected_query_summary::ProtectedQuerySummaryBuilder;
+
+pub use crate::types::_receiver_configuration::ReceiverConfigurationBuilder;
+
+pub use crate::types::_direct_analysis_configuration_details::DirectAnalysisConfigurationDetailsBuilder;
 
 pub use crate::types::_privacy_budget_summary::PrivacyBudgetSummaryBuilder;
 
@@ -100,6 +106,14 @@ pub use crate::types::_configured_table::ConfiguredTableBuilder;
 pub use crate::types::_glue_table_reference::GlueTableReferenceBuilder;
 
 pub use crate::types::_configured_table_summary::ConfiguredTableSummaryBuilder;
+
+pub use crate::types::_configured_table_association_analysis_rule::ConfiguredTableAssociationAnalysisRuleBuilder;
+
+pub use crate::types::_configured_table_association_analysis_rule_custom::ConfiguredTableAssociationAnalysisRuleCustomBuilder;
+
+pub use crate::types::_configured_table_association_analysis_rule_aggregation::ConfiguredTableAssociationAnalysisRuleAggregationBuilder;
+
+pub use crate::types::_configured_table_association_analysis_rule_list::ConfiguredTableAssociationAnalysisRuleListBuilder;
 
 pub use crate::types::_configured_table_association::ConfiguredTableAssociationBuilder;
 

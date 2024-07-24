@@ -38,6 +38,13 @@ where
                                 crate::protocol_serde::shape_schema_configuration_list::de_schema_configuration_list(tokens)?,
                             );
                         }
+                        "analysisType" => {
+                            builder = builder.set_analysis_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::AnalysisType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -254,6 +254,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteGateway
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DeleteGatewayError {
+    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more than one operation on the same resource at the same time.</p>
+    ConflictingOperationException(crate::types::error::ConflictingOperationException),
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::types::error::InternalFailureException),
     /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
@@ -296,12 +298,17 @@ impl DeleteGatewayError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ConflictingOperationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalFailureException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidRequestException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `DeleteGatewayError::ConflictingOperationException`.
+    pub fn is_conflicting_operation_exception(&self) -> bool {
+        matches!(self, Self::ConflictingOperationException(_))
     }
     /// Returns `true` if the error kind is `DeleteGatewayError::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
@@ -323,6 +330,7 @@ impl DeleteGatewayError {
 impl ::std::error::Error for DeleteGatewayError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::ConflictingOperationException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalFailureException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidRequestException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
@@ -334,6 +342,7 @@ impl ::std::error::Error for DeleteGatewayError {
 impl ::std::fmt::Display for DeleteGatewayError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::ConflictingOperationException(_inner) => _inner.fmt(f),
             Self::InternalFailureException(_inner) => _inner.fmt(f),
             Self::InvalidRequestException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
@@ -359,6 +368,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for DeleteGatewayError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DeleteGatewayError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ConflictingOperationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalFailureException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidRequestException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

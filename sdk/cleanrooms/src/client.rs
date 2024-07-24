@@ -154,6 +154,8 @@ mod create_configured_table_analysis_rule;
 
 mod create_configured_table_association;
 
+mod create_configured_table_association_analysis_rule;
+
 mod create_id_mapping_table;
 
 mod create_id_namespace_association;
@@ -201,6 +203,8 @@ mod delete_configured_table_analysis_rule;
 
 mod delete_configured_table_association;
 
+mod delete_configured_table_association_analysis_rule;
+
 mod delete_id_mapping_table;
 
 mod delete_id_namespace_association;
@@ -230,6 +234,8 @@ mod get_configured_table;
 mod get_configured_table_analysis_rule;
 
 mod get_configured_table_association;
+
+mod get_configured_table_association_analysis_rule;
 
 mod get_id_mapping_table;
 
@@ -304,6 +310,8 @@ mod update_configured_table;
 mod update_configured_table_analysis_rule;
 
 mod update_configured_table_association;
+
+mod update_configured_table_association_analysis_rule;
 
 mod update_id_mapping_table;
 
