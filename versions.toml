@@ -2476,6 +2476,10 @@ source_hash = '1d4ed02612a642bc8b5aa41e106c6614f4eb2dc9834dedffef91fb4cff7bcb8a'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '61439a7640fb5dfb476544cc23a37cc6781b09e3cfd6bc92f36063d572f6eb8e'
+
+[release]
+tag = 'release-2024-07-24'
+
 [release.crates]
 aws-sdk-cleanrooms = '1.41.0'
 aws-sdk-dynamodb = '1.39.1'
