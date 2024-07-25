@@ -10,6 +10,8 @@ pub struct MutualAuthenticationAttributes {
     pub trust_store_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether expired client certificates are ignored.</p>
     pub ignore_client_certificate_expiry: ::std::option::Option<bool>,
+    /// <p>Indicates a shared trust stores association status.</p>
+    pub trust_store_association_status: ::std::option::Option<crate::types::TrustStoreAssociationStatusEnum>,
 }
 impl MutualAuthenticationAttributes {
     /// <p>The client certificate handling method. Options are <code>off</code>, <code>passthrough</code> or <code>verify</code>. The default value is <code>off</code>.</p>
@@ -23,6 +25,10 @@ impl MutualAuthenticationAttributes {
     /// <p>Indicates whether expired client certificates are ignored.</p>
     pub fn ignore_client_certificate_expiry(&self) -> ::std::option::Option<bool> {
         self.ignore_client_certificate_expiry
+    }
+    /// <p>Indicates a shared trust stores association status.</p>
+    pub fn trust_store_association_status(&self) -> ::std::option::Option<&crate::types::TrustStoreAssociationStatusEnum> {
+        self.trust_store_association_status.as_ref()
     }
 }
 impl MutualAuthenticationAttributes {
@@ -39,6 +45,7 @@ pub struct MutualAuthenticationAttributesBuilder {
     pub(crate) mode: ::std::option::Option<::std::string::String>,
     pub(crate) trust_store_arn: ::std::option::Option<::std::string::String>,
     pub(crate) ignore_client_certificate_expiry: ::std::option::Option<bool>,
+    pub(crate) trust_store_association_status: ::std::option::Option<crate::types::TrustStoreAssociationStatusEnum>,
 }
 impl MutualAuthenticationAttributesBuilder {
     /// <p>The client certificate handling method. Options are <code>off</code>, <code>passthrough</code> or <code>verify</code>. The default value is <code>off</code>.</p>
@@ -83,12 +90,27 @@ impl MutualAuthenticationAttributesBuilder {
     pub fn get_ignore_client_certificate_expiry(&self) -> &::std::option::Option<bool> {
         &self.ignore_client_certificate_expiry
     }
+    /// <p>Indicates a shared trust stores association status.</p>
+    pub fn trust_store_association_status(mut self, input: crate::types::TrustStoreAssociationStatusEnum) -> Self {
+        self.trust_store_association_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates a shared trust stores association status.</p>
+    pub fn set_trust_store_association_status(mut self, input: ::std::option::Option<crate::types::TrustStoreAssociationStatusEnum>) -> Self {
+        self.trust_store_association_status = input;
+        self
+    }
+    /// <p>Indicates a shared trust stores association status.</p>
+    pub fn get_trust_store_association_status(&self) -> &::std::option::Option<crate::types::TrustStoreAssociationStatusEnum> {
+        &self.trust_store_association_status
+    }
     /// Consumes the builder and constructs a [`MutualAuthenticationAttributes`](crate::types::MutualAuthenticationAttributes).
     pub fn build(self) -> crate::types::MutualAuthenticationAttributes {
         crate::types::MutualAuthenticationAttributes {
             mode: self.mode,
             trust_store_arn: self.trust_store_arn,
             ignore_client_certificate_expiry: self.ignore_client_certificate_expiry,
+            trust_store_association_status: self.trust_store_association_status,
         }
     }
 }

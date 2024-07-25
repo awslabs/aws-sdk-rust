@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder takes no input, just [`send`](crate::operation::describe_registry::builders::DescribeRegistryFluentBuilder::send) it.
     /// - On success, responds with [`DescribeRegistryOutput`](crate::operation::describe_registry::DescribeRegistryOutput) with field(s):
-    ///   - [`registry_id(Option<String>)`](crate::operation::describe_registry::DescribeRegistryOutput::registry_id): <p>The ID of the registry.</p>
+    ///   - [`registry_id(Option<String>)`](crate::operation::describe_registry::DescribeRegistryOutput::registry_id): <p>The registry ID associated with the request.</p>
     ///   - [`replication_configuration(Option<ReplicationConfiguration>)`](crate::operation::describe_registry::DescribeRegistryOutput::replication_configuration): <p>The replication configuration for the registry.</p>
     /// - On failure, responds with [`SdkError<DescribeRegistryError>`](crate::operation::describe_registry::DescribeRegistryError)
     pub fn describe_registry(&self) -> crate::operation::describe_registry::builders::DescribeRegistryFluentBuilder {

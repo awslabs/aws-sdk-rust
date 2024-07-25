@@ -166,6 +166,9 @@ pub mod get_environment_blueprint;
 /// Types for the `GetEnvironmentBlueprintConfiguration` operation.
 pub mod get_environment_blueprint_configuration;
 
+/// Types for the `GetEnvironmentCredentials` operation.
+pub mod get_environment_credentials;
+
 /// Types for the `GetEnvironmentProfile` operation.
 pub mod get_environment_profile;
 

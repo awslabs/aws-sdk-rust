@@ -3,6 +3,8 @@ pub use crate::types::_validate_state_machine_definition_diagnostic::ValidateSta
 
 pub use crate::types::_routing_configuration_list_item::RoutingConfigurationListItemBuilder;
 
+pub use crate::types::_encryption_configuration::EncryptionConfigurationBuilder;
+
 pub use crate::types::_tracing_configuration::TracingConfigurationBuilder;
 
 pub use crate::types::_logging_configuration::LoggingConfigurationBuilder;

@@ -95,6 +95,9 @@ pub(crate) fn de_get_service(
                         ::aws_smithy_types::date_time::Format::EpochSeconds,
                     )?);
                 }
+                "LogGroupReferences" => {
+                    builder = builder.set_log_group_references(crate::protocol_serde::shape_log_group_references::de_log_group_references(tokens)?);
+                }
                 "Service" => {
                     builder = builder.set_service(crate::protocol_serde::shape_service::de_service(tokens)?);
                 }

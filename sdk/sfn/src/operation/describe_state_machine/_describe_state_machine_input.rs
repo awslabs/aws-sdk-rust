@@ -6,12 +6,22 @@ pub struct DescribeStateMachineInput {
     /// <p>The Amazon Resource Name (ARN) of the state machine for which you want the information.</p>
     /// <p>If you specify a state machine version ARN, this API returns details about that version. The version ARN is a combination of state machine ARN and the version number separated by a colon (:). For example, <code>stateMachineARN:1</code>.</p>
     pub state_machine_arn: ::std::option::Option<::std::string::String>,
+    /// <p>If your state machine definition is encrypted with a KMS key, callers must have <code>kms:Decrypt</code> permission to decrypt the definition. Alternatively, you can call the API with <code>includedData = METADATA_ONLY</code> to get a successful response without the encrypted definition.</p><note>
+    /// <p>When calling a labelled ARN for an encrypted state machine, the <code>includedData = METADATA_ONLY</code> parameter will not apply because Step Functions needs to decrypt the entire state machine definition to get the Distributed Map state’s definition. In this case, the API caller needs to have <code>kms:Decrypt</code> permission.</p>
+    /// </note>
+    pub included_data: ::std::option::Option<crate::types::IncludedData>,
 }
 impl DescribeStateMachineInput {
     /// <p>The Amazon Resource Name (ARN) of the state machine for which you want the information.</p>
     /// <p>If you specify a state machine version ARN, this API returns details about that version. The version ARN is a combination of state machine ARN and the version number separated by a colon (:). For example, <code>stateMachineARN:1</code>.</p>
     pub fn state_machine_arn(&self) -> ::std::option::Option<&str> {
         self.state_machine_arn.as_deref()
+    }
+    /// <p>If your state machine definition is encrypted with a KMS key, callers must have <code>kms:Decrypt</code> permission to decrypt the definition. Alternatively, you can call the API with <code>includedData = METADATA_ONLY</code> to get a successful response without the encrypted definition.</p><note>
+    /// <p>When calling a labelled ARN for an encrypted state machine, the <code>includedData = METADATA_ONLY</code> parameter will not apply because Step Functions needs to decrypt the entire state machine definition to get the Distributed Map state’s definition. In this case, the API caller needs to have <code>kms:Decrypt</code> permission.</p>
+    /// </note>
+    pub fn included_data(&self) -> ::std::option::Option<&crate::types::IncludedData> {
+        self.included_data.as_ref()
     }
 }
 impl DescribeStateMachineInput {
@@ -26,6 +36,7 @@ impl DescribeStateMachineInput {
 #[non_exhaustive]
 pub struct DescribeStateMachineInputBuilder {
     pub(crate) state_machine_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) included_data: ::std::option::Option<crate::types::IncludedData>,
 }
 impl DescribeStateMachineInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the state machine for which you want the information.</p>
@@ -46,6 +57,26 @@ impl DescribeStateMachineInputBuilder {
     pub fn get_state_machine_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.state_machine_arn
     }
+    /// <p>If your state machine definition is encrypted with a KMS key, callers must have <code>kms:Decrypt</code> permission to decrypt the definition. Alternatively, you can call the API with <code>includedData = METADATA_ONLY</code> to get a successful response without the encrypted definition.</p><note>
+    /// <p>When calling a labelled ARN for an encrypted state machine, the <code>includedData = METADATA_ONLY</code> parameter will not apply because Step Functions needs to decrypt the entire state machine definition to get the Distributed Map state’s definition. In this case, the API caller needs to have <code>kms:Decrypt</code> permission.</p>
+    /// </note>
+    pub fn included_data(mut self, input: crate::types::IncludedData) -> Self {
+        self.included_data = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If your state machine definition is encrypted with a KMS key, callers must have <code>kms:Decrypt</code> permission to decrypt the definition. Alternatively, you can call the API with <code>includedData = METADATA_ONLY</code> to get a successful response without the encrypted definition.</p><note>
+    /// <p>When calling a labelled ARN for an encrypted state machine, the <code>includedData = METADATA_ONLY</code> parameter will not apply because Step Functions needs to decrypt the entire state machine definition to get the Distributed Map state’s definition. In this case, the API caller needs to have <code>kms:Decrypt</code> permission.</p>
+    /// </note>
+    pub fn set_included_data(mut self, input: ::std::option::Option<crate::types::IncludedData>) -> Self {
+        self.included_data = input;
+        self
+    }
+    /// <p>If your state machine definition is encrypted with a KMS key, callers must have <code>kms:Decrypt</code> permission to decrypt the definition. Alternatively, you can call the API with <code>includedData = METADATA_ONLY</code> to get a successful response without the encrypted definition.</p><note>
+    /// <p>When calling a labelled ARN for an encrypted state machine, the <code>includedData = METADATA_ONLY</code> parameter will not apply because Step Functions needs to decrypt the entire state machine definition to get the Distributed Map state’s definition. In this case, the API caller needs to have <code>kms:Decrypt</code> permission.</p>
+    /// </note>
+    pub fn get_included_data(&self) -> &::std::option::Option<crate::types::IncludedData> {
+        &self.included_data
+    }
     /// Consumes the builder and constructs a [`DescribeStateMachineInput`](crate::operation::describe_state_machine::DescribeStateMachineInput).
     pub fn build(
         self,
@@ -53,6 +84,7 @@ impl DescribeStateMachineInputBuilder {
     {
         ::std::result::Result::Ok(crate::operation::describe_state_machine::DescribeStateMachineInput {
             state_machine_arn: self.state_machine_arn,
+            included_data: self.included_data,
         })
     }
 }

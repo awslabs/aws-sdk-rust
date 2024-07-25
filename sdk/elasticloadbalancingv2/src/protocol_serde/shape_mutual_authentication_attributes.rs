@@ -19,6 +19,11 @@ pub fn ser_mutual_authentication_attributes(
     if let Some(var_6) = &input.ignore_client_certificate_expiry {
         scope_5.boolean(*var_6);
     }
+    #[allow(unused_mut)]
+    let mut scope_7 = writer.prefix("TrustStoreAssociationStatus");
+    if let Some(var_8) = &input.trust_store_association_status {
+        scope_7.string(var_8.as_str());
+    }
     Ok(())
 }
 
@@ -31,7 +36,7 @@ pub fn de_mutual_authentication_attributes(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Mode") /* Mode com.amazonaws.elasticloadbalancingv2#MutualAuthenticationAttributes$Mode */ =>  {
-                let var_7 =
+                let var_9 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -40,11 +45,11 @@ pub fn de_mutual_authentication_attributes(
                         ?
                     )
                 ;
-                builder = builder.set_mode(var_7);
+                builder = builder.set_mode(var_9);
             }
             ,
             s if s.matches("TrustStoreArn") /* TrustStoreArn com.amazonaws.elasticloadbalancingv2#MutualAuthenticationAttributes$TrustStoreArn */ =>  {
-                let var_8 =
+                let var_10 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -53,11 +58,11 @@ pub fn de_mutual_authentication_attributes(
                         ?
                     )
                 ;
-                builder = builder.set_trust_store_arn(var_8);
+                builder = builder.set_trust_store_arn(var_10);
             }
             ,
             s if s.matches("IgnoreClientCertificateExpiry") /* IgnoreClientCertificateExpiry com.amazonaws.elasticloadbalancingv2#MutualAuthenticationAttributes$IgnoreClientCertificateExpiry */ =>  {
-                let var_9 =
+                let var_11 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -68,7 +73,21 @@ pub fn de_mutual_authentication_attributes(
                         ?
                     )
                 ;
-                builder = builder.set_ignore_client_certificate_expiry(var_9);
+                builder = builder.set_ignore_client_certificate_expiry(var_11);
+            }
+            ,
+            s if s.matches("TrustStoreAssociationStatus") /* TrustStoreAssociationStatus com.amazonaws.elasticloadbalancingv2#MutualAuthenticationAttributes$TrustStoreAssociationStatus */ =>  {
+                let var_12 =
+                    Some(
+                        Result::<crate::types::TrustStoreAssociationStatusEnum, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::TrustStoreAssociationStatusEnum::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_trust_store_association_status(var_12);
             }
             ,
             _ => {}

@@ -252,10 +252,16 @@ pub enum UpdateStateMachineError {
     InvalidArn(crate::types::error::InvalidArn),
     /// <p>The provided Amazon States Language definition is not valid.</p>
     InvalidDefinition(crate::types::error::InvalidDefinition),
-    /// <p></p>
+    /// <p>Received when <code>encryptionConfiguration</code> is specified but various conditions exist which make the configuration invalid. For example, if <code>type</code> is set to <code>CUSTOMER_MANAGED_KMS_KEY</code>, but <code>kmsKeyId</code> is null, or <code>kmsDataKeyReusePeriodSeconds</code> is not between 60 and 900, or the KMS key is not symmetric or inactive.</p>
+    InvalidEncryptionConfiguration(crate::types::error::InvalidEncryptionConfiguration),
+    /// <p>Configuration is not valid.</p>
     InvalidLoggingConfiguration(crate::types::error::InvalidLoggingConfiguration),
     /// <p>Your <code>tracingConfiguration</code> key does not match, or <code>enabled</code> has not been set to <code>true</code> or <code>false</code>.</p>
     InvalidTracingConfiguration(crate::types::error::InvalidTracingConfiguration),
+    /// <p>Either your KMS key policy or API caller does not have the required permissions.</p>
+    KmsAccessDeniedException(crate::types::error::KmsAccessDeniedException),
+    /// <p>Received when KMS returns <code>ThrottlingException</code> for a KMS call that Step Functions makes on behalf of the caller.</p>
+    KmsThrottlingException(crate::types::error::KmsThrottlingException),
     /// <p>Request is missing a required parameter. This error occurs if both <code>definition</code> and <code>roleArn</code> are not specified.</p>
     MissingRequiredParameter(crate::types::error::MissingRequiredParameter),
     /// <p>The request would cause a service quota to be exceeded.</p>
@@ -303,8 +309,11 @@ impl UpdateStateMachineError {
             Self::ConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidArn(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidDefinition(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidEncryptionConfiguration(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidLoggingConfiguration(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidTracingConfiguration(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::KmsAccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::KmsThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::MissingRequiredParameter(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceQuotaExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::StateMachineDeleting(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -325,6 +334,10 @@ impl UpdateStateMachineError {
     pub fn is_invalid_definition(&self) -> bool {
         matches!(self, Self::InvalidDefinition(_))
     }
+    /// Returns `true` if the error kind is `UpdateStateMachineError::InvalidEncryptionConfiguration`.
+    pub fn is_invalid_encryption_configuration(&self) -> bool {
+        matches!(self, Self::InvalidEncryptionConfiguration(_))
+    }
     /// Returns `true` if the error kind is `UpdateStateMachineError::InvalidLoggingConfiguration`.
     pub fn is_invalid_logging_configuration(&self) -> bool {
         matches!(self, Self::InvalidLoggingConfiguration(_))
@@ -332,6 +345,14 @@ impl UpdateStateMachineError {
     /// Returns `true` if the error kind is `UpdateStateMachineError::InvalidTracingConfiguration`.
     pub fn is_invalid_tracing_configuration(&self) -> bool {
         matches!(self, Self::InvalidTracingConfiguration(_))
+    }
+    /// Returns `true` if the error kind is `UpdateStateMachineError::KmsAccessDeniedException`.
+    pub fn is_kms_access_denied_exception(&self) -> bool {
+        matches!(self, Self::KmsAccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateStateMachineError::KmsThrottlingException`.
+    pub fn is_kms_throttling_exception(&self) -> bool {
+        matches!(self, Self::KmsThrottlingException(_))
     }
     /// Returns `true` if the error kind is `UpdateStateMachineError::MissingRequiredParameter`.
     pub fn is_missing_required_parameter(&self) -> bool {
@@ -360,8 +381,11 @@ impl ::std::error::Error for UpdateStateMachineError {
             Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidArn(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidDefinition(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidEncryptionConfiguration(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidLoggingConfiguration(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidTracingConfiguration(_inner) => ::std::option::Option::Some(_inner),
+            Self::KmsAccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::KmsThrottlingException(_inner) => ::std::option::Option::Some(_inner),
             Self::MissingRequiredParameter(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceQuotaExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::StateMachineDeleting(_inner) => ::std::option::Option::Some(_inner),
@@ -377,8 +401,11 @@ impl ::std::fmt::Display for UpdateStateMachineError {
             Self::ConflictException(_inner) => _inner.fmt(f),
             Self::InvalidArn(_inner) => _inner.fmt(f),
             Self::InvalidDefinition(_inner) => _inner.fmt(f),
+            Self::InvalidEncryptionConfiguration(_inner) => _inner.fmt(f),
             Self::InvalidLoggingConfiguration(_inner) => _inner.fmt(f),
             Self::InvalidTracingConfiguration(_inner) => _inner.fmt(f),
+            Self::KmsAccessDeniedException(_inner) => _inner.fmt(f),
+            Self::KmsThrottlingException(_inner) => _inner.fmt(f),
             Self::MissingRequiredParameter(_inner) => _inner.fmt(f),
             Self::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
             Self::StateMachineDeleting(_inner) => _inner.fmt(f),
@@ -408,8 +435,11 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateStateMa
             Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidArn(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidDefinition(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidEncryptionConfiguration(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidLoggingConfiguration(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidTracingConfiguration(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::KmsAccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::KmsThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::MissingRequiredParameter(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceQuotaExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::StateMachineDeleting(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

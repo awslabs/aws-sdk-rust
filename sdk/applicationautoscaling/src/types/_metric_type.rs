@@ -33,7 +33,9 @@
 ///     MetricType::NeptuneReaderAverageCpuUtilization => { /* ... */ },
 ///     MetricType::RdsReaderAverageCpuUtilization => { /* ... */ },
 ///     MetricType::RdsReaderAverageDatabaseConnections => { /* ... */ },
+///     MetricType::SageMakerInferenceComponentConcurrentRequestsPerCopyHighResolution => { /* ... */ },
 ///     MetricType::SageMakerInferenceComponentInvocationsPerCopy => { /* ... */ },
+///     MetricType::SageMakerVariantConcurrentRequestsPerModelHighResolution => { /* ... */ },
 ///     MetricType::SageMakerVariantInvocationsPerInstance => { /* ... */ },
 ///     MetricType::SageMakerVariantProvisionedConcurrencyUtilization => { /* ... */ },
 ///     MetricType::WorkSpacesAverageUserSessionsCapacityUtilization => { /* ... */ },
@@ -107,7 +109,11 @@ pub enum MetricType {
     #[allow(missing_docs)] // documentation missing in model
     RdsReaderAverageDatabaseConnections,
     #[allow(missing_docs)] // documentation missing in model
+    SageMakerInferenceComponentConcurrentRequestsPerCopyHighResolution,
+    #[allow(missing_docs)] // documentation missing in model
     SageMakerInferenceComponentInvocationsPerCopy,
+    #[allow(missing_docs)] // documentation missing in model
+    SageMakerVariantConcurrentRequestsPerModelHighResolution,
     #[allow(missing_docs)] // documentation missing in model
     SageMakerVariantInvocationsPerInstance,
     #[allow(missing_docs)] // documentation missing in model
@@ -142,7 +148,11 @@ impl ::std::convert::From<&str> for MetricType {
             "NeptuneReaderAverageCPUUtilization" => MetricType::NeptuneReaderAverageCpuUtilization,
             "RDSReaderAverageCPUUtilization" => MetricType::RdsReaderAverageCpuUtilization,
             "RDSReaderAverageDatabaseConnections" => MetricType::RdsReaderAverageDatabaseConnections,
+            "SageMakerInferenceComponentConcurrentRequestsPerCopyHighResolution" => {
+                MetricType::SageMakerInferenceComponentConcurrentRequestsPerCopyHighResolution
+            }
             "SageMakerInferenceComponentInvocationsPerCopy" => MetricType::SageMakerInferenceComponentInvocationsPerCopy,
+            "SageMakerVariantConcurrentRequestsPerModelHighResolution" => MetricType::SageMakerVariantConcurrentRequestsPerModelHighResolution,
             "SageMakerVariantInvocationsPerInstance" => MetricType::SageMakerVariantInvocationsPerInstance,
             "SageMakerVariantProvisionedConcurrencyUtilization" => MetricType::SageMakerVariantProvisionedConcurrencyUtilization,
             "WorkSpacesAverageUserSessionsCapacityUtilization" => MetricType::WorkSpacesAverageUserSessionsCapacityUtilization,
@@ -182,7 +192,11 @@ impl MetricType {
             MetricType::NeptuneReaderAverageCpuUtilization => "NeptuneReaderAverageCPUUtilization",
             MetricType::RdsReaderAverageCpuUtilization => "RDSReaderAverageCPUUtilization",
             MetricType::RdsReaderAverageDatabaseConnections => "RDSReaderAverageDatabaseConnections",
+            MetricType::SageMakerInferenceComponentConcurrentRequestsPerCopyHighResolution => {
+                "SageMakerInferenceComponentConcurrentRequestsPerCopyHighResolution"
+            }
             MetricType::SageMakerInferenceComponentInvocationsPerCopy => "SageMakerInferenceComponentInvocationsPerCopy",
+            MetricType::SageMakerVariantConcurrentRequestsPerModelHighResolution => "SageMakerVariantConcurrentRequestsPerModelHighResolution",
             MetricType::SageMakerVariantInvocationsPerInstance => "SageMakerVariantInvocationsPerInstance",
             MetricType::SageMakerVariantProvisionedConcurrencyUtilization => "SageMakerVariantProvisionedConcurrencyUtilization",
             MetricType::WorkSpacesAverageUserSessionsCapacityUtilization => "WorkSpacesAverageUserSessionsCapacityUtilization",
@@ -213,7 +227,9 @@ impl MetricType {
             "NeptuneReaderAverageCPUUtilization",
             "RDSReaderAverageCPUUtilization",
             "RDSReaderAverageDatabaseConnections",
+            "SageMakerInferenceComponentConcurrentRequestsPerCopyHighResolution",
             "SageMakerInferenceComponentInvocationsPerCopy",
+            "SageMakerVariantConcurrentRequestsPerModelHighResolution",
             "SageMakerVariantInvocationsPerInstance",
             "SageMakerVariantProvisionedConcurrencyUtilization",
             "WorkSpacesAverageUserSessionsCapacityUtilization",
@@ -265,7 +281,13 @@ impl ::std::fmt::Display for MetricType {
             MetricType::NeptuneReaderAverageCpuUtilization => write!(f, "NeptuneReaderAverageCPUUtilization"),
             MetricType::RdsReaderAverageCpuUtilization => write!(f, "RDSReaderAverageCPUUtilization"),
             MetricType::RdsReaderAverageDatabaseConnections => write!(f, "RDSReaderAverageDatabaseConnections"),
+            MetricType::SageMakerInferenceComponentConcurrentRequestsPerCopyHighResolution => {
+                write!(f, "SageMakerInferenceComponentConcurrentRequestsPerCopyHighResolution")
+            }
             MetricType::SageMakerInferenceComponentInvocationsPerCopy => write!(f, "SageMakerInferenceComponentInvocationsPerCopy"),
+            MetricType::SageMakerVariantConcurrentRequestsPerModelHighResolution => {
+                write!(f, "SageMakerVariantConcurrentRequestsPerModelHighResolution")
+            }
             MetricType::SageMakerVariantInvocationsPerInstance => write!(f, "SageMakerVariantInvocationsPerInstance"),
             MetricType::SageMakerVariantProvisionedConcurrencyUtilization => write!(f, "SageMakerVariantProvisionedConcurrencyUtilization"),
             MetricType::WorkSpacesAverageUserSessionsCapacityUtilization => write!(f, "WorkSpacesAverageUserSessionsCapacityUtilization"),

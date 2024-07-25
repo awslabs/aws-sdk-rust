@@ -11,6 +11,8 @@ pub use crate::types::error::_model_stream_error_exception::ModelStreamErrorExce
 
 pub use crate::types::error::_internal_server_exception::InternalServerExceptionBuilder;
 
+pub use crate::types::error::_service_unavailable_exception::ServiceUnavailableExceptionBuilder;
+
 pub use crate::types::error::_throttling_exception::ThrottlingExceptionBuilder;
 
 pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundExceptionBuilder;

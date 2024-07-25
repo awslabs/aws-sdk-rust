@@ -33,6 +33,8 @@ pub struct CreateClusterInput {
     /// <p>The default networking addons include vpc-cni, coredns, and kube-proxy.</p>
     /// <p>Use this option when you plan to install third-party alternative add-ons or self-manage the default networking add-ons.</p>
     pub bootstrap_self_managed_addons: ::std::option::Option<bool>,
+    /// <p>New clusters, by default, have extended support enabled. You can disable extended support when creating a cluster by setting this value to <code>STANDARD</code>.</p>
+    pub upgrade_policy: ::std::option::Option<crate::types::UpgradePolicyRequest>,
 }
 impl CreateClusterInput {
     /// <p>The unique name to give to your cluster.</p>
@@ -91,6 +93,10 @@ impl CreateClusterInput {
     pub fn bootstrap_self_managed_addons(&self) -> ::std::option::Option<bool> {
         self.bootstrap_self_managed_addons
     }
+    /// <p>New clusters, by default, have extended support enabled. You can disable extended support when creating a cluster by setting this value to <code>STANDARD</code>.</p>
+    pub fn upgrade_policy(&self) -> ::std::option::Option<&crate::types::UpgradePolicyRequest> {
+        self.upgrade_policy.as_ref()
+    }
 }
 impl CreateClusterInput {
     /// Creates a new builder-style object to manufacture [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
@@ -115,6 +121,7 @@ pub struct CreateClusterInputBuilder {
     pub(crate) outpost_config: ::std::option::Option<crate::types::OutpostConfigRequest>,
     pub(crate) access_config: ::std::option::Option<crate::types::CreateAccessConfigRequest>,
     pub(crate) bootstrap_self_managed_addons: ::std::option::Option<bool>,
+    pub(crate) upgrade_policy: ::std::option::Option<crate::types::UpgradePolicyRequest>,
 }
 impl CreateClusterInputBuilder {
     /// <p>The unique name to give to your cluster.</p>
@@ -318,6 +325,20 @@ impl CreateClusterInputBuilder {
     pub fn get_bootstrap_self_managed_addons(&self) -> &::std::option::Option<bool> {
         &self.bootstrap_self_managed_addons
     }
+    /// <p>New clusters, by default, have extended support enabled. You can disable extended support when creating a cluster by setting this value to <code>STANDARD</code>.</p>
+    pub fn upgrade_policy(mut self, input: crate::types::UpgradePolicyRequest) -> Self {
+        self.upgrade_policy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>New clusters, by default, have extended support enabled. You can disable extended support when creating a cluster by setting this value to <code>STANDARD</code>.</p>
+    pub fn set_upgrade_policy(mut self, input: ::std::option::Option<crate::types::UpgradePolicyRequest>) -> Self {
+        self.upgrade_policy = input;
+        self
+    }
+    /// <p>New clusters, by default, have extended support enabled. You can disable extended support when creating a cluster by setting this value to <code>STANDARD</code>.</p>
+    pub fn get_upgrade_policy(&self) -> &::std::option::Option<crate::types::UpgradePolicyRequest> {
+        &self.upgrade_policy
+    }
     /// Consumes the builder and constructs a [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
     pub fn build(
         self,
@@ -335,6 +356,7 @@ impl CreateClusterInputBuilder {
             outpost_config: self.outpost_config,
             access_config: self.access_config,
             bootstrap_self_managed_addons: self.bootstrap_self_managed_addons,
+            upgrade_policy: self.upgrade_policy,
         })
     }
 }

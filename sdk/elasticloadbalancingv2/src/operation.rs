@@ -34,6 +34,9 @@ pub mod delete_load_balancer;
 /// Types for the `DeleteRule` operation.
 pub mod delete_rule;
 
+/// Types for the `DeleteSharedTrustStoreAssociation` operation.
+pub mod delete_shared_trust_store_association;
+
 /// Types for the `DeleteTargetGroup` operation.
 pub mod delete_target_group;
 
@@ -84,6 +87,9 @@ pub mod describe_trust_store_revocations;
 
 /// Types for the `DescribeTrustStores` operation.
 pub mod describe_trust_stores;
+
+/// Types for the `GetResourcePolicy` operation.
+pub mod get_resource_policy;
 
 /// Types for the `GetTrustStoreCaCertificatesBundle` operation.
 pub mod get_trust_store_ca_certificates_bundle;

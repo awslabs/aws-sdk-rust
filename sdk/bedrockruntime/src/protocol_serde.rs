@@ -73,6 +73,8 @@ pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
 
+pub(crate) mod shape_service_unavailable_exception;
+
 pub(crate) mod shape_throttling_exception;
 
 pub(crate) mod shape_validation_exception;

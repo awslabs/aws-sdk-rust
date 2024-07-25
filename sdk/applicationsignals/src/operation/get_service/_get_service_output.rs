@@ -6,9 +6,21 @@ pub struct GetServiceOutput {
     /// <p>A structure containing information about the service.</p>
     pub service: ::std::option::Option<crate::types::Service>,
     /// <p>The start time of the data included in the response. In a raw HTTP Query API, it is formatted as be epoch time in seconds. For example: <code>1698778057</code>.</p>
+    /// <p>This displays the time that Application Signals used for the request. It might not match your request exactly, because it was rounded to the nearest hour.</p>
     pub start_time: ::aws_smithy_types::DateTime,
     /// <p>The end time of the data included in the response. In a raw HTTP Query API, it is formatted as be epoch time in seconds. For example: <code>1698778057</code>.</p>
+    /// <p>This displays the time that Application Signals used for the request. It might not match your request exactly, because it was rounded to the nearest hour.</p>
     pub end_time: ::aws_smithy_types::DateTime,
+    /// <p>An array of string-to-string maps that each contain information about one log group associated with this service. Each string-to-string map includes the following fields:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>"Type": "AWS::Resource"</code></p></li>
+    /// <li>
+    /// <p><code>"ResourceType": "AWS::Logs::LogGroup"</code></p></li>
+    /// <li>
+    /// <p><code>"Identifier": "<i>name-of-log-group</i>"</code></p></li>
+    /// </ul>
+    pub log_group_references: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
     _request_id: Option<String>,
 }
 impl GetServiceOutput {
@@ -17,12 +29,28 @@ impl GetServiceOutput {
         self.service.as_ref()
     }
     /// <p>The start time of the data included in the response. In a raw HTTP Query API, it is formatted as be epoch time in seconds. For example: <code>1698778057</code>.</p>
+    /// <p>This displays the time that Application Signals used for the request. It might not match your request exactly, because it was rounded to the nearest hour.</p>
     pub fn start_time(&self) -> &::aws_smithy_types::DateTime {
         &self.start_time
     }
     /// <p>The end time of the data included in the response. In a raw HTTP Query API, it is formatted as be epoch time in seconds. For example: <code>1698778057</code>.</p>
+    /// <p>This displays the time that Application Signals used for the request. It might not match your request exactly, because it was rounded to the nearest hour.</p>
     pub fn end_time(&self) -> &::aws_smithy_types::DateTime {
         &self.end_time
+    }
+    /// <p>An array of string-to-string maps that each contain information about one log group associated with this service. Each string-to-string map includes the following fields:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>"Type": "AWS::Resource"</code></p></li>
+    /// <li>
+    /// <p><code>"ResourceType": "AWS::Logs::LogGroup"</code></p></li>
+    /// <li>
+    /// <p><code>"Identifier": "<i>name-of-log-group</i>"</code></p></li>
+    /// </ul>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_group_references.is_none()`.
+    pub fn log_group_references(&self) -> &[::std::collections::HashMap<::std::string::String, ::std::string::String>] {
+        self.log_group_references.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetServiceOutput {
@@ -44,6 +72,8 @@ pub struct GetServiceOutputBuilder {
     pub(crate) service: ::std::option::Option<crate::types::Service>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) log_group_references:
+        ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
     _request_id: Option<String>,
 }
 impl GetServiceOutputBuilder {
@@ -63,34 +93,89 @@ impl GetServiceOutputBuilder {
         &self.service
     }
     /// <p>The start time of the data included in the response. In a raw HTTP Query API, it is formatted as be epoch time in seconds. For example: <code>1698778057</code>.</p>
+    /// <p>This displays the time that Application Signals used for the request. It might not match your request exactly, because it was rounded to the nearest hour.</p>
     /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The start time of the data included in the response. In a raw HTTP Query API, it is formatted as be epoch time in seconds. For example: <code>1698778057</code>.</p>
+    /// <p>This displays the time that Application Signals used for the request. It might not match your request exactly, because it was rounded to the nearest hour.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
     /// <p>The start time of the data included in the response. In a raw HTTP Query API, it is formatted as be epoch time in seconds. For example: <code>1698778057</code>.</p>
+    /// <p>This displays the time that Application Signals used for the request. It might not match your request exactly, because it was rounded to the nearest hour.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.start_time
     }
     /// <p>The end time of the data included in the response. In a raw HTTP Query API, it is formatted as be epoch time in seconds. For example: <code>1698778057</code>.</p>
+    /// <p>This displays the time that Application Signals used for the request. It might not match your request exactly, because it was rounded to the nearest hour.</p>
     /// This field is required.
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The end time of the data included in the response. In a raw HTTP Query API, it is formatted as be epoch time in seconds. For example: <code>1698778057</code>.</p>
+    /// <p>This displays the time that Application Signals used for the request. It might not match your request exactly, because it was rounded to the nearest hour.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
     /// <p>The end time of the data included in the response. In a raw HTTP Query API, it is formatted as be epoch time in seconds. For example: <code>1698778057</code>.</p>
+    /// <p>This displays the time that Application Signals used for the request. It might not match your request exactly, because it was rounded to the nearest hour.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_time
+    }
+    /// Appends an item to `log_group_references`.
+    ///
+    /// To override the contents of this collection use [`set_log_group_references`](Self::set_log_group_references).
+    ///
+    /// <p>An array of string-to-string maps that each contain information about one log group associated with this service. Each string-to-string map includes the following fields:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>"Type": "AWS::Resource"</code></p></li>
+    /// <li>
+    /// <p><code>"ResourceType": "AWS::Logs::LogGroup"</code></p></li>
+    /// <li>
+    /// <p><code>"Identifier": "<i>name-of-log-group</i>"</code></p></li>
+    /// </ul>
+    pub fn log_group_references(mut self, input: ::std::collections::HashMap<::std::string::String, ::std::string::String>) -> Self {
+        let mut v = self.log_group_references.unwrap_or_default();
+        v.push(input);
+        self.log_group_references = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>An array of string-to-string maps that each contain information about one log group associated with this service. Each string-to-string map includes the following fields:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>"Type": "AWS::Resource"</code></p></li>
+    /// <li>
+    /// <p><code>"ResourceType": "AWS::Logs::LogGroup"</code></p></li>
+    /// <li>
+    /// <p><code>"Identifier": "<i>name-of-log-group</i>"</code></p></li>
+    /// </ul>
+    pub fn set_log_group_references(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
+    ) -> Self {
+        self.log_group_references = input;
+        self
+    }
+    /// <p>An array of string-to-string maps that each contain information about one log group associated with this service. Each string-to-string map includes the following fields:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>"Type": "AWS::Resource"</code></p></li>
+    /// <li>
+    /// <p><code>"ResourceType": "AWS::Logs::LogGroup"</code></p></li>
+    /// <li>
+    /// <p><code>"Identifier": "<i>name-of-log-group</i>"</code></p></li>
+    /// </ul>
+    pub fn get_log_group_references(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>> {
+        &self.log_group_references
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
@@ -120,6 +205,7 @@ impl GetServiceOutputBuilder {
                     "end_time was not specified but it is required when building GetServiceOutput",
                 )
             })?,
+            log_group_references: self.log_group_references,
             _request_id: self._request_id,
         })
     }

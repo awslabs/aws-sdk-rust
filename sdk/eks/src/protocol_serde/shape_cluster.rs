@@ -124,6 +124,10 @@ where
                             builder =
                                 builder.set_access_config(crate::protocol_serde::shape_access_config_response::de_access_config_response(tokens)?);
                         }
+                        "upgradePolicy" => {
+                            builder =
+                                builder.set_upgrade_policy(crate::protocol_serde::shape_upgrade_policy_response::de_upgrade_policy_response(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

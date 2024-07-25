@@ -79,6 +79,8 @@ pub use crate::types::_listener::Listener;
 
 pub use crate::types::_mutual_authentication_attributes::MutualAuthenticationAttributes;
 
+pub use crate::types::_trust_store_association_status_enum::TrustStoreAssociationStatusEnum;
+
 pub use crate::types::_describe_trust_store_revocation::DescribeTrustStoreRevocation;
 
 pub use crate::types::_revocation_type::RevocationType;
@@ -246,6 +248,8 @@ mod _target_type_enum;
 mod _trust_store;
 
 mod _trust_store_association;
+
+mod _trust_store_association_status_enum;
 
 mod _trust_store_revocation;
 

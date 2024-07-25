@@ -24,6 +24,8 @@ pub struct DescribeStateMachineForExecutionOutput {
     /// <p>The revision identifier for the state machine. The first revision ID when you create the state machine is null.</p>
     /// <p>Use the state machine <code>revisionId</code> parameter to compare the revision of a state machine with the configuration of the state machine used for executions without performing a diff of the properties, such as <code>definition</code> and <code>roleArn</code>.</p>
     pub revision_id: ::std::option::Option<::std::string::String>,
+    /// <p>Settings to configure server-side encryption.</p>
+    pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
     _request_id: Option<String>,
 }
 impl DescribeStateMachineForExecutionOutput {
@@ -72,6 +74,10 @@ impl DescribeStateMachineForExecutionOutput {
     pub fn revision_id(&self) -> ::std::option::Option<&str> {
         self.revision_id.as_deref()
     }
+    /// <p>Settings to configure server-side encryption.</p>
+    pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
+        self.encryption_configuration.as_ref()
+    }
 }
 impl ::std::fmt::Debug for DescribeStateMachineForExecutionOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -86,6 +92,7 @@ impl ::std::fmt::Debug for DescribeStateMachineForExecutionOutput {
         formatter.field("map_run_arn", &self.map_run_arn);
         formatter.field("label", &self.label);
         formatter.field("revision_id", &self.revision_id);
+        formatter.field("encryption_configuration", &self.encryption_configuration);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -116,6 +123,7 @@ pub struct DescribeStateMachineForExecutionOutputBuilder {
     pub(crate) map_run_arn: ::std::option::Option<::std::string::String>,
     pub(crate) label: ::std::option::Option<::std::string::String>,
     pub(crate) revision_id: ::std::option::Option<::std::string::String>,
+    pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
     _request_id: Option<String>,
 }
 impl DescribeStateMachineForExecutionOutputBuilder {
@@ -267,6 +275,20 @@ impl DescribeStateMachineForExecutionOutputBuilder {
     pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.revision_id
     }
+    /// <p>Settings to configure server-side encryption.</p>
+    pub fn encryption_configuration(mut self, input: crate::types::EncryptionConfiguration) -> Self {
+        self.encryption_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Settings to configure server-side encryption.</p>
+    pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
+        self.encryption_configuration = input;
+        self
+    }
+    /// <p>Settings to configure server-side encryption.</p>
+    pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
+        &self.encryption_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -326,6 +348,7 @@ impl DescribeStateMachineForExecutionOutputBuilder {
                 map_run_arn: self.map_run_arn,
                 label: self.label,
                 revision_id: self.revision_id,
+                encryption_configuration: self.encryption_configuration,
                 _request_id: self._request_id,
             },
         )
@@ -344,6 +367,7 @@ impl ::std::fmt::Debug for DescribeStateMachineForExecutionOutputBuilder {
         formatter.field("map_run_arn", &self.map_run_arn);
         formatter.field("label", &self.label);
         formatter.field("revision_id", &self.revision_id);
+        formatter.field("encryption_configuration", &self.encryption_configuration);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

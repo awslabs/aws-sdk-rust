@@ -39,6 +39,7 @@
 ///     UpdateParamType::Subnets => { /* ... */ },
 ///     UpdateParamType::TaintsToAdd => { /* ... */ },
 ///     UpdateParamType::TaintsToRemove => { /* ... */ },
+///     UpdateParamType::UpgradePolicy => { /* ... */ },
 ///     UpdateParamType::Version => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -122,6 +123,8 @@ pub enum UpdateParamType {
     #[allow(missing_docs)] // documentation missing in model
     TaintsToRemove,
     #[allow(missing_docs)] // documentation missing in model
+    UpgradePolicy,
+    #[allow(missing_docs)] // documentation missing in model
     Version,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -157,6 +160,7 @@ impl ::std::convert::From<&str> for UpdateParamType {
             "Subnets" => UpdateParamType::Subnets,
             "TaintsToAdd" => UpdateParamType::TaintsToAdd,
             "TaintsToRemove" => UpdateParamType::TaintsToRemove,
+            "UpgradePolicy" => UpdateParamType::UpgradePolicy,
             "Version" => UpdateParamType::Version,
             other => UpdateParamType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -200,6 +204,7 @@ impl UpdateParamType {
             UpdateParamType::Subnets => "Subnets",
             UpdateParamType::TaintsToAdd => "TaintsToAdd",
             UpdateParamType::TaintsToRemove => "TaintsToRemove",
+            UpdateParamType::UpgradePolicy => "UpgradePolicy",
             UpdateParamType::Version => "Version",
             UpdateParamType::Unknown(value) => value.as_str(),
         }
@@ -234,6 +239,7 @@ impl UpdateParamType {
             "Subnets",
             "TaintsToAdd",
             "TaintsToRemove",
+            "UpgradePolicy",
             "Version",
         ]
     }
@@ -285,6 +291,7 @@ impl ::std::fmt::Display for UpdateParamType {
             UpdateParamType::Subnets => write!(f, "Subnets"),
             UpdateParamType::TaintsToAdd => write!(f, "TaintsToAdd"),
             UpdateParamType::TaintsToRemove => write!(f, "TaintsToRemove"),
+            UpdateParamType::UpgradePolicy => write!(f, "UpgradePolicy"),
             UpdateParamType::Version => write!(f, "Version"),
             UpdateParamType::Unknown(value) => write!(f, "{}", value),
         }

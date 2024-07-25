@@ -22,6 +22,9 @@ pub mod create_pull_through_cache_rule;
 /// Types for the `CreateRepository` operation.
 pub mod create_repository;
 
+/// Types for the `CreateRepositoryCreationTemplate` operation.
+pub mod create_repository_creation_template;
+
 /// Types for the `DeleteLifecyclePolicy` operation.
 pub mod delete_lifecycle_policy;
 
@@ -33,6 +36,9 @@ pub mod delete_registry_policy;
 
 /// Types for the `DeleteRepository` operation.
 pub mod delete_repository;
+
+/// Types for the `DeleteRepositoryCreationTemplate` operation.
+pub mod delete_repository_creation_template;
 
 /// Types for the `DeleteRepositoryPolicy` operation.
 pub mod delete_repository_policy;
@@ -54,6 +60,9 @@ pub mod describe_registry;
 
 /// Types for the `DescribeRepositories` operation.
 pub mod describe_repositories;
+
+/// Types for the `DescribeRepositoryCreationTemplates` operation.
+pub mod describe_repository_creation_templates;
 
 /// Types for the `GetAuthorizationToken` operation.
 pub mod get_authorization_token;
@@ -123,6 +132,9 @@ pub mod untag_resource;
 
 /// Types for the `UpdatePullThroughCacheRule` operation.
 pub mod update_pull_through_cache_rule;
+
+/// Types for the `UpdateRepositoryCreationTemplate` operation.
+pub mod update_repository_creation_template;
 
 /// Types for the `UploadLayerPart` operation.
 pub mod upload_layer_part;

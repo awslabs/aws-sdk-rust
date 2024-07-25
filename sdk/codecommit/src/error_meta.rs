@@ -283,6 +283,8 @@ pub enum Error {
     NumberOfRuleTemplatesExceededException(crate::types::error::NumberOfRuleTemplatesExceededException),
     /// <p>The approval rule cannot be added. The pull request has the maximum number of approval rules associated with it.</p>
     NumberOfRulesExceededException(crate::types::error::NumberOfRulesExceededException),
+    /// <p>The requested action is not allowed.</p>
+    OperationNotAllowedException(crate::types::error::OperationNotAllowedException),
     /// <p>The pull request has already had its approval rules set to override.</p>
     OverrideAlreadySetException(crate::types::error::OverrideAlreadySetException),
     /// <p>An override status is required, but no value was provided. Valid values include OVERRIDE and REVOKE.</p>
@@ -532,6 +534,7 @@ impl ::std::fmt::Display for Error {
             Error::NoChangeException(inner) => inner.fmt(f),
             Error::NumberOfRuleTemplatesExceededException(inner) => inner.fmt(f),
             Error::NumberOfRulesExceededException(inner) => inner.fmt(f),
+            Error::OperationNotAllowedException(inner) => inner.fmt(f),
             Error::OverrideAlreadySetException(inner) => inner.fmt(f),
             Error::OverrideStatusRequiredException(inner) => inner.fmt(f),
             Error::ParentCommitDoesNotExistException(inner) => inner.fmt(f),
@@ -741,6 +744,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::NoChangeException(inner) => inner.meta(),
             Self::NumberOfRuleTemplatesExceededException(inner) => inner.meta(),
             Self::NumberOfRulesExceededException(inner) => inner.meta(),
+            Self::OperationNotAllowedException(inner) => inner.meta(),
             Self::OverrideAlreadySetException(inner) => inner.meta(),
             Self::OverrideStatusRequiredException(inner) => inner.meta(),
             Self::ParentCommitDoesNotExistException(inner) => inner.meta(),
@@ -1511,6 +1515,9 @@ impl From<crate::operation::create_repository::CreateRepositoryError> for Error 
                 Error::InvalidSystemTagUsageException(inner)
             }
             crate::operation::create_repository::CreateRepositoryError::InvalidTagsMapException(inner) => Error::InvalidTagsMapException(inner),
+            crate::operation::create_repository::CreateRepositoryError::OperationNotAllowedException(inner) => {
+                Error::OperationNotAllowedException(inner)
+            }
             crate::operation::create_repository::CreateRepositoryError::RepositoryLimitExceededException(inner) => {
                 Error::RepositoryLimitExceededException(inner)
             }
@@ -5416,6 +5423,7 @@ impl ::std::error::Error for Error {
             Error::NoChangeException(inner) => inner.source(),
             Error::NumberOfRuleTemplatesExceededException(inner) => inner.source(),
             Error::NumberOfRulesExceededException(inner) => inner.source(),
+            Error::OperationNotAllowedException(inner) => inner.source(),
             Error::OverrideAlreadySetException(inner) => inner.source(),
             Error::OverrideStatusRequiredException(inner) => inner.source(),
             Error::ParentCommitDoesNotExistException(inner) => inner.source(),
@@ -5611,6 +5619,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::NoChangeException(e) => e.request_id(),
             Self::NumberOfRuleTemplatesExceededException(e) => e.request_id(),
             Self::NumberOfRulesExceededException(e) => e.request_id(),
+            Self::OperationNotAllowedException(e) => e.request_id(),
             Self::OverrideAlreadySetException(e) => e.request_id(),
             Self::OverrideStatusRequiredException(e) => e.request_id(),
             Self::ParentCommitDoesNotExistException(e) => e.request_id(),

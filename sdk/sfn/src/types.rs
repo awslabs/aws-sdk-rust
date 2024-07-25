@@ -11,6 +11,10 @@ pub use crate::types::_state_machine_type::StateMachineType;
 
 pub use crate::types::_routing_configuration_list_item::RoutingConfigurationListItem;
 
+pub use crate::types::_encryption_configuration::EncryptionConfiguration;
+
+pub use crate::types::_encryption_type::EncryptionType;
+
 pub use crate::types::_tracing_configuration::TracingConfiguration;
 
 pub use crate::types::_logging_configuration::LoggingConfiguration;
@@ -33,11 +37,15 @@ pub use crate::types::_inspection_level::InspectionLevel;
 
 pub use crate::types::_tag::Tag;
 
+pub use crate::types::_kms_key_state::KmsKeyState;
+
 pub use crate::types::_billing_details::BillingDetails;
 
 pub use crate::types::_cloud_watch_events_execution_data_details::CloudWatchEventsExecutionDataDetails;
 
 pub use crate::types::_sync_execution_status::SyncExecutionStatus;
+
+pub use crate::types::_included_data::IncludedData;
 
 pub use crate::types::_state_machine_version_list_item::StateMachineVersionListItem;
 
@@ -159,6 +167,10 @@ mod _cloud_watch_events_execution_data_details;
 
 mod _cloud_watch_logs_log_group;
 
+mod _encryption_configuration;
+
+mod _encryption_type;
+
 mod _execution_aborted_event_details;
 
 mod _execution_failed_event_details;
@@ -185,6 +197,8 @@ mod _history_event_execution_data_details;
 
 mod _history_event_type;
 
+mod _included_data;
+
 mod _inspection_data;
 
 mod _inspection_data_request;
@@ -192,6 +206,8 @@ mod _inspection_data_request;
 mod _inspection_data_response;
 
 mod _inspection_level;
+
+mod _kms_key_state;
 
 mod _lambda_function_failed_event_details;
 

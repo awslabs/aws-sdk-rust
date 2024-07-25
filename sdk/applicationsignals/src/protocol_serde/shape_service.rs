@@ -23,6 +23,10 @@ where
                         "MetricReferences" => {
                             builder = builder.set_metric_references(crate::protocol_serde::shape_metric_references::de_metric_references(tokens)?);
                         }
+                        "LogGroupReferences" => {
+                            builder =
+                                builder.set_log_group_references(crate::protocol_serde::shape_log_group_references::de_log_group_references(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

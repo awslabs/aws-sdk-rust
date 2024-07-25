@@ -24,6 +24,8 @@ impl crate::operation::stop_execution::builders::StopExecutionInputBuilder {
 ///
 /// <p>Stops an execution.</p>
 /// <p>This API action is not supported by <code>EXPRESS</code> state machines.</p>
+/// <p>For an execution with encryption enabled, Step Functions will encrypt the error and cause fields using the KMS key for the execution role.</p>
+/// <p>A caller can stop an execution without using any KMS permissions in the execution role if the caller provides a null value for both <code>error</code> and <code>cause</code> fields because no data needs to be encrypted.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopExecutionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

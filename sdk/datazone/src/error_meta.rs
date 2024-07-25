@@ -1995,6 +1995,48 @@ impl From<crate::operation::get_environment_blueprint_configuration::GetEnvironm
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_environment_credentials::GetEnvironmentCredentialsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_environment_credentials::GetEnvironmentCredentialsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_environment_credentials::GetEnvironmentCredentialsError> for Error {
+    fn from(err: crate::operation::get_environment_credentials::GetEnvironmentCredentialsError) -> Self {
+        match err {
+            crate::operation::get_environment_credentials::GetEnvironmentCredentialsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_environment_credentials::GetEnvironmentCredentialsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_environment_credentials::GetEnvironmentCredentialsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_environment_credentials::GetEnvironmentCredentialsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_environment_credentials::GetEnvironmentCredentialsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_environment_credentials::GetEnvironmentCredentialsError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::get_environment_credentials::GetEnvironmentCredentialsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_environment_profile::GetEnvironmentProfileError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

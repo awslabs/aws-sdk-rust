@@ -5,11 +5,17 @@
 pub struct DescribeStateMachineForExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the execution you want state machine information for.</p>
     pub execution_arn: ::std::option::Option<::std::string::String>,
+    /// <p>If your state machine definition is encrypted with a KMS key, callers must have <code>kms:Decrypt</code> permission to decrypt the definition. Alternatively, you can call the API with <code>includedData = METADATA_ONLY</code> to get a successful response without the encrypted definition.</p>
+    pub included_data: ::std::option::Option<crate::types::IncludedData>,
 }
 impl DescribeStateMachineForExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the execution you want state machine information for.</p>
     pub fn execution_arn(&self) -> ::std::option::Option<&str> {
         self.execution_arn.as_deref()
+    }
+    /// <p>If your state machine definition is encrypted with a KMS key, callers must have <code>kms:Decrypt</code> permission to decrypt the definition. Alternatively, you can call the API with <code>includedData = METADATA_ONLY</code> to get a successful response without the encrypted definition.</p>
+    pub fn included_data(&self) -> ::std::option::Option<&crate::types::IncludedData> {
+        self.included_data.as_ref()
     }
 }
 impl DescribeStateMachineForExecutionInput {
@@ -24,6 +30,7 @@ impl DescribeStateMachineForExecutionInput {
 #[non_exhaustive]
 pub struct DescribeStateMachineForExecutionInputBuilder {
     pub(crate) execution_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) included_data: ::std::option::Option<crate::types::IncludedData>,
 }
 impl DescribeStateMachineForExecutionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the execution you want state machine information for.</p>
@@ -41,6 +48,20 @@ impl DescribeStateMachineForExecutionInputBuilder {
     pub fn get_execution_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_arn
     }
+    /// <p>If your state machine definition is encrypted with a KMS key, callers must have <code>kms:Decrypt</code> permission to decrypt the definition. Alternatively, you can call the API with <code>includedData = METADATA_ONLY</code> to get a successful response without the encrypted definition.</p>
+    pub fn included_data(mut self, input: crate::types::IncludedData) -> Self {
+        self.included_data = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If your state machine definition is encrypted with a KMS key, callers must have <code>kms:Decrypt</code> permission to decrypt the definition. Alternatively, you can call the API with <code>includedData = METADATA_ONLY</code> to get a successful response without the encrypted definition.</p>
+    pub fn set_included_data(mut self, input: ::std::option::Option<crate::types::IncludedData>) -> Self {
+        self.included_data = input;
+        self
+    }
+    /// <p>If your state machine definition is encrypted with a KMS key, callers must have <code>kms:Decrypt</code> permission to decrypt the definition. Alternatively, you can call the API with <code>includedData = METADATA_ONLY</code> to get a successful response without the encrypted definition.</p>
+    pub fn get_included_data(&self) -> &::std::option::Option<crate::types::IncludedData> {
+        &self.included_data
+    }
     /// Consumes the builder and constructs a [`DescribeStateMachineForExecutionInput`](crate::operation::describe_state_machine_for_execution::DescribeStateMachineForExecutionInput).
     pub fn build(
         self,
@@ -51,6 +72,7 @@ impl DescribeStateMachineForExecutionInputBuilder {
         ::std::result::Result::Ok(
             crate::operation::describe_state_machine_for_execution::DescribeStateMachineForExecutionInput {
                 execution_arn: self.execution_arn,
+                included_data: self.included_data,
             },
         )
     }

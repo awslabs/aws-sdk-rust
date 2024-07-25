@@ -15,6 +15,8 @@ pub struct UpdateClusterConfigInput {
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The access configuration for the cluster.</p>
     pub access_config: ::std::option::Option<crate::types::UpdateAccessConfigRequest>,
+    /// <p>You can enable or disable extended support for clusters currently on standard support. You cannot disable extended support once it starts. You must enable extended support before your cluster exits standard support.</p>
+    pub upgrade_policy: ::std::option::Option<crate::types::UpgradePolicyRequest>,
 }
 impl UpdateClusterConfigInput {
     /// <p>The name of the Amazon EKS cluster to update.</p>
@@ -39,6 +41,10 @@ impl UpdateClusterConfigInput {
     pub fn access_config(&self) -> ::std::option::Option<&crate::types::UpdateAccessConfigRequest> {
         self.access_config.as_ref()
     }
+    /// <p>You can enable or disable extended support for clusters currently on standard support. You cannot disable extended support once it starts. You must enable extended support before your cluster exits standard support.</p>
+    pub fn upgrade_policy(&self) -> ::std::option::Option<&crate::types::UpgradePolicyRequest> {
+        self.upgrade_policy.as_ref()
+    }
 }
 impl UpdateClusterConfigInput {
     /// Creates a new builder-style object to manufacture [`UpdateClusterConfigInput`](crate::operation::update_cluster_config::UpdateClusterConfigInput).
@@ -56,6 +62,7 @@ pub struct UpdateClusterConfigInputBuilder {
     pub(crate) logging: ::std::option::Option<crate::types::Logging>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) access_config: ::std::option::Option<crate::types::UpdateAccessConfigRequest>,
+    pub(crate) upgrade_policy: ::std::option::Option<crate::types::UpgradePolicyRequest>,
 }
 impl UpdateClusterConfigInputBuilder {
     /// <p>The name of the Amazon EKS cluster to update.</p>
@@ -135,6 +142,20 @@ impl UpdateClusterConfigInputBuilder {
     pub fn get_access_config(&self) -> &::std::option::Option<crate::types::UpdateAccessConfigRequest> {
         &self.access_config
     }
+    /// <p>You can enable or disable extended support for clusters currently on standard support. You cannot disable extended support once it starts. You must enable extended support before your cluster exits standard support.</p>
+    pub fn upgrade_policy(mut self, input: crate::types::UpgradePolicyRequest) -> Self {
+        self.upgrade_policy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>You can enable or disable extended support for clusters currently on standard support. You cannot disable extended support once it starts. You must enable extended support before your cluster exits standard support.</p>
+    pub fn set_upgrade_policy(mut self, input: ::std::option::Option<crate::types::UpgradePolicyRequest>) -> Self {
+        self.upgrade_policy = input;
+        self
+    }
+    /// <p>You can enable or disable extended support for clusters currently on standard support. You cannot disable extended support once it starts. You must enable extended support before your cluster exits standard support.</p>
+    pub fn get_upgrade_policy(&self) -> &::std::option::Option<crate::types::UpgradePolicyRequest> {
+        &self.upgrade_policy
+    }
     /// Consumes the builder and constructs a [`UpdateClusterConfigInput`](crate::operation::update_cluster_config::UpdateClusterConfigInput).
     pub fn build(
         self,
@@ -146,6 +167,7 @@ impl UpdateClusterConfigInputBuilder {
             logging: self.logging,
             client_request_token: self.client_request_token,
             access_config: self.access_config,
+            upgrade_policy: self.upgrade_policy,
         })
     }
 }

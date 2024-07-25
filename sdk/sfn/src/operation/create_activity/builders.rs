@@ -193,4 +193,18 @@ impl CreateActivityFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
+    /// <p>Settings to configure server-side encryption.</p>
+    pub fn encryption_configuration(mut self, input: crate::types::EncryptionConfiguration) -> Self {
+        self.inner = self.inner.encryption_configuration(input);
+        self
+    }
+    /// <p>Settings to configure server-side encryption.</p>
+    pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
+        self.inner = self.inner.set_encryption_configuration(input);
+        self
+    }
+    /// <p>Settings to configure server-side encryption.</p>
+    pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
+        self.inner.get_encryption_configuration()
+    }
 }

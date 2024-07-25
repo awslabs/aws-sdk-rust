@@ -15,15 +15,23 @@ pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExce
 
 pub use crate::types::error::_missing_required_parameter::MissingRequiredParameterBuilder;
 
+pub use crate::types::error::_kms_throttling_exception::KmsThrottlingExceptionBuilder;
+
+pub use crate::types::error::_kms_access_denied_exception::KmsAccessDeniedExceptionBuilder;
+
 pub use crate::types::error::_invalid_tracing_configuration::InvalidTracingConfigurationBuilder;
 
 pub use crate::types::error::_invalid_logging_configuration::InvalidLoggingConfigurationBuilder;
+
+pub use crate::types::error::_invalid_encryption_configuration::InvalidEncryptionConfigurationBuilder;
 
 pub use crate::types::error::_invalid_definition::InvalidDefinitionBuilder;
 
 pub use crate::types::error::_invalid_execution_input::InvalidExecutionInputBuilder;
 
 pub use crate::types::error::_too_many_tags::TooManyTagsBuilder;
+
+pub use crate::types::error::_kms_invalid_state_exception::KmsInvalidStateExceptionBuilder;
 
 pub use crate::types::error::_execution_does_not_exist::ExecutionDoesNotExistBuilder;
 
@@ -54,3 +62,5 @@ pub use crate::types::error::_state_machine_limit_exceeded::StateMachineLimitExc
 pub use crate::types::error::_state_machine_already_exists::StateMachineAlreadyExistsBuilder;
 
 pub use crate::types::error::_activity_limit_exceeded::ActivityLimitExceededBuilder;
+
+pub use crate::types::error::_activity_already_exists::ActivityAlreadyExistsBuilder;

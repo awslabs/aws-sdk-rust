@@ -21,8 +21,6 @@ pub struct CreatePullThroughCacheRuleInput {
     /// <p>Microsoft Azure Container Registry (<code>azure-container-registry</code>) - <code><custom>
     /// .azurecr.io
     /// </custom></code></p></li>
-    /// <li>
-    /// <p>GitLab Container Registry (<code>gitlab-container-registry</code>) - <code>registry.gitlab.com</code></p></li>
     /// </ul>
     pub upstream_registry_url: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID associated with the registry to create the pull through cache rule for. If you do not specify a registry, the default registry is assumed.</p>
@@ -53,8 +51,6 @@ impl CreatePullThroughCacheRuleInput {
     /// <p>Microsoft Azure Container Registry (<code>azure-container-registry</code>) - <code><custom>
     /// .azurecr.io
     /// </custom></code></p></li>
-    /// <li>
-    /// <p>GitLab Container Registry (<code>gitlab-container-registry</code>) - <code>registry.gitlab.com</code></p></li>
     /// </ul>
     pub fn upstream_registry_url(&self) -> ::std::option::Option<&str> {
         self.upstream_registry_url.as_deref()
@@ -121,8 +117,6 @@ impl CreatePullThroughCacheRuleInputBuilder {
     /// <p>Microsoft Azure Container Registry (<code>azure-container-registry</code>) - <code><custom>
     /// .azurecr.io
     /// </custom></code></p></li>
-    /// <li>
-    /// <p>GitLab Container Registry (<code>gitlab-container-registry</code>) - <code>registry.gitlab.com</code></p></li>
     /// </ul>
     /// This field is required.
     pub fn upstream_registry_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -145,8 +139,6 @@ impl CreatePullThroughCacheRuleInputBuilder {
     /// <p>Microsoft Azure Container Registry (<code>azure-container-registry</code>) - <code><custom>
     /// .azurecr.io
     /// </custom></code></p></li>
-    /// <li>
-    /// <p>GitLab Container Registry (<code>gitlab-container-registry</code>) - <code>registry.gitlab.com</code></p></li>
     /// </ul>
     pub fn set_upstream_registry_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.upstream_registry_url = input;
@@ -168,8 +160,6 @@ impl CreatePullThroughCacheRuleInputBuilder {
     /// <p>Microsoft Azure Container Registry (<code>azure-container-registry</code>) - <code><custom>
     /// .azurecr.io
     /// </custom></code></p></li>
-    /// <li>
-    /// <p>GitLab Container Registry (<code>gitlab-container-registry</code>) - <code>registry.gitlab.com</code></p></li>
     /// </ul>
     pub fn get_upstream_registry_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.upstream_registry_url

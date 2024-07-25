@@ -22,7 +22,8 @@ impl crate::operation::converse::builders::ConverseInputBuilder {
 }
 /// Fluent builder constructing a request to `Converse`.
 ///
-/// <p>Sends messages to the specified Amazon Bedrock model. <code>Converse</code> provides a consistent interface that works with all models that support messages. This allows you to write code once and use it with different models. Should a model have unique inference parameters, you can also pass those unique parameters to the model.</p>
+/// <p>Sends messages to the specified Amazon Bedrock model. <code>Converse</code> provides a consistent interface that works with all models that support messages. This allows you to write code once and use it with different models. If a model has unique inference parameters, you can also pass those unique parameters to the model.</p>
+/// <p>Amazon Bedrock doesn't store any text, images, or documents that you provide as content. The data is only used to generate the response.</p>
 /// <p>For information about the Converse API, see <i>Use the Converse API</i> in the <i>Amazon Bedrock User Guide</i>. To use a guardrail, see <i>Use a guardrail with the Converse API</i> in the <i>Amazon Bedrock User Guide</i>. To use a tool with a model, see <i>Tool use (Function calling)</i> in the <i>Amazon Bedrock User Guide</i></p>
 /// <p>For example code, see <i>Converse API examples</i> in the <i>Amazon Bedrock User Guide</i>.</p>
 /// <p>This operation requires permission for the <code>bedrock:InvokeModel</code> action.</p>

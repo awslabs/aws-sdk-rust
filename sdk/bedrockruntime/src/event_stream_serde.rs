@@ -143,6 +143,23 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for ConverseStreamOutput
                             crate::types::error::ConverseStreamOutputError::ThrottlingException(builder.build()),
                         ));
                     }
+                    "serviceUnavailableException" => {
+                        let mut builder = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
+                        builder = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(
+                            &message.payload()[..],
+                            builder,
+                        )
+                        .map_err(|err| {
+                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!(
+                                "failed to unmarshall serviceUnavailableException: {}",
+                                err
+                            ))
+                        })?;
+                        builder.set_meta(Some(generic));
+                        return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
+                            crate::types::error::ConverseStreamOutputError::ServiceUnavailableException(builder.build()),
+                        ));
+                    }
                     _ => {}
                 }
                 Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
@@ -270,6 +287,23 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for ResponseStreamUnmars
                         builder.set_meta(Some(generic));
                         return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
                             crate::types::error::ResponseStreamError::ModelTimeoutException(builder.build()),
+                        ));
+                    }
+                    "serviceUnavailableException" => {
+                        let mut builder = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
+                        builder = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(
+                            &message.payload()[..],
+                            builder,
+                        )
+                        .map_err(|err| {
+                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!(
+                                "failed to unmarshall serviceUnavailableException: {}",
+                                err
+                            ))
+                        })?;
+                        builder.set_meta(Some(generic));
+                        return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
+                            crate::types::error::ResponseStreamError::ServiceUnavailableException(builder.build()),
                         ));
                     }
                     _ => {}

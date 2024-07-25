@@ -22,7 +22,7 @@ impl crate::operation::describe_trust_store_revocations::builders::DescribeTrust
 }
 /// Fluent builder constructing a request to `DescribeTrustStoreRevocations`.
 ///
-/// <p>Describes the revocation files in use by the specified trust store arn, or revocation ID.</p>
+/// <p>Describes the revocation files in use by the specified trust store or revocation files.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeTrustStoreRevocationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

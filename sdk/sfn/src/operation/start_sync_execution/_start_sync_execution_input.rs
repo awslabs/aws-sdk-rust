@@ -15,6 +15,8 @@ pub struct StartSyncExecutionInput {
     pub input: ::std::option::Option<::std::string::String>,
     /// <p>Passes the X-Ray trace header. The trace header can also be passed in the request payload.</p>
     pub trace_header: ::std::option::Option<::std::string::String>,
+    /// <p>If your state machine definition is encrypted with a KMS key, callers must have <code>kms:Decrypt</code> permission to decrypt the definition. Alternatively, you can call the API with <code>includedData = METADATA_ONLY</code> to get a successful response without the encrypted definition.</p>
+    pub included_data: ::std::option::Option<crate::types::IncludedData>,
 }
 impl StartSyncExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
@@ -37,6 +39,10 @@ impl StartSyncExecutionInput {
     pub fn trace_header(&self) -> ::std::option::Option<&str> {
         self.trace_header.as_deref()
     }
+    /// <p>If your state machine definition is encrypted with a KMS key, callers must have <code>kms:Decrypt</code> permission to decrypt the definition. Alternatively, you can call the API with <code>includedData = METADATA_ONLY</code> to get a successful response without the encrypted definition.</p>
+    pub fn included_data(&self) -> ::std::option::Option<&crate::types::IncludedData> {
+        self.included_data.as_ref()
+    }
 }
 impl ::std::fmt::Debug for StartSyncExecutionInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -45,6 +51,7 @@ impl ::std::fmt::Debug for StartSyncExecutionInput {
         formatter.field("name", &self.name);
         formatter.field("input", &"*** Sensitive Data Redacted ***");
         formatter.field("trace_header", &self.trace_header);
+        formatter.field("included_data", &self.included_data);
         formatter.finish()
     }
 }
@@ -63,6 +70,7 @@ pub struct StartSyncExecutionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) input: ::std::option::Option<::std::string::String>,
     pub(crate) trace_header: ::std::option::Option<::std::string::String>,
+    pub(crate) included_data: ::std::option::Option<crate::types::IncludedData>,
 }
 impl StartSyncExecutionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
@@ -134,6 +142,20 @@ impl StartSyncExecutionInputBuilder {
     pub fn get_trace_header(&self) -> &::std::option::Option<::std::string::String> {
         &self.trace_header
     }
+    /// <p>If your state machine definition is encrypted with a KMS key, callers must have <code>kms:Decrypt</code> permission to decrypt the definition. Alternatively, you can call the API with <code>includedData = METADATA_ONLY</code> to get a successful response without the encrypted definition.</p>
+    pub fn included_data(mut self, input: crate::types::IncludedData) -> Self {
+        self.included_data = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If your state machine definition is encrypted with a KMS key, callers must have <code>kms:Decrypt</code> permission to decrypt the definition. Alternatively, you can call the API with <code>includedData = METADATA_ONLY</code> to get a successful response without the encrypted definition.</p>
+    pub fn set_included_data(mut self, input: ::std::option::Option<crate::types::IncludedData>) -> Self {
+        self.included_data = input;
+        self
+    }
+    /// <p>If your state machine definition is encrypted with a KMS key, callers must have <code>kms:Decrypt</code> permission to decrypt the definition. Alternatively, you can call the API with <code>includedData = METADATA_ONLY</code> to get a successful response without the encrypted definition.</p>
+    pub fn get_included_data(&self) -> &::std::option::Option<crate::types::IncludedData> {
+        &self.included_data
+    }
     /// Consumes the builder and constructs a [`StartSyncExecutionInput`](crate::operation::start_sync_execution::StartSyncExecutionInput).
     pub fn build(
         self,
@@ -144,6 +166,7 @@ impl StartSyncExecutionInputBuilder {
             name: self.name,
             input: self.input,
             trace_header: self.trace_header,
+            included_data: self.included_data,
         })
     }
 }
@@ -154,6 +177,7 @@ impl ::std::fmt::Debug for StartSyncExecutionInputBuilder {
         formatter.field("name", &self.name);
         formatter.field("input", &"*** Sensitive Data Redacted ***");
         formatter.field("trace_header", &self.trace_header);
+        formatter.field("included_data", &self.included_data);
         formatter.finish()
     }
 }

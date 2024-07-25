@@ -17,6 +17,21 @@ pub fn de_create_activity_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "ActivityAlreadyExists" => crate::operation::create_activity::CreateActivityError::ActivityAlreadyExists({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ActivityAlreadyExistsBuilder::default();
+                output = crate::protocol_serde::shape_activity_already_exists::de_activity_already_exists_json_err(_response_body, output)
+                    .map_err(crate::operation::create_activity::CreateActivityError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ActivityLimitExceeded" => crate::operation::create_activity::CreateActivityError::ActivityLimitExceeded({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -32,12 +47,60 @@ pub fn de_create_activity_http_error(
             }
             tmp
         }),
+        "InvalidEncryptionConfiguration" => crate::operation::create_activity::CreateActivityError::InvalidEncryptionConfiguration({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidEncryptionConfigurationBuilder::default();
+                output = crate::protocol_serde::shape_invalid_encryption_configuration::de_invalid_encryption_configuration_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::create_activity::CreateActivityError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "InvalidName" => crate::operation::create_activity::CreateActivityError::InvalidName({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InvalidNameBuilder::default();
                 output = crate::protocol_serde::shape_invalid_name::de_invalid_name_json_err(_response_body, output)
+                    .map_err(crate::operation::create_activity::CreateActivityError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "KmsAccessDeniedException" => crate::operation::create_activity::CreateActivityError::KmsAccessDeniedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::KmsAccessDeniedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_kms_access_denied_exception::de_kms_access_denied_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::create_activity::CreateActivityError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "KmsThrottlingException" => crate::operation::create_activity::CreateActivityError::KmsThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::KmsThrottlingExceptionBuilder::default();
+                output = crate::protocol_serde::shape_kms_throttling_exception::de_kms_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_activity::CreateActivityError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()

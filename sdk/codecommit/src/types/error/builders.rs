@@ -321,6 +321,8 @@ pub use crate::types::error::_approval_rule_template_in_use_exception::ApprovalR
 
 pub use crate::types::error::_repository_limit_exceeded_exception::RepositoryLimitExceededExceptionBuilder;
 
+pub use crate::types::error::_operation_not_allowed_exception::OperationNotAllowedExceptionBuilder;
+
 pub use crate::types::error::_number_of_rules_exceeded_exception::NumberOfRulesExceededExceptionBuilder;
 
 pub use crate::types::error::_approval_rule_name_already_exists_exception::ApprovalRuleNameAlreadyExistsExceptionBuilder;

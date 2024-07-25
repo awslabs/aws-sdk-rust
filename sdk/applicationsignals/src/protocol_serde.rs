@@ -95,6 +95,8 @@ pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_goal;
 
+pub(crate) mod shape_log_group_references;
+
 pub(crate) mod shape_service;
 
 pub(crate) mod shape_service_dependencies;

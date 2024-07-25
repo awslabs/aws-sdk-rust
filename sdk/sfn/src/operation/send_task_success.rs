@@ -248,6 +248,12 @@ pub enum SendTaskSuccessError {
     InvalidOutput(crate::types::error::InvalidOutput),
     /// <p>The provided token is not valid.</p>
     InvalidToken(crate::types::error::InvalidToken),
+    /// <p>Either your KMS key policy or API caller does not have the required permissions.</p>
+    KmsAccessDeniedException(crate::types::error::KmsAccessDeniedException),
+    /// <p>The KMS key is not in valid state, for example: Disabled or Deleted.</p>
+    KmsInvalidStateException(crate::types::error::KmsInvalidStateException),
+    /// <p>Received when KMS returns <code>ThrottlingException</code> for a KMS call that Step Functions makes on behalf of the caller.</p>
+    KmsThrottlingException(crate::types::error::KmsThrottlingException),
     /// <p>The activity does not exist.</p>
     TaskDoesNotExist(crate::types::error::TaskDoesNotExist),
     /// <p>The task token has either expired or the task associated with the token has already been closed.</p>
@@ -287,6 +293,9 @@ impl SendTaskSuccessError {
         match self {
             Self::InvalidOutput(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidToken(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::KmsAccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::KmsInvalidStateException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::KmsThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::TaskDoesNotExist(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::TaskTimedOut(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
@@ -299,6 +308,18 @@ impl SendTaskSuccessError {
     /// Returns `true` if the error kind is `SendTaskSuccessError::InvalidToken`.
     pub fn is_invalid_token(&self) -> bool {
         matches!(self, Self::InvalidToken(_))
+    }
+    /// Returns `true` if the error kind is `SendTaskSuccessError::KmsAccessDeniedException`.
+    pub fn is_kms_access_denied_exception(&self) -> bool {
+        matches!(self, Self::KmsAccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `SendTaskSuccessError::KmsInvalidStateException`.
+    pub fn is_kms_invalid_state_exception(&self) -> bool {
+        matches!(self, Self::KmsInvalidStateException(_))
+    }
+    /// Returns `true` if the error kind is `SendTaskSuccessError::KmsThrottlingException`.
+    pub fn is_kms_throttling_exception(&self) -> bool {
+        matches!(self, Self::KmsThrottlingException(_))
     }
     /// Returns `true` if the error kind is `SendTaskSuccessError::TaskDoesNotExist`.
     pub fn is_task_does_not_exist(&self) -> bool {
@@ -314,6 +335,9 @@ impl ::std::error::Error for SendTaskSuccessError {
         match self {
             Self::InvalidOutput(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidToken(_inner) => ::std::option::Option::Some(_inner),
+            Self::KmsAccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::KmsInvalidStateException(_inner) => ::std::option::Option::Some(_inner),
+            Self::KmsThrottlingException(_inner) => ::std::option::Option::Some(_inner),
             Self::TaskDoesNotExist(_inner) => ::std::option::Option::Some(_inner),
             Self::TaskTimedOut(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
@@ -325,6 +349,9 @@ impl ::std::fmt::Display for SendTaskSuccessError {
         match self {
             Self::InvalidOutput(_inner) => _inner.fmt(f),
             Self::InvalidToken(_inner) => _inner.fmt(f),
+            Self::KmsAccessDeniedException(_inner) => _inner.fmt(f),
+            Self::KmsInvalidStateException(_inner) => _inner.fmt(f),
+            Self::KmsThrottlingException(_inner) => _inner.fmt(f),
             Self::TaskDoesNotExist(_inner) => _inner.fmt(f),
             Self::TaskTimedOut(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
@@ -350,6 +377,9 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for SendTaskSucce
         match self {
             Self::InvalidOutput(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidToken(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::KmsAccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::KmsInvalidStateException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::KmsThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::TaskDoesNotExist(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::TaskTimedOut(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,

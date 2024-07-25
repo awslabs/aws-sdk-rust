@@ -275,13 +275,13 @@ pub enum ApplyGuardrailError {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>The specified resource ARN was not found. Check the ARN and try your request again.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
+    /// <p>Your request was throttled because of service-wide limitations. Resubmit your request later or in a different region. You can also purchase <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned Throughput</a> to increase the rate or number of tokens you can process.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>Input validation failed. Check your request parameters and retry the request.</p>
     ValidationException(crate::types::error::ValidationException),
-    /// <p>The number of requests exceeds the service quota. Resubmit your request later.</p>
+    /// <p>Your request exceeds the service quota for your account. You can view your quotas at <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/gs-request-quota.html">Viewing service quotas</a>. You can resubmit your request later.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

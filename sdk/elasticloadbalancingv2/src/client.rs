@@ -234,6 +234,8 @@ mod delete_load_balancer;
 
 mod delete_rule;
 
+mod delete_shared_trust_store_association;
+
 mod delete_target_group;
 
 mod delete_trust_store;
@@ -267,6 +269,8 @@ mod describe_trust_store_associations;
 mod describe_trust_store_revocations;
 
 mod describe_trust_stores;
+
+mod get_resource_policy;
 
 mod get_trust_store_ca_certificates_bundle;
 

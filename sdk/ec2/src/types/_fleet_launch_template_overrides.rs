@@ -33,7 +33,34 @@ pub struct FleetLaunchTemplateOverrides {
     /// <p>If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.</p>
     /// </note>
     pub instance_requirements: ::std::option::Option<crate::types::InstanceRequirements>,
-    /// <p>The ID of the AMI. An AMI is required to launch an instance. This parameter is only available for fleets of type <code>instant</code>. For fleets of type <code>maintain</code> and <code>request</code>, you must specify the AMI ID in the launch template.</p>
+    /// <p>The ID of the AMI in the format <code>ami-17characters00000</code>.</p>
+    /// <p>Alternatively, you can specify a Systems Manager parameter, using one of the following formats. The Systems Manager parameter will resolve to an AMI ID on launch.</p>
+    /// <p>To reference a public parameter:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>resolve:ssm:<i>public-parameter</i> </code></p></li>
+    /// </ul>
+    /// <p>To reference a parameter stored in the same account:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>resolve:ssm:<i>parameter-name</i> </code></p></li>
+    /// <li>
+    /// <p><code>resolve:ssm:<i>parameter-name:version-number</i> </code></p></li>
+    /// <li>
+    /// <p><code>resolve:ssm:<i>parameter-name:label</i> </code></p></li>
+    /// </ul>
+    /// <p>To reference a parameter shared from another Amazon Web Services account:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>resolve:ssm:<i>parameter-ARN</i> </code></p></li>
+    /// <li>
+    /// <p><code>resolve:ssm:<i>parameter-ARN:version-number</i> </code></p></li>
+    /// <li>
+    /// <p><code>resolve:ssm:<i>parameter-ARN:label</i> </code></p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-launch-template.html#use-an-ssm-parameter-instead-of-an-ami-id">Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon EC2 User Guide</i>.</p><note>
+    /// <p>This parameter is only available for fleets of type <code>instant</code>. For fleets of type <code>maintain</code> and <code>request</code>, you must specify the AMI ID in the launch template.</p>
+    /// </note>
     pub image_id: ::std::option::Option<::std::string::String>,
 }
 impl FleetLaunchTemplateOverrides {
@@ -82,7 +109,34 @@ impl FleetLaunchTemplateOverrides {
     pub fn instance_requirements(&self) -> ::std::option::Option<&crate::types::InstanceRequirements> {
         self.instance_requirements.as_ref()
     }
-    /// <p>The ID of the AMI. An AMI is required to launch an instance. This parameter is only available for fleets of type <code>instant</code>. For fleets of type <code>maintain</code> and <code>request</code>, you must specify the AMI ID in the launch template.</p>
+    /// <p>The ID of the AMI in the format <code>ami-17characters00000</code>.</p>
+    /// <p>Alternatively, you can specify a Systems Manager parameter, using one of the following formats. The Systems Manager parameter will resolve to an AMI ID on launch.</p>
+    /// <p>To reference a public parameter:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>resolve:ssm:<i>public-parameter</i> </code></p></li>
+    /// </ul>
+    /// <p>To reference a parameter stored in the same account:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>resolve:ssm:<i>parameter-name</i> </code></p></li>
+    /// <li>
+    /// <p><code>resolve:ssm:<i>parameter-name:version-number</i> </code></p></li>
+    /// <li>
+    /// <p><code>resolve:ssm:<i>parameter-name:label</i> </code></p></li>
+    /// </ul>
+    /// <p>To reference a parameter shared from another Amazon Web Services account:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>resolve:ssm:<i>parameter-ARN</i> </code></p></li>
+    /// <li>
+    /// <p><code>resolve:ssm:<i>parameter-ARN:version-number</i> </code></p></li>
+    /// <li>
+    /// <p><code>resolve:ssm:<i>parameter-ARN:label</i> </code></p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-launch-template.html#use-an-ssm-parameter-instead-of-an-ami-id">Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon EC2 User Guide</i>.</p><note>
+    /// <p>This parameter is only available for fleets of type <code>instant</code>. For fleets of type <code>maintain</code> and <code>request</code>, you must specify the AMI ID in the launch template.</p>
+    /// </note>
     pub fn image_id(&self) -> ::std::option::Option<&str> {
         self.image_id.as_deref()
     }
@@ -260,17 +314,98 @@ impl FleetLaunchTemplateOverridesBuilder {
     pub fn get_instance_requirements(&self) -> &::std::option::Option<crate::types::InstanceRequirements> {
         &self.instance_requirements
     }
-    /// <p>The ID of the AMI. An AMI is required to launch an instance. This parameter is only available for fleets of type <code>instant</code>. For fleets of type <code>maintain</code> and <code>request</code>, you must specify the AMI ID in the launch template.</p>
+    /// <p>The ID of the AMI in the format <code>ami-17characters00000</code>.</p>
+    /// <p>Alternatively, you can specify a Systems Manager parameter, using one of the following formats. The Systems Manager parameter will resolve to an AMI ID on launch.</p>
+    /// <p>To reference a public parameter:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>resolve:ssm:<i>public-parameter</i> </code></p></li>
+    /// </ul>
+    /// <p>To reference a parameter stored in the same account:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>resolve:ssm:<i>parameter-name</i> </code></p></li>
+    /// <li>
+    /// <p><code>resolve:ssm:<i>parameter-name:version-number</i> </code></p></li>
+    /// <li>
+    /// <p><code>resolve:ssm:<i>parameter-name:label</i> </code></p></li>
+    /// </ul>
+    /// <p>To reference a parameter shared from another Amazon Web Services account:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>resolve:ssm:<i>parameter-ARN</i> </code></p></li>
+    /// <li>
+    /// <p><code>resolve:ssm:<i>parameter-ARN:version-number</i> </code></p></li>
+    /// <li>
+    /// <p><code>resolve:ssm:<i>parameter-ARN:label</i> </code></p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-launch-template.html#use-an-ssm-parameter-instead-of-an-ami-id">Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon EC2 User Guide</i>.</p><note>
+    /// <p>This parameter is only available for fleets of type <code>instant</code>. For fleets of type <code>maintain</code> and <code>request</code>, you must specify the AMI ID in the launch template.</p>
+    /// </note>
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the AMI. An AMI is required to launch an instance. This parameter is only available for fleets of type <code>instant</code>. For fleets of type <code>maintain</code> and <code>request</code>, you must specify the AMI ID in the launch template.</p>
+    /// <p>The ID of the AMI in the format <code>ami-17characters00000</code>.</p>
+    /// <p>Alternatively, you can specify a Systems Manager parameter, using one of the following formats. The Systems Manager parameter will resolve to an AMI ID on launch.</p>
+    /// <p>To reference a public parameter:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>resolve:ssm:<i>public-parameter</i> </code></p></li>
+    /// </ul>
+    /// <p>To reference a parameter stored in the same account:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>resolve:ssm:<i>parameter-name</i> </code></p></li>
+    /// <li>
+    /// <p><code>resolve:ssm:<i>parameter-name:version-number</i> </code></p></li>
+    /// <li>
+    /// <p><code>resolve:ssm:<i>parameter-name:label</i> </code></p></li>
+    /// </ul>
+    /// <p>To reference a parameter shared from another Amazon Web Services account:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>resolve:ssm:<i>parameter-ARN</i> </code></p></li>
+    /// <li>
+    /// <p><code>resolve:ssm:<i>parameter-ARN:version-number</i> </code></p></li>
+    /// <li>
+    /// <p><code>resolve:ssm:<i>parameter-ARN:label</i> </code></p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-launch-template.html#use-an-ssm-parameter-instead-of-an-ami-id">Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon EC2 User Guide</i>.</p><note>
+    /// <p>This parameter is only available for fleets of type <code>instant</code>. For fleets of type <code>maintain</code> and <code>request</code>, you must specify the AMI ID in the launch template.</p>
+    /// </note>
     pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_id = input;
         self
     }
-    /// <p>The ID of the AMI. An AMI is required to launch an instance. This parameter is only available for fleets of type <code>instant</code>. For fleets of type <code>maintain</code> and <code>request</code>, you must specify the AMI ID in the launch template.</p>
+    /// <p>The ID of the AMI in the format <code>ami-17characters00000</code>.</p>
+    /// <p>Alternatively, you can specify a Systems Manager parameter, using one of the following formats. The Systems Manager parameter will resolve to an AMI ID on launch.</p>
+    /// <p>To reference a public parameter:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>resolve:ssm:<i>public-parameter</i> </code></p></li>
+    /// </ul>
+    /// <p>To reference a parameter stored in the same account:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>resolve:ssm:<i>parameter-name</i> </code></p></li>
+    /// <li>
+    /// <p><code>resolve:ssm:<i>parameter-name:version-number</i> </code></p></li>
+    /// <li>
+    /// <p><code>resolve:ssm:<i>parameter-name:label</i> </code></p></li>
+    /// </ul>
+    /// <p>To reference a parameter shared from another Amazon Web Services account:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>resolve:ssm:<i>parameter-ARN</i> </code></p></li>
+    /// <li>
+    /// <p><code>resolve:ssm:<i>parameter-ARN:version-number</i> </code></p></li>
+    /// <li>
+    /// <p><code>resolve:ssm:<i>parameter-ARN:label</i> </code></p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-launch-template.html#use-an-ssm-parameter-instead-of-an-ami-id">Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon EC2 User Guide</i>.</p><note>
+    /// <p>This parameter is only available for fleets of type <code>instant</code>. For fleets of type <code>maintain</code> and <code>request</code>, you must specify the AMI ID in the launch template.</p>
+    /// </note>
     pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_id
     }

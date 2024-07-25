@@ -65,11 +65,17 @@ pub use crate::types::error::_certificate_not_found_exception::CertificateNotFou
 
 pub use crate::types::error::_alpn_policy_not_supported_exception::AlpnPolicyNotSupportedExceptionBuilder;
 
+pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundExceptionBuilder;
+
 pub use crate::types::error::_health_unavailable_exception::HealthUnavailableExceptionBuilder;
 
 pub use crate::types::error::_trust_store_in_use_exception::TrustStoreInUseExceptionBuilder;
 
 pub use crate::types::error::_resource_in_use_exception::ResourceInUseExceptionBuilder;
+
+pub use crate::types::error::_trust_store_association_not_found_exception::TrustStoreAssociationNotFoundExceptionBuilder;
+
+pub use crate::types::error::_delete_association_same_account_exception::DeleteAssociationSameAccountExceptionBuilder;
 
 pub use crate::types::error::_too_many_trust_stores_exception::TooManyTrustStoresExceptionBuilder;
 

@@ -18,5 +18,11 @@ pub fn ser_create_activity_input_input(
         }
         array_3.finish();
     }
+    if let Some(var_6) = &input.encryption_configuration {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("encryptionConfiguration").start_object();
+        crate::protocol_serde::shape_encryption_configuration::ser_encryption_configuration(&mut object_7, var_6)?;
+        object_7.finish();
+    }
     Ok(())
 }

@@ -138,8 +138,6 @@ impl CreatePullThroughCacheRuleFluentBuilder {
     /// <p>Microsoft Azure Container Registry (<code>azure-container-registry</code>) - <code><custom>
     /// .azurecr.io
     /// </custom></code></p></li>
-    /// <li>
-    /// <p>GitLab Container Registry (<code>gitlab-container-registry</code>) - <code>registry.gitlab.com</code></p></li>
     /// </ul>
     pub fn upstream_registry_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.upstream_registry_url(input.into());
@@ -161,8 +159,6 @@ impl CreatePullThroughCacheRuleFluentBuilder {
     /// <p>Microsoft Azure Container Registry (<code>azure-container-registry</code>) - <code><custom>
     /// .azurecr.io
     /// </custom></code></p></li>
-    /// <li>
-    /// <p>GitLab Container Registry (<code>gitlab-container-registry</code>) - <code>registry.gitlab.com</code></p></li>
     /// </ul>
     pub fn set_upstream_registry_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_upstream_registry_url(input);
@@ -184,8 +180,6 @@ impl CreatePullThroughCacheRuleFluentBuilder {
     /// <p>Microsoft Azure Container Registry (<code>azure-container-registry</code>) - <code><custom>
     /// .azurecr.io
     /// </custom></code></p></li>
-    /// <li>
-    /// <p>GitLab Container Registry (<code>gitlab-container-registry</code>) - <code>registry.gitlab.com</code></p></li>
     /// </ul>
     pub fn get_upstream_registry_url(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_upstream_registry_url()

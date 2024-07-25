@@ -37,6 +37,10 @@ pub use crate::types::_eks_anywhere_subscription_term_unit::EksAnywhereSubscript
 
 pub use crate::types::_eks_anywhere_subscription_license_type::EksAnywhereSubscriptionLicenseType;
 
+pub use crate::types::_upgrade_policy_request::UpgradePolicyRequest;
+
+pub use crate::types::_support_type::SupportType;
+
 pub use crate::types::_update_access_config_request::UpdateAccessConfigRequest;
 
 pub use crate::types::_authentication_mode::AuthenticationMode;
@@ -56,6 +60,8 @@ pub use crate::types::_resolve_conflicts::ResolveConflicts;
 pub use crate::types::_access_entry::AccessEntry;
 
 pub use crate::types::_cluster::Cluster;
+
+pub use crate::types::_upgrade_policy_response::UpgradePolicyResponse;
 
 pub use crate::types::_access_config_response::AccessConfigResponse;
 
@@ -367,6 +373,8 @@ mod _remote_access_config;
 
 mod _resolve_conflicts;
 
+mod _support_type;
+
 mod _taint;
 
 mod _taint_effect;
@@ -386,6 +394,10 @@ mod _update_status;
 mod _update_taints_payload;
 
 mod _update_type;
+
+mod _upgrade_policy_request;
+
+mod _upgrade_policy_response;
 
 mod _vpc_config_request;
 

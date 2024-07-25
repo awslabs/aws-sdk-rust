@@ -25,6 +25,7 @@ pub struct DescribeStateMachineOutput {
     /// <p>The current status of the state machine.</p>
     pub status: ::std::option::Option<crate::types::StateMachineStatus>,
     /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
+    /// <p>If called with <code>includedData = METADATA_ONLY</code>, the returned definition will be <code>{}</code>.</p>
     pub definition: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the IAM role used when creating this state machine. (The IAM role maintains security by granting Step Functions access to Amazon Web Services resources.)</p>
     pub role_arn: ::std::string::String,
@@ -44,6 +45,8 @@ pub struct DescribeStateMachineOutput {
     pub revision_id: ::std::option::Option<::std::string::String>,
     /// <p>The description of the state machine version.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>Settings to configure server-side encryption.</p>
+    pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
     _request_id: Option<String>,
 }
 impl DescribeStateMachineOutput {
@@ -77,6 +80,7 @@ impl DescribeStateMachineOutput {
         self.status.as_ref()
     }
     /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
+    /// <p>If called with <code>includedData = METADATA_ONLY</code>, the returned definition will be <code>{}</code>.</p>
     pub fn definition(&self) -> &str {
         use std::ops::Deref;
         self.definition.deref()
@@ -116,6 +120,10 @@ impl DescribeStateMachineOutput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
+    /// <p>Settings to configure server-side encryption.</p>
+    pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
+        self.encryption_configuration.as_ref()
+    }
 }
 impl ::std::fmt::Debug for DescribeStateMachineOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -132,6 +140,7 @@ impl ::std::fmt::Debug for DescribeStateMachineOutput {
         formatter.field("label", &self.label);
         formatter.field("revision_id", &self.revision_id);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("encryption_configuration", &self.encryption_configuration);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -164,6 +173,7 @@ pub struct DescribeStateMachineOutputBuilder {
     pub(crate) label: ::std::option::Option<::std::string::String>,
     pub(crate) revision_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
     _request_id: Option<String>,
 }
 impl DescribeStateMachineOutputBuilder {
@@ -257,17 +267,20 @@ impl DescribeStateMachineOutputBuilder {
         &self.status
     }
     /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
+    /// <p>If called with <code>includedData = METADATA_ONLY</code>, the returned definition will be <code>{}</code>.</p>
     /// This field is required.
     pub fn definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.definition = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
+    /// <p>If called with <code>includedData = METADATA_ONLY</code>, the returned definition will be <code>{}</code>.</p>
     pub fn set_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.definition = input;
         self
     }
     /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
+    /// <p>If called with <code>includedData = METADATA_ONLY</code>, the returned definition will be <code>{}</code>.</p>
     pub fn get_definition(&self) -> &::std::option::Option<::std::string::String> {
         &self.definition
     }
@@ -392,6 +405,20 @@ impl DescribeStateMachineOutputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
+    /// <p>Settings to configure server-side encryption.</p>
+    pub fn encryption_configuration(mut self, input: crate::types::EncryptionConfiguration) -> Self {
+        self.encryption_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Settings to configure server-side encryption.</p>
+    pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
+        self.encryption_configuration = input;
+        self
+    }
+    /// <p>Settings to configure server-side encryption.</p>
+    pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
+        &self.encryption_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -456,6 +483,7 @@ impl DescribeStateMachineOutputBuilder {
             label: self.label,
             revision_id: self.revision_id,
             description: self.description,
+            encryption_configuration: self.encryption_configuration,
             _request_id: self._request_id,
         })
     }
@@ -475,6 +503,7 @@ impl ::std::fmt::Debug for DescribeStateMachineOutputBuilder {
         formatter.field("label", &self.label);
         formatter.field("revision_id", &self.revision_id);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("encryption_configuration", &self.encryption_configuration);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

@@ -6,11 +6,17 @@
 pub struct InstanceTypeItem {
     /// <p>The instance type.</p>
     pub instance_type: ::std::option::Option<::std::string::String>,
+    /// <p>The number of default VCPUs in an instance type.</p>
+    pub vcpus: ::std::option::Option<i32>,
 }
 impl InstanceTypeItem {
     /// <p>The instance type.</p>
     pub fn instance_type(&self) -> ::std::option::Option<&str> {
         self.instance_type.as_deref()
+    }
+    /// <p>The number of default VCPUs in an instance type.</p>
+    pub fn vcpus(&self) -> ::std::option::Option<i32> {
+        self.vcpus
     }
 }
 impl InstanceTypeItem {
@@ -25,6 +31,7 @@ impl InstanceTypeItem {
 #[non_exhaustive]
 pub struct InstanceTypeItemBuilder {
     pub(crate) instance_type: ::std::option::Option<::std::string::String>,
+    pub(crate) vcpus: ::std::option::Option<i32>,
 }
 impl InstanceTypeItemBuilder {
     /// <p>The instance type.</p>
@@ -41,10 +48,25 @@ impl InstanceTypeItemBuilder {
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_type
     }
+    /// <p>The number of default VCPUs in an instance type.</p>
+    pub fn vcpus(mut self, input: i32) -> Self {
+        self.vcpus = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of default VCPUs in an instance type.</p>
+    pub fn set_vcpus(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.vcpus = input;
+        self
+    }
+    /// <p>The number of default VCPUs in an instance type.</p>
+    pub fn get_vcpus(&self) -> &::std::option::Option<i32> {
+        &self.vcpus
+    }
     /// Consumes the builder and constructs a [`InstanceTypeItem`](crate::types::InstanceTypeItem).
     pub fn build(self) -> crate::types::InstanceTypeItem {
         crate::types::InstanceTypeItem {
             instance_type: self.instance_type,
+            vcpus: self.vcpus,
         }
     }
 }

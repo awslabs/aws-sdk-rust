@@ -7,7 +7,7 @@ pub struct DescribeTargetHealthInput {
     pub target_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The targets.</p>
     pub targets: ::std::option::Option<::std::vec::Vec<crate::types::TargetDescription>>,
-    /// <p>Used to inclue anomaly detection information.</p>
+    /// <p>Used to include anomaly detection information.</p>
     pub include: ::std::option::Option<::std::vec::Vec<crate::types::DescribeTargetHealthInputIncludeEnum>>,
 }
 impl DescribeTargetHealthInput {
@@ -21,7 +21,7 @@ impl DescribeTargetHealthInput {
     pub fn targets(&self) -> &[crate::types::TargetDescription] {
         self.targets.as_deref().unwrap_or_default()
     }
-    /// <p>Used to inclue anomaly detection information.</p>
+    /// <p>Used to include anomaly detection information.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.include.is_none()`.
     pub fn include(&self) -> &[crate::types::DescribeTargetHealthInputIncludeEnum] {
@@ -83,19 +83,19 @@ impl DescribeTargetHealthInputBuilder {
     ///
     /// To override the contents of this collection use [`set_include`](Self::set_include).
     ///
-    /// <p>Used to inclue anomaly detection information.</p>
+    /// <p>Used to include anomaly detection information.</p>
     pub fn include(mut self, input: crate::types::DescribeTargetHealthInputIncludeEnum) -> Self {
         let mut v = self.include.unwrap_or_default();
         v.push(input);
         self.include = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Used to inclue anomaly detection information.</p>
+    /// <p>Used to include anomaly detection information.</p>
     pub fn set_include(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DescribeTargetHealthInputIncludeEnum>>) -> Self {
         self.include = input;
         self
     }
-    /// <p>Used to inclue anomaly detection information.</p>
+    /// <p>Used to include anomaly detection information.</p>
     pub fn get_include(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DescribeTargetHealthInputIncludeEnum>> {
         &self.include
     }

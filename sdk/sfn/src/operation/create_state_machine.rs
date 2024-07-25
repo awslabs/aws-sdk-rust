@@ -252,19 +252,25 @@ pub enum CreateStateMachineError {
     InvalidArn(crate::types::error::InvalidArn),
     /// <p>The provided Amazon States Language definition is not valid.</p>
     InvalidDefinition(crate::types::error::InvalidDefinition),
-    /// <p></p>
+    /// <p>Received when <code>encryptionConfiguration</code> is specified but various conditions exist which make the configuration invalid. For example, if <code>type</code> is set to <code>CUSTOMER_MANAGED_KMS_KEY</code>, but <code>kmsKeyId</code> is null, or <code>kmsDataKeyReusePeriodSeconds</code> is not between 60 and 900, or the KMS key is not symmetric or inactive.</p>
+    InvalidEncryptionConfiguration(crate::types::error::InvalidEncryptionConfiguration),
+    /// <p>Configuration is not valid.</p>
     InvalidLoggingConfiguration(crate::types::error::InvalidLoggingConfiguration),
     /// <p>The provided name is not valid.</p>
     InvalidName(crate::types::error::InvalidName),
     /// <p>Your <code>tracingConfiguration</code> key does not match, or <code>enabled</code> has not been set to <code>true</code> or <code>false</code>.</p>
     InvalidTracingConfiguration(crate::types::error::InvalidTracingConfiguration),
+    /// <p>Either your KMS key policy or API caller does not have the required permissions.</p>
+    KmsAccessDeniedException(crate::types::error::KmsAccessDeniedException),
+    /// <p>Received when KMS returns <code>ThrottlingException</code> for a KMS call that Step Functions makes on behalf of the caller.</p>
+    KmsThrottlingException(crate::types::error::KmsThrottlingException),
     /// <p>A state machine with the same name but a different definition or role ARN already exists.</p>
     StateMachineAlreadyExists(crate::types::error::StateMachineAlreadyExists),
     /// <p>The specified state machine is being deleted.</p>
     StateMachineDeleting(crate::types::error::StateMachineDeleting),
     /// <p>The maximum number of state machines has been reached. Existing state machines must be deleted before a new state machine can be created.</p>
     StateMachineLimitExceeded(crate::types::error::StateMachineLimitExceeded),
-    /// <p></p>
+    /// <p>State machine type is not supported.</p>
     StateMachineTypeNotSupported(crate::types::error::StateMachineTypeNotSupported),
     /// <p>You've exceeded the number of tags allowed for a resource. See the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html"> Limits Topic</a> in the Step Functions Developer Guide.</p>
     TooManyTags(crate::types::error::TooManyTags),
@@ -306,9 +312,12 @@ impl CreateStateMachineError {
             Self::ConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidArn(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidDefinition(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidEncryptionConfiguration(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidLoggingConfiguration(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidName(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidTracingConfiguration(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::KmsAccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::KmsThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::StateMachineAlreadyExists(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::StateMachineDeleting(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::StateMachineLimitExceeded(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -330,6 +339,10 @@ impl CreateStateMachineError {
     pub fn is_invalid_definition(&self) -> bool {
         matches!(self, Self::InvalidDefinition(_))
     }
+    /// Returns `true` if the error kind is `CreateStateMachineError::InvalidEncryptionConfiguration`.
+    pub fn is_invalid_encryption_configuration(&self) -> bool {
+        matches!(self, Self::InvalidEncryptionConfiguration(_))
+    }
     /// Returns `true` if the error kind is `CreateStateMachineError::InvalidLoggingConfiguration`.
     pub fn is_invalid_logging_configuration(&self) -> bool {
         matches!(self, Self::InvalidLoggingConfiguration(_))
@@ -341,6 +354,14 @@ impl CreateStateMachineError {
     /// Returns `true` if the error kind is `CreateStateMachineError::InvalidTracingConfiguration`.
     pub fn is_invalid_tracing_configuration(&self) -> bool {
         matches!(self, Self::InvalidTracingConfiguration(_))
+    }
+    /// Returns `true` if the error kind is `CreateStateMachineError::KmsAccessDeniedException`.
+    pub fn is_kms_access_denied_exception(&self) -> bool {
+        matches!(self, Self::KmsAccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `CreateStateMachineError::KmsThrottlingException`.
+    pub fn is_kms_throttling_exception(&self) -> bool {
+        matches!(self, Self::KmsThrottlingException(_))
     }
     /// Returns `true` if the error kind is `CreateStateMachineError::StateMachineAlreadyExists`.
     pub fn is_state_machine_already_exists(&self) -> bool {
@@ -373,9 +394,12 @@ impl ::std::error::Error for CreateStateMachineError {
             Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidArn(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidDefinition(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidEncryptionConfiguration(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidLoggingConfiguration(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidName(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidTracingConfiguration(_inner) => ::std::option::Option::Some(_inner),
+            Self::KmsAccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::KmsThrottlingException(_inner) => ::std::option::Option::Some(_inner),
             Self::StateMachineAlreadyExists(_inner) => ::std::option::Option::Some(_inner),
             Self::StateMachineDeleting(_inner) => ::std::option::Option::Some(_inner),
             Self::StateMachineLimitExceeded(_inner) => ::std::option::Option::Some(_inner),
@@ -392,9 +416,12 @@ impl ::std::fmt::Display for CreateStateMachineError {
             Self::ConflictException(_inner) => _inner.fmt(f),
             Self::InvalidArn(_inner) => _inner.fmt(f),
             Self::InvalidDefinition(_inner) => _inner.fmt(f),
+            Self::InvalidEncryptionConfiguration(_inner) => _inner.fmt(f),
             Self::InvalidLoggingConfiguration(_inner) => _inner.fmt(f),
             Self::InvalidName(_inner) => _inner.fmt(f),
             Self::InvalidTracingConfiguration(_inner) => _inner.fmt(f),
+            Self::KmsAccessDeniedException(_inner) => _inner.fmt(f),
+            Self::KmsThrottlingException(_inner) => _inner.fmt(f),
             Self::StateMachineAlreadyExists(_inner) => _inner.fmt(f),
             Self::StateMachineDeleting(_inner) => _inner.fmt(f),
             Self::StateMachineLimitExceeded(_inner) => _inner.fmt(f),
@@ -425,9 +452,12 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateStateMa
             Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidArn(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidDefinition(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidEncryptionConfiguration(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidLoggingConfiguration(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidName(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidTracingConfiguration(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::KmsAccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::KmsThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::StateMachineAlreadyExists(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::StateMachineDeleting(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::StateMachineLimitExceeded(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

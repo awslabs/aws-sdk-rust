@@ -17,6 +17,15 @@ pub(crate) fn encryption_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn encryption_configuration_for_repository_creation_template_correct_errors(
+    mut builder: crate::types::builders::EncryptionConfigurationForRepositoryCreationTemplateBuilder,
+) -> crate::types::builders::EncryptionConfigurationForRepositoryCreationTemplateBuilder {
+    if builder.encryption_type.is_none() {
+        builder.encryption_type = "no value was set".parse::<crate::types::EncryptionType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn tag_correct_errors(mut builder: crate::types::builders::TagBuilder) -> crate::types::builders::TagBuilder {
     if builder.key.is_none() {
         builder.key = Some(Default::default())

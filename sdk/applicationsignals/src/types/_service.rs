@@ -61,6 +61,16 @@ pub struct Service {
     pub attribute_maps: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
     /// <p>An array of structures that each contain information about one metric associated with this service.</p>
     pub metric_references: ::std::vec::Vec<crate::types::MetricReference>,
+    /// <p>An array of string-to-string maps that each contain information about one log group associated with this service. Each string-to-string map includes the following fields:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>"Type": "AWS::Resource"</code></p></li>
+    /// <li>
+    /// <p><code>"ResourceType": "AWS::Logs::LogGroup"</code></p></li>
+    /// <li>
+    /// <p><code>"Identifier": "<i>name-of-log-group</i>"</code></p></li>
+    /// </ul>
+    pub log_group_references: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
 }
 impl Service {
     /// <p>This is a string-to-string map. It can include the following fields.</p>
@@ -129,6 +139,20 @@ impl Service {
         use std::ops::Deref;
         self.metric_references.deref()
     }
+    /// <p>An array of string-to-string maps that each contain information about one log group associated with this service. Each string-to-string map includes the following fields:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>"Type": "AWS::Resource"</code></p></li>
+    /// <li>
+    /// <p><code>"ResourceType": "AWS::Logs::LogGroup"</code></p></li>
+    /// <li>
+    /// <p><code>"Identifier": "<i>name-of-log-group</i>"</code></p></li>
+    /// </ul>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_group_references.is_none()`.
+    pub fn log_group_references(&self) -> &[::std::collections::HashMap<::std::string::String, ::std::string::String>] {
+        self.log_group_references.as_deref().unwrap_or_default()
+    }
 }
 impl Service {
     /// Creates a new builder-style object to manufacture [`Service`](crate::types::Service).
@@ -144,6 +168,8 @@ pub struct ServiceBuilder {
     pub(crate) key_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) attribute_maps: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
     pub(crate) metric_references: ::std::option::Option<::std::vec::Vec<crate::types::MetricReference>>,
+    pub(crate) log_group_references:
+        ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
 }
 impl ServiceBuilder {
     /// Adds a key-value pair to `key_attributes`.
@@ -371,6 +397,55 @@ impl ServiceBuilder {
     pub fn get_metric_references(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricReference>> {
         &self.metric_references
     }
+    /// Appends an item to `log_group_references`.
+    ///
+    /// To override the contents of this collection use [`set_log_group_references`](Self::set_log_group_references).
+    ///
+    /// <p>An array of string-to-string maps that each contain information about one log group associated with this service. Each string-to-string map includes the following fields:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>"Type": "AWS::Resource"</code></p></li>
+    /// <li>
+    /// <p><code>"ResourceType": "AWS::Logs::LogGroup"</code></p></li>
+    /// <li>
+    /// <p><code>"Identifier": "<i>name-of-log-group</i>"</code></p></li>
+    /// </ul>
+    pub fn log_group_references(mut self, input: ::std::collections::HashMap<::std::string::String, ::std::string::String>) -> Self {
+        let mut v = self.log_group_references.unwrap_or_default();
+        v.push(input);
+        self.log_group_references = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>An array of string-to-string maps that each contain information about one log group associated with this service. Each string-to-string map includes the following fields:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>"Type": "AWS::Resource"</code></p></li>
+    /// <li>
+    /// <p><code>"ResourceType": "AWS::Logs::LogGroup"</code></p></li>
+    /// <li>
+    /// <p><code>"Identifier": "<i>name-of-log-group</i>"</code></p></li>
+    /// </ul>
+    pub fn set_log_group_references(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
+    ) -> Self {
+        self.log_group_references = input;
+        self
+    }
+    /// <p>An array of string-to-string maps that each contain information about one log group associated with this service. Each string-to-string map includes the following fields:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>"Type": "AWS::Resource"</code></p></li>
+    /// <li>
+    /// <p><code>"ResourceType": "AWS::Logs::LogGroup"</code></p></li>
+    /// <li>
+    /// <p><code>"Identifier": "<i>name-of-log-group</i>"</code></p></li>
+    /// </ul>
+    pub fn get_log_group_references(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>> {
+        &self.log_group_references
+    }
     /// Consumes the builder and constructs a [`Service`](crate::types::Service).
     /// This method will fail if any of the following fields are not set:
     /// - [`key_attributes`](crate::types::builders::ServiceBuilder::key_attributes)
@@ -390,6 +465,7 @@ impl ServiceBuilder {
                     "metric_references was not specified but it is required when building Service",
                 )
             })?,
+            log_group_references: self.log_group_references,
         })
     }
 }

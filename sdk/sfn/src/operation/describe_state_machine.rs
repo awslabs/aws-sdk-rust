@@ -252,6 +252,12 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeState
 pub enum DescribeStateMachineError {
     /// <p>The provided Amazon Resource Name (ARN) is not valid.</p>
     InvalidArn(crate::types::error::InvalidArn),
+    /// <p>Either your KMS key policy or API caller does not have the required permissions.</p>
+    KmsAccessDeniedException(crate::types::error::KmsAccessDeniedException),
+    /// <p>The KMS key is not in valid state, for example: Disabled or Deleted.</p>
+    KmsInvalidStateException(crate::types::error::KmsInvalidStateException),
+    /// <p>Received when KMS returns <code>ThrottlingException</code> for a KMS call that Step Functions makes on behalf of the caller.</p>
+    KmsThrottlingException(crate::types::error::KmsThrottlingException),
     /// <p>The specified state machine does not exist.</p>
     StateMachineDoesNotExist(crate::types::error::StateMachineDoesNotExist),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -288,6 +294,9 @@ impl DescribeStateMachineError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::InvalidArn(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::KmsAccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::KmsInvalidStateException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::KmsThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::StateMachineDoesNotExist(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
@@ -295,6 +304,18 @@ impl DescribeStateMachineError {
     /// Returns `true` if the error kind is `DescribeStateMachineError::InvalidArn`.
     pub fn is_invalid_arn(&self) -> bool {
         matches!(self, Self::InvalidArn(_))
+    }
+    /// Returns `true` if the error kind is `DescribeStateMachineError::KmsAccessDeniedException`.
+    pub fn is_kms_access_denied_exception(&self) -> bool {
+        matches!(self, Self::KmsAccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `DescribeStateMachineError::KmsInvalidStateException`.
+    pub fn is_kms_invalid_state_exception(&self) -> bool {
+        matches!(self, Self::KmsInvalidStateException(_))
+    }
+    /// Returns `true` if the error kind is `DescribeStateMachineError::KmsThrottlingException`.
+    pub fn is_kms_throttling_exception(&self) -> bool {
+        matches!(self, Self::KmsThrottlingException(_))
     }
     /// Returns `true` if the error kind is `DescribeStateMachineError::StateMachineDoesNotExist`.
     pub fn is_state_machine_does_not_exist(&self) -> bool {
@@ -305,6 +326,9 @@ impl ::std::error::Error for DescribeStateMachineError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::InvalidArn(_inner) => ::std::option::Option::Some(_inner),
+            Self::KmsAccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::KmsInvalidStateException(_inner) => ::std::option::Option::Some(_inner),
+            Self::KmsThrottlingException(_inner) => ::std::option::Option::Some(_inner),
             Self::StateMachineDoesNotExist(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
@@ -314,6 +338,9 @@ impl ::std::fmt::Display for DescribeStateMachineError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::InvalidArn(_inner) => _inner.fmt(f),
+            Self::KmsAccessDeniedException(_inner) => _inner.fmt(f),
+            Self::KmsInvalidStateException(_inner) => _inner.fmt(f),
+            Self::KmsThrottlingException(_inner) => _inner.fmt(f),
             Self::StateMachineDoesNotExist(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -337,6 +364,9 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DescribeState
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::InvalidArn(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::KmsAccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::KmsInvalidStateException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::KmsThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::StateMachineDoesNotExist(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }

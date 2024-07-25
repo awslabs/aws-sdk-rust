@@ -365,6 +365,15 @@ pub(crate) fn map_run_execution_counts_correct_errors(
     builder
 }
 
+pub(crate) fn encryption_configuration_correct_errors(
+    mut builder: crate::types::builders::EncryptionConfigurationBuilder,
+) -> crate::types::builders::EncryptionConfigurationBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::EncryptionType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn activity_list_item_correct_errors(
     mut builder: crate::types::builders::ActivityListItemBuilder,
 ) -> crate::types::builders::ActivityListItemBuilder {

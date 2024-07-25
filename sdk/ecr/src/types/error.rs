@@ -17,6 +17,8 @@ pub use crate::types::error::_kms_exception::KmsException;
 
 pub use crate::types::error::_invalid_layer_part_exception::InvalidLayerPartException;
 
+pub use crate::types::error::_template_not_found_exception::TemplateNotFoundException;
+
 pub use crate::types::error::_unable_to_decrypt_secret_value_exception::UnableToDecryptSecretValueException;
 
 pub use crate::types::error::_unable_to_access_secret_exception::UnableToAccessSecretException;
@@ -58,6 +60,8 @@ pub use crate::types::error::_layer_inaccessible_exception::LayerInaccessibleExc
 pub use crate::types::error::_scan_not_found_exception::ScanNotFoundException;
 
 pub use crate::types::error::_repository_not_empty_exception::RepositoryNotEmptyException;
+
+pub use crate::types::error::_template_already_exists_exception::TemplateAlreadyExistsException;
 
 pub use crate::types::error::_repository_already_exists_exception::RepositoryAlreadyExistsException;
 
@@ -132,6 +136,10 @@ mod _scan_not_found_exception;
 mod _secret_not_found_exception;
 
 mod _server_exception;
+
+mod _template_already_exists_exception;
+
+mod _template_not_found_exception;
 
 mod _too_many_tags_exception;
 

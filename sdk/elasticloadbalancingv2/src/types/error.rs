@@ -65,11 +65,17 @@ pub use crate::types::error::_certificate_not_found_exception::CertificateNotFou
 
 pub use crate::types::error::_alpn_policy_not_supported_exception::AlpnPolicyNotSupportedException;
 
+pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundException;
+
 pub use crate::types::error::_health_unavailable_exception::HealthUnavailableException;
 
 pub use crate::types::error::_trust_store_in_use_exception::TrustStoreInUseException;
 
 pub use crate::types::error::_resource_in_use_exception::ResourceInUseException;
+
+pub use crate::types::error::_trust_store_association_not_found_exception::TrustStoreAssociationNotFoundException;
+
+pub use crate::types::error::_delete_association_same_account_exception::DeleteAssociationSameAccountException;
 
 pub use crate::types::error::_too_many_trust_stores_exception::TooManyTrustStoresException;
 
@@ -104,6 +110,8 @@ mod _availability_zone_not_supported_exception;
 mod _ca_certificates_bundle_not_found_exception;
 
 mod _certificate_not_found_exception;
+
+mod _delete_association_same_account_exception;
 
 mod _duplicate_listener_exception;
 
@@ -145,6 +153,8 @@ mod _priority_in_use_exception;
 
 mod _resource_in_use_exception;
 
+mod _resource_not_found_exception;
+
 mod _revocation_content_not_found_exception;
 
 mod _revocation_id_not_found_exception;
@@ -182,6 +192,8 @@ mod _too_many_trust_store_revocation_entries_exception;
 mod _too_many_trust_stores_exception;
 
 mod _too_many_unique_target_groups_per_load_balancer_exception;
+
+mod _trust_store_association_not_found_exception;
 
 mod _trust_store_in_use_exception;
 

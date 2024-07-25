@@ -45,5 +45,11 @@ pub fn ser_create_state_machine_input_input(
     if let Some(var_14) = &input.version_description {
         object.key("versionDescription").string(var_14.as_str());
     }
+    if let Some(var_15) = &input.encryption_configuration {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("encryptionConfiguration").start_object();
+        crate::protocol_serde::shape_encryption_configuration::ser_encryption_configuration(&mut object_16, var_15)?;
+        object_16.finish();
+    }
     Ok(())
 }

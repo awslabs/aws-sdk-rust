@@ -24,5 +24,11 @@ pub fn ser_update_cluster_config_input_input(
         crate::protocol_serde::shape_vpc_config_request::ser_vpc_config_request(&mut object_7, var_6)?;
         object_7.finish();
     }
+    if let Some(var_8) = &input.upgrade_policy {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("upgradePolicy").start_object();
+        crate::protocol_serde::shape_upgrade_policy_request::ser_upgrade_policy_request(&mut object_9, var_8)?;
+        object_9.finish();
+    }
     Ok(())
 }

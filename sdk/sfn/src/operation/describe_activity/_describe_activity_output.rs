@@ -23,6 +23,8 @@ pub struct DescribeActivityOutput {
     pub name: ::std::string::String,
     /// <p>The date the activity is created.</p>
     pub creation_date: ::aws_smithy_types::DateTime,
+    /// <p>Settings for configured server-side encryption.</p>
+    pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
     _request_id: Option<String>,
 }
 impl DescribeActivityOutput {
@@ -54,6 +56,10 @@ impl DescribeActivityOutput {
     pub fn creation_date(&self) -> &::aws_smithy_types::DateTime {
         &self.creation_date
     }
+    /// <p>Settings for configured server-side encryption.</p>
+    pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
+        self.encryption_configuration.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeActivityOutput {
     fn request_id(&self) -> Option<&str> {
@@ -74,6 +80,7 @@ pub struct DescribeActivityOutputBuilder {
     pub(crate) activity_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
     _request_id: Option<String>,
 }
 impl DescribeActivityOutputBuilder {
@@ -164,6 +171,20 @@ impl DescribeActivityOutputBuilder {
     pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_date
     }
+    /// <p>Settings for configured server-side encryption.</p>
+    pub fn encryption_configuration(mut self, input: crate::types::EncryptionConfiguration) -> Self {
+        self.encryption_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Settings for configured server-side encryption.</p>
+    pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
+        self.encryption_configuration = input;
+        self
+    }
+    /// <p>Settings for configured server-side encryption.</p>
+    pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
+        &self.encryption_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -200,6 +221,7 @@ impl DescribeActivityOutputBuilder {
                     "creation_date was not specified but it is required when building DescribeActivityOutput",
                 )
             })?,
+            encryption_configuration: self.encryption_configuration,
             _request_id: self._request_id,
         })
     }

@@ -579,6 +579,8 @@ pub(crate) mod shape_number_of_rule_templates_exceeded_exception;
 
 pub(crate) mod shape_number_of_rules_exceeded_exception;
 
+pub(crate) mod shape_operation_not_allowed_exception;
+
 pub(crate) mod shape_override_already_set_exception;
 
 pub(crate) mod shape_override_pull_request_approval_rules_input;

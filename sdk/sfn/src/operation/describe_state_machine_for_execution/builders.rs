@@ -125,4 +125,18 @@ impl DescribeStateMachineForExecutionFluentBuilder {
     pub fn get_execution_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_execution_arn()
     }
+    /// <p>If your state machine definition is encrypted with a KMS key, callers must have <code>kms:Decrypt</code> permission to decrypt the definition. Alternatively, you can call the API with <code>includedData = METADATA_ONLY</code> to get a successful response without the encrypted definition.</p>
+    pub fn included_data(mut self, input: crate::types::IncludedData) -> Self {
+        self.inner = self.inner.included_data(input);
+        self
+    }
+    /// <p>If your state machine definition is encrypted with a KMS key, callers must have <code>kms:Decrypt</code> permission to decrypt the definition. Alternatively, you can call the API with <code>includedData = METADATA_ONLY</code> to get a successful response without the encrypted definition.</p>
+    pub fn set_included_data(mut self, input: ::std::option::Option<crate::types::IncludedData>) -> Self {
+        self.inner = self.inner.set_included_data(input);
+        self
+    }
+    /// <p>If your state machine definition is encrypted with a KMS key, callers must have <code>kms:Decrypt</code> permission to decrypt the definition. Alternatively, you can call the API with <code>includedData = METADATA_ONLY</code> to get a successful response without the encrypted definition.</p>
+    pub fn get_included_data(&self) -> &::std::option::Option<crate::types::IncludedData> {
+        self.inner.get_included_data()
+    }
 }

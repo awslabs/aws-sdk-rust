@@ -39,6 +39,16 @@ pub(crate) fn reflens_describe_repositories_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_describe_repository_creation_templates_output_output_next_token(
+    input: &crate::operation::describe_repository_creation_templates::DescribeRepositoryCreationTemplatesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_get_lifecycle_policy_preview_output_output_next_token(
     input: &crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -83,6 +93,16 @@ pub(crate) fn lens_describe_repositories_output_output_repositories(
     input: crate::operation::describe_repositories::DescribeRepositoriesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Repository>> {
     let input = match input.repositories {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_repository_creation_templates_output_output_repository_creation_templates(
+    input: crate::operation::describe_repository_creation_templates::DescribeRepositoryCreationTemplatesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RepositoryCreationTemplate>> {
+    let input = match input.repository_creation_templates {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

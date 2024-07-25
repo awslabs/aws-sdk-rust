@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder takes no input, just [`send`](crate::operation::get_registry_policy::builders::GetRegistryPolicyFluentBuilder::send) it.
     /// - On success, responds with [`GetRegistryPolicyOutput`](crate::operation::get_registry_policy::GetRegistryPolicyOutput) with field(s):
-    ///   - [`registry_id(Option<String>)`](crate::operation::get_registry_policy::GetRegistryPolicyOutput::registry_id): <p>The ID of the registry.</p>
+    ///   - [`registry_id(Option<String>)`](crate::operation::get_registry_policy::GetRegistryPolicyOutput::registry_id): <p>The registry ID associated with the request.</p>
     ///   - [`policy_text(Option<String>)`](crate::operation::get_registry_policy::GetRegistryPolicyOutput::policy_text): <p>The JSON text of the permissions policy for a registry.</p>
     /// - On failure, responds with [`SdkError<GetRegistryPolicyError>`](crate::operation::get_registry_policy::GetRegistryPolicyError)
     pub fn get_registry_policy(&self) -> crate::operation::get_registry_policy::builders::GetRegistryPolicyFluentBuilder {

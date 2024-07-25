@@ -15,5 +15,8 @@ pub fn ser_start_sync_execution_input_input(
     if let Some(var_4) = &input.trace_header {
         object.key("traceHeader").string(var_4.as_str());
     }
+    if let Some(var_5) = &input.included_data {
+        object.key("includedData").string(var_5.as_str());
+    }
     Ok(())
 }

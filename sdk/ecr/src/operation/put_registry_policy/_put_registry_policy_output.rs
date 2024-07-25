@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutRegistryPolicyOutput {
-    /// <p>The registry ID.</p>
+    /// <p>The registry ID associated with the request.</p>
     pub registry_id: ::std::option::Option<::std::string::String>,
     /// <p>The JSON policy text for your registry.</p>
     pub policy_text: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl PutRegistryPolicyOutput {
-    /// <p>The registry ID.</p>
+    /// <p>The registry ID associated with the request.</p>
     pub fn registry_id(&self) -> ::std::option::Option<&str> {
         self.registry_id.as_deref()
     }
@@ -40,17 +40,17 @@ pub struct PutRegistryPolicyOutputBuilder {
     _request_id: Option<String>,
 }
 impl PutRegistryPolicyOutputBuilder {
-    /// <p>The registry ID.</p>
+    /// <p>The registry ID associated with the request.</p>
     pub fn registry_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registry_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The registry ID.</p>
+    /// <p>The registry ID associated with the request.</p>
     pub fn set_registry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.registry_id = input;
         self
     }
-    /// <p>The registry ID.</p>
+    /// <p>The registry ID associated with the request.</p>
     pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.registry_id
     }

@@ -23,6 +23,8 @@ impl crate::operation::send_task_failure::builders::SendTaskFailureInputBuilder 
 /// Fluent builder constructing a request to `SendTaskFailure`.
 ///
 /// <p>Used by activity workers, Task states using the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token">callback</a> pattern, and optionally Task states using the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-sync">job run</a> pattern to report that the task identified by the <code>taskToken</code> failed.</p>
+/// <p>For an execution with encryption enabled, Step Functions will encrypt the error and cause fields using the KMS key for the execution role.</p>
+/// <p>A caller can mark a task as fail without using any KMS permissions in the execution role if the caller provides a null value for both <code>error</code> and <code>cause</code> fields because no data needs to be encrypted.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SendTaskFailureFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

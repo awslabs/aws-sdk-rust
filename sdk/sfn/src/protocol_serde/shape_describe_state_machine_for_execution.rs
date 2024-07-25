@@ -52,6 +52,59 @@ pub fn de_describe_state_machine_for_execution_http_error(
             }
             tmp
         }),
+        "KmsAccessDeniedException" => {
+            crate::operation::describe_state_machine_for_execution::DescribeStateMachineForExecutionError::KmsAccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::KmsAccessDeniedExceptionBuilder::default();
+                    output =
+                        crate::protocol_serde::shape_kms_access_denied_exception::de_kms_access_denied_exception_json_err(_response_body, output)
+                            .map_err(crate::operation::describe_state_machine_for_execution::DescribeStateMachineForExecutionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "KmsInvalidStateException" => {
+            crate::operation::describe_state_machine_for_execution::DescribeStateMachineForExecutionError::KmsInvalidStateException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::KmsInvalidStateExceptionBuilder::default();
+                    output =
+                        crate::protocol_serde::shape_kms_invalid_state_exception::de_kms_invalid_state_exception_json_err(_response_body, output)
+                            .map_err(crate::operation::describe_state_machine_for_execution::DescribeStateMachineForExecutionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "KmsThrottlingException" => {
+            crate::operation::describe_state_machine_for_execution::DescribeStateMachineForExecutionError::KmsThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::KmsThrottlingExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_kms_throttling_exception::de_kms_throttling_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::describe_state_machine_for_execution::DescribeStateMachineForExecutionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::operation::describe_state_machine_for_execution::DescribeStateMachineForExecutionError::generic(generic),
     })
 }
@@ -165,6 +218,11 @@ pub(crate) fn de_describe_state_machine_for_execution(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
+                    );
+                }
+                "encryptionConfiguration" => {
+                    builder = builder.set_encryption_configuration(
+                        crate::protocol_serde::shape_encryption_configuration::de_encryption_configuration(tokens)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

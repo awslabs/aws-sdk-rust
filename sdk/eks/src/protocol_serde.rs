@@ -299,6 +299,8 @@ pub(crate) mod shape_update_labels_payload;
 
 pub(crate) mod shape_update_taints_payload;
 
+pub(crate) mod shape_upgrade_policy_request;
+
 pub(crate) mod shape_vpc_config_request;
 
 pub(crate) mod shape_access_config_response;
@@ -362,6 +364,8 @@ pub(crate) mod shape_provider;
 pub(crate) mod shape_taints_list;
 
 pub(crate) mod shape_update_params;
+
+pub(crate) mod shape_upgrade_policy_response;
 
 pub(crate) mod shape_vpc_config_response;
 

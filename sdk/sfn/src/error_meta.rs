@@ -3,6 +3,8 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum Error {
+    /// <p>Activity already exists. <code>EncryptionConfiguration</code> may not be updated.</p>
+    ActivityAlreadyExists(crate::types::error::ActivityAlreadyExists),
     /// <p>The specified activity does not exist.</p>
     ActivityDoesNotExist(crate::types::error::ActivityDoesNotExist),
     /// <p>The maximum number of activities has been reached. Existing activities must be deleted before a new activity can be created.</p>
@@ -26,9 +28,11 @@ pub enum Error {
     InvalidArn(crate::types::error::InvalidArn),
     /// <p>The provided Amazon States Language definition is not valid.</p>
     InvalidDefinition(crate::types::error::InvalidDefinition),
+    /// <p>Received when <code>encryptionConfiguration</code> is specified but various conditions exist which make the configuration invalid. For example, if <code>type</code> is set to <code>CUSTOMER_MANAGED_KMS_KEY</code>, but <code>kmsKeyId</code> is null, or <code>kmsDataKeyReusePeriodSeconds</code> is not between 60 and 900, or the KMS key is not symmetric or inactive.</p>
+    InvalidEncryptionConfiguration(crate::types::error::InvalidEncryptionConfiguration),
     /// <p>The provided JSON input data is not valid.</p>
     InvalidExecutionInput(crate::types::error::InvalidExecutionInput),
-    /// <p></p>
+    /// <p>Configuration is not valid.</p>
     InvalidLoggingConfiguration(crate::types::error::InvalidLoggingConfiguration),
     /// <p>The provided name is not valid.</p>
     InvalidName(crate::types::error::InvalidName),
@@ -38,6 +42,12 @@ pub enum Error {
     InvalidToken(crate::types::error::InvalidToken),
     /// <p>Your <code>tracingConfiguration</code> key does not match, or <code>enabled</code> has not been set to <code>true</code> or <code>false</code>.</p>
     InvalidTracingConfiguration(crate::types::error::InvalidTracingConfiguration),
+    /// <p>Either your KMS key policy or API caller does not have the required permissions.</p>
+    KmsAccessDeniedException(crate::types::error::KmsAccessDeniedException),
+    /// <p>The KMS key is not in valid state, for example: Disabled or Deleted.</p>
+    KmsInvalidStateException(crate::types::error::KmsInvalidStateException),
+    /// <p>Received when KMS returns <code>ThrottlingException</code> for a KMS call that Step Functions makes on behalf of the caller.</p>
+    KmsThrottlingException(crate::types::error::KmsThrottlingException),
     /// <p>Request is missing a required parameter. This error occurs if both <code>definition</code> and <code>roleArn</code> are not specified.</p>
     MissingRequiredParameter(crate::types::error::MissingRequiredParameter),
     /// <p>Could not find the referenced resource.</p>
@@ -53,7 +63,7 @@ pub enum Error {
     StateMachineDoesNotExist(crate::types::error::StateMachineDoesNotExist),
     /// <p>The maximum number of state machines has been reached. Existing state machines must be deleted before a new state machine can be created.</p>
     StateMachineLimitExceeded(crate::types::error::StateMachineLimitExceeded),
-    /// <p></p>
+    /// <p>State machine type is not supported.</p>
     StateMachineTypeNotSupported(crate::types::error::StateMachineTypeNotSupported),
     /// <p>The activity does not exist.</p>
     TaskDoesNotExist(crate::types::error::TaskDoesNotExist),
@@ -75,6 +85,7 @@ pub enum Error {
 impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
+            Error::ActivityAlreadyExists(inner) => inner.fmt(f),
             Error::ActivityDoesNotExist(inner) => inner.fmt(f),
             Error::ActivityLimitExceeded(inner) => inner.fmt(f),
             Error::ActivityWorkerLimitExceeded(inner) => inner.fmt(f),
@@ -85,12 +96,16 @@ impl ::std::fmt::Display for Error {
             Error::ExecutionNotRedrivable(inner) => inner.fmt(f),
             Error::InvalidArn(inner) => inner.fmt(f),
             Error::InvalidDefinition(inner) => inner.fmt(f),
+            Error::InvalidEncryptionConfiguration(inner) => inner.fmt(f),
             Error::InvalidExecutionInput(inner) => inner.fmt(f),
             Error::InvalidLoggingConfiguration(inner) => inner.fmt(f),
             Error::InvalidName(inner) => inner.fmt(f),
             Error::InvalidOutput(inner) => inner.fmt(f),
             Error::InvalidToken(inner) => inner.fmt(f),
             Error::InvalidTracingConfiguration(inner) => inner.fmt(f),
+            Error::KmsAccessDeniedException(inner) => inner.fmt(f),
+            Error::KmsInvalidStateException(inner) => inner.fmt(f),
+            Error::KmsThrottlingException(inner) => inner.fmt(f),
             Error::MissingRequiredParameter(inner) => inner.fmt(f),
             Error::ResourceNotFound(inner) => inner.fmt(f),
             Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
@@ -124,6 +139,7 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
     fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
         match self {
+            Self::ActivityAlreadyExists(inner) => inner.meta(),
             Self::ActivityDoesNotExist(inner) => inner.meta(),
             Self::ActivityLimitExceeded(inner) => inner.meta(),
             Self::ActivityWorkerLimitExceeded(inner) => inner.meta(),
@@ -134,12 +150,16 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ExecutionNotRedrivable(inner) => inner.meta(),
             Self::InvalidArn(inner) => inner.meta(),
             Self::InvalidDefinition(inner) => inner.meta(),
+            Self::InvalidEncryptionConfiguration(inner) => inner.meta(),
             Self::InvalidExecutionInput(inner) => inner.meta(),
             Self::InvalidLoggingConfiguration(inner) => inner.meta(),
             Self::InvalidName(inner) => inner.meta(),
             Self::InvalidOutput(inner) => inner.meta(),
             Self::InvalidToken(inner) => inner.meta(),
             Self::InvalidTracingConfiguration(inner) => inner.meta(),
+            Self::KmsAccessDeniedException(inner) => inner.meta(),
+            Self::KmsInvalidStateException(inner) => inner.meta(),
+            Self::KmsThrottlingException(inner) => inner.meta(),
             Self::MissingRequiredParameter(inner) => inner.meta(),
             Self::ResourceNotFound(inner) => inner.meta(),
             Self::ServiceQuotaExceededException(inner) => inner.meta(),
@@ -173,8 +193,14 @@ where
 impl From<crate::operation::create_activity::CreateActivityError> for Error {
     fn from(err: crate::operation::create_activity::CreateActivityError) -> Self {
         match err {
+            crate::operation::create_activity::CreateActivityError::ActivityAlreadyExists(inner) => Error::ActivityAlreadyExists(inner),
             crate::operation::create_activity::CreateActivityError::ActivityLimitExceeded(inner) => Error::ActivityLimitExceeded(inner),
+            crate::operation::create_activity::CreateActivityError::InvalidEncryptionConfiguration(inner) => {
+                Error::InvalidEncryptionConfiguration(inner)
+            }
             crate::operation::create_activity::CreateActivityError::InvalidName(inner) => Error::InvalidName(inner),
+            crate::operation::create_activity::CreateActivityError::KmsAccessDeniedException(inner) => Error::KmsAccessDeniedException(inner),
+            crate::operation::create_activity::CreateActivityError::KmsThrottlingException(inner) => Error::KmsThrottlingException(inner),
             crate::operation::create_activity::CreateActivityError::TooManyTags(inner) => Error::TooManyTags(inner),
             crate::operation::create_activity::CreateActivityError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -200,6 +226,9 @@ impl From<crate::operation::create_state_machine::CreateStateMachineError> for E
             crate::operation::create_state_machine::CreateStateMachineError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::create_state_machine::CreateStateMachineError::InvalidArn(inner) => Error::InvalidArn(inner),
             crate::operation::create_state_machine::CreateStateMachineError::InvalidDefinition(inner) => Error::InvalidDefinition(inner),
+            crate::operation::create_state_machine::CreateStateMachineError::InvalidEncryptionConfiguration(inner) => {
+                Error::InvalidEncryptionConfiguration(inner)
+            }
             crate::operation::create_state_machine::CreateStateMachineError::InvalidLoggingConfiguration(inner) => {
                 Error::InvalidLoggingConfiguration(inner)
             }
@@ -207,6 +236,10 @@ impl From<crate::operation::create_state_machine::CreateStateMachineError> for E
             crate::operation::create_state_machine::CreateStateMachineError::InvalidTracingConfiguration(inner) => {
                 Error::InvalidTracingConfiguration(inner)
             }
+            crate::operation::create_state_machine::CreateStateMachineError::KmsAccessDeniedException(inner) => {
+                Error::KmsAccessDeniedException(inner)
+            }
+            crate::operation::create_state_machine::CreateStateMachineError::KmsThrottlingException(inner) => Error::KmsThrottlingException(inner),
             crate::operation::create_state_machine::CreateStateMachineError::StateMachineAlreadyExists(inner) => {
                 Error::StateMachineAlreadyExists(inner)
             }
@@ -408,6 +441,9 @@ impl From<crate::operation::describe_execution::DescribeExecutionError> for Erro
         match err {
             crate::operation::describe_execution::DescribeExecutionError::ExecutionDoesNotExist(inner) => Error::ExecutionDoesNotExist(inner),
             crate::operation::describe_execution::DescribeExecutionError::InvalidArn(inner) => Error::InvalidArn(inner),
+            crate::operation::describe_execution::DescribeExecutionError::KmsAccessDeniedException(inner) => Error::KmsAccessDeniedException(inner),
+            crate::operation::describe_execution::DescribeExecutionError::KmsInvalidStateException(inner) => Error::KmsInvalidStateException(inner),
+            crate::operation::describe_execution::DescribeExecutionError::KmsThrottlingException(inner) => Error::KmsThrottlingException(inner),
             crate::operation::describe_execution::DescribeExecutionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -453,6 +489,15 @@ impl From<crate::operation::describe_state_machine::DescribeStateMachineError> f
     fn from(err: crate::operation::describe_state_machine::DescribeStateMachineError) -> Self {
         match err {
             crate::operation::describe_state_machine::DescribeStateMachineError::InvalidArn(inner) => Error::InvalidArn(inner),
+            crate::operation::describe_state_machine::DescribeStateMachineError::KmsAccessDeniedException(inner) => {
+                Error::KmsAccessDeniedException(inner)
+            }
+            crate::operation::describe_state_machine::DescribeStateMachineError::KmsInvalidStateException(inner) => {
+                Error::KmsInvalidStateException(inner)
+            }
+            crate::operation::describe_state_machine::DescribeStateMachineError::KmsThrottlingException(inner) => {
+                Error::KmsThrottlingException(inner)
+            }
             crate::operation::describe_state_machine::DescribeStateMachineError::StateMachineDoesNotExist(inner) => {
                 Error::StateMachineDoesNotExist(inner)
             }
@@ -523,6 +568,15 @@ impl From<crate::operation::describe_state_machine_for_execution::DescribeStateM
             crate::operation::describe_state_machine_for_execution::DescribeStateMachineForExecutionError::InvalidArn(inner) => {
                 Error::InvalidArn(inner)
             }
+            crate::operation::describe_state_machine_for_execution::DescribeStateMachineForExecutionError::KmsAccessDeniedException(inner) => {
+                Error::KmsAccessDeniedException(inner)
+            }
+            crate::operation::describe_state_machine_for_execution::DescribeStateMachineForExecutionError::KmsInvalidStateException(inner) => {
+                Error::KmsInvalidStateException(inner)
+            }
+            crate::operation::describe_state_machine_for_execution::DescribeStateMachineForExecutionError::KmsThrottlingException(inner) => {
+                Error::KmsThrottlingException(inner)
+            }
             crate::operation::describe_state_machine_for_execution::DescribeStateMachineForExecutionError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
@@ -551,6 +605,9 @@ impl From<crate::operation::get_activity_task::GetActivityTaskError> for Error {
                 Error::ActivityWorkerLimitExceeded(inner)
             }
             crate::operation::get_activity_task::GetActivityTaskError::InvalidArn(inner) => Error::InvalidArn(inner),
+            crate::operation::get_activity_task::GetActivityTaskError::KmsAccessDeniedException(inner) => Error::KmsAccessDeniedException(inner),
+            crate::operation::get_activity_task::GetActivityTaskError::KmsInvalidStateException(inner) => Error::KmsInvalidStateException(inner),
+            crate::operation::get_activity_task::GetActivityTaskError::KmsThrottlingException(inner) => Error::KmsThrottlingException(inner),
             crate::operation::get_activity_task::GetActivityTaskError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -575,6 +632,13 @@ impl From<crate::operation::get_execution_history::GetExecutionHistoryError> for
             crate::operation::get_execution_history::GetExecutionHistoryError::ExecutionDoesNotExist(inner) => Error::ExecutionDoesNotExist(inner),
             crate::operation::get_execution_history::GetExecutionHistoryError::InvalidArn(inner) => Error::InvalidArn(inner),
             crate::operation::get_execution_history::GetExecutionHistoryError::InvalidToken(inner) => Error::InvalidToken(inner),
+            crate::operation::get_execution_history::GetExecutionHistoryError::KmsAccessDeniedException(inner) => {
+                Error::KmsAccessDeniedException(inner)
+            }
+            crate::operation::get_execution_history::GetExecutionHistoryError::KmsInvalidStateException(inner) => {
+                Error::KmsInvalidStateException(inner)
+            }
+            crate::operation::get_execution_history::GetExecutionHistoryError::KmsThrottlingException(inner) => Error::KmsThrottlingException(inner),
             crate::operation::get_execution_history::GetExecutionHistoryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -843,6 +907,9 @@ impl From<crate::operation::send_task_failure::SendTaskFailureError> for Error {
     fn from(err: crate::operation::send_task_failure::SendTaskFailureError) -> Self {
         match err {
             crate::operation::send_task_failure::SendTaskFailureError::InvalidToken(inner) => Error::InvalidToken(inner),
+            crate::operation::send_task_failure::SendTaskFailureError::KmsAccessDeniedException(inner) => Error::KmsAccessDeniedException(inner),
+            crate::operation::send_task_failure::SendTaskFailureError::KmsInvalidStateException(inner) => Error::KmsInvalidStateException(inner),
+            crate::operation::send_task_failure::SendTaskFailureError::KmsThrottlingException(inner) => Error::KmsThrottlingException(inner),
             crate::operation::send_task_failure::SendTaskFailureError::TaskDoesNotExist(inner) => Error::TaskDoesNotExist(inner),
             crate::operation::send_task_failure::SendTaskFailureError::TaskTimedOut(inner) => Error::TaskTimedOut(inner),
             crate::operation::send_task_failure::SendTaskFailureError::Unhandled(inner) => Error::Unhandled(inner),
@@ -892,6 +959,9 @@ impl From<crate::operation::send_task_success::SendTaskSuccessError> for Error {
         match err {
             crate::operation::send_task_success::SendTaskSuccessError::InvalidOutput(inner) => Error::InvalidOutput(inner),
             crate::operation::send_task_success::SendTaskSuccessError::InvalidToken(inner) => Error::InvalidToken(inner),
+            crate::operation::send_task_success::SendTaskSuccessError::KmsAccessDeniedException(inner) => Error::KmsAccessDeniedException(inner),
+            crate::operation::send_task_success::SendTaskSuccessError::KmsInvalidStateException(inner) => Error::KmsInvalidStateException(inner),
+            crate::operation::send_task_success::SendTaskSuccessError::KmsThrottlingException(inner) => Error::KmsThrottlingException(inner),
             crate::operation::send_task_success::SendTaskSuccessError::TaskDoesNotExist(inner) => Error::TaskDoesNotExist(inner),
             crate::operation::send_task_success::SendTaskSuccessError::TaskTimedOut(inner) => Error::TaskTimedOut(inner),
             crate::operation::send_task_success::SendTaskSuccessError::Unhandled(inner) => Error::Unhandled(inner),
@@ -920,6 +990,9 @@ impl From<crate::operation::start_execution::StartExecutionError> for Error {
             crate::operation::start_execution::StartExecutionError::InvalidArn(inner) => Error::InvalidArn(inner),
             crate::operation::start_execution::StartExecutionError::InvalidExecutionInput(inner) => Error::InvalidExecutionInput(inner),
             crate::operation::start_execution::StartExecutionError::InvalidName(inner) => Error::InvalidName(inner),
+            crate::operation::start_execution::StartExecutionError::KmsAccessDeniedException(inner) => Error::KmsAccessDeniedException(inner),
+            crate::operation::start_execution::StartExecutionError::KmsInvalidStateException(inner) => Error::KmsInvalidStateException(inner),
+            crate::operation::start_execution::StartExecutionError::KmsThrottlingException(inner) => Error::KmsThrottlingException(inner),
             crate::operation::start_execution::StartExecutionError::StateMachineDeleting(inner) => Error::StateMachineDeleting(inner),
             crate::operation::start_execution::StartExecutionError::StateMachineDoesNotExist(inner) => Error::StateMachineDoesNotExist(inner),
             crate::operation::start_execution::StartExecutionError::ValidationException(inner) => Error::ValidationException(inner),
@@ -947,6 +1020,13 @@ impl From<crate::operation::start_sync_execution::StartSyncExecutionError> for E
             crate::operation::start_sync_execution::StartSyncExecutionError::InvalidArn(inner) => Error::InvalidArn(inner),
             crate::operation::start_sync_execution::StartSyncExecutionError::InvalidExecutionInput(inner) => Error::InvalidExecutionInput(inner),
             crate::operation::start_sync_execution::StartSyncExecutionError::InvalidName(inner) => Error::InvalidName(inner),
+            crate::operation::start_sync_execution::StartSyncExecutionError::KmsAccessDeniedException(inner) => {
+                Error::KmsAccessDeniedException(inner)
+            }
+            crate::operation::start_sync_execution::StartSyncExecutionError::KmsInvalidStateException(inner) => {
+                Error::KmsInvalidStateException(inner)
+            }
+            crate::operation::start_sync_execution::StartSyncExecutionError::KmsThrottlingException(inner) => Error::KmsThrottlingException(inner),
             crate::operation::start_sync_execution::StartSyncExecutionError::StateMachineDeleting(inner) => Error::StateMachineDeleting(inner),
             crate::operation::start_sync_execution::StartSyncExecutionError::StateMachineDoesNotExist(inner) => {
                 Error::StateMachineDoesNotExist(inner)
@@ -977,6 +1057,9 @@ impl From<crate::operation::stop_execution::StopExecutionError> for Error {
         match err {
             crate::operation::stop_execution::StopExecutionError::ExecutionDoesNotExist(inner) => Error::ExecutionDoesNotExist(inner),
             crate::operation::stop_execution::StopExecutionError::InvalidArn(inner) => Error::InvalidArn(inner),
+            crate::operation::stop_execution::StopExecutionError::KmsAccessDeniedException(inner) => Error::KmsAccessDeniedException(inner),
+            crate::operation::stop_execution::StopExecutionError::KmsInvalidStateException(inner) => Error::KmsInvalidStateException(inner),
+            crate::operation::stop_execution::StopExecutionError::KmsThrottlingException(inner) => Error::KmsThrottlingException(inner),
             crate::operation::stop_execution::StopExecutionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::stop_execution::StopExecutionError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1098,12 +1181,19 @@ impl From<crate::operation::update_state_machine::UpdateStateMachineError> for E
             crate::operation::update_state_machine::UpdateStateMachineError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_state_machine::UpdateStateMachineError::InvalidArn(inner) => Error::InvalidArn(inner),
             crate::operation::update_state_machine::UpdateStateMachineError::InvalidDefinition(inner) => Error::InvalidDefinition(inner),
+            crate::operation::update_state_machine::UpdateStateMachineError::InvalidEncryptionConfiguration(inner) => {
+                Error::InvalidEncryptionConfiguration(inner)
+            }
             crate::operation::update_state_machine::UpdateStateMachineError::InvalidLoggingConfiguration(inner) => {
                 Error::InvalidLoggingConfiguration(inner)
             }
             crate::operation::update_state_machine::UpdateStateMachineError::InvalidTracingConfiguration(inner) => {
                 Error::InvalidTracingConfiguration(inner)
             }
+            crate::operation::update_state_machine::UpdateStateMachineError::KmsAccessDeniedException(inner) => {
+                Error::KmsAccessDeniedException(inner)
+            }
+            crate::operation::update_state_machine::UpdateStateMachineError::KmsThrottlingException(inner) => Error::KmsThrottlingException(inner),
             crate::operation::update_state_machine::UpdateStateMachineError::MissingRequiredParameter(inner) => {
                 Error::MissingRequiredParameter(inner)
             }
@@ -1190,6 +1280,7 @@ impl From<crate::operation::validate_state_machine_definition::ValidateStateMach
 impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Error::ActivityAlreadyExists(inner) => inner.source(),
             Error::ActivityDoesNotExist(inner) => inner.source(),
             Error::ActivityLimitExceeded(inner) => inner.source(),
             Error::ActivityWorkerLimitExceeded(inner) => inner.source(),
@@ -1200,12 +1291,16 @@ impl ::std::error::Error for Error {
             Error::ExecutionNotRedrivable(inner) => inner.source(),
             Error::InvalidArn(inner) => inner.source(),
             Error::InvalidDefinition(inner) => inner.source(),
+            Error::InvalidEncryptionConfiguration(inner) => inner.source(),
             Error::InvalidExecutionInput(inner) => inner.source(),
             Error::InvalidLoggingConfiguration(inner) => inner.source(),
             Error::InvalidName(inner) => inner.source(),
             Error::InvalidOutput(inner) => inner.source(),
             Error::InvalidToken(inner) => inner.source(),
             Error::InvalidTracingConfiguration(inner) => inner.source(),
+            Error::KmsAccessDeniedException(inner) => inner.source(),
+            Error::KmsInvalidStateException(inner) => inner.source(),
+            Error::KmsThrottlingException(inner) => inner.source(),
             Error::MissingRequiredParameter(inner) => inner.source(),
             Error::ResourceNotFound(inner) => inner.source(),
             Error::ServiceQuotaExceededException(inner) => inner.source(),
@@ -1225,6 +1320,7 @@ impl ::std::error::Error for Error {
 impl ::aws_types::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
+            Self::ActivityAlreadyExists(e) => e.request_id(),
             Self::ActivityDoesNotExist(e) => e.request_id(),
             Self::ActivityLimitExceeded(e) => e.request_id(),
             Self::ActivityWorkerLimitExceeded(e) => e.request_id(),
@@ -1235,12 +1331,16 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ExecutionNotRedrivable(e) => e.request_id(),
             Self::InvalidArn(e) => e.request_id(),
             Self::InvalidDefinition(e) => e.request_id(),
+            Self::InvalidEncryptionConfiguration(e) => e.request_id(),
             Self::InvalidExecutionInput(e) => e.request_id(),
             Self::InvalidLoggingConfiguration(e) => e.request_id(),
             Self::InvalidName(e) => e.request_id(),
             Self::InvalidOutput(e) => e.request_id(),
             Self::InvalidToken(e) => e.request_id(),
             Self::InvalidTracingConfiguration(e) => e.request_id(),
+            Self::KmsAccessDeniedException(e) => e.request_id(),
+            Self::KmsInvalidStateException(e) => e.request_id(),
+            Self::KmsThrottlingException(e) => e.request_id(),
             Self::MissingRequiredParameter(e) => e.request_id(),
             Self::ResourceNotFound(e) => e.request_id(),
             Self::ServiceQuotaExceededException(e) => e.request_id(),

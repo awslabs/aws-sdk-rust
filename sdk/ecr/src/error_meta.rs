@@ -61,6 +61,10 @@ pub enum Error {
     SecretNotFoundException(crate::types::error::SecretNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::types::error::ServerException),
+    /// <p>The repository creation template already exists. Specify a unique prefix and try again.</p>
+    TemplateAlreadyExistsException(crate::types::error::TemplateAlreadyExistsException),
+    /// <p>The specified repository creation template can't be found. Verify the registry ID and prefix and try again.</p>
+    TemplateNotFoundException(crate::types::error::TemplateNotFoundException),
     /// <p>The list of tags on the repository is over the limit. The maximum number of tags that can be applied to a repository is 50.</p>
     TooManyTagsException(crate::types::error::TooManyTagsException),
     /// <p>The secret is unable to be accessed. Verify the resource permissions for the secret and try again.</p>
@@ -120,6 +124,8 @@ impl ::std::fmt::Display for Error {
             Error::ScanNotFoundException(inner) => inner.fmt(f),
             Error::SecretNotFoundException(inner) => inner.fmt(f),
             Error::ServerException(inner) => inner.fmt(f),
+            Error::TemplateAlreadyExistsException(inner) => inner.fmt(f),
+            Error::TemplateNotFoundException(inner) => inner.fmt(f),
             Error::TooManyTagsException(inner) => inner.fmt(f),
             Error::UnableToAccessSecretException(inner) => inner.fmt(f),
             Error::UnableToDecryptSecretValueException(inner) => inner.fmt(f),
@@ -179,6 +185,8 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ScanNotFoundException(inner) => inner.meta(),
             Self::SecretNotFoundException(inner) => inner.meta(),
             Self::ServerException(inner) => inner.meta(),
+            Self::TemplateAlreadyExistsException(inner) => inner.meta(),
+            Self::TemplateNotFoundException(inner) => inner.meta(),
             Self::TooManyTagsException(inner) => inner.meta(),
             Self::UnableToAccessSecretException(inner) => inner.meta(),
             Self::UnableToDecryptSecretValueException(inner) => inner.meta(),
@@ -442,6 +450,53 @@ impl From<crate::operation::create_repository::CreateRepositoryError> for Error 
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_repository_creation_template::CreateRepositoryCreationTemplateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_repository_creation_template::CreateRepositoryCreationTemplateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_repository_creation_template::CreateRepositoryCreationTemplateError> for Error {
+    fn from(err: crate::operation::create_repository_creation_template::CreateRepositoryCreationTemplateError) -> Self {
+        match err {
+            crate::operation::create_repository_creation_template::CreateRepositoryCreationTemplateError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::create_repository_creation_template::CreateRepositoryCreationTemplateError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::create_repository_creation_template::CreateRepositoryCreationTemplateError::ServerException(inner) => {
+                Error::ServerException(inner)
+            }
+            crate::operation::create_repository_creation_template::CreateRepositoryCreationTemplateError::TemplateAlreadyExistsException(inner) => {
+                Error::TemplateAlreadyExistsException(inner)
+            }
+            crate::operation::create_repository_creation_template::CreateRepositoryCreationTemplateError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_repository_creation_template::CreateRepositoryCreationTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -568,6 +623,50 @@ impl From<crate::operation::delete_repository::DeleteRepositoryError> for Error 
             }
             crate::operation::delete_repository::DeleteRepositoryError::ServerException(inner) => Error::ServerException(inner),
             crate::operation::delete_repository::DeleteRepositoryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_repository_creation_template::DeleteRepositoryCreationTemplateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_repository_creation_template::DeleteRepositoryCreationTemplateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_repository_creation_template::DeleteRepositoryCreationTemplateError> for Error {
+    fn from(err: crate::operation::delete_repository_creation_template::DeleteRepositoryCreationTemplateError) -> Self {
+        match err {
+            crate::operation::delete_repository_creation_template::DeleteRepositoryCreationTemplateError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::delete_repository_creation_template::DeleteRepositoryCreationTemplateError::ServerException(inner) => {
+                Error::ServerException(inner)
+            }
+            crate::operation::delete_repository_creation_template::DeleteRepositoryCreationTemplateError::TemplateNotFoundException(inner) => {
+                Error::TemplateNotFoundException(inner)
+            }
+            crate::operation::delete_repository_creation_template::DeleteRepositoryCreationTemplateError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_repository_creation_template::DeleteRepositoryCreationTemplateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -809,6 +908,49 @@ impl From<crate::operation::describe_repositories::DescribeRepositoriesError> fo
             }
             crate::operation::describe_repositories::DescribeRepositoriesError::ServerException(inner) => Error::ServerException(inner),
             crate::operation::describe_repositories::DescribeRepositoriesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_repository_creation_templates::DescribeRepositoryCreationTemplatesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_repository_creation_templates::DescribeRepositoryCreationTemplatesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_repository_creation_templates::DescribeRepositoryCreationTemplatesError> for Error {
+    fn from(err: crate::operation::describe_repository_creation_templates::DescribeRepositoryCreationTemplatesError) -> Self {
+        match err {
+            crate::operation::describe_repository_creation_templates::DescribeRepositoryCreationTemplatesError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::describe_repository_creation_templates::DescribeRepositoryCreationTemplatesError::ServerException(inner) => {
+                Error::ServerException(inner)
+            }
+            crate::operation::describe_repository_creation_templates::DescribeRepositoryCreationTemplatesError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::describe_repository_creation_templates::DescribeRepositoryCreationTemplatesError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -1562,6 +1704,50 @@ impl From<crate::operation::update_pull_through_cache_rule::UpdatePullThroughCac
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_repository_creation_template::UpdateRepositoryCreationTemplateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_repository_creation_template::UpdateRepositoryCreationTemplateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_repository_creation_template::UpdateRepositoryCreationTemplateError> for Error {
+    fn from(err: crate::operation::update_repository_creation_template::UpdateRepositoryCreationTemplateError) -> Self {
+        match err {
+            crate::operation::update_repository_creation_template::UpdateRepositoryCreationTemplateError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::update_repository_creation_template::UpdateRepositoryCreationTemplateError::ServerException(inner) => {
+                Error::ServerException(inner)
+            }
+            crate::operation::update_repository_creation_template::UpdateRepositoryCreationTemplateError::TemplateNotFoundException(inner) => {
+                Error::TemplateNotFoundException(inner)
+            }
+            crate::operation::update_repository_creation_template::UpdateRepositoryCreationTemplateError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_repository_creation_template::UpdateRepositoryCreationTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::upload_layer_part::UploadLayerPartError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1676,6 +1862,8 @@ impl ::std::error::Error for Error {
             Error::ScanNotFoundException(inner) => inner.source(),
             Error::SecretNotFoundException(inner) => inner.source(),
             Error::ServerException(inner) => inner.source(),
+            Error::TemplateAlreadyExistsException(inner) => inner.source(),
+            Error::TemplateNotFoundException(inner) => inner.source(),
             Error::TooManyTagsException(inner) => inner.source(),
             Error::UnableToAccessSecretException(inner) => inner.source(),
             Error::UnableToDecryptSecretValueException(inner) => inner.source(),
@@ -1721,6 +1909,8 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ScanNotFoundException(e) => e.request_id(),
             Self::SecretNotFoundException(e) => e.request_id(),
             Self::ServerException(e) => e.request_id(),
+            Self::TemplateAlreadyExistsException(e) => e.request_id(),
+            Self::TemplateNotFoundException(e) => e.request_id(),
             Self::TooManyTagsException(e) => e.request_id(),
             Self::UnableToAccessSecretException(e) => e.request_id(),
             Self::UnableToDecryptSecretValueException(e) => e.request_id(),

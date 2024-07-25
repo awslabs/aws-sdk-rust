@@ -67,8 +67,14 @@ pub fn ser_create_cluster_input_input(
         }
         object_20.finish();
     }
-    if let Some(var_23) = &input.version {
-        object.key("version").string(var_23.as_str());
+    if let Some(var_23) = &input.upgrade_policy {
+        #[allow(unused_mut)]
+        let mut object_24 = object.key("upgradePolicy").start_object();
+        crate::protocol_serde::shape_upgrade_policy_request::ser_upgrade_policy_request(&mut object_24, var_23)?;
+        object_24.finish();
+    }
+    if let Some(var_25) = &input.version {
+        object.key("version").string(var_25.as_str());
     }
     Ok(())
 }

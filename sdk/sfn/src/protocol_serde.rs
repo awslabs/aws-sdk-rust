@@ -105,6 +105,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
+pub(crate) mod shape_activity_already_exists;
+
 pub(crate) mod shape_activity_does_not_exist;
 
 pub(crate) mod shape_activity_limit_exceeded;
@@ -155,6 +157,8 @@ pub(crate) mod shape_invalid_arn;
 
 pub(crate) mod shape_invalid_definition;
 
+pub(crate) mod shape_invalid_encryption_configuration;
+
 pub(crate) mod shape_invalid_execution_input;
 
 pub(crate) mod shape_invalid_logging_configuration;
@@ -166,6 +170,12 @@ pub(crate) mod shape_invalid_output;
 pub(crate) mod shape_invalid_token;
 
 pub(crate) mod shape_invalid_tracing_configuration;
+
+pub(crate) mod shape_kms_access_denied_exception;
+
+pub(crate) mod shape_kms_invalid_state_exception;
+
+pub(crate) mod shape_kms_throttling_exception;
 
 pub(crate) mod shape_list_activities_input;
 
@@ -240,6 +250,8 @@ pub(crate) mod shape_activity_list;
 pub(crate) mod shape_billing_details;
 
 pub(crate) mod shape_cloud_watch_events_execution_data_details;
+
+pub(crate) mod shape_encryption_configuration;
 
 pub(crate) mod shape_execution_list;
 

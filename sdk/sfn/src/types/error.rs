@@ -15,15 +15,23 @@ pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExce
 
 pub use crate::types::error::_missing_required_parameter::MissingRequiredParameter;
 
+pub use crate::types::error::_kms_throttling_exception::KmsThrottlingException;
+
+pub use crate::types::error::_kms_access_denied_exception::KmsAccessDeniedException;
+
 pub use crate::types::error::_invalid_tracing_configuration::InvalidTracingConfiguration;
 
 pub use crate::types::error::_invalid_logging_configuration::InvalidLoggingConfiguration;
+
+pub use crate::types::error::_invalid_encryption_configuration::InvalidEncryptionConfiguration;
 
 pub use crate::types::error::_invalid_definition::InvalidDefinition;
 
 pub use crate::types::error::_invalid_execution_input::InvalidExecutionInput;
 
 pub use crate::types::error::_too_many_tags::TooManyTags;
+
+pub use crate::types::error::_kms_invalid_state_exception::KmsInvalidStateException;
 
 pub use crate::types::error::_execution_does_not_exist::ExecutionDoesNotExist;
 
@@ -55,6 +63,10 @@ pub use crate::types::error::_state_machine_already_exists::StateMachineAlreadyE
 
 pub use crate::types::error::_activity_limit_exceeded::ActivityLimitExceeded;
 
+pub use crate::types::error::_activity_already_exists::ActivityAlreadyExists;
+
+mod _activity_already_exists;
+
 mod _activity_does_not_exist;
 
 mod _activity_limit_exceeded;
@@ -75,6 +87,8 @@ mod _invalid_arn;
 
 mod _invalid_definition;
 
+mod _invalid_encryption_configuration;
+
 mod _invalid_execution_input;
 
 mod _invalid_logging_configuration;
@@ -86,6 +100,12 @@ mod _invalid_output;
 mod _invalid_token;
 
 mod _invalid_tracing_configuration;
+
+mod _kms_access_denied_exception;
+
+mod _kms_invalid_state_exception;
+
+mod _kms_throttling_exception;
 
 mod _missing_required_parameter;
 

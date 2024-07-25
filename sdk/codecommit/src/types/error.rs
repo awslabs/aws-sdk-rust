@@ -321,6 +321,8 @@ pub use crate::types::error::_approval_rule_template_in_use_exception::ApprovalR
 
 pub use crate::types::error::_repository_limit_exceeded_exception::RepositoryLimitExceededException;
 
+pub use crate::types::error::_operation_not_allowed_exception::OperationNotAllowedException;
+
 pub use crate::types::error::_number_of_rules_exceeded_exception::NumberOfRulesExceededException;
 
 pub use crate::types::error::_approval_rule_name_already_exists_exception::ApprovalRuleNameAlreadyExistsException;
@@ -652,6 +654,8 @@ mod _no_change_exception;
 mod _number_of_rule_templates_exceeded_exception;
 
 mod _number_of_rules_exceeded_exception;
+
+mod _operation_not_allowed_exception;
 
 mod _override_already_set_exception;
 

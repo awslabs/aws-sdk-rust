@@ -65,6 +65,24 @@ pub fn de_create_state_machine_http_error(
             }
             tmp
         }),
+        "InvalidEncryptionConfiguration" => crate::operation::create_state_machine::CreateStateMachineError::InvalidEncryptionConfiguration({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidEncryptionConfigurationBuilder::default();
+                output = crate::protocol_serde::shape_invalid_encryption_configuration::de_invalid_encryption_configuration_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::create_state_machine::CreateStateMachineError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "InvalidLoggingConfiguration" => crate::operation::create_state_machine::CreateStateMachineError::InvalidLoggingConfiguration({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -104,6 +122,36 @@ pub fn de_create_state_machine_http_error(
                 output =
                     crate::protocol_serde::shape_invalid_tracing_configuration::de_invalid_tracing_configuration_json_err(_response_body, output)
                         .map_err(crate::operation::create_state_machine::CreateStateMachineError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "KmsAccessDeniedException" => crate::operation::create_state_machine::CreateStateMachineError::KmsAccessDeniedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::KmsAccessDeniedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_kms_access_denied_exception::de_kms_access_denied_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::create_state_machine::CreateStateMachineError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "KmsThrottlingException" => crate::operation::create_state_machine::CreateStateMachineError::KmsThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::KmsThrottlingExceptionBuilder::default();
+                output = crate::protocol_serde::shape_kms_throttling_exception::de_kms_throttling_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::create_state_machine::CreateStateMachineError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };

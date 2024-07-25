@@ -6,5 +6,8 @@ pub fn ser_describe_state_machine_input_input(
     if let Some(var_1) = &input.state_machine_arn {
         object.key("stateMachineArn").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.included_data {
+        object.key("includedData").string(var_2.as_str());
+    }
     Ok(())
 }

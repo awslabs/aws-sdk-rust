@@ -13,6 +13,8 @@ pub enum Error {
     CaCertificatesBundleNotFoundException(crate::types::error::CaCertificatesBundleNotFoundException),
     /// <p>The specified certificate does not exist.</p>
     CertificateNotFoundException(crate::types::error::CertificateNotFoundException),
+    /// <p>The specified association cannot be within the same account.</p>
+    DeleteAssociationSameAccountException(crate::types::error::DeleteAssociationSameAccountException),
     /// <p>A listener with the specified port already exists.</p>
     DuplicateListenerException(crate::types::error::DuplicateListenerException),
     /// <p>A load balancer with the specified name already exists.</p>
@@ -53,6 +55,8 @@ pub enum Error {
     PriorityInUseException(crate::types::error::PriorityInUseException),
     /// <p>A specified resource is in use.</p>
     ResourceInUseException(crate::types::error::ResourceInUseException),
+    /// <p>The specified resource does not exist.</p>
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The specified revocation file does not exist.</p>
     RevocationContentNotFoundException(crate::types::error::RevocationContentNotFoundException),
     /// <p>The specified revocation ID does not exist.</p>
@@ -91,6 +95,8 @@ pub enum Error {
     TooManyTrustStoresException(crate::types::error::TooManyTrustStoresException),
     /// <p>You've reached the limit on the number of unique target groups per load balancer across all listeners. If a target group is used by multiple actions for a load balancer, it is counted as only one use.</p>
     TooManyUniqueTargetGroupsPerLoadBalancerException(crate::types::error::TooManyUniqueTargetGroupsPerLoadBalancerException),
+    /// <p>The specified association does not exist.</p>
+    TrustStoreAssociationNotFoundException(crate::types::error::TrustStoreAssociationNotFoundException),
     /// <p>The specified trust store is currently in use.</p>
     TrustStoreInUseException(crate::types::error::TrustStoreInUseException),
     /// <p>The specified trust store does not exist.</p>
@@ -116,6 +122,7 @@ impl ::std::fmt::Display for Error {
             Error::AvailabilityZoneNotSupportedException(inner) => inner.fmt(f),
             Error::CaCertificatesBundleNotFoundException(inner) => inner.fmt(f),
             Error::CertificateNotFoundException(inner) => inner.fmt(f),
+            Error::DeleteAssociationSameAccountException(inner) => inner.fmt(f),
             Error::DuplicateListenerException(inner) => inner.fmt(f),
             Error::DuplicateLoadBalancerNameException(inner) => inner.fmt(f),
             Error::DuplicateTagKeysException(inner) => inner.fmt(f),
@@ -136,6 +143,7 @@ impl ::std::fmt::Display for Error {
             Error::OperationNotPermittedException(inner) => inner.fmt(f),
             Error::PriorityInUseException(inner) => inner.fmt(f),
             Error::ResourceInUseException(inner) => inner.fmt(f),
+            Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::RevocationContentNotFoundException(inner) => inner.fmt(f),
             Error::RevocationIdNotFoundException(inner) => inner.fmt(f),
             Error::RuleNotFoundException(inner) => inner.fmt(f),
@@ -155,6 +163,7 @@ impl ::std::fmt::Display for Error {
             Error::TooManyTrustStoreRevocationEntriesException(inner) => inner.fmt(f),
             Error::TooManyTrustStoresException(inner) => inner.fmt(f),
             Error::TooManyUniqueTargetGroupsPerLoadBalancerException(inner) => inner.fmt(f),
+            Error::TrustStoreAssociationNotFoundException(inner) => inner.fmt(f),
             Error::TrustStoreInUseException(inner) => inner.fmt(f),
             Error::TrustStoreNotFoundException(inner) => inner.fmt(f),
             Error::TrustStoreNotReadyException(inner) => inner.fmt(f),
@@ -185,6 +194,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::AvailabilityZoneNotSupportedException(inner) => inner.meta(),
             Self::CaCertificatesBundleNotFoundException(inner) => inner.meta(),
             Self::CertificateNotFoundException(inner) => inner.meta(),
+            Self::DeleteAssociationSameAccountException(inner) => inner.meta(),
             Self::DuplicateListenerException(inner) => inner.meta(),
             Self::DuplicateLoadBalancerNameException(inner) => inner.meta(),
             Self::DuplicateTagKeysException(inner) => inner.meta(),
@@ -205,6 +215,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::OperationNotPermittedException(inner) => inner.meta(),
             Self::PriorityInUseException(inner) => inner.meta(),
             Self::ResourceInUseException(inner) => inner.meta(),
+            Self::ResourceNotFoundException(inner) => inner.meta(),
             Self::RevocationContentNotFoundException(inner) => inner.meta(),
             Self::RevocationIdNotFoundException(inner) => inner.meta(),
             Self::RuleNotFoundException(inner) => inner.meta(),
@@ -224,6 +235,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::TooManyTrustStoreRevocationEntriesException(inner) => inner.meta(),
             Self::TooManyTrustStoresException(inner) => inner.meta(),
             Self::TooManyUniqueTargetGroupsPerLoadBalancerException(inner) => inner.meta(),
+            Self::TrustStoreAssociationNotFoundException(inner) => inner.meta(),
             Self::TrustStoreInUseException(inner) => inner.meta(),
             Self::TrustStoreNotFoundException(inner) => inner.meta(),
             Self::TrustStoreNotReadyException(inner) => inner.meta(),
@@ -619,6 +631,41 @@ impl From<crate::operation::delete_rule::DeleteRuleError> for Error {
             crate::operation::delete_rule::DeleteRuleError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
             crate::operation::delete_rule::DeleteRuleError::RuleNotFoundException(inner) => Error::RuleNotFoundException(inner),
             crate::operation::delete_rule::DeleteRuleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_shared_trust_store_association::DeleteSharedTrustStoreAssociationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_shared_trust_store_association::DeleteSharedTrustStoreAssociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_shared_trust_store_association::DeleteSharedTrustStoreAssociationError> for Error {
+    fn from(err: crate::operation::delete_shared_trust_store_association::DeleteSharedTrustStoreAssociationError) -> Self {
+        match err {
+            crate::operation::delete_shared_trust_store_association::DeleteSharedTrustStoreAssociationError::DeleteAssociationSameAccountException(inner) => Error::DeleteAssociationSameAccountException(inner),
+            crate::operation::delete_shared_trust_store_association::DeleteSharedTrustStoreAssociationError::TrustStoreAssociationNotFoundException(inner) => Error::TrustStoreAssociationNotFoundException(inner),
+            crate::operation::delete_shared_trust_store_association::DeleteSharedTrustStoreAssociationError::TrustStoreNotFoundException(inner) => Error::TrustStoreNotFoundException(inner),
+            crate::operation::delete_shared_trust_store_association::DeleteSharedTrustStoreAssociationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1091,6 +1138,30 @@ impl From<crate::operation::describe_trust_stores::DescribeTrustStoresError> for
                 Error::TrustStoreNotFoundException(inner)
             }
             crate::operation::describe_trust_stores::DescribeTrustStoresError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_resource_policy::GetResourcePolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_resource_policy::GetResourcePolicyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_resource_policy::GetResourcePolicyError> for Error {
+    fn from(err: crate::operation::get_resource_policy::GetResourcePolicyError) -> Self {
+        match err {
+            crate::operation::get_resource_policy::GetResourcePolicyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_resource_policy::GetResourcePolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1643,6 +1714,7 @@ impl ::std::error::Error for Error {
             Error::AvailabilityZoneNotSupportedException(inner) => inner.source(),
             Error::CaCertificatesBundleNotFoundException(inner) => inner.source(),
             Error::CertificateNotFoundException(inner) => inner.source(),
+            Error::DeleteAssociationSameAccountException(inner) => inner.source(),
             Error::DuplicateListenerException(inner) => inner.source(),
             Error::DuplicateLoadBalancerNameException(inner) => inner.source(),
             Error::DuplicateTagKeysException(inner) => inner.source(),
@@ -1663,6 +1735,7 @@ impl ::std::error::Error for Error {
             Error::OperationNotPermittedException(inner) => inner.source(),
             Error::PriorityInUseException(inner) => inner.source(),
             Error::ResourceInUseException(inner) => inner.source(),
+            Error::ResourceNotFoundException(inner) => inner.source(),
             Error::RevocationContentNotFoundException(inner) => inner.source(),
             Error::RevocationIdNotFoundException(inner) => inner.source(),
             Error::RuleNotFoundException(inner) => inner.source(),
@@ -1682,6 +1755,7 @@ impl ::std::error::Error for Error {
             Error::TooManyTrustStoreRevocationEntriesException(inner) => inner.source(),
             Error::TooManyTrustStoresException(inner) => inner.source(),
             Error::TooManyUniqueTargetGroupsPerLoadBalancerException(inner) => inner.source(),
+            Error::TrustStoreAssociationNotFoundException(inner) => inner.source(),
             Error::TrustStoreInUseException(inner) => inner.source(),
             Error::TrustStoreNotFoundException(inner) => inner.source(),
             Error::TrustStoreNotReadyException(inner) => inner.source(),
@@ -1698,6 +1772,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::AvailabilityZoneNotSupportedException(e) => e.request_id(),
             Self::CaCertificatesBundleNotFoundException(e) => e.request_id(),
             Self::CertificateNotFoundException(e) => e.request_id(),
+            Self::DeleteAssociationSameAccountException(e) => e.request_id(),
             Self::DuplicateListenerException(e) => e.request_id(),
             Self::DuplicateLoadBalancerNameException(e) => e.request_id(),
             Self::DuplicateTagKeysException(e) => e.request_id(),
@@ -1718,6 +1793,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::OperationNotPermittedException(e) => e.request_id(),
             Self::PriorityInUseException(e) => e.request_id(),
             Self::ResourceInUseException(e) => e.request_id(),
+            Self::ResourceNotFoundException(e) => e.request_id(),
             Self::RevocationContentNotFoundException(e) => e.request_id(),
             Self::RevocationIdNotFoundException(e) => e.request_id(),
             Self::RuleNotFoundException(e) => e.request_id(),
@@ -1737,6 +1813,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::TooManyTrustStoreRevocationEntriesException(e) => e.request_id(),
             Self::TooManyTrustStoresException(e) => e.request_id(),
             Self::TooManyUniqueTargetGroupsPerLoadBalancerException(e) => e.request_id(),
+            Self::TrustStoreAssociationNotFoundException(e) => e.request_id(),
             Self::TrustStoreInUseException(e) => e.request_id(),
             Self::TrustStoreNotFoundException(e) => e.request_id(),
             Self::TrustStoreNotReadyException(e) => e.request_id(),

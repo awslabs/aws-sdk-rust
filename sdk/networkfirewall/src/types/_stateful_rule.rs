@@ -14,6 +14,8 @@ pub struct StatefulRule {
     /// <li>
     /// <p><b>ALERT</b> - Sends an alert log message, if alert logging is configured in the <code>Firewall</code> <code>LoggingConfiguration</code>.</p>
     /// <p>You can use this action to test a rule that you intend to use to drop traffic. You can enable the rule with <code>ALERT</code> action, verify in the logs that the rule is filtering as you want, then change the action to <code>DROP</code>.</p></li>
+    /// <li>
+    /// <p><b>REJECT</b> - Drops traffic that matches the conditions of the stateful rule, and sends a TCP reset packet back to sender of the packet. A TCP reset packet is a packet with no payload and an RST bit contained in the TCP header flags. REJECT is available only for TCP traffic. This option doesn't support FTP or IMAP protocols.</p></li>
     /// </ul>
     pub action: crate::types::StatefulAction,
     /// <p>The stateful inspection criteria for this rule, used to inspect traffic flows.</p>
@@ -32,6 +34,8 @@ impl StatefulRule {
     /// <li>
     /// <p><b>ALERT</b> - Sends an alert log message, if alert logging is configured in the <code>Firewall</code> <code>LoggingConfiguration</code>.</p>
     /// <p>You can use this action to test a rule that you intend to use to drop traffic. You can enable the rule with <code>ALERT</code> action, verify in the logs that the rule is filtering as you want, then change the action to <code>DROP</code>.</p></li>
+    /// <li>
+    /// <p><b>REJECT</b> - Drops traffic that matches the conditions of the stateful rule, and sends a TCP reset packet back to sender of the packet. A TCP reset packet is a packet with no payload and an RST bit contained in the TCP header flags. REJECT is available only for TCP traffic. This option doesn't support FTP or IMAP protocols.</p></li>
     /// </ul>
     pub fn action(&self) -> &crate::types::StatefulAction {
         &self.action
@@ -72,6 +76,8 @@ impl StatefulRuleBuilder {
     /// <li>
     /// <p><b>ALERT</b> - Sends an alert log message, if alert logging is configured in the <code>Firewall</code> <code>LoggingConfiguration</code>.</p>
     /// <p>You can use this action to test a rule that you intend to use to drop traffic. You can enable the rule with <code>ALERT</code> action, verify in the logs that the rule is filtering as you want, then change the action to <code>DROP</code>.</p></li>
+    /// <li>
+    /// <p><b>REJECT</b> - Drops traffic that matches the conditions of the stateful rule, and sends a TCP reset packet back to sender of the packet. A TCP reset packet is a packet with no payload and an RST bit contained in the TCP header flags. REJECT is available only for TCP traffic. This option doesn't support FTP or IMAP protocols.</p></li>
     /// </ul>
     /// This field is required.
     pub fn action(mut self, input: crate::types::StatefulAction) -> Self {
@@ -88,6 +94,8 @@ impl StatefulRuleBuilder {
     /// <li>
     /// <p><b>ALERT</b> - Sends an alert log message, if alert logging is configured in the <code>Firewall</code> <code>LoggingConfiguration</code>.</p>
     /// <p>You can use this action to test a rule that you intend to use to drop traffic. You can enable the rule with <code>ALERT</code> action, verify in the logs that the rule is filtering as you want, then change the action to <code>DROP</code>.</p></li>
+    /// <li>
+    /// <p><b>REJECT</b> - Drops traffic that matches the conditions of the stateful rule, and sends a TCP reset packet back to sender of the packet. A TCP reset packet is a packet with no payload and an RST bit contained in the TCP header flags. REJECT is available only for TCP traffic. This option doesn't support FTP or IMAP protocols.</p></li>
     /// </ul>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::StatefulAction>) -> Self {
         self.action = input;
@@ -103,6 +111,8 @@ impl StatefulRuleBuilder {
     /// <li>
     /// <p><b>ALERT</b> - Sends an alert log message, if alert logging is configured in the <code>Firewall</code> <code>LoggingConfiguration</code>.</p>
     /// <p>You can use this action to test a rule that you intend to use to drop traffic. You can enable the rule with <code>ALERT</code> action, verify in the logs that the rule is filtering as you want, then change the action to <code>DROP</code>.</p></li>
+    /// <li>
+    /// <p><b>REJECT</b> - Drops traffic that matches the conditions of the stateful rule, and sends a TCP reset packet back to sender of the packet. A TCP reset packet is a packet with no payload and an RST bit contained in the TCP header flags. REJECT is available only for TCP traffic. This option doesn't support FTP or IMAP protocols.</p></li>
     /// </ul>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::StatefulAction> {
         &self.action

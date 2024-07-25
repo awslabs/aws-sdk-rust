@@ -23,6 +23,8 @@ pub use crate::types::_eks_anywhere_subscription::EksAnywhereSubscriptionBuilder
 
 pub use crate::types::_eks_anywhere_subscription_term::EksAnywhereSubscriptionTermBuilder;
 
+pub use crate::types::_upgrade_policy_request::UpgradePolicyRequestBuilder;
+
 pub use crate::types::_update_access_config_request::UpdateAccessConfigRequestBuilder;
 
 pub use crate::types::_logging::LoggingBuilder;
@@ -36,6 +38,8 @@ pub use crate::types::_addon_pod_identity_associations::AddonPodIdentityAssociat
 pub use crate::types::_access_entry::AccessEntryBuilder;
 
 pub use crate::types::_cluster::ClusterBuilder;
+
+pub use crate::types::_upgrade_policy_response::UpgradePolicyResponseBuilder;
 
 pub use crate::types::_access_config_response::AccessConfigResponseBuilder;
 

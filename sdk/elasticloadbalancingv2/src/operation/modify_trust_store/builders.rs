@@ -22,7 +22,7 @@ impl crate::operation::modify_trust_store::builders::ModifyTrustStoreInputBuilde
 }
 /// Fluent builder constructing a request to `ModifyTrustStore`.
 ///
-/// <p>Update the ca certificate bundle for a given trust store.</p>
+/// <p>Update the ca certificate bundle for the specified trust store.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyTrustStoreFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -256,6 +256,12 @@ pub enum StartExecutionError {
     InvalidExecutionInput(crate::types::error::InvalidExecutionInput),
     /// <p>The provided name is not valid.</p>
     InvalidName(crate::types::error::InvalidName),
+    /// <p>Either your KMS key policy or API caller does not have the required permissions.</p>
+    KmsAccessDeniedException(crate::types::error::KmsAccessDeniedException),
+    /// <p>The KMS key is not in valid state, for example: Disabled or Deleted.</p>
+    KmsInvalidStateException(crate::types::error::KmsInvalidStateException),
+    /// <p>Received when KMS returns <code>ThrottlingException</code> for a KMS call that Step Functions makes on behalf of the caller.</p>
+    KmsThrottlingException(crate::types::error::KmsThrottlingException),
     /// <p>The specified state machine is being deleted.</p>
     StateMachineDeleting(crate::types::error::StateMachineDeleting),
     /// <p>The specified state machine does not exist.</p>
@@ -300,6 +306,9 @@ impl StartExecutionError {
             Self::InvalidArn(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidExecutionInput(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidName(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::KmsAccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::KmsInvalidStateException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::KmsThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::StateMachineDeleting(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::StateMachineDoesNotExist(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -326,6 +335,18 @@ impl StartExecutionError {
     pub fn is_invalid_name(&self) -> bool {
         matches!(self, Self::InvalidName(_))
     }
+    /// Returns `true` if the error kind is `StartExecutionError::KmsAccessDeniedException`.
+    pub fn is_kms_access_denied_exception(&self) -> bool {
+        matches!(self, Self::KmsAccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `StartExecutionError::KmsInvalidStateException`.
+    pub fn is_kms_invalid_state_exception(&self) -> bool {
+        matches!(self, Self::KmsInvalidStateException(_))
+    }
+    /// Returns `true` if the error kind is `StartExecutionError::KmsThrottlingException`.
+    pub fn is_kms_throttling_exception(&self) -> bool {
+        matches!(self, Self::KmsThrottlingException(_))
+    }
     /// Returns `true` if the error kind is `StartExecutionError::StateMachineDeleting`.
     pub fn is_state_machine_deleting(&self) -> bool {
         matches!(self, Self::StateMachineDeleting(_))
@@ -347,6 +368,9 @@ impl ::std::error::Error for StartExecutionError {
             Self::InvalidArn(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidExecutionInput(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidName(_inner) => ::std::option::Option::Some(_inner),
+            Self::KmsAccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::KmsInvalidStateException(_inner) => ::std::option::Option::Some(_inner),
+            Self::KmsThrottlingException(_inner) => ::std::option::Option::Some(_inner),
             Self::StateMachineDeleting(_inner) => ::std::option::Option::Some(_inner),
             Self::StateMachineDoesNotExist(_inner) => ::std::option::Option::Some(_inner),
             Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
@@ -362,6 +386,9 @@ impl ::std::fmt::Display for StartExecutionError {
             Self::InvalidArn(_inner) => _inner.fmt(f),
             Self::InvalidExecutionInput(_inner) => _inner.fmt(f),
             Self::InvalidName(_inner) => _inner.fmt(f),
+            Self::KmsAccessDeniedException(_inner) => _inner.fmt(f),
+            Self::KmsInvalidStateException(_inner) => _inner.fmt(f),
+            Self::KmsThrottlingException(_inner) => _inner.fmt(f),
             Self::StateMachineDeleting(_inner) => _inner.fmt(f),
             Self::StateMachineDoesNotExist(_inner) => _inner.fmt(f),
             Self::ValidationException(_inner) => _inner.fmt(f),
@@ -391,6 +418,9 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for StartExecutio
             Self::InvalidArn(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidExecutionInput(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidName(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::KmsAccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::KmsInvalidStateException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::KmsThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::StateMachineDeleting(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::StateMachineDoesNotExist(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

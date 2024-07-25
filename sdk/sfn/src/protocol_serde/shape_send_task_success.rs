@@ -47,6 +47,51 @@ pub fn de_send_task_success_http_error(
             }
             tmp
         }),
+        "KmsAccessDeniedException" => crate::operation::send_task_success::SendTaskSuccessError::KmsAccessDeniedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::KmsAccessDeniedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_kms_access_denied_exception::de_kms_access_denied_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::send_task_success::SendTaskSuccessError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "KmsInvalidStateException" => crate::operation::send_task_success::SendTaskSuccessError::KmsInvalidStateException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::KmsInvalidStateExceptionBuilder::default();
+                output = crate::protocol_serde::shape_kms_invalid_state_exception::de_kms_invalid_state_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::send_task_success::SendTaskSuccessError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "KmsThrottlingException" => crate::operation::send_task_success::SendTaskSuccessError::KmsThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::KmsThrottlingExceptionBuilder::default();
+                output = crate::protocol_serde::shape_kms_throttling_exception::de_kms_throttling_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::send_task_success::SendTaskSuccessError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "TaskDoesNotExist" => crate::operation::send_task_success::SendTaskSuccessError::TaskDoesNotExist({
             #[allow(unused_mut)]
             let mut tmp = {

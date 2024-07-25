@@ -17,9 +17,11 @@ pub enum Error {
     ModelTimeoutException(crate::types::error::ModelTimeoutException),
     /// <p>The specified resource ARN was not found. Check the ARN and try your request again.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>The number of requests exceeds the service quota. Resubmit your request later.</p>
+    /// <p>Your request exceeds the service quota for your account. You can view your quotas at <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/gs-request-quota.html">Viewing service quotas</a>. You can resubmit your request later.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
-    /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
+    /// <p>The service isn't currently available. Try again later.</p>
+    ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
+    /// <p>Your request was throttled because of service-wide limitations. Resubmit your request later or in a different region. You can also purchase <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned Throughput</a> to increase the rate or number of tokens you can process.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>Input validation failed. Check your request parameters and retry the request.</p>
     ValidationException(crate::types::error::ValidationException),
@@ -43,6 +45,7 @@ impl ::std::fmt::Display for Error {
             Error::ModelTimeoutException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
+            Error::ServiceUnavailableException(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
@@ -74,6 +77,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ModelTimeoutException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
             Self::ServiceQuotaExceededException(inner) => inner.meta(),
+            Self::ServiceUnavailableException(inner) => inner.meta(),
             Self::ThrottlingException(inner) => inner.meta(),
             Self::ValidationException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
@@ -130,6 +134,7 @@ impl From<crate::operation::converse::ConverseError> for Error {
             crate::operation::converse::ConverseError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::converse::ConverseError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::converse::ConverseError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::converse::ConverseError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::converse::ConverseError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::converse::ConverseError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::converse::ConverseError::ModelNotReadyException(inner) => Error::ModelNotReadyException(inner),
@@ -159,6 +164,7 @@ impl From<crate::operation::converse_stream::ConverseStreamError> for Error {
             crate::operation::converse_stream::ConverseStreamError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::converse_stream::ConverseStreamError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::converse_stream::ConverseStreamError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::converse_stream::ConverseStreamError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::converse_stream::ConverseStreamError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::converse_stream::ConverseStreamError::ModelStreamErrorException(inner) => Error::ModelStreamErrorException(inner),
             crate::operation::converse_stream::ConverseStreamError::ValidationException(inner) => Error::ValidationException(inner),
@@ -189,6 +195,7 @@ impl From<crate::operation::invoke_model::InvokeModelError> for Error {
             crate::operation::invoke_model::InvokeModelError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::invoke_model::InvokeModelError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::invoke_model::InvokeModelError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::invoke_model::InvokeModelError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::invoke_model::InvokeModelError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::invoke_model::InvokeModelError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::invoke_model::InvokeModelError::ModelNotReadyException(inner) => Error::ModelNotReadyException(inner),
@@ -238,6 +245,9 @@ impl From<crate::operation::invoke_model_with_response_stream::InvokeModelWithRe
             crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
+            crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
             crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
@@ -281,6 +291,7 @@ impl From<crate::types::error::ConverseStreamOutputError> for Error {
             crate::types::error::ConverseStreamOutputError::ModelStreamErrorException(inner) => Error::ModelStreamErrorException(inner),
             crate::types::error::ConverseStreamOutputError::ValidationException(inner) => Error::ValidationException(inner),
             crate::types::error::ConverseStreamOutputError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::types::error::ConverseStreamOutputError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::types::error::ConverseStreamOutputError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -307,6 +318,7 @@ impl From<crate::types::error::ResponseStreamError> for Error {
             crate::types::error::ResponseStreamError::ValidationException(inner) => Error::ValidationException(inner),
             crate::types::error::ResponseStreamError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::types::error::ResponseStreamError::ModelTimeoutException(inner) => Error::ModelTimeoutException(inner),
+            crate::types::error::ResponseStreamError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::types::error::ResponseStreamError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -322,6 +334,7 @@ impl ::std::error::Error for Error {
             Error::ModelTimeoutException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::ServiceQuotaExceededException(inner) => inner.source(),
+            Error::ServiceUnavailableException(inner) => inner.source(),
             Error::ThrottlingException(inner) => inner.source(),
             Error::ValidationException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
@@ -339,6 +352,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ModelTimeoutException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
             Self::ServiceQuotaExceededException(e) => e.request_id(),
+            Self::ServiceUnavailableException(e) => e.request_id(),
             Self::ThrottlingException(e) => e.request_id(),
             Self::ValidationException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),

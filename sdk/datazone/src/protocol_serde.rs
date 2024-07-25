@@ -133,6 +133,8 @@ pub(crate) mod shape_get_environment_blueprint;
 
 pub(crate) mod shape_get_environment_blueprint_configuration;
 
+pub(crate) mod shape_get_environment_credentials;
+
 pub(crate) mod shape_get_environment_profile;
 
 pub(crate) mod shape_get_form_type;

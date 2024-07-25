@@ -39,6 +39,8 @@ pub struct CreateStateMachineInput {
     pub publish: ::std::option::Option<bool>,
     /// <p>Sets description about the state machine version. You can only set the description if the <code>publish</code> parameter is set to <code>true</code>. Otherwise, if you set <code>versionDescription</code>, but <code>publish</code> to <code>false</code>, this API action throws <code>ValidationException</code>.</p>
     pub version_description: ::std::option::Option<::std::string::String>,
+    /// <p>Settings to configure server-side encryption.</p>
+    pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
 }
 impl CreateStateMachineInput {
     /// <p>The name of the state machine.</p>
@@ -97,6 +99,10 @@ impl CreateStateMachineInput {
     pub fn version_description(&self) -> ::std::option::Option<&str> {
         self.version_description.as_deref()
     }
+    /// <p>Settings to configure server-side encryption.</p>
+    pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
+        self.encryption_configuration.as_ref()
+    }
 }
 impl ::std::fmt::Debug for CreateStateMachineInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -110,6 +116,7 @@ impl ::std::fmt::Debug for CreateStateMachineInput {
         formatter.field("tracing_configuration", &self.tracing_configuration);
         formatter.field("publish", &self.publish);
         formatter.field("version_description", &"*** Sensitive Data Redacted ***");
+        formatter.field("encryption_configuration", &self.encryption_configuration);
         formatter.finish()
     }
 }
@@ -133,6 +140,7 @@ pub struct CreateStateMachineInputBuilder {
     pub(crate) tracing_configuration: ::std::option::Option<crate::types::TracingConfiguration>,
     pub(crate) publish: ::std::option::Option<bool>,
     pub(crate) version_description: ::std::option::Option<::std::string::String>,
+    pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
 }
 impl CreateStateMachineInputBuilder {
     /// <p>The name of the state machine.</p>
@@ -324,6 +332,20 @@ impl CreateStateMachineInputBuilder {
     pub fn get_version_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.version_description
     }
+    /// <p>Settings to configure server-side encryption.</p>
+    pub fn encryption_configuration(mut self, input: crate::types::EncryptionConfiguration) -> Self {
+        self.encryption_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Settings to configure server-side encryption.</p>
+    pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
+        self.encryption_configuration = input;
+        self
+    }
+    /// <p>Settings to configure server-side encryption.</p>
+    pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
+        &self.encryption_configuration
+    }
     /// Consumes the builder and constructs a [`CreateStateMachineInput`](crate::operation::create_state_machine::CreateStateMachineInput).
     pub fn build(
         self,
@@ -339,6 +361,7 @@ impl CreateStateMachineInputBuilder {
             tracing_configuration: self.tracing_configuration,
             publish: self.publish,
             version_description: self.version_description,
+            encryption_configuration: self.encryption_configuration,
         })
     }
 }
@@ -354,6 +377,7 @@ impl ::std::fmt::Debug for CreateStateMachineInputBuilder {
         formatter.field("tracing_configuration", &self.tracing_configuration);
         formatter.field("publish", &self.publish);
         formatter.field("version_description", &"*** Sensitive Data Redacted ***");
+        formatter.field("encryption_configuration", &self.encryption_configuration);
         formatter.finish()
     }
 }

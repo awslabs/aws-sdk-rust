@@ -14,6 +14,7 @@
 /// match logtype {
 ///     LogType::Alert => { /* ... */ },
 ///     LogType::Flow => { /* ... */ },
+///     LogType::Tls => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -45,6 +46,8 @@ pub enum LogType {
     Alert,
     #[allow(missing_docs)] // documentation missing in model
     Flow,
+    #[allow(missing_docs)] // documentation missing in model
+    Tls,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for LogType {
         match s {
             "ALERT" => LogType::Alert,
             "FLOW" => LogType::Flow,
+            "TLS" => LogType::Tls,
             other => LogType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -71,12 +75,13 @@ impl LogType {
         match self {
             LogType::Alert => "ALERT",
             LogType::Flow => "FLOW",
+            LogType::Tls => "TLS",
             LogType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALERT", "FLOW"]
+        &["ALERT", "FLOW", "TLS"]
     }
 }
 impl ::std::convert::AsRef<str> for LogType {
@@ -101,6 +106,7 @@ impl ::std::fmt::Display for LogType {
         match self {
             LogType::Alert => write!(f, "ALERT"),
             LogType::Flow => write!(f, "FLOW"),
+            LogType::Tls => write!(f, "TLS"),
             LogType::Unknown(value) => write!(f, "{}", value),
         }
     }

@@ -24,7 +24,7 @@ impl crate::operation::invoke_model_with_response_stream::builders::InvokeModelW
 ///
 /// <p>Invoke the specified Amazon Bedrock model to run inference using the prompt and inference parameters provided in the request body. The response is returned in a stream.</p>
 /// <p>To see if a model supports streaming, call <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetFoundationModel.html">GetFoundationModel</a> and check the <code>responseStreamingSupported</code> field in the response.</p><note>
-/// <p>The CLI doesn't support <code>InvokeModelWithResponseStream</code>.</p>
+/// <p>The CLI doesn't support streaming operations in Amazon Bedrock, including <code>InvokeModelWithResponseStream</code>.</p>
 /// </note>
 /// <p>For example code, see <i>Invoke model with streaming code example</i> in the <i>Amazon Bedrock User Guide</i>.</p>
 /// <p>This operation requires permissions to perform the <code>bedrock:InvokeModelWithResponseStream</code> action.</p>

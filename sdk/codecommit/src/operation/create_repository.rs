@@ -271,6 +271,8 @@ pub enum CreateRepositoryError {
     InvalidSystemTagUsageException(crate::types::error::InvalidSystemTagUsageException),
     /// <p>The map of tags is not valid.</p>
     InvalidTagsMapException(crate::types::error::InvalidTagsMapException),
+    /// <p>The requested action is not allowed.</p>
+    OperationNotAllowedException(crate::types::error::OperationNotAllowedException),
     /// <p>A repository resource limit was exceeded.</p>
     RepositoryLimitExceededException(crate::types::error::RepositoryLimitExceededException),
     /// <p>The specified repository name already exists.</p>
@@ -325,6 +327,7 @@ impl CreateRepositoryError {
             Self::InvalidRepositoryNameException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidSystemTagUsageException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidTagsMapException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::OperationNotAllowedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::RepositoryLimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::RepositoryNameExistsException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::RepositoryNameRequiredException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -377,6 +380,10 @@ impl CreateRepositoryError {
     pub fn is_invalid_tags_map_exception(&self) -> bool {
         matches!(self, Self::InvalidTagsMapException(_))
     }
+    /// Returns `true` if the error kind is `CreateRepositoryError::OperationNotAllowedException`.
+    pub fn is_operation_not_allowed_exception(&self) -> bool {
+        matches!(self, Self::OperationNotAllowedException(_))
+    }
     /// Returns `true` if the error kind is `CreateRepositoryError::RepositoryLimitExceededException`.
     pub fn is_repository_limit_exceeded_exception(&self) -> bool {
         matches!(self, Self::RepositoryLimitExceededException(_))
@@ -412,6 +419,7 @@ impl ::std::error::Error for CreateRepositoryError {
             Self::InvalidRepositoryNameException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidSystemTagUsageException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidTagsMapException(_inner) => ::std::option::Option::Some(_inner),
+            Self::OperationNotAllowedException(_inner) => ::std::option::Option::Some(_inner),
             Self::RepositoryLimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::RepositoryNameExistsException(_inner) => ::std::option::Option::Some(_inner),
             Self::RepositoryNameRequiredException(_inner) => ::std::option::Option::Some(_inner),
@@ -435,6 +443,7 @@ impl ::std::fmt::Display for CreateRepositoryError {
             Self::InvalidRepositoryNameException(_inner) => _inner.fmt(f),
             Self::InvalidSystemTagUsageException(_inner) => _inner.fmt(f),
             Self::InvalidTagsMapException(_inner) => _inner.fmt(f),
+            Self::OperationNotAllowedException(_inner) => _inner.fmt(f),
             Self::RepositoryLimitExceededException(_inner) => _inner.fmt(f),
             Self::RepositoryNameExistsException(_inner) => _inner.fmt(f),
             Self::RepositoryNameRequiredException(_inner) => _inner.fmt(f),
@@ -472,6 +481,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateReposit
             Self::InvalidRepositoryNameException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidSystemTagUsageException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidTagsMapException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::OperationNotAllowedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::RepositoryLimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::RepositoryNameExistsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::RepositoryNameRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

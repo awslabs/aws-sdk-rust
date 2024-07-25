@@ -110,6 +110,11 @@ pub(crate) fn de_describe_activity(
                         ::aws_smithy_types::date_time::Format::EpochSeconds,
                     )?);
                 }
+                "encryptionConfiguration" => {
+                    builder = builder.set_encryption_configuration(
+                        crate::protocol_serde::shape_encryption_configuration::de_encryption_configuration(tokens)?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

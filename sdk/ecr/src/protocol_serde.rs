@@ -37,6 +37,8 @@ pub(crate) mod shape_create_pull_through_cache_rule;
 
 pub(crate) mod shape_create_repository;
 
+pub(crate) mod shape_create_repository_creation_template;
+
 pub(crate) mod shape_delete_lifecycle_policy;
 
 pub(crate) mod shape_delete_pull_through_cache_rule;
@@ -44,6 +46,8 @@ pub(crate) mod shape_delete_pull_through_cache_rule;
 pub(crate) mod shape_delete_registry_policy;
 
 pub(crate) mod shape_delete_repository;
+
+pub(crate) mod shape_delete_repository_creation_template;
 
 pub(crate) mod shape_delete_repository_policy;
 
@@ -58,6 +62,8 @@ pub(crate) mod shape_describe_pull_through_cache_rules;
 pub(crate) mod shape_describe_registry;
 
 pub(crate) mod shape_describe_repositories;
+
+pub(crate) mod shape_describe_repository_creation_templates;
 
 pub(crate) mod shape_get_authorization_token;
 
@@ -105,6 +111,8 @@ pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_pull_through_cache_rule;
 
+pub(crate) mod shape_update_repository_creation_template;
+
 pub(crate) mod shape_upload_layer_part;
 
 pub(crate) mod shape_validate_pull_through_cache_rule;
@@ -129,11 +137,15 @@ pub(crate) mod shape_complete_layer_upload_input;
 
 pub(crate) mod shape_create_pull_through_cache_rule_input;
 
+pub(crate) mod shape_create_repository_creation_template_input;
+
 pub(crate) mod shape_create_repository_input;
 
 pub(crate) mod shape_delete_lifecycle_policy_input;
 
 pub(crate) mod shape_delete_pull_through_cache_rule_input;
+
+pub(crate) mod shape_delete_repository_creation_template_input;
 
 pub(crate) mod shape_delete_repository_input;
 
@@ -148,6 +160,8 @@ pub(crate) mod shape_describe_images_input;
 pub(crate) mod shape_describe_pull_through_cache_rules_input;
 
 pub(crate) mod shape_describe_repositories_input;
+
+pub(crate) mod shape_describe_repository_creation_templates_input;
 
 pub(crate) mod shape_empty_upload_exception;
 
@@ -245,6 +259,10 @@ pub(crate) mod shape_start_lifecycle_policy_preview_input;
 
 pub(crate) mod shape_tag_resource_input;
 
+pub(crate) mod shape_template_already_exists_exception;
+
+pub(crate) mod shape_template_not_found_exception;
+
 pub(crate) mod shape_too_many_tags_exception;
 
 pub(crate) mod shape_unable_to_access_secret_exception;
@@ -263,6 +281,8 @@ pub(crate) mod shape_untag_resource_input;
 
 pub(crate) mod shape_update_pull_through_cache_rule_input;
 
+pub(crate) mod shape_update_repository_creation_template_input;
+
 pub(crate) mod shape_upload_layer_part_input;
 
 pub(crate) mod shape_upload_not_found_exception;
@@ -276,6 +296,8 @@ pub(crate) mod shape_authorization_data_list;
 pub(crate) mod shape_describe_images_filter;
 
 pub(crate) mod shape_encryption_configuration;
+
+pub(crate) mod shape_encryption_configuration_for_repository_creation_template;
 
 pub(crate) mod shape_image;
 
@@ -319,6 +341,10 @@ pub(crate) mod shape_replication_configuration;
 
 pub(crate) mod shape_repository;
 
+pub(crate) mod shape_repository_creation_template;
+
+pub(crate) mod shape_repository_creation_template_list;
+
 pub(crate) mod shape_repository_list;
 
 pub(crate) mod shape_repository_scanning_configuration_failure_list;
@@ -350,6 +376,8 @@ pub(crate) mod shape_layer_failure;
 pub(crate) mod shape_lifecycle_policy_preview_result;
 
 pub(crate) mod shape_pull_through_cache_rule;
+
+pub(crate) mod shape_rct_applied_for_list;
 
 pub(crate) mod shape_registry_scanning_rule_list;
 

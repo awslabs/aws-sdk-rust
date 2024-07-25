@@ -20,6 +20,7 @@
 ///     UpdateType::DisassociateIdentityProviderConfig => { /* ... */ },
 ///     UpdateType::EndpointAccessUpdate => { /* ... */ },
 ///     UpdateType::LoggingUpdate => { /* ... */ },
+///     UpdateType::UpgradePolicyUpdate => { /* ... */ },
 ///     UpdateType::VersionUpdate => { /* ... */ },
 ///     UpdateType::VpcConfigUpdate => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -66,6 +67,8 @@ pub enum UpdateType {
     #[allow(missing_docs)] // documentation missing in model
     LoggingUpdate,
     #[allow(missing_docs)] // documentation missing in model
+    UpgradePolicyUpdate,
+    #[allow(missing_docs)] // documentation missing in model
     VersionUpdate,
     #[allow(missing_docs)] // documentation missing in model
     VpcConfigUpdate,
@@ -84,6 +87,7 @@ impl ::std::convert::From<&str> for UpdateType {
             "DisassociateIdentityProviderConfig" => UpdateType::DisassociateIdentityProviderConfig,
             "EndpointAccessUpdate" => UpdateType::EndpointAccessUpdate,
             "LoggingUpdate" => UpdateType::LoggingUpdate,
+            "UpgradePolicyUpdate" => UpdateType::UpgradePolicyUpdate,
             "VersionUpdate" => UpdateType::VersionUpdate,
             "VpcConfigUpdate" => UpdateType::VpcConfigUpdate,
             other => UpdateType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -109,6 +113,7 @@ impl UpdateType {
             UpdateType::DisassociateIdentityProviderConfig => "DisassociateIdentityProviderConfig",
             UpdateType::EndpointAccessUpdate => "EndpointAccessUpdate",
             UpdateType::LoggingUpdate => "LoggingUpdate",
+            UpdateType::UpgradePolicyUpdate => "UpgradePolicyUpdate",
             UpdateType::VersionUpdate => "VersionUpdate",
             UpdateType::VpcConfigUpdate => "VpcConfigUpdate",
             UpdateType::Unknown(value) => value.as_str(),
@@ -125,6 +130,7 @@ impl UpdateType {
             "DisassociateIdentityProviderConfig",
             "EndpointAccessUpdate",
             "LoggingUpdate",
+            "UpgradePolicyUpdate",
             "VersionUpdate",
             "VpcConfigUpdate",
         ]
@@ -158,6 +164,7 @@ impl ::std::fmt::Display for UpdateType {
             UpdateType::DisassociateIdentityProviderConfig => write!(f, "DisassociateIdentityProviderConfig"),
             UpdateType::EndpointAccessUpdate => write!(f, "EndpointAccessUpdate"),
             UpdateType::LoggingUpdate => write!(f, "LoggingUpdate"),
+            UpdateType::UpgradePolicyUpdate => write!(f, "UpgradePolicyUpdate"),
             UpdateType::VersionUpdate => write!(f, "VersionUpdate"),
             UpdateType::VpcConfigUpdate => write!(f, "VpcConfigUpdate"),
             UpdateType::Unknown(value) => write!(f, "{}", value),

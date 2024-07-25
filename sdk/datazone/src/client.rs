@@ -273,6 +273,8 @@ mod get_environment_blueprint;
 
 mod get_environment_blueprint_configuration;
 
+mod get_environment_credentials;
+
 mod get_environment_profile;
 
 mod get_form_type;

@@ -46,6 +46,9 @@ pub struct Cluster {
     pub outpost_config: ::std::option::Option<crate::types::OutpostConfigResponse>,
     /// <p>The access configuration for the cluster.</p>
     pub access_config: ::std::option::Option<crate::types::AccessConfigResponse>,
+    /// <p>This value indicates if extended support is enabled or disabled for the cluster.</p>
+    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/extended-support-control.html">Learn more about EKS Extended Support in the EKS User Guide.</a></p>
+    pub upgrade_policy: ::std::option::Option<crate::types::UpgradePolicyResponse>,
 }
 impl Cluster {
     /// <p>The name of your cluster.</p>
@@ -134,6 +137,11 @@ impl Cluster {
     pub fn access_config(&self) -> ::std::option::Option<&crate::types::AccessConfigResponse> {
         self.access_config.as_ref()
     }
+    /// <p>This value indicates if extended support is enabled or disabled for the cluster.</p>
+    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/extended-support-control.html">Learn more about EKS Extended Support in the EKS User Guide.</a></p>
+    pub fn upgrade_policy(&self) -> ::std::option::Option<&crate::types::UpgradePolicyResponse> {
+        self.upgrade_policy.as_ref()
+    }
 }
 impl Cluster {
     /// Creates a new builder-style object to manufacture [`Cluster`](crate::types::Cluster).
@@ -167,6 +175,7 @@ pub struct ClusterBuilder {
     pub(crate) health: ::std::option::Option<crate::types::ClusterHealth>,
     pub(crate) outpost_config: ::std::option::Option<crate::types::OutpostConfigResponse>,
     pub(crate) access_config: ::std::option::Option<crate::types::AccessConfigResponse>,
+    pub(crate) upgrade_policy: ::std::option::Option<crate::types::UpgradePolicyResponse>,
 }
 impl ClusterBuilder {
     /// <p>The name of your cluster.</p>
@@ -475,6 +484,23 @@ impl ClusterBuilder {
     pub fn get_access_config(&self) -> &::std::option::Option<crate::types::AccessConfigResponse> {
         &self.access_config
     }
+    /// <p>This value indicates if extended support is enabled or disabled for the cluster.</p>
+    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/extended-support-control.html">Learn more about EKS Extended Support in the EKS User Guide.</a></p>
+    pub fn upgrade_policy(mut self, input: crate::types::UpgradePolicyResponse) -> Self {
+        self.upgrade_policy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>This value indicates if extended support is enabled or disabled for the cluster.</p>
+    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/extended-support-control.html">Learn more about EKS Extended Support in the EKS User Guide.</a></p>
+    pub fn set_upgrade_policy(mut self, input: ::std::option::Option<crate::types::UpgradePolicyResponse>) -> Self {
+        self.upgrade_policy = input;
+        self
+    }
+    /// <p>This value indicates if extended support is enabled or disabled for the cluster.</p>
+    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/extended-support-control.html">Learn more about EKS Extended Support in the EKS User Guide.</a></p>
+    pub fn get_upgrade_policy(&self) -> &::std::option::Option<crate::types::UpgradePolicyResponse> {
+        &self.upgrade_policy
+    }
     /// Consumes the builder and constructs a [`Cluster`](crate::types::Cluster).
     pub fn build(self) -> crate::types::Cluster {
         crate::types::Cluster {
@@ -499,6 +525,7 @@ impl ClusterBuilder {
             health: self.health,
             outpost_config: self.outpost_config,
             access_config: self.access_config,
+            upgrade_policy: self.upgrade_policy,
         }
     }
 }

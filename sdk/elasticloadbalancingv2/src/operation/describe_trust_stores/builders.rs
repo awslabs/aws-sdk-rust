@@ -22,7 +22,7 @@ impl crate::operation::describe_trust_stores::builders::DescribeTrustStoresInput
 }
 /// Fluent builder constructing a request to `DescribeTrustStores`.
 ///
-/// <p>Describes all trust stores for a given account by trust store arn’s or name.</p>
+/// <p>Describes all trust stores for the specified account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeTrustStoresFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

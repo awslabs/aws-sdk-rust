@@ -252,7 +252,7 @@ pub enum ListExecutionsError {
     ResourceNotFound(crate::types::error::ResourceNotFound),
     /// <p>The specified state machine does not exist.</p>
     StateMachineDoesNotExist(crate::types::error::StateMachineDoesNotExist),
-    /// <p></p>
+    /// <p>State machine type is not supported.</p>
     StateMachineTypeNotSupported(crate::types::error::StateMachineTypeNotSupported),
     /// <p>The input does not satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::types::error::ValidationException),

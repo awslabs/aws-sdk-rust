@@ -213,6 +213,22 @@ pub fn de_create_repository_http_error(
             }
             tmp
         }),
+        "OperationNotAllowedException" => crate::operation::create_repository::CreateRepositoryError::OperationNotAllowedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::OperationNotAllowedExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_operation_not_allowed_exception::de_operation_not_allowed_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::create_repository::CreateRepositoryError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "RepositoryLimitExceededException" => crate::operation::create_repository::CreateRepositoryError::RepositoryLimitExceededException({
             #[allow(unused_mut)]
             let mut tmp = {

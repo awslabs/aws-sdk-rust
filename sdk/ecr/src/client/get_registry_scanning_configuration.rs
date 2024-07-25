@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder takes no input, just [`send`](crate::operation::get_registry_scanning_configuration::builders::GetRegistryScanningConfigurationFluentBuilder::send) it.
     /// - On success, responds with [`GetRegistryScanningConfigurationOutput`](crate::operation::get_registry_scanning_configuration::GetRegistryScanningConfigurationOutput) with field(s):
-    ///   - [`registry_id(Option<String>)`](crate::operation::get_registry_scanning_configuration::GetRegistryScanningConfigurationOutput::registry_id): <p>The ID of the registry.</p>
+    ///   - [`registry_id(Option<String>)`](crate::operation::get_registry_scanning_configuration::GetRegistryScanningConfigurationOutput::registry_id): <p>The registry ID associated with the request.</p>
     ///   - [`scanning_configuration(Option<RegistryScanningConfiguration>)`](crate::operation::get_registry_scanning_configuration::GetRegistryScanningConfigurationOutput::scanning_configuration): <p>The scanning configuration for the registry.</p>
     /// - On failure, responds with [`SdkError<GetRegistryScanningConfigurationError>`](crate::operation::get_registry_scanning_configuration::GetRegistryScanningConfigurationError)
     pub fn get_registry_scanning_configuration(

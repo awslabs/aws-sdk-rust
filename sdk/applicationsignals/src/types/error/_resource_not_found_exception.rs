@@ -6,7 +6,7 @@
 pub struct ResourceNotFoundException {
     /// <p>The resource type is not valid.</p>
     pub resource_type: ::std::string::String,
-    /// <p>Cannot find the resource id.</p>
+    /// <p>Can't find the resource id.</p>
     pub resource_id: ::std::string::String,
     #[allow(missing_docs)] // documentation missing in model
     pub message: ::std::string::String,
@@ -18,7 +18,7 @@ impl ResourceNotFoundException {
         use std::ops::Deref;
         self.resource_type.deref()
     }
-    /// <p>Cannot find the resource id.</p>
+    /// <p>Can't find the resource id.</p>
     pub fn resource_id(&self) -> &str {
         use std::ops::Deref;
         self.resource_id.deref()
@@ -83,18 +83,18 @@ impl ResourceNotFoundExceptionBuilder {
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_type
     }
-    /// <p>Cannot find the resource id.</p>
+    /// <p>Can't find the resource id.</p>
     /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Cannot find the resource id.</p>
+    /// <p>Can't find the resource id.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
     }
-    /// <p>Cannot find the resource id.</p>
+    /// <p>Can't find the resource id.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_id
     }

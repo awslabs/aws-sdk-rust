@@ -188,6 +188,8 @@ mod create_pull_through_cache_rule;
 
 mod create_repository;
 
+mod create_repository_creation_template;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -223,6 +225,8 @@ mod delete_registry_policy;
 
 mod delete_repository;
 
+mod delete_repository_creation_template;
+
 mod delete_repository_policy;
 
 mod describe_image_replication_status;
@@ -236,6 +240,8 @@ mod describe_pull_through_cache_rules;
 mod describe_registry;
 
 mod describe_repositories;
+
+mod describe_repository_creation_templates;
 
 mod get_authorization_token;
 
@@ -282,6 +288,8 @@ mod tag_resource;
 mod untag_resource;
 
 mod update_pull_through_cache_rule;
+
+mod update_repository_creation_template;
 
 mod upload_layer_part;
 

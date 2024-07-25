@@ -244,10 +244,18 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateActivit
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateActivityError {
+    /// <p>Activity already exists. <code>EncryptionConfiguration</code> may not be updated.</p>
+    ActivityAlreadyExists(crate::types::error::ActivityAlreadyExists),
     /// <p>The maximum number of activities has been reached. Existing activities must be deleted before a new activity can be created.</p>
     ActivityLimitExceeded(crate::types::error::ActivityLimitExceeded),
+    /// <p>Received when <code>encryptionConfiguration</code> is specified but various conditions exist which make the configuration invalid. For example, if <code>type</code> is set to <code>CUSTOMER_MANAGED_KMS_KEY</code>, but <code>kmsKeyId</code> is null, or <code>kmsDataKeyReusePeriodSeconds</code> is not between 60 and 900, or the KMS key is not symmetric or inactive.</p>
+    InvalidEncryptionConfiguration(crate::types::error::InvalidEncryptionConfiguration),
     /// <p>The provided name is not valid.</p>
     InvalidName(crate::types::error::InvalidName),
+    /// <p>Either your KMS key policy or API caller does not have the required permissions.</p>
+    KmsAccessDeniedException(crate::types::error::KmsAccessDeniedException),
+    /// <p>Received when KMS returns <code>ThrottlingException</code> for a KMS call that Step Functions makes on behalf of the caller.</p>
+    KmsThrottlingException(crate::types::error::KmsThrottlingException),
     /// <p>You've exceeded the number of tags allowed for a resource. See the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html"> Limits Topic</a> in the Step Functions Developer Guide.</p>
     TooManyTags(crate::types::error::TooManyTags),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -283,19 +291,39 @@ impl CreateActivityError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ActivityAlreadyExists(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ActivityLimitExceeded(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidEncryptionConfiguration(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidName(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::KmsAccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::KmsThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::TooManyTags(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `CreateActivityError::ActivityAlreadyExists`.
+    pub fn is_activity_already_exists(&self) -> bool {
+        matches!(self, Self::ActivityAlreadyExists(_))
     }
     /// Returns `true` if the error kind is `CreateActivityError::ActivityLimitExceeded`.
     pub fn is_activity_limit_exceeded(&self) -> bool {
         matches!(self, Self::ActivityLimitExceeded(_))
     }
+    /// Returns `true` if the error kind is `CreateActivityError::InvalidEncryptionConfiguration`.
+    pub fn is_invalid_encryption_configuration(&self) -> bool {
+        matches!(self, Self::InvalidEncryptionConfiguration(_))
+    }
     /// Returns `true` if the error kind is `CreateActivityError::InvalidName`.
     pub fn is_invalid_name(&self) -> bool {
         matches!(self, Self::InvalidName(_))
+    }
+    /// Returns `true` if the error kind is `CreateActivityError::KmsAccessDeniedException`.
+    pub fn is_kms_access_denied_exception(&self) -> bool {
+        matches!(self, Self::KmsAccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `CreateActivityError::KmsThrottlingException`.
+    pub fn is_kms_throttling_exception(&self) -> bool {
+        matches!(self, Self::KmsThrottlingException(_))
     }
     /// Returns `true` if the error kind is `CreateActivityError::TooManyTags`.
     pub fn is_too_many_tags(&self) -> bool {
@@ -305,8 +333,12 @@ impl CreateActivityError {
 impl ::std::error::Error for CreateActivityError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::ActivityAlreadyExists(_inner) => ::std::option::Option::Some(_inner),
             Self::ActivityLimitExceeded(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidEncryptionConfiguration(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidName(_inner) => ::std::option::Option::Some(_inner),
+            Self::KmsAccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::KmsThrottlingException(_inner) => ::std::option::Option::Some(_inner),
             Self::TooManyTags(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
@@ -315,8 +347,12 @@ impl ::std::error::Error for CreateActivityError {
 impl ::std::fmt::Display for CreateActivityError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::ActivityAlreadyExists(_inner) => _inner.fmt(f),
             Self::ActivityLimitExceeded(_inner) => _inner.fmt(f),
+            Self::InvalidEncryptionConfiguration(_inner) => _inner.fmt(f),
             Self::InvalidName(_inner) => _inner.fmt(f),
+            Self::KmsAccessDeniedException(_inner) => _inner.fmt(f),
+            Self::KmsThrottlingException(_inner) => _inner.fmt(f),
             Self::TooManyTags(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -339,8 +375,12 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for CreateActivityError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateActivityError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ActivityAlreadyExists(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ActivityLimitExceeded(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidEncryptionConfiguration(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidName(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::KmsAccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::KmsThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::TooManyTags(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }

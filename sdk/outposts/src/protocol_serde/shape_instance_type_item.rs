@@ -21,6 +21,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "VCPUs" => {
+                            builder = builder.set_vcpus(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

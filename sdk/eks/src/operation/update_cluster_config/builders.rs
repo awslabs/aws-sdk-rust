@@ -190,4 +190,18 @@ impl UpdateClusterConfigFluentBuilder {
     pub fn get_access_config(&self) -> &::std::option::Option<crate::types::UpdateAccessConfigRequest> {
         self.inner.get_access_config()
     }
+    /// <p>You can enable or disable extended support for clusters currently on standard support. You cannot disable extended support once it starts. You must enable extended support before your cluster exits standard support.</p>
+    pub fn upgrade_policy(mut self, input: crate::types::UpgradePolicyRequest) -> Self {
+        self.inner = self.inner.upgrade_policy(input);
+        self
+    }
+    /// <p>You can enable or disable extended support for clusters currently on standard support. You cannot disable extended support once it starts. You must enable extended support before your cluster exits standard support.</p>
+    pub fn set_upgrade_policy(mut self, input: ::std::option::Option<crate::types::UpgradePolicyRequest>) -> Self {
+        self.inner = self.inner.set_upgrade_policy(input);
+        self
+    }
+    /// <p>You can enable or disable extended support for clusters currently on standard support. You cannot disable extended support once it starts. You must enable extended support before your cluster exits standard support.</p>
+    pub fn get_upgrade_policy(&self) -> &::std::option::Option<crate::types::UpgradePolicyRequest> {
+        self.inner.get_upgrade_policy()
+    }
 }
