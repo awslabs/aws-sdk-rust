@@ -22,7 +22,7 @@ impl crate::operation::create_user::builders::CreateUserInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateUser`.
 ///
-/// <p>For Redis engine version 6.0 onwards: Creates a Redis user. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using Role Based Access Control (RBAC)</a>.</p>
+/// <p>For Redis OSS engine version 6.0 onwards: Creates a Redis OSS user. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using Role Based Access Control (RBAC)</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateUserFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

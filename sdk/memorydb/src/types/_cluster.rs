@@ -22,9 +22,9 @@ pub struct Cluster {
     pub cluster_endpoint: ::std::option::Option<crate::types::Endpoint>,
     /// <p>The cluster's node type</p>
     pub node_type: ::std::option::Option<::std::string::String>,
-    /// <p>The Redis engine version used by the cluster</p>
+    /// <p>The Redis OSS engine version used by the cluster</p>
     pub engine_version: ::std::option::Option<::std::string::String>,
-    /// <p>The Redis engine patch version used by the cluster</p>
+    /// <p>The Redis OSS engine patch version used by the cluster</p>
     pub engine_patch_version: ::std::option::Option<::std::string::String>,
     /// <p>The name of the parameter group used by the cluster</p>
     pub parameter_group_name: ::std::option::Option<::std::string::String>,
@@ -96,11 +96,11 @@ impl Cluster {
     pub fn node_type(&self) -> ::std::option::Option<&str> {
         self.node_type.as_deref()
     }
-    /// <p>The Redis engine version used by the cluster</p>
+    /// <p>The Redis OSS engine version used by the cluster</p>
     pub fn engine_version(&self) -> ::std::option::Option<&str> {
         self.engine_version.as_deref()
     }
-    /// <p>The Redis engine patch version used by the cluster</p>
+    /// <p>The Redis OSS engine patch version used by the cluster</p>
     pub fn engine_patch_version(&self) -> ::std::option::Option<&str> {
         self.engine_patch_version.as_deref()
     }
@@ -338,31 +338,31 @@ impl ClusterBuilder {
     pub fn get_node_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.node_type
     }
-    /// <p>The Redis engine version used by the cluster</p>
+    /// <p>The Redis OSS engine version used by the cluster</p>
     pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Redis engine version used by the cluster</p>
+    /// <p>The Redis OSS engine version used by the cluster</p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
     }
-    /// <p>The Redis engine version used by the cluster</p>
+    /// <p>The Redis OSS engine version used by the cluster</p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine_version
     }
-    /// <p>The Redis engine patch version used by the cluster</p>
+    /// <p>The Redis OSS engine patch version used by the cluster</p>
     pub fn engine_patch_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_patch_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Redis engine patch version used by the cluster</p>
+    /// <p>The Redis OSS engine patch version used by the cluster</p>
     pub fn set_engine_patch_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_patch_version = input;
         self
     }
-    /// <p>The Redis engine patch version used by the cluster</p>
+    /// <p>The Redis OSS engine patch version used by the cluster</p>
     pub fn get_engine_patch_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine_patch_version
     }

@@ -23,7 +23,7 @@ impl crate::operation::describe_replication_groups::builders::DescribeReplicatio
 /// Fluent builder constructing a request to `DescribeReplicationGroups`.
 ///
 /// <p>Returns information about a particular replication group. If no identifier is specified, <code>DescribeReplicationGroups</code> returns information about all replication groups.</p><note>
-/// <p>This operation is valid for Redis only.</p>
+/// <p>This operation is valid for Redis OSS only.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeReplicationGroupsFluentBuilder {

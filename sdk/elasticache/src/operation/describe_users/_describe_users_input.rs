@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeUsersInput {
-    /// <p>The Redis engine.</p>
+    /// <p>The Redis OSS engine.</p>
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the user.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ pub struct DescribeUsersInput {
     pub marker: ::std::option::Option<::std::string::String>,
 }
 impl DescribeUsersInput {
-    /// <p>The Redis engine.</p>
+    /// <p>The Redis OSS engine.</p>
     pub fn engine(&self) -> ::std::option::Option<&str> {
         self.engine.as_deref()
     }
@@ -56,17 +56,17 @@ pub struct DescribeUsersInputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
 }
 impl DescribeUsersInputBuilder {
-    /// <p>The Redis engine.</p>
+    /// <p>The Redis OSS engine.</p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Redis engine.</p>
+    /// <p>The Redis OSS engine.</p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine = input;
         self
     }
-    /// <p>The Redis engine.</p>
+    /// <p>The Redis OSS engine.</p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine
     }

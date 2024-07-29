@@ -22,7 +22,7 @@ impl crate::operation::describe_engine_versions::builders::DescribeEngineVersion
 }
 /// Fluent builder constructing a request to `DescribeEngineVersions`.
 ///
-/// <p>Returns a list of the available Redis engine versions.</p>
+/// <p>Returns a list of the available Redis OSS engine versions.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeEngineVersionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,17 +114,17 @@ impl DescribeEngineVersionsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_engine_versions::paginator::DescribeEngineVersionsPaginator {
         crate::operation::describe_engine_versions::paginator::DescribeEngineVersionsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The Redis engine version</p>
+    /// <p>The Redis OSS engine version</p>
     pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine_version(input.into());
         self
     }
-    /// <p>The Redis engine version</p>
+    /// <p>The Redis OSS engine version</p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine_version(input);
         self
     }
-    /// <p>The Redis engine version</p>
+    /// <p>The Redis OSS engine version</p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_engine_version()
     }

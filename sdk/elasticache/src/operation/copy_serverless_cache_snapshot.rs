@@ -255,13 +255,13 @@ pub enum CopyServerlessCacheSnapshotError {
     InvalidParameterCombinationException(crate::types::error::InvalidParameterCombinationException),
     /// <p>The value for a parameter is invalid.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
-    /// <p>The state of the serverless cache snapshot was not received. Available for Redis only.</p>
+    /// <p>The state of the serverless cache snapshot was not received. Available for Redis OSS and Serverless Memcached only.</p>
     InvalidServerlessCacheSnapshotStateFault(crate::types::error::InvalidServerlessCacheSnapshotStateFault),
-    /// <p>A serverless cache snapshot with this name already exists. Available for Redis only.</p>
+    /// <p>A serverless cache snapshot with this name already exists. Available for Redis OSS and Serverless Memcached only.</p>
     ServerlessCacheSnapshotAlreadyExistsFault(crate::types::error::ServerlessCacheSnapshotAlreadyExistsFault),
-    /// <p>This serverless cache snapshot could not be found or does not exist. Available for Redis only.</p>
+    /// <p>This serverless cache snapshot could not be found or does not exist. Available for Redis OSS and Serverless Memcached only.</p>
     ServerlessCacheSnapshotNotFoundFault(crate::types::error::ServerlessCacheSnapshotNotFoundFault),
-    /// <p>The number of serverless cache snapshots exceeds the customer snapshot quota. Available for Redis only.</p>
+    /// <p>The number of serverless cache snapshots exceeds the customer snapshot quota. Available for Redis OSS and Serverless Memcached only.</p>
     ServerlessCacheSnapshotQuotaExceededFault(crate::types::error::ServerlessCacheSnapshotQuotaExceededFault),
     /// <p>The specified service linked role (SLR) was not found.</p>
     ServiceLinkedRoleNotFoundFault(crate::types::error::ServiceLinkedRoleNotFoundFault),

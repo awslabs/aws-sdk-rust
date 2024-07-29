@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportServerlessCacheSnapshotOutput {
-    /// <p>The state of a serverless cache at a specific point in time, to the millisecond. Available for Redis only.</p>
+    /// <p>The state of a serverless cache at a specific point in time, to the millisecond. Available for Redis OSS and Serverless Memcached only.</p>
     pub serverless_cache_snapshot: ::std::option::Option<crate::types::ServerlessCacheSnapshot>,
     _request_id: Option<String>,
 }
 impl ExportServerlessCacheSnapshotOutput {
-    /// <p>The state of a serverless cache at a specific point in time, to the millisecond. Available for Redis only.</p>
+    /// <p>The state of a serverless cache at a specific point in time, to the millisecond. Available for Redis OSS and Serverless Memcached only.</p>
     pub fn serverless_cache_snapshot(&self) -> ::std::option::Option<&crate::types::ServerlessCacheSnapshot> {
         self.serverless_cache_snapshot.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct ExportServerlessCacheSnapshotOutputBuilder {
     _request_id: Option<String>,
 }
 impl ExportServerlessCacheSnapshotOutputBuilder {
-    /// <p>The state of a serverless cache at a specific point in time, to the millisecond. Available for Redis only.</p>
+    /// <p>The state of a serverless cache at a specific point in time, to the millisecond. Available for Redis OSS and Serverless Memcached only.</p>
     pub fn serverless_cache_snapshot(mut self, input: crate::types::ServerlessCacheSnapshot) -> Self {
         self.serverless_cache_snapshot = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The state of a serverless cache at a specific point in time, to the millisecond. Available for Redis only.</p>
+    /// <p>The state of a serverless cache at a specific point in time, to the millisecond. Available for Redis OSS and Serverless Memcached only.</p>
     pub fn set_serverless_cache_snapshot(mut self, input: ::std::option::Option<crate::types::ServerlessCacheSnapshot>) -> Self {
         self.serverless_cache_snapshot = input;
         self
     }
-    /// <p>The state of a serverless cache at a specific point in time, to the millisecond. Available for Redis only.</p>
+    /// <p>The state of a serverless cache at a specific point in time, to the millisecond. Available for Redis OSS and Serverless Memcached only.</p>
     pub fn get_serverless_cache_snapshot(&self) -> &::std::option::Option<crate::types::ServerlessCacheSnapshot> {
         &self.serverless_cache_snapshot
     }

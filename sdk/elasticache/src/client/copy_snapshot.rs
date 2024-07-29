@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`kms_key_id(impl Into<String>)`](crate::operation::copy_snapshot::builders::CopySnapshotFluentBuilder::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::operation::copy_snapshot::builders::CopySnapshotFluentBuilder::set_kms_key_id):<br>required: **false**<br><p>The ID of the KMS key used to encrypt the target snapshot.</p><br>
     ///   - [`tags(Tag)`](crate::operation::copy_snapshot::builders::CopySnapshotFluentBuilder::tags) / [`set_tags(Option<Vec::<Tag>>)`](crate::operation::copy_snapshot::builders::CopySnapshotFluentBuilder::set_tags):<br>required: **false**<br><p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p><br>
     /// - On success, responds with [`CopySnapshotOutput`](crate::operation::copy_snapshot::CopySnapshotOutput) with field(s):
-    ///   - [`snapshot(Option<Snapshot>)`](crate::operation::copy_snapshot::CopySnapshotOutput::snapshot): <p>Represents a copy of an entire Redis cluster as of the time when the snapshot was taken.</p>
+    ///   - [`snapshot(Option<Snapshot>)`](crate::operation::copy_snapshot::CopySnapshotOutput::snapshot): <p>Represents a copy of an entire Redis OSS cluster as of the time when the snapshot was taken.</p>
     /// - On failure, responds with [`SdkError<CopySnapshotError>`](crate::operation::copy_snapshot::CopySnapshotError)
     pub fn copy_snapshot(&self) -> crate::operation::copy_snapshot::builders::CopySnapshotFluentBuilder {
         crate::operation::copy_snapshot::builders::CopySnapshotFluentBuilder::new(self.handle.clone())

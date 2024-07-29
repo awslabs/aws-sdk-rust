@@ -16,7 +16,7 @@ impl super::Client {
     ///   - [`user_name(Option<String>)`](crate::operation::create_user::CreateUserOutput::user_name): <p>The username of the user.</p>
     ///   - [`status(Option<String>)`](crate::operation::create_user::CreateUserOutput::status): <p>Indicates the user status. Can be "active", "modifying" or "deleting".</p>
     ///   - [`engine(Option<String>)`](crate::operation::create_user::CreateUserOutput::engine): <p>The current supported value is Redis.</p>
-    ///   - [`minimum_engine_version(Option<String>)`](crate::operation::create_user::CreateUserOutput::minimum_engine_version): <p>The minimum engine version required, which is Redis 6.0</p>
+    ///   - [`minimum_engine_version(Option<String>)`](crate::operation::create_user::CreateUserOutput::minimum_engine_version): <p>The minimum engine version required, which is Redis OSS 6.0</p>
     ///   - [`access_string(Option<String>)`](crate::operation::create_user::CreateUserOutput::access_string): <p>Access permissions string used for this user.</p>
     ///   - [`user_group_ids(Option<Vec::<String>>)`](crate::operation::create_user::CreateUserOutput::user_group_ids): <p>Returns a list of the user group IDs the user belongs to.</p>
     ///   - [`authentication(Option<Authentication>)`](crate::operation::create_user::CreateUserOutput::authentication): <p>Denotes whether the user requires a password to authenticate.</p>

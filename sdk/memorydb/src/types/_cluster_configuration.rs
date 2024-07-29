@@ -10,7 +10,7 @@ pub struct ClusterConfiguration {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The node type used for the cluster</p>
     pub node_type: ::std::option::Option<::std::string::String>,
-    /// <p>The Redis engine version used by the cluster</p>
+    /// <p>The Redis OSS engine version used by the cluster</p>
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The specified maintenance window for the cluster</p>
     pub maintenance_window: ::std::option::Option<::std::string::String>,
@@ -46,7 +46,7 @@ impl ClusterConfiguration {
     pub fn node_type(&self) -> ::std::option::Option<&str> {
         self.node_type.as_deref()
     }
-    /// <p>The Redis engine version used by the cluster</p>
+    /// <p>The Redis OSS engine version used by the cluster</p>
     pub fn engine_version(&self) -> ::std::option::Option<&str> {
         self.engine_version.as_deref()
     }
@@ -162,17 +162,17 @@ impl ClusterConfigurationBuilder {
     pub fn get_node_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.node_type
     }
-    /// <p>The Redis engine version used by the cluster</p>
+    /// <p>The Redis OSS engine version used by the cluster</p>
     pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Redis engine version used by the cluster</p>
+    /// <p>The Redis OSS engine version used by the cluster</p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
     }
-    /// <p>The Redis engine version used by the cluster</p>
+    /// <p>The Redis OSS engine version used by the cluster</p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine_version
     }

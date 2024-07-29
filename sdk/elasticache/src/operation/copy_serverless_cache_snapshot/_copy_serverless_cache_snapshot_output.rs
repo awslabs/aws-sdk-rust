@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CopyServerlessCacheSnapshotOutput {
-    /// <p>The response for the attempt to copy the serverless cache snapshot. Available for Redis only.</p>
+    /// <p>The response for the attempt to copy the serverless cache snapshot. Available for Redis OSS and Serverless Memcached only.</p>
     pub serverless_cache_snapshot: ::std::option::Option<crate::types::ServerlessCacheSnapshot>,
     _request_id: Option<String>,
 }
 impl CopyServerlessCacheSnapshotOutput {
-    /// <p>The response for the attempt to copy the serverless cache snapshot. Available for Redis only.</p>
+    /// <p>The response for the attempt to copy the serverless cache snapshot. Available for Redis OSS and Serverless Memcached only.</p>
     pub fn serverless_cache_snapshot(&self) -> ::std::option::Option<&crate::types::ServerlessCacheSnapshot> {
         self.serverless_cache_snapshot.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct CopyServerlessCacheSnapshotOutputBuilder {
     _request_id: Option<String>,
 }
 impl CopyServerlessCacheSnapshotOutputBuilder {
-    /// <p>The response for the attempt to copy the serverless cache snapshot. Available for Redis only.</p>
+    /// <p>The response for the attempt to copy the serverless cache snapshot. Available for Redis OSS and Serverless Memcached only.</p>
     pub fn serverless_cache_snapshot(mut self, input: crate::types::ServerlessCacheSnapshot) -> Self {
         self.serverless_cache_snapshot = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The response for the attempt to copy the serverless cache snapshot. Available for Redis only.</p>
+    /// <p>The response for the attempt to copy the serverless cache snapshot. Available for Redis OSS and Serverless Memcached only.</p>
     pub fn set_serverless_cache_snapshot(mut self, input: ::std::option::Option<crate::types::ServerlessCacheSnapshot>) -> Self {
         self.serverless_cache_snapshot = input;
         self
     }
-    /// <p>The response for the attempt to copy the serverless cache snapshot. Available for Redis only.</p>
+    /// <p>The response for the attempt to copy the serverless cache snapshot. Available for Redis OSS and Serverless Memcached only.</p>
     pub fn get_serverless_cache_snapshot(&self) -> &::std::option::Option<crate::types::ServerlessCacheSnapshot> {
         &self.serverless_cache_snapshot
     }

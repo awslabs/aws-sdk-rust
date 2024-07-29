@@ -22,7 +22,7 @@ impl crate::operation::describe_serverless_cache_snapshots::builders::DescribeSe
 }
 /// Fluent builder constructing a request to `DescribeServerlessCacheSnapshots`.
 ///
-/// <p>Returns information about serverless cache snapshots. By default, this API lists all of the customer’s serverless cache snapshots. It can also describe a single serverless cache snapshot, or the snapshots associated with a particular serverless cache. Available for Redis only.</p>
+/// <p>Returns information about serverless cache snapshots. By default, this API lists all of the customer’s serverless cache snapshots. It can also describe a single serverless cache snapshot, or the snapshots associated with a particular serverless cache. Available for Redis OSS and Serverless Memcached only.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeServerlessCacheSnapshotsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,73 +114,73 @@ impl DescribeServerlessCacheSnapshotsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_serverless_cache_snapshots::paginator::DescribeServerlessCacheSnapshotsPaginator {
         crate::operation::describe_serverless_cache_snapshots::paginator::DescribeServerlessCacheSnapshotsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The identifier of serverless cache. If this parameter is specified, only snapshots associated with that specific serverless cache are described. Available for Redis only.</p>
+    /// <p>The identifier of serverless cache. If this parameter is specified, only snapshots associated with that specific serverless cache are described. Available for Redis OSS and Serverless Memcached only.</p>
     pub fn serverless_cache_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.serverless_cache_name(input.into());
         self
     }
-    /// <p>The identifier of serverless cache. If this parameter is specified, only snapshots associated with that specific serverless cache are described. Available for Redis only.</p>
+    /// <p>The identifier of serverless cache. If this parameter is specified, only snapshots associated with that specific serverless cache are described. Available for Redis OSS and Serverless Memcached only.</p>
     pub fn set_serverless_cache_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_serverless_cache_name(input);
         self
     }
-    /// <p>The identifier of serverless cache. If this parameter is specified, only snapshots associated with that specific serverless cache are described. Available for Redis only.</p>
+    /// <p>The identifier of serverless cache. If this parameter is specified, only snapshots associated with that specific serverless cache are described. Available for Redis OSS and Serverless Memcached only.</p>
     pub fn get_serverless_cache_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_serverless_cache_name()
     }
-    /// <p>The identifier of the serverless cache’s snapshot. If this parameter is specified, only this snapshot is described. Available for Redis only.</p>
+    /// <p>The identifier of the serverless cache’s snapshot. If this parameter is specified, only this snapshot is described. Available for Redis OSS and Serverless Memcached only.</p>
     pub fn serverless_cache_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.serverless_cache_snapshot_name(input.into());
         self
     }
-    /// <p>The identifier of the serverless cache’s snapshot. If this parameter is specified, only this snapshot is described. Available for Redis only.</p>
+    /// <p>The identifier of the serverless cache’s snapshot. If this parameter is specified, only this snapshot is described. Available for Redis OSS and Serverless Memcached only.</p>
     pub fn set_serverless_cache_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_serverless_cache_snapshot_name(input);
         self
     }
-    /// <p>The identifier of the serverless cache’s snapshot. If this parameter is specified, only this snapshot is described. Available for Redis only.</p>
+    /// <p>The identifier of the serverless cache’s snapshot. If this parameter is specified, only this snapshot is described. Available for Redis OSS and Serverless Memcached only.</p>
     pub fn get_serverless_cache_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_serverless_cache_snapshot_name()
     }
-    /// <p>The type of snapshot that is being described. Available for Redis only.</p>
+    /// <p>The type of snapshot that is being described. Available for Redis OSS and Serverless Memcached only.</p>
     pub fn snapshot_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.snapshot_type(input.into());
         self
     }
-    /// <p>The type of snapshot that is being described. Available for Redis only.</p>
+    /// <p>The type of snapshot that is being described. Available for Redis OSS and Serverless Memcached only.</p>
     pub fn set_snapshot_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_type(input);
         self
     }
-    /// <p>The type of snapshot that is being described. Available for Redis only.</p>
+    /// <p>The type of snapshot that is being described. Available for Redis OSS and Serverless Memcached only.</p>
     pub fn get_snapshot_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_snapshot_type()
     }
-    /// <p>An optional marker returned from a prior request to support pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by max-results. Available for Redis only.</p>
+    /// <p>An optional marker returned from a prior request to support pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by max-results. Available for Redis OSS and Serverless Memcached only.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>An optional marker returned from a prior request to support pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by max-results. Available for Redis only.</p>
+    /// <p>An optional marker returned from a prior request to support pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by max-results. Available for Redis OSS and Serverless Memcached only.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>An optional marker returned from a prior request to support pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by max-results. Available for Redis only.</p>
+    /// <p>An optional marker returned from a prior request to support pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by max-results. Available for Redis OSS and Serverless Memcached only.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>The maximum number of records to include in the response. If more records exist than the specified max-results value, a market is included in the response so that remaining results can be retrieved. Available for Redis only.The default is 50. The Validation Constraints are a maximum of 50.</p>
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified max-results value, a market is included in the response so that remaining results can be retrieved. Available for Redis OSS and Serverless Memcached only.The default is 50. The Validation Constraints are a maximum of 50.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of records to include in the response. If more records exist than the specified max-results value, a market is included in the response so that remaining results can be retrieved. Available for Redis only.The default is 50. The Validation Constraints are a maximum of 50.</p>
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified max-results value, a market is included in the response so that remaining results can be retrieved. Available for Redis OSS and Serverless Memcached only.The default is 50. The Validation Constraints are a maximum of 50.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of records to include in the response. If more records exist than the specified max-results value, a market is included in the response so that remaining results can be retrieved. Available for Redis only.The default is 50. The Validation Constraints are a maximum of 50.</p>
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified max-results value, a market is included in the response so that remaining results can be retrieved. Available for Redis OSS and Serverless Memcached only.The default is 50. The Validation Constraints are a maximum of 50.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

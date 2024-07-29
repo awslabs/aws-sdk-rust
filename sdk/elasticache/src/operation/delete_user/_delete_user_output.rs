@@ -11,7 +11,7 @@ pub struct DeleteUserOutput {
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The current supported value is Redis.</p>
     pub engine: ::std::option::Option<::std::string::String>,
-    /// <p>The minimum engine version required, which is Redis 6.0</p>
+    /// <p>The minimum engine version required, which is Redis OSS 6.0</p>
     pub minimum_engine_version: ::std::option::Option<::std::string::String>,
     /// <p>Access permissions string used for this user.</p>
     pub access_string: ::std::option::Option<::std::string::String>,
@@ -40,7 +40,7 @@ impl DeleteUserOutput {
     pub fn engine(&self) -> ::std::option::Option<&str> {
         self.engine.as_deref()
     }
-    /// <p>The minimum engine version required, which is Redis 6.0</p>
+    /// <p>The minimum engine version required, which is Redis OSS 6.0</p>
     pub fn minimum_engine_version(&self) -> ::std::option::Option<&str> {
         self.minimum_engine_version.as_deref()
     }
@@ -147,17 +147,17 @@ impl DeleteUserOutputBuilder {
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine
     }
-    /// <p>The minimum engine version required, which is Redis 6.0</p>
+    /// <p>The minimum engine version required, which is Redis OSS 6.0</p>
     pub fn minimum_engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.minimum_engine_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The minimum engine version required, which is Redis 6.0</p>
+    /// <p>The minimum engine version required, which is Redis OSS 6.0</p>
     pub fn set_minimum_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.minimum_engine_version = input;
         self
     }
-    /// <p>The minimum engine version required, which is Redis 6.0</p>
+    /// <p>The minimum engine version required, which is Redis OSS 6.0</p>
     pub fn get_minimum_engine_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.minimum_engine_version
     }

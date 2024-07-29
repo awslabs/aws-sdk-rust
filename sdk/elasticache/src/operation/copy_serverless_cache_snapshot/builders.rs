@@ -22,7 +22,7 @@ impl crate::operation::copy_serverless_cache_snapshot::builders::CopyServerlessC
 }
 /// Fluent builder constructing a request to `CopyServerlessCacheSnapshot`.
 ///
-/// <p>Creates a copy of an existing serverless cache’s snapshot. Available for Redis only.</p>
+/// <p>Creates a copy of an existing serverless cache’s snapshot. Available for Redis OSS and Serverless Memcached only.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CopyServerlessCacheSnapshotFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,45 @@ impl CopyServerlessCacheSnapshotFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the existing serverless cache’s snapshot to be copied. Available for Redis only.</p>
+    /// <p>The identifier of the existing serverless cache’s snapshot to be copied. Available for Redis OSS and Serverless Memcached only.</p>
     pub fn source_serverless_cache_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_serverless_cache_snapshot_name(input.into());
         self
     }
-    /// <p>The identifier of the existing serverless cache’s snapshot to be copied. Available for Redis only.</p>
+    /// <p>The identifier of the existing serverless cache’s snapshot to be copied. Available for Redis OSS and Serverless Memcached only.</p>
     pub fn set_source_serverless_cache_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_serverless_cache_snapshot_name(input);
         self
     }
-    /// <p>The identifier of the existing serverless cache’s snapshot to be copied. Available for Redis only.</p>
+    /// <p>The identifier of the existing serverless cache’s snapshot to be copied. Available for Redis OSS and Serverless Memcached only.</p>
     pub fn get_source_serverless_cache_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_serverless_cache_snapshot_name()
     }
-    /// <p>The identifier for the snapshot to be created. Available for Redis only.</p>
+    /// <p>The identifier for the snapshot to be created. Available for Redis OSS and Serverless Memcached only.</p>
     pub fn target_serverless_cache_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_serverless_cache_snapshot_name(input.into());
         self
     }
-    /// <p>The identifier for the snapshot to be created. Available for Redis only.</p>
+    /// <p>The identifier for the snapshot to be created. Available for Redis OSS and Serverless Memcached only.</p>
     pub fn set_target_serverless_cache_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_serverless_cache_snapshot_name(input);
         self
     }
-    /// <p>The identifier for the snapshot to be created. Available for Redis only.</p>
+    /// <p>The identifier for the snapshot to be created. Available for Redis OSS and Serverless Memcached only.</p>
     pub fn get_target_serverless_cache_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_target_serverless_cache_snapshot_name()
     }
-    /// <p>The identifier of the KMS key used to encrypt the target snapshot. Available for Redis only.</p>
+    /// <p>The identifier of the KMS key used to encrypt the target snapshot. Available for Redis OSS and Serverless Memcached only.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_id(input.into());
         self
     }
-    /// <p>The identifier of the KMS key used to encrypt the target snapshot. Available for Redis only.</p>
+    /// <p>The identifier of the KMS key used to encrypt the target snapshot. Available for Redis OSS and Serverless Memcached only.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
         self
     }
-    /// <p>The identifier of the KMS key used to encrypt the target snapshot. Available for Redis only.</p>
+    /// <p>The identifier of the KMS key used to encrypt the target snapshot. Available for Redis OSS and Serverless Memcached only.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_kms_key_id()
     }
@@ -155,17 +155,17 @@ impl CopyServerlessCacheSnapshotFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A list of tags to be added to the target snapshot resource. A tag is a key-value pair. Available for Redis only. Default: NULL</p>
+    /// <p>A list of tags to be added to the target snapshot resource. A tag is a key-value pair. Available for Redis OSS and Serverless Memcached only. Default: NULL</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p>A list of tags to be added to the target snapshot resource. A tag is a key-value pair. Available for Redis only. Default: NULL</p>
+    /// <p>A list of tags to be added to the target snapshot resource. A tag is a key-value pair. Available for Redis OSS and Serverless Memcached only. Default: NULL</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>A list of tags to be added to the target snapshot resource. A tag is a key-value pair. Available for Redis only. Default: NULL</p>
+    /// <p>A list of tags to be added to the target snapshot resource. A tag is a key-value pair. Available for Redis OSS and Serverless Memcached only. Default: NULL</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }

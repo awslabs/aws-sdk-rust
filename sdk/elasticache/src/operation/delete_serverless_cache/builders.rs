@@ -122,17 +122,17 @@ impl DeleteServerlessCacheFluentBuilder {
     pub fn get_serverless_cache_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_serverless_cache_name()
     }
-    /// <p>Name of the final snapshot to be taken before the serverless cache is deleted. Available for Redis only. Default: NULL, i.e. a final snapshot is not taken.</p>
+    /// <p>Name of the final snapshot to be taken before the serverless cache is deleted. Available for Redis OSS and Serverless Memcached only. Default: NULL, i.e. a final snapshot is not taken.</p>
     pub fn final_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.final_snapshot_name(input.into());
         self
     }
-    /// <p>Name of the final snapshot to be taken before the serverless cache is deleted. Available for Redis only. Default: NULL, i.e. a final snapshot is not taken.</p>
+    /// <p>Name of the final snapshot to be taken before the serverless cache is deleted. Available for Redis OSS and Serverless Memcached only. Default: NULL, i.e. a final snapshot is not taken.</p>
     pub fn set_final_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_final_snapshot_name(input);
         self
     }
-    /// <p>Name of the final snapshot to be taken before the serverless cache is deleted. Available for Redis only. Default: NULL, i.e. a final snapshot is not taken.</p>
+    /// <p>Name of the final snapshot to be taken before the serverless cache is deleted. Available for Redis OSS and Serverless Memcached only. Default: NULL, i.e. a final snapshot is not taken.</p>
     pub fn get_final_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_final_snapshot_name()
     }

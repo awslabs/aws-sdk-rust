@@ -3,29 +3,29 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateServerlessCacheSnapshotInput {
-    /// <p>The name for the snapshot being created. Must be unique for the customer account. Available for Redis only. Must be between 1 and 255 characters.</p>
+    /// <p>The name for the snapshot being created. Must be unique for the customer account. Available for Redis OSS and Serverless Memcached only. Must be between 1 and 255 characters.</p>
     pub serverless_cache_snapshot_name: ::std::option::Option<::std::string::String>,
-    /// <p>The name of an existing serverless cache. The snapshot is created from this cache. Available for Redis only.</p>
+    /// <p>The name of an existing serverless cache. The snapshot is created from this cache. Available for Redis OSS and Serverless Memcached only.</p>
     pub serverless_cache_name: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the KMS key used to encrypt the snapshot. Available for Redis only. Default: NULL</p>
+    /// <p>The ID of the KMS key used to encrypt the snapshot. Available for Redis OSS and Serverless Memcached only. Default: NULL</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
-    /// <p>A list of tags to be added to the snapshot resource. A tag is a key-value pair. Available for Redis only.</p>
+    /// <p>A list of tags to be added to the snapshot resource. A tag is a key-value pair. Available for Redis OSS and Serverless Memcached only.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateServerlessCacheSnapshotInput {
-    /// <p>The name for the snapshot being created. Must be unique for the customer account. Available for Redis only. Must be between 1 and 255 characters.</p>
+    /// <p>The name for the snapshot being created. Must be unique for the customer account. Available for Redis OSS and Serverless Memcached only. Must be between 1 and 255 characters.</p>
     pub fn serverless_cache_snapshot_name(&self) -> ::std::option::Option<&str> {
         self.serverless_cache_snapshot_name.as_deref()
     }
-    /// <p>The name of an existing serverless cache. The snapshot is created from this cache. Available for Redis only.</p>
+    /// <p>The name of an existing serverless cache. The snapshot is created from this cache. Available for Redis OSS and Serverless Memcached only.</p>
     pub fn serverless_cache_name(&self) -> ::std::option::Option<&str> {
         self.serverless_cache_name.as_deref()
     }
-    /// <p>The ID of the KMS key used to encrypt the snapshot. Available for Redis only. Default: NULL</p>
+    /// <p>The ID of the KMS key used to encrypt the snapshot. Available for Redis OSS and Serverless Memcached only. Default: NULL</p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
-    /// <p>A list of tags to be added to the snapshot resource. A tag is a key-value pair. Available for Redis only.</p>
+    /// <p>A list of tags to be added to the snapshot resource. A tag is a key-value pair. Available for Redis OSS and Serverless Memcached only.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
     pub fn tags(&self) -> &[crate::types::Tag] {
@@ -49,47 +49,47 @@ pub struct CreateServerlessCacheSnapshotInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateServerlessCacheSnapshotInputBuilder {
-    /// <p>The name for the snapshot being created. Must be unique for the customer account. Available for Redis only. Must be between 1 and 255 characters.</p>
+    /// <p>The name for the snapshot being created. Must be unique for the customer account. Available for Redis OSS and Serverless Memcached only. Must be between 1 and 255 characters.</p>
     /// This field is required.
     pub fn serverless_cache_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.serverless_cache_snapshot_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name for the snapshot being created. Must be unique for the customer account. Available for Redis only. Must be between 1 and 255 characters.</p>
+    /// <p>The name for the snapshot being created. Must be unique for the customer account. Available for Redis OSS and Serverless Memcached only. Must be between 1 and 255 characters.</p>
     pub fn set_serverless_cache_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.serverless_cache_snapshot_name = input;
         self
     }
-    /// <p>The name for the snapshot being created. Must be unique for the customer account. Available for Redis only. Must be between 1 and 255 characters.</p>
+    /// <p>The name for the snapshot being created. Must be unique for the customer account. Available for Redis OSS and Serverless Memcached only. Must be between 1 and 255 characters.</p>
     pub fn get_serverless_cache_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.serverless_cache_snapshot_name
     }
-    /// <p>The name of an existing serverless cache. The snapshot is created from this cache. Available for Redis only.</p>
+    /// <p>The name of an existing serverless cache. The snapshot is created from this cache. Available for Redis OSS and Serverless Memcached only.</p>
     /// This field is required.
     pub fn serverless_cache_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.serverless_cache_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of an existing serverless cache. The snapshot is created from this cache. Available for Redis only.</p>
+    /// <p>The name of an existing serverless cache. The snapshot is created from this cache. Available for Redis OSS and Serverless Memcached only.</p>
     pub fn set_serverless_cache_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.serverless_cache_name = input;
         self
     }
-    /// <p>The name of an existing serverless cache. The snapshot is created from this cache. Available for Redis only.</p>
+    /// <p>The name of an existing serverless cache. The snapshot is created from this cache. Available for Redis OSS and Serverless Memcached only.</p>
     pub fn get_serverless_cache_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.serverless_cache_name
     }
-    /// <p>The ID of the KMS key used to encrypt the snapshot. Available for Redis only. Default: NULL</p>
+    /// <p>The ID of the KMS key used to encrypt the snapshot. Available for Redis OSS and Serverless Memcached only. Default: NULL</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the KMS key used to encrypt the snapshot. Available for Redis only. Default: NULL</p>
+    /// <p>The ID of the KMS key used to encrypt the snapshot. Available for Redis OSS and Serverless Memcached only. Default: NULL</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
     }
-    /// <p>The ID of the KMS key used to encrypt the snapshot. Available for Redis only. Default: NULL</p>
+    /// <p>The ID of the KMS key used to encrypt the snapshot. Available for Redis OSS and Serverless Memcached only. Default: NULL</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
     }
@@ -97,19 +97,19 @@ impl CreateServerlessCacheSnapshotInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A list of tags to be added to the snapshot resource. A tag is a key-value pair. Available for Redis only.</p>
+    /// <p>A list of tags to be added to the snapshot resource. A tag is a key-value pair. Available for Redis OSS and Serverless Memcached only.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of tags to be added to the snapshot resource. A tag is a key-value pair. Available for Redis only.</p>
+    /// <p>A list of tags to be added to the snapshot resource. A tag is a key-value pair. Available for Redis OSS and Serverless Memcached only.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>A list of tags to be added to the snapshot resource. A tag is a key-value pair. Available for Redis only.</p>
+    /// <p>A list of tags to be added to the snapshot resource. A tag is a key-value pair. Available for Redis OSS and Serverless Memcached only.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }

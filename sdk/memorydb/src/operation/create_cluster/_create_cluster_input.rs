@@ -61,7 +61,7 @@ pub struct CreateClusterInput {
     pub snapshot_window: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Access Control List to associate with the cluster.</p>
     pub acl_name: ::std::option::Option<::std::string::String>,
-    /// <p>The version number of the Redis engine to be used for the cluster.</p>
+    /// <p>The version number of the Redis OSS engine to be used for the cluster.</p>
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>When set to true, the cluster will automatically receive minor engine version upgrades after launch.</p>
     pub auto_minor_version_upgrade: ::std::option::Option<bool>,
@@ -171,7 +171,7 @@ impl CreateClusterInput {
     pub fn acl_name(&self) -> ::std::option::Option<&str> {
         self.acl_name.as_deref()
     }
-    /// <p>The version number of the Redis engine to be used for the cluster.</p>
+    /// <p>The version number of the Redis OSS engine to be used for the cluster.</p>
     pub fn engine_version(&self) -> ::std::option::Option<&str> {
         self.engine_version.as_deref()
     }
@@ -566,17 +566,17 @@ impl CreateClusterInputBuilder {
     pub fn get_acl_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.acl_name
     }
-    /// <p>The version number of the Redis engine to be used for the cluster.</p>
+    /// <p>The version number of the Redis OSS engine to be used for the cluster.</p>
     pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The version number of the Redis engine to be used for the cluster.</p>
+    /// <p>The version number of the Redis OSS engine to be used for the cluster.</p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
     }
-    /// <p>The version number of the Redis engine to be used for the cluster.</p>
+    /// <p>The version number of the Redis OSS engine to be used for the cluster.</p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine_version
     }

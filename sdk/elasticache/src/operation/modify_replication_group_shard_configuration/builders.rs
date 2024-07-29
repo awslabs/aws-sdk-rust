@@ -112,17 +112,17 @@ impl ModifyReplicationGroupShardConfigurationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the Redis (cluster mode enabled) cluster (replication group) on which the shards are to be configured.</p>
+    /// <p>The name of the Redis OSS (cluster mode enabled) cluster (replication group) on which the shards are to be configured.</p>
     pub fn replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.replication_group_id(input.into());
         self
     }
-    /// <p>The name of the Redis (cluster mode enabled) cluster (replication group) on which the shards are to be configured.</p>
+    /// <p>The name of the Redis OSS (cluster mode enabled) cluster (replication group) on which the shards are to be configured.</p>
     pub fn set_replication_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_replication_group_id(input);
         self
     }
-    /// <p>The name of the Redis (cluster mode enabled) cluster (replication group) on which the shards are to be configured.</p>
+    /// <p>The name of the Redis OSS (cluster mode enabled) cluster (replication group) on which the shards are to be configured.</p>
     pub fn get_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_replication_group_id()
     }
@@ -185,19 +185,19 @@ impl ModifyReplicationGroupShardConfigurationFluentBuilder {
     /// To override the contents of this collection use [`set_node_groups_to_remove`](Self::set_node_groups_to_remove).
     ///
     /// <p>If the value of <code>NodeGroupCount</code> is less than the current number of node groups (shards), then either <code>NodeGroupsToRemove</code> or <code>NodeGroupsToRetain</code> is required. <code>NodeGroupsToRemove</code> is a list of <code>NodeGroupId</code>s to remove from the cluster.</p>
-    /// <p>ElastiCache for Redis will attempt to remove all node groups listed by <code>NodeGroupsToRemove</code> from the cluster.</p>
+    /// <p>ElastiCache (Redis OSS) will attempt to remove all node groups listed by <code>NodeGroupsToRemove</code> from the cluster.</p>
     pub fn node_groups_to_remove(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.node_groups_to_remove(input.into());
         self
     }
     /// <p>If the value of <code>NodeGroupCount</code> is less than the current number of node groups (shards), then either <code>NodeGroupsToRemove</code> or <code>NodeGroupsToRetain</code> is required. <code>NodeGroupsToRemove</code> is a list of <code>NodeGroupId</code>s to remove from the cluster.</p>
-    /// <p>ElastiCache for Redis will attempt to remove all node groups listed by <code>NodeGroupsToRemove</code> from the cluster.</p>
+    /// <p>ElastiCache (Redis OSS) will attempt to remove all node groups listed by <code>NodeGroupsToRemove</code> from the cluster.</p>
     pub fn set_node_groups_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_node_groups_to_remove(input);
         self
     }
     /// <p>If the value of <code>NodeGroupCount</code> is less than the current number of node groups (shards), then either <code>NodeGroupsToRemove</code> or <code>NodeGroupsToRetain</code> is required. <code>NodeGroupsToRemove</code> is a list of <code>NodeGroupId</code>s to remove from the cluster.</p>
-    /// <p>ElastiCache for Redis will attempt to remove all node groups listed by <code>NodeGroupsToRemove</code> from the cluster.</p>
+    /// <p>ElastiCache (Redis OSS) will attempt to remove all node groups listed by <code>NodeGroupsToRemove</code> from the cluster.</p>
     pub fn get_node_groups_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_node_groups_to_remove()
     }
@@ -207,19 +207,19 @@ impl ModifyReplicationGroupShardConfigurationFluentBuilder {
     /// To override the contents of this collection use [`set_node_groups_to_retain`](Self::set_node_groups_to_retain).
     ///
     /// <p>If the value of <code>NodeGroupCount</code> is less than the current number of node groups (shards), then either <code>NodeGroupsToRemove</code> or <code>NodeGroupsToRetain</code> is required. <code>NodeGroupsToRetain</code> is a list of <code>NodeGroupId</code>s to retain in the cluster.</p>
-    /// <p>ElastiCache for Redis will attempt to remove all node groups except those listed by <code>NodeGroupsToRetain</code> from the cluster.</p>
+    /// <p>ElastiCache (Redis OSS) will attempt to remove all node groups except those listed by <code>NodeGroupsToRetain</code> from the cluster.</p>
     pub fn node_groups_to_retain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.node_groups_to_retain(input.into());
         self
     }
     /// <p>If the value of <code>NodeGroupCount</code> is less than the current number of node groups (shards), then either <code>NodeGroupsToRemove</code> or <code>NodeGroupsToRetain</code> is required. <code>NodeGroupsToRetain</code> is a list of <code>NodeGroupId</code>s to retain in the cluster.</p>
-    /// <p>ElastiCache for Redis will attempt to remove all node groups except those listed by <code>NodeGroupsToRetain</code> from the cluster.</p>
+    /// <p>ElastiCache (Redis OSS) will attempt to remove all node groups except those listed by <code>NodeGroupsToRetain</code> from the cluster.</p>
     pub fn set_node_groups_to_retain(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_node_groups_to_retain(input);
         self
     }
     /// <p>If the value of <code>NodeGroupCount</code> is less than the current number of node groups (shards), then either <code>NodeGroupsToRemove</code> or <code>NodeGroupsToRetain</code> is required. <code>NodeGroupsToRetain</code> is a list of <code>NodeGroupId</code>s to retain in the cluster.</p>
-    /// <p>ElastiCache for Redis will attempt to remove all node groups except those listed by <code>NodeGroupsToRetain</code> from the cluster.</p>
+    /// <p>ElastiCache (Redis OSS) will attempt to remove all node groups except those listed by <code>NodeGroupsToRetain</code> from the cluster.</p>
     pub fn get_node_groups_to_retain(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_node_groups_to_retain()
     }

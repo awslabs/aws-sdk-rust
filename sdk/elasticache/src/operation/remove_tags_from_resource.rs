@@ -263,7 +263,7 @@ pub enum RemoveTagsFromResourceError {
     InvalidArnFault(crate::types::error::InvalidArnFault),
     /// <p>The requested replication group is not in the <code>available</code> state.</p>
     InvalidReplicationGroupStateFault(crate::types::error::InvalidReplicationGroupStateFault),
-    /// <p>The state of the serverless cache snapshot was not received. Available for Redis only.</p>
+    /// <p>The state of the serverless cache snapshot was not received. Available for Redis OSS and Serverless Memcached only.</p>
     InvalidServerlessCacheSnapshotStateFault(crate::types::error::InvalidServerlessCacheSnapshotStateFault),
     /// <p>The account for these credentials is not currently active.</p>
     InvalidServerlessCacheStateFault(crate::types::error::InvalidServerlessCacheStateFault),
@@ -273,7 +273,7 @@ pub enum RemoveTagsFromResourceError {
     ReservedCacheNodeNotFoundFault(crate::types::error::ReservedCacheNodeNotFoundFault),
     /// <p>The serverless cache was not found or does not exist.</p>
     ServerlessCacheNotFoundFault(crate::types::error::ServerlessCacheNotFoundFault),
-    /// <p>This serverless cache snapshot could not be found or does not exist. Available for Redis only.</p>
+    /// <p>This serverless cache snapshot could not be found or does not exist. Available for Redis OSS and Serverless Memcached only.</p>
     ServerlessCacheSnapshotNotFoundFault(crate::types::error::ServerlessCacheSnapshotNotFoundFault),
     /// <p>The requested snapshot name does not refer to an existing snapshot.</p>
     SnapshotNotFoundFault(crate::types::error::SnapshotNotFoundFault),

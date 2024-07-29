@@ -23,7 +23,7 @@ impl crate::operation::delete_snapshot::builders::DeleteSnapshotInputBuilder {
 /// Fluent builder constructing a request to `DeleteSnapshot`.
 ///
 /// <p>Deletes an existing snapshot. When you receive a successful response from this operation, ElastiCache immediately begins deleting the snapshot; you cannot cancel or revert this operation.</p><note>
-/// <p>This operation is valid for Redis only.</p>
+/// <p>This operation is valid for Redis OSS only.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteSnapshotFluentBuilder {

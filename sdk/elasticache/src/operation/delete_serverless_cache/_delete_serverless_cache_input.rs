@@ -5,7 +5,7 @@
 pub struct DeleteServerlessCacheInput {
     /// <p>The identifier of the serverless cache to be deleted.</p>
     pub serverless_cache_name: ::std::option::Option<::std::string::String>,
-    /// <p>Name of the final snapshot to be taken before the serverless cache is deleted. Available for Redis only. Default: NULL, i.e. a final snapshot is not taken.</p>
+    /// <p>Name of the final snapshot to be taken before the serverless cache is deleted. Available for Redis OSS and Serverless Memcached only. Default: NULL, i.e. a final snapshot is not taken.</p>
     pub final_snapshot_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteServerlessCacheInput {
@@ -13,7 +13,7 @@ impl DeleteServerlessCacheInput {
     pub fn serverless_cache_name(&self) -> ::std::option::Option<&str> {
         self.serverless_cache_name.as_deref()
     }
-    /// <p>Name of the final snapshot to be taken before the serverless cache is deleted. Available for Redis only. Default: NULL, i.e. a final snapshot is not taken.</p>
+    /// <p>Name of the final snapshot to be taken before the serverless cache is deleted. Available for Redis OSS and Serverless Memcached only. Default: NULL, i.e. a final snapshot is not taken.</p>
     pub fn final_snapshot_name(&self) -> ::std::option::Option<&str> {
         self.final_snapshot_name.as_deref()
     }
@@ -48,17 +48,17 @@ impl DeleteServerlessCacheInputBuilder {
     pub fn get_serverless_cache_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.serverless_cache_name
     }
-    /// <p>Name of the final snapshot to be taken before the serverless cache is deleted. Available for Redis only. Default: NULL, i.e. a final snapshot is not taken.</p>
+    /// <p>Name of the final snapshot to be taken before the serverless cache is deleted. Available for Redis OSS and Serverless Memcached only. Default: NULL, i.e. a final snapshot is not taken.</p>
     pub fn final_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.final_snapshot_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Name of the final snapshot to be taken before the serverless cache is deleted. Available for Redis only. Default: NULL, i.e. a final snapshot is not taken.</p>
+    /// <p>Name of the final snapshot to be taken before the serverless cache is deleted. Available for Redis OSS and Serverless Memcached only. Default: NULL, i.e. a final snapshot is not taken.</p>
     pub fn set_final_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.final_snapshot_name = input;
         self
     }
-    /// <p>Name of the final snapshot to be taken before the serverless cache is deleted. Available for Redis only. Default: NULL, i.e. a final snapshot is not taken.</p>
+    /// <p>Name of the final snapshot to be taken before the serverless cache is deleted. Available for Redis OSS and Serverless Memcached only. Default: NULL, i.e. a final snapshot is not taken.</p>
     pub fn get_final_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.final_snapshot_name
     }

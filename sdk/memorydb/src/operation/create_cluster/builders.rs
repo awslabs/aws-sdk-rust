@@ -449,17 +449,17 @@ impl CreateClusterFluentBuilder {
     pub fn get_acl_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_acl_name()
     }
-    /// <p>The version number of the Redis engine to be used for the cluster.</p>
+    /// <p>The version number of the Redis OSS engine to be used for the cluster.</p>
     pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine_version(input.into());
         self
     }
-    /// <p>The version number of the Redis engine to be used for the cluster.</p>
+    /// <p>The version number of the Redis OSS engine to be used for the cluster.</p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine_version(input);
         self
     }
-    /// <p>The version number of the Redis engine to be used for the cluster.</p>
+    /// <p>The version number of the Redis OSS engine to be used for the cluster.</p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_engine_version()
     }

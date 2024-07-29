@@ -22,7 +22,7 @@ impl crate::operation::delete_serverless_cache_snapshot::builders::DeleteServerl
 }
 /// Fluent builder constructing a request to `DeleteServerlessCacheSnapshot`.
 ///
-/// <p>Deletes an existing serverless cache snapshot. Available for Redis only.</p>
+/// <p>Deletes an existing serverless cache snapshot. Available for Redis OSS and Serverless Memcached only.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteServerlessCacheSnapshotFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeleteServerlessCacheSnapshotFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Idenfitier of the snapshot to be deleted. Available for Redis only.</p>
+    /// <p>Idenfitier of the snapshot to be deleted. Available for Redis OSS and Serverless Memcached only.</p>
     pub fn serverless_cache_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.serverless_cache_snapshot_name(input.into());
         self
     }
-    /// <p>Idenfitier of the snapshot to be deleted. Available for Redis only.</p>
+    /// <p>Idenfitier of the snapshot to be deleted. Available for Redis OSS and Serverless Memcached only.</p>
     pub fn set_serverless_cache_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_serverless_cache_snapshot_name(input);
         self
     }
-    /// <p>Idenfitier of the snapshot to be deleted. Available for Redis only.</p>
+    /// <p>Idenfitier of the snapshot to be deleted. Available for Redis OSS and Serverless Memcached only.</p>
     pub fn get_serverless_cache_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_serverless_cache_snapshot_name()
     }

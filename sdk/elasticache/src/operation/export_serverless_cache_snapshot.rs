@@ -253,9 +253,9 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ExportServerl
 pub enum ExportServerlessCacheSnapshotError {
     /// <p>The value for a parameter is invalid.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
-    /// <p>The state of the serverless cache snapshot was not received. Available for Redis only.</p>
+    /// <p>The state of the serverless cache snapshot was not received. Available for Redis OSS and Serverless Memcached only.</p>
     InvalidServerlessCacheSnapshotStateFault(crate::types::error::InvalidServerlessCacheSnapshotStateFault),
-    /// <p>This serverless cache snapshot could not be found or does not exist. Available for Redis only.</p>
+    /// <p>This serverless cache snapshot could not be found or does not exist. Available for Redis OSS and Serverless Memcached only.</p>
     ServerlessCacheSnapshotNotFoundFault(crate::types::error::ServerlessCacheSnapshotNotFoundFault),
     /// <p>The specified service linked role (SLR) was not found.</p>
     ServiceLinkedRoleNotFoundFault(crate::types::error::ServiceLinkedRoleNotFoundFault),

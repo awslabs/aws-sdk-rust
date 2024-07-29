@@ -9,12 +9,12 @@ impl super::Client {
     /// - On success, responds with [`ModifyUserGroupOutput`](crate::operation::modify_user_group::ModifyUserGroupOutput) with field(s):
     ///   - [`user_group_id(Option<String>)`](crate::operation::modify_user_group::ModifyUserGroupOutput::user_group_id): <p>The ID of the user group.</p>
     ///   - [`status(Option<String>)`](crate::operation::modify_user_group::ModifyUserGroupOutput::status): <p>Indicates user group status. Can be "creating", "active", "modifying", "deleting".</p>
-    ///   - [`engine(Option<String>)`](crate::operation::modify_user_group::ModifyUserGroupOutput::engine): <p>The current supported value is Redis.</p>
+    ///   - [`engine(Option<String>)`](crate::operation::modify_user_group::ModifyUserGroupOutput::engine): <p>The current supported value is Redis user.</p>
     ///   - [`user_ids(Option<Vec::<String>>)`](crate::operation::modify_user_group::ModifyUserGroupOutput::user_ids): <p>The list of user IDs that belong to the user group.</p>
-    ///   - [`minimum_engine_version(Option<String>)`](crate::operation::modify_user_group::ModifyUserGroupOutput::minimum_engine_version): <p>The minimum engine version required, which is Redis 6.0</p>
+    ///   - [`minimum_engine_version(Option<String>)`](crate::operation::modify_user_group::ModifyUserGroupOutput::minimum_engine_version): <p>The minimum engine version required, which is Redis OSS 6.0</p>
     ///   - [`pending_changes(Option<UserGroupPendingChanges>)`](crate::operation::modify_user_group::ModifyUserGroupOutput::pending_changes): <p>A list of updates being applied to the user group.</p>
     ///   - [`replication_groups(Option<Vec::<String>>)`](crate::operation::modify_user_group::ModifyUserGroupOutput::replication_groups): <p>A list of replication groups that the user group can access.</p>
-    ///   - [`serverless_caches(Option<Vec::<String>>)`](crate::operation::modify_user_group::ModifyUserGroupOutput::serverless_caches): <p>Indicates which serverless caches the specified user group is associated with. Available for Redis only.</p>
+    ///   - [`serverless_caches(Option<Vec::<String>>)`](crate::operation::modify_user_group::ModifyUserGroupOutput::serverless_caches): <p>Indicates which serverless caches the specified user group is associated with. Available for Redis OSS and Serverless Memcached only.</p>
     ///   - [`arn(Option<String>)`](crate::operation::modify_user_group::ModifyUserGroupOutput::arn): <p>The Amazon Resource Name (ARN) of the user group.</p>
     /// - On failure, responds with [`SdkError<ModifyUserGroupError>`](crate::operation::modify_user_group::ModifyUserGroupError)
     pub fn modify_user_group(&self) -> crate::operation::modify_user_group::builders::ModifyUserGroupFluentBuilder {

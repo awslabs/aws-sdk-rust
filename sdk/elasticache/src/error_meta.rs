@@ -69,7 +69,7 @@ pub enum Error {
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
     /// <p>The requested replication group is not in the <code>available</code> state.</p>
     InvalidReplicationGroupStateFault(crate::types::error::InvalidReplicationGroupStateFault),
-    /// <p>The state of the serverless cache snapshot was not received. Available for Redis only.</p>
+    /// <p>The state of the serverless cache snapshot was not received. Available for Redis OSS and Serverless Memcached only.</p>
     InvalidServerlessCacheSnapshotStateFault(crate::types::error::InvalidServerlessCacheSnapshotStateFault),
     /// <p>The account for these credentials is not currently active.</p>
     InvalidServerlessCacheStateFault(crate::types::error::InvalidServerlessCacheStateFault),
@@ -115,11 +115,11 @@ pub enum Error {
     ServerlessCacheNotFoundFault(crate::types::error::ServerlessCacheNotFoundFault),
     /// <p>The number of serverless caches exceeds the customer quota.</p>
     ServerlessCacheQuotaForCustomerExceededFault(crate::types::error::ServerlessCacheQuotaForCustomerExceededFault),
-    /// <p>A serverless cache snapshot with this name already exists. Available for Redis only.</p>
+    /// <p>A serverless cache snapshot with this name already exists. Available for Redis OSS and Serverless Memcached only.</p>
     ServerlessCacheSnapshotAlreadyExistsFault(crate::types::error::ServerlessCacheSnapshotAlreadyExistsFault),
-    /// <p>This serverless cache snapshot could not be found or does not exist. Available for Redis only.</p>
+    /// <p>This serverless cache snapshot could not be found or does not exist. Available for Redis OSS and Serverless Memcached only.</p>
     ServerlessCacheSnapshotNotFoundFault(crate::types::error::ServerlessCacheSnapshotNotFoundFault),
-    /// <p>The number of serverless cache snapshots exceeds the customer snapshot quota. Available for Redis only.</p>
+    /// <p>The number of serverless cache snapshots exceeds the customer snapshot quota. Available for Redis OSS and Serverless Memcached only.</p>
     ServerlessCacheSnapshotQuotaExceededFault(crate::types::error::ServerlessCacheSnapshotQuotaExceededFault),
     /// <p>The specified service linked role (SLR) was not found.</p>
     ServiceLinkedRoleNotFoundFault(crate::types::error::ServiceLinkedRoleNotFoundFault),
@@ -130,9 +130,9 @@ pub enum Error {
     /// <p>You attempted one of the following operations:</p>
     /// <ul>
     /// <li>
-    /// <p>Creating a snapshot of a Redis cluster running on a <code>cache.t1.micro</code> cache node.</p></li>
+    /// <p>Creating a snapshot of a Redis OSS cluster running on a <code>cache.t1.micro</code> cache node.</p></li>
     /// <li>
-    /// <p>Creating a snapshot of a cluster that is running Memcached rather than Redis.</p></li>
+    /// <p>Creating a snapshot of a cluster that is running Memcached rather than Redis OSS.</p></li>
     /// </ul>
     /// <p>Neither of these are supported by ElastiCache.</p>
     SnapshotFeatureNotSupportedFault(crate::types::error::SnapshotFeatureNotSupportedFault),

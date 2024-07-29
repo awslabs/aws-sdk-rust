@@ -7,17 +7,17 @@ pub struct UserGroup {
     pub user_group_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates user group status. Can be "creating", "active", "modifying", "deleting".</p>
     pub status: ::std::option::Option<::std::string::String>,
-    /// <p>The current supported value is Redis.</p>
+    /// <p>The current supported value is Redis user.</p>
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The list of user IDs that belong to the user group.</p>
     pub user_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The minimum engine version required, which is Redis 6.0</p>
+    /// <p>The minimum engine version required, which is Redis OSS 6.0</p>
     pub minimum_engine_version: ::std::option::Option<::std::string::String>,
     /// <p>A list of updates being applied to the user group.</p>
     pub pending_changes: ::std::option::Option<crate::types::UserGroupPendingChanges>,
     /// <p>A list of replication groups that the user group can access.</p>
     pub replication_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Indicates which serverless caches the specified user group is associated with. Available for Redis only.</p>
+    /// <p>Indicates which serverless caches the specified user group is associated with. Available for Redis OSS and Serverless Memcached only.</p>
     pub serverless_caches: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the user group.</p>
     pub arn: ::std::option::Option<::std::string::String>,
@@ -31,7 +31,7 @@ impl UserGroup {
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
-    /// <p>The current supported value is Redis.</p>
+    /// <p>The current supported value is Redis user.</p>
     pub fn engine(&self) -> ::std::option::Option<&str> {
         self.engine.as_deref()
     }
@@ -41,7 +41,7 @@ impl UserGroup {
     pub fn user_ids(&self) -> &[::std::string::String] {
         self.user_ids.as_deref().unwrap_or_default()
     }
-    /// <p>The minimum engine version required, which is Redis 6.0</p>
+    /// <p>The minimum engine version required, which is Redis OSS 6.0</p>
     pub fn minimum_engine_version(&self) -> ::std::option::Option<&str> {
         self.minimum_engine_version.as_deref()
     }
@@ -55,7 +55,7 @@ impl UserGroup {
     pub fn replication_groups(&self) -> &[::std::string::String] {
         self.replication_groups.as_deref().unwrap_or_default()
     }
-    /// <p>Indicates which serverless caches the specified user group is associated with. Available for Redis only.</p>
+    /// <p>Indicates which serverless caches the specified user group is associated with. Available for Redis OSS and Serverless Memcached only.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.serverless_caches.is_none()`.
     pub fn serverless_caches(&self) -> &[::std::string::String] {
@@ -116,17 +116,17 @@ impl UserGroupBuilder {
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
     }
-    /// <p>The current supported value is Redis.</p>
+    /// <p>The current supported value is Redis user.</p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The current supported value is Redis.</p>
+    /// <p>The current supported value is Redis user.</p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine = input;
         self
     }
-    /// <p>The current supported value is Redis.</p>
+    /// <p>The current supported value is Redis user.</p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine
     }
@@ -150,17 +150,17 @@ impl UserGroupBuilder {
     pub fn get_user_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.user_ids
     }
-    /// <p>The minimum engine version required, which is Redis 6.0</p>
+    /// <p>The minimum engine version required, which is Redis OSS 6.0</p>
     pub fn minimum_engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.minimum_engine_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The minimum engine version required, which is Redis 6.0</p>
+    /// <p>The minimum engine version required, which is Redis OSS 6.0</p>
     pub fn set_minimum_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.minimum_engine_version = input;
         self
     }
-    /// <p>The minimum engine version required, which is Redis 6.0</p>
+    /// <p>The minimum engine version required, which is Redis OSS 6.0</p>
     pub fn get_minimum_engine_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.minimum_engine_version
     }
@@ -202,19 +202,19 @@ impl UserGroupBuilder {
     ///
     /// To override the contents of this collection use [`set_serverless_caches`](Self::set_serverless_caches).
     ///
-    /// <p>Indicates which serverless caches the specified user group is associated with. Available for Redis only.</p>
+    /// <p>Indicates which serverless caches the specified user group is associated with. Available for Redis OSS and Serverless Memcached only.</p>
     pub fn serverless_caches(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.serverless_caches.unwrap_or_default();
         v.push(input.into());
         self.serverless_caches = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Indicates which serverless caches the specified user group is associated with. Available for Redis only.</p>
+    /// <p>Indicates which serverless caches the specified user group is associated with. Available for Redis OSS and Serverless Memcached only.</p>
     pub fn set_serverless_caches(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.serverless_caches = input;
         self
     }
-    /// <p>Indicates which serverless caches the specified user group is associated with. Available for Redis only.</p>
+    /// <p>Indicates which serverless caches the specified user group is associated with. Available for Redis OSS and Serverless Memcached only.</p>
     pub fn get_serverless_caches(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.serverless_caches
     }

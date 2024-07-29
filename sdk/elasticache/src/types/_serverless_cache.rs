@@ -30,13 +30,13 @@ pub struct ServerlessCache {
     pub reader_endpoint: ::std::option::Option<crate::types::Endpoint>,
     /// <p>The Amazon Resource Name (ARN) of the serverless cache.</p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the user group associated with the serverless cache. Available for Redis only. Default is NULL.</p>
+    /// <p>The identifier of the user group associated with the serverless cache. Available for Redis OSS only. Default is NULL.</p>
     pub user_group_id: ::std::option::Option<::std::string::String>,
     /// <p>If no subnet IDs are given and your VPC is in us-west-1, then ElastiCache will select 2 default subnets across AZs in your VPC. For all other Regions, if no subnet IDs are given then ElastiCache will select 3 default subnets across AZs in your default VPC.</p>
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The current setting for the number of serverless cache snapshots the system will retain. Available for Redis only.</p>
+    /// <p>The current setting for the number of serverless cache snapshots the system will retain. Available for Redis OSS and Serverless Memcached only.</p>
     pub snapshot_retention_limit: ::std::option::Option<i32>,
-    /// <p>The daily time that a cache snapshot will be created. Default is NULL, i.e. snapshots will not be created at a specific time on a daily basis. Available for Redis only.</p>
+    /// <p>The daily time that a cache snapshot will be created. Default is NULL, i.e. snapshots will not be created at a specific time on a daily basis. Available for Redis OSS and Serverless Memcached only.</p>
     pub daily_snapshot_time: ::std::option::Option<::std::string::String>,
 }
 impl ServerlessCache {
@@ -94,7 +94,7 @@ impl ServerlessCache {
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The identifier of the user group associated with the serverless cache. Available for Redis only. Default is NULL.</p>
+    /// <p>The identifier of the user group associated with the serverless cache. Available for Redis OSS only. Default is NULL.</p>
     pub fn user_group_id(&self) -> ::std::option::Option<&str> {
         self.user_group_id.as_deref()
     }
@@ -104,11 +104,11 @@ impl ServerlessCache {
     pub fn subnet_ids(&self) -> &[::std::string::String] {
         self.subnet_ids.as_deref().unwrap_or_default()
     }
-    /// <p>The current setting for the number of serverless cache snapshots the system will retain. Available for Redis only.</p>
+    /// <p>The current setting for the number of serverless cache snapshots the system will retain. Available for Redis OSS and Serverless Memcached only.</p>
     pub fn snapshot_retention_limit(&self) -> ::std::option::Option<i32> {
         self.snapshot_retention_limit
     }
-    /// <p>The daily time that a cache snapshot will be created. Default is NULL, i.e. snapshots will not be created at a specific time on a daily basis. Available for Redis only.</p>
+    /// <p>The daily time that a cache snapshot will be created. Default is NULL, i.e. snapshots will not be created at a specific time on a daily basis. Available for Redis OSS and Serverless Memcached only.</p>
     pub fn daily_snapshot_time(&self) -> ::std::option::Option<&str> {
         self.daily_snapshot_time.as_deref()
     }
@@ -331,17 +331,17 @@ impl ServerlessCacheBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>The identifier of the user group associated with the serverless cache. Available for Redis only. Default is NULL.</p>
+    /// <p>The identifier of the user group associated with the serverless cache. Available for Redis OSS only. Default is NULL.</p>
     pub fn user_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_group_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the user group associated with the serverless cache. Available for Redis only. Default is NULL.</p>
+    /// <p>The identifier of the user group associated with the serverless cache. Available for Redis OSS only. Default is NULL.</p>
     pub fn set_user_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_group_id = input;
         self
     }
-    /// <p>The identifier of the user group associated with the serverless cache. Available for Redis only. Default is NULL.</p>
+    /// <p>The identifier of the user group associated with the serverless cache. Available for Redis OSS only. Default is NULL.</p>
     pub fn get_user_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_group_id
     }
@@ -365,31 +365,31 @@ impl ServerlessCacheBuilder {
     pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.subnet_ids
     }
-    /// <p>The current setting for the number of serverless cache snapshots the system will retain. Available for Redis only.</p>
+    /// <p>The current setting for the number of serverless cache snapshots the system will retain. Available for Redis OSS and Serverless Memcached only.</p>
     pub fn snapshot_retention_limit(mut self, input: i32) -> Self {
         self.snapshot_retention_limit = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current setting for the number of serverless cache snapshots the system will retain. Available for Redis only.</p>
+    /// <p>The current setting for the number of serverless cache snapshots the system will retain. Available for Redis OSS and Serverless Memcached only.</p>
     pub fn set_snapshot_retention_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.snapshot_retention_limit = input;
         self
     }
-    /// <p>The current setting for the number of serverless cache snapshots the system will retain. Available for Redis only.</p>
+    /// <p>The current setting for the number of serverless cache snapshots the system will retain. Available for Redis OSS and Serverless Memcached only.</p>
     pub fn get_snapshot_retention_limit(&self) -> &::std::option::Option<i32> {
         &self.snapshot_retention_limit
     }
-    /// <p>The daily time that a cache snapshot will be created. Default is NULL, i.e. snapshots will not be created at a specific time on a daily basis. Available for Redis only.</p>
+    /// <p>The daily time that a cache snapshot will be created. Default is NULL, i.e. snapshots will not be created at a specific time on a daily basis. Available for Redis OSS and Serverless Memcached only.</p>
     pub fn daily_snapshot_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.daily_snapshot_time = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The daily time that a cache snapshot will be created. Default is NULL, i.e. snapshots will not be created at a specific time on a daily basis. Available for Redis only.</p>
+    /// <p>The daily time that a cache snapshot will be created. Default is NULL, i.e. snapshots will not be created at a specific time on a daily basis. Available for Redis OSS and Serverless Memcached only.</p>
     pub fn set_daily_snapshot_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.daily_snapshot_time = input;
         self
     }
-    /// <p>The daily time that a cache snapshot will be created. Default is NULL, i.e. snapshots will not be created at a specific time on a daily basis. Available for Redis only.</p>
+    /// <p>The daily time that a cache snapshot will be created. Default is NULL, i.e. snapshots will not be created at a specific time on a daily basis. Available for Redis OSS and Serverless Memcached only.</p>
     pub fn get_daily_snapshot_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.daily_snapshot_time
     }
