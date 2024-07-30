@@ -24,6 +24,7 @@ impl crate::operation::update_sol_network_instance::builders::UpdateSolNetworkIn
 ///
 /// <p>Update a network instance.</p>
 /// <p>A network instance is a single network created in Amazon Web Services TNB that can be deployed and on which life-cycle operations (like terminate, update, and delete) can be performed.</p>
+/// <p>Choose the <i>updateType</i> parameter to target the necessary update of the network instance.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateSolNetworkInstanceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -124,49 +125,87 @@ impl UpdateSolNetworkInstanceFluentBuilder {
         self.inner.get_ns_instance_id()
     }
     /// <p>The type of update.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Use the <code>MODIFY_VNF_INFORMATION</code> update type, to update a specific network function configuration, in the network instance.</p></li>
+    /// <li>
+    /// <p>Use the <code>UPDATE_NS</code> update type, to update the network instance to a new network service descriptor.</p></li>
+    /// </ul>
     pub fn update_type(mut self, input: crate::types::UpdateSolNetworkType) -> Self {
         self.inner = self.inner.update_type(input);
         self
     }
     /// <p>The type of update.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Use the <code>MODIFY_VNF_INFORMATION</code> update type, to update a specific network function configuration, in the network instance.</p></li>
+    /// <li>
+    /// <p>Use the <code>UPDATE_NS</code> update type, to update the network instance to a new network service descriptor.</p></li>
+    /// </ul>
     pub fn set_update_type(mut self, input: ::std::option::Option<crate::types::UpdateSolNetworkType>) -> Self {
         self.inner = self.inner.set_update_type(input);
         self
     }
     /// <p>The type of update.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Use the <code>MODIFY_VNF_INFORMATION</code> update type, to update a specific network function configuration, in the network instance.</p></li>
+    /// <li>
+    /// <p>Use the <code>UPDATE_NS</code> update type, to update the network instance to a new network service descriptor.</p></li>
+    /// </ul>
     pub fn get_update_type(&self) -> &::std::option::Option<crate::types::UpdateSolNetworkType> {
         self.inner.get_update_type()
     }
     /// <p>Identifies the network function information parameters and/or the configurable properties of the network function to be modified.</p>
+    /// <p>Include this property only if the update type is <code>MODIFY_VNF_INFORMATION</code>.</p>
     pub fn modify_vnf_info_data(mut self, input: crate::types::UpdateSolNetworkModify) -> Self {
         self.inner = self.inner.modify_vnf_info_data(input);
         self
     }
     /// <p>Identifies the network function information parameters and/or the configurable properties of the network function to be modified.</p>
+    /// <p>Include this property only if the update type is <code>MODIFY_VNF_INFORMATION</code>.</p>
     pub fn set_modify_vnf_info_data(mut self, input: ::std::option::Option<crate::types::UpdateSolNetworkModify>) -> Self {
         self.inner = self.inner.set_modify_vnf_info_data(input);
         self
     }
     /// <p>Identifies the network function information parameters and/or the configurable properties of the network function to be modified.</p>
+    /// <p>Include this property only if the update type is <code>MODIFY_VNF_INFORMATION</code>.</p>
     pub fn get_modify_vnf_info_data(&self) -> &::std::option::Option<crate::types::UpdateSolNetworkModify> {
         self.inner.get_modify_vnf_info_data()
+    }
+    /// <p>Identifies the network service descriptor and the configurable properties of the descriptor, to be used for the update.</p>
+    /// <p>Include this property only if the update type is <code>UPDATE_NS</code>.</p>
+    pub fn update_ns(mut self, input: crate::types::UpdateSolNetworkServiceData) -> Self {
+        self.inner = self.inner.update_ns(input);
+        self
+    }
+    /// <p>Identifies the network service descriptor and the configurable properties of the descriptor, to be used for the update.</p>
+    /// <p>Include this property only if the update type is <code>UPDATE_NS</code>.</p>
+    pub fn set_update_ns(mut self, input: ::std::option::Option<crate::types::UpdateSolNetworkServiceData>) -> Self {
+        self.inner = self.inner.set_update_ns(input);
+        self
+    }
+    /// <p>Identifies the network service descriptor and the configurable properties of the descriptor, to be used for the update.</p>
+    /// <p>Include this property only if the update type is <code>UPDATE_NS</code>.</p>
+    pub fn get_update_ns(&self) -> &::std::option::Option<crate::types::UpdateSolNetworkServiceData> {
+        self.inner.get_update_ns()
     }
     ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. When you use this API, the tags are transferred to the network operation that is created. Use tags to search and filter your resources or track your Amazon Web Services costs.</p>
+    /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. When you use this API, the tags are only applied to the network operation that is created. These tags are not applied to the network instance. Use tags to search and filter your resources or track your Amazon Web Services costs.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
-    /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. When you use this API, the tags are transferred to the network operation that is created. Use tags to search and filter your resources or track your Amazon Web Services costs.</p>
+    /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. When you use this API, the tags are only applied to the network operation that is created. These tags are not applied to the network instance. Use tags to search and filter your resources or track your Amazon Web Services costs.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. When you use this API, the tags are transferred to the network operation that is created. Use tags to search and filter your resources or track your Amazon Web Services costs.</p>
+    /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. When you use this API, the tags are only applied to the network operation that is created. These tags are not applied to the network instance. Use tags to search and filter your resources or track your Amazon Web Services costs.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }

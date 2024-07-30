@@ -203,9 +203,15 @@ mod list_pipeline_executions;
 
 mod list_pipelines;
 
+mod list_rule_executions;
+
+mod list_rule_types;
+
 mod list_tags_for_resource;
 
 mod list_webhooks;
+
+mod override_stage_condition;
 
 mod poll_for_jobs;
 

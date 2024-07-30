@@ -63,9 +63,15 @@ pub(crate) mod shape_list_pipeline_executions;
 
 pub(crate) mod shape_list_pipelines;
 
+pub(crate) mod shape_list_rule_executions;
+
+pub(crate) mod shape_list_rule_types;
+
 pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_list_webhooks;
+
+pub(crate) mod shape_override_stage_condition;
 
 pub(crate) mod shape_poll_for_jobs;
 
@@ -124,6 +130,8 @@ pub(crate) mod shape_approval_already_completed_exception;
 pub(crate) mod shape_concurrent_modification_exception;
 
 pub(crate) mod shape_concurrent_pipeline_executions_limit_exceeded_exception;
+
+pub(crate) mod shape_condition_not_overridable_exception;
 
 pub(crate) mod shape_conflict_exception;
 
@@ -197,6 +205,10 @@ pub(crate) mod shape_list_pipeline_executions_input;
 
 pub(crate) mod shape_list_pipelines_input;
 
+pub(crate) mod shape_list_rule_executions_input;
+
+pub(crate) mod shape_list_rule_types_input;
+
 pub(crate) mod shape_list_tags_for_resource_input;
 
 pub(crate) mod shape_list_webhooks_input;
@@ -204,6 +216,8 @@ pub(crate) mod shape_list_webhooks_input;
 pub(crate) mod shape_not_latest_pipeline_execution_exception;
 
 pub(crate) mod shape_output_variables_size_exceeded_exception;
+
+pub(crate) mod shape_override_stage_condition_input;
 
 pub(crate) mod shape_pipeline_execution_not_found_exception;
 
@@ -317,6 +331,12 @@ pub(crate) mod shape_pipeline_metadata;
 
 pub(crate) mod shape_pipeline_variable;
 
+pub(crate) mod shape_rule_execution_detail_list;
+
+pub(crate) mod shape_rule_execution_filter;
+
+pub(crate) mod shape_rule_type_list;
+
 pub(crate) mod shape_source_revision_override;
 
 pub(crate) mod shape_stage_state_list;
@@ -383,6 +403,10 @@ pub(crate) mod shape_pipeline_variable_declaration_list;
 
 pub(crate) mod shape_resolved_pipeline_variable_list;
 
+pub(crate) mod shape_rule_execution_detail;
+
+pub(crate) mod shape_rule_type;
+
 pub(crate) mod shape_stage_declaration;
 
 pub(crate) mod shape_stage_state;
@@ -415,6 +439,8 @@ pub(crate) mod shape_artifact_revision;
 
 pub(crate) mod shape_aws_session_credentials;
 
+pub(crate) mod shape_before_entry_conditions;
+
 pub(crate) mod shape_blocker_declaration;
 
 pub(crate) mod shape_encryption_key;
@@ -429,13 +455,27 @@ pub(crate) mod shape_pipeline_context;
 
 pub(crate) mod shape_resolved_pipeline_variable;
 
+pub(crate) mod shape_rule_configuration_property_list;
+
+pub(crate) mod shape_rule_execution_input;
+
+pub(crate) mod shape_rule_execution_output;
+
+pub(crate) mod shape_rule_type_id;
+
+pub(crate) mod shape_rule_type_settings;
+
 pub(crate) mod shape_source_revision_list;
+
+pub(crate) mod shape_stage_condition_state;
 
 pub(crate) mod shape_stage_execution;
 
 pub(crate) mod shape_stage_execution_list;
 
 pub(crate) mod shape_stop_execution_trigger;
+
+pub(crate) mod shape_success_conditions;
 
 pub(crate) mod shape_transition_state;
 
@@ -453,6 +493,10 @@ pub(crate) mod shape_artifact;
 
 pub(crate) mod shape_artifact_detail_list;
 
+pub(crate) mod shape_condition;
+
+pub(crate) mod shape_condition_state_list;
+
 pub(crate) mod shape_git_pull_request_filter;
 
 pub(crate) mod shape_git_push_filter;
@@ -469,11 +513,21 @@ pub(crate) mod shape_output_variables_map;
 
 pub(crate) mod shape_resolved_action_configuration_map;
 
+pub(crate) mod shape_resolved_rule_configuration_map;
+
+pub(crate) mod shape_rule_configuration_map;
+
+pub(crate) mod shape_rule_configuration_property;
+
+pub(crate) mod shape_rule_execution_result;
+
 pub(crate) mod shape_source_revision;
 
 pub(crate) mod shape_stage_action_declaration_list;
 
 pub(crate) mod shape_stage_blocker_declaration_list;
+
+pub(crate) mod shape_stage_conditions_execution;
 
 pub(crate) mod shape_stage_context;
 
@@ -482,6 +536,10 @@ pub(crate) mod shape_action_execution;
 pub(crate) mod shape_artifact_detail;
 
 pub(crate) mod shape_artifact_location;
+
+pub(crate) mod shape_condition_list;
+
+pub(crate) mod shape_condition_state;
 
 pub(crate) mod shape_error_details;
 
@@ -499,9 +557,15 @@ pub(crate) mod shape_polling_account_list;
 
 pub(crate) mod shape_polling_service_principal_list;
 
+pub(crate) mod shape_rule_declaration;
+
+pub(crate) mod shape_condition_execution;
+
 pub(crate) mod shape_input_artifact_list;
 
 pub(crate) mod shape_output_artifact_list;
+
+pub(crate) mod shape_rule_state_list;
 
 pub(crate) mod shape_s3_artifact_location;
 
@@ -509,8 +573,16 @@ pub(crate) mod shape_s3_location;
 
 pub(crate) mod shape_git_pull_request_event_type_list;
 
+pub(crate) mod shape_rule_declaration_list;
+
+pub(crate) mod shape_rule_state;
+
 pub(crate) mod shape_git_branch_pattern_list;
 
 pub(crate) mod shape_git_file_path_pattern_list;
 
 pub(crate) mod shape_git_tag_pattern_list;
+
+pub(crate) mod shape_rule_execution;
+
+pub(crate) mod shape_rule_revision;

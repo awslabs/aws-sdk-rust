@@ -19,8 +19,14 @@ pub fn ser_update_sol_network_instance_input_input(
         }
         object_4.finish();
     }
-    if let Some(var_7) = &input.update_type {
-        object.key("updateType").string(var_7.as_str());
+    if let Some(var_7) = &input.update_ns {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("updateNs").start_object();
+        crate::protocol_serde::shape_update_sol_network_service_data::ser_update_sol_network_service_data(&mut object_8, var_7)?;
+        object_8.finish();
+    }
+    if let Some(var_9) = &input.update_type {
+        object.key("updateType").string(var_9.as_str());
     }
     Ok(())
 }

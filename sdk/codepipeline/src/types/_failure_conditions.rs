@@ -6,11 +6,19 @@
 pub struct FailureConditions {
     /// <p>The specified result for when the failure conditions are met, such as rolling back the stage.</p>
     pub result: ::std::option::Option<crate::types::Result>,
+    /// <p>The conditions that are configured as failure conditions.</p>
+    pub conditions: ::std::option::Option<::std::vec::Vec<crate::types::Condition>>,
 }
 impl FailureConditions {
     /// <p>The specified result for when the failure conditions are met, such as rolling back the stage.</p>
     pub fn result(&self) -> ::std::option::Option<&crate::types::Result> {
         self.result.as_ref()
+    }
+    /// <p>The conditions that are configured as failure conditions.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.conditions.is_none()`.
+    pub fn conditions(&self) -> &[crate::types::Condition] {
+        self.conditions.as_deref().unwrap_or_default()
     }
 }
 impl FailureConditions {
@@ -25,6 +33,7 @@ impl FailureConditions {
 #[non_exhaustive]
 pub struct FailureConditionsBuilder {
     pub(crate) result: ::std::option::Option<crate::types::Result>,
+    pub(crate) conditions: ::std::option::Option<::std::vec::Vec<crate::types::Condition>>,
 }
 impl FailureConditionsBuilder {
     /// <p>The specified result for when the failure conditions are met, such as rolling back the stage.</p>
@@ -41,8 +50,31 @@ impl FailureConditionsBuilder {
     pub fn get_result(&self) -> &::std::option::Option<crate::types::Result> {
         &self.result
     }
+    /// Appends an item to `conditions`.
+    ///
+    /// To override the contents of this collection use [`set_conditions`](Self::set_conditions).
+    ///
+    /// <p>The conditions that are configured as failure conditions.</p>
+    pub fn conditions(mut self, input: crate::types::Condition) -> Self {
+        let mut v = self.conditions.unwrap_or_default();
+        v.push(input);
+        self.conditions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The conditions that are configured as failure conditions.</p>
+    pub fn set_conditions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Condition>>) -> Self {
+        self.conditions = input;
+        self
+    }
+    /// <p>The conditions that are configured as failure conditions.</p>
+    pub fn get_conditions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Condition>> {
+        &self.conditions
+    }
     /// Consumes the builder and constructs a [`FailureConditions`](crate::types::FailureConditions).
     pub fn build(self) -> crate::types::FailureConditions {
-        crate::types::FailureConditions { result: self.result }
+        crate::types::FailureConditions {
+            result: self.result,
+            conditions: self.conditions,
+        }
     }
 }

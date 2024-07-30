@@ -28,6 +28,8 @@ pub struct ProfileDetail {
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Used to determine how long sessions vended using this profile are valid for. See the <code>Expiration</code> section of the <a href="https://docs.aws.amazon.com/rolesanywhere/latest/userguide/authentication-create-session.html#credentials-object">CreateSession API documentation</a> page for more details. In requests, if this value is not provided, the default value will be 3600.</p>
     pub duration_seconds: ::std::option::Option<i32>,
+    /// <p>Used to determine if a custom role session name will be accepted in a temporary credential request.</p>
+    pub accept_role_session_name: ::std::option::Option<bool>,
     /// <p>A mapping applied to the authenticating end-entity certificate.</p>
     pub attribute_mappings: ::std::option::Option<::std::vec::Vec<crate::types::AttributeMapping>>,
 }
@@ -84,6 +86,10 @@ impl ProfileDetail {
     pub fn duration_seconds(&self) -> ::std::option::Option<i32> {
         self.duration_seconds
     }
+    /// <p>Used to determine if a custom role session name will be accepted in a temporary credential request.</p>
+    pub fn accept_role_session_name(&self) -> ::std::option::Option<bool> {
+        self.accept_role_session_name
+    }
     /// <p>A mapping applied to the authenticating end-entity certificate.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attribute_mappings.is_none()`.
@@ -114,6 +120,7 @@ pub struct ProfileDetailBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) duration_seconds: ::std::option::Option<i32>,
+    pub(crate) accept_role_session_name: ::std::option::Option<bool>,
     pub(crate) attribute_mappings: ::std::option::Option<::std::vec::Vec<crate::types::AttributeMapping>>,
 }
 impl ProfileDetailBuilder {
@@ -297,6 +304,20 @@ impl ProfileDetailBuilder {
     pub fn get_duration_seconds(&self) -> &::std::option::Option<i32> {
         &self.duration_seconds
     }
+    /// <p>Used to determine if a custom role session name will be accepted in a temporary credential request.</p>
+    pub fn accept_role_session_name(mut self, input: bool) -> Self {
+        self.accept_role_session_name = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Used to determine if a custom role session name will be accepted in a temporary credential request.</p>
+    pub fn set_accept_role_session_name(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.accept_role_session_name = input;
+        self
+    }
+    /// <p>Used to determine if a custom role session name will be accepted in a temporary credential request.</p>
+    pub fn get_accept_role_session_name(&self) -> &::std::option::Option<bool> {
+        &self.accept_role_session_name
+    }
     /// Appends an item to `attribute_mappings`.
     ///
     /// To override the contents of this collection use [`set_attribute_mappings`](Self::set_attribute_mappings).
@@ -332,6 +353,7 @@ impl ProfileDetailBuilder {
             created_at: self.created_at,
             updated_at: self.updated_at,
             duration_seconds: self.duration_seconds,
+            accept_role_session_name: self.accept_role_session_name,
             attribute_mappings: self.attribute_mappings,
         }
     }

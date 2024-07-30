@@ -16,6 +16,12 @@ pub struct StageState {
     pub action_states: ::std::option::Option<::std::vec::Vec<crate::types::ActionState>>,
     /// <p>Information about the latest execution in the stage, including its ID and status.</p>
     pub latest_execution: ::std::option::Option<crate::types::StageExecution>,
+    /// <p>The state of the entry conditions for a stage.</p>
+    pub before_entry_condition_state: ::std::option::Option<crate::types::StageConditionState>,
+    /// <p>The state of the success conditions for a stage.</p>
+    pub on_success_condition_state: ::std::option::Option<crate::types::StageConditionState>,
+    /// <p>The state of the failure conditions for a stage.</p>
+    pub on_failure_condition_state: ::std::option::Option<crate::types::StageConditionState>,
 }
 impl StageState {
     /// <p>The name of the stage.</p>
@@ -46,6 +52,18 @@ impl StageState {
     pub fn latest_execution(&self) -> ::std::option::Option<&crate::types::StageExecution> {
         self.latest_execution.as_ref()
     }
+    /// <p>The state of the entry conditions for a stage.</p>
+    pub fn before_entry_condition_state(&self) -> ::std::option::Option<&crate::types::StageConditionState> {
+        self.before_entry_condition_state.as_ref()
+    }
+    /// <p>The state of the success conditions for a stage.</p>
+    pub fn on_success_condition_state(&self) -> ::std::option::Option<&crate::types::StageConditionState> {
+        self.on_success_condition_state.as_ref()
+    }
+    /// <p>The state of the failure conditions for a stage.</p>
+    pub fn on_failure_condition_state(&self) -> ::std::option::Option<&crate::types::StageConditionState> {
+        self.on_failure_condition_state.as_ref()
+    }
 }
 impl StageState {
     /// Creates a new builder-style object to manufacture [`StageState`](crate::types::StageState).
@@ -64,6 +82,9 @@ pub struct StageStateBuilder {
     pub(crate) inbound_transition_state: ::std::option::Option<crate::types::TransitionState>,
     pub(crate) action_states: ::std::option::Option<::std::vec::Vec<crate::types::ActionState>>,
     pub(crate) latest_execution: ::std::option::Option<crate::types::StageExecution>,
+    pub(crate) before_entry_condition_state: ::std::option::Option<crate::types::StageConditionState>,
+    pub(crate) on_success_condition_state: ::std::option::Option<crate::types::StageConditionState>,
+    pub(crate) on_failure_condition_state: ::std::option::Option<crate::types::StageConditionState>,
 }
 impl StageStateBuilder {
     /// <p>The name of the stage.</p>
@@ -162,6 +183,48 @@ impl StageStateBuilder {
     pub fn get_latest_execution(&self) -> &::std::option::Option<crate::types::StageExecution> {
         &self.latest_execution
     }
+    /// <p>The state of the entry conditions for a stage.</p>
+    pub fn before_entry_condition_state(mut self, input: crate::types::StageConditionState) -> Self {
+        self.before_entry_condition_state = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The state of the entry conditions for a stage.</p>
+    pub fn set_before_entry_condition_state(mut self, input: ::std::option::Option<crate::types::StageConditionState>) -> Self {
+        self.before_entry_condition_state = input;
+        self
+    }
+    /// <p>The state of the entry conditions for a stage.</p>
+    pub fn get_before_entry_condition_state(&self) -> &::std::option::Option<crate::types::StageConditionState> {
+        &self.before_entry_condition_state
+    }
+    /// <p>The state of the success conditions for a stage.</p>
+    pub fn on_success_condition_state(mut self, input: crate::types::StageConditionState) -> Self {
+        self.on_success_condition_state = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The state of the success conditions for a stage.</p>
+    pub fn set_on_success_condition_state(mut self, input: ::std::option::Option<crate::types::StageConditionState>) -> Self {
+        self.on_success_condition_state = input;
+        self
+    }
+    /// <p>The state of the success conditions for a stage.</p>
+    pub fn get_on_success_condition_state(&self) -> &::std::option::Option<crate::types::StageConditionState> {
+        &self.on_success_condition_state
+    }
+    /// <p>The state of the failure conditions for a stage.</p>
+    pub fn on_failure_condition_state(mut self, input: crate::types::StageConditionState) -> Self {
+        self.on_failure_condition_state = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The state of the failure conditions for a stage.</p>
+    pub fn set_on_failure_condition_state(mut self, input: ::std::option::Option<crate::types::StageConditionState>) -> Self {
+        self.on_failure_condition_state = input;
+        self
+    }
+    /// <p>The state of the failure conditions for a stage.</p>
+    pub fn get_on_failure_condition_state(&self) -> &::std::option::Option<crate::types::StageConditionState> {
+        &self.on_failure_condition_state
+    }
     /// Consumes the builder and constructs a [`StageState`](crate::types::StageState).
     pub fn build(self) -> crate::types::StageState {
         crate::types::StageState {
@@ -171,6 +234,9 @@ impl StageStateBuilder {
             inbound_transition_state: self.inbound_transition_state,
             action_states: self.action_states,
             latest_execution: self.latest_execution,
+            before_entry_condition_state: self.before_entry_condition_state,
+            on_success_condition_state: self.on_success_condition_state,
+            on_failure_condition_state: self.on_failure_condition_state,
         }
     }
 }

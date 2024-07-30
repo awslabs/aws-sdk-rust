@@ -4,17 +4,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CapacityStatus {
-    /// <p>The number of user sessions currently being used for pool sessions. This only applies to multi-session pools.</p>
+    /// <p>The number of user sessions currently available for streaming from your pool.</p>
+    /// <p>AvailableUserSessions = ActualUserSessions - ActiveUserSessions</p>
     pub available_user_sessions: i32,
     /// <p>The total number of sessions slots that are either running or pending. This represents the total number of concurrent streaming sessions your pool can support in a steady state.</p>
     pub desired_user_sessions: i32,
-    /// <p>The total number of session slots that are available for a pool of WorkSpaces.</p>
+    /// <p>The total number of user sessions that are available for streaming or are currently streaming in your pool.</p>
+    /// <p>ActualUserSessions = AvailableUserSessions + ActiveUserSessions</p>
     pub actual_user_sessions: i32,
-    /// <p>The number of user sessions currently being used for pool sessions. This only applies to multi-session pools.</p>
+    /// <p>The number of user sessions currently being used for your pool.</p>
     pub active_user_sessions: i32,
 }
 impl CapacityStatus {
-    /// <p>The number of user sessions currently being used for pool sessions. This only applies to multi-session pools.</p>
+    /// <p>The number of user sessions currently available for streaming from your pool.</p>
+    /// <p>AvailableUserSessions = ActualUserSessions - ActiveUserSessions</p>
     pub fn available_user_sessions(&self) -> i32 {
         self.available_user_sessions
     }
@@ -22,11 +25,12 @@ impl CapacityStatus {
     pub fn desired_user_sessions(&self) -> i32 {
         self.desired_user_sessions
     }
-    /// <p>The total number of session slots that are available for a pool of WorkSpaces.</p>
+    /// <p>The total number of user sessions that are available for streaming or are currently streaming in your pool.</p>
+    /// <p>ActualUserSessions = AvailableUserSessions + ActiveUserSessions</p>
     pub fn actual_user_sessions(&self) -> i32 {
         self.actual_user_sessions
     }
-    /// <p>The number of user sessions currently being used for pool sessions. This only applies to multi-session pools.</p>
+    /// <p>The number of user sessions currently being used for your pool.</p>
     pub fn active_user_sessions(&self) -> i32 {
         self.active_user_sessions
     }
@@ -48,18 +52,21 @@ pub struct CapacityStatusBuilder {
     pub(crate) active_user_sessions: ::std::option::Option<i32>,
 }
 impl CapacityStatusBuilder {
-    /// <p>The number of user sessions currently being used for pool sessions. This only applies to multi-session pools.</p>
+    /// <p>The number of user sessions currently available for streaming from your pool.</p>
+    /// <p>AvailableUserSessions = ActualUserSessions - ActiveUserSessions</p>
     /// This field is required.
     pub fn available_user_sessions(mut self, input: i32) -> Self {
         self.available_user_sessions = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of user sessions currently being used for pool sessions. This only applies to multi-session pools.</p>
+    /// <p>The number of user sessions currently available for streaming from your pool.</p>
+    /// <p>AvailableUserSessions = ActualUserSessions - ActiveUserSessions</p>
     pub fn set_available_user_sessions(mut self, input: ::std::option::Option<i32>) -> Self {
         self.available_user_sessions = input;
         self
     }
-    /// <p>The number of user sessions currently being used for pool sessions. This only applies to multi-session pools.</p>
+    /// <p>The number of user sessions currently available for streaming from your pool.</p>
+    /// <p>AvailableUserSessions = ActualUserSessions - ActiveUserSessions</p>
     pub fn get_available_user_sessions(&self) -> &::std::option::Option<i32> {
         &self.available_user_sessions
     }
@@ -78,33 +85,36 @@ impl CapacityStatusBuilder {
     pub fn get_desired_user_sessions(&self) -> &::std::option::Option<i32> {
         &self.desired_user_sessions
     }
-    /// <p>The total number of session slots that are available for a pool of WorkSpaces.</p>
+    /// <p>The total number of user sessions that are available for streaming or are currently streaming in your pool.</p>
+    /// <p>ActualUserSessions = AvailableUserSessions + ActiveUserSessions</p>
     /// This field is required.
     pub fn actual_user_sessions(mut self, input: i32) -> Self {
         self.actual_user_sessions = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The total number of session slots that are available for a pool of WorkSpaces.</p>
+    /// <p>The total number of user sessions that are available for streaming or are currently streaming in your pool.</p>
+    /// <p>ActualUserSessions = AvailableUserSessions + ActiveUserSessions</p>
     pub fn set_actual_user_sessions(mut self, input: ::std::option::Option<i32>) -> Self {
         self.actual_user_sessions = input;
         self
     }
-    /// <p>The total number of session slots that are available for a pool of WorkSpaces.</p>
+    /// <p>The total number of user sessions that are available for streaming or are currently streaming in your pool.</p>
+    /// <p>ActualUserSessions = AvailableUserSessions + ActiveUserSessions</p>
     pub fn get_actual_user_sessions(&self) -> &::std::option::Option<i32> {
         &self.actual_user_sessions
     }
-    /// <p>The number of user sessions currently being used for pool sessions. This only applies to multi-session pools.</p>
+    /// <p>The number of user sessions currently being used for your pool.</p>
     /// This field is required.
     pub fn active_user_sessions(mut self, input: i32) -> Self {
         self.active_user_sessions = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of user sessions currently being used for pool sessions. This only applies to multi-session pools.</p>
+    /// <p>The number of user sessions currently being used for your pool.</p>
     pub fn set_active_user_sessions(mut self, input: ::std::option::Option<i32>) -> Self {
         self.active_user_sessions = input;
         self
     }
-    /// <p>The number of user sessions currently being used for pool sessions. This only applies to multi-session pools.</p>
+    /// <p>The number of user sessions currently being used for your pool.</p>
     pub fn get_active_user_sessions(&self) -> &::std::option::Option<i32> {
         &self.active_user_sessions
     }

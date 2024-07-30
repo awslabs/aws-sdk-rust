@@ -13,6 +13,8 @@ pub enum Error {
     ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
     /// <p>The pipeline has reached the limit for concurrent pipeline executions.</p>
     ConcurrentPipelineExecutionsLimitExceededException(crate::types::error::ConcurrentPipelineExecutionsLimitExceededException),
+    /// <p>Unable to override because the condition does not allow overrides.</p>
+    ConditionNotOverridableException(crate::types::error::ConditionNotOverridableException),
     /// <p>Your request cannot be handled because the pipeline is busy handling ongoing activities. Try again later.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>The pipeline execution is already in a <code>Stopping</code> state. If you already chose to stop and wait, you cannot make that request again. You can choose to stop and abandon now, but be aware that this option can lead to failed tasks or out of sequence tasks. If you already chose to stop and abandon, you cannot make that request again.</p>
@@ -98,6 +100,7 @@ impl ::std::fmt::Display for Error {
             Error::ApprovalAlreadyCompletedException(inner) => inner.fmt(f),
             Error::ConcurrentModificationException(inner) => inner.fmt(f),
             Error::ConcurrentPipelineExecutionsLimitExceededException(inner) => inner.fmt(f),
+            Error::ConditionNotOverridableException(inner) => inner.fmt(f),
             Error::ConflictException(inner) => inner.fmt(f),
             Error::DuplicatedStopRequestException(inner) => inner.fmt(f),
             Error::InvalidActionDeclarationException(inner) => inner.fmt(f),
@@ -158,6 +161,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ApprovalAlreadyCompletedException(inner) => inner.meta(),
             Self::ConcurrentModificationException(inner) => inner.meta(),
             Self::ConcurrentPipelineExecutionsLimitExceededException(inner) => inner.meta(),
+            Self::ConditionNotOverridableException(inner) => inner.meta(),
             Self::ConflictException(inner) => inner.meta(),
             Self::DuplicatedStopRequestException(inner) => inner.meta(),
             Self::InvalidActionDeclarationException(inner) => inner.meta(),
@@ -774,6 +778,60 @@ impl From<crate::operation::list_pipelines::ListPipelinesError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_rule_executions::ListRuleExecutionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_rule_executions::ListRuleExecutionsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_rule_executions::ListRuleExecutionsError> for Error {
+    fn from(err: crate::operation::list_rule_executions::ListRuleExecutionsError) -> Self {
+        match err {
+            crate::operation::list_rule_executions::ListRuleExecutionsError::InvalidNextTokenException(inner) => {
+                Error::InvalidNextTokenException(inner)
+            }
+            crate::operation::list_rule_executions::ListRuleExecutionsError::PipelineExecutionNotFoundException(inner) => {
+                Error::PipelineExecutionNotFoundException(inner)
+            }
+            crate::operation::list_rule_executions::ListRuleExecutionsError::PipelineNotFoundException(inner) => {
+                Error::PipelineNotFoundException(inner)
+            }
+            crate::operation::list_rule_executions::ListRuleExecutionsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_rule_executions::ListRuleExecutionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_rule_types::ListRuleTypesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_rule_types::ListRuleTypesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_rule_types::ListRuleTypesError> for Error {
+    fn from(err: crate::operation::list_rule_types::ListRuleTypesError) -> Self {
+        match err {
+            crate::operation::list_rule_types::ListRuleTypesError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::list_rule_types::ListRuleTypesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_rule_types::ListRuleTypesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -823,6 +881,46 @@ impl From<crate::operation::list_webhooks::ListWebhooksError> for Error {
             crate::operation::list_webhooks::ListWebhooksError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
             crate::operation::list_webhooks::ListWebhooksError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_webhooks::ListWebhooksError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::override_stage_condition::OverrideStageConditionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::override_stage_condition::OverrideStageConditionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::override_stage_condition::OverrideStageConditionError> for Error {
+    fn from(err: crate::operation::override_stage_condition::OverrideStageConditionError) -> Self {
+        match err {
+            crate::operation::override_stage_condition::OverrideStageConditionError::ConcurrentPipelineExecutionsLimitExceededException(inner) => {
+                Error::ConcurrentPipelineExecutionsLimitExceededException(inner)
+            }
+            crate::operation::override_stage_condition::OverrideStageConditionError::ConditionNotOverridableException(inner) => {
+                Error::ConditionNotOverridableException(inner)
+            }
+            crate::operation::override_stage_condition::OverrideStageConditionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::override_stage_condition::OverrideStageConditionError::NotLatestPipelineExecutionException(inner) => {
+                Error::NotLatestPipelineExecutionException(inner)
+            }
+            crate::operation::override_stage_condition::OverrideStageConditionError::PipelineNotFoundException(inner) => {
+                Error::PipelineNotFoundException(inner)
+            }
+            crate::operation::override_stage_condition::OverrideStageConditionError::StageNotFoundException(inner) => {
+                Error::StageNotFoundException(inner)
+            }
+            crate::operation::override_stage_condition::OverrideStageConditionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::override_stage_condition::OverrideStageConditionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -894,6 +992,9 @@ impl From<crate::operation::put_action_revision::PutActionRevisionError> for Err
     fn from(err: crate::operation::put_action_revision::PutActionRevisionError) -> Self {
         match err {
             crate::operation::put_action_revision::PutActionRevisionError::ActionNotFoundException(inner) => Error::ActionNotFoundException(inner),
+            crate::operation::put_action_revision::PutActionRevisionError::ConcurrentPipelineExecutionsLimitExceededException(inner) => {
+                Error::ConcurrentPipelineExecutionsLimitExceededException(inner)
+            }
             crate::operation::put_action_revision::PutActionRevisionError::PipelineNotFoundException(inner) => {
                 Error::PipelineNotFoundException(inner)
             }
@@ -1167,6 +1268,9 @@ where
 impl From<crate::operation::retry_stage_execution::RetryStageExecutionError> for Error {
     fn from(err: crate::operation::retry_stage_execution::RetryStageExecutionError) -> Self {
         match err {
+            crate::operation::retry_stage_execution::RetryStageExecutionError::ConcurrentPipelineExecutionsLimitExceededException(inner) => {
+                Error::ConcurrentPipelineExecutionsLimitExceededException(inner)
+            }
             crate::operation::retry_stage_execution::RetryStageExecutionError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::retry_stage_execution::RetryStageExecutionError::NotLatestPipelineExecutionException(inner) => {
                 Error::NotLatestPipelineExecutionException(inner)
@@ -1404,6 +1508,7 @@ impl ::std::error::Error for Error {
             Error::ApprovalAlreadyCompletedException(inner) => inner.source(),
             Error::ConcurrentModificationException(inner) => inner.source(),
             Error::ConcurrentPipelineExecutionsLimitExceededException(inner) => inner.source(),
+            Error::ConditionNotOverridableException(inner) => inner.source(),
             Error::ConflictException(inner) => inner.source(),
             Error::DuplicatedStopRequestException(inner) => inner.source(),
             Error::InvalidActionDeclarationException(inner) => inner.source(),
@@ -1450,6 +1555,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ApprovalAlreadyCompletedException(e) => e.request_id(),
             Self::ConcurrentModificationException(e) => e.request_id(),
             Self::ConcurrentPipelineExecutionsLimitExceededException(e) => e.request_id(),
+            Self::ConditionNotOverridableException(e) => e.request_id(),
             Self::ConflictException(e) => e.request_id(),
             Self::DuplicatedStopRequestException(e) => e.request_id(),
             Self::InvalidActionDeclarationException(e) => e.request_id(),

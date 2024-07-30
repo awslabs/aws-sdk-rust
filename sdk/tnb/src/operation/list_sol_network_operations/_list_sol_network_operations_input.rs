@@ -3,12 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSolNetworkOperationsInput {
+    /// <p>Network instance id filter, to retrieve network operations associated to a network instance.</p>
+    pub ns_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to include in the response.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListSolNetworkOperationsInput {
+    /// <p>Network instance id filter, to retrieve network operations associated to a network instance.</p>
+    pub fn ns_instance_id(&self) -> ::std::option::Option<&str> {
+        self.ns_instance_id.as_deref()
+    }
     /// <p>The maximum number of results to include in the response.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
@@ -29,10 +35,25 @@ impl ListSolNetworkOperationsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct ListSolNetworkOperationsInputBuilder {
+    pub(crate) ns_instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListSolNetworkOperationsInputBuilder {
+    /// <p>Network instance id filter, to retrieve network operations associated to a network instance.</p>
+    pub fn ns_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ns_instance_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Network instance id filter, to retrieve network operations associated to a network instance.</p>
+    pub fn set_ns_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ns_instance_id = input;
+        self
+    }
+    /// <p>Network instance id filter, to retrieve network operations associated to a network instance.</p>
+    pub fn get_ns_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ns_instance_id
+    }
     /// <p>The maximum number of results to include in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -69,6 +90,7 @@ impl ListSolNetworkOperationsInputBuilder {
         ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_sol_network_operations::ListSolNetworkOperationsInput {
+            ns_instance_id: self.ns_instance_id,
             max_results: self.max_results,
             next_token: self.next_token,
         })

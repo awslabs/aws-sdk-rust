@@ -31,6 +31,8 @@ impl crate::operation::create_workspaces::builders::CreateWorkspacesInputBuilder
 /// <p>You don't need to specify the <code>PCOIP</code> protocol for Linux bundles because <code>WSP</code> is the default protocol for those bundles.</p></li>
 /// <li>
 /// <p>User-decoupled WorkSpaces are only supported by Amazon WorkSpaces Core.</p></li>
+/// <li>
+/// <p>Review your running mode to ensure you are using one that is optimal for your needs and budget. For more information on switching running modes, see <a href="http://aws.amazon.com/workspaces-family/workspaces/faqs/#:~:text=Can%20I%20switch%20between%20hourly%20and%20monthly%20billing%20on%20WorkSpaces%20Personal%3F"> Can I switch between hourly and monthly billing?</a></p></li>
 /// </ul>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

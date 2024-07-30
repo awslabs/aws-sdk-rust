@@ -184,6 +184,13 @@ pub(crate) fn de_get_sol_network_operation(
                         crate::protocol_serde::shape_get_sol_network_operation_tasks_list::de_get_sol_network_operation_tasks_list(tokens)?,
                     );
                 }
+                "updateType" => {
+                    builder = builder.set_update_type(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::UpdateSolNetworkType::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

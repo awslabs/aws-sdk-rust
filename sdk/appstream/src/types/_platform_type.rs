@@ -13,6 +13,7 @@
 /// # let platformtype = unimplemented!();
 /// match platformtype {
 ///     PlatformType::AmazonLinux2 => { /* ... */ },
+///     PlatformType::Rhel8 => { /* ... */ },
 ///     PlatformType::Windows => { /* ... */ },
 ///     PlatformType::WindowsServer2016 => { /* ... */ },
 ///     PlatformType::WindowsServer2019 => { /* ... */ },
@@ -47,6 +48,8 @@ pub enum PlatformType {
     #[allow(missing_docs)] // documentation missing in model
     AmazonLinux2,
     #[allow(missing_docs)] // documentation missing in model
+    Rhel8,
+    #[allow(missing_docs)] // documentation missing in model
     Windows,
     #[allow(missing_docs)] // documentation missing in model
     WindowsServer2016,
@@ -62,6 +65,7 @@ impl ::std::convert::From<&str> for PlatformType {
     fn from(s: &str) -> Self {
         match s {
             "AMAZON_LINUX2" => PlatformType::AmazonLinux2,
+            "RHEL8" => PlatformType::Rhel8,
             "WINDOWS" => PlatformType::Windows,
             "WINDOWS_SERVER_2016" => PlatformType::WindowsServer2016,
             "WINDOWS_SERVER_2019" => PlatformType::WindowsServer2019,
@@ -82,6 +86,7 @@ impl PlatformType {
     pub fn as_str(&self) -> &str {
         match self {
             PlatformType::AmazonLinux2 => "AMAZON_LINUX2",
+            PlatformType::Rhel8 => "RHEL8",
             PlatformType::Windows => "WINDOWS",
             PlatformType::WindowsServer2016 => "WINDOWS_SERVER_2016",
             PlatformType::WindowsServer2019 => "WINDOWS_SERVER_2019",
@@ -93,6 +98,7 @@ impl PlatformType {
     pub const fn values() -> &'static [&'static str] {
         &[
             "AMAZON_LINUX2",
+            "RHEL8",
             "WINDOWS",
             "WINDOWS_SERVER_2016",
             "WINDOWS_SERVER_2019",
@@ -121,6 +127,7 @@ impl ::std::fmt::Display for PlatformType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             PlatformType::AmazonLinux2 => write!(f, "AMAZON_LINUX2"),
+            PlatformType::Rhel8 => write!(f, "RHEL8"),
             PlatformType::Windows => write!(f, "WINDOWS"),
             PlatformType::WindowsServer2016 => write!(f, "WINDOWS_SERVER_2016"),
             PlatformType::WindowsServer2019 => write!(f, "WINDOWS_SERVER_2019"),

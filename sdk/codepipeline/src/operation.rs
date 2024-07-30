@@ -61,11 +61,20 @@ pub mod list_pipeline_executions;
 /// Types for the `ListPipelines` operation.
 pub mod list_pipelines;
 
+/// Types for the `ListRuleExecutions` operation.
+pub mod list_rule_executions;
+
+/// Types for the `ListRuleTypes` operation.
+pub mod list_rule_types;
+
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
 
 /// Types for the `ListWebhooks` operation.
 pub mod list_webhooks;
+
+/// Types for the `OverrideStageCondition` operation.
+pub mod override_stage_condition;
 
 /// Types for the `PollForJobs` operation.
 pub mod poll_for_jobs;

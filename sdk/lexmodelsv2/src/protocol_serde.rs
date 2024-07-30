@@ -823,6 +823,8 @@ pub(crate) mod shape_analytics_utterance_metric_results;
 
 pub(crate) mod shape_audio_log_destination;
 
+pub(crate) mod shape_bedrock_guardrail_configuration;
+
 pub(crate) mod shape_bedrock_knowledge_store_configuration;
 
 pub(crate) mod shape_conditional_branch;
@@ -934,6 +936,8 @@ pub(crate) mod shape_analytics_utterance_group_by_key;
 pub(crate) mod shape_analytics_utterance_metric_result;
 
 pub(crate) mod shape_audio_and_dtmf_input_specification;
+
+pub(crate) mod shape_bedrock_knowledge_store_exact_response_fields;
 
 pub(crate) mod shape_cloud_watch_log_group_log_destination;
 

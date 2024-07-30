@@ -19,6 +19,8 @@ pub struct CreateProfileInput {
     pub enabled: ::std::option::Option<bool>,
     /// <p>The tags to attach to the profile.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>Used to determine if a custom role session name will be accepted in a temporary credential request.</p>
+    pub accept_role_session_name: ::std::option::Option<bool>,
 }
 impl CreateProfileInput {
     /// <p>The name of the profile.</p>
@@ -59,6 +61,10 @@ impl CreateProfileInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>Used to determine if a custom role session name will be accepted in a temporary credential request.</p>
+    pub fn accept_role_session_name(&self) -> ::std::option::Option<bool> {
+        self.accept_role_session_name
+    }
 }
 impl CreateProfileInput {
     /// Creates a new builder-style object to manufacture [`CreateProfileInput`](crate::operation::create_profile::CreateProfileInput).
@@ -79,6 +85,7 @@ pub struct CreateProfileInputBuilder {
     pub(crate) duration_seconds: ::std::option::Option<i32>,
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) accept_role_session_name: ::std::option::Option<bool>,
 }
 impl CreateProfileInputBuilder {
     /// <p>The name of the profile.</p>
@@ -212,6 +219,20 @@ impl CreateProfileInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>Used to determine if a custom role session name will be accepted in a temporary credential request.</p>
+    pub fn accept_role_session_name(mut self, input: bool) -> Self {
+        self.accept_role_session_name = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Used to determine if a custom role session name will be accepted in a temporary credential request.</p>
+    pub fn set_accept_role_session_name(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.accept_role_session_name = input;
+        self
+    }
+    /// <p>Used to determine if a custom role session name will be accepted in a temporary credential request.</p>
+    pub fn get_accept_role_session_name(&self) -> &::std::option::Option<bool> {
+        &self.accept_role_session_name
+    }
     /// Consumes the builder and constructs a [`CreateProfileInput`](crate::operation::create_profile::CreateProfileInput).
     pub fn build(
         self,
@@ -225,6 +246,7 @@ impl CreateProfileInputBuilder {
             duration_seconds: self.duration_seconds,
             enabled: self.enabled,
             tags: self.tags,
+            accept_role_session_name: self.accept_role_session_name,
         })
     }
 }

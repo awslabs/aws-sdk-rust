@@ -3,35 +3,38 @@ pub fn ser_update_profile_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_profile::UpdateProfileInput,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.duration_seconds {
+    if let Some(var_1) = &input.accept_role_session_name {
+        object.key("acceptRoleSessionName").boolean(*var_1);
+    }
+    if let Some(var_2) = &input.duration_seconds {
         object.key("durationSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_2) = &input.managed_policy_arns {
-        let mut array_3 = object.key("managedPolicyArns").start_array();
-        for item_4 in var_2 {
+    if let Some(var_3) = &input.managed_policy_arns {
+        let mut array_4 = object.key("managedPolicyArns").start_array();
+        for item_5 in var_3 {
             {
-                array_3.value().string(item_4.as_str());
+                array_4.value().string(item_5.as_str());
             }
         }
-        array_3.finish();
+        array_4.finish();
     }
-    if let Some(var_5) = &input.name {
-        object.key("name").string(var_5.as_str());
+    if let Some(var_6) = &input.name {
+        object.key("name").string(var_6.as_str());
     }
-    if let Some(var_6) = &input.role_arns {
-        let mut array_7 = object.key("roleArns").start_array();
-        for item_8 in var_6 {
+    if let Some(var_7) = &input.role_arns {
+        let mut array_8 = object.key("roleArns").start_array();
+        for item_9 in var_7 {
             {
-                array_7.value().string(item_8.as_str());
+                array_8.value().string(item_9.as_str());
             }
         }
-        array_7.finish();
+        array_8.finish();
     }
-    if let Some(var_9) = &input.session_policy {
-        object.key("sessionPolicy").string(var_9.as_str());
+    if let Some(var_10) = &input.session_policy {
+        object.key("sessionPolicy").string(var_10.as_str());
     }
     Ok(())
 }

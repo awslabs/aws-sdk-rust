@@ -82,6 +82,10 @@ where
                                     .transpose()?,
                             );
                         }
+                        "acceptRoleSessionName" => {
+                            builder =
+                                builder.set_accept_role_session_name(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         "attributeMappings" => {
                             builder = builder.set_attribute_mappings(crate::protocol_serde::shape_attribute_mappings::de_attribute_mappings(tokens)?);
                         }

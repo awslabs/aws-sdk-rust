@@ -15,6 +15,8 @@ pub struct UpdateProfileInput {
     pub managed_policy_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Used to determine how long sessions vended using this profile are valid for. See the <code>Expiration</code> section of the <a href="https://docs.aws.amazon.com/rolesanywhere/latest/userguide/authentication-create-session.html#credentials-object">CreateSession API documentation</a> page for more details. In requests, if this value is not provided, the default value will be 3600.</p>
     pub duration_seconds: ::std::option::Option<i32>,
+    /// <p>Used to determine if a custom role session name will be accepted in a temporary credential request.</p>
+    pub accept_role_session_name: ::std::option::Option<bool>,
 }
 impl UpdateProfileInput {
     /// <p>The unique identifier of the profile.</p>
@@ -45,6 +47,10 @@ impl UpdateProfileInput {
     pub fn duration_seconds(&self) -> ::std::option::Option<i32> {
         self.duration_seconds
     }
+    /// <p>Used to determine if a custom role session name will be accepted in a temporary credential request.</p>
+    pub fn accept_role_session_name(&self) -> ::std::option::Option<bool> {
+        self.accept_role_session_name
+    }
 }
 impl UpdateProfileInput {
     /// Creates a new builder-style object to manufacture [`UpdateProfileInput`](crate::operation::update_profile::UpdateProfileInput).
@@ -63,6 +69,7 @@ pub struct UpdateProfileInputBuilder {
     pub(crate) role_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) managed_policy_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) duration_seconds: ::std::option::Option<i32>,
+    pub(crate) accept_role_session_name: ::std::option::Option<bool>,
 }
 impl UpdateProfileInputBuilder {
     /// <p>The unique identifier of the profile.</p>
@@ -162,6 +169,20 @@ impl UpdateProfileInputBuilder {
     pub fn get_duration_seconds(&self) -> &::std::option::Option<i32> {
         &self.duration_seconds
     }
+    /// <p>Used to determine if a custom role session name will be accepted in a temporary credential request.</p>
+    pub fn accept_role_session_name(mut self, input: bool) -> Self {
+        self.accept_role_session_name = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Used to determine if a custom role session name will be accepted in a temporary credential request.</p>
+    pub fn set_accept_role_session_name(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.accept_role_session_name = input;
+        self
+    }
+    /// <p>Used to determine if a custom role session name will be accepted in a temporary credential request.</p>
+    pub fn get_accept_role_session_name(&self) -> &::std::option::Option<bool> {
+        &self.accept_role_session_name
+    }
     /// Consumes the builder and constructs a [`UpdateProfileInput`](crate::operation::update_profile::UpdateProfileInput).
     pub fn build(
         self,
@@ -173,6 +194,7 @@ impl UpdateProfileInputBuilder {
             role_arns: self.role_arns,
             managed_policy_arns: self.managed_policy_arns,
             duration_seconds: self.duration_seconds,
+            accept_role_session_name: self.accept_role_session_name,
         })
     }
 }

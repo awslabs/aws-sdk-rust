@@ -20,6 +20,22 @@ pub fn de_retry_stage_execution_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "ConcurrentPipelineExecutionsLimitExceededException" => {
+            crate::operation::retry_stage_execution::RetryStageExecutionError::ConcurrentPipelineExecutionsLimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ConcurrentPipelineExecutionsLimitExceededExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_concurrent_pipeline_executions_limit_exceeded_exception::de_concurrent_pipeline_executions_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::retry_stage_execution::RetryStageExecutionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "ConflictException" => crate::operation::retry_stage_execution::RetryStageExecutionError::ConflictException({
             #[allow(unused_mut)]
             let mut tmp = {

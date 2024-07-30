@@ -14,6 +14,18 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "updateNsMetadata" => {
+                            builder = builder.set_update_ns_metadata(crate::protocol_serde::shape_update_ns_metadata::de_update_ns_metadata(tokens)?);
+                        }
+                        "modifyVnfInfoMetadata" => {
+                            builder = builder.set_modify_vnf_info_metadata(
+                                crate::protocol_serde::shape_modify_vnf_info_metadata::de_modify_vnf_info_metadata(tokens)?,
+                            );
+                        }
+                        "instantiateMetadata" => {
+                            builder =
+                                builder.set_instantiate_metadata(crate::protocol_serde::shape_instantiate_metadata::de_instantiate_metadata(tokens)?);
+                        }
                         "createdAt" => {
                             builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),

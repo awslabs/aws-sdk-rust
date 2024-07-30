@@ -115,6 +115,20 @@ impl ListSolNetworkOperationsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_sol_network_operations::paginator::ListSolNetworkOperationsPaginator {
         crate::operation::list_sol_network_operations::paginator::ListSolNetworkOperationsPaginator::new(self.handle, self.inner)
     }
+    /// <p>Network instance id filter, to retrieve network operations associated to a network instance.</p>
+    pub fn ns_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.ns_instance_id(input.into());
+        self
+    }
+    /// <p>Network instance id filter, to retrieve network operations associated to a network instance.</p>
+    pub fn set_ns_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_ns_instance_id(input);
+        self
+    }
+    /// <p>Network instance id filter, to retrieve network operations associated to a network instance.</p>
+    pub fn get_ns_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ns_instance_id()
+    }
     /// <p>The maximum number of results to include in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);

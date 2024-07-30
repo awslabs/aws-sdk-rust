@@ -21,6 +21,14 @@ where
                                     .transpose()?,
                             );
                         }
+                        "exactResponse" => {
+                            builder = builder.set_exact_response(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "exactResponseFields" => {
+                            builder = builder.set_exact_response_fields(
+                                    crate::protocol_serde::shape_bedrock_knowledge_store_exact_response_fields::de_bedrock_knowledge_store_exact_response_fields(tokens)?
+                                );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -49,6 +57,18 @@ pub fn ser_bedrock_knowledge_store_configuration(
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("bedrockKnowledgeBaseArn").string(input.bedrock_knowledge_base_arn.as_str());
+    }
+    if input.exact_response {
+        object.key("exactResponse").boolean(input.exact_response);
+    }
+    if let Some(var_1) = &input.exact_response_fields {
+        #[allow(unused_mut)]
+        let mut object_2 = object.key("exactResponseFields").start_object();
+        crate::protocol_serde::shape_bedrock_knowledge_store_exact_response_fields::ser_bedrock_knowledge_store_exact_response_fields(
+            &mut object_2,
+            var_1,
+        )?;
+        object_2.finish();
     }
     Ok(())
 }

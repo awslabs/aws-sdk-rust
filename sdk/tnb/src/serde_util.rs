@@ -488,6 +488,15 @@ pub(crate) fn problem_details_correct_errors(
     builder
 }
 
+pub(crate) fn instantiate_metadata_correct_errors(
+    mut builder: crate::types::builders::InstantiateMetadataBuilder,
+) -> crate::types::builders::InstantiateMetadataBuilder {
+    if builder.nsd_info_id.is_none() {
+        builder.nsd_info_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_sol_function_instance_info_correct_errors(
     mut builder: crate::types::builders::ListSolFunctionInstanceInfoBuilder,
 ) -> crate::types::builders::ListSolFunctionInstanceInfoBuilder {
@@ -615,6 +624,27 @@ pub(crate) fn list_sol_network_package_info_correct_errors(
             let builder = crate::types::builders::ListSolNetworkPackageMetadataBuilder::default();
             crate::serde_util::list_sol_network_package_metadata_correct_errors(builder).build().ok()
         }
+    }
+    builder
+}
+
+pub(crate) fn modify_vnf_info_metadata_correct_errors(
+    mut builder: crate::types::builders::ModifyVnfInfoMetadataBuilder,
+) -> crate::types::builders::ModifyVnfInfoMetadataBuilder {
+    if builder.vnf_instance_id.is_none() {
+        builder.vnf_instance_id = Some(Default::default())
+    }
+    if builder.vnf_configurable_properties.is_none() {
+        builder.vnf_configurable_properties = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn update_ns_metadata_correct_errors(
+    mut builder: crate::types::builders::UpdateNsMetadataBuilder,
+) -> crate::types::builders::UpdateNsMetadataBuilder {
+    if builder.nsd_info_id.is_none() {
+        builder.nsd_info_id = Some(Default::default())
     }
     builder
 }

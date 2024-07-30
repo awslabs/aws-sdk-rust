@@ -39,6 +39,16 @@ pub(crate) fn reflens_list_pipelines_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_rule_executions_output_output_next_token(
+    input: &crate::operation::list_rule_executions::ListRuleExecutionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_tags_for_resource_output_output_next_token(
     input: &crate::operation::list_tags_for_resource::ListTagsForResourceOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -90,6 +100,16 @@ pub(crate) fn lens_list_pipelines_output_output_pipelines(
     input: crate::operation::list_pipelines::ListPipelinesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PipelineSummary>> {
     let input = match input.pipelines {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_rule_executions_output_output_rule_execution_details(
+    input: crate::operation::list_rule_executions::ListRuleExecutionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RuleExecutionDetail>> {
+    let input = match input.rule_execution_details {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

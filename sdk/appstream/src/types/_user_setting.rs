@@ -11,7 +11,6 @@ pub struct UserSetting {
     /// <p>Specifies the number of characters that can be copied by end users from the local device to the remote session, and to the local device from the remote session.</p>
     /// <p>This can be specified only for the <code>CLIPBOARD_COPY_FROM_LOCAL_DEVICE</code> and <code>CLIPBOARD_COPY_TO_LOCAL_DEVICE</code> actions.</p>
     /// <p>This defaults to 20,971,520 (20 MB) when unspecified and the permission is <code>ENABLED</code>. This can't be specified when the permission is <code>DISABLED</code>.</p>
-    /// <p>This can only be specified for AlwaysOn and OnDemand fleets. The attribute is not supported on Elastic fleets.</p>
     /// <p>The value can be between 1 and 20,971,520 (20 MB).</p>
     pub maximum_length: ::std::option::Option<i32>,
 }
@@ -27,7 +26,6 @@ impl UserSetting {
     /// <p>Specifies the number of characters that can be copied by end users from the local device to the remote session, and to the local device from the remote session.</p>
     /// <p>This can be specified only for the <code>CLIPBOARD_COPY_FROM_LOCAL_DEVICE</code> and <code>CLIPBOARD_COPY_TO_LOCAL_DEVICE</code> actions.</p>
     /// <p>This defaults to 20,971,520 (20 MB) when unspecified and the permission is <code>ENABLED</code>. This can't be specified when the permission is <code>DISABLED</code>.</p>
-    /// <p>This can only be specified for AlwaysOn and OnDemand fleets. The attribute is not supported on Elastic fleets.</p>
     /// <p>The value can be between 1 and 20,971,520 (20 MB).</p>
     pub fn maximum_length(&self) -> ::std::option::Option<i32> {
         self.maximum_length
@@ -82,7 +80,6 @@ impl UserSettingBuilder {
     /// <p>Specifies the number of characters that can be copied by end users from the local device to the remote session, and to the local device from the remote session.</p>
     /// <p>This can be specified only for the <code>CLIPBOARD_COPY_FROM_LOCAL_DEVICE</code> and <code>CLIPBOARD_COPY_TO_LOCAL_DEVICE</code> actions.</p>
     /// <p>This defaults to 20,971,520 (20 MB) when unspecified and the permission is <code>ENABLED</code>. This can't be specified when the permission is <code>DISABLED</code>.</p>
-    /// <p>This can only be specified for AlwaysOn and OnDemand fleets. The attribute is not supported on Elastic fleets.</p>
     /// <p>The value can be between 1 and 20,971,520 (20 MB).</p>
     pub fn maximum_length(mut self, input: i32) -> Self {
         self.maximum_length = ::std::option::Option::Some(input);
@@ -91,7 +88,6 @@ impl UserSettingBuilder {
     /// <p>Specifies the number of characters that can be copied by end users from the local device to the remote session, and to the local device from the remote session.</p>
     /// <p>This can be specified only for the <code>CLIPBOARD_COPY_FROM_LOCAL_DEVICE</code> and <code>CLIPBOARD_COPY_TO_LOCAL_DEVICE</code> actions.</p>
     /// <p>This defaults to 20,971,520 (20 MB) when unspecified and the permission is <code>ENABLED</code>. This can't be specified when the permission is <code>DISABLED</code>.</p>
-    /// <p>This can only be specified for AlwaysOn and OnDemand fleets. The attribute is not supported on Elastic fleets.</p>
     /// <p>The value can be between 1 and 20,971,520 (20 MB).</p>
     pub fn set_maximum_length(mut self, input: ::std::option::Option<i32>) -> Self {
         self.maximum_length = input;
@@ -100,7 +96,6 @@ impl UserSettingBuilder {
     /// <p>Specifies the number of characters that can be copied by end users from the local device to the remote session, and to the local device from the remote session.</p>
     /// <p>This can be specified only for the <code>CLIPBOARD_COPY_FROM_LOCAL_DEVICE</code> and <code>CLIPBOARD_COPY_TO_LOCAL_DEVICE</code> actions.</p>
     /// <p>This defaults to 20,971,520 (20 MB) when unspecified and the permission is <code>ENABLED</code>. This can't be specified when the permission is <code>DISABLED</code>.</p>
-    /// <p>This can only be specified for AlwaysOn and OnDemand fleets. The attribute is not supported on Elastic fleets.</p>
     /// <p>The value can be between 1 and 20,971,520 (20 MB).</p>
     pub fn get_maximum_length(&self) -> &::std::option::Option<i32> {
         &self.maximum_length

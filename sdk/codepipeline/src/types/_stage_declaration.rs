@@ -12,6 +12,10 @@ pub struct StageDeclaration {
     pub actions: ::std::vec::Vec<crate::types::ActionDeclaration>,
     /// <p>The method to use when a stage has not completed successfully. For example, configuring this field for rollback will roll back a failed stage automatically to the last successful pipeline execution in the stage.</p>
     pub on_failure: ::std::option::Option<crate::types::FailureConditions>,
+    /// <p>The method to use when a stage has succeeded. For example, configuring this field for conditions will allow the stage to succeed when the conditions are met.</p>
+    pub on_success: ::std::option::Option<crate::types::SuccessConditions>,
+    /// <p>The method to use when a stage allows entry. For example, configuring this field for conditions will allow entry to the stage when the conditions are met.</p>
+    pub before_entry: ::std::option::Option<crate::types::BeforeEntryConditions>,
 }
 impl StageDeclaration {
     /// <p>The name of the stage.</p>
@@ -34,6 +38,14 @@ impl StageDeclaration {
     pub fn on_failure(&self) -> ::std::option::Option<&crate::types::FailureConditions> {
         self.on_failure.as_ref()
     }
+    /// <p>The method to use when a stage has succeeded. For example, configuring this field for conditions will allow the stage to succeed when the conditions are met.</p>
+    pub fn on_success(&self) -> ::std::option::Option<&crate::types::SuccessConditions> {
+        self.on_success.as_ref()
+    }
+    /// <p>The method to use when a stage allows entry. For example, configuring this field for conditions will allow entry to the stage when the conditions are met.</p>
+    pub fn before_entry(&self) -> ::std::option::Option<&crate::types::BeforeEntryConditions> {
+        self.before_entry.as_ref()
+    }
 }
 impl StageDeclaration {
     /// Creates a new builder-style object to manufacture [`StageDeclaration`](crate::types::StageDeclaration).
@@ -50,6 +62,8 @@ pub struct StageDeclarationBuilder {
     pub(crate) blockers: ::std::option::Option<::std::vec::Vec<crate::types::BlockerDeclaration>>,
     pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::ActionDeclaration>>,
     pub(crate) on_failure: ::std::option::Option<crate::types::FailureConditions>,
+    pub(crate) on_success: ::std::option::Option<crate::types::SuccessConditions>,
+    pub(crate) before_entry: ::std::option::Option<crate::types::BeforeEntryConditions>,
 }
 impl StageDeclarationBuilder {
     /// <p>The name of the stage.</p>
@@ -121,6 +135,34 @@ impl StageDeclarationBuilder {
     pub fn get_on_failure(&self) -> &::std::option::Option<crate::types::FailureConditions> {
         &self.on_failure
     }
+    /// <p>The method to use when a stage has succeeded. For example, configuring this field for conditions will allow the stage to succeed when the conditions are met.</p>
+    pub fn on_success(mut self, input: crate::types::SuccessConditions) -> Self {
+        self.on_success = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The method to use when a stage has succeeded. For example, configuring this field for conditions will allow the stage to succeed when the conditions are met.</p>
+    pub fn set_on_success(mut self, input: ::std::option::Option<crate::types::SuccessConditions>) -> Self {
+        self.on_success = input;
+        self
+    }
+    /// <p>The method to use when a stage has succeeded. For example, configuring this field for conditions will allow the stage to succeed when the conditions are met.</p>
+    pub fn get_on_success(&self) -> &::std::option::Option<crate::types::SuccessConditions> {
+        &self.on_success
+    }
+    /// <p>The method to use when a stage allows entry. For example, configuring this field for conditions will allow entry to the stage when the conditions are met.</p>
+    pub fn before_entry(mut self, input: crate::types::BeforeEntryConditions) -> Self {
+        self.before_entry = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The method to use when a stage allows entry. For example, configuring this field for conditions will allow entry to the stage when the conditions are met.</p>
+    pub fn set_before_entry(mut self, input: ::std::option::Option<crate::types::BeforeEntryConditions>) -> Self {
+        self.before_entry = input;
+        self
+    }
+    /// <p>The method to use when a stage allows entry. For example, configuring this field for conditions will allow entry to the stage when the conditions are met.</p>
+    pub fn get_before_entry(&self) -> &::std::option::Option<crate::types::BeforeEntryConditions> {
+        &self.before_entry
+    }
     /// Consumes the builder and constructs a [`StageDeclaration`](crate::types::StageDeclaration).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::StageDeclarationBuilder::name)
@@ -141,6 +183,8 @@ impl StageDeclarationBuilder {
                 )
             })?,
             on_failure: self.on_failure,
+            on_success: self.on_success,
+            before_entry: self.before_entry,
         })
     }
 }

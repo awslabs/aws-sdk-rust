@@ -38,6 +38,21 @@ where
                         "latestExecution" => {
                             builder = builder.set_latest_execution(crate::protocol_serde::shape_stage_execution::de_stage_execution(tokens)?);
                         }
+                        "beforeEntryConditionState" => {
+                            builder = builder.set_before_entry_condition_state(
+                                crate::protocol_serde::shape_stage_condition_state::de_stage_condition_state(tokens)?,
+                            );
+                        }
+                        "onSuccessConditionState" => {
+                            builder = builder.set_on_success_condition_state(
+                                crate::protocol_serde::shape_stage_condition_state::de_stage_condition_state(tokens)?,
+                            );
+                        }
+                        "onFailureConditionState" => {
+                            builder = builder.set_on_failure_condition_state(
+                                crate::protocol_serde::shape_stage_condition_state::de_stage_condition_state(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

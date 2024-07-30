@@ -250,6 +250,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PutActionRevi
 pub enum PutActionRevisionError {
     /// <p>The specified action cannot be found.</p>
     ActionNotFoundException(crate::types::error::ActionNotFoundException),
+    /// <p>The pipeline has reached the limit for concurrent pipeline executions.</p>
+    ConcurrentPipelineExecutionsLimitExceededException(crate::types::error::ConcurrentPipelineExecutionsLimitExceededException),
     /// <p>The pipeline was specified in an invalid format or cannot be found.</p>
     PipelineNotFoundException(crate::types::error::PipelineNotFoundException),
     /// <p>The stage was specified in an invalid format or cannot be found.</p>
@@ -290,6 +292,7 @@ impl PutActionRevisionError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::ActionNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ConcurrentPipelineExecutionsLimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::PipelineNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::StageNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -299,6 +302,10 @@ impl PutActionRevisionError {
     /// Returns `true` if the error kind is `PutActionRevisionError::ActionNotFoundException`.
     pub fn is_action_not_found_exception(&self) -> bool {
         matches!(self, Self::ActionNotFoundException(_))
+    }
+    /// Returns `true` if the error kind is `PutActionRevisionError::ConcurrentPipelineExecutionsLimitExceededException`.
+    pub fn is_concurrent_pipeline_executions_limit_exceeded_exception(&self) -> bool {
+        matches!(self, Self::ConcurrentPipelineExecutionsLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `PutActionRevisionError::PipelineNotFoundException`.
     pub fn is_pipeline_not_found_exception(&self) -> bool {
@@ -317,6 +324,7 @@ impl ::std::error::Error for PutActionRevisionError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::ActionNotFoundException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ConcurrentPipelineExecutionsLimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::PipelineNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::StageNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
@@ -328,6 +336,7 @@ impl ::std::fmt::Display for PutActionRevisionError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::ActionNotFoundException(_inner) => _inner.fmt(f),
+            Self::ConcurrentPipelineExecutionsLimitExceededException(_inner) => _inner.fmt(f),
             Self::PipelineNotFoundException(_inner) => _inner.fmt(f),
             Self::StageNotFoundException(_inner) => _inner.fmt(f),
             Self::ValidationException(_inner) => _inner.fmt(f),
@@ -353,6 +362,9 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for PutActionRevi
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::ActionNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ConcurrentPipelineExecutionsLimitExceededException(_inner) => {
+                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
             Self::PipelineNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::StageNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

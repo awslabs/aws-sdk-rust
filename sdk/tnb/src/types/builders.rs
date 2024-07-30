@@ -9,6 +9,8 @@ pub use crate::types::_validate_sol_function_package_content_metadata::ValidateS
 
 pub use crate::types::_function_artifact_meta::FunctionArtifactMetaBuilder;
 
+pub use crate::types::_update_sol_network_service_data::UpdateSolNetworkServiceDataBuilder;
+
 pub use crate::types::_update_sol_network_modify::UpdateSolNetworkModifyBuilder;
 
 pub use crate::types::_put_sol_network_package_content_metadata::PutSolNetworkPackageContentMetadataBuilder;
@@ -46,6 +48,12 @@ pub use crate::types::_get_sol_network_operation_task_details::GetSolNetworkOper
 pub use crate::types::_error_info::ErrorInfoBuilder;
 
 pub use crate::types::_get_sol_network_operation_metadata::GetSolNetworkOperationMetadataBuilder;
+
+pub use crate::types::_instantiate_metadata::InstantiateMetadataBuilder;
+
+pub use crate::types::_modify_vnf_info_metadata::ModifyVnfInfoMetadataBuilder;
+
+pub use crate::types::_update_ns_metadata::UpdateNsMetadataBuilder;
 
 pub use crate::types::_get_sol_network_instance_metadata::GetSolNetworkInstanceMetadataBuilder;
 

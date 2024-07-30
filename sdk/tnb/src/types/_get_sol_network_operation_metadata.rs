@@ -5,12 +5,30 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSolNetworkOperationMetadata {
+    /// <p>Metadata related to the network operation occurrence for network instance updates. This is populated only if the lcmOperationType is <code>UPDATE</code> and the updateType is <code>UPDATE_NS</code>.</p>
+    pub update_ns_metadata: ::std::option::Option<crate::types::UpdateNsMetadata>,
+    /// <p>Metadata related to the network operation occurrence for network function updates in a network instance. This is populated only if the lcmOperationType is <code>UPDATE</code> and the updateType is <code>MODIFY_VNF_INFORMATION</code>.</p>
+    pub modify_vnf_info_metadata: ::std::option::Option<crate::types::ModifyVnfInfoMetadata>,
+    /// <p>Metadata related to the network operation occurrence for network instantiation. This is populated only if the lcmOperationType is <code>INSTANTIATE</code>.</p>
+    pub instantiate_metadata: ::std::option::Option<crate::types::InstantiateMetadata>,
     /// <p>The date that the resource was created.</p>
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The date that the resource was last modified.</p>
     pub last_modified: ::aws_smithy_types::DateTime,
 }
 impl GetSolNetworkOperationMetadata {
+    /// <p>Metadata related to the network operation occurrence for network instance updates. This is populated only if the lcmOperationType is <code>UPDATE</code> and the updateType is <code>UPDATE_NS</code>.</p>
+    pub fn update_ns_metadata(&self) -> ::std::option::Option<&crate::types::UpdateNsMetadata> {
+        self.update_ns_metadata.as_ref()
+    }
+    /// <p>Metadata related to the network operation occurrence for network function updates in a network instance. This is populated only if the lcmOperationType is <code>UPDATE</code> and the updateType is <code>MODIFY_VNF_INFORMATION</code>.</p>
+    pub fn modify_vnf_info_metadata(&self) -> ::std::option::Option<&crate::types::ModifyVnfInfoMetadata> {
+        self.modify_vnf_info_metadata.as_ref()
+    }
+    /// <p>Metadata related to the network operation occurrence for network instantiation. This is populated only if the lcmOperationType is <code>INSTANTIATE</code>.</p>
+    pub fn instantiate_metadata(&self) -> ::std::option::Option<&crate::types::InstantiateMetadata> {
+        self.instantiate_metadata.as_ref()
+    }
     /// <p>The date that the resource was created.</p>
     pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
         &self.created_at
@@ -31,10 +49,55 @@ impl GetSolNetworkOperationMetadata {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct GetSolNetworkOperationMetadataBuilder {
+    pub(crate) update_ns_metadata: ::std::option::Option<crate::types::UpdateNsMetadata>,
+    pub(crate) modify_vnf_info_metadata: ::std::option::Option<crate::types::ModifyVnfInfoMetadata>,
+    pub(crate) instantiate_metadata: ::std::option::Option<crate::types::InstantiateMetadata>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl GetSolNetworkOperationMetadataBuilder {
+    /// <p>Metadata related to the network operation occurrence for network instance updates. This is populated only if the lcmOperationType is <code>UPDATE</code> and the updateType is <code>UPDATE_NS</code>.</p>
+    pub fn update_ns_metadata(mut self, input: crate::types::UpdateNsMetadata) -> Self {
+        self.update_ns_metadata = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Metadata related to the network operation occurrence for network instance updates. This is populated only if the lcmOperationType is <code>UPDATE</code> and the updateType is <code>UPDATE_NS</code>.</p>
+    pub fn set_update_ns_metadata(mut self, input: ::std::option::Option<crate::types::UpdateNsMetadata>) -> Self {
+        self.update_ns_metadata = input;
+        self
+    }
+    /// <p>Metadata related to the network operation occurrence for network instance updates. This is populated only if the lcmOperationType is <code>UPDATE</code> and the updateType is <code>UPDATE_NS</code>.</p>
+    pub fn get_update_ns_metadata(&self) -> &::std::option::Option<crate::types::UpdateNsMetadata> {
+        &self.update_ns_metadata
+    }
+    /// <p>Metadata related to the network operation occurrence for network function updates in a network instance. This is populated only if the lcmOperationType is <code>UPDATE</code> and the updateType is <code>MODIFY_VNF_INFORMATION</code>.</p>
+    pub fn modify_vnf_info_metadata(mut self, input: crate::types::ModifyVnfInfoMetadata) -> Self {
+        self.modify_vnf_info_metadata = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Metadata related to the network operation occurrence for network function updates in a network instance. This is populated only if the lcmOperationType is <code>UPDATE</code> and the updateType is <code>MODIFY_VNF_INFORMATION</code>.</p>
+    pub fn set_modify_vnf_info_metadata(mut self, input: ::std::option::Option<crate::types::ModifyVnfInfoMetadata>) -> Self {
+        self.modify_vnf_info_metadata = input;
+        self
+    }
+    /// <p>Metadata related to the network operation occurrence for network function updates in a network instance. This is populated only if the lcmOperationType is <code>UPDATE</code> and the updateType is <code>MODIFY_VNF_INFORMATION</code>.</p>
+    pub fn get_modify_vnf_info_metadata(&self) -> &::std::option::Option<crate::types::ModifyVnfInfoMetadata> {
+        &self.modify_vnf_info_metadata
+    }
+    /// <p>Metadata related to the network operation occurrence for network instantiation. This is populated only if the lcmOperationType is <code>INSTANTIATE</code>.</p>
+    pub fn instantiate_metadata(mut self, input: crate::types::InstantiateMetadata) -> Self {
+        self.instantiate_metadata = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Metadata related to the network operation occurrence for network instantiation. This is populated only if the lcmOperationType is <code>INSTANTIATE</code>.</p>
+    pub fn set_instantiate_metadata(mut self, input: ::std::option::Option<crate::types::InstantiateMetadata>) -> Self {
+        self.instantiate_metadata = input;
+        self
+    }
+    /// <p>Metadata related to the network operation occurrence for network instantiation. This is populated only if the lcmOperationType is <code>INSTANTIATE</code>.</p>
+    pub fn get_instantiate_metadata(&self) -> &::std::option::Option<crate::types::InstantiateMetadata> {
+        &self.instantiate_metadata
+    }
     /// <p>The date that the resource was created.</p>
     /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -71,6 +134,9 @@ impl GetSolNetworkOperationMetadataBuilder {
     /// - [`last_modified`](crate::types::builders::GetSolNetworkOperationMetadataBuilder::last_modified)
     pub fn build(self) -> ::std::result::Result<crate::types::GetSolNetworkOperationMetadata, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::GetSolNetworkOperationMetadata {
+            update_ns_metadata: self.update_ns_metadata,
+            modify_vnf_info_metadata: self.modify_vnf_info_metadata,
+            instantiate_metadata: self.instantiate_metadata,
             created_at: self.created_at.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",

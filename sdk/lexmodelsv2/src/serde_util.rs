@@ -659,6 +659,18 @@ pub(crate) fn audio_log_setting_correct_errors(
     builder
 }
 
+pub(crate) fn bedrock_guardrail_configuration_correct_errors(
+    mut builder: crate::types::builders::BedrockGuardrailConfigurationBuilder,
+) -> crate::types::builders::BedrockGuardrailConfigurationBuilder {
+    if builder.identifier.is_none() {
+        builder.identifier = Some(Default::default())
+    }
+    if builder.version.is_none() {
+        builder.version = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn bedrock_knowledge_store_configuration_correct_errors(
     mut builder: crate::types::builders::BedrockKnowledgeStoreConfigurationBuilder,
 ) -> crate::types::builders::BedrockKnowledgeStoreConfigurationBuilder {

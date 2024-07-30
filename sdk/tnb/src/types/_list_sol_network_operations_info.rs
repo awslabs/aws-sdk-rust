@@ -14,6 +14,8 @@ pub struct ListSolNetworkOperationsInfo {
     pub ns_instance_id: ::std::string::String,
     /// <p>Type of lifecycle management network operation.</p>
     pub lcm_operation_type: crate::types::LcmOperationType,
+    /// <p>Type of the update. Only present if the network operation lcmOperationType is <code>UPDATE</code>.</p>
+    pub update_type: ::std::option::Option<crate::types::UpdateSolNetworkType>,
     /// <p>Error related to this specific network operation.</p>
     pub error: ::std::option::Option<crate::types::ProblemDetails>,
     /// <p>Metadata related to this network operation.</p>
@@ -43,6 +45,10 @@ impl ListSolNetworkOperationsInfo {
     pub fn lcm_operation_type(&self) -> &crate::types::LcmOperationType {
         &self.lcm_operation_type
     }
+    /// <p>Type of the update. Only present if the network operation lcmOperationType is <code>UPDATE</code>.</p>
+    pub fn update_type(&self) -> ::std::option::Option<&crate::types::UpdateSolNetworkType> {
+        self.update_type.as_ref()
+    }
     /// <p>Error related to this specific network operation.</p>
     pub fn error(&self) -> ::std::option::Option<&crate::types::ProblemDetails> {
         self.error.as_ref()
@@ -68,6 +74,7 @@ pub struct ListSolNetworkOperationsInfoBuilder {
     pub(crate) operation_state: ::std::option::Option<crate::types::NsLcmOperationState>,
     pub(crate) ns_instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) lcm_operation_type: ::std::option::Option<crate::types::LcmOperationType>,
+    pub(crate) update_type: ::std::option::Option<crate::types::UpdateSolNetworkType>,
     pub(crate) error: ::std::option::Option<crate::types::ProblemDetails>,
     pub(crate) metadata: ::std::option::Option<crate::types::ListSolNetworkOperationsMetadata>,
 }
@@ -147,6 +154,20 @@ impl ListSolNetworkOperationsInfoBuilder {
     pub fn get_lcm_operation_type(&self) -> &::std::option::Option<crate::types::LcmOperationType> {
         &self.lcm_operation_type
     }
+    /// <p>Type of the update. Only present if the network operation lcmOperationType is <code>UPDATE</code>.</p>
+    pub fn update_type(mut self, input: crate::types::UpdateSolNetworkType) -> Self {
+        self.update_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Type of the update. Only present if the network operation lcmOperationType is <code>UPDATE</code>.</p>
+    pub fn set_update_type(mut self, input: ::std::option::Option<crate::types::UpdateSolNetworkType>) -> Self {
+        self.update_type = input;
+        self
+    }
+    /// <p>Type of the update. Only present if the network operation lcmOperationType is <code>UPDATE</code>.</p>
+    pub fn get_update_type(&self) -> &::std::option::Option<crate::types::UpdateSolNetworkType> {
+        &self.update_type
+    }
     /// <p>Error related to this specific network operation.</p>
     pub fn error(mut self, input: crate::types::ProblemDetails) -> Self {
         self.error = ::std::option::Option::Some(input);
@@ -214,6 +235,7 @@ impl ListSolNetworkOperationsInfoBuilder {
                     "lcm_operation_type was not specified but it is required when building ListSolNetworkOperationsInfo",
                 )
             })?,
+            update_type: self.update_type,
             error: self.error,
             metadata: self.metadata,
         })

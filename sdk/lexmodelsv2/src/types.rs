@@ -127,9 +127,15 @@ pub use crate::types::_qn_a_intent_configuration::QnAIntentConfiguration;
 
 pub use crate::types::_bedrock_model_specification::BedrockModelSpecification;
 
+pub use crate::types::_bedrock_trace_status::BedrockTraceStatus;
+
+pub use crate::types::_bedrock_guardrail_configuration::BedrockGuardrailConfiguration;
+
 pub use crate::types::_data_source_configuration::DataSourceConfiguration;
 
 pub use crate::types::_bedrock_knowledge_store_configuration::BedrockKnowledgeStoreConfiguration;
+
+pub use crate::types::_bedrock_knowledge_store_exact_response_fields::BedrockKnowledgeStoreExactResponseFields;
 
 pub use crate::types::_qn_a_kendra_configuration::QnAKendraConfiguration;
 
@@ -849,9 +855,15 @@ mod _audio_recognition_strategy;
 
 mod _audio_specification;
 
+mod _bedrock_guardrail_configuration;
+
 mod _bedrock_knowledge_store_configuration;
 
+mod _bedrock_knowledge_store_exact_response_fields;
+
 mod _bedrock_model_specification;
+
+mod _bedrock_trace_status;
 
 mod _bot_alias_history_event;
 

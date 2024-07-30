@@ -20,6 +20,15 @@ pub(crate) fn list_action_types_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_rule_types_output_output_correct_errors(
+    mut builder: crate::operation::list_rule_types::builders::ListRuleTypesOutputBuilder,
+) -> crate::operation::list_rule_types::builders::ListRuleTypesOutputBuilder {
+    if builder.rule_types.is_none() {
+        builder.rule_types = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn rollback_stage_output_output_correct_errors(
     mut builder: crate::operation::rollback_stage::builders::RollbackStageOutputBuilder,
 ) -> crate::operation::rollback_stage::builders::RollbackStageOutputBuilder {
@@ -205,6 +214,22 @@ pub(crate) fn artifact_store_correct_errors(
     builder
 }
 
+pub(crate) fn rule_type_correct_errors(mut builder: crate::types::builders::RuleTypeBuilder) -> crate::types::builders::RuleTypeBuilder {
+    if builder.id.is_none() {
+        builder.id = {
+            let builder = crate::types::builders::RuleTypeIdBuilder::default();
+            crate::serde_util::rule_type_id_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.input_artifact_details.is_none() {
+        builder.input_artifact_details = {
+            let builder = crate::types::builders::ArtifactDetailsBuilder::default();
+            Some(crate::serde_util::artifact_details_correct_errors(builder).build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn tag_correct_errors(mut builder: crate::types::builders::TagBuilder) -> crate::types::builders::TagBuilder {
     if builder.key.is_none() {
         builder.key = Some(Default::default())
@@ -329,6 +354,16 @@ pub(crate) fn pipeline_variable_declaration_correct_errors(
     builder
 }
 
+pub(crate) fn rule_type_id_correct_errors(mut builder: crate::types::builders::RuleTypeIdBuilder) -> crate::types::builders::RuleTypeIdBuilder {
+    if builder.category.is_none() {
+        builder.category = "no value was set".parse::<crate::types::RuleCategory>().ok()
+    }
+    if builder.provider.is_none() {
+        builder.provider = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn stage_declaration_correct_errors(
     mut builder: crate::types::builders::StageDeclarationBuilder,
 ) -> crate::types::builders::StageDeclarationBuilder {
@@ -353,6 +388,15 @@ pub(crate) fn stage_execution_correct_errors(
     builder
 }
 
+pub(crate) fn before_entry_conditions_correct_errors(
+    mut builder: crate::types::builders::BeforeEntryConditionsBuilder,
+) -> crate::types::builders::BeforeEntryConditionsBuilder {
+    if builder.conditions.is_none() {
+        builder.conditions = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn git_configuration_correct_errors(
     mut builder: crate::types::builders::GitConfigurationBuilder,
 ) -> crate::types::builders::GitConfigurationBuilder {
@@ -371,11 +415,38 @@ pub(crate) fn lambda_executor_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn rule_configuration_property_correct_errors(
+    mut builder: crate::types::builders::RuleConfigurationPropertyBuilder,
+) -> crate::types::builders::RuleConfigurationPropertyBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.required.is_none() {
+        builder.required = Some(Default::default())
+    }
+    if builder.key.is_none() {
+        builder.key = Some(Default::default())
+    }
+    if builder.secret.is_none() {
+        builder.secret = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn source_revision_correct_errors(
     mut builder: crate::types::builders::SourceRevisionBuilder,
 ) -> crate::types::builders::SourceRevisionBuilder {
     if builder.action_name.is_none() {
         builder.action_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn success_conditions_correct_errors(
+    mut builder: crate::types::builders::SuccessConditionsBuilder,
+) -> crate::types::builders::SuccessConditionsBuilder {
+    if builder.conditions.is_none() {
+        builder.conditions = Some(Default::default())
     }
     builder
 }
@@ -457,6 +528,34 @@ pub(crate) fn output_artifact_correct_errors(
 ) -> crate::types::builders::OutputArtifactBuilder {
     if builder.name.is_none() {
         builder.name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn rule_declaration_correct_errors(
+    mut builder: crate::types::builders::RuleDeclarationBuilder,
+) -> crate::types::builders::RuleDeclarationBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.rule_type_id.is_none() {
+        builder.rule_type_id = {
+            let builder = crate::types::builders::RuleTypeIdBuilder::default();
+            crate::serde_util::rule_type_id_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn rule_revision_correct_errors(mut builder: crate::types::builders::RuleRevisionBuilder) -> crate::types::builders::RuleRevisionBuilder {
+    if builder.revision_id.is_none() {
+        builder.revision_id = Some(Default::default())
+    }
+    if builder.revision_change_id.is_none() {
+        builder.revision_change_id = Some(Default::default())
+    }
+    if builder.created.is_none() {
+        builder.created = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }

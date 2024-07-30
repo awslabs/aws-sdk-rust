@@ -105,9 +105,13 @@ pub use crate::types::_qn_a_intent_configuration::QnAIntentConfigurationBuilder;
 
 pub use crate::types::_bedrock_model_specification::BedrockModelSpecificationBuilder;
 
+pub use crate::types::_bedrock_guardrail_configuration::BedrockGuardrailConfigurationBuilder;
+
 pub use crate::types::_data_source_configuration::DataSourceConfigurationBuilder;
 
 pub use crate::types::_bedrock_knowledge_store_configuration::BedrockKnowledgeStoreConfigurationBuilder;
+
+pub use crate::types::_bedrock_knowledge_store_exact_response_fields::BedrockKnowledgeStoreExactResponseFieldsBuilder;
 
 pub use crate::types::_qn_a_kendra_configuration::QnAKendraConfigurationBuilder;
 

@@ -5,12 +5,28 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSolNetworkOperationsMetadata {
+    /// <p>The network service descriptor id used for the operation.</p>
+    /// <p>Only present if the updateType is <code>UPDATE_NS</code>.</p>
+    pub nsd_info_id: ::std::option::Option<::std::string::String>,
+    /// <p>The network function id used for the operation.</p>
+    /// <p>Only present if the updateType is <code>MODIFY_VNF_INFO</code>.</p>
+    pub vnf_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The date that the resource was created.</p>
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The date that the resource was last modified.</p>
     pub last_modified: ::aws_smithy_types::DateTime,
 }
 impl ListSolNetworkOperationsMetadata {
+    /// <p>The network service descriptor id used for the operation.</p>
+    /// <p>Only present if the updateType is <code>UPDATE_NS</code>.</p>
+    pub fn nsd_info_id(&self) -> ::std::option::Option<&str> {
+        self.nsd_info_id.as_deref()
+    }
+    /// <p>The network function id used for the operation.</p>
+    /// <p>Only present if the updateType is <code>MODIFY_VNF_INFO</code>.</p>
+    pub fn vnf_instance_id(&self) -> ::std::option::Option<&str> {
+        self.vnf_instance_id.as_deref()
+    }
     /// <p>The date that the resource was created.</p>
     pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
         &self.created_at
@@ -31,10 +47,46 @@ impl ListSolNetworkOperationsMetadata {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct ListSolNetworkOperationsMetadataBuilder {
+    pub(crate) nsd_info_id: ::std::option::Option<::std::string::String>,
+    pub(crate) vnf_instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ListSolNetworkOperationsMetadataBuilder {
+    /// <p>The network service descriptor id used for the operation.</p>
+    /// <p>Only present if the updateType is <code>UPDATE_NS</code>.</p>
+    pub fn nsd_info_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.nsd_info_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The network service descriptor id used for the operation.</p>
+    /// <p>Only present if the updateType is <code>UPDATE_NS</code>.</p>
+    pub fn set_nsd_info_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.nsd_info_id = input;
+        self
+    }
+    /// <p>The network service descriptor id used for the operation.</p>
+    /// <p>Only present if the updateType is <code>UPDATE_NS</code>.</p>
+    pub fn get_nsd_info_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.nsd_info_id
+    }
+    /// <p>The network function id used for the operation.</p>
+    /// <p>Only present if the updateType is <code>MODIFY_VNF_INFO</code>.</p>
+    pub fn vnf_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vnf_instance_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The network function id used for the operation.</p>
+    /// <p>Only present if the updateType is <code>MODIFY_VNF_INFO</code>.</p>
+    pub fn set_vnf_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.vnf_instance_id = input;
+        self
+    }
+    /// <p>The network function id used for the operation.</p>
+    /// <p>Only present if the updateType is <code>MODIFY_VNF_INFO</code>.</p>
+    pub fn get_vnf_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vnf_instance_id
+    }
     /// <p>The date that the resource was created.</p>
     /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -71,6 +123,8 @@ impl ListSolNetworkOperationsMetadataBuilder {
     /// - [`last_modified`](crate::types::builders::ListSolNetworkOperationsMetadataBuilder::last_modified)
     pub fn build(self) -> ::std::result::Result<crate::types::ListSolNetworkOperationsMetadata, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ListSolNetworkOperationsMetadata {
+            nsd_info_id: self.nsd_info_id,
+            vnf_instance_id: self.vnf_instance_id,
             created_at: self.created_at.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",

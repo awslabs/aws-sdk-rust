@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Capacity {
-    /// <p>The desired number of user sessions for a multi-session pool. This is not allowed for single-session pools.</p>
+    /// <p>The desired number of user sessions for the WorkSpaces in the pool.</p>
     pub desired_user_sessions: i32,
 }
 impl Capacity {
-    /// <p>The desired number of user sessions for a multi-session pool. This is not allowed for single-session pools.</p>
+    /// <p>The desired number of user sessions for the WorkSpaces in the pool.</p>
     pub fn desired_user_sessions(&self) -> i32 {
         self.desired_user_sessions
     }
@@ -27,18 +27,18 @@ pub struct CapacityBuilder {
     pub(crate) desired_user_sessions: ::std::option::Option<i32>,
 }
 impl CapacityBuilder {
-    /// <p>The desired number of user sessions for a multi-session pool. This is not allowed for single-session pools.</p>
+    /// <p>The desired number of user sessions for the WorkSpaces in the pool.</p>
     /// This field is required.
     pub fn desired_user_sessions(mut self, input: i32) -> Self {
         self.desired_user_sessions = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The desired number of user sessions for a multi-session pool. This is not allowed for single-session pools.</p>
+    /// <p>The desired number of user sessions for the WorkSpaces in the pool.</p>
     pub fn set_desired_user_sessions(mut self, input: ::std::option::Option<i32>) -> Self {
         self.desired_user_sessions = input;
         self
     }
-    /// <p>The desired number of user sessions for a multi-session pool. This is not allowed for single-session pools.</p>
+    /// <p>The desired number of user sessions for the WorkSpaces in the pool.</p>
     pub fn get_desired_user_sessions(&self) -> &::std::option::Option<i32> {
         &self.desired_user_sessions
     }

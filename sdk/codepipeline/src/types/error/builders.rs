@@ -67,6 +67,8 @@ pub use crate::types::error::_approval_already_completed_exception::ApprovalAlre
 
 pub use crate::types::error::_action_not_found_exception::ActionNotFoundExceptionBuilder;
 
+pub use crate::types::error::_condition_not_overridable_exception::ConditionNotOverridableExceptionBuilder;
+
 pub use crate::types::error::_invalid_next_token_exception::InvalidNextTokenExceptionBuilder;
 
 pub use crate::types::error::_invalid_job_exception::InvalidJobExceptionBuilder;

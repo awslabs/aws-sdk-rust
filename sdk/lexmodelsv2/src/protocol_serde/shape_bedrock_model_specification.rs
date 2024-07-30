@@ -21,6 +21,25 @@ where
                                     .transpose()?,
                             );
                         }
+                        "guardrail" => {
+                            builder = builder.set_guardrail(
+                                crate::protocol_serde::shape_bedrock_guardrail_configuration::de_bedrock_guardrail_configuration(tokens)?,
+                            );
+                        }
+                        "traceStatus" => {
+                            builder = builder.set_trace_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::BedrockTraceStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "customPrompt" => {
+                            builder = builder.set_custom_prompt(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -49,6 +68,18 @@ pub fn ser_bedrock_model_specification(
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("modelArn").string(input.model_arn.as_str());
+    }
+    if let Some(var_1) = &input.guardrail {
+        #[allow(unused_mut)]
+        let mut object_2 = object.key("guardrail").start_object();
+        crate::protocol_serde::shape_bedrock_guardrail_configuration::ser_bedrock_guardrail_configuration(&mut object_2, var_1)?;
+        object_2.finish();
+    }
+    if let Some(var_3) = &input.trace_status {
+        object.key("traceStatus").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.custom_prompt {
+        object.key("customPrompt").string(var_4.as_str());
     }
     Ok(())
 }

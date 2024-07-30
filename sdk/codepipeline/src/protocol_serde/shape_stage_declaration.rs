@@ -36,6 +36,18 @@ pub fn ser_stage_declaration(
         crate::protocol_serde::shape_failure_conditions::ser_failure_conditions(&mut object_9, var_8)?;
         object_9.finish();
     }
+    if let Some(var_10) = &input.on_success {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("onSuccess").start_object();
+        crate::protocol_serde::shape_success_conditions::ser_success_conditions(&mut object_11, var_10)?;
+        object_11.finish();
+    }
+    if let Some(var_12) = &input.before_entry {
+        #[allow(unused_mut)]
+        let mut object_13 = object.key("beforeEntry").start_object();
+        crate::protocol_serde::shape_before_entry_conditions::ser_before_entry_conditions(&mut object_13, var_12)?;
+        object_13.finish();
+    }
     Ok(())
 }
 
@@ -72,6 +84,13 @@ where
                         }
                         "onFailure" => {
                             builder = builder.set_on_failure(crate::protocol_serde::shape_failure_conditions::de_failure_conditions(tokens)?);
+                        }
+                        "onSuccess" => {
+                            builder = builder.set_on_success(crate::protocol_serde::shape_success_conditions::de_success_conditions(tokens)?);
+                        }
+                        "beforeEntry" => {
+                            builder =
+                                builder.set_before_entry(crate::protocol_serde::shape_before_entry_conditions::de_before_entry_conditions(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

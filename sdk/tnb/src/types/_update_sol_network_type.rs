@@ -13,6 +13,7 @@
 /// # let updatesolnetworktype = unimplemented!();
 /// match updatesolnetworktype {
 ///     UpdateSolNetworkType::ModifyVnfInformation => { /* ... */ },
+///     UpdateSolNetworkType::UpdateNs => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -42,6 +43,8 @@
 pub enum UpdateSolNetworkType {
     #[allow(missing_docs)] // documentation missing in model
     ModifyVnfInformation,
+    #[allow(missing_docs)] // documentation missing in model
+    UpdateNs,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -50,6 +53,7 @@ impl ::std::convert::From<&str> for UpdateSolNetworkType {
     fn from(s: &str) -> Self {
         match s {
             "MODIFY_VNF_INFORMATION" => UpdateSolNetworkType::ModifyVnfInformation,
+            "UPDATE_NS" => UpdateSolNetworkType::UpdateNs,
             other => UpdateSolNetworkType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -66,12 +70,13 @@ impl UpdateSolNetworkType {
     pub fn as_str(&self) -> &str {
         match self {
             UpdateSolNetworkType::ModifyVnfInformation => "MODIFY_VNF_INFORMATION",
+            UpdateSolNetworkType::UpdateNs => "UPDATE_NS",
             UpdateSolNetworkType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["MODIFY_VNF_INFORMATION"]
+        &["MODIFY_VNF_INFORMATION", "UPDATE_NS"]
     }
 }
 impl ::std::convert::AsRef<str> for UpdateSolNetworkType {
@@ -95,6 +100,7 @@ impl ::std::fmt::Display for UpdateSolNetworkType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             UpdateSolNetworkType::ModifyVnfInformation => write!(f, "MODIFY_VNF_INFORMATION"),
+            UpdateSolNetworkType::UpdateNs => write!(f, "UPDATE_NS"),
             UpdateSolNetworkType::Unknown(value) => write!(f, "{}", value),
         }
     }

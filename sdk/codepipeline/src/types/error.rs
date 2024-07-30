@@ -67,6 +67,8 @@ pub use crate::types::error::_approval_already_completed_exception::ApprovalAlre
 
 pub use crate::types::error::_action_not_found_exception::ActionNotFoundException;
 
+pub use crate::types::error::_condition_not_overridable_exception::ConditionNotOverridableException;
+
 pub use crate::types::error::_invalid_next_token_exception::InvalidNextTokenException;
 
 pub use crate::types::error::_invalid_job_exception::InvalidJobException;
@@ -86,6 +88,8 @@ mod _approval_already_completed_exception;
 mod _concurrent_modification_exception;
 
 mod _concurrent_pipeline_executions_limit_exceeded_exception;
+
+mod _condition_not_overridable_exception;
 
 mod _conflict_exception;
 

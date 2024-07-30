@@ -22,7 +22,7 @@ impl crate::operation::get_sol_function_instance::builders::GetSolFunctionInstan
 }
 /// Fluent builder constructing a request to `GetSolFunctionInstance`.
 ///
-/// <p>Gets the details of a network function instance, including the instantation state and metadata from the function package descriptor in the network function package.</p>
+/// <p>Gets the details of a network function instance, including the instantiation state and metadata from the function package descriptor in the network function package.</p>
 /// <p>A network function instance is a function in a function package .</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSolFunctionInstanceFluentBuilder {

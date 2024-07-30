@@ -24,6 +24,7 @@ impl crate::operation::create_resource_policy_statement::builders::CreateResourc
 ///
 /// <p>Adds a new resource policy statement to a bot or bot alias. If a resource policy exists, the statement is added to the current resource policy. If a policy doesn't exist, a new policy is created.</p>
 /// <p>You can't create a resource policy statement that allows cross-account access.</p>
+/// <p>You need to add the <code>CreateResourcePolicy</code> or <code>UpdateResourcePolicy</code> action to the bot role in order to call the API.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateResourcePolicyStatementFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

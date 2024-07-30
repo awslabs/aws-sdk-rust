@@ -22,7 +22,9 @@ impl crate::operation::delete_serverless_cache::builders::DeleteServerlessCacheI
 }
 /// Fluent builder constructing a request to `DeleteServerlessCache`.
 ///
-/// <p>Deletes a specified existing serverless cache.</p>
+/// <p>Deletes a specified existing serverless cache.</p><note>
+/// <p><code>CreateServerlessCacheSnapshot</code> permission is required to create a final snapshot. Without this permission, the API call will fail with an <code>Access Denied</code> exception.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteServerlessCacheFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

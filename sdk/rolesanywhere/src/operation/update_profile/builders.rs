@@ -203,4 +203,18 @@ impl UpdateProfileFluentBuilder {
     pub fn get_duration_seconds(&self) -> &::std::option::Option<i32> {
         self.inner.get_duration_seconds()
     }
+    /// <p>Used to determine if a custom role session name will be accepted in a temporary credential request.</p>
+    pub fn accept_role_session_name(mut self, input: bool) -> Self {
+        self.inner = self.inner.accept_role_session_name(input);
+        self
+    }
+    /// <p>Used to determine if a custom role session name will be accepted in a temporary credential request.</p>
+    pub fn set_accept_role_session_name(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_accept_role_session_name(input);
+        self
+    }
+    /// <p>Used to determine if a custom role session name will be accepted in a temporary credential request.</p>
+    pub fn get_accept_role_session_name(&self) -> &::std::option::Option<bool> {
+        self.inner.get_accept_role_session_name()
+    }
 }

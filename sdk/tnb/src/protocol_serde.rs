@@ -179,6 +179,8 @@ pub(crate) mod shape_tag_map;
 
 pub(crate) mod shape_update_sol_network_modify;
 
+pub(crate) mod shape_update_sol_network_service_data;
+
 pub(crate) mod shape_validate_sol_function_package_content_metadata;
 
 pub(crate) mod shape_validate_sol_network_package_content_metadata;
@@ -191,6 +193,8 @@ pub(crate) mod shape_get_sol_network_operation_task_details;
 
 pub(crate) mod shape_get_sol_vnfc_resource_info_list;
 
+pub(crate) mod shape_instantiate_metadata;
+
 pub(crate) mod shape_list_sol_function_instance_info;
 
 pub(crate) mod shape_list_sol_function_package_info;
@@ -201,7 +205,11 @@ pub(crate) mod shape_list_sol_network_operations_info;
 
 pub(crate) mod shape_list_sol_network_package_info;
 
+pub(crate) mod shape_modify_vnf_info_metadata;
+
 pub(crate) mod shape_network_artifact_meta;
+
+pub(crate) mod shape_update_ns_metadata;
 
 pub(crate) mod shape_error_info;
 

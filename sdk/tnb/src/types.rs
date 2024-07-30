@@ -13,6 +13,8 @@ pub use crate::types::_function_artifact_meta::FunctionArtifactMeta;
 
 pub use crate::types::_nsd_operational_state::NsdOperationalState;
 
+pub use crate::types::_update_sol_network_service_data::UpdateSolNetworkServiceData;
+
 pub use crate::types::_update_sol_network_modify::UpdateSolNetworkModify;
 
 pub use crate::types::_update_sol_network_type::UpdateSolNetworkType;
@@ -77,6 +79,12 @@ pub use crate::types::_error_info::ErrorInfo;
 
 pub use crate::types::_get_sol_network_operation_metadata::GetSolNetworkOperationMetadata;
 
+pub use crate::types::_instantiate_metadata::InstantiateMetadata;
+
+pub use crate::types::_modify_vnf_info_metadata::ModifyVnfInfoMetadata;
+
+pub use crate::types::_update_ns_metadata::UpdateNsMetadata;
+
 pub use crate::types::_get_sol_network_instance_metadata::GetSolNetworkInstanceMetadata;
 
 pub use crate::types::_lcm_operation_info::LcmOperationInfo;
@@ -117,6 +125,8 @@ mod _get_sol_vnfc_resource_info;
 
 mod _get_sol_vnfc_resource_info_metadata;
 
+mod _instantiate_metadata;
+
 mod _lcm_operation_info;
 
 mod _lcm_operation_type;
@@ -140,6 +150,8 @@ mod _list_sol_network_operations_metadata;
 mod _list_sol_network_package_info;
 
 mod _list_sol_network_package_metadata;
+
+mod _modify_vnf_info_metadata;
 
 mod _network_artifact_meta;
 
@@ -169,7 +181,11 @@ mod _task_status;
 
 mod _tosca_override;
 
+mod _update_ns_metadata;
+
 mod _update_sol_network_modify;
+
+mod _update_sol_network_service_data;
 
 mod _update_sol_network_type;
 

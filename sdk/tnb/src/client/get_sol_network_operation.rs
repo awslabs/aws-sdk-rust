@@ -10,6 +10,7 @@ impl super::Client {
     ///   - [`operation_state(Option<NsLcmOperationState>)`](crate::operation::get_sol_network_operation::GetSolNetworkOperationOutput::operation_state): <p>The state of the network operation.</p>
     ///   - [`ns_instance_id(Option<String>)`](crate::operation::get_sol_network_operation::GetSolNetworkOperationOutput::ns_instance_id): <p>ID of the network operation instance.</p>
     ///   - [`lcm_operation_type(Option<LcmOperationType>)`](crate::operation::get_sol_network_operation::GetSolNetworkOperationOutput::lcm_operation_type): <p>Type of the operation represented by this occurrence.</p>
+    ///   - [`update_type(Option<UpdateSolNetworkType>)`](crate::operation::get_sol_network_operation::GetSolNetworkOperationOutput::update_type): <p>Type of the update. Only present if the network operation lcmOperationType is <code>UPDATE</code>.</p>
     ///   - [`error(Option<ProblemDetails>)`](crate::operation::get_sol_network_operation::GetSolNetworkOperationOutput::error): <p>Error related to this specific network operation occurrence.</p>
     ///   - [`metadata(Option<GetSolNetworkOperationMetadata>)`](crate::operation::get_sol_network_operation::GetSolNetworkOperationOutput::metadata): <p>Metadata of this network operation occurrence.</p>
     ///   - [`tasks(Option<Vec::<GetSolNetworkOperationTaskDetails>>)`](crate::operation::get_sol_network_operation::GetSolNetworkOperationOutput::tasks): <p>All tasks associated with this operation occurrence.</p>

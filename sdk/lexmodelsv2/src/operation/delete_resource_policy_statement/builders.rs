@@ -23,6 +23,7 @@ impl crate::operation::delete_resource_policy_statement::builders::DeleteResourc
 /// Fluent builder constructing a request to `DeleteResourcePolicyStatement`.
 ///
 /// <p>Deletes a policy statement from a resource policy. If you delete the last statement from a policy, the policy is deleted. If you specify a statement ID that doesn't exist in the policy, or if the bot or bot alias doesn't have a policy attached, Amazon Lex returns an exception.</p>
+/// <p>You need to add the <code>DeleteResourcePolicy</code> or <code>UpdateResourcePolicy</code> action to the bot role in order to call the API.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteResourcePolicyStatementFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

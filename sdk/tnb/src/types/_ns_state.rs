@@ -16,9 +16,12 @@
 ///     NsState::Impaired => { /* ... */ },
 ///     NsState::Instantiated => { /* ... */ },
 ///     NsState::InstantiateInProgress => { /* ... */ },
+///     NsState::IntentToUpdateInProgress => { /* ... */ },
 ///     NsState::NotInstantiated => { /* ... */ },
 ///     NsState::Stopped => { /* ... */ },
 ///     NsState::TerminateInProgress => { /* ... */ },
+///     NsState::Updated => { /* ... */ },
+///     NsState::UpdateFailed => { /* ... */ },
 ///     NsState::UpdateInProgress => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -56,11 +59,17 @@ pub enum NsState {
     #[allow(missing_docs)] // documentation missing in model
     InstantiateInProgress,
     #[allow(missing_docs)] // documentation missing in model
+    IntentToUpdateInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     NotInstantiated,
     #[allow(missing_docs)] // documentation missing in model
     Stopped,
     #[allow(missing_docs)] // documentation missing in model
     TerminateInProgress,
+    #[allow(missing_docs)] // documentation missing in model
+    Updated,
+    #[allow(missing_docs)] // documentation missing in model
+    UpdateFailed,
     #[allow(missing_docs)] // documentation missing in model
     UpdateInProgress,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -74,9 +83,12 @@ impl ::std::convert::From<&str> for NsState {
             "IMPAIRED" => NsState::Impaired,
             "INSTANTIATED" => NsState::Instantiated,
             "INSTANTIATE_IN_PROGRESS" => NsState::InstantiateInProgress,
+            "INTENT_TO_UPDATE_IN_PROGRESS" => NsState::IntentToUpdateInProgress,
             "NOT_INSTANTIATED" => NsState::NotInstantiated,
             "STOPPED" => NsState::Stopped,
             "TERMINATE_IN_PROGRESS" => NsState::TerminateInProgress,
+            "UPDATED" => NsState::Updated,
+            "UPDATE_FAILED" => NsState::UpdateFailed,
             "UPDATE_IN_PROGRESS" => NsState::UpdateInProgress,
             other => NsState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -97,9 +109,12 @@ impl NsState {
             NsState::Impaired => "IMPAIRED",
             NsState::Instantiated => "INSTANTIATED",
             NsState::InstantiateInProgress => "INSTANTIATE_IN_PROGRESS",
+            NsState::IntentToUpdateInProgress => "INTENT_TO_UPDATE_IN_PROGRESS",
             NsState::NotInstantiated => "NOT_INSTANTIATED",
             NsState::Stopped => "STOPPED",
             NsState::TerminateInProgress => "TERMINATE_IN_PROGRESS",
+            NsState::Updated => "UPDATED",
+            NsState::UpdateFailed => "UPDATE_FAILED",
             NsState::UpdateInProgress => "UPDATE_IN_PROGRESS",
             NsState::Unknown(value) => value.as_str(),
         }
@@ -111,9 +126,12 @@ impl NsState {
             "IMPAIRED",
             "INSTANTIATED",
             "INSTANTIATE_IN_PROGRESS",
+            "INTENT_TO_UPDATE_IN_PROGRESS",
             "NOT_INSTANTIATED",
             "STOPPED",
             "TERMINATE_IN_PROGRESS",
+            "UPDATED",
+            "UPDATE_FAILED",
             "UPDATE_IN_PROGRESS",
         ]
     }
@@ -142,9 +160,12 @@ impl ::std::fmt::Display for NsState {
             NsState::Impaired => write!(f, "IMPAIRED"),
             NsState::Instantiated => write!(f, "INSTANTIATED"),
             NsState::InstantiateInProgress => write!(f, "INSTANTIATE_IN_PROGRESS"),
+            NsState::IntentToUpdateInProgress => write!(f, "INTENT_TO_UPDATE_IN_PROGRESS"),
             NsState::NotInstantiated => write!(f, "NOT_INSTANTIATED"),
             NsState::Stopped => write!(f, "STOPPED"),
             NsState::TerminateInProgress => write!(f, "TERMINATE_IN_PROGRESS"),
+            NsState::Updated => write!(f, "UPDATED"),
+            NsState::UpdateFailed => write!(f, "UPDATE_FAILED"),
             NsState::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
             NsState::Unknown(value) => write!(f, "{}", value),
         }

@@ -182,14 +182,19 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListSolNetwo
                 mut output: &mut ::std::string::String,
             ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
-                if let ::std::option::Option::Some(inner_1) = &_input.max_results {
+                if let ::std::option::Option::Some(inner_1) = &_input.ns_instance_id {
                     {
-                        query.push_kv("max_results", ::aws_smithy_types::primitive::Encoder::from(*inner_1).encode());
+                        query.push_kv("nsInstanceId", &::aws_smithy_http::query::fmt_string(inner_1));
                     }
                 }
-                if let ::std::option::Option::Some(inner_2) = &_input.next_token {
+                if let ::std::option::Option::Some(inner_2) = &_input.max_results {
                     {
-                        query.push_kv("nextpage_opaque_marker", &::aws_smithy_http::query::fmt_string(inner_2));
+                        query.push_kv("max_results", ::aws_smithy_types::primitive::Encoder::from(*inner_2).encode());
+                    }
+                }
+                if let ::std::option::Option::Some(inner_3) = &_input.next_token {
+                    {
+                        query.push_kv("nextpage_opaque_marker", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 ::std::result::Result::Ok(())
