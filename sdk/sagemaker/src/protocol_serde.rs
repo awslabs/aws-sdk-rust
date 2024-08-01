@@ -2723,6 +2723,8 @@ pub(crate) mod shape_efs_file_system;
 
 pub(crate) mod shape_efs_file_system_config;
 
+pub(crate) mod shape_emr_settings;
+
 pub(crate) mod shape_endpoint;
 
 pub(crate) mod shape_endpoint_output_configuration;
@@ -2927,6 +2929,8 @@ pub(crate) mod shape_workspace_settings;
 
 pub(crate) mod shape_aggregation_transformations;
 
+pub(crate) mod shape_assumable_role_arns;
+
 pub(crate) mod shape_async_notification_topic_type_list;
 
 pub(crate) mod shape_auto_ml_job_step_metadata;
@@ -2964,6 +2968,8 @@ pub(crate) mod shape_edge_model_summary;
 pub(crate) mod shape_emr_step_metadata;
 
 pub(crate) mod shape_environment_parameters;
+
+pub(crate) mod shape_execution_role_arns;
 
 pub(crate) mod shape_fail_step_metadata;
 

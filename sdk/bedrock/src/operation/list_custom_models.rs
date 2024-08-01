@@ -232,6 +232,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListCustomMo
                         query.push_kv("sortOrder", &::aws_smithy_http::query::fmt_string(inner_9));
                     }
                 }
+                if let ::std::option::Option::Some(inner_10) = &_input.is_owned {
+                    {
+                        query.push_kv("isOwned", ::aws_smithy_types::primitive::Encoder::from(*inner_10).encode());
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

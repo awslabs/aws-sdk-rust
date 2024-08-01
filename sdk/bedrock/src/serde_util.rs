@@ -38,6 +38,15 @@ pub(crate) fn create_guardrail_version_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_model_copy_job_output_output_correct_errors(
+    mut builder: crate::operation::create_model_copy_job::builders::CreateModelCopyJobOutputBuilder,
+) -> crate::operation::create_model_copy_job::builders::CreateModelCopyJobOutputBuilder {
+    if builder.job_arn.is_none() {
+        builder.job_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_model_customization_job_output_output_correct_errors(
     mut builder: crate::operation::create_model_customization_job::builders::CreateModelCustomizationJobOutputBuilder,
 ) -> crate::operation::create_model_customization_job::builders::CreateModelCustomizationJobOutputBuilder {
@@ -154,6 +163,30 @@ pub(crate) fn get_guardrail_output_output_correct_errors(
     }
     if builder.blocked_outputs_messaging.is_none() {
         builder.blocked_outputs_messaging = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_model_copy_job_output_output_correct_errors(
+    mut builder: crate::operation::get_model_copy_job::builders::GetModelCopyJobOutputBuilder,
+) -> crate::operation::get_model_copy_job::builders::GetModelCopyJobOutputBuilder {
+    if builder.job_arn.is_none() {
+        builder.job_arn = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ModelCopyJobStatus>().ok()
+    }
+    if builder.creation_time.is_none() {
+        builder.creation_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.target_model_arn.is_none() {
+        builder.target_model_arn = Some(Default::default())
+    }
+    if builder.source_account_id.is_none() {
+        builder.source_account_id = Some(Default::default())
+    }
+    if builder.source_model_arn.is_none() {
+        builder.source_model_arn = Some(Default::default())
     }
     builder
 }
@@ -464,6 +497,30 @@ pub(crate) fn human_evaluation_config_correct_errors(
 ) -> crate::types::builders::HumanEvaluationConfigBuilder {
     if builder.dataset_metric_configs.is_none() {
         builder.dataset_metric_configs = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn model_copy_job_summary_correct_errors(
+    mut builder: crate::types::builders::ModelCopyJobSummaryBuilder,
+) -> crate::types::builders::ModelCopyJobSummaryBuilder {
+    if builder.job_arn.is_none() {
+        builder.job_arn = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ModelCopyJobStatus>().ok()
+    }
+    if builder.creation_time.is_none() {
+        builder.creation_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.target_model_arn.is_none() {
+        builder.target_model_arn = Some(Default::default())
+    }
+    if builder.source_account_id.is_none() {
+        builder.source_account_id = Some(Default::default())
+    }
+    if builder.source_model_arn.is_none() {
+        builder.source_model_arn = Some(Default::default())
     }
     builder
 }

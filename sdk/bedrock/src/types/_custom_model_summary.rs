@@ -16,6 +16,8 @@ pub struct CustomModelSummary {
     pub base_model_name: ::std::string::String,
     /// <p>Specifies whether to carry out continued pre-training of a model or whether to fine-tune it. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a>.</p>
     pub customization_type: ::std::option::Option<crate::types::CustomizationType>,
+    /// <p>The unique identifier of the account that owns the model.</p>
+    pub owner_account_id: ::std::option::Option<::std::string::String>,
 }
 impl CustomModelSummary {
     /// <p>The Amazon Resource Name (ARN) of the custom model.</p>
@@ -46,6 +48,10 @@ impl CustomModelSummary {
     pub fn customization_type(&self) -> ::std::option::Option<&crate::types::CustomizationType> {
         self.customization_type.as_ref()
     }
+    /// <p>The unique identifier of the account that owns the model.</p>
+    pub fn owner_account_id(&self) -> ::std::option::Option<&str> {
+        self.owner_account_id.as_deref()
+    }
 }
 impl CustomModelSummary {
     /// Creates a new builder-style object to manufacture [`CustomModelSummary`](crate::types::CustomModelSummary).
@@ -64,6 +70,7 @@ pub struct CustomModelSummaryBuilder {
     pub(crate) base_model_arn: ::std::option::Option<::std::string::String>,
     pub(crate) base_model_name: ::std::option::Option<::std::string::String>,
     pub(crate) customization_type: ::std::option::Option<crate::types::CustomizationType>,
+    pub(crate) owner_account_id: ::std::option::Option<::std::string::String>,
 }
 impl CustomModelSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the custom model.</p>
@@ -155,6 +162,20 @@ impl CustomModelSummaryBuilder {
     pub fn get_customization_type(&self) -> &::std::option::Option<crate::types::CustomizationType> {
         &self.customization_type
     }
+    /// <p>The unique identifier of the account that owns the model.</p>
+    pub fn owner_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.owner_account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the account that owns the model.</p>
+    pub fn set_owner_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.owner_account_id = input;
+        self
+    }
+    /// <p>The unique identifier of the account that owns the model.</p>
+    pub fn get_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_account_id
+    }
     /// Consumes the builder and constructs a [`CustomModelSummary`](crate::types::CustomModelSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`model_arn`](crate::types::builders::CustomModelSummaryBuilder::model_arn)
@@ -195,6 +216,7 @@ impl CustomModelSummaryBuilder {
                 )
             })?,
             customization_type: self.customization_type,
+            owner_account_id: self.owner_account_id,
         })
     }
 }

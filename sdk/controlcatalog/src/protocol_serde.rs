@@ -23,7 +23,11 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_get_control;
+
 pub(crate) mod shape_list_common_controls;
+
+pub(crate) mod shape_list_controls;
 
 pub(crate) mod shape_list_domains;
 
@@ -39,11 +43,15 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 
 pub(crate) mod shape_access_denied_exception;
 
+pub(crate) mod shape_get_control_input;
+
 pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_list_common_controls_input;
 
 pub(crate) mod shape_list_objectives_input;
+
+pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_throttling_exception;
 
@@ -53,13 +61,21 @@ pub(crate) mod shape_common_control_filter;
 
 pub(crate) mod shape_common_control_summary_list;
 
+pub(crate) mod shape_controls;
+
 pub(crate) mod shape_domain_summary_list;
 
 pub(crate) mod shape_objective_filter;
 
 pub(crate) mod shape_objective_summary_list;
 
+pub(crate) mod shape_region_configuration;
+
 pub(crate) mod shape_common_control_summary;
+
+pub(crate) mod shape_control_summary;
+
+pub(crate) mod shape_deployable_regions;
 
 pub(crate) mod shape_domain_resource_filter;
 

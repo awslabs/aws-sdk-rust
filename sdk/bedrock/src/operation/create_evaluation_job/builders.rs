@@ -22,7 +22,7 @@ impl crate::operation::create_evaluation_job::builders::CreateEvaluationJobInput
 }
 /// Fluent builder constructing a request to `CreateEvaluationJob`.
 ///
-/// <p>API operation for creating and managing Amazon Bedrock automatic model evaluation jobs and model evaluation jobs that use human workers. To learn more about the requirements for creating a model evaluation job see, <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation.html">Model evaluations</a>.</p>
+/// <p>API operation for creating and managing Amazon Bedrock automatic model evaluation jobs and model evaluation jobs that use human workers. To learn more about the requirements for creating a model evaluation job see, <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation.html">Model evaluation</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateEvaluationJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

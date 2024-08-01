@@ -9,6 +9,14 @@ pub use crate::types::_domain_resource_filter::DomainResourceFilter;
 
 pub use crate::types::_domain_summary::DomainSummary;
 
+pub use crate::types::_region_configuration::RegionConfiguration;
+
+pub use crate::types::_control_scope::ControlScope;
+
+pub use crate::types::_control_behavior::ControlBehavior;
+
+pub use crate::types::_control_summary::ControlSummary;
+
 pub use crate::types::_common_control_summary::CommonControlSummary;
 
 pub use crate::types::_associated_objective_summary::AssociatedObjectiveSummary;
@@ -25,6 +33,12 @@ mod _common_control_filter;
 
 mod _common_control_summary;
 
+mod _control_behavior;
+
+mod _control_scope;
+
+mod _control_summary;
+
 mod _domain_resource_filter;
 
 mod _domain_summary;
@@ -34,6 +48,8 @@ mod _objective_filter;
 mod _objective_resource_filter;
 
 mod _objective_summary;
+
+mod _region_configuration;
 
 /// Builders
 pub mod builders;

@@ -22,7 +22,7 @@ impl crate::operation::get_provisioned_model_throughput::builders::GetProvisione
 }
 /// Fluent builder constructing a request to `GetProvisionedModelThroughput`.
 ///
-/// <p>Returns details for a Provisioned Throughput. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned Throughput</a> in the Amazon Bedrock User Guide.</p>
+/// <p>Returns details for a Provisioned Throughput. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned Throughput</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon Bedrock User Guide</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetProvisionedModelThroughputFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -15,7 +15,7 @@ pub struct DescribeDbClusterParametersInput {
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>user</code></p></li>
+    /// <p><code>customer</code></p></li>
     /// <li>
     /// <p><code>engine</code></p></li>
     /// <li>
@@ -45,7 +45,7 @@ impl DescribeDbClusterParametersInput {
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>user</code></p></li>
+    /// <p><code>customer</code></p></li>
     /// <li>
     /// <p><code>engine</code></p></li>
     /// <li>
@@ -123,7 +123,7 @@ impl DescribeDbClusterParametersInputBuilder {
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>user</code></p></li>
+    /// <p><code>customer</code></p></li>
     /// <li>
     /// <p><code>engine</code></p></li>
     /// <li>
@@ -137,7 +137,7 @@ impl DescribeDbClusterParametersInputBuilder {
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>user</code></p></li>
+    /// <p><code>customer</code></p></li>
     /// <li>
     /// <p><code>engine</code></p></li>
     /// <li>
@@ -151,7 +151,7 @@ impl DescribeDbClusterParametersInputBuilder {
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>user</code></p></li>
+    /// <p><code>customer</code></p></li>
     /// <li>
     /// <p><code>engine</code></p></li>
     /// <li>

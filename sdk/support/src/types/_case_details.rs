@@ -22,6 +22,10 @@
 /// <p><b>status</b> - The status of the case in the Amazon Web Services Support Center. Valid values:</p>
 /// <ul>
 /// <li>
+/// <p><code>all-open</code></p></li>
+/// <li>
+/// <p><code>customer-action-completed</code></p></li>
+/// <li>
 /// <p><code>opened</code></p></li>
 /// <li>
 /// <p><code>pending-customer-action</code></p></li>
@@ -53,6 +57,10 @@ pub struct CaseDetails {
     /// <p>The status of the case.</p>
     /// <p>Valid values:</p>
     /// <ul>
+    /// <li>
+    /// <p><code>all-open</code></p></li>
+    /// <li>
+    /// <p><code>customer-action-completed</code></p></li>
     /// <li>
     /// <p><code>opened</code></p></li>
     /// <li>
@@ -100,6 +108,10 @@ impl CaseDetails {
     /// <p>The status of the case.</p>
     /// <p>Valid values:</p>
     /// <ul>
+    /// <li>
+    /// <p><code>all-open</code></p></li>
+    /// <li>
+    /// <p><code>customer-action-completed</code></p></li>
     /// <li>
     /// <p><code>opened</code></p></li>
     /// <li>
@@ -222,6 +234,10 @@ impl CaseDetailsBuilder {
     /// <p>Valid values:</p>
     /// <ul>
     /// <li>
+    /// <p><code>all-open</code></p></li>
+    /// <li>
+    /// <p><code>customer-action-completed</code></p></li>
+    /// <li>
     /// <p><code>opened</code></p></li>
     /// <li>
     /// <p><code>pending-customer-action</code></p></li>
@@ -242,6 +258,10 @@ impl CaseDetailsBuilder {
     /// <p>Valid values:</p>
     /// <ul>
     /// <li>
+    /// <p><code>all-open</code></p></li>
+    /// <li>
+    /// <p><code>customer-action-completed</code></p></li>
+    /// <li>
     /// <p><code>opened</code></p></li>
     /// <li>
     /// <p><code>pending-customer-action</code></p></li>
@@ -261,6 +281,10 @@ impl CaseDetailsBuilder {
     /// <p>The status of the case.</p>
     /// <p>Valid values:</p>
     /// <ul>
+    /// <li>
+    /// <p><code>all-open</code></p></li>
+    /// <li>
+    /// <p><code>customer-action-completed</code></p></li>
     /// <li>
     /// <p><code>opened</code></p></li>
     /// <li>

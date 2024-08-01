@@ -9,6 +9,10 @@ pub use crate::types::_domain_resource_filter::DomainResourceFilterBuilder;
 
 pub use crate::types::_domain_summary::DomainSummaryBuilder;
 
+pub use crate::types::_region_configuration::RegionConfigurationBuilder;
+
+pub use crate::types::_control_summary::ControlSummaryBuilder;
+
 pub use crate::types::_common_control_summary::CommonControlSummaryBuilder;
 
 pub use crate::types::_associated_objective_summary::AssociatedObjectiveSummaryBuilder;

@@ -149,7 +149,7 @@ impl DescribeDBClusterParametersFluentBuilder {
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>user</code></p></li>
+    /// <p><code>customer</code></p></li>
     /// <li>
     /// <p><code>engine</code></p></li>
     /// <li>
@@ -163,7 +163,7 @@ impl DescribeDBClusterParametersFluentBuilder {
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>user</code></p></li>
+    /// <p><code>customer</code></p></li>
     /// <li>
     /// <p><code>engine</code></p></li>
     /// <li>
@@ -177,7 +177,7 @@ impl DescribeDBClusterParametersFluentBuilder {
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>user</code></p></li>
+    /// <p><code>customer</code></p></li>
     /// <li>
     /// <p><code>engine</code></p></li>
     /// <li>

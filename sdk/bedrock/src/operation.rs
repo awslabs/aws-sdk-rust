@@ -10,6 +10,9 @@ pub mod create_guardrail;
 /// Types for the `CreateGuardrailVersion` operation.
 pub mod create_guardrail_version;
 
+/// Types for the `CreateModelCopyJob` operation.
+pub mod create_model_copy_job;
+
 /// Types for the `CreateModelCustomizationJob` operation.
 pub mod create_model_customization_job;
 
@@ -40,6 +43,9 @@ pub mod get_foundation_model;
 /// Types for the `GetGuardrail` operation.
 pub mod get_guardrail;
 
+/// Types for the `GetModelCopyJob` operation.
+pub mod get_model_copy_job;
+
 /// Types for the `GetModelCustomizationJob` operation.
 pub mod get_model_customization_job;
 
@@ -60,6 +66,9 @@ pub mod list_foundation_models;
 
 /// Types for the `ListGuardrails` operation.
 pub mod list_guardrails;
+
+/// Types for the `ListModelCopyJobs` operation.
+pub mod list_model_copy_jobs;
 
 /// Types for the `ListModelCustomizationJobs` operation.
 pub mod list_model_customization_jobs;

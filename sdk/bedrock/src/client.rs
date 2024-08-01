@@ -124,6 +124,8 @@ mod create_guardrail;
 
 mod create_guardrail_version;
 
+mod create_model_copy_job;
+
 mod create_model_customization_job;
 
 mod create_provisioned_model_throughput;
@@ -148,6 +150,8 @@ mod get_foundation_model;
 
 mod get_guardrail;
 
+mod get_model_copy_job;
+
 mod get_model_customization_job;
 
 mod get_model_invocation_logging_configuration;
@@ -161,6 +165,8 @@ mod list_evaluation_jobs;
 mod list_foundation_models;
 
 mod list_guardrails;
+
+mod list_model_copy_jobs;
 
 mod list_model_customization_jobs;
 

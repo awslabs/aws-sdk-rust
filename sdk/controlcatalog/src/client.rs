@@ -122,7 +122,11 @@ impl Client {
 ///
 pub mod customize;
 
+mod get_control;
+
 mod list_common_controls;
+
+mod list_controls;
 
 mod list_domains;
 

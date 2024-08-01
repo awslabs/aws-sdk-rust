@@ -7,9 +7,13 @@ pub use crate::types::error::_internal_server_exception::InternalServerException
 
 pub use crate::types::error::_access_denied_exception::AccessDeniedException;
 
+pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundException;
+
 mod _access_denied_exception;
 
 mod _internal_server_exception;
+
+mod _resource_not_found_exception;
 
 mod _throttling_exception;
 

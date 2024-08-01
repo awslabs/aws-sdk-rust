@@ -22,7 +22,9 @@ impl crate::operation::delete_cluster::builders::DeleteClusterInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteCluster`.
 ///
-/// <p>Deletes a cluster. It also deletes all associated nodes and node endpoints</p>
+/// <p>Deletes a cluster. It also deletes all associated nodes and node endpoints</p><note>
+/// <p><code>CreateSnapshot</code> permission is required to create a final snapshot. Without this permission, the API call will fail with an <code>Access Denied</code> exception.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteClusterFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

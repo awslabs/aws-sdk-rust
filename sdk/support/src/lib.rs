@@ -26,7 +26,7 @@
 //!   - The DescribeCommunications, AddCommunicationToCase, and AddAttachmentsToSet operations retrieve and add communications and attachments to Amazon Web Services Support cases.
 //!   - The DescribeServices and DescribeSeverityLevels operations return Amazon Web Service names, service codes, service categories, and problem severity levels. You use these values when you call the CreateCase operation.
 //!
-//! You can also use the Amazon Web Services Support API to call the Trusted Advisor operations. For more information, see [Trusted Advisor](https://docs.aws.amazon.com/) in the _Amazon Web Services Support User Guide_.
+//! You can also use the Amazon Web Services Support API to call the Trusted Advisor operations. For more information, see [Trusted Advisor](https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html) in the _Amazon Web Services Support User Guide_.
 //!
 //! For authentication of requests, Amazon Web Services Support uses [Signature Version 4 Signing Process](https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html).
 //!
@@ -44,7 +44,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-support = "1.37.0"
+//! aws-sdk-support = "1.37.1"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

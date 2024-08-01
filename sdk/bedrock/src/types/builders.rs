@@ -27,6 +27,8 @@ pub use crate::types::_custom_model_summary::CustomModelSummaryBuilder;
 
 pub use crate::types::_foundation_model_details::FoundationModelDetailsBuilder;
 
+pub use crate::types::_model_copy_job_summary::ModelCopyJobSummaryBuilder;
+
 pub use crate::types::_logging_config::LoggingConfigBuilder;
 
 pub use crate::types::_s3_config::S3ConfigBuilder;

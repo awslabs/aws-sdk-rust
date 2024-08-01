@@ -175,6 +175,33 @@ impl From<crate::operation::create_guardrail_version::CreateGuardrailVersionErro
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_model_copy_job::CreateModelCopyJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_model_copy_job::CreateModelCopyJobError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_model_copy_job::CreateModelCopyJobError> for Error {
+    fn from(err: crate::operation::create_model_copy_job::CreateModelCopyJobError) -> Self {
+        match err {
+            crate::operation::create_model_copy_job::CreateModelCopyJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_model_copy_job::CreateModelCopyJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_model_copy_job::CreateModelCopyJobError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_model_copy_job::CreateModelCopyJobError::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
+            crate::operation::create_model_copy_job::CreateModelCopyJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_model_customization_job::CreateModelCustomizationJobError, R>>
     for Error
@@ -527,6 +554,32 @@ impl From<crate::operation::get_guardrail::GetGuardrailError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_model_copy_job::GetModelCopyJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_model_copy_job::GetModelCopyJobError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_model_copy_job::GetModelCopyJobError> for Error {
+    fn from(err: crate::operation::get_model_copy_job::GetModelCopyJobError) -> Self {
+        match err {
+            crate::operation::get_model_copy_job::GetModelCopyJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_model_copy_job::GetModelCopyJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_model_copy_job::GetModelCopyJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_model_copy_job::GetModelCopyJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_model_copy_job::GetModelCopyJobError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_model_copy_job::GetModelCopyJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_model_customization_job::GetModelCustomizationJobError, R>>
     for Error
 where
@@ -753,6 +806,34 @@ impl From<crate::operation::list_guardrails::ListGuardrailsError> for Error {
             crate::operation::list_guardrails::ListGuardrailsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_guardrails::ListGuardrailsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_guardrails::ListGuardrailsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_model_copy_jobs::ListModelCopyJobsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_model_copy_jobs::ListModelCopyJobsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_model_copy_jobs::ListModelCopyJobsError> for Error {
+    fn from(err: crate::operation::list_model_copy_jobs::ListModelCopyJobsError) -> Self {
+        match err {
+            crate::operation::list_model_copy_jobs::ListModelCopyJobsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_model_copy_jobs::ListModelCopyJobsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_model_copy_jobs::ListModelCopyJobsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_model_copy_jobs::ListModelCopyJobsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_model_copy_jobs::ListModelCopyJobsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_model_copy_jobs::ListModelCopyJobsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

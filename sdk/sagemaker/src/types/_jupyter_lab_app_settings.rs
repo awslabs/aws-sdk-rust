@@ -12,6 +12,8 @@ pub struct JupyterLabAppSettings {
     pub lifecycle_config_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of Git repositories that SageMaker automatically displays to users for cloning in the JupyterLab application.</p>
     pub code_repositories: ::std::option::Option<::std::vec::Vec<crate::types::CodeRepository>>,
+    /// <p>The configuration parameters that specify the IAM roles assumed by the execution role of SageMaker (assumable roles) and the cluster instances or job execution environments (execution roles or runtime roles) to manage and access resources required for running Amazon EMR clusters or Amazon EMR Serverless applications.</p>
+    pub emr_settings: ::std::option::Option<crate::types::EmrSettings>,
 }
 impl JupyterLabAppSettings {
     /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
@@ -36,6 +38,10 @@ impl JupyterLabAppSettings {
     pub fn code_repositories(&self) -> &[crate::types::CodeRepository] {
         self.code_repositories.as_deref().unwrap_or_default()
     }
+    /// <p>The configuration parameters that specify the IAM roles assumed by the execution role of SageMaker (assumable roles) and the cluster instances or job execution environments (execution roles or runtime roles) to manage and access resources required for running Amazon EMR clusters or Amazon EMR Serverless applications.</p>
+    pub fn emr_settings(&self) -> ::std::option::Option<&crate::types::EmrSettings> {
+        self.emr_settings.as_ref()
+    }
 }
 impl JupyterLabAppSettings {
     /// Creates a new builder-style object to manufacture [`JupyterLabAppSettings`](crate::types::JupyterLabAppSettings).
@@ -52,6 +58,7 @@ pub struct JupyterLabAppSettingsBuilder {
     pub(crate) custom_images: ::std::option::Option<::std::vec::Vec<crate::types::CustomImage>>,
     pub(crate) lifecycle_config_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) code_repositories: ::std::option::Option<::std::vec::Vec<crate::types::CodeRepository>>,
+    pub(crate) emr_settings: ::std::option::Option<crate::types::EmrSettings>,
 }
 impl JupyterLabAppSettingsBuilder {
     /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
@@ -128,6 +135,20 @@ impl JupyterLabAppSettingsBuilder {
     pub fn get_code_repositories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeRepository>> {
         &self.code_repositories
     }
+    /// <p>The configuration parameters that specify the IAM roles assumed by the execution role of SageMaker (assumable roles) and the cluster instances or job execution environments (execution roles or runtime roles) to manage and access resources required for running Amazon EMR clusters or Amazon EMR Serverless applications.</p>
+    pub fn emr_settings(mut self, input: crate::types::EmrSettings) -> Self {
+        self.emr_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration parameters that specify the IAM roles assumed by the execution role of SageMaker (assumable roles) and the cluster instances or job execution environments (execution roles or runtime roles) to manage and access resources required for running Amazon EMR clusters or Amazon EMR Serverless applications.</p>
+    pub fn set_emr_settings(mut self, input: ::std::option::Option<crate::types::EmrSettings>) -> Self {
+        self.emr_settings = input;
+        self
+    }
+    /// <p>The configuration parameters that specify the IAM roles assumed by the execution role of SageMaker (assumable roles) and the cluster instances or job execution environments (execution roles or runtime roles) to manage and access resources required for running Amazon EMR clusters or Amazon EMR Serverless applications.</p>
+    pub fn get_emr_settings(&self) -> &::std::option::Option<crate::types::EmrSettings> {
+        &self.emr_settings
+    }
     /// Consumes the builder and constructs a [`JupyterLabAppSettings`](crate::types::JupyterLabAppSettings).
     pub fn build(self) -> crate::types::JupyterLabAppSettings {
         crate::types::JupyterLabAppSettings {
@@ -135,6 +156,7 @@ impl JupyterLabAppSettingsBuilder {
             custom_images: self.custom_images,
             lifecycle_config_arns: self.lifecycle_config_arns,
             code_repositories: self.code_repositories,
+            emr_settings: self.emr_settings,
         }
     }
 }

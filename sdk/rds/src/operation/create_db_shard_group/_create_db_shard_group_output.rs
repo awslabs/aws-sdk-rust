@@ -11,6 +11,8 @@ pub struct CreateDbShardGroupOutput {
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The maximum capacity of the DB shard group in Aurora capacity units (ACUs).</p>
     pub max_acu: ::std::option::Option<f64>,
+    /// <p>The minimum capacity of the DB shard group in Aurora capacity units (ACUs).</p>
+    pub min_acu: ::std::option::Option<f64>,
     /// <p>Specifies whether to create standby instances for the DB shard group. Valid values are the following:</p>
     /// <ul>
     /// <li>
@@ -49,6 +51,10 @@ impl CreateDbShardGroupOutput {
     /// <p>The maximum capacity of the DB shard group in Aurora capacity units (ACUs).</p>
     pub fn max_acu(&self) -> ::std::option::Option<f64> {
         self.max_acu
+    }
+    /// <p>The minimum capacity of the DB shard group in Aurora capacity units (ACUs).</p>
+    pub fn min_acu(&self) -> ::std::option::Option<f64> {
+        self.min_acu
     }
     /// <p>Specifies whether to create standby instances for the DB shard group. Valid values are the following:</p>
     /// <ul>
@@ -99,6 +105,7 @@ pub struct CreateDbShardGroupOutputBuilder {
     pub(crate) db_shard_group_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) db_cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) max_acu: ::std::option::Option<f64>,
+    pub(crate) min_acu: ::std::option::Option<f64>,
     pub(crate) compute_redundancy: ::std::option::Option<i32>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) publicly_accessible: ::std::option::Option<bool>,
@@ -161,6 +168,20 @@ impl CreateDbShardGroupOutputBuilder {
     /// <p>The maximum capacity of the DB shard group in Aurora capacity units (ACUs).</p>
     pub fn get_max_acu(&self) -> &::std::option::Option<f64> {
         &self.max_acu
+    }
+    /// <p>The minimum capacity of the DB shard group in Aurora capacity units (ACUs).</p>
+    pub fn min_acu(mut self, input: f64) -> Self {
+        self.min_acu = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The minimum capacity of the DB shard group in Aurora capacity units (ACUs).</p>
+    pub fn set_min_acu(mut self, input: ::std::option::Option<f64>) -> Self {
+        self.min_acu = input;
+        self
+    }
+    /// <p>The minimum capacity of the DB shard group in Aurora capacity units (ACUs).</p>
+    pub fn get_min_acu(&self) -> &::std::option::Option<f64> {
+        &self.min_acu
     }
     /// <p>Specifies whether to create standby instances for the DB shard group. Valid values are the following:</p>
     /// <ul>
@@ -270,6 +291,7 @@ impl CreateDbShardGroupOutputBuilder {
             db_shard_group_identifier: self.db_shard_group_identifier,
             db_cluster_identifier: self.db_cluster_identifier,
             max_acu: self.max_acu,
+            min_acu: self.min_acu,
             compute_redundancy: self.compute_redundancy,
             status: self.status,
             publicly_accessible: self.publicly_accessible,

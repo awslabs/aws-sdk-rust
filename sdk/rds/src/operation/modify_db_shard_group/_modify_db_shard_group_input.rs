@@ -7,6 +7,8 @@ pub struct ModifyDbShardGroupInput {
     pub db_shard_group_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The maximum capacity of the DB shard group in Aurora capacity units (ACUs).</p>
     pub max_acu: ::std::option::Option<f64>,
+    /// <p>The minimum capacity of the DB shard group in Aurora capacity units (ACUs).</p>
+    pub min_acu: ::std::option::Option<f64>,
 }
 impl ModifyDbShardGroupInput {
     /// <p>The name of the DB shard group to modify.</p>
@@ -16,6 +18,10 @@ impl ModifyDbShardGroupInput {
     /// <p>The maximum capacity of the DB shard group in Aurora capacity units (ACUs).</p>
     pub fn max_acu(&self) -> ::std::option::Option<f64> {
         self.max_acu
+    }
+    /// <p>The minimum capacity of the DB shard group in Aurora capacity units (ACUs).</p>
+    pub fn min_acu(&self) -> ::std::option::Option<f64> {
+        self.min_acu
     }
 }
 impl ModifyDbShardGroupInput {
@@ -31,6 +37,7 @@ impl ModifyDbShardGroupInput {
 pub struct ModifyDbShardGroupInputBuilder {
     pub(crate) db_shard_group_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) max_acu: ::std::option::Option<f64>,
+    pub(crate) min_acu: ::std::option::Option<f64>,
 }
 impl ModifyDbShardGroupInputBuilder {
     /// <p>The name of the DB shard group to modify.</p>
@@ -62,6 +69,20 @@ impl ModifyDbShardGroupInputBuilder {
     pub fn get_max_acu(&self) -> &::std::option::Option<f64> {
         &self.max_acu
     }
+    /// <p>The minimum capacity of the DB shard group in Aurora capacity units (ACUs).</p>
+    pub fn min_acu(mut self, input: f64) -> Self {
+        self.min_acu = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The minimum capacity of the DB shard group in Aurora capacity units (ACUs).</p>
+    pub fn set_min_acu(mut self, input: ::std::option::Option<f64>) -> Self {
+        self.min_acu = input;
+        self
+    }
+    /// <p>The minimum capacity of the DB shard group in Aurora capacity units (ACUs).</p>
+    pub fn get_min_acu(&self) -> &::std::option::Option<f64> {
+        &self.min_acu
+    }
     /// Consumes the builder and constructs a [`ModifyDbShardGroupInput`](crate::operation::modify_db_shard_group::ModifyDbShardGroupInput).
     pub fn build(
         self,
@@ -70,6 +91,7 @@ impl ModifyDbShardGroupInputBuilder {
         ::std::result::Result::Ok(crate::operation::modify_db_shard_group::ModifyDbShardGroupInput {
             db_shard_group_identifier: self.db_shard_group_identifier,
             max_acu: self.max_acu,
+            min_acu: self.min_acu,
         })
     }
 }

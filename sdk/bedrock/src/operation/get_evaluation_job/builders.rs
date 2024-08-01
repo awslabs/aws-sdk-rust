@@ -22,7 +22,7 @@ impl crate::operation::get_evaluation_job::builders::GetEvaluationJobInputBuilde
 }
 /// Fluent builder constructing a request to `GetEvaluationJob`.
 ///
-/// <p>Retrieves the properties associated with a model evaluation job, including the status of the job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/latest/userguide/model-evaluation.html">Model evaluations</a>.</p>
+/// <p>Retrieves the properties associated with a model evaluation job, including the status of the job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation.html">Model evaluation</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetEvaluationJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

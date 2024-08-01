@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GuardrailPiiEntity {
-    /// <p>The type of PII entity. For example, Social Security Number.</p>
+    /// <p>The type of PII entity. For exampvle, Social Security Number.</p>
     pub r#type: crate::types::GuardrailPiiEntityType,
     /// <p>The configured guardrail action when PII entity is detected.</p>
     pub action: crate::types::GuardrailSensitiveInformationAction,
 }
 impl GuardrailPiiEntity {
-    /// <p>The type of PII entity. For example, Social Security Number.</p>
+    /// <p>The type of PII entity. For exampvle, Social Security Number.</p>
     pub fn r#type(&self) -> &crate::types::GuardrailPiiEntityType {
         &self.r#type
     }
@@ -34,18 +34,18 @@ pub struct GuardrailPiiEntityBuilder {
     pub(crate) action: ::std::option::Option<crate::types::GuardrailSensitiveInformationAction>,
 }
 impl GuardrailPiiEntityBuilder {
-    /// <p>The type of PII entity. For example, Social Security Number.</p>
+    /// <p>The type of PII entity. For exampvle, Social Security Number.</p>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::GuardrailPiiEntityType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of PII entity. For example, Social Security Number.</p>
+    /// <p>The type of PII entity. For exampvle, Social Security Number.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::GuardrailPiiEntityType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The type of PII entity. For example, Social Security Number.</p>
+    /// <p>The type of PII entity. For exampvle, Social Security Number.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::GuardrailPiiEntityType> {
         &self.r#type
     }

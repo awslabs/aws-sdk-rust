@@ -136,4 +136,18 @@ impl ModifyDBShardGroupFluentBuilder {
     pub fn get_max_acu(&self) -> &::std::option::Option<f64> {
         self.inner.get_max_acu()
     }
+    /// <p>The minimum capacity of the DB shard group in Aurora capacity units (ACUs).</p>
+    pub fn min_acu(mut self, input: f64) -> Self {
+        self.inner = self.inner.min_acu(input);
+        self
+    }
+    /// <p>The minimum capacity of the DB shard group in Aurora capacity units (ACUs).</p>
+    pub fn set_min_acu(mut self, input: ::std::option::Option<f64>) -> Self {
+        self.inner = self.inner.set_min_acu(input);
+        self
+    }
+    /// <p>The minimum capacity of the DB shard group in Aurora capacity units (ACUs).</p>
+    pub fn get_min_acu(&self) -> &::std::option::Option<f64> {
+        self.inner.get_min_acu()
+    }
 }

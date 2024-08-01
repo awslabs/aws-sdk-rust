@@ -189,6 +189,20 @@ impl CreateDBShardGroupFluentBuilder {
     pub fn get_max_acu(&self) -> &::std::option::Option<f64> {
         self.inner.get_max_acu()
     }
+    /// <p>The minimum capacity of the DB shard group in Aurora capacity units (ACUs).</p>
+    pub fn min_acu(mut self, input: f64) -> Self {
+        self.inner = self.inner.min_acu(input);
+        self
+    }
+    /// <p>The minimum capacity of the DB shard group in Aurora capacity units (ACUs).</p>
+    pub fn set_min_acu(mut self, input: ::std::option::Option<f64>) -> Self {
+        self.inner = self.inner.set_min_acu(input);
+        self
+    }
+    /// <p>The minimum capacity of the DB shard group in Aurora capacity units (ACUs).</p>
+    pub fn get_min_acu(&self) -> &::std::option::Option<f64> {
+        self.inner.get_min_acu()
+    }
     /// <p>Specifies whether the DB shard group is publicly accessible.</p>
     /// <p>When the DB shard group is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP address from within the DB shard group's virtual private cloud (VPC). It resolves to the public IP address from outside of the DB shard group's VPC. Access to the DB shard group is ultimately controlled by the security group it uses. That public access is not permitted if the security group assigned to the DB shard group doesn't permit it.</p>
     /// <p>When the DB shard group isn't publicly accessible, it is an internal DB shard group with a DNS name that resolves to a private IP address.</p>

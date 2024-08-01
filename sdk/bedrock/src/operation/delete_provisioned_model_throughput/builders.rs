@@ -22,7 +22,7 @@ impl crate::operation::delete_provisioned_model_throughput::builders::DeleteProv
 }
 /// Fluent builder constructing a request to `DeleteProvisionedModelThroughput`.
 ///
-/// <p>Deletes a Provisioned Throughput. You can't delete a Provisioned Throughput before the commitment term is over. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned Throughput</a> in the Amazon Bedrock User Guide.</p>
+/// <p>Deletes a Provisioned Throughput. You can't delete a Provisioned Throughput before the commitment term is over. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned Throughput</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon Bedrock User Guide</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteProvisionedModelThroughputFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

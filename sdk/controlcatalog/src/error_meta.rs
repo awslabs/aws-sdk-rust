@@ -7,6 +7,8 @@ pub enum Error {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>An internal service error occurred during the processing of your request. Try again later.</p>
     InternalServerException(crate::types::error::InternalServerException),
+    /// <p>The requested resource does not exist.</p>
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The request has invalid or missing parameters.</p>
@@ -25,6 +27,7 @@ impl ::std::fmt::Display for Error {
         match self {
             Error::AccessDeniedException(inner) => inner.fmt(f),
             Error::InternalServerException(inner) => inner.fmt(f),
+            Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
@@ -50,9 +53,36 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         match self {
             Self::AccessDeniedException(inner) => inner.meta(),
             Self::InternalServerException(inner) => inner.meta(),
+            Self::ResourceNotFoundException(inner) => inner.meta(),
             Self::ThrottlingException(inner) => inner.meta(),
             Self::ValidationException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_control::GetControlError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_control::GetControlError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_control::GetControlError> for Error {
+    fn from(err: crate::operation::get_control::GetControlError) -> Self {
+        match err {
+            crate::operation::get_control::GetControlError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_control::GetControlError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_control::GetControlError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_control::GetControlError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_control::GetControlError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_control::GetControlError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -78,6 +108,31 @@ impl From<crate::operation::list_common_controls::ListCommonControlsError> for E
             crate::operation::list_common_controls::ListCommonControlsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_common_controls::ListCommonControlsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_common_controls::ListCommonControlsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_controls::ListControlsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_controls::ListControlsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_controls::ListControlsError> for Error {
+    fn from(err: crate::operation::list_controls::ListControlsError) -> Self {
+        match err {
+            crate::operation::list_controls::ListControlsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_controls::ListControlsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_controls::ListControlsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_controls::ListControlsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_controls::ListControlsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -136,6 +191,7 @@ impl ::std::error::Error for Error {
         match self {
             Error::AccessDeniedException(inner) => inner.source(),
             Error::InternalServerException(inner) => inner.source(),
+            Error::ResourceNotFoundException(inner) => inner.source(),
             Error::ThrottlingException(inner) => inner.source(),
             Error::ValidationException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
@@ -147,6 +203,7 @@ impl ::aws_types::request_id::RequestId for Error {
         match self {
             Self::AccessDeniedException(e) => e.request_id(),
             Self::InternalServerException(e) => e.request_id(),
+            Self::ResourceNotFoundException(e) => e.request_id(),
             Self::ThrottlingException(e) => e.request_id(),
             Self::ValidationException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),

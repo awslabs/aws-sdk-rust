@@ -55,6 +55,8 @@ pub use crate::types::_default_ebs_storage_settings::DefaultEbsStorageSettings;
 
 pub use crate::types::_jupyter_lab_app_settings::JupyterLabAppSettings;
 
+pub use crate::types::_emr_settings::EmrSettings;
+
 pub use crate::types::_code_repository::CodeRepository;
 
 pub use crate::types::_custom_image::CustomImage;
@@ -2206,6 +2208,8 @@ mod _edge_preset_deployment_type;
 mod _efs_file_system;
 
 mod _efs_file_system_config;
+
+mod _emr_settings;
 
 mod _emr_step_metadata;
 

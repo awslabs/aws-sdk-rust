@@ -42,6 +42,12 @@ pub fn ser_jupyter_lab_app_settings(
         }
         array_11.finish();
     }
+    if let Some(var_14) = &input.emr_settings {
+        #[allow(unused_mut)]
+        let mut object_15 = object.key("EmrSettings").start_object();
+        crate::protocol_serde::shape_emr_settings::ser_emr_settings(&mut object_15, var_14)?;
+        object_15.finish();
+    }
     Ok(())
 }
 
@@ -72,6 +78,9 @@ where
                         }
                         "CodeRepositories" => {
                             builder = builder.set_code_repositories(crate::protocol_serde::shape_code_repositories::de_code_repositories(tokens)?);
+                        }
+                        "EmrSettings" => {
+                            builder = builder.set_emr_settings(crate::protocol_serde::shape_emr_settings::de_emr_settings(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

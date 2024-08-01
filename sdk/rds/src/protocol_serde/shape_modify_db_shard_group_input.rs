@@ -18,6 +18,14 @@ pub fn ser_modify_db_shard_group_input_input_input(
             ::aws_smithy_types::Number::Float((*var_4).into()),
         );
     }
+    #[allow(unused_mut)]
+    let mut scope_5 = writer.prefix("MinACU");
+    if let Some(var_6) = &input.min_acu {
+        scope_5.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::Float((*var_6).into()),
+        );
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

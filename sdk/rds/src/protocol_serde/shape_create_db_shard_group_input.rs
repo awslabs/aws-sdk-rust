@@ -32,9 +32,17 @@ pub fn ser_create_db_shard_group_input_input_input(
         );
     }
     #[allow(unused_mut)]
-    let mut scope_9 = writer.prefix("PubliclyAccessible");
-    if let Some(var_10) = &input.publicly_accessible {
-        scope_9.boolean(*var_10);
+    let mut scope_9 = writer.prefix("MinACU");
+    if let Some(var_10) = &input.min_acu {
+        scope_9.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::Float((*var_10).into()),
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_11 = writer.prefix("PubliclyAccessible");
+    if let Some(var_12) = &input.publicly_accessible {
+        scope_11.boolean(*var_12);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

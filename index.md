@@ -156,6 +156,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS Support App | [aws-sdk-supportapp](https://crates.io/crates/aws-sdk-supportapp) ([docs](https://docs.rs/aws-sdk-supportapp)) |
 | AWS Systems Manager Incident Manager | [aws-sdk-ssmincidents](https://crates.io/crates/aws-sdk-ssmincidents) ([docs](https://docs.rs/aws-sdk-ssmincidents)) |
 | AWS Systems Manager Incident Manager Contacts | [aws-sdk-ssmcontacts](https://crates.io/crates/aws-sdk-ssmcontacts) ([docs](https://docs.rs/aws-sdk-ssmcontacts)) |
+| AWS Systems Manager QuickSetup | [aws-sdk-ssmquicksetup](https://crates.io/crates/aws-sdk-ssmquicksetup) ([docs](https://docs.rs/aws-sdk-ssmquicksetup)) |
 | AWS Systems Manager for SAP | [aws-sdk-ssmsap](https://crates.io/crates/aws-sdk-ssmsap) ([docs](https://docs.rs/aws-sdk-ssmsap)) |
 | AWS Telco Network Builder | [aws-sdk-tnb](https://crates.io/crates/aws-sdk-tnb) ([docs](https://docs.rs/aws-sdk-tnb)) |
 | AWS Transfer Family | [aws-sdk-transfer](https://crates.io/crates/aws-sdk-transfer) ([docs](https://docs.rs/aws-sdk-transfer)) |

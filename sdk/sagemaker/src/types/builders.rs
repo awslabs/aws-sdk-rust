@@ -43,6 +43,8 @@ pub use crate::types::_default_ebs_storage_settings::DefaultEbsStorageSettingsBu
 
 pub use crate::types::_jupyter_lab_app_settings::JupyterLabAppSettingsBuilder;
 
+pub use crate::types::_emr_settings::EmrSettingsBuilder;
+
 pub use crate::types::_code_repository::CodeRepositoryBuilder;
 
 pub use crate::types::_custom_image::CustomImageBuilder;

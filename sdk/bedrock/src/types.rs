@@ -53,6 +53,10 @@ pub use crate::types::_sort_models_by::SortModelsBy;
 
 pub use crate::types::_foundation_model_details::FoundationModelDetails;
 
+pub use crate::types::_model_copy_job_summary::ModelCopyJobSummary;
+
+pub use crate::types::_model_copy_job_status::ModelCopyJobStatus;
+
 pub use crate::types::_logging_config::LoggingConfig;
 
 pub use crate::types::_s3_config::S3Config;
@@ -276,6 +280,10 @@ mod _human_workflow_config;
 mod _inference_type;
 
 mod _logging_config;
+
+mod _model_copy_job_status;
+
+mod _model_copy_job_summary;
 
 mod _model_customization;
 

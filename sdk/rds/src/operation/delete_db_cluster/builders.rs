@@ -140,28 +140,28 @@ impl DeleteDBClusterFluentBuilder {
     pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_cluster_identifier()
     }
-    /// <p>Specifies whether to skip the creation of a final DB cluster snapshot before the DB cluster is deleted. If skip is specified, no DB cluster snapshot is created. If skip isn't specified, a DB cluster snapshot is created before the DB cluster is deleted. By default, skip isn't specified, and the DB cluster snapshot is created. By default, this parameter is disabled.</p><note>
-    /// <p>You must specify a <code>FinalDBSnapshotIdentifier</code> parameter if <code>SkipFinalSnapshot</code> is disabled.</p>
+    /// <p>Specifies whether to skip the creation of a final DB cluster snapshot before RDS deletes the DB cluster. If you set this value to <code>true</code>, RDS doesn't create a final DB cluster snapshot. If you set this value to <code>false</code> or don't specify it, RDS creates a DB cluster snapshot before it deletes the DB cluster. By default, this parameter is disabled, so RDS creates a final DB cluster snapshot.</p><note>
+    /// <p>If <code>SkipFinalSnapshot</code> is disabled, you must specify a value for the <code>FinalDBSnapshotIdentifier</code> parameter.</p>
     /// </note>
     pub fn skip_final_snapshot(mut self, input: bool) -> Self {
         self.inner = self.inner.skip_final_snapshot(input);
         self
     }
-    /// <p>Specifies whether to skip the creation of a final DB cluster snapshot before the DB cluster is deleted. If skip is specified, no DB cluster snapshot is created. If skip isn't specified, a DB cluster snapshot is created before the DB cluster is deleted. By default, skip isn't specified, and the DB cluster snapshot is created. By default, this parameter is disabled.</p><note>
-    /// <p>You must specify a <code>FinalDBSnapshotIdentifier</code> parameter if <code>SkipFinalSnapshot</code> is disabled.</p>
+    /// <p>Specifies whether to skip the creation of a final DB cluster snapshot before RDS deletes the DB cluster. If you set this value to <code>true</code>, RDS doesn't create a final DB cluster snapshot. If you set this value to <code>false</code> or don't specify it, RDS creates a DB cluster snapshot before it deletes the DB cluster. By default, this parameter is disabled, so RDS creates a final DB cluster snapshot.</p><note>
+    /// <p>If <code>SkipFinalSnapshot</code> is disabled, you must specify a value for the <code>FinalDBSnapshotIdentifier</code> parameter.</p>
     /// </note>
     pub fn set_skip_final_snapshot(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_skip_final_snapshot(input);
         self
     }
-    /// <p>Specifies whether to skip the creation of a final DB cluster snapshot before the DB cluster is deleted. If skip is specified, no DB cluster snapshot is created. If skip isn't specified, a DB cluster snapshot is created before the DB cluster is deleted. By default, skip isn't specified, and the DB cluster snapshot is created. By default, this parameter is disabled.</p><note>
-    /// <p>You must specify a <code>FinalDBSnapshotIdentifier</code> parameter if <code>SkipFinalSnapshot</code> is disabled.</p>
+    /// <p>Specifies whether to skip the creation of a final DB cluster snapshot before RDS deletes the DB cluster. If you set this value to <code>true</code>, RDS doesn't create a final DB cluster snapshot. If you set this value to <code>false</code> or don't specify it, RDS creates a DB cluster snapshot before it deletes the DB cluster. By default, this parameter is disabled, so RDS creates a final DB cluster snapshot.</p><note>
+    /// <p>If <code>SkipFinalSnapshot</code> is disabled, you must specify a value for the <code>FinalDBSnapshotIdentifier</code> parameter.</p>
     /// </note>
     pub fn get_skip_final_snapshot(&self) -> &::std::option::Option<bool> {
         self.inner.get_skip_final_snapshot()
     }
     /// <p>The DB cluster snapshot identifier of the new DB cluster snapshot created when <code>SkipFinalSnapshot</code> is disabled.</p><note>
-    /// <p>Specifying this parameter and also skipping the creation of a final DB cluster snapshot with the <code>SkipFinalShapshot</code> parameter results in an error.</p>
+    /// <p>If you specify this parameter and also skip the creation of a final DB cluster snapshot with the <code>SkipFinalShapshot</code> parameter, the request results in an error.</p>
     /// </note>
     /// <p>Constraints:</p>
     /// <ul>
@@ -177,7 +177,7 @@ impl DeleteDBClusterFluentBuilder {
         self
     }
     /// <p>The DB cluster snapshot identifier of the new DB cluster snapshot created when <code>SkipFinalSnapshot</code> is disabled.</p><note>
-    /// <p>Specifying this parameter and also skipping the creation of a final DB cluster snapshot with the <code>SkipFinalShapshot</code> parameter results in an error.</p>
+    /// <p>If you specify this parameter and also skip the creation of a final DB cluster snapshot with the <code>SkipFinalShapshot</code> parameter, the request results in an error.</p>
     /// </note>
     /// <p>Constraints:</p>
     /// <ul>
@@ -193,7 +193,7 @@ impl DeleteDBClusterFluentBuilder {
         self
     }
     /// <p>The DB cluster snapshot identifier of the new DB cluster snapshot created when <code>SkipFinalSnapshot</code> is disabled.</p><note>
-    /// <p>Specifying this parameter and also skipping the creation of a final DB cluster snapshot with the <code>SkipFinalShapshot</code> parameter results in an error.</p>
+    /// <p>If you specify this parameter and also skip the creation of a final DB cluster snapshot with the <code>SkipFinalShapshot</code> parameter, the request results in an error.</p>
     /// </note>
     /// <p>Constraints:</p>
     /// <ul>
@@ -207,23 +207,17 @@ impl DeleteDBClusterFluentBuilder {
     pub fn get_final_db_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_final_db_snapshot_identifier()
     }
-    /// <p>Specifies whether to remove automated backups immediately after the DB cluster is deleted. This parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB cluster is deleted.</p><note>
-    /// <p>You must delete automated backups for Amazon RDS Multi-AZ DB clusters. For more information about managing automated backups for RDS Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ManagingAutomatedBackups.html">Managing automated backups</a>.</p>
-    /// </note>
+    /// <p>Specifies whether to remove automated backups immediately after the DB cluster is deleted. This parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB cluster is deleted.</p>
     pub fn delete_automated_backups(mut self, input: bool) -> Self {
         self.inner = self.inner.delete_automated_backups(input);
         self
     }
-    /// <p>Specifies whether to remove automated backups immediately after the DB cluster is deleted. This parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB cluster is deleted.</p><note>
-    /// <p>You must delete automated backups for Amazon RDS Multi-AZ DB clusters. For more information about managing automated backups for RDS Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ManagingAutomatedBackups.html">Managing automated backups</a>.</p>
-    /// </note>
+    /// <p>Specifies whether to remove automated backups immediately after the DB cluster is deleted. This parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB cluster is deleted.</p>
     pub fn set_delete_automated_backups(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_delete_automated_backups(input);
         self
     }
-    /// <p>Specifies whether to remove automated backups immediately after the DB cluster is deleted. This parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB cluster is deleted.</p><note>
-    /// <p>You must delete automated backups for Amazon RDS Multi-AZ DB clusters. For more information about managing automated backups for RDS Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ManagingAutomatedBackups.html">Managing automated backups</a>.</p>
-    /// </note>
+    /// <p>Specifies whether to remove automated backups immediately after the DB cluster is deleted. This parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB cluster is deleted.</p>
     pub fn get_delete_automated_backups(&self) -> &::std::option::Option<bool> {
         self.inner.get_delete_automated_backups()
     }

@@ -158,8 +158,23 @@ pub fn de_reboot_db_shard_group(
                 builder = builder.set_max_acu(var_4);
             }
             ,
-            s if s.matches("ComputeRedundancy") /* ComputeRedundancy com.amazonaws.rds.synthetic#RebootDBShardGroupOutput$ComputeRedundancy */ =>  {
+            s if s.matches("MinACU") /* MinACU com.amazonaws.rds.synthetic#RebootDBShardGroupOutput$MinACU */ =>  {
                 let var_5 =
+                    Some(
+                         {
+                            <f64 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (double: `com.amazonaws.rds#DoubleOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_min_acu(var_5);
+            }
+            ,
+            s if s.matches("ComputeRedundancy") /* ComputeRedundancy com.amazonaws.rds.synthetic#RebootDBShardGroupOutput$ComputeRedundancy */ =>  {
+                let var_6 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -170,11 +185,11 @@ pub fn de_reboot_db_shard_group(
                         ?
                     )
                 ;
-                builder = builder.set_compute_redundancy(var_5);
+                builder = builder.set_compute_redundancy(var_6);
             }
             ,
             s if s.matches("Status") /* Status com.amazonaws.rds.synthetic#RebootDBShardGroupOutput$Status */ =>  {
-                let var_6 =
+                let var_7 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -183,11 +198,11 @@ pub fn de_reboot_db_shard_group(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_6);
+                builder = builder.set_status(var_7);
             }
             ,
             s if s.matches("PubliclyAccessible") /* PubliclyAccessible com.amazonaws.rds.synthetic#RebootDBShardGroupOutput$PubliclyAccessible */ =>  {
-                let var_7 =
+                let var_8 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -198,11 +213,11 @@ pub fn de_reboot_db_shard_group(
                         ?
                     )
                 ;
-                builder = builder.set_publicly_accessible(var_7);
+                builder = builder.set_publicly_accessible(var_8);
             }
             ,
             s if s.matches("Endpoint") /* Endpoint com.amazonaws.rds.synthetic#RebootDBShardGroupOutput$Endpoint */ =>  {
-                let var_8 =
+                let var_9 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -211,7 +226,7 @@ pub fn de_reboot_db_shard_group(
                         ?
                     )
                 ;
-                builder = builder.set_endpoint(var_8);
+                builder = builder.set_endpoint(var_9);
             }
             ,
             _ => {}

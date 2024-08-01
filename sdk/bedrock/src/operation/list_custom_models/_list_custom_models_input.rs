@@ -13,14 +13,16 @@ pub struct ListCustomModelsInput {
     pub base_model_arn_equals: ::std::option::Option<::std::string::String>,
     /// <p>Return custom models only if the foundation model Amazon Resource Name (ARN) matches this parameter.</p>
     pub foundation_model_arn_equals: ::std::option::Option<::std::string::String>,
-    /// <p>Maximum number of results to return in the response.</p>
+    /// <p>The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the <code>nextToken</code> field when making another request to return the next batch of results.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>Continuation token from the previous response, for Amazon Bedrock to list the next set of results.</p>
+    /// <p>If the total number of results is greater than the <code>maxResults</code> value provided in the request, enter the token returned in the <code>nextToken</code> field in the response in this field to return the next batch of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The field to sort by in the returned list of models.</p>
     pub sort_by: ::std::option::Option<crate::types::SortModelsBy>,
     /// <p>The sort order of the results.</p>
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
+    /// <p>Return custom models depending on if the current account owns them (<code>true</code>) or if they were shared with the current account (<code>false</code>).</p>
+    pub is_owned: ::std::option::Option<bool>,
 }
 impl ListCustomModelsInput {
     /// <p>Return custom models created before the specified time.</p>
@@ -43,11 +45,11 @@ impl ListCustomModelsInput {
     pub fn foundation_model_arn_equals(&self) -> ::std::option::Option<&str> {
         self.foundation_model_arn_equals.as_deref()
     }
-    /// <p>Maximum number of results to return in the response.</p>
+    /// <p>The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the <code>nextToken</code> field when making another request to return the next batch of results.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>Continuation token from the previous response, for Amazon Bedrock to list the next set of results.</p>
+    /// <p>If the total number of results is greater than the <code>maxResults</code> value provided in the request, enter the token returned in the <code>nextToken</code> field in the response in this field to return the next batch of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -58,6 +60,10 @@ impl ListCustomModelsInput {
     /// <p>The sort order of the results.</p>
     pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
         self.sort_order.as_ref()
+    }
+    /// <p>Return custom models depending on if the current account owns them (<code>true</code>) or if they were shared with the current account (<code>false</code>).</p>
+    pub fn is_owned(&self) -> ::std::option::Option<bool> {
+        self.is_owned
     }
 }
 impl ListCustomModelsInput {
@@ -80,6 +86,7 @@ pub struct ListCustomModelsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) sort_by: ::std::option::Option<crate::types::SortModelsBy>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,
+    pub(crate) is_owned: ::std::option::Option<bool>,
 }
 impl ListCustomModelsInputBuilder {
     /// <p>Return custom models created before the specified time.</p>
@@ -152,31 +159,31 @@ impl ListCustomModelsInputBuilder {
     pub fn get_foundation_model_arn_equals(&self) -> &::std::option::Option<::std::string::String> {
         &self.foundation_model_arn_equals
     }
-    /// <p>Maximum number of results to return in the response.</p>
+    /// <p>The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the <code>nextToken</code> field when making another request to return the next batch of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Maximum number of results to return in the response.</p>
+    /// <p>The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the <code>nextToken</code> field when making another request to return the next batch of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>Maximum number of results to return in the response.</p>
+    /// <p>The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the <code>nextToken</code> field when making another request to return the next batch of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>Continuation token from the previous response, for Amazon Bedrock to list the next set of results.</p>
+    /// <p>If the total number of results is greater than the <code>maxResults</code> value provided in the request, enter the token returned in the <code>nextToken</code> field in the response in this field to return the next batch of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Continuation token from the previous response, for Amazon Bedrock to list the next set of results.</p>
+    /// <p>If the total number of results is greater than the <code>maxResults</code> value provided in the request, enter the token returned in the <code>nextToken</code> field in the response in this field to return the next batch of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>Continuation token from the previous response, for Amazon Bedrock to list the next set of results.</p>
+    /// <p>If the total number of results is greater than the <code>maxResults</code> value provided in the request, enter the token returned in the <code>nextToken</code> field in the response in this field to return the next batch of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
@@ -208,6 +215,20 @@ impl ListCustomModelsInputBuilder {
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
         &self.sort_order
     }
+    /// <p>Return custom models depending on if the current account owns them (<code>true</code>) or if they were shared with the current account (<code>false</code>).</p>
+    pub fn is_owned(mut self, input: bool) -> Self {
+        self.is_owned = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Return custom models depending on if the current account owns them (<code>true</code>) or if they were shared with the current account (<code>false</code>).</p>
+    pub fn set_is_owned(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.is_owned = input;
+        self
+    }
+    /// <p>Return custom models depending on if the current account owns them (<code>true</code>) or if they were shared with the current account (<code>false</code>).</p>
+    pub fn get_is_owned(&self) -> &::std::option::Option<bool> {
+        &self.is_owned
+    }
     /// Consumes the builder and constructs a [`ListCustomModelsInput`](crate::operation::list_custom_models::ListCustomModelsInput).
     pub fn build(
         self,
@@ -222,6 +243,7 @@ impl ListCustomModelsInputBuilder {
             next_token: self.next_token,
             sort_by: self.sort_by,
             sort_order: self.sort_order,
+            is_owned: self.is_owned,
         })
     }
 }

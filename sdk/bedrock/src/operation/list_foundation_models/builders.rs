@@ -22,7 +22,7 @@ impl crate::operation::list_foundation_models::builders::ListFoundationModelsInp
 }
 /// Fluent builder constructing a request to `ListFoundationModels`.
 ///
-/// <p>Lists Amazon Bedrock foundation models that you can use. You can filter the results with the request parameters. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/foundation-models.html">Foundation models</a> in the Amazon Bedrock User Guide.</p>
+/// <p>Lists Amazon Bedrock foundation models that you can use. You can filter the results with the request parameters. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/foundation-models.html">Foundation models</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon Bedrock User Guide</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListFoundationModelsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -122,17 +122,17 @@ impl ListFoundationModelsFluentBuilder {
     pub fn get_by_provider(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_by_provider()
     }
-    /// <p>Return models that support the customization type that you specify. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Amazon Bedrock User Guide.</p>
+    /// <p>Return models that support the customization type that you specify. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon Bedrock User Guide</a>.</p>
     pub fn by_customization_type(mut self, input: crate::types::ModelCustomization) -> Self {
         self.inner = self.inner.by_customization_type(input);
         self
     }
-    /// <p>Return models that support the customization type that you specify. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Amazon Bedrock User Guide.</p>
+    /// <p>Return models that support the customization type that you specify. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon Bedrock User Guide</a>.</p>
     pub fn set_by_customization_type(mut self, input: ::std::option::Option<crate::types::ModelCustomization>) -> Self {
         self.inner = self.inner.set_by_customization_type(input);
         self
     }
-    /// <p>Return models that support the customization type that you specify. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Amazon Bedrock User Guide.</p>
+    /// <p>Return models that support the customization type that you specify. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon Bedrock User Guide</a>.</p>
     pub fn get_by_customization_type(&self) -> &::std::option::Option<crate::types::ModelCustomization> {
         self.inner.get_by_customization_type()
     }
@@ -150,17 +150,17 @@ impl ListFoundationModelsFluentBuilder {
     pub fn get_by_output_modality(&self) -> &::std::option::Option<crate::types::ModelModality> {
         self.inner.get_by_output_modality()
     }
-    /// <p>Return models that support the inference type that you specify. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned Throughput</a> in the Amazon Bedrock User Guide.</p>
+    /// <p>Return models that support the inference type that you specify. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned Throughput</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon Bedrock User Guide</a>.</p>
     pub fn by_inference_type(mut self, input: crate::types::InferenceType) -> Self {
         self.inner = self.inner.by_inference_type(input);
         self
     }
-    /// <p>Return models that support the inference type that you specify. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned Throughput</a> in the Amazon Bedrock User Guide.</p>
+    /// <p>Return models that support the inference type that you specify. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned Throughput</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon Bedrock User Guide</a>.</p>
     pub fn set_by_inference_type(mut self, input: ::std::option::Option<crate::types::InferenceType>) -> Self {
         self.inner = self.inner.set_by_inference_type(input);
         self
     }
-    /// <p>Return models that support the inference type that you specify. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned Throughput</a> in the Amazon Bedrock User Guide.</p>
+    /// <p>Return models that support the inference type that you specify. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned Throughput</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon Bedrock User Guide</a>.</p>
     pub fn get_by_inference_type(&self) -> &::std::option::Option<crate::types::InferenceType> {
         self.inner.get_by_inference_type()
     }
