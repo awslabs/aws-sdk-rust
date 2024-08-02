@@ -22,7 +22,7 @@ pub struct AppAssessmentSummary {
     pub assessment_name: ::std::option::Option<::std::string::String>,
     /// <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub assessment_arn: ::std::string::String,
-    /// <p>TCurrent status of compliance for the resiliency policy.</p>
+    /// <p>Current status of compliance for the resiliency policy.</p>
     pub compliance_status: ::std::option::Option<crate::types::ComplianceStatus>,
     /// <p>Cost for an application.</p>
     pub cost: ::std::option::Option<crate::types::Cost>,
@@ -71,7 +71,7 @@ impl AppAssessmentSummary {
         use std::ops::Deref;
         self.assessment_arn.deref()
     }
-    /// <p>TCurrent status of compliance for the resiliency policy.</p>
+    /// <p>Current status of compliance for the resiliency policy.</p>
     pub fn compliance_status(&self) -> ::std::option::Option<&crate::types::ComplianceStatus> {
         self.compliance_status.as_ref()
     }
@@ -247,17 +247,17 @@ impl AppAssessmentSummaryBuilder {
     pub fn get_assessment_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.assessment_arn
     }
-    /// <p>TCurrent status of compliance for the resiliency policy.</p>
+    /// <p>Current status of compliance for the resiliency policy.</p>
     pub fn compliance_status(mut self, input: crate::types::ComplianceStatus) -> Self {
         self.compliance_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>TCurrent status of compliance for the resiliency policy.</p>
+    /// <p>Current status of compliance for the resiliency policy.</p>
     pub fn set_compliance_status(mut self, input: ::std::option::Option<crate::types::ComplianceStatus>) -> Self {
         self.compliance_status = input;
         self
     }
-    /// <p>TCurrent status of compliance for the resiliency policy.</p>
+    /// <p>Current status of compliance for the resiliency policy.</p>
     pub fn get_compliance_status(&self) -> &::std::option::Option<crate::types::ComplianceStatus> {
         &self.compliance_status
     }

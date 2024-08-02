@@ -19,6 +19,10 @@ pub use crate::types::_permission_model::PermissionModelBuilder;
 
 pub use crate::types::_app_assessment::AppAssessmentBuilder;
 
+pub use crate::types::_assessment_summary::AssessmentSummaryBuilder;
+
+pub use crate::types::_assessment_risk_recommendation::AssessmentRiskRecommendationBuilder;
+
 pub use crate::types::_resource_errors_details::ResourceErrorsDetailsBuilder;
 
 pub use crate::types::_resource_error::ResourceErrorBuilder;
@@ -31,6 +35,10 @@ pub use crate::types::_scoring_component_resiliency_score::ScoringComponentResil
 
 pub use crate::types::_cost::CostBuilder;
 
+pub use crate::types::_failed_grouping_recommendation_entry::FailedGroupingRecommendationEntryBuilder;
+
+pub use crate::types::_reject_grouping_recommendation_entry::RejectGroupingRecommendationEntryBuilder;
+
 pub use crate::types::_unsupported_resource::UnsupportedResourceBuilder;
 
 pub use crate::types::_test_recommendation::TestRecommendationBuilder;
@@ -38,6 +46,12 @@ pub use crate::types::_test_recommendation::TestRecommendationBuilder;
 pub use crate::types::_recommendation_item::RecommendationItemBuilder;
 
 pub use crate::types::_sop_recommendation::SopRecommendationBuilder;
+
+pub use crate::types::_grouping_recommendation::GroupingRecommendationBuilder;
+
+pub use crate::types::_grouping_resource::GroupingResourceBuilder;
+
+pub use crate::types::_grouping_app_component::GroupingAppComponentBuilder;
 
 pub use crate::types::_recommendation_template::RecommendationTemplateBuilder;
 
@@ -82,3 +96,5 @@ pub use crate::types::_batch_update_recommendation_status_successful_entry::Batc
 pub use crate::types::_update_recommendation_status_item::UpdateRecommendationStatusItemBuilder;
 
 pub use crate::types::_update_recommendation_status_request_entry::UpdateRecommendationStatusRequestEntryBuilder;
+
+pub use crate::types::_accept_grouping_recommendation_entry::AcceptGroupingRecommendationEntryBuilder;

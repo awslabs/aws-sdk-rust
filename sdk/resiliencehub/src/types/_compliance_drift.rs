@@ -22,7 +22,7 @@ pub struct ComplianceDrift {
     pub actual_reference_id: ::std::option::Option<::std::string::String>,
     /// <p>Actual compliance value of the entity.</p>
     pub actual_value: ::std::option::Option<::std::collections::HashMap<crate::types::DisruptionType, crate::types::DisruptionCompliance>>,
-    /// <p>Difference type between actual and expected recovery point objective (RPO) and recovery time objective (RTO) values. Currently, Resilience Hub supports only <b>NotEqual</b> difference type.</p>
+    /// <p>Difference type between actual and expected recovery point objective (RPO) and recovery time objective (RTO) values. Currently, Resilience Hub supports only <code>NotEqual</code> difference type.</p>
     pub diff_type: ::std::option::Option<crate::types::DifferenceType>,
 }
 impl ComplianceDrift {
@@ -66,7 +66,7 @@ impl ComplianceDrift {
     ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::DisruptionType, crate::types::DisruptionCompliance>> {
         self.actual_value.as_ref()
     }
-    /// <p>Difference type between actual and expected recovery point objective (RPO) and recovery time objective (RTO) values. Currently, Resilience Hub supports only <b>NotEqual</b> difference type.</p>
+    /// <p>Difference type between actual and expected recovery point objective (RPO) and recovery time objective (RTO) values. Currently, Resilience Hub supports only <code>NotEqual</code> difference type.</p>
     pub fn diff_type(&self) -> ::std::option::Option<&crate::types::DifferenceType> {
         self.diff_type.as_ref()
     }
@@ -242,17 +242,17 @@ impl ComplianceDriftBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<crate::types::DisruptionType, crate::types::DisruptionCompliance>> {
         &self.actual_value
     }
-    /// <p>Difference type between actual and expected recovery point objective (RPO) and recovery time objective (RTO) values. Currently, Resilience Hub supports only <b>NotEqual</b> difference type.</p>
+    /// <p>Difference type between actual and expected recovery point objective (RPO) and recovery time objective (RTO) values. Currently, Resilience Hub supports only <code>NotEqual</code> difference type.</p>
     pub fn diff_type(mut self, input: crate::types::DifferenceType) -> Self {
         self.diff_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Difference type between actual and expected recovery point objective (RPO) and recovery time objective (RTO) values. Currently, Resilience Hub supports only <b>NotEqual</b> difference type.</p>
+    /// <p>Difference type between actual and expected recovery point objective (RPO) and recovery time objective (RTO) values. Currently, Resilience Hub supports only <code>NotEqual</code> difference type.</p>
     pub fn set_diff_type(mut self, input: ::std::option::Option<crate::types::DifferenceType>) -> Self {
         self.diff_type = input;
         self
     }
-    /// <p>Difference type between actual and expected recovery point objective (RPO) and recovery time objective (RTO) values. Currently, Resilience Hub supports only <b>NotEqual</b> difference type.</p>
+    /// <p>Difference type between actual and expected recovery point objective (RPO) and recovery time objective (RTO) values. Currently, Resilience Hub supports only <code>NotEqual</code> difference type.</p>
     pub fn get_diff_type(&self) -> &::std::option::Option<crate::types::DifferenceType> {
         &self.diff_type
     }

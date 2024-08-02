@@ -40,6 +40,8 @@ pub struct AppAssessment {
     pub version_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates if compliance drifts (deviations) were detected while running an assessment for your application.</p>
     pub drift_status: ::std::option::Option<crate::types::DriftStatus>,
+    /// <p>Indicates a concise summary that provides an overview of the Resilience Hub assessment.</p>
+    pub summary: ::std::option::Option<crate::types::AssessmentSummary>,
 }
 impl AppAssessment {
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
@@ -117,6 +119,10 @@ impl AppAssessment {
     pub fn drift_status(&self) -> ::std::option::Option<&crate::types::DriftStatus> {
         self.drift_status.as_ref()
     }
+    /// <p>Indicates a concise summary that provides an overview of the Resilience Hub assessment.</p>
+    pub fn summary(&self) -> ::std::option::Option<&crate::types::AssessmentSummary> {
+        self.summary.as_ref()
+    }
 }
 impl ::std::fmt::Debug for AppAssessment {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -139,6 +145,7 @@ impl ::std::fmt::Debug for AppAssessment {
         formatter.field("resource_errors_details", &self.resource_errors_details);
         formatter.field("version_name", &self.version_name);
         formatter.field("drift_status", &self.drift_status);
+        formatter.field("summary", &self.summary);
         formatter.finish()
     }
 }
@@ -171,6 +178,7 @@ pub struct AppAssessmentBuilder {
     pub(crate) resource_errors_details: ::std::option::Option<crate::types::ResourceErrorsDetails>,
     pub(crate) version_name: ::std::option::Option<::std::string::String>,
     pub(crate) drift_status: ::std::option::Option<crate::types::DriftStatus>,
+    pub(crate) summary: ::std::option::Option<crate::types::AssessmentSummary>,
 }
 impl AppAssessmentBuilder {
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
@@ -445,6 +453,20 @@ impl AppAssessmentBuilder {
     pub fn get_drift_status(&self) -> &::std::option::Option<crate::types::DriftStatus> {
         &self.drift_status
     }
+    /// <p>Indicates a concise summary that provides an overview of the Resilience Hub assessment.</p>
+    pub fn summary(mut self, input: crate::types::AssessmentSummary) -> Self {
+        self.summary = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates a concise summary that provides an overview of the Resilience Hub assessment.</p>
+    pub fn set_summary(mut self, input: ::std::option::Option<crate::types::AssessmentSummary>) -> Self {
+        self.summary = input;
+        self
+    }
+    /// <p>Indicates a concise summary that provides an overview of the Resilience Hub assessment.</p>
+    pub fn get_summary(&self) -> &::std::option::Option<crate::types::AssessmentSummary> {
+        &self.summary
+    }
     /// Consumes the builder and constructs a [`AppAssessment`](crate::types::AppAssessment).
     /// This method will fail if any of the following fields are not set:
     /// - [`invoker`](crate::types::builders::AppAssessmentBuilder::invoker)
@@ -485,6 +507,7 @@ impl AppAssessmentBuilder {
             resource_errors_details: self.resource_errors_details,
             version_name: self.version_name,
             drift_status: self.drift_status,
+            summary: self.summary,
         })
     }
 }
@@ -509,6 +532,7 @@ impl ::std::fmt::Debug for AppAssessmentBuilder {
         formatter.field("resource_errors_details", &self.resource_errors_details);
         formatter.field("version_name", &self.version_name);
         formatter.field("drift_status", &self.drift_status);
+        formatter.field("summary", &self.summary);
         formatter.finish()
     }
 }

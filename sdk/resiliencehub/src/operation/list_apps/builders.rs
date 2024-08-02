@@ -192,17 +192,17 @@ impl ListAppsFluentBuilder {
     pub fn get_to_last_assessment_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_to_last_assessment_time()
     }
-    /// <p>The application list is sorted based on the values of <code>lastAppComplianceEvaluationTime</code> field. By default, application list is sorted in ascending order. To sort the appliation list in descending order, set this field to <code>True</code>.</p>
+    /// <p>The application list is sorted based on the values of <code>lastAppComplianceEvaluationTime</code> field. By default, application list is sorted in ascending order. To sort the application list in descending order, set this field to <code>True</code>.</p>
     pub fn reverse_order(mut self, input: bool) -> Self {
         self.inner = self.inner.reverse_order(input);
         self
     }
-    /// <p>The application list is sorted based on the values of <code>lastAppComplianceEvaluationTime</code> field. By default, application list is sorted in ascending order. To sort the appliation list in descending order, set this field to <code>True</code>.</p>
+    /// <p>The application list is sorted based on the values of <code>lastAppComplianceEvaluationTime</code> field. By default, application list is sorted in ascending order. To sort the application list in descending order, set this field to <code>True</code>.</p>
     pub fn set_reverse_order(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_reverse_order(input);
         self
     }
-    /// <p>The application list is sorted based on the values of <code>lastAppComplianceEvaluationTime</code> field. By default, application list is sorted in ascending order. To sort the appliation list in descending order, set this field to <code>True</code>.</p>
+    /// <p>The application list is sorted based on the values of <code>lastAppComplianceEvaluationTime</code> field. By default, application list is sorted in ascending order. To sort the application list in descending order, set this field to <code>True</code>.</p>
     pub fn get_reverse_order(&self) -> &::std::option::Option<bool> {
         self.inner.get_reverse_order()
     }

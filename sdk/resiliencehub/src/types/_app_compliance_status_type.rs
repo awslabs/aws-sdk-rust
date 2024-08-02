@@ -13,6 +13,8 @@
 /// # let appcompliancestatustype = unimplemented!();
 /// match appcompliancestatustype {
 ///     AppComplianceStatusType::ChangesDetected => { /* ... */ },
+///     AppComplianceStatusType::MissingPolicy => { /* ... */ },
+///     AppComplianceStatusType::NotApplicable => { /* ... */ },
 ///     AppComplianceStatusType::NotAssessed => { /* ... */ },
 ///     AppComplianceStatusType::PolicyBreached => { /* ... */ },
 ///     AppComplianceStatusType::PolicyMet => { /* ... */ },
@@ -46,6 +48,10 @@ pub enum AppComplianceStatusType {
     #[allow(missing_docs)] // documentation missing in model
     ChangesDetected,
     #[allow(missing_docs)] // documentation missing in model
+    MissingPolicy,
+    #[allow(missing_docs)] // documentation missing in model
+    NotApplicable,
+    #[allow(missing_docs)] // documentation missing in model
     NotAssessed,
     #[allow(missing_docs)] // documentation missing in model
     PolicyBreached,
@@ -59,6 +65,8 @@ impl ::std::convert::From<&str> for AppComplianceStatusType {
     fn from(s: &str) -> Self {
         match s {
             "ChangesDetected" => AppComplianceStatusType::ChangesDetected,
+            "MissingPolicy" => AppComplianceStatusType::MissingPolicy,
+            "NotApplicable" => AppComplianceStatusType::NotApplicable,
             "NotAssessed" => AppComplianceStatusType::NotAssessed,
             "PolicyBreached" => AppComplianceStatusType::PolicyBreached,
             "PolicyMet" => AppComplianceStatusType::PolicyMet,
@@ -78,6 +86,8 @@ impl AppComplianceStatusType {
     pub fn as_str(&self) -> &str {
         match self {
             AppComplianceStatusType::ChangesDetected => "ChangesDetected",
+            AppComplianceStatusType::MissingPolicy => "MissingPolicy",
+            AppComplianceStatusType::NotApplicable => "NotApplicable",
             AppComplianceStatusType::NotAssessed => "NotAssessed",
             AppComplianceStatusType::PolicyBreached => "PolicyBreached",
             AppComplianceStatusType::PolicyMet => "PolicyMet",
@@ -86,7 +96,14 @@ impl AppComplianceStatusType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ChangesDetected", "NotAssessed", "PolicyBreached", "PolicyMet"]
+        &[
+            "ChangesDetected",
+            "MissingPolicy",
+            "NotApplicable",
+            "NotAssessed",
+            "PolicyBreached",
+            "PolicyMet",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for AppComplianceStatusType {
@@ -110,6 +127,8 @@ impl ::std::fmt::Display for AppComplianceStatusType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AppComplianceStatusType::ChangesDetected => write!(f, "ChangesDetected"),
+            AppComplianceStatusType::MissingPolicy => write!(f, "MissingPolicy"),
+            AppComplianceStatusType::NotApplicable => write!(f, "NotApplicable"),
             AppComplianceStatusType::NotAssessed => write!(f, "NotAssessed"),
             AppComplianceStatusType::PolicyBreached => write!(f, "PolicyBreached"),
             AppComplianceStatusType::PolicyMet => write!(f, "PolicyMet"),

@@ -59,13 +59,13 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`AddDraftAppVersionResourceMappings`](crate::operation::add_draft_app_version_resource_mappings) operation has
-/// a [`Client::add_draft_app_version_resource_mappings`], function which returns a builder for that operation.
+/// For example, the [`AcceptResourceGroupingRecommendations`](crate::operation::accept_resource_grouping_recommendations) operation has
+/// a [`Client::accept_resource_grouping_recommendations`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.add_draft_app_version_resource_mappings()
+/// let result = client.accept_resource_grouping_recommendations()
 ///     .app_arn("example")
 ///     .send()
 ///     .await;
@@ -136,6 +136,8 @@ impl Client {
     }
 }
 
+mod accept_resource_grouping_recommendations;
+
 mod add_draft_app_version_resource_mappings;
 
 mod batch_update_recommendation_status;
@@ -161,7 +163,7 @@ mod create_resiliency_policy;
 /// # let client: aws_sdk_resiliencehub::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.add_draft_app_version_resource_mappings()
+/// let result = client.accept_resource_grouping_recommendations()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -209,6 +211,8 @@ mod describe_draft_app_version_resources_import_status;
 
 mod describe_resiliency_policy;
 
+mod describe_resource_grouping_recommendation_task;
+
 mod import_resources_to_draft_app_version;
 
 mod list_alarm_recommendations;
@@ -239,6 +243,8 @@ mod list_recommendation_templates;
 
 mod list_resiliency_policies;
 
+mod list_resource_grouping_recommendations;
+
 mod list_sop_recommendations;
 
 mod list_suggested_resiliency_policies;
@@ -253,11 +259,15 @@ mod publish_app_version;
 
 mod put_draft_app_version_template;
 
+mod reject_resource_grouping_recommendations;
+
 mod remove_draft_app_version_resource_mappings;
 
 mod resolve_app_version_resources;
 
 mod start_app_assessment;
+
+mod start_resource_grouping_recommendation_task;
 
 mod tag_resource;
 

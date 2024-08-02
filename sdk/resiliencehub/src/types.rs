@@ -41,7 +41,13 @@ pub use crate::types::_app_compliance_status_type::AppComplianceStatusType;
 
 pub use crate::types::_app_status_type::AppStatusType;
 
+pub use crate::types::_resources_grouping_rec_gen_status_type::ResourcesGroupingRecGenStatusType;
+
 pub use crate::types::_app_assessment::AppAssessment;
+
+pub use crate::types::_assessment_summary::AssessmentSummary;
+
+pub use crate::types::_assessment_risk_recommendation::AssessmentRiskRecommendation;
 
 pub use crate::types::_drift_status::DriftStatus;
 
@@ -69,6 +75,12 @@ pub use crate::types::_assessment_invoker::AssessmentInvoker;
 
 pub use crate::types::_resource_resolution_status_type::ResourceResolutionStatusType;
 
+pub use crate::types::_failed_grouping_recommendation_entry::FailedGroupingRecommendationEntry;
+
+pub use crate::types::_reject_grouping_recommendation_entry::RejectGroupingRecommendationEntry;
+
+pub use crate::types::_grouping_recommendation_rejection_reason::GroupingRecommendationRejectionReason;
+
 pub use crate::types::_unsupported_resource::UnsupportedResource;
 
 pub use crate::types::_test_recommendation::TestRecommendation;
@@ -86,6 +98,16 @@ pub use crate::types::_test_risk::TestRisk;
 pub use crate::types::_sop_recommendation::SopRecommendation;
 
 pub use crate::types::_sop_service_type::SopServiceType;
+
+pub use crate::types::_grouping_recommendation::GroupingRecommendation;
+
+pub use crate::types::_grouping_recommendation_confidence_level::GroupingRecommendationConfidenceLevel;
+
+pub use crate::types::_grouping_recommendation_status_type::GroupingRecommendationStatusType;
+
+pub use crate::types::_grouping_resource::GroupingResource;
+
+pub use crate::types::_grouping_app_component::GroupingAppComponent;
 
 pub use crate::types::_recommendation_template::RecommendationTemplate;
 
@@ -155,6 +177,10 @@ pub use crate::types::_update_recommendation_status_item::UpdateRecommendationSt
 
 pub use crate::types::_update_recommendation_status_request_entry::UpdateRecommendationStatusRequestEntry;
 
+pub use crate::types::_accept_grouping_recommendation_entry::AcceptGroupingRecommendationEntry;
+
+mod _accept_grouping_recommendation_entry;
+
 mod _alarm_recommendation;
 
 mod _alarm_type;
@@ -185,7 +211,11 @@ mod _app_version_summary;
 
 mod _assessment_invoker;
 
+mod _assessment_risk_recommendation;
+
 mod _assessment_status;
+
+mod _assessment_summary;
 
 mod _batch_update_recommendation_status_failed_entry;
 
@@ -229,7 +259,21 @@ mod _event_type;
 
 mod _exclude_recommendation_reason;
 
+mod _failed_grouping_recommendation_entry;
+
 mod _failure_policy;
+
+mod _grouping_app_component;
+
+mod _grouping_recommendation;
+
+mod _grouping_recommendation_confidence_level;
+
+mod _grouping_recommendation_rejection_reason;
+
+mod _grouping_recommendation_status_type;
+
+mod _grouping_resource;
 
 mod _ha_architecture;
 
@@ -256,6 +300,8 @@ mod _recommendation_status;
 mod _recommendation_template;
 
 mod _recommendation_template_status;
+
+mod _reject_grouping_recommendation_entry;
 
 mod _render_recommendation_type;
 
@@ -286,6 +332,8 @@ mod _resource_mapping_type;
 mod _resource_resolution_status_type;
 
 mod _resource_source_type;
+
+mod _resources_grouping_rec_gen_status_type;
 
 mod _s3_location;
 

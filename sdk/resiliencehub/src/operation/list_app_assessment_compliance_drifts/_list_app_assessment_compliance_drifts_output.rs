@@ -5,7 +5,7 @@
 pub struct ListAppAssessmentComplianceDriftsOutput {
     /// <p>Indicates compliance drifts (recovery time objective (RTO) and recovery point objective (RPO)) detected for an assessed entity.</p>
     pub compliance_drifts: ::std::vec::Vec<crate::types::ComplianceDrift>,
-    /// <p>Token number of the next application to be checked for compliance and regulatory requirements from the list of applications.</p>
+    /// <p>Null, or the token from a previous call to get the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -15,7 +15,7 @@ impl ListAppAssessmentComplianceDriftsOutput {
         use std::ops::Deref;
         self.compliance_drifts.deref()
     }
-    /// <p>Token number of the next application to be checked for compliance and regulatory requirements from the list of applications.</p>
+    /// <p>Null, or the token from a previous call to get the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -61,17 +61,17 @@ impl ListAppAssessmentComplianceDriftsOutputBuilder {
     pub fn get_compliance_drifts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComplianceDrift>> {
         &self.compliance_drifts
     }
-    /// <p>Token number of the next application to be checked for compliance and regulatory requirements from the list of applications.</p>
+    /// <p>Null, or the token from a previous call to get the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Token number of the next application to be checked for compliance and regulatory requirements from the list of applications.</p>
+    /// <p>Null, or the token from a previous call to get the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>Token number of the next application to be checked for compliance and regulatory requirements from the list of applications.</p>
+    /// <p>Null, or the token from a previous call to get the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

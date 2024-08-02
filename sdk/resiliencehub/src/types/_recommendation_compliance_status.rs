@@ -15,6 +15,7 @@
 ///     RecommendationComplianceStatus::BreachedCanMeet => { /* ... */ },
 ///     RecommendationComplianceStatus::BreachedUnattainable => { /* ... */ },
 ///     RecommendationComplianceStatus::MetCanImprove => { /* ... */ },
+///     RecommendationComplianceStatus::MissingPolicy => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -48,6 +49,8 @@ pub enum RecommendationComplianceStatus {
     BreachedUnattainable,
     #[allow(missing_docs)] // documentation missing in model
     MetCanImprove,
+    #[allow(missing_docs)] // documentation missing in model
+    MissingPolicy,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -58,6 +61,7 @@ impl ::std::convert::From<&str> for RecommendationComplianceStatus {
             "BreachedCanMeet" => RecommendationComplianceStatus::BreachedCanMeet,
             "BreachedUnattainable" => RecommendationComplianceStatus::BreachedUnattainable,
             "MetCanImprove" => RecommendationComplianceStatus::MetCanImprove,
+            "MissingPolicy" => RecommendationComplianceStatus::MissingPolicy,
             other => RecommendationComplianceStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -76,12 +80,13 @@ impl RecommendationComplianceStatus {
             RecommendationComplianceStatus::BreachedCanMeet => "BreachedCanMeet",
             RecommendationComplianceStatus::BreachedUnattainable => "BreachedUnattainable",
             RecommendationComplianceStatus::MetCanImprove => "MetCanImprove",
+            RecommendationComplianceStatus::MissingPolicy => "MissingPolicy",
             RecommendationComplianceStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BreachedCanMeet", "BreachedUnattainable", "MetCanImprove"]
+        &["BreachedCanMeet", "BreachedUnattainable", "MetCanImprove", "MissingPolicy"]
     }
 }
 impl ::std::convert::AsRef<str> for RecommendationComplianceStatus {
@@ -107,6 +112,7 @@ impl ::std::fmt::Display for RecommendationComplianceStatus {
             RecommendationComplianceStatus::BreachedCanMeet => write!(f, "BreachedCanMeet"),
             RecommendationComplianceStatus::BreachedUnattainable => write!(f, "BreachedUnattainable"),
             RecommendationComplianceStatus::MetCanImprove => write!(f, "MetCanImprove"),
+            RecommendationComplianceStatus::MissingPolicy => write!(f, "MissingPolicy"),
             RecommendationComplianceStatus::Unknown(value) => write!(f, "{}", value),
         }
     }

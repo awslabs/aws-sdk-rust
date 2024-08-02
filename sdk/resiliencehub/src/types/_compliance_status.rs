@@ -12,6 +12,8 @@
 /// ```text
 /// # let compliancestatus = unimplemented!();
 /// match compliancestatus {
+///     ComplianceStatus::MissingPolicy => { /* ... */ },
+///     ComplianceStatus::NotApplicable => { /* ... */ },
 ///     ComplianceStatus::PolicyBreached => { /* ... */ },
 ///     ComplianceStatus::PolicyMet => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -42,6 +44,10 @@
 )]
 pub enum ComplianceStatus {
     #[allow(missing_docs)] // documentation missing in model
+    MissingPolicy,
+    #[allow(missing_docs)] // documentation missing in model
+    NotApplicable,
+    #[allow(missing_docs)] // documentation missing in model
     PolicyBreached,
     #[allow(missing_docs)] // documentation missing in model
     PolicyMet,
@@ -52,6 +58,8 @@ pub enum ComplianceStatus {
 impl ::std::convert::From<&str> for ComplianceStatus {
     fn from(s: &str) -> Self {
         match s {
+            "MissingPolicy" => ComplianceStatus::MissingPolicy,
+            "NotApplicable" => ComplianceStatus::NotApplicable,
             "PolicyBreached" => ComplianceStatus::PolicyBreached,
             "PolicyMet" => ComplianceStatus::PolicyMet,
             other => ComplianceStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -69,6 +77,8 @@ impl ComplianceStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ComplianceStatus::MissingPolicy => "MissingPolicy",
+            ComplianceStatus::NotApplicable => "NotApplicable",
             ComplianceStatus::PolicyBreached => "PolicyBreached",
             ComplianceStatus::PolicyMet => "PolicyMet",
             ComplianceStatus::Unknown(value) => value.as_str(),
@@ -76,7 +86,7 @@ impl ComplianceStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PolicyBreached", "PolicyMet"]
+        &["MissingPolicy", "NotApplicable", "PolicyBreached", "PolicyMet"]
     }
 }
 impl ::std::convert::AsRef<str> for ComplianceStatus {
@@ -99,6 +109,8 @@ impl ComplianceStatus {
 impl ::std::fmt::Display for ComplianceStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ComplianceStatus::MissingPolicy => write!(f, "MissingPolicy"),
+            ComplianceStatus::NotApplicable => write!(f, "NotApplicable"),
             ComplianceStatus::PolicyBreached => write!(f, "PolicyBreached"),
             ComplianceStatus::PolicyMet => write!(f, "PolicyMet"),
             ComplianceStatus::Unknown(value) => write!(f, "{}", value),

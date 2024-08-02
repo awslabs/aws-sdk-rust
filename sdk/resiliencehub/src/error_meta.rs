@@ -71,6 +71,55 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::accept_resource_grouping_recommendations::AcceptResourceGroupingRecommendationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::accept_resource_grouping_recommendations::AcceptResourceGroupingRecommendationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::accept_resource_grouping_recommendations::AcceptResourceGroupingRecommendationsError> for Error {
+    fn from(err: crate::operation::accept_resource_grouping_recommendations::AcceptResourceGroupingRecommendationsError) -> Self {
+        match err {
+            crate::operation::accept_resource_grouping_recommendations::AcceptResourceGroupingRecommendationsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::accept_resource_grouping_recommendations::AcceptResourceGroupingRecommendationsError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::accept_resource_grouping_recommendations::AcceptResourceGroupingRecommendationsError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::accept_resource_grouping_recommendations::AcceptResourceGroupingRecommendationsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::accept_resource_grouping_recommendations::AcceptResourceGroupingRecommendationsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::accept_resource_grouping_recommendations::AcceptResourceGroupingRecommendationsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsError,
             R,
         >,
@@ -108,6 +157,9 @@ impl From<crate::operation::add_draft_app_version_resource_mappings::AddDraftApp
             crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsError::ServiceQuotaExceededException(
+                inner,
+            ) => Error::ServiceQuotaExceededException(inner),
             crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
@@ -960,6 +1012,43 @@ impl From<crate::operation::describe_resiliency_policy::DescribeResiliencyPolicy
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_resource_grouping_recommendation_task::DescribeResourceGroupingRecommendationTaskError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_resource_grouping_recommendation_task::DescribeResourceGroupingRecommendationTaskError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_resource_grouping_recommendation_task::DescribeResourceGroupingRecommendationTaskError> for Error {
+    fn from(err: crate::operation::describe_resource_grouping_recommendation_task::DescribeResourceGroupingRecommendationTaskError) -> Self {
+        match err {
+            crate::operation::describe_resource_grouping_recommendation_task::DescribeResourceGroupingRecommendationTaskError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_resource_grouping_recommendation_task::DescribeResourceGroupingRecommendationTaskError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::describe_resource_grouping_recommendation_task::DescribeResourceGroupingRecommendationTaskError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_resource_grouping_recommendation_task::DescribeResourceGroupingRecommendationTaskError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_resource_grouping_recommendation_task::DescribeResourceGroupingRecommendationTaskError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_resource_grouping_recommendation_task::DescribeResourceGroupingRecommendationTaskError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::import_resources_to_draft_app_version::ImportResourcesToDraftAppVersionError,
             R,
         >,
@@ -1542,6 +1631,55 @@ impl From<crate::operation::list_resiliency_policies::ListResiliencyPoliciesErro
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_resource_grouping_recommendations::ListResourceGroupingRecommendationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_resource_grouping_recommendations::ListResourceGroupingRecommendationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_resource_grouping_recommendations::ListResourceGroupingRecommendationsError> for Error {
+    fn from(err: crate::operation::list_resource_grouping_recommendations::ListResourceGroupingRecommendationsError) -> Self {
+        match err {
+            crate::operation::list_resource_grouping_recommendations::ListResourceGroupingRecommendationsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_resource_grouping_recommendations::ListResourceGroupingRecommendationsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_resource_grouping_recommendations::ListResourceGroupingRecommendationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_resource_grouping_recommendations::ListResourceGroupingRecommendationsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_resource_grouping_recommendations::ListResourceGroupingRecommendationsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_resource_grouping_recommendations::ListResourceGroupingRecommendationsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_sop_recommendations::ListSopRecommendationsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1820,6 +1958,55 @@ impl From<crate::operation::put_draft_app_version_template::PutDraftAppVersionTe
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::reject_resource_grouping_recommendations::RejectResourceGroupingRecommendationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::reject_resource_grouping_recommendations::RejectResourceGroupingRecommendationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::reject_resource_grouping_recommendations::RejectResourceGroupingRecommendationsError> for Error {
+    fn from(err: crate::operation::reject_resource_grouping_recommendations::RejectResourceGroupingRecommendationsError) -> Self {
+        match err {
+            crate::operation::reject_resource_grouping_recommendations::RejectResourceGroupingRecommendationsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::reject_resource_grouping_recommendations::RejectResourceGroupingRecommendationsError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::reject_resource_grouping_recommendations::RejectResourceGroupingRecommendationsError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::reject_resource_grouping_recommendations::RejectResourceGroupingRecommendationsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::reject_resource_grouping_recommendations::RejectResourceGroupingRecommendationsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::reject_resource_grouping_recommendations::RejectResourceGroupingRecommendationsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::remove_draft_app_version_resource_mappings::RemoveDraftAppVersionResourceMappingsError,
             R,
         >,
@@ -1940,6 +2127,44 @@ impl From<crate::operation::start_app_assessment::StartAppAssessmentError> for E
             crate::operation::start_app_assessment::StartAppAssessmentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::start_app_assessment::StartAppAssessmentError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::start_app_assessment::StartAppAssessmentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_resource_grouping_recommendation_task::StartResourceGroupingRecommendationTaskError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_resource_grouping_recommendation_task::StartResourceGroupingRecommendationTaskError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_resource_grouping_recommendation_task::StartResourceGroupingRecommendationTaskError> for Error {
+    fn from(err: crate::operation::start_resource_grouping_recommendation_task::StartResourceGroupingRecommendationTaskError) -> Self {
+        match err {
+            crate::operation::start_resource_grouping_recommendation_task::StartResourceGroupingRecommendationTaskError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_resource_grouping_recommendation_task::StartResourceGroupingRecommendationTaskError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_resource_grouping_recommendation_task::StartResourceGroupingRecommendationTaskError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_resource_grouping_recommendation_task::StartResourceGroupingRecommendationTaskError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_resource_grouping_recommendation_task::StartResourceGroupingRecommendationTaskError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_resource_grouping_recommendation_task::StartResourceGroupingRecommendationTaskError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_resource_grouping_recommendation_task::StartResourceGroupingRecommendationTaskError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

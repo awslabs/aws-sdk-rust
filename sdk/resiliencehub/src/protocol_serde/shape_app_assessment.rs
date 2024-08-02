@@ -116,6 +116,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "summary" => {
+                            builder = builder.set_summary(crate::protocol_serde::shape_assessment_summary::de_assessment_summary(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

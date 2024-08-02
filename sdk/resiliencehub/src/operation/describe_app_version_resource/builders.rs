@@ -23,7 +23,7 @@ impl crate::operation::describe_app_version_resource::builders::DescribeAppVersi
 /// Fluent builder constructing a request to `DescribeAppVersionResource`.
 ///
 /// <p>Describes a resource of the Resilience Hub application.</p><note>
-/// <p>This API accepts only one of the following parameters to descibe the resource:</p>
+/// <p>This API accepts only one of the following parameters to describe the resource:</p>
 /// <ul>
 /// <li>
 /// <p><code>resourceName</code></p></li>

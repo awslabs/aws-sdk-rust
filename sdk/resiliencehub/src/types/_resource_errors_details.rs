@@ -6,7 +6,7 @@
 pub struct ResourceErrorsDetails {
     /// <p>A list of errors retrieving an application's resources.</p>
     pub resource_errors: ::std::option::Option<::std::vec::Vec<crate::types::ResourceError>>,
-    /// <p>This indicates if there are more errors not listed in the resourceErrors list.</p>
+    /// <p>This indicates if there are more errors not listed in the <code>resourceErrors</code> list.</p>
     pub has_more_errors: ::std::option::Option<bool>,
 }
 impl ResourceErrorsDetails {
@@ -16,7 +16,7 @@ impl ResourceErrorsDetails {
     pub fn resource_errors(&self) -> &[crate::types::ResourceError] {
         self.resource_errors.as_deref().unwrap_or_default()
     }
-    /// <p>This indicates if there are more errors not listed in the resourceErrors list.</p>
+    /// <p>This indicates if there are more errors not listed in the <code>resourceErrors</code> list.</p>
     pub fn has_more_errors(&self) -> ::std::option::Option<bool> {
         self.has_more_errors
     }
@@ -56,17 +56,17 @@ impl ResourceErrorsDetailsBuilder {
     pub fn get_resource_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceError>> {
         &self.resource_errors
     }
-    /// <p>This indicates if there are more errors not listed in the resourceErrors list.</p>
+    /// <p>This indicates if there are more errors not listed in the <code>resourceErrors</code> list.</p>
     pub fn has_more_errors(mut self, input: bool) -> Self {
         self.has_more_errors = ::std::option::Option::Some(input);
         self
     }
-    /// <p>This indicates if there are more errors not listed in the resourceErrors list.</p>
+    /// <p>This indicates if there are more errors not listed in the <code>resourceErrors</code> list.</p>
     pub fn set_has_more_errors(mut self, input: ::std::option::Option<bool>) -> Self {
         self.has_more_errors = input;
         self
     }
-    /// <p>This indicates if there are more errors not listed in the resourceErrors list.</p>
+    /// <p>This indicates if there are more errors not listed in the <code>resourceErrors</code> list.</p>
     pub fn get_has_more_errors(&self) -> &::std::option::Option<bool> {
         &self.has_more_errors
     }

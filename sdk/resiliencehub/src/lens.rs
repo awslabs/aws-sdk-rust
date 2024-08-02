@@ -139,6 +139,16 @@ pub(crate) fn reflens_list_resiliency_policies_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_resource_grouping_recommendations_output_output_next_token(
+    input: &crate::operation::list_resource_grouping_recommendations::ListResourceGroupingRecommendationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_sop_recommendations_output_output_next_token(
     input: &crate::operation::list_sop_recommendations::ListSopRecommendationsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -183,5 +193,12 @@ pub(crate) fn lens_list_app_assessment_resource_drifts_output_output_resource_dr
     input: crate::operation::list_app_assessment_resource_drifts::ListAppAssessmentResourceDriftsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ResourceDrift>> {
     let input = input.resource_drifts;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_resource_grouping_recommendations_output_output_grouping_recommendations(
+    input: crate::operation::list_resource_grouping_recommendations::ListResourceGroupingRecommendationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::GroupingRecommendation>> {
+    let input = input.grouping_recommendations;
     ::std::option::Option::Some(input)
 }

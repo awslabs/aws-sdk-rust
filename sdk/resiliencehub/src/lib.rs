@@ -31,7 +31,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-resiliencehub = "1.36.0"
+//! aws-sdk-resiliencehub = "1.37.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -148,13 +148,13 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`AddDraftAppVersionResourceMappings`](crate::operation::add_draft_app_version_resource_mappings) operation has
-/// a [`Client::add_draft_app_version_resource_mappings`], function which returns a builder for that operation.
+/// For example, the [`AcceptResourceGroupingRecommendations`](crate::operation::accept_resource_grouping_recommendations) operation has
+/// a [`Client::accept_resource_grouping_recommendations`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.add_draft_app_version_resource_mappings()
+/// let result = client.accept_resource_grouping_recommendations()
 ///     .app_arn("example")
 ///     .send()
 ///     .await;
