@@ -954,6 +954,32 @@ impl From<crate::operation::describe_repository_creation_templates::DescribeRepo
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_account_setting::GetAccountSettingError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_account_setting::GetAccountSettingError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_account_setting::GetAccountSettingError> for Error {
+    fn from(err: crate::operation::get_account_setting::GetAccountSettingError) -> Self {
+        match err {
+            crate::operation::get_account_setting::GetAccountSettingError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::get_account_setting::GetAccountSettingError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::get_account_setting::GetAccountSettingError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_account_setting::GetAccountSettingError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_authorization_token::GetAuthorizationTokenError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1269,6 +1295,33 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
             }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ServerException(inner) => Error::ServerException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_account_setting::PutAccountSettingError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_account_setting::PutAccountSettingError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_account_setting::PutAccountSettingError> for Error {
+    fn from(err: crate::operation::put_account_setting::PutAccountSettingError) -> Self {
+        match err {
+            crate::operation::put_account_setting::PutAccountSettingError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::put_account_setting::PutAccountSettingError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::put_account_setting::PutAccountSettingError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::put_account_setting::PutAccountSettingError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::put_account_setting::PutAccountSettingError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

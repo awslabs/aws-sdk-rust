@@ -391,6 +391,84 @@ impl From<crate::operation::create_asset_type::CreateAssetTypeError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_data_product::CreateDataProductError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_data_product::CreateDataProductError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_data_product::CreateDataProductError> for Error {
+    fn from(err: crate::operation::create_data_product::CreateDataProductError) -> Self {
+        match err {
+            crate::operation::create_data_product::CreateDataProductError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_data_product::CreateDataProductError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_data_product::CreateDataProductError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_data_product::CreateDataProductError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_data_product::CreateDataProductError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_data_product::CreateDataProductError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_data_product::CreateDataProductError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_data_product::CreateDataProductError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::create_data_product::CreateDataProductError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_data_product_revision::CreateDataProductRevisionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_data_product_revision::CreateDataProductRevisionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_data_product_revision::CreateDataProductRevisionError> for Error {
+    fn from(err: crate::operation::create_data_product_revision::CreateDataProductRevisionError) -> Self {
+        match err {
+            crate::operation::create_data_product_revision::CreateDataProductRevisionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_data_product_revision::CreateDataProductRevisionError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_data_product_revision::CreateDataProductRevisionError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_data_product_revision::CreateDataProductRevisionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_data_product_revision::CreateDataProductRevisionError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_data_product_revision::CreateDataProductRevisionError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_data_product_revision::CreateDataProductRevisionError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::create_data_product_revision::CreateDataProductRevisionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_data_source::CreateDataSourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -981,6 +1059,7 @@ impl From<crate::operation::delete_asset::DeleteAssetError> for Error {
     fn from(err: crate::operation::delete_asset::DeleteAssetError) -> Self {
         match err {
             crate::operation::delete_asset::DeleteAssetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_asset::DeleteAssetError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::delete_asset::DeleteAssetError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::delete_asset::DeleteAssetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_asset::DeleteAssetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
@@ -1045,6 +1124,36 @@ impl From<crate::operation::delete_asset_type::DeleteAssetTypeError> for Error {
             crate::operation::delete_asset_type::DeleteAssetTypeError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_asset_type::DeleteAssetTypeError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::delete_asset_type::DeleteAssetTypeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_data_product::DeleteDataProductError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_data_product::DeleteDataProductError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_data_product::DeleteDataProductError> for Error {
+    fn from(err: crate::operation::delete_data_product::DeleteDataProductError) -> Self {
+        match err {
+            crate::operation::delete_data_product::DeleteDataProductError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_data_product::DeleteDataProductError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_data_product::DeleteDataProductError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_data_product::DeleteDataProductError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_data_product::DeleteDataProductError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_data_product::DeleteDataProductError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_data_product::DeleteDataProductError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::delete_data_product::DeleteDataProductError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1750,6 +1859,33 @@ impl From<crate::operation::get_asset_type::GetAssetTypeError> for Error {
             crate::operation::get_asset_type::GetAssetTypeError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_asset_type::GetAssetTypeError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::get_asset_type::GetAssetTypeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_data_product::GetDataProductError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_data_product::GetDataProductError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_data_product::GetDataProductError> for Error {
+    fn from(err: crate::operation::get_data_product::GetDataProductError) -> Self {
+        match err {
+            crate::operation::get_data_product::GetDataProductError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_data_product::GetDataProductError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_data_product::GetDataProductError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_data_product::GetDataProductError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_data_product::GetDataProductError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_data_product::GetDataProductError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::get_data_product::GetDataProductError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2607,6 +2743,48 @@ impl From<crate::operation::list_asset_revisions::ListAssetRevisionsError> for E
             crate::operation::list_asset_revisions::ListAssetRevisionsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_asset_revisions::ListAssetRevisionsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::list_asset_revisions::ListAssetRevisionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_data_product_revisions::ListDataProductRevisionsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_data_product_revisions::ListDataProductRevisionsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_data_product_revisions::ListDataProductRevisionsError> for Error {
+    fn from(err: crate::operation::list_data_product_revisions::ListDataProductRevisionsError) -> Self {
+        match err {
+            crate::operation::list_data_product_revisions::ListDataProductRevisionsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_data_product_revisions::ListDataProductRevisionsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_data_product_revisions::ListDataProductRevisionsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_data_product_revisions::ListDataProductRevisionsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_data_product_revisions::ListDataProductRevisionsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_data_product_revisions::ListDataProductRevisionsError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::list_data_product_revisions::ListDataProductRevisionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

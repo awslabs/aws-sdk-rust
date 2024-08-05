@@ -13,9 +13,13 @@ pub use crate::types::_listing_status::ListingStatus;
 
 pub use crate::types::_listing_item::ListingItem;
 
-pub use crate::types::_asset_listing::AssetListing;
+pub use crate::types::_data_product_listing::DataProductListing;
+
+pub use crate::types::_listing_summary::ListingSummary;
 
 pub use crate::types::_detailed_glossary_term::DetailedGlossaryTerm;
+
+pub use crate::types::_asset_listing::AssetListing;
 
 pub use crate::types::_time_series_data_point_summary_form_output::TimeSeriesDataPointSummaryFormOutput;
 
@@ -111,6 +115,12 @@ pub use crate::types::_form_input::FormInput;
 
 pub use crate::types::_data_source_summary::DataSourceSummary;
 
+pub use crate::types::_data_product_item::DataProductItem;
+
+pub use crate::types::_data_product_item_type::DataProductItemType;
+
+pub use crate::types::_data_product_status::DataProductStatus;
+
 pub use crate::types::_form_entry_output::FormEntryOutput;
 
 pub use crate::types::_form_entry_input::FormEntryInput;
@@ -136,6 +146,10 @@ pub use crate::types::_subscription_target_form::SubscriptionTargetForm;
 pub use crate::types::_subscribed_listing::SubscribedListing;
 
 pub use crate::types::_subscribed_listing_item::SubscribedListingItem;
+
+pub use crate::types::_subscribed_product_listing::SubscribedProductListing;
+
+pub use crate::types::_asset_in_data_product_listing_item::AssetInDataProductListingItem;
 
 pub use crate::types::_subscribed_asset_listing::SubscribedAssetListing;
 
@@ -257,6 +271,12 @@ pub use crate::types::_types_search_scope::TypesSearchScope;
 
 pub use crate::types::_search_result_item::SearchResultItem;
 
+pub use crate::types::_data_product_listing_item::DataProductListingItem;
+
+pub use crate::types::_listing_summary_item::ListingSummaryItem;
+
+pub use crate::types::_data_product_listing_item_additional_attributes::DataProductListingItemAdditionalAttributes;
+
 pub use crate::types::_asset_listing_item::AssetListingItem;
 
 pub use crate::types::_asset_listing_item_additional_attributes::AssetListingItemAdditionalAttributes;
@@ -268,6 +288,8 @@ pub use crate::types::_group_profile_summary::GroupProfileSummary;
 pub use crate::types::_group_search_type::GroupSearchType;
 
 pub use crate::types::_search_inventory_result_item::SearchInventoryResultItem;
+
+pub use crate::types::_data_product_result_item::DataProductResultItem;
 
 pub use crate::types::_asset_item::AssetItem;
 
@@ -347,6 +369,8 @@ pub use crate::types::_data_source_run_activity::DataSourceRunActivity;
 
 pub use crate::types::_data_asset_activity_status::DataAssetActivityStatus;
 
+pub use crate::types::_data_product_revision::DataProductRevision;
+
 pub use crate::types::_asset_revision::AssetRevision;
 
 pub use crate::types::_asset_filter_summary::AssetFilterSummary;
@@ -391,6 +415,8 @@ mod _asset_filter_configuration;
 
 mod _asset_filter_summary;
 
+mod _asset_in_data_product_listing_item;
+
 mod _asset_item;
 
 mod _asset_item_additional_attributes;
@@ -430,6 +456,22 @@ mod _configurable_environment_action;
 mod _custom_parameter;
 
 mod _data_asset_activity_status;
+
+mod _data_product_item;
+
+mod _data_product_item_type;
+
+mod _data_product_listing;
+
+mod _data_product_listing_item;
+
+mod _data_product_listing_item_additional_attributes;
+
+mod _data_product_result_item;
+
+mod _data_product_revision;
+
+mod _data_product_status;
 
 mod _data_source_configuration_input;
 
@@ -577,6 +619,10 @@ mod _listing_revision_input;
 
 mod _listing_status;
 
+mod _listing_summary;
+
+mod _listing_summary_item;
+
 mod _member;
 
 mod _member_details;
@@ -700,6 +746,8 @@ mod _subscribed_listing_item;
 mod _subscribed_principal;
 
 mod _subscribed_principal_input;
+
+mod _subscribed_product_listing;
 
 mod _subscribed_project;
 

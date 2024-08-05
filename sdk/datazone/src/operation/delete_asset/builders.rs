@@ -22,7 +22,7 @@ impl crate::operation::delete_asset::builders::DeleteAssetInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteAsset`.
 ///
-/// <p>Delets an asset in Amazon DataZone.</p>
+/// <p>Deletes an asset in Amazon DataZone.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAssetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

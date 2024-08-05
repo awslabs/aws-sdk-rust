@@ -28,6 +28,12 @@ pub mod create_asset_revision;
 /// Types for the `CreateAssetType` operation.
 pub mod create_asset_type;
 
+/// Types for the `CreateDataProduct` operation.
+pub mod create_data_product;
+
+/// Types for the `CreateDataProductRevision` operation.
+pub mod create_data_product_revision;
+
 /// Types for the `CreateDataSource` operation.
 pub mod create_data_source;
 
@@ -84,6 +90,9 @@ pub mod delete_asset_filter;
 
 /// Types for the `DeleteAssetType` operation.
 pub mod delete_asset_type;
+
+/// Types for the `DeleteDataProduct` operation.
+pub mod delete_data_product;
 
 /// Types for the `DeleteDataSource` operation.
 pub mod delete_data_source;
@@ -144,6 +153,9 @@ pub mod get_asset_filter;
 
 /// Types for the `GetAssetType` operation.
 pub mod get_asset_type;
+
+/// Types for the `GetDataProduct` operation.
+pub mod get_data_product;
 
 /// Types for the `GetDataSource` operation.
 pub mod get_data_source;
@@ -222,6 +234,9 @@ pub mod list_asset_filters;
 
 /// Types for the `ListAssetRevisions` operation.
 pub mod list_asset_revisions;
+
+/// Types for the `ListDataProductRevisions` operation.
+pub mod list_data_product_revisions;
 
 /// Types for the `ListDataSourceRunActivities` operation.
 pub mod list_data_source_run_activities;

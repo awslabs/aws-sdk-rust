@@ -19,6 +19,16 @@ pub(crate) fn reflens_list_asset_revisions_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_data_product_revisions_output_output_next_token(
+    input: &crate::operation::list_data_product_revisions::ListDataProductRevisionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_data_source_run_activities_output_output_next_token(
     input: &crate::operation::list_data_source_run_activities::ListDataSourceRunActivitiesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -273,6 +283,13 @@ pub(crate) fn lens_list_asset_revisions_output_output_items(
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_data_product_revisions_output_output_items(
+    input: crate::operation::list_data_product_revisions::ListDataProductRevisionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::DataProductRevision>> {
+    let input = input.items;
     ::std::option::Option::Some(input)
 }
 

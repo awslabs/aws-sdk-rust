@@ -5,7 +5,9 @@
 pub struct ListSubscriptionRequestsInput {
     /// <p>The identifier of the Amazon DataZone domain.</p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the status of the subscription requests.</p>
+    /// <p>Specifies the status of the subscription requests.</p><note>
+    /// <p>This is not a required parameter, but if not specified, by default, Amazon DataZone returns only <code>PENDING</code> subscription requests.</p>
+    /// </note>
     pub status: ::std::option::Option<crate::types::SubscriptionRequestStatus>,
     /// <p>The identifier of the subscribed listing.</p>
     pub subscribed_listing_id: ::std::option::Option<::std::string::String>,
@@ -27,7 +29,9 @@ impl ListSubscriptionRequestsInput {
     pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
         self.domain_identifier.as_deref()
     }
-    /// <p>Specifies the status of the subscription requests.</p>
+    /// <p>Specifies the status of the subscription requests.</p><note>
+    /// <p>This is not a required parameter, but if not specified, by default, Amazon DataZone returns only <code>PENDING</code> subscription requests.</p>
+    /// </note>
     pub fn status(&self) -> ::std::option::Option<&crate::types::SubscriptionRequestStatus> {
         self.status.as_ref()
     }
@@ -97,17 +101,23 @@ impl ListSubscriptionRequestsInputBuilder {
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_identifier
     }
-    /// <p>Specifies the status of the subscription requests.</p>
+    /// <p>Specifies the status of the subscription requests.</p><note>
+    /// <p>This is not a required parameter, but if not specified, by default, Amazon DataZone returns only <code>PENDING</code> subscription requests.</p>
+    /// </note>
     pub fn status(mut self, input: crate::types::SubscriptionRequestStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the status of the subscription requests.</p>
+    /// <p>Specifies the status of the subscription requests.</p><note>
+    /// <p>This is not a required parameter, but if not specified, by default, Amazon DataZone returns only <code>PENDING</code> subscription requests.</p>
+    /// </note>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::SubscriptionRequestStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>Specifies the status of the subscription requests.</p>
+    /// <p>Specifies the status of the subscription requests.</p><note>
+    /// <p>This is not a required parameter, but if not specified, by default, Amazon DataZone returns only <code>PENDING</code> subscription requests.</p>
+    /// </note>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::SubscriptionRequestStatus> {
         &self.status
     }

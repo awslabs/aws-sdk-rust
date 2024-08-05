@@ -20,7 +20,7 @@ pub struct RepositoryCreationTemplate {
     pub lifecycle_policy: ::std::option::Option<::std::string::String>,
     /// <p>A list of enumerable Strings representing the repository creation scenarios that this template will apply towards. The two supported scenarios are PULL_THROUGH_CACHE and REPLICATION</p>
     pub applied_for: ::std::option::Option<::std::vec::Vec<crate::types::RctAppliedFor>>,
-    /// <p>The ARN of the role to be assumed by Amazon ECR.</p>
+    /// <p>The ARN of the role to be assumed by Amazon ECR. Amazon ECR will assume your supplied role when the customRoleArn is specified. When this field isn't specified, Amazon ECR will use the service-linked role for the repository creation template.</p>
     pub custom_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time, in JavaScript date format, when the repository creation template was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -64,7 +64,7 @@ impl RepositoryCreationTemplate {
     pub fn applied_for(&self) -> &[crate::types::RctAppliedFor] {
         self.applied_for.as_deref().unwrap_or_default()
     }
-    /// <p>The ARN of the role to be assumed by Amazon ECR.</p>
+    /// <p>The ARN of the role to be assumed by Amazon ECR. Amazon ECR will assume your supplied role when the customRoleArn is specified. When this field isn't specified, Amazon ECR will use the service-linked role for the repository creation template.</p>
     pub fn custom_role_arn(&self) -> ::std::option::Option<&str> {
         self.custom_role_arn.as_deref()
     }
@@ -228,17 +228,17 @@ impl RepositoryCreationTemplateBuilder {
     pub fn get_applied_for(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RctAppliedFor>> {
         &self.applied_for
     }
-    /// <p>The ARN of the role to be assumed by Amazon ECR.</p>
+    /// <p>The ARN of the role to be assumed by Amazon ECR. Amazon ECR will assume your supplied role when the customRoleArn is specified. When this field isn't specified, Amazon ECR will use the service-linked role for the repository creation template.</p>
     pub fn custom_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the role to be assumed by Amazon ECR.</p>
+    /// <p>The ARN of the role to be assumed by Amazon ECR. Amazon ECR will assume your supplied role when the customRoleArn is specified. When this field isn't specified, Amazon ECR will use the service-linked role for the repository creation template.</p>
     pub fn set_custom_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_role_arn = input;
         self
     }
-    /// <p>The ARN of the role to be assumed by Amazon ECR.</p>
+    /// <p>The ARN of the role to be assumed by Amazon ECR. Amazon ECR will assume your supplied role when the customRoleArn is specified. When this field isn't specified, Amazon ECR will use the service-linked role for the repository creation template.</p>
     pub fn get_custom_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.custom_role_arn
     }

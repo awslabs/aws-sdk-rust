@@ -154,6 +154,10 @@ mod create_asset_revision;
 
 mod create_asset_type;
 
+mod create_data_product;
+
+mod create_data_product_revision;
+
 mod create_data_source;
 
 mod create_domain;
@@ -219,6 +223,8 @@ mod delete_asset_filter;
 
 mod delete_asset_type;
 
+mod delete_data_product;
+
 mod delete_data_source;
 
 mod delete_domain;
@@ -258,6 +264,8 @@ mod get_asset;
 mod get_asset_filter;
 
 mod get_asset_type;
+
+mod get_data_product;
 
 mod get_data_source;
 
@@ -310,6 +318,8 @@ mod get_user_profile;
 mod list_asset_filters;
 
 mod list_asset_revisions;
+
+mod list_data_product_revisions;
 
 mod list_data_source_run_activities;
 

@@ -664,9 +664,9 @@ model_hash = '40f0a86328c451691eea9e1a9c567fd28d6e747acb4bad386ed917e420e40bb3'
 
 [crates.aws-sdk-datazone]
 category = 'AwsSdk'
-version = '1.44.0'
-source_hash = 'aa280670ee42b98eaa27e53744d276c6dd8ae71157d165a4d87f43e919e91ca9'
-model_hash = '936006f09983a244c41957888a948cec2c0aa0c3ef42820595b178a0531b54ca'
+version = '1.45.0'
+source_hash = 'a1e0ec275045ae3de14e13a0bd54381e28b42d74ef980755c2ce7a3965106861'
+model_hash = '85b67afb566f339c9d25fcf97a33454495af902d7c474ee08c103c6867afc00f'
 
 [crates.aws-sdk-dax]
 category = 'AwsSdk'
@@ -766,9 +766,9 @@ model_hash = '98c64ac19e5b1b6d648e7f1555abd77e32558f86abd1a37ba610fed06c0e7ca4'
 
 [crates.aws-sdk-ecr]
 category = 'AwsSdk'
-version = '1.37.0'
-source_hash = '69a8b6f079d5c141ecc6aa1aefc217bc2b4b21c464f4e9394db9b7eddc01726e'
-model_hash = 'f7cfe67cc1fd9f5f420720c06ab3db12dd858e34b039ce109241c03b083e4c37'
+version = '1.38.0'
+source_hash = 'd69ae8be331d94a4468bf5dfac1e47bacffe1712dd5c183b6555016c3167883b'
+model_hash = '6439a8ceade5dfb5de6cdc9070702eaf24e41ca3c1f03ea6c5632b569b18d675'
 
 [crates.aws-sdk-ecrpublic]
 category = 'AwsSdk'
@@ -1234,9 +1234,9 @@ model_hash = '7c4b92ed6a5934c6461b55720aeb89ee62a506f030532e26cb2ddf8d84b37aff'
 
 [crates.aws-sdk-kinesisvideowebrtcstorage]
 category = 'AwsSdk'
-version = '1.36.0'
-source_hash = '651c8a6188af502fcb30cf9191d8c17a76a3ab1c11fad29418939dd59fad42ed'
-model_hash = 'e0280cb2e8d6dc367391712cb856c061a0c6189fe3dd84bb23ed3bd1c090dac0'
+version = '1.37.0'
+source_hash = 'ca057ed07a6d9f98c78c599f331f1249429d1b597ba6ea6b6327faae3fac96d6'
+model_hash = 'ab864ee19799d8bd5f2a1e3ffe05edb0cd3b787eeadb1f466dd6ff3b95acf051'
 
 [crates.aws-sdk-kms]
 category = 'AwsSdk'
@@ -1672,9 +1672,9 @@ model_hash = 'b8c4fd06d11418021696adfddb3788a0e8d753692f5d09479f81d47646c416bd'
 
 [crates.aws-sdk-pi]
 category = 'AwsSdk'
-version = '1.37.0'
-source_hash = '286def2814f18fe0839b5daa16fd71a44306a8ccab60e2f3bf1f405c789350f6'
-model_hash = '5dfd888b4e94afda3b90f4ecc015fb0dd206b6ce72c1950c34d89d9e540b19f8'
+version = '1.37.1'
+source_hash = '3254c7621e0a7248991dae059ab82ec9257c608753e67475016c99982b251eac'
+model_hash = '7000b11004b6b8656719217d0a5356b8a63d293f622b4c48dbac28e9fe98b4ba'
 
 [crates.aws-sdk-pinpoint]
 category = 'AwsSdk'
@@ -2482,19 +2482,8 @@ source_hash = '1d4ed02612a642bc8b5aa41e106c6614f4eb2dc9834dedffef91fb4cff7bcb8a'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '61439a7640fb5dfb476544cc23a37cc6781b09e3cfd6bc92f36063d572f6eb8e'
-
-[release]
-tag = 'release-2024-08-02'
-
 [release.crates]
-aws-sdk-cloudwatch = '1.41.0'
-aws-sdk-ecs = '1.38.0'
-aws-sdk-glue = '1.49.0'
-aws-sdk-ivs = '1.40.0'
-aws-sdk-ivschat = '1.37.0'
-aws-sdk-ivsrealtime = '1.39.0'
-aws-sdk-kinesis = '1.37.0'
-aws-sdk-resiliencehub = '1.37.0'
-aws-sdk-route53 = '1.38.0'
-aws-sdk-ssm = '1.41.0'
-aws-sdk-wafregional = '1.37.0'
+aws-sdk-datazone = '1.45.0'
+aws-sdk-ecr = '1.38.0'
+aws-sdk-kinesisvideowebrtcstorage = '1.37.0'
+aws-sdk-pi = '1.37.1'

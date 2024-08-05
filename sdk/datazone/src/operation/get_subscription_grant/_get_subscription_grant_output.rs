@@ -24,6 +24,7 @@ pub struct GetSubscriptionGrantOutput {
     /// <p>The assets for which the subscription grant is created.</p>
     pub assets: ::std::option::Option<::std::vec::Vec<crate::types::SubscribedAsset>>,
     /// <p>The identifier of the subscription.</p>
+    #[deprecated(note = "Multiple subscriptions can exist for a single grant")]
     pub subscription_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -75,6 +76,7 @@ impl GetSubscriptionGrantOutput {
         self.assets.as_deref().unwrap_or_default()
     }
     /// <p>The identifier of the subscription.</p>
+    #[deprecated(note = "Multiple subscriptions can exist for a single grant")]
     pub fn subscription_id(&self) -> ::std::option::Option<&str> {
         self.subscription_id.as_deref()
     }
@@ -264,16 +266,19 @@ impl GetSubscriptionGrantOutputBuilder {
         &self.assets
     }
     /// <p>The identifier of the subscription.</p>
+    #[deprecated(note = "Multiple subscriptions can exist for a single grant")]
     pub fn subscription_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscription_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the subscription.</p>
+    #[deprecated(note = "Multiple subscriptions can exist for a single grant")]
     pub fn set_subscription_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subscription_id = input;
         self
     }
     /// <p>The identifier of the subscription.</p>
+    #[deprecated(note = "Multiple subscriptions can exist for a single grant")]
     pub fn get_subscription_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.subscription_id
     }

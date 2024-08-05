@@ -13,6 +13,7 @@
 /// # let inventorysearchscope = unimplemented!();
 /// match inventorysearchscope {
 ///     InventorySearchScope::Asset => { /* ... */ },
+///     InventorySearchScope::DataProduct => { /* ... */ },
 ///     InventorySearchScope::Glossary => { /* ... */ },
 ///     InventorySearchScope::GlossaryTerm => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -45,6 +46,8 @@ pub enum InventorySearchScope {
     #[allow(missing_docs)] // documentation missing in model
     Asset,
     #[allow(missing_docs)] // documentation missing in model
+    DataProduct,
+    #[allow(missing_docs)] // documentation missing in model
     Glossary,
     #[allow(missing_docs)] // documentation missing in model
     GlossaryTerm,
@@ -56,6 +59,7 @@ impl ::std::convert::From<&str> for InventorySearchScope {
     fn from(s: &str) -> Self {
         match s {
             "ASSET" => InventorySearchScope::Asset,
+            "DATA_PRODUCT" => InventorySearchScope::DataProduct,
             "GLOSSARY" => InventorySearchScope::Glossary,
             "GLOSSARY_TERM" => InventorySearchScope::GlossaryTerm,
             other => InventorySearchScope::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -74,6 +78,7 @@ impl InventorySearchScope {
     pub fn as_str(&self) -> &str {
         match self {
             InventorySearchScope::Asset => "ASSET",
+            InventorySearchScope::DataProduct => "DATA_PRODUCT",
             InventorySearchScope::Glossary => "GLOSSARY",
             InventorySearchScope::GlossaryTerm => "GLOSSARY_TERM",
             InventorySearchScope::Unknown(value) => value.as_str(),
@@ -81,7 +86,7 @@ impl InventorySearchScope {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ASSET", "GLOSSARY", "GLOSSARY_TERM"]
+        &["ASSET", "DATA_PRODUCT", "GLOSSARY", "GLOSSARY_TERM"]
     }
 }
 impl ::std::convert::AsRef<str> for InventorySearchScope {
@@ -105,6 +110,7 @@ impl ::std::fmt::Display for InventorySearchScope {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             InventorySearchScope::Asset => write!(f, "ASSET"),
+            InventorySearchScope::DataProduct => write!(f, "DATA_PRODUCT"),
             InventorySearchScope::Glossary => write!(f, "GLOSSARY"),
             InventorySearchScope::GlossaryTerm => write!(f, "GLOSSARY_TERM"),
             InventorySearchScope::Unknown(value) => write!(f, "{}", value),

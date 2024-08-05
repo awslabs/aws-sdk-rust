@@ -64,6 +64,9 @@ pub mod describe_repositories;
 /// Types for the `DescribeRepositoryCreationTemplates` operation.
 pub mod describe_repository_creation_templates;
 
+/// Types for the `GetAccountSetting` operation.
+pub mod get_account_setting;
+
 /// Types for the `GetAuthorizationToken` operation.
 pub mod get_authorization_token;
 
@@ -93,6 +96,9 @@ pub mod list_images;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
+
+/// Types for the `PutAccountSetting` operation.
+pub mod put_account_setting;
 
 /// Types for the `PutImage` operation.
 pub mod put_image;

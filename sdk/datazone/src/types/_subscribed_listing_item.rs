@@ -6,6 +6,8 @@
 pub enum SubscribedListingItem {
     /// <p>The asset for which the subscription grant is created.</p>
     AssetListing(crate::types::SubscribedAssetListing),
+    /// <p>The data product listing.</p>
+    ProductListing(crate::types::SubscribedProductListing),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -17,7 +19,6 @@ pub enum SubscribedListingItem {
     Unknown,
 }
 impl SubscribedListingItem {
-    #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`AssetListing`](crate::types::SubscribedListingItem::AssetListing), extracting the inner [`SubscribedAssetListing`](crate::types::SubscribedAssetListing).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_asset_listing(&self) -> ::std::result::Result<&crate::types::SubscribedAssetListing, &Self> {
@@ -30,6 +31,19 @@ impl SubscribedListingItem {
     /// Returns true if this is a [`AssetListing`](crate::types::SubscribedListingItem::AssetListing).
     pub fn is_asset_listing(&self) -> bool {
         self.as_asset_listing().is_ok()
+    }
+    /// Tries to convert the enum instance into [`ProductListing`](crate::types::SubscribedListingItem::ProductListing), extracting the inner [`SubscribedProductListing`](crate::types::SubscribedProductListing).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_product_listing(&self) -> ::std::result::Result<&crate::types::SubscribedProductListing, &Self> {
+        if let SubscribedListingItem::ProductListing(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`ProductListing`](crate::types::SubscribedListingItem::ProductListing).
+    pub fn is_product_listing(&self) -> bool {
+        self.as_product_listing().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

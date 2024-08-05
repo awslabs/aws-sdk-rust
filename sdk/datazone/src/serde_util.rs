@@ -251,6 +251,54 @@ pub(crate) fn create_asset_type_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_data_product_output_output_correct_errors(
+    mut builder: crate::operation::create_data_product::builders::CreateDataProductOutputBuilder,
+) -> crate::operation::create_data_product::builders::CreateDataProductOutputBuilder {
+    if builder.domain_id.is_none() {
+        builder.domain_id = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.revision.is_none() {
+        builder.revision = Some(Default::default())
+    }
+    if builder.owning_project_id.is_none() {
+        builder.owning_project_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::DataProductStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn create_data_product_revision_output_output_correct_errors(
+    mut builder: crate::operation::create_data_product_revision::builders::CreateDataProductRevisionOutputBuilder,
+) -> crate::operation::create_data_product_revision::builders::CreateDataProductRevisionOutputBuilder {
+    if builder.domain_id.is_none() {
+        builder.domain_id = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.revision.is_none() {
+        builder.revision = Some(Default::default())
+    }
+    if builder.owning_project_id.is_none() {
+        builder.owning_project_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::DataProductStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn create_data_source_output_output_correct_errors(
     mut builder: crate::operation::create_data_source::builders::CreateDataSourceOutputBuilder,
 ) -> crate::operation::create_data_source::builders::CreateDataSourceOutputBuilder {
@@ -667,6 +715,30 @@ pub(crate) fn get_asset_type_output_output_correct_errors(
     }
     if builder.owning_project_id.is_none() {
         builder.owning_project_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_data_product_output_output_correct_errors(
+    mut builder: crate::operation::get_data_product::builders::GetDataProductOutputBuilder,
+) -> crate::operation::get_data_product::builders::GetDataProductOutputBuilder {
+    if builder.domain_id.is_none() {
+        builder.domain_id = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.revision.is_none() {
+        builder.revision = Some(Default::default())
+    }
+    if builder.owning_project_id.is_none() {
+        builder.owning_project_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::DataProductStatus>().ok()
     }
     builder
 }
@@ -1106,6 +1178,15 @@ pub(crate) fn get_subscription_target_output_output_correct_errors(
 pub(crate) fn list_asset_filters_output_output_correct_errors(
     mut builder: crate::operation::list_asset_filters::builders::ListAssetFiltersOutputBuilder,
 ) -> crate::operation::list_asset_filters::builders::ListAssetFiltersOutputBuilder {
+    if builder.items.is_none() {
+        builder.items = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_data_product_revisions_output_output_correct_errors(
+    mut builder: crate::operation::list_data_product_revisions::builders::ListDataProductRevisionsOutputBuilder,
+) -> crate::operation::list_data_product_revisions::builders::ListDataProductRevisionsOutputBuilder {
     if builder.items.is_none() {
         builder.items = Some(Default::default())
     }
@@ -1754,6 +1835,18 @@ pub(crate) fn custom_parameter_correct_errors(
     builder
 }
 
+pub(crate) fn data_product_item_correct_errors(
+    mut builder: crate::types::builders::DataProductItemBuilder,
+) -> crate::types::builders::DataProductItemBuilder {
+    if builder.item_type.is_none() {
+        builder.item_type = "no value was set".parse::<crate::types::DataProductItemType>().ok()
+    }
+    if builder.identifier.is_none() {
+        builder.identifier = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn data_source_run_activity_correct_errors(
     mut builder: crate::types::builders::DataSourceRunActivityBuilder,
 ) -> crate::types::builders::DataSourceRunActivityBuilder {
@@ -2378,6 +2471,24 @@ pub(crate) fn asset_type_item_correct_errors(
     }
     if builder.forms_output.is_none() {
         builder.forms_output = Some(Default::default())
+    }
+    if builder.owning_project_id.is_none() {
+        builder.owning_project_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn data_product_result_item_correct_errors(
+    mut builder: crate::types::builders::DataProductResultItemBuilder,
+) -> crate::types::builders::DataProductResultItemBuilder {
+    if builder.domain_id.is_none() {
+        builder.domain_id = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
     }
     if builder.owning_project_id.is_none() {
         builder.owning_project_id = Some(Default::default())

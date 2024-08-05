@@ -3,3 +3,6 @@ pub use ::aws_types::request_id::RequestId;
 
 /// Types for the `JoinStorageSession` operation.
 pub mod join_storage_session;
+
+/// Types for the `JoinStorageSessionAsViewer` operation.
+pub mod join_storage_session_as_viewer;

@@ -236,17 +236,17 @@ impl UpdateRepositoryCreationTemplateFluentBuilder {
     pub fn get_applied_for(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RctAppliedFor>> {
         self.inner.get_applied_for()
     }
-    /// <p>The ARN of the role to be assumed by Amazon ECR. This role must be in the same account as the registry that you are configuring.</p>
+    /// <p>The ARN of the role to be assumed by Amazon ECR. This role must be in the same account as the registry that you are configuring. Amazon ECR will assume your supplied role when the customRoleArn is specified. When this field isn't specified, Amazon ECR will use the service-linked role for the repository creation template.</p>
     pub fn custom_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.custom_role_arn(input.into());
         self
     }
-    /// <p>The ARN of the role to be assumed by Amazon ECR. This role must be in the same account as the registry that you are configuring.</p>
+    /// <p>The ARN of the role to be assumed by Amazon ECR. This role must be in the same account as the registry that you are configuring. Amazon ECR will assume your supplied role when the customRoleArn is specified. When this field isn't specified, Amazon ECR will use the service-linked role for the repository creation template.</p>
     pub fn set_custom_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_custom_role_arn(input);
         self
     }
-    /// <p>The ARN of the role to be assumed by Amazon ECR. This role must be in the same account as the registry that you are configuring.</p>
+    /// <p>The ARN of the role to be assumed by Amazon ECR. This role must be in the same account as the registry that you are configuring. Amazon ECR will assume your supplied role when the customRoleArn is specified. When this field isn't specified, Amazon ECR will use the service-linked role for the repository creation template.</p>
     pub fn get_custom_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_custom_role_arn()
     }

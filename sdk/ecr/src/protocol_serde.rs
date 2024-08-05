@@ -65,6 +65,8 @@ pub(crate) mod shape_describe_repositories;
 
 pub(crate) mod shape_describe_repository_creation_templates;
 
+pub(crate) mod shape_get_account_setting;
+
 pub(crate) mod shape_get_authorization_token;
 
 pub(crate) mod shape_get_download_url_for_layer;
@@ -84,6 +86,8 @@ pub(crate) mod shape_initiate_layer_upload;
 pub(crate) mod shape_list_images;
 
 pub(crate) mod shape_list_tags_for_resource;
+
+pub(crate) mod shape_put_account_setting;
 
 pub(crate) mod shape_put_image;
 
@@ -165,6 +169,8 @@ pub(crate) mod shape_describe_repository_creation_templates_input;
 
 pub(crate) mod shape_empty_upload_exception;
 
+pub(crate) mod shape_get_account_setting_input;
+
 pub(crate) mod shape_get_authorization_token_input;
 
 pub(crate) mod shape_get_download_url_for_layer_input;
@@ -218,6 +224,8 @@ pub(crate) mod shape_list_tags_for_resource_input;
 pub(crate) mod shape_pull_through_cache_rule_already_exists_exception;
 
 pub(crate) mod shape_pull_through_cache_rule_not_found_exception;
+
+pub(crate) mod shape_put_account_setting_input;
 
 pub(crate) mod shape_put_image_input;
 

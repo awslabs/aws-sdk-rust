@@ -44,6 +44,11 @@ where
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'assetItem' cannot be null")
                             })?,
                         )),
+                        "dataProductItem" => Some(crate::types::SearchInventoryResultItem::DataProductItem(
+                            crate::protocol_serde::shape_data_product_result_item::de_data_product_result_item(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'dataProductItem' cannot be null")
+                            })?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::SearchInventoryResultItem::Unknown)

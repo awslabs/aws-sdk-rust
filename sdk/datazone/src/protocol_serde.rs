@@ -41,6 +41,10 @@ pub(crate) mod shape_create_asset_revision;
 
 pub(crate) mod shape_create_asset_type;
 
+pub(crate) mod shape_create_data_product;
+
+pub(crate) mod shape_create_data_product_revision;
+
 pub(crate) mod shape_create_data_source;
 
 pub(crate) mod shape_create_domain;
@@ -78,6 +82,8 @@ pub(crate) mod shape_delete_asset;
 pub(crate) mod shape_delete_asset_filter;
 
 pub(crate) mod shape_delete_asset_type;
+
+pub(crate) mod shape_delete_data_product;
 
 pub(crate) mod shape_delete_data_source;
 
@@ -118,6 +124,8 @@ pub(crate) mod shape_get_asset;
 pub(crate) mod shape_get_asset_filter;
 
 pub(crate) mod shape_get_asset_type;
+
+pub(crate) mod shape_get_data_product;
 
 pub(crate) mod shape_get_data_source;
 
@@ -170,6 +178,8 @@ pub(crate) mod shape_get_user_profile;
 pub(crate) mod shape_list_asset_filters;
 
 pub(crate) mod shape_list_asset_revisions;
+
+pub(crate) mod shape_list_data_product_revisions;
 
 pub(crate) mod shape_list_data_source_run_activities;
 
@@ -295,6 +305,10 @@ pub(crate) mod shape_create_asset_revision_input;
 
 pub(crate) mod shape_create_asset_type_input;
 
+pub(crate) mod shape_create_data_product_input;
+
+pub(crate) mod shape_create_data_product_revision_input;
+
 pub(crate) mod shape_create_data_source_input;
 
 pub(crate) mod shape_create_domain_input;
@@ -418,6 +432,12 @@ pub(crate) mod shape_authorized_principal_identifiers;
 pub(crate) mod shape_column_name_list;
 
 pub(crate) mod shape_custom_parameter_list;
+
+pub(crate) mod shape_data_product_item;
+
+pub(crate) mod shape_data_product_items;
+
+pub(crate) mod shape_data_product_revisions;
 
 pub(crate) mod shape_data_source_configuration_input;
 
@@ -593,6 +613,10 @@ pub(crate) mod shape_configurable_environment_action;
 
 pub(crate) mod shape_custom_parameter;
 
+pub(crate) mod shape_data_product_listing;
+
+pub(crate) mod shape_data_product_revision;
+
 pub(crate) mod shape_data_source_run_activity;
 
 pub(crate) mod shape_data_source_run_summary;
@@ -701,6 +725,10 @@ pub(crate) mod shape_asset_type_item;
 
 pub(crate) mod shape_configurable_action_parameter_list;
 
+pub(crate) mod shape_data_product_listing_item;
+
+pub(crate) mod shape_data_product_result_item;
+
 pub(crate) mod shape_detailed_glossary_terms;
 
 pub(crate) mod shape_form_type_data;
@@ -709,7 +737,11 @@ pub(crate) mod shape_glossary_item;
 
 pub(crate) mod shape_glossary_term_item;
 
+pub(crate) mod shape_item_glossary_terms;
+
 pub(crate) mod shape_lineage_node_type_item;
+
+pub(crate) mod shape_listing_summaries;
 
 pub(crate) mod shape_member_details;
 
@@ -729,7 +761,11 @@ pub(crate) mod shape_self_grant_status_details;
 
 pub(crate) mod shape_subscribed_asset_listing;
 
+pub(crate) mod shape_subscribed_product_listing;
+
 pub(crate) mod shape_topic;
+
+pub(crate) mod shape_asset_in_data_product_listing_items;
 
 pub(crate) mod shape_asset_item_additional_attributes;
 
@@ -737,11 +773,17 @@ pub(crate) mod shape_asset_listing_item_additional_attributes;
 
 pub(crate) mod shape_configurable_action_parameter;
 
+pub(crate) mod shape_data_product_listing_item_additional_attributes;
+
 pub(crate) mod shape_detailed_glossary_term;
 
 pub(crate) mod shape_filter_expression;
 
 pub(crate) mod shape_group_details;
+
+pub(crate) mod shape_listing_summary;
+
+pub(crate) mod shape_listing_summary_items;
 
 pub(crate) mod shape_notification_resource;
 
@@ -758,6 +800,8 @@ pub(crate) mod shape_s3_location_list;
 pub(crate) mod shape_self_grant_status_detail;
 
 pub(crate) mod shape_user_details;
+
+pub(crate) mod shape_asset_in_data_product_listing_item;
 
 pub(crate) mod shape_equal_to_expression;
 
@@ -778,6 +822,8 @@ pub(crate) mod shape_less_than_expression;
 pub(crate) mod shape_less_than_or_equal_to_expression;
 
 pub(crate) mod shape_like_expression;
+
+pub(crate) mod shape_listing_summary_item;
 
 pub(crate) mod shape_not_equal_to_expression;
 

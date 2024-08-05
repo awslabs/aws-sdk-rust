@@ -24,7 +24,8 @@ pub struct SubscriptionGrantSummary {
     pub status: crate::types::SubscriptionGrantOverallStatus,
     /// <p>The assets included in the subscription grant.</p>
     pub assets: ::std::option::Option<::std::vec::Vec<crate::types::SubscribedAsset>>,
-    /// <p>The ID of the subscription grant.</p>
+    /// <p>The ID of the subscription.</p>
+    #[deprecated(note = "Multiple subscriptions can exist for a single grant")]
     pub subscription_id: ::std::option::Option<::std::string::String>,
 }
 impl SubscriptionGrantSummary {
@@ -74,7 +75,8 @@ impl SubscriptionGrantSummary {
     pub fn assets(&self) -> &[crate::types::SubscribedAsset] {
         self.assets.as_deref().unwrap_or_default()
     }
-    /// <p>The ID of the subscription grant.</p>
+    /// <p>The ID of the subscription.</p>
+    #[deprecated(note = "Multiple subscriptions can exist for a single grant")]
     pub fn subscription_id(&self) -> ::std::option::Option<&str> {
         self.subscription_id.as_deref()
     }
@@ -257,17 +259,20 @@ impl SubscriptionGrantSummaryBuilder {
     pub fn get_assets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubscribedAsset>> {
         &self.assets
     }
-    /// <p>The ID of the subscription grant.</p>
+    /// <p>The ID of the subscription.</p>
+    #[deprecated(note = "Multiple subscriptions can exist for a single grant")]
     pub fn subscription_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscription_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the subscription grant.</p>
+    /// <p>The ID of the subscription.</p>
+    #[deprecated(note = "Multiple subscriptions can exist for a single grant")]
     pub fn set_subscription_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subscription_id = input;
         self
     }
-    /// <p>The ID of the subscription grant.</p>
+    /// <p>The ID of the subscription.</p>
+    #[deprecated(note = "Multiple subscriptions can exist for a single grant")]
     pub fn get_subscription_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.subscription_id
     }

@@ -184,6 +184,20 @@ impl ListSubscriptionGrantsFluentBuilder {
     pub fn get_subscription_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_subscription_id()
     }
+    /// <p>The ID of the owning project of the subscription grants.</p>
+    pub fn owning_project_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.owning_project_id(input.into());
+        self
+    }
+    /// <p>The ID of the owning project of the subscription grants.</p>
+    pub fn set_owning_project_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_owning_project_id(input);
+        self
+    }
+    /// <p>The ID of the owning project of the subscription grants.</p>
+    pub fn get_owning_project_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_owning_project_id()
+    }
     /// <p>Specifies the way of sorting the results of this action.</p>
     pub fn sort_by(mut self, input: crate::types::SortKey) -> Self {
         self.inner = self.inner.sort_by(input);

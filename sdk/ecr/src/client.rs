@@ -243,6 +243,8 @@ mod describe_repositories;
 
 mod describe_repository_creation_templates;
 
+mod get_account_setting;
+
 mod get_authorization_token;
 
 mod get_download_url_for_layer;
@@ -262,6 +264,8 @@ mod initiate_layer_upload;
 mod list_images;
 
 mod list_tags_for_resource;
+
+mod put_account_setting;
 
 mod put_image;
 

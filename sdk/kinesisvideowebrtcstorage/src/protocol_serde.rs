@@ -25,6 +25,8 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_join_storage_session;
 
+pub(crate) mod shape_join_storage_session_as_viewer;
+
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
@@ -38,6 +40,8 @@ pub(crate) mod shape_access_denied_exception;
 pub(crate) mod shape_client_limit_exceeded_exception;
 
 pub(crate) mod shape_invalid_argument_exception;
+
+pub(crate) mod shape_join_storage_session_as_viewer_input;
 
 pub(crate) mod shape_join_storage_session_input;
 

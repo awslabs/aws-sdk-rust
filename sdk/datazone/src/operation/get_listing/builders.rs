@@ -22,7 +22,7 @@ impl crate::operation::get_listing::builders::GetListingInputBuilder {
 }
 /// Fluent builder constructing a request to `GetListing`.
 ///
-/// <p>Gets a listing (a record of an asset at a given time).</p>
+/// <p>Gets a listing (a record of an asset at a given time). If you specify a listing version, only details that are specific to that version are returned.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetListingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

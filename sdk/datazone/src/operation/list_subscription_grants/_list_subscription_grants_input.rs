@@ -13,6 +13,8 @@ pub struct ListSubscriptionGrantsInput {
     pub subscribed_listing_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the subscription.</p>
     pub subscription_id: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the owning project of the subscription grants.</p>
+    pub owning_project_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the way of sorting the results of this action.</p>
     pub sort_by: ::std::option::Option<crate::types::SortKey>,
     /// <p>Specifies the sort order of this action.</p>
@@ -42,6 +44,10 @@ impl ListSubscriptionGrantsInput {
     /// <p>The identifier of the subscription.</p>
     pub fn subscription_id(&self) -> ::std::option::Option<&str> {
         self.subscription_id.as_deref()
+    }
+    /// <p>The ID of the owning project of the subscription grants.</p>
+    pub fn owning_project_id(&self) -> ::std::option::Option<&str> {
+        self.owning_project_id.as_deref()
     }
     /// <p>Specifies the way of sorting the results of this action.</p>
     pub fn sort_by(&self) -> ::std::option::Option<&crate::types::SortKey> {
@@ -76,6 +82,7 @@ pub struct ListSubscriptionGrantsInputBuilder {
     pub(crate) subscription_target_id: ::std::option::Option<::std::string::String>,
     pub(crate) subscribed_listing_id: ::std::option::Option<::std::string::String>,
     pub(crate) subscription_id: ::std::option::Option<::std::string::String>,
+    pub(crate) owning_project_id: ::std::option::Option<::std::string::String>,
     pub(crate) sort_by: ::std::option::Option<crate::types::SortKey>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -153,6 +160,20 @@ impl ListSubscriptionGrantsInputBuilder {
     pub fn get_subscription_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.subscription_id
     }
+    /// <p>The ID of the owning project of the subscription grants.</p>
+    pub fn owning_project_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.owning_project_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the owning project of the subscription grants.</p>
+    pub fn set_owning_project_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.owning_project_id = input;
+        self
+    }
+    /// <p>The ID of the owning project of the subscription grants.</p>
+    pub fn get_owning_project_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owning_project_id
+    }
     /// <p>Specifies the way of sorting the results of this action.</p>
     pub fn sort_by(mut self, input: crate::types::SortKey) -> Self {
         self.sort_by = ::std::option::Option::Some(input);
@@ -222,6 +243,7 @@ impl ListSubscriptionGrantsInputBuilder {
             subscription_target_id: self.subscription_target_id,
             subscribed_listing_id: self.subscribed_listing_id,
             subscription_id: self.subscription_id,
+            owning_project_id: self.owning_project_id,
             sort_by: self.sort_by,
             sort_order: self.sort_order,
             max_results: self.max_results,

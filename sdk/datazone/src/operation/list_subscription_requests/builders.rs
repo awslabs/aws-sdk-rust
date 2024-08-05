@@ -128,17 +128,23 @@ impl ListSubscriptionRequestsFluentBuilder {
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_identifier()
     }
-    /// <p>Specifies the status of the subscription requests.</p>
+    /// <p>Specifies the status of the subscription requests.</p><note>
+    /// <p>This is not a required parameter, but if not specified, by default, Amazon DataZone returns only <code>PENDING</code> subscription requests.</p>
+    /// </note>
     pub fn status(mut self, input: crate::types::SubscriptionRequestStatus) -> Self {
         self.inner = self.inner.status(input);
         self
     }
-    /// <p>Specifies the status of the subscription requests.</p>
+    /// <p>Specifies the status of the subscription requests.</p><note>
+    /// <p>This is not a required parameter, but if not specified, by default, Amazon DataZone returns only <code>PENDING</code> subscription requests.</p>
+    /// </note>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::SubscriptionRequestStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
-    /// <p>Specifies the status of the subscription requests.</p>
+    /// <p>Specifies the status of the subscription requests.</p><note>
+    /// <p>This is not a required parameter, but if not specified, by default, Amazon DataZone returns only <code>PENDING</code> subscription requests.</p>
+    /// </note>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::SubscriptionRequestStatus> {
         self.inner.get_status()
     }

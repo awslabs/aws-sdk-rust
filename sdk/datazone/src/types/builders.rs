@@ -3,9 +3,13 @@ pub use crate::types::_metadata_generation_run_target::MetadataGenerationRunTarg
 
 pub use crate::types::_metadata_generation_run_item::MetadataGenerationRunItemBuilder;
 
-pub use crate::types::_asset_listing::AssetListingBuilder;
+pub use crate::types::_data_product_listing::DataProductListingBuilder;
+
+pub use crate::types::_listing_summary::ListingSummaryBuilder;
 
 pub use crate::types::_detailed_glossary_term::DetailedGlossaryTermBuilder;
+
+pub use crate::types::_asset_listing::AssetListingBuilder;
 
 pub use crate::types::_time_series_data_point_summary_form_output::TimeSeriesDataPointSummaryFormOutputBuilder;
 
@@ -61,6 +65,8 @@ pub use crate::types::_form_input::FormInputBuilder;
 
 pub use crate::types::_data_source_summary::DataSourceSummaryBuilder;
 
+pub use crate::types::_data_product_item::DataProductItemBuilder;
+
 pub use crate::types::_form_entry_output::FormEntryOutputBuilder;
 
 pub use crate::types::_form_entry_input::FormEntryInputBuilder;
@@ -78,6 +84,10 @@ pub use crate::types::_iam_user_profile_details::IamUserProfileDetailsBuilder;
 pub use crate::types::_subscription_target_form::SubscriptionTargetFormBuilder;
 
 pub use crate::types::_subscribed_listing::SubscribedListingBuilder;
+
+pub use crate::types::_subscribed_product_listing::SubscribedProductListingBuilder;
+
+pub use crate::types::_asset_in_data_product_listing_item::AssetInDataProductListingItemBuilder;
 
 pub use crate::types::_subscribed_asset_listing::SubscribedAssetListingBuilder;
 
@@ -153,11 +163,19 @@ pub use crate::types::_filter::FilterBuilder;
 
 pub use crate::types::_search_in_item::SearchInItemBuilder;
 
+pub use crate::types::_data_product_listing_item::DataProductListingItemBuilder;
+
+pub use crate::types::_listing_summary_item::ListingSummaryItemBuilder;
+
+pub use crate::types::_data_product_listing_item_additional_attributes::DataProductListingItemAdditionalAttributesBuilder;
+
 pub use crate::types::_asset_listing_item::AssetListingItemBuilder;
 
 pub use crate::types::_asset_listing_item_additional_attributes::AssetListingItemAdditionalAttributesBuilder;
 
 pub use crate::types::_group_profile_summary::GroupProfileSummaryBuilder;
+
+pub use crate::types::_data_product_result_item::DataProductResultItemBuilder;
 
 pub use crate::types::_asset_item::AssetItemBuilder;
 
@@ -208,6 +226,8 @@ pub use crate::types::_environment_blueprint_summary::EnvironmentBlueprintSummar
 pub use crate::types::_environment_action_summary::EnvironmentActionSummaryBuilder;
 
 pub use crate::types::_data_source_run_activity::DataSourceRunActivityBuilder;
+
+pub use crate::types::_data_product_revision::DataProductRevisionBuilder;
 
 pub use crate::types::_asset_revision::AssetRevisionBuilder;
 

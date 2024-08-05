@@ -13,6 +13,7 @@
 /// # let entitytype = unimplemented!();
 /// match entitytype {
 ///     EntityType::Asset => { /* ... */ },
+///     EntityType::DataProduct => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -42,6 +43,8 @@
 pub enum EntityType {
     #[allow(missing_docs)] // documentation missing in model
     Asset,
+    #[allow(missing_docs)] // documentation missing in model
+    DataProduct,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -50,6 +53,7 @@ impl ::std::convert::From<&str> for EntityType {
     fn from(s: &str) -> Self {
         match s {
             "ASSET" => EntityType::Asset,
+            "DATA_PRODUCT" => EntityType::DataProduct,
             other => EntityType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -66,12 +70,13 @@ impl EntityType {
     pub fn as_str(&self) -> &str {
         match self {
             EntityType::Asset => "ASSET",
+            EntityType::DataProduct => "DATA_PRODUCT",
             EntityType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ASSET"]
+        &["ASSET", "DATA_PRODUCT"]
     }
 }
 impl ::std::convert::AsRef<str> for EntityType {
@@ -95,6 +100,7 @@ impl ::std::fmt::Display for EntityType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             EntityType::Asset => write!(f, "ASSET"),
+            EntityType::DataProduct => write!(f, "DATA_PRODUCT"),
             EntityType::Unknown(value) => write!(f, "{}", value),
         }
     }

@@ -164,3 +164,5 @@ impl Client {
 pub mod customize;
 
 mod join_storage_session;
+
+mod join_storage_session_as_viewer;

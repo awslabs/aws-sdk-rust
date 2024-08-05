@@ -6,6 +6,8 @@
 pub enum ListingItem {
     /// <p>An asset published in an Amazon DataZone catalog.</p>
     AssetListing(crate::types::AssetListing),
+    /// <p>The data product listing.</p>
+    DataProductListing(crate::types::DataProductListing),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -17,7 +19,6 @@ pub enum ListingItem {
     Unknown,
 }
 impl ListingItem {
-    #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`AssetListing`](crate::types::ListingItem::AssetListing), extracting the inner [`AssetListing`](crate::types::AssetListing).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_asset_listing(&self) -> ::std::result::Result<&crate::types::AssetListing, &Self> {
@@ -30,6 +31,19 @@ impl ListingItem {
     /// Returns true if this is a [`AssetListing`](crate::types::ListingItem::AssetListing).
     pub fn is_asset_listing(&self) -> bool {
         self.as_asset_listing().is_ok()
+    }
+    /// Tries to convert the enum instance into [`DataProductListing`](crate::types::ListingItem::DataProductListing), extracting the inner [`DataProductListing`](crate::types::DataProductListing).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_data_product_listing(&self) -> ::std::result::Result<&crate::types::DataProductListing, &Self> {
+        if let ListingItem::DataProductListing(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`DataProductListing`](crate::types::ListingItem::DataProductListing).
+    pub fn is_data_product_listing(&self) -> bool {
+        self.as_data_product_listing().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

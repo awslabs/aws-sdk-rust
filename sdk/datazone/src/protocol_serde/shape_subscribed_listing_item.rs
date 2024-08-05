@@ -34,6 +34,11 @@ where
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'assetListing' cannot be null")
                             })?,
                         )),
+                        "productListing" => Some(crate::types::SubscribedListingItem::ProductListing(
+                            crate::protocol_serde::shape_subscribed_product_listing::de_subscribed_product_listing(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'productListing' cannot be null")
+                            })?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::SubscribedListingItem::Unknown)
