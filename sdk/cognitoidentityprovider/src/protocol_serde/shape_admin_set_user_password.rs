@@ -80,6 +80,22 @@ pub fn de_admin_set_user_password_http_error(
             }
             tmp
         }),
+        "PasswordHistoryPolicyViolationException" => {
+            crate::operation::admin_set_user_password::AdminSetUserPasswordError::PasswordHistoryPolicyViolationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::PasswordHistoryPolicyViolationExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_password_history_policy_violation_exception::de_password_history_policy_violation_exception_json_err(_response_body, output).map_err(crate::operation::admin_set_user_password::AdminSetUserPasswordError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "ResourceNotFoundException" => crate::operation::admin_set_user_password::AdminSetUserPasswordError::ResourceNotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {

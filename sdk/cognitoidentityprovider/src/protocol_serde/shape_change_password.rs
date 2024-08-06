@@ -107,6 +107,22 @@ pub fn de_change_password_http_error(
             }
             tmp
         }),
+        "PasswordHistoryPolicyViolationException" => {
+            crate::operation::change_password::ChangePasswordError::PasswordHistoryPolicyViolationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::PasswordHistoryPolicyViolationExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_password_history_policy_violation_exception::de_password_history_policy_violation_exception_json_err(_response_body, output).map_err(crate::operation::change_password::ChangePasswordError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "PasswordResetRequiredException" => crate::operation::change_password::ChangePasswordError::PasswordResetRequiredException({
             #[allow(unused_mut)]
             let mut tmp = {

@@ -4,25 +4,37 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LogConfigurationType {
-    /// <p>The <code>errorlevel</code> selection of logs that a user pool sends for detailed activity logging.</p>
+    /// <p>The <code>errorlevel</code> selection of logs that a user pool sends for detailed activity logging. To send <code>userNotification</code> activity with <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/tracking-quotas-and-usage-in-cloud-watch-logs.html">information about message delivery</a>, choose <code>ERROR</code> with <code>CloudWatchLogsConfiguration</code>. To send <code>userAuthEvents</code> activity with user logs from advanced security features, choose <code>INFO</code> with one of <code>CloudWatchLogsConfiguration</code>, <code>FirehoseConfiguration</code>, or <code>S3Configuration</code>.</p>
     pub log_level: crate::types::LogLevel,
-    /// <p>The source of events that your user pool sends for detailed activity logging.</p>
+    /// <p>The source of events that your user pool sends for logging. To send error-level logs about user notification activity, set to <code>userNotification</code>. To send info-level logs about advanced security features user activity, set to <code>userAuthEvents</code>.</p>
     pub event_source: crate::types::EventSourceName,
-    /// <p>The CloudWatch logging destination of a user pool.</p>
+    /// <p>The CloudWatch log group destination of user pool detailed activity logs, or of user activity log export with advanced security features.</p>
     pub cloud_watch_logs_configuration: ::std::option::Option<crate::types::CloudWatchLogsConfigurationType>,
+    /// <p>The Amazon S3 bucket destination of user activity log export with advanced security features. To activate this setting, <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html"> advanced security features</a> must be active in your user pool.</p>
+    pub s3_configuration: ::std::option::Option<crate::types::S3ConfigurationType>,
+    /// <p>The Amazon Data Firehose stream destination of user activity log export with advanced security features. To activate this setting, <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html"> advanced security features</a> must be active in your user pool.</p>
+    pub firehose_configuration: ::std::option::Option<crate::types::FirehoseConfigurationType>,
 }
 impl LogConfigurationType {
-    /// <p>The <code>errorlevel</code> selection of logs that a user pool sends for detailed activity logging.</p>
+    /// <p>The <code>errorlevel</code> selection of logs that a user pool sends for detailed activity logging. To send <code>userNotification</code> activity with <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/tracking-quotas-and-usage-in-cloud-watch-logs.html">information about message delivery</a>, choose <code>ERROR</code> with <code>CloudWatchLogsConfiguration</code>. To send <code>userAuthEvents</code> activity with user logs from advanced security features, choose <code>INFO</code> with one of <code>CloudWatchLogsConfiguration</code>, <code>FirehoseConfiguration</code>, or <code>S3Configuration</code>.</p>
     pub fn log_level(&self) -> &crate::types::LogLevel {
         &self.log_level
     }
-    /// <p>The source of events that your user pool sends for detailed activity logging.</p>
+    /// <p>The source of events that your user pool sends for logging. To send error-level logs about user notification activity, set to <code>userNotification</code>. To send info-level logs about advanced security features user activity, set to <code>userAuthEvents</code>.</p>
     pub fn event_source(&self) -> &crate::types::EventSourceName {
         &self.event_source
     }
-    /// <p>The CloudWatch logging destination of a user pool.</p>
+    /// <p>The CloudWatch log group destination of user pool detailed activity logs, or of user activity log export with advanced security features.</p>
     pub fn cloud_watch_logs_configuration(&self) -> ::std::option::Option<&crate::types::CloudWatchLogsConfigurationType> {
         self.cloud_watch_logs_configuration.as_ref()
+    }
+    /// <p>The Amazon S3 bucket destination of user activity log export with advanced security features. To activate this setting, <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html"> advanced security features</a> must be active in your user pool.</p>
+    pub fn s3_configuration(&self) -> ::std::option::Option<&crate::types::S3ConfigurationType> {
+        self.s3_configuration.as_ref()
+    }
+    /// <p>The Amazon Data Firehose stream destination of user activity log export with advanced security features. To activate this setting, <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html"> advanced security features</a> must be active in your user pool.</p>
+    pub fn firehose_configuration(&self) -> ::std::option::Option<&crate::types::FirehoseConfigurationType> {
+        self.firehose_configuration.as_ref()
     }
 }
 impl LogConfigurationType {
@@ -39,51 +51,81 @@ pub struct LogConfigurationTypeBuilder {
     pub(crate) log_level: ::std::option::Option<crate::types::LogLevel>,
     pub(crate) event_source: ::std::option::Option<crate::types::EventSourceName>,
     pub(crate) cloud_watch_logs_configuration: ::std::option::Option<crate::types::CloudWatchLogsConfigurationType>,
+    pub(crate) s3_configuration: ::std::option::Option<crate::types::S3ConfigurationType>,
+    pub(crate) firehose_configuration: ::std::option::Option<crate::types::FirehoseConfigurationType>,
 }
 impl LogConfigurationTypeBuilder {
-    /// <p>The <code>errorlevel</code> selection of logs that a user pool sends for detailed activity logging.</p>
+    /// <p>The <code>errorlevel</code> selection of logs that a user pool sends for detailed activity logging. To send <code>userNotification</code> activity with <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/tracking-quotas-and-usage-in-cloud-watch-logs.html">information about message delivery</a>, choose <code>ERROR</code> with <code>CloudWatchLogsConfiguration</code>. To send <code>userAuthEvents</code> activity with user logs from advanced security features, choose <code>INFO</code> with one of <code>CloudWatchLogsConfiguration</code>, <code>FirehoseConfiguration</code>, or <code>S3Configuration</code>.</p>
     /// This field is required.
     pub fn log_level(mut self, input: crate::types::LogLevel) -> Self {
         self.log_level = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The <code>errorlevel</code> selection of logs that a user pool sends for detailed activity logging.</p>
+    /// <p>The <code>errorlevel</code> selection of logs that a user pool sends for detailed activity logging. To send <code>userNotification</code> activity with <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/tracking-quotas-and-usage-in-cloud-watch-logs.html">information about message delivery</a>, choose <code>ERROR</code> with <code>CloudWatchLogsConfiguration</code>. To send <code>userAuthEvents</code> activity with user logs from advanced security features, choose <code>INFO</code> with one of <code>CloudWatchLogsConfiguration</code>, <code>FirehoseConfiguration</code>, or <code>S3Configuration</code>.</p>
     pub fn set_log_level(mut self, input: ::std::option::Option<crate::types::LogLevel>) -> Self {
         self.log_level = input;
         self
     }
-    /// <p>The <code>errorlevel</code> selection of logs that a user pool sends for detailed activity logging.</p>
+    /// <p>The <code>errorlevel</code> selection of logs that a user pool sends for detailed activity logging. To send <code>userNotification</code> activity with <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/tracking-quotas-and-usage-in-cloud-watch-logs.html">information about message delivery</a>, choose <code>ERROR</code> with <code>CloudWatchLogsConfiguration</code>. To send <code>userAuthEvents</code> activity with user logs from advanced security features, choose <code>INFO</code> with one of <code>CloudWatchLogsConfiguration</code>, <code>FirehoseConfiguration</code>, or <code>S3Configuration</code>.</p>
     pub fn get_log_level(&self) -> &::std::option::Option<crate::types::LogLevel> {
         &self.log_level
     }
-    /// <p>The source of events that your user pool sends for detailed activity logging.</p>
+    /// <p>The source of events that your user pool sends for logging. To send error-level logs about user notification activity, set to <code>userNotification</code>. To send info-level logs about advanced security features user activity, set to <code>userAuthEvents</code>.</p>
     /// This field is required.
     pub fn event_source(mut self, input: crate::types::EventSourceName) -> Self {
         self.event_source = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The source of events that your user pool sends for detailed activity logging.</p>
+    /// <p>The source of events that your user pool sends for logging. To send error-level logs about user notification activity, set to <code>userNotification</code>. To send info-level logs about advanced security features user activity, set to <code>userAuthEvents</code>.</p>
     pub fn set_event_source(mut self, input: ::std::option::Option<crate::types::EventSourceName>) -> Self {
         self.event_source = input;
         self
     }
-    /// <p>The source of events that your user pool sends for detailed activity logging.</p>
+    /// <p>The source of events that your user pool sends for logging. To send error-level logs about user notification activity, set to <code>userNotification</code>. To send info-level logs about advanced security features user activity, set to <code>userAuthEvents</code>.</p>
     pub fn get_event_source(&self) -> &::std::option::Option<crate::types::EventSourceName> {
         &self.event_source
     }
-    /// <p>The CloudWatch logging destination of a user pool.</p>
+    /// <p>The CloudWatch log group destination of user pool detailed activity logs, or of user activity log export with advanced security features.</p>
     pub fn cloud_watch_logs_configuration(mut self, input: crate::types::CloudWatchLogsConfigurationType) -> Self {
         self.cloud_watch_logs_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The CloudWatch logging destination of a user pool.</p>
+    /// <p>The CloudWatch log group destination of user pool detailed activity logs, or of user activity log export with advanced security features.</p>
     pub fn set_cloud_watch_logs_configuration(mut self, input: ::std::option::Option<crate::types::CloudWatchLogsConfigurationType>) -> Self {
         self.cloud_watch_logs_configuration = input;
         self
     }
-    /// <p>The CloudWatch logging destination of a user pool.</p>
+    /// <p>The CloudWatch log group destination of user pool detailed activity logs, or of user activity log export with advanced security features.</p>
     pub fn get_cloud_watch_logs_configuration(&self) -> &::std::option::Option<crate::types::CloudWatchLogsConfigurationType> {
         &self.cloud_watch_logs_configuration
+    }
+    /// <p>The Amazon S3 bucket destination of user activity log export with advanced security features. To activate this setting, <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html"> advanced security features</a> must be active in your user pool.</p>
+    pub fn s3_configuration(mut self, input: crate::types::S3ConfigurationType) -> Self {
+        self.s3_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Amazon S3 bucket destination of user activity log export with advanced security features. To activate this setting, <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html"> advanced security features</a> must be active in your user pool.</p>
+    pub fn set_s3_configuration(mut self, input: ::std::option::Option<crate::types::S3ConfigurationType>) -> Self {
+        self.s3_configuration = input;
+        self
+    }
+    /// <p>The Amazon S3 bucket destination of user activity log export with advanced security features. To activate this setting, <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html"> advanced security features</a> must be active in your user pool.</p>
+    pub fn get_s3_configuration(&self) -> &::std::option::Option<crate::types::S3ConfigurationType> {
+        &self.s3_configuration
+    }
+    /// <p>The Amazon Data Firehose stream destination of user activity log export with advanced security features. To activate this setting, <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html"> advanced security features</a> must be active in your user pool.</p>
+    pub fn firehose_configuration(mut self, input: crate::types::FirehoseConfigurationType) -> Self {
+        self.firehose_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Amazon Data Firehose stream destination of user activity log export with advanced security features. To activate this setting, <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html"> advanced security features</a> must be active in your user pool.</p>
+    pub fn set_firehose_configuration(mut self, input: ::std::option::Option<crate::types::FirehoseConfigurationType>) -> Self {
+        self.firehose_configuration = input;
+        self
+    }
+    /// <p>The Amazon Data Firehose stream destination of user activity log export with advanced security features. To activate this setting, <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html"> advanced security features</a> must be active in your user pool.</p>
+    pub fn get_firehose_configuration(&self) -> &::std::option::Option<crate::types::FirehoseConfigurationType> {
+        &self.firehose_configuration
     }
     /// Consumes the builder and constructs a [`LogConfigurationType`](crate::types::LogConfigurationType).
     /// This method will fail if any of the following fields are not set:
@@ -104,6 +146,8 @@ impl LogConfigurationTypeBuilder {
                 )
             })?,
             cloud_watch_logs_configuration: self.cloud_watch_logs_configuration,
+            s3_configuration: self.s3_configuration,
+            firehose_configuration: self.firehose_configuration,
         })
     }
 }

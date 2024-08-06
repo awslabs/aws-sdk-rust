@@ -264,6 +264,8 @@ pub enum ConfirmForgotPasswordError {
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>This exception is thrown when a user isn't authorized.</p>
     NotAuthorizedException(crate::types::error::NotAuthorizedException),
+    /// <p>The message returned when a user's new password matches a previous password and doesn't comply with the password-history policy.</p>
+    PasswordHistoryPolicyViolationException(crate::types::error::PasswordHistoryPolicyViolationException),
     /// <p>This exception is thrown when the Amazon Cognito service can't find the requested resource.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>This exception is thrown when the user has made too many failed attempts for a given action, such as sign-in.</p>
@@ -320,6 +322,7 @@ impl ConfirmForgotPasswordError {
             Self::InvalidPasswordException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::LimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::NotAuthorizedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::PasswordHistoryPolicyViolationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::TooManyFailedAttemptsException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::TooManyRequestsException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -366,6 +369,10 @@ impl ConfirmForgotPasswordError {
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(self, Self::NotAuthorizedException(_))
     }
+    /// Returns `true` if the error kind is `ConfirmForgotPasswordError::PasswordHistoryPolicyViolationException`.
+    pub fn is_password_history_policy_violation_exception(&self) -> bool {
+        matches!(self, Self::PasswordHistoryPolicyViolationException(_))
+    }
     /// Returns `true` if the error kind is `ConfirmForgotPasswordError::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(self, Self::ResourceNotFoundException(_))
@@ -407,6 +414,7 @@ impl ::std::error::Error for ConfirmForgotPasswordError {
             Self::InvalidPasswordException(_inner) => ::std::option::Option::Some(_inner),
             Self::LimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::NotAuthorizedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::PasswordHistoryPolicyViolationException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::TooManyFailedAttemptsException(_inner) => ::std::option::Option::Some(_inner),
             Self::TooManyRequestsException(_inner) => ::std::option::Option::Some(_inner),
@@ -430,6 +438,7 @@ impl ::std::fmt::Display for ConfirmForgotPasswordError {
             Self::InvalidPasswordException(_inner) => _inner.fmt(f),
             Self::LimitExceededException(_inner) => _inner.fmt(f),
             Self::NotAuthorizedException(_inner) => _inner.fmt(f),
+            Self::PasswordHistoryPolicyViolationException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::TooManyFailedAttemptsException(_inner) => _inner.fmt(f),
             Self::TooManyRequestsException(_inner) => _inner.fmt(f),
@@ -467,6 +476,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ConfirmForgot
             Self::InvalidPasswordException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::LimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::NotAuthorizedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::PasswordHistoryPolicyViolationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::TooManyFailedAttemptsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::TooManyRequestsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

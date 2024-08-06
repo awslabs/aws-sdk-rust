@@ -147,6 +147,9 @@ pub(crate) fn de_list_recommendation_summaries(
                             .transpose()?,
                     );
                 }
+                "metrics" => {
+                    builder = builder.set_metrics(crate::protocol_serde::shape_summary_metrics_result::de_summary_metrics_result(tokens)?);
+                }
                 "nextToken" => {
                     builder = builder.set_next_token(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

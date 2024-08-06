@@ -5,12 +5,14 @@
 pub struct ListRecommendationSummariesOutput {
     /// <p>The total overall savings for the aggregated view.</p>
     pub estimated_total_deduped_savings: ::std::option::Option<f64>,
-    /// <p>List of all savings recommendations.</p>
+    /// <p>A list of all savings recommendations.</p>
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationSummary>>,
     /// <p>The dimension used to group the recommendations by.</p>
     pub group_by: ::std::option::Option<::std::string::String>,
     /// <p>The currency code used for the recommendation.</p>
     pub currency_code: ::std::option::Option<::std::string::String>,
+    /// <p>The results or descriptions for the additional metrics, based on whether the metrics were or were not requested.</p>
+    pub metrics: ::std::option::Option<crate::types::SummaryMetricsResult>,
     /// <p>The token to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -20,7 +22,7 @@ impl ListRecommendationSummariesOutput {
     pub fn estimated_total_deduped_savings(&self) -> ::std::option::Option<f64> {
         self.estimated_total_deduped_savings
     }
-    /// <p>List of all savings recommendations.</p>
+    /// <p>A list of all savings recommendations.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
     pub fn items(&self) -> &[crate::types::RecommendationSummary] {
@@ -33,6 +35,10 @@ impl ListRecommendationSummariesOutput {
     /// <p>The currency code used for the recommendation.</p>
     pub fn currency_code(&self) -> ::std::option::Option<&str> {
         self.currency_code.as_deref()
+    }
+    /// <p>The results or descriptions for the additional metrics, based on whether the metrics were or were not requested.</p>
+    pub fn metrics(&self) -> ::std::option::Option<&crate::types::SummaryMetricsResult> {
+        self.metrics.as_ref()
     }
     /// <p>The token to retrieve the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -59,6 +65,7 @@ pub struct ListRecommendationSummariesOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationSummary>>,
     pub(crate) group_by: ::std::option::Option<::std::string::String>,
     pub(crate) currency_code: ::std::option::Option<::std::string::String>,
+    pub(crate) metrics: ::std::option::Option<crate::types::SummaryMetricsResult>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -81,19 +88,19 @@ impl ListRecommendationSummariesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_items`](Self::set_items).
     ///
-    /// <p>List of all savings recommendations.</p>
+    /// <p>A list of all savings recommendations.</p>
     pub fn items(mut self, input: crate::types::RecommendationSummary) -> Self {
         let mut v = self.items.unwrap_or_default();
         v.push(input);
         self.items = ::std::option::Option::Some(v);
         self
     }
-    /// <p>List of all savings recommendations.</p>
+    /// <p>A list of all savings recommendations.</p>
     pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationSummary>>) -> Self {
         self.items = input;
         self
     }
-    /// <p>List of all savings recommendations.</p>
+    /// <p>A list of all savings recommendations.</p>
     pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationSummary>> {
         &self.items
     }
@@ -125,6 +132,20 @@ impl ListRecommendationSummariesOutputBuilder {
     pub fn get_currency_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.currency_code
     }
+    /// <p>The results or descriptions for the additional metrics, based on whether the metrics were or were not requested.</p>
+    pub fn metrics(mut self, input: crate::types::SummaryMetricsResult) -> Self {
+        self.metrics = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The results or descriptions for the additional metrics, based on whether the metrics were or were not requested.</p>
+    pub fn set_metrics(mut self, input: ::std::option::Option<crate::types::SummaryMetricsResult>) -> Self {
+        self.metrics = input;
+        self
+    }
+    /// <p>The results or descriptions for the additional metrics, based on whether the metrics were or were not requested.</p>
+    pub fn get_metrics(&self) -> &::std::option::Option<crate::types::SummaryMetricsResult> {
+        &self.metrics
+    }
     /// <p>The token to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -155,6 +176,7 @@ impl ListRecommendationSummariesOutputBuilder {
             items: self.items,
             group_by: self.group_by,
             currency_code: self.currency_code,
+            metrics: self.metrics,
             next_token: self.next_token,
             _request_id: self._request_id,
         }

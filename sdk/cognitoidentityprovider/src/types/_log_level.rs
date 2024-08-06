@@ -13,6 +13,7 @@
 /// # let loglevel = unimplemented!();
 /// match loglevel {
 ///     LogLevel::Error => { /* ... */ },
+///     LogLevel::Info => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -42,6 +43,8 @@
 pub enum LogLevel {
     #[allow(missing_docs)] // documentation missing in model
     Error,
+    #[allow(missing_docs)] // documentation missing in model
+    Info,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -50,6 +53,7 @@ impl ::std::convert::From<&str> for LogLevel {
     fn from(s: &str) -> Self {
         match s {
             "ERROR" => LogLevel::Error,
+            "INFO" => LogLevel::Info,
             other => LogLevel::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -66,12 +70,13 @@ impl LogLevel {
     pub fn as_str(&self) -> &str {
         match self {
             LogLevel::Error => "ERROR",
+            LogLevel::Info => "INFO",
             LogLevel::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ERROR"]
+        &["ERROR", "INFO"]
     }
 }
 impl ::std::convert::AsRef<str> for LogLevel {
@@ -95,6 +100,7 @@ impl ::std::fmt::Display for LogLevel {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             LogLevel::Error => write!(f, "ERROR"),
+            LogLevel::Info => write!(f, "INFO"),
             LogLevel::Unknown(value) => write!(f, "{}", value),
         }
     }

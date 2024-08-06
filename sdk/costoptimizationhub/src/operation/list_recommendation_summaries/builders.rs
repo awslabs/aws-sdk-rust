@@ -144,19 +144,38 @@ impl ListRecommendationSummariesFluentBuilder {
     pub fn get_group_by(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_group_by()
     }
-    /// <p>The maximum number of recommendations that are returned for the request.</p>
+    /// <p>The maximum number of recommendations to be returned for the request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of recommendations that are returned for the request.</p>
+    /// <p>The maximum number of recommendations to be returned for the request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of recommendations that are returned for the request.</p>
+    /// <p>The maximum number of recommendations to be returned for the request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
+    }
+    ///
+    /// Appends an item to `metrics`.
+    ///
+    /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
+    ///
+    /// <p>Additional metrics to be returned for the request. The only valid value is <code>savingsPercentage</code>.</p>
+    pub fn metrics(mut self, input: crate::types::SummaryMetrics) -> Self {
+        self.inner = self.inner.metrics(input);
+        self
+    }
+    /// <p>Additional metrics to be returned for the request. The only valid value is <code>savingsPercentage</code>.</p>
+    pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SummaryMetrics>>) -> Self {
+        self.inner = self.inner.set_metrics(input);
+        self
+    }
+    /// <p>Additional metrics to be returned for the request. The only valid value is <code>savingsPercentage</code>.</p>
+    pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SummaryMetrics>> {
+        self.inner.get_metrics()
     }
     /// <p>The token to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

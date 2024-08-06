@@ -15,6 +15,18 @@ pub fn ser_log_configuration_type(
         crate::protocol_serde::shape_cloud_watch_logs_configuration_type::ser_cloud_watch_logs_configuration_type(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.s3_configuration {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("S3Configuration").start_object();
+        crate::protocol_serde::shape_s3_configuration_type::ser_s3_configuration_type(&mut object_4, var_3)?;
+        object_4.finish();
+    }
+    if let Some(var_5) = &input.firehose_configuration {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("FirehoseConfiguration").start_object();
+        crate::protocol_serde::shape_firehose_configuration_type::ser_firehose_configuration_type(&mut object_6, var_5)?;
+        object_6.finish();
+    }
     Ok(())
 }
 
@@ -50,6 +62,15 @@ where
                         "CloudWatchLogsConfiguration" => {
                             builder = builder.set_cloud_watch_logs_configuration(
                                 crate::protocol_serde::shape_cloud_watch_logs_configuration_type::de_cloud_watch_logs_configuration_type(tokens)?,
+                            );
+                        }
+                        "S3Configuration" => {
+                            builder =
+                                builder.set_s3_configuration(crate::protocol_serde::shape_s3_configuration_type::de_s3_configuration_type(tokens)?);
+                        }
+                        "FirehoseConfiguration" => {
+                            builder = builder.set_firehose_configuration(
+                                crate::protocol_serde::shape_firehose_configuration_type::de_firehose_configuration_type(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

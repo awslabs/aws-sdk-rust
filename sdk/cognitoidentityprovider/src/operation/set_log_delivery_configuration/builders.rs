@@ -22,7 +22,7 @@ impl crate::operation::set_log_delivery_configuration::builders::SetLogDeliveryC
 }
 /// Fluent builder constructing a request to `SetLogDeliveryConfiguration`.
 ///
-/// <p>Sets up or modifies the detailed activity logging configuration of a user pool.</p>
+/// <p>Sets up or modifies the logging configuration of a user pool. User pools can export user notification logs and advanced security features user activity logs.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SetLogDeliveryConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl SetLogDeliveryConfigurationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the user pool where you want to configure detailed activity logging .</p>
+    /// <p>The ID of the user pool where you want to configure logging.</p>
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_pool_id(input.into());
         self
     }
-    /// <p>The ID of the user pool where you want to configure detailed activity logging .</p>
+    /// <p>The ID of the user pool where you want to configure logging.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_pool_id(input);
         self
     }
-    /// <p>The ID of the user pool where you want to configure detailed activity logging .</p>
+    /// <p>The ID of the user pool where you want to configure logging.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_pool_id()
     }
@@ -127,17 +127,17 @@ impl SetLogDeliveryConfigurationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_log_configurations`](Self::set_log_configurations).
     ///
-    /// <p>A collection of all of the detailed activity logging configurations for a user pool.</p>
+    /// <p>A collection of the logging configurations for a user pool.</p>
     pub fn log_configurations(mut self, input: crate::types::LogConfigurationType) -> Self {
         self.inner = self.inner.log_configurations(input);
         self
     }
-    /// <p>A collection of all of the detailed activity logging configurations for a user pool.</p>
+    /// <p>A collection of the logging configurations for a user pool.</p>
     pub fn set_log_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LogConfigurationType>>) -> Self {
         self.inner = self.inner.set_log_configurations(input);
         self
     }
-    /// <p>A collection of all of the detailed activity logging configurations for a user pool.</p>
+    /// <p>A collection of the logging configurations for a user pool.</p>
     pub fn get_log_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogConfigurationType>> {
         self.inner.get_log_configurations()
     }

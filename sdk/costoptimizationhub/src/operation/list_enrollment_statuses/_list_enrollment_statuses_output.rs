@@ -5,7 +5,7 @@
 pub struct ListEnrollmentStatusesOutput {
     /// <p>The enrollment status of a specific account ID, including creation and last updated timestamps.</p>
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::AccountEnrollmentStatus>>,
-    /// <p>The enrollment status of all member accounts in the organization if the account is the management account.</p>
+    /// <p>The enrollment status of all member accounts in the organization if the account is the management account or delegated administrator.</p>
     pub include_member_accounts: ::std::option::Option<bool>,
     /// <p>The token to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ impl ListEnrollmentStatusesOutput {
     pub fn items(&self) -> &[crate::types::AccountEnrollmentStatus] {
         self.items.as_deref().unwrap_or_default()
     }
-    /// <p>The enrollment status of all member accounts in the organization if the account is the management account.</p>
+    /// <p>The enrollment status of all member accounts in the organization if the account is the management account or delegated administrator.</p>
     pub fn include_member_accounts(&self) -> ::std::option::Option<bool> {
         self.include_member_accounts
     }
@@ -69,17 +69,17 @@ impl ListEnrollmentStatusesOutputBuilder {
     pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountEnrollmentStatus>> {
         &self.items
     }
-    /// <p>The enrollment status of all member accounts in the organization if the account is the management account.</p>
+    /// <p>The enrollment status of all member accounts in the organization if the account is the management account or delegated administrator.</p>
     pub fn include_member_accounts(mut self, input: bool) -> Self {
         self.include_member_accounts = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The enrollment status of all member accounts in the organization if the account is the management account.</p>
+    /// <p>The enrollment status of all member accounts in the organization if the account is the management account or delegated administrator.</p>
     pub fn set_include_member_accounts(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_member_accounts = input;
         self
     }
-    /// <p>The enrollment status of all member accounts in the organization if the account is the management account.</p>
+    /// <p>The enrollment status of all member accounts in the organization if the account is the management account or delegated administrator.</p>
     pub fn get_include_member_accounts(&self) -> &::std::option::Option<bool> {
         &self.include_member_accounts
     }

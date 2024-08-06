@@ -18,8 +18,17 @@ pub fn ser_list_recommendation_summaries_input_input(
             ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_5) = &input.next_token {
-        object.key("nextToken").string(var_5.as_str());
+    if let Some(var_5) = &input.metrics {
+        let mut array_6 = object.key("metrics").start_array();
+        for item_7 in var_5 {
+            {
+                array_6.value().string(item_7.as_str());
+            }
+        }
+        array_6.finish();
+    }
+    if let Some(var_8) = &input.next_token {
+        object.key("nextToken").string(var_8.as_str());
     }
     Ok(())
 }

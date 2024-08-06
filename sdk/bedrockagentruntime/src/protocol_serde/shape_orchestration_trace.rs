@@ -49,6 +49,14 @@ where
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'modelInvocationInput' cannot be null")
                             })?,
                         )),
+                        "modelInvocationOutput" => Some(crate::types::OrchestrationTrace::ModelInvocationOutput(
+                            crate::protocol_serde::shape_orchestration_model_invocation_output::de_orchestration_model_invocation_output(tokens)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                        "value for 'modelInvocationOutput' cannot be null",
+                                    )
+                                })?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::OrchestrationTrace::Unknown)

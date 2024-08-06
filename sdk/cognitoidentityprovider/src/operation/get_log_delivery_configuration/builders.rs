@@ -22,7 +22,7 @@ impl crate::operation::get_log_delivery_configuration::builders::GetLogDeliveryC
 }
 /// Fluent builder constructing a request to `GetLogDeliveryConfiguration`.
 ///
-/// <p>Gets the detailed activity logging configuration for a user pool.</p>
+/// <p>Gets the logging configuration of a user pool.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetLogDeliveryConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl GetLogDeliveryConfigurationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the user pool where you want to view detailed activity logging configuration.</p>
+    /// <p>The ID of the user pool that has the logging configuration that you want to view.</p>
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_pool_id(input.into());
         self
     }
-    /// <p>The ID of the user pool where you want to view detailed activity logging configuration.</p>
+    /// <p>The ID of the user pool that has the logging configuration that you want to view.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_pool_id(input);
         self
     }
-    /// <p>The ID of the user pool where you want to view detailed activity logging configuration.</p>
+    /// <p>The ID of the user pool that has the logging configuration that you want to view.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_pool_id()
     }

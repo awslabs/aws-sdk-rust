@@ -45,6 +45,8 @@ pub enum Error {
     MfaMethodNotFoundException(crate::types::error::MfaMethodNotFoundException),
     /// <p>This exception is thrown when a user isn't authorized.</p>
     NotAuthorizedException(crate::types::error::NotAuthorizedException),
+    /// <p>The message returned when a user's new password matches a previous password and doesn't comply with the password-history policy.</p>
+    PasswordHistoryPolicyViolationException(crate::types::error::PasswordHistoryPolicyViolationException),
     /// <p>This exception is thrown when a password reset is required.</p>
     PasswordResetRequiredException(crate::types::error::PasswordResetRequiredException),
     /// <p>This exception is thrown when a precondition is not met.</p>
@@ -118,6 +120,7 @@ impl ::std::fmt::Display for Error {
             Error::LimitExceededException(inner) => inner.fmt(f),
             Error::MfaMethodNotFoundException(inner) => inner.fmt(f),
             Error::NotAuthorizedException(inner) => inner.fmt(f),
+            Error::PasswordHistoryPolicyViolationException(inner) => inner.fmt(f),
             Error::PasswordResetRequiredException(inner) => inner.fmt(f),
             Error::PreconditionNotMetException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
@@ -180,6 +183,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::LimitExceededException(inner) => inner.meta(),
             Self::MfaMethodNotFoundException(inner) => inner.meta(),
             Self::NotAuthorizedException(inner) => inner.meta(),
+            Self::PasswordHistoryPolicyViolationException(inner) => inner.meta(),
             Self::PasswordResetRequiredException(inner) => inner.meta(),
             Self::PreconditionNotMetException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
@@ -1022,6 +1026,9 @@ impl From<crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthC
             crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
             }
+            crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeError::PasswordHistoryPolicyViolationException(inner) => {
+                Error::PasswordHistoryPolicyViolationException(inner)
+            }
             crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeError::PasswordResetRequiredException(inner) => {
                 Error::PasswordResetRequiredException(inner)
             }
@@ -1125,6 +1132,9 @@ impl From<crate::operation::admin_set_user_password::AdminSetUserPasswordError> 
             }
             crate::operation::admin_set_user_password::AdminSetUserPasswordError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
+            }
+            crate::operation::admin_set_user_password::AdminSetUserPasswordError::PasswordHistoryPolicyViolationException(inner) => {
+                Error::PasswordHistoryPolicyViolationException(inner)
             }
             crate::operation::admin_set_user_password::AdminSetUserPasswordError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -1437,6 +1447,9 @@ impl From<crate::operation::change_password::ChangePasswordError> for Error {
             crate::operation::change_password::ChangePasswordError::InvalidPasswordException(inner) => Error::InvalidPasswordException(inner),
             crate::operation::change_password::ChangePasswordError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::change_password::ChangePasswordError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::change_password::ChangePasswordError::PasswordHistoryPolicyViolationException(inner) => {
+                Error::PasswordHistoryPolicyViolationException(inner)
+            }
             crate::operation::change_password::ChangePasswordError::PasswordResetRequiredException(inner) => {
                 Error::PasswordResetRequiredException(inner)
             }
@@ -1529,6 +1542,9 @@ impl From<crate::operation::confirm_forgot_password::ConfirmForgotPasswordError>
             }
             crate::operation::confirm_forgot_password::ConfirmForgotPasswordError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
+            }
+            crate::operation::confirm_forgot_password::ConfirmForgotPasswordError::PasswordHistoryPolicyViolationException(inner) => {
+                Error::PasswordHistoryPolicyViolationException(inner)
             }
             crate::operation::confirm_forgot_password::ConfirmForgotPasswordError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -3342,6 +3358,9 @@ impl From<crate::operation::respond_to_auth_challenge::RespondToAuthChallengeErr
             crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
             }
+            crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::PasswordHistoryPolicyViolationException(inner) => {
+                Error::PasswordHistoryPolicyViolationException(inner)
+            }
             crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError::PasswordResetRequiredException(inner) => {
                 Error::PasswordResetRequiredException(inner)
             }
@@ -4307,6 +4326,7 @@ impl ::std::error::Error for Error {
             Error::LimitExceededException(inner) => inner.source(),
             Error::MfaMethodNotFoundException(inner) => inner.source(),
             Error::NotAuthorizedException(inner) => inner.source(),
+            Error::PasswordHistoryPolicyViolationException(inner) => inner.source(),
             Error::PasswordResetRequiredException(inner) => inner.source(),
             Error::PreconditionNotMetException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
@@ -4355,6 +4375,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::LimitExceededException(e) => e.request_id(),
             Self::MfaMethodNotFoundException(e) => e.request_id(),
             Self::NotAuthorizedException(e) => e.request_id(),
+            Self::PasswordHistoryPolicyViolationException(e) => e.request_id(),
             Self::PasswordResetRequiredException(e) => e.request_id(),
             Self::PreconditionNotMetException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),

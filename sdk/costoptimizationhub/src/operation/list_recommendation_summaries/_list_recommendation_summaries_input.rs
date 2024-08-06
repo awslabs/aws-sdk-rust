@@ -7,8 +7,10 @@ pub struct ListRecommendationSummariesInput {
     pub filter: ::std::option::Option<crate::types::Filter>,
     /// <p>The grouping of recommendations by a dimension.</p>
     pub group_by: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum number of recommendations that are returned for the request.</p>
+    /// <p>The maximum number of recommendations to be returned for the request.</p>
     pub max_results: ::std::option::Option<i32>,
+    /// <p>Additional metrics to be returned for the request. The only valid value is <code>savingsPercentage</code>.</p>
+    pub metrics: ::std::option::Option<::std::vec::Vec<crate::types::SummaryMetrics>>,
     /// <p>The token to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
@@ -21,9 +23,15 @@ impl ListRecommendationSummariesInput {
     pub fn group_by(&self) -> ::std::option::Option<&str> {
         self.group_by.as_deref()
     }
-    /// <p>The maximum number of recommendations that are returned for the request.</p>
+    /// <p>The maximum number of recommendations to be returned for the request.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
+    }
+    /// <p>Additional metrics to be returned for the request. The only valid value is <code>savingsPercentage</code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metrics.is_none()`.
+    pub fn metrics(&self) -> &[crate::types::SummaryMetrics] {
+        self.metrics.as_deref().unwrap_or_default()
     }
     /// <p>The token to retrieve the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -44,6 +52,7 @@ pub struct ListRecommendationSummariesInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::Filter>,
     pub(crate) group_by: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) metrics: ::std::option::Option<::std::vec::Vec<crate::types::SummaryMetrics>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListRecommendationSummariesInputBuilder {
@@ -76,19 +85,39 @@ impl ListRecommendationSummariesInputBuilder {
     pub fn get_group_by(&self) -> &::std::option::Option<::std::string::String> {
         &self.group_by
     }
-    /// <p>The maximum number of recommendations that are returned for the request.</p>
+    /// <p>The maximum number of recommendations to be returned for the request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of recommendations that are returned for the request.</p>
+    /// <p>The maximum number of recommendations to be returned for the request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of recommendations that are returned for the request.</p>
+    /// <p>The maximum number of recommendations to be returned for the request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
+    }
+    /// Appends an item to `metrics`.
+    ///
+    /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
+    ///
+    /// <p>Additional metrics to be returned for the request. The only valid value is <code>savingsPercentage</code>.</p>
+    pub fn metrics(mut self, input: crate::types::SummaryMetrics) -> Self {
+        let mut v = self.metrics.unwrap_or_default();
+        v.push(input);
+        self.metrics = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Additional metrics to be returned for the request. The only valid value is <code>savingsPercentage</code>.</p>
+    pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SummaryMetrics>>) -> Self {
+        self.metrics = input;
+        self
+    }
+    /// <p>Additional metrics to be returned for the request. The only valid value is <code>savingsPercentage</code>.</p>
+    pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SummaryMetrics>> {
+        &self.metrics
     }
     /// <p>The token to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -115,6 +144,7 @@ impl ListRecommendationSummariesInputBuilder {
             filter: self.filter,
             group_by: self.group_by,
             max_results: self.max_results,
+            metrics: self.metrics,
             next_token: self.next_token,
         })
     }

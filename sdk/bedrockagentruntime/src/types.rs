@@ -133,6 +133,14 @@ pub use crate::types::_prompt_type::PromptType;
 
 pub use crate::types::_orchestration_trace::OrchestrationTrace;
 
+pub use crate::types::_orchestration_model_invocation_output::OrchestrationModelInvocationOutput;
+
+pub use crate::types::_metadata::Metadata;
+
+pub use crate::types::_usage::Usage;
+
+pub use crate::types::_raw_response::RawResponse;
+
 pub use crate::types::_observation::Observation;
 
 pub use crate::types::_code_interpreter_invocation_output::CodeInterpreterInvocationOutput;
@@ -421,6 +429,8 @@ mod _memory_session_summary;
 
 mod _memory_type;
 
+mod _metadata;
+
 mod _model_invocation_input;
 
 mod _node_type;
@@ -428,6 +438,8 @@ mod _node_type;
 mod _observation;
 
 mod _orchestration_configuration;
+
+mod _orchestration_model_invocation_output;
 
 mod _orchestration_trace;
 
@@ -460,6 +472,8 @@ mod _query_transformation_configuration;
 mod _query_transformation_type;
 
 mod _rationale;
+
+mod _raw_response;
 
 mod _reprompt_response;
 
@@ -522,6 +536,8 @@ mod _trace;
 mod _trace_part;
 
 mod _type_;
+
+mod _usage;
 
 /// Builders
 pub mod builders;

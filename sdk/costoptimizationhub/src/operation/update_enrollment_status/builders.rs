@@ -23,7 +23,7 @@ impl crate::operation::update_enrollment_status::builders::UpdateEnrollmentStatu
 /// Fluent builder constructing a request to `UpdateEnrollmentStatus`.
 ///
 /// <p>Updates the enrollment (opt in and opt out) status of an account to the Cost Optimization Hub service.</p>
-/// <p>If the account is a management account of an organization, this action can also be used to enroll member accounts of the organization.</p>
+/// <p>If the account is a management account or delegated administrator of an organization, this action can also be used to enroll member accounts of the organization.</p>
 /// <p>You must have the appropriate permissions to opt in to Cost Optimization Hub and to view its recommendations. When you opt in, Cost Optimization Hub automatically creates a service-linked role in your account to access its data.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateEnrollmentStatusFluentBuilder {
@@ -124,17 +124,17 @@ impl UpdateEnrollmentStatusFluentBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::EnrollmentStatus> {
         self.inner.get_status()
     }
-    /// <p>Indicates whether to enroll member accounts of the organization if the account is the management account.</p>
+    /// <p>Indicates whether to enroll member accounts of the organization if the account is the management account or delegated administrator.</p>
     pub fn include_member_accounts(mut self, input: bool) -> Self {
         self.inner = self.inner.include_member_accounts(input);
         self
     }
-    /// <p>Indicates whether to enroll member accounts of the organization if the account is the management account.</p>
+    /// <p>Indicates whether to enroll member accounts of the organization if the account is the management account or delegated administrator.</p>
     pub fn set_include_member_accounts(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_member_accounts(input);
         self
     }
-    /// <p>Indicates whether to enroll member accounts of the organization if the account is the management account.</p>
+    /// <p>Indicates whether to enroll member accounts of the organization if the account is the management account or delegated administrator.</p>
     pub fn get_include_member_accounts(&self) -> &::std::option::Option<bool> {
         self.inner.get_include_member_accounts()
     }

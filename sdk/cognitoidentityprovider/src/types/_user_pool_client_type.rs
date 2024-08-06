@@ -138,8 +138,9 @@ pub struct UserPoolClientType {
     /// <li>
     /// <p><code>ENABLED</code> - This prevents user existence-related errors.</p></li>
     /// <li>
-    /// <p><code>LEGACY</code> - This represents the old behavior of Amazon Cognito where user existence related errors aren't prevented.</p></li>
+    /// <p><code>LEGACY</code> - This represents the early behavior of Amazon Cognito where user existence related errors aren't prevented.</p></li>
     /// </ul>
+    /// <p>Defaults to <code>LEGACY</code> when you don't provide a value.</p>
     pub prevent_user_existence_errors: ::std::option::Option<crate::types::PreventUserExistenceErrorTypes>,
     /// <p>Indicates whether token revocation is activated for the user pool client. When you create a new user pool client, token revocation is activated by default. For more information about revoking tokens, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.</p>
     pub enable_token_revocation: ::std::option::Option<bool>,
@@ -343,8 +344,9 @@ impl UserPoolClientType {
     /// <li>
     /// <p><code>ENABLED</code> - This prevents user existence-related errors.</p></li>
     /// <li>
-    /// <p><code>LEGACY</code> - This represents the old behavior of Amazon Cognito where user existence related errors aren't prevented.</p></li>
+    /// <p><code>LEGACY</code> - This represents the early behavior of Amazon Cognito where user existence related errors aren't prevented.</p></li>
     /// </ul>
+    /// <p>Defaults to <code>LEGACY</code> when you don't provide a value.</p>
     pub fn prevent_user_existence_errors(&self) -> ::std::option::Option<&crate::types::PreventUserExistenceErrorTypes> {
         self.prevent_user_existence_errors.as_ref()
     }
@@ -1041,8 +1043,9 @@ impl UserPoolClientTypeBuilder {
     /// <li>
     /// <p><code>ENABLED</code> - This prevents user existence-related errors.</p></li>
     /// <li>
-    /// <p><code>LEGACY</code> - This represents the old behavior of Amazon Cognito where user existence related errors aren't prevented.</p></li>
+    /// <p><code>LEGACY</code> - This represents the early behavior of Amazon Cognito where user existence related errors aren't prevented.</p></li>
     /// </ul>
+    /// <p>Defaults to <code>LEGACY</code> when you don't provide a value.</p>
     pub fn prevent_user_existence_errors(mut self, input: crate::types::PreventUserExistenceErrorTypes) -> Self {
         self.prevent_user_existence_errors = ::std::option::Option::Some(input);
         self
@@ -1053,8 +1056,9 @@ impl UserPoolClientTypeBuilder {
     /// <li>
     /// <p><code>ENABLED</code> - This prevents user existence-related errors.</p></li>
     /// <li>
-    /// <p><code>LEGACY</code> - This represents the old behavior of Amazon Cognito where user existence related errors aren't prevented.</p></li>
+    /// <p><code>LEGACY</code> - This represents the early behavior of Amazon Cognito where user existence related errors aren't prevented.</p></li>
     /// </ul>
+    /// <p>Defaults to <code>LEGACY</code> when you don't provide a value.</p>
     pub fn set_prevent_user_existence_errors(mut self, input: ::std::option::Option<crate::types::PreventUserExistenceErrorTypes>) -> Self {
         self.prevent_user_existence_errors = input;
         self
@@ -1065,8 +1069,9 @@ impl UserPoolClientTypeBuilder {
     /// <li>
     /// <p><code>ENABLED</code> - This prevents user existence-related errors.</p></li>
     /// <li>
-    /// <p><code>LEGACY</code> - This represents the old behavior of Amazon Cognito where user existence related errors aren't prevented.</p></li>
+    /// <p><code>LEGACY</code> - This represents the early behavior of Amazon Cognito where user existence related errors aren't prevented.</p></li>
     /// </ul>
+    /// <p>Defaults to <code>LEGACY</code> when you don't provide a value.</p>
     pub fn get_prevent_user_existence_errors(&self) -> &::std::option::Option<crate::types::PreventUserExistenceErrorTypes> {
         &self.prevent_user_existence_errors
     }

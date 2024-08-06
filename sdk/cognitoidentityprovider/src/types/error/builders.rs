@@ -71,6 +71,8 @@ pub use crate::types::error::_unsupported_operation_exception::UnsupportedOperat
 
 pub use crate::types::error::_unauthorized_exception::UnauthorizedExceptionBuilder;
 
+pub use crate::types::error::_password_history_policy_violation_exception::PasswordHistoryPolicyViolationExceptionBuilder;
+
 pub use crate::types::error::_mfa_method_not_found_exception::MfaMethodNotFoundExceptionBuilder;
 
 pub use crate::types::error::_duplicate_provider_exception::DuplicateProviderExceptionBuilder;

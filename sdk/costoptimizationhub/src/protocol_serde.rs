@@ -79,6 +79,8 @@ pub(crate) mod shape_recommendation_summaries_list;
 
 pub(crate) mod shape_resource_details;
 
+pub(crate) mod shape_summary_metrics_result;
+
 pub(crate) mod shape_tag_list;
 
 pub(crate) mod shape_validation_exception_details;

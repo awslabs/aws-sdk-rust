@@ -16,6 +16,8 @@ pub enum OrchestrationTrace {
     /// <p>The <code>inferenceConfiguration</code>, <code>parserMode</code>, and <code>overrideLambda</code> values are set in the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_PromptOverrideConfiguration.html">PromptOverrideConfiguration</a> object that was set when the agent was created or updated.</p></li>
     /// </ul>
     ModelInvocationInput(crate::types::ModelInvocationInput),
+    /// <p>Contains information pertaining to the output from the foundation model that is being invoked.</p>
+    ModelInvocationOutput(crate::types::OrchestrationModelInvocationOutput),
     /// <p>Details about the observation (the output of the action group Lambda or knowledge base) made by the agent.</p>
     Observation(crate::types::Observation),
     /// <p>Details about the reasoning, based on the input, that the agent uses to justify carrying out an action group or getting information from a knowledge base.</p>
@@ -56,6 +58,19 @@ impl OrchestrationTrace {
     /// Returns true if this is a [`ModelInvocationInput`](crate::types::OrchestrationTrace::ModelInvocationInput).
     pub fn is_model_invocation_input(&self) -> bool {
         self.as_model_invocation_input().is_ok()
+    }
+    /// Tries to convert the enum instance into [`ModelInvocationOutput`](crate::types::OrchestrationTrace::ModelInvocationOutput), extracting the inner [`OrchestrationModelInvocationOutput`](crate::types::OrchestrationModelInvocationOutput).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_model_invocation_output(&self) -> ::std::result::Result<&crate::types::OrchestrationModelInvocationOutput, &Self> {
+        if let OrchestrationTrace::ModelInvocationOutput(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`ModelInvocationOutput`](crate::types::OrchestrationTrace::ModelInvocationOutput).
+    pub fn is_model_invocation_output(&self) -> bool {
+        self.as_model_invocation_output().is_ok()
     }
     /// Tries to convert the enum instance into [`Observation`](crate::types::OrchestrationTrace::Observation), extracting the inner [`Observation`](crate::types::Observation).
     /// Returns `Err(&Self)` if it can't be converted.

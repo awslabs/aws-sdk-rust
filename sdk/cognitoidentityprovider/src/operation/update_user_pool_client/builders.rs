@@ -678,6 +678,7 @@ impl UpdateUserPoolClientFluentBuilder {
     /// <li>
     /// <p><code>LEGACY</code> - This represents the early behavior of Amazon Cognito where user existence related errors aren't prevented.</p></li>
     /// </ul>
+    /// <p>Defaults to <code>LEGACY</code> when you don't provide a value.</p>
     pub fn prevent_user_existence_errors(mut self, input: crate::types::PreventUserExistenceErrorTypes) -> Self {
         self.inner = self.inner.prevent_user_existence_errors(input);
         self
@@ -690,6 +691,7 @@ impl UpdateUserPoolClientFluentBuilder {
     /// <li>
     /// <p><code>LEGACY</code> - This represents the early behavior of Amazon Cognito where user existence related errors aren't prevented.</p></li>
     /// </ul>
+    /// <p>Defaults to <code>LEGACY</code> when you don't provide a value.</p>
     pub fn set_prevent_user_existence_errors(mut self, input: ::std::option::Option<crate::types::PreventUserExistenceErrorTypes>) -> Self {
         self.inner = self.inner.set_prevent_user_existence_errors(input);
         self
@@ -702,6 +704,7 @@ impl UpdateUserPoolClientFluentBuilder {
     /// <li>
     /// <p><code>LEGACY</code> - This represents the early behavior of Amazon Cognito where user existence related errors aren't prevented.</p></li>
     /// </ul>
+    /// <p>Defaults to <code>LEGACY</code> when you don't provide a value.</p>
     pub fn get_prevent_user_existence_errors(&self) -> &::std::option::Option<crate::types::PreventUserExistenceErrorTypes> {
         self.inner.get_prevent_user_existence_errors()
     }

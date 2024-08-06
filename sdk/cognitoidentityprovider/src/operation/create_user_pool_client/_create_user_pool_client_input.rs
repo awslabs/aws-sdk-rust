@@ -134,6 +134,7 @@ pub struct CreateUserPoolClientInput {
     /// <li>
     /// <p><code>LEGACY</code> - This represents the early behavior of Amazon Cognito where user existence related errors aren't prevented.</p></li>
     /// </ul>
+    /// <p>Defaults to <code>LEGACY</code> when you don't provide a value.</p>
     pub prevent_user_existence_errors: ::std::option::Option<crate::types::PreventUserExistenceErrorTypes>,
     /// <p>Activates or deactivates token revocation. For more information about revoking tokens, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.</p>
     /// <p>If you don't include this parameter, token revocation is automatically activated for the new user pool client.</p>
@@ -326,6 +327,7 @@ impl CreateUserPoolClientInput {
     /// <li>
     /// <p><code>LEGACY</code> - This represents the early behavior of Amazon Cognito where user existence related errors aren't prevented.</p></li>
     /// </ul>
+    /// <p>Defaults to <code>LEGACY</code> when you don't provide a value.</p>
     pub fn prevent_user_existence_errors(&self) -> ::std::option::Option<&crate::types::PreventUserExistenceErrorTypes> {
         self.prevent_user_existence_errors.as_ref()
     }
@@ -946,6 +948,7 @@ impl CreateUserPoolClientInputBuilder {
     /// <li>
     /// <p><code>LEGACY</code> - This represents the early behavior of Amazon Cognito where user existence related errors aren't prevented.</p></li>
     /// </ul>
+    /// <p>Defaults to <code>LEGACY</code> when you don't provide a value.</p>
     pub fn prevent_user_existence_errors(mut self, input: crate::types::PreventUserExistenceErrorTypes) -> Self {
         self.prevent_user_existence_errors = ::std::option::Option::Some(input);
         self
@@ -958,6 +961,7 @@ impl CreateUserPoolClientInputBuilder {
     /// <li>
     /// <p><code>LEGACY</code> - This represents the early behavior of Amazon Cognito where user existence related errors aren't prevented.</p></li>
     /// </ul>
+    /// <p>Defaults to <code>LEGACY</code> when you don't provide a value.</p>
     pub fn set_prevent_user_existence_errors(mut self, input: ::std::option::Option<crate::types::PreventUserExistenceErrorTypes>) -> Self {
         self.prevent_user_existence_errors = input;
         self
@@ -970,6 +974,7 @@ impl CreateUserPoolClientInputBuilder {
     /// <li>
     /// <p><code>LEGACY</code> - This represents the early behavior of Amazon Cognito where user existence related errors aren't prevented.</p></li>
     /// </ul>
+    /// <p>Defaults to <code>LEGACY</code> when you don't provide a value.</p>
     pub fn get_prevent_user_existence_errors(&self) -> &::std::option::Option<crate::types::PreventUserExistenceErrorTypes> {
         &self.prevent_user_existence_errors
     }

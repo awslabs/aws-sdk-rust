@@ -15,7 +15,7 @@ impl super::Client {
     /// - On success, responds with [`SignUpOutput`](crate::operation::sign_up::SignUpOutput) with field(s):
     ///   - [`user_confirmed(bool)`](crate::operation::sign_up::SignUpOutput::user_confirmed): <p>A response from the server indicating that a user registration has been confirmed.</p>
     ///   - [`code_delivery_details(Option<CodeDeliveryDetailsType>)`](crate::operation::sign_up::SignUpOutput::code_delivery_details): <p>The code delivery details returned by the server response to the user registration request.</p>
-    ///   - [`user_sub(String)`](crate::operation::sign_up::SignUpOutput::user_sub): <p>The UUID of the authenticated user. This isn't the same as <code>username</code>.</p>
+    ///   - [`user_sub(String)`](crate::operation::sign_up::SignUpOutput::user_sub): <p>The 128-bit ID of the authenticated user. This isn't the same as <code>username</code>.</p>
     /// - On failure, responds with [`SdkError<SignUpError>`](crate::operation::sign_up::SignUpError)
     pub fn sign_up(&self) -> crate::operation::sign_up::builders::SignUpFluentBuilder {
         crate::operation::sign_up::builders::SignUpFluentBuilder::new(self.handle.clone())

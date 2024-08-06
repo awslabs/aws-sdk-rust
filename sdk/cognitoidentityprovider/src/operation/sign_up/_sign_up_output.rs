@@ -8,7 +8,7 @@ pub struct SignUpOutput {
     pub user_confirmed: bool,
     /// <p>The code delivery details returned by the server response to the user registration request.</p>
     pub code_delivery_details: ::std::option::Option<crate::types::CodeDeliveryDetailsType>,
-    /// <p>The UUID of the authenticated user. This isn't the same as <code>username</code>.</p>
+    /// <p>The 128-bit ID of the authenticated user. This isn't the same as <code>username</code>.</p>
     pub user_sub: ::std::string::String,
     _request_id: Option<String>,
 }
@@ -21,7 +21,7 @@ impl SignUpOutput {
     pub fn code_delivery_details(&self) -> ::std::option::Option<&crate::types::CodeDeliveryDetailsType> {
         self.code_delivery_details.as_ref()
     }
-    /// <p>The UUID of the authenticated user. This isn't the same as <code>username</code>.</p>
+    /// <p>The 128-bit ID of the authenticated user. This isn't the same as <code>username</code>.</p>
     pub fn user_sub(&self) -> &str {
         use std::ops::Deref;
         self.user_sub.deref()
@@ -78,18 +78,18 @@ impl SignUpOutputBuilder {
     pub fn get_code_delivery_details(&self) -> &::std::option::Option<crate::types::CodeDeliveryDetailsType> {
         &self.code_delivery_details
     }
-    /// <p>The UUID of the authenticated user. This isn't the same as <code>username</code>.</p>
+    /// <p>The 128-bit ID of the authenticated user. This isn't the same as <code>username</code>.</p>
     /// This field is required.
     pub fn user_sub(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_sub = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The UUID of the authenticated user. This isn't the same as <code>username</code>.</p>
+    /// <p>The 128-bit ID of the authenticated user. This isn't the same as <code>username</code>.</p>
     pub fn set_user_sub(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_sub = input;
         self
     }
-    /// <p>The UUID of the authenticated user. This isn't the same as <code>username</code>.</p>
+    /// <p>The 128-bit ID of the authenticated user. This isn't the same as <code>username</code>.</p>
     pub fn get_user_sub(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_sub
     }

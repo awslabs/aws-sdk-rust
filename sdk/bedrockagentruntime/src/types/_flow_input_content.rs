@@ -9,7 +9,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub enum FlowInputContent {
-    /// <p>The input for the flow input node.</p>
+    /// <p>The input to send to the prompt flow input node.</p>
     Document(::aws_smithy_types::Document),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant

@@ -91,6 +91,10 @@ pub use crate::types::_log_delivery_configuration_type::LogDeliveryConfiguration
 
 pub use crate::types::_log_configuration_type::LogConfigurationTypeBuilder;
 
+pub use crate::types::_firehose_configuration_type::FirehoseConfigurationTypeBuilder;
+
+pub use crate::types::_s3_configuration_type::S3ConfigurationTypeBuilder;
+
 pub use crate::types::_cloud_watch_logs_configuration_type::CloudWatchLogsConfigurationTypeBuilder;
 
 pub use crate::types::_authentication_result_type::AuthenticationResultTypeBuilder;

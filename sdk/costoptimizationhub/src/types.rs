@@ -9,7 +9,11 @@ pub use crate::types::_savings_estimation_mode::SavingsEstimationMode;
 
 pub use crate::types::_enrollment_status::EnrollmentStatus;
 
+pub use crate::types::_summary_metrics_result::SummaryMetricsResult;
+
 pub use crate::types::_recommendation_summary::RecommendationSummary;
+
+pub use crate::types::_summary_metrics::SummaryMetrics;
 
 pub use crate::types::_filter::Filter;
 
@@ -230,6 +234,10 @@ mod _savings_plans_pricing;
 mod _source;
 
 mod _storage_configuration;
+
+mod _summary_metrics;
+
+mod _summary_metrics_result;
 
 mod _tag;
 

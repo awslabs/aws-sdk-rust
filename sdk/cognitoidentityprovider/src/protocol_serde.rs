@@ -435,6 +435,8 @@ pub(crate) mod shape_mfa_method_not_found_exception;
 
 pub(crate) mod shape_not_authorized_exception;
 
+pub(crate) mod shape_password_history_policy_violation_exception;
+
 pub(crate) mod shape_password_reset_required_exception;
 
 pub(crate) mod shape_precondition_not_met_exception;
@@ -669,6 +671,8 @@ pub(crate) mod shape_custom_sms_lambda_version_config_type;
 
 pub(crate) mod shape_explicit_auth_flows_list_type;
 
+pub(crate) mod shape_firehose_configuration_type;
+
 pub(crate) mod shape_http_header;
 
 pub(crate) mod shape_idp_identifiers_list_type;
@@ -698,6 +702,8 @@ pub(crate) mod shape_provider_details_type;
 pub(crate) mod shape_recovery_option_type;
 
 pub(crate) mod shape_resource_server_scope_list_type;
+
+pub(crate) mod shape_s3_configuration_type;
 
 pub(crate) mod shape_schema_attributes_list_type;
 

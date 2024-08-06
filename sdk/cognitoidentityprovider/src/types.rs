@@ -137,6 +137,10 @@ pub use crate::types::_log_delivery_configuration_type::LogDeliveryConfiguration
 
 pub use crate::types::_log_configuration_type::LogConfigurationType;
 
+pub use crate::types::_firehose_configuration_type::FirehoseConfigurationType;
+
+pub use crate::types::_s3_configuration_type::S3ConfigurationType;
+
 pub use crate::types::_cloud_watch_logs_configuration_type::CloudWatchLogsConfigurationType;
 
 pub use crate::types::_event_source_name::EventSourceName;
@@ -317,6 +321,8 @@ mod _explicit_auth_flows_type;
 
 mod _feedback_value_type;
 
+mod _firehose_configuration_type;
+
 mod _group_type;
 
 mod _http_header;
@@ -376,6 +382,8 @@ mod _risk_decision_type;
 mod _risk_exception_configuration_type;
 
 mod _risk_level_type;
+
+mod _s3_configuration_type;
 
 mod _schema_attribute_type;
 

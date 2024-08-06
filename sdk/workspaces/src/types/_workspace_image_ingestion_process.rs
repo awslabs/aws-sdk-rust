@@ -16,6 +16,7 @@
 ///     WorkspaceImageIngestionProcess::ByolGraphicspro => { /* ... */ },
 ///     WorkspaceImageIngestionProcess::ByolGraphicsG4Dn => { /* ... */ },
 ///     WorkspaceImageIngestionProcess::ByolGraphicsG4DnByop => { /* ... */ },
+///     WorkspaceImageIngestionProcess::ByolGraphicsG4DnWsp => { /* ... */ },
 ///     WorkspaceImageIngestionProcess::ByolRegular => { /* ... */ },
 ///     WorkspaceImageIngestionProcess::ByolRegularByop => { /* ... */ },
 ///     WorkspaceImageIngestionProcess::ByolRegularWsp => { /* ... */ },
@@ -55,6 +56,8 @@ pub enum WorkspaceImageIngestionProcess {
     #[allow(missing_docs)] // documentation missing in model
     ByolGraphicsG4DnByop,
     #[allow(missing_docs)] // documentation missing in model
+    ByolGraphicsG4DnWsp,
+    #[allow(missing_docs)] // documentation missing in model
     ByolRegular,
     #[allow(missing_docs)] // documentation missing in model
     ByolRegularByop,
@@ -71,6 +74,7 @@ impl ::std::convert::From<&str> for WorkspaceImageIngestionProcess {
             "BYOL_GRAPHICSPRO" => WorkspaceImageIngestionProcess::ByolGraphicspro,
             "BYOL_GRAPHICS_G4DN" => WorkspaceImageIngestionProcess::ByolGraphicsG4Dn,
             "BYOL_GRAPHICS_G4DN_BYOP" => WorkspaceImageIngestionProcess::ByolGraphicsG4DnByop,
+            "BYOL_GRAPHICS_G4DN_WSP" => WorkspaceImageIngestionProcess::ByolGraphicsG4DnWsp,
             "BYOL_REGULAR" => WorkspaceImageIngestionProcess::ByolRegular,
             "BYOL_REGULAR_BYOP" => WorkspaceImageIngestionProcess::ByolRegularByop,
             "BYOL_REGULAR_WSP" => WorkspaceImageIngestionProcess::ByolRegularWsp,
@@ -93,6 +97,7 @@ impl WorkspaceImageIngestionProcess {
             WorkspaceImageIngestionProcess::ByolGraphicspro => "BYOL_GRAPHICSPRO",
             WorkspaceImageIngestionProcess::ByolGraphicsG4Dn => "BYOL_GRAPHICS_G4DN",
             WorkspaceImageIngestionProcess::ByolGraphicsG4DnByop => "BYOL_GRAPHICS_G4DN_BYOP",
+            WorkspaceImageIngestionProcess::ByolGraphicsG4DnWsp => "BYOL_GRAPHICS_G4DN_WSP",
             WorkspaceImageIngestionProcess::ByolRegular => "BYOL_REGULAR",
             WorkspaceImageIngestionProcess::ByolRegularByop => "BYOL_REGULAR_BYOP",
             WorkspaceImageIngestionProcess::ByolRegularWsp => "BYOL_REGULAR_WSP",
@@ -106,6 +111,7 @@ impl WorkspaceImageIngestionProcess {
             "BYOL_GRAPHICSPRO",
             "BYOL_GRAPHICS_G4DN",
             "BYOL_GRAPHICS_G4DN_BYOP",
+            "BYOL_GRAPHICS_G4DN_WSP",
             "BYOL_REGULAR",
             "BYOL_REGULAR_BYOP",
             "BYOL_REGULAR_WSP",
@@ -136,6 +142,7 @@ impl ::std::fmt::Display for WorkspaceImageIngestionProcess {
             WorkspaceImageIngestionProcess::ByolGraphicspro => write!(f, "BYOL_GRAPHICSPRO"),
             WorkspaceImageIngestionProcess::ByolGraphicsG4Dn => write!(f, "BYOL_GRAPHICS_G4DN"),
             WorkspaceImageIngestionProcess::ByolGraphicsG4DnByop => write!(f, "BYOL_GRAPHICS_G4DN_BYOP"),
+            WorkspaceImageIngestionProcess::ByolGraphicsG4DnWsp => write!(f, "BYOL_GRAPHICS_G4DN_WSP"),
             WorkspaceImageIngestionProcess::ByolRegular => write!(f, "BYOL_REGULAR"),
             WorkspaceImageIngestionProcess::ByolRegularByop => write!(f, "BYOL_REGULAR_BYOP"),
             WorkspaceImageIngestionProcess::ByolRegularWsp => write!(f, "BYOL_REGULAR_WSP"),

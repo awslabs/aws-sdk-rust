@@ -21,6 +21,12 @@ pub fn ser_password_policy_type(
     if input.require_symbols {
         object.key("RequireSymbols").boolean(input.require_symbols);
     }
+    if let Some(var_2) = &input.password_history_size {
+        object.key("PasswordHistorySize").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+        );
+    }
     if input.temporary_password_validity_days != 0 {
         object.key("TemporaryPasswordValidityDays").number(
             #[allow(clippy::useless_conversion)]
@@ -63,6 +69,13 @@ where
                         }
                         "RequireSymbols" => {
                             builder = builder.set_require_symbols(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "PasswordHistorySize" => {
+                            builder = builder.set_password_history_size(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
                         }
                         "TemporaryPasswordValidityDays" => {
                             builder = builder.set_temporary_password_validity_days(

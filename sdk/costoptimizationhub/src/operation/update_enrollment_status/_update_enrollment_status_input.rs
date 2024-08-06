@@ -5,7 +5,7 @@
 pub struct UpdateEnrollmentStatusInput {
     /// <p>Sets the account status.</p>
     pub status: ::std::option::Option<crate::types::EnrollmentStatus>,
-    /// <p>Indicates whether to enroll member accounts of the organization if the account is the management account.</p>
+    /// <p>Indicates whether to enroll member accounts of the organization if the account is the management account or delegated administrator.</p>
     pub include_member_accounts: ::std::option::Option<bool>,
 }
 impl UpdateEnrollmentStatusInput {
@@ -13,7 +13,7 @@ impl UpdateEnrollmentStatusInput {
     pub fn status(&self) -> ::std::option::Option<&crate::types::EnrollmentStatus> {
         self.status.as_ref()
     }
-    /// <p>Indicates whether to enroll member accounts of the organization if the account is the management account.</p>
+    /// <p>Indicates whether to enroll member accounts of the organization if the account is the management account or delegated administrator.</p>
     pub fn include_member_accounts(&self) -> ::std::option::Option<bool> {
         self.include_member_accounts
     }
@@ -48,17 +48,17 @@ impl UpdateEnrollmentStatusInputBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::EnrollmentStatus> {
         &self.status
     }
-    /// <p>Indicates whether to enroll member accounts of the organization if the account is the management account.</p>
+    /// <p>Indicates whether to enroll member accounts of the organization if the account is the management account or delegated administrator.</p>
     pub fn include_member_accounts(mut self, input: bool) -> Self {
         self.include_member_accounts = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether to enroll member accounts of the organization if the account is the management account.</p>
+    /// <p>Indicates whether to enroll member accounts of the organization if the account is the management account or delegated administrator.</p>
     pub fn set_include_member_accounts(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_member_accounts = input;
         self
     }
-    /// <p>Indicates whether to enroll member accounts of the organization if the account is the management account.</p>
+    /// <p>Indicates whether to enroll member accounts of the organization if the account is the management account or delegated administrator.</p>
     pub fn get_include_member_accounts(&self) -> &::std::option::Option<bool> {
         &self.include_member_accounts
     }

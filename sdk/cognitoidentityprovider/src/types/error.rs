@@ -71,6 +71,8 @@ pub use crate::types::error::_unsupported_operation_exception::UnsupportedOperat
 
 pub use crate::types::error::_unauthorized_exception::UnauthorizedException;
 
+pub use crate::types::error::_password_history_policy_violation_exception::PasswordHistoryPolicyViolationException;
+
 pub use crate::types::error::_mfa_method_not_found_exception::MfaMethodNotFoundException;
 
 pub use crate::types::error::_duplicate_provider_exception::DuplicateProviderException;
@@ -122,6 +124,8 @@ mod _limit_exceeded_exception;
 mod _mfa_method_not_found_exception;
 
 mod _not_authorized_exception;
+
+mod _password_history_policy_violation_exception;
 
 mod _password_reset_required_exception;
 

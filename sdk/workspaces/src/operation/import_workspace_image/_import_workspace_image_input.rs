@@ -21,7 +21,7 @@ pub struct ImportWorkspaceImageInput {
     /// <li>
     /// <p>Although this parameter is an array, only one item is allowed at this time.</p></li>
     /// <li>
-    /// <p>Windows 11 only supports <code>Microsoft_Office_2019</code>.</p></li>
+    /// <p>During the image import process, non-GPU WSP WorkSpaces with Windows 11 support only <code>Microsoft_Office_2019</code>. GPU WSP WorkSpaces with Windows 11 do not support Office installation.</p></li>
     /// </ul>
     /// </note>
     pub applications: ::std::option::Option<::std::vec::Vec<crate::types::Application>>,
@@ -57,7 +57,7 @@ impl ImportWorkspaceImageInput {
     /// <li>
     /// <p>Although this parameter is an array, only one item is allowed at this time.</p></li>
     /// <li>
-    /// <p>Windows 11 only supports <code>Microsoft_Office_2019</code>.</p></li>
+    /// <p>During the image import process, non-GPU WSP WorkSpaces with Windows 11 support only <code>Microsoft_Office_2019</code>. GPU WSP WorkSpaces with Windows 11 do not support Office installation.</p></li>
     /// </ul>
     /// </note>
     ///
@@ -183,7 +183,7 @@ impl ImportWorkspaceImageInputBuilder {
     /// <li>
     /// <p>Although this parameter is an array, only one item is allowed at this time.</p></li>
     /// <li>
-    /// <p>Windows 11 only supports <code>Microsoft_Office_2019</code>.</p></li>
+    /// <p>During the image import process, non-GPU WSP WorkSpaces with Windows 11 support only <code>Microsoft_Office_2019</code>. GPU WSP WorkSpaces with Windows 11 do not support Office installation.</p></li>
     /// </ul>
     /// </note>
     pub fn applications(mut self, input: crate::types::Application) -> Self {
@@ -197,7 +197,7 @@ impl ImportWorkspaceImageInputBuilder {
     /// <li>
     /// <p>Although this parameter is an array, only one item is allowed at this time.</p></li>
     /// <li>
-    /// <p>Windows 11 only supports <code>Microsoft_Office_2019</code>.</p></li>
+    /// <p>During the image import process, non-GPU WSP WorkSpaces with Windows 11 support only <code>Microsoft_Office_2019</code>. GPU WSP WorkSpaces with Windows 11 do not support Office installation.</p></li>
     /// </ul>
     /// </note>
     pub fn set_applications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Application>>) -> Self {
@@ -209,7 +209,7 @@ impl ImportWorkspaceImageInputBuilder {
     /// <li>
     /// <p>Although this parameter is an array, only one item is allowed at this time.</p></li>
     /// <li>
-    /// <p>Windows 11 only supports <code>Microsoft_Office_2019</code>.</p></li>
+    /// <p>During the image import process, non-GPU WSP WorkSpaces with Windows 11 support only <code>Microsoft_Office_2019</code>. GPU WSP WorkSpaces with Windows 11 do not support Office installation.</p></li>
     /// </ul>
     /// </note>
     pub fn get_applications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Application>> {
