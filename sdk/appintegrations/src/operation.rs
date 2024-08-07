@@ -7,6 +7,9 @@ pub mod create_application;
 /// Types for the `CreateDataIntegration` operation.
 pub mod create_data_integration;
 
+/// Types for the `CreateDataIntegrationAssociation` operation.
+pub mod create_data_integration_association;
+
 /// Types for the `CreateEventIntegration` operation.
 pub mod create_event_integration;
 
@@ -60,6 +63,9 @@ pub mod update_application;
 
 /// Types for the `UpdateDataIntegration` operation.
 pub mod update_data_integration;
+
+/// Types for the `UpdateDataIntegrationAssociation` operation.
+pub mod update_data_integration_association;
 
 /// Types for the `UpdateEventIntegration` operation.
 pub mod update_event_integration;

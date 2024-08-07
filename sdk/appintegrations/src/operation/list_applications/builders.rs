@@ -22,7 +22,6 @@ impl crate::operation::list_applications::builders::ListApplicationsInputBuilder
 }
 /// Fluent builder constructing a request to `ListApplications`.
 ///
-/// <p>This API is in preview release and subject to change.</p>
 /// <p>Lists applications in the account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListApplicationsFluentBuilder {

@@ -2,7 +2,7 @@
 
 /// <p>Describes the result of the evaluation of a data quality analyzer.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DataQualityAnalyzerResult {
     /// <p>The name of the data quality analyzer.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -31,6 +31,16 @@ impl DataQualityAnalyzerResult {
         self.evaluated_metrics.as_ref()
     }
 }
+impl ::std::fmt::Debug for DataQualityAnalyzerResult {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("DataQualityAnalyzerResult");
+        formatter.field("name", &self.name);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("evaluation_message", &"*** Sensitive Data Redacted ***");
+        formatter.field("evaluated_metrics", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl DataQualityAnalyzerResult {
     /// Creates a new builder-style object to manufacture [`DataQualityAnalyzerResult`](crate::types::DataQualityAnalyzerResult).
     pub fn builder() -> crate::types::builders::DataQualityAnalyzerResultBuilder {
@@ -39,7 +49,7 @@ impl DataQualityAnalyzerResult {
 }
 
 /// A builder for [`DataQualityAnalyzerResult`](crate::types::DataQualityAnalyzerResult).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct DataQualityAnalyzerResultBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -118,5 +128,15 @@ impl DataQualityAnalyzerResultBuilder {
             evaluation_message: self.evaluation_message,
             evaluated_metrics: self.evaluated_metrics,
         }
+    }
+}
+impl ::std::fmt::Debug for DataQualityAnalyzerResultBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("DataQualityAnalyzerResultBuilder");
+        formatter.field("name", &self.name);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("evaluation_message", &"*** Sensitive Data Redacted ***");
+        formatter.field("evaluated_metrics", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

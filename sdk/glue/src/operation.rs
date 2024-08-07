@@ -46,6 +46,9 @@ pub mod batch_get_triggers;
 /// Types for the `BatchGetWorkflows` operation.
 pub mod batch_get_workflows;
 
+/// Types for the `BatchPutDataQualityStatisticAnnotation` operation.
+pub mod batch_put_data_quality_statistic_annotation;
+
 /// Types for the `BatchStopJobRun` operation.
 pub mod batch_stop_job_run;
 
@@ -268,6 +271,12 @@ pub mod get_custom_entity_type;
 /// Types for the `GetDataCatalogEncryptionSettings` operation.
 pub mod get_data_catalog_encryption_settings;
 
+/// Types for the `GetDataQualityModel` operation.
+pub mod get_data_quality_model;
+
+/// Types for the `GetDataQualityModelResult` operation.
+pub mod get_data_quality_model_result;
+
 /// Types for the `GetDataQualityResult` operation.
 pub mod get_data_quality_result;
 
@@ -454,6 +463,12 @@ pub mod list_data_quality_ruleset_evaluation_runs;
 /// Types for the `ListDataQualityRulesets` operation.
 pub mod list_data_quality_rulesets;
 
+/// Types for the `ListDataQualityStatisticAnnotations` operation.
+pub mod list_data_quality_statistic_annotations;
+
+/// Types for the `ListDataQualityStatistics` operation.
+pub mod list_data_quality_statistics;
+
 /// Types for the `ListDevEndpoints` operation.
 pub mod list_dev_endpoints;
 
@@ -492,6 +507,9 @@ pub mod list_workflows;
 
 /// Types for the `PutDataCatalogEncryptionSettings` operation.
 pub mod put_data_catalog_encryption_settings;
+
+/// Types for the `PutDataQualityProfileAnnotation` operation.
+pub mod put_data_quality_profile_annotation;
 
 /// Types for the `PutResourcePolicy` operation.
 pub mod put_resource_policy;

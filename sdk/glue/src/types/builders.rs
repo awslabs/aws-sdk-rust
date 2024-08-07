@@ -413,6 +413,16 @@ pub use crate::types::_transform_filter_criteria::TransformFilterCriteriaBuilder
 
 pub use crate::types::_schema_column::SchemaColumnBuilder;
 
+pub use crate::types::_statistic_summary::StatisticSummaryBuilder;
+
+pub use crate::types::_timestamped_inclusion_annotation::TimestampedInclusionAnnotationBuilder;
+
+pub use crate::types::_run_identifier::RunIdentifierBuilder;
+
+pub use crate::types::_timestamp_filter::TimestampFilterBuilder;
+
+pub use crate::types::_statistic_annotation::StatisticAnnotationBuilder;
+
 pub use crate::types::_data_quality_ruleset_list_details::DataQualityRulesetListDetailsBuilder;
 
 pub use crate::types::_data_quality_target_table::DataQualityTargetTableBuilder;
@@ -557,6 +567,8 @@ pub use crate::types::_data_quality_analyzer_result::DataQualityAnalyzerResultBu
 
 pub use crate::types::_data_quality_rule_result::DataQualityRuleResultBuilder;
 
+pub use crate::types::_statistic_model_result::StatisticModelResultBuilder;
+
 pub use crate::types::_code_gen_edge::CodeGenEdgeBuilder;
 
 pub use crate::types::_code_gen_node::CodeGenNodeBuilder;
@@ -626,6 +638,10 @@ pub use crate::types::_batch_update_partition_request_entry::BatchUpdatePartitio
 pub use crate::types::_batch_stop_job_run_error::BatchStopJobRunErrorBuilder;
 
 pub use crate::types::_batch_stop_job_run_successful_submission::BatchStopJobRunSuccessfulSubmissionBuilder;
+
+pub use crate::types::_annotation_error::AnnotationErrorBuilder;
+
+pub use crate::types::_datapoint_inclusion_annotation::DatapointInclusionAnnotationBuilder;
 
 pub use crate::types::_batch_get_table_optimizer_error::BatchGetTableOptimizerErrorBuilder;
 

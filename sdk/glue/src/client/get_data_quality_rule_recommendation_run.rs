@@ -18,6 +18,7 @@ impl super::Client {
     ///   - [`execution_time(i32)`](crate::operation::get_data_quality_rule_recommendation_run::GetDataQualityRuleRecommendationRunOutput::execution_time): <p>The amount of time (in seconds) that the run consumed resources.</p>
     ///   - [`recommended_ruleset(Option<String>)`](crate::operation::get_data_quality_rule_recommendation_run::GetDataQualityRuleRecommendationRunOutput::recommended_ruleset): <p>When a start rule recommendation run completes, it creates a recommended ruleset (a set of rules). This member has those rules in Data Quality Definition Language (DQDL) format.</p>
     ///   - [`created_ruleset_name(Option<String>)`](crate::operation::get_data_quality_rule_recommendation_run::GetDataQualityRuleRecommendationRunOutput::created_ruleset_name): <p>The name of the ruleset that was created by the run.</p>
+    ///   - [`data_quality_security_configuration(Option<String>)`](crate::operation::get_data_quality_rule_recommendation_run::GetDataQualityRuleRecommendationRunOutput::data_quality_security_configuration): <p>The name of the security configuration created with the data quality encryption option.</p>
     /// - On failure, responds with [`SdkError<GetDataQualityRuleRecommendationRunError>`](crate::operation::get_data_quality_rule_recommendation_run::GetDataQualityRuleRecommendationRunError)
     pub fn get_data_quality_rule_recommendation_run(
         &self,

@@ -631,6 +631,42 @@ impl From<crate::operation::batch_get_workflows::BatchGetWorkflowsError> for Err
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::batch_put_data_quality_statistic_annotation::BatchPutDataQualityStatisticAnnotationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::batch_put_data_quality_statistic_annotation::BatchPutDataQualityStatisticAnnotationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_put_data_quality_statistic_annotation::BatchPutDataQualityStatisticAnnotationError> for Error {
+    fn from(err: crate::operation::batch_put_data_quality_statistic_annotation::BatchPutDataQualityStatisticAnnotationError) -> Self {
+        match err {
+            crate::operation::batch_put_data_quality_statistic_annotation::BatchPutDataQualityStatisticAnnotationError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::batch_put_data_quality_statistic_annotation::BatchPutDataQualityStatisticAnnotationError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::batch_put_data_quality_statistic_annotation::BatchPutDataQualityStatisticAnnotationError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::batch_put_data_quality_statistic_annotation::BatchPutDataQualityStatisticAnnotationError::ResourceNumberLimitExceededException(inner) => Error::ResourceNumberLimitExceededException(inner),
+            crate::operation::batch_put_data_quality_statistic_annotation::BatchPutDataQualityStatisticAnnotationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_stop_job_run::BatchStopJobRunError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -3029,6 +3065,73 @@ impl From<crate::operation::get_dataflow_graph::GetDataflowGraphError> for Error
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_data_quality_model::GetDataQualityModelError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_data_quality_model::GetDataQualityModelError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_data_quality_model::GetDataQualityModelError> for Error {
+    fn from(err: crate::operation::get_data_quality_model::GetDataQualityModelError) -> Self {
+        match err {
+            crate::operation::get_data_quality_model::GetDataQualityModelError::EntityNotFoundException(inner) => {
+                Error::EntityNotFoundException(inner)
+            }
+            crate::operation::get_data_quality_model::GetDataQualityModelError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::get_data_quality_model::GetDataQualityModelError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_data_quality_model::GetDataQualityModelError::OperationTimeoutException(inner) => {
+                Error::OperationTimeoutException(inner)
+            }
+            crate::operation::get_data_quality_model::GetDataQualityModelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_data_quality_model_result::GetDataQualityModelResultError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_data_quality_model_result::GetDataQualityModelResultError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_data_quality_model_result::GetDataQualityModelResultError> for Error {
+    fn from(err: crate::operation::get_data_quality_model_result::GetDataQualityModelResultError) -> Self {
+        match err {
+            crate::operation::get_data_quality_model_result::GetDataQualityModelResultError::EntityNotFoundException(inner) => {
+                Error::EntityNotFoundException(inner)
+            }
+            crate::operation::get_data_quality_model_result::GetDataQualityModelResultError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::get_data_quality_model_result::GetDataQualityModelResultError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::get_data_quality_model_result::GetDataQualityModelResultError::OperationTimeoutException(inner) => {
+                Error::OperationTimeoutException(inner)
+            }
+            crate::operation::get_data_quality_model_result::GetDataQualityModelResultError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_data_quality_result::GetDataQualityResultError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -4839,6 +4942,79 @@ impl From<crate::operation::list_data_quality_rulesets::ListDataQualityRulesetsE
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_data_quality_statistic_annotations::ListDataQualityStatisticAnnotationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_data_quality_statistic_annotations::ListDataQualityStatisticAnnotationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_data_quality_statistic_annotations::ListDataQualityStatisticAnnotationsError> for Error {
+    fn from(err: crate::operation::list_data_quality_statistic_annotations::ListDataQualityStatisticAnnotationsError) -> Self {
+        match err {
+            crate::operation::list_data_quality_statistic_annotations::ListDataQualityStatisticAnnotationsError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::list_data_quality_statistic_annotations::ListDataQualityStatisticAnnotationsError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::list_data_quality_statistic_annotations::ListDataQualityStatisticAnnotationsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_data_quality_statistics::ListDataQualityStatisticsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_data_quality_statistics::ListDataQualityStatisticsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_data_quality_statistics::ListDataQualityStatisticsError> for Error {
+    fn from(err: crate::operation::list_data_quality_statistics::ListDataQualityStatisticsError) -> Self {
+        match err {
+            crate::operation::list_data_quality_statistics::ListDataQualityStatisticsError::EntityNotFoundException(inner) => {
+                Error::EntityNotFoundException(inner)
+            }
+            crate::operation::list_data_quality_statistics::ListDataQualityStatisticsError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::list_data_quality_statistics::ListDataQualityStatisticsError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::list_data_quality_statistics::ListDataQualityStatisticsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_dev_endpoints::ListDevEndpointsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -5196,6 +5372,47 @@ impl From<crate::operation::put_data_catalog_encryption_settings::PutDataCatalog
             crate::operation::put_data_catalog_encryption_settings::PutDataCatalogEncryptionSettingsError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_data_quality_profile_annotation::PutDataQualityProfileAnnotationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_data_quality_profile_annotation::PutDataQualityProfileAnnotationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_data_quality_profile_annotation::PutDataQualityProfileAnnotationError> for Error {
+    fn from(err: crate::operation::put_data_quality_profile_annotation::PutDataQualityProfileAnnotationError) -> Self {
+        match err {
+            crate::operation::put_data_quality_profile_annotation::PutDataQualityProfileAnnotationError::EntityNotFoundException(inner) => {
+                Error::EntityNotFoundException(inner)
+            }
+            crate::operation::put_data_quality_profile_annotation::PutDataQualityProfileAnnotationError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::put_data_quality_profile_annotation::PutDataQualityProfileAnnotationError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::put_data_quality_profile_annotation::PutDataQualityProfileAnnotationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -27,6 +27,8 @@ pub(crate) mod shape_create_application;
 
 pub(crate) mod shape_create_data_integration;
 
+pub(crate) mod shape_create_data_integration_association;
+
 pub(crate) mod shape_create_event_integration;
 
 pub(crate) mod shape_delete_application;
@@ -63,6 +65,8 @@ pub(crate) mod shape_update_application;
 
 pub(crate) mod shape_update_data_integration;
 
+pub(crate) mod shape_update_data_integration_association;
+
 pub(crate) mod shape_update_event_integration;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
@@ -76,6 +80,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 pub(crate) mod shape_access_denied_exception;
 
 pub(crate) mod shape_create_application_input;
+
+pub(crate) mod shape_create_data_integration_association_input;
 
 pub(crate) mod shape_create_data_integration_input;
 
@@ -99,6 +105,8 @@ pub(crate) mod shape_unsupported_operation_exception;
 
 pub(crate) mod shape_update_application_input;
 
+pub(crate) mod shape_update_data_integration_association_input;
+
 pub(crate) mod shape_update_data_integration_input;
 
 pub(crate) mod shape_update_event_integration_input;
@@ -118,6 +126,8 @@ pub(crate) mod shape_event_filter;
 pub(crate) mod shape_event_integration_associations_list;
 
 pub(crate) mod shape_event_integrations_list;
+
+pub(crate) mod shape_execution_configuration;
 
 pub(crate) mod shape_file_configuration;
 
@@ -155,8 +165,12 @@ pub(crate) mod shape_fields_map;
 
 pub(crate) mod shape_folder_list;
 
+pub(crate) mod shape_on_demand_configuration;
+
 pub(crate) mod shape_application_approved_origins;
 
 pub(crate) mod shape_client_association_metadata;
 
 pub(crate) mod shape_fields_list;
+
+pub(crate) mod shape_last_execution_status;

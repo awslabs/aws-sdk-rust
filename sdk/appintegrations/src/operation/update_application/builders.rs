@@ -22,7 +22,6 @@ impl crate::operation::update_application::builders::UpdateApplicationInputBuild
 }
 /// Fluent builder constructing a request to `UpdateApplication`.
 ///
-/// <p>This API is in preview release and subject to change.</p>
 /// <p>Updates and persists an Application resource.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateApplicationFluentBuilder {

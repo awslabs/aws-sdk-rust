@@ -5,6 +5,8 @@
 pub struct GetDataQualityResultOutput {
     /// <p>A unique result ID for the data quality result.</p>
     pub result_id: ::std::option::Option<::std::string::String>,
+    /// <p>The Profile ID for the data quality result.</p>
+    pub profile_id: ::std::option::Option<::std::string::String>,
     /// <p>An aggregate data quality score. Represents the ratio of rules that passed to the total number of rules.</p>
     pub score: ::std::option::Option<f64>,
     /// <p>The table associated with the data quality result, if any.</p>
@@ -35,6 +37,10 @@ impl GetDataQualityResultOutput {
     /// <p>A unique result ID for the data quality result.</p>
     pub fn result_id(&self) -> ::std::option::Option<&str> {
         self.result_id.as_deref()
+    }
+    /// <p>The Profile ID for the data quality result.</p>
+    pub fn profile_id(&self) -> ::std::option::Option<&str> {
+        self.profile_id.as_deref()
     }
     /// <p>An aggregate data quality score. Represents the ratio of rules that passed to the total number of rules.</p>
     pub fn score(&self) -> ::std::option::Option<f64> {
@@ -108,6 +114,7 @@ impl GetDataQualityResultOutput {
 #[non_exhaustive]
 pub struct GetDataQualityResultOutputBuilder {
     pub(crate) result_id: ::std::option::Option<::std::string::String>,
+    pub(crate) profile_id: ::std::option::Option<::std::string::String>,
     pub(crate) score: ::std::option::Option<f64>,
     pub(crate) data_source: ::std::option::Option<crate::types::DataSource>,
     pub(crate) ruleset_name: ::std::option::Option<::std::string::String>,
@@ -136,6 +143,20 @@ impl GetDataQualityResultOutputBuilder {
     /// <p>A unique result ID for the data quality result.</p>
     pub fn get_result_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.result_id
+    }
+    /// <p>The Profile ID for the data quality result.</p>
+    pub fn profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.profile_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Profile ID for the data quality result.</p>
+    pub fn set_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.profile_id = input;
+        self
+    }
+    /// <p>The Profile ID for the data quality result.</p>
+    pub fn get_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_id
     }
     /// <p>An aggregate data quality score. Represents the ratio of rules that passed to the total number of rules.</p>
     pub fn score(mut self, input: f64) -> Self {
@@ -336,6 +357,7 @@ impl GetDataQualityResultOutputBuilder {
     pub fn build(self) -> crate::operation::get_data_quality_result::GetDataQualityResultOutput {
         crate::operation::get_data_quality_result::GetDataQualityResultOutput {
             result_id: self.result_id,
+            profile_id: self.profile_id,
             score: self.score,
             data_source: self.data_source,
             ruleset_name: self.ruleset_name,

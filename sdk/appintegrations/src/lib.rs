@@ -17,9 +17,14 @@
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
 #![cfg_attr(docsrs, feature(doc_auto_cfg))]
+//!   - [Amazon AppIntegrations actions](https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_AppIntegrations_Service.html)
+//!   - [Amazon AppIntegrations data types](https://docs.aws.amazon.com/connect/latest/APIReference/API_Types_Amazon_AppIntegrations_Service.html)
+//!
 //! The Amazon AppIntegrations service enables you to configure and reuse connections to external applications.
 //!
-//! For information about how you can use external applications with Amazon Connect, see [Set up pre-built integrations](https://docs.aws.amazon.com/connect/latest/adminguide/crm.html) and [Deliver information to agents using Amazon Connect Wisdom](https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-wisdom.html) in the _Amazon Connect Administrator Guide_.
+//! For information about how you can use external applications with Amazon Connect, see the following topics in the _Amazon Connect Administrator Guide_:
+//!   - [Third-party applications (3p apps) in the agent workspace](https://docs.aws.amazon.com/connect/latest/adminguide/3p-apps.html)
+//!   - [Use Amazon Q in Connect for generative AI–powered agent assistance in real-time](https://docs.aws.amazon.com/connect/latest/adminguide/amazon-q-connect.html)
 //!
 //! ## Getting Started
 //!
@@ -33,7 +38,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-appintegrations = "1.36.0"
+//! aws-sdk-appintegrations = "1.37.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

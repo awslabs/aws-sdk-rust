@@ -22,7 +22,6 @@ impl crate::operation::get_application::builders::GetApplicationInputBuilder {
 }
 /// Fluent builder constructing a request to `GetApplication`.
 ///
-/// <p>This API is in preview release and subject to change.</p>
 /// <p>Get an Application resource.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetApplicationFluentBuilder {

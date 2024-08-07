@@ -143,6 +143,56 @@ impl From<crate::operation::create_data_integration::CreateDataIntegrationError>
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_data_integration_association::CreateDataIntegrationAssociationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_data_integration_association::CreateDataIntegrationAssociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_data_integration_association::CreateDataIntegrationAssociationError> for Error {
+    fn from(err: crate::operation::create_data_integration_association::CreateDataIntegrationAssociationError) -> Self {
+        match err {
+            crate::operation::create_data_integration_association::CreateDataIntegrationAssociationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_data_integration_association::CreateDataIntegrationAssociationError::InternalServiceError(inner) => {
+                Error::InternalServiceError(inner)
+            }
+            crate::operation::create_data_integration_association::CreateDataIntegrationAssociationError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::create_data_integration_association::CreateDataIntegrationAssociationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_data_integration_association::CreateDataIntegrationAssociationError::ResourceQuotaExceededException(inner) => {
+                Error::ResourceQuotaExceededException(inner)
+            }
+            crate::operation::create_data_integration_association::CreateDataIntegrationAssociationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_data_integration_association::CreateDataIntegrationAssociationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_event_integration::CreateEventIntegrationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -717,6 +767,53 @@ impl From<crate::operation::update_data_integration::UpdateDataIntegrationError>
             }
             crate::operation::update_data_integration::UpdateDataIntegrationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_data_integration::UpdateDataIntegrationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_data_integration_association::UpdateDataIntegrationAssociationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_data_integration_association::UpdateDataIntegrationAssociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_data_integration_association::UpdateDataIntegrationAssociationError> for Error {
+    fn from(err: crate::operation::update_data_integration_association::UpdateDataIntegrationAssociationError) -> Self {
+        match err {
+            crate::operation::update_data_integration_association::UpdateDataIntegrationAssociationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_data_integration_association::UpdateDataIntegrationAssociationError::InternalServiceError(inner) => {
+                Error::InternalServiceError(inner)
+            }
+            crate::operation::update_data_integration_association::UpdateDataIntegrationAssociationError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::update_data_integration_association::UpdateDataIntegrationAssociationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_data_integration_association::UpdateDataIntegrationAssociationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_data_integration_association::UpdateDataIntegrationAssociationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

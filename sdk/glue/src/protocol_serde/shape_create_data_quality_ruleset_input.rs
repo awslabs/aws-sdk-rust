@@ -28,8 +28,11 @@ pub fn ser_create_data_quality_ruleset_input_input(
         crate::protocol_serde::shape_data_quality_target_table::ser_data_quality_target_table(&mut object_9, var_8)?;
         object_9.finish();
     }
-    if let Some(var_10) = &input.client_token {
-        object.key("ClientToken").string(var_10.as_str());
+    if let Some(var_10) = &input.data_quality_security_configuration {
+        object.key("DataQualitySecurityConfiguration").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.client_token {
+        object.key("ClientToken").string(var_11.as_str());
     }
     Ok(())
 }

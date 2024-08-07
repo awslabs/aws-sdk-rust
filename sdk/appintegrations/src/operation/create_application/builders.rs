@@ -22,7 +22,6 @@ impl crate::operation::create_application::builders::CreateApplicationInputBuild
 }
 /// Fluent builder constructing a request to `CreateApplication`.
 ///
-/// <p>This API is in preview release and subject to change.</p>
 /// <p>Creates and persists an Application resource.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateApplicationFluentBuilder {

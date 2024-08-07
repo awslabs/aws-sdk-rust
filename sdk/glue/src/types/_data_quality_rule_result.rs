@@ -2,7 +2,7 @@
 
 /// <p>Describes the result of the evaluation of a data quality rule.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DataQualityRuleResult {
     /// <p>The name of the data quality rule.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -14,6 +14,8 @@ pub struct DataQualityRuleResult {
     pub result: ::std::option::Option<crate::types::DataQualityRuleResultStatus>,
     /// <p>A map of metrics associated with the evaluation of the rule.</p>
     pub evaluated_metrics: ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>,
+    /// <p>The evaluated rule.</p>
+    pub evaluated_rule: ::std::option::Option<::std::string::String>,
 }
 impl DataQualityRuleResult {
     /// <p>The name of the data quality rule.</p>
@@ -36,6 +38,22 @@ impl DataQualityRuleResult {
     pub fn evaluated_metrics(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, f64>> {
         self.evaluated_metrics.as_ref()
     }
+    /// <p>The evaluated rule.</p>
+    pub fn evaluated_rule(&self) -> ::std::option::Option<&str> {
+        self.evaluated_rule.as_deref()
+    }
+}
+impl ::std::fmt::Debug for DataQualityRuleResult {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("DataQualityRuleResult");
+        formatter.field("name", &self.name);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("evaluation_message", &"*** Sensitive Data Redacted ***");
+        formatter.field("result", &self.result);
+        formatter.field("evaluated_metrics", &"*** Sensitive Data Redacted ***");
+        formatter.field("evaluated_rule", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
 }
 impl DataQualityRuleResult {
     /// Creates a new builder-style object to manufacture [`DataQualityRuleResult`](crate::types::DataQualityRuleResult).
@@ -45,7 +63,7 @@ impl DataQualityRuleResult {
 }
 
 /// A builder for [`DataQualityRuleResult`](crate::types::DataQualityRuleResult).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct DataQualityRuleResultBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -53,6 +71,7 @@ pub struct DataQualityRuleResultBuilder {
     pub(crate) evaluation_message: ::std::option::Option<::std::string::String>,
     pub(crate) result: ::std::option::Option<crate::types::DataQualityRuleResultStatus>,
     pub(crate) evaluated_metrics: ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>,
+    pub(crate) evaluated_rule: ::std::option::Option<::std::string::String>,
 }
 impl DataQualityRuleResultBuilder {
     /// <p>The name of the data quality rule.</p>
@@ -131,6 +150,20 @@ impl DataQualityRuleResultBuilder {
     pub fn get_evaluated_metrics(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, f64>> {
         &self.evaluated_metrics
     }
+    /// <p>The evaluated rule.</p>
+    pub fn evaluated_rule(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.evaluated_rule = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The evaluated rule.</p>
+    pub fn set_evaluated_rule(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.evaluated_rule = input;
+        self
+    }
+    /// <p>The evaluated rule.</p>
+    pub fn get_evaluated_rule(&self) -> &::std::option::Option<::std::string::String> {
+        &self.evaluated_rule
+    }
     /// Consumes the builder and constructs a [`DataQualityRuleResult`](crate::types::DataQualityRuleResult).
     pub fn build(self) -> crate::types::DataQualityRuleResult {
         crate::types::DataQualityRuleResult {
@@ -139,6 +172,19 @@ impl DataQualityRuleResultBuilder {
             evaluation_message: self.evaluation_message,
             result: self.result,
             evaluated_metrics: self.evaluated_metrics,
+            evaluated_rule: self.evaluated_rule,
         }
+    }
+}
+impl ::std::fmt::Debug for DataQualityRuleResultBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("DataQualityRuleResultBuilder");
+        formatter.field("name", &self.name);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("evaluation_message", &"*** Sensitive Data Redacted ***");
+        formatter.field("result", &self.result);
+        formatter.field("evaluated_metrics", &"*** Sensitive Data Redacted ***");
+        formatter.field("evaluated_rule", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

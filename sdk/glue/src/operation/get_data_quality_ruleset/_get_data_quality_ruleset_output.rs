@@ -17,6 +17,8 @@ pub struct GetDataQualityRulesetOutput {
     pub last_modified_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>When a ruleset was created from a recommendation run, this run ID is generated to link the two together.</p>
     pub recommendation_run_id: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the security configuration created with the data quality encryption option.</p>
+    pub data_quality_security_configuration: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetDataQualityRulesetOutput {
@@ -48,6 +50,10 @@ impl GetDataQualityRulesetOutput {
     pub fn recommendation_run_id(&self) -> ::std::option::Option<&str> {
         self.recommendation_run_id.as_deref()
     }
+    /// <p>The name of the security configuration created with the data quality encryption option.</p>
+    pub fn data_quality_security_configuration(&self) -> ::std::option::Option<&str> {
+        self.data_quality_security_configuration.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetDataQualityRulesetOutput {
     fn request_id(&self) -> Option<&str> {
@@ -72,6 +78,7 @@ pub struct GetDataQualityRulesetOutputBuilder {
     pub(crate) created_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) recommendation_run_id: ::std::option::Option<::std::string::String>,
+    pub(crate) data_quality_security_configuration: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetDataQualityRulesetOutputBuilder {
@@ -173,6 +180,20 @@ impl GetDataQualityRulesetOutputBuilder {
     pub fn get_recommendation_run_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.recommendation_run_id
     }
+    /// <p>The name of the security configuration created with the data quality encryption option.</p>
+    pub fn data_quality_security_configuration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.data_quality_security_configuration = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the security configuration created with the data quality encryption option.</p>
+    pub fn set_data_quality_security_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.data_quality_security_configuration = input;
+        self
+    }
+    /// <p>The name of the security configuration created with the data quality encryption option.</p>
+    pub fn get_data_quality_security_configuration(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_quality_security_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -192,6 +213,7 @@ impl GetDataQualityRulesetOutputBuilder {
             created_on: self.created_on,
             last_modified_on: self.last_modified_on,
             recommendation_run_id: self.recommendation_run_id,
+            data_quality_security_configuration: self.data_quality_security_configuration,
             _request_id: self._request_id,
         }
     }

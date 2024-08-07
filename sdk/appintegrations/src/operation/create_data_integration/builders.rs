@@ -138,17 +138,17 @@ impl CreateDataIntegrationFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>The KMS key for the DataIntegration.</p>
+    /// <p>The KMS key ARN for the DataIntegration.</p>
     pub fn kms_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key(input.into());
         self
     }
-    /// <p>The KMS key for the DataIntegration.</p>
+    /// <p>The KMS key ARN for the DataIntegration.</p>
     pub fn set_kms_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key(input);
         self
     }
-    /// <p>The KMS key for the DataIntegration.</p>
+    /// <p>The KMS key ARN for the DataIntegration.</p>
     pub fn get_kms_key(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_kms_key()
     }

@@ -35,6 +35,22 @@ where
                                     .transpose()?,
                             );
                         }
+                        "DestinationURI" => {
+                            builder = builder.set_destination_uri(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "LastExecutionStatus" => {
+                            builder = builder
+                                .set_last_execution_status(crate::protocol_serde::shape_last_execution_status::de_last_execution_status(tokens)?);
+                        }
+                        "ExecutionConfiguration" => {
+                            builder = builder.set_execution_configuration(
+                                crate::protocol_serde::shape_execution_configuration::de_execution_configuration(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

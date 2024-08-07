@@ -21,6 +21,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "ProfileId" => {
+                            builder = builder.set_profile_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "Score" => {
                             builder = builder
                                 .set_score(::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()));

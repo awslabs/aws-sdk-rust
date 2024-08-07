@@ -8,8 +8,8 @@ impl super::Client {
     ///   - [`arn(Option<String>)`](crate::operation::get_data_integration::GetDataIntegrationOutput::arn): <p>The Amazon Resource Name (ARN) for the DataIntegration.</p>
     ///   - [`id(Option<String>)`](crate::operation::get_data_integration::GetDataIntegrationOutput::id): <p>A unique identifier.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_data_integration::GetDataIntegrationOutput::name): <p>The name of the DataIntegration.</p>
-    ///   - [`description(Option<String>)`](crate::operation::get_data_integration::GetDataIntegrationOutput::description): <p>The KMS key for the DataIntegration.</p>
-    ///   - [`kms_key(Option<String>)`](crate::operation::get_data_integration::GetDataIntegrationOutput::kms_key): <p>The KMS key for the DataIntegration.</p>
+    ///   - [`description(Option<String>)`](crate::operation::get_data_integration::GetDataIntegrationOutput::description): <p>The KMS key ARN for the DataIntegration.</p>
+    ///   - [`kms_key(Option<String>)`](crate::operation::get_data_integration::GetDataIntegrationOutput::kms_key): <p>The KMS key ARN for the DataIntegration.</p>
     ///   - [`source_uri(Option<String>)`](crate::operation::get_data_integration::GetDataIntegrationOutput::source_uri): <p>The URI of the data source.</p>
     ///   - [`schedule_configuration(Option<ScheduleConfiguration>)`](crate::operation::get_data_integration::GetDataIntegrationOutput::schedule_configuration): <p>The name of the data and how often it should be pulled from the source.</p>
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_data_integration::GetDataIntegrationOutput::tags): <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>

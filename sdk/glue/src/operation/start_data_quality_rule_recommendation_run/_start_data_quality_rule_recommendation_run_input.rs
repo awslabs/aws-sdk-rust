@@ -13,6 +13,8 @@ pub struct StartDataQualityRuleRecommendationRunInput {
     pub timeout: ::std::option::Option<i32>,
     /// <p>A name for the ruleset.</p>
     pub created_ruleset_name: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the security configuration created with the data quality encryption option.</p>
+    pub data_quality_security_configuration: ::std::option::Option<::std::string::String>,
     /// <p>Used for idempotency and is recommended to be set to a random ID (such as a UUID) to avoid creating or starting multiple instances of the same resource.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
@@ -37,6 +39,10 @@ impl StartDataQualityRuleRecommendationRunInput {
     pub fn created_ruleset_name(&self) -> ::std::option::Option<&str> {
         self.created_ruleset_name.as_deref()
     }
+    /// <p>The name of the security configuration created with the data quality encryption option.</p>
+    pub fn data_quality_security_configuration(&self) -> ::std::option::Option<&str> {
+        self.data_quality_security_configuration.as_deref()
+    }
     /// <p>Used for idempotency and is recommended to be set to a random ID (such as a UUID) to avoid creating or starting multiple instances of the same resource.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
@@ -58,6 +64,7 @@ pub struct StartDataQualityRuleRecommendationRunInputBuilder {
     pub(crate) number_of_workers: ::std::option::Option<i32>,
     pub(crate) timeout: ::std::option::Option<i32>,
     pub(crate) created_ruleset_name: ::std::option::Option<::std::string::String>,
+    pub(crate) data_quality_security_configuration: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl StartDataQualityRuleRecommendationRunInputBuilder {
@@ -133,6 +140,20 @@ impl StartDataQualityRuleRecommendationRunInputBuilder {
     pub fn get_created_ruleset_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.created_ruleset_name
     }
+    /// <p>The name of the security configuration created with the data quality encryption option.</p>
+    pub fn data_quality_security_configuration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.data_quality_security_configuration = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the security configuration created with the data quality encryption option.</p>
+    pub fn set_data_quality_security_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.data_quality_security_configuration = input;
+        self
+    }
+    /// <p>The name of the security configuration created with the data quality encryption option.</p>
+    pub fn get_data_quality_security_configuration(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_quality_security_configuration
+    }
     /// <p>Used for idempotency and is recommended to be set to a random ID (such as a UUID) to avoid creating or starting multiple instances of the same resource.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -161,6 +182,7 @@ impl StartDataQualityRuleRecommendationRunInputBuilder {
                 number_of_workers: self.number_of_workers,
                 timeout: self.timeout,
                 created_ruleset_name: self.created_ruleset_name,
+                data_quality_security_configuration: self.data_quality_security_configuration,
                 client_token: self.client_token,
             },
         )

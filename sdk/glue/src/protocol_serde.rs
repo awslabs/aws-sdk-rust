@@ -53,6 +53,8 @@ pub(crate) mod shape_batch_get_triggers;
 
 pub(crate) mod shape_batch_get_workflows;
 
+pub(crate) mod shape_batch_put_data_quality_statistic_annotation;
+
 pub(crate) mod shape_batch_stop_job_run;
 
 pub(crate) mod shape_batch_update_partition;
@@ -201,6 +203,10 @@ pub(crate) mod shape_get_custom_entity_type;
 
 pub(crate) mod shape_get_data_catalog_encryption_settings;
 
+pub(crate) mod shape_get_data_quality_model;
+
+pub(crate) mod shape_get_data_quality_model_result;
+
 pub(crate) mod shape_get_data_quality_result;
 
 pub(crate) mod shape_get_data_quality_rule_recommendation_run;
@@ -325,6 +331,10 @@ pub(crate) mod shape_list_data_quality_ruleset_evaluation_runs;
 
 pub(crate) mod shape_list_data_quality_rulesets;
 
+pub(crate) mod shape_list_data_quality_statistic_annotations;
+
+pub(crate) mod shape_list_data_quality_statistics;
+
 pub(crate) mod shape_list_dev_endpoints;
 
 pub(crate) mod shape_list_jobs;
@@ -350,6 +360,8 @@ pub(crate) mod shape_list_usage_profiles;
 pub(crate) mod shape_list_workflows;
 
 pub(crate) mod shape_put_data_catalog_encryption_settings;
+
+pub(crate) mod shape_put_data_quality_profile_annotation;
 
 pub(crate) mod shape_put_resource_policy;
 
@@ -500,6 +512,8 @@ pub(crate) mod shape_batch_get_table_optimizer_input;
 pub(crate) mod shape_batch_get_triggers_input;
 
 pub(crate) mod shape_batch_get_workflows_input;
+
+pub(crate) mod shape_batch_put_data_quality_statistic_annotation_input;
 
 pub(crate) mod shape_batch_stop_job_run_input;
 
@@ -677,6 +691,10 @@ pub(crate) mod shape_get_custom_entity_type_input;
 
 pub(crate) mod shape_get_data_catalog_encryption_settings_input;
 
+pub(crate) mod shape_get_data_quality_model_input;
+
+pub(crate) mod shape_get_data_quality_model_result_input;
+
 pub(crate) mod shape_get_data_quality_result_input;
 
 pub(crate) mod shape_get_data_quality_rule_recommendation_run_input;
@@ -817,6 +835,10 @@ pub(crate) mod shape_list_data_quality_ruleset_evaluation_runs_input;
 
 pub(crate) mod shape_list_data_quality_rulesets_input;
 
+pub(crate) mod shape_list_data_quality_statistic_annotations_input;
+
+pub(crate) mod shape_list_data_quality_statistics_input;
+
 pub(crate) mod shape_list_dev_endpoints_input;
 
 pub(crate) mod shape_list_jobs_input;
@@ -852,6 +874,8 @@ pub(crate) mod shape_operation_timeout_exception;
 pub(crate) mod shape_permission_type_mismatch_exception;
 
 pub(crate) mod shape_put_data_catalog_encryption_settings_input;
+
+pub(crate) mod shape_put_data_quality_profile_annotation_input;
 
 pub(crate) mod shape_put_resource_policy_input;
 
@@ -976,6 +1000,10 @@ pub(crate) mod shape_validation_exception;
 pub(crate) mod shape_version_mismatch_exception;
 
 pub(crate) mod shape_action;
+
+pub(crate) mod shape_annotation_error_list;
+
+pub(crate) mod shape_annotation_list;
 
 pub(crate) mod shape_audit_context;
 
@@ -1119,6 +1147,8 @@ pub(crate) mod shape_database_input;
 
 pub(crate) mod shape_database_list;
 
+pub(crate) mod shape_datapoint_inclusion_annotation;
+
 pub(crate) mod shape_dev_endpoint;
 
 pub(crate) mod shape_dev_endpoint_custom_libraries;
@@ -1255,6 +1285,10 @@ pub(crate) mod shape_statement;
 
 pub(crate) mod shape_statement_list;
 
+pub(crate) mod shape_statistic_model_results;
+
+pub(crate) mod shape_statistic_summary_list;
+
 pub(crate) mod shape_string_list;
 
 pub(crate) mod shape_supported_dialect;
@@ -1286,6 +1320,8 @@ pub(crate) mod shape_task_run_list;
 pub(crate) mod shape_task_run_properties;
 
 pub(crate) mod shape_task_run_sort_criteria;
+
+pub(crate) mod shape_timestamp_filter;
 
 pub(crate) mod shape_transform_encryption;
 
@@ -1346,6 +1382,8 @@ pub(crate) mod shape_aggregate;
 pub(crate) mod shape_amazon_redshift_source;
 
 pub(crate) mod shape_amazon_redshift_target;
+
+pub(crate) mod shape_annotation_error;
 
 pub(crate) mod shape_apply_mapping;
 
@@ -1655,6 +1693,12 @@ pub(crate) mod shape_starting_event_batch_condition;
 
 pub(crate) mod shape_statement_output;
 
+pub(crate) mod shape_statistic_annotation;
+
+pub(crate) mod shape_statistic_model_result;
+
+pub(crate) mod shape_statistic_summary;
+
 pub(crate) mod shape_storage_descriptor;
 
 pub(crate) mod shape_table_error;
@@ -1793,6 +1837,10 @@ pub(crate) mod shape_recipe_reference;
 
 pub(crate) mod shape_recipe_step;
 
+pub(crate) mod shape_reference_datasets_list;
+
+pub(crate) mod shape_run_identifier;
+
 pub(crate) mod shape_run_metrics;
 
 pub(crate) mod shape_s3_direct_source_additional_options;
@@ -1817,9 +1865,13 @@ pub(crate) mod shape_sql_alias;
 
 pub(crate) mod shape_statement_output_data;
 
+pub(crate) mod shape_statistic_properties_map;
+
 pub(crate) mod shape_streaming_data_preview_options;
 
 pub(crate) mod shape_string_column_statistics_data;
+
+pub(crate) mod shape_timestamped_inclusion_annotation;
 
 pub(crate) mod shape_transform_config_parameter;
 

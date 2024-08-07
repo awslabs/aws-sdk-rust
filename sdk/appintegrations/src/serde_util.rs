@@ -49,3 +49,21 @@ pub(crate) fn subscription_correct_errors(mut builder: crate::types::builders::S
     }
     builder
 }
+
+pub(crate) fn execution_configuration_correct_errors(
+    mut builder: crate::types::builders::ExecutionConfigurationBuilder,
+) -> crate::types::builders::ExecutionConfigurationBuilder {
+    if builder.execution_mode.is_none() {
+        builder.execution_mode = "no value was set".parse::<crate::types::ExecutionMode>().ok()
+    }
+    builder
+}
+
+pub(crate) fn on_demand_configuration_correct_errors(
+    mut builder: crate::types::builders::OnDemandConfigurationBuilder,
+) -> crate::types::builders::OnDemandConfigurationBuilder {
+    if builder.start_time.is_none() {
+        builder.start_time = Some(Default::default())
+    }
+    builder
+}

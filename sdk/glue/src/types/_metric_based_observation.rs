@@ -6,6 +6,8 @@
 pub struct MetricBasedObservation {
     /// <p>The name of the data quality metric used for generating the observation.</p>
     pub metric_name: ::std::option::Option<::std::string::String>,
+    /// <p>The Statistic ID.</p>
+    pub statistic_id: ::std::option::Option<::std::string::String>,
     /// <p>An object of type <code>DataQualityMetricValues</code> representing the analysis of the data quality metric value.</p>
     pub metric_values: ::std::option::Option<crate::types::DataQualityMetricValues>,
     /// <p>A list of new data quality rules generated as part of the observation based on the data quality metric value.</p>
@@ -15,6 +17,10 @@ impl MetricBasedObservation {
     /// <p>The name of the data quality metric used for generating the observation.</p>
     pub fn metric_name(&self) -> ::std::option::Option<&str> {
         self.metric_name.as_deref()
+    }
+    /// <p>The Statistic ID.</p>
+    pub fn statistic_id(&self) -> ::std::option::Option<&str> {
+        self.statistic_id.as_deref()
     }
     /// <p>An object of type <code>DataQualityMetricValues</code> representing the analysis of the data quality metric value.</p>
     pub fn metric_values(&self) -> ::std::option::Option<&crate::types::DataQualityMetricValues> {
@@ -39,6 +45,7 @@ impl MetricBasedObservation {
 #[non_exhaustive]
 pub struct MetricBasedObservationBuilder {
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
+    pub(crate) statistic_id: ::std::option::Option<::std::string::String>,
     pub(crate) metric_values: ::std::option::Option<crate::types::DataQualityMetricValues>,
     pub(crate) new_rules: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -56,6 +63,20 @@ impl MetricBasedObservationBuilder {
     /// <p>The name of the data quality metric used for generating the observation.</p>
     pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.metric_name
+    }
+    /// <p>The Statistic ID.</p>
+    pub fn statistic_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.statistic_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Statistic ID.</p>
+    pub fn set_statistic_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.statistic_id = input;
+        self
+    }
+    /// <p>The Statistic ID.</p>
+    pub fn get_statistic_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.statistic_id
     }
     /// <p>An object of type <code>DataQualityMetricValues</code> representing the analysis of the data quality metric value.</p>
     pub fn metric_values(mut self, input: crate::types::DataQualityMetricValues) -> Self {
@@ -95,6 +116,7 @@ impl MetricBasedObservationBuilder {
     pub fn build(self) -> crate::types::MetricBasedObservation {
         crate::types::MetricBasedObservation {
             metric_name: self.metric_name,
+            statistic_id: self.statistic_id,
             metric_values: self.metric_values,
             new_rules: self.new_rules,
         }

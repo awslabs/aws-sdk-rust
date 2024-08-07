@@ -501,6 +501,8 @@ pub use crate::types::_enable_hybrid_values::EnableHybridValues;
 
 pub use crate::types::_exist_condition::ExistCondition;
 
+pub use crate::types::_inclusion_annotation_value::InclusionAnnotationValue;
+
 pub use crate::types::_data_catalog_encryption_settings::DataCatalogEncryptionSettings;
 
 pub use crate::types::_connection_password_encryption::ConnectionPasswordEncryption;
@@ -552,6 +554,18 @@ pub use crate::types::_transform_filter_criteria::TransformFilterCriteria;
 pub use crate::types::_schema_column::SchemaColumn;
 
 pub use crate::types::_transform_status_type::TransformStatusType;
+
+pub use crate::types::_statistic_summary::StatisticSummary;
+
+pub use crate::types::_timestamped_inclusion_annotation::TimestampedInclusionAnnotation;
+
+pub use crate::types::_statistic_evaluation_level::StatisticEvaluationLevel;
+
+pub use crate::types::_run_identifier::RunIdentifier;
+
+pub use crate::types::_timestamp_filter::TimestampFilter;
+
+pub use crate::types::_statistic_annotation::StatisticAnnotation;
 
 pub use crate::types::_data_quality_ruleset_list_details::DataQualityRulesetListDetails;
 
@@ -737,6 +751,10 @@ pub use crate::types::_data_quality_rule_result::DataQualityRuleResult;
 
 pub use crate::types::_data_quality_rule_result_status::DataQualityRuleResultStatus;
 
+pub use crate::types::_statistic_model_result::StatisticModelResult;
+
+pub use crate::types::_data_quality_model_status::DataQualityModelStatus;
+
 pub use crate::types::_code_gen_edge::CodeGenEdge;
 
 pub use crate::types::_code_gen_node::CodeGenNode;
@@ -825,6 +843,10 @@ pub use crate::types::_batch_stop_job_run_error::BatchStopJobRunError;
 
 pub use crate::types::_batch_stop_job_run_successful_submission::BatchStopJobRunSuccessfulSubmission;
 
+pub use crate::types::_annotation_error::AnnotationError;
+
+pub use crate::types::_datapoint_inclusion_annotation::DatapointInclusionAnnotation;
+
 pub use crate::types::_batch_get_table_optimizer_error::BatchGetTableOptimizerError;
 
 pub use crate::types::_batch_table_optimizer::BatchTableOptimizer;
@@ -856,6 +878,8 @@ mod _amazon_redshift_node_data;
 mod _amazon_redshift_source;
 
 mod _amazon_redshift_target;
+
+mod _annotation_error;
 
 mod _apply_mapping;
 
@@ -1043,6 +1067,8 @@ mod _data_quality_evaluation_run_additional_run_options;
 
 mod _data_quality_metric_values;
 
+mod _data_quality_model_status;
+
 mod _data_quality_observation;
 
 mod _data_quality_result;
@@ -1078,6 +1104,8 @@ mod _database_attributes;
 mod _database_identifier;
 
 mod _database_input;
+
+mod _datapoint_inclusion_annotation;
 
 mod _datatype;
 
@@ -1214,6 +1242,8 @@ mod _iceberg_input;
 mod _iceberg_target;
 
 mod _import_labels_task_run_properties;
+
+mod _inclusion_annotation_value;
 
 mod _jdbc_connection_type;
 
@@ -1425,6 +1455,8 @@ mod _resource_type;
 
 mod _resource_uri;
 
+mod _run_identifier;
+
 mod _run_metrics;
 
 mod _s3_catalog_delta_source;
@@ -1555,6 +1587,14 @@ mod _statement_output_data;
 
 mod _statement_state;
 
+mod _statistic_annotation;
+
+mod _statistic_evaluation_level;
+
+mod _statistic_model_result;
+
+mod _statistic_summary;
+
 mod _storage_descriptor;
 
 mod _streaming_data_preview_options;
@@ -1600,6 +1640,10 @@ mod _task_run_sort_criteria;
 mod _task_status_type;
 
 mod _task_type;
+
+mod _timestamp_filter;
+
+mod _timestamped_inclusion_annotation;
 
 mod _transform_config_parameter;
 

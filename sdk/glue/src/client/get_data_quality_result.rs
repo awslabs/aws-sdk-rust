@@ -6,6 +6,7 @@ impl super::Client {
     ///   - [`result_id(impl Into<String>)`](crate::operation::get_data_quality_result::builders::GetDataQualityResultFluentBuilder::result_id) / [`set_result_id(Option<String>)`](crate::operation::get_data_quality_result::builders::GetDataQualityResultFluentBuilder::set_result_id):<br>required: **true**<br><p>A unique result ID for the data quality result.</p><br>
     /// - On success, responds with [`GetDataQualityResultOutput`](crate::operation::get_data_quality_result::GetDataQualityResultOutput) with field(s):
     ///   - [`result_id(Option<String>)`](crate::operation::get_data_quality_result::GetDataQualityResultOutput::result_id): <p>A unique result ID for the data quality result.</p>
+    ///   - [`profile_id(Option<String>)`](crate::operation::get_data_quality_result::GetDataQualityResultOutput::profile_id): <p>The Profile ID for the data quality result.</p>
     ///   - [`score(Option<f64>)`](crate::operation::get_data_quality_result::GetDataQualityResultOutput::score): <p>An aggregate data quality score. Represents the ratio of rules that passed to the total number of rules.</p>
     ///   - [`data_source(Option<DataSource>)`](crate::operation::get_data_quality_result::GetDataQualityResultOutput::data_source): <p>The table associated with the data quality result, if any.</p>
     ///   - [`ruleset_name(Option<String>)`](crate::operation::get_data_quality_result::GetDataQualityResultOutput::ruleset_name): <p>The name of the ruleset associated with the data quality result.</p>

@@ -2,7 +2,7 @@
 
 /// <p>Describes the observation generated after evaluating the rules and analyzers.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DataQualityObservation {
     /// <p>A description of the data quality observation.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -19,6 +19,14 @@ impl DataQualityObservation {
         self.metric_based_observation.as_ref()
     }
 }
+impl ::std::fmt::Debug for DataQualityObservation {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("DataQualityObservation");
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("metric_based_observation", &self.metric_based_observation);
+        formatter.finish()
+    }
+}
 impl DataQualityObservation {
     /// Creates a new builder-style object to manufacture [`DataQualityObservation`](crate::types::DataQualityObservation).
     pub fn builder() -> crate::types::builders::DataQualityObservationBuilder {
@@ -27,7 +35,7 @@ impl DataQualityObservation {
 }
 
 /// A builder for [`DataQualityObservation`](crate::types::DataQualityObservation).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct DataQualityObservationBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -68,5 +76,13 @@ impl DataQualityObservationBuilder {
             description: self.description,
             metric_based_observation: self.metric_based_observation,
         }
+    }
+}
+impl ::std::fmt::Debug for DataQualityObservationBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("DataQualityObservationBuilder");
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("metric_based_observation", &self.metric_based_observation);
+        formatter.finish()
     }
 }

@@ -13,6 +13,8 @@ pub struct CreateDataQualityRulesetInput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A target table associated with the data quality ruleset.</p>
     pub target_table: ::std::option::Option<crate::types::DataQualityTargetTable>,
+    /// <p>The name of the security configuration created with the data quality encryption option.</p>
+    pub data_quality_security_configuration: ::std::option::Option<::std::string::String>,
     /// <p>Used for idempotency and is recommended to be set to a random ID (such as a UUID) to avoid creating or starting multiple instances of the same resource.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
@@ -37,6 +39,10 @@ impl CreateDataQualityRulesetInput {
     pub fn target_table(&self) -> ::std::option::Option<&crate::types::DataQualityTargetTable> {
         self.target_table.as_ref()
     }
+    /// <p>The name of the security configuration created with the data quality encryption option.</p>
+    pub fn data_quality_security_configuration(&self) -> ::std::option::Option<&str> {
+        self.data_quality_security_configuration.as_deref()
+    }
     /// <p>Used for idempotency and is recommended to be set to a random ID (such as a UUID) to avoid creating or starting multiple instances of the same resource.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
@@ -58,6 +64,7 @@ pub struct CreateDataQualityRulesetInputBuilder {
     pub(crate) ruleset: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) target_table: ::std::option::Option<crate::types::DataQualityTargetTable>,
+    pub(crate) data_quality_security_configuration: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateDataQualityRulesetInputBuilder {
@@ -139,6 +146,20 @@ impl CreateDataQualityRulesetInputBuilder {
     pub fn get_target_table(&self) -> &::std::option::Option<crate::types::DataQualityTargetTable> {
         &self.target_table
     }
+    /// <p>The name of the security configuration created with the data quality encryption option.</p>
+    pub fn data_quality_security_configuration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.data_quality_security_configuration = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the security configuration created with the data quality encryption option.</p>
+    pub fn set_data_quality_security_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.data_quality_security_configuration = input;
+        self
+    }
+    /// <p>The name of the security configuration created with the data quality encryption option.</p>
+    pub fn get_data_quality_security_configuration(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_quality_security_configuration
+    }
     /// <p>Used for idempotency and is recommended to be set to a random ID (such as a UUID) to avoid creating or starting multiple instances of the same resource.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -166,6 +187,7 @@ impl CreateDataQualityRulesetInputBuilder {
             ruleset: self.ruleset,
             tags: self.tags,
             target_table: self.target_table,
+            data_quality_security_configuration: self.data_quality_security_configuration,
             client_token: self.client_token,
         })
     }

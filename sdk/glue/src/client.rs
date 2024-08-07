@@ -166,6 +166,8 @@ mod batch_get_triggers;
 
 mod batch_get_workflows;
 
+mod batch_put_data_quality_statistic_annotation;
+
 mod batch_stop_job_run;
 
 mod batch_update_partition;
@@ -341,6 +343,10 @@ mod get_custom_entity_type;
 
 mod get_data_catalog_encryption_settings;
 
+mod get_data_quality_model;
+
+mod get_data_quality_model_result;
+
 mod get_data_quality_result;
 
 mod get_data_quality_rule_recommendation_run;
@@ -465,6 +471,10 @@ mod list_data_quality_ruleset_evaluation_runs;
 
 mod list_data_quality_rulesets;
 
+mod list_data_quality_statistic_annotations;
+
+mod list_data_quality_statistics;
+
 mod list_dev_endpoints;
 
 mod list_jobs;
@@ -490,6 +500,8 @@ mod list_usage_profiles;
 mod list_workflows;
 
 mod put_data_catalog_encryption_settings;
+
+mod put_data_quality_profile_annotation;
 
 mod put_resource_policy;
 

@@ -27,8 +27,11 @@ pub fn ser_start_data_quality_rule_recommendation_run_input_input(
     if let Some(var_6) = &input.created_ruleset_name {
         object.key("CreatedRulesetName").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.client_token {
-        object.key("ClientToken").string(var_7.as_str());
+    if let Some(var_7) = &input.data_quality_security_configuration {
+        object.key("DataQualitySecurityConfiguration").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.client_token {
+        object.key("ClientToken").string(var_8.as_str());
     }
     Ok(())
 }

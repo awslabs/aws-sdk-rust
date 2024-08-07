@@ -4,3 +4,5 @@ pub use ::aws_smithy_types::DateTime;
 
 /// Event stream related primitives such as `Message` or `Header`.
 pub mod event_stream;
+
+pub(crate) mod sealed_enum_unknown;

@@ -140,6 +140,8 @@ mod create_application;
 
 mod create_data_integration;
 
+mod create_data_integration_association;
+
 mod create_event_integration;
 
 /// Operation customization and supporting types.
@@ -202,5 +204,7 @@ mod untag_resource;
 mod update_application;
 
 mod update_data_integration;
+
+mod update_data_integration_association;
 
 mod update_event_integration;

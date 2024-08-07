@@ -10,6 +10,12 @@ pub struct DataIntegrationAssociationSummary {
     pub data_integration_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the client that is associated with the DataIntegration association.</p>
     pub client_id: ::std::option::Option<::std::string::String>,
+    /// <p>The URI of the data destination.</p>
+    pub destination_uri: ::std::option::Option<::std::string::String>,
+    /// <p>The execution status of the last job.</p>
+    pub last_execution_status: ::std::option::Option<crate::types::LastExecutionStatus>,
+    /// <p>The configuration for how the files should be pulled from the source.</p>
+    pub execution_configuration: ::std::option::Option<crate::types::ExecutionConfiguration>,
 }
 impl DataIntegrationAssociationSummary {
     /// <p>The Amazon Resource Name (ARN) of the DataIntegration association.</p>
@@ -23,6 +29,18 @@ impl DataIntegrationAssociationSummary {
     /// <p>The identifier for the client that is associated with the DataIntegration association.</p>
     pub fn client_id(&self) -> ::std::option::Option<&str> {
         self.client_id.as_deref()
+    }
+    /// <p>The URI of the data destination.</p>
+    pub fn destination_uri(&self) -> ::std::option::Option<&str> {
+        self.destination_uri.as_deref()
+    }
+    /// <p>The execution status of the last job.</p>
+    pub fn last_execution_status(&self) -> ::std::option::Option<&crate::types::LastExecutionStatus> {
+        self.last_execution_status.as_ref()
+    }
+    /// <p>The configuration for how the files should be pulled from the source.</p>
+    pub fn execution_configuration(&self) -> ::std::option::Option<&crate::types::ExecutionConfiguration> {
+        self.execution_configuration.as_ref()
     }
 }
 impl DataIntegrationAssociationSummary {
@@ -39,6 +57,9 @@ pub struct DataIntegrationAssociationSummaryBuilder {
     pub(crate) data_integration_association_arn: ::std::option::Option<::std::string::String>,
     pub(crate) data_integration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) client_id: ::std::option::Option<::std::string::String>,
+    pub(crate) destination_uri: ::std::option::Option<::std::string::String>,
+    pub(crate) last_execution_status: ::std::option::Option<crate::types::LastExecutionStatus>,
+    pub(crate) execution_configuration: ::std::option::Option<crate::types::ExecutionConfiguration>,
 }
 impl DataIntegrationAssociationSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the DataIntegration association.</p>
@@ -83,12 +104,57 @@ impl DataIntegrationAssociationSummaryBuilder {
     pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_id
     }
+    /// <p>The URI of the data destination.</p>
+    pub fn destination_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.destination_uri = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The URI of the data destination.</p>
+    pub fn set_destination_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.destination_uri = input;
+        self
+    }
+    /// <p>The URI of the data destination.</p>
+    pub fn get_destination_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_uri
+    }
+    /// <p>The execution status of the last job.</p>
+    pub fn last_execution_status(mut self, input: crate::types::LastExecutionStatus) -> Self {
+        self.last_execution_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The execution status of the last job.</p>
+    pub fn set_last_execution_status(mut self, input: ::std::option::Option<crate::types::LastExecutionStatus>) -> Self {
+        self.last_execution_status = input;
+        self
+    }
+    /// <p>The execution status of the last job.</p>
+    pub fn get_last_execution_status(&self) -> &::std::option::Option<crate::types::LastExecutionStatus> {
+        &self.last_execution_status
+    }
+    /// <p>The configuration for how the files should be pulled from the source.</p>
+    pub fn execution_configuration(mut self, input: crate::types::ExecutionConfiguration) -> Self {
+        self.execution_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for how the files should be pulled from the source.</p>
+    pub fn set_execution_configuration(mut self, input: ::std::option::Option<crate::types::ExecutionConfiguration>) -> Self {
+        self.execution_configuration = input;
+        self
+    }
+    /// <p>The configuration for how the files should be pulled from the source.</p>
+    pub fn get_execution_configuration(&self) -> &::std::option::Option<crate::types::ExecutionConfiguration> {
+        &self.execution_configuration
+    }
     /// Consumes the builder and constructs a [`DataIntegrationAssociationSummary`](crate::types::DataIntegrationAssociationSummary).
     pub fn build(self) -> crate::types::DataIntegrationAssociationSummary {
         crate::types::DataIntegrationAssociationSummary {
             data_integration_association_arn: self.data_integration_association_arn,
             data_integration_arn: self.data_integration_arn,
             client_id: self.client_id,
+            destination_uri: self.destination_uri,
+            last_execution_status: self.last_execution_status,
+            execution_configuration: self.execution_configuration,
         }
     }
 }

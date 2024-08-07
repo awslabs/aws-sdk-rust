@@ -21,6 +21,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "StatisticId" => {
+                            builder = builder.set_statistic_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "MetricValues" => {
                             builder = builder.set_metric_values(
                                 crate::protocol_serde::shape_data_quality_metric_values::de_data_quality_metric_values(tokens)?,

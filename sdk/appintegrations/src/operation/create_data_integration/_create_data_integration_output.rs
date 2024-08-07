@@ -11,7 +11,7 @@ pub struct CreateDataIntegrationOutput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the DataIntegration.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The KMS key for the DataIntegration.</p>
+    /// <p>The KMS key ARN for the DataIntegration.</p>
     pub kms_key: ::std::option::Option<::std::string::String>,
     /// <p>The URI of the data source.</p>
     pub source_uri: ::std::option::Option<::std::string::String>,
@@ -49,7 +49,7 @@ impl CreateDataIntegrationOutput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The KMS key for the DataIntegration.</p>
+    /// <p>The KMS key ARN for the DataIntegration.</p>
     pub fn kms_key(&self) -> ::std::option::Option<&str> {
         self.kms_key.as_deref()
     }
@@ -176,17 +176,17 @@ impl CreateDataIntegrationOutputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The KMS key for the DataIntegration.</p>
+    /// <p>The KMS key ARN for the DataIntegration.</p>
     pub fn kms_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The KMS key for the DataIntegration.</p>
+    /// <p>The KMS key ARN for the DataIntegration.</p>
     pub fn set_kms_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key = input;
         self
     }
-    /// <p>The KMS key for the DataIntegration.</p>
+    /// <p>The KMS key ARN for the DataIntegration.</p>
     pub fn get_kms_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key
     }
