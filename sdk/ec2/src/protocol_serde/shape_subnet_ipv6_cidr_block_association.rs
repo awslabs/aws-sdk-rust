@@ -43,6 +43,34 @@ pub fn de_subnet_ipv6_cidr_block_association(
                 builder = builder.set_ipv6_cidr_block_state(var_3);
             }
             ,
+            s if s.matches("ipv6AddressAttribute") /* Ipv6AddressAttribute com.amazonaws.ec2#SubnetIpv6CidrBlockAssociation$Ipv6AddressAttribute */ =>  {
+                let var_4 =
+                    Some(
+                        Result::<crate::types::Ipv6AddressAttribute, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::Ipv6AddressAttribute::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_ipv6_address_attribute(var_4);
+            }
+            ,
+            s if s.matches("ipSource") /* IpSource com.amazonaws.ec2#SubnetIpv6CidrBlockAssociation$IpSource */ =>  {
+                let var_5 =
+                    Some(
+                        Result::<crate::types::IpSource, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::IpSource::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_ip_source(var_5);
+            }
+            ,
             _ => {}
         }
     }

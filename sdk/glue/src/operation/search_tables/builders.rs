@@ -247,4 +247,18 @@ impl SearchTablesFluentBuilder {
     pub fn get_resource_share_type(&self) -> &::std::option::Option<crate::types::ResourceShareType> {
         self.inner.get_resource_share_type()
     }
+    /// <p>Specifies whether to include status details related to a request to create or update an Glue Data Catalog view.</p>
+    pub fn include_status_details(mut self, input: bool) -> Self {
+        self.inner = self.inner.include_status_details(input);
+        self
+    }
+    /// <p>Specifies whether to include status details related to a request to create or update an Glue Data Catalog view.</p>
+    pub fn set_include_status_details(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_include_status_details(input);
+        self
+    }
+    /// <p>Specifies whether to include status details related to a request to create or update an Glue Data Catalog view.</p>
+    pub fn get_include_status_details(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_status_details()
+    }
 }

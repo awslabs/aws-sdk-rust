@@ -213,6 +213,21 @@ pub fn de_ipam(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result<
                 builder = builder.set_tier(var_16);
             }
             ,
+            s if s.matches("enablePrivateGua") /* EnablePrivateGua com.amazonaws.ec2#Ipam$EnablePrivateGua */ =>  {
+                let var_17 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_enable_private_gua(var_17);
+            }
+            ,
             _ => {}
         }
     }

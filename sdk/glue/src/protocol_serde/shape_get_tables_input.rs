@@ -29,5 +29,8 @@ pub fn ser_get_tables_input_input(
             .key("QueryAsOfTime")
             .date_time(var_7, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
+    if let Some(var_8) = &input.include_status_details {
+        object.key("IncludeStatusDetails").boolean(*var_8);
+    }
     Ok(())
 }

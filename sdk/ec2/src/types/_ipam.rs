@@ -37,6 +37,8 @@ pub struct Ipam {
     pub state_message: ::std::option::Option<::std::string::String>,
     /// <p>IPAM is offered in a Free Tier and an Advanced Tier. For more information about the features available in each tier and the costs associated with the tiers, see <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing &gt; IPAM tab</a>.</p>
     pub tier: ::std::option::Option<crate::types::IpamTier>,
+    /// <p>Enable this option to use your own GUA ranges as private IPv6 addresses. This option is disabled by default.</p>
+    pub enable_private_gua: ::std::option::Option<bool>,
 }
 impl Ipam {
     /// <p>The Amazon Web Services account ID of the owner of the IPAM.</p>
@@ -108,6 +110,10 @@ impl Ipam {
     pub fn tier(&self) -> ::std::option::Option<&crate::types::IpamTier> {
         self.tier.as_ref()
     }
+    /// <p>Enable this option to use your own GUA ranges as private IPv6 addresses. This option is disabled by default.</p>
+    pub fn enable_private_gua(&self) -> ::std::option::Option<bool> {
+        self.enable_private_gua
+    }
 }
 impl Ipam {
     /// Creates a new builder-style object to manufacture [`Ipam`](crate::types::Ipam).
@@ -136,6 +142,7 @@ pub struct IpamBuilder {
     pub(crate) resource_discovery_association_count: ::std::option::Option<i32>,
     pub(crate) state_message: ::std::option::Option<::std::string::String>,
     pub(crate) tier: ::std::option::Option<crate::types::IpamTier>,
+    pub(crate) enable_private_gua: ::std::option::Option<bool>,
 }
 impl IpamBuilder {
     /// <p>The Amazon Web Services account ID of the owner of the IPAM.</p>
@@ -377,6 +384,20 @@ impl IpamBuilder {
     pub fn get_tier(&self) -> &::std::option::Option<crate::types::IpamTier> {
         &self.tier
     }
+    /// <p>Enable this option to use your own GUA ranges as private IPv6 addresses. This option is disabled by default.</p>
+    pub fn enable_private_gua(mut self, input: bool) -> Self {
+        self.enable_private_gua = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Enable this option to use your own GUA ranges as private IPv6 addresses. This option is disabled by default.</p>
+    pub fn set_enable_private_gua(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.enable_private_gua = input;
+        self
+    }
+    /// <p>Enable this option to use your own GUA ranges as private IPv6 addresses. This option is disabled by default.</p>
+    pub fn get_enable_private_gua(&self) -> &::std::option::Option<bool> {
+        &self.enable_private_gua
+    }
     /// Consumes the builder and constructs a [`Ipam`](crate::types::Ipam).
     pub fn build(self) -> crate::types::Ipam {
         crate::types::Ipam {
@@ -396,6 +417,7 @@ impl IpamBuilder {
             resource_discovery_association_count: self.resource_discovery_association_count,
             state_message: self.state_message,
             tier: self.tier,
+            enable_private_gua: self.enable_private_gua,
         }
     }
 }

@@ -1117,6 +1117,8 @@ pub use crate::types::_ipam_discovered_resource_cidr::IpamDiscoveredResourceCidr
 
 pub use crate::types::_ipam_network_interface_attachment_status::IpamNetworkInterfaceAttachmentStatus;
 
+pub use crate::types::_ipam_resource_cidr_ip_source::IpamResourceCidrIpSource;
+
 pub use crate::types::_ipam_discovered_public_address::IpamDiscoveredPublicAddress;
 
 pub use crate::types::_ipam_public_address_security_group::IpamPublicAddressSecurityGroup;
@@ -1222,6 +1224,10 @@ pub use crate::types::_vpc_cidr_block_state::VpcCidrBlockState;
 pub use crate::types::_vpc_cidr_block_state_code::VpcCidrBlockStateCode;
 
 pub use crate::types::_vpc_ipv6_cidr_block_association::VpcIpv6CidrBlockAssociation;
+
+pub use crate::types::_ip_source::IpSource;
+
+pub use crate::types::_ipv6_address_attribute::Ipv6AddressAttribute;
 
 pub use crate::types::_transit_gateway_association::TransitGatewayAssociation;
 
@@ -3067,6 +3073,8 @@ mod _ip_permission;
 
 mod _ip_range;
 
+mod _ip_source;
+
 mod _ipam;
 
 mod _ipam_address_history_record;
@@ -3141,6 +3149,8 @@ mod _ipam_public_address_type;
 
 mod _ipam_resource_cidr;
 
+mod _ipam_resource_cidr_ip_source;
+
 mod _ipam_resource_discovery;
 
 mod _ipam_resource_discovery_association;
@@ -3168,6 +3178,8 @@ mod _ipv4_prefix_specification;
 mod _ipv4_prefix_specification_request;
 
 mod _ipv4_prefix_specification_response;
+
+mod _ipv6_address_attribute;
 
 mod _ipv6_cidr_association;
 

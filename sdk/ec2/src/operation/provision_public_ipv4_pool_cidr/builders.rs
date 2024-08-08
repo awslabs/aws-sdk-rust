@@ -151,17 +151,17 @@ impl ProvisionPublicIpv4PoolCidrFluentBuilder {
     pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_pool_id()
     }
-    /// <p>The netmask length of the CIDR you would like to allocate to the public IPv4 pool.</p>
+    /// <p>The netmask length of the CIDR you would like to allocate to the public IPv4 pool. The least specific netmask length you can define is 24.</p>
     pub fn netmask_length(mut self, input: i32) -> Self {
         self.inner = self.inner.netmask_length(input);
         self
     }
-    /// <p>The netmask length of the CIDR you would like to allocate to the public IPv4 pool.</p>
+    /// <p>The netmask length of the CIDR you would like to allocate to the public IPv4 pool. The least specific netmask length you can define is 24.</p>
     pub fn set_netmask_length(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_netmask_length(input);
         self
     }
-    /// <p>The netmask length of the CIDR you would like to allocate to the public IPv4 pool.</p>
+    /// <p>The netmask length of the CIDR you would like to allocate to the public IPv4 pool. The least specific netmask length you can define is 24.</p>
     pub fn get_netmask_length(&self) -> &::std::option::Option<i32> {
         self.inner.get_netmask_length()
     }

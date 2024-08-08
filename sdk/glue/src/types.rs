@@ -471,6 +471,16 @@ pub use crate::types::_dq_composite_rule_evaluation_method::DqCompositeRuleEvalu
 
 pub use crate::types::_table::Table;
 
+pub use crate::types::_table_status::TableStatus;
+
+pub use crate::types::_status_details::StatusDetails;
+
+pub use crate::types::_view_validation::ViewValidation;
+
+pub use crate::types::_resource_state::ResourceState;
+
+pub use crate::types::_resource_action::ResourceAction;
+
 pub use crate::types::_view_definition::ViewDefinition;
 
 pub use crate::types::_view_representation::ViewRepresentation;
@@ -1449,7 +1459,11 @@ mod _relational_catalog_source;
 
 mod _rename_field;
 
+mod _resource_action;
+
 mod _resource_share_type;
+
+mod _resource_state;
 
 mod _resource_type;
 
@@ -1595,6 +1609,8 @@ mod _statistic_model_result;
 
 mod _statistic_summary;
 
+mod _status_details;
+
 mod _storage_descriptor;
 
 mod _streaming_data_preview_options;
@@ -1620,6 +1636,8 @@ mod _table_optimizer_event_type;
 mod _table_optimizer_run;
 
 mod _table_optimizer_type;
+
+mod _table_status;
 
 mod _table_version;
 
@@ -1708,6 +1726,8 @@ mod _view_representation;
 mod _view_representation_input;
 
 mod _view_update_action;
+
+mod _view_validation;
 
 mod _worker_type;
 

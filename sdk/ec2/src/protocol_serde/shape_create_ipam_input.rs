@@ -51,6 +51,11 @@ pub fn ser_create_ipam_input_input_input(
     if let Some(var_18) = &input.tier {
         scope_17.string(var_18.as_str());
     }
+    #[allow(unused_mut)]
+    let mut scope_19 = writer.prefix("EnablePrivateGua");
+    if let Some(var_20) = &input.enable_private_gua {
+        scope_19.boolean(*var_20);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

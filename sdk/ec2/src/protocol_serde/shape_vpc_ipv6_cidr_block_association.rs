@@ -69,6 +69,34 @@ pub fn de_vpc_ipv6_cidr_block_association(
                 builder = builder.set_ipv6_pool(var_5);
             }
             ,
+            s if s.matches("ipv6AddressAttribute") /* Ipv6AddressAttribute com.amazonaws.ec2#VpcIpv6CidrBlockAssociation$Ipv6AddressAttribute */ =>  {
+                let var_6 =
+                    Some(
+                        Result::<crate::types::Ipv6AddressAttribute, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::Ipv6AddressAttribute::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_ipv6_address_attribute(var_6);
+            }
+            ,
+            s if s.matches("ipSource") /* IpSource com.amazonaws.ec2#VpcIpv6CidrBlockAssociation$IpSource */ =>  {
+                let var_7 =
+                    Some(
+                        Result::<crate::types::IpSource, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::IpSource::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_ip_source(var_7);
+            }
+            ,
             _ => {}
         }
     }

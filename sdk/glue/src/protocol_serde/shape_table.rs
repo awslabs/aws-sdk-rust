@@ -140,6 +140,9 @@ where
                         "IsMultiDialectView" => {
                             builder = builder.set_is_multi_dialect_view(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
+                        "Status" => {
+                            builder = builder.set_status(crate::protocol_serde::shape_table_status::de_table_status(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

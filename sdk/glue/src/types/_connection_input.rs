@@ -54,6 +54,10 @@ pub struct ConnectionInput {
     /// <p>Requires the <code>AuthenticationConfiguration</code> member to be configured.</p></li>
     /// </ul></li>
     /// <li>
+    /// <p><code>VIEW_VALIDATION_REDSHIFT</code> - Designates a connection used for view validation by Amazon Redshift.</p></li>
+    /// <li>
+    /// <p><code>VIEW_VALIDATION_ATHENA</code> - Designates a connection used for view validation by Amazon Athena.</p></li>
+    /// <li>
     /// <p><code>NETWORK</code> - Designates a network connection to a data source within an Amazon Virtual Private Cloud environment (Amazon VPC).</p>
     /// <p><code>NETWORK</code> Connections do not require ConnectionParameters. Instead, provide a PhysicalConnectionRequirements.</p></li>
     /// <li>
@@ -138,6 +142,10 @@ impl ConnectionInput {
     /// <li>
     /// <p>Requires the <code>AuthenticationConfiguration</code> member to be configured.</p></li>
     /// </ul></li>
+    /// <li>
+    /// <p><code>VIEW_VALIDATION_REDSHIFT</code> - Designates a connection used for view validation by Amazon Redshift.</p></li>
+    /// <li>
+    /// <p><code>VIEW_VALIDATION_ATHENA</code> - Designates a connection used for view validation by Amazon Athena.</p></li>
     /// <li>
     /// <p><code>NETWORK</code> - Designates a network connection to a data source within an Amazon Virtual Private Cloud environment (Amazon VPC).</p>
     /// <p><code>NETWORK</code> Connections do not require ConnectionParameters. Instead, provide a PhysicalConnectionRequirements.</p></li>
@@ -278,6 +286,10 @@ impl ConnectionInputBuilder {
     /// <p>Requires the <code>AuthenticationConfiguration</code> member to be configured.</p></li>
     /// </ul></li>
     /// <li>
+    /// <p><code>VIEW_VALIDATION_REDSHIFT</code> - Designates a connection used for view validation by Amazon Redshift.</p></li>
+    /// <li>
+    /// <p><code>VIEW_VALIDATION_ATHENA</code> - Designates a connection used for view validation by Amazon Athena.</p></li>
+    /// <li>
     /// <p><code>NETWORK</code> - Designates a network connection to a data source within an Amazon Virtual Private Cloud environment (Amazon VPC).</p>
     /// <p><code>NETWORK</code> Connections do not require ConnectionParameters. Instead, provide a PhysicalConnectionRequirements.</p></li>
     /// <li>
@@ -346,6 +358,10 @@ impl ConnectionInputBuilder {
     /// <p>Requires the <code>AuthenticationConfiguration</code> member to be configured.</p></li>
     /// </ul></li>
     /// <li>
+    /// <p><code>VIEW_VALIDATION_REDSHIFT</code> - Designates a connection used for view validation by Amazon Redshift.</p></li>
+    /// <li>
+    /// <p><code>VIEW_VALIDATION_ATHENA</code> - Designates a connection used for view validation by Amazon Athena.</p></li>
+    /// <li>
     /// <p><code>NETWORK</code> - Designates a network connection to a data source within an Amazon Virtual Private Cloud environment (Amazon VPC).</p>
     /// <p><code>NETWORK</code> Connections do not require ConnectionParameters. Instead, provide a PhysicalConnectionRequirements.</p></li>
     /// <li>
@@ -412,6 +428,10 @@ impl ConnectionInputBuilder {
     /// <li>
     /// <p>Requires the <code>AuthenticationConfiguration</code> member to be configured.</p></li>
     /// </ul></li>
+    /// <li>
+    /// <p><code>VIEW_VALIDATION_REDSHIFT</code> - Designates a connection used for view validation by Amazon Redshift.</p></li>
+    /// <li>
+    /// <p><code>VIEW_VALIDATION_ATHENA</code> - Designates a connection used for view validation by Amazon Athena.</p></li>
     /// <li>
     /// <p><code>NETWORK</code> - Designates a network connection to a data source within an Amazon Virtual Private Cloud environment (Amazon VPC).</p>
     /// <p><code>NETWORK</code> Connections do not require ConnectionParameters. Instead, provide a PhysicalConnectionRequirements.</p></li>

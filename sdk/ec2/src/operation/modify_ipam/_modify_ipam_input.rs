@@ -16,6 +16,8 @@ pub struct ModifyIpamInput {
     pub remove_operating_regions: ::std::option::Option<::std::vec::Vec<crate::types::RemoveIpamOperatingRegion>>,
     /// <p>IPAM is offered in a Free Tier and an Advanced Tier. For more information about the features available in each tier and the costs associated with the tiers, see <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing &gt; IPAM tab</a>.</p>
     pub tier: ::std::option::Option<crate::types::IpamTier>,
+    /// <p>Enable this option to use your own GUA ranges as private IPv6 addresses. This option is disabled by default.</p>
+    pub enable_private_gua: ::std::option::Option<bool>,
 }
 impl ModifyIpamInput {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -47,6 +49,10 @@ impl ModifyIpamInput {
     pub fn tier(&self) -> ::std::option::Option<&crate::types::IpamTier> {
         self.tier.as_ref()
     }
+    /// <p>Enable this option to use your own GUA ranges as private IPv6 addresses. This option is disabled by default.</p>
+    pub fn enable_private_gua(&self) -> ::std::option::Option<bool> {
+        self.enable_private_gua
+    }
 }
 impl ModifyIpamInput {
     /// Creates a new builder-style object to manufacture [`ModifyIpamInput`](crate::operation::modify_ipam::ModifyIpamInput).
@@ -65,6 +71,7 @@ pub struct ModifyIpamInputBuilder {
     pub(crate) add_operating_regions: ::std::option::Option<::std::vec::Vec<crate::types::AddIpamOperatingRegion>>,
     pub(crate) remove_operating_regions: ::std::option::Option<::std::vec::Vec<crate::types::RemoveIpamOperatingRegion>>,
     pub(crate) tier: ::std::option::Option<crate::types::IpamTier>,
+    pub(crate) enable_private_gua: ::std::option::Option<bool>,
 }
 impl ModifyIpamInputBuilder {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -167,6 +174,20 @@ impl ModifyIpamInputBuilder {
     pub fn get_tier(&self) -> &::std::option::Option<crate::types::IpamTier> {
         &self.tier
     }
+    /// <p>Enable this option to use your own GUA ranges as private IPv6 addresses. This option is disabled by default.</p>
+    pub fn enable_private_gua(mut self, input: bool) -> Self {
+        self.enable_private_gua = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Enable this option to use your own GUA ranges as private IPv6 addresses. This option is disabled by default.</p>
+    pub fn set_enable_private_gua(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.enable_private_gua = input;
+        self
+    }
+    /// <p>Enable this option to use your own GUA ranges as private IPv6 addresses. This option is disabled by default.</p>
+    pub fn get_enable_private_gua(&self) -> &::std::option::Option<bool> {
+        &self.enable_private_gua
+    }
     /// Consumes the builder and constructs a [`ModifyIpamInput`](crate::operation::modify_ipam::ModifyIpamInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::modify_ipam::ModifyIpamInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_ipam::ModifyIpamInput {
@@ -176,6 +197,7 @@ impl ModifyIpamInputBuilder {
             add_operating_regions: self.add_operating_regions,
             remove_operating_regions: self.remove_operating_regions,
             tier: self.tier,
+            enable_private_gua: self.enable_private_gua,
         })
     }
 }

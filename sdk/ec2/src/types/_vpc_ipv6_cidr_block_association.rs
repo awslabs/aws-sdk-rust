@@ -14,6 +14,10 @@ pub struct VpcIpv6CidrBlockAssociation {
     pub network_border_group: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the IPv6 address pool from which the IPv6 CIDR block is allocated.</p>
     pub ipv6_pool: ::std::option::Option<::std::string::String>,
+    /// <p>Public IPv6 addresses are those advertised on the internet from Amazon Web Services. Private IP addresses are not and cannot be advertised on the internet from Amazon Web Services.</p>
+    pub ipv6_address_attribute: ::std::option::Option<crate::types::Ipv6AddressAttribute>,
+    /// <p>The source that allocated the IP address space. <code>byoip</code> or <code>amazon</code> indicates public IP address space allocated by Amazon or space that you have allocated with Bring your own IP (BYOIP). <code>none</code> indicates private space.</p>
+    pub ip_source: ::std::option::Option<crate::types::IpSource>,
 }
 impl VpcIpv6CidrBlockAssociation {
     /// <p>The association ID for the IPv6 CIDR block.</p>
@@ -36,6 +40,14 @@ impl VpcIpv6CidrBlockAssociation {
     pub fn ipv6_pool(&self) -> ::std::option::Option<&str> {
         self.ipv6_pool.as_deref()
     }
+    /// <p>Public IPv6 addresses are those advertised on the internet from Amazon Web Services. Private IP addresses are not and cannot be advertised on the internet from Amazon Web Services.</p>
+    pub fn ipv6_address_attribute(&self) -> ::std::option::Option<&crate::types::Ipv6AddressAttribute> {
+        self.ipv6_address_attribute.as_ref()
+    }
+    /// <p>The source that allocated the IP address space. <code>byoip</code> or <code>amazon</code> indicates public IP address space allocated by Amazon or space that you have allocated with Bring your own IP (BYOIP). <code>none</code> indicates private space.</p>
+    pub fn ip_source(&self) -> ::std::option::Option<&crate::types::IpSource> {
+        self.ip_source.as_ref()
+    }
 }
 impl VpcIpv6CidrBlockAssociation {
     /// Creates a new builder-style object to manufacture [`VpcIpv6CidrBlockAssociation`](crate::types::VpcIpv6CidrBlockAssociation).
@@ -53,6 +65,8 @@ pub struct VpcIpv6CidrBlockAssociationBuilder {
     pub(crate) ipv6_cidr_block_state: ::std::option::Option<crate::types::VpcCidrBlockState>,
     pub(crate) network_border_group: ::std::option::Option<::std::string::String>,
     pub(crate) ipv6_pool: ::std::option::Option<::std::string::String>,
+    pub(crate) ipv6_address_attribute: ::std::option::Option<crate::types::Ipv6AddressAttribute>,
+    pub(crate) ip_source: ::std::option::Option<crate::types::IpSource>,
 }
 impl VpcIpv6CidrBlockAssociationBuilder {
     /// <p>The association ID for the IPv6 CIDR block.</p>
@@ -125,6 +139,34 @@ impl VpcIpv6CidrBlockAssociationBuilder {
     pub fn get_ipv6_pool(&self) -> &::std::option::Option<::std::string::String> {
         &self.ipv6_pool
     }
+    /// <p>Public IPv6 addresses are those advertised on the internet from Amazon Web Services. Private IP addresses are not and cannot be advertised on the internet from Amazon Web Services.</p>
+    pub fn ipv6_address_attribute(mut self, input: crate::types::Ipv6AddressAttribute) -> Self {
+        self.ipv6_address_attribute = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Public IPv6 addresses are those advertised on the internet from Amazon Web Services. Private IP addresses are not and cannot be advertised on the internet from Amazon Web Services.</p>
+    pub fn set_ipv6_address_attribute(mut self, input: ::std::option::Option<crate::types::Ipv6AddressAttribute>) -> Self {
+        self.ipv6_address_attribute = input;
+        self
+    }
+    /// <p>Public IPv6 addresses are those advertised on the internet from Amazon Web Services. Private IP addresses are not and cannot be advertised on the internet from Amazon Web Services.</p>
+    pub fn get_ipv6_address_attribute(&self) -> &::std::option::Option<crate::types::Ipv6AddressAttribute> {
+        &self.ipv6_address_attribute
+    }
+    /// <p>The source that allocated the IP address space. <code>byoip</code> or <code>amazon</code> indicates public IP address space allocated by Amazon or space that you have allocated with Bring your own IP (BYOIP). <code>none</code> indicates private space.</p>
+    pub fn ip_source(mut self, input: crate::types::IpSource) -> Self {
+        self.ip_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The source that allocated the IP address space. <code>byoip</code> or <code>amazon</code> indicates public IP address space allocated by Amazon or space that you have allocated with Bring your own IP (BYOIP). <code>none</code> indicates private space.</p>
+    pub fn set_ip_source(mut self, input: ::std::option::Option<crate::types::IpSource>) -> Self {
+        self.ip_source = input;
+        self
+    }
+    /// <p>The source that allocated the IP address space. <code>byoip</code> or <code>amazon</code> indicates public IP address space allocated by Amazon or space that you have allocated with Bring your own IP (BYOIP). <code>none</code> indicates private space.</p>
+    pub fn get_ip_source(&self) -> &::std::option::Option<crate::types::IpSource> {
+        &self.ip_source
+    }
     /// Consumes the builder and constructs a [`VpcIpv6CidrBlockAssociation`](crate::types::VpcIpv6CidrBlockAssociation).
     pub fn build(self) -> crate::types::VpcIpv6CidrBlockAssociation {
         crate::types::VpcIpv6CidrBlockAssociation {
@@ -133,6 +175,8 @@ impl VpcIpv6CidrBlockAssociationBuilder {
             ipv6_cidr_block_state: self.ipv6_cidr_block_state,
             network_border_group: self.network_border_group,
             ipv6_pool: self.ipv6_pool,
+            ipv6_address_attribute: self.ipv6_address_attribute,
+            ip_source: self.ip_source,
         }
     }
 }

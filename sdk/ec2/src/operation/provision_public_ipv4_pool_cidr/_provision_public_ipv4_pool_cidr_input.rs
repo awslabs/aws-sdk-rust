@@ -9,7 +9,7 @@ pub struct ProvisionPublicIpv4PoolCidrInput {
     pub ipam_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the public IPv4 pool you would like to use for this CIDR.</p>
     pub pool_id: ::std::option::Option<::std::string::String>,
-    /// <p>The netmask length of the CIDR you would like to allocate to the public IPv4 pool.</p>
+    /// <p>The netmask length of the CIDR you would like to allocate to the public IPv4 pool. The least specific netmask length you can define is 24.</p>
     pub netmask_length: ::std::option::Option<i32>,
     /// <p>The Availability Zone (AZ) or Local Zone (LZ) network border group that the resource that the IP address is assigned to is in. Defaults to an AZ network border group. For more information on available Local Zones, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html#byoip-zone-avail">Local Zone availability</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub network_border_group: ::std::option::Option<::std::string::String>,
@@ -27,7 +27,7 @@ impl ProvisionPublicIpv4PoolCidrInput {
     pub fn pool_id(&self) -> ::std::option::Option<&str> {
         self.pool_id.as_deref()
     }
-    /// <p>The netmask length of the CIDR you would like to allocate to the public IPv4 pool.</p>
+    /// <p>The netmask length of the CIDR you would like to allocate to the public IPv4 pool. The least specific netmask length you can define is 24.</p>
     pub fn netmask_length(&self) -> ::std::option::Option<i32> {
         self.netmask_length
     }
@@ -98,18 +98,18 @@ impl ProvisionPublicIpv4PoolCidrInputBuilder {
     pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.pool_id
     }
-    /// <p>The netmask length of the CIDR you would like to allocate to the public IPv4 pool.</p>
+    /// <p>The netmask length of the CIDR you would like to allocate to the public IPv4 pool. The least specific netmask length you can define is 24.</p>
     /// This field is required.
     pub fn netmask_length(mut self, input: i32) -> Self {
         self.netmask_length = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The netmask length of the CIDR you would like to allocate to the public IPv4 pool.</p>
+    /// <p>The netmask length of the CIDR you would like to allocate to the public IPv4 pool. The least specific netmask length you can define is 24.</p>
     pub fn set_netmask_length(mut self, input: ::std::option::Option<i32>) -> Self {
         self.netmask_length = input;
         self
     }
-    /// <p>The netmask length of the CIDR you would like to allocate to the public IPv4 pool.</p>
+    /// <p>The netmask length of the CIDR you would like to allocate to the public IPv4 pool. The least specific netmask length you can define is 24.</p>
     pub fn get_netmask_length(&self) -> &::std::option::Option<i32> {
         &self.netmask_length
     }

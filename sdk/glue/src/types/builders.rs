@@ -361,6 +361,12 @@ pub use crate::types::_data_quality_evaluation_run_additional_run_options::DataQ
 
 pub use crate::types::_table::TableBuilder;
 
+pub use crate::types::_table_status::TableStatusBuilder;
+
+pub use crate::types::_status_details::StatusDetailsBuilder;
+
+pub use crate::types::_view_validation::ViewValidationBuilder;
+
 pub use crate::types::_view_definition::ViewDefinitionBuilder;
 
 pub use crate::types::_view_representation::ViewRepresentationBuilder;

@@ -17,6 +17,8 @@ pub struct GetTablesInput {
     pub transaction_id: ::std::option::Option<::std::string::String>,
     /// <p>The time as of when to read the table contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
     pub query_as_of_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Specifies whether to include status details related to a request to create or update an Glue Data Catalog view.</p>
+    pub include_status_details: ::std::option::Option<bool>,
 }
 impl GetTablesInput {
     /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
@@ -47,6 +49,10 @@ impl GetTablesInput {
     pub fn query_as_of_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.query_as_of_time.as_ref()
     }
+    /// <p>Specifies whether to include status details related to a request to create or update an Glue Data Catalog view.</p>
+    pub fn include_status_details(&self) -> ::std::option::Option<bool> {
+        self.include_status_details
+    }
 }
 impl GetTablesInput {
     /// Creates a new builder-style object to manufacture [`GetTablesInput`](crate::operation::get_tables::GetTablesInput).
@@ -66,6 +72,7 @@ pub struct GetTablesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) transaction_id: ::std::option::Option<::std::string::String>,
     pub(crate) query_as_of_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) include_status_details: ::std::option::Option<bool>,
 }
 impl GetTablesInputBuilder {
     /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
@@ -167,6 +174,20 @@ impl GetTablesInputBuilder {
     pub fn get_query_as_of_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.query_as_of_time
     }
+    /// <p>Specifies whether to include status details related to a request to create or update an Glue Data Catalog view.</p>
+    pub fn include_status_details(mut self, input: bool) -> Self {
+        self.include_status_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to include status details related to a request to create or update an Glue Data Catalog view.</p>
+    pub fn set_include_status_details(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.include_status_details = input;
+        self
+    }
+    /// <p>Specifies whether to include status details related to a request to create or update an Glue Data Catalog view.</p>
+    pub fn get_include_status_details(&self) -> &::std::option::Option<bool> {
+        &self.include_status_details
+    }
     /// Consumes the builder and constructs a [`GetTablesInput`](crate::operation::get_tables::GetTablesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_tables::GetTablesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_tables::GetTablesInput {
@@ -177,6 +198,7 @@ impl GetTablesInputBuilder {
             max_results: self.max_results,
             transaction_id: self.transaction_id,
             query_as_of_time: self.query_as_of_time,
+            include_status_details: self.include_status_details,
         })
     }
 }

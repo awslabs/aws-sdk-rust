@@ -25,6 +25,10 @@ pub use crate::types::_recovery_option_name_type::RecoveryOptionNameType;
 
 pub use crate::types::_user_pool_add_ons_type::UserPoolAddOnsType;
 
+pub use crate::types::_advanced_security_additional_flows_type::AdvancedSecurityAdditionalFlowsType;
+
+pub use crate::types::_advanced_security_enabled_mode_type::AdvancedSecurityEnabledModeType;
+
 pub use crate::types::_advanced_security_mode_type::AdvancedSecurityModeType;
 
 pub use crate::types::_admin_create_user_config_type::AdminCreateUserConfigType;
@@ -232,6 +236,10 @@ mod _account_takeover_event_action_type;
 mod _account_takeover_risk_configuration_type;
 
 mod _admin_create_user_config_type;
+
+mod _advanced_security_additional_flows_type;
+
+mod _advanced_security_enabled_mode_type;
 
 mod _advanced_security_mode_type;
 

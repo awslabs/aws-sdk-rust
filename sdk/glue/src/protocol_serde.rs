@@ -1707,6 +1707,8 @@ pub(crate) mod shape_table_identifier;
 
 pub(crate) mod shape_table_optimizer_run;
 
+pub(crate) mod shape_table_status;
+
 pub(crate) mod shape_table_version_error;
 
 pub(crate) mod shape_task_run;
@@ -1867,6 +1869,8 @@ pub(crate) mod shape_statement_output_data;
 
 pub(crate) mod shape_statistic_properties_map;
 
+pub(crate) mod shape_status_details;
+
 pub(crate) mod shape_streaming_data_preview_options;
 
 pub(crate) mod shape_string_column_statistics_data;
@@ -1929,6 +1933,8 @@ pub(crate) mod shape_token_url_parameters_map;
 
 pub(crate) mod shape_view_representation;
 
+pub(crate) mod shape_view_validation_list;
+
 pub(crate) mod shape_additional_options;
 
 pub(crate) mod shape_aggregate_operations;
@@ -1980,6 +1986,8 @@ pub(crate) mod shape_transform_config_parameter_list;
 pub(crate) mod shape_trigger_node_details;
 
 pub(crate) mod shape_two_inputs;
+
+pub(crate) mod shape_view_validation;
 
 pub(crate) mod shape_amazon_redshift_advanced_options;
 

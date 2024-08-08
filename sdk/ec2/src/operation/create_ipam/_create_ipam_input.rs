@@ -16,6 +16,8 @@ pub struct CreateIpamInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>IPAM is offered in a Free Tier and an Advanced Tier. For more information about the features available in each tier and the costs associated with the tiers, see <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing &gt; IPAM tab</a>.</p>
     pub tier: ::std::option::Option<crate::types::IpamTier>,
+    /// <p>Enable this option to use your own GUA ranges as private IPv6 addresses. This option is disabled by default.</p>
+    pub enable_private_gua: ::std::option::Option<bool>,
 }
 impl CreateIpamInput {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -47,6 +49,10 @@ impl CreateIpamInput {
     pub fn tier(&self) -> ::std::option::Option<&crate::types::IpamTier> {
         self.tier.as_ref()
     }
+    /// <p>Enable this option to use your own GUA ranges as private IPv6 addresses. This option is disabled by default.</p>
+    pub fn enable_private_gua(&self) -> ::std::option::Option<bool> {
+        self.enable_private_gua
+    }
 }
 impl CreateIpamInput {
     /// Creates a new builder-style object to manufacture [`CreateIpamInput`](crate::operation::create_ipam::CreateIpamInput).
@@ -65,6 +71,7 @@ pub struct CreateIpamInputBuilder {
     pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) tier: ::std::option::Option<crate::types::IpamTier>,
+    pub(crate) enable_private_gua: ::std::option::Option<bool>,
 }
 impl CreateIpamInputBuilder {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -166,6 +173,20 @@ impl CreateIpamInputBuilder {
     pub fn get_tier(&self) -> &::std::option::Option<crate::types::IpamTier> {
         &self.tier
     }
+    /// <p>Enable this option to use your own GUA ranges as private IPv6 addresses. This option is disabled by default.</p>
+    pub fn enable_private_gua(mut self, input: bool) -> Self {
+        self.enable_private_gua = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Enable this option to use your own GUA ranges as private IPv6 addresses. This option is disabled by default.</p>
+    pub fn set_enable_private_gua(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.enable_private_gua = input;
+        self
+    }
+    /// <p>Enable this option to use your own GUA ranges as private IPv6 addresses. This option is disabled by default.</p>
+    pub fn get_enable_private_gua(&self) -> &::std::option::Option<bool> {
+        &self.enable_private_gua
+    }
     /// Consumes the builder and constructs a [`CreateIpamInput`](crate::operation::create_ipam::CreateIpamInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_ipam::CreateIpamInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_ipam::CreateIpamInput {
@@ -175,6 +196,7 @@ impl CreateIpamInputBuilder {
             tag_specifications: self.tag_specifications,
             client_token: self.client_token,
             tier: self.tier,
+            enable_private_gua: self.enable_private_gua,
         })
     }
 }

@@ -206,4 +206,18 @@ impl GetTablesFluentBuilder {
     pub fn get_query_as_of_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_query_as_of_time()
     }
+    /// <p>Specifies whether to include status details related to a request to create or update an Glue Data Catalog view.</p>
+    pub fn include_status_details(mut self, input: bool) -> Self {
+        self.inner = self.inner.include_status_details(input);
+        self
+    }
+    /// <p>Specifies whether to include status details related to a request to create or update an Glue Data Catalog view.</p>
+    pub fn set_include_status_details(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_include_status_details(input);
+        self
+    }
+    /// <p>Specifies whether to include status details related to a request to create or update an Glue Data Catalog view.</p>
+    pub fn get_include_status_details(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_status_details()
+    }
 }

@@ -205,4 +205,18 @@ impl ModifyIpamFluentBuilder {
     pub fn get_tier(&self) -> &::std::option::Option<crate::types::IpamTier> {
         self.inner.get_tier()
     }
+    /// <p>Enable this option to use your own GUA ranges as private IPv6 addresses. This option is disabled by default.</p>
+    pub fn enable_private_gua(mut self, input: bool) -> Self {
+        self.inner = self.inner.enable_private_gua(input);
+        self
+    }
+    /// <p>Enable this option to use your own GUA ranges as private IPv6 addresses. This option is disabled by default.</p>
+    pub fn set_enable_private_gua(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_enable_private_gua(input);
+        self
+    }
+    /// <p>Enable this option to use your own GUA ranges as private IPv6 addresses. This option is disabled by default.</p>
+    pub fn get_enable_private_gua(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable_private_gua()
+    }
 }

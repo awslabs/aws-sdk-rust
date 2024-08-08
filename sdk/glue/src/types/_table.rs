@@ -67,6 +67,8 @@ pub struct Table {
     pub view_definition: ::std::option::Option<crate::types::ViewDefinition>,
     /// <p>Specifies whether the view supports the SQL dialects of one or more different query engines and can therefore be read by those engines.</p>
     pub is_multi_dialect_view: ::std::option::Option<bool>,
+    /// <p>A structure containing information about the state of an asynchronous change to a table.</p>
+    pub status: ::std::option::Option<crate::types::TableStatus>,
 }
 impl Table {
     /// <p>The table name. For Hive compatibility, this must be entirely lowercase.</p>
@@ -181,6 +183,10 @@ impl Table {
     pub fn is_multi_dialect_view(&self) -> ::std::option::Option<bool> {
         self.is_multi_dialect_view
     }
+    /// <p>A structure containing information about the state of an asynchronous change to a table.</p>
+    pub fn status(&self) -> ::std::option::Option<&crate::types::TableStatus> {
+        self.status.as_ref()
+    }
 }
 impl Table {
     /// Creates a new builder-style object to manufacture [`Table`](crate::types::Table).
@@ -216,6 +222,7 @@ pub struct TableBuilder {
     pub(crate) federated_table: ::std::option::Option<crate::types::FederatedTable>,
     pub(crate) view_definition: ::std::option::Option<crate::types::ViewDefinition>,
     pub(crate) is_multi_dialect_view: ::std::option::Option<bool>,
+    pub(crate) status: ::std::option::Option<crate::types::TableStatus>,
 }
 impl TableBuilder {
     /// <p>The table name. For Hive compatibility, this must be entirely lowercase.</p>
@@ -604,6 +611,20 @@ impl TableBuilder {
     pub fn get_is_multi_dialect_view(&self) -> &::std::option::Option<bool> {
         &self.is_multi_dialect_view
     }
+    /// <p>A structure containing information about the state of an asynchronous change to a table.</p>
+    pub fn status(mut self, input: crate::types::TableStatus) -> Self {
+        self.status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A structure containing information about the state of an asynchronous change to a table.</p>
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::TableStatus>) -> Self {
+        self.status = input;
+        self
+    }
+    /// <p>A structure containing information about the state of an asynchronous change to a table.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::TableStatus> {
+        &self.status
+    }
     /// Consumes the builder and constructs a [`Table`](crate::types::Table).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::TableBuilder::name)
@@ -637,6 +658,7 @@ impl TableBuilder {
             federated_table: self.federated_table,
             view_definition: self.view_definition,
             is_multi_dialect_view: self.is_multi_dialect_view,
+            status: self.status,
         })
     }
 }

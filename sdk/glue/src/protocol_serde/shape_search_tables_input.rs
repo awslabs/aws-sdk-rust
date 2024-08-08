@@ -45,5 +45,8 @@ pub fn ser_search_tables_input_input(
     if let Some(var_13) = &input.resource_share_type {
         object.key("ResourceShareType").string(var_13.as_str());
     }
+    if let Some(var_14) = &input.include_status_details {
+        object.key("IncludeStatusDetails").boolean(*var_14);
+    }
     Ok(())
 }

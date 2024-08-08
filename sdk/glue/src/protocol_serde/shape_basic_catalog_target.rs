@@ -15,6 +15,21 @@ pub fn ser_basic_catalog_target(
         }
         array_1.finish();
     }
+    if let Some(var_3) = &input.partition_keys {
+        let mut array_4 = object.key("PartitionKeys").start_array();
+        for item_5 in var_3 {
+            {
+                let mut array_6 = array_4.value().start_array();
+                for item_7 in item_5 {
+                    {
+                        array_6.value().string(item_7.as_str());
+                    }
+                }
+                array_6.finish();
+            }
+        }
+        array_4.finish();
+    }
     {
         object.key("Database").string(input.database.as_str());
     }
@@ -48,6 +63,10 @@ where
                         }
                         "Inputs" => {
                             builder = builder.set_inputs(crate::protocol_serde::shape_one_input::de_one_input(tokens)?);
+                        }
+                        "PartitionKeys" => {
+                            builder =
+                                builder.set_partition_keys(crate::protocol_serde::shape_glue_studio_path_list::de_glue_studio_path_list(tokens)?);
                         }
                         "Database" => {
                             builder = builder.set_database(

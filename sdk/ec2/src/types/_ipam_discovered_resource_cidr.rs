@@ -14,6 +14,8 @@ pub struct IpamDiscoveredResourceCidr {
     pub resource_owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource CIDR.</p>
     pub resource_cidr: ::std::option::Option<::std::string::String>,
+    /// <p>The source that allocated the IP address space. <code>byoip</code> or <code>amazon</code> indicates public IP address space allocated by Amazon or space that you have allocated with Bring your own IP (BYOIP). <code>none</code> indicates private space.</p>
+    pub ip_source: ::std::option::Option<crate::types::IpamResourceCidrIpSource>,
     /// <p>The resource type.</p>
     pub resource_type: ::std::option::Option<crate::types::IpamResourceType>,
     /// <p>The resource tags.</p>
@@ -57,6 +59,10 @@ impl IpamDiscoveredResourceCidr {
     /// <p>The resource CIDR.</p>
     pub fn resource_cidr(&self) -> ::std::option::Option<&str> {
         self.resource_cidr.as_deref()
+    }
+    /// <p>The source that allocated the IP address space. <code>byoip</code> or <code>amazon</code> indicates public IP address space allocated by Amazon or space that you have allocated with Bring your own IP (BYOIP). <code>none</code> indicates private space.</p>
+    pub fn ip_source(&self) -> ::std::option::Option<&crate::types::IpamResourceCidrIpSource> {
+        self.ip_source.as_ref()
     }
     /// <p>The resource type.</p>
     pub fn resource_type(&self) -> ::std::option::Option<&crate::types::IpamResourceType> {
@@ -113,6 +119,7 @@ pub struct IpamDiscoveredResourceCidrBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_cidr: ::std::option::Option<::std::string::String>,
+    pub(crate) ip_source: ::std::option::Option<crate::types::IpamResourceCidrIpSource>,
     pub(crate) resource_type: ::std::option::Option<crate::types::IpamResourceType>,
     pub(crate) resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::IpamResourceTag>>,
     pub(crate) ip_usage: ::std::option::Option<f64>,
@@ -191,6 +198,20 @@ impl IpamDiscoveredResourceCidrBuilder {
     /// <p>The resource CIDR.</p>
     pub fn get_resource_cidr(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_cidr
+    }
+    /// <p>The source that allocated the IP address space. <code>byoip</code> or <code>amazon</code> indicates public IP address space allocated by Amazon or space that you have allocated with Bring your own IP (BYOIP). <code>none</code> indicates private space.</p>
+    pub fn ip_source(mut self, input: crate::types::IpamResourceCidrIpSource) -> Self {
+        self.ip_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The source that allocated the IP address space. <code>byoip</code> or <code>amazon</code> indicates public IP address space allocated by Amazon or space that you have allocated with Bring your own IP (BYOIP). <code>none</code> indicates private space.</p>
+    pub fn set_ip_source(mut self, input: ::std::option::Option<crate::types::IpamResourceCidrIpSource>) -> Self {
+        self.ip_source = input;
+        self
+    }
+    /// <p>The source that allocated the IP address space. <code>byoip</code> or <code>amazon</code> indicates public IP address space allocated by Amazon or space that you have allocated with Bring your own IP (BYOIP). <code>none</code> indicates private space.</p>
+    pub fn get_ip_source(&self) -> &::std::option::Option<crate::types::IpamResourceCidrIpSource> {
+        &self.ip_source
     }
     /// <p>The resource type.</p>
     pub fn resource_type(mut self, input: crate::types::IpamResourceType) -> Self {
@@ -331,6 +352,7 @@ impl IpamDiscoveredResourceCidrBuilder {
             resource_id: self.resource_id,
             resource_owner_id: self.resource_owner_id,
             resource_cidr: self.resource_cidr,
+            ip_source: self.ip_source,
             resource_type: self.resource_type,
             resource_tags: self.resource_tags,
             ip_usage: self.ip_usage,

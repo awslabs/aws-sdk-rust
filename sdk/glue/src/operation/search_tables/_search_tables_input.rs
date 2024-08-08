@@ -25,6 +25,8 @@ pub struct SearchTablesInput {
     /// <p>If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local account.</p></li>
     /// </ul>
     pub resource_share_type: ::std::option::Option<crate::types::ResourceShareType>,
+    /// <p>Specifies whether to include status details related to a request to create or update an Glue Data Catalog view.</p>
+    pub include_status_details: ::std::option::Option<bool>,
 }
 impl SearchTablesInput {
     /// <p>A unique identifier, consisting of <code> <i>account_id</i> </code>.</p>
@@ -67,6 +69,10 @@ impl SearchTablesInput {
     pub fn resource_share_type(&self) -> ::std::option::Option<&crate::types::ResourceShareType> {
         self.resource_share_type.as_ref()
     }
+    /// <p>Specifies whether to include status details related to a request to create or update an Glue Data Catalog view.</p>
+    pub fn include_status_details(&self) -> ::std::option::Option<bool> {
+        self.include_status_details
+    }
 }
 impl SearchTablesInput {
     /// Creates a new builder-style object to manufacture [`SearchTablesInput`](crate::operation::search_tables::SearchTablesInput).
@@ -86,6 +92,7 @@ pub struct SearchTablesInputBuilder {
     pub(crate) sort_criteria: ::std::option::Option<::std::vec::Vec<crate::types::SortCriterion>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) resource_share_type: ::std::option::Option<crate::types::ResourceShareType>,
+    pub(crate) include_status_details: ::std::option::Option<bool>,
 }
 impl SearchTablesInputBuilder {
     /// <p>A unique identifier, consisting of <code> <i>account_id</i> </code>.</p>
@@ -222,6 +229,20 @@ impl SearchTablesInputBuilder {
     pub fn get_resource_share_type(&self) -> &::std::option::Option<crate::types::ResourceShareType> {
         &self.resource_share_type
     }
+    /// <p>Specifies whether to include status details related to a request to create or update an Glue Data Catalog view.</p>
+    pub fn include_status_details(mut self, input: bool) -> Self {
+        self.include_status_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to include status details related to a request to create or update an Glue Data Catalog view.</p>
+    pub fn set_include_status_details(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.include_status_details = input;
+        self
+    }
+    /// <p>Specifies whether to include status details related to a request to create or update an Glue Data Catalog view.</p>
+    pub fn get_include_status_details(&self) -> &::std::option::Option<bool> {
+        &self.include_status_details
+    }
     /// Consumes the builder and constructs a [`SearchTablesInput`](crate::operation::search_tables::SearchTablesInput).
     pub fn build(
         self,
@@ -234,6 +255,7 @@ impl SearchTablesInputBuilder {
             sort_criteria: self.sort_criteria,
             max_results: self.max_results,
             resource_share_type: self.resource_share_type,
+            include_status_details: self.include_status_details,
         })
     }
 }

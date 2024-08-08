@@ -651,6 +651,8 @@ pub(crate) mod shape_verification_message_template_type;
 
 pub(crate) mod shape_account_takeover_actions_type;
 
+pub(crate) mod shape_advanced_security_additional_flows_type;
+
 pub(crate) mod shape_alias_attributes_list_type;
 
 pub(crate) mod shape_attribute_mapping_type;

@@ -13,6 +13,8 @@ pub use crate::types::_recovery_option_type::RecoveryOptionTypeBuilder;
 
 pub use crate::types::_user_pool_add_ons_type::UserPoolAddOnsTypeBuilder;
 
+pub use crate::types::_advanced_security_additional_flows_type::AdvancedSecurityAdditionalFlowsTypeBuilder;
+
 pub use crate::types::_admin_create_user_config_type::AdminCreateUserConfigTypeBuilder;
 
 pub use crate::types::_message_template_type::MessageTemplateTypeBuilder;

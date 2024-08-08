@@ -6,6 +6,12 @@ pub fn ser_user_pool_add_ons_type(
     {
         object.key("AdvancedSecurityMode").string(input.advanced_security_mode.as_str());
     }
+    if let Some(var_1) = &input.advanced_security_additional_flows {
+        #[allow(unused_mut)]
+        let mut object_2 = object.key("AdvancedSecurityAdditionalFlows").start_object();
+        crate::protocol_serde::shape_advanced_security_additional_flows_type::ser_advanced_security_additional_flows_type(&mut object_2, var_1)?;
+        object_2.finish();
+    }
     Ok(())
 }
 
@@ -29,6 +35,13 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::AdvancedSecurityModeType::from(u.as_ref())))
                                     .transpose()?,
+                            );
+                        }
+                        "AdvancedSecurityAdditionalFlows" => {
+                            builder = builder.set_advanced_security_additional_flows(
+                                crate::protocol_serde::shape_advanced_security_additional_flows_type::de_advanced_security_additional_flows_type(
+                                    tokens,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

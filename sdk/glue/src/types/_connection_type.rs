@@ -20,6 +20,8 @@
 ///     ConnectionType::Network => { /* ... */ },
 ///     ConnectionType::Salesforce => { /* ... */ },
 ///     ConnectionType::Sftp => { /* ... */ },
+///     ConnectionType::ViewValidationAthena => { /* ... */ },
+///     ConnectionType::ViewValidationRedshift => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -63,6 +65,10 @@ pub enum ConnectionType {
     Salesforce,
     #[allow(missing_docs)] // documentation missing in model
     Sftp,
+    #[allow(missing_docs)] // documentation missing in model
+    ViewValidationAthena,
+    #[allow(missing_docs)] // documentation missing in model
+    ViewValidationRedshift,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -78,6 +84,8 @@ impl ::std::convert::From<&str> for ConnectionType {
             "NETWORK" => ConnectionType::Network,
             "SALESFORCE" => ConnectionType::Salesforce,
             "SFTP" => ConnectionType::Sftp,
+            "VIEW_VALIDATION_ATHENA" => ConnectionType::ViewValidationAthena,
+            "VIEW_VALIDATION_REDSHIFT" => ConnectionType::ViewValidationRedshift,
             other => ConnectionType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -101,12 +109,25 @@ impl ConnectionType {
             ConnectionType::Network => "NETWORK",
             ConnectionType::Salesforce => "SALESFORCE",
             ConnectionType::Sftp => "SFTP",
+            ConnectionType::ViewValidationAthena => "VIEW_VALIDATION_ATHENA",
+            ConnectionType::ViewValidationRedshift => "VIEW_VALIDATION_REDSHIFT",
             ConnectionType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CUSTOM", "JDBC", "KAFKA", "MARKETPLACE", "MONGODB", "NETWORK", "SALESFORCE", "SFTP"]
+        &[
+            "CUSTOM",
+            "JDBC",
+            "KAFKA",
+            "MARKETPLACE",
+            "MONGODB",
+            "NETWORK",
+            "SALESFORCE",
+            "SFTP",
+            "VIEW_VALIDATION_ATHENA",
+            "VIEW_VALIDATION_REDSHIFT",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for ConnectionType {
@@ -137,6 +158,8 @@ impl ::std::fmt::Display for ConnectionType {
             ConnectionType::Network => write!(f, "NETWORK"),
             ConnectionType::Salesforce => write!(f, "SALESFORCE"),
             ConnectionType::Sftp => write!(f, "SFTP"),
+            ConnectionType::ViewValidationAthena => write!(f, "VIEW_VALIDATION_ATHENA"),
+            ConnectionType::ViewValidationRedshift => write!(f, "VIEW_VALIDATION_REDSHIFT"),
             ConnectionType::Unknown(value) => write!(f, "{}", value),
         }
     }

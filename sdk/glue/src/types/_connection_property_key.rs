@@ -12,6 +12,7 @@
 /// ```text
 /// # let connectionpropertykey = unimplemented!();
 /// match connectionpropertykey {
+///     ConnectionPropertyKey::ClusterIdentifier => { /* ... */ },
 ///     ConnectionPropertyKey::ConfigFiles => { /* ... */ },
 ///     ConnectionPropertyKey::ConnectionUrl => { /* ... */ },
 ///     ConnectionPropertyKey::ConnectorClassName => { /* ... */ },
@@ -19,6 +20,7 @@
 ///     ConnectionPropertyKey::ConnectorUrl => { /* ... */ },
 ///     ConnectionPropertyKey::CustomJdbcCert => { /* ... */ },
 ///     ConnectionPropertyKey::CustomJdbcCertString => { /* ... */ },
+///     ConnectionPropertyKey::Database => { /* ... */ },
 ///     ConnectionPropertyKey::EncryptedKafkaClientKeystorePassword => { /* ... */ },
 ///     ConnectionPropertyKey::EncryptedKafkaClientKeyPassword => { /* ... */ },
 ///     ConnectionPropertyKey::EncryptedKafkaSaslPlainPassword => { /* ... */ },
@@ -51,10 +53,12 @@
 ///     ConnectionPropertyKey::KafkaSslEnabled => { /* ... */ },
 ///     ConnectionPropertyKey::Password => { /* ... */ },
 ///     ConnectionPropertyKey::Port => { /* ... */ },
+///     ConnectionPropertyKey::Region => { /* ... */ },
 ///     ConnectionPropertyKey::RoleArn => { /* ... */ },
 ///     ConnectionPropertyKey::SecretId => { /* ... */ },
 ///     ConnectionPropertyKey::SkipCustomJdbcCertValidation => { /* ... */ },
 ///     ConnectionPropertyKey::UserName => { /* ... */ },
+///     ConnectionPropertyKey::WorkgroupName => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -83,6 +87,8 @@
 )]
 pub enum ConnectionPropertyKey {
     #[allow(missing_docs)] // documentation missing in model
+    ClusterIdentifier,
+    #[allow(missing_docs)] // documentation missing in model
     ConfigFiles,
     #[allow(missing_docs)] // documentation missing in model
     ConnectionUrl,
@@ -96,6 +102,8 @@ pub enum ConnectionPropertyKey {
     CustomJdbcCert,
     #[allow(missing_docs)] // documentation missing in model
     CustomJdbcCertString,
+    #[allow(missing_docs)] // documentation missing in model
+    Database,
     #[allow(missing_docs)] // documentation missing in model
     EncryptedKafkaClientKeystorePassword,
     #[allow(missing_docs)] // documentation missing in model
@@ -161,6 +169,8 @@ pub enum ConnectionPropertyKey {
     #[allow(missing_docs)] // documentation missing in model
     Port,
     #[allow(missing_docs)] // documentation missing in model
+    Region,
+    #[allow(missing_docs)] // documentation missing in model
     RoleArn,
     #[allow(missing_docs)] // documentation missing in model
     SecretId,
@@ -168,6 +178,8 @@ pub enum ConnectionPropertyKey {
     SkipCustomJdbcCertValidation,
     #[allow(missing_docs)] // documentation missing in model
     UserName,
+    #[allow(missing_docs)] // documentation missing in model
+    WorkgroupName,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -175,6 +187,7 @@ pub enum ConnectionPropertyKey {
 impl ::std::convert::From<&str> for ConnectionPropertyKey {
     fn from(s: &str) -> Self {
         match s {
+            "CLUSTER_IDENTIFIER" => ConnectionPropertyKey::ClusterIdentifier,
             "CONFIG_FILES" => ConnectionPropertyKey::ConfigFiles,
             "CONNECTION_URL" => ConnectionPropertyKey::ConnectionUrl,
             "CONNECTOR_CLASS_NAME" => ConnectionPropertyKey::ConnectorClassName,
@@ -182,6 +195,7 @@ impl ::std::convert::From<&str> for ConnectionPropertyKey {
             "CONNECTOR_URL" => ConnectionPropertyKey::ConnectorUrl,
             "CUSTOM_JDBC_CERT" => ConnectionPropertyKey::CustomJdbcCert,
             "CUSTOM_JDBC_CERT_STRING" => ConnectionPropertyKey::CustomJdbcCertString,
+            "DATABASE" => ConnectionPropertyKey::Database,
             "ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD" => ConnectionPropertyKey::EncryptedKafkaClientKeystorePassword,
             "ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD" => ConnectionPropertyKey::EncryptedKafkaClientKeyPassword,
             "ENCRYPTED_KAFKA_SASL_PLAIN_PASSWORD" => ConnectionPropertyKey::EncryptedKafkaSaslPlainPassword,
@@ -214,10 +228,12 @@ impl ::std::convert::From<&str> for ConnectionPropertyKey {
             "KAFKA_SSL_ENABLED" => ConnectionPropertyKey::KafkaSslEnabled,
             "PASSWORD" => ConnectionPropertyKey::Password,
             "PORT" => ConnectionPropertyKey::Port,
+            "REGION" => ConnectionPropertyKey::Region,
             "ROLE_ARN" => ConnectionPropertyKey::RoleArn,
             "SECRET_ID" => ConnectionPropertyKey::SecretId,
             "SKIP_CUSTOM_JDBC_CERT_VALIDATION" => ConnectionPropertyKey::SkipCustomJdbcCertValidation,
             "USERNAME" => ConnectionPropertyKey::UserName,
+            "WORKGROUP_NAME" => ConnectionPropertyKey::WorkgroupName,
             other => ConnectionPropertyKey::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -233,6 +249,7 @@ impl ConnectionPropertyKey {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ConnectionPropertyKey::ClusterIdentifier => "CLUSTER_IDENTIFIER",
             ConnectionPropertyKey::ConfigFiles => "CONFIG_FILES",
             ConnectionPropertyKey::ConnectionUrl => "CONNECTION_URL",
             ConnectionPropertyKey::ConnectorClassName => "CONNECTOR_CLASS_NAME",
@@ -240,6 +257,7 @@ impl ConnectionPropertyKey {
             ConnectionPropertyKey::ConnectorUrl => "CONNECTOR_URL",
             ConnectionPropertyKey::CustomJdbcCert => "CUSTOM_JDBC_CERT",
             ConnectionPropertyKey::CustomJdbcCertString => "CUSTOM_JDBC_CERT_STRING",
+            ConnectionPropertyKey::Database => "DATABASE",
             ConnectionPropertyKey::EncryptedKafkaClientKeystorePassword => "ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD",
             ConnectionPropertyKey::EncryptedKafkaClientKeyPassword => "ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD",
             ConnectionPropertyKey::EncryptedKafkaSaslPlainPassword => "ENCRYPTED_KAFKA_SASL_PLAIN_PASSWORD",
@@ -272,16 +290,19 @@ impl ConnectionPropertyKey {
             ConnectionPropertyKey::KafkaSslEnabled => "KAFKA_SSL_ENABLED",
             ConnectionPropertyKey::Password => "PASSWORD",
             ConnectionPropertyKey::Port => "PORT",
+            ConnectionPropertyKey::Region => "REGION",
             ConnectionPropertyKey::RoleArn => "ROLE_ARN",
             ConnectionPropertyKey::SecretId => "SECRET_ID",
             ConnectionPropertyKey::SkipCustomJdbcCertValidation => "SKIP_CUSTOM_JDBC_CERT_VALIDATION",
             ConnectionPropertyKey::UserName => "USERNAME",
+            ConnectionPropertyKey::WorkgroupName => "WORKGROUP_NAME",
             ConnectionPropertyKey::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "CLUSTER_IDENTIFIER",
             "CONFIG_FILES",
             "CONNECTION_URL",
             "CONNECTOR_CLASS_NAME",
@@ -289,6 +310,7 @@ impl ConnectionPropertyKey {
             "CONNECTOR_URL",
             "CUSTOM_JDBC_CERT",
             "CUSTOM_JDBC_CERT_STRING",
+            "DATABASE",
             "ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD",
             "ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD",
             "ENCRYPTED_KAFKA_SASL_PLAIN_PASSWORD",
@@ -321,10 +343,12 @@ impl ConnectionPropertyKey {
             "KAFKA_SSL_ENABLED",
             "PASSWORD",
             "PORT",
+            "REGION",
             "ROLE_ARN",
             "SECRET_ID",
             "SKIP_CUSTOM_JDBC_CERT_VALIDATION",
             "USERNAME",
+            "WORKGROUP_NAME",
         ]
     }
 }
@@ -348,6 +372,7 @@ impl ConnectionPropertyKey {
 impl ::std::fmt::Display for ConnectionPropertyKey {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ConnectionPropertyKey::ClusterIdentifier => write!(f, "CLUSTER_IDENTIFIER"),
             ConnectionPropertyKey::ConfigFiles => write!(f, "CONFIG_FILES"),
             ConnectionPropertyKey::ConnectionUrl => write!(f, "CONNECTION_URL"),
             ConnectionPropertyKey::ConnectorClassName => write!(f, "CONNECTOR_CLASS_NAME"),
@@ -355,6 +380,7 @@ impl ::std::fmt::Display for ConnectionPropertyKey {
             ConnectionPropertyKey::ConnectorUrl => write!(f, "CONNECTOR_URL"),
             ConnectionPropertyKey::CustomJdbcCert => write!(f, "CUSTOM_JDBC_CERT"),
             ConnectionPropertyKey::CustomJdbcCertString => write!(f, "CUSTOM_JDBC_CERT_STRING"),
+            ConnectionPropertyKey::Database => write!(f, "DATABASE"),
             ConnectionPropertyKey::EncryptedKafkaClientKeystorePassword => write!(f, "ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD"),
             ConnectionPropertyKey::EncryptedKafkaClientKeyPassword => write!(f, "ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD"),
             ConnectionPropertyKey::EncryptedKafkaSaslPlainPassword => write!(f, "ENCRYPTED_KAFKA_SASL_PLAIN_PASSWORD"),
@@ -387,10 +413,12 @@ impl ::std::fmt::Display for ConnectionPropertyKey {
             ConnectionPropertyKey::KafkaSslEnabled => write!(f, "KAFKA_SSL_ENABLED"),
             ConnectionPropertyKey::Password => write!(f, "PASSWORD"),
             ConnectionPropertyKey::Port => write!(f, "PORT"),
+            ConnectionPropertyKey::Region => write!(f, "REGION"),
             ConnectionPropertyKey::RoleArn => write!(f, "ROLE_ARN"),
             ConnectionPropertyKey::SecretId => write!(f, "SECRET_ID"),
             ConnectionPropertyKey::SkipCustomJdbcCertValidation => write!(f, "SKIP_CUSTOM_JDBC_CERT_VALIDATION"),
             ConnectionPropertyKey::UserName => write!(f, "USERNAME"),
+            ConnectionPropertyKey::WorkgroupName => write!(f, "WORKGROUP_NAME"),
             ConnectionPropertyKey::Unknown(value) => write!(f, "{}", value),
         }
     }

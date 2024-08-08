@@ -8,6 +8,8 @@ pub struct BasicCatalogTarget {
     pub name: ::std::string::String,
     /// <p>The nodes that are inputs to the data target.</p>
     pub inputs: ::std::vec::Vec<::std::string::String>,
+    /// <p>The partition keys used to distribute data across multiple partitions or shards based on a specific key or set of key.</p>
+    pub partition_keys: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
     /// <p>The database that contains the table you want to use as the target. This database must already exist in the Data Catalog.</p>
     pub database: ::std::string::String,
     /// <p>The table that defines the schema of your output data. This table must already exist in the Data Catalog.</p>
@@ -23,6 +25,12 @@ impl BasicCatalogTarget {
     pub fn inputs(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.inputs.deref()
+    }
+    /// <p>The partition keys used to distribute data across multiple partitions or shards based on a specific key or set of key.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.partition_keys.is_none()`.
+    pub fn partition_keys(&self) -> &[::std::vec::Vec<::std::string::String>] {
+        self.partition_keys.as_deref().unwrap_or_default()
     }
     /// <p>The database that contains the table you want to use as the target. This database must already exist in the Data Catalog.</p>
     pub fn database(&self) -> &str {
@@ -48,6 +56,7 @@ impl BasicCatalogTarget {
 pub struct BasicCatalogTargetBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) partition_keys: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
     pub(crate) database: ::std::option::Option<::std::string::String>,
     pub(crate) table: ::std::option::Option<::std::string::String>,
 }
@@ -86,6 +95,26 @@ impl BasicCatalogTargetBuilder {
     /// <p>The nodes that are inputs to the data target.</p>
     pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.inputs
+    }
+    /// Appends an item to `partition_keys`.
+    ///
+    /// To override the contents of this collection use [`set_partition_keys`](Self::set_partition_keys).
+    ///
+    /// <p>The partition keys used to distribute data across multiple partitions or shards based on a specific key or set of key.</p>
+    pub fn partition_keys(mut self, input: ::std::vec::Vec<::std::string::String>) -> Self {
+        let mut v = self.partition_keys.unwrap_or_default();
+        v.push(input);
+        self.partition_keys = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The partition keys used to distribute data across multiple partitions or shards based on a specific key or set of key.</p>
+    pub fn set_partition_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>) -> Self {
+        self.partition_keys = input;
+        self
+    }
+    /// <p>The partition keys used to distribute data across multiple partitions or shards based on a specific key or set of key.</p>
+    pub fn get_partition_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>> {
+        &self.partition_keys
     }
     /// <p>The database that contains the table you want to use as the target. This database must already exist in the Data Catalog.</p>
     /// This field is required.
@@ -137,6 +166,7 @@ impl BasicCatalogTargetBuilder {
                     "inputs was not specified but it is required when building BasicCatalogTarget",
                 )
             })?,
+            partition_keys: self.partition_keys,
             database: self.database.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "database",
