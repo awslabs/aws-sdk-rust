@@ -104,14 +104,8 @@ impl ::std::fmt::Debug for UpdateQueueInput {
         formatter.field("job_attachment_settings", &self.job_attachment_settings);
         formatter.field("role_arn", &self.role_arn);
         formatter.field("job_run_as_user", &self.job_run_as_user);
-        formatter.field(
-            "required_file_system_location_names_to_add",
-            &self.required_file_system_location_names_to_add,
-        );
-        formatter.field(
-            "required_file_system_location_names_to_remove",
-            &self.required_file_system_location_names_to_remove,
-        );
+        formatter.field("required_file_system_location_names_to_add", &"*** Sensitive Data Redacted ***");
+        formatter.field("required_file_system_location_names_to_remove", &"*** Sensitive Data Redacted ***");
         formatter.field("allowed_storage_profile_ids_to_add", &self.allowed_storage_profile_ids_to_add);
         formatter.field("allowed_storage_profile_ids_to_remove", &self.allowed_storage_profile_ids_to_remove);
         formatter.finish()
@@ -382,14 +376,8 @@ impl ::std::fmt::Debug for UpdateQueueInputBuilder {
         formatter.field("job_attachment_settings", &self.job_attachment_settings);
         formatter.field("role_arn", &self.role_arn);
         formatter.field("job_run_as_user", &self.job_run_as_user);
-        formatter.field(
-            "required_file_system_location_names_to_add",
-            &self.required_file_system_location_names_to_add,
-        );
-        formatter.field(
-            "required_file_system_location_names_to_remove",
-            &self.required_file_system_location_names_to_remove,
-        );
+        formatter.field("required_file_system_location_names_to_add", &"*** Sensitive Data Redacted ***");
+        formatter.field("required_file_system_location_names_to_remove", &"*** Sensitive Data Redacted ***");
         formatter.field("allowed_storage_profile_ids_to_add", &self.allowed_storage_profile_ids_to_add);
         formatter.field("allowed_storage_profile_ids_to_remove", &self.allowed_storage_profile_ids_to_remove);
         formatter.finish()

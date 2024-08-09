@@ -50,10 +50,10 @@ impl ImageConfiguration {
 impl ::std::fmt::Debug for ImageConfiguration {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ImageConfiguration");
-        formatter.field("runtime_environment_variables", &self.runtime_environment_variables);
+        formatter.field("runtime_environment_variables", &"*** Sensitive Data Redacted ***");
         formatter.field("start_command", &"*** Sensitive Data Redacted ***");
         formatter.field("port", &self.port);
-        formatter.field("runtime_environment_secrets", &self.runtime_environment_secrets);
+        formatter.field("runtime_environment_secrets", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -197,10 +197,10 @@ impl ImageConfigurationBuilder {
 impl ::std::fmt::Debug for ImageConfigurationBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ImageConfigurationBuilder");
-        formatter.field("runtime_environment_variables", &self.runtime_environment_variables);
+        formatter.field("runtime_environment_variables", &"*** Sensitive Data Redacted ***");
         formatter.field("start_command", &"*** Sensitive Data Redacted ***");
         formatter.field("port", &self.port);
-        formatter.field("runtime_environment_secrets", &self.runtime_environment_secrets);
+        formatter.field("runtime_environment_secrets", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

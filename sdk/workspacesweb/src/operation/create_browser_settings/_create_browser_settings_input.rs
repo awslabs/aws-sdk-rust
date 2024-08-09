@@ -43,7 +43,7 @@ impl CreateBrowserSettingsInput {
 impl ::std::fmt::Debug for CreateBrowserSettingsInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateBrowserSettingsInput");
-        formatter.field("tags", &self.tags);
+        formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("customer_managed_key", &self.customer_managed_key);
         formatter.field("additional_encryption_context", &self.additional_encryption_context);
         formatter.field("browser_policy", &"*** Sensitive Data Redacted ***");
@@ -181,7 +181,7 @@ impl CreateBrowserSettingsInputBuilder {
 impl ::std::fmt::Debug for CreateBrowserSettingsInputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateBrowserSettingsInputBuilder");
-        formatter.field("tags", &self.tags);
+        formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("customer_managed_key", &self.customer_managed_key);
         formatter.field("additional_encryption_context", &self.additional_encryption_context);
         formatter.field("browser_policy", &"*** Sensitive Data Redacted ***");

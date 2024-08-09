@@ -406,8 +406,8 @@ mod get_object_test {
         let _ = dbg!(result);
         let http_request = request_receiver.expect_request();
         let body = http_request.body().bytes().expect("body should be strict");
-        // No body
-        ::pretty_assertions::assert_eq!(::std::str::from_utf8(body).unwrap(), "");
+        // No body.
+        ::pretty_assertions::assert_eq!(&body, &bytes::Bytes::new());
         let uri: ::http::Uri = http_request.uri().parse().expect("invalid URI sent");
         ::pretty_assertions::assert_eq!(http_request.method(), "GET", "method was incorrect");
         ::pretty_assertions::assert_eq!(uri.path(), "/../key.txt", "path was incorrect");
@@ -439,8 +439,8 @@ mod get_object_test {
         let _ = dbg!(result);
         let http_request = request_receiver.expect_request();
         let body = http_request.body().bytes().expect("body should be strict");
-        // No body
-        ::pretty_assertions::assert_eq!(::std::str::from_utf8(body).unwrap(), "");
+        // No body.
+        ::pretty_assertions::assert_eq!(&body, &bytes::Bytes::new());
         let uri: ::http::Uri = http_request.uri().parse().expect("invalid URI sent");
         ::pretty_assertions::assert_eq!(http_request.method(), "GET", "method was incorrect");
         ::pretty_assertions::assert_eq!(uri.path(), "/foo/../key.txt", "path was incorrect");

@@ -26,7 +26,7 @@ impl BatchCreateDelegationByAssessmentOutput {
 impl ::std::fmt::Debug for BatchCreateDelegationByAssessmentOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("BatchCreateDelegationByAssessmentOutput");
-        formatter.field("delegations", &self.delegations);
+        formatter.field("delegations", &"*** Sensitive Data Redacted ***");
         formatter.field("errors", &"*** Sensitive Data Redacted ***");
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
@@ -114,7 +114,7 @@ impl BatchCreateDelegationByAssessmentOutputBuilder {
 impl ::std::fmt::Debug for BatchCreateDelegationByAssessmentOutputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("BatchCreateDelegationByAssessmentOutputBuilder");
-        formatter.field("delegations", &self.delegations);
+        formatter.field("delegations", &"*** Sensitive Data Redacted ***");
         formatter.field("errors", &"*** Sensitive Data Redacted ***");
         formatter.field("_request_id", &self._request_id);
         formatter.finish()

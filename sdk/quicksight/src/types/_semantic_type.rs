@@ -60,9 +60,9 @@ impl ::std::fmt::Debug for SemanticType {
         formatter.field("sub_type_name", &self.sub_type_name);
         formatter.field("type_parameters", &self.type_parameters);
         formatter.field("truthy_cell_value", &"*** Sensitive Data Redacted ***");
-        formatter.field("truthy_cell_value_synonyms", &self.truthy_cell_value_synonyms);
+        formatter.field("truthy_cell_value_synonyms", &"*** Sensitive Data Redacted ***");
         formatter.field("falsey_cell_value", &"*** Sensitive Data Redacted ***");
-        formatter.field("falsey_cell_value_synonyms", &self.falsey_cell_value_synonyms);
+        formatter.field("falsey_cell_value_synonyms", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -229,9 +229,9 @@ impl ::std::fmt::Debug for SemanticTypeBuilder {
         formatter.field("sub_type_name", &self.sub_type_name);
         formatter.field("type_parameters", &self.type_parameters);
         formatter.field("truthy_cell_value", &"*** Sensitive Data Redacted ***");
-        formatter.field("truthy_cell_value_synonyms", &self.truthy_cell_value_synonyms);
+        formatter.field("truthy_cell_value_synonyms", &"*** Sensitive Data Redacted ***");
         formatter.field("falsey_cell_value", &"*** Sensitive Data Redacted ***");
-        formatter.field("falsey_cell_value_synonyms", &self.falsey_cell_value_synonyms);
+        formatter.field("falsey_cell_value_synonyms", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

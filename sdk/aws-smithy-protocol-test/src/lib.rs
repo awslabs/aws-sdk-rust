@@ -306,10 +306,12 @@ pub fn require_headers(
 
 #[derive(Clone)]
 pub enum MediaType {
-    /// Json media types are deserialized and compared
+    /// JSON media types are deserialized and compared
     Json,
     /// XML media types are normalized and compared
     Xml,
+    /// CBOR media types are decoded from base64 to binary and compared
+    Cbor,
     /// For x-www-form-urlencoded, do some map order comparison shenanigans
     UrlEncodedForm,
     /// Other media types are compared literally
@@ -322,13 +324,14 @@ impl<T: AsRef<str>> From<T> for MediaType {
             "application/json" => MediaType::Json,
             "application/x-amz-json-1.1" => MediaType::Json,
             "application/xml" => MediaType::Xml,
+            "application/cbor" => MediaType::Cbor,
             "application/x-www-form-urlencoded" => MediaType::UrlEncodedForm,
             other => MediaType::Other(other.to_string()),
         }
     }
 }
 
-pub fn validate_body<T: AsRef<[u8]>>(
+pub fn validate_body<T: AsRef<[u8]> + Debug>(
     actual_body: T,
     expected_body: &str,
     media_type: MediaType,
@@ -336,11 +339,11 @@ pub fn validate_body<T: AsRef<[u8]>>(
     let body_str = std::str::from_utf8(actual_body.as_ref());
     match (media_type, body_str) {
         (MediaType::Json, Ok(actual_body)) => try_json_eq(expected_body, actual_body),
-        (MediaType::Xml, Ok(actual_body)) => try_xml_equivalent(expected_body, actual_body),
         (MediaType::Json, Err(_)) => Err(ProtocolTestFailure::InvalidBodyFormat {
             expected: "json".to_owned(),
             found: "input was not valid UTF-8".to_owned(),
         }),
+        (MediaType::Xml, Ok(actual_body)) => try_xml_equivalent(actual_body, expected_body),
         (MediaType::Xml, Err(_)) => Err(ProtocolTestFailure::InvalidBodyFormat {
             expected: "XML".to_owned(),
             found: "input was not valid UTF-8".to_owned(),
@@ -352,6 +355,7 @@ pub fn validate_body<T: AsRef<[u8]>>(
             expected: "x-www-form-urlencoded".to_owned(),
             found: "input was not valid UTF-8".to_owned(),
         }),
+        (MediaType::Cbor, _) => try_cbor_eq(actual_body, expected_body),
         (MediaType::Other(media_type), Ok(actual_body)) => {
             if actual_body != expected_body {
                 Err(ProtocolTestFailure::BodyDidNotMatch {
@@ -407,6 +411,66 @@ fn try_json_eq(expected: &str, actual: &str) -> Result<(), ProtocolTestFailure> 
             comparison: pretty_comparison(expected, actual),
             hint: message,
         }),
+    }
+}
+
+fn try_cbor_eq<T: AsRef<[u8]> + Debug>(
+    actual_body: T,
+    expected_body: &str,
+) -> Result<(), ProtocolTestFailure> {
+    let decoded = base64_simd::STANDARD
+        .decode_to_vec(expected_body)
+        .expect("smithy protocol test `body` property is not properly base64 encoded");
+    let expected_cbor_value: serde_cbor::Value =
+        serde_cbor::from_slice(decoded.as_slice()).expect("expected value must be valid CBOR");
+    let actual_cbor_value: serde_cbor::Value = serde_cbor::from_slice(actual_body.as_ref())
+        .map_err(|e| ProtocolTestFailure::InvalidBodyFormat {
+            expected: "cbor".to_owned(),
+            found: format!("{} {:?}", e, actual_body),
+        })?;
+    let actual_body_base64 = base64_simd::STANDARD.encode_to_string(&actual_body);
+
+    if expected_cbor_value != actual_cbor_value {
+        let expected_body_annotated_hex: String = cbor_diag::parse_bytes(&decoded)
+            .expect("smithy protocol test `body` property is not valid CBOR")
+            .to_hex();
+        let expected_body_diag: String = cbor_diag::parse_bytes(&decoded)
+            .expect("smithy protocol test `body` property is not valid CBOR")
+            .to_diag_pretty();
+        let actual_body_annotated_hex: String = cbor_diag::parse_bytes(&actual_body)
+            .expect("actual body is not valid CBOR")
+            .to_hex();
+        let actual_body_diag: String = cbor_diag::parse_bytes(&actual_body)
+            .expect("actual body is not valid CBOR")
+            .to_diag_pretty();
+
+        Err(ProtocolTestFailure::BodyDidNotMatch {
+            comparison: PrettyString(format!(
+                "{}",
+                Comparison::new(&expected_cbor_value, &actual_cbor_value)
+            )),
+            // The last newline is important because the panic message ends with a `.`
+            hint: format!(
+                "expected body in diagnostic format:
+{}
+actual body in diagnostic format:
+{}
+expected body in annotated hex:
+{}
+actual body in annotated hex:
+{}
+actual body in base64 (useful to update the protocol test):
+{}
+",
+                expected_body_diag,
+                actual_body_diag,
+                expected_body_annotated_hex,
+                actual_body_annotated_hex,
+                actual_body_base64,
+            ),
+        })
+    } else {
+        Ok(())
     }
 }
 

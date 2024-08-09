@@ -202,7 +202,7 @@ impl ::std::fmt::Debug for CreateIdentityProviderInput {
         formatter.field("identity_provider_type", &self.identity_provider_type);
         formatter.field("identity_provider_details", &"*** Sensitive Data Redacted ***");
         formatter.field("client_token", &self.client_token);
-        formatter.field("tags", &self.tags);
+        formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -581,7 +581,7 @@ impl ::std::fmt::Debug for CreateIdentityProviderInputBuilder {
         formatter.field("identity_provider_type", &self.identity_provider_type);
         formatter.field("identity_provider_details", &"*** Sensitive Data Redacted ***");
         formatter.field("client_token", &self.client_token);
-        formatter.field("tags", &self.tags);
+        formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

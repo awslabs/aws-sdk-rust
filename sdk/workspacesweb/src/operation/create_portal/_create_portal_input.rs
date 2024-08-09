@@ -66,7 +66,7 @@ impl ::std::fmt::Debug for CreatePortalInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePortalInput");
         formatter.field("display_name", &"*** Sensitive Data Redacted ***");
-        formatter.field("tags", &self.tags);
+        formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("customer_managed_key", &self.customer_managed_key);
         formatter.field("additional_encryption_context", &self.additional_encryption_context);
         formatter.field("client_token", &self.client_token);
@@ -259,7 +259,7 @@ impl ::std::fmt::Debug for CreatePortalInputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePortalInputBuilder");
         formatter.field("display_name", &"*** Sensitive Data Redacted ***");
-        formatter.field("tags", &self.tags);
+        formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("customer_managed_key", &self.customer_managed_key);
         formatter.field("additional_encryption_context", &self.additional_encryption_context);
         formatter.field("client_token", &self.client_token);

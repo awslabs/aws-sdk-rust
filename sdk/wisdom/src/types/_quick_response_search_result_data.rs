@@ -169,7 +169,7 @@ impl ::std::fmt::Debug for QuickResponseSearchResultData {
         formatter.field("grouping_configuration", &self.grouping_configuration);
         formatter.field("shortcut_key", &self.shortcut_key);
         formatter.field("last_modified_by", &self.last_modified_by);
-        formatter.field("channels", &self.channels);
+        formatter.field("channels", &"*** Sensitive Data Redacted ***");
         formatter.field("language", &self.language);
         formatter.field("attributes_not_interpolated", &"*** Sensitive Data Redacted ***");
         formatter.field("attributes_interpolated", &"*** Sensitive Data Redacted ***");
@@ -648,7 +648,7 @@ impl ::std::fmt::Debug for QuickResponseSearchResultDataBuilder {
         formatter.field("grouping_configuration", &self.grouping_configuration);
         formatter.field("shortcut_key", &self.shortcut_key);
         formatter.field("last_modified_by", &self.last_modified_by);
-        formatter.field("channels", &self.channels);
+        formatter.field("channels", &"*** Sensitive Data Redacted ***");
         formatter.field("language", &self.language);
         formatter.field("attributes_not_interpolated", &"*** Sensitive Data Redacted ***");
         formatter.field("attributes_interpolated", &"*** Sensitive Data Redacted ***");

@@ -70,7 +70,7 @@ impl ::std::fmt::Debug for JobDetailsEntity {
         formatter.field("queue_role_arn", &self.queue_role_arn);
         formatter.field("parameters", &"*** Sensitive Data Redacted ***");
         formatter.field("schema_version", &self.schema_version);
-        formatter.field("path_mapping_rules", &self.path_mapping_rules);
+        formatter.field("path_mapping_rules", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -268,7 +268,7 @@ impl ::std::fmt::Debug for JobDetailsEntityBuilder {
         formatter.field("queue_role_arn", &self.queue_role_arn);
         formatter.field("parameters", &"*** Sensitive Data Redacted ***");
         formatter.field("schema_version", &self.schema_version);
-        formatter.field("path_mapping_rules", &self.path_mapping_rules);
+        formatter.field("path_mapping_rules", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

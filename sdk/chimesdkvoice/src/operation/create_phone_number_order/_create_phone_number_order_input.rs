@@ -30,7 +30,7 @@ impl ::std::fmt::Debug for CreatePhoneNumberOrderInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePhoneNumberOrderInput");
         formatter.field("product_type", &self.product_type);
-        formatter.field("e164_phone_numbers", &self.e164_phone_numbers);
+        formatter.field("e164_phone_numbers", &"*** Sensitive Data Redacted ***");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
@@ -118,7 +118,7 @@ impl ::std::fmt::Debug for CreatePhoneNumberOrderInputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePhoneNumberOrderInputBuilder");
         formatter.field("product_type", &self.product_type);
-        formatter.field("e164_phone_numbers", &self.e164_phone_numbers);
+        formatter.field("e164_phone_numbers", &"*** Sensitive Data Redacted ***");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }

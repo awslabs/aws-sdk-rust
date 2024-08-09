@@ -43,7 +43,7 @@ impl ::std::fmt::Debug for GroupingConfiguration {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GroupingConfiguration");
         formatter.field("criteria", &"*** Sensitive Data Redacted ***");
-        formatter.field("values", &self.values);
+        formatter.field("values", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -135,7 +135,7 @@ impl ::std::fmt::Debug for GroupingConfigurationBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GroupingConfigurationBuilder");
         formatter.field("criteria", &"*** Sensitive Data Redacted ***");
-        formatter.field("values", &self.values);
+        formatter.field("values", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

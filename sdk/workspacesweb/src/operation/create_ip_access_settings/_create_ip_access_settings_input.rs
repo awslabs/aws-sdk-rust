@@ -59,7 +59,7 @@ impl ::std::fmt::Debug for CreateIpAccessSettingsInput {
         let mut formatter = f.debug_struct("CreateIpAccessSettingsInput");
         formatter.field("display_name", &"*** Sensitive Data Redacted ***");
         formatter.field("description", &"*** Sensitive Data Redacted ***");
-        formatter.field("tags", &self.tags);
+        formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("customer_managed_key", &self.customer_managed_key);
         formatter.field("additional_encryption_context", &self.additional_encryption_context);
         formatter.field("ip_rules", &"*** Sensitive Data Redacted ***");
@@ -238,7 +238,7 @@ impl ::std::fmt::Debug for CreateIpAccessSettingsInputBuilder {
         let mut formatter = f.debug_struct("CreateIpAccessSettingsInputBuilder");
         formatter.field("display_name", &"*** Sensitive Data Redacted ***");
         formatter.field("description", &"*** Sensitive Data Redacted ***");
-        formatter.field("tags", &self.tags);
+        formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("customer_managed_key", &self.customer_managed_key);
         formatter.field("additional_encryption_context", &self.additional_encryption_context);
         formatter.field("ip_rules", &"*** Sensitive Data Redacted ***");

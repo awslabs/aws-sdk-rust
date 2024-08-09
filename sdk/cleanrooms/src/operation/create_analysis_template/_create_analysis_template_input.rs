@@ -59,7 +59,7 @@ impl ::std::fmt::Debug for CreateAnalysisTemplateInput {
         formatter.field("format", &self.format);
         formatter.field("source", &"*** Sensitive Data Redacted ***");
         formatter.field("tags", &self.tags);
-        formatter.field("analysis_parameters", &self.analysis_parameters);
+        formatter.field("analysis_parameters", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -224,7 +224,7 @@ impl ::std::fmt::Debug for CreateAnalysisTemplateInputBuilder {
         formatter.field("format", &self.format);
         formatter.field("source", &"*** Sensitive Data Redacted ***");
         formatter.field("tags", &self.tags);
-        formatter.field("analysis_parameters", &self.analysis_parameters);
+        formatter.field("analysis_parameters", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

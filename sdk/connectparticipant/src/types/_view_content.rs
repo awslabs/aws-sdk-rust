@@ -32,7 +32,7 @@ impl ::std::fmt::Debug for ViewContent {
         let mut formatter = f.debug_struct("ViewContent");
         formatter.field("input_schema", &"*** Sensitive Data Redacted ***");
         formatter.field("template", &"*** Sensitive Data Redacted ***");
-        formatter.field("actions", &self.actions);
+        formatter.field("actions", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -114,7 +114,7 @@ impl ::std::fmt::Debug for ViewContentBuilder {
         let mut formatter = f.debug_struct("ViewContentBuilder");
         formatter.field("input_schema", &"*** Sensitive Data Redacted ***");
         formatter.field("template", &"*** Sensitive Data Redacted ***");
-        formatter.field("actions", &self.actions);
+        formatter.field("actions", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

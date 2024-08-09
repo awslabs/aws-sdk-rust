@@ -48,7 +48,7 @@ impl ::std::fmt::Debug for GetSchemaOutput {
         formatter.field("schema", &"*** Sensitive Data Redacted ***");
         formatter.field("created_date", &self.created_date);
         formatter.field("last_updated_date", &self.last_updated_date);
-        formatter.field("namespaces", &self.namespaces);
+        formatter.field("namespaces", &"*** Sensitive Data Redacted ***");
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -210,7 +210,7 @@ impl ::std::fmt::Debug for GetSchemaOutputBuilder {
         formatter.field("schema", &"*** Sensitive Data Redacted ***");
         formatter.field("created_date", &self.created_date);
         formatter.field("last_updated_date", &self.last_updated_date);
-        formatter.field("namespaces", &self.namespaces);
+        formatter.field("namespaces", &"*** Sensitive Data Redacted ***");
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

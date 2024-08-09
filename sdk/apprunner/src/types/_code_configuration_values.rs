@@ -66,8 +66,8 @@ impl ::std::fmt::Debug for CodeConfigurationValues {
         formatter.field("build_command", &"*** Sensitive Data Redacted ***");
         formatter.field("start_command", &"*** Sensitive Data Redacted ***");
         formatter.field("port", &self.port);
-        formatter.field("runtime_environment_variables", &self.runtime_environment_variables);
-        formatter.field("runtime_environment_secrets", &self.runtime_environment_secrets);
+        formatter.field("runtime_environment_variables", &"*** Sensitive Data Redacted ***");
+        formatter.field("runtime_environment_secrets", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -255,8 +255,8 @@ impl ::std::fmt::Debug for CodeConfigurationValuesBuilder {
         formatter.field("build_command", &"*** Sensitive Data Redacted ***");
         formatter.field("start_command", &"*** Sensitive Data Redacted ***");
         formatter.field("port", &self.port);
-        formatter.field("runtime_environment_variables", &self.runtime_environment_variables);
-        formatter.field("runtime_environment_secrets", &self.runtime_environment_secrets);
+        formatter.field("runtime_environment_variables", &"*** Sensitive Data Redacted ***");
+        formatter.field("runtime_environment_secrets", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

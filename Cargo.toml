@@ -52,6 +52,7 @@ members = [
     "sdk/aws-sig-auth",
     "sdk/aws-sigv4",
     "sdk/aws-smithy-async",
+    "sdk/aws-smithy-cbor",
     "sdk/aws-smithy-checksums",
     "sdk/aws-smithy-client",
     "sdk/aws-smithy-compression",

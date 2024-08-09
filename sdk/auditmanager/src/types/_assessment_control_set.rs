@@ -69,7 +69,7 @@ impl ::std::fmt::Debug for AssessmentControlSet {
         formatter.field("status", &self.status);
         formatter.field("roles", &"*** Sensitive Data Redacted ***");
         formatter.field("controls", &self.controls);
-        formatter.field("delegations", &self.delegations);
+        formatter.field("delegations", &"*** Sensitive Data Redacted ***");
         formatter.field("system_evidence_count", &self.system_evidence_count);
         formatter.field("manual_evidence_count", &self.manual_evidence_count);
         formatter.finish()
@@ -248,7 +248,7 @@ impl ::std::fmt::Debug for AssessmentControlSetBuilder {
         formatter.field("status", &self.status);
         formatter.field("roles", &"*** Sensitive Data Redacted ***");
         formatter.field("controls", &self.controls);
-        formatter.field("delegations", &self.delegations);
+        formatter.field("delegations", &"*** Sensitive Data Redacted ***");
         formatter.field("system_evidence_count", &self.system_evidence_count);
         formatter.field("manual_evidence_count", &self.manual_evidence_count);
         formatter.finish()

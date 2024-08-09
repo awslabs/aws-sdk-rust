@@ -70,7 +70,7 @@ impl ::std::fmt::Debug for PipeSourceSelfManagedKafkaParameters {
         let mut formatter = f.debug_struct("PipeSourceSelfManagedKafkaParameters");
         formatter.field("topic_name", &"*** Sensitive Data Redacted ***");
         formatter.field("starting_position", &self.starting_position);
-        formatter.field("additional_bootstrap_servers", &self.additional_bootstrap_servers);
+        formatter.field("additional_bootstrap_servers", &"*** Sensitive Data Redacted ***");
         formatter.field("batch_size", &self.batch_size);
         formatter.field("maximum_batching_window_in_seconds", &self.maximum_batching_window_in_seconds);
         formatter.field("consumer_group_id", &"*** Sensitive Data Redacted ***");
@@ -264,7 +264,7 @@ impl ::std::fmt::Debug for PipeSourceSelfManagedKafkaParametersBuilder {
         let mut formatter = f.debug_struct("PipeSourceSelfManagedKafkaParametersBuilder");
         formatter.field("topic_name", &"*** Sensitive Data Redacted ***");
         formatter.field("starting_position", &self.starting_position);
-        formatter.field("additional_bootstrap_servers", &self.additional_bootstrap_servers);
+        formatter.field("additional_bootstrap_servers", &"*** Sensitive Data Redacted ***");
         formatter.field("batch_size", &self.batch_size);
         formatter.field("maximum_batching_window_in_seconds", &self.maximum_batching_window_in_seconds);
         formatter.field("consumer_group_id", &"*** Sensitive Data Redacted ***");

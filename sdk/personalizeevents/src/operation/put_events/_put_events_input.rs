@@ -38,7 +38,7 @@ impl ::std::fmt::Debug for PutEventsInput {
         formatter.field("tracking_id", &self.tracking_id);
         formatter.field("user_id", &"*** Sensitive Data Redacted ***");
         formatter.field("session_id", &self.session_id);
-        formatter.field("event_list", &self.event_list);
+        formatter.field("event_list", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -139,7 +139,7 @@ impl ::std::fmt::Debug for PutEventsInputBuilder {
         formatter.field("tracking_id", &self.tracking_id);
         formatter.field("user_id", &"*** Sensitive Data Redacted ***");
         formatter.field("session_id", &self.session_id);
-        formatter.field("event_list", &self.event_list);
+        formatter.field("event_list", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

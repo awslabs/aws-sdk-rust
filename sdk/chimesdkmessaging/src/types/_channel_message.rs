@@ -122,7 +122,7 @@ impl ::std::fmt::Debug for ChannelMessage {
         formatter.field("redacted", &self.redacted);
         formatter.field("persistence", &self.persistence);
         formatter.field("status", &self.status);
-        formatter.field("message_attributes", &self.message_attributes);
+        formatter.field("message_attributes", &"*** Sensitive Data Redacted ***");
         formatter.field("sub_channel_id", &self.sub_channel_id);
         formatter.field("content_type", &"*** Sensitive Data Redacted ***");
         formatter.field("target", &self.target);
@@ -436,7 +436,7 @@ impl ::std::fmt::Debug for ChannelMessageBuilder {
         formatter.field("redacted", &self.redacted);
         formatter.field("persistence", &self.persistence);
         formatter.field("status", &self.status);
-        formatter.field("message_attributes", &self.message_attributes);
+        formatter.field("message_attributes", &"*** Sensitive Data Redacted ***");
         formatter.field("sub_channel_id", &self.sub_channel_id);
         formatter.field("content_type", &"*** Sensitive Data Redacted ***");
         formatter.field("target", &self.target);

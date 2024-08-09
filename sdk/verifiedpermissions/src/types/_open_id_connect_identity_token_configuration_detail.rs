@@ -27,7 +27,7 @@ impl ::std::fmt::Debug for OpenIdConnectIdentityTokenConfigurationDetail {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("OpenIdConnectIdentityTokenConfigurationDetail");
         formatter.field("principal_id_claim", &"*** Sensitive Data Redacted ***");
-        formatter.field("client_ids", &self.client_ids);
+        formatter.field("client_ids", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -92,7 +92,7 @@ impl ::std::fmt::Debug for OpenIdConnectIdentityTokenConfigurationDetailBuilder 
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("OpenIdConnectIdentityTokenConfigurationDetailBuilder");
         formatter.field("principal_id_claim", &"*** Sensitive Data Redacted ***");
-        formatter.field("client_ids", &self.client_ids);
+        formatter.field("client_ids", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

@@ -53,7 +53,7 @@ impl ::std::fmt::Debug for PipeTargetRedshiftDataParameters {
         formatter.field("db_user", &"*** Sensitive Data Redacted ***");
         formatter.field("statement_name", &"*** Sensitive Data Redacted ***");
         formatter.field("with_event", &self.with_event);
-        formatter.field("sqls", &self.sqls);
+        formatter.field("sqls", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -200,7 +200,7 @@ impl ::std::fmt::Debug for PipeTargetRedshiftDataParametersBuilder {
         formatter.field("db_user", &"*** Sensitive Data Redacted ***");
         formatter.field("statement_name", &"*** Sensitive Data Redacted ***");
         formatter.field("with_event", &self.with_event);
-        formatter.field("sqls", &self.sqls);
+        formatter.field("sqls", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

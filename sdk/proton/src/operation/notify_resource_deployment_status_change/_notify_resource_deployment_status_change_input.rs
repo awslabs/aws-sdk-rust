@@ -43,7 +43,7 @@ impl ::std::fmt::Debug for NotifyResourceDeploymentStatusChangeInput {
         let mut formatter = f.debug_struct("NotifyResourceDeploymentStatusChangeInput");
         formatter.field("resource_arn", &self.resource_arn);
         formatter.field("status", &self.status);
-        formatter.field("outputs", &self.outputs);
+        formatter.field("outputs", &"*** Sensitive Data Redacted ***");
         formatter.field("deployment_id", &self.deployment_id);
         formatter.field("status_message", &"*** Sensitive Data Redacted ***");
         formatter.finish()
@@ -167,7 +167,7 @@ impl ::std::fmt::Debug for NotifyResourceDeploymentStatusChangeInputBuilder {
         let mut formatter = f.debug_struct("NotifyResourceDeploymentStatusChangeInputBuilder");
         formatter.field("resource_arn", &self.resource_arn);
         formatter.field("status", &self.status);
-        formatter.field("outputs", &self.outputs);
+        formatter.field("outputs", &"*** Sensitive Data Redacted ***");
         formatter.field("deployment_id", &self.deployment_id);
         formatter.field("status_message", &"*** Sensitive Data Redacted ***");
         formatter.finish()

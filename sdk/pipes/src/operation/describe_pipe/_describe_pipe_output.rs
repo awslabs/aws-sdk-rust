@@ -127,7 +127,7 @@ impl ::std::fmt::Debug for DescribePipeOutput {
         formatter.field("target", &self.target);
         formatter.field("target_parameters", &self.target_parameters);
         formatter.field("role_arn", &self.role_arn);
-        formatter.field("tags", &self.tags);
+        formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("creation_time", &self.creation_time);
         formatter.field("last_modified_time", &self.last_modified_time);
         formatter.field("log_configuration", &self.log_configuration);
@@ -467,7 +467,7 @@ impl ::std::fmt::Debug for DescribePipeOutputBuilder {
         formatter.field("target", &self.target);
         formatter.field("target_parameters", &self.target_parameters);
         formatter.field("role_arn", &self.role_arn);
-        formatter.field("tags", &self.tags);
+        formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("creation_time", &self.creation_time);
         formatter.field("last_modified_time", &self.last_modified_time);
         formatter.field("log_configuration", &self.log_configuration);

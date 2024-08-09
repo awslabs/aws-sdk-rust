@@ -43,7 +43,7 @@ impl GeofenceGeometry {
 impl ::std::fmt::Debug for GeofenceGeometry {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GeofenceGeometry");
-        formatter.field("polygon", &self.polygon);
+        formatter.field("polygon", &"*** Sensitive Data Redacted ***");
         formatter.field("circle", &"*** Sensitive Data Redacted ***");
         formatter.field("geobuf", &"*** Sensitive Data Redacted ***");
         formatter.finish()
@@ -140,7 +140,7 @@ impl GeofenceGeometryBuilder {
 impl ::std::fmt::Debug for GeofenceGeometryBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GeofenceGeometryBuilder");
-        formatter.field("polygon", &self.polygon);
+        formatter.field("polygon", &"*** Sensitive Data Redacted ***");
         formatter.field("circle", &"*** Sensitive Data Redacted ***");
         formatter.field("geobuf", &"*** Sensitive Data Redacted ***");
         formatter.finish()

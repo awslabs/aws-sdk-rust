@@ -62,7 +62,7 @@ impl ::std::fmt::Debug for CreateProxySessionInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateProxySessionInput");
         formatter.field("voice_connector_id", &self.voice_connector_id);
-        formatter.field("participant_phone_numbers", &self.participant_phone_numbers);
+        formatter.field("participant_phone_numbers", &"*** Sensitive Data Redacted ***");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("expiry_minutes", &self.expiry_minutes);
         formatter.field("capabilities", &self.capabilities);
@@ -239,7 +239,7 @@ impl ::std::fmt::Debug for CreateProxySessionInputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateProxySessionInputBuilder");
         formatter.field("voice_connector_id", &self.voice_connector_id);
-        formatter.field("participant_phone_numbers", &self.participant_phone_numbers);
+        formatter.field("participant_phone_numbers", &"*** Sensitive Data Redacted ***");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("expiry_minutes", &self.expiry_minutes);
         formatter.field("capabilities", &self.capabilities);

@@ -296,7 +296,6 @@ pub(crate) mod shape_update_function_url_config_input;
 pub fn parse_event_stream_error_metadata(
     payload: &::bytes::Bytes,
 ) -> Result<::aws_smithy_types::error::metadata::Builder, ::aws_smithy_json::deserialize::error::DeserializeError> {
-    // Note: HeaderMap::new() doesn't allocate
     crate::json_errors::parse_error_metadata(payload, &::aws_smithy_runtime_api::http::Headers::new())
 }
 

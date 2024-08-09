@@ -42,8 +42,8 @@ impl ::std::fmt::Debug for CreateSipMediaApplicationCallInput {
         formatter.field("from_phone_number", &"*** Sensitive Data Redacted ***");
         formatter.field("to_phone_number", &"*** Sensitive Data Redacted ***");
         formatter.field("sip_media_application_id", &self.sip_media_application_id);
-        formatter.field("sip_headers", &self.sip_headers);
-        formatter.field("arguments_map", &self.arguments_map);
+        formatter.field("sip_headers", &"*** Sensitive Data Redacted ***");
+        formatter.field("arguments_map", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -178,8 +178,8 @@ impl ::std::fmt::Debug for CreateSipMediaApplicationCallInputBuilder {
         formatter.field("from_phone_number", &"*** Sensitive Data Redacted ***");
         formatter.field("to_phone_number", &"*** Sensitive Data Redacted ***");
         formatter.field("sip_media_application_id", &self.sip_media_application_id);
-        formatter.field("sip_headers", &self.sip_headers);
-        formatter.field("arguments_map", &self.arguments_map);
+        formatter.field("sip_headers", &"*** Sensitive Data Redacted ***");
+        formatter.field("arguments_map", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

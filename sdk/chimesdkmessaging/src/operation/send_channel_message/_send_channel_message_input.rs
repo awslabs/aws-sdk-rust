@@ -97,7 +97,7 @@ impl ::std::fmt::Debug for SendChannelMessageInput {
         formatter.field("client_request_token", &"*** Sensitive Data Redacted ***");
         formatter.field("chime_bearer", &self.chime_bearer);
         formatter.field("push_notification", &self.push_notification);
-        formatter.field("message_attributes", &self.message_attributes);
+        formatter.field("message_attributes", &"*** Sensitive Data Redacted ***");
         formatter.field("sub_channel_id", &self.sub_channel_id);
         formatter.field("content_type", &"*** Sensitive Data Redacted ***");
         formatter.field("target", &self.target);
@@ -358,7 +358,7 @@ impl ::std::fmt::Debug for SendChannelMessageInputBuilder {
         formatter.field("client_request_token", &"*** Sensitive Data Redacted ***");
         formatter.field("chime_bearer", &self.chime_bearer);
         formatter.field("push_notification", &self.push_notification);
-        formatter.field("message_attributes", &self.message_attributes);
+        formatter.field("message_attributes", &"*** Sensitive Data Redacted ***");
         formatter.field("sub_channel_id", &self.sub_channel_id);
         formatter.field("content_type", &"*** Sensitive Data Redacted ***");
         formatter.field("target", &self.target);

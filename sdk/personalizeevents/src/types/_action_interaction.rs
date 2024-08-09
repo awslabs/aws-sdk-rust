@@ -112,7 +112,7 @@ impl ::std::fmt::Debug for ActionInteraction {
         formatter.field("event_type", &self.event_type);
         formatter.field("event_id", &self.event_id);
         formatter.field("recommendation_id", &self.recommendation_id);
-        formatter.field("impression", &self.impression);
+        formatter.field("impression", &"*** Sensitive Data Redacted ***");
         formatter.field("properties", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
@@ -379,7 +379,7 @@ impl ::std::fmt::Debug for ActionInteractionBuilder {
         formatter.field("event_type", &self.event_type);
         formatter.field("event_id", &self.event_id);
         formatter.field("recommendation_id", &self.recommendation_id);
-        formatter.field("impression", &self.impression);
+        formatter.field("impression", &"*** Sensitive Data Redacted ***");
         formatter.field("properties", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }

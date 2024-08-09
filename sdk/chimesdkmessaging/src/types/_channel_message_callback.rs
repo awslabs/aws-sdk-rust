@@ -59,7 +59,7 @@ impl ::std::fmt::Debug for ChannelMessageCallback {
         formatter.field("content", &"*** Sensitive Data Redacted ***");
         formatter.field("metadata", &"*** Sensitive Data Redacted ***");
         formatter.field("push_notification", &self.push_notification);
-        formatter.field("message_attributes", &self.message_attributes);
+        formatter.field("message_attributes", &"*** Sensitive Data Redacted ***");
         formatter.field("sub_channel_id", &self.sub_channel_id);
         formatter.field("content_type", &"*** Sensitive Data Redacted ***");
         formatter.finish()
@@ -222,7 +222,7 @@ impl ::std::fmt::Debug for ChannelMessageCallbackBuilder {
         formatter.field("content", &"*** Sensitive Data Redacted ***");
         formatter.field("metadata", &"*** Sensitive Data Redacted ***");
         formatter.field("push_notification", &self.push_notification);
-        formatter.field("message_attributes", &self.message_attributes);
+        formatter.field("message_attributes", &"*** Sensitive Data Redacted ***");
         formatter.field("sub_channel_id", &self.sub_channel_id);
         formatter.field("content_type", &"*** Sensitive Data Redacted ***");
         formatter.finish()

@@ -32,7 +32,7 @@ impl ::std::fmt::Debug for SparkSubmit {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SparkSubmit");
         formatter.field("entry_point", &"*** Sensitive Data Redacted ***");
-        formatter.field("entry_point_arguments", &self.entry_point_arguments);
+        formatter.field("entry_point_arguments", &"*** Sensitive Data Redacted ***");
         formatter.field("spark_submit_parameters", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
@@ -122,7 +122,7 @@ impl ::std::fmt::Debug for SparkSubmitBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SparkSubmitBuilder");
         formatter.field("entry_point", &"*** Sensitive Data Redacted ***");
-        formatter.field("entry_point_arguments", &self.entry_point_arguments);
+        formatter.field("entry_point_arguments", &"*** Sensitive Data Redacted ***");
         formatter.field("spark_submit_parameters", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }

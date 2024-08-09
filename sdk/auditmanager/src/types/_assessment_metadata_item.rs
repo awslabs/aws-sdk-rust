@@ -67,7 +67,7 @@ impl ::std::fmt::Debug for AssessmentMetadataItem {
         formatter.field("compliance_type", &"*** Sensitive Data Redacted ***");
         formatter.field("status", &self.status);
         formatter.field("roles", &"*** Sensitive Data Redacted ***");
-        formatter.field("delegations", &self.delegations);
+        formatter.field("delegations", &"*** Sensitive Data Redacted ***");
         formatter.field("creation_time", &self.creation_time);
         formatter.field("last_updated", &self.last_updated);
         formatter.finish()
@@ -240,7 +240,7 @@ impl ::std::fmt::Debug for AssessmentMetadataItemBuilder {
         formatter.field("compliance_type", &"*** Sensitive Data Redacted ***");
         formatter.field("status", &self.status);
         formatter.field("roles", &"*** Sensitive Data Redacted ***");
-        formatter.field("delegations", &self.delegations);
+        formatter.field("delegations", &"*** Sensitive Data Redacted ***");
         formatter.field("creation_time", &self.creation_time);
         formatter.field("last_updated", &self.last_updated);
         formatter.finish()

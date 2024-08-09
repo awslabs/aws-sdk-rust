@@ -141,8 +141,8 @@ impl ::std::fmt::Debug for GetGuardrailOutput {
         formatter.field("contextual_grounding_policy", &self.contextual_grounding_policy);
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
-        formatter.field("status_reasons", &self.status_reasons);
-        formatter.field("failure_recommendations", &self.failure_recommendations);
+        formatter.field("status_reasons", &"*** Sensitive Data Redacted ***");
+        formatter.field("failure_recommendations", &"*** Sensitive Data Redacted ***");
         formatter.field("blocked_input_messaging", &"*** Sensitive Data Redacted ***");
         formatter.field("blocked_outputs_messaging", &"*** Sensitive Data Redacted ***");
         formatter.field("kms_key_arn", &self.kms_key_arn);
@@ -567,8 +567,8 @@ impl ::std::fmt::Debug for GetGuardrailOutputBuilder {
         formatter.field("contextual_grounding_policy", &self.contextual_grounding_policy);
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
-        formatter.field("status_reasons", &self.status_reasons);
-        formatter.field("failure_recommendations", &self.failure_recommendations);
+        formatter.field("status_reasons", &"*** Sensitive Data Redacted ***");
+        formatter.field("failure_recommendations", &"*** Sensitive Data Redacted ***");
         formatter.field("blocked_input_messaging", &"*** Sensitive Data Redacted ***");
         formatter.field("blocked_outputs_messaging", &"*** Sensitive Data Redacted ***");
         formatter.field("kms_key_arn", &self.kms_key_arn);

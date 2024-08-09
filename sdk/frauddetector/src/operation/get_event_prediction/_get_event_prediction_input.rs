@@ -80,9 +80,9 @@ impl ::std::fmt::Debug for GetEventPredictionInput {
         formatter.field("detector_version_id", &self.detector_version_id);
         formatter.field("event_id", &self.event_id);
         formatter.field("event_type_name", &self.event_type_name);
-        formatter.field("entities", &self.entities);
+        formatter.field("entities", &"*** Sensitive Data Redacted ***");
         formatter.field("event_timestamp", &self.event_timestamp);
-        formatter.field("event_variables", &self.event_variables);
+        formatter.field("event_variables", &"*** Sensitive Data Redacted ***");
         formatter.field("external_model_endpoint_data_blobs", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
@@ -304,9 +304,9 @@ impl ::std::fmt::Debug for GetEventPredictionInputBuilder {
         formatter.field("detector_version_id", &self.detector_version_id);
         formatter.field("event_id", &self.event_id);
         formatter.field("event_type_name", &self.event_type_name);
-        formatter.field("entities", &self.entities);
+        formatter.field("entities", &"*** Sensitive Data Redacted ***");
         formatter.field("event_timestamp", &self.event_timestamp);
-        formatter.field("event_variables", &self.event_variables);
+        formatter.field("event_variables", &"*** Sensitive Data Redacted ***");
         formatter.field("external_model_endpoint_data_blobs", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }

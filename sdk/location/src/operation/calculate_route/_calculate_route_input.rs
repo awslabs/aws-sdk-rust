@@ -198,7 +198,7 @@ impl ::std::fmt::Debug for CalculateRouteInput {
         formatter.field("calculator_name", &self.calculator_name);
         formatter.field("departure_position", &"*** Sensitive Data Redacted ***");
         formatter.field("destination_position", &"*** Sensitive Data Redacted ***");
-        formatter.field("waypoint_positions", &self.waypoint_positions);
+        formatter.field("waypoint_positions", &"*** Sensitive Data Redacted ***");
         formatter.field("travel_mode", &self.travel_mode);
         formatter.field("departure_time", &self.departure_time);
         formatter.field("depart_now", &self.depart_now);
@@ -626,7 +626,7 @@ impl ::std::fmt::Debug for CalculateRouteInputBuilder {
         formatter.field("calculator_name", &self.calculator_name);
         formatter.field("departure_position", &"*** Sensitive Data Redacted ***");
         formatter.field("destination_position", &"*** Sensitive Data Redacted ***");
-        formatter.field("waypoint_positions", &self.waypoint_positions);
+        formatter.field("waypoint_positions", &"*** Sensitive Data Redacted ***");
         formatter.field("travel_mode", &self.travel_mode);
         formatter.field("departure_time", &self.departure_time);
         formatter.field("depart_now", &self.depart_now);

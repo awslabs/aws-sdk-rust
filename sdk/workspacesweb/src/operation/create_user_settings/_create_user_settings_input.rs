@@ -96,7 +96,7 @@ impl ::std::fmt::Debug for CreateUserSettingsInput {
         formatter.field("download_allowed", &self.download_allowed);
         formatter.field("upload_allowed", &self.upload_allowed);
         formatter.field("print_allowed", &self.print_allowed);
-        formatter.field("tags", &self.tags);
+        formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("disconnect_timeout_in_minutes", &self.disconnect_timeout_in_minutes);
         formatter.field("idle_disconnect_timeout_in_minutes", &self.idle_disconnect_timeout_in_minutes);
         formatter.field("client_token", &self.client_token);
@@ -377,7 +377,7 @@ impl ::std::fmt::Debug for CreateUserSettingsInputBuilder {
         formatter.field("download_allowed", &self.download_allowed);
         formatter.field("upload_allowed", &self.upload_allowed);
         formatter.field("print_allowed", &self.print_allowed);
-        formatter.field("tags", &self.tags);
+        formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("disconnect_timeout_in_minutes", &self.disconnect_timeout_in_minutes);
         formatter.field("idle_disconnect_timeout_in_minutes", &self.idle_disconnect_timeout_in_minutes);
         formatter.field("client_token", &self.client_token);

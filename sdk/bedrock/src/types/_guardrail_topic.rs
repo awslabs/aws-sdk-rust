@@ -45,7 +45,7 @@ impl ::std::fmt::Debug for GuardrailTopic {
         let mut formatter = f.debug_struct("GuardrailTopic");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("definition", &"*** Sensitive Data Redacted ***");
-        formatter.field("examples", &self.examples);
+        formatter.field("examples", &"*** Sensitive Data Redacted ***");
         formatter.field("r#type", &self.r#type);
         formatter.finish()
     }
@@ -159,7 +159,7 @@ impl ::std::fmt::Debug for GuardrailTopicBuilder {
         let mut formatter = f.debug_struct("GuardrailTopicBuilder");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("definition", &"*** Sensitive Data Redacted ***");
-        formatter.field("examples", &self.examples);
+        formatter.field("examples", &"*** Sensitive Data Redacted ***");
         formatter.field("r#type", &self.r#type);
         formatter.finish()
     }

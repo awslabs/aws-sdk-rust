@@ -25,7 +25,7 @@ impl ::std::fmt::Debug for SearchableContactAttributesCriteria {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SearchableContactAttributesCriteria");
         formatter.field("key", &"*** Sensitive Data Redacted ***");
-        formatter.field("values", &self.values);
+        formatter.field("values", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -104,7 +104,7 @@ impl ::std::fmt::Debug for SearchableContactAttributesCriteriaBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SearchableContactAttributesCriteriaBuilder");
         formatter.field("key", &"*** Sensitive Data Redacted ***");
-        formatter.field("values", &self.values);
+        formatter.field("values", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

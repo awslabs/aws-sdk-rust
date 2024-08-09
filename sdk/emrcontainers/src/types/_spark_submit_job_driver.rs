@@ -32,7 +32,7 @@ impl ::std::fmt::Debug for SparkSubmitJobDriver {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SparkSubmitJobDriver");
         formatter.field("entry_point", &"*** Sensitive Data Redacted ***");
-        formatter.field("entry_point_arguments", &self.entry_point_arguments);
+        formatter.field("entry_point_arguments", &"*** Sensitive Data Redacted ***");
         formatter.field("spark_submit_parameters", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
@@ -122,7 +122,7 @@ impl ::std::fmt::Debug for SparkSubmitJobDriverBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SparkSubmitJobDriverBuilder");
         formatter.field("entry_point", &"*** Sensitive Data Redacted ***");
-        formatter.field("entry_point_arguments", &self.entry_point_arguments);
+        formatter.field("entry_point_arguments", &"*** Sensitive Data Redacted ***");
         formatter.field("spark_submit_parameters", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }

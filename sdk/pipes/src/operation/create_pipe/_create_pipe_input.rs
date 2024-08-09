@@ -93,7 +93,7 @@ impl ::std::fmt::Debug for CreatePipeInput {
         formatter.field("target", &self.target);
         formatter.field("target_parameters", &self.target_parameters);
         formatter.field("role_arn", &self.role_arn);
-        formatter.field("tags", &self.tags);
+        formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("log_configuration", &self.log_configuration);
         formatter.finish()
     }
@@ -335,7 +335,7 @@ impl ::std::fmt::Debug for CreatePipeInputBuilder {
         formatter.field("target", &self.target);
         formatter.field("target_parameters", &self.target_parameters);
         formatter.field("role_arn", &self.role_arn);
-        formatter.field("tags", &self.tags);
+        formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("log_configuration", &self.log_configuration);
         formatter.finish()
     }

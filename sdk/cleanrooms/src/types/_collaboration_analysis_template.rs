@@ -116,7 +116,7 @@ impl ::std::fmt::Debug for CollaborationAnalysisTemplate {
         formatter.field("schema", &self.schema);
         formatter.field("format", &self.format);
         formatter.field("source", &"*** Sensitive Data Redacted ***");
-        formatter.field("analysis_parameters", &self.analysis_parameters);
+        formatter.field("analysis_parameters", &"*** Sensitive Data Redacted ***");
         formatter.field("validations", &self.validations);
         formatter.finish()
     }
@@ -457,7 +457,7 @@ impl ::std::fmt::Debug for CollaborationAnalysisTemplateBuilder {
         formatter.field("schema", &self.schema);
         formatter.field("format", &self.format);
         formatter.field("source", &"*** Sensitive Data Redacted ***");
-        formatter.field("analysis_parameters", &self.analysis_parameters);
+        formatter.field("analysis_parameters", &"*** Sensitive Data Redacted ***");
         formatter.field("validations", &self.validations);
         formatter.finish()
     }

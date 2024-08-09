@@ -24,7 +24,7 @@ impl ::std::fmt::Debug for UntagResourceInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInput");
         formatter.field("resource_arn", &"*** Sensitive Data Redacted ***");
-        formatter.field("tag_keys", &self.tag_keys);
+        formatter.field("tag_keys", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -92,7 +92,7 @@ impl ::std::fmt::Debug for UntagResourceInputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UntagResourceInputBuilder");
         formatter.field("resource_arn", &"*** Sensitive Data Redacted ***");
-        formatter.field("tag_keys", &self.tag_keys);
+        formatter.field("tag_keys", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

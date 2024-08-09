@@ -296,8 +296,8 @@ mod upload_archive_test {
         let expected_headers = [("X-Amz-Glacier-Version", "2012-06-01")];
         ::aws_smithy_protocol_test::assert_ok(::aws_smithy_protocol_test::validate_headers(http_request.headers(), expected_headers));
         let body = http_request.body().bytes().expect("body should be strict");
-        // No body
-        ::pretty_assertions::assert_eq!(::std::str::from_utf8(body).unwrap(), "");
+        // No body.
+        ::pretty_assertions::assert_eq!(&body, &bytes::Bytes::new());
         let uri: ::http::Uri = http_request.uri().parse().expect("invalid URI sent");
         ::pretty_assertions::assert_eq!(http_request.method(), "POST", "method was incorrect");
         ::pretty_assertions::assert_eq!(uri.path(), "/foo/vaults/bar/archives", "path was incorrect");
@@ -373,8 +373,8 @@ mod upload_archive_test {
         let expected_headers = [("X-Amz-Glacier-Version", "2012-06-01")];
         ::aws_smithy_protocol_test::assert_ok(::aws_smithy_protocol_test::validate_headers(http_request.headers(), expected_headers));
         let body = http_request.body().bytes().expect("body should be strict");
-        // No body
-        ::pretty_assertions::assert_eq!(::std::str::from_utf8(body).unwrap(), "");
+        // No body.
+        ::pretty_assertions::assert_eq!(&body, &bytes::Bytes::new());
         let uri: ::http::Uri = http_request.uri().parse().expect("invalid URI sent");
         ::pretty_assertions::assert_eq!(http_request.method(), "POST", "method was incorrect");
         ::pretty_assertions::assert_eq!(uri.path(), "/-/vaults/bar/archives", "path was incorrect");
@@ -406,8 +406,8 @@ mod upload_archive_test {
         let expected_headers = [("X-Amz-Glacier-Version", "2012-06-01")];
         ::aws_smithy_protocol_test::assert_ok(::aws_smithy_protocol_test::validate_headers(http_request.headers(), expected_headers));
         let body = http_request.body().bytes().expect("body should be strict");
-        // No body
-        ::pretty_assertions::assert_eq!(::std::str::from_utf8(body).unwrap(), "");
+        // No body.
+        ::pretty_assertions::assert_eq!(&body, &bytes::Bytes::new());
         let uri: ::http::Uri = http_request.uri().parse().expect("invalid URI sent");
         ::pretty_assertions::assert_eq!(http_request.method(), "POST", "method was incorrect");
         ::pretty_assertions::assert_eq!(uri.path(), "/-/vaults/bar/archives", "path was incorrect");

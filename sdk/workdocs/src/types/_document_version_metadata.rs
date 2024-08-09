@@ -99,8 +99,8 @@ impl ::std::fmt::Debug for DocumentVersionMetadata {
         formatter.field("content_created_timestamp", &self.content_created_timestamp);
         formatter.field("content_modified_timestamp", &self.content_modified_timestamp);
         formatter.field("creator_id", &self.creator_id);
-        formatter.field("thumbnail", &self.thumbnail);
-        formatter.field("source", &self.source);
+        formatter.field("thumbnail", &"*** Sensitive Data Redacted ***");
+        formatter.field("source", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -363,8 +363,8 @@ impl ::std::fmt::Debug for DocumentVersionMetadataBuilder {
         formatter.field("content_created_timestamp", &self.content_created_timestamp);
         formatter.field("content_modified_timestamp", &self.content_modified_timestamp);
         formatter.field("creator_id", &self.creator_id);
-        formatter.field("thumbnail", &self.thumbnail);
-        formatter.field("source", &self.source);
+        formatter.field("thumbnail", &"*** Sensitive Data Redacted ***");
+        formatter.field("source", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
