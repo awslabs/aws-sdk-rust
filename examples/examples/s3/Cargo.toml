@@ -30,7 +30,7 @@ thiserror = "1.0"
 tokio-stream = "0.1.8"
 tracing = "0.1.37"
 serde_json = "1"
-aws-config= { version = "1.5.4", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
+aws-config= { version = "1.5.5", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
 aws-sdk-s3= { version = "1.43.0", path = "../../../sdk/s3", features = ["rt-tokio"] }
 aws-smithy-runtime= { version = "1.6.2", path = "../../../sdk/aws-smithy-runtime" }
 aws-smithy-runtime-api= { version = "1.7.1", path = "../../../sdk/aws-smithy-runtime-api", features = ["client"] }
