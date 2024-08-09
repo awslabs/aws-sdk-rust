@@ -2487,6 +2487,10 @@ source_hash = 'b5fd805d7a60bb9668523cd80b53b2c45e7f0e747d1560fc41522c9fbf783df2'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = 'd08f576b0bc9146b45af732b63e0a8923b13fe09816d385e32b4c6d9e503de81'
+
+[release]
+tag = 'release-2024-08-09'
+
 [release.crates]
 aws-config = '1.5.5'
 aws-http = '0.60.6'
