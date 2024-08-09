@@ -21,7 +21,7 @@ tracing-bunyan-formatter = "0.3.4"
 aws-config= { version = "1.5.5", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
 aws-sdk-glue= { version = "1.52.0", path = "../../../sdk/glue" }
 aws-sdk-s3= { version = "1.43.0", path = "../../../sdk/s3" }
-aws-http= { version = "0.60.5", path = "../../../sdk/aws-http" }
+aws-http= { version = "0.60.6", path = "../../../sdk/aws-http" }
 aws-smithy-types= { version = "1.2.0", path = "../../../sdk/aws-smithy-types" }
 aws-types= { version = "1.3.3", path = "../../../sdk/aws-types" }
 

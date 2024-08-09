@@ -31,18 +31,20 @@ pub type InvalidMetadataValue = aws_runtime::user_agent::InvalidMetadataValue;
 )]
 pub type AdditionalMetadata = aws_runtime::user_agent::AdditionalMetadata;
 
-/// Use aws_runtime::user_agent::FeatureMetadata instead.
+/// Use aws_runtime::user_agent::BusinessMetric instead.
 #[deprecated(
     since = "0.60.2",
-    note = "Use aws_runtime::user_agent::FeatureMetadata instead."
+    note = "Use aws_runtime::user_agent::BusinessMetric instead."
 )]
+#[allow(deprecated)]
 pub type FeatureMetadata = aws_runtime::user_agent::FeatureMetadata;
 
-/// Use aws_runtime::user_agent::ConfigMetadata instead.
+/// Use aws_runtime::user_agent::BusinessMetric instead.
 #[deprecated(
     since = "0.60.2",
-    note = "Use aws_runtime::user_agent::ConfigMetadata instead."
+    note = "Use aws_runtime::user_agent::BusinessMetric instead."
 )]
+#[allow(deprecated)]
 pub type ConfigMetadata = aws_runtime::user_agent::ConfigMetadata;
 
 /// Use aws_runtime::user_agent::FrameworkMetadata instead.
