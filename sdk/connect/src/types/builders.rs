@@ -131,6 +131,20 @@ pub use crate::types::_evaluation_form_numeric_question_option::EvaluationFormNu
 
 pub use crate::types::_evaluation_form_section::EvaluationFormSectionBuilder;
 
+pub use crate::types::_routing_criteria_input::RoutingCriteriaInputBuilder;
+
+pub use crate::types::_routing_criteria_input_step::RoutingCriteriaInputStepBuilder;
+
+pub use crate::types::_expression::ExpressionBuilder;
+
+pub use crate::types::_attribute_condition::AttributeConditionBuilder;
+
+pub use crate::types::_match_criteria::MatchCriteriaBuilder;
+
+pub use crate::types::_agents_criteria::AgentsCriteriaBuilder;
+
+pub use crate::types::_routing_criteria_input_step_expiry::RoutingCriteriaInputStepExpiryBuilder;
+
 pub use crate::types::_problem_detail::ProblemDetailBuilder;
 
 pub use crate::types::_evaluation_note::EvaluationNoteBuilder;
@@ -540,14 +554,6 @@ pub use crate::types::_device_info::DeviceInfoBuilder;
 pub use crate::types::_routing_criteria::RoutingCriteriaBuilder;
 
 pub use crate::types::_step::StepBuilder;
-
-pub use crate::types::_expression::ExpressionBuilder;
-
-pub use crate::types::_attribute_condition::AttributeConditionBuilder;
-
-pub use crate::types::_match_criteria::MatchCriteriaBuilder;
-
-pub use crate::types::_agents_criteria::AgentsCriteriaBuilder;
 
 pub use crate::types::_expiry::ExpiryBuilder;
 

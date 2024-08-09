@@ -211,6 +211,20 @@ pub use crate::types::_evaluation_form_question_type::EvaluationFormQuestionType
 
 pub use crate::types::_evaluation_form_section::EvaluationFormSection;
 
+pub use crate::types::_routing_criteria_input::RoutingCriteriaInput;
+
+pub use crate::types::_routing_criteria_input_step::RoutingCriteriaInputStep;
+
+pub use crate::types::_expression::Expression;
+
+pub use crate::types::_attribute_condition::AttributeCondition;
+
+pub use crate::types::_match_criteria::MatchCriteria;
+
+pub use crate::types::_agents_criteria::AgentsCriteria;
+
+pub use crate::types::_routing_criteria_input_step_expiry::RoutingCriteriaInputStepExpiry;
+
 pub use crate::types::_contact_flow_module_state::ContactFlowModuleState;
 
 pub use crate::types::_problem_detail::ProblemDetail;
@@ -758,14 +772,6 @@ pub use crate::types::_routing_criteria::RoutingCriteria;
 pub use crate::types::_step::Step;
 
 pub use crate::types::_routing_criteria_step_status::RoutingCriteriaStepStatus;
-
-pub use crate::types::_expression::Expression;
-
-pub use crate::types::_attribute_condition::AttributeCondition;
-
-pub use crate::types::_match_criteria::MatchCriteria;
-
-pub use crate::types::_agents_criteria::AgentsCriteria;
 
 pub use crate::types::_expiry::Expiry;
 
@@ -1390,6 +1396,12 @@ mod _resource_tags_search_criteria;
 mod _resource_type;
 
 mod _routing_criteria;
+
+mod _routing_criteria_input;
+
+mod _routing_criteria_input_step;
+
+mod _routing_criteria_input_step_expiry;
 
 mod _routing_criteria_step_status;
 

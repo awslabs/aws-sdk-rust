@@ -11,6 +11,8 @@ pub struct UpdateContactRoutingDataInput {
     pub queue_time_adjustment_seconds: ::std::option::Option<i32>,
     /// <p>Priority of the contact in the queue. The default priority for new contacts is 5. You can raise the priority of a contact compared to other contacts in the queue by assigning them a higher priority, such as 1 or 2.</p>
     pub queue_priority: ::std::option::Option<i64>,
+    /// <p>Updates the routing criteria on the contact. These properties can be used to change how a  contact is routed within the queue.</p>
+    pub routing_criteria: ::std::option::Option<crate::types::RoutingCriteriaInput>,
 }
 impl UpdateContactRoutingDataInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -29,6 +31,10 @@ impl UpdateContactRoutingDataInput {
     pub fn queue_priority(&self) -> ::std::option::Option<i64> {
         self.queue_priority
     }
+    /// <p>Updates the routing criteria on the contact. These properties can be used to change how a  contact is routed within the queue.</p>
+    pub fn routing_criteria(&self) -> ::std::option::Option<&crate::types::RoutingCriteriaInput> {
+        self.routing_criteria.as_ref()
+    }
 }
 impl UpdateContactRoutingDataInput {
     /// Creates a new builder-style object to manufacture [`UpdateContactRoutingDataInput`](crate::operation::update_contact_routing_data::UpdateContactRoutingDataInput).
@@ -45,6 +51,7 @@ pub struct UpdateContactRoutingDataInputBuilder {
     pub(crate) contact_id: ::std::option::Option<::std::string::String>,
     pub(crate) queue_time_adjustment_seconds: ::std::option::Option<i32>,
     pub(crate) queue_priority: ::std::option::Option<i64>,
+    pub(crate) routing_criteria: ::std::option::Option<crate::types::RoutingCriteriaInput>,
 }
 impl UpdateContactRoutingDataInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -105,6 +112,20 @@ impl UpdateContactRoutingDataInputBuilder {
     pub fn get_queue_priority(&self) -> &::std::option::Option<i64> {
         &self.queue_priority
     }
+    /// <p>Updates the routing criteria on the contact. These properties can be used to change how a  contact is routed within the queue.</p>
+    pub fn routing_criteria(mut self, input: crate::types::RoutingCriteriaInput) -> Self {
+        self.routing_criteria = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Updates the routing criteria on the contact. These properties can be used to change how a  contact is routed within the queue.</p>
+    pub fn set_routing_criteria(mut self, input: ::std::option::Option<crate::types::RoutingCriteriaInput>) -> Self {
+        self.routing_criteria = input;
+        self
+    }
+    /// <p>Updates the routing criteria on the contact. These properties can be used to change how a  contact is routed within the queue.</p>
+    pub fn get_routing_criteria(&self) -> &::std::option::Option<crate::types::RoutingCriteriaInput> {
+        &self.routing_criteria
+    }
     /// Consumes the builder and constructs a [`UpdateContactRoutingDataInput`](crate::operation::update_contact_routing_data::UpdateContactRoutingDataInput).
     pub fn build(
         self,
@@ -117,6 +138,7 @@ impl UpdateContactRoutingDataInputBuilder {
             contact_id: self.contact_id,
             queue_time_adjustment_seconds: self.queue_time_adjustment_seconds,
             queue_priority: self.queue_priority,
+            routing_criteria: self.routing_criteria,
         })
     }
 }

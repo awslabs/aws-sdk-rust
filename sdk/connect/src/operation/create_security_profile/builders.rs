@@ -23,6 +23,7 @@ impl crate::operation::create_security_profile::builders::CreateSecurityProfileI
 /// Fluent builder constructing a request to `CreateSecurityProfile`.
 ///
 /// <p>Creates a security profile.</p>
+/// <p>For information about security profiles, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html">Security Profiles</a> in the <i>Amazon Connect Administrator Guide</i>. For a mapping of the API name and user interface name of the security profile permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile permissions</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSecurityProfileFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

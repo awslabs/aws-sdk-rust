@@ -22,7 +22,7 @@ impl crate::operation::delete_queue::builders::DeleteQueueInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteQueue`.
 ///
-/// <p>Deletes a queue.</p>
+/// <p>Deletes a queue. It isn't possible to delete a queue by using the Amazon Connect admin website.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteQueueFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

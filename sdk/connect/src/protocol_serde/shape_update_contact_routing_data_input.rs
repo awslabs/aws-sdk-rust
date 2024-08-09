@@ -15,5 +15,11 @@ pub fn ser_update_contact_routing_data_input_input(
             ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
+    if let Some(var_3) = &input.routing_criteria {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("RoutingCriteria").start_object();
+        crate::protocol_serde::shape_routing_criteria_input::ser_routing_criteria_input(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }

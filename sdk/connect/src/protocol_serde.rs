@@ -1133,6 +1133,8 @@ pub(crate) mod shape_reference_summary_list;
 
 pub(crate) mod shape_resource_tags_search_criteria;
 
+pub(crate) mod shape_routing_criteria_input;
+
 pub(crate) mod shape_routing_profile;
 
 pub(crate) mod shape_routing_profile_list;
@@ -1443,6 +1445,8 @@ pub(crate) mod shape_required_task_template_fields;
 
 pub(crate) mod shape_routing_criteria;
 
+pub(crate) mod shape_routing_criteria_input_step;
+
 pub(crate) mod shape_routing_profile_queue_config_summary;
 
 pub(crate) mod shape_routing_profile_summary;
@@ -1571,6 +1575,8 @@ pub(crate) mod shape_evaluation_form_question_type_properties;
 
 pub(crate) mod shape_evaluation_score;
 
+pub(crate) mod shape_expression;
+
 pub(crate) mod shape_field_value;
 
 pub(crate) mod shape_hierarchy_groups;
@@ -1607,6 +1613,8 @@ pub(crate) mod shape_real_time_contact_analysis_segment_post_contact_summary;
 
 pub(crate) mod shape_real_time_contact_analysis_segment_transcript;
 
+pub(crate) mod shape_routing_criteria_input_step_expiry;
+
 pub(crate) mod shape_routing_profile_reference;
 
 pub(crate) mod shape_searchable_contact_attributes_criteria;
@@ -1634,6 +1642,8 @@ pub(crate) mod shape_action_summary;
 pub(crate) mod shape_agent_contact_reference;
 
 pub(crate) mod shape_agent_hierarchy_group;
+
+pub(crate) mod shape_attribute_condition;
 
 pub(crate) mod shape_audio_features;
 
@@ -1687,9 +1697,9 @@ pub(crate) mod shape_evaluation_form_single_select_question_option;
 
 pub(crate) mod shape_expiry;
 
-pub(crate) mod shape_expression;
-
 pub(crate) mod shape_field_values;
+
+pub(crate) mod shape_match_criteria;
 
 pub(crate) mod shape_potential_audio_quality_issues;
 
@@ -1701,7 +1711,7 @@ pub(crate) mod shape_real_time_contact_analysis_character_intervals;
 
 pub(crate) mod shape_real_time_contact_analysis_issue_detected;
 
-pub(crate) mod shape_attribute_condition;
+pub(crate) mod shape_agents_criteria;
 
 pub(crate) mod shape_evaluation_form_single_select_question_automation_option;
 
@@ -1727,15 +1737,11 @@ pub(crate) mod shape_evaluation_form_numeric_question_option_list;
 
 pub(crate) mod shape_evaluation_form_single_select_question_option_list;
 
-pub(crate) mod shape_match_criteria;
-
 pub(crate) mod shape_real_time_contact_analysis_point_of_interest;
 
 pub(crate) mod shape_real_time_contact_analysis_transcript_item_with_content;
 
 pub(crate) mod shape_single_select_question_rule_category_automation;
-
-pub(crate) mod shape_agents_criteria;
 
 pub(crate) mod shape_evaluation_form_single_select_question_automation_option_list;
 

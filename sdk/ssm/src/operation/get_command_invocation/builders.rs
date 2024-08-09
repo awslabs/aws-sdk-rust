@@ -22,7 +22,7 @@ impl crate::operation::get_command_invocation::builders::GetCommandInvocationInp
 }
 /// Fluent builder constructing a request to `GetCommandInvocation`.
 ///
-/// <p>Returns detailed information about command execution for an invocation or plugin.</p>
+/// <p>Returns detailed information about command execution for an invocation or plugin. The Run Command API follows an eventual consistency model, due to the distributed nature of the system supporting the API. This means that the result of an API command you run that affects your resources might not be immediately visible to all subsequent commands you run. You should keep this in mind when you carry out an API command that immediately follows a previous API command.</p>
 /// <p><code>GetCommandInvocation</code> only gives the execution status of a plugin in a document. To get the command execution status on a specific managed node, use <code>ListCommandInvocations</code>. To get the command execution status across managed nodes, use <code>ListCommands</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetCommandInvocationFluentBuilder {

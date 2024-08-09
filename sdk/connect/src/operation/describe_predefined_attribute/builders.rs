@@ -22,7 +22,7 @@ impl crate::operation::describe_predefined_attribute::builders::DescribePredefin
 }
 /// Fluent builder constructing a request to `DescribePredefinedAttribute`.
 ///
-/// <p>Describes a predefined attribute for the specified Amazon Connect instance.</p>
+/// <p>Describes a predefined attribute for the specified Amazon Connect instance. <i>Predefined attributes</i> are attributes in an Amazon Connect instance that can be used to route contacts to an agent or pools of agents within a queue. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/predefined-attributes.html">Create predefined attributes for routing contacts to agents</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribePredefinedAttributeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

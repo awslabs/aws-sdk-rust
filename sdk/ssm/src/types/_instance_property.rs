@@ -16,7 +16,7 @@ pub struct InstanceProperty {
     pub key_name: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the node.</p>
     pub instance_state: ::std::option::Option<::std::string::String>,
-    /// <p>The CPU architecture of the node. For example, x86_64.</p>
+    /// <p>The CPU architecture of the node. For example, <code>x86_64</code>.</p>
     pub architecture: ::std::option::Option<::std::string::String>,
     /// <p>The public IPv4 address assigned to the node. If a public IPv4 address isn't assigned to the node, this value is blank.</p>
     pub ip_address: ::std::option::Option<::std::string::String>,
@@ -82,7 +82,7 @@ impl InstanceProperty {
     pub fn instance_state(&self) -> ::std::option::Option<&str> {
         self.instance_state.as_deref()
     }
-    /// <p>The CPU architecture of the node. For example, x86_64.</p>
+    /// <p>The CPU architecture of the node. For example, <code>x86_64</code>.</p>
     pub fn architecture(&self) -> ::std::option::Option<&str> {
         self.architecture.as_deref()
     }
@@ -321,17 +321,17 @@ impl InstancePropertyBuilder {
     pub fn get_instance_state(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_state
     }
-    /// <p>The CPU architecture of the node. For example, x86_64.</p>
+    /// <p>The CPU architecture of the node. For example, <code>x86_64</code>.</p>
     pub fn architecture(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.architecture = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The CPU architecture of the node. For example, x86_64.</p>
+    /// <p>The CPU architecture of the node. For example, <code>x86_64</code>.</p>
     pub fn set_architecture(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.architecture = input;
         self
     }
-    /// <p>The CPU architecture of the node. For example, x86_64.</p>
+    /// <p>The CPU architecture of the node. For example, <code>x86_64</code>.</p>
     pub fn get_architecture(&self) -> &::std::option::Option<::std::string::String> {
         &self.architecture
     }

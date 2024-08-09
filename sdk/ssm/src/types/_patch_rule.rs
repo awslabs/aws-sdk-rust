@@ -8,10 +8,16 @@ pub struct PatchRule {
     pub patch_filter_group: ::std::option::Option<crate::types::PatchFilterGroup>,
     /// <p>A compliance severity level for all approved patches in a patch baseline.</p>
     pub compliance_level: ::std::option::Option<crate::types::PatchComplianceLevel>,
-    /// <p>The number of days after the release date of each patch matched by the rule that the patch is marked as approved in the patch baseline. For example, a value of <code>7</code> means that patches are approved seven days after they are released. Not supported on Debian Server or Ubuntu Server.</p>
+    /// <p>The number of days after the release date of each patch matched by the rule that the patch is marked as approved in the patch baseline. For example, a value of <code>7</code> means that patches are approved seven days after they are released.</p><note>
+    /// <p>This parameter is marked as not required, but your request must include a value for either <code>ApproveAfterDays</code> or <code>ApproveUntilDate</code>.</p>
+    /// </note>
+    /// <p>Not supported for Debian Server or Ubuntu Server.</p>
     pub approve_after_days: ::std::option::Option<i32>,
-    /// <p>The cutoff date for auto approval of released patches. Any patches released on or before this date are installed automatically. Not supported on Debian Server or Ubuntu Server.</p>
-    /// <p>Enter dates in the format <code>YYYY-MM-DD</code>. For example, <code>2021-12-31</code>.</p>
+    /// <p>The cutoff date for auto approval of released patches. Any patches released on or before this date are installed automatically.</p>
+    /// <p>Enter dates in the format <code>YYYY-MM-DD</code>. For example, <code>2021-12-31</code>.</p><note>
+    /// <p>This parameter is marked as not required, but your request must include a value for either <code>ApproveUntilDate</code> or <code>ApproveAfterDays</code>.</p>
+    /// </note>
+    /// <p>Not supported for Debian Server or Ubuntu Server.</p>
     pub approve_until_date: ::std::option::Option<::std::string::String>,
     /// <p>For managed nodes identified by the approval rule filters, enables a patch baseline to apply non-security updates available in the specified repository. The default value is <code>false</code>. Applies to Linux managed nodes only.</p>
     pub enable_non_security: ::std::option::Option<bool>,
@@ -25,12 +31,18 @@ impl PatchRule {
     pub fn compliance_level(&self) -> ::std::option::Option<&crate::types::PatchComplianceLevel> {
         self.compliance_level.as_ref()
     }
-    /// <p>The number of days after the release date of each patch matched by the rule that the patch is marked as approved in the patch baseline. For example, a value of <code>7</code> means that patches are approved seven days after they are released. Not supported on Debian Server or Ubuntu Server.</p>
+    /// <p>The number of days after the release date of each patch matched by the rule that the patch is marked as approved in the patch baseline. For example, a value of <code>7</code> means that patches are approved seven days after they are released.</p><note>
+    /// <p>This parameter is marked as not required, but your request must include a value for either <code>ApproveAfterDays</code> or <code>ApproveUntilDate</code>.</p>
+    /// </note>
+    /// <p>Not supported for Debian Server or Ubuntu Server.</p>
     pub fn approve_after_days(&self) -> ::std::option::Option<i32> {
         self.approve_after_days
     }
-    /// <p>The cutoff date for auto approval of released patches. Any patches released on or before this date are installed automatically. Not supported on Debian Server or Ubuntu Server.</p>
-    /// <p>Enter dates in the format <code>YYYY-MM-DD</code>. For example, <code>2021-12-31</code>.</p>
+    /// <p>The cutoff date for auto approval of released patches. Any patches released on or before this date are installed automatically.</p>
+    /// <p>Enter dates in the format <code>YYYY-MM-DD</code>. For example, <code>2021-12-31</code>.</p><note>
+    /// <p>This parameter is marked as not required, but your request must include a value for either <code>ApproveUntilDate</code> or <code>ApproveAfterDays</code>.</p>
+    /// </note>
+    /// <p>Not supported for Debian Server or Ubuntu Server.</p>
     pub fn approve_until_date(&self) -> ::std::option::Option<&str> {
         self.approve_until_date.as_deref()
     }
@@ -86,34 +98,52 @@ impl PatchRuleBuilder {
     pub fn get_compliance_level(&self) -> &::std::option::Option<crate::types::PatchComplianceLevel> {
         &self.compliance_level
     }
-    /// <p>The number of days after the release date of each patch matched by the rule that the patch is marked as approved in the patch baseline. For example, a value of <code>7</code> means that patches are approved seven days after they are released. Not supported on Debian Server or Ubuntu Server.</p>
+    /// <p>The number of days after the release date of each patch matched by the rule that the patch is marked as approved in the patch baseline. For example, a value of <code>7</code> means that patches are approved seven days after they are released.</p><note>
+    /// <p>This parameter is marked as not required, but your request must include a value for either <code>ApproveAfterDays</code> or <code>ApproveUntilDate</code>.</p>
+    /// </note>
+    /// <p>Not supported for Debian Server or Ubuntu Server.</p>
     pub fn approve_after_days(mut self, input: i32) -> Self {
         self.approve_after_days = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of days after the release date of each patch matched by the rule that the patch is marked as approved in the patch baseline. For example, a value of <code>7</code> means that patches are approved seven days after they are released. Not supported on Debian Server or Ubuntu Server.</p>
+    /// <p>The number of days after the release date of each patch matched by the rule that the patch is marked as approved in the patch baseline. For example, a value of <code>7</code> means that patches are approved seven days after they are released.</p><note>
+    /// <p>This parameter is marked as not required, but your request must include a value for either <code>ApproveAfterDays</code> or <code>ApproveUntilDate</code>.</p>
+    /// </note>
+    /// <p>Not supported for Debian Server or Ubuntu Server.</p>
     pub fn set_approve_after_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.approve_after_days = input;
         self
     }
-    /// <p>The number of days after the release date of each patch matched by the rule that the patch is marked as approved in the patch baseline. For example, a value of <code>7</code> means that patches are approved seven days after they are released. Not supported on Debian Server or Ubuntu Server.</p>
+    /// <p>The number of days after the release date of each patch matched by the rule that the patch is marked as approved in the patch baseline. For example, a value of <code>7</code> means that patches are approved seven days after they are released.</p><note>
+    /// <p>This parameter is marked as not required, but your request must include a value for either <code>ApproveAfterDays</code> or <code>ApproveUntilDate</code>.</p>
+    /// </note>
+    /// <p>Not supported for Debian Server or Ubuntu Server.</p>
     pub fn get_approve_after_days(&self) -> &::std::option::Option<i32> {
         &self.approve_after_days
     }
-    /// <p>The cutoff date for auto approval of released patches. Any patches released on or before this date are installed automatically. Not supported on Debian Server or Ubuntu Server.</p>
-    /// <p>Enter dates in the format <code>YYYY-MM-DD</code>. For example, <code>2021-12-31</code>.</p>
+    /// <p>The cutoff date for auto approval of released patches. Any patches released on or before this date are installed automatically.</p>
+    /// <p>Enter dates in the format <code>YYYY-MM-DD</code>. For example, <code>2021-12-31</code>.</p><note>
+    /// <p>This parameter is marked as not required, but your request must include a value for either <code>ApproveUntilDate</code> or <code>ApproveAfterDays</code>.</p>
+    /// </note>
+    /// <p>Not supported for Debian Server or Ubuntu Server.</p>
     pub fn approve_until_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.approve_until_date = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The cutoff date for auto approval of released patches. Any patches released on or before this date are installed automatically. Not supported on Debian Server or Ubuntu Server.</p>
-    /// <p>Enter dates in the format <code>YYYY-MM-DD</code>. For example, <code>2021-12-31</code>.</p>
+    /// <p>The cutoff date for auto approval of released patches. Any patches released on or before this date are installed automatically.</p>
+    /// <p>Enter dates in the format <code>YYYY-MM-DD</code>. For example, <code>2021-12-31</code>.</p><note>
+    /// <p>This parameter is marked as not required, but your request must include a value for either <code>ApproveUntilDate</code> or <code>ApproveAfterDays</code>.</p>
+    /// </note>
+    /// <p>Not supported for Debian Server or Ubuntu Server.</p>
     pub fn set_approve_until_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.approve_until_date = input;
         self
     }
-    /// <p>The cutoff date for auto approval of released patches. Any patches released on or before this date are installed automatically. Not supported on Debian Server or Ubuntu Server.</p>
-    /// <p>Enter dates in the format <code>YYYY-MM-DD</code>. For example, <code>2021-12-31</code>.</p>
+    /// <p>The cutoff date for auto approval of released patches. Any patches released on or before this date are installed automatically.</p>
+    /// <p>Enter dates in the format <code>YYYY-MM-DD</code>. For example, <code>2021-12-31</code>.</p><note>
+    /// <p>This parameter is marked as not required, but your request must include a value for either <code>ApproveUntilDate</code> or <code>ApproveAfterDays</code>.</p>
+    /// </note>
+    /// <p>Not supported for Debian Server or Ubuntu Server.</p>
     pub fn get_approve_until_date(&self) -> &::std::option::Option<::std::string::String> {
         &self.approve_until_date
     }
