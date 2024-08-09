@@ -17,7 +17,8 @@ pub fn is_error<B>(response: &http::Response<B>) -> bool {
 }
 
 fn sanitize_error_code(error_code: &str) -> &str {
-    // Trim a trailing URL from the error code, beginning with a `:`
+    // Trim a trailing URL from the error code, which is done by removing the longest suffix
+    // beginning with a `:`
     let error_code = match error_code.find(':') {
         Some(idx) => &error_code[..idx],
         None => error_code,

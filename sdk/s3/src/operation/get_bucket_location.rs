@@ -294,8 +294,12 @@ mod get_bucket_location_test {
 
         let parsed = de.deserialize_streaming(&mut http_response);
         let parsed = parsed.unwrap_or_else(|| {
-            let http_response =
-                http_response.map(|body| ::aws_smithy_types::body::SdkBody::from(::bytes::Bytes::copy_from_slice(body.bytes().unwrap())));
+            let http_response = http_response.map(|body| {
+                ::aws_smithy_types::body::SdkBody::from(::bytes::Bytes::copy_from_slice(&::aws_smithy_protocol_test::decode_body_data(
+                    body.bytes().unwrap(),
+                    ::aws_smithy_protocol_test::MediaType::from("application/xml"),
+                )))
+            });
             de.deserialize_nonstreaming(&http_response)
         });
         let parsed = parsed

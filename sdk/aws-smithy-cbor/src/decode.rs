@@ -82,6 +82,13 @@ impl DeserializeError {
         }
     }
 
+    /// Returns a custom error with an offset.
+    pub fn custom(message: impl Into<Cow<'static, str>>, at: usize) -> Self {
+        Self {
+            _inner: Error::message(message.into()).at(at),
+        }
+    }
+
     /// An unexpected type was encountered.
     // We handle this one when decoding sparse collections: we have to expect either a `null` or an
     // item, so we try decoding both.
@@ -223,8 +230,19 @@ impl<'b> Decoder<'b> {
                 "expected timestamp tag",
             )))
         } else {
+            // Values that are more granular than millisecond precision SHOULD be truncated to fit
+            // millisecond precision for epoch-seconds:
+            // https://smithy.io/2.0/spec/protocol-traits.html#timestamp-formats
+            //
+            // Without truncation, the `RpcV2CborDateTimeWithFractionalSeconds` protocol test would
+            // fail since the upstream test expect `123000000` in subsec but the decoded actual
+            // subsec would be `123000025`.
+            // https://github.com/smithy-lang/smithy/blob/6466fe77c65b8a17b219f0b0a60c767915205f95/smithy-protocol-tests/model/rpcv2Cbor/fractional-seconds.smithy#L17
             let epoch_seconds = self.decoder.f64().map_err(DeserializeError::new)?;
-            Ok(DateTime::from_secs_f64(epoch_seconds))
+            let mut result = DateTime::from_secs_f64(epoch_seconds);
+            let subsec_nanos = result.subsec_nanos();
+            result.set_subsec_nanos((subsec_nanos / 1_000_000) * 1_000_000);
+            Ok(result)
         }
     }
 }
@@ -279,6 +297,7 @@ where
 #[cfg(test)]
 mod tests {
     use crate::Decoder;
+    use aws_smithy_types::date_time::Format;
 
     #[test]
     fn test_definite_str_is_cow_borrowed() {
@@ -336,6 +355,25 @@ mod tests {
         assert_eq!(
             member,
             aws_smithy_types::Blob::new("indefinite-byte, chunked, on each comma".as_bytes())
+        );
+    }
+
+    #[test]
+    fn test_timestamp_should_be_truncated_to_fit_millisecond_precision() {
+        // Input bytes are derived from the `RpcV2CborDateTimeWithFractionalSeconds` protocol test,
+        // extracting portion representing a timestamp value.
+        let bytes = [
+            0xc1, 0xfb, 0x41, 0xcc, 0x37, 0xdb, 0x38, 0x0f, 0xbe, 0x77, 0xff,
+        ];
+        let mut decoder = Decoder::new(&bytes);
+        let timestamp = decoder.timestamp().expect("should decode timestamp");
+        assert_eq!(
+            timestamp,
+            aws_smithy_types::date_time::DateTime::from_str(
+                "2000-01-02T20:34:56.123Z",
+                Format::DateTime
+            )
+            .unwrap()
         );
     }
 }

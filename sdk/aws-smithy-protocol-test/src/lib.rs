@@ -23,6 +23,7 @@ use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
 use aws_smithy_runtime_api::http::Headers;
 use http::{HeaderMap, Uri};
 use pretty_assertions::Comparison;
+use std::borrow::Cow;
 use std::collections::HashSet;
 use std::fmt::{self, Debug};
 use thiserror::Error;
@@ -471,6 +472,17 @@ actual body in base64 (useful to update the protocol test):
         })
     } else {
         Ok(())
+    }
+}
+
+pub fn decode_body_data(body: &[u8], media_type: MediaType) -> Cow<'_, [u8]> {
+    match media_type {
+        MediaType::Cbor => Cow::Owned(
+            base64_simd::STANDARD
+                .decode_to_vec(body)
+                .expect("smithy protocol test `body` property is not properly base64 encoded"),
+        ),
+        _ => Cow::Borrowed(body),
     }
 }
 
