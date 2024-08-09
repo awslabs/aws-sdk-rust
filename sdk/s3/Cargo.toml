@@ -37,7 +37,7 @@ version = "1.2.1"
 
 [dependencies.aws-smithy-checksums]
 path = "../aws-smithy-checksums"
-version = "0.60.11"
+version = "0.60.12"
 
 [dependencies.aws-smithy-eventstream]
 path = "../aws-smithy-eventstream"
@@ -60,7 +60,7 @@ version = "1.6.2"
 [dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
 features = ["client", "http-02x"]
-version = "1.7.1"
+version = "1.7.2"
 
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
@@ -162,7 +162,7 @@ version = "1.6.2"
 [dev-dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
 features = ["test-util", "client", "http-02x"]
-version = "1.7.1"
+version = "1.7.2"
 
 [dev-dependencies.aws-smithy-types]
 path = "../aws-smithy-types"

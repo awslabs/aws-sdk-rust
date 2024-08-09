@@ -5,7 +5,7 @@
 
 //! Types for HTTP headers
 
-use crate::http::error::HttpError;
+use crate::http::error::{HttpError, NonUtf8Header};
 use std::borrow::Cow;
 use std::fmt::Debug;
 use std::str::FromStr;
@@ -181,12 +181,12 @@ impl TryFrom<http_02x::HeaderMap> for Headers {
     type Error = HttpError;
 
     fn try_from(value: http_02x::HeaderMap) -> Result<Self, Self::Error> {
-        if let Some(e) = value
-            .values()
-            .filter_map(|value| std::str::from_utf8(value.as_bytes()).err())
-            .next()
-        {
-            Err(HttpError::header_was_not_a_string(e))
+        if let Some(utf8_error) = value.iter().find_map(|(k, v)| {
+            std::str::from_utf8(v.as_bytes())
+                .err()
+                .map(|err| NonUtf8Header::new(k.as_str().to_owned(), v.as_bytes().to_vec(), err))
+        }) {
+            Err(HttpError::non_utf8_header(utf8_error))
         } else {
             let mut string_safe_headers: http_02x::HeaderMap<HeaderValue> = Default::default();
             string_safe_headers.extend(
@@ -206,12 +206,12 @@ impl TryFrom<http_1x::HeaderMap> for Headers {
     type Error = HttpError;
 
     fn try_from(value: http_1x::HeaderMap) -> Result<Self, Self::Error> {
-        if let Some(e) = value
-            .values()
-            .filter_map(|value| std::str::from_utf8(value.as_bytes()).err())
-            .next()
-        {
-            Err(HttpError::header_was_not_a_string(e))
+        if let Some(utf8_error) = value.iter().find_map(|(k, v)| {
+            std::str::from_utf8(v.as_bytes())
+                .err()
+                .map(|err| NonUtf8Header::new(k.as_str().to_owned(), v.as_bytes().to_vec(), err))
+        }) {
+            Err(HttpError::non_utf8_header(utf8_error))
         } else {
             let mut string_safe_headers: http_02x::HeaderMap<HeaderValue> = Default::default();
             string_safe_headers.extend(value.into_iter().map(|(k, v)| {
@@ -285,13 +285,23 @@ mod sealed {
         fn into_maybe_static(self) -> Result<MaybeStatic, HttpError> {
             Ok(Cow::Owned(
                 std::str::from_utf8(self.as_bytes())
-                    .map_err(HttpError::header_was_not_a_string)?
+                    .map_err(|err| {
+                        HttpError::non_utf8_header(NonUtf8Header::new_missing_name(
+                            self.as_bytes().to_vec(),
+                            err,
+                        ))
+                    })?
                     .to_string(),
             ))
         }
 
         fn as_str(&self) -> Result<&str, HttpError> {
-            std::str::from_utf8(self.as_bytes()).map_err(HttpError::header_was_not_a_string)
+            std::str::from_utf8(self.as_bytes()).map_err(|err| {
+                HttpError::non_utf8_header(NonUtf8Header::new_missing_name(
+                    self.as_bytes().to_vec(),
+                    err,
+                ))
+            })
         }
     }
 
@@ -315,7 +325,6 @@ mod sealed {
 
 mod header_value {
     use super::*;
-    use std::str::Utf8Error;
 
     /// HeaderValue type
     ///
@@ -334,16 +343,26 @@ mod header_value {
 
     impl HeaderValue {
         #[allow(dead_code)]
-        pub(crate) fn from_http02x(value: http_02x::HeaderValue) -> Result<Self, Utf8Error> {
-            let _ = std::str::from_utf8(value.as_bytes())?;
+        pub(crate) fn from_http02x(value: http_02x::HeaderValue) -> Result<Self, HttpError> {
+            let _ = std::str::from_utf8(value.as_bytes()).map_err(|err| {
+                HttpError::non_utf8_header(NonUtf8Header::new_missing_name(
+                    value.as_bytes().to_vec(),
+                    err,
+                ))
+            })?;
             Ok(Self {
                 _private: Inner::H0(value),
             })
         }
 
         #[allow(dead_code)]
-        pub(crate) fn from_http1x(value: http_1x::HeaderValue) -> Result<Self, Utf8Error> {
-            let _ = std::str::from_utf8(value.as_bytes())?;
+        pub(crate) fn from_http1x(value: http_1x::HeaderValue) -> Result<Self, HttpError> {
+            let _ = std::str::from_utf8(value.as_bytes()).map_err(|err| {
+                HttpError::non_utf8_header(NonUtf8Header::new_missing_name(
+                    value.as_bytes().to_vec(),
+                    err,
+                ))
+            })?;
             Ok(Self {
                 _private: Inner::H1(value),
             })
@@ -426,7 +445,7 @@ fn header_name(
                 Cow::Borrowed(s) if panic_safe => {
                     http_02x::HeaderName::try_from(s).map_err(HttpError::invalid_header_name)
                 }
-                Cow::Borrowed(staticc) => Ok(http_02x::HeaderName::from_static(staticc)),
+                Cow::Borrowed(static_s) => Ok(http_02x::HeaderName::from_static(static_s)),
                 Cow::Owned(s) => {
                     http_02x::HeaderName::try_from(s).map_err(HttpError::invalid_header_name)
                 }
@@ -445,7 +464,7 @@ fn header_value(value: MaybeStatic, panic_safe: bool) -> Result<HeaderValue, Htt
             http_02x::HeaderValue::try_from(s).map_err(HttpError::invalid_header_value)?
         }
     };
-    HeaderValue::from_http02x(header).map_err(HttpError::new)
+    HeaderValue::from_http02x(header)
 }
 
 #[cfg(test)]

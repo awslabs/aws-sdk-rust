@@ -42,7 +42,7 @@ version = "1.6.2"
 [dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
 features = ["client", "http-02x", "http-auth"]
-version = "1.7.1"
+version = "1.7.2"
 
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
@@ -100,7 +100,7 @@ version = "1.6.2"
 [dev-dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
 features = ["test-util"]
-version = "1.7.1"
+version = "1.7.2"
 
 [dev-dependencies.aws-smithy-types]
 path = "../aws-smithy-types"

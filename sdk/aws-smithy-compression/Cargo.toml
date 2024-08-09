@@ -29,7 +29,7 @@ version = "1.2.0"
 
 [dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
-version = "1.7.1"
+version = "1.7.2"
 
 [dependencies.http-0-2]
 package = "http"

@@ -80,16 +80,14 @@ impl Uri {
         let endpoint = endpoint.into_parts();
         let authority = endpoint
             .authority
-            .ok_or_else(|| HttpError::new("endpoint must contain authority"))?;
-        let scheme = endpoint
-            .scheme
-            .ok_or_else(|| HttpError::new("endpoint must have scheme"))?;
+            .ok_or_else(HttpError::missing_authority)?;
+        let scheme = endpoint.scheme.ok_or_else(HttpError::missing_scheme)?;
         let new_uri = http_02x::Uri::builder()
             .authority(authority)
             .scheme(scheme)
             .path_and_query(merge_paths(endpoint.path_and_query, &self.parsed).as_ref())
             .build()
-            .map_err(HttpError::new)?;
+            .map_err(HttpError::invalid_uri_parts)?;
         self.as_string = new_uri.to_string();
         self.parsed = ParsedUri::H0(new_uri);
         Ok(())

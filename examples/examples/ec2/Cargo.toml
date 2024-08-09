@@ -11,7 +11,7 @@ tracing = "0.1.40"
 mockall = "0.13.0"
 inquire = "0.7.5"
 reqwest = "0.12.5"
-aws-smithy-runtime-api= { version = "1.7.1", path = "../../../sdk/aws-smithy-runtime-api" }
+aws-smithy-runtime-api= { version = "1.7.2", path = "../../../sdk/aws-smithy-runtime-api" }
 aws-sdk-ssm= { version = "1.42.0", path = "../../../sdk/ssm" }
 aws-smithy-async= { version = "1.2.1", path = "../../../sdk/aws-smithy-async" }
 aws-config= { version = "1.5.5", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
