@@ -10,7 +10,7 @@ pub struct NetworkInterfacePermission {
     pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Web Service.</p>
+    /// <p>The Amazon Web Services service.</p>
     pub aws_service: ::std::option::Option<::std::string::String>,
     /// <p>The type of permission.</p>
     pub permission: ::std::option::Option<crate::types::InterfacePermissionType>,
@@ -30,7 +30,7 @@ impl NetworkInterfacePermission {
     pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
-    /// <p>The Amazon Web Service.</p>
+    /// <p>The Amazon Web Services service.</p>
     pub fn aws_service(&self) -> ::std::option::Option<&str> {
         self.aws_service.as_deref()
     }
@@ -104,17 +104,17 @@ impl NetworkInterfacePermissionBuilder {
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_account_id
     }
-    /// <p>The Amazon Web Service.</p>
+    /// <p>The Amazon Web Services service.</p>
     pub fn aws_service(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_service = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Web Service.</p>
+    /// <p>The Amazon Web Services service.</p>
     pub fn set_aws_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_service = input;
         self
     }
-    /// <p>The Amazon Web Service.</p>
+    /// <p>The Amazon Web Services service.</p>
     pub fn get_aws_service(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_service
     }

@@ -43,6 +43,11 @@ pub fn ser_modify_capacity_reservation_input_input_input(
     if let Some(var_14) = &input.additional_info {
         scope_13.string(var_14);
     }
+    #[allow(unused_mut)]
+    let mut scope_15 = writer.prefix("InstanceMatchCriteria");
+    if let Some(var_16) = &input.instance_match_criteria {
+        scope_15.string(var_16.as_str());
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

@@ -137,17 +137,17 @@ impl CreateNetworkInterfacePermissionFluentBuilder {
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_aws_account_id()
     }
-    /// <p>The Amazon Web Service. Currently not supported.</p>
+    /// <p>The Amazon Web Services service. Currently not supported.</p>
     pub fn aws_service(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_service(input.into());
         self
     }
-    /// <p>The Amazon Web Service. Currently not supported.</p>
+    /// <p>The Amazon Web Services service. Currently not supported.</p>
     pub fn set_aws_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_service(input);
         self
     }
-    /// <p>The Amazon Web Service. Currently not supported.</p>
+    /// <p>The Amazon Web Services service. Currently not supported.</p>
     pub fn get_aws_service(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_aws_service()
     }

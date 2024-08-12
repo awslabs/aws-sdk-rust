@@ -51,6 +51,12 @@ pub fn ser_canvas_app_settings(
         crate::protocol_serde::shape_generative_ai_settings::ser_generative_ai_settings(&mut object_16, var_15)?;
         object_16.finish();
     }
+    if let Some(var_17) = &input.emr_serverless_settings {
+        #[allow(unused_mut)]
+        let mut object_18 = object.key("EmrServerlessSettings").start_object();
+        crate::protocol_serde::shape_emr_serverless_settings::ser_emr_serverless_settings(&mut object_18, var_17)?;
+        object_18.finish();
+    }
     Ok(())
 }
 
@@ -97,6 +103,11 @@ where
                         "GenerativeAiSettings" => {
                             builder = builder
                                 .set_generative_ai_settings(crate::protocol_serde::shape_generative_ai_settings::de_generative_ai_settings(tokens)?);
+                        }
+                        "EmrServerlessSettings" => {
+                            builder = builder.set_emr_serverless_settings(
+                                crate::protocol_serde::shape_emr_serverless_settings::de_emr_serverless_settings(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

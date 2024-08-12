@@ -30,6 +30,14 @@ pub struct MultiplexProgramPacketIdentifiersMap {
     pub timed_metadata_pid: ::std::option::Option<i32>,
     /// Placeholder documentation for __integer
     pub video_pid: ::std::option::Option<i32>,
+    /// Placeholder documentation for __integer
+    pub arib_captions_pid: ::std::option::Option<i32>,
+    /// Placeholder documentation for __listOf__integer
+    pub dvb_teletext_pids: ::std::option::Option<::std::vec::Vec<i32>>,
+    /// Placeholder documentation for __integer
+    pub ecm_pid: ::std::option::Option<i32>,
+    /// Placeholder documentation for __integer
+    pub smpte2038_pid: ::std::option::Option<i32>,
 }
 impl MultiplexProgramPacketIdentifiersMap {
     /// Placeholder documentation for __listOf__integer
@@ -92,6 +100,24 @@ impl MultiplexProgramPacketIdentifiersMap {
     pub fn video_pid(&self) -> ::std::option::Option<i32> {
         self.video_pid
     }
+    /// Placeholder documentation for __integer
+    pub fn arib_captions_pid(&self) -> ::std::option::Option<i32> {
+        self.arib_captions_pid
+    }
+    /// Placeholder documentation for __listOf__integer
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dvb_teletext_pids.is_none()`.
+    pub fn dvb_teletext_pids(&self) -> &[i32] {
+        self.dvb_teletext_pids.as_deref().unwrap_or_default()
+    }
+    /// Placeholder documentation for __integer
+    pub fn ecm_pid(&self) -> ::std::option::Option<i32> {
+        self.ecm_pid
+    }
+    /// Placeholder documentation for __integer
+    pub fn smpte2038_pid(&self) -> ::std::option::Option<i32> {
+        self.smpte2038_pid
+    }
 }
 impl MultiplexProgramPacketIdentifiersMap {
     /// Creates a new builder-style object to manufacture [`MultiplexProgramPacketIdentifiersMap`](crate::types::MultiplexProgramPacketIdentifiersMap).
@@ -117,6 +143,10 @@ pub struct MultiplexProgramPacketIdentifiersMapBuilder {
     pub(crate) scte35_pid: ::std::option::Option<i32>,
     pub(crate) timed_metadata_pid: ::std::option::Option<i32>,
     pub(crate) video_pid: ::std::option::Option<i32>,
+    pub(crate) arib_captions_pid: ::std::option::Option<i32>,
+    pub(crate) dvb_teletext_pids: ::std::option::Option<::std::vec::Vec<i32>>,
+    pub(crate) ecm_pid: ::std::option::Option<i32>,
+    pub(crate) smpte2038_pid: ::std::option::Option<i32>,
 }
 impl MultiplexProgramPacketIdentifiersMapBuilder {
     /// Appends an item to `audio_pids`.
@@ -325,6 +355,68 @@ impl MultiplexProgramPacketIdentifiersMapBuilder {
     pub fn get_video_pid(&self) -> &::std::option::Option<i32> {
         &self.video_pid
     }
+    /// Placeholder documentation for __integer
+    pub fn arib_captions_pid(mut self, input: i32) -> Self {
+        self.arib_captions_pid = ::std::option::Option::Some(input);
+        self
+    }
+    /// Placeholder documentation for __integer
+    pub fn set_arib_captions_pid(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.arib_captions_pid = input;
+        self
+    }
+    /// Placeholder documentation for __integer
+    pub fn get_arib_captions_pid(&self) -> &::std::option::Option<i32> {
+        &self.arib_captions_pid
+    }
+    /// Appends an item to `dvb_teletext_pids`.
+    ///
+    /// To override the contents of this collection use [`set_dvb_teletext_pids`](Self::set_dvb_teletext_pids).
+    ///
+    /// Placeholder documentation for __listOf__integer
+    pub fn dvb_teletext_pids(mut self, input: i32) -> Self {
+        let mut v = self.dvb_teletext_pids.unwrap_or_default();
+        v.push(input);
+        self.dvb_teletext_pids = ::std::option::Option::Some(v);
+        self
+    }
+    /// Placeholder documentation for __listOf__integer
+    pub fn set_dvb_teletext_pids(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
+        self.dvb_teletext_pids = input;
+        self
+    }
+    /// Placeholder documentation for __listOf__integer
+    pub fn get_dvb_teletext_pids(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+        &self.dvb_teletext_pids
+    }
+    /// Placeholder documentation for __integer
+    pub fn ecm_pid(mut self, input: i32) -> Self {
+        self.ecm_pid = ::std::option::Option::Some(input);
+        self
+    }
+    /// Placeholder documentation for __integer
+    pub fn set_ecm_pid(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.ecm_pid = input;
+        self
+    }
+    /// Placeholder documentation for __integer
+    pub fn get_ecm_pid(&self) -> &::std::option::Option<i32> {
+        &self.ecm_pid
+    }
+    /// Placeholder documentation for __integer
+    pub fn smpte2038_pid(mut self, input: i32) -> Self {
+        self.smpte2038_pid = ::std::option::Option::Some(input);
+        self
+    }
+    /// Placeholder documentation for __integer
+    pub fn set_smpte2038_pid(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.smpte2038_pid = input;
+        self
+    }
+    /// Placeholder documentation for __integer
+    pub fn get_smpte2038_pid(&self) -> &::std::option::Option<i32> {
+        &self.smpte2038_pid
+    }
     /// Consumes the builder and constructs a [`MultiplexProgramPacketIdentifiersMap`](crate::types::MultiplexProgramPacketIdentifiersMap).
     pub fn build(self) -> crate::types::MultiplexProgramPacketIdentifiersMap {
         crate::types::MultiplexProgramPacketIdentifiersMap {
@@ -341,6 +433,10 @@ impl MultiplexProgramPacketIdentifiersMapBuilder {
             scte35_pid: self.scte35_pid,
             timed_metadata_pid: self.timed_metadata_pid,
             video_pid: self.video_pid,
+            arib_captions_pid: self.arib_captions_pid,
+            dvb_teletext_pids: self.dvb_teletext_pids,
+            ecm_pid: self.ecm_pid,
+            smpte2038_pid: self.smpte2038_pid,
         }
     }
 }

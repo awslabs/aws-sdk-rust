@@ -69,5 +69,11 @@ pub fn ser_create_auto_ml_job_v2_input_input(
         crate::protocol_serde::shape_auto_ml_data_split_config::ser_auto_ml_data_split_config(&mut object_22, var_21)?;
         object_22.finish();
     }
+    if let Some(var_23) = &input.auto_ml_compute_config {
+        #[allow(unused_mut)]
+        let mut object_24 = object.key("AutoMLComputeConfig").start_object();
+        crate::protocol_serde::shape_auto_ml_compute_config::ser_auto_ml_compute_config(&mut object_24, var_23)?;
+        object_24.finish();
+    }
     Ok(())
 }

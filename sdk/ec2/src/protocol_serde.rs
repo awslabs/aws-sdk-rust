@@ -245,6 +245,10 @@ pub(crate) mod shape_copy_snapshot_input;
 
 pub(crate) mod shape_create_capacity_reservation;
 
+pub(crate) mod shape_create_capacity_reservation_by_splitting;
+
+pub(crate) mod shape_create_capacity_reservation_by_splitting_input;
+
 pub(crate) mod shape_create_capacity_reservation_fleet;
 
 pub(crate) mod shape_create_capacity_reservation_fleet_input;
@@ -2254,6 +2258,10 @@ pub(crate) mod shape_move_address_to_vpc_input;
 pub(crate) mod shape_move_byoip_cidr_to_ipam;
 
 pub(crate) mod shape_move_byoip_cidr_to_ipam_input;
+
+pub(crate) mod shape_move_capacity_reservation_instances;
+
+pub(crate) mod shape_move_capacity_reservation_instances_input;
 
 pub(crate) mod shape_provision_byoip_cidr;
 

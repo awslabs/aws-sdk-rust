@@ -199,6 +199,10 @@ pub(crate) fn de_describe_auto_ml_job_v2(
                 "SecurityConfig" => {
                     builder = builder.set_security_config(crate::protocol_serde::shape_auto_ml_security_config::de_auto_ml_security_config(tokens)?);
                 }
+                "AutoMLComputeConfig" => {
+                    builder =
+                        builder.set_auto_ml_compute_config(crate::protocol_serde::shape_auto_ml_compute_config::de_auto_ml_compute_config(tokens)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

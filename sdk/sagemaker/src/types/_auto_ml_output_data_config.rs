@@ -6,7 +6,7 @@
 pub struct AutoMlOutputDataConfig {
     /// <p>The Key Management Service encryption key ID.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon S3 output path. Must be 128 characters or less.</p>
+    /// <p>The Amazon S3 output path. Must be 512 characters or less.</p>
     pub s3_output_path: ::std::option::Option<::std::string::String>,
 }
 impl AutoMlOutputDataConfig {
@@ -14,7 +14,7 @@ impl AutoMlOutputDataConfig {
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
-    /// <p>The Amazon S3 output path. Must be 128 characters or less.</p>
+    /// <p>The Amazon S3 output path. Must be 512 characters or less.</p>
     pub fn s3_output_path(&self) -> ::std::option::Option<&str> {
         self.s3_output_path.as_deref()
     }
@@ -48,18 +48,18 @@ impl AutoMlOutputDataConfigBuilder {
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
     }
-    /// <p>The Amazon S3 output path. Must be 128 characters or less.</p>
+    /// <p>The Amazon S3 output path. Must be 512 characters or less.</p>
     /// This field is required.
     pub fn s3_output_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_output_path = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon S3 output path. Must be 128 characters or less.</p>
+    /// <p>The Amazon S3 output path. Must be 512 characters or less.</p>
     pub fn set_s3_output_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_output_path = input;
         self
     }
-    /// <p>The Amazon S3 output path. Must be 128 characters or less.</p>
+    /// <p>The Amazon S3 output path. Must be 512 characters or less.</p>
     pub fn get_s3_output_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_output_path
     }

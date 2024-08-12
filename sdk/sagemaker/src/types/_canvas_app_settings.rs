@@ -18,6 +18,8 @@ pub struct CanvasAppSettings {
     pub kendra_settings: ::std::option::Option<crate::types::KendraSettings>,
     /// <p>The generative AI settings for the SageMaker Canvas application.</p>
     pub generative_ai_settings: ::std::option::Option<crate::types::GenerativeAiSettings>,
+    /// <p>The settings for running Amazon EMR Serverless data processing jobs in SageMaker Canvas.</p>
+    pub emr_serverless_settings: ::std::option::Option<crate::types::EmrServerlessSettings>,
 }
 impl CanvasAppSettings {
     /// <p>Time series forecast settings for the SageMaker Canvas application.</p>
@@ -50,6 +52,10 @@ impl CanvasAppSettings {
     pub fn generative_ai_settings(&self) -> ::std::option::Option<&crate::types::GenerativeAiSettings> {
         self.generative_ai_settings.as_ref()
     }
+    /// <p>The settings for running Amazon EMR Serverless data processing jobs in SageMaker Canvas.</p>
+    pub fn emr_serverless_settings(&self) -> ::std::option::Option<&crate::types::EmrServerlessSettings> {
+        self.emr_serverless_settings.as_ref()
+    }
 }
 impl CanvasAppSettings {
     /// Creates a new builder-style object to manufacture [`CanvasAppSettings`](crate::types::CanvasAppSettings).
@@ -69,6 +75,7 @@ pub struct CanvasAppSettingsBuilder {
     pub(crate) direct_deploy_settings: ::std::option::Option<crate::types::DirectDeploySettings>,
     pub(crate) kendra_settings: ::std::option::Option<crate::types::KendraSettings>,
     pub(crate) generative_ai_settings: ::std::option::Option<crate::types::GenerativeAiSettings>,
+    pub(crate) emr_serverless_settings: ::std::option::Option<crate::types::EmrServerlessSettings>,
 }
 impl CanvasAppSettingsBuilder {
     /// <p>Time series forecast settings for the SageMaker Canvas application.</p>
@@ -178,6 +185,20 @@ impl CanvasAppSettingsBuilder {
     pub fn get_generative_ai_settings(&self) -> &::std::option::Option<crate::types::GenerativeAiSettings> {
         &self.generative_ai_settings
     }
+    /// <p>The settings for running Amazon EMR Serverless data processing jobs in SageMaker Canvas.</p>
+    pub fn emr_serverless_settings(mut self, input: crate::types::EmrServerlessSettings) -> Self {
+        self.emr_serverless_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The settings for running Amazon EMR Serverless data processing jobs in SageMaker Canvas.</p>
+    pub fn set_emr_serverless_settings(mut self, input: ::std::option::Option<crate::types::EmrServerlessSettings>) -> Self {
+        self.emr_serverless_settings = input;
+        self
+    }
+    /// <p>The settings for running Amazon EMR Serverless data processing jobs in SageMaker Canvas.</p>
+    pub fn get_emr_serverless_settings(&self) -> &::std::option::Option<crate::types::EmrServerlessSettings> {
+        &self.emr_serverless_settings
+    }
     /// Consumes the builder and constructs a [`CanvasAppSettings`](crate::types::CanvasAppSettings).
     pub fn build(self) -> crate::types::CanvasAppSettings {
         crate::types::CanvasAppSettings {
@@ -188,6 +209,7 @@ impl CanvasAppSettingsBuilder {
             direct_deploy_settings: self.direct_deploy_settings,
             kendra_settings: self.kendra_settings,
             generative_ai_settings: self.generative_ai_settings,
+            emr_serverless_settings: self.emr_serverless_settings,
         }
     }
 }

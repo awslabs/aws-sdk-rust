@@ -47,6 +47,8 @@ pub struct DescribeAutoMlJobV2Output {
     pub data_split_config: ::std::option::Option<crate::types::AutoMlDataSplitConfig>,
     /// <p>Returns the security configuration for traffic encryption or Amazon VPC settings.</p>
     pub security_config: ::std::option::Option<crate::types::AutoMlSecurityConfig>,
+    /// <p>The compute configuration used for the AutoML job V2.</p>
+    pub auto_ml_compute_config: ::std::option::Option<crate::types::AutoMlComputeConfig>,
     _request_id: Option<String>,
 }
 impl DescribeAutoMlJobV2Output {
@@ -142,6 +144,10 @@ impl DescribeAutoMlJobV2Output {
     pub fn security_config(&self) -> ::std::option::Option<&crate::types::AutoMlSecurityConfig> {
         self.security_config.as_ref()
     }
+    /// <p>The compute configuration used for the AutoML job V2.</p>
+    pub fn auto_ml_compute_config(&self) -> ::std::option::Option<&crate::types::AutoMlComputeConfig> {
+        self.auto_ml_compute_config.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeAutoMlJobV2Output {
     fn request_id(&self) -> Option<&str> {
@@ -181,6 +187,7 @@ pub struct DescribeAutoMlJobV2OutputBuilder {
     pub(crate) model_deploy_result: ::std::option::Option<crate::types::ModelDeployResult>,
     pub(crate) data_split_config: ::std::option::Option<crate::types::AutoMlDataSplitConfig>,
     pub(crate) security_config: ::std::option::Option<crate::types::AutoMlSecurityConfig>,
+    pub(crate) auto_ml_compute_config: ::std::option::Option<crate::types::AutoMlComputeConfig>,
     _request_id: Option<String>,
 }
 impl DescribeAutoMlJobV2OutputBuilder {
@@ -512,6 +519,20 @@ impl DescribeAutoMlJobV2OutputBuilder {
     pub fn get_security_config(&self) -> &::std::option::Option<crate::types::AutoMlSecurityConfig> {
         &self.security_config
     }
+    /// <p>The compute configuration used for the AutoML job V2.</p>
+    pub fn auto_ml_compute_config(mut self, input: crate::types::AutoMlComputeConfig) -> Self {
+        self.auto_ml_compute_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The compute configuration used for the AutoML job V2.</p>
+    pub fn set_auto_ml_compute_config(mut self, input: ::std::option::Option<crate::types::AutoMlComputeConfig>) -> Self {
+        self.auto_ml_compute_config = input;
+        self
+    }
+    /// <p>The compute configuration used for the AutoML job V2.</p>
+    pub fn get_auto_ml_compute_config(&self) -> &::std::option::Option<crate::types::AutoMlComputeConfig> {
+        &self.auto_ml_compute_config
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -546,6 +567,7 @@ impl DescribeAutoMlJobV2OutputBuilder {
             model_deploy_result: self.model_deploy_result,
             data_split_config: self.data_split_config,
             security_config: self.security_config,
+            auto_ml_compute_config: self.auto_ml_compute_config,
             _request_id: self._request_id,
         }
     }

@@ -61,7 +61,7 @@ pub struct DescribeNetworkInterfacesInput {
     /// <li>
     /// <p><code>requester-id</code> - The alias or Amazon Web Services account ID of the principal or service that created the network interface.</p></li>
     /// <li>
-    /// <p><code>requester-managed</code> - Indicates whether the network interface is being managed by an Amazon Web Service (for example, Amazon Web Services Management Console, Auto Scaling, and so on).</p></li>
+    /// <p><code>requester-managed</code> - Indicates whether the network interface is being managed by an Amazon Web Services service (for example, Amazon Web Services Management Console, Auto Scaling, and so on).</p></li>
     /// <li>
     /// <p><code>source-dest-check</code> - Indicates whether the network interface performs source/destination checking. A value of <code>true</code> means checking is enabled, and <code>false</code> means checking is disabled. The value must be <code>false</code> for the network interface to perform network address translation (NAT) in your VPC.</p></li>
     /// <li>
@@ -150,7 +150,7 @@ impl DescribeNetworkInterfacesInput {
     /// <li>
     /// <p><code>requester-id</code> - The alias or Amazon Web Services account ID of the principal or service that created the network interface.</p></li>
     /// <li>
-    /// <p><code>requester-managed</code> - Indicates whether the network interface is being managed by an Amazon Web Service (for example, Amazon Web Services Management Console, Auto Scaling, and so on).</p></li>
+    /// <p><code>requester-managed</code> - Indicates whether the network interface is being managed by an Amazon Web Services service (for example, Amazon Web Services Management Console, Auto Scaling, and so on).</p></li>
     /// <li>
     /// <p><code>source-dest-check</code> - Indicates whether the network interface performs source/destination checking. A value of <code>true</code> means checking is enabled, and <code>false</code> means checking is disabled. The value must be <code>false</code> for the network interface to perform network address translation (NAT) in your VPC.</p></li>
     /// <li>
@@ -274,7 +274,7 @@ impl DescribeNetworkInterfacesInputBuilder {
     /// <li>
     /// <p><code>requester-id</code> - The alias or Amazon Web Services account ID of the principal or service that created the network interface.</p></li>
     /// <li>
-    /// <p><code>requester-managed</code> - Indicates whether the network interface is being managed by an Amazon Web Service (for example, Amazon Web Services Management Console, Auto Scaling, and so on).</p></li>
+    /// <p><code>requester-managed</code> - Indicates whether the network interface is being managed by an Amazon Web Services service (for example, Amazon Web Services Management Console, Auto Scaling, and so on).</p></li>
     /// <li>
     /// <p><code>source-dest-check</code> - Indicates whether the network interface performs source/destination checking. A value of <code>true</code> means checking is enabled, and <code>false</code> means checking is disabled. The value must be <code>false</code> for the network interface to perform network address translation (NAT) in your VPC.</p></li>
     /// <li>
@@ -357,7 +357,7 @@ impl DescribeNetworkInterfacesInputBuilder {
     /// <li>
     /// <p><code>requester-id</code> - The alias or Amazon Web Services account ID of the principal or service that created the network interface.</p></li>
     /// <li>
-    /// <p><code>requester-managed</code> - Indicates whether the network interface is being managed by an Amazon Web Service (for example, Amazon Web Services Management Console, Auto Scaling, and so on).</p></li>
+    /// <p><code>requester-managed</code> - Indicates whether the network interface is being managed by an Amazon Web Services service (for example, Amazon Web Services Management Console, Auto Scaling, and so on).</p></li>
     /// <li>
     /// <p><code>source-dest-check</code> - Indicates whether the network interface performs source/destination checking. A value of <code>true</code> means checking is enabled, and <code>false</code> means checking is disabled. The value must be <code>false</code> for the network interface to perform network address translation (NAT) in your VPC.</p></li>
     /// <li>
@@ -438,7 +438,7 @@ impl DescribeNetworkInterfacesInputBuilder {
     /// <li>
     /// <p><code>requester-id</code> - The alias or Amazon Web Services account ID of the principal or service that created the network interface.</p></li>
     /// <li>
-    /// <p><code>requester-managed</code> - Indicates whether the network interface is being managed by an Amazon Web Service (for example, Amazon Web Services Management Console, Auto Scaling, and so on).</p></li>
+    /// <p><code>requester-managed</code> - Indicates whether the network interface is being managed by an Amazon Web Services service (for example, Amazon Web Services Management Console, Auto Scaling, and so on).</p></li>
     /// <li>
     /// <p><code>source-dest-check</code> - Indicates whether the network interface performs source/destination checking. A value of <code>true</code> means checking is enabled, and <code>false</code> means checking is disabled. The value must be <code>false</code> for the network interface to perform network address translation (NAT) in your VPC.</p></li>
     /// <li>

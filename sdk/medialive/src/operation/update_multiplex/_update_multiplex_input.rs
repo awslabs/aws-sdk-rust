@@ -10,6 +10,9 @@ pub struct UpdateMultiplexInput {
     pub multiplex_settings: ::std::option::Option<crate::types::MultiplexSettings>,
     /// Name of the multiplex.
     pub name: ::std::option::Option<::std::string::String>,
+    /// Placeholder documentation for MultiplexPacketIdentifiersMapping
+    pub packet_identifiers_mapping:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MultiplexProgramPacketIdentifiersMap>>,
 }
 impl UpdateMultiplexInput {
     /// ID of the multiplex to update.
@@ -23,6 +26,12 @@ impl UpdateMultiplexInput {
     /// Name of the multiplex.
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
+    }
+    /// Placeholder documentation for MultiplexPacketIdentifiersMapping
+    pub fn packet_identifiers_mapping(
+        &self,
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::MultiplexProgramPacketIdentifiersMap>> {
+        self.packet_identifiers_mapping.as_ref()
     }
 }
 impl UpdateMultiplexInput {
@@ -39,6 +48,8 @@ pub struct UpdateMultiplexInputBuilder {
     pub(crate) multiplex_id: ::std::option::Option<::std::string::String>,
     pub(crate) multiplex_settings: ::std::option::Option<crate::types::MultiplexSettings>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) packet_identifiers_mapping:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MultiplexProgramPacketIdentifiersMap>>,
 }
 impl UpdateMultiplexInputBuilder {
     /// ID of the multiplex to update.
@@ -84,6 +95,35 @@ impl UpdateMultiplexInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
+    /// Adds a key-value pair to `packet_identifiers_mapping`.
+    ///
+    /// To override the contents of this collection use [`set_packet_identifiers_mapping`](Self::set_packet_identifiers_mapping).
+    ///
+    /// Placeholder documentation for MultiplexPacketIdentifiersMapping
+    pub fn packet_identifiers_mapping(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: crate::types::MultiplexProgramPacketIdentifiersMap,
+    ) -> Self {
+        let mut hash_map = self.packet_identifiers_mapping.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.packet_identifiers_mapping = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// Placeholder documentation for MultiplexPacketIdentifiersMapping
+    pub fn set_packet_identifiers_mapping(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MultiplexProgramPacketIdentifiersMap>>,
+    ) -> Self {
+        self.packet_identifiers_mapping = input;
+        self
+    }
+    /// Placeholder documentation for MultiplexPacketIdentifiersMapping
+    pub fn get_packet_identifiers_mapping(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MultiplexProgramPacketIdentifiersMap>> {
+        &self.packet_identifiers_mapping
+    }
     /// Consumes the builder and constructs a [`UpdateMultiplexInput`](crate::operation::update_multiplex::UpdateMultiplexInput).
     pub fn build(
         self,
@@ -92,6 +132,7 @@ impl UpdateMultiplexInputBuilder {
             multiplex_id: self.multiplex_id,
             multiplex_settings: self.multiplex_settings,
             name: self.name,
+            packet_identifiers_mapping: self.packet_identifiers_mapping,
         })
     }
 }

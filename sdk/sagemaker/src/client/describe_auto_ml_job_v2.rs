@@ -27,6 +27,7 @@ impl super::Client {
     ///   - [`model_deploy_result(Option<ModelDeployResult>)`](crate::operation::describe_auto_ml_job_v2::DescribeAutoMlJobV2Output::model_deploy_result): <p>Provides information about endpoint for the model deployment.</p>
     ///   - [`data_split_config(Option<AutoMlDataSplitConfig>)`](crate::operation::describe_auto_ml_job_v2::DescribeAutoMlJobV2Output::data_split_config): <p>Returns the configuration settings of how the data are split into train and validation datasets.</p>
     ///   - [`security_config(Option<AutoMlSecurityConfig>)`](crate::operation::describe_auto_ml_job_v2::DescribeAutoMlJobV2Output::security_config): <p>Returns the security configuration for traffic encryption or Amazon VPC settings.</p>
+    ///   - [`auto_ml_compute_config(Option<AutoMlComputeConfig>)`](crate::operation::describe_auto_ml_job_v2::DescribeAutoMlJobV2Output::auto_ml_compute_config): <p>The compute configuration used for the AutoML job V2.</p>
     /// - On failure, responds with [`SdkError<DescribeAutoMLJobV2Error>`](crate::operation::describe_auto_ml_job_v2::DescribeAutoMLJobV2Error)
     pub fn describe_auto_ml_job_v2(&self) -> crate::operation::describe_auto_ml_job_v2::builders::DescribeAutoMLJobV2FluentBuilder {
         crate::operation::describe_auto_ml_job_v2::builders::DescribeAutoMLJobV2FluentBuilder::new(self.handle.clone())

@@ -69,11 +69,13 @@ pub use crate::types::_code_editor_app_settings::CodeEditorAppSettings;
 
 pub use crate::types::_canvas_app_settings::CanvasAppSettings;
 
+pub use crate::types::_emr_serverless_settings::EmrServerlessSettings;
+
+pub use crate::types::_feature_status::FeatureStatus;
+
 pub use crate::types::_generative_ai_settings::GenerativeAiSettings;
 
 pub use crate::types::_kendra_settings::KendraSettings;
-
-pub use crate::types::_feature_status::FeatureStatus;
 
 pub use crate::types::_direct_deploy_settings::DirectDeploySettings;
 
@@ -1615,6 +1617,10 @@ pub use crate::types::_cluster_instance_placement::ClusterInstancePlacement;
 
 pub use crate::types::_cluster_instance_group_details::ClusterInstanceGroupDetails;
 
+pub use crate::types::_auto_ml_compute_config::AutoMlComputeConfig;
+
+pub use crate::types::_emr_serverless_compute_config::EmrServerlessComputeConfig;
+
 pub use crate::types::_auto_ml_security_config::AutoMlSecurityConfig;
 
 pub use crate::types::_auto_ml_data_split_config::AutoMlDataSplitConfig;
@@ -1842,6 +1848,8 @@ mod _auto_ml_candidate_step;
 mod _auto_ml_channel;
 
 mod _auto_ml_channel_type;
+
+mod _auto_ml_compute_config;
 
 mod _auto_ml_container_definition;
 
@@ -2208,6 +2216,10 @@ mod _edge_preset_deployment_type;
 mod _efs_file_system;
 
 mod _efs_file_system_config;
+
+mod _emr_serverless_compute_config;
+
+mod _emr_serverless_settings;
 
 mod _emr_settings;
 

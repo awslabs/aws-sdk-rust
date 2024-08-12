@@ -150,4 +150,32 @@ impl UpdateMultiplexFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
+    ///
+    /// Adds a key-value pair to `PacketIdentifiersMapping`.
+    ///
+    /// To override the contents of this collection use [`set_packet_identifiers_mapping`](Self::set_packet_identifiers_mapping).
+    ///
+    /// Placeholder documentation for MultiplexPacketIdentifiersMapping
+    pub fn packet_identifiers_mapping(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: crate::types::MultiplexProgramPacketIdentifiersMap,
+    ) -> Self {
+        self.inner = self.inner.packet_identifiers_mapping(k.into(), v);
+        self
+    }
+    /// Placeholder documentation for MultiplexPacketIdentifiersMapping
+    pub fn set_packet_identifiers_mapping(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MultiplexProgramPacketIdentifiersMap>>,
+    ) -> Self {
+        self.inner = self.inner.set_packet_identifiers_mapping(input);
+        self
+    }
+    /// Placeholder documentation for MultiplexPacketIdentifiersMapping
+    pub fn get_packet_identifiers_mapping(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MultiplexProgramPacketIdentifiersMap>> {
+        self.inner.get_packet_identifiers_mapping()
+    }
 }

@@ -89,6 +89,30 @@ where
                                     .transpose()?,
                             );
                         }
+                        "aribCaptionsPid" => {
+                            builder = builder.set_arib_captions_pid(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "dvbTeletextPids" => {
+                            builder = builder.set_dvb_teletext_pids(crate::protocol_serde::shape_list_of_integer::de_list_of_integer(tokens)?);
+                        }
+                        "ecmPid" => {
+                            builder = builder.set_ecm_pid(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "smpte2038Pid" => {
+                            builder = builder.set_smpte2038_pid(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -105,4 +129,143 @@ where
             "expected start object or null",
         )),
     }
+}
+
+pub fn ser_multiplex_program_packet_identifiers_map(
+    object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::types::MultiplexProgramPacketIdentifiersMap,
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    if let Some(var_1) = &input.audio_pids {
+        let mut array_2 = object.key("audioPids").start_array();
+        for item_3 in var_1 {
+            {
+                array_2.value().number(
+                    #[allow(clippy::useless_conversion)]
+                    ::aws_smithy_types::Number::NegInt((*item_3).into()),
+                );
+            }
+        }
+        array_2.finish();
+    }
+    if let Some(var_4) = &input.dvb_sub_pids {
+        let mut array_5 = object.key("dvbSubPids").start_array();
+        for item_6 in var_4 {
+            {
+                array_5.value().number(
+                    #[allow(clippy::useless_conversion)]
+                    ::aws_smithy_types::Number::NegInt((*item_6).into()),
+                );
+            }
+        }
+        array_5.finish();
+    }
+    if let Some(var_7) = &input.dvb_teletext_pid {
+        object.key("dvbTeletextPid").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
+        );
+    }
+    if let Some(var_8) = &input.etv_platform_pid {
+        object.key("etvPlatformPid").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_8).into()),
+        );
+    }
+    if let Some(var_9) = &input.etv_signal_pid {
+        object.key("etvSignalPid").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_9).into()),
+        );
+    }
+    if let Some(var_10) = &input.klv_data_pids {
+        let mut array_11 = object.key("klvDataPids").start_array();
+        for item_12 in var_10 {
+            {
+                array_11.value().number(
+                    #[allow(clippy::useless_conversion)]
+                    ::aws_smithy_types::Number::NegInt((*item_12).into()),
+                );
+            }
+        }
+        array_11.finish();
+    }
+    if let Some(var_13) = &input.pcr_pid {
+        object.key("pcrPid").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_13).into()),
+        );
+    }
+    if let Some(var_14) = &input.pmt_pid {
+        object.key("pmtPid").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_14).into()),
+        );
+    }
+    if let Some(var_15) = &input.private_metadata_pid {
+        object.key("privateMetadataPid").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_15).into()),
+        );
+    }
+    if let Some(var_16) = &input.scte27_pids {
+        let mut array_17 = object.key("scte27Pids").start_array();
+        for item_18 in var_16 {
+            {
+                array_17.value().number(
+                    #[allow(clippy::useless_conversion)]
+                    ::aws_smithy_types::Number::NegInt((*item_18).into()),
+                );
+            }
+        }
+        array_17.finish();
+    }
+    if let Some(var_19) = &input.scte35_pid {
+        object.key("scte35Pid").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_19).into()),
+        );
+    }
+    if let Some(var_20) = &input.timed_metadata_pid {
+        object.key("timedMetadataPid").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_20).into()),
+        );
+    }
+    if let Some(var_21) = &input.video_pid {
+        object.key("videoPid").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_21).into()),
+        );
+    }
+    if let Some(var_22) = &input.arib_captions_pid {
+        object.key("aribCaptionsPid").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_22).into()),
+        );
+    }
+    if let Some(var_23) = &input.dvb_teletext_pids {
+        let mut array_24 = object.key("dvbTeletextPids").start_array();
+        for item_25 in var_23 {
+            {
+                array_24.value().number(
+                    #[allow(clippy::useless_conversion)]
+                    ::aws_smithy_types::Number::NegInt((*item_25).into()),
+                );
+            }
+        }
+        array_24.finish();
+    }
+    if let Some(var_26) = &input.ecm_pid {
+        object.key("ecmPid").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_26).into()),
+        );
+    }
+    if let Some(var_27) = &input.smpte2038_pid {
+        object.key("smpte2038Pid").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_27).into()),
+        );
+    }
+    Ok(())
 }

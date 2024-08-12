@@ -26,8 +26,14 @@ pub struct PutRecommendationPreferencesInput {
     /// <p>This preference can only be set for the <code>Ec2Instance</code> resource type.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">External metrics ingestion</a> in the <i>Compute Optimizer User Guide</i>.</p>
     pub external_metrics_preference: ::std::option::Option<crate::types::ExternalMetricsPreference>,
-    /// <p>The preference to control the number of days the utilization metrics of the Amazon Web Services resource are analyzed. When this preference isn't specified, we use the default value <code>DAYS_14</code>.</p><note>
-    /// <p>You can only set this preference for the Amazon EC2 instance and Auto Scaling group resource types.</p>
+    /// <p>The preference to control the number of days the utilization metrics of the Amazon Web Services resource are analyzed. When this preference isn't specified, we use the default value <code>DAYS_14</code>.</p>
+    /// <p>You can only set this preference for the Amazon EC2 instance and Auto Scaling group resource types.</p><note>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon EC2 instance lookback preferences can be set at the organization, account, and resource levels.</p></li>
+    /// <li>
+    /// <p>Auto Scaling group lookback preferences can only be set at the resource level.</p></li>
+    /// </ul>
     /// </note>
     pub look_back_period: ::std::option::Option<crate::types::LookBackPeriodPreference>,
     /// <p>The preference to control the resource’s CPU utilization threshold, CPU utilization headroom, and memory utilization headroom. When this preference isn't specified, we use the following default values.</p>
@@ -95,8 +101,14 @@ impl PutRecommendationPreferencesInput {
     pub fn external_metrics_preference(&self) -> ::std::option::Option<&crate::types::ExternalMetricsPreference> {
         self.external_metrics_preference.as_ref()
     }
-    /// <p>The preference to control the number of days the utilization metrics of the Amazon Web Services resource are analyzed. When this preference isn't specified, we use the default value <code>DAYS_14</code>.</p><note>
-    /// <p>You can only set this preference for the Amazon EC2 instance and Auto Scaling group resource types.</p>
+    /// <p>The preference to control the number of days the utilization metrics of the Amazon Web Services resource are analyzed. When this preference isn't specified, we use the default value <code>DAYS_14</code>.</p>
+    /// <p>You can only set this preference for the Amazon EC2 instance and Auto Scaling group resource types.</p><note>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon EC2 instance lookback preferences can be set at the organization, account, and resource levels.</p></li>
+    /// <li>
+    /// <p>Auto Scaling group lookback preferences can only be set at the resource level.</p></li>
+    /// </ul>
     /// </note>
     pub fn look_back_period(&self) -> ::std::option::Option<&crate::types::LookBackPeriodPreference> {
         self.look_back_period.as_ref()
@@ -274,22 +286,40 @@ impl PutRecommendationPreferencesInputBuilder {
     pub fn get_external_metrics_preference(&self) -> &::std::option::Option<crate::types::ExternalMetricsPreference> {
         &self.external_metrics_preference
     }
-    /// <p>The preference to control the number of days the utilization metrics of the Amazon Web Services resource are analyzed. When this preference isn't specified, we use the default value <code>DAYS_14</code>.</p><note>
-    /// <p>You can only set this preference for the Amazon EC2 instance and Auto Scaling group resource types.</p>
+    /// <p>The preference to control the number of days the utilization metrics of the Amazon Web Services resource are analyzed. When this preference isn't specified, we use the default value <code>DAYS_14</code>.</p>
+    /// <p>You can only set this preference for the Amazon EC2 instance and Auto Scaling group resource types.</p><note>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon EC2 instance lookback preferences can be set at the organization, account, and resource levels.</p></li>
+    /// <li>
+    /// <p>Auto Scaling group lookback preferences can only be set at the resource level.</p></li>
+    /// </ul>
     /// </note>
     pub fn look_back_period(mut self, input: crate::types::LookBackPeriodPreference) -> Self {
         self.look_back_period = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The preference to control the number of days the utilization metrics of the Amazon Web Services resource are analyzed. When this preference isn't specified, we use the default value <code>DAYS_14</code>.</p><note>
-    /// <p>You can only set this preference for the Amazon EC2 instance and Auto Scaling group resource types.</p>
+    /// <p>The preference to control the number of days the utilization metrics of the Amazon Web Services resource are analyzed. When this preference isn't specified, we use the default value <code>DAYS_14</code>.</p>
+    /// <p>You can only set this preference for the Amazon EC2 instance and Auto Scaling group resource types.</p><note>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon EC2 instance lookback preferences can be set at the organization, account, and resource levels.</p></li>
+    /// <li>
+    /// <p>Auto Scaling group lookback preferences can only be set at the resource level.</p></li>
+    /// </ul>
     /// </note>
     pub fn set_look_back_period(mut self, input: ::std::option::Option<crate::types::LookBackPeriodPreference>) -> Self {
         self.look_back_period = input;
         self
     }
-    /// <p>The preference to control the number of days the utilization metrics of the Amazon Web Services resource are analyzed. When this preference isn't specified, we use the default value <code>DAYS_14</code>.</p><note>
-    /// <p>You can only set this preference for the Amazon EC2 instance and Auto Scaling group resource types.</p>
+    /// <p>The preference to control the number of days the utilization metrics of the Amazon Web Services resource are analyzed. When this preference isn't specified, we use the default value <code>DAYS_14</code>.</p>
+    /// <p>You can only set this preference for the Amazon EC2 instance and Auto Scaling group resource types.</p><note>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon EC2 instance lookback preferences can be set at the organization, account, and resource levels.</p></li>
+    /// <li>
+    /// <p>Auto Scaling group lookback preferences can only be set at the resource level.</p></li>
+    /// </ul>
     /// </note>
     pub fn get_look_back_period(&self) -> &::std::option::Option<crate::types::LookBackPeriodPreference> {
         &self.look_back_period

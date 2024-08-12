@@ -45,6 +45,8 @@ pub struct CreateAutoMlJobV2Input {
     /// <p>This attribute must not be set for the time-series forecasting problem type, as Autopilot automatically splits the input dataset into training and validation sets.</p>
     /// </note>
     pub data_split_config: ::std::option::Option<crate::types::AutoMlDataSplitConfig>,
+    /// <p>Specifies the compute configuration for the AutoML job V2.</p>
+    pub auto_ml_compute_config: ::std::option::Option<crate::types::AutoMlComputeConfig>,
 }
 impl CreateAutoMlJobV2Input {
     /// <p>Identifies an Autopilot job. The name must be unique to your account and is case insensitive.</p>
@@ -113,6 +115,10 @@ impl CreateAutoMlJobV2Input {
     pub fn data_split_config(&self) -> ::std::option::Option<&crate::types::AutoMlDataSplitConfig> {
         self.data_split_config.as_ref()
     }
+    /// <p>Specifies the compute configuration for the AutoML job V2.</p>
+    pub fn auto_ml_compute_config(&self) -> ::std::option::Option<&crate::types::AutoMlComputeConfig> {
+        self.auto_ml_compute_config.as_ref()
+    }
 }
 impl CreateAutoMlJobV2Input {
     /// Creates a new builder-style object to manufacture [`CreateAutoMlJobV2Input`](crate::operation::create_auto_ml_job_v2::CreateAutoMlJobV2Input).
@@ -135,6 +141,7 @@ pub struct CreateAutoMlJobV2InputBuilder {
     pub(crate) auto_ml_job_objective: ::std::option::Option<crate::types::AutoMlJobObjective>,
     pub(crate) model_deploy_config: ::std::option::Option<crate::types::ModelDeployConfig>,
     pub(crate) data_split_config: ::std::option::Option<crate::types::AutoMlDataSplitConfig>,
+    pub(crate) auto_ml_compute_config: ::std::option::Option<crate::types::AutoMlComputeConfig>,
 }
 impl CreateAutoMlJobV2InputBuilder {
     /// <p>Identifies an Autopilot job. The name must be unique to your account and is case insensitive.</p>
@@ -359,6 +366,20 @@ impl CreateAutoMlJobV2InputBuilder {
     pub fn get_data_split_config(&self) -> &::std::option::Option<crate::types::AutoMlDataSplitConfig> {
         &self.data_split_config
     }
+    /// <p>Specifies the compute configuration for the AutoML job V2.</p>
+    pub fn auto_ml_compute_config(mut self, input: crate::types::AutoMlComputeConfig) -> Self {
+        self.auto_ml_compute_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the compute configuration for the AutoML job V2.</p>
+    pub fn set_auto_ml_compute_config(mut self, input: ::std::option::Option<crate::types::AutoMlComputeConfig>) -> Self {
+        self.auto_ml_compute_config = input;
+        self
+    }
+    /// <p>Specifies the compute configuration for the AutoML job V2.</p>
+    pub fn get_auto_ml_compute_config(&self) -> &::std::option::Option<crate::types::AutoMlComputeConfig> {
+        &self.auto_ml_compute_config
+    }
     /// Consumes the builder and constructs a [`CreateAutoMlJobV2Input`](crate::operation::create_auto_ml_job_v2::CreateAutoMlJobV2Input).
     pub fn build(
         self,
@@ -375,6 +396,7 @@ impl CreateAutoMlJobV2InputBuilder {
             auto_ml_job_objective: self.auto_ml_job_objective,
             model_deploy_config: self.model_deploy_config,
             data_split_config: self.data_split_config,
+            auto_ml_compute_config: self.auto_ml_compute_config,
         })
     }
 }

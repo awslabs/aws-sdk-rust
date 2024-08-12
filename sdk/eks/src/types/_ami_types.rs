@@ -13,6 +13,8 @@
 /// # let amitypes = unimplemented!();
 /// match amitypes {
 ///     AmiTypes::Al2023Arm64Standard => { /* ... */ },
+///     AmiTypes::Al2023X8664Neuron => { /* ... */ },
+///     AmiTypes::Al2023X8664Nvidia => { /* ... */ },
 ///     AmiTypes::Al2023X8664Standard => { /* ... */ },
 ///     AmiTypes::Al2Arm64 => { /* ... */ },
 ///     AmiTypes::Al2X8664 => { /* ... */ },
@@ -56,6 +58,10 @@ pub enum AmiTypes {
     #[allow(missing_docs)] // documentation missing in model
     Al2023Arm64Standard,
     #[allow(missing_docs)] // documentation missing in model
+    Al2023X8664Neuron,
+    #[allow(missing_docs)] // documentation missing in model
+    Al2023X8664Nvidia,
+    #[allow(missing_docs)] // documentation missing in model
     Al2023X8664Standard,
     #[allow(missing_docs)] // documentation missing in model
     Al2Arm64,
@@ -89,6 +95,8 @@ impl ::std::convert::From<&str> for AmiTypes {
     fn from(s: &str) -> Self {
         match s {
             "AL2023_ARM_64_STANDARD" => AmiTypes::Al2023Arm64Standard,
+            "AL2023_x86_64_NEURON" => AmiTypes::Al2023X8664Neuron,
+            "AL2023_x86_64_NVIDIA" => AmiTypes::Al2023X8664Nvidia,
             "AL2023_x86_64_STANDARD" => AmiTypes::Al2023X8664Standard,
             "AL2_ARM_64" => AmiTypes::Al2Arm64,
             "AL2_x86_64" => AmiTypes::Al2X8664,
@@ -118,6 +126,8 @@ impl AmiTypes {
     pub fn as_str(&self) -> &str {
         match self {
             AmiTypes::Al2023Arm64Standard => "AL2023_ARM_64_STANDARD",
+            AmiTypes::Al2023X8664Neuron => "AL2023_x86_64_NEURON",
+            AmiTypes::Al2023X8664Nvidia => "AL2023_x86_64_NVIDIA",
             AmiTypes::Al2023X8664Standard => "AL2023_x86_64_STANDARD",
             AmiTypes::Al2Arm64 => "AL2_ARM_64",
             AmiTypes::Al2X8664 => "AL2_x86_64",
@@ -138,6 +148,8 @@ impl AmiTypes {
     pub const fn values() -> &'static [&'static str] {
         &[
             "AL2023_ARM_64_STANDARD",
+            "AL2023_x86_64_NEURON",
+            "AL2023_x86_64_NVIDIA",
             "AL2023_x86_64_STANDARD",
             "AL2_ARM_64",
             "AL2_x86_64",
@@ -175,6 +187,8 @@ impl ::std::fmt::Display for AmiTypes {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AmiTypes::Al2023Arm64Standard => write!(f, "AL2023_ARM_64_STANDARD"),
+            AmiTypes::Al2023X8664Neuron => write!(f, "AL2023_x86_64_NEURON"),
+            AmiTypes::Al2023X8664Nvidia => write!(f, "AL2023_x86_64_NVIDIA"),
             AmiTypes::Al2023X8664Standard => write!(f, "AL2023_x86_64_STANDARD"),
             AmiTypes::Al2Arm64 => write!(f, "AL2_ARM_64"),
             AmiTypes::Al2X8664 => write!(f, "AL2_x86_64"),

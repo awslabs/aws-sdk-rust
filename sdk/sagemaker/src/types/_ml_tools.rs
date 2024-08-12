@@ -18,6 +18,7 @@
 ///     MlTools::Endpoints => { /* ... */ },
 ///     MlTools::Experiments => { /* ... */ },
 ///     MlTools::FeatureStore => { /* ... */ },
+///     MlTools::InferenceOptimization => { /* ... */ },
 ///     MlTools::InferenceRecommender => { /* ... */ },
 ///     MlTools::JumpStart => { /* ... */ },
 ///     MlTools::ModelEvaluation => { /* ... */ },
@@ -65,6 +66,8 @@ pub enum MlTools {
     #[allow(missing_docs)] // documentation missing in model
     FeatureStore,
     #[allow(missing_docs)] // documentation missing in model
+    InferenceOptimization,
+    #[allow(missing_docs)] // documentation missing in model
     InferenceRecommender,
     #[allow(missing_docs)] // documentation missing in model
     JumpStart,
@@ -91,6 +94,7 @@ impl ::std::convert::From<&str> for MlTools {
             "Endpoints" => MlTools::Endpoints,
             "Experiments" => MlTools::Experiments,
             "FeatureStore" => MlTools::FeatureStore,
+            "InferenceOptimization" => MlTools::InferenceOptimization,
             "InferenceRecommender" => MlTools::InferenceRecommender,
             "JumpStart" => MlTools::JumpStart,
             "ModelEvaluation" => MlTools::ModelEvaluation,
@@ -119,6 +123,7 @@ impl MlTools {
             MlTools::Endpoints => "Endpoints",
             MlTools::Experiments => "Experiments",
             MlTools::FeatureStore => "FeatureStore",
+            MlTools::InferenceOptimization => "InferenceOptimization",
             MlTools::InferenceRecommender => "InferenceRecommender",
             MlTools::JumpStart => "JumpStart",
             MlTools::ModelEvaluation => "ModelEvaluation",
@@ -138,6 +143,7 @@ impl MlTools {
             "Endpoints",
             "Experiments",
             "FeatureStore",
+            "InferenceOptimization",
             "InferenceRecommender",
             "JumpStart",
             "ModelEvaluation",
@@ -174,6 +180,7 @@ impl ::std::fmt::Display for MlTools {
             MlTools::Endpoints => write!(f, "Endpoints"),
             MlTools::Experiments => write!(f, "Experiments"),
             MlTools::FeatureStore => write!(f, "FeatureStore"),
+            MlTools::InferenceOptimization => write!(f, "InferenceOptimization"),
             MlTools::InferenceRecommender => write!(f, "InferenceRecommender"),
             MlTools::JumpStart => write!(f, "JumpStart"),
             MlTools::ModelEvaluation => write!(f, "ModelEvaluation"),

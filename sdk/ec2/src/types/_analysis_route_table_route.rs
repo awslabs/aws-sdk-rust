@@ -6,7 +6,7 @@
 pub struct AnalysisRouteTableRoute {
     /// <p>The destination IPv4 address, in CIDR notation.</p>
     pub destination_cidr: ::std::option::Option<::std::string::String>,
-    /// <p>The prefix of the Amazon Web Service.</p>
+    /// <p>The prefix of the Amazon Web Services service.</p>
     pub destination_prefix_list_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of an egress-only internet gateway.</p>
     pub egress_only_internet_gateway_id: ::std::option::Option<::std::string::String>,
@@ -52,7 +52,7 @@ impl AnalysisRouteTableRoute {
     pub fn destination_cidr(&self) -> ::std::option::Option<&str> {
         self.destination_cidr.as_deref()
     }
-    /// <p>The prefix of the Amazon Web Service.</p>
+    /// <p>The prefix of the Amazon Web Services service.</p>
     pub fn destination_prefix_list_id(&self) -> ::std::option::Option<&str> {
         self.destination_prefix_list_id.as_deref()
     }
@@ -160,17 +160,17 @@ impl AnalysisRouteTableRouteBuilder {
     pub fn get_destination_cidr(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_cidr
     }
-    /// <p>The prefix of the Amazon Web Service.</p>
+    /// <p>The prefix of the Amazon Web Services service.</p>
     pub fn destination_prefix_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_prefix_list_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The prefix of the Amazon Web Service.</p>
+    /// <p>The prefix of the Amazon Web Services service.</p>
     pub fn set_destination_prefix_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_prefix_list_id = input;
         self
     }
-    /// <p>The prefix of the Amazon Web Service.</p>
+    /// <p>The prefix of the Amazon Web Services service.</p>
     pub fn get_destination_prefix_list_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_prefix_list_id
     }

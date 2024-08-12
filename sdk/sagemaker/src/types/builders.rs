@@ -55,6 +55,8 @@ pub use crate::types::_code_editor_app_settings::CodeEditorAppSettingsBuilder;
 
 pub use crate::types::_canvas_app_settings::CanvasAppSettingsBuilder;
 
+pub use crate::types::_emr_serverless_settings::EmrServerlessSettingsBuilder;
+
 pub use crate::types::_generative_ai_settings::GenerativeAiSettingsBuilder;
 
 pub use crate::types::_kendra_settings::KendraSettingsBuilder;
@@ -1072,6 +1074,10 @@ pub use crate::types::_cluster_node_details::ClusterNodeDetailsBuilder;
 pub use crate::types::_cluster_instance_placement::ClusterInstancePlacementBuilder;
 
 pub use crate::types::_cluster_instance_group_details::ClusterInstanceGroupDetailsBuilder;
+
+pub use crate::types::_auto_ml_compute_config::AutoMlComputeConfigBuilder;
+
+pub use crate::types::_emr_serverless_compute_config::EmrServerlessComputeConfigBuilder;
 
 pub use crate::types::_auto_ml_security_config::AutoMlSecurityConfigBuilder;
 

@@ -15,7 +15,7 @@ pub struct DescribeNetworkInterfacePermissionsInput {
     /// <li>
     /// <p><code>network-interface-permission.aws-account-id</code> - The Amazon Web Services account ID.</p></li>
     /// <li>
-    /// <p><code>network-interface-permission.aws-service</code> - The Amazon Web Service.</p></li>
+    /// <p><code>network-interface-permission.aws-service</code> - The Amazon Web Services service.</p></li>
     /// <li>
     /// <p><code>network-interface-permission.permission</code> - The type of permission (<code>INSTANCE-ATTACH</code> | <code>EIP-ASSOCIATE</code>).</p></li>
     /// </ul>
@@ -41,7 +41,7 @@ impl DescribeNetworkInterfacePermissionsInput {
     /// <li>
     /// <p><code>network-interface-permission.aws-account-id</code> - The Amazon Web Services account ID.</p></li>
     /// <li>
-    /// <p><code>network-interface-permission.aws-service</code> - The Amazon Web Service.</p></li>
+    /// <p><code>network-interface-permission.aws-service</code> - The Amazon Web Services service.</p></li>
     /// <li>
     /// <p><code>network-interface-permission.permission</code> - The type of permission (<code>INSTANCE-ATTACH</code> | <code>EIP-ASSOCIATE</code>).</p></li>
     /// </ul>
@@ -109,7 +109,7 @@ impl DescribeNetworkInterfacePermissionsInputBuilder {
     /// <li>
     /// <p><code>network-interface-permission.aws-account-id</code> - The Amazon Web Services account ID.</p></li>
     /// <li>
-    /// <p><code>network-interface-permission.aws-service</code> - The Amazon Web Service.</p></li>
+    /// <p><code>network-interface-permission.aws-service</code> - The Amazon Web Services service.</p></li>
     /// <li>
     /// <p><code>network-interface-permission.permission</code> - The type of permission (<code>INSTANCE-ATTACH</code> | <code>EIP-ASSOCIATE</code>).</p></li>
     /// </ul>
@@ -128,7 +128,7 @@ impl DescribeNetworkInterfacePermissionsInputBuilder {
     /// <li>
     /// <p><code>network-interface-permission.aws-account-id</code> - The Amazon Web Services account ID.</p></li>
     /// <li>
-    /// <p><code>network-interface-permission.aws-service</code> - The Amazon Web Service.</p></li>
+    /// <p><code>network-interface-permission.aws-service</code> - The Amazon Web Services service.</p></li>
     /// <li>
     /// <p><code>network-interface-permission.permission</code> - The type of permission (<code>INSTANCE-ATTACH</code> | <code>EIP-ASSOCIATE</code>).</p></li>
     /// </ul>
@@ -145,7 +145,7 @@ impl DescribeNetworkInterfacePermissionsInputBuilder {
     /// <li>
     /// <p><code>network-interface-permission.aws-account-id</code> - The Amazon Web Services account ID.</p></li>
     /// <li>
-    /// <p><code>network-interface-permission.aws-service</code> - The Amazon Web Service.</p></li>
+    /// <p><code>network-interface-permission.aws-service</code> - The Amazon Web Services service.</p></li>
     /// <li>
     /// <p><code>network-interface-permission.permission</code> - The type of permission (<code>INSTANCE-ATTACH</code> | <code>EIP-ASSOCIATE</code>).</p></li>
     /// </ul>

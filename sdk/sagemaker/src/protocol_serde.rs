@@ -1413,6 +1413,8 @@ pub(crate) mod shape_auto_ml_candidates;
 
 pub(crate) mod shape_auto_ml_channel;
 
+pub(crate) mod shape_auto_ml_compute_config;
+
 pub(crate) mod shape_auto_ml_data_split_config;
 
 pub(crate) mod shape_auto_ml_input_data_config;
@@ -2231,6 +2233,8 @@ pub(crate) mod shape_edge_model_stat;
 
 pub(crate) mod shape_edge_packaging_job_summary;
 
+pub(crate) mod shape_emr_serverless_compute_config;
+
 pub(crate) mod shape_endpoint_config_summary;
 
 pub(crate) mod shape_endpoint_info;
@@ -2722,6 +2726,8 @@ pub(crate) mod shape_edge_model_summaries;
 pub(crate) mod shape_efs_file_system;
 
 pub(crate) mod shape_efs_file_system_config;
+
+pub(crate) mod shape_emr_serverless_settings;
 
 pub(crate) mod shape_emr_settings;
 

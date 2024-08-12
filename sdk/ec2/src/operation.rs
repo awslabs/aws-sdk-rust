@@ -169,6 +169,9 @@ pub mod copy_snapshot;
 /// Types for the `CreateCapacityReservation` operation.
 pub mod create_capacity_reservation;
 
+/// Types for the `CreateCapacityReservationBySplitting` operation.
+pub mod create_capacity_reservation_by_splitting;
+
 /// Types for the `CreateCapacityReservationFleet` operation.
 pub mod create_capacity_reservation_fleet;
 
@@ -1674,6 +1677,9 @@ pub mod move_address_to_vpc;
 
 /// Types for the `MoveByoipCidrToIpam` operation.
 pub mod move_byoip_cidr_to_ipam;
+
+/// Types for the `MoveCapacityReservationInstances` operation.
+pub mod move_capacity_reservation_instances;
 
 /// Types for the `ProvisionByoipCidr` operation.
 pub mod provision_byoip_cidr;

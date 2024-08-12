@@ -12,5 +12,21 @@ pub fn ser_update_multiplex_input_input(
     if let Some(var_3) = &input.name {
         object.key("name").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.packet_identifiers_mapping {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("packetIdentifiersMapping").start_object();
+        for (key_6, value_7) in var_4 {
+            {
+                #[allow(unused_mut)]
+                let mut object_8 = object_5.key(key_6.as_str()).start_object();
+                crate::protocol_serde::shape_multiplex_program_packet_identifiers_map::ser_multiplex_program_packet_identifiers_map(
+                    &mut object_8,
+                    value_7,
+                )?;
+                object_8.finish();
+            }
+        }
+        object_5.finish();
+    }
     Ok(())
 }

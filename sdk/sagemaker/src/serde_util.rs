@@ -3736,6 +3736,15 @@ pub(crate) fn edge_packaging_job_summary_correct_errors(
     builder
 }
 
+pub(crate) fn emr_serverless_compute_config_correct_errors(
+    mut builder: crate::types::builders::EmrServerlessComputeConfigBuilder,
+) -> crate::types::builders::EmrServerlessComputeConfigBuilder {
+    if builder.execution_role_arn.is_none() {
+        builder.execution_role_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn endpoint_config_summary_correct_errors(
     mut builder: crate::types::builders::EndpointConfigSummaryBuilder,
 ) -> crate::types::builders::EndpointConfigSummaryBuilder {
@@ -5726,9 +5735,6 @@ pub(crate) fn processing_s3_output_correct_errors(
 ) -> crate::types::builders::ProcessingS3OutputBuilder {
     if builder.s3_uri.is_none() {
         builder.s3_uri = Some(Default::default())
-    }
-    if builder.local_path.is_none() {
-        builder.local_path = Some(Default::default())
     }
     if builder.s3_upload_mode.is_none() {
         builder.s3_upload_mode = "no value was set".parse::<crate::types::ProcessingS3UploadMode>().ok()

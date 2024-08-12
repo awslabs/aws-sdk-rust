@@ -456,6 +456,8 @@ mod copy_snapshot;
 
 mod create_capacity_reservation;
 
+mod create_capacity_reservation_by_splitting;
+
 mod create_capacity_reservation_fleet;
 
 mod create_carrier_gateway;
@@ -1486,6 +1488,8 @@ mod monitor_instances;
 mod move_address_to_vpc;
 
 mod move_byoip_cidr_to_ipam;
+
+mod move_capacity_reservation_instances;
 
 mod provision_byoip_cidr;
 

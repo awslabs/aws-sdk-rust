@@ -1491,6 +1491,40 @@ impl From<crate::operation::create_capacity_reservation::CreateCapacityReservati
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_capacity_reservation_by_splitting::CreateCapacityReservationBySplittingError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_capacity_reservation_by_splitting::CreateCapacityReservationBySplittingError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_capacity_reservation_by_splitting::CreateCapacityReservationBySplittingError> for Error {
+    fn from(err: crate::operation::create_capacity_reservation_by_splitting::CreateCapacityReservationBySplittingError) -> Self {
+        match err {
+            crate::operation::create_capacity_reservation_by_splitting::CreateCapacityReservationBySplittingError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::create_capacity_reservation_fleet::CreateCapacityReservationFleetError,
             R,
         >,
@@ -14856,6 +14890,38 @@ impl From<crate::operation::move_byoip_cidr_to_ipam::MoveByoipCidrToIpamError> f
     fn from(err: crate::operation::move_byoip_cidr_to_ipam::MoveByoipCidrToIpamError) -> Self {
         match err {
             crate::operation::move_byoip_cidr_to_ipam::MoveByoipCidrToIpamError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::move_capacity_reservation_instances::MoveCapacityReservationInstancesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::move_capacity_reservation_instances::MoveCapacityReservationInstancesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::move_capacity_reservation_instances::MoveCapacityReservationInstancesError> for Error {
+    fn from(err: crate::operation::move_capacity_reservation_instances::MoveCapacityReservationInstancesError) -> Self {
+        match err {
+            crate::operation::move_capacity_reservation_instances::MoveCapacityReservationInstancesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

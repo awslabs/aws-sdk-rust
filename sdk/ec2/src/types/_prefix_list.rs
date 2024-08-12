@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PrefixList {
-    /// <p>The IP address range of the Amazon Web Service.</p>
+    /// <p>The IP address range of the Amazon Web Services service.</p>
     pub cidrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the prefix.</p>
     pub prefix_list_id: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct PrefixList {
     pub prefix_list_name: ::std::option::Option<::std::string::String>,
 }
 impl PrefixList {
-    /// <p>The IP address range of the Amazon Web Service.</p>
+    /// <p>The IP address range of the Amazon Web Services service.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cidrs.is_none()`.
     pub fn cidrs(&self) -> &[::std::string::String] {
@@ -47,19 +47,19 @@ impl PrefixListBuilder {
     ///
     /// To override the contents of this collection use [`set_cidrs`](Self::set_cidrs).
     ///
-    /// <p>The IP address range of the Amazon Web Service.</p>
+    /// <p>The IP address range of the Amazon Web Services service.</p>
     pub fn cidrs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.cidrs.unwrap_or_default();
         v.push(input.into());
         self.cidrs = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The IP address range of the Amazon Web Service.</p>
+    /// <p>The IP address range of the Amazon Web Services service.</p>
     pub fn set_cidrs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.cidrs = input;
         self
     }
-    /// <p>The IP address range of the Amazon Web Service.</p>
+    /// <p>The IP address range of the Amazon Web Services service.</p>
     pub fn get_cidrs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.cidrs
     }

@@ -25,6 +25,9 @@ pub struct ModifyCapacityReservationInput {
     pub dry_run: ::std::option::Option<bool>,
     /// <p>Reserved for future use.</p>
     pub additional_info: ::std::option::Option<::std::string::String>,
+    /// <p>The matching criteria (instance eligibility) that you want to use in the modified Capacity Reservation. If you change the instance eligibility of an existing Capacity Reservation from <code>targeted</code> to <code>open</code>, any running instances that match the attributes of the Capacity Reservation, have the <code>CapacityReservationPreference</code> set to <code>open</code>, and are not yet running in the Capacity Reservation, will automatically use the modified Capacity Reservation.</p>
+    /// <p>To modify the instance eligibility, the Capacity Reservation must be completely idle (zero usage).</p>
+    pub instance_match_criteria: ::std::option::Option<crate::types::InstanceMatchCriteria>,
 }
 impl ModifyCapacityReservationInput {
     /// <p>The ID of the Capacity Reservation.</p>
@@ -63,6 +66,11 @@ impl ModifyCapacityReservationInput {
     pub fn additional_info(&self) -> ::std::option::Option<&str> {
         self.additional_info.as_deref()
     }
+    /// <p>The matching criteria (instance eligibility) that you want to use in the modified Capacity Reservation. If you change the instance eligibility of an existing Capacity Reservation from <code>targeted</code> to <code>open</code>, any running instances that match the attributes of the Capacity Reservation, have the <code>CapacityReservationPreference</code> set to <code>open</code>, and are not yet running in the Capacity Reservation, will automatically use the modified Capacity Reservation.</p>
+    /// <p>To modify the instance eligibility, the Capacity Reservation must be completely idle (zero usage).</p>
+    pub fn instance_match_criteria(&self) -> ::std::option::Option<&crate::types::InstanceMatchCriteria> {
+        self.instance_match_criteria.as_ref()
+    }
 }
 impl ModifyCapacityReservationInput {
     /// Creates a new builder-style object to manufacture [`ModifyCapacityReservationInput`](crate::operation::modify_capacity_reservation::ModifyCapacityReservationInput).
@@ -82,6 +90,7 @@ pub struct ModifyCapacityReservationInputBuilder {
     pub(crate) accept: ::std::option::Option<bool>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) additional_info: ::std::option::Option<::std::string::String>,
+    pub(crate) instance_match_criteria: ::std::option::Option<crate::types::InstanceMatchCriteria>,
 }
 impl ModifyCapacityReservationInputBuilder {
     /// <p>The ID of the Capacity Reservation.</p>
@@ -207,6 +216,23 @@ impl ModifyCapacityReservationInputBuilder {
     pub fn get_additional_info(&self) -> &::std::option::Option<::std::string::String> {
         &self.additional_info
     }
+    /// <p>The matching criteria (instance eligibility) that you want to use in the modified Capacity Reservation. If you change the instance eligibility of an existing Capacity Reservation from <code>targeted</code> to <code>open</code>, any running instances that match the attributes of the Capacity Reservation, have the <code>CapacityReservationPreference</code> set to <code>open</code>, and are not yet running in the Capacity Reservation, will automatically use the modified Capacity Reservation.</p>
+    /// <p>To modify the instance eligibility, the Capacity Reservation must be completely idle (zero usage).</p>
+    pub fn instance_match_criteria(mut self, input: crate::types::InstanceMatchCriteria) -> Self {
+        self.instance_match_criteria = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The matching criteria (instance eligibility) that you want to use in the modified Capacity Reservation. If you change the instance eligibility of an existing Capacity Reservation from <code>targeted</code> to <code>open</code>, any running instances that match the attributes of the Capacity Reservation, have the <code>CapacityReservationPreference</code> set to <code>open</code>, and are not yet running in the Capacity Reservation, will automatically use the modified Capacity Reservation.</p>
+    /// <p>To modify the instance eligibility, the Capacity Reservation must be completely idle (zero usage).</p>
+    pub fn set_instance_match_criteria(mut self, input: ::std::option::Option<crate::types::InstanceMatchCriteria>) -> Self {
+        self.instance_match_criteria = input;
+        self
+    }
+    /// <p>The matching criteria (instance eligibility) that you want to use in the modified Capacity Reservation. If you change the instance eligibility of an existing Capacity Reservation from <code>targeted</code> to <code>open</code>, any running instances that match the attributes of the Capacity Reservation, have the <code>CapacityReservationPreference</code> set to <code>open</code>, and are not yet running in the Capacity Reservation, will automatically use the modified Capacity Reservation.</p>
+    /// <p>To modify the instance eligibility, the Capacity Reservation must be completely idle (zero usage).</p>
+    pub fn get_instance_match_criteria(&self) -> &::std::option::Option<crate::types::InstanceMatchCriteria> {
+        &self.instance_match_criteria
+    }
     /// Consumes the builder and constructs a [`ModifyCapacityReservationInput`](crate::operation::modify_capacity_reservation::ModifyCapacityReservationInput).
     pub fn build(
         self,
@@ -222,6 +248,7 @@ impl ModifyCapacityReservationInputBuilder {
             accept: self.accept,
             dry_run: self.dry_run,
             additional_info: self.additional_info,
+            instance_match_criteria: self.instance_match_criteria,
         })
     }
 }
