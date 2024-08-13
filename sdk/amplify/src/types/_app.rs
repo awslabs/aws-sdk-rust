@@ -56,6 +56,8 @@ pub struct App {
     /// </note>
     /// <p>The Amplify service uses this parameter to specify the authentication protocol to use to access the Git repository for an Amplify app. Amplify specifies <code>TOKEN</code> for a GitHub repository, <code>SIGV4</code> for an Amazon Web Services CodeCommit repository, and <code>SSH</code> for GitLab and Bitbucket repositories.</p>
     pub repository_clone_method: ::std::option::Option<crate::types::RepositoryCloneMethod>,
+    /// <p>The cache configuration for the Amplify app. If you don't specify the cache configuration <code>type</code>, Amplify uses the default <code>AMPLIFY_MANAGED</code> setting.</p>
+    pub cache_config: ::std::option::Option<crate::types::CacheConfig>,
 }
 impl App {
     /// <p>The unique ID of the Amplify app.</p>
@@ -168,6 +170,10 @@ impl App {
     pub fn repository_clone_method(&self) -> ::std::option::Option<&crate::types::RepositoryCloneMethod> {
         self.repository_clone_method.as_ref()
     }
+    /// <p>The cache configuration for the Amplify app. If you don't specify the cache configuration <code>type</code>, Amplify uses the default <code>AMPLIFY_MANAGED</code> setting.</p>
+    pub fn cache_config(&self) -> ::std::option::Option<&crate::types::CacheConfig> {
+        self.cache_config.as_ref()
+    }
 }
 impl ::std::fmt::Debug for App {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -196,6 +202,7 @@ impl ::std::fmt::Debug for App {
         formatter.field("auto_branch_creation_patterns", &self.auto_branch_creation_patterns);
         formatter.field("auto_branch_creation_config", &self.auto_branch_creation_config);
         formatter.field("repository_clone_method", &self.repository_clone_method);
+        formatter.field("cache_config", &self.cache_config);
         formatter.finish()
     }
 }
@@ -234,6 +241,7 @@ pub struct AppBuilder {
     pub(crate) auto_branch_creation_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) auto_branch_creation_config: ::std::option::Option<crate::types::AutoBranchCreationConfig>,
     pub(crate) repository_clone_method: ::std::option::Option<crate::types::RepositoryCloneMethod>,
+    pub(crate) cache_config: ::std::option::Option<crate::types::CacheConfig>,
 }
 impl AppBuilder {
     /// <p>The unique ID of the Amplify app.</p>
@@ -626,6 +634,20 @@ impl AppBuilder {
     pub fn get_repository_clone_method(&self) -> &::std::option::Option<crate::types::RepositoryCloneMethod> {
         &self.repository_clone_method
     }
+    /// <p>The cache configuration for the Amplify app. If you don't specify the cache configuration <code>type</code>, Amplify uses the default <code>AMPLIFY_MANAGED</code> setting.</p>
+    pub fn cache_config(mut self, input: crate::types::CacheConfig) -> Self {
+        self.cache_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The cache configuration for the Amplify app. If you don't specify the cache configuration <code>type</code>, Amplify uses the default <code>AMPLIFY_MANAGED</code> setting.</p>
+    pub fn set_cache_config(mut self, input: ::std::option::Option<crate::types::CacheConfig>) -> Self {
+        self.cache_config = input;
+        self
+    }
+    /// <p>The cache configuration for the Amplify app. If you don't specify the cache configuration <code>type</code>, Amplify uses the default <code>AMPLIFY_MANAGED</code> setting.</p>
+    pub fn get_cache_config(&self) -> &::std::option::Option<crate::types::CacheConfig> {
+        &self.cache_config
+    }
     /// Consumes the builder and constructs a [`App`](crate::types::App).
     /// This method will fail if any of the following fields are not set:
     /// - [`app_id`](crate::types::builders::AppBuilder::app_id)
@@ -723,6 +745,7 @@ impl AppBuilder {
             auto_branch_creation_patterns: self.auto_branch_creation_patterns,
             auto_branch_creation_config: self.auto_branch_creation_config,
             repository_clone_method: self.repository_clone_method,
+            cache_config: self.cache_config,
         })
     }
 }
@@ -753,6 +776,7 @@ impl ::std::fmt::Debug for AppBuilder {
         formatter.field("auto_branch_creation_patterns", &self.auto_branch_creation_patterns);
         formatter.field("auto_branch_creation_config", &self.auto_branch_creation_config);
         formatter.field("repository_clone_method", &self.repository_clone_method);
+        formatter.field("cache_config", &self.cache_config);
         formatter.finish()
     }
 }

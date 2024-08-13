@@ -411,4 +411,18 @@ impl UpdateAppFluentBuilder {
     pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_access_token()
     }
+    /// <p>The cache configuration for the Amplify app.</p>
+    pub fn cache_config(mut self, input: crate::types::CacheConfig) -> Self {
+        self.inner = self.inner.cache_config(input);
+        self
+    }
+    /// <p>The cache configuration for the Amplify app.</p>
+    pub fn set_cache_config(mut self, input: ::std::option::Option<crate::types::CacheConfig>) -> Self {
+        self.inner = self.inner.set_cache_config(input);
+        self
+    }
+    /// <p>The cache configuration for the Amplify app.</p>
+    pub fn get_cache_config(&self) -> &::std::option::Option<crate::types::CacheConfig> {
+        self.inner.get_cache_config()
+    }
 }

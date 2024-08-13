@@ -76,6 +76,20 @@ pub struct CreateFleetInput {
     /// <li>
     /// <p>stream.graphics.g4dn.16xlarge</p></li>
     /// <li>
+    /// <p>stream.graphics.g5.xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.2xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.4xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.8xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.12xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.16xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.24xlarge</p></li>
+    /// <li>
     /// <p>stream.graphics-pro.4xlarge</p></li>
     /// <li>
     /// <p>stream.graphics-pro.8xlarge</p></li>
@@ -237,6 +251,20 @@ impl CreateFleetInput {
     /// <p>stream.graphics.g4dn.12xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.g4dn.16xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.2xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.4xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.8xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.12xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.16xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.24xlarge</p></li>
     /// <li>
     /// <p>stream.graphics-pro.4xlarge</p></li>
     /// <li>
@@ -505,6 +533,20 @@ impl CreateFleetInputBuilder {
     /// <li>
     /// <p>stream.graphics.g4dn.16xlarge</p></li>
     /// <li>
+    /// <p>stream.graphics.g5.xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.2xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.4xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.8xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.12xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.16xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.24xlarge</p></li>
+    /// <li>
     /// <p>stream.graphics-pro.4xlarge</p></li>
     /// <li>
     /// <p>stream.graphics-pro.8xlarge</p></li>
@@ -596,6 +638,20 @@ impl CreateFleetInputBuilder {
     /// <li>
     /// <p>stream.graphics.g4dn.16xlarge</p></li>
     /// <li>
+    /// <p>stream.graphics.g5.xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.2xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.4xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.8xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.12xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.16xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.24xlarge</p></li>
+    /// <li>
     /// <p>stream.graphics-pro.4xlarge</p></li>
     /// <li>
     /// <p>stream.graphics-pro.8xlarge</p></li>
@@ -685,6 +741,20 @@ impl CreateFleetInputBuilder {
     /// <p>stream.graphics.g4dn.12xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.g4dn.16xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.2xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.4xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.8xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.12xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.16xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.24xlarge</p></li>
     /// <li>
     /// <p>stream.graphics-pro.4xlarge</p></li>
     /// <li>

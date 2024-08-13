@@ -57,6 +57,8 @@ pub use crate::types::_experiment_target_filter::ExperimentTargetFilterBuilder;
 
 pub use crate::types::_experiment_state::ExperimentStateBuilder;
 
+pub use crate::types::_experiment_error::ExperimentErrorBuilder;
+
 pub use crate::types::_start_experiment_experiment_options_input::StartExperimentExperimentOptionsInputBuilder;
 
 pub use crate::types::_target_resource_type_summary::TargetResourceTypeSummaryBuilder;

@@ -113,6 +113,30 @@ where
                         "ImageErrors" => {
                             builder = builder.set_image_errors(crate::protocol_serde::shape_resource_errors::de_resource_errors(tokens)?);
                         }
+                        "LatestAppstreamAgentVersion" => {
+                            builder = builder.set_latest_appstream_agent_version(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::LatestAppstreamAgentVersion::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "SupportedInstanceFamilies" => {
+                            builder = builder.set_supported_instance_families(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                        }
+                        "DynamicAppProvidersEnabled" => {
+                            builder = builder.set_dynamic_app_providers_enabled(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::DynamicAppProvidersEnabled::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ImageSharedWithOthers" => {
+                            builder = builder.set_image_shared_with_others(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ImageSharedWithOthers::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

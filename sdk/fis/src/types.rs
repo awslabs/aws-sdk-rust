@@ -65,6 +65,8 @@ pub use crate::types::_experiment_target_filter::ExperimentTargetFilter;
 
 pub use crate::types::_experiment_state::ExperimentState;
 
+pub use crate::types::_experiment_error::ExperimentError;
+
 pub use crate::types::_experiment_status::ExperimentStatus;
 
 pub use crate::types::_start_experiment_experiment_options_input::StartExperimentExperimentOptionsInput;
@@ -138,6 +140,8 @@ mod _experiment_action_state;
 mod _experiment_action_status;
 
 mod _experiment_cloud_watch_logs_log_configuration;
+
+mod _experiment_error;
 
 mod _experiment_log_configuration;
 

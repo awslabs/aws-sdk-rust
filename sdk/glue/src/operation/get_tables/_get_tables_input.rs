@@ -19,6 +19,15 @@ pub struct GetTablesInput {
     pub query_as_of_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies whether to include status details related to a request to create or update an Glue Data Catalog view.</p>
     pub include_status_details: ::std::option::Option<bool>,
+    /// <p>Specifies the table fields returned by the <code>GetTables</code> call. This parameter doesn’t accept an empty list. The request must include <code>NAME</code>.</p>
+    /// <p>The following are the valid combinations of values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>NAME</code> - Names of all tables in the database.</p></li>
+    /// <li>
+    /// <p><code>NAME</code>, <code>TABLE_TYPE</code> - Names of all tables and the table types.</p></li>
+    /// </ul>
+    pub attributes_to_get: ::std::option::Option<::std::vec::Vec<crate::types::TableAttributes>>,
 }
 impl GetTablesInput {
     /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
@@ -53,6 +62,19 @@ impl GetTablesInput {
     pub fn include_status_details(&self) -> ::std::option::Option<bool> {
         self.include_status_details
     }
+    /// <p>Specifies the table fields returned by the <code>GetTables</code> call. This parameter doesn’t accept an empty list. The request must include <code>NAME</code>.</p>
+    /// <p>The following are the valid combinations of values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>NAME</code> - Names of all tables in the database.</p></li>
+    /// <li>
+    /// <p><code>NAME</code>, <code>TABLE_TYPE</code> - Names of all tables and the table types.</p></li>
+    /// </ul>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes_to_get.is_none()`.
+    pub fn attributes_to_get(&self) -> &[crate::types::TableAttributes] {
+        self.attributes_to_get.as_deref().unwrap_or_default()
+    }
 }
 impl GetTablesInput {
     /// Creates a new builder-style object to manufacture [`GetTablesInput`](crate::operation::get_tables::GetTablesInput).
@@ -73,6 +95,7 @@ pub struct GetTablesInputBuilder {
     pub(crate) transaction_id: ::std::option::Option<::std::string::String>,
     pub(crate) query_as_of_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) include_status_details: ::std::option::Option<bool>,
+    pub(crate) attributes_to_get: ::std::option::Option<::std::vec::Vec<crate::types::TableAttributes>>,
 }
 impl GetTablesInputBuilder {
     /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
@@ -188,6 +211,47 @@ impl GetTablesInputBuilder {
     pub fn get_include_status_details(&self) -> &::std::option::Option<bool> {
         &self.include_status_details
     }
+    /// Appends an item to `attributes_to_get`.
+    ///
+    /// To override the contents of this collection use [`set_attributes_to_get`](Self::set_attributes_to_get).
+    ///
+    /// <p>Specifies the table fields returned by the <code>GetTables</code> call. This parameter doesn’t accept an empty list. The request must include <code>NAME</code>.</p>
+    /// <p>The following are the valid combinations of values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>NAME</code> - Names of all tables in the database.</p></li>
+    /// <li>
+    /// <p><code>NAME</code>, <code>TABLE_TYPE</code> - Names of all tables and the table types.</p></li>
+    /// </ul>
+    pub fn attributes_to_get(mut self, input: crate::types::TableAttributes) -> Self {
+        let mut v = self.attributes_to_get.unwrap_or_default();
+        v.push(input);
+        self.attributes_to_get = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Specifies the table fields returned by the <code>GetTables</code> call. This parameter doesn’t accept an empty list. The request must include <code>NAME</code>.</p>
+    /// <p>The following are the valid combinations of values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>NAME</code> - Names of all tables in the database.</p></li>
+    /// <li>
+    /// <p><code>NAME</code>, <code>TABLE_TYPE</code> - Names of all tables and the table types.</p></li>
+    /// </ul>
+    pub fn set_attributes_to_get(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TableAttributes>>) -> Self {
+        self.attributes_to_get = input;
+        self
+    }
+    /// <p>Specifies the table fields returned by the <code>GetTables</code> call. This parameter doesn’t accept an empty list. The request must include <code>NAME</code>.</p>
+    /// <p>The following are the valid combinations of values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>NAME</code> - Names of all tables in the database.</p></li>
+    /// <li>
+    /// <p><code>NAME</code>, <code>TABLE_TYPE</code> - Names of all tables and the table types.</p></li>
+    /// </ul>
+    pub fn get_attributes_to_get(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TableAttributes>> {
+        &self.attributes_to_get
+    }
     /// Consumes the builder and constructs a [`GetTablesInput`](crate::operation::get_tables::GetTablesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_tables::GetTablesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_tables::GetTablesInput {
@@ -199,6 +263,7 @@ impl GetTablesInputBuilder {
             transaction_id: self.transaction_id,
             query_as_of_time: self.query_as_of_time,
             include_status_details: self.include_status_details,
+            attributes_to_get: self.attributes_to_get,
         })
     }
 }

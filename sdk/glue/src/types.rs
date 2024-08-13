@@ -663,6 +663,8 @@ pub use crate::types::_segment::Segment;
 
 pub use crate::types::_table_version::TableVersion;
 
+pub use crate::types::_table_attributes::TableAttributes;
+
 pub use crate::types::_table_optimizer::TableOptimizer;
 
 pub use crate::types::_security_configuration::SecurityConfiguration;
@@ -1620,6 +1622,8 @@ mod _string_column_statistics_data;
 mod _supported_dialect;
 
 mod _table;
+
+mod _table_attributes;
 
 mod _table_error;
 

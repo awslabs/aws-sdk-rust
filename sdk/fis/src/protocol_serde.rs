@@ -205,6 +205,8 @@ pub(crate) mod shape_experiment_action;
 
 pub(crate) mod shape_experiment_cloud_watch_logs_log_configuration;
 
+pub(crate) mod shape_experiment_error;
+
 pub(crate) mod shape_experiment_s3_log_configuration;
 
 pub(crate) mod shape_experiment_stop_condition;

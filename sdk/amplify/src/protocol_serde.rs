@@ -165,6 +165,8 @@ pub(crate) mod shape_branch;
 
 pub(crate) mod shape_branches;
 
+pub(crate) mod shape_cache_config;
+
 pub(crate) mod shape_certificate_settings;
 
 pub(crate) mod shape_custom_rule;

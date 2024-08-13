@@ -17,6 +17,8 @@ pub use crate::types::_backend::BackendBuilder;
 
 pub use crate::types::_app::AppBuilder;
 
+pub use crate::types::_cache_config::CacheConfigBuilder;
+
 pub use crate::types::_auto_branch_creation_config::AutoBranchCreationConfigBuilder;
 
 pub use crate::types::_production_branch::ProductionBranchBuilder;

@@ -11,6 +11,8 @@ pub use crate::types::_import_task_status::ImportTaskStatus;
 
 pub use crate::types::_format::Format;
 
+pub use crate::types::_blank_node_handling::BlankNodeHandling;
+
 pub use crate::types::_import_task_summary::ImportTaskSummary;
 
 pub use crate::types::_import_task_details::ImportTaskDetails;
@@ -50,6 +52,8 @@ pub use crate::types::_explain_mode::ExplainMode;
 pub use crate::types::_plan_cache_type::PlanCacheType;
 
 pub use crate::types::_query_language::QueryLanguage;
+
+mod _blank_node_handling;
 
 mod _conflict_exception_reason;
 

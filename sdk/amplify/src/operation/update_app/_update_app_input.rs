@@ -49,6 +49,8 @@ pub struct UpdateAppInput {
     /// <p>You must specify either <code>accessToken</code> or <code>oauthToken</code> when you update an app.</p>
     /// <p>Existing Amplify apps deployed from a GitHub repository using OAuth continue to work with CI/CD. However, we strongly recommend that you migrate these apps to use the GitHub App. For more information, see <a href="https://docs.aws.amazon.com/amplify/latest/userguide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User Guide</i> .</p>
     pub access_token: ::std::option::Option<::std::string::String>,
+    /// <p>The cache configuration for the Amplify app.</p>
+    pub cache_config: ::std::option::Option<crate::types::CacheConfig>,
 }
 impl UpdateAppInput {
     /// <p>The unique ID for an Amplify app.</p>
@@ -138,6 +140,10 @@ impl UpdateAppInput {
     pub fn access_token(&self) -> ::std::option::Option<&str> {
         self.access_token.as_deref()
     }
+    /// <p>The cache configuration for the Amplify app.</p>
+    pub fn cache_config(&self) -> ::std::option::Option<&crate::types::CacheConfig> {
+        self.cache_config.as_ref()
+    }
 }
 impl ::std::fmt::Debug for UpdateAppInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -161,6 +167,7 @@ impl ::std::fmt::Debug for UpdateAppInput {
         formatter.field("repository", &self.repository);
         formatter.field("oauth_token", &"*** Sensitive Data Redacted ***");
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");
+        formatter.field("cache_config", &self.cache_config);
         formatter.finish()
     }
 }
@@ -194,6 +201,7 @@ pub struct UpdateAppInputBuilder {
     pub(crate) repository: ::std::option::Option<::std::string::String>,
     pub(crate) oauth_token: ::std::option::Option<::std::string::String>,
     pub(crate) access_token: ::std::option::Option<::std::string::String>,
+    pub(crate) cache_config: ::std::option::Option<crate::types::CacheConfig>,
 }
 impl UpdateAppInputBuilder {
     /// <p>The unique ID for an Amplify app.</p>
@@ -509,6 +517,20 @@ impl UpdateAppInputBuilder {
     pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.access_token
     }
+    /// <p>The cache configuration for the Amplify app.</p>
+    pub fn cache_config(mut self, input: crate::types::CacheConfig) -> Self {
+        self.cache_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The cache configuration for the Amplify app.</p>
+    pub fn set_cache_config(mut self, input: ::std::option::Option<crate::types::CacheConfig>) -> Self {
+        self.cache_config = input;
+        self
+    }
+    /// <p>The cache configuration for the Amplify app.</p>
+    pub fn get_cache_config(&self) -> &::std::option::Option<crate::types::CacheConfig> {
+        &self.cache_config
+    }
     /// Consumes the builder and constructs a [`UpdateAppInput`](crate::operation::update_app::UpdateAppInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_app::UpdateAppInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_app::UpdateAppInput {
@@ -531,6 +553,7 @@ impl UpdateAppInputBuilder {
             repository: self.repository,
             oauth_token: self.oauth_token,
             access_token: self.access_token,
+            cache_config: self.cache_config,
         })
     }
 }
@@ -556,6 +579,7 @@ impl ::std::fmt::Debug for UpdateAppInputBuilder {
         formatter.field("repository", &self.repository);
         formatter.field("oauth_token", &"*** Sensitive Data Redacted ***");
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");
+        formatter.field("cache_config", &self.cache_config);
         formatter.finish()
     }
 }

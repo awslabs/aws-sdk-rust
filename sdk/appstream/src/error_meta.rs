@@ -758,6 +758,43 @@ impl From<crate::operation::create_streaming_url::CreateStreamingURLError> for E
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_theme_for_stack::CreateThemeForStackError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_theme_for_stack::CreateThemeForStackError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_theme_for_stack::CreateThemeForStackError> for Error {
+    fn from(err: crate::operation::create_theme_for_stack::CreateThemeForStackError) -> Self {
+        match err {
+            crate::operation::create_theme_for_stack::CreateThemeForStackError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::create_theme_for_stack::CreateThemeForStackError::InvalidAccountStatusException(inner) => {
+                Error::InvalidAccountStatusException(inner)
+            }
+            crate::operation::create_theme_for_stack::CreateThemeForStackError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_theme_for_stack::CreateThemeForStackError::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
+            crate::operation::create_theme_for_stack::CreateThemeForStackError::ResourceAlreadyExistsException(inner) => {
+                Error::ResourceAlreadyExistsException(inner)
+            }
+            crate::operation::create_theme_for_stack::CreateThemeForStackError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_theme_for_stack::CreateThemeForStackError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_updated_image::CreateUpdatedImageError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1144,6 +1181,36 @@ impl From<crate::operation::delete_stack::DeleteStackError> for Error {
             crate::operation::delete_stack::DeleteStackError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::delete_stack::DeleteStackError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_stack::DeleteStackError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_theme_for_stack::DeleteThemeForStackError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_theme_for_stack::DeleteThemeForStackError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_theme_for_stack::DeleteThemeForStackError> for Error {
+    fn from(err: crate::operation::delete_theme_for_stack::DeleteThemeForStackError) -> Self {
+        match err {
+            crate::operation::delete_theme_for_stack::DeleteThemeForStackError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::delete_theme_for_stack::DeleteThemeForStackError::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
+            crate::operation::delete_theme_for_stack::DeleteThemeForStackError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_theme_for_stack::DeleteThemeForStackError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1556,6 +1623,35 @@ impl From<crate::operation::describe_stacks::DescribeStacksError> for Error {
         match err {
             crate::operation::describe_stacks::DescribeStacksError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::describe_stacks::DescribeStacksError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_theme_for_stack::DescribeThemeForStackError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_theme_for_stack::DescribeThemeForStackError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_theme_for_stack::DescribeThemeForStackError> for Error {
+    fn from(err: crate::operation::describe_theme_for_stack::DescribeThemeForStackError) -> Self {
+        match err {
+            crate::operation::describe_theme_for_stack::DescribeThemeForStackError::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
+            crate::operation::describe_theme_for_stack::DescribeThemeForStackError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_theme_for_stack::DescribeThemeForStackError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2439,6 +2535,43 @@ impl From<crate::operation::update_stack::UpdateStackError> for Error {
             crate::operation::update_stack::UpdateStackError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::update_stack::UpdateStackError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::update_stack::UpdateStackError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_theme_for_stack::UpdateThemeForStackError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_theme_for_stack::UpdateThemeForStackError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_theme_for_stack::UpdateThemeForStackError> for Error {
+    fn from(err: crate::operation::update_theme_for_stack::UpdateThemeForStackError) -> Self {
+        match err {
+            crate::operation::update_theme_for_stack::UpdateThemeForStackError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::update_theme_for_stack::UpdateThemeForStackError::InvalidAccountStatusException(inner) => {
+                Error::InvalidAccountStatusException(inner)
+            }
+            crate::operation::update_theme_for_stack::UpdateThemeForStackError::InvalidParameterCombinationException(inner) => {
+                Error::InvalidParameterCombinationException(inner)
+            }
+            crate::operation::update_theme_for_stack::UpdateThemeForStackError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::update_theme_for_stack::UpdateThemeForStackError::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
+            crate::operation::update_theme_for_stack::UpdateThemeForStackError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_theme_for_stack::UpdateThemeForStackError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

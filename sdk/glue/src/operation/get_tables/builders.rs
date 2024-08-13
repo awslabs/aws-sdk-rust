@@ -220,4 +220,44 @@ impl GetTablesFluentBuilder {
     pub fn get_include_status_details(&self) -> &::std::option::Option<bool> {
         self.inner.get_include_status_details()
     }
+    ///
+    /// Appends an item to `AttributesToGet`.
+    ///
+    /// To override the contents of this collection use [`set_attributes_to_get`](Self::set_attributes_to_get).
+    ///
+    /// <p>Specifies the table fields returned by the <code>GetTables</code> call. This parameter doesn’t accept an empty list. The request must include <code>NAME</code>.</p>
+    /// <p>The following are the valid combinations of values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>NAME</code> - Names of all tables in the database.</p></li>
+    /// <li>
+    /// <p><code>NAME</code>, <code>TABLE_TYPE</code> - Names of all tables and the table types.</p></li>
+    /// </ul>
+    pub fn attributes_to_get(mut self, input: crate::types::TableAttributes) -> Self {
+        self.inner = self.inner.attributes_to_get(input);
+        self
+    }
+    /// <p>Specifies the table fields returned by the <code>GetTables</code> call. This parameter doesn’t accept an empty list. The request must include <code>NAME</code>.</p>
+    /// <p>The following are the valid combinations of values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>NAME</code> - Names of all tables in the database.</p></li>
+    /// <li>
+    /// <p><code>NAME</code>, <code>TABLE_TYPE</code> - Names of all tables and the table types.</p></li>
+    /// </ul>
+    pub fn set_attributes_to_get(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TableAttributes>>) -> Self {
+        self.inner = self.inner.set_attributes_to_get(input);
+        self
+    }
+    /// <p>Specifies the table fields returned by the <code>GetTables</code> call. This parameter doesn’t accept an empty list. The request must include <code>NAME</code>.</p>
+    /// <p>The following are the valid combinations of values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>NAME</code> - Names of all tables in the database.</p></li>
+    /// <li>
+    /// <p><code>NAME</code>, <code>TABLE_TYPE</code> - Names of all tables and the table types.</p></li>
+    /// </ul>
+    pub fn get_attributes_to_get(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TableAttributes>> {
+        self.inner.get_attributes_to_get()
+    }
 }

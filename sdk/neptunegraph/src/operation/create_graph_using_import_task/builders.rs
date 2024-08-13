@@ -308,6 +308,20 @@ impl CreateGraphUsingImportTaskFluentBuilder {
     pub fn get_format(&self) -> &::std::option::Option<crate::types::Format> {
         self.inner.get_format()
     }
+    /// <p>The method to handle blank nodes in the dataset. Currently, only <code>convertToIri</code> is supported, meaning blank nodes are converted to unique IRIs at load time. Must be provided when format is <code>ntriples</code>. For more information, see <a href="https://docs.aws.amazon.com/neptune-analytics/latest/userguide/using-rdf-data.html#rdf-handling">Handling RDF values</a>.</p>
+    pub fn blank_node_handling(mut self, input: crate::types::BlankNodeHandling) -> Self {
+        self.inner = self.inner.blank_node_handling(input);
+        self
+    }
+    /// <p>The method to handle blank nodes in the dataset. Currently, only <code>convertToIri</code> is supported, meaning blank nodes are converted to unique IRIs at load time. Must be provided when format is <code>ntriples</code>. For more information, see <a href="https://docs.aws.amazon.com/neptune-analytics/latest/userguide/using-rdf-data.html#rdf-handling">Handling RDF values</a>.</p>
+    pub fn set_blank_node_handling(mut self, input: ::std::option::Option<crate::types::BlankNodeHandling>) -> Self {
+        self.inner = self.inner.set_blank_node_handling(input);
+        self
+    }
+    /// <p>The method to handle blank nodes in the dataset. Currently, only <code>convertToIri</code> is supported, meaning blank nodes are converted to unique IRIs at load time. Must be provided when format is <code>ntriples</code>. For more information, see <a href="https://docs.aws.amazon.com/neptune-analytics/latest/userguide/using-rdf-data.html#rdf-handling">Handling RDF values</a>.</p>
+    pub fn get_blank_node_handling(&self) -> &::std::option::Option<crate::types::BlankNodeHandling> {
+        self.inner.get_blank_node_handling()
+    }
     /// <p>The ARN of the IAM role that will allow access to the data that is to be imported.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());

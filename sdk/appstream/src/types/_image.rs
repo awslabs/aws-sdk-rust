@@ -38,6 +38,32 @@ pub struct Image {
     pub image_permissions: ::std::option::Option<crate::types::ImagePermissions>,
     /// <p>Describes the errors that are returned when a new image can't be created.</p>
     pub image_errors: ::std::option::Option<::std::vec::Vec<crate::types::ResourceError>>,
+    /// <p>Indicates whether the image is using the latest AppStream 2.0 agent version or not.</p>
+    pub latest_appstream_agent_version: ::std::option::Option<crate::types::LatestAppstreamAgentVersion>,
+    /// <p>The supported instances families that determine which image a customer can use when the customer launches a fleet or image builder. The following instances families are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p>General Purpose</p></li>
+    /// <li>
+    /// <p>Compute Optimized</p></li>
+    /// <li>
+    /// <p>Memory Optimized</p></li>
+    /// <li>
+    /// <p>Graphics</p></li>
+    /// <li>
+    /// <p>Graphics Design</p></li>
+    /// <li>
+    /// <p>Graphics Pro</p></li>
+    /// <li>
+    /// <p>Graphics G4</p></li>
+    /// <li>
+    /// <p>Graphics G5</p></li>
+    /// </ul>
+    pub supported_instance_families: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Indicates whether dynamic app providers are enabled within an AppStream 2.0 image or not.</p>
+    pub dynamic_app_providers_enabled: ::std::option::Option<crate::types::DynamicAppProvidersEnabled>,
+    /// <p>Indicates whether the image is shared with another account ID.</p>
+    pub image_shared_with_others: ::std::option::Option<crate::types::ImageSharedWithOthers>,
 }
 impl Image {
     /// <p>The name of the image.</p>
@@ -112,6 +138,42 @@ impl Image {
     pub fn image_errors(&self) -> &[crate::types::ResourceError] {
         self.image_errors.as_deref().unwrap_or_default()
     }
+    /// <p>Indicates whether the image is using the latest AppStream 2.0 agent version or not.</p>
+    pub fn latest_appstream_agent_version(&self) -> ::std::option::Option<&crate::types::LatestAppstreamAgentVersion> {
+        self.latest_appstream_agent_version.as_ref()
+    }
+    /// <p>The supported instances families that determine which image a customer can use when the customer launches a fleet or image builder. The following instances families are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p>General Purpose</p></li>
+    /// <li>
+    /// <p>Compute Optimized</p></li>
+    /// <li>
+    /// <p>Memory Optimized</p></li>
+    /// <li>
+    /// <p>Graphics</p></li>
+    /// <li>
+    /// <p>Graphics Design</p></li>
+    /// <li>
+    /// <p>Graphics Pro</p></li>
+    /// <li>
+    /// <p>Graphics G4</p></li>
+    /// <li>
+    /// <p>Graphics G5</p></li>
+    /// </ul>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_instance_families.is_none()`.
+    pub fn supported_instance_families(&self) -> &[::std::string::String] {
+        self.supported_instance_families.as_deref().unwrap_or_default()
+    }
+    /// <p>Indicates whether dynamic app providers are enabled within an AppStream 2.0 image or not.</p>
+    pub fn dynamic_app_providers_enabled(&self) -> ::std::option::Option<&crate::types::DynamicAppProvidersEnabled> {
+        self.dynamic_app_providers_enabled.as_ref()
+    }
+    /// <p>Indicates whether the image is shared with another account ID.</p>
+    pub fn image_shared_with_others(&self) -> ::std::option::Option<&crate::types::ImageSharedWithOthers> {
+        self.image_shared_with_others.as_ref()
+    }
 }
 impl Image {
     /// Creates a new builder-style object to manufacture [`Image`](crate::types::Image).
@@ -141,6 +203,10 @@ pub struct ImageBuilder {
     pub(crate) appstream_agent_version: ::std::option::Option<::std::string::String>,
     pub(crate) image_permissions: ::std::option::Option<crate::types::ImagePermissions>,
     pub(crate) image_errors: ::std::option::Option<::std::vec::Vec<crate::types::ResourceError>>,
+    pub(crate) latest_appstream_agent_version: ::std::option::Option<crate::types::LatestAppstreamAgentVersion>,
+    pub(crate) supported_instance_families: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) dynamic_app_providers_enabled: ::std::option::Option<crate::types::DynamicAppProvidersEnabled>,
+    pub(crate) image_shared_with_others: ::std::option::Option<crate::types::ImageSharedWithOthers>,
 }
 impl ImageBuilder {
     /// <p>The name of the image.</p>
@@ -394,6 +460,122 @@ impl ImageBuilder {
     pub fn get_image_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceError>> {
         &self.image_errors
     }
+    /// <p>Indicates whether the image is using the latest AppStream 2.0 agent version or not.</p>
+    pub fn latest_appstream_agent_version(mut self, input: crate::types::LatestAppstreamAgentVersion) -> Self {
+        self.latest_appstream_agent_version = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the image is using the latest AppStream 2.0 agent version or not.</p>
+    pub fn set_latest_appstream_agent_version(mut self, input: ::std::option::Option<crate::types::LatestAppstreamAgentVersion>) -> Self {
+        self.latest_appstream_agent_version = input;
+        self
+    }
+    /// <p>Indicates whether the image is using the latest AppStream 2.0 agent version or not.</p>
+    pub fn get_latest_appstream_agent_version(&self) -> &::std::option::Option<crate::types::LatestAppstreamAgentVersion> {
+        &self.latest_appstream_agent_version
+    }
+    /// Appends an item to `supported_instance_families`.
+    ///
+    /// To override the contents of this collection use [`set_supported_instance_families`](Self::set_supported_instance_families).
+    ///
+    /// <p>The supported instances families that determine which image a customer can use when the customer launches a fleet or image builder. The following instances families are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p>General Purpose</p></li>
+    /// <li>
+    /// <p>Compute Optimized</p></li>
+    /// <li>
+    /// <p>Memory Optimized</p></li>
+    /// <li>
+    /// <p>Graphics</p></li>
+    /// <li>
+    /// <p>Graphics Design</p></li>
+    /// <li>
+    /// <p>Graphics Pro</p></li>
+    /// <li>
+    /// <p>Graphics G4</p></li>
+    /// <li>
+    /// <p>Graphics G5</p></li>
+    /// </ul>
+    pub fn supported_instance_families(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.supported_instance_families.unwrap_or_default();
+        v.push(input.into());
+        self.supported_instance_families = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The supported instances families that determine which image a customer can use when the customer launches a fleet or image builder. The following instances families are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p>General Purpose</p></li>
+    /// <li>
+    /// <p>Compute Optimized</p></li>
+    /// <li>
+    /// <p>Memory Optimized</p></li>
+    /// <li>
+    /// <p>Graphics</p></li>
+    /// <li>
+    /// <p>Graphics Design</p></li>
+    /// <li>
+    /// <p>Graphics Pro</p></li>
+    /// <li>
+    /// <p>Graphics G4</p></li>
+    /// <li>
+    /// <p>Graphics G5</p></li>
+    /// </ul>
+    pub fn set_supported_instance_families(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.supported_instance_families = input;
+        self
+    }
+    /// <p>The supported instances families that determine which image a customer can use when the customer launches a fleet or image builder. The following instances families are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p>General Purpose</p></li>
+    /// <li>
+    /// <p>Compute Optimized</p></li>
+    /// <li>
+    /// <p>Memory Optimized</p></li>
+    /// <li>
+    /// <p>Graphics</p></li>
+    /// <li>
+    /// <p>Graphics Design</p></li>
+    /// <li>
+    /// <p>Graphics Pro</p></li>
+    /// <li>
+    /// <p>Graphics G4</p></li>
+    /// <li>
+    /// <p>Graphics G5</p></li>
+    /// </ul>
+    pub fn get_supported_instance_families(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.supported_instance_families
+    }
+    /// <p>Indicates whether dynamic app providers are enabled within an AppStream 2.0 image or not.</p>
+    pub fn dynamic_app_providers_enabled(mut self, input: crate::types::DynamicAppProvidersEnabled) -> Self {
+        self.dynamic_app_providers_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether dynamic app providers are enabled within an AppStream 2.0 image or not.</p>
+    pub fn set_dynamic_app_providers_enabled(mut self, input: ::std::option::Option<crate::types::DynamicAppProvidersEnabled>) -> Self {
+        self.dynamic_app_providers_enabled = input;
+        self
+    }
+    /// <p>Indicates whether dynamic app providers are enabled within an AppStream 2.0 image or not.</p>
+    pub fn get_dynamic_app_providers_enabled(&self) -> &::std::option::Option<crate::types::DynamicAppProvidersEnabled> {
+        &self.dynamic_app_providers_enabled
+    }
+    /// <p>Indicates whether the image is shared with another account ID.</p>
+    pub fn image_shared_with_others(mut self, input: crate::types::ImageSharedWithOthers) -> Self {
+        self.image_shared_with_others = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the image is shared with another account ID.</p>
+    pub fn set_image_shared_with_others(mut self, input: ::std::option::Option<crate::types::ImageSharedWithOthers>) -> Self {
+        self.image_shared_with_others = input;
+        self
+    }
+    /// <p>Indicates whether the image is shared with another account ID.</p>
+    pub fn get_image_shared_with_others(&self) -> &::std::option::Option<crate::types::ImageSharedWithOthers> {
+        &self.image_shared_with_others
+    }
     /// Consumes the builder and constructs a [`Image`](crate::types::Image).
     pub fn build(self) -> crate::types::Image {
         crate::types::Image {
@@ -414,6 +596,10 @@ impl ImageBuilder {
             appstream_agent_version: self.appstream_agent_version,
             image_permissions: self.image_permissions,
             image_errors: self.image_errors,
+            latest_appstream_agent_version: self.latest_appstream_agent_version,
+            supported_instance_families: self.supported_instance_families,
+            dynamic_app_providers_enabled: self.dynamic_app_providers_enabled,
+            image_shared_with_others: self.image_shared_with_others,
         }
     }
 }

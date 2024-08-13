@@ -109,6 +109,8 @@ pub struct ImageBuilder {
     pub appstream_agent_version: ::std::option::Option<::std::string::String>,
     /// <p>The list of virtual private cloud (VPC) interface endpoint objects. Administrators can connect to the image builder only through the specified endpoints.</p>
     pub access_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>,
+    /// <p>Indicates whether the image builder is using the latest AppStream 2.0 agent version or not.</p>
+    pub latest_appstream_agent_version: ::std::option::Option<crate::types::LatestAppstreamAgentVersion>,
 }
 impl ImageBuilder {
     /// <p>The name of the image builder.</p>
@@ -256,6 +258,10 @@ impl ImageBuilder {
     pub fn access_endpoints(&self) -> &[crate::types::AccessEndpoint] {
         self.access_endpoints.as_deref().unwrap_or_default()
     }
+    /// <p>Indicates whether the image builder is using the latest AppStream 2.0 agent version or not.</p>
+    pub fn latest_appstream_agent_version(&self) -> ::std::option::Option<&crate::types::LatestAppstreamAgentVersion> {
+        self.latest_appstream_agent_version.as_ref()
+    }
 }
 impl ImageBuilder {
     /// Creates a new builder-style object to manufacture [`ImageBuilder`](crate::types::ImageBuilder).
@@ -286,6 +292,7 @@ pub struct ImageBuilderBuilder {
     pub(crate) image_builder_errors: ::std::option::Option<::std::vec::Vec<crate::types::ResourceError>>,
     pub(crate) appstream_agent_version: ::std::option::Option<::std::string::String>,
     pub(crate) access_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>,
+    pub(crate) latest_appstream_agent_version: ::std::option::Option<crate::types::LatestAppstreamAgentVersion>,
 }
 impl ImageBuilderBuilder {
     /// <p>The name of the image builder.</p>
@@ -760,6 +767,20 @@ impl ImageBuilderBuilder {
     pub fn get_access_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>> {
         &self.access_endpoints
     }
+    /// <p>Indicates whether the image builder is using the latest AppStream 2.0 agent version or not.</p>
+    pub fn latest_appstream_agent_version(mut self, input: crate::types::LatestAppstreamAgentVersion) -> Self {
+        self.latest_appstream_agent_version = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the image builder is using the latest AppStream 2.0 agent version or not.</p>
+    pub fn set_latest_appstream_agent_version(mut self, input: ::std::option::Option<crate::types::LatestAppstreamAgentVersion>) -> Self {
+        self.latest_appstream_agent_version = input;
+        self
+    }
+    /// <p>Indicates whether the image builder is using the latest AppStream 2.0 agent version or not.</p>
+    pub fn get_latest_appstream_agent_version(&self) -> &::std::option::Option<crate::types::LatestAppstreamAgentVersion> {
+        &self.latest_appstream_agent_version
+    }
     /// Consumes the builder and constructs a [`ImageBuilder`](crate::types::ImageBuilder).
     pub fn build(self) -> crate::types::ImageBuilder {
         crate::types::ImageBuilder {
@@ -781,6 +802,7 @@ impl ImageBuilderBuilder {
             image_builder_errors: self.image_builder_errors,
             appstream_agent_version: self.appstream_agent_version,
             access_endpoints: self.access_endpoints,
+            latest_appstream_agent_version: self.latest_appstream_agent_version,
         }
     }
 }

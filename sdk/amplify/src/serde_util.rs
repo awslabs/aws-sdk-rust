@@ -599,6 +599,13 @@ pub(crate) fn artifact_correct_errors(mut builder: crate::types::builders::Artif
     builder
 }
 
+pub(crate) fn cache_config_correct_errors(mut builder: crate::types::builders::CacheConfigBuilder) -> crate::types::builders::CacheConfigBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::CacheConfigType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn certificate_correct_errors(mut builder: crate::types::builders::CertificateBuilder) -> crate::types::builders::CertificateBuilder {
     if builder.r#type.is_none() {
         builder.r#type = "no value was set".parse::<crate::types::CertificateType>().ok()

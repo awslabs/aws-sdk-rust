@@ -63,13 +63,13 @@ where
 }
 
 pub fn ser_import_options(
-    object_6: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
+    object_7: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ImportOptions,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::ImportOptions::Neptune(inner) => {
             #[allow(unused_mut)]
-            let mut object_1 = object_6.key("neptune").start_object();
+            let mut object_1 = object_7.key("neptune").start_object();
             crate::protocol_serde::shape_neptune_import_options::ser_neptune_import_options(&mut object_1, inner)?;
             object_1.finish();
         }

@@ -206,6 +206,8 @@ mod create_stack;
 
 mod create_streaming_url;
 
+mod create_theme_for_stack;
+
 mod create_updated_image;
 
 mod create_usage_report_subscription;
@@ -259,6 +261,8 @@ mod delete_image_permissions;
 
 mod delete_stack;
 
+mod delete_theme_for_stack;
+
 mod delete_usage_report_subscription;
 
 mod delete_user;
@@ -288,6 +292,8 @@ mod describe_images;
 mod describe_sessions;
 
 mod describe_stacks;
+
+mod describe_theme_for_stack;
 
 mod describe_usage_report_subscriptions;
 
@@ -346,3 +352,5 @@ mod update_fleet;
 mod update_image_permissions;
 
 mod update_stack;
+
+mod update_theme_for_stack;

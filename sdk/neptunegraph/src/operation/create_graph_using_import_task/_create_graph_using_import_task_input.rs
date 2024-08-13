@@ -33,6 +33,8 @@ pub struct CreateGraphUsingImportTaskInput {
     pub source: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the format of S3 data to be imported. Valid values are <code>CSV</code>, which identifies the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-gremlin.html">Gremlin CSV format</a> or <code>OPENCYPHER</code>, which identies the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-opencypher.html">openCypher load format</a>.</p>
     pub format: ::std::option::Option<crate::types::Format>,
+    /// <p>The method to handle blank nodes in the dataset. Currently, only <code>convertToIri</code> is supported, meaning blank nodes are converted to unique IRIs at load time. Must be provided when format is <code>ntriples</code>. For more information, see <a href="https://docs.aws.amazon.com/neptune-analytics/latest/userguide/using-rdf-data.html#rdf-handling">Handling RDF values</a>.</p>
+    pub blank_node_handling: ::std::option::Option<crate::types::BlankNodeHandling>,
     /// <p>The ARN of the IAM role that will allow access to the data that is to be imported.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
@@ -93,6 +95,10 @@ impl CreateGraphUsingImportTaskInput {
     pub fn format(&self) -> ::std::option::Option<&crate::types::Format> {
         self.format.as_ref()
     }
+    /// <p>The method to handle blank nodes in the dataset. Currently, only <code>convertToIri</code> is supported, meaning blank nodes are converted to unique IRIs at load time. Must be provided when format is <code>ntriples</code>. For more information, see <a href="https://docs.aws.amazon.com/neptune-analytics/latest/userguide/using-rdf-data.html#rdf-handling">Handling RDF values</a>.</p>
+    pub fn blank_node_handling(&self) -> ::std::option::Option<&crate::types::BlankNodeHandling> {
+        self.blank_node_handling.as_ref()
+    }
     /// <p>The ARN of the IAM role that will allow access to the data that is to be imported.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
@@ -122,6 +128,7 @@ pub struct CreateGraphUsingImportTaskInputBuilder {
     pub(crate) fail_on_error: ::std::option::Option<bool>,
     pub(crate) source: ::std::option::Option<::std::string::String>,
     pub(crate) format: ::std::option::Option<crate::types::Format>,
+    pub(crate) blank_node_handling: ::std::option::Option<crate::types::BlankNodeHandling>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateGraphUsingImportTaskInputBuilder {
@@ -327,6 +334,20 @@ impl CreateGraphUsingImportTaskInputBuilder {
     pub fn get_format(&self) -> &::std::option::Option<crate::types::Format> {
         &self.format
     }
+    /// <p>The method to handle blank nodes in the dataset. Currently, only <code>convertToIri</code> is supported, meaning blank nodes are converted to unique IRIs at load time. Must be provided when format is <code>ntriples</code>. For more information, see <a href="https://docs.aws.amazon.com/neptune-analytics/latest/userguide/using-rdf-data.html#rdf-handling">Handling RDF values</a>.</p>
+    pub fn blank_node_handling(mut self, input: crate::types::BlankNodeHandling) -> Self {
+        self.blank_node_handling = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The method to handle blank nodes in the dataset. Currently, only <code>convertToIri</code> is supported, meaning blank nodes are converted to unique IRIs at load time. Must be provided when format is <code>ntriples</code>. For more information, see <a href="https://docs.aws.amazon.com/neptune-analytics/latest/userguide/using-rdf-data.html#rdf-handling">Handling RDF values</a>.</p>
+    pub fn set_blank_node_handling(mut self, input: ::std::option::Option<crate::types::BlankNodeHandling>) -> Self {
+        self.blank_node_handling = input;
+        self
+    }
+    /// <p>The method to handle blank nodes in the dataset. Currently, only <code>convertToIri</code> is supported, meaning blank nodes are converted to unique IRIs at load time. Must be provided when format is <code>ntriples</code>. For more information, see <a href="https://docs.aws.amazon.com/neptune-analytics/latest/userguide/using-rdf-data.html#rdf-handling">Handling RDF values</a>.</p>
+    pub fn get_blank_node_handling(&self) -> &::std::option::Option<crate::types::BlankNodeHandling> {
+        &self.blank_node_handling
+    }
     /// <p>The ARN of the IAM role that will allow access to the data that is to be imported.</p>
     /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -363,6 +384,7 @@ impl CreateGraphUsingImportTaskInputBuilder {
             fail_on_error: self.fail_on_error,
             source: self.source,
             format: self.format,
+            blank_node_handling: self.blank_node_handling,
             role_arn: self.role_arn,
         })
     }

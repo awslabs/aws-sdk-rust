@@ -55,6 +55,9 @@ pub mod create_stack;
 /// Types for the `CreateStreamingURL` operation.
 pub mod create_streaming_url;
 
+/// Types for the `CreateThemeForStack` operation.
+pub mod create_theme_for_stack;
+
 /// Types for the `CreateUpdatedImage` operation.
 pub mod create_updated_image;
 
@@ -93,6 +96,9 @@ pub mod delete_image_permissions;
 
 /// Types for the `DeleteStack` operation.
 pub mod delete_stack;
+
+/// Types for the `DeleteThemeForStack` operation.
+pub mod delete_theme_for_stack;
 
 /// Types for the `DeleteUsageReportSubscription` operation.
 pub mod delete_usage_report_subscription;
@@ -138,6 +144,9 @@ pub mod describe_sessions;
 
 /// Types for the `DescribeStacks` operation.
 pub mod describe_stacks;
+
+/// Types for the `DescribeThemeForStack` operation.
+pub mod describe_theme_for_stack;
 
 /// Types for the `DescribeUsageReportSubscriptions` operation.
 pub mod describe_usage_report_subscriptions;
@@ -225,3 +234,6 @@ pub mod update_image_permissions;
 
 /// Types for the `UpdateStack` operation.
 pub mod update_stack;
+
+/// Types for the `UpdateThemeForStack` operation.
+pub mod update_theme_for_stack;

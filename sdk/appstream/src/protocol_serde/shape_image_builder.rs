@@ -117,6 +117,13 @@ where
                             builder =
                                 builder.set_access_endpoints(crate::protocol_serde::shape_access_endpoint_list::de_access_endpoint_list(tokens)?);
                         }
+                        "LatestAppstreamAgentVersion" => {
+                            builder = builder.set_latest_appstream_agent_version(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::LatestAppstreamAgentVersion::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

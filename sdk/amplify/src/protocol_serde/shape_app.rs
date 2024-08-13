@@ -148,6 +148,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "cacheConfig" => {
+                            builder = builder.set_cache_config(crate::protocol_serde::shape_cache_config::de_cache_config(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -25,6 +25,10 @@ pub use crate::types::_stage::Stage;
 
 pub use crate::types::_app::App;
 
+pub use crate::types::_cache_config::CacheConfig;
+
+pub use crate::types::_cache_config_type::CacheConfigType;
+
 pub use crate::types::_repository_clone_method::RepositoryCloneMethod;
 
 pub use crate::types::_auto_branch_creation_config::AutoBranchCreationConfig;
@@ -60,6 +64,10 @@ mod _backend;
 mod _backend_environment;
 
 mod _branch;
+
+mod _cache_config;
+
+mod _cache_config_type;
 
 mod _certificate;
 

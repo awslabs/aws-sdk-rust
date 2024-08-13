@@ -28,6 +28,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "error" => {
+                            builder = builder.set_error(crate::protocol_serde::shape_experiment_error::de_experiment_error(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

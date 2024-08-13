@@ -3,69 +3,72 @@ pub fn ser_create_graph_using_import_task_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_graph_using_import_task::CreateGraphUsingImportTaskInput,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.deletion_protection {
-        object.key("deletionProtection").boolean(*var_1);
+    if let Some(var_1) = &input.blank_node_handling {
+        object.key("blankNodeHandling").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.fail_on_error {
-        object.key("failOnError").boolean(*var_2);
+    if let Some(var_2) = &input.deletion_protection {
+        object.key("deletionProtection").boolean(*var_2);
     }
-    if let Some(var_3) = &input.format {
-        object.key("format").string(var_3.as_str());
+    if let Some(var_3) = &input.fail_on_error {
+        object.key("failOnError").boolean(*var_3);
     }
-    if let Some(var_4) = &input.graph_name {
-        object.key("graphName").string(var_4.as_str());
+    if let Some(var_4) = &input.format {
+        object.key("format").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.import_options {
+    if let Some(var_5) = &input.graph_name {
+        object.key("graphName").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.import_options {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("importOptions").start_object();
-        crate::protocol_serde::shape_import_options::ser_import_options(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_7 = object.key("importOptions").start_object();
+        crate::protocol_serde::shape_import_options::ser_import_options(&mut object_7, var_6)?;
+        object_7.finish();
     }
-    if let Some(var_7) = &input.kms_key_identifier {
-        object.key("kmsKeyIdentifier").string(var_7.as_str());
+    if let Some(var_8) = &input.kms_key_identifier {
+        object.key("kmsKeyIdentifier").string(var_8.as_str());
     }
-    if let Some(var_8) = &input.max_provisioned_memory {
+    if let Some(var_9) = &input.max_provisioned_memory {
         object.key("maxProvisionedMemory").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_8).into()),
-        );
-    }
-    if let Some(var_9) = &input.min_provisioned_memory {
-        object.key("minProvisionedMemory").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
-    if let Some(var_10) = &input.public_connectivity {
-        object.key("publicConnectivity").boolean(*var_10);
-    }
-    if let Some(var_11) = &input.replica_count {
-        object.key("replicaCount").number(
+    if let Some(var_10) = &input.min_provisioned_memory {
+        object.key("minProvisionedMemory").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_11).into()),
+            ::aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
-    if let Some(var_12) = &input.role_arn {
-        object.key("roleArn").string(var_12.as_str());
+    if let Some(var_11) = &input.public_connectivity {
+        object.key("publicConnectivity").boolean(*var_11);
     }
-    if let Some(var_13) = &input.source {
-        object.key("source").string(var_13.as_str());
+    if let Some(var_12) = &input.replica_count {
+        object.key("replicaCount").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_12).into()),
+        );
     }
-    if let Some(var_14) = &input.tags {
+    if let Some(var_13) = &input.role_arn {
+        object.key("roleArn").string(var_13.as_str());
+    }
+    if let Some(var_14) = &input.source {
+        object.key("source").string(var_14.as_str());
+    }
+    if let Some(var_15) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("tags").start_object();
-        for (key_16, value_17) in var_14 {
+        let mut object_16 = object.key("tags").start_object();
+        for (key_17, value_18) in var_15 {
             {
-                object_15.key(key_16.as_str()).string(value_17.as_str());
+                object_16.key(key_17.as_str()).string(value_18.as_str());
             }
         }
-        object_15.finish();
+        object_16.finish();
     }
-    if let Some(var_18) = &input.vector_search_configuration {
+    if let Some(var_19) = &input.vector_search_configuration {
         #[allow(unused_mut)]
-        let mut object_19 = object.key("vectorSearchConfiguration").start_object();
-        crate::protocol_serde::shape_vector_search_configuration::ser_vector_search_configuration(&mut object_19, var_18)?;
-        object_19.finish();
+        let mut object_20 = object.key("vectorSearchConfiguration").start_object();
+        crate::protocol_serde::shape_vector_search_configuration::ser_vector_search_configuration(&mut object_20, var_19)?;
+        object_20.finish();
     }
     Ok(())
 }

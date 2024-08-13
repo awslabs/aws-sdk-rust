@@ -8,6 +8,8 @@ pub struct ExperimentState {
     pub status: ::std::option::Option<crate::types::ExperimentStatus>,
     /// <p>The reason for the state.</p>
     pub reason: ::std::option::Option<::std::string::String>,
+    /// <p>The error information of the experiment when the action has <code>failed</code>.</p>
+    pub error: ::std::option::Option<crate::types::ExperimentError>,
 }
 impl ExperimentState {
     /// <p>The state of the experiment.</p>
@@ -17,6 +19,10 @@ impl ExperimentState {
     /// <p>The reason for the state.</p>
     pub fn reason(&self) -> ::std::option::Option<&str> {
         self.reason.as_deref()
+    }
+    /// <p>The error information of the experiment when the action has <code>failed</code>.</p>
+    pub fn error(&self) -> ::std::option::Option<&crate::types::ExperimentError> {
+        self.error.as_ref()
     }
 }
 impl ExperimentState {
@@ -32,6 +38,7 @@ impl ExperimentState {
 pub struct ExperimentStateBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ExperimentStatus>,
     pub(crate) reason: ::std::option::Option<::std::string::String>,
+    pub(crate) error: ::std::option::Option<crate::types::ExperimentError>,
 }
 impl ExperimentStateBuilder {
     /// <p>The state of the experiment.</p>
@@ -62,11 +69,26 @@ impl ExperimentStateBuilder {
     pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.reason
     }
+    /// <p>The error information of the experiment when the action has <code>failed</code>.</p>
+    pub fn error(mut self, input: crate::types::ExperimentError) -> Self {
+        self.error = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The error information of the experiment when the action has <code>failed</code>.</p>
+    pub fn set_error(mut self, input: ::std::option::Option<crate::types::ExperimentError>) -> Self {
+        self.error = input;
+        self
+    }
+    /// <p>The error information of the experiment when the action has <code>failed</code>.</p>
+    pub fn get_error(&self) -> &::std::option::Option<crate::types::ExperimentError> {
+        &self.error
+    }
     /// Consumes the builder and constructs a [`ExperimentState`](crate::types::ExperimentState).
     pub fn build(self) -> crate::types::ExperimentState {
         crate::types::ExperimentState {
             status: self.status,
             reason: self.reason,
+            error: self.error,
         }
     }
 }

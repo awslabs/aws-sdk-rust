@@ -59,6 +59,8 @@ pub(crate) mod shape_create_stack;
 
 pub(crate) mod shape_create_streaming_url;
 
+pub(crate) mod shape_create_theme_for_stack;
+
 pub(crate) mod shape_create_updated_image;
 
 pub(crate) mod shape_create_usage_report_subscription;
@@ -84,6 +86,8 @@ pub(crate) mod shape_delete_image_builder;
 pub(crate) mod shape_delete_image_permissions;
 
 pub(crate) mod shape_delete_stack;
+
+pub(crate) mod shape_delete_theme_for_stack;
 
 pub(crate) mod shape_delete_usage_report_subscription;
 
@@ -114,6 +118,8 @@ pub(crate) mod shape_describe_images;
 pub(crate) mod shape_describe_sessions;
 
 pub(crate) mod shape_describe_stacks;
+
+pub(crate) mod shape_describe_theme_for_stack;
 
 pub(crate) mod shape_describe_usage_report_subscriptions;
 
@@ -173,6 +179,8 @@ pub(crate) mod shape_update_image_permissions;
 
 pub(crate) mod shape_update_stack;
 
+pub(crate) mod shape_update_theme_for_stack;
+
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
@@ -219,6 +227,8 @@ pub(crate) mod shape_create_stack_input;
 
 pub(crate) mod shape_create_streaming_url_input;
 
+pub(crate) mod shape_create_theme_for_stack_input;
+
 pub(crate) mod shape_create_updated_image_input;
 
 pub(crate) mod shape_create_user_input;
@@ -242,6 +252,8 @@ pub(crate) mod shape_delete_image_input;
 pub(crate) mod shape_delete_image_permissions_input;
 
 pub(crate) mod shape_delete_stack_input;
+
+pub(crate) mod shape_delete_theme_for_stack_input;
 
 pub(crate) mod shape_delete_user_input;
 
@@ -270,6 +282,8 @@ pub(crate) mod shape_describe_images_input;
 pub(crate) mod shape_describe_sessions_input;
 
 pub(crate) mod shape_describe_stacks_input;
+
+pub(crate) mod shape_describe_theme_for_stack_input;
 
 pub(crate) mod shape_describe_usage_report_subscriptions_input;
 
@@ -355,6 +369,8 @@ pub(crate) mod shape_update_image_permissions_input;
 
 pub(crate) mod shape_update_stack_input;
 
+pub(crate) mod shape_update_theme_for_stack_input;
+
 pub(crate) mod shape_access_endpoint;
 
 pub(crate) mod shape_app_block;
@@ -433,6 +449,10 @@ pub(crate) mod shape_string_list;
 
 pub(crate) mod shape_tags;
 
+pub(crate) mod shape_theme;
+
+pub(crate) mod shape_theme_footer_link;
+
 pub(crate) mod shape_usage_report_subscription_list;
 
 pub(crate) mod shape_user_list;
@@ -486,6 +506,8 @@ pub(crate) mod shape_shared_image_permissions;
 pub(crate) mod shape_stack_errors;
 
 pub(crate) mod shape_storage_connector_list;
+
+pub(crate) mod shape_theme_footer_links;
 
 pub(crate) mod shape_usage_report_subscription;
 

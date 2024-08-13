@@ -3,23 +3,26 @@ pub fn ser_start_import_task_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_import_task::StartImportTaskInput,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.fail_on_error {
-        object.key("failOnError").boolean(*var_1);
+    if let Some(var_1) = &input.blank_node_handling {
+        object.key("blankNodeHandling").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.format {
-        object.key("format").string(var_2.as_str());
+    if let Some(var_2) = &input.fail_on_error {
+        object.key("failOnError").boolean(*var_2);
     }
-    if let Some(var_3) = &input.import_options {
+    if let Some(var_3) = &input.format {
+        object.key("format").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.import_options {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("importOptions").start_object();
-        crate::protocol_serde::shape_import_options::ser_import_options(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_5 = object.key("importOptions").start_object();
+        crate::protocol_serde::shape_import_options::ser_import_options(&mut object_5, var_4)?;
+        object_5.finish();
     }
-    if let Some(var_5) = &input.role_arn {
-        object.key("roleArn").string(var_5.as_str());
+    if let Some(var_6) = &input.role_arn {
+        object.key("roleArn").string(var_6.as_str());
     }
-    if let Some(var_6) = &input.source {
-        object.key("source").string(var_6.as_str());
+    if let Some(var_7) = &input.source {
+        object.key("source").string(var_7.as_str());
     }
     Ok(())
 }
