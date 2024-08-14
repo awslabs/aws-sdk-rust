@@ -454,9 +454,9 @@ model_hash = '887fa8d62137a444faf49b35c87c543efb59d1b15a0f07414312be2410eb6c6c'
 
 [crates.aws-sdk-codebuild]
 category = 'AwsSdk'
-version = '1.46.0'
-source_hash = '22dfe369400204911372fae3e7e2a36265454c38653d1db8401287abc30ffdaa'
-model_hash = '4d0779ea4236b39b086d47fee4e849ec7ce37f50731477e9186b2040979456f0'
+version = '1.47.0'
+source_hash = 'c291e47f3baadd027b1db059417349a9dd46dcb0d5f482651ee4dcea545208d3'
+model_hash = 'ef0469d8960b2a326041c6ddc07958e7363770330b5c81e15f8a895261839e10'
 
 [crates.aws-sdk-codecatalyst]
 category = 'AwsSdk'
@@ -2487,13 +2487,5 @@ source_hash = 'b5fd805d7a60bb9668523cd80b53b2c45e7f0e747d1560fc41522c9fbf783df2'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = 'd08f576b0bc9146b45af732b63e0a8923b13fe09816d385e32b4c6d9e503de81'
-
-[release]
-tag = 'release-2024-08-13'
-
 [release.crates]
-aws-sdk-amplify = '1.40.0'
-aws-sdk-appstream = '1.39.0'
-aws-sdk-fis = '1.38.0'
-aws-sdk-glue = '1.53.0'
-aws-sdk-neptunegraph = '1.35.0'
+aws-sdk-codebuild = '1.47.0'

@@ -76,7 +76,6 @@ pub struct ProjectSource {
     /// <p>If this value is set, it can be either an inline buildspec definition, the path to an alternate buildspec file relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an S3 bucket. The bucket must be in the same Amazon Web Services Region as the build project. Specify the buildspec file using its ARN (for example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is not provided or is set to an empty string, the source code must contain a buildspec file in its root directory. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec File Name and Storage Location</a>.</p>
     pub buildspec: ::std::option::Option<::std::string::String>,
     /// <p>Information about the authorization settings for CodeBuild to access the source code to be built.</p>
-    /// <p>This information is for the CodeBuild console's use only. Your code should not get or set this information directly.</p>
     pub auth: ::std::option::Option<crate::types::SourceAuth>,
     /// <p>Set to true to report the status of a build's start and finish to your source provider. This option is valid only when your source provider is GitHub, GitHub Enterprise, GitLab, GitLab Self Managed, or Bitbucket. If this is set and you use a different source provider, an <code>invalidInputException</code> is thrown.</p>
     /// <p>To be able to report the build status to the source provider, the user associated with the source provider must have write access to the repo. If the user does not have write access, the build status cannot be updated. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source provider access</a> in the <i>CodeBuild User Guide</i>.</p>
@@ -173,7 +172,6 @@ impl ProjectSource {
         self.buildspec.as_deref()
     }
     /// <p>Information about the authorization settings for CodeBuild to access the source code to be built.</p>
-    /// <p>This information is for the CodeBuild console's use only. Your code should not get or set this information directly.</p>
     pub fn auth(&self) -> ::std::option::Option<&crate::types::SourceAuth> {
         self.auth.as_ref()
     }
@@ -475,19 +473,16 @@ impl ProjectSourceBuilder {
         &self.buildspec
     }
     /// <p>Information about the authorization settings for CodeBuild to access the source code to be built.</p>
-    /// <p>This information is for the CodeBuild console's use only. Your code should not get or set this information directly.</p>
     pub fn auth(mut self, input: crate::types::SourceAuth) -> Self {
         self.auth = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the authorization settings for CodeBuild to access the source code to be built.</p>
-    /// <p>This information is for the CodeBuild console's use only. Your code should not get or set this information directly.</p>
     pub fn set_auth(mut self, input: ::std::option::Option<crate::types::SourceAuth>) -> Self {
         self.auth = input;
         self
     }
     /// <p>Information about the authorization settings for CodeBuild to access the source code to be built.</p>
-    /// <p>This information is for the CodeBuild console's use only. Your code should not get or set this information directly.</p>
     pub fn get_auth(&self) -> &::std::option::Option<crate::types::SourceAuth> {
         &self.auth
     }

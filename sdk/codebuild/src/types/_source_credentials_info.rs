@@ -8,9 +8,9 @@ pub struct SourceCredentialsInfo {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of source provider. The valid options are GITHUB, GITHUB_ENTERPRISE, GITLAB, GITLAB_SELF_MANAGED, or BITBUCKET.</p>
     pub server_type: ::std::option::Option<crate::types::ServerType>,
-    /// <p>The type of authentication used by the credentials. Valid options are OAUTH, BASIC_AUTH, PERSONAL_ACCESS_TOKEN, or CODECONNECTIONS.</p>
+    /// <p>The type of authentication used by the credentials. Valid options are OAUTH, BASIC_AUTH, PERSONAL_ACCESS_TOKEN, CODECONNECTIONS, or SECRETS_MANAGER.</p>
     pub auth_type: ::std::option::Option<crate::types::AuthType>,
-    /// <p>The connection ARN if your serverType type is GITLAB or GITLAB_SELF_MANAGED and your authType is CODECONNECTIONS.</p>
+    /// <p>The connection ARN if your authType is CODECONNECTIONS or SECRETS_MANAGER.</p>
     pub resource: ::std::option::Option<::std::string::String>,
 }
 impl SourceCredentialsInfo {
@@ -22,11 +22,11 @@ impl SourceCredentialsInfo {
     pub fn server_type(&self) -> ::std::option::Option<&crate::types::ServerType> {
         self.server_type.as_ref()
     }
-    /// <p>The type of authentication used by the credentials. Valid options are OAUTH, BASIC_AUTH, PERSONAL_ACCESS_TOKEN, or CODECONNECTIONS.</p>
+    /// <p>The type of authentication used by the credentials. Valid options are OAUTH, BASIC_AUTH, PERSONAL_ACCESS_TOKEN, CODECONNECTIONS, or SECRETS_MANAGER.</p>
     pub fn auth_type(&self) -> ::std::option::Option<&crate::types::AuthType> {
         self.auth_type.as_ref()
     }
-    /// <p>The connection ARN if your serverType type is GITLAB or GITLAB_SELF_MANAGED and your authType is CODECONNECTIONS.</p>
+    /// <p>The connection ARN if your authType is CODECONNECTIONS or SECRETS_MANAGER.</p>
     pub fn resource(&self) -> ::std::option::Option<&str> {
         self.resource.as_deref()
     }
@@ -76,31 +76,31 @@ impl SourceCredentialsInfoBuilder {
     pub fn get_server_type(&self) -> &::std::option::Option<crate::types::ServerType> {
         &self.server_type
     }
-    /// <p>The type of authentication used by the credentials. Valid options are OAUTH, BASIC_AUTH, PERSONAL_ACCESS_TOKEN, or CODECONNECTIONS.</p>
+    /// <p>The type of authentication used by the credentials. Valid options are OAUTH, BASIC_AUTH, PERSONAL_ACCESS_TOKEN, CODECONNECTIONS, or SECRETS_MANAGER.</p>
     pub fn auth_type(mut self, input: crate::types::AuthType) -> Self {
         self.auth_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of authentication used by the credentials. Valid options are OAUTH, BASIC_AUTH, PERSONAL_ACCESS_TOKEN, or CODECONNECTIONS.</p>
+    /// <p>The type of authentication used by the credentials. Valid options are OAUTH, BASIC_AUTH, PERSONAL_ACCESS_TOKEN, CODECONNECTIONS, or SECRETS_MANAGER.</p>
     pub fn set_auth_type(mut self, input: ::std::option::Option<crate::types::AuthType>) -> Self {
         self.auth_type = input;
         self
     }
-    /// <p>The type of authentication used by the credentials. Valid options are OAUTH, BASIC_AUTH, PERSONAL_ACCESS_TOKEN, or CODECONNECTIONS.</p>
+    /// <p>The type of authentication used by the credentials. Valid options are OAUTH, BASIC_AUTH, PERSONAL_ACCESS_TOKEN, CODECONNECTIONS, or SECRETS_MANAGER.</p>
     pub fn get_auth_type(&self) -> &::std::option::Option<crate::types::AuthType> {
         &self.auth_type
     }
-    /// <p>The connection ARN if your serverType type is GITLAB or GITLAB_SELF_MANAGED and your authType is CODECONNECTIONS.</p>
+    /// <p>The connection ARN if your authType is CODECONNECTIONS or SECRETS_MANAGER.</p>
     pub fn resource(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The connection ARN if your serverType type is GITLAB or GITLAB_SELF_MANAGED and your authType is CODECONNECTIONS.</p>
+    /// <p>The connection ARN if your authType is CODECONNECTIONS or SECRETS_MANAGER.</p>
     pub fn set_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource = input;
         self
     }
-    /// <p>The connection ARN if your serverType type is GITLAB or GITLAB_SELF_MANAGED and your authType is CODECONNECTIONS.</p>
+    /// <p>The connection ARN if your authType is CODECONNECTIONS or SECRETS_MANAGER.</p>
     pub fn get_resource(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource
     }

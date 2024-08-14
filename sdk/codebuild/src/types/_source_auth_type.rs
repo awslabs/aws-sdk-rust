@@ -14,6 +14,7 @@
 /// match sourceauthtype {
 ///     SourceAuthType::Codeconnections => { /* ... */ },
 ///     SourceAuthType::Oauth => { /* ... */ },
+///     SourceAuthType::SecretsManager => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -45,6 +46,8 @@ pub enum SourceAuthType {
     Codeconnections,
     #[allow(missing_docs)] // documentation missing in model
     Oauth,
+    #[allow(missing_docs)] // documentation missing in model
+    SecretsManager,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for SourceAuthType {
         match s {
             "CODECONNECTIONS" => SourceAuthType::Codeconnections,
             "OAUTH" => SourceAuthType::Oauth,
+            "SECRETS_MANAGER" => SourceAuthType::SecretsManager,
             other => SourceAuthType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -71,12 +75,13 @@ impl SourceAuthType {
         match self {
             SourceAuthType::Codeconnections => "CODECONNECTIONS",
             SourceAuthType::Oauth => "OAUTH",
+            SourceAuthType::SecretsManager => "SECRETS_MANAGER",
             SourceAuthType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CODECONNECTIONS", "OAUTH"]
+        &["CODECONNECTIONS", "OAUTH", "SECRETS_MANAGER"]
     }
 }
 impl ::std::convert::AsRef<str> for SourceAuthType {
@@ -101,6 +106,7 @@ impl ::std::fmt::Display for SourceAuthType {
         match self {
             SourceAuthType::Codeconnections => write!(f, "CODECONNECTIONS"),
             SourceAuthType::Oauth => write!(f, "OAUTH"),
+            SourceAuthType::SecretsManager => write!(f, "SECRETS_MANAGER"),
             SourceAuthType::Unknown(value) => write!(f, "{}", value),
         }
     }
