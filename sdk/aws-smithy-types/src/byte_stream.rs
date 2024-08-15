@@ -322,6 +322,12 @@ impl ByteStream {
         self.next().await.transpose()
     }
 
+    /// Returns a reference to the data if it is already available in memory
+    pub fn bytes(&self) -> Option<&[u8]> {
+        let Inner { body } = &self.inner;
+        body.bytes()
+    }
+
     /// Return the bounds on the remaining length of the `ByteStream`.
     pub fn size_hint(&self) -> (u64, Option<u64>) {
         self.inner.size_hint()

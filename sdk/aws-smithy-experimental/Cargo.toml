@@ -48,7 +48,7 @@ tower = "0.4.1"
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
 features = ["http-body-1-x"]
-version = "1.2.0"
+version = "1.2.1"
 
 [dependencies.aws-smithy-runtime-api]
 features = ["client", "http-1x"]
