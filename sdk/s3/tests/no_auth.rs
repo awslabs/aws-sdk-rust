@@ -33,7 +33,7 @@ async fn list_objects() {
     dbg!(result).expect("success");
 
     http_client
-        .validate_body_and_headers(None, "application/xml")
+        .relaxed_validate("application/xml")
         .await
         .unwrap();
 }
@@ -65,7 +65,7 @@ async fn list_objects_v2() {
     dbg!(result).expect("success");
 
     http_client
-        .validate_body_and_headers(None, "application/xml")
+        .relaxed_validate("application/xml")
         .await
         .unwrap();
 }
@@ -96,7 +96,7 @@ async fn head_object() {
     dbg!(result).expect("success");
 
     http_client
-        .validate_body_and_headers(None, "application/xml")
+        .relaxed_validate("application/xml")
         .await
         .unwrap();
 }
@@ -127,7 +127,7 @@ async fn get_object() {
     dbg!(result).expect("success");
 
     http_client
-        .validate_body_and_headers(None, "application/xml")
+        .relaxed_validate("application/xml")
         .await
         .unwrap();
 }

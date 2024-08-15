@@ -39,7 +39,7 @@ version = "1.2.1"
 [dependencies.aws-smithy-runtime]
 path = "../aws-smithy-runtime"
 optional = true
-version = "1.6.2"
+version = "1.6.3"
 
 [dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"

@@ -103,11 +103,13 @@ async fn three_retries_and_then_success() {
     let resp = resp.expect("valid e2e test");
     assert_eq!(resp.name(), Some("test-bucket"));
     http_client
-        .full_validate("application/xml")
+        .relaxed_validate("application/xml")
         .await
-        .expect("failed")
+        .unwrap();
 }
-//
+
+// TODO(simulate time): Currently commented out since the test is work in progress.
+//  Consider using `tick_advance_time_and_sleep` to simulate client and server times.
 // // # Client makes 3 separate SDK operation invocations
 // // # All succeed on first attempt.
 // // # Fast network, latency + server time is less than one second.
@@ -190,7 +192,9 @@ async fn three_retries_and_then_success() {
 //     assert_eq!(resp.name(), Some("test-bucket"));
 //     conn.full_validate(MediaType::Xml).await.expect("failed")
 // }
-//
+
+// TODO(simulate time): Currently commented out since the test is work in progress.
+//  Consider using `tick_advance_time_and_sleep` to simulate client and server times.
 // // # One SDK operation invocation.
 // // # Client retries 3 times, successful response on 3rd attempt.
 // // # Slow network, one way latency is 2 seconds.

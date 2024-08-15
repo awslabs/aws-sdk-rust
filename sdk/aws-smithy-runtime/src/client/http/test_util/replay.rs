@@ -18,6 +18,8 @@ use std::sync::{Arc, Mutex, MutexGuard};
 
 type ReplayEvents = Vec<ReplayEvent>;
 
+pub(crate) const DEFAULT_RELAXED_HEADERS: &[&str] = &["x-amz-user-agent", "authorization"];
+
 /// Test data for the [`StaticReplayClient`].
 ///
 /// Each `ReplayEvent` represents one HTTP request and response
@@ -229,6 +231,17 @@ impl StaticReplayClient {
             remaining_requests.len(),
             self.requests().len()
         );
+    }
+
+    /// Convenience method for `assert_requests_match` that excludes the pre-defined headers to
+    /// be ignored
+    ///
+    /// The pre-defined headers to be ignored:
+    /// - x-amz-user-agent
+    /// - authorization
+    #[track_caller]
+    pub fn relaxed_requests_match(&self) {
+        self.assert_requests_match(DEFAULT_RELAXED_HEADERS)
     }
 }
 

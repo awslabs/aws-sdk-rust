@@ -27,5 +27,5 @@ async fn sso_bearer_auth() {
     let item = &response.items.unwrap()[0];
     assert_eq!("somespacename", item.name);
 
-    replay.full_validate("application/json").await.unwrap();
+    replay.relaxed_validate("application/json").await.unwrap();
 }

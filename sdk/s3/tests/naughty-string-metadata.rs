@@ -79,20 +79,10 @@ async fn test_s3_signer_with_naughty_string_metadata() {
 
     let _ = builder.send().await.unwrap();
 
+    // As long as a request can be extracted and the `Authorization` header exits, we're good.
+    // We cannot compare a signature in the `Authorization` header between expected and actual
+    // because the signature is subject to change as we update the `x-amz-user-agent` header, e.g.
+    // due to the introduction of a new metric.
     let expected_req = rcvr.expect_request();
-    let auth_header = expected_req
-        .headers()
-        .get("Authorization")
-        .unwrap()
-        .to_owned();
-
-    // This is a snapshot test taken from a known working test result
-    let snapshot_signature =
-        "Signature=a5115604df66219874a9e5a8eab4c9f7a28c992ab2d918037a285756c019f3b2";
-    assert!(
-        auth_header .contains(snapshot_signature),
-        "authorization header signature did not match expected signature: got {}, expected it to contain {}",
-        auth_header,
-        snapshot_signature
-    );
+    let _ = expected_req.headers().get("Authorization").unwrap();
 }

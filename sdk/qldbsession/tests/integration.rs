@@ -55,5 +55,5 @@ async fn signv4_use_correct_service_name() {
         .await
         .expect("request should succeed");
 
-    http_client.assert_requests_match(&[]);
+    http_client.assert_requests_match(&["authorization"]);
 }
