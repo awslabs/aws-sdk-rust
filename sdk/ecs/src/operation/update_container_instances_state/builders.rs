@@ -35,7 +35,7 @@ impl crate::operation::update_container_instances_state::builders::UpdateContain
 /// <p>The <code>maximumPercent</code> parameter represents an upper limit on the number of running tasks during task replacement. You can use this to define the replacement batch size. For example, if <code>desiredCount</code> is four tasks, a maximum of 200% starts four new tasks before stopping the four tasks to be drained, provided that the cluster resources required to do this are available. If the maximum is 100%, then replacement tasks can't start until the draining tasks have stopped.</p></li>
 /// </ul>
 /// <p>Any <code>PENDING</code> or <code>RUNNING</code> tasks that do not belong to a service aren't affected. You must wait for them to finish or stop them manually.</p>
-/// <p>A container instance has completed draining when it has no more <code>RUNNING</code> tasks. You can verify this using <code>ListTasks</code>.</p>
+/// <p>A container instance has completed draining when it has no more <code>RUNNING</code> tasks. You can verify this using <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListTasks.html">ListTasks</a>.</p>
 /// <p>When a container instance has been drained, you can set a container instance to <code>ACTIVE</code> status and once it has reached that status the Amazon ECS scheduler can begin scheduling tasks on the instance again.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateContainerInstancesStateFluentBuilder {

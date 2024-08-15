@@ -8,8 +8,8 @@ impl super::Client {
     /// - On success, responds with [`HeadBucketOutput`](crate::operation::head_bucket::HeadBucketOutput) with field(s):
     ///   - [`bucket_location_type(Option<LocationType>)`](crate::operation::head_bucket::HeadBucketOutput::bucket_location_type): <p>The type of location where the bucket is created.</p><note>  <p>This functionality is only supported by directory buckets.</p> </note>
     ///   - [`bucket_location_name(Option<String>)`](crate::operation::head_bucket::HeadBucketOutput::bucket_location_name): <p>The name of the location where the bucket will be created.</p> <p>For directory buckets, the AZ ID of the Availability Zone where the bucket is created. An example AZ ID value is <code>usw2-az1</code>.</p><note>  <p>This functionality is only supported by directory buckets.</p> </note>
-    ///   - [`bucket_region(Option<String>)`](crate::operation::head_bucket::HeadBucketOutput::bucket_region): <p>The Region that the bucket is located.</p><note>  <p>This functionality is not supported for directory buckets.</p> </note>
-    ///   - [`access_point_alias(Option<bool>)`](crate::operation::head_bucket::HeadBucketOutput::access_point_alias): <p>Indicates whether the bucket name used in the request is an access point alias.</p><note>  <p>This functionality is not supported for directory buckets.</p> </note>
+    ///   - [`bucket_region(Option<String>)`](crate::operation::head_bucket::HeadBucketOutput::bucket_region): <p>The Region that the bucket is located.</p>
+    ///   - [`access_point_alias(Option<bool>)`](crate::operation::head_bucket::HeadBucketOutput::access_point_alias): <p>Indicates whether the bucket name used in the request is an access point alias.</p><note>  <p>For directory buckets, the value of this field is <code>false</code>.</p> </note>
     /// - On failure, responds with [`SdkError<HeadBucketError>`](crate::operation::head_bucket::HeadBucketError)
     pub fn head_bucket(&self) -> crate::operation::head_bucket::builders::HeadBucketFluentBuilder {
         crate::operation::head_bucket::builders::HeadBucketFluentBuilder::new(self.handle.clone())

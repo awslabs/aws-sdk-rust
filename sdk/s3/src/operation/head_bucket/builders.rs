@@ -22,17 +22,16 @@ impl crate::operation::head_bucket::builders::HeadBucketInputBuilder {
 }
 /// Fluent builder constructing a request to `HeadBucket`.
 ///
-/// <p>You can use this operation to determine if a bucket exists and if you have permission to access it. The action returns a <code>200 OK</code> if the bucket exists and you have permission to access it.</p>
-/// <p>If the bucket does not exist or you do not have permission to access it, the <code>HEAD</code> request returns a generic <code>400 Bad Request</code>, <code>403 Forbidden</code> or <code>404 Not Found</code> code. A message body is not included, so you cannot determine the exception beyond these HTTP response codes.</p><note>
-/// <p><b>Directory buckets </b> - You must make requests for this API operation to the Zonal endpoint. These endpoints support virtual-hosted-style requests in the format <code>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.</p>
+/// <p>You can use this operation to determine if a bucket exists and if you have permission to access it. The action returns a <code>200 OK</code> if the bucket exists and you have permission to access it.</p><note>
+/// <p>If the bucket does not exist or you do not have permission to access it, the <code>HEAD</code> request returns a generic <code>400 Bad Request</code>, <code>403 Forbidden</code> or <code>404 Not Found</code> code. A message body is not included, so you cannot determine the exception beyond these HTTP response codes.</p>
 /// </note>
 /// <dl>
 /// <dt>
 /// Authentication and authorization
 /// </dt>
 /// <dd>
-/// <p>All <code>HeadBucket</code> requests must be authenticated and signed by using IAM credentials (access key ID and secret access key for the IAM identities). All headers with the <code>x-amz-</code> prefix, including <code>x-amz-copy-source</code>, must be signed. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST Authentication</a>.</p>
-/// <p><b>Directory bucket</b> - You must use IAM credentials to authenticate and authorize your access to the <code>HeadBucket</code> API operation, instead of using the temporary security credentials through the <code>CreateSession</code> API operation.</p>
+/// <p><b>General purpose buckets</b> - Request to public buckets that grant the s3:ListBucket permission publicly do not need to be signed. All other <code>HeadBucket</code> requests must be authenticated and signed by using IAM credentials (access key ID and secret access key for the IAM identities). All headers with the <code>x-amz-</code> prefix, including <code>x-amz-copy-source</code>, must be signed. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST Authentication</a>.</p>
+/// <p><b>Directory buckets</b> - You must use IAM credentials to authenticate and authorize your access to the <code>HeadBucket</code> API operation, instead of using the temporary security credentials through the <code>CreateSession</code> API operation.</p>
 /// <p>Amazon Web Services CLI or SDKs handles authentication and authorization on your behalf.</p>
 /// </dd>
 /// <dt>
@@ -52,7 +51,9 @@ impl crate::operation::head_bucket::builders::HeadBucketInputBuilder {
 /// HTTP Host header syntax
 /// </dt>
 /// <dd>
-/// <p><b>Directory buckets </b> - The HTTP Host header syntax is <code> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>.</p>
+/// <p><b>Directory buckets </b> - The HTTP Host header syntax is <code> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>.</p><note>
+/// <p>You must make requests for this API operation to the Zonal endpoint. These endpoints support virtual-hosted-style requests in the format <code>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.</p>
+/// </note>
 /// </dd>
 /// </dl>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

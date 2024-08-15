@@ -167,6 +167,10 @@ pub(crate) mod shape_failover_db_cluster;
 
 pub(crate) mod shape_failover_db_cluster_input;
 
+pub(crate) mod shape_failover_global_cluster;
+
+pub(crate) mod shape_failover_global_cluster_input;
+
 pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_list_tags_for_resource_input;

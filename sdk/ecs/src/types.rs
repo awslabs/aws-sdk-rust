@@ -285,6 +285,8 @@ pub use crate::types::_volume_from::VolumeFrom;
 
 pub use crate::types::_mount_point::MountPoint;
 
+pub use crate::types::_container_restart_policy::ContainerRestartPolicy;
+
 pub use crate::types::_port_mapping::PortMapping;
 
 pub use crate::types::_application_protocol::ApplicationProtocol;
@@ -386,6 +388,8 @@ mod _container_instance_health_status;
 mod _container_instance_status;
 
 mod _container_override;
+
+mod _container_restart_policy;
 
 mod _container_state_change;
 

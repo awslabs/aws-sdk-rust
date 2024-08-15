@@ -441,6 +441,8 @@ pub(crate) mod shape_container_instance_health_status;
 
 pub(crate) mod shape_container_override;
 
+pub(crate) mod shape_container_restart_policy;
+
 pub(crate) mod shape_containers;
 
 pub(crate) mod shape_deployment_alarms;
@@ -614,6 +616,8 @@ pub(crate) mod shape_volume_from_list;
 pub(crate) mod shape_devices_list;
 
 pub(crate) mod shape_firelens_configuration_options_map;
+
+pub(crate) mod shape_integer_list;
 
 pub(crate) mod shape_log_configuration_options_map;
 

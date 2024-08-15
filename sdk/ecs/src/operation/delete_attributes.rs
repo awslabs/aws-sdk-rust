@@ -248,7 +248,7 @@ pub enum DeleteAttributesError {
     ClusterNotFoundException(crate::types::error::ClusterNotFoundException),
     /// <p>The specified parameter isn't valid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),
-    /// <p>The specified target wasn't found. You can view your available container instances with <code>ListContainerInstances</code>. Amazon ECS container instances are cluster-specific and Region-specific.</p>
+    /// <p>The specified target wasn't found. You can view your available container instances with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListContainerInstances.html">ListContainerInstances</a>. Amazon ECS container instances are cluster-specific and Region-specific.</p>
     TargetNotFoundException(crate::types::error::TargetNotFoundException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

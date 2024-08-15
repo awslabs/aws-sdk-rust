@@ -658,9 +658,6 @@ pub(crate) fn signing_certificate_correct_errors(
 pub(crate) fn access_key_last_used_correct_errors(
     mut builder: crate::types::builders::AccessKeyLastUsedBuilder,
 ) -> crate::types::builders::AccessKeyLastUsedBuilder {
-    if builder.last_used_date.is_none() {
-        builder.last_used_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
-    }
     if builder.service_name.is_none() {
         builder.service_name = Some(Default::default())
     }

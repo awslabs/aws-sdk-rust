@@ -719,8 +719,8 @@ model_hash = '160031ba89cb5682380ca6afcd0ce9974e6b2d70fa0bd69c792ddc231a0624c6'
 [crates.aws-sdk-docdb]
 category = 'AwsSdk'
 version = '1.41.0'
-source_hash = 'a65ed537a052853b31c3acb322044f555761d2e00eaeb4d038d8e076d2a4da46'
-model_hash = '7cc8cbf4e5087e8c022a4086e6306e42e9a0842459242403d47d6ee10c8f37a8'
+source_hash = '279fcc30c60cbfef8e085c6d24397bdff4a7e218c7ebf7f84aacb4a0007f48ad'
+model_hash = 'a5fdf9755f5c76961b757ae99f416ede8338733f334878550ff737893ff08610'
 
 [crates.aws-sdk-docdbelastic]
 category = 'AwsSdk'
@@ -779,8 +779,8 @@ model_hash = 'b6e23be351cb44f9f2b57d80f227604694a8bac84ed1467add8d019c824ac349'
 [crates.aws-sdk-ecs]
 category = 'AwsSdk'
 version = '1.40.0'
-source_hash = '36c18a4875a38c2e7bca21eb1f885a6e0f6e16f7f4ec430865c45e3b02711c40'
-model_hash = '381dab48a970b99bcf88ddff1f71825914e3ef4b3dcd9afbb4f66ed018ede755'
+source_hash = '4e0faf9362e483ec91b2e2e340f733cc71afdc5dc4e39cb395cd4268b118706e'
+model_hash = '83c459b65d646b2df0ae265e27bddeee3da15f2d8a7ebc85a379a3832ad10d1c'
 
 [crates.aws-sdk-efs]
 category = 'AwsSdk'
@@ -1007,8 +1007,8 @@ model_hash = '6a39608a02b9eafec57c1842eee8fe75c075a1ac4523bf3f73d62e7292783218'
 [crates.aws-sdk-iam]
 category = 'AwsSdk'
 version = '1.40.0'
-source_hash = '37d0422d7f06943e41d9433a2c35e0660a5e467a01751ae8e4a3a153df8e2f17'
-model_hash = 'dc4e18798d2c5f16a52a81b3b122ae823105830f429acd1c90fd9e552d5431ca'
+source_hash = '9b8735878e58f032ed3fc9cb5e90cf659405770a9d16e408372ccc107188c598'
+model_hash = 'a25bc1d1ff8d5e28adc0541c15d1c147169294cd2d4edda2c80c1963514c63b2'
 
 [crates.aws-sdk-identitystore]
 category = 'AwsSdk'
@@ -1907,8 +1907,8 @@ model_hash = '34648839402316ab9da4bef0fe11beb9bc3ec1d05b3ff7d09664ab74c0cb3d2b'
 [crates.aws-sdk-s3]
 category = 'AwsSdk'
 version = '1.44.0'
-source_hash = '9e690bace28dbddedbf19ed7875f435fc2b1480949551791b03389088b0eb4d9'
-model_hash = '293342d7470282c36811353a98677b2a6eeb0eb7ef74b50cd8f6ddfb07de5055'
+source_hash = '514caaf64dc285b3616ee30dc9c860490aa910f06445aae9ef999f0758a20147'
+model_hash = '31a72443f9dfe36d16d01b12e1387f2c2b027a3009fa92bb25686410abe31e87'
 
 [crates.aws-sdk-s3control]
 category = 'AwsSdk'

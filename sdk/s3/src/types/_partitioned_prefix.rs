@@ -6,11 +6,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PartitionedPrefix {
-    /// <p>Specifies the partition date source for the partitioned prefix. PartitionDateSource can be EventTime or DeliveryTime.</p>
+    /// <p>Specifies the partition date source for the partitioned prefix. <code>PartitionDateSource</code> can be <code>EventTime</code> or <code>DeliveryTime</code>.</p>
+    /// <p>For <code>DeliveryTime</code>, the time in the log file names corresponds to the delivery time for the log files.</p>
+    /// <p>For <code>EventTime</code>, The logs delivered are for a specific day only. The year, month, and day correspond to the day on which the event occurred, and the hour, minutes and seconds are set to 00 in the key.</p>
     pub partition_date_source: ::std::option::Option<crate::types::PartitionDateSource>,
 }
 impl PartitionedPrefix {
-    /// <p>Specifies the partition date source for the partitioned prefix. PartitionDateSource can be EventTime or DeliveryTime.</p>
+    /// <p>Specifies the partition date source for the partitioned prefix. <code>PartitionDateSource</code> can be <code>EventTime</code> or <code>DeliveryTime</code>.</p>
+    /// <p>For <code>DeliveryTime</code>, the time in the log file names corresponds to the delivery time for the log files.</p>
+    /// <p>For <code>EventTime</code>, The logs delivered are for a specific day only. The year, month, and day correspond to the day on which the event occurred, and the hour, minutes and seconds are set to 00 in the key.</p>
     pub fn partition_date_source(&self) -> ::std::option::Option<&crate::types::PartitionDateSource> {
         self.partition_date_source.as_ref()
     }
@@ -29,17 +33,23 @@ pub struct PartitionedPrefixBuilder {
     pub(crate) partition_date_source: ::std::option::Option<crate::types::PartitionDateSource>,
 }
 impl PartitionedPrefixBuilder {
-    /// <p>Specifies the partition date source for the partitioned prefix. PartitionDateSource can be EventTime or DeliveryTime.</p>
+    /// <p>Specifies the partition date source for the partitioned prefix. <code>PartitionDateSource</code> can be <code>EventTime</code> or <code>DeliveryTime</code>.</p>
+    /// <p>For <code>DeliveryTime</code>, the time in the log file names corresponds to the delivery time for the log files.</p>
+    /// <p>For <code>EventTime</code>, The logs delivered are for a specific day only. The year, month, and day correspond to the day on which the event occurred, and the hour, minutes and seconds are set to 00 in the key.</p>
     pub fn partition_date_source(mut self, input: crate::types::PartitionDateSource) -> Self {
         self.partition_date_source = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the partition date source for the partitioned prefix. PartitionDateSource can be EventTime or DeliveryTime.</p>
+    /// <p>Specifies the partition date source for the partitioned prefix. <code>PartitionDateSource</code> can be <code>EventTime</code> or <code>DeliveryTime</code>.</p>
+    /// <p>For <code>DeliveryTime</code>, the time in the log file names corresponds to the delivery time for the log files.</p>
+    /// <p>For <code>EventTime</code>, The logs delivered are for a specific day only. The year, month, and day correspond to the day on which the event occurred, and the hour, minutes and seconds are set to 00 in the key.</p>
     pub fn set_partition_date_source(mut self, input: ::std::option::Option<crate::types::PartitionDateSource>) -> Self {
         self.partition_date_source = input;
         self
     }
-    /// <p>Specifies the partition date source for the partitioned prefix. PartitionDateSource can be EventTime or DeliveryTime.</p>
+    /// <p>Specifies the partition date source for the partitioned prefix. <code>PartitionDateSource</code> can be <code>EventTime</code> or <code>DeliveryTime</code>.</p>
+    /// <p>For <code>DeliveryTime</code>, the time in the log file names corresponds to the delivery time for the log files.</p>
+    /// <p>For <code>EventTime</code>, The logs delivered are for a specific day only. The year, month, and day correspond to the day on which the event occurred, and the hour, minutes and seconds are set to 00 in the key.</p>
     pub fn get_partition_date_source(&self) -> &::std::option::Option<crate::types::PartitionDateSource> {
         &self.partition_date_source
     }

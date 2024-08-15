@@ -60,14 +60,27 @@ pub fn de_list_buckets(
                 builder = builder.set_owner(var_1);
             }
             ,
-            s if s.matches("Buckets") /* Buckets com.amazonaws.s3.synthetic#ListBucketsOutput$Buckets */ =>  {
+            s if s.matches("ContinuationToken") /* ContinuationToken com.amazonaws.s3.synthetic#ListBucketsOutput$ContinuationToken */ =>  {
                 let var_2 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_continuation_token(var_2);
+            }
+            ,
+            s if s.matches("Buckets") /* Buckets com.amazonaws.s3.synthetic#ListBucketsOutput$Buckets */ =>  {
+                let var_3 =
                     Some(
                         crate::protocol_serde::shape_buckets::de_buckets(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_buckets(var_2);
+                builder = builder.set_buckets(var_3);
             }
             ,
             _ => {}

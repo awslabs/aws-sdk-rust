@@ -8,17 +8,17 @@ pub struct LinuxParameters {
     /// <p>For tasks that use the Fargate launch type, <code>capabilities</code> is supported for all platform versions but the <code>add</code> parameter is only supported if using platform version 1.4.0 or later.</p>
     /// </note>
     pub capabilities: ::std::option::Option<crate::types::KernelCapabilities>,
-    /// <p>Any host devices to expose to the container. This parameter maps to <code>Devices</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p><note>
+    /// <p>Any host devices to expose to the container. This parameter maps to <code>Devices</code> in tthe docker create-container command and the <code>--device</code> option to docker run.</p><note>
     /// <p>If you're using tasks that use the Fargate launch type, the <code>devices</code> parameter isn't supported.</p>
     /// </note>
     pub devices: ::std::option::Option<::std::vec::Vec<crate::types::Device>>,
     /// <p>Run an <code>init</code> process inside the container that forwards signals and reaps processes. This parameter maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. This parameter requires version 1.25 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code></p>
     pub init_process_enabled: ::std::option::Option<bool>,
-    /// <p>The value for the size (in MiB) of the <code>/dev/shm</code> volume. This parameter maps to the <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p><note>
+    /// <p>The value for the size (in MiB) of the <code>/dev/shm</code> volume. This parameter maps to the <code>--shm-size</code> option to docker run.</p><note>
     /// <p>If you are using tasks that use the Fargate launch type, the <code>sharedMemorySize</code> parameter is not supported.</p>
     /// </note>
     pub shared_memory_size: ::std::option::Option<i32>,
-    /// <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p><note>
+    /// <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the <code>--tmpfs</code> option to docker run.</p><note>
     /// <p>If you're using tasks that use the Fargate launch type, the <code>tmpfs</code> parameter isn't supported.</p>
     /// </note>
     pub tmpfs: ::std::option::Option<::std::vec::Vec<crate::types::Tmpfs>>,
@@ -28,7 +28,7 @@ pub struct LinuxParameters {
     /// <p>If you're using tasks on Amazon Linux 2023 the <code>swappiness</code> parameter isn't supported.</p>
     /// </note>
     pub max_swap: ::std::option::Option<i32>,
-    /// <p>This allows you to tune a container's memory swappiness behavior. A <code>swappiness</code> value of <code>0</code> will cause swapping to not happen unless absolutely necessary. A <code>swappiness</code> value of <code>100</code> will cause pages to be swapped very aggressively. Accepted values are whole numbers between <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter is not specified, a default value of <code>60</code> is used. If a value is not specified for <code>maxSwap</code> then this parameter is ignored. This parameter maps to the <code>--memory-swappiness</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p><note>
+    /// <p>This allows you to tune a container's memory swappiness behavior. A <code>swappiness</code> value of <code>0</code> will cause swapping to not happen unless absolutely necessary. A <code>swappiness</code> value of <code>100</code> will cause pages to be swapped very aggressively. Accepted values are whole numbers between <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter is not specified, a default value of <code>60</code> is used. If a value is not specified for <code>maxSwap</code> then this parameter is ignored. This parameter maps to the <code>--memory-swappiness</code> option to docker run.</p><note>
     /// <p>If you're using tasks that use the Fargate launch type, the <code>swappiness</code> parameter isn't supported.</p>
     /// <p>If you're using tasks on Amazon Linux 2023 the <code>swappiness</code> parameter isn't supported.</p>
     /// </note>
@@ -41,7 +41,7 @@ impl LinuxParameters {
     pub fn capabilities(&self) -> ::std::option::Option<&crate::types::KernelCapabilities> {
         self.capabilities.as_ref()
     }
-    /// <p>Any host devices to expose to the container. This parameter maps to <code>Devices</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p><note>
+    /// <p>Any host devices to expose to the container. This parameter maps to <code>Devices</code> in tthe docker create-container command and the <code>--device</code> option to docker run.</p><note>
     /// <p>If you're using tasks that use the Fargate launch type, the <code>devices</code> parameter isn't supported.</p>
     /// </note>
     ///
@@ -53,13 +53,13 @@ impl LinuxParameters {
     pub fn init_process_enabled(&self) -> ::std::option::Option<bool> {
         self.init_process_enabled
     }
-    /// <p>The value for the size (in MiB) of the <code>/dev/shm</code> volume. This parameter maps to the <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p><note>
+    /// <p>The value for the size (in MiB) of the <code>/dev/shm</code> volume. This parameter maps to the <code>--shm-size</code> option to docker run.</p><note>
     /// <p>If you are using tasks that use the Fargate launch type, the <code>sharedMemorySize</code> parameter is not supported.</p>
     /// </note>
     pub fn shared_memory_size(&self) -> ::std::option::Option<i32> {
         self.shared_memory_size
     }
-    /// <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p><note>
+    /// <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the <code>--tmpfs</code> option to docker run.</p><note>
     /// <p>If you're using tasks that use the Fargate launch type, the <code>tmpfs</code> parameter isn't supported.</p>
     /// </note>
     ///
@@ -75,7 +75,7 @@ impl LinuxParameters {
     pub fn max_swap(&self) -> ::std::option::Option<i32> {
         self.max_swap
     }
-    /// <p>This allows you to tune a container's memory swappiness behavior. A <code>swappiness</code> value of <code>0</code> will cause swapping to not happen unless absolutely necessary. A <code>swappiness</code> value of <code>100</code> will cause pages to be swapped very aggressively. Accepted values are whole numbers between <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter is not specified, a default value of <code>60</code> is used. If a value is not specified for <code>maxSwap</code> then this parameter is ignored. This parameter maps to the <code>--memory-swappiness</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p><note>
+    /// <p>This allows you to tune a container's memory swappiness behavior. A <code>swappiness</code> value of <code>0</code> will cause swapping to not happen unless absolutely necessary. A <code>swappiness</code> value of <code>100</code> will cause pages to be swapped very aggressively. Accepted values are whole numbers between <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter is not specified, a default value of <code>60</code> is used. If a value is not specified for <code>maxSwap</code> then this parameter is ignored. This parameter maps to the <code>--memory-swappiness</code> option to docker run.</p><note>
     /// <p>If you're using tasks that use the Fargate launch type, the <code>swappiness</code> parameter isn't supported.</p>
     /// <p>If you're using tasks on Amazon Linux 2023 the <code>swappiness</code> parameter isn't supported.</p>
     /// </note>
@@ -127,7 +127,7 @@ impl LinuxParametersBuilder {
     ///
     /// To override the contents of this collection use [`set_devices`](Self::set_devices).
     ///
-    /// <p>Any host devices to expose to the container. This parameter maps to <code>Devices</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p><note>
+    /// <p>Any host devices to expose to the container. This parameter maps to <code>Devices</code> in tthe docker create-container command and the <code>--device</code> option to docker run.</p><note>
     /// <p>If you're using tasks that use the Fargate launch type, the <code>devices</code> parameter isn't supported.</p>
     /// </note>
     pub fn devices(mut self, input: crate::types::Device) -> Self {
@@ -136,14 +136,14 @@ impl LinuxParametersBuilder {
         self.devices = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Any host devices to expose to the container. This parameter maps to <code>Devices</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p><note>
+    /// <p>Any host devices to expose to the container. This parameter maps to <code>Devices</code> in tthe docker create-container command and the <code>--device</code> option to docker run.</p><note>
     /// <p>If you're using tasks that use the Fargate launch type, the <code>devices</code> parameter isn't supported.</p>
     /// </note>
     pub fn set_devices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Device>>) -> Self {
         self.devices = input;
         self
     }
-    /// <p>Any host devices to expose to the container. This parameter maps to <code>Devices</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p><note>
+    /// <p>Any host devices to expose to the container. This parameter maps to <code>Devices</code> in tthe docker create-container command and the <code>--device</code> option to docker run.</p><note>
     /// <p>If you're using tasks that use the Fargate launch type, the <code>devices</code> parameter isn't supported.</p>
     /// </note>
     pub fn get_devices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Device>> {
@@ -163,21 +163,21 @@ impl LinuxParametersBuilder {
     pub fn get_init_process_enabled(&self) -> &::std::option::Option<bool> {
         &self.init_process_enabled
     }
-    /// <p>The value for the size (in MiB) of the <code>/dev/shm</code> volume. This parameter maps to the <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p><note>
+    /// <p>The value for the size (in MiB) of the <code>/dev/shm</code> volume. This parameter maps to the <code>--shm-size</code> option to docker run.</p><note>
     /// <p>If you are using tasks that use the Fargate launch type, the <code>sharedMemorySize</code> parameter is not supported.</p>
     /// </note>
     pub fn shared_memory_size(mut self, input: i32) -> Self {
         self.shared_memory_size = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The value for the size (in MiB) of the <code>/dev/shm</code> volume. This parameter maps to the <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p><note>
+    /// <p>The value for the size (in MiB) of the <code>/dev/shm</code> volume. This parameter maps to the <code>--shm-size</code> option to docker run.</p><note>
     /// <p>If you are using tasks that use the Fargate launch type, the <code>sharedMemorySize</code> parameter is not supported.</p>
     /// </note>
     pub fn set_shared_memory_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.shared_memory_size = input;
         self
     }
-    /// <p>The value for the size (in MiB) of the <code>/dev/shm</code> volume. This parameter maps to the <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p><note>
+    /// <p>The value for the size (in MiB) of the <code>/dev/shm</code> volume. This parameter maps to the <code>--shm-size</code> option to docker run.</p><note>
     /// <p>If you are using tasks that use the Fargate launch type, the <code>sharedMemorySize</code> parameter is not supported.</p>
     /// </note>
     pub fn get_shared_memory_size(&self) -> &::std::option::Option<i32> {
@@ -187,7 +187,7 @@ impl LinuxParametersBuilder {
     ///
     /// To override the contents of this collection use [`set_tmpfs`](Self::set_tmpfs).
     ///
-    /// <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p><note>
+    /// <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the <code>--tmpfs</code> option to docker run.</p><note>
     /// <p>If you're using tasks that use the Fargate launch type, the <code>tmpfs</code> parameter isn't supported.</p>
     /// </note>
     pub fn tmpfs(mut self, input: crate::types::Tmpfs) -> Self {
@@ -196,14 +196,14 @@ impl LinuxParametersBuilder {
         self.tmpfs = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p><note>
+    /// <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the <code>--tmpfs</code> option to docker run.</p><note>
     /// <p>If you're using tasks that use the Fargate launch type, the <code>tmpfs</code> parameter isn't supported.</p>
     /// </note>
     pub fn set_tmpfs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tmpfs>>) -> Self {
         self.tmpfs = input;
         self
     }
-    /// <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p><note>
+    /// <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the <code>--tmpfs</code> option to docker run.</p><note>
     /// <p>If you're using tasks that use the Fargate launch type, the <code>tmpfs</code> parameter isn't supported.</p>
     /// </note>
     pub fn get_tmpfs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tmpfs>> {
@@ -235,7 +235,7 @@ impl LinuxParametersBuilder {
     pub fn get_max_swap(&self) -> &::std::option::Option<i32> {
         &self.max_swap
     }
-    /// <p>This allows you to tune a container's memory swappiness behavior. A <code>swappiness</code> value of <code>0</code> will cause swapping to not happen unless absolutely necessary. A <code>swappiness</code> value of <code>100</code> will cause pages to be swapped very aggressively. Accepted values are whole numbers between <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter is not specified, a default value of <code>60</code> is used. If a value is not specified for <code>maxSwap</code> then this parameter is ignored. This parameter maps to the <code>--memory-swappiness</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p><note>
+    /// <p>This allows you to tune a container's memory swappiness behavior. A <code>swappiness</code> value of <code>0</code> will cause swapping to not happen unless absolutely necessary. A <code>swappiness</code> value of <code>100</code> will cause pages to be swapped very aggressively. Accepted values are whole numbers between <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter is not specified, a default value of <code>60</code> is used. If a value is not specified for <code>maxSwap</code> then this parameter is ignored. This parameter maps to the <code>--memory-swappiness</code> option to docker run.</p><note>
     /// <p>If you're using tasks that use the Fargate launch type, the <code>swappiness</code> parameter isn't supported.</p>
     /// <p>If you're using tasks on Amazon Linux 2023 the <code>swappiness</code> parameter isn't supported.</p>
     /// </note>
@@ -243,7 +243,7 @@ impl LinuxParametersBuilder {
         self.swappiness = ::std::option::Option::Some(input);
         self
     }
-    /// <p>This allows you to tune a container's memory swappiness behavior. A <code>swappiness</code> value of <code>0</code> will cause swapping to not happen unless absolutely necessary. A <code>swappiness</code> value of <code>100</code> will cause pages to be swapped very aggressively. Accepted values are whole numbers between <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter is not specified, a default value of <code>60</code> is used. If a value is not specified for <code>maxSwap</code> then this parameter is ignored. This parameter maps to the <code>--memory-swappiness</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p><note>
+    /// <p>This allows you to tune a container's memory swappiness behavior. A <code>swappiness</code> value of <code>0</code> will cause swapping to not happen unless absolutely necessary. A <code>swappiness</code> value of <code>100</code> will cause pages to be swapped very aggressively. Accepted values are whole numbers between <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter is not specified, a default value of <code>60</code> is used. If a value is not specified for <code>maxSwap</code> then this parameter is ignored. This parameter maps to the <code>--memory-swappiness</code> option to docker run.</p><note>
     /// <p>If you're using tasks that use the Fargate launch type, the <code>swappiness</code> parameter isn't supported.</p>
     /// <p>If you're using tasks on Amazon Linux 2023 the <code>swappiness</code> parameter isn't supported.</p>
     /// </note>
@@ -251,7 +251,7 @@ impl LinuxParametersBuilder {
         self.swappiness = input;
         self
     }
-    /// <p>This allows you to tune a container's memory swappiness behavior. A <code>swappiness</code> value of <code>0</code> will cause swapping to not happen unless absolutely necessary. A <code>swappiness</code> value of <code>100</code> will cause pages to be swapped very aggressively. Accepted values are whole numbers between <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter is not specified, a default value of <code>60</code> is used. If a value is not specified for <code>maxSwap</code> then this parameter is ignored. This parameter maps to the <code>--memory-swappiness</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p><note>
+    /// <p>This allows you to tune a container's memory swappiness behavior. A <code>swappiness</code> value of <code>0</code> will cause swapping to not happen unless absolutely necessary. A <code>swappiness</code> value of <code>100</code> will cause pages to be swapped very aggressively. Accepted values are whole numbers between <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter is not specified, a default value of <code>60</code> is used. If a value is not specified for <code>maxSwap</code> then this parameter is ignored. This parameter maps to the <code>--memory-swappiness</code> option to docker run.</p><note>
     /// <p>If you're using tasks that use the Fargate launch type, the <code>swappiness</code> parameter isn't supported.</p>
     /// <p>If you're using tasks on Amazon Linux 2023 the <code>swappiness</code> parameter isn't supported.</p>
     /// </note>

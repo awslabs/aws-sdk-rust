@@ -23,7 +23,14 @@ impl crate::operation::list_objects_v2::builders::ListObjectsV2InputBuilder {
 /// Fluent builder constructing a request to `ListObjectsV2`.
 ///
 /// <p>Returns some or all (up to 1,000) of the objects in a bucket with each request. You can use the request parameters as selection criteria to return a subset of the objects in a bucket. A <code>200 OK</code> response can contain valid or invalid XML. Make sure to design your application to parse the contents of the response and handle it appropriately. For more information about listing objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ListingKeysUsingAPIs.html">Listing object keys programmatically</a> in the <i>Amazon S3 User Guide</i>. To get a list of your buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html">ListBuckets</a>.</p><note>
-/// <p><b>Directory buckets</b> - For directory buckets, you must make requests for this API operation to the Zonal endpoint. These endpoints support virtual-hosted-style requests in the format <code>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i> </code>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.</p>
+/// <ul>
+/// <li>
+/// <p><b>General purpose bucket</b> - For general purpose buckets, <code>ListObjectsV2</code> doesn't return prefixes that are related only to in-progress multipart uploads.</p></li>
+/// <li>
+/// <p><b>Directory buckets</b> - For directory buckets, <code>ListObjectsV2</code> response includes the prefixes that are related only to in-progress multipart uploads.</p></li>
+/// <li>
+/// <p><b>Directory buckets</b> - For directory buckets, you must make requests for this API operation to the Zonal endpoint. These endpoints support virtual-hosted-style requests in the format <code>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i> </code>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.</p></li>
+/// </ul>
 /// </note>
 /// <dl>
 /// <dt>
@@ -218,17 +225,23 @@ impl ListObjectsV2FluentBuilder {
     pub fn get_delimiter(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_delimiter()
     }
-    /// <p>Encoding type used by Amazon S3 to encode object keys in the response. If using <code>url</code>, non-ASCII characters used in an object's key name will be URL encoded. For example, the object <code>test_file(3).png</code> will appear as <code>test_file%283%29.png</code>.</p>
+    /// <p>Encoding type used by Amazon S3 to encode the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html">object keys</a> in the response. Responses are encoded only in UTF-8. An object key can contain any Unicode character. However, the XML 1.0 parser can't parse certain characters, such as characters with an ASCII value from 0 to 10. For characters that aren't supported in XML 1.0, you can add this parameter to request that Amazon S3 encode the keys in the response. For more information about characters to avoid in object key names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-guidelines">Object key naming guidelines</a>.</p><note>
+    /// <p>When using the URL encoding type, non-ASCII characters that are used in an object's key name will be percent-encoded according to UTF-8 code values. For example, the object <code>test_file(3).png</code> will appear as <code>test_file%283%29.png</code>.</p>
+    /// </note>
     pub fn encoding_type(mut self, input: crate::types::EncodingType) -> Self {
         self.inner = self.inner.encoding_type(input);
         self
     }
-    /// <p>Encoding type used by Amazon S3 to encode object keys in the response. If using <code>url</code>, non-ASCII characters used in an object's key name will be URL encoded. For example, the object <code>test_file(3).png</code> will appear as <code>test_file%283%29.png</code>.</p>
+    /// <p>Encoding type used by Amazon S3 to encode the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html">object keys</a> in the response. Responses are encoded only in UTF-8. An object key can contain any Unicode character. However, the XML 1.0 parser can't parse certain characters, such as characters with an ASCII value from 0 to 10. For characters that aren't supported in XML 1.0, you can add this parameter to request that Amazon S3 encode the keys in the response. For more information about characters to avoid in object key names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-guidelines">Object key naming guidelines</a>.</p><note>
+    /// <p>When using the URL encoding type, non-ASCII characters that are used in an object's key name will be percent-encoded according to UTF-8 code values. For example, the object <code>test_file(3).png</code> will appear as <code>test_file%283%29.png</code>.</p>
+    /// </note>
     pub fn set_encoding_type(mut self, input: ::std::option::Option<crate::types::EncodingType>) -> Self {
         self.inner = self.inner.set_encoding_type(input);
         self
     }
-    /// <p>Encoding type used by Amazon S3 to encode object keys in the response. If using <code>url</code>, non-ASCII characters used in an object's key name will be URL encoded. For example, the object <code>test_file(3).png</code> will appear as <code>test_file%283%29.png</code>.</p>
+    /// <p>Encoding type used by Amazon S3 to encode the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html">object keys</a> in the response. Responses are encoded only in UTF-8. An object key can contain any Unicode character. However, the XML 1.0 parser can't parse certain characters, such as characters with an ASCII value from 0 to 10. For characters that aren't supported in XML 1.0, you can add this parameter to request that Amazon S3 encode the keys in the response. For more information about characters to avoid in object key names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-guidelines">Object key naming guidelines</a>.</p><note>
+    /// <p>When using the URL encoding type, non-ASCII characters that are used in an object's key name will be percent-encoded according to UTF-8 code values. For example, the object <code>test_file(3).png</code> will appear as <code>test_file%283%29.png</code>.</p>
+    /// </note>
     pub fn get_encoding_type(&self) -> &::std::option::Option<crate::types::EncodingType> {
         self.inner.get_encoding_type()
     }

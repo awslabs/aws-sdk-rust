@@ -130,17 +130,17 @@ impl ListDirectoryBucketsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_directory_buckets::paginator::ListDirectoryBucketsPaginator {
         crate::operation::list_directory_buckets::paginator::ListDirectoryBucketsPaginator::new(self.handle, self.inner)
     }
-    /// <p><code>ContinuationToken</code> indicates to Amazon S3 that the list is being continued on this bucket with a token. <code>ContinuationToken</code> is obfuscated and is not a real key. You can use this <code>ContinuationToken</code> for pagination of the list results.</p>
+    /// <p><code>ContinuationToken</code> indicates to Amazon S3 that the list is being continued on buckets in this account with a token. <code>ContinuationToken</code> is obfuscated and is not a real bucket name. You can use this <code>ContinuationToken</code> for the pagination of the list results.</p>
     pub fn continuation_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.continuation_token(input.into());
         self
     }
-    /// <p><code>ContinuationToken</code> indicates to Amazon S3 that the list is being continued on this bucket with a token. <code>ContinuationToken</code> is obfuscated and is not a real key. You can use this <code>ContinuationToken</code> for pagination of the list results.</p>
+    /// <p><code>ContinuationToken</code> indicates to Amazon S3 that the list is being continued on buckets in this account with a token. <code>ContinuationToken</code> is obfuscated and is not a real bucket name. You can use this <code>ContinuationToken</code> for the pagination of the list results.</p>
     pub fn set_continuation_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_continuation_token(input);
         self
     }
-    /// <p><code>ContinuationToken</code> indicates to Amazon S3 that the list is being continued on this bucket with a token. <code>ContinuationToken</code> is obfuscated and is not a real key. You can use this <code>ContinuationToken</code> for pagination of the list results.</p>
+    /// <p><code>ContinuationToken</code> indicates to Amazon S3 that the list is being continued on buckets in this account with a token. <code>ContinuationToken</code> is obfuscated and is not a real bucket name. You can use this <code>ContinuationToken</code> for the pagination of the list results.</p>
     pub fn get_continuation_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_continuation_token()
     }

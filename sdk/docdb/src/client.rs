@@ -269,6 +269,8 @@ mod describe_pending_maintenance_actions;
 
 mod failover_db_cluster;
 
+mod failover_global_cluster;
+
 mod list_tags_for_resource;
 
 mod modify_db_cluster;

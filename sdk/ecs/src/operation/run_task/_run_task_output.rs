@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RunTaskOutput {
     /// <p>A full description of the tasks that were run. The tasks that were successfully placed on your cluster are described here.</p>
-    /// <p></p>
     pub tasks: ::std::option::Option<::std::vec::Vec<crate::types::Task>>,
     /// <p>Any failures associated with the call.</p>
     /// <p>For information about how to address failures, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages.html#service-event-messages-list">Service event messages</a> and <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/api_failures_messages.html">API failure reasons</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
@@ -13,7 +12,6 @@ pub struct RunTaskOutput {
 }
 impl RunTaskOutput {
     /// <p>A full description of the tasks that were run. The tasks that were successfully placed on your cluster are described here.</p>
-    /// <p></p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tasks.is_none()`.
     pub fn tasks(&self) -> &[crate::types::Task] {
@@ -53,7 +51,6 @@ impl RunTaskOutputBuilder {
     /// To override the contents of this collection use [`set_tasks`](Self::set_tasks).
     ///
     /// <p>A full description of the tasks that were run. The tasks that were successfully placed on your cluster are described here.</p>
-    /// <p></p>
     pub fn tasks(mut self, input: crate::types::Task) -> Self {
         let mut v = self.tasks.unwrap_or_default();
         v.push(input);
@@ -61,13 +58,11 @@ impl RunTaskOutputBuilder {
         self
     }
     /// <p>A full description of the tasks that were run. The tasks that were successfully placed on your cluster are described here.</p>
-    /// <p></p>
     pub fn set_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Task>>) -> Self {
         self.tasks = input;
         self
     }
     /// <p>A full description of the tasks that were run. The tasks that were successfully placed on your cluster are described here.</p>
-    /// <p></p>
     pub fn get_tasks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Task>> {
         &self.tasks
     }

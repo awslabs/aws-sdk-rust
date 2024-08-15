@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDirectoryBucketsInput {
-    /// <p><code>ContinuationToken</code> indicates to Amazon S3 that the list is being continued on this bucket with a token. <code>ContinuationToken</code> is obfuscated and is not a real key. You can use this <code>ContinuationToken</code> for pagination of the list results.</p>
+    /// <p><code>ContinuationToken</code> indicates to Amazon S3 that the list is being continued on buckets in this account with a token. <code>ContinuationToken</code> is obfuscated and is not a real bucket name. You can use this <code>ContinuationToken</code> for the pagination of the list results.</p>
     pub continuation_token: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of buckets to be returned in response. When the number is more than the count of buckets that are owned by an Amazon Web Services account, return all the buckets in response.</p>
     pub max_directory_buckets: ::std::option::Option<i32>,
 }
 impl ListDirectoryBucketsInput {
-    /// <p><code>ContinuationToken</code> indicates to Amazon S3 that the list is being continued on this bucket with a token. <code>ContinuationToken</code> is obfuscated and is not a real key. You can use this <code>ContinuationToken</code> for pagination of the list results.</p>
+    /// <p><code>ContinuationToken</code> indicates to Amazon S3 that the list is being continued on buckets in this account with a token. <code>ContinuationToken</code> is obfuscated and is not a real bucket name. You can use this <code>ContinuationToken</code> for the pagination of the list results.</p>
     pub fn continuation_token(&self) -> ::std::option::Option<&str> {
         self.continuation_token.as_deref()
     }
@@ -33,17 +33,17 @@ pub struct ListDirectoryBucketsInputBuilder {
     pub(crate) max_directory_buckets: ::std::option::Option<i32>,
 }
 impl ListDirectoryBucketsInputBuilder {
-    /// <p><code>ContinuationToken</code> indicates to Amazon S3 that the list is being continued on this bucket with a token. <code>ContinuationToken</code> is obfuscated and is not a real key. You can use this <code>ContinuationToken</code> for pagination of the list results.</p>
+    /// <p><code>ContinuationToken</code> indicates to Amazon S3 that the list is being continued on buckets in this account with a token. <code>ContinuationToken</code> is obfuscated and is not a real bucket name. You can use this <code>ContinuationToken</code> for the pagination of the list results.</p>
     pub fn continuation_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.continuation_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p><code>ContinuationToken</code> indicates to Amazon S3 that the list is being continued on this bucket with a token. <code>ContinuationToken</code> is obfuscated and is not a real key. You can use this <code>ContinuationToken</code> for pagination of the list results.</p>
+    /// <p><code>ContinuationToken</code> indicates to Amazon S3 that the list is being continued on buckets in this account with a token. <code>ContinuationToken</code> is obfuscated and is not a real bucket name. You can use this <code>ContinuationToken</code> for the pagination of the list results.</p>
     pub fn set_continuation_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.continuation_token = input;
         self
     }
-    /// <p><code>ContinuationToken</code> indicates to Amazon S3 that the list is being continued on this bucket with a token. <code>ContinuationToken</code> is obfuscated and is not a real key. You can use this <code>ContinuationToken</code> for pagination of the list results.</p>
+    /// <p><code>ContinuationToken</code> indicates to Amazon S3 that the list is being continued on buckets in this account with a token. <code>ContinuationToken</code> is obfuscated and is not a real bucket name. You can use this <code>ContinuationToken</code> for the pagination of the list results.</p>
     pub fn get_continuation_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.continuation_token
     }

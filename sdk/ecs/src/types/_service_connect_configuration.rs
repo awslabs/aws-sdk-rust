@@ -13,14 +13,14 @@ pub struct ServiceConnectConfiguration {
     /// <p>This field is not required for a "client" Amazon ECS service that's a member of a namespace only to connect to other services within the namespace. An example of this would be a frontend application that accepts incoming requests from either a load balancer that's attached to the service or by other means.</p>
     /// <p>An object selects a port from the task definition, assigns a name for the Cloud Map service, and a list of aliases (endpoints) and ports for client applications to refer to this service.</p>
     pub services: ::std::option::Option<::std::vec::Vec<crate::types::ServiceConnectService>>,
-    /// <p>The log configuration for the container. This parameter maps to <code>LogConfig</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/commandline/run/"> <code>docker run</code> </a>.</p>
-    /// <p>By default, containers use the same logging driver that the Docker daemon uses. However, the container might use a different logging driver than the Docker daemon by specifying a log driver configuration in the container definition. For more information about the options for different supported log drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in the Docker documentation.</p>
+    /// <p>The log configuration for the container. This parameter maps to <code>LogConfig</code> in the docker create-container command and the <code>--log-driver</code> option to docker run.</p>
+    /// <p>By default, containers use the same logging driver that the Docker daemon uses. However, the container might use a different logging driver than the Docker daemon by specifying a log driver configuration in the container definition.</p>
     /// <p>Understand the following when specifying a log configuration for your containers.</p>
     /// <ul>
     /// <li>
     /// <p>Amazon ECS currently supports a subset of the logging drivers available to the Docker daemon. Additional log drivers may be available in future releases of the Amazon ECS container agent.</p>
     /// <p>For tasks on Fargate, the supported log drivers are <code>awslogs</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p>
-    /// <p>For tasks hosted on Amazon EC2 instances, the supported log drivers are <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>logentries</code>,<code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p></li>
+    /// <p>For tasks hosted on Amazon EC2 instances, the supported log drivers are <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>,<code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p></li>
     /// <li>
     /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance.</p></li>
     /// <li>
@@ -47,14 +47,14 @@ impl ServiceConnectConfiguration {
     pub fn services(&self) -> &[crate::types::ServiceConnectService] {
         self.services.as_deref().unwrap_or_default()
     }
-    /// <p>The log configuration for the container. This parameter maps to <code>LogConfig</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/commandline/run/"> <code>docker run</code> </a>.</p>
-    /// <p>By default, containers use the same logging driver that the Docker daemon uses. However, the container might use a different logging driver than the Docker daemon by specifying a log driver configuration in the container definition. For more information about the options for different supported log drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in the Docker documentation.</p>
+    /// <p>The log configuration for the container. This parameter maps to <code>LogConfig</code> in the docker create-container command and the <code>--log-driver</code> option to docker run.</p>
+    /// <p>By default, containers use the same logging driver that the Docker daemon uses. However, the container might use a different logging driver than the Docker daemon by specifying a log driver configuration in the container definition.</p>
     /// <p>Understand the following when specifying a log configuration for your containers.</p>
     /// <ul>
     /// <li>
     /// <p>Amazon ECS currently supports a subset of the logging drivers available to the Docker daemon. Additional log drivers may be available in future releases of the Amazon ECS container agent.</p>
     /// <p>For tasks on Fargate, the supported log drivers are <code>awslogs</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p>
-    /// <p>For tasks hosted on Amazon EC2 instances, the supported log drivers are <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>logentries</code>,<code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p></li>
+    /// <p>For tasks hosted on Amazon EC2 instances, the supported log drivers are <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>,<code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p></li>
     /// <li>
     /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance.</p></li>
     /// <li>
@@ -138,14 +138,14 @@ impl ServiceConnectConfigurationBuilder {
     pub fn get_services(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceConnectService>> {
         &self.services
     }
-    /// <p>The log configuration for the container. This parameter maps to <code>LogConfig</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/commandline/run/"> <code>docker run</code> </a>.</p>
-    /// <p>By default, containers use the same logging driver that the Docker daemon uses. However, the container might use a different logging driver than the Docker daemon by specifying a log driver configuration in the container definition. For more information about the options for different supported log drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in the Docker documentation.</p>
+    /// <p>The log configuration for the container. This parameter maps to <code>LogConfig</code> in the docker create-container command and the <code>--log-driver</code> option to docker run.</p>
+    /// <p>By default, containers use the same logging driver that the Docker daemon uses. However, the container might use a different logging driver than the Docker daemon by specifying a log driver configuration in the container definition.</p>
     /// <p>Understand the following when specifying a log configuration for your containers.</p>
     /// <ul>
     /// <li>
     /// <p>Amazon ECS currently supports a subset of the logging drivers available to the Docker daemon. Additional log drivers may be available in future releases of the Amazon ECS container agent.</p>
     /// <p>For tasks on Fargate, the supported log drivers are <code>awslogs</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p>
-    /// <p>For tasks hosted on Amazon EC2 instances, the supported log drivers are <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>logentries</code>,<code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p></li>
+    /// <p>For tasks hosted on Amazon EC2 instances, the supported log drivers are <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>,<code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p></li>
     /// <li>
     /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance.</p></li>
     /// <li>
@@ -157,14 +157,14 @@ impl ServiceConnectConfigurationBuilder {
         self.log_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The log configuration for the container. This parameter maps to <code>LogConfig</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/commandline/run/"> <code>docker run</code> </a>.</p>
-    /// <p>By default, containers use the same logging driver that the Docker daemon uses. However, the container might use a different logging driver than the Docker daemon by specifying a log driver configuration in the container definition. For more information about the options for different supported log drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in the Docker documentation.</p>
+    /// <p>The log configuration for the container. This parameter maps to <code>LogConfig</code> in the docker create-container command and the <code>--log-driver</code> option to docker run.</p>
+    /// <p>By default, containers use the same logging driver that the Docker daemon uses. However, the container might use a different logging driver than the Docker daemon by specifying a log driver configuration in the container definition.</p>
     /// <p>Understand the following when specifying a log configuration for your containers.</p>
     /// <ul>
     /// <li>
     /// <p>Amazon ECS currently supports a subset of the logging drivers available to the Docker daemon. Additional log drivers may be available in future releases of the Amazon ECS container agent.</p>
     /// <p>For tasks on Fargate, the supported log drivers are <code>awslogs</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p>
-    /// <p>For tasks hosted on Amazon EC2 instances, the supported log drivers are <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>logentries</code>,<code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p></li>
+    /// <p>For tasks hosted on Amazon EC2 instances, the supported log drivers are <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>,<code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p></li>
     /// <li>
     /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance.</p></li>
     /// <li>
@@ -176,14 +176,14 @@ impl ServiceConnectConfigurationBuilder {
         self.log_configuration = input;
         self
     }
-    /// <p>The log configuration for the container. This parameter maps to <code>LogConfig</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/commandline/run/"> <code>docker run</code> </a>.</p>
-    /// <p>By default, containers use the same logging driver that the Docker daemon uses. However, the container might use a different logging driver than the Docker daemon by specifying a log driver configuration in the container definition. For more information about the options for different supported log drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in the Docker documentation.</p>
+    /// <p>The log configuration for the container. This parameter maps to <code>LogConfig</code> in the docker create-container command and the <code>--log-driver</code> option to docker run.</p>
+    /// <p>By default, containers use the same logging driver that the Docker daemon uses. However, the container might use a different logging driver than the Docker daemon by specifying a log driver configuration in the container definition.</p>
     /// <p>Understand the following when specifying a log configuration for your containers.</p>
     /// <ul>
     /// <li>
     /// <p>Amazon ECS currently supports a subset of the logging drivers available to the Docker daemon. Additional log drivers may be available in future releases of the Amazon ECS container agent.</p>
     /// <p>For tasks on Fargate, the supported log drivers are <code>awslogs</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p>
-    /// <p>For tasks hosted on Amazon EC2 instances, the supported log drivers are <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>logentries</code>,<code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p></li>
+    /// <p>For tasks hosted on Amazon EC2 instances, the supported log drivers are <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>,<code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p></li>
     /// <li>
     /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance.</p></li>
     /// <li>

@@ -189,6 +189,8 @@ pub use crate::types::_volume_from::VolumeFromBuilder;
 
 pub use crate::types::_mount_point::MountPointBuilder;
 
+pub use crate::types::_container_restart_policy::ContainerRestartPolicyBuilder;
+
 pub use crate::types::_port_mapping::PortMappingBuilder;
 
 pub use crate::types::_repository_credentials::RepositoryCredentialsBuilder;

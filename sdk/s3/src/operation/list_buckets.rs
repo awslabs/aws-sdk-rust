@@ -195,6 +195,16 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListBucketsR
             ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 query.push_kv("x-id", "ListBuckets");
+                if let ::std::option::Option::Some(inner_1) = &_input.max_buckets {
+                    {
+                        query.push_kv("max-buckets", ::aws_smithy_types::primitive::Encoder::from(*inner_1).encode());
+                    }
+                }
+                if let ::std::option::Option::Some(inner_2) = &_input.continuation_token {
+                    {
+                        query.push_kv("continuation-token", &::aws_smithy_http::query::fmt_string(inner_2));
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -369,3 +379,6 @@ mod _list_buckets_output;
 
 /// Builders
 pub mod builders;
+
+/// Paginator for this operation
+pub mod paginator;

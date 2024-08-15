@@ -112,4 +112,44 @@ impl ListBucketsFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_buckets::paginator::ListBucketsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+    pub fn into_paginator(self) -> crate::operation::list_buckets::paginator::ListBucketsPaginator {
+        crate::operation::list_buckets::paginator::ListBucketsPaginator::new(self.handle, self.inner)
+    }
+    /// <p>Maximum number of buckets to be returned in response. When the number is more than the count of buckets that are owned by an Amazon Web Services account, return all the buckets in response.</p>
+    pub fn max_buckets(mut self, input: i32) -> Self {
+        self.inner = self.inner.max_buckets(input);
+        self
+    }
+    /// <p>Maximum number of buckets to be returned in response. When the number is more than the count of buckets that are owned by an Amazon Web Services account, return all the buckets in response.</p>
+    pub fn set_max_buckets(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_max_buckets(input);
+        self
+    }
+    /// <p>Maximum number of buckets to be returned in response. When the number is more than the count of buckets that are owned by an Amazon Web Services account, return all the buckets in response.</p>
+    pub fn get_max_buckets(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_buckets()
+    }
+    /// <p><code>ContinuationToken</code> indicates to Amazon S3 that the list is being continued on this bucket with a token. <code>ContinuationToken</code> is obfuscated and is not a real key. You can use this <code>ContinuationToken</code> for pagination of the list results.</p>
+    /// <p>Length Constraints: Minimum length of 0. Maximum length of 1024.</p>
+    /// <p>Required: No.</p>
+    pub fn continuation_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.continuation_token(input.into());
+        self
+    }
+    /// <p><code>ContinuationToken</code> indicates to Amazon S3 that the list is being continued on this bucket with a token. <code>ContinuationToken</code> is obfuscated and is not a real key. You can use this <code>ContinuationToken</code> for pagination of the list results.</p>
+    /// <p>Length Constraints: Minimum length of 0. Maximum length of 1024.</p>
+    /// <p>Required: No.</p>
+    pub fn set_continuation_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_continuation_token(input);
+        self
+    }
+    /// <p><code>ContinuationToken</code> indicates to Amazon S3 that the list is being continued on this bucket with a token. <code>ContinuationToken</code> is obfuscated and is not a real key. You can use this <code>ContinuationToken</code> for pagination of the list results.</p>
+    /// <p>Length Constraints: Minimum length of 0. Maximum length of 1024.</p>
+    /// <p>Required: No.</p>
+    pub fn get_continuation_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_continuation_token()
+    }
 }

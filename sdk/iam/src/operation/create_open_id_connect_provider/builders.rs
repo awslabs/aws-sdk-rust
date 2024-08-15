@@ -37,7 +37,7 @@ impl crate::operation::create_open_id_connect_provider::builders::CreateOpenIdCo
 /// <p>A list of thumbprints of one or more server certificates that the IdP uses</p></li>
 /// </ul>
 /// <p>You get all of this information from the OIDC IdP you want to use to access Amazon Web Services.</p><note>
-/// <p>Amazon Web Services secures communication with some OIDC identity providers (IdPs) through our library of trusted root certificate authorities (CAs) instead of using a certificate thumbprint to verify your IdP server certificate. In these cases, your legacy thumbprint remains in your configuration, but is no longer used for validation. These OIDC IdPs include Auth0, GitHub, GitLab, Google, and those that use an Amazon S3 bucket to host a JSON Web Key Set (JWKS) endpoint.</p>
+/// <p>Amazon Web Services secures communication with OIDC identity providers (IdPs) using our library of trusted root certificate authorities (CAs) to verify the JSON Web Key Set (JWKS) endpoint's TLS certificate. If your OIDC IdP relies on a certificate that is not signed by one of these trusted CAs, only then we secure communication using the thumbprints set in the IdP's configuration.</p>
 /// </note> <note>
 /// <p>The trust for the OIDC provider is derived from the IAM provider that this operation creates. Therefore, it is best to limit access to the <code>CreateOpenIDConnectProvider</code> operation to highly privileged users.</p>
 /// </note>

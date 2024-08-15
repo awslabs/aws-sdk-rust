@@ -109,6 +109,9 @@ pub mod describe_pending_maintenance_actions;
 /// Types for the `FailoverDBCluster` operation.
 pub mod failover_db_cluster;
 
+/// Types for the `FailoverGlobalCluster` operation.
+pub mod failover_global_cluster;
+
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
 

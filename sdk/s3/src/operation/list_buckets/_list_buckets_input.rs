@@ -2,7 +2,26 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListBucketsInput {}
+pub struct ListBucketsInput {
+    /// <p>Maximum number of buckets to be returned in response. When the number is more than the count of buckets that are owned by an Amazon Web Services account, return all the buckets in response.</p>
+    pub max_buckets: ::std::option::Option<i32>,
+    /// <p><code>ContinuationToken</code> indicates to Amazon S3 that the list is being continued on this bucket with a token. <code>ContinuationToken</code> is obfuscated and is not a real key. You can use this <code>ContinuationToken</code> for pagination of the list results.</p>
+    /// <p>Length Constraints: Minimum length of 0. Maximum length of 1024.</p>
+    /// <p>Required: No.</p>
+    pub continuation_token: ::std::option::Option<::std::string::String>,
+}
+impl ListBucketsInput {
+    /// <p>Maximum number of buckets to be returned in response. When the number is more than the count of buckets that are owned by an Amazon Web Services account, return all the buckets in response.</p>
+    pub fn max_buckets(&self) -> ::std::option::Option<i32> {
+        self.max_buckets
+    }
+    /// <p><code>ContinuationToken</code> indicates to Amazon S3 that the list is being continued on this bucket with a token. <code>ContinuationToken</code> is obfuscated and is not a real key. You can use this <code>ContinuationToken</code> for pagination of the list results.</p>
+    /// <p>Length Constraints: Minimum length of 0. Maximum length of 1024.</p>
+    /// <p>Required: No.</p>
+    pub fn continuation_token(&self) -> ::std::option::Option<&str> {
+        self.continuation_token.as_deref()
+    }
+}
 impl ListBucketsInput {
     /// Creates a new builder-style object to manufacture [`ListBucketsInput`](crate::operation::list_buckets::ListBucketsInput).
     pub fn builder() -> crate::operation::list_buckets::builders::ListBucketsInputBuilder {
@@ -13,10 +32,50 @@ impl ListBucketsInput {
 /// A builder for [`ListBucketsInput`](crate::operation::list_buckets::ListBucketsInput).
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-pub struct ListBucketsInputBuilder {}
+pub struct ListBucketsInputBuilder {
+    pub(crate) max_buckets: ::std::option::Option<i32>,
+    pub(crate) continuation_token: ::std::option::Option<::std::string::String>,
+}
 impl ListBucketsInputBuilder {
+    /// <p>Maximum number of buckets to be returned in response. When the number is more than the count of buckets that are owned by an Amazon Web Services account, return all the buckets in response.</p>
+    pub fn max_buckets(mut self, input: i32) -> Self {
+        self.max_buckets = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Maximum number of buckets to be returned in response. When the number is more than the count of buckets that are owned by an Amazon Web Services account, return all the buckets in response.</p>
+    pub fn set_max_buckets(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_buckets = input;
+        self
+    }
+    /// <p>Maximum number of buckets to be returned in response. When the number is more than the count of buckets that are owned by an Amazon Web Services account, return all the buckets in response.</p>
+    pub fn get_max_buckets(&self) -> &::std::option::Option<i32> {
+        &self.max_buckets
+    }
+    /// <p><code>ContinuationToken</code> indicates to Amazon S3 that the list is being continued on this bucket with a token. <code>ContinuationToken</code> is obfuscated and is not a real key. You can use this <code>ContinuationToken</code> for pagination of the list results.</p>
+    /// <p>Length Constraints: Minimum length of 0. Maximum length of 1024.</p>
+    /// <p>Required: No.</p>
+    pub fn continuation_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.continuation_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p><code>ContinuationToken</code> indicates to Amazon S3 that the list is being continued on this bucket with a token. <code>ContinuationToken</code> is obfuscated and is not a real key. You can use this <code>ContinuationToken</code> for pagination of the list results.</p>
+    /// <p>Length Constraints: Minimum length of 0. Maximum length of 1024.</p>
+    /// <p>Required: No.</p>
+    pub fn set_continuation_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.continuation_token = input;
+        self
+    }
+    /// <p><code>ContinuationToken</code> indicates to Amazon S3 that the list is being continued on this bucket with a token. <code>ContinuationToken</code> is obfuscated and is not a real key. You can use this <code>ContinuationToken</code> for pagination of the list results.</p>
+    /// <p>Length Constraints: Minimum length of 0. Maximum length of 1024.</p>
+    /// <p>Required: No.</p>
+    pub fn get_continuation_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.continuation_token
+    }
     /// Consumes the builder and constructs a [`ListBucketsInput`](crate::operation::list_buckets::ListBucketsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_buckets::ListBucketsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_buckets::ListBucketsInput {})
+        ::std::result::Result::Ok(crate::operation::list_buckets::ListBucketsInput {
+            max_buckets: self.max_buckets,
+            continuation_token: self.continuation_token,
+        })
     }
 }

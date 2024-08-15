@@ -1453,6 +1453,41 @@ impl From<crate::operation::failover_db_cluster::FailoverDBClusterError> for Err
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::failover_global_cluster::FailoverGlobalClusterError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::failover_global_cluster::FailoverGlobalClusterError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::failover_global_cluster::FailoverGlobalClusterError> for Error {
+    fn from(err: crate::operation::failover_global_cluster::FailoverGlobalClusterError) -> Self {
+        match err {
+            crate::operation::failover_global_cluster::FailoverGlobalClusterError::DbClusterNotFoundFault(inner) => {
+                Error::DbClusterNotFoundFault(inner)
+            }
+            crate::operation::failover_global_cluster::FailoverGlobalClusterError::GlobalClusterNotFoundFault(inner) => {
+                Error::GlobalClusterNotFoundFault(inner)
+            }
+            crate::operation::failover_global_cluster::FailoverGlobalClusterError::InvalidDbClusterStateFault(inner) => {
+                Error::InvalidDbClusterStateFault(inner)
+            }
+            crate::operation::failover_global_cluster::FailoverGlobalClusterError::InvalidGlobalClusterStateFault(inner) => {
+                Error::InvalidGlobalClusterStateFault(inner)
+            }
+            crate::operation::failover_global_cluster::FailoverGlobalClusterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

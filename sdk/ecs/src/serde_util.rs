@@ -99,6 +99,15 @@ pub(crate) fn inference_accelerator_correct_errors(
     builder
 }
 
+pub(crate) fn container_restart_policy_correct_errors(
+    mut builder: crate::types::builders::ContainerRestartPolicyBuilder,
+) -> crate::types::builders::ContainerRestartPolicyBuilder {
+    if builder.enabled.is_none() {
+        builder.enabled = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn efs_volume_configuration_correct_errors(
     mut builder: crate::types::builders::EfsVolumeConfigurationBuilder,
 ) -> crate::types::builders::EfsVolumeConfigurationBuilder {
