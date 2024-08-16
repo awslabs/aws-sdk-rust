@@ -9,6 +9,8 @@ pub enum Error {
     ConcurrentUpdatingException(crate::types::error::ConcurrentUpdatingException),
     /// <p>Updating or deleting a resource can cause an inconsistent state.</p>
     ConflictException(crate::types::error::ConflictException),
+    /// <p>The customer managed key that is registered to your Amazon QuickSight account is unavailable.</p>
+    CustomerManagedKeyUnavailableException(crate::types::error::CustomerManagedKeyUnavailableException),
     /// <p>The domain specified isn't on the allow list. All domains for embedded dashboards must be added to the approved list by an Amazon QuickSight admin.</p>
     DomainNotWhitelistedException(crate::types::error::DomainNotWhitelistedException),
     /// <p>The identity type specified isn't supported. Supported identity types include <code>IAM</code> and <code>QUICKSIGHT</code>.</p>
@@ -57,6 +59,7 @@ impl ::std::fmt::Display for Error {
             Error::AccessDeniedException(inner) => inner.fmt(f),
             Error::ConcurrentUpdatingException(inner) => inner.fmt(f),
             Error::ConflictException(inner) => inner.fmt(f),
+            Error::CustomerManagedKeyUnavailableException(inner) => inner.fmt(f),
             Error::DomainNotWhitelistedException(inner) => inner.fmt(f),
             Error::IdentityTypeNotSupportedException(inner) => inner.fmt(f),
             Error::InternalFailureException(inner) => inner.fmt(f),
@@ -97,6 +100,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::AccessDeniedException(inner) => inner.meta(),
             Self::ConcurrentUpdatingException(inner) => inner.meta(),
             Self::ConflictException(inner) => inner.meta(),
+            Self::CustomerManagedKeyUnavailableException(inner) => inner.meta(),
             Self::DomainNotWhitelistedException(inner) => inner.meta(),
             Self::IdentityTypeNotSupportedException(inner) => inner.meta(),
             Self::InternalFailureException(inner) => inner.meta(),
@@ -461,6 +465,9 @@ impl From<crate::operation::create_data_source::CreateDataSourceError> for Error
         match err {
             crate::operation::create_data_source::CreateDataSourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::create_data_source::CreateDataSourceError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_data_source::CreateDataSourceError::CustomerManagedKeyUnavailableException(inner) => {
+                Error::CustomerManagedKeyUnavailableException(inner)
+            }
             crate::operation::create_data_source::CreateDataSourceError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::create_data_source::CreateDataSourceError::InvalidParameterValueException(inner) => {
                 Error::InvalidParameterValueException(inner)
@@ -5888,6 +5895,9 @@ impl From<crate::operation::update_data_source::UpdateDataSourceError> for Error
         match err {
             crate::operation::update_data_source::UpdateDataSourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::update_data_source::UpdateDataSourceError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_data_source::UpdateDataSourceError::CustomerManagedKeyUnavailableException(inner) => {
+                Error::CustomerManagedKeyUnavailableException(inner)
+            }
             crate::operation::update_data_source::UpdateDataSourceError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::update_data_source::UpdateDataSourceError::InvalidParameterValueException(inner) => {
                 Error::InvalidParameterValueException(inner)
@@ -6790,6 +6800,7 @@ impl ::std::error::Error for Error {
             Error::AccessDeniedException(inner) => inner.source(),
             Error::ConcurrentUpdatingException(inner) => inner.source(),
             Error::ConflictException(inner) => inner.source(),
+            Error::CustomerManagedKeyUnavailableException(inner) => inner.source(),
             Error::DomainNotWhitelistedException(inner) => inner.source(),
             Error::IdentityTypeNotSupportedException(inner) => inner.source(),
             Error::InternalFailureException(inner) => inner.source(),
@@ -6816,6 +6827,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::AccessDeniedException(e) => e.request_id(),
             Self::ConcurrentUpdatingException(e) => e.request_id(),
             Self::ConflictException(e) => e.request_id(),
+            Self::CustomerManagedKeyUnavailableException(e) => e.request_id(),
             Self::DomainNotWhitelistedException(e) => e.request_id(),
             Self::IdentityTypeNotSupportedException(e) => e.request_id(),
             Self::InternalFailureException(e) => e.request_id(),

@@ -222,4 +222,18 @@ impl UpdateComputeEnvironmentFluentBuilder {
     pub fn get_update_policy(&self) -> &::std::option::Option<crate::types::UpdatePolicy> {
         self.inner.get_update_policy()
     }
+    /// <p>Reserved.</p>
+    pub fn context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.context(input.into());
+        self
+    }
+    /// <p>Reserved.</p>
+    pub fn set_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_context(input);
+        self
+    }
+    /// <p>Reserved.</p>
+    pub fn get_context(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_context()
+    }
 }

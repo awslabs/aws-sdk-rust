@@ -274,6 +274,8 @@ pub enum UpdateDataSourceError {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>Updating or deleting a resource can cause an inconsistent state.</p>
     ConflictException(crate::types::error::ConflictException),
+    /// <p>The customer managed key that is registered to your Amazon QuickSight account is unavailable.</p>
+    CustomerManagedKeyUnavailableException(crate::types::error::CustomerManagedKeyUnavailableException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::types::error::InternalFailureException),
     /// <p>One or more parameters has a value that isn't valid.</p>
@@ -317,6 +319,7 @@ impl UpdateDataSourceError {
         match self {
             Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::CustomerManagedKeyUnavailableException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalFailureException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterValueException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -331,6 +334,10 @@ impl UpdateDataSourceError {
     /// Returns `true` if the error kind is `UpdateDataSourceError::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(self, Self::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateDataSourceError::CustomerManagedKeyUnavailableException`.
+    pub fn is_customer_managed_key_unavailable_exception(&self) -> bool {
+        matches!(self, Self::CustomerManagedKeyUnavailableException(_))
     }
     /// Returns `true` if the error kind is `UpdateDataSourceError::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
@@ -354,6 +361,7 @@ impl ::std::error::Error for UpdateDataSourceError {
         match self {
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
+            Self::CustomerManagedKeyUnavailableException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalFailureException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterValueException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
@@ -367,6 +375,7 @@ impl ::std::fmt::Display for UpdateDataSourceError {
         match self {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::ConflictException(_inner) => _inner.fmt(f),
+            Self::CustomerManagedKeyUnavailableException(_inner) => _inner.fmt(f),
             Self::InternalFailureException(_inner) => _inner.fmt(f),
             Self::InvalidParameterValueException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
@@ -394,6 +403,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateDataSou
         match self {
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::CustomerManagedKeyUnavailableException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalFailureException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterValueException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

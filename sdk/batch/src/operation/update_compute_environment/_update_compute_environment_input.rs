@@ -26,6 +26,8 @@ pub struct UpdateComputeEnvironmentInput {
     pub service_role: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the updated infrastructure update policy for the compute environment. For more information about infrastructure updates, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
     pub update_policy: ::std::option::Option<crate::types::UpdatePolicy>,
+    /// <p>Reserved.</p>
+    pub context: ::std::option::Option<::std::string::String>,
 }
 impl UpdateComputeEnvironmentInput {
     /// <p>The name or full Amazon Resource Name (ARN) of the compute environment to update.</p>
@@ -62,6 +64,10 @@ impl UpdateComputeEnvironmentInput {
     pub fn update_policy(&self) -> ::std::option::Option<&crate::types::UpdatePolicy> {
         self.update_policy.as_ref()
     }
+    /// <p>Reserved.</p>
+    pub fn context(&self) -> ::std::option::Option<&str> {
+        self.context.as_deref()
+    }
 }
 impl UpdateComputeEnvironmentInput {
     /// Creates a new builder-style object to manufacture [`UpdateComputeEnvironmentInput`](crate::operation::update_compute_environment::UpdateComputeEnvironmentInput).
@@ -80,6 +86,7 @@ pub struct UpdateComputeEnvironmentInputBuilder {
     pub(crate) compute_resources: ::std::option::Option<crate::types::ComputeResourceUpdate>,
     pub(crate) service_role: ::std::option::Option<::std::string::String>,
     pub(crate) update_policy: ::std::option::Option<crate::types::UpdatePolicy>,
+    pub(crate) context: ::std::option::Option<::std::string::String>,
 }
 impl UpdateComputeEnvironmentInputBuilder {
     /// <p>The name or full Amazon Resource Name (ARN) of the compute environment to update.</p>
@@ -197,6 +204,20 @@ impl UpdateComputeEnvironmentInputBuilder {
     pub fn get_update_policy(&self) -> &::std::option::Option<crate::types::UpdatePolicy> {
         &self.update_policy
     }
+    /// <p>Reserved.</p>
+    pub fn context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.context = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Reserved.</p>
+    pub fn set_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.context = input;
+        self
+    }
+    /// <p>Reserved.</p>
+    pub fn get_context(&self) -> &::std::option::Option<::std::string::String> {
+        &self.context
+    }
     /// Consumes the builder and constructs a [`UpdateComputeEnvironmentInput`](crate::operation::update_compute_environment::UpdateComputeEnvironmentInput).
     pub fn build(
         self,
@@ -211,6 +232,7 @@ impl UpdateComputeEnvironmentInputBuilder {
             compute_resources: self.compute_resources,
             service_role: self.service_role,
             update_policy: self.update_policy,
+            context: self.context,
         })
     }
 }

@@ -39,6 +39,8 @@ pub struct ComputeEnvironmentDetail {
     pub container_orchestration_type: ::std::option::Option<crate::types::OrchestrationType>,
     /// <p>Unique identifier for the compute environment.</p>
     pub uuid: ::std::option::Option<::std::string::String>,
+    /// <p>Reserved.</p>
+    pub context: ::std::option::Option<::std::string::String>,
 }
 impl ComputeEnvironmentDetail {
     /// <p>The name of the compute environment. It can be up to 128 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
@@ -106,6 +108,10 @@ impl ComputeEnvironmentDetail {
     pub fn uuid(&self) -> ::std::option::Option<&str> {
         self.uuid.as_deref()
     }
+    /// <p>Reserved.</p>
+    pub fn context(&self) -> ::std::option::Option<&str> {
+        self.context.as_deref()
+    }
 }
 impl ComputeEnvironmentDetail {
     /// Creates a new builder-style object to manufacture [`ComputeEnvironmentDetail`](crate::types::ComputeEnvironmentDetail).
@@ -133,6 +139,7 @@ pub struct ComputeEnvironmentDetailBuilder {
     pub(crate) eks_configuration: ::std::option::Option<crate::types::EksConfiguration>,
     pub(crate) container_orchestration_type: ::std::option::Option<crate::types::OrchestrationType>,
     pub(crate) uuid: ::std::option::Option<::std::string::String>,
+    pub(crate) context: ::std::option::Option<::std::string::String>,
 }
 impl ComputeEnvironmentDetailBuilder {
     /// <p>The name of the compute environment. It can be up to 128 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
@@ -368,6 +375,20 @@ impl ComputeEnvironmentDetailBuilder {
     pub fn get_uuid(&self) -> &::std::option::Option<::std::string::String> {
         &self.uuid
     }
+    /// <p>Reserved.</p>
+    pub fn context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.context = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Reserved.</p>
+    pub fn set_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.context = input;
+        self
+    }
+    /// <p>Reserved.</p>
+    pub fn get_context(&self) -> &::std::option::Option<::std::string::String> {
+        &self.context
+    }
     /// Consumes the builder and constructs a [`ComputeEnvironmentDetail`](crate::types::ComputeEnvironmentDetail).
     pub fn build(self) -> crate::types::ComputeEnvironmentDetail {
         crate::types::ComputeEnvironmentDetail {
@@ -386,6 +407,7 @@ impl ComputeEnvironmentDetailBuilder {
             eks_configuration: self.eks_configuration,
             container_orchestration_type: self.container_orchestration_type,
             uuid: self.uuid,
+            context: self.context,
         }
     }
 }

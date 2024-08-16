@@ -68,6 +68,10 @@ pub struct PipelineExecutionStepMetadata {
     pub fail: ::std::option::Option<crate::types::FailStepMetadata>,
     /// <p>The Amazon Resource Name (ARN) of the AutoML job that was run by this step.</p>
     pub auto_ml_job: ::std::option::Option<crate::types::AutoMlJobStepMetadata>,
+    /// <p>The endpoint that was invoked during this step execution.</p>
+    pub endpoint: ::std::option::Option<crate::types::EndpointStepMetadata>,
+    /// <p>The endpoint configuration used to create an endpoint during this step execution.</p>
+    pub endpoint_config: ::std::option::Option<crate::types::EndpointConfigStepMetadata>,
 }
 impl PipelineExecutionStepMetadata {
     /// <p>The Amazon Resource Name (ARN) of the training job that was run by this step execution.</p>
@@ -162,6 +166,14 @@ impl PipelineExecutionStepMetadata {
     pub fn auto_ml_job(&self) -> ::std::option::Option<&crate::types::AutoMlJobStepMetadata> {
         self.auto_ml_job.as_ref()
     }
+    /// <p>The endpoint that was invoked during this step execution.</p>
+    pub fn endpoint(&self) -> ::std::option::Option<&crate::types::EndpointStepMetadata> {
+        self.endpoint.as_ref()
+    }
+    /// <p>The endpoint configuration used to create an endpoint during this step execution.</p>
+    pub fn endpoint_config(&self) -> ::std::option::Option<&crate::types::EndpointConfigStepMetadata> {
+        self.endpoint_config.as_ref()
+    }
 }
 impl PipelineExecutionStepMetadata {
     /// Creates a new builder-style object to manufacture [`PipelineExecutionStepMetadata`](crate::types::PipelineExecutionStepMetadata).
@@ -188,6 +200,8 @@ pub struct PipelineExecutionStepMetadataBuilder {
     pub(crate) clarify_check: ::std::option::Option<crate::types::ClarifyCheckStepMetadata>,
     pub(crate) fail: ::std::option::Option<crate::types::FailStepMetadata>,
     pub(crate) auto_ml_job: ::std::option::Option<crate::types::AutoMlJobStepMetadata>,
+    pub(crate) endpoint: ::std::option::Option<crate::types::EndpointStepMetadata>,
+    pub(crate) endpoint_config: ::std::option::Option<crate::types::EndpointConfigStepMetadata>,
 }
 impl PipelineExecutionStepMetadataBuilder {
     /// <p>The Amazon Resource Name (ARN) of the training job that was run by this step execution.</p>
@@ -494,6 +508,34 @@ impl PipelineExecutionStepMetadataBuilder {
     pub fn get_auto_ml_job(&self) -> &::std::option::Option<crate::types::AutoMlJobStepMetadata> {
         &self.auto_ml_job
     }
+    /// <p>The endpoint that was invoked during this step execution.</p>
+    pub fn endpoint(mut self, input: crate::types::EndpointStepMetadata) -> Self {
+        self.endpoint = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The endpoint that was invoked during this step execution.</p>
+    pub fn set_endpoint(mut self, input: ::std::option::Option<crate::types::EndpointStepMetadata>) -> Self {
+        self.endpoint = input;
+        self
+    }
+    /// <p>The endpoint that was invoked during this step execution.</p>
+    pub fn get_endpoint(&self) -> &::std::option::Option<crate::types::EndpointStepMetadata> {
+        &self.endpoint
+    }
+    /// <p>The endpoint configuration used to create an endpoint during this step execution.</p>
+    pub fn endpoint_config(mut self, input: crate::types::EndpointConfigStepMetadata) -> Self {
+        self.endpoint_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The endpoint configuration used to create an endpoint during this step execution.</p>
+    pub fn set_endpoint_config(mut self, input: ::std::option::Option<crate::types::EndpointConfigStepMetadata>) -> Self {
+        self.endpoint_config = input;
+        self
+    }
+    /// <p>The endpoint configuration used to create an endpoint during this step execution.</p>
+    pub fn get_endpoint_config(&self) -> &::std::option::Option<crate::types::EndpointConfigStepMetadata> {
+        &self.endpoint_config
+    }
     /// Consumes the builder and constructs a [`PipelineExecutionStepMetadata`](crate::types::PipelineExecutionStepMetadata).
     pub fn build(self) -> crate::types::PipelineExecutionStepMetadata {
         crate::types::PipelineExecutionStepMetadata {
@@ -511,6 +553,8 @@ impl PipelineExecutionStepMetadataBuilder {
             clarify_check: self.clarify_check,
             fail: self.fail,
             auto_ml_job: self.auto_ml_job,
+            endpoint: self.endpoint,
+            endpoint_config: self.endpoint_config,
         }
     }
 }

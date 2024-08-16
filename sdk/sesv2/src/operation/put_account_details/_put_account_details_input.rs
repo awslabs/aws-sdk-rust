@@ -125,7 +125,6 @@ impl PutAccountDetailsInputBuilder {
         &self.contact_language
     }
     /// <p>A description of the types of email that you plan to send.</p>
-    /// This field is required.
     pub fn use_case_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.use_case_description = ::std::option::Option::Some(input.into());
         self

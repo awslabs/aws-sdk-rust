@@ -937,6 +937,10 @@ pub use crate::types::_selective_execution_result::SelectiveExecutionResult;
 
 pub use crate::types::_pipeline_execution_step_metadata::PipelineExecutionStepMetadata;
 
+pub use crate::types::_endpoint_config_step_metadata::EndpointConfigStepMetadata;
+
+pub use crate::types::_endpoint_step_metadata::EndpointStepMetadata;
+
 pub use crate::types::_auto_ml_job_step_metadata::AutoMlJobStepMetadata;
 
 pub use crate::types::_fail_step_metadata::FailStepMetadata;
@@ -2231,6 +2235,8 @@ mod _endpoint;
 
 mod _endpoint_config_sort_key;
 
+mod _endpoint_config_step_metadata;
+
 mod _endpoint_config_summary;
 
 mod _endpoint_info;
@@ -2248,6 +2254,8 @@ mod _endpoint_performance;
 mod _endpoint_sort_key;
 
 mod _endpoint_status;
+
+mod _endpoint_step_metadata;
 
 mod _endpoint_summary;
 

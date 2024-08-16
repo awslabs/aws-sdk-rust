@@ -25,6 +25,8 @@ pub use crate::types::error::_unsupported_pricing_plan_exception::UnsupportedPri
 
 pub use crate::types::error::_concurrent_updating_exception::ConcurrentUpdatingExceptionBuilder;
 
+pub use crate::types::error::_customer_managed_key_unavailable_exception::CustomerManagedKeyUnavailableExceptionBuilder;
+
 pub use crate::types::error::_invalid_next_token_exception::InvalidNextTokenExceptionBuilder;
 
 pub use crate::types::error::_invalid_request_exception::InvalidRequestExceptionBuilder;

@@ -2973,6 +2973,10 @@ pub(crate) mod shape_edge_model_summary;
 
 pub(crate) mod shape_emr_step_metadata;
 
+pub(crate) mod shape_endpoint_config_step_metadata;
+
+pub(crate) mod shape_endpoint_step_metadata;
+
 pub(crate) mod shape_environment_parameters;
 
 pub(crate) mod shape_execution_role_arns;

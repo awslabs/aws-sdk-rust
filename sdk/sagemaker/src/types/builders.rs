@@ -653,6 +653,10 @@ pub use crate::types::_selective_execution_result::SelectiveExecutionResultBuild
 
 pub use crate::types::_pipeline_execution_step_metadata::PipelineExecutionStepMetadataBuilder;
 
+pub use crate::types::_endpoint_config_step_metadata::EndpointConfigStepMetadataBuilder;
+
+pub use crate::types::_endpoint_step_metadata::EndpointStepMetadataBuilder;
+
 pub use crate::types::_auto_ml_job_step_metadata::AutoMlJobStepMetadataBuilder;
 
 pub use crate::types::_fail_step_metadata::FailStepMetadataBuilder;

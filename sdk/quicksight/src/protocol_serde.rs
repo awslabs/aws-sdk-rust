@@ -433,6 +433,8 @@ pub(crate) mod shape_create_topic_refresh_schedule_input;
 
 pub(crate) mod shape_create_vpc_connection_input;
 
+pub(crate) mod shape_customer_managed_key_unavailable_exception;
+
 pub(crate) mod shape_domain_not_whitelisted_exception;
 
 pub(crate) mod shape_generate_embed_url_for_anonymous_user_input;

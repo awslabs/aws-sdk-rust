@@ -73,6 +73,14 @@ where
                                 tokens,
                             )?);
                         }
+                        "Endpoint" => {
+                            builder = builder.set_endpoint(crate::protocol_serde::shape_endpoint_step_metadata::de_endpoint_step_metadata(tokens)?);
+                        }
+                        "EndpointConfig" => {
+                            builder = builder.set_endpoint_config(
+                                crate::protocol_serde::shape_endpoint_config_step_metadata::de_endpoint_config_step_metadata(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

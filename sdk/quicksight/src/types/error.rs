@@ -25,6 +25,8 @@ pub use crate::types::error::_unsupported_pricing_plan_exception::UnsupportedPri
 
 pub use crate::types::error::_concurrent_updating_exception::ConcurrentUpdatingException;
 
+pub use crate::types::error::_customer_managed_key_unavailable_exception::CustomerManagedKeyUnavailableException;
+
 pub use crate::types::error::_invalid_next_token_exception::InvalidNextTokenException;
 
 pub use crate::types::error::_invalid_request_exception::InvalidRequestException;
@@ -42,6 +44,8 @@ mod _access_denied_exception;
 mod _concurrent_updating_exception;
 
 mod _conflict_exception;
+
+mod _customer_managed_key_unavailable_exception;
 
 mod _domain_not_whitelisted_exception;
 

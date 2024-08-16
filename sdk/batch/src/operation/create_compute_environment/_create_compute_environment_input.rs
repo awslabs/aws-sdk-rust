@@ -33,6 +33,8 @@ pub struct CreateComputeEnvironmentInput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The details for the Amazon EKS cluster that supports the compute environment.</p>
     pub eks_configuration: ::std::option::Option<crate::types::EksConfiguration>,
+    /// <p>Reserved.</p>
+    pub context: ::std::option::Option<::std::string::String>,
 }
 impl CreateComputeEnvironmentInput {
     /// <p>The name for your compute environment. It can be up to 128 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
@@ -80,6 +82,10 @@ impl CreateComputeEnvironmentInput {
     pub fn eks_configuration(&self) -> ::std::option::Option<&crate::types::EksConfiguration> {
         self.eks_configuration.as_ref()
     }
+    /// <p>Reserved.</p>
+    pub fn context(&self) -> ::std::option::Option<&str> {
+        self.context.as_deref()
+    }
 }
 impl CreateComputeEnvironmentInput {
     /// Creates a new builder-style object to manufacture [`CreateComputeEnvironmentInput`](crate::operation::create_compute_environment::CreateComputeEnvironmentInput).
@@ -100,6 +106,7 @@ pub struct CreateComputeEnvironmentInputBuilder {
     pub(crate) service_role: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) eks_configuration: ::std::option::Option<crate::types::EksConfiguration>,
+    pub(crate) context: ::std::option::Option<::std::string::String>,
 }
 impl CreateComputeEnvironmentInputBuilder {
     /// <p>The name for your compute environment. It can be up to 128 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
@@ -261,6 +268,20 @@ impl CreateComputeEnvironmentInputBuilder {
     pub fn get_eks_configuration(&self) -> &::std::option::Option<crate::types::EksConfiguration> {
         &self.eks_configuration
     }
+    /// <p>Reserved.</p>
+    pub fn context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.context = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Reserved.</p>
+    pub fn set_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.context = input;
+        self
+    }
+    /// <p>Reserved.</p>
+    pub fn get_context(&self) -> &::std::option::Option<::std::string::String> {
+        &self.context
+    }
     /// Consumes the builder and constructs a [`CreateComputeEnvironmentInput`](crate::operation::create_compute_environment::CreateComputeEnvironmentInput).
     pub fn build(
         self,
@@ -277,6 +298,7 @@ impl CreateComputeEnvironmentInputBuilder {
             service_role: self.service_role,
             tags: self.tags,
             eks_configuration: self.eks_configuration,
+            context: self.context,
         })
     }
 }

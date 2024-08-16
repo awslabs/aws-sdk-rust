@@ -47,6 +47,22 @@ pub fn de_create_data_source_http_error(
             }
             tmp
         }),
+        "CustomerManagedKeyUnavailableException" => {
+            crate::operation::create_data_source::CreateDataSourceError::CustomerManagedKeyUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::CustomerManagedKeyUnavailableExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_customer_managed_key_unavailable_exception::de_customer_managed_key_unavailable_exception_json_err(_response_body, output).map_err(crate::operation::create_data_source::CreateDataSourceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "InternalFailureException" => crate::operation::create_data_source::CreateDataSourceError::InternalFailureException({
             #[allow(unused_mut)]
             let mut tmp = {
