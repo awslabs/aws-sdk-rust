@@ -122,17 +122,23 @@ impl CreateMonitorFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// <p>The name that you give the monitor that is displayed in the Deadline Cloud console.</p>
+    /// <p>The name that you give the monitor that is displayed in the Deadline Cloud console.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.display_name(input.into());
         self
     }
-    /// <p>The name that you give the monitor that is displayed in the Deadline Cloud console.</p>
+    /// <p>The name that you give the monitor that is displayed in the Deadline Cloud console.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_display_name(input);
         self
     }
-    /// <p>The name that you give the monitor that is displayed in the Deadline Cloud console.</p>
+    /// <p>The name that you give the monitor that is displayed in the Deadline Cloud console.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_display_name()
     }

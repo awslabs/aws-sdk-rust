@@ -114,20 +114,23 @@ impl ListLayerVersionsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_layer_versions::paginator::ListLayerVersionsPaginator {
         crate::operation::list_layer_versions::paginator::ListLayerVersionsPaginator::new(self.handle, self.inner)
     }
-    /// <p>A runtime identifier. For example, <code>java21</code>.</p>
-    /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
+    /// <p>A runtime identifier.</p>
+    /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-deprecation-levels">Runtime use after deprecation</a>.</p>
+    /// <p>For a list of all currently supported runtimes, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtimes-supported">Supported runtimes</a>.</p>
     pub fn compatible_runtime(mut self, input: crate::types::Runtime) -> Self {
         self.inner = self.inner.compatible_runtime(input);
         self
     }
-    /// <p>A runtime identifier. For example, <code>java21</code>.</p>
-    /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
+    /// <p>A runtime identifier.</p>
+    /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-deprecation-levels">Runtime use after deprecation</a>.</p>
+    /// <p>For a list of all currently supported runtimes, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtimes-supported">Supported runtimes</a>.</p>
     pub fn set_compatible_runtime(mut self, input: ::std::option::Option<crate::types::Runtime>) -> Self {
         self.inner = self.inner.set_compatible_runtime(input);
         self
     }
-    /// <p>A runtime identifier. For example, <code>java21</code>.</p>
-    /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
+    /// <p>A runtime identifier.</p>
+    /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-deprecation-levels">Runtime use after deprecation</a>.</p>
+    /// <p>For a list of all currently supported runtimes, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtimes-supported">Supported runtimes</a>.</p>
     pub fn get_compatible_runtime(&self) -> &::std::option::Option<crate::types::Runtime> {
         self.inner.get_compatible_runtime()
     }

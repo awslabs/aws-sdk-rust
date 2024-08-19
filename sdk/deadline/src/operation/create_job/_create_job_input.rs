@@ -13,7 +13,7 @@ pub struct CreateJobInput {
     pub template: ::std::option::Option<::std::string::String>,
     /// <p>The file type for the job template.</p>
     pub template_type: ::std::option::Option<crate::types::JobTemplateType>,
-    /// <p>The priority of the job on a scale of 1 to 100. The highest priority is 1.</p>
+    /// <p>The priority of the job on a scale of 0 to 100. The highest priority (first scheduled) is 100. When two jobs have the same priority, the oldest job is scheduled first.</p>
     pub priority: ::std::option::Option<i32>,
     /// <p>The parameters for the job.</p>
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::JobParameter>>,
@@ -21,11 +21,11 @@ pub struct CreateJobInput {
     pub attachments: ::std::option::Option<crate::types::Attachments>,
     /// <p>The storage profile ID for the storage profile to connect to the job.</p>
     pub storage_profile_id: ::std::option::Option<::std::string::String>,
-    /// <p>The initial status of the job's tasks when they are created. Tasks that are created with a <code>SUSPENDED</code> status will not run until you update their status.</p>
+    /// <p>The initial job status when it is created. Jobs that are created with a <code>SUSPENDED</code> status will not run until manually requeued.</p>
     pub target_task_run_status: ::std::option::Option<crate::types::CreateJobTargetTaskRunStatus>,
     /// <p>The number of task failures before the job stops running and is marked as <code>FAILED</code>.</p>
     pub max_failed_tasks_count: ::std::option::Option<i32>,
-    /// <p>The maximum number of retries for a job.</p>
+    /// <p>The maximum number of retries for each task.</p>
     pub max_retries_per_task: ::std::option::Option<i32>,
 }
 impl CreateJobInput {
@@ -49,7 +49,7 @@ impl CreateJobInput {
     pub fn template_type(&self) -> ::std::option::Option<&crate::types::JobTemplateType> {
         self.template_type.as_ref()
     }
-    /// <p>The priority of the job on a scale of 1 to 100. The highest priority is 1.</p>
+    /// <p>The priority of the job on a scale of 0 to 100. The highest priority (first scheduled) is 100. When two jobs have the same priority, the oldest job is scheduled first.</p>
     pub fn priority(&self) -> ::std::option::Option<i32> {
         self.priority
     }
@@ -65,7 +65,7 @@ impl CreateJobInput {
     pub fn storage_profile_id(&self) -> ::std::option::Option<&str> {
         self.storage_profile_id.as_deref()
     }
-    /// <p>The initial status of the job's tasks when they are created. Tasks that are created with a <code>SUSPENDED</code> status will not run until you update their status.</p>
+    /// <p>The initial job status when it is created. Jobs that are created with a <code>SUSPENDED</code> status will not run until manually requeued.</p>
     pub fn target_task_run_status(&self) -> ::std::option::Option<&crate::types::CreateJobTargetTaskRunStatus> {
         self.target_task_run_status.as_ref()
     }
@@ -73,7 +73,7 @@ impl CreateJobInput {
     pub fn max_failed_tasks_count(&self) -> ::std::option::Option<i32> {
         self.max_failed_tasks_count
     }
-    /// <p>The maximum number of retries for a job.</p>
+    /// <p>The maximum number of retries for each task.</p>
     pub fn max_retries_per_task(&self) -> ::std::option::Option<i32> {
         self.max_retries_per_task
     }
@@ -195,18 +195,18 @@ impl CreateJobInputBuilder {
     pub fn get_template_type(&self) -> &::std::option::Option<crate::types::JobTemplateType> {
         &self.template_type
     }
-    /// <p>The priority of the job on a scale of 1 to 100. The highest priority is 1.</p>
+    /// <p>The priority of the job on a scale of 0 to 100. The highest priority (first scheduled) is 100. When two jobs have the same priority, the oldest job is scheduled first.</p>
     /// This field is required.
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The priority of the job on a scale of 1 to 100. The highest priority is 1.</p>
+    /// <p>The priority of the job on a scale of 0 to 100. The highest priority (first scheduled) is 100. When two jobs have the same priority, the oldest job is scheduled first.</p>
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.priority = input;
         self
     }
-    /// <p>The priority of the job on a scale of 1 to 100. The highest priority is 1.</p>
+    /// <p>The priority of the job on a scale of 0 to 100. The highest priority (first scheduled) is 100. When two jobs have the same priority, the oldest job is scheduled first.</p>
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
         &self.priority
     }
@@ -261,17 +261,17 @@ impl CreateJobInputBuilder {
     pub fn get_storage_profile_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.storage_profile_id
     }
-    /// <p>The initial status of the job's tasks when they are created. Tasks that are created with a <code>SUSPENDED</code> status will not run until you update their status.</p>
+    /// <p>The initial job status when it is created. Jobs that are created with a <code>SUSPENDED</code> status will not run until manually requeued.</p>
     pub fn target_task_run_status(mut self, input: crate::types::CreateJobTargetTaskRunStatus) -> Self {
         self.target_task_run_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The initial status of the job's tasks when they are created. Tasks that are created with a <code>SUSPENDED</code> status will not run until you update their status.</p>
+    /// <p>The initial job status when it is created. Jobs that are created with a <code>SUSPENDED</code> status will not run until manually requeued.</p>
     pub fn set_target_task_run_status(mut self, input: ::std::option::Option<crate::types::CreateJobTargetTaskRunStatus>) -> Self {
         self.target_task_run_status = input;
         self
     }
-    /// <p>The initial status of the job's tasks when they are created. Tasks that are created with a <code>SUSPENDED</code> status will not run until you update their status.</p>
+    /// <p>The initial job status when it is created. Jobs that are created with a <code>SUSPENDED</code> status will not run until manually requeued.</p>
     pub fn get_target_task_run_status(&self) -> &::std::option::Option<crate::types::CreateJobTargetTaskRunStatus> {
         &self.target_task_run_status
     }
@@ -289,17 +289,17 @@ impl CreateJobInputBuilder {
     pub fn get_max_failed_tasks_count(&self) -> &::std::option::Option<i32> {
         &self.max_failed_tasks_count
     }
-    /// <p>The maximum number of retries for a job.</p>
+    /// <p>The maximum number of retries for each task.</p>
     pub fn max_retries_per_task(mut self, input: i32) -> Self {
         self.max_retries_per_task = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of retries for a job.</p>
+    /// <p>The maximum number of retries for each task.</p>
     pub fn set_max_retries_per_task(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_retries_per_task = input;
         self
     }
-    /// <p>The maximum number of retries for a job.</p>
+    /// <p>The maximum number of retries for each task.</p>
     pub fn get_max_retries_per_task(&self) -> &::std::option::Option<i32> {
         &self.max_retries_per_task
     }

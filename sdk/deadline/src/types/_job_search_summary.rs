@@ -14,7 +14,7 @@ pub struct JobSearchSummary {
     pub lifecycle_status: ::std::option::Option<crate::types::JobLifecycleStatus>,
     /// <p>The life cycle status message.</p>
     pub lifecycle_status_message: ::std::option::Option<::std::string::String>,
-    /// <p>task run status for the job.</p>
+    /// <p>The task run status for the job.</p>
     /// <ul>
     /// <li>
     /// <p><code>PENDING</code>–pending and waiting for resources.</p></li>
@@ -80,7 +80,7 @@ impl JobSearchSummary {
     pub fn lifecycle_status_message(&self) -> ::std::option::Option<&str> {
         self.lifecycle_status_message.as_deref()
     }
-    /// <p>task run status for the job.</p>
+    /// <p>The task run status for the job.</p>
     /// <ul>
     /// <li>
     /// <p><code>PENDING</code>–pending and waiting for resources.</p></li>
@@ -268,7 +268,7 @@ impl JobSearchSummaryBuilder {
     pub fn get_lifecycle_status_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.lifecycle_status_message
     }
-    /// <p>task run status for the job.</p>
+    /// <p>The task run status for the job.</p>
     /// <ul>
     /// <li>
     /// <p><code>PENDING</code>–pending and waiting for resources.</p></li>
@@ -295,7 +295,7 @@ impl JobSearchSummaryBuilder {
         self.task_run_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>task run status for the job.</p>
+    /// <p>The task run status for the job.</p>
     /// <ul>
     /// <li>
     /// <p><code>PENDING</code>–pending and waiting for resources.</p></li>
@@ -322,7 +322,7 @@ impl JobSearchSummaryBuilder {
         self.task_run_status = input;
         self
     }
-    /// <p>task run status for the job.</p>
+    /// <p>The task run status for the job.</p>
     /// <ul>
     /// <li>
     /// <p><code>PENDING</code>–pending and waiting for resources.</p></li>

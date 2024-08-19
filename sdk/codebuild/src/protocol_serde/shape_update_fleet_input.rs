@@ -33,20 +33,23 @@ pub fn ser_update_fleet_input_input(
         crate::protocol_serde::shape_vpc_config::ser_vpc_config(&mut object_9, var_8)?;
         object_9.finish();
     }
-    if let Some(var_10) = &input.fleet_service_role {
-        object.key("fleetServiceRole").string(var_10.as_str());
+    if let Some(var_10) = &input.image_id {
+        object.key("imageId").string(var_10.as_str());
     }
-    if let Some(var_11) = &input.tags {
-        let mut array_12 = object.key("tags").start_array();
-        for item_13 in var_11 {
+    if let Some(var_11) = &input.fleet_service_role {
+        object.key("fleetServiceRole").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.tags {
+        let mut array_13 = object.key("tags").start_array();
+        for item_14 in var_12 {
             {
                 #[allow(unused_mut)]
-                let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_14, item_13)?;
-                object_14.finish();
+                let mut object_15 = array_13.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_15, item_14)?;
+                object_15.finish();
             }
         }
-        array_12.finish();
+        array_13.finish();
     }
     Ok(())
 }

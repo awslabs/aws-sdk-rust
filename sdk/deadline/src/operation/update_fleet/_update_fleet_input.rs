@@ -9,9 +9,13 @@ pub struct UpdateFleetInput {
     pub farm_id: ::std::option::Option<::std::string::String>,
     /// <p>The fleet ID to update.</p>
     pub fleet_id: ::std::option::Option<::std::string::String>,
-    /// <p>The display name of the fleet to update.</p>
+    /// <p>The display name of the fleet to update.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub display_name: ::std::option::Option<::std::string::String>,
-    /// <p>The description of the fleet to update.</p>
+    /// <p>The description of the fleet to update.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The IAM role ARN that the fleet's workers assume while running jobs.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
@@ -35,11 +39,15 @@ impl UpdateFleetInput {
     pub fn fleet_id(&self) -> ::std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
-    /// <p>The display name of the fleet to update.</p>
+    /// <p>The display name of the fleet to update.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>The description of the fleet to update.</p>
+    /// <p>The description of the fleet to update.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -141,31 +149,43 @@ impl UpdateFleetInputBuilder {
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.fleet_id
     }
-    /// <p>The display name of the fleet to update.</p>
+    /// <p>The display name of the fleet to update.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The display name of the fleet to update.</p>
+    /// <p>The display name of the fleet to update.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
     }
-    /// <p>The display name of the fleet to update.</p>
+    /// <p>The display name of the fleet to update.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }
-    /// <p>The description of the fleet to update.</p>
+    /// <p>The description of the fleet to update.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The description of the fleet to update.</p>
+    /// <p>The description of the fleet to update.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>The description of the fleet to update.</p>
+    /// <p>The description of the fleet to update.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }

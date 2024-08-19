@@ -149,11 +149,15 @@ pub(crate) mod shape_operation_list;
 
 pub(crate) mod shape_tag_map;
 
+pub(crate) mod shape_application_arn_list;
+
 pub(crate) mod shape_application_credential_list;
 
 pub(crate) mod shape_application_summary;
 
 pub(crate) mod shape_associated_host;
+
+pub(crate) mod shape_component_arn_list;
 
 pub(crate) mod shape_component_id_list;
 

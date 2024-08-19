@@ -5,7 +5,9 @@
 pub struct GetStorageProfileForQueueOutput {
     /// <p>The storage profile ID.</p>
     pub storage_profile_id: ::std::string::String,
-    /// <p>The display name of the storage profile connected to a queue.</p>
+    /// <p>The display name of the storage profile connected to a queue.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub display_name: ::std::string::String,
     /// <p>The operating system of the storage profile in the queue.</p>
     pub os_family: crate::types::StorageProfileOperatingSystemFamily,
@@ -19,7 +21,9 @@ impl GetStorageProfileForQueueOutput {
         use std::ops::Deref;
         self.storage_profile_id.deref()
     }
-    /// <p>The display name of the storage profile connected to a queue.</p>
+    /// <p>The display name of the storage profile connected to a queue.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub fn display_name(&self) -> &str {
         use std::ops::Deref;
         self.display_name.deref()
@@ -73,18 +77,24 @@ impl GetStorageProfileForQueueOutputBuilder {
     pub fn get_storage_profile_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.storage_profile_id
     }
-    /// <p>The display name of the storage profile connected to a queue.</p>
+    /// <p>The display name of the storage profile connected to a queue.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     /// This field is required.
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The display name of the storage profile connected to a queue.</p>
+    /// <p>The display name of the storage profile connected to a queue.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
     }
-    /// <p>The display name of the storage profile connected to a queue.</p>
+    /// <p>The display name of the storage profile connected to a queue.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }

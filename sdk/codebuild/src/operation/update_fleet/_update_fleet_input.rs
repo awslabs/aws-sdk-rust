@@ -69,6 +69,8 @@ pub struct UpdateFleetInput {
     pub overflow_behavior: ::std::option::Option<crate::types::FleetOverflowBehavior>,
     /// <p>Information about the VPC configuration that CodeBuild accesses.</p>
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
+    /// <p>The Amazon Machine Image (AMI) of the compute fleet.</p>
+    pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>The service role associated with the compute fleet. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#customer-managed-policies-example-permission-policy-fleet-service-role.html"> Allow a user to add a permission policy for a fleet service role</a> in the <i>CodeBuild User Guide</i>.</p>
     pub fleet_service_role: ::std::option::Option<::std::string::String>,
     /// <p>A list of tag key and value pairs associated with this compute fleet.</p>
@@ -156,6 +158,10 @@ impl UpdateFleetInput {
     pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfig> {
         self.vpc_config.as_ref()
     }
+    /// <p>The Amazon Machine Image (AMI) of the compute fleet.</p>
+    pub fn image_id(&self) -> ::std::option::Option<&str> {
+        self.image_id.as_deref()
+    }
     /// <p>The service role associated with the compute fleet. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#customer-managed-policies-example-permission-policy-fleet-service-role.html"> Allow a user to add a permission policy for a fleet service role</a> in the <i>CodeBuild User Guide</i>.</p>
     pub fn fleet_service_role(&self) -> ::std::option::Option<&str> {
         self.fleet_service_role.as_deref()
@@ -186,6 +192,7 @@ pub struct UpdateFleetInputBuilder {
     pub(crate) scaling_configuration: ::std::option::Option<crate::types::ScalingConfigurationInput>,
     pub(crate) overflow_behavior: ::std::option::Option<crate::types::FleetOverflowBehavior>,
     pub(crate) vpc_config: ::std::option::Option<crate::types::VpcConfig>,
+    pub(crate) image_id: ::std::option::Option<::std::string::String>,
     pub(crate) fleet_service_role: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
@@ -445,6 +452,20 @@ impl UpdateFleetInputBuilder {
     pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
         &self.vpc_config
     }
+    /// <p>The Amazon Machine Image (AMI) of the compute fleet.</p>
+    pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.image_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Machine Image (AMI) of the compute fleet.</p>
+    pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.image_id = input;
+        self
+    }
+    /// <p>The Amazon Machine Image (AMI) of the compute fleet.</p>
+    pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_id
+    }
     /// <p>The service role associated with the compute fleet. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#customer-managed-policies-example-permission-policy-fleet-service-role.html"> Allow a user to add a permission policy for a fleet service role</a> in the <i>CodeBuild User Guide</i>.</p>
     pub fn fleet_service_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_service_role = ::std::option::Option::Some(input.into());
@@ -492,6 +513,7 @@ impl UpdateFleetInputBuilder {
             scaling_configuration: self.scaling_configuration,
             overflow_behavior: self.overflow_behavior,
             vpc_config: self.vpc_config,
+            image_id: self.image_id,
             fleet_service_role: self.fleet_service_role,
             tags: self.tags,
         })

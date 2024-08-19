@@ -75,6 +75,8 @@ pub(crate) mod shape_get_function_configuration;
 
 pub(crate) mod shape_get_function_event_invoke_config;
 
+pub(crate) mod shape_get_function_recursion_config;
+
 pub(crate) mod shape_get_function_url_config;
 
 pub(crate) mod shape_get_layer_version;
@@ -134,6 +136,8 @@ pub(crate) mod shape_put_function_code_signing_config;
 pub(crate) mod shape_put_function_concurrency;
 
 pub(crate) mod shape_put_function_event_invoke_config;
+
+pub(crate) mod shape_put_function_recursion_config;
 
 pub(crate) mod shape_put_provisioned_concurrency_config;
 
@@ -246,6 +250,8 @@ pub(crate) mod shape_put_function_code_signing_config_input;
 pub(crate) mod shape_put_function_concurrency_input;
 
 pub(crate) mod shape_put_function_event_invoke_config_input;
+
+pub(crate) mod shape_put_function_recursion_config_input;
 
 pub(crate) mod shape_put_provisioned_concurrency_config_input;
 

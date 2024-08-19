@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`storage_profile_id(impl Into<String>)`](crate::operation::get_storage_profile::builders::GetStorageProfileFluentBuilder::storage_profile_id) / [`set_storage_profile_id(Option<String>)`](crate::operation::get_storage_profile::builders::GetStorageProfileFluentBuilder::set_storage_profile_id):<br>required: **true**<br><p>The storage profile ID.</p><br>
     /// - On success, responds with [`GetStorageProfileOutput`](crate::operation::get_storage_profile::GetStorageProfileOutput) with field(s):
     ///   - [`storage_profile_id(String)`](crate::operation::get_storage_profile::GetStorageProfileOutput::storage_profile_id): <p>The storage profile ID.</p>
-    ///   - [`display_name(String)`](crate::operation::get_storage_profile::GetStorageProfileOutput::display_name): <p>The display name of the storage profile.</p>
+    ///   - [`display_name(String)`](crate::operation::get_storage_profile::GetStorageProfileOutput::display_name): <p>The display name of the storage profile.</p><important>  <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p> </important>
     ///   - [`os_family(StorageProfileOperatingSystemFamily)`](crate::operation::get_storage_profile::GetStorageProfileOutput::os_family): <p>The operating system (OS) for the storage profile.</p>
     ///   - [`created_at(DateTime)`](crate::operation::get_storage_profile::GetStorageProfileOutput::created_at): <p>The date and time the resource was created.</p>
     ///   - [`created_by(String)`](crate::operation::get_storage_profile::GetStorageProfileOutput::created_by): <p>The user or system that created this resource.</p>

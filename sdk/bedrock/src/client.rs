@@ -128,6 +128,8 @@ mod create_model_copy_job;
 
 mod create_model_customization_job;
 
+mod create_model_invocation_job;
+
 mod create_provisioned_model_throughput;
 
 /// Operation customization and supporting types.
@@ -154,6 +156,8 @@ mod get_model_copy_job;
 
 mod get_model_customization_job;
 
+mod get_model_invocation_job;
+
 mod get_model_invocation_logging_configuration;
 
 mod get_provisioned_model_throughput;
@@ -170,6 +174,8 @@ mod list_model_copy_jobs;
 
 mod list_model_customization_jobs;
 
+mod list_model_invocation_jobs;
+
 mod list_provisioned_model_throughputs;
 
 mod list_tags_for_resource;
@@ -179,6 +185,8 @@ mod put_model_invocation_logging_configuration;
 mod stop_evaluation_job;
 
 mod stop_model_customization_job;
+
+mod stop_model_invocation_job;
 
 mod tag_resource;
 

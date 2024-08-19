@@ -9,9 +9,13 @@ pub struct UpdateQueueInput {
     pub farm_id: ::std::option::Option<::std::string::String>,
     /// <p>The queue ID to update.</p>
     pub queue_id: ::std::option::Option<::std::string::String>,
-    /// <p>The display name of the queue to update.</p>
+    /// <p>The display name of the queue to update.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub display_name: ::std::option::Option<::std::string::String>,
-    /// <p>The description of the queue to update.</p>
+    /// <p>The description of the queue to update.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The default action to take for a queue update if a budget isn't configured.</p>
     pub default_budget_action: ::std::option::Option<crate::types::DefaultQueueBudgetAction>,
@@ -43,11 +47,15 @@ impl UpdateQueueInput {
     pub fn queue_id(&self) -> ::std::option::Option<&str> {
         self.queue_id.as_deref()
     }
-    /// <p>The display name of the queue to update.</p>
+    /// <p>The display name of the queue to update.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>The description of the queue to update.</p>
+    /// <p>The description of the queue to update.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -181,31 +189,43 @@ impl UpdateQueueInputBuilder {
     pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.queue_id
     }
-    /// <p>The display name of the queue to update.</p>
+    /// <p>The display name of the queue to update.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The display name of the queue to update.</p>
+    /// <p>The display name of the queue to update.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
     }
-    /// <p>The display name of the queue to update.</p>
+    /// <p>The display name of the queue to update.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }
-    /// <p>The description of the queue to update.</p>
+    /// <p>The description of the queue to update.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The description of the queue to update.</p>
+    /// <p>The description of the queue to update.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>The description of the queue to update.</p>
+    /// <p>The description of the queue to update.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }

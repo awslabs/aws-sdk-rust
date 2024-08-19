@@ -8,7 +8,9 @@ pub struct ResponseBudgetAction {
     pub r#type: crate::types::BudgetActionType,
     /// <p>The percentage threshold for the budget.</p>
     pub threshold_percentage: f32,
-    /// <p>The budget action description.</p>
+    /// <p>The budget action description.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl ResponseBudgetAction {
@@ -20,7 +22,9 @@ impl ResponseBudgetAction {
     pub fn threshold_percentage(&self) -> f32 {
         self.threshold_percentage
     }
-    /// <p>The budget action description.</p>
+    /// <p>The budget action description.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -80,17 +84,23 @@ impl ResponseBudgetActionBuilder {
     pub fn get_threshold_percentage(&self) -> &::std::option::Option<f32> {
         &self.threshold_percentage
     }
-    /// <p>The budget action description.</p>
+    /// <p>The budget action description.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The budget action description.</p>
+    /// <p>The budget action description.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>The budget action description.</p>
+    /// <p>The budget action description.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }

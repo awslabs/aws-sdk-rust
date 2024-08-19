@@ -26,6 +26,8 @@ pub struct Database {
     pub sql_port: ::std::option::Option<i32>,
     /// <p>The time at which the database was last updated.</p>
     pub last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The Amazon Resource Names of the connected AWS Systems Manager for SAP components.</p>
+    pub connected_component_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Database {
     /// <p>The ID of the application.</p>
@@ -74,6 +76,12 @@ impl Database {
     pub fn last_updated(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
+    /// <p>The Amazon Resource Names of the connected AWS Systems Manager for SAP components.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.connected_component_arns.is_none()`.
+    pub fn connected_component_arns(&self) -> &[::std::string::String] {
+        self.connected_component_arns.as_deref().unwrap_or_default()
+    }
 }
 impl Database {
     /// Creates a new builder-style object to manufacture [`Database`](crate::types::Database).
@@ -97,6 +105,7 @@ pub struct DatabaseBuilder {
     pub(crate) primary_host: ::std::option::Option<::std::string::String>,
     pub(crate) sql_port: ::std::option::Option<i32>,
     pub(crate) last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) connected_component_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DatabaseBuilder {
     /// <p>The ID of the application.</p>
@@ -259,6 +268,26 @@ impl DatabaseBuilder {
     pub fn get_last_updated(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated
     }
+    /// Appends an item to `connected_component_arns`.
+    ///
+    /// To override the contents of this collection use [`set_connected_component_arns`](Self::set_connected_component_arns).
+    ///
+    /// <p>The Amazon Resource Names of the connected AWS Systems Manager for SAP components.</p>
+    pub fn connected_component_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.connected_component_arns.unwrap_or_default();
+        v.push(input.into());
+        self.connected_component_arns = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The Amazon Resource Names of the connected AWS Systems Manager for SAP components.</p>
+    pub fn set_connected_component_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.connected_component_arns = input;
+        self
+    }
+    /// <p>The Amazon Resource Names of the connected AWS Systems Manager for SAP components.</p>
+    pub fn get_connected_component_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.connected_component_arns
+    }
     /// Consumes the builder and constructs a [`Database`](crate::types::Database).
     pub fn build(self) -> crate::types::Database {
         crate::types::Database {
@@ -273,6 +302,7 @@ impl DatabaseBuilder {
             primary_host: self.primary_host,
             sql_port: self.sql_port,
             last_updated: self.last_updated,
+            connected_component_arns: self.connected_component_arns,
         }
     }
 }

@@ -5,7 +5,9 @@
 pub struct GetMonitorOutput {
     /// <p>The unique identifier for the monitor.</p>
     pub monitor_id: ::std::string::String,
-    /// <p>The name used to identify the monitor on the Deadline Cloud console.</p>
+    /// <p>The name used to identify the monitor on the Deadline Cloud console.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub display_name: ::std::string::String,
     /// <p>The subdomain used for the monitor URL. The full URL of the monitor is subdomain.Region.deadlinecloud.amazonaws.com.</p>
     pub subdomain: ::std::string::String,
@@ -33,7 +35,9 @@ impl GetMonitorOutput {
         use std::ops::Deref;
         self.monitor_id.deref()
     }
-    /// <p>The name used to identify the monitor on the Deadline Cloud console.</p>
+    /// <p>The name used to identify the monitor on the Deadline Cloud console.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub fn display_name(&self) -> &str {
         use std::ops::Deref;
         self.display_name.deref()
@@ -126,18 +130,24 @@ impl GetMonitorOutputBuilder {
     pub fn get_monitor_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.monitor_id
     }
-    /// <p>The name used to identify the monitor on the Deadline Cloud console.</p>
+    /// <p>The name used to identify the monitor on the Deadline Cloud console.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     /// This field is required.
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name used to identify the monitor on the Deadline Cloud console.</p>
+    /// <p>The name used to identify the monitor on the Deadline Cloud console.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
     }
-    /// <p>The name used to identify the monitor on the Deadline Cloud console.</p>
+    /// <p>The name used to identify the monitor on the Deadline Cloud console.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }

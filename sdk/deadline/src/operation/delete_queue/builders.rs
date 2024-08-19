@@ -22,7 +22,9 @@ impl crate::operation::delete_queue::builders::DeleteQueueInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteQueue`.
 ///
-/// <p>Deletes a queue.</p>
+/// <p>Deletes a queue.</p><important>
+/// <p>You can't recover the jobs in a queue if you delete the queue. Deleting the queue also deletes the jobs in that queue.</p>
+/// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteQueueFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

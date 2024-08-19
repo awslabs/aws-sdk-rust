@@ -128,17 +128,17 @@ impl ListQueuesFluentBuilder {
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }
-    /// <p>The principal ID. This filter is only valid when using Nimble Studio credentials and should match the user ID in the credentials of the caller.</p>
+    /// <p>The principal IDs to include in the list of queues.</p>
     pub fn principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.principal_id(input.into());
         self
     }
-    /// <p>The principal ID. This filter is only valid when using Nimble Studio credentials and should match the user ID in the credentials of the caller.</p>
+    /// <p>The principal IDs to include in the list of queues.</p>
     pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_principal_id(input);
         self
     }
-    /// <p>The principal ID. This filter is only valid when using Nimble Studio credentials and should match the user ID in the credentials of the caller.</p>
+    /// <p>The principal IDs to include in the list of queues.</p>
     pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_principal_id()
     }

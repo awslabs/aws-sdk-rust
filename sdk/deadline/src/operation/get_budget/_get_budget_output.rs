@@ -15,9 +15,13 @@ pub struct GetBudgetOutput {
     /// <p><code>INACTIVE</code>–Get an inactive budget. This can include expired, canceled, or deleted statuses.</p></li>
     /// </ul>
     pub status: crate::types::BudgetStatus,
-    /// <p>The display name of the budget.</p>
+    /// <p>The display name of the budget.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub display_name: ::std::string::String,
-    /// <p>The description of the budget.</p>
+    /// <p>The description of the budget.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The consumed usage limit for the budget.</p>
     pub approximate_dollar_limit: f32,
@@ -59,12 +63,16 @@ impl GetBudgetOutput {
     pub fn status(&self) -> &crate::types::BudgetStatus {
         &self.status
     }
-    /// <p>The display name of the budget.</p>
+    /// <p>The display name of the budget.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub fn display_name(&self) -> &str {
         use std::ops::Deref;
         self.display_name.deref()
     }
-    /// <p>The description of the budget.</p>
+    /// <p>The description of the budget.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -224,32 +232,44 @@ impl GetBudgetOutputBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::BudgetStatus> {
         &self.status
     }
-    /// <p>The display name of the budget.</p>
+    /// <p>The display name of the budget.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     /// This field is required.
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The display name of the budget.</p>
+    /// <p>The display name of the budget.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
     }
-    /// <p>The display name of the budget.</p>
+    /// <p>The display name of the budget.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }
-    /// <p>The description of the budget.</p>
+    /// <p>The description of the budget.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The description of the budget.</p>
+    /// <p>The description of the budget.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>The description of the budget.</p>
+    /// <p>The description of the budget.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }

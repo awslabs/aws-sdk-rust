@@ -22,7 +22,7 @@ impl crate::operation::create_job::builders::CreateJobInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateJob`.
 ///
-/// <p>Creates a job. A job is a render submission submitted by a user. It contains specific job properties outlined as steps and tasks.</p>
+/// <p>Creates a job. A job is a set of instructions that AWS Deadline Cloud uses to schedule and run work on available workers. For more information, see <a href="https://docs.aws.amazon.com/deadline-cloud/latest/userguide/deadline-cloud-jobs.html">Deadline Cloud jobs</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -172,17 +172,17 @@ impl CreateJobFluentBuilder {
     pub fn get_template_type(&self) -> &::std::option::Option<crate::types::JobTemplateType> {
         self.inner.get_template_type()
     }
-    /// <p>The priority of the job on a scale of 1 to 100. The highest priority is 1.</p>
+    /// <p>The priority of the job on a scale of 0 to 100. The highest priority (first scheduled) is 100. When two jobs have the same priority, the oldest job is scheduled first.</p>
     pub fn priority(mut self, input: i32) -> Self {
         self.inner = self.inner.priority(input);
         self
     }
-    /// <p>The priority of the job on a scale of 1 to 100. The highest priority is 1.</p>
+    /// <p>The priority of the job on a scale of 0 to 100. The highest priority (first scheduled) is 100. When two jobs have the same priority, the oldest job is scheduled first.</p>
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_priority(input);
         self
     }
-    /// <p>The priority of the job on a scale of 1 to 100. The highest priority is 1.</p>
+    /// <p>The priority of the job on a scale of 0 to 100. The highest priority (first scheduled) is 100. When two jobs have the same priority, the oldest job is scheduled first.</p>
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
         self.inner.get_priority()
     }
@@ -236,17 +236,17 @@ impl CreateJobFluentBuilder {
     pub fn get_storage_profile_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_storage_profile_id()
     }
-    /// <p>The initial status of the job's tasks when they are created. Tasks that are created with a <code>SUSPENDED</code> status will not run until you update their status.</p>
+    /// <p>The initial job status when it is created. Jobs that are created with a <code>SUSPENDED</code> status will not run until manually requeued.</p>
     pub fn target_task_run_status(mut self, input: crate::types::CreateJobTargetTaskRunStatus) -> Self {
         self.inner = self.inner.target_task_run_status(input);
         self
     }
-    /// <p>The initial status of the job's tasks when they are created. Tasks that are created with a <code>SUSPENDED</code> status will not run until you update their status.</p>
+    /// <p>The initial job status when it is created. Jobs that are created with a <code>SUSPENDED</code> status will not run until manually requeued.</p>
     pub fn set_target_task_run_status(mut self, input: ::std::option::Option<crate::types::CreateJobTargetTaskRunStatus>) -> Self {
         self.inner = self.inner.set_target_task_run_status(input);
         self
     }
-    /// <p>The initial status of the job's tasks when they are created. Tasks that are created with a <code>SUSPENDED</code> status will not run until you update their status.</p>
+    /// <p>The initial job status when it is created. Jobs that are created with a <code>SUSPENDED</code> status will not run until manually requeued.</p>
     pub fn get_target_task_run_status(&self) -> &::std::option::Option<crate::types::CreateJobTargetTaskRunStatus> {
         self.inner.get_target_task_run_status()
     }
@@ -264,17 +264,17 @@ impl CreateJobFluentBuilder {
     pub fn get_max_failed_tasks_count(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_failed_tasks_count()
     }
-    /// <p>The maximum number of retries for a job.</p>
+    /// <p>The maximum number of retries for each task.</p>
     pub fn max_retries_per_task(mut self, input: i32) -> Self {
         self.inner = self.inner.max_retries_per_task(input);
         self
     }
-    /// <p>The maximum number of retries for a job.</p>
+    /// <p>The maximum number of retries for each task.</p>
     pub fn set_max_retries_per_task(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_retries_per_task(input);
         self
     }
-    /// <p>The maximum number of retries for a job.</p>
+    /// <p>The maximum number of retries for each task.</p>
     pub fn get_max_retries_per_task(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_retries_per_task()
     }

@@ -9,8 +9,8 @@ impl super::Client {
     ///   - [`budget_id(String)`](crate::operation::get_budget::GetBudgetOutput::budget_id): <p>The budget ID.</p>
     ///   - [`usage_tracking_resource(Option<UsageTrackingResource>)`](crate::operation::get_budget::GetBudgetOutput::usage_tracking_resource): <p>The resource that the budget is tracking usage for.</p>
     ///   - [`status(BudgetStatus)`](crate::operation::get_budget::GetBudgetOutput::status): <p>The status of the budget.</p> <ul>  <li>   <p><code>ACTIVE</code>–Get a budget being evaluated.</p></li>  <li>   <p><code>INACTIVE</code>–Get an inactive budget. This can include expired, canceled, or deleted statuses.</p></li> </ul>
-    ///   - [`display_name(String)`](crate::operation::get_budget::GetBudgetOutput::display_name): <p>The display name of the budget.</p>
-    ///   - [`description(Option<String>)`](crate::operation::get_budget::GetBudgetOutput::description): <p>The description of the budget.</p>
+    ///   - [`display_name(String)`](crate::operation::get_budget::GetBudgetOutput::display_name): <p>The display name of the budget.</p><important>  <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p> </important>
+    ///   - [`description(Option<String>)`](crate::operation::get_budget::GetBudgetOutput::description): <p>The description of the budget.</p><important>  <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p> </important>
     ///   - [`approximate_dollar_limit(f32)`](crate::operation::get_budget::GetBudgetOutput::approximate_dollar_limit): <p>The consumed usage limit for the budget.</p>
     ///   - [`usages(Option<ConsumedUsages>)`](crate::operation::get_budget::GetBudgetOutput::usages): <p>The usages of the budget.</p>
     ///   - [`actions(Vec::<ResponseBudgetAction>)`](crate::operation::get_budget::GetBudgetOutput::actions): <p>The budget actions for the budget.</p>

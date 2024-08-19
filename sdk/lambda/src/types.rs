@@ -117,6 +117,8 @@ pub use crate::types::_update_runtime_on::UpdateRuntimeOn;
 
 pub use crate::types::_provisioned_concurrency_status_enum::ProvisionedConcurrencyStatusEnum;
 
+pub use crate::types::_recursive_loop::RecursiveLoop;
+
 pub use crate::types::_layer_version_content_output::LayerVersionContentOutput;
 
 pub use crate::types::_layer_version_content_input::LayerVersionContentInput;
@@ -276,6 +278,8 @@ mod _package_type;
 mod _provisioned_concurrency_config_list_item;
 
 mod _provisioned_concurrency_status_enum;
+
+mod _recursive_loop;
 
 mod _response_streaming_invocation_type;
 

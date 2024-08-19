@@ -53,6 +53,20 @@ pub use crate::types::_sort_models_by::SortModelsBy;
 
 pub use crate::types::_foundation_model_details::FoundationModelDetails;
 
+pub use crate::types::_model_invocation_job_summary::ModelInvocationJobSummary;
+
+pub use crate::types::_model_invocation_job_output_data_config::ModelInvocationJobOutputDataConfig;
+
+pub use crate::types::_model_invocation_job_s3_output_data_config::ModelInvocationJobS3OutputDataConfig;
+
+pub use crate::types::_model_invocation_job_input_data_config::ModelInvocationJobInputDataConfig;
+
+pub use crate::types::_model_invocation_job_s3_input_data_config::ModelInvocationJobS3InputDataConfig;
+
+pub use crate::types::_s3_input_format::S3InputFormat;
+
+pub use crate::types::_model_invocation_job_status::ModelInvocationJobStatus;
+
 pub use crate::types::_model_copy_job_summary::ModelCopyJobSummary;
 
 pub use crate::types::_model_copy_job_status::ModelCopyJobStatus;
@@ -291,6 +305,18 @@ mod _model_customization_job_status;
 
 mod _model_customization_job_summary;
 
+mod _model_invocation_job_input_data_config;
+
+mod _model_invocation_job_output_data_config;
+
+mod _model_invocation_job_s3_input_data_config;
+
+mod _model_invocation_job_s3_output_data_config;
+
+mod _model_invocation_job_status;
+
+mod _model_invocation_job_summary;
+
 mod _model_modality;
 
 mod _output_data_config;
@@ -300,6 +326,8 @@ mod _provisioned_model_status;
 mod _provisioned_model_summary;
 
 mod _s3_config;
+
+mod _s3_input_format;
 
 mod _sort_by_provisioned_models;
 

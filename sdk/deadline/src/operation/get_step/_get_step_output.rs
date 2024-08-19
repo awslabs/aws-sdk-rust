@@ -35,7 +35,9 @@ pub struct GetStepOutput {
     pub required_capabilities: ::std::option::Option<crate::types::StepRequiredCapabilities>,
     /// <p>A list of step parameters and the combination expression for the step.</p>
     pub parameter_space: ::std::option::Option<crate::types::ParameterSpace>,
-    /// <p>The description of the step.</p>
+    /// <p>The description of the step.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub description: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -107,7 +109,9 @@ impl GetStepOutput {
     pub fn parameter_space(&self) -> ::std::option::Option<&crate::types::ParameterSpace> {
         self.parameter_space.as_ref()
     }
-    /// <p>The description of the step.</p>
+    /// <p>The description of the step.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -408,17 +412,23 @@ impl GetStepOutputBuilder {
     pub fn get_parameter_space(&self) -> &::std::option::Option<crate::types::ParameterSpace> {
         &self.parameter_space
     }
-    /// <p>The description of the step.</p>
+    /// <p>The description of the step.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The description of the step.</p>
+    /// <p>The description of the step.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>The description of the step.</p>
+    /// <p>The description of the step.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }

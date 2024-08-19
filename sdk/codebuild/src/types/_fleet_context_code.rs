@@ -14,6 +14,8 @@
 /// match fleetcontextcode {
 ///     FleetContextCode::ActionRequired => { /* ... */ },
 ///     FleetContextCode::CreateFailed => { /* ... */ },
+///     FleetContextCode::InsufficientCapacity => { /* ... */ },
+///     FleetContextCode::PendingDeletion => { /* ... */ },
 ///     FleetContextCode::UpdateFailed => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -47,6 +49,10 @@ pub enum FleetContextCode {
     #[allow(missing_docs)] // documentation missing in model
     CreateFailed,
     #[allow(missing_docs)] // documentation missing in model
+    InsufficientCapacity,
+    #[allow(missing_docs)] // documentation missing in model
+    PendingDeletion,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateFailed,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -57,6 +63,8 @@ impl ::std::convert::From<&str> for FleetContextCode {
         match s {
             "ACTION_REQUIRED" => FleetContextCode::ActionRequired,
             "CREATE_FAILED" => FleetContextCode::CreateFailed,
+            "INSUFFICIENT_CAPACITY" => FleetContextCode::InsufficientCapacity,
+            "PENDING_DELETION" => FleetContextCode::PendingDeletion,
             "UPDATE_FAILED" => FleetContextCode::UpdateFailed,
             other => FleetContextCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -75,13 +83,21 @@ impl FleetContextCode {
         match self {
             FleetContextCode::ActionRequired => "ACTION_REQUIRED",
             FleetContextCode::CreateFailed => "CREATE_FAILED",
+            FleetContextCode::InsufficientCapacity => "INSUFFICIENT_CAPACITY",
+            FleetContextCode::PendingDeletion => "PENDING_DELETION",
             FleetContextCode::UpdateFailed => "UPDATE_FAILED",
             FleetContextCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTION_REQUIRED", "CREATE_FAILED", "UPDATE_FAILED"]
+        &[
+            "ACTION_REQUIRED",
+            "CREATE_FAILED",
+            "INSUFFICIENT_CAPACITY",
+            "PENDING_DELETION",
+            "UPDATE_FAILED",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for FleetContextCode {
@@ -106,6 +122,8 @@ impl ::std::fmt::Display for FleetContextCode {
         match self {
             FleetContextCode::ActionRequired => write!(f, "ACTION_REQUIRED"),
             FleetContextCode::CreateFailed => write!(f, "CREATE_FAILED"),
+            FleetContextCode::InsufficientCapacity => write!(f, "INSUFFICIENT_CAPACITY"),
+            FleetContextCode::PendingDeletion => write!(f, "PENDING_DELETION"),
             FleetContextCode::UpdateFailed => write!(f, "UPDATE_FAILED"),
             FleetContextCode::Unknown(value) => write!(f, "{}", value),
         }

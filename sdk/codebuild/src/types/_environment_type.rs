@@ -17,6 +17,7 @@
 ///     EnvironmentType::LinuxContainer => { /* ... */ },
 ///     EnvironmentType::LinuxGpuContainer => { /* ... */ },
 ///     EnvironmentType::LinuxLambdaContainer => { /* ... */ },
+///     EnvironmentType::MacArm => { /* ... */ },
 ///     EnvironmentType::WindowsContainer => { /* ... */ },
 ///     EnvironmentType::WindowsServer2019Container => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -57,6 +58,8 @@ pub enum EnvironmentType {
     #[allow(missing_docs)] // documentation missing in model
     LinuxLambdaContainer,
     #[allow(missing_docs)] // documentation missing in model
+    MacArm,
+    #[allow(missing_docs)] // documentation missing in model
     WindowsContainer,
     #[allow(missing_docs)] // documentation missing in model
     WindowsServer2019Container,
@@ -72,6 +75,7 @@ impl ::std::convert::From<&str> for EnvironmentType {
             "LINUX_CONTAINER" => EnvironmentType::LinuxContainer,
             "LINUX_GPU_CONTAINER" => EnvironmentType::LinuxGpuContainer,
             "LINUX_LAMBDA_CONTAINER" => EnvironmentType::LinuxLambdaContainer,
+            "MAC_ARM" => EnvironmentType::MacArm,
             "WINDOWS_CONTAINER" => EnvironmentType::WindowsContainer,
             "WINDOWS_SERVER_2019_CONTAINER" => EnvironmentType::WindowsServer2019Container,
             other => EnvironmentType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -94,6 +98,7 @@ impl EnvironmentType {
             EnvironmentType::LinuxContainer => "LINUX_CONTAINER",
             EnvironmentType::LinuxGpuContainer => "LINUX_GPU_CONTAINER",
             EnvironmentType::LinuxLambdaContainer => "LINUX_LAMBDA_CONTAINER",
+            EnvironmentType::MacArm => "MAC_ARM",
             EnvironmentType::WindowsContainer => "WINDOWS_CONTAINER",
             EnvironmentType::WindowsServer2019Container => "WINDOWS_SERVER_2019_CONTAINER",
             EnvironmentType::Unknown(value) => value.as_str(),
@@ -107,6 +112,7 @@ impl EnvironmentType {
             "LINUX_CONTAINER",
             "LINUX_GPU_CONTAINER",
             "LINUX_LAMBDA_CONTAINER",
+            "MAC_ARM",
             "WINDOWS_CONTAINER",
             "WINDOWS_SERVER_2019_CONTAINER",
         ]
@@ -137,6 +143,7 @@ impl ::std::fmt::Display for EnvironmentType {
             EnvironmentType::LinuxContainer => write!(f, "LINUX_CONTAINER"),
             EnvironmentType::LinuxGpuContainer => write!(f, "LINUX_GPU_CONTAINER"),
             EnvironmentType::LinuxLambdaContainer => write!(f, "LINUX_LAMBDA_CONTAINER"),
+            EnvironmentType::MacArm => write!(f, "MAC_ARM"),
             EnvironmentType::WindowsContainer => write!(f, "WINDOWS_CONTAINER"),
             EnvironmentType::WindowsServer2019Container => write!(f, "WINDOWS_SERVER_2019_CONTAINER"),
             EnvironmentType::Unknown(value) => write!(f, "{}", value),

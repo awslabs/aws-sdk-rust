@@ -22,6 +22,8 @@ pub struct Application {
     pub last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status message.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Names of the associated AWS Systems Manager for SAP applications.</p>
+    pub associated_application_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Application {
     /// <p>The ID of the application.</p>
@@ -62,6 +64,12 @@ impl Application {
     pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
+    /// <p>The Amazon Resource Names of the associated AWS Systems Manager for SAP applications.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associated_application_arns.is_none()`.
+    pub fn associated_application_arns(&self) -> &[::std::string::String] {
+        self.associated_application_arns.as_deref().unwrap_or_default()
+    }
 }
 impl Application {
     /// Creates a new builder-style object to manufacture [`Application`](crate::types::Application).
@@ -83,6 +91,7 @@ pub struct ApplicationBuilder {
     pub(crate) components: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
+    pub(crate) associated_application_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ApplicationBuilder {
     /// <p>The ID of the application.</p>
@@ -217,6 +226,26 @@ impl ApplicationBuilder {
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_message
     }
+    /// Appends an item to `associated_application_arns`.
+    ///
+    /// To override the contents of this collection use [`set_associated_application_arns`](Self::set_associated_application_arns).
+    ///
+    /// <p>The Amazon Resource Names of the associated AWS Systems Manager for SAP applications.</p>
+    pub fn associated_application_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.associated_application_arns.unwrap_or_default();
+        v.push(input.into());
+        self.associated_application_arns = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The Amazon Resource Names of the associated AWS Systems Manager for SAP applications.</p>
+    pub fn set_associated_application_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.associated_application_arns = input;
+        self
+    }
+    /// <p>The Amazon Resource Names of the associated AWS Systems Manager for SAP applications.</p>
+    pub fn get_associated_application_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.associated_application_arns
+    }
     /// Consumes the builder and constructs a [`Application`](crate::types::Application).
     pub fn build(self) -> crate::types::Application {
         crate::types::Application {
@@ -229,6 +258,7 @@ impl ApplicationBuilder {
             components: self.components,
             last_updated: self.last_updated,
             status_message: self.status_message,
+            associated_application_arns: self.associated_application_arns,
         }
     }
 }

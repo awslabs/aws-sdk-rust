@@ -24,7 +24,7 @@ impl super::Client {
     ///   - [`dependency_counts(Option<DependencyCounts>)`](crate::operation::get_step::GetStepOutput::dependency_counts): <p>The number of dependencies in the step.</p>
     ///   - [`required_capabilities(Option<StepRequiredCapabilities>)`](crate::operation::get_step::GetStepOutput::required_capabilities): <p>The required capabilities of the step.</p>
     ///   - [`parameter_space(Option<ParameterSpace>)`](crate::operation::get_step::GetStepOutput::parameter_space): <p>A list of step parameters and the combination expression for the step.</p>
-    ///   - [`description(Option<String>)`](crate::operation::get_step::GetStepOutput::description): <p>The description of the step.</p>
+    ///   - [`description(Option<String>)`](crate::operation::get_step::GetStepOutput::description): <p>The description of the step.</p><important>  <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p> </important>
     /// - On failure, responds with [`SdkError<GetStepError>`](crate::operation::get_step::GetStepError)
     pub fn get_step(&self) -> crate::operation::get_step::builders::GetStepFluentBuilder {
         crate::operation::get_step::builders::GetStepFluentBuilder::new(self.handle.clone())

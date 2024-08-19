@@ -7,7 +7,9 @@ pub struct UpdateMonitorInput {
     pub monitor_id: ::std::option::Option<::std::string::String>,
     /// <p>The new value of the subdomain to use when forming the monitor URL.</p>
     pub subdomain: ::std::option::Option<::std::string::String>,
-    /// <p>The new value to use for the monitor's display name.</p>
+    /// <p>The new value to use for the monitor's display name.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the new IAM role to use with the monitor.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
@@ -21,7 +23,9 @@ impl UpdateMonitorInput {
     pub fn subdomain(&self) -> ::std::option::Option<&str> {
         self.subdomain.as_deref()
     }
-    /// <p>The new value to use for the monitor's display name.</p>
+    /// <p>The new value to use for the monitor's display name.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
@@ -76,17 +80,23 @@ impl UpdateMonitorInputBuilder {
     pub fn get_subdomain(&self) -> &::std::option::Option<::std::string::String> {
         &self.subdomain
     }
-    /// <p>The new value to use for the monitor's display name.</p>
+    /// <p>The new value to use for the monitor's display name.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The new value to use for the monitor's display name.</p>
+    /// <p>The new value to use for the monitor's display name.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
     }
-    /// <p>The new value to use for the monitor's display name.</p>
+    /// <p>The new value to use for the monitor's display name.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }

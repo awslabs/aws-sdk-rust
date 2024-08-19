@@ -72,6 +72,10 @@ where
                                     .transpose()?,
                             );
                         }
+                        "AssociatedApplicationArns" => {
+                            builder = builder
+                                .set_associated_application_arns(crate::protocol_serde::shape_application_arn_list::de_application_arn_list(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

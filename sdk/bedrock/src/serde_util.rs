@@ -56,6 +56,15 @@ pub(crate) fn create_model_customization_job_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_model_invocation_job_output_output_correct_errors(
+    mut builder: crate::operation::create_model_invocation_job::builders::CreateModelInvocationJobOutputBuilder,
+) -> crate::operation::create_model_invocation_job::builders::CreateModelInvocationJobOutputBuilder {
+    if builder.job_arn.is_none() {
+        builder.job_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_provisioned_model_throughput_output_output_correct_errors(
     mut builder: crate::operation::create_provisioned_model_throughput::builders::CreateProvisionedModelThroughputOutputBuilder,
 ) -> crate::operation::create_provisioned_model_throughput::builders::CreateProvisionedModelThroughputOutputBuilder {
@@ -232,6 +241,30 @@ pub(crate) fn get_model_customization_job_output_output_correct_errors(
             let builder = crate::types::builders::OutputDataConfigBuilder::default();
             crate::serde_util::output_data_config_correct_errors(builder).build().ok()
         }
+    }
+    builder
+}
+
+pub(crate) fn get_model_invocation_job_output_output_correct_errors(
+    mut builder: crate::operation::get_model_invocation_job::builders::GetModelInvocationJobOutputBuilder,
+) -> crate::operation::get_model_invocation_job::builders::GetModelInvocationJobOutputBuilder {
+    if builder.job_arn.is_none() {
+        builder.job_arn = Some(Default::default())
+    }
+    if builder.model_id.is_none() {
+        builder.model_id = Some(Default::default())
+    }
+    if builder.role_arn.is_none() {
+        builder.role_arn = Some(Default::default())
+    }
+    if builder.submit_time.is_none() {
+        builder.submit_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.input_data_config.is_none() {
+        builder.input_data_config = Some(crate::types::ModelInvocationJobInputDataConfig::Unknown)
+    }
+    if builder.output_data_config.is_none() {
+        builder.output_data_config = Some(crate::types::ModelInvocationJobOutputDataConfig::Unknown)
     }
     builder
 }
@@ -542,6 +575,51 @@ pub(crate) fn model_customization_job_summary_correct_errors(
     }
     if builder.creation_time.is_none() {
         builder.creation_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn model_invocation_job_s3_input_data_config_correct_errors(
+    mut builder: crate::types::builders::ModelInvocationJobS3InputDataConfigBuilder,
+) -> crate::types::builders::ModelInvocationJobS3InputDataConfigBuilder {
+    if builder.s3_uri.is_none() {
+        builder.s3_uri = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn model_invocation_job_s3_output_data_config_correct_errors(
+    mut builder: crate::types::builders::ModelInvocationJobS3OutputDataConfigBuilder,
+) -> crate::types::builders::ModelInvocationJobS3OutputDataConfigBuilder {
+    if builder.s3_uri.is_none() {
+        builder.s3_uri = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn model_invocation_job_summary_correct_errors(
+    mut builder: crate::types::builders::ModelInvocationJobSummaryBuilder,
+) -> crate::types::builders::ModelInvocationJobSummaryBuilder {
+    if builder.job_arn.is_none() {
+        builder.job_arn = Some(Default::default())
+    }
+    if builder.job_name.is_none() {
+        builder.job_name = Some(Default::default())
+    }
+    if builder.model_id.is_none() {
+        builder.model_id = Some(Default::default())
+    }
+    if builder.role_arn.is_none() {
+        builder.role_arn = Some(Default::default())
+    }
+    if builder.submit_time.is_none() {
+        builder.submit_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.input_data_config.is_none() {
+        builder.input_data_config = Some(crate::types::ModelInvocationJobInputDataConfig::Unknown)
+    }
+    if builder.output_data_config.is_none() {
+        builder.output_data_config = Some(crate::types::ModelInvocationJobOutputDataConfig::Unknown)
     }
     builder
 }

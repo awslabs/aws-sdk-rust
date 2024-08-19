@@ -26,7 +26,7 @@ impl super::Client {
     ///   - [`max_retries_per_task(Option<i32>)`](crate::operation::get_job::GetJobOutput::max_retries_per_task): <p>The maximum number of retries per failed tasks.</p>
     ///   - [`parameters(Option<HashMap::<String, JobParameter>>)`](crate::operation::get_job::GetJobOutput::parameters): <p>The parameters for the job.</p>
     ///   - [`attachments(Option<Attachments>)`](crate::operation::get_job::GetJobOutput::attachments): <p>The attachments for the job.</p>
-    ///   - [`description(Option<String>)`](crate::operation::get_job::GetJobOutput::description): <p>The description of the job.</p>
+    ///   - [`description(Option<String>)`](crate::operation::get_job::GetJobOutput::description): <p>The description of the job.</p><important>  <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p> </important>
     /// - On failure, responds with [`SdkError<GetJobError>`](crate::operation::get_job::GetJobError)
     pub fn get_job(&self) -> crate::operation::get_job::builders::GetJobFluentBuilder {
         crate::operation::get_job::builders::GetJobFluentBuilder::new(self.handle.clone())

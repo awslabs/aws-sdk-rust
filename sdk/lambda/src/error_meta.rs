@@ -49,7 +49,13 @@ pub enum Error {
     KmsNotFoundException(crate::types::error::KmsNotFoundException),
     /// <p>The permissions policy for the resource is too large. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda quotas</a>.</p>
     PolicyLengthExceededException(crate::types::error::PolicyLengthExceededException),
-    /// <p>The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API operation to retrieve the latest RevisionId for your resource.</p>
+    /// <p>The RevisionId provided does not match the latest RevisionId for the Lambda function or alias.</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>For AddPermission and RemovePermission API operations:</b> Call <code>GetPolicy</code> to retrieve the latest RevisionId for your resource.</p></li>
+    /// <li>
+    /// <p><b>For all other API operations:</b> Call <code>GetFunction</code> or <code>GetAlias</code> to retrieve the latest RevisionId for your resource.</p></li>
+    /// </ul>
     PreconditionFailedException(crate::types::error::PreconditionFailedException),
     /// <p>The specified configuration does not exist.</p>
     ProvisionedConcurrencyConfigNotFoundException(crate::types::error::ProvisionedConcurrencyConfigNotFoundException),
@@ -1085,6 +1091,42 @@ impl From<crate::operation::get_function_event_invoke_config::GetFunctionEventIn
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_function_recursion_config::GetFunctionRecursionConfigError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_function_recursion_config::GetFunctionRecursionConfigError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_function_recursion_config::GetFunctionRecursionConfigError> for Error {
+    fn from(err: crate::operation::get_function_recursion_config::GetFunctionRecursionConfigError) -> Self {
+        match err {
+            crate::operation::get_function_recursion_config::GetFunctionRecursionConfigError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::get_function_recursion_config::GetFunctionRecursionConfigError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_function_recursion_config::GetFunctionRecursionConfigError::ServiceException(inner) => {
+                Error::ServiceException(inner)
+            }
+            crate::operation::get_function_recursion_config::GetFunctionRecursionConfigError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_function_recursion_config::GetFunctionRecursionConfigError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_function_url_config::GetFunctionUrlConfigError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2074,6 +2116,45 @@ impl From<crate::operation::put_function_event_invoke_config::PutFunctionEventIn
                 Error::TooManyRequestsException(inner)
             }
             crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_function_recursion_config::PutFunctionRecursionConfigError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_function_recursion_config::PutFunctionRecursionConfigError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_function_recursion_config::PutFunctionRecursionConfigError> for Error {
+    fn from(err: crate::operation::put_function_recursion_config::PutFunctionRecursionConfigError) -> Self {
+        match err {
+            crate::operation::put_function_recursion_config::PutFunctionRecursionConfigError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::put_function_recursion_config::PutFunctionRecursionConfigError::ResourceConflictException(inner) => {
+                Error::ResourceConflictException(inner)
+            }
+            crate::operation::put_function_recursion_config::PutFunctionRecursionConfigError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::put_function_recursion_config::PutFunctionRecursionConfigError::ServiceException(inner) => {
+                Error::ServiceException(inner)
+            }
+            crate::operation::put_function_recursion_config::PutFunctionRecursionConfigError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::put_function_recursion_config::PutFunctionRecursionConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

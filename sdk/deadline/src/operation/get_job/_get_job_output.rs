@@ -41,7 +41,9 @@ pub struct GetJobOutput {
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::JobParameter>>,
     /// <p>The attachments for the job.</p>
     pub attachments: ::std::option::Option<crate::types::Attachments>,
-    /// <p>The description of the job.</p>
+    /// <p>The description of the job.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub description: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -126,7 +128,9 @@ impl GetJobOutput {
     pub fn attachments(&self) -> ::std::option::Option<&crate::types::Attachments> {
         self.attachments.as_ref()
     }
-    /// <p>The description of the job.</p>
+    /// <p>The description of the job.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -485,17 +489,23 @@ impl GetJobOutputBuilder {
     pub fn get_attachments(&self) -> &::std::option::Option<crate::types::Attachments> {
         &self.attachments
     }
-    /// <p>The description of the job.</p>
+    /// <p>The description of the job.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The description of the job.</p>
+    /// <p>The description of the job.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>The description of the job.</p>
+    /// <p>The description of the job.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }

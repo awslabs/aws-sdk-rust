@@ -79,6 +79,9 @@ pub mod get_function_configuration;
 /// Types for the `GetFunctionEventInvokeConfig` operation.
 pub mod get_function_event_invoke_config;
 
+/// Types for the `GetFunctionRecursionConfig` operation.
+pub mod get_function_recursion_config;
+
 /// Types for the `GetFunctionUrlConfig` operation.
 pub mod get_function_url_config;
 
@@ -159,6 +162,9 @@ pub mod put_function_concurrency;
 
 /// Types for the `PutFunctionEventInvokeConfig` operation.
 pub mod put_function_event_invoke_config;
+
+/// Types for the `PutFunctionRecursionConfig` operation.
+pub mod put_function_recursion_config;
 
 /// Types for the `PutProvisionedConcurrencyConfig` operation.
 pub mod put_provisioned_concurrency_config;

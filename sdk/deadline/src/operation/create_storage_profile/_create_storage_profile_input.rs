@@ -7,7 +7,9 @@ pub struct CreateStorageProfileInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The farm ID of the farm to connect to the storage profile.</p>
     pub farm_id: ::std::option::Option<::std::string::String>,
-    /// <p>The display name of the storage profile.</p>
+    /// <p>The display name of the storage profile.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of operating system (OS) for the storage profile.</p>
     pub os_family: ::std::option::Option<crate::types::StorageProfileOperatingSystemFamily>,
@@ -23,7 +25,9 @@ impl CreateStorageProfileInput {
     pub fn farm_id(&self) -> ::std::option::Option<&str> {
         self.farm_id.as_deref()
     }
-    /// <p>The display name of the storage profile.</p>
+    /// <p>The display name of the storage profile.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
@@ -85,18 +89,24 @@ impl CreateStorageProfileInputBuilder {
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.farm_id
     }
-    /// <p>The display name of the storage profile.</p>
+    /// <p>The display name of the storage profile.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     /// This field is required.
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The display name of the storage profile.</p>
+    /// <p>The display name of the storage profile.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
     }
-    /// <p>The display name of the storage profile.</p>
+    /// <p>The display name of the storage profile.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }

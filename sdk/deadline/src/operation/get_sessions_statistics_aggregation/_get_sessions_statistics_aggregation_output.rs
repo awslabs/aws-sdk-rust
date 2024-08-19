@@ -7,7 +7,8 @@ pub struct GetSessionsStatisticsAggregationOutput {
     pub statistics: ::std::option::Option<::std::vec::Vec<crate::types::Statistics>>,
     /// <p>If Deadline Cloud returns <code>nextToken</code>, then there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page, call the operation again using the returned token. Keep all other arguments unchanged. If no results remain, then <code>nextToken</code> is set to <code>null</code>. Each pagination token expires after 24 hours. If you provide a token that isn't valid, then you receive an HTTP 400 <code>ValidationException</code> error.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The status of the aggregated results.</p>
+    /// <p>The status of the aggregated results. An aggregation may fail or time out if the results are too large. If this happens, you can call the <code>StartSessionsStatisticsAggregation</code> operation after you reduce the aggregation time frame, reduce the number of queues or fleets in the aggregation, or increase the period length.</p>
+    /// <p>If you call the <code>StartSessionsStatisticsAggregation </code> operation when the status is <code>IN_PROGRESS</code>, you will receive a <code>ThrottlingException</code>.</p>
     pub status: crate::types::SessionsStatisticsAggregationStatus,
     /// <p>A message that describes the status.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
@@ -24,7 +25,8 @@ impl GetSessionsStatisticsAggregationOutput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The status of the aggregated results.</p>
+    /// <p>The status of the aggregated results. An aggregation may fail or time out if the results are too large. If this happens, you can call the <code>StartSessionsStatisticsAggregation</code> operation after you reduce the aggregation time frame, reduce the number of queues or fleets in the aggregation, or increase the period length.</p>
+    /// <p>If you call the <code>StartSessionsStatisticsAggregation </code> operation when the status is <code>IN_PROGRESS</code>, you will receive a <code>ThrottlingException</code>.</p>
     pub fn status(&self) -> &crate::types::SessionsStatisticsAggregationStatus {
         &self.status
     }
@@ -90,18 +92,21 @@ impl GetSessionsStatisticsAggregationOutputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>The status of the aggregated results.</p>
+    /// <p>The status of the aggregated results. An aggregation may fail or time out if the results are too large. If this happens, you can call the <code>StartSessionsStatisticsAggregation</code> operation after you reduce the aggregation time frame, reduce the number of queues or fleets in the aggregation, or increase the period length.</p>
+    /// <p>If you call the <code>StartSessionsStatisticsAggregation </code> operation when the status is <code>IN_PROGRESS</code>, you will receive a <code>ThrottlingException</code>.</p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::SessionsStatisticsAggregationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the aggregated results.</p>
+    /// <p>The status of the aggregated results. An aggregation may fail or time out if the results are too large. If this happens, you can call the <code>StartSessionsStatisticsAggregation</code> operation after you reduce the aggregation time frame, reduce the number of queues or fleets in the aggregation, or increase the period length.</p>
+    /// <p>If you call the <code>StartSessionsStatisticsAggregation </code> operation when the status is <code>IN_PROGRESS</code>, you will receive a <code>ThrottlingException</code>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::SessionsStatisticsAggregationStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the aggregated results.</p>
+    /// <p>The status of the aggregated results. An aggregation may fail or time out if the results are too large. If this happens, you can call the <code>StartSessionsStatisticsAggregation</code> operation after you reduce the aggregation time frame, reduce the number of queues or fleets in the aggregation, or increase the period length.</p>
+    /// <p>If you call the <code>StartSessionsStatisticsAggregation </code> operation when the status is <code>IN_PROGRESS</code>, you will receive a <code>ThrottlingException</code>.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::SessionsStatisticsAggregationStatus> {
         &self.status
     }

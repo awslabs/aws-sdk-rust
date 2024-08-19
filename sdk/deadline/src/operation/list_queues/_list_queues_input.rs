@@ -5,7 +5,7 @@
 pub struct ListQueuesInput {
     /// <p>The farm ID of the queue.</p>
     pub farm_id: ::std::option::Option<::std::string::String>,
-    /// <p>The principal ID. This filter is only valid when using Nimble Studio credentials and should match the user ID in the credentials of the caller.</p>
+    /// <p>The principal IDs to include in the list of queues.</p>
     pub principal_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the queues listed.</p>
     /// <ul>
@@ -27,7 +27,7 @@ impl ListQueuesInput {
     pub fn farm_id(&self) -> ::std::option::Option<&str> {
         self.farm_id.as_deref()
     }
-    /// <p>The principal ID. This filter is only valid when using Nimble Studio credentials and should match the user ID in the credentials of the caller.</p>
+    /// <p>The principal IDs to include in the list of queues.</p>
     pub fn principal_id(&self) -> ::std::option::Option<&str> {
         self.principal_id.as_deref()
     }
@@ -85,17 +85,17 @@ impl ListQueuesInputBuilder {
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.farm_id
     }
-    /// <p>The principal ID. This filter is only valid when using Nimble Studio credentials and should match the user ID in the credentials of the caller.</p>
+    /// <p>The principal IDs to include in the list of queues.</p>
     pub fn principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The principal ID. This filter is only valid when using Nimble Studio credentials and should match the user ID in the credentials of the caller.</p>
+    /// <p>The principal IDs to include in the list of queues.</p>
     pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.principal_id = input;
         self
     }
-    /// <p>The principal ID. This filter is only valid when using Nimble Studio credentials and should match the user ID in the credentials of the caller.</p>
+    /// <p>The principal IDs to include in the list of queues.</p>
     pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.principal_id
     }

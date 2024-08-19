@@ -269,6 +269,8 @@ mod get_function_configuration;
 
 mod get_function_event_invoke_config;
 
+mod get_function_recursion_config;
+
 mod get_function_url_config;
 
 mod get_layer_version;
@@ -322,6 +324,8 @@ mod put_function_code_signing_config;
 mod put_function_concurrency;
 
 mod put_function_event_invoke_config;
+
+mod put_function_recursion_config;
 
 mod put_provisioned_concurrency_config;
 

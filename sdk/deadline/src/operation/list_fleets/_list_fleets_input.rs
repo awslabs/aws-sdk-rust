@@ -7,7 +7,9 @@ pub struct ListFleetsInput {
     pub farm_id: ::std::option::Option<::std::string::String>,
     /// <p>The principal ID of the members to include in the fleet.</p>
     pub principal_id: ::std::option::Option<::std::string::String>,
-    /// <p>The display names of a list of fleets.</p>
+    /// <p>The display names of a list of fleets.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the fleet.</p>
     pub status: ::std::option::Option<crate::types::FleetStatus>,
@@ -25,7 +27,9 @@ impl ListFleetsInput {
     pub fn principal_id(&self) -> ::std::option::Option<&str> {
         self.principal_id.as_deref()
     }
-    /// <p>The display names of a list of fleets.</p>
+    /// <p>The display names of a list of fleets.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
@@ -90,17 +94,23 @@ impl ListFleetsInputBuilder {
     pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.principal_id
     }
-    /// <p>The display names of a list of fleets.</p>
+    /// <p>The display names of a list of fleets.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The display names of a list of fleets.</p>
+    /// <p>The display names of a list of fleets.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
     }
-    /// <p>The display names of a list of fleets.</p>
+    /// <p>The display names of a list of fleets.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }

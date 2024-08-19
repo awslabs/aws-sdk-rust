@@ -88,6 +88,10 @@ where
                                 ::aws_smithy_types::date_time::Format::EpochSeconds,
                             )?);
                         }
+                        "ConnectedComponentArns" => {
+                            builder =
+                                builder.set_connected_component_arns(crate::protocol_serde::shape_component_arn_list::de_component_arn_list(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -19,7 +19,9 @@ pub struct UpdateJobInput {
     pub max_failed_tasks_count: ::std::option::Option<i32>,
     /// <p>The maximum number of retries for a job.</p>
     pub max_retries_per_task: ::std::option::Option<i32>,
-    /// <p>The status of a job in its lifecycle.</p>
+    /// <p>The status of a job in its lifecycle. When you change the status of the job to <code>ARCHIVED</code>, the job can't be scheduled or archived.</p><important>
+    /// <p>An archived jobs and its steps and tasks are deleted after 120 days. The job can't be recovered.</p>
+    /// </important>
     pub lifecycle_status: ::std::option::Option<crate::types::UpdateJobLifecycleStatus>,
 }
 impl UpdateJobInput {
@@ -55,7 +57,9 @@ impl UpdateJobInput {
     pub fn max_retries_per_task(&self) -> ::std::option::Option<i32> {
         self.max_retries_per_task
     }
-    /// <p>The status of a job in its lifecycle.</p>
+    /// <p>The status of a job in its lifecycle. When you change the status of the job to <code>ARCHIVED</code>, the job can't be scheduled or archived.</p><important>
+    /// <p>An archived jobs and its steps and tasks are deleted after 120 days. The job can't be recovered.</p>
+    /// </important>
     pub fn lifecycle_status(&self) -> ::std::option::Option<&crate::types::UpdateJobLifecycleStatus> {
         self.lifecycle_status.as_ref()
     }
@@ -197,17 +201,23 @@ impl UpdateJobInputBuilder {
     pub fn get_max_retries_per_task(&self) -> &::std::option::Option<i32> {
         &self.max_retries_per_task
     }
-    /// <p>The status of a job in its lifecycle.</p>
+    /// <p>The status of a job in its lifecycle. When you change the status of the job to <code>ARCHIVED</code>, the job can't be scheduled or archived.</p><important>
+    /// <p>An archived jobs and its steps and tasks are deleted after 120 days. The job can't be recovered.</p>
+    /// </important>
     pub fn lifecycle_status(mut self, input: crate::types::UpdateJobLifecycleStatus) -> Self {
         self.lifecycle_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of a job in its lifecycle.</p>
+    /// <p>The status of a job in its lifecycle. When you change the status of the job to <code>ARCHIVED</code>, the job can't be scheduled or archived.</p><important>
+    /// <p>An archived jobs and its steps and tasks are deleted after 120 days. The job can't be recovered.</p>
+    /// </important>
     pub fn set_lifecycle_status(mut self, input: ::std::option::Option<crate::types::UpdateJobLifecycleStatus>) -> Self {
         self.lifecycle_status = input;
         self
     }
-    /// <p>The status of a job in its lifecycle.</p>
+    /// <p>The status of a job in its lifecycle. When you change the status of the job to <code>ARCHIVED</code>, the job can't be scheduled or archived.</p><important>
+    /// <p>An archived jobs and its steps and tasks are deleted after 120 days. The job can't be recovered.</p>
+    /// </important>
     pub fn get_lifecycle_status(&self) -> &::std::option::Option<crate::types::UpdateJobLifecycleStatus> {
         &self.lifecycle_status
     }

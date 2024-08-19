@@ -49,6 +49,16 @@ pub(crate) fn reflens_list_model_customization_jobs_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_model_invocation_jobs_output_output_next_token(
+    input: &crate::operation::list_model_invocation_jobs::ListModelInvocationJobsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_provisioned_model_throughputs_output_output_next_token(
     input: &crate::operation::list_provisioned_model_throughputs::ListProvisionedModelThroughputsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -100,6 +110,16 @@ pub(crate) fn lens_list_model_customization_jobs_output_output_model_customizati
     input: crate::operation::list_model_customization_jobs::ListModelCustomizationJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ModelCustomizationJobSummary>> {
     let input = match input.model_customization_job_summaries {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_model_invocation_jobs_output_output_invocation_job_summaries(
+    input: crate::operation::list_model_invocation_jobs::ListModelInvocationJobsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ModelInvocationJobSummary>> {
+    let input = match input.invocation_job_summaries {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

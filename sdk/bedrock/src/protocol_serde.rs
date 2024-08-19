@@ -33,6 +33,8 @@ pub(crate) mod shape_create_model_copy_job;
 
 pub(crate) mod shape_create_model_customization_job;
 
+pub(crate) mod shape_create_model_invocation_job;
+
 pub(crate) mod shape_create_provisioned_model_throughput;
 
 pub(crate) mod shape_delete_custom_model;
@@ -55,6 +57,8 @@ pub(crate) mod shape_get_model_copy_job;
 
 pub(crate) mod shape_get_model_customization_job;
 
+pub(crate) mod shape_get_model_invocation_job;
+
 pub(crate) mod shape_get_model_invocation_logging_configuration;
 
 pub(crate) mod shape_get_provisioned_model_throughput;
@@ -71,6 +75,8 @@ pub(crate) mod shape_list_model_copy_jobs;
 
 pub(crate) mod shape_list_model_customization_jobs;
 
+pub(crate) mod shape_list_model_invocation_jobs;
+
 pub(crate) mod shape_list_provisioned_model_throughputs;
 
 pub(crate) mod shape_list_tags_for_resource;
@@ -80,6 +86,8 @@ pub(crate) mod shape_put_model_invocation_logging_configuration;
 pub(crate) mod shape_stop_evaluation_job;
 
 pub(crate) mod shape_stop_model_customization_job;
+
+pub(crate) mod shape_stop_model_invocation_job;
 
 pub(crate) mod shape_tag_resource;
 
@@ -110,6 +118,8 @@ pub(crate) mod shape_create_guardrail_version_input;
 pub(crate) mod shape_create_model_copy_job_input;
 
 pub(crate) mod shape_create_model_customization_job_input;
+
+pub(crate) mod shape_create_model_invocation_job_input;
 
 pub(crate) mod shape_create_provisioned_model_throughput_input;
 
@@ -187,6 +197,12 @@ pub(crate) mod shape_model_customization_hyper_parameters;
 
 pub(crate) mod shape_model_customization_job_summaries;
 
+pub(crate) mod shape_model_invocation_job_input_data_config;
+
+pub(crate) mod shape_model_invocation_job_output_data_config;
+
+pub(crate) mod shape_model_invocation_job_summaries;
+
 pub(crate) mod shape_output_data_config;
 
 pub(crate) mod shape_provisioned_model_summaries;
@@ -260,6 +276,12 @@ pub(crate) mod shape_model_copy_job_summary;
 pub(crate) mod shape_model_customization_job_summary;
 
 pub(crate) mod shape_model_customization_list;
+
+pub(crate) mod shape_model_invocation_job_s3_input_data_config;
+
+pub(crate) mod shape_model_invocation_job_s3_output_data_config;
+
+pub(crate) mod shape_model_invocation_job_summary;
 
 pub(crate) mod shape_model_modality_list;
 

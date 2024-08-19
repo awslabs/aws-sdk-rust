@@ -16,6 +16,9 @@ pub mod create_model_copy_job;
 /// Types for the `CreateModelCustomizationJob` operation.
 pub mod create_model_customization_job;
 
+/// Types for the `CreateModelInvocationJob` operation.
+pub mod create_model_invocation_job;
+
 /// Types for the `CreateProvisionedModelThroughput` operation.
 pub mod create_provisioned_model_throughput;
 
@@ -49,6 +52,9 @@ pub mod get_model_copy_job;
 /// Types for the `GetModelCustomizationJob` operation.
 pub mod get_model_customization_job;
 
+/// Types for the `GetModelInvocationJob` operation.
+pub mod get_model_invocation_job;
+
 /// Types for the `GetModelInvocationLoggingConfiguration` operation.
 pub mod get_model_invocation_logging_configuration;
 
@@ -73,6 +79,9 @@ pub mod list_model_copy_jobs;
 /// Types for the `ListModelCustomizationJobs` operation.
 pub mod list_model_customization_jobs;
 
+/// Types for the `ListModelInvocationJobs` operation.
+pub mod list_model_invocation_jobs;
+
 /// Types for the `ListProvisionedModelThroughputs` operation.
 pub mod list_provisioned_model_throughputs;
 
@@ -87,6 +96,9 @@ pub mod stop_evaluation_job;
 
 /// Types for the `StopModelCustomizationJob` operation.
 pub mod stop_model_customization_job;
+
+/// Types for the `StopModelInvocationJob` operation.
+pub mod stop_model_invocation_job;
 
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
