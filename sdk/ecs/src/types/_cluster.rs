@@ -50,7 +50,7 @@ pub struct Cluster {
     pub running_tasks_count: i32,
     /// <p>The number of tasks in the cluster that are in the <code>PENDING</code> state.</p>
     pub pending_tasks_count: i32,
-    /// <p>The number of services that are running on the cluster in an <code>ACTIVE</code> state. You can view these services with <code>ListServices</code>.</p>
+    /// <p>The number of services that are running on the cluster in an <code>ACTIVE</code> state. You can view these services with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html">PListServices</a>.</p>
     pub active_services_count: i32,
     /// <p>Additional information about your clusters that are separated by launch type. They include the following:</p>
     /// <ul>
@@ -186,7 +186,7 @@ impl Cluster {
     pub fn pending_tasks_count(&self) -> i32 {
         self.pending_tasks_count
     }
-    /// <p>The number of services that are running on the cluster in an <code>ACTIVE</code> state. You can view these services with <code>ListServices</code>.</p>
+    /// <p>The number of services that are running on the cluster in an <code>ACTIVE</code> state. You can view these services with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html">PListServices</a>.</p>
     pub fn active_services_count(&self) -> i32 {
         self.active_services_count
     }
@@ -514,17 +514,17 @@ impl ClusterBuilder {
     pub fn get_pending_tasks_count(&self) -> &::std::option::Option<i32> {
         &self.pending_tasks_count
     }
-    /// <p>The number of services that are running on the cluster in an <code>ACTIVE</code> state. You can view these services with <code>ListServices</code>.</p>
+    /// <p>The number of services that are running on the cluster in an <code>ACTIVE</code> state. You can view these services with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html">PListServices</a>.</p>
     pub fn active_services_count(mut self, input: i32) -> Self {
         self.active_services_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of services that are running on the cluster in an <code>ACTIVE</code> state. You can view these services with <code>ListServices</code>.</p>
+    /// <p>The number of services that are running on the cluster in an <code>ACTIVE</code> state. You can view these services with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html">PListServices</a>.</p>
     pub fn set_active_services_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.active_services_count = input;
         self
     }
-    /// <p>The number of services that are running on the cluster in an <code>ACTIVE</code> state. You can view these services with <code>ListServices</code>.</p>
+    /// <p>The number of services that are running on the cluster in an <code>ACTIVE</code> state. You can view these services with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html">PListServices</a>.</p>
     pub fn get_active_services_count(&self) -> &::std::option::Option<i32> {
         &self.active_services_count
     }

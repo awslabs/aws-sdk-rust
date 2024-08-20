@@ -258,7 +258,7 @@ pub enum RunTaskError {
     /// <p>The <code>RunTask</code> could not be processed because you use managed scaling and there is a capacity error because the quota of tasks in the <code>PROVISIONING</code> per cluster has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon ECS service quotas</a>.</p></li>
     /// </ul>
     ClientException(crate::types::error::ClientException),
-    /// <p>The specified cluster wasn't found. You can view your available clusters with <code>ListClusters</code>. Amazon ECS clusters are Region specific.</p>
+    /// <p>The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>. Amazon ECS clusters are Region specific.</p>
     ClusterNotFoundException(crate::types::error::ClusterNotFoundException),
     /// <p>The <code>RunTask</code> request could not be processed due to conflicts. The provided <code>clientToken</code> is already in use with a different <code>RunTask</code> request. The <code>resourceIds</code> are the existing task ARNs which are already associated with the <code>clientToken</code>.</p>
     /// <p>To fix this issue:</p>

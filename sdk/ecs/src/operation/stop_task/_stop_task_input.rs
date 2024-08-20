@@ -7,7 +7,7 @@ pub struct StopTaskInput {
     pub cluster: ::std::option::Option<::std::string::String>,
     /// <p>The task ID of the task to stop.</p>
     pub task: ::std::option::Option<::std::string::String>,
-    /// <p>An optional message specified when a task is stopped. For example, if you're using a custom scheduler, you can use this parameter to specify the reason for stopping the task here, and the message appears in subsequent <code>DescribeTasks</code> API operations on this task.</p>
+    /// <p>An optional message specified when a task is stopped. For example, if you're using a custom scheduler, you can use this parameter to specify the reason for stopping the task here, and the message appears in subsequent <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTasks.html">DescribeTasks</a>&gt; API operations on this task.</p>
     pub reason: ::std::option::Option<::std::string::String>,
 }
 impl StopTaskInput {
@@ -19,7 +19,7 @@ impl StopTaskInput {
     pub fn task(&self) -> ::std::option::Option<&str> {
         self.task.as_deref()
     }
-    /// <p>An optional message specified when a task is stopped. For example, if you're using a custom scheduler, you can use this parameter to specify the reason for stopping the task here, and the message appears in subsequent <code>DescribeTasks</code> API operations on this task.</p>
+    /// <p>An optional message specified when a task is stopped. For example, if you're using a custom scheduler, you can use this parameter to specify the reason for stopping the task here, and the message appears in subsequent <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTasks.html">DescribeTasks</a>&gt; API operations on this task.</p>
     pub fn reason(&self) -> ::std::option::Option<&str> {
         self.reason.as_deref()
     }
@@ -69,17 +69,17 @@ impl StopTaskInputBuilder {
     pub fn get_task(&self) -> &::std::option::Option<::std::string::String> {
         &self.task
     }
-    /// <p>An optional message specified when a task is stopped. For example, if you're using a custom scheduler, you can use this parameter to specify the reason for stopping the task here, and the message appears in subsequent <code>DescribeTasks</code> API operations on this task.</p>
+    /// <p>An optional message specified when a task is stopped. For example, if you're using a custom scheduler, you can use this parameter to specify the reason for stopping the task here, and the message appears in subsequent <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTasks.html">DescribeTasks</a>&gt; API operations on this task.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An optional message specified when a task is stopped. For example, if you're using a custom scheduler, you can use this parameter to specify the reason for stopping the task here, and the message appears in subsequent <code>DescribeTasks</code> API operations on this task.</p>
+    /// <p>An optional message specified when a task is stopped. For example, if you're using a custom scheduler, you can use this parameter to specify the reason for stopping the task here, and the message appears in subsequent <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTasks.html">DescribeTasks</a>&gt; API operations on this task.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
     }
-    /// <p>An optional message specified when a task is stopped. For example, if you're using a custom scheduler, you can use this parameter to specify the reason for stopping the task here, and the message appears in subsequent <code>DescribeTasks</code> API operations on this task.</p>
+    /// <p>An optional message specified when a task is stopped. For example, if you're using a custom scheduler, you can use this parameter to specify the reason for stopping the task here, and the message appears in subsequent <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTasks.html">DescribeTasks</a>&gt; API operations on this task.</p>
     pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.reason
     }

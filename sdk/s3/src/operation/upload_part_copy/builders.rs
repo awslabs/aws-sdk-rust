@@ -52,8 +52,9 @@ impl crate::operation::upload_part_copy::builders::UploadPartCopyInputBuilder {
 /// <p>If the source object is in a general purpose bucket, you must have the <b> <code>s3:GetObject</code> </b> permission to read the source object that is being copied.</p></li>
 /// <li>
 /// <p>If the destination bucket is a general purpose bucket, you must have the <b> <code>s3:PutObject</code> </b> permission to write the object copy to the destination bucket.</p></li>
-/// </ul>
-/// <p>For information about permissions required to use the multipart upload API, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart upload API and permissions</a> in the <i>Amazon S3 User Guide</i>.</p></li>
+/// <li>
+/// <p>To perform a multipart upload with encryption using an Key Management Service key, the requester must have permission to the <code>kms:Decrypt</code> and <code>kms:GenerateDataKey</code> actions on the key. The requester must also have permissions for the <code>kms:GenerateDataKey</code> action for the <code>CreateMultipartUpload</code> API. Then, the requester needs permissions for the <code>kms:Decrypt</code> action on the <code>UploadPart</code> and <code>UploadPartCopy</code> APIs. These permissions are required because Amazon S3 must decrypt and read data from the encrypted file parts before it completes the multipart upload. For more information about KMS permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">Protecting data using server-side encryption with KMS</a> in the <i>Amazon S3 User Guide</i>. For information about the permissions required to use the multipart upload API, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart upload and permissions</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart upload API and permissions</a> in the <i>Amazon S3 User Guide</i>.</p></li>
+/// </ul></li>
 /// <li>
 /// <p><b>Directory bucket permissions</b> - You must have permissions in a bucket policy or an IAM identity-based policy based on the source and destination bucket types in an <code>UploadPartCopy</code> operation.</p>
 /// <ul>

@@ -13,7 +13,7 @@ pub struct ListContainerInstancesInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of container instance results that <code>ListContainerInstances</code> returned in paginated output. When this parameter is used, <code>ListContainerInstances</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListContainerInstances</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>ListContainerInstances</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>Filters the container instances by status. For example, if you specify the <code>DRAINING</code> status, the results include only container instances that have been set to <code>DRAINING</code> using <code>UpdateContainerInstancesState</code>. If you don't specify this parameter, the default is to include container instances set to all states other than <code>INACTIVE</code>.</p>
+    /// <p>Filters the container instances by status. For example, if you specify the <code>DRAINING</code> status, the results include only container instances that have been set to <code>DRAINING</code> using <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateContainerInstancesState.html">UpdateContainerInstancesState</a>. If you don't specify this parameter, the default is to include container instances set to all states other than <code>INACTIVE</code>.</p>
     pub status: ::std::option::Option<crate::types::ContainerInstanceStatus>,
 }
 impl ListContainerInstancesInput {
@@ -35,7 +35,7 @@ impl ListContainerInstancesInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>Filters the container instances by status. For example, if you specify the <code>DRAINING</code> status, the results include only container instances that have been set to <code>DRAINING</code> using <code>UpdateContainerInstancesState</code>. If you don't specify this parameter, the default is to include container instances set to all states other than <code>INACTIVE</code>.</p>
+    /// <p>Filters the container instances by status. For example, if you specify the <code>DRAINING</code> status, the results include only container instances that have been set to <code>DRAINING</code> using <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateContainerInstancesState.html">UpdateContainerInstancesState</a>. If you don't specify this parameter, the default is to include container instances set to all states other than <code>INACTIVE</code>.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ContainerInstanceStatus> {
         self.status.as_ref()
     }
@@ -120,17 +120,17 @@ impl ListContainerInstancesInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>Filters the container instances by status. For example, if you specify the <code>DRAINING</code> status, the results include only container instances that have been set to <code>DRAINING</code> using <code>UpdateContainerInstancesState</code>. If you don't specify this parameter, the default is to include container instances set to all states other than <code>INACTIVE</code>.</p>
+    /// <p>Filters the container instances by status. For example, if you specify the <code>DRAINING</code> status, the results include only container instances that have been set to <code>DRAINING</code> using <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateContainerInstancesState.html">UpdateContainerInstancesState</a>. If you don't specify this parameter, the default is to include container instances set to all states other than <code>INACTIVE</code>.</p>
     pub fn status(mut self, input: crate::types::ContainerInstanceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Filters the container instances by status. For example, if you specify the <code>DRAINING</code> status, the results include only container instances that have been set to <code>DRAINING</code> using <code>UpdateContainerInstancesState</code>. If you don't specify this parameter, the default is to include container instances set to all states other than <code>INACTIVE</code>.</p>
+    /// <p>Filters the container instances by status. For example, if you specify the <code>DRAINING</code> status, the results include only container instances that have been set to <code>DRAINING</code> using <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateContainerInstancesState.html">UpdateContainerInstancesState</a>. If you don't specify this parameter, the default is to include container instances set to all states other than <code>INACTIVE</code>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ContainerInstanceStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>Filters the container instances by status. For example, if you specify the <code>DRAINING</code> status, the results include only container instances that have been set to <code>DRAINING</code> using <code>UpdateContainerInstancesState</code>. If you don't specify this parameter, the default is to include container instances set to all states other than <code>INACTIVE</code>.</p>
+    /// <p>Filters the container instances by status. For example, if you specify the <code>DRAINING</code> status, the results include only container instances that have been set to <code>DRAINING</code> using <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateContainerInstancesState.html">UpdateContainerInstancesState</a>. If you don't specify this parameter, the default is to include container instances set to all states other than <code>INACTIVE</code>.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ContainerInstanceStatus> {
         &self.status
     }

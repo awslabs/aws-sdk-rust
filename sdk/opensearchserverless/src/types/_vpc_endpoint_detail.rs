@@ -18,6 +18,10 @@ pub struct VpcEndpointDetail {
     pub status: ::std::option::Option<crate::types::VpcEndpointStatus>,
     /// <p>The date the endpoint was created.</p>
     pub created_date: ::std::option::Option<i64>,
+    /// <p>A failure code associated with the request.</p>
+    pub failure_code: ::std::option::Option<::std::string::String>,
+    /// <p>A message associated with the failure code.</p>
+    pub failure_message: ::std::option::Option<::std::string::String>,
 }
 impl VpcEndpointDetail {
     /// <p>The unique identifier of the endpoint.</p>
@@ -52,6 +56,14 @@ impl VpcEndpointDetail {
     pub fn created_date(&self) -> ::std::option::Option<i64> {
         self.created_date
     }
+    /// <p>A failure code associated with the request.</p>
+    pub fn failure_code(&self) -> ::std::option::Option<&str> {
+        self.failure_code.as_deref()
+    }
+    /// <p>A message associated with the failure code.</p>
+    pub fn failure_message(&self) -> ::std::option::Option<&str> {
+        self.failure_message.as_deref()
+    }
 }
 impl VpcEndpointDetail {
     /// Creates a new builder-style object to manufacture [`VpcEndpointDetail`](crate::types::VpcEndpointDetail).
@@ -71,6 +83,8 @@ pub struct VpcEndpointDetailBuilder {
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) status: ::std::option::Option<crate::types::VpcEndpointStatus>,
     pub(crate) created_date: ::std::option::Option<i64>,
+    pub(crate) failure_code: ::std::option::Option<::std::string::String>,
+    pub(crate) failure_message: ::std::option::Option<::std::string::String>,
 }
 impl VpcEndpointDetailBuilder {
     /// <p>The unique identifier of the endpoint.</p>
@@ -183,6 +197,34 @@ impl VpcEndpointDetailBuilder {
     pub fn get_created_date(&self) -> &::std::option::Option<i64> {
         &self.created_date
     }
+    /// <p>A failure code associated with the request.</p>
+    pub fn failure_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.failure_code = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A failure code associated with the request.</p>
+    pub fn set_failure_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.failure_code = input;
+        self
+    }
+    /// <p>A failure code associated with the request.</p>
+    pub fn get_failure_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_code
+    }
+    /// <p>A message associated with the failure code.</p>
+    pub fn failure_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.failure_message = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A message associated with the failure code.</p>
+    pub fn set_failure_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.failure_message = input;
+        self
+    }
+    /// <p>A message associated with the failure code.</p>
+    pub fn get_failure_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_message
+    }
     /// Consumes the builder and constructs a [`VpcEndpointDetail`](crate::types::VpcEndpointDetail).
     pub fn build(self) -> crate::types::VpcEndpointDetail {
         crate::types::VpcEndpointDetail {
@@ -193,6 +235,8 @@ impl VpcEndpointDetailBuilder {
             security_group_ids: self.security_group_ids,
             status: self.status,
             created_date: self.created_date,
+            failure_code: self.failure_code,
+            failure_message: self.failure_message,
         }
     }
 }

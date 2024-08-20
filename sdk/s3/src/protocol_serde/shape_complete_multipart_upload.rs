@@ -163,10 +163,23 @@ pub fn ser_complete_multipart_upload_headers(
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
         }
     }
-    if let ::std::option::Option::Some(inner_13) = &input.sse_customer_algorithm {
+    if let ::std::option::Option::Some(inner_13) = &input.if_none_match {
         let formatted_14 = inner_13.as_str();
         if !formatted_14.is_empty() {
             let header_value = formatted_14;
+            let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
+                    "if_none_match",
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
+                )
+            })?;
+            builder = builder.header("If-None-Match", header_value);
+        }
+    }
+    if let ::std::option::Option::Some(inner_15) = &input.sse_customer_algorithm {
+        let formatted_16 = inner_15.as_str();
+        if !formatted_16.is_empty() {
+            let header_value = formatted_16;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "sse_customer_algorithm",
@@ -176,10 +189,10 @@ pub fn ser_complete_multipart_upload_headers(
             builder = builder.header("x-amz-server-side-encryption-customer-algorithm", header_value);
         }
     }
-    if let ::std::option::Option::Some(inner_15) = &input.sse_customer_key {
-        let formatted_16 = inner_15.as_str();
-        if !formatted_16.is_empty() {
-            let header_value = formatted_16;
+    if let ::std::option::Option::Some(inner_17) = &input.sse_customer_key {
+        let formatted_18 = inner_17.as_str();
+        if !formatted_18.is_empty() {
+            let header_value = formatted_18;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "sse_customer_key",
@@ -189,10 +202,10 @@ pub fn ser_complete_multipart_upload_headers(
             builder = builder.header("x-amz-server-side-encryption-customer-key", header_value);
         }
     }
-    if let ::std::option::Option::Some(inner_17) = &input.sse_customer_key_md5 {
-        let formatted_18 = inner_17.as_str();
-        if !formatted_18.is_empty() {
-            let header_value = formatted_18;
+    if let ::std::option::Option::Some(inner_19) = &input.sse_customer_key_md5 {
+        let formatted_20 = inner_19.as_str();
+        if !formatted_20.is_empty() {
+            let header_value = formatted_20;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "sse_customer_key_md5",
@@ -225,32 +238,6 @@ pub fn de_complete_multipart_upload(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ChecksumSHA1") /* ChecksumSHA1 com.amazonaws.s3.synthetic#CompleteMultipartUploadOutput$ChecksumSHA1 */ =>  {
-                let var_19 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_checksum_sha1(var_19);
-            }
-            ,
-            s if s.matches("ChecksumSHA256") /* ChecksumSHA256 com.amazonaws.s3.synthetic#CompleteMultipartUploadOutput$ChecksumSHA256 */ =>  {
-                let var_20 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_checksum_sha256(var_20);
-            }
-            ,
-            s if s.matches("Bucket") /* Bucket com.amazonaws.s3.synthetic#CompleteMultipartUploadOutput$Bucket */ =>  {
                 let var_21 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -260,10 +247,10 @@ pub fn de_complete_multipart_upload(
                         ?
                     )
                 ;
-                builder = builder.set_bucket(var_21);
+                builder = builder.set_checksum_sha1(var_21);
             }
             ,
-            s if s.matches("ETag") /* ETag com.amazonaws.s3.synthetic#CompleteMultipartUploadOutput$ETag */ =>  {
+            s if s.matches("ChecksumSHA256") /* ChecksumSHA256 com.amazonaws.s3.synthetic#CompleteMultipartUploadOutput$ChecksumSHA256 */ =>  {
                 let var_22 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -273,10 +260,10 @@ pub fn de_complete_multipart_upload(
                         ?
                     )
                 ;
-                builder = builder.set_e_tag(var_22);
+                builder = builder.set_checksum_sha256(var_22);
             }
             ,
-            s if s.matches("ChecksumCRC32C") /* ChecksumCRC32C com.amazonaws.s3.synthetic#CompleteMultipartUploadOutput$ChecksumCRC32C */ =>  {
+            s if s.matches("Bucket") /* Bucket com.amazonaws.s3.synthetic#CompleteMultipartUploadOutput$Bucket */ =>  {
                 let var_23 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -286,10 +273,10 @@ pub fn de_complete_multipart_upload(
                         ?
                     )
                 ;
-                builder = builder.set_checksum_crc32_c(var_23);
+                builder = builder.set_bucket(var_23);
             }
             ,
-            s if s.matches("ChecksumCRC32") /* ChecksumCRC32 com.amazonaws.s3.synthetic#CompleteMultipartUploadOutput$ChecksumCRC32 */ =>  {
+            s if s.matches("ETag") /* ETag com.amazonaws.s3.synthetic#CompleteMultipartUploadOutput$ETag */ =>  {
                 let var_24 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -299,10 +286,10 @@ pub fn de_complete_multipart_upload(
                         ?
                     )
                 ;
-                builder = builder.set_checksum_crc32(var_24);
+                builder = builder.set_e_tag(var_24);
             }
             ,
-            s if s.matches("Key") /* Key com.amazonaws.s3.synthetic#CompleteMultipartUploadOutput$Key */ =>  {
+            s if s.matches("ChecksumCRC32C") /* ChecksumCRC32C com.amazonaws.s3.synthetic#CompleteMultipartUploadOutput$ChecksumCRC32C */ =>  {
                 let var_25 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -312,10 +299,10 @@ pub fn de_complete_multipart_upload(
                         ?
                     )
                 ;
-                builder = builder.set_key(var_25);
+                builder = builder.set_checksum_crc32_c(var_25);
             }
             ,
-            s if s.matches("Location") /* Location com.amazonaws.s3.synthetic#CompleteMultipartUploadOutput$Location */ =>  {
+            s if s.matches("ChecksumCRC32") /* ChecksumCRC32 com.amazonaws.s3.synthetic#CompleteMultipartUploadOutput$ChecksumCRC32 */ =>  {
                 let var_26 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -325,7 +312,33 @@ pub fn de_complete_multipart_upload(
                         ?
                     )
                 ;
-                builder = builder.set_location(var_26);
+                builder = builder.set_checksum_crc32(var_26);
+            }
+            ,
+            s if s.matches("Key") /* Key com.amazonaws.s3.synthetic#CompleteMultipartUploadOutput$Key */ =>  {
+                let var_27 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_key(var_27);
+            }
+            ,
+            s if s.matches("Location") /* Location com.amazonaws.s3.synthetic#CompleteMultipartUploadOutput$Location */ =>  {
+                let var_28 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_location(var_28);
             }
             ,
             _ => {}

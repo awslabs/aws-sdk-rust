@@ -5,7 +5,7 @@
 pub enum Error {
     /// <p>You don't have authorization to perform the requested action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>You can apply up to 10 custom attributes for each resource. You can view the attributes of a resource with <code>ListAttributes</code>. You can remove existing attributes on a resource with <code>DeleteAttributes</code>.</p>
+    /// <p>You can apply up to 10 custom attributes for each resource. You can view the attributes of a resource with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListAttributes.html">ListAttributes</a>. You can remove existing attributes on a resource with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeleteAttributes.html">DeleteAttributes</a>.</p>
     AttributeLimitExceededException(crate::types::error::AttributeLimitExceededException),
     /// <p>Your Amazon Web Services account was blocked. For more information, contact <a href="http://aws.amazon.com/contact-us/"> Amazon Web Services Support</a>.</p>
     BlockedException(crate::types::error::BlockedException),
@@ -16,13 +16,13 @@ pub enum Error {
     /// <p>The <code>RunTask</code> could not be processed because you use managed scaling and there is a capacity error because the quota of tasks in the <code>PROVISIONING</code> per cluster has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon ECS service quotas</a>.</p></li>
     /// </ul>
     ClientException(crate::types::error::ClientException),
-    /// <p>You can't delete a cluster that has registered container instances. First, deregister the container instances before you can delete the cluster. For more information, see <code>DeregisterContainerInstance</code>.</p>
+    /// <p>You can't delete a cluster that has registered container instances. First, deregister the container instances before you can delete the cluster. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeregisterContainerInstance.html">DeregisterContainerInstance</a>.</p>
     ClusterContainsContainerInstancesException(crate::types::error::ClusterContainsContainerInstancesException),
-    /// <p>You can't delete a cluster that contains services. First, update the service to reduce its desired task count to 0, and then delete the service. For more information, see <code>UpdateService</code> and <code>DeleteService</code>.</p>
+    /// <p>You can't delete a cluster that contains services. First, update the service to reduce its desired task count to 0, and then delete the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateService.html">UpdateService</a> and <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeleteService.html">DeleteService</a>.</p>
     ClusterContainsServicesException(crate::types::error::ClusterContainsServicesException),
     /// <p>You can't delete a cluster that has active tasks.</p>
     ClusterContainsTasksException(crate::types::error::ClusterContainsTasksException),
-    /// <p>The specified cluster wasn't found. You can view your available clusters with <code>ListClusters</code>. Amazon ECS clusters are Region specific.</p>
+    /// <p>The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>. Amazon ECS clusters are Region specific.</p>
     ClusterNotFoundException(crate::types::error::ClusterNotFoundException),
     /// <p>The <code>RunTask</code> request could not be processed due to conflicts. The provided <code>clientToken</code> is already in use with a different <code>RunTask</code> request. The <code>resourceIds</code> are the existing task ARNs which are already associated with the <code>clientToken</code>.</p>
     /// <p>To fix this issue:</p>
@@ -53,9 +53,9 @@ pub enum Error {
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::types::error::ServerException),
-    /// <p>The specified service isn't active. You can't update a service that's inactive. If you have previously deleted a service, you can re-create it with <code>CreateService</code>.</p>
+    /// <p>The specified service isn't active. You can't update a service that's inactive. If you have previously deleted a service, you can re-create it with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a>.</p>
     ServiceNotActiveException(crate::types::error::ServiceNotActiveException),
-    /// <p>The specified service wasn't found. You can view your available services with <code>ListServices</code>. Amazon ECS services are cluster specific and Region specific.</p>
+    /// <p>The specified service wasn't found. You can view your available services with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html">ListServices</a>. Amazon ECS services are cluster specific and Region specific.</p>
     ServiceNotFoundException(crate::types::error::ServiceNotFoundException),
     /// <p>The execute command cannot run. This error can be caused by any of the following configuration issues:</p>
     /// <ul>
@@ -70,7 +70,7 @@ pub enum Error {
     TargetNotConnectedException(crate::types::error::TargetNotConnectedException),
     /// <p>The specified target wasn't found. You can view your available container instances with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListContainerInstances.html">ListContainerInstances</a>. Amazon ECS container instances are cluster-specific and Region-specific.</p>
     TargetNotFoundException(crate::types::error::TargetNotFoundException),
-    /// <p>The specified task set wasn't found. You can view your available task sets with <code>DescribeTaskSets</code>. Task sets are specific to each cluster, service and Region.</p>
+    /// <p>The specified task set wasn't found. You can view your available task sets with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTaskSets.html">DescribeTaskSets</a>. Task sets are specific to each cluster, service and Region.</p>
     TaskSetNotFoundException(crate::types::error::TaskSetNotFoundException),
     /// <p>The specified task isn't supported in this Region.</p>
     UnsupportedFeatureException(crate::types::error::UnsupportedFeatureException),

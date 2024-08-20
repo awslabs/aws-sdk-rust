@@ -28,6 +28,10 @@ pub struct CollectionDetail {
     pub collection_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>Collection-specific endpoint used to access OpenSearch Dashboards.</p>
     pub dashboard_endpoint: ::std::option::Option<::std::string::String>,
+    /// <p>A failure code associated with the request.</p>
+    pub failure_code: ::std::option::Option<::std::string::String>,
+    /// <p>A message associated with the failure code.</p>
+    pub failure_message: ::std::option::Option<::std::string::String>,
 }
 impl CollectionDetail {
     /// <p>A unique identifier for the collection.</p>
@@ -78,6 +82,14 @@ impl CollectionDetail {
     pub fn dashboard_endpoint(&self) -> ::std::option::Option<&str> {
         self.dashboard_endpoint.as_deref()
     }
+    /// <p>A failure code associated with the request.</p>
+    pub fn failure_code(&self) -> ::std::option::Option<&str> {
+        self.failure_code.as_deref()
+    }
+    /// <p>A message associated with the failure code.</p>
+    pub fn failure_message(&self) -> ::std::option::Option<&str> {
+        self.failure_message.as_deref()
+    }
 }
 impl CollectionDetail {
     /// Creates a new builder-style object to manufacture [`CollectionDetail`](crate::types::CollectionDetail).
@@ -102,6 +114,8 @@ pub struct CollectionDetailBuilder {
     pub(crate) last_modified_date: ::std::option::Option<i64>,
     pub(crate) collection_endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) dashboard_endpoint: ::std::option::Option<::std::string::String>,
+    pub(crate) failure_code: ::std::option::Option<::std::string::String>,
+    pub(crate) failure_message: ::std::option::Option<::std::string::String>,
 }
 impl CollectionDetailBuilder {
     /// <p>A unique identifier for the collection.</p>
@@ -272,6 +286,34 @@ impl CollectionDetailBuilder {
     pub fn get_dashboard_endpoint(&self) -> &::std::option::Option<::std::string::String> {
         &self.dashboard_endpoint
     }
+    /// <p>A failure code associated with the request.</p>
+    pub fn failure_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.failure_code = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A failure code associated with the request.</p>
+    pub fn set_failure_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.failure_code = input;
+        self
+    }
+    /// <p>A failure code associated with the request.</p>
+    pub fn get_failure_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_code
+    }
+    /// <p>A message associated with the failure code.</p>
+    pub fn failure_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.failure_message = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A message associated with the failure code.</p>
+    pub fn set_failure_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.failure_message = input;
+        self
+    }
+    /// <p>A message associated with the failure code.</p>
+    pub fn get_failure_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_message
+    }
     /// Consumes the builder and constructs a [`CollectionDetail`](crate::types::CollectionDetail).
     pub fn build(self) -> crate::types::CollectionDetail {
         crate::types::CollectionDetail {
@@ -287,6 +329,8 @@ impl CollectionDetailBuilder {
             last_modified_date: self.last_modified_date,
             collection_endpoint: self.collection_endpoint,
             dashboard_endpoint: self.dashboard_endpoint,
+            failure_code: self.failure_code,
+            failure_message: self.failure_message,
         }
     }
 }

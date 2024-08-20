@@ -16,7 +16,7 @@ pub struct Service {
     pub service_registries: ::std::option::Option<::std::vec::Vec<crate::types::ServiceRegistry>>,
     /// <p>The status of the service. The valid values are <code>ACTIVE</code>, <code>DRAINING</code>, or <code>INACTIVE</code>.</p>
     pub status: ::std::option::Option<::std::string::String>,
-    /// <p>The desired number of instantiations of the task definition to keep running on the service. This value is specified when the service is created with <code>CreateService</code>, and it can be modified with <code>UpdateService</code>.</p>
+    /// <p>The desired number of instantiations of the task definition to keep running on the service. This value is specified when the service is created with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a> , and it can be modified with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateService.html">UpdateService</a>.</p>
     pub desired_count: i32,
     /// <p>The number of tasks in the cluster that are in the <code>RUNNING</code> state.</p>
     pub running_count: i32,
@@ -31,7 +31,7 @@ pub struct Service {
     /// <p>The operating system that your tasks in the service run on. A platform family is specified only for tasks using the Fargate launch type.</p>
     /// <p>All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service (for example, <code>LINUX</code>).</p>
     pub platform_family: ::std::option::Option<::std::string::String>,
-    /// <p>The task definition to use for tasks in the service. This value is specified when the service is created with <code>CreateService</code>, and it can be modified with <code>UpdateService</code>.</p>
+    /// <p>The task definition to use for tasks in the service. This value is specified when the service is created with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a>, and it can be modified with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateService.html">UpdateService</a>.</p>
     pub task_definition: ::std::option::Option<::std::string::String>,
     /// <p>Optional deployment parameters that control how many tasks run during the deployment and the ordering of stopping and starting tasks.</p>
     pub deployment_configuration: ::std::option::Option<crate::types::DeploymentConfiguration>,
@@ -123,7 +123,7 @@ impl Service {
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
-    /// <p>The desired number of instantiations of the task definition to keep running on the service. This value is specified when the service is created with <code>CreateService</code>, and it can be modified with <code>UpdateService</code>.</p>
+    /// <p>The desired number of instantiations of the task definition to keep running on the service. This value is specified when the service is created with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a> , and it can be modified with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateService.html">UpdateService</a>.</p>
     pub fn desired_count(&self) -> i32 {
         self.desired_count
     }
@@ -154,7 +154,7 @@ impl Service {
     pub fn platform_family(&self) -> ::std::option::Option<&str> {
         self.platform_family.as_deref()
     }
-    /// <p>The task definition to use for tasks in the service. This value is specified when the service is created with <code>CreateService</code>, and it can be modified with <code>UpdateService</code>.</p>
+    /// <p>The task definition to use for tasks in the service. This value is specified when the service is created with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a>, and it can be modified with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateService.html">UpdateService</a>.</p>
     pub fn task_definition(&self) -> ::std::option::Option<&str> {
         self.task_definition.as_deref()
     }
@@ -405,17 +405,17 @@ impl ServiceBuilder {
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
     }
-    /// <p>The desired number of instantiations of the task definition to keep running on the service. This value is specified when the service is created with <code>CreateService</code>, and it can be modified with <code>UpdateService</code>.</p>
+    /// <p>The desired number of instantiations of the task definition to keep running on the service. This value is specified when the service is created with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a> , and it can be modified with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateService.html">UpdateService</a>.</p>
     pub fn desired_count(mut self, input: i32) -> Self {
         self.desired_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The desired number of instantiations of the task definition to keep running on the service. This value is specified when the service is created with <code>CreateService</code>, and it can be modified with <code>UpdateService</code>.</p>
+    /// <p>The desired number of instantiations of the task definition to keep running on the service. This value is specified when the service is created with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a> , and it can be modified with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateService.html">UpdateService</a>.</p>
     pub fn set_desired_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.desired_count = input;
         self
     }
-    /// <p>The desired number of instantiations of the task definition to keep running on the service. This value is specified when the service is created with <code>CreateService</code>, and it can be modified with <code>UpdateService</code>.</p>
+    /// <p>The desired number of instantiations of the task definition to keep running on the service. This value is specified when the service is created with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a> , and it can be modified with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateService.html">UpdateService</a>.</p>
     pub fn get_desired_count(&self) -> &::std::option::Option<i32> {
         &self.desired_count
     }
@@ -515,17 +515,17 @@ impl ServiceBuilder {
     pub fn get_platform_family(&self) -> &::std::option::Option<::std::string::String> {
         &self.platform_family
     }
-    /// <p>The task definition to use for tasks in the service. This value is specified when the service is created with <code>CreateService</code>, and it can be modified with <code>UpdateService</code>.</p>
+    /// <p>The task definition to use for tasks in the service. This value is specified when the service is created with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a>, and it can be modified with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateService.html">UpdateService</a>.</p>
     pub fn task_definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_definition = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The task definition to use for tasks in the service. This value is specified when the service is created with <code>CreateService</code>, and it can be modified with <code>UpdateService</code>.</p>
+    /// <p>The task definition to use for tasks in the service. This value is specified when the service is created with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a>, and it can be modified with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateService.html">UpdateService</a>.</p>
     pub fn set_task_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_definition = input;
         self
     }
-    /// <p>The task definition to use for tasks in the service. This value is specified when the service is created with <code>CreateService</code>, and it can be modified with <code>UpdateService</code>.</p>
+    /// <p>The task definition to use for tasks in the service. This value is specified when the service is created with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a>, and it can be modified with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateService.html">UpdateService</a>.</p>
     pub fn get_task_definition(&self) -> &::std::option::Option<::std::string::String> {
         &self.task_definition
     }

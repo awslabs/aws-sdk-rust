@@ -778,9 +778,9 @@ model_hash = 'b6e23be351cb44f9f2b57d80f227604694a8bac84ed1467add8d019c824ac349'
 
 [crates.aws-sdk-ecs]
 category = 'AwsSdk'
-version = '1.41.0'
-source_hash = '786bb7e56aa0d5586b0183b2414fdcbe15bbe7f9c2a1ce94ddfbfb026a6ed2fa'
-model_hash = '83c459b65d646b2df0ae265e27bddeee3da15f2d8a7ebc85a379a3832ad10d1c'
+version = '1.41.1'
+source_hash = '392c98511d0f9ae8ffd554024480faf105259781bfec65864238859b8579b6ad'
+model_hash = '6126eba108c6f0d5eed5166fb84c0644a4b58c73d7500ba93cb4408d9690736e'
 
 [crates.aws-sdk-efs]
 category = 'AwsSdk'
@@ -1588,9 +1588,9 @@ model_hash = '38dc0f1625438475d642495ec19fc2361dc6a0b1543bca12888b1222a11b5d01'
 
 [crates.aws-sdk-opensearchserverless]
 category = 'AwsSdk'
-version = '1.40.0'
-source_hash = '1252ba2c81d5ebe87987cfd0b427af2a114d8021c6b6dd9f39643a99640f3073'
-model_hash = '6afa5cfbc93ccab8de4777d8e772df6678423d5e3e70a2451baff416991eabcb'
+version = '1.41.0'
+source_hash = 'ee5d8656988acdfae3eaef67eb335555b67df6e872bd893f768f5db4bd178b77'
+model_hash = '029ff5a075d5496504ea0bc9daecc0ed81b139829ecf219c064c9d213a32d9b7'
 
 [crates.aws-sdk-opsworks]
 category = 'AwsSdk'
@@ -1906,9 +1906,9 @@ model_hash = '34648839402316ab9da4bef0fe11beb9bc3ec1d05b3ff7d09664ab74c0cb3d2b'
 
 [crates.aws-sdk-s3]
 category = 'AwsSdk'
-version = '1.45.0'
-source_hash = 'a09b20a8543983f97b6cdeaa57b614dc8887b263597f0573e51cf072a4459891'
-model_hash = '31a72443f9dfe36d16d01b12e1387f2c2b027a3009fa92bb25686410abe31e87'
+version = '1.46.0'
+source_hash = 'a4f18505219e3a30d06dbbf47db1d4f1bb6c1a7b3a8d3c9197f22399a8f033bb'
+model_hash = 'b32f386a3667d527a28335425b841a8e51ecb2bb470e13062740e75bd3e6bf14'
 
 [crates.aws-sdk-s3control]
 category = 'AwsSdk'
@@ -2487,13 +2487,7 @@ source_hash = '89b685acd4163bc6b97fba0fec129708b9a68eed80beb6937dac651099d5c880'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = 'd08f576b0bc9146b45af732b63e0a8923b13fe09816d385e32b4c6d9e503de81'
-
-[release]
-tag = 'release-2024-08-19'
-
 [release.crates]
-aws-sdk-bedrock = '1.44.0'
-aws-sdk-codebuild = '1.50.0'
-aws-sdk-deadline = '1.22.0'
-aws-sdk-lambda = '1.41.0'
-aws-sdk-ssmsap = '1.41.0'
+aws-sdk-ecs = '1.41.1'
+aws-sdk-opensearchserverless = '1.41.0'
+aws-sdk-s3 = '1.46.0'

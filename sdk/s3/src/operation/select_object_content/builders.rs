@@ -24,7 +24,9 @@ impl crate::operation::select_object_content::builders::SelectObjectContentInput
 ///
 /// <note>
 /// <p>This operation is not supported by directory buckets.</p>
-/// </note>
+/// </note> <important>
+/// <p>The SelectObjectContent operation is no longer available to new customers. Existing customers of Amazon S3 Select can continue to use the operation as usual. <a href="http://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/">Learn more</a></p>
+/// </important>
 /// <p>This action filters the contents of an Amazon S3 object based on a simple structured query language (SQL) statement. In the request, along with the SQL expression, you must also specify a data serialization format (JSON, CSV, or Apache Parquet) of the object. Amazon S3 uses this format to parse object data into records, and returns only records that match the specified SQL expression. You must also specify the data serialization format for the response.</p>
 /// <p>This functionality is not supported for Amazon S3 on Outposts.</p>
 /// <p>For more information about Amazon S3 Select, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/selecting-content-from-objects.html">Selecting Content from Objects</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-glacier-select-sql-reference-select.html">SELECT Command</a> in the <i>Amazon S3 User Guide</i>.</p>

@@ -23,7 +23,7 @@ impl crate::operation::delete_cluster::builders::DeleteClusterInputBuilder {
 /// Fluent builder constructing a request to `DeleteCluster`.
 ///
 /// <p>Deletes the specified cluster. The cluster transitions to the <code>INACTIVE</code> state. Clusters with an <code>INACTIVE</code> status might remain discoverable in your account for a period of time. However, this behavior is subject to change in the future. We don't recommend that you rely on <code>INACTIVE</code> clusters persisting.</p>
-/// <p>You must deregister all container instances from this cluster before you may delete it. You can list the container instances in a cluster with <code>ListContainerInstances</code> and deregister them with <code>DeregisterContainerInstance</code>.</p>
+/// <p>You must deregister all container instances from this cluster before you may delete it. You can list the container instances in a cluster with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListContainerInstances.html">ListContainerInstances</a> and deregister them with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeregisterContainerInstance.html">DeregisterContainerInstance</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteClusterFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

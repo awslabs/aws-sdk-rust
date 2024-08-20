@@ -32,7 +32,7 @@ pub struct ContainerInstance {
     pub pending_tasks_count: i32,
     /// <p>The status of the most recent agent update. If an update wasn't ever requested, this value is <code>NULL</code>.</p>
     pub agent_update_status: ::std::option::Option<crate::types::AgentUpdateStatus>,
-    /// <p>The attributes set for the container instance, either by the Amazon ECS container agent at instance registration or manually with the <code>PutAttributes</code> operation.</p>
+    /// <p>The attributes set for the container instance, either by the Amazon ECS container agent at instance registration or manually with the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAttributes.html">PutAttributes</a> operation.</p>
     pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
     /// <p>The Unix timestamp for the time when the container instance was registered.</p>
     pub registered_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -119,7 +119,7 @@ impl ContainerInstance {
     pub fn agent_update_status(&self) -> ::std::option::Option<&crate::types::AgentUpdateStatus> {
         self.agent_update_status.as_ref()
     }
-    /// <p>The attributes set for the container instance, either by the Amazon ECS container agent at instance registration or manually with the <code>PutAttributes</code> operation.</p>
+    /// <p>The attributes set for the container instance, either by the Amazon ECS container agent at instance registration or manually with the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAttributes.html">PutAttributes</a> operation.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes.is_none()`.
     pub fn attributes(&self) -> &[crate::types::Attribute] {
@@ -398,19 +398,19 @@ impl ContainerInstanceBuilder {
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
-    /// <p>The attributes set for the container instance, either by the Amazon ECS container agent at instance registration or manually with the <code>PutAttributes</code> operation.</p>
+    /// <p>The attributes set for the container instance, either by the Amazon ECS container agent at instance registration or manually with the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAttributes.html">PutAttributes</a> operation.</p>
     pub fn attributes(mut self, input: crate::types::Attribute) -> Self {
         let mut v = self.attributes.unwrap_or_default();
         v.push(input);
         self.attributes = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The attributes set for the container instance, either by the Amazon ECS container agent at instance registration or manually with the <code>PutAttributes</code> operation.</p>
+    /// <p>The attributes set for the container instance, either by the Amazon ECS container agent at instance registration or manually with the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAttributes.html">PutAttributes</a> operation.</p>
     pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>) -> Self {
         self.attributes = input;
         self
     }
-    /// <p>The attributes set for the container instance, either by the Amazon ECS container agent at instance registration or manually with the <code>PutAttributes</code> operation.</p>
+    /// <p>The attributes set for the container instance, either by the Amazon ECS container agent at instance registration or manually with the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAttributes.html">PutAttributes</a> operation.</p>
     pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
         &self.attributes
     }

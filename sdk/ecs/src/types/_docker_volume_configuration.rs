@@ -10,11 +10,11 @@ pub struct DockerVolumeConfiguration {
     /// <p>This field is only used if the <code>scope</code> is <code>shared</code>.</p>
     /// </note>
     pub autoprovision: ::std::option::Option<bool>,
-    /// <p>The Docker volume driver to use. The driver value must match the driver name provided by Docker because it is used for task placement. If the driver was installed using the Docker plugin CLI, use <code>docker plugin ls</code> to retrieve the driver name from your container instance. If the driver was installed using another method, use Docker plugin discovery to retrieve the driver name. This parameter maps to <code>Driver</code> in the docker create-container command and the <code>xxdriver</code> option to docker volume create.</p>
+    /// <p>The Docker volume driver to use. The driver value must match the driver name provided by Docker because it is used for task placement. If the driver was installed using the Docker plugin CLI, use <code>docker plugin ls</code> to retrieve the driver name from your container instance. If the driver was installed using another method, use Docker plugin discovery to retrieve the driver name. This parameter maps to <code>Driver</code> in the docker conainer create command and the <code>xxdriver</code> option to docker volume create.</p>
     pub driver: ::std::option::Option<::std::string::String>,
     /// <p>A map of Docker driver-specific options passed through. This parameter maps to <code>DriverOpts</code> in the docker create-volume command and the <code>xxopt</code> option to docker volume create.</p>
     pub driver_opts: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>Custom metadata to add to your Docker volume. This parameter maps to <code>Labels</code> in the docker create-container command and the <code>xxlabel</code> option to docker volume create.</p>
+    /// <p>Custom metadata to add to your Docker volume. This parameter maps to <code>Labels</code> in the docker conainer create command and the <code>xxlabel</code> option to docker volume create.</p>
     pub labels: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl DockerVolumeConfiguration {
@@ -28,7 +28,7 @@ impl DockerVolumeConfiguration {
     pub fn autoprovision(&self) -> ::std::option::Option<bool> {
         self.autoprovision
     }
-    /// <p>The Docker volume driver to use. The driver value must match the driver name provided by Docker because it is used for task placement. If the driver was installed using the Docker plugin CLI, use <code>docker plugin ls</code> to retrieve the driver name from your container instance. If the driver was installed using another method, use Docker plugin discovery to retrieve the driver name. This parameter maps to <code>Driver</code> in the docker create-container command and the <code>xxdriver</code> option to docker volume create.</p>
+    /// <p>The Docker volume driver to use. The driver value must match the driver name provided by Docker because it is used for task placement. If the driver was installed using the Docker plugin CLI, use <code>docker plugin ls</code> to retrieve the driver name from your container instance. If the driver was installed using another method, use Docker plugin discovery to retrieve the driver name. This parameter maps to <code>Driver</code> in the docker conainer create command and the <code>xxdriver</code> option to docker volume create.</p>
     pub fn driver(&self) -> ::std::option::Option<&str> {
         self.driver.as_deref()
     }
@@ -36,7 +36,7 @@ impl DockerVolumeConfiguration {
     pub fn driver_opts(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.driver_opts.as_ref()
     }
-    /// <p>Custom metadata to add to your Docker volume. This parameter maps to <code>Labels</code> in the docker create-container command and the <code>xxlabel</code> option to docker volume create.</p>
+    /// <p>Custom metadata to add to your Docker volume. This parameter maps to <code>Labels</code> in the docker conainer create command and the <code>xxlabel</code> option to docker volume create.</p>
     pub fn labels(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.labels.as_ref()
     }
@@ -93,17 +93,17 @@ impl DockerVolumeConfigurationBuilder {
     pub fn get_autoprovision(&self) -> &::std::option::Option<bool> {
         &self.autoprovision
     }
-    /// <p>The Docker volume driver to use. The driver value must match the driver name provided by Docker because it is used for task placement. If the driver was installed using the Docker plugin CLI, use <code>docker plugin ls</code> to retrieve the driver name from your container instance. If the driver was installed using another method, use Docker plugin discovery to retrieve the driver name. This parameter maps to <code>Driver</code> in the docker create-container command and the <code>xxdriver</code> option to docker volume create.</p>
+    /// <p>The Docker volume driver to use. The driver value must match the driver name provided by Docker because it is used for task placement. If the driver was installed using the Docker plugin CLI, use <code>docker plugin ls</code> to retrieve the driver name from your container instance. If the driver was installed using another method, use Docker plugin discovery to retrieve the driver name. This parameter maps to <code>Driver</code> in the docker conainer create command and the <code>xxdriver</code> option to docker volume create.</p>
     pub fn driver(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.driver = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Docker volume driver to use. The driver value must match the driver name provided by Docker because it is used for task placement. If the driver was installed using the Docker plugin CLI, use <code>docker plugin ls</code> to retrieve the driver name from your container instance. If the driver was installed using another method, use Docker plugin discovery to retrieve the driver name. This parameter maps to <code>Driver</code> in the docker create-container command and the <code>xxdriver</code> option to docker volume create.</p>
+    /// <p>The Docker volume driver to use. The driver value must match the driver name provided by Docker because it is used for task placement. If the driver was installed using the Docker plugin CLI, use <code>docker plugin ls</code> to retrieve the driver name from your container instance. If the driver was installed using another method, use Docker plugin discovery to retrieve the driver name. This parameter maps to <code>Driver</code> in the docker conainer create command and the <code>xxdriver</code> option to docker volume create.</p>
     pub fn set_driver(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.driver = input;
         self
     }
-    /// <p>The Docker volume driver to use. The driver value must match the driver name provided by Docker because it is used for task placement. If the driver was installed using the Docker plugin CLI, use <code>docker plugin ls</code> to retrieve the driver name from your container instance. If the driver was installed using another method, use Docker plugin discovery to retrieve the driver name. This parameter maps to <code>Driver</code> in the docker create-container command and the <code>xxdriver</code> option to docker volume create.</p>
+    /// <p>The Docker volume driver to use. The driver value must match the driver name provided by Docker because it is used for task placement. If the driver was installed using the Docker plugin CLI, use <code>docker plugin ls</code> to retrieve the driver name from your container instance. If the driver was installed using another method, use Docker plugin discovery to retrieve the driver name. This parameter maps to <code>Driver</code> in the docker conainer create command and the <code>xxdriver</code> option to docker volume create.</p>
     pub fn get_driver(&self) -> &::std::option::Option<::std::string::String> {
         &self.driver
     }
@@ -134,19 +134,19 @@ impl DockerVolumeConfigurationBuilder {
     ///
     /// To override the contents of this collection use [`set_labels`](Self::set_labels).
     ///
-    /// <p>Custom metadata to add to your Docker volume. This parameter maps to <code>Labels</code> in the docker create-container command and the <code>xxlabel</code> option to docker volume create.</p>
+    /// <p>Custom metadata to add to your Docker volume. This parameter maps to <code>Labels</code> in the docker conainer create command and the <code>xxlabel</code> option to docker volume create.</p>
     pub fn labels(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.labels.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.labels = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>Custom metadata to add to your Docker volume. This parameter maps to <code>Labels</code> in the docker create-container command and the <code>xxlabel</code> option to docker volume create.</p>
+    /// <p>Custom metadata to add to your Docker volume. This parameter maps to <code>Labels</code> in the docker conainer create command and the <code>xxlabel</code> option to docker volume create.</p>
     pub fn set_labels(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.labels = input;
         self
     }
-    /// <p>Custom metadata to add to your Docker volume. This parameter maps to <code>Labels</code> in the docker create-container command and the <code>xxlabel</code> option to docker volume create.</p>
+    /// <p>Custom metadata to add to your Docker volume. This parameter maps to <code>Labels</code> in the docker conainer create command and the <code>xxlabel</code> option to docker volume create.</p>
     pub fn get_labels(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.labels
     }
