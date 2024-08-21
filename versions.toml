@@ -2,7 +2,7 @@ smithy_rs_revision = 'a3406b69f1546d3663d06f064a180c7ddd39dfba'
 aws_doc_sdk_examples_revision = '7a22a0314672afe7c6818fcff083c724c40f4d47'
 
 [manual_interventions]
-crates_to_remove = []
+crates_to_remove = ["aws-sdk-codestar"]
 [crates.aws-config]
 category = 'AwsRuntime'
 version = '1.5.5'
