@@ -5,6 +5,9 @@
 pub struct StartJobRunInput {
     /// <p>The name of the job definition to use.</p>
     pub job_name: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether job run queuing is enabled for the job run.</p>
+    /// <p>A value of true means job run queuing is enabled for the job run. If false or not populated, the job run will not be considered for queueing.</p>
+    pub job_run_queuing_enabled: ::std::option::Option<bool>,
     /// <p>The ID of a previous <code>JobRun</code> to retry.</p>
     pub job_run_id: ::std::option::Option<::std::string::String>,
     /// <p>The job arguments associated with this run. For this job run, they replace the default arguments set in the job definition itself.</p>
@@ -63,6 +66,11 @@ impl StartJobRunInput {
     /// <p>The name of the job definition to use.</p>
     pub fn job_name(&self) -> ::std::option::Option<&str> {
         self.job_name.as_deref()
+    }
+    /// <p>Specifies whether job run queuing is enabled for the job run.</p>
+    /// <p>A value of true means job run queuing is enabled for the job run. If false or not populated, the job run will not be considered for queueing.</p>
+    pub fn job_run_queuing_enabled(&self) -> ::std::option::Option<bool> {
+        self.job_run_queuing_enabled
     }
     /// <p>The ID of a previous <code>JobRun</code> to retry.</p>
     pub fn job_run_id(&self) -> ::std::option::Option<&str> {
@@ -150,6 +158,7 @@ impl StartJobRunInput {
 #[non_exhaustive]
 pub struct StartJobRunInputBuilder {
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
+    pub(crate) job_run_queuing_enabled: ::std::option::Option<bool>,
     pub(crate) job_run_id: ::std::option::Option<::std::string::String>,
     pub(crate) arguments: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) allocated_capacity: ::std::option::Option<i32>,
@@ -176,6 +185,23 @@ impl StartJobRunInputBuilder {
     /// <p>The name of the job definition to use.</p>
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_name
+    }
+    /// <p>Specifies whether job run queuing is enabled for the job run.</p>
+    /// <p>A value of true means job run queuing is enabled for the job run. If false or not populated, the job run will not be considered for queueing.</p>
+    pub fn job_run_queuing_enabled(mut self, input: bool) -> Self {
+        self.job_run_queuing_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether job run queuing is enabled for the job run.</p>
+    /// <p>A value of true means job run queuing is enabled for the job run. If false or not populated, the job run will not be considered for queueing.</p>
+    pub fn set_job_run_queuing_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.job_run_queuing_enabled = input;
+        self
+    }
+    /// <p>Specifies whether job run queuing is enabled for the job run.</p>
+    /// <p>A value of true means job run queuing is enabled for the job run. If false or not populated, the job run will not be considered for queueing.</p>
+    pub fn get_job_run_queuing_enabled(&self) -> &::std::option::Option<bool> {
+        &self.job_run_queuing_enabled
     }
     /// <p>The ID of a previous <code>JobRun</code> to retry.</p>
     pub fn job_run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -426,6 +452,7 @@ impl StartJobRunInputBuilder {
     pub fn build(self) -> ::std::result::Result<crate::operation::start_job_run::StartJobRunInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_job_run::StartJobRunInput {
             job_name: self.job_name,
+            job_run_queuing_enabled: self.job_run_queuing_enabled,
             job_run_id: self.job_run_id,
             arguments: self.arguments,
             allocated_capacity: self.allocated_capacity,

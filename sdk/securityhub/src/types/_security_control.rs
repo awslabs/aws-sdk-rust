@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SecurityControl {
-    /// <p>The unique identifier of a security control across standards. Values for this field typically consist of an Amazon Web Service name and a number, such as APIGateway.3.</p>
+    /// <p>The unique identifier of a security control across standards. Values for this field typically consist of an Amazon Web Servicesservice name and a number, such as APIGateway.3.</p>
     pub security_control_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for a security control across standards, such as <code>arn:aws:securityhub:eu-central-1:123456789012:security-control/S3.1</code>. This parameter doesn't mention a specific standard.</p>
     pub security_control_arn: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ pub struct SecurityControl {
     pub severity_rating: ::std::option::Option<crate::types::SeverityRating>,
     /// <p>The enablement status of a security control in a specific standard.</p>
     pub security_control_status: ::std::option::Option<crate::types::ControlStatus>,
-    /// <p>Identifies whether customizable properties of a security control are reflected in Security Hub findings. A status of <code>READY</code> indicates findings include the current parameter values. A status of <code>UPDATING</code> indicates that all findings may not include the current parameter values.</p>
+    /// <p>Identifies whether customizable properties of a security control are reflected in Security Hub findings. A status of <code>READY</code> indicates that Security Hub uses the current control parameter values when running security checks of the control. A status of <code>UPDATING</code> indicates that all security checks might not use the current parameter values.</p>
     pub update_status: ::std::option::Option<crate::types::UpdateStatus>,
     /// <p>An object that identifies the name of a control parameter, its current value, and whether it has been customized.</p>
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ParameterConfiguration>>,
@@ -26,7 +26,7 @@ pub struct SecurityControl {
     pub last_update_reason: ::std::option::Option<::std::string::String>,
 }
 impl SecurityControl {
-    /// <p>The unique identifier of a security control across standards. Values for this field typically consist of an Amazon Web Service name and a number, such as APIGateway.3.</p>
+    /// <p>The unique identifier of a security control across standards. Values for this field typically consist of an Amazon Web Servicesservice name and a number, such as APIGateway.3.</p>
     pub fn security_control_id(&self) -> ::std::option::Option<&str> {
         self.security_control_id.as_deref()
     }
@@ -54,7 +54,7 @@ impl SecurityControl {
     pub fn security_control_status(&self) -> ::std::option::Option<&crate::types::ControlStatus> {
         self.security_control_status.as_ref()
     }
-    /// <p>Identifies whether customizable properties of a security control are reflected in Security Hub findings. A status of <code>READY</code> indicates findings include the current parameter values. A status of <code>UPDATING</code> indicates that all findings may not include the current parameter values.</p>
+    /// <p>Identifies whether customizable properties of a security control are reflected in Security Hub findings. A status of <code>READY</code> indicates that Security Hub uses the current control parameter values when running security checks of the control. A status of <code>UPDATING</code> indicates that all security checks might not use the current parameter values.</p>
     pub fn update_status(&self) -> ::std::option::Option<&crate::types::UpdateStatus> {
         self.update_status.as_ref()
     }
@@ -90,18 +90,18 @@ pub struct SecurityControlBuilder {
     pub(crate) last_update_reason: ::std::option::Option<::std::string::String>,
 }
 impl SecurityControlBuilder {
-    /// <p>The unique identifier of a security control across standards. Values for this field typically consist of an Amazon Web Service name and a number, such as APIGateway.3.</p>
+    /// <p>The unique identifier of a security control across standards. Values for this field typically consist of an Amazon Web Servicesservice name and a number, such as APIGateway.3.</p>
     /// This field is required.
     pub fn security_control_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_control_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of a security control across standards. Values for this field typically consist of an Amazon Web Service name and a number, such as APIGateway.3.</p>
+    /// <p>The unique identifier of a security control across standards. Values for this field typically consist of an Amazon Web Servicesservice name and a number, such as APIGateway.3.</p>
     pub fn set_security_control_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.security_control_id = input;
         self
     }
-    /// <p>The unique identifier of a security control across standards. Values for this field typically consist of an Amazon Web Service name and a number, such as APIGateway.3.</p>
+    /// <p>The unique identifier of a security control across standards. Values for this field typically consist of an Amazon Web Servicesservice name and a number, such as APIGateway.3.</p>
     pub fn get_security_control_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.security_control_id
     }
@@ -195,17 +195,17 @@ impl SecurityControlBuilder {
     pub fn get_security_control_status(&self) -> &::std::option::Option<crate::types::ControlStatus> {
         &self.security_control_status
     }
-    /// <p>Identifies whether customizable properties of a security control are reflected in Security Hub findings. A status of <code>READY</code> indicates findings include the current parameter values. A status of <code>UPDATING</code> indicates that all findings may not include the current parameter values.</p>
+    /// <p>Identifies whether customizable properties of a security control are reflected in Security Hub findings. A status of <code>READY</code> indicates that Security Hub uses the current control parameter values when running security checks of the control. A status of <code>UPDATING</code> indicates that all security checks might not use the current parameter values.</p>
     pub fn update_status(mut self, input: crate::types::UpdateStatus) -> Self {
         self.update_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Identifies whether customizable properties of a security control are reflected in Security Hub findings. A status of <code>READY</code> indicates findings include the current parameter values. A status of <code>UPDATING</code> indicates that all findings may not include the current parameter values.</p>
+    /// <p>Identifies whether customizable properties of a security control are reflected in Security Hub findings. A status of <code>READY</code> indicates that Security Hub uses the current control parameter values when running security checks of the control. A status of <code>UPDATING</code> indicates that all security checks might not use the current parameter values.</p>
     pub fn set_update_status(mut self, input: ::std::option::Option<crate::types::UpdateStatus>) -> Self {
         self.update_status = input;
         self
     }
-    /// <p>Identifies whether customizable properties of a security control are reflected in Security Hub findings. A status of <code>READY</code> indicates findings include the current parameter values. A status of <code>UPDATING</code> indicates that all findings may not include the current parameter values.</p>
+    /// <p>Identifies whether customizable properties of a security control are reflected in Security Hub findings. A status of <code>READY</code> indicates that Security Hub uses the current control parameter values when running security checks of the control. A status of <code>UPDATING</code> indicates that all security checks might not use the current parameter values.</p>
     pub fn get_update_status(&self) -> &::std::option::Option<crate::types::UpdateStatus> {
         &self.update_status
     }

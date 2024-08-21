@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SecurityControlDefinition {
-    /// <p>The unique identifier of a security control across standards. Values for this field typically consist of an Amazon Web Service name and a number (for example, APIGateway.3). This parameter differs from <code>SecurityControlArn</code>, which is a unique Amazon Resource Name (ARN) assigned to a control. The ARN references the security control ID (for example, arn:aws:securityhub:eu-central-1:123456789012:security-control/APIGateway.3).</p>
+    /// <p>The unique identifier of a security control across standards. Values for this field typically consist of an Amazon Web Servicesservice name and a number (for example, APIGateway.3). This parameter differs from <code>SecurityControlArn</code>, which is a unique Amazon Resource Name (ARN) assigned to a control. The ARN references the security control ID (for example, arn:aws:securityhub:eu-central-1:123456789012:security-control/APIGateway.3).</p>
     pub security_control_id: ::std::option::Option<::std::string::String>,
     /// <p>The title of a security control.</p>
     pub title: ::std::option::Option<::std::string::String>,
@@ -22,7 +22,7 @@ pub struct SecurityControlDefinition {
     pub parameter_definitions: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ParameterDefinition>>,
 }
 impl SecurityControlDefinition {
-    /// <p>The unique identifier of a security control across standards. Values for this field typically consist of an Amazon Web Service name and a number (for example, APIGateway.3). This parameter differs from <code>SecurityControlArn</code>, which is a unique Amazon Resource Name (ARN) assigned to a control. The ARN references the security control ID (for example, arn:aws:securityhub:eu-central-1:123456789012:security-control/APIGateway.3).</p>
+    /// <p>The unique identifier of a security control across standards. Values for this field typically consist of an Amazon Web Servicesservice name and a number (for example, APIGateway.3). This parameter differs from <code>SecurityControlArn</code>, which is a unique Amazon Resource Name (ARN) assigned to a control. The ARN references the security control ID (for example, arn:aws:securityhub:eu-central-1:123456789012:security-control/APIGateway.3).</p>
     pub fn security_control_id(&self) -> ::std::option::Option<&str> {
         self.security_control_id.as_deref()
     }
@@ -80,18 +80,18 @@ pub struct SecurityControlDefinitionBuilder {
     pub(crate) parameter_definitions: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ParameterDefinition>>,
 }
 impl SecurityControlDefinitionBuilder {
-    /// <p>The unique identifier of a security control across standards. Values for this field typically consist of an Amazon Web Service name and a number (for example, APIGateway.3). This parameter differs from <code>SecurityControlArn</code>, which is a unique Amazon Resource Name (ARN) assigned to a control. The ARN references the security control ID (for example, arn:aws:securityhub:eu-central-1:123456789012:security-control/APIGateway.3).</p>
+    /// <p>The unique identifier of a security control across standards. Values for this field typically consist of an Amazon Web Servicesservice name and a number (for example, APIGateway.3). This parameter differs from <code>SecurityControlArn</code>, which is a unique Amazon Resource Name (ARN) assigned to a control. The ARN references the security control ID (for example, arn:aws:securityhub:eu-central-1:123456789012:security-control/APIGateway.3).</p>
     /// This field is required.
     pub fn security_control_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_control_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of a security control across standards. Values for this field typically consist of an Amazon Web Service name and a number (for example, APIGateway.3). This parameter differs from <code>SecurityControlArn</code>, which is a unique Amazon Resource Name (ARN) assigned to a control. The ARN references the security control ID (for example, arn:aws:securityhub:eu-central-1:123456789012:security-control/APIGateway.3).</p>
+    /// <p>The unique identifier of a security control across standards. Values for this field typically consist of an Amazon Web Servicesservice name and a number (for example, APIGateway.3). This parameter differs from <code>SecurityControlArn</code>, which is a unique Amazon Resource Name (ARN) assigned to a control. The ARN references the security control ID (for example, arn:aws:securityhub:eu-central-1:123456789012:security-control/APIGateway.3).</p>
     pub fn set_security_control_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.security_control_id = input;
         self
     }
-    /// <p>The unique identifier of a security control across standards. Values for this field typically consist of an Amazon Web Service name and a number (for example, APIGateway.3). This parameter differs from <code>SecurityControlArn</code>, which is a unique Amazon Resource Name (ARN) assigned to a control. The ARN references the security control ID (for example, arn:aws:securityhub:eu-central-1:123456789012:security-control/APIGateway.3).</p>
+    /// <p>The unique identifier of a security control across standards. Values for this field typically consist of an Amazon Web Servicesservice name and a number (for example, APIGateway.3). This parameter differs from <code>SecurityControlArn</code>, which is a unique Amazon Resource Name (ARN) assigned to a control. The ARN references the security control ID (for example, arn:aws:securityhub:eu-central-1:123456789012:security-control/APIGateway.3).</p>
     pub fn get_security_control_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.security_control_id
     }

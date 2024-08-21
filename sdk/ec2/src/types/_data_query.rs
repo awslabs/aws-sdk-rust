@@ -10,7 +10,7 @@ pub struct DataQuery {
     pub source: ::std::option::Option<::std::string::String>,
     /// <p>The Region or Availability Zone that's the target for the data query. For example, <code>eu-north-1</code>.</p>
     pub destination: ::std::option::Option<::std::string::String>,
-    /// <p>The metric, <code>aggregation-latency</code>, indicating that network latency is aggregated for the query. This is the only supported metric.</p>
+    /// <p>The metric used for the network performance request.</p>
     pub metric: ::std::option::Option<crate::types::MetricType>,
     /// <p>The metric data aggregation period, <code>p50</code>, between the specified <code>startDate</code> and <code>endDate</code>. For example, a metric of <code>five_minutes</code> is the median of all the data points gathered within those five minutes. <code>p50</code> is the only supported metric.</p>
     pub statistic: ::std::option::Option<crate::types::StatisticType>,
@@ -30,7 +30,7 @@ impl DataQuery {
     pub fn destination(&self) -> ::std::option::Option<&str> {
         self.destination.as_deref()
     }
-    /// <p>The metric, <code>aggregation-latency</code>, indicating that network latency is aggregated for the query. This is the only supported metric.</p>
+    /// <p>The metric used for the network performance request.</p>
     pub fn metric(&self) -> ::std::option::Option<&crate::types::MetricType> {
         self.metric.as_ref()
     }
@@ -104,17 +104,17 @@ impl DataQueryBuilder {
     pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination
     }
-    /// <p>The metric, <code>aggregation-latency</code>, indicating that network latency is aggregated for the query. This is the only supported metric.</p>
+    /// <p>The metric used for the network performance request.</p>
     pub fn metric(mut self, input: crate::types::MetricType) -> Self {
         self.metric = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The metric, <code>aggregation-latency</code>, indicating that network latency is aggregated for the query. This is the only supported metric.</p>
+    /// <p>The metric used for the network performance request.</p>
     pub fn set_metric(mut self, input: ::std::option::Option<crate::types::MetricType>) -> Self {
         self.metric = input;
         self
     }
-    /// <p>The metric, <code>aggregation-latency</code>, indicating that network latency is aggregated for the query. This is the only supported metric.</p>
+    /// <p>The metric used for the network performance request.</p>
     pub fn get_metric(&self) -> &::std::option::Option<crate::types::MetricType> {
         &self.metric
     }

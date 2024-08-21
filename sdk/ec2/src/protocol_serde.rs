@@ -4217,6 +4217,8 @@ pub(crate) mod shape_ebs_info;
 
 pub(crate) mod shape_ebs_instance_block_device;
 
+pub(crate) mod shape_ebs_status_summary;
+
 pub(crate) mod shape_elastic_gpu_association_list;
 
 pub(crate) mod shape_elastic_gpu_health;
@@ -4525,6 +4527,8 @@ pub(crate) mod shape_disk_info_list;
 
 pub(crate) mod shape_ebs_optimized_info;
 
+pub(crate) mod shape_ebs_status_details_list;
+
 pub(crate) mod shape_efa_info;
 
 pub(crate) mod shape_elastic_gpu_association;
@@ -4662,6 +4666,8 @@ pub(crate) mod shape_directory_service_authentication;
 pub(crate) mod shape_disable_fast_snapshot_restore_state_error;
 
 pub(crate) mod shape_disk_info;
+
+pub(crate) mod shape_ebs_status_details;
 
 pub(crate) mod shape_enable_fast_snapshot_restore_state_error;
 

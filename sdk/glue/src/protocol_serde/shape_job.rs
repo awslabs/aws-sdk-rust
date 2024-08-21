@@ -28,6 +28,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "JobRunQueuingEnabled" => {
+                            builder = builder.set_job_run_queuing_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         "Description" => {
                             builder = builder.set_description(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

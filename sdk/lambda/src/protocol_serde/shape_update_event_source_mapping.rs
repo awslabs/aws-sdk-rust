@@ -206,6 +206,10 @@ pub(crate) fn de_update_event_source_mapping(
                 "FilterCriteria" => {
                     builder = builder.set_filter_criteria(crate::protocol_serde::shape_filter_criteria::de_filter_criteria(tokens)?);
                 }
+                "FilterCriteriaError" => {
+                    builder =
+                        builder.set_filter_criteria_error(crate::protocol_serde::shape_filter_criteria_error::de_filter_criteria_error(tokens)?);
+                }
                 "FunctionArn" => {
                     builder = builder.set_function_arn(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -216,6 +220,13 @@ pub(crate) fn de_update_event_source_mapping(
                 "FunctionResponseTypes" => {
                     builder = builder.set_function_response_types(
                         crate::protocol_serde::shape_function_response_type_list::de_function_response_type_list(tokens)?,
+                    );
+                }
+                "KMSKeyArn" => {
+                    builder = builder.set_kms_key_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
                     );
                 }
                 "LastModified" => {

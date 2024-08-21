@@ -6,52 +6,55 @@ pub fn ser_job_update(
     if let Some(var_1) = &input.job_mode {
         object.key("JobMode").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.description {
-        object.key("Description").string(var_2.as_str());
+    if let Some(var_2) = &input.job_run_queuing_enabled {
+        object.key("JobRunQueuingEnabled").boolean(*var_2);
     }
-    if let Some(var_3) = &input.log_uri {
-        object.key("LogUri").string(var_3.as_str());
+    if let Some(var_3) = &input.description {
+        object.key("Description").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.role {
-        object.key("Role").string(var_4.as_str());
+    if let Some(var_4) = &input.log_uri {
+        object.key("LogUri").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.execution_property {
+    if let Some(var_5) = &input.role {
+        object.key("Role").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.execution_property {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("ExecutionProperty").start_object();
-        crate::protocol_serde::shape_execution_property::ser_execution_property(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_7 = object.key("ExecutionProperty").start_object();
+        crate::protocol_serde::shape_execution_property::ser_execution_property(&mut object_7, var_6)?;
+        object_7.finish();
     }
-    if let Some(var_7) = &input.command {
+    if let Some(var_8) = &input.command {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("Command").start_object();
-        crate::protocol_serde::shape_job_command::ser_job_command(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_9 = object.key("Command").start_object();
+        crate::protocol_serde::shape_job_command::ser_job_command(&mut object_9, var_8)?;
+        object_9.finish();
     }
-    if let Some(var_9) = &input.default_arguments {
+    if let Some(var_10) = &input.default_arguments {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("DefaultArguments").start_object();
-        for (key_11, value_12) in var_9 {
+        let mut object_11 = object.key("DefaultArguments").start_object();
+        for (key_12, value_13) in var_10 {
             {
-                object_10.key(key_11.as_str()).string(value_12.as_str());
+                object_11.key(key_12.as_str()).string(value_13.as_str());
             }
         }
-        object_10.finish();
+        object_11.finish();
     }
-    if let Some(var_13) = &input.non_overridable_arguments {
+    if let Some(var_14) = &input.non_overridable_arguments {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("NonOverridableArguments").start_object();
-        for (key_15, value_16) in var_13 {
+        let mut object_15 = object.key("NonOverridableArguments").start_object();
+        for (key_16, value_17) in var_14 {
             {
-                object_14.key(key_15.as_str()).string(value_16.as_str());
+                object_15.key(key_16.as_str()).string(value_17.as_str());
             }
         }
-        object_14.finish();
+        object_15.finish();
     }
-    if let Some(var_17) = &input.connections {
+    if let Some(var_18) = &input.connections {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("Connections").start_object();
-        crate::protocol_serde::shape_connections_list::ser_connections_list(&mut object_18, var_17)?;
-        object_18.finish();
+        let mut object_19 = object.key("Connections").start_object();
+        crate::protocol_serde::shape_connections_list::ser_connections_list(&mut object_19, var_18)?;
+        object_19.finish();
     }
     if input.max_retries != 0 {
         object.key("MaxRetries").number(
@@ -65,63 +68,63 @@ pub fn ser_job_update(
             ::aws_smithy_types::Number::NegInt((input.allocated_capacity).into()),
         );
     }
-    if let Some(var_19) = &input.timeout {
+    if let Some(var_20) = &input.timeout {
         object.key("Timeout").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_19).into()),
+            ::aws_smithy_types::Number::NegInt((*var_20).into()),
         );
     }
-    if let Some(var_20) = &input.max_capacity {
+    if let Some(var_21) = &input.max_capacity {
         object.key("MaxCapacity").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_20).into()),
+            ::aws_smithy_types::Number::Float((*var_21).into()),
         );
     }
-    if let Some(var_21) = &input.worker_type {
-        object.key("WorkerType").string(var_21.as_str());
+    if let Some(var_22) = &input.worker_type {
+        object.key("WorkerType").string(var_22.as_str());
     }
-    if let Some(var_22) = &input.number_of_workers {
+    if let Some(var_23) = &input.number_of_workers {
         object.key("NumberOfWorkers").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_22).into()),
+            ::aws_smithy_types::Number::NegInt((*var_23).into()),
         );
     }
-    if let Some(var_23) = &input.security_configuration {
-        object.key("SecurityConfiguration").string(var_23.as_str());
+    if let Some(var_24) = &input.security_configuration {
+        object.key("SecurityConfiguration").string(var_24.as_str());
     }
-    if let Some(var_24) = &input.notification_property {
+    if let Some(var_25) = &input.notification_property {
         #[allow(unused_mut)]
-        let mut object_25 = object.key("NotificationProperty").start_object();
-        crate::protocol_serde::shape_notification_property::ser_notification_property(&mut object_25, var_24)?;
-        object_25.finish();
+        let mut object_26 = object.key("NotificationProperty").start_object();
+        crate::protocol_serde::shape_notification_property::ser_notification_property(&mut object_26, var_25)?;
+        object_26.finish();
     }
-    if let Some(var_26) = &input.glue_version {
-        object.key("GlueVersion").string(var_26.as_str());
+    if let Some(var_27) = &input.glue_version {
+        object.key("GlueVersion").string(var_27.as_str());
     }
-    if let Some(var_27) = &input.code_gen_configuration_nodes {
+    if let Some(var_28) = &input.code_gen_configuration_nodes {
         #[allow(unused_mut)]
-        let mut object_28 = object.key("CodeGenConfigurationNodes").start_object();
-        for (key_29, value_30) in var_27 {
+        let mut object_29 = object.key("CodeGenConfigurationNodes").start_object();
+        for (key_30, value_31) in var_28 {
             {
                 #[allow(unused_mut)]
-                let mut object_31 = object_28.key(key_29.as_str()).start_object();
-                crate::protocol_serde::shape_code_gen_configuration_node::ser_code_gen_configuration_node(&mut object_31, value_30)?;
-                object_31.finish();
+                let mut object_32 = object_29.key(key_30.as_str()).start_object();
+                crate::protocol_serde::shape_code_gen_configuration_node::ser_code_gen_configuration_node(&mut object_32, value_31)?;
+                object_32.finish();
             }
         }
-        object_28.finish();
+        object_29.finish();
     }
-    if let Some(var_32) = &input.execution_class {
-        object.key("ExecutionClass").string(var_32.as_str());
+    if let Some(var_33) = &input.execution_class {
+        object.key("ExecutionClass").string(var_33.as_str());
     }
-    if let Some(var_33) = &input.source_control_details {
+    if let Some(var_34) = &input.source_control_details {
         #[allow(unused_mut)]
-        let mut object_34 = object.key("SourceControlDetails").start_object();
-        crate::protocol_serde::shape_source_control_details::ser_source_control_details(&mut object_34, var_33)?;
-        object_34.finish();
+        let mut object_35 = object.key("SourceControlDetails").start_object();
+        crate::protocol_serde::shape_source_control_details::ser_source_control_details(&mut object_35, var_34)?;
+        object_35.finish();
     }
-    if let Some(var_35) = &input.maintenance_window {
-        object.key("MaintenanceWindow").string(var_35.as_str());
+    if let Some(var_36) = &input.maintenance_window {
+        object.key("MaintenanceWindow").string(var_36.as_str());
     }
     Ok(())
 }

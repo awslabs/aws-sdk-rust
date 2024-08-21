@@ -25,7 +25,7 @@ pub struct Compliance {
     pub related_requirements: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>For findings generated from controls, a list of reasons behind the value of <code>Status</code>. For the list of status reason codes and their meanings, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff">Standards-related information in the ASFF</a> in the <i>Security Hub User Guide</i>.</p>
     pub status_reasons: ::std::option::Option<::std::vec::Vec<crate::types::StatusReason>>,
-    /// <p>The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Service and a number, such as APIGateway.5.</p>
+    /// <p>The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Servicesservice and a number, such as APIGateway.5.</p>
     pub security_control_id: ::std::option::Option<::std::string::String>,
     /// <p>The enabled security standards in which a security control is currently enabled.</p>
     pub associated_standards: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedStandard>>,
@@ -64,7 +64,7 @@ impl Compliance {
     pub fn status_reasons(&self) -> &[crate::types::StatusReason] {
         self.status_reasons.as_deref().unwrap_or_default()
     }
-    /// <p>The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Service and a number, such as APIGateway.5.</p>
+    /// <p>The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Servicesservice and a number, such as APIGateway.5.</p>
     pub fn security_control_id(&self) -> ::std::option::Option<&str> {
         self.security_control_id.as_deref()
     }
@@ -199,17 +199,17 @@ impl ComplianceBuilder {
     pub fn get_status_reasons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StatusReason>> {
         &self.status_reasons
     }
-    /// <p>The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Service and a number, such as APIGateway.5.</p>
+    /// <p>The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Servicesservice and a number, such as APIGateway.5.</p>
     pub fn security_control_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_control_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Service and a number, such as APIGateway.5.</p>
+    /// <p>The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Servicesservice and a number, such as APIGateway.5.</p>
     pub fn set_security_control_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.security_control_id = input;
         self
     }
-    /// <p>The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Service and a number, such as APIGateway.5.</p>
+    /// <p>The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Servicesservice and a number, such as APIGateway.5.</p>
     pub fn get_security_control_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.security_control_id
     }

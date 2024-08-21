@@ -330,7 +330,7 @@ pub struct AwsSecurityFindingFilters {
     pub finding_provider_fields_types: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>Indicates whether or not sample findings are included in the filter results.</p>
     pub sample: ::std::option::Option<::std::vec::Vec<crate::types::BooleanFilter>>,
-    /// <p>The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Service and a number, such as APIGateway.5.</p>
+    /// <p>The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Servicesservice and a number, such as APIGateway.5.</p>
     pub compliance_security_control_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The unique identifier of a standard in which a control is enabled. This field consists of the resource portion of the Amazon Resource Name (ARN) returned for a standard in the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a> API response.</p>
     pub compliance_associated_standards_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
@@ -1055,7 +1055,7 @@ impl AwsSecurityFindingFilters {
     pub fn sample(&self) -> &[crate::types::BooleanFilter] {
         self.sample.as_deref().unwrap_or_default()
     }
-    /// <p>The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Service and a number, such as APIGateway.5.</p>
+    /// <p>The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Servicesservice and a number, such as APIGateway.5.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compliance_security_control_id.is_none()`.
     pub fn compliance_security_control_id(&self) -> &[crate::types::StringFilter] {
@@ -3551,19 +3551,19 @@ impl AwsSecurityFindingFiltersBuilder {
     ///
     /// To override the contents of this collection use [`set_compliance_security_control_id`](Self::set_compliance_security_control_id).
     ///
-    /// <p>The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Service and a number, such as APIGateway.5.</p>
+    /// <p>The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Servicesservice and a number, such as APIGateway.5.</p>
     pub fn compliance_security_control_id(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.compliance_security_control_id.unwrap_or_default();
         v.push(input);
         self.compliance_security_control_id = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Service and a number, such as APIGateway.5.</p>
+    /// <p>The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Servicesservice and a number, such as APIGateway.5.</p>
     pub fn set_compliance_security_control_id(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.compliance_security_control_id = input;
         self
     }
-    /// <p>The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Service and a number, such as APIGateway.5.</p>
+    /// <p>The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Servicesservice and a number, such as APIGateway.5.</p>
     pub fn get_compliance_security_control_id(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.compliance_security_control_id
     }

@@ -23,6 +23,7 @@ pub struct EventSourceMappingConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the event source.</p>
     pub event_source_arn: ::std::option::Option<::std::string::String>,
     /// <p>An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+    /// <p>If filter criteria is encrypted, this field shows up as <code>null</code> in the response of ListEventSourceMapping API calls. You can view this field in plaintext in the response of GetEventSourceMapping and DeleteEventSourceMapping calls if you have <code>kms:Decrypt</code> permissions for the correct KMS key.</p>
     pub filter_criteria: ::std::option::Option<crate::types::FilterCriteria>,
     /// <p>The ARN of the Lambda function.</p>
     pub function_arn: ::std::option::Option<::std::string::String>,
@@ -64,6 +65,10 @@ pub struct EventSourceMappingConfiguration {
     pub scaling_config: ::std::option::Option<crate::types::ScalingConfig>,
     /// <p>Specific configuration settings for a DocumentDB event source.</p>
     pub document_db_event_source_config: ::std::option::Option<crate::types::DocumentDbEventSourceConfig>,
+    /// <p>The ARN of the Key Management Service (KMS) customer managed key that Lambda uses to encrypt your function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-basics">filter criteria</a>.</p>
+    pub kms_key_arn: ::std::option::Option<::std::string::String>,
+    /// <p>An object that contains details about an error related to filter criteria encryption.</p>
+    pub filter_criteria_error: ::std::option::Option<crate::types::FilterCriteriaError>,
 }
 impl EventSourceMappingConfiguration {
     /// <p>The identifier of the event source mapping.</p>
@@ -99,6 +104,7 @@ impl EventSourceMappingConfiguration {
         self.event_source_arn.as_deref()
     }
     /// <p>An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+    /// <p>If filter criteria is encrypted, this field shows up as <code>null</code> in the response of ListEventSourceMapping API calls. You can view this field in plaintext in the response of GetEventSourceMapping and DeleteEventSourceMapping calls if you have <code>kms:Decrypt</code> permissions for the correct KMS key.</p>
     pub fn filter_criteria(&self) -> ::std::option::Option<&crate::types::FilterCriteria> {
         self.filter_criteria.as_ref()
     }
@@ -188,6 +194,14 @@ impl EventSourceMappingConfiguration {
     pub fn document_db_event_source_config(&self) -> ::std::option::Option<&crate::types::DocumentDbEventSourceConfig> {
         self.document_db_event_source_config.as_ref()
     }
+    /// <p>The ARN of the Key Management Service (KMS) customer managed key that Lambda uses to encrypt your function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-basics">filter criteria</a>.</p>
+    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
+    /// <p>An object that contains details about an error related to filter criteria encryption.</p>
+    pub fn filter_criteria_error(&self) -> ::std::option::Option<&crate::types::FilterCriteriaError> {
+        self.filter_criteria_error.as_ref()
+    }
 }
 impl EventSourceMappingConfiguration {
     /// Creates a new builder-style object to manufacture [`EventSourceMappingConfiguration`](crate::types::EventSourceMappingConfiguration).
@@ -227,6 +241,8 @@ pub struct EventSourceMappingConfigurationBuilder {
     pub(crate) self_managed_kafka_event_source_config: ::std::option::Option<crate::types::SelfManagedKafkaEventSourceConfig>,
     pub(crate) scaling_config: ::std::option::Option<crate::types::ScalingConfig>,
     pub(crate) document_db_event_source_config: ::std::option::Option<crate::types::DocumentDbEventSourceConfig>,
+    pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) filter_criteria_error: ::std::option::Option<crate::types::FilterCriteriaError>,
 }
 impl EventSourceMappingConfigurationBuilder {
     /// <p>The identifier of the event source mapping.</p>
@@ -340,16 +356,19 @@ impl EventSourceMappingConfigurationBuilder {
         &self.event_source_arn
     }
     /// <p>An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+    /// <p>If filter criteria is encrypted, this field shows up as <code>null</code> in the response of ListEventSourceMapping API calls. You can view this field in plaintext in the response of GetEventSourceMapping and DeleteEventSourceMapping calls if you have <code>kms:Decrypt</code> permissions for the correct KMS key.</p>
     pub fn filter_criteria(mut self, input: crate::types::FilterCriteria) -> Self {
         self.filter_criteria = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+    /// <p>If filter criteria is encrypted, this field shows up as <code>null</code> in the response of ListEventSourceMapping API calls. You can view this field in plaintext in the response of GetEventSourceMapping and DeleteEventSourceMapping calls if you have <code>kms:Decrypt</code> permissions for the correct KMS key.</p>
     pub fn set_filter_criteria(mut self, input: ::std::option::Option<crate::types::FilterCriteria>) -> Self {
         self.filter_criteria = input;
         self
     }
     /// <p>An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+    /// <p>If filter criteria is encrypted, this field shows up as <code>null</code> in the response of ListEventSourceMapping API calls. You can view this field in plaintext in the response of GetEventSourceMapping and DeleteEventSourceMapping calls if you have <code>kms:Decrypt</code> permissions for the correct KMS key.</p>
     pub fn get_filter_criteria(&self) -> &::std::option::Option<crate::types::FilterCriteria> {
         &self.filter_criteria
     }
@@ -658,6 +677,34 @@ impl EventSourceMappingConfigurationBuilder {
     pub fn get_document_db_event_source_config(&self) -> &::std::option::Option<crate::types::DocumentDbEventSourceConfig> {
         &self.document_db_event_source_config
     }
+    /// <p>The ARN of the Key Management Service (KMS) customer managed key that Lambda uses to encrypt your function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-basics">filter criteria</a>.</p>
+    pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the Key Management Service (KMS) customer managed key that Lambda uses to encrypt your function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-basics">filter criteria</a>.</p>
+    pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key_arn = input;
+        self
+    }
+    /// <p>The ARN of the Key Management Service (KMS) customer managed key that Lambda uses to encrypt your function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-basics">filter criteria</a>.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_arn
+    }
+    /// <p>An object that contains details about an error related to filter criteria encryption.</p>
+    pub fn filter_criteria_error(mut self, input: crate::types::FilterCriteriaError) -> Self {
+        self.filter_criteria_error = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object that contains details about an error related to filter criteria encryption.</p>
+    pub fn set_filter_criteria_error(mut self, input: ::std::option::Option<crate::types::FilterCriteriaError>) -> Self {
+        self.filter_criteria_error = input;
+        self
+    }
+    /// <p>An object that contains details about an error related to filter criteria encryption.</p>
+    pub fn get_filter_criteria_error(&self) -> &::std::option::Option<crate::types::FilterCriteriaError> {
+        &self.filter_criteria_error
+    }
     /// Consumes the builder and constructs a [`EventSourceMappingConfiguration`](crate::types::EventSourceMappingConfiguration).
     pub fn build(self) -> crate::types::EventSourceMappingConfiguration {
         crate::types::EventSourceMappingConfiguration {
@@ -688,6 +735,8 @@ impl EventSourceMappingConfigurationBuilder {
             self_managed_kafka_event_source_config: self.self_managed_kafka_event_source_config,
             scaling_config: self.scaling_config,
             document_db_event_source_config: self.document_db_event_source_config,
+            kms_key_arn: self.kms_key_arn,
+            filter_criteria_error: self.filter_criteria_error,
         }
     }
 }

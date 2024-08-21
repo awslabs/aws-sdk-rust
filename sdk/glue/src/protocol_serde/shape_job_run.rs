@@ -56,6 +56,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "JobRunQueuingEnabled" => {
+                            builder = builder.set_job_run_queuing_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         "StartedOn" => {
                             builder = builder.set_started_on(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),
@@ -180,6 +183,13 @@ where
                         }
                         "ProfileName" => {
                             builder = builder.set_profile_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "StateDetail" => {
+                            builder = builder.set_state_detail(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

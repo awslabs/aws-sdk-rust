@@ -22,8 +22,10 @@ impl crate::operation::disable_snapshot_block_public_access::builders::DisableSn
 }
 /// Fluent builder constructing a request to `DisableSnapshotBlockPublicAccess`.
 ///
-/// <p>Disables the <i>block public access for snapshots</i> setting at the account level for the specified Amazon Web Services Region. After you disable block public access for snapshots in a Region, users can publicly share snapshots in that Region.</p>
-/// <p>If block public access is enabled in <code>block-all-sharing</code> mode, and you disable block public access, all snapshots that were previously publicly shared are no longer treated as private and they become publicly accessible again.</p>
+/// <p>Disables the <i>block public access for snapshots</i> setting at the account level for the specified Amazon Web Services Region. After you disable block public access for snapshots in a Region, users can publicly share snapshots in that Region.</p><important>
+/// <p>Enabling block public access for snapshots in <i>block-all-sharing</i> mode does not change the permissions for snapshots that are already publicly shared. Instead, it prevents these snapshots from be publicly visible and publicly accessible. Therefore, the attributes for these snapshots still indicate that they are publicly shared, even though they are not publicly available.</p>
+/// <p>If you disable block public access , these snapshots will become publicly available again.</p>
+/// </important>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/block-public-access-snapshots.html"> Block public access for snapshots</a> in the <i>Amazon EBS User Guide</i> .</p>
 /// <p></p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

@@ -94,6 +94,8 @@ pub struct CreateEventSourceMappingInput {
     pub scaling_config: ::std::option::Option<crate::types::ScalingConfig>,
     /// <p>Specific configuration settings for a DocumentDB event source.</p>
     pub document_db_event_source_config: ::std::option::Option<crate::types::DocumentDbEventSourceConfig>,
+    /// <p>The ARN of the Key Management Service (KMS) customer managed key that Lambda uses to encrypt your function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-basics">filter criteria</a>. By default, Lambda does not encrypt your filter criteria object. Specify this property to encrypt data using your own customer managed key.</p>
+    pub kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateEventSourceMappingInput {
     /// <p>The Amazon Resource Name (ARN) of the event source.</p>
@@ -241,6 +243,10 @@ impl CreateEventSourceMappingInput {
     pub fn document_db_event_source_config(&self) -> ::std::option::Option<&crate::types::DocumentDbEventSourceConfig> {
         self.document_db_event_source_config.as_ref()
     }
+    /// <p>The ARN of the Key Management Service (KMS) customer managed key that Lambda uses to encrypt your function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-basics">filter criteria</a>. By default, Lambda does not encrypt your filter criteria object. Specify this property to encrypt data using your own customer managed key.</p>
+    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
 }
 impl CreateEventSourceMappingInput {
     /// Creates a new builder-style object to manufacture [`CreateEventSourceMappingInput`](crate::operation::create_event_source_mapping::CreateEventSourceMappingInput).
@@ -276,6 +282,7 @@ pub struct CreateEventSourceMappingInputBuilder {
     pub(crate) self_managed_kafka_event_source_config: ::std::option::Option<crate::types::SelfManagedKafkaEventSourceConfig>,
     pub(crate) scaling_config: ::std::option::Option<crate::types::ScalingConfig>,
     pub(crate) document_db_event_source_config: ::std::option::Option<crate::types::DocumentDbEventSourceConfig>,
+    pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateEventSourceMappingInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the event source.</p>
@@ -769,6 +776,20 @@ impl CreateEventSourceMappingInputBuilder {
     pub fn get_document_db_event_source_config(&self) -> &::std::option::Option<crate::types::DocumentDbEventSourceConfig> {
         &self.document_db_event_source_config
     }
+    /// <p>The ARN of the Key Management Service (KMS) customer managed key that Lambda uses to encrypt your function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-basics">filter criteria</a>. By default, Lambda does not encrypt your filter criteria object. Specify this property to encrypt data using your own customer managed key.</p>
+    pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the Key Management Service (KMS) customer managed key that Lambda uses to encrypt your function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-basics">filter criteria</a>. By default, Lambda does not encrypt your filter criteria object. Specify this property to encrypt data using your own customer managed key.</p>
+    pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key_arn = input;
+        self
+    }
+    /// <p>The ARN of the Key Management Service (KMS) customer managed key that Lambda uses to encrypt your function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-basics">filter criteria</a>. By default, Lambda does not encrypt your filter criteria object. Specify this property to encrypt data using your own customer managed key.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_arn
+    }
     /// Consumes the builder and constructs a [`CreateEventSourceMappingInput`](crate::operation::create_event_source_mapping::CreateEventSourceMappingInput).
     pub fn build(
         self,
@@ -800,6 +821,7 @@ impl CreateEventSourceMappingInputBuilder {
             self_managed_kafka_event_source_config: self.self_managed_kafka_event_source_config,
             scaling_config: self.scaling_config,
             document_db_event_source_config: self.document_db_event_source_config,
+            kms_key_arn: self.kms_key_arn,
         })
     }
 }

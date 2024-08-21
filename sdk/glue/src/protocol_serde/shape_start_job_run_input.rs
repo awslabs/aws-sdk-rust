@@ -6,57 +6,60 @@ pub fn ser_start_job_run_input_input(
     if let Some(var_1) = &input.job_name {
         object.key("JobName").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.job_run_id {
-        object.key("JobRunId").string(var_2.as_str());
+    if let Some(var_2) = &input.job_run_queuing_enabled {
+        object.key("JobRunQueuingEnabled").boolean(*var_2);
     }
-    if let Some(var_3) = &input.arguments {
+    if let Some(var_3) = &input.job_run_id {
+        object.key("JobRunId").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.arguments {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("Arguments").start_object();
-        for (key_5, value_6) in var_3 {
+        let mut object_5 = object.key("Arguments").start_object();
+        for (key_6, value_7) in var_4 {
             {
-                object_4.key(key_5.as_str()).string(value_6.as_str());
+                object_5.key(key_6.as_str()).string(value_7.as_str());
             }
         }
-        object_4.finish();
+        object_5.finish();
     }
-    if let Some(var_7) = &input.allocated_capacity {
+    if let Some(var_8) = &input.allocated_capacity {
         object.key("AllocatedCapacity").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_7).into()),
-        );
-    }
-    if let Some(var_8) = &input.timeout {
-        object.key("Timeout").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
-    if let Some(var_9) = &input.max_capacity {
+    if let Some(var_9) = &input.timeout {
+        object.key("Timeout").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_9).into()),
+        );
+    }
+    if let Some(var_10) = &input.max_capacity {
         object.key("MaxCapacity").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_9).into()),
+            ::aws_smithy_types::Number::Float((*var_10).into()),
         );
     }
-    if let Some(var_10) = &input.security_configuration {
-        object.key("SecurityConfiguration").string(var_10.as_str());
+    if let Some(var_11) = &input.security_configuration {
+        object.key("SecurityConfiguration").string(var_11.as_str());
     }
-    if let Some(var_11) = &input.notification_property {
+    if let Some(var_12) = &input.notification_property {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("NotificationProperty").start_object();
-        crate::protocol_serde::shape_notification_property::ser_notification_property(&mut object_12, var_11)?;
-        object_12.finish();
+        let mut object_13 = object.key("NotificationProperty").start_object();
+        crate::protocol_serde::shape_notification_property::ser_notification_property(&mut object_13, var_12)?;
+        object_13.finish();
     }
-    if let Some(var_13) = &input.worker_type {
-        object.key("WorkerType").string(var_13.as_str());
+    if let Some(var_14) = &input.worker_type {
+        object.key("WorkerType").string(var_14.as_str());
     }
-    if let Some(var_14) = &input.number_of_workers {
+    if let Some(var_15) = &input.number_of_workers {
         object.key("NumberOfWorkers").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_14).into()),
+            ::aws_smithy_types::Number::NegInt((*var_15).into()),
         );
     }
-    if let Some(var_15) = &input.execution_class {
-        object.key("ExecutionClass").string(var_15.as_str());
+    if let Some(var_16) = &input.execution_class {
+        object.key("ExecutionClass").string(var_16.as_str());
     }
     Ok(())
 }

@@ -15,17 +15,29 @@ pub struct S3Action {
     pub bucket_name: ::std::string::String,
     /// <p>The key prefix of the Amazon S3 bucket. The key prefix is similar to a directory name that enables you to store similar data under the same directory in a bucket.</p>
     pub object_key_prefix: ::std::option::Option<::std::string::String>,
-    /// <p>The customer master key that Amazon SES should use to encrypt your emails before saving them to the Amazon S3 bucket. You can use the default master key or a custom master key that you created in Amazon Web Services KMS as follows:</p>
+    /// <p>The customer managed key that Amazon SES should use to encrypt your emails before saving them to the Amazon S3 bucket. You can use the default managed key or a custom managed key that you created in Amazon Web Services KMS as follows:</p>
     /// <ul>
     /// <li>
-    /// <p>To use the default master key, provide an ARN in the form of <code>arn:aws:kms:REGION:ACCOUNT-ID-WITHOUT-HYPHENS:alias/aws/ses</code>. For example, if your Amazon Web Services account ID is 123456789012 and you want to use the default master key in the US West (Oregon) Region, the ARN of the default master key would be <code>arn:aws:kms:us-west-2:123456789012:alias/aws/ses</code>. If you use the default master key, you don't need to perform any extra steps to give Amazon SES permission to use the key.</p></li>
+    /// <p>To use the default managed key, provide an ARN in the form of <code>arn:aws:kms:REGION:ACCOUNT-ID-WITHOUT-HYPHENS:alias/aws/ses</code>. For example, if your Amazon Web Services account ID is 123456789012 and you want to use the default managed key in the US West (Oregon) Region, the ARN of the default master key would be <code>arn:aws:kms:us-west-2:123456789012:alias/aws/ses</code>. If you use the default managed key, you don't need to perform any extra steps to give Amazon SES permission to use the key.</p></li>
     /// <li>
-    /// <p>To use a custom master key that you created in Amazon Web Services KMS, provide the ARN of the master key and ensure that you add a statement to your key's policy to give Amazon SES permission to use it. For more information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-permissions.html">Amazon SES Developer Guide</a>.</p></li>
+    /// <p>To use a custom managed key that you created in Amazon Web Services KMS, provide the ARN of the managed key and ensure that you add a statement to your key's policy to give Amazon SES permission to use it. For more information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-permissions.html">Amazon SES Developer Guide</a>.</p></li>
     /// </ul>
-    /// <p>For more information about key policies, see the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Amazon Web Services KMS Developer Guide</a>. If you do not specify a master key, Amazon SES does not encrypt your emails.</p><important>
-    /// <p>Your mail is encrypted by Amazon SES using the Amazon S3 encryption client before the mail is submitted to Amazon S3 for storage. It is not encrypted using Amazon S3 server-side encryption. This means that you must use the Amazon S3 encryption client to decrypt the email after retrieving it from Amazon S3, as the service has no access to use your Amazon Web Services KMS keys for decryption. This encryption client is currently available with the <a href="http://aws.amazon.com/sdk-for-java/">Amazon Web Services SDK for Java</a> and <a href="http://aws.amazon.com/sdk-for-ruby/">Amazon Web Services SDK for Ruby</a> only. For more information about client-side encryption using Amazon Web Services KMS master keys, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon S3 Developer Guide</a>.</p>
+    /// <p>For more information about key policies, see the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Amazon Web Services KMS Developer Guide</a>. If you do not specify a managed key, Amazon SES does not encrypt your emails.</p><important>
+    /// <p>Your mail is encrypted by Amazon SES using the Amazon S3 encryption client before the mail is submitted to Amazon S3 for storage. It is not encrypted using Amazon S3 server-side encryption. This means that you must use the Amazon S3 encryption client to decrypt the email after retrieving it from Amazon S3, as the service has no access to use your Amazon Web Services KMS keys for decryption. This encryption client is currently available with the <a href="http://aws.amazon.com/sdk-for-java/">Amazon Web Services SDK for Java</a> and <a href="http://aws.amazon.com/sdk-for-ruby/">Amazon Web Services SDK for Ruby</a> only. For more information about client-side encryption using Amazon Web Services KMS managed keys, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon S3 Developer Guide</a>.</p>
     /// </important>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN of the IAM role to be used by Amazon Simple Email Service while writing to the Amazon S3 bucket, optionally encrypting your mail via the provided customer managed key, and publishing to the Amazon SNS topic. This role should have access to the following APIs:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>s3:PutObject</code>, <code>kms:Encrypt</code> and <code>kms:GenerateDataKey</code> for the given Amazon S3 bucket.</p></li>
+    /// <li>
+    /// <p><code>kms:GenerateDataKey</code> for the given Amazon Web Services KMS customer managed key.</p></li>
+    /// <li>
+    /// <p><code>sns:Publish</code> for the given Amazon SNS topic.</p></li>
+    /// </ul><note>
+    /// <p>If an IAM role ARN is provided, the role (and only the role) is used to access all the given resources (Amazon S3 bucket, Amazon Web Services KMS customer managed key and Amazon SNS topic). Therefore, setting up individual resource access permissions is not required.</p>
+    /// </note>
+    pub iam_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl S3Action {
     /// <p>The ARN of the Amazon SNS topic to notify when the message is saved to the Amazon S3 bucket. You can find the ARN of a topic by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a> operation in Amazon SNS.</p>
@@ -42,18 +54,32 @@ impl S3Action {
     pub fn object_key_prefix(&self) -> ::std::option::Option<&str> {
         self.object_key_prefix.as_deref()
     }
-    /// <p>The customer master key that Amazon SES should use to encrypt your emails before saving them to the Amazon S3 bucket. You can use the default master key or a custom master key that you created in Amazon Web Services KMS as follows:</p>
+    /// <p>The customer managed key that Amazon SES should use to encrypt your emails before saving them to the Amazon S3 bucket. You can use the default managed key or a custom managed key that you created in Amazon Web Services KMS as follows:</p>
     /// <ul>
     /// <li>
-    /// <p>To use the default master key, provide an ARN in the form of <code>arn:aws:kms:REGION:ACCOUNT-ID-WITHOUT-HYPHENS:alias/aws/ses</code>. For example, if your Amazon Web Services account ID is 123456789012 and you want to use the default master key in the US West (Oregon) Region, the ARN of the default master key would be <code>arn:aws:kms:us-west-2:123456789012:alias/aws/ses</code>. If you use the default master key, you don't need to perform any extra steps to give Amazon SES permission to use the key.</p></li>
+    /// <p>To use the default managed key, provide an ARN in the form of <code>arn:aws:kms:REGION:ACCOUNT-ID-WITHOUT-HYPHENS:alias/aws/ses</code>. For example, if your Amazon Web Services account ID is 123456789012 and you want to use the default managed key in the US West (Oregon) Region, the ARN of the default master key would be <code>arn:aws:kms:us-west-2:123456789012:alias/aws/ses</code>. If you use the default managed key, you don't need to perform any extra steps to give Amazon SES permission to use the key.</p></li>
     /// <li>
-    /// <p>To use a custom master key that you created in Amazon Web Services KMS, provide the ARN of the master key and ensure that you add a statement to your key's policy to give Amazon SES permission to use it. For more information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-permissions.html">Amazon SES Developer Guide</a>.</p></li>
+    /// <p>To use a custom managed key that you created in Amazon Web Services KMS, provide the ARN of the managed key and ensure that you add a statement to your key's policy to give Amazon SES permission to use it. For more information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-permissions.html">Amazon SES Developer Guide</a>.</p></li>
     /// </ul>
-    /// <p>For more information about key policies, see the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Amazon Web Services KMS Developer Guide</a>. If you do not specify a master key, Amazon SES does not encrypt your emails.</p><important>
-    /// <p>Your mail is encrypted by Amazon SES using the Amazon S3 encryption client before the mail is submitted to Amazon S3 for storage. It is not encrypted using Amazon S3 server-side encryption. This means that you must use the Amazon S3 encryption client to decrypt the email after retrieving it from Amazon S3, as the service has no access to use your Amazon Web Services KMS keys for decryption. This encryption client is currently available with the <a href="http://aws.amazon.com/sdk-for-java/">Amazon Web Services SDK for Java</a> and <a href="http://aws.amazon.com/sdk-for-ruby/">Amazon Web Services SDK for Ruby</a> only. For more information about client-side encryption using Amazon Web Services KMS master keys, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon S3 Developer Guide</a>.</p>
+    /// <p>For more information about key policies, see the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Amazon Web Services KMS Developer Guide</a>. If you do not specify a managed key, Amazon SES does not encrypt your emails.</p><important>
+    /// <p>Your mail is encrypted by Amazon SES using the Amazon S3 encryption client before the mail is submitted to Amazon S3 for storage. It is not encrypted using Amazon S3 server-side encryption. This means that you must use the Amazon S3 encryption client to decrypt the email after retrieving it from Amazon S3, as the service has no access to use your Amazon Web Services KMS keys for decryption. This encryption client is currently available with the <a href="http://aws.amazon.com/sdk-for-java/">Amazon Web Services SDK for Java</a> and <a href="http://aws.amazon.com/sdk-for-ruby/">Amazon Web Services SDK for Ruby</a> only. For more information about client-side encryption using Amazon Web Services KMS managed keys, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon S3 Developer Guide</a>.</p>
     /// </important>
     pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
         self.kms_key_arn.as_deref()
+    }
+    /// <p>The ARN of the IAM role to be used by Amazon Simple Email Service while writing to the Amazon S3 bucket, optionally encrypting your mail via the provided customer managed key, and publishing to the Amazon SNS topic. This role should have access to the following APIs:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>s3:PutObject</code>, <code>kms:Encrypt</code> and <code>kms:GenerateDataKey</code> for the given Amazon S3 bucket.</p></li>
+    /// <li>
+    /// <p><code>kms:GenerateDataKey</code> for the given Amazon Web Services KMS customer managed key.</p></li>
+    /// <li>
+    /// <p><code>sns:Publish</code> for the given Amazon SNS topic.</p></li>
+    /// </ul><note>
+    /// <p>If an IAM role ARN is provided, the role (and only the role) is used to access all the given resources (Amazon S3 bucket, Amazon Web Services KMS customer managed key and Amazon SNS topic). Therefore, setting up individual resource access permissions is not required.</p>
+    /// </note>
+    pub fn iam_role_arn(&self) -> ::std::option::Option<&str> {
+        self.iam_role_arn.as_deref()
     }
 }
 impl S3Action {
@@ -71,6 +97,7 @@ pub struct S3ActionBuilder {
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) object_key_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) iam_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl S3ActionBuilder {
     /// <p>The ARN of the Amazon SNS topic to notify when the message is saved to the Amazon S3 bucket. You can find the ARN of a topic by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a> operation in Amazon SNS.</p>
@@ -119,46 +146,90 @@ impl S3ActionBuilder {
     pub fn get_object_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
         &self.object_key_prefix
     }
-    /// <p>The customer master key that Amazon SES should use to encrypt your emails before saving them to the Amazon S3 bucket. You can use the default master key or a custom master key that you created in Amazon Web Services KMS as follows:</p>
+    /// <p>The customer managed key that Amazon SES should use to encrypt your emails before saving them to the Amazon S3 bucket. You can use the default managed key or a custom managed key that you created in Amazon Web Services KMS as follows:</p>
     /// <ul>
     /// <li>
-    /// <p>To use the default master key, provide an ARN in the form of <code>arn:aws:kms:REGION:ACCOUNT-ID-WITHOUT-HYPHENS:alias/aws/ses</code>. For example, if your Amazon Web Services account ID is 123456789012 and you want to use the default master key in the US West (Oregon) Region, the ARN of the default master key would be <code>arn:aws:kms:us-west-2:123456789012:alias/aws/ses</code>. If you use the default master key, you don't need to perform any extra steps to give Amazon SES permission to use the key.</p></li>
+    /// <p>To use the default managed key, provide an ARN in the form of <code>arn:aws:kms:REGION:ACCOUNT-ID-WITHOUT-HYPHENS:alias/aws/ses</code>. For example, if your Amazon Web Services account ID is 123456789012 and you want to use the default managed key in the US West (Oregon) Region, the ARN of the default master key would be <code>arn:aws:kms:us-west-2:123456789012:alias/aws/ses</code>. If you use the default managed key, you don't need to perform any extra steps to give Amazon SES permission to use the key.</p></li>
     /// <li>
-    /// <p>To use a custom master key that you created in Amazon Web Services KMS, provide the ARN of the master key and ensure that you add a statement to your key's policy to give Amazon SES permission to use it. For more information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-permissions.html">Amazon SES Developer Guide</a>.</p></li>
+    /// <p>To use a custom managed key that you created in Amazon Web Services KMS, provide the ARN of the managed key and ensure that you add a statement to your key's policy to give Amazon SES permission to use it. For more information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-permissions.html">Amazon SES Developer Guide</a>.</p></li>
     /// </ul>
-    /// <p>For more information about key policies, see the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Amazon Web Services KMS Developer Guide</a>. If you do not specify a master key, Amazon SES does not encrypt your emails.</p><important>
-    /// <p>Your mail is encrypted by Amazon SES using the Amazon S3 encryption client before the mail is submitted to Amazon S3 for storage. It is not encrypted using Amazon S3 server-side encryption. This means that you must use the Amazon S3 encryption client to decrypt the email after retrieving it from Amazon S3, as the service has no access to use your Amazon Web Services KMS keys for decryption. This encryption client is currently available with the <a href="http://aws.amazon.com/sdk-for-java/">Amazon Web Services SDK for Java</a> and <a href="http://aws.amazon.com/sdk-for-ruby/">Amazon Web Services SDK for Ruby</a> only. For more information about client-side encryption using Amazon Web Services KMS master keys, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon S3 Developer Guide</a>.</p>
+    /// <p>For more information about key policies, see the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Amazon Web Services KMS Developer Guide</a>. If you do not specify a managed key, Amazon SES does not encrypt your emails.</p><important>
+    /// <p>Your mail is encrypted by Amazon SES using the Amazon S3 encryption client before the mail is submitted to Amazon S3 for storage. It is not encrypted using Amazon S3 server-side encryption. This means that you must use the Amazon S3 encryption client to decrypt the email after retrieving it from Amazon S3, as the service has no access to use your Amazon Web Services KMS keys for decryption. This encryption client is currently available with the <a href="http://aws.amazon.com/sdk-for-java/">Amazon Web Services SDK for Java</a> and <a href="http://aws.amazon.com/sdk-for-ruby/">Amazon Web Services SDK for Ruby</a> only. For more information about client-side encryption using Amazon Web Services KMS managed keys, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon S3 Developer Guide</a>.</p>
     /// </important>
     pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The customer master key that Amazon SES should use to encrypt your emails before saving them to the Amazon S3 bucket. You can use the default master key or a custom master key that you created in Amazon Web Services KMS as follows:</p>
+    /// <p>The customer managed key that Amazon SES should use to encrypt your emails before saving them to the Amazon S3 bucket. You can use the default managed key or a custom managed key that you created in Amazon Web Services KMS as follows:</p>
     /// <ul>
     /// <li>
-    /// <p>To use the default master key, provide an ARN in the form of <code>arn:aws:kms:REGION:ACCOUNT-ID-WITHOUT-HYPHENS:alias/aws/ses</code>. For example, if your Amazon Web Services account ID is 123456789012 and you want to use the default master key in the US West (Oregon) Region, the ARN of the default master key would be <code>arn:aws:kms:us-west-2:123456789012:alias/aws/ses</code>. If you use the default master key, you don't need to perform any extra steps to give Amazon SES permission to use the key.</p></li>
+    /// <p>To use the default managed key, provide an ARN in the form of <code>arn:aws:kms:REGION:ACCOUNT-ID-WITHOUT-HYPHENS:alias/aws/ses</code>. For example, if your Amazon Web Services account ID is 123456789012 and you want to use the default managed key in the US West (Oregon) Region, the ARN of the default master key would be <code>arn:aws:kms:us-west-2:123456789012:alias/aws/ses</code>. If you use the default managed key, you don't need to perform any extra steps to give Amazon SES permission to use the key.</p></li>
     /// <li>
-    /// <p>To use a custom master key that you created in Amazon Web Services KMS, provide the ARN of the master key and ensure that you add a statement to your key's policy to give Amazon SES permission to use it. For more information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-permissions.html">Amazon SES Developer Guide</a>.</p></li>
+    /// <p>To use a custom managed key that you created in Amazon Web Services KMS, provide the ARN of the managed key and ensure that you add a statement to your key's policy to give Amazon SES permission to use it. For more information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-permissions.html">Amazon SES Developer Guide</a>.</p></li>
     /// </ul>
-    /// <p>For more information about key policies, see the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Amazon Web Services KMS Developer Guide</a>. If you do not specify a master key, Amazon SES does not encrypt your emails.</p><important>
-    /// <p>Your mail is encrypted by Amazon SES using the Amazon S3 encryption client before the mail is submitted to Amazon S3 for storage. It is not encrypted using Amazon S3 server-side encryption. This means that you must use the Amazon S3 encryption client to decrypt the email after retrieving it from Amazon S3, as the service has no access to use your Amazon Web Services KMS keys for decryption. This encryption client is currently available with the <a href="http://aws.amazon.com/sdk-for-java/">Amazon Web Services SDK for Java</a> and <a href="http://aws.amazon.com/sdk-for-ruby/">Amazon Web Services SDK for Ruby</a> only. For more information about client-side encryption using Amazon Web Services KMS master keys, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon S3 Developer Guide</a>.</p>
+    /// <p>For more information about key policies, see the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Amazon Web Services KMS Developer Guide</a>. If you do not specify a managed key, Amazon SES does not encrypt your emails.</p><important>
+    /// <p>Your mail is encrypted by Amazon SES using the Amazon S3 encryption client before the mail is submitted to Amazon S3 for storage. It is not encrypted using Amazon S3 server-side encryption. This means that you must use the Amazon S3 encryption client to decrypt the email after retrieving it from Amazon S3, as the service has no access to use your Amazon Web Services KMS keys for decryption. This encryption client is currently available with the <a href="http://aws.amazon.com/sdk-for-java/">Amazon Web Services SDK for Java</a> and <a href="http://aws.amazon.com/sdk-for-ruby/">Amazon Web Services SDK for Ruby</a> only. For more information about client-side encryption using Amazon Web Services KMS managed keys, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon S3 Developer Guide</a>.</p>
     /// </important>
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_arn = input;
         self
     }
-    /// <p>The customer master key that Amazon SES should use to encrypt your emails before saving them to the Amazon S3 bucket. You can use the default master key or a custom master key that you created in Amazon Web Services KMS as follows:</p>
+    /// <p>The customer managed key that Amazon SES should use to encrypt your emails before saving them to the Amazon S3 bucket. You can use the default managed key or a custom managed key that you created in Amazon Web Services KMS as follows:</p>
     /// <ul>
     /// <li>
-    /// <p>To use the default master key, provide an ARN in the form of <code>arn:aws:kms:REGION:ACCOUNT-ID-WITHOUT-HYPHENS:alias/aws/ses</code>. For example, if your Amazon Web Services account ID is 123456789012 and you want to use the default master key in the US West (Oregon) Region, the ARN of the default master key would be <code>arn:aws:kms:us-west-2:123456789012:alias/aws/ses</code>. If you use the default master key, you don't need to perform any extra steps to give Amazon SES permission to use the key.</p></li>
+    /// <p>To use the default managed key, provide an ARN in the form of <code>arn:aws:kms:REGION:ACCOUNT-ID-WITHOUT-HYPHENS:alias/aws/ses</code>. For example, if your Amazon Web Services account ID is 123456789012 and you want to use the default managed key in the US West (Oregon) Region, the ARN of the default master key would be <code>arn:aws:kms:us-west-2:123456789012:alias/aws/ses</code>. If you use the default managed key, you don't need to perform any extra steps to give Amazon SES permission to use the key.</p></li>
     /// <li>
-    /// <p>To use a custom master key that you created in Amazon Web Services KMS, provide the ARN of the master key and ensure that you add a statement to your key's policy to give Amazon SES permission to use it. For more information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-permissions.html">Amazon SES Developer Guide</a>.</p></li>
+    /// <p>To use a custom managed key that you created in Amazon Web Services KMS, provide the ARN of the managed key and ensure that you add a statement to your key's policy to give Amazon SES permission to use it. For more information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-permissions.html">Amazon SES Developer Guide</a>.</p></li>
     /// </ul>
-    /// <p>For more information about key policies, see the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Amazon Web Services KMS Developer Guide</a>. If you do not specify a master key, Amazon SES does not encrypt your emails.</p><important>
-    /// <p>Your mail is encrypted by Amazon SES using the Amazon S3 encryption client before the mail is submitted to Amazon S3 for storage. It is not encrypted using Amazon S3 server-side encryption. This means that you must use the Amazon S3 encryption client to decrypt the email after retrieving it from Amazon S3, as the service has no access to use your Amazon Web Services KMS keys for decryption. This encryption client is currently available with the <a href="http://aws.amazon.com/sdk-for-java/">Amazon Web Services SDK for Java</a> and <a href="http://aws.amazon.com/sdk-for-ruby/">Amazon Web Services SDK for Ruby</a> only. For more information about client-side encryption using Amazon Web Services KMS master keys, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon S3 Developer Guide</a>.</p>
+    /// <p>For more information about key policies, see the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Amazon Web Services KMS Developer Guide</a>. If you do not specify a managed key, Amazon SES does not encrypt your emails.</p><important>
+    /// <p>Your mail is encrypted by Amazon SES using the Amazon S3 encryption client before the mail is submitted to Amazon S3 for storage. It is not encrypted using Amazon S3 server-side encryption. This means that you must use the Amazon S3 encryption client to decrypt the email after retrieving it from Amazon S3, as the service has no access to use your Amazon Web Services KMS keys for decryption. This encryption client is currently available with the <a href="http://aws.amazon.com/sdk-for-java/">Amazon Web Services SDK for Java</a> and <a href="http://aws.amazon.com/sdk-for-ruby/">Amazon Web Services SDK for Ruby</a> only. For more information about client-side encryption using Amazon Web Services KMS managed keys, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon S3 Developer Guide</a>.</p>
     /// </important>
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_arn
+    }
+    /// <p>The ARN of the IAM role to be used by Amazon Simple Email Service while writing to the Amazon S3 bucket, optionally encrypting your mail via the provided customer managed key, and publishing to the Amazon SNS topic. This role should have access to the following APIs:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>s3:PutObject</code>, <code>kms:Encrypt</code> and <code>kms:GenerateDataKey</code> for the given Amazon S3 bucket.</p></li>
+    /// <li>
+    /// <p><code>kms:GenerateDataKey</code> for the given Amazon Web Services KMS customer managed key.</p></li>
+    /// <li>
+    /// <p><code>sns:Publish</code> for the given Amazon SNS topic.</p></li>
+    /// </ul><note>
+    /// <p>If an IAM role ARN is provided, the role (and only the role) is used to access all the given resources (Amazon S3 bucket, Amazon Web Services KMS customer managed key and Amazon SNS topic). Therefore, setting up individual resource access permissions is not required.</p>
+    /// </note>
+    pub fn iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.iam_role_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the IAM role to be used by Amazon Simple Email Service while writing to the Amazon S3 bucket, optionally encrypting your mail via the provided customer managed key, and publishing to the Amazon SNS topic. This role should have access to the following APIs:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>s3:PutObject</code>, <code>kms:Encrypt</code> and <code>kms:GenerateDataKey</code> for the given Amazon S3 bucket.</p></li>
+    /// <li>
+    /// <p><code>kms:GenerateDataKey</code> for the given Amazon Web Services KMS customer managed key.</p></li>
+    /// <li>
+    /// <p><code>sns:Publish</code> for the given Amazon SNS topic.</p></li>
+    /// </ul><note>
+    /// <p>If an IAM role ARN is provided, the role (and only the role) is used to access all the given resources (Amazon S3 bucket, Amazon Web Services KMS customer managed key and Amazon SNS topic). Therefore, setting up individual resource access permissions is not required.</p>
+    /// </note>
+    pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.iam_role_arn = input;
+        self
+    }
+    /// <p>The ARN of the IAM role to be used by Amazon Simple Email Service while writing to the Amazon S3 bucket, optionally encrypting your mail via the provided customer managed key, and publishing to the Amazon SNS topic. This role should have access to the following APIs:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>s3:PutObject</code>, <code>kms:Encrypt</code> and <code>kms:GenerateDataKey</code> for the given Amazon S3 bucket.</p></li>
+    /// <li>
+    /// <p><code>kms:GenerateDataKey</code> for the given Amazon Web Services KMS customer managed key.</p></li>
+    /// <li>
+    /// <p><code>sns:Publish</code> for the given Amazon SNS topic.</p></li>
+    /// </ul><note>
+    /// <p>If an IAM role ARN is provided, the role (and only the role) is used to access all the given resources (Amazon S3 bucket, Amazon Web Services KMS customer managed key and Amazon SNS topic). Therefore, setting up individual resource access permissions is not required.</p>
+    /// </note>
+    pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iam_role_arn
     }
     /// Consumes the builder and constructs a [`S3Action`](crate::types::S3Action).
     /// This method will fail if any of the following fields are not set:
@@ -174,6 +245,7 @@ impl S3ActionBuilder {
             })?,
             object_key_prefix: self.object_key_prefix,
             kms_key_arn: self.kms_key_arn,
+            iam_role_arn: self.iam_role_arn,
         })
     }
 }

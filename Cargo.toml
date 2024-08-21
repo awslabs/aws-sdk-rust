@@ -1,11 +1,11 @@
 [workspace]
 resolver = "2"
 exclude = [
-    "examples/cross_service",
     "examples/test-utils",
-    "examples/webassembly",
+    "examples/cross_service",
     "examples/lambda",
     "examples/examples",
+    "examples/webassembly",
     "tests/no-default-features",
     "tests/webassembly"
 ]
@@ -118,7 +118,6 @@ members = [
     "sdk/codegurureviewer",
     "sdk/codegurusecurity",
     "sdk/codepipeline",
-    "sdk/codestar",
     "sdk/codestarconnections",
     "sdk/codestarnotifications",
     "sdk/cognitoidentity",

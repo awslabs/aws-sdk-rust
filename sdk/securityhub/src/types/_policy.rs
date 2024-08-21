@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum Policy {
-    /// <p>The Amazon Web Service that the configuration policy applies to.</p>
+    /// <p>The Amazon Web Servicesservice that the configuration policy applies to.</p>
     SecurityHub(crate::types::SecurityHubPolicy),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant

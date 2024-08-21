@@ -15,6 +15,10 @@ pub struct JobUpdate {
     /// </ul>
     /// <p>When the <code>JobMode</code> field is missing or null, <code>SCRIPT</code> is assigned as the default value.</p>
     pub job_mode: ::std::option::Option<crate::types::JobMode>,
+    /// <p>Specifies whether job run queuing is enabled for the job runs for this job.</p>
+    /// <p>A value of true means job run queuing is enabled for the job runs. If false or not populated, the job runs will not be considered for queueing.</p>
+    /// <p>If this field does not match the value set in the job run, then the value from the job run field will be used.</p>
+    pub job_run_queuing_enabled: ::std::option::Option<bool>,
     /// <p>Description of the job being defined.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>This field is reserved for future use.</p>
@@ -109,6 +113,12 @@ impl JobUpdate {
     /// <p>When the <code>JobMode</code> field is missing or null, <code>SCRIPT</code> is assigned as the default value.</p>
     pub fn job_mode(&self) -> ::std::option::Option<&crate::types::JobMode> {
         self.job_mode.as_ref()
+    }
+    /// <p>Specifies whether job run queuing is enabled for the job runs for this job.</p>
+    /// <p>A value of true means job run queuing is enabled for the job runs. If false or not populated, the job runs will not be considered for queueing.</p>
+    /// <p>If this field does not match the value set in the job run, then the value from the job run field will be used.</p>
+    pub fn job_run_queuing_enabled(&self) -> ::std::option::Option<bool> {
+        self.job_run_queuing_enabled
     }
     /// <p>Description of the job being defined.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -238,6 +248,7 @@ impl ::std::fmt::Debug for JobUpdate {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("JobUpdate");
         formatter.field("job_mode", &self.job_mode);
+        formatter.field("job_run_queuing_enabled", &self.job_run_queuing_enabled);
         formatter.field("description", &self.description);
         formatter.field("log_uri", &self.log_uri);
         formatter.field("role", &self.role);
@@ -274,6 +285,7 @@ impl JobUpdate {
 #[non_exhaustive]
 pub struct JobUpdateBuilder {
     pub(crate) job_mode: ::std::option::Option<crate::types::JobMode>,
+    pub(crate) job_run_queuing_enabled: ::std::option::Option<bool>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) log_uri: ::std::option::Option<::std::string::String>,
     pub(crate) role: ::std::option::Option<::std::string::String>,
@@ -338,6 +350,26 @@ impl JobUpdateBuilder {
     /// <p>When the <code>JobMode</code> field is missing or null, <code>SCRIPT</code> is assigned as the default value.</p>
     pub fn get_job_mode(&self) -> &::std::option::Option<crate::types::JobMode> {
         &self.job_mode
+    }
+    /// <p>Specifies whether job run queuing is enabled for the job runs for this job.</p>
+    /// <p>A value of true means job run queuing is enabled for the job runs. If false or not populated, the job runs will not be considered for queueing.</p>
+    /// <p>If this field does not match the value set in the job run, then the value from the job run field will be used.</p>
+    pub fn job_run_queuing_enabled(mut self, input: bool) -> Self {
+        self.job_run_queuing_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether job run queuing is enabled for the job runs for this job.</p>
+    /// <p>A value of true means job run queuing is enabled for the job runs. If false or not populated, the job runs will not be considered for queueing.</p>
+    /// <p>If this field does not match the value set in the job run, then the value from the job run field will be used.</p>
+    pub fn set_job_run_queuing_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.job_run_queuing_enabled = input;
+        self
+    }
+    /// <p>Specifies whether job run queuing is enabled for the job runs for this job.</p>
+    /// <p>A value of true means job run queuing is enabled for the job runs. If false or not populated, the job runs will not be considered for queueing.</p>
+    /// <p>If this field does not match the value set in the job run, then the value from the job run field will be used.</p>
+    pub fn get_job_run_queuing_enabled(&self) -> &::std::option::Option<bool> {
+        &self.job_run_queuing_enabled
     }
     /// <p>Description of the job being defined.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -789,6 +821,7 @@ impl JobUpdateBuilder {
     pub fn build(self) -> crate::types::JobUpdate {
         crate::types::JobUpdate {
             job_mode: self.job_mode,
+            job_run_queuing_enabled: self.job_run_queuing_enabled,
             description: self.description,
             log_uri: self.log_uri,
             role: self.role,
@@ -817,6 +850,7 @@ impl ::std::fmt::Debug for JobUpdateBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("JobUpdateBuilder");
         formatter.field("job_mode", &self.job_mode);
+        formatter.field("job_run_queuing_enabled", &self.job_run_queuing_enabled);
         formatter.field("description", &self.description);
         formatter.field("log_uri", &self.log_uri);
         formatter.field("role", &self.role);

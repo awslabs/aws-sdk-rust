@@ -23,7 +23,7 @@ impl crate::operation::delete_security_group::builders::DeleteSecurityGroupInput
 /// Fluent builder constructing a request to `DeleteSecurityGroup`.
 ///
 /// <p>Deletes a security group.</p>
-/// <p>If you attempt to delete a security group that is associated with an instance or network interface or is referenced by another security group, the operation fails with <code>DependencyViolation</code>.</p>
+/// <p>If you attempt to delete a security group that is associated with an instance or network interface or is referenced by another security group in the same VPC, the operation fails with <code>DependencyViolation</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteSecurityGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

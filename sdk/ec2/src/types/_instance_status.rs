@@ -18,6 +18,8 @@ pub struct InstanceStatus {
     pub instance_status: ::std::option::Option<crate::types::InstanceStatusSummary>,
     /// <p>Reports impaired functionality that stems from issues related to the systems that support an instance, such as hardware failures and network connectivity problems.</p>
     pub system_status: ::std::option::Option<crate::types::InstanceStatusSummary>,
+    /// <p>Reports impaired functionality that stems from an attached Amazon EBS volume that is unreachable and unable to complete I/O operations.</p>
+    pub attached_ebs_status: ::std::option::Option<crate::types::EbsStatusSummary>,
 }
 impl InstanceStatus {
     /// <p>The Availability Zone of the instance.</p>
@@ -50,6 +52,10 @@ impl InstanceStatus {
     pub fn system_status(&self) -> ::std::option::Option<&crate::types::InstanceStatusSummary> {
         self.system_status.as_ref()
     }
+    /// <p>Reports impaired functionality that stems from an attached Amazon EBS volume that is unreachable and unable to complete I/O operations.</p>
+    pub fn attached_ebs_status(&self) -> ::std::option::Option<&crate::types::EbsStatusSummary> {
+        self.attached_ebs_status.as_ref()
+    }
 }
 impl InstanceStatus {
     /// Creates a new builder-style object to manufacture [`InstanceStatus`](crate::types::InstanceStatus).
@@ -69,6 +75,7 @@ pub struct InstanceStatusBuilder {
     pub(crate) instance_state: ::std::option::Option<crate::types::InstanceState>,
     pub(crate) instance_status: ::std::option::Option<crate::types::InstanceStatusSummary>,
     pub(crate) system_status: ::std::option::Option<crate::types::InstanceStatusSummary>,
+    pub(crate) attached_ebs_status: ::std::option::Option<crate::types::EbsStatusSummary>,
 }
 impl InstanceStatusBuilder {
     /// <p>The Availability Zone of the instance.</p>
@@ -175,6 +182,20 @@ impl InstanceStatusBuilder {
     pub fn get_system_status(&self) -> &::std::option::Option<crate::types::InstanceStatusSummary> {
         &self.system_status
     }
+    /// <p>Reports impaired functionality that stems from an attached Amazon EBS volume that is unreachable and unable to complete I/O operations.</p>
+    pub fn attached_ebs_status(mut self, input: crate::types::EbsStatusSummary) -> Self {
+        self.attached_ebs_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Reports impaired functionality that stems from an attached Amazon EBS volume that is unreachable and unable to complete I/O operations.</p>
+    pub fn set_attached_ebs_status(mut self, input: ::std::option::Option<crate::types::EbsStatusSummary>) -> Self {
+        self.attached_ebs_status = input;
+        self
+    }
+    /// <p>Reports impaired functionality that stems from an attached Amazon EBS volume that is unreachable and unable to complete I/O operations.</p>
+    pub fn get_attached_ebs_status(&self) -> &::std::option::Option<crate::types::EbsStatusSummary> {
+        &self.attached_ebs_status
+    }
     /// Consumes the builder and constructs a [`InstanceStatus`](crate::types::InstanceStatus).
     pub fn build(self) -> crate::types::InstanceStatus {
         crate::types::InstanceStatus {
@@ -185,6 +206,7 @@ impl InstanceStatusBuilder {
             instance_state: self.instance_state,
             instance_status: self.instance_status,
             system_status: self.system_status,
+            attached_ebs_status: self.attached_ebs_status,
         }
     }
 }

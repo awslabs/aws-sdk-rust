@@ -86,6 +86,16 @@ pub fn de_instance_status(
                 builder = builder.set_system_status(var_7);
             }
             ,
+            s if s.matches("attachedEbsStatus") /* AttachedEbsStatus com.amazonaws.ec2#InstanceStatus$AttachedEbsStatus */ =>  {
+                let var_8 =
+                    Some(
+                        crate::protocol_serde::shape_ebs_status_summary::de_ebs_status_summary(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_attached_ebs_status(var_8);
+            }
+            ,
             _ => {}
         }
     }

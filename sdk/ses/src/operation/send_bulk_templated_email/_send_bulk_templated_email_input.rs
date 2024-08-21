@@ -282,6 +282,7 @@ impl SendBulkTemplatedEmailInputBuilder {
     }
     /// <p>A list of replacement values to apply to the template when replacement data is not specified in a Destination object. These values act as a default or fallback option when no other data is available.</p>
     /// <p>The template data is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
+    /// This field is required.
     pub fn default_template_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_template_data = ::std::option::Option::Some(input.into());
         self

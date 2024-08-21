@@ -24,6 +24,11 @@ pub fn ser_s3_action(
     if let Some(var_7) = &input.kms_key_arn {
         scope_6.string(var_7);
     }
+    #[allow(unused_mut)]
+    let mut scope_8 = writer.prefix("IamRoleArn");
+    if let Some(var_9) = &input.iam_role_arn {
+        scope_8.string(var_9);
+    }
     Ok(())
 }
 
@@ -36,32 +41,6 @@ pub fn de_s3_action(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("TopicArn") /* TopicArn com.amazonaws.ses#S3Action$TopicArn */ =>  {
-                let var_8 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_topic_arn(var_8);
-            }
-            ,
-            s if s.matches("BucketName") /* BucketName com.amazonaws.ses#S3Action$BucketName */ =>  {
-                let var_9 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_bucket_name(var_9);
-            }
-            ,
-            s if s.matches("ObjectKeyPrefix") /* ObjectKeyPrefix com.amazonaws.ses#S3Action$ObjectKeyPrefix */ =>  {
                 let var_10 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -71,10 +50,10 @@ pub fn de_s3_action(
                         ?
                     )
                 ;
-                builder = builder.set_object_key_prefix(var_10);
+                builder = builder.set_topic_arn(var_10);
             }
             ,
-            s if s.matches("KmsKeyArn") /* KmsKeyArn com.amazonaws.ses#S3Action$KmsKeyArn */ =>  {
+            s if s.matches("BucketName") /* BucketName com.amazonaws.ses#S3Action$BucketName */ =>  {
                 let var_11 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -84,7 +63,46 @@ pub fn de_s3_action(
                         ?
                     )
                 ;
-                builder = builder.set_kms_key_arn(var_11);
+                builder = builder.set_bucket_name(var_11);
+            }
+            ,
+            s if s.matches("ObjectKeyPrefix") /* ObjectKeyPrefix com.amazonaws.ses#S3Action$ObjectKeyPrefix */ =>  {
+                let var_12 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_object_key_prefix(var_12);
+            }
+            ,
+            s if s.matches("KmsKeyArn") /* KmsKeyArn com.amazonaws.ses#S3Action$KmsKeyArn */ =>  {
+                let var_13 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_kms_key_arn(var_13);
+            }
+            ,
+            s if s.matches("IamRoleArn") /* IamRoleArn com.amazonaws.ses#S3Action$IamRoleArn */ =>  {
+                let var_14 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_iam_role_arn(var_14);
             }
             ,
             _ => {}

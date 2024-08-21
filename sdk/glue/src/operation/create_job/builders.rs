@@ -157,6 +157,26 @@ impl CreateJobFluentBuilder {
     pub fn get_job_mode(&self) -> &::std::option::Option<crate::types::JobMode> {
         self.inner.get_job_mode()
     }
+    /// <p>Specifies whether job run queuing is enabled for the job runs for this job.</p>
+    /// <p>A value of true means job run queuing is enabled for the job runs. If false or not populated, the job runs will not be considered for queueing.</p>
+    /// <p>If this field does not match the value set in the job run, then the value from the job run field will be used.</p>
+    pub fn job_run_queuing_enabled(mut self, input: bool) -> Self {
+        self.inner = self.inner.job_run_queuing_enabled(input);
+        self
+    }
+    /// <p>Specifies whether job run queuing is enabled for the job runs for this job.</p>
+    /// <p>A value of true means job run queuing is enabled for the job runs. If false or not populated, the job runs will not be considered for queueing.</p>
+    /// <p>If this field does not match the value set in the job run, then the value from the job run field will be used.</p>
+    pub fn set_job_run_queuing_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_job_run_queuing_enabled(input);
+        self
+    }
+    /// <p>Specifies whether job run queuing is enabled for the job runs for this job.</p>
+    /// <p>A value of true means job run queuing is enabled for the job runs. If false or not populated, the job runs will not be considered for queueing.</p>
+    /// <p>If this field does not match the value set in the job run, then the value from the job run field will be used.</p>
+    pub fn get_job_run_queuing_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_job_run_queuing_enabled()
+    }
     /// <p>Description of the job being defined.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());

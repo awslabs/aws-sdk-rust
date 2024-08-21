@@ -45,52 +45,55 @@ pub fn ser_update_event_source_mapping_input_input(
         }
         array_12.finish();
     }
-    if let Some(var_14) = &input.maximum_batching_window_in_seconds {
-        object.key("MaximumBatchingWindowInSeconds").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_14).into()),
-        );
+    if let Some(var_14) = &input.kms_key_arn {
+        object.key("KMSKeyArn").string(var_14.as_str());
     }
-    if let Some(var_15) = &input.maximum_record_age_in_seconds {
-        object.key("MaximumRecordAgeInSeconds").number(
+    if let Some(var_15) = &input.maximum_batching_window_in_seconds {
+        object.key("MaximumBatchingWindowInSeconds").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_15).into()),
         );
     }
-    if let Some(var_16) = &input.maximum_retry_attempts {
-        object.key("MaximumRetryAttempts").number(
+    if let Some(var_16) = &input.maximum_record_age_in_seconds {
+        object.key("MaximumRecordAgeInSeconds").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_16).into()),
         );
     }
-    if let Some(var_17) = &input.parallelization_factor {
-        object.key("ParallelizationFactor").number(
+    if let Some(var_17) = &input.maximum_retry_attempts {
+        object.key("MaximumRetryAttempts").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_17).into()),
         );
     }
-    if let Some(var_18) = &input.scaling_config {
-        #[allow(unused_mut)]
-        let mut object_19 = object.key("ScalingConfig").start_object();
-        crate::protocol_serde::shape_scaling_config::ser_scaling_config(&mut object_19, var_18)?;
-        object_19.finish();
+    if let Some(var_18) = &input.parallelization_factor {
+        object.key("ParallelizationFactor").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_18).into()),
+        );
     }
-    if let Some(var_20) = &input.source_access_configurations {
-        let mut array_21 = object.key("SourceAccessConfigurations").start_array();
-        for item_22 in var_20 {
+    if let Some(var_19) = &input.scaling_config {
+        #[allow(unused_mut)]
+        let mut object_20 = object.key("ScalingConfig").start_object();
+        crate::protocol_serde::shape_scaling_config::ser_scaling_config(&mut object_20, var_19)?;
+        object_20.finish();
+    }
+    if let Some(var_21) = &input.source_access_configurations {
+        let mut array_22 = object.key("SourceAccessConfigurations").start_array();
+        for item_23 in var_21 {
             {
                 #[allow(unused_mut)]
-                let mut object_23 = array_21.value().start_object();
-                crate::protocol_serde::shape_source_access_configuration::ser_source_access_configuration(&mut object_23, item_22)?;
-                object_23.finish();
+                let mut object_24 = array_22.value().start_object();
+                crate::protocol_serde::shape_source_access_configuration::ser_source_access_configuration(&mut object_24, item_23)?;
+                object_24.finish();
             }
         }
-        array_21.finish();
+        array_22.finish();
     }
-    if let Some(var_24) = &input.tumbling_window_in_seconds {
+    if let Some(var_25) = &input.tumbling_window_in_seconds {
         object.key("TumblingWindowInSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_24).into()),
+            ::aws_smithy_types::Number::NegInt((*var_25).into()),
         );
     }
     Ok(())

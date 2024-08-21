@@ -1729,15 +1729,19 @@ pub use crate::types::_instance_topology::InstanceTopology;
 
 pub use crate::types::_instance_status::InstanceStatus;
 
-pub use crate::types::_instance_status_summary::InstanceStatusSummary;
+pub use crate::types::_ebs_status_summary::EbsStatusSummary;
 
 pub use crate::types::_summary_status::SummaryStatus;
 
-pub use crate::types::_instance_status_details::InstanceStatusDetails;
+pub use crate::types::_ebs_status_details::EbsStatusDetails;
 
 pub use crate::types::_status_type::StatusType;
 
 pub use crate::types::_status_name::StatusName;
+
+pub use crate::types::_instance_status_summary::InstanceStatusSummary;
+
+pub use crate::types::_instance_status_details::InstanceStatusDetails;
 
 pub use crate::types::_reservation::Reservation;
 
@@ -2640,6 +2644,10 @@ mod _ebs_nvme_support;
 mod _ebs_optimized_info;
 
 mod _ebs_optimized_support;
+
+mod _ebs_status_details;
+
+mod _ebs_status_summary;
 
 mod _ec2_instance_connect_endpoint;
 

@@ -1159,6 +1159,10 @@ pub use crate::types::_instance_topology::InstanceTopologyBuilder;
 
 pub use crate::types::_instance_status::InstanceStatusBuilder;
 
+pub use crate::types::_ebs_status_summary::EbsStatusSummaryBuilder;
+
+pub use crate::types::_ebs_status_details::EbsStatusDetailsBuilder;
+
 pub use crate::types::_instance_status_summary::InstanceStatusSummaryBuilder;
 
 pub use crate::types::_instance_status_details::InstanceStatusDetailsBuilder;

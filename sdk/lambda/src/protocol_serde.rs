@@ -353,6 +353,8 @@ pub(crate) mod shape_file_system_config_list;
 
 pub(crate) mod shape_filter_criteria;
 
+pub(crate) mod shape_filter_criteria_error;
+
 pub(crate) mod shape_function_arn_list;
 
 pub(crate) mod shape_function_code;

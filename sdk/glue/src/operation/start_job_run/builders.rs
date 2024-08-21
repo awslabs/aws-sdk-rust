@@ -122,6 +122,23 @@ impl StartJobRunFluentBuilder {
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_job_name()
     }
+    /// <p>Specifies whether job run queuing is enabled for the job run.</p>
+    /// <p>A value of true means job run queuing is enabled for the job run. If false or not populated, the job run will not be considered for queueing.</p>
+    pub fn job_run_queuing_enabled(mut self, input: bool) -> Self {
+        self.inner = self.inner.job_run_queuing_enabled(input);
+        self
+    }
+    /// <p>Specifies whether job run queuing is enabled for the job run.</p>
+    /// <p>A value of true means job run queuing is enabled for the job run. If false or not populated, the job run will not be considered for queueing.</p>
+    pub fn set_job_run_queuing_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_job_run_queuing_enabled(input);
+        self
+    }
+    /// <p>Specifies whether job run queuing is enabled for the job run.</p>
+    /// <p>A value of true means job run queuing is enabled for the job run. If false or not populated, the job run will not be considered for queueing.</p>
+    pub fn get_job_run_queuing_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_job_run_queuing_enabled()
+    }
     /// <p>The ID of a previous <code>JobRun</code> to retry.</p>
     pub fn job_run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_run_id(input.into());

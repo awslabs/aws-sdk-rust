@@ -25,6 +25,9 @@ pub struct JobRun {
     /// </ul>
     /// <p>When the <code>JobMode</code> field is missing or null, <code>SCRIPT</code> is assigned as the default value.</p>
     pub job_mode: ::std::option::Option<crate::types::JobMode>,
+    /// <p>Specifies whether job run queuing is enabled for the job run.</p>
+    /// <p>A value of true means job run queuing is enabled for the job run. If false or not populated, the job run will not be considered for queueing.</p>
+    pub job_run_queuing_enabled: ::std::option::Option<bool>,
     /// <p>The date and time at which this job run was started.</p>
     pub started_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time that this job run was modified.</p>
@@ -104,6 +107,9 @@ pub struct JobRun {
     pub maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>The name of an Glue usage profile associated with the job run.</p>
     pub profile_name: ::std::option::Option<::std::string::String>,
+    /// <p>This field holds details that pertain to the state of a job run. The field is nullable.</p>
+    /// <p>For example, when a job run is in a WAITING state as a result of job run queuing, the field has the reason why the job run is in that state.</p>
+    pub state_detail: ::std::option::Option<::std::string::String>,
 }
 impl JobRun {
     /// <p>The ID of this job run.</p>
@@ -138,6 +144,11 @@ impl JobRun {
     /// <p>When the <code>JobMode</code> field is missing or null, <code>SCRIPT</code> is assigned as the default value.</p>
     pub fn job_mode(&self) -> ::std::option::Option<&crate::types::JobMode> {
         self.job_mode.as_ref()
+    }
+    /// <p>Specifies whether job run queuing is enabled for the job run.</p>
+    /// <p>A value of true means job run queuing is enabled for the job run. If false or not populated, the job run will not be considered for queueing.</p>
+    pub fn job_run_queuing_enabled(&self) -> ::std::option::Option<bool> {
+        self.job_run_queuing_enabled
     }
     /// <p>The date and time at which this job run was started.</p>
     pub fn started_on(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -262,6 +273,11 @@ impl JobRun {
     pub fn profile_name(&self) -> ::std::option::Option<&str> {
         self.profile_name.as_deref()
     }
+    /// <p>This field holds details that pertain to the state of a job run. The field is nullable.</p>
+    /// <p>For example, when a job run is in a WAITING state as a result of job run queuing, the field has the reason why the job run is in that state.</p>
+    pub fn state_detail(&self) -> ::std::option::Option<&str> {
+        self.state_detail.as_deref()
+    }
 }
 impl JobRun {
     /// Creates a new builder-style object to manufacture [`JobRun`](crate::types::JobRun).
@@ -280,6 +296,7 @@ pub struct JobRunBuilder {
     pub(crate) trigger_name: ::std::option::Option<::std::string::String>,
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
     pub(crate) job_mode: ::std::option::Option<crate::types::JobMode>,
+    pub(crate) job_run_queuing_enabled: ::std::option::Option<bool>,
     pub(crate) started_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) completed_on: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -301,6 +318,7 @@ pub struct JobRunBuilder {
     pub(crate) execution_class: ::std::option::Option<crate::types::ExecutionClass>,
     pub(crate) maintenance_window: ::std::option::Option<::std::string::String>,
     pub(crate) profile_name: ::std::option::Option<::std::string::String>,
+    pub(crate) state_detail: ::std::option::Option<::std::string::String>,
 }
 impl JobRunBuilder {
     /// <p>The ID of this job run.</p>
@@ -413,6 +431,23 @@ impl JobRunBuilder {
     /// <p>When the <code>JobMode</code> field is missing or null, <code>SCRIPT</code> is assigned as the default value.</p>
     pub fn get_job_mode(&self) -> &::std::option::Option<crate::types::JobMode> {
         &self.job_mode
+    }
+    /// <p>Specifies whether job run queuing is enabled for the job run.</p>
+    /// <p>A value of true means job run queuing is enabled for the job run. If false or not populated, the job run will not be considered for queueing.</p>
+    pub fn job_run_queuing_enabled(mut self, input: bool) -> Self {
+        self.job_run_queuing_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether job run queuing is enabled for the job run.</p>
+    /// <p>A value of true means job run queuing is enabled for the job run. If false or not populated, the job run will not be considered for queueing.</p>
+    pub fn set_job_run_queuing_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.job_run_queuing_enabled = input;
+        self
+    }
+    /// <p>Specifies whether job run queuing is enabled for the job run.</p>
+    /// <p>A value of true means job run queuing is enabled for the job run. If false or not populated, the job run will not be considered for queueing.</p>
+    pub fn get_job_run_queuing_enabled(&self) -> &::std::option::Option<bool> {
+        &self.job_run_queuing_enabled
     }
     /// <p>The date and time at which this job run was started.</p>
     pub fn started_on(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -831,6 +866,23 @@ impl JobRunBuilder {
     pub fn get_profile_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.profile_name
     }
+    /// <p>This field holds details that pertain to the state of a job run. The field is nullable.</p>
+    /// <p>For example, when a job run is in a WAITING state as a result of job run queuing, the field has the reason why the job run is in that state.</p>
+    pub fn state_detail(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.state_detail = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>This field holds details that pertain to the state of a job run. The field is nullable.</p>
+    /// <p>For example, when a job run is in a WAITING state as a result of job run queuing, the field has the reason why the job run is in that state.</p>
+    pub fn set_state_detail(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.state_detail = input;
+        self
+    }
+    /// <p>This field holds details that pertain to the state of a job run. The field is nullable.</p>
+    /// <p>For example, when a job run is in a WAITING state as a result of job run queuing, the field has the reason why the job run is in that state.</p>
+    pub fn get_state_detail(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_detail
+    }
     /// Consumes the builder and constructs a [`JobRun`](crate::types::JobRun).
     pub fn build(self) -> crate::types::JobRun {
         crate::types::JobRun {
@@ -840,6 +892,7 @@ impl JobRunBuilder {
             trigger_name: self.trigger_name,
             job_name: self.job_name,
             job_mode: self.job_mode,
+            job_run_queuing_enabled: self.job_run_queuing_enabled,
             started_on: self.started_on,
             last_modified_on: self.last_modified_on,
             completed_on: self.completed_on,
@@ -861,6 +914,7 @@ impl JobRunBuilder {
             execution_class: self.execution_class,
             maintenance_window: self.maintenance_window,
             profile_name: self.profile_name,
+            state_detail: self.state_detail,
         }
     }
 }

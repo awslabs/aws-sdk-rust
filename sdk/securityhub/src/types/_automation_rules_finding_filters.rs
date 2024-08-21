@@ -110,7 +110,7 @@ pub struct AutomationRulesFindingFilters {
     /// <p>The type of resource that the finding pertains to.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub resource_type: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    /// <p>The identifier for the given resource type. For Amazon Web Services resources that are identified by Amazon Resource Names (ARNs), this is the ARN. For Amazon Web Services resources that lack ARNs, this is the identifier as defined by the Amazon Web Service that created the resource. For non-Amazon Web Services resources, this is a unique identifier that is associated with the resource.</p>
+    /// <p>The identifier for the given resource type. For Amazon Web Services resources that are identified by Amazon Resource Names (ARNs), this is the ARN. For Amazon Web Services resources that lack ARNs, this is the identifier as defined by the Amazon Web Servicesservice that created the resource. For non-Amazon Web Services resources, this is a unique identifier that is associated with the resource.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 100 items.</p>
     pub resource_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The partition in which the resource that the finding pertains to is located. A partition is a group of Amazon Web Services Regions. Each Amazon Web Services account is scoped to one partition.</p>
@@ -363,7 +363,7 @@ impl AutomationRulesFindingFilters {
     pub fn resource_type(&self) -> &[crate::types::StringFilter] {
         self.resource_type.as_deref().unwrap_or_default()
     }
-    /// <p>The identifier for the given resource type. For Amazon Web Services resources that are identified by Amazon Resource Names (ARNs), this is the ARN. For Amazon Web Services resources that lack ARNs, this is the identifier as defined by the Amazon Web Service that created the resource. For non-Amazon Web Services resources, this is a unique identifier that is associated with the resource.</p>
+    /// <p>The identifier for the given resource type. For Amazon Web Services resources that are identified by Amazon Resource Names (ARNs), this is the ARN. For Amazon Web Services resources that lack ARNs, this is the identifier as defined by the Amazon Web Servicesservice that created the resource. For non-Amazon Web Services resources, this is a unique identifier that is associated with the resource.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 100 items.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_id.is_none()`.
@@ -1142,7 +1142,7 @@ impl AutomationRulesFindingFiltersBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_id`](Self::set_resource_id).
     ///
-    /// <p>The identifier for the given resource type. For Amazon Web Services resources that are identified by Amazon Resource Names (ARNs), this is the ARN. For Amazon Web Services resources that lack ARNs, this is the identifier as defined by the Amazon Web Service that created the resource. For non-Amazon Web Services resources, this is a unique identifier that is associated with the resource.</p>
+    /// <p>The identifier for the given resource type. For Amazon Web Services resources that are identified by Amazon Resource Names (ARNs), this is the ARN. For Amazon Web Services resources that lack ARNs, this is the identifier as defined by the Amazon Web Servicesservice that created the resource. For non-Amazon Web Services resources, this is a unique identifier that is associated with the resource.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 100 items.</p>
     pub fn resource_id(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.resource_id.unwrap_or_default();
@@ -1150,13 +1150,13 @@ impl AutomationRulesFindingFiltersBuilder {
         self.resource_id = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The identifier for the given resource type. For Amazon Web Services resources that are identified by Amazon Resource Names (ARNs), this is the ARN. For Amazon Web Services resources that lack ARNs, this is the identifier as defined by the Amazon Web Service that created the resource. For non-Amazon Web Services resources, this is a unique identifier that is associated with the resource.</p>
+    /// <p>The identifier for the given resource type. For Amazon Web Services resources that are identified by Amazon Resource Names (ARNs), this is the ARN. For Amazon Web Services resources that lack ARNs, this is the identifier as defined by the Amazon Web Servicesservice that created the resource. For non-Amazon Web Services resources, this is a unique identifier that is associated with the resource.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 100 items.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.resource_id = input;
         self
     }
-    /// <p>The identifier for the given resource type. For Amazon Web Services resources that are identified by Amazon Resource Names (ARNs), this is the ARN. For Amazon Web Services resources that lack ARNs, this is the identifier as defined by the Amazon Web Service that created the resource. For non-Amazon Web Services resources, this is a unique identifier that is associated with the resource.</p>
+    /// <p>The identifier for the given resource type. For Amazon Web Services resources that are identified by Amazon Resource Names (ARNs), this is the ARN. For Amazon Web Services resources that lack ARNs, this is the identifier as defined by the Amazon Web Servicesservice that created the resource. For non-Amazon Web Services resources, this is a unique identifier that is associated with the resource.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 100 items.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.resource_id

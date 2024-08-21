@@ -77,6 +77,8 @@ pub use crate::types::_environment::Environment;
 
 pub use crate::types::_vpc_config::VpcConfig;
 
+pub use crate::types::_filter_criteria_error::FilterCriteriaError;
+
 pub use crate::types::_document_db_event_source_config::DocumentDbEventSourceConfig;
 
 pub use crate::types::_full_document::FullDocument;
@@ -214,6 +216,8 @@ mod _file_system_config;
 mod _filter;
 
 mod _filter_criteria;
+
+mod _filter_criteria_error;
 
 mod _full_document;
 

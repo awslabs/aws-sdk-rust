@@ -40,7 +40,6 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS CodeConnections | [aws-sdk-codeconnections](https://crates.io/crates/aws-sdk-codeconnections) ([docs](https://docs.rs/aws-sdk-codeconnections)) |
 | AWS CodeDeploy | [aws-sdk-codedeploy](https://crates.io/crates/aws-sdk-codedeploy) ([docs](https://docs.rs/aws-sdk-codedeploy)) |
 | AWS CodePipeline | [aws-sdk-codepipeline](https://crates.io/crates/aws-sdk-codepipeline) ([docs](https://docs.rs/aws-sdk-codepipeline)) |
-| AWS CodeStar | [aws-sdk-codestar](https://crates.io/crates/aws-sdk-codestar) ([docs](https://docs.rs/aws-sdk-codestar)) |
 | AWS CodeStar Notifications | [aws-sdk-codestarnotifications](https://crates.io/crates/aws-sdk-codestarnotifications) ([docs](https://docs.rs/aws-sdk-codestarnotifications)) |
 | AWS CodeStar connections | [aws-sdk-codestarconnections](https://crates.io/crates/aws-sdk-codestarconnections) ([docs](https://docs.rs/aws-sdk-codestarconnections)) |
 | AWS Comprehend Medical | [aws-sdk-comprehendmedical](https://crates.io/crates/aws-sdk-comprehendmedical) ([docs](https://docs.rs/aws-sdk-comprehendmedical)) |

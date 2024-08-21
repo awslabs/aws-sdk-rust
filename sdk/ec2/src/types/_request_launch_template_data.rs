@@ -18,7 +18,7 @@ pub struct RequestLaunchTemplateData {
     pub block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateBlockDeviceMappingRequest>>,
     /// <p>The network interfaces for the instance.</p>
     pub network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateInstanceNetworkInterfaceSpecificationRequest>>,
-    /// <p>The ID of the AMI in the format <code>ami-17characters00000</code>.</p>
+    /// <p>The ID of the AMI in the format <code>ami-0ac394d6a3example</code>.</p>
     /// <p>Alternatively, you can specify a Systems Manager parameter, using one of the following formats. The Systems Manager parameter will resolve to an AMI ID on launch.</p>
     /// <p>To reference a public parameter:</p>
     /// <ul>
@@ -159,7 +159,7 @@ impl RequestLaunchTemplateData {
     pub fn network_interfaces(&self) -> &[crate::types::LaunchTemplateInstanceNetworkInterfaceSpecificationRequest] {
         self.network_interfaces.as_deref().unwrap_or_default()
     }
-    /// <p>The ID of the AMI in the format <code>ami-17characters00000</code>.</p>
+    /// <p>The ID of the AMI in the format <code>ami-0ac394d6a3example</code>.</p>
     /// <p>Alternatively, you can specify a Systems Manager parameter, using one of the following formats. The Systems Manager parameter will resolve to an AMI ID on launch.</p>
     /// <p>To reference a public parameter:</p>
     /// <ul>
@@ -517,7 +517,7 @@ impl RequestLaunchTemplateDataBuilder {
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateInstanceNetworkInterfaceSpecificationRequest>> {
         &self.network_interfaces
     }
-    /// <p>The ID of the AMI in the format <code>ami-17characters00000</code>.</p>
+    /// <p>The ID of the AMI in the format <code>ami-0ac394d6a3example</code>.</p>
     /// <p>Alternatively, you can specify a Systems Manager parameter, using one of the following formats. The Systems Manager parameter will resolve to an AMI ID on launch.</p>
     /// <p>To reference a public parameter:</p>
     /// <ul>
@@ -555,7 +555,7 @@ impl RequestLaunchTemplateDataBuilder {
         self.image_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the AMI in the format <code>ami-17characters00000</code>.</p>
+    /// <p>The ID of the AMI in the format <code>ami-0ac394d6a3example</code>.</p>
     /// <p>Alternatively, you can specify a Systems Manager parameter, using one of the following formats. The Systems Manager parameter will resolve to an AMI ID on launch.</p>
     /// <p>To reference a public parameter:</p>
     /// <ul>
@@ -593,7 +593,7 @@ impl RequestLaunchTemplateDataBuilder {
         self.image_id = input;
         self
     }
-    /// <p>The ID of the AMI in the format <code>ami-17characters00000</code>.</p>
+    /// <p>The ID of the AMI in the format <code>ami-0ac394d6a3example</code>.</p>
     /// <p>Alternatively, you can specify a Systems Manager parameter, using one of the following formats. The Systems Manager parameter will resolve to an AMI ID on launch.</p>
     /// <p>To reference a public parameter:</p>
     /// <ul>

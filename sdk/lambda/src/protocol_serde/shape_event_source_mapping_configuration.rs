@@ -170,6 +170,17 @@ where
                                 crate::protocol_serde::shape_document_db_event_source_config::de_document_db_event_source_config(tokens)?,
                             );
                         }
+                        "KMSKeyArn" => {
+                            builder = builder.set_kms_key_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "FilterCriteriaError" => {
+                            builder = builder
+                                .set_filter_criteria_error(crate::protocol_serde::shape_filter_criteria_error::de_filter_criteria_error(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

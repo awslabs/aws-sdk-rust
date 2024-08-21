@@ -28,7 +28,18 @@ pub struct ModifyTransitGatewayOptions {
     /// <p>The ID of the default propagation route table.</p>
     pub propagation_default_route_table_id: ::std::option::Option<::std::string::String>,
     /// <p>A private Autonomous System Number (ASN) for the Amazon side of a BGP session. The range is 64512 to 65534 for 16-bit ASNs and 4200000000 to 4294967294 for 32-bit ASNs.</p>
-    /// <p>The modify ASN operation is not allowed on a transit gateway with active BGP sessions. You must first delete all transit gateway attachments that have BGP configured prior to modifying the ASN on the transit gateway.</p>
+    /// <p>The modify ASN operation is not allowed on a transit gateway if it has the following attachments:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Dynamic VPN</p></li>
+    /// <li>
+    /// <p>Static VPN</p></li>
+    /// <li>
+    /// <p>Direct Connect Gateway</p></li>
+    /// <li>
+    /// <p>Connect</p></li>
+    /// </ul>
+    /// <p>You must first delete all transit gateway attachments configured prior to modifying the ASN on the transit gateway.</p>
     pub amazon_side_asn: ::std::option::Option<i64>,
 }
 impl ModifyTransitGatewayOptions {
@@ -80,7 +91,18 @@ impl ModifyTransitGatewayOptions {
         self.propagation_default_route_table_id.as_deref()
     }
     /// <p>A private Autonomous System Number (ASN) for the Amazon side of a BGP session. The range is 64512 to 65534 for 16-bit ASNs and 4200000000 to 4294967294 for 32-bit ASNs.</p>
-    /// <p>The modify ASN operation is not allowed on a transit gateway with active BGP sessions. You must first delete all transit gateway attachments that have BGP configured prior to modifying the ASN on the transit gateway.</p>
+    /// <p>The modify ASN operation is not allowed on a transit gateway if it has the following attachments:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Dynamic VPN</p></li>
+    /// <li>
+    /// <p>Static VPN</p></li>
+    /// <li>
+    /// <p>Direct Connect Gateway</p></li>
+    /// <li>
+    /// <p>Connect</p></li>
+    /// </ul>
+    /// <p>You must first delete all transit gateway attachments configured prior to modifying the ASN on the transit gateway.</p>
     pub fn amazon_side_asn(&self) -> ::std::option::Option<i64> {
         self.amazon_side_asn
     }
@@ -274,19 +296,52 @@ impl ModifyTransitGatewayOptionsBuilder {
         &self.propagation_default_route_table_id
     }
     /// <p>A private Autonomous System Number (ASN) for the Amazon side of a BGP session. The range is 64512 to 65534 for 16-bit ASNs and 4200000000 to 4294967294 for 32-bit ASNs.</p>
-    /// <p>The modify ASN operation is not allowed on a transit gateway with active BGP sessions. You must first delete all transit gateway attachments that have BGP configured prior to modifying the ASN on the transit gateway.</p>
+    /// <p>The modify ASN operation is not allowed on a transit gateway if it has the following attachments:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Dynamic VPN</p></li>
+    /// <li>
+    /// <p>Static VPN</p></li>
+    /// <li>
+    /// <p>Direct Connect Gateway</p></li>
+    /// <li>
+    /// <p>Connect</p></li>
+    /// </ul>
+    /// <p>You must first delete all transit gateway attachments configured prior to modifying the ASN on the transit gateway.</p>
     pub fn amazon_side_asn(mut self, input: i64) -> Self {
         self.amazon_side_asn = ::std::option::Option::Some(input);
         self
     }
     /// <p>A private Autonomous System Number (ASN) for the Amazon side of a BGP session. The range is 64512 to 65534 for 16-bit ASNs and 4200000000 to 4294967294 for 32-bit ASNs.</p>
-    /// <p>The modify ASN operation is not allowed on a transit gateway with active BGP sessions. You must first delete all transit gateway attachments that have BGP configured prior to modifying the ASN on the transit gateway.</p>
+    /// <p>The modify ASN operation is not allowed on a transit gateway if it has the following attachments:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Dynamic VPN</p></li>
+    /// <li>
+    /// <p>Static VPN</p></li>
+    /// <li>
+    /// <p>Direct Connect Gateway</p></li>
+    /// <li>
+    /// <p>Connect</p></li>
+    /// </ul>
+    /// <p>You must first delete all transit gateway attachments configured prior to modifying the ASN on the transit gateway.</p>
     pub fn set_amazon_side_asn(mut self, input: ::std::option::Option<i64>) -> Self {
         self.amazon_side_asn = input;
         self
     }
     /// <p>A private Autonomous System Number (ASN) for the Amazon side of a BGP session. The range is 64512 to 65534 for 16-bit ASNs and 4200000000 to 4294967294 for 32-bit ASNs.</p>
-    /// <p>The modify ASN operation is not allowed on a transit gateway with active BGP sessions. You must first delete all transit gateway attachments that have BGP configured prior to modifying the ASN on the transit gateway.</p>
+    /// <p>The modify ASN operation is not allowed on a transit gateway if it has the following attachments:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Dynamic VPN</p></li>
+    /// <li>
+    /// <p>Static VPN</p></li>
+    /// <li>
+    /// <p>Direct Connect Gateway</p></li>
+    /// <li>
+    /// <p>Connect</p></li>
+    /// </ul>
+    /// <p>You must first delete all transit gateway attachments configured prior to modifying the ASN on the transit gateway.</p>
     pub fn get_amazon_side_asn(&self) -> &::std::option::Option<i64> {
         &self.amazon_side_asn
     }

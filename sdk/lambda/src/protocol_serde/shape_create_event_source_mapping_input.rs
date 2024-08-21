@@ -54,90 +54,93 @@ pub fn ser_create_event_source_mapping_input_input(
         }
         array_15.finish();
     }
-    if let Some(var_17) = &input.maximum_batching_window_in_seconds {
-        object.key("MaximumBatchingWindowInSeconds").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_17).into()),
-        );
+    if let Some(var_17) = &input.kms_key_arn {
+        object.key("KMSKeyArn").string(var_17.as_str());
     }
-    if let Some(var_18) = &input.maximum_record_age_in_seconds {
-        object.key("MaximumRecordAgeInSeconds").number(
+    if let Some(var_18) = &input.maximum_batching_window_in_seconds {
+        object.key("MaximumBatchingWindowInSeconds").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_18).into()),
         );
     }
-    if let Some(var_19) = &input.maximum_retry_attempts {
-        object.key("MaximumRetryAttempts").number(
+    if let Some(var_19) = &input.maximum_record_age_in_seconds {
+        object.key("MaximumRecordAgeInSeconds").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_19).into()),
         );
     }
-    if let Some(var_20) = &input.parallelization_factor {
-        object.key("ParallelizationFactor").number(
+    if let Some(var_20) = &input.maximum_retry_attempts {
+        object.key("MaximumRetryAttempts").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_20).into()),
         );
     }
-    if let Some(var_21) = &input.queues {
-        let mut array_22 = object.key("Queues").start_array();
-        for item_23 in var_21 {
+    if let Some(var_21) = &input.parallelization_factor {
+        object.key("ParallelizationFactor").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_21).into()),
+        );
+    }
+    if let Some(var_22) = &input.queues {
+        let mut array_23 = object.key("Queues").start_array();
+        for item_24 in var_22 {
             {
-                array_22.value().string(item_23.as_str());
+                array_23.value().string(item_24.as_str());
             }
         }
-        array_22.finish();
+        array_23.finish();
     }
-    if let Some(var_24) = &input.scaling_config {
+    if let Some(var_25) = &input.scaling_config {
         #[allow(unused_mut)]
-        let mut object_25 = object.key("ScalingConfig").start_object();
-        crate::protocol_serde::shape_scaling_config::ser_scaling_config(&mut object_25, var_24)?;
-        object_25.finish();
+        let mut object_26 = object.key("ScalingConfig").start_object();
+        crate::protocol_serde::shape_scaling_config::ser_scaling_config(&mut object_26, var_25)?;
+        object_26.finish();
     }
-    if let Some(var_26) = &input.self_managed_event_source {
+    if let Some(var_27) = &input.self_managed_event_source {
         #[allow(unused_mut)]
-        let mut object_27 = object.key("SelfManagedEventSource").start_object();
-        crate::protocol_serde::shape_self_managed_event_source::ser_self_managed_event_source(&mut object_27, var_26)?;
-        object_27.finish();
+        let mut object_28 = object.key("SelfManagedEventSource").start_object();
+        crate::protocol_serde::shape_self_managed_event_source::ser_self_managed_event_source(&mut object_28, var_27)?;
+        object_28.finish();
     }
-    if let Some(var_28) = &input.self_managed_kafka_event_source_config {
+    if let Some(var_29) = &input.self_managed_kafka_event_source_config {
         #[allow(unused_mut)]
-        let mut object_29 = object.key("SelfManagedKafkaEventSourceConfig").start_object();
-        crate::protocol_serde::shape_self_managed_kafka_event_source_config::ser_self_managed_kafka_event_source_config(&mut object_29, var_28)?;
-        object_29.finish();
+        let mut object_30 = object.key("SelfManagedKafkaEventSourceConfig").start_object();
+        crate::protocol_serde::shape_self_managed_kafka_event_source_config::ser_self_managed_kafka_event_source_config(&mut object_30, var_29)?;
+        object_30.finish();
     }
-    if let Some(var_30) = &input.source_access_configurations {
-        let mut array_31 = object.key("SourceAccessConfigurations").start_array();
-        for item_32 in var_30 {
+    if let Some(var_31) = &input.source_access_configurations {
+        let mut array_32 = object.key("SourceAccessConfigurations").start_array();
+        for item_33 in var_31 {
             {
                 #[allow(unused_mut)]
-                let mut object_33 = array_31.value().start_object();
-                crate::protocol_serde::shape_source_access_configuration::ser_source_access_configuration(&mut object_33, item_32)?;
-                object_33.finish();
+                let mut object_34 = array_32.value().start_object();
+                crate::protocol_serde::shape_source_access_configuration::ser_source_access_configuration(&mut object_34, item_33)?;
+                object_34.finish();
             }
         }
-        array_31.finish();
+        array_32.finish();
     }
-    if let Some(var_34) = &input.starting_position {
-        object.key("StartingPosition").string(var_34.as_str());
+    if let Some(var_35) = &input.starting_position {
+        object.key("StartingPosition").string(var_35.as_str());
     }
-    if let Some(var_35) = &input.starting_position_timestamp {
+    if let Some(var_36) = &input.starting_position_timestamp {
         object
             .key("StartingPositionTimestamp")
-            .date_time(var_35, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_36, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_36) = &input.topics {
-        let mut array_37 = object.key("Topics").start_array();
-        for item_38 in var_36 {
+    if let Some(var_37) = &input.topics {
+        let mut array_38 = object.key("Topics").start_array();
+        for item_39 in var_37 {
             {
-                array_37.value().string(item_38.as_str());
+                array_38.value().string(item_39.as_str());
             }
         }
-        array_37.finish();
+        array_38.finish();
     }
-    if let Some(var_39) = &input.tumbling_window_in_seconds {
+    if let Some(var_40) = &input.tumbling_window_in_seconds {
         object.key("TumblingWindowInSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_39).into()),
+            ::aws_smithy_types::Number::NegInt((*var_40).into()),
         );
     }
     Ok(())
