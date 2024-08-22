@@ -24,6 +24,20 @@ where
                         "severityCounts" => {
                             builder = builder.set_severity_counts(crate::protocol_serde::shape_severity_counts::de_severity_counts(tokens)?);
                         }
+                        "exploitAvailableCount" => {
+                            builder = builder.set_exploit_available_count(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i64::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "fixAvailableCount" => {
+                            builder = builder.set_fix_available_count(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i64::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

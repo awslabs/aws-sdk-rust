@@ -17,6 +17,8 @@
 ///     ErrorCode::AlreadyEnabled => { /* ... */ },
 ///     ErrorCode::DisableInProgress => { /* ... */ },
 ///     ErrorCode::DisassociateAllMembers => { /* ... */ },
+///     ErrorCode::Ec2SsmAssociationVersionLimitExceeded => { /* ... */ },
+///     ErrorCode::Ec2SsmResourceDataSyncLimitExceeded => { /* ... */ },
 ///     ErrorCode::EnableInProgress => { /* ... */ },
 ///     ErrorCode::EventbridgeThrottled => { /* ... */ },
 ///     ErrorCode::EventbridgeUnavailable => { /* ... */ },
@@ -64,6 +66,10 @@ pub enum ErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     DisassociateAllMembers,
     #[allow(missing_docs)] // documentation missing in model
+    Ec2SsmAssociationVersionLimitExceeded,
+    #[allow(missing_docs)] // documentation missing in model
+    Ec2SsmResourceDataSyncLimitExceeded,
+    #[allow(missing_docs)] // documentation missing in model
     EnableInProgress,
     #[allow(missing_docs)] // documentation missing in model
     EventbridgeThrottled,
@@ -93,6 +99,8 @@ impl ::std::convert::From<&str> for ErrorCode {
             "ALREADY_ENABLED" => ErrorCode::AlreadyEnabled,
             "DISABLE_IN_PROGRESS" => ErrorCode::DisableInProgress,
             "DISASSOCIATE_ALL_MEMBERS" => ErrorCode::DisassociateAllMembers,
+            "EC2_SSM_ASSOCIATION_VERSION_LIMIT_EXCEEDED" => ErrorCode::Ec2SsmAssociationVersionLimitExceeded,
+            "EC2_SSM_RESOURCE_DATA_SYNC_LIMIT_EXCEEDED" => ErrorCode::Ec2SsmResourceDataSyncLimitExceeded,
             "ENABLE_IN_PROGRESS" => ErrorCode::EnableInProgress,
             "EVENTBRIDGE_THROTTLED" => ErrorCode::EventbridgeThrottled,
             "EVENTBRIDGE_UNAVAILABLE" => ErrorCode::EventbridgeUnavailable,
@@ -122,6 +130,8 @@ impl ErrorCode {
             ErrorCode::AlreadyEnabled => "ALREADY_ENABLED",
             ErrorCode::DisableInProgress => "DISABLE_IN_PROGRESS",
             ErrorCode::DisassociateAllMembers => "DISASSOCIATE_ALL_MEMBERS",
+            ErrorCode::Ec2SsmAssociationVersionLimitExceeded => "EC2_SSM_ASSOCIATION_VERSION_LIMIT_EXCEEDED",
+            ErrorCode::Ec2SsmResourceDataSyncLimitExceeded => "EC2_SSM_RESOURCE_DATA_SYNC_LIMIT_EXCEEDED",
             ErrorCode::EnableInProgress => "ENABLE_IN_PROGRESS",
             ErrorCode::EventbridgeThrottled => "EVENTBRIDGE_THROTTLED",
             ErrorCode::EventbridgeUnavailable => "EVENTBRIDGE_UNAVAILABLE",
@@ -142,6 +152,8 @@ impl ErrorCode {
             "ALREADY_ENABLED",
             "DISABLE_IN_PROGRESS",
             "DISASSOCIATE_ALL_MEMBERS",
+            "EC2_SSM_ASSOCIATION_VERSION_LIMIT_EXCEEDED",
+            "EC2_SSM_RESOURCE_DATA_SYNC_LIMIT_EXCEEDED",
             "ENABLE_IN_PROGRESS",
             "EVENTBRIDGE_THROTTLED",
             "EVENTBRIDGE_UNAVAILABLE",
@@ -179,6 +191,8 @@ impl ::std::fmt::Display for ErrorCode {
             ErrorCode::AlreadyEnabled => write!(f, "ALREADY_ENABLED"),
             ErrorCode::DisableInProgress => write!(f, "DISABLE_IN_PROGRESS"),
             ErrorCode::DisassociateAllMembers => write!(f, "DISASSOCIATE_ALL_MEMBERS"),
+            ErrorCode::Ec2SsmAssociationVersionLimitExceeded => write!(f, "EC2_SSM_ASSOCIATION_VERSION_LIMIT_EXCEEDED"),
+            ErrorCode::Ec2SsmResourceDataSyncLimitExceeded => write!(f, "EC2_SSM_RESOURCE_DATA_SYNC_LIMIT_EXCEEDED"),
             ErrorCode::EnableInProgress => write!(f, "ENABLE_IN_PROGRESS"),
             ErrorCode::EventbridgeThrottled => write!(f, "EVENTBRIDGE_THROTTLED"),
             ErrorCode::EventbridgeUnavailable => write!(f, "EVENTBRIDGE_UNAVAILABLE"),

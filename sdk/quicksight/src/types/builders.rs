@@ -87,6 +87,8 @@ pub use crate::types::_validation_strategy::ValidationStrategyBuilder;
 
 pub use crate::types::_template_version_definition::TemplateVersionDefinitionBuilder;
 
+pub use crate::types::_query_execution_options::QueryExecutionOptionsBuilder;
+
 pub use crate::types::_asset_options::AssetOptionsBuilder;
 
 pub use crate::types::_analysis_defaults::AnalysisDefaultsBuilder;
@@ -1517,6 +1519,8 @@ pub use crate::types::_registered_user_quick_sight_console_embedding_configurati
 
 pub use crate::types::_registered_user_console_feature_configurations::RegisteredUserConsoleFeatureConfigurationsBuilder;
 
+pub use crate::types::_shared_view_configurations::SharedViewConfigurationsBuilder;
+
 pub use crate::types::_state_persistence_configurations::StatePersistenceConfigurationsBuilder;
 
 pub use crate::types::_registered_user_dashboard_embedding_configuration::RegisteredUserDashboardEmbeddingConfigurationBuilder;
@@ -1534,6 +1538,8 @@ pub use crate::types::_anonymous_user_q_search_bar_embedding_configuration::Anon
 pub use crate::types::_anonymous_user_dashboard_visual_embedding_configuration::AnonymousUserDashboardVisualEmbeddingConfigurationBuilder;
 
 pub use crate::types::_anonymous_user_dashboard_embedding_configuration::AnonymousUserDashboardEmbeddingConfigurationBuilder;
+
+pub use crate::types::_anonymous_user_dashboard_feature_configurations::AnonymousUserDashboardFeatureConfigurationsBuilder;
 
 pub use crate::types::_vpc_connection::VpcConnectionBuilder;
 

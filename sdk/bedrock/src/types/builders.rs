@@ -33,6 +33,12 @@ pub use crate::types::_model_invocation_job_s3_output_data_config::ModelInvocati
 
 pub use crate::types::_model_invocation_job_s3_input_data_config::ModelInvocationJobS3InputDataConfigBuilder;
 
+pub use crate::types::_model_import_job_summary::ModelImportJobSummaryBuilder;
+
+pub use crate::types::_imported_model_summary::ImportedModelSummaryBuilder;
+
+pub use crate::types::_s3_data_source::S3DataSourceBuilder;
+
 pub use crate::types::_model_copy_job_summary::ModelCopyJobSummaryBuilder;
 
 pub use crate::types::_logging_config::LoggingConfigBuilder;
@@ -108,3 +114,7 @@ pub use crate::types::_human_evaluation_custom_metric::HumanEvaluationCustomMetr
 pub use crate::types::_human_workflow_config::HumanWorkflowConfigBuilder;
 
 pub use crate::types::_automated_evaluation_config::AutomatedEvaluationConfigBuilder;
+
+pub use crate::types::_batch_delete_evaluation_job_item::BatchDeleteEvaluationJobItemBuilder;
+
+pub use crate::types::_batch_delete_evaluation_job_error::BatchDeleteEvaluationJobErrorBuilder;

@@ -143,6 +143,10 @@ pub use crate::types::_validation_strategy_mode::ValidationStrategyMode;
 
 pub use crate::types::_template_version_definition::TemplateVersionDefinition;
 
+pub use crate::types::_query_execution_options::QueryExecutionOptions;
+
+pub use crate::types::_query_execution_mode::QueryExecutionMode;
+
 pub use crate::types::_asset_options::AssetOptions;
 
 pub use crate::types::_day_of_the_week::DayOfTheWeek;
@@ -1945,6 +1949,8 @@ pub use crate::types::_registered_user_quick_sight_console_embedding_configurati
 
 pub use crate::types::_registered_user_console_feature_configurations::RegisteredUserConsoleFeatureConfigurations;
 
+pub use crate::types::_shared_view_configurations::SharedViewConfigurations;
+
 pub use crate::types::_state_persistence_configurations::StatePersistenceConfigurations;
 
 pub use crate::types::_registered_user_dashboard_embedding_configuration::RegisteredUserDashboardEmbeddingConfiguration;
@@ -1962,6 +1968,12 @@ pub use crate::types::_anonymous_user_q_search_bar_embedding_configuration::Anon
 pub use crate::types::_anonymous_user_dashboard_visual_embedding_configuration::AnonymousUserDashboardVisualEmbeddingConfiguration;
 
 pub use crate::types::_anonymous_user_dashboard_embedding_configuration::AnonymousUserDashboardEmbeddingConfiguration;
+
+pub use crate::types::_anonymous_user_dashboard_feature_configurations::AnonymousUserDashboardFeatureConfigurations;
+
+pub use crate::types::_anonymous_user_dashboard_embedding_configuration_disabled_feature::AnonymousUserDashboardEmbeddingConfigurationDisabledFeature;
+
+pub use crate::types::_anonymous_user_dashboard_embedding_configuration_enabled_feature::AnonymousUserDashboardEmbeddingConfigurationEnabledFeature;
 
 pub use crate::types::_vpc_connection::VpcConnection;
 
@@ -2116,6 +2128,12 @@ mod _anchor_option;
 mod _anchor_type;
 
 mod _anonymous_user_dashboard_embedding_configuration;
+
+mod _anonymous_user_dashboard_embedding_configuration_disabled_feature;
+
+mod _anonymous_user_dashboard_embedding_configuration_enabled_feature;
+
+mod _anonymous_user_dashboard_feature_configurations;
 
 mod _anonymous_user_dashboard_visual_embedding_configuration;
 
@@ -3411,6 +3429,10 @@ mod _property_usage;
 
 mod _purchase_mode;
 
+mod _query_execution_mode;
+
+mod _query_execution_options;
+
 mod _queue_info;
 
 mod _radar_chart_aggregated_field_wells;
@@ -3606,6 +3628,8 @@ mod _session_tag;
 mod _set_parameter_value_configuration;
 
 mod _shape_conditional_format;
+
+mod _shared_view_configurations;
 
 mod _sharing_model;
 

@@ -6,5 +6,32 @@ pub fn ser_anonymous_user_dashboard_embedding_configuration(
     {
         object.key("InitialDashboardId").string(input.initial_dashboard_id.as_str());
     }
+    if let Some(var_1) = &input.enabled_features {
+        let mut array_2 = object.key("EnabledFeatures").start_array();
+        for item_3 in var_1 {
+            {
+                array_2.value().string(item_3.as_str());
+            }
+        }
+        array_2.finish();
+    }
+    if let Some(var_4) = &input.disabled_features {
+        let mut array_5 = object.key("DisabledFeatures").start_array();
+        for item_6 in var_4 {
+            {
+                array_5.value().string(item_6.as_str());
+            }
+        }
+        array_5.finish();
+    }
+    if let Some(var_7) = &input.feature_configurations {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("FeatureConfigurations").start_object();
+        crate::protocol_serde::shape_anonymous_user_dashboard_feature_configurations::ser_anonymous_user_dashboard_feature_configurations(
+            &mut object_8,
+            var_7,
+        )?;
+        object_8.finish();
+    }
     Ok(())
 }

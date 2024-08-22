@@ -72,6 +72,46 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_delete_evaluation_job::BatchDeleteEvaluationJobError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_delete_evaluation_job::BatchDeleteEvaluationJobError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_delete_evaluation_job::BatchDeleteEvaluationJobError> for Error {
+    fn from(err: crate::operation::batch_delete_evaluation_job::BatchDeleteEvaluationJobError) -> Self {
+        match err {
+            crate::operation::batch_delete_evaluation_job::BatchDeleteEvaluationJobError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::batch_delete_evaluation_job::BatchDeleteEvaluationJobError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::batch_delete_evaluation_job::BatchDeleteEvaluationJobError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::batch_delete_evaluation_job::BatchDeleteEvaluationJobError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::batch_delete_evaluation_job::BatchDeleteEvaluationJobError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::batch_delete_evaluation_job::BatchDeleteEvaluationJobError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::batch_delete_evaluation_job::BatchDeleteEvaluationJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_evaluation_job::CreateEvaluationJobError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -254,6 +294,43 @@ impl From<crate::operation::create_model_customization_job::CreateModelCustomiza
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_model_import_job::CreateModelImportJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_model_import_job::CreateModelImportJobError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_model_import_job::CreateModelImportJobError> for Error {
+    fn from(err: crate::operation::create_model_import_job::CreateModelImportJobError) -> Self {
+        match err {
+            crate::operation::create_model_import_job::CreateModelImportJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_model_import_job::CreateModelImportJobError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_model_import_job::CreateModelImportJobError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_model_import_job::CreateModelImportJobError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_model_import_job::CreateModelImportJobError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_model_import_job::CreateModelImportJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_model_import_job::CreateModelImportJobError::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
+            crate::operation::create_model_import_job::CreateModelImportJobError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_model_import_job::CreateModelImportJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_model_invocation_job::CreateModelInvocationJobError, R>>
     for Error
 where
@@ -403,6 +480,37 @@ impl From<crate::operation::delete_guardrail::DeleteGuardrailError> for Error {
             crate::operation::delete_guardrail::DeleteGuardrailError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_guardrail::DeleteGuardrailError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_guardrail::DeleteGuardrailError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_imported_model::DeleteImportedModelError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_imported_model::DeleteImportedModelError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_imported_model::DeleteImportedModelError> for Error {
+    fn from(err: crate::operation::delete_imported_model::DeleteImportedModelError) -> Self {
+        match err {
+            crate::operation::delete_imported_model::DeleteImportedModelError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_imported_model::DeleteImportedModelError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_imported_model::DeleteImportedModelError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_imported_model::DeleteImportedModelError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_imported_model::DeleteImportedModelError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_imported_model::DeleteImportedModelError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_imported_model::DeleteImportedModelError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -597,6 +705,32 @@ impl From<crate::operation::get_guardrail::GetGuardrailError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_imported_model::GetImportedModelError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_imported_model::GetImportedModelError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_imported_model::GetImportedModelError> for Error {
+    fn from(err: crate::operation::get_imported_model::GetImportedModelError) -> Self {
+        match err {
+            crate::operation::get_imported_model::GetImportedModelError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_imported_model::GetImportedModelError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_imported_model::GetImportedModelError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_imported_model::GetImportedModelError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_imported_model::GetImportedModelError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_imported_model::GetImportedModelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_model_copy_job::GetModelCopyJobError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -659,6 +793,34 @@ impl From<crate::operation::get_model_customization_job::GetModelCustomizationJo
                 Error::ValidationException(inner)
             }
             crate::operation::get_model_customization_job::GetModelCustomizationJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_model_import_job::GetModelImportJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_model_import_job::GetModelImportJobError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_model_import_job::GetModelImportJobError> for Error {
+    fn from(err: crate::operation::get_model_import_job::GetModelImportJobError) -> Self {
+        match err {
+            crate::operation::get_model_import_job::GetModelImportJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_model_import_job::GetModelImportJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_model_import_job::GetModelImportJobError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_model_import_job::GetModelImportJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_model_import_job::GetModelImportJobError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_model_import_job::GetModelImportJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -886,6 +1048,31 @@ impl From<crate::operation::list_guardrails::ListGuardrailsError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_imported_models::ListImportedModelsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_imported_models::ListImportedModelsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_imported_models::ListImportedModelsError> for Error {
+    fn from(err: crate::operation::list_imported_models::ListImportedModelsError) -> Self {
+        match err {
+            crate::operation::list_imported_models::ListImportedModelsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_imported_models::ListImportedModelsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_imported_models::ListImportedModelsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_imported_models::ListImportedModelsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_imported_models::ListImportedModelsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_model_copy_jobs::ListModelCopyJobsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -947,6 +1134,33 @@ impl From<crate::operation::list_model_customization_jobs::ListModelCustomizatio
                 Error::ValidationException(inner)
             }
             crate::operation::list_model_customization_jobs::ListModelCustomizationJobsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_model_import_jobs::ListModelImportJobsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_model_import_jobs::ListModelImportJobsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_model_import_jobs::ListModelImportJobsError> for Error {
+    fn from(err: crate::operation::list_model_import_jobs::ListModelImportJobsError) -> Self {
+        match err {
+            crate::operation::list_model_import_jobs::ListModelImportJobsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_model_import_jobs::ListModelImportJobsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_model_import_jobs::ListModelImportJobsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_model_import_jobs::ListModelImportJobsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_model_import_jobs::ListModelImportJobsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

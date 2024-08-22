@@ -1101,6 +1101,8 @@ pub(crate) mod shape_postgre_sql_parameters;
 
 pub(crate) mod shape_presto_parameters;
 
+pub(crate) mod shape_query_execution_options;
+
 pub(crate) mod shape_queue_info;
 
 pub(crate) mod shape_rds_parameters;
@@ -1224,6 +1226,8 @@ pub(crate) mod shape_visual_menu_option;
 pub(crate) mod shape_vpc_connection_summary;
 
 pub(crate) mod shape_action_list;
+
+pub(crate) mod shape_anonymous_user_dashboard_feature_configurations;
 
 pub(crate) mod shape_anonymous_user_snapshot_job_result;
 
@@ -1582,6 +1586,8 @@ pub(crate) mod shape_semantic_entity_type;
 pub(crate) mod shape_semantic_type;
 
 pub(crate) mod shape_session_tag_key_list;
+
+pub(crate) mod shape_shared_view_configurations;
 
 pub(crate) mod shape_sheet_control_layout_configuration;
 

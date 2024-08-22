@@ -8,6 +8,10 @@ pub struct AccountAggregationResponse {
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of findings by severity.</p>
     pub severity_counts: ::std::option::Option<crate::types::SeverityCounts>,
+    /// <p>The number of findings that have an exploit available.</p>
+    pub exploit_available_count: ::std::option::Option<i64>,
+    /// <p>Details about the number of fixes.</p>
+    pub fix_available_count: ::std::option::Option<i64>,
 }
 impl AccountAggregationResponse {
     /// <p>The Amazon Web Services account ID.</p>
@@ -17,6 +21,14 @@ impl AccountAggregationResponse {
     /// <p>The number of findings by severity.</p>
     pub fn severity_counts(&self) -> ::std::option::Option<&crate::types::SeverityCounts> {
         self.severity_counts.as_ref()
+    }
+    /// <p>The number of findings that have an exploit available.</p>
+    pub fn exploit_available_count(&self) -> ::std::option::Option<i64> {
+        self.exploit_available_count
+    }
+    /// <p>Details about the number of fixes.</p>
+    pub fn fix_available_count(&self) -> ::std::option::Option<i64> {
+        self.fix_available_count
     }
 }
 impl AccountAggregationResponse {
@@ -32,6 +44,8 @@ impl AccountAggregationResponse {
 pub struct AccountAggregationResponseBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) severity_counts: ::std::option::Option<crate::types::SeverityCounts>,
+    pub(crate) exploit_available_count: ::std::option::Option<i64>,
+    pub(crate) fix_available_count: ::std::option::Option<i64>,
 }
 impl AccountAggregationResponseBuilder {
     /// <p>The Amazon Web Services account ID.</p>
@@ -62,11 +76,41 @@ impl AccountAggregationResponseBuilder {
     pub fn get_severity_counts(&self) -> &::std::option::Option<crate::types::SeverityCounts> {
         &self.severity_counts
     }
+    /// <p>The number of findings that have an exploit available.</p>
+    pub fn exploit_available_count(mut self, input: i64) -> Self {
+        self.exploit_available_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of findings that have an exploit available.</p>
+    pub fn set_exploit_available_count(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.exploit_available_count = input;
+        self
+    }
+    /// <p>The number of findings that have an exploit available.</p>
+    pub fn get_exploit_available_count(&self) -> &::std::option::Option<i64> {
+        &self.exploit_available_count
+    }
+    /// <p>Details about the number of fixes.</p>
+    pub fn fix_available_count(mut self, input: i64) -> Self {
+        self.fix_available_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Details about the number of fixes.</p>
+    pub fn set_fix_available_count(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.fix_available_count = input;
+        self
+    }
+    /// <p>Details about the number of fixes.</p>
+    pub fn get_fix_available_count(&self) -> &::std::option::Option<i64> {
+        &self.fix_available_count
+    }
     /// Consumes the builder and constructs a [`AccountAggregationResponse`](crate::types::AccountAggregationResponse).
     pub fn build(self) -> crate::types::AccountAggregationResponse {
         crate::types::AccountAggregationResponse {
             account_id: self.account_id,
             severity_counts: self.severity_counts,
+            exploit_available_count: self.exploit_available_count,
+            fix_available_count: self.fix_available_count,
         }
     }
 }

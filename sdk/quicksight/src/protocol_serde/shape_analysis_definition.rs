@@ -87,6 +87,12 @@ pub fn ser_analysis_definition(
         crate::protocol_serde::shape_asset_options::ser_asset_options(&mut object_27, var_26)?;
         object_27.finish();
     }
+    if let Some(var_28) = &input.query_execution_options {
+        #[allow(unused_mut)]
+        let mut object_29 = object.key("QueryExecutionOptions").start_object();
+        crate::protocol_serde::shape_query_execution_options::ser_query_execution_options(&mut object_29, var_28)?;
+        object_29.finish();
+    }
     Ok(())
 }
 
@@ -134,6 +140,11 @@ where
                         }
                         "Options" => {
                             builder = builder.set_options(crate::protocol_serde::shape_asset_options::de_asset_options(tokens)?);
+                        }
+                        "QueryExecutionOptions" => {
+                            builder = builder.set_query_execution_options(
+                                crate::protocol_serde::shape_query_execution_options::de_query_execution_options(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

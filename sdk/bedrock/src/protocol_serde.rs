@@ -23,6 +23,8 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_batch_delete_evaluation_job;
+
 pub(crate) mod shape_create_evaluation_job;
 
 pub(crate) mod shape_create_guardrail;
@@ -33,6 +35,8 @@ pub(crate) mod shape_create_model_copy_job;
 
 pub(crate) mod shape_create_model_customization_job;
 
+pub(crate) mod shape_create_model_import_job;
+
 pub(crate) mod shape_create_model_invocation_job;
 
 pub(crate) mod shape_create_provisioned_model_throughput;
@@ -40,6 +44,8 @@ pub(crate) mod shape_create_provisioned_model_throughput;
 pub(crate) mod shape_delete_custom_model;
 
 pub(crate) mod shape_delete_guardrail;
+
+pub(crate) mod shape_delete_imported_model;
 
 pub(crate) mod shape_delete_model_invocation_logging_configuration;
 
@@ -53,9 +59,13 @@ pub(crate) mod shape_get_foundation_model;
 
 pub(crate) mod shape_get_guardrail;
 
+pub(crate) mod shape_get_imported_model;
+
 pub(crate) mod shape_get_model_copy_job;
 
 pub(crate) mod shape_get_model_customization_job;
+
+pub(crate) mod shape_get_model_import_job;
 
 pub(crate) mod shape_get_model_invocation_job;
 
@@ -71,9 +81,13 @@ pub(crate) mod shape_list_foundation_models;
 
 pub(crate) mod shape_list_guardrails;
 
+pub(crate) mod shape_list_imported_models;
+
 pub(crate) mod shape_list_model_copy_jobs;
 
 pub(crate) mod shape_list_model_customization_jobs;
+
+pub(crate) mod shape_list_model_import_jobs;
 
 pub(crate) mod shape_list_model_invocation_jobs;
 
@@ -107,6 +121,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 
 pub(crate) mod shape_access_denied_exception;
 
+pub(crate) mod shape_batch_delete_evaluation_job_input;
+
 pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_evaluation_job_input;
@@ -118,6 +134,8 @@ pub(crate) mod shape_create_guardrail_version_input;
 pub(crate) mod shape_create_model_copy_job_input;
 
 pub(crate) mod shape_create_model_customization_job_input;
+
+pub(crate) mod shape_create_model_import_job_input;
 
 pub(crate) mod shape_create_model_invocation_job_input;
 
@@ -146,6 +164,10 @@ pub(crate) mod shape_update_guardrail_input;
 pub(crate) mod shape_update_provisioned_model_throughput_input;
 
 pub(crate) mod shape_validation_exception;
+
+pub(crate) mod shape_batch_delete_evaluation_job_errors;
+
+pub(crate) mod shape_batch_delete_evaluation_job_items;
 
 pub(crate) mod shape_custom_model_summary_list;
 
@@ -189,6 +211,8 @@ pub(crate) mod shape_guardrail_word_policy;
 
 pub(crate) mod shape_guardrail_word_policy_config;
 
+pub(crate) mod shape_imported_model_summary_list;
+
 pub(crate) mod shape_logging_config;
 
 pub(crate) mod shape_model_copy_job_summaries;
@@ -196,6 +220,10 @@ pub(crate) mod shape_model_copy_job_summaries;
 pub(crate) mod shape_model_customization_hyper_parameters;
 
 pub(crate) mod shape_model_customization_job_summaries;
+
+pub(crate) mod shape_model_data_source;
+
+pub(crate) mod shape_model_import_job_summaries;
 
 pub(crate) mod shape_model_invocation_job_input_data_config;
 
@@ -222,6 +250,10 @@ pub(crate) mod shape_validation_metrics;
 pub(crate) mod shape_vpc_config;
 
 pub(crate) mod shape_automated_evaluation_config;
+
+pub(crate) mod shape_batch_delete_evaluation_job_error;
+
+pub(crate) mod shape_batch_delete_evaluation_job_item;
 
 pub(crate) mod shape_cloud_watch_config;
 
@@ -269,6 +301,8 @@ pub(crate) mod shape_guardrail_words;
 
 pub(crate) mod shape_human_evaluation_config;
 
+pub(crate) mod shape_imported_model_summary;
+
 pub(crate) mod shape_inference_type_list;
 
 pub(crate) mod shape_model_copy_job_summary;
@@ -276,6 +310,8 @@ pub(crate) mod shape_model_copy_job_summary;
 pub(crate) mod shape_model_customization_job_summary;
 
 pub(crate) mod shape_model_customization_list;
+
+pub(crate) mod shape_model_import_job_summary;
 
 pub(crate) mod shape_model_invocation_job_s3_input_data_config;
 
@@ -288,6 +324,8 @@ pub(crate) mod shape_model_modality_list;
 pub(crate) mod shape_provisioned_model_summary;
 
 pub(crate) mod shape_s3_config;
+
+pub(crate) mod shape_s3_data_source;
 
 pub(crate) mod shape_security_group_ids;
 

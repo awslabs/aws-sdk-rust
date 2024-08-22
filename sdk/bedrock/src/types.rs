@@ -67,6 +67,16 @@ pub use crate::types::_s3_input_format::S3InputFormat;
 
 pub use crate::types::_model_invocation_job_status::ModelInvocationJobStatus;
 
+pub use crate::types::_model_import_job_summary::ModelImportJobSummary;
+
+pub use crate::types::_model_import_job_status::ModelImportJobStatus;
+
+pub use crate::types::_imported_model_summary::ImportedModelSummary;
+
+pub use crate::types::_model_data_source::ModelDataSource;
+
+pub use crate::types::_s3_data_source::S3DataSource;
+
 pub use crate::types::_model_copy_job_summary::ModelCopyJobSummary;
 
 pub use crate::types::_model_copy_job_status::ModelCopyJobStatus;
@@ -175,7 +185,15 @@ pub use crate::types::_human_workflow_config::HumanWorkflowConfig;
 
 pub use crate::types::_automated_evaluation_config::AutomatedEvaluationConfig;
 
+pub use crate::types::_batch_delete_evaluation_job_item::BatchDeleteEvaluationJobItem;
+
+pub use crate::types::_batch_delete_evaluation_job_error::BatchDeleteEvaluationJobError;
+
 mod _automated_evaluation_config;
+
+mod _batch_delete_evaluation_job_error;
+
+mod _batch_delete_evaluation_job_item;
 
 mod _cloud_watch_config;
 
@@ -291,6 +309,8 @@ mod _human_evaluation_custom_metric;
 
 mod _human_workflow_config;
 
+mod _imported_model_summary;
+
 mod _inference_type;
 
 mod _logging_config;
@@ -304,6 +324,12 @@ mod _model_customization;
 mod _model_customization_job_status;
 
 mod _model_customization_job_summary;
+
+mod _model_data_source;
+
+mod _model_import_job_status;
+
+mod _model_import_job_summary;
 
 mod _model_invocation_job_input_data_config;
 
@@ -326,6 +352,8 @@ mod _provisioned_model_status;
 mod _provisioned_model_summary;
 
 mod _s3_config;
+
+mod _s3_data_source;
 
 mod _s3_input_format;
 

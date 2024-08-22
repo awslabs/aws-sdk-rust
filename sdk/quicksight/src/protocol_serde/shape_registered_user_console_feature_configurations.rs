@@ -9,5 +9,11 @@ pub fn ser_registered_user_console_feature_configurations(
         crate::protocol_serde::shape_state_persistence_configurations::ser_state_persistence_configurations(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.shared_view {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("SharedView").start_object();
+        crate::protocol_serde::shape_shared_view_configurations::ser_shared_view_configurations(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }

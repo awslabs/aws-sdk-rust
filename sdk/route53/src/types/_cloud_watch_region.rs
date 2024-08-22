@@ -23,6 +23,7 @@
 ///     CloudWatchRegion::ApSoutheast2 => { /* ... */ },
 ///     CloudWatchRegion::ApSoutheast3 => { /* ... */ },
 ///     CloudWatchRegion::ApSoutheast4 => { /* ... */ },
+///     CloudWatchRegion::ApSoutheast5 => { /* ... */ },
 ///     CloudWatchRegion::CaCentral1 => { /* ... */ },
 ///     CloudWatchRegion::CaWest1 => { /* ... */ },
 ///     CloudWatchRegion::CnNorth1 => { /* ... */ },
@@ -98,6 +99,8 @@ pub enum CloudWatchRegion {
     #[allow(missing_docs)] // documentation missing in model
     ApSoutheast4,
     #[allow(missing_docs)] // documentation missing in model
+    ApSoutheast5,
+    #[allow(missing_docs)] // documentation missing in model
     CaCentral1,
     #[allow(missing_docs)] // documentation missing in model
     CaWest1,
@@ -165,6 +168,7 @@ impl ::std::convert::From<&str> for CloudWatchRegion {
             "ap-southeast-2" => CloudWatchRegion::ApSoutheast2,
             "ap-southeast-3" => CloudWatchRegion::ApSoutheast3,
             "ap-southeast-4" => CloudWatchRegion::ApSoutheast4,
+            "ap-southeast-5" => CloudWatchRegion::ApSoutheast5,
             "ca-central-1" => CloudWatchRegion::CaCentral1,
             "ca-west-1" => CloudWatchRegion::CaWest1,
             "cn-north-1" => CloudWatchRegion::CnNorth1,
@@ -216,6 +220,7 @@ impl CloudWatchRegion {
             CloudWatchRegion::ApSoutheast2 => "ap-southeast-2",
             CloudWatchRegion::ApSoutheast3 => "ap-southeast-3",
             CloudWatchRegion::ApSoutheast4 => "ap-southeast-4",
+            CloudWatchRegion::ApSoutheast5 => "ap-southeast-5",
             CloudWatchRegion::CaCentral1 => "ca-central-1",
             CloudWatchRegion::CaWest1 => "ca-west-1",
             CloudWatchRegion::CnNorth1 => "cn-north-1",
@@ -258,6 +263,7 @@ impl CloudWatchRegion {
             "ap-southeast-2",
             "ap-southeast-3",
             "ap-southeast-4",
+            "ap-southeast-5",
             "ca-central-1",
             "ca-west-1",
             "cn-north-1",
@@ -317,6 +323,7 @@ impl ::std::fmt::Display for CloudWatchRegion {
             CloudWatchRegion::ApSoutheast2 => write!(f, "ap-southeast-2"),
             CloudWatchRegion::ApSoutheast3 => write!(f, "ap-southeast-3"),
             CloudWatchRegion::ApSoutheast4 => write!(f, "ap-southeast-4"),
+            CloudWatchRegion::ApSoutheast5 => write!(f, "ap-southeast-5"),
             CloudWatchRegion::CaCentral1 => write!(f, "ca-central-1"),
             CloudWatchRegion::CaWest1 => write!(f, "ca-west-1"),
             CloudWatchRegion::CnNorth1 => write!(f, "cn-north-1"),

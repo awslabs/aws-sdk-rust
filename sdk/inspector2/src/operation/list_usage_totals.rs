@@ -243,6 +243,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListUsageTota
 #[derive(::std::fmt::Debug)]
 pub enum ListUsageTotalsError {
     /// <p>You do not have sufficient access to perform this action.</p>
+    /// <p>For <code>Enable</code>, you receive this error if you attempt to use a feature in an unsupported Amazon Web Services Region.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>The request has failed due to an internal failure of the Amazon Inspector service.</p>
     InternalServerException(crate::types::error::InternalServerException),

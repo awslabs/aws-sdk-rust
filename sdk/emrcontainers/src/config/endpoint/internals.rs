@@ -62,6 +62,16 @@ pub(super) fn resolve_endpoint(
             }
             if (*use_fips) == (true) {
                 if (partition_result.supports_fips()) == (true) {
+                    if (region) == ("us-gov-east-1") {
+                        return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                            .url("https://emr-containers.us-gov-east-1.amazonaws.com".to_string())
+                            .build());
+                    }
+                    if (region) == ("us-gov-west-1") {
+                        return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                            .url("https://emr-containers.us-gov-west-1.amazonaws.com".to_string())
+                            .build());
+                    }
                     return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                         .url({
                             let mut out = String::new();

@@ -118,6 +118,8 @@ impl Client {
     }
 }
 
+mod batch_delete_evaluation_job;
+
 mod create_evaluation_job;
 
 mod create_guardrail;
@@ -127,6 +129,8 @@ mod create_guardrail_version;
 mod create_model_copy_job;
 
 mod create_model_customization_job;
+
+mod create_model_import_job;
 
 mod create_model_invocation_job;
 
@@ -140,6 +144,8 @@ mod delete_custom_model;
 
 mod delete_guardrail;
 
+mod delete_imported_model;
+
 mod delete_model_invocation_logging_configuration;
 
 mod delete_provisioned_model_throughput;
@@ -152,9 +158,13 @@ mod get_foundation_model;
 
 mod get_guardrail;
 
+mod get_imported_model;
+
 mod get_model_copy_job;
 
 mod get_model_customization_job;
+
+mod get_model_import_job;
 
 mod get_model_invocation_job;
 
@@ -170,9 +180,13 @@ mod list_foundation_models;
 
 mod list_guardrails;
 
+mod list_imported_models;
+
 mod list_model_copy_jobs;
 
 mod list_model_customization_jobs;
+
+mod list_model_import_jobs;
 
 mod list_model_invocation_jobs;
 

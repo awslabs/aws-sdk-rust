@@ -13,6 +13,8 @@
 /// # let scanstatusreason = unimplemented!();
 /// match scanstatusreason {
 ///     ScanStatusReason::AccessDenied => { /* ... */ },
+///     ScanStatusReason::AgentlessInstanceCollectionTimeLimitExceeded => { /* ... */ },
+///     ScanStatusReason::AgentlessInstanceStorageLimitExceeded => { /* ... */ },
 ///     ScanStatusReason::DeepInspectionCollectionTimeLimitExceeded => { /* ... */ },
 ///     ScanStatusReason::DeepInspectionDailySsmInventoryLimitExceeded => { /* ... */ },
 ///     ScanStatusReason::DeepInspectionNoInventory => { /* ... */ },
@@ -65,6 +67,10 @@
 pub enum ScanStatusReason {
     #[allow(missing_docs)] // documentation missing in model
     AccessDenied,
+    #[allow(missing_docs)] // documentation missing in model
+    AgentlessInstanceCollectionTimeLimitExceeded,
+    #[allow(missing_docs)] // documentation missing in model
+    AgentlessInstanceStorageLimitExceeded,
     #[allow(missing_docs)] // documentation missing in model
     DeepInspectionCollectionTimeLimitExceeded,
     #[allow(missing_docs)] // documentation missing in model
@@ -119,6 +125,8 @@ impl ::std::convert::From<&str> for ScanStatusReason {
     fn from(s: &str) -> Self {
         match s {
             "ACCESS_DENIED" => ScanStatusReason::AccessDenied,
+            "AGENTLESS_INSTANCE_COLLECTION_TIME_LIMIT_EXCEEDED" => ScanStatusReason::AgentlessInstanceCollectionTimeLimitExceeded,
+            "AGENTLESS_INSTANCE_STORAGE_LIMIT_EXCEEDED" => ScanStatusReason::AgentlessInstanceStorageLimitExceeded,
             "DEEP_INSPECTION_COLLECTION_TIME_LIMIT_EXCEEDED" => ScanStatusReason::DeepInspectionCollectionTimeLimitExceeded,
             "DEEP_INSPECTION_DAILY_SSM_INVENTORY_LIMIT_EXCEEDED" => ScanStatusReason::DeepInspectionDailySsmInventoryLimitExceeded,
             "DEEP_INSPECTION_NO_INVENTORY" => ScanStatusReason::DeepInspectionNoInventory,
@@ -158,6 +166,8 @@ impl ScanStatusReason {
     pub fn as_str(&self) -> &str {
         match self {
             ScanStatusReason::AccessDenied => "ACCESS_DENIED",
+            ScanStatusReason::AgentlessInstanceCollectionTimeLimitExceeded => "AGENTLESS_INSTANCE_COLLECTION_TIME_LIMIT_EXCEEDED",
+            ScanStatusReason::AgentlessInstanceStorageLimitExceeded => "AGENTLESS_INSTANCE_STORAGE_LIMIT_EXCEEDED",
             ScanStatusReason::DeepInspectionCollectionTimeLimitExceeded => "DEEP_INSPECTION_COLLECTION_TIME_LIMIT_EXCEEDED",
             ScanStatusReason::DeepInspectionDailySsmInventoryLimitExceeded => "DEEP_INSPECTION_DAILY_SSM_INVENTORY_LIMIT_EXCEEDED",
             ScanStatusReason::DeepInspectionNoInventory => "DEEP_INSPECTION_NO_INVENTORY",
@@ -188,6 +198,8 @@ impl ScanStatusReason {
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACCESS_DENIED",
+            "AGENTLESS_INSTANCE_COLLECTION_TIME_LIMIT_EXCEEDED",
+            "AGENTLESS_INSTANCE_STORAGE_LIMIT_EXCEEDED",
             "DEEP_INSPECTION_COLLECTION_TIME_LIMIT_EXCEEDED",
             "DEEP_INSPECTION_DAILY_SSM_INVENTORY_LIMIT_EXCEEDED",
             "DEEP_INSPECTION_NO_INVENTORY",
@@ -235,6 +247,8 @@ impl ::std::fmt::Display for ScanStatusReason {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ScanStatusReason::AccessDenied => write!(f, "ACCESS_DENIED"),
+            ScanStatusReason::AgentlessInstanceCollectionTimeLimitExceeded => write!(f, "AGENTLESS_INSTANCE_COLLECTION_TIME_LIMIT_EXCEEDED"),
+            ScanStatusReason::AgentlessInstanceStorageLimitExceeded => write!(f, "AGENTLESS_INSTANCE_STORAGE_LIMIT_EXCEEDED"),
             ScanStatusReason::DeepInspectionCollectionTimeLimitExceeded => write!(f, "DEEP_INSPECTION_COLLECTION_TIME_LIMIT_EXCEEDED"),
             ScanStatusReason::DeepInspectionDailySsmInventoryLimitExceeded => write!(f, "DEEP_INSPECTION_DAILY_SSM_INVENTORY_LIMIT_EXCEEDED"),
             ScanStatusReason::DeepInspectionNoInventory => write!(f, "DEEP_INSPECTION_NO_INVENTORY"),

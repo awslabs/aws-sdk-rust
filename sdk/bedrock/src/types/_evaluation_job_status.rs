@@ -13,6 +13,7 @@
 /// # let evaluationjobstatus = unimplemented!();
 /// match evaluationjobstatus {
 ///     EvaluationJobStatus::Completed => { /* ... */ },
+///     EvaluationJobStatus::Deleting => { /* ... */ },
 ///     EvaluationJobStatus::Failed => { /* ... */ },
 ///     EvaluationJobStatus::InProgress => { /* ... */ },
 ///     EvaluationJobStatus::Stopped => { /* ... */ },
@@ -47,6 +48,8 @@ pub enum EvaluationJobStatus {
     #[allow(missing_docs)] // documentation missing in model
     Completed,
     #[allow(missing_docs)] // documentation missing in model
+    Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
     #[allow(missing_docs)] // documentation missing in model
     InProgress,
@@ -62,6 +65,7 @@ impl ::std::convert::From<&str> for EvaluationJobStatus {
     fn from(s: &str) -> Self {
         match s {
             "Completed" => EvaluationJobStatus::Completed,
+            "Deleting" => EvaluationJobStatus::Deleting,
             "Failed" => EvaluationJobStatus::Failed,
             "InProgress" => EvaluationJobStatus::InProgress,
             "Stopped" => EvaluationJobStatus::Stopped,
@@ -82,6 +86,7 @@ impl EvaluationJobStatus {
     pub fn as_str(&self) -> &str {
         match self {
             EvaluationJobStatus::Completed => "Completed",
+            EvaluationJobStatus::Deleting => "Deleting",
             EvaluationJobStatus::Failed => "Failed",
             EvaluationJobStatus::InProgress => "InProgress",
             EvaluationJobStatus::Stopped => "Stopped",
@@ -91,7 +96,7 @@ impl EvaluationJobStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Completed", "Failed", "InProgress", "Stopped", "Stopping"]
+        &["Completed", "Deleting", "Failed", "InProgress", "Stopped", "Stopping"]
     }
 }
 impl ::std::convert::AsRef<str> for EvaluationJobStatus {
@@ -115,6 +120,7 @@ impl ::std::fmt::Display for EvaluationJobStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             EvaluationJobStatus::Completed => write!(f, "Completed"),
+            EvaluationJobStatus::Deleting => write!(f, "Deleting"),
             EvaluationJobStatus::Failed => write!(f, "Failed"),
             EvaluationJobStatus::InProgress => write!(f, "InProgress"),
             EvaluationJobStatus::Stopped => write!(f, "Stopped"),

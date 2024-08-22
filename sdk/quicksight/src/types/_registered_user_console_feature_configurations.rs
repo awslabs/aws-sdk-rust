@@ -6,11 +6,17 @@
 pub struct RegisteredUserConsoleFeatureConfigurations {
     /// <p>The state persistence configurations of an embedded Amazon QuickSight console.</p>
     pub state_persistence: ::std::option::Option<crate::types::StatePersistenceConfigurations>,
+    /// <p>The shared view settings of an embedded dashboard.</p>
+    pub shared_view: ::std::option::Option<crate::types::SharedViewConfigurations>,
 }
 impl RegisteredUserConsoleFeatureConfigurations {
     /// <p>The state persistence configurations of an embedded Amazon QuickSight console.</p>
     pub fn state_persistence(&self) -> ::std::option::Option<&crate::types::StatePersistenceConfigurations> {
         self.state_persistence.as_ref()
+    }
+    /// <p>The shared view settings of an embedded dashboard.</p>
+    pub fn shared_view(&self) -> ::std::option::Option<&crate::types::SharedViewConfigurations> {
+        self.shared_view.as_ref()
     }
 }
 impl RegisteredUserConsoleFeatureConfigurations {
@@ -25,6 +31,7 @@ impl RegisteredUserConsoleFeatureConfigurations {
 #[non_exhaustive]
 pub struct RegisteredUserConsoleFeatureConfigurationsBuilder {
     pub(crate) state_persistence: ::std::option::Option<crate::types::StatePersistenceConfigurations>,
+    pub(crate) shared_view: ::std::option::Option<crate::types::SharedViewConfigurations>,
 }
 impl RegisteredUserConsoleFeatureConfigurationsBuilder {
     /// <p>The state persistence configurations of an embedded Amazon QuickSight console.</p>
@@ -41,10 +48,25 @@ impl RegisteredUserConsoleFeatureConfigurationsBuilder {
     pub fn get_state_persistence(&self) -> &::std::option::Option<crate::types::StatePersistenceConfigurations> {
         &self.state_persistence
     }
+    /// <p>The shared view settings of an embedded dashboard.</p>
+    pub fn shared_view(mut self, input: crate::types::SharedViewConfigurations) -> Self {
+        self.shared_view = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The shared view settings of an embedded dashboard.</p>
+    pub fn set_shared_view(mut self, input: ::std::option::Option<crate::types::SharedViewConfigurations>) -> Self {
+        self.shared_view = input;
+        self
+    }
+    /// <p>The shared view settings of an embedded dashboard.</p>
+    pub fn get_shared_view(&self) -> &::std::option::Option<crate::types::SharedViewConfigurations> {
+        &self.shared_view
+    }
     /// Consumes the builder and constructs a [`RegisteredUserConsoleFeatureConfigurations`](crate::types::RegisteredUserConsoleFeatureConfigurations).
     pub fn build(self) -> crate::types::RegisteredUserConsoleFeatureConfigurations {
         crate::types::RegisteredUserConsoleFeatureConfigurations {
             state_persistence: self.state_persistence,
+            shared_view: self.shared_view,
         }
     }
 }

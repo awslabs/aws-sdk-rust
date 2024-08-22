@@ -7,6 +7,12 @@ pub struct AnonymousUserDashboardEmbeddingConfiguration {
     /// <p>The dashboard ID for the dashboard that you want the user to see first. This ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders this dashboard.</p>
     /// <p>The Amazon Resource Name (ARN) of this dashboard must be included in the <code>AuthorizedResourceArns</code> parameter. Otherwise, the request will fail with <code>InvalidParameterValueException</code>.</p>
     pub initial_dashboard_id: ::std::string::String,
+    /// <p>A list of all enabled features of a specified anonymous dashboard.</p>
+    pub enabled_features: ::std::option::Option<::std::vec::Vec<crate::types::AnonymousUserDashboardEmbeddingConfigurationEnabledFeature>>,
+    /// <p>A list of all disabled features of a specified anonymous dashboard.</p>
+    pub disabled_features: ::std::option::Option<::std::vec::Vec<crate::types::AnonymousUserDashboardEmbeddingConfigurationDisabledFeature>>,
+    /// <p>The feature configuration for an embedded dashboard.</p>
+    pub feature_configurations: ::std::option::Option<crate::types::AnonymousUserDashboardFeatureConfigurations>,
 }
 impl AnonymousUserDashboardEmbeddingConfiguration {
     /// <p>The dashboard ID for the dashboard that you want the user to see first. This ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders this dashboard.</p>
@@ -14,6 +20,22 @@ impl AnonymousUserDashboardEmbeddingConfiguration {
     pub fn initial_dashboard_id(&self) -> &str {
         use std::ops::Deref;
         self.initial_dashboard_id.deref()
+    }
+    /// <p>A list of all enabled features of a specified anonymous dashboard.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.enabled_features.is_none()`.
+    pub fn enabled_features(&self) -> &[crate::types::AnonymousUserDashboardEmbeddingConfigurationEnabledFeature] {
+        self.enabled_features.as_deref().unwrap_or_default()
+    }
+    /// <p>A list of all disabled features of a specified anonymous dashboard.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.disabled_features.is_none()`.
+    pub fn disabled_features(&self) -> &[crate::types::AnonymousUserDashboardEmbeddingConfigurationDisabledFeature] {
+        self.disabled_features.as_deref().unwrap_or_default()
+    }
+    /// <p>The feature configuration for an embedded dashboard.</p>
+    pub fn feature_configurations(&self) -> ::std::option::Option<&crate::types::AnonymousUserDashboardFeatureConfigurations> {
+        self.feature_configurations.as_ref()
     }
 }
 impl AnonymousUserDashboardEmbeddingConfiguration {
@@ -28,6 +50,9 @@ impl AnonymousUserDashboardEmbeddingConfiguration {
 #[non_exhaustive]
 pub struct AnonymousUserDashboardEmbeddingConfigurationBuilder {
     pub(crate) initial_dashboard_id: ::std::option::Option<::std::string::String>,
+    pub(crate) enabled_features: ::std::option::Option<::std::vec::Vec<crate::types::AnonymousUserDashboardEmbeddingConfigurationEnabledFeature>>,
+    pub(crate) disabled_features: ::std::option::Option<::std::vec::Vec<crate::types::AnonymousUserDashboardEmbeddingConfigurationDisabledFeature>>,
+    pub(crate) feature_configurations: ::std::option::Option<crate::types::AnonymousUserDashboardFeatureConfigurations>,
 }
 impl AnonymousUserDashboardEmbeddingConfigurationBuilder {
     /// <p>The dashboard ID for the dashboard that you want the user to see first. This ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders this dashboard.</p>
@@ -48,6 +73,70 @@ impl AnonymousUserDashboardEmbeddingConfigurationBuilder {
     pub fn get_initial_dashboard_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.initial_dashboard_id
     }
+    /// Appends an item to `enabled_features`.
+    ///
+    /// To override the contents of this collection use [`set_enabled_features`](Self::set_enabled_features).
+    ///
+    /// <p>A list of all enabled features of a specified anonymous dashboard.</p>
+    pub fn enabled_features(mut self, input: crate::types::AnonymousUserDashboardEmbeddingConfigurationEnabledFeature) -> Self {
+        let mut v = self.enabled_features.unwrap_or_default();
+        v.push(input);
+        self.enabled_features = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of all enabled features of a specified anonymous dashboard.</p>
+    pub fn set_enabled_features(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AnonymousUserDashboardEmbeddingConfigurationEnabledFeature>>,
+    ) -> Self {
+        self.enabled_features = input;
+        self
+    }
+    /// <p>A list of all enabled features of a specified anonymous dashboard.</p>
+    pub fn get_enabled_features(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnonymousUserDashboardEmbeddingConfigurationEnabledFeature>> {
+        &self.enabled_features
+    }
+    /// Appends an item to `disabled_features`.
+    ///
+    /// To override the contents of this collection use [`set_disabled_features`](Self::set_disabled_features).
+    ///
+    /// <p>A list of all disabled features of a specified anonymous dashboard.</p>
+    pub fn disabled_features(mut self, input: crate::types::AnonymousUserDashboardEmbeddingConfigurationDisabledFeature) -> Self {
+        let mut v = self.disabled_features.unwrap_or_default();
+        v.push(input);
+        self.disabled_features = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of all disabled features of a specified anonymous dashboard.</p>
+    pub fn set_disabled_features(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AnonymousUserDashboardEmbeddingConfigurationDisabledFeature>>,
+    ) -> Self {
+        self.disabled_features = input;
+        self
+    }
+    /// <p>A list of all disabled features of a specified anonymous dashboard.</p>
+    pub fn get_disabled_features(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnonymousUserDashboardEmbeddingConfigurationDisabledFeature>> {
+        &self.disabled_features
+    }
+    /// <p>The feature configuration for an embedded dashboard.</p>
+    pub fn feature_configurations(mut self, input: crate::types::AnonymousUserDashboardFeatureConfigurations) -> Self {
+        self.feature_configurations = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The feature configuration for an embedded dashboard.</p>
+    pub fn set_feature_configurations(mut self, input: ::std::option::Option<crate::types::AnonymousUserDashboardFeatureConfigurations>) -> Self {
+        self.feature_configurations = input;
+        self
+    }
+    /// <p>The feature configuration for an embedded dashboard.</p>
+    pub fn get_feature_configurations(&self) -> &::std::option::Option<crate::types::AnonymousUserDashboardFeatureConfigurations> {
+        &self.feature_configurations
+    }
     /// Consumes the builder and constructs a [`AnonymousUserDashboardEmbeddingConfiguration`](crate::types::AnonymousUserDashboardEmbeddingConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`initial_dashboard_id`](crate::types::builders::AnonymousUserDashboardEmbeddingConfigurationBuilder::initial_dashboard_id)
@@ -61,6 +150,9 @@ impl AnonymousUserDashboardEmbeddingConfigurationBuilder {
                     "initial_dashboard_id was not specified but it is required when building AnonymousUserDashboardEmbeddingConfiguration",
                 )
             })?,
+            enabled_features: self.enabled_features,
+            disabled_features: self.disabled_features,
+            feature_configurations: self.feature_configurations,
         })
     }
 }
