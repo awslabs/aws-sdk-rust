@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFlowAliasOutput {
-    /// <p>The name of the flow alias.</p>
+    /// <p>The name of the alias.</p>
     pub name: ::std::string::String,
     /// <p>The description of the flow.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -17,12 +17,12 @@ pub struct GetFlowAliasOutput {
     pub arn: ::std::string::String,
     /// <p>The time at which the flow was created.</p>
     pub created_at: ::aws_smithy_types::DateTime,
-    /// <p>The time at which the flow alias was last updated.</p>
+    /// <p>The time at which the alias was last updated.</p>
     pub updated_at: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
 impl GetFlowAliasOutput {
-    /// <p>The name of the flow alias.</p>
+    /// <p>The name of the alias.</p>
     pub fn name(&self) -> &str {
         use std::ops::Deref;
         self.name.deref()
@@ -55,7 +55,7 @@ impl GetFlowAliasOutput {
     pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
         &self.created_at
     }
-    /// <p>The time at which the flow alias was last updated.</p>
+    /// <p>The time at which the alias was last updated.</p>
     pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
         &self.updated_at
     }
@@ -87,18 +87,18 @@ pub struct GetFlowAliasOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetFlowAliasOutputBuilder {
-    /// <p>The name of the flow alias.</p>
+    /// <p>The name of the alias.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the flow alias.</p>
+    /// <p>The name of the alias.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the flow alias.</p>
+    /// <p>The name of the alias.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
@@ -199,18 +199,18 @@ impl GetFlowAliasOutputBuilder {
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
-    /// <p>The time at which the flow alias was last updated.</p>
+    /// <p>The time at which the alias was last updated.</p>
     /// This field is required.
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time at which the flow alias was last updated.</p>
+    /// <p>The time at which the alias was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
-    /// <p>The time at which the flow alias was last updated.</p>
+    /// <p>The time at which the alias was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }

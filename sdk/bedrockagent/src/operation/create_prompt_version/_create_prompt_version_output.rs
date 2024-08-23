@@ -3,9 +3,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreatePromptVersionOutput {
-    /// <p>The name of the prompt version.</p>
+    /// <p>The name of the prompt.</p>
     pub name: ::std::string::String,
-    /// <p>A description for the prompt version.</p>
+    /// <p>A description for the version.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the KMS key to encrypt the version of the prompt.</p>
     pub customer_encryption_key_arn: ::std::option::Option<::std::string::String>,
@@ -26,12 +26,12 @@ pub struct CreatePromptVersionOutput {
     _request_id: Option<String>,
 }
 impl CreatePromptVersionOutput {
-    /// <p>The name of the prompt version.</p>
+    /// <p>The name of the prompt.</p>
     pub fn name(&self) -> &str {
         use std::ops::Deref;
         self.name.deref()
     }
-    /// <p>A description for the prompt version.</p>
+    /// <p>A description for the version.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -119,32 +119,32 @@ pub struct CreatePromptVersionOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreatePromptVersionOutputBuilder {
-    /// <p>The name of the prompt version.</p>
+    /// <p>The name of the prompt.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the prompt version.</p>
+    /// <p>The name of the prompt.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the prompt version.</p>
+    /// <p>The name of the prompt.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>A description for the prompt version.</p>
+    /// <p>A description for the version.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A description for the prompt version.</p>
+    /// <p>A description for the version.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>A description for the prompt version.</p>
+    /// <p>A description for the version.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }

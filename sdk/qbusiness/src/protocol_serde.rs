@@ -239,11 +239,15 @@ pub(crate) mod shape_auth_challenge_response;
 
 pub(crate) mod shape_auth_challenge_response_event;
 
+pub(crate) mod shape_auto_subscription_configuration;
+
 pub(crate) mod shape_blocked_phrases_configuration;
 
 pub(crate) mod shape_blocked_phrases_configuration_update;
 
 pub(crate) mod shape_chat_mode_configuration;
+
+pub(crate) mod shape_client_ids_for_oidc;
 
 pub(crate) mod shape_configuration_event;
 
@@ -286,6 +290,8 @@ pub(crate) mod shape_group_status_detail;
 pub(crate) mod shape_group_status_details;
 
 pub(crate) mod shape_group_summary_list;
+
+pub(crate) mod shape_identity_provider_configuration;
 
 pub(crate) mod shape_index_capacity_configuration;
 
@@ -393,6 +399,8 @@ pub(crate) mod shape_no_auth_configuration;
 
 pub(crate) mod shape_o_auth2_client_credential_configuration;
 
+pub(crate) mod shape_open_id_connect_provider_configuration;
+
 pub(crate) mod shape_plugin;
 
 pub(crate) mod shape_plugin_configuration;
@@ -402,6 +410,8 @@ pub(crate) mod shape_retriever;
 pub(crate) mod shape_rule;
 
 pub(crate) mod shape_saml_configuration;
+
+pub(crate) mod shape_saml_provider_configuration;
 
 pub(crate) mod shape_security_group_ids;
 

@@ -11,6 +11,8 @@
 pub struct FunctionResult {
     /// <p>The action group that the function belongs to.</p>
     pub action_group: ::std::string::String,
+    /// <p>Contains the user confirmation information about the function that was called.</p>
+    pub confirmation_state: ::std::option::Option<crate::types::ConfirmationState>,
     /// <p>The name of the function that was called.</p>
     pub function: ::std::option::Option<::std::string::String>,
     /// <p>The response from the function call using the parameters. The key of the object is the content type (currently, only <code>TEXT</code> is supported). The response may be returned directly or from the Lambda function.</p>
@@ -23,6 +25,10 @@ impl FunctionResult {
     pub fn action_group(&self) -> &str {
         use std::ops::Deref;
         self.action_group.deref()
+    }
+    /// <p>Contains the user confirmation information about the function that was called.</p>
+    pub fn confirmation_state(&self) -> ::std::option::Option<&crate::types::ConfirmationState> {
+        self.confirmation_state.as_ref()
     }
     /// <p>The name of the function that was called.</p>
     pub fn function(&self) -> ::std::option::Option<&str> {
@@ -49,6 +55,7 @@ impl FunctionResult {
 #[non_exhaustive]
 pub struct FunctionResultBuilder {
     pub(crate) action_group: ::std::option::Option<::std::string::String>,
+    pub(crate) confirmation_state: ::std::option::Option<crate::types::ConfirmationState>,
     pub(crate) function: ::std::option::Option<::std::string::String>,
     pub(crate) response_body: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ContentBody>>,
     pub(crate) response_state: ::std::option::Option<crate::types::ResponseState>,
@@ -68,6 +75,20 @@ impl FunctionResultBuilder {
     /// <p>The action group that the function belongs to.</p>
     pub fn get_action_group(&self) -> &::std::option::Option<::std::string::String> {
         &self.action_group
+    }
+    /// <p>Contains the user confirmation information about the function that was called.</p>
+    pub fn confirmation_state(mut self, input: crate::types::ConfirmationState) -> Self {
+        self.confirmation_state = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains the user confirmation information about the function that was called.</p>
+    pub fn set_confirmation_state(mut self, input: ::std::option::Option<crate::types::ConfirmationState>) -> Self {
+        self.confirmation_state = input;
+        self
+    }
+    /// <p>Contains the user confirmation information about the function that was called.</p>
+    pub fn get_confirmation_state(&self) -> &::std::option::Option<crate::types::ConfirmationState> {
+        &self.confirmation_state
     }
     /// <p>The name of the function that was called.</p>
     pub fn function(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -131,6 +152,7 @@ impl FunctionResultBuilder {
                     "action_group was not specified but it is required when building FunctionResult",
                 )
             })?,
+            confirmation_state: self.confirmation_state,
             function: self.function,
             response_body: self.response_body,
             response_state: self.response_state,

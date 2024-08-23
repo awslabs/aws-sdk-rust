@@ -22,6 +22,9 @@ pub fn ser_function(
         }
         object_3.finish();
     }
+    if let Some(var_7) = &input.require_confirmation {
+        object.key("requireConfirmation").string(var_7.as_str());
+    }
     Ok(())
 }
 
@@ -56,6 +59,13 @@ where
                         }
                         "parameters" => {
                             builder = builder.set_parameters(crate::protocol_serde::shape_parameter_map::de_parameter_map(tokens)?);
+                        }
+                        "requireConfirmation" => {
+                            builder = builder.set_require_confirmation(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::RequireConfirmation::from(u.as_ref())))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

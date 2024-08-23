@@ -7,8 +7,14 @@ pub struct CreateApplicationInput {
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role with permissions to access your Amazon CloudWatch logs and metrics.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The authentication type being used by a Amazon Q Business application.</p>
+    pub identity_type: ::std::option::Option<crate::types::IdentityType>,
+    /// <p>The Amazon Resource Name (ARN) of an identity provider being used by an Amazon Q Business application.</p>
+    pub iam_identity_provider_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance you are either creating for—or connecting to—your Amazon Q Business application.</p>
     pub identity_center_instance_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The OIDC client ID for a Amazon Q Business application.</p>
+    pub client_ids_for_oidc: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A description for the Amazon Q Business application.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the KMS key that is used to encrypt your data. Amazon Q Business doesn't support asymmetric keys.</p>
@@ -33,9 +39,23 @@ impl CreateApplicationInput {
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
+    /// <p>The authentication type being used by a Amazon Q Business application.</p>
+    pub fn identity_type(&self) -> ::std::option::Option<&crate::types::IdentityType> {
+        self.identity_type.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an identity provider being used by an Amazon Q Business application.</p>
+    pub fn iam_identity_provider_arn(&self) -> ::std::option::Option<&str> {
+        self.iam_identity_provider_arn.as_deref()
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance you are either creating for—or connecting to—your Amazon Q Business application.</p>
     pub fn identity_center_instance_arn(&self) -> ::std::option::Option<&str> {
         self.identity_center_instance_arn.as_deref()
+    }
+    /// <p>The OIDC client ID for a Amazon Q Business application.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.client_ids_for_oidc.is_none()`.
+    pub fn client_ids_for_oidc(&self) -> &[::std::string::String] {
+        self.client_ids_for_oidc.as_deref().unwrap_or_default()
     }
     /// <p>A description for the Amazon Q Business application.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -81,7 +101,10 @@ impl CreateApplicationInput {
 pub struct CreateApplicationInputBuilder {
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) identity_type: ::std::option::Option<crate::types::IdentityType>,
+    pub(crate) iam_identity_provider_arn: ::std::option::Option<::std::string::String>,
     pub(crate) identity_center_instance_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) client_ids_for_oidc: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -120,6 +143,34 @@ impl CreateApplicationInputBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
+    /// <p>The authentication type being used by a Amazon Q Business application.</p>
+    pub fn identity_type(mut self, input: crate::types::IdentityType) -> Self {
+        self.identity_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The authentication type being used by a Amazon Q Business application.</p>
+    pub fn set_identity_type(mut self, input: ::std::option::Option<crate::types::IdentityType>) -> Self {
+        self.identity_type = input;
+        self
+    }
+    /// <p>The authentication type being used by a Amazon Q Business application.</p>
+    pub fn get_identity_type(&self) -> &::std::option::Option<crate::types::IdentityType> {
+        &self.identity_type
+    }
+    /// <p>The Amazon Resource Name (ARN) of an identity provider being used by an Amazon Q Business application.</p>
+    pub fn iam_identity_provider_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.iam_identity_provider_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an identity provider being used by an Amazon Q Business application.</p>
+    pub fn set_iam_identity_provider_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.iam_identity_provider_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an identity provider being used by an Amazon Q Business application.</p>
+    pub fn get_iam_identity_provider_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iam_identity_provider_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance you are either creating for—or connecting to—your Amazon Q Business application.</p>
     pub fn identity_center_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_center_instance_arn = ::std::option::Option::Some(input.into());
@@ -133,6 +184,26 @@ impl CreateApplicationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance you are either creating for—or connecting to—your Amazon Q Business application.</p>
     pub fn get_identity_center_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.identity_center_instance_arn
+    }
+    /// Appends an item to `client_ids_for_oidc`.
+    ///
+    /// To override the contents of this collection use [`set_client_ids_for_oidc`](Self::set_client_ids_for_oidc).
+    ///
+    /// <p>The OIDC client ID for a Amazon Q Business application.</p>
+    pub fn client_ids_for_oidc(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.client_ids_for_oidc.unwrap_or_default();
+        v.push(input.into());
+        self.client_ids_for_oidc = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The OIDC client ID for a Amazon Q Business application.</p>
+    pub fn set_client_ids_for_oidc(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.client_ids_for_oidc = input;
+        self
+    }
+    /// <p>The OIDC client ID for a Amazon Q Business application.</p>
+    pub fn get_client_ids_for_oidc(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.client_ids_for_oidc
     }
     /// <p>A description for the Amazon Q Business application.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -245,7 +316,10 @@ impl CreateApplicationInputBuilder {
         ::std::result::Result::Ok(crate::operation::create_application::CreateApplicationInput {
             display_name: self.display_name,
             role_arn: self.role_arn,
+            identity_type: self.identity_type,
+            iam_identity_provider_arn: self.iam_identity_provider_arn,
             identity_center_instance_arn: self.identity_center_instance_arn,
+            client_ids_for_oidc: self.client_ids_for_oidc,
             description: self.description,
             encryption_configuration: self.encryption_configuration,
             tags: self.tags,

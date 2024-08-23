@@ -178,17 +178,23 @@ impl CreateWebExperienceFluentBuilder {
     pub fn get_sample_prompts_control_mode(&self) -> &::std::option::Option<crate::types::WebExperienceSamplePromptsControlMode> {
         self.inner.get_sample_prompts_control_mode()
     }
-    /// <p>The Amazon Resource Name (ARN) of the service role attached to your web experience.</p>
+    /// <p>The Amazon Resource Name (ARN) of the service role attached to your web experience.</p><note>
+    /// <p>You must provide this value if you're using IAM Identity Center to manage end user access to your application. If you're using legacy identity management to manage user access, you don't need to provide this value.</p>
+    /// </note>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the service role attached to your web experience.</p>
+    /// <p>The Amazon Resource Name (ARN) of the service role attached to your web experience.</p><note>
+    /// <p>You must provide this value if you're using IAM Identity Center to manage end user access to your application. If you're using legacy identity management to manage user access, you don't need to provide this value.</p>
+    /// </note>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the service role attached to your web experience.</p>
+    /// <p>The Amazon Resource Name (ARN) of the service role attached to your web experience.</p><note>
+    /// <p>You must provide this value if you're using IAM Identity Center to manage end user access to your application. If you're using legacy identity management to manage user access, you don't need to provide this value.</p>
+    /// </note>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_role_arn()
     }
@@ -224,5 +230,19 @@ impl CreateWebExperienceFluentBuilder {
     /// <p>A token you provide to identify a request to create an Amazon Q Business web experience.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
+    }
+    /// <p>Information about the identity provider (IdP) used to authenticate end users of an Amazon Q Business web experience.</p>
+    pub fn identity_provider_configuration(mut self, input: crate::types::IdentityProviderConfiguration) -> Self {
+        self.inner = self.inner.identity_provider_configuration(input);
+        self
+    }
+    /// <p>Information about the identity provider (IdP) used to authenticate end users of an Amazon Q Business web experience.</p>
+    pub fn set_identity_provider_configuration(mut self, input: ::std::option::Option<crate::types::IdentityProviderConfiguration>) -> Self {
+        self.inner = self.inner.set_identity_provider_configuration(input);
+        self
+    }
+    /// <p>Information about the identity provider (IdP) used to authenticate end users of an Amazon Q Business web experience.</p>
+    pub fn get_identity_provider_configuration(&self) -> &::std::option::Option<crate::types::IdentityProviderConfiguration> {
+        self.inner.get_identity_provider_configuration()
     }
 }

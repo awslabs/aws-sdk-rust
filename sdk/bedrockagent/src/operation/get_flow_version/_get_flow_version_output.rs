@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFlowVersionOutput {
-    /// <p>The name of the flow version.</p>
+    /// <p>The name of the version.</p>
     pub name: ::std::string::String,
     /// <p>The description of the flow.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -26,7 +26,7 @@ pub struct GetFlowVersionOutput {
     _request_id: Option<String>,
 }
 impl GetFlowVersionOutput {
-    /// <p>The name of the flow version.</p>
+    /// <p>The name of the version.</p>
     pub fn name(&self) -> &str {
         use std::ops::Deref;
         self.name.deref()
@@ -101,18 +101,18 @@ pub struct GetFlowVersionOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetFlowVersionOutputBuilder {
-    /// <p>The name of the flow version.</p>
+    /// <p>The name of the version.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the flow version.</p>
+    /// <p>The name of the version.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the flow version.</p>
+    /// <p>The name of the version.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

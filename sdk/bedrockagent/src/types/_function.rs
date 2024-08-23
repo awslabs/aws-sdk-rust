@@ -23,6 +23,8 @@ pub struct Function {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The parameters that the agent elicits from the user to fulfill the function.</p>
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ParameterDetail>>,
+    /// <p>Contains information if user confirmation is required to invoke the function.</p>
+    pub require_confirmation: ::std::option::Option<crate::types::RequireConfirmation>,
 }
 impl Function {
     /// <p>A name for the function.</p>
@@ -37,6 +39,10 @@ impl Function {
     /// <p>The parameters that the agent elicits from the user to fulfill the function.</p>
     pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ParameterDetail>> {
         self.parameters.as_ref()
+    }
+    /// <p>Contains information if user confirmation is required to invoke the function.</p>
+    pub fn require_confirmation(&self) -> ::std::option::Option<&crate::types::RequireConfirmation> {
+        self.require_confirmation.as_ref()
     }
 }
 impl Function {
@@ -53,6 +59,7 @@ pub struct FunctionBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ParameterDetail>>,
+    pub(crate) require_confirmation: ::std::option::Option<crate::types::RequireConfirmation>,
 }
 impl FunctionBuilder {
     /// <p>A name for the function.</p>
@@ -107,6 +114,20 @@ impl FunctionBuilder {
     pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ParameterDetail>> {
         &self.parameters
     }
+    /// <p>Contains information if user confirmation is required to invoke the function.</p>
+    pub fn require_confirmation(mut self, input: crate::types::RequireConfirmation) -> Self {
+        self.require_confirmation = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains information if user confirmation is required to invoke the function.</p>
+    pub fn set_require_confirmation(mut self, input: ::std::option::Option<crate::types::RequireConfirmation>) -> Self {
+        self.require_confirmation = input;
+        self
+    }
+    /// <p>Contains information if user confirmation is required to invoke the function.</p>
+    pub fn get_require_confirmation(&self) -> &::std::option::Option<crate::types::RequireConfirmation> {
+        &self.require_confirmation
+    }
     /// Consumes the builder and constructs a [`Function`](crate::types::Function).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::FunctionBuilder::name)
@@ -120,6 +141,7 @@ impl FunctionBuilder {
             })?,
             description: self.description,
             parameters: self.parameters,
+            require_confirmation: self.require_confirmation,
         })
     }
 }

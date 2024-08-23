@@ -27,6 +27,8 @@ pub struct GetWebExperienceOutput {
     pub sample_prompts_control_mode: ::std::option::Option<crate::types::WebExperienceSamplePromptsControlMode>,
     /// <p>The Amazon Resource Name (ARN) of the service role attached to your web experience.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Information about the identity provider (IdP) used to authenticate end users of an Amazon Q Business web experience.</p>
+    pub identity_provider_configuration: ::std::option::Option<crate::types::IdentityProviderConfiguration>,
     /// <p>The authentication configuration information for your Amazon Q Business web experience.</p>
     #[deprecated(note = "Property associated with legacy SAML IdP flow. Deprecated in favor of using AWS IAM Identity Center for user management.")]
     pub authentication_configuration: ::std::option::Option<crate::types::WebExperienceAuthConfiguration>,
@@ -83,6 +85,10 @@ impl GetWebExperienceOutput {
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
+    /// <p>Information about the identity provider (IdP) used to authenticate end users of an Amazon Q Business web experience.</p>
+    pub fn identity_provider_configuration(&self) -> ::std::option::Option<&crate::types::IdentityProviderConfiguration> {
+        self.identity_provider_configuration.as_ref()
+    }
     /// <p>The authentication configuration information for your Amazon Q Business web experience.</p>
     #[deprecated(note = "Property associated with legacy SAML IdP flow. Deprecated in favor of using AWS IAM Identity Center for user management.")]
     pub fn authentication_configuration(&self) -> ::std::option::Option<&crate::types::WebExperienceAuthConfiguration> {
@@ -121,6 +127,7 @@ pub struct GetWebExperienceOutputBuilder {
     pub(crate) welcome_message: ::std::option::Option<::std::string::String>,
     pub(crate) sample_prompts_control_mode: ::std::option::Option<crate::types::WebExperienceSamplePromptsControlMode>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) identity_provider_configuration: ::std::option::Option<crate::types::IdentityProviderConfiguration>,
     pub(crate) authentication_configuration: ::std::option::Option<crate::types::WebExperienceAuthConfiguration>,
     pub(crate) error: ::std::option::Option<crate::types::ErrorDetail>,
     _request_id: Option<String>,
@@ -294,6 +301,20 @@ impl GetWebExperienceOutputBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
+    /// <p>Information about the identity provider (IdP) used to authenticate end users of an Amazon Q Business web experience.</p>
+    pub fn identity_provider_configuration(mut self, input: crate::types::IdentityProviderConfiguration) -> Self {
+        self.identity_provider_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about the identity provider (IdP) used to authenticate end users of an Amazon Q Business web experience.</p>
+    pub fn set_identity_provider_configuration(mut self, input: ::std::option::Option<crate::types::IdentityProviderConfiguration>) -> Self {
+        self.identity_provider_configuration = input;
+        self
+    }
+    /// <p>Information about the identity provider (IdP) used to authenticate end users of an Amazon Q Business web experience.</p>
+    pub fn get_identity_provider_configuration(&self) -> &::std::option::Option<crate::types::IdentityProviderConfiguration> {
+        &self.identity_provider_configuration
+    }
     /// <p>The authentication configuration information for your Amazon Q Business web experience.</p>
     #[deprecated(note = "Property associated with legacy SAML IdP flow. Deprecated in favor of using AWS IAM Identity Center for user management.")]
     pub fn authentication_configuration(mut self, input: crate::types::WebExperienceAuthConfiguration) -> Self {
@@ -349,6 +370,7 @@ impl GetWebExperienceOutputBuilder {
             welcome_message: self.welcome_message,
             sample_prompts_control_mode: self.sample_prompts_control_mode,
             role_arn: self.role_arn,
+            identity_provider_configuration: self.identity_provider_configuration,
             authentication_configuration: self.authentication_configuration,
             error: self.error,
             _request_id: self._request_id,

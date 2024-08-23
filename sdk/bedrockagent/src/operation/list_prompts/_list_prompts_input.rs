@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPromptsInput {
-    /// <p>The unique identifier of the prompt.</p>
+    /// <p>The unique identifier of the prompt for whose versions you want to return information. Omit this field to list information about all prompts in an account.</p>
     pub prompt_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the <code>nextToken</code> field when making another request to return the next batch of results.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -11,7 +11,7 @@ pub struct ListPromptsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListPromptsInput {
-    /// <p>The unique identifier of the prompt.</p>
+    /// <p>The unique identifier of the prompt for whose versions you want to return information. Omit this field to list information about all prompts in an account.</p>
     pub fn prompt_identifier(&self) -> ::std::option::Option<&str> {
         self.prompt_identifier.as_deref()
     }
@@ -40,17 +40,17 @@ pub struct ListPromptsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListPromptsInputBuilder {
-    /// <p>The unique identifier of the prompt.</p>
+    /// <p>The unique identifier of the prompt for whose versions you want to return information. Omit this field to list information about all prompts in an account.</p>
     pub fn prompt_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prompt_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the prompt.</p>
+    /// <p>The unique identifier of the prompt for whose versions you want to return information. Omit this field to list information about all prompts in an account.</p>
     pub fn set_prompt_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prompt_identifier = input;
         self
     }
-    /// <p>The unique identifier of the prompt.</p>
+    /// <p>The unique identifier of the prompt for whose versions you want to return information. Omit this field to list information about all prompts in an account.</p>
     pub fn get_prompt_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.prompt_identifier
     }

@@ -5,7 +5,7 @@
 pub struct GetPromptInput {
     /// <p>The unique identifier of the prompt.</p>
     pub prompt_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>The version of the prompt about which you want to retrieve information.</p>
+    /// <p>The version of the prompt about which you want to retrieve information. Omit this field to return information about the working draft of the prompt.</p>
     pub prompt_version: ::std::option::Option<::std::string::String>,
 }
 impl GetPromptInput {
@@ -13,7 +13,7 @@ impl GetPromptInput {
     pub fn prompt_identifier(&self) -> ::std::option::Option<&str> {
         self.prompt_identifier.as_deref()
     }
-    /// <p>The version of the prompt about which you want to retrieve information.</p>
+    /// <p>The version of the prompt about which you want to retrieve information. Omit this field to return information about the working draft of the prompt.</p>
     pub fn prompt_version(&self) -> ::std::option::Option<&str> {
         self.prompt_version.as_deref()
     }
@@ -48,17 +48,17 @@ impl GetPromptInputBuilder {
     pub fn get_prompt_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.prompt_identifier
     }
-    /// <p>The version of the prompt about which you want to retrieve information.</p>
+    /// <p>The version of the prompt about which you want to retrieve information. Omit this field to return information about the working draft of the prompt.</p>
     pub fn prompt_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prompt_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The version of the prompt about which you want to retrieve information.</p>
+    /// <p>The version of the prompt about which you want to retrieve information. Omit this field to return information about the working draft of the prompt.</p>
     pub fn set_prompt_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prompt_version = input;
         self
     }
-    /// <p>The version of the prompt about which you want to retrieve information.</p>
+    /// <p>The version of the prompt about which you want to retrieve information. Omit this field to return information about the working draft of the prompt.</p>
     pub fn get_prompt_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.prompt_version
     }

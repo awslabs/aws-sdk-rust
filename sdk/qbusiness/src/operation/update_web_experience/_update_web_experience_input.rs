@@ -20,6 +20,8 @@ pub struct UpdateWebExperienceInput {
     pub welcome_message: ::std::option::Option<::std::string::String>,
     /// <p>Determines whether sample prompts are enabled in the web experience for an end user.</p>
     pub sample_prompts_control_mode: ::std::option::Option<crate::types::WebExperienceSamplePromptsControlMode>,
+    /// <p>Information about the identity provider (IdP) used to authenticate end users of an Amazon Q Business web experience.</p>
+    pub identity_provider_configuration: ::std::option::Option<crate::types::IdentityProviderConfiguration>,
 }
 impl UpdateWebExperienceInput {
     /// <p>The identifier of the Amazon Q Business application attached to the web experience.</p>
@@ -55,6 +57,10 @@ impl UpdateWebExperienceInput {
     pub fn sample_prompts_control_mode(&self) -> ::std::option::Option<&crate::types::WebExperienceSamplePromptsControlMode> {
         self.sample_prompts_control_mode.as_ref()
     }
+    /// <p>Information about the identity provider (IdP) used to authenticate end users of an Amazon Q Business web experience.</p>
+    pub fn identity_provider_configuration(&self) -> ::std::option::Option<&crate::types::IdentityProviderConfiguration> {
+        self.identity_provider_configuration.as_ref()
+    }
 }
 impl UpdateWebExperienceInput {
     /// Creates a new builder-style object to manufacture [`UpdateWebExperienceInput`](crate::operation::update_web_experience::UpdateWebExperienceInput).
@@ -75,6 +81,7 @@ pub struct UpdateWebExperienceInputBuilder {
     pub(crate) subtitle: ::std::option::Option<::std::string::String>,
     pub(crate) welcome_message: ::std::option::Option<::std::string::String>,
     pub(crate) sample_prompts_control_mode: ::std::option::Option<crate::types::WebExperienceSamplePromptsControlMode>,
+    pub(crate) identity_provider_configuration: ::std::option::Option<crate::types::IdentityProviderConfiguration>,
 }
 impl UpdateWebExperienceInputBuilder {
     /// <p>The identifier of the Amazon Q Business application attached to the web experience.</p>
@@ -194,6 +201,20 @@ impl UpdateWebExperienceInputBuilder {
     pub fn get_sample_prompts_control_mode(&self) -> &::std::option::Option<crate::types::WebExperienceSamplePromptsControlMode> {
         &self.sample_prompts_control_mode
     }
+    /// <p>Information about the identity provider (IdP) used to authenticate end users of an Amazon Q Business web experience.</p>
+    pub fn identity_provider_configuration(mut self, input: crate::types::IdentityProviderConfiguration) -> Self {
+        self.identity_provider_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about the identity provider (IdP) used to authenticate end users of an Amazon Q Business web experience.</p>
+    pub fn set_identity_provider_configuration(mut self, input: ::std::option::Option<crate::types::IdentityProviderConfiguration>) -> Self {
+        self.identity_provider_configuration = input;
+        self
+    }
+    /// <p>Information about the identity provider (IdP) used to authenticate end users of an Amazon Q Business web experience.</p>
+    pub fn get_identity_provider_configuration(&self) -> &::std::option::Option<crate::types::IdentityProviderConfiguration> {
+        &self.identity_provider_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateWebExperienceInput`](crate::operation::update_web_experience::UpdateWebExperienceInput).
     pub fn build(
         self,
@@ -208,6 +229,7 @@ impl UpdateWebExperienceInputBuilder {
             subtitle: self.subtitle,
             welcome_message: self.welcome_message,
             sample_prompts_control_mode: self.sample_prompts_control_mode,
+            identity_provider_configuration: self.identity_provider_configuration,
         })
     }
 }

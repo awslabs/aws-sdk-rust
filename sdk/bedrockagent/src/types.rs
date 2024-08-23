@@ -309,6 +309,8 @@ pub use crate::types::_function_schema::FunctionSchema;
 
 pub use crate::types::_function::Function;
 
+pub use crate::types::_require_confirmation::RequireConfirmation;
+
 pub use crate::types::_parameter_detail::ParameterDetail;
 
 pub use crate::types::_type_::Type;
@@ -574,6 +576,8 @@ mod _rds_field_mapping;
 mod _redis_enterprise_cloud_configuration;
 
 mod _redis_enterprise_cloud_field_mapping;
+
+mod _require_confirmation;
 
 mod _retrieval_flow_node_configuration;
 

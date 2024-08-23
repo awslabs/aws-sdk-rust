@@ -22,7 +22,7 @@ impl crate::operation::delete_prompt::builders::DeletePromptInputBuilder {
 }
 /// Fluent builder constructing a request to `DeletePrompt`.
 ///
-/// <p>Deletes a prompt or a prompt version from the Prompt management tool. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-manage.html#prompt-management-delete.html">Delete prompts from the Prompt management tool</a> and <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-deploy.html#prompt-management-versions-delete.html">Delete a version of a prompt from the Prompt management tool</a> in the Amazon Bedrock User Guide.</p>
+/// <p>Deletes a prompt or a version of it, depending on whether you include the <code>promptVersion</code> field or not. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-manage.html#prompt-management-delete.html">Delete prompts from the Prompt management tool</a> and <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-deploy.html#prompt-management-versions-delete.html">Delete a version of a prompt from the Prompt management tool</a> in the Amazon Bedrock User Guide.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeletePromptFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -122,17 +122,17 @@ impl DeletePromptFluentBuilder {
     pub fn get_prompt_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_prompt_identifier()
     }
-    /// <p>The version of the prompt to delete.</p>
+    /// <p>The version of the prompt to delete. To delete the prompt, omit this field.</p>
     pub fn prompt_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.prompt_version(input.into());
         self
     }
-    /// <p>The version of the prompt to delete.</p>
+    /// <p>The version of the prompt to delete. To delete the prompt, omit this field.</p>
     pub fn set_prompt_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_prompt_version(input);
         self
     }
-    /// <p>The version of the prompt to delete.</p>
+    /// <p>The version of the prompt to delete. To delete the prompt, omit this field.</p>
     pub fn get_prompt_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_prompt_version()
     }

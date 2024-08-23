@@ -9,7 +9,21 @@ pub struct CreateDataSourceInput {
     pub index_id: ::std::option::Option<::std::string::String>,
     /// <p>A name for the data source connector.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
-    /// <p>Configuration information to connect to your data source repository. For configuration templates for your specific data source, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/connectors-list.html">Supported connectors</a>.</p>
+    /// <p>Configuration information to connect your data source repository to Amazon Q Business. Use this parameter to provide a JSON schema with configuration information specific to your data source connector.</p>
+    /// <p>Each data source has a JSON schema provided by Amazon Q Business that you must use. For example, the Amazon S3 and Web Crawler connectors require the following JSON schemas:</p>
+    /// <ul>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/s3-api.html">Amazon S3 JSON schema</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/web-crawler-api.html">Web Crawler JSON schema</a></p></li>
+    /// </ul>
+    /// <p>You can find configuration templates for your specific data source using the following steps:</p>
+    /// <ol>
+    /// <li>
+    /// <p>Navigate to the <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/connectors-list.html">Supported connectors</a> page in the Amazon Q Business User Guide, and select the data source of your choice.</p></li>
+    /// <li>
+    /// <p>Then, from your specific data source connector page, select <b>Using the API</b>. You will find the JSON schema for your data source, including parameter descriptions, in this section.</p></li>
+    /// </ol>
     pub configuration: ::std::option::Option<::aws_smithy_types::Document>,
     /// <p>Configuration information for an Amazon VPC (Virtual Private Cloud) to connect to your data source. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/connector-vpc.html">Using Amazon VPC with Amazon Q Business connectors</a>.</p>
     pub vpc_configuration: ::std::option::Option<crate::types::DataSourceVpcConfiguration>,
@@ -41,7 +55,21 @@ impl CreateDataSourceInput {
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>Configuration information to connect to your data source repository. For configuration templates for your specific data source, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/connectors-list.html">Supported connectors</a>.</p>
+    /// <p>Configuration information to connect your data source repository to Amazon Q Business. Use this parameter to provide a JSON schema with configuration information specific to your data source connector.</p>
+    /// <p>Each data source has a JSON schema provided by Amazon Q Business that you must use. For example, the Amazon S3 and Web Crawler connectors require the following JSON schemas:</p>
+    /// <ul>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/s3-api.html">Amazon S3 JSON schema</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/web-crawler-api.html">Web Crawler JSON schema</a></p></li>
+    /// </ul>
+    /// <p>You can find configuration templates for your specific data source using the following steps:</p>
+    /// <ol>
+    /// <li>
+    /// <p>Navigate to the <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/connectors-list.html">Supported connectors</a> page in the Amazon Q Business User Guide, and select the data source of your choice.</p></li>
+    /// <li>
+    /// <p>Then, from your specific data source connector page, select <b>Using the API</b>. You will find the JSON schema for your data source, including parameter descriptions, in this section.</p></li>
+    /// </ol>
     pub fn configuration(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
         self.configuration.as_ref()
     }
@@ -147,18 +175,60 @@ impl CreateDataSourceInputBuilder {
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }
-    /// <p>Configuration information to connect to your data source repository. For configuration templates for your specific data source, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/connectors-list.html">Supported connectors</a>.</p>
+    /// <p>Configuration information to connect your data source repository to Amazon Q Business. Use this parameter to provide a JSON schema with configuration information specific to your data source connector.</p>
+    /// <p>Each data source has a JSON schema provided by Amazon Q Business that you must use. For example, the Amazon S3 and Web Crawler connectors require the following JSON schemas:</p>
+    /// <ul>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/s3-api.html">Amazon S3 JSON schema</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/web-crawler-api.html">Web Crawler JSON schema</a></p></li>
+    /// </ul>
+    /// <p>You can find configuration templates for your specific data source using the following steps:</p>
+    /// <ol>
+    /// <li>
+    /// <p>Navigate to the <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/connectors-list.html">Supported connectors</a> page in the Amazon Q Business User Guide, and select the data source of your choice.</p></li>
+    /// <li>
+    /// <p>Then, from your specific data source connector page, select <b>Using the API</b>. You will find the JSON schema for your data source, including parameter descriptions, in this section.</p></li>
+    /// </ol>
     /// This field is required.
     pub fn configuration(mut self, input: ::aws_smithy_types::Document) -> Self {
         self.configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Configuration information to connect to your data source repository. For configuration templates for your specific data source, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/connectors-list.html">Supported connectors</a>.</p>
+    /// <p>Configuration information to connect your data source repository to Amazon Q Business. Use this parameter to provide a JSON schema with configuration information specific to your data source connector.</p>
+    /// <p>Each data source has a JSON schema provided by Amazon Q Business that you must use. For example, the Amazon S3 and Web Crawler connectors require the following JSON schemas:</p>
+    /// <ul>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/s3-api.html">Amazon S3 JSON schema</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/web-crawler-api.html">Web Crawler JSON schema</a></p></li>
+    /// </ul>
+    /// <p>You can find configuration templates for your specific data source using the following steps:</p>
+    /// <ol>
+    /// <li>
+    /// <p>Navigate to the <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/connectors-list.html">Supported connectors</a> page in the Amazon Q Business User Guide, and select the data source of your choice.</p></li>
+    /// <li>
+    /// <p>Then, from your specific data source connector page, select <b>Using the API</b>. You will find the JSON schema for your data source, including parameter descriptions, in this section.</p></li>
+    /// </ol>
     pub fn set_configuration(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
         self.configuration = input;
         self
     }
-    /// <p>Configuration information to connect to your data source repository. For configuration templates for your specific data source, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/connectors-list.html">Supported connectors</a>.</p>
+    /// <p>Configuration information to connect your data source repository to Amazon Q Business. Use this parameter to provide a JSON schema with configuration information specific to your data source connector.</p>
+    /// <p>Each data source has a JSON schema provided by Amazon Q Business that you must use. For example, the Amazon S3 and Web Crawler connectors require the following JSON schemas:</p>
+    /// <ul>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/s3-api.html">Amazon S3 JSON schema</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/web-crawler-api.html">Web Crawler JSON schema</a></p></li>
+    /// </ul>
+    /// <p>You can find configuration templates for your specific data source using the following steps:</p>
+    /// <ol>
+    /// <li>
+    /// <p>Navigate to the <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/connectors-list.html">Supported connectors</a> page in the Amazon Q Business User Guide, and select the data source of your choice.</p></li>
+    /// <li>
+    /// <p>Then, from your specific data source connector page, select <b>Using the API</b>. You will find the JSON schema for your data source, including parameter descriptions, in this section.</p></li>
+    /// </ol>
     pub fn get_configuration(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         &self.configuration
     }

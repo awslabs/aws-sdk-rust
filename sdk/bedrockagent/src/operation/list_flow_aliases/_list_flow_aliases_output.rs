@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFlowAliasesOutput {
-    /// <p>A list, each member of which contains information about a flow alias.</p>
+    /// <p>A list, each member of which contains information about an alias.</p>
     pub flow_alias_summaries: ::std::vec::Vec<crate::types::FlowAliasSummary>,
     /// <p>If the total number of results is greater than the <code>maxResults</code> value provided in the request, use this token when making another request in the <code>nextToken</code> field to return the next batch of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListFlowAliasesOutput {
-    /// <p>A list, each member of which contains information about a flow alias.</p>
+    /// <p>A list, each member of which contains information about an alias.</p>
     pub fn flow_alias_summaries(&self) -> &[crate::types::FlowAliasSummary] {
         use std::ops::Deref;
         self.flow_alias_summaries.deref()
@@ -45,19 +45,19 @@ impl ListFlowAliasesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_flow_alias_summaries`](Self::set_flow_alias_summaries).
     ///
-    /// <p>A list, each member of which contains information about a flow alias.</p>
+    /// <p>A list, each member of which contains information about an alias.</p>
     pub fn flow_alias_summaries(mut self, input: crate::types::FlowAliasSummary) -> Self {
         let mut v = self.flow_alias_summaries.unwrap_or_default();
         v.push(input);
         self.flow_alias_summaries = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list, each member of which contains information about a flow alias.</p>
+    /// <p>A list, each member of which contains information about an alias.</p>
     pub fn set_flow_alias_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FlowAliasSummary>>) -> Self {
         self.flow_alias_summaries = input;
         self
     }
-    /// <p>A list, each member of which contains information about a flow alias.</p>
+    /// <p>A list, each member of which contains information about an alias.</p>
     pub fn get_flow_alias_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FlowAliasSummary>> {
         &self.flow_alias_summaries
     }

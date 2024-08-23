@@ -8,6 +8,8 @@ impl super::Client {
     ///   - [`display_name(Option<String>)`](crate::operation::get_application::GetApplicationOutput::display_name): <p>The name of the Amazon Q Business application.</p>
     ///   - [`application_id(Option<String>)`](crate::operation::get_application::GetApplicationOutput::application_id): <p>The identifier of the Amazon Q Business application.</p>
     ///   - [`application_arn(Option<String>)`](crate::operation::get_application::GetApplicationOutput::application_arn): <p>The Amazon Resource Name (ARN) of the Amazon Q Business application.</p>
+    ///   - [`identity_type(Option<IdentityType>)`](crate::operation::get_application::GetApplicationOutput::identity_type): <p>The authentication type being used by a Amazon Q Business application.</p>
+    ///   - [`iam_identity_provider_arn(Option<String>)`](crate::operation::get_application::GetApplicationOutput::iam_identity_provider_arn): <p>The Amazon Resource Name (ARN) of an identity provider being used by an Amazon Q Business application.</p>
     ///   - [`identity_center_application_arn(Option<String>)`](crate::operation::get_application::GetApplicationOutput::identity_center_application_arn): <p>The Amazon Resource Name (ARN) of the AWS IAM Identity Center instance attached to your Amazon Q Business application.</p>
     ///   - [`role_arn(Option<String>)`](crate::operation::get_application::GetApplicationOutput::role_arn): <p>The Amazon Resource Name (ARN) of the IAM with permissions to access your CloudWatch logs and metrics.</p>
     ///   - [`status(Option<ApplicationStatus>)`](crate::operation::get_application::GetApplicationOutput::status): <p>The status of the Amazon Q Business application.</p>
@@ -19,6 +21,8 @@ impl super::Client {
     ///   - [`attachments_configuration(Option<AppliedAttachmentsConfiguration>)`](crate::operation::get_application::GetApplicationOutput::attachments_configuration): <p>Settings for whether end users can upload files directly during chat.</p>
     ///   - [`q_apps_configuration(Option<QAppsConfiguration>)`](crate::operation::get_application::GetApplicationOutput::q_apps_configuration): <p>Settings for whether end users can create and use Amazon Q Apps in the web experience.</p>
     ///   - [`personalization_configuration(Option<PersonalizationConfiguration>)`](crate::operation::get_application::GetApplicationOutput::personalization_configuration): <p>Configuration information about chat response personalization. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/personalizing-chat-responses.html">Personalizing chat responses</a>.</p>
+    ///   - [`auto_subscription_configuration(Option<AutoSubscriptionConfiguration>)`](crate::operation::get_application::GetApplicationOutput::auto_subscription_configuration): <p>Settings for auto-subscription behavior for this application. This is only applicable to SAML and OIDC applications.</p>
+    ///   - [`client_ids_for_oidc(Option<Vec::<String>>)`](crate::operation::get_application::GetApplicationOutput::client_ids_for_oidc): <p>The OIDC client ID for a Amazon Q Business application.</p>
     /// - On failure, responds with [`SdkError<GetApplicationError>`](crate::operation::get_application::GetApplicationError)
     pub fn get_application(&self) -> crate::operation::get_application::builders::GetApplicationFluentBuilder {
         crate::operation::get_application::builders::GetApplicationFluentBuilder::new(self.handle.clone())

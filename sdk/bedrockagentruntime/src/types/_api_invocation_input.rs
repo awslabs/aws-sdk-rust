@@ -19,6 +19,8 @@ pub struct ApiInvocationInput {
     pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::ApiParameter>>,
     /// <p>The request body to provide for the API request, as the agent elicited from the user.</p>
     pub request_body: ::std::option::Option<crate::types::ApiRequestBody>,
+    /// <p>Contains information about the API operation to invoke.</p>
+    pub action_invocation_type: ::std::option::Option<crate::types::ActionInvocationType>,
 }
 impl ApiInvocationInput {
     /// <p>The action group that the API operation belongs to.</p>
@@ -44,6 +46,10 @@ impl ApiInvocationInput {
     pub fn request_body(&self) -> ::std::option::Option<&crate::types::ApiRequestBody> {
         self.request_body.as_ref()
     }
+    /// <p>Contains information about the API operation to invoke.</p>
+    pub fn action_invocation_type(&self) -> ::std::option::Option<&crate::types::ActionInvocationType> {
+        self.action_invocation_type.as_ref()
+    }
 }
 impl ::std::fmt::Debug for ApiInvocationInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -53,6 +59,7 @@ impl ::std::fmt::Debug for ApiInvocationInput {
         formatter.field("api_path", &"*** Sensitive Data Redacted ***");
         formatter.field("parameters", &self.parameters);
         formatter.field("request_body", &self.request_body);
+        formatter.field("action_invocation_type", &self.action_invocation_type);
         formatter.finish()
     }
 }
@@ -72,6 +79,7 @@ pub struct ApiInvocationInputBuilder {
     pub(crate) api_path: ::std::option::Option<::std::string::String>,
     pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::ApiParameter>>,
     pub(crate) request_body: ::std::option::Option<crate::types::ApiRequestBody>,
+    pub(crate) action_invocation_type: ::std::option::Option<crate::types::ActionInvocationType>,
 }
 impl ApiInvocationInputBuilder {
     /// <p>The action group that the API operation belongs to.</p>
@@ -151,6 +159,20 @@ impl ApiInvocationInputBuilder {
     pub fn get_request_body(&self) -> &::std::option::Option<crate::types::ApiRequestBody> {
         &self.request_body
     }
+    /// <p>Contains information about the API operation to invoke.</p>
+    pub fn action_invocation_type(mut self, input: crate::types::ActionInvocationType) -> Self {
+        self.action_invocation_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains information about the API operation to invoke.</p>
+    pub fn set_action_invocation_type(mut self, input: ::std::option::Option<crate::types::ActionInvocationType>) -> Self {
+        self.action_invocation_type = input;
+        self
+    }
+    /// <p>Contains information about the API operation to invoke.</p>
+    pub fn get_action_invocation_type(&self) -> &::std::option::Option<crate::types::ActionInvocationType> {
+        &self.action_invocation_type
+    }
     /// Consumes the builder and constructs a [`ApiInvocationInput`](crate::types::ApiInvocationInput).
     /// This method will fail if any of the following fields are not set:
     /// - [`action_group`](crate::types::builders::ApiInvocationInputBuilder::action_group)
@@ -166,6 +188,7 @@ impl ApiInvocationInputBuilder {
             api_path: self.api_path,
             parameters: self.parameters,
             request_body: self.request_body,
+            action_invocation_type: self.action_invocation_type,
         })
     }
 }
@@ -177,6 +200,7 @@ impl ::std::fmt::Debug for ApiInvocationInputBuilder {
         formatter.field("api_path", &"*** Sensitive Data Redacted ***");
         formatter.field("parameters", &self.parameters);
         formatter.field("request_body", &self.request_body);
+        formatter.field("action_invocation_type", &self.action_invocation_type);
         formatter.finish()
     }
 }

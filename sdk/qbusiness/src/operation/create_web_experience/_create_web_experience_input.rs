@@ -13,12 +13,16 @@ pub struct CreateWebExperienceInput {
     pub welcome_message: ::std::option::Option<::std::string::String>,
     /// <p>Determines whether sample prompts are enabled in the web experience for an end user.</p>
     pub sample_prompts_control_mode: ::std::option::Option<crate::types::WebExperienceSamplePromptsControlMode>,
-    /// <p>The Amazon Resource Name (ARN) of the service role attached to your web experience.</p>
+    /// <p>The Amazon Resource Name (ARN) of the service role attached to your web experience.</p><note>
+    /// <p>You must provide this value if you're using IAM Identity Center to manage end user access to your application. If you're using legacy identity management to manage user access, you don't need to provide this value.</p>
+    /// </note>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of key-value pairs that identify or categorize your Amazon Q Business web experience. You can also use tags to help control access to the web experience. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>A token you provide to identify a request to create an Amazon Q Business web experience.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
+    /// <p>Information about the identity provider (IdP) used to authenticate end users of an Amazon Q Business web experience.</p>
+    pub identity_provider_configuration: ::std::option::Option<crate::types::IdentityProviderConfiguration>,
 }
 impl CreateWebExperienceInput {
     /// <p>The identifier of the Amazon Q Business web experience.</p>
@@ -41,7 +45,9 @@ impl CreateWebExperienceInput {
     pub fn sample_prompts_control_mode(&self) -> ::std::option::Option<&crate::types::WebExperienceSamplePromptsControlMode> {
         self.sample_prompts_control_mode.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the service role attached to your web experience.</p>
+    /// <p>The Amazon Resource Name (ARN) of the service role attached to your web experience.</p><note>
+    /// <p>You must provide this value if you're using IAM Identity Center to manage end user access to your application. If you're using legacy identity management to manage user access, you don't need to provide this value.</p>
+    /// </note>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -54,6 +60,10 @@ impl CreateWebExperienceInput {
     /// <p>A token you provide to identify a request to create an Amazon Q Business web experience.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
+    }
+    /// <p>Information about the identity provider (IdP) used to authenticate end users of an Amazon Q Business web experience.</p>
+    pub fn identity_provider_configuration(&self) -> ::std::option::Option<&crate::types::IdentityProviderConfiguration> {
+        self.identity_provider_configuration.as_ref()
     }
 }
 impl CreateWebExperienceInput {
@@ -75,6 +85,7 @@ pub struct CreateWebExperienceInputBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) identity_provider_configuration: ::std::option::Option<crate::types::IdentityProviderConfiguration>,
 }
 impl CreateWebExperienceInputBuilder {
     /// <p>The identifier of the Amazon Q Business web experience.</p>
@@ -148,17 +159,23 @@ impl CreateWebExperienceInputBuilder {
     pub fn get_sample_prompts_control_mode(&self) -> &::std::option::Option<crate::types::WebExperienceSamplePromptsControlMode> {
         &self.sample_prompts_control_mode
     }
-    /// <p>The Amazon Resource Name (ARN) of the service role attached to your web experience.</p>
+    /// <p>The Amazon Resource Name (ARN) of the service role attached to your web experience.</p><note>
+    /// <p>You must provide this value if you're using IAM Identity Center to manage end user access to your application. If you're using legacy identity management to manage user access, you don't need to provide this value.</p>
+    /// </note>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the service role attached to your web experience.</p>
+    /// <p>The Amazon Resource Name (ARN) of the service role attached to your web experience.</p><note>
+    /// <p>You must provide this value if you're using IAM Identity Center to manage end user access to your application. If you're using legacy identity management to manage user access, you don't need to provide this value.</p>
+    /// </note>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the service role attached to your web experience.</p>
+    /// <p>The Amazon Resource Name (ARN) of the service role attached to your web experience.</p><note>
+    /// <p>You must provide this value if you're using IAM Identity Center to manage end user access to your application. If you're using legacy identity management to manage user access, you don't need to provide this value.</p>
+    /// </note>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
@@ -196,6 +213,20 @@ impl CreateWebExperienceInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
+    /// <p>Information about the identity provider (IdP) used to authenticate end users of an Amazon Q Business web experience.</p>
+    pub fn identity_provider_configuration(mut self, input: crate::types::IdentityProviderConfiguration) -> Self {
+        self.identity_provider_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about the identity provider (IdP) used to authenticate end users of an Amazon Q Business web experience.</p>
+    pub fn set_identity_provider_configuration(mut self, input: ::std::option::Option<crate::types::IdentityProviderConfiguration>) -> Self {
+        self.identity_provider_configuration = input;
+        self
+    }
+    /// <p>Information about the identity provider (IdP) used to authenticate end users of an Amazon Q Business web experience.</p>
+    pub fn get_identity_provider_configuration(&self) -> &::std::option::Option<crate::types::IdentityProviderConfiguration> {
+        &self.identity_provider_configuration
+    }
     /// Consumes the builder and constructs a [`CreateWebExperienceInput`](crate::operation::create_web_experience::CreateWebExperienceInput).
     pub fn build(
         self,
@@ -210,6 +241,7 @@ impl CreateWebExperienceInputBuilder {
             role_arn: self.role_arn,
             tags: self.tags,
             client_token: self.client_token,
+            identity_provider_configuration: self.identity_provider_configuration,
         })
     }
 }

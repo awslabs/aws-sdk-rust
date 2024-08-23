@@ -9,6 +9,10 @@ pub struct GetApplicationOutput {
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon Q Business application.</p>
     pub application_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The authentication type being used by a Amazon Q Business application.</p>
+    pub identity_type: ::std::option::Option<crate::types::IdentityType>,
+    /// <p>The Amazon Resource Name (ARN) of an identity provider being used by an Amazon Q Business application.</p>
+    pub iam_identity_provider_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the AWS IAM Identity Center instance attached to your Amazon Q Business application.</p>
     pub identity_center_application_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM with permissions to access your CloudWatch logs and metrics.</p>
@@ -31,6 +35,10 @@ pub struct GetApplicationOutput {
     pub q_apps_configuration: ::std::option::Option<crate::types::QAppsConfiguration>,
     /// <p>Configuration information about chat response personalization. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/personalizing-chat-responses.html">Personalizing chat responses</a>.</p>
     pub personalization_configuration: ::std::option::Option<crate::types::PersonalizationConfiguration>,
+    /// <p>Settings for auto-subscription behavior for this application. This is only applicable to SAML and OIDC applications.</p>
+    pub auto_subscription_configuration: ::std::option::Option<crate::types::AutoSubscriptionConfiguration>,
+    /// <p>The OIDC client ID for a Amazon Q Business application.</p>
+    pub client_ids_for_oidc: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetApplicationOutput {
@@ -45,6 +53,14 @@ impl GetApplicationOutput {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Q Business application.</p>
     pub fn application_arn(&self) -> ::std::option::Option<&str> {
         self.application_arn.as_deref()
+    }
+    /// <p>The authentication type being used by a Amazon Q Business application.</p>
+    pub fn identity_type(&self) -> ::std::option::Option<&crate::types::IdentityType> {
+        self.identity_type.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an identity provider being used by an Amazon Q Business application.</p>
+    pub fn iam_identity_provider_arn(&self) -> ::std::option::Option<&str> {
+        self.iam_identity_provider_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS IAM Identity Center instance attached to your Amazon Q Business application.</p>
     pub fn identity_center_application_arn(&self) -> ::std::option::Option<&str> {
@@ -90,6 +106,16 @@ impl GetApplicationOutput {
     pub fn personalization_configuration(&self) -> ::std::option::Option<&crate::types::PersonalizationConfiguration> {
         self.personalization_configuration.as_ref()
     }
+    /// <p>Settings for auto-subscription behavior for this application. This is only applicable to SAML and OIDC applications.</p>
+    pub fn auto_subscription_configuration(&self) -> ::std::option::Option<&crate::types::AutoSubscriptionConfiguration> {
+        self.auto_subscription_configuration.as_ref()
+    }
+    /// <p>The OIDC client ID for a Amazon Q Business application.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.client_ids_for_oidc.is_none()`.
+    pub fn client_ids_for_oidc(&self) -> &[::std::string::String] {
+        self.client_ids_for_oidc.as_deref().unwrap_or_default()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetApplicationOutput {
     fn request_id(&self) -> Option<&str> {
@@ -110,6 +136,8 @@ pub struct GetApplicationOutputBuilder {
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) application_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) identity_type: ::std::option::Option<crate::types::IdentityType>,
+    pub(crate) iam_identity_provider_arn: ::std::option::Option<::std::string::String>,
     pub(crate) identity_center_application_arn: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ApplicationStatus>,
@@ -121,6 +149,8 @@ pub struct GetApplicationOutputBuilder {
     pub(crate) attachments_configuration: ::std::option::Option<crate::types::AppliedAttachmentsConfiguration>,
     pub(crate) q_apps_configuration: ::std::option::Option<crate::types::QAppsConfiguration>,
     pub(crate) personalization_configuration: ::std::option::Option<crate::types::PersonalizationConfiguration>,
+    pub(crate) auto_subscription_configuration: ::std::option::Option<crate::types::AutoSubscriptionConfiguration>,
+    pub(crate) client_ids_for_oidc: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetApplicationOutputBuilder {
@@ -165,6 +195,34 @@ impl GetApplicationOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Q Business application.</p>
     pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_arn
+    }
+    /// <p>The authentication type being used by a Amazon Q Business application.</p>
+    pub fn identity_type(mut self, input: crate::types::IdentityType) -> Self {
+        self.identity_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The authentication type being used by a Amazon Q Business application.</p>
+    pub fn set_identity_type(mut self, input: ::std::option::Option<crate::types::IdentityType>) -> Self {
+        self.identity_type = input;
+        self
+    }
+    /// <p>The authentication type being used by a Amazon Q Business application.</p>
+    pub fn get_identity_type(&self) -> &::std::option::Option<crate::types::IdentityType> {
+        &self.identity_type
+    }
+    /// <p>The Amazon Resource Name (ARN) of an identity provider being used by an Amazon Q Business application.</p>
+    pub fn iam_identity_provider_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.iam_identity_provider_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an identity provider being used by an Amazon Q Business application.</p>
+    pub fn set_iam_identity_provider_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.iam_identity_provider_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an identity provider being used by an Amazon Q Business application.</p>
+    pub fn get_iam_identity_provider_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iam_identity_provider_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS IAM Identity Center instance attached to your Amazon Q Business application.</p>
     pub fn identity_center_application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -320,6 +378,40 @@ impl GetApplicationOutputBuilder {
     pub fn get_personalization_configuration(&self) -> &::std::option::Option<crate::types::PersonalizationConfiguration> {
         &self.personalization_configuration
     }
+    /// <p>Settings for auto-subscription behavior for this application. This is only applicable to SAML and OIDC applications.</p>
+    pub fn auto_subscription_configuration(mut self, input: crate::types::AutoSubscriptionConfiguration) -> Self {
+        self.auto_subscription_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Settings for auto-subscription behavior for this application. This is only applicable to SAML and OIDC applications.</p>
+    pub fn set_auto_subscription_configuration(mut self, input: ::std::option::Option<crate::types::AutoSubscriptionConfiguration>) -> Self {
+        self.auto_subscription_configuration = input;
+        self
+    }
+    /// <p>Settings for auto-subscription behavior for this application. This is only applicable to SAML and OIDC applications.</p>
+    pub fn get_auto_subscription_configuration(&self) -> &::std::option::Option<crate::types::AutoSubscriptionConfiguration> {
+        &self.auto_subscription_configuration
+    }
+    /// Appends an item to `client_ids_for_oidc`.
+    ///
+    /// To override the contents of this collection use [`set_client_ids_for_oidc`](Self::set_client_ids_for_oidc).
+    ///
+    /// <p>The OIDC client ID for a Amazon Q Business application.</p>
+    pub fn client_ids_for_oidc(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.client_ids_for_oidc.unwrap_or_default();
+        v.push(input.into());
+        self.client_ids_for_oidc = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The OIDC client ID for a Amazon Q Business application.</p>
+    pub fn set_client_ids_for_oidc(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.client_ids_for_oidc = input;
+        self
+    }
+    /// <p>The OIDC client ID for a Amazon Q Business application.</p>
+    pub fn get_client_ids_for_oidc(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.client_ids_for_oidc
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -335,6 +427,8 @@ impl GetApplicationOutputBuilder {
             display_name: self.display_name,
             application_id: self.application_id,
             application_arn: self.application_arn,
+            identity_type: self.identity_type,
+            iam_identity_provider_arn: self.iam_identity_provider_arn,
             identity_center_application_arn: self.identity_center_application_arn,
             role_arn: self.role_arn,
             status: self.status,
@@ -346,6 +440,8 @@ impl GetApplicationOutputBuilder {
             attachments_configuration: self.attachments_configuration,
             q_apps_configuration: self.q_apps_configuration,
             personalization_configuration: self.personalization_configuration,
+            auto_subscription_configuration: self.auto_subscription_configuration,
+            client_ids_for_oidc: self.client_ids_for_oidc,
             _request_id: self._request_id,
         }
     }

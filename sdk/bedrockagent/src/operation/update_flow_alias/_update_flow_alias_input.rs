@@ -3,9 +3,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFlowAliasInput {
-    /// <p>The name of the flow alias.</p>
+    /// <p>The name of the alias.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>A description for the flow alias.</p>
+    /// <p>A description for the alias.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Contains information about the version to which to map the alias.</p>
     pub routing_configuration: ::std::option::Option<::std::vec::Vec<crate::types::FlowAliasRoutingConfigurationListItem>>,
@@ -15,11 +15,11 @@ pub struct UpdateFlowAliasInput {
     pub alias_identifier: ::std::option::Option<::std::string::String>,
 }
 impl UpdateFlowAliasInput {
-    /// <p>The name of the flow alias.</p>
+    /// <p>The name of the alias.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>A description for the flow alias.</p>
+    /// <p>A description for the alias.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -56,32 +56,32 @@ pub struct UpdateFlowAliasInputBuilder {
     pub(crate) alias_identifier: ::std::option::Option<::std::string::String>,
 }
 impl UpdateFlowAliasInputBuilder {
-    /// <p>The name of the flow alias.</p>
+    /// <p>The name of the alias.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the flow alias.</p>
+    /// <p>The name of the alias.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the flow alias.</p>
+    /// <p>The name of the alias.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>A description for the flow alias.</p>
+    /// <p>A description for the alias.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A description for the flow alias.</p>
+    /// <p>A description for the alias.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>A description for the flow alias.</p>
+    /// <p>A description for the alias.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }

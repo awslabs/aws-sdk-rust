@@ -5,7 +5,7 @@
 pub struct DeletePromptInput {
     /// <p>The unique identifier of the prompt.</p>
     pub prompt_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>The version of the prompt to delete.</p>
+    /// <p>The version of the prompt to delete. To delete the prompt, omit this field.</p>
     pub prompt_version: ::std::option::Option<::std::string::String>,
 }
 impl DeletePromptInput {
@@ -13,7 +13,7 @@ impl DeletePromptInput {
     pub fn prompt_identifier(&self) -> ::std::option::Option<&str> {
         self.prompt_identifier.as_deref()
     }
-    /// <p>The version of the prompt to delete.</p>
+    /// <p>The version of the prompt to delete. To delete the prompt, omit this field.</p>
     pub fn prompt_version(&self) -> ::std::option::Option<&str> {
         self.prompt_version.as_deref()
     }
@@ -48,17 +48,17 @@ impl DeletePromptInputBuilder {
     pub fn get_prompt_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.prompt_identifier
     }
-    /// <p>The version of the prompt to delete.</p>
+    /// <p>The version of the prompt to delete. To delete the prompt, omit this field.</p>
     pub fn prompt_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prompt_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The version of the prompt to delete.</p>
+    /// <p>The version of the prompt to delete. To delete the prompt, omit this field.</p>
     pub fn set_prompt_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prompt_version = input;
         self
     }
-    /// <p>The version of the prompt to delete.</p>
+    /// <p>The version of the prompt to delete. To delete the prompt, omit this field.</p>
     pub fn get_prompt_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.prompt_version
     }

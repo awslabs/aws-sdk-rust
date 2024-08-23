@@ -9,29 +9,35 @@ pub fn ser_update_application_input_input(
         crate::protocol_serde::shape_attachments_configuration::ser_attachments_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.description {
-        object.key("description").string(var_3.as_str());
-    }
-    if let Some(var_4) = &input.display_name {
-        object.key("displayName").string(var_4.as_str());
-    }
-    if let Some(var_5) = &input.identity_center_instance_arn {
-        object.key("identityCenterInstanceArn").string(var_5.as_str());
-    }
-    if let Some(var_6) = &input.personalization_configuration {
+    if let Some(var_3) = &input.auto_subscription_configuration {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("personalizationConfiguration").start_object();
-        crate::protocol_serde::shape_personalization_configuration::ser_personalization_configuration(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_4 = object.key("autoSubscriptionConfiguration").start_object();
+        crate::protocol_serde::shape_auto_subscription_configuration::ser_auto_subscription_configuration(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_8) = &input.q_apps_configuration {
+    if let Some(var_5) = &input.description {
+        object.key("description").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.display_name {
+        object.key("displayName").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.identity_center_instance_arn {
+        object.key("identityCenterInstanceArn").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.personalization_configuration {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("qAppsConfiguration").start_object();
-        crate::protocol_serde::shape_q_apps_configuration::ser_q_apps_configuration(&mut object_9, var_8)?;
+        let mut object_9 = object.key("personalizationConfiguration").start_object();
+        crate::protocol_serde::shape_personalization_configuration::ser_personalization_configuration(&mut object_9, var_8)?;
         object_9.finish();
     }
-    if let Some(var_10) = &input.role_arn {
-        object.key("roleArn").string(var_10.as_str());
+    if let Some(var_10) = &input.q_apps_configuration {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("qAppsConfiguration").start_object();
+        crate::protocol_serde::shape_q_apps_configuration::ser_q_apps_configuration(&mut object_11, var_10)?;
+        object_11.finish();
+    }
+    if let Some(var_12) = &input.role_arn {
+        object.key("roleArn").string(var_12.as_str());
     }
     Ok(())
 }

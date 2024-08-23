@@ -22,7 +22,7 @@ impl crate::operation::get_prompt::builders::GetPromptInputBuilder {
 }
 /// Fluent builder constructing a request to `GetPrompt`.
 ///
-/// <p>Retrieves information about a prompt or a version of it. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-manage.html#prompt-management-view.html">View information about prompts using Prompt management</a> and <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-deploy.html#prompt-management-versions-view.html">View information about a version of your prompt</a> in the Amazon Bedrock User Guide.</p>
+/// <p>Retrieves information about the working draft (<code>DRAFT</code> version) of a prompt or a version of it, depending on whether you include the <code>promptVersion</code> field or not. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-manage.html#prompt-management-view.html">View information about prompts using Prompt management</a> and <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-deploy.html#prompt-management-versions-view.html">View information about a version of your prompt</a> in the Amazon Bedrock User Guide.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetPromptFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -116,17 +116,17 @@ impl GetPromptFluentBuilder {
     pub fn get_prompt_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_prompt_identifier()
     }
-    /// <p>The version of the prompt about which you want to retrieve information.</p>
+    /// <p>The version of the prompt about which you want to retrieve information. Omit this field to return information about the working draft of the prompt.</p>
     pub fn prompt_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.prompt_version(input.into());
         self
     }
-    /// <p>The version of the prompt about which you want to retrieve information.</p>
+    /// <p>The version of the prompt about which you want to retrieve information. Omit this field to return information about the working draft of the prompt.</p>
     pub fn set_prompt_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_prompt_version(input);
         self
     }
-    /// <p>The version of the prompt about which you want to retrieve information.</p>
+    /// <p>The version of the prompt about which you want to retrieve information. Omit this field to return information about the working draft of the prompt.</p>
     pub fn get_prompt_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_prompt_version()
     }

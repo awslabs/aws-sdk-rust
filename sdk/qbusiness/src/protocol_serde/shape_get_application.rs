@@ -137,6 +137,14 @@ pub(crate) fn de_get_application(
                         crate::protocol_serde::shape_applied_attachments_configuration::de_applied_attachments_configuration(tokens)?,
                     );
                 }
+                "autoSubscriptionConfiguration" => {
+                    builder = builder.set_auto_subscription_configuration(
+                        crate::protocol_serde::shape_auto_subscription_configuration::de_auto_subscription_configuration(tokens)?,
+                    );
+                }
+                "clientIdsForOIDC" => {
+                    builder = builder.set_client_ids_for_oidc(crate::protocol_serde::shape_client_ids_for_oidc::de_client_ids_for_oidc(tokens)?);
+                }
                 "createdAt" => {
                     builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),
@@ -165,10 +173,24 @@ pub(crate) fn de_get_application(
                 "error" => {
                     builder = builder.set_error(crate::protocol_serde::shape_error_detail::de_error_detail(tokens)?);
                 }
+                "iamIdentityProviderArn" => {
+                    builder = builder.set_iam_identity_provider_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "identityCenterApplicationArn" => {
                     builder = builder.set_identity_center_application_arn(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "identityType" => {
+                    builder = builder.set_identity_type(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::IdentityType::from(u.as_ref())))
                             .transpose()?,
                     );
                 }

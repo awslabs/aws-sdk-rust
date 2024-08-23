@@ -22,7 +22,7 @@ impl crate::operation::send_data_integration_event::builders::SendDataIntegratio
 }
 /// Fluent builder constructing a request to `SendDataIntegrationEvent`.
 ///
-/// <p>Send transactional data events with real-time data for analysis or monitoring.</p>
+/// <p>Send the transactional data payload for the event with real-time data for analysis or monitoring. The real-time data events are stored in an Amazon Web Services service before being processed and stored in data lake. New data events are synced with data lake at 5 PM GMT everyday. The updated transactional data is available in data lake after ingestion.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SendDataIntegrationEventFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -136,17 +136,17 @@ impl SendDataIntegrationEventFluentBuilder {
     pub fn get_event_type(&self) -> &::std::option::Option<crate::types::DataIntegrationEventType> {
         self.inner.get_event_type()
     }
-    /// <p>The data payload of the event.</p>
+    /// <p>The data payload of the event. For more information on the data schema to use, see <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">Data entities supported in AWS Supply Chain </a>.</p>
     pub fn data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data(input.into());
         self
     }
-    /// <p>The data payload of the event.</p>
+    /// <p>The data payload of the event. For more information on the data schema to use, see <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">Data entities supported in AWS Supply Chain </a>.</p>
     pub fn set_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data(input);
         self
     }
-    /// <p>The data payload of the event.</p>
+    /// <p>The data payload of the event. For more information on the data schema to use, see <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">Data entities supported in AWS Supply Chain </a>.</p>
     pub fn get_data(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_data()
     }

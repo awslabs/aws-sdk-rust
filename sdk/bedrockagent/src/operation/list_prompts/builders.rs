@@ -22,7 +22,7 @@ impl crate::operation::list_prompts::builders::ListPromptsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListPrompts`.
 ///
-/// <p>Returns a list of prompts from the Prompt management tool and information about each prompt. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-manage.html#prompt-management-view.html">View information about prompts using Prompt management</a> in the Amazon Bedrock User Guide.</p>
+/// <p>Returns either information about the working draft (<code>DRAFT</code> version) of each prompt in an account, or information about of all versions of a prompt, depending on whether you include the <code>promptIdentifier</code> field or not. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-manage.html#prompt-management-view.html">View information about prompts using Prompt management</a> in the Amazon Bedrock User Guide.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListPromptsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,17 +114,17 @@ impl ListPromptsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_prompts::paginator::ListPromptsPaginator {
         crate::operation::list_prompts::paginator::ListPromptsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The unique identifier of the prompt.</p>
+    /// <p>The unique identifier of the prompt for whose versions you want to return information. Omit this field to list information about all prompts in an account.</p>
     pub fn prompt_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.prompt_identifier(input.into());
         self
     }
-    /// <p>The unique identifier of the prompt.</p>
+    /// <p>The unique identifier of the prompt for whose versions you want to return information. Omit this field to list information about all prompts in an account.</p>
     pub fn set_prompt_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_prompt_identifier(input);
         self
     }
-    /// <p>The unique identifier of the prompt.</p>
+    /// <p>The unique identifier of the prompt for whose versions you want to return information. Omit this field to list information about all prompts in an account.</p>
     pub fn get_prompt_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_prompt_identifier()
     }

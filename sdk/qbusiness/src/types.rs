@@ -3,6 +3,12 @@ pub use crate::types::_validation_exception_field::ValidationExceptionField;
 
 pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
+pub use crate::types::_auto_subscription_configuration::AutoSubscriptionConfiguration;
+
+pub use crate::types::_subscription_type::SubscriptionType;
+
+pub use crate::types::_auto_subscription_status::AutoSubscriptionStatus;
+
 pub use crate::types::_personalization_configuration::PersonalizationConfiguration;
 
 pub use crate::types::_personalization_control_mode::PersonalizationControlMode;
@@ -25,9 +31,17 @@ pub use crate::types::_encryption_configuration::EncryptionConfiguration;
 
 pub use crate::types::_application_status::ApplicationStatus;
 
+pub use crate::types::_identity_type::IdentityType;
+
 pub use crate::types::_tag::Tag;
 
 pub use crate::types::_application::Application;
+
+pub use crate::types::_identity_provider_configuration::IdentityProviderConfiguration;
+
+pub use crate::types::_open_id_connect_provider_configuration::OpenIdConnectProviderConfiguration;
+
+pub use crate::types::_saml_provider_configuration::SamlProviderConfiguration;
 
 pub use crate::types::_web_experience_sample_prompts_control_mode::WebExperienceSamplePromptsControlMode;
 
@@ -345,6 +359,10 @@ mod _auth_challenge_response;
 
 mod _auth_challenge_response_event;
 
+mod _auto_subscription_configuration;
+
+mod _auto_subscription_status;
+
 mod _basic_auth_configuration;
 
 mod _blocked_phrases_configuration;
@@ -443,6 +461,10 @@ mod _group_summary;
 
 mod _hook_configuration;
 
+mod _identity_provider_configuration;
+
+mod _identity_type;
+
 mod _index;
 
 mod _index_capacity_configuration;
@@ -486,6 +508,8 @@ mod _number_attribute_boosting_configuration;
 mod _number_attribute_boosting_type;
 
 mod _o_auth2_client_credential_configuration;
+
+mod _open_id_connect_provider_configuration;
 
 mod _personalization_configuration;
 
@@ -535,6 +559,8 @@ mod _s3;
 
 mod _saml_configuration;
 
+mod _saml_provider_configuration;
+
 mod _snippet_excerpt;
 
 mod _source_attribution;
@@ -546,6 +572,8 @@ mod _string_attribute_boosting_configuration;
 mod _string_attribute_value_boosting_level;
 
 mod _string_list_attribute_boosting_configuration;
+
+mod _subscription_type;
 
 mod _tag;
 

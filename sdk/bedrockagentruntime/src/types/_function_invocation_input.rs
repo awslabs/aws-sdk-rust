@@ -15,6 +15,8 @@ pub struct FunctionInvocationInput {
     pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::FunctionParameter>>,
     /// <p>The name of the function.</p>
     pub function: ::std::option::Option<::std::string::String>,
+    /// <p>Contains information about the function to invoke,</p>
+    pub action_invocation_type: ::std::option::Option<crate::types::ActionInvocationType>,
 }
 impl FunctionInvocationInput {
     /// <p>The action group that the function belongs to.</p>
@@ -32,6 +34,10 @@ impl FunctionInvocationInput {
     pub fn function(&self) -> ::std::option::Option<&str> {
         self.function.as_deref()
     }
+    /// <p>Contains information about the function to invoke,</p>
+    pub fn action_invocation_type(&self) -> ::std::option::Option<&crate::types::ActionInvocationType> {
+        self.action_invocation_type.as_ref()
+    }
 }
 impl FunctionInvocationInput {
     /// Creates a new builder-style object to manufacture [`FunctionInvocationInput`](crate::types::FunctionInvocationInput).
@@ -47,6 +53,7 @@ pub struct FunctionInvocationInputBuilder {
     pub(crate) action_group: ::std::option::Option<::std::string::String>,
     pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::FunctionParameter>>,
     pub(crate) function: ::std::option::Option<::std::string::String>,
+    pub(crate) action_invocation_type: ::std::option::Option<crate::types::ActionInvocationType>,
 }
 impl FunctionInvocationInputBuilder {
     /// <p>The action group that the function belongs to.</p>
@@ -98,6 +105,20 @@ impl FunctionInvocationInputBuilder {
     pub fn get_function(&self) -> &::std::option::Option<::std::string::String> {
         &self.function
     }
+    /// <p>Contains information about the function to invoke,</p>
+    pub fn action_invocation_type(mut self, input: crate::types::ActionInvocationType) -> Self {
+        self.action_invocation_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains information about the function to invoke,</p>
+    pub fn set_action_invocation_type(mut self, input: ::std::option::Option<crate::types::ActionInvocationType>) -> Self {
+        self.action_invocation_type = input;
+        self
+    }
+    /// <p>Contains information about the function to invoke,</p>
+    pub fn get_action_invocation_type(&self) -> &::std::option::Option<crate::types::ActionInvocationType> {
+        &self.action_invocation_type
+    }
     /// Consumes the builder and constructs a [`FunctionInvocationInput`](crate::types::FunctionInvocationInput).
     /// This method will fail if any of the following fields are not set:
     /// - [`action_group`](crate::types::builders::FunctionInvocationInputBuilder::action_group)
@@ -111,6 +132,7 @@ impl FunctionInvocationInputBuilder {
             })?,
             parameters: self.parameters,
             function: self.function,
+            action_invocation_type: self.action_invocation_type,
         })
     }
 }

@@ -146,6 +146,11 @@ pub(crate) fn de_get_web_experience(
                 "error" => {
                     builder = builder.set_error(crate::protocol_serde::shape_error_detail::de_error_detail(tokens)?);
                 }
+                "identityProviderConfiguration" => {
+                    builder = builder.set_identity_provider_configuration(
+                        crate::protocol_serde::shape_identity_provider_configuration::de_identity_provider_configuration(tokens)?,
+                    );
+                }
                 "roleArn" => {
                     builder = builder.set_role_arn(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

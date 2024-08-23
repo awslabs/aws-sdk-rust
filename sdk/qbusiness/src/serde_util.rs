@@ -110,6 +110,15 @@ pub(crate) fn auth_challenge_request_correct_errors(
     builder
 }
 
+pub(crate) fn auto_subscription_configuration_correct_errors(
+    mut builder: crate::types::builders::AutoSubscriptionConfigurationBuilder,
+) -> crate::types::builders::AutoSubscriptionConfigurationBuilder {
+    if builder.auto_subscribe.is_none() {
+        builder.auto_subscribe = "no value was set".parse::<crate::types::AutoSubscriptionStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn custom_plugin_configuration_correct_errors(
     mut builder: crate::types::builders::CustomPluginConfigurationBuilder,
 ) -> crate::types::builders::CustomPluginConfigurationBuilder {
@@ -197,6 +206,18 @@ pub(crate) fn o_auth2_client_credential_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn open_id_connect_provider_configuration_correct_errors(
+    mut builder: crate::types::builders::OpenIdConnectProviderConfigurationBuilder,
+) -> crate::types::builders::OpenIdConnectProviderConfigurationBuilder {
+    if builder.secrets_arn.is_none() {
+        builder.secrets_arn = Some(Default::default())
+    }
+    if builder.secrets_role.is_none() {
+        builder.secrets_role = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn saml_configuration_correct_errors(
     mut builder: crate::types::builders::SamlConfigurationBuilder,
 ) -> crate::types::builders::SamlConfigurationBuilder {
@@ -208,6 +229,15 @@ pub(crate) fn saml_configuration_correct_errors(
     }
     if builder.user_id_attribute.is_none() {
         builder.user_id_attribute = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn saml_provider_configuration_correct_errors(
+    mut builder: crate::types::builders::SamlProviderConfigurationBuilder,
+) -> crate::types::builders::SamlProviderConfigurationBuilder {
+    if builder.authentication_url.is_none() {
+        builder.authentication_url = Some(Default::default())
     }
     builder
 }

@@ -223,4 +223,18 @@ impl UpdateWebExperienceFluentBuilder {
     pub fn get_sample_prompts_control_mode(&self) -> &::std::option::Option<crate::types::WebExperienceSamplePromptsControlMode> {
         self.inner.get_sample_prompts_control_mode()
     }
+    /// <p>Information about the identity provider (IdP) used to authenticate end users of an Amazon Q Business web experience.</p>
+    pub fn identity_provider_configuration(mut self, input: crate::types::IdentityProviderConfiguration) -> Self {
+        self.inner = self.inner.identity_provider_configuration(input);
+        self
+    }
+    /// <p>Information about the identity provider (IdP) used to authenticate end users of an Amazon Q Business web experience.</p>
+    pub fn set_identity_provider_configuration(mut self, input: ::std::option::Option<crate::types::IdentityProviderConfiguration>) -> Self {
+        self.inner = self.inner.set_identity_provider_configuration(input);
+        self
+    }
+    /// <p>Information about the identity provider (IdP) used to authenticate end users of an Amazon Q Business web experience.</p>
+    pub fn get_identity_provider_configuration(&self) -> &::std::option::Option<crate::types::IdentityProviderConfiguration> {
+        self.inner.get_identity_provider_configuration()
+    }
 }

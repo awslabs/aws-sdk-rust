@@ -138,6 +138,34 @@ impl CreateApplicationFluentBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_role_arn()
     }
+    /// <p>The authentication type being used by a Amazon Q Business application.</p>
+    pub fn identity_type(mut self, input: crate::types::IdentityType) -> Self {
+        self.inner = self.inner.identity_type(input);
+        self
+    }
+    /// <p>The authentication type being used by a Amazon Q Business application.</p>
+    pub fn set_identity_type(mut self, input: ::std::option::Option<crate::types::IdentityType>) -> Self {
+        self.inner = self.inner.set_identity_type(input);
+        self
+    }
+    /// <p>The authentication type being used by a Amazon Q Business application.</p>
+    pub fn get_identity_type(&self) -> &::std::option::Option<crate::types::IdentityType> {
+        self.inner.get_identity_type()
+    }
+    /// <p>The Amazon Resource Name (ARN) of an identity provider being used by an Amazon Q Business application.</p>
+    pub fn iam_identity_provider_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.iam_identity_provider_arn(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an identity provider being used by an Amazon Q Business application.</p>
+    pub fn set_iam_identity_provider_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_iam_identity_provider_arn(input);
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an identity provider being used by an Amazon Q Business application.</p>
+    pub fn get_iam_identity_provider_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_iam_identity_provider_arn()
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance you are either creating for—or connecting to—your Amazon Q Business application.</p>
     pub fn identity_center_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_center_instance_arn(input.into());
@@ -151,6 +179,25 @@ impl CreateApplicationFluentBuilder {
     /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance you are either creating for—or connecting to—your Amazon Q Business application.</p>
     pub fn get_identity_center_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identity_center_instance_arn()
+    }
+    ///
+    /// Appends an item to `clientIdsForOIDC`.
+    ///
+    /// To override the contents of this collection use [`set_client_ids_for_oidc`](Self::set_client_ids_for_oidc).
+    ///
+    /// <p>The OIDC client ID for a Amazon Q Business application.</p>
+    pub fn client_ids_for_oidc(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.client_ids_for_oidc(input.into());
+        self
+    }
+    /// <p>The OIDC client ID for a Amazon Q Business application.</p>
+    pub fn set_client_ids_for_oidc(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_client_ids_for_oidc(input);
+        self
+    }
+    /// <p>The OIDC client ID for a Amazon Q Business application.</p>
+    pub fn get_client_ids_for_oidc(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_client_ids_for_oidc()
     }
     /// <p>A description for the Amazon Q Business application.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`prompt_identifier(impl Into<String>)`](crate::operation::delete_prompt::builders::DeletePromptFluentBuilder::prompt_identifier) / [`set_prompt_identifier(Option<String>)`](crate::operation::delete_prompt::builders::DeletePromptFluentBuilder::set_prompt_identifier):<br>required: **true**<br><p>The unique identifier of the prompt.</p><br>
-    ///   - [`prompt_version(impl Into<String>)`](crate::operation::delete_prompt::builders::DeletePromptFluentBuilder::prompt_version) / [`set_prompt_version(Option<String>)`](crate::operation::delete_prompt::builders::DeletePromptFluentBuilder::set_prompt_version):<br>required: **false**<br><p>The version of the prompt to delete.</p><br>
+    ///   - [`prompt_version(impl Into<String>)`](crate::operation::delete_prompt::builders::DeletePromptFluentBuilder::prompt_version) / [`set_prompt_version(Option<String>)`](crate::operation::delete_prompt::builders::DeletePromptFluentBuilder::set_prompt_version):<br>required: **false**<br><p>The version of the prompt to delete. To delete the prompt, omit this field.</p><br>
     /// - On success, responds with [`DeletePromptOutput`](crate::operation::delete_prompt::DeletePromptOutput) with field(s):
     ///   - [`id(String)`](crate::operation::delete_prompt::DeletePromptOutput::id): <p>The unique identifier of the prompt that was deleted.</p>
     ///   - [`version(Option<String>)`](crate::operation::delete_prompt::DeletePromptOutput::version): <p>The version of the prompt that was deleted.</p>

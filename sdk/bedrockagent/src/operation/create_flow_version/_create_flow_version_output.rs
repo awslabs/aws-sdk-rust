@@ -3,9 +3,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFlowVersionOutput {
-    /// <p>The name of the flow version.</p>
+    /// <p>The name of the version.</p>
     pub name: ::std::string::String,
-    /// <p>The description of the flow version.</p>
+    /// <p>The description of the version.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the service role with permissions to create a flow. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-permissions.html">Create a service role for flows in Amazon Bedrock</a> in the Amazon Bedrock User Guide.</p>
     pub execution_role_arn: ::std::string::String,
@@ -26,12 +26,12 @@ pub struct CreateFlowVersionOutput {
     _request_id: Option<String>,
 }
 impl CreateFlowVersionOutput {
-    /// <p>The name of the flow version.</p>
+    /// <p>The name of the version.</p>
     pub fn name(&self) -> &str {
         use std::ops::Deref;
         self.name.deref()
     }
-    /// <p>The description of the flow version.</p>
+    /// <p>The description of the version.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -101,32 +101,32 @@ pub struct CreateFlowVersionOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateFlowVersionOutputBuilder {
-    /// <p>The name of the flow version.</p>
+    /// <p>The name of the version.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the flow version.</p>
+    /// <p>The name of the version.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the flow version.</p>
+    /// <p>The name of the version.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The description of the flow version.</p>
+    /// <p>The description of the version.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The description of the flow version.</p>
+    /// <p>The description of the version.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>The description of the flow version.</p>
+    /// <p>The description of the version.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }

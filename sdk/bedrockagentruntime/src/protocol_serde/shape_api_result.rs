@@ -12,27 +12,30 @@ pub fn ser_api_result(
     if let Some(var_2) = &input.api_path {
         object.key("apiPath").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.response_body {
+    if let Some(var_3) = &input.confirmation_state {
+        object.key("confirmationState").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.response_body {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("responseBody").start_object();
-        for (key_5, value_6) in var_3 {
+        let mut object_5 = object.key("responseBody").start_object();
+        for (key_6, value_7) in var_4 {
             {
                 #[allow(unused_mut)]
-                let mut object_7 = object_4.key(key_5.as_str()).start_object();
-                crate::protocol_serde::shape_content_body::ser_content_body(&mut object_7, value_6)?;
-                object_7.finish();
+                let mut object_8 = object_5.key(key_6.as_str()).start_object();
+                crate::protocol_serde::shape_content_body::ser_content_body(&mut object_8, value_7)?;
+                object_8.finish();
             }
         }
-        object_4.finish();
+        object_5.finish();
     }
-    if let Some(var_8) = &input.http_status_code {
+    if let Some(var_9) = &input.http_status_code {
         object.key("httpStatusCode").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_8).into()),
+            ::aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
-    if let Some(var_9) = &input.response_state {
-        object.key("responseState").string(var_9.as_str());
+    if let Some(var_10) = &input.response_state {
+        object.key("responseState").string(var_10.as_str());
     }
     Ok(())
 }

@@ -41,6 +41,13 @@ where
                         "requestBody" => {
                             builder = builder.set_request_body(crate::protocol_serde::shape_api_request_body::de_api_request_body(tokens)?);
                         }
+                        "actionInvocationType" => {
+                            builder = builder.set_action_invocation_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ActionInvocationType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

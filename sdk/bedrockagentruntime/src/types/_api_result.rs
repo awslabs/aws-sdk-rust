@@ -15,6 +15,8 @@ pub struct ApiResult {
     pub http_method: ::std::option::Option<::std::string::String>,
     /// <p>The path to the API operation.</p>
     pub api_path: ::std::option::Option<::std::string::String>,
+    /// <p>Controls the API operations or functions to invoke based on the user confirmation.</p>
+    pub confirmation_state: ::std::option::Option<crate::types::ConfirmationState>,
     /// <p>The response body from the API operation. The key of the object is the content type (currently, only <code>TEXT</code> is supported). The response may be returned directly or from the Lambda function.</p>
     pub response_body: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ContentBody>>,
     /// <p>http status code from API execution response (for example: 200, 400, 500).</p>
@@ -36,6 +38,10 @@ impl ApiResult {
     pub fn api_path(&self) -> ::std::option::Option<&str> {
         self.api_path.as_deref()
     }
+    /// <p>Controls the API operations or functions to invoke based on the user confirmation.</p>
+    pub fn confirmation_state(&self) -> ::std::option::Option<&crate::types::ConfirmationState> {
+        self.confirmation_state.as_ref()
+    }
     /// <p>The response body from the API operation. The key of the object is the content type (currently, only <code>TEXT</code> is supported). The response may be returned directly or from the Lambda function.</p>
     pub fn response_body(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ContentBody>> {
         self.response_body.as_ref()
@@ -55,6 +61,7 @@ impl ::std::fmt::Debug for ApiResult {
         formatter.field("action_group", &self.action_group);
         formatter.field("http_method", &self.http_method);
         formatter.field("api_path", &"*** Sensitive Data Redacted ***");
+        formatter.field("confirmation_state", &self.confirmation_state);
         formatter.field("response_body", &self.response_body);
         formatter.field("http_status_code", &self.http_status_code);
         formatter.field("response_state", &self.response_state);
@@ -75,6 +82,7 @@ pub struct ApiResultBuilder {
     pub(crate) action_group: ::std::option::Option<::std::string::String>,
     pub(crate) http_method: ::std::option::Option<::std::string::String>,
     pub(crate) api_path: ::std::option::Option<::std::string::String>,
+    pub(crate) confirmation_state: ::std::option::Option<crate::types::ConfirmationState>,
     pub(crate) response_body: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ContentBody>>,
     pub(crate) http_status_code: ::std::option::Option<i32>,
     pub(crate) response_state: ::std::option::Option<crate::types::ResponseState>,
@@ -122,6 +130,20 @@ impl ApiResultBuilder {
     /// <p>The path to the API operation.</p>
     pub fn get_api_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.api_path
+    }
+    /// <p>Controls the API operations or functions to invoke based on the user confirmation.</p>
+    pub fn confirmation_state(mut self, input: crate::types::ConfirmationState) -> Self {
+        self.confirmation_state = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Controls the API operations or functions to invoke based on the user confirmation.</p>
+    pub fn set_confirmation_state(mut self, input: ::std::option::Option<crate::types::ConfirmationState>) -> Self {
+        self.confirmation_state = input;
+        self
+    }
+    /// <p>Controls the API operations or functions to invoke based on the user confirmation.</p>
+    pub fn get_confirmation_state(&self) -> &::std::option::Option<crate::types::ConfirmationState> {
+        &self.confirmation_state
     }
     /// Adds a key-value pair to `response_body`.
     ///
@@ -187,6 +209,7 @@ impl ApiResultBuilder {
             })?,
             http_method: self.http_method,
             api_path: self.api_path,
+            confirmation_state: self.confirmation_state,
             response_body: self.response_body,
             http_status_code: self.http_status_code,
             response_state: self.response_state,
@@ -199,6 +222,7 @@ impl ::std::fmt::Debug for ApiResultBuilder {
         formatter.field("action_group", &self.action_group);
         formatter.field("http_method", &self.http_method);
         formatter.field("api_path", &"*** Sensitive Data Redacted ***");
+        formatter.field("confirmation_state", &self.confirmation_state);
         formatter.field("response_body", &self.response_body);
         formatter.field("http_status_code", &self.http_status_code);
         formatter.field("response_state", &self.response_state);

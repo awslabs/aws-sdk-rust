@@ -6,24 +6,27 @@ pub fn ser_function_result(
     {
         object.key("actionGroup").string(input.action_group.as_str());
     }
-    if let Some(var_1) = &input.function {
-        object.key("function").string(var_1.as_str());
+    if let Some(var_1) = &input.confirmation_state {
+        object.key("confirmationState").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.response_body {
+    if let Some(var_2) = &input.function {
+        object.key("function").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.response_body {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("responseBody").start_object();
-        for (key_4, value_5) in var_2 {
+        let mut object_4 = object.key("responseBody").start_object();
+        for (key_5, value_6) in var_3 {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = object_3.key(key_4.as_str()).start_object();
-                crate::protocol_serde::shape_content_body::ser_content_body(&mut object_6, value_5)?;
-                object_6.finish();
+                let mut object_7 = object_4.key(key_5.as_str()).start_object();
+                crate::protocol_serde::shape_content_body::ser_content_body(&mut object_7, value_6)?;
+                object_7.finish();
             }
         }
-        object_3.finish();
+        object_4.finish();
     }
-    if let Some(var_7) = &input.response_state {
-        object.key("responseState").string(var_7.as_str());
+    if let Some(var_8) = &input.response_state {
+        object.key("responseState").string(var_8.as_str());
     }
     Ok(())
 }

@@ -19,7 +19,7 @@ pub struct FlowAliasSummary {
     pub flow_id: ::std::string::String,
     /// <p>The unique identifier of the alias of the flow.</p>
     pub id: ::std::string::String,
-    /// <p>The Amazon Resource Name (ARN) of the flow alias.</p>
+    /// <p>The Amazon Resource Name (ARN) of the alias.</p>
     pub arn: ::std::string::String,
     /// <p>The time at which the alias was created.</p>
     pub created_at: ::aws_smithy_types::DateTime,
@@ -51,7 +51,7 @@ impl FlowAliasSummary {
         use std::ops::Deref;
         self.id.deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the flow alias.</p>
+    /// <p>The Amazon Resource Name (ARN) of the alias.</p>
     pub fn arn(&self) -> &str {
         use std::ops::Deref;
         self.arn.deref()
@@ -168,18 +168,18 @@ impl FlowAliasSummaryBuilder {
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
-    /// <p>The Amazon Resource Name (ARN) of the flow alias.</p>
+    /// <p>The Amazon Resource Name (ARN) of the alias.</p>
     /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the flow alias.</p>
+    /// <p>The Amazon Resource Name (ARN) of the alias.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the flow alias.</p>
+    /// <p>The Amazon Resource Name (ARN) of the alias.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }

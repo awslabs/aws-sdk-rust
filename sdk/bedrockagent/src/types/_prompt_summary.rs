@@ -15,7 +15,7 @@ pub struct PromptSummary {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the prompt.</p>
     pub id: ::std::string::String,
-    /// <p>The Amazon Resource Name (ARN) of the prompt.</p>
+    /// <p>The Amazon Resource Name (ARN) of the prompt or the prompt version (if you specified a version in the request).</p>
     pub arn: ::std::string::String,
     /// <p>The version of the prompt that this summary applies to.</p>
     pub version: ::std::string::String,
@@ -39,7 +39,7 @@ impl PromptSummary {
         use std::ops::Deref;
         self.id.deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the prompt.</p>
+    /// <p>The Amazon Resource Name (ARN) of the prompt or the prompt version (if you specified a version in the request).</p>
     pub fn arn(&self) -> &str {
         use std::ops::Deref;
         self.arn.deref()
@@ -122,18 +122,18 @@ impl PromptSummaryBuilder {
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
-    /// <p>The Amazon Resource Name (ARN) of the prompt.</p>
+    /// <p>The Amazon Resource Name (ARN) of the prompt or the prompt version (if you specified a version in the request).</p>
     /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the prompt.</p>
+    /// <p>The Amazon Resource Name (ARN) of the prompt or the prompt version (if you specified a version in the request).</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the prompt.</p>
+    /// <p>The Amazon Resource Name (ARN) of the prompt or the prompt version (if you specified a version in the request).</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }

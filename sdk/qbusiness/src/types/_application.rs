@@ -14,6 +14,8 @@ pub struct Application {
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the Amazon Q Business application. The application is ready to use when the status is <code>ACTIVE</code>.</p>
     pub status: ::std::option::Option<crate::types::ApplicationStatus>,
+    /// <p>The authentication type being used by a Amazon Q Business application.</p>
+    pub identity_type: ::std::option::Option<crate::types::IdentityType>,
 }
 impl Application {
     /// <p>The name of the Amazon Q Business application.</p>
@@ -36,6 +38,10 @@ impl Application {
     pub fn status(&self) -> ::std::option::Option<&crate::types::ApplicationStatus> {
         self.status.as_ref()
     }
+    /// <p>The authentication type being used by a Amazon Q Business application.</p>
+    pub fn identity_type(&self) -> ::std::option::Option<&crate::types::IdentityType> {
+        self.identity_type.as_ref()
+    }
 }
 impl Application {
     /// Creates a new builder-style object to manufacture [`Application`](crate::types::Application).
@@ -53,6 +59,7 @@ pub struct ApplicationBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::ApplicationStatus>,
+    pub(crate) identity_type: ::std::option::Option<crate::types::IdentityType>,
 }
 impl ApplicationBuilder {
     /// <p>The name of the Amazon Q Business application.</p>
@@ -125,6 +132,20 @@ impl ApplicationBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ApplicationStatus> {
         &self.status
     }
+    /// <p>The authentication type being used by a Amazon Q Business application.</p>
+    pub fn identity_type(mut self, input: crate::types::IdentityType) -> Self {
+        self.identity_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The authentication type being used by a Amazon Q Business application.</p>
+    pub fn set_identity_type(mut self, input: ::std::option::Option<crate::types::IdentityType>) -> Self {
+        self.identity_type = input;
+        self
+    }
+    /// <p>The authentication type being used by a Amazon Q Business application.</p>
+    pub fn get_identity_type(&self) -> &::std::option::Option<crate::types::IdentityType> {
+        &self.identity_type
+    }
     /// Consumes the builder and constructs a [`Application`](crate::types::Application).
     pub fn build(self) -> crate::types::Application {
         crate::types::Application {
@@ -133,6 +154,7 @@ impl ApplicationBuilder {
             created_at: self.created_at,
             updated_at: self.updated_at,
             status: self.status,
+            identity_type: self.identity_type,
         }
     }
 }

@@ -19,6 +19,8 @@ pub struct UpdateApplicationInput {
     pub q_apps_configuration: ::std::option::Option<crate::types::QAppsConfiguration>,
     /// <p>Configuration information about chat response personalization. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/personalizing-chat-responses.html">Personalizing chat responses</a>.</p>
     pub personalization_configuration: ::std::option::Option<crate::types::PersonalizationConfiguration>,
+    /// <p>An option to enable updating the default subscription type assigned to an Amazon Q Business application using IAM identity federation for user management.</p>
+    pub auto_subscription_configuration: ::std::option::Option<crate::types::AutoSubscriptionConfiguration>,
 }
 impl UpdateApplicationInput {
     /// <p>The identifier of the Amazon Q Business application.</p>
@@ -53,6 +55,10 @@ impl UpdateApplicationInput {
     pub fn personalization_configuration(&self) -> ::std::option::Option<&crate::types::PersonalizationConfiguration> {
         self.personalization_configuration.as_ref()
     }
+    /// <p>An option to enable updating the default subscription type assigned to an Amazon Q Business application using IAM identity federation for user management.</p>
+    pub fn auto_subscription_configuration(&self) -> ::std::option::Option<&crate::types::AutoSubscriptionConfiguration> {
+        self.auto_subscription_configuration.as_ref()
+    }
 }
 impl UpdateApplicationInput {
     /// Creates a new builder-style object to manufacture [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
@@ -73,6 +79,7 @@ pub struct UpdateApplicationInputBuilder {
     pub(crate) attachments_configuration: ::std::option::Option<crate::types::AttachmentsConfiguration>,
     pub(crate) q_apps_configuration: ::std::option::Option<crate::types::QAppsConfiguration>,
     pub(crate) personalization_configuration: ::std::option::Option<crate::types::PersonalizationConfiguration>,
+    pub(crate) auto_subscription_configuration: ::std::option::Option<crate::types::AutoSubscriptionConfiguration>,
 }
 impl UpdateApplicationInputBuilder {
     /// <p>The identifier of the Amazon Q Business application.</p>
@@ -188,6 +195,20 @@ impl UpdateApplicationInputBuilder {
     pub fn get_personalization_configuration(&self) -> &::std::option::Option<crate::types::PersonalizationConfiguration> {
         &self.personalization_configuration
     }
+    /// <p>An option to enable updating the default subscription type assigned to an Amazon Q Business application using IAM identity federation for user management.</p>
+    pub fn auto_subscription_configuration(mut self, input: crate::types::AutoSubscriptionConfiguration) -> Self {
+        self.auto_subscription_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An option to enable updating the default subscription type assigned to an Amazon Q Business application using IAM identity federation for user management.</p>
+    pub fn set_auto_subscription_configuration(mut self, input: ::std::option::Option<crate::types::AutoSubscriptionConfiguration>) -> Self {
+        self.auto_subscription_configuration = input;
+        self
+    }
+    /// <p>An option to enable updating the default subscription type assigned to an Amazon Q Business application using IAM identity federation for user management.</p>
+    pub fn get_auto_subscription_configuration(&self) -> &::std::option::Option<crate::types::AutoSubscriptionConfiguration> {
+        &self.auto_subscription_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
     pub fn build(
         self,
@@ -201,6 +222,7 @@ impl UpdateApplicationInputBuilder {
             attachments_configuration: self.attachments_configuration,
             q_apps_configuration: self.q_apps_configuration,
             personalization_configuration: self.personalization_configuration,
+            auto_subscription_configuration: self.auto_subscription_configuration,
         })
     }
 }

@@ -220,4 +220,18 @@ impl UpdateApplicationFluentBuilder {
     pub fn get_personalization_configuration(&self) -> &::std::option::Option<crate::types::PersonalizationConfiguration> {
         self.inner.get_personalization_configuration()
     }
+    /// <p>An option to enable updating the default subscription type assigned to an Amazon Q Business application using IAM identity federation for user management.</p>
+    pub fn auto_subscription_configuration(mut self, input: crate::types::AutoSubscriptionConfiguration) -> Self {
+        self.inner = self.inner.auto_subscription_configuration(input);
+        self
+    }
+    /// <p>An option to enable updating the default subscription type assigned to an Amazon Q Business application using IAM identity federation for user management.</p>
+    pub fn set_auto_subscription_configuration(mut self, input: ::std::option::Option<crate::types::AutoSubscriptionConfiguration>) -> Self {
+        self.inner = self.inner.set_auto_subscription_configuration(input);
+        self
+    }
+    /// <p>An option to enable updating the default subscription type assigned to an Amazon Q Business application using IAM identity federation for user management.</p>
+    pub fn get_auto_subscription_configuration(&self) -> &::std::option::Option<crate::types::AutoSubscriptionConfiguration> {
+        self.inner.get_auto_subscription_configuration()
+    }
 }

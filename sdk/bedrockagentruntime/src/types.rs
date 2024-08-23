@@ -99,6 +99,8 @@ pub use crate::types::_invocation_input_member::InvocationInputMember;
 
 pub use crate::types::_function_invocation_input::FunctionInvocationInput;
 
+pub use crate::types::_action_invocation_type::ActionInvocationType;
+
 pub use crate::types::_function_parameter::FunctionParameter;
 
 pub use crate::types::_api_invocation_input::ApiInvocationInput;
@@ -251,6 +253,8 @@ pub use crate::types::_response_state::ResponseState;
 
 pub use crate::types::_content_body::ContentBody;
 
+pub use crate::types::_confirmation_state::ConfirmationState;
+
 pub use crate::types::_api_result::ApiResult;
 
 pub use crate::types::_flow_response_stream::FlowResponseStream;
@@ -273,6 +277,8 @@ mod _action_group_invocation_input;
 
 mod _action_group_invocation_output;
 
+mod _action_invocation_type;
+
 mod _api_invocation_input;
 
 mod _api_parameter;
@@ -292,6 +298,8 @@ mod _citation;
 mod _code_interpreter_invocation_input;
 
 mod _code_interpreter_invocation_output;
+
+mod _confirmation_state;
 
 mod _content_body;
 
