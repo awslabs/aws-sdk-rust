@@ -33,6 +33,8 @@ pub use crate::types::_asset_model_state::AssetModelState;
 
 pub use crate::types::_asset_model_composite_model_path_segment::AssetModelCompositeModelPathSegment;
 
+pub use crate::types::_asset_model_version_type::AssetModelVersionType;
+
 pub use crate::types::_asset_model_property::AssetModelProperty;
 
 pub use crate::types::_asset_model_property_path_segment::AssetModelPropertyPathSegment;
@@ -378,6 +380,8 @@ mod _asset_model_status;
 mod _asset_model_summary;
 
 mod _asset_model_type;
+
+mod _asset_model_version_type;
 
 mod _asset_property;
 

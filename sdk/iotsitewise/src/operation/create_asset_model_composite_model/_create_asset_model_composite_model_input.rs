@@ -5,11 +5,11 @@
 pub struct CreateAssetModelCompositeModelInput {
     /// <p>The ID of the asset model this composite model is a part of.</p>
     pub asset_model_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the parent composite model in this asset model relationship.</p>
-    pub parent_asset_model_composite_model_id: ::std::option::Option<::std::string::String>,
     /// <p>An external ID to assign to the composite model.</p>
     /// <p>If the composite model is a derived composite model, or one nested inside a component model, you can only set the external ID using <code>UpdateAssetModelCompositeModel</code> and specifying the derived ID of the model or property from the created model it's a part of.</p>
     pub asset_model_composite_model_external_id: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the parent composite model in this asset model relationship.</p>
+    pub parent_asset_model_composite_model_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the composite model. IoT SiteWise automatically generates a unique ID for you, so this parameter is never required. However, if you prefer to supply your own ID instead, you can specify it here in UUID format. If you specify your own ID, it must be globally unique.</p>
     pub asset_model_composite_model_id: ::std::option::Option<::std::string::String>,
     /// <p>A description for the composite model.</p>
@@ -25,20 +25,26 @@ pub struct CreateAssetModelCompositeModelInput {
     /// <p>The property definitions of the composite model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/custom-composite-models.html#inline-composite-models"> Inline custom composite models</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>You can specify up to 200 properties per composite model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub asset_model_composite_model_properties: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelPropertyDefinition>>,
+    /// <p>The expected current entity tag (ETag) for the asset model’s latest or active version (specified using <code>matchForVersionType</code>). The create request is rejected if the tag does not match the latest or active version's current entity tag. See <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/opt-locking-for-model.html">Optimistic locking for asset model writes</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub if_match: ::std::option::Option<::std::string::String>,
+    /// <p>Accepts <b>*</b> to reject the create request if an active version (specified using <code>matchForVersionType</code> as <code>ACTIVE</code>) already exists for the asset model.</p>
+    pub if_none_match: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies the asset model version type (<code>LATEST</code> or <code>ACTIVE</code>) used in conjunction with <code>If-Match</code> or <code>If-None-Match</code> headers to determine the target ETag for the create operation.</p>
+    pub match_for_version_type: ::std::option::Option<crate::types::AssetModelVersionType>,
 }
 impl CreateAssetModelCompositeModelInput {
     /// <p>The ID of the asset model this composite model is a part of.</p>
     pub fn asset_model_id(&self) -> ::std::option::Option<&str> {
         self.asset_model_id.as_deref()
     }
-    /// <p>The ID of the parent composite model in this asset model relationship.</p>
-    pub fn parent_asset_model_composite_model_id(&self) -> ::std::option::Option<&str> {
-        self.parent_asset_model_composite_model_id.as_deref()
-    }
     /// <p>An external ID to assign to the composite model.</p>
     /// <p>If the composite model is a derived composite model, or one nested inside a component model, you can only set the external ID using <code>UpdateAssetModelCompositeModel</code> and specifying the derived ID of the model or property from the created model it's a part of.</p>
     pub fn asset_model_composite_model_external_id(&self) -> ::std::option::Option<&str> {
         self.asset_model_composite_model_external_id.as_deref()
+    }
+    /// <p>The ID of the parent composite model in this asset model relationship.</p>
+    pub fn parent_asset_model_composite_model_id(&self) -> ::std::option::Option<&str> {
+        self.parent_asset_model_composite_model_id.as_deref()
     }
     /// <p>The ID of the composite model. IoT SiteWise automatically generates a unique ID for you, so this parameter is never required. However, if you prefer to supply your own ID instead, you can specify it here in UUID format. If you specify your own ID, it must be globally unique.</p>
     pub fn asset_model_composite_model_id(&self) -> ::std::option::Option<&str> {
@@ -71,6 +77,18 @@ impl CreateAssetModelCompositeModelInput {
     pub fn asset_model_composite_model_properties(&self) -> &[crate::types::AssetModelPropertyDefinition] {
         self.asset_model_composite_model_properties.as_deref().unwrap_or_default()
     }
+    /// <p>The expected current entity tag (ETag) for the asset model’s latest or active version (specified using <code>matchForVersionType</code>). The create request is rejected if the tag does not match the latest or active version's current entity tag. See <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/opt-locking-for-model.html">Optimistic locking for asset model writes</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn if_match(&self) -> ::std::option::Option<&str> {
+        self.if_match.as_deref()
+    }
+    /// <p>Accepts <b>*</b> to reject the create request if an active version (specified using <code>matchForVersionType</code> as <code>ACTIVE</code>) already exists for the asset model.</p>
+    pub fn if_none_match(&self) -> ::std::option::Option<&str> {
+        self.if_none_match.as_deref()
+    }
+    /// <p>Specifies the asset model version type (<code>LATEST</code> or <code>ACTIVE</code>) used in conjunction with <code>If-Match</code> or <code>If-None-Match</code> headers to determine the target ETag for the create operation.</p>
+    pub fn match_for_version_type(&self) -> ::std::option::Option<&crate::types::AssetModelVersionType> {
+        self.match_for_version_type.as_ref()
+    }
 }
 impl CreateAssetModelCompositeModelInput {
     /// Creates a new builder-style object to manufacture [`CreateAssetModelCompositeModelInput`](crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelInput).
@@ -84,8 +102,8 @@ impl CreateAssetModelCompositeModelInput {
 #[non_exhaustive]
 pub struct CreateAssetModelCompositeModelInputBuilder {
     pub(crate) asset_model_id: ::std::option::Option<::std::string::String>,
-    pub(crate) parent_asset_model_composite_model_id: ::std::option::Option<::std::string::String>,
     pub(crate) asset_model_composite_model_external_id: ::std::option::Option<::std::string::String>,
+    pub(crate) parent_asset_model_composite_model_id: ::std::option::Option<::std::string::String>,
     pub(crate) asset_model_composite_model_id: ::std::option::Option<::std::string::String>,
     pub(crate) asset_model_composite_model_description: ::std::option::Option<::std::string::String>,
     pub(crate) asset_model_composite_model_name: ::std::option::Option<::std::string::String>,
@@ -93,6 +111,9 @@ pub struct CreateAssetModelCompositeModelInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) composed_asset_model_id: ::std::option::Option<::std::string::String>,
     pub(crate) asset_model_composite_model_properties: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelPropertyDefinition>>,
+    pub(crate) if_match: ::std::option::Option<::std::string::String>,
+    pub(crate) if_none_match: ::std::option::Option<::std::string::String>,
+    pub(crate) match_for_version_type: ::std::option::Option<crate::types::AssetModelVersionType>,
 }
 impl CreateAssetModelCompositeModelInputBuilder {
     /// <p>The ID of the asset model this composite model is a part of.</p>
@@ -110,20 +131,6 @@ impl CreateAssetModelCompositeModelInputBuilder {
     pub fn get_asset_model_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.asset_model_id
     }
-    /// <p>The ID of the parent composite model in this asset model relationship.</p>
-    pub fn parent_asset_model_composite_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.parent_asset_model_composite_model_id = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The ID of the parent composite model in this asset model relationship.</p>
-    pub fn set_parent_asset_model_composite_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parent_asset_model_composite_model_id = input;
-        self
-    }
-    /// <p>The ID of the parent composite model in this asset model relationship.</p>
-    pub fn get_parent_asset_model_composite_model_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.parent_asset_model_composite_model_id
-    }
     /// <p>An external ID to assign to the composite model.</p>
     /// <p>If the composite model is a derived composite model, or one nested inside a component model, you can only set the external ID using <code>UpdateAssetModelCompositeModel</code> and specifying the derived ID of the model or property from the created model it's a part of.</p>
     pub fn asset_model_composite_model_external_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -140,6 +147,20 @@ impl CreateAssetModelCompositeModelInputBuilder {
     /// <p>If the composite model is a derived composite model, or one nested inside a component model, you can only set the external ID using <code>UpdateAssetModelCompositeModel</code> and specifying the derived ID of the model or property from the created model it's a part of.</p>
     pub fn get_asset_model_composite_model_external_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.asset_model_composite_model_external_id
+    }
+    /// <p>The ID of the parent composite model in this asset model relationship.</p>
+    pub fn parent_asset_model_composite_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.parent_asset_model_composite_model_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the parent composite model in this asset model relationship.</p>
+    pub fn set_parent_asset_model_composite_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.parent_asset_model_composite_model_id = input;
+        self
+    }
+    /// <p>The ID of the parent composite model in this asset model relationship.</p>
+    pub fn get_parent_asset_model_composite_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parent_asset_model_composite_model_id
     }
     /// <p>The ID of the composite model. IoT SiteWise automatically generates a unique ID for you, so this parameter is never required. However, if you prefer to supply your own ID instead, you can specify it here in UUID format. If you specify your own ID, it must be globally unique.</p>
     pub fn asset_model_composite_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -253,6 +274,48 @@ impl CreateAssetModelCompositeModelInputBuilder {
     pub fn get_asset_model_composite_model_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetModelPropertyDefinition>> {
         &self.asset_model_composite_model_properties
     }
+    /// <p>The expected current entity tag (ETag) for the asset model’s latest or active version (specified using <code>matchForVersionType</code>). The create request is rejected if the tag does not match the latest or active version's current entity tag. See <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/opt-locking-for-model.html">Optimistic locking for asset model writes</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn if_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.if_match = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The expected current entity tag (ETag) for the asset model’s latest or active version (specified using <code>matchForVersionType</code>). The create request is rejected if the tag does not match the latest or active version's current entity tag. See <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/opt-locking-for-model.html">Optimistic locking for asset model writes</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.if_match = input;
+        self
+    }
+    /// <p>The expected current entity tag (ETag) for the asset model’s latest or active version (specified using <code>matchForVersionType</code>). The create request is rejected if the tag does not match the latest or active version's current entity tag. See <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/opt-locking-for-model.html">Optimistic locking for asset model writes</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
+        &self.if_match
+    }
+    /// <p>Accepts <b>*</b> to reject the create request if an active version (specified using <code>matchForVersionType</code> as <code>ACTIVE</code>) already exists for the asset model.</p>
+    pub fn if_none_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.if_none_match = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Accepts <b>*</b> to reject the create request if an active version (specified using <code>matchForVersionType</code> as <code>ACTIVE</code>) already exists for the asset model.</p>
+    pub fn set_if_none_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.if_none_match = input;
+        self
+    }
+    /// <p>Accepts <b>*</b> to reject the create request if an active version (specified using <code>matchForVersionType</code> as <code>ACTIVE</code>) already exists for the asset model.</p>
+    pub fn get_if_none_match(&self) -> &::std::option::Option<::std::string::String> {
+        &self.if_none_match
+    }
+    /// <p>Specifies the asset model version type (<code>LATEST</code> or <code>ACTIVE</code>) used in conjunction with <code>If-Match</code> or <code>If-None-Match</code> headers to determine the target ETag for the create operation.</p>
+    pub fn match_for_version_type(mut self, input: crate::types::AssetModelVersionType) -> Self {
+        self.match_for_version_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the asset model version type (<code>LATEST</code> or <code>ACTIVE</code>) used in conjunction with <code>If-Match</code> or <code>If-None-Match</code> headers to determine the target ETag for the create operation.</p>
+    pub fn set_match_for_version_type(mut self, input: ::std::option::Option<crate::types::AssetModelVersionType>) -> Self {
+        self.match_for_version_type = input;
+        self
+    }
+    /// <p>Specifies the asset model version type (<code>LATEST</code> or <code>ACTIVE</code>) used in conjunction with <code>If-Match</code> or <code>If-None-Match</code> headers to determine the target ETag for the create operation.</p>
+    pub fn get_match_for_version_type(&self) -> &::std::option::Option<crate::types::AssetModelVersionType> {
+        &self.match_for_version_type
+    }
     /// Consumes the builder and constructs a [`CreateAssetModelCompositeModelInput`](crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelInput).
     pub fn build(
         self,
@@ -263,8 +326,8 @@ impl CreateAssetModelCompositeModelInputBuilder {
         ::std::result::Result::Ok(
             crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelInput {
                 asset_model_id: self.asset_model_id,
-                parent_asset_model_composite_model_id: self.parent_asset_model_composite_model_id,
                 asset_model_composite_model_external_id: self.asset_model_composite_model_external_id,
+                parent_asset_model_composite_model_id: self.parent_asset_model_composite_model_id,
                 asset_model_composite_model_id: self.asset_model_composite_model_id,
                 asset_model_composite_model_description: self.asset_model_composite_model_description,
                 asset_model_composite_model_name: self.asset_model_composite_model_name,
@@ -272,6 +335,9 @@ impl CreateAssetModelCompositeModelInputBuilder {
                 client_token: self.client_token,
                 composed_asset_model_id: self.composed_asset_model_id,
                 asset_model_composite_model_properties: self.asset_model_composite_model_properties,
+                if_match: self.if_match,
+                if_none_match: self.if_none_match,
+                match_for_version_type: self.match_for_version_type,
             },
         )
     }

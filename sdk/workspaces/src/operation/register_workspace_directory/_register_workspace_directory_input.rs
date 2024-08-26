@@ -21,6 +21,10 @@ pub struct RegisterWorkspaceDirectoryInput {
     pub workspace_directory_description: ::std::option::Option<::std::string::String>,
     /// <p>The type of identity management the user is using.</p>
     pub user_identity_type: ::std::option::Option<crate::types::UserIdentityType>,
+    /// <p>The Amazon Resource Name (ARN) of the identity center instance.</p>
+    pub idc_instance_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The details about Microsoft Entra config.</p>
+    pub microsoft_entra_config: ::std::option::Option<crate::types::MicrosoftEntraConfig>,
     /// <p>Indicates whether the directory's WorkSpace type is personal or pools.</p>
     pub workspace_type: ::std::option::Option<crate::types::WorkspaceType>,
     /// <p>The active directory config of the directory.</p>
@@ -67,6 +71,14 @@ impl RegisterWorkspaceDirectoryInput {
     pub fn user_identity_type(&self) -> ::std::option::Option<&crate::types::UserIdentityType> {
         self.user_identity_type.as_ref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the identity center instance.</p>
+    pub fn idc_instance_arn(&self) -> ::std::option::Option<&str> {
+        self.idc_instance_arn.as_deref()
+    }
+    /// <p>The details about Microsoft Entra config.</p>
+    pub fn microsoft_entra_config(&self) -> ::std::option::Option<&crate::types::MicrosoftEntraConfig> {
+        self.microsoft_entra_config.as_ref()
+    }
     /// <p>Indicates whether the directory's WorkSpace type is personal or pools.</p>
     pub fn workspace_type(&self) -> ::std::option::Option<&crate::types::WorkspaceType> {
         self.workspace_type.as_ref()
@@ -96,6 +108,8 @@ pub struct RegisterWorkspaceDirectoryInputBuilder {
     pub(crate) workspace_directory_name: ::std::option::Option<::std::string::String>,
     pub(crate) workspace_directory_description: ::std::option::Option<::std::string::String>,
     pub(crate) user_identity_type: ::std::option::Option<crate::types::UserIdentityType>,
+    pub(crate) idc_instance_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) microsoft_entra_config: ::std::option::Option<crate::types::MicrosoftEntraConfig>,
     pub(crate) workspace_type: ::std::option::Option<crate::types::WorkspaceType>,
     pub(crate) active_directory_config: ::std::option::Option<crate::types::ActiveDirectoryConfig>,
 }
@@ -238,6 +252,34 @@ impl RegisterWorkspaceDirectoryInputBuilder {
     pub fn get_user_identity_type(&self) -> &::std::option::Option<crate::types::UserIdentityType> {
         &self.user_identity_type
     }
+    /// <p>The Amazon Resource Name (ARN) of the identity center instance.</p>
+    pub fn idc_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.idc_instance_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the identity center instance.</p>
+    pub fn set_idc_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.idc_instance_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the identity center instance.</p>
+    pub fn get_idc_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.idc_instance_arn
+    }
+    /// <p>The details about Microsoft Entra config.</p>
+    pub fn microsoft_entra_config(mut self, input: crate::types::MicrosoftEntraConfig) -> Self {
+        self.microsoft_entra_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The details about Microsoft Entra config.</p>
+    pub fn set_microsoft_entra_config(mut self, input: ::std::option::Option<crate::types::MicrosoftEntraConfig>) -> Self {
+        self.microsoft_entra_config = input;
+        self
+    }
+    /// <p>The details about Microsoft Entra config.</p>
+    pub fn get_microsoft_entra_config(&self) -> &::std::option::Option<crate::types::MicrosoftEntraConfig> {
+        &self.microsoft_entra_config
+    }
     /// <p>Indicates whether the directory's WorkSpace type is personal or pools.</p>
     pub fn workspace_type(mut self, input: crate::types::WorkspaceType) -> Self {
         self.workspace_type = ::std::option::Option::Some(input);
@@ -283,6 +325,8 @@ impl RegisterWorkspaceDirectoryInputBuilder {
             workspace_directory_name: self.workspace_directory_name,
             workspace_directory_description: self.workspace_directory_description,
             user_identity_type: self.user_identity_type,
+            idc_instance_arn: self.idc_instance_arn,
+            microsoft_entra_config: self.microsoft_entra_config,
             workspace_type: self.workspace_type,
             active_directory_config: self.active_directory_config,
         })

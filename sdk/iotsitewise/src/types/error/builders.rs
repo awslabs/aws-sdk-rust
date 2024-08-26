@@ -13,6 +13,8 @@ pub use crate::types::error::_limit_exceeded_exception::LimitExceededExceptionBu
 
 pub use crate::types::error::_resource_already_exists_exception::ResourceAlreadyExistsExceptionBuilder;
 
+pub use crate::types::error::_precondition_failed_exception::PreconditionFailedExceptionBuilder;
+
 pub use crate::types::error::_unauthorized_exception::UnauthorizedExceptionBuilder;
 
 pub use crate::types::error::_too_many_tags_exception::TooManyTagsExceptionBuilder;

@@ -40,6 +40,8 @@ pub struct WorkspaceDirectory {
     pub saml_properties: ::std::option::Option<crate::types::SamlProperties>,
     /// <p>The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory for WorkSpaces login.</p>
     pub certificate_based_auth_properties: ::std::option::Option<crate::types::CertificateBasedAuthProperties>,
+    /// <p>Specifies details about Microsoft Entra configurations.</p>
+    pub microsoft_entra_config: ::std::option::Option<crate::types::MicrosoftEntraConfig>,
     /// <p>The name fo the WorkSpace directory.</p>
     pub workspace_directory_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the WorkSpace directory</p>
@@ -48,6 +50,8 @@ pub struct WorkspaceDirectory {
     pub user_identity_type: ::std::option::Option<crate::types::UserIdentityType>,
     /// <p>Indicates whether the directory's WorkSpace type is personal or pools.</p>
     pub workspace_type: ::std::option::Option<crate::types::WorkspaceType>,
+    /// <p>Specifies details about identity center configurations.</p>
+    pub idc_config: ::std::option::Option<crate::types::IdcConfig>,
     /// <p>Information about the Active Directory config.</p>
     pub active_directory_config: ::std::option::Option<crate::types::ActiveDirectoryConfig>,
     /// <p>The streaming properties to configure.</p>
@@ -134,6 +138,10 @@ impl WorkspaceDirectory {
     pub fn certificate_based_auth_properties(&self) -> ::std::option::Option<&crate::types::CertificateBasedAuthProperties> {
         self.certificate_based_auth_properties.as_ref()
     }
+    /// <p>Specifies details about Microsoft Entra configurations.</p>
+    pub fn microsoft_entra_config(&self) -> ::std::option::Option<&crate::types::MicrosoftEntraConfig> {
+        self.microsoft_entra_config.as_ref()
+    }
     /// <p>The name fo the WorkSpace directory.</p>
     pub fn workspace_directory_name(&self) -> ::std::option::Option<&str> {
         self.workspace_directory_name.as_deref()
@@ -149,6 +157,10 @@ impl WorkspaceDirectory {
     /// <p>Indicates whether the directory's WorkSpace type is personal or pools.</p>
     pub fn workspace_type(&self) -> ::std::option::Option<&crate::types::WorkspaceType> {
         self.workspace_type.as_ref()
+    }
+    /// <p>Specifies details about identity center configurations.</p>
+    pub fn idc_config(&self) -> ::std::option::Option<&crate::types::IdcConfig> {
+        self.idc_config.as_ref()
     }
     /// <p>Information about the Active Directory config.</p>
     pub fn active_directory_config(&self) -> ::std::option::Option<&crate::types::ActiveDirectoryConfig> {
@@ -192,10 +204,12 @@ pub struct WorkspaceDirectoryBuilder {
     pub(crate) selfservice_permissions: ::std::option::Option<crate::types::SelfservicePermissions>,
     pub(crate) saml_properties: ::std::option::Option<crate::types::SamlProperties>,
     pub(crate) certificate_based_auth_properties: ::std::option::Option<crate::types::CertificateBasedAuthProperties>,
+    pub(crate) microsoft_entra_config: ::std::option::Option<crate::types::MicrosoftEntraConfig>,
     pub(crate) workspace_directory_name: ::std::option::Option<::std::string::String>,
     pub(crate) workspace_directory_description: ::std::option::Option<::std::string::String>,
     pub(crate) user_identity_type: ::std::option::Option<crate::types::UserIdentityType>,
     pub(crate) workspace_type: ::std::option::Option<crate::types::WorkspaceType>,
+    pub(crate) idc_config: ::std::option::Option<crate::types::IdcConfig>,
     pub(crate) active_directory_config: ::std::option::Option<crate::types::ActiveDirectoryConfig>,
     pub(crate) streaming_properties: ::std::option::Option<crate::types::StreamingProperties>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,
@@ -471,6 +485,20 @@ impl WorkspaceDirectoryBuilder {
     pub fn get_certificate_based_auth_properties(&self) -> &::std::option::Option<crate::types::CertificateBasedAuthProperties> {
         &self.certificate_based_auth_properties
     }
+    /// <p>Specifies details about Microsoft Entra configurations.</p>
+    pub fn microsoft_entra_config(mut self, input: crate::types::MicrosoftEntraConfig) -> Self {
+        self.microsoft_entra_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies details about Microsoft Entra configurations.</p>
+    pub fn set_microsoft_entra_config(mut self, input: ::std::option::Option<crate::types::MicrosoftEntraConfig>) -> Self {
+        self.microsoft_entra_config = input;
+        self
+    }
+    /// <p>Specifies details about Microsoft Entra configurations.</p>
+    pub fn get_microsoft_entra_config(&self) -> &::std::option::Option<crate::types::MicrosoftEntraConfig> {
+        &self.microsoft_entra_config
+    }
     /// <p>The name fo the WorkSpace directory.</p>
     pub fn workspace_directory_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_directory_name = ::std::option::Option::Some(input.into());
@@ -526,6 +554,20 @@ impl WorkspaceDirectoryBuilder {
     /// <p>Indicates whether the directory's WorkSpace type is personal or pools.</p>
     pub fn get_workspace_type(&self) -> &::std::option::Option<crate::types::WorkspaceType> {
         &self.workspace_type
+    }
+    /// <p>Specifies details about identity center configurations.</p>
+    pub fn idc_config(mut self, input: crate::types::IdcConfig) -> Self {
+        self.idc_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies details about identity center configurations.</p>
+    pub fn set_idc_config(mut self, input: ::std::option::Option<crate::types::IdcConfig>) -> Self {
+        self.idc_config = input;
+        self
+    }
+    /// <p>Specifies details about identity center configurations.</p>
+    pub fn get_idc_config(&self) -> &::std::option::Option<crate::types::IdcConfig> {
+        &self.idc_config
     }
     /// <p>Information about the Active Directory config.</p>
     pub fn active_directory_config(mut self, input: crate::types::ActiveDirectoryConfig) -> Self {
@@ -590,10 +632,12 @@ impl WorkspaceDirectoryBuilder {
             selfservice_permissions: self.selfservice_permissions,
             saml_properties: self.saml_properties,
             certificate_based_auth_properties: self.certificate_based_auth_properties,
+            microsoft_entra_config: self.microsoft_entra_config,
             workspace_directory_name: self.workspace_directory_name,
             workspace_directory_description: self.workspace_directory_description,
             user_identity_type: self.user_identity_type,
             workspace_type: self.workspace_type,
+            idc_config: self.idc_config,
             active_directory_config: self.active_directory_config,
             streaming_properties: self.streaming_properties,
             error_message: self.error_message,

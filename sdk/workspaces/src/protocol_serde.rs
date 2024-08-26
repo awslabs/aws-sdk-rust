@@ -465,6 +465,8 @@ pub(crate) mod shape_default_client_branding_attributes;
 
 pub(crate) mod shape_default_import_client_branding_attributes;
 
+pub(crate) mod shape_describe_workspace_directories_filter;
+
 pub(crate) mod shape_describe_workspaces_pools_filter;
 
 pub(crate) mod shape_directory_list;
@@ -492,6 +494,8 @@ pub(crate) mod shape_ios_client_branding_attributes;
 pub(crate) mod shape_ios_import_client_branding_attributes;
 
 pub(crate) mod shape_ip_rule_item;
+
+pub(crate) mod shape_microsoft_entra_config;
 
 pub(crate) mod shape_operating_system;
 
@@ -624,6 +628,8 @@ pub(crate) mod shape_default_workspace_creation_properties;
 pub(crate) mod shape_dns_ip_addresses;
 
 pub(crate) mod shape_error_details_list;
+
+pub(crate) mod shape_idc_config;
 
 pub(crate) mod shape_ip_group_id_list;
 

@@ -29,6 +29,8 @@ pub use crate::types::_account_link::AccountLinkBuilder;
 
 pub use crate::types::_active_directory_config::ActiveDirectoryConfigBuilder;
 
+pub use crate::types::_microsoft_entra_config::MicrosoftEntraConfigBuilder;
+
 pub use crate::types::_tag::TagBuilder;
 
 pub use crate::types::_rebuild_request::RebuildRequestBuilder;
@@ -99,7 +101,11 @@ pub use crate::types::_image_permission::ImagePermissionBuilder;
 
 pub use crate::types::_workspace_directory::WorkspaceDirectoryBuilder;
 
+pub use crate::types::_idc_config::IdcConfigBuilder;
+
 pub use crate::types::_default_workspace_creation_properties::DefaultWorkspaceCreationPropertiesBuilder;
+
+pub use crate::types::_describe_workspace_directories_filter::DescribeWorkspaceDirectoriesFilterBuilder;
 
 pub use crate::types::_workspace_bundle::WorkspaceBundleBuilder;
 

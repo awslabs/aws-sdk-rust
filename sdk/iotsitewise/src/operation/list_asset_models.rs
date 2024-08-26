@@ -181,21 +181,26 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAssetMod
                 mut output: &mut ::std::string::String,
             ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
-                if let ::std::option::Option::Some(inner_1) = &_input.next_token {
+                if let ::std::option::Option::Some(inner_1) = &_input.asset_model_types {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_1));
-                    }
-                }
-                if let ::std::option::Option::Some(inner_2) = &_input.max_results {
-                    {
-                        query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_2).encode());
-                    }
-                }
-                if let ::std::option::Option::Some(inner_3) = &_input.asset_model_types {
-                    {
-                        for inner_4 in inner_3 {
-                            query.push_kv("assetModelTypes", &::aws_smithy_http::query::fmt_string(inner_4));
+                        for inner_2 in inner_1 {
+                            query.push_kv("assetModelTypes", &::aws_smithy_http::query::fmt_string(inner_2));
                         }
+                    }
+                }
+                if let ::std::option::Option::Some(inner_3) = &_input.next_token {
+                    {
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_3));
+                    }
+                }
+                if let ::std::option::Option::Some(inner_4) = &_input.max_results {
+                    {
+                        query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_4).encode());
+                    }
+                }
+                if let ::std::option::Option::Some(inner_5) = &_input.asset_model_version {
+                    {
+                        query.push_kv("assetModelVersion", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
                 ::std::result::Result::Ok(())

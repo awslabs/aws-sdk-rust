@@ -214,6 +214,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAssetMod
                         query.push_kv("filter", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
+                if let ::std::option::Option::Some(inner_5) = &_input.asset_model_version {
+                    {
+                        query.push_kv("assetModelVersion", &::aws_smithy_http::query::fmt_string(inner_5));
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

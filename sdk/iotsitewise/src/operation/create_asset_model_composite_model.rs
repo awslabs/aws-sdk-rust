@@ -214,6 +214,8 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CreateAssetM
             ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
+                let builder =
+                    crate::protocol_serde::shape_create_asset_model_composite_model::ser_create_asset_model_composite_model_headers(input, builder)?;
                 ::std::result::Result::Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
@@ -289,6 +291,8 @@ pub enum CreateAssetModelCompositeModelError {
     /// <p>You've reached the limit for a resource. For example, this can occur if you're trying to associate more than the allowed number of child assets or attempting to create more than the allowed number of properties for an asset model.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
+    /// <p>The precondition in one or more of the request-header fields evaluated to <code>FALSE</code>.</p>
+    PreconditionFailedException(crate::types::error::PreconditionFailedException),
     /// <p>The resource already exists.</p>
     ResourceAlreadyExistsException(crate::types::error::ResourceAlreadyExistsException),
     /// <p>The requested resource can't be found.</p>
@@ -333,6 +337,7 @@ impl CreateAssetModelCompositeModelError {
             Self::InternalFailureException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidRequestException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::LimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::PreconditionFailedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceAlreadyExistsException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -355,6 +360,10 @@ impl CreateAssetModelCompositeModelError {
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(self, Self::LimitExceededException(_))
     }
+    /// Returns `true` if the error kind is `CreateAssetModelCompositeModelError::PreconditionFailedException`.
+    pub fn is_precondition_failed_exception(&self) -> bool {
+        matches!(self, Self::PreconditionFailedException(_))
+    }
     /// Returns `true` if the error kind is `CreateAssetModelCompositeModelError::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(self, Self::ResourceAlreadyExistsException(_))
@@ -375,6 +384,7 @@ impl ::std::error::Error for CreateAssetModelCompositeModelError {
             Self::InternalFailureException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidRequestException(_inner) => ::std::option::Option::Some(_inner),
             Self::LimitExceededException(_inner) => ::std::option::Option::Some(_inner),
+            Self::PreconditionFailedException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceAlreadyExistsException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
@@ -389,6 +399,7 @@ impl ::std::fmt::Display for CreateAssetModelCompositeModelError {
             Self::InternalFailureException(_inner) => _inner.fmt(f),
             Self::InvalidRequestException(_inner) => _inner.fmt(f),
             Self::LimitExceededException(_inner) => _inner.fmt(f),
+            Self::PreconditionFailedException(_inner) => _inner.fmt(f),
             Self::ResourceAlreadyExistsException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ThrottlingException(_inner) => _inner.fmt(f),
@@ -417,6 +428,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateAssetMo
             Self::InternalFailureException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidRequestException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::LimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::PreconditionFailedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceAlreadyExistsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

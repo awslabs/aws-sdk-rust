@@ -6,38 +6,38 @@ pub fn ser_asset_model_property(
     if let Some(var_1) = &input.id {
         object.key("id").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.external_id {
+        object.key("externalId").string(var_2.as_str());
+    }
     {
         object.key("name").string(input.name.as_str());
     }
     {
         object.key("dataType").string(input.data_type.as_str());
     }
-    if let Some(var_2) = &input.data_type_spec {
-        object.key("dataTypeSpec").string(var_2.as_str());
+    if let Some(var_3) = &input.data_type_spec {
+        object.key("dataTypeSpec").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.unit {
-        object.key("unit").string(var_3.as_str());
+    if let Some(var_4) = &input.unit {
+        object.key("unit").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.r#type {
+    if let Some(var_5) = &input.r#type {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("type").start_object();
-        crate::protocol_serde::shape_property_type::ser_property_type(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_6 = object.key("type").start_object();
+        crate::protocol_serde::shape_property_type::ser_property_type(&mut object_6, var_5)?;
+        object_6.finish();
     }
-    if let Some(var_6) = &input.path {
-        let mut array_7 = object.key("path").start_array();
-        for item_8 in var_6 {
+    if let Some(var_7) = &input.path {
+        let mut array_8 = object.key("path").start_array();
+        for item_9 in var_7 {
             {
                 #[allow(unused_mut)]
-                let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_asset_model_property_path_segment::ser_asset_model_property_path_segment(&mut object_9, item_8)?;
-                object_9.finish();
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_asset_model_property_path_segment::ser_asset_model_property_path_segment(&mut object_10, item_9)?;
+                object_10.finish();
             }
         }
-        array_7.finish();
-    }
-    if let Some(var_10) = &input.external_id {
-        object.key("externalId").string(var_10.as_str());
+        array_8.finish();
     }
     Ok(())
 }
@@ -59,6 +59,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "id" => {
                             builder = builder.set_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "externalId" => {
+                            builder = builder.set_external_id(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
@@ -99,13 +106,6 @@ where
                             builder = builder.set_path(crate::protocol_serde::shape_asset_model_property_path::de_asset_model_property_path(
                                 tokens,
                             )?);
-                        }
-                        "externalId" => {
-                            builder = builder.set_external_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

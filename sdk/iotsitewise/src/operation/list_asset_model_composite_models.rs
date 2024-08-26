@@ -210,6 +210,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAssetMod
                         query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_3).encode());
                     }
                 }
+                if let ::std::option::Option::Some(inner_4) = &_input.asset_model_version {
+                    {
+                        query.push_kv("assetModelVersion", &::aws_smithy_http::query::fmt_string(inner_4));
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

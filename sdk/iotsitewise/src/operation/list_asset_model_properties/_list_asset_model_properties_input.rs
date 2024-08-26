@@ -18,6 +18,8 @@ pub struct ListAssetModelPropertiesInput {
     /// </ul>
     /// <p>Default: <code>BASE</code></p>
     pub filter: ::std::option::Option<crate::types::ListAssetModelPropertiesFilter>,
+    /// <p>The version alias that specifies the latest or active version of the asset model. The details are returned in the response. The default value is <code>LATEST</code>. See <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/model-active-version.html"> Asset model versions</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub asset_model_version: ::std::option::Option<::std::string::String>,
 }
 impl ListAssetModelPropertiesInput {
     /// <p>The ID of the asset model. This can be either the actual ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
@@ -43,6 +45,10 @@ impl ListAssetModelPropertiesInput {
     pub fn filter(&self) -> ::std::option::Option<&crate::types::ListAssetModelPropertiesFilter> {
         self.filter.as_ref()
     }
+    /// <p>The version alias that specifies the latest or active version of the asset model. The details are returned in the response. The default value is <code>LATEST</code>. See <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/model-active-version.html"> Asset model versions</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn asset_model_version(&self) -> ::std::option::Option<&str> {
+        self.asset_model_version.as_deref()
+    }
 }
 impl ListAssetModelPropertiesInput {
     /// Creates a new builder-style object to manufacture [`ListAssetModelPropertiesInput`](crate::operation::list_asset_model_properties::ListAssetModelPropertiesInput).
@@ -59,6 +65,7 @@ pub struct ListAssetModelPropertiesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) filter: ::std::option::Option<crate::types::ListAssetModelPropertiesFilter>,
+    pub(crate) asset_model_version: ::std::option::Option<::std::string::String>,
 }
 impl ListAssetModelPropertiesInputBuilder {
     /// <p>The ID of the asset model. This can be either the actual ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
@@ -139,6 +146,20 @@ impl ListAssetModelPropertiesInputBuilder {
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::ListAssetModelPropertiesFilter> {
         &self.filter
     }
+    /// <p>The version alias that specifies the latest or active version of the asset model. The details are returned in the response. The default value is <code>LATEST</code>. See <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/model-active-version.html"> Asset model versions</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn asset_model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.asset_model_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The version alias that specifies the latest or active version of the asset model. The details are returned in the response. The default value is <code>LATEST</code>. See <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/model-active-version.html"> Asset model versions</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn set_asset_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.asset_model_version = input;
+        self
+    }
+    /// <p>The version alias that specifies the latest or active version of the asset model. The details are returned in the response. The default value is <code>LATEST</code>. See <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/model-active-version.html"> Asset model versions</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn get_asset_model_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_model_version
+    }
     /// Consumes the builder and constructs a [`ListAssetModelPropertiesInput`](crate::operation::list_asset_model_properties::ListAssetModelPropertiesInput).
     pub fn build(
         self,
@@ -151,6 +172,7 @@ impl ListAssetModelPropertiesInputBuilder {
             next_token: self.next_token,
             max_results: self.max_results,
             filter: self.filter,
+            asset_model_version: self.asset_model_version,
         })
     }
 }

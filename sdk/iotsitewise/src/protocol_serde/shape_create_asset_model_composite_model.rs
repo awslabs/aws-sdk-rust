@@ -87,6 +87,23 @@ pub fn de_create_asset_model_composite_model_http_error(
                 tmp
             })
         }
+        "PreconditionFailedException" => {
+            crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelError::PreconditionFailedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::PreconditionFailedExceptionBuilder::default();
+                    output =
+                        crate::protocol_serde::shape_precondition_failed_exception::de_precondition_failed_exception_json_err(_response_body, output)
+                            .map_err(crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelError::unhandled)?;
+                    let output = output.meta(generic);
+                    crate::serde_util::precondition_failed_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelError::unhandled)?
+                };
+                tmp
+            })
+        }
         "ResourceAlreadyExistsException" => {
             crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelError::ResourceAlreadyExistsException({
                 #[allow(unused_mut)]
@@ -160,6 +177,52 @@ pub fn de_create_asset_model_composite_model_http_response(
             .build()
             .map_err(crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelError::unhandled)?
     })
+}
+
+pub fn ser_create_asset_model_composite_model_headers(
+    input: &crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelInput,
+    mut builder: ::http::request::Builder,
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
+    if let ::std::option::Option::Some(inner_1) = &input.if_match {
+        let formatted_2 = inner_1.as_str();
+        if !formatted_2.is_empty() {
+            let header_value = formatted_2;
+            let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
+                    "if_match",
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
+                )
+            })?;
+            builder = builder.header("If-Match", header_value);
+        }
+    }
+    if let ::std::option::Option::Some(inner_3) = &input.if_none_match {
+        let formatted_4 = inner_3.as_str();
+        if !formatted_4.is_empty() {
+            let header_value = formatted_4;
+            let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
+                    "if_none_match",
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
+                )
+            })?;
+            builder = builder.header("If-None-Match", header_value);
+        }
+    }
+    if let ::std::option::Option::Some(inner_5) = &input.match_for_version_type {
+        let formatted_6 = inner_5.as_str();
+        if !formatted_6.is_empty() {
+            let header_value = formatted_6;
+            let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
+                    "match_for_version_type",
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
+                )
+            })?;
+            builder = builder.header("Match-For-Version-Type", header_value);
+        }
+    }
+    Ok(builder)
 }
 
 pub fn ser_create_asset_model_composite_model_input(

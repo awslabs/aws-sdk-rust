@@ -3,32 +3,32 @@ pub fn ser_asset_model_composite_model_definition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AssetModelCompositeModelDefinition,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    if let Some(var_1) = &input.id {
+        object.key("id").string(var_1.as_str());
+    }
+    if let Some(var_2) = &input.external_id {
+        object.key("externalId").string(var_2.as_str());
+    }
     {
         object.key("name").string(input.name.as_str());
     }
-    if let Some(var_1) = &input.description {
-        object.key("description").string(var_1.as_str());
+    if let Some(var_3) = &input.description {
+        object.key("description").string(var_3.as_str());
     }
     {
         object.key("type").string(input.r#type.as_str());
     }
-    if let Some(var_2) = &input.properties {
-        let mut array_3 = object.key("properties").start_array();
-        for item_4 in var_2 {
+    if let Some(var_4) = &input.properties {
+        let mut array_5 = object.key("properties").start_array();
+        for item_6 in var_4 {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_asset_model_property_definition::ser_asset_model_property_definition(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_asset_model_property_definition::ser_asset_model_property_definition(&mut object_7, item_6)?;
+                object_7.finish();
             }
         }
-        array_3.finish();
-    }
-    if let Some(var_6) = &input.id {
-        object.key("id").string(var_6.as_str());
-    }
-    if let Some(var_7) = &input.external_id {
-        object.key("externalId").string(var_7.as_str());
+        array_5.finish();
     }
     Ok(())
 }

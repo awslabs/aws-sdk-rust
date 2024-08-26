@@ -6,19 +6,13 @@
 pub struct AssetModelSummary {
     /// <p>The ID of the asset model (used with IoT SiteWise API operations).</p>
     pub id: ::std::string::String,
+    /// <p>The external ID of the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub external_id: ::std::option::Option<::std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>
     /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code></p>
     pub arn: ::std::string::String,
     /// <p>The name of the asset model.</p>
     pub name: ::std::string::String,
-    /// <p>The asset model description.</p>
-    pub description: ::std::string::String,
-    /// <p>The date the asset model was created, in Unix epoch time.</p>
-    pub creation_date: ::aws_smithy_types::DateTime,
-    /// <p>The date the asset model was last updated, in Unix epoch time.</p>
-    pub last_update_date: ::aws_smithy_types::DateTime,
-    /// <p>The current status of the asset model.</p>
-    pub status: ::std::option::Option<crate::types::AssetModelStatus>,
     /// <p>The type of asset model.</p>
     /// <ul>
     /// <li>
@@ -27,14 +21,26 @@ pub struct AssetModelSummary {
     /// <p><b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model.</p></li>
     /// </ul>
     pub asset_model_type: ::std::option::Option<crate::types::AssetModelType>,
-    /// <p>The external ID of the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub external_id: ::std::option::Option<::std::string::String>,
+    /// <p>The asset model description.</p>
+    pub description: ::std::string::String,
+    /// <p>The date the asset model was created, in Unix epoch time.</p>
+    pub creation_date: ::aws_smithy_types::DateTime,
+    /// <p>The date the asset model was last updated, in Unix epoch time.</p>
+    pub last_update_date: ::aws_smithy_types::DateTime,
+    /// <p>The current status of the asset model.</p>
+    pub status: ::std::option::Option<crate::types::AssetModelStatus>,
+    /// <p>The version number of the asset model.</p>
+    pub version: ::std::option::Option<::std::string::String>,
 }
 impl AssetModelSummary {
     /// <p>The ID of the asset model (used with IoT SiteWise API operations).</p>
     pub fn id(&self) -> &str {
         use std::ops::Deref;
         self.id.deref()
+    }
+    /// <p>The external ID of the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn external_id(&self) -> ::std::option::Option<&str> {
+        self.external_id.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>
     /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code></p>
@@ -46,6 +52,16 @@ impl AssetModelSummary {
     pub fn name(&self) -> &str {
         use std::ops::Deref;
         self.name.deref()
+    }
+    /// <p>The type of asset model.</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p></li>
+    /// <li>
+    /// <p><b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model.</p></li>
+    /// </ul>
+    pub fn asset_model_type(&self) -> ::std::option::Option<&crate::types::AssetModelType> {
+        self.asset_model_type.as_ref()
     }
     /// <p>The asset model description.</p>
     pub fn description(&self) -> &str {
@@ -64,19 +80,9 @@ impl AssetModelSummary {
     pub fn status(&self) -> ::std::option::Option<&crate::types::AssetModelStatus> {
         self.status.as_ref()
     }
-    /// <p>The type of asset model.</p>
-    /// <ul>
-    /// <li>
-    /// <p><b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p></li>
-    /// <li>
-    /// <p><b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model.</p></li>
-    /// </ul>
-    pub fn asset_model_type(&self) -> ::std::option::Option<&crate::types::AssetModelType> {
-        self.asset_model_type.as_ref()
-    }
-    /// <p>The external ID of the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn external_id(&self) -> ::std::option::Option<&str> {
-        self.external_id.as_deref()
+    /// <p>The version number of the asset model.</p>
+    pub fn version(&self) -> ::std::option::Option<&str> {
+        self.version.as_deref()
     }
 }
 impl AssetModelSummary {
@@ -91,14 +97,15 @@ impl AssetModelSummary {
 #[non_exhaustive]
 pub struct AssetModelSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) external_id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) asset_model_type: ::std::option::Option<crate::types::AssetModelType>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::AssetModelStatus>,
-    pub(crate) asset_model_type: ::std::option::Option<crate::types::AssetModelType>,
-    pub(crate) external_id: ::std::option::Option<::std::string::String>,
+    pub(crate) version: ::std::option::Option<::std::string::String>,
 }
 impl AssetModelSummaryBuilder {
     /// <p>The ID of the asset model (used with IoT SiteWise API operations).</p>
@@ -115,6 +122,20 @@ impl AssetModelSummaryBuilder {
     /// <p>The ID of the asset model (used with IoT SiteWise API operations).</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
+    }
+    /// <p>The external ID of the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn external_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.external_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The external ID of the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn set_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.external_id = input;
+        self
+    }
+    /// <p>The external ID of the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn get_external_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.external_id
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>
     /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code></p>
@@ -148,6 +169,38 @@ impl AssetModelSummaryBuilder {
     /// <p>The name of the asset model.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
+    }
+    /// <p>The type of asset model.</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p></li>
+    /// <li>
+    /// <p><b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model.</p></li>
+    /// </ul>
+    pub fn asset_model_type(mut self, input: crate::types::AssetModelType) -> Self {
+        self.asset_model_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of asset model.</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p></li>
+    /// <li>
+    /// <p><b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model.</p></li>
+    /// </ul>
+    pub fn set_asset_model_type(mut self, input: ::std::option::Option<crate::types::AssetModelType>) -> Self {
+        self.asset_model_type = input;
+        self
+    }
+    /// <p>The type of asset model.</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p></li>
+    /// <li>
+    /// <p><b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model.</p></li>
+    /// </ul>
+    pub fn get_asset_model_type(&self) -> &::std::option::Option<crate::types::AssetModelType> {
+        &self.asset_model_type
     }
     /// <p>The asset model description.</p>
     /// This field is required.
@@ -209,51 +262,19 @@ impl AssetModelSummaryBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AssetModelStatus> {
         &self.status
     }
-    /// <p>The type of asset model.</p>
-    /// <ul>
-    /// <li>
-    /// <p><b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p></li>
-    /// <li>
-    /// <p><b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model.</p></li>
-    /// </ul>
-    pub fn asset_model_type(mut self, input: crate::types::AssetModelType) -> Self {
-        self.asset_model_type = ::std::option::Option::Some(input);
+    /// <p>The version number of the asset model.</p>
+    pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The type of asset model.</p>
-    /// <ul>
-    /// <li>
-    /// <p><b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p></li>
-    /// <li>
-    /// <p><b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model.</p></li>
-    /// </ul>
-    pub fn set_asset_model_type(mut self, input: ::std::option::Option<crate::types::AssetModelType>) -> Self {
-        self.asset_model_type = input;
+    /// <p>The version number of the asset model.</p>
+    pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.version = input;
         self
     }
-    /// <p>The type of asset model.</p>
-    /// <ul>
-    /// <li>
-    /// <p><b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p></li>
-    /// <li>
-    /// <p><b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model.</p></li>
-    /// </ul>
-    pub fn get_asset_model_type(&self) -> &::std::option::Option<crate::types::AssetModelType> {
-        &self.asset_model_type
-    }
-    /// <p>The external ID of the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn external_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.external_id = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The external ID of the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn set_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.external_id = input;
-        self
-    }
-    /// <p>The external ID of the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn get_external_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.external_id
+    /// <p>The version number of the asset model.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`AssetModelSummary`](crate::types::AssetModelSummary).
     /// This method will fail if any of the following fields are not set:
@@ -271,6 +292,7 @@ impl AssetModelSummaryBuilder {
                     "id was not specified but it is required when building AssetModelSummary",
                 )
             })?,
+            external_id: self.external_id,
             arn: self.arn.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
@@ -283,6 +305,7 @@ impl AssetModelSummaryBuilder {
                     "name was not specified but it is required when building AssetModelSummary",
                 )
             })?,
+            asset_model_type: self.asset_model_type,
             description: self.description.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "description",
@@ -302,8 +325,7 @@ impl AssetModelSummaryBuilder {
                 )
             })?,
             status: self.status,
-            asset_model_type: self.asset_model_type,
-            external_id: self.external_id,
+            version: self.version,
         })
     }
 }

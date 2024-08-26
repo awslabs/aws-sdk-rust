@@ -30,5 +30,20 @@ pub fn ser_describe_workspace_directories_input_input(
     if let Some(var_8) = &input.next_token {
         object.key("NextToken").string(var_8.as_str());
     }
+    if let Some(var_9) = &input.filters {
+        let mut array_10 = object.key("Filters").start_array();
+        for item_11 in var_9 {
+            {
+                #[allow(unused_mut)]
+                let mut object_12 = array_10.value().start_object();
+                crate::protocol_serde::shape_describe_workspace_directories_filter::ser_describe_workspace_directories_filter(
+                    &mut object_12,
+                    item_11,
+                )?;
+                object_12.finish();
+            }
+        }
+        array_10.finish();
+    }
     Ok(())
 }

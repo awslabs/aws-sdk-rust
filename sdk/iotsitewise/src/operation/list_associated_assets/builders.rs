@@ -26,9 +26,9 @@ impl crate::operation::list_associated_assets::builders::ListAssociatedAssetsInp
 /// <p>You can use this operation to do the following:</p>
 /// <ul>
 /// <li>
-/// <p>List child assets associated to a parent asset by a hierarchy that you specify.</p></li>
+/// <p><code>CHILD</code> - List all child assets associated to the asset.</p></li>
 /// <li>
-/// <p>List an asset's parent asset.</p></li>
+/// <p><code>PARENT</code> - List the asset's parent asset.</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAssociatedAssetsFluentBuilder {
@@ -135,19 +135,22 @@ impl ListAssociatedAssetsFluentBuilder {
     pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_asset_id()
     }
-    /// <p>The ID of the hierarchy by which child assets are associated to the asset. (This can be either the actual ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.) To find a hierarchy ID, use the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAsset.html">DescribeAsset</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a> operations. This parameter is required if you choose <code>CHILD</code> for <code>traversalDirection</code>.</p>
+    /// <p>(Optional) If you don't provide a <code>hierarchyId</code>, all the immediate assets in the <code>traversalDirection</code> will be returned.</p>
+    /// <p>The ID of the hierarchy by which child assets are associated to the asset. (This can be either the actual ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.)</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn hierarchy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hierarchy_id(input.into());
         self
     }
-    /// <p>The ID of the hierarchy by which child assets are associated to the asset. (This can be either the actual ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.) To find a hierarchy ID, use the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAsset.html">DescribeAsset</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a> operations. This parameter is required if you choose <code>CHILD</code> for <code>traversalDirection</code>.</p>
+    /// <p>(Optional) If you don't provide a <code>hierarchyId</code>, all the immediate assets in the <code>traversalDirection</code> will be returned.</p>
+    /// <p>The ID of the hierarchy by which child assets are associated to the asset. (This can be either the actual ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.)</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn set_hierarchy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hierarchy_id(input);
         self
     }
-    /// <p>The ID of the hierarchy by which child assets are associated to the asset. (This can be either the actual ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.) To find a hierarchy ID, use the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAsset.html">DescribeAsset</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a> operations. This parameter is required if you choose <code>CHILD</code> for <code>traversalDirection</code>.</p>
+    /// <p>(Optional) If you don't provide a <code>hierarchyId</code>, all the immediate assets in the <code>traversalDirection</code> will be returned.</p>
+    /// <p>The ID of the hierarchy by which child assets are associated to the asset. (This can be either the actual ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.)</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn get_hierarchy_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_hierarchy_id()
@@ -155,7 +158,7 @@ impl ListAssociatedAssetsFluentBuilder {
     /// <p>The direction to list associated assets. Choose one of the following options:</p>
     /// <ul>
     /// <li>
-    /// <p><code>CHILD</code> – The list includes all child assets associated to the asset. The <code>hierarchyId</code> parameter is required if you choose <code>CHILD</code>.</p></li>
+    /// <p><code>CHILD</code> – The list includes all child assets associated to the asset.</p></li>
     /// <li>
     /// <p><code>PARENT</code> – The list includes the asset's parent asset.</p></li>
     /// </ul>
@@ -167,7 +170,7 @@ impl ListAssociatedAssetsFluentBuilder {
     /// <p>The direction to list associated assets. Choose one of the following options:</p>
     /// <ul>
     /// <li>
-    /// <p><code>CHILD</code> – The list includes all child assets associated to the asset. The <code>hierarchyId</code> parameter is required if you choose <code>CHILD</code>.</p></li>
+    /// <p><code>CHILD</code> – The list includes all child assets associated to the asset.</p></li>
     /// <li>
     /// <p><code>PARENT</code> – The list includes the asset's parent asset.</p></li>
     /// </ul>
@@ -179,7 +182,7 @@ impl ListAssociatedAssetsFluentBuilder {
     /// <p>The direction to list associated assets. Choose one of the following options:</p>
     /// <ul>
     /// <li>
-    /// <p><code>CHILD</code> – The list includes all child assets associated to the asset. The <code>hierarchyId</code> parameter is required if you choose <code>CHILD</code>.</p></li>
+    /// <p><code>CHILD</code> – The list includes all child assets associated to the asset.</p></li>
     /// <li>
     /// <p><code>PARENT</code> – The list includes the asset's parent asset.</p></li>
     /// </ul>

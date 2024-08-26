@@ -116,6 +116,10 @@ where
                                 crate::protocol_serde::shape_certificate_based_auth_properties::de_certificate_based_auth_properties(tokens)?,
                             );
                         }
+                        "MicrosoftEntraConfig" => {
+                            builder = builder
+                                .set_microsoft_entra_config(crate::protocol_serde::shape_microsoft_entra_config::de_microsoft_entra_config(tokens)?);
+                        }
                         "WorkspaceDirectoryName" => {
                             builder = builder.set_workspace_directory_name(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -143,6 +147,9 @@ where
                                     .map(|s| s.to_unescaped().map(|u| crate::types::WorkspaceType::from(u.as_ref())))
                                     .transpose()?,
                             );
+                        }
+                        "IDCConfig" => {
+                            builder = builder.set_idc_config(crate::protocol_serde::shape_idc_config::de_idc_config(tokens)?);
                         }
                         "ActiveDirectoryConfig" => {
                             builder = builder.set_active_directory_config(

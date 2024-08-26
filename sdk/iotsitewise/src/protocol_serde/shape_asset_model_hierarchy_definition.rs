@@ -3,17 +3,17 @@ pub fn ser_asset_model_hierarchy_definition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AssetModelHierarchyDefinition,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    {
-        object.key("name").string(input.name.as_str());
-    }
-    {
-        object.key("childAssetModelId").string(input.child_asset_model_id.as_str());
-    }
     if let Some(var_1) = &input.id {
         object.key("id").string(var_1.as_str());
     }
     if let Some(var_2) = &input.external_id {
         object.key("externalId").string(var_2.as_str());
+    }
+    {
+        object.key("name").string(input.name.as_str());
+    }
+    {
+        object.key("childAssetModelId").string(input.child_asset_model_id.as_str());
     }
     Ok(())
 }

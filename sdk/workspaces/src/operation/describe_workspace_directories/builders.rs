@@ -180,4 +180,23 @@ impl DescribeWorkspaceDirectoriesFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
+    ///
+    /// Appends an item to `Filters`.
+    ///
+    /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+    ///
+    /// <p>The filter condition for the WorkSpaces.</p>
+    pub fn filters(mut self, input: crate::types::DescribeWorkspaceDirectoriesFilter) -> Self {
+        self.inner = self.inner.filters(input);
+        self
+    }
+    /// <p>The filter condition for the WorkSpaces.</p>
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DescribeWorkspaceDirectoriesFilter>>) -> Self {
+        self.inner = self.inner.set_filters(input);
+        self
+    }
+    /// <p>The filter condition for the WorkSpaces.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DescribeWorkspaceDirectoriesFilter>> {
+        self.inner.get_filters()
+    }
 }

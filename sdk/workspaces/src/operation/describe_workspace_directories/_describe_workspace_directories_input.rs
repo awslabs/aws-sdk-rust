@@ -11,6 +11,8 @@ pub struct DescribeWorkspaceDirectoriesInput {
     pub limit: ::std::option::Option<i32>,
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>The filter condition for the WorkSpaces.</p>
+    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::DescribeWorkspaceDirectoriesFilter>>,
 }
 impl DescribeWorkspaceDirectoriesInput {
     /// <p>The identifiers of the directories. If the value is null, all directories are retrieved.</p>
@@ -33,6 +35,12 @@ impl DescribeWorkspaceDirectoriesInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
+    /// <p>The filter condition for the WorkSpaces.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::DescribeWorkspaceDirectoriesFilter] {
+        self.filters.as_deref().unwrap_or_default()
+    }
 }
 impl DescribeWorkspaceDirectoriesInput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkspaceDirectoriesInput`](crate::operation::describe_workspace_directories::DescribeWorkspaceDirectoriesInput).
@@ -49,6 +57,7 @@ pub struct DescribeWorkspaceDirectoriesInputBuilder {
     pub(crate) workspace_directory_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) limit: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::DescribeWorkspaceDirectoriesFilter>>,
 }
 impl DescribeWorkspaceDirectoriesInputBuilder {
     /// Appends an item to `directory_ids`.
@@ -119,6 +128,26 @@ impl DescribeWorkspaceDirectoriesInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
+    /// Appends an item to `filters`.
+    ///
+    /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+    ///
+    /// <p>The filter condition for the WorkSpaces.</p>
+    pub fn filters(mut self, input: crate::types::DescribeWorkspaceDirectoriesFilter) -> Self {
+        let mut v = self.filters.unwrap_or_default();
+        v.push(input);
+        self.filters = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The filter condition for the WorkSpaces.</p>
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DescribeWorkspaceDirectoriesFilter>>) -> Self {
+        self.filters = input;
+        self
+    }
+    /// <p>The filter condition for the WorkSpaces.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DescribeWorkspaceDirectoriesFilter>> {
+        &self.filters
+    }
     /// Consumes the builder and constructs a [`DescribeWorkspaceDirectoriesInput`](crate::operation::describe_workspace_directories::DescribeWorkspaceDirectoriesInput).
     pub fn build(
         self,
@@ -131,6 +160,7 @@ impl DescribeWorkspaceDirectoriesInputBuilder {
             workspace_directory_names: self.workspace_directory_names,
             limit: self.limit,
             next_token: self.next_token,
+            filters: self.filters,
         })
     }
 }

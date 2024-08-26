@@ -94,6 +94,10 @@ pub fn de_describe_asset_model_http_response(
         let mut output = crate::operation::describe_asset_model::builders::DescribeAssetModelOutputBuilder::default();
         output = crate::protocol_serde::shape_describe_asset_model::de_describe_asset_model(_response_body, output)
             .map_err(crate::operation::describe_asset_model::DescribeAssetModelError::unhandled)?;
+        output = output.set_e_tag(
+            crate::protocol_serde::shape_describe_asset_model_output::de_e_tag_header(_response_headers)
+                .map_err(|_| crate::operation::describe_asset_model::DescribeAssetModelError::unhandled("Failed to parse eTag from header `ETag"))?,
+        );
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         crate::serde_util::describe_asset_model_output_output_correct_errors(output)
             .build()
@@ -185,6 +189,13 @@ pub(crate) fn de_describe_asset_model(
                     builder = builder.set_asset_model_type(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| crate::types::AssetModelType::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
+                "assetModelVersion" => {
+                    builder = builder.set_asset_model_version(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
                     );
                 }

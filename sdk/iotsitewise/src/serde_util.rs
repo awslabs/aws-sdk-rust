@@ -185,6 +185,21 @@ pub(crate) fn create_asset_model_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn precondition_failed_exception_correct_errors(
+    mut builder: crate::types::error::builders::PreconditionFailedExceptionBuilder,
+) -> crate::types::error::builders::PreconditionFailedExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    if builder.resource_id.is_none() {
+        builder.resource_id = Some(Default::default())
+    }
+    if builder.resource_arn.is_none() {
+        builder.resource_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_asset_model_composite_model_output_output_correct_errors(
     mut builder: crate::operation::create_asset_model_composite_model::builders::CreateAssetModelCompositeModelOutputBuilder,
 ) -> crate::operation::create_asset_model_composite_model::builders::CreateAssetModelCompositeModelOutputBuilder {

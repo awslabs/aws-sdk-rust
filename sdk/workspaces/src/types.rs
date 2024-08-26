@@ -41,6 +41,8 @@ pub use crate::types::_active_directory_config::ActiveDirectoryConfig;
 
 pub use crate::types::_workspace_type::WorkspaceType;
 
+pub use crate::types::_microsoft_entra_config::MicrosoftEntraConfig;
+
 pub use crate::types::_user_identity_type::UserIdentityType;
 
 pub use crate::types::_tag::Tag;
@@ -191,9 +193,15 @@ pub use crate::types::_image_permission::ImagePermission;
 
 pub use crate::types::_workspace_directory::WorkspaceDirectory;
 
+pub use crate::types::_idc_config::IdcConfig;
+
 pub use crate::types::_default_workspace_creation_properties::DefaultWorkspaceCreationProperties;
 
 pub use crate::types::_workspace_directory_type::WorkspaceDirectoryType;
+
+pub use crate::types::_describe_workspace_directories_filter::DescribeWorkspaceDirectoriesFilter;
+
+pub use crate::types::_describe_workspace_directories_filter_name::DescribeWorkspaceDirectoriesFilterName;
 
 pub use crate::types::_workspace_bundle::WorkspaceBundle;
 
@@ -351,6 +359,10 @@ mod _deletable_certificate_based_auth_property;
 
 mod _deletable_saml_property;
 
+mod _describe_workspace_directories_filter;
+
+mod _describe_workspace_directories_filter_name;
+
 mod _describe_workspaces_pools_filter;
 
 mod _describe_workspaces_pools_filter_name;
@@ -364,6 +376,8 @@ mod _failed_create_standby_workspaces_request;
 mod _failed_create_workspace_request;
 
 mod _failed_workspace_change_request;
+
+mod _idc_config;
 
 mod _image_associated_resource_type;
 
@@ -380,6 +394,8 @@ mod _ios_import_client_branding_attributes;
 mod _ip_rule_item;
 
 mod _log_upload_enum;
+
+mod _microsoft_entra_config;
 
 mod _modification_resource_enum;
 

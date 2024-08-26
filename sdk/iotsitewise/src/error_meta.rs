@@ -14,6 +14,8 @@ pub enum Error {
     /// <p>You've reached the limit for a resource. For example, this can occur if you're trying to associate more than the allowed number of child assets or attempting to create more than the allowed number of properties for an asset model.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
+    /// <p>The precondition in one or more of the request-header fields evaluated to <code>FALSE</code>.</p>
+    PreconditionFailedException(crate::types::error::PreconditionFailedException),
     /// <p>The query timed out.</p>
     QueryTimeoutException(crate::types::error::QueryTimeoutException),
     /// <p>The resource already exists.</p>
@@ -48,6 +50,7 @@ impl ::std::fmt::Display for Error {
             Error::InternalFailureException(inner) => inner.fmt(f),
             Error::InvalidRequestException(inner) => inner.fmt(f),
             Error::LimitExceededException(inner) => inner.fmt(f),
+            Error::PreconditionFailedException(inner) => inner.fmt(f),
             Error::QueryTimeoutException(inner) => inner.fmt(f),
             Error::ResourceAlreadyExistsException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
@@ -82,6 +85,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::InternalFailureException(inner) => inner.meta(),
             Self::InvalidRequestException(inner) => inner.meta(),
             Self::LimitExceededException(inner) => inner.meta(),
+            Self::PreconditionFailedException(inner) => inner.meta(),
             Self::QueryTimeoutException(inner) => inner.meta(),
             Self::ResourceAlreadyExistsException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
@@ -563,6 +567,9 @@ impl From<crate::operation::create_asset_model_composite_model::CreateAssetModel
             crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
+            crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelError::PreconditionFailedException(inner) => {
+                Error::PreconditionFailedException(inner)
+            }
             crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelError::ResourceAlreadyExistsException(inner) => {
                 Error::ResourceAlreadyExistsException(inner)
             }
@@ -797,6 +804,9 @@ impl From<crate::operation::delete_asset_model::DeleteAssetModelError> for Error
             }
             crate::operation::delete_asset_model::DeleteAssetModelError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::delete_asset_model::DeleteAssetModelError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::delete_asset_model::DeleteAssetModelError::PreconditionFailedException(inner) => {
+                Error::PreconditionFailedException(inner)
+            }
             crate::operation::delete_asset_model::DeleteAssetModelError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_asset_model::DeleteAssetModelError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_asset_model::DeleteAssetModelError::Unhandled(inner) => Error::Unhandled(inner),
@@ -839,6 +849,9 @@ impl From<crate::operation::delete_asset_model_composite_model::DeleteAssetModel
             }
             crate::operation::delete_asset_model_composite_model::DeleteAssetModelCompositeModelError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
+            }
+            crate::operation::delete_asset_model_composite_model::DeleteAssetModelCompositeModelError::PreconditionFailedException(inner) => {
+                Error::PreconditionFailedException(inner)
             }
             crate::operation::delete_asset_model_composite_model::DeleteAssetModelCompositeModelError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -2613,6 +2626,9 @@ impl From<crate::operation::update_asset_model::UpdateAssetModelError> for Error
             crate::operation::update_asset_model::UpdateAssetModelError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::update_asset_model::UpdateAssetModelError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::update_asset_model::UpdateAssetModelError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::update_asset_model::UpdateAssetModelError::PreconditionFailedException(inner) => {
+                Error::PreconditionFailedException(inner)
+            }
             crate::operation::update_asset_model::UpdateAssetModelError::ResourceAlreadyExistsException(inner) => {
                 Error::ResourceAlreadyExistsException(inner)
             }
@@ -2661,6 +2677,9 @@ impl From<crate::operation::update_asset_model_composite_model::UpdateAssetModel
             }
             crate::operation::update_asset_model_composite_model::UpdateAssetModelCompositeModelError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
+            }
+            crate::operation::update_asset_model_composite_model::UpdateAssetModelCompositeModelError::PreconditionFailedException(inner) => {
+                Error::PreconditionFailedException(inner)
             }
             crate::operation::update_asset_model_composite_model::UpdateAssetModelCompositeModelError::ResourceAlreadyExistsException(inner) => {
                 Error::ResourceAlreadyExistsException(inner)
@@ -2883,6 +2902,7 @@ impl ::std::error::Error for Error {
             Error::InternalFailureException(inner) => inner.source(),
             Error::InvalidRequestException(inner) => inner.source(),
             Error::LimitExceededException(inner) => inner.source(),
+            Error::PreconditionFailedException(inner) => inner.source(),
             Error::QueryTimeoutException(inner) => inner.source(),
             Error::ResourceAlreadyExistsException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
@@ -2903,6 +2923,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::InternalFailureException(e) => e.request_id(),
             Self::InvalidRequestException(e) => e.request_id(),
             Self::LimitExceededException(e) => e.request_id(),
+            Self::PreconditionFailedException(e) => e.request_id(),
             Self::QueryTimeoutException(e) => e.request_id(),
             Self::ResourceAlreadyExistsException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),

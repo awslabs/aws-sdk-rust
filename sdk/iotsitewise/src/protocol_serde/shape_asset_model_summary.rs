@@ -21,6 +21,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "externalId" => {
+                            builder = builder.set_external_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "arn" => {
                             builder = builder.set_arn(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -32,6 +39,13 @@ where
                             builder = builder.set_name(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "assetModelType" => {
+                            builder = builder.set_asset_model_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::AssetModelType::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }
@@ -57,15 +71,8 @@ where
                         "status" => {
                             builder = builder.set_status(crate::protocol_serde::shape_asset_model_status::de_asset_model_status(tokens)?);
                         }
-                        "assetModelType" => {
-                            builder = builder.set_asset_model_type(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::AssetModelType::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "externalId" => {
-                            builder = builder.set_external_id(
+                        "version" => {
+                            builder = builder.set_version(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

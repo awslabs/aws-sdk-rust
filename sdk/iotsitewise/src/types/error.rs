@@ -13,6 +13,8 @@ pub use crate::types::error::_limit_exceeded_exception::LimitExceededException;
 
 pub use crate::types::error::_resource_already_exists_exception::ResourceAlreadyExistsException;
 
+pub use crate::types::error::_precondition_failed_exception::PreconditionFailedException;
+
 pub use crate::types::error::_unauthorized_exception::UnauthorizedException;
 
 pub use crate::types::error::_too_many_tags_exception::TooManyTagsException;
@@ -34,6 +36,8 @@ mod _internal_failure_exception;
 mod _invalid_request_exception;
 
 mod _limit_exceeded_exception;
+
+mod _precondition_failed_exception;
 
 mod _query_timeout_exception;
 

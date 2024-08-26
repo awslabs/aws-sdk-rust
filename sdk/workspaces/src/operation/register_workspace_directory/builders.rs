@@ -244,6 +244,34 @@ impl RegisterWorkspaceDirectoryFluentBuilder {
     pub fn get_user_identity_type(&self) -> &::std::option::Option<crate::types::UserIdentityType> {
         self.inner.get_user_identity_type()
     }
+    /// <p>The Amazon Resource Name (ARN) of the identity center instance.</p>
+    pub fn idc_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.idc_instance_arn(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the identity center instance.</p>
+    pub fn set_idc_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_idc_instance_arn(input);
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the identity center instance.</p>
+    pub fn get_idc_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_idc_instance_arn()
+    }
+    /// <p>The details about Microsoft Entra config.</p>
+    pub fn microsoft_entra_config(mut self, input: crate::types::MicrosoftEntraConfig) -> Self {
+        self.inner = self.inner.microsoft_entra_config(input);
+        self
+    }
+    /// <p>The details about Microsoft Entra config.</p>
+    pub fn set_microsoft_entra_config(mut self, input: ::std::option::Option<crate::types::MicrosoftEntraConfig>) -> Self {
+        self.inner = self.inner.set_microsoft_entra_config(input);
+        self
+    }
+    /// <p>The details about Microsoft Entra config.</p>
+    pub fn get_microsoft_entra_config(&self) -> &::std::option::Option<crate::types::MicrosoftEntraConfig> {
+        self.inner.get_microsoft_entra_config()
+    }
     /// <p>Indicates whether the directory's WorkSpace type is personal or pools.</p>
     pub fn workspace_type(mut self, input: crate::types::WorkspaceType) -> Self {
         self.inner = self.inner.workspace_type(input);

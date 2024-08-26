@@ -18,6 +18,12 @@ pub struct UpdateAssetModelCompositeModelInput {
     /// <p>The property definitions of the composite model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/custom-composite-models.html#inline-composite-models"> Inline custom composite models</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>You can specify up to 200 properties per composite model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub asset_model_composite_model_properties: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelProperty>>,
+    /// <p>The expected current entity tag (ETag) for the asset model’s latest or active version (specified using <code>matchForVersionType</code>). The update request is rejected if the tag does not match the latest or active version's current entity tag. See <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/opt-locking-for-model.html">Optimistic locking for asset model writes</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub if_match: ::std::option::Option<::std::string::String>,
+    /// <p>Accepts <b>*</b> to reject the update request if an active version (specified using <code>matchForVersionType</code> as <code>ACTIVE</code>) already exists for the asset model.</p>
+    pub if_none_match: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies the asset model version type (<code>LATEST</code> or <code>ACTIVE</code>) used in conjunction with <code>If-Match</code> or <code>If-None-Match</code> headers to determine the target ETag for the update operation.</p>
+    pub match_for_version_type: ::std::option::Option<crate::types::AssetModelVersionType>,
 }
 impl UpdateAssetModelCompositeModelInput {
     /// <p>The ID of the asset model, in UUID format.</p>
@@ -51,6 +57,18 @@ impl UpdateAssetModelCompositeModelInput {
     pub fn asset_model_composite_model_properties(&self) -> &[crate::types::AssetModelProperty] {
         self.asset_model_composite_model_properties.as_deref().unwrap_or_default()
     }
+    /// <p>The expected current entity tag (ETag) for the asset model’s latest or active version (specified using <code>matchForVersionType</code>). The update request is rejected if the tag does not match the latest or active version's current entity tag. See <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/opt-locking-for-model.html">Optimistic locking for asset model writes</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn if_match(&self) -> ::std::option::Option<&str> {
+        self.if_match.as_deref()
+    }
+    /// <p>Accepts <b>*</b> to reject the update request if an active version (specified using <code>matchForVersionType</code> as <code>ACTIVE</code>) already exists for the asset model.</p>
+    pub fn if_none_match(&self) -> ::std::option::Option<&str> {
+        self.if_none_match.as_deref()
+    }
+    /// <p>Specifies the asset model version type (<code>LATEST</code> or <code>ACTIVE</code>) used in conjunction with <code>If-Match</code> or <code>If-None-Match</code> headers to determine the target ETag for the update operation.</p>
+    pub fn match_for_version_type(&self) -> ::std::option::Option<&crate::types::AssetModelVersionType> {
+        self.match_for_version_type.as_ref()
+    }
 }
 impl UpdateAssetModelCompositeModelInput {
     /// Creates a new builder-style object to manufacture [`UpdateAssetModelCompositeModelInput`](crate::operation::update_asset_model_composite_model::UpdateAssetModelCompositeModelInput).
@@ -70,6 +88,9 @@ pub struct UpdateAssetModelCompositeModelInputBuilder {
     pub(crate) asset_model_composite_model_name: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) asset_model_composite_model_properties: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelProperty>>,
+    pub(crate) if_match: ::std::option::Option<::std::string::String>,
+    pub(crate) if_none_match: ::std::option::Option<::std::string::String>,
+    pub(crate) match_for_version_type: ::std::option::Option<crate::types::AssetModelVersionType>,
 }
 impl UpdateAssetModelCompositeModelInputBuilder {
     /// <p>The ID of the asset model, in UUID format.</p>
@@ -185,6 +206,48 @@ impl UpdateAssetModelCompositeModelInputBuilder {
     pub fn get_asset_model_composite_model_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetModelProperty>> {
         &self.asset_model_composite_model_properties
     }
+    /// <p>The expected current entity tag (ETag) for the asset model’s latest or active version (specified using <code>matchForVersionType</code>). The update request is rejected if the tag does not match the latest or active version's current entity tag. See <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/opt-locking-for-model.html">Optimistic locking for asset model writes</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn if_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.if_match = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The expected current entity tag (ETag) for the asset model’s latest or active version (specified using <code>matchForVersionType</code>). The update request is rejected if the tag does not match the latest or active version's current entity tag. See <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/opt-locking-for-model.html">Optimistic locking for asset model writes</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.if_match = input;
+        self
+    }
+    /// <p>The expected current entity tag (ETag) for the asset model’s latest or active version (specified using <code>matchForVersionType</code>). The update request is rejected if the tag does not match the latest or active version's current entity tag. See <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/opt-locking-for-model.html">Optimistic locking for asset model writes</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
+        &self.if_match
+    }
+    /// <p>Accepts <b>*</b> to reject the update request if an active version (specified using <code>matchForVersionType</code> as <code>ACTIVE</code>) already exists for the asset model.</p>
+    pub fn if_none_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.if_none_match = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Accepts <b>*</b> to reject the update request if an active version (specified using <code>matchForVersionType</code> as <code>ACTIVE</code>) already exists for the asset model.</p>
+    pub fn set_if_none_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.if_none_match = input;
+        self
+    }
+    /// <p>Accepts <b>*</b> to reject the update request if an active version (specified using <code>matchForVersionType</code> as <code>ACTIVE</code>) already exists for the asset model.</p>
+    pub fn get_if_none_match(&self) -> &::std::option::Option<::std::string::String> {
+        &self.if_none_match
+    }
+    /// <p>Specifies the asset model version type (<code>LATEST</code> or <code>ACTIVE</code>) used in conjunction with <code>If-Match</code> or <code>If-None-Match</code> headers to determine the target ETag for the update operation.</p>
+    pub fn match_for_version_type(mut self, input: crate::types::AssetModelVersionType) -> Self {
+        self.match_for_version_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the asset model version type (<code>LATEST</code> or <code>ACTIVE</code>) used in conjunction with <code>If-Match</code> or <code>If-None-Match</code> headers to determine the target ETag for the update operation.</p>
+    pub fn set_match_for_version_type(mut self, input: ::std::option::Option<crate::types::AssetModelVersionType>) -> Self {
+        self.match_for_version_type = input;
+        self
+    }
+    /// <p>Specifies the asset model version type (<code>LATEST</code> or <code>ACTIVE</code>) used in conjunction with <code>If-Match</code> or <code>If-None-Match</code> headers to determine the target ETag for the update operation.</p>
+    pub fn get_match_for_version_type(&self) -> &::std::option::Option<crate::types::AssetModelVersionType> {
+        &self.match_for_version_type
+    }
     /// Consumes the builder and constructs a [`UpdateAssetModelCompositeModelInput`](crate::operation::update_asset_model_composite_model::UpdateAssetModelCompositeModelInput).
     pub fn build(
         self,
@@ -201,6 +264,9 @@ impl UpdateAssetModelCompositeModelInputBuilder {
                 asset_model_composite_model_name: self.asset_model_composite_model_name,
                 client_token: self.client_token,
                 asset_model_composite_model_properties: self.asset_model_composite_model_properties,
+                if_match: self.if_match,
+                if_none_match: self.if_none_match,
+                match_for_version_type: self.match_for_version_type,
             },
         )
     }

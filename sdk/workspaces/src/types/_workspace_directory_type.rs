@@ -13,6 +13,7 @@
 /// # let workspacedirectorytype = unimplemented!();
 /// match workspacedirectorytype {
 ///     WorkspaceDirectoryType::AdConnector => { /* ... */ },
+///     WorkspaceDirectoryType::AwsIamIdentityCenter => { /* ... */ },
 ///     WorkspaceDirectoryType::CustomerManaged => { /* ... */ },
 ///     WorkspaceDirectoryType::SimpleAd => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -45,6 +46,8 @@ pub enum WorkspaceDirectoryType {
     #[allow(missing_docs)] // documentation missing in model
     AdConnector,
     #[allow(missing_docs)] // documentation missing in model
+    AwsIamIdentityCenter,
+    #[allow(missing_docs)] // documentation missing in model
     CustomerManaged,
     #[allow(missing_docs)] // documentation missing in model
     SimpleAd,
@@ -56,6 +59,7 @@ impl ::std::convert::From<&str> for WorkspaceDirectoryType {
     fn from(s: &str) -> Self {
         match s {
             "AD_CONNECTOR" => WorkspaceDirectoryType::AdConnector,
+            "AWS_IAM_IDENTITY_CENTER" => WorkspaceDirectoryType::AwsIamIdentityCenter,
             "CUSTOMER_MANAGED" => WorkspaceDirectoryType::CustomerManaged,
             "SIMPLE_AD" => WorkspaceDirectoryType::SimpleAd,
             other => WorkspaceDirectoryType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -74,6 +78,7 @@ impl WorkspaceDirectoryType {
     pub fn as_str(&self) -> &str {
         match self {
             WorkspaceDirectoryType::AdConnector => "AD_CONNECTOR",
+            WorkspaceDirectoryType::AwsIamIdentityCenter => "AWS_IAM_IDENTITY_CENTER",
             WorkspaceDirectoryType::CustomerManaged => "CUSTOMER_MANAGED",
             WorkspaceDirectoryType::SimpleAd => "SIMPLE_AD",
             WorkspaceDirectoryType::Unknown(value) => value.as_str(),
@@ -81,7 +86,7 @@ impl WorkspaceDirectoryType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AD_CONNECTOR", "CUSTOMER_MANAGED", "SIMPLE_AD"]
+        &["AD_CONNECTOR", "AWS_IAM_IDENTITY_CENTER", "CUSTOMER_MANAGED", "SIMPLE_AD"]
     }
 }
 impl ::std::convert::AsRef<str> for WorkspaceDirectoryType {
@@ -105,6 +110,7 @@ impl ::std::fmt::Display for WorkspaceDirectoryType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             WorkspaceDirectoryType::AdConnector => write!(f, "AD_CONNECTOR"),
+            WorkspaceDirectoryType::AwsIamIdentityCenter => write!(f, "AWS_IAM_IDENTITY_CENTER"),
             WorkspaceDirectoryType::CustomerManaged => write!(f, "CUSTOMER_MANAGED"),
             WorkspaceDirectoryType::SimpleAd => write!(f, "SIMPLE_AD"),
             WorkspaceDirectoryType::Unknown(value) => write!(f, "{}", value),

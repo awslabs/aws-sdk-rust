@@ -13,6 +13,7 @@
 /// # let useridentitytype = unimplemented!();
 /// match useridentitytype {
 ///     UserIdentityType::AwsDirectoryService => { /* ... */ },
+///     UserIdentityType::AwsIamIdentityCenter => { /* ... */ },
 ///     UserIdentityType::CustomerManaged => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -44,6 +45,8 @@ pub enum UserIdentityType {
     #[allow(missing_docs)] // documentation missing in model
     AwsDirectoryService,
     #[allow(missing_docs)] // documentation missing in model
+    AwsIamIdentityCenter,
+    #[allow(missing_docs)] // documentation missing in model
     CustomerManaged,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -53,6 +56,7 @@ impl ::std::convert::From<&str> for UserIdentityType {
     fn from(s: &str) -> Self {
         match s {
             "AWS_DIRECTORY_SERVICE" => UserIdentityType::AwsDirectoryService,
+            "AWS_IAM_IDENTITY_CENTER" => UserIdentityType::AwsIamIdentityCenter,
             "CUSTOMER_MANAGED" => UserIdentityType::CustomerManaged,
             other => UserIdentityType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -70,13 +74,14 @@ impl UserIdentityType {
     pub fn as_str(&self) -> &str {
         match self {
             UserIdentityType::AwsDirectoryService => "AWS_DIRECTORY_SERVICE",
+            UserIdentityType::AwsIamIdentityCenter => "AWS_IAM_IDENTITY_CENTER",
             UserIdentityType::CustomerManaged => "CUSTOMER_MANAGED",
             UserIdentityType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AWS_DIRECTORY_SERVICE", "CUSTOMER_MANAGED"]
+        &["AWS_DIRECTORY_SERVICE", "AWS_IAM_IDENTITY_CENTER", "CUSTOMER_MANAGED"]
     }
 }
 impl ::std::convert::AsRef<str> for UserIdentityType {
@@ -100,6 +105,7 @@ impl ::std::fmt::Display for UserIdentityType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             UserIdentityType::AwsDirectoryService => write!(f, "AWS_DIRECTORY_SERVICE"),
+            UserIdentityType::AwsIamIdentityCenter => write!(f, "AWS_IAM_IDENTITY_CENTER"),
             UserIdentityType::CustomerManaged => write!(f, "CUSTOMER_MANAGED"),
             UserIdentityType::Unknown(value) => write!(f, "{}", value),
         }

@@ -1114,9 +1114,9 @@ model_hash = '260b1b95d87fb1ced3c57c054ea243ea803537b1e73b98f1db9f47a913dc185e'
 
 [crates.aws-sdk-iotsitewise]
 category = 'AwsSdk'
-version = '1.40.0'
-source_hash = '0bca7747147d45f8a157176df15fb6d9c56ee7775d6ccfd7990a3d2ac8bac6e8'
-model_hash = '0d2cbf740d47b221c66b63d9d0fde2393b106ac4b57807978a2ec58dafd9d1f3'
+version = '1.41.0'
+source_hash = 'f213932c79b1b252945ca840c11442f0f69fa1b816940a09050329ceaf652683'
+model_hash = '90d1ef3499bfe14d53376817cc28c1300102e5915b6609596f37c29586567c27'
 
 [crates.aws-sdk-iotthingsgraph]
 category = 'AwsSdk'
@@ -2320,9 +2320,9 @@ model_hash = 'eab0659c4890363f26af020432f7d7c661fd228f3baeef3a52d77f80a1c13287'
 
 [crates.aws-sdk-workspaces]
 category = 'AwsSdk'
-version = '1.44.0'
-source_hash = 'd104fe5f9a7df6858e5bc62a54dfa212d18cdae510c24aa42f010fc97ab42773'
-model_hash = '91ef513465007a5f58eea43613aead2479cce991b2813b329c7770cd6796bacd'
+version = '1.45.0'
+source_hash = '8dbe592b37b751fc4cceb89c0c4d0060157ff55924a5f5fdf11dffce86f73806'
+model_hash = '143653877db065efe64004013491fd089ccc7c32e98631507ddcb2e26808079f'
 
 [crates.aws-sdk-workspacesthinclient]
 category = 'AwsSdk'
@@ -2481,14 +2481,6 @@ source_hash = '89b685acd4163bc6b97fba0fec129708b9a68eed80beb6937dac651099d5c880'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = 'd08f576b0bc9146b45af732b63e0a8923b13fe09816d385e32b4c6d9e503de81'
-
-[release]
-tag = 'release-2024-08-23'
-
 [release.crates]
-aws-sdk-bedrockagent = '1.45.0'
-aws-sdk-bedrockagentruntime = '1.45.0'
-aws-sdk-codebuild = '1.50.1'
-aws-sdk-organizations = '1.43.0'
-aws-sdk-qbusiness = '1.41.0'
-aws-sdk-supplychain = '1.30.1'
+aws-sdk-iotsitewise = '1.41.0'
+aws-sdk-workspaces = '1.45.0'

@@ -239,6 +239,8 @@ pub(crate) mod shape_create_project_input;
 
 pub(crate) mod shape_delete_time_series_input;
 
+pub(crate) mod shape_describe_asset_model_output;
+
 pub(crate) mod shape_disassociate_assets_input;
 
 pub(crate) mod shape_disassociate_time_series_from_asset_property_input;
@@ -252,6 +254,8 @@ pub(crate) mod shape_internal_failure_exception;
 pub(crate) mod shape_invalid_request_exception;
 
 pub(crate) mod shape_limit_exceeded_exception;
+
+pub(crate) mod shape_precondition_failed_exception;
 
 pub(crate) mod shape_put_default_encryption_configuration_input;
 

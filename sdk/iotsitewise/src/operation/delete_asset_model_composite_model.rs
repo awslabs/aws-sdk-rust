@@ -244,6 +244,8 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteAssetM
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
+                let builder =
+                    crate::protocol_serde::shape_delete_asset_model_composite_model::ser_delete_asset_model_composite_model_headers(input, builder)?;
                 ::std::result::Result::Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
@@ -310,6 +312,8 @@ pub enum DeleteAssetModelCompositeModelError {
     InternalFailureException(crate::types::error::InternalFailureException),
     /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::types::error::InvalidRequestException),
+    /// <p>The precondition in one or more of the request-header fields evaluated to <code>FALSE</code>.</p>
+    PreconditionFailedException(crate::types::error::PreconditionFailedException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
@@ -351,6 +355,7 @@ impl DeleteAssetModelCompositeModelError {
             Self::ConflictingOperationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalFailureException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidRequestException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::PreconditionFailedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
@@ -368,6 +373,10 @@ impl DeleteAssetModelCompositeModelError {
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(self, Self::InvalidRequestException(_))
     }
+    /// Returns `true` if the error kind is `DeleteAssetModelCompositeModelError::PreconditionFailedException`.
+    pub fn is_precondition_failed_exception(&self) -> bool {
+        matches!(self, Self::PreconditionFailedException(_))
+    }
     /// Returns `true` if the error kind is `DeleteAssetModelCompositeModelError::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(self, Self::ResourceNotFoundException(_))
@@ -383,6 +392,7 @@ impl ::std::error::Error for DeleteAssetModelCompositeModelError {
             Self::ConflictingOperationException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalFailureException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidRequestException(_inner) => ::std::option::Option::Some(_inner),
+            Self::PreconditionFailedException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
@@ -395,6 +405,7 @@ impl ::std::fmt::Display for DeleteAssetModelCompositeModelError {
             Self::ConflictingOperationException(_inner) => _inner.fmt(f),
             Self::InternalFailureException(_inner) => _inner.fmt(f),
             Self::InvalidRequestException(_inner) => _inner.fmt(f),
+            Self::PreconditionFailedException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ThrottlingException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
@@ -421,6 +432,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DeleteAssetMo
             Self::ConflictingOperationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalFailureException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidRequestException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::PreconditionFailedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,

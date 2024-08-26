@@ -45,14 +45,23 @@ pub fn ser_register_workspace_directory_input_input(
     if let Some(var_14) = &input.user_identity_type {
         object.key("UserIdentityType").string(var_14.as_str());
     }
-    if let Some(var_15) = &input.workspace_type {
-        object.key("WorkspaceType").string(var_15.as_str());
+    if let Some(var_15) = &input.idc_instance_arn {
+        object.key("IdcInstanceArn").string(var_15.as_str());
     }
-    if let Some(var_16) = &input.active_directory_config {
+    if let Some(var_16) = &input.microsoft_entra_config {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("ActiveDirectoryConfig").start_object();
-        crate::protocol_serde::shape_active_directory_config::ser_active_directory_config(&mut object_17, var_16)?;
+        let mut object_17 = object.key("MicrosoftEntraConfig").start_object();
+        crate::protocol_serde::shape_microsoft_entra_config::ser_microsoft_entra_config(&mut object_17, var_16)?;
         object_17.finish();
+    }
+    if let Some(var_18) = &input.workspace_type {
+        object.key("WorkspaceType").string(var_18.as_str());
+    }
+    if let Some(var_19) = &input.active_directory_config {
+        #[allow(unused_mut)]
+        let mut object_20 = object.key("ActiveDirectoryConfig").start_object();
+        crate::protocol_serde::shape_active_directory_config::ser_active_directory_config(&mut object_20, var_19)?;
+        object_20.finish();
     }
     Ok(())
 }
