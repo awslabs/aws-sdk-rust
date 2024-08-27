@@ -160,6 +160,8 @@ mod get_guardrail;
 
 mod get_imported_model;
 
+mod get_inference_profile;
+
 mod get_model_copy_job;
 
 mod get_model_customization_job;
@@ -181,6 +183,8 @@ mod list_foundation_models;
 mod list_guardrails;
 
 mod list_imported_models;
+
+mod list_inference_profiles;
 
 mod list_model_copy_jobs;
 

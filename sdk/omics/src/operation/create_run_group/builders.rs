@@ -22,7 +22,7 @@ impl crate::operation::create_run_group::builders::CreateRunGroupInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateRunGroup`.
 ///
-/// <p>Creates a run group.</p>
+/// <p>You can optionally create a run group to limit the compute resources for the runs that you add to the group.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateRunGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -122,45 +122,45 @@ impl CreateRunGroupFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>The maximum number of CPUs to use in the group.</p>
+    /// <p>The maximum number of CPUs that can run concurrently across all active runs in the run group.</p>
     pub fn max_cpus(mut self, input: i32) -> Self {
         self.inner = self.inner.max_cpus(input);
         self
     }
-    /// <p>The maximum number of CPUs to use in the group.</p>
+    /// <p>The maximum number of CPUs that can run concurrently across all active runs in the run group.</p>
     pub fn set_max_cpus(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_cpus(input);
         self
     }
-    /// <p>The maximum number of CPUs to use in the group.</p>
+    /// <p>The maximum number of CPUs that can run concurrently across all active runs in the run group.</p>
     pub fn get_max_cpus(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_cpus()
     }
-    /// <p>The maximum number of concurrent runs for the group.</p>
+    /// <p>The maximum number of runs that can be running at the same time.</p>
     pub fn max_runs(mut self, input: i32) -> Self {
         self.inner = self.inner.max_runs(input);
         self
     }
-    /// <p>The maximum number of concurrent runs for the group.</p>
+    /// <p>The maximum number of runs that can be running at the same time.</p>
     pub fn set_max_runs(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_runs(input);
         self
     }
-    /// <p>The maximum number of concurrent runs for the group.</p>
+    /// <p>The maximum number of runs that can be running at the same time.</p>
     pub fn get_max_runs(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_runs()
     }
-    /// <p>A maximum run time for the group in minutes.</p>
+    /// <p>The maximum time for each run (in minutes). If a run exceeds the maximum run time, the run fails automatically.</p>
     pub fn max_duration(mut self, input: i32) -> Self {
         self.inner = self.inner.max_duration(input);
         self
     }
-    /// <p>A maximum run time for the group in minutes.</p>
+    /// <p>The maximum time for each run (in minutes). If a run exceeds the maximum run time, the run fails automatically.</p>
     pub fn set_max_duration(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_duration(input);
         self
     }
-    /// <p>A maximum run time for the group in minutes.</p>
+    /// <p>The maximum time for each run (in minutes). If a run exceeds the maximum run time, the run fails automatically.</p>
     pub fn get_max_duration(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_duration()
     }
@@ -197,17 +197,17 @@ impl CreateRunGroupFluentBuilder {
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_request_id()
     }
-    /// <p>The maximum GPUs that can be used by a run group.</p>
+    /// <p>The maximum number of GPUs that can run concurrently across all active runs in the run group.</p>
     pub fn max_gpus(mut self, input: i32) -> Self {
         self.inner = self.inner.max_gpus(input);
         self
     }
-    /// <p>The maximum GPUs that can be used by a run group.</p>
+    /// <p>The maximum number of GPUs that can run concurrently across all active runs in the run group.</p>
     pub fn set_max_gpus(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_gpus(input);
         self
     }
-    /// <p>The maximum GPUs that can be used by a run group.</p>
+    /// <p>The maximum number of GPUs that can run concurrently across all active runs in the run group.</p>
     pub fn get_max_gpus(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_gpus()
     }

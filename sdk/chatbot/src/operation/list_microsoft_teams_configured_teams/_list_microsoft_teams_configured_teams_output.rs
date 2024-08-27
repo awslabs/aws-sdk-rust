@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMicrosoftTeamsConfiguredTeamsOutput {
-    /// A list of teams in Microsoft Teams that have been configured with AWS Chatbot.
+    /// <p>A list of teams in Microsoft Teams that are configured with AWS Chatbot.</p>
     pub configured_teams: ::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTeam>>,
-    /// An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListMicrosoftTeamsConfiguredTeamsOutput {
-    /// A list of teams in Microsoft Teams that have been configured with AWS Chatbot.
+    /// <p>A list of teams in Microsoft Teams that are configured with AWS Chatbot.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configured_teams.is_none()`.
     pub fn configured_teams(&self) -> &[crate::types::ConfiguredTeam] {
         self.configured_teams.as_deref().unwrap_or_default()
     }
-    /// An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,33 +46,33 @@ impl ListMicrosoftTeamsConfiguredTeamsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_configured_teams`](Self::set_configured_teams).
     ///
-    /// A list of teams in Microsoft Teams that have been configured with AWS Chatbot.
+    /// <p>A list of teams in Microsoft Teams that are configured with AWS Chatbot.</p>
     pub fn configured_teams(mut self, input: crate::types::ConfiguredTeam) -> Self {
         let mut v = self.configured_teams.unwrap_or_default();
         v.push(input);
         self.configured_teams = ::std::option::Option::Some(v);
         self
     }
-    /// A list of teams in Microsoft Teams that have been configured with AWS Chatbot.
+    /// <p>A list of teams in Microsoft Teams that are configured with AWS Chatbot.</p>
     pub fn set_configured_teams(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTeam>>) -> Self {
         self.configured_teams = input;
         self
     }
-    /// A list of teams in Microsoft Teams that have been configured with AWS Chatbot.
+    /// <p>A list of teams in Microsoft Teams that are configured with AWS Chatbot.</p>
     pub fn get_configured_teams(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTeam>> {
         &self.configured_teams
     }
-    /// An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

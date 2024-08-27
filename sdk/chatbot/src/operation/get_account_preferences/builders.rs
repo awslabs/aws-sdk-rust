@@ -22,7 +22,7 @@ impl crate::operation::get_account_preferences::builders::GetAccountPreferencesI
 }
 /// Fluent builder constructing a request to `GetAccountPreferences`.
 ///
-/// Get Chatbot account level preferences
+/// <p>Returns AWS Chatbot account preferences.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAccountPreferencesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

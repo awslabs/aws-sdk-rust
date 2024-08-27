@@ -22,7 +22,7 @@ impl crate::operation::delete_chime_webhook_configuration::builders::DeleteChime
 }
 /// Fluent builder constructing a request to `DeleteChimeWebhookConfiguration`.
 ///
-/// Deletes a Chime Webhook Configuration
+/// <p>Deletes a Amazon Chime webhook configuration for AWS Chatbot.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteChimeWebhookConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeleteChimeWebhookConfigurationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The ARN of the ChimeWebhookConfiguration to delete.
+    /// <p>The Amazon Resource Name (ARN) of the ChimeWebhookConfiguration to delete.</p>
     pub fn chat_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.chat_configuration_arn(input.into());
         self
     }
-    /// The ARN of the ChimeWebhookConfiguration to delete.
+    /// <p>The Amazon Resource Name (ARN) of the ChimeWebhookConfiguration to delete.</p>
     pub fn set_chat_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_chat_configuration_arn(input);
         self
     }
-    /// The ARN of the ChimeWebhookConfiguration to delete.
+    /// <p>The Amazon Resource Name (ARN) of the ChimeWebhookConfiguration to delete.</p>
     pub fn get_chat_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_chat_configuration_arn()
     }

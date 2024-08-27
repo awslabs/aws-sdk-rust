@@ -22,7 +22,7 @@ impl crate::operation::describe_chime_webhook_configurations::builders::Describe
 }
 /// Fluent builder constructing a request to `DescribeChimeWebhookConfigurations`.
 ///
-/// Lists Chime Webhook Configurations optionally filtered by ChatConfigurationArn
+/// <p>Lists Amazon Chime webhook configurations optionally filtered by ChatConfigurationArn</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeChimeWebhookConfigurationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,45 +114,45 @@ impl DescribeChimeWebhookConfigurationsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_chime_webhook_configurations::paginator::DescribeChimeWebhookConfigurationsPaginator {
         crate::operation::describe_chime_webhook_configurations::paginator::DescribeChimeWebhookConfigurationsPaginator::new(self.handle, self.inner)
     }
-    /// The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// An optional ARN of a ChimeWebhookConfiguration to describe.
+    /// <p>An optional Amazon Resource Number (ARN) of a ChimeWebhookConfiguration to describe.</p>
     pub fn chat_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.chat_configuration_arn(input.into());
         self
     }
-    /// An optional ARN of a ChimeWebhookConfiguration to describe.
+    /// <p>An optional Amazon Resource Number (ARN) of a ChimeWebhookConfiguration to describe.</p>
     pub fn set_chat_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_chat_configuration_arn(input);
         self
     }
-    /// An optional ARN of a ChimeWebhookConfiguration to describe.
+    /// <p>An optional Amazon Resource Number (ARN) of a ChimeWebhookConfiguration to describe.</p>
     pub fn get_chat_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_chat_configuration_arn()
     }

@@ -22,7 +22,7 @@ impl crate::operation::create_microsoft_teams_channel_configuration::builders::C
 }
 /// Fluent builder constructing a request to `CreateMicrosoftTeamsChannelConfiguration`.
 ///
-/// Creates MS Teams Channel Configuration
+/// <p>Creates an AWS Chatbot configuration for Microsoft Teams.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateMicrosoftTeamsChannelConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -112,73 +112,76 @@ impl CreateMicrosoftTeamsChannelConfigurationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The ID of the Microsoft Teams channel.
+    /// <p>The ID of the Microsoft Teams channel.</p>
     pub fn channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.channel_id(input.into());
         self
     }
-    /// The ID of the Microsoft Teams channel.
+    /// <p>The ID of the Microsoft Teams channel.</p>
     pub fn set_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_channel_id(input);
         self
     }
-    /// The ID of the Microsoft Teams channel.
+    /// <p>The ID of the Microsoft Teams channel.</p>
     pub fn get_channel_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_channel_id()
     }
-    /// The name of the Microsoft Teams channel.
+    /// <p>The name of the Microsoft Teams channel.</p>
     pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.channel_name(input.into());
         self
     }
-    /// The name of the Microsoft Teams channel.
+    /// <p>The name of the Microsoft Teams channel.</p>
     pub fn set_channel_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_channel_name(input);
         self
     }
-    /// The name of the Microsoft Teams channel.
+    /// <p>The name of the Microsoft Teams channel.</p>
     pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_channel_name()
     }
-    /// The ID of the Microsoft Team authorized with AWS Chatbot. To get the team ID, you must perform the initial authorization flow with Microsoft Teams in the AWS Chatbot console. Then you can copy and paste the team ID from the console. For more details, see steps 1-4 in Get started with Microsoft Teams in the AWS Chatbot Administrator Guide.
+    /// <p>The ID of the Microsoft Teams authorized with AWS Chatbot.</p>
+    /// <p>To get the team ID, you must perform the initial authorization flow with Microsoft Teams in the AWS Chatbot console. Then you can copy and paste the team ID from the console. For more information, see <a href="https://docs.aws.amazon.com/chatbot/latest/adminguide/teams-setup.html#teams-client-setup">Step 1: Configure a Microsoft Teams client</a> in the <i> AWS Chatbot Administrator Guide</i>.</p>
     pub fn team_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.team_id(input.into());
         self
     }
-    /// The ID of the Microsoft Team authorized with AWS Chatbot. To get the team ID, you must perform the initial authorization flow with Microsoft Teams in the AWS Chatbot console. Then you can copy and paste the team ID from the console. For more details, see steps 1-4 in Get started with Microsoft Teams in the AWS Chatbot Administrator Guide.
+    /// <p>The ID of the Microsoft Teams authorized with AWS Chatbot.</p>
+    /// <p>To get the team ID, you must perform the initial authorization flow with Microsoft Teams in the AWS Chatbot console. Then you can copy and paste the team ID from the console. For more information, see <a href="https://docs.aws.amazon.com/chatbot/latest/adminguide/teams-setup.html#teams-client-setup">Step 1: Configure a Microsoft Teams client</a> in the <i> AWS Chatbot Administrator Guide</i>.</p>
     pub fn set_team_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_team_id(input);
         self
     }
-    /// The ID of the Microsoft Team authorized with AWS Chatbot. To get the team ID, you must perform the initial authorization flow with Microsoft Teams in the AWS Chatbot console. Then you can copy and paste the team ID from the console. For more details, see steps 1-4 in Get started with Microsoft Teams in the AWS Chatbot Administrator Guide.
+    /// <p>The ID of the Microsoft Teams authorized with AWS Chatbot.</p>
+    /// <p>To get the team ID, you must perform the initial authorization flow with Microsoft Teams in the AWS Chatbot console. Then you can copy and paste the team ID from the console. For more information, see <a href="https://docs.aws.amazon.com/chatbot/latest/adminguide/teams-setup.html#teams-client-setup">Step 1: Configure a Microsoft Teams client</a> in the <i> AWS Chatbot Administrator Guide</i>.</p>
     pub fn get_team_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_team_id()
     }
-    /// The name of the Microsoft Teams Team.
+    /// <p>The name of the Microsoft Teams Team.</p>
     pub fn team_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.team_name(input.into());
         self
     }
-    /// The name of the Microsoft Teams Team.
+    /// <p>The name of the Microsoft Teams Team.</p>
     pub fn set_team_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_team_name(input);
         self
     }
-    /// The name of the Microsoft Teams Team.
+    /// <p>The name of the Microsoft Teams Team.</p>
     pub fn get_team_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_team_name()
     }
-    /// The ID of the Microsoft Teams tenant.
+    /// <p>The ID of the Microsoft Teams tenant.</p>
     pub fn tenant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tenant_id(input.into());
         self
     }
-    /// The ID of the Microsoft Teams tenant.
+    /// <p>The ID of the Microsoft Teams tenant.</p>
     pub fn set_tenant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_tenant_id(input);
         self
     }
-    /// The ID of the Microsoft Teams tenant.
+    /// <p>The ID of the Microsoft Teams tenant.</p>
     pub fn get_tenant_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_tenant_id()
     }
@@ -187,59 +190,62 @@ impl CreateMicrosoftTeamsChannelConfigurationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_sns_topic_arns`](Self::set_sns_topic_arns).
     ///
-    /// The ARNs of the SNS topics that deliver notifications to AWS Chatbot.
+    /// <p>The Amazon Resource Names (ARNs) of the SNS topics that deliver notifications to AWS Chatbot.</p>
     pub fn sns_topic_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sns_topic_arns(input.into());
         self
     }
-    /// The ARNs of the SNS topics that deliver notifications to AWS Chatbot.
+    /// <p>The Amazon Resource Names (ARNs) of the SNS topics that deliver notifications to AWS Chatbot.</p>
     pub fn set_sns_topic_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_sns_topic_arns(input);
         self
     }
-    /// The ARNs of the SNS topics that deliver notifications to AWS Chatbot.
+    /// <p>The Amazon Resource Names (ARNs) of the SNS topics that deliver notifications to AWS Chatbot.</p>
     pub fn get_sns_topic_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_sns_topic_arns()
     }
-    /// The ARN of the IAM role that defines the permissions for AWS Chatbot. This is a user-defined role that AWS Chatbot will assume. This is not the service-linked role. For more information, see IAM Policies for AWS Chatbot.
+    /// <p>A user-defined role that AWS Chatbot assumes. This is not the service-linked role.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/chatbot/latest/adminguide/chatbot-iam-policies.html">IAM policies for AWS Chatbot</a> in the <i> AWS Chatbot Administrator Guide</i>.</p>
     pub fn iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.iam_role_arn(input.into());
         self
     }
-    /// The ARN of the IAM role that defines the permissions for AWS Chatbot. This is a user-defined role that AWS Chatbot will assume. This is not the service-linked role. For more information, see IAM Policies for AWS Chatbot.
+    /// <p>A user-defined role that AWS Chatbot assumes. This is not the service-linked role.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/chatbot/latest/adminguide/chatbot-iam-policies.html">IAM policies for AWS Chatbot</a> in the <i> AWS Chatbot Administrator Guide</i>.</p>
     pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_iam_role_arn(input);
         self
     }
-    /// The ARN of the IAM role that defines the permissions for AWS Chatbot. This is a user-defined role that AWS Chatbot will assume. This is not the service-linked role. For more information, see IAM Policies for AWS Chatbot.
+    /// <p>A user-defined role that AWS Chatbot assumes. This is not the service-linked role.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/chatbot/latest/adminguide/chatbot-iam-policies.html">IAM policies for AWS Chatbot</a> in the <i> AWS Chatbot Administrator Guide</i>.</p>
     pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_iam_role_arn()
     }
-    /// The name of the configuration.
+    /// <p>The name of the configuration.</p>
     pub fn configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_name(input.into());
         self
     }
-    /// The name of the configuration.
+    /// <p>The name of the configuration.</p>
     pub fn set_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configuration_name(input);
         self
     }
-    /// The name of the configuration.
+    /// <p>The name of the configuration.</p>
     pub fn get_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_configuration_name()
     }
-    /// Logging levels include ERROR, INFO, or NONE.
+    /// <p>Logging levels include <code>ERROR</code>, <code>INFO</code>, or <code>NONE</code>.</p>
     pub fn logging_level(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.logging_level(input.into());
         self
     }
-    /// Logging levels include ERROR, INFO, or NONE.
+    /// <p>Logging levels include <code>ERROR</code>, <code>INFO</code>, or <code>NONE</code>.</p>
     pub fn set_logging_level(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_logging_level(input);
         self
     }
-    /// Logging levels include ERROR, INFO, or NONE.
+    /// <p>Logging levels include <code>ERROR</code>, <code>INFO</code>, or <code>NONE</code>.</p>
     pub fn get_logging_level(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_logging_level()
     }
@@ -248,31 +254,31 @@ impl CreateMicrosoftTeamsChannelConfigurationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_guardrail_policy_arns`](Self::set_guardrail_policy_arns).
     ///
-    /// The list of IAM policy ARNs that are applied as channel guardrails. The AWS managed 'AdministratorAccess' policy is applied by default if this is not set.
+    /// <p>The list of IAM policy ARNs that are applied as channel guardrails. The AWS managed <code>AdministratorAccess</code> policy is applied by default if this is not set.</p>
     pub fn guardrail_policy_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.guardrail_policy_arns(input.into());
         self
     }
-    /// The list of IAM policy ARNs that are applied as channel guardrails. The AWS managed 'AdministratorAccess' policy is applied by default if this is not set.
+    /// <p>The list of IAM policy ARNs that are applied as channel guardrails. The AWS managed <code>AdministratorAccess</code> policy is applied by default if this is not set.</p>
     pub fn set_guardrail_policy_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_guardrail_policy_arns(input);
         self
     }
-    /// The list of IAM policy ARNs that are applied as channel guardrails. The AWS managed 'AdministratorAccess' policy is applied by default if this is not set.
+    /// <p>The list of IAM policy ARNs that are applied as channel guardrails. The AWS managed <code>AdministratorAccess</code> policy is applied by default if this is not set.</p>
     pub fn get_guardrail_policy_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_guardrail_policy_arns()
     }
-    /// Enables use of a user role requirement in your chat configuration.
+    /// <p>Enables use of a user role requirement in your chat configuration.</p>
     pub fn user_authorization_required(mut self, input: bool) -> Self {
         self.inner = self.inner.user_authorization_required(input);
         self
     }
-    /// Enables use of a user role requirement in your chat configuration.
+    /// <p>Enables use of a user role requirement in your chat configuration.</p>
     pub fn set_user_authorization_required(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_user_authorization_required(input);
         self
     }
-    /// Enables use of a user role requirement in your chat configuration.
+    /// <p>Enables use of a user role requirement in your chat configuration.</p>
     pub fn get_user_authorization_required(&self) -> &::std::option::Option<bool> {
         self.inner.get_user_authorization_required()
     }
@@ -281,17 +287,17 @@ impl CreateMicrosoftTeamsChannelConfigurationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// A list of tags to apply to the configuration.
+    /// <p>A map of tags assigned to a resource. A tag is a string-to-string map of key-value pairs.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// A list of tags to apply to the configuration.
+    /// <p>A map of tags assigned to a resource. A tag is a string-to-string map of key-value pairs.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// A list of tags to apply to the configuration.
+    /// <p>A map of tags assigned to a resource. A tag is a string-to-string map of key-value pairs.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }

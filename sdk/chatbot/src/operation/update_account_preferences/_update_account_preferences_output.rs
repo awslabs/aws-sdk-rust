@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAccountPreferencesOutput {
-    /// Preferences which apply for AWS Chatbot usage in the calling AWS account.
+    /// <p>Preferences related to AWS Chatbot usage in the calling AWS account.</p>
     pub account_preferences: ::std::option::Option<crate::types::AccountPreferences>,
     _request_id: Option<String>,
 }
 impl UpdateAccountPreferencesOutput {
-    /// Preferences which apply for AWS Chatbot usage in the calling AWS account.
+    /// <p>Preferences related to AWS Chatbot usage in the calling AWS account.</p>
     pub fn account_preferences(&self) -> ::std::option::Option<&crate::types::AccountPreferences> {
         self.account_preferences.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct UpdateAccountPreferencesOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateAccountPreferencesOutputBuilder {
-    /// Preferences which apply for AWS Chatbot usage in the calling AWS account.
+    /// <p>Preferences related to AWS Chatbot usage in the calling AWS account.</p>
     pub fn account_preferences(mut self, input: crate::types::AccountPreferences) -> Self {
         self.account_preferences = ::std::option::Option::Some(input);
         self
     }
-    /// Preferences which apply for AWS Chatbot usage in the calling AWS account.
+    /// <p>Preferences related to AWS Chatbot usage in the calling AWS account.</p>
     pub fn set_account_preferences(mut self, input: ::std::option::Option<crate::types::AccountPreferences>) -> Self {
         self.account_preferences = input;
         self
     }
-    /// Preferences which apply for AWS Chatbot usage in the calling AWS account.
+    /// <p>Preferences related to AWS Chatbot usage in the calling AWS account.</p>
     pub fn get_account_preferences(&self) -> &::std::option::Option<crate::types::AccountPreferences> {
         &self.account_preferences
     }

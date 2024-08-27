@@ -58,6 +58,9 @@ pub mod get_guardrail;
 /// Types for the `GetImportedModel` operation.
 pub mod get_imported_model;
 
+/// Types for the `GetInferenceProfile` operation.
+pub mod get_inference_profile;
+
 /// Types for the `GetModelCopyJob` operation.
 pub mod get_model_copy_job;
 
@@ -90,6 +93,9 @@ pub mod list_guardrails;
 
 /// Types for the `ListImportedModels` operation.
 pub mod list_imported_models;
+
+/// Types for the `ListInferenceProfiles` operation.
+pub mod list_inference_profiles;
 
 /// Types for the `ListModelCopyJobs` operation.
 pub mod list_model_copy_jobs;

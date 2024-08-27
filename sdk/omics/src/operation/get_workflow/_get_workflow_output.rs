@@ -25,7 +25,7 @@ pub struct GetWorkflowOutput {
     pub digest: ::std::option::Option<::std::string::String>,
     /// <p>The workflow's parameter template.</p>
     pub parameter_template: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkflowParameter>>,
-    /// <p>The workflow's storage capacity in gibibytes.</p>
+    /// <p>The workflow's default run storage capacity in gibibytes.</p>
     pub storage_capacity: ::std::option::Option<i32>,
     /// <p>When the workflow was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -84,7 +84,7 @@ impl GetWorkflowOutput {
     pub fn parameter_template(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::WorkflowParameter>> {
         self.parameter_template.as_ref()
     }
-    /// <p>The workflow's storage capacity in gibibytes.</p>
+    /// <p>The workflow's default run storage capacity in gibibytes.</p>
     pub fn storage_capacity(&self) -> ::std::option::Option<i32> {
         self.storage_capacity
     }
@@ -310,17 +310,17 @@ impl GetWorkflowOutputBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkflowParameter>> {
         &self.parameter_template
     }
-    /// <p>The workflow's storage capacity in gibibytes.</p>
+    /// <p>The workflow's default run storage capacity in gibibytes.</p>
     pub fn storage_capacity(mut self, input: i32) -> Self {
         self.storage_capacity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The workflow's storage capacity in gibibytes.</p>
+    /// <p>The workflow's default run storage capacity in gibibytes.</p>
     pub fn set_storage_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.storage_capacity = input;
         self
     }
-    /// <p>The workflow's storage capacity in gibibytes.</p>
+    /// <p>The workflow's default run storage capacity in gibibytes.</p>
     pub fn get_storage_capacity(&self) -> &::std::option::Option<i32> {
         &self.storage_capacity
     }

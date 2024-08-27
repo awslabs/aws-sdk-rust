@@ -23,6 +23,10 @@ pub struct GetReferenceMetadataOutput {
     pub update_time: ::aws_smithy_types::DateTime,
     /// <p>The reference's files.</p>
     pub files: ::std::option::Option<crate::types::ReferenceFiles>,
+    /// <p>The reference's creation type.</p>
+    pub creation_type: ::std::option::Option<crate::types::ReferenceCreationType>,
+    /// <p>The reference's creation job ID.</p>
+    pub creation_job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetReferenceMetadataOutput {
@@ -70,6 +74,14 @@ impl GetReferenceMetadataOutput {
     pub fn files(&self) -> ::std::option::Option<&crate::types::ReferenceFiles> {
         self.files.as_ref()
     }
+    /// <p>The reference's creation type.</p>
+    pub fn creation_type(&self) -> ::std::option::Option<&crate::types::ReferenceCreationType> {
+        self.creation_type.as_ref()
+    }
+    /// <p>The reference's creation job ID.</p>
+    pub fn creation_job_id(&self) -> ::std::option::Option<&str> {
+        self.creation_job_id.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetReferenceMetadataOutput {
     fn request_id(&self) -> Option<&str> {
@@ -97,6 +109,8 @@ pub struct GetReferenceMetadataOutputBuilder {
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) files: ::std::option::Option<crate::types::ReferenceFiles>,
+    pub(crate) creation_type: ::std::option::Option<crate::types::ReferenceCreationType>,
+    pub(crate) creation_job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetReferenceMetadataOutputBuilder {
@@ -246,6 +260,34 @@ impl GetReferenceMetadataOutputBuilder {
     pub fn get_files(&self) -> &::std::option::Option<crate::types::ReferenceFiles> {
         &self.files
     }
+    /// <p>The reference's creation type.</p>
+    pub fn creation_type(mut self, input: crate::types::ReferenceCreationType) -> Self {
+        self.creation_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The reference's creation type.</p>
+    pub fn set_creation_type(mut self, input: ::std::option::Option<crate::types::ReferenceCreationType>) -> Self {
+        self.creation_type = input;
+        self
+    }
+    /// <p>The reference's creation type.</p>
+    pub fn get_creation_type(&self) -> &::std::option::Option<crate::types::ReferenceCreationType> {
+        &self.creation_type
+    }
+    /// <p>The reference's creation job ID.</p>
+    pub fn creation_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.creation_job_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The reference's creation job ID.</p>
+    pub fn set_creation_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.creation_job_id = input;
+        self
+    }
+    /// <p>The reference's creation job ID.</p>
+    pub fn get_creation_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creation_job_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -308,6 +350,8 @@ impl GetReferenceMetadataOutputBuilder {
                 )
             })?,
             files: self.files,
+            creation_type: self.creation_type,
+            creation_job_id: self.creation_job_id,
             _request_id: self._request_id,
         })
     }

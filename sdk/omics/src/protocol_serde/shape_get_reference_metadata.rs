@@ -150,11 +150,25 @@ pub(crate) fn de_get_reference_metadata(
                             .transpose()?,
                     );
                 }
+                "creationJobId" => {
+                    builder = builder.set_creation_job_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "creationTime" => {
                     builder = builder.set_creation_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),
                         ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                     )?);
+                }
+                "creationType" => {
+                    builder = builder.set_creation_type(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::ReferenceCreationType::from(u.as_ref())))
+                            .transpose()?,
+                    );
                 }
                 "description" => {
                     builder = builder.set_description(

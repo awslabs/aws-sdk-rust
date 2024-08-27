@@ -27,6 +27,14 @@ impl DescribeSlackWorkspacesPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `slack_workspaces`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::operation::describe_slack_workspaces::paginator::DescribeSlackWorkspacesPaginatorItems {
+        crate::operation::describe_slack_workspaces::paginator::DescribeSlackWorkspacesPaginatorItems(self)
+    }
+
     /// Stop paginating when the service returns the same pagination token twice in a row.
     ///
     /// Defaults to true.
@@ -105,5 +113,36 @@ impl DescribeSlackWorkspacesPaginator {
                 })
             },
         ))
+    }
+}
+
+/// Flattened paginator for `DescribeSlackWorkspacesPaginator`
+///
+/// This is created with [`.items()`](DescribeSlackWorkspacesPaginator::items)
+pub struct DescribeSlackWorkspacesPaginatorItems(DescribeSlackWorkspacesPaginator);
+
+impl DescribeSlackWorkspacesPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note_: No requests will be dispatched until the stream is used
+    /// (e.g. with the [`.next().await`](aws_smithy_async::future::pagination_stream::PaginationStream::next) method).
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](aws_smithy_async::future::pagination_stream::PaginationStream::collect).
+    pub fn send(
+        self,
+    ) -> ::aws_smithy_async::future::pagination_stream::PaginationStream<
+        ::std::result::Result<
+            crate::types::SlackWorkspace,
+            ::aws_smithy_runtime_api::client::result::SdkError<
+                crate::operation::describe_slack_workspaces::DescribeSlackWorkspacesError,
+                ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+            >,
+        >,
+    > {
+        ::aws_smithy_async::future::pagination_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_describe_slack_workspaces_output_output_slack_workspaces(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }

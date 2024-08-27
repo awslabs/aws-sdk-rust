@@ -27,6 +27,14 @@ impl ListMicrosoftTeamsUserIdentitiesPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `teams_user_identities`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::operation::list_microsoft_teams_user_identities::paginator::ListMicrosoftTeamsUserIdentitiesPaginatorItems {
+        crate::operation::list_microsoft_teams_user_identities::paginator::ListMicrosoftTeamsUserIdentitiesPaginatorItems(self)
+    }
+
     /// Stop paginating when the service returns the same pagination token twice in a row.
     ///
     /// Defaults to true.
@@ -108,5 +116,36 @@ impl ListMicrosoftTeamsUserIdentitiesPaginator {
                 })
             },
         ))
+    }
+}
+
+/// Flattened paginator for `ListMicrosoftTeamsUserIdentitiesPaginator`
+///
+/// This is created with [`.items()`](ListMicrosoftTeamsUserIdentitiesPaginator::items)
+pub struct ListMicrosoftTeamsUserIdentitiesPaginatorItems(ListMicrosoftTeamsUserIdentitiesPaginator);
+
+impl ListMicrosoftTeamsUserIdentitiesPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note_: No requests will be dispatched until the stream is used
+    /// (e.g. with the [`.next().await`](aws_smithy_async::future::pagination_stream::PaginationStream::next) method).
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](aws_smithy_async::future::pagination_stream::PaginationStream::collect).
+    pub fn send(
+        self,
+    ) -> ::aws_smithy_async::future::pagination_stream::PaginationStream<
+        ::std::result::Result<
+            crate::types::TeamsUserIdentity,
+            ::aws_smithy_runtime_api::client::result::SdkError<
+                crate::operation::list_microsoft_teams_user_identities::ListMicrosoftTeamsUserIdentitiesError,
+                ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+            >,
+        >,
+    > {
+        ::aws_smithy_async::future::pagination_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_microsoft_teams_user_identities_output_output_teams_user_identities(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }

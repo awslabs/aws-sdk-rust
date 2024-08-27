@@ -22,8 +22,8 @@ impl crate::operation::create_model_invocation_job::builders::CreateModelInvocat
 }
 /// Fluent builder constructing a request to `CreateModelInvocationJob`.
 ///
-/// <p>Creates a job to invoke a model on multiple prompts (batch inference). Format your data according to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-prerq.html#batch-inference-data">Format your inference data</a> and upload it to an Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-create.html">Create a batch inference job</a>.</p>
-/// <p>The response returns a <code>jobArn</code> that you can use to stop or get details about the job. You can check the status of the job by sending a <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetModelCustomizationJob.html">GetModelCustomizationJob</a> request.</p>
+/// <p>Creates a batch inference job to invoke a model on multiple prompts. Format your data according to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-data">Format your inference data</a> and upload it to an Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference.html">Process multiple prompts with batch inference</a>.</p>
+/// <p>The response returns a <code>jobArn</code> that you can use to stop or get details about the job.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateModelInvocationJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

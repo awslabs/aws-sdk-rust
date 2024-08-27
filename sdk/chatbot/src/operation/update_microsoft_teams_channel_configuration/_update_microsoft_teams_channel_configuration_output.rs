@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateMicrosoftTeamsChannelConfigurationOutput {
-    /// The configuration for a Microsoft Teams channel configured with AWS Chatbot.
+    /// <p>The configuration for a Microsoft Teams channel configured with AWS Chatbot.</p>
     pub channel_configuration: ::std::option::Option<crate::types::TeamsChannelConfiguration>,
     _request_id: Option<String>,
 }
 impl UpdateMicrosoftTeamsChannelConfigurationOutput {
-    /// The configuration for a Microsoft Teams channel configured with AWS Chatbot.
+    /// <p>The configuration for a Microsoft Teams channel configured with AWS Chatbot.</p>
     pub fn channel_configuration(&self) -> ::std::option::Option<&crate::types::TeamsChannelConfiguration> {
         self.channel_configuration.as_ref()
     }
@@ -34,17 +34,17 @@ pub struct UpdateMicrosoftTeamsChannelConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateMicrosoftTeamsChannelConfigurationOutputBuilder {
-    /// The configuration for a Microsoft Teams channel configured with AWS Chatbot.
+    /// <p>The configuration for a Microsoft Teams channel configured with AWS Chatbot.</p>
     pub fn channel_configuration(mut self, input: crate::types::TeamsChannelConfiguration) -> Self {
         self.channel_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// The configuration for a Microsoft Teams channel configured with AWS Chatbot.
+    /// <p>The configuration for a Microsoft Teams channel configured with AWS Chatbot.</p>
     pub fn set_channel_configuration(mut self, input: ::std::option::Option<crate::types::TeamsChannelConfiguration>) -> Self {
         self.channel_configuration = input;
         self
     }
-    /// The configuration for a Microsoft Teams channel configured with AWS Chatbot.
+    /// <p>The configuration for a Microsoft Teams channel configured with AWS Chatbot.</p>
     pub fn get_channel_configuration(&self) -> &::std::option::Option<crate::types::TeamsChannelConfiguration> {
         &self.channel_configuration
     }

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteSlackWorkspaceAuthorization`](crate::operation::delete_slack_workspace_authorization::builders::DeleteSlackWorkspaceAuthorizationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`slack_team_id(impl Into<String>)`](crate::operation::delete_slack_workspace_authorization::builders::DeleteSlackWorkspaceAuthorizationFluentBuilder::slack_team_id) / [`set_slack_team_id(Option<String>)`](crate::operation::delete_slack_workspace_authorization::builders::DeleteSlackWorkspaceAuthorizationFluentBuilder::set_slack_team_id):<br>required: **true**<br>The ID of the Slack workspace authorized with AWS Chatbot.<br>
+    ///   - [`slack_team_id(impl Into<String>)`](crate::operation::delete_slack_workspace_authorization::builders::DeleteSlackWorkspaceAuthorizationFluentBuilder::slack_team_id) / [`set_slack_team_id(Option<String>)`](crate::operation::delete_slack_workspace_authorization::builders::DeleteSlackWorkspaceAuthorizationFluentBuilder::set_slack_team_id):<br>required: **true**<br><p>The ID of the Slack workspace authorized with AWS Chatbot.</p><br>
     /// - On success, responds with [`DeleteSlackWorkspaceAuthorizationOutput`](crate::operation::delete_slack_workspace_authorization::DeleteSlackWorkspaceAuthorizationOutput)
     /// - On failure, responds with [`SdkError<DeleteSlackWorkspaceAuthorizationError>`](crate::operation::delete_slack_workspace_authorization::DeleteSlackWorkspaceAuthorizationError)
     pub fn delete_slack_workspace_authorization(

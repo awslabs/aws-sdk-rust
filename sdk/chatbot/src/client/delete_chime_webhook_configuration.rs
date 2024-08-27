@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteChimeWebhookConfiguration`](crate::operation::delete_chime_webhook_configuration::builders::DeleteChimeWebhookConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`chat_configuration_arn(impl Into<String>)`](crate::operation::delete_chime_webhook_configuration::builders::DeleteChimeWebhookConfigurationFluentBuilder::chat_configuration_arn) / [`set_chat_configuration_arn(Option<String>)`](crate::operation::delete_chime_webhook_configuration::builders::DeleteChimeWebhookConfigurationFluentBuilder::set_chat_configuration_arn):<br>required: **true**<br>The ARN of the ChimeWebhookConfiguration to delete.<br>
+    ///   - [`chat_configuration_arn(impl Into<String>)`](crate::operation::delete_chime_webhook_configuration::builders::DeleteChimeWebhookConfigurationFluentBuilder::chat_configuration_arn) / [`set_chat_configuration_arn(Option<String>)`](crate::operation::delete_chime_webhook_configuration::builders::DeleteChimeWebhookConfigurationFluentBuilder::set_chat_configuration_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the ChimeWebhookConfiguration to delete.</p><br>
     /// - On success, responds with [`DeleteChimeWebhookConfigurationOutput`](crate::operation::delete_chime_webhook_configuration::DeleteChimeWebhookConfigurationOutput)
     /// - On failure, responds with [`SdkError<DeleteChimeWebhookConfigurationError>`](crate::operation::delete_chime_webhook_configuration::DeleteChimeWebhookConfigurationError)
     pub fn delete_chime_webhook_configuration(

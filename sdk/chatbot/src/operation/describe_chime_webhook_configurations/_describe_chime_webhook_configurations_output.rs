@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeChimeWebhookConfigurationsOutput {
-    /// An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// A list of Chime webhooks associated with the account.
+    /// <p>A list of Amazon Chime webhooks associated with the account.</p>
     pub webhook_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ChimeWebhookConfiguration>>,
     _request_id: Option<String>,
 }
 impl DescribeChimeWebhookConfigurationsOutput {
-    /// An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// A list of Chime webhooks associated with the account.
+    /// <p>A list of Amazon Chime webhooks associated with the account.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.webhook_configurations.is_none()`.
     pub fn webhook_configurations(&self) -> &[crate::types::ChimeWebhookConfiguration] {
@@ -42,17 +42,17 @@ pub struct DescribeChimeWebhookConfigurationsOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeChimeWebhookConfigurationsOutputBuilder {
-    /// An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
@@ -60,19 +60,19 @@ impl DescribeChimeWebhookConfigurationsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_webhook_configurations`](Self::set_webhook_configurations).
     ///
-    /// A list of Chime webhooks associated with the account.
+    /// <p>A list of Amazon Chime webhooks associated with the account.</p>
     pub fn webhook_configurations(mut self, input: crate::types::ChimeWebhookConfiguration) -> Self {
         let mut v = self.webhook_configurations.unwrap_or_default();
         v.push(input);
         self.webhook_configurations = ::std::option::Option::Some(v);
         self
     }
-    /// A list of Chime webhooks associated with the account.
+    /// <p>A list of Amazon Chime webhooks associated with the account.</p>
     pub fn set_webhook_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChimeWebhookConfiguration>>) -> Self {
         self.webhook_configurations = input;
         self
     }
-    /// A list of Chime webhooks associated with the account.
+    /// <p>A list of Amazon Chime webhooks associated with the account.</p>
     pub fn get_webhook_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChimeWebhookConfiguration>> {
         &self.webhook_configurations
     }

@@ -26,6 +26,8 @@ pub struct ImportReadSetSourceItem {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The source's tags.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The source's read set ID.</p>
+    pub read_set_id: ::std::option::Option<::std::string::String>,
 }
 impl ImportReadSetSourceItem {
     /// <p>The source files' location in Amazon S3.</p>
@@ -74,6 +76,10 @@ impl ImportReadSetSourceItem {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>The source's read set ID.</p>
+    pub fn read_set_id(&self) -> ::std::option::Option<&str> {
+        self.read_set_id.as_deref()
+    }
 }
 impl ImportReadSetSourceItem {
     /// Creates a new builder-style object to manufacture [`ImportReadSetSourceItem`](crate::types::ImportReadSetSourceItem).
@@ -97,6 +103,7 @@ pub struct ImportReadSetSourceItemBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) read_set_id: ::std::option::Option<::std::string::String>,
 }
 impl ImportReadSetSourceItemBuilder {
     /// <p>The source files' location in Amazon S3.</p>
@@ -264,6 +271,20 @@ impl ImportReadSetSourceItemBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>The source's read set ID.</p>
+    pub fn read_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.read_set_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The source's read set ID.</p>
+    pub fn set_read_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.read_set_id = input;
+        self
+    }
+    /// <p>The source's read set ID.</p>
+    pub fn get_read_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.read_set_id
+    }
     /// Consumes the builder and constructs a [`ImportReadSetSourceItem`](crate::types::ImportReadSetSourceItem).
     /// This method will fail if any of the following fields are not set:
     /// - [`source_file_type`](crate::types::builders::ImportReadSetSourceItemBuilder::source_file_type)
@@ -303,6 +324,7 @@ impl ImportReadSetSourceItemBuilder {
             name: self.name,
             description: self.description,
             tags: self.tags,
+            read_set_id: self.read_set_id,
         })
     }
 }

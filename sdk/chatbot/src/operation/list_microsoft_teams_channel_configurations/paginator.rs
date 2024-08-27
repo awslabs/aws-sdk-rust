@@ -27,6 +27,16 @@ impl ListMicrosoftTeamsChannelConfigurationsPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `team_channel_configurations`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(
+        self,
+    ) -> crate::operation::list_microsoft_teams_channel_configurations::paginator::ListMicrosoftTeamsChannelConfigurationsPaginatorItems {
+        crate::operation::list_microsoft_teams_channel_configurations::paginator::ListMicrosoftTeamsChannelConfigurationsPaginatorItems(self)
+    }
+
     /// Stop paginating when the service returns the same pagination token twice in a row.
     ///
     /// Defaults to true.
@@ -110,5 +120,36 @@ impl ListMicrosoftTeamsChannelConfigurationsPaginator {
                 })
             },
         ))
+    }
+}
+
+/// Flattened paginator for `ListMicrosoftTeamsChannelConfigurationsPaginator`
+///
+/// This is created with [`.items()`](ListMicrosoftTeamsChannelConfigurationsPaginator::items)
+pub struct ListMicrosoftTeamsChannelConfigurationsPaginatorItems(ListMicrosoftTeamsChannelConfigurationsPaginator);
+
+impl ListMicrosoftTeamsChannelConfigurationsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note_: No requests will be dispatched until the stream is used
+    /// (e.g. with the [`.next().await`](aws_smithy_async::future::pagination_stream::PaginationStream::next) method).
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](aws_smithy_async::future::pagination_stream::PaginationStream::collect).
+    pub fn send(
+        self,
+    ) -> ::aws_smithy_async::future::pagination_stream::PaginationStream<
+        ::std::result::Result<
+            crate::types::TeamsChannelConfiguration,
+            ::aws_smithy_runtime_api::client::result::SdkError<
+                crate::operation::list_microsoft_teams_channel_configurations::ListMicrosoftTeamsChannelConfigurationsError,
+                ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+            >,
+        >,
+    > {
+        ::aws_smithy_async::future::pagination_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_microsoft_teams_channel_configurations_output_output_team_channel_configurations(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }

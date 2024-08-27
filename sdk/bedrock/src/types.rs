@@ -87,6 +87,14 @@ pub use crate::types::_s3_config::S3Config;
 
 pub use crate::types::_cloud_watch_config::CloudWatchConfig;
 
+pub use crate::types::_inference_profile_type::InferenceProfileType;
+
+pub use crate::types::_inference_profile_status::InferenceProfileStatus;
+
+pub use crate::types::_inference_profile_model::InferenceProfileModel;
+
+pub use crate::types::_inference_profile_summary::InferenceProfileSummary;
+
 pub use crate::types::_guardrail_contextual_grounding_policy_config::GuardrailContextualGroundingPolicyConfig;
 
 pub use crate::types::_guardrail_contextual_grounding_filter_config::GuardrailContextualGroundingFilterConfig;
@@ -310,6 +318,14 @@ mod _human_evaluation_custom_metric;
 mod _human_workflow_config;
 
 mod _imported_model_summary;
+
+mod _inference_profile_model;
+
+mod _inference_profile_status;
+
+mod _inference_profile_summary;
+
+mod _inference_profile_type;
 
 mod _inference_type;
 

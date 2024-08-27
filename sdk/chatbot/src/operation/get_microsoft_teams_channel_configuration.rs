@@ -97,6 +97,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetMicr
             ::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolverParams::new(),
         ));
 
+        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::SensitiveOutput);
         cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
             "GetMicrosoftTeamsChannelConfiguration",
             "chatbot",
@@ -255,11 +256,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetMicrosoftT
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum GetMicrosoftTeamsChannelConfigurationError {
-    /// We can’t process your request right now because of a server issue. Try again later.
+    /// <p>We can’t process your request right now because of a server issue. Try again later.</p>
     GetTeamsChannelConfigurationException(crate::types::error::GetTeamsChannelConfigurationException),
-    /// Your request input doesn't meet the constraints that AWS Chatbot requires.
+    /// <p>Your request input doesn't meet the constraints required by AWS Chatbot.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),
-    /// Your request input doesn't meet the constraints that AWS Chatbot requires.
+    /// <p>Your request input doesn't meet the constraints required by AWS Chatbot.</p>
     InvalidRequestException(crate::types::error::InvalidRequestException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

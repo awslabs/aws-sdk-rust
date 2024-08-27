@@ -197,6 +197,30 @@ pub(crate) fn get_guardrail_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_inference_profile_output_output_correct_errors(
+    mut builder: crate::operation::get_inference_profile::builders::GetInferenceProfileOutputBuilder,
+) -> crate::operation::get_inference_profile::builders::GetInferenceProfileOutputBuilder {
+    if builder.inference_profile_name.is_none() {
+        builder.inference_profile_name = Some(Default::default())
+    }
+    if builder.models.is_none() {
+        builder.models = Some(Default::default())
+    }
+    if builder.inference_profile_arn.is_none() {
+        builder.inference_profile_arn = Some(Default::default())
+    }
+    if builder.inference_profile_id.is_none() {
+        builder.inference_profile_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::InferenceProfileStatus>().ok()
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::InferenceProfileType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn get_model_copy_job_output_output_correct_errors(
     mut builder: crate::operation::get_model_copy_job::builders::GetModelCopyJobOutputBuilder,
 ) -> crate::operation::get_model_copy_job::builders::GetModelCopyJobOutputBuilder {
@@ -590,6 +614,30 @@ pub(crate) fn imported_model_summary_correct_errors(
     }
     if builder.creation_time.is_none() {
         builder.creation_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn inference_profile_summary_correct_errors(
+    mut builder: crate::types::builders::InferenceProfileSummaryBuilder,
+) -> crate::types::builders::InferenceProfileSummaryBuilder {
+    if builder.inference_profile_name.is_none() {
+        builder.inference_profile_name = Some(Default::default())
+    }
+    if builder.models.is_none() {
+        builder.models = Some(Default::default())
+    }
+    if builder.inference_profile_arn.is_none() {
+        builder.inference_profile_arn = Some(Default::default())
+    }
+    if builder.inference_profile_id.is_none() {
+        builder.inference_profile_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::InferenceProfileStatus>().ok()
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::InferenceProfileType>().ok()
     }
     builder
 }

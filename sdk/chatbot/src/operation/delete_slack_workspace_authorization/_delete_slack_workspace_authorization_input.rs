@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSlackWorkspaceAuthorizationInput {
-    /// The ID of the Slack workspace authorized with AWS Chatbot.
+    /// <p>The ID of the Slack workspace authorized with AWS Chatbot.</p>
     pub slack_team_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSlackWorkspaceAuthorizationInput {
-    /// The ID of the Slack workspace authorized with AWS Chatbot.
+    /// <p>The ID of the Slack workspace authorized with AWS Chatbot.</p>
     pub fn slack_team_id(&self) -> ::std::option::Option<&str> {
         self.slack_team_id.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct DeleteSlackWorkspaceAuthorizationInputBuilder {
     pub(crate) slack_team_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSlackWorkspaceAuthorizationInputBuilder {
-    /// The ID of the Slack workspace authorized with AWS Chatbot.
+    /// <p>The ID of the Slack workspace authorized with AWS Chatbot.</p>
     /// This field is required.
     pub fn slack_team_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.slack_team_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// The ID of the Slack workspace authorized with AWS Chatbot.
+    /// <p>The ID of the Slack workspace authorized with AWS Chatbot.</p>
     pub fn set_slack_team_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.slack_team_id = input;
         self
     }
-    /// The ID of the Slack workspace authorized with AWS Chatbot.
+    /// <p>The ID of the Slack workspace authorized with AWS Chatbot.</p>
     pub fn get_slack_team_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.slack_team_id
     }

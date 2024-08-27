@@ -17,7 +17,15 @@
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
 #![cfg_attr(docsrs, feature(doc_auto_cfg))]
-//! AWS Chatbot API
+//! The _AWS Chatbot API Reference_ provides descriptions, API request parameters, and the XML response for each of the AWS Chatbot API actions.
+//!
+//! AWS Chatbot APIs are currently available in the following Regions:
+//!   - US East (Ohio) - us-east-2
+//!   - US West (Oregon) - us-west-2
+//!   - Asia Pacific (Singapore) - ap-southeast-1
+//!   - Europe (Ireland) - eu-west-1
+//!
+//! The AWS Chatbot console can only be used in US East (Ohio). Your configuration data however, is stored in each of the relevant available Regions.
 //!
 //! ## Getting Started
 //!
@@ -31,7 +39,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-chatbot = "1.26.0"
+//! aws-sdk-chatbot = "1.27.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

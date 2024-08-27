@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateChimeWebhookConfigurationOutput {
-    /// Chime webhook configuration.
+    /// <p>An Amazon Chime webhook configuration.</p>
     pub webhook_configuration: ::std::option::Option<crate::types::ChimeWebhookConfiguration>,
     _request_id: Option<String>,
 }
 impl CreateChimeWebhookConfigurationOutput {
-    /// Chime webhook configuration.
+    /// <p>An Amazon Chime webhook configuration.</p>
     pub fn webhook_configuration(&self) -> ::std::option::Option<&crate::types::ChimeWebhookConfiguration> {
         self.webhook_configuration.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct CreateChimeWebhookConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateChimeWebhookConfigurationOutputBuilder {
-    /// Chime webhook configuration.
+    /// <p>An Amazon Chime webhook configuration.</p>
     pub fn webhook_configuration(mut self, input: crate::types::ChimeWebhookConfiguration) -> Self {
         self.webhook_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// Chime webhook configuration.
+    /// <p>An Amazon Chime webhook configuration.</p>
     pub fn set_webhook_configuration(mut self, input: ::std::option::Option<crate::types::ChimeWebhookConfiguration>) -> Self {
         self.webhook_configuration = input;
         self
     }
-    /// Chime webhook configuration.
+    /// <p>An Amazon Chime webhook configuration.</p>
     pub fn get_webhook_configuration(&self) -> &::std::option::Option<crate::types::ChimeWebhookConfiguration> {
         &self.webhook_configuration
     }

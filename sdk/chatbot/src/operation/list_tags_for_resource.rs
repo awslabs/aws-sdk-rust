@@ -244,11 +244,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListTagsForRe
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ListTagsForResourceError {
-    /// Customer/consumer-facing internal service exception. https://w.amazon.com/index.php/AWS/API_Standards/Exceptions#InternalServiceError
+    /// <p>Unexpected error during processing of request.</p>
     InternalServiceError(crate::types::error::InternalServiceError),
-    /// We were not able to find the resource for your request.
+    /// <p>We were unable to find the resource for your request</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// We can’t process your request right now because of a server issue. Try again later.
+    /// <p>We can’t process your request right now because of a server issue. Try again later.</p>
     ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

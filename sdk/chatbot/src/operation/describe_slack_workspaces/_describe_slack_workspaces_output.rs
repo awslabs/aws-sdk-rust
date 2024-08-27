@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSlackWorkspacesOutput {
-    /// A list of Slack Workspaces registered with AWS Chatbot.
+    /// <p>A list of Slack workspaces registered with AWS Chatbot.</p>
     pub slack_workspaces: ::std::option::Option<::std::vec::Vec<crate::types::SlackWorkspace>>,
-    /// An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeSlackWorkspacesOutput {
-    /// A list of Slack Workspaces registered with AWS Chatbot.
+    /// <p>A list of Slack workspaces registered with AWS Chatbot.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.slack_workspaces.is_none()`.
     pub fn slack_workspaces(&self) -> &[crate::types::SlackWorkspace] {
         self.slack_workspaces.as_deref().unwrap_or_default()
     }
-    /// An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,33 +46,33 @@ impl DescribeSlackWorkspacesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_slack_workspaces`](Self::set_slack_workspaces).
     ///
-    /// A list of Slack Workspaces registered with AWS Chatbot.
+    /// <p>A list of Slack workspaces registered with AWS Chatbot.</p>
     pub fn slack_workspaces(mut self, input: crate::types::SlackWorkspace) -> Self {
         let mut v = self.slack_workspaces.unwrap_or_default();
         v.push(input);
         self.slack_workspaces = ::std::option::Option::Some(v);
         self
     }
-    /// A list of Slack Workspaces registered with AWS Chatbot.
+    /// <p>A list of Slack workspaces registered with AWS Chatbot.</p>
     pub fn set_slack_workspaces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SlackWorkspace>>) -> Self {
         self.slack_workspaces = input;
         self
     }
-    /// A list of Slack Workspaces registered with AWS Chatbot.
+    /// <p>A list of Slack workspaces registered with AWS Chatbot.</p>
     pub fn get_slack_workspaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SlackWorkspace>> {
         &self.slack_workspaces
     }
-    /// An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

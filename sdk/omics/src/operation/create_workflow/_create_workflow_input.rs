@@ -17,7 +17,7 @@ pub struct CreateWorkflowInput {
     pub main: ::std::option::Option<::std::string::String>,
     /// <p>A parameter template for the workflow.</p>
     pub parameter_template: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkflowParameter>>,
-    /// <p>The storage capacity for the workflow in gibibytes.</p>
+    /// <p>The default storage capacity for the workflow runs, in gibibytes.</p>
     pub storage_capacity: ::std::option::Option<i32>,
     /// <p>Tags for the workflow.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -55,7 +55,7 @@ impl CreateWorkflowInput {
     pub fn parameter_template(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::WorkflowParameter>> {
         self.parameter_template.as_ref()
     }
-    /// <p>The storage capacity for the workflow in gibibytes.</p>
+    /// <p>The default storage capacity for the workflow runs, in gibibytes.</p>
     pub fn storage_capacity(&self) -> ::std::option::Option<i32> {
         self.storage_capacity
     }
@@ -205,17 +205,17 @@ impl CreateWorkflowInputBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkflowParameter>> {
         &self.parameter_template
     }
-    /// <p>The storage capacity for the workflow in gibibytes.</p>
+    /// <p>The default storage capacity for the workflow runs, in gibibytes.</p>
     pub fn storage_capacity(mut self, input: i32) -> Self {
         self.storage_capacity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The storage capacity for the workflow in gibibytes.</p>
+    /// <p>The default storage capacity for the workflow runs, in gibibytes.</p>
     pub fn set_storage_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.storage_capacity = input;
         self
     }
-    /// <p>The storage capacity for the workflow in gibibytes.</p>
+    /// <p>The default storage capacity for the workflow runs, in gibibytes.</p>
     pub fn get_storage_capacity(&self) -> &::std::option::Option<i32> {
         &self.storage_capacity
     }

@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSlackChannelConfigurationOutput {
-    /// The configuration for a Slack channel configured with AWS Chatbot.
+    /// <p>The configuration for a Slack channel configured with AWS Chatbot.</p>
     pub channel_configuration: ::std::option::Option<crate::types::SlackChannelConfiguration>,
     _request_id: Option<String>,
 }
 impl UpdateSlackChannelConfigurationOutput {
-    /// The configuration for a Slack channel configured with AWS Chatbot.
+    /// <p>The configuration for a Slack channel configured with AWS Chatbot.</p>
     pub fn channel_configuration(&self) -> ::std::option::Option<&crate::types::SlackChannelConfiguration> {
         self.channel_configuration.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct UpdateSlackChannelConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateSlackChannelConfigurationOutputBuilder {
-    /// The configuration for a Slack channel configured with AWS Chatbot.
+    /// <p>The configuration for a Slack channel configured with AWS Chatbot.</p>
     pub fn channel_configuration(mut self, input: crate::types::SlackChannelConfiguration) -> Self {
         self.channel_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// The configuration for a Slack channel configured with AWS Chatbot.
+    /// <p>The configuration for a Slack channel configured with AWS Chatbot.</p>
     pub fn set_channel_configuration(mut self, input: ::std::option::Option<crate::types::SlackChannelConfiguration>) -> Self {
         self.channel_configuration = input;
         self
     }
-    /// The configuration for a Slack channel configured with AWS Chatbot.
+    /// <p>The configuration for a Slack channel configured with AWS Chatbot.</p>
     pub fn get_channel_configuration(&self) -> &::std::option::Option<crate::types::SlackChannelConfiguration> {
         &self.channel_configuration
     }

@@ -22,7 +22,7 @@ impl crate::operation::delete_microsoft_teams_user_identity::builders::DeleteMic
 }
 /// Fluent builder constructing a request to `DeleteMicrosoftTeamsUserIdentity`.
 ///
-/// Deletes a Teams user identity
+/// <p>Identifes a user level permission for a channel configuration.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteMicrosoftTeamsUserIdentityFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl DeleteMicrosoftTeamsUserIdentityFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The ARN of the MicrosoftTeamsChannelConfiguration associated with the user identity to delete.
+    /// <p>The ARN of the MicrosoftTeamsChannelConfiguration associated with the user identity to delete.</p>
     pub fn chat_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.chat_configuration_arn(input.into());
         self
     }
-    /// The ARN of the MicrosoftTeamsChannelConfiguration associated with the user identity to delete.
+    /// <p>The ARN of the MicrosoftTeamsChannelConfiguration associated with the user identity to delete.</p>
     pub fn set_chat_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_chat_configuration_arn(input);
         self
     }
-    /// The ARN of the MicrosoftTeamsChannelConfiguration associated with the user identity to delete.
+    /// <p>The ARN of the MicrosoftTeamsChannelConfiguration associated with the user identity to delete.</p>
     pub fn get_chat_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_chat_configuration_arn()
     }
-    /// Id from Microsoft Teams for user.
+    /// <p>The Microsoft Teams user ID.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_id(input.into());
         self
     }
-    /// Id from Microsoft Teams for user.
+    /// <p>The Microsoft Teams user ID.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_id(input);
         self
     }
-    /// Id from Microsoft Teams for user.
+    /// <p>The Microsoft Teams user ID.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_id()
     }

@@ -22,7 +22,7 @@ impl crate::operation::update_chime_webhook_configuration::builders::UpdateChime
 }
 /// Fluent builder constructing a request to `UpdateChimeWebhookConfiguration`.
 ///
-/// Updates a Chime Webhook Configuration
+/// <p>Updates a Amazon Chime webhook configuration.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateChimeWebhookConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,48 @@ impl UpdateChimeWebhookConfigurationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The ARN of the ChimeWebhookConfiguration to update.
+    /// <p>The Amazon Resource Number (ARN) of the ChimeWebhookConfiguration to update.</p>
     pub fn chat_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.chat_configuration_arn(input.into());
         self
     }
-    /// The ARN of the ChimeWebhookConfiguration to update.
+    /// <p>The Amazon Resource Number (ARN) of the ChimeWebhookConfiguration to update.</p>
     pub fn set_chat_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_chat_configuration_arn(input);
         self
     }
-    /// The ARN of the ChimeWebhookConfiguration to update.
+    /// <p>The Amazon Resource Number (ARN) of the ChimeWebhookConfiguration to update.</p>
     pub fn get_chat_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_chat_configuration_arn()
     }
-    /// Description of the webhook. Recommend using the convention `RoomName/WebhookName`. See Chime setup tutorial for more details: https://docs.aws.amazon.com/chatbot/latest/adminguide/chime-setup.html.
+    /// <p>A description of the webhook. We recommend using the convention <code>RoomName/WebhookName</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/chatbot/latest/adminguide/chime-setup.html">Tutorial: Get started with Amazon Chime</a> in the <i> AWS Chatbot Administrator Guide</i>.</p>
     pub fn webhook_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.webhook_description(input.into());
         self
     }
-    /// Description of the webhook. Recommend using the convention `RoomName/WebhookName`. See Chime setup tutorial for more details: https://docs.aws.amazon.com/chatbot/latest/adminguide/chime-setup.html.
+    /// <p>A description of the webhook. We recommend using the convention <code>RoomName/WebhookName</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/chatbot/latest/adminguide/chime-setup.html">Tutorial: Get started with Amazon Chime</a> in the <i> AWS Chatbot Administrator Guide</i>.</p>
     pub fn set_webhook_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_webhook_description(input);
         self
     }
-    /// Description of the webhook. Recommend using the convention `RoomName/WebhookName`. See Chime setup tutorial for more details: https://docs.aws.amazon.com/chatbot/latest/adminguide/chime-setup.html.
+    /// <p>A description of the webhook. We recommend using the convention <code>RoomName/WebhookName</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/chatbot/latest/adminguide/chime-setup.html">Tutorial: Get started with Amazon Chime</a> in the <i> AWS Chatbot Administrator Guide</i>.</p>
     pub fn get_webhook_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_webhook_description()
     }
-    /// URL for the Chime webhook.
+    /// <p>The URL for the Amazon Chime webhook.</p>
     pub fn webhook_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.webhook_url(input.into());
         self
     }
-    /// URL for the Chime webhook.
+    /// <p>The URL for the Amazon Chime webhook.</p>
     pub fn set_webhook_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_webhook_url(input);
         self
     }
-    /// URL for the Chime webhook.
+    /// <p>The URL for the Amazon Chime webhook.</p>
     pub fn get_webhook_url(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_webhook_url()
     }
@@ -155,45 +158,48 @@ impl UpdateChimeWebhookConfigurationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_sns_topic_arns`](Self::set_sns_topic_arns).
     ///
-    /// The ARNs of the SNS topics that deliver notifications to AWS Chatbot.
+    /// <p>The ARNs of the SNS topics that deliver notifications to AWS Chatbot.</p>
     pub fn sns_topic_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sns_topic_arns(input.into());
         self
     }
-    /// The ARNs of the SNS topics that deliver notifications to AWS Chatbot.
+    /// <p>The ARNs of the SNS topics that deliver notifications to AWS Chatbot.</p>
     pub fn set_sns_topic_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_sns_topic_arns(input);
         self
     }
-    /// The ARNs of the SNS topics that deliver notifications to AWS Chatbot.
+    /// <p>The ARNs of the SNS topics that deliver notifications to AWS Chatbot.</p>
     pub fn get_sns_topic_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_sns_topic_arns()
     }
-    /// The ARN of the IAM role that defines the permissions for AWS Chatbot. This is a user-defined role that AWS Chatbot will assume. This is not the service-linked role. For more information, see IAM Policies for AWS Chatbot.
+    /// <p>A user-defined role that AWS Chatbot assumes. This is not the service-linked role.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/chatbot/latest/adminguide/chatbot-iam-policies.html">IAM policies for AWS Chatbot</a> in the <i> AWS Chatbot Administrator Guide</i>.</p>
     pub fn iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.iam_role_arn(input.into());
         self
     }
-    /// The ARN of the IAM role that defines the permissions for AWS Chatbot. This is a user-defined role that AWS Chatbot will assume. This is not the service-linked role. For more information, see IAM Policies for AWS Chatbot.
+    /// <p>A user-defined role that AWS Chatbot assumes. This is not the service-linked role.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/chatbot/latest/adminguide/chatbot-iam-policies.html">IAM policies for AWS Chatbot</a> in the <i> AWS Chatbot Administrator Guide</i>.</p>
     pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_iam_role_arn(input);
         self
     }
-    /// The ARN of the IAM role that defines the permissions for AWS Chatbot. This is a user-defined role that AWS Chatbot will assume. This is not the service-linked role. For more information, see IAM Policies for AWS Chatbot.
+    /// <p>A user-defined role that AWS Chatbot assumes. This is not the service-linked role.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/chatbot/latest/adminguide/chatbot-iam-policies.html">IAM policies for AWS Chatbot</a> in the <i> AWS Chatbot Administrator Guide</i>.</p>
     pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_iam_role_arn()
     }
-    /// Logging levels include ERROR, INFO, or NONE.
+    /// <p>Logging levels include <code>ERROR</code>, <code>INFO</code>, or <code>NONE</code>.</p>
     pub fn logging_level(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.logging_level(input.into());
         self
     }
-    /// Logging levels include ERROR, INFO, or NONE.
+    /// <p>Logging levels include <code>ERROR</code>, <code>INFO</code>, or <code>NONE</code>.</p>
     pub fn set_logging_level(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_logging_level(input);
         self
     }
-    /// Logging levels include ERROR, INFO, or NONE.
+    /// <p>Logging levels include <code>ERROR</code>, <code>INFO</code>, or <code>NONE</code>.</p>
     pub fn get_logging_level(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_logging_level()
     }

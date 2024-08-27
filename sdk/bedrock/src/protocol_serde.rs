@@ -61,6 +61,8 @@ pub(crate) mod shape_get_guardrail;
 
 pub(crate) mod shape_get_imported_model;
 
+pub(crate) mod shape_get_inference_profile;
+
 pub(crate) mod shape_get_model_copy_job;
 
 pub(crate) mod shape_get_model_customization_job;
@@ -82,6 +84,8 @@ pub(crate) mod shape_list_foundation_models;
 pub(crate) mod shape_list_guardrails;
 
 pub(crate) mod shape_list_imported_models;
+
+pub(crate) mod shape_list_inference_profiles;
 
 pub(crate) mod shape_list_model_copy_jobs;
 
@@ -213,6 +217,10 @@ pub(crate) mod shape_guardrail_word_policy_config;
 
 pub(crate) mod shape_imported_model_summary_list;
 
+pub(crate) mod shape_inference_profile_models;
+
+pub(crate) mod shape_inference_profile_summaries;
+
 pub(crate) mod shape_logging_config;
 
 pub(crate) mod shape_model_copy_job_summaries;
@@ -302,6 +310,10 @@ pub(crate) mod shape_guardrail_words;
 pub(crate) mod shape_human_evaluation_config;
 
 pub(crate) mod shape_imported_model_summary;
+
+pub(crate) mod shape_inference_profile_model;
+
+pub(crate) mod shape_inference_profile_summary;
 
 pub(crate) mod shape_inference_type_list;
 

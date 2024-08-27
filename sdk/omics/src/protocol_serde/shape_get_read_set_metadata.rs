@@ -148,6 +148,13 @@ pub(crate) fn de_get_read_set_metadata(
                             .transpose()?,
                     );
                 }
+                "creationJobId" => {
+                    builder = builder.set_creation_job_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "creationTime" => {
                     builder = builder.set_creation_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),

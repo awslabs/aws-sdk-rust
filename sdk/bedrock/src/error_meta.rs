@@ -731,6 +731,36 @@ impl From<crate::operation::get_imported_model::GetImportedModelError> for Error
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_inference_profile::GetInferenceProfileError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_inference_profile::GetInferenceProfileError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_inference_profile::GetInferenceProfileError> for Error {
+    fn from(err: crate::operation::get_inference_profile::GetInferenceProfileError) -> Self {
+        match err {
+            crate::operation::get_inference_profile::GetInferenceProfileError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_inference_profile::GetInferenceProfileError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_inference_profile::GetInferenceProfileError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_inference_profile::GetInferenceProfileError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_inference_profile::GetInferenceProfileError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_inference_profile::GetInferenceProfileError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_model_copy_job::GetModelCopyJobError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1070,6 +1100,37 @@ impl From<crate::operation::list_imported_models::ListImportedModelsError> for E
             crate::operation::list_imported_models::ListImportedModelsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_imported_models::ListImportedModelsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_imported_models::ListImportedModelsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_inference_profiles::ListInferenceProfilesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_inference_profiles::ListInferenceProfilesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_inference_profiles::ListInferenceProfilesError> for Error {
+    fn from(err: crate::operation::list_inference_profiles::ListInferenceProfilesError) -> Self {
+        match err {
+            crate::operation::list_inference_profiles::ListInferenceProfilesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_inference_profiles::ListInferenceProfilesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_inference_profiles::ListInferenceProfilesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_inference_profiles::ListInferenceProfilesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_inference_profiles::ListInferenceProfilesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

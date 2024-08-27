@@ -239,9 +239,9 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetAccountPre
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum GetAccountPreferencesError {
-    /// We can’t process your request right now because of a server issue. Try again later.
+    /// <p>We can’t process your request right now because of a server issue. Try again later.</p>
     GetAccountPreferencesException(crate::types::error::GetAccountPreferencesException),
-    /// Your request input doesn't meet the constraints that AWS Chatbot requires.
+    /// <p>Your request input doesn't meet the constraints required by AWS Chatbot.</p>
     InvalidRequestException(crate::types::error::InvalidRequestException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

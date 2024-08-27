@@ -47,6 +47,10 @@ pub use crate::types::_s3_config::S3ConfigBuilder;
 
 pub use crate::types::_cloud_watch_config::CloudWatchConfigBuilder;
 
+pub use crate::types::_inference_profile_model::InferenceProfileModelBuilder;
+
+pub use crate::types::_inference_profile_summary::InferenceProfileSummaryBuilder;
+
 pub use crate::types::_guardrail_contextual_grounding_policy_config::GuardrailContextualGroundingPolicyConfigBuilder;
 
 pub use crate::types::_guardrail_contextual_grounding_filter_config::GuardrailContextualGroundingFilterConfigBuilder;

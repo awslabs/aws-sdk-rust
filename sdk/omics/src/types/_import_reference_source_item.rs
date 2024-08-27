@@ -16,6 +16,8 @@ pub struct ImportReferenceSourceItem {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The source's tags.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The source's reference ID.</p>
+    pub reference_id: ::std::option::Option<::std::string::String>,
 }
 impl ImportReferenceSourceItem {
     /// <p>The source file's location in Amazon S3.</p>
@@ -42,6 +44,10 @@ impl ImportReferenceSourceItem {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>The source's reference ID.</p>
+    pub fn reference_id(&self) -> ::std::option::Option<&str> {
+        self.reference_id.as_deref()
+    }
 }
 impl ImportReferenceSourceItem {
     /// Creates a new builder-style object to manufacture [`ImportReferenceSourceItem`](crate::types::ImportReferenceSourceItem).
@@ -60,6 +66,7 @@ pub struct ImportReferenceSourceItemBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) reference_id: ::std::option::Option<::std::string::String>,
 }
 impl ImportReferenceSourceItemBuilder {
     /// <p>The source file's location in Amazon S3.</p>
@@ -153,6 +160,20 @@ impl ImportReferenceSourceItemBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>The source's reference ID.</p>
+    pub fn reference_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.reference_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The source's reference ID.</p>
+    pub fn set_reference_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.reference_id = input;
+        self
+    }
+    /// <p>The source's reference ID.</p>
+    pub fn get_reference_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reference_id
+    }
     /// Consumes the builder and constructs a [`ImportReferenceSourceItem`](crate::types::ImportReferenceSourceItem).
     /// This method will fail if any of the following fields are not set:
     /// - [`status`](crate::types::builders::ImportReferenceSourceItemBuilder::status)
@@ -169,6 +190,7 @@ impl ImportReferenceSourceItemBuilder {
             name: self.name,
             description: self.description,
             tags: self.tags,
+            reference_id: self.reference_id,
         })
     }
 }

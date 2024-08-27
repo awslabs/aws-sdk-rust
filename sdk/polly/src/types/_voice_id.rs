@@ -54,6 +54,7 @@
 ///     VoiceId::Ivy => { /* ... */ },
 ///     VoiceId::Jacek => { /* ... */ },
 ///     VoiceId::Jan => { /* ... */ },
+///     VoiceId::Jitka => { /* ... */ },
 ///     VoiceId::Joanna => { /* ... */ },
 ///     VoiceId::Joey => { /* ... */ },
 ///     VoiceId::Justin => { /* ... */ },
@@ -93,6 +94,7 @@
 ///     VoiceId::Ruben => { /* ... */ },
 ///     VoiceId::Russell => { /* ... */ },
 ///     VoiceId::Ruth => { /* ... */ },
+///     VoiceId::Sabrina => { /* ... */ },
 ///     VoiceId::Salli => { /* ... */ },
 ///     VoiceId::Seoyeon => { /* ... */ },
 ///     VoiceId::Sergio => { /* ... */ },
@@ -220,6 +222,8 @@ pub enum VoiceId {
     #[allow(missing_docs)] // documentation missing in model
     Jan,
     #[allow(missing_docs)] // documentation missing in model
+    Jitka,
+    #[allow(missing_docs)] // documentation missing in model
     Joanna,
     #[allow(missing_docs)] // documentation missing in model
     Joey,
@@ -297,6 +301,8 @@ pub enum VoiceId {
     Russell,
     #[allow(missing_docs)] // documentation missing in model
     Ruth,
+    #[allow(missing_docs)] // documentation missing in model
+    Sabrina,
     #[allow(missing_docs)] // documentation missing in model
     Salli,
     #[allow(missing_docs)] // documentation missing in model
@@ -376,6 +382,7 @@ impl ::std::convert::From<&str> for VoiceId {
             "Ivy" => VoiceId::Ivy,
             "Jacek" => VoiceId::Jacek,
             "Jan" => VoiceId::Jan,
+            "Jitka" => VoiceId::Jitka,
             "Joanna" => VoiceId::Joanna,
             "Joey" => VoiceId::Joey,
             "Justin" => VoiceId::Justin,
@@ -415,6 +422,7 @@ impl ::std::convert::From<&str> for VoiceId {
             "Ruben" => VoiceId::Ruben,
             "Russell" => VoiceId::Russell,
             "Ruth" => VoiceId::Ruth,
+            "Sabrina" => VoiceId::Sabrina,
             "Salli" => VoiceId::Salli,
             "Seoyeon" => VoiceId::Seoyeon,
             "Sergio" => VoiceId::Sergio,
@@ -487,6 +495,7 @@ impl VoiceId {
             VoiceId::Ivy => "Ivy",
             VoiceId::Jacek => "Jacek",
             VoiceId::Jan => "Jan",
+            VoiceId::Jitka => "Jitka",
             VoiceId::Joanna => "Joanna",
             VoiceId::Joey => "Joey",
             VoiceId::Justin => "Justin",
@@ -526,6 +535,7 @@ impl VoiceId {
             VoiceId::Ruben => "Ruben",
             VoiceId::Russell => "Russell",
             VoiceId::Ruth => "Ruth",
+            VoiceId::Sabrina => "Sabrina",
             VoiceId::Salli => "Salli",
             VoiceId::Seoyeon => "Seoyeon",
             VoiceId::Sergio => "Sergio",
@@ -589,6 +599,7 @@ impl VoiceId {
             "Ivy",
             "Jacek",
             "Jan",
+            "Jitka",
             "Joanna",
             "Joey",
             "Justin",
@@ -628,6 +639,7 @@ impl VoiceId {
             "Ruben",
             "Russell",
             "Ruth",
+            "Sabrina",
             "Salli",
             "Seoyeon",
             "Sergio",
@@ -708,6 +720,7 @@ impl ::std::fmt::Display for VoiceId {
             VoiceId::Ivy => write!(f, "Ivy"),
             VoiceId::Jacek => write!(f, "Jacek"),
             VoiceId::Jan => write!(f, "Jan"),
+            VoiceId::Jitka => write!(f, "Jitka"),
             VoiceId::Joanna => write!(f, "Joanna"),
             VoiceId::Joey => write!(f, "Joey"),
             VoiceId::Justin => write!(f, "Justin"),
@@ -747,6 +760,7 @@ impl ::std::fmt::Display for VoiceId {
             VoiceId::Ruben => write!(f, "Ruben"),
             VoiceId::Russell => write!(f, "Russell"),
             VoiceId::Ruth => write!(f, "Ruth"),
+            VoiceId::Sabrina => write!(f, "Sabrina"),
             VoiceId::Salli => write!(f, "Salli"),
             VoiceId::Seoyeon => write!(f, "Seoyeon"),
             VoiceId::Sergio => write!(f, "Sergio"),

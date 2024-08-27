@@ -16,6 +16,8 @@ impl super::Client {
     ///   - [`creation_time(DateTime)`](crate::operation::get_reference_metadata::GetReferenceMetadataOutput::creation_time): <p>When the reference was created.</p>
     ///   - [`update_time(DateTime)`](crate::operation::get_reference_metadata::GetReferenceMetadataOutput::update_time): <p>When the reference was updated.</p>
     ///   - [`files(Option<ReferenceFiles>)`](crate::operation::get_reference_metadata::GetReferenceMetadataOutput::files): <p>The reference's files.</p>
+    ///   - [`creation_type(Option<ReferenceCreationType>)`](crate::operation::get_reference_metadata::GetReferenceMetadataOutput::creation_type): <p>The reference's creation type.</p>
+    ///   - [`creation_job_id(Option<String>)`](crate::operation::get_reference_metadata::GetReferenceMetadataOutput::creation_job_id): <p>The reference's creation job ID.</p>
     /// - On failure, responds with [`SdkError<GetReferenceMetadataError>`](crate::operation::get_reference_metadata::GetReferenceMetadataError)
     pub fn get_reference_metadata(&self) -> crate::operation::get_reference_metadata::builders::GetReferenceMetadataFluentBuilder {
         crate::operation::get_reference_metadata::builders::GetReferenceMetadataFluentBuilder::new(self.handle.clone())

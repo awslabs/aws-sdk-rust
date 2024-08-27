@@ -39,6 +39,16 @@ pub(crate) fn reflens_list_imported_models_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_inference_profiles_output_output_next_token(
+    input: &crate::operation::list_inference_profiles::ListInferenceProfilesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_model_copy_jobs_output_output_next_token(
     input: &crate::operation::list_model_copy_jobs::ListModelCopyJobsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -120,6 +130,16 @@ pub(crate) fn lens_list_imported_models_output_output_model_summaries(
     input: crate::operation::list_imported_models::ListImportedModelsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ImportedModelSummary>> {
     let input = match input.model_summaries {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_inference_profiles_output_output_inference_profile_summaries(
+    input: crate::operation::list_inference_profiles::ListInferenceProfilesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::InferenceProfileSummary>> {
+    let input = match input.inference_profile_summaries {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

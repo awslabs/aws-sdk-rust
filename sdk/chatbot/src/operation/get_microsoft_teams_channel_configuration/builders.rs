@@ -22,7 +22,7 @@ impl crate::operation::get_microsoft_teams_channel_configuration::builders::GetM
 }
 /// Fluent builder constructing a request to `GetMicrosoftTeamsChannelConfiguration`.
 ///
-/// Get a single MS Teams Channel Configurations
+/// <p>Returns a Microsoft Teams channel configuration in an AWS account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetMicrosoftTeamsChannelConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -111,17 +111,17 @@ impl GetMicrosoftTeamsChannelConfigurationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The ARN of the MicrosoftTeamsChannelConfiguration to retrieve.
+    /// <p>The Amazon Resource Number (ARN) of the MicrosoftTeamsChannelConfiguration to retrieve.</p>
     pub fn chat_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.chat_configuration_arn(input.into());
         self
     }
-    /// The ARN of the MicrosoftTeamsChannelConfiguration to retrieve.
+    /// <p>The Amazon Resource Number (ARN) of the MicrosoftTeamsChannelConfiguration to retrieve.</p>
     pub fn set_chat_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_chat_configuration_arn(input);
         self
     }
-    /// The ARN of the MicrosoftTeamsChannelConfiguration to retrieve.
+    /// <p>The Amazon Resource Number (ARN) of the MicrosoftTeamsChannelConfiguration to retrieve.</p>
     pub fn get_chat_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_chat_configuration_arn()
     }

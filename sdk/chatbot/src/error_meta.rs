@@ -3,67 +3,67 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum Error {
-    /// There was an issue processing your request.
+    /// <p>There was an issue processing your request.</p>
     ConflictException(crate::types::error::ConflictException),
-    /// We can’t process your request right now because of a server issue. Try again later.
+    /// <p>We can’t process your request right now because of a server issue. Try again later.</p>
     CreateChimeWebhookConfigurationException(crate::types::error::CreateChimeWebhookConfigurationException),
-    /// We can’t process your request right now because of a server issue. Try again later.
+    /// <p>We can’t process your request right now because of a server issue. Try again later.</p>
     CreateSlackChannelConfigurationException(crate::types::error::CreateSlackChannelConfigurationException),
-    /// We can’t process your request right now because of a server issue. Try again later.
+    /// <p>We can’t process your request right now because of a server issue. Try again later.</p>
     CreateTeamsChannelConfigurationException(crate::types::error::CreateTeamsChannelConfigurationException),
-    /// We can’t process your request right now because of a server issue. Try again later.
+    /// <p>We can’t process your request right now because of a server issue. Try again later.</p>
     DeleteChimeWebhookConfigurationException(crate::types::error::DeleteChimeWebhookConfigurationException),
-    /// We can’t process your request right now because of a server issue. Try again later.
+    /// <p>We can’t process your request right now because of a server issue. Try again later.</p>
     DeleteMicrosoftTeamsUserIdentityException(crate::types::error::DeleteMicrosoftTeamsUserIdentityException),
-    /// We can’t process your request right now because of a server issue. Try again later.
+    /// <p>We can’t process your request right now because of a server issue. Try again later.</p>
     DeleteSlackChannelConfigurationException(crate::types::error::DeleteSlackChannelConfigurationException),
-    /// We can’t process your request right now because of a server issue. Try again later.
+    /// <p>We can’t process your request right now because of a server issue. Try again later.</p>
     DeleteSlackUserIdentityException(crate::types::error::DeleteSlackUserIdentityException),
-    /// There was an issue deleting your Slack workspace.
+    /// <p>There was an issue deleting your Slack workspace.</p>
     DeleteSlackWorkspaceAuthorizationFault(crate::types::error::DeleteSlackWorkspaceAuthorizationFault),
-    /// We can’t process your request right now because of a server issue. Try again later.
+    /// <p>We can’t process your request right now because of a server issue. Try again later.</p>
     DeleteTeamsChannelConfigurationException(crate::types::error::DeleteTeamsChannelConfigurationException),
-    /// We can’t process your request right now because of a server issue. Try again later.
+    /// <p>We can’t process your request right now because of a server issue. Try again later.</p>
     DeleteTeamsConfiguredTeamException(crate::types::error::DeleteTeamsConfiguredTeamException),
-    /// We can’t process your request right now because of a server issue. Try again later.
+    /// <p>We can’t process your request right now because of a server issue. Try again later.</p>
     DescribeChimeWebhookConfigurationsException(crate::types::error::DescribeChimeWebhookConfigurationsException),
-    /// We can’t process your request right now because of a server issue. Try again later.
+    /// <p>We can’t process your request right now because of a server issue. Try again later.</p>
     DescribeSlackChannelConfigurationsException(crate::types::error::DescribeSlackChannelConfigurationsException),
-    /// We can’t process your request right now because of a server issue. Try again later.
+    /// <p>We can’t process your request right now because of a server issue. Try again later.</p>
     DescribeSlackUserIdentitiesException(crate::types::error::DescribeSlackUserIdentitiesException),
-    /// We can’t process your request right now because of a server issue. Try again later.
+    /// <p>We can’t process your request right now because of a server issue. Try again later.</p>
     DescribeSlackWorkspacesException(crate::types::error::DescribeSlackWorkspacesException),
-    /// We can’t process your request right now because of a server issue. Try again later.
+    /// <p>We can’t process your request right now because of a server issue. Try again later.</p>
     GetAccountPreferencesException(crate::types::error::GetAccountPreferencesException),
-    /// We can’t process your request right now because of a server issue. Try again later.
+    /// <p>We can’t process your request right now because of a server issue. Try again later.</p>
     GetTeamsChannelConfigurationException(crate::types::error::GetTeamsChannelConfigurationException),
-    /// Customer/consumer-facing internal service exception. https://w.amazon.com/index.php/AWS/API_Standards/Exceptions#InternalServiceError
+    /// <p>Unexpected error during processing of request.</p>
     InternalServiceError(crate::types::error::InternalServiceError),
-    /// Your request input doesn't meet the constraints that AWS Chatbot requires.
+    /// <p>Your request input doesn't meet the constraints required by AWS Chatbot.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),
-    /// Your request input doesn't meet the constraints that AWS Chatbot requires.
+    /// <p>Your request input doesn't meet the constraints required by AWS Chatbot.</p>
     InvalidRequestException(crate::types::error::InvalidRequestException),
-    /// You have exceeded a service limit for AWS Chatbot.
+    /// <p>You have exceeded a service limit for AWS Chatbot.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
-    /// We can’t process your request right now because of a server issue. Try again later.
+    /// <p>We can’t process your request right now because of a server issue. Try again later.</p>
     ListMicrosoftTeamsConfiguredTeamsException(crate::types::error::ListMicrosoftTeamsConfiguredTeamsException),
-    /// We can’t process your request right now because of a server issue. Try again later.
+    /// <p>We can’t process your request right now because of a server issue. Try again later.</p>
     ListMicrosoftTeamsUserIdentitiesException(crate::types::error::ListMicrosoftTeamsUserIdentitiesException),
-    /// We can’t process your request right now because of a server issue. Try again later.
+    /// <p>We can’t process your request right now because of a server issue. Try again later.</p>
     ListTeamsChannelConfigurationsException(crate::types::error::ListTeamsChannelConfigurationsException),
-    /// We were not able to find the resource for your request.
+    /// <p>We were unable to find the resource for your request</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// We can’t process your request right now because of a server issue. Try again later.
+    /// <p>We can’t process your request right now because of a server issue. Try again later.</p>
     ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
-    /// The supplied list of tags contains too many tags.
+    /// <p>The supplied list of tags contains too many tags.</p>
     TooManyTagsException(crate::types::error::TooManyTagsException),
-    /// We can’t process your request right now because of a server issue. Try again later.
+    /// <p>We can’t process your request right now because of a server issue. Try again later.</p>
     UpdateAccountPreferencesException(crate::types::error::UpdateAccountPreferencesException),
-    /// We can’t process your request right now because of a server issue. Try again later.
+    /// <p>We can’t process your request right now because of a server issue. Try again later.</p>
     UpdateChimeWebhookConfigurationException(crate::types::error::UpdateChimeWebhookConfigurationException),
-    /// We can’t process your request right now because of a server issue. Try again later.
+    /// <p>We can’t process your request right now because of a server issue. Try again later.</p>
     UpdateSlackChannelConfigurationException(crate::types::error::UpdateSlackChannelConfigurationException),
-    /// We can’t process your request right now because of a server issue. Try again later.
+    /// <p>We can’t process your request right now because of a server issue. Try again later.</p>
     UpdateTeamsChannelConfigurationException(crate::types::error::UpdateTeamsChannelConfigurationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

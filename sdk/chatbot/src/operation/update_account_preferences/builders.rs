@@ -22,7 +22,7 @@ impl crate::operation::update_account_preferences::builders::UpdateAccountPrefer
 }
 /// Fluent builder constructing a request to `UpdateAccountPreferences`.
 ///
-/// Update Chatbot account level preferences
+/// <p>Updates AWS Chatbot account preferences.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAccountPreferencesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,34 @@ impl UpdateAccountPreferencesFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// Enables use of a user role requirement in your chat configuration.
+    /// <p>Enables use of a user role requirement in your chat configuration.</p>
     pub fn user_authorization_required(mut self, input: bool) -> Self {
         self.inner = self.inner.user_authorization_required(input);
         self
     }
-    /// Enables use of a user role requirement in your chat configuration.
+    /// <p>Enables use of a user role requirement in your chat configuration.</p>
     pub fn set_user_authorization_required(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_user_authorization_required(input);
         self
     }
-    /// Enables use of a user role requirement in your chat configuration.
+    /// <p>Enables use of a user role requirement in your chat configuration.</p>
     pub fn get_user_authorization_required(&self) -> &::std::option::Option<bool> {
         self.inner.get_user_authorization_required()
     }
-    /// Turns on training data collection. This helps improve the AWS Chatbot experience by allowing AWS Chatbot to store and use your customer information, such as AWS Chatbot configurations, notifications, user inputs, AWS Chatbot generated responses, and interaction data. This data helps us to continuously improve and develop Artificial Intelligence (AI) technologies. Your data is not shared with any third parties and is protected using sophisticated controls to prevent unauthorized access and misuse. AWS Chatbot does not store or use interactions in chat channels with Amazon Q for training AWS Chatbot’s AI technologies.
+    /// <p>Turns on training data collection.</p>
+    /// <p>This helps improve the AWS Chatbot experience by allowing AWS Chatbot to store and use your customer information, such as AWS Chatbot configurations, notifications, user inputs, AWS Chatbot generated responses, and interaction data. This data helps us to continuously improve and develop Artificial Intelligence (AI) technologies. Your data is not shared with any third parties and is protected using sophisticated controls to prevent unauthorized access and misuse. AWS Chatbot does not store or use interactions in chat channels with Amazon Q for training AI technologies for AWS Chatbot.</p>
     pub fn training_data_collection_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.training_data_collection_enabled(input);
         self
     }
-    /// Turns on training data collection. This helps improve the AWS Chatbot experience by allowing AWS Chatbot to store and use your customer information, such as AWS Chatbot configurations, notifications, user inputs, AWS Chatbot generated responses, and interaction data. This data helps us to continuously improve and develop Artificial Intelligence (AI) technologies. Your data is not shared with any third parties and is protected using sophisticated controls to prevent unauthorized access and misuse. AWS Chatbot does not store or use interactions in chat channels with Amazon Q for training AWS Chatbot’s AI technologies.
+    /// <p>Turns on training data collection.</p>
+    /// <p>This helps improve the AWS Chatbot experience by allowing AWS Chatbot to store and use your customer information, such as AWS Chatbot configurations, notifications, user inputs, AWS Chatbot generated responses, and interaction data. This data helps us to continuously improve and develop Artificial Intelligence (AI) technologies. Your data is not shared with any third parties and is protected using sophisticated controls to prevent unauthorized access and misuse. AWS Chatbot does not store or use interactions in chat channels with Amazon Q for training AI technologies for AWS Chatbot.</p>
     pub fn set_training_data_collection_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_training_data_collection_enabled(input);
         self
     }
-    /// Turns on training data collection. This helps improve the AWS Chatbot experience by allowing AWS Chatbot to store and use your customer information, such as AWS Chatbot configurations, notifications, user inputs, AWS Chatbot generated responses, and interaction data. This data helps us to continuously improve and develop Artificial Intelligence (AI) technologies. Your data is not shared with any third parties and is protected using sophisticated controls to prevent unauthorized access and misuse. AWS Chatbot does not store or use interactions in chat channels with Amazon Q for training AWS Chatbot’s AI technologies.
+    /// <p>Turns on training data collection.</p>
+    /// <p>This helps improve the AWS Chatbot experience by allowing AWS Chatbot to store and use your customer information, such as AWS Chatbot configurations, notifications, user inputs, AWS Chatbot generated responses, and interaction data. This data helps us to continuously improve and develop Artificial Intelligence (AI) technologies. Your data is not shared with any third parties and is protected using sophisticated controls to prevent unauthorized access and misuse. AWS Chatbot does not store or use interactions in chat channels with Amazon Q for training AI technologies for AWS Chatbot.</p>
     pub fn get_training_data_collection_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_training_data_collection_enabled()
     }

@@ -255,9 +255,9 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteSlackWo
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DeleteSlackWorkspaceAuthorizationError {
-    /// There was an issue deleting your Slack workspace.
+    /// <p>There was an issue deleting your Slack workspace.</p>
     DeleteSlackWorkspaceAuthorizationFault(crate::types::error::DeleteSlackWorkspaceAuthorizationFault),
-    /// Your request input doesn't meet the constraints that AWS Chatbot requires.
+    /// <p>Your request input doesn't meet the constraints required by AWS Chatbot.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

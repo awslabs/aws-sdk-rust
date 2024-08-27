@@ -68,3 +68,73 @@ pub(crate) fn reflens_list_microsoft_teams_user_identities_output_output_next_to
     };
     ::std::option::Option::Some(input)
 }
+
+pub(crate) fn lens_describe_chime_webhook_configurations_output_output_webhook_configurations(
+    input: crate::operation::describe_chime_webhook_configurations::DescribeChimeWebhookConfigurationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ChimeWebhookConfiguration>> {
+    let input = match input.webhook_configurations {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_slack_channel_configurations_output_output_slack_channel_configurations(
+    input: crate::operation::describe_slack_channel_configurations::DescribeSlackChannelConfigurationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::SlackChannelConfiguration>> {
+    let input = match input.slack_channel_configurations {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_slack_user_identities_output_output_slack_user_identities(
+    input: crate::operation::describe_slack_user_identities::DescribeSlackUserIdentitiesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::SlackUserIdentity>> {
+    let input = match input.slack_user_identities {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_slack_workspaces_output_output_slack_workspaces(
+    input: crate::operation::describe_slack_workspaces::DescribeSlackWorkspacesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::SlackWorkspace>> {
+    let input = match input.slack_workspaces {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_microsoft_teams_channel_configurations_output_output_team_channel_configurations(
+    input: crate::operation::list_microsoft_teams_channel_configurations::ListMicrosoftTeamsChannelConfigurationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::TeamsChannelConfiguration>> {
+    let input = match input.team_channel_configurations {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_microsoft_teams_configured_teams_output_output_configured_teams(
+    input: crate::operation::list_microsoft_teams_configured_teams::ListMicrosoftTeamsConfiguredTeamsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTeam>> {
+    let input = match input.configured_teams {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_microsoft_teams_user_identities_output_output_teams_user_identities(
+    input: crate::operation::list_microsoft_teams_user_identities::ListMicrosoftTeamsUserIdentitiesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::TeamsUserIdentity>> {
+    let input = match input.teams_user_identities {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}

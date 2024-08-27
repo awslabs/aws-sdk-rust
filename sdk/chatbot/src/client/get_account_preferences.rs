@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder takes no input, just [`send`](crate::operation::get_account_preferences::builders::GetAccountPreferencesFluentBuilder::send) it.
     /// - On success, responds with [`GetAccountPreferencesOutput`](crate::operation::get_account_preferences::GetAccountPreferencesOutput) with field(s):
-    ///   - [`account_preferences(Option<AccountPreferences>)`](crate::operation::get_account_preferences::GetAccountPreferencesOutput::account_preferences): Preferences which apply for AWS Chatbot usage in the calling AWS account.
+    ///   - [`account_preferences(Option<AccountPreferences>)`](crate::operation::get_account_preferences::GetAccountPreferencesOutput::account_preferences): <p>The preferences related to AWS Chatbot usage in the calling AWS account.</p>
     /// - On failure, responds with [`SdkError<GetAccountPreferencesError>`](crate::operation::get_account_preferences::GetAccountPreferencesError)
     pub fn get_account_preferences(&self) -> crate::operation::get_account_preferences::builders::GetAccountPreferencesFluentBuilder {
         crate::operation::get_account_preferences::builders::GetAccountPreferencesFluentBuilder::new(self.handle.clone())

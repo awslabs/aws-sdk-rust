@@ -26,9 +26,9 @@ impl crate::operation::create_share::builders::CreateShareInputBuilder {
 /// <p>The following resources support cross-account sharing:</p>
 /// <ul>
 /// <li>
-/// <p>Healthomics variant stores</p></li>
+/// <p>HealthOmics variant stores</p></li>
 /// <li>
-/// <p>Healthomics annotation stores</p></li>
+/// <p>HealthOmics annotation stores</p></li>
 /// <li>
 /// <p>Private workflows</p></li>
 /// </ul>

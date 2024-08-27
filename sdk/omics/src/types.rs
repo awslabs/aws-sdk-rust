@@ -165,6 +165,8 @@ pub use crate::types::_reference_store_filter::ReferenceStoreFilter;
 
 pub use crate::types::_reference_file::ReferenceFile;
 
+pub use crate::types::_reference_creation_type::ReferenceCreationType;
+
 pub use crate::types::_reference_files::ReferenceFiles;
 
 pub use crate::types::_reference_status::ReferenceStatus;
@@ -326,6 +328,8 @@ mod _read_set_status;
 mod _read_set_upload_part_list_filter;
 
 mod _read_set_upload_part_list_item;
+
+mod _reference_creation_type;
 
 mod _reference_file;
 

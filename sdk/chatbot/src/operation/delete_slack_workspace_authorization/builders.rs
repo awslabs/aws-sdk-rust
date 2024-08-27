@@ -22,7 +22,7 @@ impl crate::operation::delete_slack_workspace_authorization::builders::DeleteSla
 }
 /// Fluent builder constructing a request to `DeleteSlackWorkspaceAuthorization`.
 ///
-/// Deletes the Slack workspace authorization that allows channels to be configured in that workspace. This requires all configured channels in the workspace to be deleted.
+/// <p>Deletes the Slack workspace authorization that allows channels to be configured in that workspace. This requires all configured channels in the workspace to be deleted.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteSlackWorkspaceAuthorizationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeleteSlackWorkspaceAuthorizationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The ID of the Slack workspace authorized with AWS Chatbot.
+    /// <p>The ID of the Slack workspace authorized with AWS Chatbot.</p>
     pub fn slack_team_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.slack_team_id(input.into());
         self
     }
-    /// The ID of the Slack workspace authorized with AWS Chatbot.
+    /// <p>The ID of the Slack workspace authorized with AWS Chatbot.</p>
     pub fn set_slack_team_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_slack_team_id(input);
         self
     }
-    /// The ID of the Slack workspace authorized with AWS Chatbot.
+    /// <p>The ID of the Slack workspace authorized with AWS Chatbot.</p>
     pub fn get_slack_team_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_slack_team_id()
     }

@@ -35,6 +35,8 @@ pub struct GetReadSetMetadataOutput {
     pub creation_type: ::std::option::Option<crate::types::CreationType>,
     /// <p>The entity tag (ETag) is a hash of the object meant to represent its semantic content.</p>
     pub etag: ::std::option::Option<crate::types::ETag>,
+    /// <p>The read set's creation job ID.</p>
+    pub creation_job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetReadSetMetadataOutput {
@@ -105,6 +107,10 @@ impl GetReadSetMetadataOutput {
     pub fn etag(&self) -> ::std::option::Option<&crate::types::ETag> {
         self.etag.as_ref()
     }
+    /// <p>The read set's creation job ID.</p>
+    pub fn creation_job_id(&self) -> ::std::option::Option<&str> {
+        self.creation_job_id.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetReadSetMetadataOutput {
     fn request_id(&self) -> Option<&str> {
@@ -138,6 +144,7 @@ pub struct GetReadSetMetadataOutputBuilder {
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
     pub(crate) creation_type: ::std::option::Option<crate::types::CreationType>,
     pub(crate) etag: ::std::option::Option<crate::types::ETag>,
+    pub(crate) creation_job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetReadSetMetadataOutputBuilder {
@@ -371,6 +378,20 @@ impl GetReadSetMetadataOutputBuilder {
     pub fn get_etag(&self) -> &::std::option::Option<crate::types::ETag> {
         &self.etag
     }
+    /// <p>The read set's creation job ID.</p>
+    pub fn creation_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.creation_job_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The read set's creation job ID.</p>
+    pub fn set_creation_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.creation_job_id = input;
+        self
+    }
+    /// <p>The read set's creation job ID.</p>
+    pub fn get_creation_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creation_job_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -439,6 +460,7 @@ impl GetReadSetMetadataOutputBuilder {
             status_message: self.status_message,
             creation_type: self.creation_type,
             etag: self.etag,
+            creation_job_id: self.creation_job_id,
             _request_id: self._request_id,
         })
     }

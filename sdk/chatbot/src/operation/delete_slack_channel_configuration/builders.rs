@@ -22,7 +22,7 @@ impl crate::operation::delete_slack_channel_configuration::builders::DeleteSlack
 }
 /// Fluent builder constructing a request to `DeleteSlackChannelConfiguration`.
 ///
-/// Deletes Slack Channel Configuration
+/// <p>Deletes a Slack channel configuration for AWS Chatbot</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteSlackChannelConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeleteSlackChannelConfigurationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The ARN of the SlackChannelConfiguration to delete.
+    /// <p>The Amazon Resource Name (ARN) of the SlackChannelConfiguration to delete.</p>
     pub fn chat_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.chat_configuration_arn(input.into());
         self
     }
-    /// The ARN of the SlackChannelConfiguration to delete.
+    /// <p>The Amazon Resource Name (ARN) of the SlackChannelConfiguration to delete.</p>
     pub fn set_chat_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_chat_configuration_arn(input);
         self
     }
-    /// The ARN of the SlackChannelConfiguration to delete.
+    /// <p>The Amazon Resource Name (ARN) of the SlackChannelConfiguration to delete.</p>
     pub fn get_chat_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_chat_configuration_arn()
     }

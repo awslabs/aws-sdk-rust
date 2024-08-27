@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteSlackChannelConfiguration`](crate::operation::delete_slack_channel_configuration::builders::DeleteSlackChannelConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`chat_configuration_arn(impl Into<String>)`](crate::operation::delete_slack_channel_configuration::builders::DeleteSlackChannelConfigurationFluentBuilder::chat_configuration_arn) / [`set_chat_configuration_arn(Option<String>)`](crate::operation::delete_slack_channel_configuration::builders::DeleteSlackChannelConfigurationFluentBuilder::set_chat_configuration_arn):<br>required: **true**<br>The ARN of the SlackChannelConfiguration to delete.<br>
+    ///   - [`chat_configuration_arn(impl Into<String>)`](crate::operation::delete_slack_channel_configuration::builders::DeleteSlackChannelConfigurationFluentBuilder::chat_configuration_arn) / [`set_chat_configuration_arn(Option<String>)`](crate::operation::delete_slack_channel_configuration::builders::DeleteSlackChannelConfigurationFluentBuilder::set_chat_configuration_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the SlackChannelConfiguration to delete.</p><br>
     /// - On success, responds with [`DeleteSlackChannelConfigurationOutput`](crate::operation::delete_slack_channel_configuration::DeleteSlackChannelConfigurationOutput)
     /// - On failure, responds with [`SdkError<DeleteSlackChannelConfigurationError>`](crate::operation::delete_slack_channel_configuration::DeleteSlackChannelConfigurationError)
     pub fn delete_slack_channel_configuration(

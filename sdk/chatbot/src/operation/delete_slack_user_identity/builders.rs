@@ -22,7 +22,7 @@ impl crate::operation::delete_slack_user_identity::builders::DeleteSlackUserIden
 }
 /// Fluent builder constructing a request to `DeleteSlackUserIdentity`.
 ///
-/// Deletes a Slack user identity
+/// <p>Deletes a user level permission for a Slack channel configuration.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteSlackUserIdentityFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,45 @@ impl DeleteSlackUserIdentityFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The ARN of the SlackChannelConfiguration associated with the user identity to delete.
+    /// <p>The ARN of the SlackChannelConfiguration associated with the user identity to delete.</p>
     pub fn chat_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.chat_configuration_arn(input.into());
         self
     }
-    /// The ARN of the SlackChannelConfiguration associated with the user identity to delete.
+    /// <p>The ARN of the SlackChannelConfiguration associated with the user identity to delete.</p>
     pub fn set_chat_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_chat_configuration_arn(input);
         self
     }
-    /// The ARN of the SlackChannelConfiguration associated with the user identity to delete.
+    /// <p>The ARN of the SlackChannelConfiguration associated with the user identity to delete.</p>
     pub fn get_chat_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_chat_configuration_arn()
     }
-    /// The ID of the Slack workspace authorized with AWS Chatbot.
+    /// <p>The ID of the Slack workspace authorized with AWS Chatbot.</p>
     pub fn slack_team_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.slack_team_id(input.into());
         self
     }
-    /// The ID of the Slack workspace authorized with AWS Chatbot.
+    /// <p>The ID of the Slack workspace authorized with AWS Chatbot.</p>
     pub fn set_slack_team_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_slack_team_id(input);
         self
     }
-    /// The ID of the Slack workspace authorized with AWS Chatbot.
+    /// <p>The ID of the Slack workspace authorized with AWS Chatbot.</p>
     pub fn get_slack_team_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_slack_team_id()
     }
-    /// The ID of the user in Slack.
+    /// <p>The ID of the user in Slack</p>
     pub fn slack_user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.slack_user_id(input.into());
         self
     }
-    /// The ID of the user in Slack.
+    /// <p>The ID of the user in Slack</p>
     pub fn set_slack_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_slack_user_id(input);
         self
     }
-    /// The ID of the user in Slack.
+    /// <p>The ID of the user in Slack</p>
     pub fn get_slack_user_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_slack_user_id()
     }
