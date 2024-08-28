@@ -2487,6 +2487,10 @@ source_hash = '89b685acd4163bc6b97fba0fec129708b9a68eed80beb6937dac651099d5c880'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = 'd08f576b0bc9146b45af732b63e0a8923b13fe09816d385e32b4c6d9e503de81'
+
+[release]
+tag = 'release-2024-08-28'
+
 [release.crates]
 aws-sdk-appconfig = '1.41.0'
 aws-sdk-datazone = '1.49.0'
