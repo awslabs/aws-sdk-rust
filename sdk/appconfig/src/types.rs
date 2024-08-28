@@ -23,6 +23,8 @@ pub use crate::types::_validator::Validator;
 
 pub use crate::types::_validator_type::ValidatorType;
 
+pub use crate::types::_deletion_protection_settings::DeletionProtectionSettings;
+
 pub use crate::types::_applied_extension::AppliedExtension;
 
 pub use crate::types::_deployment_event::DeploymentEvent;
@@ -51,6 +53,8 @@ pub use crate::types::_configuration_profile_summary::ConfigurationProfileSummar
 
 pub use crate::types::_application::Application;
 
+pub use crate::types::_deletion_protection_check::DeletionProtectionCheck;
+
 pub use crate::types::_bytes_measure::BytesMeasure;
 
 mod _action;
@@ -70,6 +74,10 @@ mod _bad_request_reason;
 mod _bytes_measure;
 
 mod _configuration_profile_summary;
+
+mod _deletion_protection_check;
+
+mod _deletion_protection_settings;
 
 mod _deployment_event;
 

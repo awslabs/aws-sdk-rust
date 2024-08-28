@@ -12,6 +12,7 @@
 /// ```text
 /// # let ipampublicaddresstype = unimplemented!();
 /// match ipampublicaddresstype {
+///     IpamPublicAddressType::AmazonOwnedContig => { /* ... */ },
 ///     IpamPublicAddressType::AmazonOwnedEip => { /* ... */ },
 ///     IpamPublicAddressType::Byoip => { /* ... */ },
 ///     IpamPublicAddressType::Ec2PublicIp => { /* ... */ },
@@ -45,6 +46,8 @@
 )]
 pub enum IpamPublicAddressType {
     #[allow(missing_docs)] // documentation missing in model
+    AmazonOwnedContig,
+    #[allow(missing_docs)] // documentation missing in model
     AmazonOwnedEip,
     #[allow(missing_docs)] // documentation missing in model
     Byoip,
@@ -61,6 +64,7 @@ pub enum IpamPublicAddressType {
 impl ::std::convert::From<&str> for IpamPublicAddressType {
     fn from(s: &str) -> Self {
         match s {
+            "amazon-owned-contig" => IpamPublicAddressType::AmazonOwnedContig,
             "amazon-owned-eip" => IpamPublicAddressType::AmazonOwnedEip,
             "byoip" => IpamPublicAddressType::Byoip,
             "ec2-public-ip" => IpamPublicAddressType::Ec2PublicIp,
@@ -81,6 +85,7 @@ impl IpamPublicAddressType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            IpamPublicAddressType::AmazonOwnedContig => "amazon-owned-contig",
             IpamPublicAddressType::AmazonOwnedEip => "amazon-owned-eip",
             IpamPublicAddressType::Byoip => "byoip",
             IpamPublicAddressType::Ec2PublicIp => "ec2-public-ip",
@@ -92,6 +97,7 @@ impl IpamPublicAddressType {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "amazon-owned-contig",
             "amazon-owned-eip",
             "byoip",
             "ec2-public-ip",
@@ -120,6 +126,7 @@ impl IpamPublicAddressType {
 impl ::std::fmt::Display for IpamPublicAddressType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            IpamPublicAddressType::AmazonOwnedContig => write!(f, "amazon-owned-contig"),
             IpamPublicAddressType::AmazonOwnedEip => write!(f, "amazon-owned-eip"),
             IpamPublicAddressType::Byoip => write!(f, "byoip"),
             IpamPublicAddressType::Ec2PublicIp => write!(f, "ec2-public-ip"),

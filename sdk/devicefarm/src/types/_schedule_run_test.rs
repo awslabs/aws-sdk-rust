@@ -10,8 +10,6 @@ pub struct ScheduleRunTest {
     /// <li>
     /// <p>BUILTIN_FUZZ</p></li>
     /// <li>
-    /// <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p></li>
-    /// <li>
     /// <p>APPIUM_JAVA_JUNIT</p></li>
     /// <li>
     /// <p>APPIUM_JAVA_TESTNG</p></li>
@@ -32,13 +30,7 @@ pub struct ScheduleRunTest {
     /// <li>
     /// <p>APPIUM_WEB_RUBY</p></li>
     /// <li>
-    /// <p>CALABASH</p></li>
-    /// <li>
     /// <p>INSTRUMENTATION</p></li>
-    /// <li>
-    /// <p>UIAUTOMATION</p></li>
-    /// <li>
-    /// <p>UIAUTOMATOR</p></li>
     /// <li>
     /// <p>XCTEST</p></li>
     /// <li>
@@ -56,13 +48,6 @@ pub struct ScheduleRunTest {
     /// <ul>
     /// <li>
     /// <p><code>app_performance_monitoring</code>: Performance monitoring is enabled by default. Set this parameter to false to disable it.</p></li>
-    /// </ul>
-    /// <p>For Calabash tests:</p>
-    /// <ul>
-    /// <li>
-    /// <p>profile: A cucumber profile (for example, <code>my_profile_name</code>).</p></li>
-    /// <li>
-    /// <p>tags: You can limit execution to features or scenarios that have (or don't have) certain tags (for example, @smoke or @smoke,~@wip).</p></li>
     /// </ul>
     /// <p>For Appium tests (all types):</p>
     /// <ul>
@@ -85,13 +70,6 @@ pub struct ScheduleRunTest {
     /// <p>throttle: The time, in ms, between 0 and 1000, that the UI fuzz test should wait between events.</p></li>
     /// <li>
     /// <p>seed: A seed to use for randomizing the UI fuzz test. Using the same seed value between tests ensures identical event sequences.</p></li>
-    /// </ul>
-    /// <p>For Explorer tests:</p>
-    /// <ul>
-    /// <li>
-    /// <p>username: A user name to use if the Explorer encounters a login form. If not supplied, no user name is inserted.</p></li>
-    /// <li>
-    /// <p>password: A password to use if the Explorer encounters a login form. If not supplied, no password is inserted.</p></li>
     /// </ul>
     /// <p>For Instrumentation:</p>
     /// <ul>
@@ -121,19 +99,6 @@ pub struct ScheduleRunTest {
     /// <p>Running multiple tests: <code>LoginTests/testValid,LoginTests/testInvalid</code></p></li>
     /// </ul></li>
     /// </ul>
-    /// <p>For UIAutomator:</p>
-    /// <ul>
-    /// <li>
-    /// <p>filter: A test filter string. Examples:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Running a single test case: <code>com.android.abc.Test1</code></p></li>
-    /// <li>
-    /// <p>Running a single test: <code>com.android.abc.Test1#smoke</code></p></li>
-    /// <li>
-    /// <p>Running multiple tests: <code>com.android.abc.Test1,com.android.abc.Test2</code></p></li>
-    /// </ul></li>
-    /// </ul>
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ScheduleRunTest {
@@ -142,8 +107,6 @@ impl ScheduleRunTest {
     /// <ul>
     /// <li>
     /// <p>BUILTIN_FUZZ</p></li>
-    /// <li>
-    /// <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p></li>
     /// <li>
     /// <p>APPIUM_JAVA_JUNIT</p></li>
     /// <li>
@@ -165,13 +128,7 @@ impl ScheduleRunTest {
     /// <li>
     /// <p>APPIUM_WEB_RUBY</p></li>
     /// <li>
-    /// <p>CALABASH</p></li>
-    /// <li>
     /// <p>INSTRUMENTATION</p></li>
-    /// <li>
-    /// <p>UIAUTOMATION</p></li>
-    /// <li>
-    /// <p>UIAUTOMATOR</p></li>
     /// <li>
     /// <p>XCTEST</p></li>
     /// <li>
@@ -198,13 +155,6 @@ impl ScheduleRunTest {
     /// <li>
     /// <p><code>app_performance_monitoring</code>: Performance monitoring is enabled by default. Set this parameter to false to disable it.</p></li>
     /// </ul>
-    /// <p>For Calabash tests:</p>
-    /// <ul>
-    /// <li>
-    /// <p>profile: A cucumber profile (for example, <code>my_profile_name</code>).</p></li>
-    /// <li>
-    /// <p>tags: You can limit execution to features or scenarios that have (or don't have) certain tags (for example, @smoke or @smoke,~@wip).</p></li>
-    /// </ul>
     /// <p>For Appium tests (all types):</p>
     /// <ul>
     /// <li>
@@ -226,13 +176,6 @@ impl ScheduleRunTest {
     /// <p>throttle: The time, in ms, between 0 and 1000, that the UI fuzz test should wait between events.</p></li>
     /// <li>
     /// <p>seed: A seed to use for randomizing the UI fuzz test. Using the same seed value between tests ensures identical event sequences.</p></li>
-    /// </ul>
-    /// <p>For Explorer tests:</p>
-    /// <ul>
-    /// <li>
-    /// <p>username: A user name to use if the Explorer encounters a login form. If not supplied, no user name is inserted.</p></li>
-    /// <li>
-    /// <p>password: A password to use if the Explorer encounters a login form. If not supplied, no password is inserted.</p></li>
     /// </ul>
     /// <p>For Instrumentation:</p>
     /// <ul>
@@ -260,19 +203,6 @@ impl ScheduleRunTest {
     /// <p>Running a single test: <code>LoginTests/testValid</code></p></li>
     /// <li>
     /// <p>Running multiple tests: <code>LoginTests/testValid,LoginTests/testInvalid</code></p></li>
-    /// </ul></li>
-    /// </ul>
-    /// <p>For UIAutomator:</p>
-    /// <ul>
-    /// <li>
-    /// <p>filter: A test filter string. Examples:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Running a single test case: <code>com.android.abc.Test1</code></p></li>
-    /// <li>
-    /// <p>Running a single test: <code>com.android.abc.Test1#smoke</code></p></li>
-    /// <li>
-    /// <p>Running multiple tests: <code>com.android.abc.Test1,com.android.abc.Test2</code></p></li>
     /// </ul></li>
     /// </ul>
     pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -303,8 +233,6 @@ impl ScheduleRunTestBuilder {
     /// <li>
     /// <p>BUILTIN_FUZZ</p></li>
     /// <li>
-    /// <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p></li>
-    /// <li>
     /// <p>APPIUM_JAVA_JUNIT</p></li>
     /// <li>
     /// <p>APPIUM_JAVA_TESTNG</p></li>
@@ -325,13 +253,7 @@ impl ScheduleRunTestBuilder {
     /// <li>
     /// <p>APPIUM_WEB_RUBY</p></li>
     /// <li>
-    /// <p>CALABASH</p></li>
-    /// <li>
     /// <p>INSTRUMENTATION</p></li>
-    /// <li>
-    /// <p>UIAUTOMATION</p></li>
-    /// <li>
-    /// <p>UIAUTOMATOR</p></li>
     /// <li>
     /// <p>XCTEST</p></li>
     /// <li>
@@ -348,8 +270,6 @@ impl ScheduleRunTestBuilder {
     /// <li>
     /// <p>BUILTIN_FUZZ</p></li>
     /// <li>
-    /// <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p></li>
-    /// <li>
     /// <p>APPIUM_JAVA_JUNIT</p></li>
     /// <li>
     /// <p>APPIUM_JAVA_TESTNG</p></li>
@@ -370,13 +290,7 @@ impl ScheduleRunTestBuilder {
     /// <li>
     /// <p>APPIUM_WEB_RUBY</p></li>
     /// <li>
-    /// <p>CALABASH</p></li>
-    /// <li>
     /// <p>INSTRUMENTATION</p></li>
-    /// <li>
-    /// <p>UIAUTOMATION</p></li>
-    /// <li>
-    /// <p>UIAUTOMATOR</p></li>
     /// <li>
     /// <p>XCTEST</p></li>
     /// <li>
@@ -392,8 +306,6 @@ impl ScheduleRunTestBuilder {
     /// <li>
     /// <p>BUILTIN_FUZZ</p></li>
     /// <li>
-    /// <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p></li>
-    /// <li>
     /// <p>APPIUM_JAVA_JUNIT</p></li>
     /// <li>
     /// <p>APPIUM_JAVA_TESTNG</p></li>
@@ -414,13 +326,7 @@ impl ScheduleRunTestBuilder {
     /// <li>
     /// <p>APPIUM_WEB_RUBY</p></li>
     /// <li>
-    /// <p>CALABASH</p></li>
-    /// <li>
     /// <p>INSTRUMENTATION</p></li>
-    /// <li>
-    /// <p>UIAUTOMATION</p></li>
-    /// <li>
-    /// <p>UIAUTOMATOR</p></li>
     /// <li>
     /// <p>XCTEST</p></li>
     /// <li>
@@ -481,13 +387,6 @@ impl ScheduleRunTestBuilder {
     /// <li>
     /// <p><code>app_performance_monitoring</code>: Performance monitoring is enabled by default. Set this parameter to false to disable it.</p></li>
     /// </ul>
-    /// <p>For Calabash tests:</p>
-    /// <ul>
-    /// <li>
-    /// <p>profile: A cucumber profile (for example, <code>my_profile_name</code>).</p></li>
-    /// <li>
-    /// <p>tags: You can limit execution to features or scenarios that have (or don't have) certain tags (for example, @smoke or @smoke,~@wip).</p></li>
-    /// </ul>
     /// <p>For Appium tests (all types):</p>
     /// <ul>
     /// <li>
@@ -509,13 +408,6 @@ impl ScheduleRunTestBuilder {
     /// <p>throttle: The time, in ms, between 0 and 1000, that the UI fuzz test should wait between events.</p></li>
     /// <li>
     /// <p>seed: A seed to use for randomizing the UI fuzz test. Using the same seed value between tests ensures identical event sequences.</p></li>
-    /// </ul>
-    /// <p>For Explorer tests:</p>
-    /// <ul>
-    /// <li>
-    /// <p>username: A user name to use if the Explorer encounters a login form. If not supplied, no user name is inserted.</p></li>
-    /// <li>
-    /// <p>password: A password to use if the Explorer encounters a login form. If not supplied, no password is inserted.</p></li>
     /// </ul>
     /// <p>For Instrumentation:</p>
     /// <ul>
@@ -543,19 +435,6 @@ impl ScheduleRunTestBuilder {
     /// <p>Running a single test: <code>LoginTests/testValid</code></p></li>
     /// <li>
     /// <p>Running multiple tests: <code>LoginTests/testValid,LoginTests/testInvalid</code></p></li>
-    /// </ul></li>
-    /// </ul>
-    /// <p>For UIAutomator:</p>
-    /// <ul>
-    /// <li>
-    /// <p>filter: A test filter string. Examples:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Running a single test case: <code>com.android.abc.Test1</code></p></li>
-    /// <li>
-    /// <p>Running a single test: <code>com.android.abc.Test1#smoke</code></p></li>
-    /// <li>
-    /// <p>Running multiple tests: <code>com.android.abc.Test1,com.android.abc.Test2</code></p></li>
     /// </ul></li>
     /// </ul>
     pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -570,13 +449,6 @@ impl ScheduleRunTestBuilder {
     /// <li>
     /// <p><code>app_performance_monitoring</code>: Performance monitoring is enabled by default. Set this parameter to false to disable it.</p></li>
     /// </ul>
-    /// <p>For Calabash tests:</p>
-    /// <ul>
-    /// <li>
-    /// <p>profile: A cucumber profile (for example, <code>my_profile_name</code>).</p></li>
-    /// <li>
-    /// <p>tags: You can limit execution to features or scenarios that have (or don't have) certain tags (for example, @smoke or @smoke,~@wip).</p></li>
-    /// </ul>
     /// <p>For Appium tests (all types):</p>
     /// <ul>
     /// <li>
@@ -598,13 +470,6 @@ impl ScheduleRunTestBuilder {
     /// <p>throttle: The time, in ms, between 0 and 1000, that the UI fuzz test should wait between events.</p></li>
     /// <li>
     /// <p>seed: A seed to use for randomizing the UI fuzz test. Using the same seed value between tests ensures identical event sequences.</p></li>
-    /// </ul>
-    /// <p>For Explorer tests:</p>
-    /// <ul>
-    /// <li>
-    /// <p>username: A user name to use if the Explorer encounters a login form. If not supplied, no user name is inserted.</p></li>
-    /// <li>
-    /// <p>password: A password to use if the Explorer encounters a login form. If not supplied, no password is inserted.</p></li>
     /// </ul>
     /// <p>For Instrumentation:</p>
     /// <ul>
@@ -632,19 +497,6 @@ impl ScheduleRunTestBuilder {
     /// <p>Running a single test: <code>LoginTests/testValid</code></p></li>
     /// <li>
     /// <p>Running multiple tests: <code>LoginTests/testValid,LoginTests/testInvalid</code></p></li>
-    /// </ul></li>
-    /// </ul>
-    /// <p>For UIAutomator:</p>
-    /// <ul>
-    /// <li>
-    /// <p>filter: A test filter string. Examples:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Running a single test case: <code>com.android.abc.Test1</code></p></li>
-    /// <li>
-    /// <p>Running a single test: <code>com.android.abc.Test1#smoke</code></p></li>
-    /// <li>
-    /// <p>Running multiple tests: <code>com.android.abc.Test1,com.android.abc.Test2</code></p></li>
     /// </ul></li>
     /// </ul>
     pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
@@ -657,13 +509,6 @@ impl ScheduleRunTestBuilder {
     /// <li>
     /// <p><code>app_performance_monitoring</code>: Performance monitoring is enabled by default. Set this parameter to false to disable it.</p></li>
     /// </ul>
-    /// <p>For Calabash tests:</p>
-    /// <ul>
-    /// <li>
-    /// <p>profile: A cucumber profile (for example, <code>my_profile_name</code>).</p></li>
-    /// <li>
-    /// <p>tags: You can limit execution to features or scenarios that have (or don't have) certain tags (for example, @smoke or @smoke,~@wip).</p></li>
-    /// </ul>
     /// <p>For Appium tests (all types):</p>
     /// <ul>
     /// <li>
@@ -685,13 +530,6 @@ impl ScheduleRunTestBuilder {
     /// <p>throttle: The time, in ms, between 0 and 1000, that the UI fuzz test should wait between events.</p></li>
     /// <li>
     /// <p>seed: A seed to use for randomizing the UI fuzz test. Using the same seed value between tests ensures identical event sequences.</p></li>
-    /// </ul>
-    /// <p>For Explorer tests:</p>
-    /// <ul>
-    /// <li>
-    /// <p>username: A user name to use if the Explorer encounters a login form. If not supplied, no user name is inserted.</p></li>
-    /// <li>
-    /// <p>password: A password to use if the Explorer encounters a login form. If not supplied, no password is inserted.</p></li>
     /// </ul>
     /// <p>For Instrumentation:</p>
     /// <ul>
@@ -719,19 +557,6 @@ impl ScheduleRunTestBuilder {
     /// <p>Running a single test: <code>LoginTests/testValid</code></p></li>
     /// <li>
     /// <p>Running multiple tests: <code>LoginTests/testValid,LoginTests/testInvalid</code></p></li>
-    /// </ul></li>
-    /// </ul>
-    /// <p>For UIAutomator:</p>
-    /// <ul>
-    /// <li>
-    /// <p>filter: A test filter string. Examples:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Running a single test case: <code>com.android.abc.Test1</code></p></li>
-    /// <li>
-    /// <p>Running a single test: <code>com.android.abc.Test1#smoke</code></p></li>
-    /// <li>
-    /// <p>Running multiple tests: <code>com.android.abc.Test1,com.android.abc.Test2</code></p></li>
     /// </ul></li>
     /// </ul>
     pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {

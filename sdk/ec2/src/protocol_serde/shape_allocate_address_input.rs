@@ -48,6 +48,11 @@ pub fn ser_allocate_address_input_input_input(
             list_16.finish();
         }
     }
+    #[allow(unused_mut)]
+    let mut scope_18 = writer.prefix("IpamPoolId");
+    if let Some(var_19) = &input.ipam_pool_id {
+        scope_18.string(var_19);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

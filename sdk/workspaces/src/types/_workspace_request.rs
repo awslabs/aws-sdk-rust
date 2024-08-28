@@ -21,7 +21,9 @@ pub struct WorkspaceRequest {
     pub workspace_properties: ::std::option::Option<crate::types::WorkspaceProperties>,
     /// <p>The tags for the WorkSpace.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    /// <p>The name of the user-decoupled WorkSpace.</p>
+    /// <p>The name of the user-decoupled WorkSpace.</p><note>
+    /// <p><code>WorkspaceName</code> is required if <code>UserName</code> is <code>\[UNDEFINED\]</code> for user-decoupled WorkSpaces. <code>WorkspaceName</code> is not applicable if <code>UserName</code> is specified for user-assigned WorkSpaces.</p>
+    /// </note>
     pub workspace_name: ::std::option::Option<::std::string::String>,
 }
 impl WorkspaceRequest {
@@ -63,7 +65,9 @@ impl WorkspaceRequest {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
-    /// <p>The name of the user-decoupled WorkSpace.</p>
+    /// <p>The name of the user-decoupled WorkSpace.</p><note>
+    /// <p><code>WorkspaceName</code> is required if <code>UserName</code> is <code>\[UNDEFINED\]</code> for user-decoupled WorkSpaces. <code>WorkspaceName</code> is not applicable if <code>UserName</code> is specified for user-assigned WorkSpaces.</p>
+    /// </note>
     pub fn workspace_name(&self) -> ::std::option::Option<&str> {
         self.workspace_name.as_deref()
     }
@@ -214,17 +218,23 @@ impl WorkspaceRequestBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
-    /// <p>The name of the user-decoupled WorkSpace.</p>
+    /// <p>The name of the user-decoupled WorkSpace.</p><note>
+    /// <p><code>WorkspaceName</code> is required if <code>UserName</code> is <code>\[UNDEFINED\]</code> for user-decoupled WorkSpaces. <code>WorkspaceName</code> is not applicable if <code>UserName</code> is specified for user-assigned WorkSpaces.</p>
+    /// </note>
     pub fn workspace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the user-decoupled WorkSpace.</p>
+    /// <p>The name of the user-decoupled WorkSpace.</p><note>
+    /// <p><code>WorkspaceName</code> is required if <code>UserName</code> is <code>\[UNDEFINED\]</code> for user-decoupled WorkSpaces. <code>WorkspaceName</code> is not applicable if <code>UserName</code> is specified for user-assigned WorkSpaces.</p>
+    /// </note>
     pub fn set_workspace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workspace_name = input;
         self
     }
-    /// <p>The name of the user-decoupled WorkSpace.</p>
+    /// <p>The name of the user-decoupled WorkSpace.</p><note>
+    /// <p><code>WorkspaceName</code> is required if <code>UserName</code> is <code>\[UNDEFINED\]</code> for user-decoupled WorkSpaces. <code>WorkspaceName</code> is not applicable if <code>UserName</code> is specified for user-assigned WorkSpaces.</p>
+    /// </note>
     pub fn get_workspace_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.workspace_name
     }

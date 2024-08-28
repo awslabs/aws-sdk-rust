@@ -23,7 +23,7 @@ impl crate::operation::start_workspaces::builders::StartWorkspacesInputBuilder {
 /// Fluent builder constructing a request to `StartWorkspaces`.
 ///
 /// <p>Starts the specified WorkSpaces.</p>
-/// <p>You cannot start a WorkSpace unless it has a running mode of <code>AutoStop</code> and a state of <code>STOPPED</code>.</p>
+/// <p>You cannot start a WorkSpace unless it has a running mode of <code>AutoStop</code> or <code>Manual</code> and a state of <code>STOPPED</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartWorkspacesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -14,10 +14,6 @@ pub struct Run {
     /// <li>
     /// <p>BUILTIN_FUZZ</p></li>
     /// <li>
-    /// <p>BUILTIN_EXPLORER</p><note>
-    /// <p>For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p>
-    /// </note></li>
-    /// <li>
     /// <p>APPIUM_JAVA_JUNIT</p></li>
     /// <li>
     /// <p>APPIUM_JAVA_TESTNG</p></li>
@@ -38,13 +34,7 @@ pub struct Run {
     /// <li>
     /// <p>APPIUM_WEB_RUBY</p></li>
     /// <li>
-    /// <p>CALABASH</p></li>
-    /// <li>
     /// <p>INSTRUMENTATION</p></li>
-    /// <li>
-    /// <p>UIAUTOMATION</p></li>
-    /// <li>
-    /// <p>UIAUTOMATOR</p></li>
     /// <li>
     /// <p>XCTEST</p></li>
     /// <li>
@@ -173,10 +163,6 @@ impl Run {
     /// <li>
     /// <p>BUILTIN_FUZZ</p></li>
     /// <li>
-    /// <p>BUILTIN_EXPLORER</p><note>
-    /// <p>For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p>
-    /// </note></li>
-    /// <li>
     /// <p>APPIUM_JAVA_JUNIT</p></li>
     /// <li>
     /// <p>APPIUM_JAVA_TESTNG</p></li>
@@ -197,13 +183,7 @@ impl Run {
     /// <li>
     /// <p>APPIUM_WEB_RUBY</p></li>
     /// <li>
-    /// <p>CALABASH</p></li>
-    /// <li>
     /// <p>INSTRUMENTATION</p></li>
-    /// <li>
-    /// <p>UIAUTOMATION</p></li>
-    /// <li>
-    /// <p>UIAUTOMATOR</p></li>
     /// <li>
     /// <p>XCTEST</p></li>
     /// <li>
@@ -456,10 +436,6 @@ impl RunBuilder {
     /// <li>
     /// <p>BUILTIN_FUZZ</p></li>
     /// <li>
-    /// <p>BUILTIN_EXPLORER</p><note>
-    /// <p>For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p>
-    /// </note></li>
-    /// <li>
     /// <p>APPIUM_JAVA_JUNIT</p></li>
     /// <li>
     /// <p>APPIUM_JAVA_TESTNG</p></li>
@@ -480,13 +456,7 @@ impl RunBuilder {
     /// <li>
     /// <p>APPIUM_WEB_RUBY</p></li>
     /// <li>
-    /// <p>CALABASH</p></li>
-    /// <li>
     /// <p>INSTRUMENTATION</p></li>
-    /// <li>
-    /// <p>UIAUTOMATION</p></li>
-    /// <li>
-    /// <p>UIAUTOMATOR</p></li>
     /// <li>
     /// <p>XCTEST</p></li>
     /// <li>
@@ -502,10 +472,6 @@ impl RunBuilder {
     /// <li>
     /// <p>BUILTIN_FUZZ</p></li>
     /// <li>
-    /// <p>BUILTIN_EXPLORER</p><note>
-    /// <p>For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p>
-    /// </note></li>
-    /// <li>
     /// <p>APPIUM_JAVA_JUNIT</p></li>
     /// <li>
     /// <p>APPIUM_JAVA_TESTNG</p></li>
@@ -526,13 +492,7 @@ impl RunBuilder {
     /// <li>
     /// <p>APPIUM_WEB_RUBY</p></li>
     /// <li>
-    /// <p>CALABASH</p></li>
-    /// <li>
     /// <p>INSTRUMENTATION</p></li>
-    /// <li>
-    /// <p>UIAUTOMATION</p></li>
-    /// <li>
-    /// <p>UIAUTOMATOR</p></li>
     /// <li>
     /// <p>XCTEST</p></li>
     /// <li>
@@ -548,10 +508,6 @@ impl RunBuilder {
     /// <li>
     /// <p>BUILTIN_FUZZ</p></li>
     /// <li>
-    /// <p>BUILTIN_EXPLORER</p><note>
-    /// <p>For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p>
-    /// </note></li>
-    /// <li>
     /// <p>APPIUM_JAVA_JUNIT</p></li>
     /// <li>
     /// <p>APPIUM_JAVA_TESTNG</p></li>
@@ -572,13 +528,7 @@ impl RunBuilder {
     /// <li>
     /// <p>APPIUM_WEB_RUBY</p></li>
     /// <li>
-    /// <p>CALABASH</p></li>
-    /// <li>
     /// <p>INSTRUMENTATION</p></li>
-    /// <li>
-    /// <p>UIAUTOMATION</p></li>
-    /// <li>
-    /// <p>UIAUTOMATOR</p></li>
     /// <li>
     /// <p>XCTEST</p></li>
     /// <li>

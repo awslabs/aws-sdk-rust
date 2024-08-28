@@ -215,4 +215,18 @@ impl AllocateAddressFluentBuilder {
     pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
+    /// <p>The ID of an IPAM pool.</p>
+    pub fn ipam_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.ipam_pool_id(input.into());
+        self
+    }
+    /// <p>The ID of an IPAM pool.</p>
+    pub fn set_ipam_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_ipam_pool_id(input);
+        self
+    }
+    /// <p>The ID of an IPAM pool.</p>
+    pub fn get_ipam_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ipam_pool_id()
+    }
 }

@@ -17,6 +17,8 @@ pub struct AllocateAddressInput {
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The tags to assign to the Elastic IP address.</p>
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    /// <p>The ID of an IPAM pool.</p>
+    pub ipam_pool_id: ::std::option::Option<::std::string::String>,
 }
 impl AllocateAddressInput {
     /// <p>The network (<code>vpc</code>).</p>
@@ -49,6 +51,10 @@ impl AllocateAddressInput {
     pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
         self.tag_specifications.as_deref().unwrap_or_default()
     }
+    /// <p>The ID of an IPAM pool.</p>
+    pub fn ipam_pool_id(&self) -> ::std::option::Option<&str> {
+        self.ipam_pool_id.as_deref()
+    }
 }
 impl AllocateAddressInput {
     /// Creates a new builder-style object to manufacture [`AllocateAddressInput`](crate::operation::allocate_address::AllocateAddressInput).
@@ -68,6 +74,7 @@ pub struct AllocateAddressInputBuilder {
     pub(crate) customer_owned_ipv4_pool: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) ipam_pool_id: ::std::option::Option<::std::string::String>,
 }
 impl AllocateAddressInputBuilder {
     /// <p>The network (<code>vpc</code>).</p>
@@ -174,6 +181,20 @@ impl AllocateAddressInputBuilder {
     pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
+    /// <p>The ID of an IPAM pool.</p>
+    pub fn ipam_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ipam_pool_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of an IPAM pool.</p>
+    pub fn set_ipam_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ipam_pool_id = input;
+        self
+    }
+    /// <p>The ID of an IPAM pool.</p>
+    pub fn get_ipam_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipam_pool_id
+    }
     /// Consumes the builder and constructs a [`AllocateAddressInput`](crate::operation::allocate_address::AllocateAddressInput).
     pub fn build(
         self,
@@ -186,6 +207,7 @@ impl AllocateAddressInputBuilder {
             customer_owned_ipv4_pool: self.customer_owned_ipv4_pool,
             dry_run: self.dry_run,
             tag_specifications: self.tag_specifications,
+            ipam_pool_id: self.ipam_pool_id,
         })
     }
 }

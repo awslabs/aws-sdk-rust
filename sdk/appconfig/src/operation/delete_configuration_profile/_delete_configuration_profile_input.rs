@@ -7,6 +7,17 @@ pub struct DeleteConfigurationProfileInput {
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the configuration profile you want to delete.</p>
     pub configuration_profile_id: ::std::option::Option<::std::string::String>,
+    /// <p>A parameter to configure deletion protection. If enabled, deletion protection prevents a user from deleting a configuration profile if your application has called either <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html">GetLatestConfiguration</a> or for the configuration profile during the specified interval.</p>
+    /// <p>This parameter supports the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BYPASS</code>: Instructs AppConfig to bypass the deletion protection check and delete a configuration profile even if deletion protection would have otherwise prevented it.</p></li>
+    /// <li>
+    /// <p><code>APPLY</code>: Instructs the deletion protection check to run, even if deletion protection is disabled at the account level. <code>APPLY</code> also forces the deletion protection check to run against resources created in the past hour, which are normally excluded from deletion protection checks.</p></li>
+    /// <li>
+    /// <p><code>ACCOUNT_DEFAULT</code>: The default setting, which instructs AppConfig to implement the deletion protection value specified in the <code>UpdateAccountSettings</code> API.</p></li>
+    /// </ul>
+    pub deletion_protection_check: ::std::option::Option<crate::types::DeletionProtectionCheck>,
 }
 impl DeleteConfigurationProfileInput {
     /// <p>The application ID that includes the configuration profile you want to delete.</p>
@@ -16,6 +27,19 @@ impl DeleteConfigurationProfileInput {
     /// <p>The ID of the configuration profile you want to delete.</p>
     pub fn configuration_profile_id(&self) -> ::std::option::Option<&str> {
         self.configuration_profile_id.as_deref()
+    }
+    /// <p>A parameter to configure deletion protection. If enabled, deletion protection prevents a user from deleting a configuration profile if your application has called either <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html">GetLatestConfiguration</a> or for the configuration profile during the specified interval.</p>
+    /// <p>This parameter supports the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BYPASS</code>: Instructs AppConfig to bypass the deletion protection check and delete a configuration profile even if deletion protection would have otherwise prevented it.</p></li>
+    /// <li>
+    /// <p><code>APPLY</code>: Instructs the deletion protection check to run, even if deletion protection is disabled at the account level. <code>APPLY</code> also forces the deletion protection check to run against resources created in the past hour, which are normally excluded from deletion protection checks.</p></li>
+    /// <li>
+    /// <p><code>ACCOUNT_DEFAULT</code>: The default setting, which instructs AppConfig to implement the deletion protection value specified in the <code>UpdateAccountSettings</code> API.</p></li>
+    /// </ul>
+    pub fn deletion_protection_check(&self) -> ::std::option::Option<&crate::types::DeletionProtectionCheck> {
+        self.deletion_protection_check.as_ref()
     }
 }
 impl DeleteConfigurationProfileInput {
@@ -31,6 +55,7 @@ impl DeleteConfigurationProfileInput {
 pub struct DeleteConfigurationProfileInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) configuration_profile_id: ::std::option::Option<::std::string::String>,
+    pub(crate) deletion_protection_check: ::std::option::Option<crate::types::DeletionProtectionCheck>,
 }
 impl DeleteConfigurationProfileInputBuilder {
     /// <p>The application ID that includes the configuration profile you want to delete.</p>
@@ -63,6 +88,47 @@ impl DeleteConfigurationProfileInputBuilder {
     pub fn get_configuration_profile_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.configuration_profile_id
     }
+    /// <p>A parameter to configure deletion protection. If enabled, deletion protection prevents a user from deleting a configuration profile if your application has called either <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html">GetLatestConfiguration</a> or for the configuration profile during the specified interval.</p>
+    /// <p>This parameter supports the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BYPASS</code>: Instructs AppConfig to bypass the deletion protection check and delete a configuration profile even if deletion protection would have otherwise prevented it.</p></li>
+    /// <li>
+    /// <p><code>APPLY</code>: Instructs the deletion protection check to run, even if deletion protection is disabled at the account level. <code>APPLY</code> also forces the deletion protection check to run against resources created in the past hour, which are normally excluded from deletion protection checks.</p></li>
+    /// <li>
+    /// <p><code>ACCOUNT_DEFAULT</code>: The default setting, which instructs AppConfig to implement the deletion protection value specified in the <code>UpdateAccountSettings</code> API.</p></li>
+    /// </ul>
+    pub fn deletion_protection_check(mut self, input: crate::types::DeletionProtectionCheck) -> Self {
+        self.deletion_protection_check = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A parameter to configure deletion protection. If enabled, deletion protection prevents a user from deleting a configuration profile if your application has called either <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html">GetLatestConfiguration</a> or for the configuration profile during the specified interval.</p>
+    /// <p>This parameter supports the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BYPASS</code>: Instructs AppConfig to bypass the deletion protection check and delete a configuration profile even if deletion protection would have otherwise prevented it.</p></li>
+    /// <li>
+    /// <p><code>APPLY</code>: Instructs the deletion protection check to run, even if deletion protection is disabled at the account level. <code>APPLY</code> also forces the deletion protection check to run against resources created in the past hour, which are normally excluded from deletion protection checks.</p></li>
+    /// <li>
+    /// <p><code>ACCOUNT_DEFAULT</code>: The default setting, which instructs AppConfig to implement the deletion protection value specified in the <code>UpdateAccountSettings</code> API.</p></li>
+    /// </ul>
+    pub fn set_deletion_protection_check(mut self, input: ::std::option::Option<crate::types::DeletionProtectionCheck>) -> Self {
+        self.deletion_protection_check = input;
+        self
+    }
+    /// <p>A parameter to configure deletion protection. If enabled, deletion protection prevents a user from deleting a configuration profile if your application has called either <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html">GetLatestConfiguration</a> or for the configuration profile during the specified interval.</p>
+    /// <p>This parameter supports the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BYPASS</code>: Instructs AppConfig to bypass the deletion protection check and delete a configuration profile even if deletion protection would have otherwise prevented it.</p></li>
+    /// <li>
+    /// <p><code>APPLY</code>: Instructs the deletion protection check to run, even if deletion protection is disabled at the account level. <code>APPLY</code> also forces the deletion protection check to run against resources created in the past hour, which are normally excluded from deletion protection checks.</p></li>
+    /// <li>
+    /// <p><code>ACCOUNT_DEFAULT</code>: The default setting, which instructs AppConfig to implement the deletion protection value specified in the <code>UpdateAccountSettings</code> API.</p></li>
+    /// </ul>
+    pub fn get_deletion_protection_check(&self) -> &::std::option::Option<crate::types::DeletionProtectionCheck> {
+        &self.deletion_protection_check
+    }
     /// Consumes the builder and constructs a [`DeleteConfigurationProfileInput`](crate::operation::delete_configuration_profile::DeleteConfigurationProfileInput).
     pub fn build(
         self,
@@ -73,6 +139,7 @@ impl DeleteConfigurationProfileInputBuilder {
         ::std::result::Result::Ok(crate::operation::delete_configuration_profile::DeleteConfigurationProfileInput {
             application_id: self.application_id,
             configuration_profile_id: self.configuration_profile_id,
+            deletion_protection_check: self.deletion_protection_check,
         })
     }
 }

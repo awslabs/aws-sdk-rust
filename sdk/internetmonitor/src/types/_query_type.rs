@@ -13,6 +13,8 @@
 /// # let querytype = unimplemented!();
 /// match querytype {
 ///     QueryType::Measurements => { /* ... */ },
+///     QueryType::OverallTrafficSuggestions => { /* ... */ },
+///     QueryType::OverallTrafficSuggestionsDetails => { /* ... */ },
 ///     QueryType::TopLocations => { /* ... */ },
 ///     QueryType::TopLocationDetails => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -45,6 +47,10 @@ pub enum QueryType {
     #[allow(missing_docs)] // documentation missing in model
     Measurements,
     #[allow(missing_docs)] // documentation missing in model
+    OverallTrafficSuggestions,
+    #[allow(missing_docs)] // documentation missing in model
+    OverallTrafficSuggestionsDetails,
+    #[allow(missing_docs)] // documentation missing in model
     TopLocations,
     #[allow(missing_docs)] // documentation missing in model
     TopLocationDetails,
@@ -56,6 +62,8 @@ impl ::std::convert::From<&str> for QueryType {
     fn from(s: &str) -> Self {
         match s {
             "MEASUREMENTS" => QueryType::Measurements,
+            "OVERALL_TRAFFIC_SUGGESTIONS" => QueryType::OverallTrafficSuggestions,
+            "OVERALL_TRAFFIC_SUGGESTIONS_DETAILS" => QueryType::OverallTrafficSuggestionsDetails,
             "TOP_LOCATIONS" => QueryType::TopLocations,
             "TOP_LOCATION_DETAILS" => QueryType::TopLocationDetails,
             other => QueryType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -74,6 +82,8 @@ impl QueryType {
     pub fn as_str(&self) -> &str {
         match self {
             QueryType::Measurements => "MEASUREMENTS",
+            QueryType::OverallTrafficSuggestions => "OVERALL_TRAFFIC_SUGGESTIONS",
+            QueryType::OverallTrafficSuggestionsDetails => "OVERALL_TRAFFIC_SUGGESTIONS_DETAILS",
             QueryType::TopLocations => "TOP_LOCATIONS",
             QueryType::TopLocationDetails => "TOP_LOCATION_DETAILS",
             QueryType::Unknown(value) => value.as_str(),
@@ -81,7 +91,13 @@ impl QueryType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["MEASUREMENTS", "TOP_LOCATIONS", "TOP_LOCATION_DETAILS"]
+        &[
+            "MEASUREMENTS",
+            "OVERALL_TRAFFIC_SUGGESTIONS",
+            "OVERALL_TRAFFIC_SUGGESTIONS_DETAILS",
+            "TOP_LOCATIONS",
+            "TOP_LOCATION_DETAILS",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for QueryType {
@@ -105,6 +121,8 @@ impl ::std::fmt::Display for QueryType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             QueryType::Measurements => write!(f, "MEASUREMENTS"),
+            QueryType::OverallTrafficSuggestions => write!(f, "OVERALL_TRAFFIC_SUGGESTIONS"),
+            QueryType::OverallTrafficSuggestionsDetails => write!(f, "OVERALL_TRAFFIC_SUGGESTIONS_DETAILS"),
             QueryType::TopLocations => write!(f, "TOP_LOCATIONS"),
             QueryType::TopLocationDetails => write!(f, "TOP_LOCATION_DETAILS"),
             QueryType::Unknown(value) => write!(f, "{}", value),

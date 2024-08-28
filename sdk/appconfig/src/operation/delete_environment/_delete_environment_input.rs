@@ -3,19 +3,43 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteEnvironmentInput {
-    /// <p>The application ID that includes the environment that you want to delete.</p>
-    pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the environment that you want to delete.</p>
     pub environment_id: ::std::option::Option<::std::string::String>,
+    /// <p>The application ID that includes the environment that you want to delete.</p>
+    pub application_id: ::std::option::Option<::std::string::String>,
+    /// <p>A parameter to configure deletion protection. If enabled, deletion protection prevents a user from deleting an environment if your application called either <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html">GetLatestConfiguration</a> or in the environment during the specified interval.</p>
+    /// <p>This parameter supports the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BYPASS</code>: Instructs AppConfig to bypass the deletion protection check and delete a configuration profile even if deletion protection would have otherwise prevented it.</p></li>
+    /// <li>
+    /// <p><code>APPLY</code>: Instructs the deletion protection check to run, even if deletion protection is disabled at the account level. <code>APPLY</code> also forces the deletion protection check to run against resources created in the past hour, which are normally excluded from deletion protection checks.</p></li>
+    /// <li>
+    /// <p><code>ACCOUNT_DEFAULT</code>: The default setting, which instructs AppConfig to implement the deletion protection value specified in the <code>UpdateAccountSettings</code> API.</p></li>
+    /// </ul>
+    pub deletion_protection_check: ::std::option::Option<crate::types::DeletionProtectionCheck>,
 }
 impl DeleteEnvironmentInput {
+    /// <p>The ID of the environment that you want to delete.</p>
+    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+        self.environment_id.as_deref()
+    }
     /// <p>The application ID that includes the environment that you want to delete.</p>
     pub fn application_id(&self) -> ::std::option::Option<&str> {
         self.application_id.as_deref()
     }
-    /// <p>The ID of the environment that you want to delete.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
-        self.environment_id.as_deref()
+    /// <p>A parameter to configure deletion protection. If enabled, deletion protection prevents a user from deleting an environment if your application called either <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html">GetLatestConfiguration</a> or in the environment during the specified interval.</p>
+    /// <p>This parameter supports the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BYPASS</code>: Instructs AppConfig to bypass the deletion protection check and delete a configuration profile even if deletion protection would have otherwise prevented it.</p></li>
+    /// <li>
+    /// <p><code>APPLY</code>: Instructs the deletion protection check to run, even if deletion protection is disabled at the account level. <code>APPLY</code> also forces the deletion protection check to run against resources created in the past hour, which are normally excluded from deletion protection checks.</p></li>
+    /// <li>
+    /// <p><code>ACCOUNT_DEFAULT</code>: The default setting, which instructs AppConfig to implement the deletion protection value specified in the <code>UpdateAccountSettings</code> API.</p></li>
+    /// </ul>
+    pub fn deletion_protection_check(&self) -> ::std::option::Option<&crate::types::DeletionProtectionCheck> {
+        self.deletion_protection_check.as_ref()
     }
 }
 impl DeleteEnvironmentInput {
@@ -29,25 +53,11 @@ impl DeleteEnvironmentInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct DeleteEnvironmentInputBuilder {
-    pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
+    pub(crate) application_id: ::std::option::Option<::std::string::String>,
+    pub(crate) deletion_protection_check: ::std::option::Option<crate::types::DeletionProtectionCheck>,
 }
 impl DeleteEnvironmentInputBuilder {
-    /// <p>The application ID that includes the environment that you want to delete.</p>
-    /// This field is required.
-    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.application_id = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The application ID that includes the environment that you want to delete.</p>
-    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
-    }
-    /// <p>The application ID that includes the environment that you want to delete.</p>
-    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.application_id
-    }
     /// <p>The ID of the environment that you want to delete.</p>
     /// This field is required.
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -63,13 +73,70 @@ impl DeleteEnvironmentInputBuilder {
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.environment_id
     }
+    /// <p>The application ID that includes the environment that you want to delete.</p>
+    /// This field is required.
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.application_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The application ID that includes the environment that you want to delete.</p>
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.application_id = input;
+        self
+    }
+    /// <p>The application ID that includes the environment that you want to delete.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
+    /// <p>A parameter to configure deletion protection. If enabled, deletion protection prevents a user from deleting an environment if your application called either <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html">GetLatestConfiguration</a> or in the environment during the specified interval.</p>
+    /// <p>This parameter supports the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BYPASS</code>: Instructs AppConfig to bypass the deletion protection check and delete a configuration profile even if deletion protection would have otherwise prevented it.</p></li>
+    /// <li>
+    /// <p><code>APPLY</code>: Instructs the deletion protection check to run, even if deletion protection is disabled at the account level. <code>APPLY</code> also forces the deletion protection check to run against resources created in the past hour, which are normally excluded from deletion protection checks.</p></li>
+    /// <li>
+    /// <p><code>ACCOUNT_DEFAULT</code>: The default setting, which instructs AppConfig to implement the deletion protection value specified in the <code>UpdateAccountSettings</code> API.</p></li>
+    /// </ul>
+    pub fn deletion_protection_check(mut self, input: crate::types::DeletionProtectionCheck) -> Self {
+        self.deletion_protection_check = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A parameter to configure deletion protection. If enabled, deletion protection prevents a user from deleting an environment if your application called either <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html">GetLatestConfiguration</a> or in the environment during the specified interval.</p>
+    /// <p>This parameter supports the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BYPASS</code>: Instructs AppConfig to bypass the deletion protection check and delete a configuration profile even if deletion protection would have otherwise prevented it.</p></li>
+    /// <li>
+    /// <p><code>APPLY</code>: Instructs the deletion protection check to run, even if deletion protection is disabled at the account level. <code>APPLY</code> also forces the deletion protection check to run against resources created in the past hour, which are normally excluded from deletion protection checks.</p></li>
+    /// <li>
+    /// <p><code>ACCOUNT_DEFAULT</code>: The default setting, which instructs AppConfig to implement the deletion protection value specified in the <code>UpdateAccountSettings</code> API.</p></li>
+    /// </ul>
+    pub fn set_deletion_protection_check(mut self, input: ::std::option::Option<crate::types::DeletionProtectionCheck>) -> Self {
+        self.deletion_protection_check = input;
+        self
+    }
+    /// <p>A parameter to configure deletion protection. If enabled, deletion protection prevents a user from deleting an environment if your application called either <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html">GetLatestConfiguration</a> or in the environment during the specified interval.</p>
+    /// <p>This parameter supports the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BYPASS</code>: Instructs AppConfig to bypass the deletion protection check and delete a configuration profile even if deletion protection would have otherwise prevented it.</p></li>
+    /// <li>
+    /// <p><code>APPLY</code>: Instructs the deletion protection check to run, even if deletion protection is disabled at the account level. <code>APPLY</code> also forces the deletion protection check to run against resources created in the past hour, which are normally excluded from deletion protection checks.</p></li>
+    /// <li>
+    /// <p><code>ACCOUNT_DEFAULT</code>: The default setting, which instructs AppConfig to implement the deletion protection value specified in the <code>UpdateAccountSettings</code> API.</p></li>
+    /// </ul>
+    pub fn get_deletion_protection_check(&self) -> &::std::option::Option<crate::types::DeletionProtectionCheck> {
+        &self.deletion_protection_check
+    }
     /// Consumes the builder and constructs a [`DeleteEnvironmentInput`](crate::operation::delete_environment::DeleteEnvironmentInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_environment::DeleteEnvironmentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_environment::DeleteEnvironmentInput {
-            application_id: self.application_id,
             environment_id: self.environment_id,
+            application_id: self.application_id,
+            deletion_protection_check: self.deletion_protection_check,
         })
     }
 }

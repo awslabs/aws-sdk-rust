@@ -22,7 +22,7 @@ impl crate::operation::delete_deployment_strategy::builders::DeleteDeploymentStr
 }
 /// Fluent builder constructing a request to `DeleteDeploymentStrategy`.
 ///
-/// <p>Deletes a deployment strategy. Deleting a deployment strategy does not delete a configuration from a host.</p>
+/// <p>Deletes a deployment strategy.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteDeploymentStrategyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

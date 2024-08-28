@@ -22,7 +22,7 @@ impl crate::operation::delete_data_product::builders::DeleteDataProductInputBuil
 }
 /// Fluent builder constructing a request to `DeleteDataProduct`.
 ///
-/// <p>Deletes an data product in Amazon DataZone.</p>
+/// <p>Deletes a data product in Amazon DataZone.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteDataProductFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

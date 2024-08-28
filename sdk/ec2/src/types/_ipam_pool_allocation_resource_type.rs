@@ -14,6 +14,7 @@
 /// match ipampoolallocationresourcetype {
 ///     IpamPoolAllocationResourceType::Custom => { /* ... */ },
 ///     IpamPoolAllocationResourceType::Ec2PublicIpv4Pool => { /* ... */ },
+///     IpamPoolAllocationResourceType::Eip => { /* ... */ },
 ///     IpamPoolAllocationResourceType::IpamPool => { /* ... */ },
 ///     IpamPoolAllocationResourceType::Subnet => { /* ... */ },
 ///     IpamPoolAllocationResourceType::Vpc => { /* ... */ },
@@ -49,6 +50,8 @@ pub enum IpamPoolAllocationResourceType {
     #[allow(missing_docs)] // documentation missing in model
     Ec2PublicIpv4Pool,
     #[allow(missing_docs)] // documentation missing in model
+    Eip,
+    #[allow(missing_docs)] // documentation missing in model
     IpamPool,
     #[allow(missing_docs)] // documentation missing in model
     Subnet,
@@ -63,6 +66,7 @@ impl ::std::convert::From<&str> for IpamPoolAllocationResourceType {
         match s {
             "custom" => IpamPoolAllocationResourceType::Custom,
             "ec2-public-ipv4-pool" => IpamPoolAllocationResourceType::Ec2PublicIpv4Pool,
+            "eip" => IpamPoolAllocationResourceType::Eip,
             "ipam-pool" => IpamPoolAllocationResourceType::IpamPool,
             "subnet" => IpamPoolAllocationResourceType::Subnet,
             "vpc" => IpamPoolAllocationResourceType::Vpc,
@@ -83,6 +87,7 @@ impl IpamPoolAllocationResourceType {
         match self {
             IpamPoolAllocationResourceType::Custom => "custom",
             IpamPoolAllocationResourceType::Ec2PublicIpv4Pool => "ec2-public-ipv4-pool",
+            IpamPoolAllocationResourceType::Eip => "eip",
             IpamPoolAllocationResourceType::IpamPool => "ipam-pool",
             IpamPoolAllocationResourceType::Subnet => "subnet",
             IpamPoolAllocationResourceType::Vpc => "vpc",
@@ -91,7 +96,7 @@ impl IpamPoolAllocationResourceType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["custom", "ec2-public-ipv4-pool", "ipam-pool", "subnet", "vpc"]
+        &["custom", "ec2-public-ipv4-pool", "eip", "ipam-pool", "subnet", "vpc"]
     }
 }
 impl ::std::convert::AsRef<str> for IpamPoolAllocationResourceType {
@@ -116,6 +121,7 @@ impl ::std::fmt::Display for IpamPoolAllocationResourceType {
         match self {
             IpamPoolAllocationResourceType::Custom => write!(f, "custom"),
             IpamPoolAllocationResourceType::Ec2PublicIpv4Pool => write!(f, "ec2-public-ipv4-pool"),
+            IpamPoolAllocationResourceType::Eip => write!(f, "eip"),
             IpamPoolAllocationResourceType::IpamPool => write!(f, "ipam-pool"),
             IpamPoolAllocationResourceType::Subnet => write!(f, "subnet"),
             IpamPoolAllocationResourceType::Vpc => write!(f, "vpc"),

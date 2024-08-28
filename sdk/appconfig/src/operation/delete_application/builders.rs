@@ -22,7 +22,7 @@ impl crate::operation::delete_application::builders::DeleteApplicationInputBuild
 }
 /// Fluent builder constructing a request to `DeleteApplication`.
 ///
-/// <p>Deletes an application. Deleting an application does not delete a configuration from a host.</p>
+/// <p>Deletes an application.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteApplicationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

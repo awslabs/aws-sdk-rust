@@ -119,6 +119,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS Organizations | [aws-sdk-organizations](https://crates.io/crates/aws-sdk-organizations) ([docs](https://docs.rs/aws-sdk-organizations)) |
 | AWS Outposts | [aws-sdk-outposts](https://crates.io/crates/aws-sdk-outposts) ([docs](https://docs.rs/aws-sdk-outposts)) |
 | AWS Panorama | [aws-sdk-panorama](https://crates.io/crates/aws-sdk-panorama) ([docs](https://docs.rs/aws-sdk-panorama)) |
+| AWS Parallel Computing Service | [aws-sdk-pcs](https://crates.io/crates/aws-sdk-pcs) ([docs](https://docs.rs/aws-sdk-pcs)) |
 | AWS Performance Insights | [aws-sdk-pi](https://crates.io/crates/aws-sdk-pi) ([docs](https://docs.rs/aws-sdk-pi)) |
 | AWS Price List Service | [aws-sdk-pricing](https://crates.io/crates/aws-sdk-pricing) ([docs](https://docs.rs/aws-sdk-pricing)) |
 | AWS Private 5G | [aws-sdk-privatenetworks](https://crates.io/crates/aws-sdk-privatenetworks) ([docs](https://docs.rs/aws-sdk-privatenetworks)) |

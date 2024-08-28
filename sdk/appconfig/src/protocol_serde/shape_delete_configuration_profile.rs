@@ -100,3 +100,23 @@ pub fn de_delete_configuration_profile_http_response(
         output.build()
     })
 }
+
+pub fn ser_delete_configuration_profile_headers(
+    input: &crate::operation::delete_configuration_profile::DeleteConfigurationProfileInput,
+    mut builder: ::http::request::Builder,
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
+    if let ::std::option::Option::Some(inner_1) = &input.deletion_protection_check {
+        let formatted_2 = inner_1.as_str();
+        if !formatted_2.is_empty() {
+            let header_value = formatted_2;
+            let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
+                    "deletion_protection_check",
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
+                )
+            })?;
+            builder = builder.header("x-amzn-deletion-protection-check", header_value);
+        }
+    }
+    Ok(builder)
+}

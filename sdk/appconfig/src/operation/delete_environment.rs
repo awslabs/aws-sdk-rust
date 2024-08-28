@@ -211,6 +211,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteEnviro
             ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
+                let builder = crate::protocol_serde::shape_delete_environment::ser_delete_environment_headers(input, builder)?;
                 ::std::result::Result::Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;

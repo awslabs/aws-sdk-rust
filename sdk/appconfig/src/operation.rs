@@ -43,6 +43,9 @@ pub mod delete_extension_association;
 /// Types for the `DeleteHostedConfigurationVersion` operation.
 pub mod delete_hosted_configuration_version;
 
+/// Types for the `GetAccountSettings` operation.
+pub mod get_account_settings;
+
 /// Types for the `GetApplication` operation.
 pub mod get_application;
 
@@ -108,6 +111,9 @@ pub mod tag_resource;
 
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
+
+/// Types for the `UpdateAccountSettings` operation.
+pub mod update_account_settings;
 
 /// Types for the `UpdateApplication` operation.
 pub mod update_application;

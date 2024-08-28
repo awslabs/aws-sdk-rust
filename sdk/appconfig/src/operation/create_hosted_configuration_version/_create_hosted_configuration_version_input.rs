@@ -9,7 +9,9 @@ pub struct CreateHostedConfigurationVersionInput {
     pub configuration_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>A description of the configuration.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The content of the configuration or the configuration data.</p>
+    /// <p>The configuration data, as bytes.</p><note>
+    /// <p>AppConfig accepts any type of data, including text formats like JSON or TOML, or binary formats like protocol buffers or compressed data.</p>
+    /// </note>
     pub content: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
     pub content_type: ::std::option::Option<::std::string::String>,
@@ -31,7 +33,9 @@ impl CreateHostedConfigurationVersionInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The content of the configuration or the configuration data.</p>
+    /// <p>The configuration data, as bytes.</p><note>
+    /// <p>AppConfig accepts any type of data, including text formats like JSON or TOML, or binary formats like protocol buffers or compressed data.</p>
+    /// </note>
     pub fn content(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.content.as_ref()
     }
@@ -125,18 +129,24 @@ impl CreateHostedConfigurationVersionInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The content of the configuration or the configuration data.</p>
+    /// <p>The configuration data, as bytes.</p><note>
+    /// <p>AppConfig accepts any type of data, including text formats like JSON or TOML, or binary formats like protocol buffers or compressed data.</p>
+    /// </note>
     /// This field is required.
     pub fn content(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.content = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The content of the configuration or the configuration data.</p>
+    /// <p>The configuration data, as bytes.</p><note>
+    /// <p>AppConfig accepts any type of data, including text formats like JSON or TOML, or binary formats like protocol buffers or compressed data.</p>
+    /// </note>
     pub fn set_content(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.content = input;
         self
     }
-    /// <p>The content of the configuration or the configuration data.</p>
+    /// <p>The configuration data, as bytes.</p><note>
+    /// <p>AppConfig accepts any type of data, including text formats like JSON or TOML, or binary formats like protocol buffers or compressed data.</p>
+    /// </note>
     pub fn get_content(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         &self.content
     }

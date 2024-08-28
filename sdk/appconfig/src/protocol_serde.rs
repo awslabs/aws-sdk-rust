@@ -53,6 +53,8 @@ pub(crate) mod shape_delete_extension_association;
 
 pub(crate) mod shape_delete_hosted_configuration_version;
 
+pub(crate) mod shape_get_account_settings;
+
 pub(crate) mod shape_get_application;
 
 pub(crate) mod shape_get_configuration;
@@ -96,6 +98,8 @@ pub(crate) mod shape_stop_deployment;
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
+
+pub(crate) mod shape_update_account_settings;
 
 pub(crate) mod shape_update_application;
 
@@ -153,6 +157,8 @@ pub(crate) mod shape_start_deployment_input;
 
 pub(crate) mod shape_tag_resource_input;
 
+pub(crate) mod shape_update_account_settings_input;
+
 pub(crate) mod shape_update_application_input;
 
 pub(crate) mod shape_update_configuration_profile_input;
@@ -176,6 +182,8 @@ pub(crate) mod shape_applied_extensions;
 pub(crate) mod shape_bad_request_details;
 
 pub(crate) mod shape_configuration_profile_summary_list;
+
+pub(crate) mod shape_deletion_protection_settings;
 
 pub(crate) mod shape_deployment_events;
 

@@ -168,13 +168,7 @@ impl CreateUploadFluentBuilder {
     /// <li>
     /// <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p></li>
     /// <li>
-    /// <p>CALABASH_TEST_PACKAGE</p></li>
-    /// <li>
     /// <p>INSTRUMENTATION_TEST_PACKAGE</p></li>
-    /// <li>
-    /// <p>UIAUTOMATION_TEST_PACKAGE</p></li>
-    /// <li>
-    /// <p>UIAUTOMATOR_TEST_PACKAGE</p></li>
     /// <li>
     /// <p>XCTEST_TEST_PACKAGE</p></li>
     /// <li>
@@ -241,13 +235,7 @@ impl CreateUploadFluentBuilder {
     /// <li>
     /// <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p></li>
     /// <li>
-    /// <p>CALABASH_TEST_PACKAGE</p></li>
-    /// <li>
     /// <p>INSTRUMENTATION_TEST_PACKAGE</p></li>
-    /// <li>
-    /// <p>UIAUTOMATION_TEST_PACKAGE</p></li>
-    /// <li>
-    /// <p>UIAUTOMATOR_TEST_PACKAGE</p></li>
     /// <li>
     /// <p>XCTEST_TEST_PACKAGE</p></li>
     /// <li>
@@ -314,13 +302,7 @@ impl CreateUploadFluentBuilder {
     /// <li>
     /// <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p></li>
     /// <li>
-    /// <p>CALABASH_TEST_PACKAGE</p></li>
-    /// <li>
     /// <p>INSTRUMENTATION_TEST_PACKAGE</p></li>
-    /// <li>
-    /// <p>UIAUTOMATION_TEST_PACKAGE</p></li>
-    /// <li>
-    /// <p>UIAUTOMATOR_TEST_PACKAGE</p></li>
     /// <li>
     /// <p>XCTEST_TEST_PACKAGE</p></li>
     /// <li>

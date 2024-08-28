@@ -9,6 +9,8 @@ pub use crate::types::_monitor::MonitorBuilder;
 
 pub use crate::types::_validator::ValidatorBuilder;
 
+pub use crate::types::_deletion_protection_settings::DeletionProtectionSettingsBuilder;
+
 pub use crate::types::_applied_extension::AppliedExtensionBuilder;
 
 pub use crate::types::_deployment_event::DeploymentEventBuilder;

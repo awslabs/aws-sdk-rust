@@ -22,7 +22,7 @@ impl crate::operation::create_hosted_configuration_version::builders::CreateHost
 }
 /// Fluent builder constructing a request to `CreateHostedConfigurationVersion`.
 ///
-/// <p>Creates a new configuration in the AppConfig hosted configuration store.</p>
+/// <p>Creates a new configuration in the AppConfig hosted configuration store. If you're creating a feature flag, we recommend you familiarize yourself with the JSON schema for feature flag data. For more information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-configuration-and-profile-feature-flags.html#appconfig-type-reference-feature-flags">Type reference for AWS.AppConfig.FeatureFlags</a> in the <i>AppConfig User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateHostedConfigurationVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -150,17 +150,23 @@ impl CreateHostedConfigurationVersionFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>The content of the configuration or the configuration data.</p>
+    /// <p>The configuration data, as bytes.</p><note>
+    /// <p>AppConfig accepts any type of data, including text formats like JSON or TOML, or binary formats like protocol buffers or compressed data.</p>
+    /// </note>
     pub fn content(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.inner = self.inner.content(input);
         self
     }
-    /// <p>The content of the configuration or the configuration data.</p>
+    /// <p>The configuration data, as bytes.</p><note>
+    /// <p>AppConfig accepts any type of data, including text formats like JSON or TOML, or binary formats like protocol buffers or compressed data.</p>
+    /// </note>
     pub fn set_content(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.inner = self.inner.set_content(input);
         self
     }
-    /// <p>The content of the configuration or the configuration data.</p>
+    /// <p>The configuration data, as bytes.</p><note>
+    /// <p>AppConfig accepts any type of data, including text formats like JSON or TOML, or binary formats like protocol buffers or compressed data.</p>
+    /// </note>
     pub fn get_content(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         self.inner.get_content()
     }

@@ -191,6 +191,8 @@ mod delete_extension_association;
 
 mod delete_hosted_configuration_version;
 
+mod get_account_settings;
+
 mod get_application;
 
 mod get_configuration;
@@ -234,6 +236,8 @@ mod stop_deployment;
 mod tag_resource;
 
 mod untag_resource;
+
+mod update_account_settings;
 
 mod update_application;
 
