@@ -64,7 +64,7 @@ version = "1.7.2"
 
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
-version = "1.2.1"
+version = "1.2.2"
 
 [dependencies.aws-smithy-xml]
 path = "../aws-smithy-xml"
@@ -167,7 +167,7 @@ version = "1.7.2"
 [dev-dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
 features = ["test-util"]
-version = "1.2.1"
+version = "1.2.2"
 
 [dev-dependencies.bytes-utils]
 version = "0.1.0"
