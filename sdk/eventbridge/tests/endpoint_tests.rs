@@ -2,6 +2,7 @@
 #![cfg(feature = "test-util")]
 #[::tokio::test]
 async fn operation_input_test_put_events_1() {
+    /* documentation: Valid endpointId with fips disabled and dualstack disabled */
     /* builtIns: {
         "AWS::Region": "us-east-1"
     } */

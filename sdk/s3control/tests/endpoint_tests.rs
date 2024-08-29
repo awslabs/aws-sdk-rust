@@ -2,6 +2,7 @@
 #![cfg(feature = "test-util")]
 #[::tokio::test]
 async fn operation_input_test_get_access_point_1() {
+    /* documentation: Vanilla outposts without ARN region + access point ARN@us-west-2 */
     /* builtIns: {
         "AWS::Region": "us-west-2"
     } */
@@ -35,6 +36,7 @@ async fn operation_input_test_get_access_point_1() {
 
 #[::tokio::test]
 async fn operation_input_test_delete_access_point_2() {
+    /* documentation: Vanilla outposts without ARN region + access point ARN@us-west-2 */
     /* builtIns: {
         "AWS::Region": "us-west-2"
     } */
@@ -68,6 +70,7 @@ async fn operation_input_test_delete_access_point_2() {
 
 #[::tokio::test]
 async fn operation_input_test_get_access_point_3() {
+    /* documentation: Vanilla outposts with ARN region + access point ARN@us-west-2 */
     /* builtIns: {
         "AWS::Region": "us-west-2"
     } */
@@ -101,6 +104,7 @@ async fn operation_input_test_get_access_point_3() {
 
 #[::tokio::test]
 async fn operation_input_test_delete_access_point_4() {
+    /* documentation: Vanilla outposts with ARN region + access point ARN@us-west-2 */
     /* builtIns: {
         "AWS::Region": "us-west-2"
     } */
@@ -134,6 +138,7 @@ async fn operation_input_test_delete_access_point_4() {
 
 #[::tokio::test]
 async fn operation_input_test_get_access_point_5() {
+    /* documentation: accept an access point ARN@us-west-2 */
     /* builtIns: {
         "AWS::Region": "us-west-2"
     } */
@@ -167,6 +172,7 @@ async fn operation_input_test_get_access_point_5() {
 
 #[::tokio::test]
 async fn operation_input_test_delete_access_point_6() {
+    /* documentation: accept an access point ARN@us-west-2 */
     /* builtIns: {
         "AWS::Region": "us-west-2"
     } */
@@ -200,6 +206,7 @@ async fn operation_input_test_delete_access_point_6() {
 
 #[::tokio::test]
 async fn operation_input_test_get_access_point_7() {
+    /* documentation: vanilla outposts china@cn-north-1 */
     /* builtIns: {
         "AWS::Region": "cn-north-1"
     } */
@@ -233,6 +240,7 @@ async fn operation_input_test_get_access_point_7() {
 
 #[::tokio::test]
 async fn operation_input_test_delete_access_point_8() {
+    /* documentation: vanilla outposts china@cn-north-1 */
     /* builtIns: {
         "AWS::Region": "cn-north-1"
     } */
@@ -266,6 +274,7 @@ async fn operation_input_test_delete_access_point_8() {
 
 #[::tokio::test]
 async fn operation_input_test_get_access_point_9() {
+    /* documentation: gov region@us-west-2 */
     /* builtIns: {
         "AWS::Region": "us-west-2"
     } */
@@ -299,6 +308,7 @@ async fn operation_input_test_get_access_point_9() {
 
 #[::tokio::test]
 async fn operation_input_test_delete_access_point_10() {
+    /* documentation: gov region@us-west-2 */
     /* builtIns: {
         "AWS::Region": "us-west-2"
     } */
@@ -332,6 +342,7 @@ async fn operation_input_test_delete_access_point_10() {
 
 #[::tokio::test]
 async fn operation_input_test_get_access_point_11() {
+    /* documentation: gov cloud with fips@us-west-2 */
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "AWS::UseFIPS": true
@@ -367,6 +378,7 @@ async fn operation_input_test_get_access_point_11() {
 
 #[::tokio::test]
 async fn operation_input_test_delete_access_point_12() {
+    /* documentation: gov cloud with fips@us-west-2 */
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "AWS::UseFIPS": true
@@ -402,6 +414,7 @@ async fn operation_input_test_delete_access_point_12() {
 
 #[::tokio::test]
 async fn operation_input_test_get_access_point_13() {
+    /* documentation: govcloud with fips + arn region@us-gov-west-1 */
     /* builtIns: {
         "AWS::Region": "us-gov-west-1",
         "AWS::UseFIPS": true
@@ -437,6 +450,7 @@ async fn operation_input_test_get_access_point_13() {
 
 #[::tokio::test]
 async fn operation_input_test_delete_access_point_14() {
+    /* documentation: govcloud with fips + arn region@us-gov-west-1 */
     /* builtIns: {
         "AWS::Region": "us-gov-west-1",
         "AWS::UseFIPS": true
@@ -472,6 +486,7 @@ async fn operation_input_test_delete_access_point_14() {
 
 #[::tokio::test]
 async fn operation_input_test_get_access_point_15() {
+    /* documentation: gov region@cn-north-1 */
     /* builtIns: {
         "AWS::Region": "cn-north-1"
     } */
@@ -505,6 +520,7 @@ async fn operation_input_test_get_access_point_15() {
 
 #[::tokio::test]
 async fn operation_input_test_delete_access_point_16() {
+    /* documentation: gov region@cn-north-1 */
     /* builtIns: {
         "AWS::Region": "cn-north-1"
     } */
@@ -538,6 +554,7 @@ async fn operation_input_test_delete_access_point_16() {
 
 #[::tokio::test]
 async fn operation_input_test_get_access_point_17() {
+    /* documentation: gov cloud with fips@cn-north-1 */
     /* builtIns: {
         "AWS::Region": "cn-north-1",
         "AWS::UseFIPS": true
@@ -573,6 +590,7 @@ async fn operation_input_test_get_access_point_17() {
 
 #[::tokio::test]
 async fn operation_input_test_delete_access_point_18() {
+    /* documentation: gov cloud with fips@cn-north-1 */
     /* builtIns: {
         "AWS::Region": "cn-north-1",
         "AWS::UseFIPS": true
@@ -608,6 +626,7 @@ async fn operation_input_test_delete_access_point_18() {
 
 #[::tokio::test]
 async fn operation_input_test_get_access_point_19() {
+    /* documentation: govcloud with fips + arn region@us-gov-west-1 */
     /* builtIns: {
         "AWS::Region": "us-gov-west-1",
         "AWS::UseFIPS": true
@@ -643,6 +662,7 @@ async fn operation_input_test_get_access_point_19() {
 
 #[::tokio::test]
 async fn operation_input_test_delete_access_point_20() {
+    /* documentation: govcloud with fips + arn region@us-gov-west-1 */
     /* builtIns: {
         "AWS::Region": "us-gov-west-1",
         "AWS::UseFIPS": true
@@ -678,6 +698,7 @@ async fn operation_input_test_delete_access_point_20() {
 
 #[::tokio::test]
 async fn operation_input_test_get_access_point_21() {
+    /* documentation: gov region@af-south-1 */
     /* builtIns: {
         "AWS::Region": "af-south-1"
     } */
@@ -711,6 +732,7 @@ async fn operation_input_test_get_access_point_21() {
 
 #[::tokio::test]
 async fn operation_input_test_delete_access_point_22() {
+    /* documentation: gov region@af-south-1 */
     /* builtIns: {
         "AWS::Region": "af-south-1"
     } */
@@ -744,6 +766,7 @@ async fn operation_input_test_delete_access_point_22() {
 
 #[::tokio::test]
 async fn operation_input_test_get_access_point_23() {
+    /* documentation: gov cloud with fips@af-south-1 */
     /* builtIns: {
         "AWS::Region": "af-south-1",
         "AWS::UseFIPS": true
@@ -779,6 +802,7 @@ async fn operation_input_test_get_access_point_23() {
 
 #[::tokio::test]
 async fn operation_input_test_delete_access_point_24() {
+    /* documentation: gov cloud with fips@af-south-1 */
     /* builtIns: {
         "AWS::Region": "af-south-1",
         "AWS::UseFIPS": true
@@ -814,6 +838,7 @@ async fn operation_input_test_delete_access_point_24() {
 
 #[::tokio::test]
 async fn operation_input_test_get_access_point_25() {
+    /* documentation: govcloud with fips + arn region@us-gov-west-1 */
     /* builtIns: {
         "AWS::Region": "us-gov-west-1",
         "AWS::UseFIPS": true
@@ -849,6 +874,7 @@ async fn operation_input_test_get_access_point_25() {
 
 #[::tokio::test]
 async fn operation_input_test_delete_access_point_26() {
+    /* documentation: govcloud with fips + arn region@us-gov-west-1 */
     /* builtIns: {
         "AWS::Region": "us-gov-west-1",
         "AWS::UseFIPS": true
@@ -884,6 +910,7 @@ async fn operation_input_test_delete_access_point_26() {
 
 #[::tokio::test]
 async fn operation_input_test_create_bucket_27() {
+    /* documentation: CreateBucket + OutpostId = outposts endpoint@us-east-2 */
     /* builtIns: {
         "AWS::Region": "us-east-2"
     } */
@@ -915,6 +942,7 @@ async fn operation_input_test_create_bucket_27() {
 
 #[::tokio::test]
 async fn operation_input_test_create_bucket_28() {
+    /* documentation: CreateBucket + OutpostId with fips = outposts endpoint@us-east-2 */
     /* builtIns: {
         "AWS::Region": "us-east-2",
         "AWS::UseFIPS": true
@@ -948,6 +976,7 @@ async fn operation_input_test_create_bucket_28() {
 
 #[::tokio::test]
 async fn operation_input_test_create_bucket_29() {
+    /* documentation: CreateBucket without OutpostId = regular endpoint@us-east-2 */
     /* builtIns: {
         "AWS::Region": "us-east-2"
     } */
@@ -978,6 +1007,7 @@ async fn operation_input_test_create_bucket_29() {
 
 #[::tokio::test]
 async fn operation_input_test_list_regional_buckets_30() {
+    /* documentation: ListRegionalBuckets + OutpostId = outposts endpoint@us-east-2 */
     /* builtIns: {
         "AWS::Region": "us-east-2"
     } */
@@ -1009,6 +1039,7 @@ async fn operation_input_test_list_regional_buckets_30() {
 
 #[::tokio::test]
 async fn operation_input_test_list_regional_buckets_31() {
+    /* documentation: ListRegionalBuckets without OutpostId = regular endpoint@us-east-2 */
     /* builtIns: {
         "AWS::Region": "us-east-2"
     } */
@@ -1039,6 +1070,7 @@ async fn operation_input_test_list_regional_buckets_31() {
 
 #[::tokio::test]
 async fn operation_input_test_list_regional_buckets_32() {
+    /* documentation: ListRegionalBucket + OutpostId with fips = outposts endpoint@us-east-2 */
     /* builtIns: {
         "AWS::Region": "us-east-2",
         "AWS::UseFIPS": true
@@ -1072,6 +1104,7 @@ async fn operation_input_test_list_regional_buckets_32() {
 
 #[::tokio::test]
 async fn operation_input_test_get_access_point_33() {
+    /* documentation: outpost access points support dualstack@us-west-2 */
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "AWS::UseDualStack": true
@@ -1107,6 +1140,7 @@ async fn operation_input_test_get_access_point_33() {
 
 #[::tokio::test]
 async fn operation_input_test_delete_access_point_34() {
+    /* documentation: outpost access points support dualstack@us-west-2 */
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "AWS::UseDualStack": true
@@ -1142,6 +1176,7 @@ async fn operation_input_test_delete_access_point_34() {
 
 #[::tokio::test]
 async fn operation_input_test_get_access_point_35() {
+    /* documentation: outpost access points support dualstack@af-south-1 */
     /* builtIns: {
         "AWS::Region": "af-south-1",
         "AWS::UseDualStack": true
@@ -1177,6 +1212,7 @@ async fn operation_input_test_get_access_point_35() {
 
 #[::tokio::test]
 async fn operation_input_test_delete_access_point_36() {
+    /* documentation: outpost access points support dualstack@af-south-1 */
     /* builtIns: {
         "AWS::Region": "af-south-1",
         "AWS::UseDualStack": true
@@ -1212,6 +1248,7 @@ async fn operation_input_test_delete_access_point_36() {
 
 #[::tokio::test]
 async fn operation_input_test_get_access_point_37() {
+    /* documentation: outpost access points support fips + dualstack@af-south-1 */
     /* builtIns: {
         "AWS::Region": "af-south-1",
         "AWS::UseFIPS": true,
@@ -1249,6 +1286,7 @@ async fn operation_input_test_get_access_point_37() {
 
 #[::tokio::test]
 async fn operation_input_test_delete_access_point_38() {
+    /* documentation: outpost access points support fips + dualstack@af-south-1 */
     /* builtIns: {
         "AWS::Region": "af-south-1",
         "AWS::UseFIPS": true,
@@ -1286,6 +1324,7 @@ async fn operation_input_test_delete_access_point_38() {
 
 #[::tokio::test]
 async fn operation_input_test_get_access_point_39() {
+    /* documentation: Account ID set inline and in ARN but they both match@us-west-2 */
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "AWS::S3Control::UseArnRegion": false
@@ -1321,6 +1360,7 @@ async fn operation_input_test_get_access_point_39() {
 
 #[::tokio::test]
 async fn operation_input_test_get_access_point_40() {
+    /* documentation: Account ID set inline and in ARN and they do not match@us-west-2 */
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "AWS::S3Control::UseArnRegion": false
@@ -1355,6 +1395,7 @@ async fn operation_input_test_get_access_point_40() {
 
 #[::tokio::test]
 async fn operation_input_test_get_access_point_41() {
+    /* documentation: get access point prefixed with account id using endpoint url@us-west-2 */
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "SDK::Endpoint": "https://control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com"
@@ -1388,6 +1429,7 @@ async fn operation_input_test_get_access_point_41() {
 
 #[::tokio::test]
 async fn operation_input_test_get_access_point_42() {
+    /* documentation: endpoint url with s3-outposts@us-west-2 */
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "SDK::Endpoint": "https://beta.example.com"
@@ -1423,6 +1465,7 @@ async fn operation_input_test_get_access_point_42() {
 
 #[::tokio::test]
 async fn operation_input_test_get_bucket_43() {
+    /* documentation: get bucket with endpoint_url@us-west-2 */
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "SDK::Endpoint": "https://beta.example.com"
@@ -1458,6 +1501,7 @@ async fn operation_input_test_get_bucket_43() {
 
 #[::tokio::test]
 async fn operation_input_test_list_regional_buckets_44() {
+    /* documentation: ListRegionalBucket + OutpostId endpoint url@us-east-2 */
     /* builtIns: {
         "AWS::Region": "us-east-2",
         "SDK::Endpoint": "https://beta.example.com"
@@ -1491,6 +1535,7 @@ async fn operation_input_test_list_regional_buckets_44() {
 
 #[::tokio::test]
 async fn operation_input_test_list_regional_buckets_45() {
+    /* documentation: ListRegionalBucket + OutpostId + fips + endpoint url@us-east-2 */
     /* builtIns: {
         "AWS::Region": "us-east-2",
         "AWS::UseFIPS": true,
@@ -1526,6 +1571,7 @@ async fn operation_input_test_list_regional_buckets_45() {
 
 #[::tokio::test]
 async fn operation_input_test_list_regional_buckets_46() {
+    /* documentation: ListRegionalBucket + OutpostId + fips + dualstack@us-east-2 */
     /* builtIns: {
         "AWS::Region": "us-east-2",
         "AWS::UseFIPS": true,
@@ -1561,6 +1607,7 @@ async fn operation_input_test_list_regional_buckets_46() {
 
 #[::tokio::test]
 async fn operation_input_test_create_bucket_47() {
+    /* documentation: CreateBucket + OutpostId endpoint url@us-east-2 */
     /* builtIns: {
         "AWS::Region": "us-east-2",
         "AWS::UseFIPS": true,
@@ -1596,6 +1643,7 @@ async fn operation_input_test_create_bucket_47() {
 
 #[::tokio::test]
 async fn operation_input_test_create_access_point_48() {
+    /* documentation: vanilla bucket arn requires account id@us-west-2 */
     /* builtIns: {
         "AWS::Region": "us-west-2"
     } */
@@ -1630,6 +1678,7 @@ async fn operation_input_test_create_access_point_48() {
 
 #[::tokio::test]
 async fn operation_input_test_get_bucket_49() {
+    /* documentation: bucket arn with UseArnRegion = true (arn region supercedes client configured region)@us-west-2 */
     /* builtIns: {
         "AWS::Region": "us-west-2"
     } */
@@ -1663,6 +1712,7 @@ async fn operation_input_test_get_bucket_49() {
 
 #[::tokio::test]
 async fn operation_input_test_get_bucket_50() {
+    /* documentation: bucket ARN in gov partition (non-fips)@us-gov-east-1 */
     /* builtIns: {
         "AWS::Region": "us-gov-east-1"
     } */
@@ -1696,6 +1746,7 @@ async fn operation_input_test_get_bucket_50() {
 
 #[::tokio::test]
 async fn operation_input_test_get_bucket_51() {
+    /* documentation: bucket ARN in gov partition with FIPS@us-gov-west-1 */
     /* builtIns: {
         "AWS::Region": "us-gov-west-1",
         "AWS::UseFIPS": true
@@ -1731,6 +1782,7 @@ async fn operation_input_test_get_bucket_51() {
 
 #[::tokio::test]
 async fn operation_input_test_get_bucket_52() {
+    /* documentation: bucket ARN in aws partition with FIPS@us-east-2 */
     /* builtIns: {
         "AWS::Region": "us-east-2",
         "AWS::UseFIPS": true
@@ -1766,6 +1818,7 @@ async fn operation_input_test_get_bucket_52() {
 
 #[::tokio::test]
 async fn operation_input_test_get_bucket_53() {
+    /* documentation: bucket ARN in aws partition with fips + dualstack@us-east-2 */
     /* builtIns: {
         "AWS::Region": "us-east-2",
         "AWS::UseFIPS": true,
@@ -1803,6 +1856,7 @@ async fn operation_input_test_get_bucket_53() {
 
 #[::tokio::test]
 async fn operation_input_test_create_access_point_54() {
+    /* documentation: vanilla bucket arn requires account id@cn-north-1 */
     /* builtIns: {
         "AWS::Region": "cn-north-1"
     } */
@@ -1837,6 +1891,7 @@ async fn operation_input_test_create_access_point_54() {
 
 #[::tokio::test]
 async fn operation_input_test_get_bucket_55() {
+    /* documentation: bucket arn with UseArnRegion = true (arn region supercedes client configured region)@us-west-2 */
     /* builtIns: {
         "AWS::Region": "us-west-2"
     } */
@@ -1870,6 +1925,7 @@ async fn operation_input_test_get_bucket_55() {
 
 #[::tokio::test]
 async fn operation_input_test_get_bucket_56() {
+    /* documentation: bucket ARN in gov partition (non-fips)@us-gov-east-1 */
     /* builtIns: {
         "AWS::Region": "us-gov-east-1"
     } */
@@ -1903,6 +1959,7 @@ async fn operation_input_test_get_bucket_56() {
 
 #[::tokio::test]
 async fn operation_input_test_get_bucket_57() {
+    /* documentation: bucket ARN in gov partition with FIPS@us-gov-west-1 */
     /* builtIns: {
         "AWS::Region": "us-gov-west-1",
         "AWS::UseFIPS": true
@@ -1938,6 +1995,7 @@ async fn operation_input_test_get_bucket_57() {
 
 #[::tokio::test]
 async fn operation_input_test_get_bucket_58() {
+    /* documentation: bucket ARN in aws partition with FIPS@us-east-2 */
     /* builtIns: {
         "AWS::Region": "us-east-2",
         "AWS::UseFIPS": true
@@ -1973,6 +2031,7 @@ async fn operation_input_test_get_bucket_58() {
 
 #[::tokio::test]
 async fn operation_input_test_get_bucket_59() {
+    /* documentation: Outposts support dualstack @us-west-2 */
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "AWS::UseDualStack": true
@@ -2008,6 +2067,7 @@ async fn operation_input_test_get_bucket_59() {
 
 #[::tokio::test]
 async fn operation_input_test_create_access_point_60() {
+    /* documentation: vanilla bucket arn requires account id@af-south-1 */
     /* builtIns: {
         "AWS::Region": "af-south-1"
     } */
@@ -2042,6 +2102,7 @@ async fn operation_input_test_create_access_point_60() {
 
 #[::tokio::test]
 async fn operation_input_test_get_bucket_61() {
+    /* documentation: bucket arn with UseArnRegion = true (arn region supercedes client configured region)@us-west-2 */
     /* builtIns: {
         "AWS::Region": "us-west-2"
     } */
@@ -2075,6 +2136,7 @@ async fn operation_input_test_get_bucket_61() {
 
 #[::tokio::test]
 async fn operation_input_test_get_bucket_62() {
+    /* documentation: bucket ARN in gov partition (non-fips)@us-gov-east-1 */
     /* builtIns: {
         "AWS::Region": "us-gov-east-1"
     } */
@@ -2108,6 +2170,7 @@ async fn operation_input_test_get_bucket_62() {
 
 #[::tokio::test]
 async fn operation_input_test_get_bucket_63() {
+    /* documentation: bucket ARN in gov partition with FIPS@us-gov-west-1 */
     /* builtIns: {
         "AWS::Region": "us-gov-west-1",
         "AWS::UseFIPS": true
@@ -2143,6 +2206,7 @@ async fn operation_input_test_get_bucket_63() {
 
 #[::tokio::test]
 async fn operation_input_test_get_bucket_64() {
+    /* documentation: bucket ARN in aws partition with FIPS@us-east-2 */
     /* builtIns: {
         "AWS::Region": "us-east-2",
         "AWS::UseFIPS": true
@@ -2178,6 +2242,7 @@ async fn operation_input_test_get_bucket_64() {
 
 #[::tokio::test]
 async fn operation_input_test_list_regional_buckets_65() {
+    /* documentation: custom account id prefix @us-east-1 */
     /* builtIns: {
         "AWS::Region": "us-east-1"
     } */
@@ -2208,6 +2273,7 @@ async fn operation_input_test_list_regional_buckets_65() {
 
 #[::tokio::test]
 async fn operation_input_test_list_regional_buckets_66() {
+    /* documentation: invalid account id prefix @us-east-1 */
     /* builtIns: {
         "AWS::Region": "us-east-1"
     } */
@@ -2238,6 +2304,7 @@ async fn operation_input_test_list_regional_buckets_66() {
 
 #[::tokio::test]
 async fn operation_input_test_list_regional_buckets_67() {
+    /* documentation: custom account id prefix with fips@us-east-1 */
     /* builtIns: {
         "AWS::Region": "us-east-1",
         "AWS::UseFIPS": true
@@ -2270,6 +2337,7 @@ async fn operation_input_test_list_regional_buckets_67() {
 
 #[::tokio::test]
 async fn operation_input_test_list_regional_buckets_68() {
+    /* documentation: custom account id prefix with dualstack,fips@us-east-1 */
     /* builtIns: {
         "AWS::Region": "us-east-1",
         "AWS::UseFIPS": true,
@@ -2304,6 +2372,7 @@ async fn operation_input_test_list_regional_buckets_68() {
 
 #[::tokio::test]
 async fn operation_input_test_list_regional_buckets_69() {
+    /* documentation: custom account id with custom endpoint */
     /* builtIns: {
         "AWS::Region": "us-east-1",
         "SDK::Endpoint": "https://example.com"
@@ -2336,6 +2405,7 @@ async fn operation_input_test_list_regional_buckets_69() {
 
 #[::tokio::test]
 async fn operation_input_test_list_regional_buckets_70() {
+    /* documentation: RequiresAccountId with invalid AccountId and custom endpoint */
     /* builtIns: {
         "AWS::Region": "us-east-1",
         "SDK::Endpoint": "https://beta.example.com"
@@ -2370,6 +2440,7 @@ async fn operation_input_test_list_regional_buckets_70() {
 
 #[::tokio::test]
 async fn operation_input_test_list_regional_buckets_71() {
+    /* documentation: account id with custom endpoint, fips */
     /* builtIns: {
         "AWS::Region": "us-east-1",
         "AWS::UseFIPS": true,
@@ -2404,6 +2475,7 @@ async fn operation_input_test_list_regional_buckets_71() {
 
 #[::tokio::test]
 async fn operation_input_test_list_regional_buckets_72() {
+    /* documentation: ListRegionalBuckets + OutpostId with invalid accountId set. */
     /* builtIns: {
         "AWS::Region": "us-east-2"
     } */
@@ -2437,6 +2509,7 @@ async fn operation_input_test_list_regional_buckets_72() {
 
 #[::tokio::test]
 async fn operation_input_test_get_access_point_73() {
+    /* documentation: endpoint url with accesspoint (non-arn) */
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "SDK::Endpoint": "https://beta.example.com"
@@ -2470,6 +2543,7 @@ async fn operation_input_test_get_access_point_73() {
 
 #[::tokio::test]
 async fn operation_input_test_get_access_point_74() {
+    /* documentation: DualStack + Custom endpoint is not supported(non-arn) */
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "AWS::UseDualStack": true,
@@ -2505,6 +2579,7 @@ async fn operation_input_test_get_access_point_74() {
 
 #[::tokio::test]
 async fn operation_input_test_get_bucket_75() {
+    /* documentation: get bucket with custom endpoint and dualstack is not supported@us-west-2 */
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "AWS::UseDualStack": true,
@@ -2542,6 +2617,7 @@ async fn operation_input_test_get_bucket_75() {
 
 #[::tokio::test]
 async fn operation_input_test_list_regional_buckets_76() {
+    /* documentation: ListRegionalBuckets + OutpostId with fips in CN. */
     /* builtIns: {
         "AWS::Region": "cn-north-1",
         "AWS::UseFIPS": true
@@ -2575,6 +2651,7 @@ async fn operation_input_test_list_regional_buckets_76() {
 
 #[::tokio::test]
 async fn operation_input_test_list_regional_buckets_77() {
+    /* documentation: ListRegionalBuckets + invalid OutpostId. */
     /* builtIns: {
         "AWS::Region": "us-west-1"
     } */
@@ -2606,6 +2683,7 @@ async fn operation_input_test_list_regional_buckets_77() {
 
 #[::tokio::test]
 async fn operation_input_test_get_access_point_78() {
+    /* documentation: Outpost Accesspoint ARN with arn region and client region mismatch with UseArnRegion=false */
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "AWS::S3Control::UseArnRegion": false
@@ -2640,6 +2718,7 @@ async fn operation_input_test_get_access_point_78() {
 
 #[::tokio::test]
 async fn operation_input_test_delete_access_point_79() {
+    /* documentation: Outpost Accesspoint ARN with arn region and client region mismatch with UseArnRegion=false */
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "AWS::S3Control::UseArnRegion": false
@@ -2674,6 +2753,7 @@ async fn operation_input_test_delete_access_point_79() {
 
 #[::tokio::test]
 async fn operation_input_test_get_bucket_80() {
+    /* documentation: Outpost Bucket ARN with arn region and client region mismatch with UseArnRegion=false */
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "SDK::Endpoint": "https://beta.example.com",
@@ -2710,6 +2790,7 @@ async fn operation_input_test_get_bucket_80() {
 
 #[::tokio::test]
 async fn operation_input_test_get_access_point_81() {
+    /* documentation: Accesspoint ARN with region mismatch and UseArnRegion unset */
     /* builtIns: {
         "AWS::Region": "us-west-2"
     } */
@@ -2743,6 +2824,7 @@ async fn operation_input_test_get_access_point_81() {
 
 #[::tokio::test]
 async fn operation_input_test_delete_access_point_82() {
+    /* documentation: Accesspoint ARN with region mismatch and UseArnRegion unset */
     /* builtIns: {
         "AWS::Region": "us-west-2"
     } */
@@ -2776,6 +2858,7 @@ async fn operation_input_test_delete_access_point_82() {
 
 #[::tokio::test]
 async fn operation_input_test_get_bucket_83() {
+    /* documentation: Bucket ARN with region mismatch and UseArnRegion unset */
     /* builtIns: {
         "AWS::Region": "us-west-2"
     } */
@@ -2809,6 +2892,7 @@ async fn operation_input_test_get_bucket_83() {
 
 #[::tokio::test]
 async fn operation_input_test_get_bucket_84() {
+    /* documentation: Outpost Bucket ARN with partition mismatch with UseArnRegion=true */
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "AWS::S3Control::UseArnRegion": true
@@ -2844,6 +2928,7 @@ async fn operation_input_test_get_bucket_84() {
 
 #[::tokio::test]
 async fn operation_input_test_get_access_point_85() {
+    /* documentation: Accesspoint ARN with partition mismatch and UseArnRegion=true */
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "AWS::S3Control::UseArnRegion": true
@@ -2879,6 +2964,7 @@ async fn operation_input_test_get_access_point_85() {
 
 #[::tokio::test]
 async fn operation_input_test_delete_access_point_86() {
+    /* documentation: Accesspoint ARN with partition mismatch and UseArnRegion=true */
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "AWS::S3Control::UseArnRegion": true
@@ -2914,6 +3000,7 @@ async fn operation_input_test_delete_access_point_86() {
 
 #[::tokio::test]
 async fn operation_input_test_get_bucket_versioning_87() {
+    /* documentation: outpost bucket arn@us-west-2 */
     /* builtIns: {
         "AWS::Region": "us-west-2"
     } */
@@ -2947,6 +3034,7 @@ async fn operation_input_test_get_bucket_versioning_87() {
 
 #[::tokio::test]
 async fn operation_input_test_put_bucket_versioning_88() {
+    /* documentation: outpost bucket arn@us-west-2 */
     /* builtIns: {
         "AWS::Region": "us-west-2"
     } */
