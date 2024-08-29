@@ -5,7 +5,9 @@
 
 use aws_smithy_async::future::timeout::TimedOutError;
 use aws_smithy_async::rt::sleep::{default_async_sleep, AsyncSleep, SharedAsyncSleep};
+use aws_smithy_runtime::client::http::connection_poisoning::CaptureSmithyConnection;
 use aws_smithy_runtime_api::box_error::BoxError;
+use aws_smithy_runtime_api::client::connection::ConnectionMetadata;
 use aws_smithy_runtime_api::client::connector_metadata::ConnectorMetadata;
 use aws_smithy_runtime_api::client::dns::ResolveDns;
 use aws_smithy_runtime_api::client::http::{
@@ -24,11 +26,13 @@ use aws_smithy_types::error::display::DisplayErrorContext;
 use aws_smithy_types::retry::ErrorKind;
 use client::connect::Connection;
 use h2::Reason;
-use http::Uri;
+use http::{Extensions, Uri};
 use hyper::rt::{Read, Write};
 use hyper_util::client::legacy as client;
 use hyper_util::client::legacy::connect::dns::Name;
-use hyper_util::client::legacy::connect::Connect;
+use hyper_util::client::legacy::connect::{
+    capture_connection, CaptureConnection, Connect, HttpInfo,
+};
 use hyper_util::rt::TokioExecutor;
 use rustls::crypto::CryptoProvider;
 use std::borrow::Cow;
@@ -400,7 +404,6 @@ impl<C> fmt::Debug for Adapter<C> {
     }
 }
 
-/*
 /// Extract a smithy connection from a hyper CaptureConnection
 fn extract_smithy_connection(capture_conn: &CaptureConnection) -> Option<ConnectionMetadata> {
     let capture_conn = capture_conn.clone();
@@ -425,7 +428,7 @@ fn extract_smithy_connection(capture_conn: &CaptureConnection) -> Option<Connect
     } else {
         None
     }
-}*/
+}
 
 impl<C> HttpConnector for Adapter<C>
 where
@@ -437,19 +440,19 @@ where
     C::Error: Into<BoxError>,
 {
     fn call(&self, request: HttpRequest) -> HttpConnectorFuture {
-        let request = match request.try_into_http1x() {
+        let mut request = match request.try_into_http1x() {
             Ok(request) => request,
             Err(err) => {
                 return HttpConnectorFuture::ready(Err(ConnectorError::user(err.into())));
             }
         };
-        /*let capture_connection = capture_connection(&mut request);
+        let capture_connection = capture_connection(&mut request);
         if let Some(capture_smithy_connection) =
             request.extensions().get::<CaptureSmithyConnection>()
         {
             capture_smithy_connection
                 .set_connection_retriever(move || extract_smithy_connection(&capture_connection));
-        }*/
+        }
         let mut client = self.client.clone();
         use tower::Service;
         let fut = client.call(request);

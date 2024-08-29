@@ -37,7 +37,7 @@ version = "0.60.7"
 [dependencies.aws-smithy-runtime]
 path = "../aws-smithy-runtime"
 features = ["client"]
-version = "1.6.4"
+version = "1.7.0"
 
 [dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
@@ -46,7 +46,7 @@ version = "1.7.2"
 
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
-version = "1.2.2"
+version = "1.2.3"
 
 [dependencies.aws-smithy-xml]
 path = "../aws-smithy-xml"
@@ -102,7 +102,7 @@ version = "0.62.0"
 [dev-dependencies.aws-smithy-runtime]
 path = "../aws-smithy-runtime"
 features = ["test-util", "wire-mock", "client"]
-version = "1.6.4"
+version = "1.7.0"
 
 [dev-dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
@@ -112,7 +112,7 @@ version = "1.7.2"
 [dev-dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
 features = ["test-util"]
-version = "1.2.2"
+version = "1.2.3"
 
 [dev-dependencies.futures-util]
 version = "0.3.25"

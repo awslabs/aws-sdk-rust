@@ -5,6 +5,7 @@
 
 use crate::body::SdkBody;
 use crate::byte_stream::{error::Error, error::ErrorKind, ByteStream};
+use std::cmp::min;
 use std::future::Future;
 use std::path::PathBuf;
 use std::pin::Pin;
@@ -190,15 +191,16 @@ impl FsBuilder {
             return Err(ErrorKind::OffsetLargerThanFileSize.into());
         }
 
+        let remaining_file_length = file_length - offset;
         let length = match self.length {
             Some(Length::Exact(length)) => {
-                if length > file_length - offset {
+                if length > remaining_file_length {
                     return Err(ErrorKind::LengthLargerThanFileSizeMinusReadOffset.into());
                 }
                 length
             }
-            Some(Length::UpTo(length)) => length,
-            None => file_length - offset,
+            Some(Length::UpTo(length)) => min(length, remaining_file_length),
+            None => remaining_file_length,
         };
 
         if let Some(path) = self.path {
@@ -246,4 +248,58 @@ enum State {
         stream: ReaderStream<io::Take<File>>,
         bytes_left: u64,
     },
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use std::io::Write;
+    use tempfile::NamedTempFile;
+
+    #[tokio::test]
+    async fn length_up_to_should_work() {
+        const FILE_LEN: usize = 1000;
+        // up to less than `FILE_LEN`
+        {
+            let mut file = NamedTempFile::new().unwrap();
+            file.write_all(vec![0; FILE_LEN].as_slice()).unwrap();
+            let byte_stream = FsBuilder::new()
+                .path(file.path())
+                .length(Length::UpTo((FILE_LEN / 2) as u64))
+                .build()
+                .await
+                .unwrap();
+            let (lower, upper) = byte_stream.size_hint();
+            assert_eq!(lower, upper.unwrap());
+            assert_eq!((FILE_LEN / 2) as u64, lower);
+        }
+        // up to equal to `FILE_LEN`
+        {
+            let mut file = NamedTempFile::new().unwrap();
+            file.write_all(vec![0; FILE_LEN].as_slice()).unwrap();
+            let byte_stream = FsBuilder::new()
+                .path(file.path())
+                .length(Length::UpTo(FILE_LEN as u64))
+                .build()
+                .await
+                .unwrap();
+            let (lower, upper) = byte_stream.size_hint();
+            assert_eq!(lower, upper.unwrap());
+            assert_eq!(FILE_LEN as u64, lower);
+        }
+        // up to greater than `FILE_LEN`
+        {
+            let mut file = NamedTempFile::new().unwrap();
+            file.write_all(vec![0; FILE_LEN].as_slice()).unwrap();
+            let byte_stream = FsBuilder::new()
+                .path(file.path())
+                .length(Length::UpTo((FILE_LEN * 2) as u64))
+                .build()
+                .await
+                .unwrap();
+            let (lower, upper) = byte_stream.size_hint();
+            assert_eq!(lower, upper.unwrap());
+            assert_eq!(FILE_LEN as u64, lower);
+        }
+    }
 }

@@ -217,8 +217,8 @@ async fn try_op(
 ) {
     // Before serialization
     run_interceptors!(halt_on_err: {
-        read_before_serialization(ctx, runtime_components, cfg);
         modify_before_serialization(ctx, runtime_components, cfg);
+        read_before_serialization(ctx, runtime_components, cfg);
     });
 
     // Serialization
