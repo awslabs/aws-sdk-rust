@@ -18,9 +18,9 @@ tokio-stream = "0.1.8"
 tracing = "0.1"
 aws-config= { version = "1.5.5", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
 aws-http= { version = "0.60.6", path = "../../../sdk/aws-http" }
-aws-sdk-dynamodb= { version = "1.42.0", path = "../../../sdk/dynamodb" }
+aws-sdk-dynamodb= { version = "1.43.0", path = "../../../sdk/dynamodb" }
 aws-smithy-runtime= { version = "1.6.3", path = "../../../sdk/aws-smithy-runtime", features = ["test-util"] }
-aws-smithy-types= { version = "1.2.2", path = "../../../sdk/aws-smithy-types" }
+aws-smithy-types= { version = "1.2.1", path = "../../../sdk/aws-smithy-types" }
 
 [dependencies.clap]
 version = "~4.4"

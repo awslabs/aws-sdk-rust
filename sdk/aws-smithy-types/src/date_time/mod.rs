@@ -332,12 +332,7 @@ impl Ord for DateTime {
 
 impl Display for DateTime {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        // Some dates are out of range to be serialized with `DateTime`.
-        // In these cases, fallback to using epoch seconds which always works
-        let date = match self.fmt(Format::DateTime) {
-            Ok(date) => date,
-            Err(_err) => format::epoch_seconds::format(self),
-        };
+        let date = self.fmt(Format::DateTime).map_err(|_| fmt::Error)?;
         write!(f, "{}", date)
     }
 }
@@ -632,13 +627,6 @@ mod test {
             SystemTime::from(off_date_time),
             SystemTime::try_from(date_time).unwrap()
         );
-    }
-
-    #[test]
-    fn formatting_of_early_dates() {
-        let date: DateTime =
-            DateTime::from_str("Mon, 16 Dec -019 23:48:18 GMT", Format::HttpDate).unwrap();
-        assert_eq!(format!("{}", date), "-62736509502");
     }
 
     #[test]
