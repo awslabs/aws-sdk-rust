@@ -230,6 +230,8 @@ mod endpoint_lib;
 
 mod lens;
 
+mod sdk_feature_tracker;
+
 /// Supporting types for waiters.
 ///
 /// Note: to use waiters, import the [`Waiters`](crate::client::Waiters) trait, which adds methods prefixed with `wait_until` to the client.

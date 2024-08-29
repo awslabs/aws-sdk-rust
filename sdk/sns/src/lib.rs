@@ -199,6 +199,8 @@ mod endpoint_lib;
 
 mod lens;
 
+mod sdk_feature_tracker;
+
 mod serde_util;
 
 mod rest_xml_wrapped_errors;

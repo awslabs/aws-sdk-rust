@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+use aws_runtime::user_agent::test_util::assert_ua_contains_metric_values;
 use aws_sdk_ec2::{client::Waiters, config::Region, error::DisplayErrorContext, Client};
 use aws_smithy_async::test_util::tick_advance_sleep::{
     tick_advance_time_and_sleep, TickAdvanceTime,
@@ -84,4 +85,42 @@ async fn waiters_exceed_max_wait_time() {
         }
         err => panic!("unexpected error: {}", DisplayErrorContext(&err)),
     }
+}
+
+#[tokio::test]
+async fn should_emit_business_metric_for_waiter_in_user_agent() {
+    // This function has the same setup and execution as `waiters_success`, but differs in the verification step.
+    // Because `full_validate` consumes the recorded requests after being called, we need a separate test
+    // to examine these requests.
+
+    let _logs = show_test_logs();
+
+    let (ec2, http_client, time_source) = prerequisites().await;
+
+    ec2.start_instances()
+        .instance_ids("i-09fb4224219ac6902")
+        .send()
+        .await
+        .unwrap();
+
+    let waiter_task = tokio::spawn(
+        ec2.wait_until_instance_status_ok()
+            .instance_ids("i-09fb4224219ac6902")
+            .wait(Duration::from_secs(300)),
+    );
+
+    time_source.tick(Duration::from_secs(305)).await;
+    waiter_task.await.unwrap().unwrap();
+
+    // Verify the corresponding business metric value has been emitted
+    let actual_requests = http_client.take_requests().await;
+    let user_agent_in_last_request = actual_requests
+        .last()
+        .unwrap()
+        .headers()
+        .get("x-amz-user-agent")
+        .unwrap()
+        .to_str()
+        .unwrap();
+    assert_ua_contains_metric_values(user_agent_in_last_request, &["B"]);
 }

@@ -65,11 +65,13 @@ impl DescribeReservedNodeExchangeStatusPaginator {
         // Move individual fields out of self for the borrow checker
         let builder = self.builder;
         let handle = self.handle;
-        let runtime_plugins = crate::operation::describe_reserved_node_exchange_status::DescribeReservedNodeExchangeStatus::operation_runtime_plugins(
-            handle.runtime_plugins.clone(),
-            &handle.conf,
-            ::std::option::Option::None,
-        );
+        let runtime_plugins =
+            crate::operation::describe_reserved_node_exchange_status::DescribeReservedNodeExchangeStatus::operation_runtime_plugins(
+                handle.runtime_plugins.clone(),
+                &handle.conf,
+                ::std::option::Option::None,
+            )
+            .with_operation_plugin(crate::sdk_feature_tracker::paginator::PaginatorFeatureTrackerRuntimePlugin::new());
         ::aws_smithy_async::future::pagination_stream::PaginationStream::new(::aws_smithy_async::future::pagination_stream::fn_stream::FnStream::new(
             move |tx| {
                 ::std::boxed::Box::pin(async move {

@@ -69,7 +69,8 @@ impl DescribeImportTasksPaginator {
             handle.runtime_plugins.clone(),
             &handle.conf,
             ::std::option::Option::None,
-        );
+        )
+        .with_operation_plugin(crate::sdk_feature_tracker::paginator::PaginatorFeatureTrackerRuntimePlugin::new());
         ::aws_smithy_async::future::pagination_stream::PaginationStream::new(::aws_smithy_async::future::pagination_stream::fn_stream::FnStream::new(
             move |tx| {
                 ::std::boxed::Box::pin(async move {

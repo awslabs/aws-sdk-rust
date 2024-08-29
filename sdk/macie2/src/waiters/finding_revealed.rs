@@ -44,7 +44,8 @@ impl FindingRevealedFluentBuilder {
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,
             ::std::option::Option::None,
-        );
+        )
+        .with_operation_plugin(crate::sdk_feature_tracker::waiter::WaiterFeatureTrackerRuntimePlugin::new());
         let mut cfg = ::aws_smithy_types::config_bag::ConfigBag::base();
         let runtime_components_builder = runtime_plugins
             .apply_client_configuration(&mut cfg)

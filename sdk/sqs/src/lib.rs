@@ -215,6 +215,8 @@ mod endpoint_lib;
 
 mod lens;
 
+mod sdk_feature_tracker;
+
 mod serde_util;
 
 mod aws_query_compatible_errors;

@@ -7,6 +7,7 @@
 use aws_smithy_compression::body::compress::CompressedBody;
 use aws_smithy_compression::http::http_body_0_4_x::CompressRequest;
 use aws_smithy_compression::{CompressionAlgorithm, CompressionOptions};
+use aws_smithy_runtime::client::sdk_feature::SmithySdkFeature;
 use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::interceptors::context::{BeforeSerializationInterceptorContextRef, BeforeTransmitInterceptorContextMut};
 use aws_smithy_runtime_api::client::interceptors::{Intercept, SharedInterceptor};
@@ -70,12 +71,7 @@ impl Intercept for RequestCompressionInterceptor {
         "RequestCompressionInterceptor"
     }
 
-    fn read_before_serialization(
-        &self,
-        _context: &BeforeSerializationInterceptorContextRef<'_>,
-        _runtime_components: &RuntimeComponents,
-        cfg: &mut ConfigBag,
-    ) -> Result<(), BoxError> {
+    fn read_before_execution(&self, _context: &BeforeSerializationInterceptorContextRef<'_>, cfg: &mut ConfigBag) -> Result<(), BoxError> {
         let disable_request_compression = cfg.load::<DisableRequestCompression>().cloned().unwrap_or_default();
         let request_min_compression_size_bytes = cfg.load::<RequestMinCompressionSizeBytes>().cloned().unwrap_or_default();
         let options = CompressionOptions::default()
@@ -89,15 +85,13 @@ impl Intercept for RequestCompressionInterceptor {
         Ok(())
     }
 
-    fn modify_before_signing(
+    fn modify_before_retry_loop(
         &self,
         context: &mut BeforeTransmitInterceptorContextMut<'_>,
         _runtime_components: &RuntimeComponents,
         cfg: &mut ConfigBag,
     ) -> Result<(), BoxError> {
-        let state = cfg
-            .load::<RequestCompressionInterceptorState>()
-            .expect("set in `read_before_serialization`");
+        let state = cfg.load::<RequestCompressionInterceptorState>().expect("set in `read_before_execution`");
 
         let options = state.options.clone().unwrap();
         let request = context.request_mut();
@@ -127,6 +121,9 @@ impl Intercept for RequestCompressionInterceptor {
         }
 
         wrap_request_body_in_compressed_body(request, CompressionAlgorithm::Gzip.into_impl_http_body_0_4_x(&options))?;
+
+        cfg.interceptor_state()
+            .store_append::<SmithySdkFeature>(SmithySdkFeature::GzipRequestCompression);
 
         Ok(())
     }
@@ -184,9 +181,15 @@ impl Storable for RequestMinCompressionSizeBytes {
 #[cfg(test)]
 mod tests {
     use super::wrap_request_body_in_compressed_body;
+    use crate::client_request_compression::{RequestCompressionInterceptor, RequestMinCompressionSizeBytes};
     use aws_smithy_compression::{CompressionAlgorithm, CompressionOptions};
+    use aws_smithy_runtime::client::sdk_feature::SmithySdkFeature;
+    use aws_smithy_runtime_api::client::interceptors::context::{Input, InterceptorContext};
+    use aws_smithy_runtime_api::client::interceptors::Intercept;
     use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
+    use aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder;
     use aws_smithy_types::body::SdkBody;
+    use aws_smithy_types::config_bag::{ConfigBag, Layer};
     use http_body::Body;
 
     const UNCOMPRESSED_INPUT: &[u8] = b"hello world";
@@ -226,5 +229,39 @@ mod tests {
         // Since this body was wrapped, the output should be compressed data
         assert_ne!(UNCOMPRESSED_INPUT, body_data.as_slice());
         assert_eq!(COMPRESSED_OUTPUT, body_data.as_slice());
+    }
+
+    fn context() -> InterceptorContext {
+        let mut context = InterceptorContext::new(Input::doesnt_matter());
+        context.enter_serialization_phase();
+        context.set_request(
+            http::Request::builder()
+                .body(SdkBody::from(UNCOMPRESSED_INPUT))
+                .unwrap()
+                .try_into()
+                .unwrap(),
+        );
+        let _ = context.take_input();
+        context.enter_before_transmit_phase();
+        context
+    }
+
+    #[tokio::test]
+    async fn test_sdk_feature_gzip_request_compression_should_be_tracked() {
+        let mut cfg = ConfigBag::base();
+        let mut layer = Layer::new("test");
+        layer.store_put(RequestMinCompressionSizeBytes::from(0));
+        cfg.push_layer(layer);
+        let mut context = context();
+        let ctx = Into::into(&context);
+
+        let sut = RequestCompressionInterceptor::new();
+        sut.read_before_execution(&ctx, &mut cfg).unwrap();
+
+        let rc = RuntimeComponentsBuilder::for_tests().build().unwrap();
+        let mut ctx = Into::into(&mut context);
+        sut.modify_before_retry_loop(&mut ctx, &rc, &mut cfg).unwrap();
+
+        assert_eq!(&SmithySdkFeature::GzipRequestCompression, cfg.load::<SmithySdkFeature>().next().unwrap());
     }
 }

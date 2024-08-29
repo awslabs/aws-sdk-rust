@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+use aws_smithy_runtime::client::sdk_feature::SmithySdkFeature;
 use once_cell::sync::Lazy;
 use std::borrow::Cow;
 use std::collections::HashMap;
@@ -127,6 +128,32 @@ iterable_enum!(
     Sigv4aSigning,
     ResolvedAccountId
 );
+
+pub(crate) trait ProvideBusinessMetric {
+    fn provide_business_metric(&self) -> Option<BusinessMetric>;
+}
+
+impl ProvideBusinessMetric for SmithySdkFeature {
+    fn provide_business_metric(&self) -> Option<BusinessMetric> {
+        use SmithySdkFeature::*;
+        match self {
+            Waiter => Some(BusinessMetric::Waiter),
+            Paginator => Some(BusinessMetric::Paginator),
+            GzipRequestCompression => Some(BusinessMetric::GzipRequestCompression),
+            ProtocolRpcV2Cbor => Some(BusinessMetric::ProtocolRpcV2Cbor),
+            otherwise => {
+                // This may occur if a customer upgrades only the `aws-smithy-runtime-api` crate
+                // while continuing to use an outdated version of an SDK crate or the `aws-runtime`
+                // crate.
+                tracing::warn!(
+                    "Attempted to provide `BusinessMetric` for `{otherwise:?}`, which is not recognized in the current version of the `aws-runtime` crate. \
+                    Consider upgrading to the latest version to ensure that all tracked features are properly reported in your metrics."
+                );
+                None
+            }
+        }
+    }
+}
 
 #[derive(Clone, Debug, Default)]
 pub(super) struct BusinessMetrics(Vec<BusinessMetric>);

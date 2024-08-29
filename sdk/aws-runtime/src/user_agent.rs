@@ -13,6 +13,10 @@ use std::fmt;
 
 mod interceptor;
 mod metrics;
+#[cfg(feature = "test-util")]
+pub mod test_util;
+
+const USER_AGENT_VERSION: &str = "2.1";
 
 use crate::user_agent::metrics::BusinessMetrics;
 pub use interceptor::UserAgentInterceptor;
@@ -26,6 +30,7 @@ pub use metrics::BusinessMetric;
 #[derive(Clone, Debug)]
 pub struct AwsUserAgent {
     sdk_metadata: SdkMetadata,
+    ua_metadata: UaMetadata,
     api_metadata: ApiMetadata,
     os_metadata: OsMetadata,
     language_metadata: LanguageMetadata,
@@ -49,6 +54,9 @@ impl AwsUserAgent {
             name: "rust",
             version: build_metadata.core_pkg_version,
         };
+        let ua_metadata = UaMetadata {
+            version: USER_AGENT_VERSION,
+        };
         let os_metadata = OsMetadata {
             os_family: &build_metadata.os_family,
             version: None,
@@ -64,6 +72,7 @@ impl AwsUserAgent {
 
         AwsUserAgent {
             sdk_metadata,
+            ua_metadata,
             api_metadata,
             os_metadata,
             language_metadata: LanguageMetadata {
@@ -89,6 +98,7 @@ impl AwsUserAgent {
                 name: "rust",
                 version: "0.123.test",
             },
+            ua_metadata: UaMetadata { version: "0.1" },
             api_metadata: ApiMetadata {
                 service_id: "test-service".into(),
                 version: "0.123",
@@ -218,6 +228,7 @@ impl AwsUserAgent {
         /*
         ABNF for the user agent (see the bottom of the file for complete ABNF):
         ua-string = sdk-metadata RWS
+                    ua-metadata RWS
                     [api-metadata RWS]
                     os-metadata RWS
                     language-metadata RWS
@@ -231,6 +242,7 @@ impl AwsUserAgent {
         use std::fmt::Write;
         // unwrap calls should never fail because string formatting will always succeed.
         write!(ua_value, "{} ", &self.sdk_metadata).unwrap();
+        write!(ua_value, "{} ", &self.ua_metadata).unwrap();
         write!(ua_value, "{} ", &self.api_metadata).unwrap();
         write!(ua_value, "{} ", &self.os_metadata).unwrap();
         write!(ua_value, "{} ", &self.language_metadata).unwrap();
@@ -284,6 +296,17 @@ struct SdkMetadata {
 impl fmt::Display for SdkMetadata {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(f, "aws-sdk-{}/{}", self.name, self.version)
+    }
+}
+
+#[derive(Clone, Copy, Debug)]
+struct UaMetadata {
+    version: &'static str,
+}
+
+impl fmt::Display for UaMetadata {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "ua/{}", self.version)
     }
 }
 
@@ -598,6 +621,7 @@ mod test {
     fn make_deterministic(ua: &mut AwsUserAgent) {
         // hard code some variable things for a deterministic test
         ua.sdk_metadata.version = "0.1";
+        ua.ua_metadata.version = "0.1";
         ua.language_metadata.version = "1.50.0";
         ua.os_metadata.os_family = &OsFamily::Macos;
         ua.os_metadata.version = Some("1.15".to_string());
@@ -613,7 +637,7 @@ mod test {
         make_deterministic(&mut ua);
         assert_eq!(
             ua.aws_ua_header(),
-            "aws-sdk-rust/0.1 api/dynamodb/123 os/macos/1.15 lang/rust/1.50.0"
+            "aws-sdk-rust/0.1 ua/0.1 api/dynamodb/123 os/macos/1.15 lang/rust/1.50.0"
         );
         assert_eq!(
             ua.ua_header(),
@@ -634,7 +658,7 @@ mod test {
         make_deterministic(&mut ua);
         assert_eq!(
             ua.aws_ua_header(),
-            "aws-sdk-rust/0.1 api/dynamodb/123 os/macos/1.15 lang/rust/1.50.0 exec-env/lambda"
+            "aws-sdk-rust/0.1 ua/0.1 api/dynamodb/123 os/macos/1.15 lang/rust/1.50.0 exec-env/lambda"
         );
         assert_eq!(
             ua.ua_header(),
@@ -658,7 +682,7 @@ mod test {
         make_deterministic(&mut ua);
         assert_eq!(
             ua.aws_ua_header(),
-            "aws-sdk-rust/0.1 api/dynamodb/123 os/macos/1.15 lang/rust/1.50.0 lib/some-framework/1.3 md/something lib/other"
+            "aws-sdk-rust/0.1 ua/0.1 api/dynamodb/123 os/macos/1.15 lang/rust/1.50.0 lib/some-framework/1.3 md/something lib/other"
         );
         assert_eq!(
             ua.ua_header(),
@@ -677,7 +701,7 @@ mod test {
         make_deterministic(&mut ua);
         assert_eq!(
             ua.aws_ua_header(),
-            "aws-sdk-rust/0.1 api/dynamodb/123 os/macos/1.15 lang/rust/1.50.0 app/my_app"
+            "aws-sdk-rust/0.1 ua/0.1 api/dynamodb/123 os/macos/1.15 lang/rust/1.50.0 app/my_app"
         );
         assert_eq!(
             ua.ua_header(),
@@ -691,7 +715,7 @@ mod test {
         ua.build_env_additional_metadata = Some(AdditionalMetadata::new("asdf").unwrap());
         assert_eq!(
             ua.aws_ua_header(),
-            "aws-sdk-rust/0.123.test api/test-service/0.123 os/windows/XPSP3 lang/rust/1.50.0 md/asdf"
+            "aws-sdk-rust/0.123.test ua/0.1 api/test-service/0.123 os/windows/XPSP3 lang/rust/1.50.0 md/asdf"
         );
         assert_eq!(
             ua.ua_header(),
@@ -706,7 +730,7 @@ mod test {
             let ua = AwsUserAgent::for_tests().with_business_metric(BusinessMetric::ResourceModel);
             assert_eq!(
                 ua.aws_ua_header(),
-                "aws-sdk-rust/0.123.test api/test-service/0.123 os/windows/XPSP3 lang/rust/1.50.0 m/A"
+                "aws-sdk-rust/0.123.test ua/0.1 api/test-service/0.123 os/windows/XPSP3 lang/rust/1.50.0 m/A"
             );
             assert_eq!(
                 ua.ua_header(),
@@ -721,7 +745,7 @@ mod test {
                 .with_business_metric(BusinessMetric::S3ExpressBucket);
             assert_eq!(
                 ua.aws_ua_header(),
-                "aws-sdk-rust/0.123.test api/test-service/0.123 os/windows/XPSP3 lang/rust/1.50.0 m/F,G,J"
+                "aws-sdk-rust/0.123.test ua/0.1 api/test-service/0.123 os/windows/XPSP3 lang/rust/1.50.0 m/F,G,J"
             );
             assert_eq!(
                 ua.ua_header(),
