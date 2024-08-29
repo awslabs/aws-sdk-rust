@@ -2,7 +2,7 @@
 
 /// <p>Metadata that contains a description for a column.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ColumnDescription {
     /// <p>The text of a description for a column.</p>
     pub text: ::std::option::Option<::std::string::String>,
@@ -13,6 +13,13 @@ impl ColumnDescription {
         self.text.as_deref()
     }
 }
+impl ::std::fmt::Debug for ColumnDescription {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ColumnDescription");
+        formatter.field("text", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl ColumnDescription {
     /// Creates a new builder-style object to manufacture [`ColumnDescription`](crate::types::ColumnDescription).
     pub fn builder() -> crate::types::builders::ColumnDescriptionBuilder {
@@ -21,7 +28,7 @@ impl ColumnDescription {
 }
 
 /// A builder for [`ColumnDescription`](crate::types::ColumnDescription).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct ColumnDescriptionBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
@@ -44,5 +51,12 @@ impl ColumnDescriptionBuilder {
     /// Consumes the builder and constructs a [`ColumnDescription`](crate::types::ColumnDescription).
     pub fn build(self) -> crate::types::ColumnDescription {
         crate::types::ColumnDescription { text: self.text }
+    }
+}
+impl ::std::fmt::Debug for ColumnDescriptionBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ColumnDescriptionBuilder");
+        formatter.field("text", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

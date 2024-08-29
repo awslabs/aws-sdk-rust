@@ -7,6 +7,8 @@ pub struct ValidateStateMachineDefinitionOutput {
     pub result: crate::types::ValidateStateMachineDefinitionResultCode,
     /// <p>If the result is <code>OK</code>, this field will be empty. When there are errors, this field will contain an array of <b>Diagnostic</b> objects to help you troubleshoot.</p>
     pub diagnostics: ::std::vec::Vec<crate::types::ValidateStateMachineDefinitionDiagnostic>,
+    /// <p>The result value will be <code>true</code> if the number of diagnostics found in the workflow definition exceeds <code>maxResults</code>. When all diagnostics results are returned, the value will be <code>false</code>.</p>
+    pub truncated: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl ValidateStateMachineDefinitionOutput {
@@ -18,6 +20,10 @@ impl ValidateStateMachineDefinitionOutput {
     pub fn diagnostics(&self) -> &[crate::types::ValidateStateMachineDefinitionDiagnostic] {
         use std::ops::Deref;
         self.diagnostics.deref()
+    }
+    /// <p>The result value will be <code>true</code> if the number of diagnostics found in the workflow definition exceeds <code>maxResults</code>. When all diagnostics results are returned, the value will be <code>false</code>.</p>
+    pub fn truncated(&self) -> ::std::option::Option<bool> {
+        self.truncated
     }
 }
 impl ::aws_types::request_id::RequestId for ValidateStateMachineDefinitionOutput {
@@ -38,6 +44,7 @@ impl ValidateStateMachineDefinitionOutput {
 pub struct ValidateStateMachineDefinitionOutputBuilder {
     pub(crate) result: ::std::option::Option<crate::types::ValidateStateMachineDefinitionResultCode>,
     pub(crate) diagnostics: ::std::option::Option<::std::vec::Vec<crate::types::ValidateStateMachineDefinitionDiagnostic>>,
+    pub(crate) truncated: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl ValidateStateMachineDefinitionOutputBuilder {
@@ -76,6 +83,20 @@ impl ValidateStateMachineDefinitionOutputBuilder {
     pub fn get_diagnostics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidateStateMachineDefinitionDiagnostic>> {
         &self.diagnostics
     }
+    /// <p>The result value will be <code>true</code> if the number of diagnostics found in the workflow definition exceeds <code>maxResults</code>. When all diagnostics results are returned, the value will be <code>false</code>.</p>
+    pub fn truncated(mut self, input: bool) -> Self {
+        self.truncated = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The result value will be <code>true</code> if the number of diagnostics found in the workflow definition exceeds <code>maxResults</code>. When all diagnostics results are returned, the value will be <code>false</code>.</p>
+    pub fn set_truncated(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.truncated = input;
+        self
+    }
+    /// <p>The result value will be <code>true</code> if the number of diagnostics found in the workflow definition exceeds <code>maxResults</code>. When all diagnostics results are returned, the value will be <code>false</code>.</p>
+    pub fn get_truncated(&self) -> &::std::option::Option<bool> {
+        &self.truncated
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -109,6 +130,7 @@ impl ValidateStateMachineDefinitionOutputBuilder {
                         "diagnostics was not specified but it is required when building ValidateStateMachineDefinitionOutput",
                     )
                 })?,
+                truncated: self.truncated,
                 _request_id: self._request_id,
             },
         )

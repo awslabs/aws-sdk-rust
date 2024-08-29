@@ -9,5 +9,14 @@ pub fn ser_validate_state_machine_definition_input_input(
     if let Some(var_2) = &input.r#type {
         object.key("type").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.severity {
+        object.key("severity").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.max_results {
+        object.key("maxResults").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+        );
+    }
     Ok(())
 }

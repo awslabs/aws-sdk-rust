@@ -88,6 +88,11 @@ where
                                 crate::protocol_serde::shape_solution_version_summary::de_solution_version_summary(tokens)?,
                             );
                         }
+                        "latestSolutionUpdate" => {
+                            builder = builder.set_latest_solution_update(
+                                crate::protocol_serde::shape_solution_update_summary::de_solution_update_summary(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

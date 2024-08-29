@@ -2,7 +2,7 @@
 
 /// <p>Output column.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct OutputColumn {
     /// <p>The display name of the column..</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -31,6 +31,16 @@ impl OutputColumn {
         self.sub_type.as_ref()
     }
 }
+impl ::std::fmt::Debug for OutputColumn {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("OutputColumn");
+        formatter.field("name", &self.name);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("r#type", &self.r#type);
+        formatter.field("sub_type", &self.sub_type);
+        formatter.finish()
+    }
+}
 impl OutputColumn {
     /// Creates a new builder-style object to manufacture [`OutputColumn`](crate::types::OutputColumn).
     pub fn builder() -> crate::types::builders::OutputColumnBuilder {
@@ -39,7 +49,7 @@ impl OutputColumn {
 }
 
 /// A builder for [`OutputColumn`](crate::types::OutputColumn).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct OutputColumnBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -112,5 +122,15 @@ impl OutputColumnBuilder {
             r#type: self.r#type,
             sub_type: self.sub_type,
         }
+    }
+}
+impl ::std::fmt::Debug for OutputColumnBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("OutputColumnBuilder");
+        formatter.field("name", &self.name);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("r#type", &self.r#type);
+        formatter.field("sub_type", &self.sub_type);
+        formatter.finish()
     }
 }

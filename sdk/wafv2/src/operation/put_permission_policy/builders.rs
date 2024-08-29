@@ -22,8 +22,8 @@ impl crate::operation::put_permission_policy::builders::PutPermissionPolicyInput
 }
 /// Fluent builder constructing a request to `PutPermissionPolicy`.
 ///
-/// <p>Attaches an IAM policy to the specified resource. Use this to share a rule group across accounts.</p>
-/// <p>You must be the owner of the rule group to perform this operation.</p>
+/// <p>Use this to share a rule group with other accounts.</p>
+/// <p>This action attaches an IAM policy to the specified resource. You must be the owner of the rule group to perform this operation.</p>
 /// <p>This action is subject to the following restrictions:</p>
 /// <ul>
 /// <li>
@@ -33,6 +33,7 @@ impl crate::operation::put_permission_policy::builders::PutPermissionPolicyInput
 /// <li>
 /// <p>The user making the request must be the owner of the rule group.</p></li>
 /// </ul>
+/// <p>If a rule group has been shared with your account, you can access it through the call <code>GetRuleGroup</code>, and you can reference it in <code>CreateWebACL</code> and <code>UpdateWebACL</code>. Rule groups that are shared with you don't appear in your WAF console rule groups listing.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutPermissionPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

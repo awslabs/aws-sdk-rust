@@ -210,3 +210,6 @@ pub mod update_metric_attribution;
 
 /// Types for the `UpdateRecommender` operation.
 pub mod update_recommender;
+
+/// Types for the `UpdateSolution` operation.
+pub mod update_solution;

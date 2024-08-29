@@ -6,7 +6,7 @@
 pub struct ByteContentFile {
     /// <p>The MIME type of data contained in the file used for chat.</p>
     pub media_type: ::std::string::String,
-    /// <p>The byte value of the file to attach, encoded as Base-64 string. The maximum size of all files that is attached is 10MB. You can attach a maximum of 5 files.</p>
+    /// <p>The raw bytes of the file to attach. The maximum size of all files that is attached is 10MB. You can attach a maximum of 5 files.</p>
     pub data: ::aws_smithy_types::Blob,
 }
 impl ByteContentFile {
@@ -15,7 +15,7 @@ impl ByteContentFile {
         use std::ops::Deref;
         self.media_type.deref()
     }
-    /// <p>The byte value of the file to attach, encoded as Base-64 string. The maximum size of all files that is attached is 10MB. You can attach a maximum of 5 files.</p>
+    /// <p>The raw bytes of the file to attach. The maximum size of all files that is attached is 10MB. You can attach a maximum of 5 files.</p>
     pub fn data(&self) -> &::aws_smithy_types::Blob {
         &self.data
     }
@@ -58,18 +58,18 @@ impl ByteContentFileBuilder {
     pub fn get_media_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.media_type
     }
-    /// <p>The byte value of the file to attach, encoded as Base-64 string. The maximum size of all files that is attached is 10MB. You can attach a maximum of 5 files.</p>
+    /// <p>The raw bytes of the file to attach. The maximum size of all files that is attached is 10MB. You can attach a maximum of 5 files.</p>
     /// This field is required.
     pub fn data(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.data = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The byte value of the file to attach, encoded as Base-64 string. The maximum size of all files that is attached is 10MB. You can attach a maximum of 5 files.</p>
+    /// <p>The raw bytes of the file to attach. The maximum size of all files that is attached is 10MB. You can attach a maximum of 5 files.</p>
     pub fn set_data(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.data = input;
         self
     }
-    /// <p>The byte value of the file to attach, encoded as Base-64 string. The maximum size of all files that is attached is 10MB. You can attach a maximum of 5 files.</p>
+    /// <p>The raw bytes of the file to attach. The maximum size of all files that is attached is 10MB. You can attach a maximum of 5 files.</p>
     pub fn get_data(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         &self.data
     }

@@ -2025,6 +2025,31 @@ impl From<crate::operation::update_recommender::UpdateRecommenderError> for Erro
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_solution::UpdateSolutionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_solution::UpdateSolutionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_solution::UpdateSolutionError> for Error {
+    fn from(err: crate::operation::update_solution::UpdateSolutionError) -> Self {
+        match err {
+            crate::operation::update_solution::UpdateSolutionError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::update_solution::UpdateSolutionError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::update_solution::UpdateSolutionError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::update_solution::UpdateSolutionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_solution::UpdateSolutionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {

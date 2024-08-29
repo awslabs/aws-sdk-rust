@@ -7,6 +7,11 @@ pub struct ValidateStateMachineDefinitionInput {
     pub definition: ::std::option::Option<::std::string::String>,
     /// <p>The target type of state machine for this definition. The default is <code>STANDARD</code>.</p>
     pub r#type: ::std::option::Option<crate::types::StateMachineType>,
+    /// <p>Minimum level of diagnostics to return. <code>ERROR</code> returns only <code>ERROR</code> diagnostics, whereas <code>WARNING</code> returns both <code>WARNING</code> and <code>ERROR</code> diagnostics. The default is <code>ERROR</code>.</p>
+    pub severity: ::std::option::Option<crate::types::ValidateStateMachineDefinitionSeverity>,
+    /// <p>The maximum number of diagnostics that are returned per call. The default and maximum value is 100. Setting the value to 0 will also use the default of 100.</p>
+    /// <p>If the number of diagnostics returned in the response exceeds <code>maxResults</code>, the value of the <code>truncated</code> field in the response will be set to <code>true</code>.</p>
+    pub max_results: ::std::option::Option<i32>,
 }
 impl ValidateStateMachineDefinitionInput {
     /// <p>The Amazon States Language definition of the state machine. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a> (ASL).</p>
@@ -17,12 +22,23 @@ impl ValidateStateMachineDefinitionInput {
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::StateMachineType> {
         self.r#type.as_ref()
     }
+    /// <p>Minimum level of diagnostics to return. <code>ERROR</code> returns only <code>ERROR</code> diagnostics, whereas <code>WARNING</code> returns both <code>WARNING</code> and <code>ERROR</code> diagnostics. The default is <code>ERROR</code>.</p>
+    pub fn severity(&self) -> ::std::option::Option<&crate::types::ValidateStateMachineDefinitionSeverity> {
+        self.severity.as_ref()
+    }
+    /// <p>The maximum number of diagnostics that are returned per call. The default and maximum value is 100. Setting the value to 0 will also use the default of 100.</p>
+    /// <p>If the number of diagnostics returned in the response exceeds <code>maxResults</code>, the value of the <code>truncated</code> field in the response will be set to <code>true</code>.</p>
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
+        self.max_results
+    }
 }
 impl ::std::fmt::Debug for ValidateStateMachineDefinitionInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ValidateStateMachineDefinitionInput");
         formatter.field("definition", &"*** Sensitive Data Redacted ***");
         formatter.field("r#type", &self.r#type);
+        formatter.field("severity", &self.severity);
+        formatter.field("max_results", &self.max_results);
         formatter.finish()
     }
 }
@@ -39,6 +55,8 @@ impl ValidateStateMachineDefinitionInput {
 pub struct ValidateStateMachineDefinitionInputBuilder {
     pub(crate) definition: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::StateMachineType>,
+    pub(crate) severity: ::std::option::Option<crate::types::ValidateStateMachineDefinitionSeverity>,
+    pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ValidateStateMachineDefinitionInputBuilder {
     /// <p>The Amazon States Language definition of the state machine. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a> (ASL).</p>
@@ -70,6 +88,37 @@ impl ValidateStateMachineDefinitionInputBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::StateMachineType> {
         &self.r#type
     }
+    /// <p>Minimum level of diagnostics to return. <code>ERROR</code> returns only <code>ERROR</code> diagnostics, whereas <code>WARNING</code> returns both <code>WARNING</code> and <code>ERROR</code> diagnostics. The default is <code>ERROR</code>.</p>
+    pub fn severity(mut self, input: crate::types::ValidateStateMachineDefinitionSeverity) -> Self {
+        self.severity = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Minimum level of diagnostics to return. <code>ERROR</code> returns only <code>ERROR</code> diagnostics, whereas <code>WARNING</code> returns both <code>WARNING</code> and <code>ERROR</code> diagnostics. The default is <code>ERROR</code>.</p>
+    pub fn set_severity(mut self, input: ::std::option::Option<crate::types::ValidateStateMachineDefinitionSeverity>) -> Self {
+        self.severity = input;
+        self
+    }
+    /// <p>Minimum level of diagnostics to return. <code>ERROR</code> returns only <code>ERROR</code> diagnostics, whereas <code>WARNING</code> returns both <code>WARNING</code> and <code>ERROR</code> diagnostics. The default is <code>ERROR</code>.</p>
+    pub fn get_severity(&self) -> &::std::option::Option<crate::types::ValidateStateMachineDefinitionSeverity> {
+        &self.severity
+    }
+    /// <p>The maximum number of diagnostics that are returned per call. The default and maximum value is 100. Setting the value to 0 will also use the default of 100.</p>
+    /// <p>If the number of diagnostics returned in the response exceeds <code>maxResults</code>, the value of the <code>truncated</code> field in the response will be set to <code>true</code>.</p>
+    pub fn max_results(mut self, input: i32) -> Self {
+        self.max_results = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum number of diagnostics that are returned per call. The default and maximum value is 100. Setting the value to 0 will also use the default of 100.</p>
+    /// <p>If the number of diagnostics returned in the response exceeds <code>maxResults</code>, the value of the <code>truncated</code> field in the response will be set to <code>true</code>.</p>
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_results = input;
+        self
+    }
+    /// <p>The maximum number of diagnostics that are returned per call. The default and maximum value is 100. Setting the value to 0 will also use the default of 100.</p>
+    /// <p>If the number of diagnostics returned in the response exceeds <code>maxResults</code>, the value of the <code>truncated</code> field in the response will be set to <code>true</code>.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// Consumes the builder and constructs a [`ValidateStateMachineDefinitionInput`](crate::operation::validate_state_machine_definition::ValidateStateMachineDefinitionInput).
     pub fn build(
         self,
@@ -80,6 +129,8 @@ impl ValidateStateMachineDefinitionInputBuilder {
         ::std::result::Result::Ok(crate::operation::validate_state_machine_definition::ValidateStateMachineDefinitionInput {
             definition: self.definition,
             r#type: self.r#type,
+            severity: self.severity,
+            max_results: self.max_results,
         })
     }
 }
@@ -88,6 +139,8 @@ impl ::std::fmt::Debug for ValidateStateMachineDefinitionInputBuilder {
         let mut formatter = f.debug_struct("ValidateStateMachineDefinitionInputBuilder");
         formatter.field("definition", &"*** Sensitive Data Redacted ***");
         formatter.field("r#type", &self.r#type);
+        formatter.field("severity", &self.severity);
+        formatter.field("max_results", &self.max_results);
         formatter.finish()
     }
 }

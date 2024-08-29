@@ -9,7 +9,7 @@ pub enum Error {
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The request failed due to an error while processing the model.</p>
     ModelErrorException(crate::types::error::ModelErrorException),
-    /// <p>The model specified in the request is not ready to serve inference requests.</p>
+    /// <p>The model specified in the request is not ready to serve inference requests. The AWS SDK will automatically retry the operation up to 5 times. For information about configuring automatic retries, see <a href="https://docs.aws.amazon.com/sdkref/latest/guide/feature-retry-behavior.html">Retry behavior</a> in the <i>AWS SDKs and Tools</i> reference guide.</p>
     ModelNotReadyException(crate::types::error::ModelNotReadyException),
     /// <p>An error occurred while streaming the response. Retry your request.</p>
     ModelStreamErrorException(crate::types::error::ModelStreamErrorException),

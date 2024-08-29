@@ -3,6 +3,8 @@ pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundExce
 
 pub use crate::types::error::_resource_in_use_exception::ResourceInUseException;
 
+pub use crate::types::error::_limit_exceeded_exception::LimitExceededException;
+
 pub use crate::types::error::_invalid_input_exception::InvalidInputException;
 
 pub use crate::types::error::_resource_already_exists_exception::ResourceAlreadyExistsException;
@@ -10,8 +12,6 @@ pub use crate::types::error::_resource_already_exists_exception::ResourceAlready
 pub use crate::types::error::_too_many_tag_keys_exception::TooManyTagKeysException;
 
 pub use crate::types::error::_too_many_tags_exception::TooManyTagsException;
-
-pub use crate::types::error::_limit_exceeded_exception::LimitExceededException;
 
 pub use crate::types::error::_invalid_next_token_exception::InvalidNextTokenException;
 

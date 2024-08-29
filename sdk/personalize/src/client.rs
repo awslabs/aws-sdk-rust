@@ -302,3 +302,5 @@ mod update_dataset;
 mod update_metric_attribution;
 
 mod update_recommender;
+
+mod update_solution;

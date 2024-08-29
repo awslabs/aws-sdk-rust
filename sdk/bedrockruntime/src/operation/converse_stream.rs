@@ -282,7 +282,7 @@ pub enum ConverseStreamError {
     ModelStreamErrorException(crate::types::error::ModelStreamErrorException),
     /// <p>Input validation failed. Check your request parameters and retry the request.</p>
     ValidationException(crate::types::error::ValidationException),
-    /// <p>The model specified in the request is not ready to serve inference requests.</p>
+    /// <p>The model specified in the request is not ready to serve inference requests. The AWS SDK will automatically retry the operation up to 5 times. For information about configuring automatic retries, see <a href="https://docs.aws.amazon.com/sdkref/latest/guide/feature-retry-behavior.html">Retry behavior</a> in the <i>AWS SDKs and Tools</i> reference guide.</p>
     ModelNotReadyException(crate::types::error::ModelNotReadyException),
     /// <p>The request failed due to an error while processing the model.</p>
     ModelErrorException(crate::types::error::ModelErrorException),
@@ -418,7 +418,10 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for ConverseStreamError {
         ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
     }
     fn retryable_error_kind(&self) -> ::std::option::Option<::aws_smithy_types::retry::ErrorKind> {
-        ::std::option::Option::None
+        match self {
+            Self::ModelNotReadyException(inner) => ::std::option::Option::Some(inner.retryable_error_kind()),
+            _ => ::std::option::Option::None,
+        }
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ConverseStreamError {

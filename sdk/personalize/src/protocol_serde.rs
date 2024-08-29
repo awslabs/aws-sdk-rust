@@ -163,6 +163,8 @@ pub(crate) mod shape_update_metric_attribution;
 
 pub(crate) mod shape_update_recommender;
 
+pub(crate) mod shape_update_solution;
+
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
@@ -327,6 +329,8 @@ pub(crate) mod shape_update_metric_attribution_input;
 
 pub(crate) mod shape_update_recommender_input;
 
+pub(crate) mod shape_update_solution_input;
+
 pub(crate) mod shape_algorithm;
 
 pub(crate) mod shape_batch_inference_job;
@@ -417,6 +421,8 @@ pub(crate) mod shape_solution;
 
 pub(crate) mod shape_solution_config;
 
+pub(crate) mod shape_solution_update_config;
+
 pub(crate) mod shape_solution_version;
 
 pub(crate) mod shape_solution_versions;
@@ -488,6 +494,8 @@ pub(crate) mod shape_resource_config;
 pub(crate) mod shape_s3_data_config;
 
 pub(crate) mod shape_solution_summary;
+
+pub(crate) mod shape_solution_update_summary;
 
 pub(crate) mod shape_solution_version_summary;
 

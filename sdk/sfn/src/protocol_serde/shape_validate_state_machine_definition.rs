@@ -99,6 +99,9 @@ pub(crate) fn de_validate_state_machine_definition(
                             crate::protocol_serde::shape_validate_state_machine_definition_diagnostic_list::de_validate_state_machine_definition_diagnostic_list(tokens)?
                         );
                 }
+                "truncated" => {
+                    builder = builder.set_truncated(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {
