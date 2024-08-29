@@ -185,7 +185,6 @@ pub mod primitives;
 /// Data structures used by operation inputs/outputs.
 pub mod types;
 
-///
 mod apigateway_interceptors;
 
 mod auth_plugin;

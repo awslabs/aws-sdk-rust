@@ -201,29 +201,22 @@ mod auth_plugin;
 
 mod event_receiver;
 
-///
 pub(crate) mod http_request_checksum;
 
-///
 pub(crate) mod http_response_checksum;
 
-///
 pub mod presigning;
 
-///
 pub(crate) mod presigning_interceptors;
 
 pub(crate) mod protocol_serde;
 
 mod rest_xml_unwrapped_errors;
 
-///
 mod s3_expires_interceptor;
 
-///
 mod s3_express;
 
-///
 mod s3_request_id;
 
 mod serialization_settings;

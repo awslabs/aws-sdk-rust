@@ -208,7 +208,6 @@ mod auth_plugin;
 
 pub(crate) mod protocol_serde;
 
-///
 mod route53_resource_id_preprocessor;
 
 mod serialization_settings;

@@ -211,7 +211,6 @@ pub mod types;
 
 mod auth_plugin;
 
-///
 mod glacier_interceptors;
 
 pub(crate) mod protocol_serde;

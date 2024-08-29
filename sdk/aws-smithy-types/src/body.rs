@@ -62,7 +62,8 @@ enum BoxBody {
         feature = "http-body-1-x",
         feature = "rt-tokio"
     ))]
-    HttpBody04(http_body_0_4::combinators::BoxBody<Bytes, Error>),
+    // will be dead code with `--no-default-features --features rt-tokio`
+    HttpBody04(#[allow(dead_code)] http_body_0_4::combinators::BoxBody<Bytes, Error>),
 }
 
 pin_project! {

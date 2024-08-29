@@ -73,42 +73,13 @@ where
 #[cfg(test)]
 mod test {
     use crate::credential_fn::provide_credentials_fn;
-    use crate::{
-        provider::{future, ProvideCredentials},
-        Credentials,
-    };
-    use async_trait::async_trait;
-    use std::fmt::{Debug, Formatter};
+    use crate::{provider::ProvideCredentials, Credentials};
 
     fn assert_send_sync<T: Send + Sync>() {}
 
     #[test]
     fn creds_are_send_sync() {
         assert_send_sync::<Credentials>()
-    }
-
-    #[async_trait]
-    trait AnotherTrait: Send + Sync {
-        async fn creds(&self) -> Credentials;
-    }
-
-    struct AnotherTraitWrapper<T> {
-        inner: T,
-    }
-
-    impl<T> Debug for AnotherTraitWrapper<T> {
-        fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
-            write!(f, "wrapper")
-        }
-    }
-
-    impl<T: AnotherTrait> ProvideCredentials for AnotherTraitWrapper<T> {
-        fn provide_credentials<'a>(&'a self) -> future::ProvideCredentials<'a>
-        where
-            Self: 'a,
-        {
-            future::ProvideCredentials::new(async move { Ok(self.inner.creds().await) })
-        }
     }
 
     // Test that the closure passed to `provide_credentials_fn` is allowed to borrow things

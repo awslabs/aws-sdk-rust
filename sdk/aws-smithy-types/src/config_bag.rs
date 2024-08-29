@@ -583,9 +583,9 @@ impl ConfigBag {
     }
 
     /// Return a mutable reference to `T` if it is stored in the top layer of the bag
-    pub fn get_mut<T: Send + Sync + Debug + Clone + 'static>(&mut self) -> Option<&mut T>
+    pub fn get_mut<T>(&mut self) -> Option<&mut T>
     where
-        T: Storable<Storer = StoreReplace<T>>,
+        T: Storable<Storer = StoreReplace<T>> + Send + Sync + Debug + Clone + 'static,
     {
         // this code looks weird to satisfy the borrow checker—we can't keep the result of `get_mut`
         // alive (even in a returned branch) and then call `store_put`. So: drop the borrow immediately
@@ -617,11 +617,9 @@ impl ConfigBag {
     ///
     /// - If `T` is in a deeper layer of the bag, that value will be cloned and inserted into the top layer
     /// - If `T` is not present in the bag, the [`Default`] implementation will be used.
-    pub fn get_mut_or_default<T: Send + Sync + Debug + Clone + Default + 'static>(
-        &mut self,
-    ) -> &mut T
+    pub fn get_mut_or_default<T>(&mut self) -> &mut T
     where
-        T: Storable<Storer = StoreReplace<T>>,
+        T: Storable<Storer = StoreReplace<T>> + Send + Sync + Debug + Clone + Default + 'static,
     {
         self.get_mut_or_else(|| T::default())
     }
@@ -630,12 +628,9 @@ impl ConfigBag {
     ///
     /// - If `T` is in a deeper layer of the bag, that value will be cloned and inserted into the top layer
     /// - If `T` is not present in the bag, `default` will be used to construct a new value
-    pub fn get_mut_or_else<T: Send + Sync + Debug + Clone + 'static>(
-        &mut self,
-        default: impl Fn() -> T,
-    ) -> &mut T
+    pub fn get_mut_or_else<T>(&mut self, default: impl Fn() -> T) -> &mut T
     where
-        T: Storable<Storer = StoreReplace<T>>,
+        T: Storable<Storer = StoreReplace<T>> + Send + Sync + Debug + Clone + 'static,
     {
         // this code looks weird to satisfy the borrow checker—we can't keep the result of `get_mut`
         // alive (even in a returned branch) and then call `store_put`. So: drop the borrow immediately

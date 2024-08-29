@@ -166,7 +166,7 @@ impl Properties {
             .entry(properties_key.clone())
             .and_modify(|v| {
                 tracing::trace!("overwriting {properties_key}: was {v}, now {value}");
-                *v = value.clone();
+                v.clone_from(&value);
             })
             .or_insert(value);
     }

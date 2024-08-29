@@ -3,7 +3,6 @@ pub use ::aws_smithy_runtime_api::client::endpoint::EndpointFuture;
 pub use ::aws_smithy_runtime_api::client::endpoint::SharedEndpointResolver;
 pub use ::aws_smithy_types::endpoint::Endpoint;
 
-///
 #[cfg(test)]
 mod test {
 

@@ -73,38 +73,12 @@ where
 mod test {
     use super::*;
     use crate::Token;
-    use async_trait::async_trait;
-    use std::fmt::{Debug, Formatter};
 
     fn assert_send_sync<T: Send + Sync>() {}
 
     #[test]
     fn creds_are_send_sync() {
         assert_send_sync::<Token>()
-    }
-
-    #[async_trait]
-    trait AnotherTrait: Send + Sync {
-        async fn token(&self) -> Token;
-    }
-
-    struct AnotherTraitWrapper<T> {
-        inner: T,
-    }
-
-    impl<T> Debug for AnotherTraitWrapper<T> {
-        fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
-            write!(f, "wrapper")
-        }
-    }
-
-    impl<T: AnotherTrait> ProvideToken for AnotherTraitWrapper<T> {
-        fn provide_token<'a>(&'a self) -> future::ProvideToken<'a>
-        where
-            Self: 'a,
-        {
-            future::ProvideToken::new(async move { Ok(self.inner.token().await) })
-        }
     }
 
     // Test that the closure passed to `provide_token_fn` is allowed to borrow things

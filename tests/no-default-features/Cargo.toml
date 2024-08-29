@@ -30,12 +30,12 @@ version = "1.2.1"
 [dev-dependencies.aws-smithy-runtime]
 path = "../../sdk/aws-smithy-runtime"
 features = ["test-util"]
-version = "1.7.0"
+version = "1.7.1"
 
 [dev-dependencies.aws-credential-types]
 path = "../../sdk/aws-credential-types"
 features = ["test-util"]
-version = "1.2.0"
+version = "1.2.1"
 
 [dev-dependencies.tokio]
 version = "1.23.1"

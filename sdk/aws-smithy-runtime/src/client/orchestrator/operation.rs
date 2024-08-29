@@ -351,6 +351,7 @@ impl<I, O, E> OperationBuilder<I, O, E> {
     }
 
     /// Configures the a deserializer implementation for the builder.
+    #[allow(clippy::implied_bounds_in_impls)] // for `Send` and `Sync`
     pub fn deserializer_impl<O2, E2>(
         mut self,
         deserializer: impl DeserializeResponse + Send + Sync + 'static,

@@ -232,11 +232,6 @@ mod tests {
     use super::{TypeErasedBox, TypeErasedError};
     use std::fmt;
 
-    #[derive(Debug)]
-    struct Foo(#[allow(dead_code)] &'static str);
-    #[derive(Debug)]
-    struct Bar(#[allow(dead_code)] isize);
-
     #[derive(Debug, Clone, PartialEq, Eq)]
     struct TestErr {
         inner: &'static str,

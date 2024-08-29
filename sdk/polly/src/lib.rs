@@ -189,10 +189,8 @@ pub mod types;
 
 mod auth_plugin;
 
-///
 pub mod presigning;
 
-///
 pub(crate) mod presigning_interceptors;
 
 pub(crate) mod protocol_serde;

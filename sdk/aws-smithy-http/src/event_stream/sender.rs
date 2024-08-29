@@ -208,15 +208,6 @@ mod tests {
     use futures_util::stream::StreamExt;
     use std::error::Error as StdError;
 
-    #[derive(Debug)]
-    struct FakeError;
-    impl std::fmt::Display for FakeError {
-        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-            write!(f, "FakeError")
-        }
-    }
-    impl StdError for FakeError {}
-
     #[derive(Debug, Eq, PartialEq)]
     struct TestMessage(String);
 

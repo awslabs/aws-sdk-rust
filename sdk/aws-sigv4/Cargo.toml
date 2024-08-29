@@ -45,7 +45,7 @@ tracing = "0.1"
 
 [dependencies.aws-credential-types]
 path = "../aws-credential-types"
-version = "1.2.0"
+version = "1.2.1"
 
 [dependencies.aws-smithy-eventstream]
 path = "../aws-smithy-eventstream"
@@ -54,7 +54,7 @@ version = "0.60.4"
 
 [dependencies.aws-smithy-http]
 path = "../aws-smithy-http"
-version = "0.60.9"
+version = "0.60.10"
 
 [dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
@@ -63,7 +63,7 @@ version = "1.7.2"
 
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
-version = "1.2.3"
+version = "1.2.4"
 
 [dependencies.form_urlencoded]
 version = "1.0"
@@ -118,7 +118,7 @@ criterion = "0.5"
 [dev-dependencies.aws-credential-types]
 path = "../aws-credential-types"
 features = ["test-util", "hardcoded-credentials"]
-version = "1.2.0"
+version = "1.2.1"
 
 [dev-dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"

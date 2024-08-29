@@ -189,7 +189,6 @@ mod auth_plugin;
 
 pub(crate) mod client_idempotency_token;
 
-///
 pub mod endpoint_discovery;
 
 mod idempotency_token;

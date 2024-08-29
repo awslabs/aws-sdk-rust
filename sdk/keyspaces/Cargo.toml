@@ -7,7 +7,7 @@ description = "AWS SDK for Amazon Keyspaces"
 edition = "2021"
 license = "Apache-2.0"
 repository = "https://github.com/awslabs/aws-sdk-rust"
-rust-version = "1.76.0"
+rust-version = "1.78.0"
 readme = "README.md"
 [package.metadata.smithy]
 codegen-version = "90a1898472f9d35329d318b6418c7b0eaeb7c049"
@@ -16,11 +16,11 @@ all-features = true
 targets = ["x86_64-unknown-linux-gnu"]
 [dependencies.aws-credential-types]
 path = "../aws-credential-types"
-version = "1.2.0"
+version = "1.2.1"
 
 [dependencies.aws-runtime]
 path = "../aws-runtime"
-version = "1.4.1"
+version = "1.4.2"
 
 [dependencies.aws-smithy-async]
 path = "../aws-smithy-async"
@@ -28,7 +28,7 @@ version = "1.2.1"
 
 [dependencies.aws-smithy-http]
 path = "../aws-smithy-http"
-version = "0.60.9"
+version = "0.60.10"
 
 [dependencies.aws-smithy-json]
 path = "../aws-smithy-json"
@@ -37,7 +37,7 @@ version = "0.60.7"
 [dependencies.aws-smithy-runtime]
 path = "../aws-smithy-runtime"
 features = ["client"]
-version = "1.7.0"
+version = "1.7.1"
 
 [dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
@@ -46,7 +46,7 @@ version = "1.7.2"
 
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
-version = "1.2.3"
+version = "1.2.4"
 
 [dependencies.aws-types]
 path = "../aws-types"
@@ -73,7 +73,7 @@ version = "1.5.5"
 [dev-dependencies.aws-credential-types]
 path = "../aws-credential-types"
 features = ["test-util"]
-version = "1.2.0"
+version = "1.2.1"
 
 [dev-dependencies.tokio]
 version = "1.23.1"
