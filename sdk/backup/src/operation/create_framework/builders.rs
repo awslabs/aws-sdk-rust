@@ -141,17 +141,17 @@ impl CreateFrameworkFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_framework_controls`](Self::set_framework_controls).
     ///
-    /// <p>A list of the controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
+    /// <p>The controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
     pub fn framework_controls(mut self, input: crate::types::FrameworkControl) -> Self {
         self.inner = self.inner.framework_controls(input);
         self
     }
-    /// <p>A list of the controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
+    /// <p>The controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
     pub fn set_framework_controls(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FrameworkControl>>) -> Self {
         self.inner = self.inner.set_framework_controls(input);
         self
     }
-    /// <p>A list of the controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
+    /// <p>The controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
     pub fn get_framework_controls(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FrameworkControl>> {
         self.inner.get_framework_controls()
     }
@@ -174,7 +174,7 @@ impl CreateFrameworkFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_framework_tags`](Self::set_framework_tags).
     ///
-    /// <p>Metadata that you can assign to help organize the frameworks that you create. Each tag is a key-value pair.</p>
+    /// <p>The tags to assign to the framework.</p>
     pub fn framework_tags(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -183,7 +183,7 @@ impl CreateFrameworkFluentBuilder {
         self.inner = self.inner.framework_tags(k.into(), v.into());
         self
     }
-    /// <p>Metadata that you can assign to help organize the frameworks that you create. Each tag is a key-value pair.</p>
+    /// <p>The tags to assign to the framework.</p>
     pub fn set_framework_tags(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -191,7 +191,7 @@ impl CreateFrameworkFluentBuilder {
         self.inner = self.inner.set_framework_tags(input);
         self
     }
-    /// <p>Metadata that you can assign to help organize the frameworks that you create. Each tag is a key-value pair.</p>
+    /// <p>The tags to assign to the framework.</p>
     pub fn get_framework_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_framework_tags()
     }

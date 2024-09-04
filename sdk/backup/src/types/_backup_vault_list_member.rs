@@ -4,10 +4,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BackupVaultListMember {
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created.</p>
     pub backup_vault_name: ::std::option::Option<::std::string::String>,
-    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:backup-vault:aBackupVault</code>.</p>
     pub backup_vault_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The type of vault in which the described recovery point is stored.</p>
+    pub vault_type: ::std::option::Option<crate::types::VaultType>,
+    /// <p>The current state of the vault.</p>
+    pub vault_state: ::std::option::Option<crate::types::VaultState>,
     /// <p>The date and time a resource backup is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A server-side encryption key you can specify to encrypt your backups from services that support full Backup management; for example, <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>. If you specify a key, you must specify its ARN, not its alias. If you do not specify a key, Backup creates a KMS key for you by default.</p>
@@ -32,13 +36,21 @@ pub struct BackupVaultListMember {
     pub lock_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl BackupVaultListMember {
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created.</p>
     pub fn backup_vault_name(&self) -> ::std::option::Option<&str> {
         self.backup_vault_name.as_deref()
     }
-    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:backup-vault:aBackupVault</code>.</p>
     pub fn backup_vault_arn(&self) -> ::std::option::Option<&str> {
         self.backup_vault_arn.as_deref()
+    }
+    /// <p>The type of vault in which the described recovery point is stored.</p>
+    pub fn vault_type(&self) -> ::std::option::Option<&crate::types::VaultType> {
+        self.vault_type.as_ref()
+    }
+    /// <p>The current state of the vault.</p>
+    pub fn vault_state(&self) -> ::std::option::Option<&crate::types::VaultState> {
+        self.vault_state.as_ref()
     }
     /// <p>The date and time a resource backup is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -92,6 +104,8 @@ impl BackupVaultListMember {
 pub struct BackupVaultListMemberBuilder {
     pub(crate) backup_vault_name: ::std::option::Option<::std::string::String>,
     pub(crate) backup_vault_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) vault_type: ::std::option::Option<crate::types::VaultType>,
+    pub(crate) vault_state: ::std::option::Option<crate::types::VaultState>,
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) encryption_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) creator_request_id: ::std::option::Option<::std::string::String>,
@@ -102,33 +116,61 @@ pub struct BackupVaultListMemberBuilder {
     pub(crate) lock_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl BackupVaultListMemberBuilder {
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created.</p>
     pub fn backup_vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_vault_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created.</p>
     pub fn set_backup_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_vault_name = input;
         self
     }
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created.</p>
     pub fn get_backup_vault_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.backup_vault_name
     }
-    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:backup-vault:aBackupVault</code>.</p>
     pub fn backup_vault_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_vault_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:backup-vault:aBackupVault</code>.</p>
     pub fn set_backup_vault_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_vault_arn = input;
         self
     }
-    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:backup-vault:aBackupVault</code>.</p>
     pub fn get_backup_vault_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.backup_vault_arn
+    }
+    /// <p>The type of vault in which the described recovery point is stored.</p>
+    pub fn vault_type(mut self, input: crate::types::VaultType) -> Self {
+        self.vault_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of vault in which the described recovery point is stored.</p>
+    pub fn set_vault_type(mut self, input: ::std::option::Option<crate::types::VaultType>) -> Self {
+        self.vault_type = input;
+        self
+    }
+    /// <p>The type of vault in which the described recovery point is stored.</p>
+    pub fn get_vault_type(&self) -> &::std::option::Option<crate::types::VaultType> {
+        &self.vault_type
+    }
+    /// <p>The current state of the vault.</p>
+    pub fn vault_state(mut self, input: crate::types::VaultState) -> Self {
+        self.vault_state = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The current state of the vault.</p>
+    pub fn set_vault_state(mut self, input: ::std::option::Option<crate::types::VaultState>) -> Self {
+        self.vault_state = input;
+        self
+    }
+    /// <p>The current state of the vault.</p>
+    pub fn get_vault_state(&self) -> &::std::option::Option<crate::types::VaultState> {
+        &self.vault_state
     }
     /// <p>The date and time a resource backup is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -265,6 +307,8 @@ impl BackupVaultListMemberBuilder {
         crate::types::BackupVaultListMember {
             backup_vault_name: self.backup_vault_name,
             backup_vault_arn: self.backup_vault_arn,
+            vault_type: self.vault_type,
+            vault_state: self.vault_state,
             creation_date: self.creation_date,
             encryption_key_arn: self.encryption_key_arn,
             creator_request_id: self.creator_request_id,

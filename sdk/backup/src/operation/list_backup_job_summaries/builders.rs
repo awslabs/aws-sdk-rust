@@ -213,60 +213,57 @@ impl ListBackupJobSummariesFluentBuilder {
     pub fn get_message_category(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_message_category()
     }
-    /// <p>This is the period that sets the boundaries for returned results.</p>
-    /// <p>Acceptable values include</p>
+    /// <p>The period for the returned results.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ONE_DAY</code> for daily job count for the prior 14 days.</p></li>
+    /// <p><code>ONE_DAY</code> - The daily job count for the prior 14 days.</p></li>
     /// <li>
-    /// <p><code>SEVEN_DAYS</code> for the aggregated job count for the prior 7 days.</p></li>
+    /// <p><code>SEVEN_DAYS</code> - The aggregated job count for the prior 7 days.</p></li>
     /// <li>
-    /// <p><code>FOURTEEN_DAYS</code> for aggregated job count for prior 14 days.</p></li>
+    /// <p><code>FOURTEEN_DAYS</code> - The aggregated job count for prior 14 days.</p></li>
     /// </ul>
     pub fn aggregation_period(mut self, input: crate::types::AggregationPeriod) -> Self {
         self.inner = self.inner.aggregation_period(input);
         self
     }
-    /// <p>This is the period that sets the boundaries for returned results.</p>
-    /// <p>Acceptable values include</p>
+    /// <p>The period for the returned results.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ONE_DAY</code> for daily job count for the prior 14 days.</p></li>
+    /// <p><code>ONE_DAY</code> - The daily job count for the prior 14 days.</p></li>
     /// <li>
-    /// <p><code>SEVEN_DAYS</code> for the aggregated job count for the prior 7 days.</p></li>
+    /// <p><code>SEVEN_DAYS</code> - The aggregated job count for the prior 7 days.</p></li>
     /// <li>
-    /// <p><code>FOURTEEN_DAYS</code> for aggregated job count for prior 14 days.</p></li>
+    /// <p><code>FOURTEEN_DAYS</code> - The aggregated job count for prior 14 days.</p></li>
     /// </ul>
     pub fn set_aggregation_period(mut self, input: ::std::option::Option<crate::types::AggregationPeriod>) -> Self {
         self.inner = self.inner.set_aggregation_period(input);
         self
     }
-    /// <p>This is the period that sets the boundaries for returned results.</p>
-    /// <p>Acceptable values include</p>
+    /// <p>The period for the returned results.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ONE_DAY</code> for daily job count for the prior 14 days.</p></li>
+    /// <p><code>ONE_DAY</code> - The daily job count for the prior 14 days.</p></li>
     /// <li>
-    /// <p><code>SEVEN_DAYS</code> for the aggregated job count for the prior 7 days.</p></li>
+    /// <p><code>SEVEN_DAYS</code> - The aggregated job count for the prior 7 days.</p></li>
     /// <li>
-    /// <p><code>FOURTEEN_DAYS</code> for aggregated job count for prior 14 days.</p></li>
+    /// <p><code>FOURTEEN_DAYS</code> - The aggregated job count for prior 14 days.</p></li>
     /// </ul>
     pub fn get_aggregation_period(&self) -> &::std::option::Option<crate::types::AggregationPeriod> {
         self.inner.get_aggregation_period()
     }
-    /// <p>This parameter sets the maximum number of items to be returned.</p>
+    /// <p>The maximum number of items to be returned.</p>
     /// <p>The value is an integer. Range of accepted values is from 1 to 500.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>This parameter sets the maximum number of items to be returned.</p>
+    /// <p>The maximum number of items to be returned.</p>
     /// <p>The value is an integer. Range of accepted values is from 1 to 500.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>This parameter sets the maximum number of items to be returned.</p>
+    /// <p>The maximum number of items to be returned.</p>
     /// <p>The value is an integer. Range of accepted values is from 1 to 500.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()

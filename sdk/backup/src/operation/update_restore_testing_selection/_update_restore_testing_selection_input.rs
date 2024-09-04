@@ -7,7 +7,7 @@ pub struct UpdateRestoreTestingSelectionInput {
     pub restore_testing_plan_name: ::std::option::Option<::std::string::String>,
     /// <p>To update your restore testing selection, you can use either protected resource ARNs or conditions, but not both. That is, if your selection has <code>ProtectedResourceArns</code>, requesting an update with the parameter <code>ProtectedResourceConditions</code> will be unsuccessful.</p>
     pub restore_testing_selection: ::std::option::Option<crate::types::RestoreTestingSelectionForUpdate>,
-    /// <p>This is the required restore testing selection name of the restore testing selection you wish to update.</p>
+    /// <p>The required restore testing selection name of the restore testing selection you wish to update.</p>
     pub restore_testing_selection_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateRestoreTestingSelectionInput {
@@ -19,7 +19,7 @@ impl UpdateRestoreTestingSelectionInput {
     pub fn restore_testing_selection(&self) -> ::std::option::Option<&crate::types::RestoreTestingSelectionForUpdate> {
         self.restore_testing_selection.as_ref()
     }
-    /// <p>This is the required restore testing selection name of the restore testing selection you wish to update.</p>
+    /// <p>The required restore testing selection name of the restore testing selection you wish to update.</p>
     pub fn restore_testing_selection_name(&self) -> ::std::option::Option<&str> {
         self.restore_testing_selection_name.as_deref()
     }
@@ -70,18 +70,18 @@ impl UpdateRestoreTestingSelectionInputBuilder {
     pub fn get_restore_testing_selection(&self) -> &::std::option::Option<crate::types::RestoreTestingSelectionForUpdate> {
         &self.restore_testing_selection
     }
-    /// <p>This is the required restore testing selection name of the restore testing selection you wish to update.</p>
+    /// <p>The required restore testing selection name of the restore testing selection you wish to update.</p>
     /// This field is required.
     pub fn restore_testing_selection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.restore_testing_selection_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>This is the required restore testing selection name of the restore testing selection you wish to update.</p>
+    /// <p>The required restore testing selection name of the restore testing selection you wish to update.</p>
     pub fn set_restore_testing_selection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.restore_testing_selection_name = input;
         self
     }
-    /// <p>This is the required restore testing selection name of the restore testing selection you wish to update.</p>
+    /// <p>The required restore testing selection name of the restore testing selection you wish to update.</p>
     pub fn get_restore_testing_selection_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.restore_testing_selection_name
     }

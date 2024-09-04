@@ -23,6 +23,10 @@ pub struct ExecuteStatementInput {
     pub workgroup_name: ::std::option::Option<::std::string::String>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
+    /// <p>The number of seconds to keep the session alive after the query finishes. The maximum time a session can keep alive is 24 hours. After 24 hours, the session is forced closed and the query is terminated.</p>
+    pub session_keep_alive_seconds: ::std::option::Option<i32>,
+    /// <p>The session identifier of the query.</p>
+    pub session_id: ::std::option::Option<::std::string::String>,
 }
 impl ExecuteStatementInput {
     /// <p>The SQL statement text to run.</p>
@@ -67,6 +71,14 @@ impl ExecuteStatementInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
+    /// <p>The number of seconds to keep the session alive after the query finishes. The maximum time a session can keep alive is 24 hours. After 24 hours, the session is forced closed and the query is terminated.</p>
+    pub fn session_keep_alive_seconds(&self) -> ::std::option::Option<i32> {
+        self.session_keep_alive_seconds
+    }
+    /// <p>The session identifier of the query.</p>
+    pub fn session_id(&self) -> ::std::option::Option<&str> {
+        self.session_id.as_deref()
+    }
 }
 impl ExecuteStatementInput {
     /// Creates a new builder-style object to manufacture [`ExecuteStatementInput`](crate::operation::execute_statement::ExecuteStatementInput).
@@ -89,6 +101,8 @@ pub struct ExecuteStatementInputBuilder {
     pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::SqlParameter>>,
     pub(crate) workgroup_name: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) session_keep_alive_seconds: ::std::option::Option<i32>,
+    pub(crate) session_id: ::std::option::Option<::std::string::String>,
 }
 impl ExecuteStatementInputBuilder {
     /// <p>The SQL statement text to run.</p>
@@ -149,7 +163,6 @@ impl ExecuteStatementInputBuilder {
         &self.db_user
     }
     /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials.</p>
-    /// This field is required.
     pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database = ::std::option::Option::Some(input.into());
         self
@@ -239,6 +252,34 @@ impl ExecuteStatementInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
+    /// <p>The number of seconds to keep the session alive after the query finishes. The maximum time a session can keep alive is 24 hours. After 24 hours, the session is forced closed and the query is terminated.</p>
+    pub fn session_keep_alive_seconds(mut self, input: i32) -> Self {
+        self.session_keep_alive_seconds = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of seconds to keep the session alive after the query finishes. The maximum time a session can keep alive is 24 hours. After 24 hours, the session is forced closed and the query is terminated.</p>
+    pub fn set_session_keep_alive_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.session_keep_alive_seconds = input;
+        self
+    }
+    /// <p>The number of seconds to keep the session alive after the query finishes. The maximum time a session can keep alive is 24 hours. After 24 hours, the session is forced closed and the query is terminated.</p>
+    pub fn get_session_keep_alive_seconds(&self) -> &::std::option::Option<i32> {
+        &self.session_keep_alive_seconds
+    }
+    /// <p>The session identifier of the query.</p>
+    pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.session_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The session identifier of the query.</p>
+    pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.session_id = input;
+        self
+    }
+    /// <p>The session identifier of the query.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_id
+    }
     /// Consumes the builder and constructs a [`ExecuteStatementInput`](crate::operation::execute_statement::ExecuteStatementInput).
     pub fn build(
         self,
@@ -254,6 +295,8 @@ impl ExecuteStatementInputBuilder {
             parameters: self.parameters,
             workgroup_name: self.workgroup_name,
             client_token: self.client_token,
+            session_keep_alive_seconds: self.session_keep_alive_seconds,
+            session_id: self.session_id,
         })
     }
 }

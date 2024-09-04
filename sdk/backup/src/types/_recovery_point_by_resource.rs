@@ -10,21 +10,21 @@ pub struct RecoveryPointByResource {
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A status code specifying the state of the recovery point.</p>
     pub status: ::std::option::Option<crate::types::RecoveryPointStatus>,
-    /// <p>A message explaining the reason of the recovery point deletion failure.</p>
+    /// <p>A message explaining the current status of the recovery point.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The server-side encryption key that is used to protect your backups; for example, <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
     pub encryption_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The size, in bytes, of a backup.</p>
     pub backup_size_bytes: ::std::option::Option<i64>,
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created.</p>
     pub backup_vault_name: ::std::option::Option<::std::string::String>,
     /// <p>This is a boolean value indicating this is a parent (composite) recovery point.</p>
     pub is_parent: bool,
-    /// <p>This is the Amazon Resource Name (ARN) of the parent (composite) recovery point.</p>
+    /// <p>The Amazon Resource Name (ARN) of the parent (composite) recovery point.</p>
     pub parent_recovery_point_arn: ::std::option::Option<::std::string::String>,
-    /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
+    /// <p>The non-unique name of the resource that belongs to the specified backup.</p>
     pub resource_name: ::std::option::Option<::std::string::String>,
-    /// <p>This is the type of vault in which the described recovery point is stored.</p>
+    /// <p>The type of vault in which the described recovery point is stored.</p>
     pub vault_type: ::std::option::Option<crate::types::VaultType>,
 }
 impl RecoveryPointByResource {
@@ -40,7 +40,7 @@ impl RecoveryPointByResource {
     pub fn status(&self) -> ::std::option::Option<&crate::types::RecoveryPointStatus> {
         self.status.as_ref()
     }
-    /// <p>A message explaining the reason of the recovery point deletion failure.</p>
+    /// <p>A message explaining the current status of the recovery point.</p>
     pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
@@ -52,7 +52,7 @@ impl RecoveryPointByResource {
     pub fn backup_size_bytes(&self) -> ::std::option::Option<i64> {
         self.backup_size_bytes
     }
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created.</p>
     pub fn backup_vault_name(&self) -> ::std::option::Option<&str> {
         self.backup_vault_name.as_deref()
     }
@@ -60,15 +60,15 @@ impl RecoveryPointByResource {
     pub fn is_parent(&self) -> bool {
         self.is_parent
     }
-    /// <p>This is the Amazon Resource Name (ARN) of the parent (composite) recovery point.</p>
+    /// <p>The Amazon Resource Name (ARN) of the parent (composite) recovery point.</p>
     pub fn parent_recovery_point_arn(&self) -> ::std::option::Option<&str> {
         self.parent_recovery_point_arn.as_deref()
     }
-    /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
+    /// <p>The non-unique name of the resource that belongs to the specified backup.</p>
     pub fn resource_name(&self) -> ::std::option::Option<&str> {
         self.resource_name.as_deref()
     }
-    /// <p>This is the type of vault in which the described recovery point is stored.</p>
+    /// <p>The type of vault in which the described recovery point is stored.</p>
     pub fn vault_type(&self) -> ::std::option::Option<&crate::types::VaultType> {
         self.vault_type.as_ref()
     }
@@ -139,17 +139,17 @@ impl RecoveryPointByResourceBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::RecoveryPointStatus> {
         &self.status
     }
-    /// <p>A message explaining the reason of the recovery point deletion failure.</p>
+    /// <p>A message explaining the current status of the recovery point.</p>
     pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A message explaining the reason of the recovery point deletion failure.</p>
+    /// <p>A message explaining the current status of the recovery point.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
-    /// <p>A message explaining the reason of the recovery point deletion failure.</p>
+    /// <p>A message explaining the current status of the recovery point.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_message
     }
@@ -181,17 +181,17 @@ impl RecoveryPointByResourceBuilder {
     pub fn get_backup_size_bytes(&self) -> &::std::option::Option<i64> {
         &self.backup_size_bytes
     }
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created.</p>
     pub fn backup_vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_vault_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created.</p>
     pub fn set_backup_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_vault_name = input;
         self
     }
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created.</p>
     pub fn get_backup_vault_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.backup_vault_name
     }
@@ -209,45 +209,45 @@ impl RecoveryPointByResourceBuilder {
     pub fn get_is_parent(&self) -> &::std::option::Option<bool> {
         &self.is_parent
     }
-    /// <p>This is the Amazon Resource Name (ARN) of the parent (composite) recovery point.</p>
+    /// <p>The Amazon Resource Name (ARN) of the parent (composite) recovery point.</p>
     pub fn parent_recovery_point_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent_recovery_point_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>This is the Amazon Resource Name (ARN) of the parent (composite) recovery point.</p>
+    /// <p>The Amazon Resource Name (ARN) of the parent (composite) recovery point.</p>
     pub fn set_parent_recovery_point_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parent_recovery_point_arn = input;
         self
     }
-    /// <p>This is the Amazon Resource Name (ARN) of the parent (composite) recovery point.</p>
+    /// <p>The Amazon Resource Name (ARN) of the parent (composite) recovery point.</p>
     pub fn get_parent_recovery_point_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.parent_recovery_point_arn
     }
-    /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
+    /// <p>The non-unique name of the resource that belongs to the specified backup.</p>
     pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
+    /// <p>The non-unique name of the resource that belongs to the specified backup.</p>
     pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_name = input;
         self
     }
-    /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
+    /// <p>The non-unique name of the resource that belongs to the specified backup.</p>
     pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_name
     }
-    /// <p>This is the type of vault in which the described recovery point is stored.</p>
+    /// <p>The type of vault in which the described recovery point is stored.</p>
     pub fn vault_type(mut self, input: crate::types::VaultType) -> Self {
         self.vault_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>This is the type of vault in which the described recovery point is stored.</p>
+    /// <p>The type of vault in which the described recovery point is stored.</p>
     pub fn set_vault_type(mut self, input: ::std::option::Option<crate::types::VaultType>) -> Self {
         self.vault_type = input;
         self
     }
-    /// <p>This is the type of vault in which the described recovery point is stored.</p>
+    /// <p>The type of vault in which the described recovery point is stored.</p>
     pub fn get_vault_type(&self) -> &::std::option::Option<crate::types::VaultType> {
         &self.vault_type
     }

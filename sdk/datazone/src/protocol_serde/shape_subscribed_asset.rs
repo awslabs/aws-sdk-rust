@@ -57,9 +57,6 @@ where
                                 ::aws_smithy_types::date_time::Format::EpochSeconds,
                             )?);
                         }
-                        "assetScope" => {
-                            builder = builder.set_asset_scope(crate::protocol_serde::shape_asset_scope::de_asset_scope(tokens)?);
-                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

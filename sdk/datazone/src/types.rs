@@ -161,8 +161,6 @@ pub use crate::types::_asset_in_data_product_listing_item::AssetInDataProductLis
 
 pub use crate::types::_subscribed_asset_listing::SubscribedAssetListing;
 
-pub use crate::types::_asset_scope::AssetScope;
-
 pub use crate::types::_subscribed_principal::SubscribedPrincipal;
 
 pub use crate::types::_subscribed_project::SubscribedProject;
@@ -473,8 +471,6 @@ pub use crate::types::_change_action::ChangeAction;
 
 pub use crate::types::_entity_type::EntityType;
 
-pub use crate::types::_accepted_asset_scope::AcceptedAssetScope;
-
 pub use crate::types::_accept_choice::AcceptChoice;
 
 pub use crate::types::_accept_rule::AcceptRule;
@@ -486,8 +482,6 @@ mod _accept_choice;
 mod _accept_rule;
 
 mod _accept_rule_behavior;
-
-mod _accepted_asset_scope;
 
 mod _action_parameters;
 
@@ -516,8 +510,6 @@ mod _asset_listing_item;
 mod _asset_listing_item_additional_attributes;
 
 mod _asset_revision;
-
-mod _asset_scope;
 
 mod _asset_target_name_map;
 

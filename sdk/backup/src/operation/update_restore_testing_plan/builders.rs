@@ -135,17 +135,17 @@ impl UpdateRestoreTestingPlanFluentBuilder {
     pub fn get_restore_testing_plan(&self) -> &::std::option::Option<crate::types::RestoreTestingPlanForUpdate> {
         self.inner.get_restore_testing_plan()
     }
-    /// <p>This is the restore testing plan name you wish to update.</p>
+    /// <p>The name of the restore testing plan name.</p>
     pub fn restore_testing_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.restore_testing_plan_name(input.into());
         self
     }
-    /// <p>This is the restore testing plan name you wish to update.</p>
+    /// <p>The name of the restore testing plan name.</p>
     pub fn set_restore_testing_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_restore_testing_plan_name(input);
         self
     }
-    /// <p>This is the restore testing plan name you wish to update.</p>
+    /// <p>The name of the restore testing plan name.</p>
     pub fn get_restore_testing_plan_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_restore_testing_plan_name()
     }

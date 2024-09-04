@@ -12,10 +12,12 @@ pub struct ReportSetting {
     /// <p>The number of frameworks a report covers.</p>
     pub number_of_frameworks: i32,
     /// <p>These are the accounts to be included in the report.</p>
+    /// <p>Use string value of <code>ROOT</code> to include all organizational units.</p>
     pub accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>These are the Organizational Units to be included in the report.</p>
     pub organization_units: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>These are the Regions to be included in the report.</p>
+    /// <p>Use the wildcard as the string value to include all Regions.</p>
     pub regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ReportSetting {
@@ -36,6 +38,7 @@ impl ReportSetting {
         self.number_of_frameworks
     }
     /// <p>These are the accounts to be included in the report.</p>
+    /// <p>Use string value of <code>ROOT</code> to include all organizational units.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accounts.is_none()`.
     pub fn accounts(&self) -> &[::std::string::String] {
@@ -48,6 +51,7 @@ impl ReportSetting {
         self.organization_units.as_deref().unwrap_or_default()
     }
     /// <p>These are the Regions to be included in the report.</p>
+    /// <p>Use the wildcard as the string value to include all Regions.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regions.is_none()`.
     pub fn regions(&self) -> &[::std::string::String] {
@@ -130,6 +134,7 @@ impl ReportSettingBuilder {
     /// To override the contents of this collection use [`set_accounts`](Self::set_accounts).
     ///
     /// <p>These are the accounts to be included in the report.</p>
+    /// <p>Use string value of <code>ROOT</code> to include all organizational units.</p>
     pub fn accounts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.accounts.unwrap_or_default();
         v.push(input.into());
@@ -137,11 +142,13 @@ impl ReportSettingBuilder {
         self
     }
     /// <p>These are the accounts to be included in the report.</p>
+    /// <p>Use string value of <code>ROOT</code> to include all organizational units.</p>
     pub fn set_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.accounts = input;
         self
     }
     /// <p>These are the accounts to be included in the report.</p>
+    /// <p>Use string value of <code>ROOT</code> to include all organizational units.</p>
     pub fn get_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.accounts
     }
@@ -170,6 +177,7 @@ impl ReportSettingBuilder {
     /// To override the contents of this collection use [`set_regions`](Self::set_regions).
     ///
     /// <p>These are the Regions to be included in the report.</p>
+    /// <p>Use the wildcard as the string value to include all Regions.</p>
     pub fn regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.regions.unwrap_or_default();
         v.push(input.into());
@@ -177,11 +185,13 @@ impl ReportSettingBuilder {
         self
     }
     /// <p>These are the Regions to be included in the report.</p>
+    /// <p>Use the wildcard as the string value to include all Regions.</p>
     pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.regions = input;
         self
     }
     /// <p>These are the Regions to be included in the report.</p>
+    /// <p>Use the wildcard as the string value to include all Regions.</p>
     pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.regions
     }

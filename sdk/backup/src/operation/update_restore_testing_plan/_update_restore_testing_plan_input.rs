@@ -5,7 +5,7 @@
 pub struct UpdateRestoreTestingPlanInput {
     /// <p>Specifies the body of a restore testing plan.</p>
     pub restore_testing_plan: ::std::option::Option<crate::types::RestoreTestingPlanForUpdate>,
-    /// <p>This is the restore testing plan name you wish to update.</p>
+    /// <p>The name of the restore testing plan name.</p>
     pub restore_testing_plan_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateRestoreTestingPlanInput {
@@ -13,7 +13,7 @@ impl UpdateRestoreTestingPlanInput {
     pub fn restore_testing_plan(&self) -> ::std::option::Option<&crate::types::RestoreTestingPlanForUpdate> {
         self.restore_testing_plan.as_ref()
     }
-    /// <p>This is the restore testing plan name you wish to update.</p>
+    /// <p>The name of the restore testing plan name.</p>
     pub fn restore_testing_plan_name(&self) -> ::std::option::Option<&str> {
         self.restore_testing_plan_name.as_deref()
     }
@@ -48,18 +48,18 @@ impl UpdateRestoreTestingPlanInputBuilder {
     pub fn get_restore_testing_plan(&self) -> &::std::option::Option<crate::types::RestoreTestingPlanForUpdate> {
         &self.restore_testing_plan
     }
-    /// <p>This is the restore testing plan name you wish to update.</p>
+    /// <p>The name of the restore testing plan name.</p>
     /// This field is required.
     pub fn restore_testing_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.restore_testing_plan_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>This is the restore testing plan name you wish to update.</p>
+    /// <p>The name of the restore testing plan name.</p>
     pub fn set_restore_testing_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.restore_testing_plan_name = input;
         self
     }
-    /// <p>This is the restore testing plan name you wish to update.</p>
+    /// <p>The name of the restore testing plan name.</p>
     pub fn get_restore_testing_plan_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.restore_testing_plan_name
     }

@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLegalHoldInput {
-    /// <p>This is the ID required to use <code>GetLegalHold</code>. This unique ID is associated with a specific legal hold.</p>
+    /// <p>The ID of the legal hold.</p>
     pub legal_hold_id: ::std::option::Option<::std::string::String>,
 }
 impl GetLegalHoldInput {
-    /// <p>This is the ID required to use <code>GetLegalHold</code>. This unique ID is associated with a specific legal hold.</p>
+    /// <p>The ID of the legal hold.</p>
     pub fn legal_hold_id(&self) -> ::std::option::Option<&str> {
         self.legal_hold_id.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct GetLegalHoldInputBuilder {
     pub(crate) legal_hold_id: ::std::option::Option<::std::string::String>,
 }
 impl GetLegalHoldInputBuilder {
-    /// <p>This is the ID required to use <code>GetLegalHold</code>. This unique ID is associated with a specific legal hold.</p>
+    /// <p>The ID of the legal hold.</p>
     /// This field is required.
     pub fn legal_hold_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.legal_hold_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>This is the ID required to use <code>GetLegalHold</code>. This unique ID is associated with a specific legal hold.</p>
+    /// <p>The ID of the legal hold.</p>
     pub fn set_legal_hold_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.legal_hold_id = input;
         self
     }
-    /// <p>This is the ID required to use <code>GetLegalHold</code>. This unique ID is associated with a specific legal hold.</p>
+    /// <p>The ID of the legal hold.</p>
     pub fn get_legal_hold_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.legal_hold_id
     }

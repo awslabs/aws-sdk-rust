@@ -10,11 +10,11 @@ pub struct ProtectedResource {
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The date and time a resource was last backed up, in Unix format and Coordinated Universal Time (UTC). The value of <code>LastBackupTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub last_backup_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
+    /// <p>The non-unique name of the resource that belongs to the specified backup.</p>
     pub resource_name: ::std::option::Option<::std::string::String>,
-    /// <p>This is the ARN (Amazon Resource Name) of the backup vault that contains the most recent backup recovery point.</p>
+    /// <p>The ARN (Amazon Resource Name) of the backup vault that contains the most recent backup recovery point.</p>
     pub last_backup_vault_arn: ::std::option::Option<::std::string::String>,
-    /// <p>This is the ARN (Amazon Resource Name) of the most recent recovery point.</p>
+    /// <p>The ARN (Amazon Resource Name) of the most recent recovery point.</p>
     pub last_recovery_point_arn: ::std::option::Option<::std::string::String>,
 }
 impl ProtectedResource {
@@ -30,15 +30,15 @@ impl ProtectedResource {
     pub fn last_backup_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_backup_time.as_ref()
     }
-    /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
+    /// <p>The non-unique name of the resource that belongs to the specified backup.</p>
     pub fn resource_name(&self) -> ::std::option::Option<&str> {
         self.resource_name.as_deref()
     }
-    /// <p>This is the ARN (Amazon Resource Name) of the backup vault that contains the most recent backup recovery point.</p>
+    /// <p>The ARN (Amazon Resource Name) of the backup vault that contains the most recent backup recovery point.</p>
     pub fn last_backup_vault_arn(&self) -> ::std::option::Option<&str> {
         self.last_backup_vault_arn.as_deref()
     }
-    /// <p>This is the ARN (Amazon Resource Name) of the most recent recovery point.</p>
+    /// <p>The ARN (Amazon Resource Name) of the most recent recovery point.</p>
     pub fn last_recovery_point_arn(&self) -> ::std::option::Option<&str> {
         self.last_recovery_point_arn.as_deref()
     }
@@ -104,45 +104,45 @@ impl ProtectedResourceBuilder {
     pub fn get_last_backup_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_backup_time
     }
-    /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
+    /// <p>The non-unique name of the resource that belongs to the specified backup.</p>
     pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
+    /// <p>The non-unique name of the resource that belongs to the specified backup.</p>
     pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_name = input;
         self
     }
-    /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
+    /// <p>The non-unique name of the resource that belongs to the specified backup.</p>
     pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_name
     }
-    /// <p>This is the ARN (Amazon Resource Name) of the backup vault that contains the most recent backup recovery point.</p>
+    /// <p>The ARN (Amazon Resource Name) of the backup vault that contains the most recent backup recovery point.</p>
     pub fn last_backup_vault_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_backup_vault_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>This is the ARN (Amazon Resource Name) of the backup vault that contains the most recent backup recovery point.</p>
+    /// <p>The ARN (Amazon Resource Name) of the backup vault that contains the most recent backup recovery point.</p>
     pub fn set_last_backup_vault_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_backup_vault_arn = input;
         self
     }
-    /// <p>This is the ARN (Amazon Resource Name) of the backup vault that contains the most recent backup recovery point.</p>
+    /// <p>The ARN (Amazon Resource Name) of the backup vault that contains the most recent backup recovery point.</p>
     pub fn get_last_backup_vault_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_backup_vault_arn
     }
-    /// <p>This is the ARN (Amazon Resource Name) of the most recent recovery point.</p>
+    /// <p>The ARN (Amazon Resource Name) of the most recent recovery point.</p>
     pub fn last_recovery_point_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_recovery_point_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>This is the ARN (Amazon Resource Name) of the most recent recovery point.</p>
+    /// <p>The ARN (Amazon Resource Name) of the most recent recovery point.</p>
     pub fn set_last_recovery_point_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_recovery_point_arn = input;
         self
     }
-    /// <p>This is the ARN (Amazon Resource Name) of the most recent recovery point.</p>
+    /// <p>The ARN (Amazon Resource Name) of the most recent recovery point.</p>
     pub fn get_last_recovery_point_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_recovery_point_arn
     }

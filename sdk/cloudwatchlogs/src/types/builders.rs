@@ -11,7 +11,11 @@ pub use crate::types::_resource_policy::ResourcePolicyBuilder;
 
 pub use crate::types::_metric_transformation::MetricTransformationBuilder;
 
+pub use crate::types::_rejected_entity_info::RejectedEntityInfoBuilder;
+
 pub use crate::types::_rejected_log_events_info::RejectedLogEventsInfoBuilder;
+
+pub use crate::types::_entity::EntityBuilder;
 
 pub use crate::types::_input_log_event::InputLogEventBuilder;
 

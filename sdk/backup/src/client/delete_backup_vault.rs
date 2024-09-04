@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteBackupVault`](crate::operation::delete_backup_vault::builders::DeleteBackupVaultFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`backup_vault_name(impl Into<String>)`](crate::operation::delete_backup_vault::builders::DeleteBackupVaultFluentBuilder::backup_vault_name) / [`set_backup_vault_name(Option<String>)`](crate::operation::delete_backup_vault::builders::DeleteBackupVaultFluentBuilder::set_backup_vault_name):<br>required: **true**<br><p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p><br>
+    ///   - [`backup_vault_name(impl Into<String>)`](crate::operation::delete_backup_vault::builders::DeleteBackupVaultFluentBuilder::backup_vault_name) / [`set_backup_vault_name(Option<String>)`](crate::operation::delete_backup_vault::builders::DeleteBackupVaultFluentBuilder::set_backup_vault_name):<br>required: **true**<br><p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created.</p><br>
     /// - On success, responds with [`DeleteBackupVaultOutput`](crate::operation::delete_backup_vault::DeleteBackupVaultOutput)
     /// - On failure, responds with [`SdkError<DeleteBackupVaultError>`](crate::operation::delete_backup_vault::DeleteBackupVaultError)
     pub fn delete_backup_vault(&self) -> crate::operation::delete_backup_vault::builders::DeleteBackupVaultFluentBuilder {

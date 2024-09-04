@@ -4,7 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RestoreTestingPlanForCreate {
-    /// <p>Required: Algorithm; Required: Recovery point types; IncludeVaults (one or more). Optional: SelectionWindowDays ('30' if not specified); ExcludeVaults (list of selectors), defaults to empty list if not listed.</p>
+    /// <p><code>RecoveryPointSelection</code> has five parameters (three required and two optional). The values you specify determine which recovery point is included in the restore test. You must indicate with <code>Algorithm</code> if you want the latest recovery point within your <code>SelectionWindowDays</code> or if you want a random recovery point, and you must indicate through <code>IncludeVaults</code> from which vaults the recovery points can be chosen.</p>
+    /// <p><code>Algorithm</code> (<i>required</i>) Valid values: "<code>LATEST_WITHIN_WINDOW</code>" or "<code>RANDOM_WITHIN_WINDOW</code>".</p>
+    /// <p><code>Recovery point types</code> (<i>required</i>) Valid values: "<code>SNAPSHOT</code>" and/or "<code>CONTINUOUS</code>". Include <code>SNAPSHOT</code> to restore only snapshot recovery points; include <code>CONTINUOUS</code> to restore continuous recovery points (point in time restore / PITR); use both to restore either a snapshot or a continuous recovery point. The recovery point will be determined by the value for <code>Algorithm</code>.</p>
+    /// <p>IncludeVaults (required). You must include one or more backup vaults. Use the wildcard \["*"\] or specific ARNs.</p>
+    /// <p><code>SelectionWindowDays</code> (<i>optional</i>) Value must be an integer (in days) from 1 to 365. If not included, the value defaults to <code>30</code>.</p>
+    /// <p><code>ExcludeVaults</code> (<i>optional</i>). You can choose to input one or more specific backup vault ARNs to exclude those vaults' contents from restore eligibility. Or, you can include a list of selectors. If this parameter and its value are not included, it defaults to empty list.</p>
     pub recovery_point_selection: ::std::option::Option<crate::types::RestoreTestingRecoveryPointSelection>,
     /// <p>The RestoreTestingPlanName is a unique string that is the name of the restore testing plan. This cannot be changed after creation, and it must consist of only alphanumeric characters and underscores.</p>
     pub restore_testing_plan_name: ::std::string::String,
@@ -17,7 +22,12 @@ pub struct RestoreTestingPlanForCreate {
     pub start_window_hours: i32,
 }
 impl RestoreTestingPlanForCreate {
-    /// <p>Required: Algorithm; Required: Recovery point types; IncludeVaults (one or more). Optional: SelectionWindowDays ('30' if not specified); ExcludeVaults (list of selectors), defaults to empty list if not listed.</p>
+    /// <p><code>RecoveryPointSelection</code> has five parameters (three required and two optional). The values you specify determine which recovery point is included in the restore test. You must indicate with <code>Algorithm</code> if you want the latest recovery point within your <code>SelectionWindowDays</code> or if you want a random recovery point, and you must indicate through <code>IncludeVaults</code> from which vaults the recovery points can be chosen.</p>
+    /// <p><code>Algorithm</code> (<i>required</i>) Valid values: "<code>LATEST_WITHIN_WINDOW</code>" or "<code>RANDOM_WITHIN_WINDOW</code>".</p>
+    /// <p><code>Recovery point types</code> (<i>required</i>) Valid values: "<code>SNAPSHOT</code>" and/or "<code>CONTINUOUS</code>". Include <code>SNAPSHOT</code> to restore only snapshot recovery points; include <code>CONTINUOUS</code> to restore continuous recovery points (point in time restore / PITR); use both to restore either a snapshot or a continuous recovery point. The recovery point will be determined by the value for <code>Algorithm</code>.</p>
+    /// <p>IncludeVaults (required). You must include one or more backup vaults. Use the wildcard \["*"\] or specific ARNs.</p>
+    /// <p><code>SelectionWindowDays</code> (<i>optional</i>) Value must be an integer (in days) from 1 to 365. If not included, the value defaults to <code>30</code>.</p>
+    /// <p><code>ExcludeVaults</code> (<i>optional</i>). You can choose to input one or more specific backup vault ARNs to exclude those vaults' contents from restore eligibility. Or, you can include a list of selectors. If this parameter and its value are not included, it defaults to empty list.</p>
     pub fn recovery_point_selection(&self) -> ::std::option::Option<&crate::types::RestoreTestingRecoveryPointSelection> {
         self.recovery_point_selection.as_ref()
     }
@@ -59,18 +69,33 @@ pub struct RestoreTestingPlanForCreateBuilder {
     pub(crate) start_window_hours: ::std::option::Option<i32>,
 }
 impl RestoreTestingPlanForCreateBuilder {
-    /// <p>Required: Algorithm; Required: Recovery point types; IncludeVaults (one or more). Optional: SelectionWindowDays ('30' if not specified); ExcludeVaults (list of selectors), defaults to empty list if not listed.</p>
+    /// <p><code>RecoveryPointSelection</code> has five parameters (three required and two optional). The values you specify determine which recovery point is included in the restore test. You must indicate with <code>Algorithm</code> if you want the latest recovery point within your <code>SelectionWindowDays</code> or if you want a random recovery point, and you must indicate through <code>IncludeVaults</code> from which vaults the recovery points can be chosen.</p>
+    /// <p><code>Algorithm</code> (<i>required</i>) Valid values: "<code>LATEST_WITHIN_WINDOW</code>" or "<code>RANDOM_WITHIN_WINDOW</code>".</p>
+    /// <p><code>Recovery point types</code> (<i>required</i>) Valid values: "<code>SNAPSHOT</code>" and/or "<code>CONTINUOUS</code>". Include <code>SNAPSHOT</code> to restore only snapshot recovery points; include <code>CONTINUOUS</code> to restore continuous recovery points (point in time restore / PITR); use both to restore either a snapshot or a continuous recovery point. The recovery point will be determined by the value for <code>Algorithm</code>.</p>
+    /// <p>IncludeVaults (required). You must include one or more backup vaults. Use the wildcard \["*"\] or specific ARNs.</p>
+    /// <p><code>SelectionWindowDays</code> (<i>optional</i>) Value must be an integer (in days) from 1 to 365. If not included, the value defaults to <code>30</code>.</p>
+    /// <p><code>ExcludeVaults</code> (<i>optional</i>). You can choose to input one or more specific backup vault ARNs to exclude those vaults' contents from restore eligibility. Or, you can include a list of selectors. If this parameter and its value are not included, it defaults to empty list.</p>
     /// This field is required.
     pub fn recovery_point_selection(mut self, input: crate::types::RestoreTestingRecoveryPointSelection) -> Self {
         self.recovery_point_selection = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Required: Algorithm; Required: Recovery point types; IncludeVaults (one or more). Optional: SelectionWindowDays ('30' if not specified); ExcludeVaults (list of selectors), defaults to empty list if not listed.</p>
+    /// <p><code>RecoveryPointSelection</code> has five parameters (three required and two optional). The values you specify determine which recovery point is included in the restore test. You must indicate with <code>Algorithm</code> if you want the latest recovery point within your <code>SelectionWindowDays</code> or if you want a random recovery point, and you must indicate through <code>IncludeVaults</code> from which vaults the recovery points can be chosen.</p>
+    /// <p><code>Algorithm</code> (<i>required</i>) Valid values: "<code>LATEST_WITHIN_WINDOW</code>" or "<code>RANDOM_WITHIN_WINDOW</code>".</p>
+    /// <p><code>Recovery point types</code> (<i>required</i>) Valid values: "<code>SNAPSHOT</code>" and/or "<code>CONTINUOUS</code>". Include <code>SNAPSHOT</code> to restore only snapshot recovery points; include <code>CONTINUOUS</code> to restore continuous recovery points (point in time restore / PITR); use both to restore either a snapshot or a continuous recovery point. The recovery point will be determined by the value for <code>Algorithm</code>.</p>
+    /// <p>IncludeVaults (required). You must include one or more backup vaults. Use the wildcard \["*"\] or specific ARNs.</p>
+    /// <p><code>SelectionWindowDays</code> (<i>optional</i>) Value must be an integer (in days) from 1 to 365. If not included, the value defaults to <code>30</code>.</p>
+    /// <p><code>ExcludeVaults</code> (<i>optional</i>). You can choose to input one or more specific backup vault ARNs to exclude those vaults' contents from restore eligibility. Or, you can include a list of selectors. If this parameter and its value are not included, it defaults to empty list.</p>
     pub fn set_recovery_point_selection(mut self, input: ::std::option::Option<crate::types::RestoreTestingRecoveryPointSelection>) -> Self {
         self.recovery_point_selection = input;
         self
     }
-    /// <p>Required: Algorithm; Required: Recovery point types; IncludeVaults (one or more). Optional: SelectionWindowDays ('30' if not specified); ExcludeVaults (list of selectors), defaults to empty list if not listed.</p>
+    /// <p><code>RecoveryPointSelection</code> has five parameters (three required and two optional). The values you specify determine which recovery point is included in the restore test. You must indicate with <code>Algorithm</code> if you want the latest recovery point within your <code>SelectionWindowDays</code> or if you want a random recovery point, and you must indicate through <code>IncludeVaults</code> from which vaults the recovery points can be chosen.</p>
+    /// <p><code>Algorithm</code> (<i>required</i>) Valid values: "<code>LATEST_WITHIN_WINDOW</code>" or "<code>RANDOM_WITHIN_WINDOW</code>".</p>
+    /// <p><code>Recovery point types</code> (<i>required</i>) Valid values: "<code>SNAPSHOT</code>" and/or "<code>CONTINUOUS</code>". Include <code>SNAPSHOT</code> to restore only snapshot recovery points; include <code>CONTINUOUS</code> to restore continuous recovery points (point in time restore / PITR); use both to restore either a snapshot or a continuous recovery point. The recovery point will be determined by the value for <code>Algorithm</code>.</p>
+    /// <p>IncludeVaults (required). You must include one or more backup vaults. Use the wildcard \["*"\] or specific ARNs.</p>
+    /// <p><code>SelectionWindowDays</code> (<i>optional</i>) Value must be an integer (in days) from 1 to 365. If not included, the value defaults to <code>30</code>.</p>
+    /// <p><code>ExcludeVaults</code> (<i>optional</i>). You can choose to input one or more specific backup vault ARNs to exclude those vaults' contents from restore eligibility. Or, you can include a list of selectors. If this parameter and its value are not included, it defaults to empty list.</p>
     pub fn get_recovery_point_selection(&self) -> &::std::option::Option<crate::types::RestoreTestingRecoveryPointSelection> {
         &self.recovery_point_selection
     }

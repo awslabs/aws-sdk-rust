@@ -46,6 +46,21 @@ pub fn de_list_tables_http_error(
             };
             tmp
         }),
+        "QueryTimeoutException" => crate::operation::list_tables::ListTablesError::QueryTimeoutException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::QueryTimeoutExceptionBuilder::default();
+                output = crate::protocol_serde::shape_query_timeout_exception::de_query_timeout_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::list_tables::ListTablesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ValidationException" => crate::operation::list_tables::ListTablesError::ValidationException({
             #[allow(unused_mut)]
             let mut tmp = {

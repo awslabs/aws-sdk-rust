@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRecoveryPointsByLegalHoldOutput {
-    /// <p>This is a list of the recovery points returned by <code>ListRecoveryPointsByLegalHold</code>.</p>
+    /// <p>The recovery points.</p>
     pub recovery_points: ::std::option::Option<::std::vec::Vec<crate::types::RecoveryPointMember>>,
-    /// <p>This return is the next item following a partial list of returned resources.</p>
+    /// <p>The next item following a partial list of returned resources.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListRecoveryPointsByLegalHoldOutput {
-    /// <p>This is a list of the recovery points returned by <code>ListRecoveryPointsByLegalHold</code>.</p>
+    /// <p>The recovery points.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recovery_points.is_none()`.
     pub fn recovery_points(&self) -> &[crate::types::RecoveryPointMember] {
         self.recovery_points.as_deref().unwrap_or_default()
     }
-    /// <p>This return is the next item following a partial list of returned resources.</p>
+    /// <p>The next item following a partial list of returned resources.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,33 +46,33 @@ impl ListRecoveryPointsByLegalHoldOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_recovery_points`](Self::set_recovery_points).
     ///
-    /// <p>This is a list of the recovery points returned by <code>ListRecoveryPointsByLegalHold</code>.</p>
+    /// <p>The recovery points.</p>
     pub fn recovery_points(mut self, input: crate::types::RecoveryPointMember) -> Self {
         let mut v = self.recovery_points.unwrap_or_default();
         v.push(input);
         self.recovery_points = ::std::option::Option::Some(v);
         self
     }
-    /// <p>This is a list of the recovery points returned by <code>ListRecoveryPointsByLegalHold</code>.</p>
+    /// <p>The recovery points.</p>
     pub fn set_recovery_points(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecoveryPointMember>>) -> Self {
         self.recovery_points = input;
         self
     }
-    /// <p>This is a list of the recovery points returned by <code>ListRecoveryPointsByLegalHold</code>.</p>
+    /// <p>The recovery points.</p>
     pub fn get_recovery_points(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecoveryPointMember>> {
         &self.recovery_points
     }
-    /// <p>This return is the next item following a partial list of returned resources.</p>
+    /// <p>The next item following a partial list of returned resources.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>This return is the next item following a partial list of returned resources.</p>
+    /// <p>The next item following a partial list of returned resources.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>This return is the next item following a partial list of returned resources.</p>
+    /// <p>The next item following a partial list of returned resources.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

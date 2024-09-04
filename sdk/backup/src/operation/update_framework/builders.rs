@@ -22,7 +22,7 @@ impl crate::operation::update_framework::builders::UpdateFrameworkInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateFramework`.
 ///
-/// <p>Updates an existing framework identified by its <code>FrameworkName</code> with the input document in JSON format.</p>
+/// <p>Updates the specified framework.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateFrameworkFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -141,17 +141,17 @@ impl UpdateFrameworkFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_framework_controls`](Self::set_framework_controls).
     ///
-    /// <p>A list of the controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
+    /// <p>The controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
     pub fn framework_controls(mut self, input: crate::types::FrameworkControl) -> Self {
         self.inner = self.inner.framework_controls(input);
         self
     }
-    /// <p>A list of the controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
+    /// <p>The controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
     pub fn set_framework_controls(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FrameworkControl>>) -> Self {
         self.inner = self.inner.set_framework_controls(input);
         self
     }
-    /// <p>A list of the controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
+    /// <p>The controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
     pub fn get_framework_controls(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FrameworkControl>> {
         self.inner.get_framework_controls()
     }

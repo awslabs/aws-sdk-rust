@@ -8,11 +8,11 @@ pub struct CopyJob {
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>Uniquely identifies a copy job.</p>
     pub copy_job_id: ::std::option::Option<::std::string::String>,
-    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source copy vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source copy vault; for example, <code>arn:aws:backup:us-east-1:123456789012:backup-vault:aBackupVault</code>.</p>
     pub source_backup_vault_arn: ::std::option::Option<::std::string::String>,
     /// <p>An ARN that uniquely identifies a source recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
     pub source_recovery_point_arn: ::std::option::Option<::std::string::String>,
-    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a destination copy vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a destination copy vault; for example, <code>arn:aws:backup:us-east-1:123456789012:backup-vault:aBackupVault</code>.</p>
     pub destination_backup_vault_arn: ::std::option::Option<::std::string::String>,
     /// <p>An ARN that uniquely identifies a destination recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
     pub destination_recovery_point_arn: ::std::option::Option<::std::string::String>,
@@ -38,13 +38,13 @@ pub struct CopyJob {
     pub parent_job_id: ::std::option::Option<::std::string::String>,
     /// <p>This is a boolean value indicating this is a parent (composite) copy job.</p>
     pub is_parent: bool,
-    /// <p>This is the identifier of a resource within a composite group, such as nested (child) recovery point belonging to a composite (parent) stack. The ID is transferred from the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax"> logical ID</a> within a stack.</p>
+    /// <p>The identifier of a resource within a composite group, such as nested (child) recovery point belonging to a composite (parent) stack. The ID is transferred from the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax"> logical ID</a> within a stack.</p>
     pub composite_member_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>This is the number of child (nested) copy jobs.</p>
+    /// <p>The number of child (nested) copy jobs.</p>
     pub number_of_child_jobs: ::std::option::Option<i64>,
     /// <p>This returns the statistics of the included child (nested) copy jobs.</p>
     pub child_jobs_in_state: ::std::option::Option<::std::collections::HashMap<crate::types::CopyJobState, i64>>,
-    /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
+    /// <p>The non-unique name of the resource that belongs to the specified backup.</p>
     pub resource_name: ::std::option::Option<::std::string::String>,
     /// <p>This parameter is the job count for the specified message category.</p>
     /// <p>Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>, and <code>InvalidParameters</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of MessageCategory strings.</p>
@@ -61,7 +61,7 @@ impl CopyJob {
     pub fn copy_job_id(&self) -> ::std::option::Option<&str> {
         self.copy_job_id.as_deref()
     }
-    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source copy vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source copy vault; for example, <code>arn:aws:backup:us-east-1:123456789012:backup-vault:aBackupVault</code>.</p>
     pub fn source_backup_vault_arn(&self) -> ::std::option::Option<&str> {
         self.source_backup_vault_arn.as_deref()
     }
@@ -69,7 +69,7 @@ impl CopyJob {
     pub fn source_recovery_point_arn(&self) -> ::std::option::Option<&str> {
         self.source_recovery_point_arn.as_deref()
     }
-    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a destination copy vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a destination copy vault; for example, <code>arn:aws:backup:us-east-1:123456789012:backup-vault:aBackupVault</code>.</p>
     pub fn destination_backup_vault_arn(&self) -> ::std::option::Option<&str> {
         self.destination_backup_vault_arn.as_deref()
     }
@@ -121,11 +121,11 @@ impl CopyJob {
     pub fn is_parent(&self) -> bool {
         self.is_parent
     }
-    /// <p>This is the identifier of a resource within a composite group, such as nested (child) recovery point belonging to a composite (parent) stack. The ID is transferred from the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax"> logical ID</a> within a stack.</p>
+    /// <p>The identifier of a resource within a composite group, such as nested (child) recovery point belonging to a composite (parent) stack. The ID is transferred from the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax"> logical ID</a> within a stack.</p>
     pub fn composite_member_identifier(&self) -> ::std::option::Option<&str> {
         self.composite_member_identifier.as_deref()
     }
-    /// <p>This is the number of child (nested) copy jobs.</p>
+    /// <p>The number of child (nested) copy jobs.</p>
     pub fn number_of_child_jobs(&self) -> ::std::option::Option<i64> {
         self.number_of_child_jobs
     }
@@ -133,7 +133,7 @@ impl CopyJob {
     pub fn child_jobs_in_state(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::CopyJobState, i64>> {
         self.child_jobs_in_state.as_ref()
     }
-    /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
+    /// <p>The non-unique name of the resource that belongs to the specified backup.</p>
     pub fn resource_name(&self) -> ::std::option::Option<&str> {
         self.resource_name.as_deref()
     }
@@ -208,17 +208,17 @@ impl CopyJobBuilder {
     pub fn get_copy_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.copy_job_id
     }
-    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source copy vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source copy vault; for example, <code>arn:aws:backup:us-east-1:123456789012:backup-vault:aBackupVault</code>.</p>
     pub fn source_backup_vault_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_backup_vault_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source copy vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source copy vault; for example, <code>arn:aws:backup:us-east-1:123456789012:backup-vault:aBackupVault</code>.</p>
     pub fn set_source_backup_vault_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_backup_vault_arn = input;
         self
     }
-    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source copy vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source copy vault; for example, <code>arn:aws:backup:us-east-1:123456789012:backup-vault:aBackupVault</code>.</p>
     pub fn get_source_backup_vault_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_backup_vault_arn
     }
@@ -236,17 +236,17 @@ impl CopyJobBuilder {
     pub fn get_source_recovery_point_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_recovery_point_arn
     }
-    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a destination copy vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a destination copy vault; for example, <code>arn:aws:backup:us-east-1:123456789012:backup-vault:aBackupVault</code>.</p>
     pub fn destination_backup_vault_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_backup_vault_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a destination copy vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a destination copy vault; for example, <code>arn:aws:backup:us-east-1:123456789012:backup-vault:aBackupVault</code>.</p>
     pub fn set_destination_backup_vault_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_backup_vault_arn = input;
         self
     }
-    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a destination copy vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a destination copy vault; for example, <code>arn:aws:backup:us-east-1:123456789012:backup-vault:aBackupVault</code>.</p>
     pub fn get_destination_backup_vault_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_backup_vault_arn
     }
@@ -418,31 +418,31 @@ impl CopyJobBuilder {
     pub fn get_is_parent(&self) -> &::std::option::Option<bool> {
         &self.is_parent
     }
-    /// <p>This is the identifier of a resource within a composite group, such as nested (child) recovery point belonging to a composite (parent) stack. The ID is transferred from the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax"> logical ID</a> within a stack.</p>
+    /// <p>The identifier of a resource within a composite group, such as nested (child) recovery point belonging to a composite (parent) stack. The ID is transferred from the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax"> logical ID</a> within a stack.</p>
     pub fn composite_member_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.composite_member_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>This is the identifier of a resource within a composite group, such as nested (child) recovery point belonging to a composite (parent) stack. The ID is transferred from the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax"> logical ID</a> within a stack.</p>
+    /// <p>The identifier of a resource within a composite group, such as nested (child) recovery point belonging to a composite (parent) stack. The ID is transferred from the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax"> logical ID</a> within a stack.</p>
     pub fn set_composite_member_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.composite_member_identifier = input;
         self
     }
-    /// <p>This is the identifier of a resource within a composite group, such as nested (child) recovery point belonging to a composite (parent) stack. The ID is transferred from the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax"> logical ID</a> within a stack.</p>
+    /// <p>The identifier of a resource within a composite group, such as nested (child) recovery point belonging to a composite (parent) stack. The ID is transferred from the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax"> logical ID</a> within a stack.</p>
     pub fn get_composite_member_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.composite_member_identifier
     }
-    /// <p>This is the number of child (nested) copy jobs.</p>
+    /// <p>The number of child (nested) copy jobs.</p>
     pub fn number_of_child_jobs(mut self, input: i64) -> Self {
         self.number_of_child_jobs = ::std::option::Option::Some(input);
         self
     }
-    /// <p>This is the number of child (nested) copy jobs.</p>
+    /// <p>The number of child (nested) copy jobs.</p>
     pub fn set_number_of_child_jobs(mut self, input: ::std::option::Option<i64>) -> Self {
         self.number_of_child_jobs = input;
         self
     }
-    /// <p>This is the number of child (nested) copy jobs.</p>
+    /// <p>The number of child (nested) copy jobs.</p>
     pub fn get_number_of_child_jobs(&self) -> &::std::option::Option<i64> {
         &self.number_of_child_jobs
     }
@@ -466,17 +466,17 @@ impl CopyJobBuilder {
     pub fn get_child_jobs_in_state(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::CopyJobState, i64>> {
         &self.child_jobs_in_state
     }
-    /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
+    /// <p>The non-unique name of the resource that belongs to the specified backup.</p>
     pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
+    /// <p>The non-unique name of the resource that belongs to the specified backup.</p>
     pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_name = input;
         self
     }
-    /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
+    /// <p>The non-unique name of the resource that belongs to the specified backup.</p>
     pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_name
     }

@@ -10,6 +10,8 @@ pub struct PutLogEventsOutput {
     pub next_sequence_token: ::std::option::Option<::std::string::String>,
     /// <p>The rejected events.</p>
     pub rejected_log_events_info: ::std::option::Option<crate::types::RejectedLogEventsInfo>,
+    /// <p>Reserved for future use.</p>
+    pub rejected_entity_info: ::std::option::Option<crate::types::RejectedEntityInfo>,
     _request_id: Option<String>,
 }
 impl PutLogEventsOutput {
@@ -23,6 +25,10 @@ impl PutLogEventsOutput {
     /// <p>The rejected events.</p>
     pub fn rejected_log_events_info(&self) -> ::std::option::Option<&crate::types::RejectedLogEventsInfo> {
         self.rejected_log_events_info.as_ref()
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn rejected_entity_info(&self) -> ::std::option::Option<&crate::types::RejectedEntityInfo> {
+        self.rejected_entity_info.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for PutLogEventsOutput {
@@ -43,6 +49,7 @@ impl PutLogEventsOutput {
 pub struct PutLogEventsOutputBuilder {
     pub(crate) next_sequence_token: ::std::option::Option<::std::string::String>,
     pub(crate) rejected_log_events_info: ::std::option::Option<crate::types::RejectedLogEventsInfo>,
+    pub(crate) rejected_entity_info: ::std::option::Option<crate::types::RejectedEntityInfo>,
     _request_id: Option<String>,
 }
 impl PutLogEventsOutputBuilder {
@@ -83,6 +90,20 @@ impl PutLogEventsOutputBuilder {
     pub fn get_rejected_log_events_info(&self) -> &::std::option::Option<crate::types::RejectedLogEventsInfo> {
         &self.rejected_log_events_info
     }
+    /// <p>Reserved for future use.</p>
+    pub fn rejected_entity_info(mut self, input: crate::types::RejectedEntityInfo) -> Self {
+        self.rejected_entity_info = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn set_rejected_entity_info(mut self, input: ::std::option::Option<crate::types::RejectedEntityInfo>) -> Self {
+        self.rejected_entity_info = input;
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn get_rejected_entity_info(&self) -> &::std::option::Option<crate::types::RejectedEntityInfo> {
+        &self.rejected_entity_info
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -97,6 +118,7 @@ impl PutLogEventsOutputBuilder {
         crate::operation::put_log_events::PutLogEventsOutput {
             next_sequence_token: self.next_sequence_token,
             rejected_log_events_info: self.rejected_log_events_info,
+            rejected_entity_info: self.rejected_entity_info,
             _request_id: self._request_id,
         }
     }

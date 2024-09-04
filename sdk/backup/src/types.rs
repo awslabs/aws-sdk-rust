@@ -93,6 +93,8 @@ pub use crate::types::_copy_job_state::CopyJobState;
 
 pub use crate::types::_backup_vault_list_member::BackupVaultListMember;
 
+pub use crate::types::_vault_state::VaultState;
+
 pub use crate::types::_backup_selections_list_member::BackupSelectionsListMember;
 
 pub use crate::types::_backup_plans_list_member::BackupPlansListMember;
@@ -134,8 +136,6 @@ pub use crate::types::_storage_class::StorageClass;
 pub use crate::types::_restore_testing_selection_for_create::RestoreTestingSelectionForCreate;
 
 pub use crate::types::_restore_testing_plan_for_create::RestoreTestingPlanForCreate;
-
-pub use crate::types::_vault_state::VaultState;
 
 mod _advanced_backup_setting;
 

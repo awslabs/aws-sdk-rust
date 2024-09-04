@@ -108,31 +108,31 @@ impl CreateBackupSelectionFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Uniquely identifies the backup plan to be associated with the selection of resources.</p>
+    /// <p>The ID of the backup plan.</p>
     pub fn backup_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.backup_plan_id(input.into());
         self
     }
-    /// <p>Uniquely identifies the backup plan to be associated with the selection of resources.</p>
+    /// <p>The ID of the backup plan.</p>
     pub fn set_backup_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_backup_plan_id(input);
         self
     }
-    /// <p>Uniquely identifies the backup plan to be associated with the selection of resources.</p>
+    /// <p>The ID of the backup plan.</p>
     pub fn get_backup_plan_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_backup_plan_id()
     }
-    /// <p>Specifies the body of a request to assign a set of resources to a backup plan.</p>
+    /// <p>The body of a request to assign a set of resources to a backup plan.</p>
     pub fn backup_selection(mut self, input: crate::types::BackupSelection) -> Self {
         self.inner = self.inner.backup_selection(input);
         self
     }
-    /// <p>Specifies the body of a request to assign a set of resources to a backup plan.</p>
+    /// <p>The body of a request to assign a set of resources to a backup plan.</p>
     pub fn set_backup_selection(mut self, input: ::std::option::Option<crate::types::BackupSelection>) -> Self {
         self.inner = self.inner.set_backup_selection(input);
         self
     }
-    /// <p>Specifies the body of a request to assign a set of resources to a backup plan.</p>
+    /// <p>The body of a request to assign a set of resources to a backup plan.</p>
     pub fn get_backup_selection(&self) -> &::std::option::Option<crate::types::BackupSelection> {
         self.inner.get_backup_selection()
     }

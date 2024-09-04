@@ -5,7 +5,7 @@
 pub struct PutRestoreValidationResultInput {
     /// <p>This is a unique identifier of a restore job within Backup.</p>
     pub restore_job_id: ::std::option::Option<::std::string::String>,
-    /// <p>This is the status of your restore validation.</p>
+    /// <p>The status of your restore validation.</p>
     pub validation_status: ::std::option::Option<crate::types::RestoreValidationStatus>,
     /// <p>This is an optional message string you can input to describe the validation status for the restore test validation.</p>
     pub validation_status_message: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ impl PutRestoreValidationResultInput {
     pub fn restore_job_id(&self) -> ::std::option::Option<&str> {
         self.restore_job_id.as_deref()
     }
-    /// <p>This is the status of your restore validation.</p>
+    /// <p>The status of your restore validation.</p>
     pub fn validation_status(&self) -> ::std::option::Option<&crate::types::RestoreValidationStatus> {
         self.validation_status.as_ref()
     }
@@ -55,18 +55,18 @@ impl PutRestoreValidationResultInputBuilder {
     pub fn get_restore_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.restore_job_id
     }
-    /// <p>This is the status of your restore validation.</p>
+    /// <p>The status of your restore validation.</p>
     /// This field is required.
     pub fn validation_status(mut self, input: crate::types::RestoreValidationStatus) -> Self {
         self.validation_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>This is the status of your restore validation.</p>
+    /// <p>The status of your restore validation.</p>
     pub fn set_validation_status(mut self, input: ::std::option::Option<crate::types::RestoreValidationStatus>) -> Self {
         self.validation_status = input;
         self
     }
-    /// <p>This is the status of your restore validation.</p>
+    /// <p>The status of your restore validation.</p>
     pub fn get_validation_status(&self) -> &::std::option::Option<crate::types::RestoreValidationStatus> {
         &self.validation_status
     }

@@ -182,17 +182,17 @@ impl ListBackupJobsFluentBuilder {
     pub fn get_by_state(&self) -> &::std::option::Option<crate::types::BackupJobState> {
         self.inner.get_by_state()
     }
-    /// <p>Returns only backup jobs that will be stored in the specified backup vault. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    /// <p>Returns only backup jobs that will be stored in the specified backup vault. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created.</p>
     pub fn by_backup_vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.by_backup_vault_name(input.into());
         self
     }
-    /// <p>Returns only backup jobs that will be stored in the specified backup vault. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    /// <p>Returns only backup jobs that will be stored in the specified backup vault. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created.</p>
     pub fn set_by_backup_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_by_backup_vault_name(input);
         self
     }
-    /// <p>Returns only backup jobs that will be stored in the specified backup vault. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    /// <p>Returns only backup jobs that will be stored in the specified backup vault. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created.</p>
     pub fn get_by_backup_vault_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_by_backup_vault_name()
     }
@@ -245,19 +245,19 @@ impl ListBackupJobsFluentBuilder {
     /// <li>
     /// <p><code>Neptune</code> for Amazon Neptune</p></li>
     /// <li>
-    /// <p><code>Redshift</code> for Amazon Redshift</p></li>
-    /// <li>
     /// <p><code>RDS</code> for Amazon Relational Database Service</p></li>
     /// <li>
-    /// <p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p></li>
+    /// <p><code>Redshift</code> for Amazon Redshift</p></li>
+    /// <li>
+    /// <p><code>S3</code> for Amazon Simple Storage Service (Amazon S3)</p></li>
+    /// <li>
+    /// <p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases on Amazon Elastic Compute Cloud instances</p></li>
     /// <li>
     /// <p><code>Storage Gateway</code> for Storage Gateway</p></li>
     /// <li>
-    /// <p><code>S3</code> for Amazon S3</p></li>
-    /// <li>
     /// <p><code>Timestream</code> for Amazon Timestream</p></li>
     /// <li>
-    /// <p><code>VirtualMachine</code> for virtual machines</p></li>
+    /// <p><code>VirtualMachine</code> for VMware virtual machines</p></li>
     /// </ul>
     pub fn by_resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.by_resource_type(input.into());
@@ -284,19 +284,19 @@ impl ListBackupJobsFluentBuilder {
     /// <li>
     /// <p><code>Neptune</code> for Amazon Neptune</p></li>
     /// <li>
-    /// <p><code>Redshift</code> for Amazon Redshift</p></li>
-    /// <li>
     /// <p><code>RDS</code> for Amazon Relational Database Service</p></li>
     /// <li>
-    /// <p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p></li>
+    /// <p><code>Redshift</code> for Amazon Redshift</p></li>
+    /// <li>
+    /// <p><code>S3</code> for Amazon Simple Storage Service (Amazon S3)</p></li>
+    /// <li>
+    /// <p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases on Amazon Elastic Compute Cloud instances</p></li>
     /// <li>
     /// <p><code>Storage Gateway</code> for Storage Gateway</p></li>
     /// <li>
-    /// <p><code>S3</code> for Amazon S3</p></li>
-    /// <li>
     /// <p><code>Timestream</code> for Amazon Timestream</p></li>
     /// <li>
-    /// <p><code>VirtualMachine</code> for virtual machines</p></li>
+    /// <p><code>VirtualMachine</code> for VMware virtual machines</p></li>
     /// </ul>
     pub fn set_by_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_by_resource_type(input);
@@ -323,19 +323,19 @@ impl ListBackupJobsFluentBuilder {
     /// <li>
     /// <p><code>Neptune</code> for Amazon Neptune</p></li>
     /// <li>
-    /// <p><code>Redshift</code> for Amazon Redshift</p></li>
-    /// <li>
     /// <p><code>RDS</code> for Amazon Relational Database Service</p></li>
     /// <li>
-    /// <p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p></li>
+    /// <p><code>Redshift</code> for Amazon Redshift</p></li>
+    /// <li>
+    /// <p><code>S3</code> for Amazon Simple Storage Service (Amazon S3)</p></li>
+    /// <li>
+    /// <p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases on Amazon Elastic Compute Cloud instances</p></li>
     /// <li>
     /// <p><code>Storage Gateway</code> for Storage Gateway</p></li>
     /// <li>
-    /// <p><code>S3</code> for Amazon S3</p></li>
-    /// <li>
     /// <p><code>Timestream</code> for Amazon Timestream</p></li>
     /// <li>
-    /// <p><code>VirtualMachine</code> for virtual machines</p></li>
+    /// <p><code>VirtualMachine</code> for VMware virtual machines</p></li>
     /// </ul>
     pub fn get_by_resource_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_by_resource_type()

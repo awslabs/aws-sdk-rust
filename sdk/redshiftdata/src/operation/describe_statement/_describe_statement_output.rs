@@ -57,6 +57,8 @@ pub struct DescribeStatementOutput {
     pub sub_statements: ::std::option::Option<::std::vec::Vec<crate::types::SubStatementData>>,
     /// <p>The serverless workgroup name or Amazon Resource Name (ARN).</p>
     pub workgroup_name: ::std::option::Option<::std::string::String>,
+    /// <p>The session identifier of the query.</p>
+    pub session_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeStatementOutput {
@@ -157,6 +159,10 @@ impl DescribeStatementOutput {
     pub fn workgroup_name(&self) -> ::std::option::Option<&str> {
         self.workgroup_name.as_deref()
     }
+    /// <p>The session identifier of the query.</p>
+    pub fn session_id(&self) -> ::std::option::Option<&str> {
+        self.session_id.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeStatementOutput {
     fn request_id(&self) -> Option<&str> {
@@ -193,6 +199,7 @@ pub struct DescribeStatementOutputBuilder {
     pub(crate) query_parameters: ::std::option::Option<::std::vec::Vec<crate::types::SqlParameter>>,
     pub(crate) sub_statements: ::std::option::Option<::std::vec::Vec<crate::types::SubStatementData>>,
     pub(crate) workgroup_name: ::std::option::Option<::std::string::String>,
+    pub(crate) session_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeStatementOutputBuilder {
@@ -523,6 +530,20 @@ impl DescribeStatementOutputBuilder {
     pub fn get_workgroup_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.workgroup_name
     }
+    /// <p>The session identifier of the query.</p>
+    pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.session_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The session identifier of the query.</p>
+    pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.session_id = input;
+        self
+    }
+    /// <p>The session identifier of the query.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -563,6 +584,7 @@ impl DescribeStatementOutputBuilder {
             query_parameters: self.query_parameters,
             sub_statements: self.sub_statements,
             workgroup_name: self.workgroup_name,
+            session_id: self.session_id,
             _request_id: self._request_id,
         })
     }

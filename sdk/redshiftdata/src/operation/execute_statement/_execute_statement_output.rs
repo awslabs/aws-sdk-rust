@@ -11,12 +11,16 @@ pub struct ExecuteStatementOutput {
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The database user name.</p>
     pub db_user: ::std::option::Option<::std::string::String>,
+    /// <p>A list of colon (:) separated names of database groups.</p>
+    pub db_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the database.</p>
     pub database: ::std::option::Option<::std::string::String>,
     /// <p>The name or ARN of the secret that enables access to the database.</p>
     pub secret_arn: ::std::option::Option<::std::string::String>,
     /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This element is not returned when connecting to a provisioned cluster.</p>
     pub workgroup_name: ::std::option::Option<::std::string::String>,
+    /// <p>The session identifier of the query.</p>
+    pub session_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ExecuteStatementOutput {
@@ -36,6 +40,12 @@ impl ExecuteStatementOutput {
     pub fn db_user(&self) -> ::std::option::Option<&str> {
         self.db_user.as_deref()
     }
+    /// <p>A list of colon (:) separated names of database groups.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.db_groups.is_none()`.
+    pub fn db_groups(&self) -> &[::std::string::String] {
+        self.db_groups.as_deref().unwrap_or_default()
+    }
     /// <p>The name of the database.</p>
     pub fn database(&self) -> ::std::option::Option<&str> {
         self.database.as_deref()
@@ -47,6 +57,10 @@ impl ExecuteStatementOutput {
     /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This element is not returned when connecting to a provisioned cluster.</p>
     pub fn workgroup_name(&self) -> ::std::option::Option<&str> {
         self.workgroup_name.as_deref()
+    }
+    /// <p>The session identifier of the query.</p>
+    pub fn session_id(&self) -> ::std::option::Option<&str> {
+        self.session_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ExecuteStatementOutput {
@@ -69,9 +83,11 @@ pub struct ExecuteStatementOutputBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) db_user: ::std::option::Option<::std::string::String>,
+    pub(crate) db_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) database: ::std::option::Option<::std::string::String>,
     pub(crate) secret_arn: ::std::option::Option<::std::string::String>,
     pub(crate) workgroup_name: ::std::option::Option<::std::string::String>,
+    pub(crate) session_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ExecuteStatementOutputBuilder {
@@ -131,6 +147,26 @@ impl ExecuteStatementOutputBuilder {
     pub fn get_db_user(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_user
     }
+    /// Appends an item to `db_groups`.
+    ///
+    /// To override the contents of this collection use [`set_db_groups`](Self::set_db_groups).
+    ///
+    /// <p>A list of colon (:) separated names of database groups.</p>
+    pub fn db_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.db_groups.unwrap_or_default();
+        v.push(input.into());
+        self.db_groups = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of colon (:) separated names of database groups.</p>
+    pub fn set_db_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.db_groups = input;
+        self
+    }
+    /// <p>A list of colon (:) separated names of database groups.</p>
+    pub fn get_db_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.db_groups
+    }
     /// <p>The name of the database.</p>
     pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database = ::std::option::Option::Some(input.into());
@@ -173,6 +209,20 @@ impl ExecuteStatementOutputBuilder {
     pub fn get_workgroup_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.workgroup_name
     }
+    /// <p>The session identifier of the query.</p>
+    pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.session_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The session identifier of the query.</p>
+    pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.session_id = input;
+        self
+    }
+    /// <p>The session identifier of the query.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -189,9 +239,11 @@ impl ExecuteStatementOutputBuilder {
             created_at: self.created_at,
             cluster_identifier: self.cluster_identifier,
             db_user: self.db_user,
+            db_groups: self.db_groups,
             database: self.database,
             secret_arn: self.secret_arn,
             workgroup_name: self.workgroup_name,
+            session_id: self.session_id,
             _request_id: self._request_id,
         }
     }

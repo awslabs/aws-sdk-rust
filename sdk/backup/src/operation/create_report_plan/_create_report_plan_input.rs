@@ -13,7 +13,7 @@ pub struct CreateReportPlanInput {
     /// <p><code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code></p>
     /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report coverage by Amazon Web Services Regions and frameworks.</p>
     pub report_setting: ::std::option::Option<crate::types::ReportSetting>,
-    /// <p>Metadata that you can assign to help organize the report plans that you create. Each tag is a key-value pair.</p>
+    /// <p>The tags to assign to the report plan.</p>
     pub report_plan_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>CreateReportPlanInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
     pub idempotency_token: ::std::option::Option<::std::string::String>,
@@ -37,7 +37,7 @@ impl CreateReportPlanInput {
     pub fn report_setting(&self) -> ::std::option::Option<&crate::types::ReportSetting> {
         self.report_setting.as_ref()
     }
-    /// <p>Metadata that you can assign to help organize the report plans that you create. Each tag is a key-value pair.</p>
+    /// <p>The tags to assign to the report plan.</p>
     pub fn report_plan_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.report_plan_tags.as_ref()
     }
@@ -134,7 +134,7 @@ impl CreateReportPlanInputBuilder {
     ///
     /// To override the contents of this collection use [`set_report_plan_tags`](Self::set_report_plan_tags).
     ///
-    /// <p>Metadata that you can assign to help organize the report plans that you create. Each tag is a key-value pair.</p>
+    /// <p>The tags to assign to the report plan.</p>
     pub fn report_plan_tags(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -145,7 +145,7 @@ impl CreateReportPlanInputBuilder {
         self.report_plan_tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>Metadata that you can assign to help organize the report plans that you create. Each tag is a key-value pair.</p>
+    /// <p>The tags to assign to the report plan.</p>
     pub fn set_report_plan_tags(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -153,7 +153,7 @@ impl CreateReportPlanInputBuilder {
         self.report_plan_tags = input;
         self
     }
-    /// <p>Metadata that you can assign to help organize the report plans that you create. Each tag is a key-value pair.</p>
+    /// <p>The tags to assign to the report plan.</p>
     pub fn get_report_plan_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.report_plan_tags
     }

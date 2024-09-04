@@ -18,8 +18,6 @@ pub struct SubscribedAsset {
     pub granted_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The failure timestamp included in the details of the asset for which the subscription grant is created.</p>
     pub failure_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The asset scope of the subscribed asset.</p>
-    pub asset_scope: ::std::option::Option<crate::types::AssetScope>,
 }
 impl SubscribedAsset {
     /// <p>The identifier of the asset for which the subscription grant is created.</p>
@@ -52,10 +50,6 @@ impl SubscribedAsset {
     pub fn failure_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.failure_timestamp.as_ref()
     }
-    /// <p>The asset scope of the subscribed asset.</p>
-    pub fn asset_scope(&self) -> ::std::option::Option<&crate::types::AssetScope> {
-        self.asset_scope.as_ref()
-    }
 }
 impl SubscribedAsset {
     /// Creates a new builder-style object to manufacture [`SubscribedAsset`](crate::types::SubscribedAsset).
@@ -75,7 +69,6 @@ pub struct SubscribedAssetBuilder {
     pub(crate) failure_cause: ::std::option::Option<crate::types::FailureCause>,
     pub(crate) granted_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) failure_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) asset_scope: ::std::option::Option<crate::types::AssetScope>,
 }
 impl SubscribedAssetBuilder {
     /// <p>The identifier of the asset for which the subscription grant is created.</p>
@@ -179,20 +172,6 @@ impl SubscribedAssetBuilder {
     pub fn get_failure_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.failure_timestamp
     }
-    /// <p>The asset scope of the subscribed asset.</p>
-    pub fn asset_scope(mut self, input: crate::types::AssetScope) -> Self {
-        self.asset_scope = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The asset scope of the subscribed asset.</p>
-    pub fn set_asset_scope(mut self, input: ::std::option::Option<crate::types::AssetScope>) -> Self {
-        self.asset_scope = input;
-        self
-    }
-    /// <p>The asset scope of the subscribed asset.</p>
-    pub fn get_asset_scope(&self) -> &::std::option::Option<crate::types::AssetScope> {
-        &self.asset_scope
-    }
     /// Consumes the builder and constructs a [`SubscribedAsset`](crate::types::SubscribedAsset).
     /// This method will fail if any of the following fields are not set:
     /// - [`asset_id`](crate::types::builders::SubscribedAssetBuilder::asset_id)
@@ -222,7 +201,6 @@ impl SubscribedAssetBuilder {
             failure_cause: self.failure_cause,
             granted_timestamp: self.granted_timestamp,
             failure_timestamp: self.failure_timestamp,
-            asset_scope: self.asset_scope,
         })
     }
 }

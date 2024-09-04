@@ -17,15 +17,14 @@ pub struct ListRestoreJobSummariesInput {
     /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all resource types and returns the sum.</p>
     /// <p>The type of Amazon Web Services resource to be backed up; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.</p>
     pub resource_type: ::std::option::Option<::std::string::String>,
-    /// <p>This is the period that sets the boundaries for returned results.</p>
-    /// <p>Acceptable values include</p>
+    /// <p>The period for the returned results.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ONE_DAY</code> for daily job count for the prior 14 days.</p></li>
+    /// <p><code>ONE_DAY</code> - The daily job count for the prior 14 days.</p></li>
     /// <li>
-    /// <p><code>SEVEN_DAYS</code> for the aggregated job count for the prior 7 days.</p></li>
+    /// <p><code>SEVEN_DAYS</code> - The aggregated job count for the prior 7 days.</p></li>
     /// <li>
-    /// <p><code>FOURTEEN_DAYS</code> for aggregated job count for prior 14 days.</p></li>
+    /// <p><code>FOURTEEN_DAYS</code> - The aggregated job count for prior 14 days.</p></li>
     /// </ul>
     pub aggregation_period: ::std::option::Option<crate::types::AggregationPeriod>,
     /// <p>This parameter sets the maximum number of items to be returned.</p>
@@ -55,15 +54,14 @@ impl ListRestoreJobSummariesInput {
     pub fn resource_type(&self) -> ::std::option::Option<&str> {
         self.resource_type.as_deref()
     }
-    /// <p>This is the period that sets the boundaries for returned results.</p>
-    /// <p>Acceptable values include</p>
+    /// <p>The period for the returned results.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ONE_DAY</code> for daily job count for the prior 14 days.</p></li>
+    /// <p><code>ONE_DAY</code> - The daily job count for the prior 14 days.</p></li>
     /// <li>
-    /// <p><code>SEVEN_DAYS</code> for the aggregated job count for the prior 7 days.</p></li>
+    /// <p><code>SEVEN_DAYS</code> - The aggregated job count for the prior 7 days.</p></li>
     /// <li>
-    /// <p><code>FOURTEEN_DAYS</code> for aggregated job count for prior 14 days.</p></li>
+    /// <p><code>FOURTEEN_DAYS</code> - The aggregated job count for prior 14 days.</p></li>
     /// </ul>
     pub fn aggregation_period(&self) -> ::std::option::Option<&crate::types::AggregationPeriod> {
         self.aggregation_period.as_ref()
@@ -163,43 +161,40 @@ impl ListRestoreJobSummariesInputBuilder {
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_type
     }
-    /// <p>This is the period that sets the boundaries for returned results.</p>
-    /// <p>Acceptable values include</p>
+    /// <p>The period for the returned results.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ONE_DAY</code> for daily job count for the prior 14 days.</p></li>
+    /// <p><code>ONE_DAY</code> - The daily job count for the prior 14 days.</p></li>
     /// <li>
-    /// <p><code>SEVEN_DAYS</code> for the aggregated job count for the prior 7 days.</p></li>
+    /// <p><code>SEVEN_DAYS</code> - The aggregated job count for the prior 7 days.</p></li>
     /// <li>
-    /// <p><code>FOURTEEN_DAYS</code> for aggregated job count for prior 14 days.</p></li>
+    /// <p><code>FOURTEEN_DAYS</code> - The aggregated job count for prior 14 days.</p></li>
     /// </ul>
     pub fn aggregation_period(mut self, input: crate::types::AggregationPeriod) -> Self {
         self.aggregation_period = ::std::option::Option::Some(input);
         self
     }
-    /// <p>This is the period that sets the boundaries for returned results.</p>
-    /// <p>Acceptable values include</p>
+    /// <p>The period for the returned results.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ONE_DAY</code> for daily job count for the prior 14 days.</p></li>
+    /// <p><code>ONE_DAY</code> - The daily job count for the prior 14 days.</p></li>
     /// <li>
-    /// <p><code>SEVEN_DAYS</code> for the aggregated job count for the prior 7 days.</p></li>
+    /// <p><code>SEVEN_DAYS</code> - The aggregated job count for the prior 7 days.</p></li>
     /// <li>
-    /// <p><code>FOURTEEN_DAYS</code> for aggregated job count for prior 14 days.</p></li>
+    /// <p><code>FOURTEEN_DAYS</code> - The aggregated job count for prior 14 days.</p></li>
     /// </ul>
     pub fn set_aggregation_period(mut self, input: ::std::option::Option<crate::types::AggregationPeriod>) -> Self {
         self.aggregation_period = input;
         self
     }
-    /// <p>This is the period that sets the boundaries for returned results.</p>
-    /// <p>Acceptable values include</p>
+    /// <p>The period for the returned results.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ONE_DAY</code> for daily job count for the prior 14 days.</p></li>
+    /// <p><code>ONE_DAY</code> - The daily job count for the prior 14 days.</p></li>
     /// <li>
-    /// <p><code>SEVEN_DAYS</code> for the aggregated job count for the prior 7 days.</p></li>
+    /// <p><code>SEVEN_DAYS</code> - The aggregated job count for the prior 7 days.</p></li>
     /// <li>
-    /// <p><code>FOURTEEN_DAYS</code> for aggregated job count for prior 14 days.</p></li>
+    /// <p><code>FOURTEEN_DAYS</code> - The aggregated job count for prior 14 days.</p></li>
     /// </ul>
     pub fn get_aggregation_period(&self) -> &::std::option::Option<crate::types::AggregationPeriod> {
         &self.aggregation_period

@@ -21,7 +21,13 @@ pub use crate::types::_metric_transformation::MetricTransformation;
 
 pub use crate::types::_standard_unit::StandardUnit;
 
+pub use crate::types::_rejected_entity_info::RejectedEntityInfo;
+
+pub use crate::types::_entity_rejection_error_type::EntityRejectionErrorType;
+
 pub use crate::types::_rejected_log_events_info::RejectedLogEventsInfo;
+
+pub use crate::types::_entity::Entity;
 
 pub use crate::types::_input_log_event::InputLogEvent;
 
@@ -127,6 +133,10 @@ mod _destination;
 
 mod _distribution;
 
+mod _entity;
+
+mod _entity_rejection_error_type;
+
 mod _evaluation_frequency;
 
 mod _export_task;
@@ -182,6 +192,8 @@ mod _query_info;
 mod _query_statistics;
 
 mod _query_status;
+
+mod _rejected_entity_info;
 
 mod _rejected_log_events_info;
 

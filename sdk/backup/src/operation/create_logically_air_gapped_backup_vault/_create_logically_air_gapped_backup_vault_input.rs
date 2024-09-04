@@ -3,41 +3,39 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateLogicallyAirGappedBackupVaultInput {
-    /// <p>This is the name of the vault that is being created.</p>
+    /// <p>The name of a logical container where backups are stored. Logically air-gapped backup vaults are identified by names that are unique to the account used to create them and the Region where they are created.</p>
     pub backup_vault_name: ::std::option::Option<::std::string::String>,
-    /// <p>These are the tags that will be included in the newly-created vault.</p>
+    /// <p>The tags to assign to the vault.</p>
     pub backup_vault_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>This is the ID of the creation request.</p>
+    /// <p>The ID of the creation request.</p>
     /// <p>This parameter is optional. If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     pub creator_request_id: ::std::option::Option<::std::string::String>,
-    /// <p>This setting specifies the minimum retention period that the vault retains its recovery points. If this parameter is not specified, no minimum retention period is enforced.</p>
-    /// <p>If specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or longer than the minimum retention period. If a job retention period is shorter than that minimum retention period, then the vault fails the backup or copy job, and you should either modify your lifecycle settings or use a different vault.</p>
+    /// <p>This setting specifies the minimum retention period that the vault retains its recovery points.</p>
+    /// <p>The minimum value accepted is 7 days.</p>
     pub min_retention_days: ::std::option::Option<i64>,
-    /// <p>This is the setting that specifies the maximum retention period that the vault retains its recovery points. If this parameter is not specified, Backup does not enforce a maximum retention period on the recovery points in the vault (allowing indefinite storage).</p>
-    /// <p>If specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or shorter than the maximum retention period. If the job retention period is longer than that maximum retention period, then the vault fails the backup or copy job, and you should either modify your lifecycle settings or use a different vault.</p>
+    /// <p>The maximum retention period that the vault retains its recovery points.</p>
     pub max_retention_days: ::std::option::Option<i64>,
 }
 impl CreateLogicallyAirGappedBackupVaultInput {
-    /// <p>This is the name of the vault that is being created.</p>
+    /// <p>The name of a logical container where backups are stored. Logically air-gapped backup vaults are identified by names that are unique to the account used to create them and the Region where they are created.</p>
     pub fn backup_vault_name(&self) -> ::std::option::Option<&str> {
         self.backup_vault_name.as_deref()
     }
-    /// <p>These are the tags that will be included in the newly-created vault.</p>
+    /// <p>The tags to assign to the vault.</p>
     pub fn backup_vault_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.backup_vault_tags.as_ref()
     }
-    /// <p>This is the ID of the creation request.</p>
+    /// <p>The ID of the creation request.</p>
     /// <p>This parameter is optional. If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     pub fn creator_request_id(&self) -> ::std::option::Option<&str> {
         self.creator_request_id.as_deref()
     }
-    /// <p>This setting specifies the minimum retention period that the vault retains its recovery points. If this parameter is not specified, no minimum retention period is enforced.</p>
-    /// <p>If specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or longer than the minimum retention period. If a job retention period is shorter than that minimum retention period, then the vault fails the backup or copy job, and you should either modify your lifecycle settings or use a different vault.</p>
+    /// <p>This setting specifies the minimum retention period that the vault retains its recovery points.</p>
+    /// <p>The minimum value accepted is 7 days.</p>
     pub fn min_retention_days(&self) -> ::std::option::Option<i64> {
         self.min_retention_days
     }
-    /// <p>This is the setting that specifies the maximum retention period that the vault retains its recovery points. If this parameter is not specified, Backup does not enforce a maximum retention period on the recovery points in the vault (allowing indefinite storage).</p>
-    /// <p>If specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or shorter than the maximum retention period. If the job retention period is longer than that maximum retention period, then the vault fails the backup or copy job, and you should either modify your lifecycle settings or use a different vault.</p>
+    /// <p>The maximum retention period that the vault retains its recovery points.</p>
     pub fn max_retention_days(&self) -> ::std::option::Option<i64> {
         self.max_retention_days
     }
@@ -71,18 +69,18 @@ pub struct CreateLogicallyAirGappedBackupVaultInputBuilder {
     pub(crate) max_retention_days: ::std::option::Option<i64>,
 }
 impl CreateLogicallyAirGappedBackupVaultInputBuilder {
-    /// <p>This is the name of the vault that is being created.</p>
+    /// <p>The name of a logical container where backups are stored. Logically air-gapped backup vaults are identified by names that are unique to the account used to create them and the Region where they are created.</p>
     /// This field is required.
     pub fn backup_vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_vault_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>This is the name of the vault that is being created.</p>
+    /// <p>The name of a logical container where backups are stored. Logically air-gapped backup vaults are identified by names that are unique to the account used to create them and the Region where they are created.</p>
     pub fn set_backup_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_vault_name = input;
         self
     }
-    /// <p>This is the name of the vault that is being created.</p>
+    /// <p>The name of a logical container where backups are stored. Logically air-gapped backup vaults are identified by names that are unique to the account used to create them and the Region where they are created.</p>
     pub fn get_backup_vault_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.backup_vault_name
     }
@@ -90,7 +88,7 @@ impl CreateLogicallyAirGappedBackupVaultInputBuilder {
     ///
     /// To override the contents of this collection use [`set_backup_vault_tags`](Self::set_backup_vault_tags).
     ///
-    /// <p>These are the tags that will be included in the newly-created vault.</p>
+    /// <p>The tags to assign to the vault.</p>
     pub fn backup_vault_tags(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -101,7 +99,7 @@ impl CreateLogicallyAirGappedBackupVaultInputBuilder {
         self.backup_vault_tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>These are the tags that will be included in the newly-created vault.</p>
+    /// <p>The tags to assign to the vault.</p>
     pub fn set_backup_vault_tags(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -109,60 +107,57 @@ impl CreateLogicallyAirGappedBackupVaultInputBuilder {
         self.backup_vault_tags = input;
         self
     }
-    /// <p>These are the tags that will be included in the newly-created vault.</p>
+    /// <p>The tags to assign to the vault.</p>
     pub fn get_backup_vault_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.backup_vault_tags
     }
-    /// <p>This is the ID of the creation request.</p>
+    /// <p>The ID of the creation request.</p>
     /// <p>This parameter is optional. If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     pub fn creator_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creator_request_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>This is the ID of the creation request.</p>
+    /// <p>The ID of the creation request.</p>
     /// <p>This parameter is optional. If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creator_request_id = input;
         self
     }
-    /// <p>This is the ID of the creation request.</p>
+    /// <p>The ID of the creation request.</p>
     /// <p>This parameter is optional. If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     pub fn get_creator_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.creator_request_id
     }
-    /// <p>This setting specifies the minimum retention period that the vault retains its recovery points. If this parameter is not specified, no minimum retention period is enforced.</p>
-    /// <p>If specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or longer than the minimum retention period. If a job retention period is shorter than that minimum retention period, then the vault fails the backup or copy job, and you should either modify your lifecycle settings or use a different vault.</p>
+    /// <p>This setting specifies the minimum retention period that the vault retains its recovery points.</p>
+    /// <p>The minimum value accepted is 7 days.</p>
     /// This field is required.
     pub fn min_retention_days(mut self, input: i64) -> Self {
         self.min_retention_days = ::std::option::Option::Some(input);
         self
     }
-    /// <p>This setting specifies the minimum retention period that the vault retains its recovery points. If this parameter is not specified, no minimum retention period is enforced.</p>
-    /// <p>If specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or longer than the minimum retention period. If a job retention period is shorter than that minimum retention period, then the vault fails the backup or copy job, and you should either modify your lifecycle settings or use a different vault.</p>
+    /// <p>This setting specifies the minimum retention period that the vault retains its recovery points.</p>
+    /// <p>The minimum value accepted is 7 days.</p>
     pub fn set_min_retention_days(mut self, input: ::std::option::Option<i64>) -> Self {
         self.min_retention_days = input;
         self
     }
-    /// <p>This setting specifies the minimum retention period that the vault retains its recovery points. If this parameter is not specified, no minimum retention period is enforced.</p>
-    /// <p>If specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or longer than the minimum retention period. If a job retention period is shorter than that minimum retention period, then the vault fails the backup or copy job, and you should either modify your lifecycle settings or use a different vault.</p>
+    /// <p>This setting specifies the minimum retention period that the vault retains its recovery points.</p>
+    /// <p>The minimum value accepted is 7 days.</p>
     pub fn get_min_retention_days(&self) -> &::std::option::Option<i64> {
         &self.min_retention_days
     }
-    /// <p>This is the setting that specifies the maximum retention period that the vault retains its recovery points. If this parameter is not specified, Backup does not enforce a maximum retention period on the recovery points in the vault (allowing indefinite storage).</p>
-    /// <p>If specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or shorter than the maximum retention period. If the job retention period is longer than that maximum retention period, then the vault fails the backup or copy job, and you should either modify your lifecycle settings or use a different vault.</p>
+    /// <p>The maximum retention period that the vault retains its recovery points.</p>
     /// This field is required.
     pub fn max_retention_days(mut self, input: i64) -> Self {
         self.max_retention_days = ::std::option::Option::Some(input);
         self
     }
-    /// <p>This is the setting that specifies the maximum retention period that the vault retains its recovery points. If this parameter is not specified, Backup does not enforce a maximum retention period on the recovery points in the vault (allowing indefinite storage).</p>
-    /// <p>If specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or shorter than the maximum retention period. If the job retention period is longer than that maximum retention period, then the vault fails the backup or copy job, and you should either modify your lifecycle settings or use a different vault.</p>
+    /// <p>The maximum retention period that the vault retains its recovery points.</p>
     pub fn set_max_retention_days(mut self, input: ::std::option::Option<i64>) -> Self {
         self.max_retention_days = input;
         self
     }
-    /// <p>This is the setting that specifies the maximum retention period that the vault retains its recovery points. If this parameter is not specified, Backup does not enforce a maximum retention period on the recovery points in the vault (allowing indefinite storage).</p>
-    /// <p>If specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or shorter than the maximum retention period. If the job retention period is longer than that maximum retention period, then the vault fails the backup or copy job, and you should either modify your lifecycle settings or use a different vault.</p>
+    /// <p>The maximum retention period that the vault retains its recovery points.</p>
     pub fn get_max_retention_days(&self) -> &::std::option::Option<i64> {
         &self.max_retention_days
     }

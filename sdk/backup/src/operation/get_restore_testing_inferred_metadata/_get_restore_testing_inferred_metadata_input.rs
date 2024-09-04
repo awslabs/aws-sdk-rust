@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRestoreTestingInferredMetadataInput {
-    /// <p>This is the account ID of the specified backup vault.</p>
+    /// <p>The account ID of the specified backup vault.</p>
     pub backup_vault_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web ServicesRegion where they are created. They consist of letters, numbers, and hyphens.</p>
     pub backup_vault_name: ::std::option::Option<::std::string::String>,
@@ -11,7 +11,7 @@ pub struct GetRestoreTestingInferredMetadataInput {
     pub recovery_point_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetRestoreTestingInferredMetadataInput {
-    /// <p>This is the account ID of the specified backup vault.</p>
+    /// <p>The account ID of the specified backup vault.</p>
     pub fn backup_vault_account_id(&self) -> ::std::option::Option<&str> {
         self.backup_vault_account_id.as_deref()
     }
@@ -40,17 +40,17 @@ pub struct GetRestoreTestingInferredMetadataInputBuilder {
     pub(crate) recovery_point_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetRestoreTestingInferredMetadataInputBuilder {
-    /// <p>This is the account ID of the specified backup vault.</p>
+    /// <p>The account ID of the specified backup vault.</p>
     pub fn backup_vault_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_vault_account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>This is the account ID of the specified backup vault.</p>
+    /// <p>The account ID of the specified backup vault.</p>
     pub fn set_backup_vault_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_vault_account_id = input;
         self
     }
-    /// <p>This is the account ID of the specified backup vault.</p>
+    /// <p>The account ID of the specified backup vault.</p>
     pub fn get_backup_vault_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.backup_vault_account_id
     }

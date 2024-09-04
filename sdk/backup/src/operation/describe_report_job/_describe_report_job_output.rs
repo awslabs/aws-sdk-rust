@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeReportJobOutput {
-    /// <p>A list of information about a report job, including its completion and creation times, report destination, unique report job ID, Amazon Resource Name (ARN), report template, status, and status message.</p>
+    /// <p>The information about a report job, including its completion and creation times, report destination, unique report job ID, Amazon Resource Name (ARN), report template, status, and status message.</p>
     pub report_job: ::std::option::Option<crate::types::ReportJob>,
     _request_id: Option<String>,
 }
 impl DescribeReportJobOutput {
-    /// <p>A list of information about a report job, including its completion and creation times, report destination, unique report job ID, Amazon Resource Name (ARN), report template, status, and status message.</p>
+    /// <p>The information about a report job, including its completion and creation times, report destination, unique report job ID, Amazon Resource Name (ARN), report template, status, and status message.</p>
     pub fn report_job(&self) -> ::std::option::Option<&crate::types::ReportJob> {
         self.report_job.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct DescribeReportJobOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeReportJobOutputBuilder {
-    /// <p>A list of information about a report job, including its completion and creation times, report destination, unique report job ID, Amazon Resource Name (ARN), report template, status, and status message.</p>
+    /// <p>The information about a report job, including its completion and creation times, report destination, unique report job ID, Amazon Resource Name (ARN), report template, status, and status message.</p>
     pub fn report_job(mut self, input: crate::types::ReportJob) -> Self {
         self.report_job = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A list of information about a report job, including its completion and creation times, report destination, unique report job ID, Amazon Resource Name (ARN), report template, status, and status message.</p>
+    /// <p>The information about a report job, including its completion and creation times, report destination, unique report job ID, Amazon Resource Name (ARN), report template, status, and status message.</p>
     pub fn set_report_job(mut self, input: ::std::option::Option<crate::types::ReportJob>) -> Self {
         self.report_job = input;
         self
     }
-    /// <p>A list of information about a report job, including its completion and creation times, report destination, unique report job ID, Amazon Resource Name (ARN), report template, status, and status message.</p>
+    /// <p>The information about a report job, including its completion and creation times, report destination, unique report job ID, Amazon Resource Name (ARN), report template, status, and status message.</p>
     pub fn get_report_job(&self) -> &::std::option::Option<crate::types::ReportJob> {
         &self.report_job
     }

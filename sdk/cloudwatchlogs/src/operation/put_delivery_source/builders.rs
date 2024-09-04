@@ -153,9 +153,11 @@ impl PutDeliverySourceFluentBuilder {
     /// <p>Defines the type of log that the source is sending.</p>
     /// <ul>
     /// <li>
+    /// <p>For Amazon Bedrock, the valid value is <code>APPLICATION_LOGS</code>.</p></li>
+    /// <li>
     /// <p>For Amazon CodeWhisperer, the valid value is <code>EVENT_LOGS</code>.</p></li>
     /// <li>
-    /// <p>For IAM Identity Centerr, the valid value is <code>ERROR_LOGS</code>.</p></li>
+    /// <p>For IAM Identity Center, the valid value is <code>ERROR_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon WorkMail, the valid values are <code>ACCESS_CONTROL_LOGS</code>, <code>AUTHENTICATION_LOGS</code>, <code>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</code>, and <code>WORKMAIL_MAILBOX_ACCESS_LOGS</code>.</p></li>
     /// </ul>
@@ -166,9 +168,11 @@ impl PutDeliverySourceFluentBuilder {
     /// <p>Defines the type of log that the source is sending.</p>
     /// <ul>
     /// <li>
+    /// <p>For Amazon Bedrock, the valid value is <code>APPLICATION_LOGS</code>.</p></li>
+    /// <li>
     /// <p>For Amazon CodeWhisperer, the valid value is <code>EVENT_LOGS</code>.</p></li>
     /// <li>
-    /// <p>For IAM Identity Centerr, the valid value is <code>ERROR_LOGS</code>.</p></li>
+    /// <p>For IAM Identity Center, the valid value is <code>ERROR_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon WorkMail, the valid values are <code>ACCESS_CONTROL_LOGS</code>, <code>AUTHENTICATION_LOGS</code>, <code>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</code>, and <code>WORKMAIL_MAILBOX_ACCESS_LOGS</code>.</p></li>
     /// </ul>
@@ -179,9 +183,11 @@ impl PutDeliverySourceFluentBuilder {
     /// <p>Defines the type of log that the source is sending.</p>
     /// <ul>
     /// <li>
+    /// <p>For Amazon Bedrock, the valid value is <code>APPLICATION_LOGS</code>.</p></li>
+    /// <li>
     /// <p>For Amazon CodeWhisperer, the valid value is <code>EVENT_LOGS</code>.</p></li>
     /// <li>
-    /// <p>For IAM Identity Centerr, the valid value is <code>ERROR_LOGS</code>.</p></li>
+    /// <p>For IAM Identity Center, the valid value is <code>ERROR_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon WorkMail, the valid values are <code>ACCESS_CONTROL_LOGS</code>, <code>AUTHENTICATION_LOGS</code>, <code>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</code>, and <code>WORKMAIL_MAILBOX_ACCESS_LOGS</code>.</p></li>
     /// </ul>

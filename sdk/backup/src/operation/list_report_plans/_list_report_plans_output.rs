@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListReportPlansOutput {
-    /// <p>A list of your report plans with detailed information for each plan. This information includes the Amazon Resource Name (ARN), report plan name, description, settings, delivery channel, deployment status, creation time, and last times the report plan attempted to and successfully ran.</p>
+    /// <p>The report plans with detailed information for each plan. This information includes the Amazon Resource Name (ARN), report plan name, description, settings, delivery channel, deployment status, creation time, and last times the report plan attempted to and successfully ran.</p>
     pub report_plans: ::std::option::Option<::std::vec::Vec<crate::types::ReportPlan>>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListReportPlansOutput {
-    /// <p>A list of your report plans with detailed information for each plan. This information includes the Amazon Resource Name (ARN), report plan name, description, settings, delivery channel, deployment status, creation time, and last times the report plan attempted to and successfully ran.</p>
+    /// <p>The report plans with detailed information for each plan. This information includes the Amazon Resource Name (ARN), report plan name, description, settings, delivery channel, deployment status, creation time, and last times the report plan attempted to and successfully ran.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.report_plans.is_none()`.
     pub fn report_plans(&self) -> &[crate::types::ReportPlan] {
@@ -46,19 +46,19 @@ impl ListReportPlansOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_report_plans`](Self::set_report_plans).
     ///
-    /// <p>A list of your report plans with detailed information for each plan. This information includes the Amazon Resource Name (ARN), report plan name, description, settings, delivery channel, deployment status, creation time, and last times the report plan attempted to and successfully ran.</p>
+    /// <p>The report plans with detailed information for each plan. This information includes the Amazon Resource Name (ARN), report plan name, description, settings, delivery channel, deployment status, creation time, and last times the report plan attempted to and successfully ran.</p>
     pub fn report_plans(mut self, input: crate::types::ReportPlan) -> Self {
         let mut v = self.report_plans.unwrap_or_default();
         v.push(input);
         self.report_plans = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of your report plans with detailed information for each plan. This information includes the Amazon Resource Name (ARN), report plan name, description, settings, delivery channel, deployment status, creation time, and last times the report plan attempted to and successfully ran.</p>
+    /// <p>The report plans with detailed information for each plan. This information includes the Amazon Resource Name (ARN), report plan name, description, settings, delivery channel, deployment status, creation time, and last times the report plan attempted to and successfully ran.</p>
     pub fn set_report_plans(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReportPlan>>) -> Self {
         self.report_plans = input;
         self
     }
-    /// <p>A list of your report plans with detailed information for each plan. This information includes the Amazon Resource Name (ARN), report plan name, description, settings, delivery channel, deployment status, creation time, and last times the report plan attempted to and successfully ran.</p>
+    /// <p>The report plans with detailed information for each plan. This information includes the Amazon Resource Name (ARN), report plan name, description, settings, delivery channel, deployment status, creation time, and last times the report plan attempted to and successfully ran.</p>
     pub fn get_report_plans(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReportPlan>> {
         &self.report_plans
     }

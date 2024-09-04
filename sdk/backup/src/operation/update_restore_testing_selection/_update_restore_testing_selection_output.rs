@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRestoreTestingSelectionOutput {
-    /// <p>This is the time the resource testing selection was updated successfully.</p>
+    /// <p>The time the resource testing selection was updated successfully.</p>
     pub creation_time: ::aws_smithy_types::DateTime,
     /// <p>Unique string that is the name of the restore testing plan.</p>
     pub restore_testing_plan_arn: ::std::string::String,
-    /// <p>This is the restore testing plan with which the updated restore testing selection is associated.</p>
+    /// <p>The restore testing plan with which the updated restore testing selection is associated.</p>
     pub restore_testing_plan_name: ::std::string::String,
-    /// <p>This is the returned restore testing selection name.</p>
+    /// <p>The returned restore testing selection name.</p>
     pub restore_testing_selection_name: ::std::string::String,
-    /// <p>This is the time the update completed for the restore testing selection.</p>
+    /// <p>The time the update completed for the restore testing selection.</p>
     pub update_time: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
 impl UpdateRestoreTestingSelectionOutput {
-    /// <p>This is the time the resource testing selection was updated successfully.</p>
+    /// <p>The time the resource testing selection was updated successfully.</p>
     pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
         &self.creation_time
     }
@@ -25,17 +25,17 @@ impl UpdateRestoreTestingSelectionOutput {
         use std::ops::Deref;
         self.restore_testing_plan_arn.deref()
     }
-    /// <p>This is the restore testing plan with which the updated restore testing selection is associated.</p>
+    /// <p>The restore testing plan with which the updated restore testing selection is associated.</p>
     pub fn restore_testing_plan_name(&self) -> &str {
         use std::ops::Deref;
         self.restore_testing_plan_name.deref()
     }
-    /// <p>This is the returned restore testing selection name.</p>
+    /// <p>The returned restore testing selection name.</p>
     pub fn restore_testing_selection_name(&self) -> &str {
         use std::ops::Deref;
         self.restore_testing_selection_name.deref()
     }
-    /// <p>This is the time the update completed for the restore testing selection.</p>
+    /// <p>The time the update completed for the restore testing selection.</p>
     pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
         &self.update_time
     }
@@ -64,18 +64,18 @@ pub struct UpdateRestoreTestingSelectionOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateRestoreTestingSelectionOutputBuilder {
-    /// <p>This is the time the resource testing selection was updated successfully.</p>
+    /// <p>The time the resource testing selection was updated successfully.</p>
     /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>This is the time the resource testing selection was updated successfully.</p>
+    /// <p>The time the resource testing selection was updated successfully.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
-    /// <p>This is the time the resource testing selection was updated successfully.</p>
+    /// <p>The time the resource testing selection was updated successfully.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
@@ -94,48 +94,48 @@ impl UpdateRestoreTestingSelectionOutputBuilder {
     pub fn get_restore_testing_plan_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.restore_testing_plan_arn
     }
-    /// <p>This is the restore testing plan with which the updated restore testing selection is associated.</p>
+    /// <p>The restore testing plan with which the updated restore testing selection is associated.</p>
     /// This field is required.
     pub fn restore_testing_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.restore_testing_plan_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>This is the restore testing plan with which the updated restore testing selection is associated.</p>
+    /// <p>The restore testing plan with which the updated restore testing selection is associated.</p>
     pub fn set_restore_testing_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.restore_testing_plan_name = input;
         self
     }
-    /// <p>This is the restore testing plan with which the updated restore testing selection is associated.</p>
+    /// <p>The restore testing plan with which the updated restore testing selection is associated.</p>
     pub fn get_restore_testing_plan_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.restore_testing_plan_name
     }
-    /// <p>This is the returned restore testing selection name.</p>
+    /// <p>The returned restore testing selection name.</p>
     /// This field is required.
     pub fn restore_testing_selection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.restore_testing_selection_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>This is the returned restore testing selection name.</p>
+    /// <p>The returned restore testing selection name.</p>
     pub fn set_restore_testing_selection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.restore_testing_selection_name = input;
         self
     }
-    /// <p>This is the returned restore testing selection name.</p>
+    /// <p>The returned restore testing selection name.</p>
     pub fn get_restore_testing_selection_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.restore_testing_selection_name
     }
-    /// <p>This is the time the update completed for the restore testing selection.</p>
+    /// <p>The time the update completed for the restore testing selection.</p>
     /// This field is required.
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>This is the time the update completed for the restore testing selection.</p>
+    /// <p>The time the update completed for the restore testing selection.</p>
     pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_time = input;
         self
     }
-    /// <p>This is the time the update completed for the restore testing selection.</p>
+    /// <p>The time the update completed for the restore testing selection.</p>
     pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.update_time
     }

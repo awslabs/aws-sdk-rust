@@ -176,7 +176,7 @@ impl CreateReportPlanFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_report_plan_tags`](Self::set_report_plan_tags).
     ///
-    /// <p>Metadata that you can assign to help organize the report plans that you create. Each tag is a key-value pair.</p>
+    /// <p>The tags to assign to the report plan.</p>
     pub fn report_plan_tags(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -185,7 +185,7 @@ impl CreateReportPlanFluentBuilder {
         self.inner = self.inner.report_plan_tags(k.into(), v.into());
         self
     }
-    /// <p>Metadata that you can assign to help organize the report plans that you create. Each tag is a key-value pair.</p>
+    /// <p>The tags to assign to the report plan.</p>
     pub fn set_report_plan_tags(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -193,7 +193,7 @@ impl CreateReportPlanFluentBuilder {
         self.inner = self.inner.set_report_plan_tags(input);
         self
     }
-    /// <p>Metadata that you can assign to help organize the report plans that you create. Each tag is a key-value pair.</p>
+    /// <p>The tags to assign to the report plan.</p>
     pub fn get_report_plan_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_report_plan_tags()
     }

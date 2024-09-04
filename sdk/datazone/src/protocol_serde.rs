@@ -447,8 +447,6 @@ pub(crate) mod shape_accept_choice;
 
 pub(crate) mod shape_accept_rule;
 
-pub(crate) mod shape_accepted_asset_scope;
-
 pub(crate) mod shape_action_parameters;
 
 pub(crate) mod shape_applicable_asset_types;
@@ -815,8 +813,6 @@ pub(crate) mod shape_asset_item;
 
 pub(crate) mod shape_asset_listing_item;
 
-pub(crate) mod shape_asset_scope;
-
 pub(crate) mod shape_asset_type_item;
 
 pub(crate) mod shape_configurable_action_parameter_list;
@@ -890,8 +886,6 @@ pub(crate) mod shape_detailed_glossary_term;
 pub(crate) mod shape_domain_unit_filter_for_project;
 
 pub(crate) mod shape_filter_expression;
-
-pub(crate) mod shape_filter_ids;
 
 pub(crate) mod shape_group_details;
 

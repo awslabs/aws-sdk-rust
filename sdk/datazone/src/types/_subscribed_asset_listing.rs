@@ -14,8 +14,6 @@ pub struct SubscribedAssetListing {
     pub forms: ::std::option::Option<::std::string::String>,
     /// <p>The glossary terms attached to the published asset for which the subscription grant is created.</p>
     pub glossary_terms: ::std::option::Option<::std::vec::Vec<crate::types::DetailedGlossaryTerm>>,
-    /// <p>The asset scope of the subscribed asset listing.</p>
-    pub asset_scope: ::std::option::Option<crate::types::AssetScope>,
 }
 impl SubscribedAssetListing {
     /// <p>The identifier of the published asset for which the subscription grant is created.</p>
@@ -40,10 +38,6 @@ impl SubscribedAssetListing {
     pub fn glossary_terms(&self) -> &[crate::types::DetailedGlossaryTerm] {
         self.glossary_terms.as_deref().unwrap_or_default()
     }
-    /// <p>The asset scope of the subscribed asset listing.</p>
-    pub fn asset_scope(&self) -> ::std::option::Option<&crate::types::AssetScope> {
-        self.asset_scope.as_ref()
-    }
 }
 impl SubscribedAssetListing {
     /// Creates a new builder-style object to manufacture [`SubscribedAssetListing`](crate::types::SubscribedAssetListing).
@@ -61,7 +55,6 @@ pub struct SubscribedAssetListingBuilder {
     pub(crate) entity_type: ::std::option::Option<::std::string::String>,
     pub(crate) forms: ::std::option::Option<::std::string::String>,
     pub(crate) glossary_terms: ::std::option::Option<::std::vec::Vec<crate::types::DetailedGlossaryTerm>>,
-    pub(crate) asset_scope: ::std::option::Option<crate::types::AssetScope>,
 }
 impl SubscribedAssetListingBuilder {
     /// <p>The identifier of the published asset for which the subscription grant is created.</p>
@@ -140,20 +133,6 @@ impl SubscribedAssetListingBuilder {
     pub fn get_glossary_terms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DetailedGlossaryTerm>> {
         &self.glossary_terms
     }
-    /// <p>The asset scope of the subscribed asset listing.</p>
-    pub fn asset_scope(mut self, input: crate::types::AssetScope) -> Self {
-        self.asset_scope = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The asset scope of the subscribed asset listing.</p>
-    pub fn set_asset_scope(mut self, input: ::std::option::Option<crate::types::AssetScope>) -> Self {
-        self.asset_scope = input;
-        self
-    }
-    /// <p>The asset scope of the subscribed asset listing.</p>
-    pub fn get_asset_scope(&self) -> &::std::option::Option<crate::types::AssetScope> {
-        &self.asset_scope
-    }
     /// Consumes the builder and constructs a [`SubscribedAssetListing`](crate::types::SubscribedAssetListing).
     pub fn build(self) -> crate::types::SubscribedAssetListing {
         crate::types::SubscribedAssetListing {
@@ -162,7 +141,6 @@ impl SubscribedAssetListingBuilder {
             entity_type: self.entity_type,
             forms: self.forms,
             glossary_terms: self.glossary_terms,
-            asset_scope: self.asset_scope,
         }
     }
 }

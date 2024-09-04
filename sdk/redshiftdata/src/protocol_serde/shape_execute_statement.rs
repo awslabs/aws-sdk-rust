@@ -17,6 +17,24 @@ pub fn de_execute_statement_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "ActiveSessionsExceededException" => crate::operation::execute_statement::ExecuteStatementError::ActiveSessionsExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ActiveSessionsExceededExceptionBuilder::default();
+                output = crate::protocol_serde::shape_active_sessions_exceeded_exception::de_active_sessions_exceeded_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::execute_statement::ExecuteStatementError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ActiveStatementsExceededException" => crate::operation::execute_statement::ExecuteStatementError::ActiveStatementsExceededException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -44,6 +62,20 @@ pub fn de_execute_statement_http_error(
                     .map_err(crate::operation::execute_statement::ExecuteStatementError::unhandled)?;
                 let output = output.meta(generic);
                 crate::serde_util::execute_statement_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::execute_statement::ExecuteStatementError::unhandled)?
+            };
+            tmp
+        }),
+        "InternalServerException" => crate::operation::execute_statement::ExecuteStatementError::InternalServerException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
+                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::execute_statement::ExecuteStatementError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::internal_server_exception_correct_errors(output)
                     .build()
                     .map_err(crate::operation::execute_statement::ExecuteStatementError::unhandled)?
             };
@@ -132,6 +164,9 @@ pub(crate) fn de_execute_statement(
                             .transpose()?,
                     );
                 }
+                "DbGroups" => {
+                    builder = builder.set_db_groups(crate::protocol_serde::shape_db_group_list::de_db_group_list(tokens)?);
+                }
                 "Database" => {
                     builder = builder.set_database(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -148,6 +183,13 @@ pub(crate) fn de_execute_statement(
                 }
                 "WorkgroupName" => {
                     builder = builder.set_workgroup_name(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "SessionId" => {
+                    builder = builder.set_session_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,

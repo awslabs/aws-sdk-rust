@@ -3,9 +3,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListProtectedResourcesByBackupVaultInput {
-    /// <p>This is the list of protected resources by backup vault within the vault(s) you specify by name.</p>
+    /// <p>The list of protected resources by backup vault within the vault(s) you specify by name.</p>
     pub backup_vault_name: ::std::option::Option<::std::string::String>,
-    /// <p>This is the list of protected resources by backup vault within the vault(s) you specify by account ID.</p>
+    /// <p>The list of protected resources by backup vault within the vault(s) you specify by account ID.</p>
     pub backup_vault_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct ListProtectedResourcesByBackupVaultInput {
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListProtectedResourcesByBackupVaultInput {
-    /// <p>This is the list of protected resources by backup vault within the vault(s) you specify by name.</p>
+    /// <p>The list of protected resources by backup vault within the vault(s) you specify by name.</p>
     pub fn backup_vault_name(&self) -> ::std::option::Option<&str> {
         self.backup_vault_name.as_deref()
     }
-    /// <p>This is the list of protected resources by backup vault within the vault(s) you specify by account ID.</p>
+    /// <p>The list of protected resources by backup vault within the vault(s) you specify by account ID.</p>
     pub fn backup_vault_account_id(&self) -> ::std::option::Option<&str> {
         self.backup_vault_account_id.as_deref()
     }
@@ -47,32 +47,32 @@ pub struct ListProtectedResourcesByBackupVaultInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListProtectedResourcesByBackupVaultInputBuilder {
-    /// <p>This is the list of protected resources by backup vault within the vault(s) you specify by name.</p>
+    /// <p>The list of protected resources by backup vault within the vault(s) you specify by name.</p>
     /// This field is required.
     pub fn backup_vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_vault_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>This is the list of protected resources by backup vault within the vault(s) you specify by name.</p>
+    /// <p>The list of protected resources by backup vault within the vault(s) you specify by name.</p>
     pub fn set_backup_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_vault_name = input;
         self
     }
-    /// <p>This is the list of protected resources by backup vault within the vault(s) you specify by name.</p>
+    /// <p>The list of protected resources by backup vault within the vault(s) you specify by name.</p>
     pub fn get_backup_vault_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.backup_vault_name
     }
-    /// <p>This is the list of protected resources by backup vault within the vault(s) you specify by account ID.</p>
+    /// <p>The list of protected resources by backup vault within the vault(s) you specify by account ID.</p>
     pub fn backup_vault_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_vault_account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>This is the list of protected resources by backup vault within the vault(s) you specify by account ID.</p>
+    /// <p>The list of protected resources by backup vault within the vault(s) you specify by account ID.</p>
     pub fn set_backup_vault_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_vault_account_id = input;
         self
     }
-    /// <p>This is the list of protected resources by backup vault within the vault(s) you specify by account ID.</p>
+    /// <p>The list of protected resources by backup vault within the vault(s) you specify by account ID.</p>
     pub fn get_backup_vault_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.backup_vault_account_id
     }

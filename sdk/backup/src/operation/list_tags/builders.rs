@@ -22,8 +22,7 @@ impl crate::operation::list_tags::builders::ListTagsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListTags`.
 ///
-/// <p>Returns a list of key-value pairs assigned to a target recovery point, backup plan, or backup vault.</p>
-/// <p><code>ListTags</code> only works for resource types that support full Backup management of their backups. Those resource types are listed in the "Full Backup management" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table.</p>
+/// <p>Returns the tags assigned to the resource, such as a target recovery point, backup plan, or backup vault.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTagsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

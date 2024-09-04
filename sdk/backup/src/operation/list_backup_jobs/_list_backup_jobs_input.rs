@@ -15,7 +15,7 @@ pub struct ListBackupJobsInput {
     /// <p>GET /backup-jobs/?state=COMPLETED</p>
     /// <p>GET /backup-jobs/?messageCategory=SUCCESS&amp;state=COMPLETED</p>
     pub by_state: ::std::option::Option<crate::types::BackupJobState>,
-    /// <p>Returns only backup jobs that will be stored in the specified backup vault. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    /// <p>Returns only backup jobs that will be stored in the specified backup vault. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created.</p>
     pub by_backup_vault_name: ::std::option::Option<::std::string::String>,
     /// <p>Returns only backup jobs that were created before the specified date.</p>
     pub by_created_before: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -42,19 +42,19 @@ pub struct ListBackupJobsInput {
     /// <li>
     /// <p><code>Neptune</code> for Amazon Neptune</p></li>
     /// <li>
-    /// <p><code>Redshift</code> for Amazon Redshift</p></li>
-    /// <li>
     /// <p><code>RDS</code> for Amazon Relational Database Service</p></li>
     /// <li>
-    /// <p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p></li>
+    /// <p><code>Redshift</code> for Amazon Redshift</p></li>
+    /// <li>
+    /// <p><code>S3</code> for Amazon Simple Storage Service (Amazon S3)</p></li>
+    /// <li>
+    /// <p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases on Amazon Elastic Compute Cloud instances</p></li>
     /// <li>
     /// <p><code>Storage Gateway</code> for Storage Gateway</p></li>
     /// <li>
-    /// <p><code>S3</code> for Amazon S3</p></li>
-    /// <li>
     /// <p><code>Timestream</code> for Amazon Timestream</p></li>
     /// <li>
-    /// <p><code>VirtualMachine</code> for virtual machines</p></li>
+    /// <p><code>VirtualMachine</code> for VMware virtual machines</p></li>
     /// </ul>
     pub by_resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The account ID to list the jobs from. Returns only backup jobs associated with the specified account ID.</p>
@@ -94,7 +94,7 @@ impl ListBackupJobsInput {
     pub fn by_state(&self) -> ::std::option::Option<&crate::types::BackupJobState> {
         self.by_state.as_ref()
     }
-    /// <p>Returns only backup jobs that will be stored in the specified backup vault. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    /// <p>Returns only backup jobs that will be stored in the specified backup vault. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created.</p>
     pub fn by_backup_vault_name(&self) -> ::std::option::Option<&str> {
         self.by_backup_vault_name.as_deref()
     }
@@ -127,19 +127,19 @@ impl ListBackupJobsInput {
     /// <li>
     /// <p><code>Neptune</code> for Amazon Neptune</p></li>
     /// <li>
-    /// <p><code>Redshift</code> for Amazon Redshift</p></li>
-    /// <li>
     /// <p><code>RDS</code> for Amazon Relational Database Service</p></li>
     /// <li>
-    /// <p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p></li>
+    /// <p><code>Redshift</code> for Amazon Redshift</p></li>
+    /// <li>
+    /// <p><code>S3</code> for Amazon Simple Storage Service (Amazon S3)</p></li>
+    /// <li>
+    /// <p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases on Amazon Elastic Compute Cloud instances</p></li>
     /// <li>
     /// <p><code>Storage Gateway</code> for Storage Gateway</p></li>
     /// <li>
-    /// <p><code>S3</code> for Amazon S3</p></li>
-    /// <li>
     /// <p><code>Timestream</code> for Amazon Timestream</p></li>
     /// <li>
-    /// <p><code>VirtualMachine</code> for virtual machines</p></li>
+    /// <p><code>VirtualMachine</code> for VMware virtual machines</p></li>
     /// </ul>
     pub fn by_resource_type(&self) -> ::std::option::Option<&str> {
         self.by_resource_type.as_deref()
@@ -264,17 +264,17 @@ impl ListBackupJobsInputBuilder {
     pub fn get_by_state(&self) -> &::std::option::Option<crate::types::BackupJobState> {
         &self.by_state
     }
-    /// <p>Returns only backup jobs that will be stored in the specified backup vault. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    /// <p>Returns only backup jobs that will be stored in the specified backup vault. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created.</p>
     pub fn by_backup_vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.by_backup_vault_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Returns only backup jobs that will be stored in the specified backup vault. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    /// <p>Returns only backup jobs that will be stored in the specified backup vault. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created.</p>
     pub fn set_by_backup_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.by_backup_vault_name = input;
         self
     }
-    /// <p>Returns only backup jobs that will be stored in the specified backup vault. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    /// <p>Returns only backup jobs that will be stored in the specified backup vault. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created.</p>
     pub fn get_by_backup_vault_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.by_backup_vault_name
     }
@@ -327,19 +327,19 @@ impl ListBackupJobsInputBuilder {
     /// <li>
     /// <p><code>Neptune</code> for Amazon Neptune</p></li>
     /// <li>
-    /// <p><code>Redshift</code> for Amazon Redshift</p></li>
-    /// <li>
     /// <p><code>RDS</code> for Amazon Relational Database Service</p></li>
     /// <li>
-    /// <p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p></li>
+    /// <p><code>Redshift</code> for Amazon Redshift</p></li>
+    /// <li>
+    /// <p><code>S3</code> for Amazon Simple Storage Service (Amazon S3)</p></li>
+    /// <li>
+    /// <p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases on Amazon Elastic Compute Cloud instances</p></li>
     /// <li>
     /// <p><code>Storage Gateway</code> for Storage Gateway</p></li>
     /// <li>
-    /// <p><code>S3</code> for Amazon S3</p></li>
-    /// <li>
     /// <p><code>Timestream</code> for Amazon Timestream</p></li>
     /// <li>
-    /// <p><code>VirtualMachine</code> for virtual machines</p></li>
+    /// <p><code>VirtualMachine</code> for VMware virtual machines</p></li>
     /// </ul>
     pub fn by_resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.by_resource_type = ::std::option::Option::Some(input.into());
@@ -366,19 +366,19 @@ impl ListBackupJobsInputBuilder {
     /// <li>
     /// <p><code>Neptune</code> for Amazon Neptune</p></li>
     /// <li>
-    /// <p><code>Redshift</code> for Amazon Redshift</p></li>
-    /// <li>
     /// <p><code>RDS</code> for Amazon Relational Database Service</p></li>
     /// <li>
-    /// <p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p></li>
+    /// <p><code>Redshift</code> for Amazon Redshift</p></li>
+    /// <li>
+    /// <p><code>S3</code> for Amazon Simple Storage Service (Amazon S3)</p></li>
+    /// <li>
+    /// <p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases on Amazon Elastic Compute Cloud instances</p></li>
     /// <li>
     /// <p><code>Storage Gateway</code> for Storage Gateway</p></li>
     /// <li>
-    /// <p><code>S3</code> for Amazon S3</p></li>
-    /// <li>
     /// <p><code>Timestream</code> for Amazon Timestream</p></li>
     /// <li>
-    /// <p><code>VirtualMachine</code> for virtual machines</p></li>
+    /// <p><code>VirtualMachine</code> for VMware virtual machines</p></li>
     /// </ul>
     pub fn set_by_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.by_resource_type = input;
@@ -405,19 +405,19 @@ impl ListBackupJobsInputBuilder {
     /// <li>
     /// <p><code>Neptune</code> for Amazon Neptune</p></li>
     /// <li>
-    /// <p><code>Redshift</code> for Amazon Redshift</p></li>
-    /// <li>
     /// <p><code>RDS</code> for Amazon Relational Database Service</p></li>
     /// <li>
-    /// <p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p></li>
+    /// <p><code>Redshift</code> for Amazon Redshift</p></li>
+    /// <li>
+    /// <p><code>S3</code> for Amazon Simple Storage Service (Amazon S3)</p></li>
+    /// <li>
+    /// <p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases on Amazon Elastic Compute Cloud instances</p></li>
     /// <li>
     /// <p><code>Storage Gateway</code> for Storage Gateway</p></li>
     /// <li>
-    /// <p><code>S3</code> for Amazon S3</p></li>
-    /// <li>
     /// <p><code>Timestream</code> for Amazon Timestream</p></li>
     /// <li>
-    /// <p><code>VirtualMachine</code> for virtual machines</p></li>
+    /// <p><code>VirtualMachine</code> for VMware virtual machines</p></li>
     /// </ul>
     pub fn get_by_resource_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.by_resource_type

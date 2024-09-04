@@ -122,17 +122,17 @@ impl PutRestoreValidationResultFluentBuilder {
     pub fn get_restore_job_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_restore_job_id()
     }
-    /// <p>This is the status of your restore validation.</p>
+    /// <p>The status of your restore validation.</p>
     pub fn validation_status(mut self, input: crate::types::RestoreValidationStatus) -> Self {
         self.inner = self.inner.validation_status(input);
         self
     }
-    /// <p>This is the status of your restore validation.</p>
+    /// <p>The status of your restore validation.</p>
     pub fn set_validation_status(mut self, input: ::std::option::Option<crate::types::RestoreValidationStatus>) -> Self {
         self.inner = self.inner.set_validation_status(input);
         self
     }
-    /// <p>This is the status of your restore validation.</p>
+    /// <p>The status of your restore validation.</p>
     pub fn get_validation_status(&self) -> &::std::option::Option<crate::types::RestoreValidationStatus> {
         self.inner.get_validation_status()
     }

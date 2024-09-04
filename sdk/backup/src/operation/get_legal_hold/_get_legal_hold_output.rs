@@ -3,66 +3,66 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLegalHoldOutput {
-    /// <p>This is the string title of the legal hold.</p>
+    /// <p>The title of the legal hold.</p>
     pub title: ::std::option::Option<::std::string::String>,
-    /// <p>This is the status of the legal hold. Statuses can be <code>ACTIVE</code>, <code>CREATING</code>, <code>CANCELED</code>, and <code>CANCELING</code>.</p>
+    /// <p>The status of the legal hold.</p>
     pub status: ::std::option::Option<crate::types::LegalHoldStatus>,
-    /// <p>This is the returned string description of the legal hold.</p>
+    /// <p>The description of the legal hold.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>String describing the reason for removing the legal hold.</p>
+    /// <p>The reason for removing the legal hold.</p>
     pub cancel_description: ::std::option::Option<::std::string::String>,
-    /// <p>This is the returned ID associated with a specified legal hold.</p>
+    /// <p>The ID of the legal hold.</p>
     pub legal_hold_id: ::std::option::Option<::std::string::String>,
-    /// <p>This is the returned framework ARN for the specified legal hold. An Amazon Resource Name (ARN) uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
+    /// <p>The framework ARN for the specified legal hold. The format of the ARN depends on the resource type.</p>
     pub legal_hold_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Time in number format when legal hold was created.</p>
+    /// <p>The time when the legal hold was created.</p>
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Time in number when legal hold was cancelled.</p>
+    /// <p>The time when the legal hold was cancelled.</p>
     pub cancellation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>This is the date and time until which the legal hold record will be retained.</p>
+    /// <p>The date and time until which the legal hold record is retained.</p>
     pub retain_record_until: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>This specifies criteria to assign a set of resources, such as resource types or backup vaults.</p>
+    /// <p>The criteria to assign a set of resources, such as resource types or backup vaults.</p>
     pub recovery_point_selection: ::std::option::Option<crate::types::RecoveryPointSelection>,
     _request_id: Option<String>,
 }
 impl GetLegalHoldOutput {
-    /// <p>This is the string title of the legal hold.</p>
+    /// <p>The title of the legal hold.</p>
     pub fn title(&self) -> ::std::option::Option<&str> {
         self.title.as_deref()
     }
-    /// <p>This is the status of the legal hold. Statuses can be <code>ACTIVE</code>, <code>CREATING</code>, <code>CANCELED</code>, and <code>CANCELING</code>.</p>
+    /// <p>The status of the legal hold.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::LegalHoldStatus> {
         self.status.as_ref()
     }
-    /// <p>This is the returned string description of the legal hold.</p>
+    /// <p>The description of the legal hold.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>String describing the reason for removing the legal hold.</p>
+    /// <p>The reason for removing the legal hold.</p>
     pub fn cancel_description(&self) -> ::std::option::Option<&str> {
         self.cancel_description.as_deref()
     }
-    /// <p>This is the returned ID associated with a specified legal hold.</p>
+    /// <p>The ID of the legal hold.</p>
     pub fn legal_hold_id(&self) -> ::std::option::Option<&str> {
         self.legal_hold_id.as_deref()
     }
-    /// <p>This is the returned framework ARN for the specified legal hold. An Amazon Resource Name (ARN) uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
+    /// <p>The framework ARN for the specified legal hold. The format of the ARN depends on the resource type.</p>
     pub fn legal_hold_arn(&self) -> ::std::option::Option<&str> {
         self.legal_hold_arn.as_deref()
     }
-    /// <p>Time in number format when legal hold was created.</p>
+    /// <p>The time when the legal hold was created.</p>
     pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
-    /// <p>Time in number when legal hold was cancelled.</p>
+    /// <p>The time when the legal hold was cancelled.</p>
     pub fn cancellation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.cancellation_date.as_ref()
     }
-    /// <p>This is the date and time until which the legal hold record will be retained.</p>
+    /// <p>The date and time until which the legal hold record is retained.</p>
     pub fn retain_record_until(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.retain_record_until.as_ref()
     }
-    /// <p>This specifies criteria to assign a set of resources, such as resource types or backup vaults.</p>
+    /// <p>The criteria to assign a set of resources, such as resource types or backup vaults.</p>
     pub fn recovery_point_selection(&self) -> ::std::option::Option<&crate::types::RecoveryPointSelection> {
         self.recovery_point_selection.as_ref()
     }
@@ -96,143 +96,143 @@ pub struct GetLegalHoldOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetLegalHoldOutputBuilder {
-    /// <p>This is the string title of the legal hold.</p>
+    /// <p>The title of the legal hold.</p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>This is the string title of the legal hold.</p>
+    /// <p>The title of the legal hold.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.title = input;
         self
     }
-    /// <p>This is the string title of the legal hold.</p>
+    /// <p>The title of the legal hold.</p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
         &self.title
     }
-    /// <p>This is the status of the legal hold. Statuses can be <code>ACTIVE</code>, <code>CREATING</code>, <code>CANCELED</code>, and <code>CANCELING</code>.</p>
+    /// <p>The status of the legal hold.</p>
     pub fn status(mut self, input: crate::types::LegalHoldStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>This is the status of the legal hold. Statuses can be <code>ACTIVE</code>, <code>CREATING</code>, <code>CANCELED</code>, and <code>CANCELING</code>.</p>
+    /// <p>The status of the legal hold.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::LegalHoldStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>This is the status of the legal hold. Statuses can be <code>ACTIVE</code>, <code>CREATING</code>, <code>CANCELED</code>, and <code>CANCELING</code>.</p>
+    /// <p>The status of the legal hold.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::LegalHoldStatus> {
         &self.status
     }
-    /// <p>This is the returned string description of the legal hold.</p>
+    /// <p>The description of the legal hold.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>This is the returned string description of the legal hold.</p>
+    /// <p>The description of the legal hold.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>This is the returned string description of the legal hold.</p>
+    /// <p>The description of the legal hold.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>String describing the reason for removing the legal hold.</p>
+    /// <p>The reason for removing the legal hold.</p>
     pub fn cancel_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cancel_description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>String describing the reason for removing the legal hold.</p>
+    /// <p>The reason for removing the legal hold.</p>
     pub fn set_cancel_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cancel_description = input;
         self
     }
-    /// <p>String describing the reason for removing the legal hold.</p>
+    /// <p>The reason for removing the legal hold.</p>
     pub fn get_cancel_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.cancel_description
     }
-    /// <p>This is the returned ID associated with a specified legal hold.</p>
+    /// <p>The ID of the legal hold.</p>
     pub fn legal_hold_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.legal_hold_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>This is the returned ID associated with a specified legal hold.</p>
+    /// <p>The ID of the legal hold.</p>
     pub fn set_legal_hold_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.legal_hold_id = input;
         self
     }
-    /// <p>This is the returned ID associated with a specified legal hold.</p>
+    /// <p>The ID of the legal hold.</p>
     pub fn get_legal_hold_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.legal_hold_id
     }
-    /// <p>This is the returned framework ARN for the specified legal hold. An Amazon Resource Name (ARN) uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
+    /// <p>The framework ARN for the specified legal hold. The format of the ARN depends on the resource type.</p>
     pub fn legal_hold_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.legal_hold_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>This is the returned framework ARN for the specified legal hold. An Amazon Resource Name (ARN) uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
+    /// <p>The framework ARN for the specified legal hold. The format of the ARN depends on the resource type.</p>
     pub fn set_legal_hold_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.legal_hold_arn = input;
         self
     }
-    /// <p>This is the returned framework ARN for the specified legal hold. An Amazon Resource Name (ARN) uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
+    /// <p>The framework ARN for the specified legal hold. The format of the ARN depends on the resource type.</p>
     pub fn get_legal_hold_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.legal_hold_arn
     }
-    /// <p>Time in number format when legal hold was created.</p>
+    /// <p>The time when the legal hold was created.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Time in number format when legal hold was created.</p>
+    /// <p>The time when the legal hold was created.</p>
     pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }
-    /// <p>Time in number format when legal hold was created.</p>
+    /// <p>The time when the legal hold was created.</p>
     pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_date
     }
-    /// <p>Time in number when legal hold was cancelled.</p>
+    /// <p>The time when the legal hold was cancelled.</p>
     pub fn cancellation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.cancellation_date = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Time in number when legal hold was cancelled.</p>
+    /// <p>The time when the legal hold was cancelled.</p>
     pub fn set_cancellation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.cancellation_date = input;
         self
     }
-    /// <p>Time in number when legal hold was cancelled.</p>
+    /// <p>The time when the legal hold was cancelled.</p>
     pub fn get_cancellation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.cancellation_date
     }
-    /// <p>This is the date and time until which the legal hold record will be retained.</p>
+    /// <p>The date and time until which the legal hold record is retained.</p>
     pub fn retain_record_until(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.retain_record_until = ::std::option::Option::Some(input);
         self
     }
-    /// <p>This is the date and time until which the legal hold record will be retained.</p>
+    /// <p>The date and time until which the legal hold record is retained.</p>
     pub fn set_retain_record_until(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.retain_record_until = input;
         self
     }
-    /// <p>This is the date and time until which the legal hold record will be retained.</p>
+    /// <p>The date and time until which the legal hold record is retained.</p>
     pub fn get_retain_record_until(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.retain_record_until
     }
-    /// <p>This specifies criteria to assign a set of resources, such as resource types or backup vaults.</p>
+    /// <p>The criteria to assign a set of resources, such as resource types or backup vaults.</p>
     pub fn recovery_point_selection(mut self, input: crate::types::RecoveryPointSelection) -> Self {
         self.recovery_point_selection = ::std::option::Option::Some(input);
         self
     }
-    /// <p>This specifies criteria to assign a set of resources, such as resource types or backup vaults.</p>
+    /// <p>The criteria to assign a set of resources, such as resource types or backup vaults.</p>
     pub fn set_recovery_point_selection(mut self, input: ::std::option::Option<crate::types::RecoveryPointSelection>) -> Self {
         self.recovery_point_selection = input;
         self
     }
-    /// <p>This specifies criteria to assign a set of resources, such as resource types or backup vaults.</p>
+    /// <p>The criteria to assign a set of resources, such as resource types or backup vaults.</p>
     pub fn get_recovery_point_selection(&self) -> &::std::option::Option<crate::types::RecoveryPointSelection> {
         &self.recovery_point_selection
     }

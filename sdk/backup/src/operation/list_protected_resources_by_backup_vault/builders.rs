@@ -120,31 +120,31 @@ impl ListProtectedResourcesByBackupVaultFluentBuilder {
             self.inner,
         )
     }
-    /// <p>This is the list of protected resources by backup vault within the vault(s) you specify by name.</p>
+    /// <p>The list of protected resources by backup vault within the vault(s) you specify by name.</p>
     pub fn backup_vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.backup_vault_name(input.into());
         self
     }
-    /// <p>This is the list of protected resources by backup vault within the vault(s) you specify by name.</p>
+    /// <p>The list of protected resources by backup vault within the vault(s) you specify by name.</p>
     pub fn set_backup_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_backup_vault_name(input);
         self
     }
-    /// <p>This is the list of protected resources by backup vault within the vault(s) you specify by name.</p>
+    /// <p>The list of protected resources by backup vault within the vault(s) you specify by name.</p>
     pub fn get_backup_vault_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_backup_vault_name()
     }
-    /// <p>This is the list of protected resources by backup vault within the vault(s) you specify by account ID.</p>
+    /// <p>The list of protected resources by backup vault within the vault(s) you specify by account ID.</p>
     pub fn backup_vault_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.backup_vault_account_id(input.into());
         self
     }
-    /// <p>This is the list of protected resources by backup vault within the vault(s) you specify by account ID.</p>
+    /// <p>The list of protected resources by backup vault within the vault(s) you specify by account ID.</p>
     pub fn set_backup_vault_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_backup_vault_account_id(input);
         self
     }
-    /// <p>This is the list of protected resources by backup vault within the vault(s) you specify by account ID.</p>
+    /// <p>The list of protected resources by backup vault within the vault(s) you specify by account ID.</p>
     pub fn get_backup_vault_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_backup_vault_account_id()
     }

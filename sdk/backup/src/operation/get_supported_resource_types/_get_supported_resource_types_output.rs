@@ -8,6 +8,10 @@ pub struct GetSupportedResourceTypesOutput {
     /// <li>
     /// <p><code>Aurora</code> for Amazon Aurora</p></li>
     /// <li>
+    /// <p><code>CloudFormation</code> for CloudFormation</p></li>
+    /// <li>
+    /// <p><code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p></li>
+    /// <li>
     /// <p><code>DynamoDB</code> for Amazon DynamoDB</p></li>
     /// <li>
     /// <p><code>EBS</code> for Amazon Elastic Block Store</p></li>
@@ -16,15 +20,23 @@ pub struct GetSupportedResourceTypesOutput {
     /// <li>
     /// <p><code>EFS</code> for Amazon Elastic File System</p></li>
     /// <li>
-    /// <p><code>FSX</code> for Amazon FSx</p></li>
+    /// <p><code>FSx</code> for Amazon FSx</p></li>
+    /// <li>
+    /// <p><code>Neptune</code> for Amazon Neptune</p></li>
     /// <li>
     /// <p><code>RDS</code> for Amazon Relational Database Service</p></li>
     /// <li>
+    /// <p><code>Redshift</code> for Amazon Redshift</p></li>
+    /// <li>
+    /// <p><code>S3</code> for Amazon Simple Storage Service (Amazon S3)</p></li>
+    /// <li>
+    /// <p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases on Amazon Elastic Compute Cloud instances</p></li>
+    /// <li>
     /// <p><code>Storage Gateway</code> for Storage Gateway</p></li>
     /// <li>
-    /// <p><code>DocDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p></li>
+    /// <p><code>Timestream</code> for Amazon Timestream</p></li>
     /// <li>
-    /// <p><code>Neptune</code> for Amazon Neptune</p></li>
+    /// <p><code>VirtualMachine</code> for VMware virtual machines</p></li>
     /// </ul>
     pub resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
@@ -35,6 +47,10 @@ impl GetSupportedResourceTypesOutput {
     /// <li>
     /// <p><code>Aurora</code> for Amazon Aurora</p></li>
     /// <li>
+    /// <p><code>CloudFormation</code> for CloudFormation</p></li>
+    /// <li>
+    /// <p><code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p></li>
+    /// <li>
     /// <p><code>DynamoDB</code> for Amazon DynamoDB</p></li>
     /// <li>
     /// <p><code>EBS</code> for Amazon Elastic Block Store</p></li>
@@ -43,15 +59,23 @@ impl GetSupportedResourceTypesOutput {
     /// <li>
     /// <p><code>EFS</code> for Amazon Elastic File System</p></li>
     /// <li>
-    /// <p><code>FSX</code> for Amazon FSx</p></li>
+    /// <p><code>FSx</code> for Amazon FSx</p></li>
+    /// <li>
+    /// <p><code>Neptune</code> for Amazon Neptune</p></li>
     /// <li>
     /// <p><code>RDS</code> for Amazon Relational Database Service</p></li>
     /// <li>
+    /// <p><code>Redshift</code> for Amazon Redshift</p></li>
+    /// <li>
+    /// <p><code>S3</code> for Amazon Simple Storage Service (Amazon S3)</p></li>
+    /// <li>
+    /// <p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases on Amazon Elastic Compute Cloud instances</p></li>
+    /// <li>
     /// <p><code>Storage Gateway</code> for Storage Gateway</p></li>
     /// <li>
-    /// <p><code>DocDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p></li>
+    /// <p><code>Timestream</code> for Amazon Timestream</p></li>
     /// <li>
-    /// <p><code>Neptune</code> for Amazon Neptune</p></li>
+    /// <p><code>VirtualMachine</code> for VMware virtual machines</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_types.is_none()`.
@@ -88,6 +112,10 @@ impl GetSupportedResourceTypesOutputBuilder {
     /// <li>
     /// <p><code>Aurora</code> for Amazon Aurora</p></li>
     /// <li>
+    /// <p><code>CloudFormation</code> for CloudFormation</p></li>
+    /// <li>
+    /// <p><code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p></li>
+    /// <li>
     /// <p><code>DynamoDB</code> for Amazon DynamoDB</p></li>
     /// <li>
     /// <p><code>EBS</code> for Amazon Elastic Block Store</p></li>
@@ -96,15 +124,23 @@ impl GetSupportedResourceTypesOutputBuilder {
     /// <li>
     /// <p><code>EFS</code> for Amazon Elastic File System</p></li>
     /// <li>
-    /// <p><code>FSX</code> for Amazon FSx</p></li>
+    /// <p><code>FSx</code> for Amazon FSx</p></li>
+    /// <li>
+    /// <p><code>Neptune</code> for Amazon Neptune</p></li>
     /// <li>
     /// <p><code>RDS</code> for Amazon Relational Database Service</p></li>
     /// <li>
+    /// <p><code>Redshift</code> for Amazon Redshift</p></li>
+    /// <li>
+    /// <p><code>S3</code> for Amazon Simple Storage Service (Amazon S3)</p></li>
+    /// <li>
+    /// <p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases on Amazon Elastic Compute Cloud instances</p></li>
+    /// <li>
     /// <p><code>Storage Gateway</code> for Storage Gateway</p></li>
     /// <li>
-    /// <p><code>DocDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p></li>
+    /// <p><code>Timestream</code> for Amazon Timestream</p></li>
     /// <li>
-    /// <p><code>Neptune</code> for Amazon Neptune</p></li>
+    /// <p><code>VirtualMachine</code> for VMware virtual machines</p></li>
     /// </ul>
     pub fn resource_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_types.unwrap_or_default();
@@ -117,6 +153,10 @@ impl GetSupportedResourceTypesOutputBuilder {
     /// <li>
     /// <p><code>Aurora</code> for Amazon Aurora</p></li>
     /// <li>
+    /// <p><code>CloudFormation</code> for CloudFormation</p></li>
+    /// <li>
+    /// <p><code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p></li>
+    /// <li>
     /// <p><code>DynamoDB</code> for Amazon DynamoDB</p></li>
     /// <li>
     /// <p><code>EBS</code> for Amazon Elastic Block Store</p></li>
@@ -125,15 +165,23 @@ impl GetSupportedResourceTypesOutputBuilder {
     /// <li>
     /// <p><code>EFS</code> for Amazon Elastic File System</p></li>
     /// <li>
-    /// <p><code>FSX</code> for Amazon FSx</p></li>
+    /// <p><code>FSx</code> for Amazon FSx</p></li>
+    /// <li>
+    /// <p><code>Neptune</code> for Amazon Neptune</p></li>
     /// <li>
     /// <p><code>RDS</code> for Amazon Relational Database Service</p></li>
     /// <li>
+    /// <p><code>Redshift</code> for Amazon Redshift</p></li>
+    /// <li>
+    /// <p><code>S3</code> for Amazon Simple Storage Service (Amazon S3)</p></li>
+    /// <li>
+    /// <p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases on Amazon Elastic Compute Cloud instances</p></li>
+    /// <li>
     /// <p><code>Storage Gateway</code> for Storage Gateway</p></li>
     /// <li>
-    /// <p><code>DocDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p></li>
+    /// <p><code>Timestream</code> for Amazon Timestream</p></li>
     /// <li>
-    /// <p><code>Neptune</code> for Amazon Neptune</p></li>
+    /// <p><code>VirtualMachine</code> for VMware virtual machines</p></li>
     /// </ul>
     pub fn set_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resource_types = input;
@@ -144,6 +192,10 @@ impl GetSupportedResourceTypesOutputBuilder {
     /// <li>
     /// <p><code>Aurora</code> for Amazon Aurora</p></li>
     /// <li>
+    /// <p><code>CloudFormation</code> for CloudFormation</p></li>
+    /// <li>
+    /// <p><code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p></li>
+    /// <li>
     /// <p><code>DynamoDB</code> for Amazon DynamoDB</p></li>
     /// <li>
     /// <p><code>EBS</code> for Amazon Elastic Block Store</p></li>
@@ -152,15 +204,23 @@ impl GetSupportedResourceTypesOutputBuilder {
     /// <li>
     /// <p><code>EFS</code> for Amazon Elastic File System</p></li>
     /// <li>
-    /// <p><code>FSX</code> for Amazon FSx</p></li>
+    /// <p><code>FSx</code> for Amazon FSx</p></li>
+    /// <li>
+    /// <p><code>Neptune</code> for Amazon Neptune</p></li>
     /// <li>
     /// <p><code>RDS</code> for Amazon Relational Database Service</p></li>
     /// <li>
+    /// <p><code>Redshift</code> for Amazon Redshift</p></li>
+    /// <li>
+    /// <p><code>S3</code> for Amazon Simple Storage Service (Amazon S3)</p></li>
+    /// <li>
+    /// <p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases on Amazon Elastic Compute Cloud instances</p></li>
+    /// <li>
     /// <p><code>Storage Gateway</code> for Storage Gateway</p></li>
     /// <li>
-    /// <p><code>DocDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p></li>
+    /// <p><code>Timestream</code> for Amazon Timestream</p></li>
     /// <li>
-    /// <p><code>Neptune</code> for Amazon Neptune</p></li>
+    /// <p><code>VirtualMachine</code> for VMware virtual machines</p></li>
     /// </ul>
     pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.resource_types

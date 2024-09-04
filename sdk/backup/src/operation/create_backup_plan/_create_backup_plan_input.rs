@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateBackupPlanInput {
-    /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
+    /// <p>The body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
     pub backup_plan: ::std::option::Option<crate::types::BackupPlanInput>,
-    /// <p>To help organize your resources, you can assign your own metadata to the resources that you create. Each tag is a key-value pair. The specified tags are assigned to all backups created with this plan.</p>
+    /// <p>The tags to assign to the backup plan.</p>
     pub backup_plan_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Identifies the request and allows failed requests to be retried without the risk of running the operation twice. If the request includes a <code>CreatorRequestId</code> that matches an existing backup plan, that plan is returned. This parameter is optional.</p>
     /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     pub creator_request_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateBackupPlanInput {
-    /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
+    /// <p>The body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
     pub fn backup_plan(&self) -> ::std::option::Option<&crate::types::BackupPlanInput> {
         self.backup_plan.as_ref()
     }
-    /// <p>To help organize your resources, you can assign your own metadata to the resources that you create. Each tag is a key-value pair. The specified tags are assigned to all backups created with this plan.</p>
+    /// <p>The tags to assign to the backup plan.</p>
     pub fn backup_plan_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.backup_plan_tags.as_ref()
     }
@@ -51,18 +51,18 @@ pub struct CreateBackupPlanInputBuilder {
     pub(crate) creator_request_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateBackupPlanInputBuilder {
-    /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
+    /// <p>The body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
     /// This field is required.
     pub fn backup_plan(mut self, input: crate::types::BackupPlanInput) -> Self {
         self.backup_plan = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
+    /// <p>The body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
     pub fn set_backup_plan(mut self, input: ::std::option::Option<crate::types::BackupPlanInput>) -> Self {
         self.backup_plan = input;
         self
     }
-    /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
+    /// <p>The body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
     pub fn get_backup_plan(&self) -> &::std::option::Option<crate::types::BackupPlanInput> {
         &self.backup_plan
     }
@@ -70,7 +70,7 @@ impl CreateBackupPlanInputBuilder {
     ///
     /// To override the contents of this collection use [`set_backup_plan_tags`](Self::set_backup_plan_tags).
     ///
-    /// <p>To help organize your resources, you can assign your own metadata to the resources that you create. Each tag is a key-value pair. The specified tags are assigned to all backups created with this plan.</p>
+    /// <p>The tags to assign to the backup plan.</p>
     pub fn backup_plan_tags(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -81,7 +81,7 @@ impl CreateBackupPlanInputBuilder {
         self.backup_plan_tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>To help organize your resources, you can assign your own metadata to the resources that you create. Each tag is a key-value pair. The specified tags are assigned to all backups created with this plan.</p>
+    /// <p>The tags to assign to the backup plan.</p>
     pub fn set_backup_plan_tags(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -89,7 +89,7 @@ impl CreateBackupPlanInputBuilder {
         self.backup_plan_tags = input;
         self
     }
-    /// <p>To help organize your resources, you can assign your own metadata to the resources that you create. Each tag is a key-value pair. The specified tags are assigned to all backups created with this plan.</p>
+    /// <p>The tags to assign to the backup plan.</p>
     pub fn get_backup_plan_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.backup_plan_tags
     }

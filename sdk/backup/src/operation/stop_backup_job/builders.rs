@@ -23,7 +23,7 @@ impl crate::operation::stop_backup_job::builders::StopBackupJobInputBuilder {
 /// Fluent builder constructing a request to `StopBackupJob`.
 ///
 /// <p>Attempts to cancel a job to create a one-time backup of a resource.</p>
-/// <p>This action is not supported for the following services: Amazon FSx for Windows File Server, Amazon FSx for Lustre, Amazon FSx for NetApp ONTAP , Amazon FSx for OpenZFS, Amazon DocumentDB (with MongoDB compatibility), Amazon RDS, Amazon Aurora, and Amazon Neptune.</p>
+/// <p>This action is not supported for the following services: Amazon FSx for Windows File Server, Amazon FSx for Lustre, Amazon FSx for NetApp ONTAP, Amazon FSx for OpenZFS, Amazon DocumentDB (with MongoDB compatibility), Amazon RDS, Amazon Aurora, and Amazon Neptune.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopBackupJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

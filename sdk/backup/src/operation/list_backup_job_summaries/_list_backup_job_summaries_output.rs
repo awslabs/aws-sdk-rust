@@ -3,16 +3,16 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListBackupJobSummariesOutput {
-    /// <p>This request returns a summary that contains Region, Account, State, ResourceType, MessageCategory, StartTime, EndTime, and Count of included jobs.</p>
+    /// <p>The summary information.</p>
     pub backup_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::BackupJobSummary>>,
-    /// <p>This is the period that sets the boundaries for returned results.</p>
+    /// <p>The period for the returned results.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ONE_DAY</code> for daily job count for the prior 14 days.</p></li>
+    /// <p><code>ONE_DAY</code> - The daily job count for the prior 14 days.</p></li>
     /// <li>
-    /// <p><code>SEVEN_DAYS</code> for the aggregated job count for the prior 7 days.</p></li>
+    /// <p><code>SEVEN_DAYS</code> - The aggregated job count for the prior 7 days.</p></li>
     /// <li>
-    /// <p><code>FOURTEEN_DAYS</code> for aggregated job count for prior 14 days.</p></li>
+    /// <p><code>FOURTEEN_DAYS</code> - The aggregated job count for prior 14 days.</p></li>
     /// </ul>
     pub aggregation_period: ::std::option::Option<::std::string::String>,
     /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>MaxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
@@ -20,20 +20,20 @@ pub struct ListBackupJobSummariesOutput {
     _request_id: Option<String>,
 }
 impl ListBackupJobSummariesOutput {
-    /// <p>This request returns a summary that contains Region, Account, State, ResourceType, MessageCategory, StartTime, EndTime, and Count of included jobs.</p>
+    /// <p>The summary information.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.backup_job_summaries.is_none()`.
     pub fn backup_job_summaries(&self) -> &[crate::types::BackupJobSummary] {
         self.backup_job_summaries.as_deref().unwrap_or_default()
     }
-    /// <p>This is the period that sets the boundaries for returned results.</p>
+    /// <p>The period for the returned results.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ONE_DAY</code> for daily job count for the prior 14 days.</p></li>
+    /// <p><code>ONE_DAY</code> - The daily job count for the prior 14 days.</p></li>
     /// <li>
-    /// <p><code>SEVEN_DAYS</code> for the aggregated job count for the prior 7 days.</p></li>
+    /// <p><code>SEVEN_DAYS</code> - The aggregated job count for the prior 7 days.</p></li>
     /// <li>
-    /// <p><code>FOURTEEN_DAYS</code> for aggregated job count for prior 14 days.</p></li>
+    /// <p><code>FOURTEEN_DAYS</code> - The aggregated job count for prior 14 days.</p></li>
     /// </ul>
     pub fn aggregation_period(&self) -> ::std::option::Option<&str> {
         self.aggregation_period.as_deref()
@@ -69,56 +69,56 @@ impl ListBackupJobSummariesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_backup_job_summaries`](Self::set_backup_job_summaries).
     ///
-    /// <p>This request returns a summary that contains Region, Account, State, ResourceType, MessageCategory, StartTime, EndTime, and Count of included jobs.</p>
+    /// <p>The summary information.</p>
     pub fn backup_job_summaries(mut self, input: crate::types::BackupJobSummary) -> Self {
         let mut v = self.backup_job_summaries.unwrap_or_default();
         v.push(input);
         self.backup_job_summaries = ::std::option::Option::Some(v);
         self
     }
-    /// <p>This request returns a summary that contains Region, Account, State, ResourceType, MessageCategory, StartTime, EndTime, and Count of included jobs.</p>
+    /// <p>The summary information.</p>
     pub fn set_backup_job_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BackupJobSummary>>) -> Self {
         self.backup_job_summaries = input;
         self
     }
-    /// <p>This request returns a summary that contains Region, Account, State, ResourceType, MessageCategory, StartTime, EndTime, and Count of included jobs.</p>
+    /// <p>The summary information.</p>
     pub fn get_backup_job_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BackupJobSummary>> {
         &self.backup_job_summaries
     }
-    /// <p>This is the period that sets the boundaries for returned results.</p>
+    /// <p>The period for the returned results.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ONE_DAY</code> for daily job count for the prior 14 days.</p></li>
+    /// <p><code>ONE_DAY</code> - The daily job count for the prior 14 days.</p></li>
     /// <li>
-    /// <p><code>SEVEN_DAYS</code> for the aggregated job count for the prior 7 days.</p></li>
+    /// <p><code>SEVEN_DAYS</code> - The aggregated job count for the prior 7 days.</p></li>
     /// <li>
-    /// <p><code>FOURTEEN_DAYS</code> for aggregated job count for prior 14 days.</p></li>
+    /// <p><code>FOURTEEN_DAYS</code> - The aggregated job count for prior 14 days.</p></li>
     /// </ul>
     pub fn aggregation_period(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aggregation_period = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>This is the period that sets the boundaries for returned results.</p>
+    /// <p>The period for the returned results.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ONE_DAY</code> for daily job count for the prior 14 days.</p></li>
+    /// <p><code>ONE_DAY</code> - The daily job count for the prior 14 days.</p></li>
     /// <li>
-    /// <p><code>SEVEN_DAYS</code> for the aggregated job count for the prior 7 days.</p></li>
+    /// <p><code>SEVEN_DAYS</code> - The aggregated job count for the prior 7 days.</p></li>
     /// <li>
-    /// <p><code>FOURTEEN_DAYS</code> for aggregated job count for prior 14 days.</p></li>
+    /// <p><code>FOURTEEN_DAYS</code> - The aggregated job count for prior 14 days.</p></li>
     /// </ul>
     pub fn set_aggregation_period(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aggregation_period = input;
         self
     }
-    /// <p>This is the period that sets the boundaries for returned results.</p>
+    /// <p>The period for the returned results.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ONE_DAY</code> for daily job count for the prior 14 days.</p></li>
+    /// <p><code>ONE_DAY</code> - The daily job count for the prior 14 days.</p></li>
     /// <li>
-    /// <p><code>SEVEN_DAYS</code> for the aggregated job count for the prior 7 days.</p></li>
+    /// <p><code>SEVEN_DAYS</code> - The aggregated job count for the prior 7 days.</p></li>
     /// <li>
-    /// <p><code>FOURTEEN_DAYS</code> for aggregated job count for prior 14 days.</p></li>
+    /// <p><code>FOURTEEN_DAYS</code> - The aggregated job count for prior 14 days.</p></li>
     /// </ul>
     pub fn get_aggregation_period(&self) -> &::std::option::Option<::std::string::String> {
         &self.aggregation_period

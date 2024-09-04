@@ -22,7 +22,7 @@ impl crate::operation::list_backup_plans::builders::ListBackupPlansInputBuilder 
 }
 /// Fluent builder constructing a request to `ListBackupPlans`.
 ///
-/// <p>Returns a list of all active backup plans for an authenticated account. The list contains information such as Amazon Resource Names (ARNs), plan IDs, creation and deletion dates, version IDs, plan names, and creator request IDs.</p>
+/// <p>Lists the active backup plans for the account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListBackupPlansFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

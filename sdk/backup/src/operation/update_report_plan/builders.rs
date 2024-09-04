@@ -22,7 +22,7 @@ impl crate::operation::update_report_plan::builders::UpdateReportPlanInputBuilde
 }
 /// Fluent builder constructing a request to `UpdateReportPlan`.
 ///
-/// <p>Updates an existing report plan identified by its <code>ReportPlanName</code> with the input document in JSON format.</p>
+/// <p>Updates the specified report plan.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateReportPlanFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -136,35 +136,35 @@ impl UpdateReportPlanFluentBuilder {
     pub fn get_report_plan_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_report_plan_description()
     }
-    /// <p>A structure that contains information about where to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.</p>
+    /// <p>The information about where to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.</p>
     pub fn report_delivery_channel(mut self, input: crate::types::ReportDeliveryChannel) -> Self {
         self.inner = self.inner.report_delivery_channel(input);
         self
     }
-    /// <p>A structure that contains information about where to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.</p>
+    /// <p>The information about where to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.</p>
     pub fn set_report_delivery_channel(mut self, input: ::std::option::Option<crate::types::ReportDeliveryChannel>) -> Self {
         self.inner = self.inner.set_report_delivery_channel(input);
         self
     }
-    /// <p>A structure that contains information about where to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.</p>
+    /// <p>The information about where to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.</p>
     pub fn get_report_delivery_channel(&self) -> &::std::option::Option<crate::types::ReportDeliveryChannel> {
         self.inner.get_report_delivery_channel()
     }
-    /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
+    /// <p>The report template for the report. Reports are built using a report template. The report templates are:</p>
     /// <p><code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code></p>
     /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report coverage by Amazon Web Services Regions and frameworks.</p>
     pub fn report_setting(mut self, input: crate::types::ReportSetting) -> Self {
         self.inner = self.inner.report_setting(input);
         self
     }
-    /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
+    /// <p>The report template for the report. Reports are built using a report template. The report templates are:</p>
     /// <p><code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code></p>
     /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report coverage by Amazon Web Services Regions and frameworks.</p>
     pub fn set_report_setting(mut self, input: ::std::option::Option<crate::types::ReportSetting>) -> Self {
         self.inner = self.inner.set_report_setting(input);
         self
     }
-    /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
+    /// <p>The report template for the report. Reports are built using a report template. The report templates are:</p>
     /// <p><code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code></p>
     /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report coverage by Amazon Web Services Regions and frameworks.</p>
     pub fn get_report_setting(&self) -> &::std::option::Option<crate::types::ReportSetting> {

@@ -22,7 +22,7 @@ impl crate::operation::list_backup_plan_templates::builders::ListBackupPlanTempl
 }
 /// Fluent builder constructing a request to `ListBackupPlanTemplates`.
 ///
-/// <p>Returns metadata of your saved backup plan templates, including the template ID, name, and the creation and deletion dates.</p>
+/// <p>Lists the backup plan templates.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListBackupPlanTemplatesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -128,17 +128,17 @@ impl ListBackupPlanTemplatesFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>The maximum number of items to be returned.</p>
+    /// <p>The maximum number of items to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of items to be returned.</p>
+    /// <p>The maximum number of items to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of items to be returned.</p>
+    /// <p>The maximum number of items to return.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

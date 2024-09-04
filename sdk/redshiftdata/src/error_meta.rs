@@ -3,6 +3,8 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum Error {
+    /// <p>The Amazon Redshift Data API operation failed because the maximum number of active sessions exceeded.</p>
+    ActiveSessionsExceededException(crate::types::error::ActiveSessionsExceededException),
     /// <p>The number of active statements exceeds the limit.</p>
     ActiveStatementsExceededException(crate::types::error::ActiveStatementsExceededException),
     /// <p>An SQL statement encountered an environmental error while running.</p>
@@ -13,6 +15,8 @@ pub enum Error {
     ExecuteStatementException(crate::types::error::ExecuteStatementException),
     /// <p>The Amazon Redshift Data API operation failed due to invalid input.</p>
     InternalServerException(crate::types::error::InternalServerException),
+    /// <p>The Amazon Redshift Data API operation failed due to timeout.</p>
+    QueryTimeoutException(crate::types::error::QueryTimeoutException),
     /// <p>The Amazon Redshift Data API operation failed due to a missing resource.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The Amazon Redshift Data API operation failed due to invalid input.</p>
@@ -29,11 +33,13 @@ pub enum Error {
 impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
+            Error::ActiveSessionsExceededException(inner) => inner.fmt(f),
             Error::ActiveStatementsExceededException(inner) => inner.fmt(f),
             Error::BatchExecuteStatementException(inner) => inner.fmt(f),
             Error::DatabaseConnectionException(inner) => inner.fmt(f),
             Error::ExecuteStatementException(inner) => inner.fmt(f),
             Error::InternalServerException(inner) => inner.fmt(f),
+            Error::QueryTimeoutException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
@@ -57,11 +63,13 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
     fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
         match self {
+            Self::ActiveSessionsExceededException(inner) => inner.meta(),
             Self::ActiveStatementsExceededException(inner) => inner.meta(),
             Self::BatchExecuteStatementException(inner) => inner.meta(),
             Self::DatabaseConnectionException(inner) => inner.meta(),
             Self::ExecuteStatementException(inner) => inner.meta(),
             Self::InternalServerException(inner) => inner.meta(),
+            Self::QueryTimeoutException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
             Self::ValidationException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
@@ -87,11 +95,17 @@ where
 impl From<crate::operation::batch_execute_statement::BatchExecuteStatementError> for Error {
     fn from(err: crate::operation::batch_execute_statement::BatchExecuteStatementError) -> Self {
         match err {
+            crate::operation::batch_execute_statement::BatchExecuteStatementError::ActiveSessionsExceededException(inner) => {
+                Error::ActiveSessionsExceededException(inner)
+            }
             crate::operation::batch_execute_statement::BatchExecuteStatementError::ActiveStatementsExceededException(inner) => {
                 Error::ActiveStatementsExceededException(inner)
             }
             crate::operation::batch_execute_statement::BatchExecuteStatementError::BatchExecuteStatementException(inner) => {
                 Error::BatchExecuteStatementException(inner)
+            }
+            crate::operation::batch_execute_statement::BatchExecuteStatementError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
             }
             crate::operation::batch_execute_statement::BatchExecuteStatementError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::batch_execute_statement::BatchExecuteStatementError::Unhandled(inner) => Error::Unhandled(inner),
@@ -166,6 +180,7 @@ impl From<crate::operation::describe_table::DescribeTableError> for Error {
         match err {
             crate::operation::describe_table::DescribeTableError::DatabaseConnectionException(inner) => Error::DatabaseConnectionException(inner),
             crate::operation::describe_table::DescribeTableError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::describe_table::DescribeTableError::QueryTimeoutException(inner) => Error::QueryTimeoutException(inner),
             crate::operation::describe_table::DescribeTableError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::describe_table::DescribeTableError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -188,10 +203,14 @@ where
 impl From<crate::operation::execute_statement::ExecuteStatementError> for Error {
     fn from(err: crate::operation::execute_statement::ExecuteStatementError) -> Self {
         match err {
+            crate::operation::execute_statement::ExecuteStatementError::ActiveSessionsExceededException(inner) => {
+                Error::ActiveSessionsExceededException(inner)
+            }
             crate::operation::execute_statement::ExecuteStatementError::ActiveStatementsExceededException(inner) => {
                 Error::ActiveStatementsExceededException(inner)
             }
             crate::operation::execute_statement::ExecuteStatementError::ExecuteStatementException(inner) => Error::ExecuteStatementException(inner),
+            crate::operation::execute_statement::ExecuteStatementError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::execute_statement::ExecuteStatementError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::execute_statement::ExecuteStatementError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -242,6 +261,7 @@ impl From<crate::operation::list_databases::ListDatabasesError> for Error {
         match err {
             crate::operation::list_databases::ListDatabasesError::DatabaseConnectionException(inner) => Error::DatabaseConnectionException(inner),
             crate::operation::list_databases::ListDatabasesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_databases::ListDatabasesError::QueryTimeoutException(inner) => Error::QueryTimeoutException(inner),
             crate::operation::list_databases::ListDatabasesError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_databases::ListDatabasesError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -266,6 +286,7 @@ impl From<crate::operation::list_schemas::ListSchemasError> for Error {
         match err {
             crate::operation::list_schemas::ListSchemasError::DatabaseConnectionException(inner) => Error::DatabaseConnectionException(inner),
             crate::operation::list_schemas::ListSchemasError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_schemas::ListSchemasError::QueryTimeoutException(inner) => Error::QueryTimeoutException(inner),
             crate::operation::list_schemas::ListSchemasError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_schemas::ListSchemasError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -313,6 +334,7 @@ impl From<crate::operation::list_tables::ListTablesError> for Error {
         match err {
             crate::operation::list_tables::ListTablesError::DatabaseConnectionException(inner) => Error::DatabaseConnectionException(inner),
             crate::operation::list_tables::ListTablesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_tables::ListTablesError::QueryTimeoutException(inner) => Error::QueryTimeoutException(inner),
             crate::operation::list_tables::ListTablesError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_tables::ListTablesError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -321,11 +343,13 @@ impl From<crate::operation::list_tables::ListTablesError> for Error {
 impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Error::ActiveSessionsExceededException(inner) => inner.source(),
             Error::ActiveStatementsExceededException(inner) => inner.source(),
             Error::BatchExecuteStatementException(inner) => inner.source(),
             Error::DatabaseConnectionException(inner) => inner.source(),
             Error::ExecuteStatementException(inner) => inner.source(),
             Error::InternalServerException(inner) => inner.source(),
+            Error::QueryTimeoutException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::ValidationException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
@@ -335,11 +359,13 @@ impl ::std::error::Error for Error {
 impl ::aws_types::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
+            Self::ActiveSessionsExceededException(e) => e.request_id(),
             Self::ActiveStatementsExceededException(e) => e.request_id(),
             Self::BatchExecuteStatementException(e) => e.request_id(),
             Self::DatabaseConnectionException(e) => e.request_id(),
             Self::ExecuteStatementException(e) => e.request_id(),
             Self::InternalServerException(e) => e.request_id(),
+            Self::QueryTimeoutException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
             Self::ValidationException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),

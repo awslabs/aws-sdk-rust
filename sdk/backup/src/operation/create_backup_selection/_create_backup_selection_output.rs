@@ -5,7 +5,7 @@
 pub struct CreateBackupSelectionOutput {
     /// <p>Uniquely identifies the body of a request to assign a set of resources to a backup plan.</p>
     pub selection_id: ::std::option::Option<::std::string::String>,
-    /// <p>Uniquely identifies a backup plan.</p>
+    /// <p>The ID of the backup plan.</p>
     pub backup_plan_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time a backup selection is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -16,7 +16,7 @@ impl CreateBackupSelectionOutput {
     pub fn selection_id(&self) -> ::std::option::Option<&str> {
         self.selection_id.as_deref()
     }
-    /// <p>Uniquely identifies a backup plan.</p>
+    /// <p>The ID of the backup plan.</p>
     pub fn backup_plan_id(&self) -> ::std::option::Option<&str> {
         self.backup_plan_id.as_deref()
     }
@@ -61,17 +61,17 @@ impl CreateBackupSelectionOutputBuilder {
     pub fn get_selection_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.selection_id
     }
-    /// <p>Uniquely identifies a backup plan.</p>
+    /// <p>The ID of the backup plan.</p>
     pub fn backup_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_plan_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Uniquely identifies a backup plan.</p>
+    /// <p>The ID of the backup plan.</p>
     pub fn set_backup_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_plan_id = input;
         self
     }
-    /// <p>Uniquely identifies a backup plan.</p>
+    /// <p>The ID of the backup plan.</p>
     pub fn get_backup_plan_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.backup_plan_id
     }

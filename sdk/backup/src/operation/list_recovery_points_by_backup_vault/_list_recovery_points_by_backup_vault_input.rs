@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRecoveryPointsByBackupVaultInput {
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p><note>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created.</p><note>
     /// <p>Backup vault name might not be available when a supported service creates the backup.</p>
     /// </note>
     pub backup_vault_name: ::std::option::Option<::std::string::String>,
@@ -36,19 +36,19 @@ pub struct ListRecoveryPointsByBackupVaultInput {
     /// <li>
     /// <p><code>Neptune</code> for Amazon Neptune</p></li>
     /// <li>
-    /// <p><code>Redshift</code> for Amazon Redshift</p></li>
-    /// <li>
     /// <p><code>RDS</code> for Amazon Relational Database Service</p></li>
     /// <li>
-    /// <p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p></li>
+    /// <p><code>Redshift</code> for Amazon Redshift</p></li>
+    /// <li>
+    /// <p><code>S3</code> for Amazon Simple Storage Service (Amazon S3)</p></li>
+    /// <li>
+    /// <p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases on Amazon Elastic Compute Cloud instances</p></li>
     /// <li>
     /// <p><code>Storage Gateway</code> for Storage Gateway</p></li>
     /// <li>
-    /// <p><code>S3</code> for Amazon S3</p></li>
-    /// <li>
     /// <p><code>Timestream</code> for Amazon Timestream</p></li>
     /// <li>
-    /// <p><code>VirtualMachine</code> for virtual machines</p></li>
+    /// <p><code>VirtualMachine</code> for VMware virtual machines</p></li>
     /// </ul>
     pub by_resource_type: ::std::option::Option<::std::string::String>,
     /// <p>Returns only recovery points that match the specified backup plan ID.</p>
@@ -61,7 +61,7 @@ pub struct ListRecoveryPointsByBackupVaultInput {
     pub by_parent_recovery_point_arn: ::std::option::Option<::std::string::String>,
 }
 impl ListRecoveryPointsByBackupVaultInput {
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p><note>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created.</p><note>
     /// <p>Backup vault name might not be available when a supported service creates the backup.</p>
     /// </note>
     pub fn backup_vault_name(&self) -> ::std::option::Option<&str> {
@@ -104,19 +104,19 @@ impl ListRecoveryPointsByBackupVaultInput {
     /// <li>
     /// <p><code>Neptune</code> for Amazon Neptune</p></li>
     /// <li>
-    /// <p><code>Redshift</code> for Amazon Redshift</p></li>
-    /// <li>
     /// <p><code>RDS</code> for Amazon Relational Database Service</p></li>
     /// <li>
-    /// <p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p></li>
+    /// <p><code>Redshift</code> for Amazon Redshift</p></li>
+    /// <li>
+    /// <p><code>S3</code> for Amazon Simple Storage Service (Amazon S3)</p></li>
+    /// <li>
+    /// <p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases on Amazon Elastic Compute Cloud instances</p></li>
     /// <li>
     /// <p><code>Storage Gateway</code> for Storage Gateway</p></li>
     /// <li>
-    /// <p><code>S3</code> for Amazon S3</p></li>
-    /// <li>
     /// <p><code>Timestream</code> for Amazon Timestream</p></li>
     /// <li>
-    /// <p><code>VirtualMachine</code> for virtual machines</p></li>
+    /// <p><code>VirtualMachine</code> for VMware virtual machines</p></li>
     /// </ul>
     pub fn by_resource_type(&self) -> ::std::option::Option<&str> {
         self.by_resource_type.as_deref()
@@ -161,7 +161,7 @@ pub struct ListRecoveryPointsByBackupVaultInputBuilder {
     pub(crate) by_parent_recovery_point_arn: ::std::option::Option<::std::string::String>,
 }
 impl ListRecoveryPointsByBackupVaultInputBuilder {
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p><note>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created.</p><note>
     /// <p>Backup vault name might not be available when a supported service creates the backup.</p>
     /// </note>
     /// This field is required.
@@ -169,14 +169,14 @@ impl ListRecoveryPointsByBackupVaultInputBuilder {
         self.backup_vault_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p><note>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created.</p><note>
     /// <p>Backup vault name might not be available when a supported service creates the backup.</p>
     /// </note>
     pub fn set_backup_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_vault_name = input;
         self
     }
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p><note>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created.</p><note>
     /// <p>Backup vault name might not be available when a supported service creates the backup.</p>
     /// </note>
     pub fn get_backup_vault_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -259,19 +259,19 @@ impl ListRecoveryPointsByBackupVaultInputBuilder {
     /// <li>
     /// <p><code>Neptune</code> for Amazon Neptune</p></li>
     /// <li>
-    /// <p><code>Redshift</code> for Amazon Redshift</p></li>
-    /// <li>
     /// <p><code>RDS</code> for Amazon Relational Database Service</p></li>
     /// <li>
-    /// <p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p></li>
+    /// <p><code>Redshift</code> for Amazon Redshift</p></li>
+    /// <li>
+    /// <p><code>S3</code> for Amazon Simple Storage Service (Amazon S3)</p></li>
+    /// <li>
+    /// <p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases on Amazon Elastic Compute Cloud instances</p></li>
     /// <li>
     /// <p><code>Storage Gateway</code> for Storage Gateway</p></li>
     /// <li>
-    /// <p><code>S3</code> for Amazon S3</p></li>
-    /// <li>
     /// <p><code>Timestream</code> for Amazon Timestream</p></li>
     /// <li>
-    /// <p><code>VirtualMachine</code> for virtual machines</p></li>
+    /// <p><code>VirtualMachine</code> for VMware virtual machines</p></li>
     /// </ul>
     pub fn by_resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.by_resource_type = ::std::option::Option::Some(input.into());
@@ -298,19 +298,19 @@ impl ListRecoveryPointsByBackupVaultInputBuilder {
     /// <li>
     /// <p><code>Neptune</code> for Amazon Neptune</p></li>
     /// <li>
-    /// <p><code>Redshift</code> for Amazon Redshift</p></li>
-    /// <li>
     /// <p><code>RDS</code> for Amazon Relational Database Service</p></li>
     /// <li>
-    /// <p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p></li>
+    /// <p><code>Redshift</code> for Amazon Redshift</p></li>
+    /// <li>
+    /// <p><code>S3</code> for Amazon Simple Storage Service (Amazon S3)</p></li>
+    /// <li>
+    /// <p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases on Amazon Elastic Compute Cloud instances</p></li>
     /// <li>
     /// <p><code>Storage Gateway</code> for Storage Gateway</p></li>
     /// <li>
-    /// <p><code>S3</code> for Amazon S3</p></li>
-    /// <li>
     /// <p><code>Timestream</code> for Amazon Timestream</p></li>
     /// <li>
-    /// <p><code>VirtualMachine</code> for virtual machines</p></li>
+    /// <p><code>VirtualMachine</code> for VMware virtual machines</p></li>
     /// </ul>
     pub fn set_by_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.by_resource_type = input;
@@ -337,19 +337,19 @@ impl ListRecoveryPointsByBackupVaultInputBuilder {
     /// <li>
     /// <p><code>Neptune</code> for Amazon Neptune</p></li>
     /// <li>
-    /// <p><code>Redshift</code> for Amazon Redshift</p></li>
-    /// <li>
     /// <p><code>RDS</code> for Amazon Relational Database Service</p></li>
     /// <li>
-    /// <p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p></li>
+    /// <p><code>Redshift</code> for Amazon Redshift</p></li>
+    /// <li>
+    /// <p><code>S3</code> for Amazon Simple Storage Service (Amazon S3)</p></li>
+    /// <li>
+    /// <p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases on Amazon Elastic Compute Cloud instances</p></li>
     /// <li>
     /// <p><code>Storage Gateway</code> for Storage Gateway</p></li>
     /// <li>
-    /// <p><code>S3</code> for Amazon S3</p></li>
-    /// <li>
     /// <p><code>Timestream</code> for Amazon Timestream</p></li>
     /// <li>
-    /// <p><code>VirtualMachine</code> for virtual machines</p></li>
+    /// <p><code>VirtualMachine</code> for VMware virtual machines</p></li>
     /// </ul>
     pub fn get_by_resource_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.by_resource_type

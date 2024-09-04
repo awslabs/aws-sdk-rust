@@ -22,7 +22,7 @@ impl crate::operation::cancel_legal_hold::builders::CancelLegalHoldInputBuilder 
 }
 /// Fluent builder constructing a request to `CancelLegalHold`.
 ///
-/// <p>This action removes the specified legal hold on a recovery point. This action can only be performed by a user with sufficient permissions.</p>
+/// <p>Removes the specified legal hold on a recovery point. This action can only be performed by a user with sufficient permissions.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelLegalHoldFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,45 @@ impl CancelLegalHoldFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Legal hold ID required to remove the specified legal hold on a recovery point.</p>
+    /// <p>The ID of the legal hold.</p>
     pub fn legal_hold_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.legal_hold_id(input.into());
         self
     }
-    /// <p>Legal hold ID required to remove the specified legal hold on a recovery point.</p>
+    /// <p>The ID of the legal hold.</p>
     pub fn set_legal_hold_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_legal_hold_id(input);
         self
     }
-    /// <p>Legal hold ID required to remove the specified legal hold on a recovery point.</p>
+    /// <p>The ID of the legal hold.</p>
     pub fn get_legal_hold_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_legal_hold_id()
     }
-    /// <p>String describing the reason for removing the legal hold.</p>
+    /// <p>A string the describes the reason for removing the legal hold.</p>
     pub fn cancel_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cancel_description(input.into());
         self
     }
-    /// <p>String describing the reason for removing the legal hold.</p>
+    /// <p>A string the describes the reason for removing the legal hold.</p>
     pub fn set_cancel_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cancel_description(input);
         self
     }
-    /// <p>String describing the reason for removing the legal hold.</p>
+    /// <p>A string the describes the reason for removing the legal hold.</p>
     pub fn get_cancel_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cancel_description()
     }
-    /// <p>The integer amount in days specifying amount of days after this API operation to remove legal hold.</p>
+    /// <p>The integer amount, in days, after which to remove legal hold.</p>
     pub fn retain_record_in_days(mut self, input: i64) -> Self {
         self.inner = self.inner.retain_record_in_days(input);
         self
     }
-    /// <p>The integer amount in days specifying amount of days after this API operation to remove legal hold.</p>
+    /// <p>The integer amount, in days, after which to remove legal hold.</p>
     pub fn set_retain_record_in_days(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_retain_record_in_days(input);
         self
     }
-    /// <p>The integer amount in days specifying amount of days after this API operation to remove legal hold.</p>
+    /// <p>The integer amount, in days, after which to remove legal hold.</p>
     pub fn get_retain_record_in_days(&self) -> &::std::option::Option<i64> {
         self.inner.get_retain_record_in_days()
     }

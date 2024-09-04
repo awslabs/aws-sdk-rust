@@ -7,9 +7,9 @@ pub struct DescribeBackupJobOutput {
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>Uniquely identifies a request to Backup to back up a resource.</p>
     pub backup_job_id: ::std::option::Option<::std::string::String>,
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created.</p>
     pub backup_vault_name: ::std::option::Option<::std::string::String>,
-    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:backup-vault:aBackupVault</code>.</p>
     pub backup_vault_arn: ::std::option::Option<::std::string::String>,
     /// <p>An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
     pub recovery_point_arn: ::std::option::Option<::std::string::String>,
@@ -51,11 +51,11 @@ pub struct DescribeBackupJobOutput {
     pub number_of_child_jobs: ::std::option::Option<i64>,
     /// <p>This returns the statistics of the included child (nested) backup jobs.</p>
     pub child_jobs_in_state: ::std::option::Option<::std::collections::HashMap<crate::types::BackupJobState, i64>>,
-    /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
+    /// <p>The non-unique name of the resource that belongs to the specified backup.</p>
     pub resource_name: ::std::option::Option<::std::string::String>,
-    /// <p>This is the date a backup job was initiated.</p>
+    /// <p>The date a backup job was initiated.</p>
     pub initiation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>This is the job count for the specified message category.</p>
+    /// <p>The job count for the specified message category.</p>
     /// <p>Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>, and <code>INVALIDPARAMETERS</code>. View <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of accepted MessageCategory strings.</p>
     pub message_category: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -69,11 +69,11 @@ impl DescribeBackupJobOutput {
     pub fn backup_job_id(&self) -> ::std::option::Option<&str> {
         self.backup_job_id.as_deref()
     }
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created.</p>
     pub fn backup_vault_name(&self) -> ::std::option::Option<&str> {
         self.backup_vault_name.as_deref()
     }
-    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:backup-vault:aBackupVault</code>.</p>
     pub fn backup_vault_arn(&self) -> ::std::option::Option<&str> {
         self.backup_vault_arn.as_deref()
     }
@@ -157,15 +157,15 @@ impl DescribeBackupJobOutput {
     pub fn child_jobs_in_state(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::BackupJobState, i64>> {
         self.child_jobs_in_state.as_ref()
     }
-    /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
+    /// <p>The non-unique name of the resource that belongs to the specified backup.</p>
     pub fn resource_name(&self) -> ::std::option::Option<&str> {
         self.resource_name.as_deref()
     }
-    /// <p>This is the date a backup job was initiated.</p>
+    /// <p>The date a backup job was initiated.</p>
     pub fn initiation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.initiation_date.as_ref()
     }
-    /// <p>This is the job count for the specified message category.</p>
+    /// <p>The job count for the specified message category.</p>
     /// <p>Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>, and <code>INVALIDPARAMETERS</code>. View <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of accepted MessageCategory strings.</p>
     pub fn message_category(&self) -> ::std::option::Option<&str> {
         self.message_category.as_deref()
@@ -245,31 +245,31 @@ impl DescribeBackupJobOutputBuilder {
     pub fn get_backup_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.backup_job_id
     }
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created.</p>
     pub fn backup_vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_vault_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created.</p>
     pub fn set_backup_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_vault_name = input;
         self
     }
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created.</p>
     pub fn get_backup_vault_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.backup_vault_name
     }
-    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:backup-vault:aBackupVault</code>.</p>
     pub fn backup_vault_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_vault_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:backup-vault:aBackupVault</code>.</p>
     pub fn set_backup_vault_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_vault_arn = input;
         self
     }
-    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:backup-vault:aBackupVault</code>.</p>
     pub fn get_backup_vault_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.backup_vault_arn
     }
@@ -572,47 +572,47 @@ impl DescribeBackupJobOutputBuilder {
     pub fn get_child_jobs_in_state(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::BackupJobState, i64>> {
         &self.child_jobs_in_state
     }
-    /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
+    /// <p>The non-unique name of the resource that belongs to the specified backup.</p>
     pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
+    /// <p>The non-unique name of the resource that belongs to the specified backup.</p>
     pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_name = input;
         self
     }
-    /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
+    /// <p>The non-unique name of the resource that belongs to the specified backup.</p>
     pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_name
     }
-    /// <p>This is the date a backup job was initiated.</p>
+    /// <p>The date a backup job was initiated.</p>
     pub fn initiation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.initiation_date = ::std::option::Option::Some(input);
         self
     }
-    /// <p>This is the date a backup job was initiated.</p>
+    /// <p>The date a backup job was initiated.</p>
     pub fn set_initiation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.initiation_date = input;
         self
     }
-    /// <p>This is the date a backup job was initiated.</p>
+    /// <p>The date a backup job was initiated.</p>
     pub fn get_initiation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.initiation_date
     }
-    /// <p>This is the job count for the specified message category.</p>
+    /// <p>The job count for the specified message category.</p>
     /// <p>Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>, and <code>INVALIDPARAMETERS</code>. View <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of accepted MessageCategory strings.</p>
     pub fn message_category(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_category = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>This is the job count for the specified message category.</p>
+    /// <p>The job count for the specified message category.</p>
     /// <p>Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>, and <code>INVALIDPARAMETERS</code>. View <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of accepted MessageCategory strings.</p>
     pub fn set_message_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message_category = input;
         self
     }
-    /// <p>This is the job count for the specified message category.</p>
+    /// <p>The job count for the specified message category.</p>
     /// <p>Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>, and <code>INVALIDPARAMETERS</code>. View <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of accepted MessageCategory strings.</p>
     pub fn get_message_category(&self) -> &::std::option::Option<::std::string::String> {
         &self.message_category

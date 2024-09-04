@@ -268,4 +268,32 @@ impl ExecuteStatementFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
+    /// <p>The number of seconds to keep the session alive after the query finishes. The maximum time a session can keep alive is 24 hours. After 24 hours, the session is forced closed and the query is terminated.</p>
+    pub fn session_keep_alive_seconds(mut self, input: i32) -> Self {
+        self.inner = self.inner.session_keep_alive_seconds(input);
+        self
+    }
+    /// <p>The number of seconds to keep the session alive after the query finishes. The maximum time a session can keep alive is 24 hours. After 24 hours, the session is forced closed and the query is terminated.</p>
+    pub fn set_session_keep_alive_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_session_keep_alive_seconds(input);
+        self
+    }
+    /// <p>The number of seconds to keep the session alive after the query finishes. The maximum time a session can keep alive is 24 hours. After 24 hours, the session is forced closed and the query is terminated.</p>
+    pub fn get_session_keep_alive_seconds(&self) -> &::std::option::Option<i32> {
+        self.inner.get_session_keep_alive_seconds()
+    }
+    /// <p>The session identifier of the query.</p>
+    pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.session_id(input.into());
+        self
+    }
+    /// <p>The session identifier of the query.</p>
+    pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_session_id(input);
+        self
+    }
+    /// <p>The session identifier of the query.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_session_id()
+    }
 }

@@ -9,8 +9,6 @@ pub struct AcceptSubscriptionRequestInput {
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>A description that specifies the reason for accepting the specified subscription request.</p>
     pub decision_comment: ::std::option::Option<::std::string::String>,
-    /// <p>The asset scopes of the accept subscription request.</p>
-    pub asset_scopes: ::std::option::Option<::std::vec::Vec<crate::types::AcceptedAssetScope>>,
 }
 impl AcceptSubscriptionRequestInput {
     /// <p>The Amazon DataZone domain where the specified subscription request is being accepted.</p>
@@ -25,12 +23,6 @@ impl AcceptSubscriptionRequestInput {
     pub fn decision_comment(&self) -> ::std::option::Option<&str> {
         self.decision_comment.as_deref()
     }
-    /// <p>The asset scopes of the accept subscription request.</p>
-    ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.asset_scopes.is_none()`.
-    pub fn asset_scopes(&self) -> &[crate::types::AcceptedAssetScope] {
-        self.asset_scopes.as_deref().unwrap_or_default()
-    }
 }
 impl ::std::fmt::Debug for AcceptSubscriptionRequestInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -38,7 +30,6 @@ impl ::std::fmt::Debug for AcceptSubscriptionRequestInput {
         formatter.field("domain_identifier", &self.domain_identifier);
         formatter.field("identifier", &self.identifier);
         formatter.field("decision_comment", &"*** Sensitive Data Redacted ***");
-        formatter.field("asset_scopes", &self.asset_scopes);
         formatter.finish()
     }
 }
@@ -56,7 +47,6 @@ pub struct AcceptSubscriptionRequestInputBuilder {
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) decision_comment: ::std::option::Option<::std::string::String>,
-    pub(crate) asset_scopes: ::std::option::Option<::std::vec::Vec<crate::types::AcceptedAssetScope>>,
 }
 impl AcceptSubscriptionRequestInputBuilder {
     /// <p>The Amazon DataZone domain where the specified subscription request is being accepted.</p>
@@ -103,26 +93,6 @@ impl AcceptSubscriptionRequestInputBuilder {
     pub fn get_decision_comment(&self) -> &::std::option::Option<::std::string::String> {
         &self.decision_comment
     }
-    /// Appends an item to `asset_scopes`.
-    ///
-    /// To override the contents of this collection use [`set_asset_scopes`](Self::set_asset_scopes).
-    ///
-    /// <p>The asset scopes of the accept subscription request.</p>
-    pub fn asset_scopes(mut self, input: crate::types::AcceptedAssetScope) -> Self {
-        let mut v = self.asset_scopes.unwrap_or_default();
-        v.push(input);
-        self.asset_scopes = ::std::option::Option::Some(v);
-        self
-    }
-    /// <p>The asset scopes of the accept subscription request.</p>
-    pub fn set_asset_scopes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AcceptedAssetScope>>) -> Self {
-        self.asset_scopes = input;
-        self
-    }
-    /// <p>The asset scopes of the accept subscription request.</p>
-    pub fn get_asset_scopes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AcceptedAssetScope>> {
-        &self.asset_scopes
-    }
     /// Consumes the builder and constructs a [`AcceptSubscriptionRequestInput`](crate::operation::accept_subscription_request::AcceptSubscriptionRequestInput).
     pub fn build(
         self,
@@ -134,7 +104,6 @@ impl AcceptSubscriptionRequestInputBuilder {
             domain_identifier: self.domain_identifier,
             identifier: self.identifier,
             decision_comment: self.decision_comment,
-            asset_scopes: self.asset_scopes,
         })
     }
 }
@@ -144,7 +113,6 @@ impl ::std::fmt::Debug for AcceptSubscriptionRequestInputBuilder {
         formatter.field("domain_identifier", &self.domain_identifier);
         formatter.field("identifier", &self.identifier);
         formatter.field("decision_comment", &"*** Sensitive Data Redacted ***");
-        formatter.field("asset_scopes", &self.asset_scopes);
         formatter.finish()
     }
 }

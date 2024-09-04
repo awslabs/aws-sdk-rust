@@ -5,7 +5,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CopyJobSummary {
-    /// <p>This is the Amazon Web Services Regions within the job summary.</p>
+    /// <p>The Amazon Web Services Regions within the job summary.</p>
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The account ID that owns the jobs within the summary.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
@@ -28,7 +28,7 @@ pub struct CopyJobSummary {
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CopyJobSummary {
-    /// <p>This is the Amazon Web Services Regions within the job summary.</p>
+    /// <p>The Amazon Web Services Regions within the job summary.</p>
     pub fn region(&self) -> ::std::option::Option<&str> {
         self.region.as_deref()
     }
@@ -87,17 +87,17 @@ pub struct CopyJobSummaryBuilder {
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CopyJobSummaryBuilder {
-    /// <p>This is the Amazon Web Services Regions within the job summary.</p>
+    /// <p>The Amazon Web Services Regions within the job summary.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>This is the Amazon Web Services Regions within the job summary.</p>
+    /// <p>The Amazon Web Services Regions within the job summary.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
     }
-    /// <p>This is the Amazon Web Services Regions within the job summary.</p>
+    /// <p>The Amazon Web Services Regions within the job summary.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.region
     }

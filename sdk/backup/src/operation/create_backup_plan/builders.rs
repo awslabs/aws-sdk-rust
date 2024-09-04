@@ -109,17 +109,17 @@ impl CreateBackupPlanFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
+    /// <p>The body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
     pub fn backup_plan(mut self, input: crate::types::BackupPlanInput) -> Self {
         self.inner = self.inner.backup_plan(input);
         self
     }
-    /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
+    /// <p>The body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
     pub fn set_backup_plan(mut self, input: ::std::option::Option<crate::types::BackupPlanInput>) -> Self {
         self.inner = self.inner.set_backup_plan(input);
         self
     }
-    /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
+    /// <p>The body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
     pub fn get_backup_plan(&self) -> &::std::option::Option<crate::types::BackupPlanInput> {
         self.inner.get_backup_plan()
     }
@@ -128,7 +128,7 @@ impl CreateBackupPlanFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_backup_plan_tags`](Self::set_backup_plan_tags).
     ///
-    /// <p>To help organize your resources, you can assign your own metadata to the resources that you create. Each tag is a key-value pair. The specified tags are assigned to all backups created with this plan.</p>
+    /// <p>The tags to assign to the backup plan.</p>
     pub fn backup_plan_tags(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -137,7 +137,7 @@ impl CreateBackupPlanFluentBuilder {
         self.inner = self.inner.backup_plan_tags(k.into(), v.into());
         self
     }
-    /// <p>To help organize your resources, you can assign your own metadata to the resources that you create. Each tag is a key-value pair. The specified tags are assigned to all backups created with this plan.</p>
+    /// <p>The tags to assign to the backup plan.</p>
     pub fn set_backup_plan_tags(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -145,7 +145,7 @@ impl CreateBackupPlanFluentBuilder {
         self.inner = self.inner.set_backup_plan_tags(input);
         self
     }
-    /// <p>To help organize your resources, you can assign your own metadata to the resources that you create. Each tag is a key-value pair. The specified tags are assigned to all backups created with this plan.</p>
+    /// <p>The tags to assign to the backup plan.</p>
     pub fn get_backup_plan_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_backup_plan_tags()
     }

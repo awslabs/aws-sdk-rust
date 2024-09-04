@@ -5,7 +5,7 @@
 pub struct ListBackupPlansOutput {
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>An array of backup plan list items containing metadata about your saved backup plans.</p>
+    /// <p>Information about the backup plans.</p>
     pub backup_plans_list: ::std::option::Option<::std::vec::Vec<crate::types::BackupPlansListMember>>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl ListBackupPlansOutput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>An array of backup plan list items containing metadata about your saved backup plans.</p>
+    /// <p>Information about the backup plans.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.backup_plans_list.is_none()`.
     pub fn backup_plans_list(&self) -> &[crate::types::BackupPlansListMember] {
@@ -60,19 +60,19 @@ impl ListBackupPlansOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_backup_plans_list`](Self::set_backup_plans_list).
     ///
-    /// <p>An array of backup plan list items containing metadata about your saved backup plans.</p>
+    /// <p>Information about the backup plans.</p>
     pub fn backup_plans_list(mut self, input: crate::types::BackupPlansListMember) -> Self {
         let mut v = self.backup_plans_list.unwrap_or_default();
         v.push(input);
         self.backup_plans_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of backup plan list items containing metadata about your saved backup plans.</p>
+    /// <p>Information about the backup plans.</p>
     pub fn set_backup_plans_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BackupPlansListMember>>) -> Self {
         self.backup_plans_list = input;
         self
     }
-    /// <p>An array of backup plan list items containing metadata about your saved backup plans.</p>
+    /// <p>Information about the backup plans.</p>
     pub fn get_backup_plans_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BackupPlansListMember>> {
         &self.backup_plans_list
     }

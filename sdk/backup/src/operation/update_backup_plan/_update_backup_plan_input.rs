@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateBackupPlanInput {
-    /// <p>Uniquely identifies a backup plan.</p>
+    /// <p>The ID of the backup plan.</p>
     pub backup_plan_id: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
+    /// <p>The body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
     pub backup_plan: ::std::option::Option<crate::types::BackupPlanInput>,
 }
 impl UpdateBackupPlanInput {
-    /// <p>Uniquely identifies a backup plan.</p>
+    /// <p>The ID of the backup plan.</p>
     pub fn backup_plan_id(&self) -> ::std::option::Option<&str> {
         self.backup_plan_id.as_deref()
     }
-    /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
+    /// <p>The body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
     pub fn backup_plan(&self) -> ::std::option::Option<&crate::types::BackupPlanInput> {
         self.backup_plan.as_ref()
     }
@@ -33,33 +33,33 @@ pub struct UpdateBackupPlanInputBuilder {
     pub(crate) backup_plan: ::std::option::Option<crate::types::BackupPlanInput>,
 }
 impl UpdateBackupPlanInputBuilder {
-    /// <p>Uniquely identifies a backup plan.</p>
+    /// <p>The ID of the backup plan.</p>
     /// This field is required.
     pub fn backup_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_plan_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Uniquely identifies a backup plan.</p>
+    /// <p>The ID of the backup plan.</p>
     pub fn set_backup_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_plan_id = input;
         self
     }
-    /// <p>Uniquely identifies a backup plan.</p>
+    /// <p>The ID of the backup plan.</p>
     pub fn get_backup_plan_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.backup_plan_id
     }
-    /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
+    /// <p>The body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
     /// This field is required.
     pub fn backup_plan(mut self, input: crate::types::BackupPlanInput) -> Self {
         self.backup_plan = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
+    /// <p>The body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
     pub fn set_backup_plan(mut self, input: ::std::option::Option<crate::types::BackupPlanInput>) -> Self {
         self.backup_plan = input;
         self
     }
-    /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
+    /// <p>The body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
     pub fn get_backup_plan(&self) -> &::std::option::Option<crate::types::BackupPlanInput> {
         &self.backup_plan
     }

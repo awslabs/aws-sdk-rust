@@ -9,7 +9,7 @@ pub struct DescribeFrameworkOutput {
     pub framework_arn: ::std::option::Option<::std::string::String>,
     /// <p>An optional description of the framework.</p>
     pub framework_description: ::std::option::Option<::std::string::String>,
-    /// <p>A list of the controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
+    /// <p>The controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
     pub framework_controls: ::std::option::Option<::std::vec::Vec<crate::types::FrameworkControl>>,
     /// <p>The date and time that a framework is created, in ISO 8601 representation. The value of <code>CreationTime</code> is accurate to milliseconds. For example, 2020-07-10T15:00:00.000-08:00 represents the 10th of July 2020 at 3:00 PM 8 hours behind UTC.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -45,7 +45,7 @@ impl DescribeFrameworkOutput {
     pub fn framework_description(&self) -> ::std::option::Option<&str> {
         self.framework_description.as_deref()
     }
-    /// <p>A list of the controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
+    /// <p>The controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.framework_controls.is_none()`.
     pub fn framework_controls(&self) -> &[crate::types::FrameworkControl] {
@@ -152,19 +152,19 @@ impl DescribeFrameworkOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_framework_controls`](Self::set_framework_controls).
     ///
-    /// <p>A list of the controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
+    /// <p>The controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
     pub fn framework_controls(mut self, input: crate::types::FrameworkControl) -> Self {
         let mut v = self.framework_controls.unwrap_or_default();
         v.push(input);
         self.framework_controls = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of the controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
+    /// <p>The controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
     pub fn set_framework_controls(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FrameworkControl>>) -> Self {
         self.framework_controls = input;
         self
     }
-    /// <p>A list of the controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
+    /// <p>The controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
     pub fn get_framework_controls(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FrameworkControl>> {
         &self.framework_controls
     }

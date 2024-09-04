@@ -266,10 +266,14 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for BatchExecuteS
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum BatchExecuteStatementError {
+    /// <p>The Amazon Redshift Data API operation failed because the maximum number of active sessions exceeded.</p>
+    ActiveSessionsExceededException(crate::types::error::ActiveSessionsExceededException),
     /// <p>The number of active statements exceeds the limit.</p>
     ActiveStatementsExceededException(crate::types::error::ActiveStatementsExceededException),
     /// <p>An SQL statement encountered an environmental error while running.</p>
     BatchExecuteStatementException(crate::types::error::BatchExecuteStatementException),
+    /// <p>The Amazon Redshift Data API operation failed due to invalid input.</p>
+    InternalServerException(crate::types::error::InternalServerException),
     /// <p>The Amazon Redshift Data API operation failed due to invalid input.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -305,11 +309,17 @@ impl BatchExecuteStatementError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ActiveSessionsExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ActiveStatementsExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::BatchExecuteStatementException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InternalServerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `BatchExecuteStatementError::ActiveSessionsExceededException`.
+    pub fn is_active_sessions_exceeded_exception(&self) -> bool {
+        matches!(self, Self::ActiveSessionsExceededException(_))
     }
     /// Returns `true` if the error kind is `BatchExecuteStatementError::ActiveStatementsExceededException`.
     pub fn is_active_statements_exceeded_exception(&self) -> bool {
@@ -319,6 +329,10 @@ impl BatchExecuteStatementError {
     pub fn is_batch_execute_statement_exception(&self) -> bool {
         matches!(self, Self::BatchExecuteStatementException(_))
     }
+    /// Returns `true` if the error kind is `BatchExecuteStatementError::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(self, Self::InternalServerException(_))
+    }
     /// Returns `true` if the error kind is `BatchExecuteStatementError::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(self, Self::ValidationException(_))
@@ -327,8 +341,10 @@ impl BatchExecuteStatementError {
 impl ::std::error::Error for BatchExecuteStatementError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::ActiveSessionsExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::ActiveStatementsExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::BatchExecuteStatementException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InternalServerException(_inner) => ::std::option::Option::Some(_inner),
             Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
@@ -337,8 +353,10 @@ impl ::std::error::Error for BatchExecuteStatementError {
 impl ::std::fmt::Display for BatchExecuteStatementError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::ActiveSessionsExceededException(_inner) => _inner.fmt(f),
             Self::ActiveStatementsExceededException(_inner) => _inner.fmt(f),
             Self::BatchExecuteStatementException(_inner) => _inner.fmt(f),
+            Self::InternalServerException(_inner) => _inner.fmt(f),
             Self::ValidationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -361,8 +379,10 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for BatchExecuteStatementError 
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for BatchExecuteStatementError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ActiveSessionsExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ActiveStatementsExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::BatchExecuteStatementException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InternalServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }

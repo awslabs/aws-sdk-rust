@@ -5,7 +5,7 @@
 pub struct CreateBackupVaultInput {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of letters, numbers, and hyphens.</p>
     pub backup_vault_name: ::std::option::Option<::std::string::String>,
-    /// <p>Metadata that you can assign to help organize the resources that you create. Each tag is a key-value pair.</p>
+    /// <p>The tags to assign to the backup vault.</p>
     pub backup_vault_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The server-side encryption key that is used to protect your backups; for example, <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
     pub encryption_key_arn: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ impl CreateBackupVaultInput {
     pub fn backup_vault_name(&self) -> ::std::option::Option<&str> {
         self.backup_vault_name.as_deref()
     }
-    /// <p>Metadata that you can assign to help organize the resources that you create. Each tag is a key-value pair.</p>
+    /// <p>The tags to assign to the backup vault.</p>
     pub fn backup_vault_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.backup_vault_tags.as_ref()
     }
@@ -78,7 +78,7 @@ impl CreateBackupVaultInputBuilder {
     ///
     /// To override the contents of this collection use [`set_backup_vault_tags`](Self::set_backup_vault_tags).
     ///
-    /// <p>Metadata that you can assign to help organize the resources that you create. Each tag is a key-value pair.</p>
+    /// <p>The tags to assign to the backup vault.</p>
     pub fn backup_vault_tags(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -89,7 +89,7 @@ impl CreateBackupVaultInputBuilder {
         self.backup_vault_tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>Metadata that you can assign to help organize the resources that you create. Each tag is a key-value pair.</p>
+    /// <p>The tags to assign to the backup vault.</p>
     pub fn set_backup_vault_tags(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -97,7 +97,7 @@ impl CreateBackupVaultInputBuilder {
         self.backup_vault_tags = input;
         self
     }
-    /// <p>Metadata that you can assign to help organize the resources that you create. Each tag is a key-value pair.</p>
+    /// <p>The tags to assign to the backup vault.</p>
     pub fn get_backup_vault_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.backup_vault_tags
     }

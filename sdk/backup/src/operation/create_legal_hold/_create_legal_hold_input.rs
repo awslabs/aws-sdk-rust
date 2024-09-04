@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateLegalHoldInput {
-    /// <p>This is the string title of the legal hold.</p>
+    /// <p>The title of the legal hold.</p>
     pub title: ::std::option::Option<::std::string::String>,
-    /// <p>This is the string description of the legal hold.</p>
+    /// <p>The description of the legal hold.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>This is a user-chosen string used to distinguish between otherwise identical calls. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
     pub idempotency_token: ::std::option::Option<::std::string::String>,
-    /// <p>This specifies criteria to assign a set of resources, such as resource types or backup vaults.</p>
+    /// <p>The criteria to assign a set of resources, such as resource types or backup vaults.</p>
     pub recovery_point_selection: ::std::option::Option<crate::types::RecoveryPointSelection>,
     /// <p>Optional tags to include. A tag is a key-value pair you can use to manage, filter, and search for your resources. Allowed characters include UTF-8 letters, numbers, spaces, and the following characters: + - = . _ : /.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateLegalHoldInput {
-    /// <p>This is the string title of the legal hold.</p>
+    /// <p>The title of the legal hold.</p>
     pub fn title(&self) -> ::std::option::Option<&str> {
         self.title.as_deref()
     }
-    /// <p>This is the string description of the legal hold.</p>
+    /// <p>The description of the legal hold.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -27,7 +27,7 @@ impl CreateLegalHoldInput {
     pub fn idempotency_token(&self) -> ::std::option::Option<&str> {
         self.idempotency_token.as_deref()
     }
-    /// <p>This specifies criteria to assign a set of resources, such as resource types or backup vaults.</p>
+    /// <p>The criteria to assign a set of resources, such as resource types or backup vaults.</p>
     pub fn recovery_point_selection(&self) -> ::std::option::Option<&crate::types::RecoveryPointSelection> {
         self.recovery_point_selection.as_ref()
     }
@@ -65,33 +65,33 @@ pub struct CreateLegalHoldInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateLegalHoldInputBuilder {
-    /// <p>This is the string title of the legal hold.</p>
+    /// <p>The title of the legal hold.</p>
     /// This field is required.
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>This is the string title of the legal hold.</p>
+    /// <p>The title of the legal hold.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.title = input;
         self
     }
-    /// <p>This is the string title of the legal hold.</p>
+    /// <p>The title of the legal hold.</p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
         &self.title
     }
-    /// <p>This is the string description of the legal hold.</p>
+    /// <p>The description of the legal hold.</p>
     /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>This is the string description of the legal hold.</p>
+    /// <p>The description of the legal hold.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>This is the string description of the legal hold.</p>
+    /// <p>The description of the legal hold.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
@@ -109,17 +109,17 @@ impl CreateLegalHoldInputBuilder {
     pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.idempotency_token
     }
-    /// <p>This specifies criteria to assign a set of resources, such as resource types or backup vaults.</p>
+    /// <p>The criteria to assign a set of resources, such as resource types or backup vaults.</p>
     pub fn recovery_point_selection(mut self, input: crate::types::RecoveryPointSelection) -> Self {
         self.recovery_point_selection = ::std::option::Option::Some(input);
         self
     }
-    /// <p>This specifies criteria to assign a set of resources, such as resource types or backup vaults.</p>
+    /// <p>The criteria to assign a set of resources, such as resource types or backup vaults.</p>
     pub fn set_recovery_point_selection(mut self, input: ::std::option::Option<crate::types::RecoveryPointSelection>) -> Self {
         self.recovery_point_selection = input;
         self
     }
-    /// <p>This specifies criteria to assign a set of resources, such as resource types or backup vaults.</p>
+    /// <p>The criteria to assign a set of resources, such as resource types or backup vaults.</p>
     pub fn get_recovery_point_selection(&self) -> &::std::option::Option<crate::types::RecoveryPointSelection> {
         &self.recovery_point_selection
     }

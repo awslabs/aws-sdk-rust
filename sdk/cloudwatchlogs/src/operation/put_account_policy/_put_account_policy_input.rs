@@ -41,7 +41,7 @@ pub struct PutAccountPolicyInput {
     /// <li>
     /// <p><b>FilterPattern</b> A filter pattern for subscribing to a filtered stream of log events.</p></li>
     /// <li>
-    /// <p><b>Distribution</b>The method used to distribute log data to the destination. By default, log data is grouped by log stream, but the grouping can be set to <code>Random</code> for a more even distribution. This property is only applicable when the destination is an Kinesis Data Streams data stream.</p></li>
+    /// <p><b>Distribution</b> The method used to distribute log data to the destination. By default, log data is grouped by log stream, but the grouping can be set to <code>Random</code> for a more even distribution. This property is only applicable when the destination is an Kinesis Data Streams data stream.</p></li>
     /// </ul>
     pub policy_document: ::std::option::Option<::std::string::String>,
     /// <p>The type of policy that you're creating or updating.</p>
@@ -94,7 +94,7 @@ impl PutAccountPolicyInput {
     /// <li>
     /// <p><b>FilterPattern</b> A filter pattern for subscribing to a filtered stream of log events.</p></li>
     /// <li>
-    /// <p><b>Distribution</b>The method used to distribute log data to the destination. By default, log data is grouped by log stream, but the grouping can be set to <code>Random</code> for a more even distribution. This property is only applicable when the destination is an Kinesis Data Streams data stream.</p></li>
+    /// <p><b>Distribution</b> The method used to distribute log data to the destination. By default, log data is grouped by log stream, but the grouping can be set to <code>Random</code> for a more even distribution. This property is only applicable when the destination is an Kinesis Data Streams data stream.</p></li>
     /// </ul>
     pub fn policy_document(&self) -> ::std::option::Option<&str> {
         self.policy_document.as_deref()
@@ -183,7 +183,7 @@ impl PutAccountPolicyInputBuilder {
     /// <li>
     /// <p><b>FilterPattern</b> A filter pattern for subscribing to a filtered stream of log events.</p></li>
     /// <li>
-    /// <p><b>Distribution</b>The method used to distribute log data to the destination. By default, log data is grouped by log stream, but the grouping can be set to <code>Random</code> for a more even distribution. This property is only applicable when the destination is an Kinesis Data Streams data stream.</p></li>
+    /// <p><b>Distribution</b> The method used to distribute log data to the destination. By default, log data is grouped by log stream, but the grouping can be set to <code>Random</code> for a more even distribution. This property is only applicable when the destination is an Kinesis Data Streams data stream.</p></li>
     /// </ul>
     /// This field is required.
     pub fn policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -226,7 +226,7 @@ impl PutAccountPolicyInputBuilder {
     /// <li>
     /// <p><b>FilterPattern</b> A filter pattern for subscribing to a filtered stream of log events.</p></li>
     /// <li>
-    /// <p><b>Distribution</b>The method used to distribute log data to the destination. By default, log data is grouped by log stream, but the grouping can be set to <code>Random</code> for a more even distribution. This property is only applicable when the destination is an Kinesis Data Streams data stream.</p></li>
+    /// <p><b>Distribution</b> The method used to distribute log data to the destination. By default, log data is grouped by log stream, but the grouping can be set to <code>Random</code> for a more even distribution. This property is only applicable when the destination is an Kinesis Data Streams data stream.</p></li>
     /// </ul>
     pub fn set_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_document = input;
@@ -268,7 +268,7 @@ impl PutAccountPolicyInputBuilder {
     /// <li>
     /// <p><b>FilterPattern</b> A filter pattern for subscribing to a filtered stream of log events.</p></li>
     /// <li>
-    /// <p><b>Distribution</b>The method used to distribute log data to the destination. By default, log data is grouped by log stream, but the grouping can be set to <code>Random</code> for a more even distribution. This property is only applicable when the destination is an Kinesis Data Streams data stream.</p></li>
+    /// <p><b>Distribution</b> The method used to distribute log data to the destination. By default, log data is grouped by log stream, but the grouping can be set to <code>Random</code> for a more even distribution. This property is only applicable when the destination is an Kinesis Data Streams data stream.</p></li>
     /// </ul>
     pub fn get_policy_document(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_document

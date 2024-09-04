@@ -51,6 +51,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
+pub(crate) mod shape_active_sessions_exceeded_exception;
+
 pub(crate) mod shape_active_statements_exceeded_exception;
 
 pub(crate) mod shape_batch_execute_statement_exception;
@@ -81,6 +83,8 @@ pub(crate) mod shape_list_statements_input;
 
 pub(crate) mod shape_list_tables_input;
 
+pub(crate) mod shape_query_timeout_exception;
+
 pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_validation_exception;
@@ -90,6 +94,8 @@ pub(crate) mod shape_column_list;
 pub(crate) mod shape_column_metadata_list;
 
 pub(crate) mod shape_database_list;
+
+pub(crate) mod shape_db_group_list;
 
 pub(crate) mod shape_schema_list;
 

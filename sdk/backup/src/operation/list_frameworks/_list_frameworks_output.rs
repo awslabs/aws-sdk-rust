@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFrameworksOutput {
-    /// <p>A list of frameworks with details for each framework, including the framework name, Amazon Resource Name (ARN), description, number of controls, creation time, and deployment status.</p>
+    /// <p>The frameworks with details for each framework, including the framework name, Amazon Resource Name (ARN), description, number of controls, creation time, and deployment status.</p>
     pub frameworks: ::std::option::Option<::std::vec::Vec<crate::types::Framework>>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListFrameworksOutput {
-    /// <p>A list of frameworks with details for each framework, including the framework name, Amazon Resource Name (ARN), description, number of controls, creation time, and deployment status.</p>
+    /// <p>The frameworks with details for each framework, including the framework name, Amazon Resource Name (ARN), description, number of controls, creation time, and deployment status.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.frameworks.is_none()`.
     pub fn frameworks(&self) -> &[crate::types::Framework] {
@@ -46,19 +46,19 @@ impl ListFrameworksOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_frameworks`](Self::set_frameworks).
     ///
-    /// <p>A list of frameworks with details for each framework, including the framework name, Amazon Resource Name (ARN), description, number of controls, creation time, and deployment status.</p>
+    /// <p>The frameworks with details for each framework, including the framework name, Amazon Resource Name (ARN), description, number of controls, creation time, and deployment status.</p>
     pub fn frameworks(mut self, input: crate::types::Framework) -> Self {
         let mut v = self.frameworks.unwrap_or_default();
         v.push(input);
         self.frameworks = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of frameworks with details for each framework, including the framework name, Amazon Resource Name (ARN), description, number of controls, creation time, and deployment status.</p>
+    /// <p>The frameworks with details for each framework, including the framework name, Amazon Resource Name (ARN), description, number of controls, creation time, and deployment status.</p>
     pub fn set_frameworks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Framework>>) -> Self {
         self.frameworks = input;
         self
     }
-    /// <p>A list of frameworks with details for each framework, including the framework name, Amazon Resource Name (ARN), description, number of controls, creation time, and deployment status.</p>
+    /// <p>The frameworks with details for each framework, including the framework name, Amazon Resource Name (ARN), description, number of controls, creation time, and deployment status.</p>
     pub fn get_frameworks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Framework>> {
         &self.frameworks
     }

@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBackupSelectionInput {
-    /// <p>Uniquely identifies the backup plan to be associated with the selection of resources.</p>
+    /// <p>The ID of the backup plan.</p>
     pub backup_plan_id: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the body of a request to assign a set of resources to a backup plan.</p>
+    /// <p>The body of a request to assign a set of resources to a backup plan.</p>
     pub backup_selection: ::std::option::Option<crate::types::BackupSelection>,
     /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice. This parameter is optional.</p>
     /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     pub creator_request_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateBackupSelectionInput {
-    /// <p>Uniquely identifies the backup plan to be associated with the selection of resources.</p>
+    /// <p>The ID of the backup plan.</p>
     pub fn backup_plan_id(&self) -> ::std::option::Option<&str> {
         self.backup_plan_id.as_deref()
     }
-    /// <p>Specifies the body of a request to assign a set of resources to a backup plan.</p>
+    /// <p>The body of a request to assign a set of resources to a backup plan.</p>
     pub fn backup_selection(&self) -> ::std::option::Option<&crate::types::BackupSelection> {
         self.backup_selection.as_ref()
     }
@@ -42,33 +42,33 @@ pub struct CreateBackupSelectionInputBuilder {
     pub(crate) creator_request_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateBackupSelectionInputBuilder {
-    /// <p>Uniquely identifies the backup plan to be associated with the selection of resources.</p>
+    /// <p>The ID of the backup plan.</p>
     /// This field is required.
     pub fn backup_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_plan_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Uniquely identifies the backup plan to be associated with the selection of resources.</p>
+    /// <p>The ID of the backup plan.</p>
     pub fn set_backup_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_plan_id = input;
         self
     }
-    /// <p>Uniquely identifies the backup plan to be associated with the selection of resources.</p>
+    /// <p>The ID of the backup plan.</p>
     pub fn get_backup_plan_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.backup_plan_id
     }
-    /// <p>Specifies the body of a request to assign a set of resources to a backup plan.</p>
+    /// <p>The body of a request to assign a set of resources to a backup plan.</p>
     /// This field is required.
     pub fn backup_selection(mut self, input: crate::types::BackupSelection) -> Self {
         self.backup_selection = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the body of a request to assign a set of resources to a backup plan.</p>
+    /// <p>The body of a request to assign a set of resources to a backup plan.</p>
     pub fn set_backup_selection(mut self, input: ::std::option::Option<crate::types::BackupSelection>) -> Self {
         self.backup_selection = input;
         self
     }
-    /// <p>Specifies the body of a request to assign a set of resources to a backup plan.</p>
+    /// <p>The body of a request to assign a set of resources to a backup plan.</p>
     pub fn get_backup_selection(&self) -> &::std::option::Option<crate::types::BackupSelection> {
         &self.backup_selection
     }

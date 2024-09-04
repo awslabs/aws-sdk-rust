@@ -22,8 +22,8 @@ impl crate::operation::create_restore_testing_plan::builders::CreateRestoreTesti
 }
 /// Fluent builder constructing a request to `CreateRestoreTestingPlan`.
 ///
-/// <p>This is the first of two steps to create a restore testing plan; once this request is successful, finish the procedure with request CreateRestoreTestingSelection.</p>
-/// <p>You must include the parameter RestoreTestingPlan. You may optionally include CreatorRequestId and Tags.</p>
+/// <p>Creates a restore testing plan.</p>
+/// <p>The first of two steps to create a restore testing plan. After this request is successful, finish the procedure using CreateRestoreTestingSelection.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateRestoreTestingPlanFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -145,17 +145,17 @@ impl CreateRestoreTestingPlanFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Optional tags to include. A tag is a key-value pair you can use to manage, filter, and search for your resources. Allowed characters include UTF-8 letters,numbers, spaces, and the following characters: + - = . _ : /.</p>
+    /// <p>The tags to assign to the restore testing plan.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
-    /// <p>Optional tags to include. A tag is a key-value pair you can use to manage, filter, and search for your resources. Allowed characters include UTF-8 letters,numbers, spaces, and the following characters: + - = . _ : /.</p>
+    /// <p>The tags to assign to the restore testing plan.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>Optional tags to include. A tag is a key-value pair you can use to manage, filter, and search for your resources. Allowed characters include UTF-8 letters,numbers, spaces, and the following characters: + - = . _ : /.</p>
+    /// <p>The tags to assign to the restore testing plan.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }

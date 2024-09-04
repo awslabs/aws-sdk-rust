@@ -383,6 +383,8 @@ pub(crate) mod shape_destination;
 
 pub(crate) mod shape_destinations;
 
+pub(crate) mod shape_entity;
+
 pub(crate) mod shape_export_tasks;
 
 pub(crate) mod shape_filtered_log_events;
@@ -418,6 +420,8 @@ pub(crate) mod shape_query_info_list;
 pub(crate) mod shape_query_results;
 
 pub(crate) mod shape_query_statistics;
+
+pub(crate) mod shape_rejected_entity_info;
 
 pub(crate) mod shape_rejected_log_events_info;
 

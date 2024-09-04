@@ -108,17 +108,17 @@ impl PutBackupVaultNotificationsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created.</p>
     pub fn backup_vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.backup_vault_name(input.into());
         self
     }
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created.</p>
     pub fn set_backup_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_backup_vault_name(input);
         self
     }
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created.</p>
     pub fn get_backup_vault_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_backup_vault_name()
     }
@@ -154,7 +154,7 @@ impl PutBackupVaultNotificationsFluentBuilder {
     /// <li>
     /// <p><code>S3_BACKUP_OBJECT_FAILED</code> | <code>S3_RESTORE_OBJECT_FAILED</code></p></li>
     /// </ul><note>
-    /// <p>The list below shows items that are deprecated events (for reference) and are no longer in use. They are no longer supported and will not return statuses or notifications. Refer to the list above for current supported events.</p>
+    /// <p>The list below includes both supported events and deprecated events that are no longer in use (for reference). Deprecated events do not return statuses or notifications. Refer to the list above for the supported events.</p>
     /// </note>
     pub fn backup_vault_events(mut self, input: crate::types::BackupVaultEvent) -> Self {
         self.inner = self.inner.backup_vault_events(input);
@@ -173,7 +173,7 @@ impl PutBackupVaultNotificationsFluentBuilder {
     /// <li>
     /// <p><code>S3_BACKUP_OBJECT_FAILED</code> | <code>S3_RESTORE_OBJECT_FAILED</code></p></li>
     /// </ul><note>
-    /// <p>The list below shows items that are deprecated events (for reference) and are no longer in use. They are no longer supported and will not return statuses or notifications. Refer to the list above for current supported events.</p>
+    /// <p>The list below includes both supported events and deprecated events that are no longer in use (for reference). Deprecated events do not return statuses or notifications. Refer to the list above for the supported events.</p>
     /// </note>
     pub fn set_backup_vault_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BackupVaultEvent>>) -> Self {
         self.inner = self.inner.set_backup_vault_events(input);
@@ -192,7 +192,7 @@ impl PutBackupVaultNotificationsFluentBuilder {
     /// <li>
     /// <p><code>S3_BACKUP_OBJECT_FAILED</code> | <code>S3_RESTORE_OBJECT_FAILED</code></p></li>
     /// </ul><note>
-    /// <p>The list below shows items that are deprecated events (for reference) and are no longer in use. They are no longer supported and will not return statuses or notifications. Refer to the list above for current supported events.</p>
+    /// <p>The list below includes both supported events and deprecated events that are no longer in use (for reference). Deprecated events do not return statuses or notifications. Refer to the list above for the supported events.</p>
     /// </note>
     pub fn get_backup_vault_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BackupVaultEvent>> {
         self.inner.get_backup_vault_events()

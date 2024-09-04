@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelLegalHoldInput {
-    /// <p>Legal hold ID required to remove the specified legal hold on a recovery point.</p>
+    /// <p>The ID of the legal hold.</p>
     pub legal_hold_id: ::std::option::Option<::std::string::String>,
-    /// <p>String describing the reason for removing the legal hold.</p>
+    /// <p>A string the describes the reason for removing the legal hold.</p>
     pub cancel_description: ::std::option::Option<::std::string::String>,
-    /// <p>The integer amount in days specifying amount of days after this API operation to remove legal hold.</p>
+    /// <p>The integer amount, in days, after which to remove legal hold.</p>
     pub retain_record_in_days: ::std::option::Option<i64>,
 }
 impl CancelLegalHoldInput {
-    /// <p>Legal hold ID required to remove the specified legal hold on a recovery point.</p>
+    /// <p>The ID of the legal hold.</p>
     pub fn legal_hold_id(&self) -> ::std::option::Option<&str> {
         self.legal_hold_id.as_deref()
     }
-    /// <p>String describing the reason for removing the legal hold.</p>
+    /// <p>A string the describes the reason for removing the legal hold.</p>
     pub fn cancel_description(&self) -> ::std::option::Option<&str> {
         self.cancel_description.as_deref()
     }
-    /// <p>The integer amount in days specifying amount of days after this API operation to remove legal hold.</p>
+    /// <p>The integer amount, in days, after which to remove legal hold.</p>
     pub fn retain_record_in_days(&self) -> ::std::option::Option<i64> {
         self.retain_record_in_days
     }
@@ -40,47 +40,47 @@ pub struct CancelLegalHoldInputBuilder {
     pub(crate) retain_record_in_days: ::std::option::Option<i64>,
 }
 impl CancelLegalHoldInputBuilder {
-    /// <p>Legal hold ID required to remove the specified legal hold on a recovery point.</p>
+    /// <p>The ID of the legal hold.</p>
     /// This field is required.
     pub fn legal_hold_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.legal_hold_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Legal hold ID required to remove the specified legal hold on a recovery point.</p>
+    /// <p>The ID of the legal hold.</p>
     pub fn set_legal_hold_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.legal_hold_id = input;
         self
     }
-    /// <p>Legal hold ID required to remove the specified legal hold on a recovery point.</p>
+    /// <p>The ID of the legal hold.</p>
     pub fn get_legal_hold_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.legal_hold_id
     }
-    /// <p>String describing the reason for removing the legal hold.</p>
+    /// <p>A string the describes the reason for removing the legal hold.</p>
     /// This field is required.
     pub fn cancel_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cancel_description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>String describing the reason for removing the legal hold.</p>
+    /// <p>A string the describes the reason for removing the legal hold.</p>
     pub fn set_cancel_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cancel_description = input;
         self
     }
-    /// <p>String describing the reason for removing the legal hold.</p>
+    /// <p>A string the describes the reason for removing the legal hold.</p>
     pub fn get_cancel_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.cancel_description
     }
-    /// <p>The integer amount in days specifying amount of days after this API operation to remove legal hold.</p>
+    /// <p>The integer amount, in days, after which to remove legal hold.</p>
     pub fn retain_record_in_days(mut self, input: i64) -> Self {
         self.retain_record_in_days = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The integer amount in days specifying amount of days after this API operation to remove legal hold.</p>
+    /// <p>The integer amount, in days, after which to remove legal hold.</p>
     pub fn set_retain_record_in_days(mut self, input: ::std::option::Option<i64>) -> Self {
         self.retain_record_in_days = input;
         self
     }
-    /// <p>The integer amount in days specifying amount of days after this API operation to remove legal hold.</p>
+    /// <p>The integer amount, in days, after which to remove legal hold.</p>
     pub fn get_retain_record_in_days(&self) -> &::std::option::Option<i64> {
         &self.retain_record_in_days
     }

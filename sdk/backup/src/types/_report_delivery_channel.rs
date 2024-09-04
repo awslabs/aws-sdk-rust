@@ -8,7 +8,7 @@ pub struct ReportDeliveryChannel {
     pub s3_bucket_name: ::std::string::String,
     /// <p>The prefix for where Backup Audit Manager delivers your reports to Amazon S3. The prefix is this part of the following path: s3://your-bucket-name/<code>prefix</code>/Backup/us-west-2/year/month/day/report-name. If not specified, there is no prefix.</p>
     pub s3_key_prefix: ::std::option::Option<::std::string::String>,
-    /// <p>A list of the format of your reports: <code>CSV</code>, <code>JSON</code>, or both. If not specified, the default format is <code>CSV</code>.</p>
+    /// <p>The format of your reports: <code>CSV</code>, <code>JSON</code>, or both. If not specified, the default format is <code>CSV</code>.</p>
     pub formats: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ReportDeliveryChannel {
@@ -21,7 +21,7 @@ impl ReportDeliveryChannel {
     pub fn s3_key_prefix(&self) -> ::std::option::Option<&str> {
         self.s3_key_prefix.as_deref()
     }
-    /// <p>A list of the format of your reports: <code>CSV</code>, <code>JSON</code>, or both. If not specified, the default format is <code>CSV</code>.</p>
+    /// <p>The format of your reports: <code>CSV</code>, <code>JSON</code>, or both. If not specified, the default format is <code>CSV</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.formats.is_none()`.
     pub fn formats(&self) -> &[::std::string::String] {
@@ -77,19 +77,19 @@ impl ReportDeliveryChannelBuilder {
     ///
     /// To override the contents of this collection use [`set_formats`](Self::set_formats).
     ///
-    /// <p>A list of the format of your reports: <code>CSV</code>, <code>JSON</code>, or both. If not specified, the default format is <code>CSV</code>.</p>
+    /// <p>The format of your reports: <code>CSV</code>, <code>JSON</code>, or both. If not specified, the default format is <code>CSV</code>.</p>
     pub fn formats(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.formats.unwrap_or_default();
         v.push(input.into());
         self.formats = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of the format of your reports: <code>CSV</code>, <code>JSON</code>, or both. If not specified, the default format is <code>CSV</code>.</p>
+    /// <p>The format of your reports: <code>CSV</code>, <code>JSON</code>, or both. If not specified, the default format is <code>CSV</code>.</p>
     pub fn set_formats(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.formats = input;
         self
     }
-    /// <p>A list of the format of your reports: <code>CSV</code>, <code>JSON</code>, or both. If not specified, the default format is <code>CSV</code>.</p>
+    /// <p>The format of your reports: <code>CSV</code>, <code>JSON</code>, or both. If not specified, the default format is <code>CSV</code>.</p>
     pub fn get_formats(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.formats
     }

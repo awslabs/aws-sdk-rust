@@ -3,34 +3,34 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRestoreTestingSelectionOutput {
-    /// <p>This is the time the resource testing selection was created successfully.</p>
+    /// <p>The time that the resource testing selection was created.</p>
     pub creation_time: ::aws_smithy_types::DateTime,
-    /// <p>This is the ARN of the restore testing plan with which the restore testing selection is associated.</p>
+    /// <p>The ARN of the restore testing plan with which the restore testing selection is associated.</p>
     pub restore_testing_plan_arn: ::std::string::String,
-    /// <p>Unique string that is the name of the restore testing plan.</p>
+    /// <p>The name of the restore testing plan.</p>
     /// <p>The name cannot be changed after creation. The name consists of only alphanumeric characters and underscores. Maximum length is 50.</p>
     pub restore_testing_plan_name: ::std::string::String,
-    /// <p>This is the unique name of the restore testing selection that belongs to the related restore testing plan.</p>
+    /// <p>The name of the restore testing selection for the related restore testing plan.</p>
     pub restore_testing_selection_name: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateRestoreTestingSelectionOutput {
-    /// <p>This is the time the resource testing selection was created successfully.</p>
+    /// <p>The time that the resource testing selection was created.</p>
     pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
         &self.creation_time
     }
-    /// <p>This is the ARN of the restore testing plan with which the restore testing selection is associated.</p>
+    /// <p>The ARN of the restore testing plan with which the restore testing selection is associated.</p>
     pub fn restore_testing_plan_arn(&self) -> &str {
         use std::ops::Deref;
         self.restore_testing_plan_arn.deref()
     }
-    /// <p>Unique string that is the name of the restore testing plan.</p>
+    /// <p>The name of the restore testing plan.</p>
     /// <p>The name cannot be changed after creation. The name consists of only alphanumeric characters and underscores. Maximum length is 50.</p>
     pub fn restore_testing_plan_name(&self) -> &str {
         use std::ops::Deref;
         self.restore_testing_plan_name.deref()
     }
-    /// <p>This is the unique name of the restore testing selection that belongs to the related restore testing plan.</p>
+    /// <p>The name of the restore testing selection for the related restore testing plan.</p>
     pub fn restore_testing_selection_name(&self) -> &str {
         use std::ops::Deref;
         self.restore_testing_selection_name.deref()
@@ -59,66 +59,66 @@ pub struct CreateRestoreTestingSelectionOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateRestoreTestingSelectionOutputBuilder {
-    /// <p>This is the time the resource testing selection was created successfully.</p>
+    /// <p>The time that the resource testing selection was created.</p>
     /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>This is the time the resource testing selection was created successfully.</p>
+    /// <p>The time that the resource testing selection was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
-    /// <p>This is the time the resource testing selection was created successfully.</p>
+    /// <p>The time that the resource testing selection was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
-    /// <p>This is the ARN of the restore testing plan with which the restore testing selection is associated.</p>
+    /// <p>The ARN of the restore testing plan with which the restore testing selection is associated.</p>
     /// This field is required.
     pub fn restore_testing_plan_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.restore_testing_plan_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>This is the ARN of the restore testing plan with which the restore testing selection is associated.</p>
+    /// <p>The ARN of the restore testing plan with which the restore testing selection is associated.</p>
     pub fn set_restore_testing_plan_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.restore_testing_plan_arn = input;
         self
     }
-    /// <p>This is the ARN of the restore testing plan with which the restore testing selection is associated.</p>
+    /// <p>The ARN of the restore testing plan with which the restore testing selection is associated.</p>
     pub fn get_restore_testing_plan_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.restore_testing_plan_arn
     }
-    /// <p>Unique string that is the name of the restore testing plan.</p>
+    /// <p>The name of the restore testing plan.</p>
     /// <p>The name cannot be changed after creation. The name consists of only alphanumeric characters and underscores. Maximum length is 50.</p>
     /// This field is required.
     pub fn restore_testing_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.restore_testing_plan_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Unique string that is the name of the restore testing plan.</p>
+    /// <p>The name of the restore testing plan.</p>
     /// <p>The name cannot be changed after creation. The name consists of only alphanumeric characters and underscores. Maximum length is 50.</p>
     pub fn set_restore_testing_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.restore_testing_plan_name = input;
         self
     }
-    /// <p>Unique string that is the name of the restore testing plan.</p>
+    /// <p>The name of the restore testing plan.</p>
     /// <p>The name cannot be changed after creation. The name consists of only alphanumeric characters and underscores. Maximum length is 50.</p>
     pub fn get_restore_testing_plan_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.restore_testing_plan_name
     }
-    /// <p>This is the unique name of the restore testing selection that belongs to the related restore testing plan.</p>
+    /// <p>The name of the restore testing selection for the related restore testing plan.</p>
     /// This field is required.
     pub fn restore_testing_selection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.restore_testing_selection_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>This is the unique name of the restore testing selection that belongs to the related restore testing plan.</p>
+    /// <p>The name of the restore testing selection for the related restore testing plan.</p>
     pub fn set_restore_testing_selection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.restore_testing_selection_name = input;
         self
     }
-    /// <p>This is the unique name of the restore testing selection that belongs to the related restore testing plan.</p>
+    /// <p>The name of the restore testing selection for the related restore testing plan.</p>
     pub fn get_restore_testing_selection_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.restore_testing_selection_name
     }

@@ -22,7 +22,7 @@ pub struct RestoreJobsListMember {
     pub percent_done: ::std::option::Option<::std::string::String>,
     /// <p>The size, in bytes, of the restored resource.</p>
     pub backup_size_in_bytes: ::std::option::Option<i64>,
-    /// <p>Specifies the IAM role ARN used to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+    /// <p>The IAM role ARN used to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
     pub iam_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The amount of time in minutes that a job restoring a recovery point is expected to take.</p>
     pub expected_completion_time_minutes: ::std::option::Option<i64>,
@@ -34,7 +34,7 @@ pub struct RestoreJobsListMember {
     pub recovery_point_creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Contains identifying information about the creation of a restore job.</p>
     pub created_by: ::std::option::Option<crate::types::RestoreJobCreator>,
-    /// <p>This is the status of validation run on the indicated restore job.</p>
+    /// <p>The status of validation run on the indicated restore job.</p>
     pub validation_status: ::std::option::Option<crate::types::RestoreValidationStatus>,
     /// <p>This describes the status of validation run on the indicated restore job.</p>
     pub validation_status_message: ::std::option::Option<::std::string::String>,
@@ -80,7 +80,7 @@ impl RestoreJobsListMember {
     pub fn backup_size_in_bytes(&self) -> ::std::option::Option<i64> {
         self.backup_size_in_bytes
     }
-    /// <p>Specifies the IAM role ARN used to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+    /// <p>The IAM role ARN used to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
     pub fn iam_role_arn(&self) -> ::std::option::Option<&str> {
         self.iam_role_arn.as_deref()
     }
@@ -104,7 +104,7 @@ impl RestoreJobsListMember {
     pub fn created_by(&self) -> ::std::option::Option<&crate::types::RestoreJobCreator> {
         self.created_by.as_ref()
     }
-    /// <p>This is the status of validation run on the indicated restore job.</p>
+    /// <p>The status of validation run on the indicated restore job.</p>
     pub fn validation_status(&self) -> ::std::option::Option<&crate::types::RestoreValidationStatus> {
         self.validation_status.as_ref()
     }
@@ -279,17 +279,17 @@ impl RestoreJobsListMemberBuilder {
     pub fn get_backup_size_in_bytes(&self) -> &::std::option::Option<i64> {
         &self.backup_size_in_bytes
     }
-    /// <p>Specifies the IAM role ARN used to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+    /// <p>The IAM role ARN used to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
     pub fn iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the IAM role ARN used to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+    /// <p>The IAM role ARN used to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
     pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iam_role_arn = input;
         self
     }
-    /// <p>Specifies the IAM role ARN used to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+    /// <p>The IAM role ARN used to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
     pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.iam_role_arn
     }
@@ -363,17 +363,17 @@ impl RestoreJobsListMemberBuilder {
     pub fn get_created_by(&self) -> &::std::option::Option<crate::types::RestoreJobCreator> {
         &self.created_by
     }
-    /// <p>This is the status of validation run on the indicated restore job.</p>
+    /// <p>The status of validation run on the indicated restore job.</p>
     pub fn validation_status(mut self, input: crate::types::RestoreValidationStatus) -> Self {
         self.validation_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>This is the status of validation run on the indicated restore job.</p>
+    /// <p>The status of validation run on the indicated restore job.</p>
     pub fn set_validation_status(mut self, input: ::std::option::Option<crate::types::RestoreValidationStatus>) -> Self {
         self.validation_status = input;
         self
     }
-    /// <p>This is the status of validation run on the indicated restore job.</p>
+    /// <p>The status of validation run on the indicated restore job.</p>
     pub fn get_validation_status(&self) -> &::std::option::Option<crate::types::RestoreValidationStatus> {
         &self.validation_status
     }

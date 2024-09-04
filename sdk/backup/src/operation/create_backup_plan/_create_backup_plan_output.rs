@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBackupPlanOutput {
-    /// <p>Uniquely identifies a backup plan.</p>
+    /// <p>The ID of the backup plan.</p>
     pub backup_plan_id: ::std::option::Option<::std::string::String>,
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup plan; for example, <code>arn:aws:backup:us-east-1:123456789012:plan:8F81F553-3A74-4A3F-B93D-B3360DC80C50</code>.</p>
     pub backup_plan_arn: ::std::option::Option<::std::string::String>,
@@ -11,12 +11,12 @@ pub struct CreateBackupPlanOutput {
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. They cannot be edited.</p>
     pub version_id: ::std::option::Option<::std::string::String>,
-    /// <p>A list of <code>BackupOptions</code> settings for a resource type. This option is only available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p>
+    /// <p>The settings for a resource type. This option is only available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p>
     pub advanced_backup_settings: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedBackupSetting>>,
     _request_id: Option<String>,
 }
 impl CreateBackupPlanOutput {
-    /// <p>Uniquely identifies a backup plan.</p>
+    /// <p>The ID of the backup plan.</p>
     pub fn backup_plan_id(&self) -> ::std::option::Option<&str> {
         self.backup_plan_id.as_deref()
     }
@@ -32,7 +32,7 @@ impl CreateBackupPlanOutput {
     pub fn version_id(&self) -> ::std::option::Option<&str> {
         self.version_id.as_deref()
     }
-    /// <p>A list of <code>BackupOptions</code> settings for a resource type. This option is only available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p>
+    /// <p>The settings for a resource type. This option is only available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.advanced_backup_settings.is_none()`.
     pub fn advanced_backup_settings(&self) -> &[crate::types::AdvancedBackupSetting] {
@@ -63,17 +63,17 @@ pub struct CreateBackupPlanOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateBackupPlanOutputBuilder {
-    /// <p>Uniquely identifies a backup plan.</p>
+    /// <p>The ID of the backup plan.</p>
     pub fn backup_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_plan_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Uniquely identifies a backup plan.</p>
+    /// <p>The ID of the backup plan.</p>
     pub fn set_backup_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_plan_id = input;
         self
     }
-    /// <p>Uniquely identifies a backup plan.</p>
+    /// <p>The ID of the backup plan.</p>
     pub fn get_backup_plan_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.backup_plan_id
     }
@@ -123,19 +123,19 @@ impl CreateBackupPlanOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_advanced_backup_settings`](Self::set_advanced_backup_settings).
     ///
-    /// <p>A list of <code>BackupOptions</code> settings for a resource type. This option is only available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p>
+    /// <p>The settings for a resource type. This option is only available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p>
     pub fn advanced_backup_settings(mut self, input: crate::types::AdvancedBackupSetting) -> Self {
         let mut v = self.advanced_backup_settings.unwrap_or_default();
         v.push(input);
         self.advanced_backup_settings = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of <code>BackupOptions</code> settings for a resource type. This option is only available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p>
+    /// <p>The settings for a resource type. This option is only available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p>
     pub fn set_advanced_backup_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedBackupSetting>>) -> Self {
         self.advanced_backup_settings = input;
         self
     }
-    /// <p>A list of <code>BackupOptions</code> settings for a resource type. This option is only available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p>
+    /// <p>The settings for a resource type. This option is only available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p>
     pub fn get_advanced_backup_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdvancedBackupSetting>> {
         &self.advanced_backup_settings
     }

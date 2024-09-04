@@ -166,6 +166,9 @@ pub(crate) fn de_put_log_events(
                         crate::protocol_serde::shape_rejected_log_events_info::de_rejected_log_events_info(tokens)?,
                     );
                 }
+                "rejectedEntityInfo" => {
+                    builder = builder.set_rejected_entity_info(crate::protocol_serde::shape_rejected_entity_info::de_rejected_entity_info(tokens)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

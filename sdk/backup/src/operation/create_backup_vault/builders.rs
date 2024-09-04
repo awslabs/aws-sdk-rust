@@ -129,7 +129,7 @@ impl CreateBackupVaultFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_backup_vault_tags`](Self::set_backup_vault_tags).
     ///
-    /// <p>Metadata that you can assign to help organize the resources that you create. Each tag is a key-value pair.</p>
+    /// <p>The tags to assign to the backup vault.</p>
     pub fn backup_vault_tags(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -138,7 +138,7 @@ impl CreateBackupVaultFluentBuilder {
         self.inner = self.inner.backup_vault_tags(k.into(), v.into());
         self
     }
-    /// <p>Metadata that you can assign to help organize the resources that you create. Each tag is a key-value pair.</p>
+    /// <p>The tags to assign to the backup vault.</p>
     pub fn set_backup_vault_tags(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -146,7 +146,7 @@ impl CreateBackupVaultFluentBuilder {
         self.inner = self.inner.set_backup_vault_tags(input);
         self
     }
-    /// <p>Metadata that you can assign to help organize the resources that you create. Each tag is a key-value pair.</p>
+    /// <p>The tags to assign to the backup vault.</p>
     pub fn get_backup_vault_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_backup_vault_tags()
     }

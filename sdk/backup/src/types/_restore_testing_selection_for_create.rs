@@ -49,7 +49,7 @@ pub struct RestoreTestingSelectionForCreate {
     /// <p>You can override certain restore metadata keys by including the parameter <code>RestoreMetadataOverrides</code> in the body of <code>RestoreTestingSelection</code>. Key values are not case sensitive.</p>
     /// <p>See the complete list of <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/restore-testing-inferred-metadata.html">restore testing inferred metadata</a>.</p>
     pub restore_metadata_overrides: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>This is the unique name of the restore testing selection that belongs to the related restore testing plan.</p>
+    /// <p>The unique name of the restore testing selection that belongs to the related restore testing plan.</p>
     pub restore_testing_selection_name: ::std::string::String,
     /// <p>This is amount of hours (1 to 168) available to run a validation script on the data. The data will be deleted upon the completion of the validation script or the end of the specified retention period, whichever comes first.</p>
     pub validation_window_hours: i32,
@@ -103,7 +103,7 @@ impl RestoreTestingSelectionForCreate {
     pub fn restore_metadata_overrides(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.restore_metadata_overrides.as_ref()
     }
-    /// <p>This is the unique name of the restore testing selection that belongs to the related restore testing plan.</p>
+    /// <p>The unique name of the restore testing selection that belongs to the related restore testing plan.</p>
     pub fn restore_testing_selection_name(&self) -> &str {
         use std::ops::Deref;
         self.restore_testing_selection_name.deref()
@@ -311,18 +311,18 @@ impl RestoreTestingSelectionForCreateBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.restore_metadata_overrides
     }
-    /// <p>This is the unique name of the restore testing selection that belongs to the related restore testing plan.</p>
+    /// <p>The unique name of the restore testing selection that belongs to the related restore testing plan.</p>
     /// This field is required.
     pub fn restore_testing_selection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.restore_testing_selection_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>This is the unique name of the restore testing selection that belongs to the related restore testing plan.</p>
+    /// <p>The unique name of the restore testing selection that belongs to the related restore testing plan.</p>
     pub fn set_restore_testing_selection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.restore_testing_selection_name = input;
         self
     }
-    /// <p>This is the unique name of the restore testing selection that belongs to the related restore testing plan.</p>
+    /// <p>The unique name of the restore testing selection that belongs to the related restore testing plan.</p>
     pub fn get_restore_testing_selection_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.restore_testing_selection_name
     }

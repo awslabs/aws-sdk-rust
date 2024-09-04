@@ -4,7 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BackupPlan {
-    /// <p>The display name of a backup plan. Must contain 1 to 50 alphanumeric or '-_.' characters.</p>
+    /// <p>The display name of a backup plan. Must contain only alphanumeric or '-_.' special characters.</p>
+    /// <p>If this is set in the console, it can contain 1 to 50 characters; if this is set through CLI or API, it can contain 1 to 200 characters.</p>
     pub backup_plan_name: ::std::string::String,
     /// <p>An array of <code>BackupRule</code> objects, each of which specifies a scheduled task that is used to back up a selection of resources.</p>
     pub rules: ::std::vec::Vec<crate::types::BackupRule>,
@@ -12,7 +13,8 @@ pub struct BackupPlan {
     pub advanced_backup_settings: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedBackupSetting>>,
 }
 impl BackupPlan {
-    /// <p>The display name of a backup plan. Must contain 1 to 50 alphanumeric or '-_.' characters.</p>
+    /// <p>The display name of a backup plan. Must contain only alphanumeric or '-_.' special characters.</p>
+    /// <p>If this is set in the console, it can contain 1 to 50 characters; if this is set through CLI or API, it can contain 1 to 200 characters.</p>
     pub fn backup_plan_name(&self) -> &str {
         use std::ops::Deref;
         self.backup_plan_name.deref()
@@ -45,18 +47,21 @@ pub struct BackupPlanBuilder {
     pub(crate) advanced_backup_settings: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedBackupSetting>>,
 }
 impl BackupPlanBuilder {
-    /// <p>The display name of a backup plan. Must contain 1 to 50 alphanumeric or '-_.' characters.</p>
+    /// <p>The display name of a backup plan. Must contain only alphanumeric or '-_.' special characters.</p>
+    /// <p>If this is set in the console, it can contain 1 to 50 characters; if this is set through CLI or API, it can contain 1 to 200 characters.</p>
     /// This field is required.
     pub fn backup_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_plan_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The display name of a backup plan. Must contain 1 to 50 alphanumeric or '-_.' characters.</p>
+    /// <p>The display name of a backup plan. Must contain only alphanumeric or '-_.' special characters.</p>
+    /// <p>If this is set in the console, it can contain 1 to 50 characters; if this is set through CLI or API, it can contain 1 to 200 characters.</p>
     pub fn set_backup_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_plan_name = input;
         self
     }
-    /// <p>The display name of a backup plan. Must contain 1 to 50 alphanumeric or '-_.' characters.</p>
+    /// <p>The display name of a backup plan. Must contain only alphanumeric or '-_.' special characters.</p>
+    /// <p>If this is set in the console, it can contain 1 to 50 characters; if this is set through CLI or API, it can contain 1 to 200 characters.</p>
     pub fn get_backup_plan_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.backup_plan_name
     }

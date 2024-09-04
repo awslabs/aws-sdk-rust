@@ -177,19 +177,19 @@ impl ListRestoreJobsFluentBuilder {
     /// <li>
     /// <p><code>Neptune</code> for Amazon Neptune</p></li>
     /// <li>
-    /// <p><code>Redshift</code> for Amazon Redshift</p></li>
-    /// <li>
     /// <p><code>RDS</code> for Amazon Relational Database Service</p></li>
     /// <li>
-    /// <p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p></li>
+    /// <p><code>Redshift</code> for Amazon Redshift</p></li>
+    /// <li>
+    /// <p><code>S3</code> for Amazon Simple Storage Service (Amazon S3)</p></li>
+    /// <li>
+    /// <p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases on Amazon Elastic Compute Cloud instances</p></li>
     /// <li>
     /// <p><code>Storage Gateway</code> for Storage Gateway</p></li>
     /// <li>
-    /// <p><code>S3</code> for Amazon S3</p></li>
-    /// <li>
     /// <p><code>Timestream</code> for Amazon Timestream</p></li>
     /// <li>
-    /// <p><code>VirtualMachine</code> for virtual machines</p></li>
+    /// <p><code>VirtualMachine</code> for VMware virtual machines</p></li>
     /// </ul>
     pub fn by_resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.by_resource_type(input.into());
@@ -216,19 +216,19 @@ impl ListRestoreJobsFluentBuilder {
     /// <li>
     /// <p><code>Neptune</code> for Amazon Neptune</p></li>
     /// <li>
-    /// <p><code>Redshift</code> for Amazon Redshift</p></li>
-    /// <li>
     /// <p><code>RDS</code> for Amazon Relational Database Service</p></li>
     /// <li>
-    /// <p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p></li>
+    /// <p><code>Redshift</code> for Amazon Redshift</p></li>
+    /// <li>
+    /// <p><code>S3</code> for Amazon Simple Storage Service (Amazon S3)</p></li>
+    /// <li>
+    /// <p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases on Amazon Elastic Compute Cloud instances</p></li>
     /// <li>
     /// <p><code>Storage Gateway</code> for Storage Gateway</p></li>
     /// <li>
-    /// <p><code>S3</code> for Amazon S3</p></li>
-    /// <li>
     /// <p><code>Timestream</code> for Amazon Timestream</p></li>
     /// <li>
-    /// <p><code>VirtualMachine</code> for virtual machines</p></li>
+    /// <p><code>VirtualMachine</code> for VMware virtual machines</p></li>
     /// </ul>
     pub fn set_by_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_by_resource_type(input);
@@ -255,19 +255,19 @@ impl ListRestoreJobsFluentBuilder {
     /// <li>
     /// <p><code>Neptune</code> for Amazon Neptune</p></li>
     /// <li>
-    /// <p><code>Redshift</code> for Amazon Redshift</p></li>
-    /// <li>
     /// <p><code>RDS</code> for Amazon Relational Database Service</p></li>
     /// <li>
-    /// <p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p></li>
+    /// <p><code>Redshift</code> for Amazon Redshift</p></li>
+    /// <li>
+    /// <p><code>S3</code> for Amazon Simple Storage Service (Amazon S3)</p></li>
+    /// <li>
+    /// <p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases on Amazon Elastic Compute Cloud instances</p></li>
     /// <li>
     /// <p><code>Storage Gateway</code> for Storage Gateway</p></li>
     /// <li>
-    /// <p><code>S3</code> for Amazon S3</p></li>
-    /// <li>
     /// <p><code>Timestream</code> for Amazon Timestream</p></li>
     /// <li>
-    /// <p><code>VirtualMachine</code> for virtual machines</p></li>
+    /// <p><code>VirtualMachine</code> for VMware virtual machines</p></li>
     /// </ul>
     pub fn get_by_resource_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_by_resource_type()

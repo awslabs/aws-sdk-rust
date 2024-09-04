@@ -17,7 +17,7 @@ pub struct RestoreTestingPlanForGet {
     pub recovery_point_selection: ::std::option::Option<crate::types::RestoreTestingRecoveryPointSelection>,
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a restore testing plan.</p>
     pub restore_testing_plan_arn: ::std::string::String,
-    /// <p>This is the restore testing plan name.</p>
+    /// <p>The restore testing plan name.</p>
     pub restore_testing_plan_name: ::std::string::String,
     /// <p>A CRON expression in specified timezone when a restore testing plan is executed.</p>
     pub schedule_expression: ::std::string::String,
@@ -54,7 +54,7 @@ impl RestoreTestingPlanForGet {
         use std::ops::Deref;
         self.restore_testing_plan_arn.deref()
     }
-    /// <p>This is the restore testing plan name.</p>
+    /// <p>The restore testing plan name.</p>
     pub fn restore_testing_plan_name(&self) -> &str {
         use std::ops::Deref;
         self.restore_testing_plan_name.deref()
@@ -187,18 +187,18 @@ impl RestoreTestingPlanForGetBuilder {
     pub fn get_restore_testing_plan_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.restore_testing_plan_arn
     }
-    /// <p>This is the restore testing plan name.</p>
+    /// <p>The restore testing plan name.</p>
     /// This field is required.
     pub fn restore_testing_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.restore_testing_plan_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>This is the restore testing plan name.</p>
+    /// <p>The restore testing plan name.</p>
     pub fn set_restore_testing_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.restore_testing_plan_name = input;
         self
     }
-    /// <p>This is the restore testing plan name.</p>
+    /// <p>The restore testing plan name.</p>
     pub fn get_restore_testing_plan_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.restore_testing_plan_name
     }

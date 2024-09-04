@@ -8,8 +8,7 @@ pub struct RestoreTestingSelectionForUpdate {
     pub iam_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>You can include a list of specific ARNs, such as <code>ProtectedResourceArns: \["arn:aws:...", "arn:aws:..."\]</code> or you can include a wildcard: <code>ProtectedResourceArns: \["*"\]</code>, but not both.</p>
     pub protected_resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>A list of conditions that you define for resources in your restore testing plan using tags.</p>
-    /// <p>For example, <code>"StringEquals": { "Key": "aws:ResourceTag/CreatedByCryo", "Value": "true" },</code>. Condition operators are case sensitive.</p>
+    /// <p>The conditions that you define for resources in your restore testing plan using tags.</p>
     pub protected_resource_conditions: ::std::option::Option<crate::types::ProtectedResourceConditions>,
     /// <p>You can override certain restore metadata keys by including the parameter <code>RestoreMetadataOverrides</code> in the body of <code>RestoreTestingSelection</code>. Key values are not case sensitive.</p>
     /// <p>See the complete list of <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/restore-testing-inferred-metadata.html">restore testing inferred metadata</a>.</p>
@@ -29,8 +28,7 @@ impl RestoreTestingSelectionForUpdate {
     pub fn protected_resource_arns(&self) -> &[::std::string::String] {
         self.protected_resource_arns.as_deref().unwrap_or_default()
     }
-    /// <p>A list of conditions that you define for resources in your restore testing plan using tags.</p>
-    /// <p>For example, <code>"StringEquals": { "Key": "aws:ResourceTag/CreatedByCryo", "Value": "true" },</code>. Condition operators are case sensitive.</p>
+    /// <p>The conditions that you define for resources in your restore testing plan using tags.</p>
     pub fn protected_resource_conditions(&self) -> ::std::option::Option<&crate::types::ProtectedResourceConditions> {
         self.protected_resource_conditions.as_ref()
     }
@@ -108,20 +106,17 @@ impl RestoreTestingSelectionForUpdateBuilder {
     pub fn get_protected_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.protected_resource_arns
     }
-    /// <p>A list of conditions that you define for resources in your restore testing plan using tags.</p>
-    /// <p>For example, <code>"StringEquals": { "Key": "aws:ResourceTag/CreatedByCryo", "Value": "true" },</code>. Condition operators are case sensitive.</p>
+    /// <p>The conditions that you define for resources in your restore testing plan using tags.</p>
     pub fn protected_resource_conditions(mut self, input: crate::types::ProtectedResourceConditions) -> Self {
         self.protected_resource_conditions = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A list of conditions that you define for resources in your restore testing plan using tags.</p>
-    /// <p>For example, <code>"StringEquals": { "Key": "aws:ResourceTag/CreatedByCryo", "Value": "true" },</code>. Condition operators are case sensitive.</p>
+    /// <p>The conditions that you define for resources in your restore testing plan using tags.</p>
     pub fn set_protected_resource_conditions(mut self, input: ::std::option::Option<crate::types::ProtectedResourceConditions>) -> Self {
         self.protected_resource_conditions = input;
         self
     }
-    /// <p>A list of conditions that you define for resources in your restore testing plan using tags.</p>
-    /// <p>For example, <code>"StringEquals": { "Key": "aws:ResourceTag/CreatedByCryo", "Value": "true" },</code>. Condition operators are case sensitive.</p>
+    /// <p>The conditions that you define for resources in your restore testing plan using tags.</p>
     pub fn get_protected_resource_conditions(&self) -> &::std::option::Option<crate::types::ProtectedResourceConditions> {
         &self.protected_resource_conditions
     }

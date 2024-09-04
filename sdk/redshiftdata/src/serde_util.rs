@@ -11,18 +11,18 @@ pub(crate) fn batch_execute_statement_exception_correct_errors(
     builder
 }
 
-pub(crate) fn database_connection_exception_correct_errors(
-    mut builder: crate::types::error::builders::DatabaseConnectionExceptionBuilder,
-) -> crate::types::error::builders::DatabaseConnectionExceptionBuilder {
+pub(crate) fn internal_server_exception_correct_errors(
+    mut builder: crate::types::error::builders::InternalServerExceptionBuilder,
+) -> crate::types::error::builders::InternalServerExceptionBuilder {
     if builder.message.is_none() {
         builder.message = Some(Default::default())
     }
     builder
 }
 
-pub(crate) fn internal_server_exception_correct_errors(
-    mut builder: crate::types::error::builders::InternalServerExceptionBuilder,
-) -> crate::types::error::builders::InternalServerExceptionBuilder {
+pub(crate) fn database_connection_exception_correct_errors(
+    mut builder: crate::types::error::builders::DatabaseConnectionExceptionBuilder,
+) -> crate::types::error::builders::DatabaseConnectionExceptionBuilder {
     if builder.message.is_none() {
         builder.message = Some(Default::default())
     }

@@ -198,4 +198,18 @@ impl PutLogEventsFluentBuilder {
     pub fn get_sequence_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_sequence_token()
     }
+    /// <p>Reserved for future use.</p>
+    pub fn entity(mut self, input: crate::types::Entity) -> Self {
+        self.inner = self.inner.entity(input);
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn set_entity(mut self, input: ::std::option::Option<crate::types::Entity>) -> Self {
+        self.inner = self.inner.set_entity(input);
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn get_entity(&self) -> &::std::option::Option<crate::types::Entity> {
+        self.inner.get_entity()
+    }
 }

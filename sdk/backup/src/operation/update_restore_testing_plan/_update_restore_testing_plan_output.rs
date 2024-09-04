@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRestoreTestingPlanOutput {
-    /// <p>This is the time the resource testing plan was created.</p>
+    /// <p>The time the resource testing plan was created.</p>
     pub creation_time: ::aws_smithy_types::DateTime,
     /// <p>Unique ARN (Amazon Resource Name) of the restore testing plan.</p>
     pub restore_testing_plan_arn: ::std::string::String,
     /// <p>The name cannot be changed after creation. The name consists of only alphanumeric characters and underscores. Maximum length is 50.</p>
     pub restore_testing_plan_name: ::std::string::String,
-    /// <p>This is the time the update completed for the restore testing plan.</p>
+    /// <p>The time the update completed for the restore testing plan.</p>
     pub update_time: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
 impl UpdateRestoreTestingPlanOutput {
-    /// <p>This is the time the resource testing plan was created.</p>
+    /// <p>The time the resource testing plan was created.</p>
     pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
         &self.creation_time
     }
@@ -28,7 +28,7 @@ impl UpdateRestoreTestingPlanOutput {
         use std::ops::Deref;
         self.restore_testing_plan_name.deref()
     }
-    /// <p>This is the time the update completed for the restore testing plan.</p>
+    /// <p>The time the update completed for the restore testing plan.</p>
     pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
         &self.update_time
     }
@@ -56,18 +56,18 @@ pub struct UpdateRestoreTestingPlanOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateRestoreTestingPlanOutputBuilder {
-    /// <p>This is the time the resource testing plan was created.</p>
+    /// <p>The time the resource testing plan was created.</p>
     /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>This is the time the resource testing plan was created.</p>
+    /// <p>The time the resource testing plan was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
-    /// <p>This is the time the resource testing plan was created.</p>
+    /// <p>The time the resource testing plan was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
@@ -101,18 +101,18 @@ impl UpdateRestoreTestingPlanOutputBuilder {
     pub fn get_restore_testing_plan_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.restore_testing_plan_name
     }
-    /// <p>This is the time the update completed for the restore testing plan.</p>
+    /// <p>The time the update completed for the restore testing plan.</p>
     /// This field is required.
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>This is the time the update completed for the restore testing plan.</p>
+    /// <p>The time the update completed for the restore testing plan.</p>
     pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_time = input;
         self
     }
-    /// <p>This is the time the update completed for the restore testing plan.</p>
+    /// <p>The time the update completed for the restore testing plan.</p>
     pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.update_time
     }

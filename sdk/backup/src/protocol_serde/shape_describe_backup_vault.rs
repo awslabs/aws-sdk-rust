@@ -188,6 +188,13 @@ pub(crate) fn de_describe_backup_vault(
                             .transpose()?,
                     );
                 }
+                "VaultState" => {
+                    builder = builder.set_vault_state(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::VaultState::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "VaultType" => {
                     builder = builder.set_vault_type(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

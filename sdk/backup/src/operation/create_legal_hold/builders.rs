@@ -22,7 +22,7 @@ impl crate::operation::create_legal_hold::builders::CreateLegalHoldInputBuilder 
 }
 /// Fluent builder constructing a request to `CreateLegalHold`.
 ///
-/// <p>This action creates a legal hold on a recovery point (backup). A legal hold is a restraint on altering or deleting a backup until an authorized user cancels the legal hold. Any actions to delete or disassociate a recovery point will fail with an error if one or more active legal holds are on the recovery point.</p>
+/// <p>Creates a legal hold on a recovery point (backup). A legal hold is a restraint on altering or deleting a backup until an authorized user cancels the legal hold. Any actions to delete or disassociate a recovery point will fail with an error if one or more active legal holds are on the recovery point.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateLegalHoldFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl CreateLegalHoldFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>This is the string title of the legal hold.</p>
+    /// <p>The title of the legal hold.</p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.title(input.into());
         self
     }
-    /// <p>This is the string title of the legal hold.</p>
+    /// <p>The title of the legal hold.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_title(input);
         self
     }
-    /// <p>This is the string title of the legal hold.</p>
+    /// <p>The title of the legal hold.</p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_title()
     }
-    /// <p>This is the string description of the legal hold.</p>
+    /// <p>The description of the legal hold.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>This is the string description of the legal hold.</p>
+    /// <p>The description of the legal hold.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>This is the string description of the legal hold.</p>
+    /// <p>The description of the legal hold.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
@@ -150,17 +150,17 @@ impl CreateLegalHoldFluentBuilder {
     pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_idempotency_token()
     }
-    /// <p>This specifies criteria to assign a set of resources, such as resource types or backup vaults.</p>
+    /// <p>The criteria to assign a set of resources, such as resource types or backup vaults.</p>
     pub fn recovery_point_selection(mut self, input: crate::types::RecoveryPointSelection) -> Self {
         self.inner = self.inner.recovery_point_selection(input);
         self
     }
-    /// <p>This specifies criteria to assign a set of resources, such as resource types or backup vaults.</p>
+    /// <p>The criteria to assign a set of resources, such as resource types or backup vaults.</p>
     pub fn set_recovery_point_selection(mut self, input: ::std::option::Option<crate::types::RecoveryPointSelection>) -> Self {
         self.inner = self.inner.set_recovery_point_selection(input);
         self
     }
-    /// <p>This specifies criteria to assign a set of resources, such as resource types or backup vaults.</p>
+    /// <p>The criteria to assign a set of resources, such as resource types or backup vaults.</p>
     pub fn get_recovery_point_selection(&self) -> &::std::option::Option<crate::types::RecoveryPointSelection> {
         self.inner.get_recovery_point_selection()
     }
