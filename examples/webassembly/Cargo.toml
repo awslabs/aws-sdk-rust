@@ -24,7 +24,7 @@ tracing-wasm = "0.2.1"
 tracing = "0.1.37"
 aws-config= { version = "1.5.5", path = "../../sdk/aws-config", default-features = false }
 aws-credential-types= { version = "1.2.1", path = "../../sdk/aws-credential-types", features = ["hardcoded-credentials"] }
-aws-sdk-lambda= { version = "1.43.0", path = "../../sdk/lambda", default-features = false }
+aws-sdk-lambda= { version = "1.44.0", path = "../../sdk/lambda", default-features = false }
 aws-smithy-async= { version = "1.2.1", path = "../../sdk/aws-smithy-async" }
 aws-smithy-runtime-api= { version = "1.7.2", path = "../../sdk/aws-smithy-runtime-api" }
 aws-smithy-types= { version = "1.2.4", path = "../../sdk/aws-smithy-types" }

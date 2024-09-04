@@ -31,7 +31,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-pinpointsmsvoice = "1.40.0"
+//! aws-sdk-pinpointsmsvoice = "1.41.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
