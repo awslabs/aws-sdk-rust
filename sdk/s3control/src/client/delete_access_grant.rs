@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteAccessGrant`](crate::operation::delete_access_grant::builders::DeleteAccessGrantFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::operation::delete_access_grant::builders::DeleteAccessGrantFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::delete_access_grant::builders::DeleteAccessGrantFluentBuilder::set_account_id):<br>required: **true**<br><p>The ID of the Amazon Web Services account that is making this request.</p><br>
+    ///   - [`account_id(impl Into<String>)`](crate::operation::delete_access_grant::builders::DeleteAccessGrantFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::delete_access_grant::builders::DeleteAccessGrantFluentBuilder::set_account_id):<br>required: **true**<br><p>The Amazon Web Services account ID of the S3 Access Grants instance.</p><br>
     ///   - [`access_grant_id(impl Into<String>)`](crate::operation::delete_access_grant::builders::DeleteAccessGrantFluentBuilder::access_grant_id) / [`set_access_grant_id(Option<String>)`](crate::operation::delete_access_grant::builders::DeleteAccessGrantFluentBuilder::set_access_grant_id):<br>required: **true**<br><p>The ID of the access grant. S3 Access Grants auto-generates this ID when you create the access grant.</p><br>
     /// - On success, responds with [`DeleteAccessGrantOutput`](crate::operation::delete_access_grant::DeleteAccessGrantOutput)
     /// - On failure, responds with [`SdkError<DeleteAccessGrantError>`](crate::operation::delete_access_grant::DeleteAccessGrantError)

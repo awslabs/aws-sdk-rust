@@ -139,6 +139,8 @@ pub use crate::types::_job_progress_summary::JobProgressSummaryBuilder;
 
 pub use crate::types::_job_timers::JobTimersBuilder;
 
+pub use crate::types::_list_caller_access_grants_entry::ListCallerAccessGrantsEntryBuilder;
+
 pub use crate::types::_object_lambda_access_point::ObjectLambdaAccessPointBuilder;
 
 pub use crate::types::_object_lambda_access_point_alias::ObjectLambdaAccessPointAliasBuilder;

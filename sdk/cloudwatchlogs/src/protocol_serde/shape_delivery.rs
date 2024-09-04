@@ -49,6 +49,21 @@ where
                                     .transpose()?,
                             );
                         }
+                        "recordFields" => {
+                            builder = builder.set_record_fields(crate::protocol_serde::shape_record_fields::de_record_fields(tokens)?);
+                        }
+                        "fieldDelimiter" => {
+                            builder = builder.set_field_delimiter(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "s3DeliveryConfiguration" => {
+                            builder = builder.set_s3_delivery_configuration(
+                                crate::protocol_serde::shape_s3_delivery_configuration::de_s3_delivery_configuration(tokens)?,
+                            );
+                        }
                         "tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens)?);
                         }

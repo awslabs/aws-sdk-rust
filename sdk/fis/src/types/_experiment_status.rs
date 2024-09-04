@@ -12,6 +12,7 @@
 /// ```text
 /// # let experimentstatus = unimplemented!();
 /// match experimentstatus {
+///     ExperimentStatus::Cancelled => { /* ... */ },
 ///     ExperimentStatus::Completed => { /* ... */ },
 ///     ExperimentStatus::Failed => { /* ... */ },
 ///     ExperimentStatus::Initiating => { /* ... */ },
@@ -47,6 +48,8 @@
 )]
 pub enum ExperimentStatus {
     #[allow(missing_docs)] // documentation missing in model
+    Cancelled,
+    #[allow(missing_docs)] // documentation missing in model
     Completed,
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -67,6 +70,7 @@ pub enum ExperimentStatus {
 impl ::std::convert::From<&str> for ExperimentStatus {
     fn from(s: &str) -> Self {
         match s {
+            "cancelled" => ExperimentStatus::Cancelled,
             "completed" => ExperimentStatus::Completed,
             "failed" => ExperimentStatus::Failed,
             "initiating" => ExperimentStatus::Initiating,
@@ -89,6 +93,7 @@ impl ExperimentStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ExperimentStatus::Cancelled => "cancelled",
             ExperimentStatus::Completed => "completed",
             ExperimentStatus::Failed => "failed",
             ExperimentStatus::Initiating => "initiating",
@@ -101,7 +106,16 @@ impl ExperimentStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["completed", "failed", "initiating", "pending", "running", "stopped", "stopping"]
+        &[
+            "cancelled",
+            "completed",
+            "failed",
+            "initiating",
+            "pending",
+            "running",
+            "stopped",
+            "stopping",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for ExperimentStatus {
@@ -124,6 +138,7 @@ impl ExperimentStatus {
 impl ::std::fmt::Display for ExperimentStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ExperimentStatus::Cancelled => write!(f, "cancelled"),
             ExperimentStatus::Completed => write!(f, "completed"),
             ExperimentStatus::Failed => write!(f, "failed"),
             ExperimentStatus::Initiating => write!(f, "initiating"),

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetAccessGrant`](crate::operation::get_access_grant::builders::GetAccessGrantFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::operation::get_access_grant::builders::GetAccessGrantFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::get_access_grant::builders::GetAccessGrantFluentBuilder::set_account_id):<br>required: **true**<br><p>The ID of the Amazon Web Services account that is making this request.</p><br>
+    ///   - [`account_id(impl Into<String>)`](crate::operation::get_access_grant::builders::GetAccessGrantFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::get_access_grant::builders::GetAccessGrantFluentBuilder::set_account_id):<br>required: **true**<br><p>The Amazon Web Services account ID of the S3 Access Grants instance.</p><br>
     ///   - [`access_grant_id(impl Into<String>)`](crate::operation::get_access_grant::builders::GetAccessGrantFluentBuilder::access_grant_id) / [`set_access_grant_id(Option<String>)`](crate::operation::get_access_grant::builders::GetAccessGrantFluentBuilder::set_access_grant_id):<br>required: **true**<br><p>The ID of the access grant. S3 Access Grants auto-generates this ID when you create the access grant.</p><br>
     /// - On success, responds with [`GetAccessGrantOutput`](crate::operation::get_access_grant::GetAccessGrantOutput) with field(s):
     ///   - [`created_at(Option<DateTime>)`](crate::operation::get_access_grant::GetAccessGrantOutput::created_at): <p>The date and time when you created the access grant.</p>

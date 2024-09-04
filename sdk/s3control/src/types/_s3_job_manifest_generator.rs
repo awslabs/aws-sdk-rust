@@ -6,7 +6,7 @@
 pub struct S3JobManifestGenerator {
     /// <p>The Amazon Web Services account ID that owns the bucket the generated manifest is written to. If provided the generated manifest bucket's owner Amazon Web Services account ID must match this value, else the job fails.</p>
     pub expected_bucket_owner: ::std::option::Option<::std::string::String>,
-    /// <p>The source bucket used by the ManifestGenerator.</p><note>
+    /// <p>The ARN of the source bucket used by the ManifestGenerator.</p><note>
     /// <p><b>Directory buckets</b> - Directory buckets aren't supported as the source buckets used by <code>S3JobManifestGenerator</code> to generate the job manifest.</p>
     /// </note>
     pub source_bucket: ::std::string::String,
@@ -22,7 +22,7 @@ impl S3JobManifestGenerator {
     pub fn expected_bucket_owner(&self) -> ::std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
-    /// <p>The source bucket used by the ManifestGenerator.</p><note>
+    /// <p>The ARN of the source bucket used by the ManifestGenerator.</p><note>
     /// <p><b>Directory buckets</b> - Directory buckets aren't supported as the source buckets used by <code>S3JobManifestGenerator</code> to generate the job manifest.</p>
     /// </note>
     pub fn source_bucket(&self) -> &str {
@@ -74,7 +74,7 @@ impl S3JobManifestGeneratorBuilder {
     pub fn get_expected_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
         &self.expected_bucket_owner
     }
-    /// <p>The source bucket used by the ManifestGenerator.</p><note>
+    /// <p>The ARN of the source bucket used by the ManifestGenerator.</p><note>
     /// <p><b>Directory buckets</b> - Directory buckets aren't supported as the source buckets used by <code>S3JobManifestGenerator</code> to generate the job manifest.</p>
     /// </note>
     /// This field is required.
@@ -82,14 +82,14 @@ impl S3JobManifestGeneratorBuilder {
         self.source_bucket = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The source bucket used by the ManifestGenerator.</p><note>
+    /// <p>The ARN of the source bucket used by the ManifestGenerator.</p><note>
     /// <p><b>Directory buckets</b> - Directory buckets aren't supported as the source buckets used by <code>S3JobManifestGenerator</code> to generate the job manifest.</p>
     /// </note>
     pub fn set_source_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_bucket = input;
         self
     }
-    /// <p>The source bucket used by the ManifestGenerator.</p><note>
+    /// <p>The ARN of the source bucket used by the ManifestGenerator.</p><note>
     /// <p><b>Directory buckets</b> - Directory buckets aren't supported as the source buckets used by <code>S3JobManifestGenerator</code> to generate the job manifest.</p>
     /// </note>
     pub fn get_source_bucket(&self) -> &::std::option::Option<::std::string::String> {

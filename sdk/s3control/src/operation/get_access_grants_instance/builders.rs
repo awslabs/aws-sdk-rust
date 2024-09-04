@@ -30,7 +30,9 @@ impl crate::operation::get_access_grants_instance::builders::GetAccessGrantsInst
 /// <dd>
 /// <p>You must have the <code>s3:GetAccessGrantsInstance</code> permission to use this operation.</p>
 /// </dd>
-/// </dl>
+/// </dl><note>
+/// <p><code>GetAccessGrantsInstance</code> is not supported for cross-account access. You can only call the API from the account that owns the S3 Access Grants instance.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAccessGrantsInstanceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -116,17 +118,17 @@ impl GetAccessGrantsInstanceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the Amazon Web Services account that is making this request.</p>
+    /// <p>The Amazon Web Services account ID of the S3 Access Grants instance.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_id(input.into());
         self
     }
-    /// <p>The ID of the Amazon Web Services account that is making this request.</p>
+    /// <p>The Amazon Web Services account ID of the S3 Access Grants instance.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account_id(input);
         self
     }
-    /// <p>The ID of the Amazon Web Services account that is making this request.</p>
+    /// <p>The Amazon Web Services account ID of the S3 Access Grants instance.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_account_id()
     }

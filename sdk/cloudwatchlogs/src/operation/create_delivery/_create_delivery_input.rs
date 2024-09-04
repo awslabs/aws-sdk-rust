@@ -7,6 +7,12 @@ pub struct CreateDeliveryInput {
     pub delivery_source_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the delivery destination to use for this delivery.</p>
     pub delivery_destination_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The list of record fields to be delivered to the destination, in order. If the delivery’s log source has mandatory fields, they must be included in this list.</p>
+    pub record_fields: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The field delimiter to use between record fields when the final output format of a delivery is in <code>Plain</code>, <code>W3C</code>, or <code>Raw</code> format.</p>
+    pub field_delimiter: ::std::option::Option<::std::string::String>,
+    /// <p>This structure contains parameters that are valid only when the delivery’s delivery destination is an S3 bucket.</p>
+    pub s3_delivery_configuration: ::std::option::Option<crate::types::S3DeliveryConfiguration>,
     /// <p>An optional list of key-value pairs to associate with the resource.</p>
     /// <p>For more information about tagging, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a></p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -19,6 +25,20 @@ impl CreateDeliveryInput {
     /// <p>The ARN of the delivery destination to use for this delivery.</p>
     pub fn delivery_destination_arn(&self) -> ::std::option::Option<&str> {
         self.delivery_destination_arn.as_deref()
+    }
+    /// <p>The list of record fields to be delivered to the destination, in order. If the delivery’s log source has mandatory fields, they must be included in this list.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.record_fields.is_none()`.
+    pub fn record_fields(&self) -> &[::std::string::String] {
+        self.record_fields.as_deref().unwrap_or_default()
+    }
+    /// <p>The field delimiter to use between record fields when the final output format of a delivery is in <code>Plain</code>, <code>W3C</code>, or <code>Raw</code> format.</p>
+    pub fn field_delimiter(&self) -> ::std::option::Option<&str> {
+        self.field_delimiter.as_deref()
+    }
+    /// <p>This structure contains parameters that are valid only when the delivery’s delivery destination is an S3 bucket.</p>
+    pub fn s3_delivery_configuration(&self) -> ::std::option::Option<&crate::types::S3DeliveryConfiguration> {
+        self.s3_delivery_configuration.as_ref()
     }
     /// <p>An optional list of key-value pairs to associate with the resource.</p>
     /// <p>For more information about tagging, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a></p>
@@ -39,6 +59,9 @@ impl CreateDeliveryInput {
 pub struct CreateDeliveryInputBuilder {
     pub(crate) delivery_source_name: ::std::option::Option<::std::string::String>,
     pub(crate) delivery_destination_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) record_fields: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) field_delimiter: ::std::option::Option<::std::string::String>,
+    pub(crate) s3_delivery_configuration: ::std::option::Option<crate::types::S3DeliveryConfiguration>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateDeliveryInputBuilder {
@@ -72,6 +95,54 @@ impl CreateDeliveryInputBuilder {
     pub fn get_delivery_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.delivery_destination_arn
     }
+    /// Appends an item to `record_fields`.
+    ///
+    /// To override the contents of this collection use [`set_record_fields`](Self::set_record_fields).
+    ///
+    /// <p>The list of record fields to be delivered to the destination, in order. If the delivery’s log source has mandatory fields, they must be included in this list.</p>
+    pub fn record_fields(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.record_fields.unwrap_or_default();
+        v.push(input.into());
+        self.record_fields = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of record fields to be delivered to the destination, in order. If the delivery’s log source has mandatory fields, they must be included in this list.</p>
+    pub fn set_record_fields(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.record_fields = input;
+        self
+    }
+    /// <p>The list of record fields to be delivered to the destination, in order. If the delivery’s log source has mandatory fields, they must be included in this list.</p>
+    pub fn get_record_fields(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.record_fields
+    }
+    /// <p>The field delimiter to use between record fields when the final output format of a delivery is in <code>Plain</code>, <code>W3C</code>, or <code>Raw</code> format.</p>
+    pub fn field_delimiter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.field_delimiter = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The field delimiter to use between record fields when the final output format of a delivery is in <code>Plain</code>, <code>W3C</code>, or <code>Raw</code> format.</p>
+    pub fn set_field_delimiter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.field_delimiter = input;
+        self
+    }
+    /// <p>The field delimiter to use between record fields when the final output format of a delivery is in <code>Plain</code>, <code>W3C</code>, or <code>Raw</code> format.</p>
+    pub fn get_field_delimiter(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field_delimiter
+    }
+    /// <p>This structure contains parameters that are valid only when the delivery’s delivery destination is an S3 bucket.</p>
+    pub fn s3_delivery_configuration(mut self, input: crate::types::S3DeliveryConfiguration) -> Self {
+        self.s3_delivery_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>This structure contains parameters that are valid only when the delivery’s delivery destination is an S3 bucket.</p>
+    pub fn set_s3_delivery_configuration(mut self, input: ::std::option::Option<crate::types::S3DeliveryConfiguration>) -> Self {
+        self.s3_delivery_configuration = input;
+        self
+    }
+    /// <p>This structure contains parameters that are valid only when the delivery’s delivery destination is an S3 bucket.</p>
+    pub fn get_s3_delivery_configuration(&self) -> &::std::option::Option<crate::types::S3DeliveryConfiguration> {
+        &self.s3_delivery_configuration
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -102,6 +173,9 @@ impl CreateDeliveryInputBuilder {
         ::std::result::Result::Ok(crate::operation::create_delivery::CreateDeliveryInput {
             delivery_source_name: self.delivery_source_name,
             delivery_destination_arn: self.delivery_destination_arn,
+            record_fields: self.record_fields,
+            field_delimiter: self.field_delimiter,
+            s3_delivery_configuration: self.s3_delivery_configuration,
             tags: self.tags,
         })
     }

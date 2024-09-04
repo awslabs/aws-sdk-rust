@@ -371,6 +371,8 @@ pub(crate) mod shape_prompt_configuration;
 
 pub(crate) mod shape_prompt_inference_configuration;
 
+pub(crate) mod shape_prompt_metadata_entry;
+
 pub(crate) mod shape_prompt_summary;
 
 pub(crate) mod shape_prompt_template_configuration;
@@ -434,6 +436,8 @@ pub(crate) mod shape_parameter_detail;
 pub(crate) mod shape_pinecone_field_mapping;
 
 pub(crate) mod shape_prompt_configurations;
+
+pub(crate) mod shape_prompt_metadata_list;
 
 pub(crate) mod shape_prompt_model_inference_configuration;
 

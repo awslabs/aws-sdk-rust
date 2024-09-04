@@ -293,6 +293,8 @@ mod list_access_points;
 
 mod list_access_points_for_object_lambda;
 
+mod list_caller_access_grants;
+
 mod list_jobs;
 
 mod list_multi_region_access_points;

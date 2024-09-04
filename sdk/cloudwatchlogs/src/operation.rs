@@ -70,6 +70,9 @@ pub mod delete_subscription_filter;
 /// Types for the `DescribeAccountPolicies` operation.
 pub mod describe_account_policies;
 
+/// Types for the `DescribeConfigurationTemplates` operation.
+pub mod describe_configuration_templates;
+
 /// Types for the `DescribeDeliveries` operation.
 pub mod describe_deliveries;
 
@@ -216,6 +219,9 @@ pub mod untag_resource;
 
 /// Types for the `UpdateAnomaly` operation.
 pub mod update_anomaly;
+
+/// Types for the `UpdateDeliveryConfiguration` operation.
+pub mod update_delivery_configuration;
 
 /// Types for the `UpdateLogAnomalyDetector` operation.
 pub mod update_log_anomaly_detector;

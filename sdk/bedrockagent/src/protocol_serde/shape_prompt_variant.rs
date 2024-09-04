@@ -24,6 +24,18 @@ pub fn ser_prompt_variant(
         crate::protocol_serde::shape_prompt_inference_configuration::ser_prompt_inference_configuration(&mut object_5, var_4)?;
         object_5.finish();
     }
+    if let Some(var_6) = &input.metadata {
+        let mut array_7 = object.key("metadata").start_array();
+        for item_8 in var_6 {
+            {
+                #[allow(unused_mut)]
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_prompt_metadata_entry::ser_prompt_metadata_entry(&mut object_9, item_8)?;
+                object_9.finish();
+            }
+        }
+        array_7.finish();
+    }
     Ok(())
 }
 
@@ -72,6 +84,9 @@ where
                             builder = builder.set_inference_configuration(
                                 crate::protocol_serde::shape_prompt_inference_configuration::de_prompt_inference_configuration(tokens)?,
                             );
+                        }
+                        "metadata" => {
+                            builder = builder.set_metadata(crate::protocol_serde::shape_prompt_metadata_list::de_prompt_metadata_list(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -39,6 +39,8 @@ pub(crate) mod shape_get_experiment_target_account_configuration;
 
 pub(crate) mod shape_get_experiment_template;
 
+pub(crate) mod shape_get_safety_lever;
+
 pub(crate) mod shape_get_target_account_configuration;
 
 pub(crate) mod shape_get_target_resource_type;
@@ -69,6 +71,8 @@ pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_experiment_template;
 
+pub(crate) mod shape_update_safety_lever_state;
+
 pub(crate) mod shape_update_target_account_configuration;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
@@ -94,6 +98,8 @@ pub(crate) mod shape_start_experiment_input;
 pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_update_experiment_template_input;
+
+pub(crate) mod shape_update_safety_lever_state_input;
 
 pub(crate) mod shape_update_target_account_configuration_input;
 
@@ -126,6 +132,8 @@ pub(crate) mod shape_experiment_template;
 pub(crate) mod shape_experiment_template_summary_list;
 
 pub(crate) mod shape_resolved_target_list;
+
+pub(crate) mod shape_safety_lever;
 
 pub(crate) mod shape_start_experiment_experiment_options_input;
 
@@ -190,6 +198,8 @@ pub(crate) mod shape_experiment_template_target_input_filter;
 pub(crate) mod shape_experiment_template_target_map;
 
 pub(crate) mod shape_resolved_target;
+
+pub(crate) mod shape_safety_lever_state;
 
 pub(crate) mod shape_target_account_configuration_summary;
 

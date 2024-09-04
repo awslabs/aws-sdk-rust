@@ -49,6 +49,16 @@ pub(crate) fn reflens_list_access_points_for_object_lambda_output_output_next_to
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_caller_access_grants_output_output_next_token(
+    input: &crate::operation::list_caller_access_grants::ListCallerAccessGrantsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_jobs_output_output_next_token(
     input: &crate::operation::list_jobs::ListJobsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -103,6 +113,16 @@ pub(crate) fn lens_list_access_points_for_object_lambda_output_output_object_lam
     input: crate::operation::list_access_points_for_object_lambda::ListAccessPointsForObjectLambdaOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ObjectLambdaAccessPoint>> {
     let input = match input.object_lambda_access_point_list {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_caller_access_grants_output_output_caller_access_grants_list(
+    input: crate::operation::list_caller_access_grants::ListCallerAccessGrantsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ListCallerAccessGrantsEntry>> {
+    let input = match input.caller_access_grants_list {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

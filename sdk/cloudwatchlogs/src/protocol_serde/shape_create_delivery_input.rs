@@ -9,15 +9,33 @@ pub fn ser_create_delivery_input_input(
     if let Some(var_2) = &input.delivery_destination_arn {
         object.key("deliveryDestinationArn").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.tags {
-        #[allow(unused_mut)]
-        let mut object_4 = object.key("tags").start_object();
-        for (key_5, value_6) in var_3 {
+    if let Some(var_3) = &input.record_fields {
+        let mut array_4 = object.key("recordFields").start_array();
+        for item_5 in var_3 {
             {
-                object_4.key(key_5.as_str()).string(value_6.as_str());
+                array_4.value().string(item_5.as_str());
             }
         }
-        object_4.finish();
+        array_4.finish();
+    }
+    if let Some(var_6) = &input.field_delimiter {
+        object.key("fieldDelimiter").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.s3_delivery_configuration {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("s3DeliveryConfiguration").start_object();
+        crate::protocol_serde::shape_s3_delivery_configuration::ser_s3_delivery_configuration(&mut object_8, var_7)?;
+        object_8.finish();
+    }
+    if let Some(var_9) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("tags").start_object();
+        for (key_11, value_12) in var_9 {
+            {
+                object_10.key(key_11.as_str()).string(value_12.as_str());
+            }
+        }
+        object_10.finish();
     }
     Ok(())
 }

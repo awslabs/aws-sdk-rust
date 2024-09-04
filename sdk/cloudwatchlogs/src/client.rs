@@ -209,6 +209,8 @@ mod delete_subscription_filter;
 
 mod describe_account_policies;
 
+mod describe_configuration_templates;
+
 mod describe_deliveries;
 
 mod describe_delivery_destinations;
@@ -306,5 +308,7 @@ mod untag_log_group;
 mod untag_resource;
 
 mod update_anomaly;
+
+mod update_delivery_configuration;
 
 mod update_log_anomaly_detector;

@@ -25,6 +25,9 @@ pub mod get_experiment_target_account_configuration;
 /// Types for the `GetExperimentTemplate` operation.
 pub mod get_experiment_template;
 
+/// Types for the `GetSafetyLever` operation.
+pub mod get_safety_lever;
+
 /// Types for the `GetTargetAccountConfiguration` operation.
 pub mod get_target_account_configuration;
 
@@ -69,6 +72,9 @@ pub mod untag_resource;
 
 /// Types for the `UpdateExperimentTemplate` operation.
 pub mod update_experiment_template;
+
+/// Types for the `UpdateSafetyLeverState` operation.
+pub mod update_safety_lever_state;
 
 /// Types for the `UpdateTargetAccountConfiguration` operation.
 pub mod update_target_account_configuration;

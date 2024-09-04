@@ -94,7 +94,7 @@ pub fn de_create_access_grants_instance(
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
-            s if s.matches("AccessGrantsInstanceArn") /* AccessGrantsInstanceArn com.amazonaws.s3control.synthetic#CreateAccessGrantsInstanceOutput$AccessGrantsInstanceArn */ =>  {
+            s if s.matches("IdentityCenterApplicationArn") /* IdentityCenterApplicationArn com.amazonaws.s3control.synthetic#CreateAccessGrantsInstanceOutput$IdentityCenterApplicationArn */ =>  {
                 let var_3 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -104,10 +104,10 @@ pub fn de_create_access_grants_instance(
                         ?
                     )
                 ;
-                builder = builder.set_access_grants_instance_arn(var_3);
+                builder = builder.set_identity_center_application_arn(var_3);
             }
             ,
-            s if s.matches("IdentityCenterArn") /* IdentityCenterArn com.amazonaws.s3control.synthetic#CreateAccessGrantsInstanceOutput$IdentityCenterArn */ =>  {
+            s if s.matches("AccessGrantsInstanceArn") /* AccessGrantsInstanceArn com.amazonaws.s3control.synthetic#CreateAccessGrantsInstanceOutput$AccessGrantsInstanceArn */ =>  {
                 let var_4 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -117,24 +117,23 @@ pub fn de_create_access_grants_instance(
                         ?
                     )
                 ;
-                builder = builder.set_identity_center_arn(var_4);
+                builder = builder.set_access_grants_instance_arn(var_4);
             }
             ,
-            s if s.matches("CreatedAt") /* CreatedAt com.amazonaws.s3control.synthetic#CreateAccessGrantsInstanceOutput$CreatedAt */ =>  {
+            s if s.matches("IdentityCenterInstanceArn") /* IdentityCenterInstanceArn com.amazonaws.s3control.synthetic#CreateAccessGrantsInstanceOutput$IdentityCenterInstanceArn */ =>  {
                 let var_5 =
                     Some(
-                        ::aws_smithy_types::DateTime::from_str(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , ::aws_smithy_types::date_time::Format::DateTimeWithOffset
+                            .into()
                         )
-                        .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.s3control#CreationTimestamp`)"))
                         ?
                     )
                 ;
-                builder = builder.set_created_at(var_5);
+                builder = builder.set_identity_center_instance_arn(var_5);
             }
             ,
-            s if s.matches("AccessGrantsInstanceId") /* AccessGrantsInstanceId com.amazonaws.s3control.synthetic#CreateAccessGrantsInstanceOutput$AccessGrantsInstanceId */ =>  {
+            s if s.matches("IdentityCenterArn") /* IdentityCenterArn com.amazonaws.s3control.synthetic#CreateAccessGrantsInstanceOutput$IdentityCenterArn */ =>  {
                 let var_6 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -144,7 +143,34 @@ pub fn de_create_access_grants_instance(
                         ?
                     )
                 ;
-                builder = builder.set_access_grants_instance_id(var_6);
+                builder = builder.set_identity_center_arn(var_6);
+            }
+            ,
+            s if s.matches("CreatedAt") /* CreatedAt com.amazonaws.s3control.synthetic#CreateAccessGrantsInstanceOutput$CreatedAt */ =>  {
+                let var_7 =
+                    Some(
+                        ::aws_smithy_types::DateTime::from_str(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , ::aws_smithy_types::date_time::Format::DateTimeWithOffset
+                        )
+                        .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.s3control#CreationTimestamp`)"))
+                        ?
+                    )
+                ;
+                builder = builder.set_created_at(var_7);
+            }
+            ,
+            s if s.matches("AccessGrantsInstanceId") /* AccessGrantsInstanceId com.amazonaws.s3control.synthetic#CreateAccessGrantsInstanceOutput$AccessGrantsInstanceId */ =>  {
+                let var_8 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_access_grants_instance_id(var_8);
             }
             ,
             _ => {}

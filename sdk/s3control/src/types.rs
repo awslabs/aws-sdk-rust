@@ -183,6 +183,10 @@ pub use crate::types::_job_timers::JobTimers;
 
 pub use crate::types::_operation_name::OperationName;
 
+pub use crate::types::_list_caller_access_grants_entry::ListCallerAccessGrantsEntry;
+
+pub use crate::types::_permission::Permission;
+
 pub use crate::types::_object_lambda_access_point::ObjectLambdaAccessPoint;
 
 pub use crate::types::_object_lambda_access_point_alias::ObjectLambdaAccessPointAlias;
@@ -202,8 +206,6 @@ pub use crate::types::_list_access_grants_instance_entry::ListAccessGrantsInstan
 pub use crate::types::_list_access_grant_entry::ListAccessGrantEntry;
 
 pub use crate::types::_access_grants_location_configuration::AccessGrantsLocationConfiguration;
-
-pub use crate::types::_permission::Permission;
 
 pub use crate::types::_grantee::Grantee;
 
@@ -482,6 +484,8 @@ mod _list_access_grant_entry;
 mod _list_access_grants_instance_entry;
 
 mod _list_access_grants_locations_entry;
+
+mod _list_caller_access_grants_entry;
 
 mod _list_storage_lens_configuration_entry;
 

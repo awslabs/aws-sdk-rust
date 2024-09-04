@@ -14,6 +14,8 @@ pub struct PromptVariant {
     pub model_id: ::std::option::Option<::std::string::String>,
     /// <p>Contains inference configurations for the prompt variant.</p>
     pub inference_configuration: ::std::option::Option<crate::types::PromptInferenceConfiguration>,
+    /// <p>An array of objects, each containing a key-value pair that defines a metadata tag and value to attach to a prompt variant. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-create.html">Create a prompt using Prompt management</a>.</p>
+    pub metadata: ::std::option::Option<::std::vec::Vec<crate::types::PromptMetadataEntry>>,
 }
 impl PromptVariant {
     /// <p>The name of the prompt variant.</p>
@@ -37,6 +39,12 @@ impl PromptVariant {
     pub fn inference_configuration(&self) -> ::std::option::Option<&crate::types::PromptInferenceConfiguration> {
         self.inference_configuration.as_ref()
     }
+    /// <p>An array of objects, each containing a key-value pair that defines a metadata tag and value to attach to a prompt variant. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-create.html">Create a prompt using Prompt management</a>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metadata.is_none()`.
+    pub fn metadata(&self) -> &[crate::types::PromptMetadataEntry] {
+        self.metadata.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for PromptVariant {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -46,6 +54,7 @@ impl ::std::fmt::Debug for PromptVariant {
         formatter.field("template_configuration", &"*** Sensitive Data Redacted ***");
         formatter.field("model_id", &"*** Sensitive Data Redacted ***");
         formatter.field("inference_configuration", &"*** Sensitive Data Redacted ***");
+        formatter.field("metadata", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -65,6 +74,7 @@ pub struct PromptVariantBuilder {
     pub(crate) template_configuration: ::std::option::Option<crate::types::PromptTemplateConfiguration>,
     pub(crate) model_id: ::std::option::Option<::std::string::String>,
     pub(crate) inference_configuration: ::std::option::Option<crate::types::PromptInferenceConfiguration>,
+    pub(crate) metadata: ::std::option::Option<::std::vec::Vec<crate::types::PromptMetadataEntry>>,
 }
 impl PromptVariantBuilder {
     /// <p>The name of the prompt variant.</p>
@@ -139,6 +149,26 @@ impl PromptVariantBuilder {
     pub fn get_inference_configuration(&self) -> &::std::option::Option<crate::types::PromptInferenceConfiguration> {
         &self.inference_configuration
     }
+    /// Appends an item to `metadata`.
+    ///
+    /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
+    ///
+    /// <p>An array of objects, each containing a key-value pair that defines a metadata tag and value to attach to a prompt variant. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-create.html">Create a prompt using Prompt management</a>.</p>
+    pub fn metadata(mut self, input: crate::types::PromptMetadataEntry) -> Self {
+        let mut v = self.metadata.unwrap_or_default();
+        v.push(input);
+        self.metadata = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>An array of objects, each containing a key-value pair that defines a metadata tag and value to attach to a prompt variant. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-create.html">Create a prompt using Prompt management</a>.</p>
+    pub fn set_metadata(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PromptMetadataEntry>>) -> Self {
+        self.metadata = input;
+        self
+    }
+    /// <p>An array of objects, each containing a key-value pair that defines a metadata tag and value to attach to a prompt variant. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-create.html">Create a prompt using Prompt management</a>.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PromptMetadataEntry>> {
+        &self.metadata
+    }
     /// Consumes the builder and constructs a [`PromptVariant`](crate::types::PromptVariant).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::PromptVariantBuilder::name)
@@ -160,6 +190,7 @@ impl PromptVariantBuilder {
             template_configuration: self.template_configuration,
             model_id: self.model_id,
             inference_configuration: self.inference_configuration,
+            metadata: self.metadata,
         })
     }
 }
@@ -171,6 +202,7 @@ impl ::std::fmt::Debug for PromptVariantBuilder {
         formatter.field("template_configuration", &"*** Sensitive Data Redacted ***");
         formatter.field("model_id", &"*** Sensitive Data Redacted ***");
         formatter.field("inference_configuration", &"*** Sensitive Data Redacted ***");
+        formatter.field("metadata", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

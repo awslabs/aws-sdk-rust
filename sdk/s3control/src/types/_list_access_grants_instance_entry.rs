@@ -11,7 +11,12 @@ pub struct ListAccessGrantsInstanceEntry {
     /// <p>The date and time when you created the S3 Access Grants instance.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If you associated your S3 Access Grants instance with an Amazon Web Services IAM Identity Center instance, this field returns the Amazon Resource Name (ARN) of the IAM Identity Center instance application; a subresource of the original Identity Center instance. S3 Access Grants creates this Identity Center application for the specific S3 Access Grants instance.</p>
+    #[deprecated(note = "IdentityCenterArn has been deprecated. Use IdentityCenterInstanceArn or IdentityCenterApplicationArn.")]
     pub identity_center_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services IAM Identity Center instance that you are associating with your S3 Access Grants instance. An IAM Identity Center instance is your corporate identity directory that you added to the IAM Identity Center. You can use the <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListInstances.html">ListInstances</a> API operation to retrieve a list of your Identity Center instances and their ARNs.</p>
+    pub identity_center_instance_arn: ::std::option::Option<::std::string::String>,
+    /// <p>If you associated your S3 Access Grants instance with an Amazon Web Services IAM Identity Center instance, this field returns the Amazon Resource Name (ARN) of the IAM Identity Center instance application; a subresource of the original Identity Center instance. S3 Access Grants creates this Identity Center application for the specific S3 Access Grants instance.</p>
+    pub identity_center_application_arn: ::std::option::Option<::std::string::String>,
 }
 impl ListAccessGrantsInstanceEntry {
     /// <p>The ID of the S3 Access Grants instance. The ID is <code>default</code>. You can have one S3 Access Grants instance per Region per account.</p>
@@ -27,8 +32,17 @@ impl ListAccessGrantsInstanceEntry {
         self.created_at.as_ref()
     }
     /// <p>If you associated your S3 Access Grants instance with an Amazon Web Services IAM Identity Center instance, this field returns the Amazon Resource Name (ARN) of the IAM Identity Center instance application; a subresource of the original Identity Center instance. S3 Access Grants creates this Identity Center application for the specific S3 Access Grants instance.</p>
+    #[deprecated(note = "IdentityCenterArn has been deprecated. Use IdentityCenterInstanceArn or IdentityCenterApplicationArn.")]
     pub fn identity_center_arn(&self) -> ::std::option::Option<&str> {
         self.identity_center_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services IAM Identity Center instance that you are associating with your S3 Access Grants instance. An IAM Identity Center instance is your corporate identity directory that you added to the IAM Identity Center. You can use the <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListInstances.html">ListInstances</a> API operation to retrieve a list of your Identity Center instances and their ARNs.</p>
+    pub fn identity_center_instance_arn(&self) -> ::std::option::Option<&str> {
+        self.identity_center_instance_arn.as_deref()
+    }
+    /// <p>If you associated your S3 Access Grants instance with an Amazon Web Services IAM Identity Center instance, this field returns the Amazon Resource Name (ARN) of the IAM Identity Center instance application; a subresource of the original Identity Center instance. S3 Access Grants creates this Identity Center application for the specific S3 Access Grants instance.</p>
+    pub fn identity_center_application_arn(&self) -> ::std::option::Option<&str> {
+        self.identity_center_application_arn.as_deref()
     }
 }
 impl ListAccessGrantsInstanceEntry {
@@ -46,6 +60,8 @@ pub struct ListAccessGrantsInstanceEntryBuilder {
     pub(crate) access_grants_instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) identity_center_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) identity_center_instance_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) identity_center_application_arn: ::std::option::Option<::std::string::String>,
 }
 impl ListAccessGrantsInstanceEntryBuilder {
     /// <p>The ID of the S3 Access Grants instance. The ID is <code>default</code>. You can have one S3 Access Grants instance per Region per account.</p>
@@ -91,18 +107,49 @@ impl ListAccessGrantsInstanceEntryBuilder {
         &self.created_at
     }
     /// <p>If you associated your S3 Access Grants instance with an Amazon Web Services IAM Identity Center instance, this field returns the Amazon Resource Name (ARN) of the IAM Identity Center instance application; a subresource of the original Identity Center instance. S3 Access Grants creates this Identity Center application for the specific S3 Access Grants instance.</p>
+    #[deprecated(note = "IdentityCenterArn has been deprecated. Use IdentityCenterInstanceArn or IdentityCenterApplicationArn.")]
     pub fn identity_center_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_center_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If you associated your S3 Access Grants instance with an Amazon Web Services IAM Identity Center instance, this field returns the Amazon Resource Name (ARN) of the IAM Identity Center instance application; a subresource of the original Identity Center instance. S3 Access Grants creates this Identity Center application for the specific S3 Access Grants instance.</p>
+    #[deprecated(note = "IdentityCenterArn has been deprecated. Use IdentityCenterInstanceArn or IdentityCenterApplicationArn.")]
     pub fn set_identity_center_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_center_arn = input;
         self
     }
     /// <p>If you associated your S3 Access Grants instance with an Amazon Web Services IAM Identity Center instance, this field returns the Amazon Resource Name (ARN) of the IAM Identity Center instance application; a subresource of the original Identity Center instance. S3 Access Grants creates this Identity Center application for the specific S3 Access Grants instance.</p>
+    #[deprecated(note = "IdentityCenterArn has been deprecated. Use IdentityCenterInstanceArn or IdentityCenterApplicationArn.")]
     pub fn get_identity_center_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.identity_center_arn
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services IAM Identity Center instance that you are associating with your S3 Access Grants instance. An IAM Identity Center instance is your corporate identity directory that you added to the IAM Identity Center. You can use the <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListInstances.html">ListInstances</a> API operation to retrieve a list of your Identity Center instances and their ARNs.</p>
+    pub fn identity_center_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.identity_center_instance_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services IAM Identity Center instance that you are associating with your S3 Access Grants instance. An IAM Identity Center instance is your corporate identity directory that you added to the IAM Identity Center. You can use the <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListInstances.html">ListInstances</a> API operation to retrieve a list of your Identity Center instances and their ARNs.</p>
+    pub fn set_identity_center_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.identity_center_instance_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services IAM Identity Center instance that you are associating with your S3 Access Grants instance. An IAM Identity Center instance is your corporate identity directory that you added to the IAM Identity Center. You can use the <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListInstances.html">ListInstances</a> API operation to retrieve a list of your Identity Center instances and their ARNs.</p>
+    pub fn get_identity_center_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_center_instance_arn
+    }
+    /// <p>If you associated your S3 Access Grants instance with an Amazon Web Services IAM Identity Center instance, this field returns the Amazon Resource Name (ARN) of the IAM Identity Center instance application; a subresource of the original Identity Center instance. S3 Access Grants creates this Identity Center application for the specific S3 Access Grants instance.</p>
+    pub fn identity_center_application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.identity_center_application_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>If you associated your S3 Access Grants instance with an Amazon Web Services IAM Identity Center instance, this field returns the Amazon Resource Name (ARN) of the IAM Identity Center instance application; a subresource of the original Identity Center instance. S3 Access Grants creates this Identity Center application for the specific S3 Access Grants instance.</p>
+    pub fn set_identity_center_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.identity_center_application_arn = input;
+        self
+    }
+    /// <p>If you associated your S3 Access Grants instance with an Amazon Web Services IAM Identity Center instance, this field returns the Amazon Resource Name (ARN) of the IAM Identity Center instance application; a subresource of the original Identity Center instance. S3 Access Grants creates this Identity Center application for the specific S3 Access Grants instance.</p>
+    pub fn get_identity_center_application_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_center_application_arn
     }
     /// Consumes the builder and constructs a [`ListAccessGrantsInstanceEntry`](crate::types::ListAccessGrantsInstanceEntry).
     pub fn build(self) -> crate::types::ListAccessGrantsInstanceEntry {
@@ -111,6 +158,8 @@ impl ListAccessGrantsInstanceEntryBuilder {
             access_grants_instance_arn: self.access_grants_instance_arn,
             created_at: self.created_at,
             identity_center_arn: self.identity_center_arn,
+            identity_center_instance_arn: self.identity_center_instance_arn,
+            identity_center_application_arn: self.identity_center_application_arn,
         }
     }
 }

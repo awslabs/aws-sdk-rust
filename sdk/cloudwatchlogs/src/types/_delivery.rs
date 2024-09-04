@@ -17,6 +17,12 @@ pub struct Delivery {
     pub delivery_destination_arn: ::std::option::Option<::std::string::String>,
     /// <p>Displays whether the delivery destination associated with this delivery is CloudWatch Logs, Amazon S3, or Firehose.</p>
     pub delivery_destination_type: ::std::option::Option<crate::types::DeliveryDestinationType>,
+    /// <p>The record fields used in this delivery.</p>
+    pub record_fields: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The field delimiter that is used between record fields when the final output format of a delivery is in <code>Plain</code>, <code>W3C</code>, or <code>Raw</code> format.</p>
+    pub field_delimiter: ::std::option::Option<::std::string::String>,
+    /// <p>This structure contains delivery configurations that apply only when the delivery destination resource is an S3 bucket.</p>
+    pub s3_delivery_configuration: ::std::option::Option<crate::types::S3DeliveryConfiguration>,
     /// <p>The tags that have been assigned to this delivery.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -41,6 +47,20 @@ impl Delivery {
     pub fn delivery_destination_type(&self) -> ::std::option::Option<&crate::types::DeliveryDestinationType> {
         self.delivery_destination_type.as_ref()
     }
+    /// <p>The record fields used in this delivery.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.record_fields.is_none()`.
+    pub fn record_fields(&self) -> &[::std::string::String] {
+        self.record_fields.as_deref().unwrap_or_default()
+    }
+    /// <p>The field delimiter that is used between record fields when the final output format of a delivery is in <code>Plain</code>, <code>W3C</code>, or <code>Raw</code> format.</p>
+    pub fn field_delimiter(&self) -> ::std::option::Option<&str> {
+        self.field_delimiter.as_deref()
+    }
+    /// <p>This structure contains delivery configurations that apply only when the delivery destination resource is an S3 bucket.</p>
+    pub fn s3_delivery_configuration(&self) -> ::std::option::Option<&crate::types::S3DeliveryConfiguration> {
+        self.s3_delivery_configuration.as_ref()
+    }
     /// <p>The tags that have been assigned to this delivery.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -62,6 +82,9 @@ pub struct DeliveryBuilder {
     pub(crate) delivery_source_name: ::std::option::Option<::std::string::String>,
     pub(crate) delivery_destination_arn: ::std::option::Option<::std::string::String>,
     pub(crate) delivery_destination_type: ::std::option::Option<crate::types::DeliveryDestinationType>,
+    pub(crate) record_fields: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) field_delimiter: ::std::option::Option<::std::string::String>,
+    pub(crate) s3_delivery_configuration: ::std::option::Option<crate::types::S3DeliveryConfiguration>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl DeliveryBuilder {
@@ -135,6 +158,54 @@ impl DeliveryBuilder {
     pub fn get_delivery_destination_type(&self) -> &::std::option::Option<crate::types::DeliveryDestinationType> {
         &self.delivery_destination_type
     }
+    /// Appends an item to `record_fields`.
+    ///
+    /// To override the contents of this collection use [`set_record_fields`](Self::set_record_fields).
+    ///
+    /// <p>The record fields used in this delivery.</p>
+    pub fn record_fields(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.record_fields.unwrap_or_default();
+        v.push(input.into());
+        self.record_fields = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The record fields used in this delivery.</p>
+    pub fn set_record_fields(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.record_fields = input;
+        self
+    }
+    /// <p>The record fields used in this delivery.</p>
+    pub fn get_record_fields(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.record_fields
+    }
+    /// <p>The field delimiter that is used between record fields when the final output format of a delivery is in <code>Plain</code>, <code>W3C</code>, or <code>Raw</code> format.</p>
+    pub fn field_delimiter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.field_delimiter = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The field delimiter that is used between record fields when the final output format of a delivery is in <code>Plain</code>, <code>W3C</code>, or <code>Raw</code> format.</p>
+    pub fn set_field_delimiter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.field_delimiter = input;
+        self
+    }
+    /// <p>The field delimiter that is used between record fields when the final output format of a delivery is in <code>Plain</code>, <code>W3C</code>, or <code>Raw</code> format.</p>
+    pub fn get_field_delimiter(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field_delimiter
+    }
+    /// <p>This structure contains delivery configurations that apply only when the delivery destination resource is an S3 bucket.</p>
+    pub fn s3_delivery_configuration(mut self, input: crate::types::S3DeliveryConfiguration) -> Self {
+        self.s3_delivery_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>This structure contains delivery configurations that apply only when the delivery destination resource is an S3 bucket.</p>
+    pub fn set_s3_delivery_configuration(mut self, input: ::std::option::Option<crate::types::S3DeliveryConfiguration>) -> Self {
+        self.s3_delivery_configuration = input;
+        self
+    }
+    /// <p>This structure contains delivery configurations that apply only when the delivery destination resource is an S3 bucket.</p>
+    pub fn get_s3_delivery_configuration(&self) -> &::std::option::Option<crate::types::S3DeliveryConfiguration> {
+        &self.s3_delivery_configuration
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -163,6 +234,9 @@ impl DeliveryBuilder {
             delivery_source_name: self.delivery_source_name,
             delivery_destination_arn: self.delivery_destination_arn,
             delivery_destination_type: self.delivery_destination_type,
+            record_fields: self.record_fields,
+            field_delimiter: self.field_delimiter,
+            s3_delivery_configuration: self.s3_delivery_configuration,
             tags: self.tags,
         }
     }

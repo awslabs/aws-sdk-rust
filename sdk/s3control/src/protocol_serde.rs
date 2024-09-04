@@ -159,6 +159,8 @@ pub(crate) mod shape_list_access_points;
 
 pub(crate) mod shape_list_access_points_for_object_lambda;
 
+pub(crate) mod shape_list_caller_access_grants;
+
 pub(crate) mod shape_list_jobs;
 
 pub(crate) mod shape_list_multi_region_access_points;
@@ -313,6 +315,8 @@ pub(crate) mod shape_access_point_list;
 
 pub(crate) mod shape_async_operation;
 
+pub(crate) mod shape_caller_access_grants_list;
+
 pub(crate) mod shape_create_bucket_configuration;
 
 pub(crate) mod shape_credentials;
@@ -420,6 +424,8 @@ pub(crate) mod shape_list_access_grant_entry;
 pub(crate) mod shape_list_access_grants_instance_entry;
 
 pub(crate) mod shape_list_access_grants_locations_entry;
+
+pub(crate) mod shape_list_caller_access_grants_entry;
 
 pub(crate) mod shape_object_lambda_access_point;
 

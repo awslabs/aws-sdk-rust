@@ -17,6 +17,8 @@ pub use crate::types::_inference_configuration::InferenceConfigurationBuilder;
 
 pub use crate::types::_prompt_variant::PromptVariantBuilder;
 
+pub use crate::types::_prompt_metadata_entry::PromptMetadataEntryBuilder;
+
 pub use crate::types::_prompt_model_inference_configuration::PromptModelInferenceConfigurationBuilder;
 
 pub use crate::types::_text_prompt_template_configuration::TextPromptTemplateConfigurationBuilder;

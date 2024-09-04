@@ -27,6 +27,8 @@ pub use crate::types::_prompt_type::PromptType;
 
 pub use crate::types::_prompt_variant::PromptVariant;
 
+pub use crate::types::_prompt_metadata_entry::PromptMetadataEntry;
+
 pub use crate::types::_prompt_inference_configuration::PromptInferenceConfiguration;
 
 pub use crate::types::_prompt_model_inference_configuration::PromptModelInferenceConfiguration;
@@ -552,6 +554,8 @@ mod _prompt_flow_node_source_configuration;
 mod _prompt_inference_configuration;
 
 mod _prompt_input_variable;
+
+mod _prompt_metadata_entry;
 
 mod _prompt_model_inference_configuration;
 

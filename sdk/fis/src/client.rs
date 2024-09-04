@@ -179,6 +179,8 @@ mod get_experiment_target_account_configuration;
 
 mod get_experiment_template;
 
+mod get_safety_lever;
+
 mod get_target_account_configuration;
 
 mod get_target_resource_type;
@@ -208,5 +210,7 @@ mod tag_resource;
 mod untag_resource;
 
 mod update_experiment_template;
+
+mod update_safety_lever_state;
 
 mod update_target_account_configuration;

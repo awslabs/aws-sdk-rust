@@ -11,6 +11,12 @@ pub struct GetKxScalingGroupOutput {
     /// <p>It can have one of the following values:</p>
     /// <ul>
     /// <li>
+    /// <p><code>kx.sg.large</code> – The host type with a configuration of 16 GiB memory and 2 vCPUs.</p></li>
+    /// <li>
+    /// <p><code>kx.sg.xlarge</code> – The host type with a configuration of 32 GiB memory and 4 vCPUs.</p></li>
+    /// <li>
+    /// <p><code>kx.sg.2xlarge</code> – The host type with a configuration of 64 GiB memory and 8 vCPUs.</p></li>
+    /// <li>
     /// <p><code>kx.sg.4xlarge</code> – The host type with a configuration of 108 GiB memory and 16 vCPUs.</p></li>
     /// <li>
     /// <p><code>kx.sg.8xlarge</code> – The host type with a configuration of 216 GiB memory and 32 vCPUs.</p></li>
@@ -68,6 +74,12 @@ impl GetKxScalingGroupOutput {
     /// <p>The memory and CPU capabilities of the scaling group host on which FinSpace Managed kdb clusters will be placed.</p>
     /// <p>It can have one of the following values:</p>
     /// <ul>
+    /// <li>
+    /// <p><code>kx.sg.large</code> – The host type with a configuration of 16 GiB memory and 2 vCPUs.</p></li>
+    /// <li>
+    /// <p><code>kx.sg.xlarge</code> – The host type with a configuration of 32 GiB memory and 4 vCPUs.</p></li>
+    /// <li>
+    /// <p><code>kx.sg.2xlarge</code> – The host type with a configuration of 64 GiB memory and 8 vCPUs.</p></li>
     /// <li>
     /// <p><code>kx.sg.4xlarge</code> – The host type with a configuration of 108 GiB memory and 16 vCPUs.</p></li>
     /// <li>
@@ -189,6 +201,12 @@ impl GetKxScalingGroupOutputBuilder {
     /// <p>It can have one of the following values:</p>
     /// <ul>
     /// <li>
+    /// <p><code>kx.sg.large</code> – The host type with a configuration of 16 GiB memory and 2 vCPUs.</p></li>
+    /// <li>
+    /// <p><code>kx.sg.xlarge</code> – The host type with a configuration of 32 GiB memory and 4 vCPUs.</p></li>
+    /// <li>
+    /// <p><code>kx.sg.2xlarge</code> – The host type with a configuration of 64 GiB memory and 8 vCPUs.</p></li>
+    /// <li>
     /// <p><code>kx.sg.4xlarge</code> – The host type with a configuration of 108 GiB memory and 16 vCPUs.</p></li>
     /// <li>
     /// <p><code>kx.sg.8xlarge</code> – The host type with a configuration of 216 GiB memory and 32 vCPUs.</p></li>
@@ -209,6 +227,12 @@ impl GetKxScalingGroupOutputBuilder {
     /// <p>It can have one of the following values:</p>
     /// <ul>
     /// <li>
+    /// <p><code>kx.sg.large</code> – The host type with a configuration of 16 GiB memory and 2 vCPUs.</p></li>
+    /// <li>
+    /// <p><code>kx.sg.xlarge</code> – The host type with a configuration of 32 GiB memory and 4 vCPUs.</p></li>
+    /// <li>
+    /// <p><code>kx.sg.2xlarge</code> – The host type with a configuration of 64 GiB memory and 8 vCPUs.</p></li>
+    /// <li>
     /// <p><code>kx.sg.4xlarge</code> – The host type with a configuration of 108 GiB memory and 16 vCPUs.</p></li>
     /// <li>
     /// <p><code>kx.sg.8xlarge</code> – The host type with a configuration of 216 GiB memory and 32 vCPUs.</p></li>
@@ -228,6 +252,12 @@ impl GetKxScalingGroupOutputBuilder {
     /// <p>The memory and CPU capabilities of the scaling group host on which FinSpace Managed kdb clusters will be placed.</p>
     /// <p>It can have one of the following values:</p>
     /// <ul>
+    /// <li>
+    /// <p><code>kx.sg.large</code> – The host type with a configuration of 16 GiB memory and 2 vCPUs.</p></li>
+    /// <li>
+    /// <p><code>kx.sg.xlarge</code> – The host type with a configuration of 32 GiB memory and 4 vCPUs.</p></li>
+    /// <li>
+    /// <p><code>kx.sg.2xlarge</code> – The host type with a configuration of 64 GiB memory and 8 vCPUs.</p></li>
     /// <li>
     /// <p><code>kx.sg.4xlarge</code> – The host type with a configuration of 108 GiB memory and 16 vCPUs.</p></li>
     /// <li>

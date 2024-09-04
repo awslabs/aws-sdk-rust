@@ -60,6 +60,32 @@ pub fn de_list_access_grants_instance_entry(
                 builder = builder.set_identity_center_arn(var_4);
             }
             ,
+            s if s.matches("IdentityCenterInstanceArn") /* IdentityCenterInstanceArn com.amazonaws.s3control#ListAccessGrantsInstanceEntry$IdentityCenterInstanceArn */ =>  {
+                let var_5 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_identity_center_instance_arn(var_5);
+            }
+            ,
+            s if s.matches("IdentityCenterApplicationArn") /* IdentityCenterApplicationArn com.amazonaws.s3control#ListAccessGrantsInstanceEntry$IdentityCenterApplicationArn */ =>  {
+                let var_6 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_identity_center_application_arn(var_6);
+            }
+            ,
             _ => {}
         }
     }

@@ -4,27 +4,27 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KeyNameConstraint {
-    /// <p>If provided, the generated manifest includes objects where the specified string appears at the start of the object key string.</p>
+    /// <p>If provided, the generated manifest includes objects where the specified string appears at the start of the object key string. Each KeyNameConstraint filter accepts an array of strings with a length of 1 string.</p>
     pub match_any_prefix: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>If provided, the generated manifest includes objects where the specified string appears at the end of the object key string.</p>
+    /// <p>If provided, the generated manifest includes objects where the specified string appears at the end of the object key string. Each KeyNameConstraint filter accepts an array of strings with a length of 1 string.</p>
     pub match_any_suffix: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>If provided, the generated manifest includes objects where the specified string appears anywhere within the object key string.</p>
+    /// <p>If provided, the generated manifest includes objects where the specified string appears anywhere within the object key string. Each KeyNameConstraint filter accepts an array of strings with a length of 1 string.</p>
     pub match_any_substring: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl KeyNameConstraint {
-    /// <p>If provided, the generated manifest includes objects where the specified string appears at the start of the object key string.</p>
+    /// <p>If provided, the generated manifest includes objects where the specified string appears at the start of the object key string. Each KeyNameConstraint filter accepts an array of strings with a length of 1 string.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.match_any_prefix.is_none()`.
     pub fn match_any_prefix(&self) -> &[::std::string::String] {
         self.match_any_prefix.as_deref().unwrap_or_default()
     }
-    /// <p>If provided, the generated manifest includes objects where the specified string appears at the end of the object key string.</p>
+    /// <p>If provided, the generated manifest includes objects where the specified string appears at the end of the object key string. Each KeyNameConstraint filter accepts an array of strings with a length of 1 string.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.match_any_suffix.is_none()`.
     pub fn match_any_suffix(&self) -> &[::std::string::String] {
         self.match_any_suffix.as_deref().unwrap_or_default()
     }
-    /// <p>If provided, the generated manifest includes objects where the specified string appears anywhere within the object key string.</p>
+    /// <p>If provided, the generated manifest includes objects where the specified string appears anywhere within the object key string. Each KeyNameConstraint filter accepts an array of strings with a length of 1 string.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.match_any_substring.is_none()`.
     pub fn match_any_substring(&self) -> &[::std::string::String] {
@@ -51,19 +51,19 @@ impl KeyNameConstraintBuilder {
     ///
     /// To override the contents of this collection use [`set_match_any_prefix`](Self::set_match_any_prefix).
     ///
-    /// <p>If provided, the generated manifest includes objects where the specified string appears at the start of the object key string.</p>
+    /// <p>If provided, the generated manifest includes objects where the specified string appears at the start of the object key string. Each KeyNameConstraint filter accepts an array of strings with a length of 1 string.</p>
     pub fn match_any_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.match_any_prefix.unwrap_or_default();
         v.push(input.into());
         self.match_any_prefix = ::std::option::Option::Some(v);
         self
     }
-    /// <p>If provided, the generated manifest includes objects where the specified string appears at the start of the object key string.</p>
+    /// <p>If provided, the generated manifest includes objects where the specified string appears at the start of the object key string. Each KeyNameConstraint filter accepts an array of strings with a length of 1 string.</p>
     pub fn set_match_any_prefix(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.match_any_prefix = input;
         self
     }
-    /// <p>If provided, the generated manifest includes objects where the specified string appears at the start of the object key string.</p>
+    /// <p>If provided, the generated manifest includes objects where the specified string appears at the start of the object key string. Each KeyNameConstraint filter accepts an array of strings with a length of 1 string.</p>
     pub fn get_match_any_prefix(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.match_any_prefix
     }
@@ -71,19 +71,19 @@ impl KeyNameConstraintBuilder {
     ///
     /// To override the contents of this collection use [`set_match_any_suffix`](Self::set_match_any_suffix).
     ///
-    /// <p>If provided, the generated manifest includes objects where the specified string appears at the end of the object key string.</p>
+    /// <p>If provided, the generated manifest includes objects where the specified string appears at the end of the object key string. Each KeyNameConstraint filter accepts an array of strings with a length of 1 string.</p>
     pub fn match_any_suffix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.match_any_suffix.unwrap_or_default();
         v.push(input.into());
         self.match_any_suffix = ::std::option::Option::Some(v);
         self
     }
-    /// <p>If provided, the generated manifest includes objects where the specified string appears at the end of the object key string.</p>
+    /// <p>If provided, the generated manifest includes objects where the specified string appears at the end of the object key string. Each KeyNameConstraint filter accepts an array of strings with a length of 1 string.</p>
     pub fn set_match_any_suffix(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.match_any_suffix = input;
         self
     }
-    /// <p>If provided, the generated manifest includes objects where the specified string appears at the end of the object key string.</p>
+    /// <p>If provided, the generated manifest includes objects where the specified string appears at the end of the object key string. Each KeyNameConstraint filter accepts an array of strings with a length of 1 string.</p>
     pub fn get_match_any_suffix(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.match_any_suffix
     }
@@ -91,19 +91,19 @@ impl KeyNameConstraintBuilder {
     ///
     /// To override the contents of this collection use [`set_match_any_substring`](Self::set_match_any_substring).
     ///
-    /// <p>If provided, the generated manifest includes objects where the specified string appears anywhere within the object key string.</p>
+    /// <p>If provided, the generated manifest includes objects where the specified string appears anywhere within the object key string. Each KeyNameConstraint filter accepts an array of strings with a length of 1 string.</p>
     pub fn match_any_substring(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.match_any_substring.unwrap_or_default();
         v.push(input.into());
         self.match_any_substring = ::std::option::Option::Some(v);
         self
     }
-    /// <p>If provided, the generated manifest includes objects where the specified string appears anywhere within the object key string.</p>
+    /// <p>If provided, the generated manifest includes objects where the specified string appears anywhere within the object key string. Each KeyNameConstraint filter accepts an array of strings with a length of 1 string.</p>
     pub fn set_match_any_substring(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.match_any_substring = input;
         self
     }
-    /// <p>If provided, the generated manifest includes objects where the specified string appears anywhere within the object key string.</p>
+    /// <p>If provided, the generated manifest includes objects where the specified string appears anywhere within the object key string. Each KeyNameConstraint filter accepts an array of strings with a length of 1 string.</p>
     pub fn get_match_any_substring(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.match_any_substring
     }

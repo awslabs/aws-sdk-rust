@@ -858,6 +858,50 @@ impl From<crate::operation::describe_account_policies::DescribeAccountPoliciesEr
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_configuration_templates::DescribeConfigurationTemplatesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_configuration_templates::DescribeConfigurationTemplatesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_configuration_templates::DescribeConfigurationTemplatesError> for Error {
+    fn from(err: crate::operation::describe_configuration_templates::DescribeConfigurationTemplatesError) -> Self {
+        match err {
+            crate::operation::describe_configuration_templates::DescribeConfigurationTemplatesError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_configuration_templates::DescribeConfigurationTemplatesError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::describe_configuration_templates::DescribeConfigurationTemplatesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_configuration_templates::DescribeConfigurationTemplatesError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::describe_configuration_templates::DescribeConfigurationTemplatesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_deliveries::DescribeDeliveriesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2308,6 +2352,48 @@ impl From<crate::operation::update_anomaly::UpdateAnomalyError> for Error {
             crate::operation::update_anomaly::UpdateAnomalyError::OperationAbortedException(inner) => Error::OperationAbortedException(inner),
             crate::operation::update_anomaly::UpdateAnomalyError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::update_anomaly::UpdateAnomalyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_delivery_configuration::UpdateDeliveryConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_delivery_configuration::UpdateDeliveryConfigurationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_delivery_configuration::UpdateDeliveryConfigurationError> for Error {
+    fn from(err: crate::operation::update_delivery_configuration::UpdateDeliveryConfigurationError) -> Self {
+        match err {
+            crate::operation::update_delivery_configuration::UpdateDeliveryConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_delivery_configuration::UpdateDeliveryConfigurationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_delivery_configuration::UpdateDeliveryConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_delivery_configuration::UpdateDeliveryConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_delivery_configuration::UpdateDeliveryConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_delivery_configuration::UpdateDeliveryConfigurationError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::update_delivery_configuration::UpdateDeliveryConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

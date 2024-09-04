@@ -196,6 +196,9 @@ pub mod list_access_points;
 /// Types for the `ListAccessPointsForObjectLambda` operation.
 pub mod list_access_points_for_object_lambda;
 
+/// Types for the `ListCallerAccessGrants` operation.
+pub mod list_caller_access_grants;
+
 /// Types for the `ListJobs` operation.
 pub mod list_jobs;
 

@@ -1737,6 +1737,18 @@ pub(crate) fn pinecone_field_mapping_correct_errors(
     builder
 }
 
+pub(crate) fn prompt_metadata_entry_correct_errors(
+    mut builder: crate::types::builders::PromptMetadataEntryBuilder,
+) -> crate::types::builders::PromptMetadataEntryBuilder {
+    if builder.key.is_none() {
+        builder.key = Some(Default::default())
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn rds_field_mapping_correct_errors(
     mut builder: crate::types::builders::RdsFieldMappingBuilder,
 ) -> crate::types::builders::RdsFieldMappingBuilder {

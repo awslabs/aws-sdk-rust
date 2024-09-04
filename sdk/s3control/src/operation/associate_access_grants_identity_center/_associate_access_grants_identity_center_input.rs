@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateAccessGrantsIdentityCenterInput {
-    /// <p>The ID of the Amazon Web Services account that is making this request.</p>
+    /// <p>The Amazon Web Services account ID of the S3 Access Grants instance.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services IAM Identity Center instance that you are associating with your S3 Access Grants instance. An IAM Identity Center instance is your corporate identity directory that you added to the IAM Identity Center. You can use the <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListInstances.html">ListInstances</a> API operation to retrieve a list of your Identity Center instances and their ARNs.</p>
     pub identity_center_arn: ::std::option::Option<::std::string::String>,
 }
 impl AssociateAccessGrantsIdentityCenterInput {
-    /// <p>The ID of the Amazon Web Services account that is making this request.</p>
+    /// <p>The Amazon Web Services account ID of the S3 Access Grants instance.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -33,18 +33,18 @@ pub struct AssociateAccessGrantsIdentityCenterInputBuilder {
     pub(crate) identity_center_arn: ::std::option::Option<::std::string::String>,
 }
 impl AssociateAccessGrantsIdentityCenterInputBuilder {
-    /// <p>The ID of the Amazon Web Services account that is making this request.</p>
+    /// <p>The Amazon Web Services account ID of the S3 Access Grants instance.</p>
     /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the Amazon Web Services account that is making this request.</p>
+    /// <p>The Amazon Web Services account ID of the S3 Access Grants instance.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
-    /// <p>The ID of the Amazon Web Services account that is making this request.</p>
+    /// <p>The Amazon Web Services account ID of the S3 Access Grants instance.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }

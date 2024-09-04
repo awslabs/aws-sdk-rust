@@ -8,7 +8,7 @@
 /// <li>
 /// <p>Anthropic Claude 3 Haiku - <code>anthropic.claude-3-haiku-20240307-v1:0</code></p></li>
 /// </ul>
-/// <p>You can get the ARN of a model with the action. Standard model usage charges apply for the foundation model parsing strategy.</p>
+/// <p>You can get the ARN of a model with the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_ListFoundationModels.html">ListFoundationModels</a> action. Standard model usage charges apply for the foundation model parsing strategy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParsingConfiguration {

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteAccessGrantsInstance`](crate::operation::delete_access_grants_instance::builders::DeleteAccessGrantsInstanceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::operation::delete_access_grants_instance::builders::DeleteAccessGrantsInstanceFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::delete_access_grants_instance::builders::DeleteAccessGrantsInstanceFluentBuilder::set_account_id):<br>required: **true**<br><p>The ID of the Amazon Web Services account that is making this request.</p><br>
+    ///   - [`account_id(impl Into<String>)`](crate::operation::delete_access_grants_instance::builders::DeleteAccessGrantsInstanceFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::delete_access_grants_instance::builders::DeleteAccessGrantsInstanceFluentBuilder::set_account_id):<br>required: **true**<br><p>The Amazon Web Services account ID of the S3 Access Grants instance.</p><br>
     /// - On success, responds with [`DeleteAccessGrantsInstanceOutput`](crate::operation::delete_access_grants_instance::DeleteAccessGrantsInstanceOutput)
     /// - On failure, responds with [`SdkError<DeleteAccessGrantsInstanceError>`](crate::operation::delete_access_grants_instance::DeleteAccessGrantsInstanceError)
     pub fn delete_access_grants_instance(

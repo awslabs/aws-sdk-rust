@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutAccessGrantsInstanceResourcePolicyInput {
-    /// <p>The ID of the Amazon Web Services account that is making this request.</p>
+    /// <p>The Amazon Web Services account ID of the S3 Access Grants instance.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource policy of the S3 Access Grants instance that you are updating.</p>
     pub policy: ::std::option::Option<::std::string::String>,
@@ -11,7 +11,7 @@ pub struct PutAccessGrantsInstanceResourcePolicyInput {
     pub organization: ::std::option::Option<::std::string::String>,
 }
 impl PutAccessGrantsInstanceResourcePolicyInput {
-    /// <p>The ID of the Amazon Web Services account that is making this request.</p>
+    /// <p>The Amazon Web Services account ID of the S3 Access Grants instance.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -40,18 +40,18 @@ pub struct PutAccessGrantsInstanceResourcePolicyInputBuilder {
     pub(crate) organization: ::std::option::Option<::std::string::String>,
 }
 impl PutAccessGrantsInstanceResourcePolicyInputBuilder {
-    /// <p>The ID of the Amazon Web Services account that is making this request.</p>
+    /// <p>The Amazon Web Services account ID of the S3 Access Grants instance.</p>
     /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the Amazon Web Services account that is making this request.</p>
+    /// <p>The Amazon Web Services account ID of the S3 Access Grants instance.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
-    /// <p>The ID of the Amazon Web Services account that is making this request.</p>
+    /// <p>The Amazon Web Services account ID of the S3 Access Grants instance.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }

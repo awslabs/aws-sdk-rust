@@ -13,7 +13,9 @@
 /// # let fieldloglevel = unimplemented!();
 /// match fieldloglevel {
 ///     FieldLogLevel::All => { /* ... */ },
+///     FieldLogLevel::Debug => { /* ... */ },
 ///     FieldLogLevel::Error => { /* ... */ },
+///     FieldLogLevel::Info => { /* ... */ },
 ///     FieldLogLevel::None => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -45,7 +47,11 @@ pub enum FieldLogLevel {
     #[allow(missing_docs)] // documentation missing in model
     All,
     #[allow(missing_docs)] // documentation missing in model
+    Debug,
+    #[allow(missing_docs)] // documentation missing in model
     Error,
+    #[allow(missing_docs)] // documentation missing in model
+    Info,
     #[allow(missing_docs)] // documentation missing in model
     None,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -56,7 +62,9 @@ impl ::std::convert::From<&str> for FieldLogLevel {
     fn from(s: &str) -> Self {
         match s {
             "ALL" => FieldLogLevel::All,
+            "DEBUG" => FieldLogLevel::Debug,
             "ERROR" => FieldLogLevel::Error,
+            "INFO" => FieldLogLevel::Info,
             "NONE" => FieldLogLevel::None,
             other => FieldLogLevel::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -74,14 +82,16 @@ impl FieldLogLevel {
     pub fn as_str(&self) -> &str {
         match self {
             FieldLogLevel::All => "ALL",
+            FieldLogLevel::Debug => "DEBUG",
             FieldLogLevel::Error => "ERROR",
+            FieldLogLevel::Info => "INFO",
             FieldLogLevel::None => "NONE",
             FieldLogLevel::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALL", "ERROR", "NONE"]
+        &["ALL", "DEBUG", "ERROR", "INFO", "NONE"]
     }
 }
 impl ::std::convert::AsRef<str> for FieldLogLevel {
@@ -105,7 +115,9 @@ impl ::std::fmt::Display for FieldLogLevel {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             FieldLogLevel::All => write!(f, "ALL"),
+            FieldLogLevel::Debug => write!(f, "DEBUG"),
             FieldLogLevel::Error => write!(f, "ERROR"),
+            FieldLogLevel::Info => write!(f, "INFO"),
             FieldLogLevel::None => write!(f, "NONE"),
             FieldLogLevel::Unknown(value) => write!(f, "{}", value),
         }
