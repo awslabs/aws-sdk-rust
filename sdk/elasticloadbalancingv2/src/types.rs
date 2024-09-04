@@ -75,6 +75,8 @@ pub use crate::types::_protocol_enum::ProtocolEnum;
 
 pub use crate::types::_load_balancer_attribute::LoadBalancerAttribute;
 
+pub use crate::types::_listener_attribute::ListenerAttribute;
+
 pub use crate::types::_listener::Listener;
 
 pub use crate::types::_mutual_authentication_attributes::MutualAuthenticationAttributes;
@@ -170,6 +172,8 @@ mod _ip_address_type;
 mod _limit;
 
 mod _listener;
+
+mod _listener_attribute;
 
 mod _load_balancer;
 

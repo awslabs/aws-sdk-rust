@@ -19,6 +19,8 @@
 ///     Status::Failed => { /* ... */ },
 ///     Status::Modifying => { /* ... */ },
 ///     Status::Updating => { /* ... */ },
+///     Status::UpdatingDeploymentType => { /* ... */ },
+///     Status::UpdatingInstanceType => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -60,6 +62,10 @@ pub enum Status {
     Modifying,
     #[allow(missing_docs)] // documentation missing in model
     Updating,
+    #[allow(missing_docs)] // documentation missing in model
+    UpdatingDeploymentType,
+    #[allow(missing_docs)] // documentation missing in model
+    UpdatingInstanceType,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -74,6 +80,8 @@ impl ::std::convert::From<&str> for Status {
             "FAILED" => Status::Failed,
             "MODIFYING" => Status::Modifying,
             "UPDATING" => Status::Updating,
+            "UPDATING_DEPLOYMENT_TYPE" => Status::UpdatingDeploymentType,
+            "UPDATING_INSTANCE_TYPE" => Status::UpdatingInstanceType,
             other => Status::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -96,12 +104,24 @@ impl Status {
             Status::Failed => "FAILED",
             Status::Modifying => "MODIFYING",
             Status::Updating => "UPDATING",
+            Status::UpdatingDeploymentType => "UPDATING_DEPLOYMENT_TYPE",
+            Status::UpdatingInstanceType => "UPDATING_INSTANCE_TYPE",
             Status::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AVAILABLE", "CREATING", "DELETED", "DELETING", "FAILED", "MODIFYING", "UPDATING"]
+        &[
+            "AVAILABLE",
+            "CREATING",
+            "DELETED",
+            "DELETING",
+            "FAILED",
+            "MODIFYING",
+            "UPDATING",
+            "UPDATING_DEPLOYMENT_TYPE",
+            "UPDATING_INSTANCE_TYPE",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for Status {
@@ -131,6 +151,8 @@ impl ::std::fmt::Display for Status {
             Status::Failed => write!(f, "FAILED"),
             Status::Modifying => write!(f, "MODIFYING"),
             Status::Updating => write!(f, "UPDATING"),
+            Status::UpdatingDeploymentType => write!(f, "UPDATING_DEPLOYMENT_TYPE"),
+            Status::UpdatingInstanceType => write!(f, "UPDATING_INSTANCE_TYPE"),
             Status::Unknown(value) => write!(f, "{}", value),
         }
     }

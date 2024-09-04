@@ -11,6 +11,7 @@ impl super::Client {
     ///   - [`client_token(impl Into<String>)`](crate::operation::update_domain::builders::UpdateDomainFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::update_domain::builders::UpdateDomainFluentBuilder::set_client_token):<br>required: **false**<br><p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p><br>
     /// - On success, responds with [`UpdateDomainOutput`](crate::operation::update_domain::UpdateDomainOutput) with field(s):
     ///   - [`id(String)`](crate::operation::update_domain::UpdateDomainOutput::id): <p>The identifier of the Amazon DataZone domain.</p>
+    ///   - [`root_domain_unit_id(Option<String>)`](crate::operation::update_domain::UpdateDomainOutput::root_domain_unit_id): <p>The ID of the root domain unit.</p>
     ///   - [`description(Option<String>)`](crate::operation::update_domain::UpdateDomainOutput::description): <p>The description to be updated as part of the <code>UpdateDomain</code> action.</p>
     ///   - [`single_sign_on(Option<SingleSignOn>)`](crate::operation::update_domain::UpdateDomainOutput::single_sign_on): <p>The single sign-on option of the Amazon DataZone domain.</p>
     ///   - [`domain_execution_role(Option<String>)`](crate::operation::update_domain::UpdateDomainOutput::domain_execution_role): <p>The domain execution role to be updated as part of the <code>UpdateDomain</code> action.</p>

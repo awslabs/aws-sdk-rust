@@ -55,6 +55,8 @@ pub(crate) mod shape_describe_flow;
 
 pub(crate) mod shape_describe_flow_source_metadata;
 
+pub(crate) mod shape_describe_flow_source_thumbnail;
+
 pub(crate) mod shape_describe_gateway;
 
 pub(crate) mod shape_describe_gateway_instance;
@@ -279,6 +281,8 @@ pub(crate) mod shape_media_stream_source_configuration_request;
 
 pub(crate) mod shape_messages;
 
+pub(crate) mod shape_monitoring_config;
+
 pub(crate) mod shape_offering;
 
 pub(crate) mod shape_output;
@@ -288,6 +292,8 @@ pub(crate) mod shape_reservation;
 pub(crate) mod shape_set_source_request;
 
 pub(crate) mod shape_source;
+
+pub(crate) mod shape_thumbnail_details;
 
 pub(crate) mod shape_transport_media_info;
 

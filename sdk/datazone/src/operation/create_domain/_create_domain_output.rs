@@ -5,6 +5,8 @@
 pub struct CreateDomainOutput {
     /// <p>The identifier of the Amazon DataZone domain.</p>
     pub id: ::std::string::String,
+    /// <p>The ID of the root domain unit.</p>
+    pub root_domain_unit_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon DataZone domain.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the Amazon DataZone domain.</p>
@@ -30,6 +32,10 @@ impl CreateDomainOutput {
     pub fn id(&self) -> &str {
         use std::ops::Deref;
         self.id.deref()
+    }
+    /// <p>The ID of the root domain unit.</p>
+    pub fn root_domain_unit_id(&self) -> ::std::option::Option<&str> {
+        self.root_domain_unit_id.as_deref()
     }
     /// <p>The name of the Amazon DataZone domain.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -85,6 +91,7 @@ impl CreateDomainOutput {
 #[non_exhaustive]
 pub struct CreateDomainOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) root_domain_unit_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) single_sign_on: ::std::option::Option<crate::types::SingleSignOn>,
@@ -111,6 +118,20 @@ impl CreateDomainOutputBuilder {
     /// <p>The identifier of the Amazon DataZone domain.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
+    }
+    /// <p>The ID of the root domain unit.</p>
+    pub fn root_domain_unit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.root_domain_unit_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the root domain unit.</p>
+    pub fn set_root_domain_unit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.root_domain_unit_id = input;
+        self
+    }
+    /// <p>The ID of the root domain unit.</p>
+    pub fn get_root_domain_unit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.root_domain_unit_id
     }
     /// <p>The name of the Amazon DataZone domain.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -266,6 +287,7 @@ impl CreateDomainOutputBuilder {
                     "id was not specified but it is required when building CreateDomainOutput",
                 )
             })?,
+            root_domain_unit_id: self.root_domain_unit_id,
             name: self.name,
             description: self.description,
             single_sign_on: self.single_sign_on,

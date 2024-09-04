@@ -110,6 +110,15 @@ pub(crate) fn accept_subscription_request_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn service_quota_exceeded_exception_correct_errors(
+    mut builder: crate::types::error::builders::ServiceQuotaExceededExceptionBuilder,
+) -> crate::types::error::builders::ServiceQuotaExceededExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn cancel_subscription_output_output_correct_errors(
     mut builder: crate::operation::cancel_subscription::builders::CancelSubscriptionOutputBuilder,
 ) -> crate::operation::cancel_subscription::builders::CancelSubscriptionOutputBuilder {
@@ -139,15 +148,6 @@ pub(crate) fn cancel_subscription_output_output_correct_errors(
             let builder = crate::types::builders::SubscribedListingBuilder::default();
             crate::serde_util::subscribed_listing_correct_errors(builder).build().ok()
         }
-    }
-    builder
-}
-
-pub(crate) fn service_quota_exceeded_exception_correct_errors(
-    mut builder: crate::types::error::builders::ServiceQuotaExceededExceptionBuilder,
-) -> crate::types::error::builders::ServiceQuotaExceededExceptionBuilder {
-    if builder.message.is_none() {
-        builder.message = Some(Default::default())
     }
     builder
 }
@@ -325,6 +325,27 @@ pub(crate) fn create_domain_output_output_correct_errors(
 ) -> crate::operation::create_domain::builders::CreateDomainOutputBuilder {
     if builder.id.is_none() {
         builder.id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn create_domain_unit_output_output_correct_errors(
+    mut builder: crate::operation::create_domain_unit::builders::CreateDomainUnitOutputBuilder,
+) -> crate::operation::create_domain_unit::builders::CreateDomainUnitOutputBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.domain_id.is_none() {
+        builder.domain_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.owners.is_none() {
+        builder.owners = Some(Default::default())
+    }
+    if builder.ancestor_domain_unit_ids.is_none() {
+        builder.ancestor_domain_unit_ids = Some(Default::default())
     }
     builder
 }
@@ -809,6 +830,24 @@ pub(crate) fn get_domain_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_domain_unit_output_output_correct_errors(
+    mut builder: crate::operation::get_domain_unit::builders::GetDomainUnitOutputBuilder,
+) -> crate::operation::get_domain_unit::builders::GetDomainUnitOutputBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.domain_id.is_none() {
+        builder.domain_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.owners.is_none() {
+        builder.owners = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_environment_output_output_correct_errors(
     mut builder: crate::operation::get_environment::builders::GetEnvironmentOutputBuilder,
 ) -> crate::operation::get_environment::builders::GetEnvironmentOutputBuilder {
@@ -1220,11 +1259,29 @@ pub(crate) fn list_data_sources_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_domain_units_for_parent_output_output_correct_errors(
+    mut builder: crate::operation::list_domain_units_for_parent::builders::ListDomainUnitsForParentOutputBuilder,
+) -> crate::operation::list_domain_units_for_parent::builders::ListDomainUnitsForParentOutputBuilder {
+    if builder.items.is_none() {
+        builder.items = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_domains_output_output_correct_errors(
     mut builder: crate::operation::list_domains::builders::ListDomainsOutputBuilder,
 ) -> crate::operation::list_domains::builders::ListDomainsOutputBuilder {
     if builder.items.is_none() {
         builder.items = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_entity_owners_output_output_correct_errors(
+    mut builder: crate::operation::list_entity_owners::builders::ListEntityOwnersOutputBuilder,
+) -> crate::operation::list_entity_owners::builders::ListEntityOwnersOutputBuilder {
+    if builder.owners.is_none() {
+        builder.owners = Some(Default::default())
     }
     builder
 }
@@ -1252,6 +1309,15 @@ pub(crate) fn list_environments_output_output_correct_errors(
 ) -> crate::operation::list_environments::builders::ListEnvironmentsOutputBuilder {
     if builder.items.is_none() {
         builder.items = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_policy_grants_output_output_correct_errors(
+    mut builder: crate::operation::list_policy_grants::builders::ListPolicyGrantsOutputBuilder,
+) -> crate::operation::list_policy_grants::builders::ListPolicyGrantsOutputBuilder {
+    if builder.grant_list.is_none() {
+        builder.grant_list = Some(Default::default())
     }
     builder
 }
@@ -1483,6 +1549,24 @@ pub(crate) fn update_domain_output_output_correct_errors(
 ) -> crate::operation::update_domain::builders::UpdateDomainOutputBuilder {
     if builder.id.is_none() {
         builder.id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn update_domain_unit_output_output_correct_errors(
+    mut builder: crate::operation::update_domain_unit::builders::UpdateDomainUnitOutputBuilder,
+) -> crate::operation::update_domain_unit::builders::UpdateDomainUnitOutputBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.domain_id.is_none() {
+        builder.domain_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.owners.is_none() {
+        builder.owners = Some(Default::default())
     }
     builder
 }
@@ -1945,6 +2029,18 @@ pub(crate) fn domain_summary_correct_errors(
     }
     if builder.created_at.is_none() {
         builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn domain_unit_summary_correct_errors(
+    mut builder: crate::types::builders::DomainUnitSummaryBuilder,
+) -> crate::types::builders::DomainUnitSummaryBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
     }
     builder
 }
@@ -2457,6 +2553,19 @@ pub(crate) fn asset_item_correct_errors(mut builder: crate::types::builders::Ass
     builder
 }
 
+pub(crate) fn asset_scope_correct_errors(mut builder: crate::types::builders::AssetScopeBuilder) -> crate::types::builders::AssetScopeBuilder {
+    if builder.asset_id.is_none() {
+        builder.asset_id = Some(Default::default())
+    }
+    if builder.filter_ids.is_none() {
+        builder.filter_ids = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn asset_type_item_correct_errors(
     mut builder: crate::types::builders::AssetTypeItemBuilder,
 ) -> crate::types::builders::AssetTypeItemBuilder {
@@ -2589,6 +2698,15 @@ pub(crate) fn topic_correct_errors(mut builder: crate::types::builders::TopicBui
     builder
 }
 
+pub(crate) fn domain_unit_policy_grant_principal_correct_errors(
+    mut builder: crate::types::builders::DomainUnitPolicyGrantPrincipalBuilder,
+) -> crate::types::builders::DomainUnitPolicyGrantPrincipalBuilder {
+    if builder.domain_unit_designation.is_none() {
+        builder.domain_unit_designation = "no value was set".parse::<crate::types::DomainUnitDesignation>().ok()
+    }
+    builder
+}
+
 pub(crate) fn group_details_correct_errors(mut builder: crate::types::builders::GroupDetailsBuilder) -> crate::types::builders::GroupDetailsBuilder {
     if builder.group_id.is_none() {
         builder.group_id = Some(Default::default())
@@ -2604,6 +2722,15 @@ pub(crate) fn notification_resource_correct_errors(
     }
     if builder.id.is_none() {
         builder.id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn project_policy_grant_principal_correct_errors(
+    mut builder: crate::types::builders::ProjectPolicyGrantPrincipalBuilder,
+) -> crate::types::builders::ProjectPolicyGrantPrincipalBuilder {
+    if builder.project_designation.is_none() {
+        builder.project_designation = "no value was set".parse::<crate::types::ProjectDesignation>().ok()
     }
     builder
 }
@@ -2786,6 +2913,15 @@ pub(crate) fn not_like_expression_correct_errors(
     }
     if builder.value.is_none() {
         builder.value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn domain_unit_filter_for_project_correct_errors(
+    mut builder: crate::types::builders::DomainUnitFilterForProjectBuilder,
+) -> crate::types::builders::DomainUnitFilterForProjectBuilder {
+    if builder.domain_unit.is_none() {
+        builder.domain_unit = Some(Default::default())
     }
     builder
 }

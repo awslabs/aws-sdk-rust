@@ -4,9 +4,9 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`target_group_arn(impl Into<String>)`](crate::operation::modify_target_group_attributes::builders::ModifyTargetGroupAttributesFluentBuilder::target_group_arn) / [`set_target_group_arn(Option<String>)`](crate::operation::modify_target_group_attributes::builders::ModifyTargetGroupAttributesFluentBuilder::set_target_group_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the target group.</p><br>
-    ///   - [`attributes(TargetGroupAttribute)`](crate::operation::modify_target_group_attributes::builders::ModifyTargetGroupAttributesFluentBuilder::attributes) / [`set_attributes(Option<Vec::<TargetGroupAttribute>>)`](crate::operation::modify_target_group_attributes::builders::ModifyTargetGroupAttributesFluentBuilder::set_attributes):<br>required: **true**<br><p>The attributes.</p><br>
+    ///   - [`attributes(TargetGroupAttribute)`](crate::operation::modify_target_group_attributes::builders::ModifyTargetGroupAttributesFluentBuilder::attributes) / [`set_attributes(Option<Vec::<TargetGroupAttribute>>)`](crate::operation::modify_target_group_attributes::builders::ModifyTargetGroupAttributesFluentBuilder::set_attributes):<br>required: **true**<br><p>The target group attributes.</p><br>
     /// - On success, responds with [`ModifyTargetGroupAttributesOutput`](crate::operation::modify_target_group_attributes::ModifyTargetGroupAttributesOutput) with field(s):
-    ///   - [`attributes(Option<Vec::<TargetGroupAttribute>>)`](crate::operation::modify_target_group_attributes::ModifyTargetGroupAttributesOutput::attributes): <p>Information about the attributes.</p>
+    ///   - [`attributes(Option<Vec::<TargetGroupAttribute>>)`](crate::operation::modify_target_group_attributes::ModifyTargetGroupAttributesOutput::attributes): <p>Information about the target group attributes.</p>
     /// - On failure, responds with [`SdkError<ModifyTargetGroupAttributesError>`](crate::operation::modify_target_group_attributes::ModifyTargetGroupAttributesError)
     pub fn modify_target_group_attributes(
         &self,

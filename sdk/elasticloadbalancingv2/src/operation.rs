@@ -49,6 +49,9 @@ pub mod deregister_targets;
 /// Types for the `DescribeAccountLimits` operation.
 pub mod describe_account_limits;
 
+/// Types for the `DescribeListenerAttributes` operation.
+pub mod describe_listener_attributes;
+
 /// Types for the `DescribeListenerCertificates` operation.
 pub mod describe_listener_certificates;
 
@@ -99,6 +102,9 @@ pub mod get_trust_store_revocation_content;
 
 /// Types for the `ModifyListener` operation.
 pub mod modify_listener;
+
+/// Types for the `ModifyListenerAttributes` operation.
+pub mod modify_listener_attributes;
 
 /// Types for the `ModifyLoadBalancerAttributes` operation.
 pub mod modify_load_balancer_attributes;

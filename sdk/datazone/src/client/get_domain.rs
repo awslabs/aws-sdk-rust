@@ -6,6 +6,7 @@ impl super::Client {
     ///   - [`identifier(impl Into<String>)`](crate::operation::get_domain::builders::GetDomainFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::get_domain::builders::GetDomainFluentBuilder::set_identifier):<br>required: **true**<br><p>The identifier of the specified Amazon DataZone domain.</p><br>
     /// - On success, responds with [`GetDomainOutput`](crate::operation::get_domain::GetDomainOutput) with field(s):
     ///   - [`id(String)`](crate::operation::get_domain::GetDomainOutput::id): <p>The identifier of the specified Amazon DataZone domain.</p>
+    ///   - [`root_domain_unit_id(Option<String>)`](crate::operation::get_domain::GetDomainOutput::root_domain_unit_id): <p>The ID of the root domain in Amazon Datazone.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_domain::GetDomainOutput::name): <p>The name of the Amazon DataZone domain.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_domain::GetDomainOutput::description): <p>The description of the Amazon DataZone domain.</p>
     ///   - [`single_sign_on(Option<SingleSignOn>)`](crate::operation::get_domain::GetDomainOutput::single_sign_on): <p>The single sing-on option of the specified Amazon DataZone domain.</p>

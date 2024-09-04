@@ -22,6 +22,8 @@ pub struct ProjectSummary {
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the project was updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The ID of the domain unit.</p>
+    pub domain_unit_id: ::std::option::Option<::std::string::String>,
 }
 impl ProjectSummary {
     /// <p>The identifier of a Amazon DataZone domain where the project exists.</p>
@@ -66,6 +68,10 @@ impl ProjectSummary {
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
+    /// <p>The ID of the domain unit.</p>
+    pub fn domain_unit_id(&self) -> ::std::option::Option<&str> {
+        self.domain_unit_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for ProjectSummary {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -79,6 +85,7 @@ impl ::std::fmt::Debug for ProjectSummary {
         formatter.field("created_by", &self.created_by);
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
+        formatter.field("domain_unit_id", &self.domain_unit_id);
         formatter.finish()
     }
 }
@@ -102,6 +109,7 @@ pub struct ProjectSummaryBuilder {
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) domain_unit_id: ::std::option::Option<::std::string::String>,
 }
 impl ProjectSummaryBuilder {
     /// <p>The identifier of a Amazon DataZone domain where the project exists.</p>
@@ -240,6 +248,20 @@ impl ProjectSummaryBuilder {
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
+    /// <p>The ID of the domain unit.</p>
+    pub fn domain_unit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_unit_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the domain unit.</p>
+    pub fn set_domain_unit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.domain_unit_id = input;
+        self
+    }
+    /// <p>The ID of the domain unit.</p>
+    pub fn get_domain_unit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_unit_id
+    }
     /// Consumes the builder and constructs a [`ProjectSummary`](crate::types::ProjectSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`domain_id`](crate::types::builders::ProjectSummaryBuilder::domain_id)
@@ -277,6 +299,7 @@ impl ProjectSummaryBuilder {
             })?,
             created_at: self.created_at,
             updated_at: self.updated_at,
+            domain_unit_id: self.domain_unit_id,
         })
     }
 }
@@ -292,6 +315,7 @@ impl ::std::fmt::Debug for ProjectSummaryBuilder {
         formatter.field("created_by", &self.created_by);
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
+        formatter.field("domain_unit_id", &self.domain_unit_id);
         formatter.finish()
     }
 }

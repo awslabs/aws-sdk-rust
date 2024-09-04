@@ -5,12 +5,18 @@
 pub struct DescribeInstanceOutput {
     /// <p>The name of the instance.</p>
     pub instance: ::std::option::Option<crate::types::Instance>,
+    /// <p>Status information about the replication process. This field is included only when you are using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ReplicateInstance.html">ReplicateInstance</a> API to replicate an Amazon Connect instance across Amazon Web Services Regions. For information about replicating Amazon Connect instances, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-replica-connect-instance.html">Create a replica of your existing Amazon Connect instance</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    pub replication_configuration: ::std::option::Option<crate::types::ReplicationConfiguration>,
     _request_id: Option<String>,
 }
 impl DescribeInstanceOutput {
     /// <p>The name of the instance.</p>
     pub fn instance(&self) -> ::std::option::Option<&crate::types::Instance> {
         self.instance.as_ref()
+    }
+    /// <p>Status information about the replication process. This field is included only when you are using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ReplicateInstance.html">ReplicateInstance</a> API to replicate an Amazon Connect instance across Amazon Web Services Regions. For information about replicating Amazon Connect instances, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-replica-connect-instance.html">Create a replica of your existing Amazon Connect instance</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    pub fn replication_configuration(&self) -> ::std::option::Option<&crate::types::ReplicationConfiguration> {
+        self.replication_configuration.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeInstanceOutput {
@@ -30,6 +36,7 @@ impl DescribeInstanceOutput {
 #[non_exhaustive]
 pub struct DescribeInstanceOutputBuilder {
     pub(crate) instance: ::std::option::Option<crate::types::Instance>,
+    pub(crate) replication_configuration: ::std::option::Option<crate::types::ReplicationConfiguration>,
     _request_id: Option<String>,
 }
 impl DescribeInstanceOutputBuilder {
@@ -47,6 +54,20 @@ impl DescribeInstanceOutputBuilder {
     pub fn get_instance(&self) -> &::std::option::Option<crate::types::Instance> {
         &self.instance
     }
+    /// <p>Status information about the replication process. This field is included only when you are using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ReplicateInstance.html">ReplicateInstance</a> API to replicate an Amazon Connect instance across Amazon Web Services Regions. For information about replicating Amazon Connect instances, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-replica-connect-instance.html">Create a replica of your existing Amazon Connect instance</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    pub fn replication_configuration(mut self, input: crate::types::ReplicationConfiguration) -> Self {
+        self.replication_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Status information about the replication process. This field is included only when you are using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ReplicateInstance.html">ReplicateInstance</a> API to replicate an Amazon Connect instance across Amazon Web Services Regions. For information about replicating Amazon Connect instances, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-replica-connect-instance.html">Create a replica of your existing Amazon Connect instance</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    pub fn set_replication_configuration(mut self, input: ::std::option::Option<crate::types::ReplicationConfiguration>) -> Self {
+        self.replication_configuration = input;
+        self
+    }
+    /// <p>Status information about the replication process. This field is included only when you are using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ReplicateInstance.html">ReplicateInstance</a> API to replicate an Amazon Connect instance across Amazon Web Services Regions. For information about replicating Amazon Connect instances, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-replica-connect-instance.html">Create a replica of your existing Amazon Connect instance</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    pub fn get_replication_configuration(&self) -> &::std::option::Option<crate::types::ReplicationConfiguration> {
+        &self.replication_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -60,6 +81,7 @@ impl DescribeInstanceOutputBuilder {
     pub fn build(self) -> crate::operation::describe_instance::DescribeInstanceOutput {
         crate::operation::describe_instance::DescribeInstanceOutput {
             instance: self.instance,
+            replication_configuration: self.replication_configuration,
             _request_id: self._request_id,
         }
     }

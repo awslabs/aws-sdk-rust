@@ -41,6 +41,14 @@ pub use crate::types::_lake_formation_configuration::LakeFormationConfiguration;
 
 pub use crate::types::_environment_blueprint_configuration_item::EnvironmentBlueprintConfigurationItem;
 
+pub use crate::types::_domain_unit_owner_properties::DomainUnitOwnerProperties;
+
+pub use crate::types::_domain_unit_group_properties::DomainUnitGroupProperties;
+
+pub use crate::types::_domain_unit_user_properties::DomainUnitUserProperties;
+
+pub use crate::types::_domain_unit_summary::DomainUnitSummary;
+
 pub use crate::types::_domain_status::DomainStatus;
 
 pub use crate::types::_single_sign_on::SingleSignOn;
@@ -152,6 +160,8 @@ pub use crate::types::_subscribed_product_listing::SubscribedProductListing;
 pub use crate::types::_asset_in_data_product_listing_item::AssetInDataProductListingItem;
 
 pub use crate::types::_subscribed_asset_listing::SubscribedAssetListing;
+
+pub use crate::types::_asset_scope::AssetScope;
 
 pub use crate::types::_subscribed_principal::SubscribedPrincipal;
 
@@ -303,6 +313,42 @@ pub use crate::types::_inventory_search_scope::InventorySearchScope;
 
 pub use crate::types::_subscription_status::SubscriptionStatus;
 
+pub use crate::types::_policy_grant_principal::PolicyGrantPrincipal;
+
+pub use crate::types::_domain_unit_policy_grant_principal::DomainUnitPolicyGrantPrincipal;
+
+pub use crate::types::_domain_unit_grant_filter::DomainUnitGrantFilter;
+
+pub use crate::types::_all_domain_units_grant_filter::AllDomainUnitsGrantFilter;
+
+pub use crate::types::_domain_unit_designation::DomainUnitDesignation;
+
+pub use crate::types::_project_policy_grant_principal::ProjectPolicyGrantPrincipal;
+
+pub use crate::types::_project_grant_filter::ProjectGrantFilter;
+
+pub use crate::types::_domain_unit_filter_for_project::DomainUnitFilterForProject;
+
+pub use crate::types::_project_designation::ProjectDesignation;
+
+pub use crate::types::_group_policy_grant_principal::GroupPolicyGrantPrincipal;
+
+pub use crate::types::_user_policy_grant_principal::UserPolicyGrantPrincipal;
+
+pub use crate::types::_all_users_grant_filter::AllUsersGrantFilter;
+
+pub use crate::types::_managed_policy_type::ManagedPolicyType;
+
+pub use crate::types::_target_entity_type::TargetEntityType;
+
+pub use crate::types::_owner_properties::OwnerProperties;
+
+pub use crate::types::_owner_group_properties::OwnerGroupProperties;
+
+pub use crate::types::_owner_user_properties::OwnerUserProperties;
+
+pub use crate::types::_data_zone_entity_type::DataZoneEntityType;
+
 pub use crate::types::_reject_choice::RejectChoice;
 
 pub use crate::types::_reject_rule::RejectRule;
@@ -339,6 +385,30 @@ pub use crate::types::_user_details::UserDetails;
 
 pub use crate::types::_sort_field_project::SortFieldProject;
 
+pub use crate::types::_policy_grant_member::PolicyGrantMember;
+
+pub use crate::types::_policy_grant_detail::PolicyGrantDetail;
+
+pub use crate::types::_unit::Unit;
+
+pub use crate::types::_create_environment_profile_policy_grant_detail::CreateEnvironmentProfilePolicyGrantDetail;
+
+pub use crate::types::_create_project_policy_grant_detail::CreateProjectPolicyGrantDetail;
+
+pub use crate::types::_create_asset_type_policy_grant_detail::CreateAssetTypePolicyGrantDetail;
+
+pub use crate::types::_create_form_type_policy_grant_detail::CreateFormTypePolicyGrantDetail;
+
+pub use crate::types::_create_glossary_policy_grant_detail::CreateGlossaryPolicyGrantDetail;
+
+pub use crate::types::_override_project_owners_policy_grant_detail::OverrideProjectOwnersPolicyGrantDetail;
+
+pub use crate::types::_add_to_project_member_pool_policy_grant_detail::AddToProjectMemberPoolPolicyGrantDetail;
+
+pub use crate::types::_override_domain_unit_owners_policy_grant_detail::OverrideDomainUnitOwnersPolicyGrantDetail;
+
+pub use crate::types::_create_domain_unit_policy_grant_detail::CreateDomainUnitPolicyGrantDetail;
+
 pub use crate::types::_notification_output::NotificationOutput;
 
 pub use crate::types::_task_status::TaskStatus;
@@ -364,6 +434,12 @@ pub use crate::types::_environment_profile_summary::EnvironmentProfileSummary;
 pub use crate::types::_environment_blueprint_summary::EnvironmentBlueprintSummary;
 
 pub use crate::types::_environment_action_summary::EnvironmentActionSummary;
+
+pub use crate::types::_owner_properties_output::OwnerPropertiesOutput;
+
+pub use crate::types::_owner_group_properties_output::OwnerGroupPropertiesOutput;
+
+pub use crate::types::_owner_user_properties_output::OwnerUserPropertiesOutput;
 
 pub use crate::types::_data_source_run_activity::DataSourceRunActivity;
 
@@ -397,6 +473,8 @@ pub use crate::types::_change_action::ChangeAction;
 
 pub use crate::types::_entity_type::EntityType;
 
+pub use crate::types::_accepted_asset_scope::AcceptedAssetScope;
+
 pub use crate::types::_accept_choice::AcceptChoice;
 
 pub use crate::types::_accept_rule::AcceptRule;
@@ -409,7 +487,15 @@ mod _accept_rule;
 
 mod _accept_rule_behavior;
 
+mod _accepted_asset_scope;
+
 mod _action_parameters;
+
+mod _add_to_project_member_pool_policy_grant_detail;
+
+mod _all_domain_units_grant_filter;
+
+mod _all_users_grant_filter;
 
 mod _asset_filter_configuration;
 
@@ -430,6 +516,8 @@ mod _asset_listing_item;
 mod _asset_listing_item_additional_attributes;
 
 mod _asset_revision;
+
+mod _asset_scope;
 
 mod _asset_target_name_map;
 
@@ -452,6 +540,18 @@ mod _configurable_action_parameter;
 mod _configurable_action_type_authorization;
 
 mod _configurable_environment_action;
+
+mod _create_asset_type_policy_grant_detail;
+
+mod _create_domain_unit_policy_grant_detail;
+
+mod _create_environment_profile_policy_grant_detail;
+
+mod _create_form_type_policy_grant_detail;
+
+mod _create_glossary_policy_grant_detail;
+
+mod _create_project_policy_grant_detail;
 
 mod _custom_parameter;
 
@@ -493,6 +593,8 @@ mod _data_source_status;
 
 mod _data_source_summary;
 
+mod _data_zone_entity_type;
+
 mod _deployment;
 
 mod _deployment_properties;
@@ -506,6 +608,22 @@ mod _detailed_glossary_term;
 mod _domain_status;
 
 mod _domain_summary;
+
+mod _domain_unit_designation;
+
+mod _domain_unit_filter_for_project;
+
+mod _domain_unit_grant_filter;
+
+mod _domain_unit_group_properties;
+
+mod _domain_unit_owner_properties;
+
+mod _domain_unit_policy_grant_principal;
+
+mod _domain_unit_summary;
+
+mod _domain_unit_user_properties;
 
 mod _edge_direction;
 
@@ -579,6 +697,8 @@ mod _greater_than_or_equal_to_expression;
 
 mod _group_details;
 
+mod _group_policy_grant_principal;
+
 mod _group_profile_status;
 
 mod _group_profile_summary;
@@ -623,6 +743,8 @@ mod _listing_summary;
 
 mod _listing_summary_item;
 
+mod _managed_policy_type;
+
 mod _member;
 
 mod _member_details;
@@ -655,11 +777,39 @@ mod _notification_role;
 
 mod _notification_type;
 
+mod _override_domain_unit_owners_policy_grant_detail;
+
+mod _override_project_owners_policy_grant_detail;
+
+mod _owner_group_properties;
+
+mod _owner_group_properties_output;
+
+mod _owner_properties;
+
+mod _owner_properties_output;
+
+mod _owner_user_properties;
+
+mod _owner_user_properties_output;
+
+mod _policy_grant_detail;
+
+mod _policy_grant_member;
+
+mod _policy_grant_principal;
+
 mod _prediction_configuration;
 
 mod _project_deletion_error;
 
+mod _project_designation;
+
+mod _project_grant_filter;
+
 mod _project_member;
+
+mod _project_policy_grant_principal;
 
 mod _project_status;
 
@@ -771,6 +921,8 @@ mod _subscription_target_form;
 
 mod _subscription_target_summary;
 
+mod _target_entity_type;
+
 mod _task_status;
 
 mod _term_relations;
@@ -789,11 +941,15 @@ mod _topic;
 
 mod _types_search_scope;
 
+mod _unit;
+
 mod _user_assignment;
 
 mod _user_designation;
 
 mod _user_details;
+
+mod _user_policy_grant_principal;
 
 mod _user_profile_details;
 

@@ -7,6 +7,12 @@ pub mod accept_predictions;
 /// Types for the `AcceptSubscriptionRequest` operation.
 pub mod accept_subscription_request;
 
+/// Types for the `AddEntityOwner` operation.
+pub mod add_entity_owner;
+
+/// Types for the `AddPolicyGrant` operation.
+pub mod add_policy_grant;
+
 /// Types for the `AssociateEnvironmentRole` operation.
 pub mod associate_environment_role;
 
@@ -39,6 +45,9 @@ pub mod create_data_source;
 
 /// Types for the `CreateDomain` operation.
 pub mod create_domain;
+
+/// Types for the `CreateDomainUnit` operation.
+pub mod create_domain_unit;
 
 /// Types for the `CreateEnvironment` operation.
 pub mod create_environment;
@@ -99,6 +108,9 @@ pub mod delete_data_source;
 
 /// Types for the `DeleteDomain` operation.
 pub mod delete_domain;
+
+/// Types for the `DeleteDomainUnit` operation.
+pub mod delete_domain_unit;
 
 /// Types for the `DeleteEnvironment` operation.
 pub mod delete_environment;
@@ -165,6 +177,9 @@ pub mod get_data_source_run;
 
 /// Types for the `GetDomain` operation.
 pub mod get_domain;
+
+/// Types for the `GetDomainUnit` operation.
+pub mod get_domain_unit;
 
 /// Types for the `GetEnvironment` operation.
 pub mod get_environment;
@@ -247,8 +262,14 @@ pub mod list_data_source_runs;
 /// Types for the `ListDataSources` operation.
 pub mod list_data_sources;
 
+/// Types for the `ListDomainUnitsForParent` operation.
+pub mod list_domain_units_for_parent;
+
 /// Types for the `ListDomains` operation.
 pub mod list_domains;
+
+/// Types for the `ListEntityOwners` operation.
+pub mod list_entity_owners;
 
 /// Types for the `ListEnvironmentActions` operation.
 pub mod list_environment_actions;
@@ -273,6 +294,9 @@ pub mod list_metadata_generation_runs;
 
 /// Types for the `ListNotifications` operation.
 pub mod list_notifications;
+
+/// Types for the `ListPolicyGrants` operation.
+pub mod list_policy_grants;
 
 /// Types for the `ListProjectMemberships` operation.
 pub mod list_project_memberships;
@@ -313,6 +337,12 @@ pub mod reject_predictions;
 /// Types for the `RejectSubscriptionRequest` operation.
 pub mod reject_subscription_request;
 
+/// Types for the `RemoveEntityOwner` operation.
+pub mod remove_entity_owner;
+
+/// Types for the `RemovePolicyGrant` operation.
+pub mod remove_policy_grant;
+
 /// Types for the `RevokeSubscription` operation.
 pub mod revoke_subscription;
 
@@ -351,6 +381,9 @@ pub mod update_data_source;
 
 /// Types for the `UpdateDomain` operation.
 pub mod update_domain;
+
+/// Types for the `UpdateDomainUnit` operation.
+pub mod update_domain_unit;
 
 /// Types for the `UpdateEnvironment` operation.
 pub mod update_environment;

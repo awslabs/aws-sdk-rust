@@ -227,12 +227,12 @@ impl CreateTransformJobFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_environment`](Self::set_environment).
     ///
-    /// <p>The environment variables to set in the Docker container. We support up to 16 key and values entries in the map.</p>
+    /// <p>The environment variables to set in the Docker container. Don't include any sensitive data in your environment variables. We support up to 16 key and values entries in the map.</p>
     pub fn environment(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment(k.into(), v.into());
         self
     }
-    /// <p>The environment variables to set in the Docker container. We support up to 16 key and values entries in the map.</p>
+    /// <p>The environment variables to set in the Docker container. Don't include any sensitive data in your environment variables. We support up to 16 key and values entries in the map.</p>
     pub fn set_environment(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -240,7 +240,7 @@ impl CreateTransformJobFluentBuilder {
         self.inner = self.inner.set_environment(input);
         self
     }
-    /// <p>The environment variables to set in the Docker container. We support up to 16 key and values entries in the map.</p>
+    /// <p>The environment variables to set in the Docker container. Don't include any sensitive data in your environment variables. We support up to 16 key and values entries in the map.</p>
     pub fn get_environment(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_environment()
     }

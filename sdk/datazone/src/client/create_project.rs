@@ -7,6 +7,7 @@ impl super::Client {
     ///   - [`name(impl Into<String>)`](crate::operation::create_project::builders::CreateProjectFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::create_project::builders::CreateProjectFluentBuilder::set_name):<br>required: **true**<br><p>The name of the Amazon DataZone project.</p><br>
     ///   - [`description(impl Into<String>)`](crate::operation::create_project::builders::CreateProjectFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::create_project::builders::CreateProjectFluentBuilder::set_description):<br>required: **false**<br><p>The description of the Amazon DataZone project.</p><br>
     ///   - [`glossary_terms(impl Into<String>)`](crate::operation::create_project::builders::CreateProjectFluentBuilder::glossary_terms) / [`set_glossary_terms(Option<Vec::<String>>)`](crate::operation::create_project::builders::CreateProjectFluentBuilder::set_glossary_terms):<br>required: **false**<br><p>The glossary terms that can be used in this Amazon DataZone project.</p><br>
+    ///   - [`domain_unit_id(impl Into<String>)`](crate::operation::create_project::builders::CreateProjectFluentBuilder::domain_unit_id) / [`set_domain_unit_id(Option<String>)`](crate::operation::create_project::builders::CreateProjectFluentBuilder::set_domain_unit_id):<br>required: **false**<br><p>The ID of the domain unit. This parameter is not required and if it is not specified, then the project is created at the root domain unit level.</p><br>
     /// - On success, responds with [`CreateProjectOutput`](crate::operation::create_project::CreateProjectOutput) with field(s):
     ///   - [`domain_id(String)`](crate::operation::create_project::CreateProjectOutput::domain_id): <p>The identifier of the Amazon DataZone domain in which the project was created.</p>
     ///   - [`id(String)`](crate::operation::create_project::CreateProjectOutput::id): <p>The ID of the Amazon DataZone project.</p>
@@ -18,6 +19,7 @@ impl super::Client {
     ///   - [`created_at(Option<DateTime>)`](crate::operation::create_project::CreateProjectOutput::created_at): <p>The timestamp of when the project was created.</p>
     ///   - [`last_updated_at(Option<DateTime>)`](crate::operation::create_project::CreateProjectOutput::last_updated_at): <p>The timestamp of when the project was last updated.</p>
     ///   - [`glossary_terms(Option<Vec::<String>>)`](crate::operation::create_project::CreateProjectOutput::glossary_terms): <p>The glossary terms that can be used in the project.</p>
+    ///   - [`domain_unit_id(Option<String>)`](crate::operation::create_project::CreateProjectOutput::domain_unit_id): <p>The ID of the domain unit.</p>
     /// - On failure, responds with [`SdkError<CreateProjectError>`](crate::operation::create_project::CreateProjectError)
     pub fn create_project(&self) -> crate::operation::create_project::builders::CreateProjectFluentBuilder {
         crate::operation::create_project::builders::CreateProjectFluentBuilder::new(self.handle.clone())

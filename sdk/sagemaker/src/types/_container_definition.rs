@@ -30,7 +30,7 @@ pub struct ContainerDefinition {
     pub model_data_source: ::std::option::Option<crate::types::ModelDataSource>,
     /// <p>Data sources that are available to your model in addition to the one that you specify for <code>ModelDataSource</code> when you use the <code>CreateModel</code> action.</p>
     pub additional_model_data_sources: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalModelDataSource>>,
-    /// <p>The environment variables to set in the Docker container.</p>
+    /// <p>The environment variables to set in the Docker container. Don't include any sensitive data in your environment variables.</p>
     /// <p>The maximum length of each key and value in the <code>Environment</code> map is 1024 bytes. The maximum length of all keys and values in the map, combined, is 32 KB. If you pass multiple containers to a <code>CreateModel</code> request, then the maximum length of all of their maps, combined, is also 32 KB.</p>
     pub environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The name or Amazon Resource Name (ARN) of the model package to use to create the model.</p>
@@ -83,7 +83,7 @@ impl ContainerDefinition {
     pub fn additional_model_data_sources(&self) -> &[crate::types::AdditionalModelDataSource] {
         self.additional_model_data_sources.as_deref().unwrap_or_default()
     }
-    /// <p>The environment variables to set in the Docker container.</p>
+    /// <p>The environment variables to set in the Docker container. Don't include any sensitive data in your environment variables.</p>
     /// <p>The maximum length of each key and value in the <code>Environment</code> map is 1024 bytes. The maximum length of all keys and values in the map, combined, is 32 KB. If you pass multiple containers to a <code>CreateModel</code> request, then the maximum length of all of their maps, combined, is also 32 KB.</p>
     pub fn environment(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.environment.as_ref()
@@ -272,7 +272,7 @@ impl ContainerDefinitionBuilder {
     ///
     /// To override the contents of this collection use [`set_environment`](Self::set_environment).
     ///
-    /// <p>The environment variables to set in the Docker container.</p>
+    /// <p>The environment variables to set in the Docker container. Don't include any sensitive data in your environment variables.</p>
     /// <p>The maximum length of each key and value in the <code>Environment</code> map is 1024 bytes. The maximum length of all keys and values in the map, combined, is 32 KB. If you pass multiple containers to a <code>CreateModel</code> request, then the maximum length of all of their maps, combined, is also 32 KB.</p>
     pub fn environment(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.environment.unwrap_or_default();
@@ -280,7 +280,7 @@ impl ContainerDefinitionBuilder {
         self.environment = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The environment variables to set in the Docker container.</p>
+    /// <p>The environment variables to set in the Docker container. Don't include any sensitive data in your environment variables.</p>
     /// <p>The maximum length of each key and value in the <code>Environment</code> map is 1024 bytes. The maximum length of all keys and values in the map, combined, is 32 KB. If you pass multiple containers to a <code>CreateModel</code> request, then the maximum length of all of their maps, combined, is also 32 KB.</p>
     pub fn set_environment(
         mut self,
@@ -289,7 +289,7 @@ impl ContainerDefinitionBuilder {
         self.environment = input;
         self
     }
-    /// <p>The environment variables to set in the Docker container.</p>
+    /// <p>The environment variables to set in the Docker container. Don't include any sensitive data in your environment variables.</p>
     /// <p>The maximum length of each key and value in the <code>Environment</code> map is 1024 bytes. The maximum length of all keys and values in the map, combined, is 32 KB. If you pass multiple containers to a <code>CreateModel</code> request, then the maximum length of all of their maps, combined, is also 32 KB.</p>
     pub fn get_environment(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.environment

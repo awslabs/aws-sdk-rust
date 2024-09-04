@@ -87,6 +87,10 @@ pub(crate) mod shape_describe_account_limits;
 
 pub(crate) mod shape_describe_account_limits_input;
 
+pub(crate) mod shape_describe_listener_attributes;
+
+pub(crate) mod shape_describe_listener_attributes_input;
+
 pub(crate) mod shape_describe_listener_certificates;
 
 pub(crate) mod shape_describe_listener_certificates_input;
@@ -152,6 +156,10 @@ pub(crate) mod shape_get_trust_store_revocation_content;
 pub(crate) mod shape_get_trust_store_revocation_content_input;
 
 pub(crate) mod shape_modify_listener;
+
+pub(crate) mod shape_modify_listener_attributes;
+
+pub(crate) mod shape_modify_listener_attributes_input;
 
 pub(crate) mod shape_modify_listener_input;
 
@@ -252,6 +260,8 @@ pub(crate) mod shape_invalid_security_group_exception;
 pub(crate) mod shape_invalid_subnet_exception;
 
 pub(crate) mod shape_invalid_target_exception;
+
+pub(crate) mod shape_listener_attribute;
 
 pub(crate) mod shape_listener_not_found_exception;
 
@@ -354,6 +364,8 @@ pub(crate) mod shape_http_header_condition_config;
 pub(crate) mod shape_http_request_method_condition_config;
 
 pub(crate) mod shape_limits;
+
+pub(crate) mod shape_listener_attributes;
 
 pub(crate) mod shape_listeners;
 

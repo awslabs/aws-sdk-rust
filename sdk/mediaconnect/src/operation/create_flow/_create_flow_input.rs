@@ -24,6 +24,8 @@ pub struct CreateFlowInput {
     pub vpc_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::VpcInterfaceRequest>>,
     /// Create maintenance setting for a flow
     pub maintenance: ::std::option::Option<crate::types::AddMaintenance>,
+    /// The settings for source monitoring.
+    pub source_monitoring_config: ::std::option::Option<crate::types::MonitoringConfig>,
 }
 impl CreateFlowInput {
     /// The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS Region.
@@ -76,6 +78,10 @@ impl CreateFlowInput {
     pub fn maintenance(&self) -> ::std::option::Option<&crate::types::AddMaintenance> {
         self.maintenance.as_ref()
     }
+    /// The settings for source monitoring.
+    pub fn source_monitoring_config(&self) -> ::std::option::Option<&crate::types::MonitoringConfig> {
+        self.source_monitoring_config.as_ref()
+    }
 }
 impl CreateFlowInput {
     /// Creates a new builder-style object to manufacture [`CreateFlowInput`](crate::operation::create_flow::CreateFlowInput).
@@ -98,6 +104,7 @@ pub struct CreateFlowInputBuilder {
     pub(crate) sources: ::std::option::Option<::std::vec::Vec<crate::types::SetSourceRequest>>,
     pub(crate) vpc_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::VpcInterfaceRequest>>,
     pub(crate) maintenance: ::std::option::Option<crate::types::AddMaintenance>,
+    pub(crate) source_monitoring_config: ::std::option::Option<crate::types::MonitoringConfig>,
 }
 impl CreateFlowInputBuilder {
     /// The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS Region.
@@ -270,6 +277,20 @@ impl CreateFlowInputBuilder {
     pub fn get_maintenance(&self) -> &::std::option::Option<crate::types::AddMaintenance> {
         &self.maintenance
     }
+    /// The settings for source monitoring.
+    pub fn source_monitoring_config(mut self, input: crate::types::MonitoringConfig) -> Self {
+        self.source_monitoring_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// The settings for source monitoring.
+    pub fn set_source_monitoring_config(mut self, input: ::std::option::Option<crate::types::MonitoringConfig>) -> Self {
+        self.source_monitoring_config = input;
+        self
+    }
+    /// The settings for source monitoring.
+    pub fn get_source_monitoring_config(&self) -> &::std::option::Option<crate::types::MonitoringConfig> {
+        &self.source_monitoring_config
+    }
     /// Consumes the builder and constructs a [`CreateFlowInput`](crate::operation::create_flow::CreateFlowInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_flow::CreateFlowInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_flow::CreateFlowInput {
@@ -283,6 +304,7 @@ impl CreateFlowInputBuilder {
             sources: self.sources,
             vpc_interfaces: self.vpc_interfaces,
             maintenance: self.maintenance,
+            source_monitoring_config: self.source_monitoring_config,
         })
     }
 }

@@ -140,6 +140,10 @@ mod accept_predictions;
 
 mod accept_subscription_request;
 
+mod add_entity_owner;
+
+mod add_policy_grant;
+
 mod associate_environment_role;
 
 mod cancel_metadata_generation_run;
@@ -161,6 +165,8 @@ mod create_data_product_revision;
 mod create_data_source;
 
 mod create_domain;
+
+mod create_domain_unit;
 
 mod create_environment;
 
@@ -229,6 +235,8 @@ mod delete_data_source;
 
 mod delete_domain;
 
+mod delete_domain_unit;
+
 mod delete_environment;
 
 mod delete_environment_action;
@@ -272,6 +280,8 @@ mod get_data_source;
 mod get_data_source_run;
 
 mod get_domain;
+
+mod get_domain_unit;
 
 mod get_environment;
 
@@ -327,7 +337,11 @@ mod list_data_source_runs;
 
 mod list_data_sources;
 
+mod list_domain_units_for_parent;
+
 mod list_domains;
+
+mod list_entity_owners;
 
 mod list_environment_actions;
 
@@ -344,6 +358,8 @@ mod list_lineage_node_history;
 mod list_metadata_generation_runs;
 
 mod list_notifications;
+
+mod list_policy_grants;
 
 mod list_project_memberships;
 
@@ -371,6 +387,10 @@ mod reject_predictions;
 
 mod reject_subscription_request;
 
+mod remove_entity_owner;
+
+mod remove_policy_grant;
+
 mod revoke_subscription;
 
 mod search;
@@ -396,6 +416,8 @@ mod update_asset_filter;
 mod update_data_source;
 
 mod update_domain;
+
+mod update_domain_unit;
 
 mod update_environment;
 

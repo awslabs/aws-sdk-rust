@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyTargetGroupAttributesOutput {
-    /// <p>Information about the attributes.</p>
+    /// <p>Information about the target group attributes.</p>
     pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroupAttribute>>,
     _request_id: Option<String>,
 }
 impl ModifyTargetGroupAttributesOutput {
-    /// <p>Information about the attributes.</p>
+    /// <p>Information about the target group attributes.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes.is_none()`.
     pub fn attributes(&self) -> &[crate::types::TargetGroupAttribute] {
@@ -39,19 +39,19 @@ impl ModifyTargetGroupAttributesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
-    /// <p>Information about the attributes.</p>
+    /// <p>Information about the target group attributes.</p>
     pub fn attributes(mut self, input: crate::types::TargetGroupAttribute) -> Self {
         let mut v = self.attributes.unwrap_or_default();
         v.push(input);
         self.attributes = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Information about the attributes.</p>
+    /// <p>Information about the target group attributes.</p>
     pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroupAttribute>>) -> Self {
         self.attributes = input;
         self
     }
-    /// <p>Information about the attributes.</p>
+    /// <p>Information about the target group attributes.</p>
     pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetGroupAttribute>> {
         &self.attributes
     }

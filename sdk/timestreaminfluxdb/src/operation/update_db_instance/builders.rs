@@ -150,4 +150,32 @@ impl UpdateDbInstanceFluentBuilder {
     pub fn get_db_parameter_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_parameter_group_identifier()
     }
+    /// <p>The Timestream for InfluxDB DB instance type to run InfluxDB on.</p>
+    pub fn db_instance_type(mut self, input: crate::types::DbInstanceType) -> Self {
+        self.inner = self.inner.db_instance_type(input);
+        self
+    }
+    /// <p>The Timestream for InfluxDB DB instance type to run InfluxDB on.</p>
+    pub fn set_db_instance_type(mut self, input: ::std::option::Option<crate::types::DbInstanceType>) -> Self {
+        self.inner = self.inner.set_db_instance_type(input);
+        self
+    }
+    /// <p>The Timestream for InfluxDB DB instance type to run InfluxDB on.</p>
+    pub fn get_db_instance_type(&self) -> &::std::option::Option<crate::types::DbInstanceType> {
+        self.inner.get_db_instance_type()
+    }
+    /// <p>Specifies whether the DB instance will be deployed as a standalone instance or with a Multi-AZ standby for high availability.</p>
+    pub fn deployment_type(mut self, input: crate::types::DeploymentType) -> Self {
+        self.inner = self.inner.deployment_type(input);
+        self
+    }
+    /// <p>Specifies whether the DB instance will be deployed as a standalone instance or with a Multi-AZ standby for high availability.</p>
+    pub fn set_deployment_type(mut self, input: ::std::option::Option<crate::types::DeploymentType>) -> Self {
+        self.inner = self.inner.set_deployment_type(input);
+        self
+    }
+    /// <p>Specifies whether the DB instance will be deployed as a standalone instance or with a Multi-AZ standby for high availability.</p>
+    pub fn get_deployment_type(&self) -> &::std::option::Option<crate::types::DeploymentType> {
+        self.inner.get_deployment_type()
+    }
 }

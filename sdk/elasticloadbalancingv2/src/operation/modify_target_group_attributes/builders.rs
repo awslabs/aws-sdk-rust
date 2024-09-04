@@ -127,17 +127,17 @@ impl ModifyTargetGroupAttributesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
-    /// <p>The attributes.</p>
+    /// <p>The target group attributes.</p>
     pub fn attributes(mut self, input: crate::types::TargetGroupAttribute) -> Self {
         self.inner = self.inner.attributes(input);
         self
     }
-    /// <p>The attributes.</p>
+    /// <p>The target group attributes.</p>
     pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroupAttribute>>) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
     }
-    /// <p>The attributes.</p>
+    /// <p>The target group attributes.</p>
     pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetGroupAttribute>> {
         self.inner.get_attributes()
     }

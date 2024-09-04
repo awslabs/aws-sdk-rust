@@ -15,5 +15,11 @@ pub fn ser_update_flow_input_input(
         crate::protocol_serde::shape_update_failover_config::ser_update_failover_config(&mut object_4, var_3)?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.source_monitoring_config {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("sourceMonitoringConfig").start_object();
+        crate::protocol_serde::shape_monitoring_config::ser_monitoring_config(&mut object_6, var_5)?;
+        object_6.finish();
+    }
     Ok(())
 }

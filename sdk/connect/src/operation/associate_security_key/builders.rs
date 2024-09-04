@@ -123,17 +123,17 @@ impl AssociateSecurityKeyFluentBuilder {
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_id()
     }
-    /// <p>A valid security key in PEM format.</p>
+    /// <p>A valid security key in PEM format as a String.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.key(input.into());
         self
     }
-    /// <p>A valid security key in PEM format.</p>
+    /// <p>A valid security key in PEM format as a String.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_key(input);
         self
     }
-    /// <p>A valid security key in PEM format.</p>
+    /// <p>A valid security key in PEM format as a String.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_key()
     }

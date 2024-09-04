@@ -11,6 +11,8 @@ pub struct CreateProjectInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The glossary terms that can be used in this Amazon DataZone project.</p>
     pub glossary_terms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The ID of the domain unit. This parameter is not required and if it is not specified, then the project is created at the root domain unit level.</p>
+    pub domain_unit_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateProjectInput {
     /// <p>The ID of the Amazon DataZone domain in which this project is created.</p>
@@ -31,6 +33,10 @@ impl CreateProjectInput {
     pub fn glossary_terms(&self) -> &[::std::string::String] {
         self.glossary_terms.as_deref().unwrap_or_default()
     }
+    /// <p>The ID of the domain unit. This parameter is not required and if it is not specified, then the project is created at the root domain unit level.</p>
+    pub fn domain_unit_id(&self) -> ::std::option::Option<&str> {
+        self.domain_unit_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for CreateProjectInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -39,6 +45,7 @@ impl ::std::fmt::Debug for CreateProjectInput {
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("glossary_terms", &self.glossary_terms);
+        formatter.field("domain_unit_id", &self.domain_unit_id);
         formatter.finish()
     }
 }
@@ -57,6 +64,7 @@ pub struct CreateProjectInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) glossary_terms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) domain_unit_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateProjectInputBuilder {
     /// <p>The ID of the Amazon DataZone domain in which this project is created.</p>
@@ -123,6 +131,20 @@ impl CreateProjectInputBuilder {
     pub fn get_glossary_terms(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.glossary_terms
     }
+    /// <p>The ID of the domain unit. This parameter is not required and if it is not specified, then the project is created at the root domain unit level.</p>
+    pub fn domain_unit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_unit_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the domain unit. This parameter is not required and if it is not specified, then the project is created at the root domain unit level.</p>
+    pub fn set_domain_unit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.domain_unit_id = input;
+        self
+    }
+    /// <p>The ID of the domain unit. This parameter is not required and if it is not specified, then the project is created at the root domain unit level.</p>
+    pub fn get_domain_unit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_unit_id
+    }
     /// Consumes the builder and constructs a [`CreateProjectInput`](crate::operation::create_project::CreateProjectInput).
     pub fn build(
         self,
@@ -132,6 +154,7 @@ impl CreateProjectInputBuilder {
             name: self.name,
             description: self.description,
             glossary_terms: self.glossary_terms,
+            domain_unit_id: self.domain_unit_id,
         })
     }
 }
@@ -142,6 +165,7 @@ impl ::std::fmt::Debug for CreateProjectInputBuilder {
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("glossary_terms", &self.glossary_terms);
+        formatter.field("domain_unit_id", &self.domain_unit_id);
         formatter.finish()
     }
 }

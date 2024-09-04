@@ -81,6 +81,10 @@ where
                         "maintenance" => {
                             builder = builder.set_maintenance(crate::protocol_serde::shape_maintenance::de_maintenance(tokens)?);
                         }
+                        "sourceMonitoringConfig" => {
+                            builder =
+                                builder.set_source_monitoring_config(crate::protocol_serde::shape_monitoring_config::de_monitoring_config(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

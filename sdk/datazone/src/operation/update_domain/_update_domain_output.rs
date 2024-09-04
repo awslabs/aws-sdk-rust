@@ -5,6 +5,8 @@
 pub struct UpdateDomainOutput {
     /// <p>The identifier of the Amazon DataZone domain.</p>
     pub id: ::std::string::String,
+    /// <p>The ID of the root domain unit.</p>
+    pub root_domain_unit_id: ::std::option::Option<::std::string::String>,
     /// <p>The description to be updated as part of the <code>UpdateDomain</code> action.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The single sign-on option of the Amazon DataZone domain.</p>
@@ -22,6 +24,10 @@ impl UpdateDomainOutput {
     pub fn id(&self) -> &str {
         use std::ops::Deref;
         self.id.deref()
+    }
+    /// <p>The ID of the root domain unit.</p>
+    pub fn root_domain_unit_id(&self) -> ::std::option::Option<&str> {
+        self.root_domain_unit_id.as_deref()
     }
     /// <p>The description to be updated as part of the <code>UpdateDomain</code> action.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -61,6 +67,7 @@ impl UpdateDomainOutput {
 #[non_exhaustive]
 pub struct UpdateDomainOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) root_domain_unit_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) single_sign_on: ::std::option::Option<crate::types::SingleSignOn>,
     pub(crate) domain_execution_role: ::std::option::Option<::std::string::String>,
@@ -83,6 +90,20 @@ impl UpdateDomainOutputBuilder {
     /// <p>The identifier of the Amazon DataZone domain.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
+    }
+    /// <p>The ID of the root domain unit.</p>
+    pub fn root_domain_unit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.root_domain_unit_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the root domain unit.</p>
+    pub fn set_root_domain_unit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.root_domain_unit_id = input;
+        self
+    }
+    /// <p>The ID of the root domain unit.</p>
+    pub fn get_root_domain_unit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.root_domain_unit_id
     }
     /// <p>The description to be updated as part of the <code>UpdateDomain</code> action.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -176,6 +197,7 @@ impl UpdateDomainOutputBuilder {
                     "id was not specified but it is required when building UpdateDomainOutput",
                 )
             })?,
+            root_domain_unit_id: self.root_domain_unit_id,
             description: self.description,
             single_sign_on: self.single_sign_on,
             domain_execution_role: self.domain_execution_role,

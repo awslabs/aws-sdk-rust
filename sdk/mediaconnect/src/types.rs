@@ -79,6 +79,10 @@ pub use crate::types::_entitlement_status::EntitlementStatus;
 
 pub use crate::types::_flow::Flow;
 
+pub use crate::types::_monitoring_config::MonitoringConfig;
+
+pub use crate::types::_thumbnail_state::ThumbnailState;
+
 pub use crate::types::_maintenance::Maintenance;
 
 pub use crate::types::_maintenance_day::MaintenanceDay;
@@ -174,6 +178,8 @@ pub use crate::types::_connection_status::ConnectionStatus;
 pub use crate::types::_gateway::Gateway;
 
 pub use crate::types::_gateway_network::GatewayNetwork;
+
+pub use crate::types::_thumbnail_details::ThumbnailDetails;
 
 pub use crate::types::_transport_media_info::TransportMediaInfo;
 
@@ -351,6 +357,8 @@ mod _message_detail;
 
 mod _messages;
 
+mod _monitoring_config;
+
 mod _network_interface_type;
 
 mod _offering;
@@ -390,6 +398,10 @@ mod _state;
 mod _status;
 
 mod _tcs;
+
+mod _thumbnail_details;
+
+mod _thumbnail_state;
 
 mod _transport;
 

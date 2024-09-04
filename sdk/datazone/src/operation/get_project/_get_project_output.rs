@@ -23,6 +23,8 @@ pub struct GetProjectOutput {
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The business glossary terms that can be used in the project.</p>
     pub glossary_terms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The ID of the domain unit.</p>
+    pub domain_unit_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetProjectOutput {
@@ -74,6 +76,10 @@ impl GetProjectOutput {
     pub fn glossary_terms(&self) -> &[::std::string::String] {
         self.glossary_terms.as_deref().unwrap_or_default()
     }
+    /// <p>The ID of the domain unit.</p>
+    pub fn domain_unit_id(&self) -> ::std::option::Option<&str> {
+        self.domain_unit_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for GetProjectOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -88,6 +94,7 @@ impl ::std::fmt::Debug for GetProjectOutput {
         formatter.field("created_at", &self.created_at);
         formatter.field("last_updated_at", &self.last_updated_at);
         formatter.field("glossary_terms", &self.glossary_terms);
+        formatter.field("domain_unit_id", &self.domain_unit_id);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -118,6 +125,7 @@ pub struct GetProjectOutputBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) glossary_terms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) domain_unit_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetProjectOutputBuilder {
@@ -277,6 +285,20 @@ impl GetProjectOutputBuilder {
     pub fn get_glossary_terms(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.glossary_terms
     }
+    /// <p>The ID of the domain unit.</p>
+    pub fn domain_unit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_unit_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the domain unit.</p>
+    pub fn set_domain_unit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.domain_unit_id = input;
+        self
+    }
+    /// <p>The ID of the domain unit.</p>
+    pub fn get_domain_unit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_unit_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -324,6 +346,7 @@ impl GetProjectOutputBuilder {
             created_at: self.created_at,
             last_updated_at: self.last_updated_at,
             glossary_terms: self.glossary_terms,
+            domain_unit_id: self.domain_unit_id,
             _request_id: self._request_id,
         })
     }
@@ -341,6 +364,7 @@ impl ::std::fmt::Debug for GetProjectOutputBuilder {
         formatter.field("created_at", &self.created_at);
         formatter.field("last_updated_at", &self.last_updated_at);
         formatter.field("glossary_terms", &self.glossary_terms);
+        formatter.field("domain_unit_id", &self.domain_unit_id);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

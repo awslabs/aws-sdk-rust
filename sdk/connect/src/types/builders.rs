@@ -517,6 +517,10 @@ pub use crate::types::_claimed_phone_number_summary::ClaimedPhoneNumberSummaryBu
 
 pub use crate::types::_phone_number_status::PhoneNumberStatusBuilder;
 
+pub use crate::types::_replication_configuration::ReplicationConfigurationBuilder;
+
+pub use crate::types::_replication_status_summary::ReplicationStatusSummaryBuilder;
+
 pub use crate::types::_instance::InstanceBuilder;
 
 pub use crate::types::_instance_status_reason::InstanceStatusReasonBuilder;

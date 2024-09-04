@@ -53,6 +53,8 @@ pub use crate::types::_entitlement::EntitlementBuilder;
 
 pub use crate::types::_flow::FlowBuilder;
 
+pub use crate::types::_monitoring_config::MonitoringConfigBuilder;
+
 pub use crate::types::_maintenance::MaintenanceBuilder;
 
 pub use crate::types::_vpc_interface::VpcInterfaceBuilder;
@@ -118,6 +120,8 @@ pub use crate::types::_gateway_instance::GatewayInstanceBuilder;
 pub use crate::types::_gateway::GatewayBuilder;
 
 pub use crate::types::_gateway_network::GatewayNetworkBuilder;
+
+pub use crate::types::_thumbnail_details::ThumbnailDetailsBuilder;
 
 pub use crate::types::_transport_media_info::TransportMediaInfoBuilder;
 

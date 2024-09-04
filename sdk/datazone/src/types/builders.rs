@@ -21,6 +21,12 @@ pub use crate::types::_lake_formation_configuration::LakeFormationConfigurationB
 
 pub use crate::types::_environment_blueprint_configuration_item::EnvironmentBlueprintConfigurationItemBuilder;
 
+pub use crate::types::_domain_unit_group_properties::DomainUnitGroupPropertiesBuilder;
+
+pub use crate::types::_domain_unit_user_properties::DomainUnitUserPropertiesBuilder;
+
+pub use crate::types::_domain_unit_summary::DomainUnitSummaryBuilder;
+
 pub use crate::types::_single_sign_on::SingleSignOnBuilder;
 
 pub use crate::types::_domain_summary::DomainSummaryBuilder;
@@ -90,6 +96,8 @@ pub use crate::types::_subscribed_product_listing::SubscribedProductListingBuild
 pub use crate::types::_asset_in_data_product_listing_item::AssetInDataProductListingItemBuilder;
 
 pub use crate::types::_subscribed_asset_listing::SubscribedAssetListingBuilder;
+
+pub use crate::types::_asset_scope::AssetScopeBuilder;
 
 pub use crate::types::_subscribed_project::SubscribedProjectBuilder;
 
@@ -185,6 +193,20 @@ pub use crate::types::_glossary_term_item::GlossaryTermItemBuilder;
 
 pub use crate::types::_glossary_item::GlossaryItemBuilder;
 
+pub use crate::types::_domain_unit_policy_grant_principal::DomainUnitPolicyGrantPrincipalBuilder;
+
+pub use crate::types::_all_domain_units_grant_filter::AllDomainUnitsGrantFilterBuilder;
+
+pub use crate::types::_project_policy_grant_principal::ProjectPolicyGrantPrincipalBuilder;
+
+pub use crate::types::_domain_unit_filter_for_project::DomainUnitFilterForProjectBuilder;
+
+pub use crate::types::_all_users_grant_filter::AllUsersGrantFilterBuilder;
+
+pub use crate::types::_owner_group_properties::OwnerGroupPropertiesBuilder;
+
+pub use crate::types::_owner_user_properties::OwnerUserPropertiesBuilder;
+
 pub use crate::types::_reject_choice::RejectChoiceBuilder;
 
 pub use crate::types::_reject_rule::RejectRuleBuilder;
@@ -209,6 +231,28 @@ pub use crate::types::_group_details::GroupDetailsBuilder;
 
 pub use crate::types::_user_details::UserDetailsBuilder;
 
+pub use crate::types::_policy_grant_member::PolicyGrantMemberBuilder;
+
+pub use crate::types::_unit::UnitBuilder;
+
+pub use crate::types::_create_environment_profile_policy_grant_detail::CreateEnvironmentProfilePolicyGrantDetailBuilder;
+
+pub use crate::types::_create_project_policy_grant_detail::CreateProjectPolicyGrantDetailBuilder;
+
+pub use crate::types::_create_asset_type_policy_grant_detail::CreateAssetTypePolicyGrantDetailBuilder;
+
+pub use crate::types::_create_form_type_policy_grant_detail::CreateFormTypePolicyGrantDetailBuilder;
+
+pub use crate::types::_create_glossary_policy_grant_detail::CreateGlossaryPolicyGrantDetailBuilder;
+
+pub use crate::types::_override_project_owners_policy_grant_detail::OverrideProjectOwnersPolicyGrantDetailBuilder;
+
+pub use crate::types::_add_to_project_member_pool_policy_grant_detail::AddToProjectMemberPoolPolicyGrantDetailBuilder;
+
+pub use crate::types::_override_domain_unit_owners_policy_grant_detail::OverrideDomainUnitOwnersPolicyGrantDetailBuilder;
+
+pub use crate::types::_create_domain_unit_policy_grant_detail::CreateDomainUnitPolicyGrantDetailBuilder;
+
 pub use crate::types::_notification_output::NotificationOutputBuilder;
 
 pub use crate::types::_topic::TopicBuilder;
@@ -224,6 +268,10 @@ pub use crate::types::_environment_profile_summary::EnvironmentProfileSummaryBui
 pub use crate::types::_environment_blueprint_summary::EnvironmentBlueprintSummaryBuilder;
 
 pub use crate::types::_environment_action_summary::EnvironmentActionSummaryBuilder;
+
+pub use crate::types::_owner_group_properties_output::OwnerGroupPropertiesOutputBuilder;
+
+pub use crate::types::_owner_user_properties_output::OwnerUserPropertiesOutputBuilder;
 
 pub use crate::types::_data_source_run_activity::DataSourceRunActivityBuilder;
 
@@ -242,6 +290,8 @@ pub use crate::types::_subscribed_project_input::SubscribedProjectInputBuilder;
 pub use crate::types::_asset_target_name_map::AssetTargetNameMapBuilder;
 
 pub use crate::types::_listing_revision_input::ListingRevisionInputBuilder;
+
+pub use crate::types::_accepted_asset_scope::AcceptedAssetScopeBuilder;
 
 pub use crate::types::_accept_choice::AcceptChoiceBuilder;
 

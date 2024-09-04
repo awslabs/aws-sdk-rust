@@ -1107,7 +1107,7 @@ impl GetMetricDataV2FluentBuilder {
     /// </note>
     /// </dd>
     /// <dt>
-    /// SUM_CONTACTS_ABANDONED
+    /// CONTACTS_ABANDONED
     /// </dt>
     /// <dd>
     /// <p>Unit: Count</p>
@@ -1939,7 +1939,7 @@ impl GetMetricDataV2FluentBuilder {
     /// </note>
     /// </dd>
     /// <dt>
-    /// SUM_CONTACTS_ABANDONED
+    /// CONTACTS_ABANDONED
     /// </dt>
     /// <dd>
     /// <p>Unit: Count</p>
@@ -2771,7 +2771,7 @@ impl GetMetricDataV2FluentBuilder {
     /// </note>
     /// </dd>
     /// <dt>
-    /// SUM_CONTACTS_ABANDONED
+    /// CONTACTS_ABANDONED
     /// </dt>
     /// <dd>
     /// <p>Unit: Count</p>

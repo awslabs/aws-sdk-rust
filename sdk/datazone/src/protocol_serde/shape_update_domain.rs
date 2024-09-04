@@ -209,6 +209,13 @@ pub(crate) fn de_update_domain(
                             .transpose()?,
                     );
                 }
+                "rootDomainUnitId" => {
+                    builder = builder.set_root_domain_unit_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "singleSignOn" => {
                     builder = builder.set_single_sign_on(crate::protocol_serde::shape_single_sign_on::de_single_sign_on(tokens)?);
                 }

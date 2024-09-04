@@ -764,6 +764,33 @@ impl From<crate::operation::describe_account_limits::DescribeAccountLimitsError>
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_listener_attributes::DescribeListenerAttributesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_listener_attributes::DescribeListenerAttributesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_listener_attributes::DescribeListenerAttributesError> for Error {
+    fn from(err: crate::operation::describe_listener_attributes::DescribeListenerAttributesError) -> Self {
+        match err {
+            crate::operation::describe_listener_attributes::DescribeListenerAttributesError::ListenerNotFoundException(inner) => {
+                Error::ListenerNotFoundException(inner)
+            }
+            crate::operation::describe_listener_attributes::DescribeListenerAttributesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_listener_certificates::DescribeListenerCertificatesError, R>>
     for Error
@@ -1291,6 +1318,36 @@ impl From<crate::operation::modify_listener::ModifyListenerError> for Error {
             crate::operation::modify_listener::ModifyListenerError::TrustStoreNotReadyException(inner) => Error::TrustStoreNotReadyException(inner),
             crate::operation::modify_listener::ModifyListenerError::UnsupportedProtocolException(inner) => Error::UnsupportedProtocolException(inner),
             crate::operation::modify_listener::ModifyListenerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_listener_attributes::ModifyListenerAttributesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_listener_attributes::ModifyListenerAttributesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::modify_listener_attributes::ModifyListenerAttributesError> for Error {
+    fn from(err: crate::operation::modify_listener_attributes::ModifyListenerAttributesError) -> Self {
+        match err {
+            crate::operation::modify_listener_attributes::ModifyListenerAttributesError::InvalidConfigurationRequestException(inner) => {
+                Error::InvalidConfigurationRequestException(inner)
+            }
+            crate::operation::modify_listener_attributes::ModifyListenerAttributesError::ListenerNotFoundException(inner) => {
+                Error::ListenerNotFoundException(inner)
+            }
+            crate::operation::modify_listener_attributes::ModifyListenerAttributesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

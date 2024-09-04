@@ -587,6 +587,52 @@ impl From<crate::operation::describe_flow_source_metadata::DescribeFlowSourceMet
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_flow_source_thumbnail::DescribeFlowSourceThumbnailError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_flow_source_thumbnail::DescribeFlowSourceThumbnailError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_flow_source_thumbnail::DescribeFlowSourceThumbnailError> for Error {
+    fn from(err: crate::operation::describe_flow_source_thumbnail::DescribeFlowSourceThumbnailError) -> Self {
+        match err {
+            crate::operation::describe_flow_source_thumbnail::DescribeFlowSourceThumbnailError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::describe_flow_source_thumbnail::DescribeFlowSourceThumbnailError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::describe_flow_source_thumbnail::DescribeFlowSourceThumbnailError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::describe_flow_source_thumbnail::DescribeFlowSourceThumbnailError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::describe_flow_source_thumbnail::DescribeFlowSourceThumbnailError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::describe_flow_source_thumbnail::DescribeFlowSourceThumbnailError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::describe_flow_source_thumbnail::DescribeFlowSourceThumbnailError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_gateway::DescribeGatewayError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

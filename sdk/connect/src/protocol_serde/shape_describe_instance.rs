@@ -96,6 +96,11 @@ pub(crate) fn de_describe_instance(
                 "Instance" => {
                     builder = builder.set_instance(crate::protocol_serde::shape_instance::de_instance(tokens)?);
                 }
+                "ReplicationConfiguration" => {
+                    builder = builder.set_replication_configuration(
+                        crate::protocol_serde::shape_replication_configuration::de_replication_configuration(tokens)?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

@@ -9,6 +9,10 @@ pub struct UpdateDbInstanceInput {
     pub log_delivery_configuration: ::std::option::Option<crate::types::LogDeliveryConfiguration>,
     /// <p>The id of the DB parameter group to assign to your DB instance. DB parameter groups specify how the database is configured. For example, DB parameter groups can specify the limit for query concurrency.</p>
     pub db_parameter_group_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>The Timestream for InfluxDB DB instance type to run InfluxDB on.</p>
+    pub db_instance_type: ::std::option::Option<crate::types::DbInstanceType>,
+    /// <p>Specifies whether the DB instance will be deployed as a standalone instance or with a Multi-AZ standby for high availability.</p>
+    pub deployment_type: ::std::option::Option<crate::types::DeploymentType>,
 }
 impl UpdateDbInstanceInput {
     /// <p>The id of the DB instance.</p>
@@ -22,6 +26,14 @@ impl UpdateDbInstanceInput {
     /// <p>The id of the DB parameter group to assign to your DB instance. DB parameter groups specify how the database is configured. For example, DB parameter groups can specify the limit for query concurrency.</p>
     pub fn db_parameter_group_identifier(&self) -> ::std::option::Option<&str> {
         self.db_parameter_group_identifier.as_deref()
+    }
+    /// <p>The Timestream for InfluxDB DB instance type to run InfluxDB on.</p>
+    pub fn db_instance_type(&self) -> ::std::option::Option<&crate::types::DbInstanceType> {
+        self.db_instance_type.as_ref()
+    }
+    /// <p>Specifies whether the DB instance will be deployed as a standalone instance or with a Multi-AZ standby for high availability.</p>
+    pub fn deployment_type(&self) -> ::std::option::Option<&crate::types::DeploymentType> {
+        self.deployment_type.as_ref()
     }
 }
 impl UpdateDbInstanceInput {
@@ -38,6 +50,8 @@ pub struct UpdateDbInstanceInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) log_delivery_configuration: ::std::option::Option<crate::types::LogDeliveryConfiguration>,
     pub(crate) db_parameter_group_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) db_instance_type: ::std::option::Option<crate::types::DbInstanceType>,
+    pub(crate) deployment_type: ::std::option::Option<crate::types::DeploymentType>,
 }
 impl UpdateDbInstanceInputBuilder {
     /// <p>The id of the DB instance.</p>
@@ -83,6 +97,34 @@ impl UpdateDbInstanceInputBuilder {
     pub fn get_db_parameter_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_parameter_group_identifier
     }
+    /// <p>The Timestream for InfluxDB DB instance type to run InfluxDB on.</p>
+    pub fn db_instance_type(mut self, input: crate::types::DbInstanceType) -> Self {
+        self.db_instance_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Timestream for InfluxDB DB instance type to run InfluxDB on.</p>
+    pub fn set_db_instance_type(mut self, input: ::std::option::Option<crate::types::DbInstanceType>) -> Self {
+        self.db_instance_type = input;
+        self
+    }
+    /// <p>The Timestream for InfluxDB DB instance type to run InfluxDB on.</p>
+    pub fn get_db_instance_type(&self) -> &::std::option::Option<crate::types::DbInstanceType> {
+        &self.db_instance_type
+    }
+    /// <p>Specifies whether the DB instance will be deployed as a standalone instance or with a Multi-AZ standby for high availability.</p>
+    pub fn deployment_type(mut self, input: crate::types::DeploymentType) -> Self {
+        self.deployment_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether the DB instance will be deployed as a standalone instance or with a Multi-AZ standby for high availability.</p>
+    pub fn set_deployment_type(mut self, input: ::std::option::Option<crate::types::DeploymentType>) -> Self {
+        self.deployment_type = input;
+        self
+    }
+    /// <p>Specifies whether the DB instance will be deployed as a standalone instance or with a Multi-AZ standby for high availability.</p>
+    pub fn get_deployment_type(&self) -> &::std::option::Option<crate::types::DeploymentType> {
+        &self.deployment_type
+    }
     /// Consumes the builder and constructs a [`UpdateDbInstanceInput`](crate::operation::update_db_instance::UpdateDbInstanceInput).
     pub fn build(
         self,
@@ -91,6 +133,8 @@ impl UpdateDbInstanceInputBuilder {
             identifier: self.identifier,
             log_delivery_configuration: self.log_delivery_configuration,
             db_parameter_group_identifier: self.db_parameter_group_identifier,
+            db_instance_type: self.db_instance_type,
+            deployment_type: self.deployment_type,
         })
     }
 }

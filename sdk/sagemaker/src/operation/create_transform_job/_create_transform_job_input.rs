@@ -20,7 +20,7 @@ pub struct CreateTransformJobInput {
     /// <p>To use only one record when making an HTTP invocation request to a container, set <code>BatchStrategy</code> to <code>SingleRecord</code> and <code>SplitType</code> to <code>Line</code>.</p>
     /// <p>To fit as many records in a mini-batch as can fit within the <code>MaxPayloadInMB</code> limit, set <code>BatchStrategy</code> to <code>MultiRecord</code> and <code>SplitType</code> to <code>Line</code>.</p>
     pub batch_strategy: ::std::option::Option<crate::types::BatchStrategy>,
-    /// <p>The environment variables to set in the Docker container. We support up to 16 key and values entries in the map.</p>
+    /// <p>The environment variables to set in the Docker container. Don't include any sensitive data in your environment variables. We support up to 16 key and values entries in the map.</p>
     pub environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Describes the input source and the way the transform job consumes it.</p>
     pub transform_input: ::std::option::Option<crate::types::TransformInput>,
@@ -75,7 +75,7 @@ impl CreateTransformJobInput {
     pub fn batch_strategy(&self) -> ::std::option::Option<&crate::types::BatchStrategy> {
         self.batch_strategy.as_ref()
     }
-    /// <p>The environment variables to set in the Docker container. We support up to 16 key and values entries in the map.</p>
+    /// <p>The environment variables to set in the Docker container. Don't include any sensitive data in your environment variables. We support up to 16 key and values entries in the map.</p>
     pub fn environment(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.environment.as_ref()
     }
@@ -250,14 +250,14 @@ impl CreateTransformJobInputBuilder {
     ///
     /// To override the contents of this collection use [`set_environment`](Self::set_environment).
     ///
-    /// <p>The environment variables to set in the Docker container. We support up to 16 key and values entries in the map.</p>
+    /// <p>The environment variables to set in the Docker container. Don't include any sensitive data in your environment variables. We support up to 16 key and values entries in the map.</p>
     pub fn environment(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.environment.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.environment = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The environment variables to set in the Docker container. We support up to 16 key and values entries in the map.</p>
+    /// <p>The environment variables to set in the Docker container. Don't include any sensitive data in your environment variables. We support up to 16 key and values entries in the map.</p>
     pub fn set_environment(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -265,7 +265,7 @@ impl CreateTransformJobInputBuilder {
         self.environment = input;
         self
     }
-    /// <p>The environment variables to set in the Docker container. We support up to 16 key and values entries in the map.</p>
+    /// <p>The environment variables to set in the Docker container. Don't include any sensitive data in your environment variables. We support up to 16 key and values entries in the map.</p>
     pub fn get_environment(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.environment
     }

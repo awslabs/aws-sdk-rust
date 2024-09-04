@@ -105,6 +105,9 @@ pub fn ser_user_settings(
         crate::protocol_serde::shape_studio_web_portal_settings::ser_studio_web_portal_settings(&mut object_34, var_33)?;
         object_34.finish();
     }
+    if let Some(var_35) = &input.auto_mount_home_efs {
+        object.key("AutoMountHomeEFS").string(var_35.as_str());
+    }
     Ok(())
 }
 
@@ -206,6 +209,13 @@ where
                         "StudioWebPortalSettings" => {
                             builder = builder.set_studio_web_portal_settings(
                                 crate::protocol_serde::shape_studio_web_portal_settings::de_studio_web_portal_settings(tokens)?,
+                            );
+                        }
+                        "AutoMountHomeEFS" => {
+                            builder = builder.set_auto_mount_home_efs(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::AutoMountHomeEfs::from(u.as_ref())))
+                                    .transpose()?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

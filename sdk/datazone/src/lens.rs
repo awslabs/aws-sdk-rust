@@ -59,8 +59,28 @@ pub(crate) fn reflens_list_data_sources_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_domain_units_for_parent_output_output_next_token(
+    input: &crate::operation::list_domain_units_for_parent::ListDomainUnitsForParentOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_domains_output_output_next_token(
     input: &crate::operation::list_domains::ListDomainsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_entity_owners_output_output_next_token(
+    input: &crate::operation::list_entity_owners::ListEntityOwnersOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -141,6 +161,16 @@ pub(crate) fn reflens_list_metadata_generation_runs_output_output_next_token(
 
 pub(crate) fn reflens_list_notifications_output_output_next_token(
     input: &crate::operation::list_notifications::ListNotificationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_policy_grants_output_output_next_token(
+    input: &crate::operation::list_policy_grants::ListPolicyGrantsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -314,10 +344,24 @@ pub(crate) fn lens_list_data_sources_output_output_items(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_domain_units_for_parent_output_output_items(
+    input: crate::operation::list_domain_units_for_parent::ListDomainUnitsForParentOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::DomainUnitSummary>> {
+    let input = input.items;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_domains_output_output_items(
     input: crate::operation::list_domains::ListDomainsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DomainSummary>> {
     let input = input.items;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_entity_owners_output_output_owners(
+    input: crate::operation::list_entity_owners::ListEntityOwnersOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::OwnerPropertiesOutput>> {
+    let input = input.owners;
     ::std::option::Option::Some(input)
 }
 
@@ -389,6 +433,13 @@ pub(crate) fn lens_list_notifications_output_output_notifications(
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_policy_grants_output_output_grant_list(
+    input: crate::operation::list_policy_grants::ListPolicyGrantsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::PolicyGrantMember>> {
+    let input = input.grant_list;
     ::std::option::Option::Some(input)
 }
 

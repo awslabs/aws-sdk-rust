@@ -12,6 +12,7 @@ impl super::Client {
     ///   - [`client_token(impl Into<String>)`](crate::operation::create_domain::builders::CreateDomainFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::create_domain::builders::CreateDomainFluentBuilder::set_client_token):<br>required: **false**<br><p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p><br>
     /// - On success, responds with [`CreateDomainOutput`](crate::operation::create_domain::CreateDomainOutput) with field(s):
     ///   - [`id(String)`](crate::operation::create_domain::CreateDomainOutput::id): <p>The identifier of the Amazon DataZone domain.</p>
+    ///   - [`root_domain_unit_id(Option<String>)`](crate::operation::create_domain::CreateDomainOutput::root_domain_unit_id): <p>The ID of the root domain unit.</p>
     ///   - [`name(Option<String>)`](crate::operation::create_domain::CreateDomainOutput::name): <p>The name of the Amazon DataZone domain.</p>
     ///   - [`description(Option<String>)`](crate::operation::create_domain::CreateDomainOutput::description): <p>The description of the Amazon DataZone domain.</p>
     ///   - [`single_sign_on(Option<SingleSignOn>)`](crate::operation::create_domain::CreateDomainOutput::single_sign_on): <p>The single-sign on configuration of the Amazon DataZone domain.</p>

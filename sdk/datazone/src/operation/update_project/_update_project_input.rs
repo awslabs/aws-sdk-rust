@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateProjectInput {
-    /// <p>The identifier of the Amazon DataZone domain in which a project is to be updated.</p>
+    /// <p>The ID of the Amazon DataZone domain where a project is being updated.</p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the project that is to be updated.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ pub struct UpdateProjectInput {
     pub glossary_terms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateProjectInput {
-    /// <p>The identifier of the Amazon DataZone domain in which a project is to be updated.</p>
+    /// <p>The ID of the Amazon DataZone domain where a project is being updated.</p>
     pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
         self.domain_identifier.as_deref()
     }
@@ -67,18 +67,18 @@ pub struct UpdateProjectInputBuilder {
     pub(crate) glossary_terms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateProjectInputBuilder {
-    /// <p>The identifier of the Amazon DataZone domain in which a project is to be updated.</p>
+    /// <p>The ID of the Amazon DataZone domain where a project is being updated.</p>
     /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the Amazon DataZone domain in which a project is to be updated.</p>
+    /// <p>The ID of the Amazon DataZone domain where a project is being updated.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_identifier = input;
         self
     }
-    /// <p>The identifier of the Amazon DataZone domain in which a project is to be updated.</p>
+    /// <p>The ID of the Amazon DataZone domain where a project is being updated.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_identifier
     }

@@ -15,5 +15,11 @@ pub fn ser_update_db_instance_input_input(
     if let Some(var_4) = &input.db_parameter_group_identifier {
         object.key("dbParameterGroupIdentifier").string(var_4.as_str());
     }
+    if let Some(var_5) = &input.db_instance_type {
+        object.key("dbInstanceType").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.deployment_type {
+        object.key("deploymentType").string(var_6.as_str());
+    }
     Ok(())
 }

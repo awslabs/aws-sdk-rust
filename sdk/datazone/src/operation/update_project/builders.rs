@@ -108,17 +108,17 @@ impl UpdateProjectFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the Amazon DataZone domain in which a project is to be updated.</p>
+    /// <p>The ID of the Amazon DataZone domain where a project is being updated.</p>
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_identifier(input.into());
         self
     }
-    /// <p>The identifier of the Amazon DataZone domain in which a project is to be updated.</p>
+    /// <p>The ID of the Amazon DataZone domain where a project is being updated.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_identifier(input);
         self
     }
-    /// <p>The identifier of the Amazon DataZone domain in which a project is to be updated.</p>
+    /// <p>The ID of the Amazon DataZone domain where a project is being updated.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_identifier()
     }

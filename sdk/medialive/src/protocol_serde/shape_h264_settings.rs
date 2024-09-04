@@ -186,6 +186,12 @@ pub fn ser_h264_settings(
         crate::protocol_serde::shape_timecode_burnin_settings::ser_timecode_burnin_settings(&mut object_45, var_44)?;
         object_45.finish();
     }
+    if let Some(var_46) = &input.min_qp {
+        object.key("minQp").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_46).into()),
+        );
+    }
     Ok(())
 }
 
@@ -486,6 +492,13 @@ where
                         "timecodeBurninSettings" => {
                             builder = builder.set_timecode_burnin_settings(
                                 crate::protocol_serde::shape_timecode_burnin_settings::de_timecode_burnin_settings(tokens)?,
+                            );
+                        }
+                        "minQp" => {
+                            builder = builder.set_min_qp(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

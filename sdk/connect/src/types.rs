@@ -731,6 +731,12 @@ pub use crate::types::_phone_number_status::PhoneNumberStatus;
 
 pub use crate::types::_phone_number_workflow_status::PhoneNumberWorkflowStatus;
 
+pub use crate::types::_replication_configuration::ReplicationConfiguration;
+
+pub use crate::types::_replication_status_summary::ReplicationStatusSummary;
+
+pub use crate::types::_instance_replication_status::InstanceReplicationStatus;
+
 pub use crate::types::_instance::Instance;
 
 pub use crate::types::_instance_status_reason::InstanceStatusReason;
@@ -1157,6 +1163,8 @@ mod _instance;
 
 mod _instance_attribute_type;
 
+mod _instance_replication_status;
+
 mod _instance_status;
 
 mod _instance_status_reason;
@@ -1388,6 +1396,10 @@ mod _reference_summary;
 mod _reference_type;
 
 mod _rehydration_type;
+
+mod _replication_configuration;
+
+mod _replication_status_summary;
 
 mod _required_field_info;
 

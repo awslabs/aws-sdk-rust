@@ -150,4 +150,23 @@ impl AcceptSubscriptionRequestFluentBuilder {
     pub fn get_decision_comment(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_decision_comment()
     }
+    ///
+    /// Appends an item to `assetScopes`.
+    ///
+    /// To override the contents of this collection use [`set_asset_scopes`](Self::set_asset_scopes).
+    ///
+    /// <p>The asset scopes of the accept subscription request.</p>
+    pub fn asset_scopes(mut self, input: crate::types::AcceptedAssetScope) -> Self {
+        self.inner = self.inner.asset_scopes(input);
+        self
+    }
+    /// <p>The asset scopes of the accept subscription request.</p>
+    pub fn set_asset_scopes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AcceptedAssetScope>>) -> Self {
+        self.inner = self.inner.set_asset_scopes(input);
+        self
+    }
+    /// <p>The asset scopes of the accept subscription request.</p>
+    pub fn get_asset_scopes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AcceptedAssetScope>> {
+        self.inner.get_asset_scopes()
+    }
 }

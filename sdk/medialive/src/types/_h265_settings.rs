@@ -76,6 +76,8 @@ pub struct H265Settings {
     pub tile_width: ::std::option::Option<i32>,
     /// Select the tree block size used for encoding. If you enter "auto", the encoder will pick the best size. If you are setting up the picture as a tile, you must set this to 32x32. In all other configurations, you typically enter "auto".
     pub treeblock_size: ::std::option::Option<crate::types::H265TreeblockSize>,
+    /// Sets the minimum QP. If you aren't familiar with quantization adjustment, leave the field empty. MediaLive will apply an appropriate value.
+    pub min_qp: ::std::option::Option<i32>,
 }
 impl H265Settings {
     /// Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
@@ -222,6 +224,10 @@ impl H265Settings {
     pub fn treeblock_size(&self) -> ::std::option::Option<&crate::types::H265TreeblockSize> {
         self.treeblock_size.as_ref()
     }
+    /// Sets the minimum QP. If you aren't familiar with quantization adjustment, leave the field empty. MediaLive will apply an appropriate value.
+    pub fn min_qp(&self) -> ::std::option::Option<i32> {
+        self.min_qp
+    }
 }
 impl H265Settings {
     /// Creates a new builder-style object to manufacture [`H265Settings`](crate::types::H265Settings).
@@ -270,6 +276,7 @@ pub struct H265SettingsBuilder {
     pub(crate) tile_padding: ::std::option::Option<crate::types::H265TilePadding>,
     pub(crate) tile_width: ::std::option::Option<i32>,
     pub(crate) treeblock_size: ::std::option::Option<crate::types::H265TreeblockSize>,
+    pub(crate) min_qp: ::std::option::Option<i32>,
 }
 impl H265SettingsBuilder {
     /// Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
@@ -778,6 +785,20 @@ impl H265SettingsBuilder {
     pub fn get_treeblock_size(&self) -> &::std::option::Option<crate::types::H265TreeblockSize> {
         &self.treeblock_size
     }
+    /// Sets the minimum QP. If you aren't familiar with quantization adjustment, leave the field empty. MediaLive will apply an appropriate value.
+    pub fn min_qp(mut self, input: i32) -> Self {
+        self.min_qp = ::std::option::Option::Some(input);
+        self
+    }
+    /// Sets the minimum QP. If you aren't familiar with quantization adjustment, leave the field empty. MediaLive will apply an appropriate value.
+    pub fn set_min_qp(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.min_qp = input;
+        self
+    }
+    /// Sets the minimum QP. If you aren't familiar with quantization adjustment, leave the field empty. MediaLive will apply an appropriate value.
+    pub fn get_min_qp(&self) -> &::std::option::Option<i32> {
+        &self.min_qp
+    }
     /// Consumes the builder and constructs a [`H265Settings`](crate::types::H265Settings).
     pub fn build(self) -> crate::types::H265Settings {
         crate::types::H265Settings {
@@ -817,6 +838,7 @@ impl H265SettingsBuilder {
             tile_padding: self.tile_padding,
             tile_width: self.tile_width,
             treeblock_size: self.treeblock_size,
+            min_qp: self.min_qp,
         }
     }
 }

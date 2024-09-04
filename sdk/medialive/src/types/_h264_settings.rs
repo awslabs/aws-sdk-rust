@@ -88,6 +88,8 @@ pub struct H264Settings {
     pub timecode_insertion: ::std::option::Option<crate::types::H264TimecodeInsertionBehavior>,
     /// Timecode burn-in settings
     pub timecode_burnin_settings: ::std::option::Option<crate::types::TimecodeBurninSettings>,
+    /// Sets the minimum QP. If you aren't familiar with quantization adjustment, leave the field empty. MediaLive will apply an appropriate value.
+    pub min_qp: ::std::option::Option<i32>,
 }
 impl H264Settings {
     /// Enables or disables adaptive quantization, which is a technique MediaLive can apply to video on a frame-by-frame basis to produce more compression without losing quality. There are three types of adaptive quantization: flicker, spatial, and temporal. Set the field in one of these ways: Set to Auto. Recommended. For each type of AQ, MediaLive will determine if AQ is needed, and if so, the appropriate strength. Set a strength (a value other than Auto or Disable). This strength will apply to any of the AQ fields that you choose to enable. Set to Disabled to disable all types of adaptive quantization.
@@ -258,6 +260,10 @@ impl H264Settings {
     pub fn timecode_burnin_settings(&self) -> ::std::option::Option<&crate::types::TimecodeBurninSettings> {
         self.timecode_burnin_settings.as_ref()
     }
+    /// Sets the minimum QP. If you aren't familiar with quantization adjustment, leave the field empty. MediaLive will apply an appropriate value.
+    pub fn min_qp(&self) -> ::std::option::Option<i32> {
+        self.min_qp
+    }
 }
 impl H264Settings {
     /// Creates a new builder-style object to manufacture [`H264Settings`](crate::types::H264Settings).
@@ -312,6 +318,7 @@ pub struct H264SettingsBuilder {
     pub(crate) temporal_aq: ::std::option::Option<crate::types::H264TemporalAq>,
     pub(crate) timecode_insertion: ::std::option::Option<crate::types::H264TimecodeInsertionBehavior>,
     pub(crate) timecode_burnin_settings: ::std::option::Option<crate::types::TimecodeBurninSettings>,
+    pub(crate) min_qp: ::std::option::Option<i32>,
 }
 impl H264SettingsBuilder {
     /// Enables or disables adaptive quantization, which is a technique MediaLive can apply to video on a frame-by-frame basis to produce more compression without losing quality. There are three types of adaptive quantization: flicker, spatial, and temporal. Set the field in one of these ways: Set to Auto. Recommended. For each type of AQ, MediaLive will determine if AQ is needed, and if so, the appropriate strength. Set a strength (a value other than Auto or Disable). This strength will apply to any of the AQ fields that you choose to enable. Set to Disabled to disable all types of adaptive quantization.
@@ -902,6 +909,20 @@ impl H264SettingsBuilder {
     pub fn get_timecode_burnin_settings(&self) -> &::std::option::Option<crate::types::TimecodeBurninSettings> {
         &self.timecode_burnin_settings
     }
+    /// Sets the minimum QP. If you aren't familiar with quantization adjustment, leave the field empty. MediaLive will apply an appropriate value.
+    pub fn min_qp(mut self, input: i32) -> Self {
+        self.min_qp = ::std::option::Option::Some(input);
+        self
+    }
+    /// Sets the minimum QP. If you aren't familiar with quantization adjustment, leave the field empty. MediaLive will apply an appropriate value.
+    pub fn set_min_qp(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.min_qp = input;
+        self
+    }
+    /// Sets the minimum QP. If you aren't familiar with quantization adjustment, leave the field empty. MediaLive will apply an appropriate value.
+    pub fn get_min_qp(&self) -> &::std::option::Option<i32> {
+        &self.min_qp
+    }
     /// Consumes the builder and constructs a [`H264Settings`](crate::types::H264Settings).
     pub fn build(self) -> crate::types::H264Settings {
         crate::types::H264Settings {
@@ -947,6 +968,7 @@ impl H264SettingsBuilder {
             temporal_aq: self.temporal_aq,
             timecode_insertion: self.timecode_insertion,
             timecode_burnin_settings: self.timecode_burnin_settings,
+            min_qp: self.min_qp,
         }
     }
 }

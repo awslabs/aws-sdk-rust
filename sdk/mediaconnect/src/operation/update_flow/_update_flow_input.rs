@@ -10,6 +10,8 @@ pub struct UpdateFlowInput {
     pub source_failover_config: ::std::option::Option<crate::types::UpdateFailoverConfig>,
     /// Update maintenance setting for a flow
     pub maintenance: ::std::option::Option<crate::types::UpdateMaintenance>,
+    /// The settings for source monitoring.
+    pub source_monitoring_config: ::std::option::Option<crate::types::MonitoringConfig>,
 }
 impl UpdateFlowInput {
     /// The flow that you want to update.
@@ -23,6 +25,10 @@ impl UpdateFlowInput {
     /// Update maintenance setting for a flow
     pub fn maintenance(&self) -> ::std::option::Option<&crate::types::UpdateMaintenance> {
         self.maintenance.as_ref()
+    }
+    /// The settings for source monitoring.
+    pub fn source_monitoring_config(&self) -> ::std::option::Option<&crate::types::MonitoringConfig> {
+        self.source_monitoring_config.as_ref()
     }
 }
 impl UpdateFlowInput {
@@ -39,6 +45,7 @@ pub struct UpdateFlowInputBuilder {
     pub(crate) flow_arn: ::std::option::Option<::std::string::String>,
     pub(crate) source_failover_config: ::std::option::Option<crate::types::UpdateFailoverConfig>,
     pub(crate) maintenance: ::std::option::Option<crate::types::UpdateMaintenance>,
+    pub(crate) source_monitoring_config: ::std::option::Option<crate::types::MonitoringConfig>,
 }
 impl UpdateFlowInputBuilder {
     /// The flow that you want to update.
@@ -84,12 +91,27 @@ impl UpdateFlowInputBuilder {
     pub fn get_maintenance(&self) -> &::std::option::Option<crate::types::UpdateMaintenance> {
         &self.maintenance
     }
+    /// The settings for source monitoring.
+    pub fn source_monitoring_config(mut self, input: crate::types::MonitoringConfig) -> Self {
+        self.source_monitoring_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// The settings for source monitoring.
+    pub fn set_source_monitoring_config(mut self, input: ::std::option::Option<crate::types::MonitoringConfig>) -> Self {
+        self.source_monitoring_config = input;
+        self
+    }
+    /// The settings for source monitoring.
+    pub fn get_source_monitoring_config(&self) -> &::std::option::Option<crate::types::MonitoringConfig> {
+        &self.source_monitoring_config
+    }
     /// Consumes the builder and constructs a [`UpdateFlowInput`](crate::operation::update_flow::UpdateFlowInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_flow::UpdateFlowInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_flow::UpdateFlowInput {
             flow_arn: self.flow_arn,
             source_failover_config: self.source_failover_config,
             maintenance: self.maintenance,
+            source_monitoring_config: self.source_monitoring_config,
         })
     }
 }

@@ -49,6 +49,9 @@ pub mod describe_flow;
 /// Types for the `DescribeFlowSourceMetadata` operation.
 pub mod describe_flow_source_metadata;
 
+/// Types for the `DescribeFlowSourceThumbnail` operation.
+pub mod describe_flow_source_thumbnail;
+
 /// Types for the `DescribeGateway` operation.
 pub mod describe_gateway;
 

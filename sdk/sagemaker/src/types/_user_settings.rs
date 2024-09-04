@@ -48,6 +48,8 @@ pub struct UserSettings {
     pub custom_file_system_configs: ::std::option::Option<::std::vec::Vec<crate::types::CustomFileSystemConfig>>,
     /// <p>Studio settings. If these settings are applied on a user level, they take priority over the settings applied on a domain level.</p>
     pub studio_web_portal_settings: ::std::option::Option<crate::types::StudioWebPortalSettings>,
+    /// <p>Indicates whether auto-mounting of an EFS volume is supported for the user profile. The <code>DefaultAsDomain</code> value is only supported for user profiles. Do not use the <code>DefaultAsDomain</code> value when setting this parameter for a domain.</p>
+    pub auto_mount_home_efs: ::std::option::Option<crate::types::AutoMountHomeEfs>,
 }
 impl UserSettings {
     /// <p>The execution role for the user.</p>
@@ -131,6 +133,10 @@ impl UserSettings {
     pub fn studio_web_portal_settings(&self) -> ::std::option::Option<&crate::types::StudioWebPortalSettings> {
         self.studio_web_portal_settings.as_ref()
     }
+    /// <p>Indicates whether auto-mounting of an EFS volume is supported for the user profile. The <code>DefaultAsDomain</code> value is only supported for user profiles. Do not use the <code>DefaultAsDomain</code> value when setting this parameter for a domain.</p>
+    pub fn auto_mount_home_efs(&self) -> ::std::option::Option<&crate::types::AutoMountHomeEfs> {
+        self.auto_mount_home_efs.as_ref()
+    }
 }
 impl UserSettings {
     /// Creates a new builder-style object to manufacture [`UserSettings`](crate::types::UserSettings).
@@ -160,6 +166,7 @@ pub struct UserSettingsBuilder {
     pub(crate) custom_posix_user_config: ::std::option::Option<crate::types::CustomPosixUserConfig>,
     pub(crate) custom_file_system_configs: ::std::option::Option<::std::vec::Vec<crate::types::CustomFileSystemConfig>>,
     pub(crate) studio_web_portal_settings: ::std::option::Option<crate::types::StudioWebPortalSettings>,
+    pub(crate) auto_mount_home_efs: ::std::option::Option<crate::types::AutoMountHomeEfs>,
 }
 impl UserSettingsBuilder {
     /// <p>The execution role for the user.</p>
@@ -439,6 +446,20 @@ impl UserSettingsBuilder {
     pub fn get_studio_web_portal_settings(&self) -> &::std::option::Option<crate::types::StudioWebPortalSettings> {
         &self.studio_web_portal_settings
     }
+    /// <p>Indicates whether auto-mounting of an EFS volume is supported for the user profile. The <code>DefaultAsDomain</code> value is only supported for user profiles. Do not use the <code>DefaultAsDomain</code> value when setting this parameter for a domain.</p>
+    pub fn auto_mount_home_efs(mut self, input: crate::types::AutoMountHomeEfs) -> Self {
+        self.auto_mount_home_efs = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether auto-mounting of an EFS volume is supported for the user profile. The <code>DefaultAsDomain</code> value is only supported for user profiles. Do not use the <code>DefaultAsDomain</code> value when setting this parameter for a domain.</p>
+    pub fn set_auto_mount_home_efs(mut self, input: ::std::option::Option<crate::types::AutoMountHomeEfs>) -> Self {
+        self.auto_mount_home_efs = input;
+        self
+    }
+    /// <p>Indicates whether auto-mounting of an EFS volume is supported for the user profile. The <code>DefaultAsDomain</code> value is only supported for user profiles. Do not use the <code>DefaultAsDomain</code> value when setting this parameter for a domain.</p>
+    pub fn get_auto_mount_home_efs(&self) -> &::std::option::Option<crate::types::AutoMountHomeEfs> {
+        &self.auto_mount_home_efs
+    }
     /// Consumes the builder and constructs a [`UserSettings`](crate::types::UserSettings).
     pub fn build(self) -> crate::types::UserSettings {
         crate::types::UserSettings {
@@ -459,6 +480,7 @@ impl UserSettingsBuilder {
             custom_posix_user_config: self.custom_posix_user_config,
             custom_file_system_configs: self.custom_file_system_configs,
             studio_web_portal_settings: self.studio_web_portal_settings,
+            auto_mount_home_efs: self.auto_mount_home_efs,
         }
     }
 }

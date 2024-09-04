@@ -234,6 +234,8 @@ mod describe_flow;
 
 mod describe_flow_source_metadata;
 
+mod describe_flow_source_thumbnail;
+
 mod describe_gateway;
 
 mod describe_gateway_instance;

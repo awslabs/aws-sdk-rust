@@ -1131,6 +1131,8 @@ pub(crate) mod shape_reference;
 
 pub(crate) mod shape_reference_summary_list;
 
+pub(crate) mod shape_replication_configuration;
+
 pub(crate) mod shape_resource_tags_search_criteria;
 
 pub(crate) mod shape_routing_criteria_input;
@@ -1439,6 +1441,8 @@ pub(crate) mod shape_realtime_contact_analysis_segment;
 
 pub(crate) mod shape_reference_summary;
 
+pub(crate) mod shape_replication_status_summary_list;
+
 pub(crate) mod shape_required_field_info;
 
 pub(crate) mod shape_required_task_template_fields;
@@ -1612,6 +1616,8 @@ pub(crate) mod shape_real_time_contact_analysis_segment_issues;
 pub(crate) mod shape_real_time_contact_analysis_segment_post_contact_summary;
 
 pub(crate) mod shape_real_time_contact_analysis_segment_transcript;
+
+pub(crate) mod shape_replication_status_summary;
 
 pub(crate) mod shape_routing_criteria_input_step_expiry;
 

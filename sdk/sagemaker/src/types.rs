@@ -35,6 +35,8 @@ pub use crate::types::_oidc_config::OidcConfig;
 
 pub use crate::types::_user_settings::UserSettings;
 
+pub use crate::types::_auto_mount_home_efs::AutoMountHomeEfs;
+
 pub use crate::types::_studio_web_portal_settings::StudioWebPortalSettings;
 
 pub use crate::types::_app_type::AppType;
@@ -1910,6 +1912,8 @@ mod _auto_ml_sort_order;
 mod _auto_mls3_data_source;
 
 mod _auto_mls3_data_type;
+
+mod _auto_mount_home_efs;
 
 mod _auto_parameter;
 

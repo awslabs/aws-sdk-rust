@@ -5,7 +5,7 @@
 pub struct ModifyTargetGroupAttributesInput {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
     pub target_group_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The attributes.</p>
+    /// <p>The target group attributes.</p>
     pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroupAttribute>>,
 }
 impl ModifyTargetGroupAttributesInput {
@@ -13,7 +13,7 @@ impl ModifyTargetGroupAttributesInput {
     pub fn target_group_arn(&self) -> ::std::option::Option<&str> {
         self.target_group_arn.as_deref()
     }
-    /// <p>The attributes.</p>
+    /// <p>The target group attributes.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes.is_none()`.
     pub fn attributes(&self) -> &[crate::types::TargetGroupAttribute] {
@@ -54,19 +54,19 @@ impl ModifyTargetGroupAttributesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
-    /// <p>The attributes.</p>
+    /// <p>The target group attributes.</p>
     pub fn attributes(mut self, input: crate::types::TargetGroupAttribute) -> Self {
         let mut v = self.attributes.unwrap_or_default();
         v.push(input);
         self.attributes = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The attributes.</p>
+    /// <p>The target group attributes.</p>
     pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroupAttribute>>) -> Self {
         self.attributes = input;
         self
     }
-    /// <p>The attributes.</p>
+    /// <p>The target group attributes.</p>
     pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetGroupAttribute>> {
         &self.attributes
     }

@@ -162,6 +162,12 @@ pub fn ser_h265_settings(
     if let Some(var_39) = &input.treeblock_size {
         object.key("treeblockSize").string(var_39.as_str());
     }
+    if let Some(var_40) = &input.min_qp {
+        object.key("minQp").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_40).into()),
+        );
+    }
     Ok(())
 }
 
@@ -419,6 +425,13 @@ where
                             builder = builder.set_treeblock_size(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::H265TreeblockSize::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "minQp" => {
+                            builder = builder.set_min_qp(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
                                     .transpose()?,
                             );
                         }

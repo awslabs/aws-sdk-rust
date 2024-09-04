@@ -202,6 +202,13 @@ pub(crate) fn de_create_project(
                             .transpose()?,
                     );
                 }
+                "domainUnitId" => {
+                    builder = builder.set_domain_unit_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "failureReasons" => {
                     builder = builder.set_failure_reasons(crate::protocol_serde::shape_failure_reasons::de_failure_reasons(tokens)?);
                 }

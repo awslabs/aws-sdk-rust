@@ -6,17 +6,20 @@ pub fn ser_create_project_input_input(
     if let Some(var_1) = &input.description {
         object.key("description").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.glossary_terms {
-        let mut array_3 = object.key("glossaryTerms").start_array();
-        for item_4 in var_2 {
+    if let Some(var_2) = &input.domain_unit_id {
+        object.key("domainUnitId").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.glossary_terms {
+        let mut array_4 = object.key("glossaryTerms").start_array();
+        for item_5 in var_3 {
             {
-                array_3.value().string(item_4.as_str());
+                array_4.value().string(item_5.as_str());
             }
         }
-        array_3.finish();
+        array_4.finish();
     }
-    if let Some(var_5) = &input.name {
-        object.key("name").string(var_5.as_str());
+    if let Some(var_6) = &input.name {
+        object.key("name").string(var_6.as_str());
     }
     Ok(())
 }

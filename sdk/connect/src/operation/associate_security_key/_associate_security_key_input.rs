@@ -5,7 +5,7 @@
 pub struct AssociateSecurityKeyInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
-    /// <p>A valid security key in PEM format.</p>
+    /// <p>A valid security key in PEM format as a String.</p>
     pub key: ::std::option::Option<::std::string::String>,
 }
 impl AssociateSecurityKeyInput {
@@ -13,7 +13,7 @@ impl AssociateSecurityKeyInput {
     pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>A valid security key in PEM format.</p>
+    /// <p>A valid security key in PEM format as a String.</p>
     pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
     }
@@ -48,18 +48,18 @@ impl AssociateSecurityKeyInputBuilder {
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
     }
-    /// <p>A valid security key in PEM format.</p>
+    /// <p>A valid security key in PEM format as a String.</p>
     /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A valid security key in PEM format.</p>
+    /// <p>A valid security key in PEM format as a String.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
     }
-    /// <p>A valid security key in PEM format.</p>
+    /// <p>A valid security key in PEM format as a String.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.key
     }

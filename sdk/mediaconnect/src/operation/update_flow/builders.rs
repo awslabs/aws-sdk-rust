@@ -150,4 +150,18 @@ impl UpdateFlowFluentBuilder {
     pub fn get_maintenance(&self) -> &::std::option::Option<crate::types::UpdateMaintenance> {
         self.inner.get_maintenance()
     }
+    /// The settings for source monitoring.
+    pub fn source_monitoring_config(mut self, input: crate::types::MonitoringConfig) -> Self {
+        self.inner = self.inner.source_monitoring_config(input);
+        self
+    }
+    /// The settings for source monitoring.
+    pub fn set_source_monitoring_config(mut self, input: ::std::option::Option<crate::types::MonitoringConfig>) -> Self {
+        self.inner = self.inner.set_source_monitoring_config(input);
+        self
+    }
+    /// The settings for source monitoring.
+    pub fn get_source_monitoring_config(&self) -> &::std::option::Option<crate::types::MonitoringConfig> {
+        self.inner.get_source_monitoring_config()
+    }
 }

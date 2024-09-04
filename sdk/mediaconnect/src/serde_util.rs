@@ -327,6 +327,18 @@ pub(crate) fn source_correct_errors(mut builder: crate::types::builders::SourceB
     builder
 }
 
+pub(crate) fn thumbnail_details_correct_errors(
+    mut builder: crate::types::builders::ThumbnailDetailsBuilder,
+) -> crate::types::builders::ThumbnailDetailsBuilder {
+    if builder.flow_arn.is_none() {
+        builder.flow_arn = Some(Default::default())
+    }
+    if builder.thumbnail_messages.is_none() {
+        builder.thumbnail_messages = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn transport_media_info_correct_errors(
     mut builder: crate::types::builders::TransportMediaInfoBuilder,
 ) -> crate::types::builders::TransportMediaInfoBuilder {

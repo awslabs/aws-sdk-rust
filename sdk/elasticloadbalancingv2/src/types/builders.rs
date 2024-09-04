@@ -55,6 +55,8 @@ pub use crate::types::_matcher::MatcherBuilder;
 
 pub use crate::types::_load_balancer_attribute::LoadBalancerAttributeBuilder;
 
+pub use crate::types::_listener_attribute::ListenerAttributeBuilder;
+
 pub use crate::types::_listener::ListenerBuilder;
 
 pub use crate::types::_mutual_authentication_attributes::MutualAuthenticationAttributesBuilder;
