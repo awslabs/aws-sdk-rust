@@ -2487,6 +2487,10 @@ source_hash = 'a26c5cec9b86934473279e31a992463f5c2e236676786953f47aadd58586c342'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = 'd08f576b0bc9146b45af732b63e0a8923b13fe09816d385e32b4c6d9e503de81'
+
+[release]
+tag = 'release-2024-09-04.3'
+
 [release.crates]
 aws-sdk-appsync = '1.47.0'
 aws-sdk-bedrockagent = '1.48.0'
