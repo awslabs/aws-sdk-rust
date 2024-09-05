@@ -30,6 +30,12 @@ pub fn ser_code_editor_app_settings(
         }
         array_8.finish();
     }
+    if let Some(var_10) = &input.app_lifecycle_management {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("AppLifecycleManagement").start_object();
+        crate::protocol_serde::shape_app_lifecycle_management::ser_app_lifecycle_management(&mut object_11, var_10)?;
+        object_11.finish();
+    }
     Ok(())
 }
 
@@ -57,6 +63,11 @@ where
                         "LifecycleConfigArns" => {
                             builder = builder
                                 .set_lifecycle_config_arns(crate::protocol_serde::shape_lifecycle_config_arns::de_lifecycle_config_arns(tokens)?);
+                        }
+                        "AppLifecycleManagement" => {
+                            builder = builder.set_app_lifecycle_management(
+                                crate::protocol_serde::shape_app_lifecycle_management::de_app_lifecycle_management(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

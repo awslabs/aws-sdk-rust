@@ -24,9 +24,26 @@ impl crate::operation::create_service_level_objective::builders::CreateServiceLe
 ///
 /// <p>Creates a service level objective (SLO), which can help you ensure that your critical business operations are meeting customer expectations. Use SLOs to set and track specific target levels for the reliability and availability of your applications and services. SLOs use service level indicators (SLIs) to calculate whether the application is performing at the level that you want.</p>
 /// <p>Create an SLO to set a target for a service or operation’s availability or latency. CloudWatch measures this target frequently you can find whether it has been breached.</p>
-/// <p>When you create an SLO, you set an <i>attainment goal</i> for it. An <i>attainment goal</i> is the ratio of good periods that meet the threshold requirements to the total periods within the interval. For example, an attainment goal of 99.9% means that within your interval, you are targeting 99.9% of the periods to be in healthy state.</p>
-/// <p>After you have created an SLO, you can retrieve error budget reports for it. An <i>error budget</i> is the number of periods or amount of time that your service can accumulate during an interval before your overall SLO budget health is breached and the SLO is considered to be unmet. for example, an SLO with a threshold that 99.95% of requests must be completed under 2000ms every month translates to an error budget of 21.9 minutes of downtime per month.</p>
-/// <p>When you call this operation, Application Signals creates the <i>AWSServiceRoleForCloudWatchApplicationSignals</i> service-linked role, if it doesn't already exist in your account. This service- linked role has the following permissions:</p>
+/// <p>The target performance quality that is defined for an SLO is the <i>attainment goal</i>.</p>
+/// <p>You can set SLO targets for your applications that are discovered by Application Signals, using critical metrics such as latency and availability. You can also set SLOs against any CloudWatch metric or math expression that produces a time series.</p>
+/// <p>When you create an SLO, you specify whether it is a <i>period-based SLO</i> or a <i>request-based SLO</i>. Each type of SLO has a different way of evaluating your application's performance against its attainment goal.</p>
+/// <ul>
+/// <li>
+/// <p>A <i>period-based SLO</i> uses defined <i>periods</i> of time within a specified total time interval. For each period of time, Application Signals determines whether the application met its goal. The attainment rate is calculated as the <code>number of good periods/number of total periods</code>.</p>
+/// <p>For example, for a period-based SLO, meeting an attainment goal of 99.9% means that within your interval, your application must meet its performance goal during at least 99.9% of the time periods.</p></li>
+/// <li>
+/// <p>A <i>request-based SLO</i> doesn't use pre-defined periods of time. Instead, the SLO measures <code>number of good requests/number of total requests</code> during the interval. At any time, you can find the ratio of good requests to total requests for the interval up to the time stamp that you specify, and measure that ratio against the goal set in your SLO.</p></li>
+/// </ul>
+/// <p>After you have created an SLO, you can retrieve error budget reports for it. An <i>error budget</i> is the amount of time or amount of requests that your application can be non-compliant with the SLO's goal, and still have your application meet the goal.</p>
+/// <ul>
+/// <li>
+/// <p>For a period-based SLO, the error budget starts at a number defined by the highest number of periods that can fail to meet the threshold, while still meeting the overall goal. The <i>remaining error budget</i> decreases with every failed period that is recorded. The error budget within one interval can never increase.</p>
+/// <p>For example, an SLO with a threshold that 99.95% of requests must be completed under 2000ms every month translates to an error budget of 21.9 minutes of downtime per month.</p></li>
+/// <li>
+/// <p>For a request-based SLO, the remaining error budget is dynamic and can increase or decrease, depending on the ratio of good requests to total requests.</p></li>
+/// </ul>
+/// <p>For more information about SLOs, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-ServiceLevelObjectives.html"> Service level objectives (SLOs)</a>.</p>
+/// <p>When you perform a <code>CreateServiceLevelObjective</code> operation, Application Signals creates the <i>AWSServiceRoleForCloudWatchApplicationSignals</i> service-linked role, if it doesn't already exist in your account. This service- linked role has the following permissions:</p>
 /// <ul>
 /// <li>
 /// <p><code>xray:GetServiceGraph</code></p></li>
@@ -43,8 +60,6 @@ impl crate::operation::create_service_level_objective::builders::CreateServiceLe
 /// <li>
 /// <p><code>autoscaling:DescribeAutoScalingGroups</code></p></li>
 /// </ul>
-/// <p>You can easily set SLO targets for your applications that are discovered by Application Signals, using critical metrics such as latency and availability. You can also set SLOs against any CloudWatch metric or math expression that produces a time series.</p>
-/// <p>For more information about SLOs, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-ServiceLevelObjectives.html"> Service level objectives (SLOs)</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateServiceLevelObjectiveFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -158,31 +173,51 @@ impl CreateServiceLevelObjectiveFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>A structure that contains information about what service and what performance metric that this SLO will monitor.</p>
+    /// <p>If this SLO is a period-based SLO, this structure defines the information about what performance metric this SLO will monitor.</p>
+    /// <p>You can't specify both <code>RequestBasedSliConfig</code> and <code>SliConfig</code> in the same operation.</p>
     pub fn sli_config(mut self, input: crate::types::ServiceLevelIndicatorConfig) -> Self {
         self.inner = self.inner.sli_config(input);
         self
     }
-    /// <p>A structure that contains information about what service and what performance metric that this SLO will monitor.</p>
+    /// <p>If this SLO is a period-based SLO, this structure defines the information about what performance metric this SLO will monitor.</p>
+    /// <p>You can't specify both <code>RequestBasedSliConfig</code> and <code>SliConfig</code> in the same operation.</p>
     pub fn set_sli_config(mut self, input: ::std::option::Option<crate::types::ServiceLevelIndicatorConfig>) -> Self {
         self.inner = self.inner.set_sli_config(input);
         self
     }
-    /// <p>A structure that contains information about what service and what performance metric that this SLO will monitor.</p>
+    /// <p>If this SLO is a period-based SLO, this structure defines the information about what performance metric this SLO will monitor.</p>
+    /// <p>You can't specify both <code>RequestBasedSliConfig</code> and <code>SliConfig</code> in the same operation.</p>
     pub fn get_sli_config(&self) -> &::std::option::Option<crate::types::ServiceLevelIndicatorConfig> {
         self.inner.get_sli_config()
     }
-    /// <p>A structure that contains the attributes that determine the goal of the SLO. This includes the time period for evaluation and the attainment threshold.</p>
+    /// <p>If this SLO is a request-based SLO, this structure defines the information about what performance metric this SLO will monitor.</p>
+    /// <p>You can't specify both <code>RequestBasedSliConfig</code> and <code>SliConfig</code> in the same operation.</p>
+    pub fn request_based_sli_config(mut self, input: crate::types::RequestBasedServiceLevelIndicatorConfig) -> Self {
+        self.inner = self.inner.request_based_sli_config(input);
+        self
+    }
+    /// <p>If this SLO is a request-based SLO, this structure defines the information about what performance metric this SLO will monitor.</p>
+    /// <p>You can't specify both <code>RequestBasedSliConfig</code> and <code>SliConfig</code> in the same operation.</p>
+    pub fn set_request_based_sli_config(mut self, input: ::std::option::Option<crate::types::RequestBasedServiceLevelIndicatorConfig>) -> Self {
+        self.inner = self.inner.set_request_based_sli_config(input);
+        self
+    }
+    /// <p>If this SLO is a request-based SLO, this structure defines the information about what performance metric this SLO will monitor.</p>
+    /// <p>You can't specify both <code>RequestBasedSliConfig</code> and <code>SliConfig</code> in the same operation.</p>
+    pub fn get_request_based_sli_config(&self) -> &::std::option::Option<crate::types::RequestBasedServiceLevelIndicatorConfig> {
+        self.inner.get_request_based_sli_config()
+    }
+    /// <p>This structure contains the attributes that determine the goal of the SLO.</p>
     pub fn goal(mut self, input: crate::types::Goal) -> Self {
         self.inner = self.inner.goal(input);
         self
     }
-    /// <p>A structure that contains the attributes that determine the goal of the SLO. This includes the time period for evaluation and the attainment threshold.</p>
+    /// <p>This structure contains the attributes that determine the goal of the SLO.</p>
     pub fn set_goal(mut self, input: ::std::option::Option<crate::types::Goal>) -> Self {
         self.inner = self.inner.set_goal(input);
         self
     }
-    /// <p>A structure that contains the attributes that determine the goal of the SLO. This includes the time period for evaluation and the attainment threshold.</p>
+    /// <p>This structure contains the attributes that determine the goal of the SLO.</p>
     pub fn get_goal(&self) -> &::std::option::Option<crate::types::Goal> {
         self.inner.get_goal()
     }

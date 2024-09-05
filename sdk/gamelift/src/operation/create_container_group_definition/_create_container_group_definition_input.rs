@@ -13,7 +13,9 @@ pub struct CreateContainerGroupDefinitionInput {
     pub total_cpu_limit: ::std::option::Option<i32>,
     /// <p>Definitions for all containers in this group. Each container definition identifies the container image and specifies configuration settings for the container. See the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/containers-design-fleet.html"> Container fleet design guide</a> for container guidelines.</p>
     pub container_definitions: ::std::option::Option<::std::vec::Vec<crate::types::ContainerDefinitionInput>>,
-    /// <p>The platform that is used by containers in the container group definition. All containers in a group must run on the same operating system.</p>
+    /// <p>The platform that is used by containers in the container group definition. All containers in a group must run on the same operating system.</p><note>
+    /// <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the <a href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For game servers that are hosted on AL2 and use Amazon GameLift server SDK 4.x., first update the game server build to server SDK 5.x, and then deploy to AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html"> Migrate to Amazon GameLift server SDK version 5.</a></p>
+    /// </note>
     pub operating_system: ::std::option::Option<crate::types::ContainerOperatingSystem>,
     /// <p>A list of labels to assign to the container group definition resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -41,7 +43,9 @@ impl CreateContainerGroupDefinitionInput {
     pub fn container_definitions(&self) -> &[crate::types::ContainerDefinitionInput] {
         self.container_definitions.as_deref().unwrap_or_default()
     }
-    /// <p>The platform that is used by containers in the container group definition. All containers in a group must run on the same operating system.</p>
+    /// <p>The platform that is used by containers in the container group definition. All containers in a group must run on the same operating system.</p><note>
+    /// <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the <a href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For game servers that are hosted on AL2 and use Amazon GameLift server SDK 4.x., first update the game server build to server SDK 5.x, and then deploy to AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html"> Migrate to Amazon GameLift server SDK version 5.</a></p>
+    /// </note>
     pub fn operating_system(&self) -> ::std::option::Option<&crate::types::ContainerOperatingSystem> {
         self.operating_system.as_ref()
     }
@@ -151,18 +155,24 @@ impl CreateContainerGroupDefinitionInputBuilder {
     pub fn get_container_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerDefinitionInput>> {
         &self.container_definitions
     }
-    /// <p>The platform that is used by containers in the container group definition. All containers in a group must run on the same operating system.</p>
+    /// <p>The platform that is used by containers in the container group definition. All containers in a group must run on the same operating system.</p><note>
+    /// <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the <a href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For game servers that are hosted on AL2 and use Amazon GameLift server SDK 4.x., first update the game server build to server SDK 5.x, and then deploy to AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html"> Migrate to Amazon GameLift server SDK version 5.</a></p>
+    /// </note>
     /// This field is required.
     pub fn operating_system(mut self, input: crate::types::ContainerOperatingSystem) -> Self {
         self.operating_system = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The platform that is used by containers in the container group definition. All containers in a group must run on the same operating system.</p>
+    /// <p>The platform that is used by containers in the container group definition. All containers in a group must run on the same operating system.</p><note>
+    /// <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the <a href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For game servers that are hosted on AL2 and use Amazon GameLift server SDK 4.x., first update the game server build to server SDK 5.x, and then deploy to AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html"> Migrate to Amazon GameLift server SDK version 5.</a></p>
+    /// </note>
     pub fn set_operating_system(mut self, input: ::std::option::Option<crate::types::ContainerOperatingSystem>) -> Self {
         self.operating_system = input;
         self
     }
-    /// <p>The platform that is used by containers in the container group definition. All containers in a group must run on the same operating system.</p>
+    /// <p>The platform that is used by containers in the container group definition. All containers in a group must run on the same operating system.</p><note>
+    /// <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the <a href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For game servers that are hosted on AL2 and use Amazon GameLift server SDK 4.x., first update the game server build to server SDK 5.x, and then deploy to AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html"> Migrate to Amazon GameLift server SDK version 5.</a></p>
+    /// </note>
     pub fn get_operating_system(&self) -> &::std::option::Option<crate::types::ContainerOperatingSystem> {
         &self.operating_system
     }

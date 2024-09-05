@@ -7,7 +7,7 @@
 /// <li>
 /// <p>If no desired value is set, Amazon GameLift places the calculated maximum.</p></li>
 /// <li>
-/// <p>If a desired number is set to a value higher than the calculated maximum, Amazon GameLift places the calculated maximum.</p></li>
+/// <p>If a desired number is set to a value higher than the calculated maximum, fleet creation fails..</p></li>
 /// <li>
 /// <p>If a desired number is set to a value lower than the calculated maximum, Amazon GameLift places the desired number.</p></li>
 /// </ul>

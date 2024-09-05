@@ -14,13 +14,13 @@ pub struct Event {
     /// <li>
     /// <p>FLEET_CREATED -- A fleet resource was successfully created with a status of <code>NEW</code>. Event messaging includes the fleet ID.</p></li>
     /// <li>
-    /// <p>FLEET_STATE_DOWNLOADING -- Fleet status changed from <code>NEW</code> to <code>DOWNLOADING</code>. The compressed build has started downloading to a fleet instance for installation.</p></li>
+    /// <p>FLEET_STATE_DOWNLOADING -- Fleet status changed from <code>NEW</code> to <code>DOWNLOADING</code>. Amazon GameLift is downloading the compressed build and running install scripts.</p></li>
     /// <li>
-    /// <p>FLEET_STATE_VALIDATING -- Fleet status changed from <code>DOWNLOADING</code> to <code>VALIDATING</code>. Amazon GameLift has successfully downloaded the build and is now validating the build files.</p></li>
+    /// <p>FLEET_STATE_VALIDATING -- Fleet status changed from <code>DOWNLOADING</code> to <code>VALIDATING</code>. Amazon GameLift has successfully installed build and is now validating the build files.</p></li>
     /// <li>
-    /// <p>FLEET_STATE_BUILDING -- Fleet status changed from <code>VALIDATING</code> to <code>BUILDING</code>. Amazon GameLift has successfully verified the build files and is now running the installation scripts.</p></li>
+    /// <p>FLEET_STATE_BUILDING -- Fleet status changed from <code>VALIDATING</code> to <code>BUILDING</code>. Amazon GameLift has successfully verified the build files and is now launching a fleet instance.</p></li>
     /// <li>
-    /// <p>FLEET_STATE_ACTIVATING -- Fleet status changed from <code>BUILDING</code> to <code>ACTIVATING</code>. Amazon GameLift is trying to launch an instance and test the connectivity between the build and the Amazon GameLift Service via the Server SDK.</p></li>
+    /// <p>FLEET_STATE_ACTIVATING -- Fleet status changed from <code>BUILDING</code> to <code>ACTIVATING</code>. Amazon GameLift is launching a game server process on the fleet instance and is testing its connectivity with the Amazon GameLift service.</p></li>
     /// <li>
     /// <p>FLEET_STATE_ACTIVE -- The fleet's status changed from <code>ACTIVATING</code> to <code>ACTIVE</code>. The fleet is now ready to host game sessions.</p></li>
     /// <li>
@@ -31,9 +31,13 @@ pub struct Event {
     /// <li>
     /// <p>FLEET_BINARY_DOWNLOAD_FAILED -- The build failed to download to the fleet instance.</p></li>
     /// <li>
-    /// <p>FLEET_CREATION_EXTRACTING_BUILD -- The game server build was successfully downloaded to an instance, and the build files are now being extracted from the uploaded build and saved to an instance. Failure at this stage prevents a fleet from moving to ACTIVE status. Logs for this stage display a list of the files that are extracted and saved on the instance. Access the logs by using the URL in <i>PreSignedLogUrl</i>.</p></li>
+    /// <p>FLEET_CREATION_EXTRACTING_BUILD -- The game server build was successfully downloaded to an instance, and Amazon GameLiftis now extracting the build files from the uploaded build. Failure at this stage prevents a fleet from moving to ACTIVE status. Logs for this stage display a list of the files that are extracted and saved on the instance. Access the logs by using the URL in <i>PreSignedLogUrl</i>.</p></li>
     /// <li>
-    /// <p>FLEET_CREATION_RUNNING_INSTALLER -- The game server build files were successfully extracted, and the GameLift is now running the build's install script (if one is included). Failure in this stage prevents a fleet from moving to ACTIVE status. Logs for this stage list the installation steps and whether or not the install completed successfully. Access the logs by using the URL in <i>PreSignedLogUrl</i>.</p></li>
+    /// <p>FLEET_CREATION_RUNNING_INSTALLER -- The game server build files were successfully extracted, and Amazon GameLift is now running the build's install script (if one is included). Failure in this stage prevents a fleet from moving to ACTIVE status. Logs for this stage list the installation steps and whether or not the install completed successfully. Access the logs by using the URL in <i>PreSignedLogUrl</i>.</p></li>
+    /// <li>
+    /// <p>FLEET_CREATION_COMPLETED_INSTALLER -- The game server build files were successfully installed and validation of the installation will begin soon.</p></li>
+    /// <li>
+    /// <p>FLEET_CREATION_FAILED_INSTALLER -- The installed failed while attempting to install the build files. This event indicates that the failure occurred before Amazon GameLift could start validation.</p></li>
     /// <li>
     /// <p>FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was successful, and the GameLift is now verifying that the game server launch paths, which are specified in the fleet's runtime configuration, exist. If any listed launch path exists, Amazon GameLift tries to launch a game server process and waits for the process to report ready. Failures in this stage prevent a fleet from moving to <code>ACTIVE</code> status. Logs for this stage list the launch paths in the runtime configuration and indicate whether each is found. Access the logs by using the URL in <i>PreSignedLogUrl</i>.</p></li>
     /// <li>
@@ -123,13 +127,13 @@ impl Event {
     /// <li>
     /// <p>FLEET_CREATED -- A fleet resource was successfully created with a status of <code>NEW</code>. Event messaging includes the fleet ID.</p></li>
     /// <li>
-    /// <p>FLEET_STATE_DOWNLOADING -- Fleet status changed from <code>NEW</code> to <code>DOWNLOADING</code>. The compressed build has started downloading to a fleet instance for installation.</p></li>
+    /// <p>FLEET_STATE_DOWNLOADING -- Fleet status changed from <code>NEW</code> to <code>DOWNLOADING</code>. Amazon GameLift is downloading the compressed build and running install scripts.</p></li>
     /// <li>
-    /// <p>FLEET_STATE_VALIDATING -- Fleet status changed from <code>DOWNLOADING</code> to <code>VALIDATING</code>. Amazon GameLift has successfully downloaded the build and is now validating the build files.</p></li>
+    /// <p>FLEET_STATE_VALIDATING -- Fleet status changed from <code>DOWNLOADING</code> to <code>VALIDATING</code>. Amazon GameLift has successfully installed build and is now validating the build files.</p></li>
     /// <li>
-    /// <p>FLEET_STATE_BUILDING -- Fleet status changed from <code>VALIDATING</code> to <code>BUILDING</code>. Amazon GameLift has successfully verified the build files and is now running the installation scripts.</p></li>
+    /// <p>FLEET_STATE_BUILDING -- Fleet status changed from <code>VALIDATING</code> to <code>BUILDING</code>. Amazon GameLift has successfully verified the build files and is now launching a fleet instance.</p></li>
     /// <li>
-    /// <p>FLEET_STATE_ACTIVATING -- Fleet status changed from <code>BUILDING</code> to <code>ACTIVATING</code>. Amazon GameLift is trying to launch an instance and test the connectivity between the build and the Amazon GameLift Service via the Server SDK.</p></li>
+    /// <p>FLEET_STATE_ACTIVATING -- Fleet status changed from <code>BUILDING</code> to <code>ACTIVATING</code>. Amazon GameLift is launching a game server process on the fleet instance and is testing its connectivity with the Amazon GameLift service.</p></li>
     /// <li>
     /// <p>FLEET_STATE_ACTIVE -- The fleet's status changed from <code>ACTIVATING</code> to <code>ACTIVE</code>. The fleet is now ready to host game sessions.</p></li>
     /// <li>
@@ -140,9 +144,13 @@ impl Event {
     /// <li>
     /// <p>FLEET_BINARY_DOWNLOAD_FAILED -- The build failed to download to the fleet instance.</p></li>
     /// <li>
-    /// <p>FLEET_CREATION_EXTRACTING_BUILD -- The game server build was successfully downloaded to an instance, and the build files are now being extracted from the uploaded build and saved to an instance. Failure at this stage prevents a fleet from moving to ACTIVE status. Logs for this stage display a list of the files that are extracted and saved on the instance. Access the logs by using the URL in <i>PreSignedLogUrl</i>.</p></li>
+    /// <p>FLEET_CREATION_EXTRACTING_BUILD -- The game server build was successfully downloaded to an instance, and Amazon GameLiftis now extracting the build files from the uploaded build. Failure at this stage prevents a fleet from moving to ACTIVE status. Logs for this stage display a list of the files that are extracted and saved on the instance. Access the logs by using the URL in <i>PreSignedLogUrl</i>.</p></li>
     /// <li>
-    /// <p>FLEET_CREATION_RUNNING_INSTALLER -- The game server build files were successfully extracted, and the GameLift is now running the build's install script (if one is included). Failure in this stage prevents a fleet from moving to ACTIVE status. Logs for this stage list the installation steps and whether or not the install completed successfully. Access the logs by using the URL in <i>PreSignedLogUrl</i>.</p></li>
+    /// <p>FLEET_CREATION_RUNNING_INSTALLER -- The game server build files were successfully extracted, and Amazon GameLift is now running the build's install script (if one is included). Failure in this stage prevents a fleet from moving to ACTIVE status. Logs for this stage list the installation steps and whether or not the install completed successfully. Access the logs by using the URL in <i>PreSignedLogUrl</i>.</p></li>
+    /// <li>
+    /// <p>FLEET_CREATION_COMPLETED_INSTALLER -- The game server build files were successfully installed and validation of the installation will begin soon.</p></li>
+    /// <li>
+    /// <p>FLEET_CREATION_FAILED_INSTALLER -- The installed failed while attempting to install the build files. This event indicates that the failure occurred before Amazon GameLift could start validation.</p></li>
     /// <li>
     /// <p>FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was successful, and the GameLift is now verifying that the game server launch paths, which are specified in the fleet's runtime configuration, exist. If any listed launch path exists, Amazon GameLift tries to launch a game server process and waits for the process to report ready. Failures in this stage prevent a fleet from moving to <code>ACTIVE</code> status. Logs for this stage list the launch paths in the runtime configuration and indicate whether each is found. Access the logs by using the URL in <i>PreSignedLogUrl</i>.</p></li>
     /// <li>
@@ -281,13 +289,13 @@ impl EventBuilder {
     /// <li>
     /// <p>FLEET_CREATED -- A fleet resource was successfully created with a status of <code>NEW</code>. Event messaging includes the fleet ID.</p></li>
     /// <li>
-    /// <p>FLEET_STATE_DOWNLOADING -- Fleet status changed from <code>NEW</code> to <code>DOWNLOADING</code>. The compressed build has started downloading to a fleet instance for installation.</p></li>
+    /// <p>FLEET_STATE_DOWNLOADING -- Fleet status changed from <code>NEW</code> to <code>DOWNLOADING</code>. Amazon GameLift is downloading the compressed build and running install scripts.</p></li>
     /// <li>
-    /// <p>FLEET_STATE_VALIDATING -- Fleet status changed from <code>DOWNLOADING</code> to <code>VALIDATING</code>. Amazon GameLift has successfully downloaded the build and is now validating the build files.</p></li>
+    /// <p>FLEET_STATE_VALIDATING -- Fleet status changed from <code>DOWNLOADING</code> to <code>VALIDATING</code>. Amazon GameLift has successfully installed build and is now validating the build files.</p></li>
     /// <li>
-    /// <p>FLEET_STATE_BUILDING -- Fleet status changed from <code>VALIDATING</code> to <code>BUILDING</code>. Amazon GameLift has successfully verified the build files and is now running the installation scripts.</p></li>
+    /// <p>FLEET_STATE_BUILDING -- Fleet status changed from <code>VALIDATING</code> to <code>BUILDING</code>. Amazon GameLift has successfully verified the build files and is now launching a fleet instance.</p></li>
     /// <li>
-    /// <p>FLEET_STATE_ACTIVATING -- Fleet status changed from <code>BUILDING</code> to <code>ACTIVATING</code>. Amazon GameLift is trying to launch an instance and test the connectivity between the build and the Amazon GameLift Service via the Server SDK.</p></li>
+    /// <p>FLEET_STATE_ACTIVATING -- Fleet status changed from <code>BUILDING</code> to <code>ACTIVATING</code>. Amazon GameLift is launching a game server process on the fleet instance and is testing its connectivity with the Amazon GameLift service.</p></li>
     /// <li>
     /// <p>FLEET_STATE_ACTIVE -- The fleet's status changed from <code>ACTIVATING</code> to <code>ACTIVE</code>. The fleet is now ready to host game sessions.</p></li>
     /// <li>
@@ -298,9 +306,13 @@ impl EventBuilder {
     /// <li>
     /// <p>FLEET_BINARY_DOWNLOAD_FAILED -- The build failed to download to the fleet instance.</p></li>
     /// <li>
-    /// <p>FLEET_CREATION_EXTRACTING_BUILD -- The game server build was successfully downloaded to an instance, and the build files are now being extracted from the uploaded build and saved to an instance. Failure at this stage prevents a fleet from moving to ACTIVE status. Logs for this stage display a list of the files that are extracted and saved on the instance. Access the logs by using the URL in <i>PreSignedLogUrl</i>.</p></li>
+    /// <p>FLEET_CREATION_EXTRACTING_BUILD -- The game server build was successfully downloaded to an instance, and Amazon GameLiftis now extracting the build files from the uploaded build. Failure at this stage prevents a fleet from moving to ACTIVE status. Logs for this stage display a list of the files that are extracted and saved on the instance. Access the logs by using the URL in <i>PreSignedLogUrl</i>.</p></li>
     /// <li>
-    /// <p>FLEET_CREATION_RUNNING_INSTALLER -- The game server build files were successfully extracted, and the GameLift is now running the build's install script (if one is included). Failure in this stage prevents a fleet from moving to ACTIVE status. Logs for this stage list the installation steps and whether or not the install completed successfully. Access the logs by using the URL in <i>PreSignedLogUrl</i>.</p></li>
+    /// <p>FLEET_CREATION_RUNNING_INSTALLER -- The game server build files were successfully extracted, and Amazon GameLift is now running the build's install script (if one is included). Failure in this stage prevents a fleet from moving to ACTIVE status. Logs for this stage list the installation steps and whether or not the install completed successfully. Access the logs by using the URL in <i>PreSignedLogUrl</i>.</p></li>
+    /// <li>
+    /// <p>FLEET_CREATION_COMPLETED_INSTALLER -- The game server build files were successfully installed and validation of the installation will begin soon.</p></li>
+    /// <li>
+    /// <p>FLEET_CREATION_FAILED_INSTALLER -- The installed failed while attempting to install the build files. This event indicates that the failure occurred before Amazon GameLift could start validation.</p></li>
     /// <li>
     /// <p>FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was successful, and the GameLift is now verifying that the game server launch paths, which are specified in the fleet's runtime configuration, exist. If any listed launch path exists, Amazon GameLift tries to launch a game server process and waits for the process to report ready. Failures in this stage prevent a fleet from moving to <code>ACTIVE</code> status. Logs for this stage list the launch paths in the runtime configuration and indicate whether each is found. Access the logs by using the URL in <i>PreSignedLogUrl</i>.</p></li>
     /// <li>
@@ -375,13 +387,13 @@ impl EventBuilder {
     /// <li>
     /// <p>FLEET_CREATED -- A fleet resource was successfully created with a status of <code>NEW</code>. Event messaging includes the fleet ID.</p></li>
     /// <li>
-    /// <p>FLEET_STATE_DOWNLOADING -- Fleet status changed from <code>NEW</code> to <code>DOWNLOADING</code>. The compressed build has started downloading to a fleet instance for installation.</p></li>
+    /// <p>FLEET_STATE_DOWNLOADING -- Fleet status changed from <code>NEW</code> to <code>DOWNLOADING</code>. Amazon GameLift is downloading the compressed build and running install scripts.</p></li>
     /// <li>
-    /// <p>FLEET_STATE_VALIDATING -- Fleet status changed from <code>DOWNLOADING</code> to <code>VALIDATING</code>. Amazon GameLift has successfully downloaded the build and is now validating the build files.</p></li>
+    /// <p>FLEET_STATE_VALIDATING -- Fleet status changed from <code>DOWNLOADING</code> to <code>VALIDATING</code>. Amazon GameLift has successfully installed build and is now validating the build files.</p></li>
     /// <li>
-    /// <p>FLEET_STATE_BUILDING -- Fleet status changed from <code>VALIDATING</code> to <code>BUILDING</code>. Amazon GameLift has successfully verified the build files and is now running the installation scripts.</p></li>
+    /// <p>FLEET_STATE_BUILDING -- Fleet status changed from <code>VALIDATING</code> to <code>BUILDING</code>. Amazon GameLift has successfully verified the build files and is now launching a fleet instance.</p></li>
     /// <li>
-    /// <p>FLEET_STATE_ACTIVATING -- Fleet status changed from <code>BUILDING</code> to <code>ACTIVATING</code>. Amazon GameLift is trying to launch an instance and test the connectivity between the build and the Amazon GameLift Service via the Server SDK.</p></li>
+    /// <p>FLEET_STATE_ACTIVATING -- Fleet status changed from <code>BUILDING</code> to <code>ACTIVATING</code>. Amazon GameLift is launching a game server process on the fleet instance and is testing its connectivity with the Amazon GameLift service.</p></li>
     /// <li>
     /// <p>FLEET_STATE_ACTIVE -- The fleet's status changed from <code>ACTIVATING</code> to <code>ACTIVE</code>. The fleet is now ready to host game sessions.</p></li>
     /// <li>
@@ -392,9 +404,13 @@ impl EventBuilder {
     /// <li>
     /// <p>FLEET_BINARY_DOWNLOAD_FAILED -- The build failed to download to the fleet instance.</p></li>
     /// <li>
-    /// <p>FLEET_CREATION_EXTRACTING_BUILD -- The game server build was successfully downloaded to an instance, and the build files are now being extracted from the uploaded build and saved to an instance. Failure at this stage prevents a fleet from moving to ACTIVE status. Logs for this stage display a list of the files that are extracted and saved on the instance. Access the logs by using the URL in <i>PreSignedLogUrl</i>.</p></li>
+    /// <p>FLEET_CREATION_EXTRACTING_BUILD -- The game server build was successfully downloaded to an instance, and Amazon GameLiftis now extracting the build files from the uploaded build. Failure at this stage prevents a fleet from moving to ACTIVE status. Logs for this stage display a list of the files that are extracted and saved on the instance. Access the logs by using the URL in <i>PreSignedLogUrl</i>.</p></li>
     /// <li>
-    /// <p>FLEET_CREATION_RUNNING_INSTALLER -- The game server build files were successfully extracted, and the GameLift is now running the build's install script (if one is included). Failure in this stage prevents a fleet from moving to ACTIVE status. Logs for this stage list the installation steps and whether or not the install completed successfully. Access the logs by using the URL in <i>PreSignedLogUrl</i>.</p></li>
+    /// <p>FLEET_CREATION_RUNNING_INSTALLER -- The game server build files were successfully extracted, and Amazon GameLift is now running the build's install script (if one is included). Failure in this stage prevents a fleet from moving to ACTIVE status. Logs for this stage list the installation steps and whether or not the install completed successfully. Access the logs by using the URL in <i>PreSignedLogUrl</i>.</p></li>
+    /// <li>
+    /// <p>FLEET_CREATION_COMPLETED_INSTALLER -- The game server build files were successfully installed and validation of the installation will begin soon.</p></li>
+    /// <li>
+    /// <p>FLEET_CREATION_FAILED_INSTALLER -- The installed failed while attempting to install the build files. This event indicates that the failure occurred before Amazon GameLift could start validation.</p></li>
     /// <li>
     /// <p>FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was successful, and the GameLift is now verifying that the game server launch paths, which are specified in the fleet's runtime configuration, exist. If any listed launch path exists, Amazon GameLift tries to launch a game server process and waits for the process to report ready. Failures in this stage prevent a fleet from moving to <code>ACTIVE</code> status. Logs for this stage list the launch paths in the runtime configuration and indicate whether each is found. Access the logs by using the URL in <i>PreSignedLogUrl</i>.</p></li>
     /// <li>
@@ -469,13 +485,13 @@ impl EventBuilder {
     /// <li>
     /// <p>FLEET_CREATED -- A fleet resource was successfully created with a status of <code>NEW</code>. Event messaging includes the fleet ID.</p></li>
     /// <li>
-    /// <p>FLEET_STATE_DOWNLOADING -- Fleet status changed from <code>NEW</code> to <code>DOWNLOADING</code>. The compressed build has started downloading to a fleet instance for installation.</p></li>
+    /// <p>FLEET_STATE_DOWNLOADING -- Fleet status changed from <code>NEW</code> to <code>DOWNLOADING</code>. Amazon GameLift is downloading the compressed build and running install scripts.</p></li>
     /// <li>
-    /// <p>FLEET_STATE_VALIDATING -- Fleet status changed from <code>DOWNLOADING</code> to <code>VALIDATING</code>. Amazon GameLift has successfully downloaded the build and is now validating the build files.</p></li>
+    /// <p>FLEET_STATE_VALIDATING -- Fleet status changed from <code>DOWNLOADING</code> to <code>VALIDATING</code>. Amazon GameLift has successfully installed build and is now validating the build files.</p></li>
     /// <li>
-    /// <p>FLEET_STATE_BUILDING -- Fleet status changed from <code>VALIDATING</code> to <code>BUILDING</code>. Amazon GameLift has successfully verified the build files and is now running the installation scripts.</p></li>
+    /// <p>FLEET_STATE_BUILDING -- Fleet status changed from <code>VALIDATING</code> to <code>BUILDING</code>. Amazon GameLift has successfully verified the build files and is now launching a fleet instance.</p></li>
     /// <li>
-    /// <p>FLEET_STATE_ACTIVATING -- Fleet status changed from <code>BUILDING</code> to <code>ACTIVATING</code>. Amazon GameLift is trying to launch an instance and test the connectivity between the build and the Amazon GameLift Service via the Server SDK.</p></li>
+    /// <p>FLEET_STATE_ACTIVATING -- Fleet status changed from <code>BUILDING</code> to <code>ACTIVATING</code>. Amazon GameLift is launching a game server process on the fleet instance and is testing its connectivity with the Amazon GameLift service.</p></li>
     /// <li>
     /// <p>FLEET_STATE_ACTIVE -- The fleet's status changed from <code>ACTIVATING</code> to <code>ACTIVE</code>. The fleet is now ready to host game sessions.</p></li>
     /// <li>
@@ -486,9 +502,13 @@ impl EventBuilder {
     /// <li>
     /// <p>FLEET_BINARY_DOWNLOAD_FAILED -- The build failed to download to the fleet instance.</p></li>
     /// <li>
-    /// <p>FLEET_CREATION_EXTRACTING_BUILD -- The game server build was successfully downloaded to an instance, and the build files are now being extracted from the uploaded build and saved to an instance. Failure at this stage prevents a fleet from moving to ACTIVE status. Logs for this stage display a list of the files that are extracted and saved on the instance. Access the logs by using the URL in <i>PreSignedLogUrl</i>.</p></li>
+    /// <p>FLEET_CREATION_EXTRACTING_BUILD -- The game server build was successfully downloaded to an instance, and Amazon GameLiftis now extracting the build files from the uploaded build. Failure at this stage prevents a fleet from moving to ACTIVE status. Logs for this stage display a list of the files that are extracted and saved on the instance. Access the logs by using the URL in <i>PreSignedLogUrl</i>.</p></li>
     /// <li>
-    /// <p>FLEET_CREATION_RUNNING_INSTALLER -- The game server build files were successfully extracted, and the GameLift is now running the build's install script (if one is included). Failure in this stage prevents a fleet from moving to ACTIVE status. Logs for this stage list the installation steps and whether or not the install completed successfully. Access the logs by using the URL in <i>PreSignedLogUrl</i>.</p></li>
+    /// <p>FLEET_CREATION_RUNNING_INSTALLER -- The game server build files were successfully extracted, and Amazon GameLift is now running the build's install script (if one is included). Failure in this stage prevents a fleet from moving to ACTIVE status. Logs for this stage list the installation steps and whether or not the install completed successfully. Access the logs by using the URL in <i>PreSignedLogUrl</i>.</p></li>
+    /// <li>
+    /// <p>FLEET_CREATION_COMPLETED_INSTALLER -- The game server build files were successfully installed and validation of the installation will begin soon.</p></li>
+    /// <li>
+    /// <p>FLEET_CREATION_FAILED_INSTALLER -- The installed failed while attempting to install the build files. This event indicates that the failure occurred before Amazon GameLift could start validation.</p></li>
     /// <li>
     /// <p>FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was successful, and the GameLift is now verifying that the game server launch paths, which are specified in the fleet's runtime configuration, exist. If any listed launch path exists, Amazon GameLift tries to launch a game server process and waits for the process to report ready. Failures in this stage prevent a fleet from moving to <code>ACTIVE</code> status. Logs for this stage list the launch paths in the runtime configuration and indicate whether each is found. Access the logs by using the URL in <i>PreSignedLogUrl</i>.</p></li>
     /// <li>

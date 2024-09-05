@@ -2643,6 +2643,8 @@ pub(crate) mod shape_alarm_list;
 
 pub(crate) mod shape_algorithm_status_item;
 
+pub(crate) mod shape_app_lifecycle_management;
+
 pub(crate) mod shape_async_inference_notification_config;
 
 pub(crate) mod shape_athena_dataset_definition;
@@ -2887,6 +2889,8 @@ pub(crate) mod shape_scaling_policy;
 
 pub(crate) mod shape_selective_execution_result;
 
+pub(crate) mod shape_space_app_lifecycle_management;
+
 pub(crate) mod shape_space_settings_summary;
 
 pub(crate) mod shape_space_sharing_settings_summary;
@@ -2987,6 +2991,8 @@ pub(crate) mod shape_filling_transformations;
 
 pub(crate) mod shape_grouping_attribute_names;
 
+pub(crate) mod shape_idle_settings;
+
 pub(crate) mod shape_inference_hub_access_config;
 
 pub(crate) mod shape_input_modes;
@@ -3028,6 +3034,8 @@ pub(crate) mod shape_quality_check_step_metadata;
 pub(crate) mod shape_recommendation_job_supported_content_types;
 
 pub(crate) mod shape_register_model_step_metadata;
+
+pub(crate) mod shape_space_idle_settings;
 
 pub(crate) mod shape_target_tracking_scaling_policy_configuration;
 

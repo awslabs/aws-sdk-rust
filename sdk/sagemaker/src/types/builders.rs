@@ -45,6 +45,10 @@ pub use crate::types::_jupyter_lab_app_settings::JupyterLabAppSettingsBuilder;
 
 pub use crate::types::_emr_settings::EmrSettingsBuilder;
 
+pub use crate::types::_app_lifecycle_management::AppLifecycleManagementBuilder;
+
+pub use crate::types::_idle_settings::IdleSettingsBuilder;
+
 pub use crate::types::_code_repository::CodeRepositoryBuilder;
 
 pub use crate::types::_custom_image::CustomImageBuilder;
@@ -104,6 +108,10 @@ pub use crate::types::_space_storage_settings::SpaceStorageSettingsBuilder;
 pub use crate::types::_ebs_storage_settings::EbsStorageSettingsBuilder;
 
 pub use crate::types::_space_jupyter_lab_app_settings::SpaceJupyterLabAppSettingsBuilder;
+
+pub use crate::types::_space_app_lifecycle_management::SpaceAppLifecycleManagementBuilder;
+
+pub use crate::types::_space_idle_settings::SpaceIdleSettingsBuilder;
 
 pub use crate::types::_space_code_editor_app_settings::SpaceCodeEditorAppSettingsBuilder;
 

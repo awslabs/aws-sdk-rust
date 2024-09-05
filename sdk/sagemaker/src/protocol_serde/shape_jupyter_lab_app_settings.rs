@@ -42,11 +42,17 @@ pub fn ser_jupyter_lab_app_settings(
         }
         array_11.finish();
     }
-    if let Some(var_14) = &input.emr_settings {
+    if let Some(var_14) = &input.app_lifecycle_management {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("EmrSettings").start_object();
-        crate::protocol_serde::shape_emr_settings::ser_emr_settings(&mut object_15, var_14)?;
+        let mut object_15 = object.key("AppLifecycleManagement").start_object();
+        crate::protocol_serde::shape_app_lifecycle_management::ser_app_lifecycle_management(&mut object_15, var_14)?;
         object_15.finish();
+    }
+    if let Some(var_16) = &input.emr_settings {
+        #[allow(unused_mut)]
+        let mut object_17 = object.key("EmrSettings").start_object();
+        crate::protocol_serde::shape_emr_settings::ser_emr_settings(&mut object_17, var_16)?;
+        object_17.finish();
     }
     Ok(())
 }
@@ -78,6 +84,11 @@ where
                         }
                         "CodeRepositories" => {
                             builder = builder.set_code_repositories(crate::protocol_serde::shape_code_repositories::de_code_repositories(tokens)?);
+                        }
+                        "AppLifecycleManagement" => {
+                            builder = builder.set_app_lifecycle_management(
+                                crate::protocol_serde::shape_app_lifecycle_management::de_app_lifecycle_management(tokens)?,
+                            );
                         }
                         "EmrSettings" => {
                             builder = builder.set_emr_settings(crate::protocol_serde::shape_emr_settings::de_emr_settings(tokens)?);

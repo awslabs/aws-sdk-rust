@@ -185,12 +185,6 @@ pub(crate) fn service_level_objective_correct_errors(
     if builder.last_updated_time.is_none() {
         builder.last_updated_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
-    if builder.sli.is_none() {
-        builder.sli = {
-            let builder = crate::types::builders::ServiceLevelIndicatorBuilder::default();
-            crate::serde_util::service_level_indicator_correct_errors(builder).build().ok()
-        }
-    }
     if builder.goal.is_none() {
         builder.goal = {
             let builder = crate::types::builders::GoalBuilder::default();
@@ -210,20 +204,16 @@ pub(crate) fn service_correct_errors(mut builder: crate::types::builders::Servic
     builder
 }
 
-pub(crate) fn service_level_indicator_correct_errors(
-    mut builder: crate::types::builders::ServiceLevelIndicatorBuilder,
-) -> crate::types::builders::ServiceLevelIndicatorBuilder {
-    if builder.sli_metric.is_none() {
-        builder.sli_metric = {
-            let builder = crate::types::builders::ServiceLevelIndicatorMetricBuilder::default();
-            crate::serde_util::service_level_indicator_metric_correct_errors(builder).build().ok()
+pub(crate) fn request_based_service_level_indicator_correct_errors(
+    mut builder: crate::types::builders::RequestBasedServiceLevelIndicatorBuilder,
+) -> crate::types::builders::RequestBasedServiceLevelIndicatorBuilder {
+    if builder.request_based_sli_metric.is_none() {
+        builder.request_based_sli_metric = {
+            let builder = crate::types::builders::RequestBasedServiceLevelIndicatorMetricBuilder::default();
+            crate::serde_util::request_based_service_level_indicator_metric_correct_errors(builder)
+                .build()
+                .ok()
         }
-    }
-    if builder.metric_threshold.is_none() {
-        builder.metric_threshold = Some(Default::default())
-    }
-    if builder.comparison_operator.is_none() {
-        builder.comparison_operator = "no value was set".parse::<crate::types::ServiceLevelIndicatorComparisonOperator>().ok()
     }
     builder
 }
@@ -254,6 +244,24 @@ pub(crate) fn service_dependent_correct_errors(
     }
     if builder.metric_references.is_none() {
         builder.metric_references = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn service_level_indicator_correct_errors(
+    mut builder: crate::types::builders::ServiceLevelIndicatorBuilder,
+) -> crate::types::builders::ServiceLevelIndicatorBuilder {
+    if builder.sli_metric.is_none() {
+        builder.sli_metric = {
+            let builder = crate::types::builders::ServiceLevelIndicatorMetricBuilder::default();
+            crate::serde_util::service_level_indicator_metric_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.metric_threshold.is_none() {
+        builder.metric_threshold = Some(Default::default())
+    }
+    if builder.comparison_operator.is_none() {
+        builder.comparison_operator = "no value was set".parse::<crate::types::ServiceLevelIndicatorComparisonOperator>().ok()
     }
     builder
 }
@@ -337,15 +345,6 @@ pub(crate) fn tag_correct_errors(mut builder: crate::types::builders::TagBuilder
     builder
 }
 
-pub(crate) fn service_level_indicator_metric_correct_errors(
-    mut builder: crate::types::builders::ServiceLevelIndicatorMetricBuilder,
-) -> crate::types::builders::ServiceLevelIndicatorMetricBuilder {
-    if builder.metric_data_queries.is_none() {
-        builder.metric_data_queries = Some(Default::default())
-    }
-    builder
-}
-
 pub(crate) fn metric_reference_correct_errors(
     mut builder: crate::types::builders::MetricReferenceBuilder,
 ) -> crate::types::builders::MetricReferenceBuilder {
@@ -357,6 +356,27 @@ pub(crate) fn metric_reference_correct_errors(
     }
     if builder.metric_name.is_none() {
         builder.metric_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn request_based_service_level_indicator_metric_correct_errors(
+    mut builder: crate::types::builders::RequestBasedServiceLevelIndicatorMetricBuilder,
+) -> crate::types::builders::RequestBasedServiceLevelIndicatorMetricBuilder {
+    if builder.total_request_count_metric.is_none() {
+        builder.total_request_count_metric = Some(Default::default())
+    }
+    if builder.monitored_request_count_metric.is_none() {
+        builder.monitored_request_count_metric = Some(crate::types::MonitoredRequestCountMetricDataQueries::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn service_level_indicator_metric_correct_errors(
+    mut builder: crate::types::builders::ServiceLevelIndicatorMetricBuilder,
+) -> crate::types::builders::ServiceLevelIndicatorMetricBuilder {
+    if builder.metric_data_queries.is_none() {
+        builder.metric_data_queries = Some(Default::default())
     }
     builder
 }

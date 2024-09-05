@@ -7,8 +7,11 @@ pub struct UpdateServiceLevelObjectiveInput {
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>An optional description for the SLO.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>A structure that contains information about what performance metric this SLO will monitor.</p>
+    /// <p>If this SLO is a period-based SLO, this structure defines the information about what performance metric this SLO will monitor.</p>
     pub sli_config: ::std::option::Option<crate::types::ServiceLevelIndicatorConfig>,
+    /// <p>If this SLO is a request-based SLO, this structure defines the information about what performance metric this SLO will monitor.</p>
+    /// <p>You can't specify both <code>SliConfig</code> and <code>RequestBasedSliConfig</code> in the same operation.</p>
+    pub request_based_sli_config: ::std::option::Option<crate::types::RequestBasedServiceLevelIndicatorConfig>,
     /// <p>A structure that contains the attributes that determine the goal of the SLO. This includes the time period for evaluation and the attainment threshold.</p>
     pub goal: ::std::option::Option<crate::types::Goal>,
 }
@@ -21,9 +24,14 @@ impl UpdateServiceLevelObjectiveInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A structure that contains information about what performance metric this SLO will monitor.</p>
+    /// <p>If this SLO is a period-based SLO, this structure defines the information about what performance metric this SLO will monitor.</p>
     pub fn sli_config(&self) -> ::std::option::Option<&crate::types::ServiceLevelIndicatorConfig> {
         self.sli_config.as_ref()
+    }
+    /// <p>If this SLO is a request-based SLO, this structure defines the information about what performance metric this SLO will monitor.</p>
+    /// <p>You can't specify both <code>SliConfig</code> and <code>RequestBasedSliConfig</code> in the same operation.</p>
+    pub fn request_based_sli_config(&self) -> ::std::option::Option<&crate::types::RequestBasedServiceLevelIndicatorConfig> {
+        self.request_based_sli_config.as_ref()
     }
     /// <p>A structure that contains the attributes that determine the goal of the SLO. This includes the time period for evaluation and the attainment threshold.</p>
     pub fn goal(&self) -> ::std::option::Option<&crate::types::Goal> {
@@ -44,6 +52,7 @@ pub struct UpdateServiceLevelObjectiveInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) sli_config: ::std::option::Option<crate::types::ServiceLevelIndicatorConfig>,
+    pub(crate) request_based_sli_config: ::std::option::Option<crate::types::RequestBasedServiceLevelIndicatorConfig>,
     pub(crate) goal: ::std::option::Option<crate::types::Goal>,
 }
 impl UpdateServiceLevelObjectiveInputBuilder {
@@ -76,19 +85,36 @@ impl UpdateServiceLevelObjectiveInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>A structure that contains information about what performance metric this SLO will monitor.</p>
+    /// <p>If this SLO is a period-based SLO, this structure defines the information about what performance metric this SLO will monitor.</p>
     pub fn sli_config(mut self, input: crate::types::ServiceLevelIndicatorConfig) -> Self {
         self.sli_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A structure that contains information about what performance metric this SLO will monitor.</p>
+    /// <p>If this SLO is a period-based SLO, this structure defines the information about what performance metric this SLO will monitor.</p>
     pub fn set_sli_config(mut self, input: ::std::option::Option<crate::types::ServiceLevelIndicatorConfig>) -> Self {
         self.sli_config = input;
         self
     }
-    /// <p>A structure that contains information about what performance metric this SLO will monitor.</p>
+    /// <p>If this SLO is a period-based SLO, this structure defines the information about what performance metric this SLO will monitor.</p>
     pub fn get_sli_config(&self) -> &::std::option::Option<crate::types::ServiceLevelIndicatorConfig> {
         &self.sli_config
+    }
+    /// <p>If this SLO is a request-based SLO, this structure defines the information about what performance metric this SLO will monitor.</p>
+    /// <p>You can't specify both <code>SliConfig</code> and <code>RequestBasedSliConfig</code> in the same operation.</p>
+    pub fn request_based_sli_config(mut self, input: crate::types::RequestBasedServiceLevelIndicatorConfig) -> Self {
+        self.request_based_sli_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If this SLO is a request-based SLO, this structure defines the information about what performance metric this SLO will monitor.</p>
+    /// <p>You can't specify both <code>SliConfig</code> and <code>RequestBasedSliConfig</code> in the same operation.</p>
+    pub fn set_request_based_sli_config(mut self, input: ::std::option::Option<crate::types::RequestBasedServiceLevelIndicatorConfig>) -> Self {
+        self.request_based_sli_config = input;
+        self
+    }
+    /// <p>If this SLO is a request-based SLO, this structure defines the information about what performance metric this SLO will monitor.</p>
+    /// <p>You can't specify both <code>SliConfig</code> and <code>RequestBasedSliConfig</code> in the same operation.</p>
+    pub fn get_request_based_sli_config(&self) -> &::std::option::Option<crate::types::RequestBasedServiceLevelIndicatorConfig> {
+        &self.request_based_sli_config
     }
     /// <p>A structure that contains the attributes that determine the goal of the SLO. This includes the time period for evaluation and the attainment threshold.</p>
     pub fn goal(mut self, input: crate::types::Goal) -> Self {
@@ -115,6 +141,7 @@ impl UpdateServiceLevelObjectiveInputBuilder {
             id: self.id,
             description: self.description,
             sli_config: self.sli_config,
+            request_based_sli_config: self.request_based_sli_config,
             goal: self.goal,
         })
     }

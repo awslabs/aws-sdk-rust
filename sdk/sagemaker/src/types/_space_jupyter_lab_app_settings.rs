@@ -8,6 +8,8 @@ pub struct SpaceJupyterLabAppSettings {
     pub default_resource_spec: ::std::option::Option<crate::types::ResourceSpec>,
     /// <p>A list of Git repositories that SageMaker automatically displays to users for cloning in the JupyterLab application.</p>
     pub code_repositories: ::std::option::Option<::std::vec::Vec<crate::types::CodeRepository>>,
+    /// <p>Settings that are used to configure and manage the lifecycle of JupyterLab applications in a space.</p>
+    pub app_lifecycle_management: ::std::option::Option<crate::types::SpaceAppLifecycleManagement>,
 }
 impl SpaceJupyterLabAppSettings {
     /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
@@ -19,6 +21,10 @@ impl SpaceJupyterLabAppSettings {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.code_repositories.is_none()`.
     pub fn code_repositories(&self) -> &[crate::types::CodeRepository] {
         self.code_repositories.as_deref().unwrap_or_default()
+    }
+    /// <p>Settings that are used to configure and manage the lifecycle of JupyterLab applications in a space.</p>
+    pub fn app_lifecycle_management(&self) -> ::std::option::Option<&crate::types::SpaceAppLifecycleManagement> {
+        self.app_lifecycle_management.as_ref()
     }
 }
 impl SpaceJupyterLabAppSettings {
@@ -34,6 +40,7 @@ impl SpaceJupyterLabAppSettings {
 pub struct SpaceJupyterLabAppSettingsBuilder {
     pub(crate) default_resource_spec: ::std::option::Option<crate::types::ResourceSpec>,
     pub(crate) code_repositories: ::std::option::Option<::std::vec::Vec<crate::types::CodeRepository>>,
+    pub(crate) app_lifecycle_management: ::std::option::Option<crate::types::SpaceAppLifecycleManagement>,
 }
 impl SpaceJupyterLabAppSettingsBuilder {
     /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
@@ -70,11 +77,26 @@ impl SpaceJupyterLabAppSettingsBuilder {
     pub fn get_code_repositories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeRepository>> {
         &self.code_repositories
     }
+    /// <p>Settings that are used to configure and manage the lifecycle of JupyterLab applications in a space.</p>
+    pub fn app_lifecycle_management(mut self, input: crate::types::SpaceAppLifecycleManagement) -> Self {
+        self.app_lifecycle_management = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Settings that are used to configure and manage the lifecycle of JupyterLab applications in a space.</p>
+    pub fn set_app_lifecycle_management(mut self, input: ::std::option::Option<crate::types::SpaceAppLifecycleManagement>) -> Self {
+        self.app_lifecycle_management = input;
+        self
+    }
+    /// <p>Settings that are used to configure and manage the lifecycle of JupyterLab applications in a space.</p>
+    pub fn get_app_lifecycle_management(&self) -> &::std::option::Option<crate::types::SpaceAppLifecycleManagement> {
+        &self.app_lifecycle_management
+    }
     /// Consumes the builder and constructs a [`SpaceJupyterLabAppSettings`](crate::types::SpaceJupyterLabAppSettings).
     pub fn build(self) -> crate::types::SpaceJupyterLabAppSettings {
         crate::types::SpaceJupyterLabAppSettings {
             default_resource_spec: self.default_resource_spec,
             code_repositories: self.code_repositories,
+            app_lifecycle_management: self.app_lifecycle_management,
         }
     }
 }

@@ -4,33 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleTypeId {
-    /// <p>A category defines what kind of rule can be run in the stage, and constrains the provider type for the rule. Valid categories are limited to one of the following values.</p>
-    /// <ul>
-    /// <li>
-    /// <p>INVOKE</p></li>
-    /// <li>
-    /// <p>Approval</p></li>
-    /// <li>
-    /// <p>Rule</p></li>
-    /// </ul>
+    /// <p>A category defines what kind of rule can be run in the stage, and constrains the provider type for the rule. The valid category is <code>Rule</code>.</p>
     pub category: crate::types::RuleCategory,
     /// <p>The creator of the rule being called. The valid value for the <code>Owner</code> field in the rule category is <code>AWS</code>.</p>
     pub owner: ::std::option::Option<crate::types::RuleOwner>,
-    /// <p>The provider of the service being called by the rule. Valid providers are determined by the rulecategory. For example, a managed rule in the Rule category type has an owner of AWS, which would be specified as <code>AWS</code>.</p>
+    /// <p>The rule provider, such as the <code>DeploymentWindow</code> rule.</p>
     pub provider: ::std::string::String,
     /// <p>A string that describes the rule version.</p>
     pub version: ::std::option::Option<::std::string::String>,
 }
 impl RuleTypeId {
-    /// <p>A category defines what kind of rule can be run in the stage, and constrains the provider type for the rule. Valid categories are limited to one of the following values.</p>
-    /// <ul>
-    /// <li>
-    /// <p>INVOKE</p></li>
-    /// <li>
-    /// <p>Approval</p></li>
-    /// <li>
-    /// <p>Rule</p></li>
-    /// </ul>
+    /// <p>A category defines what kind of rule can be run in the stage, and constrains the provider type for the rule. The valid category is <code>Rule</code>.</p>
     pub fn category(&self) -> &crate::types::RuleCategory {
         &self.category
     }
@@ -38,7 +22,7 @@ impl RuleTypeId {
     pub fn owner(&self) -> ::std::option::Option<&crate::types::RuleOwner> {
         self.owner.as_ref()
     }
-    /// <p>The provider of the service being called by the rule. Valid providers are determined by the rulecategory. For example, a managed rule in the Rule category type has an owner of AWS, which would be specified as <code>AWS</code>.</p>
+    /// <p>The rule provider, such as the <code>DeploymentWindow</code> rule.</p>
     pub fn provider(&self) -> &str {
         use std::ops::Deref;
         self.provider.deref()
@@ -65,42 +49,18 @@ pub struct RuleTypeIdBuilder {
     pub(crate) version: ::std::option::Option<::std::string::String>,
 }
 impl RuleTypeIdBuilder {
-    /// <p>A category defines what kind of rule can be run in the stage, and constrains the provider type for the rule. Valid categories are limited to one of the following values.</p>
-    /// <ul>
-    /// <li>
-    /// <p>INVOKE</p></li>
-    /// <li>
-    /// <p>Approval</p></li>
-    /// <li>
-    /// <p>Rule</p></li>
-    /// </ul>
+    /// <p>A category defines what kind of rule can be run in the stage, and constrains the provider type for the rule. The valid category is <code>Rule</code>.</p>
     /// This field is required.
     pub fn category(mut self, input: crate::types::RuleCategory) -> Self {
         self.category = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A category defines what kind of rule can be run in the stage, and constrains the provider type for the rule. Valid categories are limited to one of the following values.</p>
-    /// <ul>
-    /// <li>
-    /// <p>INVOKE</p></li>
-    /// <li>
-    /// <p>Approval</p></li>
-    /// <li>
-    /// <p>Rule</p></li>
-    /// </ul>
+    /// <p>A category defines what kind of rule can be run in the stage, and constrains the provider type for the rule. The valid category is <code>Rule</code>.</p>
     pub fn set_category(mut self, input: ::std::option::Option<crate::types::RuleCategory>) -> Self {
         self.category = input;
         self
     }
-    /// <p>A category defines what kind of rule can be run in the stage, and constrains the provider type for the rule. Valid categories are limited to one of the following values.</p>
-    /// <ul>
-    /// <li>
-    /// <p>INVOKE</p></li>
-    /// <li>
-    /// <p>Approval</p></li>
-    /// <li>
-    /// <p>Rule</p></li>
-    /// </ul>
+    /// <p>A category defines what kind of rule can be run in the stage, and constrains the provider type for the rule. The valid category is <code>Rule</code>.</p>
     pub fn get_category(&self) -> &::std::option::Option<crate::types::RuleCategory> {
         &self.category
     }
@@ -118,18 +78,18 @@ impl RuleTypeIdBuilder {
     pub fn get_owner(&self) -> &::std::option::Option<crate::types::RuleOwner> {
         &self.owner
     }
-    /// <p>The provider of the service being called by the rule. Valid providers are determined by the rulecategory. For example, a managed rule in the Rule category type has an owner of AWS, which would be specified as <code>AWS</code>.</p>
+    /// <p>The rule provider, such as the <code>DeploymentWindow</code> rule.</p>
     /// This field is required.
     pub fn provider(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The provider of the service being called by the rule. Valid providers are determined by the rulecategory. For example, a managed rule in the Rule category type has an owner of AWS, which would be specified as <code>AWS</code>.</p>
+    /// <p>The rule provider, such as the <code>DeploymentWindow</code> rule.</p>
     pub fn set_provider(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provider = input;
         self
     }
-    /// <p>The provider of the service being called by the rule. Valid providers are determined by the rulecategory. For example, a managed rule in the Rule category type has an owner of AWS, which would be specified as <code>AWS</code>.</p>
+    /// <p>The rule provider, such as the <code>DeploymentWindow</code> rule.</p>
     pub fn get_provider(&self) -> &::std::option::Option<::std::string::String> {
         &self.provider
     }

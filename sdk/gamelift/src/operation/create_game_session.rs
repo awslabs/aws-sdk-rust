@@ -263,7 +263,7 @@ pub enum CreateGameSessionError {
     InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p>The requested operation would cause the resource to exceed the allowed service limit. Resolve the issue before retrying.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
-    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
+    /// <p>The requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::types::error::NotFoundException),
     /// <p>The service is unable to resolve the routing for a particular alias because it has a terminal <code>RoutingStrategy</code> associated with it. The message returned in this exception is the message defined in the routing strategy itself. Such requests should only be retried if the routing strategy for the specified alias is modified.</p>
     TerminalRoutingStrategyException(crate::types::error::TerminalRoutingStrategyException),

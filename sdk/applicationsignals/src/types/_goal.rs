@@ -7,7 +7,9 @@ pub struct Goal {
     /// <p>The time period used to evaluate the SLO. It can be either a calendar interval or rolling interval.</p>
     /// <p>If you omit this parameter, a rolling interval of 7 days is used.</p>
     pub interval: ::std::option::Option<crate::types::Interval>,
-    /// <p>The threshold that determines if the goal is being met. An <i>attainment goal</i> is the ratio of good periods that meet the threshold requirements to the total periods within the interval. For example, an attainment goal of 99.9% means that within your interval, you are targeting 99.9% of the periods to be in healthy state.</p>
+    /// <p>The threshold that determines if the goal is being met.</p>
+    /// <p>If this is a period-based SLO, the attainment goal is the percentage of good periods that meet the threshold requirements to the total periods within the interval. For example, an attainment goal of 99.9% means that within your interval, you are targeting 99.9% of the periods to be in healthy state.</p>
+    /// <p>If this is a request-based SLO, the attainment goal is the percentage of requests that must be successful to meet the attainment goal.</p>
     /// <p>If you omit this parameter, 99 is used to represent 99% as the attainment goal.</p>
     pub attainment_goal: ::std::option::Option<f64>,
     /// <p>The percentage of remaining budget over total budget that you want to get warnings for. If you omit this parameter, the default of 50.0 is used.</p>
@@ -19,7 +21,9 @@ impl Goal {
     pub fn interval(&self) -> ::std::option::Option<&crate::types::Interval> {
         self.interval.as_ref()
     }
-    /// <p>The threshold that determines if the goal is being met. An <i>attainment goal</i> is the ratio of good periods that meet the threshold requirements to the total periods within the interval. For example, an attainment goal of 99.9% means that within your interval, you are targeting 99.9% of the periods to be in healthy state.</p>
+    /// <p>The threshold that determines if the goal is being met.</p>
+    /// <p>If this is a period-based SLO, the attainment goal is the percentage of good periods that meet the threshold requirements to the total periods within the interval. For example, an attainment goal of 99.9% means that within your interval, you are targeting 99.9% of the periods to be in healthy state.</p>
+    /// <p>If this is a request-based SLO, the attainment goal is the percentage of requests that must be successful to meet the attainment goal.</p>
     /// <p>If you omit this parameter, 99 is used to represent 99% as the attainment goal.</p>
     pub fn attainment_goal(&self) -> ::std::option::Option<f64> {
         self.attainment_goal
@@ -62,19 +66,25 @@ impl GoalBuilder {
     pub fn get_interval(&self) -> &::std::option::Option<crate::types::Interval> {
         &self.interval
     }
-    /// <p>The threshold that determines if the goal is being met. An <i>attainment goal</i> is the ratio of good periods that meet the threshold requirements to the total periods within the interval. For example, an attainment goal of 99.9% means that within your interval, you are targeting 99.9% of the periods to be in healthy state.</p>
+    /// <p>The threshold that determines if the goal is being met.</p>
+    /// <p>If this is a period-based SLO, the attainment goal is the percentage of good periods that meet the threshold requirements to the total periods within the interval. For example, an attainment goal of 99.9% means that within your interval, you are targeting 99.9% of the periods to be in healthy state.</p>
+    /// <p>If this is a request-based SLO, the attainment goal is the percentage of requests that must be successful to meet the attainment goal.</p>
     /// <p>If you omit this parameter, 99 is used to represent 99% as the attainment goal.</p>
     pub fn attainment_goal(mut self, input: f64) -> Self {
         self.attainment_goal = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The threshold that determines if the goal is being met. An <i>attainment goal</i> is the ratio of good periods that meet the threshold requirements to the total periods within the interval. For example, an attainment goal of 99.9% means that within your interval, you are targeting 99.9% of the periods to be in healthy state.</p>
+    /// <p>The threshold that determines if the goal is being met.</p>
+    /// <p>If this is a period-based SLO, the attainment goal is the percentage of good periods that meet the threshold requirements to the total periods within the interval. For example, an attainment goal of 99.9% means that within your interval, you are targeting 99.9% of the periods to be in healthy state.</p>
+    /// <p>If this is a request-based SLO, the attainment goal is the percentage of requests that must be successful to meet the attainment goal.</p>
     /// <p>If you omit this parameter, 99 is used to represent 99% as the attainment goal.</p>
     pub fn set_attainment_goal(mut self, input: ::std::option::Option<f64>) -> Self {
         self.attainment_goal = input;
         self
     }
-    /// <p>The threshold that determines if the goal is being met. An <i>attainment goal</i> is the ratio of good periods that meet the threshold requirements to the total periods within the interval. For example, an attainment goal of 99.9% means that within your interval, you are targeting 99.9% of the periods to be in healthy state.</p>
+    /// <p>The threshold that determines if the goal is being met.</p>
+    /// <p>If this is a period-based SLO, the attainment goal is the percentage of good periods that meet the threshold requirements to the total periods within the interval. For example, an attainment goal of 99.9% means that within your interval, you are targeting 99.9% of the periods to be in healthy state.</p>
+    /// <p>If this is a request-based SLO, the attainment goal is the percentage of requests that must be successful to meet the attainment goal.</p>
     /// <p>If you omit this parameter, 99 is used to represent 99% as the attainment goal.</p>
     pub fn get_attainment_goal(&self) -> &::std::option::Option<f64> {
         &self.attainment_goal

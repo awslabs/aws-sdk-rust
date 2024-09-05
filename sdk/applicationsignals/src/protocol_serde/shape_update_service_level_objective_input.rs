@@ -12,11 +12,20 @@ pub fn ser_update_service_level_objective_input_input(
         crate::protocol_serde::shape_goal::ser_goal(&mut object_3, var_2)?;
         object_3.finish();
     }
-    if let Some(var_4) = &input.sli_config {
+    if let Some(var_4) = &input.request_based_sli_config {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("SliConfig").start_object();
-        crate::protocol_serde::shape_service_level_indicator_config::ser_service_level_indicator_config(&mut object_5, var_4)?;
+        let mut object_5 = object.key("RequestBasedSliConfig").start_object();
+        crate::protocol_serde::shape_request_based_service_level_indicator_config::ser_request_based_service_level_indicator_config(
+            &mut object_5,
+            var_4,
+        )?;
         object_5.finish();
+    }
+    if let Some(var_6) = &input.sli_config {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("SliConfig").start_object();
+        crate::protocol_serde::shape_service_level_indicator_config::ser_service_level_indicator_config(&mut object_7, var_6)?;
+        object_7.finish();
     }
     Ok(())
 }

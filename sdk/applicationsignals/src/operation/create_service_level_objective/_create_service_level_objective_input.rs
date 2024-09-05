@@ -7,9 +7,13 @@ pub struct CreateServiceLevelObjectiveInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>An optional description for this SLO.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>A structure that contains information about what service and what performance metric that this SLO will monitor.</p>
+    /// <p>If this SLO is a period-based SLO, this structure defines the information about what performance metric this SLO will monitor.</p>
+    /// <p>You can't specify both <code>RequestBasedSliConfig</code> and <code>SliConfig</code> in the same operation.</p>
     pub sli_config: ::std::option::Option<crate::types::ServiceLevelIndicatorConfig>,
-    /// <p>A structure that contains the attributes that determine the goal of the SLO. This includes the time period for evaluation and the attainment threshold.</p>
+    /// <p>If this SLO is a request-based SLO, this structure defines the information about what performance metric this SLO will monitor.</p>
+    /// <p>You can't specify both <code>RequestBasedSliConfig</code> and <code>SliConfig</code> in the same operation.</p>
+    pub request_based_sli_config: ::std::option::Option<crate::types::RequestBasedServiceLevelIndicatorConfig>,
+    /// <p>This structure contains the attributes that determine the goal of the SLO.</p>
     pub goal: ::std::option::Option<crate::types::Goal>,
     /// <p>A list of key-value pairs to associate with the SLO. You can associate as many as 50 tags with an SLO. To be able to associate tags with the SLO when you create the SLO, you must have the <code>cloudwatch:TagResource</code> permission.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
@@ -24,11 +28,17 @@ impl CreateServiceLevelObjectiveInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A structure that contains information about what service and what performance metric that this SLO will monitor.</p>
+    /// <p>If this SLO is a period-based SLO, this structure defines the information about what performance metric this SLO will monitor.</p>
+    /// <p>You can't specify both <code>RequestBasedSliConfig</code> and <code>SliConfig</code> in the same operation.</p>
     pub fn sli_config(&self) -> ::std::option::Option<&crate::types::ServiceLevelIndicatorConfig> {
         self.sli_config.as_ref()
     }
-    /// <p>A structure that contains the attributes that determine the goal of the SLO. This includes the time period for evaluation and the attainment threshold.</p>
+    /// <p>If this SLO is a request-based SLO, this structure defines the information about what performance metric this SLO will monitor.</p>
+    /// <p>You can't specify both <code>RequestBasedSliConfig</code> and <code>SliConfig</code> in the same operation.</p>
+    pub fn request_based_sli_config(&self) -> ::std::option::Option<&crate::types::RequestBasedServiceLevelIndicatorConfig> {
+        self.request_based_sli_config.as_ref()
+    }
+    /// <p>This structure contains the attributes that determine the goal of the SLO.</p>
     pub fn goal(&self) -> ::std::option::Option<&crate::types::Goal> {
         self.goal.as_ref()
     }
@@ -54,6 +64,7 @@ pub struct CreateServiceLevelObjectiveInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) sli_config: ::std::option::Option<crate::types::ServiceLevelIndicatorConfig>,
+    pub(crate) request_based_sli_config: ::std::option::Option<crate::types::RequestBasedServiceLevelIndicatorConfig>,
     pub(crate) goal: ::std::option::Option<crate::types::Goal>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
@@ -87,32 +98,51 @@ impl CreateServiceLevelObjectiveInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>A structure that contains information about what service and what performance metric that this SLO will monitor.</p>
-    /// This field is required.
+    /// <p>If this SLO is a period-based SLO, this structure defines the information about what performance metric this SLO will monitor.</p>
+    /// <p>You can't specify both <code>RequestBasedSliConfig</code> and <code>SliConfig</code> in the same operation.</p>
     pub fn sli_config(mut self, input: crate::types::ServiceLevelIndicatorConfig) -> Self {
         self.sli_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A structure that contains information about what service and what performance metric that this SLO will monitor.</p>
+    /// <p>If this SLO is a period-based SLO, this structure defines the information about what performance metric this SLO will monitor.</p>
+    /// <p>You can't specify both <code>RequestBasedSliConfig</code> and <code>SliConfig</code> in the same operation.</p>
     pub fn set_sli_config(mut self, input: ::std::option::Option<crate::types::ServiceLevelIndicatorConfig>) -> Self {
         self.sli_config = input;
         self
     }
-    /// <p>A structure that contains information about what service and what performance metric that this SLO will monitor.</p>
+    /// <p>If this SLO is a period-based SLO, this structure defines the information about what performance metric this SLO will monitor.</p>
+    /// <p>You can't specify both <code>RequestBasedSliConfig</code> and <code>SliConfig</code> in the same operation.</p>
     pub fn get_sli_config(&self) -> &::std::option::Option<crate::types::ServiceLevelIndicatorConfig> {
         &self.sli_config
     }
-    /// <p>A structure that contains the attributes that determine the goal of the SLO. This includes the time period for evaluation and the attainment threshold.</p>
+    /// <p>If this SLO is a request-based SLO, this structure defines the information about what performance metric this SLO will monitor.</p>
+    /// <p>You can't specify both <code>RequestBasedSliConfig</code> and <code>SliConfig</code> in the same operation.</p>
+    pub fn request_based_sli_config(mut self, input: crate::types::RequestBasedServiceLevelIndicatorConfig) -> Self {
+        self.request_based_sli_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If this SLO is a request-based SLO, this structure defines the information about what performance metric this SLO will monitor.</p>
+    /// <p>You can't specify both <code>RequestBasedSliConfig</code> and <code>SliConfig</code> in the same operation.</p>
+    pub fn set_request_based_sli_config(mut self, input: ::std::option::Option<crate::types::RequestBasedServiceLevelIndicatorConfig>) -> Self {
+        self.request_based_sli_config = input;
+        self
+    }
+    /// <p>If this SLO is a request-based SLO, this structure defines the information about what performance metric this SLO will monitor.</p>
+    /// <p>You can't specify both <code>RequestBasedSliConfig</code> and <code>SliConfig</code> in the same operation.</p>
+    pub fn get_request_based_sli_config(&self) -> &::std::option::Option<crate::types::RequestBasedServiceLevelIndicatorConfig> {
+        &self.request_based_sli_config
+    }
+    /// <p>This structure contains the attributes that determine the goal of the SLO.</p>
     pub fn goal(mut self, input: crate::types::Goal) -> Self {
         self.goal = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A structure that contains the attributes that determine the goal of the SLO. This includes the time period for evaluation and the attainment threshold.</p>
+    /// <p>This structure contains the attributes that determine the goal of the SLO.</p>
     pub fn set_goal(mut self, input: ::std::option::Option<crate::types::Goal>) -> Self {
         self.goal = input;
         self
     }
-    /// <p>A structure that contains the attributes that determine the goal of the SLO. This includes the time period for evaluation and the attainment threshold.</p>
+    /// <p>This structure contains the attributes that determine the goal of the SLO.</p>
     pub fn get_goal(&self) -> &::std::option::Option<crate::types::Goal> {
         &self.goal
     }
@@ -150,6 +180,7 @@ impl CreateServiceLevelObjectiveInputBuilder {
             name: self.name,
             description: self.description,
             sli_config: self.sli_config,
+            request_based_sli_config: self.request_based_sli_config,
             goal: self.goal,
             tags: self.tags,
         })

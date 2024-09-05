@@ -28,6 +28,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "EvaluationType" => {
+                            builder = builder.set_evaluation_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::EvaluationType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "BudgetStatus" => {
                             builder = builder.set_budget_status(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -57,8 +64,27 @@ where
                                     .transpose()?,
                             );
                         }
+                        "TotalBudgetRequests" => {
+                            builder = builder.set_total_budget_requests(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "BudgetRequestsRemaining" => {
+                            builder = builder.set_budget_requests_remaining(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         "Sli" => {
                             builder = builder.set_sli(crate::protocol_serde::shape_service_level_indicator::de_service_level_indicator(tokens)?);
+                        }
+                        "RequestBasedSli" => {
+                            builder = builder.set_request_based_sli(
+                                crate::protocol_serde::shape_request_based_service_level_indicator::de_request_based_service_level_indicator(tokens)?,
+                            );
                         }
                         "Goal" => {
                             builder = builder.set_goal(crate::protocol_serde::shape_goal::de_goal(tokens)?);

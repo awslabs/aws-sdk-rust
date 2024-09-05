@@ -16,7 +16,9 @@
 ///     EventCode::FleetActivationFailedNoInstances => { /* ... */ },
 ///     EventCode::FleetBinaryDownloadFailed => { /* ... */ },
 ///     EventCode::FleetCreated => { /* ... */ },
+///     EventCode::FleetCreationCompletedInstaller => { /* ... */ },
 ///     EventCode::FleetCreationExtractingBuild => { /* ... */ },
+///     EventCode::FleetCreationFailedInstaller => { /* ... */ },
 ///     EventCode::FleetCreationRunningInstaller => { /* ... */ },
 ///     EventCode::FleetCreationValidatingRuntimeConfig => { /* ... */ },
 ///     EventCode::FleetDeleted => { /* ... */ },
@@ -82,7 +84,11 @@ pub enum EventCode {
     #[allow(missing_docs)] // documentation missing in model
     FleetCreated,
     #[allow(missing_docs)] // documentation missing in model
+    FleetCreationCompletedInstaller,
+    #[allow(missing_docs)] // documentation missing in model
     FleetCreationExtractingBuild,
+    #[allow(missing_docs)] // documentation missing in model
+    FleetCreationFailedInstaller,
     #[allow(missing_docs)] // documentation missing in model
     FleetCreationRunningInstaller,
     #[allow(missing_docs)] // documentation missing in model
@@ -152,7 +158,9 @@ impl ::std::convert::From<&str> for EventCode {
             "FLEET_ACTIVATION_FAILED_NO_INSTANCES" => EventCode::FleetActivationFailedNoInstances,
             "FLEET_BINARY_DOWNLOAD_FAILED" => EventCode::FleetBinaryDownloadFailed,
             "FLEET_CREATED" => EventCode::FleetCreated,
+            "FLEET_CREATION_COMPLETED_INSTALLER" => EventCode::FleetCreationCompletedInstaller,
             "FLEET_CREATION_EXTRACTING_BUILD" => EventCode::FleetCreationExtractingBuild,
+            "FLEET_CREATION_FAILED_INSTALLER" => EventCode::FleetCreationFailedInstaller,
             "FLEET_CREATION_RUNNING_INSTALLER" => EventCode::FleetCreationRunningInstaller,
             "FLEET_CREATION_VALIDATING_RUNTIME_CONFIG" => EventCode::FleetCreationValidatingRuntimeConfig,
             "FLEET_DELETED" => EventCode::FleetDeleted,
@@ -201,7 +209,9 @@ impl EventCode {
             EventCode::FleetActivationFailedNoInstances => "FLEET_ACTIVATION_FAILED_NO_INSTANCES",
             EventCode::FleetBinaryDownloadFailed => "FLEET_BINARY_DOWNLOAD_FAILED",
             EventCode::FleetCreated => "FLEET_CREATED",
+            EventCode::FleetCreationCompletedInstaller => "FLEET_CREATION_COMPLETED_INSTALLER",
             EventCode::FleetCreationExtractingBuild => "FLEET_CREATION_EXTRACTING_BUILD",
+            EventCode::FleetCreationFailedInstaller => "FLEET_CREATION_FAILED_INSTALLER",
             EventCode::FleetCreationRunningInstaller => "FLEET_CREATION_RUNNING_INSTALLER",
             EventCode::FleetCreationValidatingRuntimeConfig => "FLEET_CREATION_VALIDATING_RUNTIME_CONFIG",
             EventCode::FleetDeleted => "FLEET_DELETED",
@@ -241,7 +251,9 @@ impl EventCode {
             "FLEET_ACTIVATION_FAILED_NO_INSTANCES",
             "FLEET_BINARY_DOWNLOAD_FAILED",
             "FLEET_CREATED",
+            "FLEET_CREATION_COMPLETED_INSTALLER",
             "FLEET_CREATION_EXTRACTING_BUILD",
+            "FLEET_CREATION_FAILED_INSTALLER",
             "FLEET_CREATION_RUNNING_INSTALLER",
             "FLEET_CREATION_VALIDATING_RUNTIME_CONFIG",
             "FLEET_DELETED",
@@ -298,7 +310,9 @@ impl ::std::fmt::Display for EventCode {
             EventCode::FleetActivationFailedNoInstances => write!(f, "FLEET_ACTIVATION_FAILED_NO_INSTANCES"),
             EventCode::FleetBinaryDownloadFailed => write!(f, "FLEET_BINARY_DOWNLOAD_FAILED"),
             EventCode::FleetCreated => write!(f, "FLEET_CREATED"),
+            EventCode::FleetCreationCompletedInstaller => write!(f, "FLEET_CREATION_COMPLETED_INSTALLER"),
             EventCode::FleetCreationExtractingBuild => write!(f, "FLEET_CREATION_EXTRACTING_BUILD"),
+            EventCode::FleetCreationFailedInstaller => write!(f, "FLEET_CREATION_FAILED_INSTALLER"),
             EventCode::FleetCreationRunningInstaller => write!(f, "FLEET_CREATION_RUNNING_INSTALLER"),
             EventCode::FleetCreationValidatingRuntimeConfig => write!(f, "FLEET_CREATION_VALIDATING_RUNTIME_CONFIG"),
             EventCode::FleetDeleted => write!(f, "FLEET_DELETED"),

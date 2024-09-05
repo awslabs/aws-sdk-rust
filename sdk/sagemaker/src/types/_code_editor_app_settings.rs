@@ -11,6 +11,9 @@ pub struct CodeEditorAppSettings {
     pub custom_images: ::std::option::Option<::std::vec::Vec<crate::types::CustomImage>>,
     /// <p>The Amazon Resource Name (ARN) of the Code Editor application lifecycle configuration.</p>
     pub lifecycle_config_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Settings that are used to configure and manage the lifecycle of CodeEditor applications.</p>
+    /// <p></p>
+    pub app_lifecycle_management: ::std::option::Option<crate::types::AppLifecycleManagement>,
 }
 impl CodeEditorAppSettings {
     /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
@@ -29,6 +32,11 @@ impl CodeEditorAppSettings {
     pub fn lifecycle_config_arns(&self) -> &[::std::string::String] {
         self.lifecycle_config_arns.as_deref().unwrap_or_default()
     }
+    /// <p>Settings that are used to configure and manage the lifecycle of CodeEditor applications.</p>
+    /// <p></p>
+    pub fn app_lifecycle_management(&self) -> ::std::option::Option<&crate::types::AppLifecycleManagement> {
+        self.app_lifecycle_management.as_ref()
+    }
 }
 impl CodeEditorAppSettings {
     /// Creates a new builder-style object to manufacture [`CodeEditorAppSettings`](crate::types::CodeEditorAppSettings).
@@ -44,6 +52,7 @@ pub struct CodeEditorAppSettingsBuilder {
     pub(crate) default_resource_spec: ::std::option::Option<crate::types::ResourceSpec>,
     pub(crate) custom_images: ::std::option::Option<::std::vec::Vec<crate::types::CustomImage>>,
     pub(crate) lifecycle_config_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) app_lifecycle_management: ::std::option::Option<crate::types::AppLifecycleManagement>,
 }
 impl CodeEditorAppSettingsBuilder {
     /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
@@ -100,12 +109,30 @@ impl CodeEditorAppSettingsBuilder {
     pub fn get_lifecycle_config_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.lifecycle_config_arns
     }
+    /// <p>Settings that are used to configure and manage the lifecycle of CodeEditor applications.</p>
+    /// <p></p>
+    pub fn app_lifecycle_management(mut self, input: crate::types::AppLifecycleManagement) -> Self {
+        self.app_lifecycle_management = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Settings that are used to configure and manage the lifecycle of CodeEditor applications.</p>
+    /// <p></p>
+    pub fn set_app_lifecycle_management(mut self, input: ::std::option::Option<crate::types::AppLifecycleManagement>) -> Self {
+        self.app_lifecycle_management = input;
+        self
+    }
+    /// <p>Settings that are used to configure and manage the lifecycle of CodeEditor applications.</p>
+    /// <p></p>
+    pub fn get_app_lifecycle_management(&self) -> &::std::option::Option<crate::types::AppLifecycleManagement> {
+        &self.app_lifecycle_management
+    }
     /// Consumes the builder and constructs a [`CodeEditorAppSettings`](crate::types::CodeEditorAppSettings).
     pub fn build(self) -> crate::types::CodeEditorAppSettings {
         crate::types::CodeEditorAppSettings {
             default_resource_spec: self.default_resource_spec,
             custom_images: self.custom_images,
             lifecycle_config_arns: self.lifecycle_config_arns,
+            app_lifecycle_management: self.app_lifecycle_management,
         }
     }
 }

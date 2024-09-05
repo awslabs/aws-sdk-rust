@@ -17,6 +17,7 @@
 ///     RuntimeEnvironment::Flink115 => { /* ... */ },
 ///     RuntimeEnvironment::Flink118 => { /* ... */ },
 ///     RuntimeEnvironment::Flink119 => { /* ... */ },
+///     RuntimeEnvironment::Flink120 => { /* ... */ },
 ///     RuntimeEnvironment::Flink16 => { /* ... */ },
 ///     RuntimeEnvironment::Flink18 => { /* ... */ },
 ///     RuntimeEnvironment::Sql10 => { /* ... */ },
@@ -61,6 +62,8 @@ pub enum RuntimeEnvironment {
     #[allow(missing_docs)] // documentation missing in model
     Flink119,
     #[allow(missing_docs)] // documentation missing in model
+    Flink120,
+    #[allow(missing_docs)] // documentation missing in model
     Flink16,
     #[allow(missing_docs)] // documentation missing in model
     Flink18,
@@ -84,6 +87,7 @@ impl ::std::convert::From<&str> for RuntimeEnvironment {
             "FLINK-1_15" => RuntimeEnvironment::Flink115,
             "FLINK-1_18" => RuntimeEnvironment::Flink118,
             "FLINK-1_19" => RuntimeEnvironment::Flink119,
+            "FLINK-1_20" => RuntimeEnvironment::Flink120,
             "FLINK-1_6" => RuntimeEnvironment::Flink16,
             "FLINK-1_8" => RuntimeEnvironment::Flink18,
             "SQL-1_0" => RuntimeEnvironment::Sql10,
@@ -110,6 +114,7 @@ impl RuntimeEnvironment {
             RuntimeEnvironment::Flink115 => "FLINK-1_15",
             RuntimeEnvironment::Flink118 => "FLINK-1_18",
             RuntimeEnvironment::Flink119 => "FLINK-1_19",
+            RuntimeEnvironment::Flink120 => "FLINK-1_20",
             RuntimeEnvironment::Flink16 => "FLINK-1_6",
             RuntimeEnvironment::Flink18 => "FLINK-1_8",
             RuntimeEnvironment::Sql10 => "SQL-1_0",
@@ -127,6 +132,7 @@ impl RuntimeEnvironment {
             "FLINK-1_15",
             "FLINK-1_18",
             "FLINK-1_19",
+            "FLINK-1_20",
             "FLINK-1_6",
             "FLINK-1_8",
             "SQL-1_0",
@@ -161,6 +167,7 @@ impl ::std::fmt::Display for RuntimeEnvironment {
             RuntimeEnvironment::Flink115 => write!(f, "FLINK-1_15"),
             RuntimeEnvironment::Flink118 => write!(f, "FLINK-1_18"),
             RuntimeEnvironment::Flink119 => write!(f, "FLINK-1_19"),
+            RuntimeEnvironment::Flink120 => write!(f, "FLINK-1_20"),
             RuntimeEnvironment::Flink16 => write!(f, "FLINK-1_6"),
             RuntimeEnvironment::Flink18 => write!(f, "FLINK-1_8"),
             RuntimeEnvironment::Sql10 => write!(f, "SQL-1_0"),

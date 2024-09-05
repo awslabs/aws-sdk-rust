@@ -7,9 +7,9 @@ pub use crate::types::_calendar_interval::CalendarIntervalBuilder;
 
 pub use crate::types::_rolling_interval::RollingIntervalBuilder;
 
-pub use crate::types::_service_level_indicator::ServiceLevelIndicatorBuilder;
+pub use crate::types::_request_based_service_level_indicator::RequestBasedServiceLevelIndicatorBuilder;
 
-pub use crate::types::_service_level_indicator_metric::ServiceLevelIndicatorMetricBuilder;
+pub use crate::types::_request_based_service_level_indicator_metric::RequestBasedServiceLevelIndicatorMetricBuilder;
 
 pub use crate::types::_metric_data_query::MetricDataQueryBuilder;
 
@@ -18,6 +18,14 @@ pub use crate::types::_metric_stat::MetricStatBuilder;
 pub use crate::types::_metric::MetricBuilder;
 
 pub use crate::types::_dimension::DimensionBuilder;
+
+pub use crate::types::_service_level_indicator::ServiceLevelIndicatorBuilder;
+
+pub use crate::types::_service_level_indicator_metric::ServiceLevelIndicatorMetricBuilder;
+
+pub use crate::types::_request_based_service_level_indicator_config::RequestBasedServiceLevelIndicatorConfigBuilder;
+
+pub use crate::types::_request_based_service_level_indicator_metric_config::RequestBasedServiceLevelIndicatorMetricConfigBuilder;
 
 pub use crate::types::_service_level_indicator_config::ServiceLevelIndicatorConfigBuilder;
 

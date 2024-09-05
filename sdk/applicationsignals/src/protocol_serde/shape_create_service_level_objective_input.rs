@@ -15,23 +15,32 @@ pub fn ser_create_service_level_objective_input_input(
     if let Some(var_4) = &input.name {
         object.key("Name").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.sli_config {
+    if let Some(var_5) = &input.request_based_sli_config {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("SliConfig").start_object();
-        crate::protocol_serde::shape_service_level_indicator_config::ser_service_level_indicator_config(&mut object_6, var_5)?;
+        let mut object_6 = object.key("RequestBasedSliConfig").start_object();
+        crate::protocol_serde::shape_request_based_service_level_indicator_config::ser_request_based_service_level_indicator_config(
+            &mut object_6,
+            var_5,
+        )?;
         object_6.finish();
     }
-    if let Some(var_7) = &input.tags {
-        let mut array_8 = object.key("Tags").start_array();
-        for item_9 in var_7 {
+    if let Some(var_7) = &input.sli_config {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("SliConfig").start_object();
+        crate::protocol_serde::shape_service_level_indicator_config::ser_service_level_indicator_config(&mut object_8, var_7)?;
+        object_8.finish();
+    }
+    if let Some(var_9) = &input.tags {
+        let mut array_10 = object.key("Tags").start_array();
+        for item_11 in var_9 {
             {
                 #[allow(unused_mut)]
-                let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_10, item_9)?;
-                object_10.finish();
+                let mut object_12 = array_10.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_12, item_11)?;
+                object_12.finish();
             }
         }
-        array_8.finish();
+        array_10.finish();
     }
     Ok(())
 }

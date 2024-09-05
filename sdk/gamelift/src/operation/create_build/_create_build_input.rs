@@ -11,7 +11,7 @@ pub struct CreateBuildInput {
     /// <p>If a <code>StorageLocation</code> is specified, the size of your file can be found in your Amazon S3 bucket. Amazon GameLift will report a <code>SizeOnDisk</code> of 0.</p>
     pub storage_location: ::std::option::Option<crate::types::S3Location>,
     /// <p>The operating system that your game server binaries run on. This value determines the type of fleet resources that you use for this build. If your game build contains multiple executables, they all must run on the same operating system. You must specify a valid operating system in this request. There is no default value. You can't change a build's operating system later.</p><note>
-    /// <p>If you have active fleets using the Windows Server 2012 operating system, you can continue to create new builds using this OS until October 10, 2023, when Microsoft ends its support. All others must use Windows Server 2016 when creating new Windows-based builds.</p>
+    /// <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the <a href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For game servers that are hosted on AL2 and use Amazon GameLift server SDK 4.x., first update the game server build to server SDK 5.x, and then deploy to AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html"> Migrate to Amazon GameLift server SDK version 5.</a></p>
     /// </note>
     pub operating_system: ::std::option::Option<crate::types::OperatingSystem>,
     /// <p>A list of labels to assign to the new build resource. Tags are developer defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the resource is created, you can use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_TagResource.html">TagResource</a>, <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UntagResource.html">UntagResource</a>, and <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListTagsForResource.html">ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the Amazon Web Services General Reference for actual tagging limits.</p>
@@ -34,7 +34,7 @@ impl CreateBuildInput {
         self.storage_location.as_ref()
     }
     /// <p>The operating system that your game server binaries run on. This value determines the type of fleet resources that you use for this build. If your game build contains multiple executables, they all must run on the same operating system. You must specify a valid operating system in this request. There is no default value. You can't change a build's operating system later.</p><note>
-    /// <p>If you have active fleets using the Windows Server 2012 operating system, you can continue to create new builds using this OS until October 10, 2023, when Microsoft ends its support. All others must use Windows Server 2016 when creating new Windows-based builds.</p>
+    /// <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the <a href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For game servers that are hosted on AL2 and use Amazon GameLift server SDK 4.x., first update the game server build to server SDK 5.x, and then deploy to AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html"> Migrate to Amazon GameLift server SDK version 5.</a></p>
     /// </note>
     pub fn operating_system(&self) -> ::std::option::Option<&crate::types::OperatingSystem> {
         self.operating_system.as_ref()
@@ -115,21 +115,21 @@ impl CreateBuildInputBuilder {
         &self.storage_location
     }
     /// <p>The operating system that your game server binaries run on. This value determines the type of fleet resources that you use for this build. If your game build contains multiple executables, they all must run on the same operating system. You must specify a valid operating system in this request. There is no default value. You can't change a build's operating system later.</p><note>
-    /// <p>If you have active fleets using the Windows Server 2012 operating system, you can continue to create new builds using this OS until October 10, 2023, when Microsoft ends its support. All others must use Windows Server 2016 when creating new Windows-based builds.</p>
+    /// <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the <a href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For game servers that are hosted on AL2 and use Amazon GameLift server SDK 4.x., first update the game server build to server SDK 5.x, and then deploy to AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html"> Migrate to Amazon GameLift server SDK version 5.</a></p>
     /// </note>
     pub fn operating_system(mut self, input: crate::types::OperatingSystem) -> Self {
         self.operating_system = ::std::option::Option::Some(input);
         self
     }
     /// <p>The operating system that your game server binaries run on. This value determines the type of fleet resources that you use for this build. If your game build contains multiple executables, they all must run on the same operating system. You must specify a valid operating system in this request. There is no default value. You can't change a build's operating system later.</p><note>
-    /// <p>If you have active fleets using the Windows Server 2012 operating system, you can continue to create new builds using this OS until October 10, 2023, when Microsoft ends its support. All others must use Windows Server 2016 when creating new Windows-based builds.</p>
+    /// <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the <a href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For game servers that are hosted on AL2 and use Amazon GameLift server SDK 4.x., first update the game server build to server SDK 5.x, and then deploy to AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html"> Migrate to Amazon GameLift server SDK version 5.</a></p>
     /// </note>
     pub fn set_operating_system(mut self, input: ::std::option::Option<crate::types::OperatingSystem>) -> Self {
         self.operating_system = input;
         self
     }
     /// <p>The operating system that your game server binaries run on. This value determines the type of fleet resources that you use for this build. If your game build contains multiple executables, they all must run on the same operating system. You must specify a valid operating system in this request. There is no default value. You can't change a build's operating system later.</p><note>
-    /// <p>If you have active fleets using the Windows Server 2012 operating system, you can continue to create new builds using this OS until October 10, 2023, when Microsoft ends its support. All others must use Windows Server 2016 when creating new Windows-based builds.</p>
+    /// <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the <a href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For game servers that are hosted on AL2 and use Amazon GameLift server SDK 4.x., first update the game server build to server SDK 5.x, and then deploy to AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html"> Migrate to Amazon GameLift server SDK version 5.</a></p>
     /// </note>
     pub fn get_operating_system(&self) -> &::std::option::Option<crate::types::OperatingSystem> {
         &self.operating_system

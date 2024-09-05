@@ -11,11 +11,15 @@ pub use crate::types::_duration_unit::DurationUnit;
 
 pub use crate::types::_rolling_interval::RollingInterval;
 
-pub use crate::types::_service_level_indicator::ServiceLevelIndicator;
+pub use crate::types::_evaluation_type::EvaluationType;
+
+pub use crate::types::_request_based_service_level_indicator::RequestBasedServiceLevelIndicator;
 
 pub use crate::types::_service_level_indicator_comparison_operator::ServiceLevelIndicatorComparisonOperator;
 
-pub use crate::types::_service_level_indicator_metric::ServiceLevelIndicatorMetric;
+pub use crate::types::_request_based_service_level_indicator_metric::RequestBasedServiceLevelIndicatorMetric;
+
+pub use crate::types::_monitored_request_count_metric_data_queries::MonitoredRequestCountMetricDataQueries;
 
 pub use crate::types::_metric_data_query::MetricDataQuery;
 
@@ -28,6 +32,14 @@ pub use crate::types::_metric::Metric;
 pub use crate::types::_dimension::Dimension;
 
 pub use crate::types::_service_level_indicator_metric_type::ServiceLevelIndicatorMetricType;
+
+pub use crate::types::_service_level_indicator::ServiceLevelIndicator;
+
+pub use crate::types::_service_level_indicator_metric::ServiceLevelIndicatorMetric;
+
+pub use crate::types::_request_based_service_level_indicator_config::RequestBasedServiceLevelIndicatorConfig;
+
+pub use crate::types::_request_based_service_level_indicator_metric_config::RequestBasedServiceLevelIndicatorMetricConfig;
 
 pub use crate::types::_service_level_indicator_config::ServiceLevelIndicatorConfig;
 
@@ -61,6 +73,8 @@ mod _dimension;
 
 mod _duration_unit;
 
+mod _evaluation_type;
+
 mod _goal;
 
 mod _interval;
@@ -72,6 +86,16 @@ mod _metric_data_query;
 mod _metric_reference;
 
 mod _metric_stat;
+
+mod _monitored_request_count_metric_data_queries;
+
+mod _request_based_service_level_indicator;
+
+mod _request_based_service_level_indicator_config;
+
+mod _request_based_service_level_indicator_metric;
+
+mod _request_based_service_level_indicator_metric_config;
 
 mod _rolling_interval;
 

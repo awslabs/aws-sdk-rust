@@ -13,6 +13,8 @@
 /// # let durationunit = unimplemented!();
 /// match durationunit {
 ///     DurationUnit::Day => { /* ... */ },
+///     DurationUnit::Hour => { /* ... */ },
+///     DurationUnit::Minute => { /* ... */ },
 ///     DurationUnit::Month => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -44,6 +46,10 @@ pub enum DurationUnit {
     #[allow(missing_docs)] // documentation missing in model
     Day,
     #[allow(missing_docs)] // documentation missing in model
+    Hour,
+    #[allow(missing_docs)] // documentation missing in model
+    Minute,
+    #[allow(missing_docs)] // documentation missing in model
     Month,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -53,6 +59,8 @@ impl ::std::convert::From<&str> for DurationUnit {
     fn from(s: &str) -> Self {
         match s {
             "DAY" => DurationUnit::Day,
+            "HOUR" => DurationUnit::Hour,
+            "MINUTE" => DurationUnit::Minute,
             "MONTH" => DurationUnit::Month,
             other => DurationUnit::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -70,13 +78,15 @@ impl DurationUnit {
     pub fn as_str(&self) -> &str {
         match self {
             DurationUnit::Day => "DAY",
+            DurationUnit::Hour => "HOUR",
+            DurationUnit::Minute => "MINUTE",
             DurationUnit::Month => "MONTH",
             DurationUnit::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DAY", "MONTH"]
+        &["DAY", "HOUR", "MINUTE", "MONTH"]
     }
 }
 impl ::std::convert::AsRef<str> for DurationUnit {
@@ -100,6 +110,8 @@ impl ::std::fmt::Display for DurationUnit {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             DurationUnit::Day => write!(f, "DAY"),
+            DurationUnit::Hour => write!(f, "HOUR"),
+            DurationUnit::Minute => write!(f, "MINUTE"),
             DurationUnit::Month => write!(f, "MONTH"),
             DurationUnit::Unknown(value) => write!(f, "{}", value),
         }

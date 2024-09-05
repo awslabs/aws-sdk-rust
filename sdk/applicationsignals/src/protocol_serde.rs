@@ -97,6 +97,8 @@ pub(crate) mod shape_goal;
 
 pub(crate) mod shape_log_group_references;
 
+pub(crate) mod shape_request_based_service_level_indicator_config;
+
 pub(crate) mod shape_service;
 
 pub(crate) mod shape_service_dependencies;
@@ -129,6 +131,10 @@ pub(crate) mod shape_interval;
 
 pub(crate) mod shape_metric_references;
 
+pub(crate) mod shape_request_based_service_level_indicator;
+
+pub(crate) mod shape_request_based_service_level_indicator_metric_config;
+
 pub(crate) mod shape_service_dependency;
 
 pub(crate) mod shape_service_dependent;
@@ -154,6 +160,10 @@ pub(crate) mod shape_calendar_interval;
 pub(crate) mod shape_metric_data_query;
 
 pub(crate) mod shape_metric_reference;
+
+pub(crate) mod shape_monitored_request_count_metric_data_queries;
+
+pub(crate) mod shape_request_based_service_level_indicator_metric;
 
 pub(crate) mod shape_rolling_interval;
 

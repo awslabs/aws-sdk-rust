@@ -8,6 +8,8 @@ pub struct ServiceLevelObjectiveBudgetReport {
     pub arn: ::std::string::String,
     /// <p>The name of the SLO that this report is for.</p>
     pub name: ::std::string::String,
+    /// <p>Displays whether this budget report is for a period-based SLO or a request-based SLO.</p>
+    pub evaluation_type: ::std::option::Option<crate::types::EvaluationType>,
     /// <p>The status of this SLO, as it relates to the error budget for the entire time interval.</p>
     /// <ul>
     /// <li>
@@ -17,17 +19,28 @@ pub struct ServiceLevelObjectiveBudgetReport {
     /// <li>
     /// <p><code>BREACHED</code> means that the SLO's budget was exhausted, as of the time that you specified in <code>TimeStamp</code>.</p></li>
     /// <li>
-    /// <p><code>INSUFFICIENT_DATA</code> means that the specifed start and end times were before the SLO was created, or that attainment data is missing.</p></li>
+    /// <p><code>INSUFFICIENT_DATA</code> means that the specified start and end times were before the SLO was created, or that attainment data is missing.</p></li>
     /// </ul>
     pub budget_status: crate::types::ServiceLevelObjectiveBudgetStatus,
-    /// <p>A number between 0 and 100 that represents the percentage of time periods that the service has attained the SLO's attainment goal, as of the time of the request.</p>
+    /// <p>A number between 0 and 100 that represents the success percentage of your application compared to the goal set by the SLO.</p>
+    /// <p>If this is a period-based SLO, the number is the percentage of time periods that the service has attained the SLO's attainment goal, as of the time of the request.</p>
+    /// <p>If this is a request-based SLO, the number is the number of successful requests divided by the number of total requests, multiplied by 100, during the time range that you specified in your request.</p>
     pub attainment: ::std::option::Option<f64>,
-    /// <p>The total number of seconds in the error budget for the interval.</p>
+    /// <p>The total number of seconds in the error budget for the interval. This field is included only if the SLO is a period-based SLO.</p>
     pub total_budget_seconds: ::std::option::Option<i32>,
     /// <p>The budget amount remaining before the SLO status becomes <code>BREACHING</code>, at the time specified in the <code>Timestemp</code> parameter of the request. If this value is negative, then the SLO is already in <code>BREACHING</code> status.</p>
+    /// <p>This field is included only if the SLO is a period-based SLO.</p>
     pub budget_seconds_remaining: ::std::option::Option<i32>,
+    /// <p>This field is displayed only for request-based SLOs. It displays the total number of failed requests that can be tolerated during the time range between the start of the interval and the time stamp supplied in the budget report request. It is based on the total number of requests that occurred, and the percentage specified in the attainment goal. If the number of failed requests matches this number or is higher, then this SLO is currently breaching.</p>
+    /// <p>This number can go up and down between reports with different time stamps, based on both how many total requests occur.</p>
+    pub total_budget_requests: ::std::option::Option<i32>,
+    /// <p>This field is displayed only for request-based SLOs. It displays the number of failed requests that can be tolerated before any more successful requests occur, and still have the application meet its SLO goal.</p>
+    /// <p>This number can go up and down between different reports, based on both how many successful requests and how many failed requests occur in that time.</p>
+    pub budget_requests_remaining: ::std::option::Option<i32>,
     /// <p>A structure that contains information about the performance metric that this SLO monitors.</p>
     pub sli: ::std::option::Option<crate::types::ServiceLevelIndicator>,
+    /// <p>This structure contains information about the performance metric that a request-based SLO monitors.</p>
+    pub request_based_sli: ::std::option::Option<crate::types::RequestBasedServiceLevelIndicator>,
     /// <p>This structure contains the attributes that determine the goal of an SLO. This includes the time period for evaluation and the attainment threshold.</p>
     pub goal: ::std::option::Option<crate::types::Goal>,
 }
@@ -42,6 +55,10 @@ impl ServiceLevelObjectiveBudgetReport {
         use std::ops::Deref;
         self.name.deref()
     }
+    /// <p>Displays whether this budget report is for a period-based SLO or a request-based SLO.</p>
+    pub fn evaluation_type(&self) -> ::std::option::Option<&crate::types::EvaluationType> {
+        self.evaluation_type.as_ref()
+    }
     /// <p>The status of this SLO, as it relates to the error budget for the entire time interval.</p>
     /// <ul>
     /// <li>
@@ -51,26 +68,43 @@ impl ServiceLevelObjectiveBudgetReport {
     /// <li>
     /// <p><code>BREACHED</code> means that the SLO's budget was exhausted, as of the time that you specified in <code>TimeStamp</code>.</p></li>
     /// <li>
-    /// <p><code>INSUFFICIENT_DATA</code> means that the specifed start and end times were before the SLO was created, or that attainment data is missing.</p></li>
+    /// <p><code>INSUFFICIENT_DATA</code> means that the specified start and end times were before the SLO was created, or that attainment data is missing.</p></li>
     /// </ul>
     pub fn budget_status(&self) -> &crate::types::ServiceLevelObjectiveBudgetStatus {
         &self.budget_status
     }
-    /// <p>A number between 0 and 100 that represents the percentage of time periods that the service has attained the SLO's attainment goal, as of the time of the request.</p>
+    /// <p>A number between 0 and 100 that represents the success percentage of your application compared to the goal set by the SLO.</p>
+    /// <p>If this is a period-based SLO, the number is the percentage of time periods that the service has attained the SLO's attainment goal, as of the time of the request.</p>
+    /// <p>If this is a request-based SLO, the number is the number of successful requests divided by the number of total requests, multiplied by 100, during the time range that you specified in your request.</p>
     pub fn attainment(&self) -> ::std::option::Option<f64> {
         self.attainment
     }
-    /// <p>The total number of seconds in the error budget for the interval.</p>
+    /// <p>The total number of seconds in the error budget for the interval. This field is included only if the SLO is a period-based SLO.</p>
     pub fn total_budget_seconds(&self) -> ::std::option::Option<i32> {
         self.total_budget_seconds
     }
     /// <p>The budget amount remaining before the SLO status becomes <code>BREACHING</code>, at the time specified in the <code>Timestemp</code> parameter of the request. If this value is negative, then the SLO is already in <code>BREACHING</code> status.</p>
+    /// <p>This field is included only if the SLO is a period-based SLO.</p>
     pub fn budget_seconds_remaining(&self) -> ::std::option::Option<i32> {
         self.budget_seconds_remaining
+    }
+    /// <p>This field is displayed only for request-based SLOs. It displays the total number of failed requests that can be tolerated during the time range between the start of the interval and the time stamp supplied in the budget report request. It is based on the total number of requests that occurred, and the percentage specified in the attainment goal. If the number of failed requests matches this number or is higher, then this SLO is currently breaching.</p>
+    /// <p>This number can go up and down between reports with different time stamps, based on both how many total requests occur.</p>
+    pub fn total_budget_requests(&self) -> ::std::option::Option<i32> {
+        self.total_budget_requests
+    }
+    /// <p>This field is displayed only for request-based SLOs. It displays the number of failed requests that can be tolerated before any more successful requests occur, and still have the application meet its SLO goal.</p>
+    /// <p>This number can go up and down between different reports, based on both how many successful requests and how many failed requests occur in that time.</p>
+    pub fn budget_requests_remaining(&self) -> ::std::option::Option<i32> {
+        self.budget_requests_remaining
     }
     /// <p>A structure that contains information about the performance metric that this SLO monitors.</p>
     pub fn sli(&self) -> ::std::option::Option<&crate::types::ServiceLevelIndicator> {
         self.sli.as_ref()
+    }
+    /// <p>This structure contains information about the performance metric that a request-based SLO monitors.</p>
+    pub fn request_based_sli(&self) -> ::std::option::Option<&crate::types::RequestBasedServiceLevelIndicator> {
+        self.request_based_sli.as_ref()
     }
     /// <p>This structure contains the attributes that determine the goal of an SLO. This includes the time period for evaluation and the attainment threshold.</p>
     pub fn goal(&self) -> ::std::option::Option<&crate::types::Goal> {
@@ -90,11 +124,15 @@ impl ServiceLevelObjectiveBudgetReport {
 pub struct ServiceLevelObjectiveBudgetReportBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) evaluation_type: ::std::option::Option<crate::types::EvaluationType>,
     pub(crate) budget_status: ::std::option::Option<crate::types::ServiceLevelObjectiveBudgetStatus>,
     pub(crate) attainment: ::std::option::Option<f64>,
     pub(crate) total_budget_seconds: ::std::option::Option<i32>,
     pub(crate) budget_seconds_remaining: ::std::option::Option<i32>,
+    pub(crate) total_budget_requests: ::std::option::Option<i32>,
+    pub(crate) budget_requests_remaining: ::std::option::Option<i32>,
     pub(crate) sli: ::std::option::Option<crate::types::ServiceLevelIndicator>,
+    pub(crate) request_based_sli: ::std::option::Option<crate::types::RequestBasedServiceLevelIndicator>,
     pub(crate) goal: ::std::option::Option<crate::types::Goal>,
 }
 impl ServiceLevelObjectiveBudgetReportBuilder {
@@ -128,6 +166,20 @@ impl ServiceLevelObjectiveBudgetReportBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
+    /// <p>Displays whether this budget report is for a period-based SLO or a request-based SLO.</p>
+    pub fn evaluation_type(mut self, input: crate::types::EvaluationType) -> Self {
+        self.evaluation_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Displays whether this budget report is for a period-based SLO or a request-based SLO.</p>
+    pub fn set_evaluation_type(mut self, input: ::std::option::Option<crate::types::EvaluationType>) -> Self {
+        self.evaluation_type = input;
+        self
+    }
+    /// <p>Displays whether this budget report is for a period-based SLO or a request-based SLO.</p>
+    pub fn get_evaluation_type(&self) -> &::std::option::Option<crate::types::EvaluationType> {
+        &self.evaluation_type
+    }
     /// <p>The status of this SLO, as it relates to the error budget for the entire time interval.</p>
     /// <ul>
     /// <li>
@@ -137,7 +189,7 @@ impl ServiceLevelObjectiveBudgetReportBuilder {
     /// <li>
     /// <p><code>BREACHED</code> means that the SLO's budget was exhausted, as of the time that you specified in <code>TimeStamp</code>.</p></li>
     /// <li>
-    /// <p><code>INSUFFICIENT_DATA</code> means that the specifed start and end times were before the SLO was created, or that attainment data is missing.</p></li>
+    /// <p><code>INSUFFICIENT_DATA</code> means that the specified start and end times were before the SLO was created, or that attainment data is missing.</p></li>
     /// </ul>
     /// This field is required.
     pub fn budget_status(mut self, input: crate::types::ServiceLevelObjectiveBudgetStatus) -> Self {
@@ -153,7 +205,7 @@ impl ServiceLevelObjectiveBudgetReportBuilder {
     /// <li>
     /// <p><code>BREACHED</code> means that the SLO's budget was exhausted, as of the time that you specified in <code>TimeStamp</code>.</p></li>
     /// <li>
-    /// <p><code>INSUFFICIENT_DATA</code> means that the specifed start and end times were before the SLO was created, or that attainment data is missing.</p></li>
+    /// <p><code>INSUFFICIENT_DATA</code> means that the specified start and end times were before the SLO was created, or that attainment data is missing.</p></li>
     /// </ul>
     pub fn set_budget_status(mut self, input: ::std::option::Option<crate::types::ServiceLevelObjectiveBudgetStatus>) -> Self {
         self.budget_status = input;
@@ -168,52 +220,95 @@ impl ServiceLevelObjectiveBudgetReportBuilder {
     /// <li>
     /// <p><code>BREACHED</code> means that the SLO's budget was exhausted, as of the time that you specified in <code>TimeStamp</code>.</p></li>
     /// <li>
-    /// <p><code>INSUFFICIENT_DATA</code> means that the specifed start and end times were before the SLO was created, or that attainment data is missing.</p></li>
+    /// <p><code>INSUFFICIENT_DATA</code> means that the specified start and end times were before the SLO was created, or that attainment data is missing.</p></li>
     /// </ul>
     pub fn get_budget_status(&self) -> &::std::option::Option<crate::types::ServiceLevelObjectiveBudgetStatus> {
         &self.budget_status
     }
-    /// <p>A number between 0 and 100 that represents the percentage of time periods that the service has attained the SLO's attainment goal, as of the time of the request.</p>
+    /// <p>A number between 0 and 100 that represents the success percentage of your application compared to the goal set by the SLO.</p>
+    /// <p>If this is a period-based SLO, the number is the percentage of time periods that the service has attained the SLO's attainment goal, as of the time of the request.</p>
+    /// <p>If this is a request-based SLO, the number is the number of successful requests divided by the number of total requests, multiplied by 100, during the time range that you specified in your request.</p>
     pub fn attainment(mut self, input: f64) -> Self {
         self.attainment = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A number between 0 and 100 that represents the percentage of time periods that the service has attained the SLO's attainment goal, as of the time of the request.</p>
+    /// <p>A number between 0 and 100 that represents the success percentage of your application compared to the goal set by the SLO.</p>
+    /// <p>If this is a period-based SLO, the number is the percentage of time periods that the service has attained the SLO's attainment goal, as of the time of the request.</p>
+    /// <p>If this is a request-based SLO, the number is the number of successful requests divided by the number of total requests, multiplied by 100, during the time range that you specified in your request.</p>
     pub fn set_attainment(mut self, input: ::std::option::Option<f64>) -> Self {
         self.attainment = input;
         self
     }
-    /// <p>A number between 0 and 100 that represents the percentage of time periods that the service has attained the SLO's attainment goal, as of the time of the request.</p>
+    /// <p>A number between 0 and 100 that represents the success percentage of your application compared to the goal set by the SLO.</p>
+    /// <p>If this is a period-based SLO, the number is the percentage of time periods that the service has attained the SLO's attainment goal, as of the time of the request.</p>
+    /// <p>If this is a request-based SLO, the number is the number of successful requests divided by the number of total requests, multiplied by 100, during the time range that you specified in your request.</p>
     pub fn get_attainment(&self) -> &::std::option::Option<f64> {
         &self.attainment
     }
-    /// <p>The total number of seconds in the error budget for the interval.</p>
+    /// <p>The total number of seconds in the error budget for the interval. This field is included only if the SLO is a period-based SLO.</p>
     pub fn total_budget_seconds(mut self, input: i32) -> Self {
         self.total_budget_seconds = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The total number of seconds in the error budget for the interval.</p>
+    /// <p>The total number of seconds in the error budget for the interval. This field is included only if the SLO is a period-based SLO.</p>
     pub fn set_total_budget_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_budget_seconds = input;
         self
     }
-    /// <p>The total number of seconds in the error budget for the interval.</p>
+    /// <p>The total number of seconds in the error budget for the interval. This field is included only if the SLO is a period-based SLO.</p>
     pub fn get_total_budget_seconds(&self) -> &::std::option::Option<i32> {
         &self.total_budget_seconds
     }
     /// <p>The budget amount remaining before the SLO status becomes <code>BREACHING</code>, at the time specified in the <code>Timestemp</code> parameter of the request. If this value is negative, then the SLO is already in <code>BREACHING</code> status.</p>
+    /// <p>This field is included only if the SLO is a period-based SLO.</p>
     pub fn budget_seconds_remaining(mut self, input: i32) -> Self {
         self.budget_seconds_remaining = ::std::option::Option::Some(input);
         self
     }
     /// <p>The budget amount remaining before the SLO status becomes <code>BREACHING</code>, at the time specified in the <code>Timestemp</code> parameter of the request. If this value is negative, then the SLO is already in <code>BREACHING</code> status.</p>
+    /// <p>This field is included only if the SLO is a period-based SLO.</p>
     pub fn set_budget_seconds_remaining(mut self, input: ::std::option::Option<i32>) -> Self {
         self.budget_seconds_remaining = input;
         self
     }
     /// <p>The budget amount remaining before the SLO status becomes <code>BREACHING</code>, at the time specified in the <code>Timestemp</code> parameter of the request. If this value is negative, then the SLO is already in <code>BREACHING</code> status.</p>
+    /// <p>This field is included only if the SLO is a period-based SLO.</p>
     pub fn get_budget_seconds_remaining(&self) -> &::std::option::Option<i32> {
         &self.budget_seconds_remaining
+    }
+    /// <p>This field is displayed only for request-based SLOs. It displays the total number of failed requests that can be tolerated during the time range between the start of the interval and the time stamp supplied in the budget report request. It is based on the total number of requests that occurred, and the percentage specified in the attainment goal. If the number of failed requests matches this number or is higher, then this SLO is currently breaching.</p>
+    /// <p>This number can go up and down between reports with different time stamps, based on both how many total requests occur.</p>
+    pub fn total_budget_requests(mut self, input: i32) -> Self {
+        self.total_budget_requests = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>This field is displayed only for request-based SLOs. It displays the total number of failed requests that can be tolerated during the time range between the start of the interval and the time stamp supplied in the budget report request. It is based on the total number of requests that occurred, and the percentage specified in the attainment goal. If the number of failed requests matches this number or is higher, then this SLO is currently breaching.</p>
+    /// <p>This number can go up and down between reports with different time stamps, based on both how many total requests occur.</p>
+    pub fn set_total_budget_requests(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.total_budget_requests = input;
+        self
+    }
+    /// <p>This field is displayed only for request-based SLOs. It displays the total number of failed requests that can be tolerated during the time range between the start of the interval and the time stamp supplied in the budget report request. It is based on the total number of requests that occurred, and the percentage specified in the attainment goal. If the number of failed requests matches this number or is higher, then this SLO is currently breaching.</p>
+    /// <p>This number can go up and down between reports with different time stamps, based on both how many total requests occur.</p>
+    pub fn get_total_budget_requests(&self) -> &::std::option::Option<i32> {
+        &self.total_budget_requests
+    }
+    /// <p>This field is displayed only for request-based SLOs. It displays the number of failed requests that can be tolerated before any more successful requests occur, and still have the application meet its SLO goal.</p>
+    /// <p>This number can go up and down between different reports, based on both how many successful requests and how many failed requests occur in that time.</p>
+    pub fn budget_requests_remaining(mut self, input: i32) -> Self {
+        self.budget_requests_remaining = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>This field is displayed only for request-based SLOs. It displays the number of failed requests that can be tolerated before any more successful requests occur, and still have the application meet its SLO goal.</p>
+    /// <p>This number can go up and down between different reports, based on both how many successful requests and how many failed requests occur in that time.</p>
+    pub fn set_budget_requests_remaining(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.budget_requests_remaining = input;
+        self
+    }
+    /// <p>This field is displayed only for request-based SLOs. It displays the number of failed requests that can be tolerated before any more successful requests occur, and still have the application meet its SLO goal.</p>
+    /// <p>This number can go up and down between different reports, based on both how many successful requests and how many failed requests occur in that time.</p>
+    pub fn get_budget_requests_remaining(&self) -> &::std::option::Option<i32> {
+        &self.budget_requests_remaining
     }
     /// <p>A structure that contains information about the performance metric that this SLO monitors.</p>
     pub fn sli(mut self, input: crate::types::ServiceLevelIndicator) -> Self {
@@ -228,6 +323,20 @@ impl ServiceLevelObjectiveBudgetReportBuilder {
     /// <p>A structure that contains information about the performance metric that this SLO monitors.</p>
     pub fn get_sli(&self) -> &::std::option::Option<crate::types::ServiceLevelIndicator> {
         &self.sli
+    }
+    /// <p>This structure contains information about the performance metric that a request-based SLO monitors.</p>
+    pub fn request_based_sli(mut self, input: crate::types::RequestBasedServiceLevelIndicator) -> Self {
+        self.request_based_sli = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>This structure contains information about the performance metric that a request-based SLO monitors.</p>
+    pub fn set_request_based_sli(mut self, input: ::std::option::Option<crate::types::RequestBasedServiceLevelIndicator>) -> Self {
+        self.request_based_sli = input;
+        self
+    }
+    /// <p>This structure contains information about the performance metric that a request-based SLO monitors.</p>
+    pub fn get_request_based_sli(&self) -> &::std::option::Option<crate::types::RequestBasedServiceLevelIndicator> {
+        &self.request_based_sli
     }
     /// <p>This structure contains the attributes that determine the goal of an SLO. This includes the time period for evaluation and the attainment threshold.</p>
     pub fn goal(mut self, input: crate::types::Goal) -> Self {
@@ -262,6 +371,7 @@ impl ServiceLevelObjectiveBudgetReportBuilder {
                     "name was not specified but it is required when building ServiceLevelObjectiveBudgetReport",
                 )
             })?,
+            evaluation_type: self.evaluation_type,
             budget_status: self.budget_status.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "budget_status",
@@ -271,7 +381,10 @@ impl ServiceLevelObjectiveBudgetReportBuilder {
             attainment: self.attainment,
             total_budget_seconds: self.total_budget_seconds,
             budget_seconds_remaining: self.budget_seconds_remaining,
+            total_budget_requests: self.total_budget_requests,
+            budget_requests_remaining: self.budget_requests_remaining,
             sli: self.sli,
+            request_based_sli: self.request_based_sli,
             goal: self.goal,
         })
     }

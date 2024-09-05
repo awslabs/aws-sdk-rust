@@ -59,6 +59,12 @@ pub use crate::types::_jupyter_lab_app_settings::JupyterLabAppSettings;
 
 pub use crate::types::_emr_settings::EmrSettings;
 
+pub use crate::types::_app_lifecycle_management::AppLifecycleManagement;
+
+pub use crate::types::_idle_settings::IdleSettings;
+
+pub use crate::types::_lifecycle_management::LifecycleManagement;
+
 pub use crate::types::_code_repository::CodeRepository;
 
 pub use crate::types::_custom_image::CustomImage;
@@ -138,6 +144,10 @@ pub use crate::types::_space_storage_settings::SpaceStorageSettings;
 pub use crate::types::_ebs_storage_settings::EbsStorageSettings;
 
 pub use crate::types::_space_jupyter_lab_app_settings::SpaceJupyterLabAppSettings;
+
+pub use crate::types::_space_app_lifecycle_management::SpaceAppLifecycleManagement;
+
+pub use crate::types::_space_idle_settings::SpaceIdleSettings;
 
 pub use crate::types::_space_code_editor_app_settings::SpaceCodeEditorAppSettings;
 
@@ -1797,6 +1807,8 @@ mod _app_image_config_sort_key;
 
 mod _app_instance_type;
 
+mod _app_lifecycle_management;
+
 mod _app_network_access_type;
 
 mod _app_security_group_management;
@@ -2427,6 +2439,8 @@ mod _iam_policy_constraints;
 
 mod _identity_provider_o_auth_setting;
 
+mod _idle_settings;
+
 mod _image;
 
 mod _image_classification_job_config;
@@ -2568,6 +2582,8 @@ mod _lambda_step_metadata;
 mod _last_update_status;
 
 mod _last_update_status_value;
+
+mod _lifecycle_management;
 
 mod _lineage_group_summary;
 
@@ -3255,9 +3271,13 @@ mod _source_algorithm_specification;
 
 mod _source_ip_config;
 
+mod _space_app_lifecycle_management;
+
 mod _space_code_editor_app_settings;
 
 mod _space_details;
+
+mod _space_idle_settings;
 
 mod _space_jupyter_lab_app_settings;
 

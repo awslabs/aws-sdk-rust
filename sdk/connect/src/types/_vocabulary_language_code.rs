@@ -13,6 +13,8 @@
 /// # let vocabularylanguagecode = unimplemented!();
 /// match vocabularylanguagecode {
 ///     VocabularyLanguageCode::ArAe => { /* ... */ },
+///     VocabularyLanguageCode::CaEs => { /* ... */ },
+///     VocabularyLanguageCode::DaDk => { /* ... */ },
 ///     VocabularyLanguageCode::DeCh => { /* ... */ },
 ///     VocabularyLanguageCode::DeDe => { /* ... */ },
 ///     VocabularyLanguageCode::EnAb => { /* ... */ },
@@ -26,14 +28,22 @@
 ///     VocabularyLanguageCode::EnZa => { /* ... */ },
 ///     VocabularyLanguageCode::EsEs => { /* ... */ },
 ///     VocabularyLanguageCode::EsUs => { /* ... */ },
+///     VocabularyLanguageCode::FiFi => { /* ... */ },
 ///     VocabularyLanguageCode::FrCa => { /* ... */ },
 ///     VocabularyLanguageCode::FrFr => { /* ... */ },
 ///     VocabularyLanguageCode::HiIn => { /* ... */ },
+///     VocabularyLanguageCode::IdId => { /* ... */ },
 ///     VocabularyLanguageCode::ItIt => { /* ... */ },
 ///     VocabularyLanguageCode::JaJp => { /* ... */ },
 ///     VocabularyLanguageCode::KoKr => { /* ... */ },
+///     VocabularyLanguageCode::MsMy => { /* ... */ },
+///     VocabularyLanguageCode::NlNl => { /* ... */ },
+///     VocabularyLanguageCode::NoNo => { /* ... */ },
+///     VocabularyLanguageCode::PlPl => { /* ... */ },
 ///     VocabularyLanguageCode::PtBr => { /* ... */ },
 ///     VocabularyLanguageCode::PtPt => { /* ... */ },
+///     VocabularyLanguageCode::SvSe => { /* ... */ },
+///     VocabularyLanguageCode::TlPh => { /* ... */ },
 ///     VocabularyLanguageCode::ZhCn => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -65,6 +75,10 @@ pub enum VocabularyLanguageCode {
     #[allow(missing_docs)] // documentation missing in model
     ArAe,
     #[allow(missing_docs)] // documentation missing in model
+    CaEs,
+    #[allow(missing_docs)] // documentation missing in model
+    DaDk,
+    #[allow(missing_docs)] // documentation missing in model
     DeCh,
     #[allow(missing_docs)] // documentation missing in model
     DeDe,
@@ -91,11 +105,15 @@ pub enum VocabularyLanguageCode {
     #[allow(missing_docs)] // documentation missing in model
     EsUs,
     #[allow(missing_docs)] // documentation missing in model
+    FiFi,
+    #[allow(missing_docs)] // documentation missing in model
     FrCa,
     #[allow(missing_docs)] // documentation missing in model
     FrFr,
     #[allow(missing_docs)] // documentation missing in model
     HiIn,
+    #[allow(missing_docs)] // documentation missing in model
+    IdId,
     #[allow(missing_docs)] // documentation missing in model
     ItIt,
     #[allow(missing_docs)] // documentation missing in model
@@ -103,9 +121,21 @@ pub enum VocabularyLanguageCode {
     #[allow(missing_docs)] // documentation missing in model
     KoKr,
     #[allow(missing_docs)] // documentation missing in model
+    MsMy,
+    #[allow(missing_docs)] // documentation missing in model
+    NlNl,
+    #[allow(missing_docs)] // documentation missing in model
+    NoNo,
+    #[allow(missing_docs)] // documentation missing in model
+    PlPl,
+    #[allow(missing_docs)] // documentation missing in model
     PtBr,
     #[allow(missing_docs)] // documentation missing in model
     PtPt,
+    #[allow(missing_docs)] // documentation missing in model
+    SvSe,
+    #[allow(missing_docs)] // documentation missing in model
+    TlPh,
     #[allow(missing_docs)] // documentation missing in model
     ZhCn,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -116,6 +146,8 @@ impl ::std::convert::From<&str> for VocabularyLanguageCode {
     fn from(s: &str) -> Self {
         match s {
             "ar-AE" => VocabularyLanguageCode::ArAe,
+            "ca-ES" => VocabularyLanguageCode::CaEs,
+            "da-DK" => VocabularyLanguageCode::DaDk,
             "de-CH" => VocabularyLanguageCode::DeCh,
             "de-DE" => VocabularyLanguageCode::DeDe,
             "en-AB" => VocabularyLanguageCode::EnAb,
@@ -129,14 +161,22 @@ impl ::std::convert::From<&str> for VocabularyLanguageCode {
             "en-ZA" => VocabularyLanguageCode::EnZa,
             "es-ES" => VocabularyLanguageCode::EsEs,
             "es-US" => VocabularyLanguageCode::EsUs,
+            "fi-FI" => VocabularyLanguageCode::FiFi,
             "fr-CA" => VocabularyLanguageCode::FrCa,
             "fr-FR" => VocabularyLanguageCode::FrFr,
             "hi-IN" => VocabularyLanguageCode::HiIn,
+            "id-ID" => VocabularyLanguageCode::IdId,
             "it-IT" => VocabularyLanguageCode::ItIt,
             "ja-JP" => VocabularyLanguageCode::JaJp,
             "ko-KR" => VocabularyLanguageCode::KoKr,
+            "ms-MY" => VocabularyLanguageCode::MsMy,
+            "nl-NL" => VocabularyLanguageCode::NlNl,
+            "no-NO" => VocabularyLanguageCode::NoNo,
+            "pl-PL" => VocabularyLanguageCode::PlPl,
             "pt-BR" => VocabularyLanguageCode::PtBr,
             "pt-PT" => VocabularyLanguageCode::PtPt,
+            "sv-SE" => VocabularyLanguageCode::SvSe,
+            "tl-PH" => VocabularyLanguageCode::TlPh,
             "zh-CN" => VocabularyLanguageCode::ZhCn,
             other => VocabularyLanguageCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -154,6 +194,8 @@ impl VocabularyLanguageCode {
     pub fn as_str(&self) -> &str {
         match self {
             VocabularyLanguageCode::ArAe => "ar-AE",
+            VocabularyLanguageCode::CaEs => "ca-ES",
+            VocabularyLanguageCode::DaDk => "da-DK",
             VocabularyLanguageCode::DeCh => "de-CH",
             VocabularyLanguageCode::DeDe => "de-DE",
             VocabularyLanguageCode::EnAb => "en-AB",
@@ -167,14 +209,22 @@ impl VocabularyLanguageCode {
             VocabularyLanguageCode::EnZa => "en-ZA",
             VocabularyLanguageCode::EsEs => "es-ES",
             VocabularyLanguageCode::EsUs => "es-US",
+            VocabularyLanguageCode::FiFi => "fi-FI",
             VocabularyLanguageCode::FrCa => "fr-CA",
             VocabularyLanguageCode::FrFr => "fr-FR",
             VocabularyLanguageCode::HiIn => "hi-IN",
+            VocabularyLanguageCode::IdId => "id-ID",
             VocabularyLanguageCode::ItIt => "it-IT",
             VocabularyLanguageCode::JaJp => "ja-JP",
             VocabularyLanguageCode::KoKr => "ko-KR",
+            VocabularyLanguageCode::MsMy => "ms-MY",
+            VocabularyLanguageCode::NlNl => "nl-NL",
+            VocabularyLanguageCode::NoNo => "no-NO",
+            VocabularyLanguageCode::PlPl => "pl-PL",
             VocabularyLanguageCode::PtBr => "pt-BR",
             VocabularyLanguageCode::PtPt => "pt-PT",
+            VocabularyLanguageCode::SvSe => "sv-SE",
+            VocabularyLanguageCode::TlPh => "tl-PH",
             VocabularyLanguageCode::ZhCn => "zh-CN",
             VocabularyLanguageCode::Unknown(value) => value.as_str(),
         }
@@ -182,8 +232,9 @@ impl VocabularyLanguageCode {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ar-AE", "de-CH", "de-DE", "en-AB", "en-AU", "en-GB", "en-IE", "en-IN", "en-NZ", "en-US", "en-WL", "en-ZA", "es-ES", "es-US", "fr-CA",
-            "fr-FR", "hi-IN", "it-IT", "ja-JP", "ko-KR", "pt-BR", "pt-PT", "zh-CN",
+            "ar-AE", "ca-ES", "da-DK", "de-CH", "de-DE", "en-AB", "en-AU", "en-GB", "en-IE", "en-IN", "en-NZ", "en-US", "en-WL", "en-ZA", "es-ES",
+            "es-US", "fi-FI", "fr-CA", "fr-FR", "hi-IN", "id-ID", "it-IT", "ja-JP", "ko-KR", "ms-MY", "nl-NL", "no-NO", "pl-PL", "pt-BR", "pt-PT",
+            "sv-SE", "tl-PH", "zh-CN",
         ]
     }
 }
@@ -208,6 +259,8 @@ impl ::std::fmt::Display for VocabularyLanguageCode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             VocabularyLanguageCode::ArAe => write!(f, "ar-AE"),
+            VocabularyLanguageCode::CaEs => write!(f, "ca-ES"),
+            VocabularyLanguageCode::DaDk => write!(f, "da-DK"),
             VocabularyLanguageCode::DeCh => write!(f, "de-CH"),
             VocabularyLanguageCode::DeDe => write!(f, "de-DE"),
             VocabularyLanguageCode::EnAb => write!(f, "en-AB"),
@@ -221,14 +274,22 @@ impl ::std::fmt::Display for VocabularyLanguageCode {
             VocabularyLanguageCode::EnZa => write!(f, "en-ZA"),
             VocabularyLanguageCode::EsEs => write!(f, "es-ES"),
             VocabularyLanguageCode::EsUs => write!(f, "es-US"),
+            VocabularyLanguageCode::FiFi => write!(f, "fi-FI"),
             VocabularyLanguageCode::FrCa => write!(f, "fr-CA"),
             VocabularyLanguageCode::FrFr => write!(f, "fr-FR"),
             VocabularyLanguageCode::HiIn => write!(f, "hi-IN"),
+            VocabularyLanguageCode::IdId => write!(f, "id-ID"),
             VocabularyLanguageCode::ItIt => write!(f, "it-IT"),
             VocabularyLanguageCode::JaJp => write!(f, "ja-JP"),
             VocabularyLanguageCode::KoKr => write!(f, "ko-KR"),
+            VocabularyLanguageCode::MsMy => write!(f, "ms-MY"),
+            VocabularyLanguageCode::NlNl => write!(f, "nl-NL"),
+            VocabularyLanguageCode::NoNo => write!(f, "no-NO"),
+            VocabularyLanguageCode::PlPl => write!(f, "pl-PL"),
             VocabularyLanguageCode::PtBr => write!(f, "pt-BR"),
             VocabularyLanguageCode::PtPt => write!(f, "pt-PT"),
+            VocabularyLanguageCode::SvSe => write!(f, "sv-SE"),
+            VocabularyLanguageCode::TlPh => write!(f, "tl-PH"),
             VocabularyLanguageCode::ZhCn => write!(f, "zh-CN"),
             VocabularyLanguageCode::Unknown(value) => write!(f, "{}", value),
         }

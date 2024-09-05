@@ -178,31 +178,31 @@ impl RegisterComputeFluentBuilder {
     pub fn get_dns_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_dns_name()
     }
-    /// <p>The IP address of the compute resource. Amazon GameLift requires either a DNS name or IP address.</p>
+    /// <p>The IP address of the compute resource. Amazon GameLift requires either a DNS name or IP address. When registering an Anywhere fleet, an IP address is required.</p>
     pub fn ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ip_address(input.into());
         self
     }
-    /// <p>The IP address of the compute resource. Amazon GameLift requires either a DNS name or IP address.</p>
+    /// <p>The IP address of the compute resource. Amazon GameLift requires either a DNS name or IP address. When registering an Anywhere fleet, an IP address is required.</p>
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ip_address(input);
         self
     }
-    /// <p>The IP address of the compute resource. Amazon GameLift requires either a DNS name or IP address.</p>
+    /// <p>The IP address of the compute resource. Amazon GameLift requires either a DNS name or IP address. When registering an Anywhere fleet, an IP address is required.</p>
     pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_ip_address()
     }
-    /// <p>The name of a custom location to associate with the compute resource being registered.</p>
+    /// <p>The name of a custom location to associate with the compute resource being registered. This parameter is required when registering a compute for an Anywhere fleet.</p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.location(input.into());
         self
     }
-    /// <p>The name of a custom location to associate with the compute resource being registered.</p>
+    /// <p>The name of a custom location to associate with the compute resource being registered. This parameter is required when registering a compute for an Anywhere fleet.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_location(input);
         self
     }
-    /// <p>The name of a custom location to associate with the compute resource being registered.</p>
+    /// <p>The name of a custom location to associate with the compute resource being registered. This parameter is required when registering a compute for an Anywhere fleet.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_location()
     }

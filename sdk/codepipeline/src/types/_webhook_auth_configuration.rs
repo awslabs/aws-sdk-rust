@@ -6,7 +6,11 @@
 pub struct WebhookAuthConfiguration {
     /// <p>The property used to configure acceptance of webhooks in an IP address range. For IP, only the <code>AllowedIPRange</code> property must be set. This property must be set to a valid CIDR range.</p>
     pub allowed_ip_range: ::std::option::Option<::std::string::String>,
-    /// <p>The property used to configure GitHub authentication. For GITHUB_HMAC, only the <code>SecretToken</code> property must be set.</p>
+    /// <p>The property used to configure GitHub authentication. For GITHUB_HMAC, only the <code>SecretToken</code> property must be set.</p><important>
+    /// <p>When creating CodePipeline webhooks, do not use your own credentials or reuse the same secret token across multiple webhooks. For optimal security, generate a unique secret token for each webhook you create. The secret token is an arbitrary string that you provide, which GitHub uses to compute and sign the webhook payloads sent to CodePipeline, for protecting the integrity and authenticity of the webhook payloads. Using your own credentials or reusing the same token across multiple webhooks can lead to security vulnerabilities.</p>
+    /// </important> <note>
+    /// <p>If a secret token was provided, it will be redacted in the response.</p>
+    /// </note>
     pub secret_token: ::std::option::Option<::std::string::String>,
 }
 impl WebhookAuthConfiguration {
@@ -14,7 +18,11 @@ impl WebhookAuthConfiguration {
     pub fn allowed_ip_range(&self) -> ::std::option::Option<&str> {
         self.allowed_ip_range.as_deref()
     }
-    /// <p>The property used to configure GitHub authentication. For GITHUB_HMAC, only the <code>SecretToken</code> property must be set.</p>
+    /// <p>The property used to configure GitHub authentication. For GITHUB_HMAC, only the <code>SecretToken</code> property must be set.</p><important>
+    /// <p>When creating CodePipeline webhooks, do not use your own credentials or reuse the same secret token across multiple webhooks. For optimal security, generate a unique secret token for each webhook you create. The secret token is an arbitrary string that you provide, which GitHub uses to compute and sign the webhook payloads sent to CodePipeline, for protecting the integrity and authenticity of the webhook payloads. Using your own credentials or reusing the same token across multiple webhooks can lead to security vulnerabilities.</p>
+    /// </important> <note>
+    /// <p>If a secret token was provided, it will be redacted in the response.</p>
+    /// </note>
     pub fn secret_token(&self) -> ::std::option::Option<&str> {
         self.secret_token.as_deref()
     }
@@ -48,17 +56,29 @@ impl WebhookAuthConfigurationBuilder {
     pub fn get_allowed_ip_range(&self) -> &::std::option::Option<::std::string::String> {
         &self.allowed_ip_range
     }
-    /// <p>The property used to configure GitHub authentication. For GITHUB_HMAC, only the <code>SecretToken</code> property must be set.</p>
+    /// <p>The property used to configure GitHub authentication. For GITHUB_HMAC, only the <code>SecretToken</code> property must be set.</p><important>
+    /// <p>When creating CodePipeline webhooks, do not use your own credentials or reuse the same secret token across multiple webhooks. For optimal security, generate a unique secret token for each webhook you create. The secret token is an arbitrary string that you provide, which GitHub uses to compute and sign the webhook payloads sent to CodePipeline, for protecting the integrity and authenticity of the webhook payloads. Using your own credentials or reusing the same token across multiple webhooks can lead to security vulnerabilities.</p>
+    /// </important> <note>
+    /// <p>If a secret token was provided, it will be redacted in the response.</p>
+    /// </note>
     pub fn secret_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The property used to configure GitHub authentication. For GITHUB_HMAC, only the <code>SecretToken</code> property must be set.</p>
+    /// <p>The property used to configure GitHub authentication. For GITHUB_HMAC, only the <code>SecretToken</code> property must be set.</p><important>
+    /// <p>When creating CodePipeline webhooks, do not use your own credentials or reuse the same secret token across multiple webhooks. For optimal security, generate a unique secret token for each webhook you create. The secret token is an arbitrary string that you provide, which GitHub uses to compute and sign the webhook payloads sent to CodePipeline, for protecting the integrity and authenticity of the webhook payloads. Using your own credentials or reusing the same token across multiple webhooks can lead to security vulnerabilities.</p>
+    /// </important> <note>
+    /// <p>If a secret token was provided, it will be redacted in the response.</p>
+    /// </note>
     pub fn set_secret_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_token = input;
         self
     }
-    /// <p>The property used to configure GitHub authentication. For GITHUB_HMAC, only the <code>SecretToken</code> property must be set.</p>
+    /// <p>The property used to configure GitHub authentication. For GITHUB_HMAC, only the <code>SecretToken</code> property must be set.</p><important>
+    /// <p>When creating CodePipeline webhooks, do not use your own credentials or reuse the same secret token across multiple webhooks. For optimal security, generate a unique secret token for each webhook you create. The secret token is an arbitrary string that you provide, which GitHub uses to compute and sign the webhook payloads sent to CodePipeline, for protecting the integrity and authenticity of the webhook payloads. Using your own credentials or reusing the same token across multiple webhooks can lead to security vulnerabilities.</p>
+    /// </important> <note>
+    /// <p>If a secret token was provided, it will be redacted in the response.</p>
+    /// </note>
     pub fn get_secret_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.secret_token
     }

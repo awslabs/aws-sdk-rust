@@ -21,6 +21,12 @@ pub fn ser_space_jupyter_lab_app_settings(
         }
         array_4.finish();
     }
+    if let Some(var_7) = &input.app_lifecycle_management {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("AppLifecycleManagement").start_object();
+        crate::protocol_serde::shape_space_app_lifecycle_management::ser_space_app_lifecycle_management(&mut object_8, var_7)?;
+        object_8.finish();
+    }
     Ok(())
 }
 
@@ -44,6 +50,11 @@ where
                         }
                         "CodeRepositories" => {
                             builder = builder.set_code_repositories(crate::protocol_serde::shape_code_repositories::de_code_repositories(tokens)?);
+                        }
+                        "AppLifecycleManagement" => {
+                            builder = builder.set_app_lifecycle_management(
+                                crate::protocol_serde::shape_space_app_lifecycle_management::de_space_app_lifecycle_management(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

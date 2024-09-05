@@ -35,11 +35,13 @@ pub struct FleetAttributes {
     /// <p>Current status of the fleet. Possible fleet statuses include the following:</p>
     /// <ul>
     /// <li>
-    /// <p>NEW -- A new fleet has been defined and desired instances is set to 1.</p></li>
+    /// <p>NEW -- A new fleet resource has been defined and Amazon GameLift has started creating the fleet. Desired instances is set to 1.</p></li>
     /// <li>
-    /// <p>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING -- Amazon GameLift is setting up the new fleet, creating new instances with the game build or Realtime script and starting server processes.</p></li>
+    /// <p>DOWNLOADING/VALIDATING/BUILDING -- Amazon GameLift is download the game server build, running install scripts, and then validating the build files. When complete, Amazon GameLift launches a fleet instance.</p></li>
     /// <li>
-    /// <p>ACTIVE -- Hosts can now accept game sessions.</p></li>
+    /// <p>ACTIVATING -- Amazon GameLift is launching a game server process and testing its connectivity with the Amazon GameLift service.</p></li>
+    /// <li>
+    /// <p>ACTIVE -- The fleet is now ready to host game sessions.</p></li>
     /// <li>
     /// <p>ERROR -- An error occurred when downloading, validating, building, or activating the fleet.</p></li>
     /// <li>
@@ -56,9 +58,9 @@ pub struct FleetAttributes {
     pub script_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift script resource that is deployed on instances in this fleet. In a GameLift script ARN, the resource ID matches the <code>ScriptId</code> value.</p>
     pub script_arn: ::std::option::Option<::std::string::String>,
-    /// <p><b>This parameter is no longer used.</b> Server launch paths are now defined using the fleet's <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/RuntimeConfiguration.html">RuntimeConfiguration</a> . Requests that use this parameter continue to be valid.</p>
+    /// <p><b>This parameter is no longer used.</b> Server launch paths are now defined using the fleet's <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/RuntimeConfiguration.html">RuntimeConfiguration</a>. Requests that use this parameter continue to be valid.</p>
     pub server_launch_path: ::std::option::Option<::std::string::String>,
-    /// <p><b>This parameter is no longer used.</b> Server launch parameters are now defined using the fleet's runtime configuration . Requests that use this parameter continue to be valid.</p>
+    /// <p><b>This parameter is no longer used.</b> Server launch parameters are now defined using the fleet's runtime configuration. Requests that use this parameter continue to be valid.</p>
     pub server_launch_parameters: ::std::option::Option<::std::string::String>,
     /// <p><b>This parameter is no longer used.</b> Game session log paths are now defined using the Amazon GameLift server API <code>ProcessReady()</code> <code>logParameters</code>. See more information in the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server API Reference</a>.</p>
     pub log_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -70,7 +72,9 @@ pub struct FleetAttributes {
     /// <p><b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p></li>
     /// </ul>
     pub new_game_session_protection_policy: ::std::option::Option<crate::types::ProtectionPolicy>,
-    /// <p>The operating system of the fleet's computing resources. A fleet's operating system is determined by the OS of the build or script that is deployed on this fleet. This attribute is used with fleets where <code>ComputeType</code> is "EC2" or "Container".</p>
+    /// <p>The operating system of the fleet's computing resources. A fleet's operating system is determined by the OS of the build or script that is deployed on this fleet. This attribute is used with fleets where <code>ComputeType</code> is "EC2" or "Container".</p><note>
+    /// <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the <a href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For game servers that are hosted on AL2 and use Amazon GameLift server SDK 4.x., first update the game server build to server SDK 5.x, and then deploy to AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html"> Migrate to Amazon GameLift server SDK version 5.</a></p>
+    /// </note>
     pub operating_system: ::std::option::Option<crate::types::OperatingSystem>,
     /// <p>A policy that puts limits on the number of game sessions that a player can create within a specified span of time. With this policy, you can control players' ability to consume available resources.</p>
     /// <p>The policy is evaluated when a player tries to create a new game session. On receiving a <code>CreateGameSession</code> request, Amazon GameLift checks that the player (identified by <code>CreatorId</code>) has created fewer than game session limit in the specified time period.</p>
@@ -130,11 +134,13 @@ impl FleetAttributes {
     /// <p>Current status of the fleet. Possible fleet statuses include the following:</p>
     /// <ul>
     /// <li>
-    /// <p>NEW -- A new fleet has been defined and desired instances is set to 1.</p></li>
+    /// <p>NEW -- A new fleet resource has been defined and Amazon GameLift has started creating the fleet. Desired instances is set to 1.</p></li>
     /// <li>
-    /// <p>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING -- Amazon GameLift is setting up the new fleet, creating new instances with the game build or Realtime script and starting server processes.</p></li>
+    /// <p>DOWNLOADING/VALIDATING/BUILDING -- Amazon GameLift is download the game server build, running install scripts, and then validating the build files. When complete, Amazon GameLift launches a fleet instance.</p></li>
     /// <li>
-    /// <p>ACTIVE -- Hosts can now accept game sessions.</p></li>
+    /// <p>ACTIVATING -- Amazon GameLift is launching a game server process and testing its connectivity with the Amazon GameLift service.</p></li>
+    /// <li>
+    /// <p>ACTIVE -- The fleet is now ready to host game sessions.</p></li>
     /// <li>
     /// <p>ERROR -- An error occurred when downloading, validating, building, or activating the fleet.</p></li>
     /// <li>
@@ -161,11 +167,11 @@ impl FleetAttributes {
     pub fn script_arn(&self) -> ::std::option::Option<&str> {
         self.script_arn.as_deref()
     }
-    /// <p><b>This parameter is no longer used.</b> Server launch paths are now defined using the fleet's <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/RuntimeConfiguration.html">RuntimeConfiguration</a> . Requests that use this parameter continue to be valid.</p>
+    /// <p><b>This parameter is no longer used.</b> Server launch paths are now defined using the fleet's <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/RuntimeConfiguration.html">RuntimeConfiguration</a>. Requests that use this parameter continue to be valid.</p>
     pub fn server_launch_path(&self) -> ::std::option::Option<&str> {
         self.server_launch_path.as_deref()
     }
-    /// <p><b>This parameter is no longer used.</b> Server launch parameters are now defined using the fleet's runtime configuration . Requests that use this parameter continue to be valid.</p>
+    /// <p><b>This parameter is no longer used.</b> Server launch parameters are now defined using the fleet's runtime configuration. Requests that use this parameter continue to be valid.</p>
     pub fn server_launch_parameters(&self) -> ::std::option::Option<&str> {
         self.server_launch_parameters.as_deref()
     }
@@ -185,7 +191,9 @@ impl FleetAttributes {
     pub fn new_game_session_protection_policy(&self) -> ::std::option::Option<&crate::types::ProtectionPolicy> {
         self.new_game_session_protection_policy.as_ref()
     }
-    /// <p>The operating system of the fleet's computing resources. A fleet's operating system is determined by the OS of the build or script that is deployed on this fleet. This attribute is used with fleets where <code>ComputeType</code> is "EC2" or "Container".</p>
+    /// <p>The operating system of the fleet's computing resources. A fleet's operating system is determined by the OS of the build or script that is deployed on this fleet. This attribute is used with fleets where <code>ComputeType</code> is "EC2" or "Container".</p><note>
+    /// <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the <a href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For game servers that are hosted on AL2 and use Amazon GameLift server SDK 4.x., first update the game server build to server SDK 5.x, and then deploy to AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html"> Migrate to Amazon GameLift server SDK version 5.</a></p>
+    /// </note>
     pub fn operating_system(&self) -> ::std::option::Option<&crate::types::OperatingSystem> {
         self.operating_system.as_ref()
     }
@@ -392,11 +400,13 @@ impl FleetAttributesBuilder {
     /// <p>Current status of the fleet. Possible fleet statuses include the following:</p>
     /// <ul>
     /// <li>
-    /// <p>NEW -- A new fleet has been defined and desired instances is set to 1.</p></li>
+    /// <p>NEW -- A new fleet resource has been defined and Amazon GameLift has started creating the fleet. Desired instances is set to 1.</p></li>
     /// <li>
-    /// <p>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING -- Amazon GameLift is setting up the new fleet, creating new instances with the game build or Realtime script and starting server processes.</p></li>
+    /// <p>DOWNLOADING/VALIDATING/BUILDING -- Amazon GameLift is download the game server build, running install scripts, and then validating the build files. When complete, Amazon GameLift launches a fleet instance.</p></li>
     /// <li>
-    /// <p>ACTIVE -- Hosts can now accept game sessions.</p></li>
+    /// <p>ACTIVATING -- Amazon GameLift is launching a game server process and testing its connectivity with the Amazon GameLift service.</p></li>
+    /// <li>
+    /// <p>ACTIVE -- The fleet is now ready to host game sessions.</p></li>
     /// <li>
     /// <p>ERROR -- An error occurred when downloading, validating, building, or activating the fleet.</p></li>
     /// <li>
@@ -411,11 +421,13 @@ impl FleetAttributesBuilder {
     /// <p>Current status of the fleet. Possible fleet statuses include the following:</p>
     /// <ul>
     /// <li>
-    /// <p>NEW -- A new fleet has been defined and desired instances is set to 1.</p></li>
+    /// <p>NEW -- A new fleet resource has been defined and Amazon GameLift has started creating the fleet. Desired instances is set to 1.</p></li>
     /// <li>
-    /// <p>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING -- Amazon GameLift is setting up the new fleet, creating new instances with the game build or Realtime script and starting server processes.</p></li>
+    /// <p>DOWNLOADING/VALIDATING/BUILDING -- Amazon GameLift is download the game server build, running install scripts, and then validating the build files. When complete, Amazon GameLift launches a fleet instance.</p></li>
     /// <li>
-    /// <p>ACTIVE -- Hosts can now accept game sessions.</p></li>
+    /// <p>ACTIVATING -- Amazon GameLift is launching a game server process and testing its connectivity with the Amazon GameLift service.</p></li>
+    /// <li>
+    /// <p>ACTIVE -- The fleet is now ready to host game sessions.</p></li>
     /// <li>
     /// <p>ERROR -- An error occurred when downloading, validating, building, or activating the fleet.</p></li>
     /// <li>
@@ -430,11 +442,13 @@ impl FleetAttributesBuilder {
     /// <p>Current status of the fleet. Possible fleet statuses include the following:</p>
     /// <ul>
     /// <li>
-    /// <p>NEW -- A new fleet has been defined and desired instances is set to 1.</p></li>
+    /// <p>NEW -- A new fleet resource has been defined and Amazon GameLift has started creating the fleet. Desired instances is set to 1.</p></li>
     /// <li>
-    /// <p>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING -- Amazon GameLift is setting up the new fleet, creating new instances with the game build or Realtime script and starting server processes.</p></li>
+    /// <p>DOWNLOADING/VALIDATING/BUILDING -- Amazon GameLift is download the game server build, running install scripts, and then validating the build files. When complete, Amazon GameLift launches a fleet instance.</p></li>
     /// <li>
-    /// <p>ACTIVE -- Hosts can now accept game sessions.</p></li>
+    /// <p>ACTIVATING -- Amazon GameLift is launching a game server process and testing its connectivity with the Amazon GameLift service.</p></li>
+    /// <li>
+    /// <p>ACTIVE -- The fleet is now ready to host game sessions.</p></li>
     /// <li>
     /// <p>ERROR -- An error occurred when downloading, validating, building, or activating the fleet.</p></li>
     /// <li>
@@ -501,31 +515,31 @@ impl FleetAttributesBuilder {
     pub fn get_script_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.script_arn
     }
-    /// <p><b>This parameter is no longer used.</b> Server launch paths are now defined using the fleet's <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/RuntimeConfiguration.html">RuntimeConfiguration</a> . Requests that use this parameter continue to be valid.</p>
+    /// <p><b>This parameter is no longer used.</b> Server launch paths are now defined using the fleet's <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/RuntimeConfiguration.html">RuntimeConfiguration</a>. Requests that use this parameter continue to be valid.</p>
     pub fn server_launch_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_launch_path = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p><b>This parameter is no longer used.</b> Server launch paths are now defined using the fleet's <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/RuntimeConfiguration.html">RuntimeConfiguration</a> . Requests that use this parameter continue to be valid.</p>
+    /// <p><b>This parameter is no longer used.</b> Server launch paths are now defined using the fleet's <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/RuntimeConfiguration.html">RuntimeConfiguration</a>. Requests that use this parameter continue to be valid.</p>
     pub fn set_server_launch_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_launch_path = input;
         self
     }
-    /// <p><b>This parameter is no longer used.</b> Server launch paths are now defined using the fleet's <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/RuntimeConfiguration.html">RuntimeConfiguration</a> . Requests that use this parameter continue to be valid.</p>
+    /// <p><b>This parameter is no longer used.</b> Server launch paths are now defined using the fleet's <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/RuntimeConfiguration.html">RuntimeConfiguration</a>. Requests that use this parameter continue to be valid.</p>
     pub fn get_server_launch_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.server_launch_path
     }
-    /// <p><b>This parameter is no longer used.</b> Server launch parameters are now defined using the fleet's runtime configuration . Requests that use this parameter continue to be valid.</p>
+    /// <p><b>This parameter is no longer used.</b> Server launch parameters are now defined using the fleet's runtime configuration. Requests that use this parameter continue to be valid.</p>
     pub fn server_launch_parameters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_launch_parameters = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p><b>This parameter is no longer used.</b> Server launch parameters are now defined using the fleet's runtime configuration . Requests that use this parameter continue to be valid.</p>
+    /// <p><b>This parameter is no longer used.</b> Server launch parameters are now defined using the fleet's runtime configuration. Requests that use this parameter continue to be valid.</p>
     pub fn set_server_launch_parameters(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_launch_parameters = input;
         self
     }
-    /// <p><b>This parameter is no longer used.</b> Server launch parameters are now defined using the fleet's runtime configuration . Requests that use this parameter continue to be valid.</p>
+    /// <p><b>This parameter is no longer used.</b> Server launch parameters are now defined using the fleet's runtime configuration. Requests that use this parameter continue to be valid.</p>
     pub fn get_server_launch_parameters(&self) -> &::std::option::Option<::std::string::String> {
         &self.server_launch_parameters
     }
@@ -581,17 +595,23 @@ impl FleetAttributesBuilder {
     pub fn get_new_game_session_protection_policy(&self) -> &::std::option::Option<crate::types::ProtectionPolicy> {
         &self.new_game_session_protection_policy
     }
-    /// <p>The operating system of the fleet's computing resources. A fleet's operating system is determined by the OS of the build or script that is deployed on this fleet. This attribute is used with fleets where <code>ComputeType</code> is "EC2" or "Container".</p>
+    /// <p>The operating system of the fleet's computing resources. A fleet's operating system is determined by the OS of the build or script that is deployed on this fleet. This attribute is used with fleets where <code>ComputeType</code> is "EC2" or "Container".</p><note>
+    /// <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the <a href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For game servers that are hosted on AL2 and use Amazon GameLift server SDK 4.x., first update the game server build to server SDK 5.x, and then deploy to AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html"> Migrate to Amazon GameLift server SDK version 5.</a></p>
+    /// </note>
     pub fn operating_system(mut self, input: crate::types::OperatingSystem) -> Self {
         self.operating_system = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The operating system of the fleet's computing resources. A fleet's operating system is determined by the OS of the build or script that is deployed on this fleet. This attribute is used with fleets where <code>ComputeType</code> is "EC2" or "Container".</p>
+    /// <p>The operating system of the fleet's computing resources. A fleet's operating system is determined by the OS of the build or script that is deployed on this fleet. This attribute is used with fleets where <code>ComputeType</code> is "EC2" or "Container".</p><note>
+    /// <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the <a href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For game servers that are hosted on AL2 and use Amazon GameLift server SDK 4.x., first update the game server build to server SDK 5.x, and then deploy to AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html"> Migrate to Amazon GameLift server SDK version 5.</a></p>
+    /// </note>
     pub fn set_operating_system(mut self, input: ::std::option::Option<crate::types::OperatingSystem>) -> Self {
         self.operating_system = input;
         self
     }
-    /// <p>The operating system of the fleet's computing resources. A fleet's operating system is determined by the OS of the build or script that is deployed on this fleet. This attribute is used with fleets where <code>ComputeType</code> is "EC2" or "Container".</p>
+    /// <p>The operating system of the fleet's computing resources. A fleet's operating system is determined by the OS of the build or script that is deployed on this fleet. This attribute is used with fleets where <code>ComputeType</code> is "EC2" or "Container".</p><note>
+    /// <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the <a href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For game servers that are hosted on AL2 and use Amazon GameLift server SDK 4.x., first update the game server build to server SDK 5.x, and then deploy to AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html"> Migrate to Amazon GameLift server SDK version 5.</a></p>
+    /// </note>
     pub fn get_operating_system(&self) -> &::std::option::Option<crate::types::OperatingSystem> {
         &self.operating_system
     }

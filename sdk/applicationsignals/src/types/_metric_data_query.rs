@@ -32,7 +32,7 @@ pub struct MetricDataQuery {
     /// <p>Start time greater than 63 days ago - Use a multiple of 3600 seconds (1 hour).</p></li>
     /// </ul>
     pub period: ::std::option::Option<i32>,
-    /// <p>The ID of the account where this metric is located. If you are performing this operatiion in a monitoring account, use this to specify which source account to retrieve this metric from.</p>
+    /// <p>The ID of the account where this metric is located. If you are performing this operation in a monitoring account, use this to specify which source account to retrieve this metric from.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl MetricDataQuery {
@@ -74,7 +74,7 @@ impl MetricDataQuery {
     pub fn period(&self) -> ::std::option::Option<i32> {
         self.period
     }
-    /// <p>The ID of the account where this metric is located. If you are performing this operatiion in a monitoring account, use this to specify which source account to retrieve this metric from.</p>
+    /// <p>The ID of the account where this metric is located. If you are performing this operation in a monitoring account, use this to specify which source account to retrieve this metric from.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -223,17 +223,17 @@ impl MetricDataQueryBuilder {
     pub fn get_period(&self) -> &::std::option::Option<i32> {
         &self.period
     }
-    /// <p>The ID of the account where this metric is located. If you are performing this operatiion in a monitoring account, use this to specify which source account to retrieve this metric from.</p>
+    /// <p>The ID of the account where this metric is located. If you are performing this operation in a monitoring account, use this to specify which source account to retrieve this metric from.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the account where this metric is located. If you are performing this operatiion in a monitoring account, use this to specify which source account to retrieve this metric from.</p>
+    /// <p>The ID of the account where this metric is located. If you are performing this operation in a monitoring account, use this to specify which source account to retrieve this metric from.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
-    /// <p>The ID of the account where this metric is located. If you are performing this operatiion in a monitoring account, use this to specify which source account to retrieve this metric from.</p>
+    /// <p>The ID of the account where this metric is located. If you are performing this operation in a monitoring account, use this to specify which source account to retrieve this metric from.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }

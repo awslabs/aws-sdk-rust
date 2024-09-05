@@ -30,7 +30,8 @@ impl crate::operation::create_fleet_locations::builders::CreateFleetLocationsInp
 /// <p>If successful, this operation returns the list of added locations with their status set to <code>NEW</code>. Amazon GameLift initiates the process of starting an instance in each added location. You can track the status of each new location by monitoring location creation events using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetEvents.html">DescribeFleetEvents</a>.</p>
 /// <p><b>Learn more</b></p>
 /// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up fleets</a></p>
-/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Multi-location fleets</a></p>
+/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-editing.html#fleets-update-locations">Update fleet locations</a></p>
+/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html"> Amazon GameLift service locations</a> for managed hosting.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateFleetLocationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

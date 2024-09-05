@@ -6,11 +6,17 @@
 pub struct SpaceCodeEditorAppSettings {
     /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
     pub default_resource_spec: ::std::option::Option<crate::types::ResourceSpec>,
+    /// <p>Settings that are used to configure and manage the lifecycle of CodeEditor applications in a space.</p>
+    pub app_lifecycle_management: ::std::option::Option<crate::types::SpaceAppLifecycleManagement>,
 }
 impl SpaceCodeEditorAppSettings {
     /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
     pub fn default_resource_spec(&self) -> ::std::option::Option<&crate::types::ResourceSpec> {
         self.default_resource_spec.as_ref()
+    }
+    /// <p>Settings that are used to configure and manage the lifecycle of CodeEditor applications in a space.</p>
+    pub fn app_lifecycle_management(&self) -> ::std::option::Option<&crate::types::SpaceAppLifecycleManagement> {
+        self.app_lifecycle_management.as_ref()
     }
 }
 impl SpaceCodeEditorAppSettings {
@@ -25,6 +31,7 @@ impl SpaceCodeEditorAppSettings {
 #[non_exhaustive]
 pub struct SpaceCodeEditorAppSettingsBuilder {
     pub(crate) default_resource_spec: ::std::option::Option<crate::types::ResourceSpec>,
+    pub(crate) app_lifecycle_management: ::std::option::Option<crate::types::SpaceAppLifecycleManagement>,
 }
 impl SpaceCodeEditorAppSettingsBuilder {
     /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
@@ -41,10 +48,25 @@ impl SpaceCodeEditorAppSettingsBuilder {
     pub fn get_default_resource_spec(&self) -> &::std::option::Option<crate::types::ResourceSpec> {
         &self.default_resource_spec
     }
+    /// <p>Settings that are used to configure and manage the lifecycle of CodeEditor applications in a space.</p>
+    pub fn app_lifecycle_management(mut self, input: crate::types::SpaceAppLifecycleManagement) -> Self {
+        self.app_lifecycle_management = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Settings that are used to configure and manage the lifecycle of CodeEditor applications in a space.</p>
+    pub fn set_app_lifecycle_management(mut self, input: ::std::option::Option<crate::types::SpaceAppLifecycleManagement>) -> Self {
+        self.app_lifecycle_management = input;
+        self
+    }
+    /// <p>Settings that are used to configure and manage the lifecycle of CodeEditor applications in a space.</p>
+    pub fn get_app_lifecycle_management(&self) -> &::std::option::Option<crate::types::SpaceAppLifecycleManagement> {
+        &self.app_lifecycle_management
+    }
     /// Consumes the builder and constructs a [`SpaceCodeEditorAppSettings`](crate::types::SpaceCodeEditorAppSettings).
     pub fn build(self) -> crate::types::SpaceCodeEditorAppSettings {
         crate::types::SpaceCodeEditorAppSettings {
             default_resource_spec: self.default_resource_spec,
+            app_lifecycle_management: self.app_lifecycle_management,
         }
     }
 }

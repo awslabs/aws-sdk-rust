@@ -51,8 +51,7 @@ pub struct CreateFleetInput {
     /// <p>ACM isn't available in all Amazon Web Services regions. A fleet creation request with certificate generation enabled in an unsupported Region, fails with a 4xx error. For more information about the supported Regions, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-regions.html">Supported Regions</a> in the <i>Certificate Manager User Guide</i>.</p>
     /// </note>
     pub certificate_configuration: ::std::option::Option<crate::types::CertificateConfiguration>,
-    /// <p>A set of remote locations to deploy additional instances to and manage as part of the fleet. This parameter can only be used when creating fleets in Amazon Web Services Regions that support multiple locations. You can add any Amazon GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services Region code, such as <code>us-west-2</code> or Local Zone code. To create a fleet with instances in the home Region only, don't set this parameter.</p>
-    /// <p>When using this parameter, Amazon GameLift requires you to include your home location in the request.</p>
+    /// <p>A set of remote locations to deploy additional instances to and manage as a multi-location fleet. Use this parameter when creating a fleet in Amazon Web Services Regions that support multiple locations. You can add any Amazon Web Services Region or Local Zone that's supported by Amazon GameLift. Provide a list of one or more Amazon Web Services Region codes, such as <code>us-west-2</code>, or Local Zone names. When using this parameter, Amazon GameLift requires you to include your home location in the request. For a list of supported Regions and Local Zones, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html"> Amazon GameLift service locations</a> for managed hosting.</p>
     pub locations: ::std::option::Option<::std::vec::Vec<crate::types::LocationConfiguration>>,
     /// <p>A list of labels to assign to the new fleet resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -164,8 +163,7 @@ impl CreateFleetInput {
     pub fn certificate_configuration(&self) -> ::std::option::Option<&crate::types::CertificateConfiguration> {
         self.certificate_configuration.as_ref()
     }
-    /// <p>A set of remote locations to deploy additional instances to and manage as part of the fleet. This parameter can only be used when creating fleets in Amazon Web Services Regions that support multiple locations. You can add any Amazon GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services Region code, such as <code>us-west-2</code> or Local Zone code. To create a fleet with instances in the home Region only, don't set this parameter.</p>
-    /// <p>When using this parameter, Amazon GameLift requires you to include your home location in the request.</p>
+    /// <p>A set of remote locations to deploy additional instances to and manage as a multi-location fleet. Use this parameter when creating a fleet in Amazon Web Services Regions that support multiple locations. You can add any Amazon Web Services Region or Local Zone that's supported by Amazon GameLift. Provide a list of one or more Amazon Web Services Region codes, such as <code>us-west-2</code>, or Local Zone names. When using this parameter, Amazon GameLift requires you to include your home location in the request. For a list of supported Regions and Local Zones, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html"> Amazon GameLift service locations</a> for managed hosting.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.locations.is_none()`.
     pub fn locations(&self) -> &[crate::types::LocationConfiguration] {
@@ -550,22 +548,19 @@ impl CreateFleetInputBuilder {
     ///
     /// To override the contents of this collection use [`set_locations`](Self::set_locations).
     ///
-    /// <p>A set of remote locations to deploy additional instances to and manage as part of the fleet. This parameter can only be used when creating fleets in Amazon Web Services Regions that support multiple locations. You can add any Amazon GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services Region code, such as <code>us-west-2</code> or Local Zone code. To create a fleet with instances in the home Region only, don't set this parameter.</p>
-    /// <p>When using this parameter, Amazon GameLift requires you to include your home location in the request.</p>
+    /// <p>A set of remote locations to deploy additional instances to and manage as a multi-location fleet. Use this parameter when creating a fleet in Amazon Web Services Regions that support multiple locations. You can add any Amazon Web Services Region or Local Zone that's supported by Amazon GameLift. Provide a list of one or more Amazon Web Services Region codes, such as <code>us-west-2</code>, or Local Zone names. When using this parameter, Amazon GameLift requires you to include your home location in the request. For a list of supported Regions and Local Zones, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html"> Amazon GameLift service locations</a> for managed hosting.</p>
     pub fn locations(mut self, input: crate::types::LocationConfiguration) -> Self {
         let mut v = self.locations.unwrap_or_default();
         v.push(input);
         self.locations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A set of remote locations to deploy additional instances to and manage as part of the fleet. This parameter can only be used when creating fleets in Amazon Web Services Regions that support multiple locations. You can add any Amazon GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services Region code, such as <code>us-west-2</code> or Local Zone code. To create a fleet with instances in the home Region only, don't set this parameter.</p>
-    /// <p>When using this parameter, Amazon GameLift requires you to include your home location in the request.</p>
+    /// <p>A set of remote locations to deploy additional instances to and manage as a multi-location fleet. Use this parameter when creating a fleet in Amazon Web Services Regions that support multiple locations. You can add any Amazon Web Services Region or Local Zone that's supported by Amazon GameLift. Provide a list of one or more Amazon Web Services Region codes, such as <code>us-west-2</code>, or Local Zone names. When using this parameter, Amazon GameLift requires you to include your home location in the request. For a list of supported Regions and Local Zones, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html"> Amazon GameLift service locations</a> for managed hosting.</p>
     pub fn set_locations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LocationConfiguration>>) -> Self {
         self.locations = input;
         self
     }
-    /// <p>A set of remote locations to deploy additional instances to and manage as part of the fleet. This parameter can only be used when creating fleets in Amazon Web Services Regions that support multiple locations. You can add any Amazon GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services Region code, such as <code>us-west-2</code> or Local Zone code. To create a fleet with instances in the home Region only, don't set this parameter.</p>
-    /// <p>When using this parameter, Amazon GameLift requires you to include your home location in the request.</p>
+    /// <p>A set of remote locations to deploy additional instances to and manage as a multi-location fleet. Use this parameter when creating a fleet in Amazon Web Services Regions that support multiple locations. You can add any Amazon Web Services Region or Local Zone that's supported by Amazon GameLift. Provide a list of one or more Amazon Web Services Region codes, such as <code>us-west-2</code>, or Local Zone names. When using this parameter, Amazon GameLift requires you to include your home location in the request. For a list of supported Regions and Local Zones, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html"> Amazon GameLift service locations</a> for managed hosting.</p>
     pub fn get_locations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LocationConfiguration>> {
         &self.locations
     }

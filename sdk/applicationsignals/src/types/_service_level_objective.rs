@@ -14,8 +14,12 @@ pub struct ServiceLevelObjective {
     pub created_time: ::aws_smithy_types::DateTime,
     /// <p>The time that this SLO was most recently updated. When used in a raw HTTP Query API, it is formatted as <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example, <code>2019-07-01T23:59:59</code>.</p>
     pub last_updated_time: ::aws_smithy_types::DateTime,
-    /// <p>A structure containing information about the performance metric that this SLO monitors.</p>
+    /// <p>A structure containing information about the performance metric that this SLO monitors, if this is a period-based SLO.</p>
     pub sli: ::std::option::Option<crate::types::ServiceLevelIndicator>,
+    /// <p>A structure containing information about the performance metric that this SLO monitors, if this is a request-based SLO.</p>
+    pub request_based_sli: ::std::option::Option<crate::types::RequestBasedServiceLevelIndicator>,
+    /// <p>Displays whether this is a period-based SLO or a request-based SLO.</p>
+    pub evaluation_type: ::std::option::Option<crate::types::EvaluationType>,
     /// <p>This structure contains the attributes that determine the goal of an SLO. This includes the time period for evaluation and the attainment threshold.</p>
     pub goal: ::std::option::Option<crate::types::Goal>,
 }
@@ -42,9 +46,17 @@ impl ServiceLevelObjective {
     pub fn last_updated_time(&self) -> &::aws_smithy_types::DateTime {
         &self.last_updated_time
     }
-    /// <p>A structure containing information about the performance metric that this SLO monitors.</p>
+    /// <p>A structure containing information about the performance metric that this SLO monitors, if this is a period-based SLO.</p>
     pub fn sli(&self) -> ::std::option::Option<&crate::types::ServiceLevelIndicator> {
         self.sli.as_ref()
+    }
+    /// <p>A structure containing information about the performance metric that this SLO monitors, if this is a request-based SLO.</p>
+    pub fn request_based_sli(&self) -> ::std::option::Option<&crate::types::RequestBasedServiceLevelIndicator> {
+        self.request_based_sli.as_ref()
+    }
+    /// <p>Displays whether this is a period-based SLO or a request-based SLO.</p>
+    pub fn evaluation_type(&self) -> ::std::option::Option<&crate::types::EvaluationType> {
+        self.evaluation_type.as_ref()
     }
     /// <p>This structure contains the attributes that determine the goal of an SLO. This includes the time period for evaluation and the attainment threshold.</p>
     pub fn goal(&self) -> ::std::option::Option<&crate::types::Goal> {
@@ -68,6 +80,8 @@ pub struct ServiceLevelObjectiveBuilder {
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) sli: ::std::option::Option<crate::types::ServiceLevelIndicator>,
+    pub(crate) request_based_sli: ::std::option::Option<crate::types::RequestBasedServiceLevelIndicator>,
+    pub(crate) evaluation_type: ::std::option::Option<crate::types::EvaluationType>,
     pub(crate) goal: ::std::option::Option<crate::types::Goal>,
 }
 impl ServiceLevelObjectiveBuilder {
@@ -145,20 +159,47 @@ impl ServiceLevelObjectiveBuilder {
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_time
     }
-    /// <p>A structure containing information about the performance metric that this SLO monitors.</p>
-    /// This field is required.
+    /// <p>A structure containing information about the performance metric that this SLO monitors, if this is a period-based SLO.</p>
     pub fn sli(mut self, input: crate::types::ServiceLevelIndicator) -> Self {
         self.sli = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A structure containing information about the performance metric that this SLO monitors.</p>
+    /// <p>A structure containing information about the performance metric that this SLO monitors, if this is a period-based SLO.</p>
     pub fn set_sli(mut self, input: ::std::option::Option<crate::types::ServiceLevelIndicator>) -> Self {
         self.sli = input;
         self
     }
-    /// <p>A structure containing information about the performance metric that this SLO monitors.</p>
+    /// <p>A structure containing information about the performance metric that this SLO monitors, if this is a period-based SLO.</p>
     pub fn get_sli(&self) -> &::std::option::Option<crate::types::ServiceLevelIndicator> {
         &self.sli
+    }
+    /// <p>A structure containing information about the performance metric that this SLO monitors, if this is a request-based SLO.</p>
+    pub fn request_based_sli(mut self, input: crate::types::RequestBasedServiceLevelIndicator) -> Self {
+        self.request_based_sli = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A structure containing information about the performance metric that this SLO monitors, if this is a request-based SLO.</p>
+    pub fn set_request_based_sli(mut self, input: ::std::option::Option<crate::types::RequestBasedServiceLevelIndicator>) -> Self {
+        self.request_based_sli = input;
+        self
+    }
+    /// <p>A structure containing information about the performance metric that this SLO monitors, if this is a request-based SLO.</p>
+    pub fn get_request_based_sli(&self) -> &::std::option::Option<crate::types::RequestBasedServiceLevelIndicator> {
+        &self.request_based_sli
+    }
+    /// <p>Displays whether this is a period-based SLO or a request-based SLO.</p>
+    pub fn evaluation_type(mut self, input: crate::types::EvaluationType) -> Self {
+        self.evaluation_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Displays whether this is a period-based SLO or a request-based SLO.</p>
+    pub fn set_evaluation_type(mut self, input: ::std::option::Option<crate::types::EvaluationType>) -> Self {
+        self.evaluation_type = input;
+        self
+    }
+    /// <p>Displays whether this is a period-based SLO or a request-based SLO.</p>
+    pub fn get_evaluation_type(&self) -> &::std::option::Option<crate::types::EvaluationType> {
+        &self.evaluation_type
     }
     /// <p>This structure contains the attributes that determine the goal of an SLO. This includes the time period for evaluation and the attainment threshold.</p>
     /// This field is required.
@@ -209,6 +250,8 @@ impl ServiceLevelObjectiveBuilder {
                 )
             })?,
             sli: self.sli,
+            request_based_sli: self.request_based_sli,
+            evaluation_type: self.evaluation_type,
             goal: self.goal,
         })
     }

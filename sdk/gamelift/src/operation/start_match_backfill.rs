@@ -253,7 +253,7 @@ pub enum StartMatchBackfillError {
     InternalServiceException(crate::types::error::InternalServiceException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::types::error::InvalidRequestException),
-    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
+    /// <p>The requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::types::error::NotFoundException),
     /// <p>The requested operation is not supported in the Region specified.</p>
     UnsupportedRegionException(crate::types::error::UnsupportedRegionException),

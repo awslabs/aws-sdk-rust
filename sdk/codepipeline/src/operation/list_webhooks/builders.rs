@@ -22,7 +22,9 @@ impl crate::operation::list_webhooks::builders::ListWebhooksInputBuilder {
 }
 /// Fluent builder constructing a request to `ListWebhooks`.
 ///
-/// <p>Gets a listing of all the webhooks in this Amazon Web Services Region for this account. The output lists all webhooks and includes the webhook URL and ARN and the configuration for each webhook.</p>
+/// <p>Gets a listing of all the webhooks in this Amazon Web Services Region for this account. The output lists all webhooks and includes the webhook URL and ARN and the configuration for each webhook.</p><note>
+/// <p>If a secret token was provided, it will be redacted in the response.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListWebhooksFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

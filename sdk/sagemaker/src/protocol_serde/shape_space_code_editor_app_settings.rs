@@ -9,6 +9,12 @@ pub fn ser_space_code_editor_app_settings(
         crate::protocol_serde::shape_resource_spec::ser_resource_spec(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.app_lifecycle_management {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("AppLifecycleManagement").start_object();
+        crate::protocol_serde::shape_space_app_lifecycle_management::ser_space_app_lifecycle_management(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }
 
@@ -29,6 +35,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "DefaultResourceSpec" => {
                             builder = builder.set_default_resource_spec(crate::protocol_serde::shape_resource_spec::de_resource_spec(tokens)?);
+                        }
+                        "AppLifecycleManagement" => {
+                            builder = builder.set_app_lifecycle_management(
+                                crate::protocol_serde::shape_space_app_lifecycle_management::de_space_app_lifecycle_management(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

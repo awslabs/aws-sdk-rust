@@ -254,7 +254,7 @@ pub enum CreateFleetError {
     InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p>The requested operation would cause the resource to exceed the allowed service limit. Resolve the issue before retrying.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
-    /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
+    /// <p>The requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::types::error::NotFoundException),
     /// <p>The operation failed because Amazon GameLift has not yet finished validating this compute. We recommend attempting 8 to 10 retries over 3 to 5 minutes with <a href="http://aws.amazon.com/blogs/https:/aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/">exponential backoffs and jitter</a>.</p>
     NotReadyException(crate::types::error::NotReadyException),

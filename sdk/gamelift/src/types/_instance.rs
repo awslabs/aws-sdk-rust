@@ -30,7 +30,9 @@ pub struct Instance {
     /// </ul>
     /// <p>When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP address.</p>
     pub dns_name: ::std::option::Option<::std::string::String>,
-    /// <p>Operating system that is running on this EC2 instance.</p>
+    /// <p>Operating system that is running on this EC2 instance.</p><note>
+    /// <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the <a href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For game servers that are hosted on AL2 and use Amazon GameLift server SDK 4.x., first update the game server build to server SDK 5.x, and then deploy to AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html"> Migrate to Amazon GameLift server SDK version 5.</a></p>
+    /// </note>
     pub operating_system: ::std::option::Option<crate::types::OperatingSystem>,
     /// <p>EC2 instance type that defines the computing resources of this instance.</p>
     pub r#type: ::std::option::Option<crate::types::Ec2InstanceType>,
@@ -86,7 +88,9 @@ impl Instance {
     pub fn dns_name(&self) -> ::std::option::Option<&str> {
         self.dns_name.as_deref()
     }
-    /// <p>Operating system that is running on this EC2 instance.</p>
+    /// <p>Operating system that is running on this EC2 instance.</p><note>
+    /// <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the <a href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For game servers that are hosted on AL2 and use Amazon GameLift server SDK 4.x., first update the game server build to server SDK 5.x, and then deploy to AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html"> Migrate to Amazon GameLift server SDK version 5.</a></p>
+    /// </note>
     pub fn operating_system(&self) -> ::std::option::Option<&crate::types::OperatingSystem> {
         self.operating_system.as_ref()
     }
@@ -272,17 +276,23 @@ impl InstanceBuilder {
     pub fn get_dns_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.dns_name
     }
-    /// <p>Operating system that is running on this EC2 instance.</p>
+    /// <p>Operating system that is running on this EC2 instance.</p><note>
+    /// <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the <a href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For game servers that are hosted on AL2 and use Amazon GameLift server SDK 4.x., first update the game server build to server SDK 5.x, and then deploy to AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html"> Migrate to Amazon GameLift server SDK version 5.</a></p>
+    /// </note>
     pub fn operating_system(mut self, input: crate::types::OperatingSystem) -> Self {
         self.operating_system = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Operating system that is running on this EC2 instance.</p>
+    /// <p>Operating system that is running on this EC2 instance.</p><note>
+    /// <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the <a href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For game servers that are hosted on AL2 and use Amazon GameLift server SDK 4.x., first update the game server build to server SDK 5.x, and then deploy to AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html"> Migrate to Amazon GameLift server SDK version 5.</a></p>
+    /// </note>
     pub fn set_operating_system(mut self, input: ::std::option::Option<crate::types::OperatingSystem>) -> Self {
         self.operating_system = input;
         self
     }
-    /// <p>Operating system that is running on this EC2 instance.</p>
+    /// <p>Operating system that is running on this EC2 instance.</p><note>
+    /// <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the <a href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For game servers that are hosted on AL2 and use Amazon GameLift server SDK 4.x., first update the game server build to server SDK 5.x, and then deploy to AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html"> Migrate to Amazon GameLift server SDK version 5.</a></p>
+    /// </note>
     pub fn get_operating_system(&self) -> &::std::option::Option<crate::types::OperatingSystem> {
         &self.operating_system
     }

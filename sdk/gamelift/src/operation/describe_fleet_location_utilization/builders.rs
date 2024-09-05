@@ -27,6 +27,7 @@ impl crate::operation::describe_fleet_location_utilization::builders::DescribeFl
 /// <p>If successful, a <code>FleetUtilization</code> object is returned for the requested fleet location.</p>
 /// <p><b>Learn more</b></p>
 /// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up Amazon GameLift fleets</a></p>
+/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html"> Amazon GameLift service locations</a> for managed hosting</p>
 /// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html#gamelift-metrics-fleet">GameLift metrics for fleets</a></p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeFleetLocationUtilizationFluentBuilder {

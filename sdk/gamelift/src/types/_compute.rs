@@ -31,7 +31,9 @@ pub struct Compute {
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The type of operating system on the compute resource.</p>
+    /// <p>The type of operating system on the compute resource.</p><note>
+    /// <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the <a href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For game servers that are hosted on AL2 and use Amazon GameLift server SDK 4.x., first update the game server build to server SDK 5.x, and then deploy to AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html"> Migrate to Amazon GameLift server SDK version 5.</a></p>
+    /// </note>
     pub operating_system: ::std::option::Option<crate::types::OperatingSystem>,
     /// <p>The Amazon EC2 instance type that the fleet uses. For registered computes in an Amazon GameLift Anywhere fleet, this property is empty.</p>
     pub r#type: ::std::option::Option<crate::types::Ec2InstanceType>,
@@ -81,7 +83,9 @@ impl Compute {
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>The type of operating system on the compute resource.</p>
+    /// <p>The type of operating system on the compute resource.</p><note>
+    /// <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the <a href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For game servers that are hosted on AL2 and use Amazon GameLift server SDK 4.x., first update the game server build to server SDK 5.x, and then deploy to AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html"> Migrate to Amazon GameLift server SDK version 5.</a></p>
+    /// </note>
     pub fn operating_system(&self) -> ::std::option::Option<&crate::types::OperatingSystem> {
         self.operating_system.as_ref()
     }
@@ -281,17 +285,23 @@ impl ComputeBuilder {
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
-    /// <p>The type of operating system on the compute resource.</p>
+    /// <p>The type of operating system on the compute resource.</p><note>
+    /// <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the <a href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For game servers that are hosted on AL2 and use Amazon GameLift server SDK 4.x., first update the game server build to server SDK 5.x, and then deploy to AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html"> Migrate to Amazon GameLift server SDK version 5.</a></p>
+    /// </note>
     pub fn operating_system(mut self, input: crate::types::OperatingSystem) -> Self {
         self.operating_system = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of operating system on the compute resource.</p>
+    /// <p>The type of operating system on the compute resource.</p><note>
+    /// <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the <a href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For game servers that are hosted on AL2 and use Amazon GameLift server SDK 4.x., first update the game server build to server SDK 5.x, and then deploy to AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html"> Migrate to Amazon GameLift server SDK version 5.</a></p>
+    /// </note>
     pub fn set_operating_system(mut self, input: ::std::option::Option<crate::types::OperatingSystem>) -> Self {
         self.operating_system = input;
         self
     }
-    /// <p>The type of operating system on the compute resource.</p>
+    /// <p>The type of operating system on the compute resource.</p><note>
+    /// <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the <a href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For game servers that are hosted on AL2 and use Amazon GameLift server SDK 4.x., first update the game server build to server SDK 5.x, and then deploy to AL2023 instances. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html"> Migrate to Amazon GameLift server SDK version 5.</a></p>
+    /// </note>
     pub fn get_operating_system(&self) -> &::std::option::Option<crate::types::OperatingSystem> {
         &self.operating_system
     }

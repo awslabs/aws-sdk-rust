@@ -35,8 +35,6 @@ impl crate::operation::get_compute_access::builders::GetComputeAccessInputBuilde
 /// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-remote-access.html">Remotely connect to fleet instances</a></p></li>
 /// <li>
 /// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html">Debug fleet issues</a></p></li>
-/// <li>
-/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/containers-remote-access.html"> Remotely connect to a container fleet</a></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetComputeAccessFluentBuilder {
