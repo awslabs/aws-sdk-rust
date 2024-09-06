@@ -19,6 +19,7 @@ impl super::Client {
     ///   - [`rating_count(i32)`](crate::operation::get_library_item::GetLibraryItemOutput::rating_count): <p>The number of ratings the library item has received from users.</p>
     ///   - [`is_rated_by_user(Option<bool>)`](crate::operation::get_library_item::GetLibraryItemOutput::is_rated_by_user): <p>Whether the current user has rated the library item.</p>
     ///   - [`user_count(Option<i32>)`](crate::operation::get_library_item::GetLibraryItemOutput::user_count): <p>The number of users who have associated the Q App with their account.</p>
+    ///   - [`is_verified(Option<bool>)`](crate::operation::get_library_item::GetLibraryItemOutput::is_verified): <p>Indicates whether the library item has been verified.</p>
     /// - On failure, responds with [`SdkError<GetLibraryItemError>`](crate::operation::get_library_item::GetLibraryItemError)
     pub fn get_library_item(&self) -> crate::operation::get_library_item::builders::GetLibraryItemFluentBuilder {
         crate::operation::get_library_item::builders::GetLibraryItemFluentBuilder::new(self.handle.clone())

@@ -201,6 +201,9 @@ pub(crate) fn de_get_library_item(
                 "isRatedByUser" => {
                     builder = builder.set_is_rated_by_user(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
+                "isVerified" => {
+                    builder = builder.set_is_verified(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                }
                 "libraryItemId" => {
                     builder = builder.set_library_item_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

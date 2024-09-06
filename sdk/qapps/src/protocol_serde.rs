@@ -65,6 +65,8 @@ pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_library_item;
 
+pub(crate) mod shape_update_library_item_metadata;
+
 pub(crate) mod shape_update_q_app;
 
 pub(crate) mod shape_update_q_app_session;
@@ -120,6 +122,8 @@ pub(crate) mod shape_throttling_exception;
 pub(crate) mod shape_unauthorized_exception;
 
 pub(crate) mod shape_update_library_item_input;
+
+pub(crate) mod shape_update_library_item_metadata_input;
 
 pub(crate) mod shape_update_q_app_input;
 

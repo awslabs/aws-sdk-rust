@@ -1732,9 +1732,9 @@ model_hash = '70d8c095cad5fe369c404229900eba9fbc267d4db2cfd7fb925fe0bc65181dcb'
 
 [crates.aws-sdk-qapps]
 category = 'AwsSdk'
-version = '1.7.0'
-source_hash = '96e6fb87fbdc8672e358f1b1e62b6a0f54217d5a2c048246ffdbf231223b261a'
-model_hash = '86ad3ec51aada41463b3cd2fa2d0122e12a4c05973dfbe34a29e662d325fec75'
+version = '1.8.0'
+source_hash = '0db3aeff753b241b77895b1a4a1fae782423b2277daee8f178596e61093fd6ce'
+model_hash = '6d11b7d8a01ef7932592fdc8f7052861fdc7ceeb63e00198a9fbc0cebb80412a'
 
 [crates.aws-sdk-qbusiness]
 category = 'AwsSdk'
@@ -2487,14 +2487,5 @@ source_hash = 'a26c5cec9b86934473279e31a992463f5c2e236676786953f47aadd58586c342'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = 'd08f576b0bc9146b45af732b63e0a8923b13fe09816d385e32b4c6d9e503de81'
-
-[release]
-tag = 'release-2024-09-05'
-
 [release.crates]
-aws-sdk-applicationsignals = '1.13.0'
-aws-sdk-codepipeline = '1.45.1'
-aws-sdk-connect = '1.61.0'
-aws-sdk-gamelift = '1.44.0'
-aws-sdk-kinesisanalyticsv2 = '1.45.0'
-aws-sdk-sagemaker = '1.69.0'
+aws-sdk-qapps = '1.8.0'

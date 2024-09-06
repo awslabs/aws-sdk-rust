@@ -15,6 +15,7 @@ impl super::Client {
     ///   - [`updated_at(Option<DateTime>)`](crate::operation::create_library_item::CreateLibraryItemOutput::updated_at): <p>The date and time the library item was last updated.</p>
     ///   - [`updated_by(Option<String>)`](crate::operation::create_library_item::CreateLibraryItemOutput::updated_by): <p>The user who last updated the library item.</p>
     ///   - [`rating_count(i32)`](crate::operation::create_library_item::CreateLibraryItemOutput::rating_count): <p>The number of ratings the library item has received from users.</p>
+    ///   - [`is_verified(Option<bool>)`](crate::operation::create_library_item::CreateLibraryItemOutput::is_verified): <p>Indicates whether the library item has been verified.</p>
     /// - On failure, responds with [`SdkError<CreateLibraryItemError>`](crate::operation::create_library_item::CreateLibraryItemError)
     pub fn create_library_item(&self) -> crate::operation::create_library_item::builders::CreateLibraryItemFluentBuilder {
         crate::operation::create_library_item::builders::CreateLibraryItemFluentBuilder::new(self.handle.clone())

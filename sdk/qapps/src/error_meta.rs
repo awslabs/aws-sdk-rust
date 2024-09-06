@@ -99,6 +99,9 @@ impl From<crate::operation::associate_library_item_review::AssociateLibraryItemR
             crate::operation::associate_library_item_review::AssociateLibraryItemReviewError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
+            crate::operation::associate_library_item_review::AssociateLibraryItemReviewError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
             crate::operation::associate_library_item_review::AssociateLibraryItemReviewError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
@@ -308,6 +311,9 @@ impl From<crate::operation::disassociate_library_item_review::DisassociateLibrar
         match err {
             crate::operation::disassociate_library_item_review::DisassociateLibraryItemReviewError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
+            }
+            crate::operation::disassociate_library_item_review::DisassociateLibraryItemReviewError::ConflictException(inner) => {
+                Error::ConflictException(inner)
             }
             crate::operation::disassociate_library_item_review::DisassociateLibraryItemReviewError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
@@ -728,6 +734,7 @@ impl From<crate::operation::update_library_item::UpdateLibraryItemError> for Err
     fn from(err: crate::operation::update_library_item::UpdateLibraryItemError) -> Self {
         match err {
             crate::operation::update_library_item::UpdateLibraryItemError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_library_item::UpdateLibraryItemError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_library_item::UpdateLibraryItemError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::update_library_item::UpdateLibraryItemError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -736,6 +743,51 @@ impl From<crate::operation::update_library_item::UpdateLibraryItemError> for Err
             crate::operation::update_library_item::UpdateLibraryItemError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::update_library_item::UpdateLibraryItemError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_library_item::UpdateLibraryItemError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_library_item_metadata::UpdateLibraryItemMetadataError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_library_item_metadata::UpdateLibraryItemMetadataError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_library_item_metadata::UpdateLibraryItemMetadataError> for Error {
+    fn from(err: crate::operation::update_library_item_metadata::UpdateLibraryItemMetadataError) -> Self {
+        match err {
+            crate::operation::update_library_item_metadata::UpdateLibraryItemMetadataError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_library_item_metadata::UpdateLibraryItemMetadataError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_library_item_metadata::UpdateLibraryItemMetadataError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_library_item_metadata::UpdateLibraryItemMetadataError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_library_item_metadata::UpdateLibraryItemMetadataError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_library_item_metadata::UpdateLibraryItemMetadataError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::update_library_item_metadata::UpdateLibraryItemMetadataError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_library_item_metadata::UpdateLibraryItemMetadataError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

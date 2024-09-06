@@ -28,6 +28,8 @@ pub struct LibraryItemMember {
     pub is_rated_by_user: ::std::option::Option<bool>,
     /// <p>The number of users who have the associated Q App.</p>
     pub user_count: ::std::option::Option<i32>,
+    /// <p>Indicates whether the library item has been verified.</p>
+    pub is_verified: ::std::option::Option<bool>,
 }
 impl LibraryItemMember {
     /// <p>The unique identifier of the library item.</p>
@@ -83,6 +85,10 @@ impl LibraryItemMember {
     pub fn user_count(&self) -> ::std::option::Option<i32> {
         self.user_count
     }
+    /// <p>Indicates whether the library item has been verified.</p>
+    pub fn is_verified(&self) -> ::std::option::Option<bool> {
+        self.is_verified
+    }
 }
 impl LibraryItemMember {
     /// Creates a new builder-style object to manufacture [`LibraryItemMember`](crate::types::LibraryItemMember).
@@ -107,6 +113,7 @@ pub struct LibraryItemMemberBuilder {
     pub(crate) rating_count: ::std::option::Option<i32>,
     pub(crate) is_rated_by_user: ::std::option::Option<bool>,
     pub(crate) user_count: ::std::option::Option<i32>,
+    pub(crate) is_verified: ::std::option::Option<bool>,
 }
 impl LibraryItemMemberBuilder {
     /// <p>The unique identifier of the library item.</p>
@@ -290,6 +297,20 @@ impl LibraryItemMemberBuilder {
     pub fn get_user_count(&self) -> &::std::option::Option<i32> {
         &self.user_count
     }
+    /// <p>Indicates whether the library item has been verified.</p>
+    pub fn is_verified(mut self, input: bool) -> Self {
+        self.is_verified = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the library item has been verified.</p>
+    pub fn set_is_verified(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.is_verified = input;
+        self
+    }
+    /// <p>Indicates whether the library item has been verified.</p>
+    pub fn get_is_verified(&self) -> &::std::option::Option<bool> {
+        &self.is_verified
+    }
     /// Consumes the builder and constructs a [`LibraryItemMember`](crate::types::LibraryItemMember).
     /// This method will fail if any of the following fields are not set:
     /// - [`library_item_id`](crate::types::builders::LibraryItemMemberBuilder::library_item_id)
@@ -354,6 +375,7 @@ impl LibraryItemMemberBuilder {
             })?,
             is_rated_by_user: self.is_rated_by_user,
             user_count: self.user_count,
+            is_verified: self.is_verified,
         })
     }
 }

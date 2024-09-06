@@ -64,6 +64,9 @@ pub mod untag_resource;
 /// Types for the `UpdateLibraryItem` operation.
 pub mod update_library_item;
 
+/// Types for the `UpdateLibraryItemMetadata` operation.
+pub mod update_library_item_metadata;
+
 /// Types for the `UpdateQApp` operation.
 pub mod update_q_app;
 

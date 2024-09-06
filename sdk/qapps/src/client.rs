@@ -205,6 +205,8 @@ mod untag_resource;
 
 mod update_library_item;
 
+mod update_library_item_metadata;
+
 mod update_q_app;
 
 mod update_q_app_session;
