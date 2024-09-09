@@ -79,8 +79,8 @@ pub(crate) fn match_describe_load_balancers_6a8c1dde616c542f3(
         .unwrap_or_default()
 }
 
-/// Matcher union: {"errorType":"LoadBalancerNotFound"}
-pub(crate) fn match_describe_load_balancers_5d8e90ea6f1c3cb8d(
+/// Matcher union: {"errorType":"LoadBalancerNotFoundException"}
+pub(crate) fn match_describe_load_balancers_3a5df4444a7ade137(
     _result: ::std::result::Result<
         &crate::operation::describe_load_balancers::DescribeLoadBalancersOutput,
         &crate::operation::describe_load_balancers::DescribeLoadBalancersError,
@@ -88,7 +88,7 @@ pub(crate) fn match_describe_load_balancers_5d8e90ea6f1c3cb8d(
 ) -> bool {
     if let ::std::result::Result::Err(err) = _result {
         if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(err) {
-            return code == "LoadBalancerNotFound";
+            return code == "LoadBalancerNotFoundException";
         }
     }
     false

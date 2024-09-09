@@ -1085,6 +1085,10 @@ pub use crate::types::_cluster_node_details::ClusterNodeDetailsBuilder;
 
 pub use crate::types::_cluster_instance_placement::ClusterInstancePlacementBuilder;
 
+pub use crate::types::_cluster_orchestrator::ClusterOrchestratorBuilder;
+
+pub use crate::types::_cluster_orchestrator_eks_config::ClusterOrchestratorEksConfigBuilder;
+
 pub use crate::types::_cluster_instance_group_details::ClusterInstanceGroupDetailsBuilder;
 
 pub use crate::types::_auto_ml_compute_config::AutoMlComputeConfigBuilder;

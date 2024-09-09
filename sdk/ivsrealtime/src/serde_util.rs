@@ -17,6 +17,15 @@ pub(crate) fn list_encoder_configurations_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_ingest_configurations_output_output_correct_errors(
+    mut builder: crate::operation::list_ingest_configurations::builders::ListIngestConfigurationsOutputBuilder,
+) -> crate::operation::list_ingest_configurations::builders::ListIngestConfigurationsOutputBuilder {
+    if builder.ingest_configurations.is_none() {
+        builder.ingest_configurations = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_participant_events_output_output_correct_errors(
     mut builder: crate::operation::list_participant_events::builders::ListParticipantEventsOutputBuilder,
 ) -> crate::operation::list_participant_events::builders::ListParticipantEventsOutputBuilder {
@@ -111,6 +120,30 @@ pub(crate) fn encoder_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn ingest_configuration_correct_errors(
+    mut builder: crate::types::builders::IngestConfigurationBuilder,
+) -> crate::types::builders::IngestConfigurationBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.ingest_protocol.is_none() {
+        builder.ingest_protocol = "no value was set".parse::<crate::types::IngestProtocol>().ok()
+    }
+    if builder.stream_key.is_none() {
+        builder.stream_key = Some(Default::default())
+    }
+    if builder.stage_arn.is_none() {
+        builder.stage_arn = Some(Default::default())
+    }
+    if builder.participant_id.is_none() {
+        builder.participant_id = Some(Default::default())
+    }
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::IngestConfigurationState>().ok()
+    }
+    builder
+}
+
 pub(crate) fn stage_correct_errors(mut builder: crate::types::builders::StageBuilder) -> crate::types::builders::StageBuilder {
     if builder.arn.is_none() {
         builder.arn = Some(Default::default())
@@ -159,6 +192,27 @@ pub(crate) fn encoder_configuration_summary_correct_errors(
 ) -> crate::types::builders::EncoderConfigurationSummaryBuilder {
     if builder.arn.is_none() {
         builder.arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn ingest_configuration_summary_correct_errors(
+    mut builder: crate::types::builders::IngestConfigurationSummaryBuilder,
+) -> crate::types::builders::IngestConfigurationSummaryBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.ingest_protocol.is_none() {
+        builder.ingest_protocol = "no value was set".parse::<crate::types::IngestProtocol>().ok()
+    }
+    if builder.stage_arn.is_none() {
+        builder.stage_arn = Some(Default::default())
+    }
+    if builder.participant_id.is_none() {
+        builder.participant_id = Some(Default::default())
+    }
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::IngestConfigurationState>().ok()
     }
     builder
 }

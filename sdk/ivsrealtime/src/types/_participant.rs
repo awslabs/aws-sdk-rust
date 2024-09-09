@@ -34,6 +34,8 @@ pub struct Participant {
     pub recording_s3_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The participant’s recording state.</p>
     pub recording_state: ::std::option::Option<crate::types::ParticipantRecordingState>,
+    /// <p>Type of ingest protocol that the participant employs for broadcasting.</p>
+    pub protocol: ::std::option::Option<crate::types::ParticipantProtocol>,
 }
 impl Participant {
     /// <p>Unique identifier for this participant, assigned by IVS.</p>
@@ -96,6 +98,10 @@ impl Participant {
     pub fn recording_state(&self) -> ::std::option::Option<&crate::types::ParticipantRecordingState> {
         self.recording_state.as_ref()
     }
+    /// <p>Type of ingest protocol that the participant employs for broadcasting.</p>
+    pub fn protocol(&self) -> ::std::option::Option<&crate::types::ParticipantProtocol> {
+        self.protocol.as_ref()
+    }
 }
 impl Participant {
     /// Creates a new builder-style object to manufacture [`Participant`](crate::types::Participant).
@@ -123,6 +129,7 @@ pub struct ParticipantBuilder {
     pub(crate) recording_s3_bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) recording_s3_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) recording_state: ::std::option::Option<crate::types::ParticipantRecordingState>,
+    pub(crate) protocol: ::std::option::Option<crate::types::ParticipantProtocol>,
 }
 impl ParticipantBuilder {
     /// <p>Unique identifier for this participant, assigned by IVS.</p>
@@ -341,6 +348,20 @@ impl ParticipantBuilder {
     pub fn get_recording_state(&self) -> &::std::option::Option<crate::types::ParticipantRecordingState> {
         &self.recording_state
     }
+    /// <p>Type of ingest protocol that the participant employs for broadcasting.</p>
+    pub fn protocol(mut self, input: crate::types::ParticipantProtocol) -> Self {
+        self.protocol = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Type of ingest protocol that the participant employs for broadcasting.</p>
+    pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::ParticipantProtocol>) -> Self {
+        self.protocol = input;
+        self
+    }
+    /// <p>Type of ingest protocol that the participant employs for broadcasting.</p>
+    pub fn get_protocol(&self) -> &::std::option::Option<crate::types::ParticipantProtocol> {
+        &self.protocol
+    }
     /// Consumes the builder and constructs a [`Participant`](crate::types::Participant).
     pub fn build(self) -> crate::types::Participant {
         crate::types::Participant {
@@ -359,6 +380,7 @@ impl ParticipantBuilder {
             recording_s3_bucket_name: self.recording_s3_bucket_name,
             recording_s3_prefix: self.recording_s3_prefix,
             recording_state: self.recording_state,
+            protocol: self.protocol,
         }
     }
 }

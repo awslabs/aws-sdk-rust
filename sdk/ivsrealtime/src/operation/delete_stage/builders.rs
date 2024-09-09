@@ -22,7 +22,7 @@ impl crate::operation::delete_stage::builders::DeleteStageInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteStage`.
 ///
-/// <p>Shuts down and deletes the specified stage (disconnecting all participants).</p>
+/// <p>Shuts down and deletes the specified stage (disconnecting all participants). This operation also removes the <code>stageArn</code> from the associated <code>IngestConfiguration</code>, if there are participants using the IngestConfiguration to publish to the stage.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteStageFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

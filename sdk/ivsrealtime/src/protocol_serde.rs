@@ -25,6 +25,8 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_create_encoder_configuration;
 
+pub(crate) mod shape_create_ingest_configuration;
+
 pub(crate) mod shape_create_participant_token;
 
 pub(crate) mod shape_create_stage;
@@ -32,6 +34,8 @@ pub(crate) mod shape_create_stage;
 pub(crate) mod shape_create_storage_configuration;
 
 pub(crate) mod shape_delete_encoder_configuration;
+
+pub(crate) mod shape_delete_ingest_configuration;
 
 pub(crate) mod shape_delete_public_key;
 
@@ -44,6 +48,8 @@ pub(crate) mod shape_disconnect_participant;
 pub(crate) mod shape_get_composition;
 
 pub(crate) mod shape_get_encoder_configuration;
+
+pub(crate) mod shape_get_ingest_configuration;
 
 pub(crate) mod shape_get_participant;
 
@@ -60,6 +66,8 @@ pub(crate) mod shape_import_public_key;
 pub(crate) mod shape_list_compositions;
 
 pub(crate) mod shape_list_encoder_configurations;
+
+pub(crate) mod shape_list_ingest_configurations;
 
 pub(crate) mod shape_list_participant_events;
 
@@ -83,6 +91,8 @@ pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
 
+pub(crate) mod shape_update_ingest_configuration;
+
 pub(crate) mod shape_update_stage;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
@@ -99,6 +109,8 @@ pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_encoder_configuration_input;
 
+pub(crate) mod shape_create_ingest_configuration_input;
+
 pub(crate) mod shape_create_participant_token_input;
 
 pub(crate) mod shape_create_stage_input;
@@ -106,6 +118,8 @@ pub(crate) mod shape_create_stage_input;
 pub(crate) mod shape_create_storage_configuration_input;
 
 pub(crate) mod shape_delete_encoder_configuration_input;
+
+pub(crate) mod shape_delete_ingest_configuration_input;
 
 pub(crate) mod shape_delete_public_key_input;
 
@@ -118,6 +132,8 @@ pub(crate) mod shape_disconnect_participant_input;
 pub(crate) mod shape_get_composition_input;
 
 pub(crate) mod shape_get_encoder_configuration_input;
+
+pub(crate) mod shape_get_ingest_configuration_input;
 
 pub(crate) mod shape_get_participant_input;
 
@@ -136,6 +152,8 @@ pub(crate) mod shape_internal_server_exception;
 pub(crate) mod shape_list_compositions_input;
 
 pub(crate) mod shape_list_encoder_configurations_input;
+
+pub(crate) mod shape_list_ingest_configurations_input;
 
 pub(crate) mod shape_list_participant_events_input;
 
@@ -161,6 +179,8 @@ pub(crate) mod shape_stop_composition_input;
 
 pub(crate) mod shape_tag_resource_input;
 
+pub(crate) mod shape_update_ingest_configuration_input;
+
 pub(crate) mod shape_update_stage_input;
 
 pub(crate) mod shape_validation_exception;
@@ -178,6 +198,10 @@ pub(crate) mod shape_encoder_configuration;
 pub(crate) mod shape_encoder_configuration_summary_list;
 
 pub(crate) mod shape_event_list;
+
+pub(crate) mod shape_ingest_configuration;
+
+pub(crate) mod shape_ingest_configuration_list;
 
 pub(crate) mod shape_layout_configuration;
 
@@ -224,6 +248,8 @@ pub(crate) mod shape_encoder_configuration_summary;
 pub(crate) mod shape_event;
 
 pub(crate) mod shape_grid_configuration;
+
+pub(crate) mod shape_ingest_configuration_summary;
 
 pub(crate) mod shape_participant_attributes;
 

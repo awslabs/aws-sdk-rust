@@ -1459,6 +1459,8 @@ pub(crate) mod shape_cluster_node_details;
 
 pub(crate) mod shape_cluster_node_summaries;
 
+pub(crate) mod shape_cluster_orchestrator;
+
 pub(crate) mod shape_cluster_summaries;
 
 pub(crate) mod shape_code_editor_app_image_config;
@@ -2151,6 +2153,8 @@ pub(crate) mod shape_cluster_life_cycle_config;
 
 pub(crate) mod shape_cluster_node_summary;
 
+pub(crate) mod shape_cluster_orchestrator_eks_config;
+
 pub(crate) mod shape_cluster_summary;
 
 pub(crate) mod shape_code_editor_app_settings;
@@ -2828,6 +2832,8 @@ pub(crate) mod shape_monitoring_input;
 pub(crate) mod shape_monitoring_inputs;
 
 pub(crate) mod shape_monitoring_s3_output;
+
+pub(crate) mod shape_on_start_deep_health_checks;
 
 pub(crate) mod shape_optimization_model_access_config;
 

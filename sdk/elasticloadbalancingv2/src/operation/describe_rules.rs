@@ -380,3 +380,6 @@ mod _describe_rules_output;
 
 /// Builders
 pub mod builders;
+
+/// Paginator for this operation
+pub mod paginator;

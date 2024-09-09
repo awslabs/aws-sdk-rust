@@ -256,7 +256,16 @@ pub enum CreateTableError {
     /// <p>GetRecords was called with a value of more than 1000 for the limit request parameter.</p>
     /// <p>More than 2 processes are reading from the same streams shard at the same time. Exceeding this limit may result in request throttling.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
-    /// <p>The operation conflicts with the resource's availability. For example, you attempted to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code> state.</p>
+    /// <p>The operation conflicts with the resource's availability. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You attempted to recreate an existing table.</p></li>
+    /// <li>
+    /// <p>You tried to delete a table currently in the <code>CREATING</code> state.</p></li>
+    /// <li>
+    /// <p>You tried to update a resource that was already being updated.</p></li>
+    /// </ul>
+    /// <p>When appropriate, wait for the ongoing update to complete and attempt the request again.</p>
     ResourceInUseException(crate::types::error::ResourceInUseException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

@@ -12,7 +12,6 @@ pub struct CodeEditorAppSettings {
     /// <p>The Amazon Resource Name (ARN) of the Code Editor application lifecycle configuration.</p>
     pub lifecycle_config_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Settings that are used to configure and manage the lifecycle of CodeEditor applications.</p>
-    /// <p></p>
     pub app_lifecycle_management: ::std::option::Option<crate::types::AppLifecycleManagement>,
 }
 impl CodeEditorAppSettings {
@@ -33,7 +32,6 @@ impl CodeEditorAppSettings {
         self.lifecycle_config_arns.as_deref().unwrap_or_default()
     }
     /// <p>Settings that are used to configure and manage the lifecycle of CodeEditor applications.</p>
-    /// <p></p>
     pub fn app_lifecycle_management(&self) -> ::std::option::Option<&crate::types::AppLifecycleManagement> {
         self.app_lifecycle_management.as_ref()
     }
@@ -110,19 +108,16 @@ impl CodeEditorAppSettingsBuilder {
         &self.lifecycle_config_arns
     }
     /// <p>Settings that are used to configure and manage the lifecycle of CodeEditor applications.</p>
-    /// <p></p>
     pub fn app_lifecycle_management(mut self, input: crate::types::AppLifecycleManagement) -> Self {
         self.app_lifecycle_management = ::std::option::Option::Some(input);
         self
     }
     /// <p>Settings that are used to configure and manage the lifecycle of CodeEditor applications.</p>
-    /// <p></p>
     pub fn set_app_lifecycle_management(mut self, input: ::std::option::Option<crate::types::AppLifecycleManagement>) -> Self {
         self.app_lifecycle_management = input;
         self
     }
     /// <p>Settings that are used to configure and manage the lifecycle of CodeEditor applications.</p>
-    /// <p></p>
     pub fn get_app_lifecycle_management(&self) -> &::std::option::Option<crate::types::AppLifecycleManagement> {
         &self.app_lifecycle_management
     }

@@ -5,6 +5,8 @@ pub use crate::types::_stage_endpoints::StageEndpointsBuilder;
 
 pub use crate::types::_auto_participant_recording_configuration::AutoParticipantRecordingConfigurationBuilder;
 
+pub use crate::types::_ingest_configuration::IngestConfigurationBuilder;
+
 pub use crate::types::_composition::CompositionBuilder;
 
 pub use crate::types::_destination::DestinationBuilder;
@@ -40,6 +42,8 @@ pub use crate::types::_public_key_summary::PublicKeySummaryBuilder;
 pub use crate::types::_participant_summary::ParticipantSummaryBuilder;
 
 pub use crate::types::_event::EventBuilder;
+
+pub use crate::types::_ingest_configuration_summary::IngestConfigurationSummaryBuilder;
 
 pub use crate::types::_encoder_configuration_summary::EncoderConfigurationSummaryBuilder;
 

@@ -115,6 +115,16 @@ pub(crate) fn de_describe_cluster(
                 "VpcConfig" => {
                     builder = builder.set_vpc_config(crate::protocol_serde::shape_vpc_config::de_vpc_config(tokens)?);
                 }
+                "Orchestrator" => {
+                    builder = builder.set_orchestrator(crate::protocol_serde::shape_cluster_orchestrator::de_cluster_orchestrator(tokens)?);
+                }
+                "NodeRecovery" => {
+                    builder = builder.set_node_recovery(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::ClusterNodeRecovery::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

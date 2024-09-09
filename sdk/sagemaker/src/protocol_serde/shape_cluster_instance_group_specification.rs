@@ -42,5 +42,14 @@ pub fn ser_cluster_instance_group_specification(
         }
         array_9.finish();
     }
+    if let Some(var_12) = &input.on_start_deep_health_checks {
+        let mut array_13 = object.key("OnStartDeepHealthChecks").start_array();
+        for item_14 in var_12 {
+            {
+                array_13.value().string(item_14.as_str());
+            }
+        }
+        array_13.finish();
+    }
     Ok(())
 }

@@ -138,6 +138,8 @@ impl Client {
 
 mod create_encoder_configuration;
 
+mod create_ingest_configuration;
+
 mod create_participant_token;
 
 mod create_stage;
@@ -173,6 +175,8 @@ pub mod customize;
 
 mod delete_encoder_configuration;
 
+mod delete_ingest_configuration;
+
 mod delete_public_key;
 
 mod delete_stage;
@@ -184,6 +188,8 @@ mod disconnect_participant;
 mod get_composition;
 
 mod get_encoder_configuration;
+
+mod get_ingest_configuration;
 
 mod get_participant;
 
@@ -200,6 +206,8 @@ mod import_public_key;
 mod list_compositions;
 
 mod list_encoder_configurations;
+
+mod list_ingest_configurations;
 
 mod list_participant_events;
 
@@ -222,5 +230,7 @@ mod stop_composition;
 mod tag_resource;
 
 mod untag_resource;
+
+mod update_ingest_configuration;
 
 mod update_stage;

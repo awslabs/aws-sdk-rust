@@ -256,4 +256,21 @@ impl InvokeEndpointWithResponseStreamFluentBuilder {
     pub fn get_inference_component_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_inference_component_name()
     }
+    /// <p>The ID of a stateful session to handle your request.</p>
+    /// <p>You can't create a stateful session by using the <code>InvokeEndpointWithResponseStream</code> action. Instead, you can create one by using the <code> <code>InvokeEndpoint</code> </code> action. In your request, you specify <code>NEW_SESSION</code> for the <code>SessionId</code> request parameter. The response to that request provides the session ID for the <code>NewSessionId</code> response parameter.</p>
+    pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.session_id(input.into());
+        self
+    }
+    /// <p>The ID of a stateful session to handle your request.</p>
+    /// <p>You can't create a stateful session by using the <code>InvokeEndpointWithResponseStream</code> action. Instead, you can create one by using the <code> <code>InvokeEndpoint</code> </code> action. In your request, you specify <code>NEW_SESSION</code> for the <code>SessionId</code> request parameter. The response to that request provides the session ID for the <code>NewSessionId</code> response parameter.</p>
+    pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_session_id(input);
+        self
+    }
+    /// <p>The ID of a stateful session to handle your request.</p>
+    /// <p>You can't create a stateful session by using the <code>InvokeEndpointWithResponseStream</code> action. Instead, you can create one by using the <code> <code>InvokeEndpoint</code> </code> action. In your request, you specify <code>NEW_SESSION</code> for the <code>SessionId</code> request parameter. The response to that request provides the session ID for the <code>NewSessionId</code> response parameter.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_session_id()
+    }
 }

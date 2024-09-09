@@ -122,6 +122,13 @@ pub fn de_invoke_endpoint_http_response(
         #[allow(unused_mut)]
         let mut output = crate::operation::invoke_endpoint::builders::InvokeEndpointOutputBuilder::default();
         output = output.set_body(crate::protocol_serde::shape_invoke_endpoint_output::de_body_payload(_response_body)?);
+        output = output.set_closed_session_id(
+            crate::protocol_serde::shape_invoke_endpoint_output::de_closed_session_id_header(_response_headers).map_err(|_| {
+                crate::operation::invoke_endpoint::InvokeEndpointError::unhandled(
+                    "Failed to parse ClosedSessionId from header `X-Amzn-SageMaker-Closed-Session-Id",
+                )
+            })?,
+        );
         output = output.set_content_type(
             crate::protocol_serde::shape_invoke_endpoint_output::de_content_type_header(_response_headers).map_err(|_| {
                 crate::operation::invoke_endpoint::InvokeEndpointError::unhandled("Failed to parse ContentType from header `Content-Type")
@@ -138,6 +145,13 @@ pub fn de_invoke_endpoint_http_response(
             crate::protocol_serde::shape_invoke_endpoint_output::de_invoked_production_variant_header(_response_headers).map_err(|_| {
                 crate::operation::invoke_endpoint::InvokeEndpointError::unhandled(
                     "Failed to parse InvokedProductionVariant from header `x-Amzn-Invoked-Production-Variant",
+                )
+            })?,
+        );
+        output = output.set_new_session_id(
+            crate::protocol_serde::shape_invoke_endpoint_output::de_new_session_id_header(_response_headers).map_err(|_| {
+                crate::operation::invoke_endpoint::InvokeEndpointError::unhandled(
+                    "Failed to parse NewSessionId from header `X-Amzn-SageMaker-New-Session-Id",
                 )
             })?,
         );
@@ -265,6 +279,19 @@ pub fn ser_invoke_endpoint_headers(
                 )
             })?;
             builder = builder.header("X-Amzn-SageMaker-Inference-Component", header_value);
+        }
+    }
+    if let ::std::option::Option::Some(inner_19) = &input.session_id {
+        let formatted_20 = inner_19.as_str();
+        if !formatted_20.is_empty() {
+            let header_value = formatted_20;
+            let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
+                    "session_id",
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
+                )
+            })?;
+            builder = builder.header("X-Amzn-SageMaker-Session-Id", header_value);
         }
     }
     Ok(builder)

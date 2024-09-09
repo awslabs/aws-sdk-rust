@@ -18,6 +18,8 @@ pub struct ClusterInstanceGroupSpecification {
     pub threads_per_core: ::std::option::Option<i32>,
     /// <p>Specifies the additional storage configurations for the instances in the SageMaker HyperPod cluster instance group.</p>
     pub instance_storage_configs: ::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceStorageConfig>>,
+    /// <p>A flag indicating whether deep health checks should be performed when the cluster instance group is created or updated.</p>
+    pub on_start_deep_health_checks: ::std::option::Option<::std::vec::Vec<crate::types::DeepHealthCheckType>>,
 }
 impl ClusterInstanceGroupSpecification {
     /// <p>Specifies the number of instances to add to the instance group of a SageMaker HyperPod cluster.</p>
@@ -50,6 +52,12 @@ impl ClusterInstanceGroupSpecification {
     pub fn instance_storage_configs(&self) -> &[crate::types::ClusterInstanceStorageConfig] {
         self.instance_storage_configs.as_deref().unwrap_or_default()
     }
+    /// <p>A flag indicating whether deep health checks should be performed when the cluster instance group is created or updated.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.on_start_deep_health_checks.is_none()`.
+    pub fn on_start_deep_health_checks(&self) -> &[crate::types::DeepHealthCheckType] {
+        self.on_start_deep_health_checks.as_deref().unwrap_or_default()
+    }
 }
 impl ClusterInstanceGroupSpecification {
     /// Creates a new builder-style object to manufacture [`ClusterInstanceGroupSpecification`](crate::types::ClusterInstanceGroupSpecification).
@@ -69,6 +77,7 @@ pub struct ClusterInstanceGroupSpecificationBuilder {
     pub(crate) execution_role: ::std::option::Option<::std::string::String>,
     pub(crate) threads_per_core: ::std::option::Option<i32>,
     pub(crate) instance_storage_configs: ::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceStorageConfig>>,
+    pub(crate) on_start_deep_health_checks: ::std::option::Option<::std::vec::Vec<crate::types::DeepHealthCheckType>>,
 }
 impl ClusterInstanceGroupSpecificationBuilder {
     /// <p>Specifies the number of instances to add to the instance group of a SageMaker HyperPod cluster.</p>
@@ -180,6 +189,26 @@ impl ClusterInstanceGroupSpecificationBuilder {
     pub fn get_instance_storage_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceStorageConfig>> {
         &self.instance_storage_configs
     }
+    /// Appends an item to `on_start_deep_health_checks`.
+    ///
+    /// To override the contents of this collection use [`set_on_start_deep_health_checks`](Self::set_on_start_deep_health_checks).
+    ///
+    /// <p>A flag indicating whether deep health checks should be performed when the cluster instance group is created or updated.</p>
+    pub fn on_start_deep_health_checks(mut self, input: crate::types::DeepHealthCheckType) -> Self {
+        let mut v = self.on_start_deep_health_checks.unwrap_or_default();
+        v.push(input);
+        self.on_start_deep_health_checks = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A flag indicating whether deep health checks should be performed when the cluster instance group is created or updated.</p>
+    pub fn set_on_start_deep_health_checks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeepHealthCheckType>>) -> Self {
+        self.on_start_deep_health_checks = input;
+        self
+    }
+    /// <p>A flag indicating whether deep health checks should be performed when the cluster instance group is created or updated.</p>
+    pub fn get_on_start_deep_health_checks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeepHealthCheckType>> {
+        &self.on_start_deep_health_checks
+    }
     /// Consumes the builder and constructs a [`ClusterInstanceGroupSpecification`](crate::types::ClusterInstanceGroupSpecification).
     pub fn build(self) -> crate::types::ClusterInstanceGroupSpecification {
         crate::types::ClusterInstanceGroupSpecification {
@@ -190,6 +219,7 @@ impl ClusterInstanceGroupSpecificationBuilder {
             execution_role: self.execution_role,
             threads_per_core: self.threads_per_core,
             instance_storage_configs: self.instance_storage_configs,
+            on_start_deep_health_checks: self.on_start_deep_health_checks,
         }
     }
 }

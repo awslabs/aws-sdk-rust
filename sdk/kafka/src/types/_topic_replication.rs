@@ -12,6 +12,8 @@ pub struct TopicReplication {
     pub detect_and_copy_new_topics: ::std::option::Option<bool>,
     /// <p>Configuration for specifying the position in the topics to start replicating from.</p>
     pub starting_position: ::std::option::Option<crate::types::ReplicationStartingPosition>,
+    /// <p>Configuration for specifying replicated topic names should be the same as their corresponding upstream topics or prefixed with source cluster alias.</p>
+    pub topic_name_configuration: ::std::option::Option<crate::types::ReplicationTopicNameConfiguration>,
     /// <p>List of regular expression patterns indicating the topics that should not be replicated.</p>
     pub topics_to_exclude: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>List of regular expression patterns indicating the topics to copy.</p>
@@ -33,6 +35,10 @@ impl TopicReplication {
     /// <p>Configuration for specifying the position in the topics to start replicating from.</p>
     pub fn starting_position(&self) -> ::std::option::Option<&crate::types::ReplicationStartingPosition> {
         self.starting_position.as_ref()
+    }
+    /// <p>Configuration for specifying replicated topic names should be the same as their corresponding upstream topics or prefixed with source cluster alias.</p>
+    pub fn topic_name_configuration(&self) -> ::std::option::Option<&crate::types::ReplicationTopicNameConfiguration> {
+        self.topic_name_configuration.as_ref()
     }
     /// <p>List of regular expression patterns indicating the topics that should not be replicated.</p>
     ///
@@ -62,6 +68,7 @@ pub struct TopicReplicationBuilder {
     pub(crate) copy_topic_configurations: ::std::option::Option<bool>,
     pub(crate) detect_and_copy_new_topics: ::std::option::Option<bool>,
     pub(crate) starting_position: ::std::option::Option<crate::types::ReplicationStartingPosition>,
+    pub(crate) topic_name_configuration: ::std::option::Option<crate::types::ReplicationTopicNameConfiguration>,
     pub(crate) topics_to_exclude: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) topics_to_replicate: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -122,6 +129,20 @@ impl TopicReplicationBuilder {
     pub fn get_starting_position(&self) -> &::std::option::Option<crate::types::ReplicationStartingPosition> {
         &self.starting_position
     }
+    /// <p>Configuration for specifying replicated topic names should be the same as their corresponding upstream topics or prefixed with source cluster alias.</p>
+    pub fn topic_name_configuration(mut self, input: crate::types::ReplicationTopicNameConfiguration) -> Self {
+        self.topic_name_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration for specifying replicated topic names should be the same as their corresponding upstream topics or prefixed with source cluster alias.</p>
+    pub fn set_topic_name_configuration(mut self, input: ::std::option::Option<crate::types::ReplicationTopicNameConfiguration>) -> Self {
+        self.topic_name_configuration = input;
+        self
+    }
+    /// <p>Configuration for specifying replicated topic names should be the same as their corresponding upstream topics or prefixed with source cluster alias.</p>
+    pub fn get_topic_name_configuration(&self) -> &::std::option::Option<crate::types::ReplicationTopicNameConfiguration> {
+        &self.topic_name_configuration
+    }
     /// Appends an item to `topics_to_exclude`.
     ///
     /// To override the contents of this collection use [`set_topics_to_exclude`](Self::set_topics_to_exclude).
@@ -169,6 +190,7 @@ impl TopicReplicationBuilder {
             copy_topic_configurations: self.copy_topic_configurations,
             detect_and_copy_new_topics: self.detect_and_copy_new_topics,
             starting_position: self.starting_position,
+            topic_name_configuration: self.topic_name_configuration,
             topics_to_exclude: self.topics_to_exclude,
             topics_to_replicate: self.topics_to_replicate,
         }

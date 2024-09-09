@@ -12,6 +12,8 @@ impl super::Client {
     ///   - [`failure_message(Option<String>)`](crate::operation::describe_cluster::DescribeClusterOutput::failure_message): <p>The failure message of the SageMaker HyperPod cluster.</p>
     ///   - [`instance_groups(Option<Vec::<ClusterInstanceGroupDetails>>)`](crate::operation::describe_cluster::DescribeClusterOutput::instance_groups): <p>The instance groups of the SageMaker HyperPod cluster.</p>
     ///   - [`vpc_config(Option<VpcConfig>)`](crate::operation::describe_cluster::DescribeClusterOutput::vpc_config): <p>Specifies an Amazon Virtual Private Cloud (VPC) that your SageMaker jobs, hosted models, and compute resources have access to. You can control access to and from your resources by configuring a VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html">Give SageMaker Access to Resources in your Amazon VPC</a>.</p>
+    ///   - [`orchestrator(Option<ClusterOrchestrator>)`](crate::operation::describe_cluster::DescribeClusterOutput::orchestrator): <p>The type of orchestrator used for the SageMaker HyperPod cluster.</p>
+    ///   - [`node_recovery(Option<ClusterNodeRecovery>)`](crate::operation::describe_cluster::DescribeClusterOutput::node_recovery): <p>The node recovery mode configured for the SageMaker HyperPod cluster.</p>
     /// - On failure, responds with [`SdkError<DescribeClusterError>`](crate::operation::describe_cluster::DescribeClusterError)
     pub fn describe_cluster(&self) -> crate::operation::describe_cluster::builders::DescribeClusterFluentBuilder {
         crate::operation::describe_cluster::builders::DescribeClusterFluentBuilder::new(self.handle.clone())
