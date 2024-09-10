@@ -40,7 +40,7 @@ version = "1.7.2"
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
 features = ["byte-stream-poll-next", "http-body-0-4-x"]
-version = "1.2.4"
+version = "1.2.5"
 
 [dependencies.http-02x]
 package = "http"

@@ -110,12 +110,21 @@ impl DateTime {
     ///     DateTime::from_fractional_secs(1, 0.5),
     /// );
     /// ```
-    pub fn from_fractional_secs(epoch_seconds: i64, fraction: f64) -> Self {
-        let subsecond_nanos = (fraction * 1_000_000_000_f64) as u32;
+    pub fn from_fractional_secs(mut epoch_seconds: i64, fraction: f64) -> Self {
+        // Because of floating point issues, `fraction` can end up being 1.0 leading to
+        // a full second of subsecond nanos. In that case, rollover the subsecond into the second.
+        let mut subsecond_nanos = (fraction * 1_000_000_000_f64) as u32;
+        if subsecond_nanos == 1_000_000_000 {
+            epoch_seconds += 1;
+            subsecond_nanos = 0;
+        }
         DateTime::from_secs_and_nanos(epoch_seconds, subsecond_nanos)
     }
 
     /// Creates a `DateTime` from a number of seconds and sub-second nanos since the Unix epoch.
+    ///
+    /// # Panics
+    /// This function will panic if `subsecond_nanos` is >= 1_000_000_000
     ///
     /// # Example
     /// ```
@@ -680,6 +689,17 @@ mod test {
         assert!(fifth == fifth);
     }
 
+    /// https://github.com/smithy-lang/smithy-rs/issues/3805
+    #[test]
+    fn panic_in_fromsecs_f64() {
+        assert_eq!(DateTime::from_secs_f64(-1.0), DateTime::from_secs(-1));
+
+        assert_eq!(
+            DateTime::from_secs_f64(-1.95877825437922e-309),
+            DateTime::from_secs(0)
+        );
+    }
+
     const MIN_RFC_3339_MILLIS: i64 = -62135596800000;
     const MAX_RFC_3339_MILLIS: i64 = 253402300799999;
 
@@ -697,6 +717,13 @@ mod test {
             let right_str = right.fmt(Format::DateTime).unwrap();
 
             assert_eq!(left.cmp(&right), left_str.cmp(&right_str));
+        }
+    }
+
+    proptest! {
+        #[test]
+        fn from_secs_f64_proptest(secs: f64) {
+            let _date = DateTime::from_secs_f64(secs);
         }
     }
 }
