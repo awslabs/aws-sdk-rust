@@ -7,6 +7,7 @@
 //! ```sh
 //! RUSTFLAGS="--cfg smoketests" cargo test.
 //! ```
+//!
 use aws_sdk_iam::{config, Client};
 /// Smoke tests for the `get_user` operation
 #[::tokio::test]

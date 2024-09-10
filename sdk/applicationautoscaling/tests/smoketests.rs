@@ -7,6 +7,7 @@
 //! ```sh
 //! RUSTFLAGS="--cfg smoketests" cargo test.
 //! ```
+//!
 use aws_sdk_applicationautoscaling::{config, Client};
 /// Smoke tests for the `describe_scalable_targets` operation
 #[::tokio::test]

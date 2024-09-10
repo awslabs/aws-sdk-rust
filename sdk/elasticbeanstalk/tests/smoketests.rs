@@ -7,6 +7,7 @@
 //! ```sh
 //! RUSTFLAGS="--cfg smoketests" cargo test.
 //! ```
+//!
 use aws_sdk_elasticbeanstalk::{config, Client};
 /// Smoke tests for the `list_available_solution_stacks` operation
 #[::tokio::test]

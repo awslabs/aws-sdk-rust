@@ -7,6 +7,7 @@
 //! ```sh
 //! RUSTFLAGS="--cfg smoketests" cargo test.
 //! ```
+//!
 use aws_sdk_codepipeline::{config, Client};
 /// Smoke tests for the `get_pipeline` operation
 #[::tokio::test]

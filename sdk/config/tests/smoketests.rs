@@ -7,6 +7,7 @@
 //! ```sh
 //! RUSTFLAGS="--cfg smoketests" cargo test.
 //! ```
+//!
 use aws_sdk_config::{config, Client};
 /// Smoke tests for the `describe_configuration_recorders` operation
 #[::tokio::test]

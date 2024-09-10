@@ -7,6 +7,7 @@
 //! ```sh
 //! RUSTFLAGS="--cfg smoketests" cargo test.
 //! ```
+//!
 use aws_sdk_polly::{config, Client};
 /// Smoke tests for the `describe_voices` operation
 #[::tokio::test]

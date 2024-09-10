@@ -7,6 +7,7 @@
 //! ```sh
 //! RUSTFLAGS="--cfg smoketests" cargo test.
 //! ```
+//!
 use aws_sdk_wafv2::{config, Client};
 /// Smoke tests for the `list_web_acls` operation
 #[::tokio::test]

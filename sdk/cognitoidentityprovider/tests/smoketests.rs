@@ -7,6 +7,7 @@
 //! ```sh
 //! RUSTFLAGS="--cfg smoketests" cargo test.
 //! ```
+//!
 use aws_sdk_cognitoidentityprovider::{config, Client};
 /// Smoke tests for the `list_user_pools` operation
 #[::tokio::test]

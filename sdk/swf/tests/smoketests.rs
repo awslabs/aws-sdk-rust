@@ -7,6 +7,7 @@
 //! ```sh
 //! RUSTFLAGS="--cfg smoketests" cargo test.
 //! ```
+//!
 use aws_sdk_swf::{config, Client};
 /// Smoke tests for the `list_domains` operation
 #[::tokio::test]

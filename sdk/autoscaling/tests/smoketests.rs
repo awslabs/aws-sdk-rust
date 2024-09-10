@@ -7,6 +7,7 @@
 //! ```sh
 //! RUSTFLAGS="--cfg smoketests" cargo test.
 //! ```
+//!
 use aws_sdk_autoscaling::{config, Client};
 /// Smoke tests for the `describe_scaling_process_types` operation
 #[::tokio::test]
