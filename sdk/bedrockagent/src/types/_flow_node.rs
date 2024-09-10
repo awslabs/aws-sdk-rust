@@ -147,7 +147,7 @@ impl FlowNodeBuilder {
     /// Consumes the builder and constructs a [`FlowNode`](crate::types::FlowNode).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::FlowNodeBuilder::name)
-    /// - [`r#type`](crate::types::builders::FlowNodeBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::FlowNodeBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::FlowNode, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FlowNode {
             name: self.name.ok_or_else(|| {

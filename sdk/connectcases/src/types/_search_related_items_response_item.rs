@@ -165,7 +165,7 @@ impl SearchRelatedItemsResponseItemBuilder {
     /// Consumes the builder and constructs a [`SearchRelatedItemsResponseItem`](crate::types::SearchRelatedItemsResponseItem).
     /// This method will fail if any of the following fields are not set:
     /// - [`related_item_id`](crate::types::builders::SearchRelatedItemsResponseItemBuilder::related_item_id)
-    /// - [`r#type`](crate::types::builders::SearchRelatedItemsResponseItemBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::SearchRelatedItemsResponseItemBuilder::type)
     /// - [`association_time`](crate::types::builders::SearchRelatedItemsResponseItemBuilder::association_time)
     pub fn build(self) -> ::std::result::Result<crate::types::SearchRelatedItemsResponseItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SearchRelatedItemsResponseItem {

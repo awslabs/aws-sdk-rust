@@ -161,7 +161,7 @@ impl MaximumMinimumComputationBuilder {
     /// Consumes the builder and constructs a [`MaximumMinimumComputation`](crate::types::MaximumMinimumComputation).
     /// This method will fail if any of the following fields are not set:
     /// - [`computation_id`](crate::types::builders::MaximumMinimumComputationBuilder::computation_id)
-    /// - [`r#type`](crate::types::builders::MaximumMinimumComputationBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::MaximumMinimumComputationBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::MaximumMinimumComputation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MaximumMinimumComputation {
             computation_id: self.computation_id.ok_or_else(|| {

@@ -75,7 +75,7 @@ impl EcsEnvironmentFileBuilder {
     }
     /// Consumes the builder and constructs a [`EcsEnvironmentFile`](crate::types::EcsEnvironmentFile).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::EcsEnvironmentFileBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::EcsEnvironmentFileBuilder::type)
     /// - [`value`](crate::types::builders::EcsEnvironmentFileBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::EcsEnvironmentFile, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EcsEnvironmentFile {

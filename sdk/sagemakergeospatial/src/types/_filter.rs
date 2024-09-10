@@ -111,7 +111,7 @@ impl FilterBuilder {
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::FilterBuilder::name)
-    /// - [`r#type`](crate::types::builders::FilterBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::FilterBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::Filter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Filter {
             name: self.name.ok_or_else(|| {

@@ -247,7 +247,7 @@ impl AnalyzerSummaryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::AnalyzerSummaryBuilder::arn)
     /// - [`name`](crate::types::builders::AnalyzerSummaryBuilder::name)
-    /// - [`r#type`](crate::types::builders::AnalyzerSummaryBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::AnalyzerSummaryBuilder::type)
     /// - [`created_at`](crate::types::builders::AnalyzerSummaryBuilder::created_at)
     /// - [`status`](crate::types::builders::AnalyzerSummaryBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::AnalyzerSummary, ::aws_smithy_types::error::operation::BuildError> {

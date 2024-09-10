@@ -170,7 +170,7 @@ impl RecommendationTriggerBuilder {
     /// Consumes the builder and constructs a [`RecommendationTrigger`](crate::types::RecommendationTrigger).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::RecommendationTriggerBuilder::id)
-    /// - [`r#type`](crate::types::builders::RecommendationTriggerBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::RecommendationTriggerBuilder::type)
     /// - [`source`](crate::types::builders::RecommendationTriggerBuilder::source)
     /// - [`recommendation_ids`](crate::types::builders::RecommendationTriggerBuilder::recommendation_ids)
     pub fn build(self) -> ::std::result::Result<crate::types::RecommendationTrigger, ::aws_smithy_types::error::operation::BuildError> {

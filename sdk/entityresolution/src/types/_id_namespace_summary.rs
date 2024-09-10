@@ -199,7 +199,7 @@ impl IdNamespaceSummaryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`id_namespace_name`](crate::types::builders::IdNamespaceSummaryBuilder::id_namespace_name)
     /// - [`id_namespace_arn`](crate::types::builders::IdNamespaceSummaryBuilder::id_namespace_arn)
-    /// - [`r#type`](crate::types::builders::IdNamespaceSummaryBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::IdNamespaceSummaryBuilder::type)
     /// - [`created_at`](crate::types::builders::IdNamespaceSummaryBuilder::created_at)
     /// - [`updated_at`](crate::types::builders::IdNamespaceSummaryBuilder::updated_at)
     pub fn build(self) -> ::std::result::Result<crate::types::IdNamespaceSummary, ::aws_smithy_types::error::operation::BuildError> {

@@ -90,7 +90,7 @@ impl ArtifactStoreBuilder {
     }
     /// Consumes the builder and constructs a [`ArtifactStore`](crate::types::ArtifactStore).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::ArtifactStoreBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::ArtifactStoreBuilder::type)
     /// - [`location`](crate::types::builders::ArtifactStoreBuilder::location)
     pub fn build(self) -> ::std::result::Result<crate::types::ArtifactStore, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ArtifactStore {

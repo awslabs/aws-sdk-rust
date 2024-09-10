@@ -68,7 +68,7 @@ impl ScriptSummaryBuilder {
     /// Consumes the builder and constructs a [`ScriptSummary`](crate::types::ScriptSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`script_location`](crate::types::builders::ScriptSummaryBuilder::script_location)
-    /// - [`r#type`](crate::types::builders::ScriptSummaryBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::ScriptSummaryBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::ScriptSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ScriptSummary {
             script_location: self.script_location.ok_or_else(|| {

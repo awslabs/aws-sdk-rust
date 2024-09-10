@@ -66,7 +66,7 @@ impl CachePolicySummaryBuilder {
     }
     /// Consumes the builder and constructs a [`CachePolicySummary`](crate::types::CachePolicySummary).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::CachePolicySummaryBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::CachePolicySummaryBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::CachePolicySummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CachePolicySummary {
             r#type: self.r#type.ok_or_else(|| {

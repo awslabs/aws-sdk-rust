@@ -206,7 +206,7 @@ impl PropertygraphDataBuilder {
     /// Consumes the builder and constructs a [`PropertygraphData`](crate::types::PropertygraphData).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::PropertygraphDataBuilder::id)
-    /// - [`r#type`](crate::types::builders::PropertygraphDataBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::PropertygraphDataBuilder::type)
     /// - [`key`](crate::types::builders::PropertygraphDataBuilder::key)
     /// - [`value`](crate::types::builders::PropertygraphDataBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::PropertygraphData, ::aws_smithy_types::error::operation::BuildError> {

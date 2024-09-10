@@ -68,7 +68,7 @@ impl ResponseHeadersPolicyContentSecurityPolicyBuilder {
     }
     /// Consumes the builder and constructs a [`ResponseHeadersPolicyContentSecurityPolicy`](crate::types::ResponseHeadersPolicyContentSecurityPolicy).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#override`](crate::types::builders::ResponseHeadersPolicyContentSecurityPolicyBuilder::r#override)
+    /// - [`r#override`](crate::types::builders::ResponseHeadersPolicyContentSecurityPolicyBuilder::override)
     /// - [`content_security_policy`](crate::types::builders::ResponseHeadersPolicyContentSecurityPolicyBuilder::content_security_policy)
     pub fn build(
         self,

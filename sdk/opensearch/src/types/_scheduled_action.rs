@@ -217,7 +217,7 @@ impl ScheduledActionBuilder {
     /// Consumes the builder and constructs a [`ScheduledAction`](crate::types::ScheduledAction).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::ScheduledActionBuilder::id)
-    /// - [`r#type`](crate::types::builders::ScheduledActionBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::ScheduledActionBuilder::type)
     /// - [`severity`](crate::types::builders::ScheduledActionBuilder::severity)
     /// - [`scheduled_time`](crate::types::builders::ScheduledActionBuilder::scheduled_time)
     pub fn build(self) -> ::std::result::Result<crate::types::ScheduledAction, ::aws_smithy_types::error::operation::BuildError> {

@@ -98,7 +98,7 @@ impl MeasureValueBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::MeasureValueBuilder::name)
     /// - [`value`](crate::types::builders::MeasureValueBuilder::value)
-    /// - [`r#type`](crate::types::builders::MeasureValueBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::MeasureValueBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::MeasureValue, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MeasureValue {
             name: self.name.ok_or_else(|| {

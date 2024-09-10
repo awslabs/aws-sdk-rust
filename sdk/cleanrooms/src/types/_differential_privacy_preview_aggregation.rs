@@ -66,7 +66,7 @@ impl DifferentialPrivacyPreviewAggregationBuilder {
     }
     /// Consumes the builder and constructs a [`DifferentialPrivacyPreviewAggregation`](crate::types::DifferentialPrivacyPreviewAggregation).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::DifferentialPrivacyPreviewAggregationBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::DifferentialPrivacyPreviewAggregationBuilder::type)
     /// - [`max_count`](crate::types::builders::DifferentialPrivacyPreviewAggregationBuilder::max_count)
     pub fn build(
         self,

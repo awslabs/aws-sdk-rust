@@ -1304,7 +1304,7 @@ impl ResourceRecordSetBuilder {
     /// Consumes the builder and constructs a [`ResourceRecordSet`](crate::types::ResourceRecordSet).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::ResourceRecordSetBuilder::name)
-    /// - [`r#type`](crate::types::builders::ResourceRecordSetBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::ResourceRecordSetBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::ResourceRecordSet, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ResourceRecordSet {
             name: self.name.ok_or_else(|| {

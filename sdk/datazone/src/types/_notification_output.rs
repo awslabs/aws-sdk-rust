@@ -292,7 +292,7 @@ impl NotificationOutputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`identifier`](crate::types::builders::NotificationOutputBuilder::identifier)
     /// - [`domain_identifier`](crate::types::builders::NotificationOutputBuilder::domain_identifier)
-    /// - [`r#type`](crate::types::builders::NotificationOutputBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::NotificationOutputBuilder::type)
     /// - [`title`](crate::types::builders::NotificationOutputBuilder::title)
     /// - [`message`](crate::types::builders::NotificationOutputBuilder::message)
     /// - [`action_link`](crate::types::builders::NotificationOutputBuilder::action_link)

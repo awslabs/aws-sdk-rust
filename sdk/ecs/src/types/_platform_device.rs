@@ -68,7 +68,7 @@ impl PlatformDeviceBuilder {
     /// Consumes the builder and constructs a [`PlatformDevice`](crate::types::PlatformDevice).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::PlatformDeviceBuilder::id)
-    /// - [`r#type`](crate::types::builders::PlatformDeviceBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::PlatformDeviceBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::PlatformDevice, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PlatformDevice {
             id: self.id.ok_or_else(|| {

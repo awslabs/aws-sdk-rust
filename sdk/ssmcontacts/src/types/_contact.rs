@@ -113,7 +113,7 @@ impl ContactBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`contact_arn`](crate::types::builders::ContactBuilder::contact_arn)
     /// - [`alias`](crate::types::builders::ContactBuilder::alias)
-    /// - [`r#type`](crate::types::builders::ContactBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::ContactBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::Contact, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Contact {
             contact_arn: self.contact_arn.ok_or_else(|| {

@@ -493,7 +493,7 @@ impl WebhookFilterBuilder {
     }
     /// Consumes the builder and constructs a [`WebhookFilter`](crate::types::WebhookFilter).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::WebhookFilterBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::WebhookFilterBuilder::type)
     /// - [`pattern`](crate::types::builders::WebhookFilterBuilder::pattern)
     pub fn build(self) -> ::std::result::Result<crate::types::WebhookFilter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::WebhookFilter {

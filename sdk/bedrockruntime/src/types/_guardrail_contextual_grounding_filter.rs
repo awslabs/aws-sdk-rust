@@ -110,7 +110,7 @@ impl GuardrailContextualGroundingFilterBuilder {
     }
     /// Consumes the builder and constructs a [`GuardrailContextualGroundingFilter`](crate::types::GuardrailContextualGroundingFilter).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::GuardrailContextualGroundingFilterBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::GuardrailContextualGroundingFilterBuilder::type)
     /// - [`threshold`](crate::types::builders::GuardrailContextualGroundingFilterBuilder::threshold)
     /// - [`score`](crate::types::builders::GuardrailContextualGroundingFilterBuilder::score)
     /// - [`action`](crate::types::builders::GuardrailContextualGroundingFilterBuilder::action)

@@ -234,7 +234,7 @@ impl DecryptStepDetailsBuilder {
     }
     /// Consumes the builder and constructs a [`DecryptStepDetails`](crate::types::DecryptStepDetails).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::DecryptStepDetailsBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::DecryptStepDetailsBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::DecryptStepDetails, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DecryptStepDetails {
             name: self.name,

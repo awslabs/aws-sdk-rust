@@ -111,7 +111,7 @@ impl PrincipalBuilder {
     /// Consumes the builder and constructs a [`Principal`](crate::types::Principal).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::PrincipalBuilder::name)
-    /// - [`r#type`](crate::types::builders::PrincipalBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::PrincipalBuilder::type)
     /// - [`access`](crate::types::builders::PrincipalBuilder::access)
     pub fn build(self) -> ::std::result::Result<crate::types::Principal, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Principal {

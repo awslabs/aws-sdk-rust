@@ -66,7 +66,7 @@ impl AudienceSizeBuilder {
     }
     /// Consumes the builder and constructs a [`AudienceSize`](crate::types::AudienceSize).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::AudienceSizeBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::AudienceSizeBuilder::type)
     /// - [`value`](crate::types::builders::AudienceSizeBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::AudienceSize, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AudienceSize {

@@ -66,7 +66,7 @@ impl TextTransformationBuilder {
     }
     /// Consumes the builder and constructs a [`TextTransformation`](crate::types::TextTransformation).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::TextTransformationBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::TextTransformationBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::TextTransformation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TextTransformation {
             priority: self.priority.unwrap_or_default(),

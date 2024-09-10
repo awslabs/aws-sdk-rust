@@ -144,7 +144,7 @@ impl AppComponentBuilder {
     /// Consumes the builder and constructs a [`AppComponent`](crate::types::AppComponent).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::AppComponentBuilder::name)
-    /// - [`r#type`](crate::types::builders::AppComponentBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::AppComponentBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::AppComponent, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AppComponent {
             name: self.name.ok_or_else(|| {

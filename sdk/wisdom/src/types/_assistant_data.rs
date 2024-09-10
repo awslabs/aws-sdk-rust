@@ -238,7 +238,7 @@ impl AssistantDataBuilder {
     /// - [`assistant_id`](crate::types::builders::AssistantDataBuilder::assistant_id)
     /// - [`assistant_arn`](crate::types::builders::AssistantDataBuilder::assistant_arn)
     /// - [`name`](crate::types::builders::AssistantDataBuilder::name)
-    /// - [`r#type`](crate::types::builders::AssistantDataBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::AssistantDataBuilder::type)
     /// - [`status`](crate::types::builders::AssistantDataBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::AssistantData, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AssistantData {

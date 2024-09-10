@@ -131,7 +131,7 @@ impl GuardrailTopicConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::GuardrailTopicConfigBuilder::name)
     /// - [`definition`](crate::types::builders::GuardrailTopicConfigBuilder::definition)
-    /// - [`r#type`](crate::types::builders::GuardrailTopicConfigBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::GuardrailTopicConfigBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::GuardrailTopicConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::GuardrailTopicConfig {
             name: self.name.ok_or_else(|| {

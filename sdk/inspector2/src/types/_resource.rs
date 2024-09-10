@@ -157,7 +157,7 @@ impl ResourceBuilder {
     }
     /// Consumes the builder and constructs a [`Resource`](crate::types::Resource).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::ResourceBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::ResourceBuilder::type)
     /// - [`id`](crate::types::builders::ResourceBuilder::id)
     pub fn build(self) -> ::std::result::Result<crate::types::Resource, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Resource {

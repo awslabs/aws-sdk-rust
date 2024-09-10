@@ -132,7 +132,7 @@ impl NetworkInterfaceBuilder {
     /// Consumes the builder and constructs a [`NetworkInterface`](crate::types::NetworkInterface).
     /// This method will fail if any of the following fields are not set:
     /// - [`interface_id`](crate::types::builders::NetworkInterfaceBuilder::interface_id)
-    /// - [`r#type`](crate::types::builders::NetworkInterfaceBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::NetworkInterfaceBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::NetworkInterface, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::NetworkInterface {
             interface_id: self.interface_id.ok_or_else(|| {

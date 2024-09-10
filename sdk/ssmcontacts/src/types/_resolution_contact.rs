@@ -90,7 +90,7 @@ impl ResolutionContactBuilder {
     /// Consumes the builder and constructs a [`ResolutionContact`](crate::types::ResolutionContact).
     /// This method will fail if any of the following fields are not set:
     /// - [`contact_arn`](crate::types::builders::ResolutionContactBuilder::contact_arn)
-    /// - [`r#type`](crate::types::builders::ResolutionContactBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::ResolutionContactBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::ResolutionContact, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ResolutionContact {
             contact_arn: self.contact_arn.ok_or_else(|| {

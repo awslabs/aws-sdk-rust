@@ -174,7 +174,7 @@ impl GetContactChannelOutputBuilder {
     /// - [`contact_arn`](crate::operation::get_contact_channel::builders::GetContactChannelOutputBuilder::contact_arn)
     /// - [`contact_channel_arn`](crate::operation::get_contact_channel::builders::GetContactChannelOutputBuilder::contact_channel_arn)
     /// - [`name`](crate::operation::get_contact_channel::builders::GetContactChannelOutputBuilder::name)
-    /// - [`r#type`](crate::operation::get_contact_channel::builders::GetContactChannelOutputBuilder::r#type)
+    /// - [`r#type`](crate::operation::get_contact_channel::builders::GetContactChannelOutputBuilder::type)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_contact_channel::GetContactChannelOutput, ::aws_smithy_types::error::operation::BuildError> {

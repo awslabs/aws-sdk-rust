@@ -723,7 +723,7 @@ impl ProjectEnvironmentBuilder {
     }
     /// Consumes the builder and constructs a [`ProjectEnvironment`](crate::types::ProjectEnvironment).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::ProjectEnvironmentBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::ProjectEnvironmentBuilder::type)
     /// - [`image`](crate::types::builders::ProjectEnvironmentBuilder::image)
     /// - [`compute_type`](crate::types::builders::ProjectEnvironmentBuilder::compute_type)
     pub fn build(self) -> ::std::result::Result<crate::types::ProjectEnvironment, ::aws_smithy_types::error::operation::BuildError> {

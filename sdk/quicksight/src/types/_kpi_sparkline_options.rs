@@ -107,7 +107,7 @@ impl KpiSparklineOptionsBuilder {
     }
     /// Consumes the builder and constructs a [`KpiSparklineOptions`](crate::types::KpiSparklineOptions).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::KpiSparklineOptionsBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::KpiSparklineOptionsBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::KpiSparklineOptions, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::KpiSparklineOptions {
             visibility: self.visibility,

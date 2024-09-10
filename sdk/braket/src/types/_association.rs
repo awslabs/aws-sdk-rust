@@ -68,7 +68,7 @@ impl AssociationBuilder {
     /// Consumes the builder and constructs a [`Association`](crate::types::Association).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::AssociationBuilder::arn)
-    /// - [`r#type`](crate::types::builders::AssociationBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::AssociationBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::Association, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Association {
             arn: self.arn.ok_or_else(|| {

@@ -156,7 +156,7 @@ impl TransitionBuilder {
     /// Consumes the builder and constructs a [`Transition`](crate::types::Transition).
     /// This method will fail if any of the following fields are not set:
     /// - [`relative_position`](crate::types::builders::TransitionBuilder::relative_position)
-    /// - [`r#type`](crate::types::builders::TransitionBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::TransitionBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::Transition, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Transition {
             duration_millis: self.duration_millis,

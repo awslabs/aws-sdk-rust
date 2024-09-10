@@ -183,7 +183,7 @@ impl ValidityBuilder {
     /// Consumes the builder and constructs a [`Validity`](crate::types::Validity).
     /// This method will fail if any of the following fields are not set:
     /// - [`value`](crate::types::builders::ValidityBuilder::value)
-    /// - [`r#type`](crate::types::builders::ValidityBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::ValidityBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::Validity, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Validity {
             value: self.value.ok_or_else(|| {

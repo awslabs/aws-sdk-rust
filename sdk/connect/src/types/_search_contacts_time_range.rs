@@ -88,7 +88,7 @@ impl SearchContactsTimeRangeBuilder {
     }
     /// Consumes the builder and constructs a [`SearchContactsTimeRange`](crate::types::SearchContactsTimeRange).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::SearchContactsTimeRangeBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::SearchContactsTimeRangeBuilder::type)
     /// - [`start_time`](crate::types::builders::SearchContactsTimeRangeBuilder::start_time)
     /// - [`end_time`](crate::types::builders::SearchContactsTimeRangeBuilder::end_time)
     pub fn build(self) -> ::std::result::Result<crate::types::SearchContactsTimeRange, ::aws_smithy_types::error::operation::BuildError> {

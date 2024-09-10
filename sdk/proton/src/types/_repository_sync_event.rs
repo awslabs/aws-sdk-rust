@@ -111,7 +111,7 @@ impl RepositorySyncEventBuilder {
     }
     /// Consumes the builder and constructs a [`RepositorySyncEvent`](crate::types::RepositorySyncEvent).
     /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::types::builders::RepositorySyncEventBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::RepositorySyncEventBuilder::type)
     /// - [`time`](crate::types::builders::RepositorySyncEventBuilder::time)
     /// - [`event`](crate::types::builders::RepositorySyncEventBuilder::event)
     pub fn build(self) -> ::std::result::Result<crate::types::RepositorySyncEvent, ::aws_smithy_types::error::operation::BuildError> {

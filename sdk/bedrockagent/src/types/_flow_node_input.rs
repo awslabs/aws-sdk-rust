@@ -100,7 +100,7 @@ impl FlowNodeInputBuilder {
     /// Consumes the builder and constructs a [`FlowNodeInput`](crate::types::FlowNodeInput).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::FlowNodeInputBuilder::name)
-    /// - [`r#type`](crate::types::builders::FlowNodeInputBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::FlowNodeInputBuilder::type)
     /// - [`expression`](crate::types::builders::FlowNodeInputBuilder::expression)
     pub fn build(self) -> ::std::result::Result<crate::types::FlowNodeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FlowNodeInput {

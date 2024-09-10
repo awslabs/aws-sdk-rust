@@ -228,7 +228,7 @@ impl DataCatalogBuilder {
     /// Consumes the builder and constructs a [`DataCatalog`](crate::types::DataCatalog).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::DataCatalogBuilder::name)
-    /// - [`r#type`](crate::types::builders::DataCatalogBuilder::r#type)
+    /// - [`r#type`](crate::types::builders::DataCatalogBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::DataCatalog, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DataCatalog {
             name: self.name.ok_or_else(|| {
